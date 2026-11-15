@@ -51,6 +51,7 @@
     "CAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -332,5 +342,6 @@
    "MAG-200 is printed with a variable 1.00-4.00 units."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

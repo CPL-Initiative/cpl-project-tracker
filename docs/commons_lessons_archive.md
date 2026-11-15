@@ -372,3 +372,132 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
   an earlier re-mint vacated, so the first Sheet 107 apply drew six ids twice and the lints job failed. The allocator
   in the three Sheet 107 scripts now treats `er.ever_minted_ids()` and `er.skyview_ids()` as taken, and the window
   was re-applied from the pre-apply files: no reused slot, no duplicate.
+
+## S544 SkySombrero (2026-11-02): the List norms' steps 1 and 2 in the engine
+
+**What shipped.** #2673, the engine's `suggest` slot and the visit's changed set. CR's rung proposals read *Suggested groups*, with Confirm the group; Subjects' open picks read *Suggested picks*, with Confirm this pick. #2675, every filter word carries its count, `counts()` for a tab that already counted (Program Requirements, Courses), `uncounted(id)`, and *Selected* on every List. #2674 rebuilds `kb/status/commons.json` in the nightly procedures run, so the Exhibits tile agrees with Review the same night (it had read 351 held against Review's 1). The norms note records both steps; step 3, bands from a spec's `groupOf(r)`, is next.
+
+**A suggestion never proposes a call a person must make.** The Subjects fixture offered Agricultural Business the code AUTB, which another MQ discipline owns. Confirming it would have written a collision through the same path as every other confirm. The open pick in a collision now gets no suggestion. The general rule: before a machine proposes a fold, run the refusal the write itself would apply (one code, one MQ discipline), and leave anything that fails it to the person.
+
+**A count is honest only when its data has arrived.** S343's rule (a failed read is never an empty list) reaches filter counts: *Suggested folds (0)* before the AI sort's file arrives reads as "no suggestions". `uncounted(id)` leaves the word bare until the data is read, and a test boots the Exhibits List with that file unread to pin it.
+
+**A test that finds a control by its exact label breaks when the label gains a number.** Seven suites found filter words with `txt(b) === t`. They now match the label with or without a trailing count. Match the label's stable part, not its whole text.
+
+**Run a long local test loop in its own worktree.** A loop over 33 suites ran in the checkout while the session switched branches under it, so its results could not be trusted and it was stopped. `git worktree add` in the scratchpad, with `node_modules` linked, keeps the loop on one commit.
+
+**Never put an unmeasured number in a PR body, even as an example.** #2675's first body showed *Needs a decision (156)* and *Decided (30)* as examples; neither was measured. It was corrected to *(n)* within minutes. An example figure in a PR reads as a finding.
+
+## S545 SkyWhirlpool (2026-11-02): the List norms' step 3, and Exhibits on the engine's slot
+
+**What shipped.** #2679: step 3 was half done (#2670 had built the engine's read-only `bands` hook for the Courses List
+and made `listRows` filter before it sorts), so the engine gained `bands.order(key, members)`, the text bands sort by
+when the key is an internal one, and the CR List bands its 2,344 wordings by group: 156 bands of two or more, each named
+and ordered by the group's reference, a group of one under *Single wording*, read only. #2680: the Exhibits List's
+spelling-twin folds and changed set moved onto the engine's suggestion slot, so all three steps have landed and every
+folding List takes suggestions, the changed set, filter counts and bands from the engine.
+
+**Order bands by what the reader sees, not by the key.** The CR group key is a normalized string ("engine performance");
+ordered by key, a band named *Engine Performance (3 to 5 units)* sorted before *4 hours in Welding*. The test pins the
+reference order with exactly that pair, and fails when `order` is removed.
+
+**Two keys that read alike need two places.** Ranking band keys with the shared text ranker gave keys equal under the
+collation one rank, so their rows would interleave and the band header would alternate. Each key now takes its own
+place, ties broken by the raw key.
+
+**Read a handoff's next step against the code before building it.** Handoff 545 described step 3 as "so the Courses List
+stops hand-rolling its M-ID bands"; the Courses List had used the engine's hook since #2670 (handoff 544 said "half
+done"). The remaining work was CR's bands and the norms note's bookkeeping.
+
+**Two PRs that edit adjacent lines of one table wait for each other.** The Exhibits code went on a sibling branch while
+#2679 ran CI; its docs waited for the merge, because both edit the norms note's *Where each List stands* rows.
+
+## S552 SkyCentaurus, 2026-11-02: the CPL Commons, named twice in a quarter hour
+
+- **A working name is a working name.** Sam opened with *CCC Commons* and, on seeing it on the mock, moved to *CPL
+  Commons* (*"less of a wholesale take over of the system"*). Everything that carried the first name (the mock, the
+  lane, the vault README, the memory row, the sheet) was renamed in the same hour; the cost was low because each
+  surface named its source. A name on a shared surface (the side menu) waited on his word, which is why it is a card.
+- **Play the whole's name through the cards.** The eight cards became *Common Programs, Common Subjects, Common
+  Exhibits, Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills*: the live
+  tab's row pattern (Common Exhibit Reference, Common Course Reference, Common CR Reference, Common Subjects Reference)
+  with "Reference" dropped because the Commons says it. "Register" was retired. The focus elements (the decisions band,
+  the sort note, the skip link, the footer) carry the same words, so the page reads as one vocabulary.
+- **A hand edit on the canvas shows up as a stray style.** The Exhibits artboard's root `main` had gained
+  `position: absolute; left: 13px; top: 16px` between publishes, the trace of a drag in the editor on a fill page; the
+  republish dropped it and said so. Read the canvas again before every publish; the view context's `edits` count says
+  when someone touched it.
+- **A look is a token layer, even when it is someone else's.** The CPL Commons tab is the one COBI tab in Malone's
+  look (Sam, Sheet 158). The palette went in once, as `--cmn` tokens scoped to `#tab-commons`, every rule below it
+  reading a token; the dark theme maps each role onto a First Light dark token instead of a second palette. The
+  "no raw hex in the injected CSS" test kept its teeth by reading the rule block alone and a new check reads the token
+  block, so a hex can live in exactly one place.
+- **A card needs a session side and a machine side.** The status file gives a card its pair and stamp; the run log
+  gives it *Your decision*, *Recently* and *Next*. A reference with no run log still draws, with its machine stamp as
+  Recently and no Next, which is the truth of it. The three building references got `building` rows rather than a
+  place in `rows`, because the builder's test holds `rows` to a definition of complete they do not have yet.
+- **The sheet builder's test needs a fixture per predicate.** S551's Sheet 157 predicate shipped without one, so the
+  coverage test read 29 of 30 before this run touched it; both predicates now have fixtures and the test passes 30 of 30.
+
+## Moved from the lane, 2026-11-02 (S552; the lane passed its 20,000-byte budget)
+
+**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
+drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
+status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
+a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
+`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
+whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
+`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
+(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
+the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
+`docs/commons_lessons.md`.
+
+**Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
+
+### Step 3's three Progress views (moved from the lane, 2026-11-02, S552)
+
+**Step 3's first Progress view, Subjects (S425, cpl-project-tracker#2260).** Sam, 2026-10-19: *"Can you develop a
+dash for CSR similar to the one you created for PR? Seems like each of our Commons consolidation projects should
+follow the same process"*; his ask moved Subjects ahead of Exhibit, Course and CR in the ruled order. The tab opens on
+Progress, drawn by the shared module from its own definitions (a card per step, the procedures under the cards, the
+findings), and a count opens the table with its filter through `#canonical-subj4/<filter>`, the deep link behind a
+count; the Commons row's counts link the same way. The second host proved the contract: a 60-line host object, its
+own section classes, no change to the module but an optional second word per part. Lane:
+[common-subjects-reference](common-subjects-reference.md).
+
+**Step 3's second Progress view, Exhibit (S436, 2026-10-20).** The Common Exhibit Reference tab gains a fourth view,
+*Progress*, first in its row; the tab still opens on Needs you (S413), so nothing a curator lands on moved. The
+definitions live in `exhibit_progress.js`, loaded with `commons_progress.js` the first time the view opens. **One
+definition, two readers:** the headline pair and the auditor's tallies come from the Exhibit row of
+`kb/status/commons.json` (the builder now writes `map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`), so
+the Commons row and the view cannot disagree; the rest is the tab's live state lent through an `api` (last night's
+procedures report, the Unclassified, No issuer and Merge confirms queues, the lane switch). Definition of complete,
+carried from the Commons row: a title carries a review stamp, a person's or a procedure's cohort's (1,729 of 4,915).
+Five milestones (every MAP title classified, the held titles decided, an issuer for every credential, the reference
+matches MAP, every title stamped) and eight cards. A count opens the lane that lists it, and
+`#credential-reference/<lane>` (progress, held, unc, noiss, merge, procs, all, industry; `needs` and `ref` name a view)
+routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
+`npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
+
+**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, and again on Sheet 108 card 4, 13:24Z, his own call:
+keep).** The Exhibit Progress view stays as S436 built it: complete = a title with a review stamp (the Commons row's
+pair), and the tab opens on Needs you.
+
+**Step 3's third Progress view, CR (S437, 2026-10-20).** The Common CR Reference tab gains a view row, *Progress* and
+*Worklist*; the tab still opens on the worklist's Needs a decision. The definitions live in `cr_progress.js`, loaded with
+`commons_progress.js` the first time the view opens. **Complete changed unit:** a *wording* colleges wrote resolves to a
+settled reference when a rung 1 to 4 rule places it or a curator's decision names it (confirmed or not a topic; deferred
+and cleared settle nothing), so the Commons row's pair moved from two group counts (156 by rule, 30 decided) to one:
+**459 of 2,344 wordings, 5,750 of 9,413 articulations** (408 by a rule, 51 more by Sam's 2026-09-20 sitting). The
+builder (`row_cr()`) and the tab (`SETTLES`) apply one rule; the builder reads the committed receipts, and the view's
+Curator decisions card says when the live table and the receipts differ. Milestones walk the head-heavy corpus: the
+rules applied, the top 50, 100 and 250 wordings settled, every wording settled; You are here is the head (44 of 50; the
+six left are the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine
+Performance I). Two new worklist filters back the counts, *No rule or decision* (1,885) and *Name to check* (37), and
+`#cr-reference/<view or filter>` routes from the address. The tab had drawn inside its loading placeholder's inline
+style (a dashed box, muted centered text) since it shipped; the module now clears it on first paint. Guards
+`tests/cr_progress.test.js` (42) and `tests/commons_status_build_test.py` (77, a fixture for the settling rule);
+`npm run a11y -- cr-progress cr-progress-dark` passes. The fourth host needed no change to the module.
+
+**RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
+`sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
+curator decides, and the tab opens on its worklist.

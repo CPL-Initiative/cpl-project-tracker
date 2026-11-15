@@ -77,14 +77,15 @@
    "status": "equal",
    "computed": [
     31.0,
-    32.0
+    36.0
    ],
    "stated": [
     31.0,
     32.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -297,5 +298,6 @@
    "No general education pattern or degree total is printed on this page."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

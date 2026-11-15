@@ -1138,3 +1138,40 @@ Verbatim from `docs/reference/lanes/library.md`, replaced when #3294 built the V
   the header's markup and its 25px lengths, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one
   column, and loading nothing from another host (the page is self-contained: logos as data URIs, as `apply.py` writes them).
   The same pass raised the map's own control floors to 25px and the directory's CPL page link to its 44px row.
+
+## Moved from the lane (S653b)
+
+The Fact Sheet took the public header and the Veteran map its 480px logos (#3333, 2026-11-14); the lane's text as it stood moved here verbatim.
+
+From the *One queue check* bullet: Open (#3227's review):
+  a comment in `cpl-chat-deploy.yml` names only `group_queue.mjs`.
+
+- **The Veteran map carries the public header (S651, #3294 merged `f0339e38` about 10:10Z 2026-11-14).** Built in
+  `build_selfcontained.py` (logos as data URIs, the header's 25px lengths), hidden under `?embed=1` (absent from the
+  accessibility tree and the tab order), so COBI's Military Partnerships iframe stays one column; `npm run a11y` passes
+  light, dark and embed; a second reader served it and found nothing broken. Guard `tests/veteran_map_public_header.test.js`.
+  **NEXT (minor):** the two embedded logos are 1115px copies (480px copies would cut about 55 KB); a public HTML comment
+  names the vault path; a theme choice on the public map sets `cpl_theme` for the whole github.io origin, COBI included
+  (the existing design). The Fact Sheet still has no header. The record as it stood: lessons, *Moved from the lane (S651 checkpoint)*.
+
+- **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
+  simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
+  folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
+  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
+  drafts on its card with Draft it now (2026-11-10, above).
+
+- **A draft read off Pages drops its version stamps (2026-11-11, #3097):** Pages serves local scripts as
+  `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
+  stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
+  `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+
+From the *Veteran map and the Fact Sheet* bullet, when the Fact Sheet's logo was settled (#3342), these phrases moved
+here verbatim: "(`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to 166,896 bytes)"; "and no public comment names the vault path"; "(no generator writes it)"; "its `--cplh-*` roles map onto `factsheet.css` `:root`;".
+
+## Moved from the lane (S653b, T9)
+
+Moved verbatim from `docs/reference/lanes/library.md` on 2026-11-14 to keep the lane under 20,000 bytes.
+
+✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
+
+✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.

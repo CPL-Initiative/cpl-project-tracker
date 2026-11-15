@@ -59,6 +59,9 @@ check("(9) the rollback restores a title only while it holds the follow-up's val
   /set value = e\.value_before/.test(rb) && /k\.value = e\.value_after/.test(rb)
   && new RegExp("k\\.reviewer_email = '" + COHORT + "' and k\\.field = 'merge_dismissed'").test(rb)
   && (rb.match(/;/g) || []).length === 1);
+check("(9b) the rollback refuses unless it restores both titles, so the Keep as-is rows never go alone (S653 step 1)",
+  /::int::text::jsonb/.test(rb) && /when g\.ok and \(select count\(\*\) from restored\) = 2/.test(rb)
+  && /using guard g\s+where g\.ok and k\.reviewer_email/.test(rb));
 
 const plan = JSON.parse(read("kb/honors_delete_s652_out/2026-11-14/followups_plan.json"));
 check("(10) simulated on committed data: every check of the plan holds",

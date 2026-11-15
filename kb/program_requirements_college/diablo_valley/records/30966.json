@@ -46,26 +46,12 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 52,
    "listed": 55,
-   "share": 0.691,
+   "share": 0.945,
    "missing": [
     "BIOSC101",
     "BIOSC102",
-    "BIOSC116",
-    "BIOSC117",
-    "BIOSC119",
-    "BIOSC120",
-    "BIOSC126",
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146",
-    "BIOSC161",
-    "BIOSC162",
-    "BIOSC170",
-    "BIOSC171",
     "PHYS111"
    ],
    "unexplained": [],
@@ -73,22 +59,8 @@
    "pass": true
   },
   "invented": {
-   "count": 34,
+   "count": 20,
    "codes": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL119",
-    "BIOL120",
-    "BIOL126",
-    "BIOL130",
-    "BIOL131",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOL161",
-    "BIOL162",
-    "BIOL170",
-    "BIOL171",
     "BIOLC1000",
     "BIOLC1001",
     "HORT111",
@@ -111,20 +83,6 @@
     "NUTRI160"
    ],
    "flagged": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL119",
-    "BIOL120",
-    "BIOL126",
-    "BIOL130",
-    "BIOL131",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOL161",
-    "BIOL162",
-    "BIOL170",
-    "BIOL171",
     "BIOLC1000",
     "BIOLC1001",
     "HORT111",
@@ -1061,5 +1019,6 @@
    "Program learning outcomes are printed once for the program (Natural Science) and recorded for this A.S. award; text begins mid-sentence ('ences students who intend...'), so earlier description may be cut off."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43609976980,
+ "read_run": "43353452924"
 }

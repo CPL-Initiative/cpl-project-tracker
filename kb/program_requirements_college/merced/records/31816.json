@@ -74,18 +74,15 @@
    "status": "equal",
    "computed": [
     29.0,
-    30.0
+    40.0
    ],
    "stated": [
     29.0,
     29.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-30.0; the catalog states 29.0-29.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -273,5 +270,6 @@
    "Page prints no general education pattern, degree total, outcomes or careers in this Requisites view."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

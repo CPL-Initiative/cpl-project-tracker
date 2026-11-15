@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     17.0,
     17.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 14.0-14.0; the catalog states 17.0-17.0"
    ]
@@ -85,6 +87,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -222,5 +232,6 @@
    "The outcomes list is printed under the certificate section itself; outcome three is copied as printed even though its wording appears garbled."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

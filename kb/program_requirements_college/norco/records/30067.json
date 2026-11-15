@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,6 +89,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -352,5 +362,6 @@
    "The outcome 'Create and present a research paper on selected topics.' is printed twice in the catalog; both printings are recorded as printed. A reviewer may wish to treat it as a duplicate."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

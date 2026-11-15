@@ -948,50 +948,674 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/merced",
-  "kept": 159,
-  "programs": 4,
-  "list": [
-   {
-    "control_number": "07708",
-    "title": "Equine Science and Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt",
-    "was_coverage": 0.917,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "19493",
-    "title": "Equine Science and Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38831",
-    "title": "Drone Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "41050",
-    "title": "Drone Media",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
-    "coverage": 1.0,
-    "was_url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 163,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39239492986"
+ "fingerprints": {
+  "03465": {
+   "sha256": "0bf6a73958e36714ead5236803b236928ed2e6036c145eb738a2d21b487c3b76",
+   "url": "https://catalog.mccd.edu/programs/01150.AS/requisites-ojrrt"
+  },
+  "03466": {
+   "sha256": "b1ef23b5313ba9f4c7794d4b6c0f8c1ff68d92d9ebabcb03e1827ea97bca9e70",
+   "url": "https://catalog.mccd.edu/programs/01351.AS/requisites-ojrrt"
+  },
+  "03468": {
+   "sha256": "dc6bdda172438f5a79f1fc6cf144ff44218f7f4365b6760847a84d98f110cb1b",
+   "url": "https://catalog.mccd.edu/programs/01100.AS/requisites-ojrrt"
+  },
+  "03470": {
+   "sha256": "45d081fdc22f29a94a71f3ee4986fadd58ac222ccfae6a0649ef004255432eb7",
+   "url": "https://catalog.mccd.edu/programs/05150.AA/requisites-ojrrt"
+  },
+  "03474": {
+   "sha256": "fe6bedf58b882b8b147ae41201ad01770c7fd48a30587e34520049314ca4a3f2",
+   "url": "https://catalog.mccd.edu/programs/05450.AA/requisites-ojrrt"
+  },
+  "03476": {
+   "sha256": "ccb5e92195758751c5d30c75d4bf1452f2395ced6e4a60a94daf43a7393304ac",
+   "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt"
+  },
+  "03478": {
+   "sha256": "ccb5e92195758751c5d30c75d4bf1452f2395ced6e4a60a94daf43a7393304ac",
+   "url": "https://catalog.mccd.edu/programs/05007.AA/requisites-ojrrt"
+  },
+  "03483": {
+   "sha256": "e7e455d4588c452ee3d4bab9c5c78532ed5285d341a71d53fcdfad77cf085add",
+   "url": "https://catalog.mccd.edu/programs/09300.AS/requisites-ojrrt"
+  },
+  "03485": {
+   "sha256": "467209f46c9037ef48c08d67f7d1bceb6208c73d12ac68bcb18b28f9ef19b357",
+   "url": "https://catalog.mccd.edu/programs/01200.AS/requisites-ojrrt"
+  },
+  "03493": {
+   "sha256": "a2428dfdfe6239055c0fd822a1083e1885473f3b5af2ef916f1742a42a871689",
+   "url": "https://catalog.mccd.edu/programs/09800.AA/requisites-ojrrt"
+  },
+  "03494": {
+   "sha256": "fd11329d9da6e1094eefc8f09394338aaa858d661fac304217846dccf98edb31",
+   "url": "https://catalog.mccd.edu/programs/10110.AA/requisites-ojrrt"
+  },
+  "03496": {
+   "sha256": "491361eab06f4641277e0d9e08bdb4aa3d81a0c3bde715fb515875207bd5cc73",
+   "url": "https://catalog.mccd.edu/programs/10600.AA/requisites-ojrrt"
+  },
+  "03497": {
+   "sha256": "13f8a80cdea85956be43bb55b0554c2dd57bf06b7aa6edb6e2abf4975a0d50d2",
+   "url": "https://catalog.mccd.edu/programs/11200.AA/requisites-ojrrt"
+  },
+  "03498": {
+   "sha256": "696e2ce4ef5f46fc2ab7b2603347f56c90ac81c4a634bd9975a8bd82e27c7f8f",
+   "url": "https://catalog.mccd.edu/programs/11400.AA/requisites-ojrrt"
+  },
+  "03501": {
+   "sha256": "b17c37343448c01d77dc411ab70c9e7ab07565805ace19812096bc0d877e0811",
+   "url": "https://catalog.mccd.edu/programs/12500.AS/requisites-ojrrt"
+  },
+  "03505": {
+   "sha256": "9e8e8ae1441dee6aa018592d7fa2e9bc7aa972bdcefba70a8b545d06f3291e96",
+   "url": "https://catalog.mccd.edu/programs/12700.AS/requisites-ojrrt"
+  },
+  "03507": {
+   "sha256": "3de53b8c8256c25e7cdfeb18759e6d3521ff5708889490a41a38e6704a09150a",
+   "url": "https://catalog.mccd.edu/programs/13161.AS/requisites-ojrrt"
+  },
+  "03514": {
+   "sha256": "12bd9380c58492f171f419474b21b7984c1ce18108d5adcfa8516a9e818b3972",
+   "url": "https://catalog.mccd.edu/programs/20500.AA/requisites-ojrrt"
+  },
+  "03530": {
+   "sha256": "7638570f0df161702b3ede091808b1d69e539a2cd83cbe26824338711fb1a3b2",
+   "url": "https://catalog.mccd.edu/programs/21500.AA/requisites-ojrrt"
+  },
+  "07708": {
+   "sha256": "febae7f6128a651655198f8cde20cc011ca5eaa377befe7eed96cf1adf5ac793",
+   "url": "https://catalog.mccd.edu/programs/01225.AS/requisites-ojrrt"
+  },
+  "07710": {
+   "sha256": "54ac4449e25dd5eb933a15342932b2dc5cd1c134ce9eff20c0453f9a938b8e54",
+   "url": "https://catalog.mccd.edu/programs/01450.AS/requisites-ojrrt"
+  },
+  "07713": {
+   "sha256": "815e7aec3fdecc7a923af7d34b9669c2af11771922a080611d84272dbfd911a0",
+   "url": "https://catalog.mccd.edu/programs/05460.AS/requisites-ojrrt"
+  },
+  "07718": {
+   "sha256": "e217a09f4a36a9726c44c5468d3e1f07b951e69f50602db4c2962a4419d22dca",
+   "url": "https://catalog.mccd.edu/programs/09350.AS/requisites-ojrrt"
+  },
+  "07720": {
+   "sha256": "d0d8a60551f5a10d08ee41b5483cb0691f612983864299e9b105507a71a41bea",
+   "url": "https://catalog.mccd.edu/programs/09650.AS/requisites-ojrrt"
+  },
+  "07723": {
+   "sha256": "cc11d92f82376767c3cb19612764595db6c9146734bb0fe65baa01a3cc16250e",
+   "url": "https://catalog.mccd.edu/programs/09550.AS/requisites-ojrrt"
+  },
+  "07724": {
+   "sha256": "397a68f157522ea2226fde2ffb926e87d7f44fa849180f571d0baa6a22a92984",
+   "url": "https://catalog.mccd.edu/programs/09510.AS/requisites-ojrrt"
+  },
+  "07728": {
+   "sha256": "e16ab7b03f6ce30a723d2e25d60b28d636746a830e3b7c95cdcfa90a483805a8",
+   "url": "https://catalog.mccd.edu/programs/10500.AA/requisites-ojrrt"
+  },
+  "10438": {
+   "sha256": "7fa2b2cdf1112392724d7337b96d720662b18c6ebe23caea10fb40b74a986268",
+   "url": "https://catalog.mccd.edu/programs/09002.CT/requisites-ojrrt"
+  },
+  "10439": {
+   "sha256": "be147b0a59faa5c0530fb27db5390f2da04ab239c4ec1e9cc6cae7e6b25d47eb",
+   "url": "https://catalog.mccd.edu/programs/09010.CN/requisites-ojrrt"
+  },
+  "12308": {
+   "sha256": "744419a883241dfeea86457cb502aeb2da0c673c4cbb3e8207422174f2916bc0",
+   "url": "https://catalog.mccd.edu/programs/04135.AS/requisites-ojrrt"
+  },
+  "16242": {
+   "sha256": "013e6c9a112f21a363a10cd3876696b99541ecf566793459f05aafc477835bb7",
+   "url": "https://catalog.mccd.edu/programs/09250.AS/requisites-ojrrt"
+  },
+  "16243": {
+   "sha256": "3ffc69694aa943be2755bc1bf32801f67d0684103652a8796e394a8a71b744e3",
+   "url": "https://catalog.mccd.edu/programs/07023.AS/requisites-ojrrt"
+  },
+  "16244": {
+   "sha256": "b5a0ba05e6d60594d2323179eed235ae4512d067c1c1bea668931e9295fdecd0",
+   "url": "https://catalog.mccd.edu/programs/09400.AS/requisites-ojrrt"
+  },
+  "16245": {
+   "sha256": "ba200a170a9b269561a7515a170bc21d5e4152a590cc59bcf1f7e2a12503bb9c",
+   "url": "https://catalog.mccd.edu/programs/09401.AS/requisites-ojrrt"
+  },
+  "16653": {
+   "sha256": "517924fe8d73d808f0dc369465676f7cd1bd57660a74ba57667ec814e689a960",
+   "url": "https://catalog.mccd.edu/programs/01453.CN/requisites-ojrrt"
+  },
+  "16654": {
+   "sha256": "54248cd01fca511ff70e3cedb55dec9bc47567b962d02e4717d31862d889c411",
+   "url": "https://catalog.mccd.edu/programs/01052.CT/requisites-ojrrt"
+  },
+  "17928": {
+   "sha256": "d1bd89b466f4d2f2fab649d3874f3d35d6acca15b3840f553742e6fa8634500d",
+   "url": "https://catalog.mccd.edu/programs/22600.AA/requisites-ojrrt"
+  },
+  "17936": {
+   "sha256": "5f32b06bc95a7627007eaca16c0e8d9a021eb7e29e429e0dd5072dee00d5d95e",
+   "url": "https://catalog.mccd.edu/programs/13181.CN/requisites-ojrrt"
+  },
+  "19368": {
+   "sha256": "e1d99b1d23ffce1f794814a6cd04a97334eace7f81cb728bfeb1ea7f08778830",
+   "url": "https://catalog.mccd.edu/programs/13161.CT/requisites-ojrrt"
+  },
+  "19370": {
+   "sha256": "b4d4e29012cd405ac50fa3effb60257fee2045d56f045bb1e78d7a58ede40c0f",
+   "url": "https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt"
+  },
+  "19373": {
+   "sha256": "45978369adcefee839daab777f9f152a2870ffc86f5ea42350d0c6510b986577",
+   "url": "https://catalog.mccd.edu/programs/12550.CT/requisites-ojrrt"
+  },
+  "19491": {
+   "sha256": "fce225a595fdb7cbc96be6de2c259508440734e13adedc170c8d1d875415ca03",
+   "url": "https://catalog.mccd.edu/programs/01050.CN/requisites-ojrrt"
+  },
+  "19492": {
+   "sha256": "9759758669db53b0c2b0e3e5e3b2c667e4e190a8bb16ad7d725fb5bbd65f31cf",
+   "url": "https://catalog.mccd.edu/programs/01100.CN/requisites-ojrrt"
+  },
+  "19493": {
+   "sha256": "778a21b156c5687444d7385be6bbdb941ba469c978f08bf111a495071964eeff",
+   "url": "https://catalog.mccd.edu/programs/01225.CN/requisites-ojrrt"
+  },
+  "19494": {
+   "sha256": "c4935a186238483ae9077de9c0811b0eeb676a9fc941734ddfcfd429f610d180",
+   "url": "https://catalog.mccd.edu/programs/01000.CN/requisites-ojrrt"
+  },
+  "19495": {
+   "sha256": "1d3cb88b266840c639e07ddb3c01b046921d10d8e491b1a211f45ba0133dd49d",
+   "url": "https://catalog.mccd.edu/programs/01200.CT/requisites-ojrrt"
+  },
+  "19496": {
+   "sha256": "a696dc0979abe73a87807f432ef6abadc1dfd4b0606b838b34608ac10fb0b943",
+   "url": "https://catalog.mccd.edu/programs/01450.CT/requisites-ojrrt"
+  },
+  "19497": {
+   "sha256": "659eea433f890956f598ea2d67c0fb759fabbddbd529a6d02260af83a4295e43",
+   "url": "https://catalog.mccd.edu/programs/05150.CT/requisites-ojrrt"
+  },
+  "19499": {
+   "sha256": "b7d3bfd07be964d94bae61478740e46bc7c5b494c953fbdb5acceda6c834240c",
+   "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt"
+  },
+  "19501": {
+   "sha256": "b7d3bfd07be964d94bae61478740e46bc7c5b494c953fbdb5acceda6c834240c",
+   "url": "https://catalog.mccd.edu/programs/05007.CN/requisites-ojrrt"
+  },
+  "19502": {
+   "sha256": "1eaa82449e7b6978ad5c04d2e76b472c6f3049e8b0fe273f7665db335d910d10",
+   "url": "https://catalog.mccd.edu/programs/09250.CM/requisites-ojrrt"
+  },
+  "19503": {
+   "sha256": "5f37dc6f84a9b3b2a0d54dd6ef953405bb6a8556122f6247d7d3ff6c4e10d383",
+   "url": "https://catalog.mccd.edu/programs/07023.CT/requisites-ojrrt"
+  },
+  "19506": {
+   "sha256": "41decac7994ccf9a486f6f2646e4ecc35554632a2f4881a639c89300a10dcd97",
+   "url": "https://catalog.mccd.edu/programs/09510.CT/requisites-ojrrt"
+  },
+  "19507": {
+   "sha256": "2ee28d06acdb9f9cf154a9bf68b16f495e23c2478649a7bbddad898500533fd4",
+   "url": "https://catalog.mccd.edu/programs/12700.CF/requisites-ojrrt"
+  },
+  "19508": {
+   "sha256": "23c3c8c35477534e2d12d701d6d2e74ca9bea7bac7d8cf92c86dfd5a17f8b513",
+   "url": "https://catalog.mccd.edu/programs/12800.CT/requisites-ojrrt"
+  },
+  "19654": {
+   "sha256": "15a2f22afb2d03ac0fcfb9977292b1a8abc50270d4d5f2ec1b2370800e91afee",
+   "url": "https://catalog.mccd.edu/programs/04130.CN/requisites-ojrrt"
+  },
+  "19668": {
+   "sha256": "5d2d1540dcdcdf68578fef40ff5a569d6c11f9049961ddf8cc6823918a00d505",
+   "url": "https://catalog.mccd.edu/programs/10400.AA/requisites-ojrrt"
+  },
+  "19758": {
+   "sha256": "73aecd4d8b33315f910cb8dfb48869be7850a9946033f6fc69d952489b0a96bc",
+   "url": "https://catalog.mccd.edu/programs/01040.AS/requisites-ojrrt"
+  },
+  "19759": {
+   "sha256": "0199f0ed9b5e0571bc9214ad930625f79015c07bdb6a4747f7dd092b3e9e1e92",
+   "url": "https://catalog.mccd.edu/programs/01000.AS/requisites-ojrrt"
+  },
+  "20801": {
+   "sha256": "7dd86d1b89e2f6a9cd282f95fc12ec6496db5d430c4f01c5a571c28bcd95f198",
+   "url": "https://catalog.mccd.edu/programs/01150.CN/requisites-ojrrt"
+  },
+  "20802": {
+   "sha256": "92b8f16d065f999497b996c449dd87f8034f09edd9ebfb0ae2547c366e59906b",
+   "url": "https://catalog.mccd.edu/programs/01350.CN/requisites-ojrrt"
+  },
+  "20804": {
+   "sha256": "76a009c9499d72dea2d8be25791028ec92a8a5279bfbb335b3703b460a042726",
+   "url": "https://catalog.mccd.edu/programs/05000.CT/requisites-ojrrt"
+  },
+  "20805": {
+   "sha256": "ddfa1956d35e3ee911bc26f8935c0dac30137f44cc1a1c322731de33fc5897e8",
+   "url": "https://catalog.mccd.edu/programs/05450.CN/requisites-ojrrt"
+  },
+  "20806": {
+   "sha256": "1a3510896dffdbcc52fda6bdf39ea5c548acacabdc45d2d6e4455f8e233d431f",
+   "url": "https://catalog.mccd.edu/programs/05460.CN/requisites-ojrrt"
+  },
+  "20808": {
+   "sha256": "a394beac0b3e82c0f1302f6e4f75aa0372d4ac9dee32be94762cc769040d8b7d",
+   "url": "https://catalog.mccd.edu/programs/09650.CT/requisites-ojrrt"
+  },
+  "20809": {
+   "sha256": "86a411ded627d5e9a953760640f9b8737fc0988c3fd15be2f4a109290ab38638",
+   "url": "https://catalog.mccd.edu/programs/09550.CT/requisites-ojrrt"
+  },
+  "20811": {
+   "sha256": "29f625fe5edd243e3f7947a9cbf41b34865d68eaac5351a3a745b5d9ae21d489",
+   "url": "https://catalog.mccd.edu/programs/09401.CT/requisites-ojrrt"
+  },
+  "20812": {
+   "sha256": "8d9b3a43407bb3e717eed21a002b8f22d0c5aed896922787762598d2a376b51b",
+   "url": "https://catalog.mccd.edu/programs/09008.CT/requisites-ojrrt"
+  },
+  "20813": {
+   "sha256": "11dbbb88a1388f924603bcbcef8bf57a0d5dff151f02eca9cf32d7dcbd88ceba",
+   "url": "https://catalog.mccd.edu/programs/09810.CN/requisites-ojrrt"
+  },
+  "20814": {
+   "sha256": "d9eabf0920b595ef963cedd9adcd3f56767b242e23801ecd353f3c0bdc5763cb",
+   "url": "https://catalog.mccd.edu/programs/10500.CN/requisites-ojrrt"
+  },
+  "20815": {
+   "sha256": "387c8de75ad8d58ba71c065a631cadaa81acc8d06e4e8406b15517a2077876dd",
+   "url": "https://catalog.mccd.edu/programs/21150.CT/requisites-ojrrt"
+  },
+  "20817": {
+   "sha256": "8cb800707a1e6918e1b8b288eee7bbfa4b0e412ac907f12e18f7618a14c7bf86",
+   "url": "https://catalog.mccd.edu/programs/21400.CT/requisites-ojrrt"
+  },
+  "22926": {
+   "sha256": "0a5ee174d8bfdc8fe57d23e492f781534db58d900522e0b820dc79515922d359",
+   "url": "https://catalog.mccd.edu/programs/13026.CT/requisites-ojrrt"
+  },
+  "22928": {
+   "sha256": "89db3df9ca327c052afd2d8d06333824218f220339d6c6c86aefa0729d39a48a",
+   "url": "https://catalog.mccd.edu/programs/13031.CT/requisites-ojrrt"
+  },
+  "22930": {
+   "sha256": "40de9f4b0836a0198e4a3a98a43f728033a21ea1596859c23379ba4b25b87126",
+   "url": "https://catalog.mccd.edu/programs/13021.CT/requisites-ojrrt"
+  },
+  "22932": {
+   "sha256": "4a7c095c38bc34c11272b02d704fbd6f6ef956702d1b4ee71342a47e092aa0a2",
+   "url": "https://catalog.mccd.edu/programs/13016.CT/requisites-ojrrt"
+  },
+  "24014": {
+   "sha256": "4fa95552848326d0fbedca9093bff67a2cce711cc6108444c1d5af316701b9e9",
+   "url": "https://catalog.mccd.edu/programs/07744.NC/requisites-ojrrt"
+  },
+  "24015": {
+   "sha256": "89b4a31736a0faed5b66ed156948ac8dabf6072da4956fb9820d6af027db8811",
+   "url": "https://catalog.mccd.edu/programs/10100.NC/requisites-ojrrt"
+  },
+  "24382": {
+   "sha256": "38d56bffd5f4d4006af095b667c8f3d41b9640d7c33823912a60e0ea263baab1",
+   "url": "https://catalog.mccd.edu/programs/21078.NC/requisites-ojrrt"
+  },
+  "24412": {
+   "sha256": "53d13961c2b6ab21b7cf8b6929d9d692b1525b09f1fe491e709b8371998e349b",
+   "url": "https://catalog.mccd.edu/programs/49160.NC/requisites-ojrrt"
+  },
+  "30631": {
+   "sha256": "ff83bcec365ea64942716e8f258c56f30ae81f2fd316d6e81ab8d905169c63cf",
+   "url": "https://catalog.mccd.edu/programs/20500.AAT/requisites-ojrrt"
+  },
+  "31120": {
+   "sha256": "c175c791ea949bf2c86b717e637454362bb00f1176a79e6d9083a1a17867a825",
+   "url": "https://catalog.mccd.edu/programs/21075.AST/requisites-ojrrt"
+  },
+  "31644": {
+   "sha256": "700473af305f3352bb0588dd188c0925151c04a4fa321f2d185e6c470f41f51d",
+   "url": "https://catalog.mccd.edu/programs/49196.NC/requisites-ojrrt"
+  },
+  "31645": {
+   "sha256": "fc8ad85040c88e4658ec486842acd4c1d8d26e686bf9959df21fb8a715d8cb3d",
+   "url": "https://catalog.mccd.edu/programs/49198.NC/requisites-ojrrt"
+  },
+  "31816": {
+   "sha256": "9d5278de3bbbe56c7987ae68a2f36f4830d5befe07f93cec4520f64b28fc098f",
+   "url": "https://catalog.mccd.edu/programs/07200.AST/requisites-ojrrt"
+  },
+  "31861": {
+   "sha256": "d9479d87968c84dcfd19ecb82a5745b85b8ec57efebadb5902135608158e1c24",
+   "url": "https://catalog.mccd.edu/programs/19400.AST/requisites-ojrrt"
+  },
+  "31867": {
+   "sha256": "d17ddb04007bf0e872aae633232ca11a6cf496810bdaf413d26afdb5abcaa625",
+   "url": "https://catalog.mccd.edu/programs/13010.AST/requisites-ojrrt"
+  },
+  "32191": {
+   "sha256": "1d100f6e8000fcea77616c7654167efffadfb00c913a6481a2d9e238808d116f",
+   "url": "https://catalog.mccd.edu/programs/12400.AAT/requisites-ojrrt"
+  },
+  "32207": {
+   "sha256": "ad4cfe3ed99f3b22d45d411460ec3a991f088fcce02819e83c87737750af0fe3",
+   "url": "https://catalog.mccd.edu/programs/11600.AAT/requisites-ojrrt"
+  },
+  "32211": {
+   "sha256": "6f8aff6ecae5ff15484c83d7c8ef073fa8f1d61ea3b1ef3ae00efcb49d703cc8",
+   "url": "https://catalog.mccd.edu/programs/15200.AAT/requisites-ojrrt"
+  },
+  "32312": {
+   "sha256": "463710e0d675e0e5d350712434606d36b6c14fc8341bfda1ec1c167938651b93",
+   "url": "https://catalog.mccd.edu/programs/15400.AAT/requisites-ojrrt"
+  },
+  "32614": {
+   "sha256": "13470589d8743192bf0a598b1d42fd19b925a187b84faf428b72169be314eeef",
+   "url": "https://catalog.mccd.edu/programs/10600.AAT/requisites-ojrrt"
+  },
+  "32642": {
+   "sha256": "4796a63434d538c03191e411bccc7af85a0f0982e558e32313794432f5eae8dd",
+   "url": "https://catalog.mccd.edu/programs/22300.AAT/requisites-ojrrt"
+  },
+  "32886": {
+   "sha256": "db95fdd784df7f6a48bd3472debb9b4df6a8e3836a980a2bd82caa7591af607d",
+   "url": "https://catalog.mccd.edu/programs/10400.AAT/requisites-ojrrt"
+  },
+  "32944": {
+   "sha256": "f471f1f576feaa8bcde0e6bdb447310ff79645475990b772f87e53f50c7ed05f",
+   "url": "https://catalog.mccd.edu/programs/49199.NC/requisites-ojrrt"
+  },
+  "32987": {
+   "sha256": "8aa605f7cecff068e30d907175e1527ff3ee026e3590cdb5684586eb4d87ff9c",
+   "url": "https://catalog.mccd.edu/programs/10550.AAT/requisites-ojrrt"
+  },
+  "33174": {
+   "sha256": "60df2829d61ebf9dfd1b774fe6f8492e2c7fa4b7d0b87825a788a51e4bf3d751",
+   "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt"
+  },
+  "33207": {
+   "sha256": "0231323e8d5c9ef505a425c7e040eb502fdecefc0826ee6d66fad8e123964049",
+   "url": "https://catalog.mccd.edu/programs/22001.AAT/requisites-ojrrt"
+  },
+  "33622": {
+   "sha256": "89c39b6aca012d7cac234f62307d1a7545f8884070728e6ba890014a980c6b6b",
+   "url": "https://catalog.mccd.edu/programs/19100.AST/requisites-ojrrt"
+  },
+  "33625": {
+   "sha256": "c873b3b0106da4aef3c005644cf8c858064da2379f0c132c0300a1a3d09ee9ee",
+   "url": "https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt"
+  },
+  "33880": {
+   "sha256": "cf41325959a44fbfa725fd5fb59dc9fafb9669b05612b019558fbd2d5a8e55cd",
+   "url": "https://catalog.mccd.edu/programs/22250.AAT/requisites-ojrrt"
+  },
+  "33885": {
+   "sha256": "ea0d271f1f2d82308f57d87bb8fdf8d50897d0a149e13207c71ed7dc33c4f31d",
+   "url": "https://catalog.mccd.edu/programs/01000.AST/requisites-ojrrt"
+  },
+  "35038": {
+   "sha256": "ffb74e1416e87ec66adccf4677c9c089f5754dbd8c54e448a79bdb0f8a9aca14",
+   "url": "https://catalog.mccd.edu/programs/04137.AS/requisites-ojrrt"
+  },
+  "35530": {
+   "sha256": "9fc82b81fa3dac3ded2a1e7981c3f683bf7b7657bd2aabadc8706472329c7b59",
+   "url": "https://catalog.mccd.edu/programs/22200.AAT/requisites-ojrrt"
+  },
+  "35569": {
+   "sha256": "1cf56c2e3ac2b0eb59c273581a3b27ce53de3ba3d168a61d04392fbf6a7e39d2",
+   "url": "https://catalog.mccd.edu/programs/04100.AST/requisites-ojrrt"
+  },
+  "35572": {
+   "sha256": "51267406a29c6312d091c68fc8db01203c270810830e94f29b2657b1840022d0",
+   "url": "https://catalog.mccd.edu/programs/13160.AST/requisites-ojrrt"
+  },
+  "36258": {
+   "sha256": "7b42071ac1e6c56a7b0d1352f9d9369ae941eb6b8ffa874114b649a5dfa5425b",
+   "url": "https://catalog.mccd.edu/programs/09003.AS/requisites-ojrrt"
+  },
+  "36388": {
+   "sha256": "072e2979d706c68eb46f4d640d1d942ad1f00d38ce3c3a09a034dd235b54045d",
+   "url": "https://catalog.mccd.edu/programs/49166.NC/requisites-ojrrt"
+  },
+  "37204": {
+   "sha256": "6b5266a56813f5bb5bbc137fb80322b49ddd0c5f47998e268af5f27b7a2a8802",
+   "url": "https://catalog.mccd.edu/programs/06100.AA/requisites-ojrrt"
+  },
+  "37390": {
+   "sha256": "7bf3b9f6177e5a167ae600f321c1b21dcaabac8ba3fde233723e700a243ce81d",
+   "url": "https://catalog.mccd.edu/programs/49167.NC/requisites-ojrrt"
+  },
+  "38831": {
+   "sha256": "5f04aca75473a32bee81c55b834fa79ca900a4124d1ff11c7da12790ac36cc3f",
+   "url": "https://catalog.mccd.edu/programs/09170.CM/requisites-ojrrt"
+  },
+  "38916": {
+   "sha256": "7bdba399efc8965aa9f187f6016c141f9e9338fc11e7236971d2d189562913ea",
+   "url": "https://catalog.mccd.edu/programs/13012.CT/requisites-ojrrt"
+  },
+  "39148": {
+   "sha256": "dba95e20a10fe0c4a44eb4a470e4b7469e4ab5aa98d11950d889d268dc3fbb4c",
+   "url": "https://catalog.mccd.edu/programs/12401.CN/requisites-ojrrt"
+  },
+  "40072": {
+   "sha256": "c58412bec14e032fcbc17879492d79aabc677a9664fd1f86c931f338d234152f",
+   "url": "https://catalog.mccd.edu/programs/01100.AST/requisites-ojrrt"
+  },
+  "40176": {
+   "sha256": "2d4d308f289fc4681ac7707fe98933892422017f87f7677a6031d38010855e44",
+   "url": "https://catalog.mccd.edu/programs/49190.NC/requisites-ojrrt"
+  },
+  "40213": {
+   "sha256": "7430f58e03832cbe0f79234eca339de9a7d3a327e0f83b7842882f9ba5109dca",
+   "url": "https://catalog.mccd.edu/programs/09475.NC/requisites-ojrrt"
+  },
+  "40215": {
+   "sha256": "a168bce0fb074f7f3d6099126dab609a218f352c622f056a27563be9fe8d2330",
+   "url": "https://catalog.mccd.edu/programs/01160.AST/requisites-ojrrt"
+  },
+  "40228": {
+   "sha256": "3156208dd79e18b51b2d1bb56cc64f7e71702a5d7a2fe1632beba0e3d621efe4",
+   "url": "https://catalog.mccd.edu/programs/49195.NC/requisites-ojrrt"
+  },
+  "40266": {
+   "sha256": "cac6c2816d942de68f83d425b65311f8200fad322d5d4068994f8869bb844cab",
+   "url": "https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt"
+  },
+  "40737": {
+   "sha256": "6e5717668c4a5852cdf9acc5e553937fc2ae8db76140519437b7bce7a984707f",
+   "url": "https://catalog.mccd.edu/programs/49301.NC/requisites-ojrrt"
+  },
+  "40738": {
+   "sha256": "9ec13cbc382dd1ba268cfa64af1ea6ce33ddb52da2d1082babf608bb3abfb85b",
+   "url": "https://catalog.mccd.edu/programs/49310.NC/requisites-ojrrt"
+  },
+  "40854": {
+   "sha256": "57b3470097b189b2fc7933ee7ddd87dacebd8ae3a0299aab66ac306592028d6a",
+   "url": "https://catalog.mccd.edu/programs/19050.AST/requisites-ojrrt"
+  },
+  "40858": {
+   "sha256": "b8e925436cc70ee868213205bceda6d889e199365f3dc2b1e3b458a7b1adf7e1",
+   "url": "https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt"
+  },
+  "40896": {
+   "sha256": "f6bbe20960573192017a83b5c5f035eea38fc2f47788815075a413c0cf37c489",
+   "url": "https://catalog.mccd.edu/programs/05101.AST/requisites-ojrrt"
+  },
+  "40932": {
+   "sha256": "132d457b6fc499a56b56c34326ef043538894737bc00c47df36e53f116871df0",
+   "url": "https://catalog.mccd.edu/programs/07020.NC/requisites-ojrrt"
+  },
+  "41050": {
+   "sha256": "2a4a8c232d3e9e894dea4fda049a811bdd732f5b6880c57fad5711973f445900",
+   "url": "https://catalog.mccd.edu/programs/09171.CM/requisites-ojrrt"
+  },
+  "41384": {
+   "sha256": "b0a76fb40b835c14e939eff094e84eb76d5583adee221789dcc16fc701b0f940",
+   "url": "https://catalog.mccd.edu/programs/13160.CT/requisites-ojrrt"
+  },
+  "41385": {
+   "sha256": "39ed73ce68b4c02553e3ff51c4fc679b7615ffa29c5580528d1a00252b26b4c1",
+   "url": "https://catalog.mccd.edu/programs/07024.CM/requisites-ojrrt"
+  },
+  "41411": {
+   "sha256": "bdcaca148d08153af613eba213d4b4c03dd0896cd2e1f3fbbf17f2678ef8cf83",
+   "url": "https://catalog.mccd.edu/programs/07074.CM/requisites-ojrrt"
+  },
+  "41427": {
+   "sha256": "7793f63cc2b81bf84a0f6b7041c0e6c80510e165811ba49cfaa87a2eb91fdd83",
+   "url": "https://catalog.mccd.edu/programs/07021.CM/requisites-ojrrt"
+  },
+  "41428": {
+   "sha256": "3a33f500f83ebc31e446212d8f0f0713f2b66a881e5585e2bb2a66c6fc52445a",
+   "url": "https://catalog.mccd.edu/programs/07082.CM/requisites-ojrrt"
+  },
+  "41472": {
+   "sha256": "60f2c45ca382131c3fa14d54f484e8bea747f76217e6e35dcbf18266eb98cf25",
+   "url": "https://catalog.mccd.edu/programs/07201.AS/requisites-ojrrt"
+  },
+  "41857": {
+   "sha256": "093a74c6af598f35f68a58d90158df9e2b14f57f815ac9456e2cb93fb885862a",
+   "url": "https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt"
+  },
+  "42460": {
+   "sha256": "ab724722832f9e8fef1a83ba351098e4f13e0158df00e3ead5e06d51c88eca49",
+   "url": "https://catalog.mccd.edu/programs/01151.AS/requisites-ojrrt"
+  },
+  "42503": {
+   "sha256": "b1d4beaa4c6084b56751a77225e61fbff240d56b1f613f7d0bff553977eeaa7e",
+   "url": "https://catalog.mccd.edu/programs/12510.AS/requisites-ojrrt"
+  },
+  "42504": {
+   "sha256": "32c7363b670f688a1215f891201dd17f57d6a2e11230b9ec2d2f229258737b16",
+   "url": "https://catalog.mccd.edu/programs/12510.CT/requisites-ojrrt"
+  },
+  "42572": {
+   "sha256": "728111342229761de7309c6ce319dca3a0c555fa8e70ba3066a0f2ea457a6724",
+   "url": "https://catalog.mccd.edu/programs/12402.CN/requisites-ojrrt"
+  },
+  "42573": {
+   "sha256": "9e91d1309f16c12ab8c15e3fb488781d62fc10f6113cedb03cec54dcfc1a8a8c",
+   "url": "https://catalog.mccd.edu/programs/09785.CM/requisites-ojrrt"
+  },
+  "42642": {
+   "sha256": "b1ed8763ef5e8512dd0c2ca529c4a3ce3dca8a975021c7f0ea245e17897bb557",
+   "url": "https://catalog.mccd.edu/programs/12500.CT/requisites-ojrrt"
+  },
+  "42691": {
+   "sha256": "8c6f26d4a1823575cd968d70b866126e8ab7d298b7d3ec90fc34883c4b249c6b",
+   "url": "https://catalog.mccd.edu/programs/07202.AS/requisites-ojrrt"
+  },
+  "42692": {
+   "sha256": "189bbf2b9cd6dc852e651aefd5a09ddf12bb534966e29567d92f6e62f1678a52",
+   "url": "https://catalog.mccd.edu/programs/07022.AS/requisites-ojrrt"
+  },
+  "42801": {
+   "sha256": "2c2eb93bd2413c881d34b4371f14c3109631f22832241685d4e0808e2d14ddf1",
+   "url": "https://catalog.mccd.edu/programs/07204.CN/requisites-ojrrt"
+  },
+  "43044": {
+   "sha256": "6cfbde45054c29b10ff28aa2823d614ce456e480b55453ba8a6cd336a0a7c61b",
+   "url": "https://catalog.mccd.edu/programs/07202.CT/requisites-ojrrt"
+  },
+  "43058": {
+   "sha256": "96f3363fe69b9c272f7d9e509ddd90f7fc4aa943f1b739aef00865bc5c3083cc",
+   "url": "https://catalog.mccd.edu/programs/07022.CT/requisites-ojrrt"
+  },
+  "43197": {
+   "sha256": "e7c0eca5950e6eadd24d06ce0854c6f62820fd8c3d1a449ffbc2dd98c92667da",
+   "url": "https://catalog.mccd.edu/programs/01051.AS/requisites-ojrrt"
+  },
+  "43347": {
+   "sha256": "a80d46acd1cec57517e0867761ea3e93e9996ddb4c437422cb62025269cb8a05",
+   "url": "https://catalog.mccd.edu/programs/15603.AAT/requisites-ojrrt"
+  },
+  "43465": {
+   "sha256": "a231c566508d9024b1e535256b63b18459eef4c47300f6552e8e6505cd39dc49",
+   "url": "https://catalog.mccd.edu/programs/49161.NC/requisites-ojrrt"
+  },
+  "43466": {
+   "sha256": "145d9718ae4040218d3197c99ce33438811d90ce71445ddb8cc15736a117d88a",
+   "url": "https://catalog.mccd.edu/programs/49162.NC/requisites-ojrrt"
+  },
+  "44165": {
+   "sha256": "0cb2d62876db2db15ba9e29f1041d0a1378b34ca995feb0f96ab57faa51f1150",
+   "url": "https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt"
+  },
+  "44416": {
+   "sha256": "8fe4e5f2c28bba00de4ed8dc2b202391dac78ba46b4f02e77ab696cd5f262082",
+   "url": "https://catalog.mccd.edu/programs/22062.CN/requisites-ojrrt"
+  },
+  "44429": {
+   "sha256": "1e361bba6c8fdd35da41e6f776e2fa8a0f3365c1c18340951b52f2e979119298",
+   "url": "https://catalog.mccd.edu/programs/22061.CN/requisites-ojrrt"
+  },
+  "44431": {
+   "sha256": "7a0bc5a4a2a42b53455f688c06209e90269fb3ba24f5117ab93e47b9c974e17a",
+   "url": "https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt"
+  },
+  "44715": {
+   "sha256": "279e4be934154d4cb0d20a7e9dedc98711fa8871ef350c7bff52e5b85a0f43ac",
+   "url": "https://catalog.mccd.edu/programs/08600.CM/requisites-ojrrt"
+  },
+  "45001": {
+   "sha256": "5adae7b75f7d482a42f93088900cd2a1746333cac6c2f4928762aa9802342f17",
+   "url": "https://catalog.mccd.edu/programs/12837.AST/requisites-ojrrt"
+  },
+  "45131": {
+   "sha256": "881875cc23651752033f0504b3bb06cd38e1d32e06eb0bdb4955a2fbed79563f",
+   "url": "https://catalog.mccd.edu/programs/13014.CN/requisites-ojrrt"
+  },
+  "45388": {
+   "sha256": "86e14bb9fb8f85cfc60f53e3b548af85f5219346c0814e446daa5f67b292643e",
+   "url": "https://catalog.mccd.edu/programs/13013.CM/requisites-ojrrt"
+  },
+  "45669": {
+   "sha256": "9e55aa898d16c91c3cdc4add83d27b3aad85388b289a572dbc3edfa91e7e4a94",
+   "url": "https://catalog.mccd.edu/programs/13051.CM/requisites-ojrrt"
+  },
+  "45766": {
+   "sha256": "36b2a13ddc1dc42d01a88597cfc33135022d83264e9fa472cf03cc8f29aef7a3",
+   "url": "https://catalog.mccd.edu/programs/01120.CM/requisites-ojrrt"
+  },
+  "45852": {
+   "sha256": "60df2829d61ebf9dfd1b774fe6f8492e2c7fa4b7d0b87825a788a51e4bf3d751",
+   "url": "https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt"
+  },
+  "45853": {
+   "sha256": "26c6948388a0a2fddb439d21982477ee80deb70431efd1d1977dd50cb6b6626c",
+   "url": "https://catalog.mccd.edu/programs/12600.CT/requisites-ojrrt"
+  },
+  "46060": {
+   "sha256": "47d99630729270ddee1160ef2a9cb3f20091acf50ca4283ed9ea22338721c16f",
+   "url": "https://catalog.mccd.edu/programs/09480.CN/requisites-ojrrt"
+  },
+  "46489": {
+   "sha256": "77d75ab362433086b21b24f4fea3dfe7e5d03bbdaeb0cd4d180beff99fdb198f",
+   "url": "https://catalog.mccd.edu/programs/17401.AST/requisites-ojrrt"
+  },
+  "46490": {
+   "sha256": "9ea3ac67c24baa5d6d70328955679a2e94e93fd1b3697f0fe27e9f69f069871b",
+   "url": "https://catalog.mccd.edu/programs/19800.AST/requisites-ojrrt"
+  }
+ },
+ "staged_from": {
+  "run": "39239492986",
+  "proof": "the filed account equal but for its run, and 4 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43609965348"
 }

@@ -54,6 +54,7 @@
     "MAT25"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -103,6 +104,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Elective Courses' chooses units but names no minimum"
    ]
@@ -120,6 +122,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -1337,5 +1350,6 @@
    "The catalog notes that not all courses are offered at all three district colleges."
   ]
  },
- "extracted_run": "38095617505"
+ "extracted_run": 43609968396,
+ "read_run": "38095617505"
 }

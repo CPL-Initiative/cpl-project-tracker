@@ -45,28 +45,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 22,
    "listed": 22,
-   "share": 0.909,
-   "missing": [
-    "ANTHRO102",
-    "ANTHRO102H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "GEOL101",
     "GEOL122"
    ],
    "flagged": [
-    "ANTH102",
-    "ANTH102H",
     "GEOL101",
     "GEOL122"
    ],
@@ -385,5 +378,6 @@
    "Outcomes are from the page's Program Learning Outcomes tab for this AA-T."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }

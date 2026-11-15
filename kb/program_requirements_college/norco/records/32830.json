@@ -44,23 +44,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 23,
    "listed": 23,
-   "share": 0.957,
-   "missing": [
-    "HIS2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "HIST2"
-   ],
-   "flagged": [
-    "HIST2"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -74,6 +69,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 15.0-15.0; the catalog states 18.0-18.0"
    ]
@@ -91,6 +87,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -334,5 +341,6 @@
    "Section heading appears with duplicated header lines ('NAA717 (CaI-GETC)' and '(Cal-GETC)')."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

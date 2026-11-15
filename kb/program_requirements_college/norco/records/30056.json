@@ -68,7 +68,8 @@
     "MKT20"
    ],
    "unexplained": [],
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -84,6 +85,7 @@
     0.0
    ],
    "stated": null,
+   "against": null,
    "why": [
     "the record names no total"
    ]
@@ -101,6 +103,17 @@
    "heading_printed": true,
    "heading_without_outcomes": true,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -198,5 +211,6 @@
    "For reference, the Management section printed 'Apply sound management practices.' twice in its outcomes list."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

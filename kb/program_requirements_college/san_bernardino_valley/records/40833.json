@@ -45,12 +45,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 16,
    "listed": 21,
-   "share": 0.667,
+   "share": 0.762,
    "missing": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "HIST100",
     "SOC110",
     "SOC110H",
@@ -58,8 +56,6 @@
     "SOC141H"
    ],
    "unexplained": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "SOC110",
     "SOC110H",
     "SOC141",
@@ -69,10 +65,8 @@
    "pass": false
   },
   "invented": {
-   "count": 18,
+   "count": 16,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "HIST107",
     "HIST107H",
     "HIST137",
@@ -474,5 +468,6 @@
    "Program learning outcomes are taken from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }

@@ -46,43 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 18,
    "listed": 23,
-   "share": 0.565,
+   "share": 0.783,
    "missing": [
     "PSYC22",
     "PSYCC1000",
     "PSYCC1000H",
-    "SOCI2",
-    "SOCI3",
-    "SOCI4",
-    "SOCI5",
-    "SOCI6",
     "SOCIC1000",
     "STATC1000"
    ],
-   "unexplained": [
-    "SOCI2",
-    "SOCI3",
-    "SOCI4",
-    "SOCI5",
-    "SOCI6"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 4,
    "codes": [
     "MATH10",
     "PSYC1A",
     "PSYC1AH",
-    "SOC1",
-    "SOC2",
-    "SOC3",
-    "SOC4",
-    "SOC5",
-    "SOC6"
+    "SOC1"
    ],
    "flagged": [
     "MATH10",
@@ -90,21 +74,22 @@
     "PSYC1AH",
     "SOC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
     18.0,
-    18.0
+    21.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -131,7 +116,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -394,5 +379,6 @@
    "No general education pattern, degree total, outcomes or careers are printed on this requisites page."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

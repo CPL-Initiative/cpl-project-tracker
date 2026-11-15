@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-14_s649_cvma_three_rows.sql
-name=s649_cvma_three_rows
+file=kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql
+name=s653b_workplan_goals_drop_current

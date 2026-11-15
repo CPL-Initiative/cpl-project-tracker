@@ -44,62 +44,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 48,
    "listed": 48,
-   "share": 0.75,
-   "missing": [
-    "HIS14",
-    "HIS15",
-    "HIS16",
-    "HIS17",
-    "HIS25",
-    "HIS28",
-    "HIS29",
-    "HIS31",
-    "HIS32",
-    "HIS33",
-    "HIS42",
-    "HIS44"
-   ],
-   "unexplained": [
-    "HIS14",
-    "HIS15",
-    "HIS16",
-    "HIS17",
-    "HIS25",
-    "HIS28",
-    "HIS29",
-    "HIS31",
-    "HIS32",
-    "HIS33",
-    "HIS42",
-    "HIS44"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 2,
    "codes": [
     "ENGL25",
-    "HIST14",
-    "HIST15",
-    "HIST16",
-    "HIST17",
-    "HIST25",
-    "HIST28",
-    "HIST29",
-    "HIST31",
-    "HIST32",
-    "HIST33",
-    "HIST42",
-    "HIST44",
     "SOC48"
    ],
    "flagged": [
     "ENGL25",
     "SOC48"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -112,6 +75,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -128,7 +92,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -575,5 +550,6 @@
    "GE pattern: the section heading names CalGETC, but the closing paragraph still refers to IGETC or CSUGE requirements; reviewer should check."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

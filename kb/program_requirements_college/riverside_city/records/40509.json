@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -74,6 +75,7 @@
     22.0,
     22.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -89,6 +91,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -185,5 +195,6 @@
    "The catalog's stated total of 22.00 units is consistent with a Certificate of Achievement of 16 to fewer than 30 semester units."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }
