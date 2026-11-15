@@ -167,20 +167,582 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/moreno_valley",
-  "kept": 139,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "30169",
-    "title": "Humanities, Philosophy & Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925",
-    "coverage": 0.976,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925",
-    "was_coverage": 0.976,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 140,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38111056537"
+ "fingerprints": {
+  "30113": {
+   "sha256": "423ddfb9fd69d537bc5e6ac9d9e3a471fde277d19dd05984c04ad7f6b6b0d96b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470"
+  },
+  "30114": {
+   "sha256": "423ddfb9fd69d537bc5e6ac9d9e3a471fde277d19dd05984c04ad7f6b6b0d96b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4470"
+  },
+  "30115": {
+   "sha256": "5e56b59f1275cd7c5154dd9b832ef23bc9ca62543e506e40388552ac9ab7ceb9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4469"
+  },
+  "30116": {
+   "sha256": "5e56b59f1275cd7c5154dd9b832ef23bc9ca62543e506e40388552ac9ab7ceb9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4469"
+  },
+  "30117": {
+   "sha256": "17a4dacf52e3b37670cff5e3e92204dfbdf6e4864991a3a37dff42f8031402a0",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4472"
+  },
+  "30118": {
+   "sha256": "17a4dacf52e3b37670cff5e3e92204dfbdf6e4864991a3a37dff42f8031402a0",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4472"
+  },
+  "30119": {
+   "sha256": "194c6f370b508028e6e7f97928cdc5bfb894ef887e0f60a5be30ace9b7eaf527",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4473"
+  },
+  "30120": {
+   "sha256": "194c6f370b508028e6e7f97928cdc5bfb894ef887e0f60a5be30ace9b7eaf527",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4473"
+  },
+  "30121": {
+   "sha256": "5a4e95c0ad697cbfb124d41dd77ad36f1b1379c9c21fe35d5eb7058d37e2f6ac",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4474"
+  },
+  "30122": {
+   "sha256": "5a4e95c0ad697cbfb124d41dd77ad36f1b1379c9c21fe35d5eb7058d37e2f6ac",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4474"
+  },
+  "30123": {
+   "sha256": "5e022b3c76bee8f622028558f3d1ffd440c87ecf1f8ae0893e81b624c1f0c0ac",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4559"
+  },
+  "30124": {
+   "sha256": "5e022b3c76bee8f622028558f3d1ffd440c87ecf1f8ae0893e81b624c1f0c0ac",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4559"
+  },
+  "30127": {
+   "sha256": "ac4f3df6a0b43827fc4cdcfe7298326ff93fc70ac3fa3bb5bf1897ecd89eab18",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4487"
+  },
+  "30128": {
+   "sha256": "ac4f3df6a0b43827fc4cdcfe7298326ff93fc70ac3fa3bb5bf1897ecd89eab18",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4487"
+  },
+  "30129": {
+   "sha256": "55be0e2c17c4ce6b341b8ef706d89dd0c31ebaba7fe16dbb9ff2c8cbfad8e67e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4503"
+  },
+  "30130": {
+   "sha256": "55be0e2c17c4ce6b341b8ef706d89dd0c31ebaba7fe16dbb9ff2c8cbfad8e67e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4503"
+  },
+  "30133": {
+   "sha256": "2b9627de5e3272b43356d0a75f53e4126906e31dc64f451b22cca31d6a522561",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4460"
+  },
+  "30134": {
+   "sha256": "2b9627de5e3272b43356d0a75f53e4126906e31dc64f451b22cca31d6a522561",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4460"
+  },
+  "30135": {
+   "sha256": "fa431a023f692aad948d2c481338a4919900b2489f66310166d852de800b71a7",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4569"
+  },
+  "30136": {
+   "sha256": "fa431a023f692aad948d2c481338a4919900b2489f66310166d852de800b71a7",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4569"
+  },
+  "30137": {
+   "sha256": "3571da5c10764a59fde413e94d5b5e52915c02f85910e32fd396bbdf1554f9fd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4493"
+  },
+  "30138": {
+   "sha256": "3571da5c10764a59fde413e94d5b5e52915c02f85910e32fd396bbdf1554f9fd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4493"
+  },
+  "30142": {
+   "sha256": "610eadac73f7c988088019c1b4c435ccb74b80e2b993a76ec9c7fa398c0dc7e8",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4552"
+  },
+  "30143": {
+   "sha256": "610eadac73f7c988088019c1b4c435ccb74b80e2b993a76ec9c7fa398c0dc7e8",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4552"
+  },
+  "30144": {
+   "sha256": "494aa205be846ea1fa16d6eb7c3330e4ee60703a630343161bc29ffb8e9a726c",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4497"
+  },
+  "30145": {
+   "sha256": "494aa205be846ea1fa16d6eb7c3330e4ee60703a630343161bc29ffb8e9a726c",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4497"
+  },
+  "30146": {
+   "sha256": "fbeb40014684bda12d54aa8101dd6d5127c78d7edba698f413c143e555e08cfe",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4501"
+  },
+  "30147": {
+   "sha256": "fbeb40014684bda12d54aa8101dd6d5127c78d7edba698f413c143e555e08cfe",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4501"
+  },
+  "30148": {
+   "sha256": "c8e7a8c9d1db6594a5f268d2bd641796b2a41b5057765f62333513bb52a926c9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4564"
+  },
+  "30149": {
+   "sha256": "c8e7a8c9d1db6594a5f268d2bd641796b2a41b5057765f62333513bb52a926c9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4564"
+  },
+  "30150": {
+   "sha256": "cd01aa3121e6103005c07bb0dfc935a899ce270466468ad6c3f3693013315301",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454"
+  },
+  "30151": {
+   "sha256": "47719cbb9dbce2d35f6627681412a48c768bcf0c61f248226da86e836e42c87a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4455"
+  },
+  "30152": {
+   "sha256": "e83095a662f5e12494d0f1d7a0f7f53bc97d6c4e2f7642fdf15ac69a27fc73f6",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459"
+  },
+  "30158": {
+   "sha256": "ab909cb2536069e92746c1fd9124341ddd5bef5bef1ffa3c4ec572e70fb4ef8e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4522"
+  },
+  "30159": {
+   "sha256": "ab909cb2536069e92746c1fd9124341ddd5bef5bef1ffa3c4ec572e70fb4ef8e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4522"
+  },
+  "30160": {
+   "sha256": "cbb533d31e723e25291aea757b0669efa441020899039f6b010c8ecc6a2510aa",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4523"
+  },
+  "30161": {
+   "sha256": "cbb533d31e723e25291aea757b0669efa441020899039f6b010c8ecc6a2510aa",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4523"
+  },
+  "30162": {
+   "sha256": "ce6d637b681821a2b862f76b7151846793fc114401b54dd603c7f3f3cb771834",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4484"
+  },
+  "30163": {
+   "sha256": "ce6d637b681821a2b862f76b7151846793fc114401b54dd603c7f3f3cb771834",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4484"
+  },
+  "30164": {
+   "sha256": "f5b34d27e58aac726609edb24c3976d53be053224b13c0e09f0549a22e38513b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4926"
+  },
+  "30165": {
+   "sha256": "ef7ef0deec3245ba02f9742fa4654395de72478f4c072a7a1fd8a58af5b38ebe",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4921"
+  },
+  "30166": {
+   "sha256": "fdc4ddf438b4237e2b6a950d45216bba869d94be5530fdcc16dc3aedff2ee89b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4923"
+  },
+  "30167": {
+   "sha256": "2524b367dcba666ec54524bdbb5013453db876b8960d76cfa39dc1ef590bb16e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4927"
+  },
+  "30168": {
+   "sha256": "4846a377eadbf4f2a069193fc1fe91930908ef2dcb854401347f97f479ff0dc9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4924"
+  },
+  "30169": {
+   "sha256": "2b5e7da214216995236cb2fda31104bec8cb34375de62ade1d9d9a748fed4b61",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4925"
+  },
+  "30170": {
+   "sha256": "d9314eb06c88c1583f9b51a8b44a66d5912c665a9ccce92f6171d383e63ce718",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4928"
+  },
+  "30584": {
+   "sha256": "fcf6a926ff9aa950aec9ba1204466cb13c8969ee18b883181e4c53b82118014d",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4565"
+  },
+  "31220": {
+   "sha256": "10bd05da25a6e74bcab0ecc036db001ae4eff5e2eb84f18b5644ef3650da9fed",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4496"
+  },
+  "31232": {
+   "sha256": "42c51015538c6f77f6b7234a968bf7920ebc7cb654e6bf866cd923148a88f630",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4922"
+  },
+  "32142": {
+   "sha256": "2082239bb29c7b8e7a05678fdca68296c139a9b9382383f56643b23e72961e4e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4546"
+  },
+  "32156": {
+   "sha256": "ccc6f9ec9124ff37987c4f0f117c9fb61795408e481d54406d10d3b83bca5fd1",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4566"
+  },
+  "32265": {
+   "sha256": "9f5b9e06d936b0e44378e53a2bf45bb927e14d24a296a9a1e0f6a55c3898c2c4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4513"
+  },
+  "32266": {
+   "sha256": "5bc953cf385a5189c7067edeae5eef0442a321f1cb0b6302d6179c0769a6343e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4567"
+  },
+  "32638": {
+   "sha256": "a81e6d94089b453da9c951e46f2437cbaa1c52b2b77ffdf0f9c27b6bf532265a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4462"
+  },
+  "32639": {
+   "sha256": "0db46419374a4ee5ab40a14b0372a3dabe6403a2b90bc92d13baaa7a0da550fb",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4488"
+  },
+  "32660": {
+   "sha256": "1fede3094e166871b666d9fcf992a1211570181dab92162201371194e45f8cee",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4556"
+  },
+  "32941": {
+   "sha256": "7b8cccf678cf763c7019886ef35a31cc969f64aff013b11d4fa43588b67ca419",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554"
+  },
+  "32946": {
+   "sha256": "423d3e4c3de5943ca452e89c11bd59f874943497d9d9b953b81f8f4854002f9b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553"
+  },
+  "33240": {
+   "sha256": "70e3e1e5a24530a0d0967433033d50cb732d82b942f8f92eaec2af300a1fd387",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527"
+  },
+  "33953": {
+   "sha256": "7e9b5a4eca905cf8ff2951ad2f05b7f301ce3a334b9286de5a899b25541c0897",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467"
+  },
+  "37196": {
+   "sha256": "cd01aa3121e6103005c07bb0dfc935a899ce270466468ad6c3f3693013315301",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454"
+  },
+  "37440": {
+   "sha256": "58dc92cff79a963a4360431926e48cafd9cbf7f3c7a0d2fd59162f47c8b92cdd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4542"
+  },
+  "37533": {
+   "sha256": "3e31be65886f94b76dbc1f89c72700ab0f878cf36e2799934498ef9c040cc5a2",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4463"
+  },
+  "37549": {
+   "sha256": "0b493aa16f8f006eca704ad6fc50ee45ec0f022f821b4bcdc6659821df21f9f3",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4544"
+  },
+  "37550": {
+   "sha256": "387560bda8ccd1933178be22de9b8acf731aa662055fdd70d5e2b49f9619871f",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4466"
+  },
+  "37552": {
+   "sha256": "fdce26ee7337ee6b423e583e45ccd00cb948b474a64646966033e8a825941d39",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4479"
+  },
+  "37553": {
+   "sha256": "27630b0c99fc18dd0ea31a446d5eac9bfee818afb3d154ba35f42643abcdb309",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4495"
+  },
+  "37554": {
+   "sha256": "fe1c77094769164127bbc900e23b9482b056dad72ab4b46e2983c9234b48ac62",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4545"
+  },
+  "37555": {
+   "sha256": "78c3c8a6e99461ccc7f61a53e2d67cb49aeb0472c8b566e945f6cd10b4281b50",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4562"
+  },
+  "37667": {
+   "sha256": "55dc50c2a24aeccc61a6b0d7cca920dc65b8370df6b6ec19b3209efc920733f9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4540"
+  },
+  "37800": {
+   "sha256": "164d7d8dd7786b852e2c50c2384412889a41eb04e2e0fb7759c039ac237fecfa",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4464"
+  },
+  "38179": {
+   "sha256": "518371b1bdfe9d132d46f61dbfaab525047f6ab8f537fdf07a962922b150aa75",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4534"
+  },
+  "38294": {
+   "sha256": "4957e73e7fdbce583ef02b084280b17b97cf757dee756133d6598ef614699bf2",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4486"
+  },
+  "38295": {
+   "sha256": "b12a3b8c1c931b327f5fd1e90a49f8aebbf24fbecf6d1cfb09eb035d9afb4f30",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4551"
+  },
+  "38758": {
+   "sha256": "b73e803d6c503d3476b3691728eb9afe0b21e47f65b4f946af0c96e0cac304f9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4526"
+  },
+  "38801": {
+   "sha256": "daed5383bf3873adad82d473748ee5c88ee00c0386d9995db0424aaa231b126e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4511"
+  },
+  "38802": {
+   "sha256": "13e9a9cff1c297f406d65c11987a2e9cdd9687b2cdd9c11b6381f844927b8aca",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4514"
+  },
+  "38803": {
+   "sha256": "bcda425bcbb6d0ae5336c54662736ffa6328f665482641c661e183125080c440",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4572"
+  },
+  "38804": {
+   "sha256": "969c9cefc373ad20aa598e80c26e5fadab38481bdef6a2a45d2b5fd204f36ecd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4558"
+  },
+  "38805": {
+   "sha256": "6c0fd5c262d61accac253945134ef2188f0cb73d7f9653e0d6d6bbea0fc2a1e3",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4490"
+  },
+  "38821": {
+   "sha256": "86b264e4878a7871e0f7cfe589095e66c0c5687459ab23175ca62f20911c2ff3",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4480"
+  },
+  "38822": {
+   "sha256": "211e897abb5d4c3aeb7730d4de6f6a550082066091401eff40e175e80ff670b1",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4453"
+  },
+  "38823": {
+   "sha256": "42d10ed84fa6bf203ac7baba86f1e55f8a79414a1d05685379e0f5c959e9819c",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4532"
+  },
+  "38876": {
+   "sha256": "c88a1a89e81abb2d65c486b42d576d1d1b372f83088e6b3d4c042bf27860981a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4457"
+  },
+  "38934": {
+   "sha256": "6e6e31099fd2d373a672e32aa456b860beb7300263e7a27c39445bb684afb0bb",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4571"
+  },
+  "38935": {
+   "sha256": "d3d0d7c495ab4691221c3013ccd61555a777d8c58f6ed5018256dcfb4b19f2a3",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4570"
+  },
+  "38937": {
+   "sha256": "624881a6e64a9b291549cd9a64fd1910bcd37ea8effb95d3aa4fdb1a498944b4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4539"
+  },
+  "38938": {
+   "sha256": "906f803344608e2d314fca443289d18dcfee24012d4dfed2c56e069d54be500b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4538"
+  },
+  "38939": {
+   "sha256": "e6b9a9dffa62d066a1c4d4a34240a5dbf370030d855bd9811c23dbedc6a1ff67",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4557"
+  },
+  "39002": {
+   "sha256": "7e6c87b15b642f764d4ba5a8ccc853a5518e09e83091aab806510432b153ca69",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4482"
+  },
+  "39003": {
+   "sha256": "e9da09af792c314a5f149baee9089dc86c8c2772914cbd34d60d489886dfd21b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4481"
+  },
+  "39162": {
+   "sha256": "b481a7a4724d7a288b87187a2913ee15c0ba5d4f73fc10cabcab449cac2a78c7",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4530"
+  },
+  "40328": {
+   "sha256": "0271d1e8089dc2bf1f32b94aca5ec6b00068ba5921c2cab1269fc8cdefa66c65",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4461"
+  },
+  "40336": {
+   "sha256": "d19e2881bf5642f65cd99ff25bada64592da79dde27f98b17f6a5cca3802cbd9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4568"
+  },
+  "40355": {
+   "sha256": "53e377de125347d62cf8cdbabcac4e5eaab5afd5746bafba7fd014b822d8dbbb",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4548"
+  },
+  "40356": {
+   "sha256": "892fadb7756cff68194d5ec6b9034bac906ca964f94f5db43a8e127d48cffe23",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4549"
+  },
+  "40357": {
+   "sha256": "a21f262d3a2746f54302d63b6566d47053241541d80c2a4470af16daa8acbd59",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4550"
+  },
+  "40390": {
+   "sha256": "fc48334da50b4d8f91a562af685ed01f3b8bbd64898f15a239ab1309a346f7e9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4537"
+  },
+  "40467": {
+   "sha256": "97db2df5fbf82e0c275714195059742296de3011a53e77d8eb8bdbe1824b17f8",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4515"
+  },
+  "40468": {
+   "sha256": "ec3a750e4a06a971793bccba755091b1496f02936e0a39272e92232237fdfbb2",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4555"
+  },
+  "40492": {
+   "sha256": "8634dcdc6ce4ccf24f35bcbfa68a006a143b16e9f470f191c5810615ac2a3b09",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4516"
+  },
+  "40493": {
+   "sha256": "c38359aad75a0d1881751740cd567209bc815b8e8d33f18e2f58a733fd5ac284",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4518"
+  },
+  "40505": {
+   "sha256": "526ca7d867802a7be9bb63e0c0374dba563e0763d679f1254ea52a0a2160678f",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4536"
+  },
+  "40564": {
+   "sha256": "b13a2e1eab367bb236c389d002ab43bf08624db0c677f516f1ef2d5ba05d1fb9",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4519"
+  },
+  "40586": {
+   "sha256": "14ec2389251818c6dc5237728010b852f6989b7423878716a78879479922ef3e",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4524"
+  },
+  "41389": {
+   "sha256": "35a69c05ca73dfb802da5a4dbdb597abb12cd44722fe829d17710156acf4a7b3",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4531"
+  },
+  "41529": {
+   "sha256": "f2b98e943697066e857db2000d3443de71d6b5c73b73da4e6257a490ab2be2db",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4505"
+  },
+  "41544": {
+   "sha256": "c264b9bb9e79e06acdb498b2d27991e0423126e3dab315f55ad3562635f8fc74",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4506"
+  },
+  "41566": {
+   "sha256": "f2b98e943697066e857db2000d3443de71d6b5c73b73da4e6257a490ab2be2db",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4505"
+  },
+  "41630": {
+   "sha256": "4d28af5f6b86bf0e6f88d062d7a403475d1eaddacfe833e779f8bd9a30bc9838",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4508"
+  },
+  "41635": {
+   "sha256": "a710f2eca2bdd076bdd92527b3ca244d2632d57e3c22bd3a27683524b044a66a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4468"
+  },
+  "41654": {
+   "sha256": "a889469b2747082557795c41a05ef37aaffd8de4888471b53e4094907b292fcd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4489"
+  },
+  "41655": {
+   "sha256": "4d28af5f6b86bf0e6f88d062d7a403475d1eaddacfe833e779f8bd9a30bc9838",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4508"
+  },
+  "41670": {
+   "sha256": "0947ce83b93650ded9d6adc1f96d8b5f46c503d0fb39960af8d091d5d83f5cfd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4525"
+  },
+  "41676": {
+   "sha256": "a889469b2747082557795c41a05ef37aaffd8de4888471b53e4094907b292fcd",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4489"
+  },
+  "41711": {
+   "sha256": "89577cce3b1f8010e7aeff48fe5ada9d442de922f1e27964e4272d2fbf48c5a4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4535"
+  },
+  "41720": {
+   "sha256": "5426cc090d0cf10fc4d7e31f00231bda0b2be3aa7ad93ac686185a44ca0e7c12",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4491"
+  },
+  "41738": {
+   "sha256": "6aa78a0c283eb150425efd750d2ab34aaa55cb99c1ac7575eaf81bde19acf15b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4504"
+  },
+  "41743": {
+   "sha256": "6aa78a0c283eb150425efd750d2ab34aaa55cb99c1ac7575eaf81bde19acf15b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4504"
+  },
+  "41745": {
+   "sha256": "3967fab3958c3c04699f5fbb94b5bb0129dadc8b098c3ad757241fce29010b92",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507"
+  },
+  "41748": {
+   "sha256": "13acc637b767248eda1dc3e8b18ea7fb664f84b0d9f128ac3d194dabffcf2cde",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4492"
+  },
+  "41752": {
+   "sha256": "c264b9bb9e79e06acdb498b2d27991e0423126e3dab315f55ad3562635f8fc74",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4506"
+  },
+  "41753": {
+   "sha256": "3967fab3958c3c04699f5fbb94b5bb0129dadc8b098c3ad757241fce29010b92",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4507"
+  },
+  "42484": {
+   "sha256": "12e336065cdc124f91bf8536f2a52ef77b6b845e3713443a79ec869384a1243a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4500"
+  },
+  "42688": {
+   "sha256": "f9a49b1b2102dd14e94feb79595de82a571e5fb383fd49ad9713232ba7ead8d4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4517"
+  },
+  "42794": {
+   "sha256": "ace8dad7a1bef2cb222007cd5695971222176f09937c98c2d19378c9a01efa88",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4502"
+  },
+  "42826": {
+   "sha256": "bbdca6517bc8a0e039326c1a2b6de56839b2762f6c91c83bee71209d465ae5d4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4471"
+  },
+  "42828": {
+   "sha256": "d4a715fdde14da3fbf24d60791594891ba6bd95329d22a61e2f517f8b97a1c8d",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4483"
+  },
+  "42829": {
+   "sha256": "bbdca6517bc8a0e039326c1a2b6de56839b2762f6c91c83bee71209d465ae5d4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4471"
+  },
+  "43792": {
+   "sha256": "0bdb80d005bbc78400d6f5e08db169e6d0995fb0ab94d1c5e7d9597fc1eb19e5",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4966"
+  },
+  "43882": {
+   "sha256": "8b75ca1ebb867828657c233c340a634917530a74ca827b25f0f82c0c1efac99c",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4867"
+  },
+  "43884": {
+   "sha256": "09fda026524f0f7d44262bb307d6bc57a6b7cb407692fc0f227a33c20c89c14b",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4868"
+  },
+  "44790": {
+   "sha256": "b199bfc17631c903a2e47885d1102cb4a61b96862e18b31faedcff700cf24779",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4723"
+  },
+  "45017": {
+   "sha256": "27630b0c99fc18dd0ea31a446d5eac9bfee818afb3d154ba35f42643abcdb309",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4495"
+  },
+  "45447": {
+   "sha256": "3a22945d879e64d43cd9d6a2b02eb92d121c30c1b7206ab36939b00b32c431b4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4718"
+  },
+  "45914": {
+   "sha256": "af702aa03b961eb746156d1178427fa5e630081b54dfaa31ed16b8d22e1b5cd1",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6365"
+  },
+  "46200": {
+   "sha256": "9dccce868d48b3deed99edf696bd476289e918431a22363bed98b57686e354f4",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6380"
+  },
+  "46215": {
+   "sha256": "a97c031b29c7090b9a3e7893862d501b8923f55b0c48b94057b9b39eecc4f3d5",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6376"
+  },
+  "46236": {
+   "sha256": "1011d2ebfc54f035b3426ff25180b065d9ccd6ac2e6fa6a69f6caa6721ca3ad6",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4543"
+  },
+  "46532": {
+   "sha256": "382c96b456d500a662ffdab5d445fdb392de0ad27ab0f7ae5e6d8199b400727a",
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858"
+  }
+ },
+ "staged_from": {
+  "run": "38111056537",
+  "proof": "the filed account equal but for its run, and 1 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43609968396"
 }

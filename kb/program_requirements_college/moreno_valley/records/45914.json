@@ -44,25 +44,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 95,
+   "placed": 102,
    "listed": 104,
-   "share": 0.913,
+   "share": 0.981,
    "missing": [
-    "HIS16",
-    "HIS17",
-    "HIS18",
-    "HIS19",
-    "HIS2",
-    "HIS35",
-    "HIS42",
     "HIS60",
     "HIS61"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 19,
+   "count": 12,
    "codes": [
     "ARTH15",
     "ARTH20",
@@ -70,13 +64,6 @@
     "ARTHC1100H",
     "ARTHC1200",
     "ARTHC1200H",
-    "HIST16",
-    "HIST17",
-    "HIST18",
-    "HIST19",
-    "HIST2",
-    "HIST35",
-    "HIST42",
     "HUM10H",
     "HUM4H",
     "HUM5H",
@@ -91,13 +78,6 @@
     "ARTHC1100H",
     "ARTHC1200",
     "ARTHC1200H",
-    "HIST16",
-    "HIST17",
-    "HIST18",
-    "HIST19",
-    "HIST2",
-    "HIST35",
-    "HIST42",
     "HUM10H",
     "HUM4H",
     "HUM5H",
@@ -118,6 +98,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": [
     "'Group 7 - RCCD Study Abroad Program' chooses units but names no minimum"
    ]
@@ -135,6 +116,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -1077,5 +1066,6 @@
    "THE-35 is printed as 'Classical Acting with Emphasis in Shakespearean Verse'; the closed-list title differs slightly."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

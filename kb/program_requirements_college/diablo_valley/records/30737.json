@@ -46,25 +46,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 20,
-   "share": 0.9,
+   "share": 0.95,
    "missing": [
-    "BIOSC102",
-    "BIOSC117"
+    "BIOSC102"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BIOL117",
     "BIOLC1000"
    ],
    "flagged": [
-    "BIOL117",
     "BIOLC1000"
    ],
    "pass": true
@@ -368,5 +365,6 @@
    "Program learning outcomes are printed for the program page as a whole and recorded for this award; outcomes copied verbatim including 'effective user'."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }

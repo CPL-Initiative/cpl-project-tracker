@@ -5,16 +5,19 @@
  "found": 227,
  "extracted": 225,
  "errors": 0,
- "passed_machine_checks": 161,
+ "passed_machine_checks": 162,
  "failed": {
-  "coverage": 30,
-  "invented": 5,
+  "coverage": 27,
+  "invented": 2,
   "arithmetic": 61,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 15.44,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 15.44,
  "cost_per_program": 0.0686,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "39611",
@@ -64,5 +67,5 @@
    }
   }
  ],
- "run": "43355003065"
+ "run": "43609973859"
 }

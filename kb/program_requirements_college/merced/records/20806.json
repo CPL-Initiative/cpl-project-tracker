@@ -88,14 +88,15 @@
    "status": "equal",
    "computed": [
     30.0,
-    30.0
+    37.0
    ],
    "stated": [
     30.0,
     30.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -341,5 +342,6 @@
    "Suggested electives are printed with Total Credits 0.0 - 0.0 and are recorded as recommended."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

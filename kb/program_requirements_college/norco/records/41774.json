@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -72,6 +73,7 @@
     21.0,
     21.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -87,6 +89,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -185,5 +195,6 @@
    "ADJ-27 and PHO-27 are cross-listed (same title); the catalog says 'Take ADJ-27 or PHO-27', recorded as one entry with an alternative."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

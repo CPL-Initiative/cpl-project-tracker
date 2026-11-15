@@ -52,6 +52,7 @@
     "ECO8"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -79,6 +80,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +96,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -486,5 +499,6 @@
    "The outcomes are printed for the Associate Degree in Administration/Information Systems and copied verbatim, including apparent typos ('theme and by which economic grow this achieved')."
   ]
  },
- "extracted_run": "38095619629"
+ "extracted_run": 43609971090,
+ "read_run": "38095619629"
 }

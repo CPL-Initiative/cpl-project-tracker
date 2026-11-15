@@ -53,6 +53,7 @@
     "MAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,6 +81,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +97,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -294,5 +307,6 @@
    "Codes printed with hyphens (e.g., ACC-1A) were matched to closed-list codes with spaces or no separator (ACC 1A, MATH5, PSYC48, ECONC2001H) and not flagged as additions. ECON-C2001, ECON-C2002 and MATH-C2210 do not appear in the closed list and are flagged as catalog additions."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

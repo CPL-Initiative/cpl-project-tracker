@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     17.5,
     17.5
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 11.5-11.5; the catalog states 17.5-17.5"
    ]
@@ -85,6 +87,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -208,5 +218,6 @@
    "Program Learning Outcomes are printed for this certificate section."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

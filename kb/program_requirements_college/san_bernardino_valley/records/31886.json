@@ -45,25 +45,17 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "ANTHRO102",
-    "ANTHRO102H"
-   ],
-   "unexplained": [
-    "ANTHRO102",
-    "ANTHRO102H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 10,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "COMM125",
     "COMM135",
     "COMM140",
@@ -87,7 +79,7 @@
     "ENGLC1002",
     "ENGLC1002H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -360,6 +352,6 @@
    "The outcomes are printed in the page's program-wide outcomes tab and are recorded for this award."
   ]
  },
- "extracted_run": 43355003065,
- "read_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": 43355003065
 }

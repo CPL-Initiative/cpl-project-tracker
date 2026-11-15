@@ -52,6 +52,7 @@
     "MAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -70,15 +71,16 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    38.0,
+    40.0,
     40.0
    ],
    "stated": [
     41.0,
     41.0
    ],
+   "against": "program",
    "why": [
-    "the blocks sum to 38.0-40.0; the catalog states 41.0-41.0"
+    "the blocks sum to 40.0-40.0; the catalog states 41.0-41.0"
    ]
   },
   "repeated": {
@@ -94,6 +96,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -383,5 +396,6 @@
    "Physics: student completes one of two sequences (PHY-2A and PHY-2B, or PHY-4A and PHY-4B), 8 units."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

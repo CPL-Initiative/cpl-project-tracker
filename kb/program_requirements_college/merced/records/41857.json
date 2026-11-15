@@ -46,41 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 23,
    "listed": 25,
-   "share": 0.76,
+   "share": 0.92,
    "missing": [
-    "POLS4",
     "POLSC1000",
-    "SOCI2",
-    "SOCI4",
-    "SOCI5",
     "STATC1000"
    ],
-   "unexplained": [
-    "POLS4",
-    "SOCI2",
-    "SOCI4",
-    "SOCI5"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 2,
    "codes": [
     "MATH10",
-    "POSC1",
-    "POSC4",
-    "SOC2",
-    "SOC4",
-    "SOC5"
+    "POSC1"
    ],
    "flagged": [
     "MATH10",
     "POSC1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -121,7 +108,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -369,5 +356,6 @@
    "The page prints no general education pattern, degree total, program learning outcomes or careers."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }
