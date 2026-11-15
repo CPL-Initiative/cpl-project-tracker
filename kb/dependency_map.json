@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 987,
+  "file_datasets": 990,
   "external_services": 195,
   "consumers": 596,
   "workflows": 72,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2297
+     "line": 2435
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2253
+     "line": 2391
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2190
+     "line": 2328
     }
    ],
    "main_committers": []
@@ -2194,7 +2194,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4496,
+     "line": 4513,
      "tabs": [
       "unified-courses"
      ]
@@ -2257,7 +2257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3684,
+     "line": 3701,
      "tabs": [
       "unified-courses"
      ]
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1783
+     "line": 1921
     }
    ],
    "main_committers": []
@@ -6406,7 +6406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13343
+     "line": 13344
     }
    ],
    "served": true,
@@ -7028,7 +7028,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13677
+     "line": 13678
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7872,7 +7872,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13284
+     "line": 13285
     }
    ],
    "served": true,
@@ -7980,7 +7980,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     }
    ],
    "served": false,
@@ -7993,7 +7993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 758
+     "line": 886
     }
    ],
    "served": false,
@@ -8442,7 +8442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13340
+     "line": 13341
     }
    ],
    "served": true,
@@ -8560,7 +8560,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10295
+     "line": 10296
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -8588,7 +8588,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6285
+     "line": 6423
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8608,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6335
+     "line": 6473
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9143,7 +9143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13901
+     "line": 13902
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9189,7 +9189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13921
+     "line": 13922
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -15143,7 +15143,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10220
+     "line": 10221
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -15250,7 +15250,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3360,
+     "line": 3377,
      "tabs": [
       "unified-courses"
      ]
@@ -15600,7 +15600,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 619,
+     "line": 630,
      "tabs": [
       "unified-courses"
      ]
@@ -17370,7 +17370,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3141
+     "line": 3279
     }
    ],
    "served": true,
@@ -17383,7 +17383,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6719
+     "line": 6857
     }
    ],
    "served": true,
@@ -17503,6 +17503,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/sequences/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 537
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json": {
@@ -18517,6 +18530,13 @@
      "direction": "read",
      "how": "literal",
      "line": 49
+    },
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 538
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19576,7 +19596,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 971,
+     "line": 982,
      "tabs": [
       "unified-courses"
      ]
@@ -20225,7 +20245,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9781
+     "line": 9782
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -21133,7 +21153,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6535
+     "line": 6673
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21153,7 +21173,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5754
+     "line": 5892
     }
    ],
    "served": false,
@@ -21770,7 +21790,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6622
+     "line": 6760
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22726,7 +22746,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 472
+     "line": 474
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23728,7 +23748,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13112
+     "line": 13113
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -23893,7 +23913,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13342
+     "line": 13343
     }
    ],
    "served": true,
@@ -23916,14 +23936,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13142
+     "line": 13143
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13142
+     "line": 13143
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -26290,6 +26310,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_fragment_path_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_heading_agreement_test.py": {
    "consumers": [
     {
@@ -26953,6 +26986,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tmc/source_data/coci_program_export_*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 538
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tmc/tmc_or_groups.json": {
    "consumers": [
     {
@@ -27275,7 +27321,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13344
+     "line": 13345
     }
    ],
    "served": true,
@@ -27299,7 +27345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 933,
+     "line": 944,
      "tabs": [
       "unified-courses"
      ]
@@ -27537,7 +27583,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 901,
+     "line": 912,
      "tabs": [
       "unified-courses"
      ]
@@ -27547,14 +27593,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10347
+     "line": 10348
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10347
+     "line": 10348
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27596,7 +27642,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 881,
+     "line": 892,
      "tabs": [
       "unified-courses"
      ]
@@ -27606,14 +27652,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -27708,7 +27754,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1094,
+     "line": 1105,
      "tabs": [
       "unified-courses"
      ]
@@ -27718,14 +27764,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10431
+     "line": 10432
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10431
+     "line": 10432
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -27823,7 +27869,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 917,
+     "line": 928,
      "tabs": [
       "unified-courses"
      ]
@@ -27833,14 +27879,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10419
+     "line": 10420
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10419
+     "line": 10420
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -27970,7 +28016,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1217,
+     "line": 1228,
      "tabs": [
       "unified-courses"
      ]
@@ -27980,14 +28026,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10383
+     "line": 10384
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10383
+     "line": 10384
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -28093,7 +28139,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 949,
+     "line": 960,
      "tabs": [
       "unified-courses"
      ]
@@ -28103,14 +28149,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -29192,7 +29238,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6693
+     "line": 6831
     }
    ],
    "main_committers": []
@@ -29204,7 +29250,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6802
+     "line": 6940
     }
    ],
    "main_committers": []
@@ -31384,7 +31430,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 458,
+     "line": 463,
      "tabs": [
       "unified-courses"
      ]
@@ -31394,7 +31440,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 541,
+     "line": 552,
      "tabs": [
       "unified-courses"
      ]
@@ -32373,7 +32419,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 625,
+     "line": 636,
      "tabs": [
       "unified-courses"
      ]
@@ -34278,6 +34324,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
+    "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",

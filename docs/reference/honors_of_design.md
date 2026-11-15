@@ -280,9 +280,16 @@ names the rows file, its last check reports the applied state rather than failin
 Each step lands only after the one before it, under its own receipt, and each has its undo.
 
 0. **The field** (#3313, code only). Undo: `git revert`.
-1. **First rows and the restamp**: HUMA M1110's and LIBR M1040's `unified_title` rows restamped from
+1. **First rows and the restamp** (done: applied 2026-11-14T18:44:02Z by supabase-migrate run 43627165705; receipt
+   `kb/receipts/migration_s653_honors_of_field_43627165705.json`): HUMA M1110's and LIBR M1040's `unified_title` rows restamped from
    `automerge-v1@bot` 2026-06-12 to `honors-s652@bot` (COBIx's review of #3304, item 2), and `honors_of` for HUMA M10ME
-   and LIBR M10CJ. Its own PR (`claude/honors-of-step1-s653`), judged safe by five readers of #3315.
+   and LIBR M10CJ. Its own PR (#3329, `claude/honors-of-step1-s653`), after five readers of #3315 judged it safe.
+   The S652 follow-ups rollback refuses unless it restores both titles, so after step 1 it refuses and changes
+   nothing. The step-1 rollback refuses while a removable step-2 row (cohort `honors-rows-s653@bot`, not validated
+   by a person) stands or a row is keyed on an H id, and unless it restores both titles; it deletes its rows by
+   cohort and field, and keeps a row a person validated (`kept_for_a_person`). The anchored plan mints neither HUMA
+   M10ME nor LIBR M10CJ. The restamp's before-values are committed in
+   `kb/honors_of_s653_out/2026-11-14/step1_restamp_before.json`. Proof: `tests/kb_curation_guarded_sql_proof.py`.
 2. **The rows**, after every item above.
 3. **HUMA M10OI into HUMA M1110** (`d-huma-m10oi-into-m1110-s652`) and LIBR M10CJ's stale minted entry, each its own
    small change after step 1, when the pairwise hold already stands.

@@ -1,4 +1,7 @@
--- DRAFT, NOT IN kb/migrations/.apply. Step 1 of the Honors build (S653): the honors_of field's first rows, and the two
+-- APPLIED 2026-11-14T18:44:02Z by supabase-migrate run 43627165705 (kb/migrations/.apply, name s653_honors_of_field);
+-- receipt: kb/receipts/migration_s653_honors_of_field_43627165705.json. The conductor's live read at 18:49Z found
+-- both honors_of rows under honors-s653@bot and both titles under honors-s652@bot, all stamped 18:44:02Z.
+-- Step 1 of the Honors build (S653): the honors_of field's first rows, and the two
 -- retitled base rows restamped. Design: docs/reference/honors_of_design.md (*Steps*, step 1). Drafted 2026-11-14T17:17Z.
 -- Rulings: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): "Build the field first, then the rows"; "Two-way: either
 -- satisfies the other". COBIx's review of #3304: item 1, a pairwise hold before HUMA M10OI merges into HUMA M1110;

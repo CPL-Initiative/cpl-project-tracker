@@ -5,16 +5,19 @@
  "found": 163,
  "extracted": 163,
  "errors": 0,
- "passed_machine_checks": 134,
+ "passed_machine_checks": 144,
  "failed": {
-  "coverage": 6,
-  "invented": 5,
-  "arithmetic": 25,
+  "coverage": 2,
+  "invented": 1,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 9.69,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 9.69,
  "cost_per_program": 0.0594,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "17943",
@@ -95,5 +98,5 @@
    }
   }
  ],
- "run": "39239492986"
+ "run": "43609965348"
 }

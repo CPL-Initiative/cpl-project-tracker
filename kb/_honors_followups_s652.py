@@ -173,7 +173,7 @@ from guard g;
 -- and stamp, and otherwise raises and changes nothing. A title restamped since (S653 step 1 moves both to
 -- honors-s652@bot: run 2026-11-14_s653_honors_of_field_rollback.sql first) or edited by a person refuses the whole
 -- rollback, so the Keep as-is rows are never deleted while a title stays unrestored (#3315's review, item 3). The
--- delete keys on the cohort and the field, never on ids: an Honors mint re-keys HUMA M10ME's row to HUMA M1110H. A
+-- delete keys on the cohort and the field, never on ids (the anchored plan mints no HUMA M1110H; #3315). A
 -- row a person has validated stays, and the result counts it (kept_for_a_person).
 with expected (course_id, value_before, value_after) as (
   values

@@ -45,34 +45,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 18,
    "listed": 18,
-   "share": 0.833,
-   "missing": [
-    "ART105",
-    "ART107",
-    "ART108"
-   ],
-   "unexplained": [
-    "ART105",
-    "ART107",
-    "ART108"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "ART161",
-    "ARTH105",
-    "ARTH107",
-    "ARTH108"
+    "ART161"
    ],
    "flagged": [
     "ART161"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -129,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -342,5 +331,6 @@
    "The program learning outcomes come from the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }

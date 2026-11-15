@@ -46,34 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 15,
    "listed": 15,
-   "share": 0.733,
-   "missing": [
-    "BIOSC119",
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC146"
-   ],
-   "unexplained": [
-    "BIOSC119",
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC146"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "BIOL119",
-    "BIOL130",
-    "BIOL131",
-    "BIOL146"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -328,5 +313,6 @@
    "The text begins mid-sentence ('d to transfer.'), so part of the program description may be cut off; no careers are named in the visible text."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43609976980,
+ "read_run": "43353452924"
 }

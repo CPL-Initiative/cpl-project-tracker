@@ -9,8 +9,9 @@
 --   * both titles still read honors-s652@bot with the value step 1 left. A person's later edit refuses the rollback
 --     rather than leaving one title restored and one not; a person decides that case;
 --   * the cohort honors-s653@bot holds exactly two honors_of rows.
--- The delete keys on the cohort and the field, never on today's ids, so it finds both rows after a mint re-keys
--- HUMA M10ME and LIBR M10CJ to their H ids. It never deletes a row a person has validated (the Verify control stamps
+-- The delete keys on the cohort and the field, never on today's ids. The anchored plan mints neither HUMA M10ME nor
+-- LIBR M10CJ (each base takes a second Honors M-ID: PHIL M1124, LIBR M10CI), and this rollback refuses while any row
+-- is keyed on an H id, so it runs on the ids step 1 wrote. It never deletes a row a person has validated (the Verify control stamps
 -- every row of a course, honors_of included): such a row stays, and the result counts it as kept_for_a_person.
 -- Run this BEFORE 2026-11-14_s652_honors_followups_rollback.sql.
 with expected (course_id, value) as (

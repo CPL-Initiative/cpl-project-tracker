@@ -44,24 +44,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 37,
    "listed": 39,
-   "share": 0.923,
+   "share": 0.949,
    "missing": [
-    "HIS2",
     "HIS6",
     "HIS7"
    ],
-   "unexplained": [
-    "HIS2"
-   ],
-   "pass": false
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "ARTH4",
-    "HIST2",
     "HISTC1001",
     "HISTC1002"
    ],
@@ -70,7 +67,7 @@
     "HISTC1001",
     "HISTC1002"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -83,6 +80,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,7 +97,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -464,5 +473,6 @@
    "Program outcomes are printed once for the program and recorded for this award."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

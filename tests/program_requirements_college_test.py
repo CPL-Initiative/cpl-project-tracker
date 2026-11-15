@@ -3630,6 +3630,264 @@ ge_given = C.assign([calgetc, speech], [ge_page])
 check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
       and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
       "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+check(not C.ge_page_names_program(ge_page, speech) and not C.ge_page_names_program(ge_page, calgetc),
+      "the Cal-GETC page names no program once the pattern is set aside (S646 holds)")
+
+# A page that names a program beside the pattern is that program's page (S653). Riverside City heads its transfer
+# degrees "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)"; under S646's rule each lost its own
+# page (capture 43619958385: 36 page_claimed, 4 not_found). Read on the committed capture (run 38108461470): every
+# filed page, its heading as filed and its listed codes printed, and the five degrees the conductor checked.
+def _printed(code):
+    m = re.match(r"^([A-Z]+?)(C\d{4}H?)$", code) or re.match(r"^([A-Z]+)(\d.*)$", code)
+    return "%s %s" % m.groups() if m else code
+
+
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "riverside_city", "sources.json")) as _fh:
+    rcc_src = [s for s in json.load(_fh) if (s.get("source") or {}).get("url")]
+rcc_pages, rcc_seen = [], set()
+for s in rcc_src:
+    if s["source"]["url"] in rcc_seen:
+        continue
+    rcc_seen.add(s["source"]["url"])
+    body = s["source"]["h1"] + "\n" + "\n".join(_printed(c) + " Course" for c in s["codes_found"]) + "\nTotal 18 units"
+    rcc_pages.append(page(s["source"]["url"], s["source"]["h1"], body))
+# Communication Studies 2.0 (42892) owns /5928; the plain 30578 filed it wrongly (second reader, #3324).
+rcc_own = {"30581": "/6053", "32658": "/6040", "32813": "/Anthro_ADT", "42892": "/5928", "31561": "/5960"}
+rcc_progs = [{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+              "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]}
+             for s in rcc_src if s["control_number"] in rcc_own]
+check(len(rcc_progs) == 5 and all(C.ge_pattern_page(next(p for p in rcc_pages if p["url"].endswith(rcc_own[g["control_number"]])))
+                                  for g in rcc_progs),
+      "each of the five degrees' own pages names a general education pattern")
+rcc_given = C.assign(rcc_progs, rcc_pages)
+check(all((rcc_given[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "the five degrees claim their own pages: %r" % {cn: (v["best"] or {}).get("url", "")[-12:] for cn, v in rcc_given.items()})
+_names = C.ge_page_names_program
+C.ge_page_names_program = lambda pg, program, titles=None, owners=None: False      # S646's rule as it stood
+rcc_before = C.assign(rcc_progs, rcc_pages)
+C.ge_page_names_program = _names
+check(not any((rcc_before[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "under S646's rule as it stood, none of the five reads its own page")
+check(not C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Sociology", "award": "A.A- T Degree"})
+      and C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Psychology", "award": "A.A- T Degree"}),
+      "a degree's page names its own program, never a sibling's")
+
+# The second reader's findings on #3324 (S653): ge_page_owner() gives a pattern's page to the one listed program
+# every component its heading prints agrees with (title words, award, version), or to none.
+def _gp(*rows):
+    return [{"control_number": cn, "title": t, "award": a} for cn, t, a in rows]
+
+
+mv_list = _gp(("30150", "Administration of Justice", "A.S. Degree"),
+              ("30151", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q"),
+              ("37196", "Administration of Justice", "A.S. T Degree"),
+              ("37533", "Art History", "A.A- T Degree"), ("33240", "History", "A.A- T Degree"),
+              ("43792", "Physics", "A.S. T Degree"))
+mv_head = {"h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"}
+check((C.ge_page_owner(mv_head, mv_list) or {}).get("control_number") == "37196",
+      "award: a page that says it is a transfer degree goes to the A.S.-T, never the A.S. (30150) or the certificate")
+check((C.ge_page_owner({"h1": "Music - Associate in Arts (CalGETC)"},
+                       _gp(("1", "Music", "A.A- T Degree"), ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2",
+      "award: a page that names a local award goes to that award")
+check((C.ge_page_owner({"h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "37533", "title: the Art History page is Art History's, never History's")
+check((C.ge_page_owner({"h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"},
+                       _gp(("31163", "American Studies", "A.A- T Degree"),
+                           ("43897", "Social Justice: African American Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "43897",
+      "title: the Social Justice page goes to the listed title naming more of it, never American Studies")
+cs = _gp(("30578", "Communication Studies", "A.A- T Degree"), ("42892", "Communication Studies 2.0", "A.A- T Degree"))
+check((C.ge_page_owner({"h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)"}, cs) or {})
+      .get("control_number") == "42892"
+      and (C.ge_page_owner({"h1": "Communication Studies - Associate in Arts for Transfer (ADT) - AA600 (CalGETC)"}, cs) or {})
+      .get("control_number") == "30578",
+      "version: a 2.0 heading goes to the 2.0 program, a heading with none to the sibling with none")
+check((C.ge_page_owner({"h1": "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "43792",
+      "version: Moreno Valley's one Physics, listed with no version, keeps its 2.0 page")
+check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24"},
+                       _gp(("32948", "Kinesiology", "A.A- T Degree"))) or {}).get("control_number") == "32948",
+      "control: a heading printing the program's control number is its page, its unit counts no version")
+# The third reader's synthetic headings (S653): every identity the heading prints agrees, both ways.
+_phys = _gp(("1", "Physics", "A.S. T Degree"), ("2", "Physics 2.0", "A.S. T Degree"))
+for _h in ("Physics 2 - Associate in Science for Transfer (CalGETC)", "Physics v2 - Associate in Science for Transfer (CalGETC)",
+           "Physics Version 2 - Associate in Science for Transfer (CalGETC)"):
+    check((C.ge_page_owner({"h1": _h}, _phys) or {}).get("control_number") == "2",
+          "version in any spelling: %r goes to Physics 2.0, never Physics" % _h)
+check((C.ge_page_owner({"h1": "Chemistry 2.0 AS-T Cal-GETC 37.5"},
+                       _gp(("1", "Chemistry", "A.S. T Degree"), ("2", "Chemistry 2.0", "A.S. T Degree"))) or {})
+      .get("control_number") == "2", "version: a number after the award is units, never a version (37.5)")
+_span = _gp(("1", "Spanish I", "Certificate of Achievement"), ("2", "Spanish II", "Certificate of Achievement"))
+check((C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span) or {}).get("control_number") == "2"
+      and C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span[:1]) is None,
+      "identity: Spanish II is Spanish II's page, never Spanish I's")
+check(C.ge_page_owner({"h1": "Accounting Level II (CalGETC)"}, _gp(("1", "Accounting Level I", "Certificate of Achievement"))) is None,
+      "identity: Level II is never Level I's")
+check(C.ge_page_owner({"h1": "Kinesiology Option B - Associate in Arts (CSU GE)"}, _gp(("1", "Kinesiology Option A", "A.A. Degree"))) is None,
+      "identity: Option B is never Option A's")
+_ba = {"h1": "Business Administration: Accounting - Associate in Science (IGETC)"}
+check(C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"),
+                               ("2", "Business Administration: Management", "A.S. Degree"))) is None
+      and C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"))) is None,
+      "title: an emphasis after a colon is never plain Business Administration's")
+check(C.ge_page_owner({"h1": "Psychology (UC) - Associate in Arts (IGETC)"}, _gp(("1", "Psychology (CSU)", "A.A. Degree"))) is None,
+      "title: Psychology (UC) is never Psychology (CSU)'s")
+check((C.ge_page_owner({"h1": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)"},
+                       _gp(("02809", "Equine Science", "A.S. Degree"))) or {}).get("control_number") == "02809",
+      "noise: LACCD and GE beside the units name no program")
+# A printed five-digit run alone never settles the owner (COBIx on #3324, S654): it names a listed program only when
+# that program's title agrees with the heading's words at least one way; otherwise the title, award and version
+# route decides. Owners written from the headings by hand.
+_zip = {"h1": "Kinesiology - Associate in Arts for Transfer (ADT) - Riverside, CA 92506 (CalGETC)"}
+check((C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"), ("32948", "Kinesiology", "A.A- T Degree"))) or {})
+      .get("control_number") == "32948"
+      and C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a ZIP code that is a listed program's control number never makes Nursing the Kinesiology page's owner")
+_cid = {"h1": "Music - Associate in Arts (CalGETC) MUS 10250"}
+check((C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"),
+                                  ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2"
+      and C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"))) is None,
+      "control: a five-digit course id that is a listed program's control number never takes Music's page")
+check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"},
+                       _gp(("38461", "Child Development", "A.A- T Degree"), ("1", "Child Development", "A.S. Degree"),
+                           ("2", "Human Development", "A.A. Degree"))) or {}).get("control_number") == "38461"
+      and (C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                           _gp(("31018", "Business Administration", "A.S. T Degree"),
+                               ("3", "Business Administration", "A.S. Degree"))) or {}).get("control_number") == "31018",
+      "control: a heading printing its own program's control number still resolves, a cut window with no title too")
+check(C.ge_pattern("California General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental GE Transfer Curriculum")
+      and C.ge_pattern("California State University General Education"),
+      "the patterns under their long names (Crafton Hills, Victor Valley, Taft, Skyline) are patterns")
+
+# HAND-CHECKED. Every filed pattern page that more than one listed program could own (programs whose title
+# words the heading names), with its owner written from the heading's own text: the award code or words (AA-T,
+# AS-T, "for Transfer", AS, AA), the version ("2.0") and the full title. Read from the headings, not from the rule
+# or the filed claim (the filed claim is wrong for Riverside City's four 2.0 pages and Moreno Valley's MAS643).
+# 29 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice),
+# and five LA Trade-Tech PDF windows whose cut headings print the program's own control number (T031018H).
+GE_OWNERS = {
+    # award siblings: the heading prints AS or AA, a degree, never the certificate of the same title
+    ("los_angeles_pierce", "Equine Science AS P002809C"): "02809",
+    ("los_angeles_pierce", "Administrative Professional AA P002820C"): "02820",
+    ("los_angeles_pierce", "Legal Office Procedures AA P002821C"): "02821",
+    ("los_angeles_pierce", "Numerical Control Programming AS P002831C"): "02831",
+    # award siblings: the heading prints AA-T or AS-T, the transfer degree
+    ("los_angeles_trade_technical", "English T032905G AA-T"): "32905",
+    ("los_angeles_valley", "Geography AA-T V032850G"): "32850",
+    ("los_angeles_valley", "Geology AS-T V036004H"): "36004",
+    ("moreno_valley", "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643"): "37196",
+    ("moreno_valley", "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530"): "31220",
+    ("norco", "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643"): "35853",
+    ("riverside_city", "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530"): "31218",
+    ("riverside_city", "Administration of Justice - Associate in Science for Transfer (ADT) - AS643"): "31456",
+    ("riverside_city", "Music - Associate in Arts for Transfer (ADT) - AA705"): "32075",
+    # version siblings: the heading prints 2.0
+    ("riverside_city", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059"): "42892",
+    ("riverside_city", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107"): "46237",
+    ("riverside_city", "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108"): "46317",
+    ("riverside_city", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002"): "41364",
+    # longer titles: the heading's full title, never History or American Studies
+    ("los_angeles_valley", "Art History AA-T V032117G"): "32117",
+    ("moreno_valley", "Art History - Associate in Arts for Transfer (ADT) - MAA743"): "37533",
+    ("norco", "Art History - Associate in Arts for Transfer (ADT) - NAA743"): "37232",
+    ("riverside_city", "Art History - Associate in Arts for Transfer (ADT) - AA743"): "32912",
+    ("riverside_city", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072"): "43695",
+    ("riverside_city", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074"): "43897",
+    ("riverside_city", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT)"): "44469",
+    # control numbers: the heading prints the program's own
+    ("los_angeles_trade_technical", "T031018H AS-T"): "31018",
+    ("los_angeles_trade_technical", "Development T038461G AA-T"): "38461",
+    ("los_angeles_trade_technical", "T039546G AAT"): "39546",
+    ("los_angeles_trade_technical", "Dietetics T040026H AST"): "40026",
+    ("los_angeles_trade_technical", "Administration 2.0 T042785H AS-T"): "42785",
+}
+# Read on a committed fixture, never the live filings (COBIx on #3324, S654; p-test-reads-live-review-file-s649):
+# tests/fixtures/ge_page_owner_s653.json holds every filed pattern page's address, heading and title, the claims
+# filed on it, and the listed programs that can bear on its owner, measured 2026-11-15 on the 118 filed colleges
+# (40 with a pattern page). A new filing changes the live counts printed below and never these.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_s653.json")) as _fh:
+    GE_FIX = json.load(_fh)["colleges"]
+ge_seen, ge_two, ge_allow, ge_refuse, ge_cache_off, ge_cache_n = {}, [], set(), set(), [], 0
+
+
+def _ge_fix(slug, c):
+    return (slug, _gp(*c["programs"]), [{"url": u, "h1": h, "title": t} for u, h, t in c["pages"]], c["claims"])
+
+
+for _slug, _progs, _pages, _claims in (_ge_fix(k, v) for k, v in sorted(GE_FIX.items())):
+    for _cn, _i in _claims:
+        _p = next(p for p in _progs if p["control_number"] == _cn)
+        if not C.ge_pattern(_p["title"]):
+            (ge_allow if C.ge_page_names_program(_pages[_i], _p, _progs) else ge_refuse).add((_slug, _cn))
+    _cache: dict = {}
+    for _pg in _pages:
+        _owners = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs)]
+        # assign()'s cache: the owner read once per page gives every program the answer the uncached call gives
+        _cached = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs, _cache)]
+        if _cached != _owners:
+            ge_cache_off.append((_slug, _pg["url"], _owners, _cached))
+        if len(_owners) > 1:
+            ge_two.append((_slug, _pg["url"], _owners))
+        _head = _pg.get("h1") or _pg.get("title") or ""
+        for (_k, _start), _cn in GE_OWNERS.items():
+            if _k == _slug and _head.replace("\xa0", " ").startswith(_start):
+                ge_seen[(_k, _start)] = _owners
+    # one owner per distinct heading, none where only the pattern's own program is listed (it never asks)
+    ge_cache_n += len(_cache) == (len({(pg["h1"], pg["title"]) for pg in _pages})
+                                  if any(not C.ge_pattern(p["title"]) for p in _progs) else 0)
+check(all(C.ge_pattern_page(pg) for _, _, pgs, _ in (_ge_fix(k, v) for k, v in GE_FIX.items()) for pg in pgs),
+      "every fixture page is a pattern page")
+check(ge_cache_off == [] and ge_cache_n == len(GE_FIX) == 40,
+      "the owner cached once per page agrees with the uncached owner on every fixture page and program: %r"
+      % ge_cache_off[:2])
+check(ge_two == [], "no filed pattern page is allowed to two programs: %r" % ge_two[:3])
+check(len(ge_seen) == len(GE_OWNERS) == 29,
+      "every hand-checked sibling page is among the fixture's pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
+check(all(ge_seen.get(k) == [cn] for k, cn in GE_OWNERS.items()),
+      "each hand-checked sibling page goes to the owner its heading names: %r"
+      % [(k[0], k[1][:30], ge_seen.get(k), cn) for k, cn in GE_OWNERS.items() if ge_seen.get(k) != [cn]][:4])
+# Measured on the fixture, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140),
+# as the rule reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on
+# their 2.0 siblings' pages are refused; the rest are a pattern's own page another program claimed.
+check(len(ge_allow) == 88 and len(ge_refuse) == 52,
+      "88 fixture claims on a pattern's page allowed, 52 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+# A report line, never a check: the same counts on the live filings, which move with every new filing.
+_live_allow = _live_refuse = 0
+for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
+    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
+    _progs = _gp(*[(s["control_number"], s.get("title"), s.get("award")) for s in _src])
+    for s in _src:
+        _own = s.get("source") or {}
+        if _own.get("url") and C.ge_pattern_page(_own) and not C.ge_pattern(s.get("title")):
+            _p = next(p for p in _progs if p["control_number"] == s["control_number"])
+            if C.ge_page_names_program(_own, _p, _progs):
+                _live_allow += 1
+            else:
+                _live_refuse += 1
+print("report: live filed claims on a pattern's page: %d allowed, %d refused (fixture: 88, 52)"
+      % (_live_allow, _live_refuse))
+check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
+       ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
+      "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")
+mv_rs = [s for s in json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", "moreno_valley", "sources.json")))
+         if (s.get("source") or {}).get("url")]
+mv_pages = {}
+for s in mv_rs:
+    mv_pages.setdefault(s["source"]["url"], (s["source"]["h1"], set()))[1].update(s["codes_found"])
+mv_pages = [page(u, h, h + "\n" + "\n".join(_printed(c) + " Course" for c in sorted(cs)) + "\nTotal 18 units")
+            for u, (h, cs) in mv_pages.items()]
+mv_given = C.assign([{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+                      "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]} for s in mv_rs], mv_pages)
+check("MAS643" not in ((mv_given["30150"]["best"] or {}).get("heading") or "")
+      and "MAS643" in ((mv_given["37196"]["best"] or {}).get("heading") or ""),
+      "on Moreno Valley's filed pages the A.S.-T keeps MAS643 and the A.S. never takes it: %r"
+      % {k: (mv_given[k]["best"] or {}).get("heading", "")[-26:] for k in ("30150", "37196")})
 
 # Two different current programs never share one page's list on a title tie alone (the S646 conductor's
 # ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's

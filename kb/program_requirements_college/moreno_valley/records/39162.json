@@ -51,6 +51,7 @@
     "MAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -88,6 +89,7 @@
     24.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -103,6 +105,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -312,5 +322,6 @@
    "The certificate prints its own Program Learning Outcomes list; all four recorded as printed (the first outcome begins with 'Providing')."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

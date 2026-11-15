@@ -5,16 +5,19 @@
  "found": 244,
  "extracted": 244,
  "errors": 0,
- "passed_machine_checks": 221,
+ "passed_machine_checks": 229,
  "failed": {
-  "coverage": 9,
-  "invented": 9,
-  "arithmetic": 15,
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 15.03,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 15.03,
  "cost_per_program": 0.0616,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "33230",
@@ -87,5 +90,5 @@
    "award": "Noncredit program"
   }
  ],
- "run": "38108461470"
+ "run": "43605883626"
 }

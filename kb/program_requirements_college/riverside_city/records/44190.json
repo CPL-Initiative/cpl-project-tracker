@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     12.0,
     12.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -146,5 +156,6 @@
    "The outcomes are copied as printed. The source text joins some words with no space (e.g., 'fundamentals,subnets', 'configurerouter', 'EIGRPand', 'andLAN', 'LANtrunking', 'Cisco’simplementation', 'linkoptions'), probably where line breaks were lost. A reviewer may want to check these against the original page."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

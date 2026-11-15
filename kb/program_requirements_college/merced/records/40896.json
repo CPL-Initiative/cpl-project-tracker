@@ -77,14 +77,15 @@
    "status": "equal",
    "computed": [
     27.0,
-    28.0
+    29.0
    ],
    "stated": [
     27.0,
     28.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -279,5 +280,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

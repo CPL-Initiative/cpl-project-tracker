@@ -1,0 +1,1002 @@
+{
+"measured": "2026-11-15T02:22Z",
+"what": "Every filed general education pattern page (address, heading, title), the claims filed on it, and the listed programs that can bear on its owner (a claim is [control number, index into pages]), from kb/program_requirements_college/*/sources.json on claude/ge-pattern-page-claim-s653 at fe96080e. The input ge_page_owner tests read (S654), so a new filing never moves a pinned count.",
+"colleges": {
+"american_river": {
+ "programs": [
+  ["19335", "Honors Transfer", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"]
+ ],
+ "pages": [
+  ["https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603", "Cal-GETC Certificate", "Cal-GETC Certificate"]
+ ],
+ "claims": [
+  ["19335", 0]
+ ]
+},
+"berkeley_city": {
+ "programs": [
+  ["19976", "Spanish Language for Heritage Speakers", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["31984", "Political Science", "A.A- T Degree"],
+  ["39386", "Sociology", "A.A- T Degree"],
+  ["40244", "Spanish", "A.A- T Degree"],
+  ["41777", "Philosophy", "A.A- T Degree"],
+  ["41795", "Psychology", "A.A- T Degree"],
+  ["41876", "Social Work and Human Services", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["42381", "Social Work and Human Services", "A.A- T Degree"],
+  ["42838", "Physics", "A.S. T Degree"]
+ ],
+ "pages": [
+  ["https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["19976", 0],
+  ["31984", 0],
+  ["39386", 0],
+  ["40244", 0],
+  ["41777", 0],
+  ["41795", 0],
+  ["41876", 0],
+  ["42381", 0],
+  ["42838", 0]
+ ]
+},
+"chabot": {
+ "programs": [
+  ["45029", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://chabot.curriqunet.com/catalog/alias/catalog2026-27/iq/4077/6084/6568", "Cal-GETC - Certificate of Achievement", "Cal-GETC - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["45029", 0]
+ ]
+},
+"chaffey": {
+ "programs": [
+  ["18435", "Physical Science", "A.S. Degree"]
+ ],
+ "pages": [
+  ["https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["18435", 0]
+ ]
+},
+"college_of_san_mateo": {
+ "programs": [
+  ["30818", "Mathematics", "A.S. T Degree"],
+  ["31255", "Physics", "A.S. T Degree"],
+  ["31435", "History", "A.A- T Degree"],
+  ["45354", "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php", " University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement", "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement"]
+ ],
+ "claims": [
+  ["30818", 0],
+  ["31255", 0],
+  ["31435", 0]
+ ]
+},
+"college_of_the_desert": {
+ "programs": [
+  ["07929", "Social Science", "A.A. Degree"]
+ ],
+ "pages": [
+  ["https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=80", "The California General Education Transfer Curriculum (Cal-GETC)", "The California General Education Transfer Curriculum (Cal-GETC)"]
+ ],
+ "claims": [
+  ["07929", 0]
+ ]
+},
+"college_of_the_sequoias": {
+ "programs": [
+  ["45030", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.cos.edu//areas-study/counseling/certificate-achievement-cal-getc/", "2026-2027 Academic Catalog", "Certificate of Achievement in Cal-GETC | College of the Sequoias Academic Catalog"]
+ ],
+ "claims": [
+  ["45030", 0]
+ ]
+},
+"college_of_the_siskiyous": {
+ "programs": [
+  ["45356", "Cal-GETC: California General Education Transfer Curriculum", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://siskiyous.elumenapp.com/catalog/cos26-27catalog/program/cal-getc-california-general-education-transfer-curriculum-coa-fall-2026", "Cal-GETC: California General Education Transfer Curriculum - COA", "Cal-GETC: California General Education Transfer Curriculum - COA"]
+ ],
+ "claims": [
+  ["45356", 0]
+ ]
+},
+"cosumnes_river": {
+ "programs": [
+  ["45203", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95", "California General Education Transfer Curriculum Requirements", "California General Education Transfer Curriculum Requirements"]
+ ],
+ "claims": [
+  ["45203", 0]
+ ]
+},
+"crafton_hills": {
+ "programs": [
+  ["45714", "California General Education Transfer Curriculum", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement", "2026-2027 Catalog", "Crafton Hills College - Cal-GETC"]
+ ],
+ "claims": [
+  ["45714", 0]
+ ]
+},
+"el_camino": {
+ "programs": [
+  ["45290", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["http://catalog.elcamino.edu/preview_program.php?catoid=13&poid=3749&print", "Cal-GETC GE Requirements and Certificate of Achievement", "Degree & Certificate: Cal-GETC GE Requirements and Certificate of Achievement - El Camino College"]
+ ],
+ "claims": [
+  ["45290", 0]
+ ]
+},
+"evergreen_valley": {
+ "programs": [
+  ["45025", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.evc.edu/graduation-transfer-general-education/california-general-education-transfer-curriculum/", "College Catalog", "California General Education Transfer Curriculum (Cal-GETC) < Evergreen Valley College"]
+ ],
+ "claims": [
+  ["45025", 0]
+ ]
+},
+"feather_river": {
+ "programs": [
+  ["45095", "CalGETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://frc.curriqunet.com/Catalog/iq/1464/1771", "CalGETC - Certificate of Achievement", "CalGETC - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["45095", 0]
+ ]
+},
+"folsom_lake": {
+ "programs": [
+  ["45328", "California General Education  Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf#page=97", "California General Education Transfer Curriculum Requirements", "California General Education Transfer Curriculum Requirements"]
+ ],
+ "claims": [
+  ["45328", 0]
+ ]
+},
+"foothill": {
+ "programs": [
+  ["19484", "Art History", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["35561", "Humanities", "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 "],
+  ["35772", "Music History & Literature", "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 "],
+  ["39351", "Film, Television, and Electronic Media", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["39675", "Bio-Health Diversity and Inclusion Leadership", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["43207", "Photography Criticism", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["44253", "Spanish-Advanced", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"]
+ ],
+ "pages": [
+  ["https://catalog.foothill.edu/degree-certificate-requirements/cal-getc/", "Academic Catalog", "California General Education Transfer Curriculum (Cal-GETC) < Foothill College"]
+ ],
+ "claims": [
+  ["19484", 0],
+  ["35561", 0],
+  ["35772", 0],
+  ["39351", 0],
+  ["39675", 0],
+  ["43207", 0],
+  ["44253", 0]
+ ]
+},
+"fresno_city": {
+ "programs": [
+  ["11002", "Music, Vocal Majors", "A.A. Degree"],
+  ["11003", "Music, Piano Major", "A.A. Degree"],
+  ["11004", "Music, Guitar Majors", "A.A. Degree"],
+  ["31056", "Sign Language Interpreting Preparation Program", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"]
+ ],
+ "pages": [
+  ["https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/7111/7113", "Cal-GETC, Certificate of Achievement - Major #5040", "Cal-GETC, Certificate of Achievement - Major #5040"]
+ ],
+ "claims": [
+  ["31056", 0]
+ ]
+},
+"gavilan": {
+ "programs": [
+  ["45357", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["45357", 0]
+ ]
+},
+"glendale_community": {
+ "programs": [
+  ["45068", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl", "Glendale Community College", "CALGETC Program | Glendale Community College Catalog"]
+ ],
+ "claims": [
+  ["45068", 0]
+ ]
+},
+"hartnell": {
+ "programs": [
+  ["45096", "CalGETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://hartnell.catalog.prod.coursedog.com/programs/CT.CALGETC/requirements-ipyf8", "Hartnell College", "CT.CALGETC Program | Hartnell College Catalog"]
+ ],
+ "claims": [
+  ["45096", 0]
+ ]
+},
+"imperial_valley": {
+ "programs": [
+  ["08983", "Agriculture Plant Science", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["36695", "Public Health Science", "A.S. T Degree"],
+  ["40055", "Nutrition and Dietetics", "A.S. T Degree"]
+ ],
+ "pages": [
+  ["https://imperial.curriqunet.com/catalog/iq/8518/8606/8639", "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)", "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)"]
+ ],
+ "claims": [
+  ["08983", 0],
+  ["36695", 0],
+  ["40055", 0]
+ ]
+},
+"lemoore": {
+ "programs": [
+  ["32899", "Communication Studies", "A.A- T Degree"],
+  ["38968", "Transfer Studies- Full IGETC Certification: UC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["42551", "Human Resources (COA)", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["42893", "User Experience (UX) Design (COA)", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["44247", "Communication Studies 2.0", "A.A- T Degree"],
+  ["45494", "Transfer studies - Cal GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://westhillslemoore.elumenapp.com/catalog/26-27/program/transfer-studies-cal-getc-coa-fall-2025", "Transfer Studies – Cal GETC (COA)", "Transfer Studies – Cal GETC (COA)"]
+ ],
+ "claims": [
+  ["45494", 0]
+ ]
+},
+"long_beach_city": {
+ "programs": [
+  ["44848", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://lbcc-public.courseleaf.com//academic-requirements/general-education-transfer-degree-certificate-requirements/general-education-plans/plan-c/", "Cal-GETC", "Cal-GETC | LBCC"]
+ ],
+ "claims": [
+  ["44848", 0]
+ ]
+},
+"los_angeles_pierce": {
+ "programs": [
+  ["02809", "Equine Science", "A.S. Degree"],
+  ["02820", "Administrative Professional", "A.A. Degree"],
+  ["02821", "Legal Office Procedures", "A.A. Degree"],
+  ["02824", "Programming for Computer Science", "A.S. Degree"],
+  ["02831", "Numerical Control Programming", "A.S. Degree"],
+  ["08318", "CAOT: General Administrative", "A.A. Degree"],
+  ["08319", "Office Communications", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["08322", "Programming for Business", "A.A. Degree"],
+  ["11814", "Office Administration: Advanced Computer Applications", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["15085", "Web Development, Programming and Scripting", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["17800", "Office Clerical", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["18837", "Legal Office Skills", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["21781", "Equine Science", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["21806", "Administrative Professional", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["21807", "CAOT: General Administrative", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["21808", "Legal Office Procedures", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["21810", "Programming for Business", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["21814", "Numerical Control Programming", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["37084", "Medical Assistant: Front and Back Office", "Noncredit program"],
+  ["42428", "Medical Front Office Assistant", "Noncredit program"]
+ ],
+ "pages": [
+  ["https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=77", "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)", "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)"],
+  ["https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=101", "Administrative Professional AA P002820C Cal-GETC (34 units) LACCD GE (21 units)", "Administrative Professional AA P002820C Cal-GETC (34 units) LACCD GE (21 units)"],
+  ["https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=106", "Legal Office Procedures AA P002821C Cal-GETC (34 units) LACCD GE (21 units)", "Legal Office Procedures AA P002821C Cal-GETC (34 units) LACCD GE (21 units)"],
+  ["https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=126", "Numerical Control Programming AS P002831C Cal-GETC (34 units) LACCD GE (21 units)", "Numerical Control Programming AS P002831C Cal-GETC (34 units) LACCD GE (21 units)"]
+ ],
+ "claims": [
+  ["02809", 0],
+  ["02820", 1],
+  ["02821", 2],
+  ["02831", 3]
+ ]
+},
+"los_angeles_trade_technical": {
+ "programs": [
+  ["02927", "English", "A.A. Degree"],
+  ["09266", "Community Planning & Economic Development", "A.A. Degree"],
+  ["10403", "Child Development", "A.A. Degree"],
+  ["21871", "Community Planning & Economic Development", "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"],
+  ["24459", "English as a Second Language (ESL): Beginning", "Noncredit program"],
+  ["31018", "Early Childhood Education", "A.S. T Degree"],
+  ["31063", "Specializing in Program Administration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["32905", "English", "A.A- T Degree"],
+  ["32910", "Administration of Justice", "A.S. T Degree"],
+  ["32948", "Kinesiology", "A.A- T Degree"],
+  ["37088", "Sustainable Small Business Development", "Noncredit program"],
+  ["38461", "Child and Adolescent Development", "A.A- T Degree"],
+  ["38883", "Psychology", "A.A- T Degree"],
+  ["38910", "Business Administration", "A.S. T Degree"],
+  ["38966", "History", "A.A- T Degree"],
+  ["39216", "Political Science", "A.A- T Degree"],
+  ["39546", "Social Justice Studies - Gender Studies", "A.A- T Degree"],
+  ["40026", "Nutrition and Dietetics", "A.S. T Degree"],
+  ["42785", "Business Administration 2.0", "A.S. T Degree"],
+  ["44055", "English as a Second Language (ESL): Intermediate", "Noncredit program"],
+  ["44291", "English as a Second Language (ESL): Advanced Grammar and Composition", "Noncredit program"],
+  ["46397", "Career Foundations for English Language Learners I", "Noncredit program"]
+ ],
+ "pages": [
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=106", "T031018H AS-T Cal-GETC 25 - 25", "T031018H AS-T Cal-GETC 25 - 25"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=206", "English T032905G AA-T Cal-GETC 6 12 18", "English T032905G AA-T Cal-GETC 6 12 18"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=193", "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24", "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=105", "Development T038461G AA-T Cal-GETC 10 9-10 19-20", "Development T038461G AA-T Cal-GETC 10 9-10 19-20"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=217", "Psychology T038883G AST Cal-GETC 20 - 20", "Psychology T038883G AST Cal-GETC 20 - 20"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=207", "History T038966G AA-T Cal-GETC 18 - 18", "History T038966G AA-T Cal-GETC 18 - 18"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=216", "Political Science T039216G AST Cal-GETC 19 - 19", "Political Science T039216G AST Cal-GETC 19 - 19"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=218", "T039546G AAT Cal-GETC 18-19 - 18-19", "T039546G AAT Cal-GETC 18-19 - 18-19"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=199", "Dietetics T040026H AST Cal-GETC 15 11-13 26-28", "Dietetics T040026H AST Cal-GETC 15 11-13 26-28"],
+  ["https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=104", "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31", "Administration 2.0 T042785H AS-T Cal-GETC 31 - 31"]
+ ],
+ "claims": [
+  ["31018", 0],
+  ["32905", 1],
+  ["32948", 2],
+  ["38461", 3],
+  ["38883", 4],
+  ["38966", 5],
+  ["39216", 6],
+  ["39546", 7],
+  ["40026", 8],
+  ["42785", 9]
+ ]
+},
+"los_angeles_valley": {
+ "programs": [
+  ["02961", "Art History", "A.A. Degree"],
+  ["02985", "History", "A.A. Degree"],
+  ["02986", "Geography", "A.A. Degree"],
+  ["08543", "Art: Studio", "A.A. Degree"],
+  ["08553", "Art: Graphic Design", "A.A. Degree"],
+  ["08554", "Art: Graphic Design", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["08560", "Geology", "A.S. Degree"],
+  ["24116", "English as a Second Language IV", "Noncredit program"],
+  ["24170", "English as a Second Language I", "Noncredit program"],
+  ["24216", "English as a Second Language II", "Noncredit program"],
+  ["24315", "English as a Second Language III", "Noncredit program"],
+  ["24464", "English as a Second Language - Speech", "Noncredit program"],
+  ["32117", "ART HISTORY", "A.A- T Degree"],
+  ["32368", "English", "A.A- T Degree"],
+  ["32849", "History", "A.A- T Degree"],
+  ["32850", "Geography", "A.A- T Degree"],
+  ["32854", "Kinesiology", "A.A- T Degree"],
+  ["36004", "Geology", "A.S. T Degree"],
+  ["43579", "English as a Second Language - Communication Competency", "Noncredit program"],
+  ["44162", "English as a Second Language – Reading and Writing", "Noncredit program"]
+ ],
+ "pages": [
+  ["https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51", "Art History AA-T V032117G CalGETC 18 Y", "Art History AA-T V032117G CalGETC 18 Y"],
+  ["https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=117", "English AA-T V032368G Cal-GETC 18 Y", "English AA-T V032368G Cal-GETC 18 Y"],
+  ["https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=158", "Geography AA-T V032850G CalGETC 20 Y", "Geography AA-T V032850G CalGETC 20 Y"],
+  ["https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110", "Kinesiology AA-T V032854G Cal-GETC 20-23 Y", "Kinesiology AA-T V032854G Cal-GETC 20-23 Y"],
+  ["https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147", "Geology AS-T V036004H CalGETC 28 Y", "Geology AS-T V036004H CalGETC 28 Y"]
+ ],
+ "claims": [
+  ["32117", 0],
+  ["32368", 1],
+  ["32850", 2],
+  ["32854", 3],
+  ["36004", 4]
+ ]
+},
+"merritt": {
+ "programs": [
+  ["19145", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://mc.curriqunet.com/catalog/iq/48441/48770/49733", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement - COUN", "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement - COUN"]
+ ],
+ "claims": [
+  ["19145", 0]
+ ]
+},
+"miracosta": {
+ "programs": [
+  ["45045", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.miracosta.edu/degreecertificatetransferinfo/generaleducationplans/planc/", "Cal-GETC", "Cal-GETC | MiraCosta College Catalog"]
+ ],
+ "claims": [
+  ["45045", 0]
+ ]
+},
+"moreno_valley": {
+ "programs": [
+  ["30113", "Business Administration: General Business Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30114", "Business Administration: General Business Concentration", "A.S. Degree"],
+  ["30115", "Business Administration: Accounting Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30116", "Business Administration: Accounting Concentration", "A.S. Degree"],
+  ["30117", "Business Administration: Management Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30118", "Business Administration: Management Concentration", "A.S. Degree"],
+  ["30119", "Business Administration: Marketing Concentration", "A.S. Degree"],
+  ["30120", "Business Administration: Marketing Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30121", "Business Administration: Real Estate Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30122", "Business Administration: Real Estate Concentration", "A.S. Degree"],
+  ["30123", "Simulation and Gaming: Game Art", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30124", "Simulation and Gaming: Game Art", "A.S. Degree"],
+  ["30127", "Computer Programming", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["30128", "Computer Programming", "A.S. Degree"],
+  ["30129", "Education Paraprofessional", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["30130", "Education Paraprofessional", "A.S. Degree"],
+  ["30144", "Early Childhood Education", "A.S. Degree"],
+  ["30145", "Early Childhood Education", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30146", "Early Childhood Intervention Assistant", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30147", "Early Childhood Intervention Assistant", "A.S. Degree"],
+  ["30150", "Administration of Justice", "A.S. Degree"],
+  ["30151", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["30152", "Administration of Justice/Law Enforcement Basic Peace Officer Academy Intensive", "A.S. Degree"],
+  ["30164", "Kinesiology, Health and Wellness", "A.A. Degree"],
+  ["30165", "Administration & Information Systems", "A.A. Degree"],
+  ["30166", "Communication, Media & Languages", "A.A. Degree"],
+  ["30167", "Math & Sciences", "A.S. Degree"],
+  ["30169", "Humanities, Philosophy & Arts", "A.A. Degree"],
+  ["30170", "Social and Behavioral Studies", "A.A. Degree"],
+  ["30171", "CSU General Education", "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"],
+  ["30584", "Sociology", "A.A- T Degree"],
+  ["31220", "Early Childhood Education", "A.S. T Degree"],
+  ["31232", "American Studies", "A.A. Degree"],
+  ["32142", "Music", "A.A- T Degree"],
+  ["32156", "Spanish", "A.A- T Degree"],
+  ["32265", "English", "A.A- T Degree"],
+  ["32266", "Studio Arts", "A.A- T Degree"],
+  ["32638", "Anthropology", "A.A- T Degree"],
+  ["32639", "Computer Science", "A.S. T Degree"],
+  ["32660", "Psychology", "A.A- T Degree"],
+  ["32941", "Political Science", "A.A- T Degree"],
+  ["32946", "Philosophy", "A.A- T Degree"],
+  ["33240", "History", "A.A- T Degree"],
+  ["33953", "Biology", "A.S. T Degree"],
+  ["37196", "Administration of Justice", "A.S. T Degree"],
+  ["37440", "Kinesiology", "A.A- T Degree"],
+  ["37533", "Art History", "A.A- T Degree"],
+  ["37552", "Child Welfare and Family Studies", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["37553", "Drug and Alcohol Studies", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["37555", "Social Justice System Studies", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["38179", "Introduction to Education Profession for ESL Students", "Noncredit program"],
+  ["38294", "Computer Maintenance and Security", "Noncredit program"],
+  ["38458", "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["38799", "Social Media for Business", "Noncredit program"],
+  ["38802", "Enterprise Communication", "Noncredit program"],
+  ["38822", "Accounting Basics for Small Business", "Noncredit program"],
+  ["38874", "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy", "A.S. Degree"],
+  ["38876", "Administration of Justice/Corrections", "A.S. Degree"],
+  ["39003", "College Career Readiness and Student Educational Planning", "Noncredit program"],
+  ["40328", "Advanced American College English", "Noncredit program"],
+  ["40329", "Beginning American College English", "Noncredit program"],
+  ["40564", "Family Childcare Provider", "Noncredit program"],
+  ["41630", "Emergency Management and Homeland Security- Law Enforcement", "A.S. Degree"],
+  ["41635", "Business Administration 2.0", "A.S. T Degree"],
+  ["41655", "Emergency Management and Homeland Security - Law Enforcement", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["41670", "Geography", "A.A- T Degree"],
+  ["42484", "Early Childhood Education School Age", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["42794", "Economics", "A.A- T Degree"],
+  ["42826", "Business Administration: Logistics Management Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["42828", "Communication Studies 2.0", "A.A- T Degree"],
+  ["42829", "Business Administration: Logistics Management Concentration", "A.S. Degree"],
+  ["43792", "Physics", "A.S. T Degree"],
+  ["43882", "Child and Adolescent Development", "A.A- T Degree"],
+  ["43884", "Environmental Science", "A.S. T Degree"],
+  ["45017", "Drug and Alcohol Studies", "A.S. Degree"],
+  ["45447", "Law, Public Policy, and Society", "A.A- T Degree"],
+  ["45914", "Global Studies", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["46200", "Nutrition and Dietetics", "A.S. T Degree"],
+  ["46236", "Mathematics 2.0", "A.S. T Degree"],
+  ["46532", "Elementary Teacher Education: Integrated Programs", "A.A- T Degree"]
+ ],
+ "pages": [
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4454", "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)", "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4565", "Sociology - Associate in Arts for Transfer (ADT) - MAA696 (Cal-GETC)", "Sociology - Associate in Arts for Transfer (ADT) - MAA696 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4496", "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530 (Cal-GETC)", "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4546", "Music - Associate in Arts for Transfer (ADT) - MAA705 (Cal-GETC)", "Music - Associate in Arts for Transfer (ADT) - MAA705 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4566", "Spanish - Associate in Arts for Transfer (ADT) - MAA708 (Cal-GETC)", "Spanish - Associate in Arts for Transfer (ADT) - MAA708 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4513", "English - Associate in Arts for Transfer (ADT) - MAA649 (Cal-GETC)", "English - Associate in Arts for Transfer (ADT) - MAA649 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4567", "Studio Arts - Associate in Arts for Transfer (ADT) - MAA694 (Cal-GETC)", "Studio Arts - Associate in Arts for Transfer (ADT) - MAA694 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4462", "Anthropology - Associate in Arts for Transfer (ADT) - MAA618 (Cal-GETC)", "Anthropology - Associate in Arts for Transfer (ADT) - MAA618 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4488", "Computer Science - Associate in Science for Transfer (ADT) - MAS650 (Cal-GETC)", "Computer Science - Associate in Science for Transfer (ADT) - MAS650 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4556", "Psychology - Associate in Arts for Transfer (ADT) - MAA568 (Cal-GETC)", "Psychology - Associate in Arts for Transfer (ADT) - MAA568 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4554", "Political Science - Associate in Arts for Transfer (ADT) - MAA755 (Cal-GETC)", "Political Science - Associate in Arts for Transfer (ADT) - MAA755 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4553", "Philosophy - Associate in Arts for Transfer (ADT) - MAA717 (Cal-GETC)", "Philosophy - Associate in Arts for Transfer (ADT) - MAA717 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4527", "History - Associate in Arts for Transfer (ADT) - MAA745 (Cal-GETC)", "History - Associate in Arts for Transfer (ADT) - MAA745 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4467", "Biology - Associate in Science for Transfer (ADT) - MAS768 (Cal-GETC)", "Biology - Associate in Science for Transfer (ADT) - MAS768 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4542", "Kinesiology - Associate in Arts for Transfer (ADT) - MAA891 (Cal-GETC)", "Kinesiology - Associate in Arts for Transfer (ADT) - MAA891 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4463", "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)", "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4468", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - MAS1002 (Cal-GETC)", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - MAS1002 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4525", "Geography - Associate in Arts for Transfer (ADT) - MAA759 (Cal-GETC)", "Geography - Associate in Arts for Transfer (ADT) - MAA759 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4502", "Economics - Associate in Arts for Transfer (ADT) - MAA757 (Cal-GETC)", "Economics - Associate in Arts for Transfer (ADT) - MAA757 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4483", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - MAA1059 (Cal-GETC)", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - MAA1059 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4966", "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)", "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4867", "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - MAA886 (Cal-GETC)", "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - MAA886 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4868", "Environmental Science - Associate in Science for Transfer (ADT) - MAS893 (Cal-GETC)", "Environmental Science - Associate in Science for Transfer (ADT) - MAS893 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4718", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - MAA1008 (Cal-GETC)", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - MAA1008 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/6380", "Nutrition and Dietetics - Associate in Science Degree for Transfer (ADT) - MAS908 (Cal-GETC )", "Nutrition and Dietetics - Associate in Science Degree for Transfer (ADT) - MAS908 (Cal-GETC )"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4543", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - MAS1107 (Cal-GETC)", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - MAS1107 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4858", "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - MAA1106 (Cal-GETC)", "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - MAA1106 (Cal-GETC)"]
+ ],
+ "claims": [
+  ["30150", 0],
+  ["30584", 1],
+  ["31220", 2],
+  ["32142", 3],
+  ["32156", 4],
+  ["32265", 5],
+  ["32266", 6],
+  ["32638", 7],
+  ["32639", 8],
+  ["32660", 9],
+  ["32941", 10],
+  ["32946", 11],
+  ["33240", 12],
+  ["33953", 13],
+  ["37196", 0],
+  ["37440", 14],
+  ["37533", 15],
+  ["41635", 16],
+  ["41670", 17],
+  ["42794", 18],
+  ["42828", 19],
+  ["43792", 20],
+  ["43882", 21],
+  ["43884", 22],
+  ["45447", 23],
+  ["46200", 24],
+  ["46236", 25],
+  ["46532", 26]
+ ]
+},
+"mt_san_jacinto": {
+ "programs": [
+  ["04396", "Physical Education", "A.A. Degree"],
+  ["04427", "Child Development and Education", "A.S. Degree"],
+  ["22128", "CIS: General Track", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22139", "Child Development and Education", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["24448", "ESL General", "Noncredit program"],
+  ["31716", "Early Childhood Education", "A.S. T Degree"],
+  ["39486", "Social Justice Studies: General", "A.A- T Degree"],
+  ["44847", "General Education Breadth, Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.msjc.edu/degrees-certificates-curricula/general-education-requirements-cal-getc/", "General Education Requirements: Cal-GETC", "General Education Requirements: Cal-GETC | Mt. San Jacinto College Catalog"]
+ ],
+ "claims": [
+  ["44847", 0]
+ ]
+},
+"norco": {
+ "programs": [
+  ["30055", "Business Administration: General Business Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30056", "Business Administration: General Business Concentration", "A.S. Degree"],
+  ["30057", "Business Administration: Accounting Concentration", "A.S. Degree"],
+  ["30058", "Business Administration: Accounting Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30061", "Business Administration: Management Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30062", "Business Administration: Management Concentration", "A.S. Degree"],
+  ["30071", "Business Administration: Logistics Management Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30072", "Business Administration: Logistics Management Concentration", "A.S. Degree"],
+  ["30075", "Business Administration: Real Estate Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["30076", "Business Administration: Real Estate Concentration", "A.S. Degree"],
+  ["30102", "Administration of Justice", "A.S. Degree"],
+  ["30104", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["30105", "Administration & Information Systems", "A.A. Degree"],
+  ["30585", "Sociology", "A.A- T Degree"],
+  ["31317", "Game Art: Environments and Vehicles", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["33951", "History", "A.A- T Degree"],
+  ["33952", "Chemistry", "A.S. T Degree"],
+  ["35853", "Administration of Justice", "A.S. T Degree"],
+  ["37232", "Art History", "A.A- T Degree"],
+  ["40000", "GAME CONCEPT ART", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["40013", "Game Concept Art", "A.S. Degree"],
+  ["41479", "Business Administration 2.0", "A.S. T Degree"],
+  ["41680", "Social Justice Studies", "A.A- T Degree"],
+  ["44879", "Administration of Justice: Corrections", "A.S. Degree"],
+  ["44880", "Administration of Justice: Corrections", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["44961", "Law, Public Policy, and Society", "A.A- T Degree"],
+  ["44986", "Geography", "A.A- T Degree"]
+ ],
+ "pages": [
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5232", "Sociology - Associate in Arts for Transfer (ADT) - NAA696 (Cal-GETC)", "Sociology - Associate in Arts for Transfer (ADT) - NAA696 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153", "Chemistry - Associate in Science for Transfer (ADT) - NAS769 (Cal-GETC)", "Chemistry - Associate in Science for Transfer (ADT) - NAS769 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5132", "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643 (Cal-GETC)", "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5141", "Art History - Associate in Arts for Transfer (ADT) - NAA743 (Cal-GETC)", "Art History - Associate in Arts for Transfer (ADT) - NAA743 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - NAA1008 (Cal-GETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5580", "Geography - Associate in Arts for Transfer (ADT) - NAA759 (Cal-GETC)", "Geography - Associate in Arts for Transfer (ADT) - NAA759 (Cal-GETC)"]
+ ],
+ "claims": [
+  ["30585", 0],
+  ["33952", 1],
+  ["35853", 2],
+  ["37232", 3],
+  ["44961", 4],
+  ["44986", 5]
+ ]
+},
+"orange_coast": {
+ "programs": [
+  ["32235", "Mathematics", "A.S. T Degree"],
+  ["36920", "English Language Learning: Transition to Academics", "Noncredit program"],
+  ["37986", "Academic Preparation in English", "Noncredit program"]
+ ],
+ "pages": [
+  ["https://catalog.cccd.edu/orange-coast/general-education-patterns/associate-degree-general-education-calgetc/", "Academic Catalogs", "Associate Degree California General Education Transfer Curriculum (Cal-GETC) 2026-2027 < Orange Coast College"]
+ ],
+ "claims": [
+  ["32235", 0]
+ ]
+},
+"palo_verde": {
+ "programs": [
+  ["45359", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.paloverde.edu/preview_program.php?catoid=2&poid=192&print", "California General Education Transfer Curriculum (CalGETC) Certificate of Achievement", "Program: California General Education Transfer Curriculum (CalGETC) Certificate of Achievement - Palo Verde College"]
+ ],
+ "claims": [
+  ["45359", 0]
+ ]
+},
+"riverside_city": {
+ "programs": [
+  ["04455", "Business Administration: General Business Concentration", "A.S. Degree"],
+  ["04456", "Business Administration: Accounting Concentration", "A.S. Degree"],
+  ["04458", "Cosmetology Business Administration - Management & Supervision", "A.S. Degree"],
+  ["04459", "Business Administration: Management Concentration", "A.S. Degree"],
+  ["04460", "Business Administration: Marketing Concentration", "A.S. Degree"],
+  ["04461", "Business Administration: Real Estate", "A.S. Degree"],
+  ["04465", "Computer Programming", "A.S. Degree"],
+  ["04492", "Early Childhood Education", "A.S. Degree"],
+  ["04504", "Administration of Justice", "A.S. Degree"],
+  ["10070", "Automotive Electrical and Electronics Specialist", "A.S. Degree"],
+  ["10097", "Paralegal Studies", "A.S. Degree"],
+  ["10102", "Cosmetology Business Administration - Entrepreneurial", "A.S. Degree"],
+  ["12134", "FILM, TELEVISION AND VIDEO PRODUCTION SPECIALIST", "A.S. Degree"],
+  ["15406", "Early Childhood Intervention Assistant", "A.S. Degree"],
+  ["15495", "Education Paraprofessional", "A.S. Degree"],
+  ["17018", "Business Administration: Human Resources", "A.S. Degree"],
+  ["18013", "CSU General Education", "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"],
+  ["18108", "Administration & Information Systems", "A.A. Degree"],
+  ["18109", "Communication, Media & Languages", "A.A. Degree"],
+  ["18111", "Humanities, Philosophy & Arts", "A.A. Degree"],
+  ["18112", "Kinesiology, Health and Wellness", "A.A. Degree"],
+  ["18113", "Social and Behavioral Studies", "A.A. Degree"],
+  ["18114", "Math & Sciences", "A.S. Degree"],
+  ["22737", "Business Administration: General Business Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22739", "Business Administration: Accounting Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22742", "Business Administration: Human Resources", "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"],
+  ["22743", "Business Administration: Management Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22745", "Business Administration: Marketing Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22749", "Business Administration: Real Estate", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22753", "FILM, TELEVISION AND VIDEO PRODUCTION SPECIALIST", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22757", "Computer Programming", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22758", "Education Paraprofessional", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22772", "Automotive Electrical and Electronics Specialist", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22801", "Early Childhood Education", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22802", "Early Childhood Intervention Assistant", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22808", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22815", "Cosmetology Business Administration - Entrepreneurial", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["22817", "Cosmetology Business Administration - Management & Supervision", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["30578", "Communication Studies", "A.A- T Degree"],
+  ["30581", "Sociology", "A.A- T Degree"],
+  ["31163", "American Studies", "A.A. Degree"],
+  ["31175", "Theatre Arts", "A.A- T Degree"],
+  ["31218", "Early Childhood Education", "A.S. T Degree"],
+  ["31301", "Music", "A.A. Degree"],
+  ["31456", "Administration of Justice", "A.S. T Degree"],
+  ["31561", "English", "A.A- T Degree"],
+  ["31801", "Journalism", "A.A- T Degree"],
+  ["32075", "Music", "A.A- T Degree"],
+  ["32174", "Spanish", "A.A- T Degree"],
+  ["32597", "Computer Science", "A.S. T Degree"],
+  ["32658", "Psychology", "A.A- T Degree"],
+  ["32692", "Mathematics", "A.S. T Degree"],
+  ["32745", "Physics", "A.S. T Degree"],
+  ["32813", "Anthropology", "A.A- T Degree"],
+  ["32912", "Art History", "A.A- T Degree"],
+  ["32938", "Philosophy", "A.A- T Degree"],
+  ["33021", "Studio Arts", "A.A- T Degree"],
+  ["33218", "Geography", "A.A- T Degree"],
+  ["33229", "Economics", "A.A- T Degree"],
+  ["33230", "History", "A.A- T Degree"],
+  ["33829", "Business Administration", "A.S. T Degree"],
+  ["33964", "Political Science", "A.A- T Degree"],
+  ["35152", "Business Information Worker", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["37382", "Musical Theatre", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["37383", "Education, Human Development and Special Needs", "A.A. Degree"],
+  ["37464", "Child and Adolescent Development", "A.A- T Degree"],
+  ["37483", "Elementary Teacher Education: Integrated Programs", "A.A- T Degree"],
+  ["37826", "Business Skills Bootcamp", "Noncredit program"],
+  ["38109", "Nutrition and Dietetics", "A.S. T Degree"],
+  ["38264", "Technical Theatre", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["38269", "Business Skills - MOSPrep: Microsoft Office Specialist", "Noncredit program"],
+  ["38628", "Music Performance", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["38699", "Music Technology", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["38790", "Geology", "A.S. T Degree"],
+  ["38915", "College Career Readiness and Student Educational Planning", "Noncredit program"],
+  ["39000", "Accounting Basics for Small Business", "Noncredit program"],
+  ["39001", "Math Skills for the Professional Baker", "Noncredit program"],
+  ["39011", "Beginning American College English", "Noncredit program"],
+  ["39012", "Advanced American College English", "Noncredit program"],
+  ["39051", "Enterprise Communication", "Noncredit program"],
+  ["39089", "Basic Graphic Communication", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["39091", "Electronic Publishing and Design", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["39098", "Graphic Design and Digital Media", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["39107", "Business Administration: Global Business Specialized Area", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["39128", "Graphic Design and Digital Media", "A.S. Degree"],
+  ["39931", "Social Media for Business", "Noncredit program"],
+  ["40306", "Business Information Worker Essential Preparation: Workplace Decision Making and Time Management", "Noncredit program"],
+  ["40307", "Business Information Worker Essential Preparation: Workplace Communication", "Noncredit program"],
+  ["40309", "English and Reading Support", "Noncredit program"],
+  ["40313", "Introduction to Basic Computer and IT Careers for ESL Students", "Noncredit program"],
+  ["40337", "Family Child Care Provider", "Noncredit program"],
+  ["40831", "Film, Television, and Electronic Media", "A.S. T Degree"],
+  ["40931", "Basic Television Production", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["41045", "Visual Communications – Illustration", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["41364", "Business Administration 2.0", "A.S. T Degree"],
+  ["41518", "Sustainability in Economics and Society", "A.A. Degree"],
+  ["41557", "Business Administration: Marketing Specialized Area", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["41558", "Business Administration: Global Business Concentration", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["41559", "Business Administration: Global Business Concentration", "A.S. Degree"],
+  ["41736", "Law, Public Policy, and Society", "A.A- T Degree"],
+  ["41749", "Social Justice Studies: General", "A.A- T Degree"],
+  ["41757", "Social Justice Studies: Gender Studies", "A.A- T Degree"],
+  ["42720", "Audio and Music Technology", "A.A. Degree"],
+  ["42821", "Business Administration: General Business Specialized Area", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["42892", "Communication Studies 2.0", "A.A- T Degree"],
+  ["43020", "Business Administration: Management Specialized Area", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["43695", "Social Justice Studies: Asian American Studies", "A.A- T Degree"],
+  ["43896", "Social Justice: LGBTQ Studies", "A.A- T Degree"],
+  ["43897", "Social Justice: African American Studies", "A.A- T Degree"],
+  ["44032", "Mathematics Readiness", "Noncredit program"],
+  ["44155", "Social Justice Studies: Ethnic Studies", "A.A- T Degree"],
+  ["44363", "Social Justice Studies: Chicano Studies", "A.A- T Degree"],
+  ["44469", "Social Justice: Native American and Indigenous Studies", "A.A- T Degree"],
+  ["44865", "Public Health", "A.S. T Degree"],
+  ["44868", "Graphic Art and Visual Storytelling", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["45865", "Intermediate American College English", "Noncredit program"],
+  ["45866", "Medical Terminology for English Language Learners", "Noncredit program"],
+  ["45919", "Global Studies", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["46049", "Musical Theatre", "A.A. Degree"],
+  ["46225", "Business Administration: Human Resources Specialized Area", "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"],
+  ["46237", "Mathematics 2.0", "A.S. T Degree"],
+  ["46317", "Physics 2.0", "A.S. T Degree"]
+ ],
+ "pages": [
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6053", "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)", "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6062", "Theatre Arts - Associate in Arts for Transfer (ADT) - AA748 (CalGETC)", "Theatre Arts - Associate in Arts for Transfer (ADT) - AA748 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5950", "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530 (CalGETC)", "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Justice_ADT", "Administration of Justice - Associate in Science for Transfer (ADT) - AS643 (CalGETC)", "Administration of Justice - Associate in Science for Transfer (ADT) - AS643 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5960", "English - Associate in Arts for Transfer (ADT) - AAA649 (IGETC)", "English - Associate in Arts for Transfer (ADT) - AAA649 (IGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6008", "Journalism - Associate in Arts for Transfer (ADT) - AA671 (CalGETC)", "Journalism - Associate in Arts for Transfer (ADT) - AA671 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6019", "Music - Associate in Arts for Transfer (ADT) - AA705 (CalGETC)", "Music - Associate in Arts for Transfer (ADT) - AA705 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6054", "Spanish - Associate in Arts for Transfer (ADT) - AA708 (CalGETC)", "Spanish - Associate in Arts for Transfer (ADT) - AA708 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931", "Computer Science - Associate in Science for Transfer (ADT) - AS650 (CalGETC)", "Computer Science - Associate in Science for Transfer (ADT) - AS650 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6040", "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)", "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034", "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)", "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Anthro_ADT", "Anthropology - Associate in Arts for Transfer (ADT) - AA618 (CalGETC)", "Anthropology - Associate in Arts for Transfer (ADT) - AA618 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886", "Art History - Associate in Arts for Transfer (ADT) - AA743(CalGETC)", "Art History - Associate in Arts for Transfer (ADT) - AA743(CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031", "Philosophy - Associate in Arts for Transfer (ADT) - AA717 (CalGETC)", "Philosophy - Associate in Arts for Transfer (ADT) - AA717 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057", "Studio Arts - Associate in Arts for Transfer (ADT) - AA694 (CalGETC)", "Studio Arts - Associate in Arts for Transfer (ADT) - AA694 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5984", "Geography - Associate in Arts for Transfer (ADT) - AA759 (CalGETC)", "Geography - Associate in Arts for Transfer (ADT) - AA759 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955", "Economics - Associate in Arts for Transfer (ADT) - AA757 (CalGETC)", "Economics - Associate in Arts for Transfer (ADT) - AA757 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038", "Political Science - Associate in Arts for Transfer (ADT) - AA755 (CalGETC)", "Political Science - Associate in Arts for Transfer (ADT) - AA755 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5923", "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - AA886 (CalGETC)", "Child and Adolescent Development - Associate in Arts for Transfer (ADT) - AA886 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855", "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - AA1106 (CalGETC)", "Elementary Teacher Education: Integrated Programs - Associate in Arts for Transfer (ADT) - AA1106 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6028", "Nutrition and Dietetics - Associate in Science for Transfer (ADT) - AS908 (CalGETC)", "Nutrition and Dietetics - Associate in Science for Transfer (ADT) - AS908 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985", "Geology - Associate in Science for Transfer (ADT) - AS942 (CalGETC)", "Geology - Associate in Science for Transfer (ADT) - AS942 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5979", "Film, Television, and Electronic Media - Associate in Science for Transfer (ADT) - AS994 (CalGETC)", "Film, Television, and Electronic Media - Associate in Science for Transfer (ADT) - AS994 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - AA1008 (CalGETC)", "Law, Public Policy, and Society - Associate in Arts for Transfer (ADT) - AA1008 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050", "Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)", "Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6051", "Social Justice Studies: Gender Studies - Associate in Arts for Transfer (ADT) - AA1006 (CalGETC)", "Social Justice Studies: Gender Studies - Associate in Arts for Transfer (ADT) - AA1006 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072 (CalGETC)", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253", "Social Justice: LGBTQ Studies - Associate in Arts for Transfer (ADT) - AA1080 (CalGETC)", "Social Justice: LGBTQ Studies - Associate in Arts for Transfer (ADT) - AA1080 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856", "Social Justice Studies: Ethnic Studies - Associate Degree for Transfer (ADT) - AA1078 (CalGETC)", "Social Justice Studies: Ethnic Studies - Associate Degree for Transfer (ADT) - AA1078 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876", "Social Justice Studies: Chicano Studies - Associate in Arts for Transfer (ADT) - AA1076 (CalGETC)", "Social Justice Studies: Chicano Studies - Associate in Arts for Transfer (ADT) - AA1076 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5869", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT) - AA1082 (CalGETC)", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT) - AA1082 (CalGETC)"],
+  ["https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5872", "Public Health - Associate in Arts for Transfer (ADT) - AS1101 (CalGETC)", "Public Health - Associate in Arts for Transfer (ADT) - AS1101 (CalGETC)"]
+ ],
+ "claims": [
+  ["30578", 0],
+  ["30581", 1],
+  ["31175", 2],
+  ["31218", 3],
+  ["31456", 4],
+  ["31561", 5],
+  ["31801", 6],
+  ["32075", 7],
+  ["32174", 8],
+  ["32597", 9],
+  ["32658", 10],
+  ["32692", 11],
+  ["32745", 12],
+  ["32813", 13],
+  ["32912", 14],
+  ["32938", 15],
+  ["33021", 16],
+  ["33218", 17],
+  ["33229", 18],
+  ["33829", 19],
+  ["33964", 20],
+  ["37464", 21],
+  ["37483", 22],
+  ["38109", 23],
+  ["38790", 24],
+  ["40831", 25],
+  ["41364", 19],
+  ["41736", 26],
+  ["41749", 27],
+  ["41757", 28],
+  ["42892", 0],
+  ["43695", 29],
+  ["43896", 30],
+  ["43897", 31],
+  ["44155", 32],
+  ["44363", 33],
+  ["44469", 34],
+  ["44865", 35],
+  ["46237", 11],
+  ["46317", 12]
+ ]
+},
+"saddleback": {
+ "programs": [
+  ["22895", "SCHOOL AGE CARE AND RECREATION", "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u"],
+  ["22896", "Early Childhood Master Teacher", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22897", "Site Supervisor", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["22899", "Infant Toddler Teacher", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://saddleback.curriqunet.com/catalog/iq/catalog_programs_credit_AtoZ/pgrm-calgetc-ca", "Cal-GETC - Certificate of Achievement", "Cal-GETC - Certificate of Achievement"]
+ ],
+ "claims": [
+  ["22895", 0],
+  ["22896", 0],
+  ["22897", 0],
+  ["22899", 0]
+ ]
+},
+"san_joaquin_delta": {
+ "programs": [
+  ["19752", "Spanish Language", "A.A. Degree"],
+  ["45621", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3337&print", "San Joaquin Delta College Associate Degree General Education Pattern", "Program: San Joaquin Delta College Associate Degree General Education Pattern - San Joaquin Delta College"],
+  ["https://catalog.deltacollege.edu/preview_program.php?catoid=14&poid=3403&print", "California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement", "Program: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement - San Joaquin Delta College"]
+ ],
+ "claims": [
+  ["19752", 0],
+  ["45621", 1]
+ ]
+},
+"san_jose_city": {
+ "programs": [
+  ["45796", "Cal-GETC", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.sjcc.edu/graduation-certificate-general-education-requirements/cal-getc/", "Cal-GETC Requirements", "Cal-GETC Requirements < CourseLeaf"]
+ ],
+ "claims": [
+  ["45796", 0]
+ ]
+},
+"santa_rosa_junior": {
+ "programs": [
+  ["31461", "Early Childhood Education", "A.S. T Degree"],
+  ["32298", "Elementary Teacher Education", "A.A- T Degree"],
+  ["32301", "Art History", "A.A- T Degree"],
+  ["44893", "Arts Education Assistant", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"],
+  ["46305", "Elementary Teacher Education: Integrated Programs", "A.A- T Degree"]
+ ],
+ "pages": [
+  ["https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=88", "88  General Education- 2026-27 Cal-GETC GE", "88  General Education- 2026-27 Cal-GETC GE"]
+ ],
+ "claims": [
+  ["32301", 0]
+ ]
+},
+"southwestern": {
+ "programs": [
+  ["30909", "Mathematics", "A.S. T Degree"],
+  ["31683", "Physics", "A.S. T Degree"],
+  ["31826", "English", "A.A- T Degree"],
+  ["32693", "Administration of Justice", "A.S. T Degree"],
+  ["32754", "Art History", "A.A- T Degree"],
+  ["32954", "Intersegmental General Education Transfer Curriculum (IGETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["33630", "Spanish", "A.A- T Degree"],
+  ["33642", "Geology", "A.S. T Degree"],
+  ["33655", "Journalism", "A.A- T Degree"],
+  ["36634", "Psychology", "A.A- T Degree"],
+  ["38018", "Social Work and Human Services", "A.A- T Degree"],
+  ["38092", "Nutrition and Dietetics", "A.S. T Degree"],
+  ["40246", "Law, Public Policy, and Society", "A.A- T Degree"],
+  ["42056", "ESL College Readiness", "Noncredit program"],
+  ["42088", "College and Career Success: A 'Novel' Approach to Enhanced Literacy", "Noncredit program"],
+  ["45466", "Readiness for College Math", "Noncredit program"],
+  ["46387", "Mathematics 2.0", "A.S. T Degree"],
+  ["46516", "Physics 2.0", "A.S. T Degree"]
+ ],
+ "pages": [
+  ["https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/intersegmental-general-education-transfer-curriculum-igetc/", "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG", "California General Education Transfer Curriculum (Cal-GETC) | Southwestern College Catalog"],
+  ["https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/general-education-courses-common-patterns/", "SOUTHWESTERN COLLEGE\n2026-2027 CATALOG", "2026-2027 General Education Courses Common to Associate Degree Requirements and Cal-GETC | Southwestern College Catalog"]
+ ],
+ "claims": [
+  ["30909", 0],
+  ["31683", 0],
+  ["31826", 0],
+  ["32693", 0],
+  ["32754", 0],
+  ["32954", 1],
+  ["33630", 0],
+  ["33642", 0],
+  ["33655", 0],
+  ["36634", 0],
+  ["38018", 0],
+  ["38092", 0],
+  ["40246", 0],
+  ["46387", 0],
+  ["46516", 0]
+ ]
+},
+"taft": {
+ "programs": [
+  ["38661", "CSU GE-Breadth", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"],
+  ["45358", "California General Education Transfer Curriculum (Cal-GETC)", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/transfer-studies-cal-getc/csu-ge-breadth-certificate-of-achievement", "Cal-GETC: Certificate of Achievement", "Taft College - Cal-GETC: Certificate of Achievement"],
+  ["https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/transfer-planning-guide/general-education-certification-process/taft-college-cal-getc", "Taft College Cal-GETC", "Taft College - Taft College Cal-GETC"]
+ ],
+ "claims": [
+  ["38661", 0],
+  ["45358", 1]
+ ]
+},
+"victor_valley": {
+ "programs": [
+  ["36806", "Intersegmental General Education Transfer Curriculum", "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"]
+ ],
+ "pages": [
+  ["https://catalog.vvc.edu//degrees-certificates/calgetc/calgetc-ca/", "Cal-GETC (California General Education Transfer Curriculum) Certificate of Achievement", "Cal-GETC (California General Education Transfer Curriculum) Certificate of Achievement | Victor Valley College"]
+ ],
+ "claims": [
+  ["36806", 0]
+ ]
+}
+}
+}

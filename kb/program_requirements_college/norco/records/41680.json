@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     19.0,
     20.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 16.0-17.0; the catalog states 19.0-20.0"
    ]
@@ -85,6 +87,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -452,5 +465,6 @@
    "Codes are recorded as printed with hyphens (e.g., SJS-110); all match closed-list courses (closed list stores HIST14, HIST31, HIST34 without space)."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }
