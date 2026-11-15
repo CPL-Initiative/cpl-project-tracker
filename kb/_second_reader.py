@@ -224,9 +224,9 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
     # this one would pass the ceiling; from then on no record is sent. A call settles at its priced usage (xAI's
     # at the dearest rate, its larger reading), at its worst case when it was sent and answered no usage or raised,
     # and at $0 when it never reached the model. The run can pass the ceiling only by calls in flight costing
-    # more than their estimates: at most $0.92 a call over a $0.10 estimate (a call costs at most $1.02,
-    # M.worst_case of a 56,000-character request), so $3.68 with four workers, and $0.92 more for each further
-    # part of a read in parts in flight.
+    # more than their estimates: a call costs at most $1.12 (M.worst_case of the largest committed request, about
+    # 81,000 characters), $1.02 over a $0.10 estimate, so $4.10 with four workers, and $1.02 more for each further
+    # part of a read in parts in flight. A run the stop held ends red.
     import _program_requirements_wave as W
     import _spend_meter as M
     cpp, _ = per_record_rate(model, rate)
@@ -244,7 +244,7 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
             # case); one raised after them (merging the parts) leaves an error row and nothing uncounted.
             got = {"record": None, "usage": None, "model": None, "_sent": True, "_charge_usd": None,
                    "error": "exception: %s" % (str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__)}
-        if got.get("stopped") and not got.get("_sent"):
+        if got.get("stopped"):
             return ("held", rec)
         second = got.get("record") if isinstance(got.get("record"), dict) else None
         sc = None
@@ -308,6 +308,12 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
     # A call error is a row with an error and no reading. A reading the scorer could not read is still a reading,
     # filed with its reason, and does not count here.
     call_errors = [r for r in rows if r["second"].get("error") and not r["second"].get("record")]
+    if held:
+        # The stop held records: the run is no whole reading, so it ends red (S654 review).
+        print("::error::the hard stop held %d record(s) at $%.2f charged against $%.2f" % (len(held), meter.spent,
+                                                                                          ceiling or 0),
+              file=sys.stderr)
+        return 1
     if rows and len(call_errors) == len(rows):
         # Every call errored (the database or the function down, or the function answering "XAI_API_KEY not set").
         # The file stays written as the record, but the run made no second reading, and exit 0 would report it

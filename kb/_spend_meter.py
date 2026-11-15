@@ -159,15 +159,23 @@ class Meter:
     def reserve(self, estimate=None):
         """A Ticket for one call, or None when the stop holds it: spent + in flight + estimate would pass the
         ceiling, or an earlier call was held. Once held, every later call is held."""
+        got = self.reserve_many(1, estimate)
+        return got[0] if got else None
+
+    def reserve_many(self, n: int, estimate=None):
+        """n Tickets reserved in one step, or None when the stop holds them all (spent + in flight + n x estimate
+        would pass the ceiling): a read in parts is sent whole or not at all, never held partway."""
         est = self.estimate if estimate is None else float(estimate)
+        n = max(1, int(n))
         with self._lock:
-            if self.ceiling is not None and (self.stopped or self.spent + self.in_flight + est > self.ceiling + 1e-9):
+            if self.ceiling is not None and (self.stopped
+                                             or self.spent + self.in_flight + n * est > self.ceiling + 1e-9):
                 self.stopped = True
                 self.refused += 1
                 return None
-            self.in_flight += est
-            self.sent += 1
-            return Ticket(est)
+            self.in_flight += n * est
+            self.sent += n
+            return [Ticket(est) for _ in range(n)]
 
     def settle(self, ticket, charge: float) -> float:
         """Release the ticket's reservation and add the call's charge, in one lock block."""
@@ -179,6 +187,12 @@ class Meter:
             self.spent += charge
         return charge
 
+    def held(self) -> dict:
+        """The answer for a call the stop held: never sent, nothing counted."""
+        return {"record": None, "usage": None, "model": None, "stopped": True, "_sent": False, "_charge_usd": 0.0,
+                "error": "the hard stop held this call: $%.2f charged and $%.2f in flight against $%.2f"
+                         % (self.spent, self.in_flight, self.ceiling or 0)}
+
     def call(self, send, chars: int, estimate=None) -> dict:
         """One metered call: reserve, send() (which returns the function's answer), settle the answer's charge
         (answer_charge). An exception inside send() settles at the call's worst case and comes back as an error
@@ -186,10 +200,11 @@ class Meter:
         _charge_usd, what the meter counted for it."""
         ticket = self.reserve(estimate)
         if ticket is None:
-            return {"record": None, "usage": None, "model": None, "stopped": True, "_sent": False,
-                    "_charge_usd": 0.0,
-                    "error": "the hard stop held this call: $%.2f charged and $%.2f in flight against $%.2f"
-                             % (self.spent, self.in_flight, self.ceiling or 0)}
+            return self.held()
+        return self.send_reserved(ticket, send, chars)
+
+    def send_reserved(self, ticket, send, chars: int) -> dict:
+        """send() on a ticket already reserved (reserve_many), settled as call() settles it."""
         try:
             got = send()
             if not isinstance(got, dict):

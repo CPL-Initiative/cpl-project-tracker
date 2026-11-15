@@ -216,9 +216,10 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           FORCE: ${{ github.event.inputs.force || '' }}
           # The hard stop on every extraction (kb/_spend_meter.py): no program is sent when the run's charges, the
-          # reservations in flight and the next program's estimate would pass $40. A call costs at most $1.02
-          # against a $0.10 estimate, so with six workers the run can pass $40 by at most $5.52, and $0.92 more
-          # for each further part of a read in parts in flight.
+          # reservations in flight and the next program's estimate would pass $40. A call costs at most $1.12 (the
+          # largest committed request) against a $0.10 estimate, so with six workers the run can pass $40 by at
+          # most $6.14, and $1.02 more for each further part of a read in parts in flight. A read the stop held
+          # ends red at check-extract.
           CEILING: '40'
         run: >-
           python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6

@@ -130,6 +130,13 @@ _PROBE = {"prompt_tokens": 20000, "completion_tokens": 3000, "total_tokens": 600
           "completion_tokens_details": {"reasoning_tokens": 37000}}
 check(abs(M.charge_for("grok-x", _PROBE) - _usd(20000, 40000)) < 1e-9 and abs(_usd(20000, 40000) - 0.88) < 1e-9,
       "the reviewer's probe (20k prompt, 3k completion, 60k total, 37k reasoning) counts its larger reading, $0.88")
+# Each reading on its own, so deleting one fails a check: reasoning beside completion with no total, and a total
+# with no details (the S654 meter review).
+check(abs(M.charge_for("grok-x", {"prompt_tokens": 20000, "completion_tokens": 3000,
+                                  "completion_tokens_details": {"reasoning_tokens": 37000}}) - _usd(20000, 40000)) < 1e-9,
+      "reasoning tokens with no total: the output is completion + reasoning, $0.88")
+check(abs(M.charge_for("grok-x", {"prompt_tokens": 20000, "completion_tokens": 3000, "total_tokens": 60000})
+          - _usd(20000, 40000)) < 1e-9, "a total with no details: the output is total - prompt, $0.88")
 check(XP.cost("claude-opus-5-5", {"prompt_tokens": 1_000_000, "completion_tokens": 100_000}) == 6.0
       and XP.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0
       and XP.cost("grok-x", _PROBE) is None,
@@ -150,6 +157,34 @@ _m.settle(_t1, 0.0)
 _m.settle(_t2, 0.0)
 check(_t1 and _t2 and _t3 is None and _m.reserve() is None and _m.in_flight == 0 and _m.spent == 0,
       "the meter reserves two $0.10 calls under $0.25, holds the third, and once it held one it holds every later one")
+
+
+class _HookLock:
+    """A lock that runs a hook the moment it is first released: a reserve there must see the charge added."""
+
+    def __init__(self, inner):
+        self.inner, self.hook = inner, None
+
+    def __enter__(self):
+        return self.inner.__enter__()
+
+    def __exit__(self, *a):
+        r = self.inner.__exit__(*a)
+        h, self.hook = self.hook, None
+        if h:
+            h()
+        return r
+
+
+_mw = M.Meter(1.0, 0.5)
+_tw = _mw.reserve()
+_mw._lock = _HookLock(_mw._lock)
+_seen = {}
+_mw._lock.hook = lambda: _seen.update(ticket=_mw.reserve(0.5))
+_mw.settle(_tw, 0.9)
+check(_seen.get("ticket") is None and abs(_mw.spent - 0.9) < 1e-9,
+      "settle releases the reservation and adds the charge in one lock block: a reserve the moment it lets go sees "
+      "$0.90 charged and refuses $0.50 under $1.00")
 
 
 def _net(answer, sent, pause=0.0):
@@ -200,8 +235,15 @@ try:
     XP._post = _net(_AT_EST, _sent)
     _mp = M.Meter(0.25, 0.10)
     _got = XP.call(_src(1, codes=450), "k", meter=_mp)
-    check(len(_sent) == 2 and _got.get("stopped") and _got.get("error") and abs(_mp.spent - 0.20) < 1e-9,
-          "a read in three parts under $0.25 sends two parts and the stop holds the third (%d sent)" % len(_sent))
+    check(len(_sent) == 0 and _got.get("stopped") and not _got.get("_sent") and _mp.spent == 0 and _mp.in_flight == 0,
+          "a read in three parts ($0.30 of estimates) under $0.25 is held whole before any part is sent (%d sent)"
+          % len(_sent))
+    _sent = []
+    XP._post = _net(_AT_EST, _sent)
+    _mp = M.Meter(0.30, 0.10)
+    _got = XP.call(_src(1, codes=450), "k", meter=_mp)
+    check(len(_sent) == 3 and not _got.get("stopped") and abs(_mp.spent - 0.30) < 1e-9,
+          "under $0.30 the same read sends all three parts (%d sent)" % len(_sent))
     _sent = []
     XP._post = _net(lambda b: {"error": "IDLE_TIMEOUT: the gateway ended the read"} if "part" not in b else _AT_EST,
                     _sent)
@@ -225,11 +267,14 @@ try:
         sent = []
         XP._post = _net(answer, sent)
         XP.load_sources = lambda only="": [_src(i) for i in range(n)]
-        XP.main(["--ceiling-usd", str(ceiling)])
+        _rc[0] = XP.main(["--ceiling-usd", str(ceiling)])
         return sent
 
-    check(len(_pilot(_AT_EST, 0.25)) == 2,
-          "the pilot's calls at their estimate stop under $0.25 at exactly two: the third would make $0.30")
+    _rc = [None]
+    check(len(_pilot(_AT_EST, 0.25)) == 2 and _rc[0] == 1,
+          "the pilot's calls at their estimate stop under $0.25 at exactly two (the third would make $0.30), and a run "
+          "the stop held ends red (exit %r)" % _rc[0])
+    check(len(_pilot(_AT_EST, 40)) == 6 and _rc[0] == 0, "a pilot run the stop never held stays green")
     _s15 = _pilot({"model": "claude-opus-5-5", "usage": {"output_tokens": 750000}}, 40)
     check(len(_s15) == 3, "a $15 call passes its $0.10 estimate, so the pilot passes $40 by one call's overrun "
           "(three calls, $45), the bound its step comment names")
@@ -249,7 +294,7 @@ try:
           "500 programs ($50) are over the limit: nothing goes and the step ends red")
 
     # ── the college workflow (program-requirements-college.yml): six workers at a time ──
-    def _college(answer, ceiling, workers, n=10, pause=0.0):
+    def _college(answer, ceiling, workers, n=10, pause=0.0, halt_wait_s=0.01):
         t = tempfile.mkdtemp()
         keep, out = os.path.join(t, "keep"), os.path.join(t, "out")
         os.makedirs(os.path.join(keep, "records"))
@@ -263,9 +308,10 @@ try:
                                                                      "placed": 3},
                                          "invented": {"pass": True, "count": 0}, "arithmetic": {"status": "equal"}}
         try:
-            C.extract(out, 0, 1, "654", workers, keep, None, ceiling)
+            C.extract(out, 0, 1, "654", workers, keep, None, ceiling, halt_wait_s=halt_wait_s)
             with open(os.path.join(out, "extract_account_0.json")) as fh:
                 acct = json.load(fh)
+            acct["_check_extract"] = C.check_extract(out)
         finally:
             XP.score = saved
             shutil.rmtree(t, ignore_errors=True)
@@ -275,6 +321,21 @@ try:
     check(len(_cs) == 2 and abs(_ca["meter_charge_usd"] - 0.20) < 1e-9,
           "the college workflow with four workers under $0.25 sends exactly two (%d), its reservations held in "
           "flight; the receipt names the meter's $%.2f" % (len(_cs), _ca["meter_charge_usd"]))
+    check(_ca["_check_extract"] == 1, "a college read the stop held ends red at check-extract")
+    _cs, _ca = _college(dict(_AT_EST, record={"blocks": []}), 40, 4)
+    check(len(_cs) == 10 and _ca["_check_extract"] == 0, "a college read the stop never held stays green")
+    # The halt retry is metered: the caller check's 503 counts $0 and the retry's priced $0.10 is counted.
+    _tries = {}
+
+    def _halt_then_read(b):
+        _tries[b["title"]] = _tries.get(b["title"], 0) + 1
+        if _tries[b["title"]] == 1:
+            return {"error": "HTTP 503: upstream", "http_status": 503, "reason": "upstream_timeout"}
+        return dict(_AT_EST, record={"blocks": []})
+    _cs, _ca = _college(_halt_then_read, 0.15, 1, n=1)
+    check(len(_cs) == 2 and abs(_ca["meter_charge_usd"] - 0.10) < 1e-9,
+          "a 503 from the caller check, then a priced retry: the receipt counts the retry's $0.10 (%r)"
+          % _ca["meter_charge_usd"])
     _cs, _ca = _college(dict(_CHEAP, record={"blocks": []}), 0.25, 4, pause=0.05)
     check(len(_cs) == 2, "with $0.01 calls the college meter still sends exactly two: once it held a call it "
           "sends nothing more (%d)" % len(_cs))
@@ -287,6 +348,11 @@ try:
         _green = C.check_extract(_d)
     check(_red == 1 and _green == 0, "an asked extraction the price refused over the limit ends the college run red; "
           "extract=0 at the same price stays green")
+    with tempfile.TemporaryDirectory() as _d:
+        json.dump({"ceiling_usd": 40, "meter_charge_usd": 40.0, "halted": None, "programs": ["00001"]},
+                  open(os.path.join(_d, "not_sent_0.json"), "w"))
+        _held = C.check_extract(_d)
+    check(_held == 1, "programs the stop held, with no halt to explain them, end the college run red")
 
     # ── the second reader (second-reader.yml): four workers at a time ──
     _recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
@@ -301,9 +367,11 @@ try:
             SR.OUT = tmp
             XP._post = _net(answer, sent, pause)
             try:
-                SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", model, workers, ceiling, rate)
+                filed_rc = SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", model, workers,
+                                  ceiling, rate)
                 with open(os.path.join(tmp, "second_nowhere_test.json")) as fh:
                     filed = json.load(fh)
+                filed["_rc"] = filed_rc
             finally:
                 SR.failing_records, SR.source_for, SR.OUT = _saved_sr
         return sent, filed
@@ -316,9 +384,11 @@ try:
     _sp, _fp = _second({"model": "grok-x", "usage": _PROBE}, None, 1, n=1)
     check(abs(_fp["rows"][0]["second"]["charge_usd"] - 0.88) < 1e-9, "the probe's row counts $0.88")
     _s4, _f4 = _second(_AT_EST, 0.25, 4, n=10, pause=0.05)
-    check(len(_s4) == 2 and _f4["not_sent"] == 8,
+    check(len(_s4) == 2 and _f4["not_sent"] == 8 and _f4["_rc"] == 1,
           "with four workers under $0.25 the second reader sends exactly two (%d): the reservations in flight hold "
           "the third" % len(_s4))
+    _sg, _fg = _second(_AT_EST, 40, 4, n=5)
+    check(len(_sg) == 5 and _fg["_rc"] == 0, "a second reading the stop never held stays green")
     _sc, _fc = _second(_CHEAP, 0.25, 4, n=10, pause=0.05)
     check(len(_sc) == 2, "with $0.01 calls it still sends exactly two: once held, nothing more (%d)" % len(_sc))
     _se, _fe = _second(RuntimeError("the connection dropped"), None, 1, n=1)
@@ -423,6 +493,18 @@ for name in sorted(os.listdir(wf_dir)):
                 # condition carries (the pilot's push guard, S654).
                 pif = str(ps.get("if") or "").strip()
                 check(not pif or pif in cond, "%s: the price step runs wherever it can (if: %s)" % (where, pif or "none"))
+                # The re-run guard (S654 review): the price step passes the run's attempt, from the runner, by env.
+                penv = {**(wf.get("env") or {}), **(job.get("env") or {}), **(ps.get("env") or {})}
+                check(any('--attempt "$ATTEMPT"' in c for c in commands(prun))
+                      and str(penv.get("ATTEMPT", "")).replace(" ", "") == "${{github.run_attempt}}",
+                      "%s: the price step passes --attempt \"$ATTEMPT\" with ATTEMPT from github.run_attempt" % where)
+                if name == "program-requirements-college.yml":
+                    check('--fresh "$FRESH"' in prun and '--force "$FORCE"' in prun,
+                          "%s: the price step passes --fresh and --force, so forced programs are priced" % where)
+                    later = [p for p in steps[i + 1:] if "check-extract" in str(p.get("run") or "")]
+                    check(len(later) == 1 and "env.EXTRACT == 'true'" in str(later[0].get("if") or "")
+                          and "||" not in str(later[0].get("if") or ""),
+                          "%s: check-extract runs after it whenever extraction is set" % where)
             run = " ".join(paid)
             check(all("--ceiling-usd" in c for c in paid), "%s passes the hard stop on every paid command" % where)
             ceiling = re.search(r"--ceiling-usd\s+\"?\$\{?([A-Z_]+)", run)

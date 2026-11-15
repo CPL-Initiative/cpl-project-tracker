@@ -343,8 +343,19 @@ def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
     parts = split_codes(closed, src["text"], max(2, math.ceil(len(closed) / PART_SIZE)))
     bodies = [dict(body, part={"index": i + 1, "of": len(parts), "codes": codes})
               for i, codes in enumerate(parts)]
+    # Every part's estimate is reserved in one step before any part is sent (S654 review): the stop holds the
+    # whole read or none of it, so no paid part is wasted on a read it holds partway.
+    tickets = meter.reserve_many(len(bodies))
+    if tickets is None:
+        out = dict(meter.held(), parts=len(parts), split_because=(first or {}).get("error")
+                   or "the closed list holds %d courses" % len(closed))
+        if first:
+            out.update(_sent=bool(first.get("_sent")), _charge_usd=first.get("_charge_usd") or 0.0,
+                       usage=_sum_usage([first]), model=first.get("model"))
+        return out
     with ThreadPoolExecutor(max_workers=len(bodies)) as pool:
-        gots = list(pool.map(lambda b: meter.call(lambda: post(b, key), M.request_chars(b)), bodies))
+        gots = list(pool.map(lambda tb: meter.send_reserved(tb[0], lambda: post(tb[1], key), M.request_chars(tb[1])),
+                             zip(tickets, bodies)))
     every = ([first] if first else []) + gots
     models = {g.get("model") for g in every if g.get("model")}
     out = {"model": models.pop() if len(models) == 1 else None, "usage": _sum_usage(every),
@@ -432,9 +443,9 @@ def main(argv: list[str] | None = None) -> int:
     # estimate ($0.08 x 1.25) and refuses when the charges, the reservations in flight and this one would pass the
     # ceiling; from then on it sends nothing. One program is read at a time (a read in parts posts its parts at
     # once, a reservation each), so the run can pass the ceiling only by the calls in flight costing more than
-    # their estimates. A call costs at most $1.02 (M.worst_case of a 56,000-character request: 16,000 characters of
-    # page text and 240 listed courses), $0.92 over its estimate: the worst overshoot is $0.92 for one call, and
-    # $0.92 a part for a read in parts.
+    # their estimates. A call costs at most $1.12 (M.worst_case of the largest committed request, about 81,000
+    # characters: santa_rosa_junior 37016's text and 442 listed courses), $1.02 over its $0.10 estimate: the worst
+    # overshoot is $1.02 for one call, and $1.02 a part for a read in parts. A run the stop held ends red.
     meter = M.Meter(ceiling, call_estimate())
     for src in sources:
         if meter.stopped:
@@ -443,7 +454,7 @@ def main(argv: list[str] | None = None) -> int:
             break
         t0 = time.time()
         got = call(src, key, meter=meter)
-        if got.get("stopped") and not got.get("_sent"):
+        if got.get("stopped"):
             print("::warning::the hard stop held the run at $%.2f charged against $%.2f; %d programs not sent"
                   % (meter.spent, ceiling, len(sources) - len(rows)), flush=True)
             break
@@ -481,6 +492,11 @@ def main(argv: list[str] | None = None) -> int:
     for r in rows:
         print(json.dumps(r, ensure_ascii=False))
     print("=== PILOT RECORDS JSON END ===")
+    if meter.stopped:
+        # The stop held programs: the run is no whole read, so it ends red (S654 review).
+        print("::error::the hard stop held the pilot at $%.2f charged against $%.2f; %d of %d programs were read"
+              % (meter.spent, ceiling, len(rows), len(sources)), flush=True)
+        return 1
     return 0
 
 

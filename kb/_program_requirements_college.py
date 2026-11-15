@@ -5953,10 +5953,11 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     margin, as the price step priced it) and refuses when the charges, the reservations in flight and this one
     would pass the ceiling; from then on no program is sent. A call settles at its priced usage, at its worst case
     when it was sent and answered no usage, and at $0 when it never reached the model. The run can pass the
-    ceiling only by calls in flight costing more than their estimates: at most $0.92 a call over a $0.10
-    estimate (a call costs at most $1.02, M.worst_case of a 56,000-character request), so $5.52 with six
-    workers, and $0.92 more for each further part of a read in parts in flight. A program not sent keeps its
-    filed record and is listed in not_sent_<shard>.json with the meter's total (meter_charge_usd).
+    ceiling only by calls in flight costing more than their estimates: a call costs at most $1.12 (M.worst_case
+    of the largest committed request, about 81,000 characters, santa_rosa_junior 37016), $1.02 over a $0.10
+    estimate, so $6.14 with six workers, and $1.02 more for each further part of a read in parts in flight. A
+    program not sent keeps its filed record and is listed in not_sent_<shard>.json with the meter's total
+    (meter_charge_usd); check-extract then ends the run red.
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key
     refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
     (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
@@ -6125,7 +6126,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             held()
             return
         got = X.call(src, key, meter=meter)
-        if got.get("stopped") and not got.get("_sent"):
+        if got.get("stopped"):
             held()
             return
         h = X.halt_of(got)
@@ -6329,6 +6330,20 @@ def check_extract(out_dir: str) -> int:
             and priced.get("within_limit") is False:
         print("::error::the extraction was asked for and refused: the estimate $%.2f is over the $%.0f limit, so "
               "nothing was extracted" % (priced.get("price_usd") or 0, priced.get("limit_usd") or 0))
+        return 1
+    # A read the hard stop held ends red too (S654 review): the run is no whole read, though spending stopped.
+    held = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "not_sent_*.json"))):
+        try:
+            with open(path) as fh:
+                ns = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if isinstance(ns, dict) and ns.get("programs") and not ns.get("halted"):
+            held += list(ns["programs"])
+    if held:
+        print("::error::the hard stop held %d programs (first: %s); the run is no whole read, and the next run sends "
+              "them" % (len(held), held[0]))
         return 1
     acct = extract_accounts(out_dir)
     if acct["calls"] is None:
