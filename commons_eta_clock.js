@@ -401,7 +401,9 @@
   /* A chip: a control that moves the projected date (Sam, in session, S661: "make the items Cobix designed as chips be
      chips instead of link buttons. The aren't intended to open views but to change projected eta"). Words that open or
      reset something stay the house's underlined words (chip). */
-  function pill(label, pressed, onClick, extra) { var b = chip(label, pressed, onClick, extra); b.classList.add("eta-pill"); return b; }
+  /* The pill is drawn on an inner face, so it can look small while the button keeps a 24px target (WCAG 2.2). */
+  function face(b) { var f = el("span", { cls: "eta-face" }); while (b.firstChild) f.appendChild(b.firstChild); b.appendChild(f); b.classList.add("eta-pill"); return b; }
+  function pill(label, pressed, onClick, extra) { return face(chip(label, pressed, onClick, extra)); }
   function chip(label, pressed, onClick, extra) {
     var b = el("button", { type: "button", cls: "eta-chip", "aria-pressed": pressed == null ? null : (pressed ? "true" : "false"), text: label });
     if (extra) for (var k in extra) if (extra[k] != null) b.setAttribute(k, extra[k]);
@@ -470,8 +472,9 @@
 
   function picker(B, S, college, redraw) {
     var wrap = el("div", { cls: "eta-picker" });
-    var btn = el("button", { type: "button", cls: "eta-chip eta-pill eta-pick", "aria-haspopup": "listbox", "aria-expanded": S.picker ? "true" : "false", "data-eta": "college" },
+    var btn = el("button", { type: "button", cls: "eta-chip eta-pick", "aria-haspopup": "listbox", "aria-expanded": S.picker ? "true" : "false", "data-eta": "college" },
       [el("span", { text: college ? college.name : "All colleges (statewide)" }), college && nearComplete(college) ? el("span", { cls: "eta-badge", text: pctWord(college.p, college.a) + ", " + leftWord(college.r) }) : null]);
+    face(btn);
     btn.addEventListener("click", function () { S.picker = !S.picker; redraw("college"); });
     wrap.appendChild(withTip(btn, CHIP_TIPS.college));
     if (!S.picker) return wrap;
@@ -827,18 +830,23 @@
     ".eta-head { margin:0; font-size:1rem; color:var(--cmn-heading); }",
     ".eta-daterow { display:flex; flex-wrap:wrap; gap:8px; align-items:center; justify-content:center; }",
     ".eta-date { font-family:var(--cmn-serif); font-size:clamp(1.5rem, 4vw, 2.2rem); color:var(--cmn-title); cursor:help; }",
-    ".eta-chips { display:flex; flex-wrap:wrap; gap:6px 14px; align-items:center; justify-content:center; width:100%; }",
+    ".eta-chips { display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; justify-content:center; width:100%; }",
     ".eta-chips.eta-left { justify-content:flex-start; }",
-    ".eta-group { display:flex; flex-wrap:wrap; gap:4px 8px; align-items:center; }",
-    ".eta-plabel { font-size:.82rem; color:var(--cmn-muted); cursor:help; }",
+    ".eta-band .eta-chips > .eta-tipwrap > .eta-chip:not(.eta-pill) { font-size:.74rem; color:var(--cmn-ink-2); }",
+    ".eta-group { display:flex; flex-wrap:wrap; gap:4px; align-items:center; }",
+    ".eta-plabel { font-size:.7rem; color:var(--cmn-muted); cursor:help; }",
     /* Controls are underlined words (Sam, 2026-10-09): no border, no fill at rest, 24px tall; on reads bold over a wash. */
     ".eta-chip { font:inherit; font-size:.86rem; min-height:24px; padding:0 4px; border:0; background:none; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; border-radius:4px; }",
     ".eta-chip[aria-pressed=\"true\"], .eta-chip.eta-on { font-weight:700; background:var(--eta-wash); color:var(--cmn-heading); }",
     /* The chips that move the date: a bordered pill, as COBIx's mock draws them; on, the border takes the accent over a
        wash and the word turns bold, so the state never rests on color alone. */
-    ".eta-chip.eta-pill { text-decoration:none; color:var(--cmn-ink); padding:1px 8px; border:1px solid var(--cmn-line); border-radius:999px; font-size:.82rem; display:inline-flex; align-items:center; gap:6px; }",
-    ".eta-chip.eta-pill:hover { border-color:var(--cmn-accent); }",
-    ".eta-chip.eta-pill[aria-pressed=\"true\"], .eta-chip.eta-pill.eta-on { border-color:var(--cmn-accent); background:var(--eta-wash); color:var(--cmn-heading); font-weight:700; }",
+    /* Small and quiet (Sam, S661: "Keep them quite small font so they don't grab the focus which should be the eta and
+       bar graph"): the mock's 11px type, a hairline border, the second ink; the date and the bars lead. */
+    ".eta-chip.eta-pill { text-decoration:none; padding:0; min-height:24px; border:0; background:none; display:inline-flex; align-items:center; }",
+    ".eta-face { display:inline-flex; align-items:center; gap:4px; padding:0 6px; line-height:16px; border:1px solid var(--cmn-line); border-radius:999px; color:var(--cmn-ink-2); font-size:.7rem; font-weight:400; }",
+    ".eta-pill:hover .eta-face { border-color:var(--cmn-accent); }",
+    ".eta-pill[aria-pressed=\"true\"], .eta-pill.eta-on { background:none; }",
+    ".eta-pill[aria-pressed=\"true\"] .eta-face, .eta-pill.eta-on .eta-face { border-color:var(--cmn-accent); background:var(--eta-wash); color:var(--cmn-heading); font-weight:600; }",
     ".eta-chip:focus-visible, .eta [tabindex]:focus-visible, .eta select:focus-visible, .eta input:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; }",
     ".eta-tipwrap { position:relative; display:inline-flex; }",
     ".eta-tip { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); margin-top:4px; z-index:6; width:min(280px, 80vw); padding:8px; background:var(--cmn-dialog); color:var(--cmn-ink-2); border:1px solid var(--cmn-line); border-radius:8px; font-size:.78rem; line-height:1.35; text-align:left; font-weight:400; }",
