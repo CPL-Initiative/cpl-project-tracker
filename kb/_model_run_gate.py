@@ -120,6 +120,10 @@ def script_calls(path: str, modes: str = "") -> int:
         m = re.match(r'"([^"]*)"', rest)
         if m and m.group(1).split(" ")[0] in want:
             n += 1
+    if n == 0:
+        # A typo in a mode name asks nothing of the suite, and the gate would pass on the extra calls alone.
+        print("::warning::%s: no run matches the modes %r; check the names against the labels' first words"
+              % (os.path.basename(path), modes), flush=True)
     return n
 
 

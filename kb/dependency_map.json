@@ -31595,7 +31595,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 755
+     "line": 764
     },
     {
      "id": "script:kb/_cred_fold_resolution_write.py",

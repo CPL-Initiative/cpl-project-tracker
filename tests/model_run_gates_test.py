@@ -271,17 +271,25 @@ RULES = cp.rules_text(cp.load_procedures(), open(cp.SKILL, encoding="utf-8").rea
                       prefer=[])
 QUEUE = [{"raw_title": "Queue title %03d" % i, "cpl_types": ["Industry Certification"],
           "articulating_colleges_sample": ["A College", "B College", "C College"], "hints": []} for i in range(400)]
-# By hand: each chunk of 15 is one request; its worst case is (its characters + 40,000) x $5/M + 32,000 x $25/M
-# ($0.80). The titles asked are the longest run of chunks from the front whose sum stays within $40.
-_each = [by_hand(len(json.dumps({"rules": RULES, "rows": QUEUE[i:i + 15]})) + 40000, 32000)
-         for i in range(0, 400, 15)]
-_k, _sum = 0, 0.0
-while _k < len(_each) and _sum + _each[_k] <= 40.0:
-    _sum += _each[_k]
-    _k += 1
+# By hand, the one pricing rule (COBIx on #3351, 6890858064): each chunk of 15 is one post; one attempt's worst case
+# is (the request's characters + 40,000) x $5/M + 32,000 x $25/M ($0.80), and a post is three attempts (the
+# function's SDK retries twice). A chunk fits when the charges so far, each post at those three attempts (what the
+# meter charges when no usage comes back), plus this post's three attempts stay within $40.
+def fit_by_hand(rules, rows, limit=40.0):
+    posts = [3 * by_hand(len(json.dumps({"rules": rules, "rows": rows[i:i + 15]})) + 40000, 32000)
+             for i in range(0, len(rows), 15)]
+    k, spent = 0, 0.0
+    while k < len(posts) and spent + posts[k] <= limit:
+        spent += posts[k]
+        k += 1
+    return k, spent, posts
+
+
+_k, _sum, _posts = fit_by_hand(RULES, QUEUE)
 FIT = 15 * _k
-check("by hand, 400 titles at today's %d-character rules: %d chunks of %d fit ($%.2f), the next would pass $40"
-      % (len(RULES), _k, len(_each), _sum), 0 < _k < len(_each) and _sum + _each[_k] > 40.0)
+check("by hand, 400 titles at today's %d-character rules: a post is $%.2f, %d chunks of %d fit ($%.2f), the next "
+      "would pass $40" % (len(RULES), _posts[0], _k, len(_posts), _sum),
+      0 < _k < len(_posts) and _sum + _posts[_k] > 40.0)
 asked_rows, leaked = [], []
 
 
@@ -308,8 +316,33 @@ check("the run says how many were asked and how many remain, as a warning (the j
       and "::error::" not in _log.getvalue())
 # Each answer's priced usage: 1,000 in x $4/M + 100 out x $20/M = $0.006 (Opus 5.5's own rate), for each call.
 check("the meter counts each answer's priced usage", near(spend.get("charge_usd"), 0.006 * _k, 1e-6), spend)
-check("the run's record keeps the gate's estimate, the prefix's $%.2f by hand" % _sum,
+check("the run's record keeps the gate's estimate, the fit's $%.2f by hand" % _sum,
       near(spend.get("estimate_usd"), round(_sum, 2), 0.006), spend)
+
+
+# COBIx's test: a function that answers with no usage is charged each post's worst case, three attempts. Every
+# chunk of a fitted run is posted and the meter holds none, at the real rules size and at a scaled one (50,000
+# characters, by hand a post of about $3.82 and so 10 chunks).
+for label, rules in (("today's rules", RULES), ("50,000-character rules", "x" * 50000)):
+    k, spent, posts = fit_by_hand(rules, QUEUE)
+    posted = []
+
+    def no_usage(body, key, posted=posted):
+        posted.append(len(body["rows"]))
+        return {"records": [{"raw_title": r["raw_title"], "unified_title": "Queue Title"} for r in body["rows"]]}
+
+    _log = io.StringIO()
+    with contextlib.redirect_stdout(_log):
+        got, calls, spend = cp.ask_classifier(QUEUE, rules, "key", call=no_usage)
+    check("%s, no usage back: all %d fitted chunks are posted, none held, the run green with its warning"
+          % (label, k), 0 < k < len(posts) and posted == [15] * k and spend.get("refused") is None
+          and spend.get("posts_held") == 0 and spend["asked"] == 15 * k
+          and "::warning::classifier: asked %d titles; %d remain for the next night" % (15 * k, 400 - 15 * k)
+          in _log.getvalue() and "::error::" not in _log.getvalue(), (k, posted, spend))
+    check("%s, no usage back: the meter charged each post its three attempts, $%.2f by hand" % (label, spent),
+          near(spend.get("charge_usd"), spent, 1e-3) and spend.get("charge_usd") <= 40.0, spend)
+check("the scaled rules fit 10 chunks by hand", fit_by_hand("x" * 50000, QUEUE)[0] == 10,
+      fit_by_hand("x" * 50000, QUEUE)[:2])
 
 
 called = []
@@ -320,19 +353,18 @@ def refuse_call(body, key):
     raise AssertionError("the classifier was called past its $40 gate")
 
 
-# Red only when not even one chunk fits: with a $1 limit the first chunk's worst case (over $1.50 by hand
+# Red only when not even one chunk fits: with a $1 limit the first post's worst case (over $1.50 an attempt by hand
 # above) does not fit, and nothing is sent.
 with contextlib.redirect_stdout(io.StringIO()):
     got, calls, spend = cp.ask_classifier(QUEUE[:15], RULES, "key", call=refuse_call, limit=1.0)
 check("when not even one chunk fits, nothing is sent and the run is held (red)",
-      _each[0] > 1.0 and not called and got == {} and calls == [] and "over the $1 limit" in spend.get("refused", ""), spend)
+      _posts[0] > 1.0 and not called and got == {} and calls == [] and "over the $1 limit" in spend.get("refused", ""),
+      spend)
 
-# The hard stop reserves each post's true worst case, three attempts: cer-classify's `new Anthropic()` retries
-# twice on its own. Two chunks of 15 under rules of 100,000 characters: each request is under 104,000 characters,
-# so one attempt's worst case is at most (104,000 + 40,000) x $5/M + $0.80 = $1.52, and the two chunks' estimate,
-# at most $3.04, fits a $6 limit. A post reserves three attempts, at least (100,000 + 40,000) x $5/M x 3 + $2.40 =
-# $4.50, so the second reservation (at least $9.00 with the first) passes $6 and is held, and the first post's
-# failed answer with no usage settles at its three attempts, so its retry is held too.
+# Our own retry is reserved only when it happens. Two chunks under rules of 100,000 characters: each request is under
+# 104,000 characters, so a post's three attempts are at least (100,000 + 40,000) x $5/M x 3 + $2.40 = $4.50 and at
+# most (104,000 + 40,000) x $5/M x 3 + $2.40 = $4.56. Under a $6 limit one post fits and two (at least $9.00) do
+# not. That post fails with no usage and settles at its three attempts, so its retry is held, red.
 small = "x" * 100000
 tries = []
 
@@ -347,14 +379,18 @@ def fail_once(body, key):
 _chars = len(json.dumps({"rules": small, "rows": QUEUE[:15]}))
 with contextlib.redirect_stdout(io.StringIO()):
     got, calls, spend = cp.ask_classifier(QUEUE[:30], small, "key", call=fail_once, limit=6.0)
-check("two chunks of a 100,000-character rule fit a $6 limit at one attempt each",
-      _chars < 104000 and spend["calls_priced"] == 2 and spend["estimate_usd"] <= 3.04, spend)
-check("the stop reserves three attempts a post: one post is sent, the second chunk and the retry are held",
+check("of two chunks of a 100,000-character rule, one fits a $6 limit at three attempts a post",
+      _chars < 104000 and spend["calls_priced"] == 1 and 4.50 <= spend["estimate_usd"] <= 4.56
+      and spend["asked"] == 15 and spend["remaining"] == 15, spend)
+check("the stop reserves our retry when it happens and holds it: one post sent, the run red",
       len(tries) == 1 and got == {} and spend.get("refused") and cp.FUNCTION_ATTEMPTS == 3, (tries, spend))
 check("a failed post with no usage settles at its three attempts",
-      near(spend.get("charge_usd"), 3 * by_hand(_chars + 40000, 32000), 1e-4)
-      or near(spend.get("charge_usd"), 3 * by_hand(len(json.dumps({"rules": small, "rows": QUEUE[15:30]})) + 40000,
-                                                   32000), 1e-4), spend)
+      near(spend.get("charge_usd"), 3 * by_hand(_chars + 40000, 32000), 1e-4), spend)
+with contextlib.redirect_stderr(io.StringIO()):
+    _w = io.StringIO()
+    with contextlib.redirect_stdout(_w):
+        _none = G.script_calls(SMOKE, "7cc")
+check("a --modes that names no run counts 0 and warns", _none == 0 and "::warning::" in _w.getvalue())
 src = open(os.path.join(KB, "_cer_procedures.py"), encoding="utf-8").read()
 run_src = src[src.index("\ndef run("):src.index("\ndef try_procedure(")]
 check("run() asks the classifier only through its gate", "ask_classifier(" in run_src

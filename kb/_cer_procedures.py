@@ -544,14 +544,14 @@ def post(body, key, timeout=200):
         return {"error": str(exc).splitlines()[0][:300]}
 
 
-# The $40 gate (S655, card 10; d-one-spend-meter-s654). Before any call the run prices each chunk at the spend
-# meter's worst case for that request's size (M.worst_case: the request's characters and the function's prompt as
-# input tokens, the output cap doubled, at the dearest rate) and asks the longest run of chunks, in the queue's
-# order, whose sum stays within Sam's standing limit; the rest wait for the next night. During the run the meter
-# reserves before each post, a retry included, the true worst case of that post: three attempts, since the
-# function's `new Anthropic()` retries twice on its own (the SDK's default maxRetries), and an answer with no usage
-# settles at the same three. A reservation is the post's worst case, so the posts in flight can never carry the run
-# past the limit; the one exception is a charge above the worst case, which the meter still counts in full.
+# The $40 gate (S655, card 10; d-one-spend-meter-s654). One pricing rule serves the fit and the hard stop: a post's
+# true worst case is three attempts (the function's `new Anthropic()` retries twice on its own, the SDK's default
+# maxRetries) at the spend meter's worst case for the request's size (M.worst_case: its characters and the
+# function's prompt as input tokens, the output cap doubled, at the dearest rate). Before any call the run asks the
+# longest run of chunks, in the queue's order, that the meter would send with every post settling at that worst
+# case; the rest wait for the next night. During the run the meter reserves the same worst case before each post,
+# our retry included when it happens, and an answer with no usage settles at it. So the posts in flight can never
+# carry the run past the limit, and the meter never holds a post of a run the fit accepted unless a retry spent it.
 import _spend_meter as M  # noqa: E402
 
 FUNCTION_ATTEMPTS = 3   # one call and the SDK's two retries inside cer-classify (index.ts, new Anthropic())
@@ -563,17 +563,23 @@ def chunk_bodies(rows, rules, chunk=CHUNK):
 
 
 def price_classify(rows, rules, chunk=CHUNK, limit=None):
-    """The classifier's estimate before any call: each chunk's worst case (a retry is never priced in; the hard
-    stop reserves it when it happens). Returns {calls, estimate_usd, limit_usd, within_limit} for every chunk, and
-    fits (the longest run of chunks from the first whose sum stays within the limit), fit_usd and fit_rows."""
+    """The classifier's estimate before any call, priced by the one rule the hard stop uses (COBIx on #3351,
+    comment 6890858064): each post's worst case, its three attempts inside the function (M.worst_case x
+    FUNCTION_ATTEMPTS), which is both what the meter reserves before the post and what it charges when no usage
+    comes back. The fit walks the chunks as the meter will, post by post: a chunk fits when the run's charges so
+    far, each at that worst case, plus this post's reservation stay within the limit, so the meter never holds a
+    post of a run the fit accepted. Our own retry of a failed chunk (classify's second attempt) is not priced: the
+    meter reserves it only when it happens, and may hold it. Returns {calls, estimate_usd, limit_usd,
+    within_limit} for every chunk, and fits (the chunks from the first that pass), fit_usd and fit_rows."""
     limit = M.STANDING_LIMIT_USD if limit is None else float(limit)
     bodies = chunk_bodies(rows, rules, chunk)
-    each = [M.worst_case(M.request_chars(b)) for b in bodies]
-    fits, total = 0, 0.0
-    for usd in each:
-        if not M.within_limit(total + usd, limit):
+    each = [M.worst_case(M.request_chars(b)) * FUNCTION_ATTEMPTS for b in bodies]
+    fits, spent = 0, 0.0
+    for reservation in each:
+        if not M.within_limit(spent + reservation, limit):
             break
-        fits, total = fits + 1, total + usd
+        fits, spent = fits + 1, spent + reservation   # settled at its worst case: the charge with no usage
+    total = spent
     est = round(sum(each), 2)
     return {"calls": len(bodies), "estimate_usd": est, "limit_usd": limit, "within_limit": M.within_limit(est, limit),
             "fits": fits, "fit_usd": round(total, 2), "fit_rows": sum(len(b["rows"]) for b in bodies[:fits])}
@@ -624,11 +630,12 @@ def ask_classifier(rows, rules, key, call=post, limit=None):
     ask = rows[:priced["fit_rows"]]
     spend = {"estimate_usd": priced["fit_usd"], "limit_usd": priced["limit_usd"], "calls_priced": priced["fits"],
              "asked": len(ask), "remaining": len(rows) - len(ask)}
-    print("classifier: %d of %d titles in %d of %d calls fit the $%.0f limit at each call's worst case ($%.2f; all "
+    print("classifier: %d of %d titles in %d of %d calls fit the $%.0f limit at each post's worst case, three "
+          "attempts ($%.2f; all "
           "%d calls $%.2f)" % (len(ask), len(rows), priced["fits"], priced["calls"], priced["limit_usd"],
                                priced["fit_usd"], priced["calls"], priced["estimate_usd"]), flush=True)
     if not ask:
-        spend["refused"] = ("the first call's worst case is over the $%.0f limit; the classifier is asked nothing "
+        spend["refused"] = ("the first post's worst case is over the $%.0f limit; the classifier is asked nothing "
                             "this run" % priced["limit_usd"])
         print("::error::classifier: " + spend["refused"], flush=True)
         return {}, [], spend
@@ -637,8 +644,10 @@ def ask_classifier(rows, rules, key, call=post, limit=None):
               % (len(ask), spend["remaining"], priced["limit_usd"]), flush=True)
     meter = M.Meter(priced["limit_usd"])
     got, calls = classify(ask, rules, key, call=call, meter=meter)
-    # The meter's own estimate field is its per-call default (0 here); the run's record keeps the gate's estimate.
-    spend.update({k: v for k, v in meter.snapshot().items() if k != "estimate_usd"})
+    # The meter's estimate field is its per-call default (0 here) and its "refused" is a count: the run's record
+    # keeps the gate's estimate, "refused" for the reason a post was held, and posts_held for the count.
+    snap = meter.snapshot()
+    spend.update({k: v for k, v in snap.items() if k not in ("estimate_usd", "refused")}, posts_held=snap["refused"])
     if meter.stopped:
         spend["refused"] = ("the hard stop held %d posts at $%.2f charged against $%.0f"
                             % (meter.refused, meter.spent, priced["limit_usd"]))
