@@ -44,38 +44,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 21,
    "listed": 21,
-   "share": 0.81,
-   "missing": [
-    "HIS25",
-    "HIS31",
-    "HIS32",
-    "HIS33"
-   ],
-   "unexplained": [
-    "HIS25",
-    "HIS31",
-    "HIS32",
-    "HIS33"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 2,
    "codes": [
     "ENGL25",
-    "HIST25",
-    "HIST31",
-    "HIST32",
-    "HIST33",
     "SOC48"
    ],
    "flagged": [
     "ENGL25",
     "SOC48"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -88,6 +75,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,7 +92,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -343,5 +342,6 @@
    "Program Learning Outcomes are printed once for the program; this A.A-T degree is the only award in the section and they are recorded for it."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

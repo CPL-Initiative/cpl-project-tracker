@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T02:24:36Z",
+ "written_at": "2026-11-15T03:03:36Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15848,
+  "gap": 6487,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15332,
+  "passed_at_read": 15340,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15848,
+  "gap": 6487
  },
  "census_live": {
   "basis": "live",
@@ -9738,12 +9738,12 @@
    "harvested": true,
    "slug": "riverside_city",
    "programs": 268,
-   "passing": 222,
-   "gap": 46,
+   "passing": 230,
+   "gap": 38,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 18,
-    "unknown_without_live": 22
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -9770,7 +9770,7 @@
    "read_at": "2026-10-11T03:28:38Z",
    "read_kind": "capture",
    "cost_usd": 15.03,
-   "passed_at_read": 221,
+   "passed_at_read": 229,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9783,9 +9783,9 @@
    "extracted": 244,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
-    "invented": 9,
-    "arithmetic": 15,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 14,
     "repeated": 0,
     "outcomes": 1
    },
@@ -9796,10 +9796,10 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2130.5,
-   "run": "38108461470",
+   "run": "43605883626",
    "levers": {
-    "reconcile_steps": 22,
     "reader_page_search": 18,
+    "reconcile_steps": 14,
     "program_course_file_check": 6
    },
    "collection": {
@@ -9808,7 +9808,7 @@
      "models": {
       "claude-opus-5-5": 244
      },
-     "run": "38108461470",
+     "run": "43605883626",
      "at": "2026-10-11T03:28:38Z",
      "cost_usd": 15.03,
      "platform": "curriqunet"
