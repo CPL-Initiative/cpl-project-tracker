@@ -99,16 +99,19 @@ PROGRAM_PATH = re.compile(
 # and Santa Barbara City's /justice-studies/administration-justice-ast/ were both dropped, so
 # every Administration of Justice program at the two colleges lost its own page to a C-ID chart
 # or another degree (sitemap read 39770285975, S447).
+# A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
+# underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
+# English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
+# folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
+# PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py). No path reads
+# a fragment as a program page: program_candidates() and link_page_ok() through NOT_PROGRAM_PATH, ncl_page()
+# directly, a program code or not (S654).
+FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)s?(?=/)", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
     r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend|"
-    # A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
-    # underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
-    # English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
-    # folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
-    # PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py).
-    r"/_[^/]*(?:header|include|partial|fragment|snippet)s?(?=/)", re.I)
+    + FRAGMENT_PATH.pattern, re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────
@@ -1253,8 +1256,10 @@ def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
     readings = [ncl_words(r) for r in ncl_readings(pg, college_words)]
     return {"pg": pg, "key": pg.get("group") or page_stem(pg.get("url")), "keys": page_keys(pg),
             "readings": readings, "kinds": page_award_kinds(pg),
-            "program_page": bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
-                NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path)),
+            # a fragment a catalog includes is no program page, whatever code it carries (FRAGMENT_PATH, S654)
+            "program_page": not FRAGMENT_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) and (
+                bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
+                    NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path))),
             # A GE pattern's own page: it names a pattern and nothing else once the pattern is set aside
             # (Riverside City heads its transfer degrees "Sociology ADT CalGETC", a program's page).
             "ge": ge_pattern_page(pg) and not any(w for w, _ in readings)}
