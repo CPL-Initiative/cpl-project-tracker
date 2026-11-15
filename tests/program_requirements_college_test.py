@@ -3663,7 +3663,7 @@ rcc_given = C.assign(rcc_progs, rcc_pages)
 check(all((rcc_given[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
       "the five degrees claim their own pages: %r" % {cn: (v["best"] or {}).get("url", "")[-12:] for cn, v in rcc_given.items()})
 _names = C.ge_page_names_program
-C.ge_page_names_program = lambda pg, program, titles=None: False      # S646's rule as it stood
+C.ge_page_names_program = lambda pg, program, titles=None, owners=None: False      # S646's rule as it stood
 rcc_before = C.assign(rcc_progs, rcc_pages)
 C.ge_page_names_program = _names
 check(not any((rcc_before[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
@@ -3737,6 +3737,26 @@ check(C.ge_page_owner({"h1": "Psychology (UC) - Associate in Arts (IGETC)"}, _gp
 check((C.ge_page_owner({"h1": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)"},
                        _gp(("02809", "Equine Science", "A.S. Degree"))) or {}).get("control_number") == "02809",
       "noise: LACCD and GE beside the units name no program")
+# A printed five-digit run alone never settles the owner (COBIx on #3324, S654): it names a listed program only when
+# that program's title agrees with the heading's words at least one way; otherwise the title, award and version
+# route decides. Owners written from the headings by hand.
+_zip = {"h1": "Kinesiology - Associate in Arts for Transfer (ADT) - Riverside, CA 92506 (CalGETC)"}
+check((C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"), ("32948", "Kinesiology", "A.A- T Degree"))) or {})
+      .get("control_number") == "32948"
+      and C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a ZIP code that is a listed program's control number never makes Nursing the Kinesiology page's owner")
+_cid = {"h1": "Music - Associate in Arts (CalGETC) MUS 10250"}
+check((C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"),
+                                  ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2"
+      and C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"))) is None,
+      "control: a five-digit course id that is a listed program's control number never takes Music's page")
+check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"},
+                       _gp(("38461", "Child Development", "A.A- T Degree"), ("1", "Child Development", "A.S. Degree"),
+                           ("2", "Human Development", "A.A. Degree"))) or {}).get("control_number") == "38461"
+      and (C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                           _gp(("31018", "Business Administration", "A.S. T Degree"),
+                               ("3", "Business Administration", "A.S. Degree"))) or {}).get("control_number") == "31018",
+      "control: a heading printing its own program's control number still resolves, a cut window with no title too")
 check(C.ge_pattern("California General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
       and C.ge_pattern("Intersegmental GE Transfer Curriculum")
@@ -3747,7 +3767,7 @@ check(C.ge_pattern("California General Education Transfer Curriculum")
 # words the heading names), with its owner written from the heading's own text: the award code or words (AA-T,
 # AS-T, "for Transfer", AS, AA), the version ("2.0") and the full title. Read from the headings, not from the rule
 # or the filed claim (the filed claim is wrong for Riverside City's four 2.0 pages and Moreno Valley's MAS643).
-# 24 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice);
+# 29 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice),
 # and five LA Trade-Tech PDF windows whose cut headings print the program's own control number (T031018H).
 GE_OWNERS = {
     # award siblings: the heading prints AS or AA, a degree, never the certificate of the same title
@@ -3785,39 +3805,73 @@ GE_OWNERS = {
     ("los_angeles_trade_technical", "Dietetics T040026H AST"): "40026",
     ("los_angeles_trade_technical", "Administration 2.0 T042785H AS-T"): "42785",
 }
-ge_seen, ge_two, ge_allow, ge_refuse = {}, [], set(), set()
-for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
-    _slug = _path.split(os.sep)[-2]
-    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
-    _progs = _gp(*[(s["control_number"], s.get("title"), s.get("award")) for s in _src])
-    _pages = {}
-    for s in _src:
-        _own = s.get("source") or {}
-        if _own.get("url") and C.ge_pattern_page(_own):
-            _pages.setdefault(_own["url"], _own)
-            if not C.ge_pattern(s.get("title")):
-                _p = next(p for p in _progs if p["control_number"] == s["control_number"])
-                (ge_allow if C.ge_page_names_program(_own, _p, _progs) else ge_refuse).add((_slug, s["control_number"]))
-    for _u, _pg in _pages.items():
+# Read on a committed fixture, never the live filings (COBIx on #3324, S654; p-test-reads-live-review-file-s649):
+# tests/fixtures/ge_page_owner_s653.json holds every filed pattern page's address, heading and title, the claims
+# filed on it, and the listed programs that can bear on its owner, measured 2026-11-15 on the 118 filed colleges
+# (40 with a pattern page). A new filing changes the live counts printed below and never these.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_s653.json")) as _fh:
+    GE_FIX = json.load(_fh)["colleges"]
+ge_seen, ge_two, ge_allow, ge_refuse, ge_cache_off, ge_cache_n = {}, [], set(), set(), [], 0
+
+
+def _ge_fix(slug, c):
+    return (slug, _gp(*c["programs"]), [{"url": u, "h1": h, "title": t} for u, h, t in c["pages"]], c["claims"])
+
+
+for _slug, _progs, _pages, _claims in (_ge_fix(k, v) for k, v in sorted(GE_FIX.items())):
+    for _cn, _i in _claims:
+        _p = next(p for p in _progs if p["control_number"] == _cn)
+        if not C.ge_pattern(_p["title"]):
+            (ge_allow if C.ge_page_names_program(_pages[_i], _p, _progs) else ge_refuse).add((_slug, _cn))
+    _cache: dict = {}
+    for _pg in _pages:
         _owners = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
                    and C.ge_page_names_program(_pg, p, _progs)]
+        # assign()'s cache: the owner read once per page gives every program the answer the uncached call gives
+        _cached = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs, _cache)]
+        if _cached != _owners:
+            ge_cache_off.append((_slug, _pg["url"], _owners, _cached))
         if len(_owners) > 1:
-            ge_two.append((_slug, _u, _owners))
+            ge_two.append((_slug, _pg["url"], _owners))
         _head = _pg.get("h1") or _pg.get("title") or ""
         for (_k, _start), _cn in GE_OWNERS.items():
             if _k == _slug and _head.replace("\xa0", " ").startswith(_start):
                 ge_seen[(_k, _start)] = _owners
+    # one owner per distinct heading, none where only the pattern's own program is listed (it never asks)
+    ge_cache_n += len(_cache) == (len({(pg["h1"], pg["title"]) for pg in _pages})
+                                  if any(not C.ge_pattern(p["title"]) for p in _progs) else 0)
+check(all(C.ge_pattern_page(pg) for _, _, pgs, _ in (_ge_fix(k, v) for k, v in GE_FIX.items()) for pg in pgs),
+      "every fixture page is a pattern page")
+check(ge_cache_off == [] and ge_cache_n == len(GE_FIX) == 40,
+      "the owner cached once per page agrees with the uncached owner on every fixture page and program: %r"
+      % ge_cache_off[:2])
 check(ge_two == [], "no filed pattern page is allowed to two programs: %r" % ge_two[:3])
 check(len(ge_seen) == len(GE_OWNERS) == 29,
-      "every hand-checked sibling page is among the filed pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
+      "every hand-checked sibling page is among the fixture's pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
 check(all(ge_seen.get(k) == [cn] for k, cn in GE_OWNERS.items()),
       "each hand-checked sibling page goes to the owner its heading names: %r"
       % [(k[0], k[1][:30], ge_seen.get(k), cn) for k, cn in GE_OWNERS.items() if ge_seen.get(k) != [cn]][:4])
-# Measured, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140), as the rule
-# reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on their 2.0
-# siblings' pages are refused; the rest are a pattern's own page another program claimed.
+# Measured on the fixture, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140),
+# as the rule reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on
+# their 2.0 siblings' pages are refused; the rest are a pattern's own page another program claimed.
 check(len(ge_allow) == 88 and len(ge_refuse) == 52,
-      "88 filed claims on a pattern's page allowed, 52 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+      "88 fixture claims on a pattern's page allowed, 52 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+# A report line, never a check: the same counts on the live filings, which move with every new filing.
+_live_allow = _live_refuse = 0
+for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
+    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
+    _progs = _gp(*[(s["control_number"], s.get("title"), s.get("award")) for s in _src])
+    for s in _src:
+        _own = s.get("source") or {}
+        if _own.get("url") and C.ge_pattern_page(_own) and not C.ge_pattern(s.get("title")):
+            _p = next(p for p in _progs if p["control_number"] == s["control_number"])
+            if C.ge_page_names_program(_own, _p, _progs):
+                _live_allow += 1
+            else:
+                _live_refuse += 1
+print("report: live filed claims on a pattern's page: %d allowed, %d refused (fixture: 88, 52)"
+      % (_live_allow, _live_refuse))
 check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
        ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
       "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")

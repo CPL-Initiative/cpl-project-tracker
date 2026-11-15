@@ -632,7 +632,8 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
     must agree with the program, each one comparison here:
       control  a heading printing a listed program's state control number is that program's page and no
-               other's (LA Trade-Tech's cut PDF windows, "Development T038461G AA-T");
+               other's (LA Trade-Tech's cut PDF windows, "Development T038461G AA-T"), when the program's
+               title and the heading's words agree at least one way; a number alone settles nothing (S654);
       title    the heading's words before its award are the program's title words, both ways ("Art History
                AA-T" is never History's, "Business Administration: Accounting" never plain Business
                Administration's);
@@ -646,12 +647,17 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
     Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
     head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
+    words, ident, nums = ge_identity(head, heading=True)
     ctl = {m.group(1) for m in GE_CONTROL.finditer(head)}
     if ctl:
-        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in ctl]
+        # A five-digit run names its program only when the program's title agrees with the heading's words at
+        # least one way (COBIx on #3324, S654): a ZIP code or a five-digit course id that happens to be a listed
+        # program's control number never skips the title, award and version checks below. A cut window that
+        # prints no title word ("T031018H AS-T") disagrees with no title.
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in ctl
+                 and _ge_title_one_way(ge_identity(p.get("title"))[0], words)]
         if named:
             return named[0] if len(named) == 1 else None
-    words, ident, nums = ge_identity(head, heading=True)
     if not words:
         return None
     kinds = award_kinds_in(head)
@@ -672,10 +678,25 @@ def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
     return fits[0][0] if len(fits) == 1 else None
 
 
-def ge_page_names_program(pg: dict, program: dict, programs: list | None = None) -> bool:
+def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
+    """Whether a program's title words and a heading's agree at least one way: every title word in the heading,
+    or every heading word in the title."""
+    return all(_named(w, head_words) for w in title_words) or all(_named(h, title_words) for h in head_words)
+
+
+def ge_page_names_program(pg: dict, program: dict, programs: list | None = None,
+                          owners: dict | None = None) -> bool:
     """Whether a general education pattern's page belongs to this program among the college's listed
-    programs (ge_page_owner); programs left None weighs the program alone."""
-    owner = ge_page_owner(pg, programs if programs is not None else [program])
+    programs (ge_page_owner); programs left None weighs the program alone. owners, when given, holds each
+    page's owner among these same programs, keyed by the heading and title the owner is read from, so
+    assign() works a page's owner out once (COBIx on #3324, S654); never share one across program lists."""
+    if owners is None or programs is None:
+        owner = ge_page_owner(pg, programs if programs is not None else [program])
+    else:
+        key = (pg.get("h1"), pg.get("title"))
+        if key not in owners:
+            owners[key] = ge_page_owner(pg, programs)
+        owner = owners[key]
     if owner is None:
         return False
     if owner is program:
@@ -684,11 +705,13 @@ def ge_page_names_program(pg: dict, program: dict, programs: list | None = None)
     return cn is not None and owner.get("control_number") == cn
 
 
-def candidates(program: dict, pages: list[dict], programs: list | None = None) -> list[dict]:
+def candidates(program: dict, pages: list[dict], programs: list | None = None,
+               owners: dict | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
     then the higher coverage. programs is every listed program at the college (assign()
-    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner)."""
+    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner);
+    owners is assign()'s cache of those owners, one per page (ge_page_names_program)."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -708,7 +731,7 @@ def candidates(program: dict, pages: list[dict], programs: list | None = None) -
         # that pattern (ge_pattern(), S646), or when its heading names the program beside the
         # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
         if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
-                and not ge_page_names_program(pg, program, programs):
+                and not ge_page_names_program(pg, program, programs, owners):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -1095,7 +1118,8 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    ranked = {p["control_number"]: candidates(p, pages, programs) for p in programs if p["closed_list"]}
+    owners: dict = {}   # a pattern page's owner, worked out once per page (ge_page_names_program)
+    ranked = {p["control_number"]: candidates(p, pages, programs, owners) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
