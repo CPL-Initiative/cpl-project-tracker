@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1500,
-    "bytes": 15900293,
-    "over_budget": 3,
-    "handoff_max": 657,
+    "files": 1502,
+    "bytes": 15913255,
+    "over_budget": 4,
+    "handoff_max": 660,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59992,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 161,
-        "bytes": 5147724,
+        "bytes": 5147895,
         "over": 1
       },
       "index": {
@@ -46,24 +46,25 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 554434,
-        "over": 2
+        "bytes": 555116,
+        "over": 3
       },
       "handoff": {
-        "files": 618,
-        "bytes": 4443787,
+        "files": 620,
+        "bytes": 4455896,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 3,
-      "vault_heavy_path": 76
+      "oversized_doc": 4,
+      "vault_heavy_path": 76,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 28066,
-      "bytes": 4982807375,
-      "heavy_bytes": 3633357240,
+      "files": 28072,
+      "bytes": 4982846618,
+      "heavy_bytes": 3633372930,
       "heavy_share": 0.729,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -161,13 +162,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 179366,
+        "bytes": 179442,
         "limit": 150000,
         "lane": "other",
-        "over_by": 29366,
+        "over_by": 29442,
         "ratio": 1.2
       },
-      "message": "179,366 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "179,442 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -197,14 +198,27 @@
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20187,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 187,
+        "ratio": 1.01
+      },
+      "message": "20,187 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2449995108,
+        "bytes": 2450002139,
         "kind": "dir"
       },
-      "message": "directory totals 2,449,995,108 B inside the vault"
+      "message": "directory totals 2,450,002,139 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -301,10 +315,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13359433,
+        "bytes": 13368092,
         "kind": "dir"
       },
-      "message": "directory totals 13,359,433 B inside the vault"
+      "message": "directory totals 13,368,092 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -955,6 +969,18 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_660_handoff.md",
+      "detail": {
+        "lanes": [
+          "program-requirements-harvest"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_660_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
