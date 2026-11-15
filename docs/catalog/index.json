@@ -17090,8 +17090,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 617,
+   "count": 618,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 657,
+     "path": "docs/session_657_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 657 handoff (from SkyTurnstone, S657)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-15",
      "governs": [],
@@ -27502,5 +27516,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1485
+ "total": 1486
 }
