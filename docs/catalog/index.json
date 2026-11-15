@@ -17090,8 +17090,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 618,
+   "count": 619,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 659,
+     "path": "docs/session_659_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 659 handoff (from SkyDunlin, S658)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-15",
      "governs": [],
@@ -27516,5 +27530,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1486
+ "total": 1487
 }
