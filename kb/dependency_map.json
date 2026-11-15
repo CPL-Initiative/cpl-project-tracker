@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 990,
+  "file_datasets": 997,
   "external_services": 195,
-  "consumers": 596,
+  "consumers": 599,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2435
+     "line": 2453
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2391
+     "line": 2409
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2328
+     "line": 2346
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1921
+     "line": 1939
     }
    ],
    "main_committers": []
@@ -4695,6 +4695,19 @@
      "direction": "write",
      "how": "literal",
      "line": 302
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:.github/pages_allowlist.txt": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
     }
    ],
    "served": false,
@@ -7960,6 +7973,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/cdc_data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/conductor_mode.md": {
    "consumers": [
     {
@@ -7993,7 +8019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 886
+     "line": 887
     }
    ],
    "served": false,
@@ -8588,7 +8614,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6423
+     "line": 6441
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8634,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6473
+     "line": 6491
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -11188,6 +11214,32 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/cdc_data_dictionary.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 49
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/cdc_integrations.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/cer_classified.json": {
@@ -17377,7 +17429,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3279
+     "line": 3297
     }
    ],
    "served": true,
@@ -17390,7 +17442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6857
+     "line": 6875
     }
    ],
    "served": true,
@@ -17519,7 +17571,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 538
     }
    ],
    "served": false,
@@ -18543,7 +18595,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 539
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19709,6 +19761,46 @@
      "direction": "write",
      "how": "literal",
      "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cdc_integrations.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data_integrations.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cdc_sharing.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data_sharing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": true,
@@ -21160,7 +21252,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6673
+     "line": 6691
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21180,7 +21272,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5892
+     "line": 5910
     }
    ],
    "served": false,
@@ -21797,7 +21889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6760
+     "line": 6778
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24488,6 +24580,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/cdc_sharing_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cer_classifier_rules_size_test.py": {
    "consumers": [
     {
@@ -27000,7 +27105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 539
     }
    ],
    "served": false,
@@ -29245,7 +29350,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6831
+     "line": 6849
     }
    ],
    "main_committers": []
@@ -29257,7 +29362,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6940
+     "line": 6958
     }
    ],
    "main_committers": []
@@ -34373,6 +34478,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/cdc_sharing_build_test.py",
     "tests/commons_cost_read_test.py",
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
@@ -35376,6 +35482,8 @@
   "kb/*_dryrun",
   "kb/*_fold",
   "kb/*_out",
+  "kb/cdc_data_dictionary.json",
+  "kb/cdc_integrations.json",
   "kb/cid_articulation_joins.json",
   "kb/coci_minted_courses.json",
   "kb/coci_minted_memberships.json",

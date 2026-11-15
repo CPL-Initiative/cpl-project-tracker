@@ -341,3 +341,8 @@ who does not open Admin was never told their banner stopped. The 2/4/8-hour
 expiry is the right default for a disclosure — a session link should not outlive
 the session — so the fix was a notice to its author, never a longer life.
 
+
+## S654 (SkyWhimbrel, the conductor, 2026-11-15): one spend meter for every model caller
+
+- **Card 10's gate waits on one module.** Sam's $40 for `cer-classify`, `cpl-news-harvest` and `cpl-chat` would have repeated the fault COBIx found on #3330 (xAI usage priced at zero), which three separate pricing loops each carried. `kb/_spend_meter.py` (`d-one-spend-meter-s654`) reserves before a call and settles after it under one lock, so each caller imports it instead of pricing usage itself. Two of the three callers return no usage, so their stop is a worst-case bound until a function deploy returns usage.
+- **Group 2 of the key readers waits on proof.** At S654's read-in, six of the nine group-1 jobs had not yet run in `live-counts`; scheduled runs land late, so group 2 waits for them.

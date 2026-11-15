@@ -44,6 +44,8 @@ withhold tools
 # Root workbooks.
 withhold *.xlsx
 # kb/ staging, curated anchors and lexicons: generator inputs baked into the served unified_courses_*.js.
+withhold kb/cdc_data_dictionary.json
+withhold kb/cdc_integrations.json
 withhold kb/cid_articulation_joins.json
 withhold kb/coci_minted_courses.json
 withhold kb/coci_minted_memberships.json
@@ -188,6 +190,8 @@ publish commons.js
 publish commons_ase.js
 publish commons_data.js
 publish commons_data_cards.js
+publish commons_data_integrations.js
+publish commons_data_sharing.js
 publish commons_list.js
 publish commons_look.js
 publish commons_page.js
@@ -400,6 +404,8 @@ publish kb/row_audit/latest.json
 publish kb/sjcoe_occupation_scope_map.json
 publish kb/spot_checks
 publish kb/statewide_exhibit_categories.json
+publish kb/status/cdc_integrations.json
+publish kb/status/cdc_sharing.json
 publish kb/status/cer_proposals_in_use_2026-11-12.md
 publish kb/status/commons.json
 publish kb/status/commons_data.json

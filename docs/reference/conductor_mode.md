@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -166,6 +166,38 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S654, and what worked
+
+- The `worker` agent type always creates a worktree, so a fourth worker cannot be a `worker`. A general-purpose agent
+  told to read `.claude/agents/worker.md` and to work in the main checkout did the CDC fixes and the rescore wave at no
+  extra disk; the disk stood at 8.4 GB free with three worktrees (`p-worker-type-always-makes-a-worktree-s654`).
+- Between 02:28Z and 02:33Z an API 522 ended three Opus workers mid-task. Each resumed by one SendMessage with its
+  worktree intact. Tell a long worker to commit and push at each coherent step (`p-api-522-kills-workers-s654`).
+- Context went 17% to 50% in 70 minutes, mostly the read-in's nine reports (about 60,000 tokens) and briefs written
+  inline. What held it after: briefs and finding lists as scratchpad files, capped reports, `get_check_runs` with
+  `perPage` 1, one check-in per CI wait (`p-context-half-in-70-minutes-s654`).
+- Two times written from memory ran 1 to 6 minutes ahead of the clock (a chat status, a ledger heading). Read `date -u`
+  in the same command (`p-conductor-times-from-memory-again-s654`).
+- A stacked PR still conflicts after its base squash-merges (identical lines changed on both sides of a generated
+  file), so a stacked train cannot skip CI cycles (`p-stack-squash-conflicts-s654`). **DECIDED**
+  `d-merge-stack-tops-s654`: a strictly stacked pair merges as one squash through its top branch (#3330 carries #3327;
+  #3326 carries #3323) and the lower PR closes with a pointer: one CI cycle instead of two.
+- The conductor wrote a matching rule into a brief (#3346, the award-led cut window) without the self-recall test the
+  conductor-brief skill requires; a second reader's recall run found it kept 230 of 314 right answers. Every brief that
+  states a matching rule asks for recall counts on records whose answer is already held
+  (`p-conductor-rule-without-self-recall-s654`).
+- COBIx posted a real fault on #3326 at 02:40Z; the conductor read the thread only at the merge gate, 86 minutes later,
+  after a second reader's wording fix had made it sharper. Read a PR's thread when its worker reports, not only at the
+  gate (`p-thread-unread-until-merge-s654`). The fix was a fifth data class, restricted (`d-cdc-restricted-class-s654`).
+- Honors step 2's design was replaced at the fourth round of one finding class (lump and sequence); rows now rest on
+  same-college anchors (`d-honors-anchored-rows-s654`); COBIx's design read added "row yes, mint no" on a split-candidate
+  base (`d-honors-no-mint-on-split-candidate-s654`).
+- Worked: a merge finalizer worker whose only job is to bring one named PR up to `main` and rebuild generated files
+  (about 3 minutes each, six times, no red `main`); fix workers never merged `main`. A second reader on every fix delta
+  found real faults each time (#3328, the CDC fix, the gates). Reading each PR's last comment page in the same step as
+  the merge caught COBIx's 02:27Z and 02:35Z reads. Review counts: read-in 9 agents; #3328, CDC and PPM 6; Honors
+  review four 7; gates 4; meter 3; single second readers on #3324's delta and the CDC delta.
 
 ## What went wrong in S653, and what worked
 

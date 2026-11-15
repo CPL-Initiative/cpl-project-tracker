@@ -1,7 +1,7 @@
 ---
 title: "Program requirements harvest lessons — archive 5 (S637 onward)"
 created: 2026-11-14
-updated: 2026-11-14
+updated: 2026-11-15
 tags: [lessons, archive, program-requirements, catalog-harvest]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/lessons
@@ -346,3 +346,41 @@ Three closing paragraphs of the lane, verbatim (S645):
 ✅ **A light index, full records by key or by college** (S384; the index reads stored columns, S405, guard `tests/program_requirements.test.js` 6e): lessons, *Moved from the lane (S641)*.
 
 ✅ **Flags and a person's reading are built (S347; Sam, Sheet 51 card 1).** Confirm or Needs a fix writes `program_record_verdicts` through `program_record_verdict_add`; a trigger keeps a person's reading across a reload. Detail: lessons doc, *Moved from the lane (S356 compaction)*.
+
+## Moved from the lessons doc (S654 compaction)
+
+Verbatim from `docs/program_requirements_harvest_lessons.md`.
+
+## S645 (SkyFinch, the conductor, 2026-11-13): the first live display runs, the rescore, two first reads
+
+Sam opened S645 at 02:31Z 2026-11-13 with handoff 645's line. Through COBIx (#3111 comment 6842097699, COBIx chat 6:33 PM PT 2026-11-12) he gave his go for the first live display run and for unparking Glendale; on #3198 he ruled 72 districts plus Calbright and three SIS pilots (Los Angeles CCD, Citrus, Riverside CCD). In session he wrote one line, verbatim: *"FYI got an sql approve request you should have with for already"* (`execute_sql` was on the allow list; `docs/reference/approval_prompt_hooks.md`).
+
+**Merged on a green `test`:** #3196 (`048d3fc7`, San Jose City's stored course codes), #3200 (`f74434c7`, North Orange Continuing Education; the fix was a `COLLEGE_NAMES` entry in `kb/_build_commons_status.py`), #3204 (`867a46f6`, the `display_college` input).
+
+**The display, live.** The scoped run and the whole build, above. Live at 03:40Z: 17,673 rows at `38a0fd8ed41f` (115 colleges), 280 with no display (Santiago Canyon 192, held; Diablo Valley 88, loaded tonight), 16 at `0874a3a15f22`.
+
+**The #3193 rescore at six colleges.** Each college on its own `claude/harvest-rescore-<slug>-s645` branch: `step=reconcile extract=0`, then a compare gate (`compare(load_records(main), load_records(branch))` in `kb/_program_requirements_wave.py`), then `step=reread extract=0 force=<the reconcile run>`. The gate found no pass to fail or lost coverage and restored three record files from `main` (Solano 38591; ELAC 08252, 02430). Live at 03:44Z: 126 replaced (Coalinga 5, Grossmont 30, Pierce 17, Solano 18, San Bernardino Valley 27, ELAC 29); passing on the tab Coalinga 45 to 49, ELAC 92 to 103, Grossmont 99 to 123, Pierce 162 to 163, San Bernardino Valley 146 to 161, Solano 112 to 119, 62 in all. The reconcile path has no kept-passing guard, which is why the gate runs before the reread. The migration `kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql` was not applied: the push of its `.apply` change was refused by the auto-mode permission check, and no verdict row exists at the six, so it changes nothing for these rereads. #3207 carries the six branches and a display build (`1efcc13ee048`).
+
+**First reads.** Diablo Valley: paid read 43353452924, 90 extracted, 81 pass the machine checks, $5.63, 115 not found; load 43357065225 inserted 88 (08013, 41233 place none of their courses); #3205. Its first dated reads failed at verify because the branch's Cuesta predated #3200's refresh; merging `main` fixed it. San Jose City: free capture 125 programs, 84 to extract; paid read 43357106423, 84 extracted, 50 pass, $6.63; load inserted 77 of 84; #3206. Spend $12.26, each college under $40.
+
+**Glendale.** Registry row and procedure record v1 written 02:52Z (md5 `47c9a5f92f56e985aaadbf2be9a2a236`, was none), receipt on #3202. The first capture (run 43355259728) listed 261 and read none: no overview named a Requisites or Requirements tab. A diagnostic and a transfer-degree code fix (`f02dcb9e`) went out with a second capture.
+
+**The PDF reader (#3201).** Two review rounds (23 findings, then 17) replaced the detector-driven design. The conductor's decisions 13 and 14: gate the reading per college by its own evidence (Santiago Canyon's proof capture, run 43360377086: 182 programs print the number after, 0 before; ELAC's proof matched `main`'s reader on all 143 picks); in a uniform catalog bind by the number line alone; refuse only when the block's first strict heading names another listed program; a number that does not print is `not_found`; never drop a filed record. A title test in the first rebuild refused 17 passing records, 16 of them right.
+
+**Lessons.** A `--check` on a committed snapshot couples every college PR to one generated file; write it from a dispatch-only job, as the gap census does. A title test refuses right blocks in a catalog whose number lines all vote one way. The display step writes the whole build, so a first live run needs a one-college input. A dated-reads job fails its verify unless the branch carries `main`'s latest refresh. A wave over colleges whose records are all filed extracts nothing. Merging a college PR publishes its build.
+
+### S647 (SkyPipit, the conductor, 2026-11-13): five harvest PRs merged and displayed, Glendale's keep rule, College of the Desert read in ranges
+
+Two halves under one number. The 08:55Z session stopped at about 10:12Z with no handoff; the 11:12Z firing of the CPL Queue routine took the queue (declaration #3221, 11:17Z). Facts below come from the conductor's record; costs marked as reported were not re-read.
+
+**First half.** Merged #3211 (Marin held for its outline reports, `be44dc9a`), #3214 (the PDF reader's wrapped headings, `eaa8fc8e`) and #3194 (Santiago Canyon, `87d62329`); opened #3216 and #3218; on Glendale restored the records (`dae051c0`), added the `extract_failed` keep (`7482ece6`) and `sources_from` (`f852f421`). The Supabase connector refused every query from about 09:29Z, and the session rightly held every apply. Glendale's paid slow read 43384599013 (2 h 20 m, $9.33 as reported by COBIx) had all 135 extraction calls answer 401 in that window: the function's caller check reads `allowed_reviewers` and answers 401 on any upstream failure, so an outage reads as a bad key. COBIx's 503 change waits for Sam's deploy word.
+
+**Second half, merged on a green `test`:** #3205 Diablo Valley (`2cd175d1`, COBIx 5 of 5), #3218 the ranged PDF read (`f7f24a6a`), #3206 San Jose City (`e97fef4d`, rebuilt as `13fe0e778bb5`; COBIx 4 agree, 1 differs on 37604), #3216 the Library's Draft 2 (`42b2d9eb`), #3207 the rescore (`5a88b2a5`, rebuilt as `bef8ef819af7`; COBIx 5 of 5 from the run artifacts), #3222 the Commons data dashboard (`bc376fe5`). Displays: Santiago Canyon 216 (run 43415894285), Diablo Valley 213 (43416282209), San Jose City 77 (43418731809), then the whole build (43421037587, 18,179 written, 0 errors; the table lacks Monterey Peninsula 03653, 22098, 39361).
+
+**Glendale.** The re-extract from saved pages (43415972509, no site contacted; 238 calls, 180 passing, $13.97) filed four passing records as deleted by reads that produced no record for them. The conductor's keep decision (`d-keep-passing-record-no-read-s647`) keeps a passing record in that case and names it; a status read at 12:00Z dropped 19577 (Active - Teachout Only) through it. The reader now holds a Coursedog tab whose name is another listed program's title (`held_wrong_tab`: 37070, 12571). Kept PDF records keep their own catalog year.
+
+**College of the Desert.** The first free capture failed on the catalog's start page, before the ranged code ran; the second fetched the whole 21 MB file in 7 ranges and found the baseline's 358 programs. The paid read (43421133593, `1fa312e0`) passes 241 (221 before); the summary's cost repeats the October figure, so the run's own cost is unread.
+
+**Lessons.** A session that cannot read a table back does not start a write to it. A 401 from the extraction function can mean the database is down. A free capture before a paid read pays for itself even when it fails for an unrelated reason. A record's notes can carry a rule its blocks do not (Santiago Canyon 11910, 32319, 31848; San Jose City 37604): a reading-procedure check is the lane item.
+
+**Glendale's page read (12:25Z).** Free page read 43423479582 (3 loads at 12 s, no challenge, no model; nothing written to the branch). CIS-C and CIS-AS print a core plus nine specializations, mostly as runs ("CS/IS 241, 242, 243"); the reader's quick pre-filter read only a run's first number, so it counted 7 of CIS's 19 listed courses against the 7.6 it needs, while the full match counts 11 (0.58). Neither CIS program got its own tab, and 37070 (Information Technology, a shorter list) cleared the filter on CIS-C. NCHSD's heading is "NCHSD - High School Diploma", 31597's title, so 24432 read 31597's page (21 invented codes). The fix at `16e5d86e` reads whole runs, on Coursedog tabs only; its fixture is the tab text the read printed. The conductor held 24432 as a wrong-tab read. The fix may change Hartnell's and Merced's matching on their next capture (not measurable: no page text is committed), so their next read gets a compare before filing.
