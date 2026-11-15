@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-14T17:58:42Z",
+ "written_at": "2026-11-14T20:27:47Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2894,
-     "of": 5924,
-     "words": "titles carry a review stamp (1,435 a person's, 1,459 a cohort's); 2,872 credentials, 2,415 of 3,185 records stamped",
+     "n": 3027,
+     "of": 6057,
+     "words": "titles carry a review stamp (1,435 a person's, 1,592 a cohort's); 2,872 credentials, 2,415 of 3,185 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1435,
-     "of": 5924,
+     "of": 6057,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -158,22 +158,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-14T14:34:56Z",
+    "at": "2026-11-14T20:24:27Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5924,
-    "stamped": 2894,
+    "titles": 6057,
+    "stamped": 3027,
     "person": 1435,
-    "cohort": 1459,
+    "cohort": 1592,
     "credentials": 2872,
     "confirmed": 1435,
     "records": 3185,
     "records_stamped": 2415,
     "saved_at": "2026-11-14T14:34:56Z",
-    "fold_at": "2026-11-13T23:58:21Z",
+    "fold_at": "2026-11-14T20:24:27Z",
     "map_titles": 5247,
-    "unclassified": 133,
+    "unclassified": 0,
     "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
@@ -266,7 +266,7 @@
    "procedures": [
     {
      "n": 16388,
-     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,422 stand-alone in today's build",
+     "words": "identities and 33,417 stand-alone courses on the canvas (the 2026-11-06 layout); 33,424 stand-alone in today's build",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "error": null
     },
@@ -279,7 +279,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-14T13:46:30+00:00",
+    "at": "2026-11-14T20:26:55+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -367,7 +367,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-13T20:32:00-08:00",
+    "at": "2026-11-12T20:24:41Z",
     "every_hours": null
    },
    "facts": {
@@ -491,7 +491,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-14T13:44:22Z",
+    "at": "2026-11-14T20:24:25Z",
     "every_hours": 24
    },
    "facts": {
@@ -786,23 +786,23 @@
     {
      "name": "classifier",
      "placed": 950,
-     "untouched": 869,
+     "untouched": 874,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 5,
+     "left": 0,
      "looked": 57
     },
     {
      "name": "brand-family",
      "placed": 244,
-     "untouched": 109,
+     "untouched": 237,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 128,
+     "left": 0,
      "looked": 2
     },
     {
@@ -874,12 +874,12 @@
    ],
    "total": {
     "placed": 1453,
-    "untouched": 1188,
+    "untouched": 1321,
     "kept": 23,
     "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
-    "left": 133,
+    "left": 0,
     "looked": 108
    }
   },

@@ -6,7 +6,9 @@ The Annual Workplan tab is now the authoritative source:
   * mapped sub-activities (PID_TO_KPI_KEY) drive "Current" from the LIVE merged
     headline KPI value (read-only, matches the headline card by construction);
   * unmapped sub-activities use a manual Current stored in
-    workplan_goals.current (GOAL row), falling back to Excel kpi_metric;
+    workplan_goals.cur_<year> (GOAL row), falling back to Excel kpi_metric;
+    the one-column `current` the cur_* columns replaced is never read (S653b,
+    PR "workplan_goals.current stops being read"; its drop is a second step);
   * sub-activity titles render from projects.name (single store).
 
 These guard the generator helpers + the build + the render, with NO Supabase
@@ -30,7 +32,7 @@ def check(name, cond):
 
 
 # ── _row_current_years (S426): one Current per year, GOAL canonical, STRETCH
-#    fallback; 2025-26 also reads the one-column `current` the cur_* replaced ──
+#    fallback; cur_2025_26 is the one source for 2025-26 (S653b) ──
 check("_row_current_years reads each cur_<year> on the GOAL row",
       e._row_current_years({"cur_2025_26": "1234", "cur_2026_27": "9"}, {"cur_2025_26": "5"})
       == {"2025-26": 1234.0, "2026-27": 9.0})
@@ -38,14 +40,18 @@ check("_row_current_years strips commas",
       e._row_current_years({"cur_2026_27": "12,345"}, None) == {"2026-27": 12345.0})
 check("_row_current_years falls back to STRETCH for a year GOAL leaves null",
       e._row_current_years({"cur_2025_26": None}, {"cur_2025_26": 42}) == {"2025-26": 42.0})
-check("_row_current_years reads the legacy `current` as 2025-26 when cur_2025_26 is unset",
-      e._row_current_years({"current": "8"}, None) == {"2025-26": 8.0})
-check("_row_current_years prefers cur_2025_26 over the legacy `current`",
-      e._row_current_years({"current": "8", "cur_2025_26": "9"}, None) == {"2025-26": 9.0})
+# Superseded (S653b, d-workplan-drop-current-two-steps-s653b): this pinned the
+# legacy fallback "reads the legacy `current` as 2025-26 when cur_2025_26 is
+# unset". The column is dropped in a second step, so nothing reads it now.
+check("_row_current_years ignores the legacy `current` when cur_2025_26 is unset (S653b)",
+      e._row_current_years({"current": "8"}, None) == {})
+check("_row_current_years reads cur_2025_26 alone, whatever the legacy `current` holds (S653b)",
+      e._row_current_years({"current": "8", "cur_2025_26": "9"}, None) == {"2025-26": 9.0}
+      and e._row_current_years({"current": "8"}, {"current": "8"}) == {})
 check("_row_current_years is empty when no year carries a value",
       e._row_current_years({"yr_2025_26": "5"}, {"yr_2025_26": "5"}) == {})
 check("_row_current_years skips empty strings and garbage (caller falls back to kpi_metric)",
-      e._row_current_years({"current": "", "cur_2026_27": "n/a"}, {"current": ""}) == {})
+      e._row_current_years({"cur_2025_26": "", "cur_2026_27": "n/a"}, {"cur_2025_26": ""}) == {})
 check("an explicit zero is a value",
       e._row_current_years({"cur_2026_27": 0}, None) == {"2026-27": 0.0})
 
@@ -63,9 +69,9 @@ check("_history_year_end is None for a year with no entry near June 30",
       e._history_year_end(HIST, "students", "2026-27") is None)
 
 # ── Build the goals from in-memory Supabase-shaped rows ──────────────────────
-# 3.1 = mapped (cumulative_students), manual current present (43630) as the
-#       baseline; 1.1 = unmapped, manual current present (8); 3.4 = unmapped,
-#       NO current column → falls back to Excel kpi_metric.
+# 3.1 = mapped (cumulative_students), manual cur_2025_26 present (43630) as the
+#       baseline; 1.1 = unmapped, manual cur_2025_26 present (8); 3.4 = unmapped,
+#       NO cur_* column → falls back to Excel kpi_metric.
 rows = [
     {"activity_id": "3", "name": "Activity 3", "row_type": "GOAL", "kind": "activity",
      "yr_2025_26": "0", "total": "0"},
@@ -76,11 +82,11 @@ rows = [
     {"activity_id": "1", "name": "Activity 1", "row_type": "STRETCH", "kind": "activity",
      "yr_2025_26": "0", "total": "0"},
     {"activity_id": "3.1", "name": "WPG-name 3.1", "row_type": "GOAL", "kind": "project",
-     "yr_2025_26": "40000", "total": "716000", "current": "43630"},
+     "yr_2025_26": "40000", "total": "716000", "cur_2025_26": "43630"},
     {"activity_id": "3.1", "name": "WPG-name 3.1", "row_type": "STRETCH", "kind": "project",
      "yr_2025_26": "80000", "total": "1260000"},
     {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "GOAL", "kind": "project",
-     "yr_2025_26": "4", "total": "78", "current": "8"},
+     "yr_2025_26": "4", "total": "78", "cur_2025_26": "8"},
     {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "STRETCH", "kind": "project",
      "yr_2025_26": "8", "total": "140"},
     {"activity_id": "3.4", "name": "Student Impact Rate Survey", "row_type": "GOAL", "kind": "project",
@@ -94,7 +100,7 @@ assocs = [
     {"project_id": "3.4", "activity_id": "3"},
 ]
 # projects.name is authoritative — 3.1's projects.name differs from the wpg name
-# to prove the repoint wins. 3.4 has NO current column, kpi_metric=0.65 fallback.
+# to prove the repoint wins. 3.4 has NO cur_* column, kpi_metric=0.65 fallback.
 projects = [
     {"id": "3.1", "name": "PROJ-name 3.1 (authoritative)", "kpi_metric": "999"},
     {"id": "1.1", "name": "MAP Platform Development", "kpi_metric": "111"},
@@ -111,11 +117,11 @@ check("current_kpi_key stamped on mapped 3.1",
       ag["3.1"]["current_kpi_key"] == "cumulative_students")
 check("current_kpi_key None on unmapped 1.1",
       ag["1.1"]["current_kpi_key"] is None)
-check("manual current baseline from workplan_goals.current (1.1 == 8)",
+check("manual current baseline from workplan_goals.cur_2025_26 (1.1 == 8)",
       ag["1.1"]["current"]["2025-26"] == 8.0 and ag["1.1"]["current"]["total"] == 8.0)
 check("manual current falls back to Excel kpi_metric when column absent (3.4 == 0.65)",
       abs(ag["3.4"]["current"]["2025-26"] - 0.65) < 1e-9)
-check("mapped 3.1 manual baseline uses its current column, NOT kpi_metric (43630)",
+check("mapped 3.1 manual baseline uses its cur_2025_26 column, NOT kpi_metric (43630)",
       ag["3.1"]["current"]["2025-26"] == 43630.0)
 check("current_source defaults to manual before live pass",
       all(r["current_source"] == "manual" for r in annual))
@@ -151,7 +157,7 @@ check("unmapped 3.4 stays manual after live pass",
 rows2 = rows + [
     {"activity_id": "2", "name": "Activity 2", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
     {"activity_id": "2", "name": "Activity 2", "row_type": "STRETCH", "kind": "activity", "yr_2025_26": "0", "total": "0"},
-    {"activity_id": "2.1", "name": "Statewide Credit Recommendations", "row_type": "GOAL", "kind": "project", "yr_2025_26": "200", "total": "3000", "current": "288"},
+    {"activity_id": "2.1", "name": "Statewide Credit Recommendations", "row_type": "GOAL", "kind": "project", "yr_2025_26": "200", "total": "3000", "cur_2025_26": "288"},
     {"activity_id": "2.1", "name": "Statewide Credit Recommendations", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "400", "total": "8000"},
 ]
 assocs2 = assocs + [{"project_id": "2.1", "activity_id": "2"}]
@@ -168,7 +174,7 @@ rows_two = [
     {"activity_id": "1", "name": "Activity 1", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
     {"activity_id": "1", "name": "Activity 1", "row_type": "STRETCH", "kind": "activity", "yr_2025_26": "0", "total": "0"},
     {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "GOAL", "kind": "project",
-     "yr_2025_26": "4", "yr_2026_27": "9", "total": "78", "current": "8", "cur_2025_26": "8", "cur_2026_27": "11"},
+     "yr_2025_26": "4", "yr_2026_27": "9", "total": "78", "cur_2025_26": "8", "cur_2026_27": "11"},
     {"activity_id": "1.1", "name": "MAP Platform Development", "row_type": "STRETCH", "kind": "project",
      "yr_2025_26": "8", "total": "140"},
 ]
@@ -201,11 +207,11 @@ check("render: no Total cell and no editor mirror of one",
 rows3 = [
     {"activity_id": "3", "name": "Activity 3", "row_type": "GOAL", "kind": "activity", "yr_2025_26": "0", "total": "0"},
     {"activity_id": "3", "name": "Activity 3", "row_type": "STRETCH", "kind": "activity", "yr_2025_26": "0", "total": "0"},
-    {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "GOAL", "kind": "project", "yr_2025_26": "9500", "total": "160000", "current": "21552"},
+    {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "GOAL", "kind": "project", "yr_2025_26": "9500", "total": "160000", "cur_2025_26": "21552"},
     {"activity_id": "3.1.1", "name": "Working Adults", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "39000", "total": "360000"},
-    {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "GOAL", "kind": "project", "yr_2025_26": "30000", "total": "70000", "current": "22149"},
+    {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "GOAL", "kind": "project", "yr_2025_26": "30000", "total": "70000", "cur_2025_26": "22149"},
     {"activity_id": "3.1.2", "name": "Veterans & Service Members", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "40000", "total": "100000"},
-    {"activity_id": "3.1.3", "name": "Apprentice Cohort", "row_type": "GOAL", "kind": "project", "yr_2025_26": "500", "total": "20000", "current": "700"},
+    {"activity_id": "3.1.3", "name": "Apprentice Cohort", "row_type": "GOAL", "kind": "project", "yr_2025_26": "500", "total": "20000", "cur_2025_26": "700"},
     {"activity_id": "3.1.3", "name": "Apprentice Cohort", "row_type": "STRETCH", "kind": "project", "yr_2025_26": "1000", "total": "40000"},
 ]
 assocs3 = [

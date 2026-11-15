@@ -58,19 +58,29 @@ def ds(view, cols, rows, code=None, message=None):
 # Confirmed gone, not renamed and not moved: probe run 34478781366 (2026-09-10)
 # enumerated 19 live columns, reported "NEW vs our request+held: none", and ten
 # candidate new view names all answered "is not Valid".
-DEAD = ["CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
-        "Counselor_Verified", "Student_Verified", "Transcribed"]
+#
+# SUPERSEDED IN PART, 2026-09-10 (S653b re-pin, 2026-11-14). Pedro put all six
+# back the same day (probe run 34493245398) and Sam ruled one returns: "it's
+# actually only counselor verified that we need now, not student -- so just 1."
+# fetch_custom_report.py restored `Counselor_Verified` under a RESTORED note
+# (docs/session_223_handoff.md records the ruling). The check below pins that
+# ruling: the five Sam left out stay off, the one he restored is requested, and
+# the note says to remove it again if MAP drops it.
+RULED_OUT = ["CPL_Docs_Verified", "Ed_Plan_Created", "Analysis_Completed",
+             "Student_Verified", "Transcribed"]
+RESTORED = "Counselor_Verified"
 SAV = next(d for d in F.REQUEST_PAYLOAD
            if d["viewName"] == "View_StudentAggregatedValues_APIDataset")
-check("(1) ⭐ no column MAP rejects is requested — asking 400s the WHOLE view",
-      not [c for c in DEAD if c in SAV["columnName"]],
-      "still requested: " + ", ".join(c for c in DEAD if c in SAV["columnName"]))
-check("(1) …and the 19 live columns are all still asked for",
-      len(SAV["columnName"]) == 19 and "Uploaded Date" in SAV["columnName"]
+check("(1) ⭐ the five lifecycle columns Sam left out are not requested",
+      not [c for c in RULED_OUT if c in SAV["columnName"]],
+      "still requested: " + ", ".join(c for c in RULED_OUT if c in SAV["columnName"]))
+check("(1) …and the 19 live columns plus the one restored are asked for",
+      len(SAV["columnName"]) == 20 and RESTORED in SAV["columnName"]
+      and "Uploaded Date" in SAV["columnName"]
       and "Potential Student" in SAV["columnName"],
       f"{len(SAV['columnName'])} columns")
-check("(1) the way back is recorded, so restoring is one line",
-      "TO RESTORE" in (ROOT / "fetch_custom_report.py").read_text(encoding="utf-8"))
+check("(1) the way out is recorded, so dropping it again is one line",
+      "IF MAP DROPS IT AGAIN" in (ROOT / "fetch_custom_report.py").read_text(encoding="utf-8"))
 
 # ── (2) a repeated viewName is fatal to the FETCH, strict or not ─────────────
 COLS = ["College", "Uploaded Date"]

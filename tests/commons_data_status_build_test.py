@@ -491,6 +491,35 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(15) objectives_printed is false only when every read is on a system that prints none and none was found",
           B.objectives_printed({"obj": set(), "systems": {"elumen"}}) is False and B.objectives_printed({"obj": {"X1"}, "systems": {"elumen"}}) is None
           and B.objectives_printed({"obj": set(), "systems": {"elumen", "curriqunet"}}) is None and B.objectives_printed(None) is None)
+# (16) #3310: the three college cards' facts, from committed files only
+members = B.ppm_members(ROOT)
+check("(16) the Program Pathways Mapper list is parsed from the committed SQL, every row a (college, host) pair",
+      len(members) >= 60 and ("Modesto Junior College", "programmap.mjc.edu") in members and all(h and "." in h for _, h in members), len(members))
+check("(16) ⭐ every VALUES row of the mapper list is parsed: the parsed count equals the rows the SQL holds (60), so a row "
+      "with an escaped quote or a different shape cannot vanish before it reaches unmatched",
+      len(members) == B.ppm_values_rows(ROOT) == 60 and d["collection"]["ppm_list"]["colleges"] == len(members), (len(members), B.ppm_values_rows(ROOT)))
+with tempfile.TemporaryDirectory() as tmp16:
+    os.makedirs(os.path.join(tmp16, os.path.dirname(B.PPM_LIST)))
+    with open(os.path.join(tmp16, B.PPM_LIST), "w", encoding="utf-8") as f16:
+        f16.write("with v(college, host) as (values\n('A College','a.edu'),\n( 'St. Mary''s College' , 'b.edu' ),\n('C College','c.edu')\n)\nselect 1;\n")
+    m16 = B.ppm_members(tmp16)
+    check("(16) the parse reads an escaped quote and loose spacing as rows, never dropping one",
+          len(m16) == B.ppm_values_rows(tmp16) == 3 and ("St. Mary's College", "b.edu") in m16, m16)
+col16 = {c["name"]: c for c in d["colleges"]}
+cc16 = col16["Columbia College"]["collection"]
+check("(16) ⭐ Columbia: the program reader's model, records, run and cost from the receipts; its SLO read's run, system and kind",
+      cc16["program_reader"]["models"] == {"claude-opus-5-5": 82} and cc16["program_reader"]["run"] == "42471133430" and cc16["program_reader"]["cost_usd"] == 5.46
+      and cc16["slo_read"]["run"] == "41979319035" and cc16["slo_read"]["system"] == "elumen" and cc16["slo_read"]["source_kind"] == "catalog", cc16)
+check("(16) Columbia holds no mapper entry and no committed map; Mt. SAC's two maps both name a program in its records",
+      cc16["ppm_member"] is None and cc16["maps"]["held"] == 0
+      and col16["Mt. San Antonio College"]["collection"]["maps"]["held"] == 2 and col16["Mt. San Antonio College"]["collection"]["maps"]["on_records"] == 2)
+check("(16) ⭐ the SIS and curriculum system integration reads none known for every college: nothing records one",
+      not B.SIS_CMS_INTEGRATION and all(c["collection"]["integration"] == {"state": "none_known"} for c in d["colleges"]))
+check("(16) every college carries the collection key, flagged internal, and the statewide facts name their files",
+      all("collection" in c for c in d["colleges"]) and B.FIELDS["collection"] == "internal"
+      and d["collection"]["ppm_list"]["file"] == B.PPM_LIST and d["collection"]["coci"]["workflow"] == B.COCI_WORKFLOW
+      and all(os.path.exists(os.path.join(ROOT, p)) for p in d["collection"]["coci"]["exports"]) and d["collection"]["coci"]["exports"])
+check("(16) no person's name in the facts the cards read", "Sam" not in json.dumps(d["collection"]) and "Pedro" not in json.dumps(d["collection"]))
 wf = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
 check("(14) ⭐ the census workflow commits the sidecar folder with the file", "git add -A " + B.PROGRAMS_DIR in wf, "")
 

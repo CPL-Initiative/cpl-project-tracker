@@ -604,28 +604,6 @@
       "members_say": null
     },
     {
-      "id": "HUMA M1110",
-      "title": "World Religions (Honors)",
-      "id_system": "M-ID",
-      "recorded_discipline": "Religious Studies",
-      "members": 11,
-      "subject_codes": [
-        "HUMAN",
-        "PHIL"
-      ],
-      "member_disciplines": {
-        "Humanities": 1,
-        "Philosophy": 1
-      },
-      "member_disciplines_on_long_codes": {
-        "Humanities": 1,
-        "Philosophy": 1
-      },
-      "decidable": false,
-      "why": "the members disagree among themselves (Humanities and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
-      "members_say": null
-    },
-    {
       "id": "THTR M1349",
       "title": "Concert Touring Master Electrician",
       "id_system": "M-ID",
@@ -790,6 +768,28 @@
       },
       "decidable": false,
       "why": "the members disagree among themselves (Health Care Ancillaries and Nursing), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
+      "members_say": null
+    },
+    {
+      "id": "HUMA M1110",
+      "title": "World Religions",
+      "id_system": "M-ID",
+      "recorded_discipline": "Religious Studies",
+      "members": 10,
+      "subject_codes": [
+        "HUMAN",
+        "PHIL"
+      ],
+      "member_disciplines": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "member_disciplines_on_long_codes": {
+        "Humanities": 1,
+        "Philosophy": 1
+      },
+      "decidable": false,
+      "why": "the members disagree among themselves (Humanities and Philosophy), so this is a question rather than a correction — a cross-list candidate once the parent is settled",
       "members_say": null
     },
     {
