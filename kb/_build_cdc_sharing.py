@@ -13,6 +13,12 @@ serve"). Every row of a class that does not serve, an element or a held-and-not-
 allowlist (.github/pages_allowlist.txt) publishes is a problem. So the class table cannot say the site never serves
 student-level rows or staff rosters while a published file carries them.
 
+A table a row of such a class lives in must appear in kb/reference/restricted_table_access.json, the measured grants
+and select policies of each one (COBIx on #3326, reply 6889183507). The builder fails a table missing there, and a
+table open to anyone: select granted with RLS off, or a select policy whose condition is anything but the named gate
+functions joined by OR. A table neither role may select is closed; any other table reads its gates in words, so the
+doc says who can read each restricted row rather than only that the site never serves it.
+
 This builder reads that file alone, checks it, and writes two things from it:
 
   kb/status/cdc_sharing.json         read by commons_data_sharing.js: the college card, the statewide card and the
@@ -58,6 +64,7 @@ CLASSES = ("public", "aggregate", "agreement", "held", "restricted")
 PUBLIC_SITE = ("may serve", "does not serve")
 ALLOWLIST = ".github/pages_allowlist.txt"
 CROSSWALK_DIR = "kb/college_identity"
+TABLE_ACCESS = "kb/reference/restricted_table_access.json"
 AGREEMENT_STATUS = ("exists", "pending", "might be needed", "not needed", "not recorded")
 
 
@@ -124,6 +131,73 @@ def lives_in(row: dict, out: list[str], what: str) -> list[tuple[str, str]]:
         else:
             places.append((kind, name.strip()))
     return places
+
+
+def load_access(root: str) -> dict | None:
+    p = os.path.join(root, TABLE_ACCESS)
+    if not os.path.exists(p):
+        return None
+    with open(p, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def table_access(access: dict, table: str) -> tuple[str, list[str]]:
+    """("closed", []), ("gated", [gate, ...]), ("open", [why]) or ("unmeasured", []) for one table."""
+    t = (access.get("tables") or {}).get(table) if isinstance(access, dict) else None
+    if not isinstance(t, dict):
+        return "unmeasured", []
+    if not t.get("anon_select") and not t.get("authenticated_select"):
+        return "closed", []
+    if not t.get("rls"):
+        return "open", ["select is granted and RLS is off"]
+    gates = access.get("gates") or {}
+    found: list[str] = []
+    for pol in t.get("policies") or []:
+        using = re.sub(r"\s+", " ", str((pol or {}).get("using") or "")).strip()
+        while using.startswith("(") and using.endswith(")"):
+            using = using[1:-1].strip()
+        terms = [x.strip() for x in using.split(" OR ")] if using else [""]
+        for x in terms:
+            if x not in gates:
+                return "open", ["policy %s reads %r" % ((pol or {}).get("name") or "?", x or "true")]
+            if x not in found:
+                found.append(x)
+    return ("gated", found) if found else ("closed", [])
+
+
+def readers(access: dict, row: dict) -> list[dict]:
+    """Each table: the row lives in, with its access and its gates in words."""
+    out: list[dict] = []
+    for kind, name in lives_in(row, [], "row"):
+        if kind != "table":
+            continue
+        state, gates = table_access(access, name)
+        words = [(access.get("gates") or {}).get(g, g) for g in gates] if state == "gated" else []
+        out.append({"table": name, "access": state, "readers": words})
+    return out
+
+
+def access_problems(d: dict, access) -> list[str]:
+    cls = d.get("classes") or {} if isinstance(d, dict) else {}
+    rows = [r for r in (d.get("elements") or []) + (d.get("held_not_shown") or []) if isinstance(r, dict)] \
+        if isinstance(d, dict) else []
+    rows = [r for r in rows if not_served(cls, r.get("class"))]
+    tables = [t for r in rows for k, t in lives_in(r, [], "row") if k == "table"]
+    if not tables:
+        return []
+    if not isinstance(access, dict):
+        return ["%s is missing; a restricted table's grants and policies must be measured there" % TABLE_ACCESS]
+    out = []
+    for r in rows:
+        for k, t in lives_in(r, [], "row"):
+            if k != "table":
+                continue
+            state, why = table_access(access, t)
+            if state == "unmeasured":
+                out.append("%s %s lives in table %s, which %s does not measure" % (r.get("class"), r.get("id"), t, TABLE_ACCESS))
+            elif state == "open":
+                out.append("%s %s lives in table %s, which anyone may select: %s" % (r.get("class"), r.get("id"), t, why[0]))
+    return out
 
 
 def guard(what: str, row: dict, cls: dict, published, out: list[str]) -> bool:
@@ -374,7 +448,7 @@ def build_integrations(r: dict, d: dict) -> dict:
     }
 
 
-def build(d: dict) -> dict:
+def build(d: dict, access: dict | None = None) -> dict:
     systems = d["systems"]
     keys = {j["id"]: j for j in d["join_keys"]}
 
@@ -389,7 +463,13 @@ def build(d: dict) -> dict:
             "comis_element": e.get("comis_element") or "", "class": e["class"],
             "join_key": e.get("join_key") or "", "join_key_name": keys[e["join_key"]]["name"] if e.get("join_key") else "",
         })
-    held = [dict(h, system_name=systems[h["system"]]["name"]) for h in d["held_not_shown"]]
+    held = []
+    for h in d["held_not_shown"]:
+        row = dict(h, system_name=systems[h["system"]]["name"])
+        t = readers(access or {}, h) if not_served(d["classes"], h.get("class")) else []
+        if t:
+            row["table_access"] = t
+        held.append(row)
     return {
         "schema": 1,
         "source": SOURCE,
@@ -459,6 +539,16 @@ def markdown(b: dict) -> str:
     for h in b["held_not_shown"]:
         L.append("| %s | %s | %s | %s | %s | %s |" % (cell(h["name"]), cell(h["definition"]), cell(h["system_name"]),
                  C[h["class"]]["word"], cell(h["where"]), cell(h["outside_share"])))
+    gated = [h for h in b["held_not_shown"] if h.get("table_access")]
+    if gated:
+        L += ["", "### Who can read a restricted row where it lives", "",
+              "Measured from each table's grants and select policies (`%s`). The public site serves none of these rows;"
+              " this says who can read them in Supabase." % TABLE_ACCESS, "",
+              "| Item | Table | Who can read it |", "|---|---|---|"]
+        for h in gated:
+            for t in h["table_access"]:
+                who = "; ".join(t["readers"]) if t["access"] == "gated" else "no one but the service role"
+                L.append("| %s | `%s` | %s |" % (cell(h["name"]), t["table"], cell(who)))
     L += ["", "## The join keys", "",
           "Each key that joins a public record to another record, and the other record's class.", "",
           "| Join key | Definition | Public side | Other side | Other side's class | COMIS element |", "|---|---|---|---|---|---|"]
@@ -506,6 +596,8 @@ def main(argv=None) -> int:
     d = load_source(a.root)
     reg = load_registry(a.root)
     bad = problems(d, a.root)
+    access = load_access(a.root)
+    bad += access_problems(d, access)
     if reg is None:
         bad.append("%s is missing; the integrations view and %s would go stale without it" % (REGISTRY, OUT_INTEGRATIONS))
     else:
@@ -514,7 +606,7 @@ def main(argv=None) -> int:
         for p in bad:
             print("cdc sharing: %s" % p, file=sys.stderr)
         return 1
-    b = build(d)
+    b = build(d, access)
     want = {OUT_JSON: dumps(b), OUT_MD: markdown(b)}
     g = build_integrations(reg, d) if reg is not None else None
     if g is not None:

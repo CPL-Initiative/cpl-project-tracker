@@ -1,0 +1,68 @@
+{
+ "schema": 1,
+ "about": "Who can select each table a restricted row of kb/cdc_data_dictionary.json lives in, measured live. kb/_build_cdc_sharing.py fails a restricted row whose table is missing here or open to anyone. Re-measure with the query below (read only) whenever a grant, an RLS policy or a gate function changes.",
+ "measured_at": "2026-11-15T16:20Z",
+ "measured_by": "SkyPlover (S660), Supabase project Work Plan, read only",
+ "query": "select c.relname, c.relrowsecurity, has_table_privilege('anon', c.oid, 'select'), has_table_privilege('authenticated', c.oid, 'select'), and each select policy (pg_policy polcmd r or *) with its roles (none = PUBLIC) and pg_get_expr(polqual, polrelid), for every table a restricted row names",
+ "gates": {
+  "is_allowed_reviewer()": "a signed-in reviewer on allowed_reviewers",
+  "is_funding_reviewer()": "a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee",
+  "team_pass_ok()": "anyone whose request carries the team phrase (the x-team-pass header)"
+ },
+ "tables": {
+  "map_college_contacts": {
+   "rls": true,
+   "anon_select": true,
+   "authenticated_select": true,
+   "policies": [
+    {
+     "name": "mcc_select",
+     "roles": [],
+     "using": "(is_funding_reviewer() OR team_pass_ok())"
+    }
+   ]
+  },
+  "map_college_nudges": {
+   "rls": true,
+   "anon_select": true,
+   "authenticated_select": true,
+   "policies": [
+    {
+     "name": "mcn_select",
+     "roles": [],
+     "using": "(is_funding_reviewer() OR team_pass_ok())"
+    }
+   ]
+  },
+  "map_college_users": {
+   "rls": true,
+   "anon_select": true,
+   "authenticated_select": true,
+   "policies": [
+    {
+     "name": "mcu_select",
+     "roles": [],
+     "using": "(is_funding_reviewer() OR team_pass_ok())"
+    }
+   ]
+  },
+  "map_student_credit": {
+   "rls": true,
+   "anon_select": true,
+   "authenticated_select": true,
+   "policies": [
+    {
+     "name": "map_student_credit_select",
+     "roles": [],
+     "using": "is_allowed_reviewer()"
+    }
+   ]
+  },
+  "stg_map_student_credit": {
+   "rls": true,
+   "anon_select": false,
+   "authenticated_select": false,
+   "policies": []
+  }
+ }
+}

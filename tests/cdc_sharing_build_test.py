@@ -16,7 +16,10 @@ must exit 1 and name the fault in words. A non-object row is a problem, never an
   (7)  ... and a source file outside the repo, a directory, or not a string;
   (8)  a missing registry, with its stale output left behind;
   (9)  held roles that are not a list of names;
-  (10) a row of a class the site never serves (restricted, or agreement) that names a published file or no place.
+  (10) a row of a class the site never serves (restricted, or agreement) that names a published file or no place;
+  (11) a restricted row's table that kb/reference/restricted_table_access.json does not measure, or that anyone may
+       select (RLS off, or a policy condition other than the named gates), and a missing access file; a gated table
+       passes and the doc names its readers in words; a table neither role may select reads closed.
 
 Run from repo root: python3 tests/cdc_sharing_build_test.py
 """
@@ -66,6 +69,12 @@ REG = {
     ],
     "per_college": {"default": [{"integration": "p", "state": "none known"}], "colleges": {}},
 }
+ACCESS = {
+    "schema": 1, "measured_at": "2026-11-15T00:00Z",
+    "gates": {"is_allowed_reviewer()": "a signed-in reviewer", "team_pass_ok()": "anyone with the team phrase"},
+    "tables": {"a_roster": {"rls": True, "anon_select": True, "authenticated_select": True,
+                            "policies": [{"name": "p", "roles": [], "using": "(is_allowed_reviewer() OR team_pass_ok())"}]}},
+}
 CROSSWALK = {"colleges": [{"college_id": 1, "college_name": "Fixture College"}]}
 
 
@@ -79,6 +88,7 @@ def repo(d, r, extra=None):
         "kb/private.csv": "a\n",
         "kb/college_identity/2026-01-01/crosswalk.json": json.dumps(CROSSWALK),
         "docs/reference/.keep": "",
+        "kb/reference/restricted_table_access.json": json.dumps(ACCESS),
     }
     if r is not None:
         files["kb/cdc_integrations.json"] = json.dumps(r)
@@ -181,6 +191,40 @@ root = repo(DICT, REG)
 rc, out = run(root, check=False)
 results.append(("(10) a held status field naming a published file passes (element a, kb/status/served.json)",
                 rc == 0 and "2 rows the site never serves checked" in out, out))
+
+# (11) the restricted tables' measured access.
+root = repo(DICT, REG)
+rc, out = run(root, check=False)
+doc = open(os.path.join(root, "docs", "reference", "cdc_data_dictionary.md"), encoding="utf-8").read()
+results.append(("(11) a gated table passes and the doc names its readers in words",
+                rc == 0 and "| A roster | `a_roster` | a signed-in reviewer; anyone with the team phrase |" in doc, out))
+d = copy.deepcopy(DICT)
+d["held_not_shown"][0]["lives_in"] = ["table:unmeasured_table"]
+expect("(11) a restricted table the access file does not measure is named", d, REG,
+       "lives in table unmeasured_table, which kb/reference/restricted_table_access.json does not measure")
+a = copy.deepcopy(ACCESS)
+a["tables"]["a_roster"]["policies"] = [{"name": "open_read", "roles": ["anon"], "using": "true"}]
+expect("(11) a select policy of true is open to anyone", DICT, REG, "which anyone may select: policy open_read reads 'true'",
+       {"kb/reference/restricted_table_access.json": json.dumps(a)})
+a = copy.deepcopy(ACCESS)
+a["tables"]["a_roster"]["policies"] = [{"name": "half", "roles": [], "using": "(is_allowed_reviewer() OR (college_id > 0))"}]
+expect("(11) a gate ORed with any other condition is open", DICT, REG, "policy half reads",
+       {"kb/reference/restricted_table_access.json": json.dumps(a)})
+a = copy.deepcopy(ACCESS)
+a["tables"]["a_roster"]["rls"] = False
+expect("(11) select granted with RLS off is open", DICT, REG, "select is granted and RLS is off",
+       {"kb/reference/restricted_table_access.json": json.dumps(a)})
+root = repo(DICT, REG)
+os.remove(os.path.join(root, "kb", "reference", "restricted_table_access.json"))
+rc, out = run(root, check=False)
+results.append(("(11) a missing access file fails", rc == 1 and "restricted_table_access.json is missing" in out, out))
+a = copy.deepcopy(ACCESS)
+a["tables"]["a_roster"].update(anon_select=False, authenticated_select=False)
+root = repo(DICT, REG, {"kb/reference/restricted_table_access.json": json.dumps(a)})
+rc, out = run(root, check=False)
+doc = open(os.path.join(root, "docs", "reference", "cdc_data_dictionary.md"), encoding="utf-8").read()
+results.append(("(11) a table neither role may select reads closed",
+                rc == 0 and "| A roster | `a_roster` | no one but the service role |" in doc, out))
 
 d = copy.deepcopy(DICT)
 d["held_not_shown"] = [{"id": "h", "name": "H", "definition": "x", "where": "x", "outside_share": "x", "system": "cobi",
