@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 997,
+  "file_datasets": 999,
   "external_services": 195,
-  "consumers": 597,
+  "consumers": 598,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -8621,7 +8621,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 378
+     "line": 380
     }
    ],
    "served": false,
@@ -8641,7 +8641,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 392
+     "line": 394
     }
    ],
    "served": false,
@@ -10447,6 +10447,54 @@
    "consumers": [
     {
      "id": "workflow:mid-outcomes-compare.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_model_run_gate.py": {
+   "consumers": [
+    {
+     "id": "workflow:cpl-chat-health.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:cpl-chat-preview-ab.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:cpl-chat-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:cpl-news.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:sierra-ask.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:sierra-preflight.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -21217,7 +21265,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 372
+     "line": 374
     }
    ],
    "served": false,
@@ -21854,7 +21902,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 386
+     "line": 388
     }
    ],
    "served": false,
@@ -26095,6 +26143,19 @@
    "main_committers": []
   },
   "file:tests/mid_short_code_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/model_run_gates_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31534,7 +31595,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 687
+     "line": 737
     },
     {
      "id": "script:kb/_cred_fold_resolution_write.py",
@@ -33867,6 +33928,7 @@
     "7 */3 * * *"
    ],
    "scripts": [
+    "kb/_model_run_gate.py",
     "chatbox/health_check.sh"
    ],
    "adds": [],
@@ -33881,6 +33943,7 @@
    "name": "cpl-chat preview A/B",
    "crons": [],
    "scripts": [
+    "kb/_model_run_gate.py",
     "chatbox/smoke_test.sh"
    ],
    "adds": [],
@@ -33900,6 +33963,7 @@
    "name": "cpl-chat smoke test",
    "crons": [],
    "scripts": [
+    "kb/_model_run_gate.py",
     "chatbox/smoke_test.sh"
    ],
    "adds": [],
@@ -33929,7 +33993,9 @@
    "crons": [
     "17 13 * * *"
    ],
-   "scripts": [],
+   "scripts": [
+    "kb/_model_run_gate.py"
+   ],
    "adds": [],
    "push": null,
    "deploys": [],
@@ -34362,6 +34428,7 @@
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/program_requirements_extraction_gate_test.py",
+    "tests/model_run_gates_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
@@ -34952,7 +35019,9 @@
   "sierra-ask.yml": {
    "name": "Ask Sierra",
    "crons": [],
-   "scripts": [],
+   "scripts": [
+    "kb/_model_run_gate.py"
+   ],
    "adds": [],
    "push": null,
    "deploys": [],
@@ -34965,6 +35034,7 @@
    "name": "Sierra preflight (adoption/offerings QA)",
    "crons": [],
    "scripts": [
+    "kb/_model_run_gate.py",
     "chatbox/preflight_bgca.sh"
    ],
    "adds": [],

@@ -91,9 +91,9 @@ jobs:
           MODEL: ${{ inputs.model }}
           RATE: ${{ inputs.rate_per_record }}
           # The hard stop (kb/_spend_meter.py): no record is sent when the run's charges, the reservations in
-          # flight and the next record's estimate would pass $40. A call costs at most $1.12 (the largest
-          # committed request) against a $0.10 estimate, so with four workers the run can pass $40 by at most
-          # $4.10, and $1.02 more for each further part of a read in parts in flight. A run the stop held ends red.
+          # flight and the next record's estimate would pass $40. A call costs at most $1.25 (X.CALL_MAX_USD, over
+          # every committed request) against a $0.10 estimate, so with four workers the run can pass $40 by at most
+          # $4.60, and $1.15 more for each further part of a read in parts in flight. A run the stop held ends red.
           CEILING: '40'
         run: |
           python3 kb/_second_reader.py --college "$COLLEGE" --capture out --ceiling-usd "$CEILING" \

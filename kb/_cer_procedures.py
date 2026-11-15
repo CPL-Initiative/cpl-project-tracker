@@ -537,30 +537,61 @@ def post(body, key, timeout=200):
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             return json.loads(resp.read().decode())
     except urllib.error.HTTPError as exc:
-        return {"error": "HTTP %d: %s" % (exc.code, exc.read().decode()[:300])}
+        # The status rides on the answer so the spend meter counts a refusal before the model (401, 413, 429)
+        # at $0 and any other failure at the call's worst case (kb/_spend_meter.py reached_model).
+        return {"error": "HTTP %d: %s" % (exc.code, exc.read().decode()[:300]), "http_status": exc.code}
     except Exception as exc:  # network, timeout
         return {"error": str(exc).splitlines()[0][:300]}
 
 
-def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post):
-    """Ask about rows in chunks; returns (records by raw, calls). A chunk that
-    fails is retried once, then its titles stay unasked for the next night."""
-    chunks = [rows[i:i + chunk] for i in range(0, len(rows), chunk)]
+# The $40 gate (S655, card 10; d-one-spend-meter-s654). Before any call the run prices every chunk it would send
+# at the spend meter's worst case for that request's size (M.worst_case: the request's characters and the
+# function's prompt as input tokens, the output cap doubled, at the dearest rate), and asks nothing when the sum
+# passes Sam's standing limit. During the run the meter reserves that same worst case before each post, a retry
+# included, and holds every later post once the charges and the reservations in flight would pass the limit. A
+# reservation is the call's worst case, so the calls in flight can never carry the run past the limit; the one
+# exception is a charge above the worst case, which the meter still counts in full.
+import _spend_meter as M  # noqa: E402
 
-    def one(ch):
+
+def chunk_bodies(rows, rules, chunk=CHUNK):
+    """The request bodies classify() sends, one per chunk, in order."""
+    return [{"rules": rules, "rows": rows[i:i + chunk]} for i in range(0, len(rows), chunk)]
+
+
+def price_classify(rows, rules, chunk=CHUNK, limit=None):
+    """The classifier's estimate before any call: each chunk's worst case summed (a retry is never priced in;
+    the hard stop reserves it when it happens). Returns {calls, estimate_usd, limit_usd, within_limit}."""
+    limit = M.STANDING_LIMIT_USD if limit is None else float(limit)
+    bodies = chunk_bodies(rows, rules, chunk)
+    est = round(sum(M.worst_case(M.request_chars(b)) for b in bodies), 2)
+    return {"calls": len(bodies), "estimate_usd": est, "limit_usd": limit,
+            "within_limit": M.within_limit(est, limit)}
+
+
+def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post, meter=None):
+    """Ask about rows in chunks; returns (records by raw, calls). A chunk that
+    fails is retried once, then its titles stay unasked for the next night.
+    meter (kb/_spend_meter.py's Meter) reserves before each post and settles after it; a post the stop holds is
+    never sent and its chunk stays unasked. None given, an unlimited one counts the calls."""
+    meter = meter if meter is not None else M.Meter()
+
+    def one(body):
         got = {}
+        chars = M.request_chars(body)
         for attempt in (1, 2):
-            got = call({"rules": rules, "rows": ch}, key)
-            if not got.get("error"):
+            got = meter.call(lambda: call(body, key), chars, estimate=M.worst_case(chars))
+            if got.get("stopped") or not got.get("error"):
                 break
             time.sleep(5 * attempt)
-        return ch, got
+        return body["rows"], got
 
     out, calls = {}, []
     with ThreadPoolExecutor(max_workers=workers) as pool:
-        for ch, got in pool.map(one, chunks):
-            calls.append({"titles": len(ch), "error": got.get("error"),
-                          "usage": got.get("usage"), "model": got.get("model"), "ms": got.get("ms")})
+        for ch, got in pool.map(one, chunk_bodies(rows, rules, chunk)):
+            calls.append({"titles": len(ch), "error": got.get("error"), "stopped": bool(got.get("stopped")),
+                          "usage": got.get("usage"), "model": got.get("model"), "ms": got.get("ms"),
+                          "charge_usd": got.get("_charge_usd")})
             # The model hands back a title with its non-breaking spaces as plain
             # ones (105 of 1,118 on the first pass), so an answer is matched on
             # the title's spacing-free form and keyed by the title as asked.
@@ -572,20 +603,39 @@ def classify(rows, rules, key, chunk=CHUNK, workers=WORKERS, call=post):
     return out, calls
 
 
+def ask_classifier(rows, rules, key, call=post, limit=None):
+    """The classifier behind its $40 gate: (records by raw, calls, spend). The estimate (price_classify) is taken
+    before any call; above the limit nothing is sent and spend["refused"] says why. Otherwise classify() runs on a
+    meter whose ceiling is the limit; a post its hard stop held leaves its chunk unasked and spend["refused"] set."""
+    priced = price_classify(rows, rules, limit=limit)
+    spend = {"estimate_usd": priced["estimate_usd"], "limit_usd": priced["limit_usd"], "calls_priced": priced["calls"]}
+    print("classifier: estimate $%.2f for %d calls (each call's worst case) against the $%.0f limit"
+          % (priced["estimate_usd"], priced["calls"], priced["limit_usd"]), flush=True)
+    if not priced["within_limit"]:
+        spend["refused"] = ("the estimate $%.2f for %d calls is over the $%.0f limit; the classifier is asked "
+                            "nothing this run: dispatch with a smaller classify"
+                            % (priced["estimate_usd"], priced["calls"], priced["limit_usd"]))
+        print("::error::classifier: " + spend["refused"], flush=True)
+        return {}, [], spend
+    meter = M.Meter(priced["limit_usd"])
+    got, calls = classify(rows, rules, key, call=call, meter=meter)
+    spend.update(meter.snapshot())
+    if meter.stopped:
+        spend["refused"] = ("the hard stop held %d posts at $%.2f charged against $%.0f"
+                            % (meter.refused, meter.spent, priced["limit_usd"]))
+        print("::error::classifier: " + spend["refused"], flush=True)
+    return got, calls, spend
+
+
 def _spacing_key(t):
     return " ".join((t or "").replace("\xa0", " ").split())
 
 
 def cost_usd(calls):
-    """Claude Opus 5.5 list prices: $4 in, $20 out, $5 cache write, $0.20 cache
-    read, per million tokens."""
-    total = 0.0
-    for c in calls:
-        u = c.get("usage") or {}
-        total += (u.get("input_tokens", 0) * 4 + u.get("output_tokens", 0) * 20
-                  + u.get("cache_creation_input_tokens", 0) * 5
-                  + u.get("cache_read_input_tokens", 0) * 0.2) / 1e6
-    return round(total, 2)
+    """The calls' priced usage, at the spend meter's rates (M.charge_for: a model the table does not name counts
+    at the dearest rate). What the hard stop counted, a failed call's worst case included, is the meter's."""
+    return round(sum(M.charge_for(c.get("model"), c.get("usage")) for c in calls if M.has_tokens(c.get("usage"))),
+                 2)
 
 
 def as_proposal(rec, families=(), now=None):
@@ -872,6 +922,7 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         r not in records or (as_proposal(records[r])["confidence"] < SURE and (
             records[r].get("rules") != phash or asked_with(r) != hints_key(hints.get(r, [])))))]
     calls = []
+    spend = {}   # the gate's estimate, the meter's count, and why the classifier was held, when it was
     if classify_n and need:
         if not key:
             sys.exit("--classify needs SUPABASE_SERVICE_KEY (the Edge Function takes only the service key).")
@@ -886,12 +937,13 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         print("classifier: standing rules %d characters (budget %d)" % (len(rules), RULES_BUDGET))
         rows = [classifier_row(r, cards[r].get("colleges"), raw_meta.get(r) or {}, hints.get(r, []))
                 for r in ask]
-        got, calls = classify(rows, rules, key, call=call)
+        got, calls, spend = ask_classifier(rows, rules, key, call=call)
         stamp = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%d")
         for raw, rec in got.items():
             records[raw] = dict(rec, rules=phash, hints=hints_key(hints.get(raw, [])), asked=stamp)
-        print("classifier: asked %d of %d needing an answer; %d answered; %d calls; $%.2f"
-              % (len(ask), len(need), len(got), len(calls), cost_usd(calls)))
+        print("classifier: asked %d of %d needing an answer; %d answered; %d calls; $%.2f priced, $%.2f "
+              "counted by the meter" % (len(ask), len(need), len(got), len(calls), cost_usd(calls),
+                                        spend.get("charge_usd") or 0.0))
 
     staged, by_proc = {}, {p["id"]: {"settled": 0, "held": 0, "sample": []} for p in procs}
     by_proc["classifier"] = {"settled": 0, "held": 0, "sample": []}
@@ -976,7 +1028,7 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
                               **by_proc["classifier"])],
         "classifier_run": {"calls": len(calls), "answered": sum(1 for c in calls if not c["error"]),
                            "errors": [c["error"] for c in calls if c["error"]][:5],
-                           "cost_usd": cost_usd(calls)} if calls else None,
+                           "cost_usd": cost_usd(calls), "spend": spend} if (calls or spend) else None,
         "needs_you": sorted(needs_you, key=lambda n: (-len(n.get("colleges") or []), n["raw_title"])),
     }
     stage = {
@@ -1085,8 +1137,15 @@ def main():
             sys.exit("--undo needs SUPABASE_SERVICE_KEY (the workflow holds it).")
         undo_procedure(args.undo, Curation(key))
         return
-    run(classify_n=args.classify, dry_run=args.dry_run, key=key, save=args.save,
-        run_id=os.environ.get("GITHUB_RUN_ID", ""))
+    report, _stage = run(classify_n=args.classify, dry_run=args.dry_run, key=key, save=args.save,
+                         run_id=os.environ.get("GITHUB_RUN_ID", ""))
+    # A classifier the gate or the hard stop held: the rule procedures, the save and the rebuilds after this step
+    # still run, and cer-procedures.yml's last step ends the job red on this output (S655, card 10).
+    held = ((report or {}).get("classifier_run") or {}).get("spend", {}).get("refused")
+    out = os.environ.get("GITHUB_OUTPUT")
+    if out:
+        with open(out, "a") as fh:
+            fh.write("classifier_held=%s\n" % ("true" if held else "false"))
 
 
 if __name__ == "__main__":

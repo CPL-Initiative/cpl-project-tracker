@@ -350,6 +350,11 @@ jobs:
       # stop, fails here. Python with PyYAML (installed above).
       - name: Program requirements extraction gate (every extraction priced)
         run: python3 tests/program_requirements_extraction_gate_test.py
+      # The $40 gate on the other paid callers (S655, card 10): cer-classify's estimate and hard stop, the
+      # worst-case bound for cpl-news-harvest and cpl-chat run as each workflow step with a stub model call, a
+      # refused second-reader rate, and the most a call costs over every committed request. PyYAML (above).
+      - name: Model run gates (cer-classify, cpl-news-harvest, cpl-chat)
+        run: python3 tests/model_run_gates_test.py
       # The harvest gap census (S644): one cause and one lever per program without a passing
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)

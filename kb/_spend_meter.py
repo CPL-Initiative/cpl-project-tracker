@@ -24,6 +24,10 @@ The price table, the usage reader and one thread-safe Meter:
 import json
 import threading
 
+# Sam's standing limit: $40 a run on the estimate, per run and never a remaining pot (relayed by COBIx on #3111,
+# comment 6808460886). Every paid caller's gate and hard stop reads it here.
+STANDING_LIMIT_USD = 40.0
+
 # Dollars per million tokens, Claude Opus 5.5 (claude-api skill, cached 2026-09-25).
 PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00}}
 
@@ -105,6 +109,26 @@ def worst_case(request_chars: int, model=None) -> float:
     rate = PRICE.get(model or "") or dearest_rate()
     return round(((max(0, int(request_chars)) + WORST_OVERHEAD_CHARS) * rate["input"]
                   + WORST_OUTPUT_TOKENS * rate["output"]) / 1e6, 5)
+
+
+def call_bound(input_tokens: int, output_tokens: int, model=None) -> float:
+    """An upper bound on one call whose function returns no usage to its caller (S655, card 10): input_tokens
+    and output_tokens, both read from the function's own limits, at the model's rate (the dearest when the model
+    is unknown, unlisted or overridable by a secret the caller cannot read)."""
+    rate = PRICE.get(model or "") or dearest_rate()
+    return round((max(0, int(input_tokens)) * rate["input"] + max(0, int(output_tokens)) * rate["output"]) / 1e6, 5)
+
+
+def run_bound(calls: int, input_tokens: int, output_tokens: int, model=None, attempts: int = 1) -> float:
+    """An upper bound on a run of calls that return no usage: calls x attempts per call x call_bound. The gate
+    refuses the run before any call when this passes the standing limit (STANDING_LIMIT_USD)."""
+    return round(max(0, int(calls)) * max(1, int(attempts)) * call_bound(input_tokens, output_tokens, model), 5)
+
+
+def within_limit(usd: float, limit: float = None) -> bool:
+    """Whether a run's estimate or bound is at or under the limit (the standing limit when none is given)."""
+    lim = STANDING_LIMIT_USD if limit is None else float(limit)
+    return float(usd) <= lim + 1e-9
 
 
 def reached_model(answer: dict) -> bool:

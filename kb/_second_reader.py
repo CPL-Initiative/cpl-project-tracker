@@ -224,13 +224,18 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
     # this one would pass the ceiling; from then on no record is sent. A call settles at its priced usage (xAI's
     # at the dearest rate, its larger reading), at its worst case when it was sent and answered no usage or raised,
     # and at $0 when it never reached the model. The run can pass the ceiling only by calls in flight costing
-    # more than their estimates: a call costs at most $1.12 (M.worst_case of the largest committed request, about
-    # 81,000 characters), $1.02 over a $0.10 estimate, so $4.10 with four workers, and $1.02 more for each further
+    # more than their estimates: a call costs at most $1.25 (X.CALL_MAX_USD, M.worst_case over every committed
+    # request), $1.15 over a $0.10 estimate, so $4.60 with four workers, and $1.15 more for each further
     # part of a read in parts in flight. A run the stop held ends red.
     import _program_requirements_wave as W
     import _spend_meter as M
-    cpp, _ = per_record_rate(model, rate)
-    est = round((cpp if cpp is not None else W.DEFAULT_COST_PER_PROGRAM) * W.PRICE_MARGIN, 5)
+    # A rate the price step would refuse is refused here too, before any call (COBIx on #3330, comment
+    # 6888116814): a run that skipped the price step must never price a refused model at the default rate.
+    cpp, cpp_from = per_record_rate(model, rate)
+    if cpp is None:
+        print("::error::second reader, %s: %s; nothing is sent" % (college, cpp_from), file=sys.stderr, flush=True)
+        return 1
+    est = round(cpp * W.PRICE_MARGIN, 5)
     meter = M.Meter(ceiling, est)
 
     def one(pair):

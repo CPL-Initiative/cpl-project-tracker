@@ -6091,9 +6091,9 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     margin, as the price step priced it) and refuses when the charges, the reservations in flight and this one
     would pass the ceiling; from then on no program is sent. A call settles at its priced usage, at its worst case
     when it was sent and answered no usage, and at $0 when it never reached the model. The run can pass the
-    ceiling only by calls in flight costing more than their estimates: a call costs at most $1.12 (M.worst_case
-    of the largest committed request, about 81,000 characters, santa_rosa_junior 37016), $1.02 over a $0.10
-    estimate, so $6.14 with six workers, and $1.02 more for each further part of a read in parts in flight. A
+    ceiling only by calls in flight costing more than their estimates: a call costs at most $1.25
+    (X.CALL_MAX_USD, M.worst_case over every committed request), $1.15 over a $0.10 estimate, so $6.90 with six
+    workers, and $1.15 more for each further part of a read in parts in flight. A
     program not sent keeps its filed record and is listed in not_sent_<shard>.json with the meter's total
     (meter_charge_usd); check-extract then ends the run red.
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key

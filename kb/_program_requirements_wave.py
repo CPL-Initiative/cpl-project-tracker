@@ -55,8 +55,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 
+import _spend_meter as _M  # noqa: E402  (the one spend meter holds the standing limit, S655)
+
 MAX_COLLEGES = 8
-LIMIT_CEILING_USD = 40.0       # Sam's standing go, a college a run, on the estimate
+LIMIT_CEILING_USD = _M.STANDING_LIMIT_USD   # Sam's standing go, a college a run, on the estimate
                                # (cpl_memory sam-extraction-standing-go-40-per-college-2026-10-14)
 DEFAULT_COST_PER_PROGRAM = 0.08   # also the floor: a college's rate never prices below it
 PRICE_MARGIN = 1.25

@@ -75,6 +75,11 @@ SPLIT_WHEN = ("ran past max_tokens", "IDLE_TIMEOUT")   # a single call's error t
 # priced and counted; these names stay for the readers that use them.
 import _spend_meter as M  # noqa: E402
 PRICE = M.PRICE
+# The most one post can cost: M.worst_case of the largest request the committed sources can make, a part of a read
+# in parts included. tests/model_run_gates_test.py recomputes it over every committed request and fails when this
+# figure, or an overshoot stated from it in the three callers and their workflows, falls behind (COBIx on #3330,
+# comment 6888534891). Over the $0.10 estimate a call can pass the hard stop by CALL_MAX_USD - $0.10, $1.15.
+CALL_MAX_USD = 1.25
 
 
 def load_sources(only: str = "") -> list[dict]:
@@ -443,9 +448,9 @@ def main(argv: list[str] | None = None) -> int:
     # estimate ($0.08 x 1.25) and refuses when the charges, the reservations in flight and this one would pass the
     # ceiling; from then on it sends nothing. One program is read at a time (a read in parts posts its parts at
     # once, a reservation each), so the run can pass the ceiling only by the calls in flight costing more than
-    # their estimates. A call costs at most $1.12 (M.worst_case of the largest committed request, about 81,000
-    # characters: santa_rosa_junior 37016's text and 442 listed courses), $1.02 over its $0.10 estimate: the worst
-    # overshoot is $1.02 for one call, and $1.02 a part for a read in parts. A run the stop held ends red.
+    # their estimates. A call costs at most CALL_MAX_USD, $1.25 (M.worst_case over every committed request, which
+    # tests/model_run_gates_test.py recomputes), $1.15 over its $0.10 estimate: the worst overshoot is $1.15 for
+    # one call, and $1.15 a part for a read in parts. A run the stop held ends red.
     meter = M.Meter(ceiling, call_estimate())
     for src in sources:
         if meter.stopped:
