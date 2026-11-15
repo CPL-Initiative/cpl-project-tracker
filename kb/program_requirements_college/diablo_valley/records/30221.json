@@ -52,6 +52,23 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL120",
+     "listed": "BIOSC120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -246,6 +263,6 @@
    "Award field in the request is truncated ('12 to fewer than 18 semester(or 18 to fewer than 27'); the catalog states 13 units total."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

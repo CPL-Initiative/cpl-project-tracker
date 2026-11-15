@@ -46,32 +46,37 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 17,
-   "share": 0.882,
-   "missing": [
-    "HIST120",
-    "HIST121"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "HIST142",
     "HIST180",
-    "HIST181",
-    "HISTC1001",
-    "HISTC1002"
+    "HIST181"
    ],
    "flagged": [
     "HIST142",
     "HIST180",
-    "HIST181",
-    "HISTC1001",
-    "HISTC1002"
+    "HIST181"
    ],
    "pass": true
   },
@@ -382,5 +387,6 @@
    "Program learning outcomes are printed for the program as a whole; this award is the only one on the page, so they are recorded here."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": "43379378196"
 }

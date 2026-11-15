@@ -52,6 +52,23 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL126",
+     "listed": "BIOSC126",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL170",
+     "listed": "BIOSC170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL171",
+     "listed": "BIOSC171",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -347,6 +364,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }
