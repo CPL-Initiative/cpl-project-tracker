@@ -66,7 +66,7 @@ and two review rounds before the rest goes to Sam or COBIx. Filter any workflow-
 | #2894 | Sam's | none |
 | this checkpoint | `claude/exciting-knuth-1upegd` | merge on a green `test` |
 
-## Decisions and pitfalls (`kb/receipts/cpl_memory_s658_rows_2026-11-15.sql`, RUN 14:15Z, 3 rows, 3 log rows)
+## Decisions and pitfalls (`kb/receipts/cpl_memory_s658_rows_2026-11-15.sql`, RUN about 14:08Z, 3 rows, 3 log rows)
 
 `d-reconcile-hold-other-page-only-s658`, `p-display-diff-against-live-before-s658`,
 `rescore-out-of-wave-rows-traced-s658`. All are proposed.
