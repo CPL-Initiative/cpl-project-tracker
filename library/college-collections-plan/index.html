@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>(function(){var t=null;try{t=localStorage.getItem("cpl_theme")}catch(e){}document.documentElement.setAttribute("data-theme",t==="dark"?"dark":"light")})()</script>
+<title>College Collections Plan</title>
+<meta name="description" content="The CPL Commons strategic plan (the v2 agreed final of November 11, 2026) on one page: what the Commons answers, the four parts, the top line, the three phases of the college collections, the first slice, and the scorecard.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
+<link rel="icon" href="../../cccco_seal.png">
+<!-- The CPL Library's public copy of college-collections-plan; the claude.ai artifact is the editable original. Rebuilt by scripts/library_page.py; edit the source, never this file. -->
+<style>:root{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<style>:root{--sierra-bar-bg:var(--cplh-bg);--sierra-bar-ink:var(--cplh-fg);--sierra-bar-heading:var(--cplh-strong);--sierra-bar-link:var(--cplh-link);--sierra-bar-line:var(--cplh-line);--sierra-bar-focus:var(--cplh-link);--sierra-bar-chip-bg:var(--cplh-link);--sierra-bar-chip-ink:var(--cplh-bg);--sierra-bar-shadow:var(--cplh-shadow)}html.sbar-chip-on body{padding-bottom:72px}</style>
+</head>
+<body>
+<!--
+  College Collections Plan (Sam, in session, S661, 2026-11-15: "Make a Visual for the Moonshot plan and add it to the
+  Library and call it 'College Collections Plan'"). Source: COBIx's v2 agreed final on #3111
+  (issuecomment-6808952144, Nov 11, 2026), which Sky accepted that afternoon, and the three phases of the Commons ETA
+  clock (#3360). Figures are the plan's own baseline, dated; the live clock carries the current ones.
+  Source of record: CPLBrain/04-projects/cpl-initiative/college-collections-plan/. The tracker's copy at
+  library/college-collections-plan/ is made by scripts/library_page.py. It writes nothing and fetches nothing.
+-->
+<style>
+  :root {
+    --page: #F5FAFF; --page-end: #EEF6FB; --surface: #FFFFFF; --hero-end: #EAF4FB;
+    --ink: #17243B; --muted: #58677D; --heading: #082B61; --title: #072C66;
+    --link: #0D5BC6; --accent: #1671D9; --gold: #F4B300;
+    --line: #D9E4EF; --line-strong: #A9C8E5; --shadow: rgba(8, 43, 97, .10);
+    --pill-bg: #EAF4FE; --state-1: #1671D9; --state-2: #7FA9D9; --state-3: #CFDDEB; --state-3-ink: #17243B;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --cpl-measure: none;
+    color-scheme: light;
+  }
+  :root[data-theme="dark"] {
+    --page: #0B1628; --page-end: #0E1D33; --surface: #12233D; --hero-end: #10284A;
+    --ink: #E3EAF4; --muted: #A9B7CA; --heading: #D5E3F7; --title: #E8F0FB;
+    --link: #8DBDF5; --accent: #8DBDF5; --gold: #F2B527;
+    --line: #2A3E5C; --line-strong: #4B6B95; --shadow: rgba(0, 0, 0, .35);
+    --pill-bg: #1B3356; --state-1: #8DBDF5; --state-2: #4B6B95; --state-3: #2A3E5C; --state-3-ink: #E3EAF4;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--ink); background: var(--page); background-image: linear-gradient(180deg, var(--surface) 0, var(--page) 38rem, var(--page-end) 100%);
+    font-family: var(--sans); font-size: clamp(1rem, .97rem + .15vw, 1.06rem); line-height: 1.55; }
+  a { color: var(--link); text-underline-offset: 3px; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .skip { position: absolute; left: -999px; } .skip:focus { left: 16px; top: 8px; background: var(--surface); padding: 6px 10px; z-index: 9; }
+  main { max-width: 1240px; margin: 0 auto; padding: 24px 16px 64px; display: grid; gap: 40px; }
+  h1, h2, h3 { font-family: var(--serif); color: var(--heading); margin: 0; }
+  h1 { font-size: clamp(2rem, 1.4rem + 2.6vw, 3.2rem); color: var(--title); line-height: 1.1; }
+  h2 { font-size: clamp(1.35rem, 1.1rem + 1vw, 1.8rem); }
+  h3 { font-size: 1.12rem; }
+  p { margin: 0; max-width: var(--cpl-measure, none); }
+  .rule { width: 64px; height: 4px; background: var(--gold); border-radius: 2px; }
+  .hero { display: grid; gap: 14px; padding: 28px clamp(16px, 4vw, 40px); background: linear-gradient(135deg, var(--surface), var(--hero-end)); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 6px 24px var(--shadow); }
+  .eyebrow { font-size: .82rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+  .sentence { font-family: var(--serif); font-size: clamp(1.2rem, 1rem + .9vw, 1.6rem); color: var(--heading); line-height: 1.35; }
+  .muted { color: var(--muted); font-size: .92rem; }
+  section { display: grid; gap: 16px; }
+  .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: grid; gap: 8px; align-content: start; box-shadow: 0 2px 10px var(--shadow); }
+  .num { font-family: var(--serif); font-size: 2rem; color: var(--accent); line-height: 1; }
+  .tag { display: inline-block; justify-self: start; font-size: .78rem; padding: 2px 10px; border-radius: 999px; background: var(--pill-bg); color: var(--heading); }
+  .states { display: grid; grid-template-columns: 3fr 2fr 2fr; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); }
+  .states div { padding: 14px; font-weight: 600; }
+  .s1 { background: var(--state-1); color: var(--surface); }
+  .s2 { background: var(--state-2); color: var(--title); }
+  .s3 { background: var(--state-3); color: var(--state-3-ink); }
+  :root[data-theme="dark"] .s1 { color: var(--page); } :root[data-theme="dark"] .s2 { color: var(--title); }
+  .phases { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); counter-reset: ph; }
+  .phase { border-top: 6px solid var(--accent); }
+  .phase.p2 { border-top-color: var(--state-2); } .phase.p3 { border-top-color: var(--line-strong); }
+  .phase ul, .tools ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .seq { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+  .seq .card { border-left: 4px solid var(--line-strong); }
+  .seq .card.now { border-left-color: var(--gold); }
+  .scroll { overflow-x: auto; max-width: 100%; }
+  table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: .95rem; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px 10px 0; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+  thead th { color: var(--heading); font-weight: 600; }
+  tbody th { font-weight: 600; }
+  footer { display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 18px; }
+  @media (max-width: 560px) { .states { grid-template-columns: 1fr; } }
+  @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; } }
+</style>
+<a class="skip" href="#plan">Skip to the plan</a>
+<!-- cpl-public-header:start (CPLBrain/04-projects/cpl-initiative/public-header; apply.py writes this block, edit here and re-apply) -->
+<style>
+/* The public header (Sam, 2026-10-21): the CPL Initiative logo to the Chancellor's
+   Office CPL page, the way out to the public CPL pages, and a light/dark control.
+   The links sit behind one word, Links, each with a line in gray saying what it is
+   (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our acronyms").
+   Its own tokens, so it reads the same on any host page; First Light values. The gray
+   (--cplh-muted) is First Light's muted text: 6.74:1 on the light ground, 7.52:1 on the dark. */
+:root{--cplh-bg:#FFFFFF;--cplh-line:#D9D5CB;--cplh-fg:#3A3A36;--cplh-muted:#5C5C55;--cplh-link:#0047AB;--cplh-strong:#1C1C1A;--cplh-shadow:rgba(28,28,26,.14)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}}
+:root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}
+.cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
+.cplh-in{position:relative;max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
+.cplh-logo{display:inline-flex;min-height:25px}
+.cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
+.cplh-logo .cplh-dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
+:root[data-theme="dark"] .cplh-logo .cplh-light{display:none}
+:root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
+.cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
+.cplh a{color:var(--cplh-link)}
+/* 25px, one past the 24px floor (S641): a control sized at exactly 24 reads 23.9 at a browser zoom of 90% or 133%,
+   where layout rounds to the device pixel, and the CPL Library's check and WCAG 2.2 then count it short. */
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:25px;min-width:25px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:0 10px 28px var(--cplh-shadow);padding:.35rem 1rem}
+.cplh-panel[hidden]{display:none}
+.cplh-nav{margin:0;padding:0;list-style:none}
+.cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
+.cplh-nav li:first-child{border-top:0}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:25px;font-weight:600;text-underline-offset:3px}
+.cplh-desc{color:var(--cplh-muted);font-size:.9rem}
+.cplh-theme{display:flex;gap:.9rem;align-items:center}
+.cplh-theme span{color:var(--cplh-fg)}
+.cplh-theme button[aria-pressed="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
+.cplh a:focus-visible,.cplh button:focus-visible{outline:2px solid var(--cplh-link);outline-offset:2px}
+@media (max-width:560px){.cplh-logo img{height:32px}.cplh-end{margin-left:0}.cplh-nav li{grid-template-columns:minmax(0,1fr)}}
+</style>
+<header class="cplh" role="banner">
+  <div class="cplh-in">
+    <a class="cplh-logo" href="https://www.cccco.edu/about-us/chancellors-office/divisions/educational-services-and-support/credit-for-prior-learning/" target="_blank" rel="noopener">
+      <img class="cplh-light" src="../../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+      <img class="cplh-dark" src="../../sierra/cpl-initiative-logo.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="480" height="90">
+    </a>
+    <div class="cplh-end">
+      <nav class="cplh-links" aria-label="CPL pages">
+        <button type="button" class="cplh-word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Links</button>
+        <div class="cplh-panel" id="cplh-panel" hidden>
+          <ul class="cplh-nav">
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-initiative-overview/" target="_blank" rel="noopener" aria-describedby="cplh-d-about">The CPL Initiative</a><span class="cplh-desc" id="cplh-d-about">What the Chancellor&#x27;s Office CPL Initiative does, in one page</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" target="_blank" rel="noopener" aria-describedby="cplh-d-fact">CPL Fact Sheet</a><span class="cplh-desc" id="cplh-d-fact">Credit for prior learning (CPL) in California: goals, live progress and funding</span></li>
+            <li><a href="https://map.rccd.edu/" target="_blank" rel="noopener" aria-describedby="cplh-d-map">MAP</a><span class="cplh-desc" id="cplh-d-map">The Mapping Articulated Pathways (MAP) platform, where colleges record the credit they award</span></li>
+            <li><a href="https://map.rccd.edu/cpllandingpages/" target="_blank" rel="noopener" aria-describedby="cplh-d-college">Find your college</a><span class="cplh-desc" id="cplh-d-college">Your college's credit for prior learning page and the person to contact</span></li>
+            <li><a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener" aria-describedby="cplh-d-dash">MAP dashboard</a><span class="cplh-desc" id="cplh-d-dash">Live statewide counts of students, units of credit and savings, by college</span></li>
+            <li><a href="https://creditforbeingyou.org/" target="_blank" rel="noopener" aria-describedby="cplh-d-cfby">Credit for Being You</a><span class="cplh-desc" id="cplh-d-cfby">The student portal: add what you have learned and request credit</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/" target="_blank" rel="noopener" aria-describedby="cplh-d-lib">CPL Library</a><span class="cplh-desc" id="cplh-d-lib">Presentations, films, visuals and briefs from the Credit for Prior Learning Initiative</span></li>
+            <li><a href="https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/" target="_blank" rel="noopener" aria-describedby="cplh-d-catalog">Credential Catalog</a><span class="cplh-desc" id="cplh-d-catalog">Credentials colleges award credit for, and how to adopt one in MAP</span></li>
+          </ul>
+        </div>
+      </nav>
+      <div class="cplh-theme" role="group" aria-label="Theme">
+        <span>Theme</span>
+        <button type="button" data-cplh-theme="light" aria-pressed="false">Light</button>
+        <button type="button" data-cplh-theme="dark" aria-pressed="false">Dark</button>
+      </div>
+    </div>
+  </div>
+</header>
+<script>
+(function () {
+  var KEY = "cpl_theme", root = document.documentElement;
+  function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
+  function current() {
+    var t = root.getAttribute("data-theme");
+    if (t === "light" || t === "dark") return t;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  }
+  function paint() {
+    var t = current();
+    Array.prototype.forEach.call(document.querySelectorAll("[data-cplh-theme]"), function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-cplh-theme") === t));
+    });
+  }
+  var saved = read();
+  if (saved === "light" || saved === "dark") root.setAttribute("data-theme", saved);
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest ? e.target.closest("[data-cplh-theme]") : null;
+    if (!b) return;
+    var t = b.getAttribute("data-cplh-theme");
+    root.setAttribute("data-theme", t);
+    try { localStorage.setItem(KEY, t); } catch (err) { /* private window: the choice holds for this visit */ }
+    paint();
+  });
+  if (window.matchMedia) { try { window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", paint); } catch (e) {} }
+  paint();
+
+  // Links: one word opens the list. Escape, a click outside it, or Tab past its last
+  // link shuts it; Escape hands focus back to the word.
+  var word = document.querySelector("[data-cplh-links]");
+  var panel = word && document.getElementById(word.getAttribute("aria-controls"));
+  var nav = word && word.closest ? word.closest("nav") : null;
+  if (!word || !panel || !nav) return;
+  function isOpen() { return word.getAttribute("aria-expanded") === "true"; }
+  function setOpen(on) { word.setAttribute("aria-expanded", String(on)); panel.hidden = !on; }
+  word.addEventListener("click", function () { setOpen(!isOpen()); });
+  document.addEventListener("keydown", function (e) {
+    if (e.key !== "Escape" || !isOpen()) return;
+    var inside = nav.contains(document.activeElement);
+    setOpen(false);
+    if (inside) word.focus();
+  });
+  document.addEventListener("click", function (e) { if (isOpen() && !nav.contains(e.target)) setOpen(false); });
+  nav.addEventListener("focusout", function (e) { if (isOpen() && e.relatedTarget && !nav.contains(e.relatedTarget)) setOpen(false); });
+})();
+</script>
+<!-- cpl-public-header:end -->
+<main id="plan">
+  <header class="hero">
+    <span class="eyebrow">CPL Commons strategic plan, v2 agreed final, November 11, 2026</span>
+    <h1>College Collections Plan</h1>
+    <div class="rule" aria-hidden="true"></div>
+    <p class="sentence">A person names what they have learned, and the Commons shows every course at every college it likely counts for, how strong the match is, and how to ask for it.</p>
+    <p>The California Community Colleges train more people for careers than any other system in the country. The Commons closes the loop from college to career and back, so that learning in every setting is recognized and kept aligned, which matters more as AI changes the skills employers need. Job postings and occupational layers frame that purpose and stay out of the data for now.</p>
+    <p class="muted">The current dates for each phase are on the <a href="../../#commons/data/eta">College Collections ETA</a>. Every date there that moves with a connection is a projection, not a partner commitment.</p>
+  </header>
+
+  <section aria-labelledby="parts-h">
+    <h2 id="parts-h">The four parts</h2>
+    <p>The plan's nine priorities sort under four parts, and none is dropped.</p>
+    <div class="grid">
+      <article class="card"><span class="num" aria-hidden="true">1</span><h3>The data the answer needs</h3>
+        <p>MAP exhibits and aggregates; catalogs and program requirements with their program learning outcomes as printed; course outlines with their SLOs and objectives; issuer-published credential skills, verified only; and the ACE credit-recommendation reference.</p>
+        <span class="tag">Priorities 2, 3, 4 and 8</span></article>
+      <article class="card"><span class="num" aria-hidden="true">2</span><h3>The match</h3>
+        <p>One three-level indicator everywhere, strong, partial or limited, on two scales: identity, set by agreement among a named list of signals, and alignment of learning to course. The reasons always show beside the level, and title words alone never reach strong.</p>
+        <span class="tag">Priorities 2 and 7</span></article>
+      <article class="card"><span class="num" aria-hidden="true">3</span><h3>The path</h3>
+        <p>A best-effort stamp on every page, with a source page and read date under each fact. A suggested petition goes through MAP's Request CPL Review. The page never says credit is awarded; faculty award it. A transcript is read in the browser and never sent.</p>
+        <span class="tag">Priority 6, the front door</span></article>
+      <article class="card"><span class="num" aria-hidden="true">4</span><h3>The loop that corrects it</h3>
+        <p>One route, Report a problem, beside any fact and open to anyone, which feeds that college's reading procedure. A monthly audit on a fixed sample, by college and by level, sets precision; recall is scored against MAP articulations held out by college or by time.</p>
+        <span class="tag">Priorities 1 and 7</span></article>
+    </div>
+    <p class="muted">Priority 5, the 50 percent law, and priority 9, partners and portability, stand as agreed.</p>
+  </section>
+
+  <section aria-labelledby="top-h">
+    <h2 id="top-h">The top line</h2>
+    <p>One number: across every credential in MAP and every college, the share of pairs where a person gets an answer with a next step. Each pair sits in one of three states. No answer yet is a gap to close, and the student still has every other route open.</p>
+    <div class="states" role="img" aria-label="The three states of a credential and college pair: articulated; a likely match with its level; no answer yet. The bar shows the states, not their shares.">
+      <div class="s1">Articulated</div><div class="s2">A likely match, with its level</div><div class="s3">No answer yet</div>
+    </div>
+    <p class="muted">The baseline counts 2,486 credentials at 120 colleges (kb/exhibits_adoption.json, November 11, 2026). The Plan view's build computes the share itself.</p>
+  </section>
+
+  <section aria-labelledby="phases-h">
+    <h2 id="phases-h">How the college collections grow</h2>
+    <p>Phase 1 is everything the Commons collects today. Phases 2 and 3 are the partner and college connections that would change its pace, its cost and the quality of what it holds. The plan placed ASSIST and the COCI reload under Next; the clock shows them in Phase 2, and the plan stands as agreed.</p>
+    <div class="phases">
+      <article class="card phase"><span class="tag">Phase 1, now</span><h3>What COBI collects itself</h3>
+        <ul><li>Catalog programs, course requirements and program learning outcomes</li><li>Course SLOs and objectives from public course outlines</li><li>Issuer-published credential skills</li><li>The common references: exhibits, courses, credit recommendations, subjects</li><li>MAP exhibits and aggregates, nightly</li></ul></article>
+      <article class="card phase p2"><span class="tag">Phase 2, partner data</span><h3>Official, shared files</h3>
+        <ul><li>COMIS Data Mart, for program and course lists</li><li>COCI, the full course and program dataset on a schedule</li><li>Program Pathways Mapper maps</li><li>ASSIST articulations, toward transfer</li><li>CVC course links</li></ul></article>
+      <article class="card phase p3"><span class="tag">Phase 3, live connections</span><h3>College and Chancellor's Office systems</h3>
+        <ul><li>College curriculum systems, for outlines, SLOs and objectives</li><li>College student information systems, two ways</li><li>The Chancellor's Office data lakes</li><li>Common Cloud, for student totals and schedules</li><li>CCCStart, for totals only</li></ul></article>
+    </div>
+  </section>
+
+  <section aria-labelledby="slice-h">
+    <h2 id="slice-h">The first slice, and the order after it</h2>
+    <p>ASE goes end to end first. It is done when every ASE credential in MAP at every college sits in one of the three states, with its level, its reasons, and Request CPL Review where the college has it on. The slice ends with a receipt of the data gaps it found, and those gaps set the harvest order for the next.</p>
+    <div class="seq">
+      <div class="card now"><span class="tag">Now</span><h3>ASE</h3></div>
+      <div class="card"><span class="tag">Next</span><h3>CompTIA</h3></div>
+      <div class="card"><span class="tag">Then</span><h3>American Welding Society</h3></div>
+      <div class="card"><span class="tag">Then</span><h3>NCCER</h3></div>
+      <div class="card"><span class="tag">Then</span><h3>Military, through the ACE reference</h3></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="gate-h">
+    <h2 id="gate-h">The Phase 1 exit gate</h2>
+    <p>Each primary dataset's coverage and its named gaps are published on the Plan view, with no sign-off in the path. The MAP platform team and ITPI receive them to correct. The one hard dependency is ITPI confirming MAP's own counts.</p>
+  </section>
+
+  <section aria-labelledby="score-h">
+    <h2 id="score-h">The scorecard</h2>
+    <p>The plan's baseline, read about 1:00 PM Pacific time on November 11, 2026. The College Collections ETA carries the current counts.</p>
+    <div class="scroll" role="region" aria-label="The scorecard" tabindex="0">
+      <table>
+        <colgroup><col style="width:32%"><col style="width:68%"></colgroup>
+        <thead><tr><th scope="col">Measure</th><th scope="col">What it counts, and the baseline</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">The top line</th><td>The three-state share of credential and college pairs.</td></tr>
+          <tr><th scope="row">Course SLOs</th><td>14,113 courses at 18 colleges.</td></tr>
+          <tr><th scope="row">Course objectives</th><td>2,209 courses at 3 colleges.</td></tr>
+          <tr><th scope="row">Program learning outcomes</th><td>14,911 of 17,557 records.</td></tr>
+          <tr><th scope="row">Verified issuer skills</th><td>177 credentials of the 206 skill credentials in MAP.</td></tr>
+          <tr><th scope="row">Every MAP college</th><td>Live MAP's 116 colleges; the exhibit-credit aggregate's 68 shows as the gap until ITPI confirms.</td></tr>
+          <tr><th scope="row">Matcher recall per level</th><td>Scored on articulations held out by college or by time.</td></tr>
+          <tr><th scope="row">Audit error rate</th><td>From the monthly sample, by college and by level.</td></tr>
+          <tr><th scope="row">Suggested-petition grant rate</th><td>Later, from ITPI's aggregate grants and denials.</td></tr>
+          <tr><th scope="row">Fold and cluster reversals</th><td>How often a settled identity is undone.</td></tr>
+          <tr><th scope="row">Build health</th><td>Generated files regenerated in CI; failures first seen on main and the minutes from red to green; the suite on main on every push; queue time on run health.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="tools-h">
+    <h2 id="tools-h">What we build</h2>
+    <div class="grid tools">
+      <div class="card"><h3>The Plan view</h3><p>The top line, coverage by dataset, and the scorecard, with the inventory in its source file.</p></div>
+      <div class="card"><h3>The level rule</h3><p>The identity-signal list and the rule that sets strong, partial and limited.</p></div>
+      <div class="card"><h3>The recall scorer</h3><p>Matcher recall per level on held-out articulations.</p></div>
+      <div class="card"><h3>Report a problem</h3><p>One route beside any fact, extending Needs a fix.</p></div>
+      <div class="card"><h3>The audit sampler</h3><p>The monthly sample, stratified by college and by level.</p></div>
+      <div class="card"><h3>The ASE slice</h3><p>The first slice, on the front door.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="open-h">
+    <h2 id="open-h">Decisions still open</h2>
+    <p>Four calls rest with the program lead: a go on the ASE slice and its student-facing wording; sending the coverage notes to the MAP platform team and ITPI; analytics on public pages, through Governance; and targets, if the program wants them.</p>
+  </section>
+
+  <footer>
+    <p class="muted">Source: the <a href="https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6808952144">v2 agreed final on #3111</a> (November 11, 2026), and the phases of the <a href="https://github.com/CPL-Initiative/cpl-project-tracker/issues/3360">College Collections ETA brief, #3360</a> (November 15, 2026).</p>
+    <p class="muted">CPL Initiative, California Community Colleges Chancellor's Office.</p>
+  </footer>
+</main>
+<!-- Ask Sierra: a chip in the bottom-right corner opens Sierra in a side bar, as on the CPL Library. -->
+<script src="../../sierra/sidebar.js" defer></script>
+</body>
+</html>

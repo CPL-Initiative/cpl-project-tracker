@@ -159,7 +159,9 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   q('[data-eta="phase-2"]').click();
   check("(4) the phase switcher draws Phase 2's partner feeds, not dated", q('[data-eta-datasets="2"]') && [...q('[data-eta-datasets="2"]').querySelectorAll("tbody tr")].length === 5 &&
     /Not dated/.test(txt(q('[data-cell="soonest"]') || q(".eta-grid"))));
-  check("(4) the moonshot plan links the #3111 v2 agreed final", !!root().querySelector('a[href$="#issuecomment-6808952144"]'));
+  check("(4) the full clock opens the College Collections Plan in a new tab, and names its #3111 source", (function () { const a = root().querySelector("a[data-eta-plan]");
+    return a && a.getAttribute("href") === "library/college-collections-plan/" && a.getAttribute("target") === "_blank" && fs.existsSync("library/college-collections-plan/index.html") &&
+      !!root().querySelector('a[href$="#issuecomment-6808952144"]'); })());
   check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#commons/data/eta"]'); })());
 
   // (5) a missing file, and the static rules.
