@@ -5660,25 +5660,6 @@ def forced(folder: str, tokens: str) -> set[str]:
     return out
 
 
-def call_charge(cost_usd, usage) -> float:
-    """What one call counts toward a hard stop (S644; COBIx on #3330, S654), for the pilot, the college
-    workflow and the second reader alike:
-      a call whose usage carries tokens, in either shape (X.usage_tokens), counts its price, or, unpriced (a
-      model the table does not name, xAI's among them), its usage at the dearest rate in the table; it never
-      counts $0, and a price that comes to nothing counts the floor below;
-      a call that returns no usage (an HTTP error, a timeout, a gateway that cut the reply off) counts the flat
-      per-program floor (W.DEFAULT_COST_PER_PROGRAM), since the model may have been billed for it."""
-    import _program_requirements_extract as X
-    import _program_requirements_wave as W
-    floor = float(W.DEFAULT_COST_PER_PROGRAM)
-    priced = float(cost_usd) if isinstance(cost_usd, (int, float)) and not isinstance(cost_usd, bool) else None
-    if not any(X.usage_tokens(usage)):
-        return max(priced or 0.0, floor)
-    if priced is None:
-        priced = X.dearest_cost(usage)
-    return priced if priced > 0 else floor
-
-
 REFUSED_METHODS = ("page_challenged",)
 
 
@@ -5967,10 +5948,15 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             keep_from: str | None = None, force: set[str] | None = None,
             ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S) -> int:
     """Send each source that needs a model call, score it and write its record under out_dir.
-    ceiling_usd (the wave sets it to its limit; None, the default, is no ceiling): the run's
-    actual cost is summed as each call comes back, and once it reaches the ceiling no further program
-    is sent. The calls already in flight finish, so the run can pass the ceiling by at most `workers`
-    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json.
+    ceiling_usd (the workflows set it to $40; None, the default, is no ceiling) is the spend meter's
+    (kb/_spend_meter.py, S654): before each post it reserves the program's estimate (the college's rate x the
+    margin, as the price step priced it) and refuses when the charges, the reservations in flight and this one
+    would pass the ceiling; from then on no program is sent. A call settles at its priced usage, at its worst case
+    when it was sent and answered no usage, and at $0 when it never reached the model. The run can pass the
+    ceiling only by calls in flight costing more than their estimates: at most $0.92 a call over a $0.10
+    estimate (a call costs at most $1.02, M.worst_case of a 56,000-character request), so $5.52 with six
+    workers, and $0.92 more for each further part of a read in parts in flight. A program not sent keeps its
+    filed record and is listed in not_sent_<shard>.json with the meter's total (meter_charge_usd).
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key
     refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
     (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
@@ -6095,7 +6081,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     import threading
     kept_list: list[dict] = []
     kept_lock = threading.Lock()
-    spend = {"usd": 0.0, "stopped": False}
+    import _program_requirements_wave as W
+    import _spend_meter as M
+    # The reservation per post: the college's rate (its filed records' mean cost, never below the default) x the
+    # margin, the same figure the price step multiplied by the programs to send.
+    _cpp = W.cost_per_program(W.load_records(keep_from))[0] if keep_from else W.DEFAULT_COST_PER_PROGRAM
+    meter = M.Meter(ceiling_usd, round(_cpp * W.PRICE_MARGIN, 5))
+    stop_said = [False]
     not_sent: list[str] = []
     failed: list[dict] = []
     calls = [0]
@@ -6116,14 +6108,26 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
 
     def one(src: dict) -> None:
         t0 = time.time()
-        with kept_lock:
-            stopped = spend["stopped"] or bool(halt)
-            if stopped:
+        def held() -> None:
+            # The stop held this program before any post: it keeps its filed record and is sent next run.
+            with kept_lock:
                 not_sent.append(src["control_number"])
-        if stopped:
+                say = not stop_said[0] and meter.stopped and not halt
+                stop_said[0] = stop_said[0] or say
+            if say:
+                print("ceiling: the hard stop held the read at $%.2f charged against $%.2f; no further program is "
+                      "sent" % (meter.spent, ceiling_usd or 0), flush=True)
             keep_filed(src["control_number"])
+
+        with kept_lock:
+            stopped = meter.stopped or bool(halt)
+        if stopped:
+            held()
             return
-        got = X.call(src, key)
+        got = X.call(src, key, meter=meter)
+        if got.get("stopped") and not got.get("_sent"):
+            held()
+            return
         h = X.halt_of(got)
         if h and not halt and halt_wait_s:
             # One more try after a pause, so a single slow probe does not end a long read (S647).
@@ -6133,7 +6137,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 retry = not halt
             if retry:
                 earlier = got
-                got = X.call(src, key)
+                got = X.call(src, key, meter=meter)
                 h = X.halt_of(got)
                 if earlier.get("usage"):
                     # A read in parts can answer 503 after its other parts were paid: the retry's record carries
@@ -6149,7 +6153,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
             # Usage the halting answer carries (paid parts of a read in parts) still counts (S648 review).
             # cost_usd is priced as a record's is (X.cost; unpriced usage counted apart), so run_cost adds like to
-            # like; call_charge's dearest-model price is for the ceiling only.
+            # like; the meter already counted the call toward the ceiling.
             price = priced(got)
             with kept_lock:
                 first = not halt
@@ -6160,8 +6164,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     halt_paid["usd"] += price
                 elif got.get("usage"):
                     halt_paid["unpriced"] += 1
-                if ceiling_usd is not None:
-                    spend["usd"] += call_charge(price, got.get("usage"))
             if first:
                 print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
                       "over; the filed records stay." % (
@@ -6169,13 +6171,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                           ", " + h["reason"] if h.get("reason") else ""), flush=True)
             keep_filed(src["control_number"])
             return
-        if ceiling_usd is not None:
-            with kept_lock:
-                spend["usd"] += call_charge(priced(got), got.get("usage"))
-                if spend["usd"] >= ceiling_usd and not spend["stopped"]:
-                    spend["stopped"] = True
-                    print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
-                          flush=True)
         rec = got.get("record")
         with kept_lock:
             calls[0] += 1
@@ -6263,7 +6258,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if not_sent:
             # file_run keeps each listed program's previous sources.json entry, so the next run sends it again.
             _write(os.path.join(out_dir, "not_sent_%d.json" % shard),
-                   {"ceiling_usd": ceiling_usd, "spent_usd": round(spend["usd"], 2),
+                   {"ceiling_usd": ceiling_usd, "meter_charge_usd": round(meter.spent, 2),
                     "halted": dict(halt) or None, "programs": sorted(not_sent)})
             print("%s: %d programs not sent" % ("halted" if halt else "ceiling", len(not_sent)), flush=True)
         if halt:
@@ -6282,7 +6277,9 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # check-extract reads to end the job red (extract_failed_run).
         _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
                {"run": run_id, "shard": shard, "calls": calls[0],
-                "failed": sorted(failed, key=lambda x: x["control_number"])})
+                "failed": sorted(failed, key=lambda x: x["control_number"]),
+                # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
+                "meter_charge_usd": round(meter.spent, 5)})
         if failed:
             print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
     if halt:
@@ -6320,6 +6317,18 @@ def check_extract(out_dir: str) -> int:
     h = extract_halt(out_dir)
     if h:
         print("::error::" + halt_message(h))
+        return 1
+    # An extraction asked for and refused over the limit ends red (S654), so a session reading the run's conclusion
+    # never takes the refusal for a read; a free run (extract=0, nothing to send) stays green.
+    try:
+        with open(os.path.join(out_dir, "wave_price.json")) as fh:
+            priced = json.load(fh)
+    except (OSError, ValueError):
+        priced = {}
+    if isinstance(priced, dict) and priced.get("extract_asked") and not priced.get("go") \
+            and priced.get("within_limit") is False:
+        print("::error::the extraction was asked for and refused: the estimate $%.2f is over the $%.0f limit, so "
+              "nothing was extracted" % (priced.get("price_usd") or 0, priced.get("limit_usd") or 0))
         return 1
     acct = extract_accounts(out_dir)
     if acct["calls"] is None:

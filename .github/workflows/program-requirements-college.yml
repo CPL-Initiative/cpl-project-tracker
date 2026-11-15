@@ -215,9 +215,10 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           FORCE: ${{ github.event.inputs.force || '' }}
-          # The hard stop on every extraction: the run's actual cost is summed as calls come back, and once it
-          # reaches $40 no further program is sent. The calls in flight finish, so a run can pass $40 by up to
-          # --workers (6) calls.
+          # The hard stop on every extraction (kb/_spend_meter.py): no program is sent when the run's charges, the
+          # reservations in flight and the next program's estimate would pass $40. A call costs at most $1.02
+          # against a $0.10 estimate, so with six workers the run can pass $40 by at most $5.52, and $0.92 more
+          # for each further part of a read in parts in flight.
           CEILING: '40'
         run: >-
           python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
@@ -233,10 +234,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/program_requirements_college kb/hand_filed_catalogs
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
-          git commit -m "File the program requirements read of $COLLEGE (run ${{ github.run_id }})"
+          git commit -m "File the program requirements read of $COLLEGE (run $GITHUB_RUN_ID)"
           for i in 1 2 3 4; do
-            git push origin "HEAD:${{ github.ref_name }}" && exit 0
-            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+            git push origin "HEAD:$GITHUB_REF_NAME" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "$GITHUB_REF_NAME"
           done
           exit 1
       - uses: actions/upload-artifact@v7
@@ -247,7 +248,8 @@ jobs:
           retention-days: 90
       # Last, after the capture and the records it kept are filed and committed: a run whose extraction calls
       # more than half failed, or all failed, ends red (d-extract-failure-files-nothing-s647; run 43384599013
-      # answered 401 on every call and read green).
+      # answered 401 on every call and read green), and so does one whose asked extraction the price refused
+      # over the limit (S654), so a refusal never reads as success.
       - name: Fail a run whose extraction calls failed
         if: env.EXTRACT == 'true'
         run: python3 kb/_program_requirements_college.py check-extract --college "$COLLEGE" --out out

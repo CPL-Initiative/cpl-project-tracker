@@ -56,17 +56,21 @@ jobs:
           pip install --quiet playwright pypdf pdfminer.six
           bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (a no-op without a record)
-        run: python3 kb/_program_requirements_college.py pin --college "${{ inputs.college }}"
+        env:
+          COLLEGE: ${{ inputs.college }}
+        run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
       - name: Capture the college (free; the page text and closed list the first reader saw)
         env:
           CENSUS_DELAY_MS: '4000'
-        run: python3 kb/_program_requirements_college.py capture --college "${{ inputs.college }}" --out out --limit 0
+          COLLEGE: ${{ inputs.college }}
+        run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit 0
       # Every paid read is priced before any call ($40 a run on the estimate, Sam's standing go; S653): over
       # the limit, nothing is sent. Free, and it needs no key. tests/program_requirements_extraction_gate_test.py
       # fails a workflow whose paid call can run without its price step's go or its hard stop.
       # The price uses the default rate per record (Opus's rates), an upper estimate for the function's configured
       # xAI model; a model the price table does not name is refused unless the dispatch gives rate_per_record, and
-      # the step prints the rate it used. Dispatch inputs reach the shell through env:, never the run text.
+      # the step prints the rate it used. A re-run attempt that would send records is refused (it pays again), and
+      # a refusal ends the job red. Dispatch inputs reach the shell through env:, never the run text.
       - name: Price the second reading ($40 a run, Sam's standing go)
         id: price
         env:
@@ -74,9 +78,10 @@ jobs:
           LIMIT: ${{ inputs.limit }}
           MODEL: ${{ inputs.model }}
           RATE: ${{ inputs.rate_per_record }}
+          ATTEMPT: ${{ github.run_attempt }}
         run: |
           python3 kb/_second_reader.py --college "$COLLEGE" --capture out --price --limit-usd 40 \
-            --model "$MODEL" --rate-per-record "$RATE" ${LIMIT:+--limit "$LIMIT"}
+            --model "$MODEL" --rate-per-record "$RATE" --attempt "$ATTEMPT" ${LIMIT:+--limit "$LIMIT"}
       - name: The second reader over the failing records (suggests, writes nothing)
         if: steps.price.outputs.go == 'true'
         env:
@@ -85,9 +90,10 @@ jobs:
           LIMIT: ${{ inputs.limit }}
           MODEL: ${{ inputs.model }}
           RATE: ${{ inputs.rate_per_record }}
-          # The hard stop: no record is sent when the run's cost, the calls in flight at their estimates and the
-          # next record's estimate would pass $40. A call can cost more than its estimate, so the run can pass $40
-          # by up to --workers (4) calls' overrun.
+          # The hard stop (kb/_spend_meter.py): no record is sent when the run's charges, the reservations in
+          # flight and the next record's estimate would pass $40. A call costs at most $1.02 against a $0.10
+          # estimate, so with four workers the run can pass $40 by at most $3.68, and $0.92 more for each further
+          # part of a read in parts in flight.
           CEILING: '40'
         run: |
           python3 kb/_second_reader.py --college "$COLLEGE" --capture out --ceiling-usd "$CEILING" \

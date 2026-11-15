@@ -19,6 +19,7 @@ with extract=1 ran with neither the estimate gate nor the hard stop. This test h
 Python with PyYAML (js-tests.yml installs it)."""
 import os
 import re
+import shutil
 import sys
 
 import yaml
@@ -102,95 +103,87 @@ with tempfile.TemporaryDirectory() as tmp:
     check(C.forced(folder, "incomplete") == {"22222"},
           "force=incomplete passes over a record that does not read and keeps the rest")
 
-# The pilot extraction's price (program-requirements-extract.yml): free, it calls nothing.
-import _program_requirements_extract as XP  # noqa: E402
-_n = len([s for s in XP.load_sources("") if (s.get("coverage") or 0) >= XP.MIN_COVERAGE])
-_gh = os.environ.pop("GITHUB_OUTPUT", None)
-check(XP.main(["--price", "--limit-usd", "40"]) == 0 and _n > 0,
-      "the pilot extraction prices its %d programs without a key or a call" % _n)
-if _gh is not None:
-    os.environ["GITHUB_OUTPUT"] = _gh
-# The second reader's price (second-reader.yml): free, it calls nothing.
-import _second_reader as SR  # noqa: E402
-_saved0 = (SR.failing_records, SR.source_for)
-SR.failing_records = lambda slug: [{"control_number": "1", "college": "Nowhere", "title": "T", "score": {"pass": False}}]
-SR.source_for = lambda capture_dir, record: {"text": "x", "closed_list": []}
-_gh = os.environ.pop("GITHUB_OUTPUT", None)
-try:
-    check(SR.main(["--college", "Nowhere Test College", "--price", "--limit-usd", "40"]) == 0,
-          "the second reader prices its records without a key or a call")
-finally:
-    SR.failing_records, SR.source_for = _saved0
-    if _gh is not None:
-        os.environ["GITHUB_OUTPUT"] = _gh
-
-# ── the hard stop through the real cost and call_charge (COBIx on #3330 and #3327, S654) ──────────
-# Only the network is stubbed (XP._post); the call, the usage's price (XP.cost), the charge (C.call_charge) and
-# the stop are the code's own. The expected figures are worked by hand from the price table, Opus 5.5 at $4 in
-# and $20 out per million tokens: xAI's usage of 200,000 prompt and 50,000 completion tokens is $0.80 + $1.00.
+# ── the spend meter (kb/_spend_meter.py; d-one-spend-meter-s654) ─────────────────────────────────────────
+# The pilot, the college workflow and the second reader count every paid call on one meter. Only the network
+# (XP._post) and the programs' sources are stand-ins; the call, the price, the charge and the stop are the
+# code's own. Expected figures are worked by hand from the price table, Opus 5.5 at $4 in and $20 out per million
+# tokens (the dearest rate, so an unlisted model's too), and the worst case's rule: a sent call with no usage
+# costs (its request's characters + 40,000) input tokens and 32,000 output tokens.
 import threading  # noqa: E402
 import time  # noqa: E402
 import _program_requirements_college as C  # noqa: E402
-_GROK = {"model": "grok-x", "usage": {"prompt_tokens": 200000, "completion_tokens": 50000}}
+import _program_requirements_extract as XP  # noqa: E402
+import _second_reader as SR  # noqa: E402
+import _spend_meter as M  # noqa: E402
+
+
+def _usd(inp, out):
+    return round((inp * 4 + out * 20) / 1e6, 5)
+
+
+def _worst(chars):
+    return _usd(chars + 40000, 32000)
+
+
+_PROBE = {"prompt_tokens": 20000, "completion_tokens": 3000, "total_tokens": 60000,
+          "completion_tokens_details": {"reasoning_tokens": 37000}}
+check(abs(M.charge_for("grok-x", _PROBE) - _usd(20000, 40000)) < 1e-9 and abs(_usd(20000, 40000) - 0.88) < 1e-9,
+      "the reviewer's probe (20k prompt, 3k completion, 60k total, 37k reasoning) counts its larger reading, $0.88")
 check(XP.cost("claude-opus-5-5", {"prompt_tokens": 1_000_000, "completion_tokens": 100_000}) == 6.0
-      and XP.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0,
-      "a priced model's usage costs the same in xAI's shape (prompt/completion) as in Anthropic's")
-check(XP.cost("grok-x", _GROK["usage"]) is None and abs(C.call_charge(None, _GROK["usage"]) - 1.8) < 1e-9,
-      "an unpriced model's xAI-shaped usage reads None on its record and counts $1.80 toward the stop, never $0")
-check(C.call_charge(None, None) == W.DEFAULT_COST_PER_PROGRAM and C.call_charge(None, {}) == W.DEFAULT_COST_PER_PROGRAM
-      and C.call_charge(0.0, {"prompt_tokens": 0, "completion_tokens": 0}) == W.DEFAULT_COST_PER_PROGRAM,
-      "a call with no usage (an HTTP error, a timeout) counts the $%.2f per-program floor" % W.DEFAULT_COST_PER_PROGRAM)
-check(C.call_charge(0.0, {"prompt_tokens": 5}) > 0 and C.call_charge(0.02, {"input_tokens": 10}) == 0.02,
-      "a call whose usage carries tokens never counts $0; a positive price counts as given")
+      and XP.cost("claude-opus-5-5", {"input_tokens": 1_000_000, "output_tokens": 100_000}) == 6.0
+      and XP.cost("grok-x", _PROBE) is None,
+      "a listed model's usage costs the same in either shape; an unlisted model's record cost reads None")
+check(M.charge_for("claude-opus-5-5", {"input_tokens": 1000, "prompt_tokens": 5000}) == _usd(5000, 0),
+      "two readings of the input that differ count the larger")
+check(M.answer_charge({"error": "HTTP 429: slow down", "http_status": 429}, 5000) == 0.0
+      and M.answer_charge({"error": "HTTP 401: key", "http_status": 401}, 5000) == 0.0
+      and M.answer_charge({"error": "HTTP 503", "http_status": 503, "reason": "upstream_timeout"}, 5000) == 0.0,
+      "an answer that never reached the model (429, 401, the caller check's 503) counts $0")
+check(M.answer_charge({"error": "HTTP 504: gateway timeout", "http_status": 504}, 5000) == _worst(5000)
+      and M.answer_charge({"error": "timed out"}, 5000) == _worst(5000) and abs(_worst(56000) - 1.024) < 1e-9,
+      "a sent call that answered no usage counts its worst case ($%.2f for 5,000 characters), never a floor"
+      % _worst(5000))
+_m = M.Meter(0.25, 0.10)
+_t1, _t2, _t3 = _m.reserve(), _m.reserve(), _m.reserve()
+_m.settle(_t1, 0.0)
+_m.settle(_t2, 0.0)
+check(_t1 and _t2 and _t3 is None and _m.reserve() is None and _m.in_flight == 0 and _m.spent == 0,
+      "the meter reserves two $0.10 calls under $0.25, holds the third, and once it held one it holds every later one")
 
 
 def _net(answer, sent, pause=0.0):
-    """XP._post's stand-in: records each call and gives the same answer."""
+    """XP._post's stand-in: records each body and gives the answer (a dict, or a function of the body)."""
     lock = threading.Lock()
 
     def post(body, key):
         with lock:
-            sent.append(body.get("title"))
+            sent.append(body)
         if pause:
             time.sleep(pause)
-        return json.loads(json.dumps(answer))
+        a = answer(body) if callable(answer) else answer
+        if isinstance(a, Exception):
+            raise a
+        return json.loads(json.dumps(a))
     return post
 
 
-def _pilot(answer, ceiling):
-    sent, saved, key = [], XP._post, os.environ.get("SUPABASE_SERVICE_KEY")
-    XP._post = _net(answer, sent)
-    os.environ["SUPABASE_SERVICE_KEY"] = "test-not-a-key"
-    try:
-        XP.main(["--ceiling-usd", str(ceiling)])
-    finally:
-        XP._post = saved
-        if key is None:
-            os.environ.pop("SUPABASE_SERVICE_KEY", None)
-        else:
-            os.environ["SUPABASE_SERVICE_KEY"] = key
-    return len(sent)
+def _src(i, codes=3):
+    return {"college": "Nowhere Test College", "control_number": "%05d" % i, "shape": "certificate",
+            "title": "T%02d" % i, "award": "Certificate of Achievement", "catalog_year": "2026-2027",
+            "source": {"url": "https://x.edu/%d" % i}, "coverage": 1.0, "_file": "s%d.json" % i,
+            "text": "Program %d\n" % i + "\n".join("A %d Course" % c for c in range(codes)),
+            "closed_list": [{"code": "A %d" % c} for c in range(codes)]}
 
 
-_EST = XP.call_estimate()
-check(abs(_EST - 0.10) < 1e-9, "one program's estimate is the $0.08 rate x the 1.25 margin, $0.10")
-# Calls that cost their estimate: $0.10 each (10,000 in, 3,000 out). Under a $0.25 stop two go ($0.20); a third
-# would make $0.30, so it is never sent. The check before the S654 fix (spent >= ceiling) sent three.
-_AT_EST = {"model": "claude-opus-5-5", "usage": {"input_tokens": 10000, "output_tokens": 3000}}
-_n2 = _pilot(_AT_EST, 0.25)
-check(_n2 == 2, "the pilot's calls at their estimate stop at or under the stop: %d sent of $0.10 each under $0.25" % _n2)
-# A call that costs more than its estimate ($15: 750,000 output tokens) passes the stop by that one call's overrun.
-_n3 = _pilot({"model": "claude-opus-5-5", "usage": {"output_tokens": 750000}}, 40)
-check(_n3 == 3 and 3 * 15.0 <= 40 + (15.0 - _EST) + 1e-9,
-      "a call dearer than its estimate passes $40 by at most that one call's overrun (%d calls, $%.2f)" % (_n3, 15.0 * _n3))
-# A call with no usage (a gateway timeout) counts the $0.08 floor: $0.08, $0.16, then $0.16 + $0.10 > $0.25.
-_n4 = _pilot({"error": "HTTP 504: gateway timeout", "http_status": 504}, 0.25)
-check(_n4 == 2, "the pilot counts a call with no usage at the floor, so the stop trips (%d sent)" % _n4)
-
-# The pilot's re-run check (COBIx on #3327 point 1): a re-run that would send a program is refused.
+_AT_EST = {"model": "claude-opus-5-5", "usage": {"input_tokens": 10000, "output_tokens": 3000}}   # $0.10
+_CHEAP = {"model": "claude-opus-5-5", "usage": {"input_tokens": 1000, "output_tokens": 300}}      # $0.01
+_GROK = {"model": "grok-x", "usage": {"prompt_tokens": 200000, "completion_tokens": 50000}}      # $1.80
+_TIMEOUT = {"error": "HTTP 504: gateway timeout", "http_status": 504}
+_saved_x = (XP._post, XP.load_sources, os.environ.get("SUPABASE_SERVICE_KEY"), os.environ.get("GITHUB_OUTPUT"))
 _ghf = os.path.join(tempfile.mkdtemp(), "out.txt")
-_gh = os.environ.get("GITHUB_OUTPUT")
 os.environ["GITHUB_OUTPUT"] = _ghf
+open(_ghf, "w").close()
+os.environ["SUPABASE_SERVICE_KEY"] = "test-not-a-key"
 
 
 def _go():
@@ -200,73 +193,173 @@ def _go():
     return lines[-1] if lines else None
 
 
-open(_ghf, "w").close()
-check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2"]) == 1 and _go() == "go=false",
-      "attempt 2 of a pilot extraction that would send programs is refused and does not go")
-check(XP.main(["--price", "--limit-usd", "40", "--attempt", "1"]) == 0 and _go() == "go=true",
-      "attempt 1 prices and goes")
-check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2", "--only", "no-such-program-zz"]) == 0,
-      "a re-run that would send nothing is never refused")
-_go()
-
-# The second reader, sending xAI's usage through the real price: the $1.00 stop trips after the first call.
-_recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
-         for n in range(20)]
-_src = {"text": "x", "closed_list": [], "award": "A.A. Degree", "title": "T", "college": "Nowhere"}
-_saved = (SR.failing_records, SR.source_for, SR.OUT, XP._post)
-
-
-def _second(answer, ceiling, workers, n=5, pause=0.0, model=None, rate=None):
-    sent = []
-    with tempfile.TemporaryDirectory() as tmp:
-        SR.failing_records = lambda slug: list(_recs[:n])
-        SR.source_for = lambda capture_dir, record: dict(_src, title=record["title"])
-        SR.OUT = tmp
-        XP._post = _net(answer, sent, pause)
-        try:
-            SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", model, workers, ceiling, rate)
-            with open(os.path.join(tmp, "second_nowhere_test.json")) as fh:
-                filed = json.load(fh)
-        finally:
-            SR.failing_records, SR.source_for, SR.OUT, XP._post = _saved
-    return sent, filed
-
-
-_s1, _f1 = _second(_GROK, 1.0, 1)
-check(len(_s1) == 1 and abs(_f1["charge_usd"] - 1.8) < 1e-9 and _f1["rows"][0]["second"]["cost_usd"] is None,
-      "the second reader on xAI's usage stops after its first call: %d sent, $%.2f counted toward the $1.00 stop"
-      % (len(_s1), _f1["charge_usd"]))
-# Four workers: the calls already in flight finish, so the overshoot is at most four calls.
-_s4, _f4 = _second(_GROK, 1.0, 4, n=10, pause=0.05)
-check(1 <= len(_s4) <= 4 and _f4["read"] == len(_s4),
-      "with four workers at most four calls go before the stop holds the rest (%d sent of 10)" % len(_s4))
-# No usage (a gateway cut the reply off): each call counts the $0.08 floor. Under $1.00, twelve go: after eleven
-# the run has counted $0.88 and $0.88 + $0.10 is within $1.00; after twelve, $0.96 + $0.10 is not.
-_s0, _f0 = _second({"error": "HTTP 504: gateway timeout", "http_status": 504}, 1.0, 1, n=20)
-check(len(_s0) == 12 and abs(_f0["charge_usd"] - 0.96) < 1e-9,
-      "the second reader counts a call with no usage at the floor: %d of 20 sent, $%.2f counted"
-      % (len(_s0), _f0["charge_usd"]))
-
-# The price under a model override: a model the table does not name is refused without a rate per record.
-SR.failing_records = lambda slug: list(_recs[:5])
-SR.source_for = lambda capture_dir, record: dict(_src)
 try:
-    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x"]) == 1 and _go() == "go=false",
-          "a --model the price table does not name is refused at the price step")
-    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "0.5"]) == 0
-          and _go() == "go=true", "with a rate per record the override is priced at that rate")
-    check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "20"]) == 0
-          and _go() == "go=false", "five records at $20 with the margin ($125) are over the limit and do not go")
-    check(SR.main(["--college", "Nowhere Test College", "--price"]) == 0 and _go() == "go=true"
-          and SR.per_record_rate()[0] == W.DEFAULT_COST_PER_PROGRAM and "upper estimate" in SR.per_record_rate()[1],
-          "with no override the default rate stands and is named an upper estimate for the configured xAI model")
-finally:
-    SR.failing_records, SR.source_for = _saved[0], _saved[1]
-if _gh is None:
-    os.environ.pop("GITHUB_OUTPUT", None)
-else:
-    os.environ["GITHUB_OUTPUT"] = _gh
+    # ── reads in parts: a reservation and a settlement for each part ──
+    _sent = []
+    XP._post = _net(_AT_EST, _sent)
+    _mp = M.Meter(0.25, 0.10)
+    _got = XP.call(_src(1, codes=450), "k", meter=_mp)
+    check(len(_sent) == 2 and _got.get("stopped") and _got.get("error") and abs(_mp.spent - 0.20) < 1e-9,
+          "a read in three parts under $0.25 sends two parts and the stop holds the third (%d sent)" % len(_sent))
+    _sent = []
+    XP._post = _net(lambda b: {"error": "IDLE_TIMEOUT: the gateway ended the read"} if "part" not in b else _AT_EST,
+                    _sent)
+    _mp = M.Meter()
+    _got = XP.call(_src(2), "k", meter=_mp)
+    _first = len(json.dumps(_sent[0]))
+    check(len(_sent) == 3 and abs(_mp.spent - (_worst(_first) + 0.20)) < 1e-6
+          and abs(_got["_charge_usd"] - _mp.spent) < 1e-6,
+          "a read whose first call timed out with no usage counts that call's worst case ($%.2f) beside its two "
+          "parts ($0.20): $%.2f" % (_worst(_first), _mp.spent))
+    _sent = []
+    XP._post = _net(lambda b: dict(_TIMEOUT) if (b.get("part") or {}).get("index") == 1 else _AT_EST, _sent)
+    _mp = M.Meter()
+    XP.call(_src(3, codes=450), "k", meter=_mp)
+    _p1 = [len(json.dumps(b)) for b in _sent if b["part"]["index"] == 1][0]
+    check(len(_sent) == 3 and abs(_mp.spent - (_worst(_p1) + 0.20)) < 1e-6,
+          "a read in parts whose first part times out with no usage counts that part's worst case: $%.2f" % _mp.spent)
 
+    # ── the pilot (program-requirements-extract.yml): one program at a time ──
+    def _pilot(answer, ceiling, n=6):
+        sent = []
+        XP._post = _net(answer, sent)
+        XP.load_sources = lambda only="": [_src(i) for i in range(n)]
+        XP.main(["--ceiling-usd", str(ceiling)])
+        return sent
+
+    check(len(_pilot(_AT_EST, 0.25)) == 2,
+          "the pilot's calls at their estimate stop under $0.25 at exactly two: the third would make $0.30")
+    _s15 = _pilot({"model": "claude-opus-5-5", "usage": {"output_tokens": 750000}}, 40)
+    check(len(_s15) == 3, "a $15 call passes its $0.10 estimate, so the pilot passes $40 by one call's overrun "
+          "(three calls, $45), the bound its step comment names")
+    _s0 = _pilot(_TIMEOUT, 1.0)
+    check(len(_s0) == 2, "the pilot counts a timed-out call at its worst case ($%.2f), so under $1.00 the stop holds "
+          "the third (%d sent)" % (_worst(len(json.dumps(_s0[0]))), len(_s0)))
+    XP.load_sources = lambda only="": [_src(i) for i in range(6)]
+    check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2"]) == 1 and _go() == "go=false",
+          "attempt 2 of a pilot extraction that would send programs is refused, red")
+    check(XP.main(["--price", "--limit-usd", "40", "--attempt", "1"]) == 0 and _go() == "go=true",
+          "attempt 1 of six programs prices $0.60 and goes")
+    XP.load_sources = lambda only="": []
+    check(XP.main(["--price", "--limit-usd", "40", "--attempt", "2"]) == 0 and _go() == "go=false",
+          "a pilot re-run that would send nothing is never refused, and stays green")
+    XP.load_sources = lambda only="": [_src(i) for i in range(500)]
+    check(XP.main(["--price", "--limit-usd", "40"]) == 1 and _go() == "go=false",
+          "500 programs ($50) are over the limit: nothing goes and the step ends red")
+
+    # ── the college workflow (program-requirements-college.yml): six workers at a time ──
+    def _college(answer, ceiling, workers, n=10, pause=0.0):
+        t = tempfile.mkdtemp()
+        keep, out = os.path.join(t, "keep"), os.path.join(t, "out")
+        os.makedirs(os.path.join(keep, "records"))
+        os.makedirs(os.path.join(out, "sources"))
+        for i in range(n):
+            json.dump(dict(_src(i), method="sitemap_page", codes_found=["A0", "A1", "A2"]),
+                      open(os.path.join(out, "sources", "%05d.json" % i), "w"))
+        sent, saved = [], XP.score
+        XP._post = _net(answer, sent, pause)
+        XP.score = lambda rec, *a, **k: {"pass": True, "coverage": {"pass": True, "share": 1.0, "listed": 3,
+                                                                     "placed": 3},
+                                         "invented": {"pass": True, "count": 0}, "arithmetic": {"status": "equal"}}
+        try:
+            C.extract(out, 0, 1, "654", workers, keep, None, ceiling)
+            with open(os.path.join(out, "extract_account_0.json")) as fh:
+                acct = json.load(fh)
+        finally:
+            XP.score = saved
+            shutil.rmtree(t, ignore_errors=True)
+        return sent, acct
+
+    _cs, _ca = _college(dict(_AT_EST, record={"blocks": []}), 0.25, 4, pause=0.05)
+    check(len(_cs) == 2 and abs(_ca["meter_charge_usd"] - 0.20) < 1e-9,
+          "the college workflow with four workers under $0.25 sends exactly two (%d), its reservations held in "
+          "flight; the receipt names the meter's $%.2f" % (len(_cs), _ca["meter_charge_usd"]))
+    _cs, _ca = _college(dict(_CHEAP, record={"blocks": []}), 0.25, 4, pause=0.05)
+    check(len(_cs) == 2, "with $0.01 calls the college meter still sends exactly two: once it held a call it "
+          "sends nothing more (%d)" % len(_cs))
+    with tempfile.TemporaryDirectory() as _d:
+        json.dump({"extract_asked": True, "go": False, "within_limit": False, "price_usd": 50.0, "limit_usd": 40.0},
+                  open(os.path.join(_d, "wave_price.json"), "w"))
+        _red = C.check_extract(_d)
+        json.dump({"extract_asked": False, "go": False, "within_limit": False, "price_usd": 50.0, "limit_usd": 40.0},
+                  open(os.path.join(_d, "wave_price.json"), "w"))
+        _green = C.check_extract(_d)
+    check(_red == 1 and _green == 0, "an asked extraction the price refused over the limit ends the college run red; "
+          "extract=0 at the same price stays green")
+
+    # ── the second reader (second-reader.yml): four workers at a time ──
+    _recs = [{"control_number": str(n), "college": "Nowhere", "title": "T%d" % n, "score": {"pass": False}}
+             for n in range(20)]
+    _saved_sr = (SR.failing_records, SR.source_for, SR.OUT)
+
+    def _second(answer, ceiling, workers, n=5, pause=0.0, model=None, rate=None):
+        sent = []
+        with tempfile.TemporaryDirectory() as tmp:
+            SR.failing_records = lambda slug: list(_recs[:n])
+            SR.source_for = lambda capture_dir, record: dict(_src(int(record["control_number"])))
+            SR.OUT = tmp
+            XP._post = _net(answer, sent, pause)
+            try:
+                SR.run("Nowhere Test College", "cap", None, False, "test-not-a-key", model, workers, ceiling, rate)
+                with open(os.path.join(tmp, "second_nowhere_test.json")) as fh:
+                    filed = json.load(fh)
+            finally:
+                SR.failing_records, SR.source_for, SR.OUT = _saved_sr
+        return sent, filed
+
+    _s1, _f1 = _second(_GROK, 1.0, 1)
+    check(len(_s1) == 1 and abs(_f1["charge_usd"] - 1.8) < 1e-9 and _f1["rows"][0]["second"]["cost_usd"] is None
+          and abs(_f1["rows"][0]["second"]["charge_usd"] - 1.8) < 1e-9,
+          "the second reader on xAI's usage stops after its first call: %d sent, $%.2f counted, cost_usd null"
+          % (len(_s1), _f1["charge_usd"]))
+    _sp, _fp = _second({"model": "grok-x", "usage": _PROBE}, None, 1, n=1)
+    check(abs(_fp["rows"][0]["second"]["charge_usd"] - 0.88) < 1e-9, "the probe's row counts $0.88")
+    _s4, _f4 = _second(_AT_EST, 0.25, 4, n=10, pause=0.05)
+    check(len(_s4) == 2 and _f4["not_sent"] == 8,
+          "with four workers under $0.25 the second reader sends exactly two (%d): the reservations in flight hold "
+          "the third" % len(_s4))
+    _sc, _fc = _second(_CHEAP, 0.25, 4, n=10, pause=0.05)
+    check(len(_sc) == 2, "with $0.01 calls it still sends exactly two: once held, nothing more (%d)" % len(_sc))
+    _se, _fe = _second(RuntimeError("the connection dropped"), None, 1, n=1)
+    _ec = len(json.dumps(_se[0]))
+    check(len(_se) == 1 and (_fe["rows"][0]["second"]["error"] or "").startswith("exception:")
+          and abs(_fe["rows"][0]["second"]["charge_usd"] - _worst(_ec)) < 1e-6 and abs(_fe["charge_usd"] - _worst(_ec)) < 1e-4,
+          "an exception inside the call settles at its worst case ($%.2f) and files an error row" % _worst(_ec))
+    _s429, _f429 = _second({"error": "HTTP 429: rate limited", "http_status": 429}, 1.0, 1, n=5)
+    check(len(_s429) == 5 and _f429["charge_usd"] == 0,
+          "a pre-model 429 with no usage counts $0, so all five are sent and nothing is counted")
+    _st, _ft = _second(_TIMEOUT, 1.0, 1, n=5)
+    check(len(_st) == 2, "a timed-out call counts its worst case, so under $1.00 two are sent (%d)" % len(_st))
+
+    # The second reader's price: the override, the rate, the limit and the re-run, each red when refused.
+    SR.failing_records = lambda slug: list(_recs[:5])
+    SR.source_for = lambda capture_dir, record: dict(_src(1))
+    try:
+        check(SR.main(["--college", "Nowhere Test College", "--price"]) == 0 and _go() == "go=true"
+              and SR.per_record_rate()[0] == W.DEFAULT_COST_PER_PROGRAM and "upper estimate" in SR.per_record_rate()[1],
+              "with no override the default rate stands and is named an upper estimate for the configured xAI model")
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x"]) == 1 and _go() == "go=false",
+              "a --model the price table does not name is refused at the price step, red")
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "0.5"])
+              == 0 and _go() == "go=true", "with a rate per record the override is priced at that rate")
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "0.05"])
+              == 1 and _go() == "go=false", "a rate per record below the $0.08 default is refused")
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--model", "grok-x", "--rate-per-record", "20"])
+              == 1 and _go() == "go=false", "five records at $20 with the margin ($125) are over the limit, red")
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--attempt", "2"]) == 1 and _go() == "go=false",
+              "attempt 2 of a second reading that would send records is refused, red")
+        SR.failing_records = lambda slug: []
+        check(SR.main(["--college", "Nowhere Test College", "--price", "--attempt", "2"]) == 0,
+              "a re-run with nothing to send is never refused")
+    finally:
+        SR.failing_records, SR.source_for, SR.OUT = _saved_sr
+finally:
+    XP._post, XP.load_sources = _saved_x[0], _saved_x[1]
+    for _k, _v in (("SUPABASE_SERVICE_KEY", _saved_x[2]), ("GITHUB_OUTPUT", _saved_x[3])):
+        if _v is None:
+            os.environ.pop(_k, None)
+        else:
+            os.environ[_k] = _v
 
 # ── the workflows ────────────────────────────────────────────────────────────
 # Every command that calls the model Edge Function: the college script's extract step, the pilot extraction
@@ -325,10 +418,10 @@ for name in sorted(os.listdir(wf_dir)):
                 prun = str(ps.get("run") or "")
                 check(any(("_program_requirements_wave.py price" in c or FREE.search(c)) and "--limit-usd" in c
                           for c in commands(prun)), "%s: the price step prices against a limit" % where)
-                check(not ps.get("if"), "%s: the price step runs on every path (no if: on it)" % where)
-                # Dispatch inputs reach the shell through env:, never pasted into the run text (COBIx on #3330).
-                check("${{" not in prun and "${{" not in str(st.get("run") or ""),
-                      "%s: neither it nor its price step pastes an expression into its run text" % where)
+                # The price step runs on every path the paid step can run on: no if:, or one the paid step's own
+                # condition carries (the pilot's push guard, S654).
+                pif = str(ps.get("if") or "").strip()
+                check(not pif or pif in cond, "%s: the price step runs wherever it can (if: %s)" % (where, pif or "none"))
             run = " ".join(paid)
             check(all("--ceiling-usd" in c for c in paid), "%s passes the hard stop on every paid command" % where)
             ceiling = re.search(r"--ceiling-usd\s+\"?\$\{?([A-Z_]+)", run)
@@ -337,6 +430,21 @@ for name in sorted(os.listdir(wf_dir)):
             check(bool(ceiling) and val.strip() != "" and "''" not in val,
                   "%s: the hard stop is never empty (%s=%r)" % (where, ceiling.group(1) if ceiling else "?", val))
 check(checked >= 4, "the college, wave, pilot extraction and second reader workflows' steps were found (%d)" % checked)
+# Dispatch inputs and run context reach the shell through env:, never pasted into the run text, in every run: step of
+# a job that holds a paid step (COBIx on #3330; the S654 review found the second reader's pin and capture steps).
+pasted = []
+for name in sorted(os.listdir(wf_dir)):
+    if not name.endswith((".yml", ".yaml")):
+        continue
+    with open(os.path.join(wf_dir, name)) as fh:
+        wf = yaml.safe_load(fh)
+    for job_id, job in (wf.get("jobs") or {}).items():
+        steps = job.get("steps") or []
+        if not any(paid_commands(st.get("run")) for st in steps):
+            continue
+        pasted += ["%s, job %s, step %r" % (name, job_id, st.get("name")) for st in steps
+                   if "${{" in str(st.get("run") or "")]
+check(pasted == [], "no run: step in a job with a paid step pastes an expression into its run text: %r" % pasted[:3])
 
 print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
 sys.exit(1 if FAILS else 0)

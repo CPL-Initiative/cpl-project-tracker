@@ -71,8 +71,10 @@ SPLIT_AT = 240     # listed courses above which a program is read in parts from 
 PART_SIZE = 200    # listed courses one part carries at most
 SPLIT_WHEN = ("ran past max_tokens", "IDLE_TIMEOUT")   # a single call's error that sends it to parts
 
-# Dollars per million tokens, Claude Opus 5.5 (claude-api skill, cached 2026-09-25).
-PRICE = {"claude-opus-5-5": {"input": 4.00, "output": 20.00, "cache_read": 0.20, "cache_write": 5.00}}
+# The price table and the usage reader are the spend meter's (kb/_spend_meter.py, S654), the one place a call is
+# priced and counted; these names stay for the readers that use them.
+import _spend_meter as M  # noqa: E402
+PRICE = M.PRICE
 
 
 def load_sources(only: str = "") -> list[dict]:
@@ -89,54 +91,28 @@ def load_sources(only: str = "") -> list[dict]:
     return out
 
 
-def _n(u: dict, *keys: str) -> float:
-    """The first of keys the usage carries as a number, else 0."""
-    for k in keys:
-        v = u.get(k)
-        if isinstance(v, (int, float)) and not isinstance(v, bool):
-            return v
-    return 0
-
-
-def usage_tokens(usage) -> tuple[float, float, float, float]:
-    """(input, output, cache read, cache write) tokens of a call's usage, in either shape the function passes
-    back: Anthropic's (input_tokens, output_tokens) or the OpenAI shape xAI answers in (prompt_tokens,
-    completion_tokens; COBIx on #3330, S654). A cached prompt token is counted at the input rate there, an
-    upper bound."""
-    u = usage if isinstance(usage, dict) else {}
-    return (_n(u, "input_tokens", "prompt_tokens"), _n(u, "output_tokens", "completion_tokens"),
-            _n(u, "cache_read_input_tokens"), _n(u, "cache_creation_input_tokens"))
+def usage_tokens(usage) -> tuple:
+    """(input, output, cache read, cache write) tokens, in either usage shape (M.usage_tokens)."""
+    return M.usage_tokens(usage)
 
 
 def cost(model: str | None, usage: dict | None) -> float | None:
-    """The call's price from its usage, in either usage shape (usage_tokens). A fallback model the table does
-    not price reads None rather than a wrong number on its record; the hard stop prices it at the dearest rate
-    (call_charge in kb/_program_requirements_college.py)."""
-    p = PRICE.get(model or "")
-    if not p:
-        return None
-    inp, out, cr, cw = usage_tokens(usage)
-    return round((inp * p["input"] + out * p["output"] + cr * p["cache_read"] + cw * p["cache_write"]) / 1e6, 5)
+    """The call's price from its usage, in either shape (M.price). A fallback model the table does not price reads
+    None rather than a wrong number on its record; the meter counts it at the dearest rate (M.charge_for)."""
+    return M.price(model, usage)
 
 
-def dearest_cost(usage: dict | None) -> float:
-    """The usage at the dearest rate in the table, field by field: what an unpriced model's call counts toward
-    a hard stop."""
-    if not PRICE:
-        return 0.0
-    dear = {f: max(p[f] for p in PRICE.values()) for f in ("input", "output", "cache_read", "cache_write")}
-    inp, out, cr, cw = usage_tokens(usage)
-    return round((inp * dear["input"] + out * dear["output"] + cr * dear["cache_read"]
-                  + cw * dear["cache_write"]) / 1e6, 5)
-
-
-def call(src: dict, key: str, provider: str | None = None, model: str | None = None) -> dict:
+def call(src: dict, key: str, provider: str | None = None, model: str | None = None, meter=None) -> dict:
     """The record for one program: one call, or, for a program too long for one
     reply, a call per part (call_in_parts). A single call that runs past
     max_tokens or the gateway's idle limit is read again in parts.
     provider names the function's reader (version 11: "anthropic", the default,
     or "xai", the second reader of Sam's Sheet 97 ruling); model, when given,
-    names the second reader's model in place of the function's XAI_MODEL."""
+    names the second reader's model in place of the function's XAI_MODEL.
+    meter (kb/_spend_meter.py's Meter) reserves before each post and settles after it, a read in parts once per part;
+    none given, an unlimited one counts the call. The answer carries _charge_usd (what the meter counted for this
+    program) and _sent (whether any post went); a call the stop held carries stopped."""
+    meter = meter if meter is not None else M.Meter()
     body = {"college": src["college"], "title": src["title"], "award": src["award"],
             "catalog_year": src.get("catalog_year"), "source_url": (src.get("source") or {}).get("url"),
             "text": src["text"], "closed_list": src["closed_list"]}
@@ -145,10 +121,10 @@ def call(src: dict, key: str, provider: str | None = None, model: str | None = N
     if model:
         body["model"] = model
     if len(src["closed_list"]) > SPLIT_AT:
-        return call_in_parts(src, key, body)
-    got = _post(body, key)
+        return call_in_parts(src, key, body, meter=meter)
+    got = meter.call(lambda: _post(body, key), M.request_chars(body))
     if any(w in (got.get("error") or "") for w in SPLIT_WHEN):
-        return call_in_parts(src, key, body, first=got)
+        return call_in_parts(src, key, body, first=got, meter=meter)
     return got
 
 
@@ -338,33 +314,48 @@ def merge_parts(records: list[dict], text: str) -> tuple[dict, list[str]]:
 
 
 def _sum_usage(results: list[dict]) -> dict:
+    """Every call's usage summed field by field, a nested count (completion_tokens_details.reasoning_tokens)
+    included."""
     total: dict = {}
     for r in results:
-        for k, v in (r.get("usage") or {}).items():
+        for k, v in ((r or {}).get("usage") or {}).items():
             if isinstance(v, (int, float)) and not isinstance(v, bool):
                 total[k] = total.get(k, 0) + v
+            elif isinstance(v, dict):
+                sub = total.setdefault(k, {})
+                if isinstance(sub, dict):
+                    for k2, v2 in v.items():
+                        if isinstance(v2, (int, float)) and not isinstance(v2, bool):
+                            sub[k2] = sub.get(k2, 0) + v2
     return total
 
 
 def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
-                  post=None) -> dict:
+                  post=None, meter=None) -> dict:
     """The record read in parts, sent at once. The usage covers every call made
     for the program, a single call that failed first included, so the cost is
-    what the program spent."""
+    what the program spent. Each part is its own reservation and settlement on the
+    meter (S654): a part the stop holds is never sent, and the read answers with
+    that part's error; _charge_usd sums every call's charge, the first's included."""
     post = post or _post
+    meter = meter if meter is not None else M.Meter()
     closed = src["closed_list"]
     parts = split_codes(closed, src["text"], max(2, math.ceil(len(closed) / PART_SIZE)))
     bodies = [dict(body, part={"index": i + 1, "of": len(parts), "codes": codes})
               for i, codes in enumerate(parts)]
     with ThreadPoolExecutor(max_workers=len(bodies)) as pool:
-        gots = list(pool.map(lambda b: post(b, key), bodies))
+        gots = list(pool.map(lambda b: meter.call(lambda: post(b, key), M.request_chars(b)), bodies))
     every = ([first] if first else []) + gots
     models = {g.get("model") for g in every if g.get("model")}
     out = {"model": models.pop() if len(models) == 1 else None, "usage": _sum_usage(every),
            "ms": (first or {}).get("ms", 0) + max((g.get("ms") or 0) for g in gots),
            "parts": len(parts),
            "split_because": (first or {}).get("error") or "the closed list holds %d courses" % len(closed),
-           "stop_reason": None, "record": None, "error": None}
+           "stop_reason": None, "record": None, "error": None,
+           "_sent": any(g.get("_sent") for g in every),
+           "_charge_usd": round(sum(g.get("_charge_usd") or 0.0 for g in every), 5)}
+    if any(g.get("stopped") for g in gots):
+        out["stopped"] = True
     for i, g in enumerate(gots, start=1):
         if g.get("error") or not isinstance(g.get("record"), dict):
             out["stop_reason"] = g.get("stop_reason")
@@ -378,38 +369,37 @@ def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
     return out
 
 
-def charge(cost_usd, usage) -> float:
-    """What one call counts toward the hard stop: the college workflow's call_charge (either usage shape; an
-    unpriced call counts at the dearest rate, and a call with no usage the per-program floor)."""
-    import _program_requirements_college as C
-    return C.call_charge(cost_usd, usage)
-
-
 def call_estimate() -> float:
     """One program's share of the estimate the price step gates on: the default rate x the margin (W.price)."""
     import _program_requirements_wave as W
     return round(W.DEFAULT_COST_PER_PROGRAM * W.PRICE_MARGIN, 5)
 
 
+def attempt_of(attempt) -> int:
+    try:
+        return int(str(attempt or "1").strip())
+    except ValueError:
+        return 1
+
+
 def price_main(args) -> int:
     """The estimate before any call (S653): the programs that would be sent x the default rate per program
     x the margin (kb/_program_requirements_wave.py's price()), against Sam's $40 limit a run. Writes go=
-    for the workflow's extraction step; calls nothing and needs no key. A re-run attempt that would send a
-    program is refused, as check_attempt refuses one in the college workflow: a re-run sends the same programs
-    and pays again (COBIx on #3327, S654)."""
+    for the workflow's extraction step; calls nothing and needs no key. It exits 1, so the job ends red, when
+    the estimate is over the limit, or when a re-run attempt would send programs again (COBIx on #3327, S654;
+    the college workflow's check_attempt holds the same rule). With nothing to send it is never refused."""
     import _program_requirements_wave as W
     n = len([s for s in load_sources(args.only) if (s.get("coverage") or 0) >= MIN_COVERAGE])
     got = W.price(n, W.DEFAULT_COST_PER_PROGRAM, W.parse_limit(args.limit_usd), True)
     print("pilot extraction: estimate $%.2f for %d programs at $%.4f each with the %.2f margin; %s"
           % (got["price_usd"], n, got["cost_per_program"], got["margin"], got["why"]), flush=True)
-    if not got["within_limit"]:
-        print("::error::the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"]))
+    attempt = attempt_of(getattr(args, "attempt", "1"))
     refused = None
-    if n > 0:
-        try:
-            W.check_attempt(True, getattr(args, "attempt", "1"))
-        except W.Refused as exc:
-            refused = str(exc)
+    if n > 0 and attempt > 1:
+        refused = ("this is attempt %d of the pilot extraction, and re-running it would send its %d programs again "
+                   "and pay a second time: dispatch the workflow again instead of re-running the job" % (attempt, n))
+    elif n > 0 and not got["within_limit"]:
+        refused = "the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"])
     W._output("go", "true" if got["go"] and not refused else "false")
     if refused:
         print("::error::pilot extraction: %s" % refused, flush=True)
@@ -423,8 +413,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--price", action="store_true",
                     help="price what would be sent against --limit-usd, write go= for the workflow, and call nothing")
     ap.add_argument("--limit-usd", default="40")
-    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no program is sent once the run's cost "
-                    "and the next program's estimate would pass it")
+    ap.add_argument("--ceiling-usd", default="", help="the hard stop (kb/_spend_meter.py): no program is sent once "
+                    "the run's charges, the calls in flight and the next program's estimate would pass it")
     ap.add_argument("--attempt", default="1", help="price: the workflow's run attempt; a re-run that would send "
                     "a program is refused")
     args = ap.parse_args(argv)
@@ -438,17 +428,25 @@ def main(argv: list[str] | None = None) -> int:
     print("program requirements pilot, extraction: %d programs, writes nothing" % len(sources), flush=True)
     rows = []
     ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None
-    spent, est = 0.0, call_estimate()
+    # The hard stop is the spend meter's (kb/_spend_meter.py, S654): before each post it reserves the program's
+    # estimate ($0.08 x 1.25) and refuses when the charges, the reservations in flight and this one would pass the
+    # ceiling; from then on it sends nothing. One program is read at a time (a read in parts posts its parts at
+    # once, a reservation each), so the run can pass the ceiling only by the calls in flight costing more than
+    # their estimates. A call costs at most $1.02 (M.worst_case of a 56,000-character request: 16,000 characters of
+    # page text and 240 listed courses), $0.92 over its estimate: the worst overshoot is $0.92 for one call, and
+    # $0.92 a part for a read in parts.
+    meter = M.Meter(ceiling, call_estimate())
     for src in sources:
-        # The hard stop (COBIx on #3327, S654): no program is sent when the run's cost so far and its estimate
-        # would pass the ceiling, so a run whose calls cost about their estimate stops at or under it. One call's
-        # actual cost can exceed its estimate, so a run can still pass the ceiling by that one call's overrun.
-        if ceiling is not None and spent + est > ceiling + 1e-9:
-            print("::warning::the run's cost $%.2f and the next program's estimate $%.2f would pass the $%.2f hard "
-                  "stop; %d programs not sent" % (spent, est, ceiling, len(sources) - len(rows)), flush=True)
+        if meter.stopped:
+            print("::warning::the hard stop held the run at $%.2f charged against $%.2f; %d programs not sent"
+                  % (meter.spent, ceiling, len(sources) - len(rows)), flush=True)
             break
         t0 = time.time()
-        got = call(src, key)
+        got = call(src, key, meter=meter)
+        if got.get("stopped") and not got.get("_sent"):
+            print("::warning::the hard stop held the run at $%.2f charged against $%.2f; %d programs not sent"
+                  % (meter.spent, ceiling, len(sources) - len(rows)), flush=True)
+            break
         h = halt_of(got)
         if h:
             # Every program would get the same answer, and program-requirements-extract.yml (a dispatch or an
@@ -464,10 +462,10 @@ def main(argv: list[str] | None = None) -> int:
                "record_shape": RECORD_SHAPE,
                "model": got.get("model"), "stop_reason": got.get("stop_reason"),
                "usage": got.get("usage"), "cost_usd": cost(got.get("model"), got.get("usage")),
+               "charge_usd": got.get("_charge_usd"),
                "ms": got.get("ms"), "seconds": round(time.time() - t0, 1), "parts": got.get("parts"),
                "error": got.get("error"), "score": sc, "record": rec}
         rows.append(row)
-        spent += charge(row["cost_usd"], row["usage"])
         print("%-26s %-6s %-20s %s cov %-5s inv %-2s arith %-10s out %-7s $%s  %s" % (
             src["college"][:26], src["control_number"], src["shape"],
             "PASS" if sc and sc["pass"] else "fail",
@@ -476,9 +474,9 @@ def main(argv: list[str] | None = None) -> int:
             sc and "%d%s" % (sc["outcomes"]["count"], "" if sc["outcomes"]["pass"] else " BAD"),
             row["cost_usd"], row["error"] or ""), flush=True)
     total = sum(r["cost_usd"] or 0 for r in rows)
-    print("\npassed %d of %d; model cost $%.4f ($%.4f a program)" % (
+    print("\npassed %d of %d; model cost $%.4f ($%.4f a program); the meter counted $%.4f" % (
         sum(1 for r in rows if r["score"] and r["score"]["pass"]), len(rows), total,
-        total / len(rows) if rows else 0))
+        total / len(rows) if rows else 0, meter.spent))
     print("=== PILOT RECORDS JSON BEGIN ===")
     for r in rows:
         print(json.dumps(r, ensure_ascii=False))

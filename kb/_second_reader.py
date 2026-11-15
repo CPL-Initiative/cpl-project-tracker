@@ -142,7 +142,8 @@ def per_record_rate(model=None, rate=None):
     """(the rate per record the price and the hard stop use, where it came from), or (None, why) for a refusal
     (COBIx on #3330, S654). The default rate is calibrated on the Anthropic reader at Opus's rates; with no
     --model it stands, as an upper estimate for the function's configured xAI model. A --model the price table
-    does not name is refused unless the dispatch gives a rate per record; a rate given is used as given."""
+    does not name is refused unless the dispatch gives a rate per record; a rate given is used as given, and one
+    below the default rate is refused, since it would price nothing the hard stop could hold to."""
     import _program_requirements_extract as X
     import _program_requirements_wave as W
     if str(rate or "").strip():
@@ -150,8 +151,8 @@ def per_record_rate(model=None, rate=None):
             r = float(str(rate).strip())
         except ValueError:
             return None, "the rate per record %r is no number" % rate
-        if not r > 0:
-            return None, "the rate per record must be above $0 (%r)" % rate
+        if not r >= W.DEFAULT_COST_PER_PROGRAM:
+            return None, "the rate per record %r is below the default rate $%.2f" % (rate, W.DEFAULT_COST_PER_PROGRAM)
         return r, "the dispatch's rate per record"
     if model and model not in X.PRICE:
         return None, ("the model %r is not in the price table (%s): give the dispatch a rate per record, or no "
@@ -162,10 +163,12 @@ def per_record_rate(model=None, rate=None):
                                         "configured xAI model")
 
 
-def price_main(college, capture_dir=None, limit=None, limit_usd="40", model=None, rate=None) -> int:
+def price_main(college, capture_dir=None, limit=None, limit_usd="40", model=None, rate=None, attempt="1") -> int:
     """The estimate before any call (S653): the records with a page in hand x the rate per record
     (per_record_rate) x the margin (kb/_program_requirements_wave.py's price()), against Sam's $40 limit a run.
-    Writes go= for the workflow's second-reader step; calls nothing and needs no key."""
+    Writes go= for the workflow's second-reader step; calls nothing and needs no key. It exits 1, so the job ends
+    red, when the estimate is over the limit, the model needs a rate it was not given, or a re-run attempt would
+    send records again and pay a second time (S654). With nothing to send it is never refused."""
     import _program_requirements_wave as W
     cpp, cpp_from = per_record_rate(model, rate)
     if cpp is None:
@@ -178,9 +181,20 @@ def price_main(college, capture_dir=None, limit=None, limit_usd="40", model=None
     got = W.price(n, cpp, W.parse_limit(limit_usd), True)
     print("second reader, %s: estimate $%.2f for %d records at $%.4f each (%s) with the %.2f margin; %s"
           % (college, got["price_usd"], n, got["cost_per_program"], cpp_from, got["margin"], got["why"]), flush=True)
-    if not got["within_limit"]:
-        print("::error::the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"]))
-    W._output("go", "true" if got["go"] else "false")
+    try:
+        tries = int(str(attempt or "1").strip())
+    except ValueError:
+        tries = 1
+    refused = None
+    if n > 0 and tries > 1:
+        refused = ("this is attempt %d of the second reading, and re-running it would send its %d records again and "
+                   "pay a second time: dispatch the workflow again instead of re-running the job" % (tries, n))
+    elif n > 0 and not got["within_limit"]:
+        refused = "the estimate $%.2f is over the $%.0f limit; nothing is sent" % (got["price_usd"], got["limit_usd"])
+    W._output("go", "true" if got["go"] and not refused else "false")
+    if refused:
+        print("::error::second reader, %s: %s" % (college, refused), flush=True)
+        return 1
     return 0
 
 
@@ -205,37 +219,33 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.", file=sys.stderr)
         return 2
 
-    # The hard stop (S653; COBIx on #3330, S654). Before each call the record's estimate (the price step's rate
-    # x the margin) is reserved, and no record is sent when the run's charged cost, the calls in flight at their
-    # estimates and this one would pass the ceiling; when the call comes back its estimate is released and its
-    # charge added (call_charge: either usage shape, an unpriced model at the dearest rate, no usage at the
-    # per-program floor). A run whose calls cost about their estimate stops at or under the ceiling. One call's
-    # actual cost can exceed its estimate, so a run can pass the ceiling by that overrun: sequentially by one
-    # call's, and with `workers` calls in flight by up to `workers` calls'.
-    import threading
-    import _program_requirements_college as C
+    # The hard stop is the spend meter's (kb/_spend_meter.py, S654): before each post it reserves the record's
+    # estimate (the price step's rate x the margin) and refuses when the charges, the reservations in flight and
+    # this one would pass the ceiling; from then on no record is sent. A call settles at its priced usage (xAI's
+    # at the dearest rate, its larger reading), at its worst case when it was sent and answered no usage or raised,
+    # and at $0 when it never reached the model. The run can pass the ceiling only by calls in flight costing
+    # more than their estimates: at most $0.92 a call over a $0.10 estimate (a call costs at most $1.02,
+    # M.worst_case of a 56,000-character request), so $3.68 with four workers, and $0.92 more for each further
+    # part of a read in parts in flight.
     import _program_requirements_wave as W
+    import _spend_meter as M
     cpp, _ = per_record_rate(model, rate)
     est = round((cpp if cpp is not None else W.DEFAULT_COST_PER_PROGRAM) * W.PRICE_MARGIN, 5)
-    spend = {"usd": 0.0, "flight": 0.0, "stopped": 0, "sent": 0}
-    lock = threading.Lock()
+    meter = M.Meter(ceiling, est)
 
     def one(pair):
         rec, src = pair
-        with lock:
-            if ceiling is not None and spend["usd"] + spend["flight"] + est > ceiling + 1e-9:
-                spend["stopped"] += 1
-                return None
-            spend["flight"] += est
-            spend["sent"] += 1
+        if meter.stopped:
+            return ("held", rec)
         try:
-            got = X.call(src, key, provider=PROVIDER, model=model)
-        finally:
-            with lock:
-                spend["flight"] -= est
-        charged = C.call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
-        with lock:
-            spend["usd"] += charged
+            got = X.call(src, key, provider=PROVIDER, model=model, meter=meter)
+        except Exception as exc:
+            # The posts inside the call were metered as they went (an exception in a post settles at its worst
+            # case); one raised after them (merging the parts) leaves an error row and nothing uncounted.
+            got = {"record": None, "usage": None, "model": None, "_sent": True, "_charge_usd": None,
+                   "error": "exception: %s" % (str(exc).splitlines()[0][:200] if str(exc) else type(exc).__name__)}
+        if got.get("stopped") and not got.get("_sent"):
+            return ("held", rec)
         second = got.get("record") if isinstance(got.get("record"), dict) else None
         sc = None
         if second:
@@ -245,7 +255,7 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
             except Exception as exc:   # a reading the scorer cannot read is still filed, with its reason
                 got = dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = row_for(rec, src, got, sc)
-        row["second"]["charge_usd"] = round(charged, 5)   # what the call counted toward the hard stop
+        row["second"]["charge_usd"] = got.get("_charge_usd")   # what the meter counted for this record
         c = row["comparison"]
         print("%-6s first %-8s second %-8s %-22s %s" % (
             rec.get("control_number"), "fail", "PASS" if row["second"]["pass"] else "fail",
@@ -254,10 +264,12 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        rows = [r for r in pool.map(one, readable) if r is not None]
-    if spend["stopped"]:
-        print("::warning::the run's cost $%.2f and the next record's estimate $%.2f would pass the $%.2f hard stop; "
-              "%d record(s) not sent" % (spend["usd"], est, ceiling, spend["stopped"]), flush=True)
+        got_all = list(pool.map(one, readable))
+    rows = [r for r in got_all if not isinstance(r, tuple)]
+    held = [r for r in got_all if isinstance(r, tuple)]
+    if held:
+        print("::warning::the hard stop held the run at $%.2f charged against $%.2f; %d record(s) not sent"
+              % (meter.spent, ceiling or 0, len(held)), flush=True)
     counts = {}
     for r in rows:
         v = r["comparison"]["verdict"]
@@ -275,7 +287,7 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
                "run": os.environ.get("GITHUB_RUN_ID"), "posture": POSTURE,
                "failing": len(every), "read": len(rows), "skipped_no_page": skipped, "errors": errors,
                "cost_usd": round(sum(r["second"].get("cost_usd") or 0 for r in rows), 4),
-               "charge_usd": round(spend["usd"], 4),
+               "charge_usd": round(meter.spent, 4), "not_sent": len(held),
                "verdicts": counts, "rows": rows},
               open(path, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
     print("wrote %s: %d read, %d skipped (no page), %d error(s); verdicts %s"
@@ -314,14 +326,16 @@ def main(argv=None):
     ap.add_argument("--price", action="store_true",
                     help="price what would be sent against --limit-usd, write go= for the workflow, and call nothing")
     ap.add_argument("--limit-usd", default="40")
-    ap.add_argument("--ceiling-usd", default="", help="the hard stop: no record is sent once the run's cost "
-                    "and the next record's estimate would pass it")
+    ap.add_argument("--ceiling-usd", default="", help="the hard stop (kb/_spend_meter.py): no record is sent once "
+                    "the run's charges, the calls in flight and the next record's estimate would pass it")
+    ap.add_argument("--attempt", default="1", help="price: the workflow's run attempt; a re-run that would send "
+                    "records is refused")
     ap.add_argument("--rate-per-record", default="", help="price and hard stop: the dollars a record costs to "
                     "read; required with a --model the price table does not name")
     a = ap.parse_args(argv)
     a.model = (a.model or "").strip() or None
     if a.price:
-        return price_main(a.college, a.capture, a.limit, a.limit_usd, a.model, a.rate_per_record)
+        return price_main(a.college, a.capture, a.limit, a.limit_usd, a.model, a.rate_per_record, a.attempt)
     ceiling = float(a.ceiling_usd) if str(a.ceiling_usd or "").strip() else None
     return run(a.college, a.capture, a.limit, a.dry_run, (os.environ.get("SUPABASE_SERVICE_KEY") or "").strip(),
                a.model, a.workers, ceiling, a.rate_per_record)
