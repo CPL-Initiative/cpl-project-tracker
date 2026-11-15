@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 24,
    "listed": 25,
-   "share": 0.92,
+   "share": 0.96,
    "missing": [
-    "CDEVC1000",
-    "PBLC156"
+    "CDEVC1000"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PASV156",
+     "listed": "PBLC156",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CDEV107",
-    "PASV156"
+    "CDEV107"
    ],
    "flagged": [
-    "CDEV107",
-    "PASV156"
+    "CDEV107"
    ],
    "pass": true
   },
@@ -347,7 +351,7 @@
    "No program learning outcomes are printed in this section."
   ]
  },
- "extracted_run": "43339249633",
+ "extracted_run": 43693830334,
  "source_sha": "002c799b422400b0",
  "source_codes": [
   "APCD107",
@@ -375,5 +379,6 @@
   "SOC240",
   "SOC240H"
  ],
- "source_coverage": 0.96
+ "source_coverage": 0.96,
+ "read_run": "43339249633"
 }
