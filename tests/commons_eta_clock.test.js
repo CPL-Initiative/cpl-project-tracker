@@ -158,6 +158,20 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
     fw.document.documentElement.classList.contains("cobi-framed") && PARENT.window.location.hash === "#commons/data/eta");
   fw.document.getElementById("i").dispatchEvent(new fw.MouseEvent("click", { bubbles: true, cancelable: true }));
   check("(3) a link within the framed tab stays in the frame", PARENT.window.location.hash === "#commons/data/eta");
+  // COBIx's re-check on #3373: a tab in the frame calling ensureFresh() must hand the renewal to the outer page.
+  const SESSION_SRC = fs.readFileSync("cpl_session.js", "utf8");
+  const P2 = new JSDOM('<!doctype html><html><head></head><body><iframe id="f" src="https://example.org/index.html?framed=1#cpl-pathways"></iframe></body></html>',
+    { url: "https://example.org/index.html#commons/data", runScripts: "dangerously",
+      resources: { interceptors: [requestInterceptor(() => new Response("<!doctype html><html><head></head><body></body></html>", { headers: { "Content-Type": "text/html" } }))] } });
+  let outerCalls = 0, frameFetches = 0;
+  P2.window.CPL_SESSION = { ensureFresh: function () { outerCalls++; return Promise.resolve(null); } };
+  await new Promise((r) => P2.window.document.getElementById("f").addEventListener("load", r));
+  const f2 = P2.window.document.getElementById("f").contentWindow;
+  f2.fetch = function () { frameFetches++; return Promise.reject(new Error("no network")); };
+  f2.eval(SESSION_SRC);
+  await f2.CPL_SESSION.ensureFresh();
+  check("(3) ⭐ in a frame, ensureFresh() hands the renewal to the outer page and never exchanges a token itself (COBIx on #3373)",
+    outerCalls === 1 && frameFetches === 0);
   check("(3) ⭐ in a frame, the session keeper reads the session and never starts its refresh (COBIx on #3373)",
     /function start\(\) \{\s*if \(framedInCobi\(\)\) \{ try \{ sync\(\); \}[^\n]*return; \}/.test(fs.readFileSync("cpl_session.js", "utf8")));
   check("(3) both HTMLs load cobi_framed.js", ["index.html", "CPL_Dashboard.html"].every((f) => /<script src="cobi_framed\.js"><\/script>/.test(fs.readFileSync(f, "utf8"))));

@@ -278,6 +278,17 @@
    * was definitively rejected. NEVER rejects — callers treat null as
    * "signed out" and anything else as "go ahead". */
   function ensureFresh() {
+    /* In a COBI framed inside COBI, the page around the frame renews the token: one inFlight for both windows, so the
+       two never exchange the same refresh token (COBIx on #3373). They share the origin's storage, so the frame then
+       reads what the outer page wrote. */
+    if (framedInCobi()) {
+      try {
+        var outer = window.top.CPL_SESSION;
+        if (outer && typeof outer.ensureFresh === "function") return Promise.resolve(outer.ensureFresh()).then(function () { sync(); return read(); });
+      } catch (e) { /* no outer keeper: read what is there, never exchange */ }
+      sync();
+      return Promise.resolve(read());
+    }
     sync();                       // a fresh browser tab hydrates before we judge it
     var s = read();
     if (!s) return Promise.resolve(null);
