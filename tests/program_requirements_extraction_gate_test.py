@@ -8,13 +8,14 @@ with extract=1 ran with neither the estimate gate nor the hard stop. This test h
    extract=0 never goes but still prices.
 2. Every workflow step that calls a paid extraction (`_program_requirements_college.py extract`, or
    `_program_requirements_extract.py` without --price, the pilot's) is gated on a price step that runs
-   before it unconditionally, by `steps.<price>.outputs.go == 'true'`, and passes a hard stop (--ceiling-usd)
-   that is never empty, and takes its dispatch inputs through env:.
-3. The hard stop trips through the real usage price (S654; COBIx on #3330: xAI's OpenAI-shaped usage priced
-   $0, so the second reader's stop never tripped). Only the network call is stubbed. The pilot and the second
-   reader stop before a call when the cost so far and the next call's estimate would pass the ceiling, a call
-   with no usage counts the per-program floor, a pilot re-run that would send programs is refused, and a
-   second-reader --model the price table does not name needs a rate per record.
+   before it wherever it can run, by `steps.<price>.outputs.go == 'true'`, and passes a hard stop (--ceiling-usd)
+   that is never empty; no run: step of its job pastes an expression into its run text.
+3. The spend meter (kb/_spend_meter.py, S654; d-one-spend-meter-s654) counts every paid call of the pilot, the
+   college workflow and the second reader. Only the network call and the sources are stubbed. The larger usage
+   reading is charged, an unlisted model at the dearest rate; a sent call with no usage or an exception at its
+   worst case; one refused before the model at $0; a read in parts once per part. Exact sent counts under four
+   workers hold the reservations in flight and the latch. A re-run that would send, and an estimate over the
+   limit, end the price step red; a rate per record below the default is refused.
 
 Python with PyYAML (js-tests.yml installs it)."""
 import os

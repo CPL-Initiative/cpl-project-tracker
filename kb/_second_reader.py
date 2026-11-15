@@ -299,6 +299,9 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
         if not records:
             print("no record fails a machine check: nothing to read", file=sys.stderr)
             return 0
+        if held:
+            print("nothing was read: the hard stop held all %d record(s) with a page" % len(held), file=sys.stderr)
+            return 1
         print("nothing was read: all %d chosen record(s) skipped (no page the first reading came from)"
               % len(skipped), file=sys.stderr)
         return 1
