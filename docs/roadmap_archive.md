@@ -298,3 +298,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history moved at the S654 checkpoint (2026-11-15)
 
 - 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
+
+## INDEX update history, moved 2026-11-15 (SkyCurlew, S655)
+
+- (from docs/INDEX.md Update history) 2026-11-13 (S648 SkyTanager, the light refresh, while the session continued): #3248, #3239, #3252 (Grossmont Cal-GETC 34) and #3245 (FIRE M1274 into FIRE 130 X, applied) merged; Glendale loaded, rereads to come; Open Asks Sheet 194 replaces 193 (the BUSI row delete as its own card); handoff 649 rewritten in place; refresh receipt not yet run.

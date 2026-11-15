@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 654,
-  "moniker": "SkyWhimbrel",
-  "run": "Sam's session",
+  "session": 655,
+  "moniker": "SkyCurlew",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_655_handoff.md",
+  "handoff": "docs/session_656_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T18:50:31Z",
+  "written_at": "2026-11-15T09:13:14Z",
   "project": "course",
   "next_step": {
-    "title": "The Honors rows, step 2, on anchors",
-    "text": "Each Honors row now rests on a same-college pair of courses with the same subject and number and a title signal. After COBIx's design read and a short review, the plan merges; the apply follows a check run after the daily build."
+    "title": "Apply Honors step 2 once the edit is permitted",
+    "text": "The plan of 380 Honors rows is merged and checked. The apply runs on Sam's word or in a session where the apply file may be edited, after a fresh check against main."
   },
   "changes": [
+    {
+      "at": "2026-11-15T07:31:00Z",
+      "text": "The Honors step 2 plan merged: 382 rows, 380 to write, 129 mints and 179 rows with the mint held. Nothing is applied; the apply waits on a permission the session did not have."
+    },
     {
       "at": "2026-11-15T03:28:00Z",
       "text": "Honors step 2 was redrawn on anchors: 382 rows, 282 of them with a base plus H mint, 37 held, and 169 clusters named as split candidates. Nothing is applied."

@@ -167,6 +167,31 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S655, and what worked
+
+- The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
+
+- Handoff 655 said #3330 was merged at `5a4a9c68`. It had merged into its stacked base (`claude/extraction-gate-always-s653`), and #3327 then closed with a pointer, so the cost gates and the spend meter never reached `main`. A stack merges through its top only when the top's base is `main`: retarget the top to `main` first, and confirm the merge by `git log origin/main`, never by the PR's merged flag (#3350, #3351 reland it).
+  `d-stack-top-retarget-s655` amends `d-merge-stack-tops-s654`.
+- The permission check refused a worker's edit to `kb/migrations/.apply` (Honors step 2). The brief lifted the limit in
+  words and the harness did not: an apply by a push of `.apply` needs a session where that edit is permitted. The
+  conductor held the apply for Sam and did not make the edit itself, since making it for the worker routes around a
+  denial (`p-apply-edit-refused-by-permission-check-s655`). Sam was notified by push at about 07:31Z.
+- A pr-gate report came back under an automatic security warning; the conductor read the check run and the thread
+  itself before merging.
+- The second reader's count (10 records rescored against pages `main` holds as wrong) was lower than the true class
+  (26). A fix worker measures the whole class, never only the reader's list.
+- A handoff's expected count with no file behind it cannot gate a write (handoff 655's "66 scores and one status"
+  against a measured 189 and 4): the reconcile's own count and a reader's classification do
+  (`p-handoff-count-not-derivable-s655`).
+- Worked: a second reader before every live write (it found 07206 and the held pages); COBIx's finding read at the
+  gate within the three-minute read (07:08Z finding, the merge held until it was fixed); finalizer workers; one timer
+  per wait; context at 31% at 07:33Z.
+- The checkpoint-docs worker checked out the session branch in its own worktree while the main checkout held the same
+  branch, so the main checkout's index fell one commit behind and the stop hook reported uncommitted changes; the
+  conductor confirmed the index equaled its own last commit, reset and detached. Give the documents worker its own
+  branch name, or detach the main checkout first.
+
 ## What went wrong in S654, and what worked
 
 - The `worker` agent type always creates a worktree, so a fourth worker cannot be a `worker`. A general-purpose agent
