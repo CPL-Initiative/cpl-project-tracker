@@ -1,11 +1,11 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-14T14:34:54Z",
+ "_generated_at": "2026-11-15T15:01:25Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 133,
+ "queue": 0,
  "saved_not_folded": 0,
- "waiting": 133,
- "proposed": 133,
+ "waiting": 0,
+ "proposed": 0,
  "needs_you_count": 0,
  "not_yet_asked": 0,
  "fold_held": 0,
@@ -21,30 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 133,
+   "settled": 0,
    "held": 0,
-   "sample": [
-    [
-     "AP Art History, ARTH C1100",
-     "AP Art History"
-    ],
-    [
-     "AP Art History, ARTH C1200",
-     "AP Art History"
-    ],
-    [
-     "AP Art History, Area 3",
-     "AP Art History"
-    ],
-    [
-     "AP Biology, Area 5",
-     "AP Biology"
-    ],
-    [
-     "AP Calculus AB, Area 2",
-     "AP Calculus AB"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -282,37 +261,11 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 5,
+   "settled": 0,
    "held": 0,
-   "sample": [
-    [
-     "AP Art and Design - 2D Design",
-     "AP 2-D Art and Design"
-    ],
-    [
-     "AP Art and Design - 3D Design",
-     "AP 3-D Art and Design"
-    ],
-    [
-     "AP Art and Design - Drawing",
-     "AP Drawing"
-    ],
-    [
-     "AP Word History Modern, Area 3",
-     "AP World History: Modern"
-    ],
-    [
-     "AP Word History Modern, Area 4",
-     "AP World History: Modern"
-    ]
-   ]
+   "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 1,
-  "answered": 1,
-  "errors": [],
-  "cost_usd": 0.38
- },
+ "classifier_run": null,
  "needs_you": []
 }

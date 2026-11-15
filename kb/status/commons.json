@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T09:11:32Z",
+ "written_at": "2026-11-15T15:01:36Z",
  "rows": [
   {
    "key": "requirements",
@@ -119,7 +119,7 @@
    "issues": [
     {
      "n": 499,
-     "words": "credentials with no Common SUBJ (470 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -367,7 +367,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-13T22:48:48-08:00",
+    "at": "2026-11-12T20:24:41Z",
     "every_hours": null
    },
    "facts": {
@@ -751,7 +751,7 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "n": 499,
-    "words": "credentials with no Common SUBJ (470 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
