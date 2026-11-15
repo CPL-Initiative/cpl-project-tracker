@@ -67,43 +67,9 @@ S559 SkyAndromeda, 2026-11-03: the Common Course Reference takes the opened page
 
 Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again): [the archive](commons_lessons_archive.md).
 
-## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
+## 3 sections: moved to the archive (S661 checkpoint compaction)
 
-Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.
-
-## Moved from the lane, 2026-11-04 (S573 SkyNeedle; the lane passed its 20,000-byte budget)
-
-**The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
-bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
-**The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
-
-**A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
-
-**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. All three steps have landed (history in the lessons, *The List norms, steps 1 to 3*).
-
-**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
-and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
-(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
-`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
-California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
-reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
-Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
-the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
-(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
-so the port into this tab waits on his call on the look.
-
-## Moved from the lane, 2026-11-04 (S574)
-
-**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
-list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
-read of the records' display facts, so the Program Requirements row carries two known issues, the failing
-and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
-receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
-the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
-Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
-read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
-last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
-older than a week reads stale.
+Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)*; *Moved from the lane, 2026-11-04 (S573 SkyNeedle; the lane passed its 20,000-byte budget)*; *Moved from the lane, 2026-11-04 (S574)*.
 
 ## Moved from the lane, 2026-11-04 (SkyJujube; the lane passed its 20,000-byte budget)
 
@@ -547,3 +513,20 @@ Verbatim from `docs/reference/lanes/commons.md`, replaced by the S655 state (#33
 - **Honors step 2 (#3315, head `9d065916`; plan and drafted SQL only, nothing applied).** **DECIDED** `d-honors-anchored-rows-s654` (supersedes `d-honors-narrow-positive-rule-s654`, refused the same night; extends `d-honors-two-signals-or-hold-s653`): each `honors_of` row rests on anchors, an Honors and a base course at one college with the same subject and number plus a course-level title signal; a row needs every anchor of the Honors M-ID in one base; a mint also needs every member anchored, one Honors id per base and no CCN-coded course on the base. Cluster rules become report columns naming split candidates. **DECIDED** `d-honors-no-mint-on-split-candidate-s654` (COBIx's design read, comment 6888542165, adopted): on a split-candidate base the row stands and the mint waits. The plan: 382 rows (digest `29667c07`), 129 mints, 157 rows with the mint held; proof 91/91. The anchors review's 3 blocking matcher bugs (padded zeros, an anchor with no Honors word, a label pinning the zero bug) are fixed in it. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
 - **NEXT:** (1) Honors: merge #3315 keeping main's `.apply` exactly; after the 06:17Z daily run one second reader on the regenerated plan, `--check` with its receipt, the apply (Rule 10), a live count; then *Before the mints* (base plus H on the CCN pattern); HUMA M10OI into M1110; `kb/coci_minted_courses.json` still lists LIBR M10CJ under LIBR M1040. (2) FIRE 130 X's row-audit card. (3) Price the model pass (to Sam first). (4) A potential-CPL column. (5) The Leadership outlines. (6) The #3298 and #3302 follow-ups: lessons, *Moved from the lane (S653 checkpoint)*.
 - **APPLIED: Honors step 1 (#3329 merged `7e017287`, S654; applied S653 by `supabase-migrate.yml` run 43627165705, receipt `kb/receipts/migration_s653_honors_of_field_43627165705.json`; at the merge `.apply` equaled main's, so run 43671605511 skipped at its gate).** `honors_of` for HUMA M10ME (HUMA M1110) and LIBR M10CJ (LIBR M1040) under `honors-s653@bot`; the two base rows restamped to `honors-s652@bot`. Before-values `kb/honors_of_s653_out/2026-11-14/step1_restamp_before.json`; undo `kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql`, run BEFORE the S652 follow-ups rollback. **DECIDED** `d-honors-step1-applied-s653`. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
+
+## S661 (SkyKnot, 2026-11-15): two ETA clocks, the College Collections Plan, framed COBI
+
+- **Shipped:** #3371 `a067ff06` (17:59Z), COBIx's approved ETA mock (#3360) ported to `commons_eta_clock.js` through the College Data Collection module hook, computed from committed files; #3372 `804c4b0d` (19:50Z), Sam's chips ruling, an 11px face inside a 24px target; #3374 `3745f35e` (22:12Z), the College Collections Plan at `library/college-collections-plan/` with its Library record (receipt `kb/receipts/library_college_collections_plan_s661_2026-11-15.sql`; vault source samueltlee/CPLBrain#799); #3373 `c21938e0` (22:44Z), the ETA band tops CDC, a figure card opens the full clock in the side panel, and every CDC college row opens its CPL Pathways view framed (`cobi_framed.js`, `?framed=1`). #3375 `f44a0fcd`, the Commons Curation ETA on CPL Commons (COBIx's findings closed; an optional `paceWords` nit is the lane's NEXT).
+- **A pace is the net fall of remaining work.** A multiplier on raw confirmations invents a date. People's share is min(confirmed, net fall). The exhibit universe (`kb/unified_titles.json`) grows by exactly the day's new stamps, so exhibit remaining never falls under that universe; the follow-up measures it from the titles MAP carries. KB note: `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`.
+- **`check_generated.sh | tail -1 && git commit` commits even when the check fails:** the pipe's status is `tail`'s. Read the script's own exit code (`bash scripts/check_generated.sh; echo $?`) before committing.
+- **jsdom 29 frames need `requestInterceptor`,** not a custom `ResourceLoader`, to serve a same-origin frame's page in a test.
+- **`scripts/library_page.py` takes the artifact fragment form** (the title, meta and link lines first, then the body), not a whole `<!doctype html>` document.
+- **A static test pins `consumeAuthHash(); start();` adjacency in `cpl_session.js`.** The framed change (a frame never starts its keeper and hands `ensureFresh()` to the outer page) had to keep the two calls adjacent.
+- **A running local a11y sweep serves the working tree,** so checking out another branch mid-sweep changes what it measures. Fix other branches in a `git worktree`.
+- **The full `npm run a11y` crashed its browser at the Governance target;** every later target read "browser has been closed". Those targets are untested, not findings; rerun them.
+
+## Moved from the lane (S661 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, replaced by a one-line pointer (all four PRs merged; the decisions stand).
+
+**DECIDED** `d-cdc-four-prs-and-classes-s653` (#3310 in four PRs, all merged: #3314, #3316, #3326 `efadff5a` carrying #3323, closed with a pointer): the data dictionary (`kb/cdc_data_dictionary.json`, `#commons/data/sharing`) and the integrations view (`kb/cdc_integrations.json`, `#commons/data/integrations`). **DECIDED** `d-cdc-held-means-not-shared-s654`: held means left out of an outside share; CPL Coordinator and Counselor routing contacts are public; COMIS CB course elements are public as the CO course file publishes them; the COMIS Data Mart integration reads "in progress" (the file came by hand, #3239). **DECIDED** `d-cdc-restricted-class-s654` (COBIx's point 1 on #3326, comments 6888070761 and 6888592670; cleared 04:15Z): a fifth class, restricted, which the site never serves (reviewers or the service role only): student rows, staff role contacts, MAP college users, nudge authors, MAP articulation status; the builder fails when any does-not-serve row names a published file. **Sam on the three unfiled Pathways Mapper members (Sheet 198 card 11; `ppm-three-not-cccs-sam-s654`):** *"I think the 3 were not cccs so no need to worry about it. You can check to ppm website for active cccs to confirm"*; programmapper.org is outside the cloud session's network, and his 2026-10-21 remark in `kb/supabase_program_source_ppm_hosts_s444.sql` says the same. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.

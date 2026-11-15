@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-15T09:13:14Z",
-  "session": 655,
-  "moniker": "SkyCurlew",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-15T22:53:51Z",
+  "session": 661,
+  "moniker": "SkyKnot",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_656_handoff.md",
+  "handoff": "docs/session_662_handoff.md",
   "next_step": {
-    "title": "Publish the course-id rescore at six colleges, one college first",
-    "text": "The six rereads replaced 159 rows with receipts. One display build covers all six; after COBIx checks it, the display runs at Diablo Valley first, then everywhere, and the branch merges. Then the reconcile route's reader gaps are fixed."
+    "title": "Read each plain sibling's own 2025-2026 catalog entry",
+    "text": "List the 99 programs whose plain version and Cal-GETC 2.0 version share a page, by college, then read Riverside City's 2025-2026 catalog for each plain one and file it with its catalog year, as Sam ruled both are kept."
   },
   "calls": [
     {
@@ -338,6 +338,22 @@
   },
   "changes": [
     {
+      "at": "2026-11-15T22:44:00Z",
+      "text": "The College Collections ETA tops College Data Collection: a band with each college's projected Phase 1 date, and a card that opens the full clock in the side panel. Every college row also opens that college's CPL Pathways view beside the list."
+    },
+    {
+      "at": "2026-11-15T22:12:00Z",
+      "text": "The College Collections Plan, the agreed plan for collecting every college's data, is on one page in the Library as a draft for the team."
+    },
+    {
+      "at": "2026-11-15T19:50:00Z",
+      "text": "The controls that move the projected date on the ETA clock are small chips, so the date and the bar graph keep the focus."
+    },
+    {
+      "at": "2026-11-15T17:59:00Z",
+      "text": "The Commons ETA clock reads the harvest's daily headline and the live counts to project when each phase of the data collection finishes."
+    },
+    {
       "at": "2026-11-15T09:03:00Z",
       "text": "Six colleges reread on the course-id route: 159 records replaced, each with its before-values in a receipt. Three programs move from failing to passing and none falls."
     },
@@ -625,7 +641,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-15T10:12:00Z"
+    "at": "2026-11-16T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-15",

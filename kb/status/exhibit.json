@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 650,
-  "moniker": "SkyPlover",
-  "run": "the CPL Queue routine",
+  "session": 661,
+  "moniker": "SkyKnot",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_651_handoff.md",
+  "handoff": "docs/session_662_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -52,13 +52,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T07:34:25Z",
+  "written_at": "2026-11-15T22:53:51Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The rename batch, with the ASE bundle",
-    "text": "The rename to ASE Certificate Bundles: A6 or T6 + L3 rides the next rename batch for Sam's approval, with the CompTIA series aliases wired into the credential aliases after it."
+    "title": "Measure remaining exhibit titles from the titles MAP carries",
+    "text": "Count remaining exhibit work from the titles MAP carries rather than the unified titles file, which grows with each day's stamps, so the exhibit pace can fall and be dated."
   },
   "changes": [
+    {
+      "at": "2026-11-15T22:35:00Z",
+      "text": "The Commons Curation ETA, drafted for the top of CPL Commons, dates a reference only when its remaining work falls. It is live (PR 3375), and it shows the exhibit count does not fall yet: the list of titles grows by each day's new stamps, so the next step measures remaining titles from the ones MAP carries."
+    },
     {
       "at": "2026-11-14T06:50:00Z",
       "text": "A title cleared in another browser tab or session now reopens its card without a reload, and the two dry-run files the Related panel reads are published, so its folds work on the deployed site."

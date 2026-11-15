@@ -682,3 +682,41 @@ it sits, whether its courses agree) count the cards free of one auditor tag; the
 into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
 recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
 Every reference now carries the opened page.
+
+## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
+
+Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.
+
+## Moved from the lane, 2026-11-04 (S573 SkyNeedle; the lane passed its 20,000-byte budget)
+
+**The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
+bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
+**The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
+
+**A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
+
+**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. All three steps have landed (history in the lessons, *The List norms, steps 1 to 3*).
+
+**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
+and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
+(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
+`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
+California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
+reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
+Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
+the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
+(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
+so the port into this tab waits on his call on the look.
+
+## Moved from the lane, 2026-11-04 (S574)
+
+**What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
+list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
+read of the records' display facts, so the Program Requirements row carries two known issues, the failing
+and the unread. The CR row's curator decisions come from the committed receipt, so a new sitting lands a
+receipt under `kb/receipts/` or the figure stays at 30 (the live table is the authority). A call reads from
+the run log and stays open until a checkpoint removes it; the decision sheet's store is read only where the
+Progress view's `callAnswered` resolves a record. The machine stamps: Program Requirements the last college
+read (on dispatch), Exhibit the later of the saving run and the fold, Course the auditor, CR the worklist's
+last change from git, Subjects the daily sync; a daily stamp older than 36 hours reads stale, a run log
+older than a week reads stale.
