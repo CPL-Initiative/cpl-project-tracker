@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T03:28:04Z",
+ "written_at": "2026-11-15T07:34:57Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -159,7 +159,7 @@
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
   "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 6 hosts (ccc, cccd, cuesta, rccd, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
+  "objectives": "Course objectives are committed for 7 hosts (ccc, cccd, cuesta, rccd, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -10884,11 +10884,11 @@
      "platform": "curriqunet"
     },
     "slo_read": {
-     "run": "41589637097",
-     "at": "2026-11-03T08:08:41Z",
+     "run": "43666467090",
+     "at": "2026-11-15T04:04:14Z",
      "system": "curriqunet",
      "source_kind": "course_outline",
-     "file": "kb/course_outcomes/sac/read_41589637097_p4of4.json"
+     "file": "kb/course_outcomes/sac/read_43666467090_p4of4.json"
     },
     "plo_programs": 278,
     "ppm_member": null,
