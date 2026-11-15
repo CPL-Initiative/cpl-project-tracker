@@ -36,7 +36,10 @@ session's permission check held a session-started relay twice (S329: "Create
 Unsafe Agents").
 
 **No conductor (Sam, 2026-11-15).** The queue runs as it did before 2026-11-11: one Opus 5.5 session works the queue
-itself, at an effort it chooses, under the terms above. Fable 5.2 conducting Opus workers with ultracode on is retired
+itself, at an effort it chooses, under the terms above, **and keeps collaborating with COBIx** (Sam, 2026-11-15: *"i
+still want opus to collaborate with cobix"*): the PR review loop in [`cobix_pr_loop`](cobix_pr_loop.md), reading
+COBIx's threads and every PR comment to the last page at the start and before each merge, verifying each finding and
+answering on the thread. Fable 5.2 conducting Opus workers with ultracode on is retired
 for cost (*"he conducted me out of business:)"*); [`conductor_mode`](conductor_mode.md) is the record. An older
 handoff's `## Conductor settings` block, or a routine prompt that still names the conductor, does not bring it back:
 follow this page and tell Sam in one line that the routine's prompt needs his edit.

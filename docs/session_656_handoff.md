@@ -66,7 +66,8 @@ Then Rule 8's `cpl_memory` query, the three-repo check, `list_sessions` if you h
 ## Session settings
 
 **Conductor mode is retired (Sam, 2026-11-15).** Work the queue yourself on Opus 5.5, as before 2026-11-11, at the
-effort you choose: no Fable conductor, no ultracode fan-out of workers
+effort you choose, collaborating with COBIx on the PRs as before ([`cobix_pr_loop`](reference/cobix_pr_loop.md)): no Fable
+conductor, no ultracode fan-out of workers
 ([`scheduled_sessions`](reference/scheduled_sessions.md), *No conductor*). Sam halted the 10:12Z and 12:12Z firings of
 2026-11-15 over cost; #3356 and the branches they left are in the halted session's note, and nothing of theirs wrote
 shared data.
