@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T07:34:57Z",
+ "written_at": "2026-11-15T09:11:27Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15856,
-  "gap": 6479,
+  "passing": 15859,
+  "gap": 6476,
   "with_gap": 118,
-  "cost_usd": 1343.32,
-  "passed_at_read": 15358,
+  "cost_usd": 1343.33,
+  "passed_at_read": 15365,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15856,
-  "gap": 6479
+  "passing": 15859,
+  "gap": 6476
  },
  "census_live": {
   "basis": "live",
@@ -311,12 +311,12 @@
    "harvested": true,
    "slug": "american_river",
    "programs": 371,
-   "passing": 300,
-   "gap": 71,
+   "passing": 302,
+   "gap": 69,
    "causes": {
     "no_closed_list": 3,
     "places_none": 33,
-    "unknown_without_live": 35
+    "unknown_without_live": 33
    },
    "census_causes": {
     "no_closed_list": 2,
@@ -340,8 +340,8 @@
    "objectives_printed": null,
    "read_at": "2026-11-12T11:49:22Z",
    "read_kind": "capture",
-   "cost_usd": 29.97,
-   "passed_at_read": 297,
+   "cost_usd": 29.98,
+   "passed_at_read": 291,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -364,9 +364,9 @@
    "failed_checks": {
     "coverage": 33,
     "invented": 0,
-    "arithmetic": 68,
+    "arithmetic": 65,
     "repeated": 0,
-    "outcomes": 5
+    "outcomes": 14
    },
    "platform": "pdf",
    "catalog_year": "2026-2027",
@@ -375,10 +375,10 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 514.7,
-   "run": "43212067552",
+   "run": "43693265189",
    "levers": {
     "reader_page_assignment": 33,
-    "reconcile_steps": 22,
+    "reconcile_steps": 20,
     "ge_units_steps": 13,
     "program_course_file_check": 3
    },
@@ -388,9 +388,9 @@
      "models": {
       "claude-opus-5-5": 368
      },
-     "run": "43212067552",
+     "run": "43693265189",
      "at": "2026-11-12T11:49:22Z",
-     "cost_usd": 29.97,
+     "cost_usd": 29.98,
      "platform": "pdf"
     },
     "slo_read": null,
@@ -657,7 +657,7 @@
    "read_at": "2026-10-17T05:28:38Z",
    "read_kind": "capture",
    "cost_usd": 4.68,
-   "passed_at_read": 51,
+   "passed_at_read": 54,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -672,7 +672,7 @@
    "failed_checks": {
     "coverage": 15,
     "invented": 0,
-    "arithmetic": 20,
+    "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
    },
@@ -683,7 +683,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 26.7,
-   "run": "39006332820",
+   "run": "43691950026",
    "levers": {
     "reader_page_assignment": 15,
     "reader_page_search": 5,
@@ -695,7 +695,7 @@
      "models": {
       "claude-opus-5-5": 71
      },
-     "run": "39006332820",
+     "run": "43691950026",
      "at": "2026-10-17T05:28:38Z",
      "cost_usd": 4.68,
      "platform": "pdf"
@@ -1797,7 +1797,7 @@
    "read_at": "2026-10-17T18:04:39Z",
    "read_kind": "capture",
    "cost_usd": 23.72,
-   "passed_at_read": 248,
+   "passed_at_read": 257,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -1820,7 +1820,7 @@
    "failed_checks": {
     "coverage": 62,
     "invented": 8,
-    "arithmetic": 73,
+    "arithmetic": 63,
     "repeated": 1,
     "outcomes": 1
    },
@@ -1831,7 +1831,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 318.4,
-   "run": "39056434592",
+   "run": "43693267535",
    "levers": {
     "reader_page_assignment": 53,
     "program_course_file_check": 46,
@@ -1846,7 +1846,7 @@
      "models": {
       "claude-opus-5-5": 349
      },
-     "run": "39056434592",
+     "run": "43693267535",
      "at": "2026-10-17T18:04:39Z",
      "cost_usd": 23.72,
      "platform": "pdf"
@@ -4100,13 +4100,13 @@
    "harvested": true,
    "slug": "diablo_valley",
    "programs": 267,
-   "passing": 198,
-   "gap": 69,
+   "passing": 199,
+   "gap": 68,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 30,
     "places_none": 1,
-    "unknown_without_live": 15
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -4133,7 +4133,7 @@
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
-   "passed_at_read": 198,
+   "passed_at_read": 199,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -4156,8 +4156,8 @@
    "extracted": 214,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
-    "invented": 3,
+    "coverage": 4,
+    "invented": 2,
     "arithmetic": 12,
     "repeated": 0,
     "outcomes": 0
@@ -4169,11 +4169,11 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1567.3,
-   "run": "43609976980",
+   "run": "43691943622",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 23,
-    "reconcile_steps": 9,
+    "reconcile_steps": 8,
     "ge_units_steps": 5,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
@@ -4184,7 +4184,7 @@
      "models": {
       "claude-opus-5-5": 214
      },
-     "run": "43609976980",
+     "run": "43691943622",
      "at": "2026-11-13T06:35:26Z",
      "cost_usd": 13.85,
      "platform": "elumen"
@@ -9798,7 +9798,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2130.5,
-   "run": "43605883626",
+   "run": "43693827797",
    "levers": {
     "reader_page_search": 18,
     "reconcile_steps": 14,
@@ -9810,7 +9810,7 @@
      "models": {
       "claude-opus-5-5": 244
      },
-     "run": "43605883626",
+     "run": "43693827797",
      "at": "2026-10-11T03:28:38Z",
      "cost_usd": 15.03,
      "platform": "curriqunet"
@@ -11314,7 +11314,7 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 63.2,
-   "run": "43387912036",
+   "run": "43693830334",
    "levers": {
     "program_course_file_check": 30,
     "reconcile_steps": 17,
@@ -11328,7 +11328,7 @@
      "models": {
       "claude-opus-5-5": 222
      },
-     "run": "43387912036",
+     "run": "43693830334",
      "at": "2026-11-13T07:46:13Z",
      "cost_usd": 16.03,
      "platform": "pdf"

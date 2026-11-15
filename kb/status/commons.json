@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T07:35:02Z",
+ "written_at": "2026-11-15T09:11:32Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14615,
+     "n": 14618,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2847,
+     "n": 2844,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -68,8 +68,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14615,
-    "failing": 2847,
+    "complete": 14618,
+    "failing": 2844,
     "unread": 2820,
     "records": 19129,
     "colleges": 118,
@@ -367,7 +367,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-14T09:44:58-08:00",
+    "at": "2026-11-13T22:48:48-08:00",
     "every_hours": null
    },
    "facts": {
@@ -541,12 +541,12 @@
     "issuers": 1525,
     "in_map": 208,
     "articulated": 160,
-    "with_issuer_skills": 213,
+    "with_issuer_skills": 221,
     "tech_giant": 568
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-14T00:00:00Z",
+    "at": "2026-11-15T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -613,7 +613,7 @@
    "links": [],
    "pair": [
     {
-     "n": 213,
+     "n": 221,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -623,11 +623,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 213
+    "with_issuer_skills": 221
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-14T00:00:00Z",
+    "at": "2026-11-15T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -734,7 +734,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2847,
+    "n": 2844,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"

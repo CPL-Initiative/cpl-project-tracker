@@ -13,6 +13,8 @@ WHAT THIS PINS. The reader's code is not changed here (the gap is a lane NEXT), 
 records:
   1. 07206 by hand: 32 listed, 20 placed, the 12 missing codes each noted as outside the window (page 428 or the
      start of the table), the arithmetic unequal at 20 against 37, and the record still on run 39047245752.
+  1b. The class predicate against fixtures in tests/fixtures/reconcile_window_fill/: 07206 exactly as the reconcile
+     filed it (caught), and two reconciled records passing on a fill that are not this class (not caught).
   2. The class, over every filed record at the colleges the S655 wave rescored: a record a reconcile run rescored
      (read_run set) whose missing courses are all explained as outside the window, and whose arithmetic passes only
      through a fill, does not count passing on the tab unless the record main filed before already did.
@@ -42,8 +44,8 @@ def check(ok: bool, what: str) -> None:
 
 COLLEGE_DIR = os.path.join(ROOT, "kb", "program_requirements_college")
 # A note that puts the missing course outside the text the record was read from.
-OUTSIDE = re.compile(r"start of (the )?table|table start|not included|not in the (provided )?.*text"
-                     r"|likely on page \d+|possibly on page \d+", re.I)
+# The cut-window signal only: a generic "not in the text" says nothing about where the window began.
+OUTSIDE = re.compile(r"start of (the )?table|table start|not included|(likely|possibly) on page \d+", re.I)
 
 
 def tab(sc: dict) -> bool:
@@ -82,15 +84,33 @@ def fill_over_cut_window(f: dict) -> bool:
     return all(OUTSIDE.search(why.get(k, "")) for k in missing)
 
 
-# Self-recall: 07206 as run 43693265189 filed it (the second reader's finding, values by hand) is in the class
-# and counts passing, so the sweep below would have caught it.
-as_reconciled = json.loads(json.dumps(r))
-as_reconciled.update(read_run="39047245752", extracted_run=43693265189)
-as_reconciled["score"]["arithmetic"] = {"pass": True, "status": "equal", "computed": [20.0, 20.0],
-                                        "stated": [37.0, 37.0], "against": "program", "why": [], "fill": [17.0, 17.0]}
+FIXTURES = os.path.join(ROOT, "tests", "fixtures", "reconcile_window_fill")
+
+
+def fixture(name: str) -> dict:
+    with open(os.path.join(FIXTURES, name), encoding="utf-8") as fh:
+        return json.load(fh)
+
+
+# Self-recall: 07206 exactly as run 43693265189 filed it (the file at a8d21394, copied unedited) is in the class
+# and counts passing, so the sweep below would have caught it. The values are the second reader's, by hand.
+as_reconciled = fixture("american_river_07206_run_43693265189.json")
+a = as_reconciled["score"]["arithmetic"]
+check(str(as_reconciled.get("extracted_run")) == "43693265189" and as_reconciled.get("read_run") == "39047245752"
+      and a.get("fill") == [17.0, 17.0] and a.get("status") == "equal",
+      "the fixture is 07206 as the reconcile filed it (run 43693265189, fill 17 to 17)")
 check(fill_over_cut_window(as_reconciled) and tab(as_reconciled["score"]),
-      "self-recall: 07206 as the reconcile filed it (fill 17 to 17) is caught")
+      "self-recall: 07206 as the reconcile filed it is caught")
 check(not fill_over_cut_window(r), "07206 as restored is outside the class (no read_run, no fill)")
+# Negatives: a reconciled record passing on a fill whose missing courses the reader placed outside the program,
+# never outside the text it was given (East Los Angeles 37924: "appears only in course descriptions"), and one
+# with no missing course (Butte 01329, fill 0 to 15). Both are copies of the records as filed on 2026-11-15.
+for name, why in (("east_los_angeles_37924.json", "its missing courses are noted as outside the program"),
+                  ("butte_01329.json", "it misses no listed course")):
+    f = fixture(name)
+    check(f.get("read_run") and "fill" in f["score"]["arithmetic"] and tab(f["score"]) and not fill_over_cut_window(f),
+          "%s %s passes on a fill after a reconcile and is outside the class: %s"
+          % (f.get("college"), f.get("control_number"), why))
 
 SLUGS = ("american_river", "barstow_community", "city_of_san_francisco", "diablo_valley", "riverside_city",
          "santiago_canyon")
