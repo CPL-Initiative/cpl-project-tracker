@@ -45,26 +45,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 29,
    "listed": 30,
-   "share": 0.9,
+   "share": 0.967,
    "missing": [
-    "ANTHRO102",
-    "ANTHRO102H",
     "HIST100"
    ],
-   "unexplained": [
-    "ANTHRO102",
-    "ANTHRO102H"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 10,
    "codes": [
-    "ANTH102",
-    "ANTH102H",
     "HISTC1001",
     "POLS110",
     "POLS110H",
@@ -88,7 +81,7 @@
     "POLS170",
     "POLS173"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -529,5 +522,6 @@
    "Program Learning Outcomes come from the page's outcomes tab for this program page; recorded as this award's outcomes."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T03:04:05Z",
+ "written_at": "2026-11-15T03:04:14Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15854,
-  "gap": 6481,
+  "passing": 15855,
+  "gap": 6480,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15356,
+  "passed_at_read": 15357,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15854,
-  "gap": 6481
+  "passing": 15855,
+  "gap": 6480
  },
  "census_live": {
   "basis": "live",
@@ -10052,14 +10052,14 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 161,
-   "gap": 75,
+   "passing": 162,
+   "gap": 74,
    "causes": {
     "found_not_extracted": 4,
     "no_closed_list": 4,
     "page_not_found": 3,
     "places_none": 25,
-    "unknown_without_live": 39
+    "unknown_without_live": 38
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -10088,7 +10088,7 @@
    "read_at": "2026-11-13T02:52:38Z",
    "read_kind": "capture",
    "cost_usd": 15.44,
-   "passed_at_read": 161,
+   "passed_at_read": 162,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10111,8 +10111,8 @@
    "extracted": 225,
    "errors": 0,
    "failed_checks": {
-    "coverage": 30,
-    "invented": 5,
+    "coverage": 27,
+    "invented": 2,
     "arithmetic": 61,
     "repeated": 0,
     "outcomes": 0
@@ -10124,10 +10124,10 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1514.5,
-   "run": "43355003065",
+   "run": "43609973859",
    "levers": {
     "reader_page_assignment": 25,
-    "reconcile_steps": 22,
+    "reconcile_steps": 21,
     "ge_units_steps": 12,
     "scorer_noncredit_hours": 5,
     "paid_read": 4,
@@ -10140,7 +10140,7 @@
      "models": {
       "claude-opus-5-5": 225
      },
-     "run": "43355003065",
+     "run": "43609973859",
      "at": "2026-11-13T02:52:38Z",
      "cost_usd": 15.44,
      "platform": "courseleaf"
