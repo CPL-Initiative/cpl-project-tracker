@@ -190,6 +190,7 @@ publish college_report_generator.js
 publish college_short_names.js
 publish commons.js
 publish commons_ase.js
+publish commons_curation_eta.js
 publish commons_data.js
 publish commons_data_cards.js
 publish commons_data_integrations.js

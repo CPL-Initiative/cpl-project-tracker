@@ -544,8 +544,9 @@ function cellText(li, title) {
     await b.M.boot();
     const nb = b.d.querySelector(".cmn-next");
     const kids = Array.prototype.slice.call(b.d.querySelector(".cmn-wrap").children);
-    check("batch 1: the page opens on Your next batch, before the decisions band and the queue",
-      nb && kids.indexOf(nb) === 1 && (!b.d.querySelector(".cmn-band") || kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-band")))
+    // S661: the Commons Curation ETA tops the tab (Sam: "Add the new widget to the top of cpl commons"); the batch follows it.
+    check("batch 1: the page opens on the Curation ETA, then Your next batch, before the decisions band and the queue",
+      nb && kids[1] && kids[1].id === "cmn-cur" && kids.indexOf(nb) === 2 && (!b.d.querySelector(".cmn-band") || kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-band")))
       && kids.indexOf(nb) < kids.indexOf(b.d.querySelector(".cmn-queue")));
     check("batch 2: it names the batch, what the answers teach and when to stop",
       txt(nb.querySelector("#cmn-next-h")) === "Another look at 6 exhibit titles" && /teaches the next nightly sweep/.test(txt(nb))

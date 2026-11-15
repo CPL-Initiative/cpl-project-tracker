@@ -421,6 +421,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_apply_college_short_names.py`, `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_ase.js` | tabs: `commons` | — |
+| `commons_curation_eta.js` | tabs: `commons` | — |
 | `commons_data.js` | tabs: `commons` | — |
 | `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_look.js` | pages: `CPL_Dashboard.html` | — |
@@ -1545,5 +1546,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1005 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1006 file
 datasets · 195 external services · 602 consumers · 72 workflows · 41 tabs.
