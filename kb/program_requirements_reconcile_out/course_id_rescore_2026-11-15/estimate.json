@@ -1,0 +1,430 @@
+{
+ "_what": "The course-id rescore at six colleges estimated from committed files (S655): each filed record scored with no page text, coverage, invented and repeated as the scorer computes them. Read-only; no site contacted, nothing dispatched, no table read or written.",
+ "colleges": {
+  "American River College": {
+   "changed": [
+    "04516",
+    "04518",
+    "04522",
+    "04523",
+    "04542",
+    "04570",
+    "04572",
+    "07196",
+    "07200",
+    "07232",
+    "07234",
+    "11554",
+    "11563",
+    "11564",
+    "11565",
+    "11566",
+    "12110",
+    "12237",
+    "13941",
+    "15519",
+    "17372",
+    "17937",
+    "17938",
+    "17939",
+    "17940",
+    "19330",
+    "19335",
+    "19772",
+    "20100",
+    "20101",
+    "20105",
+    "20135",
+    "20138",
+    "20139",
+    "20141",
+    "20142",
+    "20143",
+    "30567",
+    "30595",
+    "31084",
+    "31434",
+    "32487",
+    "32720",
+    "32828",
+    "37899",
+    "41038",
+    "42546",
+    "42859",
+    "44154",
+    "44446",
+    "44531",
+    "46363",
+    "46434"
+   ],
+   "changed_parts": {
+    "coverage": 53,
+    "invented": 53
+   },
+   "changed_records": {
+    "coverage_true": [
+     53,
+     53
+    ],
+    "invented_true": [
+     53,
+     53
+    ],
+    "placed_sum": [
+     1237,
+     1403
+    ],
+    "tab_passing": [
+     47,
+     47
+    ]
+   },
+   "fail_to_pass": [],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    300,
+    300
+   ],
+   "records": 368,
+   "records_matched_by_course_id": 53,
+   "score_changes": 53,
+   "slug": "american_river",
+   "sources_from": "43212067552",
+   "sources_from_staged_from": null
+  },
+  "Barstow Community College": {
+   "changed": [
+    "33066",
+    "41251"
+   ],
+   "changed_parts": {
+    "coverage": 2,
+    "invented": 2
+   },
+   "changed_records": {
+    "coverage_true": [
+     2,
+     2
+    ],
+    "invented_true": [
+     2,
+     2
+    ],
+    "placed_sum": [
+     164,
+     187
+    ],
+    "tab_passing": [
+     2,
+     2
+    ]
+   },
+   "fail_to_pass": [],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    54,
+    54
+   ],
+   "records": 71,
+   "records_matched_by_course_id": 1,
+   "score_changes": 2,
+   "slug": "barstow_community",
+   "sources_from": "39006332820",
+   "sources_from_staged_from": null
+  },
+  "City College of San Francisco": {
+   "changed": [
+    "05428",
+    "05441",
+    "05462",
+    "05474",
+    "05491",
+    "09172",
+    "09174",
+    "09183",
+    "12360",
+    "12361",
+    "15488",
+    "15490",
+    "16916",
+    "17951",
+    "17953",
+    "19800",
+    "30665",
+    "31611",
+    "32129",
+    "32869",
+    "33299",
+    "35455",
+    "37780",
+    "37900",
+    "38266",
+    "38443",
+    "39072",
+    "39335",
+    "40074",
+    "40075",
+    "40205",
+    "40751",
+    "41049",
+    "44751",
+    "45543",
+    "46320",
+    "46360"
+   ],
+   "changed_parts": {
+    "coverage": 37,
+    "invented": 37
+   },
+   "changed_records": {
+    "coverage_true": [
+     37,
+     37
+    ],
+    "invented_true": [
+     37,
+     37
+    ],
+    "placed_sum": [
+     666,
+     727
+    ],
+    "tab_passing": [
+     36,
+     36
+    ]
+   },
+   "fail_to_pass": [],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    257,
+    257
+   ],
+   "records": 349,
+   "records_matched_by_course_id": 37,
+   "score_changes": 37,
+   "slug": "city_of_san_francisco",
+   "sources_from": "39056434592",
+   "sources_from_staged_from": null
+  },
+  "Diablo Valley College": {
+   "changed": [
+    "01493",
+    "14592",
+    "14697",
+    "15302",
+    "18885",
+    "18891",
+    "21141",
+    "21155",
+    "30220",
+    "30221",
+    "30222",
+    "30223",
+    "30737",
+    "30966",
+    "31799",
+    "31818",
+    "31914",
+    "32287",
+    "33292",
+    "33651",
+    "33770",
+    "33771",
+    "37558",
+    "38419",
+    "38488",
+    "39775",
+    "41577",
+    "44445",
+    "45512"
+   ],
+   "changed_parts": {
+    "coverage": 29,
+    "invented": 17,
+    "pass": 1
+   },
+   "changed_records": {
+    "coverage_true": [
+     27,
+     28
+    ],
+    "invented_true": [
+     28,
+     29
+    ],
+    "placed_sum": [
+     576,
+     605
+    ],
+    "tab_passing": [
+     26,
+     27
+    ]
+   },
+   "fail_to_pass": [
+    "37558"
+   ],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    198,
+    199
+   ],
+   "records": 214,
+   "records_matched_by_course_id": 29,
+   "score_changes": 29,
+   "slug": "diablo_valley",
+   "sources_from": "43609976980",
+   "sources_from_staged_from": "43379378196"
+  },
+  "Riverside City College": {
+   "changed": [
+    "15495",
+    "18108",
+    "18110",
+    "18111",
+    "18113",
+    "18114",
+    "22758",
+    "31163",
+    "32597",
+    "32692",
+    "32745",
+    "32912",
+    "32938",
+    "33021",
+    "33229",
+    "33829",
+    "33964",
+    "37483",
+    "38790",
+    "38838",
+    "39093",
+    "41364",
+    "41519",
+    "41736",
+    "41749",
+    "41757",
+    "42719",
+    "42793",
+    "42795",
+    "43695",
+    "43896",
+    "43897",
+    "44155",
+    "44363",
+    "44469",
+    "45919",
+    "46237",
+    "46317"
+   ],
+   "changed_parts": {
+    "coverage": 38,
+    "invented": 28
+   },
+   "changed_records": {
+    "coverage_true": [
+     38,
+     38
+    ],
+    "invented_true": [
+     38,
+     38
+    ],
+    "placed_sum": [
+     1528,
+     1593
+    ],
+    "tab_passing": [
+     32,
+     32
+    ]
+   },
+   "fail_to_pass": [],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    230,
+    230
+   ],
+   "records": 244,
+   "records_matched_by_course_id": 38,
+   "score_changes": 38,
+   "slug": "riverside_city",
+   "sources_from": "43605883626",
+   "sources_from_staged_from": "38108461470"
+  },
+  "Santiago Canyon College": {
+   "changed": [
+    "11910",
+    "18318",
+    "31720",
+    "32319",
+    "43692",
+    "43901",
+    "44319",
+    "45737",
+    "46150"
+   ],
+   "changed_parts": {
+    "coverage": 9,
+    "invented": 9
+   },
+   "changed_records": {
+    "coverage_true": [
+     9,
+     9
+    ],
+    "invented_true": [
+     9,
+     9
+    ],
+    "placed_sum": [
+     189,
+     210
+    ],
+    "tab_passing": [
+     9,
+     9
+    ]
+   },
+   "fail_to_pass": [],
+   "filed_list_used": 0,
+   "lost_coverage": [],
+   "no_rebuilt_list": 0,
+   "pass_to_fail": [],
+   "passes_live": [
+    191,
+    191
+   ],
+   "records": 222,
+   "records_matched_by_course_id": 9,
+   "score_changes": 9,
+   "slug": "santiago_canyon",
+   "sources_from": "43387912036",
+   "sources_from_staged_from": null
+  }
+ },
+ "summary": {
+  "fail_to_pass": [
+   "diablo_valley 37558"
+  ],
+  "lost_coverage": 0,
+  "pass_to_fail": 0,
+  "score_changes": 168
+ }
+}

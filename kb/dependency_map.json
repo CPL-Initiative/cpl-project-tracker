@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 998,
+  "file_datasets": 999,
   "external_services": 195,
-  "consumers": 599,
+  "consumers": 600,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -17645,6 +17645,13 @@
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
     {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    },
+    {
      "id": "script:kb/_course_id_route_census.py",
      "kind": "script",
      "direction": "read",
@@ -17667,6 +17674,26 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
+    },
+    {
+     "id": "script:kb/_course_id_rescore_estimate.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 59
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_wave": {
