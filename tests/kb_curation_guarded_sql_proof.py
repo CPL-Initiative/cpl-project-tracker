@@ -384,25 +384,41 @@ def sequences(db, results):
     moved = count("field = 'honors_of' and course_id like '% M____H'")
     results.append((name + "the re-key and the follower merges hit no key", c == 0 and c3 == 0 and moved == len(mints),
                     (e or e3)[:200] or moved))
-    # 6. The step-2 rollback still finds every row after the re-key: none of its cohort is left.
+    # 6. After the mint, the step-2 rollback refuses and changes nothing (COBIx: a minted H id would lose its
+    #    honors_of row while the pair hold stands on the field), and so does the step-1 rollback.
+    minted_state = state(db)
+    c, _, e = run("step2_rb")
+    results.append((name + "after the mint the step-2 rollback refuses on the mint's marker and changes nothing",
+                    c != 0 and "refused by the guard" in e and "H id" in e and state(db) == minted_state,
+                    e[:200] or "it ran"))
+    c, _, e = run("step1_rb")
+    results.append((name + "after the mint the step-1 rollback refuses too, and changes nothing",
+                    c != 0 and "refused by the guard" in e and state(db) == minted_state, e[:200] or "it ran"))
+    # 7. The mint's own rollback (its inverse alias map, and the follower merges removed) runs first; then the
+    #    step-2 rollback leaves zero rows of its cohort.
+    back_sql = ",".join(f"('{b}','{a}')" for a, b in sorted(mints.items()))
+    psql(db, "delete from kb_curation where field = 'merge_into' and reviewer_email = 'somebody@bot';")
+    psql(db, f"update kb_curation k set course_id = m.new from (values {back_sql}) as m(old, new) "
+             "where k.course_id = m.old;")
     c, out, e = run("step2_rb")
     left = count(f"reviewer_email = '{ROWS_COHORT}'")
-    results.append((name + "after the re-key the step-2 rollback leaves zero rows of its cohort",
+    results.append((name + "after the mint's own rollback the step-2 rollback leaves zero rows of its cohort",
                     c == 0 and left == 0 and json.loads(out.splitlines()[-1]).get("deleted") == len(PLANNED),
                     (e or out)[:200]))
-    # 7. Then the step-1 rollback finds its two rows wherever the mint moved them, and restores both titles.
+    # 8. Then the step-1 rollback removes its rows by cohort and restores both titles, and the S652 follow-ups
+    #    rollback runs last, restoring the "(Honors)" titles.
     c, _, e = run("step1_rb")
     results.append((name + "the step-1 rollback then removes its rows by cohort and restores both titles",
                     c == 0 and count("field = 'honors_of'") == 0
                     and titles() == sorted((r[0], r[2], r[3], "2026-06-12T22:47:01.69179+00:00")
                                            for r in FIELD_ROWS if r[1] == "unified_title"), e[:200] or titles()))
-    # 8. And the S652 follow-ups rollback runs last, restoring the "(Honors)" titles.
     c, _, e = run("s652_rb")
     results.append((name + "the S652 follow-ups rollback then runs and restores both titles",
                     c == 0 and count("field = 'merge_dismissed'") == 0
                     and all(t[1].endswith("(Honors)") for t in titles()), e[:200] or titles()))
     # 9. A person's Verify stamps every row of a course, honors_of included (#3315's review): each rollback keeps the
-    #    row a person validated and counts it; the rest of its cohort goes.
+    #    row a person validated and counts it, the rest of its cohort goes, and the kept row blocks no later
+    #    rollback. No row is deleted by hand (#3315's third review, finding 7).
     seed(db, FIELD_ROWS + PERSON_MERGES)
     run("step1")
     run("step2")
@@ -414,13 +430,30 @@ def sequences(db, results):
     results.append((name + "the step-2 rollback keeps a row a person verified and counts it",
                     c == 0 and res.get("kept_for_a_person") == 1 and res.get("deleted") == len(PLANNED) - 1
                     and count(f"course_id = '{h0}' and field = 'honors_of'") == 1, (e or out)[:300]))
-    psql(db, f"delete from kb_curation where course_id = '{h0}' and field = 'honors_of';")  # a person removes it
     c, out, e = run("step1_rb")
     res = json.loads(out.splitlines()[-1]) if c == 0 and out else {}
-    results.append((name + "the step-1 rollback keeps a row a person verified and counts it",
+    results.append((name + "with that kept step-2 row standing, the step-1 rollback runs and keeps its own verified row",
                     c == 0 and res.get("kept_for_a_person") == 1
                     and count("course_id = 'HUMA M10ME' and field = 'honors_of'") == 1
-                    and count("course_id = 'LIBR M10CJ' and field = 'honors_of'") == 0, (e or out)[:300]))
+                    and count("course_id = 'LIBR M10CJ' and field = 'honors_of'") == 0
+                    and count(f"course_id = '{h0}' and field = 'honors_of'") == 1, (e or out)[:300]))
+    c, _, e = run("s652_rb")
+    # The Verify stamped HUMA M10ME's Keep as-is too, so the S652 rollback keeps that one and counts it.
+    results.append((name + "and the S652 follow-ups rollback runs after it, keeping the verified Keep as-is",
+                    c == 0 and count("field = 'merge_dismissed'") == 1
+                    and count("field = 'merge_dismissed' and course_id = 'HUMA M10ME'") == 1
+                    and all(t[1].endswith("(Honors)") for t in titles()), e[:200] or titles()))
+    # 10. One Verify on a step-2 row alone: all three rollbacks run; only that row remains.
+    seed(db, FIELD_ROWS + PERSON_MERGES)
+    run("step1")
+    run("step2")
+    psql(db, "update kb_curation set validated_at = now(), validated_by = 'someone@college.edu' "
+             f"where course_id = '{h0}' and field = 'honors_of';")
+    codes = [run(k)[0] for k in ("step2_rb", "step1_rb", "s652_rb")]
+    results.append((name + "one Verify on a step-2 row blocks neither the step-1 nor the S652 rollback",
+                    codes == [0, 0, 0] and count("field = 'honors_of'") == 1
+                    and count(f"course_id = '{h0}' and field = 'honors_of'") == 1
+                    and all(t[1].endswith("(Honors)") for t in titles()), codes))
 
 
 def main():
