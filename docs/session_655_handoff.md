@@ -20,8 +20,9 @@ live read at 01:49Z); this checkpoint wrote the run logs' session fields only an
 1. **Read Sam's replies on Sheet 199** (below), then **read COBIx** (login `cobi-cto`) from each thread's last page:
    #3330, #3346, #3315, #3299.
 2. **Finish the merge queue, in this order**, each on a green `test` on the current head after reading its thread:
-   (a) **#3330** (cost gates, carries #3327; `test` failed on `f11fe540` at 04:16Z and the finalizer was diagnosing at
-   04:30Z): if still open, finalize it against `main`, merge, close #3327 with a pointer. (b) **#3346** (harvest
+   (a) **#3330 is merged** (`5a4a9c68`, about 05:04Z 2026-11-15: the cost gates and the one spend meter; #3327 closed
+   with a pointer; its failed `test` was three stale stubs in `tests/program_requirements_pdf_numbers_after_test.py`
+   that took two arguments while the gate now passes the meter). Start at (b). (b) **#3346** (harvest
    follow-ups, head `b8c5abd7`; the second reader's fix is in, recall 589 of 589 district-format, 250 bare refused, 0
    wrong, 0 claims moved; COBIx "nothing new"): merge `main`, rebuild the dependency map, merge. (c) **#3315** (the
    Honors plan, head `9d065916`: 382 rows, digest `29667c07`, 129 mints, 157 rows with the mint held): merge `main`
