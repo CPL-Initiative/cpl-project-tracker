@@ -27,7 +27,7 @@ and the view at `#commons/data/sharing`. The datasets themselves, their owners a
 - **Aggregate, not PII.** Student counts from MAP or the COMIS Data Mart, published only as counts and suppressed below the minimum cell size. The rule is the student-detail disclosure ADR (docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md): a cell backed by fewer than 10 distinct students is suppressed, at write time, with complementary suppression wherever a total is published. Three older surfaces keep their own floors under adr-cer-student-impact-counts-privacy: the CER's public students-served counts mask below 5, and the per-college cohort counts (students, veterans, working adults, apprentices) mask below 2; the funding counts mask below 10 (adr-funding-priority-metrics-privacy).
 - **Needs an agreement.** Held or passed on only under a data-sharing agreement or the holder's written permission. COBI shows its status and, where one exists, an aggregate; never the record itself.
 - **Held for the team.** COBI's own status fields for the team's work: read dates, costs, runs, machine checks, scouting and the team's asks. The public site serves COBI's status files, so anyone may read a field of this class there; held means it is left out of any outside share by default.
-- **Restricted.** Student-level rows and staff and user rosters. The public site never serves it: signed-in reviewers or the service role read it where it lives, a gated table or a runner-only file. It is never written to a published file and never goes in an outside share.
+- **Restricted.** Student-level rows and staff and user rosters. The public site never serves it. Where it lives, a gated table or a runner-only file, the service role reads it, and so do signed-in reviewers and, on three tables, holders of the team phrase; the table below names who reads each one. It is never written to a published file and never goes in an outside share.
 
 ## The fields the page shows
 
@@ -102,6 +102,19 @@ What COBI or MAP holds that the page does not show, and whether an outside share
 | Landing page contacts | The contacts each college's public MAP landing page lists (read from its public api/ui-settings JSON), mirrored to match funding requesters. | MAP, the Mapping Articulated Pathways platform | Public | map_landing_contacts, loaded by map/sync_landing_contacts.py; never written to disk or committed | Public at the source: the landing page lists them. |
 | Pseudonymous per-student CPL rows | MAP's per-student credit rows, keyed by a surrogate number derived inside the pull from MAP's salt-hashed student id; no name, date of birth or real id is fetched. | MAP, the Mapping Articulated Pathways platform | Restricted | map_student_credit (reviewers only) and stg_map_student_credit (service role only), loaded by kb/_sync_map_custom_reports.py; the daily pull's rows stay on the runner for the run alone | Never shared; the reviewer-only base of the student-detail disclosure ADR. |
 | MAP student counts | Distinct students with CPL per college or per exhibit, reduced from the per-student rows before anything is committed or shown. | MAP, the Mapping Articulated Pathways platform | Aggregate, not PII | funding/_build_funding_performance.py and the published aggregates of the student-detail ADR | Counts only, suppressed below 10 distinct students under the student-detail disclosure ADR. |
+
+### Who can read a restricted row where it lives
+
+Measured from each table's grants and select policies (`kb/reference/restricted_table_access.json`). The public site serves none of these rows; this says who can read them in Supabase.
+
+| Item | Table | Who can read it |
+|---|---|---|
+| MAP articulation Status (the approval stage) | `stg_map_student_credit` | no one but the service role |
+| Staff role contacts (the other ten roles) | `map_college_contacts` | a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee; anyone whose request carries the team phrase (the x-team-pass header) |
+| MAP college users and roles | `map_college_users` | a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee; anyone whose request carries the team phrase (the x-team-pass header) |
+| Who last nudged a college | `map_college_nudges` | a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee; anyone whose request carries the team phrase (the x-team-pass header) |
+| Pseudonymous per-student CPL rows | `map_student_credit` | a signed-in reviewer on allowed_reviewers |
+| Pseudonymous per-student CPL rows | `stg_map_student_credit` | no one but the service role |
 
 ## The join keys
 

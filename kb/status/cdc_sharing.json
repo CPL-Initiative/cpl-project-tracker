@@ -27,7 +27,7 @@
   },
   "restricted": {
    "word": "Restricted",
-   "definition": "Student-level rows and staff and user rosters. The public site never serves it: signed-in reviewers or the service role read it where it lives, a gated table or a runner-only file. It is never written to a published file and never goes in an outside share.",
+   "definition": "Student-level rows and staff and user rosters. The public site never serves it. Where it lives, a gated table or a runner-only file, the service role reads it, and so do signed-in reviewers and, on three tables, holders of the team phrase; the table below names who reads each one. It is never written to a published file and never goes in an outside share.",
    "public_site": "does not serve"
   }
  },
@@ -859,7 +859,14 @@
    "lives_in": [
     "table:stg_map_student_credit"
    ],
-   "system_name": "MAP, the Mapping Articulated Pathways platform"
+   "system_name": "MAP, the Mapping Articulated Pathways platform",
+   "table_access": [
+    {
+     "table": "stg_map_student_credit",
+     "access": "closed",
+     "readers": []
+    }
+   ]
   },
   {
    "id": "routing_contacts",
@@ -898,7 +905,17 @@
    "lives_in": [
     "table:map_college_contacts"
    ],
-   "system_name": "MAP, the Mapping Articulated Pathways platform"
+   "system_name": "MAP, the Mapping Articulated Pathways platform",
+   "table_access": [
+    {
+     "table": "map_college_contacts",
+     "access": "gated",
+     "readers": [
+      "a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee",
+      "anyone whose request carries the team phrase (the x-team-pass header)"
+     ]
+    }
+   ]
   },
   {
    "id": "map_college_users",
@@ -911,7 +928,17 @@
    "lives_in": [
     "table:map_college_users"
    ],
-   "system_name": "MAP, the Mapping Articulated Pathways platform"
+   "system_name": "MAP, the Mapping Articulated Pathways platform",
+   "table_access": [
+    {
+     "table": "map_college_users",
+     "access": "gated",
+     "readers": [
+      "a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee",
+      "anyone whose request carries the team phrase (the x-team-pass header)"
+     ]
+    }
+   ]
   },
   {
    "id": "nudge_author",
@@ -924,7 +951,17 @@
    "lives_in": [
     "table:map_college_nudges"
    ],
-   "system_name": "COBI's own reads and checks"
+   "system_name": "COBI's own reads and checks",
+   "table_access": [
+    {
+     "table": "map_college_nudges",
+     "access": "gated",
+     "readers": [
+      "a signed-in reviewer on allowed_reviewers, or an unexpired, unrevoked funding_access grantee",
+      "anyone whose request carries the team phrase (the x-team-pass header)"
+     ]
+    }
+   ]
   },
   {
    "id": "landing_page_contacts",
@@ -948,7 +985,21 @@
     "table:map_student_credit",
     "table:stg_map_student_credit"
    ],
-   "system_name": "MAP, the Mapping Articulated Pathways platform"
+   "system_name": "MAP, the Mapping Articulated Pathways platform",
+   "table_access": [
+    {
+     "table": "map_student_credit",
+     "access": "gated",
+     "readers": [
+      "a signed-in reviewer on allowed_reviewers"
+     ]
+    },
+    {
+     "table": "stg_map_student_credit",
+     "access": "closed",
+     "readers": []
+    }
+   ]
   },
   {
    "id": "map_student_counts",
