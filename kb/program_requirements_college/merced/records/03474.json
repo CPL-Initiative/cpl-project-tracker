@@ -83,14 +83,15 @@
    "status": "equal",
    "computed": [
     29.0,
-    30.0
+    37.0
    ],
    "stated": [
     29.0,
     30.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -448,5 +449,6 @@
    "Catalog codes are printed without spaces or with hyphens (e.g., MGMT31, ECON-01, CPSC-01); they were matched to closed-list codes MGMT 31, ECON 1, CPSC 1."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

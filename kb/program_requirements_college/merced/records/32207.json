@@ -79,14 +79,15 @@
    "status": "equal",
    "computed": [
     23.0,
-    25.0
+    35.0
    ],
    "stated": [
     23.0,
     25.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -381,5 +382,6 @@
    "No general education pattern, degree total, outcomes or careers are printed in this Requisites text."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

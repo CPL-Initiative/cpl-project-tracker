@@ -46,21 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 26,
    "listed": 35,
-   "share": 0.657,
+   "share": 0.743,
    "missing": [
     "AGAB5",
     "HISTC1001",
     "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
-    "POLS2",
     "POLSC1000",
     "PSYCC1000",
     "PSYCC1000H",
-    "SOCI2",
-    "SOCI3",
     "SOCIC1000"
    ],
    "unexplained": [],
@@ -68,7 +65,7 @@
    "pass": true
   },
   "invented": {
-   "count": 18,
+   "count": 15,
    "codes": [
     "AGBS11",
     "GEOG12",
@@ -79,15 +76,12 @@
     "HIST22",
     "HIST23",
     "POSC1",
-    "POSC2",
     "PSYC15",
     "PSYC1A",
     "PSYC1AH",
     "PSYC25",
     "PSYC36",
-    "SOC1",
-    "SOC2",
-    "SOC3"
+    "SOC1"
    ],
    "flagged": [
     "AGBS11",
@@ -99,15 +93,12 @@
     "HIST22",
     "HIST23",
     "POSC1",
-    "POSC2",
     "PSYC15",
     "PSYC1A",
     "PSYC1AH",
     "PSYC25",
     "PSYC36",
-    "SOC1",
-    "SOC2",
-    "SOC3"
+    "SOC1"
    ],
    "pass": true
   },
@@ -546,5 +537,6 @@
    "No degree total or general education pattern is printed on this page; total_units is the major total 18."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

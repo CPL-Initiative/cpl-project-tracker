@@ -46,33 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 8,
    "listed": 8,
-   "share": 0.5,
-   "missing": [
-    "BIOSC119",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146"
-   ],
-   "flagged": [
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -275,5 +260,6 @@
    "The catalog text begins mid-sentence; the opening of the program description appears cut off."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43609976980,
+ "read_run": "43353452924"
 }

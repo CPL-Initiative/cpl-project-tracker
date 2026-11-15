@@ -54,6 +54,7 @@
     "PSYC48"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -83,6 +84,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +100,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -323,5 +336,6 @@
    "ECON-C2001, ECON-C2002, MATH-C2210 and MATH-C2210H are not in the closed list. The closed list has ECO 7 and ECO 8 instead, which appear to be the older numbering."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

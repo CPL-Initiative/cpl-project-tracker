@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T02:24:36Z",
+ "written_at": "2026-11-15T03:04:23Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15840,
-  "gap": 6495,
+  "passing": 15856,
+  "gap": 6479,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15332,
+  "passed_at_read": 15358,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15840,
-  "gap": 6495
+  "passing": 15856,
+  "gap": 6479
  },
  "census_live": {
   "basis": "live",
@@ -4100,13 +4100,13 @@
    "harvested": true,
    "slug": "diablo_valley",
    "programs": 267,
-   "passing": 197,
-   "gap": 70,
+   "passing": 198,
+   "gap": 69,
    "causes": {
     "no_closed_list": 23,
     "page_not_found": 30,
     "places_none": 1,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -4133,7 +4133,7 @@
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
-   "passed_at_read": 197,
+   "passed_at_read": 198,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -4156,8 +4156,8 @@
    "extracted": 214,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 4,
+    "coverage": 5,
+    "invented": 3,
     "arithmetic": 12,
     "repeated": 0,
     "outcomes": 0
@@ -4169,11 +4169,11 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1567.3,
-   "run": "43379378196",
+   "run": "43609976980",
    "levers": {
     "reader_page_search": 30,
     "program_course_file_check": 23,
-    "reconcile_steps": 10,
+    "reconcile_steps": 9,
     "ge_units_steps": 5,
     "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
@@ -4184,7 +4184,7 @@
      "models": {
       "claude-opus-5-5": 214
      },
-     "run": "43379378196",
+     "run": "43609976980",
      "at": "2026-11-13T06:35:26Z",
      "cost_usd": 13.85,
      "platform": "elumen"
@@ -7458,13 +7458,13 @@
    "harvested": true,
    "slug": "merced",
    "programs": 182,
-   "passing": 141,
-   "gap": 41,
+   "passing": 144,
+   "gap": 38,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 9,
     "places_none": 1,
-    "unknown_without_live": 21
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -7491,7 +7491,7 @@
    "read_at": "2026-10-19T10:44:44Z",
    "read_kind": "capture",
    "cost_usd": 9.69,
-   "passed_at_read": 134,
+   "passed_at_read": 144,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -7504,9 +7504,9 @@
    "extracted": 163,
    "errors": 0,
    "failed_checks": {
-    "coverage": 6,
-    "invented": 5,
-    "arithmetic": 25,
+    "coverage": 2,
+    "invented": 1,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -7517,9 +7517,9 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1700.6,
-   "run": "39239492986",
+   "run": "43609965348",
    "levers": {
-    "reconcile_steps": 21,
+    "reconcile_steps": 18,
     "program_course_file_check": 10,
     "reader_page_search": 9,
     "reader_page_assignment": 1
@@ -7530,7 +7530,7 @@
      "models": {
       "claude-opus-5-5": 163
      },
-     "run": "39239492986",
+     "run": "43609965348",
      "at": "2026-10-19T10:44:44Z",
      "cost_usd": 9.69,
      "platform": "coursedog"
@@ -8169,12 +8169,13 @@
    "harvested": true,
    "slug": "moreno_valley",
    "programs": 149,
-   "passing": 133,
-   "gap": 16,
+   "passing": 134,
+   "gap": 15,
    "causes": {
     "no_closed_list": 5,
     "page_not_found": 4,
-    "unknown_without_live": 7
+    "places_none": 1,
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -8203,7 +8204,7 @@
    "read_at": "2026-10-11T04:17:25Z",
    "read_kind": "capture",
    "cost_usd": 9.6,
-   "passed_at_read": 132,
+   "passed_at_read": 134,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8216,9 +8217,9 @@
    "extracted": 140,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
-    "arithmetic": 6,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 5,
     "repeated": 0,
     "outcomes": 0
    },
@@ -8229,11 +8230,12 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1237.7,
-   "run": "38111056537",
+   "run": "43609968396",
    "levers": {
-    "reconcile_steps": 7,
     "program_course_file_check": 5,
-    "reader_page_search": 4
+    "reconcile_steps": 5,
+    "reader_page_search": 4,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -8241,7 +8243,7 @@
      "models": {
       "claude-opus-5-5": 140
      },
-     "run": "38111056537",
+     "run": "43609968396",
      "at": "2026-10-11T04:17:25Z",
      "cost_usd": 9.6,
      "platform": "curriqunet"
@@ -8581,13 +8583,13 @@
    "harvested": true,
    "slug": "norco",
    "programs": 161,
-   "passing": 128,
-   "gap": 33,
+   "passing": 130,
+   "gap": 31,
    "causes": {
     "no_closed_list": 11,
     "page_not_found": 2,
     "places_none": 1,
-    "unknown_without_live": 19
+    "unknown_without_live": 17
    },
    "census_causes": {
     "course_added": 1,
@@ -8617,7 +8619,7 @@
    "read_at": "2026-10-11T04:56:59Z",
    "read_kind": "capture",
    "cost_usd": 10.12,
-   "passed_at_read": 126,
+   "passed_at_read": 130,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8630,9 +8632,9 @@
    "extracted": 148,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
-    "invented": 4,
-    "arithmetic": 20,
+    "coverage": 2,
+    "invented": 2,
+    "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
    },
@@ -8643,9 +8645,9 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1379.7,
-   "run": "38113150250",
+   "run": "43609971090",
    "levers": {
-    "reconcile_steps": 19,
+    "reconcile_steps": 17,
     "program_course_file_check": 11,
     "reader_page_search": 2,
     "reader_page_assignment": 1
@@ -8656,7 +8658,7 @@
      "models": {
       "claude-opus-5-5": 148
      },
-     "run": "38113150250",
+     "run": "43609971090",
      "at": "2026-10-11T04:56:59Z",
      "cost_usd": 10.12,
      "platform": "curriqunet"
@@ -9738,12 +9740,12 @@
    "harvested": true,
    "slug": "riverside_city",
    "programs": 268,
-   "passing": 222,
-   "gap": 46,
+   "passing": 230,
+   "gap": 38,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 18,
-    "unknown_without_live": 22
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -9770,7 +9772,7 @@
    "read_at": "2026-10-11T03:28:38Z",
    "read_kind": "capture",
    "cost_usd": 15.03,
-   "passed_at_read": 221,
+   "passed_at_read": 229,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9783,9 +9785,9 @@
    "extracted": 244,
    "errors": 0,
    "failed_checks": {
-    "coverage": 9,
-    "invented": 9,
-    "arithmetic": 15,
+    "coverage": 0,
+    "invented": 0,
+    "arithmetic": 14,
     "repeated": 0,
     "outcomes": 1
    },
@@ -9796,10 +9798,10 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 2130.5,
-   "run": "38108461470",
+   "run": "43605883626",
    "levers": {
-    "reconcile_steps": 22,
     "reader_page_search": 18,
+    "reconcile_steps": 14,
     "program_course_file_check": 6
    },
    "collection": {
@@ -9808,7 +9810,7 @@
      "models": {
       "claude-opus-5-5": 244
      },
-     "run": "38108461470",
+     "run": "43605883626",
      "at": "2026-10-11T03:28:38Z",
      "cost_usd": 15.03,
      "platform": "curriqunet"
@@ -10050,14 +10052,14 @@
    "harvested": true,
    "slug": "san_bernardino_valley",
    "programs": 236,
-   "passing": 161,
-   "gap": 75,
+   "passing": 162,
+   "gap": 74,
    "causes": {
     "found_not_extracted": 4,
     "no_closed_list": 4,
     "page_not_found": 3,
     "places_none": 25,
-    "unknown_without_live": 39
+    "unknown_without_live": 38
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -10086,7 +10088,7 @@
    "read_at": "2026-11-13T02:52:38Z",
    "read_kind": "capture",
    "cost_usd": 15.44,
-   "passed_at_read": 161,
+   "passed_at_read": 162,
    "slo_queue": null,
    "scout": null,
    "spot_check": {
@@ -10109,8 +10111,8 @@
    "extracted": 225,
    "errors": 0,
    "failed_checks": {
-    "coverage": 30,
-    "invented": 5,
+    "coverage": 27,
+    "invented": 2,
     "arithmetic": 61,
     "repeated": 0,
     "outcomes": 0
@@ -10122,10 +10124,10 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1514.5,
-   "run": "43355003065",
+   "run": "43609973859",
    "levers": {
     "reader_page_assignment": 25,
-    "reconcile_steps": 22,
+    "reconcile_steps": 21,
     "ge_units_steps": 12,
     "scorer_noncredit_hours": 5,
     "paid_read": 4,
@@ -10138,7 +10140,7 @@
      "models": {
       "claude-opus-5-5": 225
      },
-     "run": "43355003065",
+     "run": "43609973859",
      "at": "2026-11-13T02:52:38Z",
      "cost_usd": 15.44,
      "platform": "courseleaf"

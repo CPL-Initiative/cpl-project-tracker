@@ -45,27 +45,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 24,
    "listed": 24,
-   "share": 0.917,
-   "missing": [
-    "ANTHRO102",
-    "ANTHRO102H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ANTH102",
-    "ANTH102H"
-   ],
-   "flagged": [
-    "ANTH102",
-    "ANTH102H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -372,6 +363,6 @@
    "Program learning outcomes are printed once for the program on the outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": 43355003065,
- "read_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": 43355003065
 }

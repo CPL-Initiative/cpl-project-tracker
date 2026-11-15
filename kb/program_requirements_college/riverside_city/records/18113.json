@@ -44,24 +44,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 118,
+   "placed": 122,
    "listed": 126,
-   "share": 0.937,
+   "share": 0.968,
    "missing": [
     "ECO7",
     "ECO8",
-    "HIS1",
-    "HIS2",
-    "HIS2H",
-    "HIS35",
     "HIS6",
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 24,
+   "count": 20,
    "codes": [
     "ADJ13",
     "ADJ14",
@@ -69,15 +66,11 @@
     "EAR47",
     "ECONC2001",
     "ECONC2002",
-    "HIST1",
     "HIST14",
     "HIST15",
-    "HIST2",
     "HIST28",
     "HIST29",
-    "HIST2H",
     "HIST31",
-    "HIST35",
     "HIST44",
     "HISTC1001",
     "HISTC1002",
@@ -95,15 +88,11 @@
     "EAR47",
     "ECONC2001",
     "ECONC2002",
-    "HIST1",
     "HIST14",
     "HIST15",
-    "HIST2",
     "HIST28",
     "HIST29",
-    "HIST2H",
     "HIST31",
-    "HIST35",
     "HIST44",
     "HISTC1001",
     "HISTC1002",
@@ -127,6 +116,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -142,6 +132,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -1196,5 +1197,6 @@
    "The text begins mid-sentence ('n of academic disciplines...'); the start of the section introduction appears cut off."
   ]
  },
- "extracted_run": "38095615434"
+ "extracted_run": 43605883626,
+ "read_run": "38095615434"
 }
