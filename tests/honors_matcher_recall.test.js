@@ -7,12 +7,12 @@
 // derivation that shares none of its code both find the pair; and the title and lump tests that hold a fold or a
 // lumped base carry their own labels.
 //
-// S654: #3315's third review found the lump test could not fail (finding 3: its 12 positives were lumps the rule
-// already caught), so the narrow rule that replaced it is scored on positives and negatives written by hand.
+// S654: #3315's third review found the lump test could not fail; the fourth found the narrow rule that replaced it
+// leaking too, and the rows now rest on anchors, labeled at the anchor and the cluster level with a mutation per clause.
 //
 // Measured 2026-11-15 on the committed members file (2026-11-14 20:25): matcher right 29, wrong 0, missed 2; second
 // derivation right 31, wrong 1 (MATH 211 with MATH 221, which the matcher holds out); titles right 22, wrong 2; the
-// narrow rule, must hold 24 right 24 wrong 0, must pair 24 right 20 wrong 4 (over-holds).
+// anchors 19 right of 19; clusters 16 right of 16; 13 clauses, each caught.
 //
 // Run from repo root: `npm test` (or `node tests/honors_matcher_recall.test.js`).
 const fs = require("fs");
@@ -57,25 +57,28 @@ check("(9) the course-title test: the two known wrong answers and no other", t.r
   JSON.stringify(tWrong));
 check("(10) the course-title test keeps one-character marks: I and II, A and B, 1 and 2 differ", (t.pairs || [])
   .filter((x) => /Calculus (1|I)$|Chemistry A|Language 1|French 2/.test(x.a + "|" + x.b)).every((x) => x.pass));
-// The narrow rule (S654), scored without the plan's named lists so it can fail. Positives come from #3315's third
-// review, findings 1 and 2 (written by hand, never from the rule's output); negatives are plain one-course bases read
-// by hand. A wrong negative is an over-hold, which fails closed; the four known ones are pinned so a fifth shows.
-const nr = res.narrow || {};
-const pos = nr.positives || {}, neg = nr.negatives || {};
-check("(11) the narrow rule holds every positive: the review's 17 named bases, the six title-only rows, two more",
-  pos.labels >= 24 && pos.wrong === 0 && pos.right === pos.labels, JSON.stringify(pos));
-const knownOver = ["ARCH M10JH / ARCH M1059", "ENGL M10DS / ETHA M1002", "FREN M10AH / FREN M1036", "FTVE M1045 / FTVE M1046"];
-check("(11b) the narrow rule pairs the plain one-course bases, apart from four known over-holds", neg.labels >= 24
-  && (neg.wrong_pairs || []).every((x) => knownOver.some((k) => x.indexOf(k) === 0)) && neg.right >= 20,
-  JSON.stringify(neg));
-const named = (nr.pairs || []).filter((x) => x.expected_hold);
-check("(11c) the positives' labels include every base findings 1 and 2 named", ["MUSI M1044", "HUMA M1114", "ITIS M1068",
-  "BIOL M1262", "HIST M1183", "BIOL M1049", "ENGL M1348", "MATH M1123", "HUMA M1125", "ETHS M1256", "ASTR M1019",
-  "FTVE M1002", "FREN M1035", "FREN M1014", "JAPN M1017", "JAPN M1032", "MUSI M1237"]
-  .every((b) => named.some((x) => x.base === b)), named.length);
+// The anchored rows (S654, kb/_honors_anchors.py), labeled by hand at the anchor and the cluster level; never from the
+// rule's output. Each clause of rules 1 to 3, dropped in turn, must fail a label (#3315's fourth review: a test that
+// cannot fail guards nothing).
+const an = res.anchors || {};
+check("(11) the anchor labels (rule 1), every one right: the space-before-H shapes, a part I beside a part II, a "
+  + "series letter H, a number pair with different titles", an.labels >= 19 && an.wrong === 0, JSON.stringify(an.wrong_labels));
+const anTxt = JSON.stringify(an.pairs || []);
+check("(11b) the anchor labels include ECON 101 H, LING 101 HC and MATH 1A H", /ECON 101 H/.test(anTxt)
+  && /LING 101 HC/.test(anTxt) && /MATH 1A H/.test(anTxt));
+const cl = res.clusters || {};
+check("(11c) the cluster labels (rules 2 and 3), every one right", cl.labels >= 16 && cl.wrong === 0,
+  JSON.stringify(cl.wrong_labels));
+const real = ((cl.real || {}).pairs || []).map((x) => x.honors_id);
+check("(11d) the cluster labels say what the rule does with each id four reviews named",
+  ["LIBR M10CL", "BIOL M1317", "HIST M1165", "HUMA M10LS", "MATH M10NA", "MATH M1333"].every((i) => real.indexOf(i) >= 0),
+  real.join(", "));
+const mut = res.mutation || [];
+check("(11e) each of the 13 clauses of rules 1 to 3, dropped, fails a label", mut.length === 13 && mut.every((m) => m.caught),
+  JSON.stringify(mut.filter((m) => !m.caught).map((m) => m.clause)));
 const rsrc = fs.readFileSync(path.join(ROOT, "kb/_honors_matcher_recall.py"), "utf8");
-check("(11d) the labels share no parser with the rule: the label table is literal, never computed from narrow_reasons",
-  /NARROW_LABELS = \{/.test(rsrc) && !/NARROW_LABELS\s*=\s*(\{[^}]*for |dict\(|\[)/.test(rsrc) && !/LUMP_LABELS/.test(rsrc));
+check("(11f) the cluster labels resolve through kb/alias_chain.py and fail on an id that is gone",
+  /alias_chain\.resolve_id/.test(rsrc) && /no such pair/.test(rsrc) && !/NARROW_LABELS|LUMP_LABELS/.test(rsrc));
 check("(12) every count names its measure", /unified_courses_members\.js/.test(res.measure || ""), res.measure);
 
 const bad = results.filter((x) => !x[1]);

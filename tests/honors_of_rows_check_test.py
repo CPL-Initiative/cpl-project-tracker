@@ -45,6 +45,12 @@ PLAN_DIR = d.plan_dir()
 doc = json.load(open(os.path.join(PLAN_DIR, "plan.json"), encoding="utf-8"))
 committed = json.load(open(os.path.join(ROOT, "kb", "coci_curation.json"), encoding="utf-8"))
 live = d.overlay_live(json.loads(json.dumps(committed)))
+# The applied state (#3315's fourth review, finding 7): once step 2 applies, the daily run syncs its rows into the
+# overlay. The plan reads an honors_of row that names its anchored base as standing, so the re-measure still gives the
+# plan's rows and classes; the test says which state it read.
+APPLIED = sum(1 for k, v in committed["curations"].items() if v.get("honors_of") and k not in d.STEP1_IDS)
+print(f"note: the committed overlay carries {APPLIED} honors_of rows beyond step 1's two: "
+      + ("the applied state" if APPLIED else "step 2 not applied"))
 
 
 def run(plan=None, **kw):
@@ -135,14 +141,20 @@ with tempfile.TemporaryDirectory() as td:
             os.makedirs(os.path.join(root2, os.path.dirname(f)), exist_ok=True)
             with open(os.path.join(ROOT, f), "rb") as a, open(os.path.join(root2, f), "wb") as b:
                 b.write(a.read())
+        head = "f" * 40   # a check run with fresh=False reads no origin; the receipt is stamped as the real one is
+        got = dict(got, origin_main_head=head)
         with open(os.path.join(root2, rel), "w", encoding="utf-8") as f:
             json.dump(got, f)
-        check("(8b) the runner accepts the rows SQL beside a receipt for this payload",
-              M.check_receipt(sql, root2) is None, M.check_receipt(sql, root2))
+        trig = os.path.relpath(d.ROWS_SQL, ROOT)
+        why = M.check_receipt(sql, root2, trig, head)
+        check("(8b) the runner accepts the rows SQL beside a receipt for this file, this payload and main's head",
+              why is None and got["sql"] == trig, why)
+        why = M.check_receipt(sql, root2, trig, "e" * 40)
+        check("(8c) the runner refuses it once main moves after the check", why and "main is at" in why, why)
         with open(os.path.join(root2, "unified_courses_members.js"), "a", encoding="utf-8") as f:
             f.write("\n")
-        why = M.check_receipt(sql, root2)
-        check("(8c) the runner refuses it once the payload moves (the next daily run)", why and "has moved" in why, why)
+        why = M.check_receipt(sql, root2, trig, head)
+        check("(8d) the runner refuses it once the payload moves (the next daily run)", why and "has moved" in why, why)
     else:
         print("note: case 8 needs the plan to pass on today's payload; skipped")
 

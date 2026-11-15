@@ -195,86 +195,71 @@ M-ID pair is held; and the matcher gets a self-recall test before the rows are r
 ## Before the rows apply
 
 The second PR (#3315, `claude/honors-of-rows-s653`) holds the dry run (`kb/_honors_of_s653_dryrun.py`), its plan
-(`kb/honors_of_s653_out/2026-11-15/`), the second derivation (`kb/_honors_pairs_second.py`), the self-recall measures
-(`kb/_honors_matcher_recall.py`) and the step-2 migration and rollback, none in `kb/migrations/.apply`. Step 1 is
-applied (#3329, 2026-11-14 18:44Z). Three reviews read the step-2 plan. The third (nine agents, 19:20Z) found the lump
-and sequence classes leaking for a third round, so the S654 conductor replaced the design rather than patching it
-(`d-honors-narrow-positive-rule-s654`):
+(`kb/honors_of_s653_out/2026-11-15/`), the anchors (`kb/_honors_anchors.py`), the second derivation
+(`kb/_honors_pairs_second.py`), the self-recall measures (`kb/_honors_matcher_recall.py`) and the step-2 migration and
+rollback, none in `kb/migrations/.apply`. Step 1 is applied (#3329, 2026-11-14 18:44Z). Four reviews read the step-2
+plan. Each found the lump and sequence class again: every design asserted the Honors relation between two clusters and
+tried to certify, by title and sequence rules, that each cluster is one course, which is the M-ID layer's own
+unfinished work. The S654 conductor replaced the question (`d-honors-anchored-rows-s654`), under Sam's rulings that
+M-IDs are "low stakes attempts to get our course clusters as close to right as we can" and that the care goes into
+the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes-into-the-rewiring-2026-11-14`).
 
-- **The narrow rule.** A pair gets a row and a mint only when all four tests pass, and held is the default until the
-  base is split: (a) the second derivation finds the pair by number, and the matcher finds it too; (b) the base holds
-  one title group (every distinct title names one course with every other; `+` and `#` count, so C, C++ and C# are
-  three; `with` counts, so Astronomy Lab and Astronomy with Lab are two); (c) no college gives the base two course
-  numbers (the number without its subject, so a cross-listing such as HIST 128 and BIOL 128 is one); (d) the sequence
-  marks of every raw title on both sides agree, read before `strip_honors`, so De Anza's "(1895-1950)" survives; an end
-  letter C to F, "Part Two", early, late and recent count as marks. An official base is one record by its body's
-  definition, so (b) and (c) read only an M-ID base and (d) reads the base courses the pair names. `lump_reasons`
-  stays in the plan as the `report_lump` column and decides nothing.
-- **Held outright as well.** The 17 bases review three named in findings 1 and 2 (`REVIEW3_BASES`; the four tests
-  hold all 17 on their own); two or more Honors ids on one official base whose Honors titles name different courses,
-  and finding 5's seven ids by name (THTR M11MI is held only by name); a base holding a CCN-coded course, by Sam's
-  gold-standard ruling (finding 6: ASTR M1014 holds Skyline ASTR C1001L).
-- **The apply-day re-measure and its receipt.** `--check`, run after the last daily run on a checkout that contains
-  `origin/main`'s head, reads the newest plan folder (or `--date`), recomputes the pairs and classes from the
-  checkout's payload, and refuses unless both digests are the plan's: the rows md5 and a class md5 over every pair's
-  action, H id and fold. On a pass it writes `check_receipt.json` beside the plan: origin/main's head, both digests,
-  the rows SQL's sha256 and the sha256 of each payload file it read. The rows SQL names the receipt in its header
-  (`-- requires-check-receipt:`), and `scripts/supabase_migrate.py` refuses such a file unless the committed receipt
-  names its sha256 and the checkout's payload as it stands, so a daily run or a merge of `main` after the check
-  refuses the apply. CI runs the SQL half (`--check-sql`), `tests/honors_of_rows_check_test.py` and
-  `tests/supabase_migrate_test.py`.
+- **An anchor** is two courses at one college: an Honors course and a base course whose codes name the same subject
+  and the same number once `honors_code_base` strikes the marker (a space before the H included; 1AH pairs with 1A,
+  never 1B), with a second signal at the course level: an Honors word in the Honors course's title, or, with none,
+  equal titles and a marker in the number (never an H ending the subject: Glendale's ARTH 119 beside ART 119 is one
+  course under two subjects). An Honors-titled number pair whose titles disagree is a doubtful anchor. A trailing H
+  in a series (A to G at the college) under a title with no Honors word is no Honors course. Titles are read with
+  HTML entities decoded.
+- **A row.** An Honors M-ID gets an `honors_of` row to base B when it has an anchor and every anchor lands in B, an
+  M-ID or an official id. Anchors in two bases hold it ("anchors split"); a doubtful anchor holds it; no anchor, no
+  row. The safety holds stay: a pending alias map, a merge slated or decided, a person's join, another `honors_of`
+  on the id, a CCN Honors record beside the base, an id mostly not Honors courses.
+- **A mint** (step 4, planned here) needs the row and: every member course anchored; exactly one Honors M-ID anchored
+  into B; no CCN-coded course in B, whatever kind of base B is (an official base mints nothing, so there the clause
+  holds the row itself: MATH 210 holds MATH C2210 and C2210H); no second base named by another derivation.
+- **The cluster tests decide nothing.** One title group, two course numbers and the sequence marks stay as report
+  columns; a base they flag is a **split candidate** for the re-clustering lane. A row on an impure base is the base's
+  own impurity, and its anchors say where the row goes when the base is split.
+- **Every row carries its anchors** (college, both codes, both titles) in `plan.json` and `plan.md`, and the class
+  digest covers them.
+- **The apply-day re-measure and its receipt.** `--check` reads the newest plan folder (or `--date`), re-measures on
+  the checkout's payload, refuses unless the rows md5 and the class md5 are the plan's, and on a pass writes
+  `check_receipt.json`: origin/main's head, both digests, the SQL file and its sha256, the payload's sha256s. The rows
+  SQL names the receipt in its header, once, in the exact form. `scripts/supabase_migrate.py` refuses a file that
+  names one unless the receipt sits inside the repo, names the trigger's file and its sha256, names the payload as
+  the checkout holds it, and was written at `main`'s head as it stands at the apply; a near-miss spelling of the
+  header refuses.
 
-**The plan today** (identity pairs on the committed `unified_courses_members.js`, generated 2026-11-14 20:25, which
-carries #3304's delete and step 1; local courses; the union of both derivations): 553 pairs. Classes: 196 row and
-mint, 50 row only on an official base, 1 row with a fold after the mint (LIBR M10CJ into LIBR M1040H, which LIBR M10CI takes), 88
-none, 218 held. Of the 370 M-ID Honors pairs on an M-ID base that both derivations find, the four tests pass on 217;
-by test (a pair can fail several): (a) 7, (b) 125, (c) 89, (d) 35. Held by first reason: 119 (b), 23 (c), 10 (d),
-9 (a), 23 two Honors ids on one official base, 7 named by the review, 19 multi-base, 4 beside a CCN Honors record,
-2 a base holding a CCN-coded course, 2 found by the second derivation alone. 247 rows: step 1 wrote LIBR M10CJ's,
-step 2 writes 246 (rows md5 `5e438594518f1fe0ac7dd8f559199c2c`, class md5 `d926338769084d779f0426f846868207`). HUMA
-M10ME's step-1 row stands, and the narrow rule now holds that pair (HUMA M1110 carries 13 distinct base titles), so no HUMA
-M1110H mints; the row only holds the two apart.
+**The plan today** (committed `unified_courses_members.js`, generated 2026-11-14 20:25; local courses): 584 anchors on
+M-ID Honors courses and 1 doubtful. 520 pair records: 282 row and mint, 26 row with the mint held, 74 row only on an
+official base, 37 held, 101 none. Held by first reason: 26 anchors split, 7 an official base holding a CCN-coded
+course, 2 an anchor's base inside the Honors id, 1 beside a CCN Honors record, 1 doubtful anchors only. 382 rows:
+step 1 wrote 2, step 2 writes 380. 169 bases are split candidates.
 
-**The self-recall measures** (hand labels in `kb/_honors_matcher_recall.py`, both directions). The matcher right 29,
-wrong 0, missed 2 (COUN M10UB and PHS 103); the second derivation right 31, wrong 1 (MATH 211 with MATH 221, which the
-matcher holds out); the rows' set right 29, wrong 0. The course-title test, 24 pairs: right 22, wrong 2. The narrow
-rule, scored without the named lists so it can fail: 24 positives that must hold (the 17 named bases, the six
-title-only rows, two read by hand), right 24, wrong 0; 24 plain one-course bases that must pair, right 20, wrong 4,
-each an over-hold that fails closed (ARCH M1059 by (b) and (d), "Early Design" read as a period; ETHA M1002 by (b),
-"Forms of Literature: American Indian Literature"; FREN M1036 and FTVE M1046 by (c), a college's second number for
-one course). `tests/honors_matcher_recall.test.js` pins each.
+**The cases the reviews named**, as the rule decides them: LIBR M10CL row and mint (Fullerton LIB 100HF beside LIB 100
+F); BIOL M1317 row, mint held (Cosumnes BIOL 485 has no H in its number, so it rides unanchored); HIST M1165 row and
+mint (three anchors, all into HIST M1191); HUMA M10LS row and mint (Irvine Valley HUM 1H beside HUM 1); MATH M10NA none
+(San Jose City has no MATH 071); MATH M1333 held (MATH 210 holds MATH C2210 and C2210H).
 
-**The undo, last in, first out.** Step 2's rollback keys on its cohort and the field, keeps a row a person validated
-(`kept_for_a_person`), and refuses while any `kb_curation` row is keyed on an H id: the step-4 mint's marker. The
-step-1 rollback counts only removable step-2 rows, so one Verify on a step-2 row blocks neither it nor the S652
-rollback after it (finding 7), and it reads the same marker. The Postgres proof runs every case with no hand delete.
+**The self-recall measures** (`kb/_honors_matcher_recall.py`, by hand): 19 anchor labels, among them the ECON 101 H,
+LING 101 HC and MATH 1A H shapes, a part I beside a part II, a series letter H and a number pair with different
+titles; 16 cluster labels (8 self-contained, 8 on the ids the reviews named, each resolved through `kb/alias_chain.py`
+and failing on an id that is gone). Dropping each of the 13 clauses of rules 1 to 3 in turn fails a label.
 
-The first review's findings, as met in the redesign:
+**The undo, last in, first out.** Step 2's rollback keys on its cohort and the field, keeps a row a person validated,
+and refuses while any `kb_curation` row is keyed on an H id, the step-4 mint's marker. The step-1 rollback counts only
+removable step-2 rows, so one Verify on a step-2 row blocks neither it nor the S652 rollback, and it reads the same
+marker. The Postgres proof runs every case with no hand delete.
 
-1. **The person guard holds only a join.** The insert refuses any id a row names that carries a `merge_into` row,
-   which covers every join of a pair, so the chain walk and its `joined` CTE, which could never fire, are gone. A
-   person's merge of a third course into either side proceeds; the proof seeds the overlay's 10 such rows today.
-2. **Each rollback keys on its cohort and the field.** **Neither rollback deletes a row a person validated.**
-3. **The receipt.** Step 2 returns a count and an md5 checked against the plan.
-4. **The S652 follow-ups rollback refuses a partial restore** (step 1's PR).
-5. **Liveness**: the apply-day re-measure above.
-6. **Fan-in: the mint is one to one.** The lead takes the H id; each follower keeps its own row and merges into the H
-   id after the mint, its own change. A follower whose lead is held holds too.
-7. **Classification**: multi-base pairs hold; HUMA M1084 holds as multi-base. `honors_code_base` now reads a space
-   before the H marker (ECON 101 H, LING 101 HC, PHIL 225 HF, MATH 1A H; finding 4).
-8. **Recall**: the measures above.
-9. **The field minors and COBIx's two**: #3325.
-10. **Re-measured** on the committed payload, 2026-11-15.
+**After the apply.** The plan treats an `honors_of` row that names its anchored base as standing, so the re-measure
+gives the same classes once the rows sync. `tests/honors_of_rows_plan.test.js` reads `kb/migrations/.apply`: when it
+names the rows file, its last check reports the applied state rather than failing. The generator's
+`committed_curation` emits only entries that carry a discipline or a `merge_into`.
 
-Rule 10 (a): the insert refuses when a pending `unified_title_merge_confirm` names any id a row names. A
-`merge_dismissed` (Keep as-is) naming both ids of a pair agrees with the pair standing apart; the plan notes it and
-holds nothing.
-
-**Still open before step 2 applies:** a review of the replaced design; the conductor's live read of pending
-`unified_title_merge_confirm` rows on the named ids; then, after the last daily run, merge `origin/main`, run `--check`
-and commit its receipt with the `.apply` line. The mints carry two gates of their own (*Before the mints*): a C-ID
-record holding Honors twins of a base (PHIL 100 beside HUMA M1110, PHS 102 beside HLTH M1134), and a lead on a base a
-reader doubts.
+**Still open before step 2 applies:** a short review of the anchors; #3329 merges first, then this branch merges
+`main`, keeping `main`'s APPLIED header on the step-1 migration; the conductor's live read of pending
+`unified_title_merge_confirm` rows; after the next daily run, `--check` and its receipt with the `.apply` line.
 
 ## Before the mints
 
