@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1502,
-    "bytes": 15913255,
-    "over_budget": 4,
-    "handoff_max": 660,
+    "files": 1503,
+    "bytes": 15924906,
+    "over_budget": 5,
+    "handoff_max": 661,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59992,
     "superseded_files": 0,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 161,
-        "bytes": 5147895,
+        "bytes": 5149453,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 11098,
+        "bytes": 11314,
         "over": 0
       },
       "lessons": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 555116,
-        "over": 3
+        "bytes": 558184,
+        "over": 4
       },
       "handoff": {
-        "files": 620,
-        "bytes": 4455896,
+        "files": 621,
+        "bytes": 4462705,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 4,
-      "vault_heavy_path": 76,
-      "handoff_drops_active_lane": 1
+      "oversized_doc": 5,
+      "vault_heavy_path": 76
     },
     "vault": {
-      "files": 28072,
-      "bytes": 4982846618,
-      "heavy_bytes": 3633372930,
+      "files": 28078,
+      "bytes": 4982872473,
+      "heavy_bytes": 3633382709,
       "heavy_share": 0.729,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -162,14 +161,27 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 179442,
+        "bytes": 179534,
         "limit": 150000,
         "lane": "other",
-        "over_by": 29442,
+        "over_by": 29534,
         "ratio": 1.2
       },
-      "message": "179,442 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "179,534 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20840,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 840,
+        "ratio": 1.04
+      },
+      "message": "20,840 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/commons.md"
     },
     {
       "rule": "oversized_doc",
@@ -201,13 +213,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20187,
+        "bytes": 22196,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 187,
-        "ratio": 1.01
+        "over_by": 2196,
+        "ratio": 1.11
       },
-      "message": "20,187 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "22,196 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -215,10 +227,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2450002139,
+        "bytes": 2450005590,
         "kind": "dir"
       },
-      "message": "directory totals 2,450,002,139 B inside the vault"
+      "message": "directory totals 2,450,005,590 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -245,10 +257,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 84468040,
+        "bytes": 84470192,
         "kind": "dir"
       },
-      "message": "directory totals 84,468,040 B inside the vault"
+      "message": "directory totals 84,470,192 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -315,10 +327,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13368092,
+        "bytes": 13372268,
         "kind": "dir"
       },
-      "message": "directory totals 13,368,092 B inside the vault"
+      "message": "directory totals 13,372,268 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -969,18 +981,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_660_handoff.md",
-      "detail": {
-        "lanes": [
-          "program-requirements-harvest"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_660_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: program-requirements-harvest. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

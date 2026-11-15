@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 620 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1488** | |
+| Session handoffs | 621 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1489** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).
 - 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
 - 2026-11-15 (S655 SkyCurlew, the CPL Queue routine's 06:12Z firing, conductor mode, full checkpoint): six merges (#3346, #3315, #3351, #3344, #3353, #3354); #3330 never reached `main` and #3351 landed the spend meter with card 10's $40 gates; the Riverside City capture read (240 of 268); Santa Ana's 1,362 objectives loaded; the Honors step 2 apply held at the permission check (Sheet 200 card 1); the course-id rescore's six rereads posted 159 rows on #3352.
 - 2026-11-15 (S654 SkyWhimbrel, Sam's session, conductor mode, full checkpoint): seven merges (#3343, #3325, #3316, #3324, #3328, #3345, #3329); a GE-pattern page has one owner; six prefix-alias rescores as one wave; one spend meter (`kb/_spend_meter.py`, #3330); Honors step 2 rebuilt on anchors (#3315, nothing applied); handoff `session_655_handoff.md` (SkyCurlew).

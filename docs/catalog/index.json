@@ -17090,8 +17090,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 620,
+   "count": 621,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 661,
+     "path": "docs/session_661_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 661 handoff (from SkyPlover, S660)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-15",
      "governs": [],
@@ -27544,5 +27558,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1488
+ "total": 1489
 }
