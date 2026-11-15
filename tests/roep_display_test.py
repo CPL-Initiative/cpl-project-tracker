@@ -473,5 +473,15 @@ check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re
 check(not b.STALL.search(b.read_receipt(receipt)) if os.path.exists(receipt) else False,
       "the receipt names no word the Supabase connector holds")
 
+# S659: an identity's title drops an Honors marker only where the curated title is the minted one without it (LIBR
+# M1040, S652's retitle, Cerro Coso 18917's LIBR C111); every other minted common title stays as built.
+check(b.shown_title("Media & Information Literacy (Honors)", "Media & Information Literacy") == "Media & Information Literacy"
+      and b.shown_title("Calculus I: Honors", "Calculus I") == "Calculus I"
+      and b.shown_title("Religions of the World", "World Religions") == "Religions of the World"
+      and b.shown_title("Honors Seminar (Honors)", "Honors Seminar (Honors)") == "Honors Seminar (Honors)"
+      and b.shown_title("Chemistry (Honors)", "Organic Chemistry") == "Chemistry (Honors)"
+      and b.shown_title("", "Live title") == "Live title",
+      "an identity drops an Honors marker only where the curated title is the minted one without it")
+
 print("\n%d failure(s)" % len(fails))
 sys.exit(1 if fails else 0)

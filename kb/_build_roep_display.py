@@ -247,7 +247,7 @@ class Identity:
             return {"kind": "C-ID", "id": mid, "title": live.get("title"), "ccr": mid, "cid": mid}
         rec = self.minted.get(mid) or {}
         ccn, cid = _clean(rec.get("ccn_id")), _clean(rec.get("c_id"))
-        title = _clean(rec.get("common_title")) or live.get("title")
+        title = shown_title(_clean(rec.get("common_title")), live.get("title"))
         cid = cid or cid_also
         if ccn:
             return {"kind": "CCN", "id": ccn, "title": title, "ccr": mid, "cid": cid or None}
@@ -256,6 +256,22 @@ class Identity:
         if not rec and not live:
             return None
         return {"kind": "CCR", "id": mid, "title": title, "ccr": mid, "cid": None}
+
+
+# An Honors marker at the end of a minted common title ("Media & Information Literacy (Honors)", "X: Honors", "X - Honors").
+HONORS_TAIL = re.compile(r"\s*(?:\(\s*honou?rs\s*\)|[-\u2013\u2014:,]+\s*honou?rs)\s*$", re.I)
+
+
+def shown_title(common: str, live: str | None) -> str | None:
+    """The identity's title: the minted common title, except where it is the live (curated) title plus an Honors
+    marker the curation dropped. S652 retitled LIBR M1040 "Media & Information Literacy" (kb_curation unified_title),
+    and the minted file kept "(Honors)", so Cerro Coso 18917's LIBR C111 showed an Honors identity over a base course
+    beside an ids title without it (build 58b763170559; S657, S659). Any other difference between the two titles stays
+    as built: the minted common title is the identity's title by design."""
+    if common and live and HONORS_TAIL.search(common) and not HONORS_TAIL.search(live) \
+            and HONORS_TAIL.sub("", common).strip().lower() == live.strip().lower():
+        return live
+    return common or live
 
 
 def articulation_index(ident: Identity):
