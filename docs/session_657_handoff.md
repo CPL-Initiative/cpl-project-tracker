@@ -25,18 +25,23 @@ Start with COBIx's latest brief on issue #3358, then this file.
   session that dispatches a paid run checks it) and names #3358 as the brief to read first. Plus this checkpoint.
 - **#3356** closed with a pointer to #3357 (a retired conductor declaration).
 - **#3352** (course-id rescore): the Diablo Valley display applied (run 43716540931, applied record on the branch);
-  the whole build `58b763170559` dispatched (run 43716933187). The 220 out-of-wave rows COBIx asked for are traced on
-  the PR (comment 6894686230): 198 course entries at 54 colleges are the Honors step 1 apply's *(Honors)* title drop
-  (#3329), 2 MiraCosta entries move to HUMA M10ME from the same apply, 34 programs are the S654 wave's `checks` (#3345).
-- **#3362** (`claude/contacts-harvest-s656`): Sunday's contacts read. 15 colleges read, 11 loaded, 1 new, 36 seen
+  the whole build `58b763170559` applied (run 43716933187: 17,989 written and confirmed, 0 errors, before-values in
+  `..._58b763170559.applied_43716933187.json`). The 220 out-of-wave rows against `a83667f9fa0d` are traced on the PR
+  (Honors step 1 #3329; the S654 wave #3345). **A miss:** COBIx's baseline note (13:04Z) came after the 13:02Z
+  dispatch. Against each row's live build (`bef8ef819af7` plus scoped builds), 315 rows moved, 95 of them at 40
+  colleges unreviewed: wider fire-science `adopt` peer lists, 35 with a `counts` change, from `a83667f9fa0d`'s data.
+- **#3362** merged `b37e4572`: Sunday's contacts read. 15 colleges read, 11 loaded, 1 new, 36 seen
   again, 0 gone (apply run 43716920376, receipt `kb/receipts/college_contacts_harvest_43703211500.json`).
 
 ## First things, in order (from the lanes' NEXT lines)
 
-1. **#3352:** confirm run 43716933187 succeeded and committed its applied record; then merge to `main` on a passing
-   `test`, confirmed by `git log origin/main`. Read COBIx's reply to the 220-row list first; a finding is a finding,
-   never a go. If this session merged it, skip.
-2. **#3362:** merge on a passing `test` if still open.
+1. **#3352 (open; display live):** name the PR behind the fire-science peer widening (diff each of the 95 rows against
+   its live `before` in the applied record) and say on the thread whether it holds; if it does not, the applied
+   record's before-values roll back. Then push one real change so `test` runs on the head (the runner's applied-record
+   commit gets no CI), and merge, confirmed by `git log origin/main`. This is round two with COBIx: anything still open
+   goes to Sam. Cerro Coso 18917's `identity.title` keeps *(Honors)*: a builder item for the harvest lane.
+2. **Lesson:** before a whole-build display apply, diff against the applied record's live `before`, never the last
+   build file, and read the thread once more just before the dispatch.
 3. **Honors step 2 apply: HELD for Sam** (Sheet 200 card 1). Steps in handoff 656, *First things* 3.
 4. **Step 11:** Allan Hancock's full read (#3284) on a UTC day without its two runs; Las Positas as objectives reread
    step 2; Coastline, Golden West; College of the Redwoods' trial.
@@ -61,8 +66,8 @@ Avoid unfiltered workflow-run listings: filter by workflow and branch.
 | PR | State | Next |
 |---|---|---|
 | #3361 | this checkpoint | merge on a green `test` |
-| #3352 | display applied (DVC), whole build running at sign-off | First things 1 |
-| #3362 | contacts load applied, receipt on branch | First things 2 |
+| #3352 | open; display applied (DVC, then whole build) | First things 1 |
+| #3362 | merged `b37e4572` | none |
 | #3356 | closed, pointer to #3357 | none |
 | #3284, #3293 | drafts; keep | First things 4, 8 |
 | #2894 | Sam's | none |
@@ -80,7 +85,6 @@ candidate (`/wiki-ingest`): the $40 limits survive the conductor's retirement.
 No PR subscription, check-in or artifact watch is held. Sam's standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current; card 1 waits on Sam).
 
-Cost: this session's cost was not metered; its context reached about 196,000 tokens over about 50 tool calls, with no
-subagents and no model spend on runners. Substantive PRs merged: see the closing line in #3361's body.
+Cost: not metered (no subagents, no paid runner calls; context reached about 200,000 tokens over about 60 calls); substantive PRs merged: 1 (#3362).
 
 Greetings, you are SkyDunlin (Session 658), see SkyTurnstone's handoff — `docs/session_657_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_657_handoff.md) — let's keep rolling with our queue.
