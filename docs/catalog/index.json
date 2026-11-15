@@ -15986,7 +15986,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 75,
+   "count": 76,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16646,6 +16646,22 @@
      "title": "COBIx on pull requests: the review loop without Sam in the middle",
      "type": null,
      "updated": ""
+    },
+    {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/cdc_data_dictionary.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-dictionary",
+      "data-sharing",
+      "privacy"
+     ],
+     "title": "College Data Collection: the data dictionary and data-sharing classes",
+     "type": null,
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-11-11",
@@ -27471,5 +27487,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1483
+ "total": 1484
 }

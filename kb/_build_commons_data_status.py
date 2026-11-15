@@ -530,8 +530,9 @@ def college_outcomes(root: str, harvested: dict) -> dict:
 # sources, and the SIS and curriculum system integration line. Each line is what a committed file says, or it says
 # plainly that nothing records it. The live registry's pathway state stays in the live block; the page joins the two.
 # The Program Pathways Mapper member list: the 60 VALUES rows the S444 file holds. Its header says the list pasted
-# from programmapper.org/ppm-schools named 63 community colleges; the file does not record which three were not filed
-# (COBIx asked on #3316; the parse reads all 60, and tests/commons_data_status_build_test.py (16) pins that count).
+# from programmapper.org/ppm-schools named 63 community colleges. Why three were not filed, in Sam's answer (Sheet 198
+# card 11, 2026-11-14): "I think the 3 were not cccs so no need to worry about it." His 2026-10-21 remark in the S444
+# file says the same. The parse reads all 60, and tests/commons_data_status_build_test.py (16) pins that count.
 PPM_LIST = "kb/supabase_program_source_ppm_hosts_s444.sql"
 PPM_LIST_BY = "programmapper.org/ppm-schools, copied 2026-10-21"   # supplied by Sam (S444); the cards name roles, never people
 MAP_FILES = "kb/program_requirements_pilot/sequences/*.json"   # the committed term-by-term program maps
