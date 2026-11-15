@@ -50,6 +50,9 @@ run "statewide catalog (Fact Sheet + Sierra)" "python3 fact-sheet/_build_statewi
 # the subject map, so a map edit staled it in the same commit that made it.
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
 run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --check"
+# College Data Collection's data dictionary (#3310): kb/cdc_data_dictionary.json is hand-kept; the status file and the
+# doc are built from it, so an edit to the JSON stales both here.
+run "CDC data dictionary"      "python3 kb/_build_cdc_sharing.py --check"
 # A stored credential title is resolved at read time through the applied renames (S641): the browser reads
 # kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
 run "credential title moves"    "python3 kb/credential_aliases.py --check"

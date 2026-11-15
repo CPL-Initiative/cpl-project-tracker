@@ -25,6 +25,7 @@
   var CSS_ID = "cdc-cards-css";
   /* Only what the panel's own rules (commons_data.js) do not already give: the lanes' spacing. Tokens only. */
   var CSS = [
+    ".cdc-card ul.cdc-introws { margin:0; padding-left:20px; display:grid; gap:2px; color:var(--cmn-ink-2); font-size:.9rem; }",
     ".cdc-card .cdc-lane { display:grid; gap:4px; padding-top:8px; border-top:1px dashed var(--cmn-line-soft); }",
     ".cdc-card .cdc-lane:first-of-type { border-top:0; padding-top:0; }",
     ".cdc-card .cdc-lane > h4 { margin:0; font-size:.92rem; color:var(--cmn-heading); }",
@@ -147,8 +148,17 @@
     return R;
   }
   var INTEGRATION_WORDS = { none_known: "None known", ask: "Ask the MAP team's curriculum system lead to confirm", live: "Connected", planned: "Planned" };
-  function integration(c) {
+  /* The line reads the integrations registry's rows for this college (#3310 item 5: kb/cdc_integrations.json through
+     commons_data_integrations.js, CPL_CDC_INTEGRATIONS.forCollege), one per system: SIS APIs, curriculum system APIs.
+     A connection the builder records (SIS_CMS_INTEGRATION) still speaks first; with neither, none known. */
+  function integration(c, H) {
     var i = (c.collection || {}).integration || { state: "none_known" };
+    var R = window.CPL_CDC_INTEGRATIONS, rows = i.state === "none_known" && R && R.forCollege && H && H.slugOf ? R.forCollege(H.slugOf(c)) : [];
+    if (rows.length) {
+      var known = rows.filter(function (r) { return r.state && r.state !== "none known"; });
+      return { state: known.length ? "registry" : "none_known", rows: rows,
+        text: known.length ? rows.map(function (r) { return r.name + ": " + r.state; }).join("; ") : "None known" };
+    }
     return { state: i.state, text: (INTEGRATION_WORDS[i.state] || "None known") + (i.note ? ". " + i.note : "") };
   }
 
@@ -170,10 +180,13 @@
     out.push(card("maps", "Program pathway maps", [el("p", { cls: "cdd-state", "data-state": m.state, text: m.state === "held" ? "Publishes maps" : m.state === "none" ? "None found when looked for" : "Not looked for yet" }),
       m.note ? el("p", { cls: "cdd-of", text: m.note }) : null, H.dl(m.lines), el("p", { cls: "cdd-src", text: "Source: " + m.src })]));
 
-    var I = integration(c);
+    var I = integration(c, H);
     out.push(card("sources", "Data sources", [el("p", { cls: "cdd-src", text: "The systems behind this college's data, and how we read each: directly, through an export, or not yet. A system no file names reads not known." }),
       H.dl(sources(M, c, H).map(function (r) { return [r.label, r.system + ". " + r.read + "."]; })),
       el("div", { cls: "cdc-lane", "data-lane": "integration" }, [el("h4", { text: "SIS and curriculum system integration" }), el("p", { cls: "cdd-state", "data-state": I.state, text: I.text }),
+        I.rows ? el("ul", { cls: "cdc-introws" }, I.rows.map(function (r) {
+          return el("li", { "data-integration": r.integration, text: r.name + ": " + r.state + (r.note ? ". " + r.note : "") });
+        })) : null,
         el("p", { cls: "cdd-of", text: I.state === "none_known" ? "A connection from MAP to this college's SIS or curriculum system is recorded here once the MAP team confirms one. None is recorded for this college."
           : "A connection from MAP to this college's SIS or curriculum system, as the MAP team recorded it." })])]));
     return out;

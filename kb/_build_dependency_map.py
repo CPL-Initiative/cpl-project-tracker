@@ -299,6 +299,19 @@ SEEDS = [
         "why": "insert-only credential_family rows under credential-family-s638@bot, and the guarded "
                "rollback delete, through the inherited PostgREST client",
     },
+    {   # commons_data_sharing.js (S654): commons_data.js loads it through EXT_FILES, and it reads its status file
+        # through f(FILE), so no literal fetch() names the path.
+        "file": "commons_data_sharing.js",
+        "anchor": r'var FILE = "kb/status/cdc_sharing\.json"',
+        "datasets": [("file:kb/status/cdc_sharing.json", "read")],
+        "why": "College Data Collection's data dictionary card and view read the built dictionary through f(FILE)",
+    },
+    {   # commons_data_integrations.js (S654): the same module hook as commons_data_sharing.js.
+        "file": "commons_data_integrations.js",
+        "anchor": r'var FILE = "kb/status/cdc_integrations\.json"',
+        "datasets": [("file:kb/status/cdc_integrations.json", "read")],
+        "why": "College Data Collection's integrations view reads the built registry through f(FILE)",
+    },
     {   # kb/_commons_data_live.py (S647, #3215): the Commons data dashboard's live counts, read with the
         # service key in harvest-gap-census.yml. Its tables reach the request as a variable (the counts-only
         # guard sits between), so no call site names one literally.
