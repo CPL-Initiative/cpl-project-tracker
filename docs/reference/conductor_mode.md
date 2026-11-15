@@ -171,6 +171,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 - The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
 
+- Handoff 655 said #3330 was merged at `5a4a9c68`. It had merged into its stacked base (`claude/extraction-gate-always-s653`), and #3327 then closed with a pointer, so the cost gates and the spend meter never reached `main`. A stack merges through its top only when the top's base is `main`: retarget the top to `main` first, and confirm the merge by `git log origin/main`, never by the PR's merged flag (#3350, #3351 reland it).
+- The permission check refused a worker's edit to `kb/migrations/.apply` (Honors step 2). The conductor held the apply for Sam and did not make the edit itself.
+
 ## What went wrong in S654, and what worked
 
 - The `worker` agent type always creates a worktree, so a fourth worker cannot be a `worker`. A general-purpose agent
