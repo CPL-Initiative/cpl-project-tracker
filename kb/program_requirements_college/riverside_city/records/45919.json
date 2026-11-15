@@ -44,29 +44,99 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 109,
+   "placed": 111,
    "listed": 111,
-   "share": 0.982,
-   "missing": [
-    "AHS1",
-    "AHS2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST16",
+     "listed": "HIS16",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST17",
+     "listed": "HIS17",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST18",
+     "listed": "HIS18",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST19",
+     "listed": "HIS19",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST25",
+     "listed": "HIS25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST32",
+     "listed": "HIS32",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST33",
+     "listed": "HIS33",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST35",
+     "listed": "HIS35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST60",
+     "listed": "HIS60",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST61",
+     "listed": "HIS61",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
-    "ARTHC1100",
-    "ARTHC1200",
     "HIST42",
     "MUS19H",
     "SPA2H"
    ],
    "flagged": [
-    "ARTHC1100",
-    "ARTHC1200",
     "HIST42",
     "MUS19H",
     "SPA2H"
@@ -1077,6 +1147,6 @@
    "Program learning outcomes are printed for this certificate; the page covers only this award."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

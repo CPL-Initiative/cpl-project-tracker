@@ -44,36 +44,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 51,
    "listed": 51,
-   "share": 0.922,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 3,
    "codes": [
     "ADJ200",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "POLS11",
     "SOC48"
    ],
    "flagged": [
     "ADJ200",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "POLS11",
     "SOC48"
    ],
@@ -669,6 +678,6 @@
    "Catalog prints 'Area 1: Administrative of Justice' (sic)."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

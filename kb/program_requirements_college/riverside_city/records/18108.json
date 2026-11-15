@@ -44,30 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 33,
    "listed": 33,
-   "share": 0.939,
-   "missing": [
-    "ECO7",
-    "ECO8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
     "BUS80",
-    "CIS5",
-    "ECONC2001",
-    "ECONC2002"
+    "CIS5"
    ],
    "flagged": [
     "BUS80",
-    "CIS5",
-    "ECONC2001",
-    "ECONC2002"
+    "CIS5"
    ],
    "pass": true
   },
@@ -498,6 +503,6 @@
    "Program learning outcomes are copied as printed, including apparent typos ('theme and by which economic grow this achieved')."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38095615434"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

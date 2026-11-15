@@ -44,18 +44,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 11,
-   "share": 0.909,
-   "missing": [
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 7,
    "codes": [
     "CIS21",
     "CIS26A",
@@ -63,8 +68,7 @@
     "CIS27B",
     "CIS5",
     "CSC21",
-    "CSC5",
-    "MATHC2210"
+    "CSC5"
    ],
    "flagged": [
     "CIS21",
@@ -73,8 +77,7 @@
     "CIS27B",
     "CIS5",
     "CSC21",
-    "CSC5",
-    "MATHC2210"
+    "CSC5"
    ],
    "pass": true
   },
@@ -309,6 +312,6 @@
    "Codes recorded with hyphens as printed (e.g., CIS-1A for closed-list CIS 1A)."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

@@ -50,6 +50,33 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST25",
+     "listed": "HIS25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST29",
+     "listed": "HIS29",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST32",
+     "listed": "HIS32",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST33",
+     "listed": "HIS33",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -317,6 +344,6 @@
    "Program outcomes printed once for this ADT; one outcome contains the run-together text 'Native Americanpeoples', copied as printed."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

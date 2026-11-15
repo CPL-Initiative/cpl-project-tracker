@@ -22,26 +22,111 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 309,
+   "placed": 313,
    "listed": 313,
-   "share": 0.987,
-   "missing": [
-    "AHS1",
-    "AHS2",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST25",
+     "listed": "HIS25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST26",
+     "listed": "HIS26",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST29",
+     "listed": "HIS29",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST32",
+     "listed": "HIS32",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST35",
+     "listed": "HIS35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 10,
    "codes": [
     "ARE36",
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "ASL10",
     "DAND19",
     "ENGL16",
@@ -49,15 +134,11 @@
     "ENGL40",
     "ENGL41",
     "ENGL48",
-    "ENGL9",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL9"
    ],
    "flagged": [
     "ARE36",
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "ASL10",
     "DAND19",
     "ENGL16",
@@ -65,9 +146,7 @@
     "ENGL40",
     "ENGL41",
     "ENGL48",
-    "ENGL9",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL9"
    ],
    "pass": true
   },
@@ -2499,6 +2578,6 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38108461470"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

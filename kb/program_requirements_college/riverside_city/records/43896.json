@@ -50,6 +50,18 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST38",
+     "listed": "HIS38",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -302,6 +314,6 @@
    "The catalog's ETS-8 title is 'Introduction to Black Feminism and Womanism', which differs slightly from the closed-list title 'Introduction to Black Feminism'."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }
