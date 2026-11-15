@@ -794,6 +794,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_pilot/registry_read.json` | scripts: `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/reviewed_readings.json` | scripts: `kb/_program_requirements_file.py`, `kb/_program_requirements_load.py` | — |
+| `kb/program_requirements_pilot/sequences/*.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_n0486.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
@@ -830,7 +831,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/cid_descriptors.json` | tabs: `canonical-subj4` · scripts: `excel_to_dashboard.py`, `kb/_add_descriptions.py`, `kb/_analyze_witness_kinship.py`, `kb/_build_cr_reference.py`, `kb/_jev_agri_families.py`, `kb/_overmerge_dryrun.py`, `kb/_preseed_null_issuers.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_row_audit.py`, `kb/_seed_authority_codes.py`, `kb/_seed_coci_courses.py`, `kb/_seed_cx_common_courses.py`, `kb/_subj4_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_parse_tmc_pdfs.py` | — |
 | `kb/reference/cip_cte_certified_260715.json` | scripts: `kb/_build_cip_crosswalk.py` | — |
 | `kb/reference/cip_searchable_260715.xlsx` | scripts: `kb/_build_cip_crosswalk.py` | — |
-| `kb/reference/coci_course_list.xlsx` | scripts: `chatbox/build_coci_offerings.py`, `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_apply_crossdisc_remint.py`, `kb/_audit_control_number_claims.py`, `kb/_audit_subject_map.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_cip_fitcheck.py`, `kb/_build_coci_lookup.py`, `kb/_build_college_courses.py`, `kb/_build_course_top_consensus.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_build_program_course_graph.py`, `kb/_crossdisc_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_overmerge_dryrun.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_remint_apply.py`, `kb/_remint_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_build_college_courses.py` | — |
+| `kb/reference/coci_course_list.xlsx` | scripts: `chatbox/build_coci_offerings.py`, `excel_to_dashboard.py`, `kb/_analyze_witness_kinship.py`, `kb/_apply_crossdisc_remint.py`, `kb/_audit_control_number_claims.py`, `kb/_audit_subject_map.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_cip_fitcheck.py`, `kb/_build_coci_lookup.py`, `kb/_build_college_courses.py`, `kb/_build_commons_data_status.py`, `kb/_build_course_top_consensus.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_esl_fold_spotcheck.py`, `kb/_build_program_course_graph.py`, `kb/_crossdisc_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_overmerge_dryrun.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_remint_apply.py`, `kb/_remint_dryrun.py`, `kb/_suggest_unclassified.py`, `tmc/_build_college_courses.py` | — |
 | `kb/reference/coci_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_identities_rebuild.py`, `kb/_identities_rekey_dryrun.py`, `kb/_seed_coci_articulations.py`, `kb/_seed_coci_courses.py` | scripts: `kb/_seed_coci_courses.py` |
 | `kb/reference/coci_program_course_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/coci_program_file.csv` | none found | committed by: `program-course-fetch.yml` |
@@ -1276,6 +1277,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/zband_retire_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/zband_retire_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
+| `tmc/source_data/coci_program_export_*.csv` | scripts: `kb/_build_commons_data_status.py` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
 | `tools/first_light_candidates.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-art.yml` |
@@ -1526,5 +1528,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 986 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 988 file
 datasets · 195 external services · 594 consumers · 72 workflows · 41 tabs.

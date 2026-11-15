@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 986,
+  "file_datasets": 988,
   "external_services": 195,
   "consumers": 594,
   "workflows": 72,
@@ -7980,7 +7980,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     }
    ],
    "served": false,
@@ -7993,7 +7993,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 758
+     "line": 886
     }
    ],
    "served": false,
@@ -17477,6 +17477,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/program_requirements_pilot/sequences/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 537
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json": {
    "consumers": [
     {
@@ -18482,6 +18495,13 @@
      "direction": "read",
      "how": "literal",
      "line": 49
+    },
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 538
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -22691,7 +22711,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 472
+     "line": 474
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -26900,6 +26920,19 @@
      "direction": "read",
      "how": "inline",
      "line": 179
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tmc/source_data/coci_program_export_*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 538
     }
    ],
    "served": false,
