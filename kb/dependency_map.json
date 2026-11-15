@@ -35673,6 +35673,7 @@
   "kb/reference/coci_program_*.csv",
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",
+  "kb/reference/restricted_table_access.json",
   "kb/row_audit/*.md",
   "kb/status/harvest_heading_agreement.json",
   "kb/status/harvest_heading_agreement.md",
