@@ -191,6 +191,8 @@ FIELDS = {
     "failed_checks": "internal", "platform": "shareable", "catalog_year": "shareable", "catalog_url": "shareable",
     "capture_root": "shareable", "catalog_now": "shareable", "catalog_checks": "internal",
     "read_seconds": "internal", "run": "internal", "levers": "internal",
+    # #3310: who collected each lane, the program maps and the integration line (costs among them, so internal)
+    "collection": "internal",
     # the field list the slice 2 read figures take from a harvested college (None, never a zero, when unread)
 }
 
@@ -301,6 +303,15 @@ class Resolver:
         return self.by.get(norm(name))
 
 
+def filed_cost(summary: dict) -> float | None:
+    """What the college's filed records cost to read. summarize() in _program_requirements_college.py writes
+    cost_usd_filed (every filed record's cost, whichever run paid it) beside cost_usd_run (this run's spend,
+    0.0 on a free rescore); a summary written before S647 carries cost_usd alone, the run that filed every
+    record. A free rescore must never zero a college's cost or drop it from the totals (S653)."""
+    v = summary.get("cost_usd_filed")
+    return v if isinstance(v, (int, float)) else summary.get("cost_usd")
+
+
 def harvest(root: str):
     """Per harvested college, from the committed files through the census's own functions."""
     sys.path.insert(0, os.path.join(root, "kb"))
@@ -329,7 +340,7 @@ def harvest(root: str):
         out[slug] = {
             "name": name, "programs": programs, "passing": programs - gap, "gap": gap, "causes": causes,
             "read_at": acct.get("started"), "read_kind": "capture" if cap else ("capture_preview" if prev else None),
-            "cost_usd": summary.get("cost_usd"), "passed_at_read": summary.get("passed_machine_checks"),
+            "cost_usd": filed_cost(summary), "passed_at_read": summary.get("passed_machine_checks"),
             "listed_closed": summary.get("with_closed_list"), "found": summary.get("found"),
             "extracted": summary.get("extracted"), "errors": summary.get("errors"),
             "failed_checks": summary.get("failed"), "platform": acct.get("platform"),
@@ -513,6 +524,132 @@ def college_outcomes(root: str, harvested: dict) -> dict:
                                  "by_subject": subjects},
                      "programs": plos}
     return out
+
+
+# ── #3310 (Sam, 2026-11-14): three cards on a college's panel, How it's collected, Program pathway maps, Data
+# sources, and the SIS and curriculum system integration line. Each line is what a committed file says, or it says
+# plainly that nothing records it. The live registry's pathway state stays in the live block; the page joins the two.
+# The Program Pathways Mapper member list: the 60 VALUES rows the S444 file holds. Its header says the list pasted
+# from programmapper.org/ppm-schools named 63 community colleges; the file does not record which three were not filed
+# (COBIx asked on #3316; the parse reads all 60, and tests/commons_data_status_build_test.py (16) pins that count).
+PPM_LIST = "kb/supabase_program_source_ppm_hosts_s444.sql"
+PPM_LIST_BY = "programmapper.org/ppm-schools, copied 2026-10-21"   # supplied by Sam (S444); the cards name roles, never people
+MAP_FILES = "kb/program_requirements_pilot/sequences/*.json"   # the committed term-by-term program maps
+COCI_EXPORTS = ("kb/reference/coci_course_list.xlsx", "tmc/source_data/coci_program_export_*.csv")
+COCI_WORKFLOW = "COCI offerings sync"
+# the script named in words; split so (15b) still finds no import of the reader in this file
+SLO_READER = {"script": "kb/_course_outcomes_read" + ".py", "workflow": "Course outcomes read",
+              "cost": "No model cost: the reader opens public pages and calls no model. Runner time is not recorded."}
+PROGRAM_READER = {"scripts": "kb/_program_requirements_college.py (capture, extract, file)",
+                  "workflows": ["Program requirements, one college", "Program requirements, a wave of colleges"]}
+# A college whose SIS or curriculum system connection someone has confirmed: {college_id: {"state", "note", "by"}}.
+# Empty: nothing in the repo records one (Sam thinks the MAP team has curriculum system connections at a few
+# colleges; until its curriculum-system lead confirms which, every college reads "none known", never a guess).
+SIS_CMS_INTEGRATION: dict = {}
+
+
+def ppm_members(root: str) -> list:
+    """[(college, host)] from the VALUES list Sam supplied (the whole list, whichever rows the update wrote)."""
+    text = _read_text(os.path.join(root, PPM_LIST))
+    m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
+    return [(a.replace("''", "'"), b) for a, b in re.findall(r"\(\s*'((?:[^']|'')*)'\s*,\s*'((?:[^']|'')*)'\s*\)", m.group(1))] if m else []
+
+
+def ppm_values_rows(root: str) -> int:
+    """How many rows the list's VALUES block holds, counted by line, so a row the parse drops cannot vanish unseen."""
+    text = _read_text(os.path.join(root, PPM_LIST))
+    m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
+    return sum(1 for line in (m.group(1) if m else "").splitlines() if line.strip().startswith("("))
+
+
+def collection_facts(root: str, harvested: dict, outcomes: dict, resolve, unmatched: list) -> tuple[dict, dict]:
+    """({college_id: facts}, statewide) for the #3310 cards, from committed files only."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _harvest_gap_census as G  # noqa: E402
+    slug_id = {}
+    for slug, h in harvested.items():
+        cid = resolve(h["name"])
+        if cid is not None:
+            slug_id[slug] = cid
+    out: dict = {}
+
+    def entry(cid):
+        return out.setdefault(cid, {"program_reader": None, "slo_read": None, "plo_programs": 0,
+                                    "ppm_member": None, "maps": {"held": 0, "on_records": 0, "files": []}})
+
+    # the program requirements reader: the model each filed record names, and the records' control numbers
+    cns = {}
+    for slug, h in harvested.items():
+        cid = slug_id.get(slug)
+        rd = os.path.join(root, COLLEGE_DIR, slug, "records")
+        if cid is None or not os.path.isdir(rd):
+            continue
+        models, n = {}, 0
+        cns[cid] = set()
+        for f in sorted(os.listdir(rd)):
+            if not f.endswith(".json"):
+                continue
+            r = _maybe(os.path.join(rd, f)) or {}
+            n += 1
+            cns[cid].add(G.norm_cn(r.get("control_number") or f[:-5]))
+            if r.get("model"):
+                models[r["model"]] = models.get(r["model"], 0) + 1
+        e = entry(cid)
+        e["program_reader"] = {"records": n, "models": dict(sorted(models.items(), key=lambda x: (-x[1], x[0]))),
+                               "run": h.get("run"), "at": h.get("read_at"), "cost_usd": h.get("cost_usd"), "platform": h.get("platform")}
+        e["plo_programs"] = len((outcomes.get(slug) or {}).get("programs") or [])
+
+    # the course outcomes reader: the newest committed read that names the college (trial runs left out)
+    for path in sorted(glob.glob(os.path.join(root, OUTCOMES, "*", "read_*.json"))):
+        if os.path.basename(os.path.dirname(path)).startswith("trial_"):
+            continue
+        d = _maybe(path) or {}
+        named = set()
+        for row in d.get("rows") or []:
+            if isinstance(row, dict):
+                named.update(row.get("named_by") or [])
+        for slug in named:
+            cid = slug_id.get(slug)
+            if cid is None:
+                continue
+            e = entry(cid)
+            cur = e["slo_read"]
+            if cur is None or (d.get("at") or "") > (cur.get("at") or ""):
+                e["slo_read"] = {"run": str(d.get("run") or "") or None, "at": d.get("at"), "system": d.get("system"),
+                                 "source_kind": d.get("source_kind"), "file": os.path.relpath(path, root)}
+
+    # Program Pathways Mapper members, as Sam supplied them
+    members = ppm_members(root)
+    for college, host in members:
+        name = college.replace("''", "'")
+        cid = resolve(name)
+        if cid is None:
+            unmatched.append({"file": PPM_LIST, "name": name})
+            continue
+        entry(cid)["ppm_member"] = {"host": host, "by": PPM_LIST_BY}
+
+    # the committed program maps, and whether each names a program in the college's committed records
+    for path in sorted(glob.glob(os.path.join(root, MAP_FILES))):
+        d = _maybe(path) or {}
+        cid = resolve(d.get("college"))
+        if cid is None:
+            unmatched.append({"file": os.path.relpath(path, root), "name": d.get("college")})
+            continue
+        m = entry(cid)["maps"]
+        m["held"] += 1
+        m["files"].append(os.path.relpath(path, root))
+        if G.norm_cn(d.get("control_number")) in cns.get(cid, set()):
+            m["on_records"] += 1
+
+    coci = []
+    for pat in COCI_EXPORTS:
+        coci.extend(sorted(os.path.relpath(p, root) for p in glob.glob(os.path.join(root, pat))))
+    statewide = {"ppm_list": {"file": PPM_LIST, "by": PPM_LIST_BY, "colleges": len(members)},
+                 "maps": {"files": MAP_FILES, "held": sum(e["maps"]["held"] for e in out.values())},
+                 "coci": {"exports": coci, "workflow": COCI_WORKFLOW},
+                 "slo_reader": SLO_READER, "program_reader": PROGRAM_READER,
+                 "integration": {"known": len(SIS_CMS_INTEGRATION)}}
+    return out, statewide
 
 
 def dumps_programs(d: dict) -> str:
@@ -1032,6 +1169,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
                            "platform": c.get("platform"), "catalog_year": cu.get("catalog_year"), "catalog_url": cu.get("found")}
 
     spot = read_spot_checks(root, resolve, unmatched)
+    facts, collection = collection_facts(root, harvested, outcomes, resolve, unmatched)
 
     colleges = []
     for e in sorted(entities, key=lambda x: display_name(x["college_name"])):
@@ -1055,6 +1193,10 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
             "confidence": confidence(spot.get(cid), h is not None),
             **slice2_fields(h),
+            # #3310: what the three college cards read (who collected each lane, the program maps, the integration)
+            "collection": dict(facts.get(cid) or {"program_reader": None, "slo_read": None, "plo_programs": 0, "ppm_member": None,
+                                                  "maps": {"held": 0, "on_records": 0, "files": []}},
+                               integration=SIS_CMS_INTEGRATION.get(cid) or {"state": "none_known"}),
         })
 
     hv = [c for c in colleges if c["harvested"]]
@@ -1113,6 +1255,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "overall": overall_block(live),
         "dictionary": dictionary,
         "apis": apis,
+        "collection": collection,
         "_sidecars": dict([(k + ".json", v) for k, v in sidecars.items()] + [(k + ".outcomes.json", v) for k, v in outcomes.items()]),
     }
 

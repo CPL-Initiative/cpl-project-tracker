@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 652,
-  "moniker": "SkyAvocet",
-  "run": "the CPL Queue routine",
+  "session": 653,
+  "moniker": "SkyGodwit",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_653_handoff.md",
+  "handoff": "docs/session_654_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-14T15:31:10Z",
+  "written_at": "2026-11-14T18:50:31Z",
   "project": "course",
   "next_step": {
-    "title": "The honors_of field, then the 508 pairs, then the Honors mints",
-    "text": "The two Honors bot rows are deleted. Next: build the honors_of field in the curation apply with one reader on the rewiring, then two-way equivalence rows for all 508 pairs, then new Honors M-IDs numbered base plus H on the CCN pattern, and HUMA M10OI merged into M1110."
+    "title": "The Honors rows, step 2",
+    "text": "Step 1's two rows are live. Step 2 writes 347 rows where two independent derivations find the pair, after a third review and a check run on the day of the apply; the base plus H mints follow."
   },
   "changes": [
+    {
+      "at": "2026-11-14T18:44:02Z",
+      "text": "Honors step 1 applied: HUMA M10ME is the Honors course of HUMA M1110 and LIBR M10CJ of LIBR M1040, and the two base titles carry the S652 stamp. A rollback file undoes it."
+    },
+    {
+      "at": "2026-11-14T18:07:39Z",
+      "text": "The honors_of field is built: the curation apply carries it, a fold that would join an Honors course to its base is refused, and no M-ID is minted with an H number by the allocator."
+    },
     {
       "at": "2026-11-14T15:21:00Z",
       "text": "A follow-up migration keeps the titles World Religions and Media & Information Literacy and holds each Honors pair apart with a dismissal row, so the matcher does not propose them again."

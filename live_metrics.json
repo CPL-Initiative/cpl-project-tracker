@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-14T13:44:11.100Z",
+  "scraped_at": "2026-11-14T20:24:12.702Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -315,7 +315,7 @@
           "avgTranscribed": 0.07811959903214656,
           "criteriaMetCount": 2,
           "militaryStudents": 1823,
-          "nonMilitaryStudents": 1073,
+          "nonMilitaryStudents": 1074,
           "apprenticeStudents": 7,
           "savings": 23829557.5,
           "yearImpact": 83721946,
@@ -1780,7 +1780,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "28,493"
+          "value": "28,494"
         },
         {
           "label": "Apprentice",
@@ -1898,7 +1898,7 @@
     "Savings": 413084232.75,
     "YearImpact": 1668290303.3999999,
     "MilitaryStudents": 31960,
-    "NonMilitaryStudents": 28493,
+    "NonMilitaryStudents": 28494,
     "AprenticeStudents": 960,
     "AverageUnits": 4.794503455018477,
     "TranscribedAverage": 1.413486171640678
