@@ -411,8 +411,40 @@ check("the program reads CPL Initiative, outside Sam's title",
     !d.getElementById("btn-sierra") && /sierra\/sidebar\.js/.test(HTML));
 }
 
+// ── (i5) the Print or save menu stays on screen (S655 UI pass) ──
+// At 600px the header's row ends with the menu's summary, and its list, opened from
+// the summary's left edge, ran 2px past the screen and scrolled the page sideways.
+// jsdom has no layout, so the list's box is stubbed: past the edge it flips to the
+// summary's right edge; inside it, it stays.
+const menuCheck = (async () => {
+  const w = new JSDOM(HTML, { runScripts: "outside-only", pretendToBeVisual: true }).window;
+  w.fetch = () => Promise.reject(new Error("offline in the test"));
+  w.console.warn = () => {};
+  const ready = new Promise((r) => w.document.addEventListener("DOMContentLoaded", r));
+  w.eval(JS);
+  if (w.document.readyState === "loading") await ready;   // factsheet.js wires the menu at load
+  const menu = w.document.querySelector(".save-menu");
+  const list = menu && menu.querySelector(".save-menu-list");
+  Object.defineProperty(w.document.documentElement, "clientWidth", { value: 600, configurable: true });
+  const openAt = (right) => {
+    list.getBoundingClientRect = () => ({ left: right - 134, right, top: 0, bottom: 0, width: 134, height: 0 });
+    menu.open = false; menu.dispatchEvent(new w.Event("toggle"));
+    menu.open = true; menu.dispatchEvent(new w.Event("toggle"));
+    return menu.classList.contains("is-end");
+  };
+  check("(i5) a list that would pass the right edge opens from the summary's right edge", !!list && openAt(602) === true);
+  check("(i5) a list that fits keeps its left edge", !!list && openAt(560) === false);
+  menu.open = false; menu.dispatchEvent(new w.Event("toggle"));
+  check("(i5) closing the menu clears the flip", !menu.classList.contains("is-end"));
+  check("(i5) CSS: the flip anchors the list to the right",
+    /\.save-menu\.is-end \.save-menu-list\s*\{\s*left:\s*auto;\s*right:\s*0;\s*\}/.test(CSS));
+  w.close();
+})();
+
 // ── report ──
+menuCheck.catch((e) => check("(i5) the menu check ran: " + e.message, false)).then(() => {
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
 console.log("\n" + (failed ? failed + " FAILED" : "All " + results.length + " checks passed"));
 process.exit(failed ? 1 : 0);
+});

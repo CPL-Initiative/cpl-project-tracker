@@ -163,6 +163,8 @@ a:hover { text-decoration-thickness: 2px; }
   background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
   padding: 10px 14px; white-space: nowrap;
 }
+/* factsheet.js sets .is-end when the list would pass the screen's right edge. */
+.save-menu.is-end .save-menu-list { left: auto; right: 0; }
 @media (max-width: 560px) { .save-menu-list { position: static; border: 0; padding: 6px 0 0; } }
 .live-chip {
   display: inline-flex; align-items: center; gap: 7px;
@@ -349,7 +351,7 @@ table.data tbody tr:nth-child(even) { background: var(--surface-subtle); }
 table.data td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
 /* Row-header cells (<th scope="row">) read like the body, not like a column head. */
 table.data tbody th { font-weight: 400; }
-table.data tr.total td, table.data tr.total th { font-weight: 800; background: var(--surface-muted); border-top: 2px solid var(--border-strong); }
+table.data tr.total td, table.data tr.total th { font-weight: 700; background: var(--surface-muted); border-top: 2px solid var(--border-strong); }
 
 /* ── Statewide exhibits — consolidated collapsible listing with centered columns ── */
 .sw-grid { display: block; }
@@ -370,7 +372,7 @@ table.data tr.total td, table.data tr.total th { font-weight: 800; background: v
 .sw-grid .sw-col { text-align: center; font-family: var(--font-data); font-variant-numeric: tabular-nums; line-height: 1.15; }
 .sw-head .sw-col { color: var(--muted); }
 .sw-grid summary .sw-col { font-weight: 700; color: var(--ink); }
-.sw-total { font-weight: 800; background: var(--surface-muted); border: 1px solid var(--border);
+.sw-total { font-weight: 700; background: var(--surface-muted); border: 1px solid var(--border);
   border-top: 2px solid var(--border-strong); border-radius: var(--radius-sm); margin-top: 8px; }
 .sw-total .sw-sec { color: var(--ink); }
 .sw-grid .sw-list { margin: 0; padding: 4px 14px 12px 32px; columns: 2; column-gap: 26px; font-size: .9rem; list-style: disc; }

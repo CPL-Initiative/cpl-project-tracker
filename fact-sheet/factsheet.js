@@ -106,6 +106,19 @@
     if (menu) menu.addEventListener('click', function (e) {
       if (e.target.closest && e.target.closest('.save-menu-list button')) menu.open = false;
     });
+    // The list opens from the summary's left edge. Where the header's row puts
+    // the summary near the right edge (measured S655 at 600px), that list ran
+    // past the screen and the page scrolled sideways; it then opens from the
+    // summary's right edge instead.
+    if (menu) menu.addEventListener('toggle', function () { alignSaveMenu(menu); });
+  }
+
+  function alignSaveMenu(menu) {
+    menu.classList.remove('is-end');
+    if (!menu.open) return;
+    var list = menu.querySelector('.save-menu-list');
+    if (!list) return;
+    if (list.getBoundingClientRect().right > document.documentElement.clientWidth) menu.classList.add('is-end');
   }
 
   function num(n) { var v = Number(n); return isNaN(v) ? String(n) : v.toLocaleString('en-US'); }
