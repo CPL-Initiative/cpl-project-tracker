@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T06:22:16Z",
+ "written_at": "2026-11-15T07:35:02Z",
  "rows": [
   {
    "key": "requirements",
@@ -367,7 +367,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41Z",
+    "at": "2026-11-14T09:44:58-08:00",
     "every_hours": null
    },
    "facts": {
@@ -599,7 +599,7 @@
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-14T10:20:16Z",
+    "at": "2026-11-15T04:04:14Z",
     "every_hours": null
    },
    "sources": [
