@@ -1,0 +1,781 @@
+{
+ "run": "43703211500",
+ "applied_at": "2026-11-15T13:04:42+00:00",
+ "github_run": "43716920376",
+ "result": {
+  "new": 1,
+  "run": "43703211500",
+  "gone": 0,
+  "colleges": 11,
+  "seen_again": 36
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 47,
+   "college": "College of the Redwoods",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Keith Flamer",
+   "email": "",
+   "source_url": "https://www.redwoods.edu/about/president/index.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 48,
+   "college": "Columbia College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President",
+   "name": "Dr. Chad Redwing",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/administration/organizational_chart.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 49,
+   "college": "Columbia College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records and Veterans Benefits",
+   "name": "Lesley Brunner",
+   "email": "brunnerl@yosemite.edu",
+   "source_url": "https://gocolumbia.edu/admissions/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 50,
+   "college": "Columbia College",
+   "position": "district_ceo",
+   "title_as_printed": "YCCD Chancellor",
+   "name": "Dr. Lena Tran",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/news/chancellortran.html/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 51,
+   "college": "Compton College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Keith Curry",
+   "email": "",
+   "source_url": "https://www.compton.edu/about/presidentceo/index.aspx",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 52,
+   "college": "Contra Costa College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Kimberly R. Rogers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.contracosta.edu/office-of-the-president/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 53,
+   "college": "Copper Mountain College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Daren Otten, Ed.D",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 54,
+   "college": "Copper Mountain College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services, CIO",
+   "name": "Michael Reese",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 55,
+   "college": "Copper Mountain College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Jane Kwon",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 56,
+   "college": "Copper Mountain College",
+   "position": "vpbs",
+   "title_as_printed": "Chief Business Officer",
+   "name": "Meredith Plummer",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 57,
+   "college": "Copper Mountain College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer & Transfer Center Coordinator",
+   "name": "Karen Hill",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 58,
+   "college": "Copper Mountain College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Distance Education, and Learning Resources",
+   "name": "Eva Hedger",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 59,
+   "college": "Copper Mountain College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction, Career Technical Education, and Career Services",
+   "name": "Evelyn Sheffield",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 60,
+   "college": "Crafton Hills College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Kevin Horan",
+   "email": "khoran@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 61,
+   "college": "Crafton Hills College",
+   "position": "vpaa",
+   "title_as_printed": "V.P. of Instruction",
+   "name": "Dr. Keith Wurtz",
+   "email": "kwurtz@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 62,
+   "college": "Cuesta College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jill Stearns",
+   "email": "jill_stearns@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 63,
+   "college": "Cuesta College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Jason Curtis",
+   "email": "jason_curtis@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 64,
+   "college": "Cuesta College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President, Student Success and Support Programs",
+   "name": "Dr. Elizabeth Coria",
+   "email": "elizabeth_coria@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 65,
+   "college": "Cuesta College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions, Student Records, and Registration",
+   "name": "Jacquelyn Contreras",
+   "email": "jacquelyn_contreras@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 66,
+   "college": "Cuesta College",
+   "position": "articulation_officer",
+   "title_as_printed": "Academic Counselor/Articulation Officer",
+   "name": "Dina Hallmark",
+   "email": "dina_hallmark@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 67,
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: Applied Behavioral Sciences, Business Education, Social Sciences",
+   "name": "David Kadanoff",
+   "email": "david_kadanoff@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 68,
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: English, Fine Arts, Performing Arts, Language and Communications",
+   "name": "Aubrey Kuan Roderick",
+   "email": "aubrey_kuanroderick@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 69,
+   "college": "Cypress College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Scott W. Thayer",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 70,
+   "college": "Cypress College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Luis Gonzalez",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 71,
+   "college": "Cypress College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Dr. Paul de Dios",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 72,
+   "college": "Cypress College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Dr. Tony Jake",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 73,
+   "college": "Cypress College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions and Records",
+   "name": "Dr. David Mosely Booze",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/admissions-records/",
+   "seen_run": "41310748240",
+   "first_seen": "2026-11-01T13:33:28.166181+00:00",
+   "last_seen": "2026-11-01T13:33:28.166181+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 76,
+   "college": "Diablo Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Monica Chahal",
+   "email": "mchahal@dvc.edu",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 77,
+   "college": "Diablo Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Senior Dean, Curriculum and Instruction",
+   "name": "Nikki Moultrie",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 78,
+   "college": "Diablo Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business and Administrative Services",
+   "name": "Sara Parker",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 117,
+   "college": "Diablo Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Equity and Student Services/Title IX Coordinator",
+   "name": "Vicki Ferguson",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "sheet153-equity",
+   "first_seen": "2026-11-01T14:43:45.369056+00:00",
+   "last_seen": "2026-11-01T14:43:45.369056+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 118,
+   "college": "Diablo Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Equity and Instruction",
+   "name": "Joseph Gorga",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "sheet153-equity",
+   "first_seen": "2026-11-01T14:43:45.369056+00:00",
+   "last_seen": "2026-11-01T14:43:45.369056+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 79,
+   "college": "El Camino College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Brenda Thames, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 80,
+   "college": "El Camino College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Carlos Lopez, M.S.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 81,
+   "college": "El Camino College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Jessie Wang, CPA, CGMA, CITP, MBA",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 119,
+   "college": "El Camino College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Equity and Student Services",
+   "name": "Jeff Stephenson, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "sheet153-equity",
+   "first_seen": "2026-11-01T14:43:45.369056+00:00",
+   "last_seen": "2026-11-01T14:43:45.369056+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "College of the Redwoods",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Keith Flamer",
+   "email": "",
+   "source_url": "https://www.redwoods.edu/about/president/index.php"
+  },
+  {
+   "college": "Columbia College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President",
+   "name": "Dr. Chad Redwing",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/administration/organizational_chart.html"
+  },
+  {
+   "college": "Columbia College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records and Veterans Benefits",
+   "name": "Lesley Brunner",
+   "email": "brunnerl@yosemite.edu",
+   "source_url": "https://gocolumbia.edu/admissions/index.html"
+  },
+  {
+   "college": "Columbia College",
+   "position": "district_ceo",
+   "title_as_printed": "YCCD Chancellor",
+   "name": "Dr. Lena Tran",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/news/chancellortran.html/"
+  },
+  {
+   "college": "Compton College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Keith Curry",
+   "email": "",
+   "source_url": "https://www.compton.edu/about/presidentceo/index.aspx"
+  },
+  {
+   "college": "Contra Costa College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Kimberly R. Rogers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.contracosta.edu/office-of-the-president/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer & Transfer Center Coordinator",
+   "name": "Karen Hill",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Daren Otten, Ed.D",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction, Career Technical Education, and Career Services",
+   "name": "Evelyn Sheffield",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Distance Education, and Learning Resources",
+   "name": "Eva Hedger",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services, CIO",
+   "name": "Michael Reese",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpbs",
+   "title_as_printed": "Chief Business Officer",
+   "name": "Meredith Plummer",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Jane Kwon",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Crafton Hills College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Kevin Horan",
+   "email": "khoran@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php"
+  },
+  {
+   "college": "Crafton Hills College",
+   "position": "vpaa",
+   "title_as_printed": "V.P. of Instruction",
+   "name": "Dr. Keith Wurtz",
+   "email": "kwurtz@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "articulation_officer",
+   "title_as_printed": "Academic Counselor/Articulation Officer",
+   "name": "Dina Hallmark",
+   "email": "dina_hallmark@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jill Stearns",
+   "email": "jill_stearns@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions, Student Records, and Registration",
+   "name": "Jacquelyn Contreras",
+   "email": "jacquelyn_contreras@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: English, Fine Arts, Performing Arts, Language and Communications",
+   "name": "Aubrey Kuan Roderick",
+   "email": "aubrey_kuanroderick@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: Applied Behavioral Sciences, Business Education, Social Sciences",
+   "name": "David Kadanoff",
+   "email": "david_kadanoff@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Jason Curtis",
+   "email": "jason_curtis@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President, Student Success and Support Programs",
+   "name": "Dr. Elizabeth Coria",
+   "email": "elizabeth_coria@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cypress College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Scott W. Thayer",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions and Records",
+   "name": "Dr. David Mosely Booze",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/admissions-records/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Luis Gonzalez",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Dr. Tony Jake",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Dr. Paul de Dios",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Monica Chahal",
+   "email": "mchahal@dvc.edu",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Senior Dean, Curriculum and Instruction",
+   "name": "Nikki Moultrie",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Equity and Instruction",
+   "name": "Joseph Gorga",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business and Administrative Services",
+   "name": "Sara Parker",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Equity and Student Services/Title IX Coordinator",
+   "name": "Vicki Ferguson",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "El Camino College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Brenda Thames, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Carlos Lopez, M.S.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Jessie Wang, CPA, CGMA, CITP, MBA",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Equity and Student Services",
+   "name": "Jeff Stephenson, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "Columbia College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Career Technical Education",
+   "name": "Carolyn Shipp",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/administration/organizational_chart.html"
+  }
+ ]
+}
