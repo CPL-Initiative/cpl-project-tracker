@@ -46,30 +46,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 27,
    "listed": 29,
-   "share": 0.759,
+   "share": 0.931,
    "missing": [
     "BIOSC101",
-    "BIOSC102",
-    "BIOSC116",
-    "BIOSC117",
-    "BIOSC120",
-    "BIOSC139",
-    "BIOSC140"
+    "BIOSC102"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 6,
    "codes": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL120",
-    "BIOL139",
-    "BIOL140",
     "BIOLC1000",
     "BIOLC1001",
     "KINES240",
@@ -78,11 +68,6 @@
     "NUTRI120"
    ],
    "flagged": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL120",
-    "BIOL139",
-    "BIOL140",
     "BIOLC1000",
     "BIOLC1001",
     "KINES240",
@@ -486,5 +471,6 @@
    "Titles printed for KINES252 ('Group Personal Training') and PH230 ('Advanced First Aid/EMR/CPR and Basic Life Support') differ slightly from the closed list titles."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }
