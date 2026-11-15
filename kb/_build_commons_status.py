@@ -801,7 +801,9 @@ def pair_readings(rows):
     for r in rows:
         p = r.get("pair") or []
         n = p[0].get("n") if p else None
-        if isinstance(n, int) and not isinstance(n, bool):
+        of = p[0].get("of") if p else None
+        # Both counts or neither: a missing universe would read as a negative remaining (COBIx on #3375).
+        if isinstance(n, int) and not isinstance(n, bool) and isinstance(of, int) and not isinstance(of, bool):
             person = p[1].get("n") if len(p) > 1 and isinstance(p[1].get("n"), int) else None
             out[r.get("key")] = [n, p[0].get("of"), person]
     return out

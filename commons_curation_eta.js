@@ -81,12 +81,19 @@
       if (typeof n !== "number" || typeof of !== "number") return null;
       var at = function (k) { var x = byDay[dstr(k)]; return x ? { n: x[0], of: x[1], person: x[2] } : null; };
       var d0 = back(byDay, asOf), d7 = d0 == null ? null : back(byDay, d0 - 7), d14 = d7 == null ? null : back(byDay, d7 - 7);
+      function rem(k) { var x = at(k); return x && typeof x.n === "number" && typeof x.of === "number" ? x.of - x.n : null; }
       function win(a, b) {
-        if (a == null || b == null || a === b) return null;
+        if (a == null || b == null || a === b || rem(a) == null || rem(b) == null) return null;
         var A = at(a), Bv = at(b), days = a - b;
-        var net = ((Bv.of - Bv.n) - (A.of - A.n)) / days;   // the fall of remaining work a day
-        var ppl = A.person != null && Bv.person != null ? Math.max(0, A.person - Bv.person) / days : 0;
-        return { net: net, people: ppl, other: net - ppl, days: days, from: b, to: a };
+        var net = (rem(b) - rem(a)) / days;   // the fall of remaining work a day
+        var confirmed = A.person != null && Bv.person != null ? Math.max(0, A.person - Bv.person) / days : 0;
+        /* People's share counts only the confirmations that lowered the remaining work (COBIx on #3375): where the
+           universe grows as fast as people stamp, their confirmations move nothing, and a people chip must not date it. */
+        var ppl = Math.max(0, Math.min(confirmed, net));
+        /* How many days in the window the remaining work fell: a pace from one day's step says so (COBIx on #3375). */
+        var fell = 0;
+        for (var k = b + 1; k <= a; k++) { var r0 = rem(k - 1), r1 = rem(k); if (r0 != null && r1 != null && r1 < r0) fell++; }
+        return { net: net, people: ppl, confirmed: confirmed, other: net - ppl, days: days, fell: fell, from: b, to: a };
       }
       return { key: R.key, name: R.name, unit: R.unit, n: n, of: of, person: person, remaining: Math.max(0, of - n),
         pace: { soonest: win(d0, d7), latest: win(d7, d14) } };
@@ -114,7 +121,7 @@
         var next = i < ds.length ? ds[i].at : Infinity, span = next - t;
         if (d > 0 && rem / d <= span) return t + Math.ceil(rem / d);
         if (i === ds.length) return null;
-        if (d > 0) rem -= d * span;
+        rem -= d * span;   // work that grows before a procedure's start carries forward (COBIx on #3375)
         t = next; rem = Math.max(0, rem - ds[i].n);
         if (rem <= 0) return t;
       }
@@ -151,8 +158,10 @@
   }
   function paceWords(w) {
     if (!w) return "no week the series can date";
-    if (w.net <= 0) return "no net fall (" + fmt(Math.round(w.net * w.days)) + " in " + w.days + " days)";
-    return fmt(Math.round(w.net * w.days)) + " fewer in " + w.days + " days, " + fmt(Math.round(w.people * w.days)) + " of them confirmed by a person";
+    var conf = Math.round(w.confirmed * w.days);
+    if (w.net <= 0) return "no net fall (" + fmt(Math.round(w.net * w.days)) + " in " + w.days + " days" + (conf ? "; " + fmt(conf) + " confirmed by a person moved none of it" : "") + ")";
+    return fmt(Math.round(w.net * w.days)) + " fewer in " + w.days + " days, " + fmt(Math.round(w.people * w.days)) + " of them by people" +
+      (w.fell <= 2 ? "; it fell on " + (w.fell === 1 ? "one day" : "two days") + " of " + w.days + ", so the pace rests on one step" : "");
   }
 
   function draw(root, B, S) {
@@ -207,7 +216,7 @@
     }
     if (S.assumptions) {
       box.appendChild(el("div", { cls: "cur-pop cur-assume", "data-cur-assumptions": "" }, [
-        el("p", { cls: "cur-note", text: "Each reference's remaining work is its universe less what is settled. Its pace is the net fall of that work a day over the window, from the daily series of the Commons status; new work arriving (new titles, new cards) counts against it. People's share of the pace is what they confirmed. A procedure chip settles its share of its block on its start day; a people chip multiplies people's share from now, up to 8 times. A reference is dated only when its remaining work falls. These are projections, not commitments." })]));
+        el("p", { cls: "cur-note", text: "Each reference's remaining work is its universe less what is settled. Its pace is the net fall of that work a day over the window, from the daily series of the Commons status; new work arriving (new titles, new cards) counts against it. People's share of the pace is what they confirmed that lowered the remaining work; a confirmation that moved none of it does not count. Work that grows before a procedure's start carries forward. A procedure chip settles its share of its block on its start day; a people chip multiplies people's share from now, up to 8 times. A reference is dated only when its remaining work falls. These are projections, not commitments." })]));
     }
 
     var tb = el("tbody");

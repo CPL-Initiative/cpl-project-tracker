@@ -56,6 +56,18 @@ const S1 = C.fresh(); S1.on["cr|#cr-reference/open"] = true; S1.share["cr|#cr-re
 check("(2) ⭐ a procedure that settles its whole block on its start day dates the reference that day", day(C.finish(B, cr, S1).day) === "2026-12-15" && C.finish(B, cr, S1).moved);
 const S2 = C.fresh(); S2.people.curator = true;
 check("(2) a second curator doubles people's pace: the exhibits finish in half the time", day(C.finish(B, ex, S2).day) === "2026-12-28");
+// COBIx on #3375: confirmations that do not lower the remaining work give a people chip nothing to multiply.
+const F2 = fixture(); Object.keys(F2.history.pairs).forEach((d, i) => { F2.history.pairs[d].exhibit = [1000 + 10 * i, 2000 + 10 * i, 500 + 30 * i]; });
+F2.status.rows[0].pair = [{ n: 1140, of: 2140 }, { n: 920 }];
+const Bx = C.base(F2.status, F2.history), ex2 = Bx.refs.filter((r) => r.key === "exhibit")[0], Sx = C.fresh(); Sx.people.curator = true;
+check("(2) ⭐ a people chip multiplies only confirmations that lowered the remaining work: a universe that grows as fast as people stamp stays undated",
+  ex2.pace.soonest.confirmed > 0 && ex2.pace.soonest.people === 0 && C.finish(Bx, ex2, Sx).day == null);
+// Work that grows before a procedure starts carries forward: a 100% procedure still dates the day it starts, and a 90% one is later than with no growth.
+const F3 = fixture(); Object.keys(F3.history.pairs).forEach((d, i) => { F3.history.pairs[d].cr = [400, 2000 + 10 * i, 90]; });
+F3.status.rows[2].pair = [{ n: 400, of: 2140 }, { n: 90 }];
+const B3 = C.base(F3.status, F3.history), cr3 = B3.refs.filter((r) => r.key === "cr")[0], S4 = C.fresh();
+S4.on["cr|#cr-reference/open"] = true; S4.share["cr|#cr-reference/open"] = 1; S4.start["cr|#cr-reference/open"] = 30;
+check("(2) work that grows before a procedure's start carries forward: the block alone no longer clears it", C.finish(B3, cr3, S4).day == null);
 const S3 = C.fresh(); S3.on["cr|#cr-reference/open"] = true;
 check("(2) a procedure that settles 70% leaves the rest with people, so a reference people do not move stays undated", C.finish(B, cr, S3).day == null);
 
@@ -77,8 +89,8 @@ firstProc.click();
 const b2 = root.querySelector("[data-cur-band]");
 check("(3) a procedure chip turned on is pressed and opens its share and start", b2.querySelector('[aria-label="Procedures"] .cur-pill').getAttribute("aria-pressed") === "true" &&
   !!b2.querySelector("[data-cur-share]") && !!b2.querySelector("[data-cur-start]"));
-check("(3) ⭐ the builder records each reference's daily settled count, universe and person count, and the series reaches back to October 18",
-  /def pair_readings/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")) && HIST.pairs && HIST.pairs["2026-10-18"] && Array.isArray(HIST.pairs["2026-10-18"].exhibit));
+check("(3) ⭐ the builder records each reference's daily settled count, universe and person count; the series holds at least 15 days (it keeps 60)",
+  /def pair_readings/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")) && HIST.pairs && Object.keys(HIST.pairs).length >= 15 && Object.values(HIST.pairs).every((d) => !d.exhibit || (Number.isInteger(d.exhibit[0]) && Number.isInteger(d.exhibit[1]))));
 
 // (4) Sam's ask on the tab.
 const CJS = fs.readFileSync("commons.js", "utf8");
