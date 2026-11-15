@@ -2004,9 +2004,8 @@ def main():
     if dropped:
         findings.append(dropped)
 
-    no_settings = rule_handoff_missing_conductor_settings(ROOT)
-    if no_settings:
-        findings.append(no_settings)
+    # handoff_missing_conductor_settings is not run: Sam retired conductor mode
+    # on 2026-11-15 (cost), so a handoff carries no Conductor settings block.
 
     esl_due = rule_esl_monthly_pass_due(ROOT)
     if esl_due:
