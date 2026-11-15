@@ -31,7 +31,7 @@ Start with COBIx's latest brief on issue #3358, then this file.
 
 ## First things, in order
 
-1. **#3365 and #3366:** if either is still open, read the thread's last page (COBIx), then merge on a green `test` on the
+1. **#3365** (#3366 merged `fe1fb426`): if it is still open, read the thread's last page (COBIx), then merge on a green `test` on the
    current head, confirmed by `git log origin/main`.
 2. **For Sam or COBIx, not a session call** (`riverside-plain-2-0-siblings-kept-s659`): the four plain siblings' filed
    records were read from their successors' pages, which S653 calls wrong, and `keep_no_read`
@@ -61,7 +61,7 @@ and two review rounds before the rest goes to Sam or COBIx. Filter any workflow-
 | PR | State | Next |
 |---|---|---|
 | #3365 | open; trace plus this checkpoint | First things 1 |
-| #3366 | open; code only | First things 1 |
+| #3366 | merged `fe1fb426` | the next display build carries it |
 | #3284, #3293 | drafts; keep | First things 4, 6 |
 | #2894 | Sam's | none |
 
@@ -85,6 +85,6 @@ carry another program's list.
 This session holds no PR subscription, no check-in and no artifact watch. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current; card 1 waits on Sam).
 
-Cost: not metered here (`get_session` was not among this session's tools). No subagent, no paid runner call; one free page read. Substantive PRs merged: see the merge line below.
+Cost: not metered here (`get_session` was not among this session's tools). No subagent, no paid runner call; one free page read. Substantive PRs merged: 2 (#3366 `fe1fb426`, and #3365's Riverside trace, which also carries this checkpoint). Peak context about 190,000 tokens.
 
 Greetings, you are SkyPlover (Session 660), see SkyWhimbrel's handoff — `docs/session_660_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_660_handoff.md) — let's keep rolling with our queue.
