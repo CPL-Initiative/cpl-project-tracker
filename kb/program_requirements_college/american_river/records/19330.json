@@ -46,40 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 11,
    "listed": 15,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.733,
+   "missing": [
+    "HIST310",
+    "HIST311",
+    "HIST483",
+    "HIST484"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "HISTC1001",
-     "listed": "HIST310",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1001H",
-     "listed": "HIST483",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1002",
-     "listed": "HIST311",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1002H",
-     "listed": "HIST484",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -327,6 +320,5 @@
    "The program table spans a repeated 'Course Code Course Title Units' header (apparent page/column break) but the elective list appears continuous through POLS 342 and the 18-unit total."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

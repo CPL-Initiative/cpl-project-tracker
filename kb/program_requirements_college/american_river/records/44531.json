@@ -46,55 +46,42 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 7,
    "listed": 14,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.5,
+   "missing": [
+    "HSER300",
+    "HSER310",
+    "HSER330",
+    "HSER340",
+    "HSER360",
+    "HSER365",
+    "HSER498"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "SWCD300",
-     "listed": "HSER300",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD310",
-     "listed": "HSER310",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD330",
-     "listed": "HSER330",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD340",
-     "listed": "HSER340",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD360",
-     "listed": "HSER360",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD365",
-     "listed": "HSER365",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "SWCD498",
-     "listed": "HSER498",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 7,
+   "codes": [
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD365",
+    "SWCD498"
+   ],
+   "flagged": [
+    "SWCD300",
+    "SWCD310",
+    "SWCD330",
+    "SWCD340",
+    "SWCD360",
+    "SWCD365",
+    "SWCD498"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -328,6 +315,5 @@
    "Careers entry taken from the description: 'entry level counseling and case management positions in behavioral health programs that treat individuals with persistent mental illness'."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

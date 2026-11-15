@@ -78,7 +78,8 @@
     23.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -265,6 +266,5 @@
    "Outcome 3 for the AA prints 'Filipinos' while outcome 4 prints 'FIlipinxs'; copied as printed."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39056434592"
+ "extracted_run": "39056434592"
 }

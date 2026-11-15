@@ -320,6 +320,10 @@ jobs:
       # from committed files (openpyxl, installed at the top of this job; about 35 s).
       - name: Course-id route (suffix reading, self-recall, retired alias pairs)
         run: python3 tests/course_id_route_test.py
+      # A reconcile from filed pages never turns a mid-table window passing through the program-total fill
+      # (American River 07206, S655); committed records only, about 1 s.
+      - name: Reconcile window and fill (American River 07206)
+        run: python3 tests/reconcile_window_fill_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)

@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 27,
    "listed": 28,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.964,
+   "missing": [
+    "ECON302"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON302",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -386,6 +385,5 @@
    "The preceding Marketing A.A. section and the following certificates (Marketing Essentials, Retail Management (WAFC)) were not used."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

@@ -46,35 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 16,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.842,
+   "missing": [
+    "ENGWR481",
+    "HIST483",
+    "HIST484"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ENGL481",
-     "listed": "ENGWR481",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1001H",
-     "listed": "HIST483",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "HISTC1002H",
-     "listed": "HIST484",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "ENGL481",
+    "HISTC1001H",
+    "HISTC1002H"
+   ],
+   "flagged": [
+    "ENGL481",
+    "HISTC1001H",
+    "HISTC1002H"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -318,6 +313,5 @@
    "Text after page 604 belongs to the General Science A.S. and was not used."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

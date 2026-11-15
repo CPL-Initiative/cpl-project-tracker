@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 20,
    "listed": 21,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.952,
+   "missing": [
+    "ECON302"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON302",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -338,6 +337,5 @@
    "Careers include 'advertising' from the description ('pursue a career in advertising') plus the Career Information list."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

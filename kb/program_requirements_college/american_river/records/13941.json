@@ -46,25 +46,24 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 30,
    "listed": 31,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.968,
+   "missing": [
+    "BIOL303"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "BIOLC1000",
-     "listed": "BIOL303",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "BIOLC1000"
+   ],
+   "flagged": [
+    "BIOLC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -395,6 +394,5 @@
    "Environmental Conservation Certificate section begins on page 798 and is cut off; not used for this A.S. record."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

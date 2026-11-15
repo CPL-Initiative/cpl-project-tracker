@@ -104,7 +104,8 @@
    ],
    "against": "program",
    "why": [],
-   "meets": true
+   "meets": true,
+   "rescored": "Open Asks Sheet 120 card 1"
   },
   "repeated": {
    "codes": [],

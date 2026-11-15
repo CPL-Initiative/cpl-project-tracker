@@ -46,30 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 18,
    "listed": 20,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.9,
+   "missing": [
+    "ECON302",
+    "ECON304"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2001",
-     "listed": "ECON304",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON302",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "ECONC2001",
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -350,6 +347,5 @@
    "Career entry 'real estate' is taken from 'introduces the basic concepts of the real estate career field'."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

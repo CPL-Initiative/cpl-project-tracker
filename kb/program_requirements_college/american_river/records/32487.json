@@ -46,35 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 29,
    "listed": 32,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.906,
+   "missing": [
+    "COMM321",
+    "ECON302",
+    "ECON304"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "COMMC1004",
-     "listed": "COMM321",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2001",
-     "listed": "ECON304",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2002",
-     "listed": "ECON302",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "COMMC1004",
+    "ECONC2001",
+    "ECONC2002"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "ECONC2001",
+    "ECONC2002"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -430,6 +425,5 @@
    "Outcomes are under the AA-T section's 'Student Learning Outcomes' heading; the A.A. in Journalism and Mass Communication section (page 708) with its own requirements, outcomes and careers was excluded."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }
