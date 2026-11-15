@@ -46,40 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 12,
    "listed": 14,
-   "share": 0.5,
+   "share": 0.857,
    "missing": [
-    "POLS2",
-    "POLS3",
-    "POLS4",
-    "POLS5",
     "POLSC1000",
-    "POLSC1000H",
-    "SOCI4"
+    "POLSC1000H"
    ],
    "unexplained": [
-    "POLS2",
-    "POLS3",
-    "POLS4",
-    "POLS5",
     "POLSC1000",
-    "POLSC1000H",
-    "SOCI4"
+    "POLSC1000H"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 7,
+   "count": 2,
    "codes": [
     "POSC1",
-    "POSC1H",
-    "POSC2",
-    "POSC3",
-    "POSC4",
-    "POSC5",
-    "SOC4"
+    "POSC1H"
    ],
    "flagged": [],
    "pass": false
@@ -297,5 +282,6 @@
    "Program total printed as 'Total Credits 18.0 - 39.0' recorded as total_units; no GE pattern, degree total, outcomes or careers are printed on this requisites page."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

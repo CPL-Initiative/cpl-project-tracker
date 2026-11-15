@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -92,6 +93,7 @@
     26.5,
     26.5
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -107,6 +109,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -320,5 +333,6 @@
    "Several cross-listed or additional courses printed in the section (CIS-5, CSC-5, CIS-21, CIS-72A, CSC-12, CIS-14A, CSC-14A, CIS-17A, CSC-17A, CIS-17B, CIS-17C) are not in the closed list and are marked as catalog additions."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

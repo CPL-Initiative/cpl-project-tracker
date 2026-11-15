@@ -44,30 +44,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 19,
    "listed": 19,
-   "share": 0.842,
-   "missing": [
-    "HIS14",
-    "HIS15",
-    "HIS44"
-   ],
-   "unexplained": [
-    "HIS14",
-    "HIS15",
-    "HIS44"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "HIST14",
-    "HIST15",
-    "HIST44"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -80,6 +69,7 @@
     9.0,
     9.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -96,7 +86,15 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -297,5 +295,6 @@
    "ETS-8 is titled 'Introduction to Black Feminism and Womanism' in the catalog vs. 'Introduction to Black Feminism' in the closed list."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

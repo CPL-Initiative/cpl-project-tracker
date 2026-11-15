@@ -4,12 +4,12 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-11-14",
+ "as_of": "2026-11-15",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51906,
-  "pa": 47076,
+  "pe": 51910,
+  "pa": 47080,
   "ppa": 121,
   "p2": 3648,
   "p3": 16922,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 133,
   "pac": 5338,
   "ptc": 4663,
-  "pe_u": 1633760.45,
-  "pa_u": 288581.4,
+  "pe_u": 1633772.45,
+  "pa_u": 288593.4,
   "ppa_u": 752.5,
   "ppe_u": 7143.5,
   "pac_u": 38308.7,
@@ -2070,10 +2070,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Santa Ana": {
-   "pe": 487,
-   "pe_u": 17280.5,
-   "pa": 482,
-   "pa_u": 2216.2,
+   "pe": 491,
+   "pe_u": 17292.5,
+   "pa": 486,
+   "pa_u": 2228.2,
    "ppa": 12,
    "ppa_u": 38.0,
    "p2": null,
@@ -4092,8 +4092,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Ana": {
    "Credit By Exam": {
-    "pe": 69,
-    "pa": 69,
+    "pe": 73,
+    "pa": 73,
     "p3": 12
    },
    "Industry Certification": {
@@ -4354,8 +4354,8 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 11478,
-   "pa": 11121,
+   "pe": 11482,
+   "pa": 11125,
    "p3": 10674
   },
   "Credit By Exam | Industry Certification": {
@@ -4541,13 +4541,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1633760.45,
-   "pa_u": 288581.4,
+   "pe_u": 1633772.45,
+   "pa_u": 288593.4,
    "p3_u": 85220.15
   },
   "map": {
-   "pe_u": 1640903.95,
-   "pa_u": 289333.9,
+   "pe_u": 1640915.95,
+   "pa_u": 289345.9,
    "p3_u": 85299.65
   },
   "ratio": {
@@ -4581,8 +4581,8 @@ window.CPL_FUNDING_PERF = {
   "San Bernardino": false,
   "Desert": true,
   "Saddleback": false,
-  "Modesto": false,
   "Santa Ana": true,
+  "Modesto": false,
   "Mt. San Jacinto": true,
   "Barstow": true,
   "Cypress": true,
@@ -4673,7 +4673,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-11-14",
+ "vet_star_as_of": "2026-11-15",
  "vet_star_threshold": 0.75,
  "vet_star_n": 68,
  "vet_jst": {
@@ -4797,15 +4797,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 432,
    "pct": 0.5353
   },
-  "Modesto": {
-   "vets": 223,
-   "jst": 154,
-   "pct": 0.6906
-  },
   "Santa Ana": {
    "vets": 392,
    "jst": 394,
    "pct": 1.0051
+  },
+  "Modesto": {
+   "vets": 223,
+   "jst": 154,
+   "pct": 0.6906
   },
   "Mt. San Jacinto": {
    "vets": 639,

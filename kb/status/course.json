@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 653,
-  "moniker": "SkyGodwit",
+  "session": 654,
+  "moniker": "SkyWhimbrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_654_handoff.md",
+  "handoff": "docs/session_655_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -106,10 +106,18 @@
   "written_at": "2026-11-14T18:50:31Z",
   "project": "course",
   "next_step": {
-    "title": "The Honors rows, step 2",
-    "text": "Step 1's two rows are live. Step 2 writes 347 rows where two independent derivations find the pair, after a third review and a check run on the day of the apply; the base plus H mints follow."
+    "title": "The Honors rows, step 2, on anchors",
+    "text": "Each Honors row now rests on a same-college pair of courses with the same subject and number and a title signal. After COBIx's design read and a short review, the plan merges; the apply follows a check run after the daily build."
   },
   "changes": [
+    {
+      "at": "2026-11-15T03:28:00Z",
+      "text": "Honors step 2 was redrawn on anchors: 382 rows, 282 of them with a base plus H mint, 37 held, and 169 clusters named as split candidates. Nothing is applied."
+    },
+    {
+      "at": "2026-11-15T02:34:00Z",
+      "text": "The Honors field's follow-ups merged: the hold covers every base of a list value, the worklist fails closed, and the daily summary counts joined pairs."
+    },
     {
       "at": "2026-11-14T18:44:02Z",
       "text": "Honors step 1 applied: HUMA M10ME is the Honors course of HUMA M1110 and LIBR M10CJ of LIBR M1040, and the two base titles carry the S652 stamp. A rollback file undoes it."

@@ -44,46 +44,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 102,
+   "placed": 110,
    "listed": 110,
-   "share": 0.927,
-   "missing": [
-    "HIS16",
-    "HIS17",
-    "HIS18",
-    "HIS19",
-    "HIS2",
-    "HIS35",
-    "HIS42",
-    "HIS60"
-   ],
-   "unexplained": [
-    "HIS16",
-    "HIS17",
-    "HIS18",
-    "HIS19",
-    "HIS2",
-    "HIS35",
-    "HIS42",
-    "HIS60"
-   ],
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 4,
    "codes": [
     "ARTH15",
     "ARTH3",
     "ARTHC1100",
-    "ARTHC1100H",
-    "HIST16",
-    "HIST17",
-    "HIST18",
-    "HIST19",
-    "HIST2",
-    "HIST35",
-    "HIST42",
-    "HIST60"
+    "ARTHC1100H"
    ],
    "flagged": [
     "ARTH15",
@@ -91,7 +66,7 @@
     "ARTHC1100",
     "ARTHC1100H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -104,6 +79,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": [
     "'Group 7 - RCCD Study Abroad Program' chooses units but names no minimum"
    ]
@@ -121,6 +97,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -1025,5 +1009,6 @@
    "Several courses are marked '( Historical )' in the catalog (MUS-22, THE-3, THE-9, THE-34, THE-35, POLS-10, POLS-17, FRE-11, SPA-51) but remain listed in the requirements."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

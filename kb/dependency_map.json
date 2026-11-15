@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 986,
+  "file_datasets": 998,
   "external_services": 195,
-  "consumers": 594,
+  "consumers": 599,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2297
+     "line": 2453
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2253
+     "line": 2409
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2190
+     "line": 2346
     }
    ],
    "main_committers": []
@@ -2194,7 +2194,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4496,
+     "line": 4513,
      "tabs": [
       "unified-courses"
      ]
@@ -2257,7 +2257,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3684,
+     "line": 3701,
      "tabs": [
       "unified-courses"
      ]
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1783
+     "line": 1939
     }
    ],
    "main_committers": []
@@ -4695,6 +4695,19 @@
      "direction": "write",
      "how": "literal",
      "line": 302
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:.github/pages_allowlist.txt": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
     }
    ],
    "served": false,
@@ -6406,7 +6419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13338
+     "line": 13344
     }
    ],
    "served": true,
@@ -7028,7 +7041,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13672
+     "line": 13678
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7738,7 +7751,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 651
+     "line": 743
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -7872,7 +7885,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13279
+     "line": 13285
     }
    ],
    "served": true,
@@ -7960,6 +7973,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/cdc_data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/conductor_mode.md": {
    "consumers": [
     {
@@ -7980,7 +8006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     }
    ],
    "served": false,
@@ -7993,7 +8019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 758
+     "line": 887
     }
    ],
    "served": false,
@@ -8442,7 +8468,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13335
+     "line": 13341
     }
    ],
    "served": true,
@@ -8560,7 +8586,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10290
+     "line": 10296
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -8588,7 +8614,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6285
+     "line": 6441
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8608,7 +8634,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6335
+     "line": 6491
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9143,7 +9169,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13896
+     "line": 13902
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9189,7 +9215,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13916
+     "line": 13922
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -10983,6 +11009,13 @@
   "file:kb/anchor_rekey_out/<date>/alias_map.json": {
    "consumers": [
     {
+     "id": "script:kb/_honors_matcher_recall.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 390
+    },
+    {
      "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
@@ -11183,6 +11216,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/cdc_data_dictionary.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 49
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/cdc_integrations.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/cer_classified.json": {
    "consumers": [
     {
@@ -11365,7 +11424,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 433
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -11686,7 +11745,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 336
+     "line": 428
     },
     {
      "id": "script:kb/_remint_apply_articulations.py",
@@ -11974,14 +12033,28 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 260
+     "line": 284
     },
     {
      "id": "script:kb/_honors_followups_s652.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 269
+     "line": 293
+    },
+    {
+     "id": "script:kb/_honors_matcher_recall.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 465
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 110
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -12100,7 +12173,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 333
+     "line": 425
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -12435,6 +12508,13 @@
      "line": 33
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -12572,7 +12652,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 330
+     "line": 422
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -12719,7 +12799,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -13011,7 +13091,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 332
+     "line": 424
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -13306,6 +13386,13 @@
      "line": 35
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 109
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -13443,7 +13530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 423
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -13583,7 +13670,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -14912,7 +14999,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 429
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -15085,7 +15172,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 754
+     "line": 846
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -15115,7 +15202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10220
+     "line": 10221
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -15222,7 +15309,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3360,
+     "line": 3377,
      "tabs": [
       "unified-courses"
      ]
@@ -15372,7 +15459,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 467
+     "line": 559
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -15572,7 +15659,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 619,
+     "line": 630,
      "tabs": [
       "unified-courses"
      ]
@@ -16593,7 +16680,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 355
+     "line": 379
     }
    ],
    "served": false,
@@ -16606,7 +16693,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 358
+     "line": 382
     }
    ],
    "served": false,
@@ -17342,7 +17429,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3141
+     "line": 3297
     }
    ],
    "served": true,
@@ -17355,7 +17442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6719
+     "line": 6875
     }
    ],
    "served": true,
@@ -17475,6 +17562,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_pilot/sequences/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 538
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/program_requirements_pilot/sequences/sources/ivc_all_program_maps_p1.json": {
@@ -17750,11 +17850,18 @@
      "line": 220
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 388
+    },
+    {
      "id": "script:kb/_reclustering_s648_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 335
+     "line": 427
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -17897,7 +18004,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1262
+     "line": 1354
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -17917,7 +18024,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1040
+     "line": 1132
     }
    ],
    "served": false,
@@ -18258,7 +18365,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 430
     }
    ],
    "served": true,
@@ -18330,7 +18437,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 432
     },
     {
      "id": "script:kb/_row_audit.py",
@@ -18484,6 +18591,13 @@
      "line": 49
     },
     {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 539
+    },
+    {
      "id": "script:kb/_build_course_top_consensus.py",
      "kind": "script",
      "direction": "read",
@@ -18537,7 +18651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 295
+     "line": 387
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -19541,7 +19655,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 971,
+     "line": 982,
      "tabs": [
       "unified-courses"
      ]
@@ -19647,6 +19761,46 @@
      "direction": "write",
      "how": "literal",
      "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cdc_integrations.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data_integrations.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/cdc_sharing.json": {
+   "consumers": [
+    {
+     "id": "module:commons_data_sharing.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
+     "id": "script:kb/_build_cdc_sharing.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": true,
@@ -20190,7 +20344,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9781
+     "line": 9782
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -21098,7 +21252,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6535
+     "line": 6691
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21118,7 +21272,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5754
+     "line": 5910
     }
    ],
    "served": false,
@@ -21735,7 +21889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6622
+     "line": 6778
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22691,7 +22845,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 472
+     "line": 474
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23693,7 +23847,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13107
+     "line": 13113
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -23858,7 +24012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13337
+     "line": 13343
     }
    ],
    "served": true,
@@ -23881,14 +24035,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13137
+     "line": 13143
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13137
+     "line": 13143
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -24414,6 +24568,19 @@
    "main_committers": []
   },
   "file:tests/ccr_universe_orbits_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/cdc_sharing_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25649,7 +25816,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/honors_of_rows_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/honors_of_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/honors_subject_reading_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26230,6 +26423,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_extract_schema_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_fragment_path_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26905,6 +27111,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tmc/source_data/coci_program_export_*.csv": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 539
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tmc/tmc_or_groups.json": {
    "consumers": [
     {
@@ -27227,7 +27446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13339
+     "line": 13345
     }
    ],
    "served": true,
@@ -27251,7 +27470,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 933,
+     "line": 944,
      "tabs": [
       "unified-courses"
      ]
@@ -27411,7 +27630,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 316
+     "line": 340
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 131
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27482,7 +27708,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 901,
+     "line": 912,
      "tabs": [
       "unified-courses"
      ]
@@ -27492,14 +27718,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10342
+     "line": 10348
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10342
+     "line": 10348
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27541,7 +27767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 881,
+     "line": 892,
      "tabs": [
       "unified-courses"
      ]
@@ -27551,14 +27777,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9693
+     "line": 9694
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -27593,7 +27819,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 342
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27646,7 +27879,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1094,
+     "line": 1105,
      "tabs": [
       "unified-courses"
      ]
@@ -27656,14 +27889,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10426
+     "line": 10432
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10426
+     "line": 10432
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -27671,6 +27904,13 @@
      "direction": "read",
      "how": "literal",
      "line": 865
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27754,7 +27994,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 917,
+     "line": 928,
      "tabs": [
       "unified-courses"
      ]
@@ -27764,14 +28004,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10414
+     "line": 10420
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10414
+     "line": 10420
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -27837,6 +28077,13 @@
      "line": 117
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -27894,7 +28141,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1217,
+     "line": 1228,
      "tabs": [
       "unified-courses"
      ]
@@ -27904,14 +28151,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10378
+     "line": 10384
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10378
+     "line": 10384
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -27953,7 +28200,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 317
+     "line": 341
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 131
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -28010,7 +28264,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 949,
+     "line": 960,
      "tabs": [
       "unified-courses"
      ]
@@ -28020,14 +28274,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10222
+     "line": 10223
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -28055,7 +28309,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 290
+     "line": 314
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -29109,7 +29363,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6693
+     "line": 6849
     }
    ],
    "main_committers": []
@@ -29121,7 +29375,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6802
+     "line": 6958
     }
    ],
    "main_committers": []
@@ -31301,7 +31555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 458,
+     "line": 463,
      "tabs": [
       "unified-courses"
      ]
@@ -31311,7 +31565,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 541,
+     "line": 552,
      "tabs": [
       "unified-courses"
      ]
@@ -32290,7 +32544,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 625,
+     "line": 636,
      "tabs": [
       "unified-courses"
      ]
@@ -34195,6 +34449,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_extract_halt_test.py",
+    "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
@@ -34236,6 +34491,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/cdc_sharing_build_test.py",
     "tests/commons_cost_read_test.py",
     "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
@@ -34357,6 +34613,8 @@
     "tests/next_slo_colleges_test.py",
     "tests/browser_install_single_source_test.py",
     "tests/honors_of_test.py",
+    "tests/honors_of_rows_check_test.py",
+    "tests/honors_subject_reading_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",
@@ -35238,6 +35496,8 @@
   "kb/*_dryrun",
   "kb/*_fold",
   "kb/*_out",
+  "kb/cdc_data_dictionary.json",
+  "kb/cdc_integrations.json",
   "kb/cid_articulation_joins.json",
   "kb/coci_minted_courses.json",
   "kb/coci_minted_memberships.json",

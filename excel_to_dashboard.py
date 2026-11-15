@@ -9521,14 +9521,15 @@ def export_unified_courses():
     # honors_of: after every fold, no pair may end under one id. would_join is
     # complete by construction, so this never fires; when it does, a fold was
     # added without the guard. The test suite and --check (or
-    # HONORS_OF_STRICT=1) fail the run; the daily run prints a named warning.
+    # HONORS_OF_STRICT=1) fail the run; the daily run puts the count on its
+    # Summary table (HONORS_PAIRS_JOINED) and a warning on the run page.
+    _hleft = []
     if _hpairs:
         _hleft = _honors_of.check_apart(
             merge_into, _hpairs,
             strict=os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv)
-        if _hleft:
-            print(f"  honors_of: WARNING honors-pair-joined: {len(_hleft)} pair(s) fold together after the "
-                  "in-memory folds: " + ", ".join(f"{h}/{b}" for h, b in _hleft[:5]))
+    for _line in _honors_of.report_joined(_hleft):
+        print(_line)
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
@@ -10279,7 +10280,12 @@ def export_unified_courses():
                # What's already folded into git (kb/coci_curation.json at build
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
-               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Only entries carrying a discipline or a merge_into: the client reads the discipline
+               # (pendingSyncCount) and the key's presence for a baked merge (replayLiveMerges); an
+               # honors_of-only or title-only entry would arrive as a null it never reads (#3315's
+               # fourth review). _curated rows always carry a non-null discipline, so the count holds.
+               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()
+                                      if c.get("discipline") or c.get("merge_into")},
                # Descriptions already folded into git (kb/coci_curation.json) — the
                # client diffs the live description overlay against this to count
                # description edits still awaiting the daily sync.

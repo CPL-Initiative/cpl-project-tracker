@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -76,6 +77,7 @@
     20.0,
     21.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 17.0-18.0; the catalog states 20.0-21.0"
    ]
@@ -93,6 +95,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -306,5 +319,6 @@
    "No GE pattern is named; the text refers only generally to general education requirements in the college catalog."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

@@ -53,6 +53,9 @@ FIELD_BASELINE = "kb/anchor_rekey_out/2026-11-08/alias_map.json"
 # that marks an Honors M-ID. Four characters after the letter is a base; five ending in H is its Honors id. A
 # stand-alone tail can end in H ("ABCD M10GH" is a base): the length, not the letter, decides.
 M_ID_RE = re.compile(r"^([A-Z]{1,6}) ([MZ])(\d)([A-Z0-9]{3})(H?)$")
+# The same shape with the H required, as a Postgres regex: the step-4 mint's marker that the step-1 and step-2
+# rollbacks and the rows insert read (COBIx on #3315: one pattern, so the SQL and the Python cannot drift apart).
+H_ID_SQL = r"^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$"
 
 
 def is_bot(reviewer):
@@ -178,35 +181,35 @@ def hold_merges(merge_into, hmap, merge_by=None):
         return kept, held, person_wins
     merge_by = merge_by or {}
     for h in sorted(hmap):
-        b = hmap[h]
-        if isinstance(b, (list, tuple)):
-            b = b[0]
-        if h == b or _end(kept, h) != _end(kept, b):
-            continue
-        # The pair would fold together. Walk both sides to the point where their paths meet; the edges before it are
-        # the ones that join them. Cut the first bot edge, the Honors side's first, then the base side's: cutting it
-        # leaves every merge past the meeting point and every other id's merge in place. A person's edge is never
-        # cut; the pair's honors_of is set aside only when every joining edge is a person's (Rule 10).
-        hp, bp = _path(kept, h), _path(kept, b)
-        on_b = set(bp)
-        meet = next(i for i in hp if i in on_b)
-        joining = hp[:hp.index(meet)] + bp[:bp.index(meet)]
-        cut = None
-        for edge in joining:
-            if is_bot(merge_by.get(edge, "@bot")):
-                trial = dict(kept)
-                trial.pop(edge)
-                if _end(trial, h) != _end(trial, b):
-                    cut = edge
-                    break
-        if cut is None:
-            edge = joining[0] if joining else (h if h in kept else b)
-            person_wins.append({"honors_id": h, "base_id": b, "merge_source": edge, "merge_into": kept.get(edge),
-                                "reviewer": merge_by.get(edge),
-                                "why": "a person's merge joins the pair: it stands (Rule 10)"})
-            continue
-        held.append({"honors_id": h, "base_id": b, "merge_source": cut, "merge_into": kept.pop(cut),
-                     "reviewer": merge_by.get(cut), "why": "honors_of holds the pair apart"})
+        # A list value names several bases (honors_map(merge_end=True): the stored base and its chain end): each is a
+        # pair, and each is held (#3313's review record, minor 1: only the first was).
+        for b in sorted(_bases(hmap[h])):
+            if h == b or _end(kept, h) != _end(kept, b):
+                continue
+            # The pair would fold together. Walk both sides to the point where their paths meet; the edges before it
+            # are the ones that join them. Cut the first bot edge, the Honors side's first, then the base side's:
+            # cutting it leaves every merge past the meeting point and every other id's merge in place. A person's
+            # edge is never cut; the pair's honors_of is set aside only when every joining edge is a person's (Rule 10).
+            hp, bp = _path(kept, h), _path(kept, b)
+            on_b = set(bp)
+            meet = next(i for i in hp if i in on_b)
+            joining = hp[:hp.index(meet)] + bp[:bp.index(meet)]
+            cut = None
+            for edge in joining:
+                if is_bot(merge_by.get(edge, "@bot")):
+                    trial = dict(kept)
+                    trial.pop(edge)
+                    if _end(trial, h) != _end(trial, b):
+                        cut = edge
+                        break
+            if cut is None:
+                edge = joining[0] if joining else (h if h in kept else b)
+                person_wins.append({"honors_id": h, "base_id": b, "merge_source": edge, "merge_into": kept.get(edge),
+                                    "reviewer": merge_by.get(edge),
+                                    "why": "a person's merge joins the pair: it stands (Rule 10)"})
+                continue
+            held.append({"honors_id": h, "base_id": b, "merge_source": cut, "merge_into": kept.pop(cut),
+                         "reviewer": merge_by.get(cut), "why": "honors_of holds the pair apart"})
     return kept, held, person_wins
 
 
@@ -297,3 +300,20 @@ def check_apart(merge_into, pairs, strict=False):
     if left and strict:
         raise SystemExit("honors_of: a fold joined " + ", ".join(f"{a}/{b}" for a, b in left[:10]))
     return left
+
+
+def report_joined(left, env=None):
+    """Put the joined-pair count where the daily run reports its health (COBIx's read of #3313, item 3): the count
+    goes to $GITHUB_ENV as HONORS_PAIRS_JOINED, which daily-dashboard.yml's Summary step writes into its table and
+    turns into one `::warning` annotation when non-zero. Outside Actions it writes nothing. Returns the build-log
+    lines to print."""
+    env = os.environ if env is None else env
+    n = len(left or [])
+    path = env.get("GITHUB_ENV")
+    if path:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"HONORS_PAIRS_JOINED={n}\n")
+    if not n:
+        return []
+    names = ", ".join(f"{h}/{b}" for h, b in left[:5])
+    return [f"  honors_of: WARNING honors-pair-joined: {n} pair(s) fold together after the in-memory folds: {names}"]

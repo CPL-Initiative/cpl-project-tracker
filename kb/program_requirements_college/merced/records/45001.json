@@ -78,8 +78,7 @@
     54.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -328,5 +327,6 @@
    "No general education pattern, degree total, program outcomes or careers are printed on the Requisites page; the Program Overview tab was not included in the text."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

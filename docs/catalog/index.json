@@ -13754,7 +13754,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-11-14",
@@ -15182,7 +15182,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 5 (S637 onward)",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-11-12",
@@ -15986,7 +15986,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 75,
+   "count": 76,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16237,7 +16237,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-08-28",
@@ -16438,7 +16438,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-08-28",
@@ -16564,7 +16564,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-08-28",
@@ -16648,6 +16648,22 @@
      "updated": ""
     },
     {
+     "created": "2026-11-14",
+     "governs": [],
+     "path": "docs/reference/cdc_data_dictionary.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "commons",
+      "data-dictionary",
+      "data-sharing",
+      "privacy"
+     ],
+     "title": "College Data Collection: the data dictionary and data-sharing classes",
+     "type": null,
+     "updated": "2026-11-15"
+    },
+    {
      "created": "2026-11-11",
      "governs": [],
      "path": "docs/reference/conductor_mode.md",
@@ -16660,7 +16676,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-08-29",
@@ -17073,8 +17089,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 615,
+   "count": 616,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 655,
+     "path": "docs/session_655_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 655 handoff (from SkyWhimbrel, S654)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-14",
      "governs": [],
@@ -27457,5 +27487,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1482
+ "total": 1484
 }

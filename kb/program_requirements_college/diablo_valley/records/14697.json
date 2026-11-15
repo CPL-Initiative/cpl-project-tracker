@@ -46,28 +46,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 14,
    "listed": 14,
-   "share": 0.857,
-   "missing": [
-    "BIOSC126",
-    "BIOSC170"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "BIOL126",
-    "BIOL170",
     "GEOG124",
     "WRKX170"
    ],
    "flagged": [
-    "BIOL126",
-    "BIOL170",
     "GEOG124",
     "WRKX170"
    ],
@@ -322,5 +315,6 @@
    "WRKX170 Work Experience Education is printed with 1-4 units."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }

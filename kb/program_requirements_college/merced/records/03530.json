@@ -46,14 +46,13 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 20,
    "listed": 24,
-   "share": 0.792,
+   "share": 0.833,
    "missing": [
     "HMSV24",
     "PSYCC1000",
     "PSYCC1000H",
-    "SOCI3",
     "SOCIC1000"
    ],
    "unexplained": [],
@@ -61,20 +60,18 @@
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "COOP41",
     "PSYC1A",
     "PSYC1AH",
-    "SOC1",
-    "SOC3"
+    "SOC1"
    ],
    "flagged": [
     "COOP41",
     "PSYC1A",
     "PSYC1AH",
-    "SOC1",
-    "SOC3"
+    "SOC1"
    ],
    "pass": true
   },
@@ -380,5 +377,6 @@
    "Only the Requisites tab was provided; no program learning outcomes, careers, GE pattern or degree total appear in the text."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

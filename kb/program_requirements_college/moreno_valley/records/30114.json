@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     30.0,
     30.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -259,5 +272,6 @@
    "Several core courses are marked '( Historical )' in the catalog (ACC-1A, BUS-10, BUS-18A, ACC-1B, BUS-18B); a reviewer may want to confirm their status for 2026-2027."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

@@ -334,6 +334,10 @@ jobs:
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
         run: python3 tests/program_requirements_extract_halt_test.py
+      # S653: a fragment a catalog includes (Skyline's programs/_program-headers/) is never a page; the measure
+      # over the committed captures' URLs, none of them a claimed page. Pure stdlib.
+      - name: Program requirements fragment paths are no pages
+        run: python3 tests/program_requirements_fragment_path_test.py
       # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
       # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
       # Python with PyYAML for the workflow's shape; same non-required check.
@@ -539,6 +543,10 @@ jobs:
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder
         run: python3 tests/commons_data_status_build_test.py
+      # College Data Collection's dictionary and integrations builder (S654): each rule broken in a fixture repo,
+      # and the builder must exit 1 and name it.
+      - name: CDC data dictionary builder rules
+        run: python3 tests/cdc_sharing_build_test.py
       # Its cost read (S653): a college's cost is what its filed records cost, so a free rescore never drops it.
       - name: Commons data dashboard cost read
         run: python3 tests/commons_cost_read_test.py
@@ -1343,6 +1351,14 @@ jobs:
       # Pure-stdlib python. Design: docs/reference/honors_of_design.md.
       - name: Honors equivalence field (fold hold, pairwise worklist hold, H id shape, byte-identical fold)
         run: python3 tests/honors_of_test.py
+      # The Honors rows plan's apply-day check (S653, #3315): it re-measures the pairs on the checkout's payload and
+      # refuses a dissolved pair, a pre-delete overlay and a checkout without origin/main's head.
+      - name: Honors rows plan, the apply-day check refuses a stale plan
+        run: python3 tests/honors_of_rows_check_test.py
+      # How the rows plan reads a subject (S655, COBIx's two findings on #3315): engineering, computing and
+      # biotechnology read apart from English, communication and biology; the Honors subject marker is Victor Valley's.
+      - name: Honors rows plan, the subject family and the Honors subject marker
+        run: python3 tests/honors_subject_reading_test.py
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
       # guard against a second copy. Pure-stdlib python.

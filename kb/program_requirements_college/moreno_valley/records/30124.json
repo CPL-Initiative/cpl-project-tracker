@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     36.0,
     37.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -229,5 +242,6 @@
    "Total of 36.00-37.00 units is as stated by the catalog (30 required + 6-7 elective)."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

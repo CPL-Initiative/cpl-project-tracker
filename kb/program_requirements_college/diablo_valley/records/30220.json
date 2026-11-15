@@ -46,30 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 20,
    "listed": 20,
-   "share": 0.85,
-   "missing": [
-    "BIOSC126",
-    "BIOSC170",
-    "BIOSC171"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "BIOL126",
-    "BIOL170",
-    "BIOL171"
-   ],
-   "flagged": [
-    "BIOL126",
-    "BIOL170",
-    "BIOL171"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -359,5 +347,6 @@
    "No careers named in the text."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43609976980,
+ "read_run": "43353452924"
 }

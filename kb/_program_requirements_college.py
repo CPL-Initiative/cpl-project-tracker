@@ -99,10 +99,20 @@ PROGRAM_PATH = re.compile(
 # and Santa Barbara City's /justice-studies/administration-justice-ast/ were both dropped, so
 # every Administration of Justice program at the two colleges lost its own page to a C-ID chart
 # or another degree (sitemap read 39770285975, S447).
+# A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
+# underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
+# English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
+# folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
+# PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py). No path reads
+# a fragment as a program page: program_candidates() and link_page_ok() through NOT_PROGRAM_PATH, ncl_page()
+# directly, a program code or not (S654). The keyword may sit anywhere in the folder's name (_header-files,
+# _partials-v2, _includes_old; COBIx 6888023433, S654).
+FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)[^/]*(?=/)", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
-    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend", re.I)
+    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend|"
+    + FRAGMENT_PATH.pattern, re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────
@@ -570,7 +580,12 @@ def heading_names_program(page: dict, program: dict) -> bool:
 # certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
 # A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
 GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
-                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)|"
+                        # the patterns under their long names (Crafton Hills, Victor Valley; S653)
+                        r"\b(?:california|intersegmental)[\s-](?:general[\s-]education|ge)[\s-]transfer[\s-]curriculum\b|"
+                        # Taft's "Intersegmental GE Transfer Curriculum", Skyline's "California State University
+                        # General Education" (S653)
+                        r"\bcalifornia[\s-]state[\s-]university[\s-]general[\s-]education\b", re.I)
 
 
 def ge_pattern(text: str | None) -> bool:
@@ -584,10 +599,146 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def candidates(program: dict, pages: list[dict]) -> list[dict]:
+# A heading's state control number: LACCD's catalog PDFs print it beside the award ("English T032905G AA-T",
+# "Equine Science AS P002809C"), a letter, the number with a leading zero, a letter.
+GE_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]?0*(\d{5})[A-Z]?(?![A-Za-z0-9])")
+# The district's own print of a control number: a campus letter, six digits, a letter (T042296D, V032851G, M003340C).
+# Unambiguous, it names its program with or without title words, wherever the award sits (S654 second reader).
+DISTRICT_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]0(\d{5})[A-Z](?![A-Za-z0-9])")
+# Words a pattern page's heading prints that say nothing of which program it is (S653 third reader): the district,
+# a stray "GE" or "Associate" left once the award and the pattern are set aside, a PDF table's "Y".
+GE_HEAD_NOISE = {"laccd", "ge", "associate", "y"}
+# A version or a number in a title: "2.0", "2", "v2", "Version 2", "V2.0" all read 2.
+GE_NUMBER = re.compile(r"\b(?:v(?:ersion)?\s*)?(\d+(?:\.\d+)?)\b", re.I)
+
+
+def _award_start(text: str) -> int:
+    """Where a heading's award begins (NCL_ADT, NCL_KIND), the end when it prints none: the title and its version
+    sit before it, its unit counts after ("Chemistry 2.0 AS-T 37.5")."""
+    letters = [c for c in text if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    at = len(text)
+    for pat in NCL_ADT + [p for _, p in NCL_KIND if not (shouting and not p.flags & re.I)]:
+        m = pat.search(text)
+        if m:
+            at = min(at, m.start())
+    return at
+
+
+def ge_identity(text: str | None, heading: bool = False) -> tuple[frozenset, frozenset, frozenset]:
+    """(title words, identity tokens, numbers) of a title, or of a heading's part before its award with its
+    control number and noise words set aside. Identity is a Roman numeral or an option letter (Spanish II,
+    Level I, Option A); numbers are versions in any spelling, "2.0" and "v2" alike."""
+    t = text or ""
+    if heading:
+        t = GE_CONTROL.sub(" ", t[:_award_start(t)])
+    nums = frozenset(re.sub(r"\.0+$", "", m.group(1)) for m in GE_NUMBER.finditer(t))
+    words, ident = ncl_words(GE_NUMBER.sub(" ", t))
+    words = frozenset(w for w in words if not (heading and w in GE_HEAD_NOISE))
+    return words, frozenset(x for x in ident if not x.isdigit()), nums
+
+
+def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
+    """The one listed program a general education pattern's page belongs to, or None (S653). Riverside City
+    heads each transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate
+    in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
+    page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
+    must agree with the program, each one comparison here:
+      control  a heading printing a listed program's control number in the district's print (T038461G) is
+               that program's page and no other's (LA Trade-Tech's cut PDF windows, "Development T038461G
+               AA-T"); a bare five-digit run only when the heading's title words agree with the program's at
+               least one way (S654);
+      title    the heading's words before its award are the program's title words, both ways ("Art History
+               AA-T" is never History's, "Business Administration: Accounting" never plain Business
+               Administration's);
+      identity a Roman numeral or option letter agrees (Spanish II is never Spanish I's, Option B never A's);
+      award    a heading that names an award takes that award only (Moreno Valley's MAS643, the A.S.-T's
+               page, is never its Administration of Justice A.S.'s);
+      version  a number in the title part ("2.0", "2", "v2") goes to the sibling printing the same one where
+               one is listed; where none is, a program printing no number keeps it (Moreno Valley's one
+               Physics, 43792, on its 2.0 page), and a heading printing none goes to the sibling printing none.
+               A number after the award is units, never a version.
+    More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
+    Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
+    head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
+    words, ident, nums = ge_identity(head, heading=True)
+    # A control number in the district's own print (DISTRICT_CONTROL: "T042296D C", "AA-T V032851G", "ASSOCIATE OF
+    # ARTS (AA) Accounting (M003340C)") names its listed program, whatever words or award sit around it (S654 second
+    # reader: the narrower cut-window rule refused 84 of main's 314 right namings).
+    district = {m.group(1) for m in DISTRICT_CONTROL.finditer(head)}
+    if district:
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in district]
+        if named:
+            return named[0] if len(named) == 1 else None
+    # A bare five-digit run names its program only when the heading has title words and they agree with the
+    # program's title at least one way (COBIx on #3324 and 6887933755, S654): a ZIP code, a five-digit course id or
+    # "LACCD 92506 Cal-GETC" never skips the title, award and version checks below, and a program with no title
+    # words is never named by a bare number.
+    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)} - district
+    if ctl and words:
+        named = []
+        for p in programs:
+            if str(p.get("control_number") or "").lstrip("0").zfill(5) not in ctl:
+                continue
+            tw = ge_identity(p.get("title"))[0]
+            if tw and _ge_title_one_way(tw, words):
+                named.append(p)
+        if named:
+            return named[0] if len(named) == 1 else None
+    if not words:
+        return None
+    kinds = award_kinds_in(head)
+    classes = [c for c in kinds if c in NCL_CLASS]
+    kinds = {k for k in kinds if k not in NCL_CLASS}
+
+    def award_agrees(p):
+        kind = P.award_kind(p.get("award"))
+        return all(kind in NCL_CLASS[c] for c in classes) and (not kinds or kind in kinds)
+    fits = []
+    for p in programs:
+        tw, tid, tn = ge_identity(p.get("title"))
+        if tw and all(_named(w, words) for w in tw) and all(_named(h, tw) for h in words) and tid == ident \
+                and award_agrees(p) and (not tn or not nums or tn == nums):
+            fits.append((p, tn))
+    if any(tn == nums for _, tn in fits):
+        fits = [f for f in fits if f[1] == nums]
+    return fits[0][0] if len(fits) == 1 else None
+
+
+def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
+    """Whether a program's title words and a heading's agree at least one way: every title word in the heading,
+    or every heading word in the title."""
+    return all(_named(w, head_words) for w in title_words) or all(_named(h, title_words) for h in head_words)
+
+
+def ge_page_names_program(pg: dict, program: dict, programs: list | None = None,
+                          owners: dict | None = None) -> bool:
+    """Whether a general education pattern's page belongs to this program among the college's listed
+    programs (ge_page_owner); programs left None weighs the program alone. owners, when given, holds each
+    page's owner among these same programs, keyed by the heading and title the owner is read from, so
+    assign() works a page's owner out once (COBIx on #3324, S654); never share one across program lists."""
+    if owners is None or programs is None:
+        owner = ge_page_owner(pg, programs if programs is not None else [program])
+    else:
+        key = (pg.get("h1"), pg.get("title"))
+        if key not in owners:
+            owners[key] = ge_page_owner(pg, programs)
+        owner = owners[key]
+    if owner is None:
+        return False
+    if owner is program:
+        return True
+    cn = program.get("control_number")
+    return cn is not None and owner.get("control_number") == cn
+
+
+def candidates(program: dict, pages: list[dict], programs: list | None = None,
+               owners: dict | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
-    then the higher coverage."""
+    then the higher coverage. programs is every listed program at the college (assign()
+    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner);
+    owners is assign()'s cache of those owners, one per page (ge_page_names_program)."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -604,8 +755,10 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         # A general education pattern's page lists courses in every discipline, so it names
         # most of many programs' lists; it is the list of a program only when the program is
-        # that pattern (ge_pattern(), S646).
-        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
+        # that pattern (ge_pattern(), S646), or when its heading names the program beside the
+        # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
+                and not ge_page_names_program(pg, program, programs, owners):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -992,7 +1145,8 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    owners: dict = {}   # a pattern page's owner, worked out once per page (ge_page_names_program)
+    ranked = {p["control_number"]: candidates(p, pages, programs, owners) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
@@ -1266,8 +1420,10 @@ def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
     readings = [ncl_words(r) for r in ncl_readings(pg, college_words)]
     return {"pg": pg, "key": pg.get("group") or page_stem(pg.get("url")), "keys": page_keys(pg),
             "readings": readings, "kinds": page_award_kinds(pg),
-            "program_page": bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
-                NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path)),
+            # a fragment a catalog includes is no program page, whatever code it carries (FRAGMENT_PATH, S654)
+            "program_page": not FRAGMENT_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) and (
+                bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
+                    NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path))),
             # A GE pattern's own page: it names a pattern and nothing else once the pattern is set aside
             # (Riverside City heads its transfer degrees "Sociology ADT CalGETC", a program's page).
             "ge": ge_pattern_page(pg) and not any(w for w, _ in readings)}

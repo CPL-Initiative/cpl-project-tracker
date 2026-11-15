@@ -46,29 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 19,
    "listed": 20,
-   "share": 0.7,
+   "share": 0.95,
    "missing": [
-    "BIOSC102",
-    "BIOSC117",
-    "BIOSC119",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146"
+    "BIOSC102"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 6,
    "codes": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "BIOLC1000",
     "PH100",
     "PH126",
@@ -77,11 +67,6 @@
     "PH250"
    ],
    "flagged": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "BIOLC1000",
     "PH100",
     "PH126",
@@ -425,5 +410,6 @@
    "Catalog text begins mid-sentence ('jor or campus.'); the program description may be cut off, so careers could not be checked there."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43609976980,
+ "read_run": "43379378196"
 }
