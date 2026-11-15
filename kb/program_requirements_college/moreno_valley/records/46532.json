@@ -57,6 +57,7 @@
     "HIST26"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,6 +81,7 @@
     37.0,
     38.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +97,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -430,5 +443,6 @@
    "Program total printed as 'Total : 37.00- 38.00'."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T03:03:45Z",
+ "written_at": "2026-11-15T03:03:54Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15851,
-  "gap": 6484,
+  "passing": 15852,
+  "gap": 6483,
   "with_gap": 118,
   "cost_usd": 1343.32,
-  "passed_at_read": 15350,
+  "passed_at_read": 15352,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15851,
-  "gap": 6484
+  "passing": 15852,
+  "gap": 6483
  },
  "census_live": {
   "basis": "live",
@@ -8169,12 +8169,13 @@
    "harvested": true,
    "slug": "moreno_valley",
    "programs": 149,
-   "passing": 133,
-   "gap": 16,
+   "passing": 134,
+   "gap": 15,
    "causes": {
     "no_closed_list": 5,
     "page_not_found": 4,
-    "unknown_without_live": 7
+    "places_none": 1,
+    "unknown_without_live": 5
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -8203,7 +8204,7 @@
    "read_at": "2026-10-11T04:17:25Z",
    "read_kind": "capture",
    "cost_usd": 9.6,
-   "passed_at_read": 132,
+   "passed_at_read": 134,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -8216,9 +8217,9 @@
    "extracted": 140,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
-    "arithmetic": 6,
+    "coverage": 1,
+    "invented": 0,
+    "arithmetic": 5,
     "repeated": 0,
     "outcomes": 0
    },
@@ -8229,11 +8230,12 @@
    "catalog_now": null,
    "catalog_checks": null,
    "read_seconds": 1237.7,
-   "run": "38111056537",
+   "run": "43609968396",
    "levers": {
-    "reconcile_steps": 7,
     "program_course_file_check": 5,
-    "reader_page_search": 4
+    "reconcile_steps": 5,
+    "reader_page_search": 4,
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
@@ -8241,7 +8243,7 @@
      "models": {
       "claude-opus-5-5": 140
      },
-     "run": "38111056537",
+     "run": "43609968396",
      "at": "2026-10-11T04:17:25Z",
      "cost_usd": 9.6,
      "platform": "curriqunet"

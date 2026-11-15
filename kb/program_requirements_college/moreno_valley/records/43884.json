@@ -53,6 +53,7 @@
     "MAT1A"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -84,6 +85,7 @@
     41.0,
     41.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,6 +101,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -309,5 +322,6 @@
    "Degree requires 60 CSU-transferable units including Cal-GETC; major total printed as 41.00."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 43609968396,
+ "read_run": "38085493318"
 }
