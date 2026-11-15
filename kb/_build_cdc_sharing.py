@@ -154,8 +154,10 @@ def problems(d: dict, root: str | None = None) -> list[str]:
                 out.append("label %r belongs to both %s and %s" % (lab, seen_labels[lab], i))
             seen_labels[lab] = i
         src = e.get("source_file")
-        if src and root is not None:
-            if not os.path.isfile(os.path.join(root, src)):
+        if src is not None and not isinstance(src, str):
+            out.append("element %s has source_file %r; name a file path inside the repo" % (i, src))
+        elif src and root is not None:
+            if not inside_file(root, src):
                 out.append("element %s names source file %r, which the repo does not hold" % (i, src))
             c = cls.get(e.get("class"))
             site = c.get("public_site") if isinstance(c, dict) else None
@@ -164,6 +166,9 @@ def problems(d: dict, root: str | None = None) -> list[str]:
                            % (i, e.get("class"), ALLOWLIST, src))
     for h in dicts(d.get("held_not_shown") or [], "held_not_shown", out):
         i = h.get("id") or "?"
+        roles = h.get("roles")
+        if roles is not None and (not isinstance(roles, list) or not roles or not all(isinstance(r, str) and r for r in roles)):
+            out.append("held item %s has roles %r; list each role by name" % (i, roles))
         if i in seen_ids:
             out.append("held item id %s repeats an element id" % i)
         seen_ids.add(i)
@@ -201,18 +206,27 @@ def load_registry(root: str) -> dict | None:
         return json.load(f)
 
 
+def inside_file(root: str, rel) -> str | None:
+    """The real path of a file inside the repo, or None: a non-string, an absolute path, ../, a link out of the root
+    and a directory are never a file of the repo."""
+    if not isinstance(rel, str) or not rel or os.path.isabs(rel):
+        return None
+    top = os.path.realpath(root)
+    path = os.path.realpath(os.path.join(root, rel))
+    if not path.startswith(top + os.sep) or not os.path.isfile(path):
+        return None
+    return path
+
+
 def evidence_ok(root: str, item: str) -> bool:
-    """A path inside the repo that exists; path::text must also contain the text. A path that resolves outside the
-    root (an absolute path, ../, a link out) is never evidence."""
+    """A file inside the repo; path::text must also contain the text. A path outside the root, or a directory, is
+    never evidence."""
     if not isinstance(item, str):
         return False
     rel, _, text = item.partition("::")
-    top = os.path.realpath(root)
-    path = os.path.realpath(os.path.join(root, rel))
-    if not rel or os.path.isabs(rel) or not path.startswith(top + os.sep):
+    path = inside_file(root, rel)
+    if path is None:
         return False
-    if not os.path.isfile(path):
-        return os.path.isdir(path) and not text
     if not text:
         return True
     with open(path, encoding="utf-8", errors="replace") as f:

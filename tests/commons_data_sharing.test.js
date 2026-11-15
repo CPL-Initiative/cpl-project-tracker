@@ -148,6 +148,19 @@ const CONTAINERS = new Set(HAND.containers || []);
   check("(5) the card's four class counts add up to every field the file defines (" + sum + " of " + BUILT.elements.length + ")", sum === BUILT.elements.length);
   check("(5) the card names what is held and not shown, staff contacts among them, and says they are left out of any outside share",
     /Staff role contacts/.test(txt(card && card.querySelector('[data-class="not-shown"]'))) && /left out of any outside share/.test(txt(card)));
+  const pubBox = card && card.querySelector('[data-class="public-not-shown"]');
+  const heldBox = card && card.querySelector('[data-class="not-shown"]');
+  check("(5) ⭐ the public routing contacts sit under their own heading, never under Held",
+    pubBox && /^Public and not shown/.test(txt(pubBox.querySelector("h4"))) && /CPL Coordinator and CPL Counselor routing contacts/.test(txt(pubBox)) &&
+    !/routing contacts|Landing page contacts/.test(txt(heldBox && heldBox.querySelector(".cdc-sw-names"))));
+  const staffRoles = (H.staff_role_contacts.roles || []);
+  check("(5) ⭐ the held staff roles are counted and named from the data, the CPL Assistant among them (" + staffRoles.length + ")",
+    staffRoles.indexOf("CPL Assistant") >= 0 && heldBox && heldBox.querySelector("[data-held-roles]").getAttribute("data-held-roles") === String(staffRoles.length) &&
+    new RegExp(staffRoles.length + " other staff roles").test(txt(heldBox)) && /CPL Assistant/.test(txt(heldBox)));
+  const notPublicKeys = BUILT.join_keys.filter((j) => j.other_class !== "public");
+  check("(5) ⭐ the card's join keys leave out a key whose other side is public: no course control number",
+    card && !card.querySelector('.cdc-sw-joins li[data-join="course_control_number"]') && !/Course control number: joins/.test(txt(card)) &&
+    BUILT.join_keys.some((j) => j.id === "course_control_number" && j.other_class === "public"));
   check("(5) a class word inside a sentence lowers its first letter only: aggregate, not PII", /\(aggregate, not PII\)/.test(txt(card)) && !/not pii/.test(txt(card)));
   check("(5) the card lists the join keys its fields use", card && card.querySelectorAll(".cdc-sw-joins li").length >= 3 && /Program control number: joins/.test(txt(card)));
   check("(5) the card states the agreements by status only", /^Agreements: .*Status only/.test(txt(card && card.querySelector("[data-agreements]"))));
@@ -163,6 +176,7 @@ const CONTAINERS = new Set(HAND.containers || []);
   await flush(V.w);
   check("(6) ⭐ #commons/data/sharing opens the view from its arrival, and the view names itself in its report",
     V.w.CPL_COMMONS_DATA.address() === "commons/data/sharing" && txt(V.root.querySelector("#cdd-h")) === "Data elements and sharing");
+  check("(6) the full view heads every join key The join keys", txt(V.root.querySelector("#cdc-sw-joins")) === "The join keys");
   check("(6) every field the file defines is a row of the view's table", V.root.querySelectorAll("#cdc-sw-fields-table tbody tr").length === BUILT.elements.length);
   check("(6) the held, join-key and agreements tables carry every row", V.root.querySelectorAll("#cdc-sw-held-table tbody tr").length === BUILT.held_not_shown.length &&
     V.root.querySelectorAll("#cdc-sw-joins-table tbody tr").length === BUILT.join_keys.length && V.root.querySelectorAll("#cdc-sw-agreements-table tbody tr").length === BUILT.agreements.length);
@@ -179,6 +193,9 @@ const CONTAINERS = new Set(HAND.containers || []);
   const st = T.root.querySelector("#cdc-sw-state");
   check("(6) the statewide card sits on the list's page with every class's count", st && ["public", "aggregate", "agreement", "held"].every((k) => st.querySelector('li[data-class="' + k + '"]')) &&
     new RegExp(BUILT.elements.length + " fields").test(txt(st)));
+  check("(6) ⭐ the statewide card counts only the keys whose other side is not public (" + notPublicKeys.length + " of " + BUILT.join_keys.length + ")",
+    st && new RegExp("^" + notPublicKeys.length + " keys join a public record to one that is not: ").test(txt(st.querySelectorAll("p.cdd-of")[0])) &&
+    notPublicKeys.length < BUILT.join_keys.length && !/Course control number/.test(txt(st.querySelectorAll("p.cdd-of")[0])));
   const sw = st && st.querySelector('button[data-view="sharing"]');
   if (sw) sw.click();
   await flush(T.w);

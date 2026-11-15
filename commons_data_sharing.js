@@ -74,11 +74,32 @@
         el("h4", { text: classWord(D, k) + " (" + rows.length + ")" }),
         el("p", { cls: "cdc-sw-names", text: rows.map(function (r) { return r.name; }).join(", ") + "." })]));
     });
-    var held = D.held_not_shown || [];
-    if (held.length) sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "not-shown" }, [
-      el("h4", { text: "Held and not shown on this page (" + held.length + ")" }),
-      el("p", { cls: "cdc-sw-names", text: held.map(function (h) { return h.name + " (" + classLower(D, h.class) + ")"; }).join(", ") + "." }),
-      el("p", { cls: "cdd-of", text: "The CPL Coordinator and CPL Counselor routing contacts are public: every college landing page routes a student to them. The other nine staff roles, MAP's approval stage and the MAP users are left out of any outside share." })]));
+    /* What COBI or MAP holds that this page does not show: the public rows under their own heading, the rest held. */
+    var notShown = D.held_not_shown || [];
+    var pub = notShown.filter(function (h) { return h.class === "public"; });
+    var held = notShown.filter(function (h) { return h.class !== "public"; });
+    function names(rows) { return rows.map(function (h) { return h.name + " (" + classLower(D, h.class) + ")"; }).join(", ") + "."; }
+    function roleList(rows) {
+      var r = [];
+      rows.forEach(function (h) { (h.roles || []).forEach(function (x) { if (r.indexOf(x) < 0) r.push(x); }); });
+      return r;
+    }
+    function joinWords(w) { return w.length < 2 ? w.join("") : w.slice(0, -1).join(", ") + " and " + w[w.length - 1]; }
+    if (pub.length) {
+      var routing = roleList(pub);
+      sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "public-not-shown" }, [
+        el("h4", { text: "Public and not shown on this page (" + pub.length + ")" }),
+        el("p", { cls: "cdc-sw-names", text: names(pub) }),
+        routing.length ? el("p", { cls: "cdd-of", text: "The " + joinWords(routing) + " contacts are public: every college landing page routes a student to them." }) : null]));
+    }
+    if (held.length) {
+      var staff = roleList(held);
+      sec.appendChild(el("div", { cls: "cdc-sw-class", "data-class": "not-shown" }, [
+        el("h4", { text: "Held and not shown on this page (" + held.length + ")" }),
+        el("p", { cls: "cdc-sw-names", text: names(held) }),
+        el("p", { cls: "cdd-of", "data-held-roles": String(staff.length), text: (staff.length ? "The contacts for " + plural(staff.length, "other staff role", "other staff roles") + " (" + joinWords(staff) + "), " : "") +
+          "MAP's approval stage and the MAP users are left out of any outside share." })]));
+    }
     var joins = (D.elements || []).filter(function (e) { return e.join_key; });
     var open = notPublicKeys(D).map(function (j) { return j.id; });
     var used = [];

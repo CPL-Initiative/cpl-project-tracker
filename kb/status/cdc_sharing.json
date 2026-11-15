@@ -22,7 +22,7 @@
   },
   "held": {
    "word": "Held for the team",
-   "definition": "For the team's own work in COBI or MAP. COBI's own status files may serve it to the tab; it is left out of any outside share by default.",
+   "definition": "For the team's own work in COBI or MAP. The public site serves COBI's status files, so anyone may read a field of this class there; held means it is left out of any outside share by default.",
    "public_site": "may serve"
   }
  },
@@ -861,16 +861,32 @@
    "class": "public",
    "where": "map_college_contacts, served to the public through map_college_contacts_pub (anon may read it) and kb/_publish_college_briefing.py (CONTACT_PUBLIC_FIELDS)",
    "outside_share": "Public by design: every college landing page routes a student to them.",
+   "roles": [
+    "CPL Coordinator",
+    "CPL Counselor"
+   ],
    "system_name": "MAP, the Mapping Articulated Pathways platform"
   },
   {
    "id": "staff_role_contacts",
-   "name": "Staff role contacts (the other nine roles)",
-   "definition": "Each college's contacts by the other nine MAP roles (Primary Contact, VPAA, VPSS, CEO, Articulation Officer, Faculty Lead, Lead Initiator, Academic Senate President, School Certifying Official): a name and an email per role. Staff contacts, not audit-log ids.",
+   "name": "Staff role contacts (the other ten roles)",
+   "definition": "Each college's contacts by the other ten MAP roles (Primary Contact, VPAA, VPSS, CEO, CPL Assistant, Articulation Officer, Faculty Lead, Lead Initiator, Academic Senate President, School Certifying Official): a name and an email per role, and an email alone for the CPL Assistant. Staff contacts, not audit-log ids.",
    "system": "map",
    "class": "held",
    "where": "map_college_contacts, loaded by map/sync_map_users.py (View_CollegeContacts_APIDataset); never written to disk or committed",
    "outside_share": "Left out of any outside share by default.",
+   "roles": [
+    "Primary Contact",
+    "VPAA",
+    "VPSS",
+    "CEO",
+    "CPL Assistant",
+    "Articulation Officer",
+    "Faculty Lead",
+    "Lead Initiator",
+    "Academic Senate President",
+    "School Certifying Official"
+   ],
    "system_name": "MAP, the Mapping Articulated Pathways platform"
   },
   {

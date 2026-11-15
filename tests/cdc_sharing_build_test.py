@@ -13,7 +13,9 @@ must exit 1 and name the fault in words. A non-object row is a problem, never an
   (5)  an element row that is not an object;
   (6)  a class that says the public site does not serve its fields, for a file the Pages allowlist publishes;
   (7)  a source file the repo does not hold;
-  (8)  a missing registry, with its stale output left behind.
+  (7)  ... and a source file outside the repo, a directory, or not a string;
+  (8)  a missing registry, with its stale output left behind;
+  (9)  held roles that are not a list of names.
 
 Run from repo root: python3 tests/cdc_sharing_build_test.py
 """
@@ -146,6 +148,21 @@ results.append(("(6) the same class on a withheld file passes", rc == 0, out))
 d = copy.deepcopy(DICT)
 d["elements"][0]["source_file"] = "kb/status/gone.json"
 expect("(7) a source file the repo does not hold is named", d, REG, "names source file 'kb/status/gone.json'")
+
+for bad in ("../../../etc/hostname", "/etc/hostname", "kb"):
+    d = copy.deepcopy(DICT)
+    d["elements"][0]["source_file"] = bad
+    expect("(7) a source file outside the repo or a directory (%s) is named" % bad, d, REG, "names source file %r" % bad)
+d = copy.deepcopy(DICT)
+d["elements"][0]["source_file"] = 7
+expect("(7) a source file that is not a string is a problem, never a TypeError", d, REG, "has source_file 7")
+r = copy.deepcopy(REG)
+r["integrations"][0]["evidence"] = ["kb"]
+expect("(4) a directory is never evidence", DICT, r, "cites evidence 'kb'")
+d = copy.deepcopy(DICT)
+d["held_not_shown"] = [{"id": "h", "name": "H", "definition": "x", "where": "x", "outside_share": "x", "system": "cobi",
+                        "class": "held", "roles": "CEO"}]
+expect("(9) held roles must be a list of names", d, REG, "has roles 'CEO'")
 
 root = repo(DICT, REG)
 run(root, check=False)
