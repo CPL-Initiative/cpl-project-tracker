@@ -46,31 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 20,
-   "share": 0.9,
+   "share": 0.95,
    "missing": [
-    "ASIA15",
-    "CMST8"
+    "ASIA15"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM8",
+     "listed": "CMST8",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
     "CINE20C",
     "CINE22",
     "CINE23B",
-    "COMM8",
     "LGBT12"
    ],
    "flagged": [
     "CINE20C",
     "CINE22",
     "CINE23B",
-    "COMM8",
     "LGBT12"
    ],
    "pass": true
@@ -361,5 +365,6 @@
    "No careers are named in the certificate section."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

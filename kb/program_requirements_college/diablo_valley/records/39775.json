@@ -59,6 +59,18 @@
     "GEOL120"
    ],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL126",
+     "listed": "BIOSC126",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL170",
+     "listed": "BIOSC170",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": false
   },
   "invented": {
@@ -410,6 +422,6 @@
    "Outcomes copied as printed, including the wording 'explain the how data acquired by drone...'."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

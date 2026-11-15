@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 51,
+   "placed": 53,
    "listed": 53,
-   "share": 0.962,
-   "missing": [
-    "ECON220",
-    "ECON221"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
-    "ECONC2001",
-    "ECONC2002",
     "KINES222",
     "KINES223",
     "KINES246",
     "KNACT110B"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2002",
     "KINES222",
     "KINES223",
     "KINES246",
@@ -610,5 +615,6 @@
    "Careers: only 'sports or recreation administrator' recorded; the listed businesses (intercollegiate athletics, fitness centers, etc.) are settings rather than careers."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": "43379378196"
 }

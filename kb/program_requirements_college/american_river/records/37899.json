@@ -46,16 +46,14 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 24,
    "listed": 48,
-   "share": 0.458,
+   "share": 0.5,
    "missing": [
     "ANTH310",
     "ANTH320",
     "ANTH341",
     "ANTH481",
-    "ECON302",
-    "ECON304",
     "GLST301",
     "GLST302",
     "HIST300",
@@ -79,18 +77,24 @@
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON304",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -470,5 +474,6 @@
   ],
   "notes": []
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

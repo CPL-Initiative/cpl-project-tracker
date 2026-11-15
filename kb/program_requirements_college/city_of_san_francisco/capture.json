@@ -4795,8 +4795,1417 @@
  "would_extract": {
   "against": "kb/program_requirements_college/city_of_san_francisco",
   "kept": 349,
+  "kept_moved": 0,
   "programs": 0,
-  "list": []
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39056434592"
+ "fingerprints": {
+  "05428": {
+   "sha256": "dcd789ec038b4d9682b92cd1c0e7db1ba42d92652cabf7f8572987756def6745",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=418"
+  },
+  "05429": {
+   "sha256": "51cfe39aba0cee8a5d5d28cfc13bb55c9bcda2a4e27f269e7c06c05d5a416480",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299"
+  },
+  "05430": {
+   "sha256": "7886442234dc3a7af2ba69de543502522fa425844f834a21157daa27d37ad43b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=334"
+  },
+  "05441": {
+   "sha256": "ba7cd319e83ee5d68127a95f0be75eaab704ceb55b9e90032c6e9ca1e76857ac",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145"
+  },
+  "05443": {
+   "sha256": "7b032586d697984fa8cfb5fb4bd490bfb5f1ec4899bd2d75a72672efba987cf0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=147"
+  },
+  "05445": {
+   "sha256": "f3f4003e91322a6e8ddeb7703cf1337d4eed6729106f8329ced6cd54f519d5a9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133"
+  },
+  "05449": {
+   "sha256": "0679a1712341fb3d6bfd570c7439194bb864fabb692c3fdc6cd7a6bdf096d22d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104"
+  },
+  "05450": {
+   "sha256": "45ae7ed9af22d540962810a131772a156f4ed8d335e6d699c0c35e2ad9781c4f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=75"
+  },
+  "05453": {
+   "sha256": "894f4d26fa3d174d9191088f7168023bcab1766f3cec1d58a1bc6c5288add40d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314"
+  },
+  "05454": {
+   "sha256": "6e4dfd4f42c19c39317579d8ba44f93df3c6b43d60ca3ca76354863bd5a4e221",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=315"
+  },
+  "05455": {
+   "sha256": "ec3ba05c0c8451960b00fc24ca514f200b90526ab927709adc5bf870e040e806",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313"
+  },
+  "05459": {
+   "sha256": "e5bf7d5bb194569349e0d00b87f867672e47a4f1b5fb46b49cd2d5497dd30f15",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320"
+  },
+  "05462": {
+   "sha256": "e5bf7d5bb194569349e0d00b87f867672e47a4f1b5fb46b49cd2d5497dd30f15",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=320"
+  },
+  "05474": {
+   "sha256": "b5eac08900d41d2b1f0031fde1eec582917be176a5be7f7e577ad271b4969ad1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=135"
+  },
+  "05481": {
+   "sha256": "67a90eed28acb9c0dfaf9b13e5606a0efafa2c9c76664484bf2671c4f626a492",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119"
+  },
+  "05482": {
+   "sha256": "2061b56dcfdea271c77d90f7f309a04d3b7c7bfa64f456df33f987bba37664ca",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=103"
+  },
+  "05491": {
+   "sha256": "5dfed50d422ac1948bd1b207a8341b9b7f1efd262d44efb4e1dfc4c9f9bbbe0d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=290"
+  },
+  "05492": {
+   "sha256": "6f131ec5e2a832490fbe497e20479703ea1df8fb31fc517ee711c2447add377a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264"
+  },
+  "05493": {
+   "sha256": "e8bc19ac84704da1f1bb1881d0b19ba77995d1d1c4b554753938960bdc2aeaf8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=242"
+  },
+  "05495": {
+   "sha256": "cd68dfc3afe758b90bd15f665e83d9dd99b8306e842e70faf8c18add5a1adc46",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=254"
+  },
+  "05496": {
+   "sha256": "05c11304e4d789a82091ef80014b9957b6f7c027c24d1aea38326a3f80d8f0b8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=246"
+  },
+  "05499": {
+   "sha256": "df9170d0f40b074d56c3e89869c4361277f293bd3a81f73a739d705dc7a57d78",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100"
+  },
+  "05503": {
+   "sha256": "6f6dd1ab89b01d27bce9b04f52f5f000f311e71e86565751bffc38d16a364973",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755"
+  },
+  "05511": {
+   "sha256": "8cdf44793bd6ab1bcc11e9b53faa3686ed30577b14ceea42f6fec68ce424ee8c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=339"
+  },
+  "05520": {
+   "sha256": "3783af31f9582ccaa52a058816a9ddc5b9f4d54f09734bb49882ddfaa35e8582",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=229"
+  },
+  "05521": {
+   "sha256": "b2c8432d7bcd0e53225d4388ee1963e023148e90eb2e533391635a0bda74d152",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=189"
+  },
+  "05523": {
+   "sha256": "101ce4e7d44fcc5bf1122e27bcb8906aff5ddf4da5583efa82d6d031cd07eb20",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250"
+  },
+  "09172": {
+   "sha256": "bd122d04b8ff62951d51c1dab9574a301ef5a18abcfc4996979c6a3a3b353e93",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=424"
+  },
+  "09174": {
+   "sha256": "217a7701a03fd2bb5529942eed147c8a0290c8f39a6569fa5868689ed913833f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=405"
+  },
+  "09175": {
+   "sha256": "9040c7cb936b9f23d9aebebdda723c60b517dc1c40f2cc93a65d6345286ca130",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561"
+  },
+  "09178": {
+   "sha256": "e1729e2b6ef9312093f36948984e76c3822e6b0b7308685d5fdf090808db89d1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104"
+  },
+  "09179": {
+   "sha256": "15dc6e4127259f2a92ed4c6feb4f18c4b9922e0f931a80a7edca967d7e9de725",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104"
+  },
+  "09183": {
+   "sha256": "5263e4cd702cf9531eb390d51d6c1dacd9a766367769417b07683c5aeb3290cb",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=421"
+  },
+  "09189": {
+   "sha256": "2cc0103280ed575926eba97696e3a8d6787fb5adecba2046f8680b0bff041219",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295"
+  },
+  "09191": {
+   "sha256": "6f131ec5e2a832490fbe497e20479703ea1df8fb31fc517ee711c2447add377a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264"
+  },
+  "09193": {
+   "sha256": "b8ec647a1b712c642fe5662f42c0a148828cc3d84d4b03c149d99d029b169430",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253"
+  },
+  "09194": {
+   "sha256": "b29e25ce74fc8642e4a037a4594eb40cc1bc10c877d27bed45a00abfd8982cd1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253"
+  },
+  "09195": {
+   "sha256": "c635d6c9bc3e351c4aacac3a4d43b21021e82a898ffc6e834ee8231ee858698c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=256"
+  },
+  "09197": {
+   "sha256": "ff68798fbda3413bd57fe98a65f1fb21e433cf873158c0228e5d69087729c42c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=281"
+  },
+  "09203": {
+   "sha256": "88c424e155006a8fd901517a107c642154e0a09140a1d522f0900e4bfd431c77",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=244"
+  },
+  "10974": {
+   "sha256": "6f6dd1ab89b01d27bce9b04f52f5f000f311e71e86565751bffc38d16a364973",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755"
+  },
+  "11355": {
+   "sha256": "c2ee697e5b38758eb95d6356d13a98c4eded2b8773f3a685e6f092b4ec85d71f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67"
+  },
+  "11384": {
+   "sha256": "cdaeaaa9ec9e1f74198a1c8a483f5e623e46c16c426378913b88700a4a6bd40b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=401"
+  },
+  "11515": {
+   "sha256": "824c55bd4dab7479c73479777f6822c7c431bc3bfe24d2c4fb3fc77d9559daac",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=267"
+  },
+  "11817": {
+   "sha256": "9da65df7562f4359e7a6c552962a844a95776b03ca36cb822f92f219d5526212",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87"
+  },
+  "11818": {
+   "sha256": "25d3b966c64c3d14be65ae3dcc89913b0468dba26c7a8855b34a4d226fa5b216",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352"
+  },
+  "12355": {
+   "sha256": "a5e1e312d86b57659a75e4ce9520a0f5d41f67475d143b33671fab5d33992d51",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=191"
+  },
+  "12356": {
+   "sha256": "158a660597456c8fb77ba437e9bbcb02b8cd4ee47705e2691566982fe4d5bfba",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=192"
+  },
+  "12357": {
+   "sha256": "684341f6c438018629f4aa5aefaf525014d69d729d12528b3c70daaa7b2c6bd8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=190"
+  },
+  "12360": {
+   "sha256": "f566b4225e718e8ad9324028ad279b1e2920a3debf329b726375a163e3f5b636",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=142"
+  },
+  "12361": {
+   "sha256": "20cc1767a400a524914b348eab64d84cbdfd0c3332c8cf362a40d470aa8ccc1f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410"
+  },
+  "12363": {
+   "sha256": "df0075878dd5bb14d33588716d155084ec50dcb164252f11f4731fbb11fcc6d8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313"
+  },
+  "12364": {
+   "sha256": "af61bcb50c82f035b0bec805a60edea5f6fe7ef8c6fcec44bf0d9f4e27865137",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=348"
+  },
+  "12777": {
+   "sha256": "2187d25f7c7e7b571895a25e839a5c14f8e21ea0a93c40f32a9cfd13ade360df",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=227"
+  },
+  "14245": {
+   "sha256": "9719865cd29f7d58781f8ab466774ff76fef92567dbd9b7f0c5d36d6c96e9d78",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=94"
+  },
+  "15488": {
+   "sha256": "26b818a7d305bb7e57541bdcef8fe5b579fe91320191300598ccf6e63b1e0815",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=416"
+  },
+  "15489": {
+   "sha256": "3a970247a4f5acd69e6e6e46e2d07cc18858a23d0658695c42b77644a235f61c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=419"
+  },
+  "15490": {
+   "sha256": "b453fe353c85d10c01c12ac341713b4aee6fd2dad9393f94aaad8fc640a46e4d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=417"
+  },
+  "16818": {
+   "sha256": "46e872e1d0dfbe726bb66ae82c0d6fd176318d7013ad610b4735437e95f500e0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=274"
+  },
+  "16916": {
+   "sha256": "174162fe76a76352e225d160f6a2dbe091b3d4e66d8815b7dadb2566b2378e2f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=143"
+  },
+  "16990": {
+   "sha256": "f54ee30bde3ca15dabd7c8723a007110f9489fa78d54373cdf8daf77fb583957",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174"
+  },
+  "16991": {
+   "sha256": "521432cf7d5ff4acfb579d2c824bf5f782b53d47960e428e8e1dcc8e8d05d364",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176"
+  },
+  "16992": {
+   "sha256": "71837342a83e5e2da4899e01fa8fe912b6ce0820857373367ec892cd4a6f2c83",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=178"
+  },
+  "16993": {
+   "sha256": "15ae81781dcdc6e244adcd2f199000b4b23650ba5fc8d9684b23190b1e2e815b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183"
+  },
+  "17043": {
+   "sha256": "ba46a53b5d1221d85a04ea13423bec6b51a08cac6c4379ff9ac1f3b7c452fab6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=423"
+  },
+  "17614": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17615": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17616": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17617": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17618": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17619": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "17842": {
+   "sha256": "a6ff48d71a10872e5e388e2d691bbdcfedd51b0bd4cab3b93c53be00db2395ef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561"
+  },
+  "17951": {
+   "sha256": "f895f036c7da47167e06ff511b4361fc0ded7e82fd771fcd64424f4373029509",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=303"
+  },
+  "17952": {
+   "sha256": "1070ef66576e1dd8697240c1479bae9910ca7d41c3eba4834d1a4965036f16d6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=475"
+  },
+  "17953": {
+   "sha256": "51b09a9e2cfb9ecfda478c8a48169839ded469b12119cefd0cf976d391e6e486",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206"
+  },
+  "19037": {
+   "sha256": "10e3341d3875c750d764051f658c866663cf1096d45f9b58f694aa52bfa6f37b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=207"
+  },
+  "19038": {
+   "sha256": "5c5d5b17b7903e0161919078359c8bd0bf59b58136b2a9161eba88d002223aca",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=327"
+  },
+  "19040": {
+   "sha256": "1749ac7161eee5ae9502750e898edb1a683601b1381c41e667a863bed7fa2a8e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237"
+  },
+  "19445": {
+   "sha256": "25d3b966c64c3d14be65ae3dcc89913b0468dba26c7a8855b34a4d226fa5b216",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352"
+  },
+  "19583": {
+   "sha256": "6409c7d5ccd69eaab9afc39f824dbdce4164564ff5487ff6c8a052922441f08f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=423"
+  },
+  "19585": {
+   "sha256": "1589331912793416f2987eef88e2b17db7d162dd0f072c5c2ed39c770751852b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=242"
+  },
+  "19621": {
+   "sha256": "8020a55c954c6242e0e718e8326113e2a41344db3072a9901197f3be7ee2b2d5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372"
+  },
+  "19622": {
+   "sha256": "f993ba72f9ae69e3e2556914fcd3fb55b4ada2ca048453ece119d5182a89e213",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=373"
+  },
+  "19664": {
+   "sha256": "4be13a193a0be83ad8d60681e1a88f58e1f81d493b7f37c64f9f7b83c6acb07e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=397"
+  },
+  "19800": {
+   "sha256": "f8ed5dab4f0105cdddbf1d75741919a3ced9cd9f6740e18ead50c1e66b120de6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=136"
+  },
+  "19806": {
+   "sha256": "dc5d4cbbfa9bd144c06494f7415ffac4079dc2174f033a43a43571612dc8be32",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=251"
+  },
+  "19855": {
+   "sha256": "1749ac7161eee5ae9502750e898edb1a683601b1381c41e667a863bed7fa2a8e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237"
+  },
+  "21324": {
+   "sha256": "43f9d395bc46b2dfa0ce7f7e37a004fabe7b206d2e7182ad4361ac849d663841",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92"
+  },
+  "21325": {
+   "sha256": "11b09184fba9096bdf914a38e2c4ea818240b0915672303411c935d7661b96a9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92"
+  },
+  "21413": {
+   "sha256": "f1b8d1812cc20dab033c1a232f1f5134872b2b57fcf0f0f987697f364ecbc4ae",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=270"
+  },
+  "21414": {
+   "sha256": "a407b2ba8e44087869b72d0042d6c7c4edf2a5241c28921156073c29a02a5bbb",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=269"
+  },
+  "22719": {
+   "sha256": "c7eced6933dc4c815ec379a2c758dda2a0671bf63ee27d212f58b636342b3db3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=406"
+  },
+  "22720": {
+   "sha256": "f8de6fb3ec280c8c19465ad804b3e2a18032621b1253be52c82e3ef36c1cff43",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=425"
+  },
+  "22722": {
+   "sha256": "d269eb68b631eeb152d8b528f13000dcbeb109e6f7b4d3ae156a779bfc4e6c7c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148"
+  },
+  "22723": {
+   "sha256": "7c2c78888362a3d1fd05cab4f88744642b26367f21861f1b5ab718b7636e354f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133"
+  },
+  "22724": {
+   "sha256": "59cc3de937d4b202363efe47976fa282cf2b0a41f7bb05c6b4e6bf10cd3002a9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=194"
+  },
+  "22727": {
+   "sha256": "04b73eaff678ceab8a24b6145fa32641cbbef7d7996d554be261877fabbebfdd",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=265"
+  },
+  "22729": {
+   "sha256": "63caea84fc52818c641337f81314bfa1bee9c30dface58f9a0683f333f01c6ee",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=275"
+  },
+  "22730": {
+   "sha256": "17a34ea19bfb259f000568130586ae584dfd10e9c9df7a72d27649cfd6bbbeb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=95"
+  },
+  "24084": {
+   "sha256": "a375fd442a47d900ac81632823efda29e01acdb950fef670fde68d932496989c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=403"
+  },
+  "24120": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24202": {
+   "sha256": "89f1af64d8604133b201e1cf8c8dbf1de92cfec2c182729984882fff9f3e442c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=169"
+  },
+  "24203": {
+   "sha256": "b7f8be630b527eef4add5e57f9a42eca8e0f850578fe4cb7ee0d4a2f7e249718",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168"
+  },
+  "24254": {
+   "sha256": "ee9184189949a724aee398a0437f902383c2bf5181c2b9d7403f43dc83739278",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163"
+  },
+  "24259": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24260": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24263": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24289": {
+   "sha256": "01829367c8f466a6bb0fbdadd882ede5b9e58f7901931dd5b577147492e558bc",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409"
+  },
+  "24291": {
+   "sha256": "15b8e4e9ebf0bc4421a29598f3d22f17d4e191e705613cc36393972b7e27a007",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166"
+  },
+  "24299": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24304": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "24318": {
+   "sha256": "549d637dee0dbf7d5afe1ef54c4a29e04f27d64ab5f12a3e5cd76a3e48088d08",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=172"
+  },
+  "24323": {
+   "sha256": "15b8e4e9ebf0bc4421a29598f3d22f17d4e191e705613cc36393972b7e27a007",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166"
+  },
+  "24331": {
+   "sha256": "f8a497c89b369328b615a4e93785d574770d5328717c72210383892845045b31",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=644"
+  },
+  "24393": {
+   "sha256": "4beb4cad122fd06b5dbc32ff097384869e7c5694320cfb55ec5af9e3fd345eb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565"
+  },
+  "24449": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "30298": {
+   "sha256": "9ba56ea2d4f3790c7fa122f7c48626f3f26d643ab0c43442c95010ce55ce9d57",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=198"
+  },
+  "30419": {
+   "sha256": "a129e6f790467f00486b3ff7266f6a1105428caa459d2a7cc992339401fe9ba9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=83"
+  },
+  "30513": {
+   "sha256": "29eedddae7cb3024034f5be1f69097331956650a534d6c8e668d006e2501e3c5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235"
+  },
+  "30517": {
+   "sha256": "d2b948408d032907ea2e6ee194672e6f69270968896c38cc10c5928d3295f292",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=346"
+  },
+  "30539": {
+   "sha256": "4beb4cad122fd06b5dbc32ff097384869e7c5694320cfb55ec5af9e3fd345eb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565"
+  },
+  "30665": {
+   "sha256": "a055735c4fe074a75fc5febfa5250f3122530beba32d7f6b3e030470abce3ed2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384"
+  },
+  "30687": {
+   "sha256": "6c31f2bc9f55c5f1ae4232185bf937f70d9351bfc404fdd61cf44eb8cedb3ec9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=532"
+  },
+  "30870": {
+   "sha256": "cc0fcf7a1859650f749fdd244683d199a68a1bfa5bb6861e0fac6f635ae7c7f0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=292"
+  },
+  "30871": {
+   "sha256": "ce902d1f95bb596ff1d4ddd55b83271b4148bdebb45c4e18e1aa97a9778f57c1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=291"
+  },
+  "30897": {
+   "sha256": "9592b1335d3ac246731c38fd498c6c4aebe3b47e5594ae2796fb743e6ed26215",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375"
+  },
+  "31074": {
+   "sha256": "4beb4cad122fd06b5dbc32ff097384869e7c5694320cfb55ec5af9e3fd345eb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565"
+  },
+  "31395": {
+   "sha256": "f78d38167ff285697241419d40b608f3fd25464ced9b35c511cafe7243f0d374",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=400"
+  },
+  "31413": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "31414": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "31602": {
+   "sha256": "c47b343f357cf8f2f781418af6ce015088c8ee8964ef13e2fc5801b04222908b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=824"
+  },
+  "31611": {
+   "sha256": "9f67a5a76b3a79279b0353fd32d42c7a5e0eebebb1da6fe59482af48aea88144",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=158"
+  },
+  "31625": {
+   "sha256": "55062ade7c045f11f54de88641f09ad65da636c4f38c8a8de645c95e13d6b57b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347"
+  },
+  "31726": {
+   "sha256": "023864a3fec232b9dfeb8d2f5762f768ec7f2678493f0e3e1324c6082896c8c9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=353"
+  },
+  "31727": {
+   "sha256": "63e637505eca04247cca68f5b2ab53daeb43c5e7ffac515b772b542cd2a90eb0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=396"
+  },
+  "32079": {
+   "sha256": "d0e077b1c38c0e9a6364327936c0d797af9d3196e20e6b0480624ce1ff90cfa1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208"
+  },
+  "32080": {
+   "sha256": "ec1d3ec33539186c79f15f7b56d75f7487d099582ff7584475450d66a358ae40",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=193"
+  },
+  "32129": {
+   "sha256": "64f3bee9291d1f791a29a5b64a5e6c10eb4ac61bf0a61220b5584e38b12f99e6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370"
+  },
+  "32286": {
+   "sha256": "858044426f07b737e6254beb89098f09365b8aa448a8dc57bdc2187a1ad90c55",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384"
+  },
+  "32401": {
+   "sha256": "ecc7ebbcacbe5f409009385b1bba640e19b2e722ccfdaeec52814dfac0fd9662",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=126"
+  },
+  "32615": {
+   "sha256": "dbbdf014548a872b6d0e1348fe4b3d311dc2ee96645394854e49f29fe4823a3f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=230"
+  },
+  "32682": {
+   "sha256": "048e73b7c452829ee2beef12618c63d7342fdda57d312ea574f3539e4d9a50e0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=236"
+  },
+  "32793": {
+   "sha256": "0853383e09a8423e9986229875babe53b4d53d15ade81cbf4e43d00fb67c3135",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=333"
+  },
+  "32837": {
+   "sha256": "c2ee697e5b38758eb95d6356d13a98c4eded2b8773f3a685e6f092b4ec85d71f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67"
+  },
+  "32838": {
+   "sha256": "a810c149d82de73d901acceaf63e4d65886718974fd32194fee2320e84e6db24",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131"
+  },
+  "32840": {
+   "sha256": "76f1de15da0f1fb1356eec3141bcc643923c635399195c3078ca527c541a4b8a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=88"
+  },
+  "32869": {
+   "sha256": "00a9131c24c0f2fe8e1d4a1113bbed201fed9c1bd97422653ecf9cdad045f94e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139"
+  },
+  "33208": {
+   "sha256": "15ae81781dcdc6e244adcd2f199000b4b23650ba5fc8d9684b23190b1e2e815b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183"
+  },
+  "33298": {
+   "sha256": "a59cc82524061fb91021d50826d0c868fe8513931a5ea5f58c5c5e90d99f6c61",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=98"
+  },
+  "33299": {
+   "sha256": "dfc36ff7aea35ec268eec946ed76efa23d44ca032a370fd27403c2ebe8b61a4b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=105"
+  },
+  "33623": {
+   "sha256": "1906157157febefaf76b3ddc85165527184c4a1104c6c4cec115e1daed567897",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=302"
+  },
+  "33652": {
+   "sha256": "afab1ce3d896155978c526b4af27eb45d2994a6a4574b44a5feb2a05c50e6979",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=821"
+  },
+  "35115": {
+   "sha256": "88c424e155006a8fd901517a107c642154e0a09140a1d522f0900e4bfd431c77",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=244"
+  },
+  "35205": {
+   "sha256": "482e311a2f28561e5b8437c345add5c3ee05bb462c36f38f10531c0bf8a3c747",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=331"
+  },
+  "35455": {
+   "sha256": "5dda9eba154f9759b56e2317382c2bdd0d2a97594ac1a8fff3fdf1dad9ad0eff",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=324"
+  },
+  "35545": {
+   "sha256": "d5c3f1796c59a96cc9c32d41e555eeddaf27886bb6ddf7fcd4e7baa4d64a27ee",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102"
+  },
+  "35690": {
+   "sha256": "cced7e13c559a2fa10d6c5370209799609ee899fea29359c9b8a5dcf3d4d33b4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386"
+  },
+  "35708": {
+   "sha256": "d77da3bb91f4c351be20898c1142871ca90cbabc668a9366c17351572d2f88ea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73"
+  },
+  "35709": {
+   "sha256": "d77da3bb91f4c351be20898c1142871ca90cbabc668a9366c17351572d2f88ea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73"
+  },
+  "35711": {
+   "sha256": "d360a82273baf774e2aaa62afae4879d43a585083ad1a82a6ea77f7de3377ae3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128"
+  },
+  "35712": {
+   "sha256": "d35efbd931c8bfc92ae6ce3b7e0d59ef436d9709ed345f48c0e5abb76ce93d66",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=72"
+  },
+  "35713": {
+   "sha256": "a9074356e95817827837e91b5b9b6f4c0e1c96504d75187e8414900e1a2e34df",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=130"
+  },
+  "35714": {
+   "sha256": "d77da3bb91f4c351be20898c1142871ca90cbabc668a9366c17351572d2f88ea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73"
+  },
+  "35978": {
+   "sha256": "9c204cd9179b0d65b37865ca1f55b6648604527727c3f0d73388f073b789fe03",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=268"
+  },
+  "36081": {
+   "sha256": "922e9abd606b984e2826f7348094d7ea42c3049d1722d6412da1526dd8516554",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=365"
+  },
+  "36284": {
+   "sha256": "4beb4cad122fd06b5dbc32ff097384869e7c5694320cfb55ec5af9e3fd345eb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565"
+  },
+  "36297": {
+   "sha256": "87cebb287253dc805f016f2b9a583a3d383436752300dc484981ea2a9b388bde",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=389"
+  },
+  "36368": {
+   "sha256": "eb5441e6e0bad2bc431602179515fda24ae6488f804106193536c792b8bc20be",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159"
+  },
+  "36386": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "36398": {
+   "sha256": "5d0d6e33abfa9bc6b2fae261ce3987f56b078b5cc3ecc946bcce9971a9e37f92",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163"
+  },
+  "36402": {
+   "sha256": "45f91c9bbf21b797b5257642b6ba9e7d0dee6aae4d2715111e1086a8dd3534e0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165"
+  },
+  "36404": {
+   "sha256": "5f594c3dd648bdf29641800540d7b3791d8c35093b0cc4429081e09427dd4389",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161"
+  },
+  "36405": {
+   "sha256": "017cba2169c1c42101520bdbf1526c5d833f2c57353c344255f6d7b858faabb5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168"
+  },
+  "36407": {
+   "sha256": "f5cfb6b70b01b1059334650da3688f732f4ee7e33946ad5277a0746adfd62251",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=171"
+  },
+  "36409": {
+   "sha256": "5b0246c630d9f497d37addea41a0d98988ec3f779bba93df990b6e9090647e15",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161"
+  },
+  "36451": {
+   "sha256": "b4658ab6fdf57feecde2a310a871e86e1709d44f7162da33267d893eea211505",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=70"
+  },
+  "36452": {
+   "sha256": "ec349850c310d427430f24a519b66749fb8f97b77a76038209e7f5e3a3192085",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385"
+  },
+  "36464": {
+   "sha256": "bba6a07e07c2ff9025fa2bae9c7e5561975b065aab133c5892bc0827e85bf062",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165"
+  },
+  "36558": {
+   "sha256": "a4103f26939473be8e53782de437a780beb486295d8b261d71a75b77b255a044",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=412"
+  },
+  "36672": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "36715": {
+   "sha256": "12d48b1bcd9ba5eed60b2a2b003669dad8043fb02571547168665efa1cbdbcfb",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113"
+  },
+  "36730": {
+   "sha256": "7f09c3a409fd7a85cc38ba01a05b4c4453b139097b4681d50fe909e55db651ef",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=309"
+  },
+  "36742": {
+   "sha256": "a77ba82bb8df2d947441cf5057efb3500965e8b2d5168924a52c57c9fa1eff45",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=122"
+  },
+  "36827": {
+   "sha256": "713dd975c490c1b0e899d4303e2e8df84889c25338ac2de29a68ff60c65449fc",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=164"
+  },
+  "36849": {
+   "sha256": "d897ce146f2294cdf105abfce5bd3117748ba15cffefa104b0c04f84bb7aac15",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87"
+  },
+  "36958": {
+   "sha256": "1749ac7161eee5ae9502750e898edb1a683601b1381c41e667a863bed7fa2a8e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237"
+  },
+  "36959": {
+   "sha256": "1749ac7161eee5ae9502750e898edb1a683601b1381c41e667a863bed7fa2a8e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=237"
+  },
+  "36963": {
+   "sha256": "ea5707e251f348c2278af842f65e9a931730bc2b65f99985bc0c2623447bd0cb",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=413"
+  },
+  "36964": {
+   "sha256": "9e8d9e0aff7ad4ae14508feb900aa17a1bfedc25d8400a1ba4bf7dd8cf6f3bd3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643"
+  },
+  "36980": {
+   "sha256": "aac63b3165f5ba2d8144028d4335a545291ddfe12ea7f89462d2b0c41b117888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "37037": {
+   "sha256": "f2ef5343a1c8eebe14a1b9cc4e14546816097a5c99b5e212cb1c498dbde760d3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=322"
+  },
+  "37038": {
+   "sha256": "e57030a9456daf758033f341031ff9ee2916e8398426c3d14029fc09f2ee440d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=137"
+  },
+  "37060": {
+   "sha256": "8e54b4a565f64e4f821b415a34e3bc3139e60ced84cc590df4aaabf94c92c49d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=194"
+  },
+  "37116": {
+   "sha256": "fa565900af9721b9181605b56e50e31244469dfe2a738aff762815450d5266a5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367"
+  },
+  "37160": {
+   "sha256": "d77da3bb91f4c351be20898c1142871ca90cbabc668a9366c17351572d2f88ea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73"
+  },
+  "37167": {
+   "sha256": "922e9abd606b984e2826f7348094d7ea42c3049d1722d6412da1526dd8516554",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=365"
+  },
+  "37231": {
+   "sha256": "7e5b4b4985442b1ad5f521c333a784f5c9c9a817a97db43daa8a2a2eb4661b68",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=259"
+  },
+  "37479": {
+   "sha256": "fa565900af9721b9181605b56e50e31244469dfe2a738aff762815450d5266a5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367"
+  },
+  "37480": {
+   "sha256": "b6557402157a6e772b62c274e49949829b0396412d8e568cb1d5328428af7888",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318"
+  },
+  "37499": {
+   "sha256": "95c8d36a1de125a1626ffb8c26af5df4bebf9377c397d35bcc2238d4b52e660c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=74"
+  },
+  "37513": {
+   "sha256": "63d9673facc87d1eba3a6e8edf30c7d3028811ab35c07692a171f5a1f42aecd8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391"
+  },
+  "37561": {
+   "sha256": "eacc1be9f90239dab87d90908d4a26eab5474371440ec9bc33deb7000a2f924e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564"
+  },
+  "37597": {
+   "sha256": "42d2e41dc0f176190388e7d7db08f39032f5379a73601074fc72a637258031d2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=120"
+  },
+  "37600": {
+   "sha256": "9cc4c20abd9caf166eec94eff4f8e3745a315f6fa690f649803394926815d71e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297"
+  },
+  "37601": {
+   "sha256": "45505cc8d4ee0131317870b257160deb5cceab17cca6f8a1a3c59bb78c672089",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314"
+  },
+  "37602": {
+   "sha256": "99673b07c496e0a0a3226fc7a3b3def4a8efb38785ff2325c303bb866886a289",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=329"
+  },
+  "37607": {
+   "sha256": "5cf0f6a09f9ccb9597d32d04d1e7e5b99f9d724d2915ddde0f16e954090d1d55",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=239"
+  },
+  "37731": {
+   "sha256": "101ce4e7d44fcc5bf1122e27bcb8906aff5ddf4da5583efa82d6d031cd07eb20",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250"
+  },
+  "37732": {
+   "sha256": "48f362093d5b449ae14a9e81f1660b09d4e7eb20794b50edde749a9d96b71f3a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=127"
+  },
+  "37733": {
+   "sha256": "4effcba2733a8d86f0e931ef423bd1eee527d8fc6ec3239bd8938bfa8866d3bf",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238"
+  },
+  "37734": {
+   "sha256": "79bd0043e62a9dde3c807f52175ab255b6ada6e9166bde5eeb8e2ac2d4b293ad",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=240"
+  },
+  "37735": {
+   "sha256": "bdaf11b57b1a6c025f0d7264c8e59244d203ed95f44d12e0c3a1e4fdc9536246",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=69"
+  },
+  "37737": {
+   "sha256": "83905c1063d27fd37613677de1dd5db4fa455cb2d5b21266379de3928fefb608",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=259"
+  },
+  "37738": {
+   "sha256": "3fce8cab12f9dc96b3c4d8a33dba81746851f23e57de5d2f63da3e3fdfe7bf4e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=297"
+  },
+  "37739": {
+   "sha256": "5d6ca0218c759211511fe63869f37c2e3e3ca502ccff78d24e17e9723f45bd63",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=95"
+  },
+  "37777": {
+   "sha256": "b892a92a3c58937b7897a19d6e37295257d46e16fa4cab81a355b66517fb1983",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=121"
+  },
+  "37778": {
+   "sha256": "2839df35adc09e44d8bc6715cd8667fa3b4695db8cdd9f8810aab655c6e951e7",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=123"
+  },
+  "37779": {
+   "sha256": "488138049c9e131fecb43bfe295a5f4c97b9e6ba9d60d2e14565f5d32b0592df",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=89"
+  },
+  "37780": {
+   "sha256": "cf27e12c2a7ee8c5eb6d44fc5059fffa367344e2d5b79b21e235a5e4c4529464",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114"
+  },
+  "37781": {
+   "sha256": "b29e25ce74fc8642e4a037a4594eb40cc1bc10c877d27bed45a00abfd8982cd1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=253"
+  },
+  "37782": {
+   "sha256": "b62130b0ca0c811f1b574113a35034333a579519502ef4afc420c76a50dd73b4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231"
+  },
+  "37845": {
+   "sha256": "66b488558f8a690c15614497bb3d5b325491ddfc7f54f14ea2f4664c45146a01",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343"
+  },
+  "37900": {
+   "sha256": "05945183ab2e0e54139fc6b5b450b17c2ab0c16b4c9832d55401d67cff589de4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=96"
+  },
+  "38072": {
+   "sha256": "8cdf44793bd6ab1bcc11e9b53faa3686ed30577b14ceea42f6fec68ce424ee8c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=339"
+  },
+  "38223": {
+   "sha256": "39ee0ced9c86f12788786f540d97413fb8eac1db40706ce8555ece3c93082921",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=408"
+  },
+  "38225": {
+   "sha256": "334a7bd7e9d4aa9ff83ce5937048c0fb8346b7dd8372a17ceffa97920d0ec941",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234"
+  },
+  "38227": {
+   "sha256": "3197fecb37e3a257574065337d5a8be4706e345d6d348e42e02cc01c1906da52",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=349"
+  },
+  "38238": {
+   "sha256": "914d3ad870774b37c96ccb28c249653b277b81278372b72e3df74b718006c91e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=402"
+  },
+  "38266": {
+   "sha256": "3173359292c78e2e8df24609f0518a994eaf575bd227b6b7626f2b1ecc2c8eb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=97"
+  },
+  "38267": {
+   "sha256": "f54ee30bde3ca15dabd7c8723a007110f9489fa78d54373cdf8daf77fb583957",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174"
+  },
+  "38443": {
+   "sha256": "8d78f6ca845f08707f342cc753277d6e70cf80f4519ff9fe549320f332d48560",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144"
+  },
+  "38444": {
+   "sha256": "a5fe2f495e523ae66a900d1fd7c29a32e4a0774b4ad3fcd15e18fe74b523de84",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150"
+  },
+  "38445": {
+   "sha256": "4477565c40bff36ec529894a8a7faaca046f4434265c3e87dc42402d2bbbb545",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150"
+  },
+  "38446": {
+   "sha256": "67a90eed28acb9c0dfaf9b13e5606a0efafa2c9c76664484bf2671c4f626a492",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119"
+  },
+  "38447": {
+   "sha256": "3838aaa222a63326bc1804f4ab205a65c5f679cc3f6a2af113c51c0385906cb8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234"
+  },
+  "38448": {
+   "sha256": "45ae7ed9af22d540962810a131772a156f4ed8d335e6d699c0c35e2ad9781c4f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=75"
+  },
+  "38449": {
+   "sha256": "ea0f582f43f22cea70a24293f4bd8d573fa82c6eb451e3b8ec3bdb97970f1536",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=76"
+  },
+  "38450": {
+   "sha256": "501d612ae9fe10a385f46e7b80c89fec993f06d6ab2c6a1b5e74fbfa612ecdc2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90"
+  },
+  "38451": {
+   "sha256": "d457cb39453327c739262c8f99610935253c1c02da4a5c0cc77c307949dab15c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125"
+  },
+  "38905": {
+   "sha256": "b9c338a7024f043f643d1273cd51e7cf187354115f2a24fe7f0ff38cc0d357f2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=66"
+  },
+  "38907": {
+   "sha256": "425a516b2fb491168060b50e9c7a1ae2ed4fa9cf8c589ec3d542abc447360b84",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=186"
+  },
+  "38908": {
+   "sha256": "991e2a23c57028bb71ed501f85f08840498c226e037f37eb140f906e76ff689c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=187"
+  },
+  "38909": {
+   "sha256": "4cf81f527288ba50d96ab67d2f2d05cbb6d7aadc4ec2c2b4c03f38fb39fe91d3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115"
+  },
+  "38940": {
+   "sha256": "7a16076d0458a25895bae7248dbfdab205983e153f4efdcfb0592e62120e448d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=382"
+  },
+  "39072": {
+   "sha256": "db5a75febf1f7477df4958dfbf5ca0a3c5e3ab8ad9d008dea20173f08bf03611",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=301"
+  },
+  "39099": {
+   "sha256": "685a54b059f9fc63103267b01445d6fa42c61436133f4ca4e08aa69974702c35",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=351"
+  },
+  "39100": {
+   "sha256": "b44de85ed166ec1f6cfbd5c98fdd1c7f87c389985e7f1e26ca0fc7027d08555d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=78"
+  },
+  "39153": {
+   "sha256": "fcb65ead32ab078eee6eff8980182e45d75e00c6d14f4ebcb9a6150eb9e4ade5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=399"
+  },
+  "39154": {
+   "sha256": "f21ffc5de7c312fa8d67738115ac5d8b03e5df695335e37e7b4f1626d1f43db6",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=399"
+  },
+  "39219": {
+   "sha256": "27c5a78ab9c6a9492aaee90e628f4176931f18acde171797d3f0494c0e6d89db",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=124"
+  },
+  "39221": {
+   "sha256": "2f066e2301187f751bcafb91420fdfb7dd111b6ba8e14f17bd721f0cad6b8fa5",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=93"
+  },
+  "39223": {
+   "sha256": "bcd6620c9250353e4bafb5c852530408f0739e16c926106f96d101d442bc37f2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=112"
+  },
+  "39231": {
+   "sha256": "ce631b301ef8f1b060e1c1c4ad3b1710f0f61d95d5b053a2c71b758f31dbad97",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=663"
+  },
+  "39335": {
+   "sha256": "fe71d85fa2c35dbe7c8ea037101022db7511d6744f7a2ec4b57d0481a5dde2ad",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=260"
+  },
+  "39647": {
+   "sha256": "cdd5fad894985482cdfdcfeaf15da582c3e4728876ffd8623f3c597474452a2b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117"
+  },
+  "39685": {
+   "sha256": "b9e9fdd6a0c783ea1fe5597152c2fcbc7a36f52f5c49a843030e5f1a57813a71",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=69"
+  },
+  "39727": {
+   "sha256": "9586b9a10c6ef8e5e2e5af7ccfec9fc16fa69f9ac219e85fb547d6f49b8107c9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=154"
+  },
+  "39728": {
+   "sha256": "7b31e9b79388f54713b467b907c950f3d920707e1a909dc672f70967f6d3cce0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=179"
+  },
+  "39913": {
+   "sha256": "aa33efd980855742d0020c3dddce18aa1dc62a48092648f23dc012620f12adf9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361"
+  },
+  "39959": {
+   "sha256": "8c1ad6b89dc0710d05a23ec28b124f35c2c5fffa531f1f44f655462e52f6d2c7",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117"
+  },
+  "39960": {
+   "sha256": "c102161035778bdf9a6b78639c9890e8567895556c923a16aba44ef117544693",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=277"
+  },
+  "40025": {
+   "sha256": "6d1d4f6abadeb34d79370a90bd5ee17e1e69b83fd2628797f42218d6aade98ae",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=197"
+  },
+  "40074": {
+   "sha256": "7a07ac43b51e169e6bbfd1170377eaa6955d4cf0d4a436c622042a4bb14ab5f9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273"
+  },
+  "40075": {
+   "sha256": "360035662fb47ccc06d9ee2a9d0c8914765fbf5c0ee74c5b824834e7840fed29",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=393"
+  },
+  "40151": {
+   "sha256": "4d1e2c9bf461d8f18cf00bb952cb1617133fa1c7c84c287684933de996da57ac",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140"
+  },
+  "40157": {
+   "sha256": "ca8bca52cd75f40e1107b438575279fd70f28b7b6df943a46136b9e5ce5825b2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=304"
+  },
+  "40167": {
+   "sha256": "a714f534e0a90099884766d7d53040264206e4f7abe87b97405f6bd8070f7a06",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=343"
+  },
+  "40168": {
+   "sha256": "3fdb21450f2c2b18280f7be2aab6d676459a3ca9fc7ed81b5b850963d6959d31",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113"
+  },
+  "40169": {
+   "sha256": "0af55fd96ec91287debea984de2663ae880cf5ef0fcbda644caf71148ae7e509",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140"
+  },
+  "40170": {
+   "sha256": "df1b15428a75e92a9f458700bc8d736ce86bab01c6a8176e12986ee182263b80",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91"
+  },
+  "40171": {
+   "sha256": "bcf4409250cc5da8c971bfa4769e4151c1618e691e57f18931351af3fbf4c00c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129"
+  },
+  "40174": {
+   "sha256": "ea7a299441a7ad7a2bd03627cc3bfcf02d2e5ca134ace336c19cb52b60364338",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=305"
+  },
+  "40175": {
+   "sha256": "4f88300657da3e85c25370691e2d46a45da94f1cc41c6c2b7735a74643567e1c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=307"
+  },
+  "40177": {
+   "sha256": "a810c149d82de73d901acceaf63e4d65886718974fd32194fee2320e84e6db24",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131"
+  },
+  "40205": {
+   "sha256": "79190193f5c30770c534420a8894ddca6d5ed2f1d7cffcf48f20ad47cc92451f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=280"
+  },
+  "40206": {
+   "sha256": "9d80d1f89e6335f39a715696e37c9a6045e3b7dc1e1da9fec8650fe22bc50eaa",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=248"
+  },
+  "40207": {
+   "sha256": "938a6f3fd0d614fab64d32dddc2159407539b0ba2290e2fb3c2effd6d86c7f82",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=410"
+  },
+  "40262": {
+   "sha256": "5d87ff345fc30f1cc80e4a6db323e825386af3736387531d5759bd5656b8e982",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312"
+  },
+  "40305": {
+   "sha256": "0ac8bb2f026213c29f199c5fae146c61b3d950b289f589b6169b95ebe330a185",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372"
+  },
+  "40407": {
+   "sha256": "bcf4409250cc5da8c971bfa4769e4151c1618e691e57f18931351af3fbf4c00c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129"
+  },
+  "40408": {
+   "sha256": "77aa1db77502182f3a15a4fba1eae625c3196396d631ab3699aa409fa2a536a3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317"
+  },
+  "40432": {
+   "sha256": "9040c7cb936b9f23d9aebebdda723c60b517dc1c40f2cc93a65d6345286ca130",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561"
+  },
+  "40433": {
+   "sha256": "51cfe39aba0cee8a5d5d28cfc13bb55c9bcda2a4e27f269e7c06c05d5a416480",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299"
+  },
+  "40434": {
+   "sha256": "df9170d0f40b074d56c3e89869c4361277f293bd3a81f73a739d705dc7a57d78",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100"
+  },
+  "40435": {
+   "sha256": "4477565c40bff36ec529894a8a7faaca046f4434265c3e87dc42402d2bbbb545",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150"
+  },
+  "40460": {
+   "sha256": "9cfc3a4968d74241d1cfbdd3af9186b5bb4b974ff036b535a08a309e4462fe82",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=342"
+  },
+  "40590": {
+   "sha256": "4477565c40bff36ec529894a8a7faaca046f4434265c3e87dc42402d2bbbb545",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150"
+  },
+  "40695": {
+   "sha256": "15664ddee2cabdfbb65ea99515f95e895bd88bbea9196376e470c1328984829e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=284"
+  },
+  "40704": {
+   "sha256": "3bc9173ac914a131bba8ded597de596198f1c535983b97432e8543a0b92dd3ac",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335"
+  },
+  "40705": {
+   "sha256": "19463be92136c79ba3f2f51d35859741c0c2e1cd631cede37e091d102265e03e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578"
+  },
+  "40706": {
+   "sha256": "19463be92136c79ba3f2f51d35859741c0c2e1cd631cede37e091d102265e03e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578"
+  },
+  "40750": {
+   "sha256": "34e762a115f508903d72ec8c11f094303d020ffb901f9dc723df7abab5226d45",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=141"
+  },
+  "40751": {
+   "sha256": "403ab2dda5e7acbbd0a8f8a5b5a83fc5eb5e1b13c1877cff350c32041c8ea009",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160"
+  },
+  "40774": {
+   "sha256": "3177ad351a18c724ee1649abb6d4cd30115b33e7050011f178999f1caff6fef2",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=371"
+  },
+  "40778": {
+   "sha256": "32d5995d3deac0d2fb316639a8c338056720406b5ba7120a2b7acb2ca448f6f8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=344"
+  },
+  "40800": {
+   "sha256": "a90112765af4387bbc32babb76c46d19227bcca9e7eef79650f1512661560821",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=80"
+  },
+  "40801": {
+   "sha256": "57bc7d2b0075a896185179dea0250e616c821812ea60c68dcf857651baf9a46d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=81"
+  },
+  "40802": {
+   "sha256": "e5a2271d3034d739961190cc8ee8120ee74b92bd5494b2c59654c5d1708dd04a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=82"
+  },
+  "40804": {
+   "sha256": "40a06e6efe9650aa62e9c99253023e76a81ad31e5441c3dc2e0764f47df1819b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=85"
+  },
+  "40817": {
+   "sha256": "5f9b23e7ab35d4c89d76182046bdac19402d1fabeb409f034efe2063e3134f59",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295"
+  },
+  "40876": {
+   "sha256": "4e5665808f3b698caafaf32de80168c1df45283359fc7690c4ba7674c41b94b4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=335"
+  },
+  "40913": {
+   "sha256": "1bcecf70c954c7ad09a87ffc29c71b8fd7f104b878a50774250c3f851981cfda",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=279"
+  },
+  "41047": {
+   "sha256": "5d1d925eb911d61edf81f1ec7f8f429b4564ae41228ab75687e4a91f3f373fc1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=381"
+  },
+  "41048": {
+   "sha256": "8c4abcf76d4d0c670cacaa78d155cc148e4969fe01e96ad3bc66a8ee1f0b67a9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=380"
+  },
+  "41049": {
+   "sha256": "50bda2b7534d3ac545ebea3e248d3913cfabc724e08f3b9e12c25884891fdc60",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=146"
+  },
+  "41249": {
+   "sha256": "4311169c4f639a760a0d2fe6f87c38ac41134d2582ba88c50ab940cd2ffbe373",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=247"
+  },
+  "41310": {
+   "sha256": "35b576ddde068d4528bba8e4e4d3637072becb6d0f63b3e35976bbf61e4cefea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359"
+  },
+  "41314": {
+   "sha256": "35b576ddde068d4528bba8e4e4d3637072becb6d0f63b3e35976bbf61e4cefea",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359"
+  },
+  "41315": {
+   "sha256": "ed176482f4044bcee28636d92888a38d17c58f824e797ad7f5f143d5028a5af4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355"
+  },
+  "41353": {
+   "sha256": "df1b15428a75e92a9f458700bc8d736ce86bab01c6a8176e12986ee182263b80",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91"
+  },
+  "41354": {
+   "sha256": "22d306c9a0fd8c7ba59bbe4891c8efe98cffbae8812de2927d12b30e1e4c34ab",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=249"
+  },
+  "41361": {
+   "sha256": "47ebfd28d06604a68c24edd1616a099f39b63f04226c2540ae8403396bb3d4cf",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=232"
+  },
+  "41439": {
+   "sha256": "cd8038d7876e3fa2bce7166d49e730d387cea287154d2f39c90e42b487616452",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=169"
+  },
+  "41637": {
+   "sha256": "532de386184d65f695c2147400f8ce6b4a69fc6da94e761e86c8073d3373c7c7",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=386"
+  },
+  "42024": {
+   "sha256": "a6958e35f13c1a60011be9b7dee1ec7e7efeab5d30a9126e4abd1cb3c0fd7b88",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=71"
+  },
+  "42025": {
+   "sha256": "f623382b0e2518e5eff97d188e6eb1cea7034c957487395038d6898768b40f68",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=356"
+  },
+  "42228": {
+   "sha256": "d2dd3bf862055d7f4de8b9aa6b8a481a06aabe044baa162d68095e31c99342c1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=318"
+  },
+  "42318": {
+   "sha256": "9e8d9e0aff7ad4ae14508feb900aa17a1bfedc25d8400a1ba4bf7dd8cf6f3bd3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643"
+  },
+  "42499": {
+   "sha256": "7a07ac43b51e169e6bbfd1170377eaa6955d4cf0d4a436c622042a4bb14ab5f9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273"
+  },
+  "42693": {
+   "sha256": "05a34d71806b90e6d54fc03a8660ee61b8cc1a511728eb170152c56580e840ca",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=157"
+  },
+  "42742": {
+   "sha256": "fc28a235c1c9149afc953ebe06f87c46ad5471111981aa5c6722dd71cf077f3e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=77"
+  },
+  "42908": {
+   "sha256": "a22bc048b9d420189f288a6847e88a205fcb86cf8522614d9f55c83797dea536",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=248"
+  },
+  "43116": {
+   "sha256": "563b541ba82504dfdf8076831d1a6f77ffe8c8f674a24068b4ec91b26adddcd3",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545"
+  },
+  "43525": {
+   "sha256": "26ad67a2cbbf43b8f2471777577b6216bda6609d8267578170d7045d2ec75488",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=137"
+  },
+  "43536": {
+   "sha256": "be5b723ad2d9583189422ba9bdab69b6ecbc2610a6f34c9443a3e9237d9948fa",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=228"
+  },
+  "43576": {
+   "sha256": "96e5b92c9b09ec3d592a3a977a29de6eb994d79163266f1b8ca71804c778287c",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=263"
+  },
+  "43577": {
+   "sha256": "8743810d908933b9049f2ffd6c8586b2d0de6aaa49cfe3277ac0c118505f7b20",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=311"
+  },
+  "43578": {
+   "sha256": "073322629f373e69018a9ecab23012d40e9712a5bf837a7f0c1bffff9f5db6a4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=121"
+  },
+  "43860": {
+   "sha256": "40a9d8a32875a170ba22114a5457824a45d47682ae8737158b9a313f50bedf0a",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=149"
+  },
+  "44108": {
+   "sha256": "de16fb0ad4dfa8eada009f85e84535519f5321a6b801cea9e7c99ec60218bedd",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347"
+  },
+  "44501": {
+   "sha256": "19b44896dd7df0e4811b631e8ea8cddfcbbfae4f7f85361df73b84e878d49bae",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=349"
+  },
+  "44502": {
+   "sha256": "b0dd52a770e1e36488493ca4013f0bb4e99515e1a03c83fdcb8f67b353683453",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=414"
+  },
+  "44633": {
+   "sha256": "4391fb817947fd00ec6997797790a85d2a30b5b69e181e4e952c9968f7341c62",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134"
+  },
+  "44751": {
+   "sha256": "f0c514b3cee918eb7c3d1d8f454a5a19fcd8acd454a42fc634f6845bb1273a9e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235"
+  },
+  "44944": {
+   "sha256": "894f4d26fa3d174d9191088f7168023bcab1766f3cec1d58a1bc6c5288add40d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314"
+  },
+  "45270": {
+   "sha256": "083ae78496efa8e09f87c99ea7a710d27a52411c69e414bcf0da2efcd5888878",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=362"
+  },
+  "45543": {
+   "sha256": "e9b555425a79890bea08ae6faaf6123174a15bda448ade3f3143b8a4dfcdfd6f",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=271"
+  },
+  "45920": {
+   "sha256": "521432cf7d5ff4acfb579d2c824bf5f782b53d47960e428e8e1dcc8e8d05d364",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176"
+  },
+  "45925": {
+   "sha256": "e9e396c2f2af451c06dd25a9a55bba053784e6fdf4c54abcd4562a3987ff9b5b",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=308"
+  },
+  "45951": {
+   "sha256": "07d7b6c1c03c4a5aa17ef6f84662fd507037422ba776eb8a8cd0cfd76b5b1b0d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196"
+  },
+  "46300": {
+   "sha256": "d0e077b1c38c0e9a6364327936c0d797af9d3196e20e6b0480624ce1ff90cfa1",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208"
+  },
+  "46308": {
+   "sha256": "ed176482f4044bcee28636d92888a38d17c58f824e797ad7f5f143d5028a5af4",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=355"
+  },
+  "46320": {
+   "sha256": "4f0167481dffd251986dfbafd955924d86e4064548e695a8026a6b385d707269",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=395"
+  },
+  "46321": {
+   "sha256": "2d8b9128167243ff262c0d61daca20adbaff4e3e7fd8527b6fde7869f21b6944",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=795"
+  },
+  "46322": {
+   "sha256": "63d9673facc87d1eba3a6e8edf30c7d3028811ab35c07692a171f5a1f42aecd8",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=391"
+  },
+  "46323": {
+   "sha256": "aa33efd980855742d0020c3dddce18aa1dc62a48092648f23dc012620f12adf9",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361"
+  },
+  "46324": {
+   "sha256": "917ba6903ddc988990a65dfb3bd88c1d6c2b9d983794f0a4a98f11634d77fbed",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=392"
+  },
+  "46326": {
+   "sha256": "07d7b6c1c03c4a5aa17ef6f84662fd507037422ba776eb8a8cd0cfd76b5b1b0d",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196"
+  },
+  "46360": {
+   "sha256": "00a9131c24c0f2fe8e1d4a1113bbed201fed9c1bd97422653ecf9cdad045f94e",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139"
+  }
+ },
+ "staged_from": {
+  "run": "39056434592",
+  "proof": "the filed account equal but for its run, and 0 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43693267535"
 }

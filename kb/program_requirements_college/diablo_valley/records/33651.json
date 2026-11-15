@@ -52,6 +52,18 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -600,6 +612,6 @@
    "Cal-GETC is named as the GE pattern but no GE units are printed."
   ]
  },
- "extracted_run": 43609976980,
- "read_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

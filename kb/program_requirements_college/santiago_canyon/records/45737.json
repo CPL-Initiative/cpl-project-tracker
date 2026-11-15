@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 24,
    "listed": 25,
-   "share": 0.92,
+   "share": 0.96,
    "missing": [
-    "CDEVC1000",
-    "PBLC156"
+    "CDEVC1000"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "PASV156",
+     "listed": "PBLC156",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CDEV107",
-    "PASV156"
+    "CDEV107"
    ],
    "flagged": [
-    "CDEV107",
-    "PASV156"
+    "CDEV107"
    ],
    "pass": true
   },
@@ -352,7 +356,7 @@
    "The career entry is taken from 'pursue careers in the helping professions'. The description also mentions roles in city, state, and nonprofit organizations, which are employers rather than careers."
   ]
  },
- "extracted_run": "43387912036",
+ "extracted_run": 43693830334,
  "source_sha": "6a01130ed6123f3f",
  "source_codes": [
   "APCD107",
@@ -380,5 +384,6 @@
   "SOC240",
   "SOC240H"
  ],
- "source_coverage": 0.96
+ "source_coverage": 0.96,
+ "read_run": "43387912036"
 }

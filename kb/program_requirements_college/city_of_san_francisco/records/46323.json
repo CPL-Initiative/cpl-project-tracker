@@ -78,9 +78,7 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-22.0; the catalog states 18.0-20.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -329,5 +327,6 @@
    "The section's requirements table runs across pages 361-362; the total 18.0-20.0 is printed at its end."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

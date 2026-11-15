@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 21,
-   "share": 0.857,
+   "share": 0.905,
    "missing": [
     "BSEN74",
-    "CMST4",
     "CMST6"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "COMM4",
     "ESL79"
    ],
    "flagged": [
-    "COMM4",
     "ESL79"
    ],
    "pass": true
@@ -343,5 +347,6 @@
    "Block totals 18 + 6 + 6 match the printed Total: 30.0."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

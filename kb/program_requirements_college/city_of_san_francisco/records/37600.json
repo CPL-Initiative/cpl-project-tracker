@@ -72,9 +72,7 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.0-21.5; the catalog states 17.0-20.0"
-   ],
+   "why": [],
    "meets": true,
    "rescored": "Open Asks Sheet 120 card 1"
   },
@@ -249,5 +247,6 @@
    "Total 17.0-20.0 recorded as printed (16 required units plus the 1-4 unit choice)."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

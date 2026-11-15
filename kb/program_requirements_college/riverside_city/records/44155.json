@@ -50,6 +50,68 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST16",
+     "listed": "HIS16",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST17",
+     "listed": "HIS17",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST25",
+     "listed": "HIS25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST29",
+     "listed": "HIS29",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST32",
+     "listed": "HIS32",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST33",
+     "listed": "HIS33",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST42",
+     "listed": "HIS42",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
@@ -550,6 +612,6 @@
    "GE pattern: the section heading names CalGETC, but the closing paragraph still refers to IGETC or CSUGE requirements; reviewer should check."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

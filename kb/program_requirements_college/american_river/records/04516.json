@@ -46,25 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 24,
    "listed": 25,
-   "share": 0.92,
+   "share": 0.96,
    "missing": [
-    "ARTH302",
     "WEXP298"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ARTHC1100",
     "WEXP498"
    ],
    "flagged": [
-    "ARTHC1100",
     "WEXP498"
    ],
    "pass": true
@@ -394,5 +398,6 @@
    "Career entries include specialties (Universal Design, Green/Sustainable, smart-home, home office, home theater design) that the catalog names as residential design career options."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

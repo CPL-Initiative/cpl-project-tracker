@@ -46,69 +46,121 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 156,
+   "placed": 176,
    "listed": 182,
-   "share": 0.857,
+   "share": 0.967,
    "missing": [
     "ADJU5",
-    "CHLD11A",
-    "CHLD12A",
-    "CHLD14",
-    "CHLD15",
-    "CHLD15A",
-    "CHLD17",
-    "CHLD19A",
-    "CHLD19C",
-    "CHLD20",
-    "CHLD25",
-    "CHLD30",
-    "CHLD30A",
-    "CHLD35",
-    "CHLD35A",
-    "CHLD49",
-    "CHLD6",
-    "CHLD61",
-    "CHLD9",
     "MATH1",
     "MATH1A",
     "MATH3",
     "MATHC2210",
-    "POLI2",
-    "POLI3",
     "STATC1000"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEV11A",
+     "listed": "CHLD11A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV12A",
+     "listed": "CHLD12A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV14",
+     "listed": "CHLD14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV15",
+     "listed": "CHLD15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV15A",
+     "listed": "CHLD15A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV17",
+     "listed": "CHLD17",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV19A",
+     "listed": "CHLD19A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV19C",
+     "listed": "CHLD19C",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV20",
+     "listed": "CHLD20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV25",
+     "listed": "CHLD25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV30",
+     "listed": "CHLD30",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV30A",
+     "listed": "CHLD30A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV35",
+     "listed": "CHLD35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV35A",
+     "listed": "CHLD35A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV49",
+     "listed": "CHLD49",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV6",
+     "listed": "CHLD6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV61",
+     "listed": "CHLD61",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "CDEV9",
+     "listed": "CHLD9",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 32,
+   "count": 12,
    "codes": [
-    "CDEV11A",
-    "CDEV12A",
-    "CDEV14",
-    "CDEV15",
-    "CDEV15A",
-    "CDEV17",
-    "CDEV19A",
-    "CDEV19C",
-    "CDEV20",
-    "CDEV25",
-    "CDEV30",
-    "CDEV30A",
-    "CDEV35",
-    "CDEV35A",
-    "CDEV49",
-    "CDEV6",
-    "CDEV61",
-    "CDEV9",
     "HUMA1",
     "HUMA2",
     "HUMA3",
     "HUMA4",
     "HUMA5",
-    "POLS2",
-    "POLS3",
     "SPAN1A",
     "SPAN1B",
     "TART23A",
@@ -118,31 +170,11 @@
     "TART5D"
    ],
    "flagged": [
-    "CDEV11A",
-    "CDEV12A",
-    "CDEV14",
-    "CDEV15",
-    "CDEV15A",
-    "CDEV17",
-    "CDEV19A",
-    "CDEV19C",
-    "CDEV20",
-    "CDEV25",
-    "CDEV30",
-    "CDEV30A",
-    "CDEV35",
-    "CDEV35A",
-    "CDEV49",
-    "CDEV6",
-    "CDEV61",
-    "CDEV9",
     "HUMA1",
     "HUMA2",
     "HUMA3",
     "HUMA4",
     "HUMA5",
-    "POLS2",
-    "POLS3",
     "SPAN1A",
     "SPAN1B",
     "TART23A",
@@ -1775,5 +1807,6 @@
    "HIST courses and PSYC 11 appear in more than one track."
   ]
  },
- "extracted_run": "39006332820"
+ "extracted_run": 43691950026,
+ "read_run": "39006332820"
 }

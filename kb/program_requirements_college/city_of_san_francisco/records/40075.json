@@ -46,40 +46,53 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 28,
    "listed": 28,
-   "share": 0.786,
-   "missing": [
-    "CMST5",
-    "ECON1",
-    "ECON3",
-    "HIST17A",
-    "HIST17B",
-    "STAT1000E"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM5",
+     "listed": "CMST5",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST17A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST17B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "STATC1000E",
+     "listed": "STAT1000E",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 1,
    "codes": [
-    "CDEV67",
-    "COMM5",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
-    "STATC1000E"
+    "CDEV67"
    ],
    "flagged": [
-    "CDEV67",
-    "COMM5",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
-    "STATC1000E"
+    "CDEV67"
    ],
    "pass": true
   },
@@ -456,5 +469,6 @@
    "Students must complete a minimum of 4 of 8 required courses at CCSF."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }
