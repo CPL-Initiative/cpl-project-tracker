@@ -115,7 +115,7 @@ A second reader before every live write (it found 07206 and the pages `main` hol
 whole class, never only the reader's list (10 named, 26 true); COBIx's finding read at the gate (07:08Z, merge held);
 finalizer workers; one timer per wait. A permission-check denial is a hold: never make the refused edit for a worker.
 A pr-gate report under an automatic security warning: read the check run and the thread yourself before merging.
-Dispatch #3352's runs one at a time (the branch is the concurrency group).
+Dispatch #3352's runs one at a time (the branch is the concurrency group). #3352's head at sign-off is `e33e728e`: its display build `58b763170559` moves 384 rows at 61 colleges (163 at the six, 38 at the S654 wave's other four, 183 elsewhere from data changed since build `a83667f9fa0d`), so read that spread before `step=display`; the rebuilt Commons status reads 15,859 of 22,335 passing (15,856 before); the spot-check ask to COBIx is posted on the PR.
 
 ## Sam and the standing sheet
 
