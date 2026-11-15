@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 996,
+  "file_datasets": 998,
   "external_services": 195,
-  "consumers": 597,
+  "consumers": 599,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2435
+     "line": 2453
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2391
+     "line": 2409
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2328
+     "line": 2346
     }
    ],
    "main_committers": []
@@ -3006,7 +3006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1921
+     "line": 1939
     }
    ],
    "main_committers": []
@@ -6419,7 +6419,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13339
+     "line": 13344
     }
    ],
    "served": true,
@@ -7041,7 +7041,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13673
+     "line": 13678
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7751,7 +7751,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 651
+     "line": 743
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -7885,7 +7885,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13280
+     "line": 13285
     }
    ],
    "served": true,
@@ -8468,7 +8468,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13336
+     "line": 13341
     }
    ],
    "served": true,
@@ -8586,7 +8586,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10291
+     "line": 10296
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -8614,7 +8614,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6423
+     "line": 6441
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8634,7 +8634,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6473
+     "line": 6491
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -9169,7 +9169,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13897
+     "line": 13902
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9215,7 +9215,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13917
+     "line": 13922
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -11009,6 +11009,13 @@
   "file:kb/anchor_rekey_out/<date>/alias_map.json": {
    "consumers": [
     {
+     "id": "script:kb/_honors_matcher_recall.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 390
+    },
+    {
      "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
@@ -11417,7 +11424,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 433
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -11738,7 +11745,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 336
+     "line": 428
     },
     {
      "id": "script:kb/_remint_apply_articulations.py",
@@ -12036,6 +12043,20 @@
      "line": 293
     },
     {
+     "id": "script:kb/_honors_matcher_recall.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 465
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 110
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -12152,7 +12173,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 333
+     "line": 425
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -12487,6 +12508,13 @@
      "line": 33
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -12624,7 +12652,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 330
+     "line": 422
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -12771,7 +12799,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -13063,7 +13091,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 332
+     "line": 424
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -13358,6 +13386,13 @@
      "line": 35
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 109
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -13495,7 +13530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 331
+     "line": 423
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -13635,7 +13670,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 106
     }
    ],
    "producers": [
@@ -14964,7 +14999,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 429
     },
     {
      "id": "script:kb/_rekey_crnc_mirrors.py",
@@ -15137,7 +15172,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 754
+     "line": 846
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -15424,7 +15459,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 467
+     "line": 559
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -17394,7 +17429,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3279
+     "line": 3297
     }
    ],
    "served": true,
@@ -17407,7 +17442,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6857
+     "line": 6875
     }
    ],
    "served": true,
@@ -17815,11 +17850,18 @@
      "line": 220
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 388
+    },
+    {
      "id": "script:kb/_reclustering_s648_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 335
+     "line": 427
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -17962,7 +18004,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1262
+     "line": 1354
     },
     {
      "id": "script:kb/_reclustering_s649.py",
@@ -17982,7 +18024,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1040
+     "line": 1132
     }
    ],
    "served": false,
@@ -18323,7 +18365,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 430
     }
    ],
    "served": true,
@@ -18395,7 +18437,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 432
     },
     {
      "id": "script:kb/_row_audit.py",
@@ -18609,7 +18651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 295
+     "line": 387
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -21210,7 +21252,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6673
+     "line": 6691
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21230,7 +21272,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5892
+     "line": 5910
     }
    ],
    "served": false,
@@ -21847,7 +21889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6760
+     "line": 6778
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23805,7 +23847,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13108
+     "line": 13113
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -23970,7 +24012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13338
+     "line": 13343
     }
    ],
    "served": true,
@@ -23993,14 +24035,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13138
+     "line": 13143
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13138
+     "line": 13143
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -25774,7 +25816,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/honors_of_rows_check_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/honors_of_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/honors_subject_reading_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27378,7 +27446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13340
+     "line": 13345
     }
    ],
    "served": true,
@@ -27565,6 +27633,13 @@
      "line": 340
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 131
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -27643,14 +27718,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10343
+     "line": 10348
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10343
+     "line": 10348
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27747,6 +27822,13 @@
      "line": 342
     },
     {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
+    },
+    {
      "id": "script:kb/_honors_two_row_delete_s652.py",
      "kind": "script",
      "direction": "read",
@@ -27807,14 +27889,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10427
+     "line": 10432
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10427
+     "line": 10432
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -27822,6 +27904,13 @@
      "direction": "read",
      "how": "literal",
      "line": 865
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27915,14 +28004,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10415
+     "line": 10420
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10415
+     "line": 10420
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -27986,6 +28075,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 733
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -28055,14 +28151,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10379
+     "line": 10384
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10379
+     "line": 10384
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -28105,6 +28201,13 @@
      "direction": "read",
      "how": "literal",
      "line": 341
+    },
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 131
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -29260,7 +29363,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6831
+     "line": 6849
     }
    ],
    "main_committers": []
@@ -29272,7 +29375,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6940
+     "line": 6958
     }
    ],
    "main_committers": []
@@ -34510,6 +34613,8 @@
     "tests/next_slo_colleges_test.py",
     "tests/browser_install_single_source_test.py",
     "tests/honors_of_test.py",
+    "tests/honors_of_rows_check_test.py",
+    "tests/honors_subject_reading_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",
