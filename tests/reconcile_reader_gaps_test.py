@@ -5,7 +5,8 @@
     held page, and both hold lists go back on the run's capture so the filing keeps them (American River 07206).
 (b) A record the reconcile leaves as filed keeps the sources.json entry it was read from (Santiago Canyon's 18).
 (c) The arithmetic.rescored marker a ruling's rescore wrote survives: a score equal but for the marker stays
-    whole; a fresh passing arithmetic carries it; a fresh failing one keeps the filed score.
+    whole; a fresh passing arithmetic carries it; a fresh failing one takes the ruling's rescore again, or else the
+    fresh score with a warning (never the filed score beside a changed record).
 
     python3 tests/reconcile_reader_gaps_test.py
 """
@@ -88,9 +89,8 @@ rc = C.reconcile_filed(COLLEGE, out, "43693265189", dest)
 check(rc == 0, "reconcile_filed returns 0")
 check(get(os.path.join(out, "records", "07206.json")) == filed_07206, "(a) the held record is written as filed")
 we = get(os.path.join(out, "capture.json"))["would_extract"]
-check(we["held_worse_window"] == [held_row]
-      and we["held_no_gain"] == [{"control_number": "07207", "url": "https://x/7"}, {"control_number": "05555"}],
-      "(a) both hold lists are back on the run's capture, merged with the staged one's")
+check(we["held_worse_window"] == [held_row] and we["held_no_gain"] == [{"control_number": "05555"}],
+      "(a) the hold lists are back on the run's capture, merged, without the record this run read (07207)")
 check(we["list"] == [{"control_number": "08888"}] and we["programs"] == 1,
       "(a) a held record leaves the extract list, and programs is recounted")
 r7 = get(os.path.join(out, "records", "07207.json"))
@@ -105,6 +105,12 @@ C.file_run(COLLEGE, out, "43693265189")
 idx = {e["control_number"]: e for e in get(os.path.join(dest, "sources.json"))}
 check(idx["07206"].get("old") and idx["09999"].get("old"), "(b) a kept record keeps the entry it was read from")
 check(not idx["07207"].get("old"), "(b) a reconciled record takes the new entry")
+# (b) a kept record with no sources file in the run keeps its earlier entry (COBIx, #3363).
+os.remove(os.path.join(out, "sources", "09999.json"))
+put(os.path.join(dest, "sources.json"), [{"control_number": "09999", "source": {"url": "https://x/1"}, "old": True}])
+C.file_run(COLLEGE, out, "43693265189")
+idx = {e["control_number"]: e for e in get(os.path.join(dest, "sources.json"))}
+check(idx.get("09999", {}).get("old"), "(b) a kept record with no sources file keeps its earlier entry")
 check(get(os.path.join(dest, "capture.json"))["would_extract"]["held_worse_window"] == [held_row],
       "(a) the filing keeps the hold list")
 

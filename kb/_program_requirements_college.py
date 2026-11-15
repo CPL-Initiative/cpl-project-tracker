@@ -6727,6 +6727,10 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 kept.append(filed["control_number"])
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
     _write(os.path.join(out_dir, RECONCILE_KEPT), {"run": run_id, "programs": sorted(set(kept))})
+    # A record this run read (its own-page hold guards a paid read only) leaves the restored hold lists, so the
+    # filed capture never names as held a record that carries this run's read (COBIx, #3363).
+    read_now = {os.path.basename(p)[:-5] for p in glob.glob(os.path.join(out_dir, "records", "*.json"))} - set(kept)
+    drop_holds(out_dir, read_now)
     print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page), "
           "%d held on another page" % (len(changed), rescored, unread, moved,
                                         sum(1 for k in kept if k in held)), flush=True)
@@ -6778,6 +6782,26 @@ def restore_holds(out_dir: str, keep_from: str) -> None:
         if "programs" in we:
             we["programs"] = len(we["list"])
     _write(os.path.join(out_dir, "capture.json"), cap)
+
+
+def drop_holds(out_dir: str, read_now: set) -> None:
+    """Take the records this reconcile read off the run's hold lists (gap a)."""
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            cap = json.load(fh)
+    except (OSError, ValueError):
+        return
+    we = cap.get("would_extract")
+    if not isinstance(we, dict) or not read_now:
+        return
+    hit = False
+    for k in HOLD_KEYS + ("held_opens_on_list",):
+        if isinstance(we.get(k), list):
+            keep = [e for e in we[k] if e.get("control_number") not in read_now]
+            hit = hit or len(keep) != len(we[k])
+            we[k] = keep
+    if hit:
+        _write(os.path.join(out_dir, "capture.json"), cap)
 
 
 def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict, scored: dict | None = None) -> dict:
@@ -6963,6 +6987,17 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         if src.get("catalog_lookup"):
             entry["catalog_lookup"] = src["catalog_lookup"]   # a no-closed-list program's answer (S652)
         index.append(entry)
+    # A reconcile's kept record with no sources file in this run keeps its earlier entry too (COBIx, #3363).
+    have = {e.get("control_number") for e in index}
+    try:
+        with open(os.path.join(out_dir, RECONCILE_KEPT)) as fh:
+            rk = json.load(fh).get("programs") or []
+    except (OSError, ValueError):
+        rk = []
+    if rk and not prev and os.path.isfile(os.path.join(dest, "sources.json")):
+        with open(os.path.join(dest, "sources.json")) as fh:
+            prev = {x["control_number"]: x for x in json.load(fh)}
+    index.extend(prev[cn] for cn in sorted(rk) if cn not in have and cn in prev)
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
     # The programs whose read failed where the filed record passed, for a person (kept_passing).
