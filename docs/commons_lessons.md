@@ -63,44 +63,9 @@ Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *S
 
 S559 SkyAndromeda, 2026-11-03: the Common Course Reference takes the opened page, the last of them; Sheet 160 answered (S563 SkyBode, 2026-11-03); The confirmed count (S564 SkyHoag, 2026-11-03); S573 SkyNeedle, 2026-11-04: the path, the order, the queue and the confidence count (Sam's session); S604 SkySculptor (2026-11-08): the first view opens on one batch; 2026-11-08 — S611 SkyTadpole: the Exhibits Queue and the panel trail; S612 SkySunflower (2026-11-08): the anchor re-key applied; the CCR's seed disciplines get two second signals; S614 SkyMilkomeda (2026-11-09): Discipline in doubt, a ruling that teaches the procedure: [archive](commons_lessons_archive.md).
 
-## Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again)
+## Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again): moved to the archive (S655 checkpoint compaction)
 
-The per-reference opened-page paragraphs, verbatim as the lane carried them on 2026-11-03:
-
-**The opened page, one renderer (S556, 2026-11-03).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
-the mock's opened page for any reference: the progress line over its one denominator, *Needs attention* with an action
-each and the team's next step, and the three question groups with every count over one denominator; an unread count says
-*Could not be read*. First Light tokens (the Commons tab alone wears Malone's look). **Exhibits carries it** as its
-**Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
-still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
-read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
-`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`. **The CR Reference
-carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
-closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
-line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
-`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54). **Subjects
-too (S556):** the page over the 147 MQ disciplines with courses, with questions that fit a code (what it is called, whose
-code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
-Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
-
-**CPL Pathways too (S558, 2026-11-03):** the Program Requirements tab's Progress view draws the page first and the
-dash (milestones, parts, the whole harvest, the calls) under *Details*, closed; opening a call opens Details. The
-denominator is COCI's active program, the headline's own unit, and the three questions fit a program: where it is read
-from (a college with a catalog address, with a reading procedure), what it requires (read, units add up, nothing
-added), whether it matches the state's record (every course COCI lists placed, complete). A record on a program COCI
-does not list never counts; a failed active read says *Could not be read*. `commons_page.js` loads on the first
-Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
-`-dark` wait for the page and open Details.
-
-**The Common Course Reference too (S559, 2026-11-03, #2720):** COCI Lookup's **Progress** view, first in its views row
-(the tab still opens on the Courses List), at `#coci-lookup/progress`; the Commons card's third word, *Open Progress*.
-It reads the Commons' own row (`kb/status/commons.json`, key `course`) and the run log it names, so its headline is the
-card's pair: ready (the auditor's 0.85 or better) of the auditor's cards, 3,205 of 27,581. Needs attention: needs
-repair, then the row's issues with who fixes each, Open SkyView on each. The three questions (what it is called, where
-it sits, whether its courses agree) count the cards free of one auditor tag; the builder writes those six tag counts
-into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
-recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
-Every reference now carries the opened page.
+Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again): [the archive](commons_lessons_archive.md).
 
 ## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
 
@@ -566,3 +531,19 @@ Verbatim from `docs/reference/lanes/commons.md`, replaced by the S654 state (#33
 - **NEXT (the data dashboard), in order:** (1) #3326 (carries #3323), reading COBIx first. (2) MIS course matches and COE regional demand, each after a definition of the per-college figure. (3) Copper Mountain's registry `catalog_url` at its next capture. (4) The Coming next items as their sources exist; the College view on Sam's word. The COMIS awards request and Pedro's connections: Sam, Sheet 198 card 13, "none".
 - **Honors step 2 (draft #3315, head `a8563faf`; nothing applied).** **DECIDED** `d-honors-anchored-rows-s654` (supersedes `d-honors-narrow-positive-rule-s654`, made and refused the same night: 196 mints, 4 leaked; extends `d-honors-two-signals-or-hold-s653`): each `honors_of` row rests on anchors, an Honors course and a base course at the same college with the same subject and number plus a course-level title signal. A row needs every anchor of the Honors M-ID to land in one base; a mint also needs every member anchored, one Honors id per base and no CCN-coded course on the base (any base kind). Cluster rules (title group, two numbers, sequence tokens) become report columns naming split candidates. Why: four review rounds each found impure clusters among the mints; certifying a cluster is the M-ID layer's own unfinished work. The plan: 584 anchors; 382 rows (380 written by step 2): 282 row and mint, 26 row with mint held, 74 row only on an official base; 37 held; 101 none; 169 split candidates; 13 clause mutations each fail a label; proof 91/91. COBIx is asked for a design read (#3315, comment 6888525633). The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
 - **NEXT:** (1) Honors: COBIx's design read on #3315 and a short review of its anchors, then the merge (plan only); `--check` after the daily run, the receipt, then the apply (Rule 10); then *Before the mints* (base plus H on the CCN pattern); HUMA M10OI into M1110; `kb/coci_minted_courses.json` still lists LIBR M10CJ under LIBR M1040. (2) FIRE 130 X's row-audit card. (3) Price the model pass (to Sam first). (4) A potential-CPL column. (5) The Leadership outlines. (6) The #3298 and #3302 follow-ups: lessons, *Moved from the lane (S653 checkpoint)*.
+
+## S655 (SkyCurlew, the conductor, 2026-11-15): the Honors plan merged, the apply held at the permission check
+
+- **#3315 merged as a plan** (`f90be0d6`, 07:31Z; nothing applied, `kb/migrations/.apply` equal to main's). Redrawn on the 06:19Z payload: 382 rows (step 2 writes 380), rows md5 `29667c07`, class md5 `8240706b`, 129 mints, 179 rows with the mint held. Handoff 655's "157" was the design doc's count of mints the split-candidate rule moved, not the plan's held rows.
+- **COBIx's two 04:20Z findings, fixed in `e3242d3c`:** `SUBJECT_FAMILY_APART` reads ENGR, COMP and BIOT apart (8 pairs' split-flag text; no class, mint or digest moved), and `HONORS_SUBJECTS` is keyed by college (Victor Valley CHEMH, HISTH). `tests/honors_subject_reading_test.py` (31 checks). COBIx verified at 06:51Z.
+- **The second reader said apply:** insert-only `ON CONFLICT DO NOTHING` under `honors-rows-s653@bot`; the rollback `kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql` proved 91/91 on Postgres 16; the 8 generated JS files and `discipline_cpl_rollup` byte-identical on simulated post-apply data; a 19-row sample right. The conductor's live read at 07:28:57Z: only step 1's two `honors_of` rows (`honors-s653@bot`), none under `honors-rows-s653@bot`, no row saved by a person since the overlay's 06:19:03Z sync, no merge confirm on a course-shaped id (33 merge confirm rows in all), no H id (`honors-step2-ready-held-s655`).
+- **The permission check refused the `.apply` edit.** The worker reran `--check` at 07:29Z (passed: 380 rows, `29667c07`); its edit to `kb/migrations/.apply` was refused. The brief had lifted the limit in words, and the harness had not. The conductor did not make the edit itself: a permission-check denial is a hold, and making the edit for the worker would route around it. Sam was notified by push at about 07:31Z (`p-apply-edit-refused-by-permission-check-s655`). The `--check` receipt was not committed, since it goes stale when `main` moves.
+- **The reader's minors:** a person's `honors_of` row on any planned id throws out all 380 (redraw the plan); `kb/coci_curation.json` grows by 341 `honors_of`-only entries; `unified_courses.js` `fetchHonorsOf` stops after six hops (outside the PR).
+
+## Moved from the lane (S655 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, replaced by the S655 state (#3315 merged as a plan; the step 2 apply held at the permission check).
+
+- **Honors step 2 (#3315, head `9d065916`; plan and drafted SQL only, nothing applied).** **DECIDED** `d-honors-anchored-rows-s654` (supersedes `d-honors-narrow-positive-rule-s654`, refused the same night; extends `d-honors-two-signals-or-hold-s653`): each `honors_of` row rests on anchors, an Honors and a base course at one college with the same subject and number plus a course-level title signal; a row needs every anchor of the Honors M-ID in one base; a mint also needs every member anchored, one Honors id per base and no CCN-coded course on the base. Cluster rules become report columns naming split candidates. **DECIDED** `d-honors-no-mint-on-split-candidate-s654` (COBIx's design read, comment 6888542165, adopted): on a split-candidate base the row stands and the mint waits. The plan: 382 rows (digest `29667c07`), 129 mints, 157 rows with the mint held; proof 91/91. The anchors review's 3 blocking matcher bugs (padded zeros, an anchor with no Honors word, a label pinning the zero bug) are fixed in it. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
+- **NEXT:** (1) Honors: merge #3315 keeping main's `.apply` exactly; after the 06:17Z daily run one second reader on the regenerated plan, `--check` with its receipt, the apply (Rule 10), a live count; then *Before the mints* (base plus H on the CCN pattern); HUMA M10OI into M1110; `kb/coci_minted_courses.json` still lists LIBR M10CJ under LIBR M1040. (2) FIRE 130 X's row-audit card. (3) Price the model pass (to Sam first). (4) A potential-CPL column. (5) The Leadership outlines. (6) The #3298 and #3302 follow-ups: lessons, *Moved from the lane (S653 checkpoint)*.
+- **APPLIED: Honors step 1 (#3329 merged `7e017287`, S654; applied S653 by `supabase-migrate.yml` run 43627165705, receipt `kb/receipts/migration_s653_honors_of_field_43627165705.json`; at the merge `.apply` equaled main's, so run 43671605511 skipped at its gate).** `honors_of` for HUMA M10ME (HUMA M1110) and LIBR M10CJ (LIBR M1040) under `honors-s653@bot`; the two base rows restamped to `honors-s652@bot`. Before-values `kb/honors_of_s653_out/2026-11-14/step1_restamp_before.json`; undo `kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql`, run BEFORE the S652 follow-ups rollback. **DECIDED** `d-honors-step1-applied-s653`. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
