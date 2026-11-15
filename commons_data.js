@@ -361,7 +361,9 @@
   /* Modules beside this file (#3310): each registers on window.CPL_CDC_EXT with its views (added to VIEWS, so each has
      its own address), ledes, ready (it reads its own file), view, panel (sections on a college's panel) and statewide
      (a card on the list's page). A module that fails to load leaves the page as it was. */
-  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"]];
+  /* commons_eta_clock.js (#3360) adds the ETA clock at #commons/data/eta; while it is a preview it lists the view in
+     "unlisted", so the address opens it and the menu does not show it. */
+  var EXT_FILES = [["commons_data_sharing.js", "CPL_CDC_SHARING"], ["commons_data_integrations.js", "CPL_CDC_INTEGRATIONS"], ["commons_eta_clock.js", "CPL_COMMONS_ETA"]];
   function exts() { return Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT.filter(Boolean) : []; }
   function extHost() { return { go: go }; }
   function loadExts() {
@@ -1493,7 +1495,7 @@
   /* The three views of the dashboard, as words: the list, the dictionary, the checklist. */
   function viewNav() {
     var items = [["", "The college list"], ["districts", VIEWS.districts], ["slos", VIEWS.slos], ["dictionary", VIEWS.dictionary], ["apis", VIEWS.apis]]
-      .concat(exts().reduce(function (a, x) { return a.concat(Object.keys(x.views || {}).map(function (k) { return [k, VIEWS[k] || x.views[k]]; })); }, []));
+      .concat(exts().reduce(function (a, x) { return a.concat(Object.keys(x.views || {}).filter(function (k) { return !(x.unlisted || {})[k] || S.view === k; }).map(function (k) { return [k, VIEWS[k] || x.views[k]]; })); }, []));
     return el("nav", { cls: "cdd-views", "aria-label": "College Data Collection views" }, items.map(function (it) {
       var on = (S.view || "") === it[0];
       var a = el("a", { href: "#commons/data" + (it[0] ? "/" + it[0] : ""), cls: "cdd-viewword", "data-goto": it[0] || "list", "aria-current": on ? "page" : null, text: it[1] });

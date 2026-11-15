@@ -6,7 +6,7 @@
   "edge_functions": 15,
   "file_datasets": 1005,
   "external_services": 195,
-  "consumers": 601,
+  "consumers": 602,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -2145,6 +2145,13 @@
   },
   "external:github.com/CPL-Initiative/cpl-project-tracker": {
    "consumers": [
+    {
+     "id": "module:commons_eta_clock.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 41
+    },
     {
      "id": "module:commons_progress.js",
      "kind": "module",
@@ -4435,6 +4442,13 @@
      "tabs": [
       "cip-crosswalk"
      ]
+    },
+    {
+     "id": "module:commons_eta_clock.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 390
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",

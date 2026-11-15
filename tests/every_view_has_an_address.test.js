@@ -102,6 +102,11 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
   const INTEG = fs.readFileSync("commons_data_integrations.js", "utf8");
   check("(E) ⭐ commons/data/integrations joins VIEWS through the module hook, so it opens from its arrival",
     /views: \{ integrations: TITLE \}/.test(INTEG) && /"commons_data_integrations\.js", "CPL_CDC_INTEGRATIONS"/.test(DATAJS));
+  // #3360: the ETA clock, #commons/data/eta, by the same hook (a preview: in no menu yet); the round trip is in
+  // tests/commons_eta_clock.test.js (3).
+  const ETA = fs.readFileSync("commons_eta_clock.js", "utf8");
+  check("(E) ⭐ commons/data/eta joins VIEWS through the module hook, so it opens from its arrival",
+    /ext\.views\[VIEW_KEY\] = TITLE/.test(ETA) && /var VIEW_KEY = "eta"/.test(ETA) && /"commons_eta_clock\.js", "CPL_COMMONS_ETA"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {
     const s = fs.readFileSync(f, "utf8");
