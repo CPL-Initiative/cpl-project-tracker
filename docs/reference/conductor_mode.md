@@ -2,12 +2,22 @@
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
 updated: 2026-11-15
-tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
+status: retired
+tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
 ---
 
 # Conductor mode
+
+> **Retired (Sam, 2026-11-15).** *"my thinking now is to go back to pre-nov 11 cpl queue process and ditch fable 5.2
+> ultracode medium as conductor--he conducted me out of business:)"* The sessions' own transcripts priced conductor
+> mode at $830 to $1,830 a day from 2026-11-11 to 11-14, against $170 to $360 a day before it, and the Team plan hit
+> its monthly spend limit on 2026-11-13. About two thirds of each session's cost was its Opus workers, the rest the Fable
+> conductor's growing context, re-read at every wake. **No session runs this way, and no session adopts it from this
+> page.** The queue runs as it did before 2026-11-11: one Opus 5.5 session working the queue itself and
+> collaborating with COBIx on its PRs ([`scheduled_sessions`](scheduled_sessions.md), [`cobix_pr_loop`](cobix_pr_loop.md)). The page stays as the record of what was tried; its merge-gate and
+> review lessons still hold wherever another doc cites them.
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
