@@ -1361,6 +1361,14 @@ jobs:
       # Pure-stdlib python. Design: docs/reference/honors_of_design.md.
       - name: Honors equivalence field (fold hold, pairwise worklist hold, H id shape, byte-identical fold)
         run: python3 tests/honors_of_test.py
+      # The Honors rows plan's apply-day check (S653, #3315): it re-measures the pairs on the checkout's payload and
+      # refuses a dissolved pair, a pre-delete overlay and a checkout without origin/main's head.
+      - name: Honors rows plan, the apply-day check refuses a stale plan
+        run: python3 tests/honors_of_rows_check_test.py
+      # How the rows plan reads a subject (S655, COBIx's two findings on #3315): engineering, computing and
+      # biotechnology read apart from English, communication and biology; the Honors subject marker is Victor Valley's.
+      - name: Honors rows plan, the subject family and the Honors subject marker
+        run: python3 tests/honors_subject_reading_test.py
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
       # guard against a second copy. Pure-stdlib python.

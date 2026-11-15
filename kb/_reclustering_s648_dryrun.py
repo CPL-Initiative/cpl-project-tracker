@@ -116,7 +116,9 @@ SCAN_MAX_BYTES = 60_000_000
 
 GATES = ("title_word", "code_not_enough", "program_course", "same_college", "base_not_honors", "code_and_title",
          "unique_title")
-HONORS_WORD = re.compile(r"\bhonou?rs?\b", re.I)
+# HNRS is the catalog abbreviation (Glendale's "HNRS ART HIST: PREHIST-GOTHIC"); the S653 recall test found three
+# Honors courses it hid (tests/honors_matcher_recall.test.js).
+HONORS_WORD = re.compile(r"\b(?:honou?rs?|hnrs)\b", re.I)
 HONORS_LOOSE = re.compile(r"honou?r", re.I)
 HONORS_NUM = re.compile(r" \S*\d[A-Z]?H[A-Z]?$")  # a course number ending in the H marker (1AH, 102HF)
 PROGRAM_WORDS = {"colloquium", "forum", "seminar", "program", "society", "project", "research", "scholars",
@@ -124,7 +126,7 @@ PROGRAM_WORDS = {"colloquium", "forum", "seminar", "program", "society", "projec
                  "contract", "directed", "and", "in", "the", "of", "a", "for", "to", "i", "ii", "iii", "iv", "1", "2",
                  "3", "4", "humanities", "sciences", "social", "natural", "biological", "applied", "interdisciplinary",
                  "leadership", "transfer", "capstone", "course"}
-STOP = {"and", "of", "the", "in", "to", "for", "a", "an", "with", "on", "honors", "honor", "honours", "honour"}
+STOP = {"and", "of", "the", "in", "to", "for", "a", "an", "with", "on", "honors", "honor", "honours", "honour", "hnrs"}
 
 
 def _words(title):
@@ -145,6 +147,84 @@ def title_agree(a, b):
     if not sa or not sb:
         return 0.0
     return len(sa & sb) / len(sa | sb)
+
+
+def _abbreviates(s, l):
+    """One title word stands for another: equal, a prefix of three letters or more (HIST, history), or the same first
+    letter and its letters in order (INTL, international; CULTRL, cultural)."""
+    if s == l:
+        return True
+    if len(s) > len(l):
+        s, l = l, s
+    if len(s) < 3 or s[0] != l[0]:
+        return False
+    if l.startswith(s):
+        return True
+    it = iter(l)
+    return all(ch in it for ch in s)
+
+
+ROMAN_VALUE = {"i": 1, "ii": 2, "iii": 3, "iv": 4, "v": 5, "vi": 6, "vii": 7, "viii": 8}
+ROMAN = set(ROMAN_VALUE)
+PERIOD_WORDS = (r"prehistor\w*|ancient|antiquity|middle ages|medieval|gothic|renaissance|baroque|rococo|"
+                r"enlightenment|reformation|modern|present|contemporary")
+
+
+def seq_tokens(title):
+    """The marks that tell one course of a sequence from the next: a roman numeral (Intro Chem I I reads as II), a
+    number of one or two digits, a letter A to F ending the title, and a period's direction ("to 1750" beside "1750 to
+    the Present", "(1895-1950)"). Two titles that differ here name different courses however many words they share
+    (#3315's review: Calculus I and II, Chemistry A and B, Music History to 1750 and since)."""
+    t = HONORS_WORD.sub(" ", title or "").lower()
+    out = set()
+    for m in re.finditer(r"\b(?:to|until|through|thru|before)\s+(\d{3,4})\b", t):
+        out.add("to " + m.group(1))
+    for m in re.finditer(r"\b(?:since|after|from)\s+(\d{3,4})\b", t):
+        out.add("since " + m.group(1))
+    for m in re.finditer(r"\b(\d{3,4})\s*(?:to|-|–)\s*(?:the\s+)?present\b", t):
+        out.add("since " + m.group(1))
+    for m in re.finditer(r"\b(\d{4})\s*[-–]\s*(\d{4})\b", t):
+        out.add(f"{m.group(1)}-{m.group(2)}")
+    for m in re.finditer(r"(?<!introduction )(?<!intro )(?<!guide )\b(?:to|through|thru)\s+(?:the\s+)?("
+                         + PERIOD_WORDS + r")", t):
+        out.add("to " + m.group(1)[:6])      # Prehistory to the Middle Ages beside the Middle Ages to the Renaissance
+    words = _words(t)
+    joined = []
+    for w in words:                       # "I I" is how one catalog spells II
+        if w == "i" and joined and joined[-1] in ("i", "ii"):
+            joined[-1] += "i"
+        else:
+            joined.append(w)
+    marks = set()
+    for k, w in enumerate(joined):
+        if w in ROMAN:
+            marks.add(str(ROMAN_VALUE[w]))
+        elif re.fullmatch(r"\d{1,2}", w):
+            marks.add(str(int(w)))
+        elif k == len(joined) - 1 and w in ("a", "b"):
+            marks.add(str(ord(w) - 96))      # Chemistry A, B: the first and second of a pair
+    # A title with no mark is the first of its sequence: "Elementary French" is "Elementary French I" and never
+    # "Elementary French 2".
+    return frozenset(out | (marks or {"1"}))
+
+
+def abbrev_agree(a, b):
+    """The share of the shorter title's words that the other title spells out or abbreviates. A catalog often
+    shortens the base title ("Hist Of Arch 2" beside "History of Architecture 2 Honors"), which the stem overlap reads
+    as a different course. Used only beside a code match at one college, never alone. Titles whose sequence marks
+    differ (seq_tokens) never agree."""
+    if seq_tokens(a) != seq_tokens(b):
+        return 0.0
+    wa = [w for w in _words(HONORS_WORD.sub(" ", a or "")) if w not in STOP and len(w) > 1]
+    wb = [w for w in _words(HONORS_WORD.sub(" ", b or "")) if w not in STOP and len(w) > 1]
+    if not wa or not wb:
+        return 0.0
+    short, long_ = (wa, wb) if len(wa) <= len(wb) else (wb, wa)
+    return sum(1 for s in short if any(_abbreviates(s, l) for l in long_)) / len(short)
+
+
+CODE_TITLE_AGREE = 0.5     # stem overlap of the two titles, for a code match
+CODE_ABBREV_AGREE = 0.6    # or: this share of the shorter title's words spelled out or abbreviated in the other
 
 
 @lru_cache(maxsize=None)
@@ -168,26 +248,31 @@ def is_honors(title, code, drop=()):
 
 def honors_code_base(code):
     """The base course's code: the honors code with its H marker removed, or None when the code carries none.
-    'ENGL 1AH' -> 'ENGL 1A'; 'ACCT 102HF' -> 'ACCT 102F'; 'CHEMH 206' -> 'CHEM 206'; 'HIST 484' -> None."""
+    'ENGL 1AH' -> 'ENGL 1A'; 'ACCT 102HF' -> 'ACCT 102F'; 'CHEMH 206' -> 'CHEM 206'; 'CHEM H206' -> 'CHEM 206';
+    'HIST 484' -> None. A space before the marker is the same marker (#3315's third review, finding 4): 'ECON 101 H'
+    -> 'ECON 101'; 'LING 101 HC' -> 'LING 101C'; 'PHIL 225 HF' -> 'PHIL 225F'; 'MATH 1A H' -> 'MATH 1A'."""
     c = " ".join((code or "").split()).upper()
+    c = re.sub(r"(?<=\d) (H[A-Z]?)$|(?<=\d[A-Z]) (H)$", lambda m: m.group(1) or m.group(2), c)
     if " " not in c:
         return None
     subj, num = c.rsplit(" ", 1)
-    m = re.match(r"^(.*\d[A-Z]?)H([A-Z]?)$", num)
+    m = re.match(r"^(.*\d[A-Z]{0,3})H([A-Z]?)$", num)   # up to three letters before the H: De Anza's F TV 2AWH
     if m and m.group(1):
         return f"{subj} {m.group(1)}{m.group(2)}"
+    m = re.match(r"^H(\d+[A-Z]?)$", num)
+    if m:
+        return f"{subj} {m.group(1)}"
     if subj.endswith("H") and len(subj) > 2:
         return f"{subj[:-1]} {num}"
     return None
 
 
 def code_key(code):
-    """A code compared across one college's own spellings: 'ECON 001' and 'ECON 1' are one course."""
-    c = " ".join((code or "").split()).upper()
-    if " " not in c:
-        return c
-    subj, num = c.rsplit(" ", 1)
-    return subj.replace(" ", "") + " " + (re.sub(r"^0+(?=\d)", "", num))
+    """A code compared across one college's own spellings, every space dropped: 'ECON 001' and 'ECON 1' are one
+    course, and so are Fullerton's 'PHIL 225 F' and the 'PHIL 225F' an Honors code 'PHIL 225HF' names (#3315's review:
+    the space before the college letter hid HUMA M1084's second base), and Glendale's 'POL S103' and 'POLS 103'."""
+    c = re.sub(r"\s+", "", (code or "").upper())
+    return re.sub(r"(?<=[A-Z])0+(?=\d)", "", c)
 
 
 def find_base(row, college_rows, drop=()):
@@ -201,7 +286,8 @@ def find_base(row, college_rows, drop=()):
     if want_code:
         by_code = [r for r in pool if code_key(r["code"]) == code_key(want_code)]
         if "code_and_title" not in drop:
-            by_code = [r for r in by_code if title_agree(strip_honors(row["title"]), r["title"]) >= 0.5]
+            by_code = [r for r in by_code if title_agree(strip_honors(row["title"]), r["title"]) >= CODE_TITLE_AGREE
+                       or abbrev_agree(row["title"], r["title"]) >= CODE_ABBREV_AGREE]
         if len(by_code) >= 1:
             return by_code[0], "code"
     want_title = strip_honors(row["title"])
@@ -255,7 +341,13 @@ CONTROLS = [
                                                  "pool": [{"college": "D", "code": "ECON 1", "title": "Principles of Macroeconomics"},
                                                           {"college": "D", "code": "ECON C2002", "title": "Principles of Macroeconomics"}]},
      "ECON 1"),
-    ("a title base when the code carries no H", {"row": {"college": "S", "code": "HIST 484", "title": "History of the United States - Honors"},
+    ("a space before the H marker, Cypress LING 101 HC to LING 101 C",
+     {"row": {"college": "C", "code": "LING 101 HC", "title": "Honors Introduction to Language"},
+      "pool": [{"college": "C", "code": "LING 101 C", "title": "Introduction to Language"}]}, "LING 101 C"),
+    ("a space before a lone H, Compton ECON 101 H to ECON 101",
+     {"row": {"college": "K", "code": "ECON 101 H", "title": "Honors Principles of Economics: Macroeconomics"},
+      "pool": [{"college": "K", "code": "ECON 101", "title": "Principles of Economics: Macroeconomics"}]}, "ECON 101"),
+    ("a title base when the code carries no H",{"row": {"college": "S", "code": "HIST 484", "title": "History of the United States - Honors"},
                                                  "pool": [{"college": "S", "code": "HIST 410", "title": "History of the United States"}]},
      "HIST 410"),
 ]
