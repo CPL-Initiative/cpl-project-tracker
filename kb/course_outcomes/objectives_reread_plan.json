@@ -18,34 +18,6 @@
  "order": [
   {
    "step": 1,
-   "host": "sac",
-   "system": "curriqunet",
-   "colleges": [
-    "Santa Ana College"
-   ],
-   "slugs": [
-    "santa_ana"
-   ],
-   "articulations": 216,
-   "first_read": "41589637097",
-   "pages": 1373,
-   "parts": 4,
-   "expect": "objectives on every trial page (trial 41436124244, 12 of 12)",
-   "branch": "claude/slo-objectives-sac",
-   "read": [
-    "index=kb/course_outline_index/index_41399078640.json",
-    "slugs=santa_ana",
-    "parts=4",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=sac",
-    "kind=objective",
-    "slugs=santa_ana"
-   ]
-  },
-  {
-   "step": 2,
    "host": "laspositas",
    "system": "curriqunet",
    "colleges": [
@@ -73,7 +45,7 @@
    ]
   },
   {
-   "step": 3,
+   "step": 2,
    "host": "cccd",
    "system": "courseleaf",
    "colleges": [
@@ -100,7 +72,7 @@
    ]
   },
   {
-   "step": 4,
+   "step": 3,
    "host": "cccd",
    "system": "courseleaf",
    "colleges": [
@@ -241,6 +213,11 @@
    "slug": "san_diego_miramar",
    "read": "43566273142",
    "objectives": "683 objective rows loaded (load 43585473767)"
+  },
+  {
+   "slug": "santa_ana",
+   "read": "43666467090",
+   "objectives": "1362 objective rows loaded (load 43684986821)"
   }
  ]
 }

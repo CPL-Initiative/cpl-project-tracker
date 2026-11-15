@@ -450,14 +450,14 @@ check(_names and all("${{ github.run_id }}-${{ github.run_attempt }}-" in n for 
       and _filed_up["with"]["name"] == "wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}",
       "each of the wave's uploads names its attempt: %r" % _names)
 # Second read, 2: the wave's extraction stops at its limit; the college workflow's does not change.
-# Since S647 the college workflow sets one only on a staged read (sources_from, the conductor's $40 hard stop):
-# a read that captures sets none.
+# Since S653 the college workflow sets the $40 hard stop on every extraction, fresh or staged (S647 set it on a
+# staged read only); tests/program_requirements_extraction_gate_test.py holds the price step before it.
 _cwf = yaml.safe_load(college_wf)
 _college_ext = [x for x in _cwf["jobs"]["read"]["steps"] if x.get("name") == "Extract and score"]
 check('--ceiling-usd "$LIMIT_USD"' in ext["run"]
-      and _college_ext and _college_ext[0]["env"]["CEILING"] == "${{ github.event.inputs.sources_from != '' && '40' || '' }}"
+      and _college_ext and str(_college_ext[0]["env"]["CEILING"]) == "40"
       and college_wf.lower().count("ceiling") == 3,
-      "the wave passes its limit as the extraction's ceiling; the college workflow sets one only on a staged read")
+      "the wave passes its limit as the extraction's ceiling; the college workflow sets $40 on every extraction")
 
 import subprocess  # noqa: E402
 
@@ -532,12 +532,16 @@ finally:
     shutil.rmtree(_t, ignore_errors=True)
 
 # Second read, 2 and 3: a hard stop on the run's actual cost, and an unpriced call counted toward it at
-# the most expensive model's price.
+# the most expensive model's price. The spend meter (kb/_spend_meter.py, S654) counts every call; the network
+# (XT._post) is the only stand-in, and each post reserves the college's $0.08 rate x the 1.25 margin.
+import _spend_meter as M  # noqa: E402
 USAGE = {"input_tokens": 10000, "output_tokens": 2000}     # $0.08 at the priced model
 _m = next(iter(XT.PRICE))
-check(abs(XT.cost(_m, USAGE) - 0.08) < 1e-9 and C.call_charge(None, USAGE) == max(XT.cost(m, USAGE) for m in XT.PRICE)
-      and C.call_charge(0.02, USAGE) == 0.02 and C.call_charge(None, None) == 0.0,
-      "a call counts its price, or with usage and no price the most expensive model's price")
+check(abs(XT.cost(_m, USAGE) - 0.08) < 1e-9 and M.charge_for("an-unpriced-model", USAGE) == max(XT.cost(m, USAGE) for m in XT.PRICE)
+      and M.answer_charge({"model": _m, "usage": USAGE}, 100) == 0.08
+      and M.answer_charge({"error": "HTTP 429", "http_status": 429}, 100) == 0.0,
+      "a call counts its price, or with usage and no price the most expensive model's price, and a refusal before "
+      "the model $0 (S654)")
 
 
 def _run_ceiling(ceiling, model):
@@ -555,16 +559,16 @@ def _run_ceiling(ceiling, model):
                   open(os.path.join(out, "sources", cn + ".json"), "w"))
     sent = []
 
-    def _call(src, key, *a, **k):
-        sent.append(src["control_number"])
+    def _post(body, key):
+        sent.append(body["title"][1:])
         return {"record": {"blocks": []}, "model": model, "usage": dict(USAGE)}
-    saved = (XT.call, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
-    XT.call, XT.score = _call, (lambda rec, *a, **k: score(True))
+    saved = (XT._post, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
+    XT._post, XT.score = _post, (lambda rec, *a, **k: score(True))
     os.environ["SUPABASE_SERVICE_KEY"] = "test"
     try:
         rc = C.extract(out, 0, 1, "77", 1, keep, None, ceiling)
     finally:
-        XT.call, XT.score = saved[0], saved[1]
+        XT._post, XT.score = saved[0], saved[1]
         if saved[2] is None:
             os.environ.pop("SUPABASE_SERVICE_KEY", None)
         else:
@@ -572,10 +576,11 @@ def _run_ceiling(ceiling, model):
     return t, out, rc, sent
 
 
-_t, _out, _rc, _sent = _run_ceiling(0.16, _m)
+# $0.20: 01 and 02 cost $0.08 each; 03 would make $0.16 + its $0.10 estimate > $0.20, so the meter holds it.
+_t, _out, _rc, _sent = _run_ceiling(0.20, _m)
 try:
     ns = json.load(open(os.path.join(_out, "not_sent_0.json")))
-    check(_rc == 0 and _sent == ["01", "02"] and ns["programs"] == ["03", "04", "05"] and ns["spent_usd"] == 0.16,
+    check(_rc == 0 and _sent == ["01", "02"] and ns["programs"] == ["03", "04", "05"] and ns["meter_charge_usd"] == 0.16,
           "once the run's actual cost reaches the ceiling, no further program is sent: %r" % _sent)
     check(json.load(open(os.path.join(_out, "records", "05.json")))["source_url"] == "https://x.edu/old"
           and not os.path.exists(os.path.join(_out, "records", "03.json")),
@@ -591,7 +596,7 @@ _t, _out, _rc, _sent = _run_ceiling(None, _m)
 check(_sent == ["01", "02", "03", "04", "05"] and not os.path.exists(os.path.join(_out, "not_sent_0.json")),
       "no ceiling, today's behavior: every program is sent")
 shutil.rmtree(_t, ignore_errors=True)
-_t, _out, _rc, _sent = _run_ceiling(0.16, "an-unpriced-model")
+_t, _out, _rc, _sent = _run_ceiling(0.20, "an-unpriced-model")
 try:
     check(_sent == ["01", "02"], "an unpriced call counts toward the stop at the most expensive model's price: %r" % _sent)
     _v = W.verify("T College", _out, None, {"pages_listed": 5, "pages_answered": 5},
@@ -608,7 +613,7 @@ finally:
 # that record was read from; with the new capture's entry beside the old record it reads as unchanged and
 # is never sent again. A program whose call errored filed no record, and is sent again too.
 _t = tempfile.mkdtemp()
-_saved = (C.COLLEGE_DIR, XT.call, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
+_saved = (C.COLLEGE_DIR, XT._post, XT.score, os.environ.get("SUPABASE_SERVICE_KEY"))
 try:
     C.COLLEGE_DIR = os.path.join(_t, "colleges")
     keep = os.path.join(C.COLLEGE_DIR, C.slug_of("Test College"))
@@ -634,15 +639,17 @@ try:
         return out, srcs
     sent = []
 
-    def _call(src, key, *a, **k):
-        sent.append(src["control_number"])
-        if src["control_number"] == "02":
-            return {"record": None, "error": "HTTP 502", "model": None, "usage": None}
+    def _post(body, key):
+        sent.append(body["title"][1:])
+        if body["title"] == "T02":
+            return {"record": None, "error": "HTTP 429: rate limited", "http_status": 429, "model": None, "usage": None}
         return {"record": {"blocks": []}, "model": _m, "usage": dict(USAGE)}
-    XT.call, XT.score = _call, (lambda rec, *a, **k: score(True))
+    XT._post, XT.score = _post, (lambda rec, *a, **k: score(True))
     os.environ["SUPABASE_SERVICE_KEY"] = "test"
     out1, srcs = _out("out1")
-    C.extract(out1, 0, 1, "81", 1, keep, None, 0.16)
+    # 01 and 03 cost $0.08 each; 02's call is refused before the model (429, no usage) and counts $0 (S654), so
+    # under $0.20 the meter holds 04: $0.16 + its $0.10 estimate passes the ceiling.
+    C.extract(out1, 0, 1, "81", 1, keep, None, 0.20)
     first = list(sent)
     C.file_run("Test College", out1, "81")
     filed_src = {x["control_number"]: x for x in json.load(open(os.path.join(keep, "sources.json")))}
@@ -657,7 +664,7 @@ try:
     C.extract(out2, 0, 1, "82", 1, keep, None, None)
     check(sorted(sent) == ["02", "04", "05"], "the next run with no ceiling sends them all: %r" % sorted(sent))
 finally:
-    C.COLLEGE_DIR, XT.call, XT.score = _saved[0], _saved[1], _saved[2]
+    C.COLLEGE_DIR, XT._post, XT.score = _saved[0], _saved[1], _saved[2]
     if _saved[3] is None:
         os.environ.pop("SUPABASE_SERVICE_KEY", None)
     else:

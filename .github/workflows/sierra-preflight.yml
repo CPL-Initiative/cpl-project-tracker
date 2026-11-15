@@ -22,5 +22,10 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.x'
+      # The $40 gate (S655, card 10): cpl-chat returns no usage, so the stop is a worst case through the spend
+      # meter (kb/_model_run_gate.py): each answer is one model call of at most MAX_TOKENS out and a
+      # 100,000-token input allowance in, at the dearest rate. Over $40 the gate exits 1 before any answer.
       - name: Run Sierra preflight battery
-        run: bash chatbox/preflight_bgca.sh
+        run: |
+          python3 kb/_model_run_gate.py cpl-chat --script chatbox/preflight_bgca.sh
+          bash chatbox/preflight_bgca.sh
