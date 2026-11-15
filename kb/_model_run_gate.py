@@ -20,7 +20,8 @@ $40. It sends nothing and needs no key.
                      mean. Her model is the CPL_CHAT_MODEL secret, which this repo cannot read, so the rate of the
                      dearest model that accepts her request (thinking turned off): Opus 4.8, $5/$25. A run of the
                      smoke suite counts only the modes it names (SMOKE_MODES, matched as smoke_test.sh matches
-                     them), so the A/B, at most 56 answers, names 27 modes a side or fewer.
+                     them). The gate counts runs, not modes: a mode with two run lines (7v) is two answers. The
+                     A/B's cap is 56 answers, 27 runs a side and its two probes.
 
 A limit the gate cannot read from the source refuses the run: a function that changed shape is a person's to price.
 When the functions return usage (the next deploy), these callers move to the meter's hard stop.

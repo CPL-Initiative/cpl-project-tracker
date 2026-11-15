@@ -308,6 +308,8 @@ check("the run says how many were asked and how many remain, as a warning (the j
       and "::error::" not in _log.getvalue())
 # Each answer's priced usage: 1,000 in x $4/M + 100 out x $20/M = $0.006 (Opus 5.5's own rate), for each call.
 check("the meter counts each answer's priced usage", near(spend.get("charge_usd"), 0.006 * _k, 1e-6), spend)
+check("the run's record keeps the gate's estimate, the prefix's $%.2f by hand" % _sum,
+      near(spend.get("estimate_usd"), round(_sum, 2), 0.006), spend)
 
 
 called = []
@@ -415,7 +417,7 @@ for path in glob.glob(os.path.join(KB, "program_requirements_college", "*", "sou
             n += 60 + listed * LONGEST_CODE
         sizes.append((n, "%s %s" % (os.path.basename(os.path.dirname(path)), e.get("control_number"))))
 largest, where = max(sizes)
-# The most one post costs: (characters + 40,000) x $4/M + 32,000 x $20/M.
+# The most one post costs: (characters + 40,000) x $5/M + 32,000 x $25/M, the dearest rate in the table.
 most = by_hand(largest + 40000, 32000)
 check("the largest committed request (%s, %d characters) costs at most $%.4f, within CALL_MAX_USD $%.2f"
       % (where, largest, most, X.CALL_MAX_USD), most <= X.CALL_MAX_USD and near(M.worst_case(largest), most, 1e-4))

@@ -637,7 +637,8 @@ def ask_classifier(rows, rules, key, call=post, limit=None):
               % (len(ask), spend["remaining"], priced["limit_usd"]), flush=True)
     meter = M.Meter(priced["limit_usd"])
     got, calls = classify(ask, rules, key, call=call, meter=meter)
-    spend.update(meter.snapshot())
+    # The meter's own estimate field is its per-call default (0 here); the run's record keeps the gate's estimate.
+    spend.update({k: v for k, v in meter.snapshot().items() if k != "estimate_usd"})
     if meter.stopped:
         spend["refused"] = ("the hard stop held %d posts at $%.2f charged against $%.0f"
                             % (meter.refused, meter.spent, priced["limit_usd"]))
