@@ -7,7 +7,7 @@
 -- person re-saved carries the person's reviewer and is never touched; a row a person validated (the Verify
 -- control stamps every row of a course) stays, counted as kept_for_a_person, and blocks no other rollback.
 -- The result is the count and an md5 over the deleted rows (course_id>value, | joined, C order). They equal the
--- forward result (380, 9332f0559c495fa8ddf7716155c9a211) while no person has re-saved or validated a row; a difference names
+-- forward result (380, 29667c0741e7e7fafb509b4c2937e9db) while no person has re-saved or validated a row; a difference names
 -- rows a person now owns.
 with minted as (
   select count(*) as n from public.kb_curation h where h.course_id ~ '^[A-Z]{1,6} [MZ][0-9][A-Z0-9]{3}H$'

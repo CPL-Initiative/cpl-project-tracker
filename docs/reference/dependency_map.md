@@ -629,7 +629,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/agab_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/agri_family_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/anchor_rekey_dryrun/plan.json` | scripts: `kb/_anchor_rekey_apply.py` | — |
-| `kb/anchor_rekey_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py`, `kb/honors_of.py` | — |
+| `kb/anchor_rekey_out/<date>/alias_map.json` | scripts: `kb/_honors_matcher_recall.py`, `kb/alias_chain.py`, `kb/honors_of.py` | — |
 | `kb/athl_remint_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/authority_recode_out/2026-09-03/ag_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |
 | `kb/authority_recode_out/2026-09-03/fl_classification.json` | scripts: `kb/_authority_recode_dryrun.py` | — |

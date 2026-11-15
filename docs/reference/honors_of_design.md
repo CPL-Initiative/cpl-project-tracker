@@ -205,12 +205,13 @@ M-IDs are "low stakes attempts to get our course clusters as close to right as w
 the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes-into-the-rewiring-2026-11-14`).
 
 - **An anchor** is two courses at one college: an Honors course and a base course whose codes name the same subject
-  and the same number once `honors_code_base` strikes the marker (a space before the H included; 1AH pairs with 1A,
-  never 1B), with a second signal at the course level: an Honors word in the Honors course's title, or, with none,
-  equal titles and a marker in the number (never an H ending the subject: Glendale's ARTH 119 beside ART 119 is one
-  course under two subjects). An Honors-titled number pair whose titles disagree is a doubtful anchor. A trailing H
-  in a series (A to G at the college) under a title with no Honors word is no Honors course. Titles are read with
-  HTML entities decoded.
+  and the same number once `honors_code_base` strikes the marker (a space before the H included, and up to three
+  letters before it: De Anza's F TV 2CWH; 1AH pairs with 1A, never 1B; padding zeros dropped after any non-digit, so
+  San Jose City's "(ETH) 027H" meets "(ETH) 27"), with a second signal at the course level: an Honors word in the
+  Honors course's title. A number pair whose titles disagree is a doubtful anchor, and so is a pair whose Honors
+  course carries no Honors word (equal titles, the marker in the number: Contra Costa's PHYS 121H). An H ending the
+  subject under a title with no Honors word is no Honors course (Glendale's ARTH 119 beside ART 119), nor is a
+  trailing H in a series (A to G at the college). Titles are read with HTML entities decoded.
 - **A row.** An Honors M-ID gets an `honors_of` row to base B when it has an anchor and every anchor lands in B, an
   M-ID or an official id. Anchors in two bases hold it ("anchors split"); a doubtful anchor holds it; no anchor, no
   row. The safety holds stay: a pending alias map, a merge slated or decided, a person's join, another `honors_of`
@@ -229,23 +230,28 @@ the rewiring (`sam-mids-are-ours-trial-and-error-2026-11-14`, `sam-mid-care-goes
   SQL names the receipt in its header, once, in the exact form. `scripts/supabase_migrate.py` refuses a file that
   names one unless the receipt sits inside the repo, names the trigger's file and its sha256, names the payload as
   the checkout holds it, and was written at `main`'s head as it stands at the apply; a near-miss spelling of the
-  header refuses.
+  header refuses, and the runner keeps a list of files that must carry a receipt (the rows SQL first), so deleting
+  the header line never skips the gate.
 
-**The plan today** (committed `unified_courses_members.js`, generated 2026-11-14 20:25; local courses): 584 anchors on
-M-ID Honors courses and 1 doubtful. 520 pair records: 282 row and mint, 26 row with the mint held, 74 row only on an
-official base, 37 held, 101 none. Held by first reason: 26 anchors split, 7 an official base holding a CCN-coded
-course, 2 an anchor's base inside the Honors id, 1 beside a CCN Honors record, 1 doubtful anchors only. 382 rows:
-step 1 wrote 2, step 2 writes 380. 169 bases are split candidates.
+**The plan today** (committed `unified_courses_members.js`, generated 2026-11-14 20:25; local courses): 590 anchors on
+M-ID Honors courses and 3 doubtful. 519 pair records: 286 row and mint, 22 row with the mint held, 74 row only on an
+official base, 40 held, 97 none. Held by first reason: 27 anchors split, 8 an official base holding a CCN-coded
+course, 3 doubtful anchors only, 1 beside a CCN Honors record, 1 an anchor's base inside the Honors id. 382 rows: step
+1 wrote 2, step 2 writes 380. 167 bases are split candidates.
 
 **The cases the reviews named**, as the rule decides them: LIBR M10CL row and mint (Fullerton LIB 100HF beside LIB 100
 F); BIOL M1317 row, mint held (Cosumnes BIOL 485 has no H in its number, so it rides unanchored); HIST M1165 row and
-mint (three anchors, all into HIST M1191); HUMA M10LS row and mint (Irvine Valley HUM 1H beside HUM 1); MATH M10NA none
-(San Jose City has no MATH 071); MATH M1333 held (MATH 210 holds MATH C2210 and C2210H).
+mint (three anchors, all into HIST M1191); HUMA M10LS row and mint (Irvine Valley HUM 1H beside HUM 1); MATH M10NA held
+(San Jose City's 071H meets 71 in MATH 210, which holds MATH C2210 and C2210H); MATH M1333 held on the same clause;
+ETHS M1266 held (anchors split over ETHS M1213 and ETHS M1218); PHYS M1015 held (a doubtful anchor only).
 
-**The self-recall measures** (`kb/_honors_matcher_recall.py`, by hand): 19 anchor labels, among them the ECON 101 H,
-LING 101 HC and MATH 1A H shapes, a part I beside a part II, a series letter H and a number pair with different
-titles; 16 cluster labels (8 self-contained, 8 on the ids the reviews named, each resolved through `kb/alias_chain.py`
-and failing on an id that is gone). Dropping each of the 13 clauses of rules 1 to 3 in turn fails a label.
+**The self-recall measures** (`kb/_honors_matcher_recall.py`, by hand): 22 anchor labels, among them the ECON 101 H,
+LING 101 HC, MATH 1A H, (BIOL) 020H and F TV 2CWH shapes, an entity inside the Honors word, a part I beside a part II,
+a series letter H, a number pair with different titles and a code-only H as doubtful; 20 cluster labels (10
+self-contained, 10 on the ids the reviews named, each resolved through `kb/alias_chain.py` from a pinned `LABEL_ERA`,
+with one renamed-label case, and failing on an id that is gone). Dropping each of the 16 clauses of rules 1 to 3 in
+turn fails a label. `tests/honors_matcher_recall.test.js` scores the cluster labels against the committed
+`plan.json`; the live re-score stays in `--plan`'s abort gate.
 
 **The undo, last in, first out.** Step 2's rollback keys on its cohort and the field, keeps a row a person validated,
 and refuses while any `kb_curation` row is keyed on an H id, the step-4 mint's marker. The step-1 rollback counts only
@@ -262,6 +268,12 @@ names the rows file, its last check reports the applied state rather than failin
 `unified_title_merge_confirm` rows; after the next daily run, `--check` and its receipt with the `.apply` line.
 
 ## Before the mints
+
+0. **Two notes from the anchors review.** HLTH M10ZH mints HLTH M1134H beside C-ID PHS 102, a plain C-ID with five
+   courses and one Honors course (Cypress PHS 281HC); counting it would hold a mint on a non-Honors id, so step 4
+   decides it as a base split or merge, and no step-2 row is affected. And step 4's own rollback (the inverse alias
+   map) is written and proved before the mint: the step-1 and step-2 rollbacks refuse while any row is keyed on an
+   H id, and the proof's mint cases use a synthetic inverse today.
 
 1. **A base's move carries its H id** (round 2). The move-selection engines drop an H id before it reaches the
    allocator: `kb/_prefix_fold_dryrun.py` `classify` counts it under `skip_offscheme_id`,

@@ -1,6 +1,6 @@
 {
  "_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: docs/reference/honors_of_design.md.",
- "written": "2026-11-15T03:17:26Z",
+ "written": "2026-11-15T03:59:45Z",
  "date": "2026-11-15",
  "cohort": "honors-s653@bot",
  "cohort_rows": "honors-rows-s653@bot",
@@ -9,7 +9,7 @@
   "committed": {
    "members_generated_at": "2026-11-14 20:25",
    "pairs": 527,
-   "course_rows": 1137
+   "course_rows": 1140
   },
   "how": "kb/_reclustering_s648_dryrun.measure_honors on the committed members file; a pair is an (Honors identity, base identity) whose Honors course and base course at one college sit in different identities"
  },
@@ -361,8 +361,8 @@
    ]
   },
   "anchors": {
-   "labels": 19,
-   "right": 19,
+   "labels": 22,
+   "right": 22,
    "wrong": 0,
    "wrong_labels": [],
    "pairs": [
@@ -423,10 +423,31 @@
      "pass": true
     },
     {
-     "honors": "B MATH 5H",
-     "base": "MATH 5",
+     "honors": "San Jose City College Biology (BIOL) 020H",
+     "base": "Biology (BIOL) 20",
      "expected": "anchor",
      "got": "anchor",
+     "pass": true
+    },
+    {
+     "honors": "De Anza College F TV 2CWH",
+     "base": "F TV 02CW",
+     "expected": "anchor",
+     "got": "anchor",
+     "pass": true
+    },
+    {
+     "honors": "E MATH 1H",
+     "base": "MATH 1",
+     "expected": "anchor",
+     "got": "anchor",
+     "pass": true
+    },
+    {
+     "honors": "B MATH 5H",
+     "base": "MATH 5",
+     "expected": "doubtful",
+     "got": "doubtful",
      "pass": true
     },
     {
@@ -502,8 +523,8 @@
    ]
   },
   "cluster_fixtures": {
-   "labels": 8,
-   "right": 8,
+   "labels": 10,
+   "right": 10,
    "wrong": 0,
    "wrong_labels": [],
    "fixtures": [
@@ -592,6 +613,30 @@
      "pass": true
     },
     {
+     "name": "an anchor's base course inside the Honors id itself holds the row (COUN M1144's shape)",
+     "expected": [
+      false,
+      false
+     ],
+     "got": [
+      false,
+      false
+     ],
+     "pass": true
+    },
+    {
+     "name": "an id mostly not Honors courses holds the row",
+     "expected": [
+      false,
+      false
+     ],
+     "got": [
+      false,
+      false
+     ],
+     "pass": true
+    },
+    {
      "name": "a clean pair: a row and a mint",
      "expected": [
       true,
@@ -632,9 +677,9 @@
     "clause": "second_signal",
     "caught": true,
     "failing": [
+     "B MATH 5H / MATH 5: anchor",
      "D AUTO 060H / AUTO 060: anchor",
-     "Foothill College LINC 073H / LINC 73: anchor",
-     "Glendale Community College ARTH 119 / ART 119: anchor"
+     "Foothill College LINC 073H / LINC 73: anchor"
     ]
    },
    {
@@ -649,7 +694,7 @@
     "clause": "series_letter",
     "caught": true,
     "failing": [
-     "C MUS 10H / MUS 10: anchor"
+     "C MUS 10H / MUS 10: doubtful"
     ]
    },
    {
@@ -657,6 +702,13 @@
     "caught": true,
     "failing": [
      "A ENGL 1AH / ENGL 1A: anchor"
+    ]
+   },
+   {
+    "clause": "unescape",
+    "caught": true,
+    "failing": [
+     "E MATH 1H / MATH 1: None"
     ]
    },
    {
@@ -671,6 +723,20 @@
     "caught": true,
     "failing": [
      "a doubtful anchor holds the row beside a good one"
+    ]
+   },
+   {
+    "clause": "base_outside",
+    "caught": true,
+    "failing": [
+     "an anchor's base course inside the Honors id itself holds the row (COUN M1144's shape)"
+    ]
+   },
+   {
+    "clause": "mostly_honors",
+    "caught": true,
+    "failing": [
+     "an id mostly not Honors courses holds the row"
     ]
    },
    {
@@ -704,13 +770,13 @@
    }
   ],
   "clusters": {
-   "labels": 16,
-   "right": 16,
+   "labels": 20,
+   "right": 20,
    "wrong": 0,
    "wrong_labels": [],
    "real": {
-    "labels": 8,
-    "right": 8,
+    "labels": 10,
+    "right": 10,
     "wrong": 0,
     "wrong_labels": [],
     "pairs": [
@@ -745,8 +811,22 @@
      {
       "honors_id": "MATH M10NA",
       "base": "MATH 210",
-      "expected": "none: no anchor",
-      "got": "none: no anchor",
+      "expected": "held",
+      "got": "held",
+      "pass": true
+     },
+     {
+      "honors_id": "ETHS M1266",
+      "base": "ETHS M1213",
+      "expected": "held",
+      "got": "held",
+      "pass": true
+     },
+     {
+      "honors_id": "PHYS M1015",
+      "base": "PHYS 110",
+      "expected": "held",
+      "got": "held",
       "pass": true
      },
      {
@@ -773,8 +853,8 @@
     ]
    },
    "fixtures": {
-    "labels": 8,
-    "right": 8,
+    "labels": 10,
+    "right": 10,
     "wrong": 0,
     "wrong_labels": [],
     "fixtures": [
@@ -863,6 +943,30 @@
       "pass": true
      },
      {
+      "name": "an anchor's base course inside the Honors id itself holds the row (COUN M1144's shape)",
+      "expected": [
+       false,
+       false
+      ],
+      "got": [
+       false,
+       false
+      ],
+      "pass": true
+     },
+     {
+      "name": "an id mostly not Honors courses holds the row",
+      "expected": [
+       false,
+       false
+      ],
+      "got": [
+       false,
+       false
+      ],
+      "pass": true
+     },
+     {
       "name": "a clean pair: a row and a mint",
       "expected": [
        true,
@@ -876,19 +980,29 @@
      }
     ]
    }
-  }
+  },
+  "label_resolution": [
+   {
+    "name": "a renamed label resolves to its new id and passes",
+    "pass": true
+   },
+   {
+    "name": "a label renamed to an id the plan does not hold fails",
+    "pass": true
+   }
+  ]
  },
  "summary": {
-  "pairs": 520,
+  "pairs": 519,
   "by_action": {
-   "row and mint": 282,
-   "none": 101,
+   "row and mint": 286,
+   "none": 97,
    "row only (official base)": 74,
-   "held": 37,
-   "row, mint held": 26
+   "held": 40,
+   "row, mint held": 22
   },
   "by_systems": {
-   "M-ID Honors, M-ID base": 341,
+   "M-ID Honors, M-ID base": 340,
    "M-ID Honors, C-ID base": 89,
    "CCN-ID Honors, C-ID base": 23,
    "C-ID Honors, CCN-ID base": 22,
@@ -900,37 +1014,35 @@
   },
   "anchors": {
    "measure": "same-college course pairs (kb/_honors_anchors.py rule 1) on unified_courses_members.js whose Honors course sits in an M-ID, counted once per Honors course and base course",
-   "anchor": 584,
-   "doubtful": 1,
-   "on_rows": 475
+   "anchor": 590,
+   "doubtful": 3,
+   "on_rows": 479
   },
   "holds_by_reason": {
-   "anchors split": 26,
-   "the official base holds a CCN-coded course": 7,
+   "anchors split": 27,
+   "the official base holds a CCN-coded course": 8,
    "the CCN Honors record <id> already pairs with a course in <id>": 7,
-   "an anchor's base course sits in the Honors id itself": 2,
-   "the id is mostly not Honors courses": 2,
+   "doubtful anchors only": 3,
    "the CCN record <id> already holds Honors courses beside <id>": 2,
-   "doubtful anchors only": 1
+   "an anchor's base course sits in the Honors id itself": 1,
+   "the id is mostly not Honors courses": 1
   },
   "held_pairs_by_first_reason": {
-   "anchors split": 26,
-   "the official base holds a CCN-coded course": 7,
-   "an anchor's base course sits in the Honors id itself": 2,
+   "anchors split": 27,
+   "the official base holds a CCN-coded course": 8,
+   "doubtful anchors only": 3,
    "the CCN Honors record <id> already pairs with a course in <id>": 1,
-   "doubtful anchors only": 1
+   "an anchor's base course sits in the Honors id itself": 1
   },
   "mint_held_by_reason": {
    "the base has 2 Honors M-IDs anchored into it": 12,
-   "1 member course(s) of the Honors id are not the Honors course of an anchor": 10,
+   "1 member course(s) of the Honors id are not the Honors course of an anchor": 7,
    "the base has 3 Honors M-IDs anchored into it": 3,
-   "another derivation names a second base": 1,
-   "2 member course(s) of the Honors id are not the Honors course of an anchor": 1,
    "the base holds a CCN-coded course": 1
   },
-  "pairs_held": 37,
+  "pairs_held": 40,
   "rows_to_write": 382,
-  "mints": 282,
+  "mints": 286,
   "split_candidates": [
    "ACCT 110",
    "ACCT 120",
@@ -1015,7 +1127,6 @@
    "ETHN M1028",
    "ETHS M1085",
    "ETHS M1166",
-   "ETHS M1218",
    "ETHS M1256",
    "ETHS M1260",
    "ETHS M1285",
@@ -1074,7 +1185,6 @@
    "PHIL M1028",
    "PHOT M1096",
    "PHYS 105",
-   "PHYS 110",
    "PHYS 205",
    "POLS 130",
    "POLS 140",
@@ -4955,6 +5065,15 @@
      "base_code": "BIOL 100",
      "honors_title": "Honors Human Biology",
      "base_title": "Human Biology"
+    },
+    {
+     "kind": "anchor",
+     "base_id": "BIOL M1105",
+     "college": "San Jose City College",
+     "honors_code": "Biology (BIOL) 020H",
+     "base_code": "Biology (BIOL) 20",
+     "honors_title": "Honors Human Biology",
+     "base_title": "Human Biology"
     }
    ],
    "anchor_bases": [
@@ -4975,13 +5094,11 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: San Jose City College Biology (BIOL) 020H"
-   ],
+   "no_mint": [],
    "notes": [],
    "split_candidate": [],
    "report_lump": [],
-   "action": "row, mint held"
+   "action": "row and mint"
   },
   {
    "honors_id": "BIOL M1102",
@@ -5894,6 +6011,7 @@
    ],
    "holds": [],
    "no_mint": [
+    "the base has 2 Honors M-IDs anchored into it: CHEM M1016, PHSC M10CP",
     "an official base: C-ID and CCN number their own records, so no H id is minted"
    ],
    "notes": [],
@@ -7657,7 +7775,7 @@
    "base_system": "M-ID",
    "anchors": [
     {
-     "kind": "anchor",
+     "kind": "doubtful",
      "base_id": "COUN M1144",
      "college": "Santa Monica College",
      "honors_code": "COUNS 15H",
@@ -7666,9 +7784,7 @@
      "base_title": "Job Search Techniques"
     }
    ],
-   "anchor_bases": [
-    "COUN M1144"
-   ],
+   "anchor_bases": [],
    "honors": {
     "local_courses": 2,
     "honors_courses": 1,
@@ -7681,8 +7797,7 @@
    "proposed_h_id": "COUN M1144H",
    "found_by": [],
    "holds": [
-    "an anchor's base course sits in the Honors id itself: a split comes before any row",
-    "the id is mostly not Honors courses (1 of 2): it is not an Honors M-ID, and a row would hold its other courses apart from the base"
+    "doubtful anchors only"
    ],
    "no_mint": [],
    "notes": [],
@@ -15237,10 +15352,19 @@
   },
   {
    "honors_id": "ETHS M1266",
-   "base_id": "ETHS M1218",
+   "base_id": "ETHS M1213",
    "honors_system": "M-ID",
    "base_system": "M-ID",
    "anchors": [
+    {
+     "kind": "anchor",
+     "base_id": "ETHS M1213",
+     "college": "San Jose City College",
+     "honors_code": "Ethnic Studies (ETH) 027H",
+     "base_code": "Ethnic Studies (ETH) 27",
+     "honors_title": "Honors Introduction to Race & Ethnicity in American History",
+     "base_title": "Introduction to Race & Ethnicity in American History"
+    },
     {
      "kind": "anchor",
      "base_id": "ETHS M1218",
@@ -15252,6 +15376,7 @@
     }
    ],
    "anchor_bases": [
+    "ETHS M1213",
     "ETHS M1218"
    ],
    "honors": {
@@ -15260,30 +15385,28 @@
     "folded_identities": 3
    },
    "base": {
-    "local_courses": 15,
-    "folded_identities": 10
+    "local_courses": 11,
+    "folded_identities": 8
    },
-   "proposed_h_id": "ETHS M1218H",
+   "proposed_h_id": "ETHS M1213H",
    "found_by": [
     "the matcher",
     "the second derivation"
    ],
-   "holds": [],
-   "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: San Jose City College Ethnic Studies (ETH) 027H",
-    "another derivation names a second base: ETHS M1213"
+   "holds": [
+    "anchors split: ETHS M1213, ETHS M1218"
    ],
+   "no_mint": [],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
-    "a college gives the base two course numbers: Cerritos College",
     "the Honors id holds more than one Honors title group"
    ],
    "report_lump": [
-    "the base holds more than one course: 2 of two or more local courses each, politics of race and ethnicity (12); introduction to the anthropology of race class ethnicity and society (2)",
+    "the base holds more than one course: 3 of two or more local courses each, history of race ethnicity in the united states (6); history of race and ethnicity in america (2); issues of race and ethnicity in the united states (2)",
     "the Honors id holds two Honors courses: introduction to race ethnicity in american history; issues of race and ethnicity in the united states"
    ],
-   "action": "row, mint held"
+   "action": "held"
   },
   {
    "honors_id": "ETHS M1278",
@@ -15712,6 +15835,24 @@
      "base_code": "F TV 002B",
      "honors_title": "History of Cinema (1950-Present) - HONORS",
      "base_title": "History of Cinema (1950-Present)"
+    },
+    {
+     "kind": "anchor",
+     "base_id": "FTVE M1002",
+     "college": "De Anza College",
+     "honors_code": "F TV 2AWH",
+     "base_code": "F TV 02AW",
+     "honors_title": "History of Cinema (1895-1950) - HONORS",
+     "base_title": "History of Cinema (1895-1950)"
+    },
+    {
+     "kind": "anchor",
+     "base_id": "FTVE M1002",
+     "college": "De Anza College",
+     "honors_code": "F TV 2BWH",
+     "base_code": "F TV 02BW",
+     "honors_title": "History of Cinema (1950-Present) - HONORS",
+     "base_title": "History of Cinema (1950-Present)"
     }
    ],
    "anchor_bases": [
@@ -15732,9 +15873,7 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [
-    "2 member course(s) of the Honors id are not the Honors course of an anchor: De Anza College F TV 2AWH; De Anza College F TV 2BWH"
-   ],
+   "no_mint": [],
    "notes": [],
    "split_candidate": [
     "the base holds more than one title group",
@@ -15746,7 +15885,7 @@
    "person_merges_in": [
     "FTVE M1007"
    ],
-   "action": "row, mint held"
+   "action": "row and mint"
   },
   {
    "honors_id": "FTVE M1019",
@@ -15811,6 +15950,15 @@
      "base_code": "F TV 002C",
      "honors_title": "Contemporary World Cinema - HONORS",
      "base_title": "Contemporary World Cinema"
+    },
+    {
+     "kind": "anchor",
+     "base_id": "FTVE M1046",
+     "college": "De Anza College",
+     "honors_code": "F TV 2CWH",
+     "base_code": "F TV 02CW",
+     "honors_title": "Contemporary World Cinema - HONORS",
+     "base_title": "Contemporary World Cinema"
     }
    ],
    "anchor_bases": [
@@ -15831,15 +15979,13 @@
     "the second derivation"
    ],
    "holds": [],
-   "no_mint": [
-    "1 member course(s) of the Honors id are not the Honors course of an anchor: De Anza College F TV 2CWH"
-   ],
+   "no_mint": [],
    "notes": [],
    "split_candidate": [
     "a college gives the base two course numbers: De Anza College"
    ],
    "report_lump": [],
-   "action": "row, mint held"
+   "action": "row and mint"
   },
   {
    "honors_id": "FTVE M1078",
@@ -16778,6 +16924,28 @@
      "base_code": "HIST C1001",
      "honors_title": "United States History to 1877 - Honors",
      "base_title": "United States History to 1877"
+    }
+   ],
+   "holds": [],
+   "no_mint": [],
+   "notes": []
+  },
+  {
+   "honors_id": "HIST 140",
+   "base_id": "HIST 130",
+   "honors_system": "C-ID",
+   "base_system": "C-ID",
+   "action": "none: the Honors side is a C-ID record, which stays as its body numbers it",
+   "anchors": [
+    {
+     "honors_id": "HIST 140",
+     "base_id": "HIST 130",
+     "kind": "anchor",
+     "college": "San Jose City College",
+     "honors_code": "History (HIST) 001H",
+     "base_code": "History (HIST) 1",
+     "honors_title": "Honors Survey of American History",
+     "base_title": "Survey of American History"
     }
    ],
    "holds": [],
@@ -22348,6 +22516,52 @@
    "action": "held"
   },
   {
+   "honors_id": "MATH M10NA",
+   "base_id": "MATH 210",
+   "honors_system": "M-ID",
+   "base_system": "C-ID",
+   "anchors": [
+    {
+     "kind": "anchor",
+     "base_id": "MATH 210",
+     "college": "San Jose City College",
+     "honors_code": "Mathematics (MATH) 071H",
+     "base_code": "Mathematics (MATH) 71",
+     "honors_title": "Honors Calculus I with Analytic Geometry",
+     "base_title": "Calculus I With Analytic Geometry"
+    }
+   ],
+   "anchor_bases": [
+    "MATH 210"
+   ],
+   "honors": {
+    "local_courses": 1,
+    "honors_courses": 1,
+    "folded_identities": 1
+   },
+   "base": {
+    "local_courses": 101,
+    "folded_identities": 101
+   },
+   "proposed_h_id": null,
+   "found_by": [
+    "the matcher",
+    "the second derivation"
+   ],
+   "holds": [
+    "the official base holds a CCN-coded course (MATH C2210, MATH C2210H): the CCN record is the gold standard"
+   ],
+   "no_mint": [],
+   "notes": [],
+   "split_candidate": [
+    "the base holds more than one title group",
+    "a college gives the base two course numbers: Clovis Community College, De Anza College, Fullerton College",
+    "the sequence marks differ across the base and the Honors side"
+   ],
+   "report_lump": [],
+   "action": "held"
+  },
+  {
    "honors_id": "MATH M10NC",
    "base_id": "MATH 230",
    "honors_system": "M-ID",
@@ -23087,6 +23301,46 @@
     "folded_identities": 3
    },
    "proposed_h_id": "MUSI M1254H",
+   "found_by": [
+    "the matcher",
+    "the second derivation"
+   ],
+   "holds": [],
+   "no_mint": [],
+   "notes": [],
+   "split_candidate": [],
+   "report_lump": [],
+   "action": "row and mint"
+  },
+  {
+   "honors_id": "MUSI M11XO",
+   "base_id": "MUSI M1334",
+   "honors_system": "M-ID",
+   "base_system": "M-ID",
+   "anchors": [
+    {
+     "kind": "anchor",
+     "base_id": "MUSI M1334",
+     "college": "San Jose City College",
+     "honors_code": "Music (MUSIC) 083H",
+     "base_code": "Music (MUSIC) 83",
+     "honors_title": "Honors Exploring the World of Music",
+     "base_title": "Exploring the World of Music"
+    }
+   ],
+   "anchor_bases": [
+    "MUSI M1334"
+   ],
+   "honors": {
+    "local_courses": 1,
+    "honors_courses": 1,
+    "folded_identities": 1
+   },
+   "base": {
+    "local_courses": 2,
+    "folded_identities": 2
+   },
+   "proposed_h_id": "MUSI M1334H",
    "found_by": [
     "the matcher",
     "the second derivation"
@@ -24523,6 +24777,52 @@
    "action": "row, mint held"
   },
   {
+   "honors_id": "PHSC M10CP",
+   "base_id": "CHEM 101",
+   "honors_system": "M-ID",
+   "base_system": "C-ID",
+   "anchors": [
+    {
+     "kind": "anchor",
+     "base_id": "CHEM 101",
+     "college": "San Jose City College",
+     "honors_code": "Chemistry (CHEM) 015H",
+     "base_code": "Chemistry (CHEM) 15",
+     "honors_title": "Honors Fundamentals of Chemistry",
+     "base_title": "Fundamentals of Chemistry"
+    }
+   ],
+   "anchor_bases": [
+    "CHEM 101"
+   ],
+   "honors": {
+    "local_courses": 1,
+    "honors_courses": 1,
+    "folded_identities": 1
+   },
+   "base": {
+    "local_courses": 163,
+    "folded_identities": 163
+   },
+   "proposed_h_id": null,
+   "found_by": [
+    "the matcher",
+    "the second derivation"
+   ],
+   "holds": [],
+   "no_mint": [
+    "the base has 2 Honors M-IDs anchored into it: CHEM M1016, PHSC M10CP",
+    "an official base: C-ID and CCN number their own records, so no H id is minted"
+   ],
+   "notes": [],
+   "split_candidate": [
+    "the base holds more than one title group",
+    "a college gives the base two course numbers: Butte College, Cabrillo College, Cerritos College"
+   ],
+   "report_lump": [],
+   "action": "row only (official base)"
+  },
+  {
    "honors_id": "PHSC M10FT",
    "base_id": "ASTR M1040",
    "honors_system": "M-ID",
@@ -24569,7 +24869,7 @@
    "base_system": "C-ID",
    "anchors": [
     {
-     "kind": "anchor",
+     "kind": "doubtful",
      "base_id": "PHYS 110",
      "college": "Contra Costa College",
      "honors_code": "PHYS 121H",
@@ -24578,9 +24878,7 @@
      "base_title": "General College Physics"
     }
    ],
-   "anchor_bases": [
-    "PHYS 110"
-   ],
+   "anchor_bases": [],
    "honors": {
     "local_courses": 1,
     "honors_courses": 1,
@@ -24592,10 +24890,10 @@
    },
    "proposed_h_id": null,
    "found_by": [],
-   "holds": [],
-   "no_mint": [
-    "an official base: C-ID and CCN number their own records, so no H id is minted"
+   "holds": [
+    "doubtful anchors only"
    ],
+   "no_mint": [],
    "notes": [
     "kb/promotions.json names the base among the Honors id's official targets"
    ],
@@ -24605,7 +24903,7 @@
     "the sequence marks differ across the base and the Honors side"
    ],
    "report_lump": [],
-   "action": "row only (official base)"
+   "action": "held"
   },
   {
    "honors_id": "PHYS M10DH",
@@ -27459,6 +27757,16 @@
      "base_code": "SOCI C1000",
      "honors_title": "Introduction to Sociology - Honors",
      "base_title": "Introduction to Sociology"
+    },
+    {
+     "honors_id": "SOCI C1000H",
+     "base_id": "SOCI C1000",
+     "kind": "anchor",
+     "college": "San Jose City College",
+     "honors_code": "Sociology (SOC) 010H",
+     "base_code": "Sociology (SOC) 10",
+     "honors_title": "Honors Introduction to Sociology",
+     "base_title": "Introduction to Sociology"
     }
    ],
    "holds": [],
@@ -29299,41 +29607,11 @@
    ]
   },
   {
-   "honors_id": "ETHS M1266",
-   "base_id": "ETHS M1213",
-   "honors_system": "M-ID",
-   "base_system": "M-ID",
-   "action": "none: no anchor",
-   "anchors": [],
-   "holds": [],
-   "no_mint": [],
-   "notes": [],
-   "found_by": [
-    "the matcher",
-    "the second derivation"
-   ]
-  },
-  {
    "honors_id": "GEOL M10HI",
    "base_id": "GEOL 100 L",
    "honors_system": "M-ID",
    "base_system": "C-ID",
    "action": "none: no anchor",
-   "anchors": [],
-   "holds": [],
-   "no_mint": [],
-   "notes": [],
-   "found_by": [
-    "the matcher",
-    "the second derivation"
-   ]
-  },
-  {
-   "honors_id": "HIST 140",
-   "base_id": "HIST 130",
-   "honors_system": "C-ID",
-   "base_system": "C-ID",
-   "action": "none: the Honors side is a C-ID record, which stays as its body numbers it",
    "anchors": [],
    "holds": [],
    "no_mint": [],
@@ -29373,21 +29651,6 @@
    ]
   },
   {
-   "honors_id": "MATH M10NA",
-   "base_id": "MATH 210",
-   "honors_system": "M-ID",
-   "base_system": "C-ID",
-   "action": "none: no anchor",
-   "anchors": [],
-   "holds": [],
-   "no_mint": [],
-   "notes": [],
-   "found_by": [
-    "the matcher",
-    "the second derivation"
-   ]
-  },
-  {
    "honors_id": "MUSI M10BT",
    "base_id": "MUSI M1002",
    "honors_system": "M-ID",
@@ -29418,21 +29681,6 @@
    ]
   },
   {
-   "honors_id": "MUSI M11XO",
-   "base_id": "MUSI M1334",
-   "honors_system": "M-ID",
-   "base_system": "M-ID",
-   "action": "none: no anchor",
-   "anchors": [],
-   "holds": [],
-   "no_mint": [],
-   "notes": [],
-   "found_by": [
-    "the matcher",
-    "the second derivation"
-   ]
-  },
-  {
    "honors_id": "NUTR M10BL",
    "base_id": "NUTR M1014",
    "honors_system": "M-ID",
@@ -29446,24 +29694,9 @@
     "the matcher",
     "the second derivation"
    ]
-  },
-  {
-   "honors_id": "PHSC M10CP",
-   "base_id": "CHEM 101",
-   "honors_system": "M-ID",
-   "base_system": "C-ID",
-   "action": "none: no anchor",
-   "anchors": [],
-   "holds": [],
-   "no_mint": [],
-   "notes": [],
-   "found_by": [
-    "the matcher",
-    "the second derivation"
-   ]
   }
  ],
- "rows_md5": "9332f0559c495fa8ddf7716155c9a211",
+ "rows_md5": "29667c0741e7e7fafb509b4c2937e9db",
  "step2_rows": 380,
- "plan_md5": "16bad78e360f917ed5aeb080a85125cf"
+ "plan_md5": "be70e28c20be3775d0c564b13b96f8c2"
 }

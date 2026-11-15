@@ -10983,6 +10983,13 @@
   "file:kb/anchor_rekey_out/<date>/alias_map.json": {
    "consumers": [
     {
+     "id": "script:kb/_honors_matcher_recall.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 367
+    },
+    {
      "id": "script:kb/alias_chain.py",
      "kind": "script",
      "direction": "read",
@@ -11988,7 +11995,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 395
+     "line": 442
     },
     {
      "id": "script:kb/_honors_of_s653_dryrun.py",
@@ -27701,7 +27708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 653
+     "line": 658
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27785,7 +27792,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 653
+     "line": 658
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -27956,7 +27963,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 653
+     "line": 658
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",

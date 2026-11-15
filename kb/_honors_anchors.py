@@ -11,11 +11,11 @@ our course clusters as close to right as we can", and the care goes into the rew
 
 RULE 1, an anchor. At one college, an Honors course and a base course whose codes name the same subject and the same
 number token exactly once the Honors marker is taken out (`honors_code_base`, a space before the H included; 1AH
-pairs with 1A, never 1B), and a second signal at the course level: the Honors course's title carries an Honors word,
-or, with no Honors word, the two titles agree. A number pair whose Honors-titled course disagrees with its base's
-title is DOUBTFUL, never an anchor. A trailing H that is a series letter (the college lists the same number with A to
-G) under a title with no Honors word is not an Honors course. A base course whose own title carries an Honors word is
-not a base.
+pairs with 1A, never 1B; padding zeros dropped after any non-digit, so '(ETH) 027H' meets '(ETH) 27'), and a second
+signal at the course level: an Honors word in the Honors course's title. A number pair whose titles disagree is
+DOUBTFUL, and so is one whose Honors course carries no Honors word (equal titles, the marker in the number); neither
+is an anchor. A trailing H that is a series letter (the college lists the same number with A to G) under a title
+with no Honors word is not an Honors course. A base course whose own title carries an Honors word is not a base.
 RULE 2, a row. An Honors M-ID gets an honors_of row to base B when it has an anchor and every anchor lands in B.
 Anchors in two bases hold it ("anchors split"); any doubtful anchor holds it; no anchor, no row.
 RULE 3, a mint (step 4, planned only). The row, and: every member course of the Honors M-ID is the Honors course of an
@@ -36,31 +36,39 @@ sys.path.insert(0, HERE)
 import _reclustering_s648_dryrun as s648  # noqa: E402
 
 CLAUSES_1 = ("same_college", "exact_number", "honors_marker", "second_signal", "doubtful", "series_letter",
-             "base_not_honors")
-CLAUSES_2 = ("split", "doubtful_holds")
+             "base_not_honors", "unescape")
+CLAUSES_2 = ("split", "doubtful_holds", "base_outside", "mostly_honors")
 CLAUSES_3 = ("all_members_anchored", "one_honors_per_base", "ccn", "multi_base")
 CCN_CODE = re.compile(r"^[A-Z]+\s*C\d{4}[A-Z]*$")
 
 
-def clean(title):
+def clean(title, drop=()):
     """A title as a reader sees it: HTML entities decoded (Glendale's 'Honors&nbsp;World&nbsp;History')."""
-    return " ".join(html.unescape(title or "").replace("\xa0", " ").split())
+    t = (title or "") if "unescape" in drop else html.unescape(title or "")
+    return " ".join(t.replace("\xa0", " ").split())
 
 
-def honors_word(title):
-    return bool(s648.HONORS_WORD.search(clean(title)))
+def honors_word(title, drop=()):
+    return bool(s648.HONORS_WORD.search(clean(title, drop)))
 
 
-def titles_agree(honors_title, base_title):
+def titles_agree(honors_title, base_title, drop=()):
     """The matcher's code-and-title test, read on the cleaned titles: stems mostly agree, or the base title
     abbreviates the Honors one; sequence marks that differ never agree."""
-    h, b = clean(honors_title), clean(base_title)
+    h, b = clean(honors_title, drop), clean(base_title, drop)
     return (s648.title_agree(s648.strip_honors(h), b) >= s648.CODE_TITLE_AGREE
             or s648.abbrev_agree(h, b) >= s648.CODE_ABBREV_AGREE)
 
 
+def anchor_key(code):
+    """A code compared at one college: upper case, every space dropped, and the zeros that pad a number dropped
+    wherever they follow a non-digit (#3315's anchors review: San Jose City's '(ETH) 027H' meets '(ETH) 27', and
+    'ECON 001H' meets 'ECON 1'). s648.code_key drops them only after a letter; the matcher keeps its own key."""
+    return re.sub(r"(?<=\D)0+(?=\d)", "", re.sub(r"\s+", "", (code or "").upper()))
+
+
 def number_key(code, drop=()):
-    k = s648.code_key(code)
+    k = anchor_key(code)
     if "exact_number" in drop:            # the mutation: digits alone, so 1BH would reach 1A
         m = re.search(r"\d+", k)
         return re.sub(r"\d.*$", "", k) + (m.group(0) if m else "")
@@ -69,7 +77,7 @@ def number_key(code, drop=()):
 
 def series_letter(code, college_keys):
     """The H ends a run of series letters at this college (MUS 10A to 10G beside MUS 10H)."""
-    k = s648.code_key(code)
+    k = anchor_key(code)
     return k.endswith("H") and any(k[:-1] + c in college_keys for c in "ABCDEFG")
 
 
@@ -90,23 +98,25 @@ def anchor_kind(hrow, brow, college_keys=frozenset(), drop=()):
         hb = hb or hrow["code"]
     if not hb or number_key(hb, drop) != number_key(brow["code"], drop):
         return None
-    if "base_not_honors" not in drop and honors_word(brow["title"]):
+    if "base_not_honors" not in drop and honors_word(brow["title"], drop):
         return None
-    hw = honors_word(hrow["title"])
-    agree = titles_agree(hrow["title"], brow["title"])
+    hw = honors_word(hrow["title"], drop)
+    agree = titles_agree(hrow["title"], brow["title"], drop)
     if not hw:
         if "series_letter" not in drop and series_letter(hrow["code"], college_keys):
             return None
-        if "second_signal" not in drop:
-            # With no Honors word the code alone marks the course, so only the number forms count (1AH, 225HF,
-            # H206, 101 H), never an H ending the subject: Glendale's ARTH 119 beside ART 119 and PSYCH 104 beside
-            # PSYC 104 are one course under two subjects. And the titles must be equal once Honors is struck:
-            # Foothill's LINC 073H Illustrator beside LINC 73 Photoshop agree by stems and are two courses.
-            if not subject_untouched(hrow["code"], hb):
-                return None
-            if s648.strip_honors(clean(hrow["title"])) != s648.strip_honors(clean(brow["title"])):
-                return None
-        return "anchor"
+        if "second_signal" in drop:
+            return "anchor"
+        # With no Honors word the code alone marks the course. An H ending the subject is no marker (Glendale's ARTH
+        # 119 beside ART 119 is one course under two subjects), and titles that differ name two courses (Foothill's
+        # LINC 073H Illustrator beside LINC 73 Photoshop): neither is Honors. Equal titles with the marker in the
+        # number are at most DOUBTFUL, never an anchor (#3315's anchors review: both such pairs in the data are false;
+        # Contra Costa's PHYS 121H differs from PHYS 121 in calculus).
+        if not subject_untouched(hrow["code"], hb):
+            return None
+        if s648.strip_honors(clean(hrow["title"], drop)) != s648.strip_honors(clean(brow["title"], drop)):
+            return None
+        return "doubtful"
     if not agree and "doubtful" not in drop:
         return "doubtful"
     return "anchor"
@@ -122,7 +132,7 @@ def anchors(members, drop=()):
         at = {"*": [x for v in at.values() for x in v]}
     out = []
     for college, rows in sorted(at.items()):
-        keys = {s648.code_key(r["code"]) for _, r in rows}
+        keys = {anchor_key(r["code"]) for _, r in rows}
         by_key = defaultdict(list)
         for ident, r in rows:
             by_key[number_key(r["code"], drop)].append((ident, r))
@@ -152,8 +162,14 @@ def decide(x, xa, members, anchored_into, other_bases, is_official, drop=()):
     if not good:
         res["holds"].append("doubtful anchors only" if doubt else "no anchor")
         return res
-    if x in bases:
+    if x in bases and "base_outside" not in drop:
         res["holds"].append("an anchor's base course sits in the Honors id itself: a split comes before any row")
+    ms = members.get(x) or []
+    anchored = {(a["college"], a["honors_code"]) for a in xa}
+    hon = sum(1 for m in ms if honors_word(m["title"], drop) or (m["college"], m["code"]) in anchored)
+    if ms and hon * 2 <= len(ms) and "mostly_honors" not in drop:
+        res["holds"].append(f"the id is mostly not Honors courses ({hon} of {len(ms)}): it is not an Honors M-ID, and "
+                            "a row would hold its other courses apart from the base")
     if len(bases) > 1 and "split" not in drop:
         res["holds"].append("anchors split: " + ", ".join(bases))
     if doubt and "doubtful_holds" not in drop:

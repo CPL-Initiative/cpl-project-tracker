@@ -78,7 +78,16 @@ check("(14) BIOL M1317's row stands and its mint waits on the unanchored Cosumne
   && get("BIOL M1317", "BIOL M1318").no_mint.some((x) => /BIOL 485/.test(x)));
 check("(15) HIST M1165 and HUMA M10LS mint on their anchors", act("HIST M1165", "HIST M1191") === "row and mint"
   && act("HUMA M10LS", "HUMA M1088") === "row and mint");
-check("(16) MATH M10NA has no anchor (San Jose City has no MATH 071)", act("MATH M10NA", "MATH 210") === "none: no anchor");
+check("(16) MATH M10NA anchors once the padding zero drops (071H beside 71) and holds on MATH 210's CCN course",
+  act("MATH M10NA", "MATH 210") === "held" && get("MATH M10NA", "MATH 210").anchors.some((a) => /071H/.test(a.honors_code))
+  && get("MATH M10NA", "MATH 210").holds.some((x) => /CCN-coded course/.test(x)));
+check("(16b) ETHS M1266 is held as split once San Jose City's (ETH) 027H meets (ETH) 27, and the SQL writes no row for it",
+  pairs.filter((p) => p.honors_id === "ETHS M1266").every((p) => p.action === "held")
+  && get("ETHS M1266", "ETHS M1213").holds.some((x) => /^anchors split/.test(x))
+  && read("kb/migrations/2026-11-14_s653_honors_of_rows.sql").indexOf("('ETHS M1266'") < 0);
+check("(16c) an anchor with no Honors word is doubtful: PHYS M1015 (Contra Costa PHYS 121H) is held and has no row",
+  act("PHYS M1015", "PHYS 110") === "held" && get("PHYS M1015", "PHYS 110").anchors.every((a) => a.kind === "doubtful")
+  && read("kb/migrations/2026-11-14_s653_honors_of_rows.sql").indexOf("('PHYS M1015'") < 0);
 check("(17) MATH M1333 is held: the official base MATH 210 holds MATH C2210 and C2210H", act("MATH M1333", "MATH 210") === "held"
   && get("MATH M1333", "MATH 210").holds.some((x) => /CCN-coded course \(MATH C2210/.test(x)));
 check("(18) step 1's two rows stand, and neither base mints (each takes a second Honors M-ID)",
@@ -123,9 +132,9 @@ check("(30) the step-1 rollback counts only removable step-2 rows and reads the 
 
 // The self-recall measures, recorded in the plan.
 const rc = plan.recall || {};
-check("(31) anchor and cluster labels: every one right", rc.anchors && rc.anchors.wrong === 0 && rc.anchors.labels >= 19
-  && rc.clusters && rc.clusters.wrong === 0 && rc.clusters.labels >= 16, JSON.stringify({ a: rc.anchors && rc.anchors.wrong, c: rc.clusters && rc.clusters.wrong }));
-check("(32) every clause of rules 1 to 3, dropped, fails a label", (rc.mutation || []).length === 13
+check("(31) anchor and cluster labels: every one right", rc.anchors && rc.anchors.wrong === 0 && rc.anchors.labels >= 22
+  && rc.clusters && rc.clusters.wrong === 0 && rc.clusters.labels >= 20, JSON.stringify({ a: rc.anchors && rc.anchors.wrong, c: rc.clusters && rc.clusters.wrong }));
+check("(32) every clause of rules 1 to 3, dropped, fails a label", (rc.mutation || []).length === 16
   && rc.mutation.every((m) => m.caught), JSON.stringify((rc.mutation || []).filter((m) => !m.caught)));
 check("(33) the plan names its measures", /unified_courses_members\.js/.test(read(DIR + "plan.md"))
   && /unified_courses_members\.js/.test((plan.summary.anchors || {}).measure || "") && /kb\/coci_curation\.json/.test(pm.measure || ""));
@@ -145,6 +154,9 @@ const design = read("docs/reference/honors_of_design.md");
 check("(35) the design names the anchored rows and the split candidates", /d-honors-anchored-rows-s654/.test(design)
   && /split candidate/.test(design) && /kb\/_honors_anchors\.py/.test(design));
 check("(36) the design's step 4 starts its own line", /already stands\.\n4\. \*\*The mints\*\*/.test(design));
+check("(36b) plan.md carries step 4's two notes: HLTH M10ZH beside PHS 102, and the mint's own rollback first",
+  /## Before the mints \(step 4\)/.test(read(DIR + "plan.md")) && /HLTH M10ZH/.test(read(DIR + "plan.md"))
+  && /Step 4's own rollback/.test(read(DIR + "plan.md")));
 check("(37) prototype/ccr_remint_blast.json is a dependent and on step 4's land list",
   (design.match(/ccr_remint_blast\.json/g) || []).length >= 2);
 

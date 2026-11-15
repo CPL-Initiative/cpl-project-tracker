@@ -1,6 +1,6 @@
 -- DRAFT, NOT IN kb/migrations/.apply. Step 2 of the Honors build: the honors_of rows for every pair the plan
--- writes (380 rows; kb/honors_of_s653_out/2026-11-15/plan.json, written 2026-11-15T03:17:26Z; rows md5 9332f0559c495fa8ddf7716155c9a211, class md5
--- 16bad78e360f917ed5aeb080a85125cf).
+-- writes (380 rows; kb/honors_of_s653_out/2026-11-15/plan.json, written 2026-11-15T03:59:45Z; rows md5 29667c0741e7e7fafb509b4c2937e9db, class md5
+-- be70e28c20be3775d0c564b13b96f8c2).
 -- Design: docs/reference/honors_of_design.md. Ruling: Sam, Sheet 197 card 3 (14:37Z 2026-11-14): "Build the field
 -- first, then the rows"; "Rows for all 508 pairs". ANCHORED ROWS (S654, d-honors-anchored-rows-s654, after
 -- #3315's fourth review): a row rests on same-college course pairs, an Honors course and its base course with
@@ -24,7 +24,7 @@
 --   * a unified_title_merge_confirm row names any id a row names: a curator's pending merge (Rule 10 a);
 --   * a kb_curation row is keyed on an H id: the step-4 mint has landed;
 --   * what it inserts differs from the plan in count or digest.
--- The result is a count and an md5 (9332f0559c495fa8ddf7716155c9a211) over the inserted rows, course_id>value joined by | in C order, so
+-- The result is a count and an md5 (29667c0741e7e7fafb509b4c2937e9db) over the inserted rows, course_id>value joined by | in C order, so
 -- the runner's receipt (scripts/supabase_migrate.py keeps the first 4,000 characters) holds the whole record and
 -- checks against plan.json. No row image is returned: the insert-only cohort rolls back by its reviewer_email.
 -- Rollback: 2026-11-14_s653_honors_of_rows_rollback.sql, keyed on the cohort and the field, never on ids; it
@@ -210,7 +210,6 @@ with planned (course_id, value) as (
     ('ETHS M1194', 'ETHS M1195'),
     ('ETHS M1204', 'SOCI 150'),
     ('ETHS M1261', 'ETHS M1082'),
-    ('ETHS M1266', 'ETHS M1218'),
     ('ETHS M1278', 'ENGL M1336'),
     ('FA M10AA', 'ARTS M1129'),
     ('FDNT M10BE', 'NUTR M1018'),
@@ -338,6 +337,7 @@ with planned (course_id, value) as (
     ('MUSI M11AP', 'MUSI M1044'),
     ('MUSI M11PS', 'MUSI M1252'),
     ('MUSI M11QG', 'MUSI M1254'),
+    ('MUSI M11XO', 'MUSI M1334'),
     ('MUSI M1236', 'MUSI M1237'),
     ('MUSI M12CD', 'MUSI M1488'),
     ('MUSI M12CE', 'MUSI M1518'),
@@ -361,8 +361,8 @@ with planned (course_id, value) as (
     ('PHOT M1137', 'PHOT M1096'),
     ('PHSC M10BM', 'ASTR M1017'),
     ('PHSC M10BO', 'ASTR M1014'),
+    ('PHSC M10CP', 'CHEM 101'),
     ('PHSC M10FT', 'ASTR M1040'),
-    ('PHYS M1015', 'PHYS 110'),
     ('PHYS M10DH', 'PHYS 105'),
     ('PHYS M10EV', 'CHEM M1044'),
     ('PHYS M10FR', 'PHYS 205'),
@@ -454,7 +454,7 @@ digest as (
          md5(coalesce(string_agg(a.course_id || '>' || a.value, '|' order by a.course_id collate "C"), '')) as md5
   from added a
 )
-select case when g.ok and d.n = 380 and d.md5 = '9332f0559c495fa8ddf7716155c9a211'
+select case when g.ok and d.n = 380 and d.md5 = '29667c0741e7e7fafb509b4c2937e9db'
             then jsonb_build_object('inserted', d.n, 'md5', d.md5, 'cohort', 'honors-rows-s653@bot')
             else ('refused by the guard: step 1 rows ' || g.step1_rows
                   || ', other honors_of rows ' || g.other_honors_rows || ', named ids merged ' || g.merged_ids

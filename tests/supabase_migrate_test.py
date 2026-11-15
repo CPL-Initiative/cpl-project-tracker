@@ -109,6 +109,12 @@ with tempfile.TemporaryDirectory() as td:
           "a near-miss spelling of the header line refuses rather than skipping the check")
     check(M.check_receipt("-- requires check receipt kb/x.json\nselect 1;", td, TRIG, HEAD),
           "a header line without the colon form refuses too")
+    check(M.check_receipt("-- requires-checks-receipt: kb/out/check_receipt.json\nselect 1;", td, TRIG, HEAD),
+          "a plural near-miss (requires-checks-receipt) refuses too")
+    req = M.REQUIRES_RECEIPT[0]
+    why = M.check_receipt("insert into t values (1);", td, req, HEAD)
+    check(why and "must carry a check receipt" in why,
+          "a file on the runner's list refuses when its header line is deleted")
 rows_sql = os.path.join(ROOT, "kb", "migrations", "2026-11-14_s653_honors_of_rows.sql")
 if os.path.exists(rows_sql):
     src = open(rows_sql, encoding="utf-8").read()

@@ -256,7 +256,7 @@ def honors_code_base(code):
     if " " not in c:
         return None
     subj, num = c.rsplit(" ", 1)
-    m = re.match(r"^(.*\d[A-Z]?)H([A-Z]?)$", num)
+    m = re.match(r"^(.*\d[A-Z]{0,3})H([A-Z]?)$", num)   # up to three letters before the H: De Anza's F TV 2AWH
     if m and m.group(1):
         return f"{subj} {m.group(1)}{m.group(2)}"
     m = re.match(r"^H(\d+[A-Z]?)$", num)

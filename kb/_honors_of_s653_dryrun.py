@@ -423,10 +423,7 @@ def plan_pairs(w, rows, out_dir, live_cur, second):
         for bb in dec["bases"]:
             seen.add((x, bb))
         seen.add((x, b))
-        if hon * 2 <= rec["honors"]["local_courses"]:
-            rec["holds"].append(f"the id is mostly not Honors courses ({hon} of {rec['honors']['local_courses']}): it "
-                                "is not an Honors M-ID, and a row would hold its other courses apart from the base")
-        for i in (x, b):
+        for i in (x, b):   # the mostly-not-Honors hold lives in kb/_honors_anchors.py decide (rule 2)
             if i not in live_ids:
                 raise SystemExit(f"ABORT: {i} (anchored {x} to {b}) is not in the live id set")
             if alias_chain.resolve_id(i, pmaps) != i:
@@ -593,7 +590,15 @@ def write_md(doc, path):
         if p["action"] == "held":
             L.append(f"- `{p['honors_id']}` to `{p['base_id']}`: {p['holds'][0]}. "
                      + " | ".join(_anchor_line(a) for a in p["anchors"][:4]))
-    L += ["", "## Split candidates for the re-clustering lane", "",
+    L += ["", "## Before the mints (step 4)", "",
+          "- HLTH M10ZH mints HLTH M1134H beside C-ID PHS 102, which holds five courses and one Honors course "
+          "(Cypress PHS 281HC). PHS 102 is a plain C-ID, not an Honors record, so counting it would hold a mint on a "
+          "non-Honors id; the question is step 4's, as a base split or merge, and no step-2 row is affected "
+          "(#3315's anchors review).",
+          "- Step 4's own rollback (the inverse alias map) is written and proved before the mint: the step-1 and step-2 "
+          "rollbacks refuse while any row is keyed on an H id, and the Postgres proof's mint cases use a synthetic "
+          "inverse today.",
+          "", "## Split candidates for the re-clustering lane", "",
           ", ".join(f"`{b}`" for b in s["split_candidates"]), "",
           "## What a person does", "",
           "Nothing here is applied. The rows migration (`kb/migrations/2026-11-14_s653_honors_of_rows.sql`) is "
@@ -942,11 +947,12 @@ def main():
     import _honors_matcher_recall as recall
     rc = recall.measure(w.members, ROOT, plan)
     if (rc["anchors"]["wrong"] or rc["clusters"]["wrong"] or not all(m["caught"] for m in rc["mutation"])
-            or not all(f["pass"] for f in rc["fixtures"])):
+            or not all(f["pass"] for f in rc["fixtures"]) or not all(x["pass"] for x in rc["label_resolution"])):
         raise SystemExit("ABORT: a self-recall measure fails: " + json.dumps({
             "anchors": rc["anchors"]["wrong_labels"], "clusters": rc["clusters"]["wrong_labels"],
             "mutation": [m["clause"] for m in rc["mutation"] if not m["caught"]],
-            "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]]}))
+            "fixtures": [f["name"] for f in rc["fixtures"] if not f["pass"]],
+            "label_resolution": [x["name"] for x in rc["label_resolution"] if not x["pass"]]}))
     doc = {"_about": "Dry run of the honors_of rows and base-plus-H mints. Nothing applied. Design: "
                      "docs/reference/honors_of_design.md.",
            "written": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"), "date": date,

@@ -74,7 +74,10 @@ def check_trigger(t: dict, exists=os.path.exists) -> str | None:
 
 
 RECEIPT_LINE = re.compile(r"^-- requires-check-receipt: (\S+)$", re.M)
-RECEIPT_NEAR = re.compile(r"requires.?check.?receipt", re.I)
+RECEIPT_NEAR = re.compile(r"requires?\W{0,3}checks?\W{0,3}receipts?|check\W{0,3}receipt\W{0,3}:", re.I)
+# Files that must carry a check receipt whatever their header says: deleting the header line never skips the gate
+# (#3315's anchors review). The Honors rows first.
+REQUIRES_RECEIPT = ("kb/migrations/2026-11-14_s653_honors_of_rows.sql",)
 
 
 def _inside(root: str, rel: str) -> str | None:
@@ -97,8 +100,12 @@ def check_receipt(sql: str, root: str = ROOT, trigger_file: str | None = None,
     m = RECEIPT_LINE.search(sql)
     near = [ln for ln in sql.splitlines() if RECEIPT_NEAR.search(ln)]
     if not m:
-        return ("the header names a check receipt in a form the runner does not read (%r): write "
-                "'-- requires-check-receipt: <path>' exactly" % near[0][:80]) if near else None
+        if near:
+            return ("the header names a check receipt in a form the runner does not read (%r): write "
+                    "'-- requires-check-receipt: <path>' exactly" % near[0][:80])
+        if trigger_file in REQUIRES_RECEIPT:
+            return "%s must carry a check receipt, and its header names none" % trigger_file
+        return None
     if len(near) != 1:
         return "the file names a check receipt %d times; it must name one" % len(near)
     rel = m.group(1)
@@ -130,12 +137,12 @@ def check_receipt(sql: str, root: str = ROOT, trigger_file: str | None = None,
 
 def main_head_now() -> str | None:
     """main's head on origin, as the apply runs (the runner's checkout has origin)."""
+    import subprocess
     try:
-        import subprocess
         out = subprocess.run(["git", "-C", ROOT, "ls-remote", "origin", "refs/heads/main"], capture_output=True,
                              text=True, timeout=60).stdout.split()
         return out[0] if out else None
-    except (OSError, ValueError):
+    except (OSError, ValueError, subprocess.SubprocessError):
         return None
 
 
@@ -174,11 +181,12 @@ def main(argv=None) -> int:
         print("refused: " + why)
         return 2
     sql = open(os.path.join(ROOT, t["file"]), encoding="utf-8").read()
-    why = check_receipt(sql, ROOT, t["file"], main_head_now() if RECEIPT_NEAR.search(sql) else None)
+    needs = RECEIPT_NEAR.search(sql) or t["file"] in REQUIRES_RECEIPT
+    why = check_receipt(sql, ROOT, t["file"], main_head_now() if needs else None)
     if why:
         print("refused: " + why)
         return 2
-    version =time.strftime("%Y%m%d%H%M%S", time.gmtime())
+    version = time.strftime("%Y%m%d%H%M%S", time.gmtime())
     receipt = {"what": "supabase-migrate: one committed SQL file applied through the Management API",
                "file": t["file"], "name": t["name"], "version": version,
                "sha256": hashlib.sha256(sql.encode()).hexdigest(), "run": os.environ.get("GITHUB_RUN_ID"),

@@ -12,7 +12,7 @@
 //
 // Measured 2026-11-15 on the committed members file (2026-11-14 20:25): matcher right 29, wrong 0, missed 2; second
 // derivation right 31, wrong 1 (MATH 211 with MATH 221, which the matcher holds out); titles right 22, wrong 2; the
-// anchors 19 right of 19; clusters 16 right of 16; 13 clauses, each caught.
+// anchors 22 right of 22; clusters 20 right of 20; 16 clauses, each caught; a renamed label resolves.
 //
 // Run from repo root: `npm test` (or `node tests/honors_matcher_recall.test.js`).
 const fs = require("fs");
@@ -24,7 +24,11 @@ const results = [];
 const check = (name, ok, why) => results.push([name, !!ok, why]);
 const key = (p) => p[0] + " / " + p[1];
 
-const r = spawnSync("python3", ["kb/_honors_matcher_recall.py", "--json"], { cwd: ROOT, encoding: "utf8" });
+const OUTD = path.join(ROOT, "kb/honors_of_s653_out");
+const newest = fs.readdirSync(OUTD).filter((n) => /^\d{4}-\d{2}-\d{2}$/.test(n) && fs.existsSync(path.join(OUTD, n, "plan.json"))).sort().pop();
+// The cluster labels score against the committed plan, so a routine re-cluster of the payload cannot turn main red.
+const r = spawnSync("python3", ["kb/_honors_matcher_recall.py", "--json", "--plan-file", path.join(OUTD, newest, "plan.json")],
+  { cwd: ROOT, encoding: "utf8" });
 let res = {};
 try { res = JSON.parse(r.stdout); } catch (e) { res = { error: (r.stderr || r.stdout || "").slice(-400) }; }
 check("(1) the measures run", r.status === 0 && !res.error, res.error || "exit " + r.status);
@@ -62,23 +66,29 @@ check("(10) the course-title test keeps one-character marks: I and II, A and B, 
 // cannot fail guards nothing).
 const an = res.anchors || {};
 check("(11) the anchor labels (rule 1), every one right: the space-before-H shapes, a part I beside a part II, a "
-  + "series letter H, a number pair with different titles", an.labels >= 19 && an.wrong === 0, JSON.stringify(an.wrong_labels));
+  + "series letter H, a number pair with different titles", an.labels >= 22 && an.wrong === 0, JSON.stringify(an.wrong_labels));
 const anTxt = JSON.stringify(an.pairs || []);
 check("(11b) the anchor labels include ECON 101 H, LING 101 HC and MATH 1A H", /ECON 101 H/.test(anTxt)
   && /LING 101 HC/.test(anTxt) && /MATH 1A H/.test(anTxt));
 const cl = res.clusters || {};
-check("(11c) the cluster labels (rules 2 and 3), every one right", cl.labels >= 16 && cl.wrong === 0,
+check("(11c) the cluster labels (rules 2 and 3), every one right", cl.labels >= 20 && cl.wrong === 0,
   JSON.stringify(cl.wrong_labels));
 const real = ((cl.real || {}).pairs || []).map((x) => x.honors_id);
 check("(11d) the cluster labels say what the rule does with each id four reviews named",
   ["LIBR M10CL", "BIOL M1317", "HIST M1165", "HUMA M10LS", "MATH M10NA", "MATH M1333"].every((i) => real.indexOf(i) >= 0),
   real.join(", "));
 const mut = res.mutation || [];
-check("(11e) each of the 13 clauses of rules 1 to 3, dropped, fails a label", mut.length === 13 && mut.every((m) => m.caught),
+check("(11e) each of the 16 clauses of rules 1 to 3, dropped, fails a label", mut.length === 16 && mut.every((m) => m.caught),
   JSON.stringify(mut.filter((m) => !m.caught).map((m) => m.clause)));
+const lr = res.label_resolution || [];
+check("(11g) a label a later alias map renamed resolves and passes; one renamed to nothing held fails",
+  lr.length === 2 && lr.every((x) => x.pass), JSON.stringify(lr));
+check("(11h) the anchor labels hold the anchors review's shapes: (BIOL) 020H, F TV 2CWH, an entity in the Honors word, "
+  + "a code-only H as doubtful", ["(BIOL) 020H", "F TV 2CWH", "MATH 1H"].every((c) => anTxt.indexOf(c) >= 0)
+  && (an.pairs || []).some((x) => /MATH 5H/.test(x.honors) && x.expected === "doubtful"));
 const rsrc = fs.readFileSync(path.join(ROOT, "kb/_honors_matcher_recall.py"), "utf8");
 check("(11f) the cluster labels resolve through kb/alias_chain.py and fail on an id that is gone",
-  /alias_chain\.resolve_id/.test(rsrc) && /no such pair/.test(rsrc) && !/NARROW_LABELS|LUMP_LABELS/.test(rsrc));
+  /alias_chain\.resolve_id/.test(rsrc) && /LABEL_ERA = /.test(rsrc) && /no such pair/.test(rsrc) && !/NARROW_LABELS|LUMP_LABELS/.test(rsrc));
 check("(12) every count names its measure", /unified_courses_members\.js/.test(res.measure || ""), res.measure);
 
 const bad = results.filter((x) => !x[1]);

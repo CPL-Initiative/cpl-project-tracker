@@ -110,7 +110,16 @@ ANCHOR_LABELS = [
      ("De Anza College", "ECON 1", "Principles of Macroeconomics"), (), "anchor"),
     (("Glendale Community College", "HIST 101H", "Honors&nbsp;World&nbsp;History"),
      ("Glendale Community College", "HIST 101", "World History"), (), "anchor"),
-    (("B", "MATH 5H", "Calculus"), ("B", "MATH 5", "Calculus"), (), "anchor"),
+    # The padding zero (#3315's anchors review): San Jose City's 020H meets 20.
+    (("San Jose City College", "Biology (BIOL) 020H", "Honors Human Biology"),
+     ("San Jose City College", "Biology (BIOL) 20", "Human Biology"), (), "anchor"),
+    # Up to three letters before the H: De Anza's online section F TV 2CWH beside F TV 02CW.
+    (("De Anza College", "F TV 2CWH", "Contemporary World Cinema - HONORS"),
+     ("De Anza College", "F TV 02CW", "Contemporary World Cinema"), (), "anchor"),
+    # An entity inside the Honors word: read once html.unescape has run.
+    (("E", "MATH 1H", "H&#111;nors Calculus"), ("E", "MATH 1", "Calculus"), (), "anchor"),
+    # Doubtful: the marker in the number and equal titles, but no Honors word (Contra Costa's PHYS 121H shape).
+    (("B", "MATH 5H", "Calculus"), ("B", "MATH 5", "Calculus"), (), "doubtful"),
     # False: a part I beside a part II, either way round.
     (("A", "MATH 1AH", "Honors Calculus I"), ("A", "MATH 1B", "Calculus II"), (), None),
     (("A", "MATH 1BH", "Honors Calculus II"), ("A", "MATH 1A", "Calculus I"), (), None),
@@ -167,6 +176,16 @@ CLUSTER_FIXTURES = [
     ("another derivation names a second base: a row, no mint", {
         "ARTS Z9061": [_r("A", "ART 1H", "Honors Art History")], "ARTS Z9062": [_r("A", "ART 1", "Art History")]},
      "ARTS Z9061", ("ARTS Z9069",), True, False),
+    ("an anchor's base course inside the Honors id itself holds the row (COUN M1144's shape)", {
+        # Two Honors courses beside the base, so the mostly-not-Honors hold does not hide this one.
+        "COUN Z9081": [_r("A", "COUN 1H", "Honors Academic Planning"), _r("B", "COUN 3H", "Honors Leadership Seminar"),
+                       _r("A", "COUN 1", "Academic Planning")]},
+     "COUN Z9081", (), False, False),
+    ("an id mostly not Honors courses holds the row", {
+        "IDST Z9091": [_r("A", "IDST 2H", "Honors Research Methods"), _r("B", "IDST 40", "Directed Research"),
+                       _r("C", "IDST 41", "Applied Research Experience"), _r("D", "IDST 42", "Research Seminar")],
+        "IDST Z9092": [_r("A", "IDST 2", "Research Methods")]},
+     "IDST Z9091", (), False, False),
     ("a clean pair: a row and a mint", {
         "ARTS Z9071": [_r("A", "ART 2H", "Honors Modern Art")], "ARTS Z9072": [_r("A", "ART 2", "Modern Art")]},
      "ARTS Z9071", (), True, True),
@@ -185,11 +204,18 @@ CLUSTER_LABELS = [
     ("HIST M1165", "HIST M1191", "row and mint", ""),
     # Irvine Valley HUM 1H anchors to HUM 1.
     ("HUMA M10LS", "HUMA M1088", "row and mint", ""),
-    # San Jose City "Mathematics (MATH) 071H" has no MATH 071 at the college (only 071X, a support course): no anchor.
-    ("MATH M10NA", "MATH 210", "none: no anchor", ""),
+    # San Jose City "Mathematics (MATH) 071H" anchors to "Mathematics (MATH) 71" once the padding zero drops (the
+    # anchors review); MATH 210 holds MATH C2210 and C2210H, so the row holds on the CCN clause.
+    ("MATH M10NA", "MATH 210", "held", "CCN-coded course"),
+    # San Jose City "(ETH) 027H" meets "(ETH) 27" in ETHS M1213 beside El Camino's anchor into ETHS M1218: split.
+    ("ETHS M1266", "ETHS M1213", "held", "anchors split"),
+    # Contra Costa PHYS 121H "General College Physics" has no Honors word: a doubtful anchor, held.
+    ("PHYS M1015", "PHYS 110", "held", "doubtful anchors only"),
     # Antelope Valley MATH 150H and Saddleback MATH 3AH anchor into C-ID MATH 210, which holds MATH C2210 and C2210H.
     ("MATH M1333", "MATH 210", "held", "CCN-coded course"),
-    # Step 1's two rows stand; each base takes a second Honors M-ID (PHIL M1124, LIBR M10CI), so neither mints.
+    # Step 1's two rows stand. Each base has a second Honors M-ID anchored into it, so neither mints: LIBR M1040 takes
+    # LIBR M10CI; HUMA M1110 takes PHIL M1124, itself held because its anchors split over HUMA M1034, HUMA M1110 and
+    # two PHIL ids.
     ("HUMA M10ME", "HUMA M1110", "row, mint held", "Honors M-IDs anchored into it"),
     ("LIBR M10CJ", "LIBR M1040", "row, mint held", "Honors M-IDs anchored into it"),
 ]
@@ -313,7 +339,7 @@ def anchors_score(drop=()):
     out = []
     for h, b, keys, want in ANCHOR_LABELS:
         import _reclustering_s648_dryrun as s648
-        ck = {s648.code_key(k) for k in keys} | {s648.code_key(h[1]), s648.code_key(b[1])}
+        ck = {A.anchor_key(k) for k in keys} | {A.anchor_key(h[1]), A.anchor_key(b[1])}
         got = A.anchor_kind(_row(h), _row(b), ck, drop)
         out.append({"honors": f"{h[0]} {h[1]}", "base": b[1], "expected": want, "got": got, "pass": got == want})
     return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),
@@ -338,12 +364,20 @@ def cluster_fixtures_score(drop=()):
             "wrong_labels": [x["name"] for x in out if not x["pass"]], "fixtures": out}
 
 
-def clusters_score(plan):
+LABEL_ERA = "kb/anchor_rekey_out/2026-11-08/alias_map.json"   # the last applied map when the labels were written
+
+
+def label_maps():
+    import alias_chain
+    pending, _ = alias_chain.pending_maps(None, baseline_through=LABEL_ERA)
+    return alias_chain.load_maps(pending)
+
+
+def clusters_score(plan, maps=None):
     """CLUSTER_LABELS against the plan. Each label id resolves through kb/alias_chain.py's pending maps (the plan's
     own era) and fails when it is not in the plan's pairs: a label never passes with no rows behind it."""
     import alias_chain
-    pending, _ = alias_chain.pending_maps(None, baseline_through=alias_chain.ALIAS_MAPS[-1])
-    pmaps = alias_chain.load_maps(pending)
+    pmaps = label_maps() if maps is None else maps
     by = {(p["honors_id"], p["base_id"]): p for p in plan}
     out = []
     for h, b, want, why in CLUSTER_LABELS:
@@ -356,6 +390,19 @@ def clusters_score(plan):
     return {"labels": len(out), "right": sum(x["pass"] for x in out), "wrong": sum(not x["pass"] for x in out),
             "wrong_labels": [f"{x['honors_id']} / {x['base']}: {x['got']}" for x in out if not x["pass"]],
             "pairs": out}
+
+
+def label_resolution_selftest(plan):
+    """A label whose id a later alias map renamed still scores against the renamed pair, and one whose id a map sent
+    nowhere live fails (#3315's anchors review: the alias pass never fired while the pending maps were empty)."""
+    p = next(x for x in plan if x["honors_id"] == "LIBR M10CL")
+    renamed = [dict(x, honors_id="LIBR M19ZZ") if x is p else x for x in plan]
+    a = clusters_score(renamed, maps=[{"LIBR M10CL": "LIBR M19ZZ"}])
+    b = clusters_score(plan, maps=[{"LIBR M10CL": "LIBR M19YY"}])
+    hit = lambda r: next(x for x in r["pairs"] if x["base"] == "LIBR M1026")  # noqa: E731
+    return [{"name": "a renamed label resolves to its new id and passes", "pass": hit(a)["pass"]
+             and hit(a)["honors_id"] == "LIBR M19ZZ"},
+            {"name": "a label renamed to an id the plan does not hold fails", "pass": not hit(b)["pass"]}]
 
 
 def mutation():
@@ -400,13 +447,21 @@ def measure(members, members_dir=None, plan=None):
         res["clusters"] = {"labels": cl["labels"] + fx["labels"], "right": cl["right"] + fx["right"],
                            "wrong": cl["wrong"] + fx["wrong"], "wrong_labels": cl["wrong_labels"] + fx["wrong_labels"],
                            "real": cl, "fixtures": fx}
+        res["label_resolution"] = label_resolution_selftest(plan)
     return res
 
 
 def main():
+    """--plan-file <plan.json> scores the cluster labels against that committed plan (the JS test passes the newest
+    one), so a routine re-cluster of the payload cannot turn main red; the live re-score stays in --plan's ABORT gate
+    (kb/_honors_of_s653_dryrun.py), where it belongs (#3315's anchors review)."""
     import _mid_outcomes_compare as cmp
     members, gen = cmp.load_members(ROOT)
-    res = measure(members, ROOT)
+    plan = None
+    if "--plan-file" in sys.argv:
+        with open(sys.argv[sys.argv.index("--plan-file") + 1], encoding="utf-8") as f:
+            plan = json.load(f)["pairs"]
+    res = measure(members, ROOT, plan)
     res["members_generated_at"] = gen
     if "--json" in sys.argv:
         print(json.dumps(res))
