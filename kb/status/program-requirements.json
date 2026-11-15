@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-15T01:50:13Z",
+  "written_at": "2026-11-15T09:13:14Z",
   "session": 655,
   "moniker": "SkyCurlew",
   "run": "the CPL Queue routine",
@@ -618,14 +618,14 @@
     {
       "day": "2026-11-15",
       "active": 20282,
-      "complete": 14614,
+      "complete": 14617,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-15T06:12:00Z"
+    "at": "2026-11-15T10:12:00Z"
   },
   "harvest": {
     "day": "2026-11-15",

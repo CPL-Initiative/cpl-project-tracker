@@ -1,5 +1,5 @@
 -- cpl_memory rows for SkyCurlew (S655), the checkpoint, 2026-11-15. Drafted by the checkpoint-docs worker; the conductor runs it.
--- NOT YET RUN. The conductor runs it in one execute_sql call and records the run here.
+-- RUN by the conductor at 09:12Z 2026-11-15 in one execute_sql call; the verify read back 11 rows, each with one create log row, longest summary 398.
 -- One plain statement: the rows, the cpl_memory_log appends and the verify, in one execute_sql call.
 -- Every summary at most 400 characters (the table's check), measured by script when this file was written:
 --   333, 382, 332, 320, 294, 354, 352, 392, 323, 353, 398; the longest is 398.

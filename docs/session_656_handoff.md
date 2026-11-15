@@ -7,7 +7,7 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-# You are SkyGodwit (Session 656)
+# You are SkySanderling (Session 656)
 
 From SkyCurlew, S655: the CPL Queue routine's 06:12Z firing of 2026-11-15, conductor mode, Fable 5.2 conductor with
 Opus workers (https://claude.ai/code/session_01Rvwe2UKB7XCFSaGfJd8SyW). Sam said nothing in session: no new ruling.
@@ -124,7 +124,7 @@ Dispatch #3352's runs one at a time (the branch is the concurrency group).
 step 2 apply (First things 3 holds the steps); cards 2 to 5 record decisions. It supersedes
 [Sheet 199](https://claude.ai/artifact/KiRPjskYco3pSfDS7rt9Sc), whose seven decisions stand (no reply was ever
 stored). An unanswered card holds only itself. The vault PR samueltlee/CPLBrain#794 (head `b0cc5a2`: session note,
-wiki touch, Sheet 200's builder) is a draft the conductor merges.
+wiki touch, Sheet 200's builder and its published link) merged at `681170b` (09:11Z).
 
 ## A full checkpoint: what it touched and what it skipped
 
@@ -132,9 +132,9 @@ Touched: the docs audit (`kb/docs_audit/2026-11-15.*`) and `--apply`; this hando
 `program-requirements-harvest`, `commons` and `governance-team-enablement` (each under 20,000 bytes; retired text moved
 verbatim to the lessons docs, *Moved from the lane (S655 checkpoint)*); the three lessons docs' S655 sections;
 `conductor_mode.md` (S655 lessons); the index rebuild; the run logs `kb/status/program-requirements.json` and
-`course.json` (session fields and changes only); `CLAUDE.md` §11's standing-sheet line (Sheet 200); the memory receipt (drafted, NOT YET RUN). The harvest lane
+`course.json` (session fields and changes only); `CLAUDE.md` §11's standing-sheet line (Sheet 200); the memory receipt (RUN by the conductor at 09:12Z in one `execute_sql` call: 11 rows, each with one create log row, longest summary 398). The harvest lane
 carries only the Riverside City capture, the meter's pointer and a line to #3352; the rescore's text is on #3352.
-Skipped: step 12's stamps and the headline and harvest reads (Supabase and `get_trigger`: the conductor's);
+Step 12's stamps ran at 09:13Z on the conductor's live reads of 09:12Z (20,282 Active, 14,617 complete, 118 colleges; the harvest row; `--next-run` 10:12Z from the routine's schedule, since this firing had no `get_trigger`). Skipped:
 `sierra-page-redesign` (#3354 wrote its NEXT); `scheduled_sessions.md` and `credential_watch_agent.md` (no cadence
 changed; night 4 of 14 is in its own doc); the pipeline view (no roadmap row, auditor count or re-mint moved);
 `kb/README.md` and `README.md` (nothing structural or user-facing changed); the §11 rows (no lane changed state
@@ -148,4 +148,4 @@ supported from this session) and no scheduled check-in (timers only). Open PRs a
 #3284 (Allan Hancock, keep), #3293 (keep), #2894 (Sam's), #3349 (this checkpoint). Workers and their checkouts do not
 survive the session: brief a fresh worker per open branch.
 
-Greetings, you are SkyGodwit (Session 656), see SkyCurlew's handoff — `docs/session_656_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_656_handoff.md) — let's keep rolling with our queue.
+Greetings, you are SkySanderling (Session 656), see SkyCurlew's handoff — `docs/session_656_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_656_handoff.md) — let's keep rolling with our queue.
