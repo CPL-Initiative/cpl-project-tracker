@@ -302,3 +302,9 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history, moved 2026-11-15 (SkyCurlew, S655)
 
 - (from docs/INDEX.md Update history) 2026-11-13 (S648 SkyTanager, the light refresh, while the session continued): #3248, #3239, #3252 (Grossmont Cal-GETC 34) and #3245 (FIRE M1274 into FIRE 130 X, applied) merged; Glendale loaded, rereads to come; Open Asks Sheet 194 replaces 193 (the BUSI row delete as its own card); handoff 649 rewritten in place; refresh receipt not yet run.
+
+## INDEX update history (moved S661, 2026-11-15)
+
+- 2026-11-14 (S650 SkyPlover, the CPL Queue routine's 06:12Z firing, full checkpoint): Open Asks Sheet 196 published; #3285 (Exhibits cross-tab reopen), #3286 and #3290 (College Data Collection), #3287 (credential harvest), #3289 (Veteran map UI pass) and #3288 (Cosumnes River's two pinned pages, 136 to 138 passing) merged; the degree electives-fill false pass found and held for the one dry run; Lassen and sdccd started; handoff 651 (SkyDunlin).
+- 2026-11-14 (S649 SkyOriole, the light final refresh): Sheet 195 answered and carried out (#3274 the BUSI split delete, #3275 the three CVMA rows, #3250 closed); the Riverside district's 2,536 objective rows loaded (#3265); the conductor's positions on #3237, #3229 and #3111; Sheet 196 owed for the Honors cards
+- 2026-11-14 (S649 SkyOriole, conductor, Sam in session; written while the session continued): seven merges (#3260, #3263, #3259, #3269, #3266, #3261, #3262); the Exhibits Review reads saved titles live (held 168 to 0); objectives collected with every SLO read; Cal-GETC applied at Cerro Coso (35) and Cosumnes River (39656 at 34); College Data Collection on Sam's six asks; lanes `cer-procedures` and `commons` compacted under budget; new archives `commons_lessons_archive.md` and `program_requirements_harvest_lessons_archive_5.md`; handoff 650 (SkyPlover).

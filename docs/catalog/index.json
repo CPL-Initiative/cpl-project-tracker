@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 587,
+   "count": 588,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3280,6 +3280,26 @@
      "title": "A program's CIP labels the program, not the courses it lists",
      "type": "methodology",
      "updated": "2026-09-25"
+    },
+    {
+     "created": "2026-11-15",
+     "governs": [
+      "commons_curation_eta.js",
+      "kb/_build_commons_status.py",
+      "kb/status/commons_history.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-progress-pace-is-the-net-fall-of-remaining-work.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "measurement",
+      "commons",
+      "eta",
+      "progress"
+     ],
+     "title": "A progress pace is the net fall of remaining work",
+     "type": "methodology",
+     "updated": "2026-11-15"
     },
     {
      "created": "2026-10-02",
@@ -17090,8 +17110,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 621,
+   "count": 622,
    "docs": [
+    {
+     "created": "2026-11-15",
+     "governs": [],
+     "n": 662,
+     "path": "docs/session_662_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 662 handoff (from SkyKnot, S661)",
+     "type": null,
+     "updated": "2026-11-15"
+    },
     {
      "created": "2026-11-15",
      "governs": [],
@@ -27558,5 +27592,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1489
+ "total": 1491
 }

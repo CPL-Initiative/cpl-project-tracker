@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 655,
-  "moniker": "SkyCurlew",
-  "run": "the CPL Queue routine",
+  "session": 661,
+  "moniker": "SkyKnot",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_656_handoff.md",
+  "handoff": "docs/session_662_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-15T09:13:14Z",
+  "written_at": "2026-11-15T22:53:51Z",
   "project": "course",
   "next_step": {
     "title": "Apply Honors step 2 once the edit is permitted",
     "text": "The plan of 380 Honors rows is merged and checked. The apply runs on Sam's word or in a session where the apply file may be edited, after a fresh check against main."
   },
   "changes": [
+    {
+      "at": "2026-11-15T22:35:00Z",
+      "text": "The Commons Curation ETA, drafted for the top of CPL Commons, gives the common courses a pace from the fall of their remaining cards, people's share counted only where a confirmation lowered it. It is live (PR 3375)."
+    },
     {
       "at": "2026-11-15T07:31:00Z",
       "text": "The Honors step 2 plan merged: 382 rows, 380 to write, 129 mints and 179 rows with the mint held. Nothing is applied; the apply waits on a permission the session did not have."
