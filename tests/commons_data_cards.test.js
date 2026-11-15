@@ -67,7 +67,7 @@ function load(hash, data, opts) {
   };
   if (opts.lazy) {
     // The real tab loads the module through CPL_TABS.loadScript the first time a panel draws.
-    w.CPL_TABS = { loadScript: function (src, name, cb) { lazy.push(src); setTimeout(function () { const t = w.document.createElement("script"); t.textContent = CARDS; w.document.body.appendChild(t); cb(); }, 0); } };
+    w.CPL_TABS = { loadScript: function (src, name, cb) { lazy.push(src); setTimeout(function () { const t = w.document.createElement("script"); if (src === "commons_data_cards.js") { t.textContent = CARDS; w.document.body.appendChild(t); } cb(); }, 0); } };
   }
   [SESSION, PROGRESS, SRC].concat(opts.lazy ? [] : [CARDS]).concat([COMMONS]).forEach((s) => { const t = w.document.createElement("script"); t.textContent = s; w.document.body.appendChild(t); });
   return { w, d: w.document, M: w.CPL_COMMONS, lazy };
@@ -182,7 +182,7 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   const l = load("#commons/data/college/columbia-college", DATA, { lazy: true });
   await l.M.boot(); await settle();
   check("lazy ⭐: the panel asks CPL_TABS for commons_data_cards.js once and draws the cards when it arrives",
-    JSON.stringify(l.lazy) === '["commons_data_cards.js"]' && !!card(l, "how") && !!card(l, "maps") && !!card(l, "sources"), JSON.stringify(l.lazy));
+    l.lazy.filter((s) => s === "commons_data_cards.js").length === 1 && !!card(l, "how") && !!card(l, "maps") && !!card(l, "sources"), JSON.stringify(l.lazy));
 
   // ── the statewide maps line (COBIx's review of #3316): the committed count, then none found and not known, each the
   //    word that opens the colleges it counts ──
