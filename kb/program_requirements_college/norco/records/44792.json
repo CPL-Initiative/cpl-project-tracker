@@ -51,6 +51,7 @@
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -76,6 +77,7 @@
     48.0,
     48.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 42.0-42.0; the catalog states 48.0-48.0"
    ]
@@ -93,6 +95,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -573,5 +586,6 @@
    "The program learning outcomes are printed under the A.S. degree page for the program."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

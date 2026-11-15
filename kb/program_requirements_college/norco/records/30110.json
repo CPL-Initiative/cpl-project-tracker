@@ -44,28 +44,21 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 122,
+   "placed": 130,
    "listed": 134,
-   "share": 0.91,
+   "share": 0.97,
    "missing": [
     "ECO7",
     "ECO8",
-    "HIS1",
-    "HIS15",
-    "HIS2",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS35",
-    "HIS44",
     "HIS6",
     "HIS7"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 20,
+   "count": 12,
    "codes": [
     "ADJ13",
     "ADJ14",
@@ -73,14 +66,6 @@
     "EAR47",
     "ECONC2001",
     "ECONC2002",
-    "HIST1",
-    "HIST15",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST35",
-    "HIST44",
     "HISTC1001",
     "HISTC1002",
     "HMS14",
@@ -95,14 +80,6 @@
     "EAR47",
     "ECONC2001",
     "ECONC2002",
-    "HIST1",
-    "HIST15",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST35",
-    "HIST44",
     "HISTC1001",
     "HISTC1002",
     "HMS14",
@@ -123,6 +100,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -138,6 +116,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -1208,5 +1197,6 @@
    "No general education pattern is named; the text refers only to general education as described in the college catalog."
   ]
  },
- "extracted_run": "38095619629"
+ "extracted_run": 43609971090,
+ "read_run": "38095619629"
 }

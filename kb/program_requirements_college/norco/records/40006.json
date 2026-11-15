@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -68,6 +69,7 @@
     15.0,
     15.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -83,6 +85,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -158,5 +168,6 @@
    "Certificate total of 15 units is stated by the catalog ('Total : 15.00'), consistent with the 8-16 unit award category."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

@@ -52,6 +52,7 @@
     "MAT1B"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -95,6 +96,7 @@
     34.0,
     35.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -110,6 +112,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -284,5 +297,6 @@
    "Total of 34-35 units is the major total; the 60-unit degree total includes Cal-GETC."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }
