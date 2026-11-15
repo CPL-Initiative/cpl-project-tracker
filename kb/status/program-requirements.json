@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-15T01:50:13Z",
-  "session": 653,
-  "moniker": "SkyGodwit",
+  "session": 654,
+  "moniker": "SkyWhimbrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_654_handoff.md",
+  "handoff": "docs/session_655_handoff.md",
   "next_step": {
-    "title": "The GE page owner, then one Riverside City capture, then the spot-checks",
-    "text": "The claim step that gives a GE-pattern page one owner merges first, then one free Riverside City capture confirms it. Once COBIx has spot-checked the six rescored colleges, their displays run and one rescore on the course-id route follows."
+    "title": "Read the Riverside City capture, then the course-id rescore at six colleges",
+    "text": "A free Riverside City capture on the merged claim step confirms that each transfer degree claims its own GE page. Then six colleges rescore from their filed pages on the course-id route, and one display build publishes all six, one college first."
   },
   "calls": [
     {
@@ -338,6 +338,18 @@
   },
   "changes": [
     {
+      "at": "2026-11-15T03:21:00Z",
+      "text": "Six colleges rescored under the prefix aliases merged as one wave. Statewide passing rose 15,840 to 15,856 of 22,335; one display build follows the course-id rescore."
+    },
+    {
+      "at": "2026-11-15T03:21:00Z",
+      "text": "A catalog's header fragment is never a program page, on all three code paths of the page finder."
+    },
+    {
+      "at": "2026-11-15T02:58:00Z",
+      "text": "A GE-pattern page has one owner: the owner is cached per page, and a printed control number names the owner only when that program's title check agrees. A free Riverside City capture was sent to confirm it."
+    },
+    {
       "at": "2026-11-14T18:39:58Z",
       "text": "A course's prefix now comes from the Program Course File's course id first. 7 of the 17 prefix-alias pairs retire and 10 stay; on filed records 8 programs would newly pass and none would fail."
     },
@@ -372,18 +384,6 @@
     {
       "at": "2026-11-14T13:59:00Z",
       "text": "COBIx's review of the display design was folded in: a borrowed figure is shown as borrowed, and an absence reads that no figure was found in the college's catalog."
-    },
-    {
-      "at": "2026-11-14T13:40:00Z",
-      "text": "Skyline's free capture started, the first test of the catalog lookup for programs with no closed course list (draft pull request 3300); it changes no count."
-    },
-    {
-      "at": "2026-11-14T12:53:00Z",
-      "text": "The design for the display's gaps as structured fields was merged: figure, pattern, source and basis, never curator notes quoted as catalog words."
-    },
-    {
-      "at": "2026-11-14T12:45:00Z",
-      "text": "COBIx's statewide count of where the electives word guard's match sits: 31 records at most fall outside their program's section, and about 2 have no electives word anywhere in the record."
     }
   ],
   "headline": [
