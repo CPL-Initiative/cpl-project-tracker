@@ -40,7 +40,8 @@ jobs:
       # The $40 gate (S655, card 10): the function returns no usage, so the stop is its worst case, read from its
       # own limits in chatbox/supabase/functions/cpl-news-harvest/index.ts through the spend meter
       # (kb/_model_run_gate.py): 25 manual + 80 candidates in batches of 12 is 9 calls, each at most the
-      # 1,000,000-token context window in and 2,000 tokens out at the dearest rate, $36.36. Over $40 the gate
+      # 1,000,000-token context window in and 2,000 tokens out at its fixed model's rate (Sonnet 4.6, $3/$15),
+      # $27.27. Over $40 the gate
       # exits 1 before the POST and the job ends red.
       - uses: actions/checkout@v7
       - name: Invoke cpl-news-harvest Edge Function
