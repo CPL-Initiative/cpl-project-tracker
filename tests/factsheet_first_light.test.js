@@ -88,5 +88,17 @@ check("every bare var() it reads is defined", bare.length === 0, [...new Set(bar
 check("no raw hex outside the token blocks",
   !/:[^;{}]*#[0-9a-fA-F]{3,8}\b/.test(code.replace(/:root[^{]*\{[^}]*\}/g, "")));
 
+// ── every screen weight has a face (S655 UI pass) ──
+// The page self-hosts Source Sans 3 at 400, 600 and 700 and Playfair Display at 600,
+// First Light's weights. A screen rule asking for 800 drew the 700 face anyway, so the
+// stylesheet said one thing and the screen another (11 cells: the statewide total and
+// the table total rows). Print keeps its 800: paper uses Calibri, a local face.
+const faces = new Set([...code.matchAll(/@font-face\s*\{[^}]*font-weight:\s*(\d+)/g)].map((m) => m[1]));
+const screen = print ? code.replace(print, "") : code;
+const unbacked = [...screen.replace(/@font-face\s*\{[^}]*\}/g, "").matchAll(/font-weight:\s*(\d+)/g)]
+  .map((m) => m[1]).filter((w) => !faces.has(w));
+check("every numeric screen font-weight is one the page loads a face for",
+  faces.size === 3 && unbacked.length === 0, "unbacked: " + [...new Set(unbacked)].join(", "));
+
 console.log("\n" + (pass === total ? "All " + total + " checks passed" : (total - pass) + " FAILED"));
 process.exit(pass === total ? 0 : 1);
