@@ -42,6 +42,7 @@ env:
 
 jobs:
   look:
+    environment: live-counts
     runs-on: ubuntu-latest
     timeout-minutes: 3
     outputs:
@@ -83,6 +84,7 @@ jobs:
           { echo "ids=$ids"; echo "through=$through"; } >> "$GITHUB_OUTPUT"
 
   apply:
+    environment: live-counts
     needs: look
     # A look that read no mark id (the tables not in place: its 404 notice) runs nothing, a dispatch included.
     if: needs.look.outputs.through != '' && (needs.look.outputs.ids != '' || github.event_name == 'workflow_dispatch')

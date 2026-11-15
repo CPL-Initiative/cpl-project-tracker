@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-14T15:31:10Z",
-  "session": 652,
-  "moniker": "SkyAvocet",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-14T18:50:31Z",
+  "session": 653,
+  "moniker": "SkyGodwit",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_653_handoff.md",
+  "handoff": "docs/session_654_handoff.md",
   "next_step": {
-    "title": "Slice A's merge, then the five colleges' prefix-alias rereads",
-    "text": "Slice A merges once the fresh Skyline capture is read and checked. Riverside City's display waits on COBIx's spot-check. Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley each get a record-by-record compare, a reread from their filed pages and a display, one college at a time. The reader fault that drops curriQunet pages sharing a title is fixed next."
+    "title": "The GE page owner, then one Riverside City capture, then the spot-checks",
+    "text": "The claim step that gives a GE-pattern page one owner merges first, then one free Riverside City capture confirms it. Once COBIx has spot-checked the six rescored colleges, their displays run and one rescore on the course-id route follows."
   },
   "calls": [
     {
@@ -337,6 +337,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-14T18:39:58Z",
+      "text": "A course's prefix now comes from the Program Course File's course id first. 7 of the 17 prefix-alias pairs retire and 10 stay; on filed records 8 programs would newly pass and none would fail."
+    },
+    {
+      "at": "2026-11-14T17:57:00Z",
+      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reread from their filed pages: passing rose 141 to 144, 132 to 134, 128 to 130, 161 to 162 and 197 to 198. Their displays wait on COBIx's spot-check."
+    },
+    {
+      "at": "2026-11-14T17:45:01Z",
+      "text": "curriQunet captures record twin ids. A capture on that code showed Riverside City's missing pages come from the claim rule, which skipped each transfer degree's own GE page; the fix is drafted."
+    },
     {
       "at": "2026-11-14T15:23:00Z",
       "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reconciled again from their filed pages under the new prefix aliases, each on its own branch; nothing is written until each compare is read."

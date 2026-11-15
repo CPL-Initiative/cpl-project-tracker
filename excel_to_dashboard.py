@@ -1739,7 +1739,7 @@ _ACTIVITY_KPI_LADDER_KEYS = [
 # sync: the Annual Workplan "Current" column of a mapped sub-activity is driven
 # from the merged live KPI value (read-only, matching the headline card by
 # construction), and the same map seeds the KPI-card display order. Unmapped
-# sub-activities keep a hand-entered manual Current (workplan_goals.current).
+# sub-activities keep a hand-entered manual Current (workplan_goals.cur_<year>).
 #   3.2 "CPL Units Transcription" → transcripted_units (was eligible_units, a
 #   latent mismatch — the card is transcription, not eligibility). Safe to fix
 #   here: the ordering use is a no-op today (no project sets kpi_order), and the
@@ -11424,10 +11424,11 @@ def _num_or_none(v):
 
 def _row_current_years(goal_row, stretch_row):
     """Manual Current per year from the cur_* columns (GOAL row canonical, STRETCH
-    row fallback). 2025-26 also reads the one-column `current` the cur_* columns
-    replaced (a row the migration has not reached, an older snapshot). Returns
-    {label: float} for the years that carry a value; {} when none does, and the
-    caller falls back to the legacy Excel kpi_metric for 2025-26."""
+    row fallback). cur_2025_26 is the one source for 2025-26: the one-column
+    `current` the cur_* columns replaced is never read (S653b, the column is
+    dropped in a second step; tests/workplan_goals_current_column_guard_test.py).
+    Returns {label: float} for the years that carry a value; {} when none does,
+    and the caller falls back to the legacy Excel kpi_metric for 2025-26."""
     out = {}
     for label in WORKPLAN_YEARS:
         col = WORKPLAN_CURRENT_COL[label]
@@ -11435,8 +11436,6 @@ def _row_current_years(goal_row, stretch_row):
             if not r:
                 continue
             v = _num_or_none(r.get(col))
-            if v is None and label == "2025-26":
-                v = _num_or_none(r.get("current"))
             if v is not None:
                 out[label] = v
                 break
@@ -11621,7 +11620,7 @@ def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=Non
         / Apprentice) → the matching BREAKDOWN row of a headline KPI (the live
         STUDENTS-SERVED Military/Workforce/Apprentice split), also metric_source
         ='live', so each card matches the headline breakdown by construction.
-      • Unmapped sub-activities that carry an EXPLICIT workplan_goals.current →
+      • Unmapped sub-activities that carry an EXPLICIT workplan_goals.cur_<year> →
         that manual value, so editing Current on the Annual Workplan tab updates
         the card too; stamped metric_source='workplan'. Percentage ladders are
         skipped (their Current isn't a card-style count).
@@ -11845,8 +11844,7 @@ def build_workplan_goals_from_supabase(
         #    kpi_key + a manual baseline (the fallback if that KPI has no live value).
         #  • Unmapped sub-activities use the hand-entered Current of each year,
         #    stored in workplan_goals.cur_<year> (GOAL row; falls back to STRETCH;
-        #    2025-26 also reads the one-column `current` these replaced, then the
-        #    legacy Excel kpi_metric for back-compat / pre-column snapshots).
+        #    2025-26 then falls back to the legacy Excel kpi_metric).
         current_kpi_key = PID_TO_KPI_KEY.get(aid)
         # Population sub-activities map to a breakdown of a headline KPI rather
         # than a top-level KPI; apply_live_workplan_current resolves it.
@@ -13004,7 +13002,7 @@ def main():
 
     # Session 86 — wire the Activity Metrics sub-activity cards' big number to the
     # same authoritative Current (live headline KPI for the PID_TO_KPI_KEY-mapped
-    # sub-activities; explicit manual workplan_goals.current otherwise) so the
+    # sub-activities; explicit manual workplan_goals.cur_<year> otherwise) so the
     # cards stop drifting from the headline + Annual Workplan. Mutates
     # activity_kpis in place; must run after both merges + the workplan sync and
     # before render_activity_kpis_html.

@@ -74,7 +74,8 @@
 
   // The goal and current the draft names for one sub-activity: this fiscal year's
   // goal, and its Current for the year, else the latest year a Current was set
-  // (cur_<year> on the GOAL row, S426; `current` is the one-column store before it).
+  // (cur_<year> on the GOAL row, S426). cur_2025_26 is the one source for 2025-26:
+  // the one-column store before it is never read (S653b; its drop is a second step).
   function goalFacts(goal, suffix) {
     if (!goal) return null;
     var target = goal["yr_" + suffix];
@@ -84,7 +85,6 @@
         current = goal["cur_" + LADDER_YEARS[i]];
       }
     }
-    if (current == null || current === "") current = goal.current;
     var hasTarget = target != null && target !== "" && Number(target) !== 0;
     var hasCurrent = current != null && current !== "" && Number(current) !== 0;
     if (!hasTarget && !hasCurrent) return null;
@@ -230,7 +230,7 @@
     return Promise.all([
       sbGet("item_updates?select=id,item_type,item_id,body,author,created_at&order=created_at.desc&limit=2000"),
       sbGet("projects?select=id,name,workplan_activity,status,percent_complete,latest_update,update_date,kpi_unit"),
-      sbGet("workplan_goals?select=activity_id,kind,row_type,name,current,"
+      sbGet("workplan_goals?select=activity_id,kind,row_type,name,"
         + "yr_2025_26,yr_2026_27,yr_2027_28,yr_2028_29,yr_2029_30,"
         + "cur_2025_26,cur_2026_27,cur_2027_28,cur_2028_29,cur_2029_30"),
       sbGet("project_lifecycle?select=project_id,state")
