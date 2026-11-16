@@ -1,0 +1,21 @@
+{
+ "_readme": "S668 SkyPipit, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. This college's plain program reads its 2.0's page in the 2026-2027 catalog. curriQunet's _getCatalogs serves only active catalogs; _getHistoricalCatalogs (heard in run 43794243855 on rccd.curriqunet.com) names the past ones, with the Id an archive view (Catalog/archive/<Id>/iq/...) loads. One load, no model call. sdccd serves San Diego City and Miramar.",
+ "college": "Allan Hancock College",
+ "questions": {
+  "prior_catalogs": "Which past catalogs the host lists, each with its Id and Title (2025-2026 first, then 2024-2025)."
+ },
+ "keywords": [
+  "2025",
+  "2024",
+  "Title",
+  "\"Id\""
+ ],
+ "pages": [
+  {
+   "answers": [
+    "prior_catalogs"
+   ],
+   "url": "https://hancockcollege.curriqunet.com/Catalog/_getHistoricalCatalogs"
+  }
+ ]
+}
