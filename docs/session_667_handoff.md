@@ -32,7 +32,7 @@ Read this file, then `CLAUDE.md` *Decide, carry out, record* (the ask test, new 
 - **Drafts:** #3398 (Sam's Sheet 195 card 4 CVMA answer into `kb/status/exhibit.json`; Commons decisions read "We went
   with this"), #3400 (`tests/plain_words_for_sam_test.py`).
 
-**PR state at sign-off:** #3398 merged (`a522c9f8`). #3399 merged (`61c60e6b`). #3400 (plain-words lint) had CI rerunning after a merge of main; merge it on a green `test` if it is still open.
+**PR state at sign-off:** #3398 merged (`a522c9f8`). #3399 merged (`61c60e6b`). #3400 merged (`f92da95b`).
 
 ## First things, in order
 
@@ -70,7 +70,7 @@ Execute SQL only for a read nothing committed can answer, one batched call.
 | #3393 | closed | none |
 | #3398 | merged `a522c9f8` | none |
 | #3399 | merged `61c60e6b` | none |
-| #3400 | CI rerunning after a main merge (`f1b3d20b`) at sign-off | First thing 2: merge on a green `test` |
+| #3400 | merged `f92da95b` | none |
 | #3387, #3284 | drafts; keep | First thing 1 |
 | #3293 | draft; keep | harvest NEXT (5) |
 | #2894 | closed unmerged (Sam's call via COBIx, 2026-11-16); its disabled task stays off | none |
