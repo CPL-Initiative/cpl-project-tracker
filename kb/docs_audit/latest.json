@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1507,
-    "bytes": 15973663,
-    "over_budget": 5,
-    "handoff_max": 664,
+    "files": 1508,
+    "bytes": 15983096,
+    "over_budget": 6,
+    "handoff_max": 665,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59992,
     "superseded_files": 0,
@@ -26,18 +26,18 @@
       },
       "other": {
         "files": 161,
-        "bytes": 5169422,
+        "bytes": 5170150,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10716,
+        "bytes": 10858,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2816861,
-        "over": 0
+        "bytes": 2818790,
+        "over": 1
       },
       "kb_note": {
         "files": 590,
@@ -46,27 +46,26 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 559081,
+        "bytes": 559827,
         "over": 4
       },
       "handoff": {
-        "files": 624,
-        "bytes": 4482600,
+        "files": 625,
+        "bytes": 4488488,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 5,
-      "vault_heavy_path": 76
+      "oversized_doc": 6,
+      "vault_heavy_path": 201
     },
     "vault": {
-      "files": 28107,
-      "bytes": 4990159998,
-      "heavy_bytes": 3633350548,
-      "heavy_share": 0.728,
+      "files": 28113,
+      "bytes": 4991955454,
+      "heavy_bytes": 3486093510,
+      "heavy_share": 0.698,
       "ignore_filters": [
-        "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
         "cpl-project-tracker/kb/regional_cpl_out",
         "cpl-project-tracker/kb/reference",
@@ -78,25 +77,142 @@
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/tests",
         "cpl-project-tracker/kb/status/commons_data_programs",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-16_fa8ee2a84935.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-16_66b50c86891e.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-15_515c9d71e086.sql",
         "cpl-project-tracker/unified_courses_member_desc.js",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-15_99dcfd1eed24.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-15_ad2f574f892c.sql",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-14_0a22233cf694.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-14_b87c61607e71.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-14_45fdd29240cb.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-14_04872c826890.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-14_361c9f120c6f.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-13_2d812b8ce768.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-13_dc7d157aff73.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-13_14e436537733.sql",
         "cpl-project-tracker/unified_courses_details.js",
         "cpl-project-tracker/kb/subj4_fold_out/2026-06-12/alias_map.json",
         "cpl-project-tracker/kb/subj4_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-13_2121fcc84f86.sql",
         "cpl-project-tracker/kb/subj4_apply/alias_map.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_98becf9fafc7.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_31efea3b1ee3.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_4983376c0f06.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_da4f44a160ca.sql",
         "cpl-project-tracker/kb/coci_minted_memberships.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_58b763170559.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_427f93eaf03d.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_812c94929f6f.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_98e783806131.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_a83667f9fa0d.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_6e5081a4b3a0.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_31471a8114e3.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_3604c0bfe9bb.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_aea7dcd00725.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_13fe0e778bb5.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_bef8ef819af7.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_f48d35c7623e.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_023a16e0e083.sql.gz",
         "cpl-project-tracker/coci_lookup_data.js",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-11-13_38a0fd8ed41f.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_faeca24f001e.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_8fbbcfb7a9c0.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_78877932e011.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_598157545f29.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_a19682c0630e.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_482377a2017b.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_6c1c41f71db3.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_7b1f3658a888.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_04dec589445a.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_d45e5d0fcf78.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_14291ca32973.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_0c7c11e1c4b0.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_b2864d4d6992.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_46aae217691c.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_b0a96907bf83.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_29e68f1d8dd2.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_052fb9eac1b5.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_0874a3a15f22.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_5dfc5fbbf78a.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_41c15eee3f75.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_454f2ac7bfbd.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_97f8cb5d3f44.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_e021a2824548.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_f8c94ef23142.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_767a48c10e89.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_8052e240575a.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_8603831048ac.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_588cfa081bee.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_19d2397e8004.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_8f8a282ca526.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_5dc18d9ea80a.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_d8b6c033cfc6.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_89a4abee9d1c.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_20241d4a9117.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_598ff64220dd.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_119388125e9f.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_15f40f7d1781.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_437d468743b9.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_d3cfafe64e93.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_2ab793e383e1.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_504ae8333118.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_c4bc9799a305.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_956fee0d62bc.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-23_25fe751ccd0a.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_be2635ed5b73.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_0ad3c75bfa19.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_1b3616641146.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_82d6298a0c67.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_65f1d116887b.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_4bcc9b504482.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_33f68a1257d9.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_b360371cceb6.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_0f4e4158a2df.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_bf781cf0cd22.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_8d733f684f83.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_6433296e07e2.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_5f9939404fcf.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_772abb3ddebe.sql.gz",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_e0407fdcb54b.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_93edc84cde30.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_3aa52b4afcb6.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_3d92deb7a816.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_5da99b0af549.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_48cb66f19cff.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_7e4a2a9c5ba7.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_3f93779f0115.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_3a5ed5d7bcf3.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_d6cc1fde7ea3.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-18_182e810e207d.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_ffd6929a4f90.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-12_496f2a71470a.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_f949e7c0ea35.sql.gz",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
         "cpl-project-tracker/unified_courses_standalone.js",
         "cpl-project-tracker/kb/subj4_dryrun/collisions.json",
         "cpl-project-tracker/unified_courses_members.js",
         "cpl-project-tracker/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_fec9782a4dbc.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-11_05811159eeee.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-11_157dc71a18bb.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-11_344441813b01.sql",
         "cpl-project-tracker/statewide_data.js",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_c111c9b05ca0.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_f1de75baa344.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_928577b30f0f.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_2a73f45c9c84.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_726bde512dfa.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_57100ecf39c0.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_7f4744e8e4ae.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_195fe0c35a2d.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_f571b009992c.sql",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
         "cpl-project-tracker/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
@@ -105,8 +221,14 @@
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
         "cpl-project-tracker/unified_courses_data.js",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_7c13e42917c5.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-10_3746c15d32ba.sql",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-17_40d138a9f533.sql.gz",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-16_d4ac5009f5aa.sql.gz",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-16_9237d2cbf931.sql.gz",
         "cpl-project-tracker/kb/cid_articulation_joins.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-16_9c74da80bad7.sql.gz",
         "cpl-project-tracker/coci_lookup_desc_A.js",
         "cpl-project-tracker/tmc_college_courses.js",
         "cpl-project-tracker/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
@@ -118,9 +240,11 @@
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/kb/it_ai_credential_catalog.json",
         "cpl-project-tracker/kb/coci_curation.json",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-06_ee814befc65d.sql",
         "cpl-project-tracker/coci_lookup_desc_M.js",
         "cpl-project-tracker/kb/status/mid_outcomes_compare_2026-11-12.json",
         "cpl-project-tracker/coci_lookup_desc_P.js",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-06_153ead0ce992.sql",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/prototype/ccr_universe_members.json",
@@ -140,6 +264,7 @@
         "cpl-project-tracker/kb/cr_reference_worklist.json",
         "cpl-project-tracker/coci_lookup_desc_F.js",
         "cpl-project-tracker/prototype/funding_video/narration_s1.mp3",
+        "cpl-project-tracker/kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
         "cpl-project-tracker/kb/authority_recode_out/2026-09-03/alias_map.json",
         "cpl-project-tracker/coci_lookup_desc_K.js"
       ]
@@ -156,6 +281,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 121321,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 1321,
+        "ratio": 1.01
+      },
+      "message": "121,321 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
       "rule": "oversized_doc",
@@ -213,24 +351,14 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 23474,
+        "bytes": 24220,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 3474,
-        "ratio": 1.17
+        "over_by": 4220,
+        "ratio": 1.21
       },
-      "message": "23,474 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "24,220 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/receipts",
-      "detail": {
-        "bytes": 2450028224,
-        "kind": "dir"
-      },
-      "message": "directory totals 2,450,028,224 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -327,20 +455,50 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13426175,
+        "bytes": 13427639,
         "kind": "dir"
       },
-      "message": "directory totals 13,426,175 B inside the vault"
+      "message": "directory totals 13,427,639 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/status/commons_data_programs",
       "detail": {
-        "bytes": 10128280,
+        "bytes": 10128723,
         "kind": "dir"
       },
-      "message": "directory totals 10,128,280 B inside the vault"
+      "message": "directory totals 10,128,723 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-16_fa8ee2a84935.sql",
+      "detail": {
+        "bytes": 72682771,
+        "kind": "file"
+      },
+      "message": "72,682,771 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-16_66b50c86891e.sql",
+      "detail": {
+        "bytes": 64819072,
+        "kind": "file"
+      },
+      "message": "64,819,072 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-15_515c9d71e086.sql",
+      "detail": {
+        "bytes": 57249330,
+        "kind": "file"
+      },
+      "message": "57,249,330 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -351,6 +509,26 @@
         "kind": "file"
       },
       "message": "47,883,522 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-15_99dcfd1eed24.sql",
+      "detail": {
+        "bytes": 46365730,
+        "kind": "file"
+      },
+      "message": "46,365,730 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-15_ad2f574f892c.sql",
+      "detail": {
+        "bytes": 39818192,
+        "kind": "file"
+      },
+      "message": "39,818,192 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -371,6 +549,86 @@
         "kind": "file"
       },
       "message": "35,184,277 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-14_0a22233cf694.sql",
+      "detail": {
+        "bytes": 33985396,
+        "kind": "file"
+      },
+      "message": "33,985,396 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-14_b87c61607e71.sql",
+      "detail": {
+        "bytes": 33978748,
+        "kind": "file"
+      },
+      "message": "33,978,748 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-14_45fdd29240cb.sql",
+      "detail": {
+        "bytes": 33954178,
+        "kind": "file"
+      },
+      "message": "33,954,178 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-14_04872c826890.sql",
+      "detail": {
+        "bytes": 30878407,
+        "kind": "file"
+      },
+      "message": "30,878,407 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-14_361c9f120c6f.sql",
+      "detail": {
+        "bytes": 29349674,
+        "kind": "file"
+      },
+      "message": "29,349,674 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-13_2d812b8ce768.sql",
+      "detail": {
+        "bytes": 27989487,
+        "kind": "file"
+      },
+      "message": "27,989,487 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-13_dc7d157aff73.sql",
+      "detail": {
+        "bytes": 25023341,
+        "kind": "file"
+      },
+      "message": "25,023,341 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-13_14e436537733.sql",
+      "detail": {
+        "bytes": 22713091,
+        "kind": "file"
+      },
+      "message": "22,713,091 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -405,12 +663,62 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-13_2121fcc84f86.sql",
+      "detail": {
+        "bytes": 21439255,
+        "kind": "file"
+      },
+      "message": "21,439,255 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/subj4_apply/alias_map.json",
       "detail": {
         "bytes": 19689335,
         "kind": "file"
       },
       "message": "19,689,335 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_98becf9fafc7.sql",
+      "detail": {
+        "bytes": 19632467,
+        "kind": "file"
+      },
+      "message": "19,632,467 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_31efea3b1ee3.sql",
+      "detail": {
+        "bytes": 19454922,
+        "kind": "file"
+      },
+      "message": "19,454,922 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_4983376c0f06.sql",
+      "detail": {
+        "bytes": 19416849,
+        "kind": "file"
+      },
+      "message": "19,416,849 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_da4f44a160ca.sql",
+      "detail": {
+        "bytes": 19360746,
+        "kind": "file"
+      },
+      "message": "19,360,746 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -425,12 +733,732 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_58b763170559.sql.gz",
+      "detail": {
+        "bytes": 17732641,
+        "kind": "file"
+      },
+      "message": "17,732,641 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_427f93eaf03d.sql",
+      "detail": {
+        "bytes": 17730501,
+        "kind": "file"
+      },
+      "message": "17,730,501 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_812c94929f6f.sql.gz",
+      "detail": {
+        "bytes": 17730388,
+        "kind": "file"
+      },
+      "message": "17,730,388 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_98e783806131.sql.gz",
+      "detail": {
+        "bytes": 17730152,
+        "kind": "file"
+      },
+      "message": "17,730,152 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_a83667f9fa0d.sql.gz",
+      "detail": {
+        "bytes": 17730144,
+        "kind": "file"
+      },
+      "message": "17,730,144 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_6e5081a4b3a0.sql.gz",
+      "detail": {
+        "bytes": 17729991,
+        "kind": "file"
+      },
+      "message": "17,729,991 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_31471a8114e3.sql.gz",
+      "detail": {
+        "bytes": 17729774,
+        "kind": "file"
+      },
+      "message": "17,729,774 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_3604c0bfe9bb.sql.gz",
+      "detail": {
+        "bytes": 17721494,
+        "kind": "file"
+      },
+      "message": "17,721,494 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_aea7dcd00725.sql.gz",
+      "detail": {
+        "bytes": 17720995,
+        "kind": "file"
+      },
+      "message": "17,720,995 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_13fe0e778bb5.sql.gz",
+      "detail": {
+        "bytes": 17719835,
+        "kind": "file"
+      },
+      "message": "17,719,835 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_bef8ef819af7.sql.gz",
+      "detail": {
+        "bytes": 17717934,
+        "kind": "file"
+      },
+      "message": "17,717,934 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_f48d35c7623e.sql.gz",
+      "detail": {
+        "bytes": 17617610,
+        "kind": "file"
+      },
+      "message": "17,617,610 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_023a16e0e083.sql.gz",
+      "detail": {
+        "bytes": 17439717,
+        "kind": "file"
+      },
+      "message": "17,439,717 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "coci_lookup_data.js",
       "detail": {
         "bytes": 17358026,
         "kind": "file"
       },
       "message": "17,358,026 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-11-13_38a0fd8ed41f.sql.gz",
+      "detail": {
+        "bytes": 17260987,
+        "kind": "file"
+      },
+      "message": "17,260,987 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_faeca24f001e.sql.gz",
+      "detail": {
+        "bytes": 17236995,
+        "kind": "file"
+      },
+      "message": "17,236,995 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_8fbbcfb7a9c0.sql.gz",
+      "detail": {
+        "bytes": 17236765,
+        "kind": "file"
+      },
+      "message": "17,236,765 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_78877932e011.sql.gz",
+      "detail": {
+        "bytes": 17227955,
+        "kind": "file"
+      },
+      "message": "17,227,955 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_598157545f29.sql.gz",
+      "detail": {
+        "bytes": 17227952,
+        "kind": "file"
+      },
+      "message": "17,227,952 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_a19682c0630e.sql.gz",
+      "detail": {
+        "bytes": 17227144,
+        "kind": "file"
+      },
+      "message": "17,227,144 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_482377a2017b.sql.gz",
+      "detail": {
+        "bytes": 17226727,
+        "kind": "file"
+      },
+      "message": "17,226,727 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_6c1c41f71db3.sql.gz",
+      "detail": {
+        "bytes": 17224613,
+        "kind": "file"
+      },
+      "message": "17,224,613 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_7b1f3658a888.sql.gz",
+      "detail": {
+        "bytes": 17218175,
+        "kind": "file"
+      },
+      "message": "17,218,175 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_04dec589445a.sql.gz",
+      "detail": {
+        "bytes": 17217144,
+        "kind": "file"
+      },
+      "message": "17,217,144 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_d45e5d0fcf78.sql.gz",
+      "detail": {
+        "bytes": 17210463,
+        "kind": "file"
+      },
+      "message": "17,210,463 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_14291ca32973.sql.gz",
+      "detail": {
+        "bytes": 17209194,
+        "kind": "file"
+      },
+      "message": "17,209,194 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_0c7c11e1c4b0.sql.gz",
+      "detail": {
+        "bytes": 17208772,
+        "kind": "file"
+      },
+      "message": "17,208,772 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_b2864d4d6992.sql.gz",
+      "detail": {
+        "bytes": 17208451,
+        "kind": "file"
+      },
+      "message": "17,208,451 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_46aae217691c.sql.gz",
+      "detail": {
+        "bytes": 17207689,
+        "kind": "file"
+      },
+      "message": "17,207,689 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_b0a96907bf83.sql.gz",
+      "detail": {
+        "bytes": 17207277,
+        "kind": "file"
+      },
+      "message": "17,207,277 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_29e68f1d8dd2.sql.gz",
+      "detail": {
+        "bytes": 17206455,
+        "kind": "file"
+      },
+      "message": "17,206,455 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_052fb9eac1b5.sql.gz",
+      "detail": {
+        "bytes": 17204942,
+        "kind": "file"
+      },
+      "message": "17,204,942 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_0874a3a15f22.sql.gz",
+      "detail": {
+        "bytes": 17204181,
+        "kind": "file"
+      },
+      "message": "17,204,181 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_5dfc5fbbf78a.sql.gz",
+      "detail": {
+        "bytes": 17203559,
+        "kind": "file"
+      },
+      "message": "17,203,559 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_41c15eee3f75.sql.gz",
+      "detail": {
+        "bytes": 17199357,
+        "kind": "file"
+      },
+      "message": "17,199,357 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_454f2ac7bfbd.sql.gz",
+      "detail": {
+        "bytes": 17194147,
+        "kind": "file"
+      },
+      "message": "17,194,147 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_97f8cb5d3f44.sql.gz",
+      "detail": {
+        "bytes": 17193910,
+        "kind": "file"
+      },
+      "message": "17,193,910 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_e021a2824548.sql.gz",
+      "detail": {
+        "bytes": 17193859,
+        "kind": "file"
+      },
+      "message": "17,193,859 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_f8c94ef23142.sql.gz",
+      "detail": {
+        "bytes": 17193743,
+        "kind": "file"
+      },
+      "message": "17,193,743 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_767a48c10e89.sql.gz",
+      "detail": {
+        "bytes": 17193692,
+        "kind": "file"
+      },
+      "message": "17,193,692 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_8052e240575a.sql.gz",
+      "detail": {
+        "bytes": 17193673,
+        "kind": "file"
+      },
+      "message": "17,193,673 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_8603831048ac.sql.gz",
+      "detail": {
+        "bytes": 17193623,
+        "kind": "file"
+      },
+      "message": "17,193,623 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_588cfa081bee.sql.gz",
+      "detail": {
+        "bytes": 17193528,
+        "kind": "file"
+      },
+      "message": "17,193,528 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_19d2397e8004.sql.gz",
+      "detail": {
+        "bytes": 17193514,
+        "kind": "file"
+      },
+      "message": "17,193,514 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_8f8a282ca526.sql.gz",
+      "detail": {
+        "bytes": 17193510,
+        "kind": "file"
+      },
+      "message": "17,193,510 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_5dc18d9ea80a.sql.gz",
+      "detail": {
+        "bytes": 17193411,
+        "kind": "file"
+      },
+      "message": "17,193,411 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_d8b6c033cfc6.sql.gz",
+      "detail": {
+        "bytes": 17193306,
+        "kind": "file"
+      },
+      "message": "17,193,306 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_89a4abee9d1c.sql.gz",
+      "detail": {
+        "bytes": 17193188,
+        "kind": "file"
+      },
+      "message": "17,193,188 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_20241d4a9117.sql.gz",
+      "detail": {
+        "bytes": 17193024,
+        "kind": "file"
+      },
+      "message": "17,193,024 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_598ff64220dd.sql.gz",
+      "detail": {
+        "bytes": 17191372,
+        "kind": "file"
+      },
+      "message": "17,191,372 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_119388125e9f.sql.gz",
+      "detail": {
+        "bytes": 17186901,
+        "kind": "file"
+      },
+      "message": "17,186,901 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_15f40f7d1781.sql.gz",
+      "detail": {
+        "bytes": 17186789,
+        "kind": "file"
+      },
+      "message": "17,186,789 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_437d468743b9.sql.gz",
+      "detail": {
+        "bytes": 17185964,
+        "kind": "file"
+      },
+      "message": "17,185,964 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_d3cfafe64e93.sql.gz",
+      "detail": {
+        "bytes": 17185105,
+        "kind": "file"
+      },
+      "message": "17,185,105 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_2ab793e383e1.sql.gz",
+      "detail": {
+        "bytes": 17184675,
+        "kind": "file"
+      },
+      "message": "17,184,675 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_504ae8333118.sql.gz",
+      "detail": {
+        "bytes": 17182832,
+        "kind": "file"
+      },
+      "message": "17,182,832 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_c4bc9799a305.sql.gz",
+      "detail": {
+        "bytes": 17181781,
+        "kind": "file"
+      },
+      "message": "17,181,781 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_956fee0d62bc.sql.gz",
+      "detail": {
+        "bytes": 17180700,
+        "kind": "file"
+      },
+      "message": "17,180,700 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-23_25fe751ccd0a.sql.gz",
+      "detail": {
+        "bytes": 17176592,
+        "kind": "file"
+      },
+      "message": "17,176,592 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_be2635ed5b73.sql.gz",
+      "detail": {
+        "bytes": 17088563,
+        "kind": "file"
+      },
+      "message": "17,088,563 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_0ad3c75bfa19.sql.gz",
+      "detail": {
+        "bytes": 17048867,
+        "kind": "file"
+      },
+      "message": "17,048,867 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_1b3616641146.sql.gz",
+      "detail": {
+        "bytes": 17048252,
+        "kind": "file"
+      },
+      "message": "17,048,252 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_82d6298a0c67.sql.gz",
+      "detail": {
+        "bytes": 16980943,
+        "kind": "file"
+      },
+      "message": "16,980,943 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_65f1d116887b.sql.gz",
+      "detail": {
+        "bytes": 16809217,
+        "kind": "file"
+      },
+      "message": "16,809,217 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_4bcc9b504482.sql.gz",
+      "detail": {
+        "bytes": 16729267,
+        "kind": "file"
+      },
+      "message": "16,729,267 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_33f68a1257d9.sql.gz",
+      "detail": {
+        "bytes": 16659752,
+        "kind": "file"
+      },
+      "message": "16,659,752 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_b360371cceb6.sql.gz",
+      "detail": {
+        "bytes": 16626410,
+        "kind": "file"
+      },
+      "message": "16,626,410 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_0f4e4158a2df.sql",
+      "detail": {
+        "bytes": 16555069,
+        "kind": "file"
+      },
+      "message": "16,555,069 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_bf781cf0cd22.sql.gz",
+      "detail": {
+        "bytes": 16521680,
+        "kind": "file"
+      },
+      "message": "16,521,680 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_8d733f684f83.sql.gz",
+      "detail": {
+        "bytes": 16507255,
+        "kind": "file"
+      },
+      "message": "16,507,255 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_6433296e07e2.sql.gz",
+      "detail": {
+        "bytes": 16401997,
+        "kind": "file"
+      },
+      "message": "16,401,997 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_5f9939404fcf.sql.gz",
+      "detail": {
+        "bytes": 16173412,
+        "kind": "file"
+      },
+      "message": "16,173,412 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_772abb3ddebe.sql.gz",
+      "detail": {
+        "bytes": 16167339,
+        "kind": "file"
+      },
+      "message": "16,167,339 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -461,6 +1489,146 @@
         "kind": "file"
       },
       "message": "15,851,035 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_e0407fdcb54b.sql.gz",
+      "detail": {
+        "bytes": 15808338,
+        "kind": "file"
+      },
+      "message": "15,808,338 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_93edc84cde30.sql.gz",
+      "detail": {
+        "bytes": 15807359,
+        "kind": "file"
+      },
+      "message": "15,807,359 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_3aa52b4afcb6.sql.gz",
+      "detail": {
+        "bytes": 15803213,
+        "kind": "file"
+      },
+      "message": "15,803,213 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_3d92deb7a816.sql.gz",
+      "detail": {
+        "bytes": 15802646,
+        "kind": "file"
+      },
+      "message": "15,802,646 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_5da99b0af549.sql.gz",
+      "detail": {
+        "bytes": 15801152,
+        "kind": "file"
+      },
+      "message": "15,801,152 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_48cb66f19cff.sql.gz",
+      "detail": {
+        "bytes": 15800072,
+        "kind": "file"
+      },
+      "message": "15,800,072 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_7e4a2a9c5ba7.sql.gz",
+      "detail": {
+        "bytes": 15799908,
+        "kind": "file"
+      },
+      "message": "15,799,908 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_3f93779f0115.sql.gz",
+      "detail": {
+        "bytes": 15651287,
+        "kind": "file"
+      },
+      "message": "15,651,287 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_3a5ed5d7bcf3.sql.gz",
+      "detail": {
+        "bytes": 15643470,
+        "kind": "file"
+      },
+      "message": "15,643,470 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_d6cc1fde7ea3.sql.gz",
+      "detail": {
+        "bytes": 15520984,
+        "kind": "file"
+      },
+      "message": "15,520,984 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-18_182e810e207d.sql.gz",
+      "detail": {
+        "bytes": 15516173,
+        "kind": "file"
+      },
+      "message": "15,516,173 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_ffd6929a4f90.sql.gz",
+      "detail": {
+        "bytes": 15391732,
+        "kind": "file"
+      },
+      "message": "15,391,732 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-12_496f2a71470a.sql",
+      "detail": {
+        "bytes": 15360902,
+        "kind": "file"
+      },
+      "message": "15,360,902 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_f949e7c0ea35.sql.gz",
+      "detail": {
+        "bytes": 15224223,
+        "kind": "file"
+      },
+      "message": "15,224,223 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -525,12 +1693,142 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_fec9782a4dbc.sql.gz",
+      "detail": {
+        "bytes": 13753870,
+        "kind": "file"
+      },
+      "message": "13,753,870 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-11_05811159eeee.sql",
+      "detail": {
+        "bytes": 13751123,
+        "kind": "file"
+      },
+      "message": "13,751,123 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-11_157dc71a18bb.sql",
+      "detail": {
+        "bytes": 13740392,
+        "kind": "file"
+      },
+      "message": "13,740,392 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-11_344441813b01.sql",
+      "detail": {
+        "bytes": 13477618,
+        "kind": "file"
+      },
+      "message": "13,477,618 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "statewide_data.js",
       "detail": {
         "bytes": 12524314,
         "kind": "file"
       },
       "message": "12,524,314 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_c111c9b05ca0.sql.gz",
+      "detail": {
+        "bytes": 12262784,
+        "kind": "file"
+      },
+      "message": "12,262,784 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_f1de75baa344.sql",
+      "detail": {
+        "bytes": 11820664,
+        "kind": "file"
+      },
+      "message": "11,820,664 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_928577b30f0f.sql.gz",
+      "detail": {
+        "bytes": 11816741,
+        "kind": "file"
+      },
+      "message": "11,816,741 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_2a73f45c9c84.sql",
+      "detail": {
+        "bytes": 11750209,
+        "kind": "file"
+      },
+      "message": "11,750,209 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_726bde512dfa.sql.gz",
+      "detail": {
+        "bytes": 11733410,
+        "kind": "file"
+      },
+      "message": "11,733,410 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_57100ecf39c0.sql",
+      "detail": {
+        "bytes": 11730284,
+        "kind": "file"
+      },
+      "message": "11,730,284 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_7f4744e8e4ae.sql.gz",
+      "detail": {
+        "bytes": 11624207,
+        "kind": "file"
+      },
+      "message": "11,624,207 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_195fe0c35a2d.sql",
+      "detail": {
+        "bytes": 11509804,
+        "kind": "file"
+      },
+      "message": "11,509,804 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_f571b009992c.sql",
+      "detail": {
+        "bytes": 10823954,
+        "kind": "file"
+      },
+      "message": "10,823,954 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -615,6 +1913,36 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_7c13e42917c5.sql.gz",
+      "detail": {
+        "bytes": 9986560,
+        "kind": "file"
+      },
+      "message": "9,986,560 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-10_3746c15d32ba.sql",
+      "detail": {
+        "bytes": 9984651,
+        "kind": "file"
+      },
+      "message": "9,984,651 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-17_40d138a9f533.sql.gz",
+      "detail": {
+        "bytes": 9781000,
+        "kind": "file"
+      },
+      "message": "9,781,000 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/remint_dryrun/alias_map.json",
       "detail": {
         "bytes": 9371742,
@@ -625,12 +1953,42 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-16_d4ac5009f5aa.sql.gz",
+      "detail": {
+        "bytes": 9357524,
+        "kind": "file"
+      },
+      "message": "9,357,524 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-16_9237d2cbf931.sql.gz",
+      "detail": {
+        "bytes": 8804713,
+        "kind": "file"
+      },
+      "message": "8,804,713 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/cid_articulation_joins.json",
       "detail": {
         "bytes": 8593791,
         "kind": "file"
       },
       "message": "8,593,791 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-16_9c74da80bad7.sql.gz",
+      "detail": {
+        "bytes": 8552321,
+        "kind": "file"
+      },
+      "message": "8,552,321 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -745,6 +2103,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-06_ee814befc65d.sql",
+      "detail": {
+        "bytes": 5290715,
+        "kind": "file"
+      },
+      "message": "5,290,715 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "coci_lookup_desc_M.js",
       "detail": {
         "bytes": 4951655,
@@ -771,6 +2139,16 @@
         "kind": "file"
       },
       "message": "4,616,887 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-06_153ead0ce992.sql",
+      "detail": {
+        "bytes": 4488517,
+        "kind": "file"
+      },
+      "message": "4,488,517 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -961,6 +2339,16 @@
         "kind": "file"
       },
       "message": "2,242,124 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts/program_requirement_records_display_2026-10-06_5be53871ebf4.sql",
+      "detail": {
+        "bytes": 2188268,
+        "kind": "file"
+      },
+      "message": "2,188,268 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

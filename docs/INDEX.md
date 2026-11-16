@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 624 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1493** | |
+| Session handoffs | 625 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1494** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-16 (S664 SkyWren, the CPL Queue routine's 10:12Z firing, full checkpoint): #3389 (the SLO reader reads Las Positas' lead-in *Upon the completion of this course* as the lead; the 505 live rows corrected in place under a receipt, `d-laspositas-lead-fix-in-place-s664`); handoff 665 (SkyThrush).
 - 2026-11-16 (S663 SkyLark, the CPL Queue routine's 06:12Z firing, full checkpoint): #3385 (a prior-year record is scored against its own year's course numbers, `course_renumbers_by_year`; Riverside City's Mathematics 32692 filed from its 2025-2026 page and reread); Las Positas' objectives reread (#3386) and College of the Redwoods' trial (#3387) started; handoff 664 (SkyWren).
 - 2026-11-16 (S662 SkyQuill, Sam's session, full checkpoint): two merges: #3378 (the Commons Curation ETA's exhibit universe counts MAP's unclassified backlog, the larger of the two readings, never their sum) and #3379 (the ETA cost feed: `kb/reference/model_spend_daily.json` and `kb/status/session_spend.json`, built at Pages deploy from the handoffs' `Spend:` lines, shown side by side); the `commons` lane compacted under 20,000 bytes; handoff 663 (SkyLark).
 - 2026-11-15 (S661 SkyKnot, Sam's session, full checkpoint): five merges (#3371 to #3375): the Commons ETA clock and the College Collections ETA on College Data Collection, the date controls as small chips (Sam), CPL Pathways framed beside every college row, the College Collections Plan in the Library, the Commons Curation ETA on CPL Commons; KB note `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`; handoff 662.
