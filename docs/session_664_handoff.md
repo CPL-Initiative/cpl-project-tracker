@@ -39,6 +39,10 @@ paragraph), then `docs/program_requirements_harvest_lessons.md` S663.
    the reread plan: Coastline, then Golden West (`cccd`). College of the Redwoods' trial (#3387, run 43817157271) and
    Allan Hancock's (#3284) each parsed 12 of 12: both are *read*. The next UTC day takes one full read (Coastline's
    reread counts as it) and one preparation run; the other *read* college waits its turn.
+   **COBIx on #3386, verified:** the curriQunet SLO parse keeps the lead sentence (*Upon the completion of this course,
+   the student should be able to:*) as the first outcome with `lead` null: all 505 live Las Positas SLO rows, 535 of
+   8,217 curriQunet rows at 2 colleges, 6 CourseLeaf rows. Fix it in the parse (move it to `lead`, tested with
+   `--reparse` on the filed pages), and decide which copy wins first, since the fingerprint changes and the load only inserts.
 2. **The prior-catalog read** (harvest lane NEXT): (b) a Cal-GETC units step for Riverside City cited from its own
    catalog, then the prior dispatch for 32745; (c) 30578 and 33829 from archive 7 (2024-2025), with that year's
    renumber map read from its pages the same way. Then the other colleges' same-page pairs.
