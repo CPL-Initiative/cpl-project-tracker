@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-16T21:15:06.681Z",
+  "scraped_at": "2026-11-16T22:00:55.835Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -428,13 +428,13 @@
         },
         {
           "college": "Grossmont College",
-          "students": 833,
+          "students": 885,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 833,
+          "militaryStudents": 885,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,535",
+      "value": "60,587",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "32,143"
+          "value": "32,195"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60535,
+    "Students": 60587,
     "Units": 289502.9,
     "TranscribedUnits": 85308.65,
     "Savings": 413359937.75,
     "YearImpact": 1669277430.3999999,
-    "MilitaryStudents": 32143,
+    "MilitaryStudents": 32195,
     "NonMilitaryStudents": 28499,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.782405220120592,
-    "TranscribedAverage": 1.409245064838523
+    "AverageUnits": 4.778300625546735,
+    "TranscribedAverage": 1.408035552181161
   }
 }
