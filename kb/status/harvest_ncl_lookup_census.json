@@ -321,6 +321,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "Graphic Design - Associate in Science (A.S.)",
      "holder": "20410",
      "holder_passes_live": false,
@@ -440,6 +441,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
      "holder": "18435",
      "holder_passes_live": false,
@@ -650,6 +652,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": " English Associate in Arts Degree Program",
      "holder": "32203",
      "holder_passes_live": false,
@@ -900,6 +903,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "",
      "holder": "11766",
      "holder_passes_live": false,
@@ -1141,6 +1145,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "Biology - A.S.",
      "holder": "36176",
      "holder_passes_live": false,
@@ -1274,6 +1279,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "Health Science - A.S. Degree",
      "holder": "46046",
      "holder_passes_live": false,
@@ -1284,6 +1290,7 @@
      "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194"
     },
     {
+     "applied": false,
      "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
      "holder": "45720",
      "holder_passes_live": false,
@@ -1294,6 +1301,7 @@
      "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982"
     },
     {
+     "applied": false,
      "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
      "holder": "21284",
      "holder_passes_live": false,
@@ -1304,6 +1312,7 @@
      "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034"
     },
     {
+     "applied": false,
      "h1": "General Business - Certificate of Achievement",
      "holder": "33048",
      "holder_passes_live": false,
@@ -1641,6 +1650,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": "Business Bookkeeping (COA)",
      "holder": "10954",
      "holder_passes_live": false,
@@ -1651,6 +1661,7 @@
      "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021"
     },
     {
+     "applied": false,
      "h1": "Studio Arts (AAT)",
      "holder": "19305",
      "holder_passes_live": false,
@@ -2793,6 +2804,7 @@
    "yield_unjudged": 0,
    "yields": [
     {
+     "applied": false,
      "h1": " Automotive Advanced Engine Performance Technology Certificate of Achievement",
      "holder": "32337",
      "holder_passes_live": false,
@@ -2803,6 +2815,7 @@
      "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php"
     },
     {
+     "applied": false,
      "h1": " Dance Associate in Arts Degree Program",
      "holder": "46296",
      "holder_passes_live": false,
@@ -3029,6 +3042,7 @@
   "tested": 11704,
   "yield_list": [
    {
+    "applied": false,
     "college": "cabrillo",
     "holder": "20410",
     "holder_title": "Digital Publishing",
@@ -3036,6 +3050,7 @@
     "taker_title": "Graphic Design"
    },
    {
+    "applied": false,
     "college": "chaffey",
     "holder": "18435",
     "holder_title": "Physical Science",
@@ -3043,6 +3058,7 @@
     "taker_title": "California General Education Transfer Curriculum (Cal-GETC)"
    },
    {
+    "applied": false,
     "college": "college_of_san_mateo",
     "holder": "32203",
     "holder_title": "English",
@@ -3050,6 +3066,7 @@
     "taker_title": "English"
    },
    {
+    "applied": false,
     "college": "crafton_hills",
     "holder": "11766",
     "holder_title": "Teacher",
@@ -3057,6 +3074,7 @@
     "taker_title": "Master Teacher"
    },
    {
+    "applied": false,
     "college": "feather_river",
     "holder": "36176",
     "holder_title": "MATHEMATICS",
@@ -3064,6 +3082,7 @@
     "taker_title": "Biology"
    },
    {
+    "applied": false,
     "college": "gavilan",
     "holder": "46046",
     "holder_title": "Nutrition and Dietetics",
@@ -3071,6 +3090,7 @@
     "taker_title": "Health Science"
    },
    {
+    "applied": false,
     "college": "gavilan",
     "holder": "45720",
     "holder_title": "Environmental Science I",
@@ -3078,6 +3098,7 @@
     "taker_title": "Liberal Arts: Natural Science"
    },
    {
+    "applied": false,
     "college": "gavilan",
     "holder": "21284",
     "holder_title": "CSIS: Programming for the Internet",
@@ -3085,6 +3106,7 @@
     "taker_title": "Liberal Arts: Computer Science & Information Systems"
    },
    {
+    "applied": false,
     "college": "gavilan",
     "holder": "33048",
     "holder_title": "Economics",
@@ -3092,6 +3114,7 @@
     "taker_title": "Business, General"
    },
    {
+    "applied": false,
     "college": "lemoore",
     "holder": "10954",
     "holder_title": "Computer Information Systems",
@@ -3099,6 +3122,7 @@
     "taker_title": "Business: Bookkeeping"
    },
    {
+    "applied": false,
     "college": "lemoore",
     "holder": "19305",
     "holder_title": "Liberal Arts: Elementary Teacher Preparation",
@@ -3106,6 +3130,7 @@
     "taker_title": "Studio Arts"
    },
    {
+    "applied": false,
     "college": "skyline",
     "holder": "32337",
     "holder_title": "Asian Engine Performance Technology",
@@ -3113,6 +3138,7 @@
     "taker_title": "Automotive Advanced Engine Performance Technology"
    },
    {
+    "applied": false,
     "college": "skyline",
     "holder": "46296",
     "holder_title": "Musical Theater",

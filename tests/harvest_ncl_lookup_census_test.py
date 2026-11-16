@@ -111,6 +111,43 @@ check(yield_census(FAIL, {"prior": {"catalog_year": "2025-2026"}})["yields"] == 
       "a prior-year read, a re-read and a census without the filed records yield nothing")
 check(N.college_census(sources, cap, "/nonexistent")["yields"] == [] and r["searches"] is False,
       "a college under the self-test's floor yields nothing")
+# A yield the filing already applied (the #3408 review): the holder is filed page_claimed, so its page is no filed
+# page and the lookup cannot see it; the census counts it from the filing's own record of it.
+claimed_13 = dict(y_sources[-2], method="page_claimed", source=None)
+taker_14 = dict(y_sources[-1], catalog_lookup={"result": "found", "took_from": "13",
+                                               "page": {"url": B + "dance-aa/", "h1": "Dance Associate in Arts Degree Program"}})
+acct_cap = dict(cap, catalog_lookup={"yields": [{"holder": "13", "holder_title": "Musical Theater", "taker": "14",
+                                                 "taker_title": "Dance", "url": B + "dance-aa/", "h1": "x"}]})
+with tempfile.TemporaryDirectory() as td:
+    both = N.college_census(y_sources[:-2] + [claimed_13, taker_14], acct_cap, td)
+    by_acct = N.college_census(y_sources[:-2] + [claimed_13, y_sources[-1]], acct_cap, td)
+    by_took = N.college_census(y_sources[:-2] + [claimed_13, taker_14], cap, td)
+    not_claimed = N.college_census(y_sources[:-1] + [taker_14], cap, td)
+check([(y["holder"], y["taker"], y["applied"], y["holder_passes_live"]) for y in both["yields"]]
+      == [("13", "14", True, False)]
+      and [(y["holder"], y["taker"], y["applied"]) for y in by_acct["yields"]] == [("13", "14", True)]
+      and [(y["holder"], y["taker"], y["applied"]) for y in by_took["yields"]] == [("13", "14", True)],
+      "a yield already applied counts as a yield: its holder filed page_claimed, named by the capture's account, the "
+      "taker's took_from, or both: %r" % [both["yields"], by_acct["yields"], by_took["yields"]])
+# The same on Skyline's committed read, put in the state a filing of the yield leaves: 46296 and 32337 page_claimed,
+# the takers' answers naming them. The pages are gone from the field, and the census still counts both.
+SKY = os.path.join(C.COLLEGE_DIR, "skyline")
+with open(os.path.join(SKY, "sources.json")) as fh:
+    sky_src = json.load(fh)
+with open(os.path.join(SKY, "capture.json")) as fh:
+    sky_cap = json.load(fh)
+sky_pages = {x["control_number"]: (x.get("source") or {}).get("url") for x in sky_src}
+sky_after = [dict(x, method="page_claimed", source=None) if x["control_number"] in ("46296", "32337") else
+             dict(x, catalog_lookup={"result": "found", "took_from": {"10546": "46296", "10529": "32337"}[x["control_number"]],
+                                     "page": {"url": sky_pages[{"10546": "46296", "10529": "32337"}[x["control_number"]]]}})
+             if x["control_number"] in ("10546", "10529") else x for x in sky_src]
+sky_applied = N.college_census(sky_after, sky_cap, SKY)
+check(sorted((y["holder"], y["taker"], y["applied"]) for y in sky_applied["yields"])
+      == [("32337", "10529", True), ("46296", "10546", True)],
+      "after a filing applies Skyline's two yields, the census still counts both: %r" % sky_applied["yields"])
+check(not_claimed["yields"] == [] and not_claimed["yield_unjudged"] == 1,
+      "a took_from beside a holder still filed on its page is no applied yield; the lookup judges it again (here with "
+      "no record: unjudged): %r" % not_claimed["yields"])
 
 # The committed captures (the self-recall test): every page given back is one whose holder's filed record, read from
 # that page, fails live, and whose readings name the taker and not the holder. The conductor counted 15 failing holders
@@ -129,18 +166,35 @@ for slug, c in full["colleges"].items():
     feats = C.ncl_pages(N.pages_of(srcs, capj), capj.get("college"), capj.get("catalog_year"))
     by = {s["control_number"]: s for s in srcs}
     for y in c["yields"]:
-        pg = next(f for f in feats if C.page_stem(y["url"]) in f["keys"])
         rec = C._filed(os.path.join(d, "records", y["holder"] + ".json"))
+        if y["applied"]:
+            # Applied: the holder is filed page_claimed and no passing record of it was dropped by the move.
+            if C._passing_filed_rec(rec) or by[y["holder"]].get("method") != "page_claimed" \
+                    or by[y["taker"]].get("method") != "no_closed_list":
+                bad.append((slug, y["holder"], y["taker"], "applied"))
+            continue
+        pg = next(f for f in feats if C.page_stem(y["url"]) in f["keys"])
         if (C._passing_filed_rec(rec) or not C.ncl_read_from(rec, pg) or C.ncl_match(pg, by[y["holder"]])
                 or not C.ncl_match(pg, by[y["taker"]]) or by[y["taker"]].get("method") != "no_closed_list"
-                or not c["searches"]):
+                or not c["searches"] or (rec.get("catalog_year") or capj.get("catalog_year"))
+                != capj.get("catalog_year")):
             bad.append((slug, y["holder"], y["taker"]))
-check(not bad, "every committed yield moves a failing record off a page that names the taker, not the holder: %r" % bad)
-moved = {(y["college"], y["holder"], y["taker"]) for y in sw["yield_list"]}
-check({("skyline", "46296", "10546"), ("skyline", "32337", "10529")} <= moved
-      and sw["yields"] == len(moved) <= 15,
-      "Skyline's Dance A.A. and Automotive Advanced Engine Performance Technology take their pages back, and the census "
-      "yields no more than the 15 the conductor measured: %r" % sorted(moved))
+check(not bad, "every committed yield moves a failing record of the capture's year off a page that names the taker, "
+      "not the holder: %r" % bad)
+# The self-recall list (S668): the 13 the census yields on the committed captures, applied or not. The conductor
+# counted 15 failing holders on pages naming a no-closed-list program word for word, outside GE-pattern and 2.0
+# pages: these are 12 of them (Contra Costa 31021 and Foothill 06104 and 45656 sit under the self-test's floor),
+# and Chaffey 18435, which holds the Cal-GETC certificate's page. A change here is a finding to judge, never a
+# number to update.
+YIELDS_S668 = [("cabrillo", "20410", "41948"), ("chaffey", "18435", "45032"), ("college_of_san_mateo", "32203", "05783"),
+               ("crafton_hills", "11766", "11767"), ("feather_river", "36176", "04321"), ("gavilan", "21284", "18457"),
+               ("gavilan", "33048", "21277"), ("gavilan", "45720", "18456"), ("gavilan", "46046", "08461"),
+               ("lemoore", "10954", "20341"), ("lemoore", "19305", "33017"), ("skyline", "32337", "10529"),
+               ("skyline", "46296", "10546")]
+moved = sorted((y["college"], y["holder"], y["taker"]) for y in sw["yield_list"])
+check(moved == YIELDS_S668 and sw["yields"] == 13 and sw["yields_passing_moved"] == 0,
+      "the census yields exactly the 13 judged in S668, Skyline's Dance A.A. and Automotive Advanced Engine "
+      "Performance Technology among them, whether a filing has applied them yet or not: %r" % moved)
 
 if failures:
     print("FAIL: harvest ncl lookup census (%d of %d)" % (len(failures), checks[0]))

@@ -5194,9 +5194,10 @@ def _sk_got(path, pages):
             "status": 200, "access": "ok", "links": []}
 
 
-def run_sk_capture(lookup, progs=None, pages=None, filed=None):
+def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None):
     """capture() and file_run() on the Skyline fixture; filed: {control number: record} placed in the college's
-    records folder first, as the read filed now (ncl_yield reads it)."""
+    records folder first, as the read filed now (ncl_yield reads it); college_dir: the colleges folder to file
+    into and keep (a second capture reads what the first filed), else a fresh one."""
     progs, pages = progs or SK_PROGS, pages or SK_PAGES
     names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
     saved_c = {n: getattr(C, n) for n in names}
@@ -5209,7 +5210,7 @@ def run_sk_capture(lookup, progs=None, pages=None, filed=None):
         C.read_sitemap = lambda reader, start: {"url": SK + "sitemap.xml", "status": 200, "nested": [],
                                                 "pages": [SK + p for p in sorted(pages)]}
         C.index_links = lambda *a, **k: []
-        C.COLLEGE_DIR = os.path.join(td, "colleges")
+        C.COLLEGE_DIR = college_dir or os.path.join(td, "colleges")
         for cn, rec in (filed or {}).items():
             os.makedirs(os.path.join(C.COLLEGE_DIR, "skyline", "records"), exist_ok=True)
             with open(os.path.join(C.COLLEGE_DIR, "skyline", "records", cn + ".json"), "w") as fh:
@@ -5349,8 +5350,8 @@ Y_FAIL = {"coverage": {"pass": False}, "invented": {"pass": True}, "arithmetic":
 Y_PASS = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}}
 
 
-def y_rec(cn, path, score):
-    return {"control_number": cn, "source_url": SK + path, "record": {"parts": []}, "score": score}
+def y_rec(cn, path, score, year="2026-2027"):
+    return {"control_number": cn, "source_url": SK + path, "record": {"parts": []}, "score": score, "catalog_year": year}
 
 
 Y_FILED = {"91001": y_rec("91001", "programs/dance-aa.php", Y_FAIL),
@@ -5430,6 +5431,36 @@ y_under, y_under_test = C.ncl_lookup(YIELD_PROGS, y_raw, y_own, filed=lambda cn:
 check(not y_under_test["searches"] and y_under["91002"]["result"] == "not_searched"
       and not any("took_from" in a or "yield_held" in a for a in y_under.values()),
       "a college under the self-test's floor yields nothing: %r" % y_under["91002"])
+# A failing record moves a page only from the capture's catalog year (the #3408 review): a 2024-2025 record at the same
+# address judges no 2026-2027 page. A record naming no year reads its filing's (kept_year); both empty is one year.
+y_old, _ = C.ncl_lookup(*y_args, filed=lambda cn: dict(Y_FILED[cn], catalog_year="2024-2025") if cn in Y_FILED else None)
+y_noyear, _ = C.ncl_lookup(*y_args[:-1], None, filed=lambda cn: dict(Y_FILED[cn], catalog_year=None) if cn in Y_FILED else None)
+check(y_old["91002"].get("yield_held", {}).get("held") == "unjudged" and "2024-2025" in y_old["91002"]["yield_held"]["why"]
+      and "took_from" not in y_old["91002"] and y_noyear["91002"].get("took_from") == "91001",
+      "a failing record from another catalog year moves no page; with no year on either side it does: %r" % y_old["91002"])
+y_kept = C.kept_year({"catalog_year": None, "x": 1}, "2026-2027")
+check(y_kept["catalog_year"] == "2026-2027", "a record naming no year reads its filing's year (kept_year)")
+# A yield stands on the next capture (the #3408 review, blocking): the filing drops the holder's failing record, and the
+# next capture finds none. The filed capture.json's account names the yield, so the page stays with the taker, and
+# the holder is never sent to the model again.
+with tempfile.TemporaryDirectory() as y_two:
+    y_cd = os.path.join(y_two, "colleges")
+    y1 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, Y_FILED, college_dir=y_cd)
+    check(not os.path.exists(os.path.join(y_cd, "skyline", "records", "91001.json"))
+          and (C.ncl_filed_yields(os.path.join(y_cd, "skyline"))
+               >= {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"))}),
+          "the first filing drops the holder's failing record, and its capture.json names the yield")
+    # The extraction carries the passing record it kept (91003) and the failing one it read again (91007); 91001 is gone.
+    y2 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
+    y3 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
+for n, (yc, ysrc, yrep, _) in enumerate((y1, y2, y3), 1):
+    s1, s2 = json.loads(ysrc["91001"]), json.loads(ysrc["91002"])
+    check(yc == 0 and s1["method"] == "page_claimed" and s1.get("yielded_to") == "91002"
+          and s2["catalog_lookup"].get("took_from") == "91001"
+          and not any(e["control_number"] == "91001" for e in yrep["would_extract"].get("list") or [])
+          and [y["holder"] for y in yrep["catalog_lookup"]["yields"]] == ["91001"],
+          "capture %d in a row: the page stays with the taker and the holder is not extracted: %r"
+          % (n, {"91001": s1["method"], "91002": s2["catalog_lookup"]}))
 # The catalog's own list (a Coursedog search, kept since S423): not_listed rests on it alone.
 # not_listed is gated twice (the #3300 review, DECIDED): the page self-test passes, and the catalog's own list
 # names at least NCL_LIST_FLOOR of the closed-list programs whose pages were read. A title that strips to no words
