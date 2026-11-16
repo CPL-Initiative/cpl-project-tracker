@@ -69,13 +69,16 @@ def pages_of(sources: list[dict], capture: dict) -> list[dict]:
     return out
 
 
-def college_census(sources: list[dict], capture: dict, folder: str | None = None) -> dict:
+def college_census(sources: list[dict], capture: dict, folder: str | None = None,
+                   registry_year: str | None = None) -> dict:
     """One college's self-test (ncl_self_test: recall and the three false measures) and, for a Coursedog capture,
     the catalog list's own self-test (ncl_list_test, measured; this slice files no not_listed), the conversion
     test (conversion()), and the pages the lookup gives back (ncl_yield) against folder's filed records (none
     without a folder, and none for a re-read or a prior-year read), each one listed, with the yields the filing
     already applied (applied true): a holder filed page_claimed whose yield the capture's account or the taker's
-    took_from names."""
+    took_from names. registry_year: the year a capture would run under (the registry's); the census has no registry
+    to read, so it defaults to the committed capture's. Filed records are read through capture()'s own rule
+    (ncl_filed_records), so the two agree once the registry moves a year."""
     platform = capture.get("platform")
     ncl = sum(1 for s in sources if s.get("method") == "no_closed_list")
     if platform == "pdf" or "pdf" in capture:
@@ -89,10 +92,9 @@ def college_census(sources: list[dict], capture: dict, folder: str | None = None
     listed = C.ncl_listed_names(capture.get("coursedog")) if platform == "coursedog" else None
     gated = folder is None or capture.get("reread") or capture.get("prior")
     # The lookup as the capture runs it: its self-test, its catalog-list test and its answers (ncl_lookup).
-    year = capture.get("catalog_year")
+    year = registry_year or capture.get("catalog_year")
     answers, test = C.ncl_lookup(programs, raw, own, listed, C.ncl_named(sources), capture.get("college"), year,
-                                 filed=None if gated else lambda cn: C.kept_year(
-                                     C._filed(os.path.join(folder, "records", cn + ".json")), year),
+                                 filed=None if gated else C.ncl_filed_records(folder),
                                  yielded=C.ncl_capture_yields(capture))
     test["conversion"] = conversion(programs, pages, own, C.ncl_named(sources, award=True))
     title = {p["control_number"]: p["title"] for p in programs}

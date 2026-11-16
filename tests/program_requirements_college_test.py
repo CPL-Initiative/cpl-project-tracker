@@ -5413,9 +5413,9 @@ y_by = {p["control_number"]: p for p in YIELD_PROGS}
 check(C.ncl_yield(y_by["91008"], y_feats, y_claimed, YIELD_PROGS, lambda cn: Y_FILED.get(cn)) is None,
       "a page whose readings name its holder by title and award is never given away")
 y_other = C.ncl_yield(y_by["91002"], y_feats, y_claimed, YIELD_PROGS,
-                      lambda cn: y_rec(cn, "programs/history-aa.php", Y_PASS))
+                      lambda cn: y_rec(cn, "programs/history-aa.php", Y_FAIL))
 check(y_other and y_other["held"] == "unjudged" and y_other["holder"] == "91001",
-      "a holder's filed record read from another page does not judge this one: %r" % y_other)
+      "a holder's failing record read from another page does not judge this one: %r" % y_other)
 y_off_code, y_off_src, _, _ = run_sk_capture("0", YIELD_PROGS, YIELD_PAGES, Y_FILED)
 y_off = {cn: json.loads(t) for cn, t in y_off_src.items()}
 check(y_off_code == 0 and y_off["91001"]["method"] == "sitemap_page", "NCL_CATALOG_LOOKUP=0 moves no page")
@@ -5438,6 +5438,16 @@ y_noyear, _ = C.ncl_lookup(*y_args[:-1], None, filed=lambda cn: dict(Y_FILED[cn]
 check(y_old["91002"].get("yield_held", {}).get("held") == "unjudged" and "2024-2025" in y_old["91002"]["yield_held"]["why"]
       and "took_from" not in y_old["91002"] and y_noyear["91002"].get("took_from") == "91001",
       "a failing record from another catalog year moves no page; with no year on either side it does: %r" % y_old["91002"])
+# A holder whose filed record passes live keeps its page wherever the record was read from, even against a yield the
+# filed capture names (the #3408 review, round two): a person's fix or a later re-read wins over the earlier move.
+y_dance = {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"))}
+y_fixed, _ = C.ncl_lookup(*y_args, filed=lambda cn: y_rec(cn, "programs/musical-theater-ca.php", Y_PASS)
+                          if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
+y_stood, _ = C.ncl_lookup(*y_args, filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
+check(y_fixed["91002"].get("yield_held", {}).get("held") == "refused_passing" and "took_from" not in y_fixed["91002"]
+      and y_stood["91002"].get("took_from") == "91001",
+      "a passing record of the holder, read from another page, keeps the page against a filed yield; with no record "
+      "the filed yield stands: %r" % y_fixed["91002"])
 y_kept = C.kept_year({"catalog_year": None, "x": 1}, "2026-2027")
 check(y_kept["catalog_year"] == "2026-2027", "a record naming no year reads its filing's year (kept_year)")
 # A yield stands on the next capture (the #3408 review, blocking): the filing drops the holder's failing record, and the

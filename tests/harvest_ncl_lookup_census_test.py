@@ -111,6 +111,22 @@ check(yield_census(FAIL, {"prior": {"catalog_year": "2025-2026"}})["yields"] == 
       "a prior-year read, a re-read and a census without the filed records yield nothing")
 check(N.college_census(sources, cap, "/nonexistent")["yields"] == [] and r["searches"] is False,
       "a college under the self-test's floor yields nothing")
+# A record naming no year reads its filing's year, through capture()'s own rule (ncl_filed_records), and is compared
+# with the year the lookup runs under: once the registry moves a year, the census and a capture both leave the page.
+with tempfile.TemporaryDirectory() as td:
+    os.makedirs(os.path.join(td, "records"))
+    with open(os.path.join(td, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2026-2027"}, fh)
+    with open(os.path.join(td, "records", "13.json"), "w") as fh:
+        json.dump({"control_number": "13", "source_url": B + "dance-aa/", "record": {}, "score": FAIL}, fh)
+    cap26 = dict(cap, catalog_year="2026-2027")
+    same = N.college_census(y_sources, cap26, td)
+    moved_year = N.college_census(y_sources, cap26, td, registry_year="2027-2028")
+    stamped = C.ncl_filed_records(td)("13")
+check([y["holder"] for y in same["yields"]] == ["13"] and moved_year["yields"] == []
+      and moved_year["yield_unjudged"] == 1 and stamped["catalog_year"] == "2026-2027",
+      "a record with no year reads the filed capture's 2026-2027 and moves the page under it; under a registry moved "
+      "to 2027-2028 it judges nothing: %r" % moved_year["yield_held"])
 # A yield the filing already applied (the #3408 review): the holder is filed page_claimed, so its page is no filed
 # page and the lookup cannot see it; the census counts it from the filing's own record of it.
 claimed_13 = dict(y_sources[-2], method="page_claimed", source=None)

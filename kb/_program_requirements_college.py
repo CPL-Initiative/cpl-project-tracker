@@ -1677,6 +1677,16 @@ def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], 
 # without a record; sources.json does not keep yielded_to, so the account is the record of it. A failing record
 # moves a page only when it was read from the capture's catalog year (its own catalog_year, else its filing's, as
 # kept_year reads it; both empty is the same year): a 2024-2025 record at the same address judges no 2026-2027 page.
+# A holder whose filed record passes live keeps its page wherever the record was read from, a filed yield or not: a
+# person's fix, or a later re-read, wins over the earlier move.
+def ncl_filed_records(folder: str):
+    """filed(control number) for ncl_lookup: the record filed under folder/records with the catalog year it was read
+    from (kept_year: its own, else the filed capture's, filed_year), or None. capture() and the census read filed
+    records through this one rule, and each compares the year with the year it looks up under."""
+    year = filed_year(folder)
+    return lambda cn: kept_year(_filed(os.path.join(folder, "records", cn + ".json")), year)
+
+
 def ncl_capture_yields(capture: dict | None) -> set[tuple[str, str, str]]:
     """{(holder, taker, page_stem(url))} of each yield a capture's account names (ncl_account)."""
     acct = (capture or {}).get("catalog_lookup") or {}
@@ -1707,8 +1717,8 @@ def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], ever
     above), or None where the program is no such case: its one match (ncl_match) is a page exactly one closed-list
     program holds, the page does not name that holder, and ncl_answer finds the page for the program once the
     holder's claim on it is lifted. filed(control number) gives the holder's filed record with the catalog year it
-    was read from (kept_year), or None; catalog_year is the capture's; yielded: the filed capture's yields
-    (ncl_filed_yields). Returns {"holder", "holder_title", "answer": the found answer, "held": None (the page
+    was read from (ncl_filed_records), or None; catalog_year is the capture's; yielded: the filed capture's yields
+    (ncl_filed_yields). A passing record refuses the move wherever it was read from. Returns {"holder", "holder_title", "answer": the found answer, "held": None (the page
     moves), "unjudged" or "refused_passing", "why"}."""
     hits = [pg for pg in pages if ncl_match(pg, prog)]
     if len(hits) != 1:
@@ -1727,7 +1737,8 @@ def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], ever
         return None
     rec = filed(h)
     from_page = bool(rec) and ncl_read_from(rec, pg)
-    if from_page and _passing_filed_rec(rec):
+    if _passing_filed_rec(rec):
+        # Wherever it was read from, and before a filed yield: a person's fix or a later re-read wins (#3408 review).
         held, why = "refused_passing", "its filed record passes live"
     elif any((h, prog["control_number"], k) in (yielded or ()) for k in pg["keys"]):
         held, why = None, "the filed capture's account names this yield"
@@ -5406,9 +5417,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             answers, test = ncl_lookup(programs, pages, own,
                                        ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
                                        ncl_named(recs), college, reg.get("catalog_year"),
-                                       filed=lambda cn: kept_year(_filed(os.path.join(folder, "records", cn + ".json")),
-                                                                  filed_year(folder)),
-                                       yielded=ncl_filed_yields(folder))
+                                       filed=ncl_filed_records(folder), yielded=ncl_filed_yields(folder))
             # A page a no-closed-list program took back (ncl_yield, S668): its holder is read from no page now.
             took = {a["took_from"]: cn for cn, a in answers.items() if a.get("took_from")}
             by_cn = {p["control_number"]: p for p in programs}
