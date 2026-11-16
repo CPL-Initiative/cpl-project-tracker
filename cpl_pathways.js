@@ -1868,7 +1868,7 @@
   var outPending = false;
   function outcomeIndex(college) {
     if (!outIndex[college]) {
-      outIndex[college] = roepGetAll("/course_outcomes?select=course_code,kind&college=eq." + encodeURIComponent(college) + "&order=id")
+      outIndex[college] = roepGetAll("/course_outcomes?select=course_code,kind&kind=in.(slo,objective)&college=eq." + encodeURIComponent(college) + "&order=id")
         .then(function (rows) {
           var m = {};
           (rows || []).forEach(function (r) {
@@ -2111,7 +2111,8 @@
     if (!o.entry || !(o.entry.codes || []).length) return;
     var wait = el("p", "cplpw-outsrc", "Reading the outlines…");
     body.appendChild(wait);
-    var path = "/course_outcomes?select=" + OUT_SELECT + "&college=eq." + encodeURIComponent(o.college) +
+    // Both kinds by name, each shown under its own heading, so an objective never stands in for an SLO.
+    var path = "/course_outcomes?select=" + OUT_SELECT + "&kind=in.(slo,objective)&college=eq." + encodeURIComponent(o.college) +
       "&course_code=in.(" + o.entry.codes.map(function (c) { return encodeURIComponent('"' + String(c).replace(/"/g, "") + '"'); }).join(",") + ")" +
       "&order=read_run.desc,id.desc";
     roepGet(path).then(function (rows) {

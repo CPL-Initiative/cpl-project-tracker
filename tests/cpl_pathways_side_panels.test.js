@@ -119,6 +119,7 @@ function tile(root, code) { return root.querySelector('.cplpw-rtile[data-code="'
     check("(c) the panel opens as a labeled non-modal dialog", panel && !panel.hidden && panel.getAttribute("role") === "dialog" &&
       panel.getAttribute("aria-modal") === "false" && w.document.getElementById(panel.getAttribute("aria-labelledby")).textContent === "SLOs and objectives");
     const q = decodeURIComponent(calls[calls.length - 1]);
+    check("(c) it names both kinds, so an objective never stands in for an SLO", /kind=in\.\(slo,objective\)/.test(q), q);
     check("(c) it reads both of the course's printed codes", /course_code=in\.\("IWAP40\.07","IWAP 40\.07"\)|course_code=in\.\("IWAP 40\.07","IWAP40\.07"\)/.test(q), q);
     const heads = [...panel.querySelectorAll(".cplpw-outblock h3")].map((h) => h.textContent);
     check("(c) SLOs first, then objectives, each counted", heads.join(" | ") === "Student learning outcomes (2) | Course objectives (1)", heads.join(" | "));
