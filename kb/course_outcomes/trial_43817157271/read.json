@@ -1,0 +1,470 @@
+{
+ "run": "43817157271",
+ "index": "catalog:college_of_the_redwoods",
+ "host": "https://redwoods.elumenapp.com/catalog/2026-2027/home",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "college_of_the_redwoods",
+ "part": 1,
+ "of": 1,
+ "wanted": 440,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": "template",
+ "at": "2026-11-16T06:38:27Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 43
+ },
+ "rows": [
+  {
+   "code": "ADCT 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,adct10?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,adct10?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 960,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Identify drug classifications, stages of use and effects of drugs on the individual and society.",
+    "Articulate the principles of prevention, treatment, 12-Step programs, enforcement and harm reduction in addressing substance use and abuse",
+    "Analyze historical themes of drug use and synthesize that information with current scientific knowledge to address individual and societal problems of substance abuse."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "1f8a2b09ae8c02e34218e534d19947a3",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "AQUA 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,aqua1?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,aqua1?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1402,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Identify different systems and techniques for breeding, growing, and harvesting various aquaculture species.",
+    "Apply the concepts of and application of the scientific method to assess and characterize strategies for disease prevention and water quality optimization.",
+    "Discuss past and present issues in aquaculture, analyzing legal, social, economic, and environmental contexts within which the industry operates.",
+    "Relate the process of scientific inquiry and experimental design to the principles of culturing aquatic organisms in different production systems."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "1bd9b420031dd657def0f677c1b223ba",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "AT 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,at10?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,at10?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 682,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Research and perform routine maintenance on a modern vehicle.",
+    "Exhibit proficiency with precise measurement instruments.",
+    "Perform routine inspections and repairs on a modern vehicle."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "2a0f4910b176e98823060828f3c61df7",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "CET 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cet10?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,cet10?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1463,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Describe the operation of electrical and electronic devices, circuits, and systems.",
+    "Analyze circuits and compute electrical and electronic variables.",
+    "Explain the influence of electricity and electronics on world history and cultures."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "0c22900ec62de29b9ba2052b10f2347e",
+   "objectives": [
+    "Simplify expressions involving integers, fractions, and decimals.",
+    "Solve equations involving integers, fractions, and decimals.",
+    "Solve equations and applications involving percents.",
+    "Toggle",
+    "General Education Status",
+    "CR General Education: Area 5: Natural Sciences (Approved)",
+    "Toggle"
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "291f61cd1ca368a60781322b1bad0e69"
+  },
+  {
+   "code": "COMMC 1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,commc1000?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,commc1000?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1332,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Research, construct and deliver effective informative and persuasive speeches using accepted classical and rhetorical practices, models and theories of communication.",
+    "Critically analyze oral communication, both as speakers and listeners.",
+    "Demonstrate ethical responsibilities in the communication process, including issues such as diversity, credibility, authority, and academic honesty."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "2cbc8ce8a26740a52191bbee28dc58b4",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ECE 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ece1?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ece1?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1036,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Compare and contrast historical and current early childhood education perspectives, theories, and program types and philosophies.",
+    "Describe the role of the early childhood educator, including ethical conduct and professional pathways.",
+    "Identify quality in early childhood programs related to environment, curriculum, and teaching strategies."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "e3c976fc4e1579985526a280fb1bb03f",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ENVSC 10",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,envsc10?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,envsc10?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 3053,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Apply the process of science to analyze major environmental issues at a variety of scales, identify potential solutions for these issues, and evaluate the viability of these solutions.",
+    "Analyze and interpret quantitative data and visual representations of data describing an environmental issue.",
+    "Describe relationships between human actions and environmental issues and predict potential outcomes of these interactions.",
+    "LAB: Analyze and interpret human influences on an ecosystem in the field."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "c552e17594aa7ce913d69bcddfa0b83a",
+   "objectives": [
+    "Read, analyze, and evaluate a variety of primarily non-fiction texts for content, context, and rhetorical merit with consideration of tone, audience, and purpose.",
+    "Write timed/in-class essays exhibiting acceptable college-level. control of mechanics, organization, development, and coherence",
+    "6.Integrate the ideas of others through paraphrasing, summarizing, and quoting without plagiarism.",
+    "Find, evaluate, analyze, and interpret primary and secondary sources, incorporating them into written essays using appropriate documentation format.",
+    "Proofread and edit essays for presentation so they exhibit no disruptive errors in English grammar, usage, or punctuation.",
+    "Outcomes",
+    "Demonstrate the capacity to read, analyze and evaluate non-fiction texts in support of academic inquiry and argumentation.",
+    "Utilize flexible strategies for writing expository and argumentative college-level essays.",
+    "Incorporate primary and secondary sources into essays using appropriate documentation format.",
+    "Toggle",
+    "General Education Status",
+    "C-ID: ENVS 100 Introduction to Environmental Science (Approved)",
+    "CalGETC: Area 5B: Biological Science (Approved) & Area 5C: Laboratory (Approved)",
+    "CR General Education: Area 5: Natural Sciences (Approved)",
+    "Toggle"
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "4bcd8f7f275017fffb8d4978c9ac3a6e"
+  },
+  {
+   "code": "GEOL 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geol1?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,geol1?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1708,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Describe how the scientific method is used to understand natural phenomena.",
+    "Describe the basic elements of plate tectonic theory, including how internal processes help shape the Earth.",
+    "Apply classification systems to organize and identify igneous, sedimentary, and metamorphic rock specimens and mineral specimens, and demonstrate how these classification systems are used to understand Earth processes.",
+    "Apply geologic principles to describe how earth materials and landscapes change over time, including description of how interaction of Earth systems result in geologic change."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "dc1d3078ab25caa72c926e8c4ee6cf0c",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "KINS 42",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,kins42?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,kins42?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1339,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Successfully complete objectives created with faculty and/or supervisor that are related to goals and degree requirements.",
+    "Demonstrate job retention skills identified by supervisor and/or faculty as crucial to success."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "2e97af883c5588abfd556339d959e3ab",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "NURS 1",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,nurs1?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,nurs1?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 9538,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate basic nursing skills using proper techniques and measures to promote safe, quality patient-centered care.",
+    "Integrate knowledge within a concept based framework for application to patient care.",
+    "Demonstrate the nurse's role in supporting a patient's psychosocial needs, functional ability, pain, perfusion, fluid and electrolyte balance.",
+    "Apply knowldge of pharmacology, pathophysiology and nutrition, as well as established evidence, to the care of patients.",
+    "Apply selected concepts related to professionalism, including the nursing process, to the provision of safe, quality patient care.",
+    "Integrate fundamental concepts related to the provision of safe, quality, patient-centered care: health promotion, culture, evidence, informatics, professionalism, communication and safety."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "75cdee17b46f9a0e7b113c927daed98c",
+   "objectives": [
+    "Outline the history of major microbiological discoveries and describe their contributions to world civilization.",
+    "State Koch's postulates and apply them to different types of pathogens and to new diseases.",
+    "Relate basic principles of chemistry and cell biology to structure and function of microbes.",
+    "Explain how the unity of basic cell processes contributes to difficulties in treating infectious disease.",
+    "Describe the principles and mechanisms of microbial genetics and coevolution and apply them to the problem of increasing drug resistance in microorganisms.",
+    "Describe viruses and their relation to cells.",
+    "Compare and evaluate the various mechanisms of control and prevention of microbial disease.",
+    "Discuss the mechanisms of pathogenicity in microbes.",
+    "Compare and contrast the epidemiology of community acquired and hospital acquired infections.",
+    "Describe the functions of the human immune system, its relations to disease, and how vaccination contributes to immunity.",
+    "Describe the etiology, epidemiology, treatment and prevention of a variety of important infectious diseases.",
+    "Safely and aseptically perform a variety of microbiological laboratory techniques.",
+    "Collect and analyze data.",
+    "Outcomes",
+    "Describe the anatomy, physiology and biochemistry of microorganisms and the consequential effects of various environmental factors upon them.",
+    "Know the causative organism of the more common human diseases and the physiological effect of the drugs most commonly used in the fight against these diseases.",
+    "Describe the principles and applications of genetic engineering and the role that microorganisms are playing in this process.",
+    "AND"
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "bf6a9d8e6ada7647bfd1775b582d7750"
+  },
+  {
+   "code": "POLS C1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,polsc1000?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,polsc1000?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2442,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Explain the history and philosophy of the Constitution, politics, and government in the United States.",
+    "Identify the major provisions of the California and US Constitution.",
+    "Compare the three branches of California and US Government, and related political institutions.",
+    "Outline the relationship between the states and national government (ie. federalism).",
+    "Analyze contemporary issues facing California and the US system of government."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "38f203bbcbe1b119d98289baf1ec19b4",
+   "objectives": [
+    "Read, analyze, and evaluate a variety of primarily non-fiction texts for content, context, and rhetorical merit with consideration of tone, audience, and purpose.",
+    "Apply a variety of rhetorical strategies in writing unified, well-organized essays with arguable theses and persuasive support.",
+    "Analyze stylistic choices in their own writing and the writing of others",
+    "Write timed/in-class essays exhibiting acceptable college-level. control of mechanics, organization, development, and coherence",
+    "6.Integrate the ideas of others through paraphrasing, summarizing, and quoting without plagiarism.",
+    "Proofread and edit essays for presentation so they exhibit no disruptive errors in English grammar, usage, or punctuation.",
+    "Outcomes",
+    "Demonstrate the capacity to read, analyze and evaluate non-fiction texts in support of academic inquiry and argumentation.",
+    "Utilize flexible strategies for writing expository and argumentative college-level essays.",
+    "Incorporate primary and secondary sources into essays using appropriate documentation format.",
+    "Toggle",
+    "General Education Status",
+    "C-ID: POLS 110 Introduction to American Government and Politics (Approved)",
+    "CalGETC: Area 4: Social and Behavioral Sciences (Approved)",
+    "CR General Education: Area 4: Social and Behavioral Sciences (Approved)",
+    "Toggle"
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "93d0a2d341822390ddb83113905a4c5a"
+  },
+  {
+   "code": "PTEC 101",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ptec101?tenant=redwoods.elumenapp.com",
+   "named_by": [
+    "college_of_the_redwoods"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,course,ptec101?tenant=redwoods.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 5259,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Demonstrate the role of the Psychiatric Technician's, scope of practice, and ethical and legal principles related to an established code of ethics, nurse practice acts, and professional regulations.",
+    "Apply knowledge of fundamental concepts (professionalism, ethical-legal, clinical judgment, communication, safety, culture, health promotion, patient education, evidence, technology and informatics, development, functional ability, elimination, and glucose regulation) related to the provision of safe, quality, patient-centered care supporting Mental Health patient’s psychosocial and physiologic needs within a concept-based framework.",
+    "Demonstrate basic psychiatric technician skills of assessment, data collection, medication administration, documentation, and the process related to Mental Health patient's physiological, psychological, sociological, cultural, and spiritual dimensions using proper techniques and measures that ensure patient safety"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "08bcbf39c09e14b058de07829de2474e",
+   "objectives": [
+    "Apply the processes of scientific inquiry and experimental design to the study of biological concepts.",
+    "Describe hierarchical structure of the human body, from atom to whole organism.",
+    "Describe the basic anatomy and physiology of each organ system.",
+    "Describe the relationships between classical/molecular genetics and human health, disorders, and disease.",
+    "Relate the processes of mitosis and meiosis to human reproduction, growth, and development.",
+    "Describe the structure and function of eukaryotic cells including cell metabolism and transport across the cell membrane.",
+    "Connect human nutritional requirements to healthy lifestyles and fitness in human health.",
+    "Outcomes",
+    "Use the scientific method to design experiments that include data collection and analysis.",
+    "Describe the structural, metabolic, and reproductive characteristics of diverse cell types related to human health and explain how changes in cell function can be correlated with disease.",
+    "Relate the structure and function of human organ systems to the maintenance of bodily homeostasis.",
+    "Describe specific examples of the genetic basis of human anatomy, physiology, behavior and disease, and explain how genetic variation impacts human evolution.",
+    "AND"
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "ad43a6182d459278a05a64fccccf50b7"
+  }
+ ]
+}
