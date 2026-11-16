@@ -16245,7 +16245,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 201
+     "line": 267
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -19166,7 +19166,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 202
+     "line": 268
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -21569,7 +21569,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 39
+     "line": 47
     }
    ],
    "producers": [
@@ -21620,7 +21620,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 200
+     "line": 266
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -21650,6 +21650,13 @@
   },
   "file:library/adopt/adopt_more.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_adopt_align.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 277
+    },
     {
      "id": "script:kb/_build_adopt_page.py",
      "kind": "script",
@@ -30508,7 +30515,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 95
+     "line": 105
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",

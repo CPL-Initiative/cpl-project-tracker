@@ -94,6 +94,27 @@ check("a course with objectives and no SLOs has no outcomes row", B.index_outcom
 src = open(os.path.join(ROOT, "kb", "_build_adopt_align.py")).read()
 check("the live read selects SLO rows only", "/rest/v1/course_outcomes?" in src and "&kind=eq.slo&" in src)
 
+# Unreviewed credentials (#3405 next step): scored against every harvested course; a standout covers at least
+# STANDOUT_MIN skill areas and at least half; the page shows nothing until a session turns chips_shown on.
+oc = B.index_outcomes([
+    {"college": "Alpha College", "course_code": "NET 10", "course_title": "Network Security", "kind": "slo", "read_run": 1,
+     "outcomes": ["Configure firewall rules for network perimeter defense.", "Analyze intrusion detection alerts and logs.",
+                  "Apply encryption protocols to secure data transmission."]},
+    {"college": "Gamma College", "course_code": "NET 20", "course_title": "Firewalls Only", "kind": "slo", "read_run": 1,
+     "outcomes": ["Configure firewall rules for network perimeter defense."]},
+])
+uj = {"Network Defender": {"skills": [{"domain": "Firewall rules and perimeter defense"}, {"domain": "Intrusion detection alerts"},
+                                      {"domain": "Encryption protocols for data transmission"}, {"domain": "Cloud governance policy"}]},
+      "Two Areas Only": {"skills": [{"domain": "Firewall rules"}, {"domain": "Intrusion detection"}]}}
+u = B.score_unreviewed(uj, oc)
+nd = u.get("Network Defender") or {}
+check("unreviewed: a course covering 3 of 4 skill areas is a standout, named with its college",
+      nd.get("of") == 4 and nd.get("need") == 3 and nd.get("top", [[None]])[0][:4] == ["Alpha College", "NET 10", "Network Security", 3])
+check("unreviewed: a course covering one skill area is not a standout", nd.get("standouts") == 1)
+check("unreviewed: fewer than STANDOUT_MIN skill areas takes no chip", "Two Areas Only" not in u)
+check("unreviewed: the section is written with chips_shown false", data["unreviewed"]["chips_shown"] is False
+      and "unreviewed_with_standout" in data["counts"])
+
 failed = [r for r in results if not r[1]]
 for r in results:
     print(("PASS " if r[1] else "FAIL ") + r[0])
