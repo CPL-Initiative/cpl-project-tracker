@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 105 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 627 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1497** | |
+| Session handoffs | 628 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1498** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-16 (S667 SkyPlover, Sam's session, full checkpoint): #3402 (CPL Pathways: Request Adopt on course cards, Ask Sierra's side bar, an SLOs and objectives panel, full width, the CPL Visual's progress bar), #3403 (`kb/plain_words.py`, one term list; the six re-clustering cases settled), samueltlee/CPLBrain#806 (sheets refuse undefined insider terms from 201), #3404 (harvest and governance decisions; seven memory rows through the runner). Handoff 668 (SkyPipit).
 - 2026-11-16 (S666 SkyDipper, Sam's session, full checkpoint): #3395 (doctrine: the ask test, pick a lane, no re-asking, person-settled wins, the Execute SQL prompt is the app's), #3396 (Another look drops a move away from a person's save; 6 cards to 0), #3397 (Honors step 2 applied, 380 rows); #3393 closed (Physics 32745 held on a free prior + reconcile rescore); Riverside City archive 7 read, both records stay; Monterey Peninsula's three reloaded (draft #3399); drafts #3398, #3400; the harvest, commons, cer-procedures and governance lanes compacted under budget; handoff 667 for SkyPlover.
 - 2026-11-16 (S664 SkyWren, the CPL Queue routine's 10:12Z firing, full checkpoint): #3389 (the SLO reader reads Las Positas' lead-in *Upon the completion of this course* as the lead; the 505 live rows corrected in place under a receipt, `d-laspositas-lead-fix-in-place-s664`); handoff 665 (SkyThrush).
 - 2026-11-16 (S663 SkyLark, the CPL Queue routine's 06:12Z firing, full checkpoint): #3385 (a prior-year record is scored against its own year's course numbers, `course_renumbers_by_year`; Riverside City's Mathematics 32692 filed from its 2025-2026 page and reread); Las Positas' objectives reread (#3386) and College of the Redwoods' trial (#3387) started; handoff 664 (SkyWren).
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-15 (S661 SkyKnot, Sam's session, full checkpoint): five merges (#3371 to #3375): the Commons ETA clock and the College Collections ETA on College Data Collection, the date controls as small chips (Sam), CPL Pathways framed beside every college row, the College Collections Plan in the Library, the Commons Curation ETA on CPL Commons; KB note `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`; handoff 662.
 - 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).
 - 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
-- 2026-11-15 (S655 SkyCurlew, the CPL Queue routine's 06:12Z firing, conductor mode, full checkpoint): six merges (#3346, #3315, #3351, #3344, #3353, #3354); #3330 never reached `main` and #3351 landed the spend meter with card 10's $40 gates; the Riverside City capture read (240 of 268); Santa Ana's 1,362 objectives loaded; the Honors step 2 apply held at the permission check (Sheet 200 card 1); the course-id rescore's six rereads posted 159 rows on #3352.

@@ -31,7 +31,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
 ✅ **A piece's link beside a file** (2026-11-09, #3000): moved verbatim to the lessons, *Moved from the lane (tender-fermi, 2026-11-10)*.
 
-✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
+✅ **Any file, and a new piece drafted on its card** (#3077): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
 ✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
 (kind, now including spreadsheet; working title; occasion; needed by; for; what it must
@@ -207,7 +207,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **③ Remediation in the browser (S509) and ④ ⑤ the contrast checks (S510, S511) are built.** Their summaries moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S653b, T9)*.
 
 
-✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S577)*.
+✅ **⑥ to ⑰ are built** (S512 to S576): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
 ✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks
