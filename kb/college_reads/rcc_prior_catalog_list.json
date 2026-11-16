@@ -1,8 +1,8 @@
 {
- "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call. Run 43791837041 (S663): _getCatalogs lists only the active catalogs (Moreno Valley 115, Norco 116, Riverside City 124); _getActiveCatalogById/124 returns its Title. This pass asks _getActiveCatalogById for ids 100 to 123, one load each, to find the Riverside City 2025-2026 catalog.",
+ "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call. Run 43791837041 (S663): _getCatalogs lists only the active catalogs (Moreno Valley 115, Norco 116, Riverside City 124); _getActiveCatalogById/124 returns its Title. This pass asks _getActiveCatalogById for ids 100 to 123, one load each, to find the Riverside City 2025-2026 catalog. Run 43792698831 (S663): ids 100 to 123 return [] except 115 Moreno Valley 2026-2027 and 116 Norco 2026-2027; the endpoint serves active catalogs only, so curriQunet does not publish Riverside City's 2025-2026 catalog. This pass looks for an archived 2025-2026 catalog on the college's own site.",
  "college": "Riverside City College",
  "questions": {
-  "catalog_list": "Which id between 100 and 123 _getActiveCatalogById titles Riverside City College 2025-2026, and its status."
+  "prior_view": "Where rcc.edu links its 2025-2026 catalog (an archive page or a PDF), and its address."
  },
  "keywords": [
   "2025",
@@ -14,243 +14,24 @@
  "pages": [
   {
    "answers": [
-    "catalog_list"
+    "prior_view"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/100",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
+   "url": "https://www.rcc.edu/catalog/index.html",
+   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
   },
   {
    "answers": [
-    "catalog_list"
+    "prior_view"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/101",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
+   "url": "https://www.rcc.edu/services/admissions/catalog.html",
+   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
   },
   {
    "answers": [
-    "catalog_list"
+    "prior_view"
    ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/102",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/103",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/104",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/105",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/106",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/107",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/108",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/109",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/110",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/111",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/112",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/113",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/114",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/115",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/116",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/117",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/118",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/119",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/120",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/121",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/122",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
-  },
-  {
-   "answers": [
-    "catalog_list"
-   ],
-   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/123",
-   "network_find": [
-    "\"Title\"",
-    "StatusAliasTitle"
-   ]
+   "url": "https://www.rcc.edu/academics/catalog.html",
+   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
   }
  ]
 }
