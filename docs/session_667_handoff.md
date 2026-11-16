@@ -32,7 +32,7 @@ Read this file, then `CLAUDE.md` *Decide, carry out, record* (the ask test, new 
 - **Drafts:** #3398 (Sam's Sheet 195 card 4 CVMA answer into `kb/status/exhibit.json`; Commons decisions read "We went
   with this"), #3400 (`tests/plain_words_for_sam_test.py`).
 
-**PR state at sign-off:** #3398 merged (`a522c9f8`). #3399 (Monterey Peninsula receipt) and #3400 (plain-words lint) were open drafts with CI running; gate and merge them on a green `test` if they are still open.
+**PR state at sign-off:** #3398 merged (`a522c9f8`). #3399 merged (`61c60e6b`). #3400 (plain-words lint) had CI rerunning after a merge of main; merge it on a green `test` if it is still open.
 
 ## First things, in order
 
@@ -57,6 +57,11 @@ One Opus 5.5 session works the queue: no conductor block (retired 2026-11-15), n
 them. The $40-per-college-per-run limits and the #3351 gates stand. Merge only to `main`, confirmed with `git log
 origin/main`.
 
+**Database writes go through the runner, never Execute SQL (Sam, 2026-11-16, "sounds good").** The claude.ai Execute
+SQL tool prompts Sam on every call whatever the settings, so a write (memory rows included) is a committed SQL file
+named in `kb/migrations/.apply` and applied by `supabase-migrate.yml`, which leaves a receipt and asks nothing. Use
+Execute SQL only for a read nothing committed can answer, one batched call.
+
 ## Ledger (PR, state, next)
 
 | PR | State | Next |
@@ -64,10 +69,11 @@ origin/main`.
 | #3395, #3396, #3397 | merged | none |
 | #3393 | closed | none |
 | #3398 | merged `a522c9f8` | none |
-| #3399, #3400 | drafts, CI running at sign-off | First thing 2 |
+| #3399 | merged `61c60e6b` | none |
+| #3400 | CI rerunning after a main merge (`f1b3d20b`) at sign-off | First thing 2: merge on a green `test` |
 | #3387, #3284 | drafts; keep | First thing 1 |
 | #3293 | draft; keep | harvest NEXT (5) |
-| #2894 | Sam's | none |
+| #2894 | closed unmerged (Sam's call via COBIx, 2026-11-16); its disabled task stays off | none |
 | this checkpoint | merge | none |
 | CPLBrain S666 session note | merge | none |
 
