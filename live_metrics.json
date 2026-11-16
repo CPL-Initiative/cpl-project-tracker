@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-15T06:18:55.362Z",
+  "scraped_at": "2026-11-16T06:20:11.435Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -168,14 +168,14 @@
         },
         {
           "college": "Merced College",
-          "students": 3350,
+          "students": 3353,
           "units": 10061,
-          "avgUnits": 3.0032835820895523,
+          "avgUnits": 3.0005964807634955,
           "transcriptionRate": 98,
-          "avgTranscribed": 2.942089552238806,
+          "avgTranscribed": 2.9394572025052192,
           "criteriaMetCount": 3,
           "militaryStudents": 277,
-          "nonMilitaryStudents": 3075,
+          "nonMilitaryStudents": 3078,
           "apprenticeStudents": 20,
           "savings": 10883295,
           "yearImpact": 50062867,
@@ -1772,7 +1772,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,347",
+      "value": "60,350",
       "breakdowns": [
         {
           "label": "Military",
@@ -1780,7 +1780,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "28,494"
+          "value": "28,497"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60347,
+    "Students": 60350,
     "Units": 289345.9,
     "TranscribedUnits": 85299.65,
     "Savings": 413095812.75,
     "YearImpact": 1668347111.3999999,
     "MilitaryStudents": 31960,
-    "NonMilitaryStudents": 28494,
+    "NonMilitaryStudents": 28497,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.794702305002734,
-    "TranscribedAverage": 1.413486171640678
+    "AverageUnits": 4.7944639602319805,
+    "TranscribedAverage": 1.4134159072079535
   }
 }

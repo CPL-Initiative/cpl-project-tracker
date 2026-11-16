@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-15T23:47:55Z",
+ "written_at": "2026-11-16T06:24:06Z",
  "rows": [
   {
    "key": "requirements",
@@ -280,7 +280,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-15T06:21:28+00:00",
+    "at": "2026-11-16T06:23:17+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -368,7 +368,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-14T10:50:41-08:00",
+    "at": "2026-11-12T20:24:41Z",
     "every_hours": null
    },
    "facts": {
@@ -492,7 +492,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-15T06:19:04Z",
+    "at": "2026-11-16T06:20:18Z",
     "every_hours": 24
    },
    "facts": {
@@ -505,7 +505,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-15",
+    "scanned_at": "2026-11-16",
     "procedures_on": 6
    },
    "sources": [
@@ -772,7 +772,7 @@
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-07",
+    "since": "2026-11-09",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
