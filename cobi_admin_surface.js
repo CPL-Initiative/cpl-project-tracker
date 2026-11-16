@@ -208,7 +208,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_pathways.js",
         "cpl_pathways_ccr_data.js",
         "cpl_pathways_data.js",
-        "cpl_pathways_membership_data.js"
+        "cpl_pathways_membership_data.js",
+        "sierra/sidebar.js"
       ],
       "reads": [
         "budget_funding",
