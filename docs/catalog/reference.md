@@ -22,7 +22,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [$50k / ESS 25-82 tab — lane state](../reference/lanes/ess-25-82-tab.md) | lanes | `ess-25-82-tab.md` | 2026-08-28 | 2026-08-28 |
 | [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-11-12 |
 | [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-11-14 |
-| [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-11-14 |
+| [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-11-16 |
 | [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-10-24 |
 | [College & district identity — lane state](../reference/lanes/college-district-identity.md) | lanes | `college-district-identity.md` | 2026-08-28 | 2026-11-10 |
 | [College CR evidence ('we approved it, but we have no CR') — lane state](../reference/lanes/college-cr-evidence.md) | lanes | `college-cr-evidence.md` | 2026-08-28 | 2026-08-28 |
@@ -36,7 +36,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-11-13 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
-| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-15 |
+| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-16 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-12 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
@@ -51,7 +51,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-11-07 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |
-| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-15 |
+| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-16 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-11-10 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |

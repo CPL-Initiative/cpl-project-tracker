@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-16T12:35:00Z",
-  "session": 665,
-  "moniker": "SkyThrush",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-16T15:35:55Z",
+  "session": 666,
+  "moniker": "SkyDipper",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_666_handoff.md",
+  "handoff": "docs/session_667_handoff.md",
   "next_step": {
     "title": "Coastline's objectives reread, then Golden West",
-    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, whose three outcome rows that had filed a heading as an outcome are now corrected. Physics for Transfer's 2025-2026 record waits on its rescore (draft #3393): the statewide Cal-GETC units likely sum past 60 and hold."
+    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Monterey Peninsula's three reloaded records reach CPL Pathways with the next display build, once their pull request merges."
   },
   "calls": [
     {
@@ -337,6 +337,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-16T15:20:00Z",
+      "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
+    },
+    {
+      "at": "2026-11-16T15:00:00Z",
+      "text": "Riverside City's 2024-2025 catalog was read for Business Administration and Communication Studies. That year already printed the 2.0 Business Administration, and Communication Studies had no page, so both programs keep their current records; the originals are in older PDF catalogs."
+    },
+    {
+      "at": "2026-11-16T14:30:00Z",
+      "text": "Physics for Transfer at Riverside City keeps its current record. Its 2025-2026 read, rescored at no cost, adds the 28 major units and 34 Cal-GETC units to 62, past the degree's 60, and the catalog does not say the two may overlap."
+    },
     {
       "at": "2026-11-16T10:20:00Z",
       "text": "Las Positas' 505 course outcome lists no longer begin with the sentence that introduces them: the reader now knows that sentence, and the stored lists were corrected in place."
