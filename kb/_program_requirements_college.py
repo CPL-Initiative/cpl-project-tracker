@@ -1207,8 +1207,9 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
 #
 # The lookup reads the pages the capture already read (no page is loaded for it, no model call is made),
 # after every closed-list program has its page, and files its answer beside the program's method, which
-# stays no_closed_list: the record carries no source and no text, so nothing extracts it and the census,
-# the scorer and the status builders count the program as before (slice B changes that).
+# stays no_closed_list. Slice B's first part (S668, ncl_source below) files a found page's text and the codes it
+# names beside the answer, so the extraction can read it; the census and the status builders count by method and
+# count the program as before.
 #
 # A program with no list has no courses to break a tie, so nothing is guessed. A page matches when it is a
 # program page (no landing, department, index or archived page), prints the program's award (an award the
@@ -1854,6 +1855,146 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_
             "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
             "other_programs": others, "yields": yields, "yield_unjudged": held.count("unjudged"),
             "yield_refused_passing": held.count("refused_passing")}
+
+
+# ── a found page with no closed list, read for its requirements (S668; #3299 slice B, its first part) ───────
+# Sam's go on slice B (Sheet 197 card 4, 14:38Z 2026-11-14) and d-named-course-minimum-one-s667: a program with no
+# closed list whose catalog page the lookup found (ncl_lookup, result found) has its requirements read from that page,
+# so the 1,699 Active programs the state's Program Course File lists no course for stop being invisible. The capture
+# files the found page's text window beside the program's answer, as source_record files a closed-list program's,
+# with ncl_source true; method stays no_closed_list, so every count that reads methods reads as before.
+#
+# codes_named: the course codes the page prints, read by the capture's own coarse net (page_codes: the codes each page
+# read already carries, pg["codes"]), kept only where the code's subject is one the state's file lists at this college
+# (code_subject over every closed list, printed forms included). The net is coarse on purpose and reads "SB 1440" (the
+# transfer-degree law an ADT page cites), "AB 705" or "PLO 1" as codes; a page naming none of the college's subjects
+# names no course. A page naming at least one course is extracted (d-named-course-minimum-one-s667: 9 of 19,137 filed
+# records name exactly one, Victor Valley CJ 80 among them, and are real); one naming none stays found and is listed
+# ncl_found_no_course, since a program whose courses sit in a tab or a PDF is still listed.
+#
+# The net's self-recall (p-new-matcher-needs-self-recall-test-s652), measured on the answers already held: over the
+# committed records (no committed file holds page text, so the input is each record's own codes as the extraction
+# transcribed them from its page) the net reads 244,744 of the 260,513 listed codes the capture found on those pages
+# (93.9%), and 1,402 of its misses are codes the transcription printed and the net did not read (BUS. 401, AC/R 100 C).
+# tests/program_requirements_ncl_extract_test.py holds the floor. Each capture measures the same on its own pages
+# (ncl_named_self_test) and files it in its account.
+#
+# The extraction sends such a page only where NCL_EXTRACT is on: the Edge Function refuses an empty closed list before
+# its version 13 (no_state_list), so the switch stays off until that version is deployed (cpl-chat-deploy.yml).
+NCL_EXTRACT_ENV = "NCL_EXTRACT"   # "1" (or on, true, yes) sends a found no-list page to the extraction
+from _program_requirements_score import NO_STATE_LIST  # noqa: E402  the basis of a check with no list to judge it
+SUBJECT = re.compile(r"([A-Z&/]+?)(?:C(?=\d{4}(?!\d)))?\d")
+
+
+def ncl_extract_on() -> bool:
+    """Whether the extraction sends a found no-closed-list page (off unless NCL_EXTRACT says yes)."""
+    return os.environ.get(NCL_EXTRACT_ENV, "0").strip().lower() in ("1", "on", "true", "yes")
+
+
+def code_subject(code: str | None) -> str | None:
+    """A code's subject in the pilot's normal form (P.norm_code): its letters before the number, with a C-ID
+    course number's C set aside (STATC1000 is STAT's). None for a code with no number after letters."""
+    m = SUBJECT.match(P.norm_code(code))
+    return m.group(1) if m else None
+
+
+def college_subjects(programs: list[dict]) -> set[str]:
+    """Every subject the state's file lists at the college: each closed-list course's code and printed forms."""
+    out = set()
+    for p in programs:
+        for c in p.get("closed_list") or []:
+            for f in [c.get("code") or ""] + P.printed_forms(c):
+                s = code_subject(f)
+                if s:
+                    out.add(s)
+    return out
+
+
+def ncl_codes_named(pg: dict, subjects: set[str]) -> list[str]:
+    """The course codes a page prints (its coarse net, pg["codes"]) under one of the college's subjects."""
+    return sorted(c for c in pg.get("codes") or () if code_subject(c) in subjects)
+
+
+def ncl_source(college: str, program: dict, reg: dict, pg: dict, subjects: set[str]) -> dict:
+    """A no-closed-list program's source read from its found page: source_record's shape, method no_closed_list,
+    coverage 0.0 and codes_found [] (no listed course to find), with ncl_source true, codes_named, and the page's
+    text window around the codes named, chosen as a closed-list program's is (P.best_text over the codes named)."""
+    rec = source_record(college, program, reg, None, "no_closed_list")
+    got = pg.get("got") or {}
+    named = ncl_codes_named(pg, subjects)
+    courses = [{"code": c} for c in named]
+    if courses:
+        fb = P.find_codes(got.get("body") or "", courses)
+        fc = P.find_codes(got.get("content") or "", courses)
+        text, found, field = P.best_text(got, fb, fc, courses)
+    else:
+        text, found, field = got.get("body") or pg.get("body") or "", {}, "innerText"
+    rec.update(source={"url": pg.get("url"), "title": got.get("title") or pg.get("title"),
+                       "h1": got.get("h1") or pg.get("h1"), "text_from": field, "label": None},
+               ncl_source=True, codes_named=named,
+               text=P.with_outcome_tabs(P.text_window(text, found), got.get("outcomeTabs")))
+    if got.get("course_units"):
+        rec["course_units"] = got["course_units"]
+    if got.get("course_hours"):
+        rec["course_hours"] = got["course_hours"]
+    return rec
+
+
+def ncl_extractable(src: dict) -> bool:
+    """A found no-closed-list page the extraction reads: it names at least one course and carries its text."""
+    return bool(src.get("ncl_source") and src.get("codes_named") and src.get("text"))
+
+
+def extractable(src: dict, bar: float) -> bool:
+    """A source the extraction sends: a closed-list window at the bar, or, with NCL_EXTRACT on, a found
+    no-closed-list page naming a course (ncl_extractable). would_extract and extract read this one rule."""
+    if src.get("ncl_source"):
+        return ncl_extract_on() and ncl_extractable(src)
+    return (src.get("coverage") or 0) >= bar and bool(src.get("text"))
+
+
+def ncl_read_found(college: str, recs: list[dict], programs: list[dict], pages: list[dict], reg: dict,
+                   out_dir: str | None = None) -> dict:
+    """capture()'s step after the lookup: each no-closed-list record whose answer is found, on a page the capture
+    read, becomes its ncl_source (in place in recs, its answer kept as catalog_lookup, its file rewritten under
+    out_dir/sources when out_dir is given). Returns the named-course net's self-test (ncl_named_self_test)."""
+    subjects = college_subjects(programs)
+    by_url = {pg.get("url"): pg for pg in pages}
+    by_cn = {p["control_number"]: p for p in programs}
+    for i, rec in enumerate(recs):
+        ans = rec.get("catalog_lookup") or {}
+        pg = by_url.get((ans.get("page") or {}).get("url"))
+        if rec["method"] != "no_closed_list" or ans.get("result") != "found" or pg is None \
+                or rec["control_number"] not in by_cn:
+            continue
+        recs[i] = dict(ncl_source(college, by_cn[rec["control_number"]], reg, pg, subjects), catalog_lookup=ans)
+        if out_dir:
+            _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
+        n = len(recs[i]["codes_named"])
+        print("%-6s ncl_source   names %d course%s %s" % (rec["control_number"], n, "" if n == 1 else "s",
+                                                         recs[i]["source"]["url"]), flush=True)
+    return ncl_named_self_test(recs, pages, programs, subjects)
+
+
+def ncl_named_self_test(recs: list[dict], pages: list[dict], programs: list[dict], subjects: set[str]) -> dict:
+    """The named-course net's self-recall on the capture's own pages: over every closed-list program read from a page
+    the capture holds, how many of the listed courses its page names (codes_found) the net reads under the college's
+    subjects (ncl_codes_named), a course counted by any of its printed forms (net_hits)."""
+    by_url = {pg.get("url"): pg for pg in pages}
+    by_cn = {p["control_number"]: p for p in programs}
+    n = listed = hits = 0
+    for r in recs:
+        pg = by_url.get((r.get("source") or {}).get("url"))
+        prog = by_cn.get(r["control_number"])
+        if r.get("ncl_source") or pg is None or not prog or not r.get("codes_found"):
+            continue
+        found = set(r["codes_found"])
+        courses = [c for c in prog["closed_list"] if P.norm_code(c.get("code")) in found]
+        n += 1
+        listed += len(courses)
+        hits += net_hits(courses, set(ncl_codes_named(pg, subjects)))
+    return {"programs": n, "listed_found": listed, "named": hits,
+            "recall": round(hits / listed, 3) if listed else None}
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
@@ -5445,6 +5586,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                                                            (ans.get("page") or {}).get("url") or ans.get("basis")
                                                            or ans.get("why") or ""), flush=True)
             report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"))
+            # A found page is read for the requirements it prints (ncl_source, S668; #3299 slice B): its text window
+            # and the codes it names file beside the answer, and would_extract lists it.
+            report["catalog_lookup"]["named_self_test"] = ncl_read_found(college, recs, programs, pages, reg, out_dir)
     finally:
         browser.close()
         pw.stop()
@@ -5517,7 +5661,9 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
             urls_used.setdefault(r["source"]["url"], []).append(r["control_number"])
     report.update(
         seconds=round(time.time() - t0, 1),
-        found=sum(1 for r in recs if r.get("source")),
+        # A found no-closed-list page (ncl_source, S668) is counted in catalog_lookup, never here: found counts the
+        # closed-list programs given a page, as every status builder reads it.
+        found=sum(1 for r in recs if r.get("source") and not r.get("ncl_source")),
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
@@ -5836,8 +5982,10 @@ def unchanged(prev: dict | None, src: dict) -> bool:
     (visible or hidden), naming the same courses, so the filed record still
     stands and the model need not be asked again."""
     a, b = ((prev or {}).get("source") or {}), (src.get("source") or {})
+    # A found no-closed-list page (S668) names its courses in codes_named; a closed-list source has none on either side.
     return bool(prev) and a.get("url") == b.get("url") and a.get("text_from") == b.get("text_from") \
-        and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
+        and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found") \
+        and prev.get("codes_named") == src.get("codes_named")
 
 
 def held(path: str, prev: dict | None, src: dict) -> dict | None:
@@ -5891,7 +6039,21 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
     from _program_requirements_extract import MIN_COVERAGE as bar
     out, kept, moved = [], 0, 0
     holds: dict[str, list] = {"held_worse_window": [], "held_no_gain": [], "held_opens_on_list": []}
+    # A found no-closed-list page (ncl_source, S668; #3299 slice B) is listed under its own keys: ncl_found when it
+    # names a course (priced by the same gate when NCL_EXTRACT sends it), ncl_found_no_course when it names none.
+    ncl, ncl_none, ncl_kept = [], [], 0
     for r in recs:
+        if r.get("ncl_source"):
+            cn = r["control_number"]
+            entry = {"control_number": cn, "title": r.get("title"), "award": r.get("award"),
+                     "url": (r.get("source") or {}).get("url"), "codes_named": len(r.get("codes_named") or [])}
+            if not ncl_extractable(r):
+                ncl_none.append(entry)
+            elif filed_from(os.path.join(folder, "records", cn + ".json"), r) and unchanged(prev.get(cn), r):
+                ncl_kept += 1
+            else:
+                ncl.append(entry)
+            continue
         if (r.get("coverage") or 0) < bar or not r.get("text"):
             continue
         cn = r["control_number"]
@@ -5916,7 +6078,10 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
             # The force a capture is run with, where the step passes it (FORCE): forced numbers leave
             # refused_passing for forced_unbound; the filing adds the extraction's own list (file_run).
             "refused_passing": refused_passing(folder, recs, force_named(os.environ.get("FORCE"))),
-            "forced_unbound": forced_unbound(folder, recs, force_named(os.environ.get("FORCE")))}
+            "forced_unbound": forced_unbound(folder, recs, force_named(os.environ.get("FORCE"))),
+            # sent: whether the extraction reads them this run (NCL_EXTRACT); the price counts them only then.
+            "ncl_found": {"programs": len(ncl), "kept": ncl_kept, "sent": ncl_extract_on(), "list": ncl},
+            "ncl_found_no_course": {"programs": len(ncl_none), "list": ncl_none}}
 
 
 def _filed(path: str) -> dict | None:
@@ -6332,7 +6497,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
-        if (src.get("coverage") or 0) >= X.MIN_COVERAGE and src.get("text"):
+        if extractable(src, X.MIN_COVERAGE):
             sources.append(src)
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
@@ -6586,6 +6751,9 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": priced(got), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if src.get("ncl_source"):
+            # Read from a found page with no closed list (S668): the load holds it until the tab shows it (load_rows).
+            row[NO_STATE_LIST] = True
         if src.get("catalog_year"):
             # The catalog the read came from rides with the record, so a later read that keeps it without
             # reading it again keeps its year too (S647; load_rows reads a record's own year first).
@@ -7098,13 +7266,17 @@ def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | N
     programs whose call failed and kept their filed record (S647)."""
     passed = [r for r in records if r.get("score") and r["score"].get("pass")]
     def fails(check):
-        return sum(1 for r in records if r.get("score") and not r["score"].get(check, {}).get("pass", True))
+        # A check a record with no closed list cannot take files pass None (basis no_state_list, S668): no failure.
+        return sum(1 for r in records if r.get("score") and r["score"].get(check, {}).get("pass", True) is False)
     total = sum(r.get("cost_usd") or 0 for r in records)
     acct = acct or {"calls": None, "failed": []}
     return {"college": capture_report.get("college"), "programs": capture_report.get("programs"),
             "with_closed_list": capture_report.get("with_closed_list"), "found": capture_report.get("found"),
             "extracted": len(records), "errors": sum(1 for r in records if r.get("error")),
             "passed_machine_checks": len(passed),
+            # Records read from a found page with no closed list (S668), named only where there are any.
+            **({NO_STATE_LIST: sum(1 for r in records if r.get(NO_STATE_LIST))}
+               if any(r.get(NO_STATE_LIST) for r in records) else {}),
             "failed": {c: fails(c) for c in ("coverage", "invented", "arithmetic", "repeated", "outcomes")},
             "cost_usd_run": cost_usd_run, "cost_usd_filed": round(total, 2),
             "cost_per_program": round(total / len(records), 4) if records else None,
@@ -7267,6 +7439,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
                      listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or ""))
         if src.get("catalog_lookup"):
             entry["catalog_lookup"] = src["catalog_lookup"]   # a no-closed-list program's answer (S652)
+        if src.get("ncl_source"):
+            entry.update(ncl_source=True, codes_named=src.get("codes_named") or [])   # its found page, read (S668)
         index.append(entry)
     # A reconcile's kept record with no sources file in this run keeps its earlier entry too (COBIx, #3363).
     have = {e.get("control_number") for e in index}
@@ -7360,6 +7534,10 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
         why = None
         if rec.get("college") != college:
             why = "a record of %s" % rec.get("college")
+        elif rec.get(NO_STATE_LIST) or ((rec.get("score") or {}).get("coverage") or {}).get("basis") == NO_STATE_LIST:
+            # Read from a found page with no closed list (S668; #3299 slice B): a later part builds the tab's display
+            # and the headline's second basis before such a record loads.
+            why = "no state course list: held until the tab shows it"
         elif key in refused:
             why = "read from a tab the rule refuses (%s: %s)" % (refused[key].get("tab"), refused[key].get("reason"))
         elif key in failing_held:

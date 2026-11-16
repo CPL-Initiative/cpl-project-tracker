@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1014,
+  "file_datasets": 1015,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2580
+     "line": 2721
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2536
+     "line": 2677
     }
    ],
    "main_committers": []
@@ -666,7 +666,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 133
+     "line": 138
     },
     {
      "id": "script:kb/_xai_smoke.py",
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2473
+     "line": 2614
     }
    ],
    "main_committers": []
@@ -3013,7 +3013,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2066
+     "line": 2207
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -8664,14 +8664,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6669
+     "line": 6837
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 389
     }
    ],
    "served": false,
@@ -8684,14 +8684,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6745
+     "line": 6913
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 394
+     "line": 403
     }
    ],
    "served": false,
@@ -17553,7 +17553,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3424
+     "line": 3565
     }
    ],
    "served": true,
@@ -17566,7 +17566,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7346
+     "line": 7520
     }
    ],
    "served": true,
@@ -21416,14 +21416,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7080
+     "line": 7248
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 383
     }
    ],
    "served": false,
@@ -21436,7 +21436,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6110
+     "line": 6275
     }
    ],
    "served": false,
@@ -22060,14 +22060,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6707
+     "line": 6875
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 397
     }
    ],
    "served": false,
@@ -26701,6 +26701,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_ncl_extract_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_pdf_numbers_after_test.py": {
    "consumers": [
     {
@@ -29668,7 +29681,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7320
+     "line": 7494
     }
    ],
    "main_committers": []
@@ -29680,7 +29693,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7429
+     "line": 7607
     }
    ],
    "main_committers": []
@@ -34775,6 +34788,7 @@
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
+    "tests/program_requirements_ncl_extract_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",

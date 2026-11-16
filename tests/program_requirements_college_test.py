@@ -5255,8 +5255,14 @@ check(sk_code == 0 and st["searches"] and st["tested"] == 11 and st["hits"] == 1
 check(lk["05809"].get("result") == "found"
       and lk["05809"]["page"]["url"] == SK + "programs/accounting-as.php" and lk["05809"]["page"]["award"] == "named",
       "Skyline's Accounting A.S. (05809), no closed list, is found on its own page by title and award: %r" % lk["05809"])
-check(all(sk[cn]["method"] == "no_closed_list" and sk[cn]["source"] is None and sk[cn]["text"] == "" for cn in NCL_CNS),
-      "a looked-up program keeps method no_closed_list, no source and no text: nothing extracts it, the census counts it as before")
+SK_FOUND = sorted(cn for cn in NCL_CNS if lk[cn].get("result") == "found")
+check(all(sk[cn]["method"] == "no_closed_list" for cn in NCL_CNS)
+      and all(sk[cn]["source"] is None and sk[cn]["text"] == "" and not sk[cn].get("ncl_source")
+              for cn in NCL_CNS if cn not in SK_FOUND)
+      and all(sk[cn].get("ncl_source") is True and sk[cn]["source"]["url"] == lk[cn]["page"]["url"] and sk[cn]["text"]
+              and sk[cn]["coverage"] == 0.0 and sk[cn]["codes_found"] == [] for cn in SK_FOUND),
+      "a looked-up program keeps method no_closed_list, so the census counts it as before; one not found keeps no "
+      "source and no text, and a found one files its page's text beside its answer (ncl_source, S668 slice B)")
 check(sk["90001"]["source"]["url"] == SK + "programs/accounting-ca.php" and sk["90003"]["method"] == "sitemap_page",
       "the closed-list programs take their pages first")
 check(lk["90002"] == {"result": "not_matched", "why": "no page read names it by title and award"},
@@ -5289,8 +5295,13 @@ check(len(found_pages) == len(set(found_pages)), "one page gives found to one pr
 check(not any(r["control_number"] in NCL_CNS for r in (sk_rep["would_extract"].get("list") or []))
       and sk_rep["catalog_lookup"]["found"] == 4 and sk_rep["catalog_lookup"]["programs"] == len(NCL_CNS)
       and sk_rep["by_method"].get("no_closed_list") == len(NCL_CNS),
-      "the account counts the lookup's pages for a price, and nothing found extracts in this slice: %r"
+      "the account counts the lookup's pages for a price, and no found page joins the closed-list list: %r"
       % {k: v for k, v in sk_rep["catalog_lookup"].items() if k != "found_programs"})
+check(sk_rep["would_extract"]["ncl_found"]["programs"] == 0
+      and sorted(x["control_number"] for x in sk_rep["would_extract"]["ncl_found_no_course"]["list"]) == SK_FOUND
+      and sk_rep["catalog_lookup"]["named_self_test"]["programs"] > 0,
+      "the fixture's found pages print no course code, so each is listed ncl_found_no_course and none is sent; the "
+      "account carries the named-course net's self-test (S668): %r" % sk_rep["would_extract"]["ncl_found_no_course"])
 check(next(e for e in sk_filed if e["control_number"] == "05809")["catalog_lookup"]["result"] == "found"
       and "catalog_lookup" not in next(e for e in sk_filed if e["control_number"] == "90001"),
       "the filed sources.json carries a no-closed-list program's answer, and nothing new on a closed-list entry")
@@ -5310,10 +5321,21 @@ check(acct_found["05809"]["h1"] == "Accounting" and acct_found["05809"]["awards"
 off_code, off_src, off_rep, off_filed = run_sk_capture("0")
 check(off_code == 0 and "catalog_lookup" not in off_rep and not any("catalog_lookup" in t for t in off_src.values()),
       "NCL_CATALOG_LOOKUP=0 runs the capture as before S652")
+
+
+def _closed_only(rep):
+    """The account without what the lookup adds (S668): would_extract's ncl_ keys, the found pages' fingerprints."""
+    out = {k: v for k, v in rep.items() if k not in ("catalog_lookup", "seconds", "started")}
+    out["would_extract"] = {k: v for k, v in out["would_extract"].items() if not k.startswith("ncl_")}
+    out["fingerprints"] = {k: v for k, v in out["fingerprints"].items() if k not in NCL_CNS}
+    return out
+
+
 check(all(off_src[p["control_number"]] == sk_src[p["control_number"]] for p in SK_PROGS if p["closed_list"])
-      and {k: v for k, v in sk_rep.items() if k not in ("catalog_lookup", "seconds", "started")}
-      == {k: v for k, v in off_rep.items() if k not in ("seconds", "started")},
-      "the lookup leaves every closed-list program's source and the rest of the account byte for byte as before")
+      and _closed_only(sk_rep) == _closed_only(off_rep)
+      and set(sk_rep["fingerprints"]) - set(off_rep["fingerprints"]) == set(SK_FOUND),
+      "the lookup leaves every closed-list program's source and the rest of the account byte for byte as before; "
+      "only the found pages' fingerprints and would_extract's ncl_ keys are new")
 # A college whose own closed-list programs the matcher does not find (their pages print another heading) is not
 # looked up: its programs file not_searched with the reason, never not_listed or not_matched.
 gate_pages = {("programs/p%d.php" % i if v[1] else k): ((v[0] + " Overview Studies Extra") if v[1] else v[0], v[1])

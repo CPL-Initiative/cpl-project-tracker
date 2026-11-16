@@ -140,6 +140,8 @@ from _program_requirements_pilot import norm_code  # noqa: E402
 import _course_id_route as CI  # noqa: E402
 
 TOL = 0.01
+# The basis a check files when the program has no closed list to judge it against (S668; #3299 slice B).
+NO_STATE_LIST = "no_state_list"
 
 
 def _num(v) -> float | None:
@@ -1089,6 +1091,26 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
     # no block passed on "appears only in the course index" (S362).
     none_placed = bool(n) and len(missing) == n
     cov_ok = not unexplained and not none_placed
+    if not listed:
+        # A record read from a found page whose program the state's file lists no course for (S668; #3299 slice B):
+        # coverage and invented have no list to judge against and file pass None with the basis, so passes_live and
+        # the tab's rule never count it passing and places_none (listed 0) never drops it. The arithmetic, repeats and
+        # outcomes are checked as for any record; pass_without_list says whether those three pass.
+        return {
+            "measure": measure(record),
+            "coverage": {"placed": 0, "listed": 0, "share": None, "missing": [], "unexplained": [],
+                         "none_placed": False, "pass": None, "basis": NO_STATE_LIST},
+            "invented": {"count": len(invented), "codes": invented, "flagged": flagged, "pass": None,
+                         "basis": NO_STATE_LIST},
+            "arithmetic": arith,
+            "repeated": {"codes": rep_codes, "pass": not rep_codes},
+            "outcomes": outs,
+            "careers": careers_check(record, text),
+            "degree": degree_reading(record, award),
+            "pass": None,
+            "basis": NO_STATE_LIST,
+            "pass_without_list": bool(arith["pass"] and not rep_codes and outs["pass"]),
+        }
     return {
         "measure": measure(record),
         "coverage": {"placed": n - len(missing), "listed": n,
