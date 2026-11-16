@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-16T06:24:06Z",
+ "written_at": "2026-11-16T15:22:29Z",
  "rows": [
   {
    "key": "requirements",
@@ -368,7 +368,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41Z",
+    "at": "2026-11-14T19:13:45-08:00",
     "every_hours": null
    },
    "facts": {
@@ -566,9 +566,9 @@
    ],
    "pair": [
     {
-     "n": 42376,
+     "n": 42611,
      "of": null,
-     "words": "outcomes read from 11,599 courses at 16 colleges",
+     "words": "outcomes read from 11,844 courses at 16 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -576,8 +576,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 42376,
-    "courses": 11599,
+    "outcomes": 42611,
+    "courses": 11844,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -600,7 +600,7 @@
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-15T04:04:14Z",
+    "at": "2026-11-16T07:39:59Z",
     "every_hours": null
    },
    "sources": [
@@ -766,6 +766,15 @@
    }
   ],
   "stalled": [
+   {
+    "ref": "exhibit",
+    "title": "Common Exhibit Reference",
+    "kind": "stopped",
+    "what": "the saving run and the fold",
+    "since": "2026-11-14T20:24:27Z",
+    "every_hours": 24,
+    "open": "#exhibits"
+   },
    {
     "ref": "course",
     "title": "Common Course Reference",
@@ -980,74 +989,6 @@
  "docket": [],
  "batches": [
   {
-   "kind": "another-look",
-   "n": 6,
-   "of": 6,
-   "open": "#exhibits/another-look/batch",
-   "title": "Another look at 6 exhibit titles",
-   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-   "stop": "The batch ends when its cards are decided.",
-   "rules": [
-    "ase",
-    "fold"
-   ],
-   "cards": [
-    {
-     "id": "778524bd1d55",
-     "current": "Engine Performance Specialist (ASE L1) Advanced",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit Course for AUTO L1"
-     ]
-    },
-    {
-     "id": "fbf7c33bbc0f",
-     "current": "Apprenticeship Engines Lab",
-     "keys": [
-      "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1"
-     ]
-    },
-    {
-     "id": "f182e9b10536",
-     "current": "Apprenticeship Engines Lab",
-     "keys": [
-      "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1L"
-     ]
-    },
-    {
-     "id": "c8a8ca9f4663",
-     "current": "Introduction to Automotive Service",
-     "keys": [
-      "_UNCLASSIFIED::Industry Training Evidence for AUTO INT"
-     ]
-    },
-    {
-     "id": "0e53f48178b2",
-     "current": "Introduction to Automotive Service",
-     "keys": [
-      "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
-     ]
-    },
-    {
-     "id": "6abb08f110f3",
-     "current": "Personal Trainer",
-     "keys": [
-      "_UNCLASSIFIED::Industry Training Evidence for KIN 6"
-     ]
-    }
-   ],
-   "at": "2026-11-14T00:01:43Z"
-  },
-  {
-   "kind": "decision",
-   "project": "exhibit",
-   "n": 1,
-   "title": "Three saved issuer rows read alifornia Veterinary Medical Association",
-   "teaches": "A person saved three rows on July 9; two drop the C of California and one sits on Water Treatment Facilities.",
-   "open": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
    "kind": "job",
    "ref": "course",
    "n": 4,
@@ -1059,61 +1000,13 @@
   }
  ],
  "next_batch": {
-  "kind": "another-look",
-  "n": 6,
-  "of": 6,
-  "open": "#exhibits/another-look/batch",
-  "title": "Another look at 6 exhibit titles",
-  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
-  "stop": "The batch ends when its cards are decided.",
-  "rules": [
-   "ase",
-   "fold"
-  ],
-  "cards": [
-   {
-    "id": "778524bd1d55",
-    "current": "Engine Performance Specialist (ASE L1) Advanced",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit Course for AUTO L1"
-    ]
-   },
-   {
-    "id": "fbf7c33bbc0f",
-    "current": "Apprenticeship Engines Lab",
-    "keys": [
-     "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1"
-    ]
-   },
-   {
-    "id": "f182e9b10536",
-    "current": "Apprenticeship Engines Lab",
-    "keys": [
-     "_UNCLASSIFIED::Apprenticeship Training Evidence for APAG 1L"
-    ]
-   },
-   {
-    "id": "c8a8ca9f4663",
-    "current": "Introduction to Automotive Service",
-    "keys": [
-     "_UNCLASSIFIED::Industry Training Evidence for AUTO INT"
-    ]
-   },
-   {
-    "id": "0e53f48178b2",
-    "current": "Introduction to Automotive Service",
-    "keys": [
-     "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
-    ]
-   },
-   {
-    "id": "6abb08f110f3",
-    "current": "Personal Trainer",
-    "keys": [
-     "_UNCLASSIFIED::Industry Training Evidence for KIN 6"
-    ]
-   }
-  ],
-  "at": "2026-11-14T00:01:43Z"
+  "kind": "job",
+  "ref": "course",
+  "n": 4,
+  "title": "Common Course Reference",
+  "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
+  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
+  "open": "#coci-lookup/list/doubt",
+  "reason": "unsure"
  }
 }
