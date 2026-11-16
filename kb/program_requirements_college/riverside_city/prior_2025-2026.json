@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 1,
  "with_closed_list": 1,
- "started": "2026-11-16T11:59:14Z",
+ "started": "2026-11-16T13:58:01Z",
  "prior": {
   "start": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130",
   "catalog_year": "2025-2026",
@@ -618,7 +618,7 @@
  "listing_failed": 0,
  "banner_h1": null,
  "loads": 254,
- "seconds": 1176.4,
+ "seconds": 1164.3,
  "found": 1,
  "by_method": {
   "sitemap_page": 1
@@ -634,21 +634,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
-  "kept": 0,
+  "kept": 1,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "32745",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -661,9 +650,12 @@
    "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838"
   }
  },
- "run": "43862104502",
- "filed": [
-  "32745"
- ],
- "kept": []
+ "run": "43880453260",
+ "filed": [],
+ "kept": [
+  {
+   "control_number": "32745",
+   "why": "no record read from 2025-2026 (not read by this run)"
+  }
+ ]
 }
