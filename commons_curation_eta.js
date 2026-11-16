@@ -161,7 +161,8 @@
     var conf = Math.round(w.confirmed * w.days);
     if (w.net <= 0) return "no net fall (" + fmt(Math.round(w.net * w.days)) + " in " + w.days + " days" + (conf ? "; " + fmt(conf) + " confirmed by a person moved none of it" : "") + ")";
     return fmt(Math.round(w.net * w.days)) + " fewer in " + w.days + " days, " + fmt(Math.round(w.people * w.days)) + " of them by people" +
-      (w.fell <= 2 ? "; it fell on " + (w.fell === 1 ? "one day" : "two days") + " of " + w.days + ", so the pace rests on one step" : "");
+      (w.fell === 0 ? "; it fell only across a day the series is missing, so the pace rests on one step" :
+        w.fell <= 2 ? "; it fell on " + (w.fell === 1 ? "one day" : "two days") + " of " + w.days + ", so the pace rests on " + (w.fell === 1 ? "one step" : "two steps") : "");
   }
 
   function draw(root, B, S) {
