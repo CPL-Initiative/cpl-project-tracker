@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-16T22:00:55.835Z",
+  "scraped_at": "2026-11-16T22:53:48.948Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -48,14 +48,14 @@
         },
         {
           "college": "West Los Angeles College",
-          "students": 792,
+          "students": 793,
           "units": 9014,
-          "avgUnits": 11.381313131313131,
+          "avgUnits": 11.366960907944515,
           "transcriptionRate": 85.5,
-          "avgTranscribed": 9.734848484848484,
+          "avgTranscribed": 9.722572509457756,
           "criteriaMetCount": 5,
           "militaryStudents": 157,
-          "nonMilitaryStudents": 638,
+          "nonMilitaryStudents": 639,
           "apprenticeStudents": 0,
           "savings": 9365400,
           "yearImpact": 43901476,
@@ -428,13 +428,13 @@
         },
         {
           "college": "Grossmont College",
-          "students": 885,
+          "students": 895,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 885,
+          "militaryStudents": 895,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 0,
@@ -1058,14 +1058,14 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 245,
+          "students": 246,
           "units": 105,
-          "avgUnits": 0.42857142857142855,
+          "avgUnits": 0.4268292682926829,
           "transcriptionRate": 8.6,
-          "avgTranscribed": 0.036734693877551024,
+          "avgTranscribed": 0.036585365853658534,
           "criteriaMetCount": 0,
           "militaryStudents": 231,
-          "nonMilitaryStudents": 16,
+          "nonMilitaryStudents": 17,
           "apprenticeStudents": 4,
           "savings": 181650,
           "yearImpact": 637035,
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,587",
+      "value": "60,599",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "32,195"
+          "value": "32,205"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,499"
+          "value": "28,501"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60587,
+    "Students": 60599,
     "Units": 289502.9,
     "TranscribedUnits": 85308.65,
     "Savings": 413359937.75,
     "YearImpact": 1669277430.3999999,
-    "MilitaryStudents": 32195,
-    "NonMilitaryStudents": 28499,
+    "MilitaryStudents": 32205,
+    "NonMilitaryStudents": 28501,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.778300625546735,
-    "TranscribedAverage": 1.408035552181161
+    "AverageUnits": 4.7773544117889735,
+    "TranscribedAverage": 1.4077567286588886
   }
 }
