@@ -56,6 +56,7 @@ run "CDC data dictionary"      "python3 kb/_build_cdc_sharing.py --check"
 # A stored credential title is resolved at read time through the applied renames (S641): the browser reads
 # kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
 run "credential title moves"    "python3 kb/credential_aliases.py --check"
+run "session spend (handoffs)" "python3 kb/_build_session_spend.py --check"
 run "credential title resolver, one copy" "python3 tests/credential_title_resolver_single_source_test.py >/dev/null"
 # ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
 # is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml

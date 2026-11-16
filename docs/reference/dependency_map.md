@@ -897,6 +897,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/mid_outcomes_compare_<date>.json` | scripts: `kb/_reclustering_s648_dryrun.py` | — |
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
 | `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
+| `kb/status/session_spend.json` | scripts: `kb/_build_session_spend.py` | — |
 | `kb/status/subjects.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
@@ -1055,6 +1056,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/supabase_migrate.py` | workflows: `supabase-migrate.yml` | — |
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
 | `scripts/tab_review_sheet/fs/snapshot.json` | modules: `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` | — |
+| `session_*_handoff.md` | scripts: `kb/_build_session_spend.py` | — |
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/art/manifest.json` | tabs: `first-light` | — |
@@ -1263,6 +1265,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/run.js` | workflows: `js-tests.yml` | — |
 | `tests/second_reader_test.py` | workflows: `js-tests.yml` | — |
 | `tests/service_key_environment_test.py` | workflows: `js-tests.yml` | — |
+| `tests/session_spend_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/sheet181_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/standards_2_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
@@ -1547,5 +1550,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1007 file
-datasets · 195 external services · 603 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1010 file
+datasets · 195 external services · 604 consumers · 72 workflows · 41 tabs.

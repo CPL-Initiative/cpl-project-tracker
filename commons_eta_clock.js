@@ -39,8 +39,9 @@
   var LISTED = true;   // live (Sam, S661): the band tops College Data Collection, its card opens the full clock in the side panel
   var PANE_KEY = "clock";
   var FILES = { pr: "kb/status/program-requirements.json", refs: "kb/status/commons.json", integ: "kb/status/cdc_integrations.json",
-    skills: "kb/reference/industry_credential_skills.json" };
-  var ST = { pr: null, refs: null, integ: null, skills: null };
+    skills: "kb/reference/industry_credential_skills.json",
+    billing: "kb/reference/model_spend_daily.json", sessions: "kb/status/session_spend.json" };
+  var ST = { pr: null, refs: null, integ: null, skills: null, billing: null, sessions: null };
   var PLAN_URL = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6808952144";
   /* The College Collections Plan, the plan drawn as one page in the CPL Library (Sam, S661). It opens in a new tab:
      it is a page of its own, wider than the side panel. */
@@ -158,16 +159,17 @@
       note: "No per-college remaining work is recorded, so this lever does not move a collection date." }];
   var START_OPTIONS = ["now", "2026-12-01", "2027-01-01", "2027-03-01", "2027-07-01", "2028-01-01", "2028-07-01", "2029-01-01"];
 
-  /* Daily spend Sam pasted for the mock (Console API totals by UTC day, Oct 17 to Nov 15, 2026; Claude Code
-     auto-reload top-ups on the day credit was bought). No feed supplies these yet. */
-  var TOPUPS = { "2026-11-01": [196.22], "2026-11-07": [200], "2026-11-13": [198.82, 196.67, 195.04, 196.69, 196.51, 200.73, 197.13], "2026-11-14": [199.82, 195.7] };
-  var API_COST = { "2026-10-17": 527.31, "2026-10-18": 68.63, "2026-10-19": 2.81, "2026-10-20": 1, "2026-10-21": 80.84, "2026-10-22": 55.03, "2026-10-23": 19.76,
-    "2026-10-24": 0.26, "2026-10-25": 6.74, "2026-10-26": 1569.11, "2026-10-27": 2685.95, "2026-10-28": 8.68, "2026-10-29": 7.26, "2026-10-30": 8.56,
-    "2026-10-31": 4.62, "2026-11-01": 13.91, "2026-11-02": 9.7, "2026-11-03": 1.47, "2026-11-04": 7.81, "2026-11-05": 4.85, "2026-11-06": 1.82,
-    "2026-11-07": 14.73, "2026-11-08": 0.18, "2026-11-09": 0.91, "2026-11-10": 1.39, "2026-11-11": 21.85, "2026-11-12": 31.32, "2026-11-13": 67.5,
-    "2026-11-14": 0.55, "2026-11-15": 1.99 };
-  var COST_ANOMALY = { "2026-10-26": 1, "2026-10-27": 1 };
-  var COST_PARTIAL = { "2026-11-15": 1 };
+  /* Daily spend, from two committed files and never from billing credentials (COBIx's cost feed): the billing totals
+     Sam pastes by hand (kb/reference/model_spend_daily.json: Console API by UTC day, Claude Code top-ups on the day
+     credit was bought, a note on a day, the partial days), and what the sessions themselves wrote on their handoffs'
+     Spend: lines (kb/status/session_spend.json, kb/_build_session_spend.py). The two meters do not match, so the
+     sessions' figure is shown beside the billing total, never added to it. */
+  function bill() { return ST.billing || {}; }
+  function apiCost(d) { var a = bill().api || {}; return typeof a[d] === "number" ? a[d] : null; }
+  function topups(d) { var t = bill().topups || {}; return Array.isArray(t[d]) ? t[d] : null; }
+  function dayNote(d) { return (bill().notes || {})[d] || ""; }
+  function partialDay(d) { return (bill().partial || []).indexOf(d) >= 0; }
+  function sessionDay(d) { var b = (ST.sessions || {}).by_day || {}; return b[d] || null; }
   var COST_CAP = 1500;
 
   /* ── dates: whole UTC days, as yyyy-mm-dd ── */
@@ -572,15 +574,20 @@
         el("thead", null, [el("tr", null, ["Connection", "Start", "Catalog programs", "SLOs and objectives", "What we assume"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), tb])])]);
   }
 
-  function spend(d) { return (API_COST[d] || 0) + (TOPUPS[d] || []).reduce(function (a, b) { return a + b; }, 0); }
-  function spendLabel(d) { if (API_COST[d] == null && !TOPUPS[d]) return ""; return "$" + Math.round(spend(d)).toLocaleString("en-US") + (COST_ANOMALY[d] ? "*" : ""); }
+  function spend(d) { return (apiCost(d) || 0) + (topups(d) || []).reduce(function (a, b) { return a + b; }, 0); }
+  function hasSpend(d) { return apiCost(d) != null || !!topups(d); }
+  function spendLabel(d) { if (!hasSpend(d)) return ""; return "$" + Math.round(spend(d)).toLocaleString("en-US") + (dayNote(d) ? "*" : ""); }
   function spendLines(d) {
-    if (API_COST[d] == null && !TOPUPS[d]) return ["No spend recorded for this day."];
-    var t = TOPUPS[d] || [], code = t.reduce(function (a, b) { return a + b; }, 0), out = ["Total this day: " + usd((API_COST[d] || 0) + code) + "."];
-    out.push("API (Console): " + (API_COST[d] != null ? usd(API_COST[d]) : "no figure") + ".");
+    var sd = sessionDay(d), sess = sd && (sd.sessions || sd.not_available) ?
+      "Sessions' own figures (handoffs' Spend: lines): " + (sd.sessions ? usd(sd.usd) + " from " + fmt(sd.sessions) + (sd.sessions === 1 ? " session" : " sessions") : "none given") +
+      (sd.not_available ? ", " + fmt(sd.not_available) + " not available" : "") + "." : null;
+    if (!hasSpend(d)) return [ST.billing ? "No spend recorded for this day." : "The billing file (" + FILES.billing + ") could not be read."].concat(sess ? [sess] : []);
+    var t = topups(d) || [], code = t.reduce(function (a, b) { return a + b; }, 0), out = ["Total this day: " + usd((apiCost(d) || 0) + code) + "."];
+    out.push("API (Console): " + (apiCost(d) != null ? usd(apiCost(d)) : "no figure") + ".");
     out.push(t.length ? "Claude Code top-ups (" + t.length + " × ~$200): " + usd(code) + "." : "Claude Code top-ups: none this day.");
-    if (COST_PARTIAL[d]) out.push("Partial day.");
-    if (COST_ANOMALY[d]) out.push("A runaway process; caught and fixed.");
+    if (partialDay(d)) out.push("Partial day.");
+    if (dayNote(d)) out.push(dayNote(d));
+    if (sess) out.push(sess);
     return out;
   }
   function barLines(b, S) {
@@ -618,7 +625,7 @@
       if (S.costs && lab) {
         var tx = svg("text", { x: cx, y: costH - 3, "text-anchor": "start", "dominant-baseline": "middle", transform: "rotate(-90 " + cx + " " + (costH - 3) + ")", class: "eta-costlabel" });
         tx.textContent = lab;
-        if (COST_ANOMALY[dstr(b.day)]) { var ti = svg("title", {}); ti.textContent = "A runaway process; caught and fixed."; tx.appendChild(ti); }
+        if (dayNote(dstr(b.day))) { var ti = svg("title", {}); ti.textContent = dayNote(dstr(b.day)); tx.appendChild(ti); }
         g.appendChild(tx);
       }
       if ((n - 1 - i) % 7 === 0 || (i === 0 && (n - 1) % 7 >= 3)) { /* weekly back from the as-of day; the first day only with room */ var tk = svg("text", { x: cx, y: H - 2, "text-anchor": "middle", class: "eta-tick" }); tk.textContent = shortDate(b.day); g.appendChild(tk); }
@@ -631,8 +638,8 @@
       gc.appendChild(svg("polyline", { class: "eta-costline", fill: "none", points: B.bars.map(function (b, i) { return (padX + slot * i + slot / 2) + "," + ys(spend(dstr(b.day))); }).join(" ") }));
       B.bars.forEach(function (b, i) {
         var d = dstr(b.day), x = padX + slot * i + slot / 2, tot = spend(d);
-        if (tot - (API_COST[d] || 0) > 0) gc.appendChild(svg("line", { x1: x, x2: x, y1: ys(API_COST[d] || 0), y2: ys(tot), class: "eta-costtick" }));
-        if (API_COST[d] != null || TOPUPS[d]) gc.appendChild(svg("circle", { cx: x, cy: ys(tot), r: COST_ANOMALY[d] || tot > COST_CAP ? 2.4 : 1.8, class: "eta-costdot" }));
+        if (tot - (apiCost(d) || 0) > 0) gc.appendChild(svg("line", { x1: x, x2: x, y1: ys(apiCost(d) || 0), y2: ys(tot), class: "eta-costtick" }));
+        if (hasSpend(d)) gc.appendChild(svg("circle", { cx: x, cy: ys(tot), r: dayNote(d) || tot > COST_CAP ? 2.4 : 1.8, class: "eta-costdot" }));
       });
       s.appendChild(gc);
     }
@@ -991,7 +998,7 @@
   ext.ledes[VIEW_KEY] = "When Phase 1 of College Data Collection would be done at the current pace, and what turning on a connection would do to that date. Every moved date is a projection, not a partner commitment.";
   window.CPL_CDC_EXT = Array.isArray(window.CPL_CDC_EXT) ? window.CPL_CDC_EXT : [];
   window.CPL_CDC_EXT.push(ext);
-  window.CPL_COMMONS_ETA = { VIEW_KEY: VIEW_KEY, LISTED: LISTED, FILES: FILES, LEVERS: LEVERS, ST: ST, CSS: CSS, base: base, phase1: phase1, finish: finish, freshState: freshState,
+  window.CPL_COMMONS_ETA = { spendLines: spendLines, VIEW_KEY: VIEW_KEY, LISTED: LISTED, FILES: FILES, LEVERS: LEVERS, ST: ST, CSS: CSS, base: base, phase1: phase1, finish: finish, freshState: freshState,
     _reset: function () { SHARED = null; MOUNTS = []; },
     strip: function (M) { return ST.pr ? strip(base(M, ST.pr, ST.skills)) : null; }, ready: ready, view: view, nearComplete: nearComplete, stalledFactor: stalledFactor };
 })();

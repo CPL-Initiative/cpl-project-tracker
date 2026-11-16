@@ -1,0 +1,6 @@
+{
+ "schema": 1,
+ "source": "the Spend: line of each docs/session_<N>_handoff.md (kb/_build_session_spend.py)",
+ "sessions": [],
+ "by_day": {}
+}
