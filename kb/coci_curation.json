@@ -1,8 +1,8 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-16T06:20:18Z",
-  "count": 30715,
+  "_synced_at": "2026-11-16T21:15:18Z",
+  "count": 31056,
   "curations": {
     "AERO M1001": {
       "unified_title": "AS200 Leadership Laboratory C",
@@ -2310,6 +2310,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ANTH M1005": {
+      "honors_of": "ANTH M1006"
+    },
     "ANTH M1007": {
       "merge_into": "ANTH M1017",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2532,6 +2535,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ANTH M10AK": {
+      "honors_of": "ANTH M10AL"
+    },
     "ANTH M10AM": {
       "merge_into": "ANTH M1107",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2636,6 +2642,9 @@
       "merge_into": "ANTH M1110",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ANTH M10BN": {
+      "honors_of": "ANTH M1017"
     },
     "ANTH M10BP": {
       "merge_into": "ANTH M1111",
@@ -2807,6 +2816,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ANTH M10EJ": {
+      "honors_of": "ANTH M1042"
+    },
     "ANTH M10EK": {
       "merge_into": "ANTH M1042",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -2846,6 +2858,9 @@
       "merge_into": "ANTH M1121",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ANTH M10EW": {
+      "honors_of": "ANTH M1122"
     },
     "ANTH M10FB": {
       "merge_into": "ANTH M1057",
@@ -3057,6 +3072,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ANTH M10IG": {
+      "honors_of": "ANTH M10IF"
+    },
     "ANTH M10IH": {
       "merge_into": "SOCS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -3066,6 +3084,9 @@
       "merge_into": "ANTH M1085",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ANTH M10IM": {
+      "honors_of": "ANTH M1131"
     },
     "ANTH M10IN": {
       "merge_into": "ANTH M1131",
@@ -3161,6 +3182,9 @@
       "merge_into": "ANTH M1116",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ANTH M10JV": {
+      "honors_of": "ANTH M1102"
     },
     "ANTH M10KB": {
       "merge_into": "ANTH M1136",
@@ -3298,6 +3322,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ANTH M1121": {
+      "honors_of": "ANTH M1101",
       "unified_title": "The Anthropology of Magic, Witchcraft, and Religion Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -3476,6 +3501,9 @@
       "merge_into": "ARAB M1015",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARAB M10AQ": {
+      "honors_of": "ARAB M1015"
     },
     "ARAB M10AS": {
       "merge_into": "ARAB M1005",
@@ -3767,6 +3795,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARCH M10AK": {
+      "honors_of": "ARCH M1142"
+    },
     "ARCH M10AM": {
       "merge_into": "ARCH M1143",
       "reviewed_by": "automerge-v1@bot",
@@ -3776,6 +3807,9 @@
       "merge_into": "ARCH M1144",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARCH M10AP": {
+      "honors_of": "ARCH M10AN"
     },
     "ARCH M10AU": {
       "merge_into": "ARCH M1145",
@@ -3832,10 +3866,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ARCH M10BL": {
+      "honors_of": "ARCH M10BK"
+    },
     "ARCH M10BO": {
       "merge_into": "ARCH M1064",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARCH M10BP": {
+      "honors_of": "ARCH M10BD"
     },
     "ARCH M10BS": {
       "merge_into": "ARCH M1150",
@@ -3866,6 +3906,9 @@
       "merge_into": "ARCH M1037",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ARCH M10CE": {
+      "honors_of": "ARCH M10CF"
     },
     "ARCH M10CL": {
       "merge_into": "ARCH M1153",
@@ -4127,6 +4170,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARCH M10JH": {
+      "honors_of": "ARCH M1059"
+    },
     "ARCH M10JL": {
       "merge_into": "ARCH M1143",
       "reviewed_by": "automerge-v1@bot",
@@ -4141,6 +4187,12 @@
       "merge_into": "ARCH M1166",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARCH M10JX": {
+      "honors_of": "ARCH M1065"
+    },
+    "ARCH M10KJ": {
+      "honors_of": "ARCH M1066"
     },
     "ARCH M10KL": {
       "merge_into": "ARCH M1131",
@@ -4902,6 +4954,9 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:44:24.863639+00:00"
     },
+    "ARTH M1006": {
+      "honors_of": "ARTH M1005"
+    },
     "ARTH M1022": {
       "discipline": "Art History",
       "reviewed_by": "map@rccd.edu",
@@ -4944,6 +4999,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ARTH M1037": {
+      "honors_of": "ARTH M1011",
       "unified_title": "Honors Ancient Art",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -5936,6 +5992,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M10KT": {
+      "honors_of": "ARTS 210"
+    },
     "ARTS M10KZ": {
       "merge_into": "ARTS M1565",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -5960,6 +6019,9 @@
       "merge_into": "ARTS M1565",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10LJ": {
+      "honors_of": "ARTS M1566"
     },
     "ARTS M10LL": {
       "merge_into": "ARTS M1566",
@@ -6001,10 +6063,19 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M10MX": {
+      "honors_of": "ARTS M10MY"
+    },
+    "ARTS M10NC": {
+      "honors_of": "ARTS M1074"
+    },
     "ARTS M10ND": {
       "merge_into": "ARTS M1074",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10NI": {
+      "honors_of": "ARTS M1078"
     },
     "ARTS M10NM": {
       "merge_into": "ARTD M1569",
@@ -6020,6 +6091,9 @@
       "merge_into": "ARTS M1134",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10NS": {
+      "honors_of": "ARTS M1134"
     },
     "ARTS M10NV": {
       "merge_into": "ARTS M1570",
@@ -6056,6 +6130,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M10PL": {
+      "honors_of": "THTR M1269"
+    },
     "ARTS M10PM": {
       "merge_into": "THTR M1269",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -6081,6 +6158,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ARTS M10PX": {
+      "honors_of": "ARTS M10PY"
+    },
     "ARTS M10QH": {
       "merge_into": "ARTH M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -6090,6 +6170,9 @@
       "merge_into": "ARTS M1157",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10QM": {
+      "honors_of": "ARTH 130"
     },
     "ARTS M10QQ": {
       "merge_into": "ARTH M1027",
@@ -6281,6 +6364,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ARTS M10UM": {
+      "honors_of": "ARTS M10UN"
+    },
     "ARTS M10UO": {
       "merge_into": "ARTS M1570",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -6295,6 +6381,9 @@
       "merge_into": "ARTS M1583",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ARTS M10UU": {
+      "honors_of": "ARTS M10UV"
     },
     "ARTS M10UX": {
       "merge_into": "ARTH M1584",
@@ -10302,6 +10391,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ASTR M1039": {
+      "honors_of": "ASTR M1044"
+    },
     "ASTR M1041": {
       "merge_into": "ASTR M1002",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -10328,11 +10420,13 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ASTR M1048": {
+      "honors_of": "ASTR M1053",
       "unified_title": "Honors Astronomy",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ASTR M1049": {
+      "honors_of": "ASTR M1019",
       "unified_title": "Astronomy with Lab Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -10356,6 +10450,9 @@
       "discipline": "Astronomy",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
       "reviewed_at": "2026-07-12T21:17:48.970211+00:00"
+    },
+    "ASTR M10AC": {
+      "honors_of": "PHSC M1003"
     },
     "ASTR M10AD": {
       "merge_into": "ASTR M1002",
@@ -10412,6 +10509,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ASTR M10AU": {
+      "honors_of": "ASTR M10AT"
+    },
     "ASTR M10AX": {
       "merge_into": "ASTR M1047",
       "reviewed_by": "automerge-v1@bot",
@@ -10436,6 +10536,9 @@
       "merge_into": "ASTR M1049",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ASTR M10BE": {
+      "honors_of": "ASTR M1023"
     },
     "ASTR M10BJ": {
       "merge_into": "ASTR M1038",
@@ -10467,6 +10570,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ASTR M10BZ": {
+      "honors_of": "ASTR M1028"
+    },
     "ASTR M10CC": {
       "merge_into": "PHSC M1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -10476,6 +10582,9 @@
       "merge_into": "ASTR M1038",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ASTR M10CO": {
+      "honors_of": "ASTR M1002"
     },
     "ASTR M10CU": {
       "merge_into": "ASTR M1052",
@@ -20264,6 +20373,9 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:45:05.220691+00:00"
     },
+    "BIOL M1091": {
+      "honors_of": "BIOL M1089"
+    },
     "BIOL M1093": {
       "merge_into": "BIOL M1127",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -20273,6 +20385,9 @@
       "unified_title": "General Biology Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "BIOL M1096": {
+      "honors_of": "BIOL M1097"
     },
     "BIOL M10AI": {
       "merge_into": "BIOL M1262",
@@ -20524,6 +20639,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "BIOL M10GG": {
+      "honors_of": "BIOL M10GH"
+    },
     "BIOL M10GI": {
       "merge_into": "BIOL M1278",
       "reviewed_by": "automerge-v1@bot",
@@ -20544,6 +20662,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M10GV": {
+      "honors_of": "BIOT 150 X"
+    },
+    "BIOL M10GW": {
+      "honors_of": "BIOT 220 X"
+    },
     "BIOL M10HB": {
       "merge_into": "BIOL M1279",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -20563,6 +20687,9 @@
       "merge_into": "BIOL M1280",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10HU": {
+      "honors_of": "BIOL M10HV"
     },
     "BIOL M10HZ": {
       "merge_into": "BIOL M1244",
@@ -20588,6 +20715,12 @@
       "merge_into": "BIOL M1282",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10IT": {
+      "honors_of": "BIOL M1127"
+    },
+    "BIOL M10IW": {
+      "honors_of": "BIOL M1049"
     },
     "BIOL M10IX": {
       "merge_into": "BIOL M1049",
@@ -20714,10 +20847,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M10KY": {
+      "honors_of": "BIOL M1063"
+    },
     "BIOL M10KZ": {
       "merge_into": "BIOL M1063",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10LH": {
+      "honors_of": "BIOL M1065"
     },
     "BIOL M10LL": {
       "merge_into": "BIOL M1127",
@@ -20733,6 +20872,9 @@
       "merge_into": "BIOL M1287",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10LZ": {
+      "honors_of": "BIOL M1067"
     },
     "BIOL M10MC": {
       "merge_into": "BIOL M1322",
@@ -20784,10 +20926,25 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:45:05.220691+00:00"
     },
+    "BIOL M10NT": {
+      "honors_of": "BIOL M1087"
+    },
+    "BIOL M10NU": {
+      "honors_of": "BIOL M1088"
+    },
+    "BIOL M10NW": {
+      "honors_of": "BIOL M1092"
+    },
     "BIOL M10NZ": {
       "merge_into": "BIOL M1095",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "BIOL M10OA": {
+      "honors_of": "BIOL M1098"
+    },
+    "BIOL M10OB": {
+      "honors_of": "BIOL M10OI"
     },
     "BIOL M10OD": {
       "merge_into": "BIOL M1291",
@@ -20824,10 +20981,22 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M10OU": {
+      "honors_of": "BIOL M1119"
+    },
+    "BIOL M10OV": {
+      "honors_of": "BIOL M10QB"
+    },
     "BIOL M10OW": {
       "merge_into": "BIOL M1104",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "BIOL M10OX": {
+      "honors_of": "BIOL 135 S"
+    },
+    "BIOL M10OY": {
+      "honors_of": "BIOL 190"
     },
     "BIOL M10PT": {
       "merge_into": "BIOL M1250",
@@ -20884,6 +21053,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "BIOL M10QW": {
+      "honors_of": "BIOL M1262"
+    },
     "BIOL M10QX": {
       "merge_into": "BIOL M1262",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -20893,6 +21065,9 @@
       "merge_into": "BIOL M1305",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10QZ": {
+      "honors_of": "BIOT 101 B X"
     },
     "BIOL M10RF": {
       "merge_into": "BIOL M1250",
@@ -21088,6 +21263,9 @@
       "merge_into": "BIOL M1167",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M10UX": {
+      "honors_of": "BIOL M1167"
     },
     "BIOL M10UY": {
       "merge_into": "BIOL M1167",
@@ -21334,6 +21512,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M10ZV": {
+      "honors_of": "BIOL M11BA"
+    },
+    "BIOL M10ZX": {
+      "honors_of": "BIOL M11BJ"
+    },
     "BIOL M10ZY": {
       "merge_into": "BIOL M1320",
       "reviewed_by": "automerge-v1@bot",
@@ -21350,7 +21534,17 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00",
       "unified_title": "Genetics and Molecular Biology"
     },
+    "BIOL M1101": {
+      "honors_of": "BIOL M1105"
+    },
+    "BIOL M1102": {
+      "honors_of": "BIOL 140"
+    },
+    "BIOL M1103": {
+      "honors_of": "BIOL 190"
+    },
     "BIOL M1104": {
+      "honors_of": "BIOL M1126",
       "unified_title": "Honors Marine Biology",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -21477,6 +21671,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BIOL M11AA": {
+      "honors_of": "GEOL M1056"
+    },
     "BIOL M11AG": {
       "merge_into": "BIOL M1321",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -21586,6 +21783,9 @@
       "unified_title": "Foothill Ecology of the Sierra Nevada",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BIOL M1226": {
+      "honors_of": "PSY 130"
     },
     "BIOL M1231": {
       "unified_title": "Human Cadaver Prosection",
@@ -21908,6 +22108,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BIOL M1317": {
+      "honors_of": "BIOL M1318",
       "unified_title": "Genetics and Society Honors",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -21923,6 +22124,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "BIOL M1320": {
+      "honors_of": "BIOL M1254",
       "unified_title": "Honors Microbiology",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -22231,6 +22433,9 @@
       "unified_title": "Television and Film Script Writing",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BRDC M1015": {
+      "honors_of": "JOUR 100"
     },
     "BRDC M1016": {
       "unified_title": "Screenwriting Fundamentals for Film/Video 2",
@@ -25154,6 +25359,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "BUSI M1061": {
+      "honors_of": "ACCT 120"
+    },
     "BUSI M1062": {
       "unified_title": "Hotel, Restaurant Planning and Development",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -25519,6 +25727,12 @@
       "merge_into": "BUSI M1301",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M10FD": {
+      "honors_of": "ACCT 110"
+    },
+    "BUSI M10FE": {
+      "honors_of": "ACCT 110"
     },
     "BUSI M10FJ": {
       "merge_into": "VOCE M1002",
@@ -26100,6 +26314,12 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "BUSI M10SK": {
+      "honors_of": "BUS 120"
+    },
+    "BUSI M10SS": {
+      "honors_of": "BUSI M1172"
+    },
     "BUSI M10SU": {
       "merge_into": "BUSI M1480",
       "reviewed_by": "automerge-v1@bot",
@@ -26139,6 +26359,9 @@
       "merge_into": "ENTR M1008",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M10TV": {
+      "honors_of": "BUSI M10UK"
     },
     "BUSI M10TZ": {
       "merge_into": "BUSI M1482",
@@ -27147,6 +27370,9 @@
       "merge_into": "BUSI M1351",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "BUSI M11LQ": {
+      "honors_of": "LPPS 110"
     },
     "BUSI M11LS": {
       "merge_into": "BUSI M1510",
@@ -31253,6 +31479,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CDEV M11GJ": {
+      "honors_of": "CDEV M1280"
+    },
     "CDEV M11GK": {
       "merge_into": "CDEV M1280",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -32039,6 +32268,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CHEM M1016": {
+      "honors_of": "CHEM 101"
+    },
     "CHEM M1017": {
       "unified_title": "Introduction to General, Organic and Biochemistry 2",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -32074,6 +32306,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "CHEM M1033": {
+      "honors_of": "CHEM M10DH"
+    },
     "CHEM M1044": {
       "unified_title": "Chemistry of Everyday Life",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -32083,6 +32318,9 @@
       "merge_into": "BIOL M1206",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CHEM M1053": {
+      "honors_of": "CHEM 120 S"
     },
     "CHEM M1066": {
       "unified_title": "Chemistry for the Health Sciences",
@@ -32383,6 +32621,9 @@
       "merge_into": "CHEM M1066",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "CHEM M10FL": {
+      "honors_of": "CHEM 160 S"
     },
     "CHEM M10FR": {
       "merge_into": "CHEM M1091",
@@ -34979,6 +35220,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "COMM M1035": {
+      "honors_of": "COMM M1034"
+    },
     "COMM M1047": {
       "merge_into": "JOUR 170",
       "reviewed_by": "automerge-v1@bot",
@@ -35054,6 +35298,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COMM M10AW": {
+      "honors_of": "COMM M10AX"
+    },
     "COMM M10BM": {
       "merge_into": "COMM M1105",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -35084,6 +35331,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COMM M10CE": {
+      "honors_of": "COMM M10CF"
+    },
     "COMM M10CH": {
       "merge_into": "COMM M1106",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -35113,6 +35363,9 @@
       "merge_into": "COMM M1108",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COMM M10DK": {
+      "honors_of": "COMM 140"
     },
     "COMM M10DP": {
       "merge_into": "COMM M1112",
@@ -35700,6 +35953,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "COMP M10DM": {
+      "honors_of": "COMP 132"
+    },
     "COMP M10DQ": {
       "merge_into": "COMP M1016",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -35894,6 +36150,9 @@
       "merge_into": "ITIS M1377",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COMP M10IG": {
+      "honors_of": "COMP 112"
     },
     "COMP M10IJ": {
       "merge_into": "COMP M1066",
@@ -36214,6 +36473,9 @@
       "merge_into": "COMP M1081",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COMP M10QS": {
+      "honors_of": "ITIS 130"
     },
     "COMP M10QW": {
       "merge_into": "ITIS M1439",
@@ -38040,6 +38302,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COUN M10BK": {
+      "honors_of": "COUN M10BL"
+    },
+    "COUN M10BM": {
+      "honors_of": "COUN M1004"
+    },
     "COUN M10CA": {
       "merge_into": "COUN M1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -38490,6 +38758,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "COUN M10KU": {
+      "honors_of": "COUN M1188"
+    },
     "COUN M10KV": {
       "merge_into": "COUN M1188",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -38569,6 +38840,9 @@
       "merge_into": "COUN M1195",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COUN M10ME": {
+      "honors_of": "COUN M1069"
     },
     "COUN M10MH": {
       "merge_into": "COUN M1070",
@@ -38704,6 +38978,9 @@
       "merge_into": "IDST M1092",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:57:42.665612+00:00"
+    },
+    "COUN M10PX": {
+      "honors_of": "IDST M1098"
     },
     "COUN M10QH": {
       "merge_into": "COUN M1170",
@@ -38899,6 +39176,12 @@
       "merge_into": "COUN M1205",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "COUN M10UB": {
+      "honors_of": "BUSI M1381"
+    },
+    "COUN M10UD": {
+      "honors_of": "COUN M1159"
     },
     "COUN M10UK": {
       "merge_into": "COUN M1206",
@@ -39576,6 +39859,9 @@
       "merge_into": "CRIM M1058",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "CRIM M1066": {
+      "honors_of": "CRIM M1068"
     },
     "CRIM M1072": {
       "unified_title": "Force Options Simulator Emergency Vehicle Operations Course",
@@ -41602,6 +41888,9 @@
       "merge_into": "CRIM M1166",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "CRIM M11DJ": {
+      "honors_of": "AJ 120"
     },
     "CRIM M11DN": {
       "merge_into": "CRIM M1275",
@@ -45863,6 +46152,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "DANC M1057": {
+      "honors_of": "DANC M1054",
       "unified_title": "Honors Dance Appreciation",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -46401,6 +46691,9 @@
       "merge_into": "DANC M1050",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "DANC M10JE": {
+      "honors_of": "DANC M10JF"
     },
     "DANC M10JL": {
       "merge_into": "DANC M1469",
@@ -47672,6 +47965,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "DANC M11GZ": {
+      "honors_of": "DANC M1208"
+    },
     "DANC M11HO": {
       "merge_into": "DANC M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -48161,6 +48457,9 @@
       "merge_into": "DANC M1499",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "DANC M11SK": {
+      "honors_of": "DANC M11SN"
     },
     "DANC M11SS": {
       "merge_into": "DANC M1136",
@@ -48948,6 +49247,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "DANC M1460": {
+      "honors_of": "DANC M1056",
       "unified_title": "Dance History and Appreciation Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -52360,6 +52660,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ECON M1029": {
+      "honors_of": "ECON M1026",
       "unified_title": "International Political Economy Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -52419,15 +52720,30 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ECON M10AX": {
+      "honors_of": "ECON M10AY"
+    },
+    "ECON M10BC": {
+      "honors_of": "ECON M1007"
+    },
     "ECON M10BG": {
       "merge_into": "ECON M1011",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:46:46.221707+00:00"
     },
+    "ECON M10BI": {
+      "honors_of": "ECON M1012"
+    },
     "ECON M10BN": {
       "merge_into": "ECON M1039",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ECON M10BO": {
+      "honors_of": "ECON M1022"
+    },
+    "ECON M10BX": {
+      "honors_of": "ECON M1026"
     },
     "ECON M10BY": {
       "merge_into": "ECON M1026",
@@ -56356,6 +56672,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1033": {
+      "honors_of": "ENGL M1034"
+    },
     "ENGL M1034": {
       "unified_title": "Children's/Adolescent Literature",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56407,6 +56726,9 @@
       "merge_into": "ENGL M1054",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:28:25.123982+00:00"
+    },
+    "ENGL M1061": {
+      "honors_of": "ENGL M1063"
     },
     "ENGL M1067": {
       "merge_into": "ENGL M1337",
@@ -56493,6 +56815,12 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENGL M10BA": {
+      "honors_of": "ENGL 160"
+    },
+    "ENGL M10BB": {
+      "honors_of": "ENGL 165"
+    },
     "ENGL M10BZ": {
       "merge_into": "ENGL M1379",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56542,6 +56870,9 @@
       "merge_into": "ETHA M1002",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ENGL M10DS": {
+      "honors_of": "ETHA M1002"
     },
     "ENGL M10DV": {
       "merge_into": "ENGL M1377",
@@ -56718,6 +57049,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10IB": {
+      "honors_of": "ENGL M1393"
+    },
     "ENGL M10IC": {
       "merge_into": "ENGL M1393",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56763,6 +57097,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10IR": {
+      "honors_of": "ENGL M10IS"
+    },
     "ENGL M10IU": {
       "merge_into": "ENGL M1394",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56777,6 +57114,9 @@
       "merge_into": "ENGL M1394",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10JI": {
+      "honors_of": "ENGL M10JJ"
     },
     "ENGL M10JL": {
       "merge_into": "COMM M1028",
@@ -56817,6 +57157,9 @@
       "merge_into": "ENGL M1437",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10JX": {
+      "honors_of": "ENGL M1395"
     },
     "ENGL M10KG": {
       "merge_into": "ENGL M1290",
@@ -56883,6 +57226,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10LQ": {
+      "honors_of": "ENGL M10LR"
+    },
     "ENGL M10LS": {
       "merge_into": "PHIL M1011",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56913,6 +57259,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10MG": {
+      "honors_of": "ENGL M10MH"
+    },
     "ENGL M10MI": {
       "merge_into": "ENGL M1444",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -56932,6 +57281,9 @@
       "merge_into": "ENGL M1398",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10MT": {
+      "honors_of": "ENGL M10MS"
     },
     "ENGL M10MU": {
       "merge_into": "ENGL M1096",
@@ -57087,6 +57439,9 @@
       "merge_into": "ENGL M1409",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10QH": {
+      "honors_of": "ENGL M10QI"
     },
     "ENGL M10QJ": {
       "merge_into": "ENGL M1414",
@@ -57293,6 +57648,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
     },
+    "ENGL M10UR": {
+      "honors_of": "ENGL M1179"
+    },
+    "ENGL M10US": {
+      "honors_of": "ENGL M1417"
+    },
     "ENGL M10UT": {
       "merge_into": "ENGL M1417",
       "reviewed_by": "automerge-v1@bot",
@@ -57347,6 +57708,9 @@
       "merge_into": "ENGL M1250",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:13:37.714491+00:00"
+    },
+    "ENGL M10VV": {
+      "honors_of": "ENGL 200"
     },
     "ENGL M10VY": {
       "merge_into": "ENGL M1185",
@@ -57448,6 +57812,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M10XI": {
+      "honors_of": "ENGL M10XJ"
+    },
     "ENGL M10XK": {
       "merge_into": "ENGL M1423",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -57522,6 +57889,9 @@
       "merge_into": "ENGL M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M10YU": {
+      "honors_of": "THTR 114"
     },
     "ENGL M10YV": {
       "merge_into": "ENGL M1218",
@@ -57828,6 +58198,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M11AV": {
+      "honors_of": "HUMA M10KJ"
+    },
     "ENGL M11AW": {
       "merge_into": "COMM M1028",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -57862,6 +58235,15 @@
       "merge_into": "ENGL M1258",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:22:01.54349+00:00"
+    },
+    "ENGL M11BL": {
+      "honors_of": "ENGL M1258"
+    },
+    "ENGL M11BM": {
+      "honors_of": "ENGL M1258"
+    },
+    "ENGL M11BN": {
+      "honors_of": "ENGL M1258"
     },
     "ENGL M11BO": {
       "merge_into": "ENGL M1186",
@@ -57938,10 +58320,16 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:06.603883+00:00"
     },
+    "ENGL M11CF": {
+      "honors_of": "ENGL M11CG"
+    },
     "ENGL M11CJ": {
       "merge_into": "ENGL M1269",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M11CL": {
+      "honors_of": "ENGL M11CH"
     },
     "ENGL M11CM": {
       "merge_into": "ENGL M1408",
@@ -58088,6 +58476,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M11EE": {
+      "honors_of": "ENGL M1438"
+    },
     "ENGL M11EF": {
       "merge_into": "ENGL M1438",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -58108,6 +58499,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M11EP": {
+      "honors_of": "ENGL M1436"
+    },
     "ENGL M11ES": {
       "merge_into": "ENGL M1439",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -58123,6 +58517,30 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENGL M11EX": {
+      "honors_of": "ENGL M1369"
+    },
+    "ENGL M11EY": {
+      "honors_of": "ENGL M11HC"
+    },
+    "ENGL M11FB": {
+      "honors_of": "ETHN M1034"
+    },
+    "ENGL M11FC": {
+      "honors_of": "ENGL M1346"
+    },
+    "ENGL M11FD": {
+      "honors_of": "ENGL M1348"
+    },
+    "ENGL M11FE": {
+      "honors_of": "ENGL M1353"
+    },
+    "ENGL M11FF": {
+      "honors_of": "ENGL M1352"
+    },
+    "ENGL M11FG": {
+      "honors_of": "ENGL M1353"
+    },
     "ENGL M11FH": {
       "merge_into": "ENGL M1433",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -58137,6 +58555,9 @@
       "merge_into": "ENGL M1285",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:51:44.597481+00:00"
+    },
+    "ENGL M11FK": {
+      "honors_of": "ENGL M1375"
     },
     "ENGL M11FL": {
       "merge_into": "ENGL M1436",
@@ -58463,6 +58884,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ENGL M1203": {
+      "honors_of": "ENGL M1206"
+    },
     "ENGL M1210": {
       "unified_title": "Mystery and Detective Literature",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -58598,6 +59022,7 @@
       "unified_title": "Writing in Fiction"
     },
     "ENGL M1261": {
+      "honors_of": "ENGL M1263",
       "unified_title": "Honors Literature and Film",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:56:09.917269+00:00"
@@ -58653,6 +59078,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1282": {
+      "honors_of": "ENGL M1298",
       "unified_title": "Honors Introduction to Poetry",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -58661,6 +59087,9 @@
       "merge_into": "ENGL M1285",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENGL M1284": {
+      "honors_of": "ENGL M1338"
     },
     "ENGL M1285": {
       "unified_title": "Shakespeare Honors",
@@ -59111,6 +59540,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1415": {
+      "honors_of": "PHIL M1034",
       "unified_title": "Composition and Critical Thinking Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -59238,11 +59668,13 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ENGL M1440": {
+      "honors_of": "ENGL M1290",
       "unified_title": "Introduction to the Novel Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ENGL M1441": {
+      "honors_of": "ENGL M1140",
       "unified_title": "World Mythology Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -61179,6 +61611,15 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "ENVS M10LD": {
+      "honors_of": "ENVS 100"
+    },
+    "ENVS M10LE": {
+      "honors_of": "ENVS M1064"
+    },
+    "ENVS M10LF": {
+      "honors_of": "ENVS 100"
+    },
     "ENVS M10LQ": {
       "merge_into": "ENVS M1108",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -61213,6 +61654,9 @@
       "merge_into": "ENVS M1012",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ENVS M10NA": {
+      "honors_of": "ENVS M10NB"
     },
     "ENVS M10NC": {
       "merge_into": "ENVS M1083",
@@ -74265,6 +74709,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1013": {
+      "honors_of": "ETHS M1014"
+    },
     "ETHS M1015": {
       "merge_into": "ETHS M1016",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -74412,6 +74859,9 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-25T20:32:36.181218+00:00"
     },
+    "ETHS M1068": {
+      "honors_of": "POLS M1002"
+    },
     "ETHS M1069": {
       "discipline": "Ethnic Studies",
       "reviewed_by": "trailcrew-ccr3-s112@bot",
@@ -74447,6 +74897,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1086": {
+      "honors_of": "ETHS M1085"
+    },
     "ETHS M1088": {
       "unified_title": "History of the Chicano/Mexican American",
       "reviewed_by": "automerge-v1@bot",
@@ -74481,6 +74934,9 @@
       "merge_into": "HIST M1122",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M1097": {
+      "honors_of": "ETHS M1098"
     },
     "ETHS M10AC": {
       "merge_into": "ETHS M1117",
@@ -74647,6 +75103,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10DF": {
+      "honors_of": "ETHS M10DG"
+    },
     "ETHS M10DH": {
       "merge_into": "ETHS M1129",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -74711,6 +75170,9 @@
       "merge_into": "ETHS M1255",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ETHS M10EL": {
+      "honors_of": "ETHS M1256"
     },
     "ETHS M10EM": {
       "merge_into": "ETHS M1256",
@@ -74897,6 +75359,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10HG": {
+      "honors_of": "ETHS M1166"
+    },
     "ETHS M10HH": {
       "merge_into": "ETHS M1166",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75001,6 +75466,9 @@
       "merge_into": "HIST M1095",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ETHS M10IR": {
+      "honors_of": "ETHA M1002"
     },
     "ETHS M10IS": {
       "merge_into": "ETHS M1114",
@@ -75157,6 +75625,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10MD": {
+      "honors_of": "ETHS M10ME"
+    },
     "ETHS M10MG": {
       "merge_into": "ETHS M1275",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75227,6 +75698,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10NO": {
+      "honors_of": "ETHN M1019"
+    },
     "ETHS M10NP": {
       "merge_into": "ETHS M1166",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75271,6 +75745,12 @@
       "merge_into": "ETHS M1171",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M10OD": {
+      "honors_of": "ETHS M1170"
+    },
+    "ETHS M10OE": {
+      "honors_of": "ETHS M1172"
     },
     "ETHS M10OF": {
       "merge_into": "ENGL M1131",
@@ -75326,6 +75806,9 @@
       "merge_into": "ETHS M1113",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M10PH": {
+      "honors_of": "SJS 120"
     },
     "ETHS M10PI": {
       "merge_into": "ETHS M1237",
@@ -75467,6 +75950,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M10SH": {
+      "honors_of": "ETHS M10SI"
+    },
     "ETHS M10SJ": {
       "merge_into": "ETHS M1237",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75516,6 +76002,9 @@
       "merge_into": "ETHS M1284",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "ETHS M10TG": {
+      "honors_of": "ETHS M1285"
     },
     "ETHS M10TH": {
       "merge_into": "ETHS M1281",
@@ -75622,6 +76111,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1103": {
+      "honors_of": "ETHS M1104"
+    },
     "ETHS M1107": {
       "unified_title": "Survey of Latin-American Films",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75704,6 +76196,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1147": {
+      "honors_of": "ETHS M1150"
+    },
     "ETHS M1155": {
       "merge_into": "KINE M1368",
       "reviewed_by": "automerge-v1@bot",
@@ -75780,6 +76275,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1177": {
+      "honors_of": "ETHN M1028",
       "unified_title": "Honors Introduction to Chicanx and Latinx Studies",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -75825,6 +76321,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ETHS M1194": {
+      "honors_of": "ETHS M1195"
+    },
     "ETHS M1198": {
       "unified_title": "Ethnic Studies for Educators Capstone",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -75844,6 +76343,9 @@
       "unified_title": "History of Ethnic Minorities in the United States",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ETHS M1204": {
+      "honors_of": "SOCI 150"
     },
     "ETHS M1210": {
       "unified_title": "Race, Ethnicity, and Popular Culture",
@@ -76002,6 +76504,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1261": {
+      "honors_of": "ETHS M1082",
       "unified_title": "Introduction to Asian American Studies Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -76062,6 +76565,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ETHS M1278": {
+      "honors_of": "ENGL M1336",
       "unified_title": "Honors Chicana/O and Latina/O Contemporary Issues",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -76110,6 +76614,9 @@
       "merge_into": "ARTS M1587",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FA M10AA": {
+      "honors_of": "ARTS M1129"
     },
     "FA M10AB": {
       "merge_into": "ARTS M1129",
@@ -78338,6 +78845,9 @@
       "merge_into": "FCSH M1022",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FDNT M10BE": {
+      "honors_of": "NUTR M1018"
     },
     "FDNT M10BF": {
       "merge_into": "FDNT M1045",
@@ -82716,6 +83226,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "FLNG M11LR": {
+      "honors_of": "SLNA M10AM"
+    },
     "FLPE M10AC": {
       "merge_into": "ARAB M1012",
       "reviewed_by": "automerge-v1@bot",
@@ -83302,6 +83815,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FREN M1050": {
+      "honors_of": "FREN M1003",
       "unified_title": "Honors Intermediate French 1",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -83317,6 +83831,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FREN M1053": {
+      "honors_of": "FREN M1006",
       "unified_title": "Honors Intermediate French 2",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -83361,6 +83876,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FREN M10AA": {
+      "honors_of": "FREN M1035"
+    },
     "FREN M10AB": {
       "merge_into": "FREN M1049",
       "reviewed_by": "automerge-v1@bot",
@@ -83375,6 +83893,9 @@
       "merge_into": "FREN M1051",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FREN M10AH": {
+      "honors_of": "FREN M1036"
     },
     "FREN M10AI": {
       "merge_into": "FREN M1052",
@@ -83400,6 +83921,9 @@
       "merge_into": "CHIN M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FREN M10AZ": {
+      "honors_of": "FREN M1014"
     },
     "FREN M10BA": {
       "merge_into": "CULN M1064",
@@ -83587,6 +84111,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FTVE M1003": {
+      "honors_of": "FTVE M1002",
       "unified_title": "History of Cinema (1950-Present) Honors",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:55:05.242439+00:00"
@@ -83636,6 +84161,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "FTVE M1019": {
+      "honors_of": "FTVE M1018"
+    },
     "FTVE M1025": {
       "unified_title": "Coding Basics for Immersive Media Applications",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -83675,6 +84203,9 @@
       "unified_title": "Intermediate Single Camera Film and Video Production",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVE M1045": {
+      "honors_of": "FTVE M1046"
     },
     "FTVE M1051": {
       "unified_title": "Women and Cinema",
@@ -83743,11 +84274,13 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FTVE M1078": {
+      "honors_of": "FTVE M1081",
       "unified_title": "Introduction to Film Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "FTVE M1079": {
+      "honors_of": "FTVE 105",
       "unified_title": "Introduction to Film Studies Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -83982,6 +84515,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FTVE M10DA": {
+      "honors_of": "FTVE 105"
+    },
     "FTVE M10DB": {
       "merge_into": "FTVE M1125",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -83991,6 +84527,9 @@
       "merge_into": "BRDC M1062",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVE M10DK": {
+      "honors_of": "FTVE M10DJ"
     },
     "FTVE M10DL": {
       "merge_into": "FTVE M1015",
@@ -84006,6 +84545,9 @@
       "merge_into": "BRDC M1036",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FTVE M10DX": {
+      "honors_of": "FTVE M1021"
     },
     "FTVE M10DZ": {
       "merge_into": "FIRE M1343",
@@ -84071,6 +84613,9 @@
       "merge_into": "FTVE M1135",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVE M10EV": {
+      "honors_of": "FTVE M1029"
     },
     "FTVE M10FC": {
       "merge_into": "FTVE M1060",
@@ -84186,6 +84731,9 @@
       "merge_into": "FTVE M1125",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVE M10HO": {
+      "honors_of": "FTVE M10HR"
     },
     "FTVE M10ID": {
       "merge_into": "FTVE M1011",
@@ -84342,10 +84890,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "FTVE M10LA": {
+      "honors_of": "BRDC M1011"
+    },
     "FTVE M10LB": {
       "merge_into": "FTVE M1146",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "FTVE M10LJ": {
+      "honors_of": "FTVE M10LK"
     },
     "FTVE M10LL": {
       "merge_into": "BRDC M1052",
@@ -84441,6 +84995,9 @@
       "merge_into": "FTVE M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVE M10NK": {
+      "honors_of": "COMP M1085"
     },
     "FTVE M10NM": {
       "merge_into": "FTVE M1150",
@@ -84701,6 +85258,15 @@
       "merge_into": "BRDC M1062",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "FTVM M10AS": {
+      "honors_of": "FTVM M10AF"
+    },
+    "FTVM M10AT": {
+      "honors_of": "BRDC M1062"
+    },
+    "FTVM M10AU": {
+      "honors_of": "FTVE M1074"
     },
     "FTVM M10AW": {
       "merge_into": "BRDC M1062",
@@ -84999,6 +85565,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "GEOG M10CM": {
+      "honors_of": "GEOG 140"
+    },
     "GEOG M10CN": {
       "merge_into": "GEOG M1101",
       "reviewed_by": "automerge-v1@bot",
@@ -85103,6 +85672,9 @@
       "merge_into": "GEOG M1064",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GEOG M10FA": {
+      "honors_of": "GEOG 110"
     },
     "GEOG M10FD": {
       "merge_into": "GEOG M1090",
@@ -85318,6 +85890,9 @@
       "unified_title": "Field Studies in Geology",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:55:07.235449+00:00"
+    },
+    "GEOL M1041": {
+      "honors_of": "GEOL 100"
     },
     "GEOL M1047": {
       "merge_into": "PHSC M1028",
@@ -85841,6 +86416,9 @@
       "merge_into": "GEOL M1072",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GEOL M10EU": {
+      "honors_of": "GEOL M1022"
     },
     "GEOL M10FA": {
       "merge_into": "PHSC M1050",
@@ -86738,6 +87316,12 @@
       "merge_into": "GFCD M1062",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "GFCD M10FI": {
+      "honors_of": "ARTS M1310"
+    },
+    "GFCD M10FJ": {
+      "honors_of": "ARTS M1331"
     },
     "GFCD M10FK": {
       "merge_into": "ARTS M1532",
@@ -87714,6 +88298,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M1090": {
+      "honors_of": "HIST M1101",
       "unified_title": "Women in American History Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -87758,6 +88343,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M10AV": {
+      "honors_of": "HIST M1196"
+    },
     "HIST M10AW": {
       "merge_into": "HIST M1196",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -87777,6 +88365,9 @@
       "merge_into": "HIST M1196",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10BI": {
+      "honors_of": "HIST 160"
     },
     "HIST M10BL": {
       "merge_into": "HIST M1196",
@@ -88258,6 +88849,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M10HN": {
+      "honors_of": "HIST M1096"
+    },
     "HIST M10HO": {
       "merge_into": "HIST M1096",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -88277,6 +88871,9 @@
       "merge_into": "HIST M1053",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10HW": {
+      "honors_of": "HIST M10HX"
     },
     "HIST M10HY": {
       "merge_into": "ETHS M1016",
@@ -88463,6 +89060,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M10KJ": {
+      "honors_of": "HIST M1220"
+    },
     "HIST M10KL": {
       "merge_into": "HIST M1221",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -88497,6 +89097,9 @@
       "merge_into": "HIST M1221",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10KV": {
+      "honors_of": "HIST M10LD"
     },
     "HIST M10KY": {
       "merge_into": "HIST M1222",
@@ -88588,6 +89191,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "HIST M10MO": {
+      "honors_of": "HIST M1095"
+    },
     "HIST M10MP": {
       "merge_into": "HIST M1090",
       "reviewed_by": "automerge-v1@bot",
@@ -88643,6 +89249,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "HIST M10NK": {
+      "honors_of": "HIST M10NL"
+    },
     "HIST M10NN": {
       "merge_into": "HIST M1219",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -88677,6 +89286,12 @@
       "merge_into": "HIST M1108",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10NY": {
+      "honors_of": "HIST M1107"
+    },
+    "HIST M10NZ": {
+      "honors_of": "HIST M1108"
     },
     "HIST M10OE": {
       "merge_into": "HIST M1229",
@@ -88833,6 +89448,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M10PT": {
+      "honors_of": "HIST M1126"
+    },
     "HIST M10PU": {
       "merge_into": "ANTH M1130",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -88862,6 +89480,9 @@
       "merge_into": "ETHS M1166",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10QP": {
+      "honors_of": "HIST M10QQ"
     },
     "HIST M10QR": {
       "merge_into": "HIST M1135",
@@ -88963,6 +89584,9 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:55:28.547738+00:00"
     },
+    "HIST M10TA": {
+      "honors_of": "HIST M10TB"
+    },
     "HIST M10TC": {
       "merge_into": "ECON M1008",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -88977,6 +89601,9 @@
       "merge_into": "HIST M1239",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HIST M10TI": {
+      "honors_of": "HIST M1156"
     },
     "HIST M10TN": {
       "merge_into": "HIST M1157",
@@ -89002,6 +89629,15 @@
       "merge_into": "HIST M1240",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HIST M10UK": {
+      "honors_of": "HIST M1172"
+    },
+    "HIST M10UL": {
+      "honors_of": "HIST M1178"
+    },
+    "HIST M10UN": {
+      "honors_of": "HIST M10VY"
     },
     "HIST M10UQ": {
       "merge_into": "HIST M1165",
@@ -89132,6 +89768,9 @@
       "merge_into": "HIST M1246",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HIST M10WP": {
+      "honors_of": "ETHS M1260"
     },
     "HIST M10WQ": {
       "merge_into": "HIST M1052",
@@ -89270,6 +89909,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M1130": {
+      "honors_of": "HIST M1129",
       "unified_title": "History of California Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -89315,7 +89955,11 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HIST M1163": {
+      "honors_of": "HIST M1190"
+    },
     "HIST M1165": {
+      "honors_of": "HIST M1191",
       "unified_title": "History of Women in the United States Honors",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T21:55:35.212698+00:00"
@@ -89386,6 +90030,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M1200": {
+      "honors_of": "HIST M1201",
       "unified_title": "Honors History of Latin America Since 1820",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -89543,6 +90188,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HIST M1231": {
+      "honors_of": "HIST M1112",
       "unified_title": "History of Asia from Pre-History to Early Modern Honors",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -89854,6 +90500,9 @@
       "merge_into": "HLTH M1169",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HLTH M10AS": {
+      "honors_of": "ARTS M1006"
     },
     "HLTH M10AT": {
       "merge_into": "ARTS M1006",
@@ -90595,6 +91244,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HLTH M10RO": {
+      "honors_of": "HLTH M1079"
+    },
     "HLTH M10RU": {
       "merge_into": "HLTH M1084",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -90905,6 +91557,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HLTH M10ZH": {
+      "honors_of": "HLTH M1134"
+    },
     "HLTH M10ZP": {
       "merge_into": "HEIT M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -91214,6 +91869,9 @@
       "merge_into": "HLTH M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HLTH M11BP": {
+      "honors_of": "PH 100"
     },
     "HLTH M11CG": {
       "merge_into": "HLTH M1208",
@@ -93006,6 +93664,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HORT M10MA": {
+      "honors_of": "AG-PS 104 104"
+    },
     "HORT M10ME": {
       "merge_into": "HORT M1074",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94339,6 +95000,7 @@
       "unified_title": "Black Voices: Introduction to African American Literature"
     },
     "HUMA M1018": {
+      "honors_of": "HUMA M1019",
       "unified_title": "Honors Arts and Ideas: Ancient World Through the Late Medieval Period",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -94349,6 +95011,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "HUMA M1027": {
+      "honors_of": "HUMA M1029",
       "unified_title": "Honors Arts and Ideas: The Renaissance Through the Modern Era",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -94377,6 +95040,9 @@
       "merge_into": "FTVE M1051",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "HUMA M1055": {
+      "honors_of": "ANTH M1085"
     },
     "HUMA M1056": {
       "merge_into": "PHIL M1028",
@@ -94503,6 +95169,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10BC": {
+      "honors_of": "HUMA M10BD"
+    },
     "HUMA M10BE": {
       "merge_into": "ENGL M1312",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94538,6 +95207,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10BZ": {
+      "honors_of": "HUMA M1114"
+    },
     "HUMA M10CA": {
       "merge_into": "HUMA M1114",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94548,6 +95220,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10CM": {
+      "honors_of": "HUMA M10CN"
+    },
     "HUMA M10CO": {
       "merge_into": "HUMA M1010",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94557,6 +95232,9 @@
       "merge_into": "HUMA M1114",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10CS": {
+      "honors_of": "HUMA M10CT"
     },
     "HUMA M10DA": {
       "merge_into": "HUMA M1116",
@@ -94592,6 +95270,9 @@
       "merge_into": "ENGL M1089",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10DQ": {
+      "honors_of": "HUMA M10DS"
     },
     "HUMA M10DU": {
       "merge_into": "HIST M1110",
@@ -94738,6 +95419,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10HG": {
+      "honors_of": "JOUR 100"
+    },
     "HUMA M10HI": {
       "merge_into": "ENGL M1414",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94748,10 +95432,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10HQ": {
+      "honors_of": "PHIL M1028"
+    },
     "HUMA M10HS": {
       "merge_into": "ENGL M1176",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10HX": {
+      "honors_of": "HUMA M10HY"
     },
     "HUMA M10IB": {
       "merge_into": "ENGL M1186",
@@ -94763,6 +95453,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10ID": {
+      "honors_of": "HUMA M10IF"
+    },
     "HUMA M10IE": {
       "merge_into": "ENGL M1355",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94773,6 +95466,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10IJ": {
+      "honors_of": "HUMA M10II"
+    },
     "HUMA M10IT": {
       "merge_into": "HUMA M1115",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94782,6 +95478,9 @@
       "merge_into": "ENGL M1089",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10IX": {
+      "honors_of": "HUMA M10IZ"
     },
     "HUMA M10IY": {
       "merge_into": "HUMA M1123",
@@ -94838,6 +95537,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10KI": {
+      "honors_of": "ENGL M1239"
+    },
     "HUMA M10KM": {
       "merge_into": "COMM M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -94847,6 +95549,9 @@
       "merge_into": "COMM M1075",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10KQ": {
+      "honors_of": "IDST M10RM"
     },
     "HUMA M10KS": {
       "merge_into": "HUMA M1004",
@@ -94883,10 +95588,28 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "HUMA M10LR": {
+      "honors_of": "HUMA M10MJ"
+    },
+    "HUMA M10LS": {
+      "honors_of": "HUMA M1088"
+    },
+    "HUMA M10LT": {
+      "honors_of": "HUMA M10MP"
+    },
+    "HUMA M10LU": {
+      "honors_of": "HUMA M10MW"
+    },
+    "HUMA M10LX": {
+      "honors_of": "HUMA M1097"
+    },
     "HUMA M10LY": {
       "merge_into": "ENGL M1439",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMA M10LZ": {
+      "honors_of": "HUMA M1100"
     },
     "HUMA M10MA": {
       "merge_into": "ENGL M1440",
@@ -94903,11 +95626,17 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "HUMA M10MD": {
+      "honors_of": "HUMA M10OF"
+    },
     "HUMA M10ME": {
       "honors_of": "HUMA M1110",
       "merge_dismissed": "HUMA M10ME|HUMA M10OI|HUMA M1110",
       "reviewed_by": "honors-s652@bot",
       "reviewed_at": "2026-11-14T15:21:04.075029+00:00"
+    },
+    "HUMA M10MF": {
+      "honors_of": "HUMA M10OM"
     },
     "HUMA M10MN": {
       "merge_into": "HUMA M1126",
@@ -95062,6 +95791,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "HUMA M1119": {
+      "honors_of": "COMM 120",
       "unified_title": "Honors Critical Thinking Through Argumentation",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
@@ -95150,6 +95880,12 @@
       "merge_into": "ENGL M9047",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "HUMN M1002": {
+      "honors_of": "COMM M1067"
+    },
+    "HUMN M1003": {
+      "honors_of": "HUMN M1004"
     },
     "HUMN M1005": {
       "unified_title": "Music for Video Games and Film: History and Culture",
@@ -96476,6 +97212,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "IDST M10CL": {
+      "honors_of": "IDST M10CM"
+    },
     "IDST M10CU": {
       "merge_into": "IDST M1012",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -96666,6 +97405,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "IDST M10JC": {
+      "honors_of": "IDST M10JD"
+    },
     "IDST M10JE": {
       "merge_into": "IDST M1062",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -96690,6 +97432,9 @@
       "merge_into": "ESOL M1372",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "IDST M10JU": {
+      "honors_of": "COUN M1045"
     },
     "IDST M10JV": {
       "merge_into": "COUN M1045",
@@ -96901,6 +97646,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "IDST M10OJ": {
+      "honors_of": "IDST M1094"
+    },
     "IDST M10OK": {
       "merge_into": "IDST M1195",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -96996,6 +97744,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "IDST M10RQ": {
+      "honors_of": "COUN M1155"
+    },
     "IDST M10RR": {
       "merge_into": "COUN M1155",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -97045,6 +97796,9 @@
       "merge_into": "IDST M1200",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "IDST M10TE": {
+      "honors_of": "IDST M10WV"
     },
     "IDST M10TN": {
       "merge_into": "LSKL M1004",
@@ -100826,6 +101580,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "INFO M10AB": {
+      "honors_of": "INFO M1002"
+    },
+    "INFO M10AC": {
+      "honors_of": "INFO M1003"
+    },
     "INTD M1001": {
       "merge_into": "INTD M1007",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -102423,6 +103183,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "ITIS M10KP": {
+      "honors_of": "ITIS M1068"
+    },
     "ITIS M10KT": {
       "merge_into": "ITIS M1517",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -102947,6 +103710,9 @@
       "merge_into": "ITIS M1327",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ITIS M10SQ": {
+      "honors_of": "ITIS M1113"
     },
     "ITIS M10SW": {
       "merge_into": "BSOT M1536",
@@ -104078,6 +104844,9 @@
       "merge_into": "ITIS M1466",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "ITIS M11LX": {
+      "honors_of": "ITIS M1262"
     },
     "ITIS M11MB": {
       "merge_into": "ITIS M1254",
@@ -107083,10 +107852,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "JAPN M10AD": {
+      "honors_of": "JAPN M1017"
+    },
     "JAPN M10AE": {
       "merge_into": "JAPN M1035",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "JAPN M10AK": {
+      "honors_of": "JAPN M1018"
     },
     "JAPN M10AL": {
       "merge_into": "JAPN M1037",
@@ -107103,6 +107878,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "JAPN M10AW": {
+      "honors_of": "JAPN M1003"
+    },
     "JAPN M10BA": {
       "merge_into": "SPAN M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -107112,6 +107890,12 @@
       "merge_into": "CHIN M1030",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "JAPN M10BG": {
+      "honors_of": "JAPN M1032"
+    },
+    "JAPN M10BH": {
+      "honors_of": "JAPN M1006"
     },
     "JAPN M10BJ": {
       "merge_into": "JAPN M1039",
@@ -107167,6 +107951,9 @@
       "merge_into": "FREN M1032",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "JAPN M10CP": {
+      "honors_of": "JAPN M1015"
     },
     "JAPN M10CS": {
       "merge_into": "JAPN M1040",
@@ -113054,6 +113841,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "KINE M13AD": {
+      "honors_of": "KINE M1523"
+    },
     "KINE M13AI": {
       "merge_into": "KINE M1530",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -116845,10 +117635,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "LATN M10AD": {
+      "honors_of": "CHIN M1058"
+    },
     "LATN M10AF": {
       "merge_into": "LATN M1002",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "LATN M10AG": {
+      "honors_of": "LATN M1001"
     },
     "LATN M10AH": {
       "merge_into": "LATN M1002",
@@ -117265,6 +118061,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "LIBR M10AR": {
+      "honors_of": "LIBR M1035"
+    },
     "LIBR M10AS": {
       "merge_into": "LIBR M1035",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -117320,6 +118119,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "LIBR M10BO": {
+      "honors_of": "LIBR M1009"
+    },
     "LIBR M10BS": {
       "merge_into": "LIBR M1034",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -117350,8 +118152,17 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "LIBR M10CI": {
+      "honors_of": "LIBR M1040"
+    },
     "LIBR M10CJ": {
       "honors_of": "LIBR M1040"
+    },
+    "LIBR M10CK": {
+      "honors_of": "LIBR M10CX"
+    },
+    "LIBR M10CL": {
+      "honors_of": "LIBR M1026"
     },
     "LIBR M10CM": {
       "merge_into": "LIBR M1041",
@@ -119996,6 +120807,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "MATH M10NC": {
+      "honors_of": "MATH 230"
+    },
     "MATH M10ND": {
       "unified_title": "Calculus 1",
       "reviewed_by": "trailcrew-ccr1-s111@bot",
@@ -120150,6 +120964,9 @@
       "merge_into": "MATH M1121",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MATH M10PL": {
+      "honors_of": "MATH M1123"
     },
     "MATH M10PM": {
       "merge_into": "MATH M1028",
@@ -120928,6 +121745,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MATH M11CM": {
+      "honors_of": "MATH 130"
+    },
     "MATH M11CO": {
       "merge_into": "MATH M1001",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -120982,6 +121802,12 @@
       "merge_into": "MATH M1258",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MATH M11DN": {
+      "honors_of": "MATH 151"
+    },
+    "MATH M11DO": {
+      "honors_of": "MATH 151"
     },
     "MATH M11DY": {
       "merge_into": "MATH M1005",
@@ -122751,6 +123577,9 @@
       "merge_into": "ENTR M1014",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MRKT M10BN": {
+      "honors_of": "BUSI M1361"
     },
     "MRKT M10BO": {
       "merge_into": "FCSH M1047",
@@ -124761,6 +125590,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M1040": {
+      "honors_of": "MUSI M1043"
+    },
     "MUSI M1043": {
       "unified_title": "The Music of Multicultural America",
       "reviewed_by": "automerge-v1@bot",
@@ -125193,10 +126025,19 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "MUSI M10LX": {
+      "honors_of": "MUSI M10LZ"
+    },
+    "MUSI M10LY": {
+      "honors_of": "MUSI M10MC"
+    },
     "MUSI M10ME": {
       "merge_into": "MUSI M1484",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M10MH": {
+      "honors_of": "MUSI M1582"
     },
     "MUSI M10MI": {
       "merge_into": "MUSI M1582",
@@ -125207,6 +126048,9 @@
       "merge_into": "MUSI M1582",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "MUSI M10MN": {
+      "honors_of": "MUSI M10MO"
     },
     "MUSI M10MP": {
       "merge_into": "MUSI M1583",
@@ -125262,6 +126106,9 @@
       "merge_into": "MUSI M1588",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M10PH": {
+      "honors_of": "MUSI M10PI"
     },
     "MUSI M10PL": {
       "merge_into": "MUSI M1589",
@@ -125882,6 +126729,9 @@
       "merge_into": "MUSI M1044",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M11AP": {
+      "honors_of": "MUSI M1044"
     },
     "MUSI M11AQ": {
       "merge_into": "MUSI M1044",
@@ -126533,6 +127383,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M11PS": {
+      "honors_of": "MUSI M1252"
+    },
     "MUSI M11PT": {
       "merge_into": "MUSI M1252",
       "reviewed_by": "automerge-v1@bot",
@@ -126542,6 +127395,9 @@
       "merge_into": "MUSI M1253",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M11QG": {
+      "honors_of": "MUSI M1254"
     },
     "MUSI M11QI": {
       "merge_into": "MUSI M1254",
@@ -126743,6 +127599,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M11XO": {
+      "honors_of": "MUSI M1334"
+    },
     "MUSI M11XW": {
       "merge_into": "MUSI M1565",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -126858,6 +127717,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "MUSI M1236": {
+      "honors_of": "MUSI M1237"
+    },
     "MUSI M1246": {
       "merge_into": "MUSC M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -126962,6 +127824,12 @@
       "merge_into": "MUSI M1484",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "MUSI M12CD": {
+      "honors_of": "MUSI M1488"
+    },
+    "MUSI M12CE": {
+      "honors_of": "MUSI M1518"
     },
     "MUSI M12CF": {
       "merge_into": "MUSI M1634",
@@ -127974,6 +128842,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "MUSI M1589": {
+      "honors_of": "MUSI M1072",
       "unified_title": "Rock Music History and Appreciation Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -128199,6 +129068,7 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "MUSI M1634": {
+      "honors_of": "MUSI M1522",
       "unified_title": "Honors World Music",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -132255,6 +133125,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "NUTR M10CB": {
+      "honors_of": "NUTR M10CC"
+    },
     "NUTR M10CJ": {
       "merge_into": "CULN M1147",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -134967,6 +135840,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHIL M10AW": {
+      "honors_of": "PHIL 130"
+    },
     "PHIL M10BG": {
       "merge_into": "HUMA M1119",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -135067,6 +135943,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHIL M10DI": {
+      "honors_of": "PHIL 140"
+    },
+    "PHIL M10DO": {
+      "honors_of": "PHIL 110"
+    },
     "PHIL M10DP": {
       "merge_into": "PHIL M1043",
       "reviewed_by": "automerge-v1@bot",
@@ -135132,6 +136014,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHIL M10EW": {
+      "honors_of": "PHIL 120"
+    },
     "PHIL M10FB": {
       "merge_into": "PHIL M1121",
       "reviewed_by": "automerge-v1@bot",
@@ -135152,6 +136037,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHIL M10FI": {
+      "honors_of": "SJS 120"
+    },
     "PHIL M10FO": {
       "merge_into": "PHIL M1122",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -135167,6 +136055,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHIL M10FS": {
+      "honors_of": "HUMA M1125"
+    },
     "PHIL M10FU": {
       "merge_into": "HUMA M1125",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -135181,6 +136072,15 @@
       "merge_into": "PHIL M1123",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PHIL M10GA": {
+      "honors_of": "HIST M1194"
+    },
+    "PHIL M10GB": {
+      "honors_of": "PHIL M1090"
+    },
+    "PHIL M10GC": {
+      "honors_of": "SJS 130"
     },
     "PHIL M10GE": {
       "merge_into": "PHIL M1124",
@@ -135905,6 +136805,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHOT M10DT": {
+      "honors_of": "PHOT M10DU"
+    },
     "PHOT M10DW": {
       "merge_into": "PHOT M1128",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -136090,6 +136993,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHOT M10HE": {
+      "honors_of": "PHOT M10HF"
+    },
     "PHOT M10HJ": {
       "merge_into": "PHOT M1112",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -136124,6 +137030,9 @@
       "merge_into": "MUSI M1621",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHOT M10IH": {
+      "honors_of": "PHOT M1055"
     },
     "PHOT M10IM": {
       "merge_into": "ARTS M1004",
@@ -136310,6 +137219,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHOT M10MS": {
+      "honors_of": "ARTS M1411"
+    },
     "PHOT M10MT": {
       "merge_into": "PHOT M1137",
       "reviewed_by": "automerge-v1@bot",
@@ -136319,6 +137231,9 @@
       "merge_into": "PHOT M1137",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PHOT M10MV": {
+      "honors_of": "JOUR 160"
     },
     "PHOT M10MZ": {
       "merge_into": "ARTS M1516",
@@ -136641,6 +137556,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "PHOT M1137": {
+      "honors_of": "PHOT M1096",
       "unified_title": "Honors Introduction to Photography",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -136908,10 +137824,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "PHSC M10BM": {
+      "honors_of": "ASTR M1017"
+    },
     "PHSC M10BN": {
       "merge_into": "ASTR M1049",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PHSC M10BO": {
+      "honors_of": "ASTR M1014"
     },
     "PHSC M10BP": {
       "merge_into": "ASTR C1001",
@@ -136952,6 +137874,9 @@
       "merge_into": "GEOL M1004",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PHSC M10CP": {
+      "honors_of": "CHEM 101"
     },
     "PHSC M10CW": {
       "merge_into": "CHEM M1067",
@@ -137082,6 +138007,9 @@
       "merge_into": "PHSC M1029",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-12T19:59:36.968435+00:00"
+    },
+    "PHSC M10FT": {
+      "honors_of": "ASTR M1040"
     },
     "PHSC M10GC": {
       "merge_into": "PHSC M1052",
@@ -137338,6 +138266,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHYS M10DH": {
+      "honors_of": "PHYS 105"
+    },
     "PHYS M10DI": {
       "merge_into": "PHYS M1070",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -137413,6 +138344,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PHYS M10EV": {
+      "honors_of": "CHEM M1044"
+    },
     "PHYS M10EW": {
       "merge_into": "CHEM M1044",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -137422,6 +138356,9 @@
       "merge_into": "CHEM M1044",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PHYS M10FR": {
+      "honors_of": "PHYS 205"
     },
     "PHYS M10FU": {
       "merge_into": "PHYS M1036",
@@ -137804,6 +138741,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "POLS M1033": {
+      "honors_of": "POLS 130"
+    },
     "POLS M1039": {
       "unified_title": "The Modern Far East",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -137828,6 +138768,12 @@
       "unified_title": "Contemporary Issues in California State and Local Government",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "POLS M1059": {
+      "honors_of": "POLS 140"
+    },
+    "POLS M1060": {
+      "honors_of": "POLS 140"
     },
     "POLS M1075": {
       "unified_title": "History of Mexican and Latino Americans in the United States",
@@ -137909,6 +138855,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "POLS M10AH": {
+      "honors_of": "PUBS M1005"
+    },
     "POLS M10AK": {
       "merge_into": "POLS M1079",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -137923,6 +138872,9 @@
       "merge_into": "ETHS M1218",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "POLS M10AU": {
+      "honors_of": "POLS M10AV"
     },
     "POLS M10AX": {
       "merge_into": "ETHS M1218",
@@ -137959,6 +138911,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "POLS M10BY": {
+      "honors_of": "POLS M1020"
+    },
     "POLS M10CB": {
       "merge_into": "POLS M1023",
       "reviewed_by": "automerge-v1@bot",
@@ -137983,6 +138938,9 @@
       "merge_into": "POLS M1056",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "POLS M10CH": {
+      "honors_of": "POLS M1027"
     },
     "POLS M10CI": {
       "merge_into": "POLS M1027",
@@ -138507,6 +139465,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PSYC M10DA": {
+      "honors_of": "SOCI 125"
+    },
+    "PSYC M10DB": {
+      "honors_of": "PSYC M1042"
+    },
     "PSYC M10DD": {
       "merge_into": "PSYC M1040",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -138521,6 +139485,9 @@
       "merge_into": "PSYC M1115",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PSYC M10DQ": {
+      "honors_of": "PSY 150"
     },
     "PSYC M10DU": {
       "merge_into": "PSYC M1135",
@@ -138552,10 +139519,16 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "PSYC M10FM": {
+      "honors_of": "PSYC M1059"
+    },
     "PSYC M10FN": {
       "merge_into": "PSYC M1059",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PSYC M10FO": {
+      "honors_of": "PSYC M1061"
     },
     "PSYC M10FP": {
       "merge_into": "PSYC M1099",
@@ -138582,10 +139555,16 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "PSYC M10FZ": {
+      "honors_of": "PSY 180"
+    },
     "PSYC M10GE": {
       "merge_into": "PSYC M1074",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "PSYC M10GF": {
+      "honors_of": "PSY 120"
     },
     "PSYC M10GI": {
       "merge_into": "PSYC M1138",
@@ -138661,6 +139640,9 @@
       "merge_into": "PSYC M1115",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "PSYC M10ID": {
+      "honors_of": "PSYC M1121"
     },
     "PSYC M10IG": {
       "merge_into": "BUSI M1511",
@@ -138868,6 +139850,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "PSYC M1140": {
+      "honors_of": "PSYC M1087",
       "unified_title": "The Psychology of Gender Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -143453,11 +144436,13 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "SLNA M1022": {
+      "honors_of": "SLNA M1028",
       "unified_title": "American Sign Language 1 Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "SLNA M1023": {
+      "honors_of": "SLNA M1033",
       "unified_title": "American Sign Language 2 Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -143640,6 +144625,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "SLNA M1097": {
+      "honors_of": "SLNA M1036",
       "unified_title": "American Sign Language 3 Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -144574,6 +145560,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCI M1059": {
+      "honors_of": "SOCI 115"
+    },
     "SOCI M1069": {
       "unified_title": "Intro to the Social Sciences",
       "reviewed_by": "automerge-v1@bot",
@@ -144699,6 +145688,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCI M10DN": {
+      "honors_of": "SOCI 140"
+    },
+    "SOCI M10DT": {
+      "honors_of": "SOCI M10BI"
+    },
     "SOCI M10DV": {
       "merge_into": "SOCS M1027",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -144718,6 +145713,9 @@
       "merge_into": "ECON M1039",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCI M10EC": {
+      "honors_of": "SOCI M1079"
     },
     "SOCI M10EL": {
       "merge_into": "ETHS M1254",
@@ -144849,6 +145847,9 @@
       "merge_into": "HIST M1085",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M1039": {
+      "honors_of": "SOCS M1040"
     },
     "SOCS M1040": {
       "unified_title": "Grassroots Democracy: Race, Politics and the American Promise",
@@ -144985,6 +145986,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "SOCS M10BN": {
+      "honors_of": "SOCS M10BP"
+    },
     "SOCS M10BT": {
       "merge_into": "ETHA M1008",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -145035,6 +146039,15 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCS M10CO": {
+      "honors_of": "HUMA M10EO"
+    },
+    "SOCS M10CP": {
+      "honors_of": "HUMA M10FA"
+    },
+    "SOCS M10CQ": {
+      "honors_of": "HUMN M10BG"
+    },
     "SOCS M10CT": {
       "merge_into": "GEOG M1016",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -145054,6 +146067,9 @@
       "merge_into": "ETHS M1090",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M10DH": {
+      "honors_of": "HUMA M10GW"
     },
     "SOCS M10DI": {
       "merge_into": "SOCS M1067",
@@ -145079,6 +146095,12 @@
       "merge_into": "ANTH M1090",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SOCS M10DW": {
+      "honors_of": "SOCS M10DX"
+    },
+    "SOCS M10DY": {
+      "honors_of": "HUMA M10HW"
     },
     "SOCS M10EI": {
       "merge_into": "ETHS M1237",
@@ -145135,6 +146157,12 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "SOCS M10GA": {
+      "honors_of": "GLST 101"
+    },
+    "SOCS M10GB": {
+      "honors_of": "GLST 102"
+    },
     "SOCS M10GC": {
       "merge_into": "SOCS M1072",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -145149,6 +146177,9 @@
       "merge_into": "ANTH M1097",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "SOCS M10GW": {
+      "honors_of": "SJS 110"
     },
     "SOCS M10HA": {
       "merge_into": "SOCI M1055",
@@ -145600,6 +146631,12 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "SPAN M1045": {
+      "honors_of": "SPAN 100"
+    },
+    "SPAN M1046": {
+      "honors_of": "SPAN 110"
+    },
     "SPAN M1047": {
       "merge_into": "SPAN 100",
       "reviewed_by": "map@rccd.edu",
@@ -145649,6 +146686,9 @@
       "merge_into": "SPAN M1039",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SPAN M1073": {
+      "honors_of": "SPAN 100"
     },
     "SPAN M1074": {
       "merge_into": "SPAN 100",
@@ -145865,6 +146905,9 @@
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
+    "SPAN M10DH": {
+      "honors_of": "SPAN M1026"
+    },
     "SPAN M10DN": {
       "merge_into": "SPAN M1122",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -145984,6 +147027,9 @@
       "merge_into": "SPAN M1114",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "SPAN M10FX": {
+      "honors_of": "SPAN M10FY"
     },
     "SPAN M10FZ": {
       "merge_into": "ENGL M1410",
@@ -147792,6 +148838,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "THTR M10PG": {
+      "honors_of": "THTR M1056"
+    },
     "THTR M10PJ": {
       "merge_into": "THTR M1057",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -147871,6 +148920,9 @@
       "merge_into": "ARTS M1129",
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+    },
+    "THTR M10RT": {
+      "honors_of": "THTR 111"
     },
     "THTR M10RY": {
       "merge_into": "THTR M1349",
@@ -148172,6 +149224,9 @@
       "reviewed_by": "automerge-titlelane-v1@bot",
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
+    "THTR M10YI": {
+      "honors_of": "THTR M10YJ"
+    },
     "THTR M10YK": {
       "merge_into": "THTR M1347",
       "reviewed_by": "automerge-titlelane-v1@bot",
@@ -148329,6 +149384,7 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "THTR M1187": {
+      "honors_of": "THTR 111",
       "unified_title": "Introduction to the Theatre Honors",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
@@ -148427,6 +149483,9 @@
       "merge_into": "DANC M1168",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "THTR M11CE": {
+      "honors_of": "THTR M11CF"
     },
     "THTR M11CO": {
       "merge_into": "THTR M1351",
@@ -148727,6 +149786,9 @@
       "merge_into": "THTR M1312",
       "reviewed_by": "automerge-v1@bot",
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+    },
+    "THTR M11MI": {
+      "honors_of": "THTR 113"
     },
     "THTR M11MJ": {
       "merge_into": "THTR M1187",

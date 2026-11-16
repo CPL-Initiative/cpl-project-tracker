@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-16T06:20:11.567180+00:00",
+  "scraped_at": "2026-11-16T21:15:06.982992+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31960,
+    "jst": 32143,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 603,
+      "jst": 605,
       "star": true
     },
     "Norco College": {
@@ -187,7 +187,7 @@
     },
     "Los Angeles Trade Technical College": {
       "vets": 310,
-      "jst": 477,
+      "jst": 478,
       "star": true
     },
     "Mission College": {
@@ -227,7 +227,7 @@
     },
     "Ventura College": {
       "vets": 238,
-      "jst": 201,
+      "jst": 202,
       "star": true
     },
     "Evergreen Valley College": {
@@ -282,12 +282,12 @@
     },
     "Irvine Valley College": {
       "vets": 247,
-      "jst": 221,
+      "jst": 222,
       "star": true
     },
     "San Jose City College": {
       "vets": 153,
-      "jst": 124,
+      "jst": 125,
       "star": true
     },
     "Oxnard College": {
@@ -297,7 +297,7 @@
     },
     "Golden West College": {
       "vets": 227,
-      "jst": 107,
+      "jst": 109,
       "star": false
     },
     "Los Angeles Harbor College": {
@@ -340,6 +340,11 @@
       "jst": 83,
       "star": true
     },
+    "West Valley College": {
+      "vets": 58,
+      "jst": 75,
+      "star": true
+    },
     "Porterville College": {
       "vets": 51,
       "jst": 87,
@@ -354,11 +359,6 @@
       "vets": 15,
       "jst": 9,
       "star": false
-    },
-    "West Valley College": {
-      "vets": 58,
-      "jst": 56,
-      "star": true
     },
     "Hartnell College": {
       "vets": 122,
@@ -477,7 +477,7 @@
     },
     "Grossmont College": {
       "vets": 428,
-      "jst": 677,
+      "jst": 833,
       "star": true
     },
     "Los Angeles City College": {
