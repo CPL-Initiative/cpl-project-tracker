@@ -1,0 +1,142 @@
+{
+ "college": "Gavilan College",
+ "catalog_url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3227",
+ "platform": "curriqunet",
+ "catalog_year": "2025-2026",
+ "programs": 2,
+ "with_closed_list": 2,
+ "started": "2026-11-16T21:21:28Z",
+ "prior": {
+  "start": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3227",
+  "catalog_year": "2025-2026",
+  "only": [
+   "31444",
+   "33047"
+  ]
+ },
+ "curriqunet": {
+  "catalog": 424,
+  "view_prefix": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/",
+  "errors": [],
+  "sections": [
+   "Academic Programs",
+   "Support Programs"
+  ],
+  "nodes_read": 3,
+  "calls": 51,
+  "entries": 142,
+  "stopped_at_cap": false,
+  "same_title_entries": 14,
+  "entries_read": 128,
+  "twin_ids": {
+   "3108": [
+    3350
+   ],
+   "3414": [
+    3182
+   ],
+   "3110": [
+    3185
+   ],
+   "3109": [
+    3179
+   ],
+   "3283": [
+    3181
+   ],
+   "3178": [
+    3180
+   ],
+   "3220": [
+    3527
+   ],
+   "3223": [
+    3262
+   ],
+   "3147": [
+    3526
+   ],
+   "3221": [
+    3300
+   ],
+   "3518": [
+    3351
+   ],
+   "3522": [
+    3219
+   ],
+   "3139": [
+    3183
+   ],
+   "3532": [
+    3420
+   ]
+  },
+  "failed_calls": 0
+ },
+ "pages_read": 128,
+ "pages_listed": 128,
+ "pages_answered": 128,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "loads": 180,
+ "seconds": 838.8,
+ "found": 2,
+ "by_method": {
+  "sitemap_page": 2
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 2
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/gavilan",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "31444",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3297/3354",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33047",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3127/3130",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "31444": {
+   "sha256": "5d3ddfc373f65ff44cf94a100334bc5264b5c0f34ee1756256be4b71e0a03357",
+   "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3297/3354"
+  },
+  "33047": {
+   "sha256": "7056df868e03ee8a3f40f2795eb801f122fc6b07f924cbf12df40c1252962c14",
+   "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3127/3130"
+  }
+ },
+ "run": "43958278663",
+ "filed": [
+  "31444",
+  "33047"
+ ],
+ "kept": []
+}
