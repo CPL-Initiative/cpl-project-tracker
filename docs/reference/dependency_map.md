@@ -1359,6 +1359,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `catalog.cccd.edu` | scripts: `kb/_course_outcomes_read.py` |
 | `catalog.example` | modules: `a11y.config.js` |
+| `catalog.example.edu` | scripts: `kb/_program_requirements_college.py` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `chaffey.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
@@ -1557,4 +1558,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1016 file
-datasets · 195 external services · 604 consumers · 72 workflows · 41 tabs.
+datasets · 196 external services · 604 consumers · 72 workflows · 41 tabs.

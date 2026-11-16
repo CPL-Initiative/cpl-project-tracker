@@ -5,7 +5,7 @@
   "rpcs": 64,
   "edge_functions": 15,
   "file_datasets": 1016,
-  "external_services": 195,
+  "external_services": 196,
   "consumers": 604,
   "workflows": 72,
   "data_js_files": 71,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2796
+     "line": 2834
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2752
+     "line": 2790
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2689
+     "line": 2727
     }
    ],
    "main_committers": []
@@ -838,6 +838,18 @@
      "direction": "read",
      "how": "url",
      "line": 665
+    }
+   ],
+   "main_committers": []
+  },
+  "external:catalog.example.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 1929
     }
    ],
    "main_committers": []
@@ -3013,7 +3025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2282
+     "line": 2320
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -8664,7 +8676,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6917
+     "line": 6955
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8684,7 +8696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6993
+     "line": 7031
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17566,7 +17578,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3640
+     "line": 3678
     }
    ],
    "served": true,
@@ -17579,7 +17591,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7613
+     "line": 7653
     }
    ],
    "served": true,
@@ -21429,7 +21441,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7338
+     "line": 7376
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21449,7 +21461,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6355
+     "line": 6393
     }
    ],
    "served": false,
@@ -22073,7 +22085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6955
+     "line": 6993
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -29694,7 +29706,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7587
+     "line": 7627
     }
    ],
    "main_committers": []
@@ -29706,7 +29718,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7700
+     "line": 7740
     }
    ],
    "main_committers": []

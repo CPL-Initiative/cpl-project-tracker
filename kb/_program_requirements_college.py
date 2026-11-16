@@ -1916,18 +1916,54 @@ def display_holds_no_state_list() -> bool:
     return "x_20001" not in keys
 
 
+@functools.lru_cache(maxsize=1)
+def commons_holds_no_state_list() -> bool:
+    """The precondition's second half (S668 second reader on #3414): the Commons' cause sidecars
+    (kb/_build_commons_data_status.py, cause_programs) link no catalog page for a no-closed-list program whose record
+    was read with no state list, since the tab does not show that record yet. Probed on one synthetic college: a
+    no_state_list record read from a found page, and its sources.json entry as the switch files it."""
+    import tempfile
+    import _build_commons_data_status as CD
+    from _program_requirements_score import score as _score
+    rec = {"program": {}, "blocks": [{"courses": [{"code": "ACCT 101", "catalog_addition": True}]}]}
+    url = "https://catalog.example.edu/programs/accounting-as.php"
+    with tempfile.TemporaryDirectory() as td:
+        d = os.path.join(td, CD.COLLEGE_DIR, "x")
+        os.makedirs(os.path.join(d, "records"))
+        _write(os.path.join(d, "sources.json"),
+               [{"control_number": "20001", "title": "Accounting", "award": "A.S. Degree", "method": "no_closed_list",
+                 "coverage": 0.0, "codes_found": [], "ncl_source": True, "codes_named": ["ACCT101"],
+                 "source": {"url": url}}])
+        _write(os.path.join(d, "records", "20001.json"),
+               {"college": "X", "control_number": "20001", "source_url": url, "record": rec, "error": None,
+                NO_STATE_LIST: True, "score": _score(rec, [], "ACCT 101", "A.S. Degree")})
+        census = {"programs": [{"college": "X", "control_number": "20001", "cause": "no_closed_list", "sub": None,
+                                "lever": "program_course_file_check"}]}
+        rows = CD.cause_programs(td, census, {"x": {"name": "X"}}).get("x", {}).get("programs") or []
+    return bool(rows) and all(r.get("url") is None for r in rows)
+
+
+def ncl_surfaces_hold() -> dict:
+    """{surface: whether it holds a no_state_list record out}: the display build and the Commons' cause sidecars,
+    the precondition for NCL_EXTRACT (display_holds_no_state_list, commons_holds_no_state_list)."""
+    return {"kb/_build_roep_display.py": display_holds_no_state_list(),
+            "kb/_build_commons_data_status.py": commons_holds_no_state_list()}
+
+
 def ncl_extract_on() -> bool:
-    """Whether found no-closed-list pages are filed and sent: NCL_EXTRACT asks, and the display build holds such a
-    record out (display_holds_no_state_list). Asked before the display build does, the runner refuses the switch and
+    """Whether found no-closed-list pages are filed and sent: NCL_EXTRACT asks, and every surface that reads filed
+    records holds such a record out (ncl_surfaces_hold). Asked before they do, the runner refuses the switch and
     says so once: nothing is filed or sent, and the capture files what it did before slice B."""
     if not ncl_extract_asked():
         return False
-    if display_holds_no_state_list():
+    held = ncl_surfaces_hold()
+    if all(held.values()):
         return True
     if not _NCL_REFUSAL_SAID[0]:
         _NCL_REFUSAL_SAID[0] = True
-        print("::warning::NCL_EXTRACT=1 refused: kb/_build_roep_display.py would show a record read with no state "
-              "course list; found no-closed-list pages are read for the account alone", flush=True)
+        print("::warning::NCL_EXTRACT=1 refused: %s would show a record read with no state course list; found "
+              "no-closed-list pages are read for the account alone" % ", ".join(k for k, v in held.items() if not v),
+              flush=True)
     return False
 
 
@@ -2021,15 +2057,16 @@ def extractable(src: dict, bar: float) -> bool:
 def ncl_read_found(college: str, recs: list[dict], programs: list[dict], pages: list[dict], reg: dict,
                    out_dir: str | None = None) -> tuple[dict, list[dict]]:
     """capture()'s step after the lookup: each no-closed-list record whose answer is found, on a page the capture
-    read, is read as its ncl_source. With NCL_EXTRACT on, the source replaces the record in recs (its answer kept as
-    catalog_lookup, its file rewritten under out_dir/sources when out_dir is given), so the filing carries it. With it
-    off, recs and the files stay as before slice B (the Commons reads a filed source's address as the program's page;
-    S668 second reader on #3414), and the sources come back for the account alone (would_extract's ncl_ keys).
-    Returns (the named-course net's self-test, ncl_named_self_test; the sources read for the account, none when on)."""
+    read, is read as its ncl_source. With NCL_EXTRACT on, a source that names a course (ncl_extractable) replaces the
+    record in recs (its answer kept as catalog_lookup, its file rewritten under out_dir/sources when out_dir is given),
+    so the filing carries it and the extraction reads it. Every other source, and every source with the switch off,
+    comes back for the account alone (would_extract's ncl_ keys), and its record and files stay as before slice B: the
+    Commons reads a filed source's address as the program's page (S668 second reader on #3414).
+    Returns (the named-course net's self-test, ncl_named_self_test; the sources read for the account alone)."""
     subjects, listed = college_subjects(programs), college_listed(programs)
     by_url = {pg.get("url"): pg for pg in pages}
     by_cn = {p["control_number"]: p for p in programs}
-    on, read = ncl_extract_on(), []
+    on, account = ncl_extract_on(), []
     for i, rec in enumerate(recs):
         ans = rec.get("catalog_lookup") or {}
         pg = by_url.get((ans.get("page") or {}).get("url"))
@@ -2037,17 +2074,18 @@ def ncl_read_found(college: str, recs: list[dict], programs: list[dict], pages: 
                 or rec["control_number"] not in by_cn:
             continue
         src = dict(ncl_source(college, by_cn[rec["control_number"]], reg, pg, subjects, listed), catalog_lookup=ans)
-        read.append(src)
+        filed = on and ncl_extractable(src)
         n = len(src["codes_named"])
         print("%-6s ncl_source   names %d course%s %s%s" % (rec["control_number"], n, "" if n == 1 else "s",
-                                                           src["source"]["url"], "" if on else " (account only)"),
+                                                           src["source"]["url"], "" if filed else " (account only)"),
               flush=True)
-        if on:
+        if filed:
             recs[i] = src
             if out_dir:
                 _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), src)
-    # With the switch on the sources are in recs; the account-only list is for the switch off.
-    return ncl_named_self_test(recs, pages, programs, subjects, listed), ([] if on else read)
+        else:
+            account.append(src)
+    return ncl_named_self_test(recs, pages, programs, subjects, listed), account
 
 
 def ncl_named_self_test(recs: list[dict], pages: list[dict], programs: list[dict], subjects: set[str],
@@ -7356,8 +7394,10 @@ def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | N
     programs whose call failed and kept their filed record (S647)."""
     passed = [r for r in records if r.get("score") and r["score"].get("pass")]
     def fails(check):
-        # A check a record with no closed list cannot take files pass None (basis no_state_list, S668): no failure.
-        return sum(1 for r in records if r.get("score") and r["score"].get(check, {}).get("pass", True) is False)
+        # failed counts the closed-list records, as extracted does: a record read with no state list (S668) is
+        # counted under no_state_list alone, whatever its checks say.
+        return sum(1 for r in records if r.get("score") and not r.get(NO_STATE_LIST)
+                   and r["score"].get(check, {}).get("pass", True) is False)
     total = sum(r.get("cost_usd") or 0 for r in records)
     acct = acct or {"calls": None, "failed": []}
     return {"college": capture_report.get("college"), "programs": capture_report.get("programs"),

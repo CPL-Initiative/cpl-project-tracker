@@ -5263,26 +5263,30 @@ check(all(sk[cn]["method"] == "no_closed_list" and sk[cn]["source"] is None and 
 check(all("ncl_source" not in e and "codes_named" not in e and e.get("source") is None
           for e in sk_filed if e["control_number"] in NCL_CNS),
       "the filed sources.json carries no found page for a no-closed-list program while the switch is off")
-# With the switch on, once the display build holds such a record out (C.display_holds_no_state_list, the
-# precondition tests/program_requirements_ncl_extract_test.py pins), a found page files its text beside its answer.
-_saved_probe, _saved_ncl = C.display_holds_no_state_list, os.environ.get(C.NCL_EXTRACT_ENV)
-C.display_holds_no_state_list = lambda: True
+# With the switch on, once the display build and the Commons hold such a record out (C.ncl_surfaces_hold, the
+# precondition tests/program_requirements_ncl_extract_test.py pins), a found page naming a course files its text beside
+# its answer; one naming none files no source (the Commons would link it; S668 second reader on #3414).
+_saved_probe, _saved_ncl = C.ncl_surfaces_hold, os.environ.get(C.NCL_EXTRACT_ENV)
+C.ncl_surfaces_hold = lambda: {"kb/_build_roep_display.py": True, "kb/_build_commons_data_status.py": True}
 os.environ[C.NCL_EXTRACT_ENV] = "1"
+on_pages = dict(SK_PAGES, **{"programs/accounting-as.php": ("Accounting", "ACTG 100 ACTG 200 SB 1440 PLO 1")})
 try:
-    on_code, on_src, on_rep, on_filed = run_sk_capture("1")
+    on_code, on_src, on_rep, on_filed = run_sk_capture("1", pages=on_pages)
 finally:
-    C.display_holds_no_state_list = _saved_probe
+    C.ncl_surfaces_hold = _saved_probe
     if _saved_ncl is None:
         os.environ.pop(C.NCL_EXTRACT_ENV, None)
     else:
         os.environ[C.NCL_EXTRACT_ENV] = _saved_ncl
 on = {cn: json.loads(t) for cn, t in on_src.items()}
-check(on_code == 0 and all(on[cn].get("ncl_source") is True and on[cn]["source"]["url"] == lk[cn]["page"]["url"]
-                           and on[cn]["coverage"] == 0.0 and on[cn]["codes_found"] == [] for cn in SK_FOUND)
-      and all(on[cn] == sk[cn] for cn in NCL_CNS if cn not in SK_FOUND)
-      and on_rep["would_extract"]["ncl_found_no_course"] == sk_rep["would_extract"]["ncl_found_no_course"],
-      "with the switch on, a found page files its source beside its answer (ncl_source); one not found is as before, "
-      "and would_extract lists the same pages either way")
+check(on_code == 0 and on["05809"].get("ncl_source") is True and on["05809"]["codes_named"] == ["ACTG100", "ACTG200"]
+      and on["05809"]["source"]["url"] == lk["05809"]["page"]["url"] and on["05809"]["coverage"] == 0.0
+      and all(on[cn] == sk[cn] for cn in NCL_CNS if cn != "05809")
+      and [x["control_number"] for x in on_rep["would_extract"]["ncl_found"]["list"]] == ["05809"]
+      and sorted(x["control_number"] for x in on_rep["would_extract"]["ncl_found_no_course"]["list"])
+      == [cn for cn in SK_FOUND if cn != "05809"],
+      "with the switch on, the found page naming a course (Accounting A.S.: ACTG 100 and 200, never SB 1440 or PLO 1) "
+      "files its source beside its answer; the found pages naming none, and every program not found, file as before")
 check(sk["90001"]["source"]["url"] == SK + "programs/accounting-ca.php" and sk["90003"]["method"] == "sitemap_page",
       "the closed-list programs take their pages first")
 check(lk["90002"] == {"result": "not_matched", "why": "no page read names it by title and award"},
