@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics",
  "award": "A.S. T Degree",
- "source_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030",
+ "source_url": "https://bcc.curriqunet.com/Catalog/archive/9573/iq/29087/29366/29408",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6740,
+  "input_tokens": 6762,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6740,
-    "output_tokens": 1381,
+    "input_tokens": 6762,
+    "output_tokens": 1366,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,72 +30,64 @@
     "model": null
    }
   ],
-  "output_tokens": 1381,
+  "output_tokens": 1366,
   "output_tokens_details": {
-   "thinking_tokens": 516
+   "thinking_tokens": 409
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05458,
- "ms": 11549,
- "seconds": 11.9,
+ "cost_usd": 0.05437,
+ "ms": 11312,
+ "seconds": 14.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "MATH11",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CIS6"
-   ],
-   "flagged": [
-    "CIS6"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    26.0,
-    26.0
+    21.0,
+    23.0
    ],
    "stated": [
-    26.0,
-    26.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     60.0,
-     60.0
+     21.0,
+     23.0
     ],
     "stated": [
-     60.0,
-     60.0
+     21.0,
+     23.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
+    "against": "program",
     "why": []
    }
   },
@@ -104,9 +96,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 5,
    "courses": 0,
-   "count": 2,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -121,15 +113,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics 2.0 - AS-T Degree",
+   "section_heading": "Mathematics - AS-T Degree",
    "measure": "units",
    "total_units": {
-    "min": 26,
-    "max": 26
+    "min": 21,
+    "max": 23
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -142,25 +134,28 @@
     "max": 60
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "Calculation: Calculate accurately and comprehensively.",
-    "Application/Analysis: Draw appropriate conclusions based on the quantitative analysis of data, while recognizing the limits of this analysis."
+    "Apply mean value theorems",
+    "Solve linear systems, integration problems, and problems for multivariable functions",
+    "Graph and analyze basic functions",
+    "Calculate derivatives",
+    "Solve differential equations and analyze the solution sets"
    ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required Courses:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 21,
-     "max": 21
+     "min": 18,
+     "max": 18
     },
     "courses": [
      {
@@ -190,13 +185,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "MATH 003F",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
@@ -206,44 +194,51 @@
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 5,
+     "min": 3,
      "max": 5
     },
     "courses": [
+     {
+      "code": "MATH 003F",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 011",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "PHYS 004A",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "CIS 006",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "MATH 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The page prints 'General Education (CalGETC) and Elective Courses 34'; this figure combines Cal-GETC and electives, so ge_units 34 includes elective units and is not a pure GE figure. No separate elective units are printed.",
-   "Learning outcomes list is cut off: a third outcome beginning 'Repr' is truncated and was not recorded.",
-   "Career Opportunities section names only transfer to a 4-year university, no career or occupation, so careers is empty.",
-   "CIS 006 is not in the closed list (catalog addition)."
+   "The catalog prints MATH 011 (Discrete Mathematics, 4 units); treated as the closed list's MATH 11 (same title and units), so catalog_addition is false. A reviewer may confirm the code formatting.",
+   "Major Requirements printed as 21-23 recorded as total_units; Total Units 60 recorded as degree_total.",
+   "The page prints 'General Education (Cal-GETC) and Elective Courses 37-39' as one combined figure for GE plus electives; ge_units left null and no elective units recorded because the page does not separate GE units from elective units.",
+   "The 'Career Opportunities' heading lists only 'Transfer to a 4-year university', which is not a career, job title or career field; careers left empty.",
+   "The 'A minimum of 18 semester units in the major' sentence is a general ADT requirement, not this award's total."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": "43961012966",
+ "catalog_year": "2025-2026"
 }
