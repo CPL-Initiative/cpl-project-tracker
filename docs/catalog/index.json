@@ -14000,7 +14000,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 104,
+   "count": 105,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15203,6 +15203,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 5 (S637 onward)",
      "type": null,
      "updated": "2026-11-15"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_6.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
+     "type": null,
+     "updated": "2026-11-16"
     },
     {
      "created": "2026-11-12",
@@ -17110,8 +17125,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 625,
+   "count": 626,
    "docs": [
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 666,
+     "path": "docs/session_666_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 666 handoff (from SkyThrush, S665)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
     {
      "created": "2026-11-16",
      "governs": [],
@@ -27634,5 +27663,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1494
+ "total": 1496
 }
