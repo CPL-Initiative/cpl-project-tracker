@@ -29,6 +29,9 @@ paragraph and the Riverside City paragraph), then `docs/program_requirements_har
    objectives reread, which counts as the full read, then Golden West (`cccd`, one host), plus one preparation run.
    College of the Redwoods (#3387, run 43817157271) and Allan Hancock (#3284) are both *read* (12 of 12), and each
    waits its turn. SLOs, PLOs and objectives have their own $40-per-college limit.
+   **Before Golden West's reread:** 3 of its live CourseLeaf SLO rows file the heading *Course outcomes:* as outcome 1
+   (COBIx on #3389, verified). Fix that in the parse and correct the 3 rows in place, the way #3389 did, so the
+   reread does not file them twice.
 2. **The prior-catalog read** (harvest lane NEXT): (b) a Cal-GETC units step for Riverside City, cited from its own
    catalog, then the prior dispatch for Physics 32745; (c) Communication Studies 30578 and Business Administration
    33829 from archive 7 (2024-2025), with that year's renumber map read from its own pages. After that, the other
