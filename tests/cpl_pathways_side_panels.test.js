@@ -113,6 +113,25 @@ function tile(root, code) { return root.querySelector('.cplpw-rtile[data-code="'
     check("(b) the college's index is read once across re-renders",
       calls.filter((u) => /select=course_code,kind&/.test(decodeURIComponent(u))).length === 1);
 
+    // #3412 item 1: a chip beside the word opens the same text on the card itself; the word still opens the panel.
+    const chip = (code) => { const t = tile(root, code); return t && t.querySelector(".cplpw-outchip"); };
+    check("(b2) a chip only where something is collected, worded like the word",
+      chip("IWAP 40.07") && chip("IWAP 40.07").textContent === "SLOs and objectives" && chip("IWAP 40.50").textContent === "SLOs" && !chip("IWAP 40.56"));
+    const ch = chip("IWAP 40.07"), reg = w.document.getElementById(ch.getAttribute("aria-controls"));
+    check("(b2) the chip names what it does and starts closed", /show the text on this card/.test(ch.getAttribute("aria-label")) &&
+      ch.getAttribute("aria-expanded") === "false" && reg && reg.hidden && tile(root, "IWAP 40.07").contains(reg));
+    const before = calls.length;
+    ch.dispatchEvent(new w.Event("click", { bubbles: true }));
+    await wait(40);
+    const pnl = w.document.getElementById("cplpw-panel");
+    check("(b2) pressing it opens the text in place, SLOs first, and no panel",
+      ch.getAttribute("aria-expanded") === "true" && !reg.hidden && (!pnl || pnl.hidden) &&
+      [...reg.querySelectorAll(".cplpw-outblock h3")].map((h) => h.textContent).join(" | ") === "Student learning outcomes (2) | Course objectives (1)");
+    ch.dispatchEvent(new w.Event("click", { bubbles: true }));
+    ch.dispatchEvent(new w.Event("click", { bubbles: true }));
+    await wait(20);
+    check("(b2) it folds and reopens without reading again", calls.length === before + 1 && !reg.hidden && reg.querySelectorAll(".cplpw-outblock").length === 2);
+
     word("IWAP 40.07").dispatchEvent(new w.Event("click", { bubbles: true }));
     await wait(40);
     const panel = w.document.getElementById("cplpw-panel");
