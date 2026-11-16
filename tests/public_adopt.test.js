@@ -57,7 +57,8 @@ const DATA = {
 const MORE = {
   held: [{ t: "Phlebotomy Technician", i: "NHA", s: "51", n: 1 }],
   harvested: [
-    { t: "AWS Certified Cloud Practitioner", i: "Amazon Web Services", k: "certification", s: "11", src: ["iss", "cos"], ct: 1, sk: 4, u: "https://aws.example/ccp" },
+    { t: "AWS Certified Cloud Practitioner", i: "Amazon Web Services", k: "certification", s: "11", src: ["iss", "cos"], ct: 1, sk: 4, u: "https://aws.example/ccp",
+      ai: 1, ab: { "1": ["CIS 7", "Cloud Basics", 1], "0": ["CIS 8", "Cloud Two", 2] }, ax: [1, "CIS 7", "Cloud Basics", 1, 3] },
     { t: "Chainsaws Level 1", i: "Forestry Board", k: "certification", s: "51", src: ["cos"] },
     { t: "Cisco Networking Essentials", i: "Cisco", k: "course certificate", s: "11", ms: "inmap" },
   ],
@@ -235,6 +236,15 @@ function pick(d, id, key, on) {
   check("a 0 stays a 0, the status in its column, the ask in the last", hrows.length === 2
     && hrows.every((tr) => tr.children.length === 9 && tr.children[6].textContent === "0" && tr.children[4].textContent === "Not yet evaluated"
       && tr.children[8].querySelector(".req-w[data-req]") && tr.children[8].querySelector(".req-w").title === "Ask us to prioritize this credential"));
+  // #3405 item 4: a not-yet-evaluated credential CPL-AI rated by folded title names one course, for faculty review.
+  d.querySelector('[data-view="list"]').click(); await tick(20);
+  const awsCard = Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /AWS Certified/.test(x.textContent))[0];
+  const chip = awsCard && awsCard.querySelector(".aichip .chip");
+  check("CPL-AI course match chip names a college course, its evidence word, the other colleges", chip
+    && /^CPL-AI course match: \S.* CIS 7 Cloud Basics$/.test(chip.textContent) && chip.getAttribute("data-sec") === "pn-ai"
+    && /Strong evidence, and 2 other colleges with a match/.test(awsCard.textContent) && /the college decides/.test(awsCard.textContent));
+  check("a credential with no title match carries no chip", !Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /Chainsaws/.test(x.textContent))[0].querySelector(".aichip"));
+  d.querySelector('[data-view="table"]').click(); await tick(20);
   check("the status cell's title carries the evidence", /Not yet evaluated · /.test(hrows.map((tr) => tr.children[4].title).join("|")));
   d.querySelector('#ad-tbl-body button[data-q="CompTIA"]').click();
   check("the issuer drills down to a search", d.getElementById("ad-q").value === "CompTIA" && d.querySelectorAll("#ad-tbl-body tr:not(.band)").length === 1);

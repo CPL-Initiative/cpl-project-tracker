@@ -284,7 +284,65 @@ def statewide_recs(root):
         return {}
 
 
-def cpl_ai(root, col_at):
+# CPL-AI's codes name the issuer by prefix; Swift is Apple's. A harvested row whose issuer names another body (Certiport
+# for Apple's Swift exam) keeps its own identity and takes no chip (#3405).
+CPL_AI_ISSUER = {"swift": "apple"}
+
+
+def cpl_ai_title_matches(root, rows):
+    """Not-yet-evaluated rows whose folded title is a frozen CPL-AI certification's (#3405, Sam 2026-11-16).
+
+    These have no exhibit, so the exhibit join never reaches them. A match needs the folded title and, where the row
+    names an issuer, the issuer the CPL-AI code names. Returns {row title: [{"code", "title", "kind": "title"}]}.
+    CIP membership alone never makes a match: it would light thousands of cards and read as an expectation.
+    """
+    index = load_json(root, CPL_AI_INDEX, {}) or {}
+    by = {}
+    for x in index.get("credentials") or []:
+        by.setdefault(norm_title(x.get("title")), []).append(x)
+    out = {}
+    for r in rows:
+        if r.get("ms") == "inmap" or r.get("t") in out:
+            continue
+        for x in by.get(norm_title(r.get("t")), []):
+            word = CPL_AI_ISSUER.get(re.sub(r"\d+$", "", x.get("code") or ""), re.sub(r"\d+$", "", x.get("code") or ""))
+            if r.get("i") and word not in norm_title(r.get("i")).replace(" ", ""):
+                continue
+            out.setdefault(r["t"], []).append({"code": x.get("code"), "title": x.get("title"), "kind": "title"})
+    return out
+
+
+CHIP_STOP = {"microsoft", "office", "specialist", "associate", "expert", "certified", "user", "professional", "apps",
+             "2019", "support", "technician", "ccst", "comptia", "autodesk", "adobe", "using", "with", "development"}
+
+
+def ai_chip(rows, col_at_n):
+    """The card chip's data for a title-matched row: per college the strongest course, and the strongest overall.
+
+    ab = {college column index or name: [course code, course title, tier]}; ax = [college, code, title, tier, colleges].
+    """
+    # The example a card names: stronger tier first, then a course whose title shares the certification's own words
+    # (a PowerPoint course before a Word course CPL-AI also rated), then the larger share of skill areas matched.
+    own = set()
+    for row in rows:
+        own |= {w for w in norm_title(row.get("title")).split() if len(w) > 3} - CHIP_STOP
+
+    def rank(x):
+        hit = len(own & set(norm_title(x[1]).split()))
+        return (x[2], -hit, -(x[3] / x[4] if x[4] else 0), x[0])
+    top = {}
+    for row in rows:
+        for col, courses in (row.get("by_college") or {}).items():
+            if courses and (col not in top or rank(courses[0]) < rank(top[col])):
+                top[col] = courses[0]
+    if not top:
+        return None, None
+    best = min(top.items(), key=lambda kv: (rank(kv[1])[:2], 0 if kv[0].isdigit() else 1, rank(kv[1])))
+    ab = {k: [v[0], v[1], v[2]] for k, v in sorted(top.items())}
+    return ab, [int(best[0]) if best[0].isdigit() else best[0], best[1][0], best[1][1], best[1][2], len(ab)]
+
+
+def cpl_ai(root, col_at, extra=None):
     """CPL-AI's certifications joined to the common exhibits, as the badges and the college view read them.
 
     Sam, 2026-11-06 (SkyLantern's run): "feature statewide credit recommendations and CPL-AI recommendations on the
@@ -300,7 +358,10 @@ def cpl_ai(root, col_at):
     names = join.get("colleges") or {}
     by_code = {x.get("code"): x for x in index.get("credentials") or []}
     shards, out = {}, {}
-    for ut, certs in sorted((join.get("by_exhibit") or {}).items()):
+    joined = dict(join.get("by_exhibit") or {})
+    for ut, certs in (extra or {}).items():
+        joined.setdefault(ut, certs)
+    for ut, certs in sorted(joined.items()):
         rows = []
         for cert in certs:
             code = cert.get("code")
@@ -421,10 +482,15 @@ def build(root):
 
     review, unchecked, joined, review_sectors = review_rows(root, set((adoption.get("credentials") or {}).keys()))
     held_rows, harvested = more_rows(root, adoption, settled, ref_by, col_at, src_names)
-    ai, ai_index = cpl_ai(root, col_at)
+    extra = cpl_ai_title_matches(root, harvested)
+    ai, ai_index = cpl_ai(root, col_at, extra)
     for c in creds + held_rows + harvested:  # the badges: a statewide recommendation, a CPL-AI course match
         if c.get("t") in ai:
             c["ai"] = len(ai[c["t"]])
+        if c in harvested and c.get("t") in extra and c.get("t") in ai:  # the card chip (#3405)
+            ab, ax = ai_chip(ai[c["t"]], len(colleges))
+            if ab:
+                c["ab"], c["ax"] = ab, ax
         if c not in creds and recs.get(c.get("t")):
             c["sw"] = recs[c["t"]]
     used = {c.get("s") for c in creds + review + held_rows + harvested if c.get("s")}
@@ -444,7 +510,9 @@ def build(root):
                   "exhibit and no articulation (ms = inmap, Known to a college, no credit yet): t, i, k = kind, s = CIP "
                   "sector, st = status when not active, src = sources (cos CareerOneStop, ce Credential Engine, ca "
                   "California license, iss the issuer's page, map), ct = has a CTID, sk = issuer skill areas, u = the "
-                  "issuer's page. Sector names for these live in adopt_data.json's sectors.",
+                  "issuer's page, ai = CPL-AI certifications joined by folded title (#3405), ab = {college: [course code, title, "
+                  "tier]} its strongest CPL-AI course per college, ax = [college, code, title, tier, colleges with a match]. "
+                  "Sector names for these live in adopt_data.json's sectors.",
         "written_at": iso_now(),
         "counts": {"held": len(held_rows), "harvested": sum(1 for h in harvested if h.get("ms") != "inmap"),
                    "inmap": sum(1 for h in harvested if h.get("ms") == "inmap")},
