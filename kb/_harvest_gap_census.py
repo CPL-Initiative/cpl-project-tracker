@@ -244,6 +244,10 @@ def assign(prog: dict, col: dict | None, live_rec: dict | None, live: bool, park
         method = col["methods"].get(cn)
         if method is None and score == "absent":
             cause = "not_in_capture"
+        elif filed is not None and (filed.get("coverage") or {}).get("basis") == S.NO_STATE_LIST:
+            # Read from its found page with no state course list (S668; #3299 slice B): the load holds it until the
+            # tab shows it, so it is still a program without a closed list, now read.
+            cause, sub = "no_closed_list", "read, held until the tab shows it"
         elif score != "absent":
             if score is None:
                 cause = "extraction_error"
