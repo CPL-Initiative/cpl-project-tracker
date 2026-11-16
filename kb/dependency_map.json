@@ -1159,7 +1159,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1121,
+     "line": 1128,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -1551,7 +1551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2884,
+     "line": 3212,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2332,7 +2332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2883,
+     "line": 3211,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3495,7 +3495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2882,
+     "line": 3210,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6251,7 +6251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3634,
+     "line": 3978,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6292,7 +6292,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2972,
+     "line": 3316,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6302,7 +6302,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 285
+     "line": 296
     }
    ],
    "served": true,
@@ -6487,7 +6487,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 283
+     "line": 294
     },
     {
      "id": "script:kb/_apply_college_short_names.py",
@@ -6610,7 +6610,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3914,
+     "line": 4259,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6861,7 +6861,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3901,
+     "line": 4246,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6931,7 +6931,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3895,
+     "line": 4240,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7277,7 +7277,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2274,
+     "line": 2601,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7327,7 +7327,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3861,
+     "line": 4206,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7350,7 +7350,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2446,
+     "line": 2773,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7413,7 +7413,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3909,
+     "line": 4254,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7613,7 +7613,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3882,
+     "line": 4227,
      "tabs": [
       "cpl-pathways"
      ]
@@ -21590,7 +21590,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3329,
+     "line": 3673,
      "tabs": [
       "cpl-pathways"
      ]
@@ -21936,7 +21936,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 284
+     "line": 295
     }
    ],
    "served": true,
@@ -23767,11 +23767,21 @@
   "file:sierra/sidebar.js": {
    "consumers": [
     {
+     "id": "module:cpl_pathways.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2018,
+     "tabs": [
+      "cpl-pathways"
+     ]
+    },
+    {
      "id": "module:library.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4189,
+     "line": 4194,
      "tabs": [
       "library"
      ]
@@ -23840,7 +23850,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 350
+     "line": 458
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
@@ -30325,7 +30335,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3172,
+     "line": 3516,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30364,7 +30374,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3175,
+     "line": 3519,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30471,7 +30481,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3174,
+     "line": 1871,
      "tabs": [
       "cpl-pathways"
      ]
@@ -32989,7 +32999,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1658,
+     "line": 1668,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33079,7 +33089,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1659,
+     "line": 1669,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33962,6 +33972,7 @@
    "raci"
   ],
   "sierra/sidebar.js": [
+   "cpl-pathways",
    "library",
    "sierra-training"
   ],
