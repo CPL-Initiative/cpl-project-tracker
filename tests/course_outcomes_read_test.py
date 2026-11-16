@@ -340,6 +340,22 @@ def _():
         assert not any(x in ("Written/Typed Homework", "Term or Other Papers") for x in got["objectives"]), name
 
 
+@check("Las Positas' lead-in 'Upon the completion of this course, ...' is the lead, never the first outcome (S664)")
+def _():
+    # COBIx on #3386: 505 live Las Positas SLO rows filed the lead-in as outcome 1. The filed trial page is the case.
+    folder = os.path.join(ROOT, "kb", "course_outcomes", "trial_41595084107")
+    text = open(os.path.join(folder, "AF_1.txt")).read()
+    page = gzip.open(os.path.join(folder, "AF_1.html.gz"), "rt").read()
+    for got in (reader.outcomes_of(text), reader.parse_page(page, text, "curriqunet")):
+        assert got["lead"] == "Upon the completion of this course, the student should be able to:", got["lead"]
+        assert got["outcomes"][0] == "Compare and contrast various methods of evaluating exercise intensity.", got
+        assert len(got["outcomes"]) == 3, got["outcomes"]
+    # A full-sentence outcome that opens like a lead-in stays an outcome when a lead-in already stands.
+    got = reader.outcomes_of("Student Learning Outcomes\nUpon the completion of this course, the student should be "
+                             "able to:\nStudents will be able to swim.\nCourse Content:\nx")
+    assert got["outcomes"] == ["Students will be able to swim."], got
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

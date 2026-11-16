@@ -78,8 +78,9 @@ STOP = re.compile(
 SLO_TITLE = re.compile(r"^[ \t]*(student|course) learning outcomes?\b", re.I | re.M)
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
-# The lead-in a college prints between the heading and the list.
-LEAD = re.compile(r"(upon (successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
+# The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
+# course, the student should be able to:" (S664: 505 live SLO rows had filed it as their first outcome).
+LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
                   re.I)
 # The colleges an RCCD integrated outline names as offering the course.
 OFFERED = re.compile(r"^College:[ \t]*\n((?:[ \t]*[A-Z]{3}[ \t]*\n)+)", re.M)
