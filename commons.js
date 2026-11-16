@@ -616,7 +616,8 @@
       return (d ? fmt(d) + " of " + fmt(b.n) + " decided. " : "") + fmt(b.n) + (b.n === 1 ? " card" : " cards")
         + " as of last night's sweep; Start counts again. " + (b.stop || "");
     }
-    if (b.kind === "decision") return "One decision, on its sheet. " + (b.stop || "");
+    /* A real ask is plain (Sam, 2026-11-16, issue #3358): the default already chosen, and it stands unless he changes it. */
+    if (b.kind === "decision") return (b.chosen ? "We went with this: " + b.chosen + " " : "") + (b.stop || "It stands unless you change it.");
     return "In the " + (b.title || "reference") + ". Each ruling saves where you make it.";
   }
   function nextBatchSection(b, opts) {
@@ -640,7 +641,7 @@
          el("p", { cls: "cmn-next-meta", text: batchMeta(b) })];
     return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": b ? b.kind : "none" }, [
       el("div", { cls: "cmn-next-text" }, text.filter(Boolean)),
-      b && b.open ? openLink(b.open, "Start", "cmn-start") : null
+      b && b.open ? openLink(b.open, b.kind === "decision" ? "Change it" : "Start", "cmn-start") : null
     ].filter(Boolean));
   }
   /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
