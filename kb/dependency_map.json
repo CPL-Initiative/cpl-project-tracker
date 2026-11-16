@@ -1680,7 +1680,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 974,
+     "line": 985,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -21535,7 +21535,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 558
+     "line": 585
     }
    ],
    "served": true,
@@ -23822,7 +23822,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 559
+     "line": 586
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",

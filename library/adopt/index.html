@@ -171,9 +171,33 @@ body.panel-open .shift { padding-right: calc(var(--gutter-r) + var(--panel-w)); 
 .badge:hover { text-decoration: underline; text-underline-offset: 2px; }
 .tbl td.rec .badges { flex-wrap: nowrap; gap: 4px; }
 .tbl td.rec .badge { font-size: .7rem; padding: 0 7px; }
-.recs { display: grid; gap: 4px; align-content: end; }
-.recs .lbl { font-size: .82rem; color: var(--heading); font-weight: 700; }
-.recs .opts { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: center; min-height: 42px; padding: 6px 12px; border: 1px solid var(--field); border-radius: 9px; background: var(--surface); }
+/* Folds (#3405, Sam 2026-11-16): the introduction starts closed, the review strip and each field group open; a review
+   card shows its title and issuer until opened. The open or closed state is layout, kept in localStorage; filters never are. */
+.kpi[aria-pressed="true"] { border-color: var(--accent); border-left-color: var(--accent); box-shadow: 0 0 0 2px var(--pill-bg); }
+.fold-intro { margin-top: 6px; font-size: .9rem; }
+.hero.intro-closed { grid-template-columns: minmax(0, 1fr); }
+.hero.intro-closed .hero-content { padding-right: var(--gutter-r); }
+.fold-h { display: inline-flex; align-items: baseline; gap: 8px; min-height: 24px; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 4px; cursor: pointer; }
+.fold-h:hover { text-decoration-color: currentColor; }
+.fold-h::after { content: attr(data-word); font-family: var(--sans); font-size: .8rem; font-weight: 600; color: var(--link); }
+.sel-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; }
+.sel-row .chips-sel { margin-top: 8px; }
+.sel-row #ad-clear-top { margin-top: 8px; font-size: .88rem; }
+.cred.rv .rv-more { margin-top: 4px; }
+/* Short so the first row of the main list shows on a laptop screen (#3405's success check). */
+.review .list { grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 8px; align-items: start; }
+.review .cred.rv { padding: 6px 12px; gap: 2px; }
+.review .cred.rv .meta { font-size: .8rem; }
+.review .results-bar, .review .scope-note { margin-bottom: 4px; }
+.review .scope-note { font-size: .84rem; }
+.review h2 { font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); }
+.review { padding-block: 12px 4px; }
+.hero-content { padding-block: 14px 10px; }
+.filters { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); margin-top: 10px; }
+.kpi { min-width: 8rem; max-width: 12rem; padding: 6px 12px; }
+.kpi b { font-size: 1.4rem; }
+.hero.intro-closed h1 { font-size: clamp(1.9rem, 1.3rem + 1.6vw, 2.6rem); }
+.title-row { align-items: center; }
 .adoptable .lead { color: var(--muted); font-size: .9rem; margin-block: 4px 10px; }
 ul.aligned { margin: 4px 0 0; padding-left: 1.1em; font-size: .86rem; }
 ul.aligned li { margin-block: 2px; }
@@ -193,9 +217,8 @@ table.dom td, table.dom th { vertical-align: top; }
 .empty { color: var(--muted); padding: 18px 0; }
 
 /* Worth a faculty review */
-.review h2 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.7rem); }
 .review { padding-block-end: 8px; }
-.review-box { max-height: min(460px, 62vh); overflow-y: auto; padding: 2px; border-radius: 11px; }
+.review-box { max-height: min(112px, 18vh); overflow-y: auto; padding: 2px; border-radius: 11px; }
 .cred dl.tags { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 12px; margin: 2px 0 0; font-size: .86rem; }
 .cred dl.tags dt { color: var(--muted); font-weight: 600; }
 .cred dl.tags dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
@@ -440,9 +463,13 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
           <button type="button" class="kpi" id="kpi-awarded"><b>…</b><span>credentials earn credit at a college</span></button>
           <button type="button" class="kpi" id="kpi-colleges"><b>…</b><span>colleges award that credit</span></button>
           <button type="button" class="kpi" id="kpi-harvested" hidden><b>…</b><span>credentials not yet evaluated</span></button>
+          <button type="button" class="kpi" id="f-sw" data-rec="sw" aria-pressed="false"><b>…</b><span>statewide recommendations</span></button>
+          <button type="button" class="kpi" id="f-ai" data-rec="ai" aria-pressed="false"><b>…</b><span>CPL-AI course matches</span></button>
           <p class="kpi-scope" id="kpi-scope" hidden>Counted for the filters below.</p>
         </div>
       </div>
+      <button type="button" class="word fold-intro" data-fold="intro" aria-expanded="false" aria-controls="ad-intro ad-hero">Show the introduction</button>
+      <div class="intro" id="ad-intro" hidden>
       <p class="lede">California community colleges award credit for many of the credentials listed here. Find yours to see which colleges award credit for it, and ask for an evaluation where none does yet. Pick your college to see what it awards and what it could add.</p>
       <div class="start" role="group" aria-label="Start with">
         <span class="lab">Start with</span>
@@ -452,6 +479,7 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
         <button type="button" class="word" data-start="job">I learned it on the job</button>
         <button type="button" class="word" data-start="exam">I took AP, IB or CLEP exams</button>
       </div>
+      </div>
       <div class="filters" role="search" aria-label="Find credentials">
         <div class="field field-q"><label for="ad-q">Search</label><input id="ad-q" type="search" placeholder="Credential, issuer or course" autocomplete="off"></div>
         <div class="pick" id="pk-college"></div>
@@ -459,13 +487,10 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
         <div class="pick" id="pk-sector"></div>
         <div class="pick" id="pk-type"></div>
         <div class="pick" id="pk-standing"></div>
-        <div class="recs" role="group" aria-labelledby="pk-rec-l"><span class="lbl" id="pk-rec-l">Recommendations</span>
-          <div class="opts"><button type="button" class="word" id="f-sw" data-rec="sw" aria-pressed="false">Statewide recommendation</button>
-            <button type="button" class="word" id="f-ai" data-rec="ai" aria-pressed="false">CPL-AI course match</button></div></div>
       </div>
-      <div class="chips-sel" id="ad-sel" aria-live="polite"></div>
+      <div class="sel-row"><div class="chips-sel" id="ad-sel" aria-live="polite"></div><button type="button" class="word" id="ad-clear-top" hidden>Clear all filters</button></div>
     </div>
-    <div class="hero-visual" id="ad-hero">
+    <div class="hero-visual" id="ad-hero" hidden>
       <div class="hero-slides" aria-hidden="true">
         <img class="hero-slide is-on" src="../photos/hero-student-1.jpg" alt="" width="598" height="448">
         <img class="hero-slide" data-src="../photos/hero-architecture.jpg" alt="" width="1001" height="750">
@@ -493,12 +518,14 @@ body.panel-resizing { user-select: none; cursor: col-resize; }
   </section>
   <section id="review" class="results wrap shift review" aria-labelledby="ad-review-h" hidden>
     <div class="results-bar">
-      <h2 id="ad-review-h">Worth a faculty review</h2>
+      <h2 id="ad-review-h"><button type="button" class="fold-h" data-fold="review" aria-expanded="true" aria-controls="ad-review-body">Worth a faculty review</button></h2>
       <p class="state" id="ad-review-state" role="status"></p>
     </div>
-    <p class="scope-note">These credentials sit in the most collections of the Credential Engine Registry, and no California community college has set credit for them yet, so a student who holds one has no credit to request. A faculty review decides whether one warrants credit. The search and the field filter apply here.</p>
+    <div id="ad-review-body">
+    <p class="scope-note">They sit in the most Credential Engine Registry collections, and no California community college sets credit for them yet. A faculty review decides. The search and field filter apply.</p>
     <div class="review-box" role="region" aria-label="Worth a faculty review, the credentials" tabindex="0"><div class="list" id="ad-review"></div></div>
     <p class="empty" id="ad-review-empty" hidden>None of these match the search or the field.</p>
+    </div>
   </section>
   <section id="results" class="results wrap shift" aria-labelledby="ad-results-h">
     <h2 class="sr-only" id="ad-results-h">The credentials</h2>
