@@ -124,6 +124,12 @@ jobs:
             echo "::warning::_site is ${mb} MB, nearing GitHub Pages' 1 GB limit. du -sh _site/* | sort -h names the largest paths."
           fi
 
+      # The sessions' own spend for the Commons ETA clock, read from the handoffs' Spend: lines (Sam, 2026-11-15,
+      # #3358). Built here into _site and never committed: a committed copy rebuilt from every handoff would fight
+      # between parallel PRs (COBIx on #3379), and the daily build may not read docs/ (tests/apply_concurrency_test.py).
+      - name: Build the sessions' spend from the handoffs
+        run: python3 kb/_build_session_spend.py --out _site/kb/status/session_spend.json || echo "::warning title=Session spend not built::kb/_build_session_spend.py failed; the ETA clock shows the billing figures alone."
+
       # Cache-bust the published assets. Sam, 2026-08-22: "I fear users may be
       # looking at stale screens." index.html shipped 38 <script> tags with no
       # version query, and COBI lazy-loads 34 more tab modules by name — so a
@@ -138,12 +144,6 @@ jobs:
       # It exits non-zero if it stamps NOTHING, so a refactor that changes how
       # assets are referenced fails the deploy instead of silently shipping
       # unversioned pages — same posture as the served-path assertion below.
-      # The sessions' own spend for the Commons ETA clock, read from the handoffs' Spend: lines (Sam, 2026-11-15,
-      # #3358). Built here into _site and never committed: a committed copy rebuilt from every handoff would fight
-      # between parallel PRs (COBIx on #3379), and the daily build may not read docs/ (tests/apply_concurrency_test.py).
-      - name: Build the sessions' spend from the handoffs
-        run: python3 kb/_build_session_spend.py --out _site/kb/status/session_spend.json || echo "::warning title=Session spend not built::kb/_build_session_spend.py failed; the ETA clock shows the billing figures alone."
-
       - name: Stamp asset versions (cache-busting)
         run: python3 scripts/stamp_asset_versions.py _site
 

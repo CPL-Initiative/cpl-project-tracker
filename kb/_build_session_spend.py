@@ -31,7 +31,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = "kb/status/session_spend.json"
-LINE = re.compile(r"^\s*(?:[-*]\s*)?\**Spend:\**\s*(.*)$")
+# Spend:, **Spend:**, **Spend**: and lowercase spend: all read (COBIx on #3379); Spending: never does.
+LINE = re.compile(r"^\s*(?:[-*]\s*)?\**[Ss]pend(?::\**|\**:)\s*(.*)$")
 STAMP = r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?Z)"
 TIMES = re.compile(STAMP + r"\s*(?:to|–|-)\s*" + STAMP)
 USD = re.compile(r"\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")

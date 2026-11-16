@@ -59,6 +59,13 @@ with tempfile.TemporaryDirectory() as tmp:
     got = ss.build(tmp)["sessions"]
     check("Spend: needs its colon, the checkpoint's example is skipped, and the first real line wins",
           len(got) == 1 and got[0]["usd"] == 7.0, got)
+for form in ("Spend:", "**Spend:**", "**Spend**:", "spend:", "- **Spend**:"):
+    mm = ss.LINE.match(form + " $3.00; 2026-11-23T01:00Z to 2026-11-23T02:00Z.")
+    check("the line reads as " + form, mm is not None and ss.parse_line(mm.group(1))["usd"] == 3.0)
+check("Spending: is never a Spend line", ss.LINE.match("Spending: $3.00; 2026-11-23T01:00Z to 2026-11-23T02:00Z") is None)
+_pg = open(os.path.join(ROOT, ".github", "workflows", "pages.yml"), encoding="utf-8").read()
+check("the cache-busting comment sits over the stamp step, after the spend step",
+      _pg.index("Build the sessions' spend") < _pg.index("# Cache-bust the published assets") < _pg.index("Stamp asset versions"))
 # Built at Pages deploy into _site, never committed: two handoff PRs never fight over it (COBIx on #3379), and the
 # daily build, which may not read docs/, never runs it.
 _rd = lambda *p: open(os.path.join(ROOT, *p), encoding="utf-8").read()
