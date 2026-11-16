@@ -1102,19 +1102,26 @@
       });
     });
   }
+  /* opts.onStep(name), when given, hears each step after the data files: "records" (the college's catalog records and
+   * the MAP link index) and "build"; the build then waits one frame so a progress line can paint before it holds the
+   * thread (the visual's build timer, Sam 2026-11-16). Without it, nothing changes. */
   function prepare(opts, cb) {
-    var base = opts.base || "";
+    var base = opts.base || "", step = typeof opts.onStep === "function" ? opts.onStep : null;
     load(opts, function (err) {
       if (err) { cb(err); return; }
+      if (step) step("records");
       var verified = fetch(base + "kb/reference/map_cpl_opportunities_verified.json")
         .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
       Promise.all([catalogFor(opts.college), verified]).then(function (got) {
-        try {
-          cb(null, build({ college: opts.college, today: new Date().toISOString().slice(0, 10),
-            lookup: window.CPL_COCI_LOOKUP, members: window.CPL_UC_MEMBERS, aligned: window.CPL_UC_ALIGNED,
-            statewide: window.CPL_STATEWIDE, programs: window.CPL_COCI_PROGRAMS, catalog: got[0] || [],
-            verified: got[1], shareBase: opts.shareBase || SHARE_BASE }));
-        } catch (err2) { cb(err2); }
+        function go() {
+          try {
+            cb(null, build({ college: opts.college, today: new Date().toISOString().slice(0, 10),
+              lookup: window.CPL_COCI_LOOKUP, members: window.CPL_UC_MEMBERS, aligned: window.CPL_UC_ALIGNED,
+              statewide: window.CPL_STATEWIDE, programs: window.CPL_COCI_PROGRAMS, catalog: got[0] || [],
+              verified: got[1], shareBase: opts.shareBase || SHARE_BASE }));
+          } catch (err2) { cb(err2); }
+        }
+        if (step) { step("build"); setTimeout(go, 40); } else go();
       });
     });
   }
@@ -1142,6 +1149,7 @@
 
   window.CPL_COLLEGE_WORKBOOK = {
     build: build, sheets: sheets, toXlsx: toXlsx, pageHtml: pageHtml, wirePage: wirePage, load: load, prepare: prepare, resolve: findName,
+    need: NEED.map(function (p) { return p[0]; }),
     downloadWorkbook: downloadWorkbook, catalogFor: catalogFor, shareUrl: shareUrl, colleges: colleges,
     notesSlug: notesSlug, notesHtml: notesHtml,
     courseRows: courseRows, pageState: pageState, pageQuery: pageQuery, pageFilter: pageFilter,

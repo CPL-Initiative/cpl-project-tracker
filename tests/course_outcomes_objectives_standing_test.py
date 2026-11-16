@@ -563,7 +563,7 @@ def _():
 # the newest read_run per course with no kind takes a reread's objectives for SLOs).
 READERS = {
     "coci_lookup.js": "kind=eq.slo",
-    "cpl_pathways.js": "kind=eq.slo",
+    "cpl_pathways.js": "kind=eq.slo; the course panel kind=in.(slo,objective), each kind under its own heading",
     "program_requirements.js": "kind=eq.slo",
     "kb/_build_adopt_align.py": "kind=eq.slo",
     "kb/_build_exhibit_slo_neighbors.py": "kind=eq.slo",

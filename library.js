@@ -4167,11 +4167,16 @@
   // first visit to this tab and shown on this tab alone: every other tab hides the chip
   // and shuts an open bar. Its tokens take First Light's roles, set on the bar's own
   // elements so no :root changes in either HTML.
-  function onLibraryTab() {
-    return !!(window.CPL_TABS && typeof window.CPL_TABS.current === "function" && window.CPL_TABS.current() === "library");
+  // The tabs that show the chip name themselves in one registry (CPL Pathways joined, Sam 2026-11-16: "Add Sierra
+  // bubble on bottom right"), and every such tab asks the same question of the tab now showing, so no tab's listener
+  // undoes another's (cpl_pathways.js reads it too).
+  var SIERRA_TABS = window.CPL_SIERRA_TABS = window.CPL_SIERRA_TABS || {};
+  SIERRA_TABS.library = true;
+  function onSierraTab() {
+    return !!(window.CPL_TABS && typeof window.CPL_TABS.current === "function" && SIERRA_TABS[window.CPL_TABS.current()]);
   }
   function showSierraBar() {
-    if (window.CPL_SIERRA_BAR && typeof window.CPL_SIERRA_BAR.setChip === "function") window.CPL_SIERRA_BAR.setChip(onLibraryTab());
+    if (window.CPL_SIERRA_BAR && typeof window.CPL_SIERRA_BAR.setChip === "function") window.CPL_SIERRA_BAR.setChip(onSierraTab());
   }
   function ensureSierraBar() {
     if (!document.getElementById("lib-sbar-css")) {

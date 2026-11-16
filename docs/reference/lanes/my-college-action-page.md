@@ -67,4 +67,17 @@ record-view and table-read tests driven through `tests/cpl_pathways_drive.js`; a
 (and `-dark`) seed the List, the record targets choose the college and press the title. Sam also kept the picker at the top
 while a pathway is open, and accepted that the statewide search retires with *All colleges*.
 
+✅ **Five changes to CPL Pathways (Sam, 2026-11-16, S667 SkyPlover).** (1) *"Request Adopt links to course cards on
+programs wherever possible"*: each Could adopt or For consideration credential on a catalog-record card gets the
+`map_links.js` line (one chip per college that built a verified exhibit, opening MAP where Request Quick Adopt sits),
+named per credential when a card holds two or more; a title MAP lists no exhibit for hides its line. (2) *"Sierra bubble
+on bottom right ... open to sidebar instead of new tab"*: the tab loads `sierra/sidebar.js` like the Library, and the
+program's Ask Sierra word calls `CPL_SIERRA_BAR.ask`; the two tabs share `window.CPL_SIERRA_TABS`, so neither listener
+hides the other's chip. (3) *"SLOs and Objectives ... open to a side bar"*: a course with `course_outcomes` rows (either
+kind) or outcomes in its catalog record carries *SLOs*, *Objectives* or *SLOs and objectives*, opening a right-side
+non-modal panel with the newest read of each kind and its source; on catalog-record, featured-map, ladder and
+membership rows. (4) *"full width of window"*: `#tab-cpl-pathways .main-container` lifts the 1400px cap. (5) the CPL
+Visual (`library/cpl-opportunity/`) streams its five data files and shows a bar, the step and a clock from the first
+byte; the COBI link says the tab opened. Guard `tests/cpl_pathways_side_panels.test.js`.
+
 **NEXT:** ⓪ ✅ **Two figures, two names (Sam, sheet 6 card 5, 2026-09-30):** *Start here* reads *units not yet acted on* (`dormant_credits`, the MEASURES headline); *units waiting* stays with the articulated units in *Where you stand* (`articulated_waiting`). Guard: `tests/my_college_units_labels.test.js`. ① the redesign in a browser; ② the region lists when he finds them; ③ Sam's eyes on the public page signed out — the check the sweep cannot make. Story: [`docs/college_action_page_lessons.md`](docs/college_action_page_lessons.md); durable [`a-second-copy-of-a-fact-is-a-stale-copy-waiting`](docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md).
