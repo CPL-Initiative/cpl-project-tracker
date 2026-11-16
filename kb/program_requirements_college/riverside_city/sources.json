@@ -3215,17 +3215,21 @@
    "JOU7"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3731",
    "title": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
    "h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - associate in arts for transfer (adt) - aa1059(calgetc)",
+    "section_fit": 0.4
    }
   },
   "listed": 14,
-  "text_chars": 2642
+  "text_chars": 2642,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "30581",
@@ -3897,27 +3901,29 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 0.5,
   "codes_found": [
    "CSC5",
-   "MATH1C",
-   "MATH2",
-   "MATH3",
-   "MATHC2210H",
+   "MAT1A",
+   "MAT1B",
    "PHY4A"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
+   "title": "Mathematics - Associate in Science for Transfer (ADT) - AS720 (CalGETC)",
+   "h1": "Mathematics - Associate in Science for Transfer (ADT) - AS720 (CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - associate in science for transfer (adt) - as720 (calgetc)",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
-  "text_chars": 2023
+  "text_chars": 2057,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "32745",
@@ -3925,26 +3931,31 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 0.857,
   "codes_found": [
-   "MATH1C",
+   "MAT1A",
+   "MAT1B",
    "PHY4A",
    "PHY4B",
    "PHY4C",
    "PHY4D"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-   "title": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "h1": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838",
+   "title": "Physics for Transfer - Associate in Science for Transfer (ADT) - AS640 (CalGETC)",
+   "h1": "Physics for Transfer - Associate in Science for Transfer (ADT) - AS640 (CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer - associate in science for transfer (adt) - as640 (calgetc)",
+    "section_fit": 0.2
    }
   },
   "listed": 7,
-  "text_chars": 2197
+  "text_chars": 1698,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "32813",
@@ -4211,7 +4222,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.733,
+  "coverage": 0.667,
   "codes_found": [
    "ACC1A",
    "ACC1B",
@@ -4219,24 +4230,27 @@
    "BUS10H",
    "BUS18A",
    "BUS24",
-   "ECONC2001H",
-   "ECONC2002H",
-   "MATH5",
+   "ECO7",
+   "ECO8",
    "STATC1000",
    "STATC1000H"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3713",
    "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
    "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - associate in science for transfer (adt) - as1002 (calgetc)",
+    "section_fit": 0.4
    }
   },
   "listed": 15,
-  "text_chars": 2863
+  "text_chars": 2584,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "33964",
