@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-15T22:53:51Z",
-  "session": 661,
-  "moniker": "SkyKnot",
-  "run": "Sam's session",
+  "written_at": "2026-11-16T07:23:04Z",
+  "session": 663,
+  "moniker": "SkyLark",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_662_handoff.md",
+  "handoff": "docs/session_664_handoff.md",
   "next_step": {
-    "title": "Read each plain sibling's own 2025-2026 catalog entry",
-    "text": "List the 99 programs whose plain version and Cal-GETC 2.0 version share a page, by college, then read Riverside City's 2025-2026 catalog for each plain one and file it with its catalog year, as Sam ruled both are kept."
+    "title": "Give Physics its Cal-GETC units, then read the two older originals",
+    "text": "Physics for Transfer's 2025-2026 page needs a Cal-GETC units step cited from Riverside City's own catalog before its record can replace the current one. Communication Studies and Business Administration were already 2.0 in 2025-2026, so their originals are read from the 2024-2025 catalog next."
   },
   "calls": [
     {
@@ -338,6 +338,14 @@
   },
   "changes": [
     {
+      "at": "2026-11-16T07:16:00Z",
+      "text": "Mathematics for Transfer at Riverside City now carries its own 2025-2026 catalog record, read from that year's page and scored against that year's course numbers, in place of its 2.0 successor's page."
+    },
+    {
+      "at": "2026-11-16T06:57:00Z",
+      "text": "A record read from an earlier catalog is checked against the course numbers that catalog printed, so a renumbered course such as MAT-1C, now MATH 1C, counts as the listed course."
+    },
+    {
       "at": "2026-11-15T22:44:00Z",
       "text": "The College Collections ETA tops College Data Collection: a band with each college's projected Phase 1 date, and a card that opens the full clock in the side panel. Every college row also opens that college's CPL Pathways view beside the list."
     },
@@ -636,15 +644,21 @@
       "active": 20282,
       "complete": 14617,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-16",
+      "active": 20282,
+      "complete": 14617,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-16T06:12:00Z"
+    "at": "2026-11-16T08:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-15",
+    "day": "2026-11-16",
     "gaps": 3203,
     "parts": {
       "links": {
@@ -680,7 +694,7 @@
         ]
       },
       "careers": [
-        15711,
+        15712,
         20282
       ]
     }
