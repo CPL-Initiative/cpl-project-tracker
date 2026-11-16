@@ -449,7 +449,10 @@ def _():
     tmp = tempfile.mkdtemp(prefix="co_cs_")
     dst = os.path.join(tmp, "kb", "course_outcomes", "laspositas")
     os.makedirs(dst)
-    one = glob.glob(os.path.join(OUT, "laspositas", "read_*.json"))
+    filed = glob.glob(os.path.join(OUT, "laspositas", "read_*.json"))
+    # The college's newest filed run alone (S663: Las Positas now holds its first read and the objectives reread).
+    newest = max(int(json.load(open(p))["run"]) for p in filed)
+    one = [p for p in filed if int(json.load(open(p))["run"]) == newest]
     for p in one:
         d = json.load(open(p))
         json.dump(d, open(os.path.join(dst, os.path.basename(p)), "w"))
