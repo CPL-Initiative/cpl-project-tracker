@@ -206,8 +206,11 @@ def row_exhibit(root):
     # unclassified backlog): a procedure that classifies a backlog title writes it already stamped, so a universe of
     # the reference's keys alone grew by exactly the day's stamps and its remaining work could never fall
     # (q-exhibit-universe-grows-with-stamps-s661; d-exhibit-universe-includes-map-backlog-s662).
-    backlog = (stats["n"] or {}).get("unclassified_in_map") or 0
-    universe = len(ut) + backlog
+    # The audit and the reference are written at different times: a backlog title the audit counted may already be a
+    # key here, so take the larger of the two readings rather than their sum (COBIx on #3378, point 1).
+    st_ = stats["n"] or {}
+    backlog = st_.get("unclassified_in_map") or 0
+    universe = max(len(ut), (st_.get("total_raw_titles") or 0) + backlog)
     bands = (stats["n"] or {}).get("title_confidence_bands") or {}
     below_60 = sum(bands.get(b, 0) for b in ("0.40-0.59", "<0.40")) if bands else None
     below_80 = below_60 + bands.get("0.60-0.79", 0) if bands else None

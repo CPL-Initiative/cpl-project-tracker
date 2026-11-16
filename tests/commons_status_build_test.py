@@ -84,9 +84,10 @@ check("Exhibits: credentials with no Common SUBJ is a routine count from the sub
 ex_ = [r for r in rows if r.get("key") == "exhibit"][0]
 _f = ex_.get("facts") or {}
 _audit = json.load(open(os.path.join(ROOT, "kb", "exhibit_audit", "latest.json"), encoding="utf-8"))["stats"]
-check("Exhibits: the universe is the reference's titles plus MAP's unclassified backlog, in both pairs",
+check("Exhibits: the universe is the larger of the reference's titles and the audit's titles plus its backlog, never their sum, in both pairs",
       _f.get("backlog") == (_audit.get("unclassified_in_map") or 0)
-      and ex_["pair"][0]["of"] == _f["titles"] + _f["backlog"] == ex_["pair"][1]["of"], (_f.get("titles"), _f.get("backlog"), ex_["pair"][0]["of"]))
+      and ex_["pair"][0]["of"] == max(_f["titles"], (_audit.get("total_raw_titles") or 0) + _f["backlog"]) == ex_["pair"][1]["of"],
+      (_f.get("titles"), _f.get("backlog"), ex_["pair"][0]["of"]))
 import re as _re
 _hist = json.load(open(os.path.join(ROOT, "kb", "status", "commons_history.json"), encoding="utf-8")).get("pairs", {})
 _bad = []
