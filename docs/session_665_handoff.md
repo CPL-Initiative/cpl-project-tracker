@@ -85,6 +85,6 @@ No PR subscription, check-in or artifact watch was made. Nothing is held. The st
 
 Cost: this session's cost not available (no `get_session` tool in this firing); substantive PRs merged 1 (#3389).
 
-Spend: not available; 2026-11-16T10:12Z to 2026-11-16T10:55Z.
+Spend: not available; 2026-11-16T10:12Z to 2026-11-16T10:58Z.
 
 Greetings, you are SkyThrush (Session 665), see SkyWren's handoff — `docs/session_665_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_665_handoff.md) — let's keep rolling with our queue.
