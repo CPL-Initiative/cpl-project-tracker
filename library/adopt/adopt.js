@@ -407,13 +407,27 @@
   function askedWord(c) { var n = asked(c); return n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : ""; }
   function askedCell(c) { var n = asked(c); return n ? '<span class="askn">' + n + " asked</span>" : ""; }
 
+  /* A not-yet-evaluated credential CPL-AI already rated by folded title (#3405, Sam 2026-11-16): one named course, the
+     scoped college's strongest when it has one, as a suggestion for faculty review; the college decides. */
+  var AI_CAVEAT = "A suggestion for faculty review. These recommendations support local review; the college decides.";
+  function aiChip(c) {
+    if (!c.ax || c.std !== "harvested") return "";
+    var sc = state.sc, pick = null;
+    if (sc && c.ab) Object.keys(sc).forEach(function (k) { var x = c.ab[k]; if (x && (!pick || x[2] < pick[3])) pick = [Number(k), x[0], x[1], x[2]]; });
+    var x = pick || c.ax, col = typeof x[0] === "number" && D.colleges[x[0]] ? D.colleges[x[0]][1] : String(x[0]);
+    var others = pick ? 0 : Math.max(0, (c.ax[4] || 1) - 1);
+    return '<div class="chips aichip"><button type="button" class="chip" data-open="' + c._i + '" data-sec="pn-ai" title="' + esc(AI_CAVEAT) + '">CPL-AI course match: '
+      + esc(col + " " + x[1] + " " + x[2]) + "</button>"
+      + '<span class="more">' + esc(TIER[x[3]] || "") + (others ? ", and " + plural(others, "other college", "other colleges") + " with a match" : "") + "</span></div>"
+      + '<p class="meta aicav">' + esc(AI_CAVEAT) + "</p>";
+  }
   function otherCard(c) {
     var says = c.std === "harvested" ? "No college has evaluated it for credit yet. You can ask for that below."
       : c.std === "inmap" ? "A college has it on file and has not set credit for it yet."
       : "A college awards credit for a credential by this name; the Credit for Prior Learning Initiative is confirming it is the same one.";
     return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
       + (c.i ? '<p class="meta">' + esc(c.i) + "</p>" : "") + '<div class="pills"><span class="pill ' + (c.std === "harvested" ? "harv" : "std") + '">' + esc(STD[c.std]) + "</span>" + badgeBtns(c, false) + "</div>"
-      + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
+      + aiChip(c) + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
   }
 
   /* Its credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family), a quiet line:

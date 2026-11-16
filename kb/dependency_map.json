@@ -1680,7 +1680,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 985,
+     "line": 999,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -7703,7 +7703,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 342
+     "line": 421
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -16252,7 +16252,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 417
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
@@ -19269,7 +19269,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 344
+     "line": 423
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -21025,7 +21025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 420
     },
     {
      "id": "script:kb/_build_commons_status.py",

@@ -167,6 +167,35 @@ with tempfile.TemporaryDirectory() as root:
         check("live: no could-adopt college also articulates", all(
             not ({x[0] for x in c.get("c", [])} & {a[0] for a in c["a"]}) for c in live["credentials"]))
 
+# #3405 item 4: a not-yet-evaluated row joins a frozen CPL-AI certification by folded title, the issuer agreeing.
+tm = {r["t"]: c for r, c in B.cpl_ai_title_matches(ROOT, [
+    {"t": "App Development with Swift: Associate", "i": "Certiport"},
+    {"t": "App Development with Swift Associate", "i": "Apple"},
+    {"t": "CompTIA SecurityX", "i": "CompTIA"},
+    {"t": "CompTIA SecurityX ", "i": ""},
+    {"t": "Cisco Networking Essentials", "i": "Cisco", "ms": "inmap"},
+    {"t": "Chainsaws Level 1", "i": "Forestry Board"}])}
+check("title join: folded title and issuer agree", [x["code"] for x in tm.get("App Development with Swift Associate", [])] == ["swift2"]
+      and [x["code"] for x in tm.get("CompTIA SecurityX", [])] == ["comptia2"])
+check("title join: another issuer's same title keeps its own identity", "App Development with Swift: Associate" not in tm)
+check("title join: a row with no issuer matches on the title", "CompTIA SecurityX " in tm)
+same = B.cpl_ai_title_matches(ROOT, [{"t": "App Development with Swift Associate", "i": "Certiport"},
+                                     {"t": "App Development with Swift Associate", "i": "Apple"}])
+check("title join: keyed by row, so a same-titled row from another issuer stays out", [r["i"] for r, _ in same] == ["Apple"])
+check("issuer: whole words, a short prefix never a substring", B.issuer_agrees("aws1", "Amazon Web Services")
+      and not B.issuer_agrees("ace1", "Space Industry Board") and B.issuer_agrees("ace1", "American Council on Exercise")
+      and B.issuer_agrees("rda1", ""))
+check("title join: never a row a college has on file, never a stranger", "Cisco Networking Essentials" not in tm and "Chainsaws Level 1" not in tm)
+ab, ax = B.ai_chip([{"title": "Microsoft Office Specialist: PowerPoint Associate", "by_college": {
+    "3": [["ABE 100", "Microsoft Word I", 1, 9, 10, "x"], ["ABE 101", "PowerPoint Basics", 1, 5, 10, "x2"]], "5": [["BET 131", "Presentation Software: Powerpoint", 1, 8, 10, "y"]],
+    "Calbright": [["X 1", "PowerPoint", 1, 10, 10, "z"]], "7": [["Z 9", "Office", 2, 10, 10, "w"]]}}], 10)
+check("chip: names the strongest course sharing the certification's words, a column college first", ax[0] in (3, 5) and "owerpoint" in ax[2].lower() and ax[4] == 4)
+check("chip: one course per college, each college's best by the same rank, not its first", sorted(ab) == ["3", "5", "7", "Calbright"]
+      and ab["7"] == ["Z 9", "Office", 2] and ab["3"][0] == "ABE 101")
+if globals().get("live"):
+    hx = [h for h in json.load(open(os.path.join(ROOT, "library/adopt/adopt_more.json"))).get("harvested", []) if h.get("ax")]
+    check("live: the chips sit only on not-yet-evaluated rows with a CPL-AI match", all(h.get("ai") and h.get("ms") != "inmap" for h in hx))
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("PASS " if ok else "FAIL ") + n)
