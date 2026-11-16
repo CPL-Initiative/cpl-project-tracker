@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1010,
+  "file_datasets": 1011,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -10015,6 +10015,19 @@
     },
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_session_spend.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -20286,8 +20299,16 @@
      "line": 30
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/subjects.json": {
    "consumers": [
@@ -23679,7 +23700,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 67
     }
    ],
    "served": false,
@@ -34434,6 +34455,7 @@
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
     "kb/_ccr_seed_recheck_dryrun.py",
+    "kb/_build_session_spend.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -34514,6 +34536,7 @@
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
     "kb/status/commons_history.json",
+    "kb/status/session_spend.json",
     "kb/ccr_doubt.json",
     "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",

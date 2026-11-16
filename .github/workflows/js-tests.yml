@@ -1378,9 +1378,9 @@ jobs:
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
       # guard against a second copy. Pure-stdlib python.
-      # The sessions' own spend for the Commons ETA clock, from the handoffs' Spend: lines (Sam, 2026-11-15, #3358):
-      # stale when a handoff lands with the line and the file unbuilt. Pure-stdlib python.
-      - name: Session spend from the handoffs is current (kb/_build_session_spend.py)
+      # The sessions' own spend for the Commons ETA clock, from the handoffs' Spend: lines (Sam, 2026-11-15, #3358).
+      # The daily run rebuilds the file (scripts/daily_build.sh), so no staleness check here (COBIx on #3379).
+      - name: Session spend parser (kb/_build_session_spend.py)
         run: python3 tests/session_spend_build_test.py
       - name: Credential title moves table is current (kb/credential_aliases.py --check)
         run: python3 kb/credential_aliases.py --check

@@ -3,7 +3,7 @@
 
 Guards the failure modes: a free-text extraction note read as a session's spend; "not available" read as $0; a model's
 figure added to the total; a session credited to the handoff's number rather than the session that wrote it; a day
-taken from the start rather than the end; the committed file stale against the handoffs.
+taken from the start rather than the end; the file left unbuilt by the daily run.
 
 Run from repo root: python3 tests/session_spend_build_test.py
 """
@@ -47,8 +47,22 @@ with tempfile.TemporaryDirectory() as tmp:
     check("a day sums the sessions that gave a figure and counts the ones that did not",
           d["by_day"] == {"2026-11-20": {"usd": 12.5, "sessions": 2, "not_available": 1}}, d["by_day"])
 
-r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_session_spend.py"), "--check"], capture_output=True, text=True)
-check("the committed kb/status/session_spend.json is current against the handoffs", r.returncode == 0, r.stdout + r.stderr)
+m = ss.parse_line("$9.00 (Claude Opus 5.5 $8.00, sonnet-4 $1.00); 2026-11-20T01:00Z to 2026-11-20T02:00Z")
+check("a two-word or hyphenated model name reads whole", m["models"] == {"Claude Opus 5.5": 8.0, "sonnet-4": 1.0}, m["models"])
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "docs"))
+    with open(os.path.join(tmp, "docs", "session_800_handoff.md"), "w", encoding="utf-8") as f:
+        f.write("Spending notes: $5 ; 2026-11-20T01:00Z to 2026-11-20T02:00Z\n"
+                "Spend: `" + ss.EXAMPLE + "`\n"
+                "Spend: $7.00; 2026-11-21T01:00Z to 2026-11-21T02:00Z.\n"
+                "Spend: $8.00; 2026-11-22T01:00Z to 2026-11-22T02:00Z.\n")
+    got = ss.build(tmp)["sessions"]
+    check("Spend: needs its colon, the checkpoint's example is skipped, and the first real line wins",
+          len(got) == 1 and got[0]["usd"] == 7.0, got)
+# The daily run rebuilds the file, so a session never commits it and two handoff PRs never fight over it (COBIx on #3379).
+check("the daily run rebuilds the file and stages it",
+      "python3 kb/_build_session_spend.py" in open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read()
+      and "git add kb/status/session_spend.json" in open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read())
 
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

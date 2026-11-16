@@ -547,6 +547,9 @@ git checkout -- kb/ccr_seed_recheck_dryrun/ 2>/dev/null || true
 STEP
 
 step "Build the Commons status" <<'STEP'
+# The sessions' own spend for the Commons ETA clock, from the handoffs' Spend: lines (S662): rebuilt here, not
+# committed by each session, so two PRs that each add a handoff never fight over the file (COBIx on #3379).
+python3 kb/_build_session_spend.py || echo "::warning title=Session spend not rebuilt::kb/_build_session_spend.py failed; the ETA clock reads the previous file."
 python3 kb/_build_commons_status.py --quiet || echo "::warning title=Commons status not rebuilt::kb/_build_commons_status.py failed; the Commons tab reads the previous file until the next run. Check the step log."
 STEP
 

@@ -7,7 +7,7 @@ chart and the cost lines can use it; "Spend: not available" rather than a guess.
 `docs/session_<N>_handoff.md` and writes `kb/status/session_spend.json`. No billing credentials: the figures are what
 each session wrote. Billing totals stay in `kb/reference/model_spend_daily.json`, a separate meter that will not match.
 
-The line's shape (one line, anywhere in the handoff; the last one wins):
+The line's shape (one line, anywhere in the handoff; the first one wins, and the checkpoint's own example is skipped):
 
     Spend: $123.45 (Opus 5.5 $120.00, Fable 5.2 $3.45); 2026-11-15T17:06Z to 2026-11-15T23:19Z.
     Spend: not available; 2026-11-15T23:38Z to 2026-11-16T01:10Z.
@@ -16,8 +16,8 @@ The first dollar figure is the session's total; `Name $x` pairs inside parenthes
 the UTC day it ended. A line without the two times still records the figure, with no day. Older free-text `Spend:`
 lines (per-run extraction notes such as "Merced $9.14") do not carry the times and are left out of the daily series.
 
-    python3 kb/_build_session_spend.py           # write the file
-    python3 kb/_build_session_spend.py --check   # exit 1 when the committed file is stale
+    python3 kb/_build_session_spend.py           # write the file (scripts/daily_build.sh runs it every day)
+    python3 kb/_build_session_spend.py --check   # exit 1 when the file is stale against the handoffs
 """
 import argparse
 import glob
@@ -28,11 +28,13 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = "kb/status/session_spend.json"
-LINE = re.compile(r"^\s*(?:[-*]\s*)?\**Spend:?\**:?\s*(.*)$", re.I)
+LINE = re.compile(r"^\s*(?:[-*]\s*)?\**Spend:\**\s*(.*)$")
 STAMP = r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?Z)"
 TIMES = re.compile(STAMP + r"\s*(?:to|–|-)\s*" + STAMP)
 USD = re.compile(r"\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
-MODEL = re.compile(r"([A-Z][A-Za-z]*(?: [0-9.]+)?)\s+\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
+MODEL = re.compile(r"([A-Za-z][A-Za-z0-9.-]*(?: [A-Za-z0-9.-]+)*?)\s+\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
+# The example in .claude/commands/checkpoint.md step 8, pasted bare, is never a session's spend (COBIx on #3379).
+EXAMPLE = "$123.45 (Opus 5.5 $123.45); 2026-11-15T17:06Z to 2026-11-15T23:19Z."
 
 
 def money(s):
@@ -50,8 +52,12 @@ def parse_line(text):
     models = {}
     p = re.search(r"\(([^)]*)\)", body)
     if p and not na:
-        for name, v in MODEL.findall(p.group(1)):
-            models[name.strip()] = money(v)
+        for part in p.group(1).split(","):
+            mm = MODEL.search(part.strip())
+            if mm:
+                models[mm.group(1).strip()] = money(mm.group(2))
+            elif "$" in part:
+                print("warning: no model name read from %r" % part.strip(), file=sys.stderr)
     return {"available": m is not None, "usd": money(m.group(1)) if m else None, "models": models,
             "start": t.group(1), "end": t.group(2), "day": t.group(2)[:10]}
 
@@ -66,10 +72,11 @@ def build(root):
         with open(path, encoding="utf-8") as f:
             for raw in f:
                 mm = LINE.match(raw)
-                if mm:
+                if mm and mm.group(1).strip().strip("`") != EXAMPLE:
                     got = parse_line(mm.group(1))
                     if got:
                         found = got
+                        break
         if found:
             # The handoff N is written by session N-1: the spend belongs to the writer.
             sessions.append(dict(session=int(n.group(1)) - 1, handoff=os.path.relpath(path, root), **found))
