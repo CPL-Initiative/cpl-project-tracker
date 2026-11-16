@@ -739,7 +739,7 @@ function cellText(li, title) {
         && JSON.stringify(JSON.parse(body.value)) === JSON.stringify({ "case": CASE.id, choice: "five", note: "Music last for the curator cards." }));
       const s2 = sec(inn);
       check("case 10: the ruled case closes on the spot and the next batch comes up",
-        /Ruled: Confirm the five\. The processor carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
+        /Ruled: Confirm the five\. The processor carries it out and keeps a record that can undo it\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
         && txt(s2.querySelector("#cmn-next-h")) === "8 cards in doubt");
 
       const ruled = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }]);

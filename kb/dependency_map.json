@@ -34699,6 +34699,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
+    "tests/plain_words_for_sam_test.py",
     "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/ccr_doubt_test.py",

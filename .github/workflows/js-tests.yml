@@ -238,6 +238,10 @@ jobs:
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
         run: python3 tests/refresh_button_no_secret_test.py
+      # Plain words in what Sam reads (Sam, 2026-11-16, COBIx on #3395 item 1): an open call or a Commons string
+      # never uses an insider term ("closed course list", "headline", "receipt", ...) without defining it.
+      - name: Plain words for Sam (insider terms defined or gone)
+        run: python3 tests/plain_words_for_sam_test.py
       # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
       # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
       - name: Daily scrape fails loudly
