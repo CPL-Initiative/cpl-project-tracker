@@ -1540,6 +1540,7 @@ def ncl_listed_names(info: dict | None) -> list[dict] | None:
 
 
 NCL_NO_PAGE = "no page read names it by title and award"
+NCL_WENT_TO = "its page went to closed-list"
 
 
 def ncl_shared_by_awards(page: dict, a: dict, b: dict) -> bool:
@@ -1565,7 +1566,7 @@ def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], eve
     by_cn = {p["control_number"]: p for p in everyone}
     for cn in sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]}):
         other = by_cn.get(cn) or {}
-        why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else "its page went to closed-list"
+        why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else NCL_WENT_TO
         return {"result": "not_matched", "why": "%s %s (%s)" % (why, cn, other.get("title")), "page": ncl_page_ref(pg, m)}
     for other in everyone:
         if other["control_number"] != prog["control_number"] and ncl_match(pg, other):
@@ -1656,16 +1657,75 @@ def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], 
             "files_not_listed": bool(n >= NCL_MIN_TESTED and recall >= NCL_LIST_FLOOR)}
 
 
+# ── a page a closed-list program holds wrongly, given back (S668) ───────────────────────────────────────
+# Skyline's Dance A.A. (10546, no closed list) is the whole heading of dance-aa.php, "Dance Associate in Arts Degree
+# Program", and the closed-list search gave that page to Musical Theater (46296); Skyline's Automotive Advanced Engine
+# Performance Technology certificate (10529) lost automotive-advanced-engine-performance-technology-ca.php to Asian
+# Engine Performance Technology (32337). Both holders' filed records fail. After every rule above has given its answer,
+# a no-closed-list program whose one match is a page one closed-list program holds (NCL_WENT_TO) takes the page when
+# the page's readings do not name the holder (ncl_match) and the holder's filed record (records/<holder>.json, the read
+# filed now) was read from that page and does not pass as the live table counts it (passes_live). Every other rule
+# stands: the page must give the taker found once the holder's claim is lifted. A holder with no filed record from
+# that page keeps it (yield_unjudged), and so does one whose record passes (yield_refused_passing): Lemoore's 43533
+# passes every check on the "Networking Fundamentals (COA)" page, so that page is functionally its own. The holder
+# files page_claimed, with the page in lost_pages and the taker in yielded_to, so it stays in Still to pass, and
+# keep_no_read carries only a passing record, so its failing record is not carried. A college under the self-test's
+# floor, a re-read and a prior-year read look nothing up, so none of them yields a page.
+def ncl_read_from(rec: dict | None, page: dict) -> bool:
+    """Whether a filed record (records/<cn>.json) was read from the page (ncl_page): its source address is one of
+    the page's keys (page_stem), or the same address but for letter case and a doubled slash (same_address)."""
+    url = ((rec or {}).get("source_url") or "").split("#")[0]
+    return bool(url) and (page_stem(url) in page["keys"] or same_address(url, page["pg"].get("url") or ""))
+
+
+def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], everyone: list[dict],
+              filed) -> dict | None:
+    """Whether a no-closed-list program takes its one page back from the closed-list program holding it (the rule
+    above), or None where the program is no such case: its one match (ncl_match) is a page exactly one closed-list
+    program holds, the page does not name that holder, and ncl_answer finds the page for the program once the
+    holder's claim on it is lifted. filed(control number) gives the holder's filed record, or None. Returns
+    {"holder", "holder_title", "answer": the found answer, "held": None (the page moves), "unjudged" or
+    "refused_passing", "why"}."""
+    hits = [pg for pg in pages if ncl_match(pg, prog)]
+    if len(hits) != 1:
+        return None
+    pg = hits[0]
+    holders = sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]})
+    if len(holders) != 1:
+        return None
+    h = holders[0]
+    holder = next((p for p in everyone if p["control_number"] == h), None)
+    if holder is None or ncl_match(pg, holder):
+        return None
+    lifted = dict(claimed, **{k: [c for c in claimed.get(k, ()) if c != h] for k in pg["keys"]})
+    ans = ncl_answer(prog, pages, lifted, everyone)
+    if ans["result"] != "found":
+        return None
+    rec = filed(h)
+    if not rec:
+        held, why = "unjudged", "no filed record"
+    elif not ncl_read_from(rec, pg):
+        held, why = "unjudged", "its filed record was read from another page"
+    elif _passing_filed_rec(rec):
+        held, why = "refused_passing", "its filed record passes live"
+    else:
+        held, why = None, "its filed record, read from the page, fails live"
+    return {"holder": h, "holder_title": holder.get("title"), "answer": ans, "held": held, "why": why}
+
+
 def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], listed: list[dict] | None = None,
                named: set[str] | None = None, college: str | None = None,
-               catalog_year: str | None = None) -> tuple[dict[str, dict], dict]:
+               catalog_year: str | None = None, filed=None) -> tuple[dict[str, dict], dict]:
     """({control number: answer} for each no-closed-list program, the self-test). An answer is found (with
     the page); not_matched with the reason (title_has_no_words for a title of decorations alone;
     absent_from_catalog_list where no page read names the program, the capture holds the catalog's own list,
     `listed`, that list passes its own test, and it lacks the program); or not_searched when the page self-test
     fails. This slice files no not_listed (round three): the claim "not
     listed in the catalog" waits for slice B, with its own gate; ncl_list_test is measured, not applied. own: {control number: page_stem()} of each closed-list program's page, which it claims
-    first; named: the ones whose page names them by the search's own label (ncl_self_test)."""
+    first; named: the ones whose page names them by the search's own label (ncl_self_test). filed(control
+    number): a closed-list program's filed record, or None; given, a found answer may take its page from the
+    closed-list program holding it (ncl_yield, S668), naming it as took_from, and one that may not names why
+    (yield_held: the holder, unjudged or refused_passing, and why); not given, no page moves."""
     feats = ncl_pages(pages, college, catalog_year)
     test = ncl_self_test(programs, feats, own, named)
     claimed = ncl_claims(own, feats)
@@ -1693,6 +1753,15 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
             if (ans["result"] == "not_matched" and ans["why"] == NCL_NO_PAGE and list_ok
                     and not any(ncl_match(e, prog) for e in lists)):
                 ans = {"result": "not_matched", "why": "absent_from_catalog_list"}
+            # A page a closed-list program holds wrongly, given back (ncl_yield, S668): only where the capture
+            # passes the read filed now (filed), and only a page the answer says went to closed-list.
+            y = (ncl_yield(prog, feats, claimed, programs, filed)
+                 if filed is not None and ans["result"] == "not_matched" and ans["why"].startswith(NCL_WENT_TO)
+                 else None)
+            if y and y["held"]:
+                ans = dict(ans, yield_held={"holder": y["holder"], "held": y["held"], "why": y["why"]})
+            elif y:
+                ans = dict(y["answer"], took_from=y["holder"])
             out[cn] = ans
     return out, test
 
@@ -1702,7 +1771,9 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
     (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
     short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
     run files this account alone (capture_preview.json), and a run's artifact cannot be read from a session,
-    so the branch has to carry enough to judge each answer (S652)."""
+    so the branch has to carry enough to judge each answer (S652). yields: each page a program took from the
+    closed-list program holding it (holder, taker, the page and its heading); yield_unjudged and
+    yield_refused_passing: the candidates whose page stayed (ncl_yield, S668)."""
     by: dict[str, int] = {}
     for a in answers.values():
         by[a["result"]] = by.get(a["result"], 0) + 1
@@ -1719,14 +1790,22 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
             continue
         row = {"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                "status": r.get("status"), "result": a["result"]}
-        row.update({k: a[k] for k in ("why", "basis") if k in a})
+        row.update({k: a[k] for k in ("why", "basis", "yield_held") if k in a})
         if a.get("page"):
             row.update(url=a["page"]["url"], h1=a["page"].get("h1"), awards=a["page"].get("awards"))
         others.append(row)
+    # Each page a no-closed-list program took from the closed-list program holding it (ncl_yield, S668), and the
+    # candidates whose page stayed, by why: enough to judge each move from the branch a capture-only run files.
+    titles = {r["control_number"]: r["title"] for r in recs}
+    yields = [{"holder": a["took_from"], "holder_title": titles.get(a["took_from"]), "taker": cn,
+               "taker_title": titles.get(cn), "url": a["page"]["url"], "h1": a["page"].get("h1")}
+              for cn, a in sorted(answers.items()) if a.get("took_from")]
+    held = [(a.get("yield_held") or {}).get("held") for a in answers.values()]
     return {"self_test": test, "programs": len(answers), "by_result": by, "found": by.get("found", 0),
             "found_active": sum(1 for f in found if f["status"] == "Active"),
             "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
-            "other_programs": others}
+            "other_programs": others, "yields": yields, "yield_unjudged": held.count("unjudged"),
+            "yield_refused_passing": held.count("refused_passing")}
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
@@ -5292,9 +5371,23 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         # refuses as an archived copy (ARCHIVED); its programs are read by their closed lists alone (COBIx on #3382).
         if ncl_lookup_on() and not report.get("reread") and not report.get("prior"):
             own = {r["control_number"]: page_stem(r["source"]["url"]) for r in recs if r.get("source")}
+            filed_dir = os.path.join(COLLEGE_DIR, slug_of(college), "records")
             answers, test = ncl_lookup(programs, pages, own,
                                        ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
-                                       ncl_named(recs), college, reg.get("catalog_year"))
+                                       ncl_named(recs), college, reg.get("catalog_year"),
+                                       filed=lambda cn: _filed(os.path.join(filed_dir, cn + ".json")))
+            # A page a no-closed-list program took back (ncl_yield, S668): its holder is read from no page now.
+            took = {a["took_from"]: cn for cn, a in answers.items() if a.get("took_from")}
+            by_cn = {p["control_number"]: p for p in programs}
+            for i, rec in enumerate(recs):
+                taker = took.get(rec["control_number"])
+                if taker is None:
+                    continue
+                lost = (rec.get("source") or {}).get("url") or answers[taker]["page"]["url"]
+                recs[i] = source_record(college, by_cn[rec["control_number"]], reg, None, "page_claimed")
+                recs[i].update(lost_pages=[lost], yielded_to=taker)
+                _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
+                print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
             for rec in recs:
                 ans = answers.get(rec["control_number"])
                 if ans is not None and rec["method"] == "no_closed_list":

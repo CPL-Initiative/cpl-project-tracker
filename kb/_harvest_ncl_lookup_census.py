@@ -9,6 +9,12 @@ same test on the committed captures, so the matcher's recall and its false match
 college without a page load: each closed-list program's filed page (sources.json) is the answer, the other
 filed pages are the field.
 
+It also counts the pages the lookup would give back (ncl_yield, S668): a no-closed-list program whose one page a
+closed-list program holds, though the page does not name the holder and the holder's filed record (records/,
+the read filed now) was read from that page and fails live. The census runs the lookup itself (ncl_lookup with
+the filed records), gated as a capture is: a college under the self-test's floor, a PDF route, a re-read and a
+prior-year read yield nothing. Each yield is checked again on its own: a passing record must never move.
+
 The committed sources hold only the pages some program was filed from, with the heading and title the page
 printed, so the field is smaller than a capture's (every program page read) and a false match is likelier in
 a capture than here. A college on the PDF route is not looked up in this slice and is listed as such.
@@ -60,10 +66,11 @@ def pages_of(sources: list[dict], capture: dict) -> list[dict]:
     return out
 
 
-def college_census(sources: list[dict], capture: dict) -> dict:
+def college_census(sources: list[dict], capture: dict, folder: str | None = None) -> dict:
     """One college's self-test (ncl_self_test: recall and the three false measures) and, for a Coursedog capture,
-    the catalog list's own self-test (ncl_list_test, measured; this slice files no not_listed), and the
-    conversion test (conversion())."""
+    the catalog list's own self-test (ncl_list_test, measured; this slice files no not_listed), the conversion
+    test (conversion()), and the pages the lookup gives back (ncl_yield) against folder's filed records (none
+    without a folder, and none for a re-read or a prior-year read), each one listed."""
     platform = capture.get("platform")
     ncl = sum(1 for s in sources if s.get("method") == "no_closed_list")
     if platform == "pdf" or "pdf" in capture:
@@ -72,12 +79,32 @@ def college_census(sources: list[dict], capture: dict) -> dict:
                  "closed_list": [] if s.get("method") == "no_closed_list" else [{}]} for s in sources]
     own = {s["control_number"]: C.page_stem(s["source"]["url"]) for s in sources
            if (s.get("source") or {}).get("url") and s.get("method") in FOUND_METHODS}
-    pages = C.ncl_pages(pages_of(sources, capture), capture.get("college"), capture.get("catalog_year"))
-    test = C.ncl_self_test(programs, pages, own, C.ncl_named(sources))
-    test["conversion"] = conversion(programs, pages, own, C.ncl_named(sources, award=True))
+    raw = pages_of(sources, capture)
+    pages = C.ncl_pages(raw, capture.get("college"), capture.get("catalog_year"))
     listed = C.ncl_listed_names(capture.get("coursedog")) if platform == "coursedog" else None
-    test["catalog_list"] = (C.ncl_list_test(programs, pages, own, [C.ncl_page(e) for e in listed])
-                            if listed is not None else None)
+    gated = folder is None or capture.get("reread") or capture.get("prior")
+    # The lookup as the capture runs it: its self-test, its catalog-list test and its answers (ncl_lookup).
+    answers, test = C.ncl_lookup(programs, raw, own, listed, C.ncl_named(sources), capture.get("college"),
+                                 capture.get("catalog_year"),
+                                 filed=None if gated else lambda cn: C._filed(os.path.join(folder, "records",
+                                                                                         cn + ".json")))
+    test["conversion"] = conversion(programs, pages, own, C.ncl_named(sources, award=True))
+    title = {p["control_number"]: p["title"] for p in programs}
+    yields = []
+    for cn, a in sorted(answers.items()):
+        if a.get("took_from"):
+            h = a["took_from"]
+            rec = C._filed(os.path.join(folder, "records", h + ".json"))
+            yields.append({"holder": h, "holder_title": title.get(h), "taker": cn, "taker_title": title.get(cn),
+                           "url": a["page"]["url"], "h1": a["page"].get("h1"),
+                           "holder_passes_live": C._passing_filed_rec(rec),
+                           "holder_read_from": (rec or {}).get("source_url")})
+    held = [dict(a["yield_held"], holder_title=title.get(a["yield_held"]["holder"]), taker=cn,
+                 taker_title=title.get(cn), url=a["page"]["url"])
+            for cn, a in sorted(answers.items()) if a.get("yield_held")]
+    test.update(yields=yields, yield_held=held,
+                yield_unjudged=sum(1 for x in held if x["held"] == "unjudged"),
+                yield_refused_passing=sum(1 for x in held if x["held"] == "refused_passing"))
     return dict({"platform": platform, "route": "site", "ncl": ncl}, **test)
 
 
@@ -118,7 +145,7 @@ def census(base: str = C.COLLEGE_DIR) -> dict:
                 capture = json.load(fh)
         except (OSError, ValueError):
             continue
-        colleges[slug] = dict({"college": capture.get("college")}, **college_census(sources, capture))
+        colleges[slug] = dict({"college": capture.get("college")}, **college_census(sources, capture, d))
     site = [c for c in colleges.values() if c["route"] == "site"]
     tested = sum(c["tested"] for c in site)
     hits = sum(c["hits"] for c in site)
@@ -136,7 +163,16 @@ def census(base: str = C.COLLEGE_DIR) -> dict:
                           "colleges_searched": sum(1 for c in site if c["searches"]),
                           "colleges_under_floor": sum(1 for c in site if not c["searches"]),
                           "ncl_searched": sum(c["ncl"] for c in site if c["searches"]),
-                          "ncl_not_searched": sum(c["ncl"] for c in colleges.values() if not c.get("searches"))},
+                          "ncl_not_searched": sum(c["ncl"] for c in colleges.values() if not c.get("searches")),
+                          # The pages the lookup gives back (ncl_yield, S668), and the check that none moved a
+                          # holder whose filed record passes live.
+                          "yields": sum(len(c["yields"]) for c in site),
+                          "yields_passing_moved": sum(1 for c in site for y in c["yields"] if y["holder_passes_live"]),
+                          "yield_unjudged": sum(c["yield_unjudged"] for c in site),
+                          "yield_refused_passing": sum(c["yield_refused_passing"] for c in site),
+                          "yield_list": [dict({"college": k}, **{f: y[f] for f in ("holder", "holder_title", "taker",
+                                                                                   "taker_title")})
+                                         for k, c in sorted(colleges.items()) for y in c.get("yields") or []]},
             "colleges": colleges}
 
 
@@ -152,6 +188,9 @@ def main(argv: list[str] | None = None) -> int:
                 slug, c["platform"], c["recall"], c["hits"], c["tested"], c["false"], c["false_off_own"],
                 c["false_no_claims"],
                 "searched" if c["searches"] else "NOT SEARCHED", c["ncl"]))
+    for y in r["statewide"]["yield_list"]:
+        print("yield  %-26s %s (%s) takes the page of %s (%s)" % (y["college"], y["taker"], y["taker_title"],
+                                                                 y["holder"], y["holder_title"]))
     if a.write:
         os.makedirs(os.path.dirname(OUT), exist_ok=True)
         with open(OUT, "w") as fh:

@@ -5194,7 +5194,9 @@ def _sk_got(path, pages):
             "status": 200, "access": "ok", "links": []}
 
 
-def run_sk_capture(lookup, progs=None, pages=None):
+def run_sk_capture(lookup, progs=None, pages=None, filed=None):
+    """capture() and file_run() on the Skyline fixture; filed: {control number: record} placed in the college's
+    records folder first, as the read filed now (ncl_yield reads it)."""
     progs, pages = progs or SK_PROGS, pages or SK_PAGES
     names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
     saved_c = {n: getattr(C, n) for n in names}
@@ -5208,6 +5210,10 @@ def run_sk_capture(lookup, progs=None, pages=None):
                                                 "pages": [SK + p for p in sorted(pages)]}
         C.index_links = lambda *a, **k: []
         C.COLLEGE_DIR = os.path.join(td, "colleges")
+        for cn, rec in (filed or {}).items():
+            os.makedirs(os.path.join(C.COLLEGE_DIR, "skyline", "records"), exist_ok=True)
+            with open(os.path.join(C.COLLEGE_DIR, "skyline", "records", cn + ".json"), "w") as fh:
+                json.dump(rec, fh)
         P.fetch_registry = lambda college: {"catalog_url": SK, "catalog_platform": "custom_html",
                                             "catalog_year": "2026-2027"}
         P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
@@ -5319,6 +5325,111 @@ check(g_code == 0 and not g_rep["catalog_lookup"]["self_test"]["searches"]
 check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["ncl_lookup"]["default"] == "1"
       and _rsteps["Capture"]["env"]["NCL_CATALOG_LOOKUP"] == "${{ github.event.inputs.ncl_lookup || '1' }}",
       "the college workflow's ncl_lookup input (default 1) sets the capture's NCL_CATALOG_LOOKUP")
+# A no-closed-list program takes its own page back from a closed-list program that holds it wrongly (ncl_yield, S668).
+# Skyline's capture gave dance-aa.php, headed "Dance Associate in Arts Degree Program", to Musical Theater (46296),
+# and filed Dance A.A. (10546, no closed list) not_matched "its page went to closed-list 46296". Four shapes, one
+# capture: the holder's filed record fails (the page moves), passes (Lemoore's 43533: nothing moves), is absent
+# (nothing moves, unjudged), and a page that names its holder (Palomar's 08937 heading: nothing moves).
+YIELD_PAGES = dict(SK_PAGES, **{
+    "programs/dance-aa.php": ("Dance Associate in Arts Degree Program", "DANC 100 DANC 110 MUS 100"),
+    "programs/networking-fundamentals-ca.php": ("Networking Fundamentals (COA)", "CIS 100 CIS 110 CIS 120"),
+    "programs/web-design-ca.php": ("Web Design Certificate of Achievement", "ART 100 ART 110 ART 120"),
+    "programs/water-technology-education.php": (
+        "Water Technology Education - A.S. Degree Major/Cert. Achievement (18 units or more)", "WTE 100 WTE 110 WTE 120")})
+YIELD_PROGS = SK_PROGS + [
+    _sk_prog("91001", "Musical Theater", "Certificate of Achievement", ("DANC 100", "DANC 110", "MUS 100")),
+    _sk_prog("91002", "Dance", "A.A. Degree"),
+    _sk_prog("91003", "Information Technology Specialist", "Certificate of Achievement", ("CIS 100", "CIS 110", "CIS 120")),
+    _sk_prog("91004", "Networking Fundamentals", "Certificate of Achievement"),
+    _sk_prog("91005", "Digital Art", "Certificate of Achievement", ("ART 100", "ART 110", "ART 120")),
+    _sk_prog("91006", "Web Design", "Certificate of Achievement"),
+    _sk_prog("91007", "Water Technology Education", "A.S. Degree", ("WTE 100", "WTE 110", "WTE 120")),
+    _sk_prog("91008", "Water Technology Education", "Certificate of Achievement")]
+Y_FAIL = {"coverage": {"pass": False}, "invented": {"pass": True}, "arithmetic": {"status": "unequal"}}
+Y_PASS = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}}
+
+
+def y_rec(cn, path, score):
+    return {"control_number": cn, "source_url": SK + path, "record": {"parts": []}, "score": score}
+
+
+Y_FILED = {"91001": y_rec("91001", "programs/dance-aa.php", Y_FAIL),
+           "91003": y_rec("91003", "programs/networking-fundamentals-ca.php", Y_PASS),
+           "91007": y_rec("91007", "programs/water-technology-education.php", Y_FAIL)}
+y_code, y_src, y_rep, y_filed = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, Y_FILED)
+ys = {cn: json.loads(t) for cn, t in y_src.items()}
+ylk = {cn: s.get("catalog_lookup") or {} for cn, s in ys.items()}
+yacct = y_rep["catalog_lookup"]
+check(y_code == 0 and yacct["self_test"]["searches"],
+      "the yield fixture's college clears the self-test, so its lookup runs: %r" % yacct["self_test"])
+check(ylk["91002"].get("result") == "found" and ylk["91002"].get("took_from") == "91001"
+      and ylk["91002"]["page"]["url"] == SK + "programs/dance-aa.php",
+      "Dance A.A., no closed list, takes back the page headed \"Dance Associate in Arts Degree Program\" from Musical "
+      "Theater, whose filed record from that page fails (Skyline 46296): %r" % ylk["91002"])
+check(ys["91001"]["method"] == "page_claimed" and ys["91001"]["source"] is None and ys["91001"]["text"] == ""
+      and ys["91001"]["lost_pages"] == [SK + "programs/dance-aa.php"] and ys["91001"]["yielded_to"] == "91002"
+      and next(e for e in y_rep["page_claimed"] if e["control_number"] == "91001")["pages"]
+      == [SK + "programs/dance-aa.php"],
+      "the holder files page_claimed, its source and text cleared, the page it lost and the program it yielded to "
+      "named, so it stays in Still to pass: %r" % {k: ys["91001"].get(k) for k in ("method", "lost_pages", "yielded_to")})
+check(not any(r["control_number"] == "91001" for r in (y_rep["would_extract"].get("list") or []))
+      and "91001" not in y_rep["fingerprints"],
+      "the holder has no text, so nothing extracts it")
+check(ylk["91004"].get("result") == "not_matched" and ylk["91004"]["why"].startswith(C.NCL_WENT_TO + " 91003")
+      and ylk["91004"].get("yield_held", {}).get("held") == "refused_passing"
+      and ys["91003"]["method"] == "sitemap_page",
+      "a holder whose filed record from the page passes live keeps it (Lemoore 43533 on \"Networking Fundamentals "
+      "(COA)\"): %r" % ylk["91004"])
+check(ylk["91006"].get("result") == "not_matched" and ylk["91006"].get("yield_held", {}).get("held") == "unjudged"
+      and ys["91005"]["method"] == "sitemap_page",
+      "a holder with no filed record keeps its page, counted unjudged: %r" % ylk["91006"])
+check(ylk["91008"].get("result") == "not_matched" and "took_from" not in ylk["91008"] and "yield_held" not in ylk["91008"]
+      and ys["91007"]["method"] == "sitemap_page",
+      "a page that names its holder (Palomar 08937's heading, \"Water Technology Education - A.S. Degree Major/Cert. "
+      "Achievement\") stays its holder's, though the holder's filed record fails: %r" % ylk["91008"])
+check(yacct["yields"] == [{"holder": "91001", "holder_title": "Musical Theater", "taker": "91002", "taker_title": "Dance",
+                           "url": SK + "programs/dance-aa.php", "h1": "Dance Associate in Arts Degree Program"}]
+      and yacct["yield_unjudged"] == 1 and yacct["yield_refused_passing"] == 1,
+      "the account names each move (holder, taker, page, heading) and counts the candidates whose page stayed: %r"
+      % {k: yacct[k] for k in ("yields", "yield_unjudged", "yield_refused_passing")})
+check(next(e for e in y_filed if e["control_number"] == "91001")["method"] == "page_claimed"
+      and next(e for e in y_filed if e["control_number"] == "91002")["catalog_lookup"]["took_from"] == "91001",
+      "the filed sources.json carries the move on both programs")
+# keep_no_read carries only a passing record: the holder's failing one is not carried.
+with tempfile.TemporaryDirectory() as ytd:
+    os.makedirs(os.path.join(ytd, "keep", "records"))
+    with open(os.path.join(ytd, "keep", "records", "91001.json"), "w") as fh:
+        json.dump(Y_FILED["91001"], fh)
+    check(C.keep_no_read(os.path.join(ytd, "keep"), os.path.join(ytd, "out"), [ys["91001"]]) == [],
+          "the holder's failing record is not carried by keep_no_read")
+# The page's own test, directly: the holder named on the page keeps it whatever its record (ncl_yield's gate (a)),
+# and a holder's passing record read from another page leaves the move unjudged.
+y_feats = C.ncl_pages([{"url": SK + p, "title": h, "h1": h} for p, (h, _) in YIELD_PAGES.items()], "Skyline College")
+y_own = {"91007": C.page_stem(SK + "programs/water-technology-education.php"),
+         "91001": C.page_stem(SK + "programs/dance-aa.php")}
+y_claimed = C.ncl_claims(y_own, y_feats)
+y_by = {p["control_number"]: p for p in YIELD_PROGS}
+check(C.ncl_yield(y_by["91008"], y_feats, y_claimed, YIELD_PROGS, lambda cn: Y_FILED.get(cn)) is None,
+      "a page whose readings name its holder by title and award is never given away")
+y_other = C.ncl_yield(y_by["91002"], y_feats, y_claimed, YIELD_PROGS,
+                      lambda cn: y_rec(cn, "programs/history-aa.php", Y_PASS))
+check(y_other and y_other["held"] == "unjudged" and y_other["holder"] == "91001",
+      "a holder's filed record read from another page does not judge this one: %r" % y_other)
+y_off_code, y_off_src, _, _ = run_sk_capture("0", YIELD_PROGS, YIELD_PAGES, Y_FILED)
+y_off = {cn: json.loads(t) for cn, t in y_off_src.items()}
+check(y_off_code == 0 and y_off["91001"]["method"] == "sitemap_page", "NCL_CATALOG_LOOKUP=0 moves no page")
+y_raw = [_sk_got(p, YIELD_PAGES) for p in sorted(YIELD_PAGES)]
+y_all_own = {cn: C.page_stem(s["source"]["url"]) for cn, s in y_off.items() if s.get("source")}
+y_args = (YIELD_PROGS, y_raw, y_all_own, None, C.ncl_named(list(y_off.values())), "Skyline College", "2026-2027")
+y_with, y_test = C.ncl_lookup(*y_args, filed=lambda cn: Y_FILED.get(cn))
+y_without, _ = C.ncl_lookup(*y_args)
+check(y_test["searches"] and y_with["91002"].get("took_from") == "91001" and "took_from" not in y_without["91002"]
+      and not any("yield_held" in a for a in y_without.values()),
+      "the lookup moves a page only when it is given the filed records (filed); without them, none moves")
+y_under, y_under_test = C.ncl_lookup(YIELD_PROGS, y_raw, y_own, filed=lambda cn: Y_FILED.get(cn))
+check(not y_under_test["searches"] and y_under["91002"]["result"] == "not_searched"
+      and not any("took_from" in a or "yield_held" in a for a in y_under.values()),
+      "a college under the self-test's floor yields nothing: %r" % y_under["91002"])
 # The catalog's own list (a Coursedog search, kept since S423): not_listed rests on it alone.
 # not_listed is gated twice (the #3300 review, DECIDED): the page self-test passes, and the catalog's own list
 # names at least NCL_LIST_FLOOR of the closed-list programs whose pages were read. A title that strips to no words
