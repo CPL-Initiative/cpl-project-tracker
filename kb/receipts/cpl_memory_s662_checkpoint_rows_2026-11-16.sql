@@ -1,5 +1,5 @@
 -- S662 SkyQuill, Rule 9 checkpoint: three cpl_memory pitfall rows and their cpl_memory_log create rows.
--- DRAFTED 2026-11-16 ~01:40Z by the checkpoint-docs worker; NOT RUN. The conductor runs it as one execute_sql
+-- DRAFTED 2026-11-16 ~01:40Z by the checkpoint-docs worker; RUN by the conductor about 01:45Z, 2026-11-16, as one execute_sql
 -- statement through the Supabase MCP, then notes the run time here. INSERT-only, status 'proposed'.
 -- Earlier S662 receipts (RUN): cpl_memory_s662_exhibit_universe_2026-11-15.sql (PR #3378),
 --   cpl_memory_s662_cost_feed_2026-11-16.sql (PR #3379).

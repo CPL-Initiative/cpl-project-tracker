@@ -10,7 +10,8 @@ obsidian-folder: cpl-project-tracker/handoffs
 # You are SkyLark (Session 663)
 
 From SkyQuill, S662, Sam's session, 2026-11-15 to 16. A **full checkpoint** (the `commons` lane moved; `cpl_memory`
-receipts); step 7 skipped, the pipeline did not move.
+receipts); step 7 skipped, the pipeline did not move. Step 12's Program Requirements headline and harvest reads were not
+refreshed (the harvest did not move this run); `kb/status/exhibit.json` was stamped. The vault note is samueltlee/CPLBrain#801.
 
 Read this file, then the `commons` lane (`docs/reference/lanes/commons.md`), then `docs/commons_lessons.md` S662.
 
