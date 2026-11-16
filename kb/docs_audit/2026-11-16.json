@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1513,
-    "bytes": 16059892,
+    "bytes": 16061138,
     "over_budget": 3,
     "handoff_max": 670,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5218705,
+        "bytes": 5218985,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2844318,
+        "bytes": 2846471,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 533455,
+        "bytes": 532268,
         "over": 0
       },
       "handoff": {
@@ -61,9 +61,9 @@
       "vault_heavy_path": 201
     },
     "vault": {
-      "files": 28145,
-      "bytes": 4992931951,
-      "heavy_bytes": 3486848113,
+      "files": 28146,
+      "bytes": 4992994005,
+      "heavy_bytes": 3486881825,
       "heavy_share": 0.698,
       "ignore_filters": [
         "agent-ac44746702ca615b6/kb/program_requirements_college",
@@ -312,13 +312,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 180422,
+        "bytes": 180702,
         "limit": 150000,
         "lane": "other",
-        "over_by": 30422,
+        "over_by": 30702,
         "ratio": 1.2
       },
-      "message": "180,422 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "180,702 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -416,10 +416,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13488665,
+        "bytes": 13522377,
         "kind": "dir"
       },
-      "message": "directory totals 13,488,665 B inside the vault"
+      "message": "directory totals 13,522,377 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

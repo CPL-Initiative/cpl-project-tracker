@@ -4,8 +4,8 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1014,
-  "external_services": 195,
+  "file_datasets": 1016,
+  "external_services": 196,
   "consumers": 604,
   "workflows": 72,
   "data_js_files": 71,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2580
+     "line": 2834
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2536
+     "line": 2790
     }
    ],
    "main_committers": []
@@ -666,7 +666,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 133
+     "line": 138
     },
     {
      "id": "script:kb/_xai_smoke.py",
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2473
+     "line": 2727
     }
    ],
    "main_committers": []
@@ -838,6 +838,18 @@
      "direction": "read",
      "how": "url",
      "line": 665
+    }
+   ],
+   "main_committers": []
+  },
+  "external:catalog.example.edu": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 1929
     }
    ],
    "main_committers": []
@@ -1551,7 +1563,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3213,
+     "line": 3239,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2332,7 +2344,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3212,
+     "line": 3238,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3013,7 +3025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2066
+     "line": 2320
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -3495,7 +3507,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3211,
+     "line": 3237,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6251,7 +6263,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3979,
+     "line": 4005,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6292,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3317,
+     "line": 3343,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6610,7 +6622,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4260,
+     "line": 4286,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6861,7 +6873,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4247,
+     "line": 4273,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6931,7 +6943,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4241,
+     "line": 4267,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7277,7 +7289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2602,
+     "line": 2628,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7327,7 +7339,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4207,
+     "line": 4233,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7350,7 +7362,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2774,
+     "line": 2800,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7413,7 +7425,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4255,
+     "line": 4281,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7613,7 +7625,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4228,
+     "line": 4254,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8664,14 +8676,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6669
+     "line": 6955
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 389
     }
    ],
    "served": false,
@@ -8684,14 +8696,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6745
+     "line": 7031
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 394
+     "line": 403
     }
    ],
    "served": false,
@@ -17546,6 +17558,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/butte/records/20001.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1908
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
    "consumers": [
     {
@@ -17553,7 +17578,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3424
+     "line": 3678
     }
    ],
    "served": true,
@@ -17566,7 +17591,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7346
+     "line": 7653
     }
    ],
    "served": true,
@@ -21416,14 +21441,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7080
+     "line": 7376
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 383
     }
    ],
    "served": false,
@@ -21436,7 +21461,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6110
+     "line": 6393
     }
    ],
    "served": false,
@@ -21590,7 +21615,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3674,
+     "line": 3700,
      "tabs": [
       "cpl-pathways"
      ]
@@ -22060,14 +22085,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6707
+     "line": 6993
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 388
+     "line": 397
     }
    ],
    "served": false,
@@ -23778,7 +23803,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2018,
+     "line": 2040,
      "tabs": [
       "cpl-pathways"
      ]
@@ -26689,6 +26714,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_heading_agreement_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_ncl_extract_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -29668,7 +29706,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7320
+     "line": 7627
     }
    ],
    "main_committers": []
@@ -29680,7 +29718,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7429
+     "line": 7740
     }
    ],
    "main_committers": []
@@ -30342,7 +30380,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3517,
+     "line": 3543,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30381,7 +30419,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3520,
+     "line": 3546,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30488,7 +30526,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1871,
+     "line": 1874,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33006,7 +33044,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1668,
+     "line": 1671,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33096,7 +33134,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1669,
+     "line": 1672,
      "tabs": [
       "cpl-pathways"
      ]
@@ -34775,6 +34813,7 @@
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
+    "tests/program_requirements_ncl_extract_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
