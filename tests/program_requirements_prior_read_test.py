@@ -78,12 +78,19 @@ with tempfile.TemporaryDirectory() as tmp:
     write(os.path.join(dest, "sources.json"), [{"control_number": cn, "method": "page_claimed"} for cn in ("30578", "32692", "50000")])
     # The prior read: 30578 read from 2025-2026; 32692's extraction failed.
     report = {"catalog_year": "2025-2026", "run": "2",
-              "prior": {"start": START, "catalog_year": "2025-2026", "only": ["30578", "32692", "50000"]}}
+              "prior": {"start": START, "catalog_year": "2025-2026", "only": ["30578", "32692", "32745", "33829", "50000"]}}
     write(os.path.join(out, "capture.json"), report)
     write(os.path.join(out, "records", "30578.json"),
           {"control_number": "30578", "record": {"blocks": [1]}, "extracted_run": "2",
            "source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/Comm_Studies_ADT"})
     write(os.path.join(out, "records", "32692.json"), {"control_number": "32692", "error": "timeout", "catalog_year": "2025-2026"})
+    # This run's record from a current-year page, and a record restamped by this run (read_run), are never filed.
+    write(os.path.join(out, "records", "32745.json"),
+          {"control_number": "32745", "record": {"blocks": []}, "extracted_run": "2",
+           "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034"})
+    write(os.path.join(out, "records", "33829.json"),
+          {"control_number": "33829", "record": {"blocks": []}, "extracted_run": "2", "read_run": "1",
+           "source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3713"})
     # A record the extraction copied from the filing (its own run, its own year) is never the prior year's reading.
     write(os.path.join(out, "records", "50000.json"),
           {"control_number": "50000", "record": {"blocks": []}, "extracted_run": "1", "catalog_year": "2026-2027"})
@@ -107,7 +114,9 @@ with tempfile.TemporaryDirectory() as tmp:
           and idx["30578"]["catalog_year"] == "2025-2026" and idx["32692"]["method"] == "page_claimed",
           "sources.json takes the read's entry for the filed program alone: %r" % idx)
     acct = read(os.path.join(dest, "prior_2025-2026.json"))
-    check(acct["filed"] == ["30578"] and [k["control_number"] for k in acct["kept"]] == ["32692", "50000"],
+    check(acct["filed"] == ["30578"] and [k["control_number"] for k in acct["kept"]] == ["32692", "32745", "33829", "50000"]
+          and "source not in the 2025-2026 catalog" in acct["kept"][1]["why"]
+          and "not read by this run" in acct["kept"][2]["why"],
           "prior_<year>.json names what it filed and what it kept: %r" % acct)
     # A capture-only prior read files a preview and leaves the filed account alone.
     pre = os.path.join(tmp, "out_preview")
