@@ -179,7 +179,7 @@ function pick(d, id, key, on) {
   check("?college= opens on that college, on what it could add", /2 credentials earning credit elsewhere that Alpha College could add/.test(d.getElementById("ad-state").textContent));
   check("the college shows as a chip and in its picker", /Alpha/.test(d.getElementById("ad-sel").textContent) && /Alpha College/.test(d.querySelector("#pk-college .sum").textContent));
   check("cards grouped by field, the exams last", titles(d).join("|") === "CompTIA Security+|AP Biology"
-    && Array.from(d.querySelectorAll("#ad-list .grp-h")).map((h) => h.firstChild.textContent).join("|") === "Computer Sciences|High school and college exams (AP, IB, CLEP, DSST)");
+    && Array.from(d.querySelectorAll("#ad-list .grp-h")).map((h) => h.querySelector(".fold-h").firstChild.textContent).join("|") === "Computer Sciences|High school and college exams (AP, IB, CLEP, DSST)");
   const sec = d.querySelector("#ad-list .cred");
   check("the college's own course is named", /Already teaches a matching course: Alpha: CIS 9/.test(sec.textContent));
   const chips = Array.from(sec.querySelectorAll("a.chip"));
@@ -334,6 +334,12 @@ function pick(d, id, key, on) {
     && reviewTitles(d).join("|") === "Certified Welder (CW)|Certified Professional Coder (CPC)");
   check("review: its heading and count", d.getElementById("ad-review-h").textContent === "Worth a faculty review" && d.getElementById("ad-review-state").textContent === "2 credentials");
   const cw = d.querySelector("#ad-review .cred");
+  check("review: a card starts short, the title and the issuer (#3405)", cw.querySelector(".rv-more").hidden && cw.querySelector("h3 button").getAttribute("aria-expanded") === "false" && cw.querySelector(".meta"));
+  cw.querySelector("h3 button").click();
+  check("review: the title opens the details, remembered", !cw.querySelector(".rv-more").hidden && Object.keys(JSON.parse(d.defaultView.localStorage.getItem("cpl_catalog_folds")).rv).length === 1);
+  d.querySelector('[data-fold="review"]').click();
+  check("review: the strip folds under its heading", d.getElementById("ad-review-body").hidden);
+  d.querySelector('[data-fold="review"]').click();
   check("review: tags are a description list in order", Array.from(cw.querySelectorAll("dl.tags dt")).map((x) => x.textContent).join() === "Occupations,Field,Level");
   check("review: the related credential is named without the acronym", /A related credential from the same issuer already earns credit: AWS D1\.1 Structural Welder Qualification\./.test(cw.textContent));
   const rl = Array.from(cw.querySelectorAll("a.chip"));
@@ -371,11 +377,38 @@ function pick(d, id, key, on) {
   const secCard = Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /CompTIA/.test(x.textContent))[0];
   check("a recommended credential's card carries both badges, as words", secCard && Array.from(secCard.querySelectorAll(".badge")).map((b) => b.textContent).join("|") === "Statewide recommendation|CPL-AI course match"
     && Array.from(d.querySelectorAll("#ad-list .cred")).filter((x) => /EMT/.test(x.textContent))[0].querySelectorAll(".badge").length === 0);
-  check("the Recommendations filter counts each badge", d.getElementById("f-sw").textContent === "Statewide recommendation (1)" && d.getElementById("f-ai").textContent === "CPL-AI course match (1)");
+  check("the recommendation figures sit in the header boxes (#3405)", d.getElementById("f-sw").classList.contains("kpi") && d.getElementById("f-sw").parentNode.classList.contains("kpis")
+    && d.querySelector("#f-sw b").textContent === "1" && d.querySelector("#f-sw span").textContent === "statewide recommendation"
+    && d.querySelector("#f-ai b").textContent === "1" && d.querySelector("#f-ai span").textContent === "CPL-AI course match" && !d.querySelector(".filters .recs"));
   d.getElementById("f-sw").click();
   check("Statewide recommendation filters to the credentials that carry one", titles(d).join() === "CompTIA Security+" && d.getElementById("f-sw").getAttribute("aria-pressed") === "true");
   d.getElementById("f-sw").click();
   check("pressed again, it lets go", titles(d).length === 3);
+  // #3405: Clear all filters up top shows whenever the filters leave clearAll()'s default, a Credit status change included.
+  const ct = d.getElementById("ad-clear-top");
+  d.getElementById("ad-clear").click(); await tick(20);
+  check("Clear all filters hides at the default", ct.hidden && /Clear all filters/.test(ct.textContent) && ct.parentNode.querySelector("#ad-sel"));
+  d.getElementById("kpi-harvested").click(); await tick(20);
+  check("Clear all filters shows on a Credit status change alone", !ct.hidden);
+  ct.click(); await tick(20);
+  check("Clear all filters restores the default, as Clear the filters does", ct.hidden && titles(d).length === 3);
+  d.getElementById("f-ai").click(); await tick(20);
+  check("a pressed recommendation figure shows Clear all filters", !ct.hidden);
+  ct.click(); await tick(20);
+  // #3405: the folds. The introduction starts closed; groups start open; each folds and the state is layout.
+  check("the introduction, photos and Start with start closed", d.getElementById("ad-intro").hidden && d.getElementById("ad-hero").hidden
+    && d.querySelector('[data-fold="intro"]').getAttribute("aria-expanded") === "false" && d.querySelector(".hero").classList.contains("intro-closed"));
+  d.querySelector('[data-fold="intro"]').click();
+  check("Show the introduction opens it and is remembered", !d.getElementById("ad-intro").hidden && !d.getElementById("ad-hero").hidden
+    && JSON.parse(d.defaultView.localStorage.getItem("cpl_catalog_folds")).intro === true);
+  d.querySelector('[data-fold="intro"]').click();
+  const gb = d.querySelector("#ad-list .grp-h .fold-h");
+  check("a field group starts open", gb.getAttribute("aria-expanded") === "true" && !d.getElementById(gb.getAttribute("aria-controls")).hidden);
+  gb.click();
+  check("a field group folds, and the fold is remembered by its label", gb.getAttribute("aria-expanded") === "false" && d.getElementById(gb.getAttribute("aria-controls")).hidden
+    && JSON.parse(d.defaultView.localStorage.getItem("cpl_catalog_folds")).grp[gb.getAttribute("data-grp")] === true);
+  gb.click();
+  check("filters are never stored", !/colleges|standing|"q"/.test(d.defaultView.localStorage.getItem("cpl_catalog_folds")));
   d.querySelector('[data-view="table"]').click();
   const recCell = Array.from(d.querySelectorAll("#ad-tbl-body tr:not(.band)")).filter((tr) => /CompTIA/.test(tr.textContent))[0].children[5];
   check("the List's Recommended column names the badges in short", Array.from(recCell.querySelectorAll(".badge")).map((b) => b.textContent).join("|") === "Statewide|CPL-AI");
@@ -440,7 +473,7 @@ function pick(d, id, key, on) {
   check("named the Credential Catalog and indexable (Sheet 148)", /<h1 id="ad-title">Credential Catalog<\/h1>/.test(PAGE) && !/noindex/.test(PAGE));
   check("the intro says many, and the page's own words carry no bare CPL or MAP", /award credit for many of the credentials/.test(main) && !/\bCPL\b(?!-AI)/.test(main.replace(/<!--[\s\S]*?-->/g, "")) && !/\bMAP\b(?! exhibits)/.test(main.replace(/<!--[\s\S]*?-->/g, "")));
   check("the Library links the Catalog", /href="\.\/adopt\/"[^>]*>Credential Catalog</.test(fs.readFileSync("library/index.html", "utf8")));
-  check("a skip link, one h1, three tiles, five Start with words", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1 && (PAGE.match(/class="kpi"/g) || []).length === 3 && (PAGE.match(/data-start=/g) || []).length === 5);
+  check("a skip link, one h1, three tiles, five Start with words", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1 && (PAGE.match(/class="kpi"/g) || []).length === 5 && (PAGE.match(/data-start=/g) || []).length === 5);
   check("the Library's photos cycle here too", (PAGE.match(/class="hero-slide( is-on)?"/g) || []).length === 11 && /id="ad-hero-pause"/.test(PAGE));
   check("in the a11y sweep, four targets", /"public-adopt"/.test(fs.readFileSync("a11y.config.js", "utf8")) && /"public-adopt-list"/.test(fs.readFileSync("a11y.config.js", "utf8")));
   const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
