@@ -753,6 +753,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/harvest_scouting/scout-*.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/honors_delete_s652_out/2026-11-14/followups_plan.json` | none found | scripts: `kb/_honors_followups_s652.py` |
 | `kb/honors_delete_s652_out/2026-11-14/followups_plan.md` | scripts: `kb/_honors_followups_s652.py` | — |
+| `kb/honors_of_s653_out/2026-11-15/check_receipt.json` | scripts: `kb/_honors_of_s653_dryrun.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.json` | scripts: `kb/_identities_rekey_dryrun.py` | — |
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
