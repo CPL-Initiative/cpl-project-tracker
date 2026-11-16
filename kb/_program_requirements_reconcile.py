@@ -92,14 +92,25 @@ def _span_of(v):
     return (v, v)
 
 
-def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
+def year_renumbers(conf: dict, year: str | None) -> dict:
+    """The renumbers a catalog year printed (course_renumbers_by_year[year]): a prior-year page prints
+    the codes of its own year, and the state's list names today's (Riverside City's 2025-2026 MAT-1C
+    for MATH 1C, S663). Keys starting with _ are notes. Only a record read from that year gets them,
+    so a current-year record is never scored against an old code."""
+    got = ((conf.get("course_renumbers_by_year") or {}).get(year or "") or {}) if year else {}
+    return {k: v for k, v in got.items() if not k.startswith("_")}
+
+
+def prefix_aliases(college: str, steps: dict | None = None, year: str | None = None) -> dict | None:
     """The college's subject prefixes as its catalog prints them, mapped to the state file's
     (the scorer's aliases; kb/_program_requirements_score.py with_prefix_aliases), and its
     renumbered courses, a whole printed code mapped to the file's (Merced's MECH22A for
-    AGMA 11, S423). A key with a digit is a course; one without, a prefix."""
+    AGMA 11, S423). A key with a digit is a course; one without, a prefix. A record's own
+    catalog year adds that year's renumbers (year_renumbers)."""
     conf = (steps if steps is not None else load_steps()).get(college) or {}
     out = dict(conf.get("prefix_aliases") or {})
     out.update(conf.get("course_renumbers") or {})
+    out.update(year_renumbers(conf, year))
     return out or None
 
 
@@ -120,15 +131,17 @@ def numbers_after(college: str, steps: dict | None = None) -> bool:
     return conf.get("pdf_numbers_after") is True
 
 
-def course_renumbers(college: str, steps: dict | None = None) -> dict:
+def course_renumbers(college: str, steps: dict | None = None, year: str | None = None) -> dict:
     """{the file's code, normalized: the catalog's code, its subject spaced from its number}:
     what the capture looks for on the page in place of a renumbered listed course. The space
     is load-bearing: code_pattern() reads "CPSC17" as letters C-P-S then "C17", which never
     matches the page's "CPSC-17" (Merced's Drone Technology and Equine pages, S423)."""
     from _program_requirements_pilot import norm_code
     conf = (steps if steps is not None else load_steps()).get(college) or {}
+    both = dict(conf.get("course_renumbers") or {})
+    both.update(year_renumbers(conf, year))
     return {norm_code(v): re.sub(r"^([A-Z&]+)(?=\d)", r"\1 ", norm_code(k))
-            for k, v in (conf.get("course_renumbers") or {}).items()}
+            for k, v in both.items()}
 
 
 def awards_match(kind: str | None, award: str | None) -> bool:

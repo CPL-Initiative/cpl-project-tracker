@@ -256,7 +256,8 @@ def run(college, capture_dir=None, limit=None, dry_run=False, key=None, model=No
         if second:
             try:
                 sc = X.score(second, src["closed_list"], src["text"], rec.get("award") or src.get("award"),
-                             R.prefix_aliases(college), R.packed_codes(college))
+                             R.prefix_aliases(college, year=rec.get("catalog_year") or src.get("catalog_year")),
+                             R.packed_codes(college))
             except Exception as exc:   # a reading the scorer cannot read is still filed, with its reason
                 got = dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = row_for(rec, src, got, sc)
