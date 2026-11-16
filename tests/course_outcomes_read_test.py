@@ -289,6 +289,22 @@ def _():
     assert reader.parse_page(*filed(CCCD, "ARTH_C1100"), "courseleaf")["outcomes"] == []
 
 
+@check("a CourseLeaf list's first item 'Course outcomes:' is the lead, never outcome 1 (Golden West, S665)")
+def _():
+    # COBIx on #3389: 3 live Golden West SLO rows (CS G154, ACCT G212, BUS G121) filed it as their first outcome.
+    page = ("<div><h3>Course Level Student Learning Outcome(s)</h3><ol><li>Course Outcomes:</li>"
+            "<li>Apply complex data storage mechanisms.</li><li>Develop programs that use abstract data structures.</li>"
+            "</ol><h3>Course Content</h3></div>")
+    got = reader.parse_page(page, "", "courseleaf")
+    assert got["lead"] == "Course Outcomes:" and got["outcomes"] == [
+        "Apply complex data storage mechanisms.", "Develop programs that use abstract data structures."], got
+    # A real outcome that ends in a colon (Orange Coast's MUS A111) stays an outcome.
+    real = "Create 2 musical compositions that demonstrate competency in the following techniques:"
+    page2 = ("<div><h3>Course Level Student Learning Outcome(s)</h3><ol><li>%s</li><li>Mix a track.</li></ol></div>" % real)
+    got2 = reader.parse_page(page2, "", "courseleaf")
+    assert got2["lead"] is None and got2["outcomes"][0] == real, got2
+
+
 @check("the read workflow hands a catalog= (or elumen=) line to the reader in place of an index")
 def _():
     wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-read.yml")).read()
