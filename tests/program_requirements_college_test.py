@@ -5194,10 +5194,11 @@ def _sk_got(path, pages):
             "status": 200, "access": "ok", "links": []}
 
 
-def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None):
+def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None, year="2026-2027"):
     """capture() and file_run() on the Skyline fixture; filed: {control number: record} placed in the college's
     records folder first, as the read filed now (ncl_yield reads it); college_dir: the colleges folder to file
-    into and keep (a second capture reads what the first filed), else a fresh one."""
+    into and keep (a second capture reads what the first filed), else a fresh one; year: the registry's catalog
+    year."""
     progs, pages = progs or SK_PROGS, pages or SK_PAGES
     names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
     saved_c = {n: getattr(C, n) for n in names}
@@ -5216,7 +5217,7 @@ def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None)
             with open(os.path.join(C.COLLEGE_DIR, "skyline", "records", cn + ".json"), "w") as fh:
                 json.dump(rec, fh)
         P.fetch_registry = lambda college: {"catalog_url": SK, "catalog_platform": "custom_html",
-                                            "catalog_year": "2026-2027"}
+                                            "catalog_year": year}
         P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
         P.load = lambda reader, u, cache, late=False: _sk_got(u[len(SK):], pages)
         P.locate_html = lambda *a, **k: {"best": None}
@@ -5389,7 +5390,8 @@ check(ylk["91008"].get("result") == "not_matched" and "took_from" not in ylk["91
       "a page that names its holder (Palomar 08937's heading, \"Water Technology Education - A.S. Degree Major/Cert. "
       "Achievement\") stays its holder's, though the holder's filed record fails: %r" % ylk["91008"])
 check(yacct["yields"] == [{"holder": "91001", "holder_title": "Musical Theater", "taker": "91002", "taker_title": "Dance",
-                           "url": SK + "programs/dance-aa.php", "h1": "Dance Associate in Arts Degree Program"}]
+                           "url": SK + "programs/dance-aa.php", "h1": "Dance Associate in Arts Degree Program",
+                           "catalog_year": "2026-2027"}]
       and yacct["yield_unjudged"] == 1 and yacct["yield_refused_passing"] == 1,
       "the account names each move (holder, taker, page, heading) and counts the candidates whose page stayed: %r"
       % {k: yacct[k] for k in ("yields", "yield_unjudged", "yield_refused_passing")})
@@ -5440,7 +5442,7 @@ check(y_old["91002"].get("yield_held", {}).get("held") == "unjudged" and "2024-2
       "a failing record from another catalog year moves no page; with no year on either side it does: %r" % y_old["91002"])
 # A holder whose filed record passes live keeps its page wherever the record was read from, even against a yield the
 # filed capture names (the #3408 review, round two): a person's fix or a later re-read wins over the earlier move.
-y_dance = {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"))}
+y_dance = {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"), "2026-2027")}
 y_fixed, _ = C.ncl_lookup(*y_args, filed=lambda cn: y_rec(cn, "programs/musical-theater-ca.php", Y_PASS)
                           if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
 y_stood, _ = C.ncl_lookup(*y_args, filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
@@ -5448,6 +5450,18 @@ check(y_fixed["91002"].get("yield_held", {}).get("held") == "refused_passing" an
       and y_stood["91002"].get("took_from") == "91001",
       "a passing record of the holder, read from another page, keeps the page against a filed yield; with no record "
       "the filed yield stands: %r" % y_fixed["91002"])
+# A filed yield stands only in the year it was made under (COBIx on #3408): a 2026-2027 yield under a 2027-2028
+# lookup, and a yield naming no year, move nothing; the holder, with no record, is unjudged.
+y_moved, _ = C.ncl_lookup(*y_args[:-1], "2027-2028", filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn),
+                          yielded=y_dance)
+y_noyear_y, _ = C.ncl_lookup(*y_args, filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn),
+                             yielded={t[:3] + (None,) for t in y_dance})
+check("took_from" not in y_moved["91002"] and y_moved["91002"].get("yield_held", {}).get("held") == "unjudged"
+      and "took_from" not in y_noyear_y["91002"] and y_noyear_y["91002"].get("yield_held", {}).get("held") == "unjudged",
+      "a filed yield from another year, or naming none, lapses: %r" % [y_moved["91002"].get("yield_held"),
+                                                                       y_noyear_y["91002"].get("yield_held")])
+check(C.ncl_capture_yields({"catalog_lookup": {"yields": [{"holder": "1", "taker": "2", "url": SK + "a.php"}]}})
+      == {("1", "2", C.page_stem(SK + "a.php"), None)}, "a filed yield row naming no year reads as None")
 y_kept = C.kept_year({"catalog_year": None, "x": 1}, "2026-2027")
 check(y_kept["catalog_year"] == "2026-2027", "a record naming no year reads its filing's year (kept_year)")
 # A yield stands on the next capture (the #3408 review, blocking): the filing drops the holder's failing record, and the
@@ -5458,11 +5472,20 @@ with tempfile.TemporaryDirectory() as y_two:
     y1 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, Y_FILED, college_dir=y_cd)
     check(not os.path.exists(os.path.join(y_cd, "skyline", "records", "91001.json"))
           and (C.ncl_filed_yields(os.path.join(y_cd, "skyline"))
-               >= {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"))}),
+               >= {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"), "2026-2027")}),
           "the first filing drops the holder's failing record, and its capture.json names the yield")
     # The extraction carries the passing record it kept (91003) and the failing one it read again (91007); 91001 is gone.
     y2 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
     y3 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
+    # A filed yield carries the year it was made under and lapses when the registry moves a year (COBIx on #3408):
+    # the holder, with no record, is judged again and keeps its page (unjudged), so its new year's read is taken.
+    y4 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd,
+                        year="2027-2028")
+y4s1, y4s2 = json.loads(y4[1]["91001"]), json.loads(y4[1]["91002"])
+check(y4[0] == 0 and y4s1["method"] == "sitemap_page" and "took_from" not in y4s2["catalog_lookup"]
+      and y4s2["catalog_lookup"].get("yield_held", {}).get("held") == "unjudged" and y4[2]["catalog_lookup"]["yields"] == [],
+      "a 2026-2027 filed yield moves nothing under a 2027-2028 capture: %r" % {"91001": y4s1["method"],
+                                                                             "91002": y4s2["catalog_lookup"]})
 for n, (yc, ysrc, yrep, _) in enumerate((y1, y2, y3), 1):
     s1, s2 = json.loads(ysrc["91001"]), json.loads(ysrc["91002"])
     check(yc == 0 and s1["method"] == "page_claimed" and s1.get("yielded_to") == "91002"

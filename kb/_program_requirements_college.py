@@ -1673,8 +1673,9 @@ def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], 
 # floor, a re-read and a prior-year read look nothing up, so none of them yields a page.
 # A yield stands on the next capture (the #3408 review): the filing drops the holder's failing record, so the next
 # capture finds none, and the page would go back to the holder, be extracted again and refile the failing record. A
-# yield the filed capture.json's account names for the same holder, taker and page (ncl_filed_yields) moves again
-# without a record; sources.json does not keep yielded_to, so the account is the record of it. A failing record
+# yield the filed capture.json's account names for the same holder, taker and page, made under the same catalog
+# year (ncl_filed_yields), moves again without a record; sources.json does not keep yielded_to, so the account is the
+# record of it. A filed yield from another year, or naming none, lapses (COBIx on #3408). A failing record
 # moves a page only when it was read from the capture's catalog year (its own catalog_year, else its filing's, as
 # kept_year reads it; both empty is the same year): a 2024-2025 record at the same address judges no 2026-2027 page.
 # A holder whose filed record passes live keeps its page wherever the record was read from, a filed yield or not: a
@@ -1687,11 +1688,12 @@ def ncl_filed_records(folder: str):
     return lambda cn: kept_year(_filed(os.path.join(folder, "records", cn + ".json")), year)
 
 
-def ncl_capture_yields(capture: dict | None) -> set[tuple[str, str, str]]:
-    """{(holder, taker, page_stem(url))} of each yield a capture's account names (ncl_account)."""
+def ncl_capture_yields(capture: dict | None) -> set[tuple[str, str, str, str | None]]:
+    """{(holder, taker, page_stem(url), catalog_year)} of each yield a capture's account names (ncl_account), with
+    the year the lookup ran under when it moved the page (None on a row that names none)."""
     acct = (capture or {}).get("catalog_lookup") or {}
-    return {(y.get("holder"), y.get("taker"), page_stem(y.get("url"))) for y in acct.get("yields") or []
-            if isinstance(y, dict)}
+    return {(y.get("holder"), y.get("taker"), page_stem(y.get("url")), y.get("catalog_year") or None)
+            for y in acct.get("yields") or [] if isinstance(y, dict)}
 
 
 def ncl_filed_yields(folder: str | None) -> set[tuple[str, str, str]]:
@@ -1740,8 +1742,10 @@ def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], ever
     if _passing_filed_rec(rec):
         # Wherever it was read from, and before a filed yield: a person's fix or a later re-read wins (#3408 review).
         held, why = "refused_passing", "its filed record passes live"
-    elif any((h, prog["control_number"], k) in (yielded or ()) for k in pg["keys"]):
-        held, why = None, "the filed capture's account names this yield"
+    elif catalog_year and any((h, prog["control_number"], k, catalog_year) in (yielded or ()) for k in pg["keys"]):
+        # A filed yield stands only in the year it was made under; one from another year, or naming none, lapses
+        # and the holder is judged again from its record (COBIx on #3408).
+        held, why = None, "the filed capture's account names this yield, made under %s" % catalog_year
     elif not rec:
         held, why = "unjudged", "no filed record"
     elif not from_page:
@@ -1808,13 +1812,14 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
     return out, test
 
 
-def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
+def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_year: str | None = None) -> dict:
     """The capture's account of the lookup: the self-test, how many it searched and found, the pages found
     (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
     short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
     run files this account alone (capture_preview.json), and a run's artifact cannot be read from a session,
     so the branch has to carry enough to judge each answer (S652). yields: each page a program took from the
-    closed-list program holding it (holder, taker, the page and its heading); yield_unjudged and
+    closed-list program holding it (holder, taker, the page and its heading, and catalog_year, the year the lookup
+    ran under, which a later capture's filed yield must match: ncl_capture_yields); yield_unjudged and
     yield_refused_passing: the candidates whose page stayed (ncl_yield, S668)."""
     by: dict[str, int] = {}
     for a in answers.values():
@@ -1840,7 +1845,8 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
     # candidates whose page stayed, by why: enough to judge each move from the branch a capture-only run files.
     titles = {r["control_number"]: r["title"] for r in recs}
     yields = [{"holder": a["took_from"], "holder_title": titles.get(a["took_from"]), "taker": cn,
-               "taker_title": titles.get(cn), "url": a["page"]["url"], "h1": a["page"].get("h1")}
+               "taker_title": titles.get(cn), "url": a["page"]["url"], "h1": a["page"].get("h1"),
+               "catalog_year": catalog_year}
               for cn, a in sorted(answers.items()) if a.get("took_from")]
     held = [(a.get("yield_held") or {}).get("held") for a in answers.values()]
     return {"self_test": test, "programs": len(answers), "by_result": by, "found": by.get("found", 0),
@@ -5438,7 +5444,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     print("%-6s catalog_lookup %-12s %s" % (rec["control_number"], ans["result"],
                                                            (ans.get("page") or {}).get("url") or ans.get("basis")
                                                            or ans.get("why") or ""), flush=True)
-            report["catalog_lookup"] = ncl_account(recs, answers, test)
+            report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"))
     finally:
         browser.close()
         pw.stop()
