@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1010,
+  "file_datasets": 1011,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -3014,6 +3014,13 @@
      "direction": "read",
      "how": "url",
      "line": 1939
+    },
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "read",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "main_committers": []
@@ -8657,7 +8664,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6454
+     "line": 6511
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8677,7 +8684,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6530
+     "line": 6587
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17546,7 +17553,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7065
+     "line": 7176
     }
    ],
    "served": true,
@@ -21396,7 +21403,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6864
+     "line": 6921
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21416,7 +21423,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5906
+     "line": 5963
     }
    ],
    "served": false,
@@ -22033,7 +22040,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6492
+     "line": 6549
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26677,6 +26684,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_prior_read_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_reconcile_test.py": {
    "consumers": [
     {
@@ -29592,7 +29612,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7039
+     "line": 7150
     }
    ],
    "main_committers": []
@@ -29604,7 +29624,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7148
+     "line": 7259
     }
    ],
    "main_committers": []
@@ -34687,6 +34707,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/reconcile_reader_gaps_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/program_requirements_prior_read_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",
@@ -35139,7 +35160,9 @@
    "push": null,
    "deploys": [],
    "chain": [],
-   "urls": []
+   "urls": [
+    "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130"
+   ]
   },
   "program-requirements-dated-reads.yml": {
    "name": "Program requirements dated reads",

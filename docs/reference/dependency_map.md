@@ -1248,6 +1248,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_prior_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
@@ -1425,7 +1426,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
 | `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | tabs: `first-light` · `edgefn:cpl-chat` |
 | `raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}` | scripts: `excel_to_dashboard.py` |
-| `rccd.curriqunet.com` | scripts: `kb/_course_outline_census.py`, `kb/_course_outline_index.py`, `kb/_program_requirements_college.py` |
+| `rccd.curriqunet.com` | scripts: `kb/_course_outline_census.py`, `kb/_course_outline_index.py`, `kb/_program_requirements_college.py` · workflows: `program-requirements-college.yml` |
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `schemas.microsoft.com` | tabs: `library` |
 | `schemas.openxmlformats.org` | tabs: `college-briefing`, `cpl-pathways`, `library` · scripts: `kb/_build_55050_redline_docx.py` |
@@ -1550,5 +1551,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1010 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1011 file
 datasets · 195 external services · 604 consumers · 72 workflows · 41 tabs.

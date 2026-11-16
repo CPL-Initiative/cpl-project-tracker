@@ -101,6 +101,10 @@ on:
         description: "read: 1 = look up each program with no closed list in the catalog's pages by title and award, free, filed beside its no_closed_list method (S652, #3299 slice A); 0 = the capture as before"
         required: false
         default: "1"
+      prior:
+        description: "read: a prior-year read, '<start> <catalog_year> <cn,cn,...>': the named programs read from that year's catalog start page on the registry's host, filed beside the college's records (S663; Riverside City 2025-2026 is https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130). Empty = the current catalog"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -139,6 +143,7 @@ jobs:
       LIMIT: ${{ github.event.inputs.limit || '0' }}
       SOURCES_FROM: ${{ github.event.inputs.sources_from || '' }}
       ROUTE: ${{ github.event.inputs.route || '' }}
+      PRIOR: ${{ github.event.inputs.prior || '' }}
       # A push extracts only when its message STARTS with [extract]: the first
       # run's commit merely described the marker, and contains() spent $15.80.
       EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[extract]')) }}
@@ -148,6 +153,9 @@ jobs:
           if [ -z "$COLLEGE" ]; then
             echo "::error::No college named: a push carries no college input. Dispatch with college=<the registry's name> instead."
             exit 1
+          fi
+          if [ -n "$PRIOR" ] && { [ -n "$SOURCES_FROM" ] || [ -n "$ROUTE" ] || [ "$LIMIT" != "0" ]; }; then
+            echo "::error::prior reads the programs it names: leave sources_from and route empty and limit 0"; exit 1
           fi
           if [ -n "$SOURCES_FROM" ]; then
             if ! [[ "$SOURCES_FROM" =~ ^[0-9]+$ ]]; then echo "::error::sources_from must be a run id"; exit 1; fi
@@ -193,6 +201,7 @@ jobs:
           FORCE: ${{ github.event.inputs.force || '' }}
           # A push carries no input, so the lookup is on there too; ncl_lookup=0 runs one college as before S652.
           NCL_CATALOG_LOOKUP: ${{ github.event.inputs.ncl_lookup || '1' }}
+          CAPTURE_PRIOR: ${{ github.event.inputs.prior || '' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       # Every extraction is priced before any model call, fresh or restaged ($40 a college a run on the estimate,
       # Sam's standing go; S653): over the limit, nothing is extracted. extract=0 prints the estimate and pays
