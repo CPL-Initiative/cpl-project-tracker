@@ -1183,3 +1183,12 @@ Verbatim from `docs/reference/lanes/library.md` (links rewritten for this folder
 ✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 
 ✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](library_lessons.md), *Moved from the lane (S577)*.
+
+## Moved from the lane (S669)
+
+- **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
+  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
+- **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
+  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
+  **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
+  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. The SHARED CODE comment in `cpl-chat-deploy.yml` already named both shared files (S653b): closed, no change.
