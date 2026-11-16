@@ -4,7 +4,7 @@
 //   2. "Add Sierra bubble on bottom right and have it open to sidebar instead of new tab"
 //   3. "Add link on course cards to SLOs and Objectives if they are collected and have them open to a side bar"
 //   4. "Use full width of window for everything on this tab"
-//   5. "On open of View CPL Visual, add a timer that shows progress on creating the visual--since it takes a while to
+//   5. "On open of Create My College CPL Plan, add a timer that shows progress on creating the visual--since it takes a while to
 //      open and the users needs to know to wait rather than click again"
 //
 // Guards the failure modes:

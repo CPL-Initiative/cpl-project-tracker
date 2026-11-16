@@ -3282,13 +3282,13 @@
     var opp = el("span", "cplpw-oppacts");
     var oppView = document.createElement("a");
     oppView.className = "cplpw-oppact"; oppView.target = "_blank"; oppView.rel = "noopener";
-    oppView.textContent = "View CPL Visual";
+    oppView.textContent = "Create My College CPL Plan";
     var oppGet = document.createElement("button");
     oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
     opp.appendChild(oppView); opp.appendChild(oppGet);
     /* The visual builds in its own tab and shows its progress there (Sam, 2026-11-16: "the users needs to know to wait
        rather than click again"); here the word says the tab opened, for a few seconds, then reads as before. */
-    var oppWas = "View CPL Visual", oppTimer = 0;
+    var oppWas = "Create My College CPL Plan", oppTimer = 0;
     oppView.addEventListener("click", function () {
       oppView.textContent = "Opened in a new tab, building";
       clearTimeout(oppTimer);

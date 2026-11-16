@@ -1,5 +1,5 @@
 /* The CPL opportunity analysis: one college's workbook ("Download CPL Extract")
- * and its shareable visual ("View CPL Visual", library/cpl-opportunity/?college=<name>; the old
+ * and its shareable visual ("Create My College CPL Plan", library/cpl-opportunity/?college=<name>; the old
  * cpl-opportunity/ address forwards there since 2026-10-26).
  *
  * WHY. Ashley (MAP team, 2026-10-20) asked for one college's CPL opportunity
