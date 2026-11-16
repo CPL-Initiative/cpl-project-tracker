@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1011,
+  "file_datasets": 1012,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -8664,7 +8664,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6521
+     "line": 6526
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8684,7 +8684,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6597
+     "line": 6602
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17553,7 +17553,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7197
+     "line": 7203
     }
    ],
    "served": true,
@@ -21403,7 +21403,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6931
+     "line": 6937
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21423,7 +21423,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5963
+     "line": 5967
     }
    ],
    "served": false,
@@ -22040,7 +22040,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6559
+     "line": 6564
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -26723,6 +26723,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_year_renumbers_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_source_addenda_read_test.py": {
    "consumers": [
     {
@@ -29612,7 +29625,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7171
+     "line": 7177
     }
    ],
    "main_committers": []
@@ -29624,7 +29637,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7280
+     "line": 7286
     }
    ],
    "main_committers": []
@@ -34708,6 +34721,7 @@
     "tests/reconcile_reader_gaps_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_prior_read_test.py",
+    "tests/program_requirements_year_renumbers_test.py",
     "tests/program_requirements_extract_halt_test.py",
     "tests/program_requirements_fragment_path_test.py",
     "tests/program_requirements_wave_test.py",

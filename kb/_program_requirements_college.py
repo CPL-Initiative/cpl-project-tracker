@@ -5097,6 +5097,10 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     if prior:
         programs = [p for p in programs if p["control_number"] in prior["only"]]
         reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
+        # The prior year's pages print that year's codes (course_renumbers_by_year; S663).
+        import _program_requirements_reconcile as RY
+        programs = with_renumbers(programs, RY.course_renumbers(college, year=prior["catalog_year"]),
+                                  (RY.load_steps().get(college) or {}).get("prefix_aliases"))
     start = reg.get("catalog_url")
     report = {"college": college, "catalog_url": start, "platform": reg.get("catalog_platform"),
               "catalog_year": reg.get("catalog_year"), "programs": len(programs),
@@ -6428,7 +6432,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             got = dict(got, record=rec)
         try:
             sc = X.score(rec, src["closed_list"], src["text"], src.get("award"),
-                         R.prefix_aliases(src["college"]), R.packed_codes(src["college"])) if isinstance(rec, dict) else None
+                         R.prefix_aliases(src["college"], year=src.get("catalog_year")),
+                         R.packed_codes(src["college"])) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -6767,7 +6772,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                              score=keep_rescored_marker(filed.get("control_number"), filed.get("score"),
                                                         S.score(new, src["closed_list"], src["text"],
                                                                 filed.get("award") or src.get("award"),
-                                                                R.prefix_aliases(college), R.packed_codes(college)),
+                                                                R.prefix_aliases(college, year=filed.get("catalog_year")),
+                                                                R.packed_codes(college)),
                                                         dict(filed, record=new)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
@@ -6779,7 +6785,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # score carries the run too, or step=reread keeps the loaded row's old checks
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                R.prefix_aliases(college), R.packed_codes(college))
+                                R.prefix_aliases(college, year=filed.get("catalog_year")), R.packed_codes(college))
                 fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"), fresh, filed)
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
