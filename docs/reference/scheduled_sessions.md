@@ -449,7 +449,7 @@ Reversible means `git revert` undoes it, or its Rule 10 receipt does. Put a card
 on the standing sheet that says *Proceeded on the recommendation (S<N>, <date>);
 reply to reverse*, so Sam's reading is a review, never a gate.
 
-**Hold for Sam, still:** the one hold list in `CLAUDE.md` (*Decisions arrive as decision sheets*, Sam's Sheet 109 card 3, 2026-10-21), which covers a session Sam opens by hand too. A held item becomes a card; move on to the next queue item.
+**Hold for Sam, still:** only what the ask test in `CLAUDE.md` names (Sam, 2026-11-16, relayed by COBIx on issue #3358), which covers a session Sam opens by hand too. A held item becomes a card on the chosen default; move on to the next queue item.
 
 **Extraction cost: a standing go up to $40 a college (Sam, 2026-10-14, S393,
 his words: *"limit is $40 per college"*; `cpl_memory`
