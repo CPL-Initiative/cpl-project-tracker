@@ -3,14 +3,13 @@
  "catalog_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130",
  "platform": "curriqunet",
  "catalog_year": "2025-2026",
- "programs": 2,
- "with_closed_list": 2,
- "started": "2026-11-16T06:30:43Z",
+ "programs": 1,
+ "with_closed_list": 1,
+ "started": "2026-11-16T11:59:14Z",
  "prior": {
   "start": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130",
   "catalog_year": "2025-2026",
   "only": [
-   "32692",
    "32745"
   ]
  },
@@ -619,10 +618,10 @@
  "listing_failed": 0,
  "banner_h1": null,
  "loads": 254,
- "seconds": 1193.2,
- "found": 2,
+ "seconds": 1176.4,
+ "found": 1,
  "by_method": {
-  "sitemap_page": 2
+  "sitemap_page": 1
  },
  "shared_pages": {},
  "not_found": [],
@@ -630,25 +629,15 @@
  "page_challenged": [],
  "coverage_bands": {
   "0.5-0.8": 0,
-  "0.8-1.0": 1,
+  "0.8-1.0": 0,
   "1.0": 1
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
   "kept": 0,
   "kept_moved": 0,
-  "programs": 2,
+  "programs": 1,
   "list": [
-   {
-    "control_number": "32692",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
-    "coverage": 0.875,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-    "was_coverage": 0.75,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "32745",
     "title": "Physics",
@@ -667,18 +656,13 @@
   "forced_unbound": []
  },
  "fingerprints": {
-  "32692": {
-   "sha256": "a10756fae9e48395f41be050d6087da62ef21e7071a5588ba014acd36ef64e58",
-   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818"
-  },
   "32745": {
    "sha256": "309a960c5ef370217fd87f8d7638dc9297c3d4a415630c3d70a553e66e7fb8d1",
    "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838"
   }
  },
- "run": "43816942139",
+ "run": "43862104502",
  "filed": [
-  "32692",
   "32745"
  ],
  "kept": []
