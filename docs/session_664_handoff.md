@@ -34,12 +34,11 @@ paragraph), then `docs/program_requirements_harvest_lessons.md` S663.
 
 ## First things, in order
 
-1. **Step 11.** Las Positas' objectives reread (#3386, run 43816095571, three slices): load it when every slice is
-   filed (`python3 kb/_course_outcomes_load.py --host laspositas --slugs las_positas --kind objective --dry`, then
-   `.load` with `host=laspositas`, `kind=objective`, `slugs=las_positas`), merge on a green `test`. College of the
-   Redwoods' trial (#3387, run 43817157271) parsed 12 of 12 and Allan Hancock's (#3284) 12 of 12: both are *read*.
-   The next UTC day's full read is one of them (the helper's order puts Hancock first); its preparation run is the
-   next trial or index the plain listing names. Coastline and Golden West follow Las Positas in the reread plan.
+1. **Step 11.** Las Positas' objectives reread is loaded (#3386: run 43816095571, load 43825849738, 776 objective
+   rows inserted, 751 SLO rows held back, receipt `kb/receipts/course_outcomes_laspositas_43825849738.json`). Next in
+   the reread plan: Coastline, then Golden West (`cccd`). College of the Redwoods' trial (#3387, run 43817157271) and
+   Allan Hancock's (#3284) each parsed 12 of 12: both are *read*. The next UTC day takes one full read (Coastline's
+   reread counts as it) and one preparation run; the other *read* college waits its turn.
 2. **The prior-catalog read** (harvest lane NEXT): (b) a Cal-GETC units step for Riverside City cited from its own
    catalog, then the prior dispatch for 32745; (c) 30578 and 33829 from archive 7 (2024-2025), with that year's
    renumber map read from its pages the same way. Then the other colleges' same-page pairs.
@@ -64,7 +63,7 @@ Merge only to `main`, confirmed with `git log origin/main`; two review rounds, t
 | PR | State | Next |
 |---|---|---|
 | #3385 | merged | none |
-| #3386 | draft, reading | First thing 1 (load) |
+| #3386 | merged | none |
 | #3387, #3284 | drafts; keep | First thing 1 (full reads) |
 | #3293 | draft; keep | First thing 4 |
 | #2894 | Sam's | none |
@@ -91,8 +90,8 @@ NEXT list. Wiki candidates for `/wiki-ingest`: a prior-year record is scored aga
 No PR subscription, check-in or artifact watch was made. Nothing is held. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current; card 1 waits on Sam).
 
-Cost: this session's cost not available (no `get_session` tool in this firing); substantive PRs merged 1 (#3385).
+Cost: this session's cost not available (no `get_session` tool in this firing); substantive PRs merged 2 (#3385, #3386).
 
-Spend: not available; 2026-11-16T06:12Z to 2026-11-16T07:50Z.
+Spend: not available; 2026-11-16T06:12Z to 2026-11-16T08:05Z.
 
 Greetings, you are SkyWren (Session 664), see SkyLark's handoff — `docs/session_664_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_664_handoff.md) — let's keep rolling with our queue.
