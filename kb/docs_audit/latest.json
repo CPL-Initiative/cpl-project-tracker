@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1513,
-    "bytes": 16060046,
+    "bytes": 16059892,
     "over_budget": 3,
     "handoff_max": 670,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5218340,
+        "bytes": 5218705,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10574,
+        "bytes": 10744,
         "over": 0
       },
       "lessons": {
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 629,
-        "bytes": 4515951,
+        "bytes": 4515262,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 28145,
-      "bytes": 4992931793,
+      "bytes": 4992931951,
       "heavy_bytes": 3486848113,
       "heavy_share": 0.698,
       "ignore_filters": [
