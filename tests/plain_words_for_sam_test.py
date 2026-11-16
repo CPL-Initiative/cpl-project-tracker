@@ -11,8 +11,9 @@ What it reads:
   * every open call (no answer yet) in kb/status/*.json: its title, text and if_no_reply, the words the Commons
     shows him on "Your next batch" and in "decisions wait on you";
   * the visible strings of commons.js (`text: "..."`), the Commons' own copy.
-An answered call is history and keeps its words. Decision-sheet HTML lives in the private vault
-(CPLBrain/decision-sheets/) and is linted there by the same TERMS when its builder imports this file.
+An answered call is history and keeps its words. Decision-sheet cards live in the private vault
+(CPLBrain/decision-sheets/) and are linted there by the same rule: its builder imports kb/plain_words.py, which holds
+TERMS and offenses() for both readers.
 
 Pure stdlib. Run from repo root:
     python3 tests/plain_words_for_sam_test.py
@@ -25,29 +26,8 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# COBIx's list (#3395, 2026-11-16), each a term Sam has had to ask about or that only the sessions use.
-TERMS = ["closed course list", "headline", "carry-basis", "re-clustering", "re-cluster", "lane", "payload",
-         "receipt", "held", "person-settled"]
-
-
-def sentences(text):
-    return [s for s in re.split(r"(?<=[.?!])\s+", text or "") if s.strip()]
-
-
-def defined(sentence, term):
-    """The sentence defines the term: '(' right after it, or 'means' in the sentence."""
-    m = re.search(r"\b%s\b" % re.escape(term), sentence, re.I)
-    after = sentence[m.end():m.end() + 3] if m else ""
-    return after.lstrip().startswith("(") or re.search(r"\bmeans\b", sentence, re.I) is not None
-
-
-def offenses(text):
-    out = []
-    for s in sentences(text):
-        for t in TERMS:
-            if re.search(r"\b%s\b" % re.escape(t), s, re.I) and not defined(s, t):
-                out.append((t, s.strip()[:140]))
-    return out
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+from plain_words import TERMS, offenses  # noqa: E402,F401  the one copy of the rule (kb/plain_words.py)
 
 
 def open_call_texts(root):
@@ -86,6 +66,18 @@ check("a parenthetical right after the term defines it",
       not offenses("1,604 programs have no closed course list (the courses the state's file names for a program)."))
 check("'means' in the sentence defines it", not offenses("The headline means the share of programs complete."))
 check("a word that only contains a term is not the term", not offenses("The planet's elane and thelda withheld nothing."))
+
+# One copy of the rule: kb/plain_words.py, which the vault's decision-sheet builder imports too.
+copies = []
+for path in glob.glob(os.path.join(ROOT, "**", "*.py"), recursive=True) + glob.glob(os.path.join(ROOT, "**", "*.js"), recursive=True):
+    if "node_modules" in path or os.path.relpath(path, ROOT) == os.path.join("kb", "plain_words.py"):
+        continue
+    try:
+        if re.search(r'"closed course list",\s*"headline"', open(path, encoding="utf-8").read()):
+            copies.append(os.path.relpath(path, ROOT))
+    except (OSError, UnicodeDecodeError):
+        continue
+check("the term list lives once, in kb/plain_words.py", not copies, copies)
 
 found = []
 for where, text in list(open_call_texts(ROOT)) + list(commons_texts(ROOT)):
