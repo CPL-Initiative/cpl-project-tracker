@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 4,
  "with_closed_list": 4,
- "started": "2026-11-16T04:15:56Z",
+ "started": "2026-11-16T03:38:52Z",
  "prior": {
   "start": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130",
   "catalog_year": "2025-2026",
@@ -621,7 +621,7 @@
  "listing_failed": 0,
  "banner_h1": null,
  "loads": 254,
- "seconds": 1220.9,
+ "seconds": 1238.6,
  "found": 4,
  "by_method": {
   "sitemap_page": 4
@@ -702,12 +702,24 @@
    "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3713"
   }
  },
- "run": "43802765561",
- "filed": [
-  "30578",
-  "32692",
-  "32745",
-  "33829"
- ],
- "kept": []
+ "run": "43799222099",
+ "filed": [],
+ "kept": [
+  {
+   "control_number": "30578",
+   "why": "no record read from 2025-2026 (another year)"
+  },
+  {
+   "control_number": "32692",
+   "why": "no record read from 2025-2026 (another year)"
+  },
+  {
+   "control_number": "32745",
+   "why": "no record read from 2025-2026 (another year)"
+  },
+  {
+   "control_number": "33829",
+   "why": "no record read from 2025-2026 (another year)"
+  }
+ ]
 }
