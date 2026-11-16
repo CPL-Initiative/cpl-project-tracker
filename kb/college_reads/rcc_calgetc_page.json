@@ -1,0 +1,14 @@
+{
+ "_readme": "S665 (11:12Z firing), 2026-11-16. Harvest lane NEXT (b): Physics 32745's 2025-2026 read names Cal-GETC with no units, so a statewide_cal_getc step for Riverside City needs its own catalog's evidence (d-calgetc-34-per-college-evidence-s648): where the catalog names Cal-GETC and whether it prints a unit figure. This read finds the catalog's general education sections in archive 71 (2025-2026) and the active catalog 124 (2026-2027) from the navigation the start pages fetch. Free: no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "calgetc_page": "Where the catalog names Cal-GETC (its section and entry), and any unit figure it prints for the pattern."
+ },
+ "keywords": ["Cal-GETC", "CalGETC", "California General Education Transfer Curriculum", "General Education", "semester units", "units"],
+ "pages": [
+  {"url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130", "answers": ["calgetc_page"], "network": true,
+   "network_find": ["Cal-GETC", "CalGETC", "General Education", "Transfer Curriculum"]},
+  {"url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog", "answers": ["calgetc_page"], "network": true,
+   "network_find": ["Cal-GETC", "CalGETC", "General Education", "Transfer Curriculum"]}
+ ]
+}
