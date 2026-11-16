@@ -1,5 +1,5 @@
 -- cpl_memory rows for SkyDipper (S666), Sam's session, 2026-11-16. ONE execute_sql call: the insert, the log append, the verify.
--- DRAFTED by the checkpoint worker, NOT RUN. The session runs it through the Supabase MCP, then marks this header RUN with the time.
+-- RUN by SkyDipper (S666) through the Supabase MCP, one call, at about 15:52Z 2026-11-16: 7 rows inserted, each with one create in cpl_memory_log.
 -- Every summary at most 400 characters (the table's check), measured by script when this file was written: 355, 348, 355, 348, 360, 259, 347; the longest is 360.
 -- INSERT ... ON CONFLICT (slug) DO NOTHING (a replay is harmless). Session decisions land proposed; Sam's words are a verified fact row.
 -- ROLLBACK (by slug; never by author):
