@@ -179,7 +179,7 @@ jobs:
       # this step, and the run stops here.
       - name: Download the earlier run's pages
         if: env.SOURCES_FROM != ''
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: program-requirements-${{ github.event.inputs.sources_from }}
           path: staged

@@ -99,7 +99,7 @@ jobs:
       - name: The live counts, when the live-counts job filed them
         if: needs.live-counts.result == 'success'
         continue-on-error: true
-        uses: actions/download-artifact@v7
+        uses: actions/download-artifact@v8
         with:
           name: commons-data-live-${{ github.run_id }}
           path: out
