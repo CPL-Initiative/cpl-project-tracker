@@ -71,7 +71,8 @@ SQL file named in `kb/migrations/.apply`, applied on push to a `claude/` branch,
 
 `cpl_memory` rows (`kb/migrations/2026-11-16_s667_cpl_memory_rows.sql`, receipt
 `kb/receipts/migration_s667_cpl_memory_rows_43923390897.json`; fix receipt
-`kb/receipts/migration_s667_cpl_memory_fix_43926516228.json`): Sam's five asks verbatim
+`kb/receipts/migration_s667_cpl_memory_fix_43926516228.json`; the fix's log row `after`, which a same-statement
+snapshot left equal to `before`, corrected by `kb/migrations/2026-11-16_s667_cpl_memory_log_after_fix.sql`, COBIx on #3404): Sam's five asks verbatim
 (`sam-pathways-five-asks-2026-11-16`, verified), `d-pathways-five-built-s667`, `d-six-cases-settled-s667`,
 `d-rcc-two-left-no-pdf-route-s667`, `d-named-course-minimum-one-s667`, `d-plain-words-one-rule-s667`,
 `p-tab-listeners-share-one-registry-s667`. COBIx on #3395 (Nov 16) asked to apply all six re-clustering cases; Sam's
