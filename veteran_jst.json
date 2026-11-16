@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-16T22:00:56.316775+00:00",
+  "scraped_at": "2026-11-16T22:53:49.378027+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32195,
+    "jst": 32205,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
@@ -477,7 +477,7 @@
     },
     "Grossmont College": {
       "vets": 428,
-      "jst": 885,
+      "jst": 895,
       "star": true
     },
     "Los Angeles City College": {
