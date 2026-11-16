@@ -65,7 +65,10 @@ function dom(hash, files) {
 }
 function flush(w) { return new Promise((r) => w.setTimeout(r, 0)).then(() => new Promise((r) => w.setTimeout(r, 0))); }
 const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requirements.json": PR, "kb/reference/industry_credential_skills.json": SKILLS,
-  "kb/status/commons.json": REFS, "kb/status/cdc_integrations.json": INTEGS };
+  "kb/status/commons.json": REFS, "kb/status/cdc_integrations.json": INTEGS,
+  /* The billing file is the committed one, so its days and notes are what the page shows; the sessions' file is a fixture. */
+  "kb/reference/model_spend_daily.json": JSON.parse(fs.readFileSync("kb/reference/model_spend_daily.json", "utf8")),
+  "kb/status/session_spend.json": { schema: 1, sessions: [], by_day: { "2026-11-14": { usd: 41.5, sessions: 2, not_available: 1 } } } };
 
 (async function () {
   const V = dom("#commons/data/eta", FILES);
@@ -213,6 +216,14 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   q('[data-eta="costs"]').click();
   const labels = [...root().querySelectorAll(".eta-costlabel")].map((t) => t.firstChild.textContent);
   check("(4) Show costs labels each day's spend, October 26 and 27 marked", labels.indexOf("$1,569*") >= 0 && labels.indexOf("$2,686*") >= 0);
+  const sl = E.spendLines("2026-11-14"), sl26 = E.spendLines("2026-10-26");
+  check("(4) a day's spend lines keep the sessions' own figure beside the billing total, never added to it",
+    sl[0] === "Total this day: $396.07." && sl.some((l) => l === "Sessions' own figures (handoffs' Spend: lines): $41.50 from 2 sessions, 1 not available."));
+  check("(4) the billing file's note on a day is the line the page shows", sl26.indexOf("A runaway process; caught and fixed.") >= 0);
+  check("(4) the spend comes from the two files, never from constants in the module",
+    !/API_COST|TOPUPS|COST_ANOMALY|1569\.11/.test(ETA) && E.FILES.billing === "kb/reference/model_spend_daily.json" && E.FILES.sessions === "kb/status/session_spend.json" &&
+    /^publish kb\/reference\/model_spend_daily\.json$/m.test(fs.readFileSync(".github/pages_allowlist.txt", "utf8")) &&
+    /--out _site\/kb\/status\/session_spend\.json/.test(fs.readFileSync(".github/workflows/pages.yml", "utf8")));
   q('[data-eta="phase-2"]').click();
   check("(4) the phase switcher draws Phase 2's partner feeds, not dated", q('[data-eta-datasets="2"]') && [...q('[data-eta-datasets="2"]').querySelectorAll("tbody tr")].length === 5 &&
     /Not dated/.test(txt(q('[data-cell="soonest"]') || q(".eta-grid"))));

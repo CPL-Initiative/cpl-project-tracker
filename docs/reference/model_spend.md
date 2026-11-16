@@ -15,6 +15,10 @@ Opus 5.5 for two days. The steps for Sierra's tests are in
 per deploy"). The incident record, with the key's name and its figures, is
 private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 
+## Where the daily figures live
+
+Billing totals by UTC day, pasted by hand (no billing credentials in the repo): `kb/reference/model_spend_daily.json`. Each session's own figure, from its handoff's `Spend:` line: `kb/status/session_spend.json` (`kb/_build_session_spend.py`, built at Pages deploy, never committed). The Commons ETA clock's Show costs reads both and keeps them apart.
+
 ## What calls a model
 
 | Caller | Model | Key it bills | What sets it off |

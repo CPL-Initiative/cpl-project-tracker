@@ -396,6 +396,7 @@ publish kb/reference/map_college_roster_rules.json
 publish kb/reference/map_cpl_opportunities_verified.json
 publish kb/reference/map_full_exhibit_sample.json
 publish kb/reference/mis_district_college_codes.json
+publish kb/reference/model_spend_daily.json
 publish kb/reference/mq_disciplines.json
 publish kb/reference/mq_sections.json
 publish kb/reference/subject_discipline_map.json

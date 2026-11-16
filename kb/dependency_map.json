@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1007,
+  "file_datasets": 1010,
   "external_services": 195,
-  "consumers": 603,
+  "consumers": 604,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -2150,7 +2150,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 44
+     "line": 45
     },
     {
      "id": "module:commons_progress.js",
@@ -4448,7 +4448,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 396
+     "line": 398
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -10015,6 +10015,19 @@
     },
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_session_spend.py": {
+   "consumers": [
+    {
+     "id": "workflow:pages.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -23659,6 +23672,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:session_*_handoff.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_session_spend.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 70
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:sierra/art/*.webp": {
    "consumers": [],
    "producers": [
@@ -26860,6 +26886,19 @@
    "main_committers": []
   },
   "file:tests/service_key_environment_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/session_spend_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34817,6 +34856,7 @@
     "tests/honors_of_test.py",
     "tests/honors_of_rows_check_test.py",
     "tests/honors_subject_reading_test.py",
+    "tests/session_spend_build_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",
@@ -35006,6 +35046,7 @@
    "name": "Deploy Pages (lean)",
    "crons": [],
    "scripts": [
+    "kb/_build_session_spend.py",
     "scripts/stamp_asset_versions.py"
    ],
    "adds": [],
