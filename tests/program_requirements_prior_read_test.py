@@ -77,23 +77,28 @@ with tempfile.TemporaryDirectory() as tmp:
                "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928"})
     write(os.path.join(dest, "sources.json"), [{"control_number": cn, "method": "page_claimed"} for cn in ("30578", "32692", "50000")])
     # The prior read: 30578 read from 2025-2026; 32692's extraction failed.
-    report = {"catalog_year": "2025-2026",
-              "prior": {"start": START, "catalog_year": "2025-2026", "only": ["30578", "32692"]}}
+    report = {"catalog_year": "2025-2026", "run": "2",
+              "prior": {"start": START, "catalog_year": "2025-2026", "only": ["30578", "32692", "50000"]}}
     write(os.path.join(out, "capture.json"), report)
     write(os.path.join(out, "records", "30578.json"),
-          {"control_number": "30578", "record": {"blocks": [1]}, "extracted_run": "2", "catalog_year": "2025-2026",
+          {"control_number": "30578", "record": {"blocks": [1]}, "extracted_run": "2",
            "source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/Comm_Studies_ADT"})
     write(os.path.join(out, "records", "32692.json"), {"control_number": "32692", "error": "timeout", "catalog_year": "2025-2026"})
+    # A record the extraction copied from the filing (its own run, its own year) is never the prior year's reading.
+    write(os.path.join(out, "records", "50000.json"),
+          {"control_number": "50000", "record": {"blocks": []}, "extracted_run": "1", "catalog_year": "2026-2027"})
     write(os.path.join(out, "sources", "30578.json"),
           {"control_number": "30578", "method": "sitemap_page", "closed_list": [1, 2], "text": "abc",
            "source": {"url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/Comm_Studies_ADT"}})
     rc = C.file_prior(dest, out, report)
     check(rc == 0, "the prior read files")
     check(read(os.path.join(dest, "records", "30578.json"))["catalog_year"] == "2025-2026",
-          "the plain sibling's record is the 2025-2026 read, its year riding with it")
+          "this run's extraction files as the 2025-2026 read, stamped with the year though its source carried none")
     check(read(os.path.join(dest, "records", "32692.json"))["extracted_run"] == "1",
           "a failed extraction keeps the filed record")
-    check(os.path.isfile(os.path.join(dest, "records", "50000.json")), "a program the read did not name stays filed")
+    check(read(os.path.join(dest, "records", "50000.json"))["extracted_run"] == "1"
+          and read(os.path.join(dest, "records", "50000.json"))["catalog_year"] == "2026-2027",
+          "a record copied from the filing is kept as filed, never relabeled 2025-2026")
     check(read(os.path.join(dest, "capture.json"))["catalog_year"] == "2026-2027"
           and read(os.path.join(dest, "summary.json")) == {"records": 3},
           "the college's capture and summary stay the current year's")
@@ -102,7 +107,7 @@ with tempfile.TemporaryDirectory() as tmp:
           and idx["30578"]["catalog_year"] == "2025-2026" and idx["32692"]["method"] == "page_claimed",
           "sources.json takes the read's entry for the filed program alone: %r" % idx)
     acct = read(os.path.join(dest, "prior_2025-2026.json"))
-    check(acct["filed"] == ["30578"] and [k["control_number"] for k in acct["kept"]] == ["32692"],
+    check(acct["filed"] == ["30578"] and [k["control_number"] for k in acct["kept"]] == ["32692", "50000"],
           "prior_<year>.json names what it filed and what it kept: %r" % acct)
     # A capture-only prior read files a preview and leaves the filed account alone.
     pre = os.path.join(tmp, "out_preview")
@@ -118,6 +123,9 @@ with tempfile.TemporaryDirectory() as tmp:
     check(body.index('if report.get("prior")') < body.index('for old in glob.glob(os.path.join(dest, "records"'),
           "file_run routes a prior read before it clears the college's records")
 
+check('force = set(force or ()) | set(_prior["only"])' in src
+      and src.index('force = set(force or ()) | set(_prior["only"])') < src.index("held(path, prev.get(src[\"control_number\"]), src)"),
+      "a prior read's extraction forces every named program past the coverage holds (run 43799222099)")
 check('and not report.get("reread") and not report.get("prior")' in src,
       "a prior read never runs the no-closed-list lookup, which refuses archive pages")
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml"), encoding="utf-8").read()

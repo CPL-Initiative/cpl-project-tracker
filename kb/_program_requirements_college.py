@@ -6190,6 +6190,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A prior-year read extracts every program it names: its filed record is another catalog year's, so a
+    # window's coverage against it is no measure of gain, and the holds would keep the wrong year (run
+    # 43799222099 held 30578, 32692 and 33829 so; S663).
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            _prior = json.load(fh).get("prior") or {}
+    except (OSError, ValueError):
+        _prior = {}
+    if _prior.get("only"):
+        force = set(force or ()) | set(_prior["only"])
     # A record kept from the filing without a new read keeps the catalog year it was read from (kept_year).
     keep_year = filed_year(keep_from) if keep_from else None
     if keep_from and shard == 0:
@@ -6977,12 +6987,15 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
         if os.path.isfile(path):
             with open(path) as fh:
                 row = json.load(fh)
+        # This run's own extraction is the prior year's reading, whatever year its source carried (run
+        # 43799222099 filed 32745's without one); a record copied from the filing keeps its own run and is refused.
+        fresh = isinstance(row, dict) and report.get("run") and str(row.get("extracted_run")) == str(report["run"])
         if not (isinstance(row, dict) and isinstance(row.get("record"), dict) and not row.get("error")
-                and row.get("catalog_year") == year):
+                and (fresh or row.get("catalog_year") == year)):
             kept.append({"control_number": cn, "why": "no record read from %s (%s)" % (
                 year, (row or {}).get("error") or ("no record" if row is None else "another year"))})
             continue
-        _write(os.path.join(dest, "records", cn + ".json"), row)
+        _write(os.path.join(dest, "records", cn + ".json"), dict(row, catalog_year=year))
         filed.append(cn)
     srcs = {}
     for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
