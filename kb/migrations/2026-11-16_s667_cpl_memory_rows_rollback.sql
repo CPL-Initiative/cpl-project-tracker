@@ -1,0 +1,3 @@
+-- Rollback of 2026-11-16_s667_cpl_memory_rows.sql (by slug).
+delete from public.cpl_memory_log where memory_id in (select id from public.cpl_memory where slug in ('sam-pathways-five-asks-2026-11-16','d-pathways-five-built-s667','d-six-cases-settled-s667','d-rcc-two-left-no-pdf-route-s667','d-named-course-minimum-one-s667','d-plain-words-one-rule-s667','p-tab-listeners-share-one-registry-s667'));
+delete from public.cpl_memory where slug in ('sam-pathways-five-asks-2026-11-16','d-pathways-five-built-s667','d-six-cases-settled-s667','d-rcc-two-left-no-pdf-route-s667','d-named-course-minimum-one-s667','d-plain-words-one-rule-s667','p-tab-listeners-share-one-registry-s667');
