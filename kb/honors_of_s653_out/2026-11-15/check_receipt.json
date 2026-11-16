@@ -1,0 +1,23 @@
+{
+ "what": "kb/_honors_of_s653_dryrun.py --check passed: the plan re-measured on this checkout's payload",
+ "written": "2026-11-16T14:45:19Z",
+ "plan": "kb/honors_of_s653_out/2026-11-15/plan.json",
+ "rows_md5": "29667c0741e7e7fafb509b4c2937e9db",
+ "plan_md5": "8240706b0d789142ba3134c1a216db80",
+ "step2_rows": 380,
+ "origin_main_head": "1f97f04c1f8021da722d90207d682c63869a2200",
+ "sql": "kb/migrations/2026-11-14_s653_honors_of_rows.sql",
+ "sql_sha256": "925f3dd0836e39b60cb85bfa68d408d67b12c6e1368a674cd6ceaea572eeae87",
+ "payload": {
+  "unified_courses_members.js": "62db7cd216a949b0543790fba543a6493ce254c9d35beeb442fbf13073ee0437",
+  "unified_courses_member_desc.js": "078622b80ef76e9c0cd8fa73f3dcd8b4913e395dd066446e3c731eb0faa071d9",
+  "unified_courses_index.js": "b1400d1587206527c6b657e2a45e310f4f8f9ef86e6282cb12b75e78b4d89b68",
+  "unified_courses_data.js": "537b490f11f4730007974eae63c468684570d87a0cb4f7000925bc9a12e7dfc9",
+  "unified_courses_standalone.js": "269c8a8ba1d02678ce71344a9fd4a0bf3ac0c63e3610fa1396d3f6e681e518af",
+  "kb/coci_curation.json": "b32fdbdb0e3e7913eeefa4a12bd945a3770fcfd4bd6b73b64b583ba1a36c3601",
+  "kb/coci_minted_courses.json": "62928acbb6f1c0b4574a526ad143249eb7a405f84b41d6f565ee82ad70e83a5f",
+  "kb/coci_minted_singletons.json": "2f5d08359acd2dc7a9b93d72b583f0eecec7d9a359cd9811e84d72ebf9e0b030",
+  "kb/promotions.json": "cad1e7fa76651d7c6795557d5ac2ebba18e56b70919a165df759c1e9aa3968f5",
+  "kb/alias_chain.py": "008162b3da8e835e37420a574821a00840fa8362f925293bd441a81c130cd924"
+ }
+}
