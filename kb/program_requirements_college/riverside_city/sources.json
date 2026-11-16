@@ -3897,27 +3897,32 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 0.875,
   "codes_found": [
    "CSC5",
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "MATH2",
    "MATH3",
-   "MATHC2210H",
    "PHY4A"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-   "title": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
-   "h1": "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
+   "title": "Mathematics - Associate in Science for Transfer (ADT) - AS720 (CalGETC)",
+   "h1": "Mathematics - Associate in Science for Transfer (ADT) - AS720 (CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - associate in science for transfer (adt) - as720 (calgetc)",
+    "section_fit": 0.25
    }
   },
   "listed": 8,
-  "text_chars": 2023
+  "text_chars": 2057,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "32745",
@@ -3925,8 +3930,10 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "PHY4A",
    "PHY4B",
@@ -3934,17 +3941,21 @@
    "PHY4D"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-   "title": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
-   "h1": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838",
+   "title": "Physics for Transfer - Associate in Science for Transfer (ADT) - AS640 (CalGETC)",
+   "h1": "Physics for Transfer - Associate in Science for Transfer (ADT) - AS640 (CalGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer - associate in science for transfer (adt) - as640 (calgetc)",
+    "section_fit": 0.2
    }
   },
   "listed": 7,
-  "text_chars": 2197
+  "text_chars": 1698,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "32813",

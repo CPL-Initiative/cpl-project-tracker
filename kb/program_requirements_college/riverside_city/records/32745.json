@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics",
  "award": "A.S. T Degree",
- "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
- "record_shape": 3,
+ "source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5129,
+  "input_tokens": 6488,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5129,
-    "output_tokens": 2186,
+    "input_tokens": 6488,
+    "output_tokens": 1381,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 2186,
+  "output_tokens": 1381,
   "output_tokens_details": {
-   "thinking_tokens": 850
+   "thinking_tokens": 492
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06424,
- "ms": 18889,
- "seconds": 22.8,
+ "cost_usd": 0.05357,
+ "ms": 12988,
+ "seconds": 16.6,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -50,53 +52,48 @@
    "missing": [],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "MATHC2210",
-     "listed": "MAT1A",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "MATHC2220",
-     "listed": "MAT1B",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 1,
    "codes": [
-    "CIS30A",
-    "CIS5",
-    "CSC5",
-    "MATH2",
-    "MATH3",
-    "MATHC2210H"
+    "MAT1AH"
    ],
    "flagged": [
-    "CIS30A",
-    "CIS5",
-    "CSC5",
-    "MATH2",
-    "MATH3",
-    "MATHC2210H"
+    "MAT1AH"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    38.0,
-    39.0
+    28.0,
+    28.0
    ],
    "stated": [
-    38.0,
-    39.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -118,27 +115,38 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108 (CalGETC)",
+   "section_heading": "Physics for Transfer - Associate in Science for Transfer (ADT) - AS640 (CalGETC)",
    "measure": "units",
    "total_units": {
-    "min": 38,
-    "max": 39
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
-    "Apply appropriate physical laws and mathematical techniques to analyze various physical situations.",
-    "Perform various scientific experiments and to analyze data to check agreement with theoretical predictions."
-   ]
+    "Apply appropriate physical laws and mathematical techniques to analyze various physical situations",
+    "Perform various scientific experiments and to analyze data to check agreement with theoretical predictions"
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -147,19 +155,19 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 35,
-     "max": 35
+     "min": 28,
+     "max": 28
     },
     "courses": [
      {
-      "code": "PHY-4A",
+      "code": "PHY-4B",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PHY-4B",
+      "code": "PHY-4A",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -180,101 +188,45 @@
       "catalog_addition": false
      },
      {
-      "code": "MATH-C2210",
+      "code": "MAT-1A",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "MATH-C2210H",
+        "code": "MAT-1AH",
         "units": 4,
         "catalog_addition": true
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "MATH-C2220",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH-1C",
+      "code": "MAT-1B",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH-2",
+      "code": "MAT-1C",
       "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH-3",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Elective Courses",
-    "rule": "choose_units",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 4
-    },
-    "courses": [
-     {
-      "code": "CIS-5",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CSC-5",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CIS-30A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "MAT 1A",
-    "why": "not in the text; catalog prints MATH-C2210 Calculus I: Early Transcendentals, likely its common-course-numbered replacement"
-   },
-   {
-    "code": "MAT 1B",
-    "why": "not in the text; catalog prints MATH-C2220 Calculus II: Early Transcendentals, likely its common-course-numbered replacement"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The 'Select one of the following: 4.00' line under Required Courses covers only MATH-C2210 OR MATH-C2210H (honors twin); recorded as one entry with an alternative. The remaining courses (MATH-C2220, MATH-1C, MATH-2, MATH-3) are read as required, since PHY 16 + 4 + 4 + 4 + 4 + 3 = 35, matching the printed 35.00 units.",
-   "Catalog codes are printed with hyphens (PHY-4A, MATH-1C); these were matched to closed-list PHY 4A and MATH 1C.",
-   "MATH-C2210, MATH-C2210H and MATH-C2220 are not on the closed list, which names MAT 1A and MAT 1B; reviewer should confirm the renumbering to common course numbering.",
-   "CIS-5 and CSC-5 share the same title (Programming Concepts and Methodology I:C++) and may be cross-listed; the catalog prints them as separate rows, so they are recorded separately.",
-   "Award titled 'Physics 2.0 for Transfer' (AS-T); Cal-GETC named as the GE pattern."
+   "The catalog prints codes with hyphens (PHY-4A, MAT-1A); these are matched to the closed list's space-separated codes.",
+   "MAT-1C (Calculus III) is matched to closed-list entry 'MATH 1C' Calculus III; the closed list's subject 'MATH' appears to be a variant of the catalog's 'MAT'. A reviewer should confirm.",
+   "MAT-1AH Honors Calculus I is not in the closed list and is recorded as a catalog addition (alternative to MAT-1A).",
+   "degree_total of 60 is taken from the statement that this degree is awarded upon completion of 60 CSU transferable units including the major and Cal-GETC; no GE unit figure is printed.",
+   "Heading line also references AS638, AS640; this record reads the AS640 (CalGETC) version."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "43816942139",
+ "catalog_year": "2025-2026"
 }
