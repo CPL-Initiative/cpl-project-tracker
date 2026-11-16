@@ -1,0 +1,15 @@
+{
+ "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "catalog_list": "Which catalogs _getCatalogs lists for Riverside City, each title, id and year, and which is 2025-2026.",
+  "prior_view": "Which alias view or start page the 2025-2026 catalog opens under."
+ },
+ "keywords": ["2025", "2026", "Riverside", "RCC", "[Cc]atalog"],
+ "pages": [
+  {"answers": ["catalog_list"], "url": "https://rccd.curriqunet.com/catalog/_getCatalogs",
+   "network": true, "network_find": ["2025-2026", "2025 - 2026", "Riverside"]},
+  {"answers": ["prior_view", "catalog_list"], "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog",
+   "network": true, "network_find": ["2025", "catalogId", "Riverside"], "links": "2025|catalog|archive"}
+ ]
+}
