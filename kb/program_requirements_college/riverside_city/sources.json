@@ -4216,7 +4216,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.733,
+  "coverage": 0.533,
   "codes_found": [
    "ACC1A",
    "ACC1B",
@@ -4224,24 +4224,25 @@
    "BUS10H",
    "BUS18A",
    "BUS24",
-   "ECONC2001H",
-   "ECONC2002H",
-   "MATH5",
-   "STATC1000",
-   "STATC1000H"
+   "ECO7",
+   "ECO8"
   ],
   "source": {
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
-   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
-   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
+   "url": "https://rccd.curriqunet.com/Catalog/archive/7/iq/918/943/1068",
+   "title": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1001 (CSUGE)/AS1002 (IGETC)",
+   "h1": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1001 (CSUGE)/AS1002 (IGETC)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - associate in science for transfer (adt) - as1001 (csuge)/as1002 (igetc)",
+    "section_fit": 0.286
    }
   },
   "listed": 15,
-  "text_chars": 2863
+  "text_chars": 2610,
+  "catalog_year": "2024-2025"
  },
  {
   "control_number": "33964",

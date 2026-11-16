@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Business Administration",
  "award": "A.S. T Degree",
- "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
- "record_shape": 3,
+ "source_url": "https://rccd.curriqunet.com/Catalog/archive/7/iq/918/943/1068",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5507,
+  "input_tokens": 7057,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5507,
-    "output_tokens": 2474,
+    "input_tokens": 7057,
+    "output_tokens": 2465,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,68 +30,89 @@
     "model": null
    }
   ],
-  "output_tokens": 2474,
+  "output_tokens": 2465,
   "output_tokens_details": {
-   "thinking_tokens": 835
+   "thinking_tokens": 1022
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07151,
- "ms": 20351,
- "seconds": 20.8,
+ "cost_usd": 0.07753,
+ "ms": 19927,
+ "seconds": 23.1,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 8,
    "listed": 15,
-   "share": 0.867,
+   "share": 0.533,
    "missing": [
     "CIS1A",
-    "PSYC48"
+    "ECONC2001H",
+    "ECONC2002H",
+    "MATH5",
+    "PSYC48",
+    "STATC1000",
+    "STATC1000H"
    ],
-   "unexplained": [],
+   "unexplained": [
+    "MATH5"
+   ],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ECONC2001",
-     "listed": "ECO8",
-     "matched_by": "course_id"
-    },
-    {
-     "printed": "ECONC2002",
-     "listed": "ECO7",
-     "matched_by": "course_id"
-    }
-   ],
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 2,
+   "count": 6,
    "codes": [
-    "MATHC2210",
-    "MATHC2210H"
+    "ECO7H",
+    "ECO8H",
+    "MAT12",
+    "MAT12H",
+    "MAT1A",
+    "MAT5"
    ],
    "flagged": [
-    "MATHC2210",
-    "MATHC2210H"
+    "ECO7H",
+    "ECO8H",
+    "MAT12",
+    "MAT12H",
+    "MAT1A"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     26.0,
     26.0
    ],
    "stated": [
-    26.0,
-    26.0
+    60.0,
+    60.0
    ],
-   "against": "program",
-   "why": []
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the IGETC or CSUGE pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     26.0
+    ],
+    "stated": [
+     26.0,
+     26.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -113,38 +134,49 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002 (CalGETC)",
+   "section_heading": "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1001 (CSUGE)/AS1002 (IGETC)",
    "measure": "units",
    "total_units": {
     "min": 26,
     "max": 26
    },
    "open_elective_units": null,
-   "ge_pattern": "Cal-GETC",
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "IGETC or CSUGE",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate use of technology and application software to analyze and solve business decisions.",
     "Demonstrate mathematical and accounting procedures used for business specific calculations and decisions.",
     "Demonstrate the application of economic and business theories to develop effective business processes."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required Courses (19 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 19,
+     "max": 19
     },
     "courses": [
      {
@@ -167,63 +199,50 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following:",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "ECON-C2001",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
-      "code": "ECON-C2001H",
+      "code": "ECO-7",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "ECO-7H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following:",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
-      "code": "ECON-C2002",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
-      "code": "ECON-C2002H",
+      "code": "ECO-8",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "ECO-8H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": false
+     },
+     {
+      "code": "MAT-12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MAT-12H",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
      }
     ]
    },
    {
-    "name": "Select one of the following:",
+    "name": "Select one course from below (4 units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -233,56 +252,23 @@
     },
     "courses": [
      {
-      "code": "STAT-C1000",
+      "code": "MAT-5",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STAT-C1000H",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following:",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 4,
-     "max": 4
-    },
-    "courses": [
-     {
-      "code": "MATH-C2210",
+      "code": "MAT-1A",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     },
-     {
-      "code": "MATH-C2210H",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH-5",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Select one of the following:",
+    "name": "Select one course from below (3 units)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -291,18 +277,17 @@
      "max": 3
     },
     "courses": [
-     {
-      "code": "BUS-10H",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
      {
       "code": "BUS-10",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "BUS-10H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -322,26 +307,33 @@
     "why": "not in the text"
    },
    {
-    "code": "ECO 7",
-    "why": "not in the text; catalog lists ECON-C2002 instead"
+    "code": "ECON C2001H",
+    "why": "not in the text; catalog prints ECO-8H as the honors microeconomics option"
    },
    {
-    "code": "ECO 8",
-    "why": "not in the text; catalog lists ECON-C2001 instead"
+    "code": "ECON C2002H",
+    "why": "not in the text; catalog prints ECO-7H as the honors macroeconomics option"
    },
    {
     "code": "PSYC48",
     "why": "not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "not in the text; catalog prints MAT-12 Statistics instead"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "not in the text; catalog prints MAT-12H Honors Statistics instead"
    }
   ],
   "notes": [
-   "The page repeats the heading; a third heading reads 'AS1001 (CSUGE)/AS1002 (IGETC)', but the degree award paragraph names Cal-GETC, so ge_pattern is Cal-GETC.",
-   "'Required Courses Units: 26.00' is the total for the whole major, not for the three always-required courses, so the 'all' block has no stated total.",
-   "Honors twins (ECON-C2001H, ECON-C2002H, STAT-C1000H, MATH-C2210H, BUS-10H) are listed as separate options inside their 'Select one of the following' blocks rather than as alternatives, because each block already offers a choice of one course.",
-   "The catalog marks ACC-1A, ACC-1B and BUS-18A as '( Historical )'. Check that they are still current.",
-   "ECON-C2001, ECON-C2002, MATH-C2210 and MATH-C2210H are not in the closed list. The closed list has ECO 7 and ECO 8 instead, which appear to be the older numbering."
+   "MAT-5 (Calculus for Business and Life Science) was matched to closed-list MATH 5 by title; the subject prefix differs (MAT vs MATH). Reviewer should confirm.",
+   "MAT-12/MAT-12H, ECO-7H and ECO-8H are not in the closed list as printed; they may correspond to the common-course-numbered STAT C1000/C1000H, ECON C2002H and ECON C2001H in the state file.",
+   "degree_total 60 is taken from the sentence stating this award is conferred upon completion of 60 CSU transferable units including the major and IGETC or CSUGE; no separate total line for the degree is printed.",
+   "Catalog prints 'Total : 26.00' for the major (19 + 4 + 3)."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "43889274787",
+ "catalog_year": "2024-2025"
 }
