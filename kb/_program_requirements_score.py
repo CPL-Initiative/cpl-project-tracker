@@ -624,6 +624,13 @@ def counts_passing_on_tab(checks: dict | None) -> bool:
     return c.get("coverage") is True and c.get("invented") is True and c.get("arithmetic") in TAB_PASSING
 
 
+def no_state_list(filed: dict | None) -> bool:
+    """A filed record read from a found page whose program the state's file lists no course for (S668; #3299 slice
+    B): its flag, or its score's basis. The load, the display build and the gap census hold it until the tab shows it."""
+    f = filed or {}
+    return bool(f.get(NO_STATE_LIST)) or ((f.get("score") or {}).get("coverage") or {}).get("basis") == NO_STATE_LIST
+
+
 def places_none(score: dict | None) -> bool:
     """A scored record that places none of its program's listed courses: the model
     read another program's page or a course-description listing. Sam, Open Asks

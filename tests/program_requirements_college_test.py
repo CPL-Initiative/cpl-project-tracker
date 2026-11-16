@@ -5256,13 +5256,33 @@ check(lk["05809"].get("result") == "found"
       and lk["05809"]["page"]["url"] == SK + "programs/accounting-as.php" and lk["05809"]["page"]["award"] == "named",
       "Skyline's Accounting A.S. (05809), no closed list, is found on its own page by title and award: %r" % lk["05809"])
 SK_FOUND = sorted(cn for cn in NCL_CNS if lk[cn].get("result") == "found")
-check(all(sk[cn]["method"] == "no_closed_list" for cn in NCL_CNS)
-      and all(sk[cn]["source"] is None and sk[cn]["text"] == "" and not sk[cn].get("ncl_source")
-              for cn in NCL_CNS if cn not in SK_FOUND)
-      and all(sk[cn].get("ncl_source") is True and sk[cn]["source"]["url"] == lk[cn]["page"]["url"] and sk[cn]["text"]
-              and sk[cn]["coverage"] == 0.0 and sk[cn]["codes_found"] == [] for cn in SK_FOUND),
-      "a looked-up program keeps method no_closed_list, so the census counts it as before; one not found keeps no "
-      "source and no text, and a found one files its page's text beside its answer (ncl_source, S668 slice B)")
+check(all(sk[cn]["method"] == "no_closed_list" and sk[cn]["source"] is None and sk[cn]["text"] == ""
+          and "ncl_source" not in sk[cn] and "codes_named" not in sk[cn] for cn in NCL_CNS),
+      "with NCL_EXTRACT off (the default), a looked-up program keeps method no_closed_list, no source and no text, as "
+      "main files it: the Commons reads a filed source's address as the program's page (S668 second reader on #3414)")
+check(all("ncl_source" not in e and "codes_named" not in e and e.get("source") is None
+          for e in sk_filed if e["control_number"] in NCL_CNS),
+      "the filed sources.json carries no found page for a no-closed-list program while the switch is off")
+# With the switch on, once the display build holds such a record out (C.display_holds_no_state_list, the
+# precondition tests/program_requirements_ncl_extract_test.py pins), a found page files its text beside its answer.
+_saved_probe, _saved_ncl = C.display_holds_no_state_list, os.environ.get(C.NCL_EXTRACT_ENV)
+C.display_holds_no_state_list = lambda: True
+os.environ[C.NCL_EXTRACT_ENV] = "1"
+try:
+    on_code, on_src, on_rep, on_filed = run_sk_capture("1")
+finally:
+    C.display_holds_no_state_list = _saved_probe
+    if _saved_ncl is None:
+        os.environ.pop(C.NCL_EXTRACT_ENV, None)
+    else:
+        os.environ[C.NCL_EXTRACT_ENV] = _saved_ncl
+on = {cn: json.loads(t) for cn, t in on_src.items()}
+check(on_code == 0 and all(on[cn].get("ncl_source") is True and on[cn]["source"]["url"] == lk[cn]["page"]["url"]
+                           and on[cn]["coverage"] == 0.0 and on[cn]["codes_found"] == [] for cn in SK_FOUND)
+      and all(on[cn] == sk[cn] for cn in NCL_CNS if cn not in SK_FOUND)
+      and on_rep["would_extract"]["ncl_found_no_course"] == sk_rep["would_extract"]["ncl_found_no_course"],
+      "with the switch on, a found page files its source beside its answer (ncl_source); one not found is as before, "
+      "and would_extract lists the same pages either way")
 check(sk["90001"]["source"]["url"] == SK + "programs/accounting-ca.php" and sk["90003"]["method"] == "sitemap_page",
       "the closed-list programs take their pages first")
 check(lk["90002"] == {"result": "not_matched", "why": "no page read names it by title and award"},
@@ -5332,10 +5352,9 @@ def _closed_only(rep):
 
 
 check(all(off_src[p["control_number"]] == sk_src[p["control_number"]] for p in SK_PROGS if p["closed_list"])
-      and _closed_only(sk_rep) == _closed_only(off_rep)
-      and set(sk_rep["fingerprints"]) - set(off_rep["fingerprints"]) == set(SK_FOUND),
+      and _closed_only(sk_rep) == _closed_only(off_rep) and sk_rep["fingerprints"] == off_rep["fingerprints"],
       "the lookup leaves every closed-list program's source and the rest of the account byte for byte as before; "
-      "only the found pages' fingerprints and would_extract's ncl_ keys are new")
+      "with the switch off only would_extract's ncl_ keys are new")
 # A college whose own closed-list programs the matcher does not find (their pages print another heading) is not
 # looked up: its programs file not_searched with the reason, never not_listed or not_matched.
 gate_pages = {("programs/p%d.php" % i if v[1] else k): ((v[0] + " Overview Studies Extra") if v[1] else v[0], v[1])

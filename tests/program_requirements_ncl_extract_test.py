@@ -119,9 +119,40 @@ acct_page = PAGES[1]
 check({"SB1440", "PLO1"} <= acct_page["codes"],
       "the capture's coarse net reads the law an ADT page cites and an outcome's label as codes: %r"
       % sorted(acct_page["codes"]))
+env = os.environ.get(C.NCL_EXTRACT_ENV)
+
+# ── THE PRECONDITION FOR TURNING NCL_EXTRACT ON (S668 second reader on #3414) ────────────────────────────────────
+# kb/_build_roep_display.py must leave out a record read with no state list (its synthetic x_20001 reached
+# cpl_pathways_roep_data.js). Until it does, the runner refuses NCL_EXTRACT=1: nothing is filed or sent. This check
+# fails if the switch is ever honored while the display build would show such a record.
+os.environ[C.NCL_EXTRACT_ENV] = "1"
+C._NCL_REFUSAL_SAID[0] = True   # the refusal's warning is the runner's; the test reads the answer
+holds = C.display_holds_no_state_list()
+check(C.ncl_extract_on() == holds,
+      "NCL_EXTRACT=1 is honored only once the display build holds a no_state_list record out (it holds: %s)" % holds)
+if not holds:
+    print("precondition unmet: kb/_build_roep_display.py would show a no_state_list record, so the runner refuses "
+          "NCL_EXTRACT=1")
+# The rest of this file reads the switch as the runner will once the precondition holds.
+REAL_PROBE = C.display_holds_no_state_list
+C.display_holds_no_state_list = lambda: True
+
+# With NCL_EXTRACT off (the default until the function's version 13 deploys), the records and their files stay as
+# before slice B (the Commons reads a filed source's address as the program's page; S668 second reader on #3414):
+# the found pages are read for the account alone.
+os.environ[C.NCL_EXTRACT_ENV] = "0"
+recs_off = lookup_recs()
+before = json.dumps(recs_off, sort_keys=True)
+test_off, read_off = C.ncl_read_found(COLLEGE, recs_off, PROGRAMS, PAGES, REG)
+check(json.dumps(recs_off, sort_keys=True) == before and sorted(r["control_number"] for r in read_off)
+      == ["20001", "20002", "20003"] and all(r.get("ncl_source") for r in read_off),
+      "with the switch off, no record changes, and the three found pages come back for the account alone")
+os.environ[C.NCL_EXTRACT_ENV] = "1"
 recs = lookup_recs()
-test = C.ncl_read_found(COLLEGE, recs, PROGRAMS, PAGES, REG)
+test, read_on = C.ncl_read_found(COLLEGE, recs, PROGRAMS, PAGES, REG)
 by = {r["control_number"]: r for r in recs}
+check(test == test_off and read_on == [] and [r for r in recs if r.get("ncl_source")] == read_off,
+      "the switch changes where the found pages go (the records, or the account alone), never what is read or measured")
 a = by["20001"]
 check(a["method"] == "no_closed_list" and a.get("ncl_source") is True and a["source"]["url"] == ACCT_URL
       and a["coverage"] == 0.0 and a["codes_found"] == [] and a["catalog_lookup"]["result"] == "found",
@@ -144,15 +175,16 @@ check(test == {"programs": 1, "listed_found": 4, "named": 4, "recall": 1.0},
       "the capture measures the named-course net on its own closed-list pages (the self-recall): %r" % test)
 
 # ── the extraction's one rule and would_extract ───────────────────────────────────────────────────────────
-env = os.environ.get(C.NCL_EXTRACT_ENV)
 tmp = tempfile.mkdtemp()
 try:
     os.environ[C.NCL_EXTRACT_ENV] = "0"
     check(not C.extractable(a, 0.5) and C.extractable(by["10001"], 0.5),
           "with NCL_EXTRACT off (the default until the function's version 13 deploys) only closed-list windows go")
-    off = C.would_extract(COLLEGE, recs, folder=tmp)
-    check(off["ncl_found"]["sent"] is False and off["ncl_found"]["programs"] == 2,
-          "would_extract lists the found pages naming a course whether or not this run sends them: %r" % off["ncl_found"])
+    off = C.would_extract(COLLEGE, recs_off, folder=tmp, ncl=read_off)
+    check(off["ncl_found"]["sent"] is False and off["ncl_found"]["programs"] == 2
+          and off["ncl_found_no_course"]["programs"] == 1 and [x["control_number"] for x in off["list"]] == ["10001"],
+          "would_extract lists the found pages from the account whether or not this run sends them: %r"
+          % off["ncl_found"])
     os.environ[C.NCL_EXTRACT_ENV] = "1"
     check(C.extractable(a, 0.5) and C.extractable(r3, 0.5) and not C.extractable(r2, 0.5),
           "with NCL_EXTRACT on, a found page naming at least one course goes; one naming none never does")
@@ -245,10 +277,72 @@ try:
           % skipped)
     summ = C.summarize([dict(base, score=sc, no_state_list=True), dict(base, score=closed_sc)], {"college": COLLEGE})
     check(summ["failed"]["coverage"] == 0 and summ["failed"]["invented"] == 0 and summ["passed_machine_checks"] == 1
-          and summ["no_state_list"] == 1,
-          "the summary counts a check not taken as no failure and names the records read with no list: %r" % summ)
+          and summ["no_state_list"] == 1 and summ["extracted"] == 1,
+          "the summary counts a check not taken as no failure, names the records read with no list, and counts only "
+          "closed-list records as extracted (the Commons' Records extracted, beside found): %r" % summ)
 finally:
     shutil.rmtree(parent, ignore_errors=True)
+
+# The gap census keeps such a program no_closed_list, read and held, never not_loaded (S668 second reader).
+import _harvest_gap_census as G  # noqa: E402
+col = {"read": True, "preview_only": False, "methods": {"20001": "no_closed_list"}, "records": {"20001": sc},
+       "college": COLLEGE}
+for live in (False, True):
+    cause, sub = G.assign({"control_number": "20001", "college": COLLEGE}, col, None, live, {})
+    check(cause == "no_closed_list" and sub == "read, held until the tab shows it"
+          and G.lever_of(cause, sub, COLLEGE, None)[0] == "program_course_file_check",
+          "the gap census reads a filed no-list record as no_closed_list, read and held (live=%s): %r"
+          % (live, (cause, sub)))
+cause, sub = G.assign({"control_number": "20001", "college": COLLEGE}, dict(col, records={}), None, True, {})
+check((cause, sub) == ("no_closed_list", None), "one never read stays no_closed_list as before: %r" % ((cause, sub),))
+
+# A reconcile that finds the program now has a list drops the flag (listed_now): it rescored against the list.
+flagged = {"control_number": "20001", "no_state_list": True, "score": sc}
+check("no_state_list" not in C.listed_now(flagged, {"closed_list": [{"code": "ACCT 101"}]})
+      and C.listed_now(flagged, {"closed_list": []}) is flagged and C.listed_now(flagged, None) is flagged
+      and C.listed_now({"control_number": "1"}, {"closed_list": [{"code": "X 1"}]}) == {"control_number": "1"},
+      "the flag goes only when the fresh source gives the program a closed list")
+
+# ── citations the net reads as codes (S668 second reader on #3414) ───────────────────────────────────────────────
+# AB is Auto Body at Allan Hancock, Butte, Cerritos and Palomar, and AB 705 is the placement law; AP 4235 is a district's
+# procedure on credit for prior learning. Under those letters a code counts only when the college lists that course.
+AB_PROGS = [prog("30001", "Auto Body", "Certificate of Achievement", ["AB 101", "AB 102"]),
+            prog("30002", "Accounting", "A.S. Degree", ["AP 120"])]
+ab = page("https://catalog.test.edu/programs/collision-repair-ca.php", "Collision Repair",
+          "Collision Repair\nAB 101 Auto Body I 4\nAB 140 Frame Repair 3\nPlacement follows AB 705, AB 1705 and AB 928.\n"
+          "Credit for prior learning follows AP 4235 and BP 4235. SB 1440. AP 120 Payroll 3")
+named = C.ncl_codes_named(ab, C.college_subjects(AB_PROGS), C.college_listed(AB_PROGS))
+check(named == ["AB101", "AP120"],
+      "under a citation's letters only a listed course counts (AB 101, AP 120); AB 705, AB 1705, AB 928, AP 4235 and "
+      "an unlisted AB 140 do not: %r" % named)
+check(C.ncl_codes_named(ab, {"MATH"}, set()) == [], "a page naming none of the college's subjects names no course")
+
+# The pilot's real page text (kb/program_requirements_pilot/sources, 22 pages with their closed lists): the net's
+# recall of the listed codes the exact search finds there, and how many citation-shaped codes survive the filter.
+pilot = os.path.join(ROOT, "kb", "program_requirements_pilot")
+by_college = {}
+for path in glob.glob(os.path.join(pilot, "sources", "*.json")):
+    with open(path) as fh:
+        x = json.load(fh)
+    by_college.setdefault(x["college"], []).append({"closed_list": x["closed_list"]})
+p_listed = p_hits = p_cites = p_raw_cites = p_pages = 0
+for path in sorted(glob.glob(os.path.join(pilot, "sources", "*.json"))):
+    if not os.path.exists(path.replace("/sources/", "/records/")):
+        continue
+    with open(path) as fh:
+        x = json.load(fh)
+    progs = by_college[x["college"]]
+    net = {"codes": C.page_codes(x["text"])}
+    got = set(C.ncl_codes_named(net, C.college_subjects(progs), C.college_listed(progs)))
+    found = set(P.find_codes(x["text"], x["closed_list"]))
+    p_pages += 1
+    p_listed += len(found)
+    p_hits += len(found & got)
+    p_cites += sum(1 for c in got if C.code_subject(c) in C.CITATION_SUBJECTS and c not in C.college_listed(progs))
+    p_raw_cites += sum(1 for c in net["codes"] if C.code_subject(c) in C.CITATION_SUBJECTS)
+check(p_pages == 22 and p_listed == 328 and p_hits >= 323 and p_cites == 0,
+      "on the pilot's 22 real pages the net reads %d of the %d listed codes found (floor 323), and %d citation-shaped "
+      "codes survive (none may; %d read before the filter)" % (p_hits, p_listed, p_cites, p_raw_cites))
 
 # ── a closed-list record scores exactly as before (S668 pin, measured on main's scorer: 22 of 22 pilot fixtures
 # score identically) ──────────────────────────────────────────────────────────────────────────────────────────
@@ -287,7 +381,7 @@ for d in sorted(glob.glob(os.path.join(C.COLLEGE_DIR, "*"))):
             continue
         printed = [x.get("code") or "" for b in rec["record"].get("blocks") or [] for c in b.get("courses") or []
                    for x in [c] + list(c.get("alternatives") or [])]
-        named = set(C.ncl_codes_named({"codes": C.page_codes("\n".join(printed))}, subj))
+        named = set(C.ncl_codes_named({"codes": C.page_codes("\n".join(printed))}, subj, found))
         n_rec += 1
         listed += len(found)
         hits += len(found & named)
@@ -296,6 +390,9 @@ check(n_rec >= NET_RECORDS_FLOOR and recall >= NET_RECALL_FLOOR,
       "the named-course net reads at least %.0f%% of the listed codes the capture found, over at least %d committed "
       "records: %d of %d over %d records (%.3f)" % (NET_RECALL_FLOOR * 100, NET_RECORDS_FLOOR, hits, listed, n_rec,
                                                     recall))
+
+C.display_holds_no_state_list = REAL_PROBE
+print("pilot pages: %d of %d listed codes named, %d citation-shaped codes read by the net, %d kept" % (p_hits, p_listed, p_raw_cites, p_cites))
 
 if failures:
     print("FAIL: program requirements ncl extract (%d of %d)" % (len(failures), checks[0]))
