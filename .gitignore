@@ -161,3 +161,6 @@ prototype/noncredit_video/.stills/
 # From v2 the film's MP4s are deliverables filed to the team Drive, never committed (Sam, 2026-10-05)
 prototype/noncredit_video/*_v[2-9].mp4
 prototype/noncredit_video/*_v[1-9][0-9].mp4
+
+# Built at Pages deploy from the handoffs' Spend: lines (kb/_build_session_spend.py); never committed.
+kb/status/session_spend.json

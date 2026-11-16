@@ -16,8 +16,11 @@ The first dollar figure is the session's total; `Name $x` pairs inside parenthes
 the UTC day it ended. A line without the two times still records the figure, with no day. Older free-text `Spend:`
 lines (per-run extraction notes such as "Merced $9.14") do not carry the times and are left out of the daily series.
 
-    python3 kb/_build_session_spend.py           # write the file (scripts/daily_build.sh runs it every day)
-    python3 kb/_build_session_spend.py --check   # exit 1 when the file is stale against the handoffs
+    python3 kb/_build_session_spend.py           # write kb/status/session_spend.json for a local look (gitignored)
+    python3 kb/_build_session_spend.py --out _site/kb/status/session_spend.json   # what pages.yml runs at deploy
+
+The file is built at Pages deploy and never committed (COBIx on #3379): a committed copy rebuilt from every handoff
+would fight between parallel PRs, and the daily build may not read docs/.
 """
 import argparse
 import glob
@@ -101,9 +104,10 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("--root", default=ROOT)
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--out", help="write here instead (pages.yml writes it into _site at deploy)")
     a = ap.parse_args(argv)
     text = dump(build(a.root))
-    out = os.path.join(a.root, OUT)
+    out = a.out or os.path.join(a.root, OUT)
     if a.check:
         cur = open(out, encoding="utf-8").read() if os.path.exists(out) else ""
         if cur != text:
@@ -111,9 +115,10 @@ def main(argv=None):
             return 1
         print("session spend: current")
         return 0
+    os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
     with open(out, "w", encoding="utf-8") as f:
         f.write(text)
-    print("wrote %s (%d sessions with a Spend: line)" % (OUT, len(json.loads(text)["sessions"])))
+    print("wrote %s (%d sessions with a Spend: line)" % (out, len(json.loads(text)["sessions"])))
     return 0
 
 

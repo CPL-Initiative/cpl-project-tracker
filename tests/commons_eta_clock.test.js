@@ -223,7 +223,7 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   check("(4) the spend comes from the two files, never from constants in the module",
     !/API_COST|TOPUPS|COST_ANOMALY|1569\.11/.test(ETA) && E.FILES.billing === "kb/reference/model_spend_daily.json" && E.FILES.sessions === "kb/status/session_spend.json" &&
     /^publish kb\/reference\/model_spend_daily\.json$/m.test(fs.readFileSync(".github/pages_allowlist.txt", "utf8")) &&
-    /^publish kb\/status\/session_spend\.json$/m.test(fs.readFileSync(".github/pages_allowlist.txt", "utf8")));
+    /--out _site\/kb\/status\/session_spend\.json/.test(fs.readFileSync(".github/workflows/pages.yml", "utf8")));
   q('[data-eta="phase-2"]').click();
   check("(4) the phase switcher draws Phase 2's partner feeds, not dated", q('[data-eta-datasets="2"]') && [...q('[data-eta-datasets="2"]').querySelectorAll("tbody tr")].length === 5 &&
     /Not dated/.test(txt(q('[data-cell="soonest"]') || q(".eta-grid"))));

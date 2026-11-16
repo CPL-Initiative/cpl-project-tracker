@@ -251,7 +251,6 @@ jobs:
             # The Commons tab's figures (the step before the copy): rebuilt every run.
             git add kb/status/commons.json 2>/dev/null || true
             git add kb/status/commons_history.json 2>/dev/null || true
-            git add kb/status/session_spend.json 2>/dev/null || true
             git add kb/ccr_doubt.json 2>/dev/null || true
             git add kb/status/program-requirements-checked.json 2>/dev/null || true
             # The Common Subjects Reference's daily scan (the step before the Commons build).

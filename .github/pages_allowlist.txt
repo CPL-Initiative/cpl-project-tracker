@@ -428,7 +428,6 @@ publish kb/status/mid_outcomes_compare_2026-11-12.json
 publish kb/status/mid_outcomes_compare_2026-11-12.md
 publish kb/status/program-requirements-checked.json
 publish kb/status/program-requirements.json
-publish kb/status/session_spend.json
 publish kb/status/subjects.json
 publish kb/subject_map_audit.json
 publish kb/synonym_map.json

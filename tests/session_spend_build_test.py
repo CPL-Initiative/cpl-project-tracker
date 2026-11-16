@@ -3,7 +3,7 @@
 
 Guards the failure modes: a free-text extraction note read as a session's spend; "not available" read as $0; a model's
 figure added to the total; a session credited to the handoff's number rather than the session that wrote it; a day
-taken from the start rather than the end; the file left unbuilt by the daily run.
+taken from the start rather than the end; the file committed or built where the daily rebase logic would miss a docs change.
 
 Run from repo root: python3 tests/session_spend_build_test.py
 """
@@ -59,10 +59,18 @@ with tempfile.TemporaryDirectory() as tmp:
     got = ss.build(tmp)["sessions"]
     check("Spend: needs its colon, the checkpoint's example is skipped, and the first real line wins",
           len(got) == 1 and got[0]["usd"] == 7.0, got)
-# The daily run rebuilds the file, so a session never commits it and two handoff PRs never fight over it (COBIx on #3379).
-check("the daily run rebuilds the file and stages it",
-      "python3 kb/_build_session_spend.py" in open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read()
-      and "git add kb/status/session_spend.json" in open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read())
+# Built at Pages deploy into _site, never committed: two handoff PRs never fight over it (COBIx on #3379), and the
+# daily build, which may not read docs/, never runs it.
+_rd = lambda *p: open(os.path.join(ROOT, *p), encoding="utf-8").read()
+check("Pages builds the file into _site at deploy; the daily build never runs it; git ignores it",
+      "python3 kb/_build_session_spend.py --out _site/kb/status/session_spend.json" in _rd(".github", "workflows", "pages.yml")
+      and "_build_session_spend" not in _rd("scripts", "daily_build.sh")
+      and "kb/status/session_spend.json" in _rd(".gitignore").split()
+      and "session_spend" not in _rd(".github", "pages_allowlist.txt"))
+with tempfile.TemporaryDirectory() as tmp:
+    o = os.path.join(tmp, "_site", "kb", "status", "session_spend.json")
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_session_spend.py"), "--out", o], capture_output=True, text=True)
+    check("--out writes the file where the deploy asks, making its folders", r.returncode == 0 and os.path.exists(o), r.stderr)
 
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

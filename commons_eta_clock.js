@@ -162,7 +162,7 @@
   /* Daily spend, from two committed files and never from billing credentials (COBIx's cost feed): the billing totals
      Sam pastes by hand (kb/reference/model_spend_daily.json: Console API by UTC day, Claude Code top-ups on the day
      credit was bought, a note on a day, the partial days), and what the sessions themselves wrote on their handoffs'
-     Spend: lines (kb/status/session_spend.json, kb/_build_session_spend.py). The two meters do not match, so the
+     Spend: lines (kb/status/session_spend.json, which pages.yml builds at deploy with kb/_build_session_spend.py). The two meters do not match, so the
      sessions' figure is shown beside the billing total, never added to it. */
   function bill() { return ST.billing || {}; }
   function apiCost(d) { var a = bill().api || {}; return typeof a[d] === "number" ? a[d] : null; }
