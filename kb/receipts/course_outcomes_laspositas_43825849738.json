@@ -1,0 +1,4805 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "laspositas",
+ "load_run": "43825849738",
+ "reads": [
+  "kb/course_outcomes/laspositas/read_43816095571_p1of3.json",
+  "kb/course_outcomes/laspositas/read_43816095571_p2of3.json",
+  "kb/course_outcomes/laspositas/read_43816095571_p3of3.json"
+ ],
+ "kind": "objective",
+ "held_back": 751,
+ "posted": 776,
+ "inserted": 776,
+ "kept": 0,
+ "skipped": 25,
+ "skipped_rows": [
+  {
+   "course_code": "BL 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NAVI 201",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NAVI 203",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NLIB 201",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHTO 29V",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VWT 21",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AJ 45",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AJ 89",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIO 70",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CIS 81A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FLMS 5",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "GEOL 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NAVI 202A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NENG 210",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC 27",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SW 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VWT 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "VWT 2",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "WLDT 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BL 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN 61A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 27",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "NAVI 202B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHTO 29P",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "YIN 1",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 24870,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AF 1"
+  },
+  {
+   "id": 24871,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 54"
+  },
+  {
+   "id": 24872,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 60"
+  },
+  {
+   "id": 24873,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 64"
+  },
+  {
+   "id": 24874,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 70"
+  },
+  {
+   "id": 24875,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 12"
+  },
+  {
+   "id": 24876,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 2"
+  },
+  {
+   "id": 24877,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 4"
+  },
+  {
+   "id": 24878,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 1"
+  },
+  {
+   "id": 24879,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 2L"
+  },
+  {
+   "id": 24880,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 4"
+  },
+  {
+   "id": 24881,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 101"
+  },
+  {
+   "id": 24882,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 104"
+  },
+  {
+   "id": 24883,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 107"
+  },
+  {
+   "id": 24884,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 110"
+  },
+  {
+   "id": 24885,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 113"
+  },
+  {
+   "id": 24886,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APMT 51"
+  },
+  {
+   "id": 24887,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APWX 94"
+  },
+  {
+   "id": 24888,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 2"
+  },
+  {
+   "id": 24889,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 7"
+  },
+  {
+   "id": 24890,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 24891,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 12C"
+  },
+  {
+   "id": 24892,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 24"
+  },
+  {
+   "id": 24893,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 3A"
+  },
+  {
+   "id": 24894,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 3D"
+  },
+  {
+   "id": 24895,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 7C"
+  },
+  {
+   "id": 24896,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASL 1B"
+  },
+  {
+   "id": 24897,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASTR 30L"
+  },
+  {
+   "id": 24898,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A1"
+  },
+  {
+   "id": 24899,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A4"
+  },
+  {
+   "id": 24900,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A7"
+  },
+  {
+   "id": 24901,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO L1"
+  },
+  {
+   "id": 24902,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BD 1"
+  },
+  {
+   "id": 24903,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 10"
+  },
+  {
+   "id": 24904,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 20"
+  },
+  {
+   "id": 24905,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 40"
+  },
+  {
+   "id": 24906,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 60"
+  },
+  {
+   "id": 24907,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 7B"
+  },
+  {
+   "id": 24908,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BL 2"
+  },
+  {
+   "id": 24909,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 18"
+  },
+  {
+   "id": 24910,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 20"
+  },
+  {
+   "id": 24911,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 40"
+  },
+  {
+   "id": 24912,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 51"
+  },
+  {
+   "id": 24913,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 56"
+  },
+  {
+   "id": 24914,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 65"
+  },
+  {
+   "id": 24915,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 1"
+  },
+  {
+   "id": 24916,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 4"
+  },
+  {
+   "id": 24917,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 7"
+  },
+  {
+   "id": 24918,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 12A"
+  },
+  {
+   "id": 24919,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 24920,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 31"
+  },
+  {
+   "id": 24921,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 11"
+  },
+  {
+   "id": 24922,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 54"
+  },
+  {
+   "id": 24923,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 59C"
+  },
+  {
+   "id": 24924,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 66"
+  },
+  {
+   "id": 24925,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 79"
+  },
+  {
+   "id": 24926,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 88A"
+  },
+  {
+   "id": 24927,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 9002"
+  },
+  {
+   "id": 24928,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 10"
+  },
+  {
+   "id": 24929,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 3"
+  },
+  {
+   "id": 24930,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 48"
+  },
+  {
+   "id": 24931,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 52"
+  },
+  {
+   "id": 24932,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 68"
+  },
+  {
+   "id": 24933,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 7401"
+  },
+  {
+   "id": 24934,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 8001"
+  },
+  {
+   "id": 24935,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 24936,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 2"
+  },
+  {
+   "id": 24937,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 3"
+  },
+  {
+   "id": 24938,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 41"
+  },
+  {
+   "id": 24939,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 47"
+  },
+  {
+   "id": 24940,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DA 1"
+  },
+  {
+   "id": 24941,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 2B"
+  },
+  {
+   "id": 24942,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 4B"
+  },
+  {
+   "id": 24943,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 6B"
+  },
+  {
+   "id": 24944,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 50"
+  },
+  {
+   "id": 24945,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 60"
+  },
+  {
+   "id": 24946,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 63"
+  },
+  {
+   "id": 24947,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 74"
+  },
+  {
+   "id": 24948,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 91"
+  },
+  {
+   "id": 24949,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECON 10"
+  },
+  {
+   "id": 24950,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 10"
+  },
+  {
+   "id": 24951,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 13"
+  },
+  {
+   "id": 24952,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 20"
+  },
+  {
+   "id": 24953,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 70"
+  },
+  {
+   "id": 24954,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 12B"
+  },
+  {
+   "id": 24955,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 13B"
+  },
+  {
+   "id": 24956,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 20"
+  },
+  {
+   "id": 24957,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 4"
+  },
+  {
+   "id": 24958,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 44"
+  },
+  {
+   "id": 24959,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 24960,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 26"
+  },
+  {
+   "id": 24961,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 44"
+  },
+  {
+   "id": 24962,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ESL 23"
+  },
+  {
+   "id": 24963,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ESL 26"
+  },
+  {
+   "id": 24964,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ETHS 30"
+  },
+  {
+   "id": 24965,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EVST 5"
+  },
+  {
+   "id": 24966,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FG 2"
+  },
+  {
+   "id": 24967,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FJW 2"
+  },
+  {
+   "id": 24968,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FLMS 2"
+  },
+  {
+   "id": 24969,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FLMS 9"
+  },
+  {
+   "id": 24970,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 1"
+  },
+  {
+   "id": 24971,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 3"
+  },
+  {
+   "id": 24972,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 6"
+  },
+  {
+   "id": 24973,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GBW 2"
+  },
+  {
+   "id": 24974,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 10"
+  },
+  {
+   "id": 24975,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 3"
+  },
+  {
+   "id": 24976,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 45A"
+  },
+  {
+   "id": 24977,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 51"
+  },
+  {
+   "id": 24978,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 54"
+  },
+  {
+   "id": 24979,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 57"
+  },
+  {
+   "id": 24980,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 60"
+  },
+  {
+   "id": 24981,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 70"
+  },
+  {
+   "id": 24982,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 15"
+  },
+  {
+   "id": 24983,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 5"
+  },
+  {
+   "id": 24984,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 12"
+  },
+  {
+   "id": 24985,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 1L"
+  },
+  {
+   "id": 24986,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 5"
+  },
+  {
+   "id": 24987,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GF 2"
+  },
+  {
+   "id": 24988,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GS 2"
+  },
+  {
+   "id": 24989,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HEA 3"
+  },
+  {
+   "id": 24990,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 14"
+  },
+  {
+   "id": 24991,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 28"
+  },
+  {
+   "id": 24992,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 4"
+  },
+  {
+   "id": 24993,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HNRS 1"
+  },
+  {
+   "id": 24994,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 52"
+  },
+  {
+   "id": 24995,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 55"
+  },
+  {
+   "id": 24996,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 58"
+  },
+  {
+   "id": 24997,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 62"
+  },
+  {
+   "id": 24998,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 71"
+  },
+  {
+   "id": 24999,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 11"
+  },
+  {
+   "id": 25000,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 28"
+  },
+  {
+   "id": 25001,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 6"
+  },
+  {
+   "id": 25002,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 20"
+  },
+  {
+   "id": 25003,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 35"
+  },
+  {
+   "id": 25004,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 47"
+  },
+  {
+   "id": 25005,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 11"
+  },
+  {
+   "id": 25006,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 19B"
+  },
+  {
+   "id": 25007,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 21B"
+  },
+  {
+   "id": 25008,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 22"
+  },
+  {
+   "id": 25009,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 24B"
+  },
+  {
+   "id": 25010,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 14"
+  },
+  {
+   "id": 25011,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 18B"
+  },
+  {
+   "id": 25012,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 3"
+  },
+  {
+   "id": 25013,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 32B"
+  },
+  {
+   "id": 25014,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 37A"
+  },
+  {
+   "id": 25015,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 38A"
+  },
+  {
+   "id": 25016,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 40A"
+  },
+  {
+   "id": 25017,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 41A"
+  },
+  {
+   "id": 25018,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 41D"
+  },
+  {
+   "id": 25019,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 44C"
+  },
+  {
+   "id": 25020,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 48C"
+  },
+  {
+   "id": 25021,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 6"
+  },
+  {
+   "id": 25022,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 61B"
+  },
+  {
+   "id": 25023,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "LGBT 2"
+  },
+  {
+   "id": 25024,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "LIBR 7"
+  },
+  {
+   "id": 25025,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 2"
+  },
+  {
+   "id": 25026,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 3"
+  },
+  {
+   "id": 25027,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 39"
+  },
+  {
+   "id": 25028,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 7"
+  },
+  {
+   "id": 25029,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MKTG 61"
+  },
+  {
+   "id": 25030,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 10B"
+  },
+  {
+   "id": 25031,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 14"
+  },
+  {
+   "id": 25032,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 147"
+  },
+  {
+   "id": 25033,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 17"
+  },
+  {
+   "id": 25034,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 19"
+  },
+  {
+   "id": 25035,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 22A"
+  },
+  {
+   "id": 25036,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 23B"
+  },
+  {
+   "id": 25037,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 28"
+  },
+  {
+   "id": 25038,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 34"
+  },
+  {
+   "id": 25039,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 37"
+  },
+  {
+   "id": 25040,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 41"
+  },
+  {
+   "id": 25041,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 46"
+  },
+  {
+   "id": 25042,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 50"
+  },
+  {
+   "id": 25043,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 8B"
+  },
+  {
+   "id": 25044,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A3"
+  },
+  {
+   "id": 25045,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A6"
+  },
+  {
+   "id": 25046,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A9"
+  },
+  {
+   "id": 25047,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAVI 201"
+  },
+  {
+   "id": 25048,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAVI 203"
+  },
+  {
+   "id": 25049,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 200"
+  },
+  {
+   "id": 25050,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 205"
+  },
+  {
+   "id": 25051,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 210"
+  },
+  {
+   "id": 25052,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 213"
+  },
+  {
+   "id": 25053,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 216"
+  },
+  {
+   "id": 25054,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 203"
+  },
+  {
+   "id": 25055,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 220A"
+  },
+  {
+   "id": 25056,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 221B"
+  },
+  {
+   "id": 25057,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 230A"
+  },
+  {
+   "id": 25058,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 231B"
+  },
+  {
+   "id": 25059,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NLIB 201"
+  },
+  {
+   "id": 25060,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NLIB 204"
+  },
+  {
+   "id": 25061,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 255"
+  },
+  {
+   "id": 25062,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 264"
+  },
+  {
+   "id": 25063,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NTRN 10"
+  },
+  {
+   "id": 25064,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "OSH 60"
+  },
+  {
+   "id": 25065,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PCN 13"
+  },
+  {
+   "id": 25066,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PCN 50"
+  },
+  {
+   "id": 25067,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 2"
+  },
+  {
+   "id": 25068,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 6"
+  },
+  {
+   "id": 25069,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 29V"
+  },
+  {
+   "id": 25070,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 56"
+  },
+  {
+   "id": 25071,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 60"
+  },
+  {
+   "id": 25072,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 67"
+  },
+  {
+   "id": 25073,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 70"
+  },
+  {
+   "id": 25074,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 10L"
+  },
+  {
+   "id": 25075,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 1C"
+  },
+  {
+   "id": 25076,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 25077,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PIC 3"
+  },
+  {
+   "id": 25078,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PL 2"
+  },
+  {
+   "id": 25079,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "POLI 25"
+  },
+  {
+   "id": 25080,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 10"
+  },
+  {
+   "id": 25081,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 15"
+  },
+  {
+   "id": 25082,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 25"
+  },
+  {
+   "id": 25083,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 4"
+  },
+  {
+   "id": 25084,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "RADS 40A"
+  },
+  {
+   "id": 25085,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "RELS 1"
+  },
+  {
+   "id": 25086,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SBV 2"
+  },
+  {
+   "id": 25087,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SI 2"
+  },
+  {
+   "id": 25088,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 1"
+  },
+  {
+   "id": 25089,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 13"
+  },
+  {
+   "id": 25090,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 5"
+  },
+  {
+   "id": 25091,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 1A"
+  },
+  {
+   "id": 25092,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 22"
+  },
+  {
+   "id": 25093,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 25094,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SW 3"
+  },
+  {
+   "id": 25095,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SWF 2"
+  },
+  {
+   "id": 25096,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 1"
+  },
+  {
+   "id": 25097,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 1A"
+  },
+  {
+   "id": 25098,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 31A"
+  },
+  {
+   "id": 25099,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 31D"
+  },
+  {
+   "id": 25100,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 39C"
+  },
+  {
+   "id": 25101,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 3C"
+  },
+  {
+   "id": 25102,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 47B"
+  },
+  {
+   "id": 25103,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 48A"
+  },
+  {
+   "id": 25104,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 48D"
+  },
+  {
+   "id": 25105,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 50L"
+  },
+  {
+   "id": 25106,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 53"
+  },
+  {
+   "id": 25107,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 56"
+  },
+  {
+   "id": 25108,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 57C"
+  },
+  {
+   "id": 25109,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 60"
+  },
+  {
+   "id": 25110,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VB 3"
+  },
+  {
+   "id": 25111,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 12"
+  },
+  {
+   "id": 25112,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 21"
+  },
+  {
+   "id": 25113,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 31"
+  },
+  {
+   "id": 25114,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 35"
+  },
+  {
+   "id": 25115,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 45"
+  },
+  {
+   "id": 25116,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 1"
+  },
+  {
+   "id": 25117,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 61"
+  },
+  {
+   "id": 25118,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 62"
+  },
+  {
+   "id": 25119,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 63"
+  },
+  {
+   "id": 25120,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 67B"
+  },
+  {
+   "id": 25121,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 68"
+  },
+  {
+   "id": 25122,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 70"
+  },
+  {
+   "id": 25123,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 73"
+  },
+  {
+   "id": 25124,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WMST 1"
+  },
+  {
+   "id": 25125,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WRKX 95"
+  },
+  {
+   "id": 25126,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WTW 1"
+  },
+  {
+   "id": 25127,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "YO 1"
+  },
+  {
+   "id": 25128,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "YO 4"
+  },
+  {
+   "id": 25129,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 45"
+  },
+  {
+   "id": 25130,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 55"
+  },
+  {
+   "id": 25131,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 61"
+  },
+  {
+   "id": 25132,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 66"
+  },
+  {
+   "id": 25133,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 89"
+  },
+  {
+   "id": 25134,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 13"
+  },
+  {
+   "id": 25135,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 2L"
+  },
+  {
+   "id": 25136,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 7"
+  },
+  {
+   "id": 25137,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 1L"
+  },
+  {
+   "id": 25138,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 3"
+  },
+  {
+   "id": 25139,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 4L"
+  },
+  {
+   "id": 25140,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 102"
+  },
+  {
+   "id": 25141,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 105"
+  },
+  {
+   "id": 25142,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 108"
+  },
+  {
+   "id": 25143,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 111"
+  },
+  {
+   "id": 25144,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 114"
+  },
+  {
+   "id": 25145,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APMT 52"
+  },
+  {
+   "id": 25146,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AR 1"
+  },
+  {
+   "id": 25147,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 3"
+  },
+  {
+   "id": 25148,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 8"
+  },
+  {
+   "id": 25149,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 12A"
+  },
+  {
+   "id": 25150,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 12D"
+  },
+  {
+   "id": 25151,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 26"
+  },
+  {
+   "id": 25152,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 3B"
+  },
+  {
+   "id": 25153,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 7A"
+  },
+  {
+   "id": 25154,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 7D"
+  },
+  {
+   "id": 25155,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASL 2A"
+  },
+  {
+   "id": 25156,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASTR 31"
+  },
+  {
+   "id": 25157,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A2"
+  },
+  {
+   "id": 25158,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A5"
+  },
+  {
+   "id": 25159,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A8"
+  },
+  {
+   "id": 25160,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO L3"
+  },
+  {
+   "id": 25161,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BD 2"
+  },
+  {
+   "id": 25162,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 1C"
+  },
+  {
+   "id": 25163,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 2A"
+  },
+  {
+   "id": 25164,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 50"
+  },
+  {
+   "id": 25165,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 70"
+  },
+  {
+   "id": 25166,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 7C"
+  },
+  {
+   "id": 25167,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BL 3"
+  },
+  {
+   "id": 25168,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 1A"
+  },
+  {
+   "id": 25169,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 30"
+  },
+  {
+   "id": 25170,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 45"
+  },
+  {
+   "id": 25171,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 52"
+  },
+  {
+   "id": 25172,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 58"
+  },
+  {
+   "id": 25173,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 87"
+  },
+  {
+   "id": 25174,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 2"
+  },
+  {
+   "id": 25175,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 5"
+  },
+  {
+   "id": 25176,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 8"
+  },
+  {
+   "id": 25177,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 12B"
+  },
+  {
+   "id": 25178,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 30A"
+  },
+  {
+   "id": 25179,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 6"
+  },
+  {
+   "id": 25180,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 43"
+  },
+  {
+   "id": 25181,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 55"
+  },
+  {
+   "id": 25182,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 60"
+  },
+  {
+   "id": 25183,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 73A"
+  },
+  {
+   "id": 25184,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 81A"
+  },
+  {
+   "id": 25185,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 88B"
+  },
+  {
+   "id": 25186,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CL 1"
+  },
+  {
+   "id": 25187,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 11"
+  },
+  {
+   "id": 25188,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 4"
+  },
+  {
+   "id": 25189,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 43"
+  },
+  {
+   "id": 25190,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 55"
+  },
+  {
+   "id": 25191,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 69"
+  },
+  {
+   "id": 25192,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 7402"
+  },
+  {
+   "id": 25193,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 8002"
+  },
+  {
+   "id": 25194,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 1"
+  },
+  {
+   "id": 25195,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 20"
+  },
+  {
+   "id": 25196,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 31"
+  },
+  {
+   "id": 25197,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 43"
+  },
+  {
+   "id": 25198,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 5"
+  },
+  {
+   "id": 25199,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 1"
+  },
+  {
+   "id": 25200,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 3A"
+  },
+  {
+   "id": 25201,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 5A"
+  },
+  {
+   "id": 25202,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 10"
+  },
+  {
+   "id": 25203,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 54"
+  },
+  {
+   "id": 25204,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 61"
+  },
+  {
+   "id": 25205,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 67"
+  },
+  {
+   "id": 25206,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 79"
+  },
+  {
+   "id": 25207,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 95"
+  },
+  {
+   "id": 25208,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 25209,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 11"
+  },
+  {
+   "id": 25210,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 16"
+  },
+  {
+   "id": 25211,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 30"
+  },
+  {
+   "id": 25212,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 11"
+  },
+  {
+   "id": 25213,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 12C"
+  },
+  {
+   "id": 25214,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 19A"
+  },
+  {
+   "id": 25215,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 32"
+  },
+  {
+   "id": 25216,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 41"
+  },
+  {
+   "id": 25217,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 45"
+  },
+  {
+   "id": 25218,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 1"
+  },
+  {
+   "id": 25219,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 35"
+  },
+  {
+   "id": 25220,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 46"
+  },
+  {
+   "id": 25221,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ESL 24"
+  },
+  {
+   "id": 25222,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ETHS 10"
+  },
+  {
+   "id": 25223,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ETHS 5"
+  },
+  {
+   "id": 25224,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EVST 5L"
+  },
+  {
+   "id": 25225,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FG 3"
+  },
+  {
+   "id": 25226,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FJW 3"
+  },
+  {
+   "id": 25227,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FLMS 5"
+  },
+  {
+   "id": 25228,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FREN 1A"
+  },
+  {
+   "id": 25229,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 12"
+  },
+  {
+   "id": 25230,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 4"
+  },
+  {
+   "id": 25231,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 7"
+  },
+  {
+   "id": 25232,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GBW 3"
+  },
+  {
+   "id": 25233,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 12"
+  },
+  {
+   "id": 25234,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 4"
+  },
+  {
+   "id": 25235,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 45B"
+  },
+  {
+   "id": 25236,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 52"
+  },
+  {
+   "id": 25237,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 55"
+  },
+  {
+   "id": 25238,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 58"
+  },
+  {
+   "id": 25239,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 62"
+  },
+  {
+   "id": 25240,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 1"
+  },
+  {
+   "id": 25241,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 1L"
+  },
+  {
+   "id": 25242,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 8"
+  },
+  {
+   "id": 25243,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 12L"
+  },
+  {
+   "id": 25244,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 2"
+  },
+  {
+   "id": 25245,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 7"
+  },
+  {
+   "id": 25246,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GF 3"
+  },
+  {
+   "id": 25247,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HEA 1"
+  },
+  {
+   "id": 25248,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HEA 7"
+  },
+  {
+   "id": 25249,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 2"
+  },
+  {
+   "id": 25250,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 3"
+  },
+  {
+   "id": 25251,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 25252,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 50"
+  },
+  {
+   "id": 25253,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 53"
+  },
+  {
+   "id": 25254,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 56"
+  },
+  {
+   "id": 25255,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 59"
+  },
+  {
+   "id": 25256,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 63"
+  },
+  {
+   "id": 25257,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 73"
+  },
+  {
+   "id": 25258,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 12"
+  },
+  {
+   "id": 25259,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 3"
+  },
+  {
+   "id": 25260,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 10"
+  },
+  {
+   "id": 25261,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 25"
+  },
+  {
+   "id": 25262,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 40"
+  },
+  {
+   "id": 25263,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 5"
+  },
+  {
+   "id": 25264,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 12"
+  },
+  {
+   "id": 25265,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 2"
+  },
+  {
+   "id": 25266,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 21C"
+  },
+  {
+   "id": 25267,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 23"
+  },
+  {
+   "id": 25268,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 3"
+  },
+  {
+   "id": 25269,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 17"
+  },
+  {
+   "id": 25270,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 19"
+  },
+  {
+   "id": 25271,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 30"
+  },
+  {
+   "id": 25272,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 32C"
+  },
+  {
+   "id": 25273,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 37B"
+  },
+  {
+   "id": 25274,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 38B"
+  },
+  {
+   "id": 25275,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 40B"
+  },
+  {
+   "id": 25276,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 41B"
+  },
+  {
+   "id": 25277,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 44A"
+  },
+  {
+   "id": 25278,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 48A"
+  },
+  {
+   "id": 25279,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 50A"
+  },
+  {
+   "id": 25280,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 60"
+  },
+  {
+   "id": 25281,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 65"
+  },
+  {
+   "id": 25282,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "LIBR 1"
+  },
+  {
+   "id": 25283,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 1"
+  },
+  {
+   "id": 25284,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 21"
+  },
+  {
+   "id": 25285,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 33"
+  },
+  {
+   "id": 25286,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 47"
+  },
+  {
+   "id": 25287,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MKTG 50"
+  },
+  {
+   "id": 25288,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 1"
+  },
+  {
+   "id": 25289,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 11"
+  },
+  {
+   "id": 25290,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 145"
+  },
+  {
+   "id": 25291,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 15"
+  },
+  {
+   "id": 25292,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 18A"
+  },
+  {
+   "id": 25293,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 21A"
+  },
+  {
+   "id": 25294,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 22B"
+  },
+  {
+   "id": 25295,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 25"
+  },
+  {
+   "id": 25296,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 3"
+  },
+  {
+   "id": 25297,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 35"
+  },
+  {
+   "id": 25298,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 38"
+  },
+  {
+   "id": 25299,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 44"
+  },
+  {
+   "id": 25300,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 48"
+  },
+  {
+   "id": 25301,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 6"
+  },
+  {
+   "id": 25302,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A1"
+  },
+  {
+   "id": 25303,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A4"
+  },
+  {
+   "id": 25304,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A7"
+  },
+  {
+   "id": 25305,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT L1"
+  },
+  {
+   "id": 25306,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAVI 202A"
+  },
+  {
+   "id": 25307,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBIO 201"
+  },
+  {
+   "id": 25308,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 202"
+  },
+  {
+   "id": 25309,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 206"
+  },
+  {
+   "id": 25310,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 211"
+  },
+  {
+   "id": 25311,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 214"
+  },
+  {
+   "id": 25312,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NENG 210"
+  },
+  {
+   "id": 25313,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 204"
+  },
+  {
+   "id": 25314,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 220B"
+  },
+  {
+   "id": 25315,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 223"
+  },
+  {
+   "id": 25316,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 230B"
+  },
+  {
+   "id": 25317,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 233"
+  },
+  {
+   "id": 25318,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NLIB 202"
+  },
+  {
+   "id": 25319,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 200C"
+  },
+  {
+   "id": 25320,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 255C"
+  },
+  {
+   "id": 25321,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 265"
+  },
+  {
+   "id": 25322,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NTRN 5"
+  },
+  {
+   "id": 25323,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "OSH 62"
+  },
+  {
+   "id": 25324,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PCN 35"
+  },
+  {
+   "id": 25325,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PCN 50L"
+  },
+  {
+   "id": 25326,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 3"
+  },
+  {
+   "id": 25327,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 8"
+  },
+  {
+   "id": 25328,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 50"
+  },
+  {
+   "id": 25329,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 57"
+  },
+  {
+   "id": 25330,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 64A"
+  },
+  {
+   "id": 25331,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 68"
+  },
+  {
+   "id": 25332,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 72"
+  },
+  {
+   "id": 25333,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 1A"
+  },
+  {
+   "id": 25334,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 1D"
+  },
+  {
+   "id": 25335,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PIC 1"
+  },
+  {
+   "id": 25336,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PIC 4"
+  },
+  {
+   "id": 25337,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "POLI 12"
+  },
+  {
+   "id": 25338,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "POLI 30"
+  },
+  {
+   "id": 25339,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 12"
+  },
+  {
+   "id": 25340,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 17"
+  },
+  {
+   "id": 25341,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 27"
+  },
+  {
+   "id": 25342,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 6"
+  },
+  {
+   "id": 25343,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "RADS 40B"
+  },
+  {
+   "id": 25344,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "RELS 3"
+  },
+  {
+   "id": 25345,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SBV 3"
+  },
+  {
+   "id": 25346,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SO 1"
+  },
+  {
+   "id": 25347,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 11"
+  },
+  {
+   "id": 25348,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 3"
+  },
+  {
+   "id": 25349,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 6"
+  },
+  {
+   "id": 25350,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 1B"
+  },
+  {
+   "id": 25351,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 2A"
+  },
+  {
+   "id": 25352,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SW 1"
+  },
+  {
+   "id": 25353,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SW 4"
+  },
+  {
+   "id": 25354,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SWF 3"
+  },
+  {
+   "id": 25355,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 10"
+  },
+  {
+   "id": 25356,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 1B"
+  },
+  {
+   "id": 25357,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 31B"
+  },
+  {
+   "id": 25358,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 39A"
+  },
+  {
+   "id": 25359,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 3A"
+  },
+  {
+   "id": 25360,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 4"
+  },
+  {
+   "id": 25361,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 47C"
+  },
+  {
+   "id": 25362,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 48B"
+  },
+  {
+   "id": 25363,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 5"
+  },
+  {
+   "id": 25364,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 51"
+  },
+  {
+   "id": 25365,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 54"
+  },
+  {
+   "id": 25366,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 57A"
+  },
+  {
+   "id": 25367,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 57D"
+  },
+  {
+   "id": 25368,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VB 1"
+  },
+  {
+   "id": 25369,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 1"
+  },
+  {
+   "id": 25370,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 2"
+  },
+  {
+   "id": 25371,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 23"
+  },
+  {
+   "id": 25372,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 32"
+  },
+  {
+   "id": 25373,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 41"
+  },
+  {
+   "id": 25374,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 47"
+  },
+  {
+   "id": 25375,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 10"
+  },
+  {
+   "id": 25376,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 61AL"
+  },
+  {
+   "id": 25377,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 62AL"
+  },
+  {
+   "id": 25378,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 66"
+  },
+  {
+   "id": 25379,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 67C"
+  },
+  {
+   "id": 25380,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 69AL"
+  },
+  {
+   "id": 25381,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 71"
+  },
+  {
+   "id": 25382,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 75"
+  },
+  {
+   "id": 25383,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WMST 2"
+  },
+  {
+   "id": 25384,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WT 1"
+  },
+  {
+   "id": 25385,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WTW 2"
+  },
+  {
+   "id": 25386,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "YO 2"
+  },
+  {
+   "id": 25387,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ZUM 1"
+  },
+  {
+   "id": 25388,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 50"
+  },
+  {
+   "id": 25389,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 59"
+  },
+  {
+   "id": 25390,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 63"
+  },
+  {
+   "id": 25391,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AJ 68"
+  },
+  {
+   "id": 25392,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 1"
+  },
+  {
+   "id": 25393,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 1L"
+  },
+  {
+   "id": 25394,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 3"
+  },
+  {
+   "id": 25395,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ANTR 8"
+  },
+  {
+   "id": 25396,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 2"
+  },
+  {
+   "id": 25397,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APAG 3L"
+  },
+  {
+   "id": 25398,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 100"
+  },
+  {
+   "id": 25399,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 103"
+  },
+  {
+   "id": 25400,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 106"
+  },
+  {
+   "id": 25401,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 109"
+  },
+  {
+   "id": 25402,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 112"
+  },
+  {
+   "id": 25403,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APCL 115"
+  },
+  {
+   "id": 25404,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "APMT 53"
+  },
+  {
+   "id": 25405,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 1"
+  },
+  {
+   "id": 25406,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARHS 6"
+  },
+  {
+   "id": 25407,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 25408,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 12B"
+  },
+  {
+   "id": 25409,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 23"
+  },
+  {
+   "id": 25410,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 2A"
+  },
+  {
+   "id": 25411,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 3C"
+  },
+  {
+   "id": 25412,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ARTS 7B"
+  },
+  {
+   "id": 25413,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASL 1A"
+  },
+  {
+   "id": 25414,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASL 2B"
+  },
+  {
+   "id": 25415,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ASTR 32"
+  },
+  {
+   "id": 25416,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A3"
+  },
+  {
+   "id": 25417,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A6"
+  },
+  {
+   "id": 25418,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO A9"
+  },
+  {
+   "id": 25419,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "AUTO P1"
+  },
+  {
+   "id": 25420,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BD 3"
+  },
+  {
+   "id": 25421,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 1R"
+  },
+  {
+   "id": 25422,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 30"
+  },
+  {
+   "id": 25423,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 55"
+  },
+  {
+   "id": 25424,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BIO 7A"
+  },
+  {
+   "id": 25425,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BL 1"
+  },
+  {
+   "id": 25426,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BL 4"
+  },
+  {
+   "id": 25427,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 1B"
+  },
+  {
+   "id": 25428,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 33"
+  },
+  {
+   "id": 25429,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 48"
+  },
+  {
+   "id": 25430,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 55"
+  },
+  {
+   "id": 25431,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 61"
+  },
+  {
+   "id": 25432,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "BUSN 88"
+  },
+  {
+   "id": 25433,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 3"
+  },
+  {
+   "id": 25434,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 6"
+  },
+  {
+   "id": 25435,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CA 9"
+  },
+  {
+   "id": 25436,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 25437,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CHEM 30B"
+  },
+  {
+   "id": 25438,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 10"
+  },
+  {
+   "id": 25439,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 50"
+  },
+  {
+   "id": 25440,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 59"
+  },
+  {
+   "id": 25441,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 62"
+  },
+  {
+   "id": 25442,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 74"
+  },
+  {
+   "id": 25443,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 81B"
+  },
+  {
+   "id": 25444,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CIS 89A"
+  },
+  {
+   "id": 25445,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CL 3"
+  },
+  {
+   "id": 25446,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 2"
+  },
+  {
+   "id": 25447,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CMST 46"
+  },
+  {
+   "id": 25448,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 51"
+  },
+  {
+   "id": 25449,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 56"
+  },
+  {
+   "id": 25450,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 7285"
+  },
+  {
+   "id": 25451,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 7501"
+  },
+  {
+   "id": 25452,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CNT 8003"
+  },
+  {
+   "id": 25453,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 17"
+  },
+  {
+   "id": 25454,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 21"
+  },
+  {
+   "id": 25455,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 4"
+  },
+  {
+   "id": 25456,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 45"
+  },
+  {
+   "id": 25457,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "CS 7"
+  },
+  {
+   "id": 25458,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 2A"
+  },
+  {
+   "id": 25459,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 4A"
+  },
+  {
+   "id": 25460,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "DANC 6A"
+  },
+  {
+   "id": 25461,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 40"
+  },
+  {
+   "id": 25462,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 56"
+  },
+  {
+   "id": 25463,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 62"
+  },
+  {
+   "id": 25464,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 69"
+  },
+  {
+   "id": 25465,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 90"
+  },
+  {
+   "id": 25466,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECE 96"
+  },
+  {
+   "id": 25467,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 25468,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 12"
+  },
+  {
+   "id": 25469,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 17"
+  },
+  {
+   "id": 25470,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "EMS 62"
+  },
+  {
+   "id": 25471,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 12A"
+  },
+  {
+   "id": 25472,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 13A"
+  },
+  {
+   "id": 25473,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 19B"
+  },
+  {
+   "id": 25474,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 35"
+  },
+  {
+   "id": 25475,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENG 42"
+  },
+  {
+   "id": 25476,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 25477,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 23"
+  },
+  {
+   "id": 25478,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 37"
+  },
+  {
+   "id": 25479,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ENGR 50"
+  },
+  {
+   "id": 25480,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ESL 25"
+  },
+  {
+   "id": 25481,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ETHS 20"
+  },
+  {
+   "id": 25482,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "ETHS 6"
+  },
+  {
+   "id": 25483,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FG 1"
+  },
+  {
+   "id": 25484,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FJW 1"
+  },
+  {
+   "id": 25485,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FJW 4"
+  },
+  {
+   "id": 25486,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FLMS 7"
+  },
+  {
+   "id": 25487,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FREN 1B"
+  },
+  {
+   "id": 25488,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 2"
+  },
+  {
+   "id": 25489,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "FST 5"
+  },
+  {
+   "id": 25490,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GBW 1"
+  },
+  {
+   "id": 25491,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GBW 4"
+  },
+  {
+   "id": 25492,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 2"
+  },
+  {
+   "id": 25493,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 40"
+  },
+  {
+   "id": 25494,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 50"
+  },
+  {
+   "id": 25495,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 53"
+  },
+  {
+   "id": 25496,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 56"
+  },
+  {
+   "id": 25497,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 59"
+  },
+  {
+   "id": 25498,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GDDM 64"
+  },
+  {
+   "id": 25499,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 12"
+  },
+  {
+   "id": 25500,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOG 2"
+  },
+  {
+   "id": 25501,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 1"
+  },
+  {
+   "id": 25502,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 13"
+  },
+  {
+   "id": 25503,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GEOL 20"
+  },
+  {
+   "id": 25504,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GF 1"
+  },
+  {
+   "id": 25505,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "GS 1"
+  },
+  {
+   "id": 25506,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HEA 11"
+  },
+  {
+   "id": 25507,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 1"
+  },
+  {
+   "id": 25508,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 25"
+  },
+  {
+   "id": 25509,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST 32"
+  },
+  {
+   "id": 25510,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 25511,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 51"
+  },
+  {
+   "id": 25512,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 54"
+  },
+  {
+   "id": 25513,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 57"
+  },
+  {
+   "id": 25514,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 60"
+  },
+  {
+   "id": 25515,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HORT 67"
+  },
+  {
+   "id": 25516,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 10"
+  },
+  {
+   "id": 25517,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 2"
+  },
+  {
+   "id": 25518,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "HUMN 4"
+  },
+  {
+   "id": 25519,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 15"
+  },
+  {
+   "id": 25520,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 30"
+  },
+  {
+   "id": 25521,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "INTD 45"
+  },
+  {
+   "id": 25522,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 1"
+  },
+  {
+   "id": 25523,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 19A"
+  },
+  {
+   "id": 25524,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 21A"
+  },
+  {
+   "id": 25525,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 21D"
+  },
+  {
+   "id": 25526,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "JAMS 24A"
+  },
+  {
+   "id": 25527,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 1"
+  },
+  {
+   "id": 25528,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 18A"
+  },
+  {
+   "id": 25529,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 24"
+  },
+  {
+   "id": 25530,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 32A"
+  },
+  {
+   "id": 25531,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 33"
+  },
+  {
+   "id": 25532,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 37C"
+  },
+  {
+   "id": 25533,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 38C"
+  },
+  {
+   "id": 25534,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 40C"
+  },
+  {
+   "id": 25535,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 41C"
+  },
+  {
+   "id": 25536,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 44B"
+  },
+  {
+   "id": 25537,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 48B"
+  },
+  {
+   "id": 25538,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 50B"
+  },
+  {
+   "id": 25539,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "KIN 61A"
+  },
+  {
+   "id": 25540,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "LGBT 1"
+  },
+  {
+   "id": 25541,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "LIBR 4"
+  },
+  {
+   "id": 25542,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 10"
+  },
+  {
+   "id": 25543,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 27"
+  },
+  {
+   "id": 25544,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 34"
+  },
+  {
+   "id": 25545,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MATH 5"
+  },
+  {
+   "id": 25546,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MKTG 56"
+  },
+  {
+   "id": 25547,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 10A"
+  },
+  {
+   "id": 25548,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 13"
+  },
+  {
+   "id": 25549,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 146"
+  },
+  {
+   "id": 25550,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 16"
+  },
+  {
+   "id": 25551,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 18B"
+  },
+  {
+   "id": 25552,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 21B"
+  },
+  {
+   "id": 25553,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 23A"
+  },
+  {
+   "id": 25554,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 27"
+  },
+  {
+   "id": 25555,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 31"
+  },
+  {
+   "id": 25556,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 36"
+  },
+  {
+   "id": 25557,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 4"
+  },
+  {
+   "id": 25558,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 45"
+  },
+  {
+   "id": 25559,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 5"
+  },
+  {
+   "id": 25560,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "MUS 8A"
+  },
+  {
+   "id": 25561,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A2"
+  },
+  {
+   "id": 25562,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A5"
+  },
+  {
+   "id": 25563,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT A8"
+  },
+  {
+   "id": 25564,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAUT L3"
+  },
+  {
+   "id": 25565,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NAVI 202B"
+  },
+  {
+   "id": 25566,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBIO 202"
+  },
+  {
+   "id": 25567,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 203"
+  },
+  {
+   "id": 25568,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 207"
+  },
+  {
+   "id": 25569,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 212"
+  },
+  {
+   "id": 25570,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NBUS 215"
+  },
+  {
+   "id": 25571,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NENG 215"
+  },
+  {
+   "id": 25572,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 213"
+  },
+  {
+   "id": 25573,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 221A"
+  },
+  {
+   "id": 25574,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 226"
+  },
+  {
+   "id": 25575,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 231A"
+  },
+  {
+   "id": 25576,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NESL 236"
+  },
+  {
+   "id": 25577,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NLIB 203"
+  },
+  {
+   "id": 25578,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 201C"
+  },
+  {
+   "id": 25579,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NMAT 256"
+  },
+  {
+   "id": 25580,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "NTRN 1"
+  },
+  {
+   "id": 25581,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "OSH 50"
+  },
+  {
+   "id": 25582,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "OSH 67"
+  },
+  {
+   "id": 25583,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PCN 5"
+  },
+  {
+   "id": 25584,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 1"
+  },
+  {
+   "id": 25585,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHIL 4"
+  },
+  {
+   "id": 25586,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 29P"
+  },
+  {
+   "id": 25587,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 51A"
+  },
+  {
+   "id": 25588,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 58"
+  },
+  {
+   "id": 25589,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 66"
+  },
+  {
+   "id": 25590,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHTO 69"
+  },
+  {
+   "id": 25591,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 10"
+  },
+  {
+   "id": 25592,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 1B"
+  },
+  {
+   "id": 25593,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 25594,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PIC 2"
+  },
+  {
+   "id": 25595,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PL 1"
+  },
+  {
+   "id": 25596,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "POLI 20"
+  },
+  {
+   "id": 25597,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 25598,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 13"
+  },
+  {
+   "id": 25599,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 21"
+  },
+  {
+   "id": 25600,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC 3"
+  },
+  {
+   "id": 25601,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 25602,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "RADS 40C"
+  },
+  {
+   "id": 25603,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SBV 1"
+  },
+  {
+   "id": 25604,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SI 1"
+  },
+  {
+   "id": 25605,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SO 2"
+  },
+  {
+   "id": 25606,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 12"
+  },
+  {
+   "id": 25607,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 4"
+  },
+  {
+   "id": 25608,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SOC 7"
+  },
+  {
+   "id": 25609,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 21"
+  },
+  {
+   "id": 25610,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SPAN 2B"
+  },
+  {
+   "id": 25611,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SW 2"
+  },
+  {
+   "id": 25612,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SWF 1"
+  },
+  {
+   "id": 25613,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "SWF 4"
+  },
+  {
+   "id": 25614,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 11"
+  },
+  {
+   "id": 25615,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 25"
+  },
+  {
+   "id": 25616,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 31C"
+  },
+  {
+   "id": 25617,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 39B"
+  },
+  {
+   "id": 25618,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 3B"
+  },
+  {
+   "id": 25619,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 47A"
+  },
+  {
+   "id": 25620,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 47D"
+  },
+  {
+   "id": 25621,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 48C"
+  },
+  {
+   "id": 25622,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 50"
+  },
+  {
+   "id": 25623,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 52"
+  },
+  {
+   "id": 25624,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 55"
+  },
+  {
+   "id": 25625,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 57B"
+  },
+  {
+   "id": 25626,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "THEA 58"
+  },
+  {
+   "id": 25627,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VB 2"
+  },
+  {
+   "id": 25628,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 10"
+  },
+  {
+   "id": 25629,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 20"
+  },
+  {
+   "id": 25630,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 25"
+  },
+  {
+   "id": 25631,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 33"
+  },
+  {
+   "id": 25632,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 42"
+  },
+  {
+   "id": 25633,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "VWT 55"
+  },
+  {
+   "id": 25634,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 55"
+  },
+  {
+   "id": 25635,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 61BL"
+  },
+  {
+   "id": 25636,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 62BL"
+  },
+  {
+   "id": 25637,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 67A"
+  },
+  {
+   "id": 25638,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 67D"
+  },
+  {
+   "id": 25639,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 69BL"
+  },
+  {
+   "id": 25640,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 72"
+  },
+  {
+   "id": 25641,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WLDT 79"
+  },
+  {
+   "id": 25642,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WRKX 94"
+  },
+  {
+   "id": 25643,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "WT 2"
+  },
+  {
+   "id": 25644,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "YIN 1"
+  },
+  {
+   "id": 25645,
+   "kind": "objective",
+   "college": "Las Positas College",
+   "course_code": "YO 3"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (24870, 24871, 24872, 24873, 24874, 24875, 24876, 24877, 24878, 24879, 24880, 24881, 24882, 24883, 24884, 24885, 24886, 24887, 24888, 24889, 24890, 24891, 24892, 24893, 24894, 24895, 24896, 24897, 24898, 24899, 24900, 24901, 24902, 24903, 24904, 24905, 24906, 24907, 24908, 24909, 24910, 24911, 24912, 24913, 24914, 24915, 24916, 24917, 24918, 24919, 24920, 24921, 24922, 24923, 24924, 24925, 24926, 24927, 24928, 24929, 24930, 24931, 24932, 24933, 24934, 24935, 24936, 24937, 24938, 24939, 24940, 24941, 24942, 24943, 24944, 24945, 24946, 24947, 24948, 24949, 24950, 24951, 24952, 24953, 24954, 24955, 24956, 24957, 24958, 24959, 24960, 24961, 24962, 24963, 24964, 24965, 24966, 24967, 24968, 24969, 24970, 24971, 24972, 24973, 24974, 24975, 24976, 24977, 24978, 24979, 24980, 24981, 24982, 24983, 24984, 24985, 24986, 24987, 24988, 24989, 24990, 24991, 24992, 24993, 24994, 24995, 24996, 24997, 24998, 24999, 25000, 25001, 25002, 25003, 25004, 25005, 25006, 25007, 25008, 25009, 25010, 25011, 25012, 25013, 25014, 25015, 25016, 25017, 25018, 25019, 25020, 25021, 25022, 25023, 25024, 25025, 25026, 25027, 25028, 25029, 25030, 25031, 25032, 25033, 25034, 25035, 25036, 25037, 25038, 25039, 25040, 25041, 25042, 25043, 25044, 25045, 25046, 25047, 25048, 25049, 25050, 25051, 25052, 25053, 25054, 25055, 25056, 25057, 25058, 25059, 25060, 25061, 25062, 25063, 25064, 25065, 25066, 25067, 25068, 25069, 25070, 25071, 25072, 25073, 25074, 25075, 25076, 25077, 25078, 25079, 25080, 25081, 25082, 25083, 25084, 25085, 25086, 25087, 25088, 25089, 25090, 25091, 25092, 25093, 25094, 25095, 25096, 25097, 25098, 25099, 25100, 25101, 25102, 25103, 25104, 25105, 25106, 25107, 25108, 25109, 25110, 25111, 25112, 25113, 25114, 25115, 25116, 25117, 25118, 25119, 25120, 25121, 25122, 25123, 25124, 25125, 25126, 25127, 25128, 25129, 25130, 25131, 25132, 25133, 25134, 25135, 25136, 25137, 25138, 25139, 25140, 25141, 25142, 25143, 25144, 25145, 25146, 25147, 25148, 25149, 25150, 25151, 25152, 25153, 25154, 25155, 25156, 25157, 25158, 25159, 25160, 25161, 25162, 25163, 25164, 25165, 25166, 25167, 25168, 25169, 25170, 25171, 25172, 25173, 25174, 25175, 25176, 25177, 25178, 25179, 25180, 25181, 25182, 25183, 25184, 25185, 25186, 25187, 25188, 25189, 25190, 25191, 25192, 25193, 25194, 25195, 25196, 25197, 25198, 25199, 25200, 25201, 25202, 25203, 25204, 25205, 25206, 25207, 25208, 25209, 25210, 25211, 25212, 25213, 25214, 25215, 25216, 25217, 25218, 25219, 25220, 25221, 25222, 25223, 25224, 25225, 25226, 25227, 25228, 25229, 25230, 25231, 25232, 25233, 25234, 25235, 25236, 25237, 25238, 25239, 25240, 25241, 25242, 25243, 25244, 25245, 25246, 25247, 25248, 25249, 25250, 25251, 25252, 25253, 25254, 25255, 25256, 25257, 25258, 25259, 25260, 25261, 25262, 25263, 25264, 25265, 25266, 25267, 25268, 25269, 25270, 25271, 25272, 25273, 25274, 25275, 25276, 25277, 25278, 25279, 25280, 25281, 25282, 25283, 25284, 25285, 25286, 25287, 25288, 25289, 25290, 25291, 25292, 25293, 25294, 25295, 25296, 25297, 25298, 25299, 25300, 25301, 25302, 25303, 25304, 25305, 25306, 25307, 25308, 25309, 25310, 25311, 25312, 25313, 25314, 25315, 25316, 25317, 25318, 25319, 25320, 25321, 25322, 25323, 25324, 25325, 25326, 25327, 25328, 25329, 25330, 25331, 25332, 25333, 25334, 25335, 25336, 25337, 25338, 25339, 25340, 25341, 25342, 25343, 25344, 25345, 25346, 25347, 25348, 25349, 25350, 25351, 25352, 25353, 25354, 25355, 25356, 25357, 25358, 25359, 25360, 25361, 25362, 25363, 25364, 25365, 25366, 25367, 25368, 25369, 25370, 25371, 25372, 25373, 25374, 25375, 25376, 25377, 25378, 25379, 25380, 25381, 25382, 25383, 25384, 25385, 25386, 25387, 25388, 25389, 25390, 25391, 25392, 25393, 25394, 25395, 25396, 25397, 25398, 25399, 25400, 25401, 25402, 25403, 25404, 25405, 25406, 25407, 25408, 25409, 25410, 25411, 25412, 25413, 25414, 25415, 25416, 25417, 25418, 25419, 25420, 25421, 25422, 25423, 25424, 25425, 25426, 25427, 25428, 25429, 25430, 25431, 25432, 25433, 25434, 25435, 25436, 25437, 25438, 25439, 25440, 25441, 25442, 25443, 25444, 25445, 25446, 25447, 25448, 25449, 25450, 25451, 25452, 25453, 25454, 25455, 25456, 25457, 25458, 25459, 25460, 25461, 25462, 25463, 25464, 25465, 25466, 25467, 25468, 25469, 25470, 25471, 25472, 25473, 25474, 25475, 25476, 25477, 25478, 25479, 25480, 25481, 25482, 25483, 25484, 25485, 25486, 25487, 25488, 25489, 25490, 25491, 25492, 25493, 25494, 25495, 25496, 25497, 25498, 25499, 25500, 25501, 25502, 25503, 25504, 25505, 25506, 25507, 25508, 25509, 25510, 25511, 25512, 25513, 25514, 25515, 25516, 25517, 25518, 25519, 25520, 25521, 25522, 25523, 25524, 25525, 25526, 25527, 25528, 25529, 25530, 25531, 25532, 25533, 25534, 25535, 25536, 25537, 25538, 25539, 25540, 25541, 25542, 25543, 25544, 25545, 25546, 25547, 25548, 25549, 25550, 25551, 25552, 25553, 25554, 25555, 25556, 25557, 25558, 25559, 25560, 25561, 25562, 25563, 25564, 25565, 25566, 25567, 25568, 25569, 25570, 25571, 25572, 25573, 25574, 25575, 25576, 25577, 25578, 25579, 25580, 25581, 25582, 25583, 25584, 25585, 25586, 25587, 25588, 25589, 25590, 25591, 25592, 25593, 25594, 25595, 25596, 25597, 25598, 25599, 25600, 25601, 25602, 25603, 25604, 25605, 25606, 25607, 25608, 25609, 25610, 25611, 25612, 25613, 25614, 25615, 25616, 25617, 25618, 25619, 25620, 25621, 25622, 25623, 25624, 25625, 25626, 25627, 25628, 25629, 25630, 25631, 25632, 25633, 25634, 25635, 25636, 25637, 25638, 25639, 25640, 25641, 25642, 25643, 25644, 25645);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

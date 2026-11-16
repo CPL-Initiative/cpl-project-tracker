@@ -18,34 +18,6 @@
  "order": [
   {
    "step": 1,
-   "host": "laspositas",
-   "system": "curriqunet",
-   "colleges": [
-    "Las Positas College"
-   ],
-   "slugs": [
-    "las_positas"
-   ],
-   "articulations": 174,
-   "first_read": "41784805869",
-   "pages": 776,
-   "parts": 3,
-   "expect": "objectives on every trial page (trial 41595084107, 12 of 12)",
-   "branch": "claude/slo-objectives-laspositas",
-   "read": [
-    "index=kb/course_outline_index/index_41589640082.json",
-    "slugs=las_positas",
-    "parts=3",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=laspositas",
-    "kind=objective",
-    "slugs=las_positas"
-   ]
-  },
-  {
-   "step": 2,
    "host": "cccd",
    "system": "courseleaf",
    "colleges": [
@@ -72,7 +44,7 @@
    ]
   },
   {
-   "step": 3,
+   "step": 2,
    "host": "cccd",
    "system": "courseleaf",
    "colleges": [
@@ -218,6 +190,11 @@
    "slug": "santa_ana",
    "read": "43666467090",
    "objectives": "1362 objective rows loaded (load 43684986821)"
+  },
+  {
+   "slug": "las_positas",
+   "read": "43816095571",
+   "objectives": "776 objective rows loaded (load 43825849738)"
   }
  ]
 }
