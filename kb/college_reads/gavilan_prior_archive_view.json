@@ -1,0 +1,25 @@
+{
+ "_readme": "S668 SkyPipit, 2026-11-16. Run 43947867258 (_getHistoricalCatalogs) names this host's 2025-2026 catalog as Id 424. A prior-year read (CAPTURE_PRIOR) hears its catalog id from the start page's own calls, so this load checks that the archive view asks _getNavigation for 424 and not the active catalog, and prints its first navigation ids for the start address. One load, no model call.",
+ "college": "Gavilan College",
+ "questions": {
+  "archive_view": "Which catalog id the archive view's scripts ask for (_getNavigation?id=), and its first navigation ids and aliaspaths."
+ },
+ "keywords": [
+  "2025",
+  "Catalog"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "archive_view"
+   ],
+   "url": "https://gavilan.curriqunet.com/Catalog/archive/424",
+   "network": true,
+   "network_find": [
+    "_getNavigation",
+    "\"aliaspath\"",
+    "\"Title\""
+   ]
+  }
+ ]
+}
