@@ -1,8 +1,8 @@
 {
- "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call. Run 43791837041 (S663): _getCatalogs lists only the active catalogs (Moreno Valley 115, Norco 116, Riverside City 124); _getActiveCatalogById/124 returns its Title. This pass asks _getActiveCatalogById for ids 100 to 123, one load each, to find the Riverside City 2025-2026 catalog. Run 43792698831 (S663): ids 100 to 123 return [] except 115 Moreno Valley 2026-2027 and 116 Norco 2026-2027; the endpoint serves active catalogs only, so curriQunet does not publish Riverside City's 2025-2026 catalog. This pass looks for an archived 2025-2026 catalog on the college's own site.",
+ "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call. Run 43791837041 (S663): _getCatalogs lists only the active catalogs (Moreno Valley 115, Norco 116, Riverside City 124); _getActiveCatalogById/124 returns its Title. This pass asks _getActiveCatalogById for ids 100 to 123, one load each, to find the Riverside City 2025-2026 catalog. Run 43792698831 (S663): ids 100 to 123 return [] except 115 Moreno Valley 2026-2027 and 116 Norco 2026-2027; the endpoint serves active catalogs only, so curriQunet does not publish Riverside City's 2025-2026 catalog. This pass looks for an archived 2025-2026 catalog on the college's own site. Run 43793494010 (S663): rcc.edu/academics/college-catalog.html lists 2026-2027, 2025-2026 and 2024-2025 Complete Catalogs, linking rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130 and Catalog/archive/7/iq/663/934 beside the current alias; PDFs from 2023-24 back. This pass loads both archive views and records what their scripts fetch, to name each archive's catalog year and the call its pages come from.",
  "college": "Riverside City College",
  "questions": {
-  "prior_view": "Where rcc.edu links its 2025-2026 catalog (an archive page or a PDF), and its address."
+  "prior_view": "Which catalog year archive 71 and archive 7 are, and which calls (_getNavigation, _getPage, _getActiveCatalogById) their scripts make with which catalog id."
  },
  "keywords": [
   "2025",
@@ -16,22 +16,27 @@
    "answers": [
     "prior_view"
    ],
-   "url": "https://www.rcc.edu/catalog/index.html",
-   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130",
+   "network": true,
+   "network_find": [
+    "\"Title\"",
+    "2025-2026",
+    "2024-2025",
+    "catalogId"
+   ]
   },
   {
    "answers": [
     "prior_view"
    ],
-   "url": "https://www.rcc.edu/services/admissions/catalog.html",
-   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
-  },
-  {
-   "answers": [
-    "prior_view"
-   ],
-   "url": "https://www.rcc.edu/academics/catalog.html",
-   "links": "[Aa]rchiv|2025|[Cc]atalog|\\.pdf"
+   "url": "https://rccd.curriqunet.com/Catalog/archive/7/iq/663/934",
+   "network": true,
+   "network_find": [
+    "\"Title\"",
+    "2025-2026",
+    "2024-2025",
+    "catalogId"
+   ]
   }
  ]
 }
