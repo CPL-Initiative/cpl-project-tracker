@@ -685,7 +685,7 @@
   function doneLine(j) {
     if (!j) return null;
     var text = j.kind === "case"
-      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and files its receipt."
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and keeps a record that can undo it."
       : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
     var line = el("p", { cls: "cmn-next-done", role: "status", text: text });
     return j.kind === "case" ? el("div", null, [line, processNow()]) : line;
@@ -715,7 +715,7 @@
     }).then(function (x) {
       PROCESS.busy = false;
       PROCESS.said = x.status === 200 && x.j.ok
-        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
+        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, keeps a record of each ruling that can undo it, and marks its case done.")
         : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
         : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
         /* The shared queue (S643): the function starts nothing while another run waits in the queue it shares, since
@@ -747,7 +747,7 @@
       + "On no ruling: " + (c.no_reply || "nothing changes.") }));
     if (R) {
       kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
-        + ". The processor carries it out and files its receipt." }), processNow());
+        + ". The processor carries it out and keeps a record that can undo it." }), processNow());
       return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
         [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
     }

@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1013,
+  "file_datasets": 1014,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -26463,6 +26463,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/plain_words_for_sam_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/powershell_ascii_test.py": {
    "consumers": [
     {
@@ -34712,6 +34725,7 @@
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
+    "tests/plain_words_for_sam_test.py",
     "tests/daily_scrape_fails_loudly_test.py",
     "tests/supabase_table_grants_test.py",
     "tests/ccr_doubt_test.py",
