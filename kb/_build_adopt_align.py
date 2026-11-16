@@ -51,6 +51,9 @@ COVERED_AT = 0.2   # a skill area counts as covered when an outcome scores this 
 TOP_ROWS = 12      # outcome rows kept per credential, strongest first
 STANDOUT_MIN = 3   # an unreviewed credential's course must cover at least this many skill areas, and at least half
 TOP_COURSES = 3    # standout courses kept per unreviewed credential, strongest first
+RARE_DF = 0.002    # a distinctive outcome word appears in at most this share of harvested outcomes
+TITLE_DF = 0.01    # a distinctive course-title word appears in at most this share of course titles
+RARE_MIN = 2       # the floor on those counts, so a small corpus (a test) still has distinctive words
 
 STOP = set("""the and of to in for a an with on by from or as is are be that this these those their its into using use
 upon will students student able course completion knowledge demonstrate understand understanding identify explain
@@ -217,10 +220,18 @@ def domains_of(rec):
 
 
 def score_unreviewed(joined, outcomes):
-    """Each unreviewed credential's skill areas against every harvested course, through an inverted index of outcome
-    words. Per course: covered = skill areas with an outcome at COVERED_AT or more. A standout covers at least
-    STANDOUT_MIN skill areas and at least half. Returns {title: {of, standouts: n colleges, top: [[college, code,
-    course title, covered, mean best score]]}} for the credentials with a standout only."""
+    """Each unreviewed credential's skill areas against every harvested course, on distinctive words only.
+
+    The first run (2026-11-16 22:04Z) scored on every word: 151 of 191 credentials had a "standout" at all 19 colleges,
+    many absurd (a fitness course for Identity and Access Administrator, a retailing course for CISA). Common words
+    such as "planning", "management" and "systems" carried them. So:
+      - a word is distinctive when it appears in at most RARE_DF of all harvested outcomes;
+      - a skill area is scorable when it holds a distinctive word, and an outcome covers it when the outcome shares
+        at least half of the area's distinctive words (one at least);
+      - a course is a standout when it covers at least STANDOUT_MIN scorable areas and at least half of them, and its
+        own title shares a distinctive title word (at most TITLE_DF of course titles) with the credential's title or
+        its skill areas.
+    Returns {title: {of, scorable, need, standouts: n colleges, top: [[college, code, course title, covered, share]]}}."""
     index, outs = {}, []
     for k, r in outcomes.items():
         for o in r.get("_outs") or []:
@@ -228,37 +239,51 @@ def score_unreviewed(joined, outcomes):
             if not t:
                 continue
             i = len(outs)
-            outs.append((k, len(t)))
+            outs.append(k)
             for w in t:
                 index.setdefault(w, []).append(i)
+    n_out = max(1, len(outs))
+    rare = lambda w: 0 < len(index.get(w, ())) <= max(RARE_MIN, RARE_DF * n_out)
+    title_df = {}
+    for r in outcomes.values():
+        for w in tokens(r.get("course_title")):
+            title_df[w] = title_df.get(w, 0) + 1
+    n_titles = max(1, len(outcomes))
+    title_ok = lambda w: 0 < title_df.get(w, 0) <= max(RARE_MIN, TITLE_DF * n_titles)
     result = {}
     for title, rec in sorted(joined.items(), key=lambda kv: kv[0].lower()):
         doms = domains_of(rec)
-        need = max(STANDOUT_MIN, math.ceil(len(doms) / 2))
-        if len(doms) < STANDOUT_MIN:
+        scored = [(name, {w for w in dt_ if rare(w)}) for name, dt_ in doms]
+        scored = [(name, rd) for name, rd in scored if rd]
+        need = max(STANDOUT_MIN, math.ceil(len(scored) / 2))
+        if len(scored) < STANDOUT_MIN:
             continue
-        best = {}  # course key -> {domain index: best cosine}
-        for di, (_, dt_) in enumerate(doms):
+        cred_words = tokens(title).union(*[dt_ for _, dt_ in doms])
+        covered = {}  # course key -> {domain index: share of its distinctive words matched}
+        for di, (_, rd) in enumerate(scored):
             hits = {}
-            for w in dt_:
+            for w in rd:
                 for i in index.get(w, ()):
                     hits[i] = hits.get(i, 0) + 1
+            want = max(1, math.ceil(len(rd) / 2))
             for i, n in hits.items():
-                c = n / math.sqrt(len(dt_) * outs[i][1])
-                if c >= COVERED_AT:
-                    d = best.setdefault(outs[i][0], {})
-                    if c > d.get(di, 0):
-                        d[di] = c
+                if n >= want:
+                    d = covered.setdefault(outs[i], {})
+                    d[di] = max(d.get(di, 0), n / len(rd))
         stand = []
-        for k, d in best.items():
-            if len(d) >= need:
-                r = outcomes[k]
-                stand.append([k[0], r.get("course_code") or k[1], r.get("course_title") or "", len(d),
-                              round(sum(d.values()) / len(d), 2)])
+        for k, d in covered.items():
+            if len(d) < need:
+                continue
+            r = outcomes[k]
+            if not any(title_ok(w) for w in tokens(r.get("course_title")) & cred_words):
+                continue
+            stand.append([k[0], r.get("course_code") or k[1], r.get("course_title") or "", len(d),
+                          round(sum(d.values()) / len(d), 2)])
         if not stand:
             continue
         stand.sort(key=lambda x: (-x[3], -x[4], x[0], x[1]))
-        result[title] = {"of": len(doms), "need": need, "standouts": len({x[0] for x in stand}), "top": stand[:TOP_COURSES]}
+        result[title] = {"of": len(doms), "scorable": len(scored), "need": need,
+                         "standouts": len({x[0] for x in stand}), "top": stand[:TOP_COURSES]}
     return result
 
 
@@ -294,7 +319,7 @@ def build(root, outcome_rows):
         "align": align,
         # Not-yet-evaluated credentials: a named course that covers at least STANDOUT_MIN and half of the issuer's skill
         # areas. chips_shown stays false until a session has read this section and turned the page's chips on.
-        "unreviewed": {"chips_shown": False, "rule": "covers >= max(%d, half) skill areas, each at %.2f" % (STANDOUT_MIN, COVERED_AT),
+        "unreviewed": {"chips_shown": False, "rule": "distinctive words only (outcome df <= %.3f, title df <= %.2f); covers >= max(%d, half) scorable skill areas; the course title shares a distinctive word" % (RARE_DF, TITLE_DF, STANDOUT_MIN),
                        "by_title": unreviewed},
     }
 
