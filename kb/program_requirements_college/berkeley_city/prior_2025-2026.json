@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 1,
  "with_closed_list": 1,
- "started": "2026-11-16T21:34:29Z",
+ "started": "2026-11-16T22:54:36Z",
  "prior": {
   "start": "https://bcc.curriqunet.com/Catalog/archive/9573/iq/29643",
   "catalog_year": "2025-2026",
@@ -427,7 +427,7 @@
  "listing_failed": 0,
  "banner_h1": null,
  "loads": 580,
- "seconds": 2936.7,
+ "seconds": 2812.8,
  "found": 1,
  "by_method": {
   "sitemap_page": 1
@@ -443,21 +443,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/berkeley_city",
-  "kept": 0,
+  "kept": 1,
   "kept_moved": 0,
-  "programs": 1,
-  "list": [
-   {
-    "control_number": "41778",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://bcc.curriqunet.com/Catalog/archive/9573/iq/29087/29366/29408",
-    "coverage": 1.0,
-    "was_url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40030",
-    "was_coverage": 0.75,
-    "was_method": "sitemap_page"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -470,9 +459,12 @@
    "url": "https://bcc.curriqunet.com/Catalog/archive/9573/iq/29087/29366/29408"
   }
  },
- "run": "43961012966",
- "filed": [
-  "41778"
- ],
- "kept": []
+ "run": "43974065716",
+ "filed": [],
+ "kept": [
+  {
+   "control_number": "41778",
+   "why": "no record read from 2025-2026 (not read by this run)"
+  }
+ ]
 }
