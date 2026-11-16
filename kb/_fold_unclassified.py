@@ -162,7 +162,10 @@ def classify(assignments, ut, now=None):
             held = [(s, ut[s]) for s in disagreeing if not _machine_unreviewed(ut[s])]
             newest = max(_entry_ts(e) for _, e in held)
             sup = now((a.get("supersedes") or "").strip())
-            if (sup and (rec["reviewed_at"] or "") > newest
+            # Only a person revises a person's title: a machine row naming `supersedes` never brings a title back
+            # over a human-reviewed one (Sam, 2026-11-16, relayed by COBIx on issue #3358: person-settled wins).
+            person = not (rec["reviewed_by"] or "").strip().lower().endswith("@bot")
+            if (sup and person and (rec["reviewed_at"] or "") > newest
                     and all((e.get("unified_title") or "") == sup for _, e in held)):
                 revise.append({**rec, "spellings": spellings, "disagreeing": disagreeing,
                                "displaced": sorted({ut[s].get("unified_title") or "" for s in disagreeing}),
