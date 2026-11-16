@@ -1,15 +1,256 @@
 {
- "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call.",
+ "_readme": "S663 SkyLark, 2026-11-16. Sam's ruling d-both-versions-by-catalog-year-sam-2026-11-15: a plain transfer degree and its 2.0 each keep a record from their own catalog year. Riverside City's four plain siblings (30578, 32692, 32745, 33829) read from their 2.0's page in catalog 124 (2026-2027). The prior-catalog read needs the 2025-2026 catalog's id and its alias view. This read asks the host's own catalog list, as cq_catalog_from_list reads it, and the active-catalogs page. Two loads, no model call. Run 43791837041 (S663): _getCatalogs lists only the active catalogs (Moreno Valley 115, Norco 116, Riverside City 124); _getActiveCatalogById/124 returns its Title. This pass asks _getActiveCatalogById for ids 100 to 123, one load each, to find the Riverside City 2025-2026 catalog.",
  "college": "Riverside City College",
  "questions": {
-  "catalog_list": "Which catalogs _getCatalogs lists for Riverside City, each title, id and year, and which is 2025-2026.",
-  "prior_view": "Which alias view or start page the 2025-2026 catalog opens under."
+  "catalog_list": "Which id between 100 and 123 _getActiveCatalogById titles Riverside City College 2025-2026, and its status."
  },
- "keywords": ["2025", "2026", "Riverside", "RCC", "[Cc]atalog"],
+ "keywords": [
+  "2025",
+  "2026",
+  "Riverside",
+  "RCC",
+  "[Cc]atalog"
+ ],
  "pages": [
-  {"answers": ["catalog_list"], "url": "https://rccd.curriqunet.com/catalog/_getCatalogs",
-   "network": true, "network_find": ["2025-2026", "2025 - 2026", "Riverside"]},
-  {"answers": ["prior_view", "catalog_list"], "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog",
-   "network": true, "network_find": ["2025", "catalogId", "Riverside"], "links": "2025|catalog|archive"}
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/100",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/101",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/102",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/103",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/104",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/105",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/106",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/107",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/108",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/109",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/110",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/111",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/112",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/113",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/114",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/115",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/116",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/117",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/118",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/119",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/120",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/121",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/122",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  },
+  {
+   "answers": [
+    "catalog_list"
+   ],
+   "url": "https://rccd.curriqunet.com/Catalog/_getActiveCatalogById/123",
+   "network_find": [
+    "\"Title\"",
+    "StatusAliasTitle"
+   ]
+  }
  ]
 }
