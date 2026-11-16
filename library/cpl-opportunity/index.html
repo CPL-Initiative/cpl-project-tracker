@@ -293,6 +293,8 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 </main>
 <script src="../../college_short_names.js"></script>
 <script src="../../map_links.js"></script>
+<!-- One Adopt chip per course and its multi-select side panel, the same component CPL Pathways' course cards use (#3412). -->
+<script src="../../adopt_panel.js"></script>
 <script src="../../college_cpl_workbook.js"></script>
 <script>
 (function () {
@@ -390,6 +392,9 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       return pump().then(function () { return URL.createObjectURL(new Blob(parts, { type: "text/javascript" })); });
     }).then(function (url) { tag(url, function () { URL.revokeObjectURL(url); }); }, function () { built.bytes[name] = 0; tag(src); });
   }
+  /* The Credential Catalog gives the Adopt panel each exhibit's issuer, units and colleges, and the chip its region-first
+     college (adopt_panel.js). It is read beside the build; a page painted before it lands repaints once it does. */
+  var ADOPT = window.CPL_ADOPT_PANEL, adoptRead = ADOPT ? ADOPT.load("../adopt/adopt_data.json") : null;
   var first = true, draftOn = false;
   try { draftOn = new URLSearchParams(location.search).get("draft") === "1"; } catch (e) { /* the public notes */ }
   function wanted() {
@@ -420,10 +425,11 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
         if (seq !== built.seq) return;
         stopBuild();
         root.innerHTML = W.pageHtml(b, st);
-        W.wirePage(root, b, { state: st,
+        var wired = W.wirePage(root, b, { state: st,
           shareUrl: function (s2) { return W.shareUrl(b.college).split("?")[0] + W.pageQuery(b.college, s2); },
           onState: function (s2) { try { history.replaceState(null, "", W.pageQuery(b.college, s2) + (draftOn ? "&draft=1" : "")); } catch (e) { /* the link still works */ } } });
         status.textContent = "";
+        if (adoptRead && !ADOPT.catalog()) adoptRead.then(function (d) { if (d && seq === built.seq && wired) wired.redraw(null); });
       }
       // ?draft=1 shows a draft waiting on Replace the public copy (notes/<slug>.draft.json).
       if (!window.fetch) { paint(null); return; }
