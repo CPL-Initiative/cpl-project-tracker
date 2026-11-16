@@ -424,6 +424,11 @@ first day.** Do the remembering for them.
     title or record key so it survives re-id, re-cluster and rebuilds. A machine reopens one only on new source
     evidence (never because a score, fold or wording pass moved) and logs the reopen without asking. Where a sheet
     answer conflicts with his curation, the curation wins and the answer is marked suspect.
+  - **The Execute SQL prompt is the app's, not ours (Sam and COBIx, 2026-11-16, #3395).** The connector has been
+    on *Always allow* for months; the app asks per call above the session, and no repo setting clears it. Check a
+    write by the runner's committed receipt, not a live read; batch the reads that remain into one call; and while a
+    prompt waits, take work that does not need it. `apply_migration` stays off the committed allow-list: migrations
+    go through `supabase-migrate.yml` with a rollback receipt.
   - **A real ask is plain:** one question in full sentences, no coined labels or bare ids, one real example (a
     program, an M-ID course, an exhibit), the default already chosen, what changes otherwise, and two chips:
     *Fine* or *Change it*.
