@@ -5038,20 +5038,71 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     return recs
 
 
+# A prior-year read (Sam, d-both-versions-by-catalog-year-sam-2026-11-15: "both need to be in our collection with
+# catalog years associated to them"). A plain program whose current catalog prints only its 2.0 successor's page is
+# read from the catalog year it was last printed in. CAPTURE_PRIOR names "<start> <catalog_year> <cn,cn,...>": the
+# start page of that year's catalog on the registry's own host (Riverside City's 2025-2026 is curriQunet archive 71,
+# Catalog/archive/71/iq/4079/4130, S663), its year, and the control numbers to read there. Only those programs are
+# read, and file_run files them beside the college's records rather than in place of them.
+PRIOR_PLATFORMS = ("curriqunet",)
+
+
+def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict | None, str | None]:
+    """({start, catalog_year, only}, None) for a well-formed CAPTURE_PRIOR, (None, why) for a refused one, and
+    (None, None) with none."""
+    if not (spec or "").strip():
+        return None, None
+    parts = spec.split()
+    if len(parts) != 3:
+        return None, "CAPTURE_PRIOR is '<start> <catalog_year> <cn,cn,...>'"
+    start, year, cns = parts
+    if (reg.get("catalog_platform") or "") not in PRIOR_PLATFORMS:
+        return None, "a prior-year read opens on %s catalogs; this one is %s" % (
+            ", ".join(PRIOR_PLATFORMS), reg.get("catalog_platform"))
+    host = (urllib.parse.urlparse(start).hostname or "").lower()
+    if not host or host != (urllib.parse.urlparse(reg.get("catalog_url") or "").hostname or "").lower():
+        return None, "the prior catalog's start page must be on the registry's catalog host"
+    m = re.fullmatch(r"(20\d\d)-(20\d\d)", year)
+    if not m or int(m.group(2)) != int(m.group(1)) + 1:
+        return None, "catalog_year is YYYY-YYYY"
+    cur = re.match(r"\s*(20\d\d)", reg.get("catalog_year") or "")
+    if cur and int(m.group(1)) >= int(cur.group(1)):
+        return None, "a prior-year read reads a year before the registry's %s" % reg.get("catalog_year")
+    only = [c for c in cns.split(",") if c]
+    have = {p["control_number"] for p in programs}
+    if not only or any(not c.isdigit() for c in only):
+        return None, "name the control numbers to read, comma-separated"
+    missing = [c for c in only if c not in have]
+    if missing:
+        return None, "not programs the harvest reads at this college: %s" % ", ".join(missing)
+    return {"start": start, "catalog_year": year, "only": sorted(set(only))}, None
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
     if limit:
         programs = programs[:limit]
     reg = P.fetch_registry(college)
+    prior, refused = prior_read(os.environ.get("CAPTURE_PRIOR"), reg, programs)
+    if refused:
+        os.makedirs(out_dir, exist_ok=True)
+        _write(os.path.join(out_dir, "capture.json"), {"college": college, "stopped": refused})
+        print(refused)
+        return 1
+    if prior:
+        programs = [p for p in programs if p["control_number"] in prior["only"]]
+        reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
     start = reg.get("catalog_url")
     report = {"college": college, "catalog_url": start, "platform": reg.get("catalog_platform"),
               "catalog_year": reg.get("catalog_year"), "programs": len(programs),
               "with_closed_list": sum(1 for p in programs if p["closed_list"]),
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    if prior:
+        report["prior"] = prior
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    hf = hand_filed(college)
+    hf = hand_filed(college) if not prior else None   # a prior-year read opens on the catalog's own pages
     if hf:
         if hf["meta"].get("catalog_year"):
             # A refused host's row often names no year; the person who fetched the file names it.
@@ -6897,6 +6948,51 @@ def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | N
             "not_found": capture_report.get("not_found")}
 
 
+def file_prior(dest: str, out_dir: str, report: dict) -> int:
+    """File a prior-year read (CAPTURE_PRIOR) beside the college's filing: each named program's new record
+    replaces its filed one, its sources.json entry follows, and prior_<year>.json is the read's account. The
+    college's capture.json, summary.json and every other record stay as filed. A program whose extraction
+    failed or found no page keeps its filed record, and the account says so."""
+    prior = report["prior"]
+    only = set(prior["only"])
+    year = prior["catalog_year"]
+    os.makedirs(os.path.join(dest, "records"), exist_ok=True)
+    filed, kept = [], []
+    for cn in sorted(only):
+        path = os.path.join(out_dir, "records", cn + ".json")
+        row = None
+        if os.path.isfile(path):
+            with open(path) as fh:
+                row = json.load(fh)
+        if not (isinstance(row, dict) and isinstance(row.get("record"), dict) and not row.get("error")
+                and row.get("catalog_year") == year):
+            kept.append({"control_number": cn, "why": "no record read from %s (%s)" % (
+                year, (row or {}).get("error") or ("no record" if row is None else "another year"))})
+            continue
+        _write(os.path.join(dest, "records", cn + ".json"), row)
+        filed.append(cn)
+    srcs = {}
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        with open(path) as fh:
+            src = json.load(fh)
+        if src.get("control_number") in filed:
+            srcs[src["control_number"]] = dict(
+                {k: src.get(k) for k in ("control_number", "title", "award", "shape", "method", "coverage",
+                                         "codes_found", "source")},
+                listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or ""), catalog_year=year)
+    index_path = os.path.join(dest, "sources.json")
+    index = []
+    if os.path.isfile(index_path):
+        with open(index_path) as fh:
+            index = [x for x in json.load(fh) if x.get("control_number") not in srcs]
+    index = sorted(index + list(srcs.values()), key=lambda x: str(x.get("control_number")))
+    _write(index_path, index)
+    _write(os.path.join(dest, "prior_%s.json" % year), dict(report, filed=filed, kept=kept))
+    print("prior-year read (%s): filed %d of %d (%s); kept %d as filed" % (
+        year, len(filed), len(only), ", ".join(filed) or "none", len(kept)))
+    return 0
+
+
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     """Copy the run's records and account into the repository. A run that
     extracted replaces the records, sources and summary together, so the three
@@ -6922,6 +7018,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         we = report["would_extract"]
         we["forced_unbound"] = [fu[k] for k in sorted(fu)]
         we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
+    if report.get("prior"):
+        return file_prior(dest, out_dir, report)
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)

@@ -336,6 +336,10 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # S663: a prior-year read files the programs it names beside the college's records, never in place of
+      # them, each with the catalog year it was read from. Pure stdlib.
+      - name: Program requirements, a prior-year read
+        run: python3 tests/program_requirements_prior_read_test.py
       # S647 (Sam, Sheet 190 card 6): a read stops at the extraction function's 503 (or 401) and files
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
