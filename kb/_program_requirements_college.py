@@ -5075,6 +5075,10 @@ def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict 
     missing = [c for c in only if c not in have]
     if missing:
         return None, "not programs the harvest reads at this college: %s" % ", ".join(missing)
+    listless = sorted(p["control_number"] for p in programs if p["control_number"] in only and not p.get("closed_list"))
+    if listless:
+        # The read finds a program by its closed list; the no-closed-list lookup refuses archive pages (COBIx, #3382).
+        return None, "a prior-year read finds a program by its closed list; none for %s" % ", ".join(listless)
     return {"start": start, "catalog_year": year, "only": sorted(set(only))}, None
 
 
@@ -5280,7 +5284,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                                               (rec.get("source") or {}).get("url") or ""), flush=True)
         # After every closed-list program has its page: the no-closed-list programs, by title and award, on
         # the pages read (ncl_lookup, S652). A re-read reads a few codes, so it looks up nothing.
-        if ncl_lookup_on() and not report.get("reread"):
+        # A prior-year read's pages sit under the catalog's archive path (Catalog/archive/71/...), which ncl_pages
+        # refuses as an archived copy (ARCHIVED); its programs are read by their closed lists alone (COBIx on #3382).
+        if ncl_lookup_on() and not report.get("reread") and not report.get("prior"):
             own = {r["control_number"]: page_stem(r["source"]["url"]) for r in recs if r.get("source")}
             answers, test = ncl_lookup(programs, pages, own,
                                        ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
@@ -6956,6 +6962,13 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
     prior = report["prior"]
     only = set(prior["only"])
     year = prior["catalog_year"]
+    if not os.path.isdir(os.path.join(out_dir, "records")):
+        # A capture-only prior read (extract 0) files its account as a preview and never touches the account of
+        # an earlier prior read that filed records (COBIx on #3382).
+        os.makedirs(dest, exist_ok=True)
+        _write(os.path.join(dest, "prior_%s_preview.json" % year), report)
+        print("prior-year read (%s), capture only: filed prior_%s_preview.json" % (year, year))
+        return 0
     os.makedirs(os.path.join(dest, "records"), exist_ok=True)
     filed, kept = [], []
     for cn in sorted(only):

@@ -31,7 +31,8 @@ def check(cond, msg):
 
 REG = {"catalog_platform": "curriqunet", "catalog_year": "2026-2027",
        "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111"}
-PROGS = [{"control_number": c} for c in ("30578", "32692", "32745", "33829", "42892")]
+PROGS = [{"control_number": c, "closed_list": [{"course_code": "COM 1"}]} for c in ("30578", "32692", "32745", "33829", "42892")]
+PROGS.append({"control_number": "50001", "closed_list": []})
 START = "https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130"
 
 got, why = C.prior_read("", REG, PROGS)
@@ -46,7 +47,8 @@ for spec, label in [
         ("%s 2026-2027 30578" % START, "the registry's own year"),
         ("%s 2027-2028 30578" % START, "a later year"),
         ("%s 2025-2027 30578" % START, "a year that is not one catalog year"),
-        ("%s 2025-2026 99999" % START, "a program the harvest does not read here")]:
+        ("%s 2025-2026 99999" % START, "a program the harvest does not read here"),
+        ("%s 2025-2026 30578,50001" % START, "a program with no closed list")]:
     got, why = C.prior_read(spec, REG, PROGS)
     check(got is None and why, "refuses %s: %r" % (label, why))
 got, why = C.prior_read("%s 2025-2026 30578" % START, dict(REG, catalog_platform="courseleaf"), PROGS)
@@ -102,6 +104,13 @@ with tempfile.TemporaryDirectory() as tmp:
     acct = read(os.path.join(dest, "prior_2025-2026.json"))
     check(acct["filed"] == ["30578"] and [k["control_number"] for k in acct["kept"]] == ["32692"],
           "prior_<year>.json names what it filed and what it kept: %r" % acct)
+    # A capture-only prior read files a preview and leaves the filed account alone.
+    pre = os.path.join(tmp, "out_preview")
+    write(os.path.join(pre, "capture.json"), report)
+    check(C.file_prior(dest, pre, report) == 0
+          and os.path.isfile(os.path.join(dest, "prior_2025-2026_preview.json"))
+          and read(os.path.join(dest, "prior_2025-2026.json"))["filed"] == ["30578"],
+          "a capture-only prior read files prior_<year>_preview.json and keeps the account of the read that filed")
     # file_run sends a prior read to file_prior rather than replacing the folder.
     with open(os.path.join(ROOT, "kb", "_program_requirements_college.py"), encoding="utf-8") as fh:
         src = fh.read()
@@ -109,6 +118,8 @@ with tempfile.TemporaryDirectory() as tmp:
     check(body.index('if report.get("prior")') < body.index('for old in glob.glob(os.path.join(dest, "records"'),
           "file_run routes a prior read before it clears the college's records")
 
+check('and not report.get("reread") and not report.get("prior")' in src,
+      "a prior read never runs the no-closed-list lookup, which refuses archive pages")
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml"), encoding="utf-8").read()
 check("CAPTURE_PRIOR: ${{ github.event.inputs.prior || '' }}" in wf, "the capture step passes the prior input")
 check("prior reads the programs it names" in wf, "the workflow refuses prior beside sources_from, route or limit")
