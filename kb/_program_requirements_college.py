@@ -6190,6 +6190,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A prior-year read extracts every program it names: its filed record is another catalog year's, so a
+    # window's coverage against it is no measure of gain, and the holds would keep the wrong year (run
+    # 43799222099 held 30578, 32692 and 33829 so; S663).
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            _prior = json.load(fh).get("prior") or {}
+    except (OSError, ValueError):
+        _prior = {}
+    if _prior.get("only"):
+        force = set(force or ()) | set(_prior["only"])
     # A record kept from the filing without a new read keeps the catalog year it was read from (kept_year).
     keep_year = filed_year(keep_from) if keep_from else None
     if keep_from and shard == 0:
@@ -6969,6 +6979,9 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
         _write(os.path.join(dest, "prior_%s_preview.json" % year), report)
         print("prior-year read (%s), capture only: filed prior_%s_preview.json" % (year, year))
         return 0
+    # The address every page of this read sits under: curriQunet's view prefix (Catalog/archive/71/iq/), else the
+    # start page's own.
+    prefix = (report.get("curriqunet") or {}).get("view_prefix") or cq_base(prior["start"])[1]
     os.makedirs(os.path.join(dest, "records"), exist_ok=True)
     filed, kept = [], []
     for cn in sorted(only):
@@ -6977,12 +6990,20 @@ def file_prior(dest: str, out_dir: str, report: dict) -> int:
         if os.path.isfile(path):
             with open(path) as fh:
                 row = json.load(fh)
+        # This run's own extraction is the prior year's reading, whatever year its source carried (run
+        # 43799222099 filed 32745's without one); a record copied from the filing keeps its own run and is refused.
+        # This run read it as cost_usd_run counts one (its run, no read_run, no carried_in: a record moved_record or
+        # reconcile_filed restamped is not a read), from a page under this read's own catalog (COBIx on #3384).
+        fresh = (isinstance(row, dict) and report.get("run") and str(row.get("extracted_run")) == str(report["run"])
+                 and not row.get("read_run") and not row.get("carried_in"))
+        in_year = isinstance(row, dict) and str(row.get("source_url") or "").startswith(prefix)
         if not (isinstance(row, dict) and isinstance(row.get("record"), dict) and not row.get("error")
-                and row.get("catalog_year") == year):
-            kept.append({"control_number": cn, "why": "no record read from %s (%s)" % (
-                year, (row or {}).get("error") or ("no record" if row is None else "another year"))})
+                and fresh and in_year):
+            why = ((row or {}).get("error") or ("no record" if row is None else
+                   "not read by this run" if not fresh else "source not in the %s catalog" % year))
+            kept.append({"control_number": cn, "why": "no record read from %s (%s)" % (year, why)})
             continue
-        _write(os.path.join(dest, "records", cn + ".json"), row)
+        _write(os.path.join(dest, "records", cn + ".json"), dict(row, catalog_year=year))
         filed.append(cn)
     srcs = {}
     for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
