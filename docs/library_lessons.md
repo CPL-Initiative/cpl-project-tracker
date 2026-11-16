@@ -1175,3 +1175,11 @@ Moved verbatim from `docs/reference/lanes/library.md` on 2026-11-14 to keep the 
 ✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
 
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
+
+## Moved from the lane (S667 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md` (links rewritten for this folder):
+
+✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
+
+✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](library_lessons.md), *Moved from the lane (S577)*.

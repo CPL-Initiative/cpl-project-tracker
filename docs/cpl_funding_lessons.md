@@ -690,3 +690,37 @@ starts empty at both of render's cache clears and empties in `persistActive()`; 
 remembered, so an edit followed by a read before the next render sees the edit. Each caller gets its own copies.
 `cpl_funding_cap` 42s, then 15s. Guard `cpl_funding_render_memo` (it fails when the memo outlives its render).
 Lesson: a cache that lives only for one pure pass needs no invalidation map; the pass is its boundary.
+
+## Moved from the lane (S667 checkpoint)
+
+Verbatim from `docs/reference/lanes/implementation-funding.md` (links rewritten for this folder), moved to bring the lane under its 20 KB budget:
+
+✅ **The render remembers its priorities (S613, COBIx #2927 item 3):** `priorities()` and `totalSize()` are held for one `render()` only (`withMemo`), emptied at its cache clears and in `persistActive()`; funding tests about 2.7x faster. Lessons, *S613*. Guard `cpl_funding_render_memo`.
+
+✅ **Every Eligibility word edits, a Show filter on the minimum conditions, and the NC attestation on its own row (S554, #2701, #2703):** lessons, *Moved from the lane (S562)*. Guards `cpl_funding_conditions_filter`, `funding_page_requirements_edit`.
+
+**CCSF and College of the Desert fell into `unmatched` on 2026-10-31 (S544)** after #2598's shorts. Sam, Open Asks Sheet 155 card 1, *restore* (02:42Z 2026-11-02, his own call): #2676 merged; the next daily run carries both.
+
+✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 LIVE**; `map_coordinator_summary()` answers booleans, never a name. ✅ **THE REPORTING BOX** (one report a year, eight NOVA categories): `cpl_funding_reports`, INSERT-only, newest per year counts, Withdraw unreports (`markReports`); college half via `cpl_funding_my_reports()`. Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`.
+
+✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** ([README](../prototype/funding_video/README.md)): ⭐ the introduction link is always the published film; its figures script and Scenario 4 words lessons, *Moved from the lane (S480)*.
+
+✅ **THE TAB:** introduction first (`ABOUT_DEFAULT_HTML` is **Sam's own approved introduction**), then the institution table; sections build into an id-keyed map joined in a stored order (`secOrder`; the public page's `pubSecOrder`). ⭐ **ID-KEYED, NEVER POSITIONAL** (an unknown id is ignored, an unnamed one appends). A card's goal derives from its metric's milestone by default (`prioGoals()`). Prose blocks edit in curate (`TEXT_BLOCKS`); one curator section holds the explainer's and My CPL Funding's passages, an emptied passage stays empty (`TEXT_BLANK`) and bullets nest (lessons, *S506*). ⚠️ **A REPORTED CARD IS NEVER AN ENTRY IN `priorities(slot)`**: share 0 there still enters every sum, column, export and memo. ⚠️ **The register is INLINE in both HTMLs**, never loaded from `CPL_Data.js`; the designated NAME rides the config, the weekly STATUS does not.
+
+✅ **THE EXPLAINER IS THE ONE PUBLIC PAGE** (`funding-model/index.html`, in the public library's look, light only): its full description lessons, *Moved from the lane (S491)*. The memo's Contents item reads *(TBA)* until the CO publishes it (lessons, *S506*).
+
+✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`).
+
+✅ **The memo prints in the CO's memo format (Sam, 2026-11-03, S556; target ESLEI 24-12):** one HTML layout feeds the screen, the Word file and the PDF; the layout: lessons, *Moved from the lane (S562)*. Guard `funding_memo_docx`. NEXT: Sam reviews a download; a memo number replaces *ESS __-__* when the CO assigns one.
+
+✅ **The FAQ's groups (Sam, 2026-10-29, S518, #2559):** "## " lines in the settled order, a heading over each and a line of links to each; Sierra reads the same FAQ ([lane](reference/lanes/sierra-retrieval-corpus.md)). Guards `cpl_funding_faq_groups`, `sierra_funding_faq`.
+
+✅ **The funding FAQ: 45 questions in eight groups in `FAQ_DEFAULT_PLAIN`** (the tab and the public page; no `faq` or `x_faq` override, read live 10-29; `funding-model/faq.json` files it for Sierra, `scripts/build_funding_faq.js --check` guards it). Sam's settled 25 (Sheet 138), Malone's twelve (exempted by name in `cpl_funding_calm` and `cpl_funding_earn_retired`) and Sam's eight of 10-29 (the groups *Reporting in NOVA* and *Apprenticeship CPL*): lessons, *Moved from the lane (beside S539)*. Guards `cpl_funding_faq_sheet138`, `cpl_funding_faq_groups`, `sierra_funding_faq`.
+
+✅ **The CSM team's test fixes before the Summit (Sam, 2026-10-29; S519, #2560, #2563):** short names ride `display` in `cpl_funding_data.js` (the join keys stay); lessons, *Moved from the lane (beside S539)*. Guards `cpl_funding_college_dashboard`, `cpl_funding_pool`. Scenarios 2 and 3, which do not publish, still say *Curr* in three passages.
+
+✅ **Sam's 10-28 page asks (S508) are on main** (`CONFIG_HOLD_MS`, test `cpl_funding_published_first`): lessons, *Moved from the lane (beside S539)*. Still his: the Priority 2 bullet and FTES spelled out in `x_table_intro`.
+
+⭐ **SCENARIO 4 IS PUBLISHED (Sam, on the tab, 2026-10-23 22:06Z; `cpl_funding_config.updated_by` his account, read S465).** Every scenario since Scenario 2 (Sam, 2026-09-30, sheet 6 card 6: *"We're going with Scenario 2."*) funds colleges on P1 and P2 (50% each, both years; `mirrorYears` makes the stored Year-2 block inert); P3 Career Attainment and P4 Innovation Projects are **reported cards** (`reportedAsReports`, `reportedCards` [C,D]) with no target, FTES or funding line. Scenario 1 keeps its cards; Scenarios 3 and 4 set noncredit's portion to 15%; Scenario 4 adds the noncredit outcomes lane (below).
+
+⭐ **THE DRILL-IN'S PRIORITIES ARE ROWS OF THE TABLE** (`prioSubRowsHtml`, college + statewide), one cell per column: each priority and noncredit outcome carries its own figure in Max Funds and Funds Qualified So Far, hovers and Unit sources with it; `diffMoney()` subtracts the COARSE figure. No measure yet reads **TBA** (Sam, 2026-09-28). Each row's outcome chips (S480): lessons, *Moved from the lane (S507)*. ⭐ **FUNDS QUALIFIED SO FAR** (the CSM team's word via Sam, 2026-10-29, for *Curr*; every header, hover, the CSV and the house passages; the word is prose only, keys keep `current`). ⭐ **Every sum adds what the rows show, gray included** (Sam relaying the CSM team, 2026-10-29: *"Statewide Curr total is 0 but should add everything in curr college rows"*): `curFig()` is one rule for an institution, a district subtotal and the Statewide row, and the Statewide expand adds `earnAgg()`'s gate-agnostic `crEarned` / `ncEarned`; a sum reads gray only while none of it qualifies, its hover naming the gray part; a lane's cell grays on that lane's own gate (`nc_gate_blocked` for noncredit). From 09-28 to 10-29 the sums added only the released part and read $0 beside gray rows. The cards' Progress line keeps the demonstrated figure. **The public figures round to $1,000** (the 09-03 ADR), and the public Sources line now says so. ⚠️ **The scope supplies the figures; the renderer never derives them.** ⚠️ **The statewide row must NOT carry `.cplfund-row`.** Guards `cpl_funding_statewide_expand`, `cpl_funding_dtl_align`, `cpl_funding_row_legibility`.
