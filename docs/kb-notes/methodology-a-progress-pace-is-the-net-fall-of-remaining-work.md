@@ -1,7 +1,7 @@
 ---
 title: A progress pace is the net fall of remaining work
 created: 2026-11-15
-updated: 2026-11-15
+updated: 2026-11-16
 tags: [methodology, measurement, commons, eta, progress]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -35,7 +35,11 @@ A person's confirmation counts toward the pace only as far as it lowered the rem
 
 ### A universe that grows with the stamps hides all progress
 
-Check that the universe does not move with the work it measures. The exhibit universe was the length of `kb/unified_titles.json`, and that file grows by exactly the titles stamped that day, so exhibit remaining never fell however much was stamped. The follow-up measures the universe from an independent source (the titles MAP carries; a follow-up to #3375), so a stamp lowers remaining instead of adding to both sides.
+Check that the universe does not move with the work it measures. The exhibit universe was the length of `kb/unified_titles.json`, and that file grows by exactly the titles stamped that day, so exhibit remaining never fell however much was stamped. The cause (S662, #3378): a title MAP carries with no entry joins the reference already stamped when a CER procedure classifies it, so the backlog sat outside the universe until the moment it was settled.
+
+### Count the work not yet entered, and take the larger reading, never the sum
+
+The universe must include the work that exists but has no entry yet: for exhibits, the audit's unclassified backlog. When the universe comes from two files written at different times (the reference's titles, and the audit's titles plus its backlog), the two overlap, since a title the audit saw may be stamped before the next audit. Take the larger of the two readings; their sum double-counts (COBIx on #3378). Work that arrives and settles between two readings counts as new work and settlement at once, which a net fall reads correctly. Stale entries left in the universe are a constant offset and do not bend the pace.
 
 ## How we got here
 

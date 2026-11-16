@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-15
+updated: 2026-11-16
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 622 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1491** | |
+| Session handoffs | 623 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1492** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-16 (S662 SkyQuill, Sam's session, full checkpoint): two merges: #3378 (the Commons Curation ETA's exhibit universe counts MAP's unclassified backlog, the larger of the two readings, never their sum) and #3379 (the ETA cost feed: `kb/reference/model_spend_daily.json` and `kb/status/session_spend.json`, built at Pages deploy from the handoffs' `Spend:` lines, shown side by side); the `commons` lane compacted under 20,000 bytes; handoff 663 (SkyLark).
 - 2026-11-15 (S661 SkyKnot, Sam's session, full checkpoint): five merges (#3371 to #3375): the Commons ETA clock and the College Collections ETA on College Data Collection, the date controls as small chips (Sam), CPL Pathways framed beside every college row, the College Collections Plan in the Library, the Commons Curation ETA on CPL Commons; KB note `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`; handoff 662.
 - 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).
 - 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
@@ -131,4 +132,3 @@ Authoritative external sources we've cached:
 - 2026-11-15 (S654 SkyWhimbrel, Sam's session, conductor mode, full checkpoint): seven merges (#3343, #3325, #3316, #3324, #3328, #3345, #3329); a GE-pattern page has one owner; six prefix-alias rescores as one wave; one spend meter (`kb/_spend_meter.py`, #3330); Honors step 2 rebuilt on anchors (#3315, nothing applied); handoff `session_655_handoff.md` (SkyCurlew).
 - 2026-11-14 (S653 SkyGodwit, Sam's session, conductor mode, full checkpoint): the course-id route (#3312, 7 of 17 prefix aliases retire); five colleges reread from filed pages (#3317 to #3321); the Honors field (#3313) and step 1 applied (#3329); College Data Collection's sort and panel (#3314); the Riverside City fault found in the S646 claim rule (#3324); new `docs/reference/stack_scouting.md` and the KB note `methodology-a-test-must-not-take-its-rule-as-the-truth`; handoff `session_654_handoff.md` (SkyWhimbrel).
 - 2026-11-14 (S652 SkyAvocet, the CPL Queue routine's 12:12Z firing, Sam in session, full checkpoint): the identities map applied (#3298) and its 625 held entries dropped (#3302) on Sam's word; catalog-first collection on his rule, slice C merged (#3301, 17 prefix aliases) and slice A drafted (#3300); COBIx's electives-fill census (#3297); the display's structured-fields design (#3296, #3303); new KB note `methodology-a-new-matcher-is-gated-by-a-self-recall-test`; lessons compacted into their archives; handoff `session_653_handoff.md`.
-- 2026-11-14 (S651 SkyDunlin, the CPL Queue routine's 09:12Z firing, full checkpoint): #3291 Lassen (Cal-GETC 34 from its own catalog, five rows reread, display run 43586782908); #3294 the Veteran map's public header; #3283 sdccd's 2,532 objective rows loaded; draft #3293 the one dry run, held for COBIx; a display rule withdrawn for structured fields; plan v2 on #3111 (the August drop is Pierce); harvest lessons compacted into archive 5; handoff `session_652_handoff.md`.
