@@ -1,0 +1,58 @@
+{
+ "_readme": "S663 (06:12Z firing), 2026-11-16. The prior-year read of Riverside City's four plain siblings failed on the 2026 renumbering (#3384): the 2025-2026 pages print MAT-1C, MAT-2, MAT-3, MAT-5, ECO-7H, ECO-8H where the state's list names MATH 1C, MATH 2, MATH 3, MATH 5, ECON C2002H, ECON C2001H. This read prints the four catalog-71 entries with each course's title and units, so a year-scoped renumber map pairs a printed code with a listed one on its own catalog's title and units, never on a guess. One page load each, no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "old_codes": "Each course the 2025-2026 entry prints: its code, title and units."
+ },
+ "keywords": [
+  "MAT-",
+  "ECO-",
+  "CIS-",
+  "PSY",
+  "ANT-",
+  "COMM-",
+  "STA",
+  "BUS-",
+  "ACC-",
+  "PHY-",
+  "CSC-"
+ ],
+ "pages": [
+  {
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3731",
+   "answers": [
+    "old_codes"
+   ],
+   "cq_view": true,
+   "cq_catalog": 71,
+   "_program": "30578"
+  },
+  {
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
+   "answers": [
+    "old_codes"
+   ],
+   "cq_view": true,
+   "cq_catalog": 71,
+   "_program": "32692"
+  },
+  {
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3838",
+   "answers": [
+    "old_codes"
+   ],
+   "cq_view": true,
+   "cq_catalog": 71,
+   "_program": "32745"
+  },
+  {
+   "url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3713",
+   "answers": [
+    "old_codes"
+   ],
+   "cq_view": true,
+   "cq_catalog": 71,
+   "_program": "33829"
+  }
+ ]
+}
