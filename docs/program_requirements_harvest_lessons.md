@@ -402,3 +402,22 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, replaced b
 - **One step back in the archive may not reach the original.** The archive 7 (2024-2025) read of Riverside City 30578 and 33829 (run 43889274787, $0.078, branch `claude/rcc-archive7-prior-s666`, no PR) matched 33829 to a page titled *Business Administration 2.0* (`archive/7/iq/918/943/1068`): that year already printed the successor, and the record failed coverage (missing CIS1A, ECONC2001H, ECONC2002H, MATH5, PSYC48, STATC1000, STATC1000H; invented ECO7H, ECO8H, MAT12, MAT12H, MAT1A, MAT5). 30578 found no page (near miss `.../1086`, 1 of 14 codes). The plain originals sit in the 2023-2024 or older PDF catalogs, which the curriQunet `prior` route cannot read; both current records stay (`d-rcc-originals-predate-curriqunet-s666`). Read a page's heading before paying for the next year back.
 - **A missing row with no deletion receipt is restored by an insert-only load.** Monterey Peninsula 03653, 22098 and 39361 are Active in COCI and had no live `program_requirement_records` row since 2026-11-09. `step=load` (run 43892853333) inserted the 3 and kept 197, so nothing live moved (`d-mpc-reload-three-s666`; receipt `kb/receipts/program_requirement_records_college_monterey_peninsula_43892853333.json`; draft #3399).
 - **The dependency map reads committed files.** `kb/_build_dependency_map.py` goes stale after any commit that adds a file, so regenerate it after the commit and commit again (`p-dependency-map-reads-committed-files-s666`).
+
+## Moved from the lane (S667 checkpoint)
+
+**The display's gaps as structured fields** ([`reference/roep_display_structured_fields_design`](../roep_display_structured_fields_design.md), #3296, #3303; writes only `program_requirement_records.display`): **DECIDED** `d-lassen-stale-note-known-defect-s652`. The paragraph as it stood: lessons, *Moved from the lane (S653 checkpoint)*.
+
+## S667 (SkyPlover, Sam's session, 2026-11-16): two items decided from committed files
+
+- **Riverside City 30578 and 33829 stay as filed** (`d-rcc-two-left-no-pdf-route-s667`). Their plain originals sit only
+  in rcc.edu's 2023-2024 or older PDF catalogs (S666), and a PDF reader built for two records costs more than it
+  returns. Reopen on new source evidence.
+- **The slice B named-course minimum is one course, at extraction** (`d-named-course-minimum-one-s667`). Measured over
+  the 19,137 committed record files: 9 name exactly one course. Seven are single-course certificates (academies: CJ 80,
+  EMS 60, FIRE 1500). Two (Las Positas 45954 Honors Scholar; Los Angeles Valley 02964 Foreign Languages) name one
+  course beside requirements printed as rules, complete as filed; COBIx caught the first draft calling all nine
+  single-course certificates (#3404). **Pitfall:** count what a record names, then read the records at the edge
+  before saying what they are. And the minimum gates extraction, never `found`: a program page whose courses sit in a
+  tab or a PDF still lists the program, so refusing `found` there would report a false absence.
+- **Skyline's catalog is outside the cloud session's network** (`curl` to catalog.skylinecollege.edu answers 000), so
+  the 23 empty-heading pages cannot be read from a session; the measure came from the committed records instead.

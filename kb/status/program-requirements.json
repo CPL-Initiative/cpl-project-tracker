@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-16T15:35:55Z",
-  "session": 666,
-  "moniker": "SkyDipper",
+  "written_at": "2026-11-16T18:24:32Z",
+  "session": 667,
+  "moniker": "SkyPlover",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_667_handoff.md",
+  "handoff": "docs/session_668_handoff.md",
   "next_step": {
     "title": "Coastline's objectives reread, then Golden West",
-    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Monterey Peninsula's three reloaded records reach CPL Pathways with the next display build, once their pull request merges."
+    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Monterey Peninsula's three reloaded records are on main and reach CPL Pathways with the next display build."
   },
   "calls": [
     {
@@ -338,6 +338,14 @@
   },
   "changes": [
     {
+      "at": "2026-11-16T18:30:00Z",
+      "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
+    },
+    {
+      "at": "2026-11-16T18:30:00Z",
+      "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
+    },
+    {
       "at": "2026-11-16T15:20:00Z",
       "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
     },
@@ -376,54 +384,6 @@
     {
       "at": "2026-11-15T17:59:00Z",
       "text": "The Commons ETA clock reads the harvest's daily headline and the live counts to project when each phase of the data collection finishes."
-    },
-    {
-      "at": "2026-11-15T09:03:00Z",
-      "text": "Six colleges reread on the course-id route: 159 records replaced, each with its before-values in a receipt. Three programs move from failing to passing and none falls."
-    },
-    {
-      "at": "2026-11-15T08:00:00Z",
-      "text": "Santa Ana's course objectives loaded: 1,362 rows, with 1,366 SLO rows left as they were."
-    },
-    {
-      "at": "2026-11-15T07:48:00Z",
-      "text": "Every paid model caller now stops at 40 dollars a run through the one spend meter, which reached main with card 10."
-    },
-    {
-      "at": "2026-11-15T07:00:00Z",
-      "text": "The Riverside City capture was read: 240 of 268 programs on their own pages, and 35 of 41 transfer degrees claim their own page. Colleges on the same catalog system may capture again."
-    },
-    {
-      "at": "2026-11-15T06:36:00Z",
-      "text": "A district-format control number now settles which program owns a GE page."
-    },
-    {
-      "at": "2026-11-15T03:21:00Z",
-      "text": "Six colleges rescored under the prefix aliases merged as one wave. Statewide passing rose 15,840 to 15,856 of 22,335; one display build follows the course-id rescore."
-    },
-    {
-      "at": "2026-11-15T03:21:00Z",
-      "text": "A catalog's header fragment is never a program page, on all three code paths of the page finder."
-    },
-    {
-      "at": "2026-11-15T02:58:00Z",
-      "text": "A GE-pattern page has one owner: the owner is cached per page, and a printed control number names the owner only when that program's title check agrees. A free Riverside City capture was sent to confirm it."
-    },
-    {
-      "at": "2026-11-14T18:39:58Z",
-      "text": "A course's prefix now comes from the Program Course File's course id first. 7 of the 17 prefix-alias pairs retire and 10 stay; on filed records 8 programs would newly pass and none would fail."
-    },
-    {
-      "at": "2026-11-14T17:57:00Z",
-      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reread from their filed pages: passing rose 141 to 144, 132 to 134, 128 to 130, 161 to 162 and 197 to 198. Their displays wait on COBIx's spot-check."
-    },
-    {
-      "at": "2026-11-14T17:45:01Z",
-      "text": "curriQunet captures record twin ids. A capture on that code showed Riverside City's missing pages come from the claim rule, which skipped each transfer degree's own GE page; the fix is drafted."
-    },
-    {
-      "at": "2026-11-14T15:23:00Z",
-      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reconciled again from their filed pages under the new prefix aliases, each on its own branch; nothing is written until each compare is read."
     }
   ],
   "headline": [

@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1511,
-    "bytes": 16024177,
-    "over_budget": 6,
-    "handoff_max": 667,
+    "files": 1512,
+    "bytes": 16035804,
+    "over_budget": 5,
+    "handoff_max": 668,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5217700,
+        "bytes": 5218312,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10565,
+        "bytes": 10574,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2803820,
+        "bytes": 2809729,
         "over": 0
       },
       "kb_note": {
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 553140,
-        "over": 4
+        "bytes": 551417,
+        "over": 3
       },
       "handoff": {
-        "files": 627,
-        "bytes": 4501544,
+        "files": 628,
+        "bytes": 4508364,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 6,
+      "oversized_doc": 5,
       "kb_note_dialect": 1,
       "vault_heavy_path": 201,
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 28126,
-      "bytes": 4992087715,
+      "files": 28133,
+      "bytes": 4992108321,
       "heavy_bytes": 3486124249,
       "heavy_share": 0.698,
       "ignore_filters": [
@@ -347,19 +347,6 @@
       },
       "message": "20,340 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/library.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20236,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 236,
-        "ratio": 1.01
-      },
-      "message": "20,236 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/my-college-action-page.md"
     },
     {
       "rule": "vault_heavy_path",
@@ -2374,14 +2361,14 @@
     {
       "rule": "handoff_drops_active_lane",
       "fixable": false,
-      "path": "docs/session_667_handoff.md",
+      "path": "docs/session_668_handoff.md",
       "detail": {
         "lanes": [
-          "my-college-action-page"
+          "governance-team-enablement"
         ],
         "days": 7
       },
-      "message": "`docs/session_667_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: my-college-action-page. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
+      "message": "`docs/session_668_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: governance-team-enablement. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
