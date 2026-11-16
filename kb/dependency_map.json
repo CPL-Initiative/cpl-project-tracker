@@ -11905,7 +11905,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 665
+     "line": 683
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -15049,7 +15049,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 664
+     "line": 682
     },
     {
      "id": "script:kb/_verify_issuer_preseed.py",
@@ -16464,7 +16464,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 667
+     "line": 685
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -20826,7 +20826,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 660
+     "line": 678
     }
    ],
    "producers": [
@@ -21208,7 +21208,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 659
+     "line": 677
     },
     {
      "id": "script:kb/classify_exhibits.py",
@@ -24137,7 +24137,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 666
+     "line": 684
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",

@@ -189,6 +189,22 @@ try:
     sw.main(["--root", tmp, "--quiet"])
     check("a rebuild with nothing new keeps its time stamp, so the run commits nothing",
           json.load(open(out))["generated_at"] == "2026-10-31T00:00:00Z")
+
+    # Person-settled wins (Sam, 2026-11-16, issue #3358): a title a person saved in the overlay never comes back
+    # as a card, however the rules would restyle it; the same title saved by a bot cohort still gets its card.
+    # The 2026-11-13 build's six cards were all Sam's own saves of that afternoon.
+    target = "Noncredit for AUTO A8"
+    assert target in by_local, "fixture: the ASE paren rule must propose for %s" % target
+    overlay_path = os.path.join(tmp, "kb", "unclassified_assignments.json")
+    base = json.load(open(overlay_path))
+    for who, comes_back in (({"reviewed_by": "slee@cccco.edu", "reviewed_at": "2026-11-13T20:27:32+00:00"}, False),
+                            ({"reviewed_by": "cer-procedure-classifier@bot", "reviewed_at": "2026-11-13T20:27:32+00:00"}, True)):
+        over = dict(base, assignments={target: {"unified_title": TITLES[target][0], "issuing_agency": CCC, **who}})
+        with open(overlay_path, "w") as fh:
+            json.dump(over, fh)
+        locs = {loc["raw"] for c in sw.build(tmp)["cards"] for loc in c["locals"]}
+        check("a title saved by %s %s as a card" % (who["reviewed_by"], "comes back" if comes_back else "never comes back"),
+              (target in locs) == comes_back, sorted(locs)[:8])
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
