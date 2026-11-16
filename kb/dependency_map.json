@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1012,
+  "file_datasets": 1013,
   "external_services": 195,
   "consumers": 604,
   "workflows": 72,
@@ -16805,6 +16805,19 @@
      "direction": "read",
      "how": "literal",
      "line": 382
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/honors_of_s653_out/2026-11-15/check_receipt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_honors_of_s653_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 736
     }
    ],
    "served": false,
