@@ -3834,6 +3834,15 @@
      the write and the words for the status line (the List norms' step 1, onto Exhibits in S545). */
   function listSuggestAccept(r, sg) {
     var from = r.ut, writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
+    /* Sam's graded and cert-based groups (2026-11-17): a combine across them is blocked on the first try; a second try,
+       which names both groups, goes through and is logged beside the fold. */
+    var cross = crossesGroups(canonType(from), canonType(sg.to)), gk = "combine " + from + " -> " + sg.to;
+    if (cross && !LEFT.guard[gk]) {
+      LEFT.guard[gk] = true;
+      return Promise.resolve({ ok: false, words: "Blocked: " + from + " is " + groupWords(cross.a) + " and " + sg.to + " is " + groupWords(cross.b)
+        + ". Sam's rule keeps these apart. Accept again to combine them anyway; that override is logged." });
+    }
+    if (cross) writes.push([FIELD_TYPE_OVERRIDE, "combine across groups: " + cross.a + " into " + cross.b + ": " + from + " -> " + sg.to]);
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
@@ -4249,36 +4258,184 @@
   /* The titles in the reference MAP no longer carries (the auditor's stale_kb_entry, never an unclassified title still in
      MAP), by the credential they fold under: the Commons' keep-or-retire count opens this filter (Sam, 2026-11-04: "the
      links on all surfaces should open to the filtered view of the job needed"). Read only when it is chosen. */
-  var LEFT = { by: null, error: null, p: null };
+  var LEFT = { by: null, error: null, p: null, cards: null, map: null, dec: {}, decErr: "", moving: null, guard: {}, note: "" };
+  /* Acting on a title that has left MAP (Sam, 2026-11-17: "Need a way to take action on them"; "These are local exhibit
+     titles, right? I don't change those, just canonicalized titles they sit under"; COBIx's item 2 on #3464). Three
+     link-only decisions, stored as kb_curation rows `_LEFT_MAP::<raw local title>` + left_map_decision, never as an
+     unclassified assignment (the fold would remint articulations): keep, moved:<canonical title>, or removed. The local
+     title is never edited. kb/exhibit_left_map.json (kb/_build_left_map.py) carries each title's CPL type, whether anything
+     still points at it, its live near-twin and whether Sam reviewed it; the decisions are read live, so a decision drops
+     the title from this list the same day. */
+  var LEFT_PREFIX = "_LEFT_MAP::", FIELD_LEFT = "left_map_decision", FIELD_TYPE_OVERRIDE = "cpl_type_group_override";
+  var LEFT_MAP_URL = "kb/exhibit_left_map.json";
   function listLeftLoad() {
     if (LEFT.p) return LEFT.p;
-    LEFT.p = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
+    var audit = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
       if (!r.ok) throw new Error("kb/exhibit_audit/latest.json answered " + r.status);
       return r.json();
-    }).then(function (d) {
-      var by = {};
+    });
+    var map = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    LEFT.p = Promise.all([audit, map, leftDecisionsRead()]).then(function (got) {
+      var d = got[0];
+      LEFT.map = got[1];
+      LEFT.cards = [];
       ((d && d.title_cards) || []).forEach(function (c) {
         var t = c.tags || [];
-        if (t.indexOf("stale_kb_entry") >= 0 && t.indexOf("unclassified_in_map") < 0) (by[c.unified_title] = by[c.unified_title] || []).push(String(c.raw_title || "").trim());
+        if (t.indexOf("stale_kb_entry") >= 0 && t.indexOf("unclassified_in_map") < 0) LEFT.cards.push({ raw: String(c.raw_title || ""), ut: c.unified_title });
       });
-      LEFT.by = by;
+      leftIndex();
     }, function (e) { LEFT.error = String(e && e.message || e); });
     return LEFT.p;
   }
+  /* The decisions saved so far, read live (anon read, Range-paged): a decided title leaves the list on reload the same day. */
+  function leftDecisionsRead() {
+    var key = anonKey();
+    if (!key) return Promise.resolve();
+    function page(from, acc) {
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,value&field=eq." + FIELD_LEFT + "&course_id=like." + encodeURIComponent(LEFT_PREFIX + "*") + "&order=course_id.asc",
+        { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + 999) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) { acc = acc.concat(rows || []); return (rows || []).length < 1000 ? acc : page(from + 1000, acc); });
+    }
+    return page(0, []).then(function (rows) {
+      rows.forEach(function (x) { var id = String(x.course_id || ""); if (id.indexOf(LEFT_PREFIX) === 0 && x.value) LEFT.dec[id.slice(LEFT_PREFIX.length)] = String(x.value); });
+      LEFT.decErr = "";
+    }, function (e) { LEFT.decErr = String(e && e.message || e); });
+  }
+  /* The undecided old titles, by the canonical title they sit under. */
+  function leftIndex() {
+    var by = {};
+    (LEFT.cards || []).forEach(function (c) { if (!LEFT.dec[c.raw]) (by[c.ut] = by[c.ut] || []).push(c.raw); });
+    LEFT.by = by;
+  }
+  function leftInfo(raw) { return (LEFT.map && LEFT.map.titles && LEFT.map.titles[raw]) || null; }
+  function canonType(ut) { return (LEFT.map && LEFT.map.canonicals && LEFT.map.canonicals[ut]) || null; }
+  function leftOpen() { return (LEFT.cards || []).filter(function (c) { return !LEFT.dec[c.raw]; }); }
+  /* Sam's two groups (2026-11-17: "Keep Cx and portfolio together since they function the same and result in a letter
+     grade"): graded is Credit By Exam and Portfolio Review; cert-based is Industry Certification, Standardized Assessment,
+     Military and Other. Mixing inside a group is fine; a move or combine across them is blocked by default. */
+  function groupWords(g) {
+    if (g === "mixed") return "a mix of graded and cert-based types";
+    return g === "graded" ? "graded (Credit By Exam or Portfolio Review)" : "cert-based (Industry Certification, Standardized Assessment, Military or Other)";
+  }
+  /* The result would hold both groups: null when either side's type is not recorded or both stay in one group. */
+  function crossesGroups(a, b) {
+    var x = a && a.group, y = b && b.group, has = {};
+    if (!x || !y) return null;
+    [x, y].forEach(function (g) { if (g === "mixed") { has.graded = 1; has.cert = 1; } else has[g] = 1; });
+    return has.graded && has.cert ? { a: x, b: y } : null;
+  }
+  function leftSave(raws, value, log) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var at = new Date().toISOString(), rows = raws.map(function (raw) {
+        return { course_id: LEFT_PREFIX + raw, field: FIELD_LEFT, value: typeof value === "function" ? value(raw) : value, reviewer_email: sess.email, reviewed_at: at };
+      });
+      if (log) rows.push({ course_id: LEFT_PREFIX + raws[0], field: FIELD_TYPE_OVERRIDE, value: log, reviewer_email: sess.email, reviewed_at: at });
+      return postRows(sess, rows);
+    }).then(function () {
+      raws.forEach(function (raw) { LEFT.dec[raw] = typeof value === "function" ? value(raw) : value; });
+      leftIndex();
+      LEFT.note = "";
+      return true;
+    }).catch(function (e) {
+      LEFT.note = e && e.message === "signin" ? "Sign in as a reviewer to decide a title." : "The decision did not save (" + (e && e.message || "no answer") + "); nothing changed.";
+      return false;
+    });
+  }
+  function leftDone(text) { LEFT.note = text; if (state.view === "list") render(); }
   function listLeft(r) { return (LEFT.by && LEFT.by[r.ut]) || []; }
   function listLeftNote() {
     if (LEFT.error) return el("p", { cls: "exh-empty", role: "alert", text: LEFT.error + ", so this filter shows nothing. Reload the tab to try again." });
     if (!LEFT.by) return el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the auditor's titles for this filter…" });
     var names = Object.keys(LEFT.by), n = names.reduce(function (t, k) { return t + LEFT.by[k].length; }, 0);
-    return el("p", { cls: "exh-muted exh-small", text: fmt(n) + (n === 1 ? " old title no MAP exhibit uses any more sits" : " old titles no MAP exhibit uses any more sit") +
-      " in the reference, under " + fmt(names.length) + (names.length === 1 ? " credential" : " credentials") + " below. Nothing breaks while they stay. " +
-      "Open a credential to see its titles; a curator retires each, or keeps one a college may enter again." });
+    var box = el("div", { cls: "exh-left-sum", "data-left-summary": "" });
+    box.appendChild(el("p", { cls: "exh-muted exh-small", "data-left-count": String(n), text: fmt(n) + (n === 1 ? " old local title no MAP exhibit uses any more sits" : " old local titles no MAP exhibit uses any more sit") +
+      " in the reference, under " + fmt(names.length) + (names.length === 1 ? " canonical title" : " canonical titles") + " below. Nothing breaks while they stay. " +
+      "Open one to keep each old title under its canonical title, move it to another, or remove it from that title. The local title itself never changes." }));
+    if (LEFT.decErr) box.appendChild(el("p", { cls: "exh-empty", role: "alert", text: "The decisions saved today could not be read (" + LEFT.decErr + "), so a title decided today may still show." }));
+    if (LEFT.map) {
+      var open = leftOpen(), info = function (c) { return leftInfo(c.raw) || {}; };
+      var none = open.filter(function (c) { return !info(c).used; }), used = open.filter(function (c) { return info(c).used; });
+      var mine = (LEFT.cards || []).filter(function (c) { return info(c).reviewed; });
+      var keepAll = none.filter(function (c) { return info(c).twin && !info(c).reviewed; });
+      var dropAll = none.filter(function (c) { return !info(c).twin && !info(c).reviewed; });
+      var lonely = dropAll.filter(function (c) { return info(c).only_local; });
+      box.appendChild(el("p", { cls: "exh-small", "data-left-split": "" }, ["Nothing points to it: " + fmt(none.length) + ". Still used somewhere: " + fmt(used.length)
+        + " (on a course-credit listing or a Common CR worklist row). Already reviewed by you: " + fmt(mine.length) + ", settled, shown without buttons."]));
+      var acts = el("p", { cls: "exh-small" });
+      if (keepAll.length) acts.appendChild(word("Keep all " + fmt(keepAll.length) + " under their title", function () {
+        if (!window.confirm("Keep " + fmt(keepAll.length) + " old titles under the canonical title they sit under? Each has a title still in MAP beside it and nothing else points to it. Their links stay; they leave this list.")) return;
+        leftSave(keepAll.map(function (c) { return c.raw; }), "keep").then(function (ok) { leftDone(ok ? "Kept " + fmt(keepAll.length) + " under their title." : LEFT.note); });
+      }, { "data-left-bulk": "keep" }));
+      if (keepAll.length && dropAll.length) acts.appendChild(document.createTextNode(" "));
+      if (dropAll.length) acts.appendChild(word("Remove all " + fmt(dropAll.length) + " from their title", function () {
+        if (!window.confirm("Remove " + fmt(dropAll.length) + " old titles from their canonical title? None has a title still in MAP beside it, and nothing points to it. " + fmt(lonely.length)
+          + " of them are the only local title under their canonical title, so that canonical title will have no local title under it; the canonical title itself stays and is not renamed. Each local title stays in the record and links again if a college enters it.")) return;
+        leftSave(dropAll.map(function (c) { return c.raw; }), "removed").then(function (ok) { leftDone(ok ? "Removed " + fmt(dropAll.length) + " from their title." : LEFT.note); });
+      }, { "data-left-bulk": "remove", "data-left-lonely": String(lonely.length) }));
+      if (acts.childNodes.length) box.appendChild(acts);
+    }
+    if (LEFT.note) box.appendChild(el("p", { cls: "exh-small", role: "status", text: LEFT.note }));
+    return box;
   }
+  /* One old title's row in the panel: its CPL type, its live twin, and the three decisions (none for a title Sam reviewed). */
+  function leftRow(raw, ut) {
+    var i = leftInfo(raw) || {}, li = el("li", { "data-left-raw": raw.trim() });
+    li.appendChild(el("span", { text: raw.trim() }));
+    li.appendChild(el("span", { cls: "exh-muted exh-small", text: " (" + (i.type || "CPL type not recorded") + ")" }));
+    if (i.twin) li.appendChild(el("span", { cls: "exh-muted exh-small exh-left-twin", text: ". Still in MAP: " + i.twin.title + " (" + i.twin.how + ")" }));
+    if (i.used) li.appendChild(el("span", { cls: "exh-muted exh-small", text: ". Still used on a " + (i.where || []).join(" and a ") }));
+    if (i.reviewed) { li.appendChild(el("span", { cls: "exh-muted exh-small", text: ". Reviewed by you, settled." })); return li; }
+    var row = el("span", { cls: "exh-left-acts" });
+    row.appendChild(document.createTextNode(" "));
+    row.appendChild(word("Keep under this title", function () { leftSave([raw], "keep").then(function (ok) { leftDone(ok ? "Kept: " + raw.trim() + " stays under " + ut + "." : LEFT.note); }); }, { "data-left-act": "keep" }));
+    row.appendChild(document.createTextNode(" "));
+    row.appendChild(word("Move to another title", function () { LEFT.moving = LEFT.moving === raw ? null : raw; if (state.view === "list") render(); }, { "data-left-act": "move", "aria-expanded": LEFT.moving === raw ? "true" : "false" }));
+    if (!i.used) {
+      row.appendChild(document.createTextNode(" "));
+      row.appendChild(word("Remove from this title", function () {
+        if (i.only_local && !window.confirm(raw.trim() + " is the only local title under " + ut + ". Removing it leaves that canonical title with no local title; the canonical title stays and is not renamed.")) return;
+        leftSave([raw], "removed").then(function (ok) { leftDone(ok ? "Removed: " + raw.trim() + " no longer sits under " + ut + "." : LEFT.note); });
+      }, { "data-left-act": "remove" }));
+    }
+    li.appendChild(row);
+    if (LEFT.moving === raw) li.appendChild(leftMoveBox(raw, ut, i));
+    return li;
+  }
+  /* Move: a search box over the canonical titles, each with its CPL type; a move across Sam's two groups is blocked on the
+     first try and goes through only on a second, explicit one that names both groups, which is logged. */
+  function leftMoveBox(raw, ut, info) {
+    var id = "exh-left-dl-" + Math.abs(hashStr(raw)), box = el("div", { cls: "exh-left-move" });
+    var inp = el("input", { type: "search", list: id, "aria-label": "Canonical title to move " + raw.trim() + " under", placeholder: "Search canonical titles", cls: "exh-left-q" });
+    var dl = el("datalist", { id: id });
+    var names = Object.keys((LEFT.map && LEFT.map.canonicals) || {});
+    names.forEach(function (n) { if (n !== ut) dl.appendChild(el("option", { value: n, label: n + " (" + canonType(n).type + ")" })); });
+    var say = el("p", { cls: "exh-small", role: "status" });
+    var go = word("Move here", function () {
+      var to = String(inp.value || "").trim();
+      if (!to || !canonType(to)) { say.textContent = "Pick a canonical title from the list."; return; }
+      var cross = crossesGroups(info, canonType(to)), k = raw + " -> " + to, log = null;
+      if (cross && !LEFT.guard[k]) {
+        LEFT.guard[k] = true;
+        say.textContent = "Blocked: " + raw.trim() + " is " + groupWords(cross.a) + " and " + to + " is " + groupWords(cross.b) + ". Sam's rule keeps these apart. Press Move here again to move it anyway; that override is logged.";
+        return;
+      }
+      if (cross) log = "move across groups: " + cross.a + " into " + cross.b + ": " + raw.trim() + " -> " + to;
+      leftSave([raw], "moved:" + to, log).then(function (ok) { LEFT.moving = null; leftDone(ok ? "Moved: " + raw.trim() + " now sits under " + to + " once the reference is rebuilt tonight." : LEFT.note); });
+    }, { "data-left-go": "" });
+    inp.addEventListener("input", function () { var t = canonType(String(inp.value || "").trim()); say.textContent = t ? "CPL type: " + t.type + "." : ""; });
+    box.appendChild(inp); box.appendChild(dl); box.appendChild(document.createTextNode(" ")); box.appendChild(go); box.appendChild(say);
+    return box;
+  }
+  function hashStr(t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return h; }
   function listPanelBody(r, h) {
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
     // The engine's shared parts (commons_list.js h.title, h.meta, h.heading, h.table, h.fold), so every List's panel reads alike.
-    var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
+    if (!LEFT.p) listLeftLoad().then(function () { if (state.view === "list") render(); });
+    var ctype = canonType(r.ut);
+    var out = [h.title(listTitle(r)), h.meta([ctype ? "CPL type: " + ctype.type : "", cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
       could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
     // Its family (#3117), beside the issuer the fold may have set (#3116): the family names the set, the fold line the issuer.
@@ -4288,9 +4445,11 @@
     var gone = listLeft(r);
     if (gone.length) {
       out.push(h.heading(gone.length === 1 ? "A title that has left MAP" : "Titles that have left MAP"));
-      out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still folds " + (gone.length === 1 ? "this title" : "these titles") +
-        " under this credential, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") + "; a curator keeps or retires each." }));
-      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return el2("li", { text: t }); })));
+      out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still keeps " + (gone.length === 1 ? "this old local title" : "these old local titles") +
+        " under this canonical title, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") +
+        ". For each, keep it under this title, move it to another, or remove it from this title. The local title itself never changes." }));
+      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return leftRow(t, r.ut); })));
+      if (LEFT.note) out.push(el2("p", { cls: "exh-small", role: "status", text: LEFT.note }));
     }
     var cai = listCplAi(r);
     if (cai.length) {
