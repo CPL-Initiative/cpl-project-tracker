@@ -46,6 +46,9 @@ last `test` runs were going.
    Commons sidecars hold `no_state_list` records back (harvest NEXT 3).
 3. **Free rescores:** Butte Physics 31950 to the Mathematics reading (COBIx on #3426); Berkeley City 41778 after a cited
    Cal-GETC step.
+   Santa Ana 32989 (COBIx on #3434): its `ge_pattern: "Cal-GETC"` is the reader's inference, not printed text; set it
+   null or mark it inferred and reread before a Cal-GETC 34 fill reads it. Re-read trigger: when Santa Ana's closed course
+   list moves to MATH C2210/C2220, 32062 and 32989 read again from the current catalog.
 4. **Memory rows:** `kb/migrations/2026-11-17_s670_cpl_memory_rows.sql` is named in `.apply` on this checkpoint's branch;
    confirm its receipt landed on the checkpoint PR.
 5. **governance-team-enablement:** NEXT (1) reads the first scheduled runs of `docket-process` and
