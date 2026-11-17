@@ -564,6 +564,7 @@ def _():
 READERS = {
     "coci_lookup.js": "kind=eq.slo",
     "cpl_pathways.js": "kind=eq.slo; the course panel kind=in.(slo,objective), each kind under its own heading",
+    "commons_data.js": "the SLO panel's subject drill reads kind=in.(slo,objective), each kind under its own heading (#3412)",
     "program_requirements.js": "kind=eq.slo",
     "kb/_build_adopt_align.py": "kind=eq.slo",
     "kb/_build_exhibit_slo_neighbors.py": "kind=eq.slo",
