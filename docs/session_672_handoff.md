@@ -18,7 +18,7 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
 
 ## What shipped
 
-- **#3438, the RCCD pilot (open, ready, waiting on COBIx's spot-check).** It carries three things:
+- **#3438, the RCCD pilot (merged, ea7ea62e, after COBIx's spot-check and a green `test`).** It carries three things:
   - The first district profile, `kb/district_profiles/riverside.json`.
   - The free read of the RCCD GE and Military Credit pages (44033941042). Area 7 is 2 units and lists HES 1 and "KIN (any course
     with an A or V)". Basic training counts 2 of its 5 units toward Area 7.
@@ -31,7 +31,7 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
 - The diagnosis read 44034775728 found three causes: Geology 38790's catalog does not add up, Piano 38626 prints one course four
   times, and Graphic Design 31766 has a nested "one emphasis" choice. Norco and Moreno Valley were not forced
   (`d-rccd-pilot-no-blind-force-s671`).
-- Nothing else merged this run. Step 0's dashboard dispatch was not needed: the 03:05Z run had succeeded.
+- The checkpoint (#3439) merged too. Step 0's dashboard dispatch was not needed: the 03:05Z run had succeeded.
 
 ## First things, in order
 
@@ -40,9 +40,9 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
    (`host=cccd`, `kind=objective`, `slugs=golden_west`), rebuild the Commons data and drop the step from the plan. One preparation run
    on another host. Diablo Valley (#3421) takes a later day. #3387 and #3284 wait. A warning in `read_files` for a chosen split that
    is missing a part closes COBIx's #3420 edge.
-2. **#3438:** read the thread's last page. COBIx's spot-check came back (comment 6941524655); 31892 was restored. Its two non-blocking notes wait: renumbered common-course
-   codes marked `catalog_addition` though the scorer matches them, and the Social Justice family's uneven `degree_total`.
-   If it is still unanswered at your end, leave it open and name it again.
+2. **#3438 is merged.** COBIx's two non-blocking notes wait: renumbered common-course codes marked `catalog_addition`,
+   though the scorer matches them (check other colleges first; it looks reader-wide), and the Social Justice family's uneven
+   `degree_total` (41749 and 43896 carry 60, while 41757 and 44363 carry none).
 3. **The repeated-course-row lever** (`p-repeated-course-row-undercounts-s671`). A page that prints one course N times ("*Course
    must be taken four times") counts it N times. The scorer is shared code, so a second reader comes first. The likely members are
    Riverside City 38626, 38627 and 38628, Moreno Valley 38758, and Norco 30606 and 30607. Rescore, then reread.
@@ -77,7 +77,7 @@ discipline blanks worklist.
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3438 RCCD pilot | ready; reread applied | COBIx spot-check, then merge |
+| #3438 RCCD pilot | merged (ea7ea62e); reread and the 31892 restore applied | COBIx's notes 2 and 3 |
 | #3421, #3387, #3284, #3293 | drafts; keep | First thing 1; harvest NEXT (4) |
 | this checkpoint's PR | memory rows through the runner | merge on green |
 
@@ -96,6 +96,6 @@ S671 holds no PR subscription, check-in or artifact watch. The standing sheet st
 RCCD pilot: 0 newly passing programs, about 270,000 tokens (the session's context at checkpoint; `get_session` is not available).
 
 Spend: `get_session` is not available. Model calls came to $5.08 (Riverside City read 44030368835), from 2026-11-17T06:14Z to
-about 07:35Z. Substantive PRs merged: 0 (#3438 waits on COBIx's spot-check).
+about 07:35Z. Substantive PRs merged: 1 (#3438).
 
 Greetings, you are SkyWren (Session 672), see SkyKinglet's handoff — `docs/session_672_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_672_handoff.md) — let's keep rolling with our queue.
