@@ -63,8 +63,8 @@ The package he approved:
    ("posted nothing" is a state, not a small amount). The curator view keeps
    exact dollars: this is a formatting rule, since dollars are computed on the
    page.
-   **Beside its max (2026-11-17, Cabrillo College's question; pending COBIx's
-   privacy read and Sam's go on the PR).** A figure that has reached its cap
+   **Beside its max (2026-11-17, Cabrillo College's question; COBIx's privacy read
+   found no new exposure; Sam's go on #3471, 2026-11-17).** A figure that has reached its cap
    prints the cap exactly, because the page already prints that cap beside it
    and the figure discloses nothing more; and a coarse figure short of its cap
    never rounds past the cap's own thousand. Before this, a noncredit outcome
