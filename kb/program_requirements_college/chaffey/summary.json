@@ -2,50 +2,194 @@
  "college": "Chaffey College",
  "programs": 202,
  "with_closed_list": 199,
- "found": 193,
- "extracted": 193,
+ "found": 192,
+ "extracted": 192,
  "errors": 0,
- "passed_machine_checks": 181,
+ "passed_machine_checks": 182,
  "failed": {
-  "coverage": 3,
+  "coverage": 2,
   "invented": 1,
-  "arithmetic": 11,
+  "arithmetic": 9,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.48,
- "cost_per_program": 0.0543,
+ "cost_usd_run": 1.02,
+ "cost_usd_filed": 10.51,
+ "cost_per_program": 0.0547,
+ "extract_calls": 13,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "15535",
    "title": "Network Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2623,
+     "content": 2623,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18435",
+   "title": "Physical Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2098,
+     "content": 2098,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "20697",
    "title": "Computer Information Systems",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 38,
+    "why": "coarse net: the page's code tokens name 0 of 38 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1861,
+     "content": 1861,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36629",
    "title": "Physical Education",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physed",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.419,
+    "body": 0.419,
+    "content": 0.419,
+    "net": 57,
+    "listed": 136,
+    "why": "coverage 0.42 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6546,
+     "content": 6546,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36771",
    "title": "Computer Support Technician (A+ Certification Preparation)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "36856",
    "title": "Social Media Support Specialist",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2958,
+     "content": 2958,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "46302",
    "title": "Electric Vehicle and Alternative Propulsion Technician",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20761",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.333,
+    "net": 3,
+    "listed": 3,
+    "why": "coverage 0.33 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2023,
+     "content": 2023,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "38242003226"
+ "run": "44090894573"
 }
