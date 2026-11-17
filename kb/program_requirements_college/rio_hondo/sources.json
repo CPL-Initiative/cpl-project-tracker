@@ -3566,20 +3566,21 @@
    "PHY213"
   ],
   "source": {
-   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24155",
-   "title": "PHYSICS 2.0 - Associate Degree for Transfer",
-   "h1": "PHYSICS 2.0 - Associate Degree for Transfer",
+   "url": "https://riohondo.curriqunet.com/Catalog/archive/13/iq/14979/16113/16233",
+   "title": "PHYSICS - Associate Degree for Transfer",
+   "h1": "PHYSICS - Associate Degree for Transfer",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "adt",
-    "section_line": "in addition to the courses listed below, the following requirements must be met for completion of the as-t degree in physics 2.0:",
+    "section_line": "in addition to the courses listed below, the following requirements must be met for completion of the as-t degree in physics:",
     "section_fit": 0.091
    }
   },
   "listed": 7,
-  "text_chars": 9639
+  "text_chars": 6658,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "32316",
