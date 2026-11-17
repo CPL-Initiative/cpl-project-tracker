@@ -3162,20 +3162,21 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
-   "title": "AS-T Degree in Physics 2.0",
-   "h1": "AS-T Degree in Physics 2.0",
+   "url": "https://butte.curriqunet.com/Catalog/archive/12/iq/17305/20047",
+   "title": "Physics (AS-T Degree)",
+   "h1": "Physics (AS-T Degree)",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "adt",
-    "section_line": "as-t degree in physics 2.0",
+    "section_line": "physics (as-t degree)",
     "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2927
+  "text_chars": 2943,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "31951",
@@ -3254,7 +3255,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "CSCI20",
    "MATH32",
@@ -3263,23 +3264,26 @@
    "MATHC2210",
    "MATHC2210E",
    "MATHC2220",
-   "PHYS41"
+   "PHYS41",
+   "STATC1000",
+   "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
-   "title": "AS-T Degree in Mathematics 2.0",
-   "h1": "AS-T Degree in Mathematics 2.0",
+   "url": "https://butte.curriqunet.com/Catalog/archive/12/iq/17305/20057",
+   "title": "Mathematics (AS-T Degree)",
+   "h1": "Mathematics (AS-T Degree)",
    "text_from": "innerText",
    "label": {
     "award": 1,
     "title": 1.0,
     "section": "adt",
-    "section_line": "as-t degree in mathematics 2.0",
+    "section_line": "mathematics (as-t degree)",
     "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3357
+  "text_chars": 4970,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "31954",

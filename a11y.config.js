@@ -3009,7 +3009,7 @@ module.exports = {
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,
      Sheet 131 card 2, 2026-10-26), one college per ?college=, linked from My
-     College and the CPL Pathways college picker ("View CPL Visual"). Measured
+     College and the CPL Pathways college picker ("Create My College CPL Plan"). Measured
      here with no college chosen: the picker, the status line and the empty
      state, which is what the page paints before its ~45 MB of data arrive. */
   "cpl-opportunity": {

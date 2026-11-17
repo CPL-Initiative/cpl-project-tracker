@@ -44,34 +44,23 @@ ENVIRONMENT = "live-counts"
 KEY_READ = re.compile(r"""secrets\s*(?:\.\s*SUPABASE_SERVICE_KEY\b|\[\s*['"]SUPABASE_SERVICE_KEY['"]\s*\])""")
 
 # The planned group of every job that still reads the repository copy, and why it has not moved.
-#   "2"              runs only on main by its triggers and its last 30 runs (S653b survey, 2026-11-14); the next group.
+# Group 1 moved in #3334 (S653b) and group 2 in S668 (14 jobs, every run on main by its triggers and its last 30
+# runs); a job that moves leaves this list, and its group leaves GROUPS once the list holds none of it.
 #   "daily"          daily-dashboard.yml: its own PR after group 1 has run on a real schedule.
 #   "branch"         runs on a branch by design or by its recent history; moves only after it dispatches on main with
 #                    an input naming the data branch, so the workflow's code is always main's.
 #   "other-session"  a file another session is the one writer of today (S653); it also runs on branches.
 PENDING = {
     ("cer-decision-apply.yml", "apply"): ("branch", "one of its last 30 runs was dispatched on a claude/ branch"),
-    ("chatbox-ghost-delete.yml", "run"): ("2", "dispatch-only apply; every run on main"),
     ("coci-offerings-sync.yml", "sync"): ("branch", "recent runs on claude/ and dependabot branches"),
     ("college-contacts-harvest.yml", "read"): ("branch", "dispatched on claude/ branches by the contacts harvest"),
     ("college-contacts-harvest.yml", "apply"): ("branch", "dispatched on claude/ branches by the contacts harvest"),
     ("course-outcomes-load.yml", "load"): ("branch", "push to claude/** fires it; the other session's step 11 does"),
     ("course-outline-census.yml", "census"): ("branch", "push to claude/** fires it"),
-    ("course-title-cleanup-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
     ("cpl-landing-pages.yml", "sync"): ("branch", "push to claude/** fires it; recent runs on claude/ branches"),
     ("cpl-news.yml", "harvest"): ("branch", "push to claude/** fires it, though its last 30 runs were on main"),
-    ("cred-rename-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
-    ("credential-catalog-sync.yml", "sync"): (
-        "2", "every run on main, but its checkout comment invites a dispatch on a branch to test a change"),
-    ("credential-family-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
     ("daily-dashboard.yml", "update-dashboard"): ("daily", "the daily run; its own PR after group 1 runs on schedule"),
-    ("docket-process.yml", "process"): (
-        "2", "nightly and the docket-process Edge Function dispatch on main; a writer, after group 1 is proved"),
-    ("esl-sheet-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
-    ("funding-config-edit-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
-    ("overmerge-apply.yml", "apply"): ("2", "dispatch-only apply; no recorded run"),
     ("phase-1e-apply.yml", "apply"): ("branch", "one of its last 30 runs was on claude/phase-1e-apply (a push, May)"),
-    ("phase-1e-sync.yml", "sync-and-dryrun"): ("2", "dispatch-only; every run on main"),
     ("program-requirements-college.yml", "read"): ("other-session", "the harvest's file today; runs on claude/ branches"),
     ("program-requirements-college.yml", "load"): ("other-session", "the harvest's file today; runs on claude/ branches"),
     ("program-requirements-college.yml", "display"): (
@@ -81,13 +70,9 @@ PENDING = {
     ("program-requirements-extract.yml", "extract"): ("other-session", "the harvest's file today; push to claude/**"),
     ("program-requirements-wave.yml", "read"): ("other-session", "the harvest's file today; dispatched on claude/ branches"),
     ("program-source-census.yml", "census"): ("branch", "push to claude/** fires it; recent runs on claude/ branches"),
-    ("projects-seed-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
     ("second-reader.yml", "read"): ("other-session", "the harvest's second reader, the other session's file today"),
-    ("skyview-desc-shards.yml", "publish"): ("2", "dispatch-only; every run on main"),
-    ("supabase-rekey.yml", "rekey"): ("2", "dispatch-only; every run on main"),
-    ("workplan-goals-seed-apply.yml", "apply"): ("2", "dispatch-only apply; every run on main"),
 }
-GROUPS = {"2", "daily", "branch", "other-session"}
+GROUPS = {"daily", "branch", "other-session"}
 
 
 def triggers(doc):
@@ -224,7 +209,7 @@ def self_test():
     f, _, _ = census({"x.yml": FIXTURE_KEYED}, {})
     if not (len(f) == 1 and "without `environment: live-counts`" in f[0]):
         problems.append("an unlisted key reader was not found: %r" % f)
-    f, _, seen = census({"x.yml": FIXTURE_KEYED}, {("x.yml", "a"): ("2", "a reason")})
+    f, _, seen = census({"x.yml": FIXTURE_KEYED}, {("x.yml", "a"): ("branch", "a reason")})
     if f or seen != {("x.yml", "a")}:
         problems.append("a listed key reader did not pass: %r" % f)
     f, _, _ = census({"x.yml": FIXTURE_MOVED_ON_PR}, {})
@@ -233,7 +218,7 @@ def self_test():
     f, moved, _ = census({"x.yml": FIXTURE_MOVED_OK}, {})
     if f or sorted(moved) != [("x.yml", "a"), ("x.yml", "b")]:
         problems.append("a workflow-level key read in two environment jobs did not pass: %r %r" % (f, moved))
-    f, _, _ = census({"x.yml": FIXTURE_MOVED_OK}, {("x.yml", "a"): ("2", "a reason")})
+    f, _, _ = census({"x.yml": FIXTURE_MOVED_OK}, {("x.yml", "a"): ("branch", "a reason")})
     if not (len(f) == 1 and "still on PENDING" in f[0]):
         problems.append("a moved job left on PENDING was not found: %r" % f)
     f, moved, _ = census({"x.yml": FIXTURE_MOVED_TEMPLATE % "{workflow_run: {workflows: [Daily], types: [completed]}}"},
@@ -245,7 +230,7 @@ def self_test():
         f, _, _ = census({"x.yml": FIXTURE_MOVED_TEMPLATE % on}, {})
         if not (len(f) == 1 and f[0].endswith("can run off main: " + want)):
             problems.append("an environment job on %s was not flagged: %r" % (on, f))
-    f, _, _ = census({"x.yml": FIXTURE_COMMENT_ONLY}, {("x.yml", "a"): ("2", "a reason")})
+    f, _, _ = census({"x.yml": FIXTURE_COMMENT_ONLY}, {("x.yml", "a"): ("branch", "a reason")})
     if not (len(f) == 1 and "reads no service key" in f[0]):
         problems.append("a stale PENDING entry (the key named only in a comment) was not found: %r" % f)
     f, _, _ = census({"x.yml": FIXTURE_KEYED}, {("x.yml", "a"): ("someday", "")})

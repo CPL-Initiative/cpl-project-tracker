@@ -128,6 +128,7 @@ publish SKILL-cpl-dashboard-pipeline-UPDATED.md
 publish a11y.config.js
 publish activity_summaries.js
 publish admin.js
+publish adopt_panel.js
 publish annual_report.js
 publish assoc_editor.js
 publish budget-support

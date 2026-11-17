@@ -824,6 +824,18 @@ def map_status(college: str, reg: dict) -> dict:
                      % (college, reg.get("census_run_id")))
 
 
+def no_state_list(score) -> bool:
+    """A record filed for a program the state lists no courses for (S668's #3414, behind NCL_EXTRACT): its
+    score's coverage basis is "no_state_list". The display build leaves every such record out, so none reaches
+    cpl_pathways_roep_data.js or program_requirement_records.display."""
+    return (((score or {}).get("coverage") or {}).get("basis")) == "no_state_list"
+
+
+def displayed(work: list) -> list:
+    """The records the build displays: every filed one but a no_state_list record."""
+    return [w for w in work if not no_state_list(w[3].get("score"))]
+
+
 # ── assemble ─────────────────────────────────────────────────────────────────────
 def build() -> dict:
     map_read = json.load(open(MAP_READ))
@@ -859,7 +871,7 @@ def build() -> dict:
                       "source_url": filed.get("source_url"), "checked": None, "record": filed["record"]}))
 
     programs = []
-    for key, folder, path, filed, src, row in work:
+    for key, folder, path, filed, src, row in displayed(work):
         college, control = filed["college"], filed["control_number"]
         reg = registry["colleges"].get(college) or {}
         listed = {ck(c["code"]): c for c in src.get("closed_list") or []}
@@ -952,7 +964,7 @@ def build() -> dict:
                         if adopt:
                             peer_set = sorted({c for a in adopt for c in a["colleges"]})
                             entry["adopt"] = {"credentials_n": len(adopt), "colleges_n": len(peer_set),
-                                              "credentials": adopt[:4]}
+                                              "credentials": adopt}
                     # for consideration
                     cids = {re.sub(r"\s+", " ", v).strip().upper() for v in
                             (lc.get("cid"), (ref or {}).get("cid")) if v}
