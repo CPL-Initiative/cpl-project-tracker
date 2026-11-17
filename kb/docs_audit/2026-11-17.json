@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1515,
-    "bytes": 16086366,
-    "over_budget": 3,
+    "bytes": 16088542,
+    "over_budget": 4,
     "handoff_max": 672,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2851326,
-        "over": 1
+        "bytes": 2853291,
+        "over": 2
       },
       "kb_note": {
         "files": 590,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 534705,
+        "bytes": 534916,
         "over": 0
       },
       "handoff": {
@@ -56,14 +56,15 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 3,
+      "oversized_doc": 4,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 203
+      "vault_heavy_path": 203,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 28186,
-      "bytes": 5039564412,
-      "heavy_bytes": 3523238921,
+      "files": 28190,
+      "bytes": 5039815954,
+      "heavy_bytes": 3523198965,
       "heavy_share": 0.699,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -314,6 +315,19 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
+        "bytes": 121334,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 1334,
+        "ratio": 1.01
+      },
+      "message": "121,334 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/program_requirements_harvest_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
         "bytes": 180666,
         "limit": 150000,
         "lane": "other",
@@ -328,10 +342,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 152762701,
+        "bytes": 152717885,
         "kind": "dir"
       },
-      "message": "directory totals 152,762,701 B inside the vault"
+      "message": "directory totals 152,717,885 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -418,10 +432,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13515065,
+        "bytes": 13519925,
         "kind": "dir"
       },
-      "message": "directory totals 13,515,065 B inside the vault"
+      "message": "directory totals 13,519,925 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -2352,6 +2366,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_672_handoff.md",
+      "detail": {
+        "commits_since": 10,
+        "budget": 6,
+        "handoff": "session_672_handoff.md"
+      },
+      "message": "10 commit(s) have landed since `docs/session_672_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

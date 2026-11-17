@@ -1,684 +1,688 @@
 {
-  "schema": 1,
-  "project": "program-requirements",
-  "written_at": "2026-11-17T07:25:00Z",
-  "session": 671,
-  "moniker": "SkyKinglet",
-  "run": "the CPL Queue routine",
-  "decider": "Sam",
-  "handoff": "docs/session_672_handoff.md",
-  "next_step": {
-    "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, the RCCD pilot's Riverside City rows wait on COBIx's spot-check before #3438 merges, and the repeated-course-row fix for the music performance certificates waits on a second reader."
+ "schema": 1,
+ "project": "program-requirements",
+ "written_at": "2026-11-17T09:07:48Z",
+ "session": 672,
+ "moniker": "SkyWren",
+ "run": "the CPL Queue routine",
+ "decider": "Sam",
+ "handoff": "docs/session_673_handoff.md",
+ "next_step": {
+  "title": "Golden West's objectives reread",
+  "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, Norco's Music Industry Studies: Performance needs its three options read as one choice of 8 units, the last cause behind the music certificates that print a course once per semester."
+ },
+ "calls": [
+  {
+   "title": "Monterey Peninsula is parked: what would turn it back on",
+   "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing (6 of 197 here). Monterey Peninsula qualified: S584 moved none and S590 moved one, Global Studies AA-T 37243, on the catalog's words for transfer degrees. It stands at 184 passing, with the reread posted. Three of the records still failing need a change to the reader, and the session has written each one up: American Sign Language 39266 prints a pair of alternatives joined by an ampersand; Hospitality 41831 prints 'Any List A course not already selected', which the reader drops; Nursing 03633 prints Humanities and Ethnic Studies lines the reader does not keep. A fourth, Anthropology 32033, stays as printed, because the catalog's own total counts List C at 4 units. The queue turns the college back on when the reader learns those three shapes, when its 2027-28 catalog loads, or when you say so. If you want it read on now, as you asked for Glendale on Nov 2, write that in the note and press Mark done; the next scheduled session takes it first.",
+   "if_no_reply": "Monterey Peninsula stays at 184 of 197, and the queue moves to the college with the next largest gap.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program records"
+   },
+   "part": "reading",
+   "todo_id": "monterey-peninsula-parked-2026-11-06",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-06",
+    "words": "marked done on the Commons: \"keep going to get everything you can and we'll handle the outliers afterward\". Every Monterey Peninsula program is found, so S594 read it as his Nov 2 ruling for Glendale: the 13 failing records wait for the outlier pass after the harvest, and the sweep keeps to colleges with missing records."
+   }
   },
-  "calls": [
-    {
-      "title": "Monterey Peninsula is parked: what would turn it back on",
-      "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing (6 of 197 here). Monterey Peninsula qualified: S584 moved none and S590 moved one, Global Studies AA-T 37243, on the catalog's words for transfer degrees. It stands at 184 passing, with the reread posted. Three of the records still failing need a change to the reader, and the session has written each one up: American Sign Language 39266 prints a pair of alternatives joined by an ampersand; Hospitality 41831 prints 'Any List A course not already selected', which the reader drops; Nursing 03633 prints Humanities and Ethnic Studies lines the reader does not keep. A fourth, Anthropology 32033, stays as printed, because the catalog's own total counts List C at 4 units. The queue turns the college back on when the reader learns those three shapes, when its 2027-28 catalog loads, or when you say so. If you want it read on now, as you asked for Glendale on Nov 2, write that in the note and press Mark done; the next scheduled session takes it first.",
-      "if_no_reply": "Monterey Peninsula stays at 184 of 197, and the queue moves to the college with the next largest gap.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program records"
-      },
-      "part": "reading",
-      "todo_id": "monterey-peninsula-parked-2026-11-06",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-06",
-        "words": "marked done on the Commons: \"keep going to get everything you can and we'll handle the outliers afterward\". Every Monterey Peninsula program is found, so S594 read it as his Nov 2 ruling for Glendale: the 13 failing records wait for the outlier pass after the harvest, and the sweep keeps to colleges with missing records."
-      }
-    },
-    {
-      "title": "The printed floor is in the scorer: the live update",
-      "text": "You ruled each list's printed units its floor (Sheet 144). The scorer reads them that way and the filed records are rescored, but the repo's Supabase guard stopped the session's update of the live rows. Sheet 146 card 2 holds the guarded statement and asks whether it goes through the migrate run or you paste it.",
-      "if_no_reply": "The live rows keep the reading you replaced, except where a college's own reread has moved them (Los Angeles Valley, S530).",
-      "link": "https://claude.ai/artifact/WqcNWsDC73wk5srufsTgt4",
-      "link_text": "Open Sheet 146",
-      "part": "reading",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-30",
-        "words": "pasted, on Open Asks Sheet 146 card 2: he ran the receipt's update (12, 27, 5 and 160 rows); all 206 read back."
-      }
-    },
-    {
-      "title": "Glendale is parked: what would turn it back on",
-      "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Glendale qualified: S526 and S527 each moved 5 of 226 (2.2%). It stands at 115 passing; 46 records sum to a different total than the catalog prints, and 65 still miss a course's units. Either of two things from you turns it back on. First, a structured export: ask Glendale's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in Glendale's curriculum office who can say which printed totals are wrong, and the queue drafts the questions for you to send. Glendale's 2026-2027 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
-      "if_no_reply": "Glendale stays at 115 of 226, and the queue moves to the college with the next largest gap.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program records"
-      },
-      "part": "reading",
-      "todo_id": "glendale-parked-2026-10-30",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-02",
-        "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with Glendale and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
-      }
-    },
-    {
-      "title": "Los Angeles Valley is parked: what would turn it back on",
-      "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Los Angeles Valley qualified: S533 moved 2 of 215 and S534 moved 4. It stands at 202 passing. Of the 13 left, 9 sum to a different total than the catalog prints and 4 lack a figure; several point a list at \"any course not used in List A\", and two STEM programs print 18-21 over lists that add to 15-21. Either of two things from you turns it back on. First, a structured export: ask Los Angeles Valley's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in its curriculum office who can say which printed totals are right, and the queue drafts the questions for you to send. Its 2027-2028 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
-      "if_no_reply": "Los Angeles Valley stays at 202 of 215, and the queue moves to Monterey Peninsula, the college with the next largest gap.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program records"
-      },
-      "part": "reading",
-      "todo_id": "lavc-parked-2026-10-31",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-02",
-        "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with LA Valley and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
-      }
-    },
-    {
-      "title": "Should the thirteen credential pairs count toward NC-1?",
-      "text": "NC-1's channel 3 counts an exhibit whose credential a CDCP course names. Thirteen pairs are proposed (Cabrillo 3, LA Trade-Tech 9, Saddleback 1); the builder counts none until a row reads confirmed.",
-      "if_no_reply": "Channel 3 counts nothing, and LA Trade-Tech reads 0 of its NC-1 target of 4.",
-      "link": "https://claude.ai/artifact/VfX9JnaA5j3ESubzHKYc3A",
-      "link_text": "Open Sheet 127",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-25",
-        "words": "Confirm the twelve, on Open Asks Sheet 127 card 1 (twelve): the twelve pairs count, and ServSafe stays proposed."
-      }
-    },
-    {
-      "title": "The second reader waits on a new xAI subscription",
-      "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
-      "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
-      "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-21",
-        "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
-      },
-      "link_text": "Open Sheet 98"
-    },
-    {
-      "title": "Ask Program Mapper's vendor to share the 63 community colleges' program maps",
-      "text": "Sam pasted the vendor's member list on 2026-10-21; 37 map hosts are now on the registry (#2330). Every mapper host the reader has reached answers 403, so the maps are known and unread. A request to the vendor is outward, so it waits on Sam.",
-      "if_no_reply": "The maps stay unread; the reader asks each recorded host once a run whether it has opened.",
-      "link": "https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG",
-      "link_text": "Open Sheet 112",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-22",
-        "words": "Later"
-      }
-    },
-    {
-      "title": "Remove the 25 live program records the newer reads no longer file, and Victor Valley's two department-list records?",
-      "text": "Open Asks Sheet 116 card 1 (first asked on Sheet 115, 2026-10-22): page-claimed rows with no filed record, filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Sierra's S454 re-read files records for 13 of its page-claimed programs. Recommended: remove the rest through supabase-migrate.yml with a receipt that carries every row's before-values.",
-      "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
-      "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
-      "link_text": "Open Sheet 116",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-23",
-        "words": "Remove, on Open Asks Sheet 115 card 1 (12:23 UTC); the removal runs with a before-values receipt."
-      }
-    },
-    {
-      "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
-      "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks. Carried to Open Asks Sheet 117 card 2 (S456).",
-      "if_no_reply": "The 23 stays; Hartnell's local degrees add up against their 60 with it.",
-      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
-      "link_text": "Open Sheet 117",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-23",
-        "words": "keep (Open Asks Sheet 118 card 2, his own call)"
-      }
-    },
-    {
-      "title": "A standing rule for the older-build program records each wave leaves behind",
-      "text": "Six rows today: Hartnell's Psychology A.A. 18353, Spanish A.A. 19518 and Agriculture Production A.S. 12331 (left out of build 14291ca32973), Long Beach City 43802 and 46290, Palo Verde 04436. Open Asks Sheet 119 card 1 (carried from 117 and 118). Standing means each wave removes them with a before-values receipt; on no reply they stay and come back as a card.",
-      "no_reply": "The rows stay live and show on CPL Pathways and in Sierra with marks from the build they were last in; each wave's leftovers come back as a card.",
-      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
-      "link_text": "Open Sheet 117",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-23",
-        "words": "standing (Open Asks Sheet 118 card 1, his own call)"
-      }
-    },
-    {
-      "title": "Keep Cal-GETC at 34 units on a Hartnell local degree whose own tab names the pattern?",
-      "text": "Three of Hartnell's local degrees name Cal-GETC without units. Since the reader reads a Coursedog tab by its code's award (S456), a second reconcile step fills the statewide 34 for an associate degree whose own tab prints the pattern; reconcile 39966331452 changed 08871, 17924 and 33851. Proceeded on the recommendation; Sheet 117 card 3; reply to reverse.",
-      "no_reply": "The figure stands; git revert of the step and the reread receipt's before-values undo it.",
-      "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
-      "link_text": "Open Sheet 117",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-23",
-        "words": "keep (Open Asks Sheet 118 card 3, his own call)"
-      }
-    },
-    {
-      "title": "Count a printed total that the requirements' low end meets as adding up (the scorer's meets reading)?",
-      "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 120 card 1. On no reply the live rows keep unequal and #2387 stays a draft.",
-      "link": "https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk",
-      "asked": "2026-10-23",
-      "by": "S457 SkyColumbine",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-23",
-        "words": "narrow"
-      }
-    },
-    {
-      "title": "Do Hartnell's own double-count words read as the overlap for its local degrees?",
-      "text": "S486 read Hartnell's words, students can double-count required courses and courses for General Education, as the overlap your Sheet 82 ruling allowed for transfer degrees; three local degrees pass.",
-      "if_no_reply": "The reading stands, made on the recommendation.",
-      "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
-      "link_text": "Open Sheet 131",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-26",
-        "words": "Keep, on Open Asks Sheet 131 card 3: the reading stands."
-      }
-    },
-    {
-      "title": "Does one total over lists that each carry a figure read as one choice with floors?",
-      "text": "S489 read Hartnell's Liberal Arts: Pathway to Health Sciences, 18 units from Lists A, B and C, as one choice of 18 with each list's figure as a floor; the degree passes.",
-      "if_no_reply": "The reading stands, made on the recommendation.",
-      "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
-      "link_text": "Open Sheet 131",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-26",
-        "words": "Keep, on Open Asks Sheet 131 card 4: the reading stands."
-      }
-    },
-    {
-      "title": "Is Monterey Peninsula's electives if needed for a total of 60 a floor?",
-      "text": "Thirteen local degrees add their major and general education past 60 when a student takes Cal-GETC (Theatre Arts, 51 to 61) and failed. The page says electives, if needed, for a total of 60 degree-applicable units, which S535 read as a minimum of 60, as Title 5 section 55063 sets it; Fable advised the same. Proceeded on the recommendation (S535, Oct 31); reply to reverse.",
-      "if_no_reply": "The reading stands, made on the recommendation.",
-      "records": [
-        {
-          "college": "Monterey Peninsula College",
-          "control_number": "03622",
-          "label": "Theatre Arts A.A."
-        },
-        {
-          "college": "Monterey Peninsula College",
-          "control_number": "41669",
-          "label": "Translation and Interpretation A.A."
-        }
-      ],
-      "part": "reading",
-      "link": "https://claude.ai/artifact/VM2qRP9v2XLG3ki1j6zKLg",
-      "link_text": "Open Sheet 159",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-02",
-        "words": "keep, on Open Asks Sheet 159 card 1 (22:51Z, his own call): the 60 stays a floor."
-      }
-    },
-    {
-      "title": "May Las Positas's local GE units be the sum its GE pattern prints area by area?",
-      "text": "The 2026-27 LPC-GE page prints each area's units and no total; summed, an A.A. needs 28 and an A.S. 22. The 47 local degrees fail until a figure is set.",
-      "if_no_reply": "The local degrees stay failing as read.",
-      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-10",
-        "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
-      }
-    },
-    {
-      "title": "Does your October 10 go for a display after a load still stand?",
-      "text": "On Oct 10 you said a display build that follows a load needs no further go. COBIx could not confirm it from your records. Santiago Canyon (192 records) and North Orange Continuing Education (78) were loaded tonight, and their display waits on your answer.",
-      "if_no_reply": "The two colleges stay loaded and undisplayed; CPL Pathways and Sierra do not show them yet.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program Requirements"
-      },
-      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-12",
-        "words": "Relayed by COBIx: the first live run of the new display apply goes out on Sam's explicit go. After that first run, his October 10 standing go covers a display apply that follows a load that passed its checks."
-      }
-    },
-    {
-      "title": "Should a program checked against its college's own course list count in the headline?",
-      "text": "1,604 active programs have no closed course list in the state's Program Course File. The plan reads them and checks each against the college's own active course list, as a separate grade outside the headline.",
-      "if_no_reply": "The grade is shown apart and the headline counts none of them.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program Requirements"
-      },
-      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-13",
-        "words": "Sheet 191 card 2, reply count: \"count them but add a chip and note about the discrepancy. it is most likely a coding anomaly that will later be untangled and resolved\""
-      }
-    },
-    {
-      "title": "Use the statewide Cal-GETC figure of 34 units?",
-      "text": "So far each college's Cal-GETC figure comes from the areas its own catalog prints. A statewide figure of 34 units would let 93 more programs pass the machine checks.",
-      "if_no_reply": "Each college keeps its own printed figure, and the 93 stay failing.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program Requirements"
-      },
-      "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
-      "link_text": "Open Sheet 187",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-13",
-        "words": "Sheet 187 card 5, his reply at 13:19Z: use the statewide 34 where a catalog names Cal-GETC and prints no figure."
-      }
-    },
-    {
-      "title": "Apply the carry-basis migration whose push the permission check refused?",
-      "text": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
-      "if_no_reply": "The function stays as it is; a confirmation on a rescored record carries by the old rule.",
-      "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
-      "link_text": "Open Sheet 188",
-      "part": "reading",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-13",
-        "words": "Sheet 188 card 6, his reply at 13:20Z: apply it. Applied 13:27Z and read back 17:07Z."
-      }
-    },
-    {
-      "title": "Deploy the extraction function's new error answer?",
-      "text": "While the database was unreachable on Nov 13, every call to the extraction function answered 401, which reads as a bad key, and a paid read at Glendale spent about $9 with nothing extracted. COBIx suggests the function answer 503 when the database fails and 401 only for a real refusal. It changes a deployed function, so it waits for your word.",
-      "if_no_reply": "The function keeps answering 401 on an outage; a session that sees 401 on every call checks the database before it spends.",
-      "view": {
-        "href": "#program-requirements",
-        "text": "Open Program Requirements"
-      },
-      "part": "reading",
-      "link": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
-      "link_text": "Open Sheet 190",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-13",
-        "words": "Sheet 190 card 6, his go at 13:21Z. Merged in pull request 3227 and deployed in S648."
-      }
-    },
-    {
-      "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
-      "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
-      "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
-      "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
-      "link_text": "Open Sheet 194",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-14",
-        "words": "Close it, keep Sheet 82 (Open Asks Sheet 195, Complete pressed 01:18Z). Pull request 3250 is closed and the 76 overlap records stay as filed."
-      }
-    },
-    {
-      "title": "Count only the programs the catalog lists in the completeness base?",
-      "text": "Open Asks Sheet 197 card 4. Your catalog-first rule (relayed by COBIx on issue 3299) flags a program on COCI but not listed in the catalog and moves on. Slice B would make the completeness base the catalog-listed Active programs, with a chip on each COCI-only row, which moves a public figure. It waits on slice A's results and your go, under four guards: each not-listed records its basis; the headline shows both bases side by side; a chipped program with awards in the last three years says so on its chip; closed-list programs whose page was claimed or not found stay in Still to pass until the second look has run for their college.",
-      "if_no_reply": "The base stays every Active program; the lookup only records what it finds.",
-      "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
-      "link_text": "Open Sheet 197",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-14",
-        "words": "go, with the four guards (Open Asks Sheet 197 card 4, 14:38Z). Slice B is built after slice A merges and its second look has run per college, with both bases side by side on the headline."
-      }
-    }
-  ],
-  "notes": {
-    "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
+  {
+   "title": "The printed floor is in the scorer: the live update",
+   "text": "You ruled each list's printed units its floor (Sheet 144). The scorer reads them that way and the filed records are rescored, but the repo's Supabase guard stopped the session's update of the live rows. Sheet 146 card 2 holds the guarded statement and asks whether it goes through the migrate run or you paste it.",
+   "if_no_reply": "The live rows keep the reading you replaced, except where a college's own reread has moved them (Los Angeles Valley, S530).",
+   "link": "https://claude.ai/artifact/WqcNWsDC73wk5srufsTgt4",
+   "link_text": "Open Sheet 146",
+   "part": "reading",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-30",
+    "words": "pasted, on Open Asks Sheet 146 card 2: he ran the receipt's update (12, 27, 5 and 160 rows); all 206 read back."
+   }
   },
-  "changes": [
-    {
-      "at": "2026-11-17T06:46:00Z",
-      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
-    },
-    {
-      "at": "2026-11-17T06:52:00Z",
-      "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
-    },
-    {
-      "at": "2026-11-17T03:07:00Z",
-      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
-    },
-    {
-      "at": "2026-11-17T03:19:00Z",
-      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
-    },
-    {
-      "at": "2026-11-17T03:28:00Z",
-      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
-    },
-    {
-      "at": "2026-11-17T03:36:00Z",
-      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
-    },
-    {
-      "at": "2026-11-16T23:45:00Z",
-      "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
-    },
-    {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
-    },
-    {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
-    },
-    {
-      "at": "2026-11-16T15:20:00Z",
-      "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
-    }
-  ],
-  "headline": [
-    {
-      "day": "2026-10-08",
-      "active": 20282,
-      "checked": 20,
-      "colleges": 5
-    },
-    {
-      "day": "2026-10-09",
-      "active": 20282,
-      "checked": 20,
-      "colleges": 5
-    },
-    {
-      "day": "2026-10-10",
-      "active": 20282,
-      "checked": 27,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-11",
-      "active": 20282,
-      "checked": 29,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-12",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-13",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-14",
-      "active": 20282,
-      "checked": 31,
-      "colleges": 6
-    },
-    {
-      "day": "2026-10-15",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-16",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-17",
-      "active": 20282,
-      "checked": 32,
-      "colleges": 7
-    },
-    {
-      "day": "2026-10-18",
-      "active": 20282,
-      "complete": 11621,
-      "colleges": 113
-    },
-    {
-      "day": "2026-10-19",
-      "active": 20282,
-      "complete": 11687,
-      "colleges": 113
-    },
-    {
-      "day": "2026-10-20",
-      "active": 20282,
-      "complete": 11687,
-      "colleges": 113
-    },
-    {
-      "day": "2026-10-21",
-      "active": 20282,
-      "complete": 12463,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-22",
-      "active": 20282,
-      "complete": 12892,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-23",
-      "active": 20282,
-      "complete": 13173,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-24",
-      "active": 20282,
-      "complete": 13173,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-25",
-      "active": 20282,
-      "complete": 13173,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-26",
-      "active": 20282,
-      "complete": 13184,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-27",
-      "active": 20282,
-      "complete": 13191,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-28",
-      "active": 20282,
-      "complete": 13201,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-29",
-      "active": 20282,
-      "complete": 13201,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-30",
-      "active": 20282,
-      "complete": 13454,
-      "colleges": 114
-    },
-    {
-      "day": "2026-10-31",
-      "active": 20282,
-      "complete": 13535,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-01",
-      "active": 20282,
-      "complete": 13542,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-02",
-      "active": 20282,
-      "complete": 13542,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-03",
-      "active": 20282,
-      "complete": 13542,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-04",
-      "active": 20282,
-      "complete": 13542,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-05",
-      "active": 20282,
-      "complete": 13542,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-06",
-      "active": 20282,
-      "complete": 13543,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-07",
-      "active": 20282,
-      "complete": 13584,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-08",
-      "active": 20282,
-      "complete": 13643,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-09",
-      "active": 20282,
-      "complete": 13643,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-10",
-      "active": 20282,
-      "complete": 13696,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-11",
-      "active": 20282,
-      "complete": 13777,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-12",
-      "active": 20282,
-      "complete": 13963,
-      "colleges": 114
-    },
-    {
-      "day": "2026-11-13",
-      "active": 20282,
-      "complete": 14525,
-      "colleges": 118
-    },
-    {
-      "day": "2026-11-14",
-      "active": 20282,
-      "complete": 14597,
-      "colleges": 118
-    },
-    {
-      "day": "2026-11-15",
-      "active": 20282,
-      "complete": 14617,
-      "colleges": 118
-    },
-    {
-      "day": "2026-11-16",
-      "active": 20282,
-      "complete": 14617,
-      "colleges": 118
-    },
-    {
-      "day": "2026-11-17",
-      "active": 20282,
-      "complete": 14618,
-      "colleges": 118
-    }
-  ],
-  "next_run": {
-    "name": "CPL Queue",
-    "every_hours": 1,
-    "at": "2026-11-17T06:12:00Z"
+  {
+   "title": "Glendale is parked: what would turn it back on",
+   "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Glendale qualified: S526 and S527 each moved 5 of 226 (2.2%). It stands at 115 passing; 46 records sum to a different total than the catalog prints, and 65 still miss a course's units. Either of two things from you turns it back on. First, a structured export: ask Glendale's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in Glendale's curriculum office who can say which printed totals are wrong, and the queue drafts the questions for you to send. Glendale's 2026-2027 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
+   "if_no_reply": "Glendale stays at 115 of 226, and the queue moves to the college with the next largest gap.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program records"
+   },
+   "part": "reading",
+   "todo_id": "glendale-parked-2026-10-30",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-02",
+    "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with Glendale and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
+   }
   },
-  "harvest": {
-    "day": "2026-11-17",
-    "gaps": 3208,
-    "parts": {
-      "links": {
-        "catalog": [
-          118,
-          118
-        ],
-        "cms": [
-          118,
-          118
-        ],
-        "ppm": [
-          112,
-          118
-        ]
-      },
-      "roep": [
-        19957,
-        20282
-      ],
-      "coci": [
-        16749,
-        20282
-      ],
-      "outcomes": {
-        "slo": [
-          13293,
-          88736
-        ],
-        "plo": [
-          16749,
-          20282
-        ]
-      },
-      "careers": [
-        15714,
-        20282
-      ]
+  {
+   "title": "Los Angeles Valley is parked: what would turn it back on",
+   "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Los Angeles Valley qualified: S533 moved 2 of 215 and S534 moved 4. It stands at 202 passing. Of the 13 left, 9 sum to a different total than the catalog prints and 4 lack a figure; several point a list at \"any course not used in List A\", and two STEM programs print 18-21 over lists that add to 15-21. Either of two things from you turns it back on. First, a structured export: ask Los Angeles Valley's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in its curriculum office who can say which printed totals are right, and the queue drafts the questions for you to send. Its 2027-2028 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
+   "if_no_reply": "Los Angeles Valley stays at 202 of 215, and the queue moves to Monterey Peninsula, the college with the next largest gap.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program records"
+   },
+   "part": "reading",
+   "todo_id": "lavc-parked-2026-10-31",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-02",
+    "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with LA Valley and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
+   }
+  },
+  {
+   "title": "Should the thirteen credential pairs count toward NC-1?",
+   "text": "NC-1's channel 3 counts an exhibit whose credential a CDCP course names. Thirteen pairs are proposed (Cabrillo 3, LA Trade-Tech 9, Saddleback 1); the builder counts none until a row reads confirmed.",
+   "if_no_reply": "Channel 3 counts nothing, and LA Trade-Tech reads 0 of its NC-1 target of 4.",
+   "link": "https://claude.ai/artifact/VfX9JnaA5j3ESubzHKYc3A",
+   "link_text": "Open Sheet 127",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-25",
+    "words": "Confirm the twelve, on Open Asks Sheet 127 card 1 (twelve): the twelve pairs count, and ServSafe stays proposed."
+   }
+  },
+  {
+   "title": "The second reader waits on a new xAI subscription",
+   "text": "Sam, 2026-10-20 about 16:30 UTC: the API is paid for separately from the Grok subscription, and the account is moving to the RCCD district credit card. When the key exists: Sam sets XAI_API_KEY and XAI_MODEL as Edge Function secrets on the Work Plan project, a session deploys program-requirements-extract with cpl-chat-deploy.yml, then runs second-reader.yml for Canada College.",
+   "no_reply": "The second reader stays built and unrun; the records that fail a machine check are read by one model and Jev's sittings, whose verdicts files carry each college's next fix.",
+   "link": "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-21",
+    "words": "Later, on Open Asks Sheet 98 card 2: \"I need to get a new subscription first which will take a few days, so keep this on ice for now.\""
+   },
+   "link_text": "Open Sheet 98"
+  },
+  {
+   "title": "Ask Program Mapper's vendor to share the 63 community colleges' program maps",
+   "text": "Sam pasted the vendor's member list on 2026-10-21; 37 map hosts are now on the registry (#2330). Every mapper host the reader has reached answers 403, so the maps are known and unread. A request to the vendor is outward, so it waits on Sam.",
+   "if_no_reply": "The maps stay unread; the reader asks each recorded host once a run whether it has opened.",
+   "link": "https://claude.ai/artifact/AKsM96ZjKRmrYPHGWiDffG",
+   "link_text": "Open Sheet 112",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-22",
+    "words": "Later"
+   }
+  },
+  {
+   "title": "Remove the 25 live program records the newer reads no longer file, and Victor Valley's two department-list records?",
+   "text": "Open Asks Sheet 116 card 1 (first asked on Sheet 115, 2026-10-22): page-claimed rows with no filed record, filed records that place none of their listed courses, and Victor Valley's two department-list records keep an older display build's marks. Sierra's S454 re-read files records for 13 of its page-claimed programs. Recommended: remove the rest through supabase-migrate.yml with a receipt that carries every row's before-values.",
+   "if_no_reply": "The 27 rows keep showing on CPL Pathways and in Sierra with marks from the build they were last in.",
+   "link": "https://claude.ai/artifact/4oL4YfC4b43iVjUq1bSS8J",
+   "link_text": "Open Sheet 116",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-23",
+    "words": "Remove, on Open Asks Sheet 115 card 1 (12:23 UTC); the removal runs with a before-values receipt."
+   }
+  },
+  {
+   "title": "Keep Hartnell's Local GE at 23 units, the sum of the seven areas its catalog prints?",
+   "text": "Open Asks Sheet 116 card 4, proceeded on the recommendation (S454): the catalog prints Local GE's seven areas (6, five of 3, and 2 units) and no total, so the reconcile step sets 23; 50 Hartnell records changed and 34 now pass the machine checks. Carried to Open Asks Sheet 117 card 2 (S456).",
+   "if_no_reply": "The 23 stays; Hartnell's local degrees add up against their 60 with it.",
+   "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
+   "link_text": "Open Sheet 117",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-23",
+    "words": "keep (Open Asks Sheet 118 card 2, his own call)"
+   }
+  },
+  {
+   "title": "A standing rule for the older-build program records each wave leaves behind",
+   "text": "Six rows today: Hartnell's Psychology A.A. 18353, Spanish A.A. 19518 and Agriculture Production A.S. 12331 (left out of build 14291ca32973), Long Beach City 43802 and 46290, Palo Verde 04436. Open Asks Sheet 119 card 1 (carried from 117 and 118). Standing means each wave removes them with a before-values receipt; on no reply they stay and come back as a card.",
+   "no_reply": "The rows stay live and show on CPL Pathways and in Sierra with marks from the build they were last in; each wave's leftovers come back as a card.",
+   "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
+   "link_text": "Open Sheet 117",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-23",
+    "words": "standing (Open Asks Sheet 118 card 1, his own call)"
+   }
+  },
+  {
+   "title": "Keep Cal-GETC at 34 units on a Hartnell local degree whose own tab names the pattern?",
+   "text": "Three of Hartnell's local degrees name Cal-GETC without units. Since the reader reads a Coursedog tab by its code's award (S456), a second reconcile step fills the statewide 34 for an associate degree whose own tab prints the pattern; reconcile 39966331452 changed 08871, 17924 and 33851. Proceeded on the recommendation; Sheet 117 card 3; reply to reverse.",
+   "no_reply": "The figure stands; git revert of the step and the reread receipt's before-values undo it.",
+   "link": "https://claude.ai/artifact/HBX4e6H3coWj86Cbc4ivUM",
+   "link_text": "Open Sheet 117",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-23",
+    "words": "keep (Open Asks Sheet 118 card 3, his own call)"
+   }
+  },
+  {
+   "title": "Count a printed total that the requirements' low end meets as adding up (the scorer's meets reading)?",
+   "text": "Built in #2387 and 267 filed records rescored (258 program totals, 9 degrees; 738 under the wide reading); the live apply of the receipt's guarded UPDATE was refused by the session's permission check, so it waits. Open Asks Sheet 120 card 1. On no reply the live rows keep unequal and #2387 stays a draft.",
+   "link": "https://claude.ai/artifact/NWy1GvYEEQgS8oKrYWHpTk",
+   "asked": "2026-10-23",
+   "by": "S457 SkyColumbine",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-23",
+    "words": "narrow"
+   }
+  },
+  {
+   "title": "Do Hartnell's own double-count words read as the overlap for its local degrees?",
+   "text": "S486 read Hartnell's words, students can double-count required courses and courses for General Education, as the overlap your Sheet 82 ruling allowed for transfer degrees; three local degrees pass.",
+   "if_no_reply": "The reading stands, made on the recommendation.",
+   "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
+   "link_text": "Open Sheet 131",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-26",
+    "words": "Keep, on Open Asks Sheet 131 card 3: the reading stands."
+   }
+  },
+  {
+   "title": "Does one total over lists that each carry a figure read as one choice with floors?",
+   "text": "S489 read Hartnell's Liberal Arts: Pathway to Health Sciences, 18 units from Lists A, B and C, as one choice of 18 with each list's figure as a floor; the degree passes.",
+   "if_no_reply": "The reading stands, made on the recommendation.",
+   "link": "https://claude.ai/artifact/6SM1HwKbvPWLt5534vhcyV",
+   "link_text": "Open Sheet 131",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-26",
+    "words": "Keep, on Open Asks Sheet 131 card 4: the reading stands."
+   }
+  },
+  {
+   "title": "Is Monterey Peninsula's electives if needed for a total of 60 a floor?",
+   "text": "Thirteen local degrees add their major and general education past 60 when a student takes Cal-GETC (Theatre Arts, 51 to 61) and failed. The page says electives, if needed, for a total of 60 degree-applicable units, which S535 read as a minimum of 60, as Title 5 section 55063 sets it; Fable advised the same. Proceeded on the recommendation (S535, Oct 31); reply to reverse.",
+   "if_no_reply": "The reading stands, made on the recommendation.",
+   "records": [
+    {
+     "college": "Monterey Peninsula College",
+     "control_number": "03622",
+     "label": "Theatre Arts A.A."
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "control_number": "41669",
+     "label": "Translation and Interpretation A.A."
     }
+   ],
+   "part": "reading",
+   "link": "https://claude.ai/artifact/VM2qRP9v2XLG3ki1j6zKLg",
+   "link_text": "Open Sheet 159",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-02",
+    "words": "keep, on Open Asks Sheet 159 card 1 (22:51Z, his own call): the 60 stays a floor."
+   }
+  },
+  {
+   "title": "May Las Positas's local GE units be the sum its GE pattern prints area by area?",
+   "text": "The 2026-27 LPC-GE page prints each area's units and no total; summed, an A.A. needs 28 and an A.S. 22. The 47 local degrees fail until a figure is set.",
+   "if_no_reply": "The local degrees stay failing as read.",
+   "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
+   "link_text": "Open Sheet 180",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-10",
+    "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
+   }
+  },
+  {
+   "title": "Does your October 10 go for a display after a load still stand?",
+   "text": "On Oct 10 you said a display build that follows a load needs no further go. COBIx could not confirm it from your records. Santiago Canyon (192 records) and North Orange Continuing Education (78) were loaded tonight, and their display waits on your answer.",
+   "if_no_reply": "The two colleges stay loaded and undisplayed; CPL Pathways and Sierra do not show them yet.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program Requirements"
+   },
+   "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "link_text": "Open Sheet 187",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-12",
+    "words": "Relayed by COBIx: the first live run of the new display apply goes out on Sam's explicit go. After that first run, his October 10 standing go covers a display apply that follows a load that passed its checks."
+   }
+  },
+  {
+   "title": "Should a program checked against its college's own course list count in the headline?",
+   "text": "1,604 active programs have no closed course list in the state's Program Course File. The plan reads them and checks each against the college's own active course list, as a separate grade outside the headline.",
+   "if_no_reply": "The grade is shown apart and the headline counts none of them.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program Requirements"
+   },
+   "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "link_text": "Open Sheet 187",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-13",
+    "words": "Sheet 191 card 2, reply count: \"count them but add a chip and note about the discrepancy. it is most likely a coding anomaly that will later be untangled and resolved\""
+   }
+  },
+  {
+   "title": "Use the statewide Cal-GETC figure of 34 units?",
+   "text": "So far each college's Cal-GETC figure comes from the areas its own catalog prints. A statewide figure of 34 units would let 93 more programs pass the machine checks.",
+   "if_no_reply": "Each college keeps its own printed figure, and the 93 stay failing.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program Requirements"
+   },
+   "link": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "link_text": "Open Sheet 187",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-13",
+    "words": "Sheet 187 card 5, his reply at 13:19Z: use the statewide 34 where a catalog names Cal-GETC and prints no figure."
+   }
+  },
+  {
+   "title": "Apply the carry-basis migration whose push the permission check refused?",
+   "text": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
+   "if_no_reply": "The function stays as it is; a confirmation on a rescored record carries by the old rule.",
+   "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
+   "link_text": "Open Sheet 188",
+   "part": "reading",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-13",
+    "words": "Sheet 188 card 6, his reply at 13:20Z: apply it. Applied 13:27Z and read back 17:07Z."
+   }
+  },
+  {
+   "title": "Deploy the extraction function's new error answer?",
+   "text": "While the database was unreachable on Nov 13, every call to the extraction function answered 401, which reads as a bad key, and a paid read at Glendale spent about $9 with nothing extracted. COBIx suggests the function answer 503 when the database fails and 401 only for a real refusal. It changes a deployed function, so it waits for your word.",
+   "if_no_reply": "The function keeps answering 401 on an outage; a session that sees 401 on every call checks the database before it spends.",
+   "view": {
+    "href": "#program-requirements",
+    "text": "Open Program Requirements"
+   },
+   "part": "reading",
+   "link": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
+   "link_text": "Open Sheet 190",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-13",
+    "words": "Sheet 190 card 6, his go at 13:21Z. Merged in pull request 3227 and deployed in S648."
+   }
+  },
+  {
+   "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
+   "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way. Carried to Sheet 195 as card 5.",
+   "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
+   "link": "https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq",
+   "link_text": "Open Sheet 194",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-14",
+    "words": "Close it, keep Sheet 82 (Open Asks Sheet 195, Complete pressed 01:18Z). Pull request 3250 is closed and the 76 overlap records stay as filed."
+   }
+  },
+  {
+   "title": "Count only the programs the catalog lists in the completeness base?",
+   "text": "Open Asks Sheet 197 card 4. Your catalog-first rule (relayed by COBIx on issue 3299) flags a program on COCI but not listed in the catalog and moves on. Slice B would make the completeness base the catalog-listed Active programs, with a chip on each COCI-only row, which moves a public figure. It waits on slice A's results and your go, under four guards: each not-listed records its basis; the headline shows both bases side by side; a chipped program with awards in the last three years says so on its chip; closed-list programs whose page was claimed or not found stay in Still to pass until the second look has run for their college.",
+   "if_no_reply": "The base stays every Active program; the lookup only records what it finds.",
+   "link": "https://claude.ai/artifact/2gYvXAKzrrZyqV24scFavd",
+   "link_text": "Open Sheet 197",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-14",
+    "words": "go, with the four guards (Open Asks Sheet 197 card 4, 14:38Z). Slice B is built after slice A merges and its second look has run per college, with both bases side by side on the headline."
+   }
   }
+ ],
+ "notes": {
+  "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
+ },
+ "changes": [
+  {
+   "at": "2026-11-17T09:03:00Z",
+   "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
+  },
+  {
+   "at": "2026-11-17T06:46:00Z",
+   "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
+  },
+  {
+   "at": "2026-11-17T06:52:00Z",
+   "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
+  },
+  {
+   "at": "2026-11-17T03:07:00Z",
+   "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
+  },
+  {
+   "at": "2026-11-17T03:19:00Z",
+   "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
+  },
+  {
+   "at": "2026-11-17T03:28:00Z",
+   "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
+  },
+  {
+   "at": "2026-11-17T03:36:00Z",
+   "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
+  },
+  {
+   "at": "2026-11-16T23:45:00Z",
+   "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
+  },
+  {
+   "at": "2026-11-16T22:15:00Z",
+   "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
+  },
+  {
+   "at": "2026-11-16T22:15:00Z",
+   "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
+  },
+  {
+   "at": "2026-11-16T18:30:00Z",
+   "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
+  },
+  {
+   "at": "2026-11-16T18:30:00Z",
+   "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
+  },
+  {
+   "at": "2026-11-16T15:20:00Z",
+   "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
+  }
+ ],
+ "headline": [
+  {
+   "day": "2026-10-08",
+   "active": 20282,
+   "checked": 20,
+   "colleges": 5
+  },
+  {
+   "day": "2026-10-09",
+   "active": 20282,
+   "checked": 20,
+   "colleges": 5
+  },
+  {
+   "day": "2026-10-10",
+   "active": 20282,
+   "checked": 27,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-11",
+   "active": 20282,
+   "checked": 29,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-12",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-13",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-14",
+   "active": 20282,
+   "checked": 31,
+   "colleges": 6
+  },
+  {
+   "day": "2026-10-15",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-16",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-17",
+   "active": 20282,
+   "checked": 32,
+   "colleges": 7
+  },
+  {
+   "day": "2026-10-18",
+   "active": 20282,
+   "complete": 11621,
+   "colleges": 113
+  },
+  {
+   "day": "2026-10-19",
+   "active": 20282,
+   "complete": 11687,
+   "colleges": 113
+  },
+  {
+   "day": "2026-10-20",
+   "active": 20282,
+   "complete": 11687,
+   "colleges": 113
+  },
+  {
+   "day": "2026-10-21",
+   "active": 20282,
+   "complete": 12463,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-22",
+   "active": 20282,
+   "complete": 12892,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-23",
+   "active": 20282,
+   "complete": 13173,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-24",
+   "active": 20282,
+   "complete": 13173,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-25",
+   "active": 20282,
+   "complete": 13173,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-26",
+   "active": 20282,
+   "complete": 13184,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-27",
+   "active": 20282,
+   "complete": 13191,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-28",
+   "active": 20282,
+   "complete": 13201,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-29",
+   "active": 20282,
+   "complete": 13201,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-30",
+   "active": 20282,
+   "complete": 13454,
+   "colleges": 114
+  },
+  {
+   "day": "2026-10-31",
+   "active": 20282,
+   "complete": 13535,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-01",
+   "active": 20282,
+   "complete": 13542,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-02",
+   "active": 20282,
+   "complete": 13542,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-03",
+   "active": 20282,
+   "complete": 13542,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-04",
+   "active": 20282,
+   "complete": 13542,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-05",
+   "active": 20282,
+   "complete": 13542,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-06",
+   "active": 20282,
+   "complete": 13543,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-07",
+   "active": 20282,
+   "complete": 13584,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-08",
+   "active": 20282,
+   "complete": 13643,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-09",
+   "active": 20282,
+   "complete": 13643,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-10",
+   "active": 20282,
+   "complete": 13696,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-11",
+   "active": 20282,
+   "complete": 13777,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-12",
+   "active": 20282,
+   "complete": 13963,
+   "colleges": 114
+  },
+  {
+   "day": "2026-11-13",
+   "active": 20282,
+   "complete": 14525,
+   "colleges": 118
+  },
+  {
+   "day": "2026-11-14",
+   "active": 20282,
+   "complete": 14597,
+   "colleges": 118
+  },
+  {
+   "day": "2026-11-15",
+   "active": 20282,
+   "complete": 14617,
+   "colleges": 118
+  },
+  {
+   "day": "2026-11-16",
+   "active": 20282,
+   "complete": 14617,
+   "colleges": 118
+  },
+  {
+   "day": "2026-11-17",
+   "active": 20282,
+   "complete": 14621,
+   "colleges": 118
+  }
+ ],
+ "next_run": {
+  "name": "CPL Queue",
+  "every_hours": 1,
+  "at": "2026-11-17T10:12:00Z"
+ },
+ "harvest": {
+  "day": "2026-11-17",
+  "gaps": 3208,
+  "parts": {
+   "links": {
+    "catalog": [
+     118,
+     118
+    ],
+    "cms": [
+     118,
+     118
+    ],
+    "ppm": [
+     112,
+     118
+    ]
+   },
+   "roep": [
+    19957,
+    20282
+   ],
+   "coci": [
+    16749,
+    20282
+   ],
+   "outcomes": {
+    "slo": [
+     13293,
+     88736
+    ],
+    "plo": [
+     16749,
+     20282
+    ]
+   },
+   "careers": [
+    15714,
+    20282
+   ]
+  }
+ }
 }
