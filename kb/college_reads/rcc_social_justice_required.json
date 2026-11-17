@@ -1,0 +1,12 @@
+{
+  "_readme": "S675 SkyLinnet, 2026-11-17. Riverside City Social Justice ADTs 41749 (General) and 43896 (LGBTQ Studies) pass coverage and fail arithmetic: Required Courses prints 'Units: 9.00' and the readings keep 3 (41749, one of four) and 6 (43896, ETS-1 plus one of three). d-rccd-pilot-no-blind-force-s671: read the pages for free before any forced re-extraction. This read prints how the Required Courses section lists its 9 units (which courses are required outright, which are a choice, and any sub-heading). Free: no model call.",
+  "college": "Riverside City College",
+  "questions": {
+    "block_shape": "How the page prints the Required Courses section: its heading and stated units, each sub-heading or 'Select' line inside it with its count, every course row with units, and the total."
+  },
+  "keywords": ["Required", "Select", "Choose", "units", "Units", "Total", "following"],
+  "pages": [
+    {"url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050", "answers": ["block_shape"], "network": true, "network_find": ["Select", "Units", "Total"]},
+    {"url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253", "answers": ["block_shape"], "network": true, "network_find": ["Select", "Units", "Total"]}
+  ]
+}
