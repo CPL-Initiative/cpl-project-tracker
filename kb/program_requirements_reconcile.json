@@ -1743,7 +1743,14 @@
      "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice)\\s+for\\s+a\\s+total\\s+of\\s+",
+     "why": "S672 SkyWren, 2026-11-17: Music Industry Studies: Performance 30606 and 30607 (one page) list MUS-39 and MUS-79 once at 3 units, and the page prints 'Take MUS-39 twice for a total of six units: \u00b7 6.00' and 'Take MUS-79 twice for a total of six units: \u00b7 6.00' under 'Units: 25.00' (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json). With both twice the required list sums to its 25. The step reads only 'twice for a total of', never the option lines ('Option 1: Take MUS-41 four times over four semesters'), because MUS-41 sits in two options at two counts; the three options are one choice of 8 units the record does not yet group, a separate fix."
+    }
+   ]
   },
   "Riverside City College": {
    "statewide_cal_getc": {
@@ -1781,7 +1788,26 @@
      }
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\*(?:(?!\\*\\s*Course\\s+must)[\\s\\S]){0,800}?\\*\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times",
+     "why": "S672 SkyWren, 2026-11-17: Piano Performance certificate 38626 read 9.5 against 18.5 because the page prints the row 'MUS-P12* \u00b7 Applied Piano I* \u00b7 3.00' four times under 'Required Courses (12.5 units)' with the footnote '*Course must be taken four times' (college page read 44034775728), and the reading keeps one row. The starred code nearest ahead of the footnote takes the count, so MUS-P12 counts 12 units and the blocks sum to the page's 'Total: 18.50' (p-repeated-course-row-undercounts-s671). The pattern reads any whitespace between its words, since a capture may join the cells with a tab, a space or a line break."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)\\b",
+     "why": "S672 SkyWren, 2026-11-17: Jazz Performance certificate 38627 read 14 against 17 because the page prints the row 'MUS-39Course must be taken twice \u00b7 Applied Music ICourse must be taken twice \u00b7 3.00' twice under 'Units: 12.00', the footnote's words run into the code's cell (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json), and the reading keeps one row. With MUS-39 twice the required list sums to its 12 and the blocks to the page's 'Total: 17.00'."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)(?:\\s+times)?\\s+over\\s+(?:two|three|four|five|six|[0-9]+)\\s+semesters",
+     "why": "S672 SkyWren, 2026-11-17: Music Performance certificate 38628 read 11.5 against 17.5 because the page prints 'Take MUS-39 three times over three semesters.' and the row 'MUS-39 \u00b7 Applied Music I \u00b7 3.00' three times under 'Units: 9.50' (college page read 44045355408), and the reading keeps one row. With MUS-39 three times the required list sums to 9.5 and the blocks to the page's 'Total: 17.50'."
+    }
+   ]
   }
  }
 }

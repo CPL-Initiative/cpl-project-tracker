@@ -1614,6 +1614,63 @@ check("Glendale 2026-27: the note names the call and the code left unpriced",
 g_pdf = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST)[0]["blocks"][0]["courses"]
 check("Glendale 2025-26: with no call, the step's figures fill as before", [c["units"] for c in g_pdf] == [5, 5])
 
+print("RCCD's repeated course rows (S672; college page reads 44034775728 and 44045355408)")
+# Each page prints a course's row once per enrollment, and the reading keeps one row. The filed record may already
+# carry the step's result once a reconcile has run, so the record as read is that one with times taken off.
+def _as_read(college_slug, cn):
+    rec = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", college_slug, "records",
+                                      cn + ".json")))["record"]
+    for b in rec["blocks"]:
+        for c in b["courses"]:
+            for e in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)]:
+                e.pop("times", None)
+    return rec
+RCCD_STEPS = R.load_steps()
+D = " \u00b7 "
+piano = ("Required Courses (12.5 units)" + D + "Units: 12.50" + D + "COURSE" + D + "TITLE" + D + "UNITS"
+         + (D + "MUS-P12*" + D + "Applied Piano I*" + D + "3.00") * 4 + D + "MUS-52" + D + "Recital Performance" + D
+         + "0.50" + D + "*Course must be taken four times\nElective Courses (6 units) Course must be repeated up to four "
+         "times.\nUnits: 6.00" + D + "MUS-P36" + D + "Piano Ensemble" + D + "1.50" + D + "Total: 18.50")
+jazz = ("Required Courses (12.5 units)" + D + "Units: 12.00" + D + "MUS-25" + D + "Jazz Appreciation" + D + "3.00" + D
+        + "MUS-36" + D + "Instrumental Chamber Ensembles" + D + "1.50"
+        + (D + "MUS-39Course must be taken twice" + D + "Applied Music ICourse must be taken twice" + D + "3.00") * 2
+        + D + "MUS-52" + D + "Recital Performance" + D + "0.50" + D + "MUS-74" + D + "Jazz Proficiency" + D + "1.00\n"
+        "Course must be taken twiceThis course must be taken twice.")
+perf = ("Required Courses" + D + "Units: 9.50" + D + "COURSE" + D + "TITLE" + D + "UNITS\nTake MUS-39 three times over "
+        "three semesters.\n9.00" + (D + "MUS-39" + D + "Applied Music I" + D + "3.00") * 3 + D + "MUS-52" + D
+        + "Recital Performance" + D + "0.50")
+norco = ("MUS-93" + D + "The Business of Music" + D + "3.00" + D + "Take MUS-39 twice for a total of six units:" + D
+         + "6.00" + D + "MUS-39" + D + "Applied Music I" + D + "3.00" + D + "Take MUS-79 twice for a total of six units:"
+         + D + "6.00" + D + "MUS-79" + D + "Applied Music II" + D + "3.00\nOption 1: Take MUS-41 four times over four "
+         "semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 2: Take both MUS-41 and MIS-81 two "
+         "times each over four semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00")
+for cn, text, want, code, n in (("38626", piano, (18.5, 18.5), "MUS-P12", 4), ("38627", jazz, (17, 17), "MUS-39", 2),
+                                ("38628", perf, (17.5, 17.5), "MUS-39", 3)):
+    rec = _as_read("riverside_city", cn)
+    new, notes = R.reconcile(rec, text, "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)
+    hit = [c for b in new["blocks"] for c in b["courses"] if c["code"] == code]
+    check("RCC %s: %s carries times %d" % (cn, code, n), hit and all(c.get("times") == n for c in hit))
+    check("RCC %s: the blocks sum to the page's total" % cn, S.program_units(new, {})[0] == want)
+    check("RCC %s: a second run changes nothing" % cn,
+          not [x for x in R.reconcile(new, text, "Riverside City College", "Certificate of Achievement",
+                                      steps=RCCD_STEPS)[1] if x["field"] == "times"])
+check("RCC: a footnote with no starred code ahead of it changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P12 3.00 *Course must be taken four times",
+                                  "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("RCC: 'repeated up to four times' on an elective list changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P36 1.50 Course must be repeated up to four "
+                                  "times.", "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+nrec = _as_read("norco", "30606")
+nnew, nnotes = R.reconcile(nrec, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)
+ntimes = {c["code"]: c.get("times") for b in nnew["blocks"] for c in b["courses"] if c["code"] in ("MUS-39", "MUS-79", "MUS-41")}
+check("Norco 30606: MUS-39 and MUS-79 twice", ntimes.get("MUS-39") == 2 and ntimes.get("MUS-79") == 2)
+check("Norco 30606: the option lines' MUS-41 is left as read (two options, two counts)",
+      all(c.get("times") is None for b in nnew["blocks"] for c in b["courses"] if c["code"] == "MUS-41"))
+check("Norco 30606: the required list sums to its printed 25",
+      sum(c["units"] * (c.get("times") or 1) for c in nnew["blocks"][0]["courses"]) == 25)
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
