@@ -274,6 +274,31 @@ def shown_title(common: str, live: str | None) -> str | None:
     return common or live
 
 
+_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5"}
+
+
+def fold_label(t):
+    """A credential label for an already-held check: case folded and a standalone Roman numeral read as its digit,
+    so Firefighter I and Firefighter 1 are one title (COBIx's spot-check on #3429, Miramar FIPT 101)."""
+    return " ".join(_ROMAN.get(w, w) for w in re.split(r"\s+", str(t or "").strip().lower()))
+
+
+def cbe_umbrellas(articulations, min_subjects=3):
+    """MAP credit-by-exam exhibits (ids MAPCBE...) that articulate courses in min_subjects or more subjects under one
+    title: Saddleback's Plant Propagation (28 subjects), Mesa's Basic Computer Keyboarding (16), San Diego City's
+    Basic Refrigeration & AC Lab (14). The title names none of those courses, so it never becomes another college's
+    could-adopt credential (COBIx's spot-check on #3429: RCC CIS-26A and CIS-30A took it). Other multi-subject
+    exhibits (POST Basic Academy, CompTIA Security+) name a real credential and stay."""
+    subj = defaultdict(set)
+    for a in articulations:
+        eid = _clean(a.get("exhibit_id"))
+        if eid.upper().startswith("MAPCBE"):
+            for lc in a.get("local_courses") or []:
+                if str(lc.get("subject", "")).strip():
+                    subj[eid].add(str(lc["subject"]).strip().upper())
+    return {e for e, s in subj.items() if len(s) >= min_subjects}
+
+
 def articulation_index(ident: Identity):
     """From MAP's articulated-exhibit feed: what each college articulated to each of
     its courses, and, per identity, which colleges articulated which credentials."""
@@ -281,6 +306,7 @@ def articulation_index(ident: Identity):
     here = defaultdict(OrderedDict)                      # (college, ck) -> {label: True}
     detail = defaultdict(list)                           # (college, ck) -> [exhibit facts]
     by_identity = defaultdict(lambda: defaultdict(set))  # mid -> label -> {college}
+    umbrellas = cbe_umbrellas(feed["articulations"])
     for a in feed["articulations"]:
         cols = [c for c in (a.get("earned_by_colleges") or []) if _clean(c)]
         if not cols:
@@ -300,6 +326,8 @@ def articulation_index(ident: Identity):
                     ("exhibit", _clean(a.get("exhibit_id")) or None), ("title", _clean(a.get("exhibit_title")) or None),
                     ("credential", label), ("type", _clean(a.get("cpl_type_description")) or None),
                     ("recs", [r for r in (a.get("credit_recommendations") or []) if _clean(r)][:6])]))
+                if _clean(a.get("exhibit_id")) in umbrellas:
+                    continue  # its own course still shows it as articulated here; no other college adopts the title
                 for mid in ident.ids(col, code):
                     by_identity[mid][label].add(col)
     stamp = feed.get("_authority_recode_applied_at") or feed.get("_generated_by")
@@ -920,7 +948,7 @@ def build() -> dict:
                         labels.setdefault(t["title"], True)
                     for t in feed_here.get((norm_college(college), k), {}):
                         labels.setdefault(t, True)
-                    here_set = {t.lower() for t in labels} | {unified[t].lower() for t in labels if t in unified}
+                    here_set = {fold_label(t) for t in labels} | {fold_label(unified[t]) for t in labels if t in unified}
                     if mr.get("recs") or labels:
                         # The exhibits articulated here, for the CPL count and its drill-down (Sam,
                         # 2026-10-10: "the number should be the count of exhibits articulated to the
@@ -949,16 +977,21 @@ def build() -> dict:
                                          "untitled_n": untitled,
                                          "exhibits": exhibits[:40]}
                     # could adopt
-                    pooled = defaultdict(set)
+                    pooled, shown = defaultdict(set), {}
                     for i in ids:
                         if not ident.cross_disciplinary(i):
                             for label, cols in by_identity.get(i, {}).items():
-                                pooled[label] |= cols
+                                # One entry per folded title (Firefighter I and Firefighter 1 are one), its colleges
+                                # merged; the shown label is the first spelling in sorted order (COBIx on #3429).
+                                fkey = fold_label(label)
+                                if fkey not in shown or label < shown[fkey]:
+                                    shown[fkey] = label
+                                pooled[fkey] |= cols
                     if pooled:
                         adopt = []
-                        for label, cols in sorted(pooled.items()):
+                        for label, cols in sorted((shown[k], c) for k, c in pooled.items()):
                             others = sorted(c for c in cols if norm_college(c) != norm_college(college))
-                            if others and label.lower() not in here_set:
+                            if others and fold_label(label) not in here_set:
                                 adopt.append({"credential": label, "colleges": others})
                         adopt.sort(key=lambda a: (-len(a["colleges"]), a["credential"]))
                         if adopt:
@@ -968,14 +1001,21 @@ def build() -> dict:
                     # for consideration
                     cids = {re.sub(r"\s+", " ", v).strip().upper() for v in
                             (lc.get("cid"), (ref or {}).get("cid")) if v}
-                    consider, seen_c = [], set()
+                    # One entry per folded title (Fire Inspector I and Fire Inspector 1 are one): the spelling with
+                    # the most adopting colleges is shown, and its count (COBIx on #3429, FIPT 103 and FIRE 3).
+                    consider, seen_c = [], {}
                     for cid in sorted(cids):
                         for s in statewide.get(cid, []):
-                            if s["credential"].lower() in here_set or s["credential"] in seen_c:
+                            fk = fold_label(s["credential"])
+                            if fk in here_set:
                                 continue
-                            seen_c.add(s["credential"])
-                            consider.append({"credential": s["credential"], "credit": s["credit"], "cid": cid,
-                                             "colleges_n": adopters.get(s["credential"], 0)})
+                            crow = {"credential": s["credential"], "credit": s["credit"], "cid": cid,
+                                   "colleges_n": adopters.get(s["credential"], 0)}
+                            if fk not in seen_c:
+                                seen_c[fk] = len(consider)
+                                consider.append(crow)
+                            elif crow["colleges_n"] > consider[seen_c[fk]]["colleges_n"]:
+                                consider[seen_c[fk]] = crow
                     if consider:
                         entry["consider"] = consider
                     courses[x["code"]] = entry
