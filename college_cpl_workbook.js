@@ -1,5 +1,5 @@
 /* The CPL opportunity analysis: one college's workbook ("Download CPL Extract")
- * and its shareable visual ("View CPL Visual", library/cpl-opportunity/?college=<name>; the old
+ * and its shareable visual ("Create My College CPL Plan", library/cpl-opportunity/?college=<name>; the old
  * cpl-opportunity/ address forwards there since 2026-10-26).
  *
  * WHY. Ashley (MAP team, 2026-10-20) asked for one college's CPL opportunity
@@ -418,11 +418,11 @@
       var lk = linkFor(e);
       var base = { title: e.unified_title, ids: (e.exhibit_ids || []).join(", "), crId: lk.ids.length ? lk.ids.join(", ") : (e.exhibit_ids || [])[0] || "",
         ctype: e.collaborative_type, type: e.cpl_type, disc: e.discipline || "", related: related, adopters: e.adopters,
-        median: e.peer_units_median, link: lk.link, chips: lk.chips, linkStatus: lk.status };
+        median: e.peer_units_median, link: lk.link, chips: lk.chips, linkStatus: lk.status, issuer: e.issuing_agency || "" };
       var paths = pathRows[e.unified_title] || [], titles = titleRows[e.unified_title] || [];
       paths.forEach(function (p) {
         swRows.push(Object.assign({}, base, { course: p.c.id + " " + p.c.title, courseId: p.c.id, units: p.c.units, cn: p.c.cn,
-          tier: "Needs validation: aligned via peer articulation", couldAdopt: "Yes",
+          tier: "Needs validation: aligned via peer articulation", couldAdopt: "Yes", peers: p.x.peers.slice(),
           priority: p.x.peers.length >= 2 ? "High" : "Medium",
           why: p.x.peers.length + " peer college(s) (" + p.x.peers.slice(0, 4).join(", ") + (p.x.peers.length > 4 ? ", …" : "")
             + ") articulate this CR to common course " + p.c.ident + ", which includes " + p.c.id + ". Peer credit: "
@@ -870,6 +870,31 @@
     });
   }
 
+  function adoptPanel() { return typeof window !== "undefined" && window.CPL_ADOPT_PANEL ? window.CPL_ADOPT_PANEL : null; }
+  /* A course row's exhibits for the Adopt panel: every statewide recommendation it could adopt, the peer colleges
+     that articulate it as the granting colleges (the Catalog fills them where the row has none), its issuer and
+     peer median units, and MAP's verified chips beside it. */
+  function adoptModel(r) {
+    return adoptPanel().model((r.sw || []).map(function (w) {
+      return { title: w.title, colleges: w.peers || [], kind: "consider", issuer: w.issuer || "", units: w.median,
+        links: (w.chips || []).length ? function () { return adoptMapChips(w.chips); } : null };
+    }));
+  }
+  function adoptMapChips(chips) {
+    var box = document.createElement("span");
+    box.className = "cpo-chips";
+    chips.forEach(function (c) {
+      var a = document.createElement("a");
+      a.className = "cpo-chip"; a.href = c.link; a.target = "_blank"; a.rel = "noopener";
+      a.textContent = c.short || "View in MAP";
+      var sr = document.createElement("span");
+      sr.className = "cpo-sr";
+      sr.textContent = " (" + (c.college ? "built by " + c.college + "; " : "") + "opens MAP searched for " + c.id + ")";
+      a.appendChild(sr);
+      box.appendChild(a);
+    });
+    return box;
+  }
   function pageHtml(b, stIn) {
     var st = Object.assign(pageDefaults(), stIn || {}), s = b.summary, e = x;
     function n(v) { return Number(v || 0).toLocaleString("en-US"); }
@@ -930,13 +955,21 @@
               + "<td>" + e(r.t) + (r.notCoci ? ' <span class="cpo-muted">(not in COCI\'s list)</span>' : "") + '</td><td class="cpo-num">' + e(r.u) + "</td><td>" + e(r.d) + "</td>"
               + '<td class="cpo-st-' + r.s + '"><span class="cpo-stw">' + e(STATUS_NAME[r.s]) + "</span>"
               + (r.s === "could-adopt" && r.ex.length ? '<span class="cpo-stw cpo-muted">Also has an exhibit</span>' : "")
-              + (r.best ? '<a class="cpo-adopt" href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt<span class="cpo-sr"> (' + e(r.best.title) + ", opens MAP searched for " + e(String(r.best.crId).split(",")[0].trim()) + ")</span></a>" : "")
+              + adoptChip(r, "list")
               + '</td><td class="' + (r.p === "High" ? "cpo-hi" : "cpo-muted") + '">' + e(r.p) + "</td></tr>";
           }).join("") + "</tbody></table></div>";
         if (hit.length > shown.length) html += '<button type="button" class="cpo-word cpo-more" data-act="more">Show ' + n(Math.min(LIMIT, hit.length - shown.length)) + " more</button>";
       }
       html += "</div>" + panelHtml(sel) + "</div></section>" + areasHtml();
       return html;
+    }
+    /* The course's Adopt chip (issue #3412, Sam, 2026-11-16 2:26 PM): the shared component in adopt_panel.js, the
+       same chip and multi-select panel as CPL Pathways' course cards. Without the component the MAP link stays. */
+    function adoptChip(r, where) {
+      var P = adoptPanel();
+      if (!P) return r.best ? '<a class="cpo-adopt" href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt<span class="cpo-sr"> (' + e(r.best.title) + ", opens MAP searched for " + e(String(r.best.crId).split(",")[0].trim()) + ")</span></a>" : "";
+      if (!r.sw.length) return "";
+      return '<span class="cpo-adopt">' + P.chipHtml(adoptModel(r), { home: b.college, attrs: ' data-act="adopt" data-v="' + e(r.id) + '" data-where="' + where + '"' }) + "</span>";
     }
     function chip(c) {
       return '<a class="cpo-chip" href="' + e(c.link) + '" target="_blank" rel="noopener">' + e(c.short || "View in MAP")
@@ -948,7 +981,8 @@
       h += '<div class="cpo-ptop"><span class="cpo-eyebrow">' + e(STATUS_NAME[r.s]) + '</span><button type="button" class="cpo-word" data-act="close">Close</button></div>'
         + '<h2 id="cpo-ph" tabindex="-1">' + e(r.id) + " " + e(r.t) + "</h2>"
         + '<p class="cpo-note">' + e([r.u !== "" ? r.u + " units" : "", r.d, r.p ? "Priority " + r.p : ""].filter(Boolean).join(" · ")) + "</p>";
-      if (r.best) h += '<p class="cpo-pra"><a href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt in MAP</a> <span class="cpo-muted">' + e(r.best.title) + ", the match the most colleges have adopted</span></p>";
+      if (r.sw.length && adoptPanel()) h += '<p class="cpo-pra">' + adoptChip(r, "panel") + "</p>";
+      else if (r.best) h += '<p class="cpo-pra"><a href="' + e(r.best.link) + '" target="_blank" rel="noopener">Request Adopt in MAP</a> <span class="cpo-muted">' + e(r.best.title) + ", the match the most colleges have adopted</span></p>";
       if (r.sw.length) {
         h += '<section><h3>Statewide recommendations it could adopt</h3><p class="cpo-note">Each link names the college that built the exhibit in MAP and opens MAP searched for that ID, where Request Quick Adopt needs no MAP sign-in. MAP\'s table lists the colleges that articulated it.</p>'
           + r.sw.map(function (w) {
@@ -1031,6 +1065,16 @@
       if (act === "more") { st.limit += LIMIT; redraw(null); return; }
       if (act === "pmore") { st.plimit += LIMIT; redraw(null); return; }
       if (act === "area") { st.view = "courses"; st.status = ""; st.prio = ""; st.q = v; st.limit = LIMIT; st.course = ""; redraw("#cpo-q"); return; }
+      if (act === "adopt") {
+        var P = adoptPanel(), r = courseRows(b).filter(function (x) { return x.id === v; })[0];
+        if (!P || !r) return;
+        var where = t.getAttribute("data-where") || "list";
+        P.open(t, adoptModel(r), { home: b.college, adopterCollege: b.college, sub: b.college,
+          course: { code: r.id, title: r.t },
+          program: { id: ("cpl-opportunity " + b.college).slice(0, 120), label: b.college + " — CPL Opportunity Analysis" },
+          refind: function () { return root.querySelector ? root.querySelector('[data-act="adopt"][data-v="' + v.replace(/"/g, "") + '"][data-where="' + where + '"]') : null; } });
+        return;
+      }
       if (act === "close") { var was = st.course; st.course = ""; redraw('.cpo-rowbtn[data-v="' + was.replace(/"/g, "") + '"]'); return; }
       if (act === "row") {
         st.course = st.course === v ? "" : v;
