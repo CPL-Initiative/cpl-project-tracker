@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1512,
-    "bytes": 16041226,
+    "files": 1513,
+    "bytes": 16062247,
     "over_budget": 3,
-    "handoff_max": 668,
+    "handoff_max": 670,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5218620,
+        "bytes": 5218985,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10574,
+        "bytes": 10744,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2832618,
+        "bytes": 2846471,
         "over": 1
       },
       "kb_note": {
@@ -46,26 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 533468,
+        "bytes": 533377,
         "over": 0
       },
       "handoff": {
-        "files": 628,
-        "bytes": 4508538,
+        "files": 629,
+        "bytes": 4515262,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 603,
-      "checkpoint_overdue": 1,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 603
     },
     "vault": {
-      "files": 84828,
-      "bytes": 14988286407,
-      "heavy_bytes": 10460603991,
+      "files": 84836,
+      "bytes": 14988408514,
+      "heavy_bytes": 10460604118,
       "heavy_share": 0.698,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -1020,10 +1018,10 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
       "detail": {
-        "bytes": 13497785,
+        "bytes": 13497912,
         "kind": "dir"
       },
-      "message": "directory totals 13,497,785 B inside the vault"
+      "message": "directory totals 13,497,912 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -6754,29 +6752,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_668_handoff.md",
-      "detail": {
-        "commits_since": 14,
-        "budget": 6,
-        "handoff": "session_668_handoff.md"
-      },
-      "message": "14 commit(s) have landed since `docs/session_668_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_668_handoff.md",
-      "detail": {
-        "lanes": [
-          "governance-team-enablement"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_668_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: governance-team-enablement. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
