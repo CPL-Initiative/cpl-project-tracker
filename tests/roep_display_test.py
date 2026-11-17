@@ -500,7 +500,6 @@ check(not [p["key"] for p in progs if b.no_state_list(p.get("score"))],
 check('"credentials": adopt[:4]' not in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
       "the display build no longer caps a course's Could-adopt credentials at four")
 
-print("\n%d failure(s)" % len(fails))
 # COBIx's spot-check on #3429: an umbrella credit-by-exam exhibit lends no title, and Roman numerals fold.
 import importlib.util as _u, os as _o
 _sp = _u.spec_from_file_location("rd2", _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), "kb", "_build_roep_display.py"))
@@ -512,6 +511,8 @@ _rows += [{"exhibit_id": "MAPICI-P-BL-1-001", "local_courses": [{"subject": s, "
 _rows += [{"exhibit_id": "MAPCBEN-BCK-1-001", "local_courses": [{"subject": "CABT", "number": "210"}]}]
 assert _rd.cbe_umbrellas(_rows) == {"MAPCBES-X-1"}, "only a credit-by-exam exhibit across three subjects is an umbrella"
 print("umbrella and numeral checks passed")
+
+print("\n%d failure(s)" % len(fails))
 
 sys.exit(1 if fails else 0)
 

@@ -977,14 +977,19 @@ def build() -> dict:
                                          "untitled_n": untitled,
                                          "exhibits": exhibits[:40]}
                     # could adopt
-                    pooled = defaultdict(set)
+                    pooled, shown = defaultdict(set), {}
                     for i in ids:
                         if not ident.cross_disciplinary(i):
                             for label, cols in by_identity.get(i, {}).items():
-                                pooled[label] |= cols
+                                # One entry per folded title (Firefighter I and Firefighter 1 are one), its colleges
+                                # merged; the shown label is the first spelling in sorted order (COBIx on #3429).
+                                fkey = fold_label(label)
+                                if fkey not in shown or label < shown[fkey]:
+                                    shown[fkey] = label
+                                pooled[fkey] |= cols
                     if pooled:
                         adopt = []
-                        for label, cols in sorted(pooled.items()):
+                        for label, cols in sorted((shown[k], c) for k, c in pooled.items()):
                             others = sorted(c for c in cols if norm_college(c) != norm_college(college))
                             if others and fold_label(label) not in here_set:
                                 adopt.append({"credential": label, "colleges": others})
