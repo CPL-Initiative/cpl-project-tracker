@@ -96,7 +96,8 @@ THE CAUSE SIDECARS (S649, #3229: COBIx's item 1, Sam's "make sure any card that 
 to something"). Beside the file, one small file per harvested college, PROGRAMS_DIR/<slug>.json, so a cause in the
 college's row opens the programs it counts. The page fetches a college's file only when its row or panel opens.
                   {"schema", "college", "slug", "basis": "committed files only",
-                   "programs": [{"cn", "title", "award", "cause", "lever", "url"}]}
+                   "correction_rules": true | false,
+                   "programs": [{"cn", "title", "award", "cause", "lever", "url"[, "units"]}]}
 One entry per program the gap census counts as still to pass at that college: its live read (CENSUS,
 programs_by_college, the cause before "|", the lever from its levers' members) where it holds the college, else the
 committed-files census, and the file and the row's census_basis say which (review of #3261: the lists had come from
@@ -106,6 +107,11 @@ same entries, so a cause's list and its count agree; the row's causes, levers an
 source_url where a record is filed (it names the page the reader used), else the capture's source page, and null
 when neither is an http(s) address. Sorted by cause, then title. A college with nothing still to pass gets no file.
 A college the run no longer holds loses its file. --check compares every sidecar too.
+A units cause (units_unequal, units_incomplete, units_unstated) carries "units", the filed record's own sum beside the
+figure the catalog prints, from its score (S678, #3461 page finding 3, "our lists add up to A; the catalog prints B"):
+{"sum": [lo, hi], "printed": [lo, hi], "status", "measure", "against"}, each figure null where the score holds none.
+correction_rules says whether the college has correction rules of its own on file (a "colleges" entry in
+kb/program_requirements_reconcile.json), so the page can say who acts and whether anything is there yet (page finding 4).
 
 THE OUTCOME SIDECARS (S649, Sam's asks 4 and 5 in session: the Overall card's SLO and PLO lines open what is
 collected). Beside them, PROGRAMS_DIR/<slug>.outcomes.json for each harvested college with either:
@@ -406,7 +412,7 @@ def cause_programs(root: str, census: dict, harvested: dict, basis: dict | None 
         slug = slug_of.get(g["college"])
         if slug:
             by_slug.setdefault(slug, []).append(g)
-    out = {}
+    out, rules = {}, correction_rule_colleges(root)
     for slug, gs in sorted(by_slug.items()):
         d = os.path.join(root, COLLEGE_DIR, slug)
         src = {G.norm_cn(s.get("control_number")): s for s in (_maybe(os.path.join(d, "sources.json")) or [])}
@@ -416,17 +422,51 @@ def cause_programs(root: str, census: dict, harvested: dict, basis: dict | None 
         for g in gs:
             cn = g["control_number"]
             s = src.get(cn) or {}
-            url = None
+            url, filed = None, None
             if cn in files:
-                url = _http((_maybe(os.path.join(rd, files[cn])) or {}).get("source_url"))
+                filed = _maybe(os.path.join(rd, files[cn])) or {}
+                url = _http(filed.get("source_url"))
             url = url or _http((s.get("source") or {}).get("url"))
-            rows.append({"cn": cn, "title": s.get("title"), "award": s.get("award"), "cause": g["cause"],
-                         "lever": g["lever"], "url": url})
+            row = {"cn": cn, "title": s.get("title"), "award": s.get("award"), "cause": g["cause"],
+                   "lever": g["lever"], "url": url}
+            u = units_figures(filed) if str(g["cause"]).startswith("units_") else None
+            if u:
+                row["units"] = u
+            rows.append(row)
         rows.sort(key=lambda x: (x["cause"], (x["title"] or "").lower(), x["cn"]))
         b = (basis or {}).get(slug) or {"basis": "committed files only", "at": None}
         out[slug] = {"schema": SCHEMA, "college": harvested[slug]["name"], "slug": slug, "basis": b["basis"],
-                     "census_at": b["at"], "programs": rows}
+                     "census_at": b["at"], "correction_rules": harvested[slug]["name"] in rules,
+                     "programs": rows}
     return out
+
+
+def _pair(v):
+    """A score's [lo, hi] as two numbers, or None where it holds no figure."""
+    if not isinstance(v, (list, tuple)) or not v or v[0] is None:
+        return None
+    lo = v[0]
+    hi = v[1] if len(v) > 1 and v[1] is not None else lo
+    return [lo, hi]
+
+
+def units_figures(filed: dict | None) -> dict | None:
+    """The filed record's sum of its blocks beside the total the catalog prints, from its score's arithmetic check
+    (see THE CAUSE SIDECARS above). None when the record or its check holds neither figure."""
+    sc = (filed or {}).get("score") or {}
+    ar = sc.get("arithmetic") or {}
+    total, printed = _pair(ar.get("computed")), _pair(ar.get("stated"))
+    if total is None and printed is None:
+        return None
+    return {"sum": total, "printed": printed, "status": ar.get("status"),
+            "measure": "hours" if sc.get("measure") == "hours" else "units",
+            "against": ar.get("against") or "program"}
+
+
+def correction_rule_colleges(root: str) -> set:
+    """The colleges with correction rules of their own on file (kb/program_requirements_reconcile.json)."""
+    d = _maybe(os.path.join(root, "kb", "program_requirements_reconcile.json")) or {}
+    return set((d.get("colleges") or {}).keys())
 
 
 def course_key(code) -> str:

@@ -1551,7 +1551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3237,
+     "line": 3276,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2332,7 +2332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3236,
+     "line": 3275,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3495,7 +3495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3235,
+     "line": 3274,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3567,7 +3567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 165
+     "line": 171
     }
    ],
    "main_committers": []
@@ -6271,7 +6271,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4005,
+     "line": 4044,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6312,7 +6312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3341,
+     "line": 3380,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6630,7 +6630,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4286,
+     "line": 4325,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6881,7 +6881,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4273,
+     "line": 4312,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6951,7 +6951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4267,
+     "line": 4306,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7297,7 +7297,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2626,
+     "line": 2665,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7347,7 +7347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4233,
+     "line": 4272,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7370,7 +7370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2798,
+     "line": 2837,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7433,7 +7433,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4281,
+     "line": 4320,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7633,7 +7633,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4254,
+     "line": 4293,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8076,7 +8076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 250
+     "line": 256
     }
    ],
    "served": false,
@@ -8089,7 +8089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 887
+     "line": 927
     }
    ],
    "served": false,
@@ -14312,7 +14312,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 151
     }
    ],
    "served": true,
@@ -16798,7 +16798,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 152
     }
    ],
    "served": false,
@@ -17715,7 +17715,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 578
     }
    ],
    "served": false,
@@ -17788,6 +17788,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 468
+    },
     {
      "id": "script:kb/_course_id_rescore_estimate.py",
      "kind": "script",
@@ -18766,7 +18773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 579
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19897,7 +19904,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 153
     }
    ],
    "served": false,
@@ -19910,7 +19917,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 155
     }
    ],
    "served": true,
@@ -20048,7 +20055,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 146
     }
    ],
    "served": true,
@@ -20125,7 +20132,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 147
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -21610,7 +21617,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3698,
+     "line": 3737,
      "tabs": [
       "cpl-pathways"
      ]
@@ -23036,7 +23043,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 474
+     "line": 514
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23798,7 +23805,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2039,
+     "line": 2078,
      "tabs": [
       "cpl-pathways"
      ]
@@ -27443,7 +27450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 579
     }
    ],
    "served": false,
@@ -30362,7 +30369,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3541,
+     "line": 3580,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30401,7 +30408,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3544,
+     "line": 3583,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30508,7 +30515,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 877,
+     "line": 933,
      "tabs": [
       "commons"
      ]
@@ -30518,7 +30525,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1873,
+     "line": 1912,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33058,7 +33065,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1668,
+     "line": 1682,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33148,7 +33155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1669,
+     "line": 1705,
      "tabs": [
       "cpl-pathways"
      ]

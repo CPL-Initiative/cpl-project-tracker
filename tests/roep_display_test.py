@@ -219,6 +219,25 @@ read = {"record": {"program": {"total_units": {"min": 30, "max": 30}, "degree_to
 gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", read, None, {"min": 30, "max": 30}, None, lambda c: None)
 check(not any(g["kind"] == "Major only" for g in gm), "gaps: a record that reads the degree raises no Major only gap")
 
+# 2d2b. A printed total that already reaches an associate degree's 60 units (S678, #3461 page finding 7, Chaffey's
+# Physical Therapist Assistant 42987: 65 units with general education inside a block titled "Required Prerequisites
+# and General Education"). The failure this guards: "Major only... general education not in it" under that block.
+pta = {"record": {"program": {"total_units": {"min": 65, "max": 65}},
+                  "blocks": [{"name": "Required Prerequisites and General Education (or equivalent)", "rule": "all", "courses": []},
+                             {"name": "Required Core:", "rule": "all", "courses": []}],
+                  "notes": ["These GE placeholders are not recorded as courses."]},
+       "score": {"arithmetic": {"status": "unequal", "against": "program", "computed": [56, 56], "stated": [65, 65]}}}
+gp = b.gaps_for("Chaffey College", "curriqunet_meta", "A.S. Degree", "units", pta, None, {"min": 65, "max": 65}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gp), "gaps: a 65-unit total with general education in it raises no Major only gap (got %s)" % gp)
+ge = [g for g in gp if g["kind"] == "General education lines"]
+check(len(ge) == 1 and "total of 65 units includes general education" in ge[0]["text"] and ge[0]["owner"] == "procedure",
+      "gaps: the gap names the general education area lines the record leaves out (got %s)" % ge)
+plain = {"record": {"program": {"total_units": {"min": 62, "max": 62}}, "blocks": [{"name": "Core", "rule": "all", "courses": []}]},
+         "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [62, 62]}}}
+gq = b.gaps_for("X College", "elumen", "A.S. Degree", "units", plain, None, {"min": 62, "max": 62}, None, lambda c: None)
+check(not any(g["kind"] in ("Major only", "General education lines") for g in gq),
+      "gaps: a total of 60 or more that names no general education raises neither gap (got %s)" % gq)
+
 # 2d3. The units chip (Sam, 2026-10-11 and 2026-10-14: "Highlight the mismatches in units in the
 # summary row"): a major total and a degree total each get one, and an equal sum gets none.
 ud = b.units_differ({"status": "unequal", "against": "program", "computed": [33, 36]}, {"min": 30, "max": 30})

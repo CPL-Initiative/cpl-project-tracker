@@ -4,7 +4,7 @@
 // credential catalog in the Pathways view"; "I don't like to use the word carry"; "Need a Credential card too"; "Use
 // full width"; on the recommended box, "would be cool" past two; then "build it into CPL Pathways--looks terrific!"
 // Mock: https://claude.ai/artifact/BRUR7BRD4LxVFauQ23NahP. Guards:
-//   - the index read asks for each program's counts, so the whole state's figures need no per-college read;
+//   - the index read asks for each program's counts (a second read, by key), so the whole state's figures need no per-college read;
 //   - no college: the statewide head, six cards (Credentials second), and one List naming each program's college;
 //   - the wording is "CPL here", never "carry"; the tab is full width;
 //   - the Credentials card and the Programs | Credentials switch show the Catalog's credentials, statewide or scoped;
@@ -62,7 +62,9 @@ function load(opts) {
 }
 
 (async function () {
-  check("the index read asks for each program's counts", /var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked,counts:display->counts";/.test(SRC));
+  // The counts come in a second read bounded by the list's keys, never on the list's OFFSET pages (#3461 page finding 5).
+  check("the index read asks for each program's counts", /var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";/.test(SRC)
+    && /var ROEP_COUNTS_SELECT = "college,control_number,counts:display->counts";/.test(SRC) && /return readRoepCounts\(index\)/.test(SRC));
   check("the tab runs full width", /"\.cplpw \{ color: var\(--text-body\); max-width: none; margin: 0; \}"/.test(SRC));
   check("the word is CPL here, never carry, in what the tab shows", !/["'][^"']*\b[Cc]arr(y|ies) CPL\b/.test(SRC) && /"CPL here"/.test(SRC));
 

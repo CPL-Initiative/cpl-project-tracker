@@ -555,10 +555,64 @@
   function leversOf(c) { return (c && (c.census_levers || c.levers)) || {}; }
   function censusWords(c) {
     var b = (c && c.census_basis) || {};
-    if (b.basis === "live") return "From the gap census's live read" + (b.at ? ", " + b.at.replace(/^(\d{4}-\d{2}-\d{2}).*$/, "$1") : "") + ": the programs still to pass at this college, by cause, the same counts its lists hold.";
+    if (b.basis === "live") return "From the database check" + (censusDay(c) ? " of " + censusDay(c) : "") + ": the gap census's live read of our saved program records in the database. That check did not read the college's catalog again. These are the programs still to pass at this college, by cause, the same counts its lists hold.";
     return "From the committed files only: the gap census's live read does not hold this college, so these causes can differ from its counts.";
   }
   function causeWord(M, k) { return ((M.rule || {}).causes || {})[k] || words(k); }
+  /* Commons Clarity's units ride-along with Sam (#3461, page findings 1 to 4 and 6, S678). */
+  /* The day of the gap census's live read: the database check of our saved program records. The census writes
+     "2026-11-13 18:04Z", which some browsers will not parse, so the day is read from its date alone. */
+  function censusDay(c) {
+    var b = (c && c.census_basis) || {}, m = /^(\d{4}-\d{2}-\d{2})/.exec(String(b.at || ""));
+    return b.basis === "live" && m ? day(m[1] + "T12:00:00Z") : "";
+  }
+  /* "Live" in the census's words ("live, units unequal") means the database check, and a reader took it for the
+     college's live catalog (finding 2): the word names the check and its day. */
+  function causeSaid(M, k, c) {
+    var w = causeWord(M, k);
+    if (!/^live, /i.test(w)) return cap(w);
+    var d = censusDay(c);
+    return cap(w.replace(/^live, /i, "")) + " at the database check" + (d ? " of " + d : "");
+  }
+  /* A figure pair as the page prints it: "56 units", "60 to 61 units". */
+  function amount(pair, unit) {
+    if (!pair || pair[0] == null) return "";
+    var lo = pair[0], hi = pair[1] == null ? lo : pair[1];
+    return fmt(lo) + (hi !== lo ? " to " + fmt(hi) : "") + " " + unit;
+  }
+  /* The two unit figures a units cause rests on (finding 3), from the builder's units entry. */
+  function unitsSaid(r) {
+    var u = r && r.units;
+    if (!u) return "";
+    var unit = u.measure === "hours" ? "hours" : "units", deg = u.against === "degree";
+    var ours = (deg ? "Our lists and general education add up to " : "Our lists add up to ") + amount(u.sum, unit);
+    var theirs = "the catalog prints " + amount(u.printed, unit) + (deg ? " for the degree" : "");
+    if (u.status === "equal" && u.printed) return "Our saved lists now add up to the catalog's " + amount(u.printed, unit) +
+      (deg ? " for the degree" : "") + ". The database still holds the older check until a team session reloads the record.";
+    if (!u.sum) return "The catalog prints " + amount(u.printed, unit) + (deg ? " for the degree" : "") + "; our lists cannot be added up yet, because a course in them has no units.";
+    if (!u.printed) return ours + "; the catalog prints no total to check them against.";
+    return ours + "; " + theirs + ".";
+  }
+  /* COCI's award names carry the state's size band for the award ("requiring 16S/24Q to fewer than 30S/45Q units"),
+     which a reader took for the program's own units (finding 6). The award reads alone, and the band in words. */
+  function awardName(a) { return String(a || "").replace(/\s+requiring\s+.*$/i, ""); }
+  function awardBand(a) {
+    var m = /\s+requiring\s+(.+?)\s+units?\s*$/i.exec(String(a || ""));
+    if (!m) return "";
+    var b = m[1], r = /^(\d+(?:\.\d+)?)S\/(\d+(?:\.\d+)?)Q to fewer than (\d+(?:\.\d+)?)S\/(\d+(?:\.\d+)?)Q$/i.exec(b),
+      plus = /^(\d+(?:\.\d+)?)\+S\/(\d+(?:\.\d+)?)\+Q$/i.exec(b);
+    var said = r ? r[1] + " to fewer than " + r[3] + " semester units (" + r[2] + " to fewer than " + r[4] + " quarter units)"
+      : plus ? plus[1] + " or more semester units (" + plus[2] + " or more quarter units)" : b + " units";
+    return "The state sets this award's size band at " + said + ". The program's own units are the catalog's figure.";
+  }
+  /* Who acts on a correction-rule lever, and whether the college has rules of its own yet (finding 4). */
+  var CORRECTION_LEVERS = { reconcile_steps: 1, ge_units_steps: 1, reconcile_then_load: 1 };
+  function leverSaid(lw, r, P, c) {
+    if (!lw || !lw.what) return "";
+    var none = r && CORRECTION_LEVERS[r.lever] && P && P.correction === false;
+    return "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") + "." +
+      (none ? " " + c.name + " has no correction rules of its own on file yet." : "");
+  }
   function tbaOf(M, k) { return (M.tba || {})[k] || ""; }
   /* The scout file's name, from the builder's own source line (the page names no internal folder of its own). */
   function scoutFile(M, c) { return String((M.sources || {}).scouts || "").replace(/[^/]*$/, "") + (c.scout.wave || "scout") + ".json"; }
@@ -579,7 +633,7 @@
         c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (the capture; a reread can add some)", fmt(c.extracted)] : null].filter(Boolean));
       var CC = causesOf(c);
       pr.causes = Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); })
-        .map(function (k) { return [causeWord(M, k), CC[k], k]; });
+        .map(function (k) { return [causeSaid(M, k, c), CC[k], k]; });
       /* Records failing each machine check, from the capture's committed summary (failed_checks); a record can fail
          more than one, so these do not sum to the programs still to pass. Only the checks that failed any. */
       var fc = c.failed_checks || {}, fk = Object.keys(fc).filter(function (k) { return fc[k] > 0; }).sort(function (a, b) { return fc[b] - fc[a] || a.localeCompare(b); });
@@ -682,11 +736,12 @@
     var G = [];
     var CC = causesOf(c);
     Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); }).forEach(function (k) {
-      G.push(causeWord(M, k).replace(/^./, function (x) { return x.toUpperCase(); }) + ": " + fmt(CC[k]) + " program" + (CC[k] === 1 ? "" : "s"));
+      /* Each names its dataset: a reader arriving from the SLO card read the units causes as SLO problems (finding 1). */
+      G.push("Program requirements, " + causeSaid(M, k, c).replace(/^./, function (x) { return x.toLowerCase(); }) + ": " + fmt(CC[k]) + " program" + (CC[k] === 1 ? "" : "s"));
     });
     if (c.scout && ((c.scout.challenge && c.scout.challenge !== "none") || c.scout.recommendation === "blocked"))
       G.push("Source scout: " + words(c.scout.challenge && c.scout.challenge !== "none" ? c.scout.challenge : c.scout.recommendation) + " (recommends " + words(c.scout.recommendation) + ")");
-    if (c.slo_queue) G.push("SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
+    if (c.slo_queue) G.push("Course SLOs, SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
     var sp = c.spot_check;
     if (sp && sp.held) G.push("Display held: " + sp.differs + " spot-checked records differ from the catalog");
     else if (sp && sp.differs === 1) G.push("One spot-checked record differs from the catalog");
@@ -742,7 +797,7 @@
       if (w) w.addEventListener("click", function () { if (inPanel) pickCause(c, on ? null : k, k); else openPanel(c.id, '[data-expand="' + c.id + '"]', k); });
       return el("tr", { cls: on ? "cdd-on" : null }, [el("th", { scope: "row" }, [w || cap(x[0])]), el("td", { cls: "cdd-num", text: fmt(x[1]) })]);
     });
-    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
+    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Program requirements still to pass, by cause" }),
       el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Cause" }), el("th", { scope: "col", cls: "cdd-num", text: "Programs" })])]),
       el("tbody", null, rows)]);
     if (!c) return t;
@@ -765,7 +820,8 @@
     Promise.resolve(p).then(function (r) {
       if (!r || !r.ok) throw new Error(key + " answered " + (r ? r.status : "nothing"));
       return r.json();
-    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [] }; },
+    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [],
+      correction: j && typeof j.correction_rules === "boolean" ? j.correction_rules : null }; },
       function () { PROGS[key] = { state: "error" }; })
       .then(function () { redrawFor(c); });
   }
@@ -957,7 +1013,7 @@
   }
   function causePrograms(c, k) {
     var M = VIEW.M, n = causesOf(c)[k] || 0, LW = (M.rule || {}).levers || {};
-    var head = el("h4", { id: "cdd-cprogs-h", text: cap(causeWord(M, k)) + ": " + plural(n, "program", "programs") });
+    var head = el("h4", { id: "cdd-cprogs-h", text: "Program requirements, " + causeSaid(M, k, c).replace(/^./, function (x) { return x.toLowerCase(); }) + ": " + plural(n, "program", "programs") });
     var P = c.programs_file ? PROGS[c.programs_file] : null, body;
     if (!c.programs_file) body = el("p", { cls: "cdd-of", text: "The committed files hold no program list for this college." });
     else if (!P || P.state === "loading") body = el("p", { cls: "cdd-of", role: "status", text: "Reading the programs." });
@@ -967,9 +1023,12 @@
       body = rows.length ? el("ul", { cls: "cdd-progs" }, rows.map(function (r) {
         var t = r.title || ("Program " + r.cn);
         var lw = LW[r.lever] || {};
+        var us = unitsSaid(r), band = awardBand(r.award), mv = leverSaid(lw, r, P, c);
         return el("li", { "data-cn": r.cn }, [r.url ? paneWord(t, { k: "program", a: r.cn }, c.id) : el("span", { cls: "cdd-ptitle", text: t }),
-          el("span", { cls: "cdd-of", text: [r.award, "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
-          lw.what ? el("span", { cls: "cdd-of", text: "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") }) : null]);
+          el("span", { cls: "cdd-of", text: [awardName(r.award), "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
+          us ? el("span", { cls: "cdd-of cdd-units", "data-units": "true", text: us }) : null,
+          band ? el("span", { cls: "cdd-of", "data-band": "true", text: band }) : null,
+          mv ? el("span", { cls: "cdd-of", "data-lever": r.lever || "", text: mv }) : null]);
       })) : el("p", { cls: "cdd-of", text: "The program list holds none for this cause; the list and the count were built on different days." });
     }
     return el("section", { cls: "cdd-cprogs", id: "cdd-cprogs", "aria-labelledby": "cdd-cprogs-h", "data-cause-programs": k }, [head, body]);
@@ -1175,8 +1234,10 @@
       /* The capture matched this page to the program; a match can be wrong (review of #3261: one program opened
          another's page), so the pane says matched, never that the page is the program's. */
       return { title: r.title || "Program " + r.cn, tab: isHttp(r.url) ? r.url : null, basis: outside,
-        kids: [dl([["Award", r.award || "TBA"], ["Control number", r.cn], ["Still to pass because", cap(causeWord(M, r.cause))],
-          lw.what ? ["What would move it", cap(lw.what) + (lw.kind ? " (" + lw.kind + ")" : "")] : null, ["The page the capture matched", r.url || "No catalog page found"]].filter(Boolean)),
+        kids: [dl([["Award", awardName(r.award) || "TBA"], awardBand(r.award) ? ["The state's size band", awardBand(r.award)] : null, ["Control number", r.cn],
+          ["Still to pass because", "Program requirements: " + causeSaid(M, r.cause, c).replace(/^./, function (x) { return x.toLowerCase(); })],
+          unitsSaid(r) ? ["Units", unitsSaid(r)] : null,
+          lw.what ? ["What would move it", leverSaid(lw, r, P, c).replace(/^What would move it: /, "").replace(/^./, function (x) { return x.toUpperCase(); })] : null, ["The page the capture matched", r.url || "No catalog page found"]].filter(Boolean)),
           r.url ? el("p", { cls: "cdd-of", text: "The capture matched this page to the program by its title and award. A match can be wrong; the new tab shows the page itself." }) : null].filter(Boolean) };
     }
     if (p.k === "slos" || p.k === "plos") return outcomesPane(M, c, p.k);

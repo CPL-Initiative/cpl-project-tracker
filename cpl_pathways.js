@@ -1593,7 +1593,13 @@
   // A failed list read falls back to the pilot file and says so; a failed record read
   // shows the file's copy where it has one, and otherwise says the read failed.
   var ROEP_REST = SUPABASE_URL + "/rest/v1";
-  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked,counts:display->counts";
+  // The index reads the light columns alone. Its course counts sit inside display (3.5 KB a row), and an OFFSET
+  // page evaluates every row it skips: on 17,000 records the last pages ran past anon's 3-second statement
+  // timeout, the table answered 500, and CPL Pathways said the table could not be read (#3461 page finding 5,
+  // Chaffey's row in the Commons; the same cost S405 measured on the Program Requirements tab). The counts are read
+  // after the list, in pages bounded by the list's own keys, so no page skips a row (readRoepCounts).
+  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";
+  var ROEP_COUNTS_SELECT = "college,control_number,counts:display->counts";
   var ROEP_RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url,measure,record,checked,display";
   var ROEP_READ_MS = 10000;
   var roepTable = { index: null, error: null, platforms: {}, reviewer: false, records: {} };
@@ -1655,6 +1661,36 @@
       return rows.length < ROEP_PAGE ? out : wave(ROEP_PAGE);
     });
   }
+  // A PostgREST filter value in double quotes, so a college's comma, period or parenthesis reads as text.
+  function roepQ(v) { return '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'; }
+  // The filter for one page of the index, from its first row's key to its last row's, inclusive. The keys come from
+  // the list the table just answered in its own order, so the database compares them as it sorted them.
+  function roepKeyRange(first, last) {
+    var c1 = first.college, n1 = first.control_number, c2 = last.college, n2 = last.control_number;
+    if (c1 === c2) return "&college=eq." + encodeURIComponent(c1) + "&control_number=gte." + encodeURIComponent(n1) +
+      "&control_number=lte." + encodeURIComponent(n2);
+    return "&or=" + encodeURIComponent("(and(college.eq." + roepQ(c1) + ",control_number.gte." + roepQ(n1) + "),and(college.gt." +
+      roepQ(c1) + ",college.lt." + roepQ(c2) + "),and(college.eq." + roepQ(c2) + ",control_number.lte." + roepQ(n2) + "))");
+  }
+  // Each listed program's course counts (display->counts), ROEP_WAVE pages at a time, each page bounded by keys
+  // rather than an offset. Resolves either way: a failed page leaves its programs without counts.
+  function readRoepCounts(index) {
+    var pages = [];
+    for (var i = 0; i < index.length; i += ROEP_PAGE) pages.push([index[i], index[Math.min(index.length, i + ROEP_PAGE) - 1]]);
+    var byId = {};
+    function one(pg) {
+      return roepGet("/program_requirement_records?select=" + ROEP_COUNTS_SELECT + roepKeyRange(pg[0], pg[1]) + "&order=college,control_number")
+        .then(function (rows) { (rows || []).forEach(function (r) { if (r && r.counts) byId[roepId(r.college, r.control_number)] = r.counts; }); },
+          function () { return null; });
+    }
+    function wave(from) {
+      if (from >= pages.length) return Promise.resolve();
+      return Promise.all(pages.slice(from, from + ROEP_WAVE).map(one)).then(function () { return wave(from + ROEP_WAVE); });
+    }
+    return wave(0).then(function () {
+      index.forEach(function (r) { var k = roepId(r.college, r.control_number); if (byId[k]) r.counts = byId[k]; });
+    });
+  }
   // The list of programs, and each college's catalog platform for the record's
   // provenance line. Resolves either way; a failure leaves the index null.
   function readRoepIndex() {
@@ -1670,10 +1706,13 @@
       ]).then(function (got) {
         var plat = {};
         (got[1] || []).forEach(function (r) { if (r && r.college) plat[r.college] = r.catalog_platform; });
-        roepTable.index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
-        roepTable.platforms = plat;
-        roepTable.reviewer = reviewer;
-        roepTable.error = null;
+        var index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
+        return readRoepCounts(index).then(function () {
+          roepTable.index = index;
+          roepTable.platforms = plat;
+          roepTable.reviewer = reviewer;
+          roepTable.error = null;
+        });
       }, function (e) {
         roepTable.index = null;
         roepTable.error = (e && e.message) || "the read failed";

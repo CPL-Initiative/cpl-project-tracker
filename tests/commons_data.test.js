@@ -253,7 +253,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
     /CourseLeaf/.test(txt(m1)) && /2026-2027/.test(txt(m1)) && /Strong/.test(txt(m1.querySelector('[data-ds="confidence"]'))) && /5 agree, 0 differ, 0 unreachable/.test(txt(m1))
     && /\$8\.00/.test(txt(m1)) && /\$0\.100/.test(txt(m1)) && /Page-finding time \(the capture, before the paid read\)\s*10 minutes/.test(txt(m1)) && !/Run time/.test(txt(m1)));
-  check("row 7: the open gaps are the census's causes in its words", /No closed list in the Program Course File: 20 programs/.test(txt(m1.querySelector(".cdd-gapbox"))));
+  check("row 7: the open gaps are the census's causes in its words, each named as a program requirement (#3461 finding 1)", /Program requirements, no closed list in the Program Course File: 20 programs/.test(txt(m1.querySelector(".cdd-gapbox"))));
   word(2).click();
   const m2 = x.d.getElementById("cdd-more-2");
   check("row 8: one row open at a time; Beta's row shows its SLO queue state", !x.d.getElementById("cdd-more-1") && word(1).getAttribute("aria-expanded") === "false"
