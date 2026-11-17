@@ -8,6 +8,7 @@
     {"case": "range spacing and Intro to", "a": "3 - 4 hours in Intro to Flux Cored Arc Welding (FCAW)", "b": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)", "same": true, "clean": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"},
     {"case": "ampersand", "a": "3 hours in Health & Safety", "b": "3 hours in Health and Safety", "same": true, "clean": "3 hours in Health and Safety"},
     {"case": "Assembler Language", "a": "3 hours in Assembler Language Programming", "b": "3 hours in Assembly Language Programming", "same": true, "clean": "3 hours in Assembly Language Programming"},
+    {"case": "an all-caps topic", "a": "3 hours in INTRODUCTION TO ADMINISTRATION OF JUSTICE", "b": "3 hours in Introduction to Administration of Justice", "same": true},
     {"case": "doubled spaces", "a": "3  hours in   Supervision ", "b": "3 hours in Supervision", "same": true, "clean": "3 hours in Supervision"},
     {"case": "AR-0102-0007 truncation is not typographic", "a": "4 hours in Companion Animal Surgical Assistance And", "b": "4 hours in Companion Animal Surgical Assistance And Anesthesia", "same": false},
     {"case": "AR-0102-0007 run-on is not typographic", "a": "4 hours in Companion Animal Radiology Companion Animal Surgical Assistance And Anesthesia Laboratory Animal And Small Animal Exotics", "b": "4 hours in Companion Animal Radiology", "same": false},
