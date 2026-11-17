@@ -35973,6 +35973,7 @@
   "kb/*_dryrun",
   "kb/*_fold",
   "kb/*_out",
+  "kb/ccr_curator_precedent.json",
   "kb/cdc_data_dictionary.json",
   "kb/cdc_integrations.json",
   "kb/cid_articulation_joins.json",
