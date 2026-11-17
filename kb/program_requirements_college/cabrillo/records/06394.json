@@ -5,11 +5,11 @@
  "title": "History",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/history-associate-in-arts-a-a-fall-2026",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7135,
+  "input_tokens": 8305,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7135,
-    "output_tokens": 5032,
+    "input_tokens": 8305,
+    "output_tokens": 4557,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,61 @@
     "model": null
    }
   ],
-  "output_tokens": 5032,
+  "output_tokens": 4557,
   "output_tokens_details": {
-   "thinking_tokens": 1794
+   "thinking_tokens": 1362
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.12918,
- "ms": 38915,
- "seconds": 39.4,
+ "cost_usd": 0.12436,
+ "ms": 34554,
+ "seconds": 35.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 35,
    "listed": 35,
-   "share": 0.886,
-   "missing": [
-    "HIST17A",
-    "HIST17AH",
-    "HIST17B",
-    "HIST17BH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST17A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST17AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST17B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST17BH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 2,
    "codes": [
     "ENGL27AN",
-    "HIST4B",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "HIST4B"
    ],
    "flagged": [
     "ENGL27AN",
-    "HIST4B",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H"
+    "HIST4B"
    ],
    "pass": true
   },
@@ -129,7 +139,20 @@
     "max": null
    },
    "open_elective_units": 18,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Exhibit a knowledge base in history and a basic narrative of historical events.",
     "Read critically for evidence and argument.",
@@ -147,15 +170,7 @@
     "public administration",
     "web content development",
     "public service and government careers"
-   ],
-   "degree_total": {
-    "min": 60,
-    "max": 60
-   },
-   "ge_units": {
-    "min": 24,
-    "max": 24
-   }
+   ]
   },
   "blocks": [
    {
@@ -584,7 +599,7 @@
   "missing_explained": [
    {
     "code": "HIST 17A",
-    "why": "not in the text; catalog lists HISTC1001 (common course number) instead"
+    "why": "not in the text; catalog lists HISTC1001 instead"
    },
    {
     "code": "HIST 17AH",
@@ -600,54 +615,15 @@
    }
   ],
   "notes": [
-   "Block headings all begin with 'Recommended' and the prose says 'Below are courses recommended by the department that can be used to meet major requirements', yet each block states 'Complete the following number of credits' (3, 3, 3, 9) and these sum to the 18-unit major within the 60-unit degree. Recorded as choose_units with those minimums; a reviewer should confirm whether the department intends them as required or merely recommended.",
-   "total_units recorded as 18 from 'at least 18 units in the major'; the wording 'at least' implies no fixed maximum, but the listed blocks sum to 18.",
-   "The degree total of 60 units includes Cabrillo College General Education (24) and 'General electives: any transferable or degree applicable course' (18); those 18 open-elective units are outside the major total, so open_elective_units is null.",
-   "Cross-listed courses (HIST/ETHN 21A, 21AH; HIST/ETHN/ENGL 27AN, 27BN) and honors twins are recorded as alternatives of one entry.",
-   "Several courses (HIST2A, HIST2B, HIST4B/4BH, HIST6, HIST16C, HIST19B, HIST19C, HISTC1001/1002 and honors, HIST21A/21B and twins, HIST29A, HIST29B) appear both in a distribution block and in Major Electives; whether one course may count in both is not stated.",
-   "HISTC1001, HISTC1001H, HISTC1002, HISTC1002H appear to be the common-course-numbered replacements for HIST 17A/17AH/17B/17BH on the closed list; HIST4B and ENGL27AN are not on the closed list.",
-   "Codes are written as printed in the catalog, without a space between subject and number.",
-   "Text begins mid-sentence; the earlier part of the program description is cut off."
+   "The four major blocks are titled 'Recommended ...' and the page calls them 'courses recommended by the department that can be used to meet major requirements', but each prints 'Complete the following number of credits' (3, 3, 3, 9) and they sum with GE 24 and general electives 18 to the printed 60. Recorded as choose_units blocks counting toward the degree; reviewer should check whether they should be 'recommended' instead.",
+   "No major total is printed; the sentence 'at least 18 units in the major' is a general minimum and is not recorded as total_units. Degree total 60 recorded in degree_total.",
+   "General electives (18 units, any transferable or degree applicable course) recorded in open_elective_units against degree_total.",
+   "Codes recorded as printed without a space (e.g., HIST2A). Cross-listed (ETHN/ENGL) and honors versions grouped as alternatives of the HIST course.",
+   "HIST4B, HISTC1001, HISTC1001H, HISTC1002, HISTC1002H and ENGL27AN are not in the closed list and are marked catalog additions; the HISTC courses appear to replace HIST 17A/17AH/17B/17BH.",
+   "Some courses (HIST2A, HIST2B, HIST6, HIST16C, HIST19B, HIST19C, HIST4B/4BH, HISTC1001/1002, HIST21A/21B, HIST29A/29B) appear in both a category block and the Major Electives block, as printed.",
+   "Program outcomes are printed once for the program; recorded for this A.A."
   ]
  },
- "extracted_run": 38639316727,
- "reconciled": [
-  {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nHistory - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 24,
-    "max": 24
-   },
-   "words": "Cabrillo College General Education\n24"
-  },
-  {
-   "field": "total_units",
-   "was": {
-    "min": 18,
-    "max": 18
-   },
-   "now": {
-    "min": null,
-    "max": null
-   },
-   "words": "at least 18 units in the major"
-  },
-  {
-   "field": "open_elective_units",
-   "was": null,
-   "now": 18,
-   "words": "General electives: any transferable or degree applicable course.\n18"
-  }
- ],
- "read_run": "38442109713"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }

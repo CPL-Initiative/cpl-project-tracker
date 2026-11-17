@@ -5,11 +5,11 @@
  "title": "Political Science",
  "award": "A.A- T Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/political-science-associate-in-arts-for-transfer-a-a-t-fall-2026",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13346,
+  "input_tokens": 13649,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13346,
-    "output_tokens": 3041,
+    "input_tokens": 13649,
+    "output_tokens": 3220,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 3041,
+  "output_tokens": 3220,
   "output_tokens_details": {
-   "thinking_tokens": 1065
+   "thinking_tokens": 1256
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.1142,
- "ms": 25294,
- "seconds": 25.7,
+ "cost_usd": 0.119,
+ "ms": 26845,
+ "seconds": 27.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 26,
    "listed": 26,
-   "share": 0.923,
-   "missing": [
-    "ECON1A",
-    "ECON1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON1B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -85,8 +89,7 @@
     34.0
    ],
    "why": [],
-   "within": true,
-   "rescored": "Open Asks Sheet 81"
+   "within": true
   },
   "repeated": {
    "codes": [],
@@ -107,6 +110,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -118,6 +124,10 @@
     "max": null
    },
    "open_elective_units": 5,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": 60,
@@ -352,23 +362,24 @@
   "missing_explained": [
    {
     "code": "ECON 1A",
-    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics instead"
+    "why": "not in the text; catalog lists ECONC2002 Principles of Macroeconomics in List B instead"
    },
    {
     "code": "ECON 1B",
-    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics instead"
+    "why": "not in the text; catalog lists ECONC2001 Principles of Microeconomics in List B instead"
    }
   ],
   "notes": [
-   "Catalog prints codes without spaces (POLSC1000, STATC1000, PSYCC1000); these were matched to closed-list POLS C1000, STAT C1000, PSYC C1000 and not flagged as additions.",
-   "Core block: POLSC1000 and POLSC1000H recorded as honors twins (one of them required); the program map confirms 'Take one of the following'.",
-   "List A: 'Complete the following number of credits: 6-8' with the note 'students may take only one statistics course' (BUS9, PSYCH2A, STATC1000). The program map shows PS5 plus one statistics course, so PS5 may effectively be required; recorded as a choose_units block as printed.",
-   "PSYCH1H recorded as an alternative to PSYCC1000 (honors general psychology).",
-   "General Electives: 'Complete the following number of credits: 5-8 any transferable course'; open_elective_units records the low end (5) of the printed 5-8 range. Odd sub-lines (2, 3, 6) printed beneath it.",
-   "No major total printed; the page prints 'Complete the following number of credits: 60' as the degree total and Cal-GETC 34. The 18-unit minimum in the major is a generic A.A.-T requirement, not recorded as total_units.",
-   "Program description mentions transfer to bachelor's and graduate degrees in political science, law, education, journalism, and business; these are degree fields rather than named careers, so careers left empty.",
-   "Program map text is cut off mid-list (Cal-GETC Area 4, 'HIST6'); GE courses in the map were not recorded."
+   "Codes are written as the catalog prints them without spaces (POLSC1000 = POLS C1000, STATC1000 = STAT C1000, PSYCC1000 = PSYC C1000).",
+   "Core lists POLSC1000 and POLSC1000H separately under a 9-credit total; recorded as honors twin alternatives. Honors twins in List B (ANTHR2H, HIST4AH, HIST4BH, PHILO10H, PSYCH1H, SOC1H) likewise recorded as alternatives.",
+   "List A (6-8 credits) carries the note 'students may take only one statistics course' (BUS9, PSYCH2A, STATC1000); the program map shows PS5 plus one statistics course.",
+   "General Electives printed as 'Complete the following number of credits: 5-8' (any transferable course); open_elective_units recorded as the low end 5 because the field holds a single number; the printed range is 5-8.",
+   "Degree total 60 and Cal-GETC 34 are printed; no total for the major is printed, so total_units is null. The '18 semester units in the major' sentence is a generic AA-T requirement, not this award's total.",
+   "The description mentions degrees in political science, law, education, journalism, and business as transfer/graduate study paths, not careers; careers left empty.",
+   "PSYCH2A units are not stored in the closed list; the catalog prints 3.",
+   "Catalog text is cut off in the program map (Cal-GETC Area 4 list ends at 'HIST6'); the map is not used for requirements."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }

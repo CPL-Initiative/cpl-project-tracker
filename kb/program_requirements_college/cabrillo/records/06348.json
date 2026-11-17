@@ -5,11 +5,11 @@
  "title": "Art History",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-a-a-fall-2026",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6115,
+  "input_tokens": 7285,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6115,
-    "output_tokens": 2325,
+    "input_tokens": 7285,
+    "output_tokens": 2312,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2325,
+  "output_tokens": 2312,
   "output_tokens_details": {
-   "thinking_tokens": 879
+   "thinking_tokens": 808
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07096,
- "ms": 18627,
- "seconds": 19.1,
+ "cost_usd": 0.07538,
+ "ms": 19833,
+ "seconds": 23.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 18,
    "listed": 18,
-   "share": 0.944,
-   "missing": [
-    "AH20B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1200",
+     "listed": "AH20B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -116,7 +118,20 @@
     "max": null
    },
    "open_elective_units": 18,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cabrillo College General Education",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 24
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Identify cultural objects from a range of artistic traditions by period, culture, and/or genre.",
     "Analyze cultural objects in relationship to the contexts in which they were created.",
@@ -131,15 +146,7 @@
     "travel writer",
     "art critic",
     "art business and management"
-   ],
-   "degree_total": {
-    "min": 60,
-    "max": 60
-   },
-   "ge_units": {
-    "min": 24,
-    "max": 24
-   }
+   ]
   },
   "blocks": [
    {
@@ -299,53 +306,14 @@
    }
   ],
   "notes": [
-   "The catalog labels both course lists 'Recommended' and says these are 'courses recommended by the department that can be used to meet major requirements', yet each list states 'Complete the following number of credits' (12 and 6), summing to the stated 'at least 18 units in the major'. Recorded as choose_units blocks; a reviewer should confirm whether they should instead be treated as recommended only.",
-   "Total for the major is stated as 'at least 18 units'; recorded min 18 with no max.",
-   "AH11H and AH13H are printed as separate rows; recorded as honors alternatives of AH11 and AH13.",
-   "The 18 units of 'General electives: any transferable or degree applicable course' belong to the 60-unit degree total, not the major, so open_elective_units is null.",
-   "A line about foreign language and history courses is followed by an unexplained '3'; not recorded as a block.",
-   "Cabrillo College General Education is listed at 24 units; GE courses not recorded.",
-   "The text also mentions careers 'in the private and public sectors' in general terms; only the specific art history related careers were recorded."
+   "Both major blocks are titled 'Recommended' and the page says the courses are 'recommended by the department that can be used to meet major requirements', but each prints 'Complete the following number of credits' (12 and 6), summing to the 18 major units the degree requires; recorded as choose_units rather than recommended. Reviewer should confirm.",
+   "AH11H and AH13H recorded as honors alternatives of AH11 and AH13; the catalog prints them as separate rows in the list.",
+   "A '3' is printed after the note that some universities require foreign language and history courses; it is unclear whether this is a unit requirement. It is not recorded in any field. Printed figures 24 + 12 + 6 + 18 = 60 match the degree total; adding the 3 would give 63.",
+   "total_units left null: the page prints only 'at least 18 units in the major' as a general degree requirement, not a major total.",
+   "General electives (18 units, any transferable or degree applicable course) recorded in open_elective_units against degree_total 60.",
+   "Codes recorded as printed without spaces (e.g., AH10 for closed-list AH 10)."
   ]
  },
- "extracted_run": 38639316727,
- "reconciled": [
-  {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nArt History - Associate in Arts (A.A.)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 24,
-    "max": 24
-   },
-   "words": "Cabrillo College General Education\n24"
-  },
-  {
-   "field": "total_units",
-   "was": {
-    "min": 18,
-    "max": null
-   },
-   "now": {
-    "min": null,
-    "max": null
-   },
-   "words": "at least 18 units in the major"
-  },
-  {
-   "field": "open_elective_units",
-   "was": null,
-   "now": 18,
-   "words": "General electives: any transferable or degree applicable course.\n18"
-  }
- ],
- "read_run": "38442109713"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }
