@@ -25,7 +25,8 @@ const r1 = page(REAL), b1 = r1.querySelector("#cdd-blocked");
 check("⭐ the page draws the to-do from the committed file", b1 && /^To do: Find catalogs or course outlines/.test(txt(b1.querySelector("h3"))), txt(b1));
 check("it says how many colleges and courses, that only still-taught courses are hunted, and where to file",
   b1 && /6 of 6 colleges still to find, 345 local courses in all; 12 of them are still taught/.test(txt(b1)) && /kb\/hand_filed_catalogs\/outlines/.test(txt(b1)), txt(b1));
-check("each open college is a row with its catalog link", b1 && b1.querySelectorAll("[data-todo-college]").length === 6 && b1.querySelectorAll("[data-todo-college] a[href^='http']").length === 6);
+check("each open college is a row with its catalog address, as words (the page's one outbound link is the panel's new-tab control)",
+  b1 && b1.querySelectorAll("[data-todo-college]").length === 6 && !b1.querySelector("a") && [...b1.querySelectorAll("[data-todo-college]")].every((li) => /Its catalog: https?:\/\//.test(txt(li))));
 check("the course list says TBA, never a number it does not hold", b1 && /course-by-course list, still-taught courses first: TBA/.test(txt(b1)));
 const one = JSON.parse(JSON.stringify(REAL));
 one.blocked_hunt.colleges[1].filed = true; one.blocked_hunt.open = 5; one.blocked_hunt.local_courses_open = 303;

@@ -1359,7 +1359,8 @@
     var ul = el("ul", { cls: "cdd-todo-list" });
     open.forEach(function (c) {
       ul.appendChild(el("li", { "data-todo-college": c.slug }, [c.college + ": " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ". ",
-        c.catalog_url ? el("a", { href: c.catalog_url, target: "_blank", rel: "noopener", text: "Its catalog" }) : "Catalog link: TBA"]));
+        /* The address as words: this page keeps every link out of it to the panel's one new-tab control. */
+        "Its catalog: " + (c.catalog_url || "TBA")]));
     });
     sec.appendChild(ul);
     sec.appendChild(el("p", { cls: "cdd-src", text: Array.isArray(b.courses) && b.courses.length ? "" : "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
