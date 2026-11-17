@@ -76,7 +76,7 @@ import urllib.request
 from collections import Counter
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from cr_typographic import side_by_side, typo_key  # noqa: E402  (kb/, beside this file)
+from cr_typographic import curator_refs, self_recall, side_by_side, typo_key  # noqa: E402  (kb/, beside this file)
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -346,11 +346,15 @@ def ace_catalog_crs(report: list) -> tuple[list[dict], dict]:
 def report_ace_crs(pairs: list, stats: dict, cr_rows: list) -> dict:
     """Print the catalog's pairs and the MAP-to-ACE side by side from this same pull.
 
-    exact + typographic + differs + ace_missing = MAP pairs with an exhibit id, every night, or the run stops:
-    a partition that does not add up is a classifier fault, and a count nobody can reconcile is worse than none.
+    exact + typographic + differs + ace_missing must equal the distinct MAP (exhibit, wording) pairs counted HERE,
+    apart from the classifier, or the run stops. side_by_side() adds each pair to one bucket and to its own total
+    together, so comparing the buckets with that total could never fail (the second reader on #3468); a set built
+    from the rows directly can disagree with it, and a classifier that drops or double counts a pair is caught.
     """
-    sbs = side_by_side([(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows],
-                       [(p["exhibit_id"], p["credit_recommendation"]) for p in pairs])
+    map_pairs = [(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows]
+    sbs = side_by_side(map_pairs, [(p["exhibit_id"], p["credit_recommendation"]) for p in pairs])
+    distinct = {((e or "").strip(), (w or "").strip()) for e, w in map_pairs}
+    distinct = {x for x in distinct if x[0] and x[1]}
     print(f"\n── {CATALOG_VIEW} → map_ace_catalog_cr ──")
     print(f"   {stats['catalog_rows']:,} catalog rows → {stats['pairs']:,} distinct (AceID, CreditRecommendation) "
           f"pairs on {sbs['ace_exhibits']:,} exhibits; {stats['blank']:,} blank, "
@@ -361,9 +365,41 @@ def report_ace_crs(pairs: list, stats: dict, cr_rows: list) -> dict:
     print(f"   typographic rule on the MAP side: {sbs['map_typo_settled']:,} MAP pairs share an exhibit and a "
           "cleaned wording with another MAP wording (source text unchanged)")
     total = sbs["exact"] + sbs["typographic"] + sbs["differs"] + sbs["ace_missing"]
-    if total != sbs["map_pairs"]:
-        raise SystemExit(f"FATAL: the side by side does not add up ({total:,} != {sbs['map_pairs']:,}).")
+    if total != len(distinct):
+        raise SystemExit(f"FATAL: the side by side does not add up: its buckets hold {total:,} MAP pairs and the "
+                         f"pull holds {len(distinct):,} distinct (exhibit, wording) pairs.")
     return sbs
+
+
+def report_self_recall(cr_rows: list, pairs: list, key: str) -> dict | None:
+    """The self-recall line: the typographic rule against curators' own placements in cr_reference_decisions.
+
+    A read only, with the service key, paged. A failed read says so and never fails the run (the MAP load is live).
+    """
+    rows, offset = [], 0
+    try:
+        while True:
+            _, raw = _request("GET", "cr_reference_decisions?select=group_key,decision,canonical,members,excluded,"
+                                     f"updated_by&order=group_key&limit=1000&offset={offset}", key)
+            page = json.loads(raw or b"[]")
+            rows.extend(page)
+            if len(page) < 1000:
+                break
+            offset += len(page)
+    except Exception as e:
+        print(f"   self-recall NOT measured: cr_reference_decisions could not be read ({_why(e)}).")
+        return None
+    refs, bots = curator_refs(rows)
+    rec = self_recall([(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows],
+                      [(p["exhibit_id"], p["credit_recommendation"]) for p in pairs], refs)
+    print(f"\nSelf-recall of the typographic rule against {len(refs):,} wordings curators confirmed "
+          f"({len(rows):,} decision rows read, {bots:,} bot rows left out):")
+    for k, words in (("ace", "MAP wording beside a typographic-only ACE line"),
+                     ("map", "two MAP wordings on one exhibit")):
+        r = rec[k]
+        print(f"   {words}: {r['pairs']:,} pairs; both placed by a curator {r['agree'] + r['contradict']:,}: "
+              f"agree {r['agree']:,} · contradict {r['contradict']:,} ({r['unplaced']:,} not both placed)")
+    return rec
 
 
 def load_ace_catalog_crs(pairs: list, key: str) -> dict | None:
@@ -1015,7 +1051,7 @@ def main() -> int:
               f"map_data_loads {rb['id']} at {rb['loaded_at']}")
         print(f"   {rb['note']}")
         print("\nLive is current.")
-        return store_ace_crs(ace_crs, key)
+        return store_ace_crs(ace_crs, key, cr_rows)
     cr, st, stu = rep.get("cr_unit", {}), rep.get("student", {}), rep.get("students", {})
     print(f"   map_college_cr_unit   {cr.get('was'):,} -> {cr.get('now'):,}")
     print(f"   map_student_credit    {st.get('was'):,} -> {st.get('now'):,}")
@@ -1024,15 +1060,17 @@ def main() -> int:
     for w in rep.get("warnings") or []:
         print(f"   ⚠️  {w}")
     print("\nLive is current.")
-    return store_ace_crs(ace_crs, key)
+    return store_ace_crs(ace_crs, key, cr_rows)
 
 
-def store_ace_crs(ace_crs: list, key: str) -> int:
-    """After the promotion: ACE's catalog text into map_ace_catalog_cr. Enrichment beside the MAP load, which is
-    already live; a pull with no catalog column stores nothing and changes nothing."""
+def store_ace_crs(ace_crs: list, key: str, cr_rows: list | None = None) -> int:
+    """After the promotion: ACE's catalog text into map_ace_catalog_cr, then the self-recall line. Enrichment beside
+    the MAP load, which is already live; a pull with no catalog column stores nothing and changes nothing."""
     if not ace_crs:
         print("\nACE catalog text: no CreditRecommendation pairs parsed; map_ace_catalog_cr LEFT ALONE.")
         return 0
+    if cr_rows is not None:
+        report_self_recall(cr_rows, ace_crs, key)
     print(f"\nStoring ACE catalog text ({len(ace_crs):,} pairs, {ACE_CR_BATCH:,} per call)...")
     got = load_ace_catalog_crs(ace_crs, key)
     if got is not None:

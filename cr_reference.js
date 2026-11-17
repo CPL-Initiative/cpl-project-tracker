@@ -797,8 +797,8 @@
     }).catch(function (e) { sbs[cacheKey] = { status: "error", why: (e && e.message) || "the read failed" }; })
       .then(paint);
   }
-  // One row per recommendation on an exhibit: MAP's wordings and ACE's lines that share the typographic key sit on one
-  // row, so a casing-only difference reads as one recommendation with two spellings.
+  // One row per typographic key on an exhibit: MAP's wordings and ACE's lines that read the same after the rule sit on
+  // one row, so a casing-only difference shows as two spellings side by side.
   function sbsRows(c) {
     var out = [];
     c.ids.forEach(function (ex) {
@@ -817,8 +817,8 @@
         else if (!g.ace.length) note = "No ACE line matches this MAP wording.";
         else if (!g.map.length) note = "ACE line with no MAP wording.";
         else if (exact && g.map.length === 1 && g.ace.length === 1) note = "Same text.";
-        else note = "Same recommendation; the wordings differ only in capitals, spacing or unit words.";
-        if (g.map.length > 1 && !(note === "Same text.")) note += " The " + g.map.length + " MAP wordings are one recommendation.";
+        // What the rule found, never a verdict: whether these are one recommendation is a curator's call.
+        else note = "These differ only in capitals, spacing or unit words" + (g.map.length > 1 ? " (" + g.map.length + " MAP spellings)" : "") + ".";
         out.push({ exhibit: ex, map: g.map, ace: g.ace, note: note });
       });
     });

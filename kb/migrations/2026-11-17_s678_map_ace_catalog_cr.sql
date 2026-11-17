@@ -40,15 +40,16 @@
 --   select count(*) as pairs, count(distinct (exhibit_id, cr_md5)) as distinct_keys,
 --          count(*) filter (where exhibit_id ~ '^[0-9]+$') as numeric_ids from public.map_ace_catalog_cr;
 --   with m as (select distinct exhibit_id, credit_rec from public.map_college_cr_unit
---              where exhibit_id <> '' and coalesce(btrim(credit_rec), '') <> ''),
+--              where exhibit_id <> '' and credit_rec <> ''),
 --        a as (select distinct exhibit_id from public.map_ace_catalog_cr)
 --   select count(*) as map_pairs,
 --          count(*) filter (where exists (select 1 from public.map_ace_catalog_cr c
---                           where c.exhibit_id = m.exhibit_id and c.credit_recommendation = btrim(m.credit_rec))) as exact,
+--                           where c.exhibit_id = m.exhibit_id and c.credit_recommendation = m.credit_rec)) as exact,
 --          count(*) filter (where m.exhibit_id not in (select exhibit_id from a)) as ace_missing
 --   from m;
 -- The runner's log prints the same partition with the typographic bucket (exact + typographic + differs +
--- ace_missing = map pairs), computed from the same pull with kb/cr_typographic.py.
+-- ace_missing = map pairs), computed from the same pull with kb/cr_typographic.py, and a self-recall line: the
+-- typographic-only pairs whose wording a curator already placed in cr_reference_decisions, agreeing or not.
 -- Rollback: kb/migrations/2026-11-17_s678_map_ace_catalog_cr_rollback.sql.
 
 -- Plain create table: a second run fails loudly instead of passing over a table that differs from this file.
@@ -129,11 +130,15 @@ end $$;
 -- MAP's wording and ACE's, per exhibit, for the #cr-reference panel and the success check. One row per distinct
 -- (exhibit, source, text). rows_n counts MAP's college-course-year rows for that wording (articulations, never
 -- students); ACE rows carry none.
+-- The MAP half groups and filters on credit_rec as stored, never on an expression over it. The loader's _clean
+-- already trims it, and a filter through btrim() is not leakproof, so Postgres would run both gate functions on
+-- every map_college_cr_unit row before the panel's cr_text filter (1.3 to 2.8 s against anon's 3 s timeout,
+-- measured by the second reader on #3468, against 46 ms on the plain column).
 create or replace view public.map_exhibit_cr_side_by_side with (security_invoker = true) as
-  select u.exhibit_id, 'MAP'::text as source, btrim(u.credit_rec) as cr_text, count(*)::int as rows_n
+  select u.exhibit_id, 'MAP'::text as source, u.credit_rec as cr_text, count(*)::int as rows_n
   from public.map_college_cr_unit u
-  where u.exhibit_id <> '' and coalesce(btrim(u.credit_rec), '') <> ''
-  group by u.exhibit_id, btrim(u.credit_rec)
+  where u.exhibit_id <> '' and u.credit_rec <> ''
+  group by u.exhibit_id, u.credit_rec
   union all
   select c.exhibit_id, 'ACE'::text, c.credit_recommendation, null::int
   from public.map_ace_catalog_cr c;

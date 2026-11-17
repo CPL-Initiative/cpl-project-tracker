@@ -3,8 +3,8 @@
 //   (1) the typographic rule in cr_reference.js agrees with kb/cr_typographic.py on the shared fixture
 //       (tests/fixtures/cr_typographic_cases.json), so the panel and the nightly counts never disagree;
 //   (2) a wording's panel shows, per exhibit whose MAP wording reads exactly this, MAP's wordings beside ACE's catalog
-//       wording; AR-0702-0030's two MAP spellings sit on one row with the ACE line, and the note says they differ only
-//       in capitals, spacing or unit words;
+//       wording; AR-0702-0030's two MAP spellings sit on one row with the ACE line, and the note describes what the
+//       rule found ("These differ only in capitals, spacing or unit words"), never a verdict;
 //   (3) AR-0102-0007's truncated and run-on MAP wordings never fold into its two atomic ACE lines;
 //   (4) an exhibit with no catalog line says ACE text is missing; a failed read says it failed, never "missing";
 //   (5) signed out, nothing is read and the panel says why;
@@ -101,8 +101,9 @@ const sbsRows = (d) => Array.from(d.querySelectorAll("#crl-pn-sbs tbody tr")).ma
   let rows = sbsRows(t.d);
   check("(2) AR-0702-0030's two MAP spellings and the ACE line sit on one row", rows.length === 1 && rows[0][0] === "AR-0702-0030"
     && rows[0][1] === "3 hours in Supervision" + "3 hours in supervision" && rows[0][2] === "3 hours in Supervision", JSON.stringify(rows));
-  check("(2) the note says they differ only in capitals, spacing or unit words, and are one recommendation",
-    rows[0] && /differ only in capitals, spacing or unit words/.test(rows[0][3]) && /2 MAP wordings are one recommendation/.test(rows[0][3]), rows[0] && rows[0][3]);
+  check("(2) the note says what the rule found, never a verdict", rows[0]
+    && rows[0][3] === "These differ only in capitals, spacing or unit words (2 MAP spellings).", rows[0] && rows[0][3]);
+  check("(2) no note on the panel calls two wordings one recommendation", !/one recommendation|Same recommendation/i.test(txt(t.d.getElementById("crl-pn-sbs-box"))));
   const spellings = Array.from(t.d.querySelectorAll("#crl-pn-sbs tbody tr td:nth-child(2) .crl-pn-sbs-t")).map(txt);
   check("(7) each MAP wording shows as MAP holds it, on its own line", spellings.join("|") === "3 hours in Supervision|3 hours in supervision", spellings.join("|"));
   check("(2) the table is a labelled region with scoped headers", !!t.d.querySelector('#crl-pn-sbs[role="region"][aria-label]')

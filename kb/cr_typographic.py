@@ -142,3 +142,79 @@ def side_by_side(map_pairs, ace_pairs) -> dict:
             out["differs"] += 1
     out["map_typo_settled"] = sum(len(v) for v in by_key.values() if len(v) > 1)
     return out
+
+
+def curator_refs(decisions) -> tuple[dict, int]:
+    """Wording -> the reference a curator confirmed it under, from cr_reference_decisions rows.
+
+    Only `confirmed` rows count, and only a person's: a row whose updated_by is a bot cohort (`...@bot`) is a
+    machine's fold and is left out, so the self-recall below compares the rule with people, never with itself.
+    A wording in `excluded` was split out of the group and takes no reference from it. Returns the map and the
+    number of bot rows left out.
+    """
+    refs: dict[str, str] = {}
+    bots = 0
+    for d in decisions or []:
+        if (d.get("decision") or "") != "confirmed":
+            continue
+        if str(d.get("updated_by") or "").strip().lower().endswith("@bot"):
+            bots += 1
+            continue
+        canon = _squash(d.get("canonical") or "")
+        if not canon:
+            continue
+        out = {_squash(x) for x in (d.get("excluded") or [])}
+        for w in d.get("members") or []:
+            w = _squash(w)
+            if w and w not in out:
+                refs[w] = canon
+    return refs, bots
+
+
+def self_recall(map_pairs, ace_pairs, refs) -> dict:
+    """The typographic rule measured against curators' own placements (S678, the second reader on #3468).
+
+    The 859 rows the rule settles live only in Supabase, so no fixture can say whether it folds what people would.
+    This counts, from one pull, every pair the rule calls the same where a curator independently placed BOTH
+    wordings in cr_reference_decisions: `agree` when both went to one reference, `contradict` when they went to two.
+      ace  — a MAP wording and an ACE line on one exhibit that are typographic-only (no exact line). ACE's text is
+             looked up as a wording too, since colleges often typed it verbatim.
+      map  — two different MAP wordings on one exhibit with the same typo_key.
+    `unplaced` counts pairs where a curator placed at most one side; they say nothing either way.
+    """
+    ace_by: dict[str, dict] = {}
+    for ex, cr in ace_pairs:
+        d = ace_by.setdefault(ex, {"text": set(), "by_key": {}})
+        d["text"].add(cr)
+        d["by_key"].setdefault(typo_key(cr), set()).add(cr)
+    out = {k: {"pairs": 0, "agree": 0, "contradict": 0, "unplaced": 0} for k in ("ace", "map")}
+
+    def judge(bucket, a, b):
+        out[bucket]["pairs"] += 1
+        ra, rb = refs.get(_squash(a)), refs.get(_squash(b))
+        if ra is None or rb is None:
+            out[bucket]["unplaced"] += 1
+        elif ra == rb:
+            out[bucket]["agree"] += 1
+        else:
+            out[bucket]["contradict"] += 1
+
+    groups: dict[tuple, set] = {}
+    seen = set()
+    for ex, cr in map_pairs:
+        ex, cr = (ex or "").strip(), (cr or "").strip()
+        if not ex or not cr or (ex, cr) in seen:
+            continue
+        seen.add((ex, cr))
+        k = typo_key(cr)
+        groups.setdefault((ex, k), set()).add(cr)
+        a = ace_by.get(ex)
+        if a is not None and cr not in a["text"]:
+            for line in sorted(a["by_key"].get(k, ())):
+                judge("ace", cr, line)
+    for (_ex, _k), ws in groups.items():
+        ws = sorted(ws)
+        for i in range(len(ws)):
+            for j in range(i + 1, len(ws)):
+                judge("map", ws[i], ws[j])
+    return out

@@ -103,7 +103,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
-| `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
+| `cr_reference_decisions` | tabs: `cr-reference` · scripts: `kb/_sync_map_custom_reports.py` | tabs: `cr-reference` |
 | `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
 | `credential_submissions` | tabs: `exhibits` | — |
 | `csm_log` | none found | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |

@@ -129,6 +129,79 @@ cr_rows = [{"exhibit_id": e, "credit_rec": r} for e, r in MAP]
 got = sync.report_ace_crs(pairs, stats, cr_rows)
 check(got == sbs, "the runner's report must be the same partition")
 
+# The sum check can fail: a classifier that drops a pair (or counts one twice) disagrees with the pairs counted from
+# the rows directly. Before the second reader on #3468 it compared the buckets with the classifier's own total, which
+# moves with them, so it could never fire.
+real_sbs = sync.side_by_side
+for label, bend in (("drops a pair", lambda d: dict(d, differs=d["differs"] - 1, map_pairs=d["map_pairs"] - 1)),
+                    ("counts a pair twice", lambda d: dict(d, exact=d["exact"] + 1, map_pairs=d["map_pairs"] + 1))):
+    try:
+        sync.side_by_side = (lambda m, a, _b=bend: _b(real_sbs(m, a)))
+        sync.report_ace_crs(pairs, stats, cr_rows)
+        failures.append(f"the sum check must stop the run when the classifier {label}")
+    except SystemExit:
+        pass
+    finally:
+        sync.side_by_side = real_sbs
+
+# ── 3b. Self-recall: the rule against curators' own placements ──────────────
+DECISIONS = [
+    # A curator confirmed AR-0702-0030's two spellings under one reference: the rule agrees.
+    {"group_key": "supervision", "decision": "confirmed", "canonical": "3 hours in Supervision",
+     "members": ["3 hours in Supervision", "3 hours in supervision"], "excluded": [], "updated_by": "sam@example.org"},
+    # A curator placed the two MOS-68W-001 spellings under two references: the rule contradicts a person.
+    {"group_key": "emt a", "decision": "confirmed", "canonical": "3 hours in Emergency Medical Technician",
+     "members": ["3 Hours in Emergency Medical Technician"], "excluded": [], "updated_by": "ashley@example.org"},
+    {"group_key": "emt b", "decision": "confirmed", "canonical": "3 hours in EMT Basic",
+     "members": ["3 hours in emergency medical technician"], "excluded": [], "updated_by": "jessica@example.org"},
+    # A bot cohort's fold and an unconfirmed row never count as a curator's placement.
+    {"group_key": "bot", "decision": "confirmed", "canonical": "x", "members": ["4 hours in Companion Animal Radiology"],
+     "excluded": [], "updated_by": "cr-s600@bot"},
+    {"group_key": "deferred", "decision": "deferred", "canonical": "y", "members": ["3 hours in Fluid Power Systems"],
+     "excluded": [], "updated_by": "sam@example.org"},
+    # A split-out wording takes no reference from its group.
+    {"group_key": "split", "decision": "confirmed", "canonical": "z", "members": ["4 hours in Welding"],
+     "excluded": ["4 hours in Welding"], "updated_by": "sam@example.org"},
+]
+refs, bots = T.curator_refs(DECISIONS)
+check(bots == 1 and "4 hours in Companion Animal Radiology" not in refs and "3 hours in Fluid Power Systems" not in refs
+      and "4 hours in Welding" not in refs, f"curator_refs: only a person's confirmed, unexcluded placements: {refs}")
+rec = T.self_recall(MAP, keys, refs)
+check(rec["map"] == {"pairs": 1, "agree": 1, "contradict": 0, "unplaced": 0},
+      f"AR-0702-0030's two MAP spellings: one pair, and the curator agrees: {rec['map']}")
+check(rec["ace"]["pairs"] == 2 and rec["ace"]["agree"] == 1 and rec["ace"]["contradict"] == 1,
+      f"the typographic-only MAP/ACE pairs: AR-0702-0030 agrees, MOS-68W-001 contradicts: {rec['ace']}")
+
+reads = []
+
+
+def decisions_fake(method, path, key, body=None, timeout=180):
+    reads.append((method, path))
+    if path.startswith("cr_reference_decisions"):
+        return 200, json.dumps(DECISIONS).encode()
+    rows = body["p_rows"]
+    return 200, json.dumps({"sent": len(rows), "added": len(rows), "seen_again": 0, "held": len(rows)}).encode()
+
+
+real_request = sync._request
+try:
+    sync._request = decisions_fake
+    got_rec = sync.report_self_recall(cr_rows, pairs, "k")
+    check(got_rec == rec, "the runner's self-recall line is the same measurement")
+    check(all(m == "GET" for m, p in reads) and reads and reads[0][1].startswith("cr_reference_decisions?select="),
+          f"the self-recall is a read of cr_reference_decisions only: {reads}")
+
+    def refused(*a, **k):
+        raise urllib.error.HTTPError("u", 500, "err", {}, None)
+    sync._request = refused
+    check(sync.report_self_recall(cr_rows, pairs, "k") is None, "a failed decisions read says so and never raises")
+    reads.clear()
+    sync._request = decisions_fake
+    sync.store_ace_crs(pairs, "k", cr_rows)
+    check(any(p.startswith("cr_reference_decisions") for m, p in reads), "the first fill prints the self-recall line")
+finally:
+    sync._request = real_request
+
 # ── 4. The write: batches, the 404 before the migration, never a numeric key ──
 calls = []
 
@@ -176,7 +249,7 @@ check(main_src.index("report_ace_crs(") < main_src.index("if args.dry_run"),
       "the side by side must print on a dry run too")
 check(main_src.index("if args.no_promote") < main_src.index("store_ace_crs("),
       "ACE text must be stored only after the promotion (--no-promote changes nothing live)")
-check(main_src.count("return store_ace_crs(ace_crs, key)") == 2, "both promotion outcomes store the ACE text")
+check(main_src.count("return store_ace_crs(ace_crs, key, cr_rows)") == 2, "both promotion outcomes store the ACE text and measure self-recall")
 check('"ExhibitID"' not in SRC[SRC.index("def ace_catalog_crs"):SRC.index("def report_ace_crs")],
       "ace_catalog_crs must never name the catalog's numeric ExhibitID")
 
@@ -200,11 +273,20 @@ check("has_function_privilege('service_role'" in body and "has_function_privileg
       "the migration checks the grants it set, and raises if they are wrong")
 check("security_invoker = true" in body, "the side-by-side view must read through the underlying policies")
 check("ExhibitID" not in body, "the migration must not name the catalog's numeric ExhibitID as a column")
+rb_body = "\n".join(l for l in rb.splitlines() if not l.lstrip().startswith("--"))
 for stmt in ("drop view if exists public.map_exhibit_cr_side_by_side", "drop function if exists public.map_ace_catalog_cr_load(jsonb)",
-             "drop table public.map_ace_catalog_cr", "create table public.map_ace_catalog_cr_backup as table public.map_ace_catalog_cr"):
-    check(stmt in rb, f"the rollback must {stmt}")
-check(rb.index("map_ace_catalog_cr_backup as table") < rb.index("drop table public.map_ace_catalog_cr;"),
+             "drop table if exists public.map_ace_catalog_cr;", "create table public.map_ace_catalog_cr_backup as table public.map_ace_catalog_cr"):
+    check(stmt in rb_body, f"the rollback must {stmt}")
+check(rb_body.index("map_ace_catalog_cr_backup as table") < rb_body.index("drop table if exists public.map_ace_catalog_cr;"),
       "the rollback copies the rows before it drops the table")
+check("to_regclass('public.map_ace_catalog_cr') is not null" in rb_body
+      and rb_body.index("drop table if exists public.map_ace_catalog_cr_backup") < rb_body.index("create table public.map_ace_catalog_cr_backup"),
+      "the rollback runs twice: it backs up only a table that exists, replacing an older backup first")
+check(re.search(r"--\s+insert into public\.map_ace_catalog_cr .*\n--\s+select .* from public\.map_ace_catalog_cr_backup", rb),
+      "the rollback carries the restore-from-backup SQL as a comment")
+check("btrim(u.credit_rec)" not in body and "group by u.exhibit_id, u.credit_rec" in body,
+      "the view filters and groups on credit_rec as stored: an expression there is not leakproof and runs both "
+      "gate functions on every unit row (the second reader on #3468)")
 
 # ── 7. The governance map names every new surface with its reason ───────────
 gov = json.load(open(os.path.join(ROOT, "kb", "governance_surface_map.json"), encoding="utf-8"))
