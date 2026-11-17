@@ -72,8 +72,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 105 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 631 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1501** | |
+| Session handoffs | 632 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1502** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,6 +124,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-17 (S672 SkyWren, the CPL Queue routine, full checkpoint): #3441 (RCCD music: the repeated-course-row reconcile steps; Riverside City 229 to 232 passing, Norco's required list counted twice). Handoff 673.
 - 2026-11-17 (S670 SkyBunting, Sam's session, full checkpoint): #3420 (Coastline's objectives loaded, 522 rows; a course outcomes slice keyed by its colleges), #3423 (Skyline's yield read after display build b640e31b114a), #3436 (Skyline 32337's live row removed, full image filed), #3433 and #3434 (Rio Hondo and Santa Ana from their own 2025-2026 catalogs), #3435 (S668's Berkeley City row); five `cpl_memory` rows through the runner; handoff 671 for SkyKinglet.
 - 2026-11-16 (S668 SkyPipit, Sam's session, full checkpoint): #3408 (the no-closed-list lookup's page yield: 13 yields at 8 colleges, 0 passing moved), #3411 (Gavilan Mathematics 31444 and Physics 33047 from their 2025-2026 catalog); #3414 (slice B part 1) waits on `test`; eight `cpl_memory` rows drafted as a migration; the harvest lane compacted; handoff 670 (S669 ran in parallel).
 - 2026-11-16 (S667 SkyPlover, Sam's session, full checkpoint): #3402 (CPL Pathways: Request Adopt on course cards, Ask Sierra's side bar, an SLOs and objectives panel, full width, the CPL Visual's progress bar), #3403 (`kb/plain_words.py`, one term list; the six re-clustering cases settled), samueltlee/CPLBrain#806 (sheets refuse undefined insider terms from 201), #3404 (harvest and governance decisions; seven memory rows through the runner). Handoff 668 (SkyPipit).

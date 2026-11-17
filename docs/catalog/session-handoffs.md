@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-631 document(s).
+632 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 673 | [Session 673 handoff (from SkyWren, S672)](../session_673_handoff.md) | 2026-11-17 |
 | 672 | [Session 672 handoff (from SkyKinglet, S671)](../session_672_handoff.md) | 2026-11-17 |
 | 671 | [Session 671 handoff (from SkyBunting, S670)](../session_671_handoff.md) | 2026-11-17 |
 | 670 | [Session 670 handoff (from SkyPipit, S668)](../session_670_handoff.md) | 2026-11-16 |
