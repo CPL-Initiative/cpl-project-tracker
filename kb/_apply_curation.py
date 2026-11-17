@@ -99,6 +99,55 @@ def fetch_rows():
         start += page
 
 
+# A ruling in the Courses List's "Discipline in doubt" panel (Keep, Move, Keep and also list as, Not sure) is a
+# `ccr_procedure_request` row keyed `_CCR_PROCEDURE_REQUEST::<when>-<M-ID>`; its JSON value names the M-ID. Issue
+# 3447: the fold dropped these, so the reseed asked Sam again about cards he had ruled on. Each folds under its M-ID
+# as `ruling: {ruling, to, at}` (latest wins), with no reviewer account beyond what the overlay already carries.
+RULE_FIELD = "ccr_procedure_request"
+BOT_SUFFIX = "@" + "bot"
+
+
+def is_person(account):
+    """A reviewer account that is a person: bot cohorts write under a `<lane>-s<N>` account ending BOT_SUFFIX."""
+    e = (account or "").strip().lower()
+    return bool(e) and not e.endswith(BOT_SUFFIX)
+
+
+def fold_ruling(curations, row):
+    """Fold one ccr_procedure_request row into curations[mid]["ruling"]. Returns the M-ID, or None when the value
+    names none."""
+    try:
+        v = json.loads(row.get("value") or "{}")
+    except (TypeError, ValueError):
+        return None
+    mid = (v.get("mid") or "").strip() if isinstance(v, dict) else ""
+    if not mid:
+        return None
+    at = row.get("reviewed_at") or ""
+    entry = curations.setdefault(mid, {})
+    if at >= ((entry.get("ruling") or {}).get("at") or ""):
+        entry["ruling"] = {"ruling": v.get("ruling"), "to": v.get("to"), "at": at}
+    return mid
+
+
+def stamp_person_validation(curations, rows):
+    """Issue 3447 and Sam's 2026-06-10 rule (a merged card reads Verified only after he verifies it): a person's
+    `discipline` row on a merge target sets that target's validated_at / validated_by in the overlay. This replaces
+    the confirmation PATCH the merge bots' row policy refused. An explicit validated_at that is later wins."""
+    targets = {v.get("merge_into") for v in curations.values() if isinstance(v, dict) and v.get("merge_into")}
+    for row in rows:
+        if (row.get("field") or "").strip() != "discipline" or not is_person(row.get("reviewer_email")):
+            continue
+        cid = row.get("course_id")
+        if cid not in targets or cid not in curations:
+            continue
+        at = row.get("reviewed_at") or ""
+        entry = curations[cid]
+        if at and at >= (entry.get("validated_at") or ""):
+            entry["validated_at"] = at
+            entry["validated_by"] = row.get("reviewer_email")
+
+
 def fold_rows(rows, live=None, maps=None):
     """kb_curation rows -> (curations, skipped, honors): the overlay's `curations` map, the count of rows whose
     field is not folded, and the Honors holds ({} when no row carries honors_of, so the overlay is byte-identical
@@ -107,6 +156,10 @@ def fold_rows(rows, live=None, maps=None):
     skipped = 0
     for row in rows:
         field = (row.get("field") or "").strip()
+        if field == RULE_FIELD:
+            if fold_ruling(curations, row) is None:
+                skipped += 1
+            continue
         if field not in FIELDS:
             skipped += 1
             continue
@@ -130,6 +183,7 @@ def fold_rows(rows, live=None, maps=None):
             if row.get("validated_at"):
                 entry["validated_at"] = row.get("validated_at")
                 entry["validated_by"] = row.get("validated_by")
+    stamp_person_validation(curations, rows)
     return curations, skipped, hold_honors_pairs(curations, rows, live, maps)
 
 
@@ -152,13 +206,13 @@ def hold_honors_pairs(curations, rows, live=None, maps=None):
     for h in held:
         src = h["merge_source"]
         curations[src].pop("merge_into", None)
-        if not any(k in FIELDS for k in curations[src]):
+        if not any(k in FIELDS or k == "ruling" for k in curations[src]):
             del curations[src]
     for p in person_wins:
         hid = p["honors_id"]
         if hid in curations:
             curations[hid].pop(ho.FIELD, None)
-            if not any(k in FIELDS for k in curations[hid]):
+            if not any(k in FIELDS or k == "ruling" for k in curations[hid]):
                 del curations[hid]
     return {"held": held, "set_aside": person_wins}
 

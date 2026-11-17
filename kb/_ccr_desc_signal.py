@@ -135,3 +135,44 @@ def evaluate(train, folds=5):
                 tot[key] += 1
                 hit[key] += ok
     return {k: {"n": tot[k], "right": hit[k], "rate": round(hit[k] / tot[k], 3)} for k in sorted(tot)}
+
+
+def load_list_members(root=ROOT):
+    """unified_courses_members.js (the Courses List's file) as {M-ID: [membership]} in the minted memberships' shape
+    (college, control_number, subject, course_number, units, top_code, title). The List's file is where the 2026
+    machine clusters keep their local courses."""
+    with open(os.path.join(root, "unified_courses_members.js"), encoding="utf-8") as f:
+        src = f.read()
+    i = src.index("window.")
+    i = src.index("=", i) + 1
+    doc = json.loads(src[i:].strip().rstrip(";"))
+    colleges = doc.get("colleges") or []
+    out = {}
+    for mid, rows in (doc.get("members") or {}).items():
+        conv = []
+        for r in rows or []:
+            code = " ".join(str(r.get("n") or "").split())
+            subj, _, num = code.partition(" ")
+            c = r.get("c")
+            conv.append({"college": colleges[c] if isinstance(c, int) and 0 <= c < len(colleges) else None,
+                         "control_number": r.get("cn"), "subject": subj, "course_number": num,
+                         "units": r.get("u"), "top_code": str(r.get("p") or ""), "title": r.get("t")})
+        out[mid] = conv
+    return out
+
+
+def fill_memberships(memberships, list_members=None, only=None, root=ROOT):
+    """The membership fix (issue 3454, ask #1): a card with no entry in kb/coci_minted_memberships.json takes its
+    local courses from the Courses List's file. 4,036 seedless cards (all 2026 machine clusters, `classified_by`
+    kb/_zband_retire_apply.py) had none, so the reseed and this signal read no codes, TOP or descriptions for them.
+    `only` limits the fill to those ids (the minted cards; a singleton keeps reading its own control number).
+    Returns (filled memberships, the M-IDs filled). The minted file itself is not changed."""
+    if list_members is None:
+        list_members = load_list_members(root)
+    out = dict(memberships)
+    filled = []
+    for mid, rows in list_members.items():
+        if rows and not out.get(mid) and (only is None or mid in only):
+            out[mid] = rows
+            filled.append(mid)
+    return out, sorted(filled)
