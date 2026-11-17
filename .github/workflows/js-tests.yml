@@ -645,6 +645,10 @@ jobs:
       # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
       - name: Credential fold issuer precedence and undo
         run: python3 tests/cred_rename_fold_issuer_test.py
+      # The pair re-point (COBIx's item 6, #3464, S678): one (MAP exhibit id + local title) moves and nothing beside it,
+      # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
+      - name: Exhibit pair re-point list and apply
+        run: python3 tests/exhibit_repoint_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.

@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1015,
+  "file_datasets": 1017,
   "external_services": 195,
-  "consumers": 605,
+  "consumers": 607,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11704,6 +11704,13 @@
      "line": 149
     },
     {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 498
+    },
+    {
      "id": "script:kb/_build_peer_articulations.py",
      "kind": "script",
      "direction": "read",
@@ -11736,7 +11743,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 85
+     "line": 90
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -14737,6 +14744,13 @@
      "line": 72
     },
     {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 499
+    },
+    {
      "id": "script:kb/_build_exhibits_related.py",
      "kind": "script",
      "direction": "read",
@@ -14769,7 +14783,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 80
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -14890,6 +14904,13 @@
      "line": 39
     },
     {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 497
+    },
+    {
      "id": "script:kb/_build_exhibits_related.py",
      "kind": "script",
      "direction": "read",
@@ -14943,7 +14964,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 88
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -16186,6 +16207,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibit_repoint_list.json": {
+   "consumers": [
+    {
+     "id": "script:kb/exhibit_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/exhibit_slo_neighbors.json": {
    "consumers": [
     {
@@ -16421,7 +16455,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 77
+     "line": 82
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -16457,6 +16491,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 501
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18583,6 +18624,13 @@
      "line": 82
     },
     {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 502
+    },
+    {
      "id": "script:kb/_jev_agri_families.py",
      "kind": "script",
      "direction": "read",
@@ -19080,7 +19128,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -21055,6 +21103,13 @@
      "line": 193
     },
     {
+     "id": "script:kb/_build_exhibit_repoint_list.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 496
+    },
+    {
      "id": "script:kb/_build_exhibits_related.py",
      "kind": "script",
      "direction": "read",
@@ -21122,7 +21177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 89
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -25752,6 +25807,19 @@
    "main_committers": []
   },
   "file:tests/exhibit_reanalysis_jev_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/exhibit_repoint_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -34876,6 +34944,7 @@
     "tests/exhibits_sweep_build_test.py",
     "tests/cert_naming_test.py",
     "tests/cred_rename_fold_issuer_test.py",
+    "tests/exhibit_repoint_test.py",
     "tests/fold_issuer_resolution_test.py",
     "tests/fold_issuer_single_source_test.py",
     "tests/emptied_title_guard_test.py",
