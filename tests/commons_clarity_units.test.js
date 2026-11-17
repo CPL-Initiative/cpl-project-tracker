@@ -32,6 +32,13 @@ const COMMONS = fs.readFileSync("commons.js", "utf8");
 const SRC = fs.readFileSync("commons_data.js", "utf8");
 const CENSUS = fs.readFileSync("kb/_harvest_gap_census.py", "utf8");
 const DATA = JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8"));
+/* The database check's day as the page writes it, from the committed census basis (the live read moves daily). */
+const CHECK_DAY = (function () {
+  const c = (DATA.colleges || []).find((x) => x && x.census_basis && x.census_basis.basis === "live") || {};
+  const m = /^(\d{4}-\d{2}-\d{2})/.exec(String((c.census_basis || {}).at || ""));
+  return m ? new Date(m[1] + "T12:00:00Z").toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" }) : "Nov 13, 2026";
+})();
+const CHECK_RE = CHECK_DAY.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const STATUS = fs.existsSync("kb/status/commons.json") ? JSON.parse(fs.readFileSync("kb/status/commons.json", "utf8")) : {};
 const SIDE = "kb/status/commons_data_programs/chaffey.json";
 const COMMITTED = JSON.parse(fs.readFileSync(SIDE, "utf8"));
@@ -85,10 +92,10 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(1) the cause table's caption says program requirements",
     /^Program requirements still to pass, by cause$/.test(txt(panel.querySelector("table.cdd-causes caption"))), txt(panel.querySelector("table.cdd-causes caption")));
   check("(2) ⭐ the units cause names the database check and its day, with no bare \"live\"",
-    gaps.some((g) => /^Program requirements, units unequal at the database check of Nov 13, 2026: 8 programs$/.test(g)) && !gaps.some((g) => /\blive, /i.test(g)), gaps);
+    gaps.some((g) => new RegExp("^Program requirements, units unequal at the database check of " + CHECK_RE + ": 8 programs$").test(g)) && !gaps.some((g) => /\blive, /i.test(g)), gaps);
   const basis = txt(panel.querySelector("[data-census-basis]"));
   check("(2) the cause box says the check read our saved records and not the catalog",
-    /From the database check of Nov 13, 2026/.test(basis) && /saved program records/.test(basis) && /did not read the college's catalog again/.test(basis), basis);
+    new RegExp("From the database check of " + CHECK_RE).test(basis) && /saved program records/.test(basis) && /did not read the college's catalog again/.test(basis), basis);
   const pta = panel.querySelector('ul.cdd-progs > li[data-cn="42987"]');
   check("(3) ⭐ Physical Therapist Assistant shows both figures in the cause list",
     txt(pta && pta.querySelector("[data-units]")) === "Our lists add up to 56 units; the catalog prints 65 units.", txt(pta));
@@ -112,7 +119,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   const pane = txt(b.d.querySelector("#cdd-panel"));
   check("(3) ⭐ the program pane shows both figures", /Units\s*Our lists add up to 56 units; the catalog prints 65 units\./.test(pane), pane.slice(0, 600));
   check("(1) the program pane names the cause as a program requirement",
-    /Still to pass because\s*Program requirements: units unequal at the database check of Nov 13, 2026/.test(pane), pane.slice(0, 600));
+    new RegExp("Still to pass because\\s*Program requirements: units unequal at the database check of " + CHECK_RE).test(pane), pane.slice(0, 600));
   check("(4) the program pane's lever names who acts and the missing rules",
     /What would move it\s*A team session writes correction rules/.test(pane) && /Chaffey College has no correction rules of its own on file yet/.test(pane), pane.slice(0, 900));
   const c = load("#commons/data/college/chaffey-college/program/20677", M2, CHAFFEY);
