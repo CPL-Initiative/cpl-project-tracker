@@ -57,7 +57,7 @@ One Opus 5.5 session works the queue; the $40-per-college limits and the #3351 g
 ## Decisions
 
 `cpl_memory` rows in `kb/migrations/2026-11-17_s675_cpl_memory_rows.sql` (rollback beside it), applied by `supabase-migrate.yml`
-from #3446's branch: `d-rcc-social-justice-catalog-unequal-s675`, `d-butte-31950-keeps-its-reading-s675`. Sam gave no new ruling.
+run 44082711205 from #3446's branch (receipt `kb/receipts/migration_s675_cpl_memory_rows_44082711205.json`): `d-rcc-social-justice-catalog-unequal-s675`, `d-butte-31950-keeps-its-reading-s675`. Sam gave no new ruling.
 
 ## Let go
 
