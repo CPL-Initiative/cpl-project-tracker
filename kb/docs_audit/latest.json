@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1512,
-    "bytes": 16039689,
+    "bytes": 16041226,
     "over_budget": 3,
     "handoff_max": 668,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5218340,
+        "bytes": 5218620,
         "over": 1
       },
       "index": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 532211,
+        "bytes": 533468,
         "over": 0
       },
       "handoff": {
@@ -63,9 +63,9 @@
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 84824,
-      "bytes": 14988172288,
-      "heavy_bytes": 10460554467,
+      "files": 84828,
+      "bytes": 14988286407,
+      "heavy_bytes": 10460603991,
       "heavy_share": 0.698,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -95,9 +95,9 @@
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tmc",
-        "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
-        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
         "cpl-project-tracker/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
         "cpl-project-tracker/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/kb/status/commons_data_programs",
@@ -716,13 +716,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 180422,
+        "bytes": 180702,
         "limit": 150000,
         "lane": "other",
-        "over_by": 30422,
+        "over_by": 30702,
         "ratio": 1.2
       },
-      "message": "180,422 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "180,702 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -940,10 +940,10 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/library",
       "detail": {
-        "bytes": 20829722,
+        "bytes": 20830385,
         "kind": "dir"
       },
-      "message": "directory totals 20,829,722 B inside the vault"
+      "message": "directory totals 20,830,385 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -998,32 +998,32 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
+      "path": "tests",
       "detail": {
-        "bytes": 13497400,
+        "bytes": 13522377,
         "kind": "dir"
       },
-      "message": "directory totals 13,497,400 B inside the vault"
+      "message": "directory totals 13,522,377 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
       "detail": {
-        "bytes": 13490047,
+        "bytes": 13504811,
         "kind": "dir"
       },
-      "message": "directory totals 13,490,047 B inside the vault"
+      "message": "directory totals 13,504,811 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "tests",
+      "path": ".claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
       "detail": {
-        "bytes": 13488665,
+        "bytes": 13497785,
         "kind": "dir"
       },
-      "message": "directory totals 13,488,665 B inside the vault"
+      "message": "directory totals 13,497,785 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -6760,11 +6760,11 @@
       "fixable": false,
       "path": "docs/session_668_handoff.md",
       "detail": {
-        "commits_since": 10,
+        "commits_since": 14,
         "budget": 6,
         "handoff": "session_668_handoff.md"
       },
-      "message": "10 commit(s) have landed since `docs/session_668_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "14 commit(s) have landed since `docs/session_668_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     },
     {
       "rule": "handoff_drops_active_lane",
