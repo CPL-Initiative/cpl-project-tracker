@@ -9,7 +9,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/accounting-as.php",
+    "title": "Accounting AS Degree Program",
+    "h1": " Accounting Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05811",
@@ -21,7 +35,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/computer-information-specialist-as.php",
+    "title": "Computer Information Specialist AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05816",
@@ -33,7 +61,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05817",
@@ -45,7 +77,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technology-as.php",
+    "title": "Automotive Technology AS Degree Program",
+    "h1": " Automotive Technology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05819",
@@ -57,7 +103,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/art-aa.php",
+    "title": "Art AA Degree Program",
+    "h1": " Art Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05820",
@@ -69,7 +129,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/music-aa.php",
+    "title": "Music AA Degree Program",
+    "h1": " Music Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05821",
@@ -81,7 +155,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/respiratory-therapy-as.php",
+    "title": "Respiratory Therapy AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05825",
@@ -93,7 +181,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/english-aa.php",
+    "title": "English AA Degree Program",
+    "h1": " English Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05828",
@@ -105,7 +207,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05830",
@@ -117,7 +223,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/psychology-aa.php",
+    "title": "Psychology AA Degree Program",
+    "h1": " Psychology Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05832",
@@ -129,7 +249,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05836",
@@ -141,7 +265,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/cosmetology-as.php",
+    "title": "Cosmetology AS Degree Program",
+    "h1": " Cosmetology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07634",
@@ -153,7 +291,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/natural-science-as.php",
+    "title": "Natural Science AS Degree Program",
+    "h1": " Natural Science Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07636",
@@ -165,7 +317,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-as.php",
+    "title": "Biotechnology AS Degree Program",
+    "h1": " Biotechnology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07637",
@@ -177,7 +343,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-as.php",
+    "title": "Business Administration AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07638",
@@ -189,7 +369,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "07640",
@@ -201,7 +385,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "07641",
@@ -213,7 +401,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "07643",
@@ -225,7 +417,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "07649",
@@ -237,7 +433,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-information-systems-as.php",
+    "title": "Business Information Systems AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07650",
@@ -249,7 +459,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-information-systems-as.php",
+    "title": "Office Information Systems AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07651",
@@ -261,7 +485,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/spanish-aa.php",
+    "title": "Spanish AA Degree Program",
+    "h1": " Spanish Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07652",
@@ -273,7 +511,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/surgical-technology-as.php",
+    "title": "Surgical Technology Associate in Science Degree Program",
+    "h1": " Surgical Technology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07653",
@@ -285,7 +537,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/allied-health-science-as.php",
+    "title": "Allied Health Science AS Degree Program",
+    "h1": " Allied Health Science Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07654",
@@ -297,7 +563,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-as.php",
+    "title": "Early Childhood Education AS Degree Program",
+    "h1": " Early Childhood Education Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07656",
@@ -309,7 +589,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/paralegal-legal-assistant-aa.php",
+    "title": "Paralegal, Legal Assistant AA Degree Program",
+    "h1": " Paralegal, Legal Assistant Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "07692",
@@ -321,7 +615,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "07704",
@@ -333,7 +631,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-technician-as.php",
+    "title": "Automotive Technician AS Degree Program",
+    "h1": " Automotive Technician Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10525",
@@ -345,7 +657,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "10526",
@@ -357,7 +673,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-engines-technology-ca.php",
+    "title": "Automotive Engines Technology Certificate of Achievement",
+    "h1": " Automotive Engines Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10527",
@@ -369,7 +699,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-drive-train-technology-ca.php",
+    "title": "Automotive Drive Train Technology Certificate of Achievement",
+    "h1": " Automotive Drive Train Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10528",
@@ -381,7 +725,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-engine-performance-technology-ca.php",
+    "title": "Automotive Engine Performance Technology Certificate of Achievement",
+    "h1": " Automotive Engine Performance Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10529",
@@ -393,7 +751,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php",
+    "title": "Automotive Advanced Engine Performance Technology Certificate of Achievement",
+    "h1": " Automotive Advanced Engine Performance Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "32337"
+  }
  },
  {
   "control_number": "10542",
@@ -405,7 +778,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/general-merchandising-as.php",
+    "title": "General Merchandising AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10543",
@@ -417,7 +804,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/image-consulting-as.php",
+    "title": "Image Consulting AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10546",
@@ -429,7 +830,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php",
+    "title": "Dance AA Degree Program",
+    "h1": " Dance Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "46296"
+  }
  },
  {
   "control_number": "12274",
@@ -441,7 +857,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "12297",
@@ -453,7 +873,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "14281",
@@ -465,7 +889,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/physical-education-aa.php",
+    "title": "Physical Education AA Degree Program",
+    "h1": " Physical Education Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "16217",
@@ -477,7 +915,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/automotive-electricity-electronics-ca.php",
+    "title": "Automotive Electricity/Electronics Certificate of Achievement",
+    "h1": " Automotive Electricity/Electronics Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "16263",
@@ -489,7 +941,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/journalism-aa.php",
+    "title": "Journalism AA Degree Program",
+    "h1": " Journalism Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "16712",
@@ -501,7 +967,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/network-engineering-as.php",
+    "title": "Network Engineering AS Degree Program",
+    "h1": " Network Engineering Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "16796",
@@ -513,7 +993,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18608",
@@ -525,7 +1009,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18609",
@@ -537,7 +1025,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18610",
@@ -549,7 +1041,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18611",
@@ -561,7 +1057,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18612",
@@ -573,7 +1073,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18613",
@@ -585,7 +1089,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18614",
@@ -597,7 +1105,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18615",
@@ -609,7 +1121,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18682",
@@ -621,7 +1137,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18683",
@@ -633,7 +1153,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18827",
@@ -645,7 +1169,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21484",
@@ -657,7 +1185,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/accounting-ca.php",
+    "title": "Accounting Certificate of Achievement",
+    "h1": " Accounting Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21485",
@@ -669,7 +1211,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-administration-ca.php",
+    "title": "Business Administration Certificate of Achievement",
+    "h1": " Business Administration Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21486",
@@ -681,7 +1237,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21488",
@@ -693,7 +1253,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21489",
@@ -705,7 +1269,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/administrative-assistant-ca.php",
+    "title": "Administrative Assistant Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21490",
@@ -717,7 +1295,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/computer-information-specialist-ca.php",
+    "title": "Computer Information Specialist Certificate",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21491",
@@ -729,7 +1321,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-assistant-ca.php",
+    "title": "Office Assistant Certificate of Achievement",
+    "h1": " Office Assistant Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21494",
@@ -741,7 +1347,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/journalism-ca.php",
+    "title": "Journalism Certificate of Achievement",
+    "h1": " Journalism Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21496",
@@ -753,7 +1373,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/business-information-systems-ca.php",
+    "title": "Business Information Systems Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21497",
@@ -765,7 +1399,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/office-information-systems-ca.php",
+    "title": "Office Information Systems Certificate",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21498",
@@ -777,7 +1425,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/network-engineering-ca.php",
+    "title": "Network Engineering Certificate of Achievement",
+    "h1": " Network Engineering Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21499",
@@ -789,7 +1451,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21500",
@@ -801,7 +1467,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21503",
@@ -813,7 +1483,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/image-consulting-ca.php",
+    "title": "Image Consulting Certificate",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21505",
@@ -825,7 +1509,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/general-merchandising-ca.php",
+    "title": "General Merchandising Certificate",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21506",
@@ -837,7 +1535,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/early-childhood-education-ca.php",
+    "title": "Early Childhood Education Certificate of Achievement",
+    "h1": " Early Childhood Education Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21507",
@@ -849,7 +1561,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/paralegal-legal-assistant-ca.php",
+    "title": "Paralegal, Legal Assistant Certificate of Achievement",
+    "h1": " Paralegal, Legal Assistant Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21508",
@@ -861,7 +1587,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21509",
@@ -873,7 +1603,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/cosmetology-ca.php",
+    "title": "Cosmetology Certificate of Achievement",
+    "h1": " Cosmetology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22985",
@@ -885,7 +1629,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/asian-studies-aa.php",
+    "title": "Asian Studies: Language, Commerce, and Culture AA Degree Program",
+    "h1": "",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22986",
@@ -897,7 +1655,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/asian-studies-ca.php",
+    "title": "Asian Studies Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22987",
@@ -909,7 +1681,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/chinese-studies-ca.php",
+    "title": "Chinese Studies Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22988",
@@ -921,7 +1707,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "30563",
@@ -933,7 +1723,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/massage-therapy-ca.php",
+    "title": "Massage Therapy Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "30882",
@@ -955,7 +1759,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -967,8 +1774,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.667,
+  "coverage": 0.75,
   "codes_found": [
+   "BIOL110",
    "PSYC105",
    "PSYC171",
    "PSYC200",
@@ -985,37 +1793,26 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 5264
+  "text_chars": 4755
  },
  {
   "control_number": "31587",
   "title": "Physics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.667,
-  "codes_found": [
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS250",
-   "PHYS260"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/programs/computer-science-for-transfer-as-t.xml",
-   "title": "",
-   "h1": "",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 6746
+  "text_chars": 0
  },
  {
   "control_number": "31978",
@@ -1037,7 +1834,7 @@
    "label": null
   },
   "listed": 4,
-  "text_chars": 3585
+  "text_chars": 2777
  },
  {
   "control_number": "32293",
@@ -1061,68 +1858,38 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology for transfer associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 4197
+  "text_chars": 3599
  },
  {
   "control_number": "32337",
   "title": "Asian Engine Performance Technology",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "AUTO710"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php",
-   "title": "Automotive Advanced Engine Performance Technology Certificate of Achievement",
-   "h1": " Automotive Advanced Engine Performance Technology Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.75
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 3926
+  "text_chars": 0
  },
  {
   "control_number": "32479",
   "title": "Elementary Teacher Education",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.632,
-  "codes_found": [
-   "ARTH130",
-   "BIOL110",
-   "CDEVC1000",
-   "COMMC1000",
-   "ENGL110",
-   "ENGLC1000",
-   "ENGLC1001",
-   "GEOG150",
-   "HIST104",
-   "MUS202",
-   "PLSC210",
-   "PSYC201"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/_data/programs-SKYLINE.xml",
-   "title": "",
-   "h1": "",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "32746",
@@ -1159,23 +1926,50 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 27,
-  "text_chars": 5727
+  "text_chars": 5194
  },
  {
   "control_number": "32774",
   "title": "Administration of Justice",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "page_claimed",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJ100",
+   "ADMJ104",
+   "ADMJ108",
+   "ADMJ120",
+   "ADMJ123",
+   "ADMJ125",
+   "PSYC171",
+   "PSYCC1000",
+   "SOCI129",
+   "SOCIC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://catalog.skylinecollege.edu/current/programs/administration-of-justice-for-transfer-as-t.php",
+   "title": "Administration of Justice for Transfer Associate in Science Degree for Transfer",
+   "h1": " Administration of Justice for Transfer Associate in Science Degree for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice for transfer associate in science degree for transfer",
+    "section_fit": 0.667
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4564
  },
  {
   "control_number": "32962",
@@ -1199,7 +1993,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-installation-ca.php",
+    "title": "Solar Installation Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "32964",
@@ -1223,7 +2031,7 @@
    "label": null
   },
   "listed": 10,
-  "text_chars": 4576
+  "text_chars": 3830
  },
  {
   "control_number": "33043",
@@ -1235,7 +2043,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/solar-technology-and-business-as.php",
+    "title": "Solar Technology and Business AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33044",
@@ -1259,7 +2081,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/energy-efficiency-as.php",
+    "title": "Energy Efficiency AS Degree Program",
+    "h1": "",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33399",
@@ -1299,11 +2135,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts for transfer associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 22,
-  "text_chars": 5030
+  "text_chars": 4406
  },
  {
   "control_number": "35353",
@@ -1331,11 +2170,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "electrical engineering associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 4585
+  "text_chars": 3894
  },
  {
   "control_number": "35773",
@@ -1356,11 +2198,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology manufacturing assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3522
+  "text_chars": 2709
  },
  {
   "control_number": "36255",
@@ -1398,11 +2243,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biotechnology manufacturing technician associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 4097
+  "text_chars": 3347
  },
  {
   "control_number": "36257",
@@ -1414,7 +2262,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "36303",
@@ -1441,11 +2293,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biotechnology manufacturing technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3890
+  "text_chars": 3173
  },
  {
   "control_number": "36344",
@@ -1453,8 +2308,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.5,
+  "coverage": 0.571,
   "codes_found": [
+   "BIOL110",
    "BIOL250",
    "BIOL260",
    "CHEM192",
@@ -1470,11 +2326,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health for transfer associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
-  "text_chars": 5113
+  "text_chars": 4844
  },
  {
   "control_number": "37135",
@@ -1502,11 +2361,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
-  "text_chars": 4892
+  "text_chars": 4292
  },
  {
   "control_number": "37144",
@@ -1547,11 +2409,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies for transfer associate in arts degree for transfer",
+    "section_fit": 0.75
    }
   },
   "listed": 23,
-  "text_chars": 5431
+  "text_chars": 4828
  },
  {
   "control_number": "37236",
@@ -1578,11 +2443,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 4939
+  "text_chars": 4452
  },
  {
   "control_number": "37237",
@@ -1608,11 +2476,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
-  "text_chars": 5258
+  "text_chars": 4696
  },
  {
   "control_number": "38299",
@@ -1635,11 +2506,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "proficiency in american culture and english (pace) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 6,
-  "text_chars": 2605
+  "text_chars": 1713
  },
  {
   "control_number": "39214",
@@ -1651,7 +2525,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-1-california-state-university-general-education-ca.php",
+    "title": "University Transfer - Option 1: California State University General Education Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "39215",
@@ -1663,7 +2551,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-2-intersegmental-general-education-transfer-curriculum-for-csu-igetc-csu-ca.php",
+    "title": "University Transfer - Option 2: Intersegmental General Education Transfer Curriculum for CSU (IGETC/CSU) Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "39243",
@@ -1675,7 +2577,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "39380",
@@ -1707,11 +2613,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 5645
+  "text_chars": 5030
  },
  {
   "control_number": "39394",
@@ -1737,43 +2646,26 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies for transfer 2.0 associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
-  "text_chars": 5237
+  "text_chars": 4786
  },
  {
   "control_number": "39658",
   "title": "Environmental Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.625,
-  "codes_found": [
-   "BIOL215",
-   "BIOL230",
-   "CHEM210",
-   "CHEM220",
-   "MATH241",
-   "MATHC2210",
-   "PHYS210",
-   "PHYS220",
-   "PHYS250",
-   "PHYS260"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/programs/biology-for-transfer-as-t.xml",
-   "title": "",
-   "h1": "",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 16,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "39660",
@@ -1801,11 +2693,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer associate in science degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
-  "text_chars": 5232
+  "text_chars": 4622
  },
  {
   "control_number": "39972",
@@ -1817,7 +2712,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/university-transfer-option-3-intersegmental-general-education-transfer-curriculum-for-uc-igetc-uc-ca.php",
+    "title": "University Transfer - Option 3: Intersegmental General Education Transfer Curriculum for UC (IGETC/UC) Certificate of Achievement",
+    "h1": "",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "41387",
@@ -1840,11 +2749,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "user experience design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 2906
+  "text_chars": 2014
  },
  {
   "control_number": "41692",
@@ -1873,7 +2785,7 @@
    "label": null
   },
   "listed": 11,
-  "text_chars": 5072
+  "text_chars": 4491
  },
  {
   "control_number": "41889",
@@ -1902,11 +2814,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration for transfer degree 2.0 associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
-  "text_chars": 5483
+  "text_chars": 4957
  },
  {
   "control_number": "42252",
@@ -1932,11 +2847,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
-  "text_chars": 4973
+  "text_chars": 4377
  },
  {
   "control_number": "42371",
@@ -1956,11 +2874,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "barbering certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4509
+  "text_chars": 3792
  },
  {
   "control_number": "42823",
@@ -1980,11 +2901,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "barbering associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 4730
+  "text_chars": 4012
  },
  {
   "control_number": "44453",
@@ -2014,11 +2938,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies for transfer 2.0 associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
-  "text_chars": 5308
+  "text_chars": 4786
  },
  {
   "control_number": "44546",
@@ -2045,11 +2972,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3333
+  "text_chars": 2441
  },
  {
   "control_number": "44778",
@@ -2090,11 +3020,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history for transfer associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
-  "text_chars": 5633
+  "text_chars": 5025
  },
  {
   "control_number": "44779",
@@ -2122,11 +3055,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science for transfer associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
-  "text_chars": 4935
+  "text_chars": 4330
  },
  {
   "control_number": "44780",
@@ -2163,7 +3099,7 @@
    "label": null
   },
   "listed": 19,
-  "text_chars": 6133
+  "text_chars": 5527
  },
  {
   "control_number": "44783",
@@ -2211,11 +3147,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society associate in arts degree for transfer",
+    "section_fit": 0.8
    }
   },
   "listed": 36,
-  "text_chars": 6489
+  "text_chars": 5876
  },
  {
   "control_number": "44784",
@@ -2244,11 +3183,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
-  "text_chars": 5540
+  "text_chars": 4934
  },
  {
   "control_number": "44785",
@@ -2275,11 +3217,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
-  "text_chars": 5109
+  "text_chars": 4507
  },
  {
   "control_number": "44866",
@@ -2316,11 +3261,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies for transfer associate in arts degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
-  "text_chars": 5094
+  "text_chars": 4737
  },
  {
   "control_number": "44934",
@@ -2371,11 +3319,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "integrative health and wellness certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
-  "text_chars": 5977
+  "text_chars": 5260
  },
  {
   "control_number": "44935",
@@ -2426,11 +3377,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sports medicine integrative therapies & rehabilitation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 33,
-  "text_chars": 5139
+  "text_chars": 4422
  },
  {
   "control_number": "45183",
@@ -2488,7 +3442,7 @@
    "label": null
   },
   "listed": 44,
-  "text_chars": 7074
+  "text_chars": 6664
  },
  {
   "control_number": "45267",
@@ -2525,7 +3479,7 @@
    "label": null
   },
   "listed": 23,
-  "text_chars": 4614
+  "text_chars": 3830
  },
  {
   "control_number": "45384",
@@ -2634,11 +3588,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology for transfer associate in arts degree for transfer",
+    "section_fit": 0.5
    }
   },
   "listed": 94,
-  "text_chars": 8436
+  "text_chars": 7825
  },
  {
   "control_number": "45573",
@@ -2668,7 +3625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2680,8 +3640,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "link_search",
-  "coverage": 0.882,
+  "coverage": 0.941,
   "codes_found": [
+   "CDEV901",
    "CDEVC1000",
    "ECE210",
    "ECE212",
@@ -2706,39 +3667,19 @@
    "label": null
   },
   "listed": 17,
-  "text_chars": 5048
+  "text_chars": 5050
  },
  {
   "control_number": "45668",
   "title": "Civil Engineering",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.526,
-  "codes_found": [
-   "CHEM210",
-   "CHEM220",
-   "MATH253",
-   "MATH270",
-   "MATH275",
-   "MATHC2210",
-   "MATHC2220",
-   "PHYS250",
-   "PHYS260",
-   "PHYS270"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/programs/interdisciplinary-studies-letters-and-science-aa.php",
-   "title": "Interdisciplinary Studies: Letters & Science AA Degree Program",
-   "h1": " Interdisciplinary Studies: Letters and Science Associate in Arts Degree Program",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 5863
+  "text_chars": 0
  },
  {
   "control_number": "45696",
@@ -2765,7 +3706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -2798,7 +3742,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -2843,7 +3790,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -2881,7 +3831,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": "as",
+    "section_line": "mechanical engineering - associate in science degree program",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2893,8 +3846,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.941,
+  "coverage": 1.0,
   "codes_found": [
+   "BIOL110",
    "BIOL240",
    "BIOL250",
    "BIOL260",
@@ -2919,55 +3873,26 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health for transfer associate in science degree for transfer",
+    "section_fit": 0.667
    }
   },
   "listed": 17,
-  "text_chars": 5448
+  "text_chars": 4844
  },
  {
   "control_number": "46296",
   "title": "Musical Theater",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.917,
-  "codes_found": [
-   "DANC1171",
-   "DANC1172",
-   "DANC1301",
-   "DANC1302",
-   "DANC1303",
-   "DANC1304",
-   "DANC1401",
-   "DANC1402",
-   "DANC1403",
-   "DANC1404",
-   "DRAM201",
-   "DRAM3001",
-   "DRAM3011",
-   "DRAM3012",
-   "MUS100",
-   "MUS105",
-   "MUS111",
-   "MUS401",
-   "MUS402",
-   "MUS4102",
-   "MUS4701",
-   "MUS4851"
-  ],
-  "source": {
-   "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php",
-   "title": "Dance AA Degree Program",
-   "h1": " Dance Associate in Arts Degree Program",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 24,
-  "text_chars": 10220
+  "text_chars": 0
  },
  {
   "control_number": "46509",
