@@ -1192,3 +1192,26 @@ Verbatim from `docs/reference/lanes/library.md` (links rewritten for this folder
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
   **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
   `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. The SHARED CODE comment in `cpl-chat-deploy.yml` already named both shared files (S653b): closed, no change.
+
+## Moved from the lane (S669, second)
+
+- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
+  is Sam's press, linked from the funding dashboard's 75% JST condition.
+
+- **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
+  in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
+  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
+  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
+  page has one banner; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
+  Colleges-only logo is out (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added to the top of fact
+  sheet. Leave masthead in." then "Confusion by me on masthead vs header. I just want the ccc Cpl back in and the ccc
+  only logo out"; then "Picture 2: CPL logo only"; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342).
+  **DECIDED:** the header carries the page's controls, moved whole (same ids): map.rccd.edu, the snapshot chip, Collapse
+  all, Print or save; the masthead is the title. On paper the header prints its logo, the map link and the chip (Sam,
+  S653b, 2026-11-14: "2 is right. Can you move all the buttons and map website link and update chip all into the header
+  to clean up the title?"; `sam-fact-sheet-controls-into-header-2026-11-14`; #3342).
+  **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
+  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). Records: lessons,
+  *Moved from the lane (S651 checkpoint)* and *(S653b)*.

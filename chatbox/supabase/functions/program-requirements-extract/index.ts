@@ -115,6 +115,11 @@
 // stubs over good records and read as an expired key for an hour. The check lives in
 // ../_shared/service_caller.mjs (plain JavaScript, so tests/service_caller_check.test.js runs it in Node);
 // the runner (kb/_program_requirements_college.py, extract) stops a read at a 503.
+// Version 13 (S668, 2026-11-16): a program the state's Program Course File lists no course for, whose catalog page
+// the capture found by title and award (#3299 slice B; Sam's "go", Sheet 197 card 4), is read from that page. The
+// body carries no_state_list true and an empty closed_list; the message says the list is empty, so every code is a
+// catalog addition and missing_explained is empty. The record shape is the same. Without no_state_list an empty
+// closed list is refused as before. The runner sends such a page only where NCL_EXTRACT is on, after this deploys.
 // Deploy from main with cpl-chat-deploy.yml (function program-requirements-extract);
 // before S360 it went out with the Supabase MCP deploy_edge_function (project
 // hvuwhnbuahrtptokpqfh, slug program-requirements-extract).
@@ -380,9 +385,10 @@ function readPart(raw: unknown, closedCount: number): Part | null | "bad" {
 }
 
 function userMessage(p: Record<string, unknown>, closed: Course[], text: string, part: Part | null = null): string {
-  const list = closed
-    .map((c) => `${c.code}\t${c.title ?? ""}\t${c.units ?? "units not stored"}`)
-    .join("\n");
+  const list = closed.length
+    ? closed.map((c) => `${c.code}\t${c.title ?? ""}\t${c.units ?? "units not stored"}`).join("\n")
+    : "None. The state's Program Course File lists no course for this program, so every code you record is " +
+      "missing from the closed list (catalog_addition true), and missing_explained is empty.";
   return [
     `College: ${p.college}`,
     `Program: ${p.title}`,
@@ -479,8 +485,13 @@ Deno.serve(async (req) => {
   if (provider === "xai" && !Deno.env.get("XAI_API_KEY")) return reply(500, { error: "XAI_API_KEY not set" });
   const closed = Array.isArray(body.closed_list) ? (body.closed_list as Course[]) : [];
   const text = typeof body.text === "string" ? body.text : "";
-  if (!text.trim() || !closed.length) {
+  // Version 13: a program with no state course list (no_state_list true) is read with an empty closed list.
+  const noStateList = body.no_state_list === true && !closed.length;
+  if (!text.trim() || (!closed.length && !noStateList)) {
     return reply(400, { error: "text and closed_list are both required" });
+  }
+  if (noStateList && body.part !== undefined && body.part !== null) {
+    return reply(400, { error: "a program with no state course list is read whole, never in parts" });
   }
   if (text.length > MAX_TEXT) {
     return reply(413, { error: `text is ${text.length} characters; the limit is ${MAX_TEXT}` });

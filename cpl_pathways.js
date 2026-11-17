@@ -1515,6 +1515,9 @@
     ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
     ".cplpw-rmark.lead b { color: var(--text-muted); }",
+    ".cplpw-outchip { display:inline-block; margin-right:8px; border:0; background:none; padding:0; min-height:24px; font:inherit; font-size:.8rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
+    ".cplpw-outinline { display:block; margin-top:6px; padding:8px 10px; border-top:1px dashed var(--border-strong); font-size:.85rem; min-width:0; overflow-wrap:anywhere; }",
+    ".cplpw-outinline .cplpw-outblock h3 { font-size:.9rem; margin:4px 0; }",
     ".cplpw-radopts { display:block; min-width:0; overflow-wrap:anywhere; }",
     ".cpladp-panel .cpl-maplinks:empty, .cplpw-panel .cpl-maplinks:empty { display:none; }",
     ".cplpw-rdiffer { margin:0 0 10px; font-size:.88rem; color: var(--text-body); }",
@@ -1913,6 +1916,23 @@
     var words = outcomeWords(entry, printed);
     clearNode(slot);
     if (!words) return;
+    // The chip opens the text on the card itself (Sam, 2026-11-16, #3412); the word beside it still opens the panel.
+    var o = { college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed };
+    var region = el("div", "cplpw-outinline");
+    region.id = "cplpw-outinline-" + (++outInlineSeq);
+    region.hidden = true;
+    var chip = el("button", "cplpw-outchip", words);
+    chip.type = "button";
+    chip.setAttribute("aria-expanded", "false");
+    chip.setAttribute("aria-controls", region.id);
+    chip.setAttribute("aria-label", words + " of " + code + " at " + college + "; show the text on this card");
+    chip.addEventListener("click", function () {
+      var open = chip.getAttribute("aria-expanded") !== "true";
+      chip.setAttribute("aria-expanded", String(open));
+      region.hidden = !open;
+      if (open && !region.getAttribute("data-filled")) { region.setAttribute("data-filled", "1"); fillOutcomes(o, region, function () { return true; }); }
+    });
+    slot.appendChild(chip);
     var b = el("button", "cplpw-outword", words);
     b.type = "button";
     b.setAttribute("aria-haspopup", "dialog");
@@ -1922,7 +1942,9 @@
       openOutcomePanel({ college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed }, b);
     });
     slot.appendChild(b);
+    slot.appendChild(region);
   }
+  var outInlineSeq = 0;
   function fillOutcomeSlots() {
     var slots = document.querySelectorAll(".cplpw-outslot[data-code]:not([data-out-done])");
     var by = {};
@@ -2108,6 +2130,10 @@
   function openOutcomePanel(o, opener) {
     var body = openPanel(outcomeWords(o.entry, o.printed), o.code + (o.title ? " " + o.title : "") + ", " + o.college, opener);
     var seq = ++panelSeq;
+    fillOutcomes(o, body, function () { return seq === panelSeq; });
+  }
+  // The same text in the panel or on the card: the record's printed outcomes, then the newest read of each kind.
+  function fillOutcomes(o, body, live) {
     if (o.printed) body.appendChild(printedBlock(o.printed));
     if (!o.entry || !(o.entry.codes || []).length) return;
     var wait = el("p", "cplpw-outsrc", "Reading the outlines…");
@@ -2117,7 +2143,7 @@
       "&course_code=in.(" + o.entry.codes.map(function (c) { return encodeURIComponent('"' + String(c).replace(/"/g, "") + '"'); }).join(",") + ")" +
       "&order=read_run.desc,id.desc";
     roepGet(path).then(function (rows) {
-      if (seq !== panelSeq) return;
+      if (!live()) return;
       if (wait.parentNode) wait.parentNode.removeChild(wait);
       var cur = currentOutcomeRows(rows || []);
       // SLOs first, then objectives, as the outline prints them.
@@ -2125,7 +2151,7 @@
       if (!cur.length && !o.printed) { body.appendChild(el("p", null, "No outcomes or objectives are on file for " + o.code + " yet.")); return; }
       cur.forEach(function (r) { if ((r.outcomes || []).length) body.appendChild(outcomeBlock(r)); });
     }, function (err) {
-      if (seq !== panelSeq) return;
+      if (!live()) return;
       wait.textContent = "The outlines could not be read (" + ((err && err.message) || "no answer") + ").";
     });
   }
