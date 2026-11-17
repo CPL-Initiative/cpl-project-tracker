@@ -98,7 +98,7 @@ function load(opts) {
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(st) { return Promise.resolve({ ok: false, status: st, json: function () { return Promise.resolve({}); } }); }
     if (Object.prototype.hasOwnProperty.call(files, url)) return files[url] === 404 ? bad(404) : ok(files[url]);
-    if (/\/rest\/v1\/kb_curation/.test(url)) return ok([]);
+    if (/\/rest\/v1\/kb_curation/.test(url)) return ok(init.method && init.method !== "GET" ? {} : (/left_map_decision/.test(url) ? (opts.decisions || []) : []));
     return bad(404);
   };
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(opts.signedIn ? { access_token: "t", email: "reviewer@example.org" } : null); },
@@ -118,6 +118,7 @@ function tiles(d, label) { return Array.from(d.querySelectorAll(".exh-tile")).fi
 function tile(d, label) { return tiles(d, label)[0]; }
 function titleBtn(d, t) { return Array.from(d.querySelectorAll("td.exh-l-title .exh-l-open, td[class$='title'] button")).find((b) => /^[^,]+/.exec(b.getAttribute("aria-label") || "") && txt(b) === t); }
 function panel(d) { return d.getElementById("exh-l-panel"); }
+function window_confirm(w, yes) { w.confirm = function () { return yes; }; }
 
 const AUDIT = { title_cards: [
   { raw_title: "EMT Basic 1998", unified_title: "Emergency Medical Technician", tags: ["stale_kb_entry"] },
@@ -128,11 +129,11 @@ const AUDIT = { title_cards: [
   await settle(); await settle();
   const titles = Array.from(t.d.querySelectorAll("td.exh-l-title .exh-l-open")).map(txt).filter(Boolean);
   check("(1) ⭐ the filter lists the credentials that still fold a title MAP no longer carries", titles.join("|") === "Emergency Medical Technician", titles.join("|"));
-  check("(1) the List says how many titles and what to do", /2 old titles no MAP exhibit uses any more sit in the reference, under 1 credential below\. Nothing breaks while they stay\. Open a credential to see its titles; a curator retires each, or keeps one a college may enter again\./.test(txt(t.d.body)));
+  check("(1) the List says how many titles and what to do", /2 old local titles no MAP exhibit uses any more sit in the reference, under 1 canonical title below\. Nothing breaks while they stay\. Open one to keep each old title under its canonical title, move it to another, or remove it from that title\. The local title itself never changes\./.test(txt(t.d.body)), txt(t.d.body).slice(0, 400));
   titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
   const pt = txt(panel(t.d));
   check("(2) ⭐ the panel names its titles that have left MAP and the choice", /Titles that have left MAP/.test(pt) && /EMT Basic 1998/.test(pt) && /EMT-B old/.test(pt)
-    && /a curator keeps or retires each/.test(pt), pt.slice(0, 300));
+    && /keep it under this title, move it to another, or remove it from this title/.test(pt) && !/retire/i.test(pt), pt.slice(0, 300));
   const reads = (x) => x.calls.filter((c) => /exhibit_audit/.test(c.url)).length;
   check("(3) the auditor's file is read once for the filter", reads(t) === 1, String(reads(t)));
   const plain = await boot({ hash: "#exhibits/list", files: { "kb/exhibit_audit/latest.json": AUDIT } });
@@ -144,6 +145,55 @@ const AUDIT = { title_cards: [
   const ex = CM.rows.find((r) => r.key === "exhibit"), left = (ex.issues || []).find((i) => /no MAP exhibit uses any more/.test(i.words));
   check("(4) ⭐ the Commons card says what the titles are and what to do, and its count opens the filter", !!left && left.open === "#exhibits/list/left"
     && /nothing breaks while they stay; retire each, or keep one a college may enter again/.test(left.words), left && JSON.stringify(left));
+
+  // (5) S678, COBIx's item 2 on #3464: act on each old title from its row, the split, the labels and the guard.
+  const LMAP = { schema: 1, counts: {}, titles: {
+      "EMT Basic 1998": { canonical: "Emergency Medical Technician", type: "Credit By Exam", group: "graded", used: false, where: [], twin: { title: "EMT Card", how: "already under the same title" }, reviewed: false, only_local: false },
+      "EMT-B old": { canonical: "Emergency Medical Technician", type: "Industry Certification", group: "cert", used: false, where: [], twin: null, reviewed: false, only_local: true },
+      "EMT Reviewed": { canonical: "Emergency Medical Technician", type: "Industry Certification", group: "cert", used: true, where: ["course-credit listing"], twin: null, reviewed: true, only_local: false } },
+    canonicals: { "Emergency Medical Technician": { type: "Credit By Exam and Industry Certification (mixed)", group: "mixed" },
+      "CompTIA Security+": { type: "Industry Certification", group: "cert" }, "Paramedic": { type: "Credit By Exam", group: "graded" } } };
+  const AUD3 = { title_cards: AUDIT.title_cards.concat([{ raw_title: "EMT Reviewed", unified_title: "Emergency Medical Technician", tags: ["stale_kb_entry"] }]) };
+  const a = await boot({ hash: "#exhibits/list/left", signedIn: true, files: { "kb/exhibit_audit/latest.json": AUD3, "kb/exhibit_left_map.json": LMAP } });
+  await settle(); await settle();
+  const sum = a.d.querySelector("[data-left-summary]");
+  check("(5) ⭐ the split: nothing points to it, still used somewhere, already reviewed by you", /Nothing points to it: 2\. Still used somewhere: 1 .*Already reviewed by you: 1, settled/.test(txt(sum)), txt(sum));
+  const bk = a.d.querySelector('[data-left-bulk="keep"]'), br = a.d.querySelector('[data-left-bulk="remove"]');
+  check("(5) bulk Keep is offered for the titles with a live twin, bulk Remove only for those with none, and the Remove confirm counts the lonely ones",
+    bk && /Keep all 1 under their title/.test(txt(bk)) && br && /Remove all 1 from their title/.test(txt(br)) && br.getAttribute("data-left-lonely") === "1");
+  titleBtn(a.d, "Emergency Medical Technician").click(); await settle();
+  const rows = Array.from(panel(a.d).querySelectorAll("[data-left-raw]"));
+  const rowOf = (raw) => rows.find((x) => x.getAttribute("data-left-raw") === raw);
+  check("(5) ⭐ each old title shows its CPL type and its twin, and the canonical its own type", /\(Credit By Exam\)/.test(txt(rowOf("EMT Basic 1998"))) && /Still in MAP: EMT Card/.test(txt(rowOf("EMT Basic 1998")))
+    && /CPL type: Credit By Exam and Industry Certification \(mixed\)/.test(txt(panel(a.d))));
+  check("(5) ⭐ a title Sam reviewed shows no buttons", rowOf("EMT Reviewed") && !rowOf("EMT Reviewed").querySelector("button") && /Reviewed by you, settled/.test(txt(rowOf("EMT Reviewed"))));
+  check("(5) the three buttons are words, none says retire", ["keep", "move", "remove"].every((k) => rowOf("EMT Basic 1998").querySelector('[data-left-act="' + k + '"]'))
+    && !/retire|stale|fold/i.test(txt(rowOf("EMT Basic 1998").querySelector(".exh-left-acts"))));
+  window_confirm(a.w, true);
+  rowOf("EMT Basic 1998").querySelector('[data-left-act="keep"]').click(); await settle(); await settle();
+  const post = a.calls.filter((c) => c.method === "POST" && /kb_curation/.test(c.url)).pop();
+  check("(5) ⭐ Keep writes one _LEFT_MAP:: decision, never an unclassified assignment or a local-title edit", post && post.body.length === 1 && post.body[0].course_id === "_LEFT_MAP::EMT Basic 1998"
+    && post.body[0].field === "left_map_decision" && post.body[0].value === "keep", post && JSON.stringify(post.body));
+  check("(5) ⭐ the count drops by one at once", a.d.querySelector("[data-left-count]") && a.d.querySelector("[data-left-count]").getAttribute("data-left-count") === "2");
+  // A decision saved earlier today: the title is gone on reload.
+  const r2 = await boot({ hash: "#exhibits/list/left", files: { "kb/exhibit_audit/latest.json": AUD3, "kb/exhibit_left_map.json": LMAP },
+    decisions: [{ course_id: "_LEFT_MAP::EMT-B old", value: "removed" }] });
+  await settle(); await settle();
+  check("(5) ⭐ a decision saved today drops the title on reload (the live read)", r2.d.querySelector("[data-left-count]") && r2.d.querySelector("[data-left-count]").getAttribute("data-left-count") === "2");
+  // Move across Sam's two groups is blocked on the first try; a second try goes through and is logged.
+  const m = await boot({ hash: "#exhibits/list/left", signedIn: true, files: { "kb/exhibit_audit/latest.json": AUD3, "kb/exhibit_left_map.json": LMAP } });
+  await settle(); await settle();
+  titleBtn(m.d, "Emergency Medical Technician").click(); await settle();
+  const mrow = () => Array.from(panel(m.d).querySelectorAll("[data-left-raw]")).find((x) => x.getAttribute("data-left-raw") === "EMT-B old");
+  mrow().querySelector('[data-left-act="move"]').click(); await settle();
+  const q = mrow().querySelector(".exh-left-q"); q.value = "Paramedic";
+  mrow().querySelector("[data-left-go]").click(); await settle();
+  const posts = () => m.calls.filter((c) => c.method === "POST" && /kb_curation/.test(c.url));
+  check("(5) ⭐ a cert-based title moved under a graded canonical is blocked on the first try, in plain words", posts().length === 0 && /Blocked: EMT-B old is cert-based .* Paramedic is graded/.test(txt(mrow())), txt(mrow()));
+  mrow().querySelector("[data-left-go]").click(); await settle(); await settle();
+  const mp = posts().pop();
+  check("(5) ⭐ the second try moves it, link only, and logs the override", mp && mp.body.some((x) => x.field === "left_map_decision" && x.value === "moved:Paramedic")
+    && mp.body.some((x) => x.field === "cpl_type_group_override" && /cert into graded/.test(x.value)) && !mp.body.some((x) => /^_UNCLASSIFIED::|^_CREDENTIAL_REVIEW::/.test(x.course_id)), mp && JSON.stringify(mp.body));
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });
