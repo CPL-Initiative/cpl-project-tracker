@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-17T14:29:09Z",
-  "session": 676,
-  "moniker": "SkyPipit",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-17T21:03:21Z",
+  "session": 677,
+  "moniker": "SkyTanager",
+  "run": "Session 677, the queue's one writer",
   "decider": "Sam",
-  "handoff": "docs/session_677_handoff.md",
+  "handoff": "docs/session_678_handoff.md",
   "next_step": {
     "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, Chaffey, the last slice B yield college, is reread, loaded and merged once its read finishes."
+    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Slice B's seven yield colleges are done, so the queue then turns to the switch that holds back programs with no state course list."
   },
   "calls": [
     {
@@ -338,6 +338,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-17T20:53:00Z",
+      "text": "Chaffey read again so that programs listed without their own requirements take back the catalog page another program had been read from, the seventh and last college of this pass. One more program now has complete requirements, 182 of 192. Physical Science 18435 had been read from the transfer general education page; its page is not found now, so no record is filed for it."
+    },
+    {
       "at": "2026-11-17T14:30:00Z",
       "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
     },
@@ -392,10 +396,6 @@
     {
       "at": "2026-11-16T18:30:00Z",
       "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
-    },
-    {
-      "at": "2026-11-16T15:20:00Z",
-      "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
     }
   ],
   "headline": [

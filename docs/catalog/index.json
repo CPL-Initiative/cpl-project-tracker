@@ -17125,8 +17125,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 636,
+   "count": 637,
    "docs": [
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 678,
+     "path": "docs/session_678_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 678 handoff (from SkyTanager, S677)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27803,5 +27817,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1506
+ "total": 1507
 }
