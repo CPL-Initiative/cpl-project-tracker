@@ -987,7 +987,9 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             lo, hi, total = _num(m.group("lo")), _num(m.group("hi")), _num(m.group("total"))
             if _span_of(prog.get(field)) != (lo, hi) or total != hi or lo is None or lo >= hi:
                 continue
-            if st.get("requires") and not re.search(st["requires"], scope):
+            # The test-out words inside the matched span, never a neighbor's footnote (COBIx on #3444).
+            span = m.group(0)
+            if st.get("requires") and not re.search(st["requires"], span):
                 continue
             blocks = out.get("blocks") or []
             if not blocks or any(b.get("rule") != "all" or b.get("option_group") for b in blocks):
@@ -995,8 +997,13 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             spans = [_span_of(b.get("stated")) for b in blocks]
             if any(sp[0] is None or sp[0] != sp[1] for sp in spans) or sum(sp[0] for sp in spans) != total:
                 continue
+            # The starred courses (the test-out) account for the range: their units are hi - lo (COBIx on #3444).
+            starred = set(re.findall(r"([A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\*", span))
+            units = {c.get("code"): c.get("units") for b in blocks for c in b.get("courses") or []}
+            if not starred or any(units.get(c) is None for c in starred) or sum(units[c] for c in starred) != hi - lo:
+                continue
             now = {"min": total, "max": total}
-            words = m.group(0).strip()
+            words = "%s ... %s" % (span[:m.end("hi") - m.start() + 8].strip(), span[m.start("total") - m.start() - 8:].strip())
             if st.get("source"):
                 words = "%s (%s)" % (words, st["source"])
             notes.append({"field": field, "was": prog.get(field), "now": now, "words": words})

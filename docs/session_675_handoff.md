@@ -22,7 +22,7 @@ Read this file first, then the harvest lane's NEXT (0) and `docs/program_require
   is the range's top and every block is rule-all with stated figures summing to it. It is the one step that replaces a filled figure.
   Reconcile 44072968931: Moreno Valley 134 to 135 passing, none lost (pass sets compared). Reread 44074993372 posts the 20 changed
   rows (its receipt lands on the branch as `kb/receipts/program_requirement_records_college_reread_moreno_valley_44074993372.json`).
-  Tests: `program_requirements_reconcile_test.py` 371/371 (seven new), `program_requirements_college_test.py` 730.
+  Tests: `program_requirements_reconcile_test.py` 374/374 (ten new, three from COBIx's review: the starred units are the range's width, the test-out words inside the span, a short note), `program_requirements_college_test.py` 730.
 - **#3445, the Los Rios district profile** (`kb/district_profiles/los-rios.json`, the RCCD pilot's step 5; no Los Rios harvest).
   Four PDF catalogs read from Sam's filed copies; SIS, curriculum system and CPL coding null, since every Los Rios host answers the
   reader 404. `tests/district_profiles.test.js` 14/14.
