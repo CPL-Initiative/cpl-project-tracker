@@ -31,6 +31,7 @@ on:
       - "Docket process"
       - "Fetch COCI Program-Course Files"
       - "First Light apply"
+      - "Harvest gap census"
       - "JS tests"
       - "Library — publish approved drafts"
       - "MAP Custom Report load (staging)"

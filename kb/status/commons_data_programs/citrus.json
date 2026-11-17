@@ -1,4 +1,4 @@
-{"schema":1,"college":"Citrus College","slug":"citrus","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Citrus College","slug":"citrus","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"02333","title":"Visual Arts","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.citruscollege.edu/disciplines/visual-arts/visual-arts-aa/"},
 {"cn":"30269","title":"Child Development","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"40286","title":"Customer Service","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Monica College","slug":"santa_monica","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Santa Monica College","slug":"santa_monica","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"03281","title":"Registered Nursing","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.smc.edu/current/catalog.pdf#page=175"},
 {"cn":"46189","title":"Sustainable Aquaculture Technology","award":"A.S. Degree","cause":"extraction_error","lever":"paid_read","url":"https://catalog.smc.edu/current/catalog.pdf#page=89"},
 {"cn":"08967","title":"Administrative Assistant","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Moorpark College","slug":"moorpark","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Moorpark College","slug":"moorpark","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"18399","title":"General Studies: Creative Arts and Humanities","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.vcccd.edu/moorpark/programs-courses/general-studies/creative-arts-and-humanities/"},
 {"cn":"18367","title":"Administration of Justice","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44794","title":"English as a Second Language: Advanced Writing and Communication","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

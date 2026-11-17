@@ -1397,6 +1397,9 @@ jobs:
       # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
       - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
         run: python3 tests/left_map_build_test.py
+      # The daily spend file's measured series and the Commons spent figure (S678, kb/_build_spend_daily.py).
+      - name: Daily spend measured series (kb/_build_spend_daily.py)
+        run: python3 tests/spend_daily_build_test.py
       - name: Credential title moves table is current (kb/credential_aliases.py --check)
         run: python3 kb/credential_aliases.py --check
       - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)

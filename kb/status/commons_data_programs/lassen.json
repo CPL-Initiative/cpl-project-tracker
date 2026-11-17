@@ -1,4 +1,4 @@
-{"schema":1,"college":"Lassen College","slug":"lassen","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Lassen College","slug":"lassen","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"35223","title":"Career Pathway Entry","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"07168","title":"Drug & Alcohol Paraprofessional","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"35216","title":"High School Equivalency","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

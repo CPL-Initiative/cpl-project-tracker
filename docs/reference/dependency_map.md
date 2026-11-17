@@ -561,6 +561,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
 | `kb/_build_session_spend.py` | workflows: `pages.yml` | — |
+| `kb/_build_spend_daily.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_ccr_seed_recheck_dryrun.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
 | `kb/_cer_procedures.py` | workflows: `cer-procedures.yml` | — |
@@ -866,6 +867,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/map_cpl_opportunities_verified.json` | tabs: `vision-2030` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_adopt_page.py`, `kb/_verify_map_exhibit_links.py` | scripts: `kb/_verify_map_exhibit_links.py` |
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
+| `kb/reference/model_spend_daily.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_build_spend_daily.py` | — |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py`, `kb/discipline_list.py` | — |
 | `kb/reference/mq_sections.json` | tabs: `canonical-subj4` · scripts: `kb/_ccr_trail.py`, `kb/_csr_quarterly_probe.py`, `kb/_mq_title5_rename.py` | — |
 | `kb/reference/restricted_table_access.json` | scripts: `kb/_build_cdc_sharing.py` | — |
@@ -1275,6 +1277,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/session_spend_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/sheet181_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
+| `tests/spend_daily_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/standards_2_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/standards_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/statewide_cid_hold_test.py` | workflows: `js-tests.yml` | — |
@@ -1557,5 +1560,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1017 file
-datasets · 195 external services · 607 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1020 file
+datasets · 195 external services · 608 consumers · 72 workflows · 41 tabs.

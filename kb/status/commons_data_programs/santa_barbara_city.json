@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Barbara City College","slug":"santa_barbara_city","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Santa Barbara City College","slug":"santa_barbara_city","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"30746","title":"Sociology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sbcc.edu/academic-departments/sociology/sociology-aat/"},
 {"cn":"35241","title":"Biology","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45037","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

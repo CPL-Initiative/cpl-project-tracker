@@ -1,4 +1,4 @@
-{"schema":1,"college":"Chaffey College","slug":"chaffey","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Chaffey College","slug":"chaffey","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"20736","title":"Gerontology","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19056"},
 {"cn":"45032","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"30503","title":"CSU-GE","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
