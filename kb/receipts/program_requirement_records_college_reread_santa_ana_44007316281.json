@@ -1,0 +1,384 @@
+{
+ "college": "Santa Ana College",
+ "reread_run": "44007316281",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43974075411",
+ "at": "2026-11-17T03:03:39Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "12242",
+   "why": "extraction error: HTTP 503: "
+  }
+ ],
+ "error": null,
+ "replaced": 2,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "32062",
+  "32989"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Santa Ana College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43974075411;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 17,
+       "min": 17
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 280",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 287",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Physics Elective",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "PHYS 217",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "List A"
+     },
+     {
+      "name": "Computer Science Elective",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CMPR 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMPR 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMPR 120",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMPR 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CMPR 129",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMPR 131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": "List A"
+     }
+    ],
+    "program": {
+     "careers": [
+      "mathematicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 21,
+      "min": 20
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Mathematics 2.0: A.S.-T Degree for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 20,
+   "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843461766,
+   "program_title": "Mathematics",
+   "control_number": "32062"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Physics",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "PHYS 217",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 227",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYS 237",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Mathematics",
+      "rule": "all",
+      "stated": {
+       "max": 17,
+       "min": 17
+      },
+      "courses": [
+       {
+        "code": "MATH C2210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH C2220",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "MATH 280",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 287",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Programming",
+      "rule": "all",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CMPR 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CMPR 114",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Additional courses (encouraged, not required)",
+      "rule": "recommended",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "Mathematics 290",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Chemistry 219",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "Computer Science 120",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "applied physics",
+      "education",
+      "assistant research scientists"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 32
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Physics 2.0: A.S.-T Degree for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 32,
+   "source_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843461766,
+   "program_title": "Physics",
+   "control_number": "32989"
+  }
+ ]
+}
