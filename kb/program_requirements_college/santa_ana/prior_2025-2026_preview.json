@@ -1,0 +1,104 @@
+{
+ "college": "Santa Ana College",
+ "catalog_url": "https://sac.curriqunet.com/Catalog/archive/19/iq/28118",
+ "platform": "curriqunet",
+ "catalog_year": "2025-2026",
+ "programs": 2,
+ "with_closed_list": 2,
+ "started": "2026-11-16T20:39:05Z",
+ "prior": {
+  "start": "https://sac.curriqunet.com/Catalog/archive/19/iq/28118",
+  "catalog_year": "2025-2026",
+  "only": [
+   "32062",
+   "32989"
+  ]
+ },
+ "curriqunet": {
+  "catalog": 19,
+  "view_prefix": "https://sac.curriqunet.com/Catalog/archive/19/iq/",
+  "errors": [],
+  "sections": [
+   "Degrees, Certificates and Transfer Planning",
+   "Associate Degrees & Certificates",
+   "-----Noncredit Certificates",
+   "Bachelor's Programs"
+  ],
+  "nodes_read": 70,
+  "calls": 141,
+  "entries": 371,
+  "stopped_at_cap": false,
+  "same_title_entries": 1,
+  "entries_read": 371,
+  "twin_ids": {
+   "30036": [
+    30052
+   ]
+  },
+  "failed_calls": 0
+ },
+ "pages_read": 371,
+ "pages_listed": 371,
+ "pages_answered": 371,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "loads": 1624,
+ "seconds": 7792.2,
+ "found": 2,
+ "by_method": {
+  "sitemap_page": 2
+ },
+ "shared_pages": {},
+ "not_found": [],
+ "page_claimed": [],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 2
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/santa_ana",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "32062",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/Catalog/archive/19/iq/28133/29901/29644",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36137/36346",
+    "was_coverage": 0.6,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32989",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://sac.curriqunet.com/Catalog/archive/19/iq/28133/29912/29617",
+    "coverage": 1.0,
+    "was_url": "https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36148/36342",
+    "was_coverage": 0.667,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "32062": {
+   "sha256": "d6816033dc98333f71abf067f272ad53fff7ec84d9be46024720608ebceaa017",
+   "url": "https://sac.curriqunet.com/Catalog/archive/19/iq/28133/29901/29644"
+  },
+  "32989": {
+   "sha256": "b30e38d311f75145dfc57095a2bf313485b0b5cd35843fbac368dbe61ecd2ae3",
+   "url": "https://sac.curriqunet.com/Catalog/archive/19/iq/28133/29912/29617"
+  }
+ },
+ "run": "43951546289"
+}
