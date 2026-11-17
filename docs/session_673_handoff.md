@@ -18,7 +18,7 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
 
 ## What shipped
 
-- **#3441, the repeated-course-row steps (merged).** The record shape already carries `times` and the scorer counts it, so
+- **#3441, the repeated-course-row steps (merged, cbf635db, after a green `test`; no COBIx comment by merge).** The record shape already carries `times` and the scorer counts it, so
   the lever S671 named (`p-repeated-course-row-undercounts-s671`) is a reconcile `repeat` step per page shape in
   `kb/program_requirements_reconcile.json`, with no shared code changed (`d-rccd-repeat-rows-reconcile-steps-s672`).
   - A free page read (44045355408, `kb/college_reads/rccd_music_repeat_rows.json`) showed four shapes. Riverside City: a starred

@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-17_s671_rcc_31892_restore.sql
-name=s671_rcc_31892_restore
+file=kb/migrations/2026-11-17_s672_cpl_memory_rows.sql
+name=s672_cpl_memory_rows

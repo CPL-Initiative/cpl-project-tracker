@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1515,
-    "bytes": 16088542,
+    "files": 1516,
+    "bytes": 16095419,
     "over_budget": 4,
-    "handoff_max": 672,
+    "handoff_max": 673,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
     "superseded_files": 0,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5219514,
+        "bytes": 5219607,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10901,
+        "bytes": 11116,
         "over": 0
       },
       "lessons": {
@@ -50,8 +50,8 @@
         "over": 0
       },
       "handoff": {
-        "files": 631,
-        "bytes": 4532512,
+        "files": 632,
+        "bytes": 4539081,
         "over": 0
       }
     },
@@ -59,11 +59,11 @@
       "oversized_doc": 4,
       "kb_note_dialect": 1,
       "vault_heavy_path": 203,
-      "checkpoint_overdue": 1
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 28190,
-      "bytes": 5039815954,
+      "files": 28191,
+      "bytes": 5039821520,
       "heavy_bytes": 3523198965,
       "heavy_share": 0.699,
       "ignore_filters": [
@@ -2368,15 +2368,18 @@
       "message": "2,038,305 B single file inside the vault"
     },
     {
-      "rule": "checkpoint_overdue",
+      "rule": "handoff_drops_active_lane",
       "fixable": false,
-      "path": "docs/session_672_handoff.md",
+      "path": "docs/session_673_handoff.md",
       "detail": {
-        "commits_since": 10,
-        "budget": 6,
-        "handoff": "session_672_handoff.md"
+        "lanes": [
+          "cer-procedures",
+          "library",
+          "my-college-action-page"
+        ],
+        "days": 7
       },
-      "message": "10 commit(s) have landed since `docs/session_672_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "`docs/session_673_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, library, my-college-action-page. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
