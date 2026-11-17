@@ -39,7 +39,9 @@ last `test` runs were going.
    write `.load` by hand (`host=cccd`, `kind=objective`, `slugs=golden_west`), rebuild the Commons data
    (`kb/_build_commons_data_status.py`), drop the step from the plan, merge on green. One preparation run on another
    host. Diablo Valley (#3421) moves to its full read on a later day (one full read a day). Redwoods #3387 and Allan
-   Hancock #3284 wait.
+   Hancock #3284 wait. COBIx's non-blocking edge on #3420: when a college is re-read in a new number of parts, one
+   part fails and no earlier run used the same split, that part's courses drop out of the load with no warning (nothing is
+   deleted; the load is just incomplete). A warning in `read_files` when a chosen split is missing a part closes it.
 2. **Slice B:** the other 7 yield colleges capture again under the #3408 code; then the `NCL_EXTRACT` switch once the
    Commons sidecars hold `no_state_list` records back (harvest NEXT 3).
 3. **Free rescores:** Butte Physics 31950 to the Mathematics reading (COBIx on #3426); Berkeley City 41778 after a cited
