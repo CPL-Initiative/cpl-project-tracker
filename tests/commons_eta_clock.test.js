@@ -230,6 +230,10 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   check("(4) the full clock opens the College Collections Plan in a new tab, and names its #3111 source", (function () { const a = root().querySelector("a[data-eta-plan]");
     return a && a.getAttribute("href") === "library/college-collections-plan/" && a.getAttribute("target") === "_blank" && fs.existsSync("library/college-collections-plan/index.html") &&
       !!root().querySelector('a[href$="#issuecomment-6808952144"]'); })());
+  check("(4) each date says which days it averages, in plain words (S678 item 1c)", (function () { const s = E.strip(M);
+    return s && /Soonest: the pace of Nov 8 to 15/.test(txt(s.querySelector('[data-eta-days="soonest"]'))) && /Latest: the pace of Nov 1 to 8/.test(txt(s.querySelector('[data-eta-days="latest"]'))); })());
+  check("(4) the SLO and objective rates are said to be fixed estimates, not measured (S678 item 1c)",
+    /not a measured rate/.test(ETA) && /rates are fixed estimates/.test(ETA) && /fixed estimate of about/.test(ETA));
   check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#commons/data/eta"]'); })());
 
   // (5) a missing file, and the static rules.

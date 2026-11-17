@@ -6,7 +6,8 @@ name: Harvest gap census
 # (coci_college_programs, program_requirement_records, program_source_registry, coci_program_courses)
 # and the committed per-college files; writes no table. Commits kb/status/harvest_gap_census.json
 # and .md, and the heading-agreement snapshot kb/status/harvest_heading_agreement.json and .md, to the
-# branch it ran on. Dispatch only: no schedule.
+# branch it ran on. A daily schedule on main (S678: the live counts had gone unread from Nov 13 to 17 because nobody
+# dispatched it), plus a dispatch on any ref.
 #
 # TWO JOBS (S647, #3232). The census job takes no secret and runs on any ref. The Commons data dashboard's live
 # counts (kb/_commons_data_live.py, #3215) run in their own job, `live-counts`, in the GitHub environment
@@ -18,6 +19,10 @@ name: Harvest gap census
 # "not read", and the census still commits.
 
 on:
+  # Daily at 17:47 UTC (9:47 AM PT), on main, so the Commons live counts and the measured spend never go a day stale.
+  # A schedule runs on the default branch, so the live-counts job runs too.
+  schedule:
+    - cron: '47 17 * * *'
   workflow_dispatch:
     inputs:
       # COBIx, 6857150335 on #3232: the Commons live counts compare a read's Active programs with the last good
@@ -84,6 +89,16 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      # The daily spend file's measured series (S678, kb/_build_spend_daily.py): the extraction runs' own cost_usd_run
+      # by read day, kept as a ledger by run id, and the sessions' handoff Spend: lines by day. Committed files only, no
+      # network, no key; the billing keys stay hand-pasted. It runs before the Commons build, which reads its ledger.
+      # Fails soft: a failure warns and restores the file.
+      - name: Daily spend, measured series (committed files only; fails soft)
+        run: |
+          if ! python3 kb/_build_spend_daily.py; then
+            echo "::warning::the daily spend file's measured series did not regenerate; the census files without it"
+            git checkout -- kb/reference/model_spend_daily.json 2>/dev/null || true
+          fi
       - name: Census (anon reads only)
         run: python3 kb/_harvest_gap_census.py --export out/harvest_gap_live.json
       # The heading-agreement snapshot (S645, #3201): each record's own heading against its program,
@@ -127,7 +142,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/status/harvest_gap_census.json kb/status/harvest_gap_census.md
-          for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md kb/status/commons_data.json; do
+          for f in kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md kb/status/commons_data.json kb/reference/model_spend_daily.json; do
             if [ -f "$f" ]; then git add "$f"; fi
           done
           # Each cause's programs, one file per college (S649); -A files a college's file removed as well as written.
