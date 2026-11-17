@@ -40,7 +40,8 @@ Folded in verbatim at S669's request (cross-session message, 00:04Z 2026-11-17):
    Golden West is the next objectives reread (same host, another day). Redwoods #3387 and Allan Hancock #3284 wait.
 2. **Skyline's five wrong live rows** (#3423): 46296, 32337, 31587, 39658 and 45668 left the filing (each read from
    another program's page); remove their `program_requirement_records` rows with one guarded migration whose receipt
-   holds the before-values (Rule 10 a2), after #3423 is on `main`. 32774's row is loaded on the branch (insert-only).
+   holds the before-values (Rule 10 a2), after #3423 is on `main`. #3423 first needs a Skyline display rebuild on its
+   branch (`lints`: the display receipt misses 31 of 2,350 statements), after S669's #3424 display apply lands. 32774's row is loaded on the branch (insert-only).
    The other 7 yield colleges capture again under the #3408 code before their holders' rows come out.
 3. **Memory row:** name `kb/migrations/2026-11-17_s668_cpl_memory_rows_2.sql` (`d-bcc-41778-keeps-current-s668`) in
    `kb/migrations/.apply` once S669's `2026-11-17_s669_cpl_memory_rows_2.sql` receipt has landed.
@@ -72,9 +73,9 @@ SQL file named in `kb/migrations/.apply`, applied on push to a `claude/` branch,
 | PR or branch | State | Next |
 |---|---|---|
 | #3408, #3411, #3414, #3418 | merged | none |
-| #3425 governance group 2 | merge on green `test` | First thing 6 |
+| #3425 governance group 2 | merged | First thing 6 |
 | #3426 Butte originals | merge on green `test` | none |
-| #3423 Skyline yields | merge on green `test` after its load receipt | First thing 2 |
+| #3423 Skyline yields | open; display rebuild, then merge | First thing 2 |
 | #3420, #3421 | step 11 reads running | First thing 1 |
 | `claude/prior-2025-{rio-hondo,santa-ana}-s668` | paid reads running | First thing 4 |
 | `claude/prior-2025-berkeley-city-s668` | unmerged; keep | First thing 4 |
@@ -110,7 +111,7 @@ program and its 2.0 each keep a record by catalog year; a persisted decision car
 
 ## Let go
 
-S668 drops its subscriptions at sign-off: #3420, #3421, #3423, #3425, #3426 and samueltlee/CPLBrain#809. No check-in
+S668 drops its subscriptions at sign-off: #3420, #3421, #3423, #3426, #3431 and samueltlee/CPLBrain#809. No check-in
 or artifact watch stays. The standing sheet stays [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
 Spend: not available; 2026-11-16T20:09Z to 2026-11-17T00:45Z.
