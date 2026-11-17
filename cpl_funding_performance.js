@@ -4,26 +4,26 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 52143,
-  "pa": 47106,
-  "ppa": 122,
-  "p2": 3649,
-  "p3": 16923,
+  "pe": 52152,
+  "pa": 47115,
+  "ppa": 123,
+  "p2": 3651,
+  "p3": 16926,
   "pp": 8,
-  "ppe": 134,
-  "pac": 5339,
-  "ptc": 4663,
-  "pe_u": 1645469.45,
-  "pa_u": 288747.4,
-  "ppa_u": 755.5,
-  "ppe_u": 7208.5,
-  "pac_u": 38316.7,
-  "ptc_u": 31966.45,
-  "p3_u": 85229.15,
+  "ppe": 135,
+  "pac": 5340,
+  "ptc": 4666,
+  "pe_u": 1645843.45,
+  "pa_u": 288802.4,
+  "ppa_u": 762.5,
+  "ppe_u": 7215.5,
+  "pac_u": 38319.7,
+  "ptc_u": 32010.45,
+  "p3_u": 85273.15,
   "pp_u": 79.5,
   "nc_exh": 455,
   "nc_course": 0,
@@ -260,10 +260,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Canyons": {
-   "pe": 532,
-   "pe_u": 22301.0,
-   "pa": 532,
-   "pa_u": 1596.0,
+   "pe": 533,
+   "pe_u": 22329.0,
+   "pa": 533,
+   "pa_u": 1599.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 23.0,
@@ -350,25 +350,25 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 76
   },
   "Chaffey": {
-   "pe": 1596,
-   "pe_u": 36181.0,
-   "pa": 1591,
-   "pa_u": 20425.5,
+   "pe": 1597,
+   "pe_u": 36205.0,
+   "pa": 1592,
+   "pa_u": 20428.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 15.0,
-   "p2": 23,
-   "p3": 51,
-   "p3_u": 370.0,
+   "p2": 25,
+   "p3": 54,
+   "p3_u": 414.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 91.0,
-   "pac": 38,
-   "pac_u": 286.5,
-   "ptc": 33,
-   "ptc_u": 236.5,
+   "pac": 39,
+   "pac_u": 289.5,
+   "ptc": 36,
+   "ptc_u": 280.5,
    "nc_exh": 3,
    "nc_course": 0,
    "nc_cdcp": 34
@@ -1585,10 +1585,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 33
   },
   "Norco College": {
-   "pe": 883,
-   "pe_u": 28968.0,
-   "pa": 882,
-   "pa_u": 8065.5,
+   "pe": 890,
+   "pe_u": 29290.0,
+   "pa": 889,
+   "pa_u": 8114.5,
    "ppa": 12,
    "ppa_u": 73.0,
    "p2": 153,
@@ -2476,7 +2476,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 8987.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 27.0,
+   "ppa_u": 34.0,
    "p2": 508,
    "p3": 579,
    "p3_u": 7697.0,
@@ -2485,7 +2485,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 13.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 152.0,
+   "ppe_u": 159.0,
    "pac": 585,
    "pac_u": 7811.0,
    "ptc": 579,
@@ -2765,8 +2765,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "Military": {
-    "pe": 532,
-    "pa": 532,
+    "pe": 533,
+    "pa": 533,
     "p3": 0
    }
   },
@@ -2808,9 +2808,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Industry Certification": {
-    "pe": 28,
-    "pa": 26,
-    "p3": 23
+    "pe": 29,
+    "pa": 27,
+    "p3": 25
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -3734,8 +3734,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 558,
-    "pa": 558,
+    "pe": 565,
+    "pa": 565,
     "p3": 248
    },
    "Portfolio Review": {
@@ -4431,14 +4431,14 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1475,
-   "pa": 1452,
-   "p3": 1217
+   "pe": 1476,
+   "pa": 1453,
+   "p3": 1219
   },
   "Industry Certification | Military": {
    "pe": 61,
    "pa": 60,
-   "p3": 34
+   "p3": 35
   },
   "Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -4486,8 +4486,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31355,
-   "pa": 28099,
+   "pe": 31363,
+   "pa": 28107,
    "p3": 2691
   },
   "Military | Other": {
@@ -4543,14 +4543,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1645469.45,
-   "pa_u": 288747.4,
-   "p3_u": 85229.15
+   "pe_u": 1645843.45,
+   "pa_u": 288802.4,
+   "p3_u": 85273.15
   },
   "map": {
-   "pe_u": 1652677.95,
-   "pa_u": 289502.9,
-   "p3_u": 85308.65
+   "pe_u": 1653058.95,
+   "pa_u": 289564.9,
+   "p3_u": 85352.65
   },
   "ratio": {
    "pe_u": 1.0044,
@@ -4675,7 +4675,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-11-16",
+ "vet_star_as_of": "2026-11-17",
  "vet_star_threshold": 0.75,
  "vet_star_n": 68,
  "vet_jst": {
@@ -4726,8 +4726,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Norco College": {
    "vets": 686,
-   "jst": 580,
-   "pct": 0.8455
+   "jst": 587,
+   "pct": 0.8557
   },
   "Cabrillo": {
    "vets": 93,
@@ -4741,8 +4741,8 @@ window.CPL_FUNDING_PERF = {
   },
   "West LA": {
    "vets": 147,
-   "jst": 157,
-   "pct": 1.068
+   "jst": 158,
+   "pct": 1.0748
   },
   "Long Beach": {
    "vets": 880,
@@ -4841,8 +4841,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "vets": 413,
-   "jst": 532,
-   "pct": 1.2881
+   "jst": 533,
+   "pct": 1.2906
   },
   "San Joaquin Delta": {
    "vets": 258,

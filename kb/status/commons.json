@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-16T22:57:20Z",
+ "written_at": "2026-11-17T03:13:26Z",
  "rows": [
   {
    "key": "requirements",
@@ -280,7 +280,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-16T22:56:14+00:00",
+    "at": "2026-11-17T03:12:31+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -349,7 +349,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 36,
+     "n": 37,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -368,7 +368,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-16T22:04:37Z",
+    "at": "2026-11-16T22:57:22Z",
     "every_hours": null
    },
    "facts": {
@@ -411,12 +411,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 36,
+    "names_to_check": 37,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 297
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -492,7 +492,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-16T22:54:05Z",
+    "at": "2026-11-17T03:10:26Z",
     "every_hours": 24
    },
    "facts": {
@@ -505,7 +505,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-16",
+    "scanned_at": "2026-11-17",
     "procedures_on": 6
    },
    "sources": [
@@ -681,7 +681,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 36,
+      "n": 37,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -781,7 +781,7 @@
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-09",
+    "since": "2026-11-10",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
