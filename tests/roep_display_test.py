@@ -483,5 +483,22 @@ check(b.shown_title("Media & Information Literacy (Honors)", "Media & Informatio
       and b.shown_title("", "Live title") == "Live title",
       "an identity drops an Honors marker only where the curated title is the minted one without it")
 
+# S668 #3414: a record filed for a program the state lists no courses for (coverage basis "no_state_list") is
+# left out of the display entirely, so none reaches cpl_pathways_roep_data.js; every other record stays.
+_kept = {"score": {"coverage": {"basis": "closed_list"}}}
+_gone = {"score": {"coverage": {"basis": "no_state_list"}}}
+_work = [("k1", "college", "p1", _kept, {}, {}), ("k2", "college", "p2", _gone, {}, {}), ("k3", "records", "p3", {}, {}, {})]
+check([w[0] for w in b.displayed(_work)] == ["k1", "k3"] and b.no_state_list(_gone["score"])
+      and not b.no_state_list(None) and not b.no_state_list(_kept["score"]),
+      "the display build leaves out a record whose coverage basis is no_state_list, and keeps the rest")
+check("in displayed(work):" in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
+      "the build's program loop reads displayed(work), so the skip is where it chooses what to display")
+check(not [p["key"] for p in progs if b.no_state_list(p.get("score"))],
+      "no program on the page carries a no_state_list basis")
+
+# #3412 item 4: the display keeps every Could-adopt credential, so the course card's panel can list each one.
+check('"credentials": adopt[:4]' not in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
+      "the display build no longer caps a course's Could-adopt credentials at four")
+
 print("\n%d failure(s)" % len(fails))
 sys.exit(1 if fails else 0)

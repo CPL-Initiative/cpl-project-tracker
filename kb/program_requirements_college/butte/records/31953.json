@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics",
  "award": "A.S. T Degree",
- "source_url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+ "source_url": "https://butte.curriqunet.com/Catalog/archive/12/iq/17305/20057",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7456,
+  "input_tokens": 8037,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7456,
-    "output_tokens": 1786,
+    "input_tokens": 8037,
+    "output_tokens": 2245,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1786,
+  "output_tokens": 2245,
   "output_tokens_details": {
-   "thinking_tokens": 613
+   "thinking_tokens": 880
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06554,
- "ms": 14563,
- "seconds": 15.4,
+ "cost_usd": 0.07705,
+ "ms": 19838,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "STATC1000",
-    "STATC1000E"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "CSCI4"
-   ],
-   "flagged": [
-    "CSCI4"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    23.0,
-    24.0
+    19.0,
+    21.0
    ],
    "stated": [
-    23.0,
-    24.0
+    19.0,
+    21.0
    ],
    "against": "program",
    "why": [],
@@ -84,12 +77,12 @@
     "pass": true,
     "status": "equal",
     "computed": [
-     57.0,
-     58.0
+     53.0,
+     55.0
     ],
     "stated": [
      60.0,
-     67.0
+     68.0
     ],
     "against": "degree",
     "ge": [
@@ -98,8 +91,8 @@
     ],
     "why": [],
     "fill": [
-     2.0,
-     10.0
+     5.0,
+     15.0
     ]
    }
   },
@@ -118,7 +111,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
@@ -129,11 +122,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "AS-T Degree in Mathematics 2.0",
+   "section_heading": "Mathematics (AS-T Degree)",
    "measure": "units",
    "total_units": {
-    "min": 23,
-    "max": 24
+    "min": 19,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -143,7 +136,7 @@
    "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": 60,
-    "max": 67
+    "max": 68
    },
    "ge_units": {
     "min": 34,
@@ -157,7 +150,18 @@
     "Demonstrate good problem-solving habits including estimating solutions and rejecting unreasonable results.",
     "Demonstrate the ability to use symbolic, graphical, numerical, and written representations of mathematical ideas."
    ],
-   "careers": []
+   "careers": [
+    "mathematics",
+    "engineering",
+    "statistics",
+    "operations research",
+    "actuarial science",
+    "business management",
+    "law enforcement",
+    "military science",
+    "government",
+    "education"
+   ]
   },
   "blocks": [
    {
@@ -171,28 +175,14 @@
     },
     "courses": [
      {
-      "code": "MATH 32",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH 40",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MATH 42",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "MATH C2220",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 32",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -227,7 +217,7 @@
     ]
    },
    {
-    "name": "List A (Select one)",
+    "name": "List A (Select one to two)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -237,12 +227,31 @@
     },
     "courses": [
      {
-      "code": "CSCI 4",
+      "code": "MATH 40",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 42",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B (Select one)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
      {
       "code": "CSCI 20",
       "units": 3,
@@ -256,30 +265,36 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "STAT C1000",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The 'Required courses: 23.00-24.00' figure heads the whole major (matching 'Total: 23.00-24.00'), so it is recorded as total_units and not as the stated total of the first block.",
-   "degree_total 60-67 is taken from the Cal-GETC sequence map ('Units: 60.00-67.00', 'Total: 60.00-67.00'); reviewer should confirm a map total is acceptable as the award's degree total.",
-   "The map lists two electives (3 and 4 units) marked 'Only necessary if the 60 units needed to graduate have not been completed'; because they are conditional they are not recorded as degree_elective_units.",
-   "No unit total for the Cal-GETC pattern as a whole is printed, so ge_units is null.",
-   "CSCI 4 appears in List A but is not in the closed list; recorded as a catalog addition."
+   "The total required courses figure 19.00-21.00 is printed for the whole major; it is recorded in total_units.",
+   "List A and List B sit under 'Select 6 units minimum from the lists below, with at least 3 units from List A: 6.00-8.00'. List A says 'Select one to two', so a student may take both List A courses instead of a List B course. The map states this as 'List B (Select one or any List A course not already used)'.",
+   "degree_total 60-68 is taken from the Cal-GETC sample map's 'Total : 60.00- 68.00' and 'Units: 60.00- 68.00'. The reviewer should check whether a map total counts as the degree's printed total.",
+   "The map lists electives of 3 and 8 units, marked 'Only necessary if the 60 units needed to graduate have not been completed'. They are conditional, so they are not recorded as degree_elective_units or open_elective_units.",
+   "No Cal-GETC unit total is printed, so ge_units is null.",
+   "The map recommends POLS C1000/POS 12 and ECON 20/HIST courses for the US-1 and US-2 requirements. These are GE or graduation recommendations, not major courses, and are not recorded as blocks."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": "43969449378",
+ "catalog_year": "2025-2026",
  "reconciled": [
   {
    "field": "ge_units",
@@ -299,6 +314,5 @@
    "now": true,
    "words": "Only necessary if the 60 units needed to graduate have not been completed"
   }
- ],
- "read_run": "38981247046"
+ ]
 }

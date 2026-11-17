@@ -125,14 +125,10 @@ def call(src: dict, key: str, provider: str | None = None, model: str | None = N
         body["provider"] = provider
     if model:
         body["model"] = model
-    if src.get("ncl_source") and not src["closed_list"]:
-        # A found page whose program the state's file lists no course for (S668; #3299 slice B): the function's
-        # version 13 reads it with every course a catalog addition. With no list to split, it is never read in parts.
-        body["no_state_list"] = True
     if len(src["closed_list"]) > SPLIT_AT:
         return call_in_parts(src, key, body, meter=meter)
     got = meter.call(lambda: _post(body, key), M.request_chars(body))
-    if src["closed_list"] and any(w in (got.get("error") or "") for w in SPLIT_WHEN):
+    if any(w in (got.get("error") or "") for w in SPLIT_WHEN):
         return call_in_parts(src, key, body, first=got, meter=meter)
     return got
 
