@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-16",
+  "generated": "2026-11-17",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1512,
-    "bytes": 16039689,
+    "files": 1513,
+    "bytes": 16063010,
     "over_budget": 3,
-    "handoff_max": 668,
+    "handoff_max": 670,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5218340,
+        "bytes": 5218949,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 10574,
+        "bytes": 10744,
         "over": 0
       },
       "lessons": {
         "files": 87,
-        "bytes": 2832618,
+        "bytes": 2844318,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 532211,
+        "bytes": 533877,
         "over": 0
       },
       "handoff": {
-        "files": 628,
-        "bytes": 4508538,
+        "files": 629,
+        "bytes": 4517714,
         "over": 0
       }
     },
@@ -59,13 +59,12 @@
       "oversized_doc": 3,
       "kb_note_dialect": 1,
       "vault_heavy_path": 603,
-      "checkpoint_overdue": 1,
       "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 84824,
-      "bytes": 14988172288,
-      "heavy_bytes": 10460554467,
+      "files": 84841,
+      "bytes": 14988558494,
+      "heavy_bytes": 10460636093,
       "heavy_share": 0.698,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -89,15 +88,15 @@
         "cpl-project-tracker/kb/cpl_ai",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/kb/cpl_ai",
         "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/kb/cpl_ai",
-        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/library",
         "cpl-project-tracker/library",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/library",
+        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/library",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tmc",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
-        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
         "cpl-project-tracker/tests",
+        "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
         "cpl-project-tracker/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-a2ab3cfc7b2cd1e58/kb/status/commons_data_programs",
         "cpl-project-tracker/.claude/worktrees/agent-abe8ca1be1fbc25dc/kb/status/commons_data_programs",
@@ -716,13 +715,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 180422,
+        "bytes": 180666,
         "limit": 150000,
         "lane": "other",
-        "over_by": 30422,
+        "over_by": 30666,
         "ratio": 1.2
       },
-      "message": "180,422 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "message": "180,666 B is 1.2× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -730,10 +729,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 152668074,
+        "bytes": 152692163,
         "kind": "dir"
       },
-      "message": "directory totals 152,668,074 B inside the vault"
+      "message": "directory totals 152,692,163 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -938,32 +937,32 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/library",
-      "detail": {
-        "bytes": 20829722,
-        "kind": "dir"
-      },
-      "message": "directory totals 20,829,722 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "library",
       "detail": {
-        "bytes": 20829711,
+        "bytes": 20830385,
         "kind": "dir"
       },
-      "message": "directory totals 20,829,711 B inside the vault"
+      "message": "directory totals 20,830,385 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": ".claude/worktrees/agent-a2ab3cfc7b2cd1e58/library",
       "detail": {
-        "bytes": 20829711,
+        "bytes": 20830385,
         "kind": "dir"
       },
-      "message": "directory totals 20,829,711 B inside the vault"
+      "message": "directory totals 20,830,385 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/library",
+      "detail": {
+        "bytes": 20830385,
+        "kind": "dir"
+      },
+      "message": "directory totals 20,830,385 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1000,30 +999,30 @@
       "fixable": false,
       "path": ".claude/worktrees/agent-a2ab3cfc7b2cd1e58/tests",
       "detail": {
-        "bytes": 13497400,
+        "bytes": 13514058,
         "kind": "dir"
       },
-      "message": "directory totals 13,497,400 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
-      "detail": {
-        "bytes": 13490047,
-        "kind": "dir"
-      },
-      "message": "directory totals 13,490,047 B inside the vault"
+      "message": "directory totals 13,514,058 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13488665,
+        "bytes": 13512769,
         "kind": "dir"
       },
-      "message": "directory totals 13,488,665 B inside the vault"
+      "message": "directory totals 13,512,769 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": ".claude/worktrees/agent-abe8ca1be1fbc25dc/tests",
+      "detail": {
+        "bytes": 13504811,
+        "kind": "dir"
+      },
+      "message": "directory totals 13,504,811 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -6756,27 +6755,16 @@
       "message": "2,038,305 B single file inside the vault"
     },
     {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_668_handoff.md",
-      "detail": {
-        "commits_since": 10,
-        "budget": 6,
-        "handoff": "session_668_handoff.md"
-      },
-      "message": "10 commit(s) have landed since `docs/session_668_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
-    },
-    {
       "rule": "handoff_drops_active_lane",
       "fixable": false,
-      "path": "docs/session_668_handoff.md",
+      "path": "docs/session_670_handoff.md",
       "detail": {
         "lanes": [
           "governance-team-enablement"
         ],
         "days": 7
       },
-      "message": "`docs/session_668_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: governance-team-enablement. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
+      "message": "`docs/session_670_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: governance-team-enablement. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

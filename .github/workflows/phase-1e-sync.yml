@@ -45,6 +45,7 @@ concurrency:
 
 jobs:
   sync-and-dryrun:
+    environment: live-counts
     runs-on: ubuntu-latest
     permissions:
       contents: write

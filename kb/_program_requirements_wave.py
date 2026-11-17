@@ -274,13 +274,6 @@ def provisional_row(college: str, slug: str, run_id, priced: dict) -> dict:
                 " (it was allowed up to $%.2f)" % priced["price_usd"] if priced.get("go") else "")}
 
 
-def ncl_priced(would: dict | None) -> int:
-    """The found no-closed-list pages a capture's would_extract lists for the extraction (ncl_found, S668; #3299
-    slice B), which go through the same gate: counted only when the capture's NCL_EXTRACT sent them."""
-    ncl = (would or {}).get("ncl_found") or {}
-    return (ncl.get("programs") or 0) if ncl.get("sent") else 0
-
-
 def price_main(args) -> int:
     import _program_requirements_college as C
     slug = C.slug_of(args.college)
@@ -297,11 +290,9 @@ def price_main(args) -> int:
     # capture's would_extract: each forced number not already on that list is priced too (an upper bound).
     listed = {str(x.get("control_number")) for x in would.get("list") or []}
     forced = C.forced(os.path.join(C.COLLEGE_DIR, slug), getattr(args, "force", "") or "") - listed
-    ncl_n = ncl_priced(would)
-    got = price((would.get("programs") or 0) + len(forced) + ncl_n, cpp, parse_limit(args.limit_usd),
+    got = price((would.get("programs") or 0) + len(forced), cpp, parse_limit(args.limit_usd),
                 extract, None if fresh else pages, nothing_goes=fresh)
     got["forced_priced"] = len(forced)
-    got["ncl_found_priced"] = ncl_n
     got.update(cost_per_program_from=cpp_from, pages=pages)
     refused = None
     try:

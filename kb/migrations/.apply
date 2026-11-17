@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-16_s669_cpl_memory_rows.sql
-name=s669_cpl_memory_rows
+file=kb/migrations/2026-11-17_s669_cpl_memory_rows_2.sql
+name=s669_cpl_memory_rows_2

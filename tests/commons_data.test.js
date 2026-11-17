@@ -99,7 +99,10 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const css = SRC.slice(SRC.indexOf("var CSS = ["), SRC.indexOf("].join(", SRC.indexOf("var CSS = [")));
   check("static: the injected CSS names no raw hex color and uses the tab's --cmn tokens", !/#[0-9a-fA-F]{3,8}\b/.test(css) && /var\(--cmn-link\)/.test(css));
   check("static: a scrolling table sits in a labeled region; th scope on every header", /role: "region", "aria-label"/.test(SRC) && !/el\("th", \{ (?!scope)/.test(SRC));
-  check("static: no write path and no browser storage", !/method:\s*"POST"|\/rpc\/|kb_curation|localStorage|sessionStorage|REST \+/.test(SRC));
+  check("static: no write path and no browser storage", !/method:\s*"(POST|PATCH|PUT|DELETE)"|\/rpc\/|kb_curation|localStorage|sessionStorage/.test(SRC));
+  /* The one table read (#3412): a GET of the public course_outcomes table for the SLO drill, and nothing else. */
+  check("static: the only Supabase read is a GET of public course_outcomes", (SRC.match(/REST \+/g) || []).length === 1 && /fetch\(REST \+ path, \{ headers: /.test(SRC)
+    && (SRC.match(/"\/[a-z_]+\?select=/g) || []).join() === '"/course_outcomes?select=');
   check("static: no mock value ships (the mock's sample figures)", !/14,?525|20,?282|130,?793|141,?738|103,?088|7,?082|1 of 15/.test(SRC));
   check("static: focus-visible and reduced motion in the CSS; one column under 560px", /:focus-visible/.test(css) && /prefers-reduced-motion/.test(css) && /max-width: 560px/.test(css));
   check("static: American spelling", !/\b(colour|behaviour|organisation|analyse|centre|catalogue|whilst|amongst)\b/i.test(SRC));
