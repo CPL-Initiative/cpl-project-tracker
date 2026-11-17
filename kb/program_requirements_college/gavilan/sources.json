@@ -1834,17 +1834,21 @@
    "MATH2C"
   ],
   "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395",
-   "title": "Mathematics 2.0 - A.S.-T Degree",
-   "h1": "Mathematics 2.0 - A.S.-T Degree",
+   "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3297/3354",
+   "title": "Mathematics - A.S.-T Degree",
+   "h1": "Mathematics - A.S.-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 2517
+  "text_chars": 2452,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "31533",
@@ -2233,17 +2237,21 @@
    "PHYS4C"
   ],
   "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394",
-   "title": "Physics 2.0 - A.S.-T Degree",
-   "h1": "Physics 2.0 - A.S.-T Degree",
+   "url": "https://gavilan.curriqunet.com/Catalog/archive/424/iq/3241/3127/3130",
+   "title": "Physics - A.S.-T Degree",
+   "h1": "Physics - A.S.-T Degree",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 3387
+  "text_chars": 2941,
+  "catalog_year": "2025-2026"
  },
  {
   "control_number": "33048",

@@ -1540,6 +1540,7 @@ def ncl_listed_names(info: dict | None) -> list[dict] | None:
 
 
 NCL_NO_PAGE = "no page read names it by title and award"
+NCL_WENT_TO = "its page went to closed-list"
 
 
 def ncl_shared_by_awards(page: dict, a: dict, b: dict) -> bool:
@@ -1565,7 +1566,7 @@ def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], eve
     by_cn = {p["control_number"]: p for p in everyone}
     for cn in sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]}):
         other = by_cn.get(cn) or {}
-        why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else "its page went to closed-list"
+        why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else NCL_WENT_TO
         return {"result": "not_matched", "why": "%s %s (%s)" % (why, cn, other.get("title")), "page": ncl_page_ref(pg, m)}
     for other in everyone:
         if other["control_number"] != prog["control_number"] and ncl_match(pg, other):
@@ -1656,16 +1657,121 @@ def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], 
             "files_not_listed": bool(n >= NCL_MIN_TESTED and recall >= NCL_LIST_FLOOR)}
 
 
+# ── a page a closed-list program holds wrongly, given back (S668) ───────────────────────────────────────
+# Skyline's Dance A.A. (10546, no closed list) is the whole heading of dance-aa.php, "Dance Associate in Arts Degree
+# Program", and the closed-list search gave that page to Musical Theater (46296); Skyline's Automotive Advanced Engine
+# Performance Technology certificate (10529) lost automotive-advanced-engine-performance-technology-ca.php to Asian
+# Engine Performance Technology (32337). Both holders' filed records fail. After every rule above has given its answer,
+# a no-closed-list program whose one match is a page one closed-list program holds (NCL_WENT_TO) takes the page when
+# the page's readings do not name the holder (ncl_match) and the holder's filed record (records/<holder>.json, the read
+# filed now) was read from that page and does not pass as the live table counts it (passes_live). Every other rule
+# stands: the page must give the taker found once the holder's claim is lifted. A holder with no filed record from
+# that page keeps it (yield_unjudged), and so does one whose record passes (yield_refused_passing): Lemoore's 43533
+# passes every check on the "Networking Fundamentals (COA)" page, so that page is functionally its own. The holder
+# files page_claimed, with the page in lost_pages and the taker in yielded_to, so it stays in Still to pass, and
+# keep_no_read carries only a passing record, so its failing record is not carried. A college under the self-test's
+# floor, a re-read and a prior-year read look nothing up, so none of them yields a page.
+# A yield stands on the next capture (the #3408 review): the filing drops the holder's failing record, so the next
+# capture finds none, and the page would go back to the holder, be extracted again and refile the failing record. A
+# yield the filed capture.json's account names for the same holder, taker and page, made under the same catalog
+# year (ncl_filed_yields), moves again without a record; sources.json does not keep yielded_to, so the account is the
+# record of it. A filed yield from another year, or naming none, lapses (COBIx on #3408). A failing record
+# moves a page only when it was read from the capture's catalog year (its own catalog_year, else its filing's, as
+# kept_year reads it; both empty is the same year): a 2024-2025 record at the same address judges no 2026-2027 page.
+# A holder whose filed record passes live keeps its page wherever the record was read from, a filed yield or not: a
+# person's fix, or a later re-read, wins over the earlier move.
+def ncl_filed_records(folder: str):
+    """filed(control number) for ncl_lookup: the record filed under folder/records with the catalog year it was read
+    from (kept_year: its own, else the filed capture's, filed_year), or None. capture() and the census read filed
+    records through this one rule, and each compares the year with the year it looks up under."""
+    year = filed_year(folder)
+    return lambda cn: kept_year(_filed(os.path.join(folder, "records", cn + ".json")), year)
+
+
+def ncl_capture_yields(capture: dict | None) -> set[tuple[str, str, str, str | None]]:
+    """{(holder, taker, page_stem(url), catalog_year)} of each yield a capture's account names (ncl_account), with
+    the year the lookup ran under when it moved the page (None on a row that names none)."""
+    acct = (capture or {}).get("catalog_lookup") or {}
+    return {(y.get("holder"), y.get("taker"), page_stem(y.get("url")), y.get("catalog_year") or None)
+            for y in acct.get("yields") or [] if isinstance(y, dict)}
+
+
+def ncl_filed_yields(folder: str | None) -> set[tuple[str, str, str]]:
+    """The yields the filed capture.json names (ncl_capture_yields); none without one."""
+    try:
+        with open(os.path.join(folder or "", "capture.json")) as fh:
+            capture = json.load(fh)
+    except (OSError, ValueError):
+        return set()
+    return ncl_capture_yields(capture if isinstance(capture, dict) else None)
+
+
+def ncl_read_from(rec: dict | None, page: dict) -> bool:
+    """Whether a filed record (records/<cn>.json) was read from the page (ncl_page): its source address is one of
+    the page's keys (page_stem), or the same address but for letter case and a doubled slash (same_address)."""
+    url = ((rec or {}).get("source_url") or "").split("#")[0]
+    return bool(url) and (page_stem(url) in page["keys"] or same_address(url, page["pg"].get("url") or ""))
+
+
+def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], everyone: list[dict],
+              filed, catalog_year: str | None = None, yielded: set | None = None) -> dict | None:
+    """Whether a no-closed-list program takes its one page back from the closed-list program holding it (the rule
+    above), or None where the program is no such case: its one match (ncl_match) is a page exactly one closed-list
+    program holds, the page does not name that holder, and ncl_answer finds the page for the program once the
+    holder's claim on it is lifted. filed(control number) gives the holder's filed record with the catalog year it
+    was read from (ncl_filed_records), or None; catalog_year is the capture's; yielded: the filed capture's yields
+    (ncl_filed_yields). A passing record refuses the move wherever it was read from. Returns {"holder", "holder_title", "answer": the found answer, "held": None (the page
+    moves), "unjudged" or "refused_passing", "why"}."""
+    hits = [pg for pg in pages if ncl_match(pg, prog)]
+    if len(hits) != 1:
+        return None
+    pg = hits[0]
+    holders = sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]})
+    if len(holders) != 1:
+        return None
+    h = holders[0]
+    holder = next((p for p in everyone if p["control_number"] == h), None)
+    if holder is None or ncl_match(pg, holder):
+        return None
+    lifted = dict(claimed, **{k: [c for c in claimed.get(k, ()) if c != h] for k in pg["keys"]})
+    ans = ncl_answer(prog, pages, lifted, everyone)
+    if ans["result"] != "found":
+        return None
+    rec = filed(h)
+    from_page = bool(rec) and ncl_read_from(rec, pg)
+    if _passing_filed_rec(rec):
+        # Wherever it was read from, and before a filed yield: a person's fix or a later re-read wins (#3408 review).
+        held, why = "refused_passing", "its filed record passes live"
+    elif catalog_year and any((h, prog["control_number"], k, catalog_year) in (yielded or ()) for k in pg["keys"]):
+        # A filed yield stands only in the year it was made under; one from another year, or naming none, lapses
+        # and the holder is judged again from its record (COBIx on #3408).
+        held, why = None, "the filed capture's account names this yield, made under %s" % catalog_year
+    elif not rec:
+        held, why = "unjudged", "no filed record"
+    elif not from_page:
+        held, why = "unjudged", "its filed record was read from another page"
+    elif (rec.get("catalog_year") or "") != (catalog_year or ""):
+        held, why = "unjudged", "its filed record was read from the %s catalog" % (rec.get("catalog_year") or "unnamed")
+    else:
+        held, why = None, "its filed record, read from the page, fails live"
+    return {"holder": h, "holder_title": holder.get("title"), "answer": ans, "held": held, "why": why}
+
+
 def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], listed: list[dict] | None = None,
                named: set[str] | None = None, college: str | None = None,
-               catalog_year: str | None = None) -> tuple[dict[str, dict], dict]:
+               catalog_year: str | None = None, filed=None,
+               yielded: set | None = None) -> tuple[dict[str, dict], dict]:
     """({control number: answer} for each no-closed-list program, the self-test). An answer is found (with
     the page); not_matched with the reason (title_has_no_words for a title of decorations alone;
     absent_from_catalog_list where no page read names the program, the capture holds the catalog's own list,
     `listed`, that list passes its own test, and it lacks the program); or not_searched when the page self-test
     fails. This slice files no not_listed (round three): the claim "not
     listed in the catalog" waits for slice B, with its own gate; ncl_list_test is measured, not applied. own: {control number: page_stem()} of each closed-list program's page, which it claims
-    first; named: the ones whose page names them by the search's own label (ncl_self_test)."""
+    first; named: the ones whose page names them by the search's own label (ncl_self_test). filed(control
+    number): a closed-list program's filed record, or None; given, a found answer may take its page from the
+    closed-list program holding it (ncl_yield, S668), naming it as took_from, and one that may not names why
+    (yield_held: the holder, unjudged or refused_passing, and why); not given, no page moves. yielded: the filed
+    capture's yields (ncl_filed_yields), which stand without the holder's record."""
     feats = ncl_pages(pages, college, catalog_year)
     test = ncl_self_test(programs, feats, own, named)
     claimed = ncl_claims(own, feats)
@@ -1693,16 +1799,28 @@ def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], lis
             if (ans["result"] == "not_matched" and ans["why"] == NCL_NO_PAGE and list_ok
                     and not any(ncl_match(e, prog) for e in lists)):
                 ans = {"result": "not_matched", "why": "absent_from_catalog_list"}
+            # A page a closed-list program holds wrongly, given back (ncl_yield, S668): only where the capture
+            # passes the read filed now (filed), and only a page the answer says went to closed-list.
+            y = (ncl_yield(prog, feats, claimed, programs, filed, catalog_year, yielded)
+                 if filed is not None and ans["result"] == "not_matched" and ans["why"].startswith(NCL_WENT_TO)
+                 else None)
+            if y and y["held"]:
+                ans = dict(ans, yield_held={"holder": y["holder"], "held": y["held"], "why": y["why"]})
+            elif y:
+                ans = dict(y["answer"], took_from=y["holder"])
             out[cn] = ans
     return out, test
 
 
-def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
+def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_year: str | None = None) -> dict:
     """The capture's account of the lookup: the self-test, how many it searched and found, the pages found
     (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
     short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
     run files this account alone (capture_preview.json), and a run's artifact cannot be read from a session,
-    so the branch has to carry enough to judge each answer (S652)."""
+    so the branch has to carry enough to judge each answer (S652). yields: each page a program took from the
+    closed-list program holding it (holder, taker, the page and its heading, and catalog_year, the year the lookup
+    ran under, which a later capture's filed yield must match: ncl_capture_yields); yield_unjudged and
+    yield_refused_passing: the candidates whose page stayed (ncl_yield, S668)."""
     by: dict[str, int] = {}
     for a in answers.values():
         by[a["result"]] = by.get(a["result"], 0) + 1
@@ -1719,14 +1837,23 @@ def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict) -> dict:
             continue
         row = {"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                "status": r.get("status"), "result": a["result"]}
-        row.update({k: a[k] for k in ("why", "basis") if k in a})
+        row.update({k: a[k] for k in ("why", "basis", "yield_held") if k in a})
         if a.get("page"):
             row.update(url=a["page"]["url"], h1=a["page"].get("h1"), awards=a["page"].get("awards"))
         others.append(row)
+    # Each page a no-closed-list program took from the closed-list program holding it (ncl_yield, S668), and the
+    # candidates whose page stayed, by why: enough to judge each move from the branch a capture-only run files.
+    titles = {r["control_number"]: r["title"] for r in recs}
+    yields = [{"holder": a["took_from"], "holder_title": titles.get(a["took_from"]), "taker": cn,
+               "taker_title": titles.get(cn), "url": a["page"]["url"], "h1": a["page"].get("h1"),
+               "catalog_year": catalog_year}
+              for cn, a in sorted(answers.items()) if a.get("took_from")]
+    held = [(a.get("yield_held") or {}).get("held") for a in answers.values()]
     return {"self_test": test, "programs": len(answers), "by_result": by, "found": by.get("found", 0),
             "found_active": sum(1 for f in found if f["status"] == "Active"),
             "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
-            "other_programs": others}
+            "other_programs": others, "yields": yields, "yield_unjudged": held.count("unjudged"),
+            "yield_refused_passing": held.count("refused_passing")}
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
@@ -5292,9 +5419,23 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         # refuses as an archived copy (ARCHIVED); its programs are read by their closed lists alone (COBIx on #3382).
         if ncl_lookup_on() and not report.get("reread") and not report.get("prior"):
             own = {r["control_number"]: page_stem(r["source"]["url"]) for r in recs if r.get("source")}
+            folder = os.path.join(COLLEGE_DIR, slug_of(college))
             answers, test = ncl_lookup(programs, pages, own,
                                        ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
-                                       ncl_named(recs), college, reg.get("catalog_year"))
+                                       ncl_named(recs), college, reg.get("catalog_year"),
+                                       filed=ncl_filed_records(folder), yielded=ncl_filed_yields(folder))
+            # A page a no-closed-list program took back (ncl_yield, S668): its holder is read from no page now.
+            took = {a["took_from"]: cn for cn, a in answers.items() if a.get("took_from")}
+            by_cn = {p["control_number"]: p for p in programs}
+            for i, rec in enumerate(recs):
+                taker = took.get(rec["control_number"])
+                if taker is None:
+                    continue
+                lost = (rec.get("source") or {}).get("url") or answers[taker]["page"]["url"]
+                recs[i] = source_record(college, by_cn[rec["control_number"]], reg, None, "page_claimed")
+                recs[i].update(lost_pages=[lost], yielded_to=taker)
+                _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
+                print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
             for rec in recs:
                 ans = answers.get(rec["control_number"])
                 if ans is not None and rec["method"] == "no_closed_list":
@@ -5303,7 +5444,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     print("%-6s catalog_lookup %-12s %s" % (rec["control_number"], ans["result"],
                                                            (ans.get("page") or {}).get("url") or ans.get("basis")
                                                            or ans.get("why") or ""), flush=True)
-            report["catalog_lookup"] = ncl_account(recs, answers, test)
+            report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"))
     finally:
         browser.close()
         pw.stop()
@@ -5424,8 +5565,10 @@ def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, fo
     a whole capture, and each program's text matching its fingerprint. A capture filed before fingerprints
     (S647) proves its text another way: its account, written from that text, equals the filed account in every
     field but the run's id, and each program the account lists sits at the address and coverage it names. The
-    refusal set is recomputed on the current code, and would_extract against the records filed now. Returns
-    0, or 2 with the reason, having written nothing to out_dir."""
+    refusal set is recomputed on the current code, and would_extract against the records filed now. It runs no
+    no-closed-list lookup, so no page yield either (ncl_yield, S668): an artifact captured before S668 keeps each
+    holder on its page as captured (Skyline's preview run 43607267460 keeps 46296 on dance-aa.php), and only a
+    fresh capture gives the page back. Returns 0, or 2 with the reason, having written nothing to out_dir."""
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
 
     def refuse(why: str) -> int:

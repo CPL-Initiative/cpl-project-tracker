@@ -49,6 +49,8 @@ together and places them in some order of priority and completion and known issu
 
 
 
+**College Data Collection reaches the words (#3412 items 2 and 3, S669, #3422; `d-3412-built-s669`):** in the SLO panel a subject opens to its courses and a course to its SLO and objective text (public `course_outcomes`, read once a college, 500 a page); a Program learning outcomes section reuses the committed PLO list. **NEXT:** verify on the deployed tab that a college's `course_outcomes` rows carry the same college name (a twin spelling would show the empty sentence).
+
 **The first view opens on one batch, and the batch is capped (S604, #2921, #2923; Exhibits queue-first, S611, #2933; the panel's trail, #2934):** moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S648 checkpoint)*. All stand. **NEXT (#2921):** the CCR (below); Subjects' 93 stray codes stay with the curator. Sam's path still waits on his reaction to the mock.
 
 **LIVE: the Docket, steps 1 to 3 (#2963, #2966, #2968, #2969, 2026-11-09).** Batches close in place and offer the next; a case in `kb/docket/cases.json` is ruled in place; `kb/_docket_process.py` carries rulings out nightly or from *Process my rulings now*. The record moved verbatim to [`docs/commons_lessons.md`](../../commons_lessons.md), *Moved from the lane (S624, 2026-11-10)*.

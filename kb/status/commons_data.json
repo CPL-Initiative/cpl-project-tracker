@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-16T07:59:46Z",
+ "written_at": "2026-11-17T00:28:35Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15859,
-  "gap": 6476,
+  "passing": 15860,
+  "gap": 6475,
   "with_gap": 118,
-  "cost_usd": 1343.33,
-  "passed_at_read": 15365,
+  "cost_usd": 1342.97,
+  "passed_at_read": 15369,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15859,
-  "gap": 6476
+  "passing": 15860,
+  "gap": 6475
  },
  "census_live": {
   "basis": "live",
@@ -11581,13 +11581,13 @@
    "harvested": true,
    "slug": "skyline",
    "programs": 144,
-   "passing": 40,
-   "gap": 104,
+   "passing": 41,
+   "gap": 103,
    "causes": {
     "no_closed_list": 86,
-    "page_not_found": 5,
-    "places_none": 11,
-    "unknown_without_live": 2
+    "page_not_found": 10,
+    "places_none": 6,
+    "unknown_without_live": 1
    },
    "census_causes": {
     "no_closed_list": 86,
@@ -11610,10 +11610,10 @@
    "outcomes_file": "kb/status/commons_data_programs/skyline.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-17T13:07:43Z",
+   "read_at": "2026-11-16T22:22:35Z",
    "read_kind": "capture",
-   "cost_usd": 3.83,
-   "passed_at_read": 37,
+   "cost_usd": 3.47,
+   "passed_at_read": 41,
    "slo_queue": null,
    "scout": {
     "recommendation": "page_read",
@@ -11630,13 +11630,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 58,
-   "found": 53,
-   "extracted": 53,
+   "found": 48,
+   "extracted": 48,
    "errors": 0,
    "failed_checks": {
-    "coverage": 11,
+    "coverage": 6,
     "invented": 0,
-    "arithmetic": 16,
+    "arithmetic": 7,
     "repeated": 0,
     "outcomes": 0
    },
@@ -11646,23 +11646,23 @@
    "capture_root": "https://catalog.skylinecollege.edu/current/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2422.4,
-   "run": "39035209486",
+   "read_seconds": 2956.1,
+   "run": "43968403561",
    "levers": {
     "program_course_file_check": 86,
-    "reader_page_assignment": 11,
-    "reader_page_search": 5,
-    "reconcile_steps": 2
+    "reader_page_search": 10,
+    "reader_page_assignment": 6,
+    "reconcile_steps": 1
    },
    "collection": {
     "program_reader": {
-     "records": 53,
+     "records": 48,
      "models": {
-      "claude-opus-5-5": 53
+      "claude-opus-5-5": 48
      },
-     "run": "39035209486",
-     "at": "2026-10-17T13:07:43Z",
-     "cost_usd": 3.83,
+     "run": "43968403561",
+     "at": "2026-11-16T22:22:35Z",
+     "cost_usd": 3.47,
      "platform": "custom_html"
     },
     "slo_read": null,
