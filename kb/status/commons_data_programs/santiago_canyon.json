@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santiago Canyon College","slug":"santiago_canyon","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Santiago Canyon College","slug":"santiago_canyon","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
 {"cn":"45579","title":"Apprenticeship Carpentry, General Carpenter","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317"},
 {"cn":"45580","title":"Apprenticeship Carpentry, General Carpenter","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318"},
 {"cn":"13231","title":"Apprenticeship: Carpentry, Finish Carpentry","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316"},

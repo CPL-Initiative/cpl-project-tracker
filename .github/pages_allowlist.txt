@@ -378,6 +378,7 @@ publish kb/reference/coci_courses.json
 publish kb/reference/coci_program_course_file.csv.gz
 publish kb/reference/coe_occupation_demand_2024_2029.json
 publish kb/reference/college_identity_rulings.json
+publish kb/reference/cre_weights.json
 publish kb/reference/credential_engine_top50.json
 publish kb/reference/credential_engine_top50_ctids.json
 publish kb/reference/credential_engine_top50_map_check.json

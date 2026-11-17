@@ -182,6 +182,10 @@ check("(3) the filter is built from TAB_PASSING", all(s in L.PASSING_QS for s in
 
 # (4) the figures
 C = block["colleges"]
+check("(4) S678: the export carries load counts by day (outline rows, program records), counts only, the records by HEAD count",
+      set(block.get("by_day") or {}) == {"outline_rows", "program_records"}
+      and all(isinstance(v, int) for g in block["by_day"].values() for v in g.values())
+      and not any(m == "page" and t == "program_requirement_records" for m, t, *_ in src.log))
 ah, noce = C.get("17"), C.get("121")
 check("(4) colleges are keyed by crosswalk id", set(C) == {"17", "121"}, sorted(C))
 check("(4) Active, Teachout and Approved are counted apart; an Inactive program is not read",
@@ -500,7 +504,11 @@ check("(7) every artifact upload keeps a short retention (the live counts ride i
       all((s.get("with") or {}).get("retention-days") == 3 for j in jobs.values() for s in j.get("steps") or []
           if "upload-artifact" in str(s.get("uses"))))
 check("(7) the push keeps the one concurrency group", wf.get("concurrency", {}).get("group") == "harvest-gap-census-${{ github.ref_name }}")
-check("(7) the workflow stays dispatch only", list((wf.get(True) or wf.get("on") or {}).keys()) == ["workflow_dispatch"])
+# S678 (COBIx's item 1b): dispatch-only let the live counts go unread from Nov 13 to 17, so it also runs on one daily
+# schedule; a schedule runs on main, where the keyed job is allowed, and passes no input (accept_active_shift stays off).
+_on = wf.get(True) or wf.get("on") or {}
+check("(7) the workflow runs on dispatch and one daily schedule", sorted(_on.keys()) == ["schedule", "workflow_dispatch"]
+      and [c.get("cron") for c in _on["schedule"]] == ["47 17 * * *"])
 inp = ((wf.get(True) or wf.get("on") or {})["workflow_dispatch"] or {}).get("inputs", {}).get("accept_active_shift") or {}
 builder_step = steps[bi[0]]
 check("(7) ⭐ accept_active_shift is a boolean dispatch input, default false, reaching the builder through env and logged",

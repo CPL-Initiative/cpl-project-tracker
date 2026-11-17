@@ -318,6 +318,18 @@ def filed_cost(summary: dict) -> float | None:
     return v if isinstance(v, (int, float)) else summary.get("cost_usd")
 
 
+def spent_block(root: str) -> dict:
+    """What the extraction runs themselves cost (S678, COBIx's item 1a): the sum of each run's cost_usd_run in the
+    ledger kb/_build_spend_daily.py keeps in kb/reference/model_spend_daily.json, shown beside cost_usd (what the filed
+    records cost, whichever run paid). Empty when the ledger is absent, so the page shows TBA."""
+    d = _maybe(os.path.join(root, "kb/reference/model_spend_daily.json")) or {}
+    runs = d.get("runner_runs") or {}
+    if not runs:
+        return {}
+    return {"spent_usd": round(sum(r.get("usd") or 0 for r in runs.values()), 2), "spent_runs": len(runs),
+            "spent_since": d.get("runner_since")}
+
+
 def harvest(root: str):
     """Per harvested college, from the committed files through the census's own functions."""
     sys.path.insert(0, os.path.join(root, "kb"))
@@ -1251,6 +1263,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "gap": sum(c["gap"] for c in hv), "with_gap": sum(1 for c in hv if c["gap"]),
         "cost_usd": round(sum(c["cost_usd"] for c in costed), 2),
         "passed_at_read": sum(c["passed_at_read"] for c in costed), "cost_receipts": len(costed),
+        **spent_block(root),
         "slo_waiting": len(slo), "scouted": len(scouts),
         "scout_barrier": sum(1 for v in scouts.values() if (v.get("challenge") or "none") != "none" or v.get("recommendation") == "blocked"),
         "spot_checked": len(spot),
