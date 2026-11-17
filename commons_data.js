@@ -168,7 +168,8 @@
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
       live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live),
-      collection: obj(data.collection) };   // the college cards' statewide facts (#3310)
+      collection: obj(data.collection),   // the college cards' statewide facts (#3310)
+      blocked: data.blocked_hunt && typeof data.blocked_hunt === "object" ? data.blocked_hunt : null };
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -1282,6 +1283,27 @@
   /* ── the side panel: the same college beside the list (the Funding Follow-up Dashboard's drawer: its heading takes
      the focus on open, Escape closes it and the focus returns to the word that opened it); a non-modal dialog, so the
      page beside it stays live (#3310). Its width lasts the visit; nothing is stored. ── */
+  /* Sam's blocked-catalog hunt (S678, #3464 item 8: "Make sure those blocked catalogs and cors are on my cdc to do"; "To
+     do should be on both cdc and commons"): the one to-do, from the same file the Commons' Waiting on a person list
+     reads (kb/_blocked_catalogs.py). A college leaves it once its catalog or outlines are filed; none left, no block. */
+  function blockedTodo(M) {
+    var b = M.blocked;
+    if (!b || !Array.isArray(b.colleges) || !b.open) return null;
+    var open = b.colleges.filter(function (c) { return !c.filed; });
+    var sec = el("section", { cls: "cdd-psec cdd-todo", id: "cdd-blocked", "aria-labelledby": "cdd-blocked-h", "data-todo": "blocked-catalogs" });
+    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Find catalogs or course outlines for the colleges whose sites block automated reading") }));
+    sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
+      + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
+      + "File a catalog or the course outlines in " + (b.file_in || "kb/hand_filed_catalogs/outlines") + " and the college clears here and on the Commons." }));
+    var ul = el("ul", { cls: "cdd-todo-list" });
+    open.forEach(function (c) {
+      ul.appendChild(el("li", { "data-todo-college": c.slug }, [c.college + ": " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ". ",
+        c.catalog_url ? el("a", { href: c.catalog_url, target: "_blank", rel: "noopener", text: "Its catalog" }) : "Catalog link: TBA"]));
+    });
+    sec.appendChild(ul);
+    sec.appendChild(el("p", { cls: "cdd-src", text: Array.isArray(b.courses) && b.courses.length ? "" : "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
+    return sec;
+  }
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
   /* The panel's further cards, each module its own file (#3310: How it's collected, Program pathway maps, Data
      sources in commons_data_cards.js). A module loads the first time a panel draws, then the panel draws again; it
@@ -1601,6 +1623,8 @@
     });
     wrap.appendChild(grid);
 
+    var hunt = blockedTodo(M);
+    if (hunt) wrap.appendChild(hunt);
     var list = el("section", { cls: "cdd-list", "aria-labelledby": "cdd-list-h" });
     list.appendChild(el("h3", { id: "cdd-list-h", cls: "cdd-h3", tabindex: "-1", text: "Colleges" }));
     var search = el("input", { type: "search", id: "cdd-q", cls: "cdd-q", autocomplete: "off", value: S.q });

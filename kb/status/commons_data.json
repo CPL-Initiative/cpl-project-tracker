@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T23:10:38Z",
+ "written_at": "2026-11-17T23:16:42Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -19432,5 +19432,74 @@
   "integration": {
    "known": 0
   }
+ },
+ "blocked_hunt": {
+  "title": "Find catalogs or course outlines for the colleges whose sites block automated reading",
+  "hunt": "Hunt only the courses still taught (in the Fall 2025 state course list); Sam, 2026-11-17: \"Why do we need the retired courses\".",
+  "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json; the course-by-course list was not posted, so the courses are TBA here until it is filed",
+  "colleges": [
+   {
+    "slug": "north_orange_continuing_education",
+    "college": "North Orange Continuing Education",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "https://catalog.nocccd.edu/noce/",
+    "local_courses": 207,
+    "filed": false,
+    "filed_file": null
+   },
+   {
+    "slug": "grossmont",
+    "college": "Grossmont College",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "https://catalog.gcccd.edu/grossmont/",
+    "local_courses": 42,
+    "filed": false,
+    "filed_file": null
+   },
+   {
+    "slug": "southwestern",
+    "college": "Southwestern College",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "https://catalog.swccd.edu/",
+    "local_courses": 34,
+    "filed": false,
+    "filed_file": null
+   },
+   {
+    "slug": "ohlone",
+    "college": "Ohlone College",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf",
+    "local_courses": 32,
+    "filed": false,
+    "filed_file": null
+   },
+   {
+    "slug": "el_camino",
+    "college": "El Camino College",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "http://catalog.elcamino.edu/",
+    "local_courses": 20,
+    "filed": false,
+    "filed_file": null
+   },
+   {
+    "slug": "fullerton",
+    "college": "Fullerton College",
+    "reason": "bot challenge or robots.txt refusal",
+    "catalog_url": "https://catalog.nocccd.edu/fullerton-college/",
+    "local_courses": 10,
+    "filed": false,
+    "filed_file": null
+   }
+  ],
+  "open": 6,
+  "done": 0,
+  "local_courses": 345,
+  "local_courses_open": 345,
+  "still_taught_total": 12,
+  "courses": null,
+  "file_in": "kb/hand_filed_catalogs/outlines",
+  "open_link": "#commons/data"
  }
 }

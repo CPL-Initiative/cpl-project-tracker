@@ -71,7 +71,7 @@ f = req.get("facts") or {}
 # Every Commons action opens the reference's List (Sam, 2026-11-03), on the filter a count names where the List has one.
 check("Programs: the card and its counts open CPL Pathways' List, the issues its Fail and Not read yet filters",
       req["links"][0]["href"] == "#program-requirements/list" and all(p_["open"] == "#program-requirements/list" for p_ in req["pair"])
-      and [i["open"] for i in req["issues"]] == ["#program-requirements/list/fail", "#program-requirements/list/unread"][:len(req["issues"])],
+      and [i["open"] for i in req["issues"] if i["open"] != "#commons/data"] == ["#program-requirements/list/fail", "#program-requirements/list/unread"][:len([i for i in req["issues"] if i["open"] != "#commons/data"])],
       (req["links"], [p_["open"] for p_ in req["pair"]], [i["open"] for i in req["issues"]]))
 _ex = [r for r in rows if r["key"] == "exhibit"][0]
 _ns = [i for i in _ex["issues"] if i.get("open") == "#exhibits/list/nosubj"]
@@ -128,8 +128,11 @@ check("Program Requirements: complete + failing + unread = the active universe",
       f.get("complete") + f.get("failing") + f.get("unread") == f.get("active") == req["pair"][0]["of"], f)
 check("Program Requirements: its run log is named (kb/status/program-requirements.json)",
       req.get("status_file") == "kb/status/program-requirements.json")
-check("Program Requirements: the issues are the failing and the unread counts",
-      [i["n"] for i in req["issues"]] == [f.get("failing"), f.get("unread")])
+# S678 (#3464 item 8): beside them, Sam's blocked-catalog hunt, from the one source the College Data Collection page reads,
+# until every college is filed.
+sys.path.insert(0, os.path.join(ROOT, "kb")); import _blocked_catalogs as _BC  # noqa: E402,E702
+check("Program Requirements: the issues are the failing and the unread counts, then the blocked-catalog hunt while it is open",
+      [i["n"] for i in req["issues"]] == [f.get("failing"), f.get("unread")] + ([_BC.queue_issue(ROOT)["n"]] if _BC.queue_issue(ROOT) else []))
 ex = rows[1].get("facts") or {}
 check("Exhibit: a person's and a cohort's stamps sum to the stamped titles", ex.get("person") + ex.get("cohort") == ex.get("stamped") == rows[1]["pair"][0]["n"])
 co = rows[2]
