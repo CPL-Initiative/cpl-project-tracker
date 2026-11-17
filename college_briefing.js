@@ -1720,7 +1720,7 @@
       // Ashley's opportunity workbook and its one-page summary (Sam, 2026-10-20):
       // one college's courses, programs, exhibits and the CPL it could add.
       + (state.scope === "college" && state.college
-          ? '<a class="cb-act" id="cb-oppvisual" target="_blank" rel="noopener" href="' + esc(opportunityPageUrl(state.college)) + '">View CPL Visual</a>'
+          ? '<a class="cb-act" id="cb-oppvisual" target="_blank" rel="noopener" href="' + esc(opportunityPageUrl(state.college)) + '">Create My College CPL Plan</a>'
             + '<button type="button" class="cb-act" id="cb-workbook">Download CPL Extract</button>'
             + (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function"
                 ? '<button type="button" class="cb-act" id="cb-pathways">Open CPL Pathways</button>' : "")
@@ -3875,7 +3875,7 @@
     return out;
   }
 
-  /* The CPL opportunity analysis (Ashley and Sam, 2026-10-20). "View CPL Visual"
+  /* The CPL opportunity analysis (Ashley and Sam, 2026-10-20). "Create My College CPL Plan"
    * opens the college's shareable page; "Download CPL Extract" builds the same
    * analysis here as an Excel workbook (college_cpl_workbook.js, loaded on first use). */
   var OPP_PAGE = "library/cpl-opportunity/";

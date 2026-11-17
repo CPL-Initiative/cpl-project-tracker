@@ -4,12 +4,13 @@
 //   2. "Add Sierra bubble on bottom right and have it open to sidebar instead of new tab"
 //   3. "Add link on course cards to SLOs and Objectives if they are collected and have them open to a side bar"
 //   4. "Use full width of window for everything on this tab"
-//   5. "On open of View CPL Visual, add a timer that shows progress on creating the visual--since it takes a while to
+//   5. "On open of Create My College CPL Plan, add a timer that shows progress on creating the visual--since it takes a while to
 //      open and the users needs to know to wait rather than click again"
 //
 // Guards the failure modes:
-//   (a) every Could adopt or For consideration credential on a card gets map_links.js's line, each naming its
-//       credential when a card holds two or more, and a card with neither gets no line;
+//   (a) a card with a Could adopt or For consideration credential gets ONE chip (adopt_panel.js, #3412 item 4) naming
+//       a granting college, its own region first, and how many more; the panel lists every exhibit with its issuer,
+//       units, colleges and a checkbox, and checking two sends one intake row for both; a card with neither gets none;
 //   (b) the SLOs word appears only on a course with collected rows, says which kinds it holds, matches codes printed
 //       with or without a space or hyphen, reads the college's index once, and a failed read claims nothing;
 //   (c) the panel is a labeled non-modal dialog showing the newest read of each kind, SLOs before objectives, and
@@ -29,17 +30,19 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
 const DATA = fs.readFileSync("cpl_pathways_data.js", "utf8");
 const ROEP = fs.readFileSync("cpl_pathways_roep_data.js", "utf8");
 const SRC = fs.readFileSync("cpl_pathways.js", "utf8");
+const ADOPT_PANEL = fs.readFileSync("adopt_panel.js", "utf8");
 const LIB_TAB = fs.readFileSync("library.js", "utf8");
 const WORKBOOK = fs.readFileSync("college_cpl_workbook.js", "utf8");
 const VISUAL = fs.readFileSync("library/cpl-opportunity/index.html", "utf8");
 const wait = (ms) => new Promise((r) => setTimeout(r, ms || 30));
 
-function freshWindow(answer) {
+function freshWindow(answer, posts) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="cpl-pathways-root"></div></body></html>',
     { runScripts: "outside-only", url: "https://example.org/cpl/" });
   const w = dom.window, calls = [];
-  w.fetch = function (url) {
+  w.fetch = function (url, opts) {
     calls.push(String(url));
+    if (opts && opts.method === "POST") { (posts || []).push({ url: String(url), body: opts.body }); return Promise.resolve({ ok: true, status: 201 }); }
     const got = answer ? answer(decodeURIComponent(String(url))) : [];
     if (got instanceof Error) return Promise.reject(got);
     return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(got) });
@@ -51,7 +54,7 @@ function freshWindow(answer) {
     s.textContent = "Request Quick Adopt in MAP";
     return s;
   } };
-  w.eval(DATA); w.eval(ROEP); w.eval(SRC);
+  w.eval(ADOPT_PANEL); w.eval(DATA); w.eval(ROEP); w.eval(SRC);
   w.Element.prototype.scrollIntoView = function () {};
   return { w, calls, T: w.CPL_PATHWAYS_TAB, root: w.document.getElementById("cpl-pathways-root") };
 }
@@ -61,32 +64,115 @@ function record(w, college, control) {
 function tile(root, code) { return root.querySelector('.cplpw-rtile[data-code="' + code + '"]'); }
 
 (async function () {
-  // (a) Request Adopt on the cards.
+  // (a) One Adopt chip per course card, opening the multi-select panel (#3412 item 4).
   {
-    const { w, T, root } = freshWindow();
-    const two = record(w, "Cerritos College", "41982");
-    T._renderRoepProgram(root, two);
-    const t = tile(root, "HED 100");
-    const lines = t ? [...t.querySelectorAll(".cplpw-radopt")] : [];
-    const titles = (two.display.courses["HED 100"].adopt.credentials || []).map((a) => a.credential);
-    check("(a) a card with two could-adopt credentials carries a Request Adopt line for each",
-      lines.length >= 2 && titles.every((x) => lines.some((l) => l.querySelector(".cpl-maplinks").getAttribute("data-ml-title") === x)),
-      lines.length + " lines");
-    check("(a) and each line names its credential", lines.every((l) => l.querySelector(".nm") && titles.indexOf(l.querySelector(".nm").textContent) >= 0));
+    const CATALOG = JSON.parse(fs.readFileSync("library/adopt/adopt_data.json", "utf8"));
+    const posts = [];
+    const { w, T, root, calls } = freshWindow((u) => /adopt_data\.json/.test(u) ? CATALOG : [], posts);
+    const P = w.CPL_ADOPT_PANEL;
+    const hedRec = w.CPL_PATHWAYS_ROEP.programs.find((p) => p.college === "Cerritos College" && p.display.courses["HED 110"]);
+    T._renderRoepProgram(root, hedRec);
+    await wait(60);
+    check("(a) the Catalog is read once, for the chip and the tab", calls.filter((u) => /adopt_data\.json/.test(u)).length === 1);
+    const t = tile(root, "HED 110");
+    const chips = t ? [...t.querySelectorAll(".cpladp-chip")] : [];
+    const info = hedRec.display.courses["HED 110"];
+    check("(a) Cerritos HED 110 carries one chip and no per-credential lines", chips.length === 1 && !t.querySelector(".cplpw-radopt, .cpl-maplinks"), chips.length);
+    const lab = chips[0] ? chips[0].textContent : "";
+    const mm = lab.match(/^(.+) and (\d+) more give CPL for this course\.$/);
+    check("(a) its label names one granting college and how many more", !!mm && info.adopt.credentials.some((a) => a.colleges.indexOf(mm[1]) >= 0)
+      && Number(mm[2]) === info.adopt.colleges_n - 1, lab);
+    check("(a) the chip is an underlined-word button that names its dialog", chips[0] && chips[0].tagName === "BUTTON" &&
+      chips[0].getAttribute("aria-controls") === "cplpw-panel" && chips[0].getAttribute("aria-expanded") === "false");
+    chips[0].dispatchEvent(new w.Event("click", { bubbles: true }));
+    await wait(30);
+    const panel = w.document.getElementById("cplpw-panel");
+    check("(a) the chip opens the tab's side panel and says it is open", panel && !panel.hidden && chips[0].getAttribute("aria-expanded") === "true");
+    const rows = [...panel.querySelectorAll(".cpladp-row")];
+    check("(a) the panel lists every exhibit the record holds, each with a labeled checkbox",
+      rows.length === info.adopt.credentials.length + (info.consider || []).length &&
+      rows.every((r) => { const cb = r.querySelector('input[type="checkbox"]'); const lb = r.querySelector("label"); return cb && lb && lb.getAttribute("for") === cb.id; }), rows.length);
+    const more = panel.querySelector(".cpladp-more");
+    const missing = info.adopt.credentials_n - info.adopt.credentials.length;
+    check("(a) until the display apply lands, the panel says how many more exist and when they arrive",
+      missing <= 0 || (!!more && more.textContent.indexOf(missing + " more exhibits") === 0 && /next catalog display update/.test(more.textContent) &&
+        more.textContent.indexOf("(" + info.adopt.credentials_n + " in all)") > 0), more && more.textContent);
+    const facts = rows.map((r) => r.querySelector(".cpladp-facts").textContent);
+    check("(a) each row gives its issuer, units and granting colleges, or says one is not on file",
+      facts.every((f) => /Issuer: |issuer is not on file/.test(f) && /units/.test(f) && /Already gives CPL for it: |granting college|No college grants/.test(f)), facts[0]);
+    const emt = rows.find((r) => r.querySelector("label").textContent === "EMT Certification");
+    check("(a) the colleges on a row are the record's colleges", emt && /Already gives CPL for it: Cabrillo College, City College of San Francisco, Moreno Valley College, Norco College, Riverside City College\./.test(emt.textContent));
+    check("(a) MAP's line sits beside a row inside the panel", rows.every((r) => r.querySelector(".cpl-maplinks")));
+
+    const form = panel.querySelector(".cpladp-form");
+    form.querySelector('[name="contact_email"]').value = "pat@example.edu";
+    form.dispatchEvent(new w.Event("submit", { cancelable: true }));
+    await wait(10);
+    check("(a) nothing is sent until an exhibit is checked", posts.length === 0 && /Check at least one exhibit/.test(form.querySelector(".cpladp-err").textContent));
+    check("(a) the adopter's college starts as the program's college", form.querySelector('[name="adopter_college"]').value === "Cerritos College");
+    rows[0].querySelector("input").checked = true;
+    rows[1].querySelector("input").checked = true;
+    const two = [rows[0], rows[1]].map((r) => r.querySelector("label").textContent);
+    form.dispatchEvent(new w.Event("submit", { cancelable: true }));
+    await wait(30);
+    const sent = posts.map((p) => JSON.parse(p.body));
+    check("(a) checking two and sending records ONE intake row naming both", posts.length === 1 && /\/rest\/v1\/cpl_adoption_interest$/.test(posts[0].url) &&
+      sent[0].credentials === two.join(" | ") && sent[0].course_code === "HED 110" && sent[0].adopter_college === "Cerritos College" &&
+      sent[0].precedent.indexOf(two[0] + ": ") === 0 && sent[0].program_id === hedRec.key, posts.length && posts[0].body);
+    check("(a) the panel says the request was recorded", /Request recorded for 2 exhibits\./.test(panel.textContent));
+    panel.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    check("(a) Escape shuts the panel, focus returns to the chip, and it reads as closed",
+      panel.hidden && w.document.activeElement === chips[0] && chips[0].getAttribute("aria-expanded") === "false");
+
+    // After the display apply: a record that carries all ten lists all ten, with no "more" line.
+    const full = JSON.parse(JSON.stringify(info));
+    full.adopt.credentials = Array.from({ length: 10 }, (_, i) => i < 4 ? info.adopt.credentials[i] : { credential: "Exhibit " + i, colleges: ["Peer College " + i] });
+    const fm = P.fromRoep(full);
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    const fChip = P.chip(fm, { home: "Cerritos College", course: { code: "HED 110" }, open: () => host });
+    fChip.dispatchEvent(new w.Event("click"));
+    await wait(10);
+    check("(a) with the full list, the panel lists all ten and claims nothing missing",
+      host.querySelectorAll(".cpladp-row").length === 10 && !host.querySelector(".cpladp-more"), host.querySelectorAll(".cpladp-row").length);
+
+    // A course with nothing to adopt has no chip; a one-college course names it alone.
     const one = record(w, "Cerritos College", "42158");
     T._renderRoepProgram(root, one);
     const courses = one.display.courses;
-    const single = Object.keys(courses).find((k) => {
-      const n = ((courses[k].adopt || {}).credentials || []).length + (courses[k].consider || []).length;
-      return n === 1;
-    });
-    const st = single && tile(root, single);
-    check("(a) a card with one credential carries its line without repeating the name",
-      !!st && st.querySelectorAll(".cplpw-radopt").length === 1 && !st.querySelector(".cplpw-radopt .nm"), single);
     const bare = Object.keys(courses).find((k) => !courses[k].adopt && !(courses[k].consider || []).length);
-    check("(a) a card with nothing to adopt has no line", !!bare && !tile(root, bare).querySelector(".cplpw-radopts"), bare);
-    const css = SRC.match(/\.cplpw-radopt:has\(> \.cpl-maplinks:empty\)/);
-    check("(a) a line MAP lists no exhibit for hides", !!css);
+    check("(a) a card with nothing to adopt has no chip", !!bare && !tile(root, bare).querySelector(".cpladp-chip"), bare);
+    const iw = tile(root, "IWAP 40.63");
+    check("(a) a one-college course names that college with no \"and N more\"",
+      iw && iw.querySelector(".cpladp-chip").textContent === "American River College gives CPL for this course.", iw && iw.textContent);
+
+    // Region first (Sam, 2:21 PM): a Riverside City card names Norco (Inland Empire) before a college elsewhere with more.
+    const rcc = record(w, "Riverside City College", "31456");
+    T._renderRoepProgram(root, rcc);
+    const adj = tile(root, "ADJ-4");
+    check("(a) a Riverside City card names Norco College, its own region, before Bakersfield's two exhibits",
+      adj && /^Norco College and \d+ more give CPL for this course\.$/.test(adj.querySelector(".cpladp-chip").textContent), adj && adj.querySelector(".cpladp-chip").textContent);
+    const bay = P.fromRoep({ adopt: { credentials_n: 3, colleges_n: 2, credentials: [
+      { credential: "A", colleges: ["Chabot College", "Norco College"] }, { credential: "B", colleges: ["Chabot College"] }, { credential: "C", colleges: ["Chabot College"] }] } });
+    check("(a) Norco College before a Bay Area college on more exhibits", P.label(bay, "Riverside City College") === "Norco College and 1 more give CPL for this course.", P.label(bay, "Riverside City College"));
+    check("(a) outside any shared region, the college on the most exhibits", P.label(bay, "College of the Redwoods") === "Chabot College and 1 more give CPL for this course.", P.label(bay, "College of the Redwoods"));
+    const tie = P.fromRoep({ adopt: { credentials_n: 2, colleges_n: 2, credentials: [{ credential: "A", colleges: ["Zeta College"] }, { credential: "B", colleges: ["Alpha College"] }] } });
+    check("(a) a tie goes to the first name alphabetically", /^Alpha College and 1 more/.test(P.label(tie, "")));
+    const sw = P.fromRoep({ consider: [{ credential: "No Such Credential Anywhere", credit: "3 hours in Things", cid: "XYZ 100 X", colleges_n: 0 },
+      { credential: "Another Unheld Recommendation", cid: "XYZ 100 X", colleges_n: 0 }] });
+    check("(a) statewide recommendations with no granting college read Request Adopt (N)", P.label(sw, "Cerritos College") === "Request Adopt (2)", P.label(sw, "Cerritos College"));
+
+    // The request stays one row and never drops a checked exhibit.
+    const many = Array.from({ length: 30 }, (_, i) => ({ title: "Long Industry Credential Title Number " + i, colleges: ["College " + i] }));
+    const r1 = P.requestBody({ program: { id: "x" }, course: { code: "C 1", title: "Course" } }, many, { adopter_college: "Norco College", contact_email: "a@b.edu", note: "Thanks." });
+    check("(a) past 600 characters, credentials carries a count and the note lists every title",
+      r1.body && r1.body.credentials === "30 exhibits, listed in the note" && many.every((m) => r1.body.note.indexOf(m.title) >= 0) &&
+      r1.body.note.length <= 2000 && /Thanks\.$/.test(r1.body.note) && r1.body.precedent.length <= 1200, r1.error || (r1.body && r1.body.credentials));
+    const huge = Array.from({ length: 60 }, (_, i) => ({ title: "An Exceptionally Long Industry Credential Title For Testing " + i, colleges: [] }));
+    const r2 = P.requestBody({ program: { id: "x" }, course: { code: "C 1" } }, huge, { adopter_college: "Norco College", contact_email: "a@b.edu" });
+    check("(a) a list too long for one row is refused in words, never trimmed", !r2.body && /too long for one request/.test(r2.error), r2.error);
+    check("(a) the card code holds no per-credential cap", !/ADOPT_LINKS_MAX|roepAdoptLinks/.test(SRC));
+    w.close();
   }
 
   // (b) and (c) the SLOs word and the panel.

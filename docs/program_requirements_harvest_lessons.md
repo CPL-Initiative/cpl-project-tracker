@@ -421,3 +421,76 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, replaced b
   tab or a PDF still lists the program, so refusing `found` there would report a false absence.
 - **Skyline's catalog is outside the cloud session's network** (`curl` to catalog.skylinecollege.edu answers 000), so
   the 23 empty-heading pages cannot be read from a session; the measure came from the committed records instead.
+
+## Moved from the lane (S668 checkpoint)
+
+Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, replaced by S668's state (the page yield, Gavilan's two originals, the curriQunet pairs' scope, slice B part 1) and compacted under the lane budget.
+
+**A GE-pattern page has one owner (#3324, S654; `d-ge-page-one-owner-s653`, `d-ge-control-number-needs-title-s654`, `d-control-number-district-format-s654` stand).** **DECIDED by Sam** (`d-both-versions-by-catalog-year-sam-2026-11-15`): *"the 2.0 is for the new calgetc version that took effect this fall. students still have catalog rights to the original version in previous catalog years... both need to be in our collection with catalog years associated to them."* So a plain program and its 2.0 each keep a record, each read from its own catalog year; a prior-year record is scored against that year's renumbers (`course_renumbers_by_year`, #3385). **Riverside City's four plain siblings, as they stand (S666):** Mathematics 32692 is filed from its 2025-2026 page (reread 43822316519). Physics 32745 keeps its current record: draft #3393 closed after a free `prior` dispatch with `step=reconcile` (run 43880453260, no model call) printed `cal-getc 32745 held: the sum passes 60 and the section states no double counting` (28 + 34 = 62). Business Administration 33829 and Communication Studies 30578 keep theirs: the archive 7 (2024-2025) read (run 43889274787, $0.078, branch `claude/rcc-archive7-prior-s666`, no PR) matched 33829 to `archive/7/iq/918/943/1068`, titled *Business Administration 2.0*, so that catalog already printed the successor (the record fails coverage), and found no page for 30578 (near miss `.../1086`, 1 of 14 codes). **DECIDED** `d-rcc-originals-predate-curriqunet-s666`: both current records stay; the plain originals sit in the 2023-2024 or older PDF catalogs on rcc.edu, which the `prior` route (curriQunet only) cannot read. **PROCEDURE** `p-prior-rescore-route-is-prior-plus-reconcile-s666`: `sources_from=<prior run>` is refused, because `stage_sources` accepts only `capture.json`/`capture_preview.json` accounts, never `prior_<year>.json`; the free rescore of a prior read is a `prior` dispatch with `step=reconcile`, whose log carries `calgetc_trace`. Standing constraints (COBIx on #3367): `ncl_past_year` refuses a page whose catalog years are all older than the capture's, so a prior read sets its own `catalog_year`; a load upserts on `(college, control_number)`, so a second year of one program needs `catalog_year` in the key or a side table first. 44469, 37474, the 99 pairs statewide, and Sam's later diff table of programs that changed between catalog years: lessons, *Moved from the lane (S666 checkpoint)*.
+
+**Slice A, the no-closed-list lookup (#3300; `ncl_lookup` in `kb/_program_requirements_college.py`, default 1; census `kb/_harvest_ncl_lookup_census.py`; `d-ncl-lookup-not-listed-needs-catalog-list-s652`).** **PITFALL** `p-new-matcher-needs-self-recall-test-s652` ([note](../../kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md)). Skyline records 46296 and 32337 are wrong on `main`; the 23 empty-heading pages stay `found` with a named-course minimum the session sets (unset). Skyline's counts, #3328's `FRAGMENT_PATH` and its follow-up: lessons, *Moved from the lane (S666 checkpoint)*.
+
+**NEXT, in order:** (1) Step 11 (UTC Nov 17): Coastline's objectives reread is the full read, then Golden West (`cccd`), plus one preparation run; College of the Redwoods (#3387) and Allan Hancock (#3284) are read and wait their turn. (2) Monterey Peninsula 03653, 22098 and 39361: Active in COCI with no live row since 2026-11-09 and no deletion receipt; **DECIDED** `d-mpc-reload-three-s666`, `step=load` run 43892853333 (insert-only) inserted 3 and kept 197 (receipt `kb/receipts/program_requirement_records_college_monterey_peninsula_43892853333.json`); merge draft #3399 on a green `test`, and the next display build carries them. (3) Riverside City 30578 and 33829 stay as filed, with no PDF-catalog route built for two records (**DECIDED** `d-rcc-two-left-no-pdf-route-s667`); next, the other colleges' plain/2.0 pairs on curriQunet. (4) Slice B: **the named-course minimum is one course, applied at extraction, never at `found`** (**DECIDED** `d-named-course-minimum-one-s667`). Measured over the 19,137 filed records: 9 name exactly one course. Seven are single-course certificates (Victor Valley CJ 80, EMS 60 and EMS 84; American River FIRE 1500; Yuba AJ 51 and AJ 52; Siskiyous FIRE0950). Two name one course beside requirements printed as rules, complete as filed: Las Positas 45954 (Honors Scholar, HNRS 1 plus five honors courses) and Los Angeles Valley 02964 (Foreign Languages A.A., LING 001 plus two language requirements). A minimum of two refuses real programs. A page that names none is not extracted; it stays `found`, since a program whose courses sit in a tab or a PDF is still listed. Then Skyline 46296 and 32337; the self-test recall that fell 27 to 26 of 28 (name the program). (5) #3293 (keep; waits COBIx and slice A's captures); Cosumnes River's seven follow it. (6) Lassen: a capture pinned to main's pages for 31132, 33263, 33729, 33730 and 42300, then the `set` step with a per-record hold; the structured-fields migration's step 1, Lassen first. (7) Los Medanos and Los Angeles Valley, their rules first, with a person. (8) The standing list: lessons, *Moved from the lane (S653 checkpoint)*, the S652 NEXT line; the course-id rescore's 315 moved rows and the reconcile reader gaps: lessons, *Moved from the lane (S666 checkpoint)*.
+
+**Course objectives, collected with every SLO read (Sam, 2026-11-02; `sam-data-collection-six-asks-2026-11-13`):** filed as `course_outcomes.kind` `objective` (`kb/_objectives_by_system.py`; guard `tests/course_outcomes_objectives_standing_test.py`). **DECIDED** `d-objectives-reread-order-s649` (one host at a time, never replacing an SLO row; [plan](../../../kb/course_outcomes/objectives_reread_plan.json)), `d-contra-costa-commented-objectives-unread-s649`, `d-chaffey-objectives-only-read-next-s649`, `d-rccd-objectives-loaded-s649`, `d-sdccd-objectives-loaded-s651`. De Anza and Marin held. **PITFALL:** an objectives `.load` is written by hand. As it stood: lessons, *Moved from the lane (S652 checkpoint)*. Santa Ana (load 43684986821, 1,362 rows) and Las Positas (#3386, load 43825849738, 776 rows) are loaded. **NEXT:** Coastline, then Golden West (one host, `cccd`). The S664 and S665 lead-in and heading fixes (#3389, #3391; `d-laspositas-lead-fix-in-place-s664`, `d-goldenwest-subhead-fix-in-place-s665`) are done: no SLO row is left whose first outcome is a lead-in or heading, and Golden West's reread may run. As they stood: lessons, *Moved from the lane (S666 checkpoint)*.
+
+**The course-id rescore at six colleges (#3352, S655):** 159 rows replaced, 0 held, each `kb/receipts/program_requirement_records_college_reread_*` receipt holds its `rollback`; display build `58b763170559` live. **PITFALL** `p-sources-from-wants-the-capture-run-s653`. The paragraph as it stood: lessons, *Moved from the lane (S666 checkpoint)*.
+
+**The extraction gate and one spend meter (S653 to S655).** `d-extraction-gate-every-run-s653` and **DECIDED** `d-one-spend-meter-s654` stand: `kb/_spend_meter.py` prices usage and holds the $40 stop for the pilot, the college workflow and the second reader; `X.CALL_MAX_USD` $1.55, recomputed by `tests/model_run_gates_test.py`. **It reached `main` only with #3351 (`c0cf44b9`, S655):** #3330 had merged into its stacked base and #3327 closed unmerged (`p-3330-merged-into-stack-base-s655`). Card 10's three callers: the [governance lane](governance-team-enablement.md). The paragraph as it stood: lessons, *Moved from the lane (S655 checkpoint)*.
+
+**The Cerritos Ironworker proof of concept** (the ladder on CPL Pathways), the reader `kb/_college_page_read.py` with its plans in `kb/college_reads/`, and **one procedure record per college** written through `program_source_procedure_set(college, record, by, expect_md5)` (service role, md5-guarded, history trigger): the lessons doc, *Moved from the lane (S346 compaction)*.
+
+**The numbered handoff carries the lane** ([`session_655_handoff`](../../session_655_handoff.md)). **DECIDED (Sam, 7:13 PM PT 2026-11-11, relayed by COBIx on #3110; `sam-harvest-next-steps-tonight-2026-11-11`):** "Yes, pick them up tonight." Decisions that stand: `d-lacc-heading-minimum-60-s639`, `d-occ-up-to-ge-maximum-s639`, `d-hours-meets-top-term-length-s639`, `d-rio-hondo-cal-getc-areas-count-s639`, `d-west-valley-cal-getc-areas-count-s639`.
+
+## S668 (SkyPipit, Sam's session, 2026-11-16): a page yield, two Gavilan originals, and the curriQunet archives
+
+- **A no-list program takes a page back from a failing holder (#3408 `929e1e6c`, `d-ncl-page-yield-s668`).** The
+  lookup gives a page to a no-list program when its only match is a page held by exactly one closed-list program, the
+  page's heading does not name the holder, and the holder's filed record, read from that page in the lookup's catalog
+  year, fails `passes_live`. A passing holder record keeps its page wherever it was read. The census
+  (`kb/_harvest_ncl_lookup_census.py`) runs the lookup itself over the committed records, gated as a capture is: 13
+  yields at 8 colleges (holders Cabrillo 20410, Chaffey 18435, College of San Mateo 32203, Crafton Hills 11766,
+  Feather River 36176, Gavilan 21284, 33048, 45720 and 46046, Lemoore 10954 and 19305, Skyline 32337 and 46296), 0
+  passing records moved, 7 refused because the holder passes. Skyline's 10546 (Dance) and 10529 take their pages from
+  46296 and 32337. Three of the 15 the conductor measured by hand (Contra Costa 31021, Foothill 06104 and 45656) sit at
+  colleges under the self-test floor, where a capture looks nothing up.
+- **Three review rounds (COBIx on #3408, comments 6929447731, 6929666755, 6930345270), each a fix:** the yield must
+  stand on the next capture, after the holder's record is gone, so it persists in `capture.json`'s
+  `catalog_lookup.yields`; the census counts the yields applied, not the ones judged; and a persisted yield carries the
+  `catalog_year` it was judged in and lapses in another year. **Pitfall:** a decision a later run reads back needs the
+  conditions it was made under stored beside it, or it outlives its evidence. A non-blocking nit is carried:
+  `ncl_filed_yields`'s return annotation still says a 3-tuple.
+- **A holder's live row comes out after its college's filing drops the record, never before**
+  (`p-yield-holder-live-row-after-filing-s668`). The load is insert-only, so a row removed first is reinserted by the
+  next load from the filed record. Skyline reads first (`claude/skyline-yield-s668`, extract 1); the other 7 colleges
+  need a fresh capture under the new code.
+- **Gavilan's originals from their own catalog (#3411 `2bcb6dea`, `d-gavilan-originals-filed-s668`).** Mathematics
+  31444 and Physics 33047 read from curriQunet archive 424 (2025-2026): 5 of 5 and 6 of 6 courses placed, none
+  invented, arithmetic equal, $0.10. Reread run 43962460208 replaced 2 rows and held 0 (receipt
+  `kb/receipts/program_requirement_records_college_reread_gavilan_43962460208.json`).
+- **The Commons sidecar goes stale on a reread.** `kb/status/commons_data_programs/gavilan.outcomes.json` still printed
+  Physics 33047's outcomes as the 2.0 page did until it was regenerated in #3411. A reread that changes a record's page
+  regenerates that college's sidecar in the same PR.
+- **curriQunet names its past catalogs (`f-curriqunet-historical-catalogs-s668`).** `Catalog/_getHistoricalCatalogs`
+  lists each host's past catalogs; `Catalog/archive/<Id>` settles on `/iq/<cover>` and asks `_getNavigation?id=<Id>`.
+  Free page reads (runs 43947867258, 43949402694; plans `kb/college_reads/*_prior_catalog_list.json` and
+  `*_prior_archive_view.json` on `claude/curriqunet-prior-pairs-s668`, unmerged, kept) found the 2025-2026 ids:
+  Berkeley City 9573, Butte 12, Gavilan 424, Rio Hondo 13, Santa Ana 19.
+- **Which plain originals to read (`d-curriqunet-plain-pairs-scope-s668`).** Of 20 plain programs at 14 curriQunet
+  colleges that read a 2.0 page, the 8 Mathematics and Physics originals are read from their 2025-2026 archives. The 12
+  Business Administration and Communication Studies originals stay as filed: their 2.0s are older, and Riverside City's
+  archive 7 already printed Business Administration 2.0. Each reopens per college only on an archive shown to print the
+  original.
+- **A prior-year read names its programs in `force` (`d-prior-read-forces-past-no-gain-s668`).** `held_no_gain`
+  compares the new read with the filed record, which is another catalog year, so it would hold a correct prior read.
+  The kept-passing guard still runs. Berkeley City 41778's prior record places 8 of 8 but reads arithmetic incomplete
+  (Cal-GETC with no units) while `main`'s record passes live, so a free `step=reconcile` prior rescore decides it: merge
+  only on a pass, else close the branch (Riverside City 32745's precedent).
+- **A capture-only prior read walks the whole archive:** 15 to 92 minutes a college. Plan the wait, and end the turn
+  while it runs.
+- **`list_workflow_runs` floods the context.** Read one run through `list_workflow_jobs` instead.
+- **Slice B part 1 (#3414, `d-no-list-record-scored-without-state-list-s668`).** A record for a program the state lists
+  no courses for scores coverage and invented as `no_state_list`, never counts as passing, and the load holds it until
+  the tab shows it; extraction only with at least one named course. `NCL_EXTRACT` stays off until the display build and
+  the Commons sidecars both hold those records back. The second reader's verdict is merge (head `7f4e8613`); a minor is
+  carried: `errors` still counts no-list records.

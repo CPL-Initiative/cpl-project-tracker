@@ -33,6 +33,7 @@ concurrency:
 
 jobs:
   apply:
+    environment: live-counts
     runs-on: ubuntu-latest
     permissions:
       contents: write

@@ -520,6 +520,7 @@ window.COBI_ADMIN_SURFACE = {
         "commons_progress.js"
       ],
       "reads": [
+        "course_outcomes",
         "queue_todo_done"
       ],
       "writes": [

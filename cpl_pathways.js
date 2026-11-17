@@ -1515,11 +1515,11 @@
     ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
     ".cplpw-rmark.lead b { color: var(--text-muted); }",
-    ".cplpw-radopts { display:grid; gap:2px; min-width:0; }",
-    ".cplpw-radopt { display:block; font-size:.8rem; min-width:0; overflow-wrap:anywhere; }",
-    ".cplpw-radopt:has(> .cpl-maplinks:empty), .cplpw-radopts:not(:has(.cpl-maplinks:not(:empty))) { display:none; }",
-    ".cplpw-radopt .nm { display:block; font-weight:600; color: var(--text-strong); margin-top:2px; }",
-    ".cplpw-radopt .cpl-maplinks { margin:2px 0 0; }",
+    ".cplpw-outchip { display:inline-block; margin-right:8px; border:0; background:none; padding:0; min-height:24px; font:inherit; font-size:.8rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
+    ".cplpw-outinline { display:block; margin-top:6px; padding:8px 10px; border-top:1px dashed var(--border-strong); font-size:.85rem; min-width:0; overflow-wrap:anywhere; }",
+    ".cplpw-outinline .cplpw-outblock h3 { font-size:.9rem; margin:4px 0; }",
+    ".cplpw-radopts { display:block; min-width:0; overflow-wrap:anywhere; }",
+    ".cpladp-panel .cpl-maplinks:empty, .cplpw-panel .cpl-maplinks:empty { display:none; }",
     ".cplpw-rdiffer { margin:0 0 10px; font-size:.88rem; color: var(--text-body); }",
     ".cplpw-rdiffer b { display:inline-block; margin-right:8px; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); }",
     ".cplpw-ralt { font-size:.8rem; color: var(--text-muted); border-top:1px dashed var(--border-strong); padding-top:4px; margin-top:2px; overflow-wrap:anywhere; }",
@@ -1789,9 +1789,11 @@
     var adopt = info && info.adopt;
     if (adopt && (adopt.credentials || []).length) {
       var a = adopt.credentials[0];
+      // The build's full count: the record's list may still hold four until the display apply lands (#3412).
+      var adoptN = Math.max(adopt.credentials_n || 0, adopt.credentials.length);
       out.push({ kind: "adopt", label: "Could adopt", text: a.credential + " (articulated at " + (a.colleges || []).slice(0, 2).join(", ")
         + ((a.colleges || []).length > 2 ? " and " + ((a.colleges || []).length - 2) + " more" : "") + ")"
-        + (adopt.credentials.length > 1 ? "; " + (adopt.credentials.length - 1) + " more credential" + (adopt.credentials.length === 2 ? "" : "s") : "") });
+        + (adoptN > 1 ? "; " + (adoptN - 1) + " more credential" + (adoptN === 2 ? "" : "s") : "") });
     }
     var consider = info && info.consider;
     if (consider && consider.length) {
@@ -1914,6 +1916,23 @@
     var words = outcomeWords(entry, printed);
     clearNode(slot);
     if (!words) return;
+    // The chip opens the text on the card itself (Sam, 2026-11-16, #3412); the word beside it still opens the panel.
+    var o = { college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed };
+    var region = el("div", "cplpw-outinline");
+    region.id = "cplpw-outinline-" + (++outInlineSeq);
+    region.hidden = true;
+    var chip = el("button", "cplpw-outchip", words);
+    chip.type = "button";
+    chip.setAttribute("aria-expanded", "false");
+    chip.setAttribute("aria-controls", region.id);
+    chip.setAttribute("aria-label", words + " of " + code + " at " + college + "; show the text on this card");
+    chip.addEventListener("click", function () {
+      var open = chip.getAttribute("aria-expanded") !== "true";
+      chip.setAttribute("aria-expanded", String(open));
+      region.hidden = !open;
+      if (open && !region.getAttribute("data-filled")) { region.setAttribute("data-filled", "1"); fillOutcomes(o, region, function () { return true; }); }
+    });
+    slot.appendChild(chip);
     var b = el("button", "cplpw-outword", words);
     b.type = "button";
     b.setAttribute("aria-haspopup", "dialog");
@@ -1923,7 +1942,9 @@
       openOutcomePanel({ college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed }, b);
     });
     slot.appendChild(b);
+    slot.appendChild(region);
   }
+  var outInlineSeq = 0;
   function fillOutcomeSlots() {
     var slots = document.querySelectorAll(".cplpw-outslot[data-code]:not([data-out-done])");
     var by = {};
@@ -2089,12 +2110,14 @@
     panelSeq++;
     var back = panelOpener;
     panelOpener = null;
+    if (back && back.hasAttribute && back.hasAttribute("aria-expanded")) back.setAttribute("aria-expanded", "false");
     if (back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
   }
   function openPanel(title, sub, opener) {
     ensurePanel();
     var bar = window.CPL_SIERRA_BAR;
     if (bar && typeof bar.isOpen === "function" && bar.isOpen() && typeof bar.close === "function") bar.close();
+    if (panelOpener && panelOpener !== opener && panelOpener.hasAttribute && panelOpener.hasAttribute("aria-expanded")) panelOpener.setAttribute("aria-expanded", "false");
     panelOpener = opener || null;
     panel.querySelector("#cplpw-panel-h").textContent = title;
     panel.querySelector(".cplpw-panel-sub").textContent = sub || "";
@@ -2107,6 +2130,10 @@
   function openOutcomePanel(o, opener) {
     var body = openPanel(outcomeWords(o.entry, o.printed), o.code + (o.title ? " " + o.title : "") + ", " + o.college, opener);
     var seq = ++panelSeq;
+    fillOutcomes(o, body, function () { return seq === panelSeq; });
+  }
+  // The same text in the panel or on the card: the record's printed outcomes, then the newest read of each kind.
+  function fillOutcomes(o, body, live) {
     if (o.printed) body.appendChild(printedBlock(o.printed));
     if (!o.entry || !(o.entry.codes || []).length) return;
     var wait = el("p", "cplpw-outsrc", "Reading the outlines…");
@@ -2116,7 +2143,7 @@
       "&course_code=in.(" + o.entry.codes.map(function (c) { return encodeURIComponent('"' + String(c).replace(/"/g, "") + '"'); }).join(",") + ")" +
       "&order=read_run.desc,id.desc";
     roepGet(path).then(function (rows) {
-      if (seq !== panelSeq) return;
+      if (!live()) return;
       if (wait.parentNode) wait.parentNode.removeChild(wait);
       var cur = currentOutcomeRows(rows || []);
       // SLOs first, then objectives, as the outline prints them.
@@ -2124,7 +2151,7 @@
       if (!cur.length && !o.printed) { body.appendChild(el("p", null, "No outcomes or objectives are on file for " + o.code + " yet.")); return; }
       cur.forEach(function (r) { if ((r.outcomes || []).length) body.appendChild(outcomeBlock(r)); });
     }, function (err) {
-      if (seq !== panelSeq) return;
+      if (!live()) return;
       wait.textContent = "The outlines could not be read (" + ((err && err.message) || "no answer") + ").";
     });
   }
@@ -2132,28 +2159,25 @@
     if (!(e && e.detail && e.detail.tab === "cpl-pathways")) closePanel();
   });
 
-  /* Request Adopt on the course card (Sam, 2026-11-16: "Add Request Adopt links to course cards on programs wherever
-     possible"): every credential the card names as Could adopt or For consideration gets map_links.js's line, one chip
-     per college that built a verified exhibit of it, opening MAP where Request Quick Adopt sits (no sign-in). A title
-     MAP lists no exhibit for leaves its line empty, and the line hides. With two or more titles each line names its
-     credential. */
-  var ADOPT_LINKS_MAX = 4;
-  function roepAdoptLinks(info) {
-    var titles = [];
-    function add(t) { if (t && titles.indexOf(t) < 0) titles.push(t); }
-    ((info && info.adopt && info.adopt.credentials) || []).forEach(function (a) { add(a && a.credential); });
-    ((info && info.consider) || []).forEach(function (x) { add(x && x.credential); });
-    if (!titles.length) return null;
+  /* One Adopt chip per catalog-record course card (issue #3412 item 4, Sam, 2026-11-16): the shared component in
+     adopt_panel.js names a college that already gives CPL for the course, its own Strong Workforce region first, and
+     opens this tab's side panel with every Could-adopt and For-consideration exhibit, each with a checkbox, and one
+     request for the checked ones. map_links.js's MAP line sits beside each exhibit in the panel, never on the card. */
+  function roepAdoptChip(rec, code, info) {
+    var P = window.CPL_ADOPT_PANEL;
+    if (!P) return null;
+    var m = P.fromRoep(info);
+    if (!m.items.length) return null;
+    m.items.forEach(function (it) { it.links = mapLinksNode; });
+    if (!adoptState.data && !adoptState.error) loadAdopt();
+    var chip = P.chip(m, { home: rec.college, adopterCollege: rec.college, controls: "cplpw-panel", open: openPanel,
+      sub: rec.college + (rec.title ? ", " + rec.title : ""),
+      course: { code: code, title: (info && info.title) || "" },
+      program: { id: rec.key || (rec.college + " " + rec.control_number), label: rec.college + (rec.title ? " — " + rec.title : "") } });
+    if (!chip) return null;
     var box = el("span", "cplpw-radopts");
-    titles.slice(0, ADOPT_LINKS_MAX).forEach(function (t) {
-      var line = mapLinksNode(t);
-      if (!line) return;
-      var one = el("span", "cplpw-radopt");
-      if (titles.length > 1) one.appendChild(el("span", "nm", t));
-      one.appendChild(line);
-      box.appendChild(one);
-    });
-    return box.firstChild ? box : null;
+    box.appendChild(chip);
+    return box;
   }
 
   function roepTile(rec, c, b) {
@@ -2176,8 +2200,8 @@
     marks.forEach(function (k) {
       li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
     });
-    var adoptLinks = roepAdoptLinks(info);
-    if (adoptLinks) li.appendChild(adoptLinks);
+    var adoptChip = roepAdoptChip(rec, c.code, info);
+    if (adoptChip) li.appendChild(adoptChip);
     li.appendChild(outcomeSlot(rec.college, c.code, info.title, roepPrintedOutcomes(rec, c.code)));
     (c.alternatives || []).forEach(function (a) {
       var ai = courses[a.code] || {};
@@ -3282,13 +3306,13 @@
     var opp = el("span", "cplpw-oppacts");
     var oppView = document.createElement("a");
     oppView.className = "cplpw-oppact"; oppView.target = "_blank"; oppView.rel = "noopener";
-    oppView.textContent = "View CPL Visual";
+    oppView.textContent = "Create My College CPL Plan";
     var oppGet = document.createElement("button");
     oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
     opp.appendChild(oppView); opp.appendChild(oppGet);
     /* The visual builds in its own tab and shows its progress there (Sam, 2026-11-16: "the users needs to know to wait
        rather than click again"); here the word says the tab opened, for a few seconds, then reads as before. */
-    var oppWas = "View CPL Visual", oppTimer = 0;
+    var oppWas = "Create My College CPL Plan", oppTimer = 0;
     oppView.addEventListener("click", function () {
       oppView.textContent = "Opened in a new tab, building";
       clearTimeout(oppTimer);
@@ -3687,6 +3711,8 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (d) { adoptState.data = d && Array.isArray(d.credentials) ? d : null; if (!adoptState.data) adoptState.error = "the file holds no credentials"; })
       .catch(function (e) { adoptState.error = (e && e.message) || "the read failed"; });
+    // The Adopt chip's component reads the same file through this one read (adopt_panel.js).
+    if (window.CPL_ADOPT_PANEL) window.CPL_ADOPT_PANEL.useLoading(adoptState.loading.then(function () { return adoptState.data; }));
     return adoptState.loading;
   }
   /* { here: [...], could: [...], recs: [...] } for a college, or every college when college is "". */
@@ -4294,7 +4320,7 @@
     _readCollegeStatus: readCollegeStatus,
     _choiceKey: choiceKey,
     _pickedCollege: function () { return pickedCollege; },
-    _roepAdoptLinks: roepAdoptLinks,
+    _roepAdoptChip: roepAdoptChip,
     _outcomeSlot: outcomeSlot,
     _fillOutcomeSlots: fillOutcomeSlots,
     _openOutcomePanel: openOutcomePanel,

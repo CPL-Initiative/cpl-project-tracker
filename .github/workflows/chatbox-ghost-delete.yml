@@ -56,6 +56,7 @@ permissions:
 
 jobs:
   run:
+    environment: live-counts
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main

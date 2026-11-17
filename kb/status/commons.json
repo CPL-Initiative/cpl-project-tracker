@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-16T22:04:34Z",
+ "written_at": "2026-11-16T22:57:20Z",
  "rows": [
   {
    "key": "requirements",
@@ -280,7 +280,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-16T22:03:30+00:00",
+    "at": "2026-11-16T22:56:14+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -349,7 +349,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -368,7 +368,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41Z",
+    "at": "2026-11-16T22:04:37Z",
     "every_hours": null
    },
    "facts": {
@@ -411,12 +411,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -492,7 +492,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-16T22:01:12Z",
+    "at": "2026-11-16T22:54:05Z",
     "every_hours": 24
    },
    "facts": {
@@ -681,7 +681,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
