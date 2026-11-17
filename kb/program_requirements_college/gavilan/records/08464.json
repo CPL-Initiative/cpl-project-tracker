@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11129,
+  "input_tokens": 11133,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11129,
-    "output_tokens": 7005,
+    "input_tokens": 11133,
+    "output_tokens": 7107,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 7005,
+  "output_tokens": 7107,
   "output_tokens_details": {
-   "thinking_tokens": 1422
+   "thinking_tokens": 2029
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18462,
- "ms": 75204,
- "seconds": 75.6,
+ "cost_usd": 0.18667,
+ "ms": 48933,
+ "seconds": 50.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 95,
+   "placed": 98,
    "listed": 104,
-   "share": 0.913,
+   "share": 0.942,
    "missing": [
     "BIO11",
-    "ECONC2001",
-    "ECONC2002",
     "ENGL2C",
     "ENGL2E",
-    "ENGLC1002",
     "HISTC1001",
     "HISTC1002",
     "PSYC7"
@@ -65,13 +62,10 @@
    "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 6,
    "codes": [
     "BIO1",
     "CMUN5",
-    "ECON1",
-    "ECON2",
-    "ENGL1B",
     "GEOG1",
     "HIST1",
     "HIST2",
@@ -80,9 +74,6 @@
    "flagged": [
     "BIO1",
     "CMUN5",
-    "ECON1",
-    "ECON2",
-    "ENGL1B",
     "GEOG1",
     "HIST1",
     "HIST2",
@@ -192,11 +183,11 @@
     },
     "courses": [
      {
-      "code": "ENGL 1B",
+      "code": "ENGL C1002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "ENGL 2J",
@@ -577,18 +568,18 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 1",
+      "code": "ECON C2002",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "ECON 2",
+      "code": "ECON C2001",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "GEOG 2",
@@ -981,18 +972,6 @@
     "why": "not in the text"
    },
    {
-    "code": "ENGL C1002",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON C2001",
-    "why": "not in the text; catalog lists ECON 2 instead"
-   },
-   {
-    "code": "ECON C2002",
-    "why": "not in the text; catalog lists ECON 1 instead"
-   },
-   {
     "code": "HIST C1001",
     "why": "not in the text; catalog lists HIST 1 instead"
    },
@@ -1002,21 +981,11 @@
    },
    {
     "code": "PSYC 7",
-    "why": "not in the text; only CD 7 is listed"
+    "why": "not in the text; only CD 7 listed"
    }
   ],
-  "notes": [
-   "Rule: complete one course from each of Areas 1-5; remaining units needed to reach a minimum of 19 units may be any course from Areas 1-5. total_units recorded as 19 from 'a minimum of 19 units'; reviewer should confirm.",
-   "The requirements header prints 'Units: 5', which is unclear; not recorded as a total.",
-   "'Total: 54' is printed at the end (apparently 19 major + 35 GE) and recorded as degree_total; the GE paragraph says electives bring the degree to a 60 unit total, so electives_fill_degree is true.",
-   "Area 2 also allows 'Any baccalaureate level mathematics' course, not recorded as a course entry.",
-   "Each area's 'Units:' line prints the minimum (3, 3, 3, 3, 2) while headings print ranges; stated uses the heading ranges.",
-   "Courses listed under more than one discipline or area may satisfy only one area.",
-   "A 'Recommended Elective' heading (Units: 0) prints only 'Any transfer level course'; no recommended block recorded.",
-   "ART 11 is marked (Historical) in the catalog.",
-   "Outcomes are printed for the program as a whole; this A.A. is the only award in the section.",
-   "No specific careers are named (only 'many careers and professions')."
-  ]
+  "notes": []
  },
- "extracted_run": "38948144064"
+ "extracted_run": "44090922437",
+ "catalog_year": "2026-2027"
 }
