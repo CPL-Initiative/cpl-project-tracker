@@ -62,8 +62,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    24.0,
-    27.0
+    30.0,
+    33.0
    ],
    "stated": [
     36.0,
@@ -71,7 +71,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 24.0-27.0; the catalog states 36.0-37.0"
+    "the blocks sum to 30.0-33.0; the catalog states 36.0-37.0"
    ]
   },
   "repeated": {
@@ -170,14 +170,16 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS-79",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    },
@@ -325,6 +327,24 @@
    "Catalog prints codes with hyphens (e.g., MIS-1A); these match closed-list codes written with spaces."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-39": 2
+   },
+   "words": "Take MUS-39 twice for a total of"
+  },
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-79": 2
+   },
+   "words": "Take MUS-79 twice for a total of"
+  }
+ ]
 }

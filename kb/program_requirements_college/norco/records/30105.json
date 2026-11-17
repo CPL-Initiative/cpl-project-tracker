@@ -44,28 +44,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 34,
    "listed": 34,
-   "share": 0.941,
-   "missing": [
-    "ECO7",
-    "ECO8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "CIS5",
-    "ECONC2001",
-    "ECONC2002"
+    "CIS5"
    ],
    "flagged": [
-    "CIS5",
-    "ECONC2001",
-    "ECONC2002"
+    "CIS5"
    ],
    "pass": true
   },
@@ -499,6 +504,6 @@
    "The outcomes are printed for the Associate Degree in Administration/Information Systems and copied verbatim, including apparent typos ('theme and by which economic grow this achieved')."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38095619629"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

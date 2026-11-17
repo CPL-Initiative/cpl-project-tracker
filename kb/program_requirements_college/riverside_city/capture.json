@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-11-17T06:21:55Z",
+ "started": "2026-11-17T08:22:55Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -714,7 +714,7 @@
   "yield_refused_passing": 0
  },
  "loads": 256,
- "seconds": 1212.4,
+ "seconds": 1236.3,
  "found": 240,
  "by_method": {
   "no_closed_list": 6,
@@ -1270,358 +1270,18 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
-  "kept": 205,
+  "kept": 239,
   "kept_moved": 0,
-  "programs": 35,
+  "programs": 1,
   "list": [
-   {
-    "control_number": "15495",
-    "title": "Education Paraprofessional",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956",
-    "was_coverage": 0.882,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18108",
-    "title": "Administration & Information Systems",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Info_Systems",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Info_Systems",
-    "was_coverage": 0.939,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18110",
-    "title": "Fine & Applied Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
-    "was_coverage": 0.991,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18111",
-    "title": "Humanities, Philosophy & Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
-    "was_coverage": 0.942,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18113",
-    "title": "Social and Behavioral Studies",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
-    "was_coverage": 0.937,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "18114",
-    "title": "Math & Sciences",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
-    "coverage": 0.991,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
-    "was_coverage": 0.955,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "22758",
-    "title": "Education Paraprofessional",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5956",
-    "was_coverage": 0.882,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31163",
-    "title": "American Studies",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
-    "was_coverage": 0.745,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32597",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32912",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32938",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
-    "was_coverage": 0.846,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33021",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057",
-    "was_coverage": 0.895,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33229",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
-    "was_coverage": 0.789,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "33230",
     "title": "History",
     "award": "A.A- T Degree",
     "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "33964",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038",
-    "coverage": 0.967,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37483",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855",
-    "was_coverage": 0.889,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38790",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38838",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
-    "coverage": 0.909,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
-    "was_coverage": 0.727,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39093",
-    "title": "Information Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6001",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6001",
-    "was_coverage": 0.909,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41364",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
-    "was_coverage": 0.8,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41519",
-    "title": "Sustainability in Science and Technology",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6060",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6060",
-    "was_coverage": 0.938,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41736",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010",
-    "coverage": 0.98,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010",
-    "was_coverage": 0.902,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41749",
-    "title": "Social Justice Studies: General",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050",
-    "coverage": 0.977,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050",
-    "was_coverage": 0.837,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41757",
-    "title": "Social Justice Studies: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6051",
-    "coverage": 0.957,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6051",
-    "was_coverage": 0.87,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42719",
-    "title": "Community Action and Leadership Academy",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5929",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5929",
-    "was_coverage": 0.842,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42793",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5946",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5946",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42795",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948",
-    "was_coverage": 0.909,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43695",
-    "title": "Social Justice Studies: Asian American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256",
-    "coverage": 0.944,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43896",
-    "title": "Social Justice: LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253",
-    "coverage": 0.944,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43897",
-    "title": "Social Justice: African American Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255",
-    "coverage": 0.955,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255",
-    "was_coverage": 0.773,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44155",
-    "title": "Social Justice Studies: Ethnic Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856",
-    "coverage": 0.979,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856",
-    "was_coverage": 0.729,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44363",
-    "title": "Social Justice Studies: Chicano Studies",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876",
-    "coverage": 0.952,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876",
-    "was_coverage": 0.762,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45919",
-    "title": "Global Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6354",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6354",
-    "was_coverage": 0.865,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46237",
-    "title": "Mathematics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
-    "was_coverage": 0.778,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46317",
-    "title": "Physics 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-    "was_coverage": 0.846,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
   ],
@@ -2593,5 +2253,5 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034"
   }
  },
- "run": "44030368835"
+ "run": "44046016854"
 }

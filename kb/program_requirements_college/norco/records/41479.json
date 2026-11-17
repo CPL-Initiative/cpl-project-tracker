@@ -44,31 +44,38 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 14,
    "listed": 14,
-   "share": 0.786,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "BUS18A",
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
+    "BUS18A"
    ],
    "flagged": [
-    "BUS18A",
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
+    "BUS18A"
    ],
    "pass": true
   },
@@ -292,6 +299,6 @@
    "The page prints duplicated headings, one with 'CaI-GETC' (apparent typo for Cal-GETC)."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

@@ -3,20 +3,20 @@
  "programs": 268,
  "with_closed_list": 262,
  "found": 240,
- "extracted": 243,
+ "extracted": 244,
  "errors": 0,
- "passed_machine_checks": 228,
+ "passed_machine_checks": 232,
  "failed": {
   "coverage": 0,
   "invented": 0,
-  "arithmetic": 14,
+  "arithmetic": 11,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd_run": 5.08,
- "cost_usd_filed": 15.31,
- "cost_per_program": 0.063,
- "extract_calls": 44,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 15.33,
+ "cost_per_program": 0.0628,
+ "extract_calls": null,
  "extract_failed": [],
  "not_found": [
   {
@@ -263,53 +263,5 @@
    "status": "Active"
   }
  ],
- "run": "44030368835",
- "kept_no_read": [
-  {
-   "control_number": "32692",
-   "title": "Mathematics",
-   "award": "A.S. T Degree",
-   "method": "page_claimed",
-   "status": "Active",
-   "why": "its pages went to other programs",
-   "lost_pages": [
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948"
-   ],
-   "filed_source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
-   "filed_run": "43816942139"
-  },
-  {
-   "control_number": "32745",
-   "title": "Physics",
-   "award": "A.S. T Degree",
-   "method": "page_claimed",
-   "status": "Active",
-   "why": "its pages went to other programs",
-   "lost_pages": [
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236"
-   ],
-   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
-   "filed_run": 43693827797
-  },
-  {
-   "control_number": "44469",
-   "title": "Social Justice: Native American and Indigenous Studies",
-   "award": "A.A- T Degree",
-   "method": "page_claimed",
-   "status": "Active",
-   "why": "its pages went to other programs",
-   "lost_pages": [
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6235",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6230"
-   ],
-   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5869",
-   "filed_run": 43693827797
-  }
- ]
+ "run": "44046016854"
 }
