@@ -22,19 +22,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 294,
+   "placed": 296,
    "listed": 296,
-   "share": 0.993,
-   "missing": [
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 29,
+   "count": 27,
    "codes": [
     "ARE36",
     "ARTH11",
@@ -58,8 +67,6 @@
     "ENGL48",
     "ENGL7",
     "HIST35",
-    "HISTC1001",
-    "HISTC1002",
     "HUM10H",
     "HUM23",
     "HUM4H",
@@ -89,8 +96,6 @@
     "ENGL48",
     "ENGL7",
     "HIST35",
-    "HISTC1001",
-    "HISTC1002",
     "HUM10H",
     "HUM23",
     "HUM4H",
@@ -2498,6 +2503,6 @@
    "Reviewer: part 2 names blocks part 1 does not: 'Applicable Studio Courses Include:' (kept beside 'Applicable Studio Courses Include')"
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38111056537"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

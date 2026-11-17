@@ -771,7 +771,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30142",
@@ -1506,7 +1510,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.935,
+  "coverage": 1.0,
   "codes_found": [
    "ACC1A",
    "ACC1B",
@@ -1529,6 +1533,8 @@
    "COMMC1000H",
    "CSC2",
    "CSC5",
+   "ECO7",
+   "ECO8",
    "ECON4",
    "ECON6",
    "ECONC2001H",
@@ -1545,7 +1551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "administration and information systems - associate of arts degree - maa494/c",
+    "section_fit": 0.75
    }
   },
   "listed": 31,
@@ -1678,7 +1687,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.942,
+  "coverage": 0.981,
   "codes_found": [
    "ANT1",
    "ANT1H",
@@ -1751,6 +1760,10 @@
    "GEO1L",
    "GEO3",
    "HES1",
+   "MAT11",
+   "MAT1A",
+   "MAT1B",
+   "MAT25",
    "MATH10",
    "MATH1C",
    "MATH2",
@@ -1785,7 +1798,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 112,
@@ -2021,7 +2037,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.976,
+  "coverage": 1.0,
   "codes_found": [
    "ANT7",
    "ANT8",
@@ -2180,6 +2196,13 @@
    "FTV12",
    "FTV65",
    "GAM2",
+   "HIS2",
+   "HIS28",
+   "HIS29",
+   "HIS2H",
+   "HIS44",
+   "HIS6",
+   "HIS7",
    "HIST1",
    "HIST14",
    "HIST15",
@@ -2320,7 +2343,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities, philosophy & arts - associate of arts degree - maa497/c",
+    "section_fit": 0.75
    }
   },
   "listed": 296,
@@ -2332,7 +2358,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.908,
+  "coverage": 0.985,
   "codes_found": [
    "ADJ1",
    "ADJ13",
@@ -2375,6 +2401,8 @@
    "EAR33",
    "EAR42",
    "EAR43",
+   "ECO7",
+   "ECO8",
    "ECON10",
    "ECON4",
    "ECON5",
@@ -2404,6 +2432,14 @@
    "GEG6",
    "GUI47",
    "GUI48",
+   "HIS2",
+   "HIS28",
+   "HIS29",
+   "HIS2H",
+   "HIS31",
+   "HIS44",
+   "HIS6",
+   "HIS7",
    "HIST1",
    "HIST14",
    "HIST15",
@@ -2460,7 +2496,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "social and behavioral studies - associate of arts degree - maa499/c",
+    "section_fit": 0.75
    }
   },
   "listed": 130,
@@ -2476,7 +2515,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30172",
@@ -2488,7 +2531,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "30584",
@@ -2565,9 +2612,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "ASL22",
+   "ECO7",
    "ECONC2002H",
    "ENGL14",
    "ENGL15",
@@ -2587,6 +2635,11 @@
    "ETS7",
    "ETS8",
    "FTV12",
+   "HIS28",
+   "HIS29",
+   "HIS44",
+   "HIS6",
+   "HIS7",
    "HIST14",
    "HIST15",
    "HIST26",
@@ -2623,7 +2676,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american studies - associate of arts degree - maa492/c",
+    "section_fit": 0.667
    }
   },
   "listed": 54,
@@ -2831,12 +2887,14 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "CIS11",
    "CIS17A",
    "CIS5",
    "CIS7",
+   "MAT1A",
+   "MAT1B",
    "PHY4A",
    "PHY4B"
   ],
@@ -2847,7 +2905,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science - associate in science for transfer (adt) - mas650 (igetc)",
+    "section_fit": 0.4
    }
   },
   "listed": 8,
@@ -2894,11 +2955,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.95,
   "codes_found": [
+   "ECO7",
    "ECON4",
    "ECON6",
    "ECONC2002H",
+   "HIS6",
+   "HIS7",
    "HISTC1001H",
    "HISTC1002H",
    "POLS11",
@@ -2920,11 +2984,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - associate in arts for transfer (adt) - maa755 (cal-getc)",
+    "section_fit": 0.333
    }
   },
   "listed": 20,
-  "text_chars": 3810
+  "text_chars": 3590
  },
  {
   "control_number": "32946",
@@ -2970,7 +3037,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ANT1",
    "ANT1H",
@@ -2980,6 +3047,9 @@
    "ETS15",
    "ETS21",
    "ETS23",
+   "HIS2",
+   "HIS6",
+   "HIS7",
    "HIST1",
    "HIST14",
    "HIST15",
@@ -3016,11 +3086,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - associate in arts for transfer (adt) - maa745 (cal-getc)",
+    "section_fit": 0.2
    }
   },
   "listed": 39,
-  "text_chars": 4866
+  "text_chars": 4418
  },
  {
   "control_number": "33953",
@@ -3028,7 +3101,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
    "BIO60",
    "BIO60H",
@@ -3036,6 +3109,7 @@
    "CHE1A",
    "CHE1AH",
    "CHE1B",
+   "MAT1A",
    "PHY4A",
    "PHY4B"
   ],
@@ -3046,11 +3120,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology - associate in science for transfer (adt) - mas768 (cal-getc)",
+    "section_fit": 0.2
    }
   },
   "listed": 9,
-  "text_chars": 2815
+  "text_chars": 2705
  },
  {
   "control_number": "37196",
@@ -3728,7 +3805,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "guitar performance - certificate of achievement - mce930",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -3744,7 +3824,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "38801",
@@ -4181,7 +4265,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "BUS24",
    "CIS1A",
@@ -4193,6 +4277,7 @@
    "CIS5",
    "CIS61",
    "CSC2",
+   "MAT1A",
    "MATH5",
    "STATC1000"
   ],
@@ -4203,7 +4288,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology - certificate of achievement - mce958",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -4244,7 +4332,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 67 of 86 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "40336",
@@ -4751,14 +4843,17 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 0.929,
   "codes_found": [
    "ACC1A",
    "ACC1B",
    "BUS10",
    "BUS18A",
+   "ECO7",
+   "ECO8",
    "ECONC2001H",
    "ECONC2002H",
+   "MAT1A",
    "MATH5",
    "SOC48",
    "STATC1000",
@@ -4771,11 +4866,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - associate in science for transfer (adt) - mas1002 (cal-getc)",
+    "section_fit": 0.333
    }
   },
   "listed": 14,
-  "text_chars": 2973
+  "text_chars": 2803
  },
  {
   "control_number": "41654",
@@ -4975,7 +5073,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.895,
+  "coverage": 1.0,
   "codes_found": [
    "CIS1A",
    "CIS2",
@@ -4992,6 +5090,8 @@
    "CSC61",
    "CSC63",
    "CSC8",
+   "MAT1A",
+   "MAT1B",
    "MATH70A",
    "MATH70B"
   ],
@@ -5002,7 +5102,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data analytics - certificate of achievement - mce1009",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -5176,7 +5279,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.905,
+  "coverage": 1.0,
   "codes_found": [
    "CIS1A",
    "CIS2",
@@ -5193,6 +5296,8 @@
    "CSC61",
    "CSC63",
    "CSC8",
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "MATH3",
    "MATH70A",
@@ -5205,7 +5310,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - associate of science degree - mas1011/c",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
@@ -5342,16 +5450,20 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.8,
+  "coverage": 0.96,
   "codes_found": [
    "ACC1A",
    "ACC1B",
    "BUS18A",
+   "ECO7",
+   "ECO8",
    "ECON4",
    "ECON5",
    "ECON6",
    "ECONC2001H",
    "ECONC2002H",
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "MATH3",
    "MATH5",
@@ -5372,11 +5484,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics - associate in arts for transfer (adt) - maa757 (cal-getc)",
+    "section_fit": 0.2
    }
   },
   "listed": 25,
-  "text_chars": 4586
+  "text_chars": 4299
  },
  {
   "control_number": "42826",
@@ -5490,8 +5605,10 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "PHY4A",
    "PHY4B",
@@ -5505,7 +5622,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0 - associate in science for transfer (adt) - mas1108 (cal-getc)",
+    "section_fit": 0.2
    }
   },
   "listed": 7,
@@ -5561,7 +5681,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 0.944,
   "codes_found": [
    "BIO19",
    "BIO60",
@@ -5569,10 +5689,12 @@
    "CHE1A",
    "CHE1AH",
    "CHE1B",
+   "ECO8",
    "ECONC2001H",
    "GEG1",
    "GEG1H",
    "GEG1L",
+   "MAT1A",
    "MATH5",
    "PHY4A",
    "PHY4B",
@@ -5586,11 +5708,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science - associate in science for transfer (adt) - mas893 (cal-getc)",
+    "section_fit": 0.333
    }
   },
   "listed": 18,
-  "text_chars": 3434
+  "text_chars": 3214
  },
  {
   "control_number": "44790",
@@ -5716,7 +5841,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.894,
+  "coverage": 0.979,
   "codes_found": [
    "ADJ1",
    "ADJ1H",
@@ -5738,6 +5863,8 @@
    "COMM6",
    "COMMC1000",
    "COMMC1000H",
+   "ECO7",
+   "ECO8",
    "ECONC2001H",
    "ECONC2002H",
    "ENGLC1000",
@@ -5746,6 +5873,8 @@
    "ENGLC1003H",
    "GEG2",
    "GUI48",
+   "HIS6",
+   "HIS7",
    "HISTC1001H",
    "HISTC1002H",
    "PHI12",
@@ -5768,11 +5897,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society - associate in arts for transfer (adt) - maa1008 (cal-getc)",
+    "section_fit": 0.5
    }
   },
   "listed": 47,
-  "text_chars": 5658
+  "text_chars": 5056
  },
  {
   "control_number": "45914",
@@ -5971,9 +6103,11 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
    "CIS5",
+   "MAT1A",
+   "MAT1B",
    "MATH1C",
    "MATH2",
    "MATH3",
@@ -5986,7 +6120,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 - associate in science for transfer (adt) - mas1107 (cal-getc)",
+    "section_fit": 0.2
    }
   },
   "listed": 7,
@@ -5998,7 +6135,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.968,
+  "coverage": 1.0,
   "codes_found": [
    "ART6",
    "ART6H",
@@ -6021,6 +6158,7 @@
    "GEG2",
    "GEG3",
    "HES1",
+   "HIS6",
    "HIST1",
    "HIST26",
    "HISTC1001H",
@@ -6038,10 +6176,13 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs - associate in arts for transfer (adt) - maa1106 (cal-getc)",
+    "section_fit": 0.5
    }
   },
   "listed": 31,
-  "text_chars": 4552
+  "text_chars": 4195
  }
 ]

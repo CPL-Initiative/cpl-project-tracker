@@ -5,11 +5,11 @@
  "found": 140,
  "extracted": 140,
  "errors": 0,
- "passed_machine_checks": 134,
+ "passed_machine_checks": 135,
  "failed": {
   "coverage": 1,
   "invented": 0,
-  "arithmetic": 5,
+  "arithmetic": 4,
   "repeated": 0,
   "outcomes": 0
  },
@@ -22,23 +22,111 @@
   {
    "control_number": "37393",
    "title": "Fire Service Leadership",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4521",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2968,
+     "content": 2968,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "37431",
    "title": "Fire Service Leadership",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4521",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2968,
+     "content": 2968,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "38458",
    "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4260,
+     "content": 4260,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "38874",
    "title": "Administration of Justice/Law Enforcement Basic Peace Officer Modular Academy",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4459",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 1.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4260,
+     "content": 4260,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "43609968396"
+ "run": "44072968931"
 }

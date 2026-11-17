@@ -44,25 +44,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CHE1BH",
-    "MATHC2210"
+    "CHE1BH"
    ],
    "flagged": [
-    "CHE1BH",
-    "MATHC2210"
+    "CHE1BH"
    ],
    "pass": true
   },
@@ -219,6 +222,6 @@
    "Total of 32 units is stated in the catalog ('Units: 32.00' and 'Total : 32.00'); the 60-unit figure is the degree total."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }
