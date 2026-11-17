@@ -1,0 +1,3310 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "cccd",
+ "load_run": "44006629705",
+ "reads": [
+  "kb/course_outcomes/cccd/read_43984094171_p1of2.json",
+  "kb/course_outcomes/cccd/read_43984094171_p2of2.json"
+ ],
+ "kind": "objective",
+ "held_back": 524,
+ "posted": 522,
+ "inserted": 522,
+ "kept": 0,
+ "skipped": 31,
+ "skipped_rows": [
+  {
+   "course_code": "ART C100",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1200",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHEM C185",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHEM C185L",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CST C104",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CYBR C256",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "DMD C131",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2002",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESL C085N",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "FREN C280",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1001",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "RE C110",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART C101",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1100",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHEM C180",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHEM C180L",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2001",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "EMGT C283",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1001",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "FREN C285",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1002",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "MCOM C140",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE C102",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEC 115",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "POLS C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "RE C120",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "RE C140",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "STAT C1000",
+   "status": 404,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 25646,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C100"
+  },
+  {
+   "id": 25647,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C102"
+  },
+  {
+   "id": 25648,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C107"
+  },
+  {
+   "id": 25649,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C112"
+  },
+  {
+   "id": 25650,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C120"
+  },
+  {
+   "id": 25651,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C131"
+  },
+  {
+   "id": 25652,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C223"
+  },
+  {
+   "id": 25653,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH A190"
+  },
+  {
+   "id": 25654,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C120"
+  },
+  {
+   "id": 25655,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C175"
+  },
+  {
+   "id": 25656,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C190"
+  },
+  {
+   "id": 25657,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ARAB C180"
+  },
+  {
+   "id": 25658,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ARAB C185"
+  },
+  {
+   "id": 25659,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C020N"
+  },
+  {
+   "id": 25660,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C102"
+  },
+  {
+   "id": 25661,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C104"
+  },
+  {
+   "id": 25662,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C109"
+  },
+  {
+   "id": 25663,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C111"
+  },
+  {
+   "id": 25664,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C121"
+  },
+  {
+   "id": 25665,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C140"
+  },
+  {
+   "id": 25666,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C151"
+  },
+  {
+   "id": 25667,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C154"
+  },
+  {
+   "id": 25668,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C184"
+  },
+  {
+   "id": 25669,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C221"
+  },
+  {
+   "id": 25670,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ASTR C100L"
+  },
+  {
+   "id": 25671,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C012N"
+  },
+  {
+   "id": 25672,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C014N"
+  },
+  {
+   "id": 25673,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C107B"
+  },
+  {
+   "id": 25674,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C161"
+  },
+  {
+   "id": 25675,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C163"
+  },
+  {
+   "id": 25676,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C101"
+  },
+  {
+   "id": 25677,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C103"
+  },
+  {
+   "id": 25678,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C105"
+  },
+  {
+   "id": 25679,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C107"
+  },
+  {
+   "id": 25680,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C111"
+  },
+  {
+   "id": 25681,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C100C"
+  },
+  {
+   "id": 25682,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C102"
+  },
+  {
+   "id": 25683,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C104"
+  },
+  {
+   "id": 25684,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C109"
+  },
+  {
+   "id": 25685,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C122"
+  },
+  {
+   "id": 25686,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C185"
+  },
+  {
+   "id": 25687,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C210"
+  },
+  {
+   "id": 25688,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C221"
+  },
+  {
+   "id": 25689,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C226"
+  },
+  {
+   "id": 25690,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C283"
+  },
+  {
+   "id": 25691,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C292A"
+  },
+  {
+   "id": 25692,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C297"
+  },
+  {
+   "id": 25693,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C101"
+  },
+  {
+   "id": 25694,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C118"
+  },
+  {
+   "id": 25695,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C139"
+  },
+  {
+   "id": 25696,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C142"
+  },
+  {
+   "id": 25697,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C150"
+  },
+  {
+   "id": 25698,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C282"
+  },
+  {
+   "id": 25699,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C284"
+  },
+  {
+   "id": 25700,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C110"
+  },
+  {
+   "id": 25701,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C140"
+  },
+  {
+   "id": 25702,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C180C"
+  },
+  {
+   "id": 25703,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C220L"
+  },
+  {
+   "id": 25704,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C225L"
+  },
+  {
+   "id": 25705,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHIN C180"
+  },
+  {
+   "id": 25706,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C011N"
+  },
+  {
+   "id": 25707,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C013N"
+  },
+  {
+   "id": 25708,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C015N"
+  },
+  {
+   "id": 25709,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C100"
+  },
+  {
+   "id": 25710,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C111"
+  },
+  {
+   "id": 25711,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C190"
+  },
+  {
+   "id": 25712,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C205"
+  },
+  {
+   "id": 25713,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C250"
+  },
+  {
+   "id": 25714,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C270"
+  },
+  {
+   "id": 25715,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C280"
+  },
+  {
+   "id": 25716,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C110"
+  },
+  {
+   "id": 25717,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C135"
+  },
+  {
+   "id": 25718,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C141"
+  },
+  {
+   "id": 25719,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C060N"
+  },
+  {
+   "id": 25720,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C101"
+  },
+  {
+   "id": 25721,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C150"
+  },
+  {
+   "id": 25722,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "COUN C108"
+  },
+  {
+   "id": 25723,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C092N"
+  },
+  {
+   "id": 25724,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C094N"
+  },
+  {
+   "id": 25725,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C132"
+  },
+  {
+   "id": 25726,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C160"
+  },
+  {
+   "id": 25727,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C210"
+  },
+  {
+   "id": 25728,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C227"
+  },
+  {
+   "id": 25729,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C234"
+  },
+  {
+   "id": 25730,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C250"
+  },
+  {
+   "id": 25731,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C270"
+  },
+  {
+   "id": 25732,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C283"
+  },
+  {
+   "id": 25733,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMC C100"
+  },
+  {
+   "id": 25734,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMC C160"
+  },
+  {
+   "id": 25735,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMC C162"
+  },
+  {
+   "id": 25736,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C020N"
+  },
+  {
+   "id": 25737,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C116"
+  },
+  {
+   "id": 25738,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C118"
+  },
+  {
+   "id": 25739,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C136"
+  },
+  {
+   "id": 25740,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ECON C110"
+  },
+  {
+   "id": 25741,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ECON C175"
+  },
+  {
+   "id": 25742,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C095N"
+  },
+  {
+   "id": 25743,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C097N"
+  },
+  {
+   "id": 25744,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C099N"
+  },
+  {
+   "id": 25745,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C103"
+  },
+  {
+   "id": 25746,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C180"
+  },
+  {
+   "id": 25747,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C202"
+  },
+  {
+   "id": 25748,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C211"
+  },
+  {
+   "id": 25749,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C024N"
+  },
+  {
+   "id": 25750,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C028N"
+  },
+  {
+   "id": 25751,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C038N"
+  },
+  {
+   "id": 25752,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C081N"
+  },
+  {
+   "id": 25753,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C084N"
+  },
+  {
+   "id": 25754,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C101"
+  },
+  {
+   "id": 25755,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C105"
+  },
+  {
+   "id": 25756,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C120"
+  },
+  {
+   "id": 25757,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C140"
+  },
+  {
+   "id": 25758,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C160"
+  },
+  {
+   "id": 25759,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C174"
+  },
+  {
+   "id": 25760,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C060N"
+  },
+  {
+   "id": 25761,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C101"
+  },
+  {
+   "id": 25762,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C128"
+  },
+  {
+   "id": 25763,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C133"
+  },
+  {
+   "id": 25764,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C140"
+  },
+  {
+   "id": 25765,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C144"
+  },
+  {
+   "id": 25766,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C146"
+  },
+  {
+   "id": 25767,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C155"
+  },
+  {
+   "id": 25768,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C270"
+  },
+  {
+   "id": 25769,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C296"
+  },
+  {
+   "id": 25770,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENVS C100"
+  },
+  {
+   "id": 25771,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C012N"
+  },
+  {
+   "id": 25772,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C016N"
+  },
+  {
+   "id": 25773,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C023N"
+  },
+  {
+   "id": 25774,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C032N"
+  },
+  {
+   "id": 25775,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C035N"
+  },
+  {
+   "id": 25776,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C043N"
+  },
+  {
+   "id": 25777,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ETHS C100"
+  },
+  {
+   "id": 25778,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ETHS C233"
+  },
+  {
+   "id": 25779,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C032N"
+  },
+  {
+   "id": 25780,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C170"
+  },
+  {
+   "id": 25781,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C180"
+  },
+  {
+   "id": 25782,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C225"
+  },
+  {
+   "id": 25783,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C284"
+  },
+  {
+   "id": 25784,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FREN C180"
+  },
+  {
+   "id": 25785,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C100"
+  },
+  {
+   "id": 25786,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C155"
+  },
+  {
+   "id": 25787,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C170"
+  },
+  {
+   "id": 25788,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C180L"
+  },
+  {
+   "id": 25789,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C105"
+  },
+  {
+   "id": 25790,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C106"
+  },
+  {
+   "id": 25791,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C161"
+  },
+  {
+   "id": 25792,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C185"
+  },
+  {
+   "id": 25793,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C115"
+  },
+  {
+   "id": 25794,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C122"
+  },
+  {
+   "id": 25795,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C150"
+  },
+  {
+   "id": 25796,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C162"
+  },
+  {
+   "id": 25797,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C175"
+  },
+  {
+   "id": 25798,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C185"
+  },
+  {
+   "id": 25799,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C100"
+  },
+  {
+   "id": 25800,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C109"
+  },
+  {
+   "id": 25801,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C121"
+  },
+  {
+   "id": 25802,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C223"
+  },
+  {
+   "id": 25803,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C100"
+  },
+  {
+   "id": 25804,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C102"
+  },
+  {
+   "id": 25805,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C106"
+  },
+  {
+   "id": 25806,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C275"
+  },
+  {
+   "id": 25807,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HUM C110"
+  },
+  {
+   "id": 25808,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C120"
+  },
+  {
+   "id": 25809,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C141"
+  },
+  {
+   "id": 25810,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C230"
+  },
+  {
+   "id": 25811,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C250"
+  },
+  {
+   "id": 25812,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C265"
+  },
+  {
+   "id": 25813,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C104"
+  },
+  {
+   "id": 25814,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C128"
+  },
+  {
+   "id": 25815,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C191"
+  },
+  {
+   "id": 25816,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C201"
+  },
+  {
+   "id": 25817,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C203"
+  },
+  {
+   "id": 25818,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C281"
+  },
+  {
+   "id": 25819,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C283"
+  },
+  {
+   "id": 25820,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ITAL C180"
+  },
+  {
+   "id": 25821,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "JAPN C180"
+  },
+  {
+   "id": 25822,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C033N"
+  },
+  {
+   "id": 25823,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C100"
+  },
+  {
+   "id": 25824,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C115"
+  },
+  {
+   "id": 25825,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C118"
+  },
+  {
+   "id": 25826,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C121"
+  },
+  {
+   "id": 25827,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C169"
+  },
+  {
+   "id": 25828,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C201"
+  },
+  {
+   "id": 25829,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C100"
+  },
+  {
+   "id": 25830,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C110"
+  },
+  {
+   "id": 25831,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C118"
+  },
+  {
+   "id": 25832,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C126"
+  },
+  {
+   "id": 25833,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C128"
+  },
+  {
+   "id": 25834,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C135"
+  },
+  {
+   "id": 25835,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C144"
+  },
+  {
+   "id": 25836,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C150"
+  },
+  {
+   "id": 25837,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C154"
+  },
+  {
+   "id": 25838,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C158"
+  },
+  {
+   "id": 25839,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C161"
+  },
+  {
+   "id": 25840,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C170"
+  },
+  {
+   "id": 25841,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LIBR C110"
+  },
+  {
+   "id": 25842,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C002N"
+  },
+  {
+   "id": 25843,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C100"
+  },
+  {
+   "id": 25844,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C103"
+  },
+  {
+   "id": 25845,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C106"
+  },
+  {
+   "id": 25846,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C120"
+  },
+  {
+   "id": 25847,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C150"
+  },
+  {
+   "id": 25848,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C180"
+  },
+  {
+   "id": 25849,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C280"
+  },
+  {
+   "id": 25850,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C291"
+  },
+  {
+   "id": 25851,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C100"
+  },
+  {
+   "id": 25852,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C115"
+  },
+  {
+   "id": 25853,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C160"
+  },
+  {
+   "id": 25854,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C171"
+  },
+  {
+   "id": 25855,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MRSC C100"
+  },
+  {
+   "id": 25856,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MUS C131"
+  },
+  {
+   "id": 25857,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MUS C143"
+  },
+  {
+   "id": 25858,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C115"
+  },
+  {
+   "id": 25859,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C118"
+  },
+  {
+   "id": 25860,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C121"
+  },
+  {
+   "id": 25861,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C201"
+  },
+  {
+   "id": 25862,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C100"
+  },
+  {
+   "id": 25863,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C113"
+  },
+  {
+   "id": 25864,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C120"
+  },
+  {
+   "id": 25865,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C140"
+  },
+  {
+   "id": 25866,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C110"
+  },
+  {
+   "id": 25867,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C125"
+  },
+  {
+   "id": 25868,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C185"
+  },
+  {
+   "id": 25869,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C285"
+  },
+  {
+   "id": 25870,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSCI C101"
+  },
+  {
+   "id": 25871,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSCI C185"
+  },
+  {
+   "id": 25872,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSCI C200"
+  },
+  {
+   "id": 25873,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C116"
+  },
+  {
+   "id": 25874,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C125"
+  },
+  {
+   "id": 25875,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C170"
+  },
+  {
+   "id": 25876,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C250"
+  },
+  {
+   "id": 25877,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C260"
+  },
+  {
+   "id": 25878,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C100"
+  },
+  {
+   "id": 25879,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C110"
+  },
+  {
+   "id": 25880,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C130"
+  },
+  {
+   "id": 25881,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C145"
+  },
+  {
+   "id": 25882,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SOC C100"
+  },
+  {
+   "id": 25883,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SOC C120"
+  },
+  {
+   "id": 25884,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SOC C233"
+  },
+  {
+   "id": 25885,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C165"
+  },
+  {
+   "id": 25886,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C180A"
+  },
+  {
+   "id": 25887,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C185"
+  },
+  {
+   "id": 25888,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C185B"
+  },
+  {
+   "id": 25889,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C285"
+  },
+  {
+   "id": 25890,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C002N"
+  },
+  {
+   "id": 25891,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C014N"
+  },
+  {
+   "id": 25892,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C016N"
+  },
+  {
+   "id": 25893,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C053N"
+  },
+  {
+   "id": 25894,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C066N"
+  },
+  {
+   "id": 25895,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C068N"
+  },
+  {
+   "id": 25896,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C071N"
+  },
+  {
+   "id": 25897,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C073N"
+  },
+  {
+   "id": 25898,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C076N"
+  },
+  {
+   "id": 25899,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C078N"
+  },
+  {
+   "id": 25900,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C085N"
+  },
+  {
+   "id": 25901,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C087N"
+  },
+  {
+   "id": 25902,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C091N"
+  },
+  {
+   "id": 25903,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C094N"
+  },
+  {
+   "id": 25904,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C096N"
+  },
+  {
+   "id": 25905,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "THEA C100"
+  },
+  {
+   "id": 25906,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "VIET C160"
+  },
+  {
+   "id": 25907,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "VIET C185"
+  },
+  {
+   "id": 25908,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "VIET C285"
+  },
+  {
+   "id": 25909,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C101"
+  },
+  {
+   "id": 25910,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C106"
+  },
+  {
+   "id": 25911,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C111"
+  },
+  {
+   "id": 25912,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ACCT C116"
+  },
+  {
+   "id": 25913,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C122"
+  },
+  {
+   "id": 25914,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C170"
+  },
+  {
+   "id": 25915,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "AGNG C225"
+  },
+  {
+   "id": 25916,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C100"
+  },
+  {
+   "id": 25917,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C150"
+  },
+  {
+   "id": 25918,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH C185"
+  },
+  {
+   "id": 25919,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ANTH G190"
+  },
+  {
+   "id": 25920,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ARAB C182"
+  },
+  {
+   "id": 25921,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C010N"
+  },
+  {
+   "id": 25922,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C061N"
+  },
+  {
+   "id": 25923,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C103"
+  },
+  {
+   "id": 25924,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C105"
+  },
+  {
+   "id": 25925,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C110"
+  },
+  {
+   "id": 25926,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C120"
+  },
+  {
+   "id": 25927,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C122"
+  },
+  {
+   "id": 25928,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C150"
+  },
+  {
+   "id": 25929,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C153"
+  },
+  {
+   "id": 25930,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C183"
+  },
+  {
+   "id": 25931,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ART C185"
+  },
+  {
+   "id": 25932,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ASTR C100"
+  },
+  {
+   "id": 25933,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C011N"
+  },
+  {
+   "id": 25934,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C013N"
+  },
+  {
+   "id": 25935,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C107A"
+  },
+  {
+   "id": 25936,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C145"
+  },
+  {
+   "id": 25937,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BC C162"
+  },
+  {
+   "id": 25938,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C100"
+  },
+  {
+   "id": 25939,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C102"
+  },
+  {
+   "id": 25940,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C104"
+  },
+  {
+   "id": 25941,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C106"
+  },
+  {
+   "id": 25942,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BCI C108"
+  },
+  {
+   "id": 25943,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C100"
+  },
+  {
+   "id": 25944,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C100L"
+  },
+  {
+   "id": 25945,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C103"
+  },
+  {
+   "id": 25946,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C106"
+  },
+  {
+   "id": 25947,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C120"
+  },
+  {
+   "id": 25948,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C180"
+  },
+  {
+   "id": 25949,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C200"
+  },
+  {
+   "id": 25950,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C220"
+  },
+  {
+   "id": 25951,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C225"
+  },
+  {
+   "id": 25952,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C281"
+  },
+  {
+   "id": 25953,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C291A"
+  },
+  {
+   "id": 25954,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BIOL C296"
+  },
+  {
+   "id": 25955,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C100"
+  },
+  {
+   "id": 25956,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C110"
+  },
+  {
+   "id": 25957,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C120"
+  },
+  {
+   "id": 25958,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C141"
+  },
+  {
+   "id": 25959,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C143"
+  },
+  {
+   "id": 25960,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C281"
+  },
+  {
+   "id": 25961,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "BUS C283"
+  },
+  {
+   "id": 25962,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C100"
+  },
+  {
+   "id": 25963,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C130"
+  },
+  {
+   "id": 25964,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C185C"
+  },
+  {
+   "id": 25965,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C220"
+  },
+  {
+   "id": 25966,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C225"
+  },
+  {
+   "id": 25967,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHEM C281"
+  },
+  {
+   "id": 25968,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CHIN C185"
+  },
+  {
+   "id": 25969,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C012N"
+  },
+  {
+   "id": 25970,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C014N"
+  },
+  {
+   "id": 25971,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C016N"
+  },
+  {
+   "id": 25972,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C105"
+  },
+  {
+   "id": 25973,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C157"
+  },
+  {
+   "id": 25974,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C191"
+  },
+  {
+   "id": 25975,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C240"
+  },
+  {
+   "id": 25976,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C260"
+  },
+  {
+   "id": 25977,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C275"
+  },
+  {
+   "id": 25978,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CIS C285"
+  },
+  {
+   "id": 25979,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C128"
+  },
+  {
+   "id": 25980,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C140"
+  },
+  {
+   "id": 25981,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CJ C148"
+  },
+  {
+   "id": 25982,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C100"
+  },
+  {
+   "id": 25983,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C140"
+  },
+  {
+   "id": 25984,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CMST C220"
+  },
+  {
+   "id": 25985,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "COUN C105"
+  },
+  {
+   "id": 25986,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "COUN C109"
+  },
+  {
+   "id": 25987,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C091N"
+  },
+  {
+   "id": 25988,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C093N"
+  },
+  {
+   "id": 25989,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C101"
+  },
+  {
+   "id": 25990,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C150"
+  },
+  {
+   "id": 25991,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C170"
+  },
+  {
+   "id": 25992,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C225"
+  },
+  {
+   "id": 25993,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C230"
+  },
+  {
+   "id": 25994,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C242"
+  },
+  {
+   "id": 25995,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C255"
+  },
+  {
+   "id": 25996,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C260"
+  },
+  {
+   "id": 25997,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C280"
+  },
+  {
+   "id": 25998,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "CYBR C291"
+  },
+  {
+   "id": 25999,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMC C150"
+  },
+  {
+   "id": 26000,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMC C161"
+  },
+  {
+   "id": 26001,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C010N"
+  },
+  {
+   "id": 26002,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C100"
+  },
+  {
+   "id": 26003,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C117"
+  },
+  {
+   "id": 26004,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C120"
+  },
+  {
+   "id": 26005,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "DMD C135"
+  },
+  {
+   "id": 26006,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ECOL C100"
+  },
+  {
+   "id": 26007,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ECON C170"
+  },
+  {
+   "id": 26008,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C094N"
+  },
+  {
+   "id": 26009,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C096N"
+  },
+  {
+   "id": 26010,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C098N"
+  },
+  {
+   "id": 26011,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C101"
+  },
+  {
+   "id": 26012,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C104"
+  },
+  {
+   "id": 26013,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C200"
+  },
+  {
+   "id": 26014,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EDUC C210"
+  },
+  {
+   "id": 26015,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C020N"
+  },
+  {
+   "id": 26016,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C025N"
+  },
+  {
+   "id": 26017,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C030N"
+  },
+  {
+   "id": 26018,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C040N"
+  },
+  {
+   "id": 26019,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C083N"
+  },
+  {
+   "id": 26020,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ELL C085N"
+  },
+  {
+   "id": 26021,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C102"
+  },
+  {
+   "id": 26022,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C110"
+  },
+  {
+   "id": 26023,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C130"
+  },
+  {
+   "id": 26024,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C150"
+  },
+  {
+   "id": 26025,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "EMGT C172"
+  },
+  {
+   "id": 26026,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C080N"
+  },
+  {
+   "id": 26027,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C103"
+  },
+  {
+   "id": 26028,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C129"
+  },
+  {
+   "id": 26029,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C136"
+  },
+  {
+   "id": 26030,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C143"
+  },
+  {
+   "id": 26031,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C145"
+  },
+  {
+   "id": 26032,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C150"
+  },
+  {
+   "id": 26033,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C181"
+  },
+  {
+   "id": 26034,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C275"
+  },
+  {
+   "id": 26035,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ENGL C297"
+  },
+  {
+   "id": 26036,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C011N"
+  },
+  {
+   "id": 26037,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C013N"
+  },
+  {
+   "id": 26038,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C022N"
+  },
+  {
+   "id": 26039,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C026N"
+  },
+  {
+   "id": 26040,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C033N"
+  },
+  {
+   "id": 26041,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C042N"
+  },
+  {
+   "id": 26042,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C049N"
+  },
+  {
+   "id": 26043,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ESL C095N"
+  },
+  {
+   "id": 26044,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ETHS C123"
+  },
+  {
+   "id": 26045,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN A180"
+  },
+  {
+   "id": 26046,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C160"
+  },
+  {
+   "id": 26047,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C177"
+  },
+  {
+   "id": 26048,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C190"
+  },
+  {
+   "id": 26049,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C283"
+  },
+  {
+   "id": 26050,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FN C285"
+  },
+  {
+   "id": 26051,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "FREN C185"
+  },
+  {
+   "id": 26052,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C150"
+  },
+  {
+   "id": 26053,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C165"
+  },
+  {
+   "id": 26054,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C180"
+  },
+  {
+   "id": 26055,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOG C185"
+  },
+  {
+   "id": 26056,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C105L"
+  },
+  {
+   "id": 26057,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C115"
+  },
+  {
+   "id": 26058,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C162"
+  },
+  {
+   "id": 26059,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "GEOL C185L"
+  },
+  {
+   "id": 26060,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C121"
+  },
+  {
+   "id": 26061,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C123"
+  },
+  {
+   "id": 26062,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C161"
+  },
+  {
+   "id": 26063,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C170"
+  },
+  {
+   "id": 26064,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HIST C180"
+  },
+  {
+   "id": 26065,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C031N"
+  },
+  {
+   "id": 26066,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C104"
+  },
+  {
+   "id": 26067,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C120"
+  },
+  {
+   "id": 26068,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C220"
+  },
+  {
+   "id": 26069,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HLTH C230"
+  },
+  {
+   "id": 26070,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C101"
+  },
+  {
+   "id": 26071,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C104"
+  },
+  {
+   "id": 26072,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HSVC C274"
+  },
+  {
+   "id": 26073,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HUM C100"
+  },
+  {
+   "id": 26074,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "HUM C135"
+  },
+  {
+   "id": 26075,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C123"
+  },
+  {
+   "id": 26076,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C165"
+  },
+  {
+   "id": 26077,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C240"
+  },
+  {
+   "id": 26078,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C255"
+  },
+  {
+   "id": 26079,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ICS C290"
+  },
+  {
+   "id": 26080,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C110"
+  },
+  {
+   "id": 26081,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C158"
+  },
+  {
+   "id": 26082,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C198"
+  },
+  {
+   "id": 26083,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C202"
+  },
+  {
+   "id": 26084,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C275"
+  },
+  {
+   "id": 26085,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C282"
+  },
+  {
+   "id": 26086,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "IT C295"
+  },
+  {
+   "id": 26087,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "ITAL C185"
+  },
+  {
+   "id": 26088,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "JAPN C185"
+  },
+  {
+   "id": 26089,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C034N"
+  },
+  {
+   "id": 26090,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C101"
+  },
+  {
+   "id": 26091,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C116"
+  },
+  {
+   "id": 26092,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C119"
+  },
+  {
+   "id": 26093,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C125"
+  },
+  {
+   "id": 26094,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C190"
+  },
+  {
+   "id": 26095,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "KIN C289"
+  },
+  {
+   "id": 26096,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C105"
+  },
+  {
+   "id": 26097,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C115"
+  },
+  {
+   "id": 26098,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C121"
+  },
+  {
+   "id": 26099,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C130"
+  },
+  {
+   "id": 26100,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C142"
+  },
+  {
+   "id": 26101,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C148"
+  },
+  {
+   "id": 26102,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C152"
+  },
+  {
+   "id": 26103,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C155"
+  },
+  {
+   "id": 26104,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C160"
+  },
+  {
+   "id": 26105,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C164"
+  },
+  {
+   "id": 26106,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "LAW C290"
+  },
+  {
+   "id": 26107,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C001N"
+  },
+  {
+   "id": 26108,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C080N"
+  },
+  {
+   "id": 26109,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C101"
+  },
+  {
+   "id": 26110,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C104"
+  },
+  {
+   "id": 26111,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C115"
+  },
+  {
+   "id": 26112,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C140"
+  },
+  {
+   "id": 26113,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C170"
+  },
+  {
+   "id": 26114,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C185"
+  },
+  {
+   "id": 26115,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MATH C285"
+  },
+  {
+   "id": 26116,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C111"
+  },
+  {
+   "id": 26117,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C144"
+  },
+  {
+   "id": 26118,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C161"
+  },
+  {
+   "id": 26119,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MGMT C172"
+  },
+  {
+   "id": 26120,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MUS C100"
+  },
+  {
+   "id": 26121,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MUS C130"
+  },
+  {
+   "id": 26122,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "MUS C139"
+  },
+  {
+   "id": 26123,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C116"
+  },
+  {
+   "id": 26124,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C119"
+  },
+  {
+   "id": 26125,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PE C169"
+  },
+  {
+   "id": 26126,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C102"
+  },
+  {
+   "id": 26127,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C115"
+  },
+  {
+   "id": 26128,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C122"
+  },
+  {
+   "id": 26129,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHIL C220"
+  },
+  {
+   "id": 26130,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C120"
+  },
+  {
+   "id": 26131,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C140"
+  },
+  {
+   "id": 26132,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PHYS C280"
+  },
+  {
+   "id": 26133,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSCI C183"
+  },
+  {
+   "id": 26134,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSCI C188"
+  },
+  {
+   "id": 26135,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C118"
+  },
+  {
+   "id": 26136,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C165"
+  },
+  {
+   "id": 26137,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C230"
+  },
+  {
+   "id": 26138,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C255"
+  },
+  {
+   "id": 26139,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "PSYC C280"
+  },
+  {
+   "id": 26140,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C105"
+  },
+  {
+   "id": 26141,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C120"
+  },
+  {
+   "id": 26142,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C140"
+  },
+  {
+   "id": 26143,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "RE C160"
+  },
+  {
+   "id": 26144,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SOC C110"
+  },
+  {
+   "id": 26145,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SOC C185"
+  },
+  {
+   "id": 26146,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C160"
+  },
+  {
+   "id": 26147,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C180"
+  },
+  {
+   "id": 26148,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C180B"
+  },
+  {
+   "id": 26149,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C185A"
+  },
+  {
+   "id": 26150,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPAN C280"
+  },
+  {
+   "id": 26151,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C001N"
+  },
+  {
+   "id": 26152,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C005N"
+  },
+  {
+   "id": 26153,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C015N"
+  },
+  {
+   "id": 26154,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C017N"
+  },
+  {
+   "id": 26155,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C061N"
+  },
+  {
+   "id": 26156,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C067N"
+  },
+  {
+   "id": 26157,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C069N"
+  },
+  {
+   "id": 26158,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C072N"
+  },
+  {
+   "id": 26159,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C074N"
+  },
+  {
+   "id": 26160,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C077N"
+  },
+  {
+   "id": 26161,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C079N"
+  },
+  {
+   "id": 26162,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C086N"
+  },
+  {
+   "id": 26163,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C090N"
+  },
+  {
+   "id": 26164,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C092N"
+  },
+  {
+   "id": 26165,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "SPED C095N"
+  },
+  {
+   "id": 26166,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "VIET C180"
+  },
+  {
+   "id": 26167,
+   "kind": "objective",
+   "college": "Coastline Community College",
+   "course_code": "VIET C280"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (25646, 25647, 25648, 25649, 25650, 25651, 25652, 25653, 25654, 25655, 25656, 25657, 25658, 25659, 25660, 25661, 25662, 25663, 25664, 25665, 25666, 25667, 25668, 25669, 25670, 25671, 25672, 25673, 25674, 25675, 25676, 25677, 25678, 25679, 25680, 25681, 25682, 25683, 25684, 25685, 25686, 25687, 25688, 25689, 25690, 25691, 25692, 25693, 25694, 25695, 25696, 25697, 25698, 25699, 25700, 25701, 25702, 25703, 25704, 25705, 25706, 25707, 25708, 25709, 25710, 25711, 25712, 25713, 25714, 25715, 25716, 25717, 25718, 25719, 25720, 25721, 25722, 25723, 25724, 25725, 25726, 25727, 25728, 25729, 25730, 25731, 25732, 25733, 25734, 25735, 25736, 25737, 25738, 25739, 25740, 25741, 25742, 25743, 25744, 25745, 25746, 25747, 25748, 25749, 25750, 25751, 25752, 25753, 25754, 25755, 25756, 25757, 25758, 25759, 25760, 25761, 25762, 25763, 25764, 25765, 25766, 25767, 25768, 25769, 25770, 25771, 25772, 25773, 25774, 25775, 25776, 25777, 25778, 25779, 25780, 25781, 25782, 25783, 25784, 25785, 25786, 25787, 25788, 25789, 25790, 25791, 25792, 25793, 25794, 25795, 25796, 25797, 25798, 25799, 25800, 25801, 25802, 25803, 25804, 25805, 25806, 25807, 25808, 25809, 25810, 25811, 25812, 25813, 25814, 25815, 25816, 25817, 25818, 25819, 25820, 25821, 25822, 25823, 25824, 25825, 25826, 25827, 25828, 25829, 25830, 25831, 25832, 25833, 25834, 25835, 25836, 25837, 25838, 25839, 25840, 25841, 25842, 25843, 25844, 25845, 25846, 25847, 25848, 25849, 25850, 25851, 25852, 25853, 25854, 25855, 25856, 25857, 25858, 25859, 25860, 25861, 25862, 25863, 25864, 25865, 25866, 25867, 25868, 25869, 25870, 25871, 25872, 25873, 25874, 25875, 25876, 25877, 25878, 25879, 25880, 25881, 25882, 25883, 25884, 25885, 25886, 25887, 25888, 25889, 25890, 25891, 25892, 25893, 25894, 25895, 25896, 25897, 25898, 25899, 25900, 25901, 25902, 25903, 25904, 25905, 25906, 25907, 25908, 25909, 25910, 25911, 25912, 25913, 25914, 25915, 25916, 25917, 25918, 25919, 25920, 25921, 25922, 25923, 25924, 25925, 25926, 25927, 25928, 25929, 25930, 25931, 25932, 25933, 25934, 25935, 25936, 25937, 25938, 25939, 25940, 25941, 25942, 25943, 25944, 25945, 25946, 25947, 25948, 25949, 25950, 25951, 25952, 25953, 25954, 25955, 25956, 25957, 25958, 25959, 25960, 25961, 25962, 25963, 25964, 25965, 25966, 25967, 25968, 25969, 25970, 25971, 25972, 25973, 25974, 25975, 25976, 25977, 25978, 25979, 25980, 25981, 25982, 25983, 25984, 25985, 25986, 25987, 25988, 25989, 25990, 25991, 25992, 25993, 25994, 25995, 25996, 25997, 25998, 25999, 26000, 26001, 26002, 26003, 26004, 26005, 26006, 26007, 26008, 26009, 26010, 26011, 26012, 26013, 26014, 26015, 26016, 26017, 26018, 26019, 26020, 26021, 26022, 26023, 26024, 26025, 26026, 26027, 26028, 26029, 26030, 26031, 26032, 26033, 26034, 26035, 26036, 26037, 26038, 26039, 26040, 26041, 26042, 26043, 26044, 26045, 26046, 26047, 26048, 26049, 26050, 26051, 26052, 26053, 26054, 26055, 26056, 26057, 26058, 26059, 26060, 26061, 26062, 26063, 26064, 26065, 26066, 26067, 26068, 26069, 26070, 26071, 26072, 26073, 26074, 26075, 26076, 26077, 26078, 26079, 26080, 26081, 26082, 26083, 26084, 26085, 26086, 26087, 26088, 26089, 26090, 26091, 26092, 26093, 26094, 26095, 26096, 26097, 26098, 26099, 26100, 26101, 26102, 26103, 26104, 26105, 26106, 26107, 26108, 26109, 26110, 26111, 26112, 26113, 26114, 26115, 26116, 26117, 26118, 26119, 26120, 26121, 26122, 26123, 26124, 26125, 26126, 26127, 26128, 26129, 26130, 26131, 26132, 26133, 26134, 26135, 26136, 26137, 26138, 26139, 26140, 26141, 26142, 26143, 26144, 26145, 26146, 26147, 26148, 26149, 26150, 26151, 26152, 26153, 26154, 26155, 26156, 26157, 26158, 26159, 26160, 26161, 26162, 26163, 26164, 26165, 26166, 26167);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

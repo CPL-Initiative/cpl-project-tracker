@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T03:37:04Z",
+ "written_at": "2026-11-17T04:08:55Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -2170,11 +2170,11 @@
      "platform": "courseleaf"
     },
     "slo_read": {
-     "run": "38508963773",
-     "at": "2026-10-14T04:34:21Z",
+     "run": "43984094171",
+     "at": "2026-11-17T00:51:26Z",
      "system": "courseleaf",
      "source_kind": "course_outline",
-     "file": "kb/course_outcomes/cccd/read_38508963773_p2of2.json"
+     "file": "kb/course_outcomes/cccd/read_43984094171_p2of2.json"
     },
     "plo_programs": 141,
     "ppm_member": {
