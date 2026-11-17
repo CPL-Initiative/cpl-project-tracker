@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T11:39:13Z",
+ "written_at": "2026-11-17T16:59:52Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15866,
-  "gap": 6469,
+  "passing": 15867,
+  "gap": 6468,
   "with_gap": 118,
-  "cost_usd": 1343.27,
-  "passed_at_read": 15375,
+  "cost_usd": 1343.1,
+  "passed_at_read": 15380,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15866,
-  "gap": 6469
+  "passing": 15867,
+  "gap": 6468
  },
  "census_live": {
   "basis": "live",
@@ -5057,12 +5057,12 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 81,
-   "gap": 54,
+   "passing": 82,
+   "gap": 53,
    "causes": {
     "no_closed_list": 15,
-    "page_not_found": 14,
-    "places_none": 5,
+    "page_not_found": 17,
+    "places_none": 1,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -5087,10 +5087,10 @@
    "outcomes_file": "kb/status/commons_data_programs/gavilan.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T18:33:54Z",
+   "read_at": "2026-11-17T14:28:58Z",
    "read_kind": "capture",
-   "cost_usd": 7.53,
-   "passed_at_read": 77,
+   "cost_usd": 7.36,
+   "passed_at_read": 82,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -5099,13 +5099,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 120,
-   "found": 106,
-   "extracted": 106,
+   "found": 103,
+   "extracted": 103,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 29,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5115,28 +5115,28 @@
    "capture_root": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 898.3,
-   "run": "38948144064",
+   "read_seconds": 855.4,
+   "run": "44112314553",
    "levers": {
     "reconcile_steps": 19,
+    "reader_page_search": 17,
     "program_course_file_check": 15,
-    "reader_page_search": 14,
-    "reader_page_assignment": 5,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 106,
+     "records": 103,
      "models": {
-      "claude-opus-5-5": 106
+      "claude-opus-5-5": 103
      },
-     "run": "38948144064",
-     "at": "2026-10-16T18:33:54Z",
-     "cost_usd": 7.53,
+     "run": "44112314553",
+     "at": "2026-11-17T14:28:58Z",
+     "cost_usd": 7.36,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 99,
+    "plo_programs": 100,
     "ppm_member": {
      "host": "gavilan.programmapper.com",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
