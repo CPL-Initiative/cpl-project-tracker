@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1513,
-    "bytes": 16061673,
+    "bytes": 16063010,
     "over_budget": 3,
     "handoff_max": 670,
     "always_loaded_files": 1,
@@ -46,23 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 534992,
+        "bytes": 533877,
         "over": 0
       },
       "handoff": {
         "files": 629,
-        "bytes": 4515262,
+        "bytes": 4517714,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 603
+      "vault_heavy_path": 603,
+      "handoff_drops_active_lane": 1
     },
     "vault": {
-      "files": 84843,
-      "bytes": 14988560553,
+      "files": 84841,
+      "bytes": 14988558494,
       "heavy_bytes": 10460636093,
       "heavy_share": 0.698,
       "ignore_filters": [
@@ -6752,6 +6753,18 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "handoff_drops_active_lane",
+      "fixable": false,
+      "path": "docs/session_670_handoff.md",
+      "detail": {
+        "lanes": [
+          "governance-team-enablement"
+        ],
+        "days": 7
+      },
+      "message": "`docs/session_670_handoff.md` never names 1 lane(s) worked in the last 7 days that still carry a NEXT: governance-team-enablement. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }
