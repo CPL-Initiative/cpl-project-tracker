@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T07:31:08Z",
+ "written_at": "2026-11-17T09:17:20Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15860,
-  "gap": 6475,
+  "passing": 15863,
+  "gap": 6472,
   "with_gap": 118,
-  "cost_usd": 1343.25,
-  "passed_at_read": 15368,
+  "cost_usd": 1343.27,
+  "passed_at_read": 15372,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15860,
-  "gap": 6475
+  "passing": 15863,
+  "gap": 6472
  },
  "census_live": {
   "basis": "live",
@@ -8616,7 +8616,7 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-11T04:56:59Z",
+   "read_at": "2026-11-17T08:46:01Z",
    "read_kind": "capture",
    "cost_usd": 10.12,
    "passed_at_read": 130,
@@ -8632,8 +8632,8 @@
    "extracted": 148,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
-    "invented": 2,
+    "coverage": 1,
+    "invented": 1,
     "arithmetic": 17,
     "repeated": 0,
     "outcomes": 0
@@ -8644,8 +8644,8 @@
    "capture_root": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1379.7,
-   "run": "43609971090",
+   "read_seconds": 913.6,
+   "run": "44046021561",
    "levers": {
     "reconcile_steps": 17,
     "program_course_file_check": 11,
@@ -8658,8 +8658,8 @@
      "models": {
       "claude-opus-5-5": 148
      },
-     "run": "43609971090",
-     "at": "2026-10-11T04:56:59Z",
+     "run": "44046021561",
+     "at": "2026-11-17T08:46:01Z",
      "cost_usd": 10.12,
      "platform": "curriqunet"
     },
@@ -9740,13 +9740,13 @@
    "harvested": true,
    "slug": "riverside_city",
    "programs": 268,
-   "passing": 230,
-   "gap": 38,
+   "passing": 233,
+   "gap": 35,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 6,
     "page_not_found": 17,
-    "unknown_without_live": 14
+    "unknown_without_live": 11
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -9770,10 +9770,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-11-17T06:21:55Z",
+   "read_at": "2026-11-17T08:22:55Z",
    "read_kind": "capture",
-   "cost_usd": 15.31,
-   "passed_at_read": 228,
+   "cost_usd": 15.33,
+   "passed_at_read": 232,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9783,12 +9783,12 @@
    },
    "listed_closed": 262,
    "found": 240,
-   "extracted": 243,
+   "extracted": 244,
    "errors": 0,
    "failed_checks": {
     "coverage": 0,
     "invented": 0,
-    "arithmetic": 14,
+    "arithmetic": 11,
     "repeated": 0,
     "outcomes": 1
    },
@@ -9798,11 +9798,11 @@
    "capture_root": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1212.4,
-   "run": "44030368835",
+   "read_seconds": 1236.3,
+   "run": "44046016854",
    "levers": {
     "reader_page_search": 17,
-    "reconcile_steps": 14,
+    "reconcile_steps": 11,
     "program_course_file_check": 6,
     "paid_read": 1
    },
@@ -9812,9 +9812,9 @@
      "models": {
       "claude-opus-5-5": 244
      },
-     "run": "44030368835",
-     "at": "2026-11-17T06:21:55Z",
-     "cost_usd": 15.31,
+     "run": "44046016854",
+     "at": "2026-11-17T08:22:55Z",
+     "cost_usd": 15.33,
      "platform": "curriqunet"
     },
     "slo_read": {
