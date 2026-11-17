@@ -48,6 +48,8 @@ Folded in verbatim at S669's request (cross-session message, 00:04Z 2026-11-17):
    `claude/prior-2025-santa-ana-s668` 32062, 32989): when filed and passing, `step=reread`, a PR, merge on green, as
    Gavilan (#3411) and Butte (#3426) did. Berkeley City 41778 stays as filed (`d-bcc-41778-keeps-current-s668`); its
    branch is unmerged; a cited Berkeley City Cal-GETC step comes first.
+   Butte Physics 31950 counts its conditional 8 elective units where Mathematics 31953 does not (COBIx on #3426): a
+   free reconcile rescore to the Mathematics reading.
 5. **Slice B switch** (`NCL_EXTRACT`, off): S669's #3424 adds `no_state_list(score)` to the display build; the Commons
    sidecars must hold these records back too; then point #3414's refusal probe at both, and carry the minor (`errors`
    counts no-list records). COBIx's #3408 nit: `ncl_filed_yields`' return annotation.
