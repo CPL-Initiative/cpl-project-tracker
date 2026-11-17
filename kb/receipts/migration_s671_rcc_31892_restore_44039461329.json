@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s671_rcc_31892_restore.sql",
+ "name": "s671_rcc_31892_restore",
+ "version": "20261117073607",
+ "sha256": "0d3dfd00f005566937d6a290a02078bec53184f3510944032f77b353cbfc691e",
+ "run": "44039461329",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
