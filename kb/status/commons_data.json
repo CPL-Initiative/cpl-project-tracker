@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T11:39:13Z",
+ "written_at": "2026-11-17T16:59:20Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15866,
-  "gap": 6469,
+  "passing": 15871,
+  "gap": 6464,
   "with_gap": 118,
-  "cost_usd": 1343.27,
-  "passed_at_read": 15375,
+  "cost_usd": 1343.21,
+  "passed_at_read": 15380,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15866,
-  "gap": 6469
+  "passing": 15871,
+  "gap": 6464
  },
  "census_live": {
   "basis": "live",
@@ -931,13 +931,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 238,
-   "gap": 53,
+   "passing": 243,
+   "gap": 48,
    "causes": {
     "no_closed_list": 10,
-    "page_not_found": 10,
-    "places_none": 3,
-    "unknown_without_live": 30
+    "page_not_found": 12,
+    "unknown_without_live": 26
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -962,10 +961,10 @@
     "elumen"
    ],
    "objectives_printed": false,
-   "read_at": "2026-10-15T02:26:55Z",
+   "read_at": "2026-11-17T14:28:31Z",
    "read_kind": "capture",
-   "cost_usd": 18.26,
-   "passed_at_read": 238,
+   "cost_usd": 18.2,
+   "passed_at_read": 243,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -974,13 +973,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 281,
-   "found": 271,
-   "extracted": 271,
+   "found": 269,
+   "extracted": 269,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 32,
+    "arithmetic": 26,
     "repeated": 0,
     "outcomes": 0
    },
@@ -990,24 +989,23 @@
    "capture_root": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1528.4,
-   "run": "38670925488",
+   "read_seconds": 1553.1,
+   "run": "44112287720",
    "levers": {
-    "reconcile_steps": 29,
+    "reconcile_steps": 25,
+    "reader_page_search": 12,
     "program_course_file_check": 10,
-    "reader_page_search": 10,
-    "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 271,
+     "records": 269,
      "models": {
-      "claude-opus-5-5": 271
+      "claude-opus-5-5": 269
      },
-     "run": "38670925488",
-     "at": "2026-10-15T02:26:55Z",
-     "cost_usd": 18.26,
+     "run": "44112287720",
+     "at": "2026-11-17T14:28:31Z",
+     "cost_usd": 18.2,
      "platform": "elumen"
     },
     "slo_read": {
@@ -1017,7 +1015,7 @@
      "source_kind": "catalog",
      "file": "kb/course_outcomes/cabrillo/read_38507187621_p3of3.json"
     },
-    "plo_programs": 267,
+    "plo_programs": 268,
     "ppm_member": null,
     "maps": {
      "held": 0,
