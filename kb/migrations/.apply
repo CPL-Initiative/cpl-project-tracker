@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-17_s669_cpl_memory_rows_2.sql
-name=s669_cpl_memory_rows_2
+file=kb/migrations/2026-11-17_s670_skyline_32337_remove.sql
+name=s670_skyline_32337_remove
