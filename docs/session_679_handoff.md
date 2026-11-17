@@ -104,9 +104,9 @@ prompts; KB note `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`.
 The conductor drops each PR subscription, check-in and artifact watch at sign-off and names them in its closing message.
 The standing sheet stays [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-Spend: TBA
+Spend: $115.38 (Opus 5.5 $115.38, subagents included); 2026-11-17T21:41Z to 2026-11-17T23:59Z.
 
-PRs merged: 4 so far (#3465, #3466, #3469, #3470).
+PRs merged (substantive, not counting this checkpoint): 4 (#3465, #3466, #3469, #3470).
 
 Opening line: *Greetings, you are SkyKinglet (Session 679), see SkyWaxwing's handoff, `docs/session_679_handoff.md`,
 let's keep rolling with our queue.*
