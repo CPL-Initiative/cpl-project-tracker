@@ -539,3 +539,12 @@ The repeated-row cause is the one lever that crosses colleges. It needs a scorer
 Riverside City's three steps took its records from 229 to 232 passing on the reconcile run (44046016854), with no record losing its pass. Norco's required list now sums to its printed 25. The record still fails at 30-33 against 36-37, because its three options are one choice of 8 units that the reading kept as three rule-all blocks with no option group. That is a separate fix. Moreno Valley Guitar 38758 is not a repeat: its "Required Courses (16-20 Units)" range comes from "MUS-3* ... *(Test out option available)".
 
 **A reconcile run with no extraction removes `kept_passing.json`.** The file reports the passing records that one read kept. It is not a guard input, so a later run that keeps none leaves no file. Compare the pass set before and after, as S671 said.
+
+## S673 (SkyPhoebe, 2026-11-17, the CPL Queue routine)
+
+**Read the record before naming the fix.** Handoff 673 said Norco's three ensemble options in 30606 and 30607 were three rule-all blocks with no group. The filed records already shared `option_group` "Ensemble option", so the scorer was counting one option. What was missing was each option's count: every course is listed once at 2 units, so the options summed to 2, 4 and 4 against their printed 8. The count sat in each option's own heading ("Option 1: Take MUS-41 four times over four semesters", "Option 2: Take both MUS-41 and MIS-81 two times each"), and a code-wide `repeat` pattern could not take it, because MUS-41 is four times in one option and twice in the other.
+
+**A count printed in a block's heading belongs to that block alone.** A `repeat` step's `name_pattern` reads `n` (and `code`, where it names one) on a rule-all block's name and sets `times` on that block's courses only. Three guards: the heading's words are on the page, every course it touches has units and no count, and the counted sum equals the block's stated figure. Reconcile 44063769303 took Norco from 130 to 132 passing, with no record lost. Only 30606 and 30607 hold blocks the pattern matches.
+
+**A test-out range is not a units range.** Moreno Valley Guitar 38758 prints "Required Courses (16-20 Units)", "Units: 20.00" and "Total: 20.00". The 16 comes from "MUS-3* ... *(Test out option available)". Credit by exam is credit for prior learning and still awards MUS-3's 4 units, so the program's total is 20.
+
