@@ -1691,6 +1691,57 @@ check("Norco 30606: a count whose sum is not the option's stated figure changes 
 check("Norco 30606: the required list sums to its printed 25",
       sum(c["units"] * (c.get("times") or 1) for c in nnew["blocks"][0]["courses"]) == 25)
 
+print("printed_total: Moreno Valley 38758 (S674)")
+_mrec = json.load(open(os.path.join(ROOT, "kb/program_requirements_college/moreno_valley/records/38758.json")))["record"]
+_mrec = json.loads(json.dumps(_mrec))
+_mrec["program"]["total_units"] = {"min": 16, "max": 20}
+mvc = ("Guitar Performance - Certificate of Achievement - MCE930\nRequired Courses (16-20 Units)\n"
+       "Music Theory (includes musicianship)\nMUS-3*\tMusicianship\t4.00\nMUS-4\t4.00\nMUS-5\t4.00\n"
+       "Applied Music (1 unit per semester for a total of 4 units)\t0.00\nMUS-87\t4.00\n"
+       "Ensemble (1 unit per semester for a total of 4 units)\nMUS-70\t4.00\nUnits: 20.00\n"
+       "* (Test out option available)\nTotal : 20.00\n")
+mnew, mnotes = R.reconcile(_mrec, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)
+check("Moreno Valley 38758: the record takes the printed total 20",
+      mnew["program"]["total_units"] == {"min": 20, "max": 20})
+check("Moreno Valley 38758: one note, from 16-20", [n["was"] for n in mnotes if n["field"] == "total_units"] == [{"min": 16, "max": 20}])
+check("Moreno Valley 38758: a second run changes nothing",
+      not [n for n in R.reconcile(mnew, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if n["field"] == "total_units"])
+check("Moreno Valley 38758: no test-out words, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\n", ""), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: a total that is not the range's top, no change",
+      R.reconcile(_mrec, mvc.replace("Total : 20.00", "Total : 18.00"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+_mchoose = json.loads(json.dumps(_mrec))
+_mchoose["blocks"][2]["rule"] = "choose_units"
+check("Moreno Valley 38758: a block that is a choice, no change",
+      R.reconcile(_mchoose, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_msum = json.loads(json.dumps(_mrec))
+_msum["blocks"][1]["stated"] = {"min": 2, "max": 2}
+check("Moreno Valley 38758: blocks that do not sum to the total, no change",
+      R.reconcile(_msum, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_mother = json.loads(json.dumps(_mrec))
+_mother["program"]["total_units"] = {"min": 18, "max": 20}
+check("Moreno Valley 38758: a record holding another range, no change",
+      R.reconcile(_mother, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 18, "max": 20})
+
+_mwide = json.loads(json.dumps(_mrec))
+_mwide["program"]["total_units"] = {"min": 12, "max": 20}
+check("Moreno Valley 38758: a 12-20 range a 4-unit starred course does not account for, no change",
+      R.reconcile(_mwide, mvc.replace("(16-20 Units)", "(12-20 Units)"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 12, "max": 20})
+check("Moreno Valley 38758: test-out words after the total, outside the span, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\nTotal : 20.00\n", "Total : 20.00\n* (Test out option available)\n"),
+                  "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: the note keeps the heading and the total, not the course table",
+      [n for n in mnotes if n["field"] == "total_units"][0]["words"].startswith("Required Courses (16-20 Units)")
+      and "Total : 20" in [n for n in mnotes if n["field"] == "total_units"][0]["words"]
+      and "MUS-87" not in [n for n in mnotes if n["field"] == "total_units"][0]["words"])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

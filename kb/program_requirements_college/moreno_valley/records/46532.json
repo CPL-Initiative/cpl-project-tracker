@@ -44,30 +44,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 31,
-   "share": 0.774,
+   "share": 0.806,
    "missing": [
     "BIO35",
     "EAR25",
     "GEG2",
     "GEG3",
     "HES1",
-    "HIS6",
     "HIST26"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "HISTC1001"
-   ],
-   "flagged": [
-    "HISTC1001"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -443,6 +445,6 @@
    "Program total printed as 'Total : 37.00- 38.00'."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

@@ -977,6 +977,37 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])
             notes.append({"field": field, "was": prog.get(field), "now": st["value"], "words": words})
             prog[field] = copy.deepcopy(st["value"])
+        elif st["kind"] == "printed_total":
+            # A range in the required heading whose low end is a test-out, beside a printed total that is its
+            # high end (Moreno Valley Guitar 38758, S674: "Required Courses (16-20 Units)", "MUS-3*" with
+            # "* (Test out option available)", and "Total : 20.00"; d-mvc-38758-total-is-20-s673). Credit by
+            # exam still awards the units, so the record takes the printed total. It replaces a filled figure,
+            # so it runs only where the record holds exactly the heading's range, the page prints the step's
+            # requires words, the total is the range's top, and the rule-all blocks' stated figures sum to it.
+            lo, hi, total = _num(m.group("lo")), _num(m.group("hi")), _num(m.group("total"))
+            if _span_of(prog.get(field)) != (lo, hi) or total != hi or lo is None or lo >= hi:
+                continue
+            # The test-out words inside the matched span, never a neighbor's footnote (COBIx on #3444).
+            span = m.group(0)
+            if st.get("requires") and not re.search(st["requires"], span):
+                continue
+            blocks = out.get("blocks") or []
+            if not blocks or any(b.get("rule") != "all" or b.get("option_group") for b in blocks):
+                continue
+            spans = [_span_of(b.get("stated")) for b in blocks]
+            if any(sp[0] is None or sp[0] != sp[1] for sp in spans) or sum(sp[0] for sp in spans) != total:
+                continue
+            # The starred courses (the test-out) account for the range: their units are hi - lo (COBIx on #3444).
+            starred = set(re.findall(r"([A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\*", span))
+            units = {c.get("code"): c.get("units") for b in blocks for c in b.get("courses") or []}
+            if not starred or any(units.get(c) is None for c in starred) or sum(units[c] for c in starred) != hi - lo:
+                continue
+            now = {"min": total, "max": total}
+            words = "%s ... %s" % (span[:m.end("hi") - m.start() + 8].strip(), span[m.start("total") - m.start() - 8:].strip())
+            if st.get("source"):
+                words = "%s (%s)" % (words, st["source"])
+            notes.append({"field": field, "was": prog.get(field), "now": now, "words": words})
+            prog[field] = now
         elif st["kind"] == "clear_minimum":
             n = _num(m.group("n"))
             if _span_of(prog.get(field)) != (n, n) or _empty(prog.get("degree_total")):

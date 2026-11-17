@@ -44,32 +44,37 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 7,
-   "share": 0.714,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "CIS5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "flagged": [
     "CIS5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "pass": true
   },
@@ -231,6 +236,6 @@
    "Program title in the catalog is 'Physics 2.0'; degree requires 60 CSU-transferable units including Cal-GETC; the 39-unit total is the major only."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }
