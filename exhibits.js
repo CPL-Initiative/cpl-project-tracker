@@ -4030,6 +4030,7 @@
         }
         if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
         if (!CPJ.data && !CPJ.loading && !CPJ.error) listCplAiLoad().then(function () { if (state.view === "list") render(); });
+        if (!LEFT.mp) leftMapLoad().then(function () { if (state.view === "list") render(); });
         if (L.f === "left") {
           if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listLeftNote());
@@ -4274,10 +4275,8 @@
       if (!r.ok) throw new Error("kb/exhibit_audit/latest.json answered " + r.status);
       return r.json();
     });
-    var map = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
-    LEFT.p = Promise.all([audit, map, leftDecisionsRead()]).then(function (got) {
+    LEFT.p = Promise.all([audit, leftMapLoad(), leftDecisionsRead()]).then(function (got) {
       var d = got[0];
-      LEFT.map = got[1];
       LEFT.cards = [];
       ((d && d.title_cards) || []).forEach(function (c) {
         var t = c.tags || [];
@@ -4286,6 +4285,14 @@
       leftIndex();
     }, function (e) { LEFT.error = String(e && e.message || e); });
     return LEFT.p;
+  }
+  /* The CPL types and pointers file, read once a visit when the List first draws, so every canonical title's panel can
+     carry its type (Sam: "I need to have the Cpl type for each canon and local title nearby"). */
+  function leftMapLoad() {
+    if (LEFT.mp) return LEFT.mp;
+    LEFT.mp = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (j) { LEFT.map = j; }, function () { LEFT.map = null; });
+    return LEFT.mp;
   }
   /* The decisions saved so far, read live (anon read, Range-paged): a decided title leaves the list on reload the same day. */
   function leftDecisionsRead() {
@@ -4433,7 +4440,6 @@
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
     // The engine's shared parts (commons_list.js h.title, h.meta, h.heading, h.table, h.fold), so every List's panel reads alike.
-    if (!LEFT.p) listLeftLoad().then(function () { if (state.view === "list") render(); });
     var ctype = canonType(r.ut);
     var out = [h.title(listTitle(r)), h.meta([ctype ? "CPL type: " + ctype.type : "", cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
