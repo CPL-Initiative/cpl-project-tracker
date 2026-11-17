@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T23:10:38Z",
+ "written_at": "2026-11-17T23:11:31Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -77,19 +77,19 @@
    },
    "load": {
     "kind": "free",
-    "what": "step=load: the filed record passes and was never loaded"
+    "what": "the saved record passes and was never loaded into the database: a team session loads it"
    },
    "reconcile_then_load": {
     "kind": "free",
-    "what": "the filed record fails: reconcile steps, then step=load"
+    "what": "the saved record fails: a team session writes correction rules from the catalog's own wording, rescores the record, then loads it into the database"
    },
    "reread": {
     "kind": "free",
-    "what": "step=reread: the filed record passes and the live row is older"
+    "what": "the saved record passes and the database holds an older copy: a team session reloads it"
    },
    "ge_units_steps": {
     "kind": "free",
-    "what": "reconcile steps give the general education pattern its units"
+    "what": "a team session writes a correction rule that gives the general education pattern its units, then rescores the saved record"
    },
    "scorer_noncredit_hours": {
     "kind": "free",
@@ -97,7 +97,7 @@
    },
    "reconcile_steps": {
     "kind": "free",
-    "what": "the pipeline's reconcile steps for the college, on the catalog's own words"
+    "what": "a team session writes correction rules from the catalog's own wording, then rescores the saved record"
    }
   }
  },

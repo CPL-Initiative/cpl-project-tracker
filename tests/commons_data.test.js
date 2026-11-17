@@ -797,8 +797,11 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     !/harvest/i.test(seen) && !/data dashboard/i.test(seen), (seen.match(/.{40}harvest.{40}/i) || [""])[0]);
   check("3243 words 2: the table caption and the views' label use the view's title and collected", /collected program requirements/.test(txt(h1.d.querySelector("#cdd-colleges caption")))
     && h1.d.querySelector('nav.cdd-views').getAttribute("aria-label") === "College Data Collection views");
-  check("3243 lever (review): the reconcile lever names the pipeline, not work for the college",
-    !/the college's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})) && /the pipeline's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})));
+  // S678 (#3461 page finding 4): the lever says who acts, in plain words: a team session, never the college, and no
+  // "reconcile steps" jargon.
+  check("3243 lever (review): the reconcile lever names who acts (a team session), not work for the college",
+    !/the college's reconcile steps|reconcile steps/.test(JSON.stringify(REAL.rule.levers || {}))
+    && /^a team session writes correction rules/.test(((REAL.rule.levers || {}).reconcile_steps || {}).what || ""));
 
   // ── (14) the default order: highest completeness first (#3310, Sam: "show progress first"), said in words, announced,
   //        a person's own sort for the visit only ──
