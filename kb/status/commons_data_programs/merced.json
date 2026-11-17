@@ -1,9 +1,5 @@
-{"schema":1,"college":"Merced College","slug":"merced","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
-{"cn":"44431","title":"GeoSpatial Applications: Social Science","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt"},
-{"cn":"19370","title":"Human Services","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/21500.CT/requisites-ojrrt"},
+{"schema":1,"college":"Merced College","slug":"merced","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
 {"cn":"40266","title":"Political Science","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22070.AAT/requisites-ojrrt"},
-{"cn":"41857","title":"Social Justice Studies, Ethnic Studies","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22010.AAT/requisites-ojrrt"},
-{"cn":"33625","title":"Sociology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22650.AAT/requisites-ojrrt"},
 {"cn":"03471","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"45026","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"31181","title":"Computer-Aided Design and 3D Modeling","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -25,6 +21,7 @@
 {"cn":"40858","title":"UCTP: Physics","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.mccd.edu/programs/09010.CT/requisites-ojrrt"},
 {"cn":"44165","title":"Agriculture Systems – Agriculture Foundation","award":"Noncredit program","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/NC.CBE.AGT.CP/requisites-ojrrt"},
 {"cn":"33174","title":"Elementary Teacher Education","award":"A.A- T Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/49811.AAT/requisites-ojrrt"},
+{"cn":"44431","title":"GeoSpatial Applications: Social Science","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/22063.CN/requisites-ojrrt"},
 {"cn":"44715","title":"Teaching Online Education","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/08600.CM/requisites-ojrrt"},
 {"cn":"19494","title":"Agriculture Business","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/01000.CN/requisites-ojrrt"},
 {"cn":"19759","title":"Agriculture Business","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.mccd.edu/programs/01000.AS/requisites-ojrrt"},

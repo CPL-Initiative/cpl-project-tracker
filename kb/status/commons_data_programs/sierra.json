@@ -1,4 +1,4 @@
-{"schema":1,"college":"Sierra College","slug":"sierra","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Sierra College","slug":"sierra","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
 {"cn":"38522","title":"Chicana and Chicano Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sierracollege.edu/departments/ethnic-studies/"},
 {"cn":"32007","title":"Studio Arts","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sierracollege.edu/departments/art/"},
 {"cn":"10794","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

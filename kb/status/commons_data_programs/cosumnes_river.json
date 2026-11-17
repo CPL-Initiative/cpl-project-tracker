@@ -1,4 +1,4 @@
-{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Cosumnes River College","slug":"cosumnes_river","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
 {"cn":"11346","title":"American Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=425"},
 {"cn":"17868","title":"Liberal Arts - Arts and Humanities","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=465"},
 {"cn":"04596","title":"Marketing","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=474"},
@@ -55,13 +55,10 @@
 {"cn":"46419","title":"Elementary Teacher Education: Integrated Programs","award":"A.A- T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316"},
 {"cn":"15249","title":"Geography","award":"A.S. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=574"},
 {"cn":"12792","title":"Geology","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=393"},
-{"cn":"33072","title":"History","award":"A.A- T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=404"},
 {"cn":"20153","title":"Horticulture, Sustainable Landscape Technology","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=414"},
 {"cn":"35175","title":"Information Technology Associate","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248"},
 {"cn":"04600","title":"Journalism","award":"A.A. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=437"},
 {"cn":"31055","title":"Physics","award":"A.S. T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=540"},
-{"cn":"30566","title":"Psychology","award":"A.A- T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=552"},
-{"cn":"39656","title":"Social Justice Studies: Ethnic Studies","award":"A.A- T Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=576"},
 {"cn":"45317","title":"Surgical Technology","award":"A.S. Degree","cause":"units_incomplete","lever":"ge_units_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=600"},
 {"cn":"04616","title":"Theatre Arts","award":"A.A. Degree","cause":"units_incomplete","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=604"},
 {"cn":"11338","title":"Art - Design","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169"},
