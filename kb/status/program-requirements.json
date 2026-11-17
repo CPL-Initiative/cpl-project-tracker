@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-16T18:24:32Z",
-  "session": 667,
-  "moniker": "SkyPlover",
+  "written_at": "2026-11-16T23:42:46Z",
+  "session": 668,
+  "moniker": "SkyPipit",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_668_handoff.md",
+  "handoff": "docs/session_670_handoff.md",
   "next_step": {
     "title": "Coastline's objectives reread, then Golden West",
-    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Monterey Peninsula's three reloaded records are on main and reach CPL Pathways with the next display build."
+    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Then the prior-year reads of the Mathematics and Physics originals at Butte, Rio Hondo, Santa Ana and Berkeley City."
   },
   "calls": [
     {
@@ -338,6 +338,18 @@
   },
   "changes": [
     {
+      "at": "2026-11-16T23:45:00Z",
+      "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
+    },
+    {
+      "at": "2026-11-16T22:15:00Z",
+      "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
+    },
+    {
+      "at": "2026-11-16T22:15:00Z",
+      "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
+    },
+    {
       "at": "2026-11-16T18:30:00Z",
       "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
     },
@@ -372,18 +384,6 @@
     {
       "at": "2026-11-15T22:44:00Z",
       "text": "The College Collections ETA tops College Data Collection: a band with each college's projected Phase 1 date, and a card that opens the full clock in the side panel. Every college row also opens that college's CPL Pathways view beside the list."
-    },
-    {
-      "at": "2026-11-15T22:12:00Z",
-      "text": "The College Collections Plan, the agreed plan for collecting every college's data, is on one page in the Library as a draft for the team."
-    },
-    {
-      "at": "2026-11-15T19:50:00Z",
-      "text": "The controls that move the projected date on the ETA clock are small chips, so the date and the bar graph keep the focus."
-    },
-    {
-      "at": "2026-11-15T17:59:00Z",
-      "text": "The Commons ETA clock reads the harvest's daily headline and the live counts to project when each phase of the data collection finishes."
     }
   ],
   "headline": [

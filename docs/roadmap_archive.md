@@ -322,3 +322,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history moved at the S667 checkpoint
 
 - 2026-11-15 (S655 SkyCurlew, the CPL Queue routine's 06:12Z firing, conductor mode, full checkpoint): six merges (#3346, #3315, #3351, #3344, #3353, #3354); #3330 never reached `main` and #3351 landed the spend meter with card 10's $40 gates; the Riverside City capture read (240 of 268); Santa Ana's 1,362 objectives loaded; the Honors step 2 apply held at the permission check (Sheet 200 card 1); the course-id rescore's six rereads posted 159 rows on #3352.
+
+## INDEX update history moved at the S668 checkpoint
+
+- 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
