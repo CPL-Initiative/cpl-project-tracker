@@ -74,7 +74,8 @@ def fingerprint(outcomes: list[str]) -> str:
 
 
 def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
-    """The newest complete read of each slice: a later run's slice replaces an earlier one. With slugs, only the
+    """The newest complete read of each slice (a college set's part of a read): a later run's slice replaces an
+    earlier one of the same colleges. With slugs, only the
     reads whose slugs name one of them (the Coast district files three colleges under cccd: an objectives reread of
     one college must not repost the others)."""
     best: dict[tuple, tuple] = {}
@@ -85,7 +86,9 @@ def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
             continue
         if want and not (want & set(str(d.get("slugs") or "").split(","))):
             continue
-        key = (d["part"], d["of"])
+        # A slice is one college set's part of one read: the Coast district files three colleges under cccd, so a
+        # newer Coastline slice must never stand in for Golden West's (S670).
+        key = (_slug_set(d), d["part"], d["of"])
         if key not in best or int(d["run"]) > int(best[key][0]):
             best[key] = (d["run"], path)
     return [p for _, p in sorted(best.values(), key=lambda x: x[1])]
