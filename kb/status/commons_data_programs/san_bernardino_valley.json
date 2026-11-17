@@ -1,8 +1,6 @@
-{"schema":1,"college":"San Bernardino Valley College","slug":"san_bernardino_valley","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"San Bernardino Valley College","slug":"san_bernardino_valley","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"41756","title":"Child and Adolescent Development","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/child-development/child-adolescent-development-aat-degree/"},
 {"cn":"40833","title":"History","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/history/history-aa-t-degree/"},
-{"cn":"32309","title":"Political Science","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/"},
-{"cn":"39404","title":"Studio Arts","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/art/studio-arts-aa-t-degree/"},
 {"cn":"17767","title":"Administration of Justice - Corrections","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/adjus-corrections-certificate-achievement/"},
 {"cn":"44225","title":"Administration of Justice - Corrections","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/administration-justice/administration-justice-corrections-as-degree/"},
 {"cn":"04880","title":"Heating, Ventilation, Air Conditioning and Refrigeration","award":"A.S. Degree","cause":"found_not_extracted","lever":"paid_read","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/heating-ventilation-air-conditioning-refrigeration-hvacr/heating-ventilation-air-conditioning-refrigeration-as-degree/"},
@@ -60,5 +58,6 @@
 {"cn":"04894","title":"Music","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-aa-degree/"},
 {"cn":"35802","title":"Music","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/music/music-ast-degree/"},
 {"cn":"39483","title":"Nutrition and Dietetics","award":"A.S. T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/foods-nutrition/nutrition-and-dietetics-as-t-degree/"},
+{"cn":"32309","title":"Political Science","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/political-science/political-science-aat-degree/"},
 {"cn":"09255","title":"Television","award":"A.A. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://catalog.valleycollege.edu/degree-certificate-program-index/ftvm/television-aa-degree/"}
 ]}

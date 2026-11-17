@@ -1,4 +1,4 @@
-{"schema":1,"college":"College of the Redwoods","slug":"college_of_the_redwoods","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"College of the Redwoods","slug":"college_of_the_redwoods","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"18225","title":"Liberal Arts: Science Exploration","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-science-exploration-fall-2019"},
 {"cn":"31934","title":"Studio Arts","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://redwoods.elumenapp.com/catalog/2026-2027/program/studio-arts-for-transfer-fall-2026"},
 {"cn":"08395","title":"Early Childhood Education","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

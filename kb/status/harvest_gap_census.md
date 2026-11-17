@@ -1,8 +1,8 @@
 # Harvest gap census
 
-Written by `kb/_harvest_gap_census.py` (2026-11-13 18:04Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
+Written by `kb/_harvest_gap_census.py` (2026-11-17 23:09Z, live). Every active program without a passing record, each with one cause and one lever. Counts are a snapshot; rerun `harvest-gap-census.yml` for today's.
 
-Universe 20282 · passing 14531 · without a passing record 5751.
+Universe 20282 · passing 14632 · without a passing record 5650.
 
 Of the passing, 53 counts as passing on the tab; the scorer's own test fails (listed in the JSON, not counted as gaps).
 
@@ -12,26 +12,26 @@ Read by the harvest but outside the universe: Active - Teachout Only 630, Approv
 
 | Cause | Programs |
 |---|---:|
-| parked college | 284 |
-| no closed list in the Program Course File | 1699 |
-| page not found | 988 |
-| page found, never extracted | 14 |
-| extracted, places none of its courses | 737 |
+| parked college | 100 |
+| no closed list in the Program Course File | 1747 |
+| page not found | 1001 |
+| page found, never extracted | 15 |
+| extracted, places none of its courses | 725 |
 | extracted, no score (an error) | 5 |
-| live, coverage fails | 225 |
-| live, a course added | 2 |
-| live, units unequal | 1230 |
-| live, units incomplete | 567 |
+| live, coverage fails | 208 |
+| live, a course added | 3 |
+| live, units unequal | 1276 |
+| live, units incomplete | 570 |
 
 ## Top levers
 
 | # | Lever | Where | Programs | Free or paid | Estimate |
 |---:|---|---|---:|---|---:|
-| 1 | the Program Course File lists no course for it: program-course-fetch.yml, or none exists | statewide | 1699 | free |  |
-| 2 | reconcile steps give the general education pattern its units | statewide | 221 | free |  |
-| 3 | a session takes the parked college back up under its decision | Glendale Community College | 183 | free |  |
-| 4 | a scorer reading for a noncredit total in hours | statewide | 118 | free |  |
-| 5 | a reader change finds the program's page (a free page read first) | College of the Canyons | 101 | free |  |
+| 1 | the Program Course File lists no course for it: program-course-fetch.yml, or none exists | statewide | 1747 | free |  |
+| 2 | reconcile steps give the general education pattern its units | statewide | 213 | free |  |
+| 3 | a scorer reading for a noncredit total in hours | statewide | 120 | free |  |
+| 4 | a reader change finds the program's page (a free page read first) | College of the Canyons | 101 | free |  |
+| 5 | the pipeline's reconcile steps for the college, on the catalog's own words | Glendale Community College | 70 | free |  |
 | 6 | a session takes the parked college back up under its decision | Los Medanos College | 59 | free |  |
 | 7 | a reader change hands it its own page, then extraction | City College of San Francisco | 51 | paid | $3.47 |
 | 8 | a reader change hands it its own page, then extraction | Santa Rosa Junior College | 44 | paid | $3.69 |
@@ -42,16 +42,16 @@ Read by the harvest but outside the universe: Active - Teachout Only 630, Approv
 | 13 | the pipeline's reconcile steps for the college, on the catalog's own words | City College of San Francisco | 35 | free |  |
 | 14 | a reader change finds the program's page (a free page read first) | Ohlone College | 33 | free |  |
 | 15 | the pipeline's reconcile steps for the college, on the catalog's own words | Cuyamaca College | 32 | free |  |
-| 16 | a reader change hands it its own page, then extraction | American River College | 31 | paid | $2.52 |
+| 16 | a reader change hands it its own page, then extraction | American River College | 31 | paid | $2.53 |
 | 17 | a reader change finds the program's page (a free page read first) | San Joaquin Delta College | 30 | free |  |
 | 18 | the pipeline's reconcile steps for the college, on the catalog's own words | Clovis Community College | 30 | free |  |
 | 19 | the pipeline's reconcile steps for the college, on the catalog's own words | Santa Rosa Junior College | 30 | free |  |
 | 20 | a reader change hands it its own page, then extraction | Cosumnes River College | 29 | paid | $2.53 |
-| 21 | the pipeline's reconcile steps for the college, on the catalog's own words | Cabrillo College | 29 | free |  |
-| 22 | the pipeline's reconcile steps for the college, on the catalog's own words | Fullerton College | 29 | free |  |
-| 23 | a reader change hands it its own page, then extraction | Southwestern College | 28 | paid | $1.75 |
-| 24 | the pipeline's reconcile steps for the college, on the catalog's own words | College of the Sequoias | 28 | free |  |
-| 25 | a reader change hands it its own page, then extraction | Fresno City College | 26 | paid | $1.55 |
+| 21 | the pipeline's reconcile steps for the college, on the catalog's own words | Fullerton College | 29 | free |  |
+| 22 | a reader change hands it its own page, then extraction | Southwestern College | 28 | paid | $1.75 |
+| 23 | the pipeline's reconcile steps for the college, on the catalog's own words | College of the Sequoias | 28 | free |  |
+| 24 | a reader change hands it its own page, then extraction | Fresno City College | 26 | paid | $1.55 |
+| 25 | the pipeline's reconcile steps for the college, on the catalog's own words | Butte College | 26 | free |  |
 
 ## Next wave: one college per catalog host
 
@@ -59,7 +59,7 @@ Read by the harvest but outside the universe: Active - Teachout Only 630, Approv
 |---|---|---:|---:|---|
 | City College of San Francisco | ccsf.edu | 51 | $3.47 | yes |
 | Santa Rosa Junior College | catalog.santarosa.edu | 49 | $4.11 | yes |
-| American River College | arc.losrios.edu | 31 | $2.52 | yes |
+| American River College | arc.losrios.edu | 31 | $2.53 | yes |
 | Cosumnes River College | crc.losrios.edu | 29 | $2.53 | yes |
 | Southwestern College | catalog.swccd.edu | 28 | $1.75 | yes |
 | Fresno City College | fresno.curriqunet.com | 26 | $1.55 | yes |

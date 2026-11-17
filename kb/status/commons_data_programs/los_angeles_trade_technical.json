@@ -1,4 +1,4 @@
-{"schema":1,"college":"Los Angeles Trade Technical College","slug":"los_angeles_trade_technical","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Los Angeles Trade Technical College","slug":"los_angeles_trade_technical","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"41011","title":"Advanced Master Auto Technician (ASE A1-8 & L1 Test Prep)","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=225"},
 {"cn":"45285","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=65"},
 {"cn":"31090","title":"Energy Efficiency Technician","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf#page=138"},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"West Los Angeles College","slug":"west_los_angeles","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"West Los Angeles College","slug":"west_los_angeles","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"42558","title":"Athletic Training and Sports Medicine","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=70"},
 {"cn":"36801","title":"College Readiness","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"},
 {"cn":"37834","title":"College Readiness for the English Language Learner","award":"Noncredit program","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf#page=230"},

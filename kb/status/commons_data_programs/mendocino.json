@@ -1,4 +1,4 @@
-{"schema":1,"college":"Mendocino College","slug":"mendocino","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Mendocino College","slug":"mendocino","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"31959","title":"Liberal Arts and Sciences in Social Science","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=180"},
 {"cn":"03438","title":"Automotive Technology","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"03441","title":"Music - Vocal","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

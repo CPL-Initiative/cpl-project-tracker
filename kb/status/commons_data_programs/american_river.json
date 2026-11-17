@@ -1,4 +1,4 @@
-{"schema":1,"college":"American River College","slug":"american_river","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"American River College","slug":"american_river","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"44845","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"04543","title":"Music","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"44412","title":"Business Information Professional II","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399"},
@@ -59,11 +59,9 @@
 {"cn":"43381","title":"Green Vehicle Technology","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=364"},
 {"cn":"30023","title":"Landscape Design Technology","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664"},
 {"cn":"30024","title":"Landscape Design Technology","award":"A.S. Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=665"},
-{"cn":"12190","title":"Master Teacher","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505"},
 {"cn":"30595","title":"Psychology","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852"},
 {"cn":"39341","title":"Refrigeration Service Technician Apprenticeship","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211"},
 {"cn":"39732","title":"Refrigeration Service Technician Apprenticeship Level II","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211"},
 {"cn":"12191","title":"Site Supervisor","award":"Certificate of Achievement requiring 60+S/90+Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=506"},
-{"cn":"33273","title":"Spanish","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=976"},
-{"cn":"12189","title":"Teacher","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505"}
+{"cn":"33273","title":"Spanish","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=976"}
 ]}

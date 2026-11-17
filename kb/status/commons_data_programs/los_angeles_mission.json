@@ -1,4 +1,4 @@
-{"schema":1,"college":"Los Angeles Mission College","slug":"los_angeles_mission","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Los Angeles Mission College","slug":"los_angeles_mission","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"03339","title":"Business Administration","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=30"},
 {"cn":"15995","title":"Management","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf#page=31"},
 {"cn":"35616","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"Modesto Junior College","slug":"modesto_junior","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"Modesto Junior College","slug":"modesto_junior","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"42664","title":"Law, Public Policy, and Society","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://mjc.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-degree-mjc-fall-2026"},
 {"cn":"06692","title":"Communication Studies","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"32773","title":"Communication Studies","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

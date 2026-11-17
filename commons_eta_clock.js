@@ -40,8 +40,8 @@
   var PANE_KEY = "clock";
   var FILES = { pr: "kb/status/program-requirements.json", refs: "kb/status/commons.json", integ: "kb/status/cdc_integrations.json",
     skills: "kb/reference/industry_credential_skills.json",
-    billing: "kb/reference/model_spend_daily.json", sessions: "kb/status/session_spend.json" };
-  var ST = { pr: null, refs: null, integ: null, skills: null, billing: null, sessions: null };
+    billing: "kb/reference/model_spend_daily.json", sessions: "kb/status/session_spend.json", cre: "kb/reference/cre_weights.json" };
+  var ST = { pr: null, refs: null, integ: null, skills: null, billing: null, sessions: null, cre: null };
   var PLAN_URL = "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6808952144";
   /* The College Collections Plan, the plan drawn as one page in the CPL Library (Sam, S661). It opens in a new tab:
      it is a page of its own, wider than the side panel. */
@@ -170,7 +170,40 @@
   function dayNote(d) { return (bill().notes || {})[d] || ""; }
   function partialDay(d) { return (bill().partial || []).indexOf(d) >= 0; }
   function sessionDay(d) { var b = (ST.sessions || {}).by_day || {}; return b[d] || null; }
+  /* The extraction runs' own cost by the day each read started (kb/_build_spend_daily.py, S678): measured, never pasted,
+     and shown beside the billing total, never added to it. */
+  function runnerDay(d) { var r = bill().runner || {}; return typeof r[d] === "number" ? r[d] : null; }
   var COST_CAP = 1500;
+  /* Cost per CRE (Sam, 2026-11-17, S678): 1 CRE = one course outline row, one program record = 15 CRE (a record with
+     gaps noted counts in full), weights fixed for Phase 1 in kb/reference/cre_weights.json. CREs by day come from the
+     live read's load counts (live.by_day: outline rows and program records by the UTC day they were loaded); dollars by
+     day are the billing figures where Sam pasted them, else the measured runs' and sessions' own figures. Both over the
+     same days. */
+  function dayDollars(d) {
+    if (hasSpend(d)) return { usd: spend(d), from: "billing" };
+    var r = runnerDay(d), sd = sessionDay(d), m = (r || 0) + ((sd && sd.usd) || 0);
+    return r != null || (sd && sd.sessions) ? { usd: m, from: "measured" } : null;
+  }
+  function creWindow(M, asOf) {
+    var cfg = ST.cre, bd = M && M.live && M.live.by_day;
+    if (!cfg || !cfg.weights) return { tba: "the CRE weights file could not be read" };
+    if (!bd) return { tba: "the daily load counts arrive with the next live read" };
+    var w = cfg.weights, n = cfg.window_days || 7, cre = 0, usd = 0, days = 0, measured = 0, last = asOf;
+    for (var k = 0; k < n; k++) {
+      var d = dstr(last - k), rows = (bd.outline_rows || {})[d] || 0, recs = (bd.program_records || {})[d] || 0, $ = dayDollars(d);
+      cre += rows * (w.course_outline_row || 0) + recs * (w.program_record || 0);
+      if ($) { usd += $.usd; days++; if ($.from === "measured") measured++; }
+    }
+    return { from: last - n + 1, to: last, cre: cre, usd: usd, per: cre > 0 && days ? usd / cre : null, days: days, measured: measured, n: n, base: cfg.baseline };
+  }
+  function creWords(X) {
+    if (X.tba) return "Cost per CRE: TBA (" + X.tba + ").";
+    var span = shortDate(X.from) + " to " + shortDate(X.to);
+    var b = X.base, base = b ? " Baseline, " + b.label + ": about " + fmt(b.cre) + " CRE at about $" + b.usd_per_cre[0].toFixed(2) + " to $" + b.usd_per_cre[1].toFixed(2) + " per CRE." : "";
+    if (X.per == null) return "Cost per CRE, " + span + ": TBA (" + (X.cre ? "no dollars recorded for these days" : "no CRE collected") + ")." + base;
+    return "Cost per CRE, " + span + ": $" + X.per.toFixed(2) + " ($" + Math.round(X.usd).toLocaleString("en-US") + " over " + fmt(X.cre) + " CRE; dollars on " + X.days + " of " + X.n + " days"
+      + (X.measured ? ", " + X.measured + " of them from the runs' and sessions' own figures, the rest from billing" : ", from billing") + ")." + base;
+  }
 
   /* ── dates: whole UTC days, as yyyy-mm-dd ── */
   function dnum(s) { var p = String(s).split("-"); return Date.UTC(+p[0], +p[1] - 1, +p[2]) / 86400000; }
@@ -231,6 +264,8 @@
       asOf: asOf, written: (pr && pr.written_at) || "", active: h.active, complete: h.complete, remaining: Math.max(0, h.active - h.complete),
       pace: { soonest: c7 == null ? null : h.complete - c7, latest: c7 == null || c14 == null ? null : c7 - c14 },
       span: { soonest: d7 == null ? null : asOf - d7, latest: d14 == null ? null : d7 - d14 },
+      /* The days each window averages, so the page can say them (COBIx's S678 list, item 1c). */
+      window: { soonest: d7 == null ? null : [d7, asOf], latest: d14 == null ? null : [d14, d7] },
       slo: { have: oc.slo_courses_on_active || 0, universe: universe }, obj: { have: oc.objective_courses_on_active || 0, universe: universe },
       liveAt: live.read_at || "", bars: bars, colleges: collegeRows(M)
     };
@@ -254,6 +289,15 @@
     if (n <= 0) return "no net progress (" + fmt(n) + " in " + d + " days)";
     return fmt(n) + " in " + d + " days";
   }
+  /* The days a window averages, in plain words: "the pace of Nov 10 to 17" (or "Oct 28 to Nov 3" across a month). */
+  function paceDays(B, m) {
+    var w = B.window && B.window[m];
+    if (!w) return "a pace the headline series cannot date";
+    var a = shortDate(w[0]), b = shortDate(w[1]), same = a.split(" ")[0] === b.split(" ")[0];
+    return "the pace of " + a + " to " + (same ? b.split(" ")[1] : b);
+  }
+  /* The SLO and objective rate, said as what it is: a fixed estimate, never a measured pace. */
+  function rateWords(m) { return "a fixed estimate of about " + fmt(EST_DAILY[m]) + " courses a night for course SLOs and objectives, not a measured rate"; }
   function nearComplete(c) { if (c.a <= 0) return c.r <= 0; var f = c.p / c.a; return f >= NEAR_COMPLETE || (c.r <= 8 && f >= 0.85); }
 
   /* The pace model, ported from the mock: each connection on applies its factor from its start day; factors multiply,
@@ -581,6 +625,8 @@
     var sd = sessionDay(d), sess = sd && (sd.sessions || sd.not_available) ?
       "Sessions' own figures (handoffs' Spend: lines): " + (sd.sessions ? usd(sd.usd) + " from " + fmt(sd.sessions) + (sd.sessions === 1 ? " session" : " sessions") : "none given") +
       (sd.not_available ? ", " + fmt(sd.not_available) + " not available" : "") + "." : null;
+    var rd = runnerDay(d);
+    if (rd != null) sess = (sess ? sess + " " : "") + "Extraction runs' own cost (read receipts): " + usd(rd) + ".";
     if (!hasSpend(d)) return [ST.billing ? "No spend recorded for this day." : "The billing file (" + FILES.billing + ") could not be read."].concat(sess ? [sess] : []);
     var t = topups(d) || [], code = t.reduce(function (a, b) { return a + b; }, 0), out = ["Total this day: " + usd((apiCost(d) || 0) + code) + "."];
     out.push("API (Console): " + (apiCost(d) != null ? usd(apiCost(d)) : "no figure") + ".");
@@ -692,7 +738,7 @@
     sec.appendChild(sw);
     var pr = function (m) { return paceWords(B, m); };
     sec.appendChild(el("p", { cls: "eta-callout" }, [el("strong", { text: "Projections, not partner commitments. " }), S.phase === "1"
-      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the committed headline series (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses the latest week's pace (" + pr("soonest") + "), Latest the week before it (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their dates are estimates. Colleges and partners should not read a lever as a promise."
+      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the committed headline series (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
       : "Phase 2 and Phase 3 are dated only when a partner or college feed has a start date in the registry. None of those feeds is dated today, so this phase's completion is not dated."]));
     var grid = el("div", { cls: "eta-grid" });
     function cell(h, v, d, key) { grid.appendChild(el("div", { cls: "eta-cell", "data-cell": key }, [el("h4", { text: h }), el("p", { cls: "eta-v", text: v }), d ? el("p", { cls: "eta-note", text: d }) : null])); }
@@ -700,8 +746,10 @@
       var other = freshState(); other.mode = S.mode === "soonest" ? "latest" : "soonest"; other.on = S.on; other.factors = S.factors; other.start = S.start; other.twoReads = S.twoReads;
       var Q = phase1(B, other, null), soon = S.mode === "soonest" ? P : Q, late = S.mode === "soonest" ? Q : P;
       var lbl = function (X) { return X.day == null ? "pace not measured yet" : longDate(X.day) + (X.est ? " est." : ""); };
-      cell(soon.moved ? "Soonest date (projected)" : "Soonest date", lbl(soon), "The latest of the three collections at the current 7-day pace for programs and the faster outline estimate.", "soonest");
-      cell(late.moved ? "Latest date (projected)" : "Latest date", lbl(late), "The same remaining work at the prior week's program pace and the slower outline estimate.", "latest");
+      cell(soon.moved ? "Soonest date (projected)" : "Soonest date", lbl(soon), "Soonest: " + paceDays(B, "soonest") + " for programs, and " + rateWords("soonest") + ".", "soonest");
+      cell(late.moved ? "Latest date (projected)" : "Latest date", lbl(late), "Latest: " + paceDays(B, "latest") + " for programs, and " + rateWords("latest") + ".", "latest");
+      cell("Cost per CRE", (function () { var X = creWindow(M, B.asOf); return X.per == null ? "TBA" : "$" + X.per.toFixed(2); })(), creWords(creWindow(M, B.asOf))
+        + " 1 CRE is one course outline row (an SLO or an objective); one program record is 15 CRE, and a record with gaps noted counts in full. The weights are fixed for Phase 1.", "cre");
       cell("As of", longDate(B.asOf) + " headline", "The headline in kb/status/program-requirements.json, written " + (B.written ? B.written.replace("T", " ").slice(0, 16) + " UTC" : "on a date the file does not give") + ".", "asof");
     } else { cell("Soonest date", "Not dated"); cell("Latest date", "Not dated"); cell("As of", "Integrations registry" + (ST.integ && ST.integ.updated ? ", " + longDate(dnum(ST.integ.updated)) : "")); }
     sec.appendChild(grid);
@@ -717,7 +765,7 @@
     sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-real-h" }, [el("h4", { id: "eta-real-h", text: "What is real, and what is not dated" }),
       el("p", { cls: "eta-p", text: "Real, from committed files: the Active programs complete and their daily series, the live read's SLO, objective and course counts, each college's counts, the references' counts, the integrations by status, and the credential skills by harvest day. The Soonest and Latest program dates are computed from that headline series." }),
       el("p", { cls: "eta-p", text: "Estimates and assumptions, labeled where they appear: the SLO and objectives rates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night, from reading one host's outlines a night), the stalled shares behind the two Unblock chips (the November 13 gap census), and every connection's factor and start date. Any date that moves when a connection is on is a projection, not a partner commitment." }),
-      el("p", { cls: "eta-p", text: "Data gaps: course SLOs and objectives have no day-by-day counts, and some public pages print neither, so those dates may never reach every course. No committed file has day-by-day counts by college, so the bars stay statewide when a college is selected, and a college's date uses its share of statewide progress. Credential skills have no remaining count, so they do not set the date. The daily spend is the billing figures supplied for October 17 to November 15, 2026; no feed supplies spend yet." })]));
+      el("p", { cls: "eta-p", text: "Data gaps: course SLOs and objectives have no day-by-day counts, and some public pages print neither, so those dates may never reach every course. No committed file has day-by-day counts by college, so the bars stay statewide when a college is selected, and a college's date uses its share of statewide progress. Credential skills have no remaining count, so they do not set the date. The billing figures are pasted by hand (October 17 to November 15, 2026 so far); the extraction runs' own cost and the sessions' own figures are measured every day from the committed files, from November 17, 2026 on, and shown beside billing, never added to it." })]));
     return sec;
   }
 
@@ -752,9 +800,9 @@
       var part = function (id) { return P.parts.filter(function (p) { return p.id === id; })[0]; };
       var est = function (id) { var p = part(id); return p && p.now.day != null ? "Est. " + longDate(p.now.day) + ". Not a measured pace." : "Pace not measured yet"; };
       var pp = ST.pr && ST.pr.harvest && ST.pr.harvest.parts || {}, plo = (pp.outcomes || {}).plo, cat = (pp.links || {}).catalog;
-      rows = [["Program requirements, Active", fmt(B.complete) + " of " + fmt(B.active), "Soonest: " + paceWords(B, "soonest") + " through " + longDate(B.asOf) + "; Latest: " + paceWords(B, "latest") + " before that", part("programs").now.day != null ? longDate(part("programs").now.day) + (part("programs").now.moved ? " (projected)" : "") : "Pace not measured yet"],
-        ["Course SLOs on Active programs", fmt(B.slo.have) + " of " + fmt(B.slo.universe), "No day-by-day count. Est. about " + fmt(EST_DAILY[S.mode]) + " courses a night at the " + (S.mode === "soonest" ? "sooner" : "later") + " rate.", est("slo")],
-        ["Course objectives on Active programs", fmt(B.obj.have) + " of " + fmt(B.obj.universe), "No day-by-day count; read in the same pass as SLOs.", est("objectives")],
+      rows = [["Program requirements, Active", fmt(B.complete) + " of " + fmt(B.active), "Soonest: " + paceDays(B, "soonest") + " (" + paceWords(B, "soonest") + "); Latest: " + paceDays(B, "latest") + " (" + paceWords(B, "latest") + ")", part("programs").now.day != null ? longDate(part("programs").now.day) + (part("programs").now.moved ? " (projected)" : "") : "Pace not measured yet"],
+        ["Course SLOs on Active programs", fmt(B.slo.have) + " of " + fmt(B.slo.universe), "No day-by-day count. A fixed estimate of about " + fmt(EST_DAILY[S.mode]) + " courses a night at the " + (S.mode === "soonest" ? "sooner" : "later") + " rate, not measured.", est("slo")],
+        ["Course objectives on Active programs", fmt(B.obj.have) + " of " + fmt(B.obj.universe), "No day-by-day count; read in the same pass as SLOs, at the same fixed estimate, not measured.", est("objectives")],
         ["Program PLOs", plo ? fmt(plo[0]) + " of " + fmt(plo[1]) : "TBA", "Pace not measured yet", "Pace not measured yet"],
         ["Catalog source", cat ? fmt(cat[0]) + " of " + fmt(cat[1]) : "TBA", cat && cat[0] >= cat[1] ? "Already complete" : "Pace not measured yet", cat && cat[0] >= cat[1] ? "Complete" : "Pace not measured yet"]];
       ((ST.refs && ST.refs.rows) || []).forEach(function (r) {
@@ -795,14 +843,15 @@
 
   /* The lite strip for the top of the CPL Commons tab (mounted at go-live): the phase, the two dates and the pace, and
      the word that opens the full clock. */
-  function strip(B) {
+  function strip(B, M) {
     if (!B) return null;
     var S = freshState(), P = phase1(B, S, null), L = freshState(); L.mode = "latest";
     var Q = phase1(B, L, null), lbl = function (X) { return X.day == null ? "pace not measured yet" : longDate(X.day) + (X.est ? " est." : ""); };
     return el("section", { cls: "eta-strip", "aria-label": "ETA to complete Phase 1" }, [
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Phase" }), el("p", { text: "Phase 1, current collection" })]),
-      el("div", { cls: "eta-cell" }, [el("h4", { text: "Soonest date" }), el("p", { text: lbl(P) })]),
-      el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) })]),
+      el("div", { cls: "eta-cell" }, [el("h4", { text: "Soonest date" }), el("p", { text: lbl(P) }), el("p", { cls: "eta-note", "data-eta-days": "soonest", text: "Soonest: " + paceDays(B, "soonest") })]),
+      el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) }), el("p", { cls: "eta-note", "data-eta-days": "latest", text: "Latest: " + paceDays(B, "latest") })]),
+      el("div", { cls: "eta-cell", "data-eta-cre": "" }, [el("h4", { text: "Cost per CRE" }), el("p", { text: creWords(creWindow(M, B.asOf)) })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: paceWords(B, "soonest") + " newly complete" }),
         el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
@@ -1000,5 +1049,5 @@
   window.CPL_CDC_EXT.push(ext);
   window.CPL_COMMONS_ETA = { spendLines: spendLines, VIEW_KEY: VIEW_KEY, LISTED: LISTED, FILES: FILES, LEVERS: LEVERS, ST: ST, CSS: CSS, base: base, phase1: phase1, finish: finish, freshState: freshState,
     _reset: function () { SHARED = null; MOUNTS = []; },
-    strip: function (M) { return ST.pr ? strip(base(M, ST.pr, ST.skills)) : null; }, ready: ready, view: view, nearComplete: nearComplete, stalledFactor: stalledFactor };
+    strip: function (M) { return ST.pr ? strip(base(M, ST.pr, ST.skills), M) : null; }, ready: ready, view: view, nearComplete: nearComplete, stalledFactor: stalledFactor };
 })();
