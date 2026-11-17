@@ -45,7 +45,7 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
    The 13:12Z firing's writer note on #3455 flags Chaffey's yield (Cal-GETC 45032 taking Physical Science 18435's page) as
    suspect: before the load, check that the page's heading names 45032. Its other two suspects, Feather River 04321 and
    Lemoore 33017, resolved: the fresh captures find each on its own page.
-3. **If #3455 or #3458 is still open:** `test` green on the head, COBIx's last page read, squash-merge, `git log origin/main`.
+3. **Chaffey's suspect yield** is the only carried review item (first thing 2).
 4. Harvest NEXT (3)'s tail: the self-test recall (27 to 26 of 28), then the `NCL_EXTRACT` switch items.
 5. **governance-team-enablement** NEXT (1) (still waits: `docket-process` and `credential-catalog-sync` have had no
    scheduled run since #3425 moved them into `live-counts`; last runs Nov 16 13:54Z and 22:54Z, per the writer note), then harvest NEXT (4) to (7) (NEXT 7 now opens with the Commons `spent` figure).
@@ -67,8 +67,8 @@ Several college reads share the Commons and display files: merge their branches 
 | PR or branch | State | Next |
 |---|---|---|
 | #3456 slice B, six colleges | merged (fbedee5a) | none |
-| #3455 this checkpoint | merge on green `test` | First thing 3 |
-| #3458 the adoption build's nested-stamp flake | merge on green `test` | First thing 3 |
+| #3455 this checkpoint | merged (888a0e4b) | none |
+| #3458 the adoption build's nested-stamp flake | merged (073efecc) | none |
 | `claude/chaffey-yield-s676` | read running | First thing 2 |
 | `claude/<six>-yield-s676` | merged through #3456 | none (branches stay; never delete from a session) |
 | #3421, #3387, #3284, #3293 | drafts; keep | First thing 1; harvest NEXT (4) |
@@ -85,6 +85,6 @@ on the 400-character summary check and wrote nothing): `d-slice-b-six-no-live-ho
 S676 holds no PR subscription, check-in or artifact watch. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-Spend: not available; 2026-11-17T13:12Z to about 14:55Z. Extraction on the runners: $6.85.
+Spend: not available; 2026-11-17T13:12Z to about 15:30Z. Extraction on the runners: $6.85.
 
-Session cost: `get_session` not available. Substantive PRs merged: 1 (#3456).
+Session cost: `get_session` not available. Substantive PRs merged: 2 (#3456, #3458).
