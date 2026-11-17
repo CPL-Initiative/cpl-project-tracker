@@ -23,7 +23,9 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
   again under the #3408 page yield, each on `claude/<college>-yield-s676`, then `step=reread` (45 unchecked rows replaced) and
   `step=load` (4 inserted), merged onto `claude/yield-wave-s676` for one Commons rebuild and display build 71b67268c567.
   Passing +22 for $6.85 of extraction. COBIx checked it (comment 6950870616): nothing blocking; its cost-total note is harvest
-  NEXT (7).
+  NEXT (7). `lints` first failed on the census pin: Feather River 36176, Gavilan 46046 and Lemoore 19305 no longer
+  reach a yield, since the fresh captures file each holder under `page_claimed` and find its taker on its own page. Judged
+  as the yield's intended end; the pin records it and checks it holds.
 - **Decided:** none of the 14 records the reads dropped held a live row (all had failed and were never loaded), so no guarded
   delete (`d-slice-b-six-no-live-holder-rows-s676`).
 
@@ -36,6 +38,8 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
    14:30Z. When it files: compare the summary with `main`, dispatch `step=reread` then `step=load` (college `Chaffey College`),
    build the Commons data (`kb/_build_commons_data_status.py`) and the display (`kb/_build_roep_display.py`), open the PR, merge on
    green `test`, then read the live rows of the records it drops. If the run failed or timed out, dispatch the read again.
+   Its holder 18435 is pinned in `tests/harvest_ncl_lookup_census_test.py`: if the fresh capture files it under `page_claimed`
+   with the taker 45032 found, move it to `RESOLVED_BY_CLAIM_S676`'s list, as #3456 did for three; anything else is a finding.
 3. **If #3456 or #3455 is still open:** `test` green on the head, COBIx's last page read, squash-merge, `git log origin/main`.
 4. Harvest NEXT (3)'s tail: the self-test recall (27 to 26 of 28), then the `NCL_EXTRACT` switch items.
 5. **governance-team-enablement** NEXT (1), then harvest NEXT (4) to (7) (NEXT 7 now opens with the Commons `spent` figure).
