@@ -501,4 +501,17 @@ check('"credentials": adopt[:4]' not in open(os.path.join(ROOT, "kb", "_build_ro
       "the display build no longer caps a course's Could-adopt credentials at four")
 
 print("\n%d failure(s)" % len(fails))
+# COBIx's spot-check on #3429: an umbrella credit-by-exam exhibit lends no title, and Roman numerals fold.
+import importlib.util as _u, os as _o
+_sp = _u.spec_from_file_location("rd2", _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), "kb", "_build_roep_display.py"))
+_rd = _u.module_from_spec(_sp); _sp.loader.exec_module(_rd)
+assert _rd.fold_label("Firefighter I") == _rd.fold_label("firefighter 1"), "a Roman numeral folds to its digit"
+assert _rd.fold_label("Fire Officer II") == "fire officer 2" and _rd.fold_label("Spanish IV") == "spanish 4"
+_rows = [{"exhibit_id": "MAPCBES-X-1", "local_courses": [{"subject": s, "number": "1"}]} for s in ("ARCH", "CHIL", "AIRE")]
+_rows += [{"exhibit_id": "MAPICI-P-BL-1-001", "local_courses": [{"subject": s, "number": "1"}]} for s in ("AJ", "PE", "EMS", "ADJU")]
+_rows += [{"exhibit_id": "MAPCBEN-BCK-1-001", "local_courses": [{"subject": "CABT", "number": "210"}]}]
+assert _rd.cbe_umbrellas(_rows) == {"MAPCBES-X-1"}, "only a credit-by-exam exhibit across three subjects is an umbrella"
+print("umbrella and numeral checks passed")
+
 sys.exit(1 if fails else 0)
+

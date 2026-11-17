@@ -1,7 +1,7 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "268ae2cbbc23",
+ "build": "b206e93d41a2",
  "built": "2026-11-13",
  "inputs": {
   "records": 18205,
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -835,7 +835,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -1865,7 +1865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -2758,7 +2758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -3829,7 +3829,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -4062,7 +4062,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 11,
+       "credentials_n": 10,
        "colleges_n": 7,
        "credentials": [
         {
@@ -4099,13 +4099,6 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Lake Tahoe Community College",
           "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -4454,7 +4447,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
+       "credentials_n": 4,
        "colleges_n": 7,
        "credentials": [
         {
@@ -4471,13 +4464,6 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Lake Tahoe Community College",
           "Moreno Valley College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -4575,8 +4561,8 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 5,
+       "credentials_n": 2,
+       "colleges_n": 4,
        "credentials": [
         {
          "credential": "Fire Behavior and Combustion",
@@ -4591,13 +4577,6 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Cabrillo College",
-          "Lake Tahoe Community College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
           "Lake Tahoe Community College"
          ]
         }
@@ -4758,7 +4737,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -4991,7 +4970,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 11,
+       "credentials_n": 10,
        "colleges_n": 7,
        "credentials": [
         {
@@ -5028,13 +5007,6 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Lake Tahoe Community College",
           "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -5383,7 +5355,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
+       "credentials_n": 4,
        "colleges_n": 7,
        "credentials": [
         {
@@ -5400,13 +5372,6 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Lake Tahoe Community College",
           "Moreno Valley College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
-          "Lake Tahoe Community College"
          ]
         },
         {
@@ -5504,8 +5469,8 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 3,
-       "colleges_n": 5,
+       "credentials_n": 2,
+       "colleges_n": 4,
        "credentials": [
         {
          "credential": "Fire Behavior and Combustion",
@@ -5520,13 +5485,6 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Fire Academy Experience",
          "colleges": [
           "Cabrillo College",
-          "Lake Tahoe Community College"
-         ]
-        },
-        {
-         "credential": "Firefighter I",
-         "colleges": [
-          "Bakersfield College",
           "Lake Tahoe Community College"
          ]
         }
@@ -5687,7 +5645,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -6106,7 +6064,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 39,
      "here": 7,
-     "adopt": 13,
+     "adopt": 12,
      "consider": 1
     },
     "courses": {
@@ -6417,19 +6375,7 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "BUS 120",
         "title": "Legal Environment of Business"
        }
-      ],
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Plant Propagation",
-         "colleges": [
-          "Saddleback College"
-         ]
-        }
-       ]
-      }
+      ]
      },
      "BUSE 201": {
       "title": "Business Organization and Management",
@@ -7101,19 +7047,8 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "adopt": {
        "credentials_n": 5,
-       "colleges_n": 12,
+       "colleges_n": 11,
        "credentials": [
-        {
-         "credential": "Real Estate Principles",
-         "colleges": [
-          "Chaffey College",
-          "City College of San Francisco",
-          "Copper Mountain College",
-          "Los Angeles Harbor College",
-          "Modesto Junior College",
-          "West Los Angeles College"
-         ]
-        },
         {
          "credential": "California Real Estate Salesperson License",
          "colleges": [
@@ -7140,6 +7075,14 @@ window.CPL_PATHWAYS_ROEP = {
           "Moreno Valley College",
           "Norco College",
           "Riverside City College"
+         ]
+        },
+        {
+         "credential": "Real Estate Principles",
+         "colleges": [
+          "Chaffey College",
+          "Copper Mountain College",
+          "Modesto Junior College"
          ]
         },
         {
@@ -7246,7 +7189,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -7407,7 +7350,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 10,
      "here": 1,
-     "adopt": 7,
+     "adopt": 6,
      "consider": 0
     },
     "courses": {
@@ -7468,19 +7411,7 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "BUS 120",
         "title": "Legal Environment of Business"
        }
-      ],
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Plant Propagation",
-         "colleges": [
-          "Saddleback College"
-         ]
-        }
-       ]
-      }
+      ]
      },
      "ACCT 116A": {
       "title": "Financial Accounting",
@@ -7788,7 +7719,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -7995,7 +7926,7 @@ window.CPL_PATHWAYS_ROEP = {
       ],
       "adopt": {
        "credentials_n": 16,
-       "colleges_n": 16,
+       "colleges_n": 15,
        "credentials": [
         {
          "credential": "Firefighter 1",
@@ -8043,9 +7974,7 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Copper Mountain College",
           "Lake Tahoe Community College",
-          "Long Beach City College",
           "Merced College",
-          "San Diego Miramar College",
           "Santa Ana College"
          ]
         },
@@ -9244,7 +9173,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -10514,7 +10443,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -11235,7 +11164,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -11588,7 +11517,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -11698,7 +11627,7 @@ window.CPL_PATHWAYS_ROEP = {
     "counts": {
      "courses": 6,
      "here": 1,
-     "adopt": 2,
+     "adopt": 1,
      "consider": 0
     },
     "courses": {
@@ -11717,19 +11646,13 @@ window.CPL_PATHWAYS_ROEP = {
        }
       ],
       "adopt": {
-       "credentials_n": 2,
-       "colleges_n": 2,
+       "credentials_n": 1,
+       "colleges_n": 1,
        "credentials": [
         {
          "credential": "Introduction to Baking & Pastry",
          "colleges": [
           "Santa Ana College"
-         ]
-        },
-        {
-         "credential": "Plant Propagation",
-         "colleges": [
-          "Saddleback College"
          ]
         }
        ]
@@ -11748,19 +11671,7 @@ window.CPL_PATHWAYS_ROEP = {
         "id": "CULN M1027",
         "title": "Introduction to Culinary Arts"
        }
-      ],
-      "adopt": {
-       "credentials_n": 1,
-       "colleges_n": 1,
-       "credentials": [
-        {
-         "credential": "Plant Propagation",
-         "colleges": [
-          "Saddleback College"
-         ]
-        }
-       ]
-      }
+      ]
      },
      "CUL-37": {
       "title": "Intermediate Culinary Arts",
@@ -11929,7 +11840,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -13880,7 +13791,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -14231,7 +14142,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -14531,7 +14442,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
+       "credentials_n": 4,
        "colleges_n": 14,
        "credentials": [
         {
@@ -14550,12 +14461,6 @@ window.CPL_PATHWAYS_ROEP = {
           "San Diego City College",
           "Sierra College",
           "West Los Angeles College"
-         ]
-        },
-        {
-         "credential": "Basic Refrigeration & AC Lab",
-         "colleges": [
-          "San Diego City College"
          ]
         },
         {
@@ -14677,7 +14582,7 @@ window.CPL_PATHWAYS_ROEP = {
        }
       ],
       "adopt": {
-       "credentials_n": 4,
+       "credentials_n": 3,
        "colleges_n": 4,
        "credentials": [
         {
@@ -14692,12 +14597,6 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "AP Computer Science A",
          "colleges": [
           "Modesto Junior College"
-         ]
-        },
-        {
-         "credential": "Basic Computer Keyboarding",
-         "colleges": [
-          "San Diego Mesa College"
          ]
         },
         {
@@ -15002,7 +14901,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -16645,7 +16544,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -16977,7 +16876,7 @@ window.CPL_PATHWAYS_ROEP = {
        ]
       },
       "adopt": {
-       "credentials_n": 5,
+       "credentials_n": 4,
        "colleges_n": 8,
        "credentials": [
         {
@@ -16988,12 +16887,6 @@ window.CPL_PATHWAYS_ROEP = {
           "Merced College",
           "Reedley College",
           "Riverside City College",
-          "San Diego City College"
-         ]
-        },
-        {
-         "credential": "Basic Refrigeration & AC Lab",
-         "colleges": [
           "San Diego City College"
          ]
         },
@@ -17466,7 +17359,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -18510,7 +18403,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -19288,7 +19181,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   },
@@ -19456,7 +19349,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "268ae2cbbc23",
+    "build": "b206e93d41a2",
     "built": "2026-11-13"
    }
   }
