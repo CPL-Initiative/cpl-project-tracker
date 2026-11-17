@@ -63,6 +63,14 @@ The package he approved:
    ("posted nothing" is a state, not a small amount). The curator view keeps
    exact dollars: this is a formatting rule, since dollars are computed on the
    page.
+   **Beside its max (2026-11-17, Cabrillo College's question; pending COBIx's
+   privacy read and Sam's go on the PR).** A figure that has reached its cap
+   prints the cap exactly, because the page already prints that cap beside it
+   and the figure discloses nothing more; and a coarse figure short of its cap
+   never rounds past the cap's own thousand. Before this, a noncredit outcome
+   at 37 exhibits against a target of 9 read "$18,000" under a max of
+   "$18,336", and two credit priorities read "$66,000" under "$65,545". Guard:
+   `tests/cpl_funding_public_dollars_at_cap.test.js`.
 6. **The rate and the explanations stay public.** What dollars deconstruct to
    is units, never students; the rate is derivable from figures public by
    statute; and the explainer exists to explain.

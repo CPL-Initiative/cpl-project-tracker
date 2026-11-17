@@ -1542,33 +1542,53 @@
   // The label is built from the constant, never typed: tests/suppression_floor
   // fails on a quoted "<N" so a mask can never drift from its threshold.
   var PUBLIC_MONEY_FLOOR = 1000;
-  function coarseDollars(v) { return Math.round(v / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR; }
-  function earnedMoney(v) {
+  // A FIGURE BESIDE ITS MAX (Cabrillo's question, 2026-11-17: a noncredit
+  // outcome at 37 exhibits against a target of 9 read "$18,000" under a max of
+  // "$18,336", and two credit priorities read "$66,000" under "$65,545"). The
+  // coarsening protects a figure the page does not otherwise show. A figure
+  // that has reached its cap IS the cap, which the page prints exactly beside
+  // it, so it prints exactly too; and a coarse figure short of its cap never
+  // rounds up past the cap's own thousand, so it can never read as more than
+  // the max or as a met target it has not met. `cap` is optional: a caller
+  // with no cap in hand keeps the plain rule.
+  function atCap(v, cap) {
+    var c = Number(cap) || 0;
+    return c > 0 && (Number(v) || 0) >= c - 0.5;
+  }
+  function coarseDollars(v, cap) {
+    if (atCap(v, cap)) return Number(cap);
+    var r = Math.round(v / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR, c = Number(cap) || 0;
+    return c > 0 ? Math.min(r, Math.floor(c / PUBLIC_MONEY_FLOOR) * PUBLIC_MONEY_FLOOR) : r;
+  }
+  function earnedMoney(v, cap) {
     if (v == null) return "—";
     if (!publicMode()) return fmtMoney(v);
     var a = Math.abs(Number(v) || 0);
     if (a < 0.5) return "$0";
+    if (atCap(a, cap)) return fmtMoney(cap);
     if (a < PUBLIC_MONEY_FLOOR) return "<" + fmtMoney(PUBLIC_MONEY_FLOOR);
-    return fmtMoney(coarseDollars(v));
+    return fmtMoney(coarseDollars(v, cap));
   }
   // The same public rule as words for a sentence, in every mode: the My CPL
   // Funding block is college-facing wherever it renders (Sam's card 8,
   // 2026-10-01: "Current outcomes demonstrate $71,000 funding").
-  function publicDollarWords(v) {
+  function publicDollarWords(v, cap) {
     var a = Math.abs(Number(v) || 0);
     if (a < 0.5) return "$0";
+    if (atCap(a, cap)) return fmtMoney(cap);
     if (a < PUBLIC_MONEY_FLOOR) return "less than " + fmtMoney(PUBLIC_MONEY_FLOOR);
-    return fmtMoney(coarseDollars(v));
+    return fmtMoney(coarseDollars(v, cap));
   }
   // The CSV twin: a number, or the same label, so the export never carries a
   // figure the screen withholds (scope, not shape).
-  function earnedCsv(v) {
+  function earnedCsv(v, cap) {
     if (v == null) return "";
     if (!publicMode()) return Math.round(v);
     var a = Math.abs(Number(v) || 0);
     if (a < 0.5) return 0;
+    if (atCap(a, cap)) return Math.round(cap);
     if (a < PUBLIC_MONEY_FLOOR) return "<" + PUBLIC_MONEY_FLOOR;
-    return coarseDollars(v);
+    return coarseDollars(v, cap);
   }
   // NONCREDIT targets are order 1–25 CPL FTES, and at that scale fmtCountK's
   // integer rounding stops being a compaction and becomes a misstatement: 1.4
@@ -7958,7 +7978,7 @@
     function earnCells(row) {
       // Earned figures follow the public-view dollar rule (earnedCsv): the
       // export never carries a figure the screen withholds.
-      return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0)), earnedCsv(row.earned_withheld || 0)];
+      return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0), row.total), earnedCsv(row.earned_withheld || 0, row.total)];
     }
     // The Funds Qualified So Far columns' twins (2026-09-28; named so 2026-10-29,
     // the CSM team's word via Sam): what qualifies so far against each share and
@@ -7980,13 +8000,15 @@
       if (publicMode()) {
         var a = Math.abs(v);
         if (a < 0.5) return "0%";
+        if (atCap(a, row.total)) return "100%";
         if (a < PUBLIC_MONEY_FLOOR) return "<" + Math.ceil(PUBLIC_MONEY_FLOOR / row.total * 1000) / 10 + "%";
-        v = coarseDollars(v);
+        v = coarseDollars(v, row.total);
       }
       return Math.round(v / row.total * 1000) / 10 + "%";
     }
     function curCells(row) {
-      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), curPct(row)];
+      return [earnedCsv(row.earned_cr || 0, row.cr_award), earnedCsv(row.earned_nc || 0, row.nc_award),
+        earnedCsv(row.earned_total || 0, row.total), curPct(row)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -12249,8 +12271,8 @@
     var unitWord = cal.quarter && cal.semester ? "" : (cal.quarter ? "quarter" : "semester");
     var prios = ps.map(function (p, i) {
       var f = tot[i], ftes = prioIsFtes(p), cap = f.cap || 0;
-      var a = Math.abs(f.earned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR;
-      var shown = a < 0.5 ? 0 : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.earned));
+      var a = Math.abs(f.earned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR && !atCap(a, cap);
+      var shown = a < 0.5 ? 0 : atCap(a, cap) ? cap : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.earned, cap));
       return { label: p.label, title: p.title || "", ftes: ftes, target: f.crTarget + f.ncTarget,
                units: ftes ? units[i] : null, unitWord: unitWord,
                factor: prioFactor(p), price: prioPrice(p), rate: ftesRate(),
@@ -12262,8 +12284,8 @@
     // targets added up, TBA while every member's denominator is still to come.
     var ncPrios = totNc.map(function (f, i) {
       var p = ncPs[i], cap = f.ncCap || 0;
-      var a = Math.abs(f.ncEarned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR;
-      var shown = a < 0.5 ? 0 : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.ncEarned));
+      var a = Math.abs(f.ncEarned), under = a >= 0.5 && a < PUBLIC_MONEY_FLOOR && !atCap(a, cap);
+      var shown = a < 0.5 ? 0 : atCap(a, cap) ? cap : (under ? PUBLIC_MONEY_FLOOR : coarseDollars(f.ncEarned, cap));
       var pending = sc.rows.every(function (col) { return !(instSplit(col).nc > 0) || countTargetPending(col, p); });
       return { label: p.label, title: p.title || "", count: true, unitWord: ncUnitWord(p, 2),
                target: pending ? null : f.ncTarget, rule: countTargetWords(null, p), metric: p.metric || "",
@@ -13414,7 +13436,7 @@
       // The Curr columns sort by the figure each cell shows (cellFig, the
       // viewed year under Annual funding), and on the public page by its
       // coarse twin, so the order reveals nothing the figure withholds.
-      if (CURR_FIELD[state.sortKey]) return curSortVal(curFig(r, CURR_FIELD[state.sortKey]).fig);
+      if (CURR_FIELD[state.sortKey]) return curSortVal(curFig(r, CURR_FIELD[state.sortKey]).fig, curCap(r, CURR_FIELD[state.sortKey]));
       return r[state.sortKey];
     }
     rows = rows.slice().sort(function (a, b) {
@@ -13503,7 +13525,7 @@
   // colleges need to meet all 3 baselines to receive any funding"); the CSV's
   // Withheld column is the one place the reserve still reads.
   function awardCellTitle(capLabel, cap, earned) {
-    return capLabel + ": " + fmtMoney(cap) + " · " + qualifyingWords() + ": " + earnedMoney(earned);
+    return capLabel + ": " + fmtMoney(cap) + " · " + qualifyingWords() + ": " + earnedMoney(earned, cap);
   }
   function crAwardCellHtml(row) {
     var cap = (row.cr_award || 0) / awardDivisor();
@@ -13538,13 +13560,17 @@
   var CURR_FIELD = { cr_current: "earned_cr", nc_current: "earned_nc", current_total: "earned_total" };
   // The sort key of a Curr figure: exact for a curator, and on the public page
   // the coarse figure the cell shows, so the order reveals nothing more.
-  function curSortVal(v) {
+  function curSortVal(v, cap) {
     if (!publicMode()) return v;
     var a = Math.abs(Number(v) || 0);
     if (a < 0.5) return 0;
+    if (atCap(a, cap)) return Number(cap);
     if (a < PUBLIC_MONEY_FLOOR) return PUBLIC_MONEY_FLOOR / 2;
-    return coarseDollars(v);
+    return coarseDollars(v, cap);
   }
+  // The cap a Curr column's figure sits under, for curSortVal and earnedMoney.
+  var CURR_CAP = { earned_cr: "cr_award", earned_nc: "nc_award", earned_total: "total" };
+  function curCap(row, field) { return (row[CURR_CAP[field]] || 0) / awardDivisor(); }
   // A gated institution's Curr cell shows the funding its measures compute to,
   // in gray, and the hover says when it becomes available (Sam, 2026-09-29:
   // "The Current Funding on college rows should not be 0; it should show the
@@ -13594,8 +13620,8 @@
         ? "institutions yet to meet all their minimum conditions."
         : "the noncredit share waits on its own minimum conditions.") : "";
     return '<td class="cf-cur cf-cur-' + lane + (f.gated ? " cf-gated" : "") + ' c" title="' +
-      esc(words + ": " + earnedMoney(f.fig) + " of " + fmtMoney(cap) + tail) + '">' +
-      earnedMoney(f.fig) + "</td>";
+      esc(words + ": " + earnedMoney(f.fig, cap) + " of " + fmtMoney(cap) + tail) + '">' +
+      earnedMoney(f.fig, cap) + "</td>";
   }
   var SUM_GRAY_WORDS = " It adds every institution's figure, and is gray while no institution in it has met all its minimum conditions.";
   // TOTAL FUNDS — the max award, the combined figure the base and the cap
@@ -13909,7 +13935,7 @@
     } else {
       lines.push("That is " + fmtPctTrim(pct) + " of the " + fmtNum1(f.maxFtes) + " Max FTES" +
         (pct >= 1 ? ", and a priority counts up to 100%" : "") + ", so it qualifies for " +
-        fmtPctTrim(fr.f) + " of " + fmtMoney(f.maxFunds) + ": " + earnedMoney(f.actualFunds) + ".");
+        fmtPctTrim(fr.f) + " of " + fmtMoney(f.maxFunds) + ": " + earnedMoney(f.actualFunds, f.maxFunds) + ".");
     }
     return lines.join("\n");
   }
@@ -14201,7 +14227,7 @@
           (gap == null ? "" : " · " + (gap <= 0 ? "Max FTES met" : amount(gap, inFtes) + " to Max FTES")) +
           (a.measured ? " · Actual FTES " + a.tip : "") + grayWords + (how ? "\n" + how : "");
         return '<td class="c' + gate + '" title="' + esc(tip) + '">' +
-          fig(earnedMoney(f.actualFunds), a.text, a.tip === TBA_TIP ? TBA_TIP : "") +
+          fig(earnedMoney(f.actualFunds, f.maxFunds), a.text, a.tip === TBA_TIP ? TBA_TIP : "") +
           (o.college && linkP ? srcLinkHtml(o.college.college, linkP) : "") + "</td>";
       };
       // The two columns the table shows (Sam, 2026-10-25): Max Funds and Curr
@@ -14238,7 +14264,7 @@
           : maxCell(crF, isF, p, "cr"),
         current_total: ncF
           ? '<td class="c' + gate + '" title="' + esc(diffMoney(maxTot, actTot) + " still to qualify for" + grayWords) + '">' +
-            fig(earnedMoney(actTot), actLine, actLine === "TBA" ? TBA_TIP : "") +
+            fig(earnedMoney(actTot, maxTot), actLine, actLine === "TBA" ? TBA_TIP : "") +
             (o.college ? srcLinkHtml(o.college.college, p) : "") + "</td>"
           : curCell(crF, crA, isF, p)
       };
@@ -14284,10 +14310,10 @@
         cr_award: dashT, cr_current: dashT,
         nc_award: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
         nc_current: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
-          fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>",
+          fig(earnedMoney(f.actualFunds, f.maxFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>",
         total: '<td class="c" title="' + esc(maxTip) + '">' + fig(fmtMoney(f.maxFunds), tgtLine, f.target == null ? TBA_TIP : "") + "</td>",
         current_total: '<td class="c' + ncGateCls + '" title="' + esc(curTip) + '">' +
-          fig(earnedMoney(f.actualFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>"
+          fig(earnedMoney(f.actualFunds, f.maxFunds), act.text, act.tip === TBA_TIP ? TBA_TIP : "") + "</td>"
       };
       return '<tr class="cplfund-subrow cplfund-ncoutrow">' + cols.map(function (col) {
         return CELL[col.key] || "<td></td>";
@@ -14309,8 +14335,9 @@
   function diffMoney(max, actual) {
     var m = Number(max) || 0, a = Number(actual) || 0;
     if (!publicMode() || Math.abs(a) < 0.5) return fmtMoney(Math.max(0, m - a));
+    if (atCap(a, m)) return fmtMoney(0);
     if (Math.abs(a) < PUBLIC_MONEY_FLOOR) return ">" + fmtMoney(Math.max(0, m - PUBLIC_MONEY_FLOOR));
-    return fmtMoney(Math.max(0, m - coarseDollars(a)));
+    return fmtMoney(Math.max(0, m - coarseDollars(a, m)));
   }
   // The detail line for each reported card a curator switched on (2026-09-23).
   function reportedDetailRows(slot, statewide) {
@@ -16749,7 +16776,7 @@
     var line = (word === String(n) ? word : word.charAt(0).toUpperCase() + word.slice(1)) + " institutions";
     if (g) {
       line += ", with a combined max award of " + fmtMoney(g.total || 0) + " and funds qualified so far of " +
-        earnedMoney(curFig(g, "earned_total").fig);
+        earnedMoney(curFig(g, "earned_total").fig, g.total || 0);
     }
     return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
       '<p class="dk">' + line + ". Each institution&#39;s funding follows.</p></div>";
@@ -19499,6 +19526,9 @@
     _videoDiff: videoDiff,
     _splash: function () { return splash; },
     _alloc: function (name) { var c = rosterRow(name); return c ? collegeAlloc(c) : null; },
+    // The public dollar rule beside a cap, for tests (2026-11-17, Cabrillo).
+    _earnedMoney: function (v, cap) { return earnedMoney(v, cap); },
+    _diffMoney: function (max, actual) { return diffMoney(max, actual); },
     // test hook: the per-render memo (S613). Inside one scope, two reads, the
     // first altered by its caller, and the uncached answer beside them.
     _memoProbe: function (slot) {
@@ -19878,7 +19908,7 @@
         pending: !!gate.pending, blocked: !!gate.blocked,
         deadline: participationDeadline(), deadlinePassed: !!partDeadlinePassed(),
         vetPct: fmtPctTrim((pf && pf.vet_star_threshold) || 0.75),
-        demonstrated: demo, demonstratedWords: publicDollarWords(demo),
+        demonstrated: demo, demonstratedWords: publicDollarWords(demo, a ? Number(a.total) || 0 : 0),
         items: eligReqList(college).map(function (r) {
           return { kind: r.kind, met: !!r.met, pending: !!r.pending,
                    counts: r.kind === "vetstar" ? jstNeedWords(college) : "",
