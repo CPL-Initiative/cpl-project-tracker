@@ -527,3 +527,15 @@ The repeated-row cause is the one lever that crosses colleges. It needs a scorer
 **A newly read failing record breaks the display receipt's count.** `roep_display_test` requires every filed record to appear in the display receipt. A record that was never loaded, such as 33230, stays out of the folder until a display build includes it.
 
 **The sandbox reaches neither college hosts nor the artifact store.** `productionresultssa32.blob.core.windows.net` is refused, so a run's page text is out of reach. A page read's job log, fetched through `get_job_logs`, is the session's only window onto a page.
+
+## S672 (SkyWren, 2026-11-17, the CPL Queue routine)
+
+**The repeated-course-row lever is a reconcile step per page shape, not a scorer change.** The record shape already carries `times`, and the scorer counts a course `times` over (Hartnell 43887, S497). What was missing was a step that reads the page's own words for the count. A free page read (44045355408, plan `kb/college_reads/rccd_music_repeat_rows.json`) showed that the six records S671 named fall into four shapes, and that two of them are not repeats:
+1. **A starred code and a footnote.** Riverside City Piano 38626: `MUS-P12*` printed four times, then "*Course must be taken four times".
+2. **The footnote run into the code's cell.** Jazz 38627: "MUS-39Course must be taken twice" printed twice.
+3. **A sentence above the rows.** Music Performance 38628: "Take MUS-39 three times over three semesters."
+4. **A sentence with the sum.** Norco 30606 and 30607: "Take MUS-39 twice for a total of six units". Norco's step reads only "twice for a total of", because its option lines put MUS-41 in two options at two counts ("four times" in Option 1, "two times each" in Option 2). A code-wide `times` would be wrong for one of them.
+
+Riverside City's three steps took its records from 229 to 232 passing on the reconcile run (44046016854), with no record losing its pass. Norco's required list now sums to its printed 25. The record still fails at 30-33 against 36-37, because its three options are one choice of 8 units that the reading kept as three rule-all blocks with no option group. That is a separate fix. Moreno Valley Guitar 38758 is not a repeat: its "Required Courses (16-20 Units)" range comes from "MUS-3* ... *(Test out option available)".
+
+**A reconcile run with no extraction removes `kept_passing.json`.** The file reports the passing records that one read kept. It is not a guard input, so a later run that keeps none leaves no file. Compare the pass set before and after, as S671 said.
