@@ -9,7 +9,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "10945",
@@ -37,7 +41,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "administration of justice: law enforcement (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -48,28 +55,12 @@
   "title": "Computer Information Systems",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.857,
-  "codes_found": [
-   "BUS13A",
-   "BUS13B",
-   "BUS20",
-   "BUS24",
-   "CIS34",
-   "CIS7"
-  ],
-  "source": {
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
-   "title": "Business Bookkeeping (COA)",
-   "h1": "Business Bookkeeping (COA)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 2046
+  "text_chars": 0
  },
  {
   "control_number": "10963",
@@ -104,7 +95,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "child development (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -115,29 +109,12 @@
   "title": "Geology",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "CHEM2A",
-   "GEOL1",
-   "GEOL3",
-   "PHYSICS2A",
-   "PHYSICS4A",
-   "PHYSICS4B",
-   "PHYSICS4C"
-  ],
-  "source": {
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
-   "title": "Mathematics 2.0 (AS-T)",
-   "h1": "Mathematics 2.0 (AS-T)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 6558
+  "text_chars": 0
  },
  {
   "control_number": "15266",
@@ -174,7 +151,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business administration (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -207,7 +187,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business management (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -268,7 +251,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering, a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -295,7 +281,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -330,7 +319,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "hotel, restaurant, and casino management (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -358,7 +350,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to hotel operations (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -369,29 +364,12 @@
   "title": "Geology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "CHEM2A",
-   "GEOL1",
-   "GEOL3",
-   "PHYSICS2A",
-   "PHYSICS4A",
-   "PHYSICS4B",
-   "PHYSICS4C"
-  ],
-  "source": {
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/mathematics-2-0-as-t-fall-2026",
-   "title": "Mathematics 2.0 (AS-T)",
-   "h1": "Mathematics 2.0 (AS-T)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 6558
+  "text_chars": 0
  },
  {
   "control_number": "15291",
@@ -403,7 +381,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "17832",
@@ -430,7 +412,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "lvn to adn (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -462,7 +447,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "30-unit lvn to rn (coa) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 10,
@@ -509,7 +497,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: arts and humanities (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -520,33 +511,12 @@
   "title": "Liberal Arts: Elementary Teacher Preparation",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.733,
-  "codes_found": [
-   "ART16A",
-   "ART42",
-   "BIO10",
-   "COMMC1000",
-   "ENGLC1001",
-   "GEOG1",
-   "HIST17A",
-   "HUM1",
-   "MUS42",
-   "POLSC1000",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
-   "title": "Studio Arts (AAT)",
-   "h1": "Studio Arts (AAT)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.2
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 6686
+  "text_chars": 0
  },
  {
   "control_number": "19306",
@@ -590,7 +560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: math and science (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -638,7 +611,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: social science (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -654,7 +630,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
+    "title": "Business Bookkeeping (COA)",
+    "h1": "Business Bookkeeping (COA)",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "10954"
+  }
  },
  {
   "control_number": "20342",
@@ -666,7 +657,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "20343",
@@ -697,7 +692,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail business management (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 14,
@@ -736,7 +734,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "child development teacher level certificate certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -765,7 +766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -798,7 +802,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -826,7 +833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -856,7 +866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "chef apprentice, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -884,7 +897,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paramedic (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -912,7 +928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -924,12 +943,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "COM2",
    "COM3",
    "COM4",
+   "COM5",
    "COMMC1000",
+   "ENG2",
    "PSYCC1000",
    "SOC1"
   ],
@@ -940,7 +961,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -968,7 +992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -997,7 +1024,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education,a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1025,7 +1055,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1054,7 +1087,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1083,7 +1119,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1095,11 +1134,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.737,
+  "coverage": 0.789,
   "codes_found": [
    "ART42",
    "COMMC1000",
    "EDUC1",
+   "ENG2",
    "ENGLC1000",
    "ESCI2",
    "GEOG2",
@@ -1119,7 +1159,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1135,7 +1178,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
+    "title": "Studio Arts (AAT)",
+    "h1": "Studio Arts (AAT)",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33656",
@@ -1160,7 +1217,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1176,7 +1236,27 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "its page went to closed-list 43533 (Information Technology Specialist)",
+   "page": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/networking-fundamentals-coa-spring-2021",
+    "title": "Networking Fundamentals (COA)",
+    "h1": "Networking Fundamentals (COA)",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "yield_held": {
+    "holder": "43533",
+    "held": "refused_passing",
+    "why": "its filed record passes live"
+   }
+  }
  },
  {
   "control_number": "35663",
@@ -1188,7 +1268,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "35960",
@@ -1220,7 +1304,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history (aat) a.a-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
@@ -1251,7 +1338,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1281,7 +1371,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "correctional rehabilitation, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1306,7 +1399,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to cybersecurity, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1333,7 +1429,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to industrial automation (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -1345,9 +1444,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "COM2",
+   "ENG2",
    "ENG25",
    "ENG4",
    "ENG5",
@@ -1365,7 +1465,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english (aat) a.a-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -1403,7 +1506,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture sales and marketing, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1446,7 +1552,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -1484,7 +1593,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl (coc) certificate of completion",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -1513,7 +1625,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial mechanic i (coa) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -1536,53 +1651,12 @@
   "title": "Transfer Studies- Full IGETC Certification: UC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "ART16A",
-   "ART42",
-   "ASL1",
-   "ASL2",
-   "BIO10",
-   "CHEM2A",
-   "ENG4",
-   "ENGLC1001",
-   "GEOG1",
-   "GEOG3",
-   "GEOL1",
-   "GEOL3",
-   "HIST17A",
-   "HIST20",
-   "HIST4A",
-   "HIST4B",
-   "HUM1",
-   "HUM22",
-   "MUS42",
-   "PA1",
-   "PHIL1",
-   "PHIL3",
-   "PHYSICS4A",
-   "PHYSICS4B",
-   "PHYSICS4C",
-   "POLSC1000",
-   "SOC5",
-   "SPAN2",
-   "SPAN3",
-   "SPAN4",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/liberal-arts-arts-and-humanities-aa-fall-2025",
-   "title": "Liberal Arts: Arts and Humanities (AA)",
-   "h1": "Liberal Arts: Arts and Humanities (AA)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 62,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "39698",
@@ -1610,7 +1684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "manufacturing automation (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1652,7 +1729,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1691,7 +1771,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology (ast) a.s-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
@@ -1719,7 +1802,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to culinary arts (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -1747,7 +1833,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to hospitality management (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -1777,7 +1866,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management (ast) a.s-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -1806,7 +1898,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced culinary arts (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -1833,7 +1928,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "beverage management (coa) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 5,
@@ -1860,7 +1958,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced hospitality management (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 5,
@@ -1888,7 +1989,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pastry and baking arts, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1916,7 +2020,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "full-stack web development (coa) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 6,
@@ -1944,7 +2051,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human resources (coa) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -1975,7 +2085,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics aa-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2017,7 +2130,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "information technology (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2045,7 +2161,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "user experience (ux) design (coa) certificate of achievement",
+    "section_fit": 0.6
    }
   },
   "listed": 6,
@@ -2077,7 +2196,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture (as) a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2106,7 +2228,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration, a.s- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2140,7 +2265,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business information systems (aa) a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2166,7 +2294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2178,12 +2309,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "COM2",
    "COM3",
    "COM4",
+   "COM5",
    "COMMC1000",
+   "ENG2",
    "PSYCC1000",
    "SOC1"
   ],
@@ -2194,7 +2327,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies, a.a- t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2223,7 +2359,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health a.s-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2320,7 +2459,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "transfer studies – cal getc (coa) certificate of achievement",
+    "section_fit": 0.8
    }
   },
   "listed": 78,
@@ -2356,7 +2498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "maintenance electrical systems technician 1 (coc) certificate of completion",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2372,7 +2517,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/agriculture-systems-fundamentals-coa-fall-2025",
+    "title": "Agriculture Systems Fundamentals (COA)",
+    "h1": "Agriculture Systems Fundamentals (COA)",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "45802",
@@ -2401,7 +2560,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture business as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2413,12 +2575,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.824,
+  "coverage": 0.882,
   "codes_found": [
    "ART42",
    "BIO10",
    "COMMC1000",
    "EDUC1",
+   "ENG2",
    "ENGLC1000",
    "GEOG2",
    "HIST20",
@@ -2437,7 +2600,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs (aat) a.a-t degree",
+    "section_fit": 0.8
    }
   },
   "listed": 17,
@@ -2461,7 +2627,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "mechanical systems 1 (coc) certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -2504,7 +2673,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community health worker (coa) certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -2528,7 +2700,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "process control systems technician level 1 (coc) certificate of completion",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -2557,7 +2732,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 (as-t)",
+    "section_fit": 1.0
    }
   },
   "listed": 7,

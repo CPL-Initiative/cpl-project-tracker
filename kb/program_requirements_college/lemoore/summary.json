@@ -2,19 +2,22 @@
  "college": "Lemoore College",
  "programs": 90,
  "with_closed_list": 82,
- "found": 73,
- "extracted": 73,
+ "found": 68,
+ "extracted": 68,
  "errors": 0,
- "passed_machine_checks": 63,
+ "passed_machine_checks": 65,
  "failed": {
-  "coverage": 5,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 10,
+  "arithmetic": 3,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.29,
- "cost_per_program": 0.0724,
+ "cost_usd_run": 0.44,
+ "cost_usd_filed": 4.97,
+ "cost_per_program": 0.0731,
+ "extract_calls": 5,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "37153",
@@ -40,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38655",
@@ -48,7 +52,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "45614",
@@ -74,7 +79,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46271",
@@ -100,8 +106,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38979392604"
+ "run": "44090929578"
 }
