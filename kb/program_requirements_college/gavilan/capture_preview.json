@@ -1,0 +1,1032 @@
+{
+ "college": "Gavilan College",
+ "catalog_url": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
+ "platform": "curriqunet",
+ "catalog_year": "2026-2027",
+ "programs": 135,
+ "with_closed_list": 120,
+ "started": "2026-11-17T14:28:58Z",
+ "curriqunet": {
+  "catalog": 19344,
+  "view_prefix": "https://gavilan.curriqunet.com/catalog/iq/",
+  "errors": [],
+  "catalog_from": "_getCatalogs",
+  "sections": [
+   "Academic Programs",
+   "Support Programs"
+  ],
+  "nodes_read": 5,
+  "calls": 61,
+  "entries": 147,
+  "stopped_at_cap": false,
+  "same_title_entries": 14,
+  "entries_read": 133,
+  "twin_ids": {
+   "3980": [
+    4189
+   ],
+   "4249": [
+    4038
+   ],
+   "3982": [
+    4040
+   ],
+   "3981": [
+    4035
+   ],
+   "4125": [
+    4037
+   ],
+   "4034": [
+    4036
+   ],
+   "4070": [
+    4352
+   ],
+   "4072": [
+    4110
+   ],
+   "4018": [
+    4351
+   ],
+   "4071": [
+    4142
+   ],
+   "4345": [
+    4190
+   ],
+   "4349": [
+    4069
+   ],
+   "4011": [
+    4039
+   ],
+   "4357": [
+    4253
+   ]
+  },
+  "failed_calls": 0
+ },
+ "pages_read": 133,
+ "pages_listed": 133,
+ "pages_answered": 133,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 93,
+   "hits": 86,
+   "recall": 0.925,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 11,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 15,
+  "by_result": {
+   "found": 12,
+   "not_matched": 3
+  },
+  "found": 12,
+  "found_active": 12,
+  "found_pages": 12,
+  "found_programs": [
+   {
+    "control_number": "06111",
+    "title": "Biological Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4156",
+    "h1": "Biological Science - A.S. Degree",
+    "page_title": "Biological Science - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "06137",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/3991",
+    "h1": "Mathematics - A.S. Degree",
+    "page_title": "Mathematics - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "08461",
+    "title": "Health Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194",
+    "h1": "Health Science - A.S. Degree",
+    "page_title": "Health Science - A.S. Degree",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "14947",
+    "title": "School Age Child Care",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4124",
+    "h1": "School Age Child Care - Certificate of Achievement",
+    "page_title": "School Age Child Care - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "18456",
+    "title": "Liberal Arts: Natural Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+    "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+    "page_title": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "18457",
+    "title": "Liberal Arts: Computer Science & Information Systems",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
+    "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+    "page_title": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "18460",
+    "title": "Liberal Arts: Administration of Justice",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/3980",
+    "h1": "Liberal Arts: Administration of Justice Emphasis - A.A. Degree",
+    "page_title": "Liberal Arts: Administration of Justice Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "18461",
+    "title": "Liberal Arts: Expressive Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4249",
+    "h1": "Liberal Arts: Expressive Arts Emphasis - A.A. Degree",
+    "page_title": "Liberal Arts: Expressive Arts Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "19655",
+    "title": "Early Intervention Assistant",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4123",
+    "h1": "Early Intervention Assistant - Certificate of Achievement",
+    "page_title": "Early Intervention Assistant - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "19656",
+    "title": "Biotechnology",
+    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4206",
+    "h1": "Biotechnology - Certificate of Achievement",
+    "page_title": "Biotechnology - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "21277",
+    "title": "Business, General",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
+    "h1": "General Business - Certificate of Achievement",
+    "page_title": "General Business - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "33290",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4093/4180",
+    "h1": "Anthropology - A.A.-T Degree",
+    "page_title": "Anthropology - A.A.-T Degree",
+    "awards": [
+     "adt"
+    ]
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "06143",
+    "title": "Law Enforcement",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "18454",
+    "title": "Liberal Arts: Social Science-Cultural & Historical",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "two pages name it: https://gavilan.curriqunet.com/catalog/iq/4089/4140/4042, https://gavilan.curriqunet.com/catalog/iq/4089/4147/4020"
+   },
+   {
+    "control_number": "21295",
+    "title": "Law Enforcement",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [
+   {
+    "holder": "45720",
+    "holder_title": "Environmental Science I",
+    "taker": "18456",
+    "taker_title": "Liberal Arts: Natural Science",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+    "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+    "catalog_year": "2026-2027"
+   },
+   {
+    "holder": "21284",
+    "holder_title": "CSIS: Programming for the Internet",
+    "taker": "18457",
+    "taker_title": "Liberal Arts: Computer Science & Information Systems",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
+    "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+    "catalog_year": "2026-2027"
+   },
+   {
+    "holder": "33048",
+    "holder_title": "Economics",
+    "taker": "21277",
+    "taker_title": "Business, General",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
+    "h1": "General Business - Certificate of Achievement",
+    "catalog_year": "2026-2027"
+   }
+  ],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 196,
+ "seconds": 855.4,
+ "found": 103,
+ "by_method": {
+  "no_closed_list": 15,
+  "not_found": 7,
+  "page_claimed": 10,
+  "sitemap_page": 103
+ },
+ "shared_pages": {
+  "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045": [
+   "21290",
+   "21291",
+   "21292"
+  ],
+  "https://gavilan.curriqunet.com/catalog/iq/4089/4100/4340": [
+   "30577",
+   "44470"
+  ],
+  "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395": [
+   "31444",
+   "46458"
+  ],
+  "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394": [
+   "33047",
+   "46246"
+  ],
+  "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063": [
+   "38634",
+   "46047"
+  ]
+ },
+ "not_found": [
+  {
+   "control_number": "31719",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3992",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.286,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3001,
+     "content": 3001,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33134",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35176",
+   "title": "Wastewater Collection Technology Education",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "35177",
+   "title": "Wastewater Collection Technology Education",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36978",
+   "title": "ESL Intermediate II Level",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4018",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2233,
+     "content": 2233,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42771",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4027",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2298,
+     "content": 2298,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42890",
+   "title": "Cybersecurity",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  }
+ ],
+ "page_claimed": [
+  {
+   "control_number": "18121",
+   "title": "California State University (CSU) General Education Pattern",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "18122",
+   "title": "Intersegmental General Education Transfer Curriculum (IGETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "21284",
+   "title": "CSIS: Programming for the Internet",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "21294",
+   "title": "Licensed Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4234"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "33048",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "38482",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4054/4357"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45720",
+   "title": "Environmental Science I",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45729",
+   "title": "Environmental Science II",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4073",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "45751",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4073",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "46046",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+    "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982"
+   ],
+   "status": "Active"
+  }
+ ],
+ "page_challenged": [],
+ "coverage_bands": {
+  "0.5-0.8": 8,
+  "0.8-1.0": 23,
+  "1.0": 72
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/gavilan",
+  "kept": 98,
+  "kept_moved": 0,
+  "programs": 3,
+  "list": [
+   {
+    "control_number": "08456",
+    "title": "Business: Technical Publishing Option",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4336",
+    "coverage": 0.977,
+    "was_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4336",
+    "was_coverage": 0.953,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "08464",
+    "title": "Liberal Arts (Multiple Subjects)",
+    "award": "A.A. Degree",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+    "coverage": 0.942,
+    "was_url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197",
+    "was_coverage": 0.913,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40557",
+    "title": "Small Business Development",
+    "award": "Noncredit program",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4255",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "31444",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "33047",
+    "title": "Physics",
+    "award": "A.S. T Degree",
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "fingerprints": {
+  "06113": {
+   "sha256": "8f3c15cd77f93296f49ff73b4a6c098565567155d10c462f280f43e16a3fde18",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4337"
+  },
+  "06116": {
+   "sha256": "7a4254c088da76cc0eafd33dc9b1577ae6f9b5561246b95dddf7737f25d9a564",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4116"
+  },
+  "06117": {
+   "sha256": "10457a9a9e8ac769279caf48337d614646ce8103a6bdf5db5d15e6e9b76ab587",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4223"
+  },
+  "06124": {
+   "sha256": "4bffce28358b6e67a052ddaa23dd1e1204b568a4ff914a8f652de860a1c28b81",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4112"
+  },
+  "06127": {
+   "sha256": "052f9284e72016d2bb64e0fa1aba2562d6b8d4ecb12297d365b83b1200c1b432",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4232"
+  },
+  "06128": {
+   "sha256": "c2e1c03b2d478273818d39c8ebed043e80427d00e2aa257a1ed1da9d9420deda",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3992"
+  },
+  "06129": {
+   "sha256": "fb843cac925fe41f590e6d69c59f2f551c546e60ecb3c2999cc10e37ce4f08be",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4022"
+  },
+  "06131": {
+   "sha256": "a25a9191659b4d605850250a26317d5b424977c1f99ce26084d486a196665799",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4058"
+  },
+  "06132": {
+   "sha256": "836331782692ab14f084e3412f4fd4c7c0c20c499ad726ca7070b634fb8afde9",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4234"
+  },
+  "06144": {
+   "sha256": "4fc2ab5664d64aa0119cc5654ce25ef9e50ec767226ad738c8411b8b9661e1a2",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4236"
+  },
+  "08456": {
+   "sha256": "23c88a20335c509d31e75ce02f0e461b6dc44380ce4bd41d07e15078b4183b0a",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4336"
+  },
+  "08458": {
+   "sha256": "5328358e3c226ed8b6ad5ac5f7e9489d5dddecdf8c968f1321e652e689d0de6c",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4106"
+  },
+  "08460": {
+   "sha256": "0c7795ae5ba216411bd92443c622ef41eb90765b69af77aa95a8c01a04c28da1",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4129/4201"
+  },
+  "08464": {
+   "sha256": "29df3a4dad8d049a6fed861222dbbc9deb5d09012b8c780c0bbdd9a77c1b0692",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4197"
+  },
+  "08466": {
+   "sha256": "b350e4e5249361b45d6bc3fcc3e4229f3571f9c2f4ee7453289b0970d0c5debf",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4117"
+  },
+  "12002": {
+   "sha256": "404a44487619c23934ffad8c17a0be54dbbde768e39e73d315b74cbce9984f38",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3983"
+  },
+  "13715": {
+   "sha256": "eee8755b848214c2390ab4b99070d1421a88d7369067f3fd8d64da01c85850d2",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4030"
+  },
+  "14041": {
+   "sha256": "96df40a109ba43ca68a013c7d0cfcfab8b34260eaf997bee91a262bded864f87",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4032"
+  },
+  "14878": {
+   "sha256": "60e13093725231ed27beaad802848399cec5a456b83d95fd5b11e2bc4f0b8a61",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4130/4200"
+  },
+  "15555": {
+   "sha256": "4c09fc3c9e580506ac0e715c72bbf58badddc89907bb7c69074919b5d9c6e67c",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4023"
+  },
+  "17724": {
+   "sha256": "9d3323bb8c8504efb44b0c08e390d4b5e04e9c7eaacce05999c025736187aa81",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3984"
+  },
+  "17827": {
+   "sha256": "5f6b751626555da5549d2d943be128a52a3495296df1dccccaa78cd7beca9036",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4044"
+  },
+  "18453": {
+   "sha256": "bd20fc1e90c866fceb9803b4b3745c635f96d3ed4ea06986ee54a4c9011709f5",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4007/4011"
+  },
+  "18455": {
+   "sha256": "0eb702cec35bc9c09f582be3210e2f7110dd94b5ba5ded2d47d1e8ca30595590",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4147/4019"
+  },
+  "18458": {
+   "sha256": "b95c0cf2f338418fa6ced3f53cf02597fa9a161b46cdbe399887134b8d8450b4",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4125"
+  },
+  "18459": {
+   "sha256": "fa1603ec4b5ee256e0188e3135933bb9c1e15f75fd2a311f138b2de298c95640",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/3981"
+  },
+  "18541": {
+   "sha256": "636ca3c22c210d1a732a207d76a45216d01727e2c1f0c1f9f2edc15434482aad",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4090/3968"
+  },
+  "19327": {
+   "sha256": "da775ab17163f0d4c716d74d99918c4dc764314e9f54b27f0a75c5b023e68edd",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/3985"
+  },
+  "19378": {
+   "sha256": "986be8565239d2dbd56a84d4ead242d6eb1ace66f9834ced556e95a74e558db7",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4122"
+  },
+  "21281": {
+   "sha256": "e426da4eac7245487c56ef41a1dbd2dc80ae2f0f6a835f59e7fe85c589d88120",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4130/4021"
+  },
+  "21285": {
+   "sha256": "11e34320ec853101f84fafb5f55afe9e6a6fadb90eafbda0bd622a9dc691a0a9",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4033"
+  },
+  "21287": {
+   "sha256": "0aacf4956bd256ed1d3a3e56bb15cca74692aa06848f5f19088c4bec4650ddac",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4031"
+  },
+  "21288": {
+   "sha256": "b126a92c87739ab3f2a983a9f5da5c0bdf17509d60b1b85112c3942b6f37544e",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4113"
+  },
+  "21290": {
+   "sha256": "85d52085a89a491bf1c7f6ddf933fbab6dae64898bc23a4a01f87e0022f9ca5b",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045"
+  },
+  "21291": {
+   "sha256": "85d52085a89a491bf1c7f6ddf933fbab6dae64898bc23a4a01f87e0022f9ca5b",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045"
+  },
+  "21292": {
+   "sha256": "85d52085a89a491bf1c7f6ddf933fbab6dae64898bc23a4a01f87e0022f9ca5b",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4045"
+  },
+  "21293": {
+   "sha256": "0a8ab9976587645bd9b0c01c60831a29208ca6144ca0c623d25a3afcaf08b939",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4092/4102"
+  },
+  "21297": {
+   "sha256": "9284142d3b08eaa2d89ea3ab6ab3046a35ec9af206863d559279759314540997",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4105"
+  },
+  "21298": {
+   "sha256": "ac0bc091cc8328177cc23b458959b332cc0470570cab157b109fdc905991c5c3",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4129/4005"
+  },
+  "24369": {
+   "sha256": "9d17bb73d275dd7117815a7e2e609047fbf0e3ad47a6b0d8c552ad655cf87ff2",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4047"
+  },
+  "30203": {
+   "sha256": "318f25c2c63e67ab2e60fa562745cc7bf06a93f1f2cbfa47fe9f2428f28a71b7",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4182"
+  },
+  "30204": {
+   "sha256": "b1cdfe34b09105d6abbdadc71334f876333dfd2d08d490d4cf69178036c50830",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4095/4111"
+  },
+  "30260": {
+   "sha256": "1f8b4cb5957ad34db5fbd8299682aaf0f8f01f364d8bb479712287839863e883",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4024"
+  },
+  "30270": {
+   "sha256": "45c488cb6f1bb54f68bd61455bdf86528135020180ec504f743091259be92a44",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4025"
+  },
+  "30548": {
+   "sha256": "7095c3f7aec1bf821472e962861a1c546b504afe5fc45b427b485d8b216198eb",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4141/3993"
+  },
+  "30577": {
+   "sha256": "124cd6e24789b9f417f31105aca2cfb2350d9fe08f6e9c43516ad24a43c182ff",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/4340"
+  },
+  "30652": {
+   "sha256": "74e1d5347d47b237768710de138ba3754fa7678622bd920f25ec970fec8e693a",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/4178"
+  },
+  "31444": {
+   "sha256": "7c08b16ff9360fa22f9dd9c8d9ec26c42fc6260eacbf6b849243002b05ed8a87",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395"
+  },
+  "31533": {
+   "sha256": "2ce49e2301360d5f15f11b03a525c8531bdce15df8f6c50abc85175a03932c88",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4004"
+  },
+  "31609": {
+   "sha256": "ac031a9c593f545ccf77d8d09a5e96d642791264850f9552ea728836fc1baf41",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4181"
+  },
+  "31626": {
+   "sha256": "792219e3b1aeca73b8bb97306a7e3abfd3208de90b0f01c3895a14da413d2e1f",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4026"
+  },
+  "31647": {
+   "sha256": "c14f7e0321fdc673b1210c43c362fdc27b309ae56ca4a19f8d4296bb4052c8dc",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4027"
+  },
+  "31654": {
+   "sha256": "a4713ef465356b338e04358accd6000db7a799b8227b7ab1edd3e108347dc27e",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4205"
+  },
+  "31752": {
+   "sha256": "2f0c1cccc0f5f0376af2b957a3820c255959b9201fa5fa87ea013ce1ba00f55e",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4149/4183"
+  },
+  "31771": {
+   "sha256": "43d149929f55c0347db070cb240e35c66e3828008af9e653badf5966dfcb94e3",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4191"
+  },
+  "31830": {
+   "sha256": "be3a554fad6a20c7f4748ace1f90408e47e0c6a0c4b9025ac3c1b6f5d9d92a76",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4137/4192"
+  },
+  "33045": {
+   "sha256": "3b6ad67f59a269e7f6f980c967a53aef9cd802e199090ebdc1c19511db00ae56",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4143/3995"
+  },
+  "33046": {
+   "sha256": "0e90bed87bbe4b61440e63c0754c979aa4974d0d1efd1c3e4c6bfc54d77222e5",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4148/4186"
+  },
+  "33047": {
+   "sha256": "cb63bda807c345301d35ed566c801c0879547edc59f6fc97218b79dd926617fd",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394"
+  },
+  "33049": {
+   "sha256": "b0d389fa57ad0b6a16e15dd37048b1070b08304601341b597c0b2d34c4da7d93",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4007/4010"
+  },
+  "33128": {
+   "sha256": "ee981440d1ba5c3472c8933c71f23b5bfa2da7602a37c94a7d6577114f358359",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4145/4195"
+  },
+  "33130": {
+   "sha256": "a67241d5553e39cfd764b958a47c92c3ff4526b1350a0991570b6f42bc417293",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4177"
+  },
+  "33446": {
+   "sha256": "c6a99d1ba801a6059c63c4c415b48d05aff81a5f337184e1196c387cb00f7a2d",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4003"
+  },
+  "33621": {
+   "sha256": "177ea84e39cf67bd6100dd368fa9589e812ada9d27afc3324d3f68a048ff42c8",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3996/3998"
+  },
+  "33778": {
+   "sha256": "5a3783d36233668105fff64a33a91ad9d3eecb6eb3f3903a4a4440c8721013fa",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4133/4198"
+  },
+  "35162": {
+   "sha256": "8180a9135b3ef9cf77dbc561604dabc076a56db07f6340a0b7afd1bfd8543870",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4028"
+  },
+  "35459": {
+   "sha256": "3b58758cd5c7759dd8addc383dae28d77687f667528480973f9584635fe5c6f8",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4098/4171"
+  },
+  "36198": {
+   "sha256": "70b685445e1dbc25551eb74e25570a588fb5b3bd6739ac42fc0cae155504488d",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4147/4184"
+  },
+  "36286": {
+   "sha256": "5c9f2cd142bb4ae61c52c4046e3a6c08e3c32df803ca44415d476a9f8b302d14",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4349"
+  },
+  "36289": {
+   "sha256": "6ccc8122da6b95cc4dbf93557ee041b21b8731e980dbfff84b1c30ab540d09c5",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4071"
+  },
+  "36844": {
+   "sha256": "9f52c896a6f1cfc1bd5d503aab811222fdfdd5330374cc03e1f008d060a76579",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4345"
+  },
+  "36944": {
+   "sha256": "bd00fcb6f12f298275fa3e635c8a312381e4eafac7c0c80bff51e53e4b37a434",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4012/4015"
+  },
+  "36945": {
+   "sha256": "34d340c3507d96e536b201a346ca1352df5aafb33cfa6301803ced0a973f6723",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4012/4016"
+  },
+  "37689": {
+   "sha256": "77430261aeb48a3cb2226039b16804de9e43bb50e7eb8f3bf5c49554b8f5e5cb",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4143/4160"
+  },
+  "37750": {
+   "sha256": "a0e6bf224d1293ccca0cf3d787c309ffd172964317babc9099abccaa8616d578",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4073"
+  },
+  "37812": {
+   "sha256": "b57d2baaabbf50961e283fa4288843831b0245f3a53de52fa4472e839ff5fdf4",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4048"
+  },
+  "37896": {
+   "sha256": "d2a720953abed3a1052e354f81da2b2684ddd98326d25234d938e7dcdbc7c405",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4074"
+  },
+  "38119": {
+   "sha256": "83fba5cca43e60bee56c40033ee81a9a64478b755597725491474048cdc42148",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4119"
+  },
+  "38634": {
+   "sha256": "1b651b12a1a8c936cc9a954988ef0c89a366dbf0eaa809f9139aff5c2f53a7af",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063"
+  },
+  "38787": {
+   "sha256": "2ca30914a0c36eb2acba090c6688d0ebac2b700b742554732ba990c18bc3d73e",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4061"
+  },
+  "39624": {
+   "sha256": "d9f958f87eae5f5dc4f58d2c4d0fbddd98b9ae4ea8164764ebb0c64a2a6e5882",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4346"
+  },
+  "39708": {
+   "sha256": "b166400a195c326ef987b36dc0fe1d4ade1cfe42da703c9f529eb7c822c3b1a3",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4066/4065"
+  },
+  "39753": {
+   "sha256": "4f427437945d4ffff1faf1648a911044f3eae19e52eaad8aa4b0502ba0614bae",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4072"
+  },
+  "39754": {
+   "sha256": "a7aa8df06cd4cb4f58a147e575ecbf3204cc1fa85f71d314dd3a1cda0780c89d",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4132/4070"
+  },
+  "40538": {
+   "sha256": "39998eec43218a56a86f31f1f49bff05e45db809a81d49934e280b9879aba701",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4054/4357"
+  },
+  "40556": {
+   "sha256": "8c79d394bb6ab738800924462e44d4e007ecbf23e45c272ed56c4d86773f25dd",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4250"
+  },
+  "40557": {
+   "sha256": "8ad66b5d3c62cc7b85126e260395049f81cf8718463d7f5e3dca5019e2dcb0e6",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4255"
+  },
+  "41166": {
+   "sha256": "3fa2447aa4c068344c57028518c268b4a988e157f486ed52d8221b1125273d5f",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4254"
+  },
+  "41394": {
+   "sha256": "c4e3ec9b43a8e9be918e4a51329c9a1f60081723770d0abbedbda9bf9f9e07c5",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4252"
+  },
+  "44470": {
+   "sha256": "124cd6e24789b9f417f31105aca2cfb2350d9fe08f6e9c43516ad24a43c182ff",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4100/4340"
+  },
+  "44672": {
+   "sha256": "a2b0c3295262f28de311e123f390e00c7e0f7af7aec408aea17b785f537f443c",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4098/4339"
+  },
+  "44798": {
+   "sha256": "2d47655e3c8fb5f2e5b5eba96fe57163dfe5defbe61773e58369ff79aee6519e",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4133/4350"
+  },
+  "44899": {
+   "sha256": "a1712d687ae3e506aa16954372d485232790f5a922421b81e71514ee546a11ad",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4354"
+  },
+  "44900": {
+   "sha256": "856af8116cea4b9d49d5745790938b10e77014807904ae5104daecb2f6d323b0",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4355"
+  },
+  "44901": {
+   "sha256": "17f5461bf402483c4c16805ddc19fe78af45ca9255ad121bd18eb2c441383144",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4144/4356"
+  },
+  "44975": {
+   "sha256": "b8f12c7e9392874eb988f936468a1ae4e1068279f42ef6af2f5f9343ec03eba3",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4360"
+  },
+  "45072": {
+   "sha256": "52e80a590d9c3733cbbb94dd9ae320d5e23416a0238eb6d515ea66d4d2e0b866",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4353"
+  },
+  "45357": {
+   "sha256": "9029e66cb6cbf436108d3cb9a6630f28561496c0839f3da69f28eb7f6748d4a8",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4135/4166"
+  },
+  "45683": {
+   "sha256": "2d90c6409b91b2afc4bf524dd362592e9578c5d82c3e194b3ff965a2581279fb",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4150/4383"
+  },
+  "45909": {
+   "sha256": "1ff92b916fa578a2f3b57d0e6f6c7a08780a954f08ec601180a71dacb1de8b52",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4138/4399"
+  },
+  "46047": {
+   "sha256": "1b651b12a1a8c936cc9a954988ef0c89a366dbf0eaa809f9139aff5c2f53a7af",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4188/4063"
+  },
+  "46246": {
+   "sha256": "cb63bda807c345301d35ed566c801c0879547edc59f6fc97218b79dd926617fd",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/3999/4394"
+  },
+  "46458": {
+   "sha256": "7c08b16ff9360fa22f9dd9c8d9ec26c42fc6260eacbf6b849243002b05ed8a87",
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/4395"
+  }
+ },
+ "run": "44103254198"
+}
