@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-17T03:49:34Z",
-  "session": 670,
-  "moniker": "SkyBunting",
-  "run": "Sam's session",
+  "written_at": "2026-11-17T07:25:00Z",
+  "session": 671,
+  "moniker": "SkyKinglet",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_671_handoff.md",
+  "handoff": "docs/session_672_handoff.md",
   "next_step": {
     "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the same Coast district host as Coastline, plus one preparation run on another host. Diablo Valley's trial read 11 of 12 pages and takes its full read on a later day. Then the other seven colleges read again under the page yield."
+    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, the RCCD pilot's Riverside City rows wait on COBIx's spot-check before #3438 merges, and the repeated-course-row fix for the music performance certificates waits on a second reader."
   },
   "calls": [
     {
@@ -338,6 +338,14 @@
   },
   "changes": [
     {
+      "at": "2026-11-17T06:46:00Z",
+      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
+    },
+    {
+      "at": "2026-11-17T06:52:00Z",
+      "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
+    },
+    {
       "at": "2026-11-17T03:07:00Z",
       "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
     },
@@ -376,14 +384,6 @@
     {
       "at": "2026-11-16T15:20:00Z",
       "text": "Three Monterey Peninsula programs that are active in the state's records and had no live record since Nov 9 (03653, 22098 and 39361) were loaded again from their filed reads; the 197 records already live were kept as they were."
-    },
-    {
-      "at": "2026-11-16T15:00:00Z",
-      "text": "Riverside City's 2024-2025 catalog was read for Business Administration and Communication Studies. That year already printed the 2.0 Business Administration, and Communication Studies had no page, so both programs keep their current records; the originals are in older PDF catalogs."
-    },
-    {
-      "at": "2026-11-16T14:30:00Z",
-      "text": "Physics for Transfer at Riverside City keeps its current record. Its 2025-2026 read, rescored at no cost, adds the 28 major units and 34 Cal-GETC units to 62, past the degree's 60, and the catalog does not say the two may overlap."
     }
   ],
   "headline": [
