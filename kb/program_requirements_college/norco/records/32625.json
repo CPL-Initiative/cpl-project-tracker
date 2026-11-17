@@ -44,19 +44,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 7,
-   "share": 0.714,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 9,
    "codes": [
     "CIS17A",
     "CIS18A",
@@ -66,9 +75,7 @@
     "CSC18A",
     "CSC5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "flagged": [
     "CIS17A",
@@ -79,9 +86,7 @@
     "CSC18A",
     "CSC5",
     "MATH2",
-    "MATH3",
-    "MATHC2210",
-    "MATHC2220"
+    "MATH3"
    ],
    "pass": true
   },
@@ -297,6 +302,6 @@
    "Total of 34-35 units is the major total; the 60-unit degree total includes Cal-GETC."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }
