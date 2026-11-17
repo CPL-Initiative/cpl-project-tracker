@@ -1,0 +1,19 @@
+{
+ "_what": "Collected Record Equivalents (CRE), the unit the Commons ETA clock prices collection in. Sam, 2026-11-17 (S678): 1 CRE = one course outline row (an SLO or an objective); one program record = 15 CRE; a record with gaps noted counts in full. Cost per CRE = dollars spent / CREs collected over the same dates. The weights are fixed for Phase 1. A new record type (ASSIST, CCCApply and others) gets its own weight when it arrives, and the weights below never change.",
+ "phase": 1,
+ "fixed": true,
+ "weights": {
+  "course_outline_row": 1,
+  "program_record": 15
+ },
+ "counts_in_full": "a record with gaps noted",
+ "baseline": {
+  "label": "Fable, Nov 11 to 14",
+  "from": "2026-11-11",
+  "to": "2026-11-14",
+  "cre": 21500,
+  "usd_per_cre": [0.15, 0.34],
+  "source": "Sam, 2026-11-17 (S678), about 21,500 CRE at about $0.15 to $0.34 per CRE"
+ },
+ "window_days": 7
+}

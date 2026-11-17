@@ -68,7 +68,10 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
   "kb/status/commons.json": REFS, "kb/status/cdc_integrations.json": INTEGS,
   /* The billing file is the committed one, so its days and notes are what the page shows; the sessions' file is a fixture. */
   "kb/reference/model_spend_daily.json": JSON.parse(fs.readFileSync("kb/reference/model_spend_daily.json", "utf8")),
-  "kb/status/session_spend.json": { schema: 1, sessions: [], by_day: { "2026-11-14": { usd: 41.5, sessions: 2, not_available: 1 } } } };
+  "kb/status/session_spend.json": { schema: 1, sessions: [], by_day: { "2026-11-14": { usd: 41.5, sessions: 2, not_available: 1 } } },
+  "kb/reference/cre_weights.json": JSON.parse(fs.readFileSync("kb/reference/cre_weights.json", "utf8")) };
+/* The live read's load counts by day (S678): 6,000 outline rows and 100 program records over Nov 9 to 15 = 7,500 CRE. */
+M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026-11-01": 999 }, program_records: { "2026-11-13": 100 } };
 
 (async function () {
   const V = dom("#commons/data/eta", FILES);
@@ -234,6 +237,17 @@ const FILES = { "kb/status/commons_data.json": M0, "kb/status/program-requiremen
     return s && /Soonest: the pace of Nov 8 to 15/.test(txt(s.querySelector('[data-eta-days="soonest"]'))) && /Latest: the pace of Nov 1 to 8/.test(txt(s.querySelector('[data-eta-days="latest"]'))); })());
   check("(4) the SLO and objective rates are said to be fixed estimates, not measured (S678 item 1c)",
     /not a measured rate/.test(ETA) && /rates are fixed estimates/.test(ETA) && /fixed estimate of about/.test(ETA));
+  check("(4) ⭐ cost per CRE: the 7-day figure from the same days' dollars and CREs, beside Sam's Fable baseline (S678)", (function () {
+    const s = E.strip(M), c = s && s.querySelector("[data-eta-cre]"), t = txt(c);
+    const W = FILES["kb/reference/cre_weights.json"], bill = FILES["kb/reference/model_spend_daily.json"];
+    let usd = 0; for (let d = 9; d <= 15; d++) { const k = "2026-11-" + String(d).padStart(2, "0"); usd += (bill.api[k] || 0) + ((bill.topups || {})[k] || []).reduce((a, b) => a + b, 0); }
+    const per = (usd / 7500).toFixed(2);
+    return W.weights.course_outline_row === 1 && W.weights.program_record === 15 && W.fixed === true
+      && new RegExp("Cost per CRE, Nov 9 to Nov 15: \\$" + per.replace(".", "\\.") + " .*over 7,500 CRE").test(t)
+      && /Baseline, Fable, Nov 11 to 14: about 21,500 CRE at about \$0\.15 to \$0\.34 per CRE\./.test(t); })(), txt(E.strip(M) && E.strip(M).querySelector("[data-eta-cre]")));
+  check("(4) cost per CRE says TBA, never a number, before the live read carries its load counts", (function () {
+    const M2 = D.model(Object.assign({}, M0, { live: Object.assign({}, M0.live, { by_day: undefined }) })); const s = E.strip(M2);
+    return s && /Cost per CRE: TBA \(the daily load counts arrive with the next live read\)/.test(txt(s.querySelector("[data-eta-cre]"))); })());
   check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#commons/data/eta"]'); })());
 
   // (5) a missing file, and the static rules.
