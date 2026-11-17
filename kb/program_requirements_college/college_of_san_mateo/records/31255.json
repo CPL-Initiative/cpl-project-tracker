@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics",
  "award": "A.S. T Degree",
- "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+ "source_url": "http://catalog.collegeofsanmateo.edu/current/programs/physics-as.php",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11345,
+  "input_tokens": 7189,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11345,
-    "output_tokens": 955,
+    "input_tokens": 7189,
+    "output_tokens": 1953,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,76 +30,78 @@
     "model": null
    }
   ],
-  "output_tokens": 955,
+  "output_tokens": 1953,
   "output_tokens_details": {
-   "thinking_tokens": 233
+   "thinking_tokens": 532
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06448,
- "ms": 8405,
- "seconds": 8.9,
+ "cost_usd": 0.06782,
+ "ms": 16242,
+ "seconds": 17.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 10,
    "listed": 10,
-   "share": 0.0,
-   "missing": [
-    "CHEM210",
-    "CHEM220",
-    "MATH253",
-    "MATH270",
-    "MATH275",
-    "MATHC2210",
-    "MATHC2220",
-    "PHYS250",
-    "PHYS260",
-    "PHYS270"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 5,
+   "codes": [
+    "CHEM231",
+    "CHEM232",
+    "CIS255",
+    "CIS278",
+    "STATC1000"
+   ],
+   "flagged": [
+    "CHEM231",
+    "CHEM232",
+    "CIS255",
+    "CIS278",
+    "STATC1000"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 12,
    "not_verbatim": [],
    "pass": true
   },
@@ -109,15 +111,15 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+   "section_heading": "Major Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -133,55 +135,170 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Students will be able to apply the Laws of Physics to real-world problems.",
+    "Students will be able to collect and analyze data to verify physical principles.",
+    "Students will be prepared for upper division course at a 4-year college."
+   ],
+   "careers": [
+    "researchers",
+    "professors",
+    "aerodynamist",
+    "airplane navigator",
+    "air pollution operating specialist",
+    "ballistics expert",
+    "educator",
+    "electrical or mechanical engineer",
+    "electrician",
+    "hydrologist",
+    "industrial hygienist",
+    "electrical, laser, mechanical or optics physicist"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CHEM 210",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 5A option on the wrong page"
+    "name": "Required Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "PHYS 250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 260",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 270",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CHEM 220",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 5A option on the wrong page"
-   },
-   {
-    "code": "MATH 253",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 2 option on the wrong page"
-   },
-   {
-    "code": "MATH 270",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 2 option on the wrong page"
-   },
-   {
-    "code": "MATH 275",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 2 option on the wrong page"
-   },
-   {
-    "code": "MATH C2210",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 2 option on the wrong page"
-   },
-   {
-    "code": "MATH C2220",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 2 option on the wrong page"
-   },
-   {
-    "code": "PHYS 250",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 5A option on the wrong page"
-   },
-   {
-    "code": "PHYS 260",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 5A option on the wrong page"
-   },
-   {
-    "code": "PHYS 270",
-    "why": "not in a Physics A.S.-T section; appears only as a Cal-GETC Area 5A option on the wrong page"
+    "name": "Required Selective Courses",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CHEM 210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 231",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 232",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 255",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 278",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH C2210",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH C2220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 253",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The award is listed as 'A.S. T Degree' but the page (physics-as.php) describes 'The A.S. degree in Physics' and makes no mention of an A.S.-T; a reviewer should confirm this is the right page for the award.",
+   "The 60-unit figure is the generic minimum for the Associate degree, not a printed total for this award, so degree_total is null. The page says General Education and electives make up the rest of the 60 units without printing units for them, so electives_fill_degree is true.",
+   "The page names no general education pattern. It only refers to 'required General Education coursework' and the 'AA/AS Degree Requirements', so ge_pattern is null.",
+   "The outcomes come from the page's outcomes tab and are printed for the program as a whole; the award shares them. The lead-in 'Students completing this program will be able to:' is omitted.",
+   "'60 – 70 transferable units' appears under a generic University Transfer Program blurb and is not recorded as this award's total.",
+   "'researchers' and 'professors' are taken from 'select employment with universities as researchers and/or professors'.",
+   "MATH 275 is printed as 'Ordinary Differential Equations'; the closed list gives the title as 'Ordinary Differential Equation'."
+  ]
  },
- "extracted_run": "39025870196"
+ "extracted_run": "44118956553",
+ "catalog_year": "2026-2027"
 }

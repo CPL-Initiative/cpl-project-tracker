@@ -2,46 +2,23 @@
  "college": "College of San Mateo",
  "programs": 98,
  "with_closed_list": 64,
- "found": 61,
- "extracted": 61,
+ "found": 60,
+ "extracted": 60,
  "errors": 0,
- "passed_machine_checks": 52,
+ "passed_machine_checks": 55,
  "failed": {
-  "coverage": 5,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 8,
+  "arithmetic": 5,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.05,
- "cost_per_program": 0.0828,
+ "cost_usd_run": 0.73,
+ "cost_usd_filed": 4.95,
+ "cost_per_program": 0.0826,
+ "extract_calls": 6,
+ "extract_failed": [],
  "not_found": [
-  {
-   "control_number": "10926",
-   "title": "Addiction Studies",
-   "award": "A.A. Degree",
-   "near_miss": {
-    "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-aa.php",
-    "label": {
-     "award": 1,
-     "title": 1.0
-    },
-    "field": "innerText",
-    "coverage": 0.143,
-    "body": 0.143,
-    "content": 0.143,
-    "net": 2,
-    "listed": 14,
-    "why": "coarse net: the page's code tokens name 2 of 14 listed courses",
-    "error": null,
-    "chars": {
-     "body": 6886,
-     "content": 21516,
-     "tabs": 0
-    },
-    "tab_panels": []
-   }
-  },
   {
    "control_number": "41970",
    "title": "International Business",
@@ -66,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42023",
@@ -92,8 +70,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39914644770"
+ "run": "44118956553"
 }
