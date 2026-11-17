@@ -326,3 +326,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history moved at the S668 checkpoint
 
 - 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
+
+## Moved from docs/INDEX.md's update history (S670 checkpoint)
+
+- 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).

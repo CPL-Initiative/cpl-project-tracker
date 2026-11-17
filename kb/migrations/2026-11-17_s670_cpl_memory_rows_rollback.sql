@@ -1,0 +1,3 @@
+-- Rollback of 2026-11-17_s670_cpl_memory_rows.sql (by slug). Deletes only this file's create log rows.
+delete from public.cpl_memory_log where action = 'create' and memory_id in (select id from public.cpl_memory where slug in ('d-outcomes-slice-keys-college-set-s670','d-skyline-yield-one-live-row-s670','p-read-live-rows-before-guarded-delete-s670','p-apply-merge-takes-mains-copy-s670','f-coastline-objectives-loaded-s670'));
+delete from public.cpl_memory where slug in ('d-outcomes-slice-keys-college-set-s670','d-skyline-yield-one-live-row-s670','p-read-live-rows-before-guarded-delete-s670','p-apply-merge-takes-mains-copy-s670','f-coastline-objectives-loaded-s670');

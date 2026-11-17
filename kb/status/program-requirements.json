@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-16T23:42:46Z",
-  "session": 668,
-  "moniker": "SkyPipit",
+  "written_at": "2026-11-17T03:49:34Z",
+  "session": 670,
+  "moniker": "SkyBunting",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_670_handoff.md",
+  "handoff": "docs/session_671_handoff.md",
   "next_step": {
-    "title": "Coastline's objectives reread, then Golden West",
-    "text": "Step 11 on Nov 17: Coastline's objectives reread is the day's full read, then Golden West, plus one preparation run. College of the Redwoods and Allan Hancock are read and wait their turn. Then the prior-year reads of the Mathematics and Physics originals at Butte, Rio Hondo, Santa Ana and Berkeley City."
+    "title": "Golden West's objectives reread",
+    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the same Coast district host as Coastline, plus one preparation run on another host. Diablo Valley's trial read 11 of 12 pages and takes its full read on a later day. Then the other seven colleges read again under the page yield."
   },
   "calls": [
     {
@@ -338,6 +338,22 @@
   },
   "changes": [
     {
+      "at": "2026-11-17T03:07:00Z",
+      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
+    },
+    {
+      "at": "2026-11-17T03:19:00Z",
+      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
+    },
+    {
+      "at": "2026-11-17T03:28:00Z",
+      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
+    },
+    {
+      "at": "2026-11-17T03:36:00Z",
+      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
+    },
+    {
       "at": "2026-11-16T23:45:00Z",
       "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
     },
@@ -368,22 +384,6 @@
     {
       "at": "2026-11-16T14:30:00Z",
       "text": "Physics for Transfer at Riverside City keeps its current record. Its 2025-2026 read, rescored at no cost, adds the 28 major units and 34 Cal-GETC units to 62, past the degree's 60, and the catalog does not say the two may overlap."
-    },
-    {
-      "at": "2026-11-16T10:20:00Z",
-      "text": "Las Positas' 505 course outcome lists no longer begin with the sentence that introduces them: the reader now knows that sentence, and the stored lists were corrected in place."
-    },
-    {
-      "at": "2026-11-16T07:16:00Z",
-      "text": "Mathematics for Transfer at Riverside City now carries its own 2025-2026 catalog record, read from that year's page and scored against that year's course numbers, in place of its 2.0 successor's page."
-    },
-    {
-      "at": "2026-11-16T06:57:00Z",
-      "text": "A record read from an earlier catalog is checked against the course numbers that catalog printed, so a renumbered course such as MAT-1C, now MATH 1C, counts as the listed course."
-    },
-    {
-      "at": "2026-11-15T22:44:00Z",
-      "text": "The College Collections ETA tops College Data Collection: a band with each college's projected Phase 1 date, and a card that opens the full clock in the side panel. Every college row also opens that college's CPL Pathways view beside the list."
     }
   ],
   "headline": [
@@ -626,16 +626,22 @@
       "active": 20282,
       "complete": 14617,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-17",
+      "active": 20282,
+      "complete": 14618,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-16T11:12:00Z"
+    "at": "2026-11-17T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-16",
-    "gaps": 3203,
+    "day": "2026-11-17",
+    "gaps": 3208,
     "parts": {
       "links": {
         "catalog": [
@@ -652,11 +658,11 @@
         ]
       },
       "roep": [
-        19950,
+        19957,
         20282
       ],
       "coci": [
-        16747,
+        16749,
         20282
       ],
       "outcomes": {
@@ -665,12 +671,12 @@
           88736
         ],
         "plo": [
-          16747,
+          16749,
           20282
         ]
       },
       "careers": [
-        15712,
+        15714,
         20282
       ]
     }
