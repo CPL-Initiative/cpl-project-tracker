@@ -12,16 +12,23 @@ reads committed files only, scores each seedless card against the evidence, and 
   5. for_sam         score 25 or less, with the same other field named by two or more signals.
   6. waiting         everything else.
 
-Then three rules run on the waiting pile, each on different cards (COBIx, 2026-11-17 12:06 and 12:19 PM PT):
+Then rules run on the waiting pile, each on different cards (COBIx, 2026-11-17 12:06 and 12:19 PM PT). By default
+only "follow past rulings" runs. Rules W and D are HELD (the conductor's second reader on #3467): held out on the
+cards a person decided, D fires on none and W on one, so neither has evidence of its own yet, while they would move
+hundreds of live cards. They run only with `--with-held-rules`, for a dry run.
 
-  W    anchor words. A title word that names another discipline does not count against guess D when the title also
+  W    (held) anchor words. A title word that names another discipline does not count against guess D when the title also
        holds an anchor word for D (5+ letters, not generic, compared on its first 7 letters, in 3+ trusted titles,
        80%+ of them D). The named word is never its own anchor; the scan continues past an excused word.
-  D    the pair default, on six fixed pairs: when two or more colleges vote and two-thirds keep the guess, the machine
+  D    (held) the pair default, on six fixed pairs: when two or more colleges vote and two-thirds keep the guess, the machine
        accepts it; two-thirds for the other field, or an even split, sends it to Sam with that field proposed.
-  FPR  follow past rulings, on the five pairs where people always moved such cards to the narrower field
-       (kb/ccr_curator_precedent.json: 3+ moves, no keep; Music vs Commercial Music and the business-family pairs left
-       out), and only when the title names the narrower field. The discipline changes, source `past_rulings_v1`.
+  FPR  follow past rulings, on the pairs where people always moved such cards to the narrower field
+       (kb/ccr_curator_precedent.json), counted leave-one-out so a card never votes for itself: a pair needs 3 or
+       more moves besides any one card's and no keep (Art vs Art History, Business vs Office Technologies,
+       Manufacturing Technology vs Drafting/CADD; Graphic Arts and Photography have 3 moves, 2 once one is left
+       out). Music vs Commercial Music and the business-family pairs stay out. Only when the title, as the List shows
+       it, names the narrower field. The discipline changes, source `past_rulings_v1`.
+  A card a person renamed (a person's unified_title in the overlay) is never moved by any rule.
   Rule T (the 27 missing TOP codes) is held by COBIx and is not here.
 
 Read-only: it writes no curation row, changes no discipline and edits no local MAP title. A person always wins: a
@@ -39,9 +46,10 @@ lists live in the bot's evidence folder), the auditor's title-mismatch flag, the
 description source.
 
 Run from the repo root:
-  python3 kb/_ccr_confidence_score.py                       # today's memberships, all rules
+  python3 kb/_ccr_confidence_score.py                       # today's memberships, follow past rulings
   python3 kb/_ccr_confidence_score.py --fill-members        # the membership fix
-  python3 kb/_ccr_confidence_score.py --fill-members --expect 3737
+  python3 kb/_ccr_confidence_score.py --fill-members --expect 2644   # measured 2026-11-17 (PR #3467)
+  python3 kb/_ccr_confidence_score.py --fill-members --with-held-rules   # dry run of W and D, never applied
   python3 kb/_ccr_confidence_score.py --no-rules            # the base bands only
   python3 kb/_ccr_confidence_score.py --out DIR             # also write DIR/scores.csv and DIR/summary.json
 """
@@ -110,22 +118,27 @@ D_PAIRS = {("History", "Ethnic Studies"), ("Computer Information Systems", "Comp
            ("Parent Education: Noncredit", "Child Development/Early Childhood Education")}
 
 # "Follow past rulings": the selection rule, and the pairs it leaves out by COBIx's word.
-FPR_MIN_MOVES = 3
+FPR_MIN_INDEPENDENT = 3   # moves besides the card's own (leave-one-out)
+DEFAULT_RULES = ("FPR",)
+HELD_RULES = ("W", "D")
+BOT_SUFFIX = "@" + "bot"
 FPR_EXCLUDED = {("Music", "Commercial Music"), ("Business", "Accounting"), ("Business", "Marketing")}
 # The title check: the title names the narrower field (NAMES) and no studio or neighboring practice (BUT_NOT).
 _I = re.IGNORECASE
 FPR_TITLE = {
-    "Art History": ([r"\bhistory\b", r"\bsurvey\b", r"\barts? of\b", r"\bmuseum", r"\bgaller", r"\bexhibition",
-                     r"\bworld art\b"],
+    # No museum, gallery or exhibition: those words move practice courses (Museum and Gallery Techniques, Gallery
+    # and Exhibition Design). A history of photography is refused by both sides, so the two never split it.
+    "Art History": ([r"\bhistory\b", r"\bsurvey\b", r"\barts? of\b", r"\bworld art\b"],
                     [r"\bstudio\b", r"\bceramic", r"\bsculpt", r"\bportfolio", r"\bdrawing", r"\bpainting",
-                     r"\bjewelry", r"\bmetal", r"\bfabrication", r"\betching", r"\bprintmaking"]),
+                     r"\bjewelry", r"\bmetal", r"\bfabrication", r"\betching", r"\bprintmaking", r"\bphotograph",
+                     r"\bmuseum", r"\bgaller", r"\bexhibition", r"\btechniques\b", r"\bdesign\b"]),
     "Graphic Arts": ([r"\bgraphic", r"\btypograph", r"\blayout", r"\bindesign\b", r"\billustrator\b", r"\bpre-?press",
                       r"\bweb design", r"\bui/ux\b", r"\binteraction design", r"\bprint design", r"\bletter ?forms?\b"],
                      [r"\bceramic", r"\betching", r"\bprintmaking", r"\bscreen ?print", r"\bphotoshop",
                       r"\bdrawing", r"\bpainting"]),
     "Photography": ([r"\bphotograph", r"\bphoto", r"\bdarkroom", r"\bcamera", r"\bdrone"],
                     [r"\bjewelry", r"\bmetal", r"\bfabrication", r"\betching", r"\bprintmaking", r"\bscreen ?print",
-                     r"\bphotoshop", r"\bdrawing"]),
+                     r"\bphotoshop", r"\bdrawing", r"\bhistory\b", r"\bsurvey\b"]),
     "Office Technologies": ([r"\bkeyboard", r"\bword processing", r"\bmicrosoft\b", r"(?-i:\bWord\b)",
                              r"\bspreadsheet", r"\bexcel\b", r"\boffice\b", r"\bsecretar", r"\bpc applications",
                              r"\bcomputer applications", r"\bcomputer skills", r"\bdocument processing"], []),
@@ -180,8 +193,8 @@ class Inputs:
         self.subj.update(NARROW_SUBJ)
         self.mq = load("kb/reference/mq_disciplines.json")["disciplines"]
         self.desc = S.load_descriptions(ROOT)
-        prec = load("kb/ccr_curator_precedent.json")["pairs"]
-        self.fpr_pairs = fpr_pairs(prec)
+        self.precedent = load("kb/ccr_curator_precedent.json")["pairs"]
+        self.fpr_pairs = fpr_pairs(self.precedent)
         # Trusted cards: a person set the discipline, or the subject map filled it (`trusted_disc`).
         self.trusted = {}
         # Rule W's anchor table also reads the seed cards both second signals confirmed (`description_and_top`, Sam's
@@ -204,15 +217,34 @@ class Inputs:
         self.anchor_cards.update(self.trusted)
 
 
-def fpr_pairs(precedent):
-    """{(guess, narrower): (moved, kept)}: 3+ past moves to the narrower field and no keep, minus COBIx's exclusions."""
+def fpr_pairs(precedent, leave_out=None):
+    """{(guess, narrower): (moved, kept)} for the pairs past rulings decide, counted leave-one-out (second reader on
+    #3467): a pair keeps FPR_MIN_INDEPENDENT or more moves after any one card's own ruling is taken out, and no keep.
+    `leave_out` = (guess, person's field) subtracts that card's own ruling first (the held-out check)."""
     out = {}
     for key, v in precedent.items():
         guess, _, other = key.partition(" -> ")
         moved, kept = int(v.get("moved_to_alt") or 0), int(v.get("kept") or 0)
-        if moved >= FPR_MIN_MOVES and kept == 0 and (guess, other) not in FPR_EXCLUDED:
+        if leave_out and leave_out[0] == guess:
+            if leave_out[1] == other:
+                moved -= 1
+            elif leave_out[1] == guess:
+                kept -= 1
+        if moved - (0 if leave_out else 1) >= FPR_MIN_INDEPENDENT and kept <= 0 and (guess, other) not in FPR_EXCLUDED:
             out[(guess, other)] = (moved, kept)
     return out
+
+
+def display_title(cid, rec, cur):
+    """The title the Courses List shows: a curated unified_title, else the minted common title."""
+    return (cur.get(cid) or {}).get("unified_title") or rec.get("common_title") or ""
+
+
+def person_renamed(cid, cur):
+    """A person saved this card's title (the overlay's unified_title, last reviewed by a person). Never moved."""
+    c = cur.get(cid) or {}
+    who = (c.get("reviewed_by") or "").strip().lower()
+    return bool(c.get("unified_title")) and bool(who) and not who.endswith(BOT_SUFFIX)
 
 
 # ── the learned tables ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -308,7 +340,7 @@ def score_card(cid, rec, guess, ctx, use_w):
     subj, top = ctx["subj"], ctx["top"]
     pts, agree, contra = 50.0, 0, Counter()
     reasons, sig = [], {}
-    title = rec.get("common_title") or ""
+    title = ctx["title"](cid, rec)
     n_col = len({m.get("college") for m in members if m.get("college")})
 
     own = subj.get((rec.get("subject") or "").strip())
@@ -456,11 +488,12 @@ def context(inp, exclude=()):
              for cid, (d, _t, rec) in inp.trusted.items() if cid not in exclude]
     train = [(d, t) for d, t in train if len(t) >= 5]
     return {"S": S, "mem": inp.mem, "subj": inp.subj, "top": inp.top, "desc": inp.desc,
+            "title": lambda cid, rec: display_title(cid, rec, inp.cur),
             "model": S.Model(train), "stems": name_stems(inp.mq),
             "anchors": anchor_table(inp.anchor_cards, exclude), "practice": practice_table(inp.trusted, inp.mem)}
 
 
-def run(inp, rules=("W", "D", "FPR"), ctx=None):
+def run(inp, rules=DEFAULT_RULES, ctx=None):
     """[(cid, row)] for every seedless card, with its band before and after the rules."""
     ctx = ctx or context(inp)
     ruled = ruled_set(inp.cur)
@@ -478,9 +511,11 @@ def run(inp, rules=("W", "D", "FPR"), ctx=None):
             row["band"] = row["base"] = "not_openable"
         else:
             hold = held(cid, rec)
+            renamed = person_renamed(cid, inp.cur)
+            row["title"] = display_title(cid, rec, inp.cur)
             s0 = score_card(cid, rec, guess, ctx, use_w=False)
             row["base"] = band_of(s0, hold)
-            s = score_card(cid, rec, guess, ctx, use_w="W" in rules) if "W" in rules else s0
+            s = score_card(cid, rec, guess, ctx, use_w=True) if "W" in rules and not renamed else s0
             row["band"] = band_of(s, hold)
             if row["band"] != row["base"] and s["title_excused"]:
                 row["rule"] = "W"
@@ -489,7 +524,8 @@ def run(inp, rules=("W", "D", "FPR"), ctx=None):
                        college_votes="; ".join("%s %d" % kv for kv in s["votes"].most_common()))
             if s["narrow"]:
                 row["proposed"] = s["narrow"]
-            if row["band"] == "waiting" and not hold and s["members"] and not s["narrow"]:
+            row["renamed"] = "yes" if renamed else ""
+            if row["band"] == "waiting" and not hold and not renamed and s["members"] and not s["narrow"]:
                 other = main_pair(s, guess)
                 if other and "D" in rules and (guess, other) in D_PAIRS:
                     v = s["votes"]
@@ -501,7 +537,7 @@ def run(inp, rules=("W", "D", "FPR"), ctx=None):
                         row.update(band="for_sam", rule="D", proposed=other,
                                    note="The colleges that teach this course split toward %s." % other)
                 elif other and "FPR" in rules and (guess, other) in inp.fpr_pairs:
-                    if fpr_title_ok(rec.get("common_title"), other):
+                    if fpr_title_ok(row["title"], other):
                         row.update(band="auto_accept", rule="FPR", discipline=other,
                                    note=("Moved from %s to %s, following past rulings: people moved every earlier "
                                          "course like this to %s. Sam can change it." % (guess, other, other)))
@@ -521,9 +557,10 @@ def summarize(rows):
             "held": sum(1 for _c, r in rows if r.get("held"))}
 
 
-def calibrate(inp, rules, folds=5):
-    """The decided cards (a person set the discipline over a seed), each scored as if still seedless by a model and
-    anchor table that never saw its own label: right and wrong auto-accepts with and without the rules."""
+def calibrate(inp, rules=DEFAULT_RULES + HELD_RULES, folds=5):
+    """Self-recall on the decided cards (a person set the discipline over a seed): each is scored as if still
+    seedless by a model and anchor table that never saw its own label, and by precedent with its own ruling taken
+    out. Per rule: how often it fires, and how often its call matches the person's."""
     decided = []
     for cid, rec in inp.courses.items():
         if cid.startswith("_") or not isinstance(rec, dict):
@@ -531,55 +568,63 @@ def calibrate(inp, rules, folds=5):
         c = inp.cur.get(cid) or {}
         if rec.get("discipline") and not rec.get("discipline_source") and c.get("discipline") and not c.get("merge_into"):
             decided.append((cid, rec, c["discipline"]))
-    res = {"decided": len(decided), "base": Counter(), "rules": Counter()}
+    per = {k: Counter() for k in ("base",) + tuple(rules)}
     for f in range(folds):
         part = [x for i, x in enumerate(decided) if i % folds == f]
         ctx = context(inp, exclude={cid for cid, _r, _d in part})
         for cid, rec, person in part:
             guess = rec["discipline"]
             hold = held(cid, rec)
-            for key, use in (("base", False), ("rules", "W" in rules)):
-                s = score_card(cid, rec, guess, ctx, use_w=use)
-                b = band_of(s, hold)
-                final = guess
-                if key == "rules" and b == "waiting" and not hold and s["members"] and not s["narrow"]:
-                    other = main_pair(s, guess)
-                    v = s["votes"]; n = sum(v.values())
-                    if other and "D" in rules and (guess, other) in D_PAIRS and n >= 2 and v.get(guess, 0) * 3 >= 2 * n:
-                        b = "auto_accept"
-                    elif other and "FPR" in rules and (guess, other) in inp.fpr_pairs and \
-                            fpr_title_ok(rec.get("common_title"), other):
-                        b, final = "auto_accept", other
-                if b == "auto_accept":
-                    res[key]["right" if final == person else "wrong"] += 1
-    return {"decided": res["decided"], "base": dict(res["base"]), "rules": dict(res["rules"])}
+            s0 = score_card(cid, rec, guess, ctx, use_w=False)
+            b0 = band_of(s0, hold)
+            if b0 == "auto_accept":
+                per["base"]["right" if guess == person else "wrong"] += 1
+            if b0 != "waiting" or hold:
+                continue
+            if "W" in rules:
+                sw = score_card(cid, rec, guess, ctx, use_w=True)
+                if band_of(sw, hold) == "auto_accept":
+                    per["W"]["right" if guess == person else "wrong"] += 1
+            other = main_pair(s0, guess)
+            if not other or not s0["members"] or s0["narrow"]:
+                continue
+            v = s0["votes"]; n = sum(v.values())
+            if "D" in rules and (guess, other) in D_PAIRS and n >= 2 and v.get(guess, 0) * 3 >= 2 * n:
+                per["D"]["right" if guess == person else "wrong"] += 1
+            if "FPR" in rules and (guess, other) in fpr_pairs(inp.precedent, leave_out=(guess, person)) and \
+                    fpr_title_ok(display_title(cid, rec, inp.cur), other):
+                per["FPR"]["right" if other == person else "wrong"] += 1
+    return {"decided": len(decided), "per_rule": {k: dict(v) for k, v in per.items()}}
 
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--fill-members", action="store_true", help="the membership fix: read unified_courses_members.js "
                                                                 "for cards kb/coci_minted_memberships.json lacks")
-    ap.add_argument("--no-rules", action="store_true", help="the base bands only (no W, D or FPR)")
-    ap.add_argument("--rules", default="W,D,FPR", help="comma list of rules to run (default W,D,FPR)")
+    ap.add_argument("--no-rules", action="store_true", help="the base bands only (no rule runs)")
+    ap.add_argument("--with-held-rules", action="store_true",
+                    help="also run the HELD rules W and D (a dry run; they have no held-out evidence yet)")
     ap.add_argument("--expect", type=int, help="exit 1 unless the auto-accept count equals this")
     ap.add_argument("--calibrate", action="store_true", help="also score the decided cards held out")
     ap.add_argument("--out", help="write scores.csv and summary.json here")
     args = ap.parse_args()
-    rules = () if args.no_rules else tuple(r for r in args.rules.split(",") if r)
+    rules = () if args.no_rules else DEFAULT_RULES + (HELD_RULES if args.with_held_rules else ())
     inp = Inputs(fill_members=args.fill_members)
     rows = run(inp, rules)
     summ = summarize(rows)
     summ.update(fill_members=args.fill_members, rules=list(rules), filled=len(inp.filled),
+                held_rules=("ran as a dry run (--with-held-rules)" if args.with_held_rules
+                            else "W and D are held and did not run; --with-held-rules runs them as a dry run"),
                 no_members=sum(1 for c, r in rows if r["band"] not in ("ruled", "merged_away", "not_openable")
                                and not inp.mem.get(c)),
                 fpr_pairs={"%s -> %s" % k: {"moved": v[0], "kept": v[1]} for k, v in sorted(inp.fpr_pairs.items())})
     if args.calibrate:
-        summ["calibration"] = calibrate(inp, rules)
+        summ["calibration"] = calibrate(inp)
     print(json.dumps(summ, indent=1))
     if args.out:
         os.makedirs(args.out, exist_ok=True)
         cols = ["mid", "title", "guess", "discipline", "base", "band", "rule", "proposed", "note", "score", "agree",
-                "held", "members", "colleges", "college_votes", "reasons", "fpr_left_alone"]
+                "held", "renamed", "members", "colleges", "college_votes", "reasons", "fpr_left_alone"]
         with open(os.path.join(args.out, "scores.csv"), "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
             w.writeheader()

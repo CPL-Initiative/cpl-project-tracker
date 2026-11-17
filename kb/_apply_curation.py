@@ -113,37 +113,75 @@ def is_person(account):
     return bool(e) and not e.endswith(BOT_SUFFIX)
 
 
-def fold_ruling(curations, row):
-    """Fold one ccr_procedure_request row into curations[mid]["ruling"]. Returns the M-ID, or None when the value
-    names none."""
+# A ruling lands only with the write that carries it (second reader on #3467): Keep and Move write a `discipline`
+# row, Keep and also list as a `cross_listed_disciplines` row. When that write failed after the reason saved, the
+# reason row alone is not a ruling, so the card is asked about again. "Not sure yet" decides nothing and never folds.
+RULING_NEEDS = {"keep": "discipline", "move": "discipline", "crosslist": "cross_listed_disciplines"}
+# A synthetic merge target is minted by the merge dialog (UC-CUR..., UC-CUR-EXT...); its discipline row is written by
+# that dialog in the same save, so it never verifies (excel_to_dashboard.py, Sam's 2026-06-10 rule).
+SYNTHETIC_PREFIX = "UC-CUR"
+
+
+def _ruling_value(row):
     try:
         v = json.loads(row.get("value") or "{}")
     except (TypeError, ValueError):
         return None
-    mid = (v.get("mid") or "").strip() if isinstance(v, dict) else ""
-    if not mid:
+    if not isinstance(v, dict) or not (v.get("mid") or "").strip():
         return None
-    at = row.get("reviewed_at") or ""
-    entry = curations.setdefault(mid, {})
-    if at >= ((entry.get("ruling") or {}).get("at") or ""):
-        entry["ruling"] = {"ruling": v.get("ruling"), "to": v.get("to"), "at": at}
-    return mid
+    return v
+
+
+def ruling_landed(v, rows_by_mid):
+    """True when the write a ruling needs exists: a person's row of the needed field on the ruled M-ID."""
+    need = RULING_NEEDS.get(v.get("ruling"))
+    if not need:
+        return False
+    return any((r.get("field") or "").strip() == need and is_person(r.get("reviewer_email"))
+               for r in rows_by_mid.get(v["mid"].strip(), ()))
+
+
+def fold_rulings(curations, rule_rows, rows):
+    """Fold the landed rulings into curations[mid]["ruling"] (latest wins). Returns the count of rows not folded
+    (no M-ID, Not sure yet, or the discipline write never landed)."""
+    by_mid = {}
+    for r in rows:
+        by_mid.setdefault(r.get("course_id"), []).append(r)
+    skipped = 0
+    for row in rule_rows:
+        v = _ruling_value(row)
+        if v is None or not ruling_landed(v, by_mid):
+            skipped += 1
+            continue
+        mid, at = v["mid"].strip(), row.get("reviewed_at") or ""
+        entry = curations.setdefault(mid, {})
+        if at >= ((entry.get("ruling") or {}).get("at") or ""):
+            entry["ruling"] = {"ruling": v.get("ruling"), "to": v.get("to"), "at": at}
+    return skipped
 
 
 def stamp_person_validation(curations, rows):
     """Issue 3447 and Sam's 2026-06-10 rule (a merged card reads Verified only after he verifies it): a person's
-    `discipline` row on a merge target sets that target's validated_at / validated_by in the overlay. This replaces
-    the confirmation PATCH the merge bots' row policy refused. An explicit validated_at that is later wins."""
-    targets = {v.get("merge_into") for v in curations.values() if isinstance(v, dict) and v.get("merge_into")}
+    `discipline` row on an existing merge target, saved after the latest merge into it, sets that target's
+    validated_at / validated_by in the overlay. This replaces the confirmation PATCH the merge bots' row policy
+    refused. A synthetic UC-CUR target is never stamped, and neither is a discipline row written with the merge
+    itself (the merge dialog's own row). An explicit validated_at that is later wins."""
+    merged_at = {}
+    for r in rows:
+        if (r.get("field") or "").strip() == "merge_into" and r.get("value"):
+            t = r["value"]
+            merged_at[t] = max(merged_at.get(t, ""), r.get("reviewed_at") or "")
     for row in rows:
         if (row.get("field") or "").strip() != "discipline" or not is_person(row.get("reviewer_email")):
             continue
-        cid = row.get("course_id")
-        if cid not in targets or cid not in curations:
+        cid = row.get("course_id") or ""
+        if cid not in merged_at or cid not in curations or cid.startswith(SYNTHETIC_PREFIX):
             continue
         at = row.get("reviewed_at") or ""
+        if not at or at <= merged_at[cid]:
+            continue
         entry = curations[cid]
-        if at and at >= (entry.get("validated_at") or ""):
+        if at >= (entry.get("validated_at") or ""):
             entry["validated_at"] = at
             entry["validated_by"] = row.get("reviewer_email")
 
@@ -154,11 +192,11 @@ def fold_rows(rows, live=None, maps=None):
     to the fold before the field existed)."""
     curations = {}
     skipped = 0
+    rule_rows = []
     for row in rows:
         field = (row.get("field") or "").strip()
         if field == RULE_FIELD:
-            if fold_ruling(curations, row) is None:
-                skipped += 1
+            rule_rows.append(row)
             continue
         if field not in FIELDS:
             skipped += 1
@@ -183,6 +221,7 @@ def fold_rows(rows, live=None, maps=None):
             if row.get("validated_at"):
                 entry["validated_at"] = row.get("validated_at")
                 entry["validated_by"] = row.get("validated_by")
+    skipped += fold_rulings(curations, rule_rows, rows)
     stamp_person_validation(curations, rows)
     return curations, skipped, hold_honors_pairs(curations, rows, live, maps)
 
