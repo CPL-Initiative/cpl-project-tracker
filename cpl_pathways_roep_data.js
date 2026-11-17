@@ -1,15 +1,15 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "58b763170559",
+ "build": "268ae2cbbc23",
  "built": "2026-11-13",
  "inputs": {
   "records": 18205,
   "map_read_at": "2026-11-13",
   "registry_read_at": "2026-11-13",
   "articulations": "2026-09-03T20:19:16Z",
-  "memberships": "2026-11-15 06:19",
-  "cer": "2026-11-15T06:20:07+00:00"
+  "memberships": "2026-11-16 22:54",
+  "cer": "2026-11-16T22:55:07+00:00"
  },
  "definitions": {
   "here": "Articulated here: the college has articulated CPL to this course. MAP holds a credit recommendation for it at this college (military, industry or exam credit), or MAP's articulated-exhibit feed names the course at this college.",
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -523,6 +523,42 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Cabrillo College"
          ]
+        },
+        {
+         "credential": "EMT-2 Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "First Aid, CPR, and AED Certification",
+         "colleges": [
+          "Las Positas College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Health credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        },
+        {
+         "credential": "Paramedic License",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Standard First Aid/CPR/AED",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       }
@@ -573,6 +609,42 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Dental Board of California Certificates",
          "colleges": [
           "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "EMT-2 Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "First Aid, CPR, and AED Certification",
+         "colleges": [
+          "Las Positas College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Health credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        },
+        {
+         "credential": "Paramedic License",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Standard First Aid/CPR/AED",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -681,6 +753,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -757,7 +835,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -1787,7 +1865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -2168,6 +2246,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -2225,6 +2309,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -2276,6 +2366,12 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Elementary Statistics with Applications for Health Care Professionals",
          "colleges": [
           "Ventura College"
+         ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
          ]
         }
        ]
@@ -2662,7 +2758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -3733,7 +3829,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -3997,6 +4093,51 @@ window.CPL_PATHWAYS_ROEP = {
           "Lake Tahoe Community College",
           "Santa Ana College"
          ]
+        },
+        {
+         "credential": "Fire Technology",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Firefighter I",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Kern County Fire Recruit Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Fire Service In-Service Training — Command & Control",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Principles of Emergency Services",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Firefighter 2",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -4073,6 +4214,12 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Professional Fire Service Experience",
          "colleges": [
           "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Officer or Company Officer or Fire Inspector",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -4156,6 +4303,43 @@ window.CPL_PATHWAYS_ROEP = {
           "Chaffey College",
           "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Systems",
+         "colleges": [
+          "Chaffey College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Building Construction for Fire Protection",
+         "colleges": [
+          "Mendocino College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Equipment and Systems",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "Firefighter EMT Certificate",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -4301,6 +4485,13 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "College of the Desert",
           "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Modesto Junior College"
          ]
         }
        ]
@@ -4567,7 +4758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -4831,6 +5022,51 @@ window.CPL_PATHWAYS_ROEP = {
           "Lake Tahoe Community College",
           "Santa Ana College"
          ]
+        },
+        {
+         "credential": "Fire Technology",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Firefighter I",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Kern County Fire Recruit Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Fire Service In-Service Training — Command & Control",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Principles of Emergency Services",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Firefighter 2",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -4907,6 +5143,12 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Professional Fire Service Experience",
          "colleges": [
           "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Officer or Company Officer or Fire Inspector",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -4990,6 +5232,43 @@ window.CPL_PATHWAYS_ROEP = {
           "Chaffey College",
           "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Systems",
+         "colleges": [
+          "Chaffey College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Building Construction for Fire Protection",
+         "colleges": [
+          "Mendocino College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Equipment and Systems",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "Firefighter EMT Certificate",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -5135,6 +5414,13 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "College of the Desert",
           "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Modesto Junior College"
          ]
         }
        ]
@@ -5401,7 +5687,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -6304,6 +6590,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "San Bernardino Valley College"
          ]
+        },
+        {
+         "credential": "JST Military Training — Computer Applications",
+         "colleges": [
+          "Napa Valley College"
+         ]
         }
        ]
       },
@@ -6849,6 +7141,12 @@ window.CPL_PATHWAYS_ROEP = {
           "Norco College",
           "Riverside City College"
          ]
+        },
+        {
+         "credential": "California Real Estate Broker License",
+         "colleges": [
+          "Santa Barbara City College"
+         ]
         }
        ]
       }
@@ -6948,7 +7246,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -7296,6 +7594,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -7484,7 +7788,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -7744,6 +8048,89 @@ window.CPL_PATHWAYS_ROEP = {
           "San Diego Miramar College",
           "Santa Ana College"
          ]
+        },
+        {
+         "credential": "Firefighter Journeyperson Certificate",
+         "colleges": [
+          "City College of San Francisco",
+          "Glendale Community College",
+          "Lake Tahoe Community College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+         "colleges": [
+          "Bakersfield College",
+          "Glendale Community College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Fire Academy Experience",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Moreno Valley College"
+         ]
+        },
+        {
+         "credential": "Fire Science",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Fire Service",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Fire Technology",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Santa Ana College"
+         ]
+        },
+        {
+         "credential": "Firefighter I",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Kern County Fire Recruit Academy",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Fire Service In-Service Training — Command & Control",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Principles of Emergency Services",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Firefighter 2",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -7822,6 +8209,18 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Merced College"
          ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Officer or Company Officer or Fire Inspector",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -7887,6 +8286,49 @@ window.CPL_PATHWAYS_ROEP = {
           "Chaffey College",
           "Santa Ana College",
           "Sierra College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Systems",
+         "colleges": [
+          "Chaffey College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Building Construction for Fire Protection",
+         "colleges": [
+          "Mendocino College"
+         ]
+        },
+        {
+         "credential": "Fire Inspector 1C",
+         "colleges": [
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Protection Equipment and Systems",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "Firefighter EMT Certificate",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -7990,6 +8432,52 @@ window.CPL_PATHWAYS_ROEP = {
           "Modesto Junior College",
           "San Diego Miramar College"
          ]
+        },
+        {
+         "credential": "Fire Fighter Paramedic Journeyperson Certificate",
+         "colleges": [
+          "Bakersfield College",
+          "Chaffey College",
+          "Glendale Community College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Firefighter Journeyperson Certificate",
+         "colleges": [
+          "City College of San Francisco",
+          "Glendale Community College",
+          "Lake Tahoe Community College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Academy Experience",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Moreno Valley College"
+         ]
+        },
+        {
+         "credential": "Firefighter I",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Professional Fire Service Experience",
+         "colleges": [
+          "College of the Desert",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "SFT Fire Inspector 1B and 1C",
+         "colleges": [
+          "Lake Tahoe Community College",
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -8078,6 +8566,29 @@ window.CPL_PATHWAYS_ROEP = {
           "Chaffey College",
           "Lake Tahoe Community College",
           "Merced College"
+         ]
+        },
+        {
+         "credential": "Firefighter Journeyperson Certificate",
+         "colleges": [
+          "Cabrillo College",
+          "City College of San Francisco",
+          "Lake Tahoe Community College",
+          "San Diego Miramar College"
+         ]
+        },
+        {
+         "credential": "Fire Academy Experience",
+         "colleges": [
+          "Cabrillo College",
+          "Lake Tahoe Community College"
+         ]
+        },
+        {
+         "credential": "Firefighter I",
+         "colleges": [
+          "Bakersfield College",
+          "Lake Tahoe Community College"
          ]
         }
        ]
@@ -8476,6 +8987,24 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "City College of San Francisco"
          ]
+        },
+        {
+         "credential": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+         "colleges": [
+          "City College of San Francisco"
+         ]
+        },
+        {
+         "credential": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
+         "colleges": [
+          "City College of San Francisco"
+         ]
+        },
+        {
+         "credential": "Wildland Fire ICS/NWCG Certification Bundle",
+         "colleges": [
+          "City College of San Francisco"
+         ]
         }
        ]
       }
@@ -8715,7 +9244,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -9387,6 +9916,18 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Modesto Junior College"
          ]
+        },
+        {
+         "credential": "Intensive Reading, Writing, and Reasoning",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "International Master's Thesis — English",
+         "colleges": [
+          "Cuesta College"
+         ]
         }
        ]
       }
@@ -9453,6 +9994,18 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Modesto Junior College"
          ]
+        },
+        {
+         "credential": "Intensive Reading, Writing, and Reasoning",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "International Master's Thesis — English",
+         "colleges": [
+          "Cuesta College"
+         ]
         }
        ]
       }
@@ -9513,6 +10066,18 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "English Composition and Reading",
          "colleges": [
           "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Intensive Reading, Writing, and Reasoning",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "International Master's Thesis — English",
+         "colleges": [
+          "Cuesta College"
          ]
         }
        ]
@@ -9949,7 +10514,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -10670,7 +11235,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -11023,7 +11588,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -11364,7 +11929,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -11745,6 +12310,24 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Chaffey College"
          ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Introduction to the Criminal Justice System",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Law Enforcement",
+         "colleges": [
+          "Chaffey College"
+         ]
         }
        ]
       },
@@ -11820,6 +12403,24 @@ window.CPL_PATHWAYS_ROEP = {
         },
         {
          "credential": "Basic Correctional Officer Academy",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
+         "colleges": [
+          "Bakersfield College"
+         ]
+        },
+        {
+         "credential": "Introduction to the Criminal Justice System",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Law Enforcement",
          "colleges": [
           "Chaffey College"
          ]
@@ -11910,6 +12511,12 @@ window.CPL_PATHWAYS_ROEP = {
           "East Los Angeles College",
           "Modesto Junior College"
          ]
+        },
+        {
+         "credential": "Criminal Law",
+         "colleges": [
+          "Norco College"
+         ]
         }
        ]
       }
@@ -11992,6 +12599,20 @@ window.CPL_PATHWAYS_ROEP = {
           "Los Medanos College",
           "Solano Community College"
          ]
+        },
+        {
+         "credential": "Concepts of Criminal Law",
+         "colleges": [
+          "Chaffey College",
+          "East Los Angeles College",
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Criminal Law",
+         "colleges": [
+          "Norco College"
+         ]
         }
        ]
       },
@@ -12064,6 +12685,18 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Principles & Procedures of the Justice System (Administration of Justice 4)",
          "colleges": [
           "East Los Angeles College"
+         ]
+        },
+        {
+         "credential": "Principles and Procedures of the Criminal Justice System",
+         "colleges": [
+          "Norco College"
+         ]
+        },
+        {
+         "credential": "Principles and Procedures of the Justice System",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -12357,6 +12990,15 @@ window.CPL_PATHWAYS_ROEP = {
         },
         {
          "credential": "Department of Veterans Affairs Police Officer (VA POST)",
+         "colleges": [
+          "Bakersfield College",
+          "Copper Mountain College",
+          "Los Medanos College",
+          "Solano Community College"
+         ]
+        },
+        {
+         "credential": "Federal Law Enforcement Training (DoD)",
          "colleges": [
           "Bakersfield College",
           "Copper Mountain College",
@@ -12962,6 +13604,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -13018,6 +13666,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -13068,6 +13722,12 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Elementary Statistics with Applications for Health Care Professionals",
          "colleges": [
           "Ventura College"
+         ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
          ]
         }
        ]
@@ -13125,6 +13785,12 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Elementary Statistics with Applications for Health Care Professionals",
          "colleges": [
           "Ventura College"
+         ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
          ]
         }
        ]
@@ -13214,7 +13880,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -13565,7 +14231,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -13903,6 +14569,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Chaffey College"
          ]
+        },
+        {
+         "credential": "Networking Essentials (JST Military Credit)",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -14180,6 +14852,42 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Norco College"
          ]
+        },
+        {
+         "credential": "C++ Programming",
+         "colleges": [
+          "Copper Mountain College"
+         ]
+        },
+        {
+         "credential": "CLP — C Certified Professional Programmer",
+         "colleges": [
+          "Norco College"
+         ]
+        },
+        {
+         "credential": "JST Military Training — Introduction to Programming",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        },
+        {
+         "credential": "Programming Concepts and Methodology 1",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "Programming Concepts and Methodology 1 (C++)",
+         "colleges": [
+          "Chaffey College"
+         ]
+        },
+        {
+         "credential": "Programming Fundamentals: Java",
+         "colleges": [
+          "City College of San Francisco"
+         ]
         }
        ]
       }
@@ -14294,7 +15002,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -15937,7 +16645,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -16300,6 +17008,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Chaffey College"
          ]
+        },
+        {
+         "credential": "Networking Essentials (JST Military Credit)",
+         "colleges": [
+          "Modesto Junior College"
+         ]
         }
        ]
       },
@@ -16578,6 +17292,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Santa Ana College"
          ]
+        },
+        {
+         "credential": "Microsoft Certified: Azure Administrator Associate (AZ-104)",
+         "colleges": [
+          "Santa Ana College"
+         ]
         }
        ]
       }
@@ -16746,7 +17466,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -17156,6 +17876,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Napa Valley College"
          ]
+        },
+        {
+         "credential": "Personal Training Certification",
+         "colleges": [
+          "Madera College"
+         ]
         }
        ]
       }
@@ -17280,6 +18006,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Napa Valley College"
          ]
+        },
+        {
+         "credential": "Personal Training Certification",
+         "colleges": [
+          "Madera College"
+         ]
         }
        ]
       }
@@ -17396,6 +18128,12 @@ window.CPL_PATHWAYS_ROEP = {
          "colleges": [
           "Ventura College"
          ]
+        },
+        {
+         "credential": "Introduction to Statistics",
+         "colleges": [
+          "Copper Mountain College"
+         ]
         }
        ]
       }
@@ -17445,6 +18183,42 @@ window.CPL_PATHWAYS_ROEP = {
          "credential": "Dental Board of California Certificates",
          "colleges": [
           "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "EMT-2 Certification",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+         "colleges": [
+          "Modesto Junior College"
+         ]
+        },
+        {
+         "credential": "First Aid, CPR, and AED Certification",
+         "colleges": [
+          "Las Positas College"
+         ]
+        },
+        {
+         "credential": "Military Basic Training (Health credit)",
+         "colleges": [
+          "Napa Valley College"
+         ]
+        },
+        {
+         "credential": "Paramedic License",
+         "colleges": [
+          "Cabrillo College"
+         ]
+        },
+        {
+         "credential": "Standard First Aid/CPR/AED",
+         "colleges": [
+          "Modesto Junior College"
          ]
         }
        ]
@@ -17736,7 +18510,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -18514,7 +19288,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   },
@@ -18682,7 +19456,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "58b763170559",
+    "build": "268ae2cbbc23",
     "built": "2026-11-13"
    }
   }
