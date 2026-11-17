@@ -73,7 +73,7 @@ const RIDGE = { schema: 1, college: "Ridge College", slug: "ridge", basis: "comm
 });
 const SIDE = "kb/status/commons_data_programs/";
 
-function load(hash, data, extra) {
+function load(hash, data, extra, rest) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="tab-commons"><div id="commons-root">Loading</div></div></body></html>',
     { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously" });
   const w = dom.window;
@@ -82,8 +82,15 @@ function load(hash, data, extra) {
   Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
   const files = Object.assign({ "kb/status/commons_data.json": data || DATA, "kb/status/commons.json": STATUS }, data === FIX ? { [SIDE + "ridge.json"]: RIDGE } : {}, extra || {});
   w.__fetched = [];
-  w.fetch = function (url) {
+  w.fetch = function (url, opts) {
     w.__fetched.push(String(url));
+    /* The public course_outcomes read (#3412): a Range-paged answer from the test's own rows. */
+    if (rest && /\/rest\/v1\/course_outcomes\?/.test(String(url))) {
+      const h = (opts && opts.headers) || {}, m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+      const all = rest(String(url)), from = m ? +m[1] : 0, to = m ? +m[2] : all.length - 1;
+      w.__rest = (w.__rest || []).concat([{ url: String(url), range: h.Range || null, auth: h.Authorization || null, apikey: h.apikey || null }]);
+      return Promise.resolve({ ok: true, status: 206, json: () => Promise.resolve(JSON.parse(JSON.stringify(all.slice(from, to + 1)))) });
+    }
     let hit = files[String(url)];
     /* The committed sidecars, read from disk, for the committed file's walk. */
     if (hit === undefined && (!data || data === DATA) && String(url).indexOf(SIDE) === 0 && fs.existsSync(String(url))) hit = JSON.parse(fs.readFileSync(String(url), "utf8"));
@@ -481,6 +488,83 @@ function audit(x, where, bad, seen) {
     const cell = oo.d.querySelector('#cdd-colleges tr[data-id="9001"] td[data-label="SLOs and objectives"]');
     check("guards 3: a college flagged as printing no objectives still shows its live objective meter when the live count is above 0",
       cell && cell.querySelectorAll(".cdd-pr").length === 2 && !cell.querySelector("[data-noobj]"), cell && txt(cell));
+  }
+  {
+    /* (7) ⭐ the SLO drill and the PLO section (#3412, items 2 and 3): from Orange Coast's SLO pane one click opens
+       ACCTA to its courses and the next a course's SLO text, read once from course_outcomes in 500-row pages; a
+       subject or course with no text says so; the same pane reaches each program's PLOs. */
+    const oc = DATA.colleges.filter((c) => c.slug === "orange_coast")[0];
+    const OCO = oc && JSON.parse(fs.readFileSync(oc.outcomes_file, "utf8"));
+    const ROWS = [];
+    /* Two ACCTA courses, an older read of the first (dropped by the newest-read rule), 520 filler rows so the read takes
+       two pages, and a course whose only list is empty. */
+    ROWS.push({ course_code: "ACCT A101", course_title: "Financial Accounting", kind: "slo", outcomes: ["Old wording"], fingerprint: "f0", read_run: 1, source_kind: "catalog", loaded_at: "2026-11-01T00:00:00Z" });
+    ROWS.push({ course_code: "ACCT A101", course_title: "Financial Accounting", kind: "objective", outcomes: ["Explain the accounting cycle."], fingerprint: "f2", read_run: 2, source_kind: "catalog", loaded_at: "2026-11-09T00:00:00Z" });
+    ROWS.push({ course_code: "ACCT A101", course_title: "Financial Accounting", kind: "slo", outcomes: ["Prepare financial statements.", "Record journal entries."], fingerprint: "f1", read_run: 2, source_kind: "catalog", source_system: "courseleaf", loaded_at: "2026-11-09T00:00:00Z" });
+    for (let i = 0; i < 520; i++) ROWS.push({ course_code: "ANTH A" + (100 + i), course_title: "Filler " + i, kind: "slo", outcomes: ["Filler outcome " + i], fingerprint: "a" + i, read_run: 2 });
+    ROWS.push({ course_code: "ACCT A200", course_title: "Empty Course", kind: "slo", outcomes: [], fingerprint: "e", read_run: 2 });
+    const z = load("#commons/data/slos/college/orange_coast/slos", DATA, null, (u) => (/college=eq\.Orange%20Coast%20College/.test(u) ? ROWS : []));
+    await z.M.boot(); await settle();
+    const P = z.d.querySelector("#cdd-panel");
+    const sb = P && P.querySelector('table.cdd-subj button[data-subj="ACCTA"]');
+    check("drill 0: the success address opens Orange Coast's SLO pane with ACCTA as a subject word, no read yet",
+      !!oc && !!sb && sb.getAttribute("aria-expanded") === "false" && !!z.d.getElementById(sb.getAttribute("aria-controls")) && !(z.w.__rest || []).length,
+      [z.w.location.hash, !!sb, (z.w.__rest || []).length]);
+    if (sb) {
+      sb.click(); await settle();
+      const more = z.d.getElementById(sb.getAttribute("aria-controls"));
+      const cb = more && more.querySelector('button[data-course="ACCT A101"]');
+      check("drill 1 ⭐: one click opens ACCTA to its courses: code, title, and how many SLO and objective lists",
+        sb.getAttribute("aria-expanded") === "true" && !more.hasAttribute("hidden") && cb && /Financial Accounting/.test(txt(cb))
+        && /1 SLO list, 1 objective list/.test(txt(cb.closest("li"))) && more.querySelectorAll("li[data-course-row]").length === 2, more && txt(more).slice(0, 200));
+      const reads = (z.w.__rest || []);
+      check("drill 2 ⭐: the read is the public course_outcomes table under the anon key, the course fields, two 500-row pages when the first is full",
+        reads.length === 2 && reads[0].range === "0-499" && reads[1].range === "500-999" && /select=course_code,course_title,kind,heading,lead,outcomes/.test(reads[0].url)
+        && /kind=in\.\(slo,objective\)/.test(reads[0].url) && reads[0].auth === "Bearer " + reads[0].apikey && !!reads[0].apikey, reads.map((r) => r.range));
+      const nReads = reads.length;
+      cb.click(); await settle();
+      const tx = z.d.getElementById(cb.getAttribute("aria-controls"));
+      const blocks = Array.from(tx.querySelectorAll("section.cdd-outblock")).map((b) => b.getAttribute("data-kind"));
+      check("drill 3 ⭐: the next click opens the course's SLO text, the newest read only, SLOs before objectives",
+        cb.getAttribute("aria-expanded") === "true" && /Prepare financial statements\./.test(txt(tx)) && !/Old wording/.test(txt(tx))
+        && JSON.stringify(blocks) === JSON.stringify(["slo", "objective"]) && /Explain the accounting cycle/.test(txt(tx)), [blocks, txt(tx).slice(0, 160)]);
+      const eb = more.querySelector('button[data-course="ACCT A200"]');
+      eb.click(); await settle();
+      const et = z.d.getElementById(eb.getAttribute("aria-controls"));
+      check("drill 4: a course with no collected text says so in a sentence, with no placeholder outcome",
+        /No SLO or objective text is collected for ACCT A200 yet\./.test(txt(et)) && !et.querySelector("li"), txt(et));
+      const other = OCO.courses.by_subject.filter((r) => r.subject !== "ACCTA" && r.subject !== "ANTHA")[0];
+      const ob = other && P.querySelector('table.cdd-subj button[data-subj="' + other.subject + '"]');
+      if (ob) { ob.click(); await settle(); }
+      sb.click(); await settle(); sb.click(); await settle();
+      check("drill 5 ⭐: a subject with no collected text says so; several clicks across subjects never read the table again",
+        ob && /has collected SLO or objective text in the live table yet/.test(txt(z.d.getElementById(ob.getAttribute("aria-controls")))) && (z.w.__rest || []).length === nReads
+        && sb.getAttribute("aria-expanded") === "true", [(z.w.__rest || []).length, nReads, other && other.subject]);
+      check("drill 6: each expander is a button with aria-expanded and aria-controls naming a region on the page; header cells carry th scope",
+        Array.from(P.querySelectorAll("table.cdd-subj button[data-subj], ul.cdd-drill button[data-course]")).every((b) => b.hasAttribute("aria-expanded") && z.d.getElementById(b.getAttribute("aria-controls")))
+        && Array.from(P.querySelectorAll("table.cdd-subj th")).every((th) => th.hasAttribute("scope")));
+      const ph = P.querySelector("#cdd-plo-h");
+      const det = P.querySelector("details.cdd-plo");
+      check("plo 1 ⭐: the SLO pane carries a Program learning outcomes section from the committed file; a program's name opens its PLO text",
+        ph && txt(ph) === "Program learning outcomes" && P.querySelectorAll("details.cdd-plo").length === OCO.programs.length && det && !det.open
+        && det.querySelector("summary") && det.querySelector("ol li") && txt(det.querySelector("ol li")) === OCO.programs[0].outcomes[0], [!!ph, P.querySelectorAll("details.cdd-plo").length]);
+    }
+    /* A college with no committed outcomes file says so in the PLO section; one with an empty programs list says so too. */
+    const nf = JSON.parse(JSON.stringify(FIX));
+    nf.colleges[0].outcomes_file = SIDE + "ridge.outcomes.json";
+    const ridgeOut = { schema: 1, college: "Ridge College", slug: "ridge", courses: { slo_courses: 1, objective_courses: 0, by_subject: [{ subject: "BIO", slo_courses: 1, objective_courses: 0 }] }, programs: [] };
+    const y = load("#commons/data/college/ridge-college/slos", nf, { [SIDE + "ridge.outcomes.json"]: ridgeOut }, () => []);
+    await y.M.boot(); await settle();
+    check("plo 2: an empty programs list says no committed record carries PLOs, in the SLO pane",
+      /No committed record carries PLOs for this college\./.test(txt(y.d.querySelector("#cdd-panel"))) && !y.d.querySelector("#cdd-panel details.cdd-plo"), txt(y.d.querySelector("#cdd-panel")).slice(0, 300));
+    const yb = y.d.querySelector('#cdd-panel button[data-subj="BIO"]');
+    if (yb) { yb.click(); await settle(); }
+    check("drill 7: a subject the live table holds nothing for says so in a sentence",
+      yb && /No BIO course has collected SLO or objective text in the live table yet\./.test(txt(y.d.getElementById(yb.getAttribute("aria-controls")))));
+    const v = load("#commons/data/college/ridge-college/slos", FIX, null, () => []);
+    await v.M.boot(); await settle();
+    check("plo 3: no committed outcomes file says the committed files hold no program record with PLOs",
+      /The committed files hold no program record with PLOs for this college\./.test(txt(v.d.querySelector("#cdd-panel"))), txt(v.d.querySelector("#cdd-panel")).slice(0, 300));
   }
   check("controls ⭐: every element styled as a control is a button with a handler or a link with a destination", seen.n > 200 && !bad.length, bad.slice(0, 8).concat(["walked " + seen.n]));
 

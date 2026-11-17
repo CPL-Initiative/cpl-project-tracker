@@ -1,7 +1,481 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-14T00:01:32Z",
- "count": 0,
- "suggestions": {},
- "aligned": {}
+ "_generated_at": "2026-11-16T21:18:18Z",
+ "count": 4,
+ "suggestions": {
+  "JOURN 018A  News Production I": [
+   {
+    "kind": "cid",
+    "id": "JOUR 130",
+    "title": "Lower Division Student Media Practicum I",
+    "code": "JOURN 18A"
+   }
+  ],
+  "JOURN 020 Photojournalism I": [
+   {
+    "kind": "cid",
+    "id": "JOUR 160",
+    "title": "Introduction to Photojournalism",
+    "code": "JOURN 20"
+   }
+  ],
+  "JOURN 18B News Production II": [
+   {
+    "kind": "cid",
+    "id": "JOUR 131",
+    "title": "Lower Division Student Media Practicum II",
+    "code": "JOURN 18B"
+   }
+  ],
+  "JOURN 18C News Production III": [
+   {
+    "kind": "course",
+    "title": "News Production III",
+    "code": "JOURN 18C",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ]
+ },
+ "aligned": {
+  "Goodwill Retail Operations Specialist Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "BUSI M1408",
+   "title": "Retail Management",
+   "code": "APPR 140B",
+   "college": "Foothill College"
+  },
+  "Semiconductor Processing Apprenticeship Certificate": {
+   "kind": "mid",
+   "id": "ENGR M1090",
+   "title": "Introduction to Semiconductor Technology",
+   "code": "ENGR 061A",
+   "college": "Foothill College"
+  },
+  "High School Articulation- Developmental Psychology of Children II": {
+   "kind": "cid",
+   "id": "ECE 120",
+   "title": "Principles & Practices of Teaching Young Children",
+   "code": "ECE 50",
+   "college": "Las Positas College"
+  },
+  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+   "kind": "cid",
+   "id": "AJ 110",
+   "title": "Introduction to Criminal Justice",
+   "code": "AJ 50",
+   "college": "Las Positas College"
+  },
+  "JOURN 020 Photojournalism I": {
+   "kind": "cid",
+   "id": "JOUR 160",
+   "title": "Introduction to Photojournalism",
+   "code": "JOURN 020",
+   "college": "Laney College"
+  },
+  "JOURN 18C News Production III": {
+   "kind": "course",
+   "id": "JOUR M10GJ",
+   "title": "News Production III",
+   "code": "JOURN 018C",
+   "college": "Laney College"
+  },
+  "JOURN 18B News Production II": {
+   "kind": "cid",
+   "id": "JOUR 131",
+   "title": "Lower Division Student Media Practicum II",
+   "code": "JOURN 018B",
+   "college": "Laney College"
+  },
+  "JOURN 018 News Production IV": {
+   "kind": "course",
+   "id": "JOUR M10HF",
+   "title": "News Production IV",
+   "code": "JOURN 018D",
+   "college": "Laney College"
+  },
+  "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "ELEC M10HJ",
+   "title": "RESIDENTIAL ELECTRICAL AIR CONDITIONING & REFRIGERATION; TELEPHONE SYSTEMS",
+   "code": "APEL 112",
+   "college": "Foothill College",
+   "ambiguous": [
+    "ELEC M10ED",
+    "ELEC M10EJ",
+    "ELEC M10ET",
+    "ELEC M10FE",
+    "ELEC M10GT",
+    "ELEC M10HJ"
+   ]
+  },
+  "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "ELEC M10CM",
+   "title": "AC THEORY, CODES & PRACTICES, IBEW ORIENTATION, BLUEPRINT READING",
+   "code": "APEL 122",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO",
+    "HVAC M10CX"
+   ]
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "HVAC M10AM",
+   "title": "SF 101 BASIC STEAMFITTING SKILLS",
+   "code": "APPT 141",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AM",
+    "HVAC M10CH"
+   ]
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "PLMB M1020",
+   "title": "Plumbing 1",
+   "code": "APPT 163",
+   "college": "Foothill College",
+   "ambiguous": [
+    "PLMB M1020",
+    "PLMB M1024"
+   ]
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "HVAC M10AJ",
+   "title": "P-101 BASIC PLUMBING SKILLS",
+   "code": "APPT 131",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AJ",
+    "HVAC M10CD",
+    "HVAC M10CE"
+   ]
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "HVAC M1005",
+   "title": "Start Test Balance: Air Side 1",
+   "code": "APPT 177",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M1005",
+    "HVAC M1006"
+   ]
+  },
+  "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "HVAC M1086",
+   "title": "Advanced Manufacturing, Sheet Metal CNC",
+   "code": "APSM 103",
+   "college": "Foothill College",
+   "ambiguous": [
+    "AUTB M1076",
+    "HVAC M1086"
+   ]
+  },
+  "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "ELEC M10DH",
+   "title": "FIRE ALARM, PAGING, EMERGENCY COMMUNICATION, MASS NOTIFICATION SYSTEMS",
+   "code": "APSC 122",
+   "college": "Foothill College"
+  },
+  "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson": {
+   "kind": "course",
+   "id": "ELEC M10HJ",
+   "title": "RESIDENTIAL ELECTRICAL AIR CONDITIONING & REFRIGERATION; TELEPHONE SYSTEMS",
+   "code": "APEL 112",
+   "college": "Foothill College",
+   "ambiguous": [
+    "ELEC M10ED",
+    "ELEC M10EJ",
+    "ELEC M10ET",
+    "ELEC M10FE",
+    "ELEC M10GT",
+    "ELEC M10HJ"
+   ]
+  },
+  "Aviation Mechanic- Airframe and Powerplant": {
+   "kind": "mid",
+   "id": "INDT M1145",
+   "title": "Powerplant Theory and Maintenance Fundamentals - Reciprocating Engines",
+   "code": "AVMT 160",
+   "college": "Cuesta College",
+   "ambiguous": [
+    "AVIA M1012",
+    "AVIA M1074",
+    "INDT M1145"
+   ]
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+   "kind": "course",
+   "id": "HVAC M10BY",
+   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
+   "code": "APPT 171",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10BY",
+    "HVAC M10VC"
+   ]
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+   "kind": "course",
+   "id": "HVAC M10BY",
+   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
+   "code": "APPT 171",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10BY",
+    "HVAC M10VC"
+   ]
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+   "kind": "mid",
+   "id": "HVAC M1006",
+   "title": "Start Test Balance: Air Side 2",
+   "code": "APPT 178",
+   "college": "Foothill College"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "HVAC M10BY",
+   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
+   "code": "APPT 171",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10BY",
+    "HVAC M10VC"
+   ]
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2": {
+   "kind": "course",
+   "id": "HVAC M10AJ",
+   "title": "P-101 BASIC PLUMBING SKILLS",
+   "code": "APPT 131",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4": {
+   "kind": "course",
+   "id": "HVAC M10AM",
+   "title": "SF 101 BASIC STEAMFITTING SKILLS",
+   "code": "APPT 141",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AM",
+    "HVAC M10CH"
+   ]
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4": {
+   "kind": "course",
+   "id": "HVAC M10AJ",
+   "title": "P-101 BASIC PLUMBING SKILLS",
+   "code": "APPT 131",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AJ",
+    "HVAC M10CD",
+    "HVAC M10CE"
+   ]
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3": {
+   "kind": "mid",
+   "id": "PLMB M1024",
+   "title": "Plumbing 2",
+   "code": "APPT 164",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2": {
+   "kind": "course",
+   "id": "HVAC M10AM",
+   "title": "SF 101 BASIC STEAMFITTING SKILLS",
+   "code": "APPT 141",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3": {
+   "kind": "course",
+   "id": "HVAC M10AJ",
+   "title": "P-101 BASIC PLUMBING SKILLS",
+   "code": "APPT 131",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AJ",
+    "HVAC M10CD",
+    "HVAC M10CE"
+   ]
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+   "kind": "mid",
+   "id": "HVAC M1006",
+   "title": "Start Test Balance: Air Side 2",
+   "code": "APPT 178",
+   "college": "Foothill College"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "HVAC M10UM",
+   "title": "MATHEMATICS/SCIENCE FOR THE PLUMBING TRADE",
+   "code": "APPT 162",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "HVAC M10AM",
+   "title": "SF 101 BASIC STEAMFITTING SKILLS",
+   "code": "APPT 141",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3": {
+   "kind": "course",
+   "id": "HVAC M10AM",
+   "title": "SF 101 BASIC STEAMFITTING SKILLS",
+   "code": "APPT 141",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AM",
+    "HVAC M10CH"
+   ]
+  },
+  "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "PLMB M1017",
+   "title": "Plumbing Fixtures",
+   "code": "APPT 191",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "HVAC M10AJ",
+   "title": "P-101 BASIC PLUMBING SKILLS",
+   "code": "APPT 131",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "HVAC M1119",
+   "title": "Residential Gas & Water Installations",
+   "code": "APPT 123",
+   "college": "Foothill College"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2": {
+   "kind": "mid",
+   "id": "PLMB M1024",
+   "title": "Plumbing 2",
+   "code": "APPT 164",
+   "college": "Foothill College"
+  },
+  "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "HVAC M1014",
+   "title": "Indoor Air Quality",
+   "code": "APSM 178A",
+   "college": "Foothill College"
+  },
+  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement": {
+   "kind": "mid",
+   "id": "HVAC M1084",
+   "title": "HVAC Trade History & Introduction to Testing, Adjusting & Balancing",
+   "code": "APSM 171A",
+   "college": "Foothill College"
+  },
+  "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate": {
+   "kind": "course",
+   "id": "AUTB M10AH",
+   "title": "ORIENTATION; SAFETY & BEGINNING RESIDENTIAL SHEET METAL INSTALLATION (SPECIALIST 1A)",
+   "code": "APPR 188A",
+   "college": "Foothill College",
+   "ambiguous": [
+    "AUTB M10AH",
+    "AUTB M10AI",
+    "AUTB M10AO",
+    "AUTB M10AP"
+   ]
+  },
+  "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "INDT M1154",
+   "title": "Ultrasonic Testing Level One",
+   "code": "AATA 103A",
+   "college": "Foothill College",
+   "ambiguous": [
+    "INDT M1154",
+    "INDT M1155"
+   ]
+  },
+  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson": {
+   "kind": "mid",
+   "id": "HVAC M1084",
+   "title": "HVAC Trade History & Introduction to Testing, Adjusting & Balancing",
+   "code": "APSM 171A",
+   "college": "Foothill College"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO",
+    "HVAC M10CX"
+   ]
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO",
+    "HVAC M10CX"
+   ]
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO"
+   ]
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO"
+   ]
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+   "kind": "course",
+   "id": "HVAC M10AL",
+   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
+   "code": "APPT 151",
+   "college": "Foothill College",
+   "ambiguous": [
+    "HVAC M10AL",
+    "HVAC M10AO"
+   ]
+  }
+ }
 }

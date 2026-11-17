@@ -80,8 +80,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_contacts_harvest` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `college_short_names` | tabs: `college-identity` · scripts: `kb/_apply_college_short_names.py` | tabs: `college-identity` |
-| `course_outcomes` | tabs: `coci-lookup`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
-| `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
+| `course_outcomes` | tabs: `coci-lookup`, `commons`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
+| `cpl_adoption_interest` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` |
 | `cpl_comms` | tabs: `letters` | — |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
 | `cpl_contract_documents` | tabs: `contracts` | tabs: `contracts` |
@@ -377,6 +377,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `a11y.config.js` | scripts: `scripts/ui_pass.py` | — |
 | `activity_summaries.js` | pages: `CPL_Dashboard.html` | — |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
+| `adopt_panel.js` | pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | — |
 | `annual_report.js` | pages: `CPL_Dashboard.html` | — |
 | `applied_*.json` | scripts: `kb/_cer_decision_apply.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_sheet_apply.py`, `kb/_family_tag_apply.py`, `kb/_funding_config_edit_apply.py` | — |
 | `assoc_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -951,7 +952,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/adopt/adopt_ai.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_align.json` | scripts: `kb/_build_adopt_align.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_data.json` | tabs: `cpl-pathways`, `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
-| `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
+| `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/index.html` | none found | committed by: `first-light-apply.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/index.html` | none found | committed by: `first-light-apply.yml` |
@@ -1554,5 +1555,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1014 file
-datasets · 195 external services · 604 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1015 file
+datasets · 195 external services · 605 consumers · 72 workflows · 41 tabs.

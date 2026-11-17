@@ -2,19 +2,22 @@
  "college": "Skyline College",
  "programs": 144,
  "with_closed_list": 58,
- "found": 53,
- "extracted": 53,
+ "found": 48,
+ "extracted": 48,
  "errors": 0,
- "passed_machine_checks": 37,
+ "passed_machine_checks": 41,
  "failed": {
-  "coverage": 11,
+  "coverage": 6,
   "invented": 0,
-  "arithmetic": 16,
+  "arithmetic": 7,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 3.83,
+ "cost_usd_run": 0.34,
+ "cost_usd_filed": 3.47,
  "cost_per_program": 0.0723,
+ "extract_calls": 5,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "32962",
@@ -35,12 +38,13 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 1277,
-     "content": 9199,
+     "body": 385,
+     "content": 4482,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "33044",
@@ -61,12 +65,13 @@
     "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
     "error": null,
     "chars": {
-     "body": 1360,
-     "content": 9333,
+     "body": 468,
+     "content": 4616,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36255",
@@ -87,12 +92,13 @@
     "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
     "error": null,
     "chars": {
-     "body": 8982,
-     "content": 27911,
+     "body": 8089,
+     "content": 23194,
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46509",
@@ -100,8 +106,9 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Approved"
   }
  ],
- "run": "39035209486"
+ "run": "43968403561"
 }

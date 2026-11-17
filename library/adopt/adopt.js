@@ -61,6 +61,14 @@
 
   var D = null, A = null, R = [], AI = null;
   var f = { q: "", colleges: {}, regions: {}, areas: {}, sectors: {}, types: {}, rec: {}, standing: { awarded: true }, sort: "field" };
+  var FOLD_KEY = "cpl_catalog_folds";
+  var folds = (function () {
+    var d = { intro: false, review: true, grp: {}, rv: {} };
+    try { var v = JSON.parse(localStorage.getItem(FOLD_KEY) || "null"); if (v && typeof v === "object") {
+      if (typeof v.intro === "boolean") d.intro = v.intro; if (typeof v.review === "boolean") d.review = v.review;
+      if (v.grp && typeof v.grp === "object") d.grp = v.grp; if (v.rv && typeof v.rv === "object") d.rv = v.rv; } } catch (e) { /* private window */ }
+    return d;
+  })();
   var state = { view: "list", shown: PAGE, rows: [], cols: [], groups: [], flat: [], mxRows: [], sel: null, sc: null, other: {}, asks: {}, asksRead: false };
   var pickers = {};
 
@@ -399,13 +407,27 @@
   function askedWord(c) { var n = asked(c); return n ? ' <span class="askn">' + plural(n, "person has", "people have") + " asked</span>" : ""; }
   function askedCell(c) { var n = asked(c); return n ? '<span class="askn">' + n + " asked</span>" : ""; }
 
+  /* A not-yet-evaluated credential CPL-AI already rated by folded title (#3405, Sam 2026-11-16): one named course, the
+     scoped college's strongest when it has one, as a suggestion for faculty review; the college decides. */
+  var AI_CAVEAT = "A suggestion for faculty review. These recommendations support local review; the college decides.";
+  function aiChip(c) {
+    if (!c.ax || c.std !== "harvested") return "";
+    var sc = state.sc, pick = null;
+    if (sc && c.ab) Object.keys(sc).forEach(function (k) { var x = c.ab[k]; if (x && (!pick || x[2] < pick[3])) pick = [Number(k), x[0], x[1], x[2]]; });
+    var x = pick || c.ax, col = typeof x[0] === "number" && D.colleges[x[0]] ? D.colleges[x[0]][1] : String(x[0]);
+    var others = pick ? 0 : Math.max(0, (c.ax[4] || 1) - 1);
+    return '<div class="chips aichip"><button type="button" class="chip" data-open="' + c._i + '" data-sec="pn-ai" title="' + esc(AI_CAVEAT) + '">CPL-AI course match: '
+      + esc(col + " " + x[1] + " " + x[2]) + "</button>"
+      + '<span class="more">' + esc(TIER[x[3]] || "") + (others ? ", and " + plural(others, "other college", "other colleges") + " with a match" : "") + "</span></div>"
+      + '<p class="meta aicav">' + esc(AI_CAVEAT) + "</p>";
+  }
   function otherCard(c) {
     var says = c.std === "harvested" ? "No college has evaluated it for credit yet. You can ask for that below."
       : c.std === "inmap" ? "A college has it on file and has not set credit for it yet."
       : "A college awards credit for a credential by this name; the Credit for Prior Learning Initiative is confirming it is the same one.";
     return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
       + (c.i ? '<p class="meta">' + esc(c.i) + "</p>" : "") + '<div class="pills"><span class="pill ' + (c.std === "harvested" ? "harv" : "std") + '">' + esc(STD[c.std]) + "</span>" + badgeBtns(c, false) + "</div>"
-      + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
+      + aiChip(c) + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
   }
 
   /* Its credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family), a quiet line:
@@ -440,8 +462,9 @@
       total += g.items.length;
       if (budget <= 0) return;
       var slice = g.items.slice(0, budget); budget -= slice.length; drawn += slice.length;
-      if (g.label) html += '<section class="grp"><h3 class="grp-h">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></h3>";
-      html += '<div class="list">' + slice.map(function (c) { return card(c, sc); }).join("") + "</div>";
+      var shut = !!(g.label && folds.grp[g.label]), gid = "ad-grp-" + drawn;
+      if (g.label) html += '<section class="grp"><h3 class="grp-h"><button type="button" class="fold-h" data-grp="' + esc(g.label) + '" aria-expanded="' + !shut + '" aria-controls="' + gid + '" data-word="' + (shut ? "Show" : "Hide") + '">' + esc(g.label) + '<span class="cnt">' + plural(g.items.length, "credential", "credentials") + "</span></button></h3>";
+      html += '<div class="list" id="' + gid + '"' + (shut ? " hidden" : "") + ">" + slice.map(function (c) { return card(c, sc); }).join("") + "</div>";
       if (g.label) html += "</section>";
     });
     if (drawn < total) html += '<p class="sentinel" id="ad-list-sentinel">Loading ' + fmt(Math.min(PAGE, total - drawn)) + " more of " + fmt(total - drawn) + "…</p>";
@@ -469,9 +492,11 @@
   function drawRecFilter() {
     var sw = $("f-sw"), ai = $("f-ai");
     if (!sw || !ai || !D) return;
-    var n = D.counts || {};
-    sw.textContent = "Statewide recommendation" + (n.statewide ? " (" + fmt(n.statewide) + ")" : "");
-    ai.textContent = "CPL-AI course match" + (n.cplai ? " (" + fmt(n.cplai) + ")" : "");
+    var n = D.counts || {}, ns = n.statewide || 0, na = n.cplai || 0;  // the header figures since #3405; a press still filters
+    sw.querySelector("b").textContent = fmt(ns);
+    sw.querySelector("span").textContent = ns === 1 ? "statewide recommendation" : "statewide recommendations";
+    ai.querySelector("b").textContent = fmt(na);
+    ai.querySelector("span").textContent = na === 1 ? "CPL-AI course match" : "CPL-AI course matches";
     sw.setAttribute("aria-pressed", String(!!f.rec.sw)); ai.setAttribute("aria-pressed", String(!!f.rec.ai));
   }
 
@@ -988,15 +1013,18 @@
     if (r.n) tags.push(["Industry", r.n.join(", ") + (r.nn ? ", and " + fmt(r.nn) + " more" : "")]);
     if (r.f) tags.push(["Field", r.f]);
     if (r.l) tags.push(["Level", r.l]);
-    var html = '<article class="cred"><h3>' + esc(r.t) + "</h3>";
+    // Short until opened (#3405): the title and the issuer; the rest waits behind the title.
+    var open = !!folds.rv[r.k], id = "ad-rv-" + r._k;
+    var html = '<article class="cred rv"><h3><button type="button" data-rvx="' + esc(r.k) + '" aria-expanded="' + open + '" aria-controls="' + id + '">' + esc(r.t) + "</button></h3>";
     if (r.i) html += '<p class="meta">' + esc(r.i) + "</p>";
+    html += '<div class="rv-more" id="' + id + '"' + (open ? "" : " hidden") + ">";
     if (tags.length) html += '<dl class="tags">' + tags.map(function (t) { return "<dt>" + esc(t[0]) + "</dt><dd>" + esc(t[1]) + "</dd>"; }).join("") + "</dl>";
     if (r.r) html += '<p class="says">A related credential from the same issuer already earns credit: ' + esc(r.r) + ".</p>";
     var links = [];
     if (r.u) links.push('<a class="chip" href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer’s page</a>');
     links.push('<a class="chip" href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>');
     return html + '<div class="chips">' + links.join("") + "</div>"
-      + (r._k != null ? '<div class="chips"><button type="button" class="word" data-review="' + r._k + '">' + ASK + "</button>" + askedWord(r) + "</div>" : "") + "</article>";
+      + (r._k != null ? '<div class="chips"><button type="button" class="word" data-review="' + r._k + '">' + ASK + "</button>" + askedWord(r) + "</div>" : "") + "</div></article>";
   }
   /* A Worth a faculty review credential has no college articulating it, so its panel carries the request (Sam, 2026-11-06). */
   function openReview(k) {
@@ -1133,6 +1161,42 @@
     heroPlay();
   }
 
+  /* ── Folds (#3405): layout, remembered; filters never are ───────────────────────── */
+  function foldSave() {
+    try { localStorage.setItem(FOLD_KEY, JSON.stringify({ intro: folds.intro, review: folds.review, grp: folds.grp, rv: folds.rv })); } catch (e) { /* private window */ }
+  }
+  function paintFolds() {
+    var hero = document.querySelector(".hero"), ib = document.querySelector('[data-fold="intro"]');
+    if (ib) {
+      ib.setAttribute("aria-expanded", String(folds.intro));
+      ib.textContent = folds.intro ? "Hide the introduction" : "Show the introduction";
+      $("ad-intro").hidden = !folds.intro; $("ad-hero").hidden = !folds.intro;
+      if (hero) hero.classList.toggle("intro-closed", !folds.intro);
+    }
+    var rb = document.querySelector('[data-fold="review"]');
+    if (rb) { rb.setAttribute("aria-expanded", String(folds.review)); rb.setAttribute("data-word", folds.review ? "Hide" : "Show"); $("ad-review-body").hidden = !folds.review; }
+  }
+  function wireFolds() {
+    paintFolds();
+    document.addEventListener("click", function (e) {
+      var b = e.target && e.target.closest ? e.target.closest("[data-fold],[data-grp],[data-rvx]") : null;
+      if (!b) return;
+      if (b.hasAttribute("data-fold")) { var k = b.getAttribute("data-fold"); folds[k] = !folds[k]; paintFolds(); }
+      else if (b.hasAttribute("data-grp")) {
+        var g = b.getAttribute("data-grp"), shut = !folds.grp[g];
+        if (shut) folds.grp[g] = true; else delete folds.grp[g];
+        b.setAttribute("aria-expanded", String(!shut)); b.setAttribute("data-word", shut ? "Show" : "Hide");
+        var l = $(b.getAttribute("aria-controls")); if (l) l.hidden = shut;
+      } else {
+        var rk = b.getAttribute("data-rvx"), op = !folds.rv[rk];
+        if (op) folds.rv[rk] = true; else delete folds.rv[rk];
+        b.setAttribute("aria-expanded", String(op));
+        var m = $(b.getAttribute("aria-controls")); if (m) m.hidden = !op;
+      }
+      foldSave();
+    });
+  }
+
   /* ── Wiring ─────────────────────────────────────────────────────────────────────── */
 
   // The three figures follow the filters (Sam, 2026-11-06): every filter but Credit status, since each tile is a status
@@ -1151,6 +1215,12 @@
     n.colleges = Object.keys(colsAw).length;
     return n;
   }
+  // Clear all filters shows whenever the filters differ from what clearAll() restores; filtered() misses Credit status.
+  function atDefault() {
+    var ks = keys(f.standing);
+    return !f.q && !any(f.colleges) && !any(f.regions) && !any(f.areas) && !any(f.sectors) && !any(f.types) && !any(f.rec)
+      && ks.length === 1 && ks[0] === "awarded";
+  }
   function filtered() { return !!(f.q || any(f.colleges) || any(f.regions) || any(f.areas) || any(f.sectors) || any(f.types) || any(f.rec)); }
   function tiles() {
     if (!D) return;
@@ -1163,6 +1233,7 @@
     $("kpi-harvested").querySelector("span").textContent = (n.harvested === 1 ? "credential" : "credentials") + " not yet evaluated";
     $("kpi-harvested").hidden = !state.hasHarvested;
     $("kpi-scope").hidden = !filtered();
+    $("ad-clear-top").hidden = atDefault();
   }
   // A tile opens what it counts: the filters stay, the credit status becomes the tile's.
   function wireTiles() {
@@ -1182,6 +1253,8 @@
     Array.prototype.forEach.call(document.querySelectorAll("[data-sort]"), function (b) { b.addEventListener("click", function () { setSort(b.getAttribute("data-sort")); }); });
     Array.prototype.forEach.call(document.querySelectorAll("[data-start]"), function (b) { b.addEventListener("click", function () { startWith(b.getAttribute("data-start")); }); });
     $("ad-clear").addEventListener("click", clearAll);
+    $("ad-clear-top").addEventListener("click", clearAll);
+    wireFolds();
     $("ad-more").addEventListener("click", function () { state.shown += PAGE; drawList(); });
     $("ad-more-t").addEventListener("click", function () { state.shown += PAGE; drawTable(); });
     $("ad-csv").addEventListener("click", function () { download(slug() + ".csv", csvList(D, state.rows)); });

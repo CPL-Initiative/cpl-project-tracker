@@ -21,7 +21,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 142
+   "tested": 142,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "american_river": {
    "college": "American River College",
@@ -191,7 +195,11 @@
    "route": "site",
    "searches": false,
    "shared": 7,
-   "tested": 187
+   "tested": 187,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "bakersfield": {
    "catalog_list": null,
@@ -214,7 +222,11 @@
    "route": "site",
    "searches": true,
    "shared": 6,
-   "tested": 222
+   "tested": 222,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "barstow_community": {
    "college": "Barstow Community College",
@@ -243,7 +255,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 65
+   "tested": 65,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "butte": {
    "catalog_list": null,
@@ -266,7 +282,11 @@
    "route": "site",
    "searches": true,
    "shared": 8,
-   "tested": 157
+   "tested": 157,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "ca_ada": {
    "college": "Ca\u00f1ada College",
@@ -295,7 +315,23 @@
    "route": "site",
    "searches": true,
    "shared": 13,
-   "tested": 256
+   "tested": 256,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "Graphic Design - Associate in Science (A.S.)",
+     "holder": "20410",
+     "holder_passes_live": false,
+     "holder_read_from": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/graphic-design-associate-in-science-a-s-fall-2026",
+     "holder_title": "Digital Publishing",
+     "taker": "41948",
+     "taker_title": "Graphic Design",
+     "url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/graphic-design-associate-in-science-a-s-fall-2026"
+    }
+   ]
   },
   "calbright_credit": {
    "college": "Calbright College Credit",
@@ -324,7 +360,11 @@
    "route": "site",
    "searches": false,
    "shared": 5,
-   "tested": 263
+   "tested": 263,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "cerro_coso_community": {
    "college": "Cerro Coso Community College",
@@ -368,7 +408,11 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 229
+   "tested": 229,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "chaffey": {
    "catalog_list": null,
@@ -391,7 +435,23 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 190
+   "tested": 190,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+     "holder": "18435",
+     "holder_passes_live": false,
+     "holder_read_from": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
+     "holder_title": "Physical Science",
+     "taker": "45032",
+     "taker_title": "California General Education Transfer Curriculum (Cal-GETC)",
+     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca"
+    }
+   ]
   },
   "citrus": {
    "catalog_list": null,
@@ -414,7 +474,11 @@
    "route": "site",
    "searches": true,
    "shared": 0,
-   "tested": 172
+   "tested": 172,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "city_of_san_francisco": {
    "college": "City College of San Francisco",
@@ -449,7 +513,11 @@
    "route": "site",
    "searches": false,
    "shared": 0,
-   "tested": 55
+   "tested": 55,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "coastline_community": {
    "catalog_list": null,
@@ -487,7 +555,11 @@
    "route": "site",
    "searches": true,
    "shared": 8,
-   "tested": 138
+   "tested": 138,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "college_of_alameda": {
    "catalog_list": null,
@@ -510,7 +582,11 @@
    "route": "site",
    "searches": true,
    "shared": 0,
-   "tested": 55
+   "tested": 55,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "college_of_marin": {
    "catalog_list": null,
@@ -533,7 +609,11 @@
    "route": "site",
    "searches": false,
    "shared": 2,
-   "tested": 87
+   "tested": 87,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "college_of_san_mateo": {
    "catalog_list": null,
@@ -556,7 +636,33 @@
    "route": "site",
    "searches": true,
    "shared": 5,
-   "tested": 48
+   "tested": 48,
+   "yield_held": [
+    {
+     "held": "refused_passing",
+     "holder": "33393",
+     "holder_title": "Music",
+     "taker": "09103",
+     "taker_title": "Electronic Music",
+     "url": "https://catalog.collegeofsanmateo.edu/current/programs/electronic-music-aa.php",
+     "why": "its filed record passes live"
+    }
+   ],
+   "yield_refused_passing": 1,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": " English Associate in Arts Degree Program",
+     "holder": "32203",
+     "holder_passes_live": false,
+     "holder_read_from": "https://catalog.collegeofsanmateo.edu/current/programs/english-aa.php",
+     "holder_title": "English",
+     "taker": "05783",
+     "taker_title": "English",
+     "url": "https://catalog.collegeofsanmateo.edu/current/programs/english-aa.php"
+    }
+   ]
   },
   "college_of_the_canyons": {
    "college": "College of the Canyons",
@@ -620,7 +726,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 69
+   "tested": 69,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "college_of_the_sequoias": {
    "catalog_list": null,
@@ -643,7 +753,11 @@
    "route": "site",
    "searches": true,
    "shared": 0,
-   "tested": 118
+   "tested": 118,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "college_of_the_siskiyous": {
    "catalog_list": null,
@@ -666,7 +780,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 69
+   "tested": 69,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "columbia": {
    "catalog_list": null,
@@ -689,7 +807,11 @@
    "route": "site",
    "searches": true,
    "shared": 0,
-   "tested": 82
+   "tested": 82,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "compton": {
    "college": "Compton College",
@@ -726,7 +848,11 @@
    "route": "site",
    "searches": false,
    "shared": 0,
-   "tested": 96
+   "tested": 96,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "copper_mountain": {
    "college": "Copper Mountain College",
@@ -761,7 +887,33 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 64
+   "tested": 64,
+   "yield_held": [
+    {
+     "held": "refused_passing",
+     "holder": "41335",
+     "holder_title": "Computer Hardware Technician",
+     "taker": "20896",
+     "taker_title": "Computer Information Systems",
+     "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement",
+     "why": "its filed record passes live"
+    }
+   ],
+   "yield_refused_passing": 1,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "",
+     "holder": "11766",
+     "holder_passes_live": false,
+     "holder_read_from": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+     "holder_title": "Teacher",
+     "taker": "11767",
+     "taker_title": "Master Teacher",
+     "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement"
+    }
+   ]
   },
   "cuesta": {
    "catalog_list": null,
@@ -784,7 +936,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 172
+   "tested": 172,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "cuyamaca": {
    "catalog_list": null,
@@ -807,7 +963,11 @@
    "route": "site",
    "searches": true,
    "shared": 96,
-   "tested": 82
+   "tested": 82,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "cypress": {
    "catalog_list": null,
@@ -838,7 +998,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 257
+   "tested": 257,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "de_anza": {
    "catalog_list": null,
@@ -861,7 +1025,11 @@
    "route": "site",
    "searches": false,
    "shared": 16,
-   "tested": 226
+   "tested": 226,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "diablo_valley": {
    "catalog_list": null,
@@ -884,7 +1052,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 203
+   "tested": 203,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "east_los_angeles": {
    "college": "East Los Angeles College",
@@ -913,7 +1085,11 @@
    "route": "site",
    "searches": true,
    "shared": 22,
-   "tested": 102
+   "tested": 102,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "evergreen_valley": {
    "catalog_list": null,
@@ -936,7 +1112,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 74
+   "tested": 74,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "feather_river": {
    "catalog_list": null,
@@ -959,7 +1139,23 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 42
+   "tested": 42,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "Biology - A.S.",
+     "holder": "36176",
+     "holder_passes_live": false,
+     "holder_read_from": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
+     "holder_title": "MATHEMATICS",
+     "taker": "04321",
+     "taker_title": "Biology",
+     "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824"
+    }
+   ]
   },
   "folsom_lake": {
    "college": "Folsom Lake College",
@@ -988,7 +1184,11 @@
    "route": "site",
    "searches": false,
    "shared": 63,
-   "tested": 66
+   "tested": 66,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "fresno_city": {
    "catalog_list": null,
@@ -1011,7 +1211,11 @@
    "route": "site",
    "searches": true,
    "shared": 72,
-   "tested": 159
+   "tested": 159,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "fullerton": {
    "catalog_list": null,
@@ -1042,7 +1246,11 @@
    "route": "site",
    "searches": true,
    "shared": 14,
-   "tested": 299
+   "tested": 299,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "gavilan": {
    "catalog_list": null,
@@ -1065,7 +1273,56 @@
    "route": "site",
    "searches": true,
    "shared": 11,
-   "tested": 92
+   "tested": 92,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "Health Science - A.S. Degree",
+     "holder": "46046",
+     "holder_passes_live": false,
+     "holder_read_from": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194",
+     "holder_title": "Nutrition and Dietetics",
+     "taker": "08461",
+     "taker_title": "Health Science",
+     "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194"
+    },
+    {
+     "applied": false,
+     "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+     "holder": "45720",
+     "holder_passes_live": false,
+     "holder_read_from": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+     "holder_title": "Environmental Science I",
+     "taker": "18456",
+     "taker_title": "Liberal Arts: Natural Science",
+     "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982"
+    },
+    {
+     "applied": false,
+     "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+     "holder": "21284",
+     "holder_passes_live": false,
+     "holder_read_from": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
+     "holder_title": "CSIS: Programming for the Internet",
+     "taker": "18457",
+     "taker_title": "Liberal Arts: Computer Science & Information Systems",
+     "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034"
+    },
+    {
+     "applied": false,
+     "h1": "General Business - Certificate of Achievement",
+     "holder": "33048",
+     "holder_passes_live": false,
+     "holder_read_from": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
+     "holder_title": "Economics",
+     "taker": "21277",
+     "taker_title": "Business, General",
+     "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118"
+    }
+   ]
   },
   "glendale_community": {
    "catalog_list": {
@@ -1102,7 +1359,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 237
+   "tested": 237,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "golden_west": {
    "catalog_list": null,
@@ -1125,7 +1386,11 @@
    "route": "site",
    "searches": true,
    "shared": 12,
-   "tested": 120
+   "tested": 120,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "grossmont": {
    "catalog_list": null,
@@ -1148,7 +1413,11 @@
    "route": "site",
    "searches": false,
    "shared": 63,
-   "tested": 79
+   "tested": 79,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "hartnell": {
    "catalog_list": {
@@ -1189,7 +1458,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 88
+   "tested": 88,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "imperial_valley": {
    "catalog_list": null,
@@ -1212,7 +1485,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 122
+   "tested": 122,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "irvine_valley": {
    "catalog_list": null,
@@ -1243,7 +1520,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 134
+   "tested": 134,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "lake_tahoe_community": {
    "catalog_list": null,
@@ -1266,7 +1547,11 @@
    "route": "site",
    "searches": false,
    "shared": 0,
-   "tested": 78
+   "tested": 78,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "laney": {
    "catalog_list": null,
@@ -1289,7 +1574,11 @@
    "route": "site",
    "searches": true,
    "shared": 4,
-   "tested": 146
+   "tested": 146,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "las_positas": {
    "catalog_list": null,
@@ -1312,7 +1601,11 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 193
+   "tested": 193,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "lassen": {
    "college": "Lassen College",
@@ -1341,7 +1634,44 @@
    "route": "site",
    "searches": true,
    "shared": 8,
-   "tested": 59
+   "tested": 59,
+   "yield_held": [
+    {
+     "held": "refused_passing",
+     "holder": "43533",
+     "holder_title": "Information Technology Specialist",
+     "taker": "35112",
+     "taker_title": "Networking Fundamentals",
+     "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/networking-fundamentals-coa-spring-2021",
+     "why": "its filed record passes live"
+    }
+   ],
+   "yield_refused_passing": 1,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": "Business Bookkeeping (COA)",
+     "holder": "10954",
+     "holder_passes_live": false,
+     "holder_read_from": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021",
+     "holder_title": "Computer Information Systems",
+     "taker": "20341",
+     "taker_title": "Business: Bookkeeping",
+     "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/business-bookkeeping-coa-spring-2021"
+    },
+    {
+     "applied": false,
+     "h1": "Studio Arts (AAT)",
+     "holder": "19305",
+     "holder_passes_live": false,
+     "holder_read_from": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025",
+     "holder_title": "Liberal Arts: Elementary Teacher Preparation",
+     "taker": "33017",
+     "taker_title": "Studio Arts",
+     "url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/studio-arts-aat-fall-2025"
+    }
+   ]
   },
   "long_beach_city": {
    "catalog_list": null,
@@ -1372,7 +1702,11 @@
    "route": "site",
    "searches": true,
    "shared": 28,
-   "tested": 330
+   "tested": 330,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "los_angeles_city": {
    "college": "Los Angeles City College",
@@ -1437,7 +1771,11 @@
    "route": "site",
    "searches": true,
    "shared": 0,
-   "tested": 82
+   "tested": 82,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "madera": {
    "catalog_list": null,
@@ -1460,7 +1798,11 @@
    "route": "site",
    "searches": false,
    "shared": 22,
-   "tested": 83
+   "tested": 83,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "mendocino": {
    "college": "Mendocino College",
@@ -1516,7 +1858,11 @@
    "route": "site",
    "searches": false,
    "shared": 6,
-   "tested": 156
+   "tested": 156,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "merritt": {
    "catalog_list": null,
@@ -1539,7 +1885,11 @@
    "route": "site",
    "searches": false,
    "shared": 0,
-   "tested": 81
+   "tested": 81,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "miracosta": {
    "catalog_list": null,
@@ -1562,7 +1912,11 @@
    "route": "site",
    "searches": false,
    "shared": 40,
-   "tested": 14
+   "tested": 14,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "mission": {
    "catalog_list": null,
@@ -1614,7 +1968,11 @@
    "route": "site",
    "searches": false,
    "shared": 6,
-   "tested": 102
+   "tested": 102,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "modesto_junior": {
    "catalog_list": null,
@@ -1637,7 +1995,11 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 186
+   "tested": 186,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "monterey_peninsula": {
    "catalog_list": null,
@@ -1668,7 +2030,11 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 202
+   "tested": 202,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "moorpark": {
    "catalog_list": null,
@@ -1691,7 +2057,11 @@
    "route": "site",
    "searches": true,
    "shared": 12,
-   "tested": 124
+   "tested": 124,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "moreno_valley": {
    "catalog_list": null,
@@ -1714,7 +2084,11 @@
    "route": "site",
    "searches": false,
    "shared": 54,
-   "tested": 86
+   "tested": 86,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "mt_san_antonio": {
    "catalog_list": null,
@@ -1737,7 +2111,21 @@
    "route": "site",
    "searches": true,
    "shared": 26,
-   "tested": 340
+   "tested": 340,
+   "yield_held": [
+    {
+     "held": "refused_passing",
+     "holder": "17593",
+     "holder_title": "Welder-Automotive, Cutting & Modification",
+     "taker": "24406",
+     "taker_title": "Welder with Concentration in Automotive Welding, Cutting and Modification",
+     "url": "https://catalog.mtsac.edu/programs/programsaz/welding/welder-automotive-welding-cutting-modification-certificate/",
+     "why": "its filed record passes live"
+    }
+   ],
+   "yield_refused_passing": 1,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "mt_san_jacinto": {
    "catalog_list": null,
@@ -1760,7 +2148,11 @@
    "route": "site",
    "searches": true,
    "shared": 8,
-   "tested": 106
+   "tested": 106,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "napa_valley": {
    "catalog_list": null,
@@ -1783,7 +2175,11 @@
    "route": "site",
    "searches": true,
    "shared": 6,
-   "tested": 89
+   "tested": 89,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "norco": {
    "catalog_list": null,
@@ -1806,7 +2202,11 @@
    "route": "site",
    "searches": false,
    "shared": 76,
-   "tested": 72
+   "tested": 72,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "north_orange_continuing_education": {
    "catalog_list": null,
@@ -1829,7 +2229,11 @@
    "route": "site",
    "searches": true,
    "shared": 1,
-   "tested": 77
+   "tested": 77,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "ohlone": {
    "college": "Ohlone College",
@@ -1866,7 +2270,11 @@
    "route": "site",
    "searches": true,
    "shared": 16,
-   "tested": 254
+   "tested": 254,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "oxnard": {
    "catalog_list": null,
@@ -1889,7 +2297,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 108
+   "tested": 108,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "palo_verde": {
    "catalog_list": null,
@@ -1912,7 +2324,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 61
+   "tested": 61,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "palomar": {
    "catalog_list": null,
@@ -1935,7 +2351,11 @@
    "route": "site",
    "searches": false,
    "shared": 150,
-   "tested": 130
+   "tested": 130,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "pasadena_city": {
    "catalog_list": null,
@@ -1958,7 +2378,11 @@
    "route": "site",
    "searches": true,
    "shared": 179,
-   "tested": 117
+   "tested": 117,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "porterville": {
    "college": "Porterville College",
@@ -1987,7 +2411,11 @@
    "route": "site",
    "searches": true,
    "shared": 9,
-   "tested": 182
+   "tested": 182,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "rio_hondo": {
    "catalog_list": null,
@@ -2010,7 +2438,11 @@
    "route": "site",
    "searches": false,
    "shared": 6,
-   "tested": 280
+   "tested": 280,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "riverside_city": {
    "catalog_list": null,
@@ -2025,15 +2457,19 @@
    "false_matches": [],
    "false_no_claims": 0,
    "false_off_own": 0,
-   "hits": 134,
+   "hits": 135,
    "ncl": 6,
    "no_claims_matches": [],
    "platform": "curriqunet",
-   "recall": 0.957,
+   "recall": 0.951,
    "route": "site",
    "searches": true,
-   "shared": 104,
-   "tested": 140
+   "shared": 102,
+   "tested": 142,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "sacramento_city": {
    "college": "Sacramento City College",
@@ -2062,7 +2498,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 301
+   "tested": 301,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_bernardino_valley": {
    "catalog_list": null,
@@ -2085,7 +2525,11 @@
    "route": "site",
    "searches": true,
    "shared": 44,
-   "tested": 176
+   "tested": 176,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_diego_city": {
    "catalog_list": null,
@@ -2108,7 +2552,11 @@
    "route": "site",
    "searches": false,
    "shared": 7,
-   "tested": 159
+   "tested": 159,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_diego_mesa": {
    "catalog_list": null,
@@ -2131,7 +2579,11 @@
    "route": "site",
    "searches": false,
    "shared": 14,
-   "tested": 160
+   "tested": 160,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_diego_miramar": {
    "catalog_list": null,
@@ -2154,7 +2606,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 115
+   "tested": 115,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_diego_of_continuing_education": {
    "college": "San Diego College of Continuing Education",
@@ -2183,7 +2639,11 @@
    "route": "site",
    "searches": true,
    "shared": 2,
-   "tested": 200
+   "tested": 200,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "san_jose_city": {
    "catalog_list": null,
@@ -2206,7 +2666,11 @@
    "route": "site",
    "searches": false,
    "shared": 4,
-   "tested": 76
+   "tested": 76,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "santa_ana": {
    "catalog_list": null,
@@ -2229,7 +2693,11 @@
    "route": "site",
    "searches": false,
    "shared": 11,
-   "tested": 336
+   "tested": 336,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "santa_barbara_city": {
    "catalog_list": null,
@@ -2252,7 +2720,11 @@
    "route": "site",
    "searches": true,
    "shared": 10,
-   "tested": 239
+   "tested": 239,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "santa_monica": {
    "college": "Santa Monica College",
@@ -2299,7 +2771,11 @@
    "route": "site",
    "searches": false,
    "shared": 42,
-   "tested": 19
+   "tested": 19,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "skyline": {
    "catalog_list": null,
@@ -2322,7 +2798,34 @@
    "route": "site",
    "searches": true,
    "shared": 12,
-   "tested": 25
+   "tested": 25,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": [
+    {
+     "applied": false,
+     "h1": " Automotive Advanced Engine Performance Technology Certificate of Achievement",
+     "holder": "32337",
+     "holder_passes_live": false,
+     "holder_read_from": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php",
+     "holder_title": "Asian Engine Performance Technology",
+     "taker": "10529",
+     "taker_title": "Automotive Advanced Engine Performance Technology",
+     "url": "https://catalog.skylinecollege.edu/current/programs/automotive-advanced-engine-performance-technology-ca.php"
+    },
+    {
+     "applied": false,
+     "h1": " Dance Associate in Arts Degree Program",
+     "holder": "46296",
+     "holder_passes_live": false,
+     "holder_read_from": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php",
+     "holder_title": "Musical Theater",
+     "taker": "10546",
+     "taker_title": "Dance",
+     "url": "https://catalog.skylinecollege.edu/current/programs/dance-aa.php"
+    }
+   ]
   },
   "solano_community": {
    "college": "Solano Community College",
@@ -2351,7 +2854,39 @@
    "route": "site",
    "searches": true,
    "shared": 8,
-   "tested": 188
+   "tested": 188,
+   "yield_held": [
+    {
+     "held": "refused_passing",
+     "holder": "38055",
+     "holder_title": "Spanish for Bilinguals",
+     "taker": "05398",
+     "taker_title": "Spanish",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/spanish/spanish-transfer-aa/",
+     "why": "its filed record passes live"
+    },
+    {
+     "held": "refused_passing",
+     "holder": "08156",
+     "holder_title": "Accounting",
+     "taker": "08159",
+     "taker_title": "Business Administration",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/business-administration/business-administration-aa/",
+     "why": "its filed record passes live"
+    },
+    {
+     "held": "refused_passing",
+     "holder": "05418",
+     "holder_title": "Anthropology",
+     "taker": "19319",
+     "taker_title": "Liberal Arts: Emphasis in Social and Behavioral Sciences",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/liberal-arts-areas-emphasis/liberal-arts-emphasis-social-behavioral-sciences-aa/",
+     "why": "its filed record passes live"
+    }
+   ],
+   "yield_refused_passing": 3,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "taft": {
    "catalog_list": null,
@@ -2374,7 +2909,11 @@
    "route": "site",
    "searches": false,
    "shared": 0,
-   "tested": 56
+   "tested": 56,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "ventura": {
    "catalog_list": null,
@@ -2397,7 +2936,11 @@
    "route": "site",
    "searches": true,
    "shared": 12,
-   "tested": 159
+   "tested": 159,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "victor_valley": {
    "catalog_list": null,
@@ -2420,7 +2963,11 @@
    "route": "site",
    "searches": true,
    "shared": 6,
-   "tested": 167
+   "tested": 167,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "west_los_angeles": {
    "college": "West Los Angeles College",
@@ -2449,7 +2996,11 @@
    "route": "site",
    "searches": true,
    "shared": 6,
-   "tested": 130
+   "tested": 130,
+   "yield_held": [],
+   "yield_refused_passing": 0,
+   "yield_unjudged": 0,
+   "yields": []
   },
   "woodland_community": {
    "college": "Woodland Community College",
@@ -2483,11 +3034,121 @@
   "false_no_claims": 48,
   "false_no_claims_at_searched": 10,
   "false_off_own": 0,
-  "hits": 9493,
+  "hits": 9494,
   "ncl_not_searched": 989,
   "ncl_searched": 895,
   "recall": 0.811,
   "site_route": 83,
-  "tested": 11702
+  "tested": 11704,
+  "yield_list": [
+   {
+    "applied": false,
+    "college": "cabrillo",
+    "holder": "20410",
+    "holder_title": "Digital Publishing",
+    "taker": "41948",
+    "taker_title": "Graphic Design"
+   },
+   {
+    "applied": false,
+    "college": "chaffey",
+    "holder": "18435",
+    "holder_title": "Physical Science",
+    "taker": "45032",
+    "taker_title": "California General Education Transfer Curriculum (Cal-GETC)"
+   },
+   {
+    "applied": false,
+    "college": "college_of_san_mateo",
+    "holder": "32203",
+    "holder_title": "English",
+    "taker": "05783",
+    "taker_title": "English"
+   },
+   {
+    "applied": false,
+    "college": "crafton_hills",
+    "holder": "11766",
+    "holder_title": "Teacher",
+    "taker": "11767",
+    "taker_title": "Master Teacher"
+   },
+   {
+    "applied": false,
+    "college": "feather_river",
+    "holder": "36176",
+    "holder_title": "MATHEMATICS",
+    "taker": "04321",
+    "taker_title": "Biology"
+   },
+   {
+    "applied": false,
+    "college": "gavilan",
+    "holder": "46046",
+    "holder_title": "Nutrition and Dietetics",
+    "taker": "08461",
+    "taker_title": "Health Science"
+   },
+   {
+    "applied": false,
+    "college": "gavilan",
+    "holder": "45720",
+    "holder_title": "Environmental Science I",
+    "taker": "18456",
+    "taker_title": "Liberal Arts: Natural Science"
+   },
+   {
+    "applied": false,
+    "college": "gavilan",
+    "holder": "21284",
+    "holder_title": "CSIS: Programming for the Internet",
+    "taker": "18457",
+    "taker_title": "Liberal Arts: Computer Science & Information Systems"
+   },
+   {
+    "applied": false,
+    "college": "gavilan",
+    "holder": "33048",
+    "holder_title": "Economics",
+    "taker": "21277",
+    "taker_title": "Business, General"
+   },
+   {
+    "applied": false,
+    "college": "lemoore",
+    "holder": "10954",
+    "holder_title": "Computer Information Systems",
+    "taker": "20341",
+    "taker_title": "Business: Bookkeeping"
+   },
+   {
+    "applied": false,
+    "college": "lemoore",
+    "holder": "19305",
+    "holder_title": "Liberal Arts: Elementary Teacher Preparation",
+    "taker": "33017",
+    "taker_title": "Studio Arts"
+   },
+   {
+    "applied": false,
+    "college": "skyline",
+    "holder": "32337",
+    "holder_title": "Asian Engine Performance Technology",
+    "taker": "10529",
+    "taker_title": "Automotive Advanced Engine Performance Technology"
+   },
+   {
+    "applied": false,
+    "college": "skyline",
+    "holder": "46296",
+    "holder_title": "Musical Theater",
+    "taker": "10546",
+    "taker_title": "Dance"
+   }
+  ],
+  "yield_refused_passing": 7,
+  "yield_unjudged": 0,
+  "yields": 13,
+  "yields_passing_moved": 0
  }
 }

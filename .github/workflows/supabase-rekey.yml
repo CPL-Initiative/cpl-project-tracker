@@ -26,6 +26,7 @@ concurrency:
 
 jobs:
   rekey:
+    environment: live-counts
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
