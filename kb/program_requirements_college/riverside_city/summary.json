@@ -2,10 +2,10 @@
  "college": "Riverside City College",
  "programs": 268,
  "with_closed_list": 262,
- "found": 244,
- "extracted": 244,
+ "found": 240,
+ "extracted": 243,
  "errors": 0,
- "passed_machine_checks": 229,
+ "passed_machine_checks": 228,
  "failed": {
   "coverage": 0,
   "invented": 0,
@@ -13,82 +13,303 @@
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd_run": 0.0,
- "cost_usd_filed": 15.03,
- "cost_per_program": 0.0616,
- "extract_calls": null,
+ "cost_usd_run": 5.08,
+ "cost_usd_filed": 15.31,
+ "cost_per_program": 0.063,
+ "extract_calls": 44,
  "extract_failed": [],
  "not_found": [
   {
-   "control_number": "33230",
-   "title": "History",
-   "award": "A.A- T Degree"
-  },
-  {
    "control_number": "39084",
    "title": "Building Inspection Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "44001",
    "title": "Advanced Professional Skills in Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44002",
    "title": "Intermediate Professional Skills Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44003",
    "title": "Introduction to Professional Skills in Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44032",
    "title": "Mathematics Readiness",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5926",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1473,
+     "content": 1473,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44144",
    "title": "Anesthesia Technology",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2256,
+     "content": 2256,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Approved"
   },
   {
    "control_number": "44145",
    "title": "Professional Skills of Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.062,
+    "body": 0.062,
+    "content": 0.062,
+    "net": 1,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 1 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44146",
    "title": "Anesthesia Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2256,
+     "content": 2256,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Approved"
   },
   {
    "control_number": "44156",
    "title": "Advanced Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44157",
    "title": "Intermediate Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44158",
    "title": "Introduction to Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44159",
    "title": "Professional Skills of Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
- "run": "43693827797"
+ "run": "44030368835",
+ "kept_no_read": [
+  {
+   "control_number": "32692",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948"
+   ],
+   "filed_source_url": "https://rccd.curriqunet.com/Catalog/archive/71/iq/4089/4136/3818",
+   "filed_run": "43816942139"
+  },
+  {
+   "control_number": "32745",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236"
+   ],
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034",
+   "filed_run": 43693827797
+  },
+  {
+   "control_number": "44469",
+   "title": "Social Justice: Native American and Indigenous Studies",
+   "award": "A.A- T Degree",
+   "method": "page_claimed",
+   "status": "Active",
+   "why": "its pages went to other programs",
+   "lost_pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6235",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6230"
+   ],
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5869",
+   "filed_run": 43693827797
+  }
+ ]
 }

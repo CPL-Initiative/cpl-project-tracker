@@ -5,11 +5,11 @@
  "title": "Global Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6354",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10149,
+  "input_tokens": 11762,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10149,
-    "output_tokens": 8924,
+    "input_tokens": 11762,
+    "output_tokens": 7756,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 8924,
+  "output_tokens": 7756,
   "output_tokens_details": {
-   "thinking_tokens": 2518
+   "thinking_tokens": 1848
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.21908,
- "ms": 66585,
- "seconds": 67.1,
+ "cost_usd": 0.20217,
+ "ms": 56501,
+ "seconds": 56.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -192,7 +194,20 @@
     "max": 15
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze global systems (e.g., political, economic, cultural, ecological, arts, histories) and explain how local and international issues are interconnected.",
     "Discuss the history, art, culture, politics, or religions of (an)other country(ies).",
@@ -200,13 +215,14 @@
     "Evaluate major global challenges (such as climate change, migration, health, inequality, or technology) using evidence-based reasoning and interdisciplinary approaches.",
     "Communicate effectively across cultural or global contexts, demonstrating sensitivity to diverse audiences and perspectives.",
     "Reflect on the responsibilities of global citizenship and propose ways individuals and communities can contribute to equitable and sustainable solutions."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
     "name": "Group 1 - Arts",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -355,7 +371,7 @@
    {
     "name": "Group 2 – Natural, Behavioral, and Social Sciences",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -524,7 +540,7 @@
    {
     "name": "Group 3 – Business Administration",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -564,7 +580,7 @@
    {
     "name": "Group 4 – World Languages",
     "rule": "choose_units",
-    "minimum": 2,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 2,
@@ -805,7 +821,7 @@
    {
     "name": "Group 5 – English, Humanities, and Philosophy",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -954,7 +970,7 @@
    {
     "name": "Group 6 - History",
     "rule": "choose_units",
-    "minimum": 3,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": 3,
@@ -966,7 +982,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-2",
@@ -976,66 +992,66 @@
        {
         "code": "HIST-2H",
         "units": 3,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-16",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-17",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-18",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-19",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-25",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-32",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-33",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-35",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-42",
@@ -1049,14 +1065,14 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST-61",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    },
@@ -1076,77 +1092,23 @@
   "missing_explained": [
    {
     "code": "AHS 1",
-    "why": "not in the text; catalog prints ARTH-C1100 (same title area), likely renumbered"
+    "why": "not in the text"
    },
    {
     "code": "AHS 2",
-    "why": "not in the text; catalog prints ARTH-C1200 (same title area), likely renumbered"
-   },
-   {
-    "code": "HIS 1",
-    "why": "catalog prints it as HIST-1 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 2",
-    "why": "catalog prints it as HIST-2 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 2H",
-    "why": "catalog prints it as HIST-2H (subject prefix differs)"
-   },
-   {
-    "code": "HIS 16",
-    "why": "catalog prints it as HIST-16 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 17",
-    "why": "catalog prints it as HIST-17 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 18",
-    "why": "catalog prints it as HIST-18 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 19",
-    "why": "catalog prints it as HIST-19 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 25",
-    "why": "catalog prints it as HIST-25 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 32",
-    "why": "catalog prints it as HIST-32 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 33",
-    "why": "catalog prints it as HIST-33 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 35",
-    "why": "catalog prints it as HIST-35 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 60",
-    "why": "catalog prints it as HIST-60 (subject prefix differs)"
-   },
-   {
-    "code": "HIS 61",
-    "why": "catalog prints it as HIST-61 (subject prefix differs)"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "Overall rule: 'select a minimum of 15 units from at least four groups below' (15.00). The student must draw from at least four of the seven groups; this cross-group rule cannot be expressed by option_group, so every group block has option_group null.",
-   "Each group block's minimum is taken from the units printed beside the group heading (3.00; Group 4 prints 2.00-5.00, recorded as minimum 2). Reviewer should confirm whether these are per-group minimums.",
-   "Group 7 - RCCD Study Abroad Program lists no courses: 'Any course taken while participating in an RCCD Study Abroad Program.' Recorded as an empty block.",
-   "Honors twins (ARTH-C1100H, ARTH-C1200H, MUS-19H, ANT-2H, GEG-1H, POLS-2H, POLS-4H, ARA-11H, SPA-2H, HUM-4H, HUM-5H, HUM-10H, HIST-2H) are recorded as alternatives of their non-honors course.",
-   "Catalog prints history courses as HIST-n while the closed list uses HIS n; HIST codes are flagged catalog_addition true and the HIS codes listed in missing_explained. These are likely the same courses under a changed subject prefix.",
-   "HIST-42 History of East Asia, MUS-19H, SPA-2H, ARTH-C1100 and ARTH-C1200 are not in the closed list.",
-   "ENGL-8 is matched to the closed-list entry 'ENGL8' (no space, units not stored).",
-   "Several courses are marked '( Historical )' in the catalog (MUS-22, THE-3, THE-9, THE-34, THE-35, POLS-10, POLS-17, FRE-11, SPA-51) but are still listed in the requirements.",
-   "Program learning outcomes are printed for this certificate; the page covers only this award."
+   "Overall rule: 'select a minimum of 15 units from at least four groups below' (15.00). Each group is recorded as its own choose_units block with minimum null because the catalog sets no per-group minimum; the figure printed beside each group heading (3.00, or 2.00-5.00 for Group 4) is recorded as stated. Reviewer should check how the 'at least four groups' rule is modeled.",
+   "Group 7 lists no specific courses: 'Any course taken while participating in an RCCD Study Abroad Program.' Recorded as an empty block.",
+   "The catalog prints history courses as HIST-n while the closed list uses HIS n; titles match, so HIST-1, 2, 2H, 16, 17, 18, 19, 25, 32, 33, 35, 60, 61 were treated as the closed-list HIS courses (catalog_addition false). HIST-42 (History of East Asia) has no closed-list counterpart and is marked as a catalog addition.",
+   "ENGL-8 matched to closed-list entry 'ENGL8' (units not stored); catalog prints 3.00.",
+   "ARTH-C1100 and ARTH-C1200 (non-honors) are not in the closed list and are marked catalog additions; their honors twins are in the closed list. MUS-19H and SPA-2H are honors twins not in the closed list.",
+   "Cross-listed pairs appear as separate rows in the catalog and were kept separate: ETS-13/PHI-14 (Survey of Black Thought), ECON-6/POLS-6 (Introduction to Political Economy), ENGL-8/HUM-8 (Introduction to Mythology).",
+   "Several courses are marked '( Historical )' in the catalog (e.g., MUS-22, THE-3, THE-9, THE-34, THE-35, POLS-10, POLS-17, FRE-11, SPA-51) but remain listed in the requirements."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

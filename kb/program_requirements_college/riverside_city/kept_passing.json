@@ -1,0 +1,2997 @@
+{
+ "run": "44030368835",
+ "programs": [
+  {
+   "control_number": "32597",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5931",
+   "cost_usd": 0.0761,
+   "usage": {
+    "input_tokens": 7024,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7024,
+      "output_tokens": 2400,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2400,
+    "output_tokens_details": {
+     "thinking_tokens": 895
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 12,
+     "listed": 12,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "CIS5"
+     ],
+     "flagged": [
+      "CIS5"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      29.0,
+      29.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       29.0,
+       29.0
+      ],
+      "stated": [
+       29.0,
+       29.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 12,
+     "listed": 12,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "CIS5"
+     ],
+     "flagged": [
+      "CIS5"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      29.0,
+      29.0
+     ],
+     "stated": [
+      29.0,
+      29.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "32912",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5886",
+   "cost_usd": 0.10674,
+   "usage": {
+    "input_tokens": 8074,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8074,
+      "output_tokens": 3722,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3722,
+    "output_tokens_details": {
+     "thinking_tokens": 1243
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 28,
+     "listed": 28,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ARTHC1100",
+       "listed": "AHS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ARTHC1200",
+       "listed": "AHS2",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "ARTH4"
+     ],
+     "flagged": [
+      "ARTH4"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       18.0
+      ],
+      "stated": [
+       18.0,
+       18.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 1,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 28,
+     "listed": 28,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ARTHC1100",
+       "listed": "AHS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ARTHC1200",
+       "listed": "AHS2",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "ARTH4"
+     ],
+     "flagged": [
+      "ARTH4"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "32938",
+   "title": "Philosophy",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6031",
+   "cost_usd": 0.10147,
+   "usage": {
+    "input_tokens": 7987,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7987,
+      "output_tokens": 3476,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3476,
+    "output_tokens_details": {
+     "thinking_tokens": 1406
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 26,
+     "listed": 26,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST1",
+       "listed": "HIS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST2",
+       "listed": "HIS2",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST2H",
+       "listed": "HIS2H",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST31",
+       "listed": "HIS31",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       18.0
+      ],
+      "stated": [
+       18.0,
+       18.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 26,
+     "listed": 26,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST1",
+       "listed": "HIS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST2",
+       "listed": "HIS2",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST2H",
+       "listed": "HIS2H",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST31",
+       "listed": "HIS31",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "33021",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6057",
+   "cost_usd": 0.07944,
+   "usage": {
+    "input_tokens": 7465,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7465,
+      "output_tokens": 2479,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2479,
+    "output_tokens_details": {
+     "thinking_tokens": 849
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ARTHC1100",
+       "listed": "AHS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ARTHC1200",
+       "listed": "AHS2",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the CalGETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       24.0,
+       24.0
+      ],
+      "stated": [
+       24.0,
+       24.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ARTHC1100",
+       "listed": "AHS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ARTHC1200",
+       "listed": "AHS2",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      24.0,
+      24.0
+     ],
+     "stated": [
+      24.0,
+      24.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "33229",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955",
+   "cost_usd": 0.09168,
+   "usage": {
+    "input_tokens": 7425,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7425,
+      "output_tokens": 3099,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3099,
+    "output_tokens_details": {
+     "thinking_tokens": 1221
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      20.0,
+      21.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       20.0,
+       21.0
+      ],
+      "stated": [
+       20.0,
+       21.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 19,
+     "listed": 19,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      20.0,
+      21.0
+     ],
+     "stated": [
+      20.0,
+      21.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "33964",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6038",
+   "cost_usd": 0.10038,
+   "usage": {
+    "input_tokens": 8009,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8009,
+      "output_tokens": 3417,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3417,
+    "output_tokens_details": {
+     "thinking_tokens": 1337
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 30,
+     "listed": 30,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       20.0
+      ],
+      "stated": [
+       18.0,
+       20.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 30,
+     "listed": 30,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "37483",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5855",
+   "cost_usd": 0.11792,
+   "usage": {
+    "input_tokens": 8074,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8074,
+      "output_tokens": 4281,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 4281,
+    "output_tokens_details": {
+     "thinking_tokens": 1468
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 27,
+     "listed": 27,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST1",
+       "listed": "HIS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST26",
+       "listed": "HIS26",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "ART6",
+      "ART6H",
+      "EDU1"
+     ],
+     "flagged": [
+      "ART6",
+      "ART6H",
+      "EDU1"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      34.0,
+      37.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       34.0,
+       37.0
+      ],
+      "stated": [
+       34.0,
+       37.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 22,
+     "listed": 27,
+     "share": 0.815,
+     "missing": [
+      "EAR42",
+      "GEG2",
+      "GEG3",
+      "HIS26",
+      "MATH26"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST1",
+       "listed": "HIS1",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "ART6",
+      "ART6H",
+      "EDU1"
+     ],
+     "flagged": [
+      "ART6",
+      "ART6H",
+      "EDU1"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      34.0,
+      37.0
+     ],
+     "stated": [
+      34.0,
+      37.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "38838",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
+   "cost_usd": 0.06662,
+   "usage": {
+    "input_tokens": 6909,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 6909,
+      "output_tokens": 1949,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 1949,
+    "output_tokens_details": {
+     "thinking_tokens": 717
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 10,
+     "listed": 11,
+     "share": 0.909,
+     "missing": [
+      "MATHC2210H"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      36.0,
+      36.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       36.0,
+       36.0
+      ],
+      "stated": [
+       36.0,
+       36.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 10,
+     "listed": 11,
+     "share": 0.909,
+     "missing": [
+      "MATHC2210H"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      36.0,
+      36.0
+     ],
+     "stated": [
+      36.0,
+      36.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "41364",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910",
+   "cost_usd": 0.08489,
+   "usage": {
+    "input_tokens": 7118,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7118,
+      "output_tokens": 2821,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2821,
+    "output_tokens_details": {
+     "thinking_tokens": 1094
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 15,
+     "listed": 15,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      26.0,
+      26.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       26.0,
+       26.0
+      ],
+      "stated": [
+       26.0,
+       26.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 15,
+     "listed": 15,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      26.0,
+      26.0
+     ],
+     "stated": [
+      26.0,
+      26.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "41736",
+   "title": "Law, Public Policy, and Society",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6010",
+   "cost_usd": 0.14702,
+   "usage": {
+    "input_tokens": 9455,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9455,
+      "output_tokens": 5460,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 5460,
+    "output_tokens_details": {
+     "thinking_tokens": 1532
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 51,
+     "listed": 51,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002",
+       "listed": "HIS7",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "ADJ200",
+      "POLS11",
+      "SOC48"
+     ],
+     "flagged": [
+      "ADJ200",
+      "POLS11",
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      32.0,
+      34.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       32.0,
+       34.0
+      ],
+      "stated": [
+       32.0,
+       34.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 51,
+     "listed": 51,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "ECONC2001",
+       "listed": "ECO8",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "ECONC2002",
+       "listed": "ECO7",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1001",
+       "listed": "HIS6",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HISTC1002",
+       "listed": "HIS7",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 3,
+     "codes": [
+      "ADJ200",
+      "POLS11",
+      "SOC48"
+     ],
+     "flagged": [
+      "ADJ200",
+      "POLS11",
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      32.0,
+      34.0
+     ],
+     "stated": [
+      32.0,
+      34.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "43695",
+   "title": "Social Justice Studies: Asian American Studies",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6256",
+   "cost_usd": 0.09285,
+   "usage": {
+    "input_tokens": 7757,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7757,
+      "output_tokens": 3091,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3091,
+    "output_tokens_details": {
+     "thinking_tokens": 1210
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST42",
+       "listed": "HIS42",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST44",
+       "listed": "HIS44",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       19.0
+      ],
+      "stated": [
+       18.0,
+       19.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST42",
+       "listed": "HIS42",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST44",
+       "listed": "HIS44",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 7,
+     "courses": 0,
+     "count": 7,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "43897",
+   "title": "Social Justice: African American Studies",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6255",
+   "cost_usd": 0.10445,
+   "usage": {
+    "input_tokens": 7867,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7867,
+      "output_tokens": 3649,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3649,
+    "output_tokens_details": {
+     "thinking_tokens": 1480
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 22,
+     "listed": 22,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST14",
+       "listed": "HIS14",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST15",
+       "listed": "HIS15",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST16",
+       "listed": "HIS16",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST17",
+       "listed": "HIS17",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       19.0
+      ],
+      "stated": [
+       18.0,
+       19.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 6,
+     "courses": 0,
+     "count": 6,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 22,
+     "listed": 22,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST14",
+       "listed": "HIS14",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST15",
+       "listed": "HIS15",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST16",
+       "listed": "HIS16",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST17",
+       "listed": "HIS17",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "SOC48"
+     ],
+     "flagged": [
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      21.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 6,
+     "courses": 0,
+     "count": 6,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "44155",
+   "title": "Social Justice Studies: Ethnic Studies",
+   "award": "A.A- T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5856",
+   "cost_usd": 0.15096,
+   "usage": {
+    "input_tokens": 9421,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9421,
+      "output_tokens": 5664,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 5664,
+    "output_tokens_details": {
+     "thinking_tokens": 2249
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 48,
+     "listed": 48,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST14",
+       "listed": "HIS14",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST15",
+       "listed": "HIS15",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST16",
+       "listed": "HIS16",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST17",
+       "listed": "HIS17",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST25",
+       "listed": "HIS25",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST28",
+       "listed": "HIS28",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST29",
+       "listed": "HIS29",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST31",
+       "listed": "HIS31",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST32",
+       "listed": "HIS32",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST33",
+       "listed": "HIS33",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST42",
+       "listed": "HIS42",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST44",
+       "listed": "HIS44",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "ENGL25",
+      "SOC48"
+     ],
+     "flagged": [
+      "ENGL25",
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the CalGETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       18.0,
+       19.0
+      ],
+      "stated": [
+       18.0,
+       19.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 48,
+     "listed": 48,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "HIST14",
+       "listed": "HIS14",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST15",
+       "listed": "HIS15",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST16",
+       "listed": "HIS16",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST17",
+       "listed": "HIS17",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST25",
+       "listed": "HIS25",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST28",
+       "listed": "HIS28",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST29",
+       "listed": "HIS29",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST31",
+       "listed": "HIS31",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST32",
+       "listed": "HIS32",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST33",
+       "listed": "HIS33",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST42",
+       "listed": "HIS42",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "HIST44",
+       "listed": "HIS44",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "ENGL25",
+      "SOC48"
+     ],
+     "flagged": [
+      "ENGL25",
+      "SOC48"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 8,
+     "courses": 0,
+     "count": 8,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "46237",
+   "title": "Mathematics 2.0",
+   "award": "A.S. T Degree",
+   "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
+   "filed_source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014",
+   "cost_usd": 0.06746,
+   "usage": {
+    "input_tokens": 6690,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 6690,
+      "output_tokens": 2035,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2035,
+    "output_tokens_details": {
+     "thinking_tokens": 873
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      23.0,
+      23.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the record names the degree total and the Cal-GETC pattern, but no units for it"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       23.0,
+       23.0
+      ],
+      "stated": [
+       23.0,
+       23.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 4,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "MATHC2210",
+       "listed": "MAT1A",
+       "matched_by": "course_id"
+      },
+      {
+       "printed": "MATHC2220",
+       "listed": "MAT1B",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      23.0,
+      23.0
+     ],
+     "stated": [
+      23.0,
+      23.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}
