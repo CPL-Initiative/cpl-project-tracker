@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T04:08:55Z",
+ "written_at": "2026-11-17T07:31:08Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,8 +171,8 @@
   "passing": 15860,
   "gap": 6475,
   "with_gap": 118,
-  "cost_usd": 1342.97,
-  "passed_at_read": 15369,
+  "cost_usd": 1343.25,
+  "passed_at_read": 15368,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -9743,8 +9743,9 @@
    "passing": 230,
    "gap": 38,
    "causes": {
+    "found_not_extracted": 1,
     "no_closed_list": 6,
-    "page_not_found": 18,
+    "page_not_found": 17,
     "unknown_without_live": 14
    },
    "census_causes": {
@@ -9769,10 +9770,10 @@
     "curriqunet"
    ],
    "objectives_printed": null,
-   "read_at": "2026-10-11T03:28:38Z",
+   "read_at": "2026-11-17T06:21:55Z",
    "read_kind": "capture",
-   "cost_usd": 15.03,
-   "passed_at_read": 229,
+   "cost_usd": 15.31,
+   "passed_at_read": 228,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -9781,8 +9782,8 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 262,
-   "found": 244,
-   "extracted": 244,
+   "found": 240,
+   "extracted": 243,
    "errors": 0,
    "failed_checks": {
     "coverage": 0,
@@ -9797,12 +9798,13 @@
    "capture_root": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2130.5,
-   "run": "43693827797",
+   "read_seconds": 1212.4,
+   "run": "44030368835",
    "levers": {
-    "reader_page_search": 18,
+    "reader_page_search": 17,
     "reconcile_steps": 14,
-    "program_course_file_check": 6
+    "program_course_file_check": 6,
+    "paid_read": 1
    },
    "collection": {
     "program_reader": {
@@ -9810,9 +9812,9 @@
      "models": {
       "claude-opus-5-5": 244
      },
-     "run": "43693827797",
-     "at": "2026-10-11T03:28:38Z",
-     "cost_usd": 15.03,
+     "run": "44030368835",
+     "at": "2026-11-17T06:21:55Z",
+     "cost_usd": 15.31,
      "platform": "curriqunet"
     },
     "slo_read": {

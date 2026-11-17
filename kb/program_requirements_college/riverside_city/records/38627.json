@@ -5,11 +5,11 @@
  "title": "Jazz Performance",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6007",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5015,
+  "input_tokens": 6628,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5015,
-    "output_tokens": 1578,
+    "input_tokens": 6628,
+    "output_tokens": 1827,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 1578,
+  "output_tokens": 1827,
   "output_tokens_details": {
-   "thinking_tokens": 458
+   "thinking_tokens": 671
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.05162,
- "ms": 13416,
- "seconds": 13.9,
+ "cost_usd": 0.06305,
+ "ms": 16151,
+ "seconds": 16.3,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -89,7 +91,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -107,16 +109,33 @@
     "max": 17
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Analyze, practice and interpret jazz and popular music chord symbols.",
     "Demonstrate the ability to analyze, learn, and perform standard jazz literature.",
     "Prepare a program, program notes, or other materials related to the coordinator, recital repertoire in cooperation with the instructor or recital."
+   ],
+   "careers": [
+    "music",
+    "jazz performers"
    ]
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required Courses (12.5 units)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -163,7 +182,7 @@
     ]
    },
    {
-    "name": "Jazz Improvisation Electives",
+    "name": "Jazz Improvisation Electives (1 unit)",
     "rule": "choose_units",
     "minimum": 1,
     "option_group": null,
@@ -196,7 +215,7 @@
     ]
    },
    {
-    "name": "Performing Ensemble Elective",
+    "name": "Performing Ensemble Elective (4 units)",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -225,13 +244,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Required Courses block: heading reads '(12.5 units)' but the block line reads 'Units: 12.00'; the listed courses (with MUS-39 counted twice) sum to 12.00, and the program total of 17.00 matches 12 + 1 + 4. Stated recorded as 12; reviewer should check the 12.5 heading.",
-   "MUS-39 is printed on two rows, each marked 'Course must be taken twice' (6 units total); it is recorded once in the block with its per-enrollment units of 3.",
-   "A trailing note 'Course must be taken twice This course must be taken twice.' appears after MUS-74; it appears to be the footnote for MUS-39 rather than a requirement on MUS-74.",
-   "Performing Ensemble Elective requires 4 units from two 2-unit courses; the student may take both or presumably repeat one, the text does not specify.",
-   "The outcomes list is printed under the certificate section itself; outcome three is copied as printed even though its wording appears garbled."
+   "The Required Courses heading says 12.5 units, but the block's 'Units:' line prints 12.00. The listed courses sum to 12 when MUS-39 is counted twice (3+1.5+3+3+0.5+1). Stated is recorded as 12, which matches the printed Total of 17.00 (12+1+4). The 12.5 in the heading appears inconsistent.",
+   "MUS-39 is printed twice with the note 'Course must be taken twice'. It is recorded once at 3 units, but it contributes 6 units to the required block.",
+   "Performing Ensemble Elective requires 4 units from two 2-unit courses. The student may take both courses, or presumably repeat one of them; the page does not say which.",
+   "The award shares the program description's outcomes list, which is printed directly under this certificate's heading.",
+   "The third outcome is copied word for word, although its wording appears garbled in the source."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

@@ -1,0 +1,53 @@
+{
+  "_readme": "S671 SkyKinglet, 2026-11-17. The RCCD pilot (#3237 start brief 6935299361, step 4) and #3430: the district's local associate-degree general education page, shared by Riverside City, Norco and Moreno Valley, read for its areas, each area's units and the courses it lists; #3430 asks which of KIN A81A, KIN A81B and HES 1 the page places in Area 7 (Lifelong Learning and Self-Development), from the page and never from the brief. Also the Military Credit page the district profile cites (kb/district_profiles/riverside.json), for its policy number and notation. Free: no model call. Read after the Riverside City harvest read, never beside it (one host).",
+  "college": "Riverside City College",
+  "questions": {
+    "local_ge_areas": "The RCCD general education pattern's areas, each area's name and required units, and the total.",
+    "area7_courses": "Which courses the page lists under Area 7 (Lifelong Learning and Self-Development); whether KIN A81A, KIN A81B and HES 1 are among them.",
+    "military_credit": "The Military Credit page's policy number (BP/AP), what it awards for basic training, and how the credit is noted or graded."
+  },
+  "keywords": [
+    "Area 7",
+    "Lifelong Learning",
+    "Self-Development",
+    "KIN-A81A",
+    "KIN A81A",
+    "KIN-A81B",
+    "HES-1",
+    "HES 1",
+    "units",
+    "Military",
+    "Basic Training",
+    "AP 4235",
+    "BP 4235",
+    "transcript"
+  ],
+  "pages": [
+    {
+      "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5844/RCCD_Gen_Ed",
+      "answers": [
+        "local_ge_areas",
+        "area7_courses"
+      ],
+      "network": true,
+      "network_find": [
+        "Area 7",
+        "Lifelong",
+        "A81A",
+        "HES"
+      ]
+    },
+    {
+      "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5836/6267",
+      "answers": [
+        "military_credit"
+      ],
+      "network": true,
+      "network_find": [
+        "Military",
+        "Basic",
+        "units"
+      ]
+    }
+  ]
+}

@@ -5,11 +5,11 @@
  "title": "American Studies",
  "award": "A.A. Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6320,
+  "input_tokens": 7933,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6320,
-    "output_tokens": 6419,
+    "input_tokens": 7933,
+    "output_tokens": 6895,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 6419,
+  "output_tokens": 6895,
   "output_tokens_details": {
-   "thinking_tokens": 1676
+   "thinking_tokens": 1910
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.15366,
- "ms": 45805,
- "seconds": 46.4,
+ "cost_usd": 0.16963,
+ "ms": 51222,
+ "seconds": 51.4,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -170,7 +172,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -191,17 +193,37 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Critically analyze the history, culture, politics and society of the United States.",
     "Interpret American history, culture, politics and society orally and in written form.",
     "Understand a range of academic disciplines around a core of American history, culture, politics and society.",
     "Describe and analyze the diversity of the American people as a society of immigrants developing national traditions and culture."
+   ],
+   "careers": [
+    "administration",
+    "communications",
+    "law",
+    "public service",
+    "teaching"
    ]
   },
   "blocks": [
    {
-    "name": "English (ENGL): ENGL 14 and ENGL 15",
+    "name": "Two-semester sequence: English (ENGL): ENGL 14 and ENGL 15",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -227,7 +249,7 @@
     ]
    },
    {
-    "name": "Ethnic Studies (ETS): ETS 14 and ETS 15",
+    "name": "Two-semester sequence: Ethnic Studies (ETS): ETS 14 and ETS 15",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -253,7 +275,7 @@
     ]
    },
    {
-    "name": "Ethnic Studies (ETS): ETS 28 and ETS 29",
+    "name": "Two-semester sequence: Ethnic Studies (ETS): ETS 28 and ETS 29",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -279,7 +301,7 @@
     ]
    },
    {
-    "name": "History (HIST): HIST C1001/C1001H and C1002/C1002H",
+    "name": "Two-semester sequence: History (HIST): HIST C1001/C1001H and C1002/C1002H",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -317,7 +339,7 @@
     ]
    },
    {
-    "name": "History (HIST): 11 and 12",
+    "name": "Two-semester sequence: History (HIST): 11 and 12",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -343,7 +365,7 @@
     ]
    },
    {
-    "name": "History (HIST): 14 and 15",
+    "name": "Two-semester sequence: History (HIST): 14 and 15",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -369,7 +391,7 @@
     ]
    },
    {
-    "name": "History (HIST): 28 and 29",
+    "name": "Two-semester sequence: History (HIST): 28 and 29",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -395,7 +417,7 @@
     ]
    },
    {
-    "name": "Military Science (MIL): MIL 1 and MIL 2",
+    "name": "Two-semester sequence: Military Science (MIL): MIL 1 and MIL 2",
     "rule": "all",
     "minimum": null,
     "option_group": "Two-semester sequence",
@@ -421,7 +443,7 @@
     ]
    },
    {
-    "name": "Elective courses",
+    "name": "Elective courses: (12 additional units, selected from the following)",
     "rule": "choose_units",
     "minimum": 12,
     "option_group": null,
@@ -837,69 +859,69 @@
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "ECO 7",
+    "why": "catalog prints ECON C2002 (common course number) instead"
+   },
+   {
     "code": "HIS 6",
-    "why": "not in the text; catalog prints HIST C1001 instead"
+    "why": "catalog prints HIST C1001 (common course number) instead"
    },
    {
     "code": "HIS 7",
-    "why": "not in the text; catalog prints HIST C1002 instead"
+    "why": "catalog prints HIST C1002 (common course number) instead"
    },
    {
     "code": "HIS 11",
-    "why": "catalog prints it as HIST 11 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 11"
    },
    {
     "code": "HIS 12",
-    "why": "catalog prints it as HIST 12 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 12"
    },
    {
     "code": "HIS 14",
-    "why": "catalog prints it as HIST 14 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 14"
    },
    {
     "code": "HIS 15",
-    "why": "catalog prints it as HIST 15 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 15"
    },
    {
     "code": "HIS 26",
-    "why": "catalog prints it as HIST 26 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 26"
    },
    {
     "code": "HIS 28",
-    "why": "catalog prints it as HIST 28 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 28"
    },
    {
     "code": "HIS 29",
-    "why": "catalog prints it as HIST 29 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 29"
    },
    {
     "code": "HIS 31",
-    "why": "catalog prints it as HIST 31 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 31"
    },
    {
     "code": "HIS 34",
-    "why": "catalog prints it as HIST 34 (recorded as catalog addition)"
+    "why": "catalog prints it under subject HIST as HIST 34"
    },
    {
     "code": "HIS 44",
-    "why": "catalog prints it as HIST 44 (recorded as catalog addition)"
-   },
-   {
-    "code": "ECO 7",
-    "why": "not in the text; catalog prints ECON C2002 instead"
+    "why": "catalog prints it under subject HIST as HIST 44"
    }
   ],
   "notes": [
-   "The catalog prints no units beside any course; all course units are left null. The closed list stores 3 units for each course.",
-   "Sequence heading states '(6 units)' for the chosen two-semester sequence; recorded as stated 6 on each sequence block.",
-   "The 18 units must span a maximum of three disciplines, with a grade of C or better or P; this constraint is not captured in the block structure.",
-   "Sequence courses (e.g., ENGL 14/15, ETS 14/15, ETS 28/29, HIST, MIL 1/2) also appear in the elective list; a reviewer should confirm courses cannot double count.",
-   "Catalog lists honors twins (ECON C2002H, HIST C1001H, HIST C1002H, MUS 89H, POLS C1000H) as separate elective entries; recorded as alternatives of their non-honors courses.",
-   "Catalog uses HIST and ECON/C-ID numbering (HIST C1001, HIST 11, ECON C2002) while the closed list uses HIS and ECO codes; the HIST/ECON codes were recorded as catalog additions and the HIS/ECO codes listed as missing.",
-   "General education is mentioned but no specific GE pattern is named.",
-   "Note says not all courses are offered at all three district colleges."
+   "Catalog prints no units beside any course; course units left null.",
+   "Total of 18 units is stated as 'complete 18 units of study across a maximum of three disciplines including at least one two-semester sequence'; the 6-unit sequence plus 12 elective units make up the 18. The three-discipline maximum is not captured in the blocks.",
+   "Each two-semester sequence is recorded as its own block in option_group 'Two-semester sequence'; the printed '(6 units)' applies to the chosen sequence and is recorded as each block's stated total.",
+   "Sequence courses (ENGL 14/15, ETS 14/15/28/29, HIST C1001/C1002, HIST 11/12/14/15/28/29, MIL 1/2) also appear in the elective list; they are listed in both the sequence blocks and the elective block as printed.",
+   "History courses are printed with subject HIST while the closed list uses HIS; these HIST codes are marked catalog_addition true and the HIS codes are explained in missing_explained. Reviewer should confirm the HIS-to-HIST renumbering. Likewise ECON C2002 vs ECO 7 and HIST C1001/C1002 vs HIS 6/HIS 7 appear to be common-course-number replacements.",
+   "Honors pairs (ECON C2002/C2002H, HIST C1001/C1001H, HIST C1002/C1002H, MUS 89/89H, POLS C1000/C1000H) are recorded as one entry with the honors course as an alternative.",
+   "No general education pattern is named; the degree requires general education 'as described in the college catalog'. No degree total is printed.",
+   "Careers taken from 'excellent foundation for students interested in administration, communications, law, public service, and teaching'."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

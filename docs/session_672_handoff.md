@@ -22,7 +22,10 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
   - The first district profile, `kb/district_profiles/riverside.json`.
   - The free read of the RCCD GE and Military Credit pages (44033941042). Area 7 is 2 units and lists HES 1 and "KIN (any course
     with an A or V)". Basic training counts 2 of its 5 units toward Area 7.
-  - Riverside City's forced read (44030368835, $5.08), which fixed Entrepreneurship 31892 only. Its reread (44033959165)
+  - Riverside City's forced read (44030368835, $5.08). Its one apparent fix, Entrepreneurship 31892, passed only because the reading
+    dropped the rule that requires at least one course from each cluster (COBIx's spot-check on #3438). Main's reading and the live row
+    were restored (`kb/migrations/2026-11-17_s671_rcc_31892_restore.sql`, guarded, with a rollback; applied by run 44039461329,
+    receipt `kb/receipts/migration_s671_rcc_31892_restore_44039461329.json`), so the yield is 0 of 15. Its reread (44033959165)
     replaced 29 unchecked rows, and the receipt holds their before-values. Main's passing 30578 and 33829 were restored after the
     capture lost their pages. 33230 was left out of the files.
 - The diagnosis read 44034775728 found three causes: Geology 38790's catalog does not add up, Piano 38626 prints one course four
@@ -37,7 +40,8 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
    (`host=cccd`, `kind=objective`, `slugs=golden_west`), rebuild the Commons data and drop the step from the plan. One preparation run
    on another host. Diablo Valley (#3421) takes a later day. #3387 and #3284 wait. A warning in `read_files` for a chosen split that
    is missing a part closes COBIx's #3420 edge.
-2. **#3438:** read the thread's last page. Merge after COBIx's spot-check of the replaced Riverside City rows, on a green `test`.
+2. **#3438:** read the thread's last page. COBIx's spot-check came back (comment 6941524655); 31892 was restored. Its two non-blocking notes wait: renumbered common-course
+   codes marked `catalog_addition` though the scorer matches them, and the Social Justice family's uneven `degree_total`.
    If it is still unanswered at your end, leave it open and name it again.
 3. **The repeated-course-row lever** (`p-repeated-course-row-undercounts-s671`). A page that prints one course N times ("*Course
    must be taken four times") counts it N times. The scorer is shared code, so a second reader comes first. The likely members are
@@ -81,14 +85,15 @@ discipline blanks worklist.
 
 The `cpl_memory` rows are in `kb/migrations/2026-11-17_s671_cpl_memory_rows.sql`, with a rollback by slug beside it:
 `d-rccd-pilot-no-blind-force-s671`, `f-rccd-area7-basic-training-s671`, `p-repeated-course-row-undercounts-s671` and
-`p-capture-can-lose-passing-page-s671`. Sam gave no new ruling this run. The pilot ran on his go, which COBIx relayed on #3237.
+`p-capture-can-lose-passing-page-s671`. `d-rccd-pilot-no-blind-force-s671` says the force "fixed one (31892)"; that one was
+restored after COBIx's spot-check, so the force fixed none. Correct the row's summary when the next rows go through the runner. Sam gave no new ruling this run. The pilot ran on his go, which COBIx relayed on #3237.
 
 ## Let go
 
 S671 holds no PR subscription, check-in or artifact watch. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-RCCD pilot: 1 newly passing program, about 270,000 tokens (the session's context at checkpoint; `get_session` is not available).
+RCCD pilot: 0 newly passing programs, about 270,000 tokens (the session's context at checkpoint; `get_session` is not available).
 
 Spend: `get_session` is not available. Model calls came to $5.08 (Riverside City read 44030368835), from 2026-11-17T06:14Z to
 about 07:35Z. Substantive PRs merged: 0 (#3438 waits on COBIx's spot-check).

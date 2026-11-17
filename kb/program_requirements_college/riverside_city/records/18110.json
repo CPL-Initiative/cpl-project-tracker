@@ -5,11 +5,11 @@
  "title": "Fine & Applied Arts",
  "award": "A.A. Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6287",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10712,
+  "input_tokens": 12325,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10712,
-    "output_tokens": 10874,
+    "input_tokens": 12325,
+    "output_tokens": 11091,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 10874,
+  "output_tokens": 11091,
   "output_tokens_details": {
-   "thinking_tokens": 1149
+   "thinking_tokens": 1383
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.26033,
- "ms": 73942,
- "seconds": 75.0,
+ "cost_usd": 0.27112,
+ "ms": 75849,
+ "seconds": 76.7,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -126,13 +128,27 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate basic knowledge and skills (technique) one discipline of the fine and applied arts. These include fundamentals of the field in terms of practice, history, analysis and their applications and technical ability in one discipline to create, sustain, and evolve a personal vision and/or purpose.",
     "Develop a personal vision and/or purpose-sometimes called “artistic voice”-that is evident in terms of work produced and manifested in a portfolio, performance, exhibition, or other presentation.",
     "Generate and apply original ideas and methods to discover, create and communicate specific artistic content.",
     "Demonstrate conceptual acuity, clarity, imagination, and technical ability to combine, integrate, and synthesize elements into works in ways that enhance their communicative powers."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -141,8 +157,8 @@
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -1702,26 +1718,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AHS 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "AHS 2",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Area of emphasis: the catalog requires 18 units across a maximum of three disciplines, with 9 units from a single discipline, each with a grade of C or better or P. These discipline constraints cannot be expressed in the block rule; all listed courses are recorded in one choose_units block of 18 units. The catalog groups courses by discipline (ADM, ART, ARTH, COMM, DAN, ENGL, FTV, MUS, PHO, THE).",
-   "The stated block total of 18 is taken from the sentence requiring 18 units of study; the catalog prints no separate block total.",
-   "The catalog prints no units beside any course; all units fields are null.",
-   "Honors twins (ART 6H, ARTH C1100H, ARTH C1200H, ARTH 6H, COMM C1000H, DAN 6H, MUS 19H, MUS 89H) are printed as separate list items in the catalog; recorded as alternatives to their non-honors courses.",
+   "The catalog prints no units beside any course; all course units are null.",
+   "Requirement: 18 units across a maximum of three disciplines with 9 units from a single discipline, grade of C or better (or P). The discipline-distribution constraint is not representable in the block structure; all disciplines' courses are recorded in one choose_units block of 18, in catalog order by discipline (ADM, ART, ARTH, COMM, DAN, ENGL, FTV, MUS, PHO, THE).",
+   "Honors twins (ART 6/6H, ARTH C1100/C1100H, ARTH C1200/C1200H, ARTH 6/6H, COMM C1000/C1000H, DAN 6/6H, MUS 19/19H, MUS 89/89H) are recorded as alternatives of one entry; the catalog lists them as separate items.",
    "ARTH C1100, ARTH C1200, ARTH 4 and THE 46 appear in the catalog list but not in the closed list (catalog additions).",
-   "The catalog notes not all listed courses are offered at all three district colleges.",
-   "The first program learning outcome is printed as written, including the apparent missing word ('skills (technique) one discipline')."
+   "Degree includes general education and other graduation requirements per the college catalog; no GE pattern, GE units or degree total is printed.",
+   "The catalog notes not all courses are offered at all three district colleges.",
+   "No careers are named; the description lists art forms of interest, not careers."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

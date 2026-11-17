@@ -1,0 +1,53 @@
+{
+  "_readme": "S671 SkyKinglet, 2026-11-17, the RCCD pilot pass. Riverside City's arithmetic-unequal records keep failing on a forced re-extraction (run 44030368835 fixed 1 of 15), so the fault is in what the page shows the reader, not chance. This read prints three failing pages' requirement text and the data their scripts fetch, to name the shared cause: Geology AS-T 38790 (blocks 22 against 26), Piano Performance 38626 (9.5 against 18.5), Graphic Design and Printing 31766 (31 against 34). Free: no model call.",
+  "college": "Riverside City College",
+  "questions": {
+    "block_shape": "How the page prints each requirement block: its heading, the units or course count it asks, and every course it lists; and whether the page shows all of them without a further fetch."
+  },
+  "keywords": [
+    "Select",
+    "Choose",
+    "units",
+    "Required",
+    "from the following",
+    "Total"
+  ],
+  "pages": [
+    {
+      "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5985",
+      "answers": [
+        "block_shape"
+      ],
+      "network": true,
+      "network_find": [
+        "Select",
+        "units",
+        "Total"
+      ]
+    },
+    {
+      "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6035",
+      "answers": [
+        "block_shape"
+      ],
+      "network": true,
+      "network_find": [
+        "Select",
+        "units",
+        "Total"
+      ]
+    },
+    {
+      "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5990",
+      "answers": [
+        "block_shape"
+      ],
+      "network": true,
+      "network_find": [
+        "Select",
+        "units",
+        "Total"
+      ]
+    }
+  ]
+}
