@@ -1,0 +1,17 @@
+{
+  "_about": "Cases the typographic rule must agree on in Python (kb/cr_typographic.py) and in cr_reference.js (crTypoKey). Each pair: same is true when the two wordings are one recommendation after clean_rec plus a case-insensitive whitespace squash. Cases 1 to 3 are COBIx's tested cases (#3464 comment 6962134078); AR-0102-0007 is the truncation and run-on shape the rule must NOT fold.",
+  "pairs": [
+    {"case": "AR-0702-0030 casing only", "a": "3 hours in Supervision", "b": "3 hours in supervision", "same": true, "clean": "3 hours in Supervision"},
+    {"case": "MAPCBEN-BDL-1-001 unit grammar", "a": "1 hour in Basic DC Laboratory", "b": "1 hours in Basic DC Laboratory", "same": true, "clean": "1 hour in Basic DC Laboratory"},
+    {"case": "MOS-21E-001 zero takes hours", "a": "0 hour in Credit may be granted on the basis of institutional evaluation", "b": "0 hours in Credit may be granted on the basis of institutional evaluation", "same": true, "clean": "0 hours in Credit May Be Granted on the Basis of Institutional Evaluation"},
+    {"case": "trailing .0", "a": "3.0 hours in Introduction to the Administration of Justice", "b": "3 hours in Introduction to the Administration of Justice", "same": true, "clean": "3 hours in Introduction to the Administration of Justice"},
+    {"case": "range spacing and Intro to", "a": "3 - 4 hours in Intro to Flux Cored Arc Welding (FCAW)", "b": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)", "same": true, "clean": "3-4 hours in Introduction to Flux Cored Arc Welding (FCAW)"},
+    {"case": "ampersand", "a": "3 hours in Health & Safety", "b": "3 hours in Health and Safety", "same": true, "clean": "3 hours in Health and Safety"},
+    {"case": "Assembler Language", "a": "3 hours in Assembler Language Programming", "b": "3 hours in Assembly Language Programming", "same": true, "clean": "3 hours in Assembly Language Programming"},
+    {"case": "doubled spaces", "a": "3  hours in   Supervision ", "b": "3 hours in Supervision", "same": true, "clean": "3 hours in Supervision"},
+    {"case": "AR-0102-0007 truncation is not typographic", "a": "4 hours in Companion Animal Surgical Assistance And", "b": "4 hours in Companion Animal Surgical Assistance And Anesthesia", "same": false},
+    {"case": "AR-0102-0007 run-on is not typographic", "a": "4 hours in Companion Animal Radiology Companion Animal Surgical Assistance And Anesthesia Laboratory Animal And Small Animal Exotics", "b": "4 hours in Companion Animal Radiology", "same": false},
+    {"case": "different units stay apart", "a": "3 hours in Supervision", "b": "4 hours in Supervision", "same": false},
+    {"case": "NV-1732-0026 different topics stay apart", "a": "3 hours in Fluid Power Systems", "b": "1 hour in Industrial Safety", "same": false}
+  ]
+}

@@ -1,7 +1,7 @@
 ---
 title: "Common CR Reference — lane state"
 created: 2026-08-28
-updated: 2026-11-01
+updated: 2026-11-17
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -32,6 +32,23 @@ identity behind the course-count guard; Jev runs the new pairs, the unanchored c
 anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six head wordings left
 are Sam's to decide on the tab. The title-rung sitting at the foot of this file is the CCR's ladder,
 not this reference's.
+
+## ACE's own text beside MAP's (S678, 2026-11-17; COBIx item 5 on #3464)
+
+`View_ExhibitCRsCatalog_Dataset`'s `CreditRecommendation` is now kept: one row per distinct (AceID, wording) in
+`map_ace_catalog_cr`, keyed on the ACE exhibit id (never the catalog's numeric ExhibitID), filled by
+`kb/_sync_map_custom_reports.py` after the nightly promotion in `map-custom-report-load.yml` (04:57 UTC). Migration
+`kb/migrations/2026-11-17_s678_map_ace_catalog_cr.sql`, rollback beside it; the table, its load function and the view
+`map_exhibit_cr_side_by_side` are dismissed with reasons in `kb/governance_surface_map.json` (no student data). Until
+the migration is applied the load step says so and the run passes. The panel's *MAP and ACE text* section shows,
+per exhibit, MAP's wordings beside ACE's lines, with a box to read one exhibit (AR-0702-0030).
+
+The typographic rule (`kb/cr_typographic.py`, ported as `crTypoKey` in `cr_reference.js`, one shared fixture): two
+wordings are one recommendation when they match after `clean_rec` plus a case-insensitive whitespace squash. It
+compares and never rewrites source text. The runner log prints, from the same pull, exact + typographic only +
+differs + ACE text missing = MAP pairs, and the MAP pairs the rule settles on their own exhibit. COBIx measured 859
+rows for the rule and 25,984 waiting on ACE text; both re-measure from the first fill's log. Open: the truncation
+and run-on rule (AR-0102-0007, 593 rows), and whether a settled state is stored anywhere beyond the log and panel.
 
 ## The List (S542, 2026-11-01)
 
