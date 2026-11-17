@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-17_s676b_reread_rollback.sql
-name=s676b_reread_rollback
+file=kb/migrations/2026-11-17_s676b_cpl_memory_rows.sql
+name=s676b_cpl_memory_rows
