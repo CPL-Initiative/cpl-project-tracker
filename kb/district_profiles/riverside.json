@@ -1,0 +1,507 @@
+{
+  "schema": 1,
+  "profile_id": "riverside",
+  "district": {
+    "name": "Riverside Community College District",
+    "name_caps": "RIVERSIDE CCD",
+    "mis_district_code": "960",
+    "district_type": "M",
+    "website": "https://www.rccd.edu/",
+    "colleges": [
+      {
+        "college_id": 2,
+        "registry_name": "Riverside City College",
+        "short": "Riverside",
+        "mis_college_code": "961",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 1,
+        "registry_name": "Norco College",
+        "short": "Norco",
+        "mis_college_code": "963",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 3,
+        "registry_name": "Moreno Valley College",
+        "short": "Moreno Valley",
+        "mis_college_code": "962",
+        "entity_kind": "college",
+        "map_landing_page": null
+      }
+    ],
+    "evidence": {
+      "sources": [
+        "crosswalk"
+      ],
+      "confidence": "partial",
+      "checked_at": "2026-11-17T07:00:00Z",
+      "note": "MAP CollegeIDs and MIS codes from the 2026-11-10 crosswalk. Harvest slugs: riverside_city, norco, moreno_valley."
+    }
+  },
+  "systems": {
+    "sis": {
+      "vendor": "ellucian",
+      "product": "colleague",
+      "version": null,
+      "scope": "district",
+      "self_service_url": null,
+      "evidence": {
+        "sources": [
+          "cobix_start_brief"
+        ],
+        "confidence": "limited",
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Named in COBIx's start brief; no district page read yet (the sandbox cannot reach rccd.edu). Scope 'district' follows one RCCD instance; confirm from a district page."
+      }
+    },
+    "cms": {
+      "product": "curriqunet_meta",
+      "scope": "district",
+      "public_view_url": "https://rccd.curriqunet.com/",
+      "publishes_catalog": true,
+      "previous_product": null,
+      "evidence": {
+        "sources": [
+          "harvest_files",
+          "cq_program_page",
+          "cq_outline",
+          "outcomes_rccd"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "All three colleges' catalogs and the course outlines are served from rccd.curriqunet.com, one host (one read at a time, never two)."
+      }
+    },
+    "catalogs": [
+      {
+        "college_id": 2,
+        "platform": "curriqunet",
+        "format": "html_per_program",
+        "catalog_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5842/6111",
+        "catalog_year": "2026-2027",
+        "best_method": "platform_reader",
+        "access": {
+          "status": "ok",
+          "robots_allows": true,
+          "challenge": "none",
+          "needs_render": false
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T07:00:00Z",
+          "note": "Alias rcc-catalog; the 2026-10-11 capture read every program page with the census user agent and no challenge. The 2025-2026 catalog is curriQunet archive 71 (prior-year reads)."
+        }
+      },
+      {
+        "college_id": 1,
+        "platform": "curriqunet",
+        "format": "html_per_program",
+        "catalog_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5358",
+        "catalog_year": "2026-2027",
+        "best_method": "platform_reader",
+        "access": {
+          "status": "ok",
+          "robots_allows": true,
+          "challenge": "none",
+          "needs_render": false
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T07:00:00Z",
+          "note": "Alias nc-catalog; the 2026-10-11 capture read every program page with the census user agent and no challenge. The 2025-2026 catalog is curriQunet archive 71 (prior-year reads)."
+        }
+      },
+      {
+        "college_id": 3,
+        "platform": "curriqunet",
+        "format": "html_per_program",
+        "catalog_url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4710",
+        "catalog_year": "2026-2027",
+        "best_method": "platform_reader",
+        "access": {
+          "status": "ok",
+          "robots_allows": true,
+          "challenge": "none",
+          "needs_render": false
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T07:00:00Z",
+          "note": "Alias mvc-catalog; the 2026-10-11 capture read every program page with the census user agent and no challenge. The 2025-2026 catalog is curriQunet archive 71 (prior-year reads)."
+        }
+      }
+    ],
+    "other_systems": []
+  },
+  "cpl_coding": {
+    "policies": [
+      {
+        "number": "Military Credit (catalog)",
+        "title": "Military Credit (catalog page)",
+        "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5836/6267",
+        "last_revised": null,
+        "evidence": {
+          "sources": [
+            "cobix_start_brief"
+          ],
+          "confidence": "limited",
+          "checked_at": "2026-11-17T07:00:00Z",
+          "note": "Page named in the start brief; not read by this session. Its BP/AP number is not recorded yet."
+        }
+      }
+    ],
+    "transcript_notation": {
+      "annotated": null,
+      "cpl_type_shown": null,
+      "where": null,
+      "notation_list_ref": null,
+      "term_posting": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Not read."
+      }
+    },
+    "grading": {
+      "by_type": [],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Not read."
+      }
+    },
+    "type_codes": [
+      {
+        "map_cpl_type": "M",
+        "local_label": "Military Credit",
+        "local_code": null,
+        "exams": null,
+        "auto_award": null,
+        "evidence": {
+          "sources": [
+            "cobix_start_brief",
+            "cip_fitcheck"
+          ],
+          "confidence": "limited",
+          "checked_at": "2026-11-17T07:00:00Z",
+          "note": "MAP exhibits show Basic Military Training awarding KIN A81A, KIN A81B and HES 1 at the district's colleges (start brief; the course codes exist in Riverside City's COCI list). The SIS posting code is not known."
+        }
+      }
+    ],
+    "ownership": {
+      "policy_owner_role": null,
+      "posting_owner_role": null,
+      "coordination": null,
+      "contacts_source": [
+        {
+          "table": "map_college_contacts",
+          "roles": [
+            "primary_contact",
+            "cpl_coordinator"
+          ]
+        }
+      ],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Not read. Contacts stay in map_college_contacts."
+      }
+    },
+    "map_integration": {
+      "district_state": "unknown",
+      "by_college": [
+        {
+          "college_id": 2,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T07:00:00Z"
+          }
+        },
+        {
+          "college_id": 1,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T07:00:00Z"
+          }
+        },
+        {
+          "college_id": 3,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T07:00:00Z"
+          }
+        }
+      ],
+      "known_issues": [],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Not read."
+      }
+    }
+  },
+  "data_flows": [
+    {
+      "id": "cms_to_catalog",
+      "from": "cms",
+      "to": "catalog",
+      "carries": "Programs, requirements and course outlines",
+      "mode": "automated",
+      "mechanism": "publish_from_cms",
+      "frequency": "per catalog year",
+      "redundant": {
+        "flag": false,
+        "note": null,
+        "api_candidate": false
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "harvest_files"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "The catalog is curriQunet's public catalog view."
+      }
+    },
+    {
+      "id": "catalog_to_harvest",
+      "from": "catalog",
+      "to": "cobi_harvest",
+      "carries": "Program pages (requirements) and course outlines (SLOs, objectives)",
+      "mode": "automated",
+      "mechanism": "web_harvest",
+      "frequency": "per read",
+      "redundant": {
+        "flag": null,
+        "note": null,
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "harvest_files",
+          "outcomes_rccd"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Read by program-requirements-college.yml and course-outcomes-read.yml."
+      }
+    },
+    {
+      "id": "map_to_sis_cpl_posting",
+      "from": "map",
+      "to": "sis",
+      "carries": "Approved CPL to post on the transcript",
+      "mode": "unknown",
+      "mechanism": "unknown",
+      "frequency": null,
+      "redundant": {
+        "flag": null,
+        "note": null,
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T07:00:00Z",
+        "note": "Not read."
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "system": "catalog",
+      "vendor_key": "curriqunet",
+      "task": "Read every program page (capture, extract, file, load, reread)",
+      "doc": ".github/workflows/program-requirements-college.yml",
+      "status": "tested",
+      "last_run": null
+    },
+    {
+      "system": "catalog",
+      "vendor_key": "curriqunet",
+      "task": "Prior-year read from archive 71 with the course renumber map",
+      "doc": ".github/workflows/program-requirements-college.yml (prior input)",
+      "status": "tested",
+      "last_run": null
+    },
+    {
+      "system": "cms",
+      "vendor_key": "curriqunet",
+      "task": "Read course outcomes and objectives from the public course outlines",
+      "doc": ".github/workflows/course-outcomes-read.yml",
+      "status": "tested",
+      "last_run": null
+    },
+    {
+      "system": "catalog",
+      "vendor_key": "curriqunet",
+      "task": "Read the district general education page and the Cal-GETC page (#3430)",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    },
+    {
+      "system": "cpl_coding",
+      "vendor_key": null,
+      "task": "Read the Military Credit page and record the policy number and notation",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    }
+  ],
+  "provenance": {
+    "checked_at": "2026-11-17T07:00:00Z",
+    "checked_by": "district-bot:riverside (S671 SkyKinglet)",
+    "confidence": "limited",
+    "sources": [
+      {
+        "id": "crosswalk",
+        "kind": "repo_file",
+        "ref": "kb/college_identity/2026-11-10/crosswalk.json",
+        "title": "College identity crosswalk (MIS codes, district)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cobix_start_brief",
+        "kind": "github_comment",
+        "ref": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3237#issuecomment-6935299361",
+        "title": "COBIx start brief for the RCCD pilot (Sam's go, 2026-11-16 5:43 PM PT)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cobix_go",
+        "kind": "github_comment",
+        "ref": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3237#issuecomment-6920022106",
+        "title": "Sam's go on the district-bot pilot, relayed by COBIx (2026-11-16)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "reconcile",
+        "kind": "repo_file",
+        "ref": "kb/program_requirements_reconcile.json (colleges: Riverside City College, Norco College, Moreno Valley College)",
+        "title": "Reconcile steps, prefix aliases, the 2025-2026 course renumbers",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "rcc_calgetc",
+        "kind": "repo_file",
+        "ref": "kb/college_reads/rcc_calgetc_page.json",
+        "title": "Riverside City's Cal-GETC pages, 2025-2026 and 2026-2027 (S665 reads)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "rcc_renumbers",
+        "kind": "repo_file",
+        "ref": "kb/college_reads/rcc_prior_year_course_codes.json",
+        "title": "Riverside City 2025-2026 course codes against the Program Course File (S663)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cq_program_page",
+        "kind": "repo_file",
+        "ref": "kb/college_reads/rccd_curriqunet_program_page.json",
+        "title": "RCCD curriQunet program page read",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cq_outline",
+        "kind": "repo_file",
+        "ref": "kb/college_reads/rccd_curriqunet_outline.json",
+        "title": "RCCD curriQunet course outline read",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "outcomes_rccd",
+        "kind": "repo_file",
+        "ref": "kb/course_outcomes/rccd/ (read 43532407553, 4 parts) and kb/receipts/course_outcomes_rccd_43546799435.json",
+        "title": "Course outcomes read and loaded from the public course outlines",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "harvest_files",
+        "kind": "repo_file",
+        "ref": "kb/program_requirements_college/{riverside_city,norco,moreno_valley}/capture.json",
+        "title": "Each college's filed program harvest capture (2026-2027 catalog)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "gap_census",
+        "kind": "repo_file",
+        "ref": "kb/status/harvest_gap_census.json (per_college, 2026-11-13)",
+        "title": "Harvest gap census",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cip_fitcheck",
+        "kind": "repo_file",
+        "ref": "cip_fitcheck/riverside_city_college.json",
+        "title": "Riverside City course list from COCI (KIN-A81A, KIN-A81B)",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      }
+    ],
+    "open_questions": [
+      "Riverside's 2025-2026 renumbers (MAT-1C to MATH 1C and five more) are mapped in the reconcile file; MAT-1AH and CIS-5 stay unmapped (a replacement and a cross-listing).",
+      "The district general education page (iq/5844/RCCD_Gen_Ed) is not read yet: #3430.",
+      "The Military Credit page (iq/5836/6267): its BP/AP number, grading and notation.",
+      "Colleague as the SIS rests on the start brief; a district page should confirm it.",
+      "Harvest gaps on 2026-11-13 (census): Riverside City 38, Norco 33, Moreno Valley 17; 20 of them have no closed list in the Program Course File (a statewide lever)."
+    ],
+    "change_log": [
+      {
+        "at": "2026-11-17T07:00:00Z",
+        "by": "S671 SkyKinglet",
+        "change": "First profile, from the repo's RCCD reads and the COBIx start brief. The sandbox cannot reach rccd hosts, so page facts the brief names are 'limited' until a runner reads them."
+      }
+    ]
+  }
+}
