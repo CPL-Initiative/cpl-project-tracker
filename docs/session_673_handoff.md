@@ -76,7 +76,7 @@ worklist): the sandbox has no `openpyxl`.
 
 ## Decisions
 
-The `cpl_memory` rows are in `kb/migrations/2026-11-17_s672_cpl_memory_rows.sql`, with a rollback beside it:
+The `cpl_memory` rows are in `kb/migrations/2026-11-17_s672_cpl_memory_rows_v2.sql` (the first file failed on the 400-character summary check; nothing landed), with a rollback beside it:
 `d-rccd-repeat-rows-reconcile-steps-s672` and `f-norco-mis-performance-options-ungrouped-s672`. The same file corrects S671's
 `d-rccd-pilot-no-blind-force-s671` with a guarded update: the force fixed none, not one. Sam gave no new ruling this run.
 
