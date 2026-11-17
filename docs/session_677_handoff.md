@@ -40,9 +40,13 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
    green `test`, then read the live rows of the records it drops. If the run failed or timed out, dispatch the read again.
    Its holder 18435 is pinned in `tests/harvest_ncl_lookup_census_test.py`: if the fresh capture files it under `page_claimed`
    with the taker 45032 found, move it to `RESOLVED_BY_CLAIM_S676`'s list, as #3456 did for three; anything else is a finding.
+   The 13:12Z firing's writer note on #3455 flags Chaffey's yield (Cal-GETC 45032 taking Physical Science 18435's page) as
+   suspect: before the load, check that the page's heading names 45032. Its other two suspects, Feather River 04321 and
+   Lemoore 33017, resolved: the fresh captures find each on its own page.
 3. **If #3455 is still open:** `test` green on the head, COBIx's last page read, squash-merge, `git log origin/main`.
 4. Harvest NEXT (3)'s tail: the self-test recall (27 to 26 of 28), then the `NCL_EXTRACT` switch items.
-5. **governance-team-enablement** NEXT (1), then harvest NEXT (4) to (7) (NEXT 7 now opens with the Commons `spent` figure).
+5. **governance-team-enablement** NEXT (1) (still waits: `docket-process` and `credential-catalog-sync` have had no
+   scheduled run since #3425 moved them into `live-counts`; last runs Nov 16 13:54Z and 22:54Z, per the writer note), then harvest NEXT (4) to (7) (NEXT 7 now opens with the Commons `spent` figure).
 6. **The CCN display fix** (`f-ccn-renumber-shows-as-catalog-addition-s673`), after checking other colleges' renumbered codes.
 7. Lanes this handoff does not work (cer-procedures, library, my-college-action-page): their NEXT lines stand as written; they
    wait behind harvest by COBIx's work order (catalog harvest ahead of UI or tooling). The Library's three standing requests
