@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T11:39:13Z",
+ "written_at": "2026-11-17T14:20:31Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,11 +168,11 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15866,
-  "gap": 6469,
+  "passing": 15875,
+  "gap": 6460,
   "with_gap": 118,
-  "cost_usd": 1343.27,
-  "passed_at_read": 15375,
+  "cost_usd": 1343.22,
+  "passed_at_read": 15397,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15866,
-  "gap": 6469
+  "passing": 15875,
+  "gap": 6460
  },
  "census_live": {
   "basis": "live",
@@ -931,13 +931,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 238,
-   "gap": 53,
+   "passing": 243,
+   "gap": 48,
    "causes": {
     "no_closed_list": 10,
-    "page_not_found": 10,
-    "places_none": 3,
-    "unknown_without_live": 30
+    "page_not_found": 12,
+    "unknown_without_live": 26
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -962,10 +961,10 @@
     "elumen"
    ],
    "objectives_printed": false,
-   "read_at": "2026-10-15T02:26:55Z",
+   "read_at": "2026-11-17T13:16:56Z",
    "read_kind": "capture",
-   "cost_usd": 18.26,
-   "passed_at_read": 238,
+   "cost_usd": 18.22,
+   "passed_at_read": 243,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -974,13 +973,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 281,
-   "found": 271,
-   "extracted": 271,
+   "found": 269,
+   "extracted": 269,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 32,
+    "arithmetic": 26,
     "repeated": 0,
     "outcomes": 0
    },
@@ -990,24 +989,23 @@
    "capture_root": "https://cabrillo.elumenapp.com/catalog/2026-2027/welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1528.4,
-   "run": "38670925488",
+   "read_seconds": 1552.1,
+   "run": "44090886950",
    "levers": {
-    "reconcile_steps": 29,
+    "reconcile_steps": 25,
+    "reader_page_search": 12,
     "program_course_file_check": 10,
-    "reader_page_search": 10,
-    "reader_page_assignment": 3,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 271,
+     "records": 269,
      "models": {
-      "claude-opus-5-5": 271
+      "claude-opus-5-5": 269
      },
-     "run": "38670925488",
-     "at": "2026-10-15T02:26:55Z",
-     "cost_usd": 18.26,
+     "run": "44090886950",
+     "at": "2026-11-17T13:16:56Z",
+     "cost_usd": 18.22,
      "platform": "elumen"
     },
     "slo_read": {
@@ -1017,7 +1015,7 @@
      "source_kind": "catalog",
      "file": "kb/course_outcomes/cabrillo/read_38507187621_p3of3.json"
     },
-    "plo_programs": 267,
+    "plo_programs": 268,
     "ppm_member": null,
     "maps": {
      "held": 0,
@@ -2405,12 +2403,12 @@
    "harvested": true,
    "slug": "college_of_san_mateo",
    "programs": 98,
-   "passing": 53,
-   "gap": 45,
+   "passing": 55,
+   "gap": 43,
    "causes": {
     "no_closed_list": 34,
-    "page_not_found": 3,
-    "places_none": 5,
+    "page_not_found": 4,
+    "places_none": 2,
     "unknown_without_live": 3
    },
    "census_causes": {
@@ -2433,10 +2431,10 @@
    "outcomes_file": "kb/status/commons_data_programs/college_of_san_mateo.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-23T06:59:19Z",
+   "read_at": "2026-11-17T13:16:50Z",
    "read_kind": "capture",
-   "cost_usd": 5.05,
-   "passed_at_read": 52,
+   "cost_usd": 4.96,
+   "passed_at_read": 55,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -2445,13 +2443,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 64,
-   "found": 61,
-   "extracted": 61,
+   "found": 60,
+   "extracted": 60,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 2,
     "invented": 0,
-    "arithmetic": 8,
+    "arithmetic": 5,
     "repeated": 0,
     "outcomes": 0
    },
@@ -2461,27 +2459,27 @@
    "capture_root": "https://catalog.collegeofsanmateo.edu/current/",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1399.5,
-   "run": "39914644770",
+   "read_seconds": 1425.5,
+   "run": "44090902577",
    "levers": {
     "program_course_file_check": 34,
-    "reader_page_assignment": 5,
-    "reader_page_search": 3,
-    "reconcile_steps": 3
+    "reader_page_search": 4,
+    "reconcile_steps": 3,
+    "reader_page_assignment": 2
    },
    "collection": {
     "program_reader": {
-     "records": 61,
+     "records": 60,
      "models": {
-      "claude-opus-5-5": 61
+      "claude-opus-5-5": 60
      },
-     "run": "39914644770",
-     "at": "2026-10-23T06:59:19Z",
-     "cost_usd": 5.05,
+     "run": "44090902577",
+     "at": "2026-11-17T13:16:50Z",
+     "cost_usd": 4.96,
      "platform": "custom_html"
     },
     "slo_read": null,
-    "plo_programs": 56,
+    "plo_programs": 58,
     "ppm_member": {
      "host": "programmap.collegeofsanmateo.edu",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -3577,12 +3575,12 @@
    "harvested": true,
    "slug": "crafton_hills",
    "programs": 118,
-   "passing": 55,
-   "gap": 63,
+   "passing": 56,
+   "gap": 62,
    "causes": {
     "no_closed_list": 39,
     "page_not_found": 3,
-    "unknown_without_live": 21
+    "unknown_without_live": 20
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -3604,10 +3602,10 @@
    "outcomes_file": "kb/status/commons_data_programs/crafton_hills.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-18T09:41:56Z",
+   "read_at": "2026-11-17T13:16:55Z",
    "read_kind": "capture",
-   "cost_usd": 5.37,
-   "passed_at_read": 53,
+   "cost_usd": 6.0,
+   "passed_at_read": 56,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -3621,8 +3619,8 @@
    "errors": 0,
    "failed_checks": {
     "coverage": 6,
-    "invented": 5,
-    "arithmetic": 20,
+    "invented": 4,
+    "arithmetic": 18,
     "repeated": 0,
     "outcomes": 0
    },
@@ -3632,11 +3630,11 @@
    "capture_root": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1229.3,
-   "run": "39116269641",
+   "read_seconds": 1131.5,
+   "run": "44090908924",
    "levers": {
     "program_course_file_check": 39,
-    "reconcile_steps": 21,
+    "reconcile_steps": 20,
     "reader_page_search": 3
    },
    "collection": {
@@ -3645,9 +3643,9 @@
      "models": {
       "claude-opus-5-5": 76
      },
-     "run": "39116269641",
-     "at": "2026-10-18T09:41:56Z",
-     "cost_usd": 5.37,
+     "run": "44090908924",
+     "at": "2026-11-17T13:16:55Z",
+     "cost_usd": 6.0,
      "platform": "smartcatalog"
     },
     "slo_read": null,
@@ -4541,8 +4539,7 @@
    "gap": 25,
    "causes": {
     "no_closed_list": 13,
-    "page_not_found": 4,
-    "places_none": 1,
+    "page_not_found": 5,
     "unknown_without_live": 7
    },
    "census_causes": {
@@ -4565,10 +4562,10 @@
    "outcomes_file": null,
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T16:52:03Z",
+   "read_at": "2026-11-17T13:17:16Z",
    "read_kind": "capture",
-   "cost_usd": 3.15,
-   "passed_at_read": 33,
+   "cost_usd": 3.1,
+   "passed_at_read": 37,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -4577,13 +4574,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 49,
-   "found": 45,
-   "extracted": 45,
+   "found": 44,
+   "extracted": 44,
    "errors": 0,
    "failed_checks": {
-    "coverage": 2,
+    "coverage": 1,
     "invented": 2,
-    "arithmetic": 10,
+    "arithmetic": 5,
     "repeated": 0,
     "outcomes": 0
    },
@@ -4593,23 +4590,22 @@
    "capture_root": "https://frc.curriqunet.com/Catalog/iq/1452",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 1366.4,
-   "run": "38935127435",
+   "read_seconds": 1345.1,
+   "run": "44090915912",
    "levers": {
     "program_course_file_check": 13,
     "reconcile_steps": 7,
-    "reader_page_search": 4,
-    "reader_page_assignment": 1
+    "reader_page_search": 5
    },
    "collection": {
     "program_reader": {
-     "records": 45,
+     "records": 44,
      "models": {
-      "claude-opus-5-5": 45
+      "claude-opus-5-5": 44
      },
-     "run": "38935127435",
-     "at": "2026-10-16T16:52:03Z",
-     "cost_usd": 3.15,
+     "run": "44090915912",
+     "at": "2026-11-17T13:17:16Z",
+     "cost_usd": 3.1,
      "platform": "curriqunet"
     },
     "slo_read": null,
@@ -5057,12 +5053,12 @@
    "harvested": true,
    "slug": "gavilan",
    "programs": 135,
-   "passing": 81,
-   "gap": 54,
+   "passing": 82,
+   "gap": 53,
    "causes": {
     "no_closed_list": 15,
-    "page_not_found": 14,
-    "places_none": 5,
+    "page_not_found": 17,
+    "places_none": 1,
     "unknown_without_live": 20
    },
    "census_causes": {
@@ -5087,10 +5083,10 @@
    "outcomes_file": "kb/status/commons_data_programs/gavilan.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T18:33:54Z",
+   "read_at": "2026-11-17T13:16:49Z",
    "read_kind": "capture",
-   "cost_usd": 7.53,
-   "passed_at_read": 77,
+   "cost_usd": 7.35,
+   "passed_at_read": 82,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -5099,13 +5095,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 120,
-   "found": 106,
-   "extracted": 106,
+   "found": 103,
+   "extracted": 103,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 1,
     "invented": 0,
-    "arithmetic": 29,
+    "arithmetic": 21,
     "repeated": 0,
     "outcomes": 0
    },
@@ -5115,28 +5111,28 @@
    "capture_root": "https://gavilan.curriqunet.com/catalog/alias/2026-2027catalog",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 898.3,
-   "run": "38948144064",
+   "read_seconds": 862.5,
+   "run": "44090922437",
    "levers": {
     "reconcile_steps": 19,
+    "reader_page_search": 17,
     "program_course_file_check": 15,
-    "reader_page_search": 14,
-    "reader_page_assignment": 5,
+    "reader_page_assignment": 1,
     "scorer_noncredit_hours": 1
    },
    "collection": {
     "program_reader": {
-     "records": 106,
+     "records": 103,
      "models": {
-      "claude-opus-5-5": 106
+      "claude-opus-5-5": 103
      },
-     "run": "38948144064",
-     "at": "2026-10-16T18:33:54Z",
-     "cost_usd": 7.53,
+     "run": "44090922437",
+     "at": "2026-11-17T13:16:49Z",
+     "cost_usd": 7.35,
      "platform": "curriqunet"
     },
     "slo_read": null,
-    "plo_programs": 99,
+    "plo_programs": 100,
     "ppm_member": {
      "host": "gavilan.programmapper.com",
      "by": "programmapper.org/ppm-schools, copied 2026-10-21"
@@ -6231,8 +6227,7 @@
    "gap": 25,
    "causes": {
     "no_closed_list": 8,
-    "page_not_found": 9,
-    "places_none": 5,
+    "page_not_found": 14,
     "unknown_without_live": 3
    },
    "census_causes": {
@@ -6253,10 +6248,10 @@
    "outcomes_file": "kb/status/commons_data_programs/lemoore.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T23:05:16Z",
+   "read_at": "2026-11-17T13:17:10Z",
    "read_kind": "capture",
-   "cost_usd": 5.29,
-   "passed_at_read": 63,
+   "cost_usd": 4.97,
+   "passed_at_read": 65,
    "slo_queue": {
     "state": "none",
     "why": "its eLumen 26-27 course pages print units, transfer, requisites and hours, and no SLOs (0 of 12)",
@@ -6269,13 +6264,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 82,
-   "found": 73,
-   "extracted": 73,
+   "found": 68,
+   "extracted": 68,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 10,
+    "arithmetic": 3,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6285,23 +6280,22 @@
    "capture_root": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 341.0,
-   "run": "38979392604",
+   "read_seconds": 345.1,
+   "run": "44090929578",
    "levers": {
-    "reader_page_search": 9,
+    "reader_page_search": 14,
     "program_course_file_check": 8,
-    "reader_page_assignment": 5,
     "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
-     "records": 73,
+     "records": 68,
      "models": {
-      "claude-opus-5-5": 73
+      "claude-opus-5-5": 68
      },
-     "run": "38979392604",
-     "at": "2026-10-16T23:05:16Z",
-     "cost_usd": 5.29,
+     "run": "44090929578",
+     "at": "2026-11-17T13:17:10Z",
+     "cost_usd": 4.97,
      "platform": "elumen"
     },
     "slo_read": null,

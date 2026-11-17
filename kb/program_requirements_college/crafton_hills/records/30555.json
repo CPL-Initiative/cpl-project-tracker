@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7572,
-    "output_tokens": 2317,
+    "output_tokens": 2065,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,39 @@
     "model": null
    }
   ],
-  "output_tokens": 2317,
+  "output_tokens": 2065,
   "output_tokens_details": {
-   "thinking_tokens": 749
+   "thinking_tokens": 635
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07663,
- "ms": 18475,
- "seconds": 19.1,
+ "cost_usd": 0.07159,
+ "ms": 17243,
+ "seconds": 18.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "SOC141H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "SOCI141",
-    "SOCI141H",
     "STATC1000",
     "STATC1000H"
    ],
    "flagged": [
     "SOCI141",
-    "SOCI141H",
     "STATC1000",
     "STATC1000H"
    ],
@@ -219,7 +215,7 @@
        {
         "code": "SOCI 141H",
         "units": 3,
-        "catalog_addition": true
+        "catalog_addition": false
        },
        {
         "code": "ETHS 141",
@@ -310,22 +306,16 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "SOC 141H",
-    "why": "not in the text under this code; catalog prints SOCI 141H (Race, Ethnicity and Diversity-Honors), likely the same course with a different prefix"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Closed-list codes without spaces (ANTH102, ANTH102H, SOCI105, SOCI130, SOCI145, SOCI150, SOCIC1000, SOCIC1000H) were matched to the catalog's spaced codes (ANTH 102, SOCI 105, SOCI C1000, etc.) and marked catalog_addition false.",
-   "SOCI 141H was marked as a catalog addition because the closed list names SOC 141H (different subject prefix); reviewer should confirm whether these are the same course.",
-   "STAT C1000, STAT C1000H and SOCI 141 are not in the closed list and are marked catalog additions.",
-   "The core statistics requirement is STAT C1000 or STAT C1000H, OR PSYC 120; recorded as one entry with alternatives.",
-   "List B may also be satisfied by any List A course not already used.",
-   "List A and List B minimums ('at least six (6) units', 'at least three (3) additional units') are recorded as minimums; no separate block totals are printed.",
-   "TOTAL CREDIT HOURS: 19.00 is recorded as the major total (units). Cal-GETC is named as the GE pattern; no GE units or degree total are printed.",
-   "The outcomes list ('A student receiving a degree in this field will be able to:') is printed on this award's page and recorded for this award."
+   "Closed-list codes without spaces (SOCIC1000, SOCIC1000H, SOCI105, SOCI130, SOCI145, SOCI150, ANTH102, ANTH102H) were matched to the catalog's spaced codes.",
+   "Closed list has 'SOC 141H'; the catalog prints 'SOCI 141H'. Treated as the same course (catalog_addition false); SOCI 141 itself is not in the closed list and is marked as a catalog addition. Reviewer should confirm.",
+   "STAT C1000 and STAT C1000H are not in the closed list; marked as catalog additions. Statistics requirement recorded as one entry: STAT C1000 or STAT C1000H, OR PSYC 120.",
+   "List B may also be satisfied by any List A course not already used toward List A.",
+   "'TOTAL CREDIT HOURS: 19.00' is read as the major total in units (3+3+4+6+3 = 19); no degree total or GE unit figure is printed.",
+   "Program learning outcomes are printed under the lead-in 'A student receiving a degree in this field will be able to:'."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": "44090908924",
+ "catalog_year": "2026-2027"
 }

@@ -5,11 +5,11 @@
  "title": "Art Studio",
  "award": "A.A. Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-studio-associate-in-arts-a-a-fall-2026",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11647,
+  "input_tokens": 11950,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11647,
-    "output_tokens": 11979,
+    "input_tokens": 11950,
+    "output_tokens": 13253,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 11979,
+  "output_tokens": 13253,
   "output_tokens_details": {
-   "thinking_tokens": 3173
+   "thinking_tokens": 4175
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.28617,
- "ms": 86458,
- "seconds": 86.7,
+ "cost_usd": 0.31286,
+ "ms": 98832,
+ "seconds": 99.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 77,
+   "placed": 79,
    "listed": 80,
-   "share": 0.963,
+   "share": 0.988,
    "missing": [
-    "AH20B",
-    "ART48",
-    "MUS79"
+    "ART48"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1200",
+     "listed": "AH20B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "VAPA79",
+     "listed": "MUS79",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "AP15",
     "ART11B",
-    "ART92",
-    "ARTHC1200",
-    "VAPA79"
+    "ART92"
    ],
    "flagged": [
     "AP15",
     "ART11B",
-    "ART92",
-    "ARTHC1200",
-    "VAPA79"
+    "ART92"
    ],
    "pass": true
   },
@@ -114,6 +121,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -125,6 +135,10 @@
     "max": null
    },
    "open_elective_units": 6,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cabrillo College General Education",
    "degree_total": {
     "min": 60,
@@ -175,21 +189,21 @@
     },
     "courses": [
      {
-      "code": "ART2A",
+      "code": "ART 2A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART4",
+      "code": "ART 4",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART5",
+      "code": "ART 5",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -208,12 +222,12 @@
     },
     "courses": [
      {
-      "code": "AH11",
+      "code": "AH 11",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "AH11H",
+        "code": "AH 11H",
         "units": 3,
         "catalog_addition": false
        }
@@ -221,19 +235,19 @@
       "catalog_addition": false
      },
      {
-      "code": "AH12",
+      "code": "AH 12",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH13",
+      "code": "AH 13",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "AH13H",
+        "code": "AH 13H",
         "units": 3,
         "catalog_addition": false
        }
@@ -241,35 +255,35 @@
       "catalog_addition": false
      },
      {
-      "code": "AH14",
+      "code": "AH 14",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH16",
+      "code": "AH 16",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH17",
+      "code": "AH 17",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH18",
+      "code": "AH 18",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH19",
+      "code": "AH 19",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -290,14 +304,14 @@
       "catalog_addition": true
      },
      {
-      "code": "AH52",
+      "code": "AH 52",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AH53",
+      "code": "AH 53",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -307,8 +321,8 @@
    },
    {
     "name": "Recommended Major Requirements",
-    "rule": "all",
-    "minimum": null,
+    "rule": "choose_units",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": 1,
@@ -316,14 +330,14 @@
     },
     "courses": [
      {
-      "code": "ART50L",
+      "code": "ART 50L",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART51L",
+      "code": "ART 51L",
       "units": 0.5,
       "units_max": null,
       "alternatives": [],
@@ -335,63 +349,63 @@
     "name": "Ceramics Focus",
     "rule": "choose_units",
     "minimum": 9,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART6A",
+      "code": "ART 6A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART6B",
+      "code": "ART 6B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART9A",
+      "code": "ART 9A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART9B",
+      "code": "ART 9B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART72A",
+      "code": "ART 72A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART72B",
+      "code": "ART 72B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART75",
+      "code": "ART 75",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART92",
+      "code": "ART 92",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -403,21 +417,21 @@
     "name": "Digital Fabrication Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 11,
      "max": 14
     },
     "courses": [
      {
-      "code": "ART95A",
+      "code": "ART 95A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART95B",
+      "code": "ART 95B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -429,35 +443,35 @@
     "name": "Additional Digital Fabrication Electives",
     "rule": "choose_units",
     "minimum": 5,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 5,
      "max": 8
     },
     "courses": [
      {
-      "code": "DM1",
+      "code": "DM 1",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM4",
+      "code": "DM 4",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGR25",
+      "code": "ENGR 25",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGR26",
+      "code": "ENGR 26",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -469,21 +483,21 @@
     "name": "Drawing Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART2B",
+      "code": "ART 2B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART3A",
+      "code": "ART 3A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -495,21 +509,21 @@
     "name": "Additional Drawing Focus Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 6
     },
     "courses": [
      {
-      "code": "ART3B",
+      "code": "ART 3B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART49",
+      "code": "ART 49",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -521,21 +535,21 @@
     "name": "Graphic Art Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 14
     },
     "courses": [
      {
-      "code": "ART27",
+      "code": "ART 27",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART28",
+      "code": "ART 28",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -547,35 +561,35 @@
     "name": "Additional Graphic Arts Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 8
     },
     "courses": [
      {
-      "code": "ART3A",
+      "code": "ART 3A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM1",
+      "code": "DM 1",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM4",
+      "code": "DM 4",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM5",
+      "code": "DM 5",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -587,28 +601,28 @@
     "name": "Small Scale Metal/Jewelry Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 12,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART8A",
+      "code": "ART 8A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART11A",
+      "code": "ART 11A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART38A",
+      "code": "ART 38A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -620,56 +634,56 @@
     "name": "Additional Small Scale/Metal Jewelry Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "ART8B",
+      "code": "ART 8B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART10A",
+      "code": "ART 10A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART11B",
+      "code": "ART 11B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ART13A",
+      "code": "ART 13A",
       "units": 1,
       "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART13B",
+      "code": "ART 13B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART26",
+      "code": "ART 26",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART38B",
+      "code": "ART 38B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -681,21 +695,21 @@
     "name": "Painting Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART31A",
+      "code": "ART 31A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART31B",
+      "code": "ART 31B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -707,42 +721,42 @@
     "name": "Additional Painting Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 6
     },
     "courses": [
      {
-      "code": "ART37A",
+      "code": "ART 37A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART31C",
+      "code": "ART 31C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART37B",
+      "code": "ART 37B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART41",
+      "code": "ART 41",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART91",
+      "code": "ART 91",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -754,28 +768,28 @@
     "name": "Printmaking Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART33A",
+      "code": "ART 33A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART33B",
+      "code": "ART 33B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART74",
+      "code": "ART 74",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -787,35 +801,35 @@
     "name": "Additional Printmaking Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "ART32A",
+      "code": "ART 32A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART32B",
+      "code": "ART 32B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART39A",
+      "code": "ART 39A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART46",
+      "code": "ART 46",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -827,14 +841,14 @@
     "name": "Public Arts Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART33A",
+      "code": "ART 33A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -846,21 +860,21 @@
     "name": "Recommended",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "ART91",
+      "code": "ART 91",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART92",
+      "code": "ART 92",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -872,14 +886,14 @@
     "name": "Recommended",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "ART90",
+      "code": "ART 90",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -898,21 +912,21 @@
     "name": "Recommended",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "ART33B",
+      "code": "ART 33B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART39A",
+      "code": "ART 39A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -924,21 +938,21 @@
     "name": "Sculpture Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "ART34A",
+      "code": "ART 34A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART34B",
+      "code": "ART 34B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -950,28 +964,28 @@
     "name": "Additional Sculpture Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 6
     },
     "courses": [
      {
-      "code": "ART35",
+      "code": "ART 35",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART36",
+      "code": "ART 36",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART44A",
+      "code": "ART 44A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -983,28 +997,28 @@
     "name": "Woodworking Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 9
     },
     "courses": [
      {
-      "code": "ART25A",
+      "code": "ART 25A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART25B",
+      "code": "ART 25B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART25CA",
+      "code": "ART 25CA",
       "units": 1,
       "units_max": 3,
       "alternatives": [],
@@ -1016,28 +1030,28 @@
     "name": "Art Photography Focus",
     "rule": "all",
     "minimum": null,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 12,
      "max": 12
     },
     "courses": [
      {
-      "code": "AP1A",
+      "code": "AP 1A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP9A",
+      "code": "AP 9A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP46A",
+      "code": "AP 46A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -1049,42 +1063,42 @@
     "name": "Additional Art Photography Electives",
     "rule": "choose_units",
     "minimum": 3,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 3,
      "max": 3
     },
     "courses": [
      {
-      "code": "AP9B",
+      "code": "AP 9B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP15",
+      "code": "AP 15",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "AP42",
+      "code": "AP 42",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP46B",
+      "code": "AP 46B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP47",
+      "code": "AP 47",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -1096,441 +1110,441 @@
     "name": "Student Selected Focus",
     "rule": "choose_units",
     "minimum": 9,
-    "option_group": "Major Electives focus",
+    "option_group": "Focus",
     "stated": {
      "min": 9,
      "max": 12
     },
     "courses": [
      {
-      "code": "AP1A",
+      "code": "AP 1A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP9A",
+      "code": "AP 9A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP9B",
+      "code": "AP 9B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP15",
+      "code": "AP 15",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "AP42",
+      "code": "AP 42",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP46A",
+      "code": "AP 46A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP46B",
+      "code": "AP 46B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP47",
+      "code": "AP 47",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART2B",
+      "code": "ART 2B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART3A",
+      "code": "ART 3A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART3B",
+      "code": "ART 3B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART6A",
+      "code": "ART 6A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART6B",
+      "code": "ART 6B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART8A",
+      "code": "ART 8A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART8B",
+      "code": "ART 8B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART9A",
+      "code": "ART 9A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART9B",
+      "code": "ART 9B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART10A",
+      "code": "ART 10A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART11A",
+      "code": "ART 11A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART11B",
+      "code": "ART 11B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ART13A",
+      "code": "ART 13A",
       "units": 1,
       "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART13B",
+      "code": "ART 13B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART25A",
+      "code": "ART 25A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART25B",
+      "code": "ART 25B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART25CA",
+      "code": "ART 25CA",
       "units": 1,
       "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART26",
+      "code": "ART 26",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART27",
+      "code": "ART 27",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART28",
+      "code": "ART 28",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART31A",
+      "code": "ART 31A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART31B",
+      "code": "ART 31B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART31C",
+      "code": "ART 31C",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART32A",
+      "code": "ART 32A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART32B",
+      "code": "ART 32B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART33A",
+      "code": "ART 33A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART33B",
+      "code": "ART 33B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART34A",
+      "code": "ART 34A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART34B",
+      "code": "ART 34B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART35",
+      "code": "ART 35",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART36",
+      "code": "ART 36",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART37A",
+      "code": "ART 37A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART37B",
+      "code": "ART 37B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART38A",
+      "code": "ART 38A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART38B",
+      "code": "ART 38B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART39A",
+      "code": "ART 39A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART41",
+      "code": "ART 41",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART44A",
+      "code": "ART 44A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART46",
+      "code": "ART 46",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART49",
+      "code": "ART 49",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART72A",
+      "code": "ART 72A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART72B",
+      "code": "ART 72B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART74",
+      "code": "ART 74",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART75",
+      "code": "ART 75",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART90",
+      "code": "ART 90",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART91",
+      "code": "ART 91",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART92",
+      "code": "ART 92",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ART95A",
+      "code": "ART 95A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ART95B",
+      "code": "ART 95B",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM1",
+      "code": "DM 1",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM4",
+      "code": "DM 4",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DM5",
+      "code": "DM 5",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGR25",
+      "code": "ENGR 25",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGR26",
+      "code": "ENGR 26",
       "units": 1,
       "units_max": null,
       "alternatives": [],
@@ -1550,30 +1564,32 @@
   "missing_explained": [
    {
     "code": "AH 20B",
-    "why": "not in the text"
+    "why": "not in the text; ARTHC1200 (Survey of Art from the Renaissance to Contemporary) appears instead, possibly its replacement"
+   },
+   {
+    "code": "MUS 79",
+    "why": "not in the text; VAPA79 (Thrive in the Arts) appears instead, possibly a renumbered course"
    },
    {
     "code": "ART 48",
     "why": "not in the text"
-   },
-   {
-    "code": "MUS 79",
-    "why": "not in the text"
    }
   ],
   "notes": [
-   "The page says the courses below are 'recommended by the department that can be used to meet major requirements'; the degree itself only requires 60 units including GE and at least 18 units in the major. Blocks titled 'Recommended Major Requirements', 'Recommended Art History' and 'Recommended Major Electives' were recorded as requirement blocks (all/choose_units) because they carry credit counts that sum with GE (24) and general electives (6-11) to the printed 60; a reviewer should confirm whether they should instead be treated as recommended.",
-   "No total for the major is printed; degree_total 60 and Cabrillo College General Education 24 are as printed.",
-   "General electives ('any transferable or degree applicable course') are printed as 6 - 11 units; open_elective_units records the low end 6.",
-   "'Recommended Major Electives' (9-14 units): 'Students can choose a focus in the degree by completing a block of elective courses centered around that focus.' Every focus block is in option_group 'Major Electives focus'. Each focus's 'Additional ... Electives' block (and the three 'Recommended' blocks under Public Arts Focus) belongs to the focus printed just above it and is completed together with it, not as a separate alternative.",
-   "Public Arts Focus: ART33A plus 'Students may select between 6-9 units from any of the recommended elective blocks listed below' - the three 'Recommended' blocks (3 units each) are the pool for those 6-9 units.",
-   "Additional Digital Fabrication Electives note: 'Students may take DM1 and DM4 or ENGR25 and ENGR26.' (paths of 8 or 5 units).",
-   "Printmaking Focus core (ART33A, ART33B, ART74 = 9 units) plus 3 additional units gives 12, while the focus states 9-12; recorded the core as all - check.",
-   "Units printed differ from the state file for several courses (e.g., ART10A 3 vs 1, ART75 3 vs 1, ART35/36/37A/37B/41/44A/46/49/74/90/91 printed as 3, ART25A/25B 3, ART13A and ART25CA 1-3); printed units used.",
-   "Honors twins AH11H and AH13H recorded as alternatives of AH11 and AH13.",
-   "Codes written as printed without spaces (e.g., ART2A for closed-list ART 2A).",
-   "Program Outcomes list is printed for the program on this A.A. page and recorded as the award's outcomes."
+   "The page labels every major block 'Recommended' and says these are 'courses recommended by the department that can be used to meet major requirements'; it also says an A.A. requires 'at least 18 units in the major'. Because each block states 'Complete the following number of credits' and the blocks plus GE (24) and general electives (6-11) make up the printed 60-unit degree total, they are recorded with requirement rules (all/choose_units) rather than 'recommended'. Reviewer should confirm.",
+   "No major total is printed; total_units left null. The 'at least 18 units in the major' sentence is a generic A.A. statement, not this award's total.",
+   "General electives ('any transferable or degree applicable course') are printed as 6 - 11 units; open_elective_units records the low end (6) because the field holds a single number.",
+   "'Recommended Major Electives: Complete the following number of credits: 9-14' — student chooses one focus. Each focus is recorded with option_group 'Focus'. Where a focus has a core block followed by an 'Additional ... Electives' block, the two blocks together form one focus option (core + additional), not alternatives to each other: Digital Fabrication (core + Additional Digital Fabrication Electives), Drawing, Graphic Art, Small Scale Metal/Jewelry, Painting, Printmaking, Public Arts (core ART 33A + three 'Recommended' blocks), Sculpture, Art Photography. Focus totals are recorded in stated on the core block.",
+   "Digital Fabrication note: 'Students may take DM1 and DM4 or ENGR25 and ENGR26' (5-8 units).",
+   "Public Arts Focus: 'Students may select between 6-9 units from any of the recommended elective blocks listed below.' The three blocks named 'Recommended' (3 units each) are recorded as choose_units 3 within the focus.",
+   "Printmaking Focus core (ART 33A, 33B, 74) totals 9 units with a further 3-unit elective block, against a focus total of 9-12; whether the additional block is required is ambiguous.",
+   "Woodworking Focus lists ART 25A, 25B, 25CA (1-3) against a 9-unit total; recorded as all.",
+   "Units printed on the page differ from the state file for several courses (e.g., ART 10A, 13A, 25A, 25B, 35, 36, 37A, 37B, 41, 44A, 46, 49, 74, 75, 90, 91 printed as 3 or 1-3 vs 1 in the file); printed values used.",
+   "Honors twins AH 11H and AH 13H are printed as separate rows and are recorded as alternatives of AH 11 and AH 13.",
+   "Codes are printed without spaces on the page (e.g., 'ART2A'); recorded with the subject spacing used in the closed list.",
+   "Program outcomes are printed for the program as a whole and recorded for this award."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }
