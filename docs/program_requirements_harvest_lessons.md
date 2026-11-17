@@ -482,3 +482,13 @@ NEXT (3)'s opening as it stood: (3) Slice B: Skyline's yield read is merged (#34
 **A dispatching firing should end with its PR body naming the runs.** The 13:12Z firing left its stub handoff and no run list; the next firing rebuilt the state from `git ls-remote` and the run listing. A line naming the runs and the next step, pushed at dispatch, lets the next firing pick up faster.
 
 **A fresh capture can reach a yield's end without the yield.** Three of S668's 13 yields (Feather River 36176, Gavilan 46046, Lemoore 19305) did not recur: the new captures file each holder under `page_claimed` and the lookup finds its taker's own page. The census pin in `tests/harvest_ncl_lookup_census_test.py` caught the change, as its comment intends (*a finding to judge, never a number to update*); the judgment is recorded beside the pin as `RESOLVED_BY_CLAIM_S676`, with a check that each holder stays claimed and each taker found.
+
+## S677 (SkyTanager, 2026-11-17)
+
+**What happened.** Chaffey, slice B's seventh yield college, filed (read 44090894573, $1.02; passing 181 to 182 of 192). Its branch had been cut before #3456, so `main` was merged in first. `step=reread` (44168346810) replaced 13 unchecked rows and `step=load` (44169840117) inserted none and kept 191; Commons data and display build cdd185495ce4, #3462 merged on green `test`. Slice B is complete at seven colleges.
+
+**One writer, agreed before the first write.** A second S677 session sat on an Execute SQL prompt. This session messaged it; it confirmed it had written nothing and stood down. Asking first cost one message and kept the queue to one writer.
+
+**A suspect yield can end in `not_found`.** S668 flagged Chaffey's yield (Cal-GETC 45032 taking Physical Science 18435's page) as suspect. The fresh capture files 18435 under `not_found`, since it had been extracted from the Cal-GETC page, so the yield no longer occurs and 45032 keeps its own reading. The census pin records it as `RESOLVED_BY_NOT_FOUND_S677`, with a check that 18435 stays not found and unfiled. A live read found no row for either control number, so no guarded delete (`d-chaffey-18435-not-found-no-live-row-s677`).
+
+**Rebuild a lost number from committed sources, or close it as named.** The self-test recall "27 to 26 of 28" was Skyline's. The one committed Skyline capture (d600083e) already reads 26 of 28; the 27 was never committed, so the drop cannot be rebuilt. Rebuilt from the census inputs, the self-test names one miss: 38299 Proficiency in American Culture and English (PACE), Certificate of Achievement, not matched against its own page (`f-skyline-self-test-miss-38299-pace-s677`). Recall stays above the floor.
