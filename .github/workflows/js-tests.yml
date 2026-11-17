@@ -1397,6 +1397,9 @@ jobs:
       # The blocked-catalog hunt: one to-do on the College Data Collection page and the Commons (S678, #3464 item 8).
       - name: Blocked-catalog to-do (kb/_blocked_catalogs.py)
         run: python3 tests/blocked_catalogs_test.py
+      # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
+      - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
+        run: python3 tests/left_map_build_test.py
       # The daily spend file's measured series and the Commons spent figure (S678, kb/_build_spend_daily.py).
       - name: Daily spend measured series (kb/_build_spend_daily.py)
         run: python3 tests/spend_daily_build_test.py
