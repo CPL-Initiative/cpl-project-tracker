@@ -556,3 +556,7 @@ Riverside City's three steps took its records from 229 to 232 passing on the rec
 
 **A migration's `.apply` pushed on a branch applies at once.** The S674 memory rows applied from the PR branch (run 44073641990) before the PR merged, as `supabase-migrate.yml` is meant to. Push `.apply` only when the rows are ready to be live.
 
+
+## S675 (SkyLinnet, 2026-11-17, the CPL Queue routine)
+
+**A block heading's figure can be the catalog's error.** Riverside City's Social Justice ADTs 41749 and 43896 print "Required Courses · Units: 9.00", and the rows under that heading add to less: 41749 lists "Select one of the following: 3.00" over ETS-1, SOC-10 or 10H, SOC-15 and SOC-25, and 43896 lists ETS-1 (3.00) and "Select one of the following: 3.00" over SOC-15, SOC-25 and PHI-34 (free page read 44081245766, plan `kb/college_reads/rcc_social_justice_required.json`). The readings keep the page exactly as printed, so the records fail arithmetic the way Geology 38790 does (S671, cause 1). A forced re-extraction would spend money on a faithful reading, and no reconcile step may add a course the page does not print. Both records stay as filed.

@@ -17125,8 +17125,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 634,
+   "count": 635,
    "docs": [
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 676,
+     "path": "docs/session_676_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 676 handoff (from SkyLinnet, S675)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27775,5 +27789,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1504
+ "total": 1505
 }
