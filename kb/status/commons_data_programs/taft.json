@@ -1,4 +1,4 @@
-{"schema":1,"college":"Taft College","slug":"taft","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Taft College","slug":"taft","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"38661","title":"CSU GE-Breadth","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"found_not_extracted","lever":"paid_read","url":"https://taftcollege.smartcatalogiq.com/en/2026-2027/2026-2027-catalog/degrees-and-certificates/transfer-studies-cal-getc/csu-ge-breadth-certificate-of-achievement"},
 {"cn":"10426","title":"Administrative Services","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"20602","title":"Administrative Services","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
