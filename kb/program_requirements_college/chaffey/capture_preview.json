@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 202,
  "with_closed_list": 199,
- "started": "2026-10-12T04:20:51Z",
+ "started": "2026-11-17T14:28:32Z",
  "curriqunet": {
   "catalog": 718,
   "view_prefix": "https://chaffey.curriqunet.com/catalog/iq/",
@@ -18,16 +18,698 @@
   "calls": 19,
   "entries": 401,
   "stopped_at_cap": false,
-  "entries_read": 401
+  "same_title_entries": 197,
+  "entries_read": 204,
+  "twin_ids": {
+   "18868": [
+    19438
+   ],
+   "18870": [
+    19439
+   ],
+   "18872": [
+    19440
+   ],
+   "18916": [
+    19551
+   ],
+   "18874": [
+    19514
+   ],
+   "18948": [
+    19518
+   ],
+   "18950": [
+    19517
+   ],
+   "18946": [
+    19516
+   ],
+   "19921": [
+    19923
+   ],
+   "20422": [
+    20426
+   ],
+   "20313": [
+    19542
+   ],
+   "18880": [
+    20317
+   ],
+   "20564": [
+    20573
+   ],
+   "20565": [
+    20574
+   ],
+   "18942": [
+    19497
+   ],
+   "18944": [
+    19515
+   ],
+   "18952": [
+    19570
+   ],
+   "20327": [
+    19563
+   ],
+   "18954": [
+    19443
+   ],
+   "18956": [
+    19413
+   ],
+   "19052": [
+    19457
+   ],
+   "20351": [
+    19458
+   ],
+   "20331": [
+    19915
+   ],
+   "19018": [
+    19519
+   ],
+   "18962": [
+    19520
+   ],
+   "18964": [
+    19521
+   ],
+   "18966": [
+    19522
+   ],
+   "18968": [
+    19523
+   ],
+   "18970": [
+    19498
+   ],
+   "18918": [
+    19564
+   ],
+   "19202": [
+    19573
+   ],
+   "18972": [
+    19553
+   ],
+   "18974": [
+    19414
+   ],
+   "20461": [
+    20457
+   ],
+   "20581": [
+    20585
+   ],
+   "18882": [
+    19406
+   ],
+   "18980": [
+    19499
+   ],
+   "18982": [
+    19500
+   ],
+   "20589": [
+    20593
+   ],
+   "18986": [
+    19446
+   ],
+   "18920": [
+    19565
+   ],
+   "18996": [
+    19554
+   ],
+   "18994": [
+    19555
+   ],
+   "18998": [
+    19556
+   ],
+   "19000": [
+    19450
+   ],
+   "19002": [
+    19451
+   ],
+   "19006": [
+    19452
+   ],
+   "19008": [
+    19453
+   ],
+   "19010": [
+    19454
+   ],
+   "20614": [
+    20630
+   ],
+   "20615": [
+    20631
+   ],
+   "19012": [
+    19501
+   ],
+   "19014": [
+    19502
+   ],
+   "20638": [
+    20646
+   ],
+   "20639": [
+    20647
+   ],
+   "19016": [
+    19503
+   ],
+   "18922": [
+    19552
+   ],
+   "20654": [
+    20658
+   ],
+   "18884": [
+    19543
+   ],
+   "20761": [
+    20765
+   ],
+   "19020": [
+    19524
+   ],
+   "18886": [
+    19544
+   ],
+   "19022": [
+    19557
+   ],
+   "19024": [
+    19525
+   ],
+   "19026": [
+    19571
+   ],
+   "19028": [
+    19526
+   ],
+   "19030": [
+    19527
+   ],
+   "19922": [
+    19924
+   ],
+   "18888": [
+    19407
+   ],
+   "18924": [
+    19566
+   ],
+   "19032": [
+    19455
+   ],
+   "20339": [
+    19456
+   ],
+   "19034": [
+    19418
+   ],
+   "19036": [
+    19419
+   ],
+   "19038": [
+    19420
+   ],
+   "19040": [
+    19421
+   ],
+   "18926": [
+    19412
+   ],
+   "19042": [
+    19558
+   ],
+   "19046": [
+    19559
+   ],
+   "19044": [
+    19560
+   ],
+   "19050": [
+    19528
+   ],
+   "19048": [
+    19529
+   ],
+   "18890": [
+    20414
+   ],
+   "20662": [
+    20666
+   ],
+   "18928": [
+    19567
+   ],
+   "19054": [
+    20433
+   ],
+   "19056": [
+    19504
+   ],
+   "19088": [
+    19463
+   ],
+   "20343": [
+    19464
+   ],
+   "18876": [
+    19422
+   ],
+   "18878": [
+    19423
+   ],
+   "19058": [
+    19530
+   ],
+   "19060": [
+    19531
+   ],
+   "19062": [
+    19532
+   ],
+   "18892": [
+    19545
+   ],
+   "18930": [
+    19442
+   ],
+   "20670": [
+    20674
+   ],
+   "19066": [
+    19459
+   ],
+   "19064": [
+    19460
+   ],
+   "20678": [
+    20685
+   ],
+   "19068": [
+    19461
+   ],
+   "19070": [
+    19462
+   ],
+   "19072": [
+    19533
+   ],
+   "19074": [
+    19534
+   ],
+   "19076": [
+    19535
+   ],
+   "19078": [
+    19536
+   ],
+   "19080": [
+    19424
+   ],
+   "20597": [
+    20606
+   ],
+   "20598": [
+    20607
+   ],
+   "19084": [
+    19425
+   ],
+   "19082": [
+    19426
+   ],
+   "19086": [
+    19427
+   ],
+   "19092": [
+    19428
+   ],
+   "18894": [
+    19408
+   ],
+   "18896": [
+    19494
+   ],
+   "18898": [
+    19441
+   ],
+   "20347": [
+    19465
+   ],
+   "19094": [
+    19466
+   ],
+   "19096": [
+    19467
+   ],
+   "19098": [
+    19468
+   ],
+   "19102": [
+    19537
+   ],
+   "19100": [
+    19538
+   ],
+   "18932": [
+    19568
+   ],
+   "19104": [
+    19539
+   ],
+   "19106": [
+    19540
+   ],
+   "19108": [
+    19541
+   ],
+   "19110": [
+    19469
+   ],
+   "19112": [
+    19470
+   ],
+   "19114": [
+    19471
+   ],
+   "19116": [
+    19429
+   ],
+   "18940": [
+    19409
+   ],
+   "20689": [
+    20697
+   ],
+   "20690": [
+    20698
+   ],
+   "19120": [
+    19505
+   ],
+   "19122": [
+    19506
+   ],
+   "19124": [
+    19507
+   ],
+   "19126": [
+    19508
+   ],
+   "19130": [
+    19509
+   ],
+   "19128": [
+    19510
+   ],
+   "18934": [
+    19495
+   ],
+   "19132": [
+    19511
+   ],
+   "19134": [
+    19430
+   ],
+   "20770": [
+    20774
+   ],
+   "19136": [
+    19473
+   ],
+   "19138": [
+    19474
+   ],
+   "19140": [
+    19561
+   ],
+   "19144": [
+    19475
+   ],
+   "20778": [
+    20782
+   ],
+   "18900": [
+    19546
+   ],
+   "20404": [
+    20408
+   ],
+   "19146": [
+    19432
+   ],
+   "20705": [
+    20709
+   ],
+   "19148": [
+    19512
+   ],
+   "20396": [
+    20400
+   ],
+   "18936": [
+    19569
+   ],
+   "19204": [
+    19574
+   ],
+   "19152": [
+    19562
+   ],
+   "18902": [
+    19547
+   ],
+   "19154": [
+    19433
+   ],
+   "19158": [
+    19476
+   ],
+   "19156": [
+    19477
+   ],
+   "19160": [
+    19478
+   ],
+   "19162": [
+    19479
+   ],
+   "19164": [
+    19480
+   ],
+   "20713": [
+    20721
+   ],
+   "20714": [
+    20722
+   ],
+   "19166": [
+    19481
+   ],
+   "18904": [
+    19548
+   ],
+   "18938": [
+    19496
+   ],
+   "19168": [
+    19513
+   ],
+   "19170": [
+    19482
+   ],
+   "19172": [
+    19483
+   ],
+   "20361": [
+    20371
+   ],
+   "20362": [
+    20372
+   ],
+   "19174": [
+    19484
+   ],
+   "19176": [
+    19434
+   ],
+   "19178": [
+    19485
+   ],
+   "19180": [
+    19486
+   ],
+   "19182": [
+    19435
+   ],
+   "19184": [
+    19487
+   ],
+   "19186": [
+    19488
+   ],
+   "18906": [
+    19549
+   ],
+   "18908": [
+    19550
+   ],
+   "18910": [
+    19410
+   ],
+   "18912": [
+    20321
+   ],
+   "19192": [
+    19490
+   ],
+   "19190": [
+    19491
+   ],
+   "19194": [
+    19492
+   ],
+   "19196": [
+    20357
+   ],
+   "19198": [
+    19436
+   ],
+   "20729": [
+    20737
+   ],
+   "20730": [
+    20738
+   ],
+   "19200": [
+    19437
+   ],
+   "18914": [
+    19411
+   ],
+   "20437": [
+    20441
+   ],
+   "20745": [
+    20753
+   ],
+   "20746": [
+    20754
+   ]
+  },
+  "failed_calls": 0
  },
- "pages_read": 401,
- "loads": 1226,
- "seconds": 5469.8,
- "found": 193,
+ "pages_read": 204,
+ "pages_listed": 204,
+ "pages_answered": 204,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 190,
+   "hits": 179,
+   "recall": 0.942,
+   "false": 0,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 2,
+   "false_matches": [
+    {
+     "control_number": "35467",
+     "title": "Business Information Worker (BIW) Stage One",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://chaffey.curriqunet.com/catalog/iq/19210/bth/20335",
+     "h1": "Business Information Worker (BIW) Stage One Certificate of Achievement - Certificate of Achievement"
+    },
+    {
+     "control_number": "35816",
+     "title": "Business Information Worker (BIW) Stage Two",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://chaffey.curriqunet.com/catalog/iq/19210/bth/19444",
+     "h1": "Business Information Worker (BIW) Stage Two Certificate of Achievement - Certificate of Achievement"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "35467",
+     "title": "Business Information Worker (BIW) Stage One",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://chaffey.curriqunet.com/catalog/iq/19210/bth/20335",
+     "h1": "Business Information Worker (BIW) Stage One Certificate of Achievement - Certificate of Achievement"
+    },
+    {
+     "control_number": "35816",
+     "title": "Business Information Worker (BIW) Stage Two",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://chaffey.curriqunet.com/catalog/iq/19210/bth/19444",
+     "h1": "Business Information Worker (BIW) Stage Two Certificate of Achievement - Certificate of Achievement"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 3,
+  "by_result": {
+   "not_searched": 2,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "30502",
+    "title": "IGETC: UC or CSU",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 179 of 190 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30503",
+    "title": "CSU-GE",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "45032",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 179 of 190 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 825,
+ "seconds": 3623.1,
+ "found": 192,
  "by_method": {
   "no_closed_list": 3,
-  "not_found": 6,
-  "sitemap_page": 193
+  "not_found": 7,
+  "sitemap_page": 192
  },
  "shared_pages": {
   "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882": [
@@ -39,1976 +721,1094 @@
   {
    "control_number": "15535",
    "title": "Network Specialist",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 11,
+    "why": "coarse net: the page's code tokens name 0 of 11 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2623,
+     "content": 2623,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "18435",
+   "title": "Physical Science",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2098,
+     "content": 2098,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "20697",
    "title": "Computer Information Systems",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 38,
+    "why": "coarse net: the page's code tokens name 0 of 38 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1861,
+     "content": 1861,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36629",
    "title": "Physical Education",
-   "award": "A.A. Degree"
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physed",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.419,
+    "body": 0.419,
+    "content": 0.419,
+    "net": 57,
+    "listed": 136,
+    "why": "coverage 0.42 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 6546,
+     "content": 6546,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "36771",
    "title": "Computer Support Technician (A+ Certification Preparation)",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "36856",
    "title": "Social Media Support Specialist",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2958,
+     "content": 2958,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "46302",
    "title": "Electric Vehicle and Alternative Propulsion Technician",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20761",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.333,
+    "net": 3,
+    "listed": 3,
+    "why": "coverage 0.33 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 2023,
+     "content": 2023,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 13,
-  "0.8-1.0": 28,
-  "1.0": 152
+  "0.5-0.8": 12,
+  "0.8-1.0": 16,
+  "1.0": 164
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 193,
+  "against": "kb/program_requirements_college/chaffey",
+  "kept": 179,
+  "kept_moved": 0,
+  "programs": 13,
   "list": [
-   {
-    "control_number": "04755",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18952",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04756",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18868",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04757",
-    "title": "Business",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19052",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04758",
-    "title": "Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20347",
-    "coverage": 0.95,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04759",
-    "title": "Retail Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19178",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04761",
-    "title": "Professional Administrative Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19158",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04763",
-    "title": "Journalism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19092",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04764",
-    "title": "Broadcasting and Cinema",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18956",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04765",
-    "title": "Information Technology and Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20597",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04768",
-    "title": "Engineering",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19026",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04770",
-    "title": "Master Automotive Technician",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19102",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04772",
-    "title": "Airframe and Powerplant",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18950",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04774",
-    "title": "CAD Drafting Technician: Architectural",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19018",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04779",
-    "title": "Commercial Music",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/musind",
-    "coverage": 0.583,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04780",
-    "title": "Theatre: Acting Emphasis",
-    "award": "A.A. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20437",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "04783",
     "title": "Photography",
     "award": "A.A. Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19146",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04788",
-    "title": "Nursing: ADN",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19126",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04789",
-    "title": "Nursing: Vocational",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19130",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04792",
-    "title": "Radiologic Technology",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19168",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04794",
-    "title": "Interior Design",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19084",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04795",
-    "title": "Fashion Design",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19034",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04797",
-    "title": "Child Development",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18972",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04798",
-    "title": "Gerontology",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/geron",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04799",
-    "title": "Hospitality Management: Food Service",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19066",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04811",
-    "title": "Correctional Science",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19146",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "04815",
     "title": "Political Economics",
     "award": "A.A. Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04822",
-    "title": "Fashion Merchandising",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19038",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07371",
-    "title": "Small Business Entrepreneur",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19184",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07378",
-    "title": "Industrial Electrical Technology",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19072",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07382",
-    "title": "CAD Drafting Technician: Mechanical",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18964",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07384",
-    "title": "Nursing VN to RN",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19122",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07389",
-    "title": "Dietetic Service Supervisor (DSS)/Certified Dietary Manager (CDM)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19016",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07398",
-    "title": "Culinary Arts",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19002",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "12211",
-    "title": "Graphic Design for Digital Media",
-    "award": "A.A. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18876",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14400",
-    "title": "Real Estate",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19170",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "14401",
-    "title": "Supervision",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19192",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15317",
-    "title": "Industrial Electrical Technology Level II",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19076",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15318",
-    "title": "Microsoft Office",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19112",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15528",
-    "title": "General Automotive Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19048",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "15674",
-    "title": "Fire Technology: Professional Firefighter",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19046",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16802",
-    "title": "Supply Chain Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19194",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "17631",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19138",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18435",
-    "title": "Physical Science",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
-    "coverage": 0.846,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20675",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18870",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20677",
-    "title": "Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20351",
-    "coverage": 0.947,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20678",
-    "title": "Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19094",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20681",
-    "title": "Small Business Entrepreneur",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19186",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20682",
-    "title": "Retail Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19180",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20683",
-    "title": "Supply Chain Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19196",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20684",
-    "title": "Real Estate",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19172",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20690",
-    "title": "Professional Administrative Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19156",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20691",
-    "title": "Graphic Design for Digital Media",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18878",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20700",
-    "title": "Industrial Electrical Technology Level III",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19078",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20708",
-    "title": "Master Automotive Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20711",
-    "title": "Airframe",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18948",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20714",
-    "title": "CAD Drafting Technician: Architectural",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18962",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20715",
-    "title": "CAD Drafting Technician: Mechanical",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18966",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20716",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20705",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20722",
-    "title": "Nursing: Vocational",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19128",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20726",
-    "title": "Interior Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19082",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20729",
-    "title": "Fashion Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19036",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20730",
-    "title": "Fashion Merchandising",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19040",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20732",
-    "title": "Nutrition and Food",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19132",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20733",
-    "title": "Hospitality Management: Food Service",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19064",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20735",
-    "title": "Hospitality Management: Hotel Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19070",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20736",
-    "title": "Gerontology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19056",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20737",
-    "title": "Criminal Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18998",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20738",
-    "title": "Correctional Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18994",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20739",
-    "title": "Fire Technology: Professional Firefighter",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19044",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30544",
-    "title": "American Sign Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20422",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30658",
-    "title": "General Automotive Service Technician",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19050",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30702",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30717",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/math",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30941",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18928",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31115",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18904",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31204",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18908",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31248",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18916",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31337",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18914",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31657",
     "title": "English",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18888",
-    "coverage": 0.96,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31873",
-    "title": "Engineering Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19030",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31876",
-    "title": "Engineering Technology",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19028",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31877",
-    "title": "Chinese Studies",
-    "award": "A.A. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18974",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18888",
+    "was_coverage": 0.96,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31891",
     "title": "History",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18892",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31999",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18922",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32073",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18890",
-    "coverage": 0.55,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32166",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20313",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32183",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18900",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18892",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32344",
     "title": "Art History",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18880",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32347",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physics",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18880",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32504",
     "title": "Journalism",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18894",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32748",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18920",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32996",
-    "title": "Airframe and Powerplant Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18946",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33193",
-    "title": "Television and Video Picture Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19200",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33194",
-    "title": "Post Production Editing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19154",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33195",
-    "title": "Motion Picture Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18894",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33201",
     "title": "Economics",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18884",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33226",
-    "title": "Screenwriting",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19182",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33227",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18910",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33231",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18896",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33233",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/music",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18884",
+    "was_coverage": 0.857,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "33239",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18912",
-    "coverage": 0.905,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33737",
-    "title": "On-Air Radio Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19134",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35060",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20327",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35069",
-    "title": "Professional Office Skills",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19164",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35466",
-    "title": "Emergency Medical Provider",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19022",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35467",
-    "title": "Business Information Worker (BIW) Stage One",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18958",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35468",
-    "title": "Fire Prevention Inspector",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19042",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35760",
-    "title": "Microsoft Excel",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19110",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35762",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/nutr",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35816",
-    "title": "Business Information Worker (BIW) Stage Two",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18960",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35819",
-    "title": "Global Business",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19088",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35827",
-    "title": "Social Justice Studies, General",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18906",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18912",
+    "was_coverage": 0.905,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "35949",
     "title": "Pathway to Law School",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19140",
-    "coverage": 0.867,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35999",
-    "title": "Programming Foundations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19166",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36000",
-    "title": "Facilities Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19032",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36090",
-    "title": "Global Business",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20343",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19140",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36201",
     "title": "Film, Television and Electronic Media",
     "award": "A.S. T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18926",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36238",
-    "title": "Paralegal Studies",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19136",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36239",
-    "title": "Hospitality Management: Hotel Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19068",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36339",
-    "title": "Computer Game Development",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18986",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36340",
-    "title": "Professional Baking and Patisserie",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19162",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36354",
-    "title": "Culinary Arts",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19000",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36474",
-    "title": "Facilities Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20339",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36475",
-    "title": "Community Caregiver",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18980",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36493",
-    "title": "Microsoft Word",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19114",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36531",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18902",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36678",
-    "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 1",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19058",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36885",
-    "title": "Aircraft Electrical and Avionics Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18874",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36903",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19198",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37118",
-    "title": "Dental Assisting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19014",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37119",
-    "title": "Dental Assisting",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19012",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37201",
-    "title": "Mechatronics Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19106",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37203",
-    "title": "Mechatronics Level II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19108",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37216",
-    "title": "Mechatronics",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19104",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37263",
-    "title": "Heating, Ventilation, Air Conditioning and Refrigeration Level 2",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19060",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37426",
-    "title": "Industrial Electrical Technology Level I",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19074",
-    "coverage": 0.636,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37427",
-    "title": "Athletic Trainer Aide",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18942",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37436",
-    "title": "Recording Arts Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19176",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37518",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18918",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37640",
-    "title": "Cybersecurity Defender",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19008",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37641",
-    "title": "Cybersecurity Analyst",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19006",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37643",
-    "title": "Cybersecurity Professional",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19010",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37647",
-    "title": "Interior Design Visual Communication",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19086",
-    "coverage": 0.556,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37985",
-    "title": "Caregiving Essentials",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18970",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38434",
-    "title": "Real Estate Salesperson",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19174",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38854",
-    "title": "Hospitality Management",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18930",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39317",
-    "title": "UCTP: Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19202",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39410",
-    "title": "Professional Baking and Patisserie",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19160",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "39562",
-    "title": "UCTP: Physics",
-    "award": "A.S. T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19204",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18926",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "39855",
     "title": "Environmental Science",
     "award": "A.S. T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924",
+    "was_coverage": 0.929,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "40107",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/lpps",
-    "coverage": 0.793,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40588",
-    "title": "Community Health Worker",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18982",
-    "coverage": 0.5,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40594",
-    "title": "Marketing",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19096",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40595",
-    "title": "Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19098",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40969",
-    "title": "Nursing Assistant",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19120",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41393",
-    "title": "American Sign Language (ASL)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19921",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 0.931,
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/lpps",
+    "was_coverage": 0.793,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41434",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
     "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20331",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41467",
-    "title": "English as a Second Language",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19922",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42084",
-    "title": "Bookkeeping",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/bookkeeping",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42180",
-    "title": "CAD/CAM Operator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/cadcam",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42181",
-    "title": "Accounting for Government and Not-For-Profit Organizations",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/accounting",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42183",
-    "title": "Electromechanical Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/electromechanical",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42185",
-    "title": "Payroll and Income Tax Preparer",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/payroll",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42623",
-    "title": "Real Estate Property Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/recert",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42630",
-    "title": "Real Estate Property Management",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/redegree",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42684",
-    "title": "Cloud Solutions Architecting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20581",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42942",
-    "title": "Automotive Electrical Systems",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18944",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42987",
-    "title": "Physical Therapist Assistant",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/pta",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43062",
-    "title": "Phlebotomy Technician",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20404",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44104",
-    "title": "Supervision",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/supervision",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44105",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44353",
-    "title": "Cloud Solutions Architecting",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/csa",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45398",
-    "title": "Hospitality Management: Food and Beverage Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20670",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45400",
-    "title": "Hospitality Management: Hotel Fundamentals",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20678",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46063",
-    "title": "Information Technology and Information Systems Core",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46090",
-    "title": "Earth Science",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20654",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46091",
-    "title": "Geological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20662",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46142",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20615",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46143",
-    "title": "Development Operations",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20638",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46144",
-    "title": "Development Operations",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20639",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46151",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20614",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46152",
-    "title": "Networking Specialist (CCNA)",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20689",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46153",
-    "title": "Networking Specialist (CCNA)",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46154",
-    "title": "Web Development and Social Media",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46155",
-    "title": "Web Development and Social Media",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20745",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46156",
-    "title": "Technology and Innovation",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20730",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46157",
-    "title": "Artificial Intelligence",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20564",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46158",
-    "title": "Computer Game Development",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20589",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46159",
-    "title": "Technology and Innovation",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20729",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46160",
-    "title": "Programmer",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20714",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46161",
-    "title": "Programmer",
-    "award": "A.S. Degree",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20713",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46283",
-    "title": "Orthodontic Assisting Permit",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20770",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46299",
-    "title": "Personal Training",
-    "award": "Noncredit program",
-    "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20778",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20331",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38203335820"
+ "fingerprints": {
+  "04755": {
+   "sha256": "5549eb3d8d699ffbc44ab982565a8388b5abb5f3750e72c12ea317152960ca0e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18952"
+  },
+  "04756": {
+   "sha256": "e805050891af44bdeb7d7e4083399a3f02b1c97810215b9710b6b4fb3b3caebd",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18868"
+  },
+  "04757": {
+   "sha256": "d1075e2e4170fae4d45af8c10d3544275064e918e1406a5937dfcb6fe9fb963c",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19052"
+  },
+  "04758": {
+   "sha256": "f66f8b8b727b56f62eb119c5d4a21c7f73bab44d059e1f52bf49d828d8f1785a",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20347"
+  },
+  "04759": {
+   "sha256": "f94ea58cb9601d4ecd337647baf1a227c71426cf08a64da1ca9660398ad2da63",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19178"
+  },
+  "04761": {
+   "sha256": "c2a6cd2e4752b1d01170c8a90633e7c5a88061de2e94b66bb11d5f187b584b09",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19158"
+  },
+  "04763": {
+   "sha256": "16fa82628bcadbfb2f5193a323c3fd292482ebdda5652e71221d5a0eab149f0f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19092"
+  },
+  "04764": {
+   "sha256": "187daad4551a5ab5ac7c95770b01cd247f3ece18eddd7d329813e32cf33da0e4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18956"
+  },
+  "04765": {
+   "sha256": "d203b4fecd6a343dc1a4b87f050dc9e709c8cd05a1e5a2a637b84d35b058568f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20597"
+  },
+  "04768": {
+   "sha256": "e89000f78dccec70f591136d3621976734005629fce39a6629ad17b355199ad8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19026"
+  },
+  "04770": {
+   "sha256": "9d804b899b9d5a7795694e86690ae34ff01bd576cc3980a3505a5652f5420795",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19102"
+  },
+  "04772": {
+   "sha256": "be3c3347f0bda78c2c9c1473f6c021f9782abb04ee339594da4db865a9699b6f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18950"
+  },
+  "04774": {
+   "sha256": "7d70a8f08beb17f7f5fdb7b02091ede6a2a4a7b19cd0c148c5736535bda811fe",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19018"
+  },
+  "04779": {
+   "sha256": "de052f32a7a6ab60428b9d928563de6be1aef0e3f6cdba2e7a8d97d47d9550a7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/musind"
+  },
+  "04780": {
+   "sha256": "3966a0bc1c78ab22789c1609b4e65f3819976bc30cb9d2f940748dcbfe6d3709",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20437"
+  },
+  "04783": {
+   "sha256": "ef9f16730218a6c95433c02e2b5af0aea003b26e405781da8cebf215ff78acae",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19146"
+  },
+  "04788": {
+   "sha256": "d778e94220e331661162644c63310f667e4e9efaeccf0e03ee1d6909bf7391f1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19126"
+  },
+  "04789": {
+   "sha256": "17a70c6834b5100238955020ae8455ee4e4d839be83690cfde275e1458cab07f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19130"
+  },
+  "04792": {
+   "sha256": "d4c57a8faba2943f8f1d8203268c49027729b2383ec3a88f6fe98cce1e67f7c5",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19168"
+  },
+  "04794": {
+   "sha256": "c3d7a6666e4710923522436ff02177bd6bac977cf7b245463db6855774733652",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19084"
+  },
+  "04795": {
+   "sha256": "ddb31ed8a4fdd18d2b2b54f941f384daa7e07ed60897ef7baec575631c1d7513",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19034"
+  },
+  "04797": {
+   "sha256": "b237f12821a4c335efafdc28322f062ae6c3d423e7ecdc8c54b3a909def71542",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18972"
+  },
+  "04798": {
+   "sha256": "20deeb0135e3471e6c0266ad802100ff53d92cf3ac935f5a96d3b46975eb2b5c",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/geron"
+  },
+  "04799": {
+   "sha256": "3a4fd98f858c02a7a0e69b6c8a721477e4fa626fd5d1977cbd93a40679c2e878",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19066"
+  },
+  "04811": {
+   "sha256": "af12230a48827fbc2dc85a29898cffa8f5c26a06b7cf3e39e943bb9c0655f65b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18996"
+  },
+  "04815": {
+   "sha256": "d8d7a2a2bc5e4f40a4e025c9e0ff029325a76994e0e24ae454edd8834355de06",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152"
+  },
+  "04822": {
+   "sha256": "aa0fc55fde6bee2de8640c8d690596a88ed697f733ac3852831bf24df2afdbe8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19038"
+  },
+  "07371": {
+   "sha256": "5627d77d9911dc6157873651d485bc20d344c26aad5f443366252626c189ecc9",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19184"
+  },
+  "07378": {
+   "sha256": "f761c09a0635994813d1c9286e12d4e63883e23d114e2ebb6f226360e9f05185",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19072"
+  },
+  "07382": {
+   "sha256": "05c16227dc5ce32de5241200839a100e71176b4d132364510c2191d01313ea10",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18964"
+  },
+  "07384": {
+   "sha256": "7e3bc5c9fc2d2cf1f3dd4b15115eaff9c664e49545e355ab8fbcd23a30850c0d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19122"
+  },
+  "07389": {
+   "sha256": "65392eb445603ad1f4f1a93cf35f25b5507c06ab4f682defaf1cec45376df79e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19016"
+  },
+  "07398": {
+   "sha256": "3fcade1beeb0e6c167fd04ab34bf749645ac16a9640b271fd8fdcbac56a921a9",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19002"
+  },
+  "12211": {
+   "sha256": "4f52111aebdefc757413a1048d3e99c860044e92acb35afef91280e32d7629af",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18876"
+  },
+  "14400": {
+   "sha256": "944611aa154d78d1c2b4fa4a3d90b47f1193f329c366687f0ad1e88279be4156",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19170"
+  },
+  "14401": {
+   "sha256": "a300493a9bf169904577f4286f5012858847a898e4856b758235ce028297f595",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19192"
+  },
+  "15317": {
+   "sha256": "6afa4d0cec663dfa82b55ea090a719bda8f44c8ae8c5cbfda41aa40bf76bc877",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19076"
+  },
+  "15318": {
+   "sha256": "918f6459e7c286b636e0bb3820db50f05e2e2f499aae8068a31a5a8f16a47bef",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19112"
+  },
+  "15528": {
+   "sha256": "d20e229e6f4fdc0358ae86060dd6d9f89d290a87193de3fba1f888595d0a0222",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19048"
+  },
+  "15674": {
+   "sha256": "00474bcec47511c089142e989602eb6ed2fd8d2f7fe466e7a1492a6f6559f540",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19046"
+  },
+  "16802": {
+   "sha256": "c81cad8543d36c915c5ff7cabe18870294d0c64542e4a6f1937d04b36a097286",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19194"
+  },
+  "17631": {
+   "sha256": "2ef6d04e71d12bcb36a1839fe87e18d00e6509efd1bf2b63db288ee21fd4ffce",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19138"
+  },
+  "20675": {
+   "sha256": "6c52081fe1185574a12f96c0c8c88ec8daf8d923ba75f402dd47e97e0a0969ce",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18870"
+  },
+  "20677": {
+   "sha256": "97e439493c975646d177040122ce17cd3142aa5607935799cf7444025792223a",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20351"
+  },
+  "20678": {
+   "sha256": "f915bd968ec4abee4f9ad74a0307079ea21348c0dfbc54096e5a1772ec1c6294",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19094"
+  },
+  "20681": {
+   "sha256": "b8a55f1189df3891fd1428319b1a7fac181993ee58707729703784d9483c4cf7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19186"
+  },
+  "20682": {
+   "sha256": "3a0bb9160da370f237f8a5934fae62673887b19d5cb0232aa41346aefbea5547",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19180"
+  },
+  "20683": {
+   "sha256": "3d13173fbc97a8d80e20eb64be45ead22231bb7c722619b571de6e936c977ca0",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19196"
+  },
+  "20684": {
+   "sha256": "a0e27787eb143fce9063f69c36b8adbdac32c368b36056d05d03951402a88822",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19172"
+  },
+  "20690": {
+   "sha256": "b286e3e4d0c849d537f86a14aff7b8da50fa647ce314dc7622b9fda22bed5820",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19156"
+  },
+  "20691": {
+   "sha256": "52cad95108b9946ddbfb24c8687e126f0d83ecd7aa0b265ab60a6469356a8691",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18878"
+  },
+  "20700": {
+   "sha256": "322ed5970264a4622fe7ba2c25aa828037e107dbe55ba7383da790256373a9da",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19078"
+  },
+  "20708": {
+   "sha256": "d73c894440dac34a65a4ea4cfa73639e00231f51618d6e9c4a766f901e47a134",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19100"
+  },
+  "20711": {
+   "sha256": "4f6dc1d3669aa4ac10d4e36d462201f2e98762b8ba5e77f35c424f0d25c751cd",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18948"
+  },
+  "20714": {
+   "sha256": "9ee954d9f935446470588b4af6f6e566013dce12bdc2688cc33754fb12bdd2ab",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18962"
+  },
+  "20715": {
+   "sha256": "908a8edd6f3714b792e7ace29aa1a35700e9d0049be06afa91ec9b9c63c64d70",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18966"
+  },
+  "20716": {
+   "sha256": "e7ce156077cf297c128b589bd227197f4181d2e26f1a571c3af34a5f6ef1541f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20705"
+  },
+  "20722": {
+   "sha256": "321d5c41c2721b2d277a780ea87f014e85f5832c83798bffd641cfe01f55bc45",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19128"
+  },
+  "20726": {
+   "sha256": "96bdfbf26a077457117a4e5335f224628549e68ae1a55246089e6cd93f270e9e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19082"
+  },
+  "20729": {
+   "sha256": "ba11f75fb26b2b6884bdabda8f70a86a600e36a216c91c17fc3e0900d0edfba3",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19036"
+  },
+  "20730": {
+   "sha256": "51043195bebe8223aa4ec98cebfe4708eef7470ecf19f6b1b331605c64eb75cf",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19040"
+  },
+  "20732": {
+   "sha256": "13104c5d43281d5f2bbcd7fe38f40e3007212566544e4db11dee89b556bc2680",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19132"
+  },
+  "20733": {
+   "sha256": "68956c49f9f40e2a7bad7fdbe6ac5705d9c345246c1b86063fbd4e1e15ab44fd",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19064"
+  },
+  "20735": {
+   "sha256": "9604bdee24376bc4b348ed3bcb3f02e6edc2739cc1c146af06ccce259c2e8c8e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19070"
+  },
+  "20736": {
+   "sha256": "50ce6e0a3ac68ac25fe8b894ed2890e579ce78a56068c8b89d4a370b76e8b39e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19056"
+  },
+  "20737": {
+   "sha256": "3b03cd6f283273c00f3d9c99dee25e36c606c23636c8e5a5389f1497316ffce2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18998"
+  },
+  "20738": {
+   "sha256": "3352bf650caa1e350798b3a214bba915a4581223036bc5f0c4db76ebfe43090a",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18994"
+  },
+  "20739": {
+   "sha256": "1fb12f73e195d91d510c0ea6efd1398e00ce05e2c3180c3ac73f96824f4a8e67",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19044"
+  },
+  "30544": {
+   "sha256": "ab2011734ba6017ef2fefba0cdf86dd585840f0ee974829ddc99cfc66c65d4f2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20422"
+  },
+  "30658": {
+   "sha256": "80f4828c3b916e28877ca1de69b2e61b6cee9a467ad65ae261e0db1862e58d74",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19050"
+  },
+  "30702": {
+   "sha256": "c112d819088ec20dd8a76f6a86094fc456ab13565d647ec93c62cc9d2adebde2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882"
+  },
+  "30717": {
+   "sha256": "cb96ff4362997d02efb6b356f50582bddb6e8e606fffb73dc7d390934be833bf",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/math"
+  },
+  "30941": {
+   "sha256": "39e41cf6bb0dff91c44243ff1713e9efb9dd456e8d807400ee4309e63d3d441b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18928"
+  },
+  "31115": {
+   "sha256": "86aca3af21997bb087eb5c5a9baa60b5fdb4d57cc7db96d06433f43615c3ae24",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18904"
+  },
+  "31204": {
+   "sha256": "9af08e0ea895df44686a727616199cfc660c5ad0dc5721c73009cd652be5c2eb",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18908"
+  },
+  "31248": {
+   "sha256": "1d8e12012cdc461cd40ed5b5897b493d6e2c309e80db7ab8d91a621817545aa3",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18916"
+  },
+  "31337": {
+   "sha256": "4df429955e15e2ae6e2fa4e9f48e0bf20e96479c1a7bebcd038c9d4cb3a7c1ac",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18914"
+  },
+  "31657": {
+   "sha256": "78d676e54372b094e75f428ff172e1ce89229a457d03f40f5b06b8a6964e3830",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18888"
+  },
+  "31873": {
+   "sha256": "45ed6f68c25095ead03c56d9b1c707c3c77fa2483e7e7d6244f206efba3ebc45",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19030"
+  },
+  "31876": {
+   "sha256": "18803a90d7249b07b2b0f555779f575e486bc118237d02bde059ee24e8545609",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19028"
+  },
+  "31877": {
+   "sha256": "3090c44d6d62af700e981ae9df44c1916105a0b1c85703cd12dda1cb7b8b4e9b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18974"
+  },
+  "31891": {
+   "sha256": "93d0718ba844126c2c088fe7f4b8e46cba80970d7590943f2a926f36c93d611e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18892"
+  },
+  "31999": {
+   "sha256": "fcd22f33483b373e7be29e465b6a8135807edd738d9f7fe0dc2a0747b6cb49b2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18922"
+  },
+  "32073": {
+   "sha256": "f3d3c8a81c9019b925a7e7a35840fc1214d0cc2b1d20146794d869b3422285f1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18890"
+  },
+  "32166": {
+   "sha256": "20da015b0433a8238aac64a11310f9f796d4afbb0736cd7cdac3bbe934992429",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20313"
+  },
+  "32183": {
+   "sha256": "2a503ba254c31d61cf507809f5ebcae5444ac99fd7be19a1e24ff109a23c05d1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18900"
+  },
+  "32344": {
+   "sha256": "4892adddc5dfb1be9dc6a472d67a554c9f4dbb64b8dabc7e4929ffa1d07cf6a6",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18880"
+  },
+  "32347": {
+   "sha256": "b96c467ccccde02cbeb166004a4bb7efb35116eec0532c7e0113fe861021e87e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/physics"
+  },
+  "32504": {
+   "sha256": "058a553cf7214f2b05b71587c5c3b2e98c1fcd8ce47b901e238ede568ed30efc",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18894"
+  },
+  "32748": {
+   "sha256": "1815366857098025a6384bea379189785b9a390dd51e7736afd4115f67f9ff5d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18920"
+  },
+  "32996": {
+   "sha256": "179204386f9db722a356ff423a21f37b2a659601bdcfb23772ff846fa11a1420",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18946"
+  },
+  "33193": {
+   "sha256": "abebb5fc0c52d4853a292a2adb64ae8326d71fbf32a0ece03547336d75772d05",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19200"
+  },
+  "33194": {
+   "sha256": "5b48e606e0d1d1899bb93f9ce28c26420c4b5ddd3cb57c2e5f195b4d41c8ce3a",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19154"
+  },
+  "33195": {
+   "sha256": "32a1737ae53ee632f6929df9d4c31a3543372e7048ef58e2356a3ff0642141e8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19116"
+  },
+  "33201": {
+   "sha256": "7347583f696df63d08beac5c783a3dc78164e774967cd6f2f7f69dd112475d22",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18884"
+  },
+  "33226": {
+   "sha256": "d0e991daf35309c956121813506fa7add3ee87bd884436d9f0e5ecda6ad0b82d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19182"
+  },
+  "33227": {
+   "sha256": "77042fadaa060e7700551330531c7f72933cce5154f9f56c407819a3dbc373fe",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18910"
+  },
+  "33231": {
+   "sha256": "126bcd6acd8c4067077c87d687afe4adcf8ae7bdbd8edd6d1d3ed82262376860",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18896"
+  },
+  "33233": {
+   "sha256": "d424d3f9331bafcbb878ecbee3e9b06afe4009b3a33b1f58cb83b295f3a0297d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/music"
+  },
+  "33239": {
+   "sha256": "6be489b741e4f0d07a21d02de78bdc3f30c4a0fad6d7b8168a4157066bb27e92",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18912"
+  },
+  "33737": {
+   "sha256": "e7870cf5c81a39b16e6b0b6282afdbca7d8d52a529a9fb06395da10933ddbab5",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19134"
+  },
+  "35060": {
+   "sha256": "3a9a6b1a64ef378fcb2447fdf144d684e1698bd33be8fa625e499588fc9b95d3",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20327"
+  },
+  "35069": {
+   "sha256": "d774d457f4de5a9a5e22c2022ec4a771b384f0aec102f42c3641c7f9fb3c6b6d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19164"
+  },
+  "35466": {
+   "sha256": "d680e5b2f9832dd33365633bd86255db2d0b7f758b7ba8695680775499d38f77",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19022"
+  },
+  "35467": {
+   "sha256": "ef09d124134543d3a51ac6f964f9dad23ce4d2ab2b51dac245af939c69b610f3",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18958"
+  },
+  "35468": {
+   "sha256": "47acdd8d71efb681ef7b8fb6d125ac67aa81b927184229b794b1fd83ce6bf7d7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19042"
+  },
+  "35760": {
+   "sha256": "37eb3ccf2adea6605a21a9c14e22638ed88d13cadaad0704f385341ee7122407",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19110"
+  },
+  "35762": {
+   "sha256": "177204de6fdc3bfe771f338593286f5ec7ffd2d58f4c2dad7944f863e42d8a0c",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/nutr"
+  },
+  "35816": {
+   "sha256": "2f3a6671b8458b93113a38978068c0418dbea4e7ca78d84746055e7abbd56ff4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18960"
+  },
+  "35819": {
+   "sha256": "a5f39f9bc4063cbe7134f2ff9247e58cd8cf68c912873e3c3fd0fdaa72764ece",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19088"
+  },
+  "35827": {
+   "sha256": "2eb7d02ed5492df9b9996fc4f9a13f0688bed0e70450145925807ba4218f0b09",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18906"
+  },
+  "35949": {
+   "sha256": "209e920e687e61018f4aaabdbcf2c2e271d424b75bc29d0b789ff3f5d6dd6db1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19140"
+  },
+  "35999": {
+   "sha256": "1a99483eee5bb8ab806976fb934247e83928dc8ced4b8fd31712f87983f57612",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19166"
+  },
+  "36000": {
+   "sha256": "db67cc144fd6adea31817528c37220a48d593b38c7db886ea7192f957d4e5049",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19032"
+  },
+  "36090": {
+   "sha256": "f8e97583ecb770ed2a79d65d80bdafe53a8d2d797c51e2eb99204b0676acf948",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20343"
+  },
+  "36201": {
+   "sha256": "7f20688ce7e5f848c5afe74f2947aae10979603926724004a184d293023f2367",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18926"
+  },
+  "36238": {
+   "sha256": "c7ce49606be2ee8101fad018e7e843be18237131bbdf7d32a28511430fda5014",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19136"
+  },
+  "36239": {
+   "sha256": "54315678b4b60a40b7f709446572a3762d5e30264074683d99dcbd9d51a2bb67",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19068"
+  },
+  "36339": {
+   "sha256": "f9a1936eef0405afb80b79b7e166ffff84d8e6630465666f25597ae0381217e7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18986"
+  },
+  "36340": {
+   "sha256": "69cb4d31d31fb0564515b89f60036d7addc2bc943c2f5ecc5e4dbab6461d74bf",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19162"
+  },
+  "36354": {
+   "sha256": "f0ff3fa2653a6396f3ae59b6e288a1a1675b080e8a7993bf567bc54d7321d98b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19000"
+  },
+  "36474": {
+   "sha256": "eda98e000fba36f89036b0ea717b3e694d5a82cd99e6682135ca47ea9ac9ff7a",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20339"
+  },
+  "36475": {
+   "sha256": "348d0b07ac9c36900831647f0ff0fefe9da843ae1935b018d237e154e2fb3979",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18980"
+  },
+  "36493": {
+   "sha256": "4d4aa453fc635e56928b9b0d01e6e7c579f2de6cef7440d6b32864dc59def0f6",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19114"
+  },
+  "36531": {
+   "sha256": "0ad5d14af76108489e0d0c124a8bb62b3f3c2eec9494a8549452aff5614c3d2b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18902"
+  },
+  "36678": {
+   "sha256": "cf5bddcac079f40d1494dd9dcbc2e71aad7b9a137b9cc743845dcfadbe8ab61e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19058"
+  },
+  "36885": {
+   "sha256": "5dafa8af025ada0e2b01f04930e39c1348a52050f10b7fb0409dd13246b4dffc",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18874"
+  },
+  "36903": {
+   "sha256": "f9f9fd37a9908e67ec2067a6af37007f7984c9b55e55550e2cca1a6c598abb96",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19198"
+  },
+  "37118": {
+   "sha256": "b0ab6b652dc12dbf7400ef4bee40294493e832a9299e7dfe9e0aed1b9d8a0a53",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19014"
+  },
+  "37119": {
+   "sha256": "43f2ca0bd55549dbe263323633364d445377d2f0f2f5160b30355d5730176407",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19012"
+  },
+  "37201": {
+   "sha256": "724ade7d7a792bd935edc355f760f1cacd25005aeedeaf1f50d580cad3009793",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19106"
+  },
+  "37203": {
+   "sha256": "d99a36860efb598c8229770944159f256490e202eb28d9f4762b9da720fbf70f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19108"
+  },
+  "37216": {
+   "sha256": "48cc49bdc32289869b2c629c578ec36febbe7e2afd8fc1bf5dd110b2d0879597",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19104"
+  },
+  "37263": {
+   "sha256": "ba0e9e305b1661f8a97c6a044ed31efdcf13fc9235154be25493269f9ae495bc",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19060"
+  },
+  "37426": {
+   "sha256": "88bab7902fd139cfe8f5b3c03971a43ba828704fb81423c374e8a268a60eacc1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19074"
+  },
+  "37427": {
+   "sha256": "f6bc36dc6f7dbc08dbc8a59bf9d74f57d9ca51aea0ebc025723a521e1596ac8c",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18942"
+  },
+  "37436": {
+   "sha256": "65be51744080d68bab39eb12f842be7cd0381c0492d6f3c4d502c1ade9c96b42",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19176"
+  },
+  "37518": {
+   "sha256": "dbacebf50fd8e87be52cc544a81f320c47069e01db472c716327ee3dce099e82",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18918"
+  },
+  "37640": {
+   "sha256": "c8781e66c73739fc203e632690e5b06a18a3abb22244afaf8c18913099775432",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19008"
+  },
+  "37641": {
+   "sha256": "3e028401ccde2238a6f6e3b476f58c1005e0e9d1e21e55a1f17430acab361987",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19006"
+  },
+  "37643": {
+   "sha256": "4d175a355d246be4edf5e339e5694339c60bbe5b4940e21362f8e03a3934377e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19010"
+  },
+  "37647": {
+   "sha256": "b4ba1df4fcf1883ddcdaa130f1a8b5be646848f0631a49d4cb7a9641996ff0f7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19086"
+  },
+  "37985": {
+   "sha256": "7544eb369f12df7d1584dfb09d4806424001d1658d44e11288aa9e2a8e2dac5e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18970"
+  },
+  "38434": {
+   "sha256": "2e5b287d49f7a902247efd977ab547dd72e35924f227d75bb28ef0feb5e59c14",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19174"
+  },
+  "38854": {
+   "sha256": "21a0e1069bfc7195cd4ddf79e781601d84b95b6ace0643312d5c76f14b6757e7",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18930"
+  },
+  "39317": {
+   "sha256": "cc86dbc9f228136c40f228d3ed92504dd95cea0b28b9cffe3eca91ef085a01e3",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19202"
+  },
+  "39410": {
+   "sha256": "e93051317c7b0c9f4c7cae81f600c0512380647b1be3b707b46ba2dcf6a6c5ae",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19160"
+  },
+  "39562": {
+   "sha256": "83c9cedc6138bbe0e8797c366136e30d1873aa9a70ea6d195792b281e7c700fd",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19204"
+  },
+  "39855": {
+   "sha256": "fe79363808709a19b1f07ece266012c19d402c2876de2f4e1cebf6034ed43332",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924"
+  },
+  "40107": {
+   "sha256": "8b24e86db6ea79db9d82706e2dfadcbb544092300086ec49e47d483450fe2cfa",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/lpps"
+  },
+  "40588": {
+   "sha256": "3088ed02ef600439e636b215a9bb10a8032c8aa32f8bbc1ef5c68df688221d53",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18982"
+  },
+  "40594": {
+   "sha256": "e4f5473a839f88748ad133935d7ef5550f7e332a671a16dbd201eda697ac505f",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19096"
+  },
+  "40595": {
+   "sha256": "b3b5329deabe4a921532169283f5cf754afcc2fdae85a8f0211fbd207b763b24",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19098"
+  },
+  "40969": {
+   "sha256": "ac075ebc8df6deb04d4a8ed8b2d981f30cfd28241410b71b777a1b8b808d44fc",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19120"
+  },
+  "41393": {
+   "sha256": "fabb507314811516316f1862b82ed127bd1b0de3b7baab4a160463bab4228800",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19921"
+  },
+  "41434": {
+   "sha256": "518516c9dea21bea5b86e66901715480eac4c94221acfba115e1be8e09158fec",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20331"
+  },
+  "41467": {
+   "sha256": "aac49dae0bac53764c5baa4cf3bc657e0e61ac683a9d502313e2f29a60f7f2fe",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19922"
+  },
+  "42084": {
+   "sha256": "ffd7bc2c10f0466fea00427439d3ba95e100f3b5be590d33b47bbd0fb573ba72",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/bookkeeping"
+  },
+  "42180": {
+   "sha256": "761c4efd8f6857cba924758841624914e09ee5de362155ea68b753a572ba7b58",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/cadcam"
+  },
+  "42181": {
+   "sha256": "00a33ca0b136be1901929eb397a7154e2dcf03d9d7bc4bfc82682810182db3c6",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/accounting"
+  },
+  "42183": {
+   "sha256": "f0df32bdd9045400aabbd3b933551d34872145772186b9f6e84a2fee08233a46",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/electromechanical"
+  },
+  "42185": {
+   "sha256": "3787d839516db08c302929528ca5db1b45887b159dfda4bb5a7382decc8073cf",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/payroll"
+  },
+  "42623": {
+   "sha256": "6482da097f687ddeaf8d275877b25c7b44bd8bffe941ac104ed08282fec006c5",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/recert"
+  },
+  "42630": {
+   "sha256": "bf78422d6cdc06eaa9898a18debe8db0406080a3ce3c764d9da950719f8663ec",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/redegree"
+  },
+  "42684": {
+   "sha256": "04cb103a6a0718a3d3c13d69f4a51a1b323772d1e49236aa8dc6715dbaae1764",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20581"
+  },
+  "42942": {
+   "sha256": "7e01229ffd942f0a6353016235525cb3a0e1b9d0e9c77fc14a5658027f4641e8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18944"
+  },
+  "42987": {
+   "sha256": "77facc8d4c00792ed244c3c57a01ac0609da0f3f6a3b8927dd946cadca1362ee",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/pta"
+  },
+  "43062": {
+   "sha256": "baee370a12c4a77cb457883f6f2d56ec21b511b55b660651caba2fed079e3df4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20404"
+  },
+  "44104": {
+   "sha256": "bc33cab9c8ab63059e9fdc74e960bc83707d0e5e6ba7c51fff7deccd9085b229",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/supervision"
+  },
+  "44105": {
+   "sha256": "c112d819088ec20dd8a76f6a86094fc456ab13565d647ec93c62cc9d2adebde2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18882"
+  },
+  "44353": {
+   "sha256": "32f7053d33f36b53cdbbd436d7463e9756971074f6f9e458869e997cda936952",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/csa"
+  },
+  "45398": {
+   "sha256": "ec93cea5e1ad93ebea973e1bc687742bf53f68d380301bcc124cf28540bddeab",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20670"
+  },
+  "45400": {
+   "sha256": "e7ad6389cff70ba77742e429eb63fe528a9da5ff84504f1ac22b43888909a8e1",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20678"
+  },
+  "46063": {
+   "sha256": "86fd84d1273c64f7571626f9ad06fcee0951e2401ea464201539cd47ae7572b4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20598"
+  },
+  "46090": {
+   "sha256": "c1a00523eda80006d9dc885dc253d6a84bfd1ae8c50297d2ccdad139b74ff2b9",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20654"
+  },
+  "46091": {
+   "sha256": "7cc3da7a2e813fb2b8c82ac5ace42c803b8a573df1add66a4986e9afca935de2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20662"
+  },
+  "46142": {
+   "sha256": "d26a70293915aeed6b3818dbfff08873e47c19be696b1e6a798dc3fe81e3e947",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20615"
+  },
+  "46143": {
+   "sha256": "5b6265dabfb3ffb129115a11134d19e86d7481398c430c6100ffcfd0587095b4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20638"
+  },
+  "46144": {
+   "sha256": "f7a307ff8e0e0172bf43aad55bf36ede67b99b6ccee68998daef3deb770abcc2",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20639"
+  },
+  "46151": {
+   "sha256": "9689bf7e649d311acdbede6632fcdd4aa646938f35d4595096d4af9face86a27",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20614"
+  },
+  "46152": {
+   "sha256": "583a555b1b9c0b25df81b05d0f487a5cde21206c2d09f131cfae2faef6a7443e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20689"
+  },
+  "46153": {
+   "sha256": "bd60ee908b04e3b09315adc5f1a5442aa29c1c946e55c3a15857f37825d29910",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20690"
+  },
+  "46154": {
+   "sha256": "1357b90b35c895b8aff46d23ce213cb41f8aeecc97360bd1bc63885f01f5ad48",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20746"
+  },
+  "46155": {
+   "sha256": "cc889ddb583796f2e2a0dae59a310a4af6dfa3473fc980358ec1d907434aa12d",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20745"
+  },
+  "46156": {
+   "sha256": "614121a41c667194af429c56776c9b3f5ecb332dc8a01472363e7c01e709c67b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20730"
+  },
+  "46157": {
+   "sha256": "169848e34a1c1ae03938f75d62f0874add8207319801149adfd8cac4cc3caf9e",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20564"
+  },
+  "46158": {
+   "sha256": "fde44172f7fd59b26dd13d510e3b9b5369abcaef1fc65f5d369632236b1fefe8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20589"
+  },
+  "46159": {
+   "sha256": "5b6ef46e160038a0157f51a24667733a54c97216b215dde0f757882c2d22a8b8",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20729"
+  },
+  "46160": {
+   "sha256": "5d44e3d3a6a063aede984b9d51d9377ebd59878d7bbc3fceb479657f83305ae4",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20714"
+  },
+  "46161": {
+   "sha256": "de0b31f09b00de5223897bb2308880267b2afe8c2761282658a4623d5abde36b",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20713"
+  },
+  "46283": {
+   "sha256": "41a11e2a8c0d9b277da7731165904ebde0e192b6470d5922312eb51da8f1ca60",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20770"
+  },
+  "46299": {
+   "sha256": "9c945b161ba9cb302854394a7b94d67b0dc445d5803c683b9e9d9725f212c6bc",
+   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20778"
+  }
+ },
+ "run": "44103224381"
 }
