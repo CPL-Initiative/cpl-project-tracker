@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s676b_cpl_memory_rows.sql",
+ "name": "s676b_cpl_memory_rows_v2",
+ "version": "20261117173803",
+ "sha256": "db297898c9965df360dcda3961c817791d48d832525bbe349eee0466810c0b55",
+ "run": "44138641218",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_kind_check\\\"\\nDETAIL:  Failing row contains (5f8158b3-fecf-46be-96a9-56d6b95f3731, 2026-11-17 17:38:04.589718+00, 2026-11-17 17:38:04.589718+00, finding, S676: on main after #3456, Teacher 11766 is read from master-tea..., null, cpl, t, null, {program-requirements,harvest,crafton-hills}, S676 second writer; capture run 44103239951; main records/11766...., {}, {}, proposed, null, internal, 2026-11-17, S676 second writer, null, null, null, f-crafton-hills-11766-on-master-teacher-page-s676b, null, Crafton Hills Teacher 11766 is filed on the Master Teacher page).\\n\"}"
+}
