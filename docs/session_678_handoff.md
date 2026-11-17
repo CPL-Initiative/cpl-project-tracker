@@ -81,8 +81,8 @@ finding to judge, never a number to update. Never force a re-extraction blind (`
 
 ## Decisions
 
-`cpl_memory` rows in `kb/migrations/2026-11-17_s677_cpl_memory_rows.sql` (rollback beside it), to apply through
-`supabase-migrate.yml`: `d-chaffey-18435-not-found-no-live-row-s677`, `f-skyline-self-test-miss-38299-pace-s677`.
+`cpl_memory` rows in `kb/migrations/2026-11-17_s677_cpl_memory_rows.sql` (rollback beside it), applied by
+`supabase-migrate.yml` from #3463's branch (run 44176454133, receipt `kb/receipts/migration_s677_cpl_memory_rows_44176454133.json`): `d-chaffey-18435-not-found-no-live-row-s677`, `f-skyline-self-test-miss-38299-pace-s677`.
 Sam gave no new ruling.
 
 ## Let go
