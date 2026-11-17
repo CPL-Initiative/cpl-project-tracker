@@ -548,3 +548,11 @@ Riverside City's three steps took its records from 229 to 232 passing on the rec
 
 **A test-out range is not a units range.** Moreno Valley Guitar 38758 prints "Required Courses (16-20 Units)", "Units: 20.00" and "Total: 20.00". The 16 comes from "MUS-3* ... *(Test out option available)". Credit by exam is credit for prior learning and still awards MUS-3's 4 units, so the program's total is 20.
 
+## S674 (SkyRedpoll, 2026-11-17, the CPL Queue routine)
+
+**A step that replaces a filled figure carries every guard the page can give.** Moreno Valley Guitar 38758 read "Required Courses (16-20 Units)" as its total, and every other reconcile step fills only an empty field. The `printed_total` step replaces it, so it runs only where the record holds exactly the heading's range, the page prints "(Test out option available)", the printed "Total : 20.00" is the range's top, and every block is rule-all with fixed stated figures that sum to it. Reconcile 44072968931 took Moreno Valley from 134 to 135 passing, none lost; 20 records took the fresh page text and went to the reread.
+
+**Read the failure before filling the field a reviewer pointed at.** COBIx asked why Riverside City's four Social Justice ADTs carry an uneven `degree_total`. At Riverside City all 37 ADTs without a degree total pass and the 4 with one fail, and the two failing Social Justice records fail on the major: Required Courses prints "Units: 9.00", and the reading kept 3 (41749) and 6 (43896). Filling 60 on the two passing records adds no pass. The degree totals stay as filed; the Required Courses structure is the harvest item.
+
+**A migration's `.apply` pushed on a branch applies at once.** The S674 memory rows applied from the PR branch (run 44073641990) before the PR merged, as `supabase-migrate.yml` is meant to. Push `.apply` only when the rows are ready to be live.
+

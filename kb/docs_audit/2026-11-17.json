@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1516,
-    "bytes": 16097661,
+    "files": 1517,
+    "bytes": 16106544,
     "over_budget": 5,
-    "handoff_max": 673,
+    "handoff_max": 674,
     "always_loaded_files": 1,
     "always_loaded_bytes": 62417,
     "superseded_files": 0,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5219607,
+        "bytes": 5219702,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2854849,
+        "bytes": 2856305,
         "over": 2
       },
       "kb_note": {
@@ -46,25 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 535342,
+        "bytes": 535624,
         "over": 1
       },
       "handoff": {
-        "files": 632,
-        "bytes": 4539339,
+        "files": 633,
+        "bytes": 4546389,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 203,
-      "handoff_drops_active_lane": 1
+      "vault_heavy_path": 203
     },
     "vault": {
-      "files": 28197,
-      "bytes": 5039845280,
-      "heavy_bytes": 3523192924,
+      "files": 28202,
+      "bytes": 5039890812,
+      "heavy_bytes": 3523221134,
       "heavy_share": 0.699,
       "ignore_filters": [
         "cpl-project-tracker/kb/program_requirements_college",
@@ -315,13 +314,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 122892,
+        "bytes": 124348,
         "limit": 120000,
         "lane": "lessons",
-        "over_by": 2892,
-        "ratio": 1.02
+        "over_by": 4348,
+        "ratio": 1.04
       },
-      "message": "122,892 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "message": "124,348 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
@@ -341,13 +340,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20235,
+        "bytes": 20517,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 235,
-        "ratio": 1.01
+        "over_by": 517,
+        "ratio": 1.03
       },
-      "message": "20,235 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,517 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -355,10 +354,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 152710289,
+        "bytes": 152735686,
         "kind": "dir"
       },
-      "message": "directory totals 152,710,289 B inside the vault"
+      "message": "directory totals 152,735,686 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -445,10 +444,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 13521480,
+        "bytes": 13524293,
         "kind": "dir"
       },
-      "message": "directory totals 13,521,480 B inside the vault"
+      "message": "directory totals 13,524,293 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -2379,20 +2378,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "handoff_drops_active_lane",
-      "fixable": false,
-      "path": "docs/session_673_handoff.md",
-      "detail": {
-        "lanes": [
-          "cer-procedures",
-          "library",
-          "my-college-action-page"
-        ],
-        "days": 7
-      },
-      "message": "`docs/session_673_handoff.md` never names 3 lane(s) worked in the last 7 days that still carry a NEXT: cer-procedures, library, my-college-action-page. Build the open work from each lane's NEXT line, or say in the handoff why the lane waits (name it by slug). Copying the last handoff's list is how five firings found an empty queue (S583)."
     }
   ]
 }

@@ -17125,8 +17125,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 633,
+   "count": 634,
    "docs": [
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 675,
+     "path": "docs/session_675_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 675 handoff (from SkyRedpoll, S674)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27761,5 +27775,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1503
+ "total": 1504
 }
