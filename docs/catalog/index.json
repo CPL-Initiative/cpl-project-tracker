@@ -17125,8 +17125,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 632,
+   "count": 633,
    "docs": [
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 674,
+     "path": "docs/session_674_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 674 handoff (from SkyPhoebe, S673)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27747,5 +27761,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1502
+ "total": 1503
 }
