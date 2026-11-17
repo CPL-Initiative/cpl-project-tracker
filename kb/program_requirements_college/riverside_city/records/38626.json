@@ -65,20 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.5,
-    9.5
+    18.5,
+    18.5
    ],
    "stated": [
     18.5,
     18.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 9.5-9.5; the catalog states 18.5-18.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -102,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,7 +150,8 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 4
      },
      {
       "code": "MUS-52",
@@ -199,6 +198,17 @@
    "Printed total is 18.50 units, though the award type in the state file is listed as 16-<30 units; consistent."
   ]
  },
- "extracted_run": "44030368835",
- "catalog_year": "2026-2027"
+ "extracted_run": 44046016854,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-P12": 4
+   },
+   "words": "MUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-52\nRecital Performance ( Active )\n0.50\n* Course must be taken four times"
+  }
+ ],
+ "read_run": "44030368835"
 }

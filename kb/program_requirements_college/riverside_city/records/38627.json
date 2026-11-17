@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    14.0,
-    14.0
+    17.0,
+    17.0
    ],
    "stated": [
     17.0,
     17.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 14.0-14.0; the catalog states 17.0-17.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -163,7 +161,8 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS-52",
@@ -251,6 +250,17 @@
    "The third outcome is copied word for word, although its wording appears garbled in the source."
   ]
  },
- "extracted_run": "44030368835",
- "catalog_year": "2026-2027"
+ "extracted_run": 44046016854,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-39": 2
+   },
+   "words": "MUS-39Course must be taken twice"
+  }
+ ],
+ "read_run": "44030368835"
 }
