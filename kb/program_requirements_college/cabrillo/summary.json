@@ -2,19 +2,22 @@
  "college": "Cabrillo College",
  "programs": 291,
  "with_closed_list": 281,
- "found": 271,
- "extracted": 271,
+ "found": 269,
+ "extracted": 269,
  "errors": 0,
- "passed_machine_checks": 238,
+ "passed_machine_checks": 243,
  "failed": {
-  "coverage": 3,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 32,
+  "arithmetic": 26,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 18.26,
- "cost_per_program": 0.0674,
+ "cost_usd_run": 3.69,
+ "cost_usd_filed": 18.2,
+ "cost_per_program": 0.0677,
+ "extract_calls": 30,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "06362",
@@ -40,7 +43,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36677",
@@ -66,7 +70,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36680",
@@ -92,7 +97,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36837",
@@ -118,7 +124,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37545",
@@ -144,7 +151,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42748",
@@ -170,7 +178,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42764",
@@ -196,8 +205,9 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "38670925488"
+ "run": "44112287720"
 }

@@ -5,11 +5,11 @@
  "title": "Spanish Intermediate Proficiency",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/spanish-intermediate-proficiency-certificate-of-achievement-fall-2026",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8393,
+  "input_tokens": 9563,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8393,
-    "output_tokens": 3413,
+    "input_tokens": 9563,
+    "output_tokens": 3050,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,47 @@
     "model": null
    }
   ],
-  "output_tokens": 3413,
+  "output_tokens": 3050,
   "output_tokens_details": {
-   "thinking_tokens": 1291
+   "thinking_tokens": 1019
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10183,
- "ms": 26318,
- "seconds": 26.7,
+ "cost_usd": 0.09925,
+ "ms": 23014,
+ "seconds": 23.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 27,
+   "placed": 28,
    "listed": 30,
-   "share": 0.9,
+   "share": 0.933,
    "missing": [
     "HIST21BH",
-    "MUS52LA",
-    "SPAN16"
+    "MUS52LA"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "SPAN3S",
+     "listed": "SPAN16",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ANTHR6",
-    "SPAN3S"
+    "ANTHR6"
    ],
    "flagged": [
-    "ANTHR6",
-    "SPAN3S"
+    "ANTHR6"
    ],
    "pass": true
   },
@@ -80,6 +85,7 @@
     16.0,
     16.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 14.0-18.0; the catalog states 16.0-16.0"
    ]
@@ -103,6 +109,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "n/a"
+  },
   "pass": false
  },
  "record": {
@@ -114,7 +123,20 @@
     "max": 16
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Apply intermediate (ACTFL-based) Spanish communication skills, both written and oral, in a variety of real-world settings.",
     "Understand Spanish texts such as literary pieces, news articles, and informational essays at an intermediate (ACTFL-based) level.",
@@ -145,42 +167,42 @@
     },
     "courses": [
      {
-      "code": "SPAN 1",
+      "code": "SPAN1",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN 2",
+      "code": "SPAN2",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN 3",
+      "code": "SPAN3",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN 4",
+      "code": "SPAN4",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN 3S",
+      "code": "SPAN3S",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "SPAN 17",
+      "code": "SPAN17",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -199,96 +221,106 @@
     },
     "courses": [
      {
-      "code": "AH 19",
+      "code": "AH19",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ANTHR 6",
+      "code": "ANTHR6",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ANTHR 7",
+      "code": "ANTHR7",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "AP 65",
+      "code": "AP65",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "COMM 6",
+      "code": "COMM6",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "DANCE 16A",
-      "units": 1,
-      "units_max": 3,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "DANCE 17A",
+      "code": "DANCE16A",
       "units": 1,
       "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGL 39",
+      "code": "DANCE17A",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL39",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGL 100",
+      "code": "ENGL100",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGL 101A",
+      "code": "ENGL101A",
       "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ENGL 115",
+      "code": "ENGL115",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ETHN 8",
+      "code": "ETHN8",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ETHN 21A",
+      "code": "ETHN21A",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ETHN 21AH",
+        "code": "HIST21A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN21AH",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST21AH",
         "units": 3,
         "catalog_addition": false
        }
@@ -296,12 +328,17 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 21A",
+      "code": "ETHN21B",
       "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "HIST 21AH",
+        "code": "ETHN21BH",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST21B",
         "units": 3,
         "catalog_addition": false
        }
@@ -309,48 +346,28 @@
       "catalog_addition": false
      },
      {
-      "code": "ETHN 21B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ETHN 21BH",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 21B",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MUS 56M",
+      "code": "MUS56M",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SOC 8",
+      "code": "SOC8",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPAN 10A",
+      "code": "SPAN10A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "WS 5",
+      "code": "WS5",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -362,27 +379,31 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "HIST 21BH",
-    "why": "not in the text"
-   },
-   {
     "code": "MUS 52LA",
     "why": "not in the text"
    },
    {
+    "code": "HIST 21BH",
+    "why": "not in the text"
+   },
+   {
+    "code": "SOC 8",
+    "why": "placed as SOC8 (code printed without space)"
+   },
+   {
     "code": "SPAN 16",
-    "why": "not in the text; catalog lists SPAN 3S - Spanish for Spanish Speakers I instead"
+    "why": "not in the text; catalog lists SPAN3S - Spanish for Spanish Speakers I instead, possibly a renumbering"
    }
   ],
   "notes": [
-   "Catalog prints codes without a space (e.g. 'SPAN1', 'ETHN21AH'); recorded with a space between subject and number to match the closed list.",
-   "Required block reads 'Complete the following number of credits: 13-15' with 'Students must take a minimum of 3 courses in Spanish' and a '4 - 5' line (per-course unit range); recorded as choose 3 courses with stated 13-15.",
-   "SPAN 3S (Spanish for Spanish Speakers I, 4 units) is not in the closed list; it may be a renumbering of SPAN 16 (Elementary Spanish for Spanish Speakers I, 4 units). Reviewer should check.",
-   "Honors twins ETHN 21AH, HIST 21AH and ETHN 21BH are recorded as alternatives of ETHN 21A, HIST 21A and ETHN 21B; catalog prints them as separate rows. Cross-listed ETHN/HIST and ETHN 8/SOC 8 kept as separate entries as printed.",
-   "DANCE 16A and DANCE 17A print 1-3 units in the catalog, while the state file stores 0.5.",
-   "Program Map sections (Spanish 2-Spanish 4 and Spanish 1-Spanish 3 options) are advisory sequences repeating the same courses; not recorded as separate blocks.",
-   "Total printed as '16 Credits' and 'Complete the following number of credits: 16'."
+   "Required block: catalog says 'Complete the following number of credits: 13-15' and 'Students must take a minimum of 3 courses in Spanish' (printed range 4 - 5 per course); recorded as choose 3 courses with stated 13-15. The program map pairs SPAN3 or SPAN3S and SPAN4 or SPAN17 as one-of choices in sequences SPAN1-SPAN3 or SPAN2-SPAN4, but the requirements list prints them flat.",
+   "SPAN3S is not in the closed list; the closed list's SPAN 16 (Elementary Spanish for Spanish Speakers I) may correspond to it.",
+   "Cross-listed ETHN/HIST Chicano History courses and their honors versions were grouped as alternatives of one choice; the catalog prints them as separate rows.",
+   "DANCE16A and DANCE17A are printed with 1 - 3 units in the catalog, while the state file stores 0.5.",
+   "Codes are written as the catalog prints them (no space between subject and number, e.g., SPAN1).",
+   "Program map sections were not recorded as requirements."
   ]
  },
- "extracted_run": "38442109713"
+ "extracted_run": "44112287720",
+ "catalog_year": "2026-2027"
 }
