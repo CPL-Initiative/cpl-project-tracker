@@ -66,6 +66,8 @@ withhold kb/*_out
 withhold kb/subj4_*
 # Audit provenance: only the slim latest.json summaries are served.
 withhold kb/exhibit_audit/*.md
+# The pair-keyed re-point list (S678, #3472): the reviewed apply reads it; no page does.
+withhold kb/exhibit_repoint_list.json
 withhold kb/row_audit/*.md
 # Data-write receipts (Rule 10 a2): 2.0 GB of the 2.9 GB site on 2026-11-10 (COBIx on #3077).
 withhold kb/receipts
