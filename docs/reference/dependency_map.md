@@ -811,7 +811,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot/sequences/sources/mtsac_gps_s0401.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot/sequences/sources/smc_program_219.json` | scripts: `kb/_program_map_parse.py` | — |
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
-| `kb/program_requirements_reconcile.json` | scripts: `kb/_course_id_rescore_estimate.py`, `kb/_course_id_route_census.py`, `kb/_prefix_alias_census.py`, `kb/_program_requirements_reconcile.py` | — |
+| `kb/program_requirements_reconcile.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_course_id_rescore_estimate.py`, `kb/_course_id_route_census.py`, `kb/_prefix_alias_census.py`, `kb/_program_requirements_reconcile.py` | — |
 | `kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json` | scripts: `kb/_course_id_rescore_estimate.py` | scripts: `kb/_course_id_rescore_estimate.py` |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
