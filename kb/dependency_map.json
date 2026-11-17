@@ -26281,6 +26281,13 @@
   "file:tests/map_ace_catalog_cr_test.py": {
    "consumers": [
     {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:map-custom-report-load.yml",
      "kind": "workflow",
      "direction": "run",
@@ -34882,6 +34889,7 @@
     "tests/ui_pass_test.py",
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
+    "tests/map_ace_catalog_cr_test.py",
     "tests/map_key_sketch_one_pull_test.py",
     "tests/anchor_rekey_dryrun_test.py",
     "tests/ccr_seed_recheck_dryrun_test.py",

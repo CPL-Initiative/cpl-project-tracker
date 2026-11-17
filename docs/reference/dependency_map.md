@@ -1218,7 +1218,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publish_test.py` | workflows: `js-tests.yml` | — |
-| `tests/map_ace_catalog_cr_test.py` | workflows: `map-custom-report-load.yml` | — |
+| `tests/map_ace_catalog_cr_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_key_sketch_one_pull_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
