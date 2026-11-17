@@ -24,7 +24,8 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
     with an A or V)". Basic training counts 2 of its 5 units toward Area 7.
   - Riverside City's forced read (44030368835, $5.08). Its one apparent fix, Entrepreneurship 31892, passed only because the reading
     dropped the rule that requires at least one course from each cluster (COBIx's spot-check on #3438). Main's reading and the live row
-    were restored (`kb/migrations/2026-11-17_s671_rcc_31892_restore.sql`, guarded, with a rollback), so the yield is 0 of 15. Its reread (44033959165)
+    were restored (`kb/migrations/2026-11-17_s671_rcc_31892_restore.sql`, guarded, with a rollback; applied by run 44039461329,
+    receipt `kb/receipts/migration_s671_rcc_31892_restore_44039461329.json`), so the yield is 0 of 15. Its reread (44033959165)
     replaced 29 unchecked rows, and the receipt holds their before-values. Main's passing 30578 and 33829 were restored after the
     capture lost their pages. 33230 was left out of the files.
 - The diagnosis read 44034775728 found three causes: Geology 38790's catalog does not add up, Piano 38626 prints one course four
@@ -84,7 +85,8 @@ discipline blanks worklist.
 
 The `cpl_memory` rows are in `kb/migrations/2026-11-17_s671_cpl_memory_rows.sql`, with a rollback by slug beside it:
 `d-rccd-pilot-no-blind-force-s671`, `f-rccd-area7-basic-training-s671`, `p-repeated-course-row-undercounts-s671` and
-`p-capture-can-lose-passing-page-s671`. Sam gave no new ruling this run. The pilot ran on his go, which COBIx relayed on #3237.
+`p-capture-can-lose-passing-page-s671`. `d-rccd-pilot-no-blind-force-s671` says the force "fixed one (31892)"; that one was
+restored after COBIx's spot-check, so the force fixed none. Correct the row's summary when the next rows go through the runner. Sam gave no new ruling this run. The pilot ran on his go, which COBIx relayed on #3237.
 
 ## Let go
 
