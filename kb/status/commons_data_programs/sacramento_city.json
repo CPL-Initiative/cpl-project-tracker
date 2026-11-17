@@ -1,4 +1,4 @@
-{"schema":1,"college":"Sacramento City College","slug":"sacramento_city","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Sacramento City College","slug":"sacramento_city","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"40347","title":"Chemical Technician, Intermediate","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=237"},
 {"cn":"23029","title":"Commercial Music, Performance Emphasis","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=538"},
 {"cn":"15484","title":"International Studies","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf#page=465"},

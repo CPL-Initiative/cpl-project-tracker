@@ -1,4 +1,4 @@
-{"schema":1,"college":"Merritt College","slug":"merritt","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Merritt College","slug":"merritt","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"09043","title":"Business Administration","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"33054","title":"Psychology","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19145","title":"California General Education Transfer Curriculum (Cal-GETC)","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"units_unequal","lever":"reconcile_steps","url":"https://mc.curriqunet.com/catalog/iq/48441/48770/49733"},

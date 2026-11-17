@@ -542,6 +542,14 @@ def college_records(pilot_keys: set) -> list[tuple]:
 
 
 # ── the figure: the mock-up's plan(), ported ────────────────────────────────────
+def course_id_printed(score: dict | None) -> set:
+    """The printed codes the scorer met to a listed code by the Program Course File id (coverage.course_id): those
+    courses are on the program's state list under another code (a CCN renumber such as Riverside City HIST-C1001 for
+    HIST 1, or a prefix id), so they are never catalog additions on the display (f-ccn-renumber-shows-as-catalog-
+    addition-s673; S678: 617 course mentions at 15 colleges read as off the list before this)."""
+    return {ck(m.get("printed")) for m in ((score or {}).get("coverage") or {}).get("course_id") or [] if m.get("printed")}
+
+
 def tag_course_id(courses: dict, score: dict | None) -> dict:
     """Each display course the scorer met to its listed code by the Program Course File id names that route
     ("matched_by": "course_id", "listed_as": the listed code), from coverage.course_id on the filed score, so
@@ -721,8 +729,10 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     # A course printed in two blocks is one course off the list (Irvine Valley's Art
     # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once. One the
     # program carries under another status gets its own gap, naming that status.
+    by_id = course_id_printed(score)
     adds = list(OrderedDict.fromkeys(x["code"] for b in rec["blocks"] for c in courses_of(b)
-                                     for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")))
+                                     for x in [c] + list(c.get("alternatives") or [])
+                                     if x.get("catalog_addition") and ck(x["code"]) not in by_id))
     unlisted = [a for a in adds if not coci_of(a)]
     for a in adds:
         f = coci_of(a)
@@ -1043,8 +1053,10 @@ def build() -> dict:
         cov = score.get("coverage") or {}
         # A course the program lists through a retired version is on its list (coci_facts):
         # it leaves the additions and joins the listed and placed counts, once per code.
+        by_id = course_id_printed(filed.get("score"))
         adds = sum(1 for b in blocks for c in courses_of(b) for x in [c] + list(c.get("alternatives") or [])
-                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed"))
+                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed")
+                   and ck(x["code"]) not in by_id)
         relisted = len({ck(code) for code, e in courses.items() if (e.get("coci") or {}).get("listed")})
         display = OrderedDict()
         display["v"] = SHAPE_VERSION

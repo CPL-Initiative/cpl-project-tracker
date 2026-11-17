@@ -1,4 +1,4 @@
-{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"San Joaquin Delta College","slug":"san_joaquin_delta","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"33038","title":"Art History","award":"A.A- T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"19689","title":"Business","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"17714","title":"Computer Networking - Essentials","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

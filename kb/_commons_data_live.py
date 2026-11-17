@@ -202,6 +202,8 @@ def _match(v, op: str) -> bool:
         r = v is not None and str(v) != arg
     elif kind == "in":
         r = v is not None and str(v) in _in_list(arg)
+    elif kind in ("gte", "lt"):   # ISO stamps compare as text
+        r = v is not None and (str(v) >= arg if kind == "gte" else str(v) < arg)
     else:
         raise ValueError("fixture source: no operator %s" % kind)
     return (not r) if neg else r
@@ -281,6 +283,10 @@ PROGRAMS_QS = "select=college,control_number,status&status=%s&order=college,cont
 COURSES_QS = ("select=college,program_control_number,course_code"
               "&order=college,program_control_number,course_control_number")
 OUTCOMES_QS = "select=college,course_code,kind,loaded_at&order=college,course_code,kind,loaded_at,id"
+# The program records' load days, for the ETA clock's cost per CRE (S678; Sam: one program record is 15 CRE): the
+# table holds a person, so these are HEAD counts alone (the guard's rule): one per UTC day of the last BY_DAY_DAYS.
+BY_DAY_DAYS = 35
+RECORD_DAY_QS = "loaded_at=gte.%sT00:00:00Z&loaded_at=lt.%sT00:00:00Z"
 REGISTRY_QS = {
     "row": "",
     "catalog_link": "&catalog_url=not.is.null",
@@ -295,6 +301,7 @@ def plan() -> list[tuple[str, str, str]]:
     name, cns = "college=eq.%3CCOLLEGE%3E", "control_number=in.(%3CCONTROL%20NUMBERS%3E)"
     out = [("page", "coci_college_programs", PROGRAMS_QS), ("page", "coci_program_courses", COURSES_QS),
            ("page", "course_outcomes", OUTCOMES_QS),
+           ("count", "program_requirement_records", RECORD_DAY_QS % ("%3CDAY%3E", "%3CNEXT%20DAY%3E")),
            ("count", "program_requirement_records", name), ("count", "program_requirement_records", name + "&checked=is.true")]
     for extra in ("", "&" + PASSING_QS, "&" + PLO_QS):
         out.append(("count", "program_requirement_records", name + "&" + cns + extra))
@@ -381,7 +388,18 @@ def read(src, resolve) -> dict:
 
     # course_outcomes: distinct course codes by kind, and the newest load.
     out_unmatched = set()
+    today = dt.datetime.now(dt.timezone.utc).date()
+    days = [(today - dt.timedelta(days=k)) for k in range(BY_DAY_DAYS, -1, -1)]
+    since = days[0].isoformat()
+    by_day = {"outline_rows": {}, "program_records": {}}
+    got = _counts(src, [("program_requirement_records", RECORD_DAY_QS % (d.isoformat(), (d + dt.timedelta(days=1)).isoformat())) for d in days])
+    for d, n in zip(days, got):
+        if n:
+            by_day["program_records"][d.isoformat()] = n
     for r in DR.paged(src.page, "course_outcomes", OUTCOMES_QS):
+        d = str(r.get("loaded_at") or "")[:10]
+        if d >= since and r.get("kind") in ("slo", "objective"):
+            by_day["outline_rows"][d] = by_day["outline_rows"].get(d, 0) + 1
         cid = resolve(r.get("college"))
         if cid is None:
             out_unmatched.add(r.get("college"))
@@ -410,7 +428,8 @@ def read(src, resolve) -> dict:
                               "objective_courses": len(obj), "objective_courses_on_active": len(obj & courses)})
         e["names"].sort()
     return {"colleges": {str(k): colleges[k] for k in sorted(colleges, key=lambda x: (str(type(x)), x))},
-            "unmatched": unmatched + sorted(n for n in out_unmatched if n and n not in unmatched)}
+            "unmatched": unmatched + sorted(n for n in out_unmatched if n and n not in unmatched),
+            "by_day": {k: {d: v[d] for d in sorted(v)} for k, v in by_day.items()}}
 
 
 def statewide(colleges: dict) -> dict:
@@ -561,7 +580,8 @@ def export(src, resolve, run_id: str | None) -> dict:
             "source": "kb/_commons_data_live.py in the live-counts job of harvest-gap-census.yml (the live-counts environment)",
             "tables": TABLES, "rule": RULE, "reads": {"counts": sum(1 for m, *_ in src.log if m == "count"),
                                                     "pages": sum(1 for m, *_ in src.log if m == "page")},
-            "statewide": statewide(r["colleges"]), "unmatched": r["unmatched"], "colleges": r["colleges"]}
+            "statewide": statewide(r["colleges"]), "unmatched": r["unmatched"], "colleges": r["colleges"],
+            "by_day": r["by_day"]}
 
 
 def resolver(root: str = ROOT):

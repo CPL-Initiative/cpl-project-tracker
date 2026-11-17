@@ -1,4 +1,4 @@
-{"schema":1,"college":"Mission College","slug":"mission","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Mission College","slug":"mission","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"44504","title":"Communication Studies 2.0","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://mission.elumenapp.com/catalog/24-25/program/communication-studies-2-0-aa-t-2026fa"},
 {"cn":"45538","title":"Cal-GETC","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38614","title":"English for Child Care","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

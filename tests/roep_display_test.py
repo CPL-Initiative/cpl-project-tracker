@@ -512,6 +512,18 @@ _rows += [{"exhibit_id": "MAPCBEN-BCK-1-001", "local_courses": [{"subject": "CAB
 assert _rd.cbe_umbrellas(_rows) == {"MAPCBES-X-1"}, "only a credit-by-exam exhibit across three subjects is an umbrella"
 print("umbrella and numeral checks passed")
 
+# S678 (f-ccn-renumber-shows-as-catalog-addition-s673): a course the scorer met by the Program Course File id is on
+# the state list under another code, so it is neither an addition nor a gap (Riverside City HIST-C1001 for HIST 1).
+_score = {"coverage": {"course_id": [{"printed": "HIST-C1001", "listed": "HIST 1"}]}}
+check(b.course_id_printed(_score) == {b.ck("HIST-C1001")} and b.course_id_printed(None) == set(), "course id: the printed codes the scorer met by id")
+_rec = {"blocks": [{"courses": [{"code": "HIST-C1001", "catalog_addition": True}, {"code": "ART 99", "catalog_addition": True}]}]}
+try:
+    _g = b.gaps_for("Riverside City College", "acalog", "AA", "units", {"record": _rec, "score": _score}, None, {"min": None, "max": None})
+    _txt = " ".join(x.get("text", "") for x in _g)
+    check("HIST-C1001" not in _txt and "ART 99" in _txt, "course id: a course met by id is no gap; a true addition still is (got %s)" % _txt[:200])
+except TypeError as e:
+    check(False, "course id: gaps_for signature changed (%s)" % e)
+
 print("\n%d failure(s)" % len(fails))
 
 sys.exit(1 if fails else 0)

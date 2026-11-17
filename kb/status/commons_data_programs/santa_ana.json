@@ -1,4 +1,4 @@
-{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Santa Ana College","slug":"santa_ana","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"12242","title":"Speech-Language Pathology Assistant","award":"A.S. Degree","cause":"extraction_error","lever":"paid_read","url":"https://sac.curriqunet.com/catalog/alias/santaanacollegecatalog/iq/34297/36152/36210"},
 {"cn":"04254","title":"Anthropology","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"43223","title":"Bus Operator/Driver","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
