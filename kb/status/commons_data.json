@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T07:17:35Z",
+ "written_at": "2026-11-17T07:31:08Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 15861,
-  "gap": 6474,
+  "passing": 15860,
+  "gap": 6475,
   "with_gap": 118,
   "cost_usd": 1343.25,
   "passed_at_read": 15368,
@@ -186,8 +186,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 15861,
-  "gap": 6474
+  "passing": 15860,
+  "gap": 6475
  },
  "census_live": {
   "basis": "live",
@@ -9740,13 +9740,13 @@
    "harvested": true,
    "slug": "riverside_city",
    "programs": 268,
-   "passing": 231,
-   "gap": 37,
+   "passing": 230,
+   "gap": 38,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 6,
     "page_not_found": 17,
-    "unknown_without_live": 13
+    "unknown_without_live": 14
    },
    "census_causes": {
     "coverage_fails": 9,
@@ -9802,7 +9802,7 @@
    "run": "44030368835",
    "levers": {
     "reader_page_search": 17,
-    "reconcile_steps": 13,
+    "reconcile_steps": 14,
     "program_course_file_check": 6,
     "paid_read": 1
    },
