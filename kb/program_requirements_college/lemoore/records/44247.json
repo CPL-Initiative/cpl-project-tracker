@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8608,
-    "output_tokens": 1891,
+    "output_tokens": 1927,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1891,
+  "output_tokens": 1927,
   "output_tokens_details": {
-   "thinking_tokens": 695
+   "thinking_tokens": 641
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07225,
- "ms": 15622,
- "seconds": 16.4,
+ "cost_usd": 0.07297,
+ "ms": 15137,
+ "seconds": 20.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "COM5",
-    "ENG2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COM5",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -233,21 +236,23 @@
   "missing_explained": [
    {
     "code": "COM 5",
-    "why": "not in the text; catalog lists COMMC1004 - Interpersonal Communication (same title) in its place"
+    "why": "not in the text; catalog lists COMMC1004 Interpersonal Communication instead"
    },
    {
     "code": "ENG 2",
-    "why": "not in the text; catalog lists ENGLC1002 - Introduction to Literature (same title) in its place"
+    "why": "not in the text; catalog lists ENGLC1002 Introduction to Literature instead"
    }
   ],
   "notes": [
-   "The printed '(Total 60)' covers the whole degree including Cal-GETC Requirements (28) and transferable electives (14), so it is recorded as degree_total; no separate major total is printed (core 15 + electives 3 not summed by the catalog).",
-   "Cal-GETC is printed as 28 units in the requirements table, while the ADT description says Cal-GETC requires 34 semester units (double counting with major courses permitted); ge_units records the 28 printed in the table.",
-   "'Program Electives' reads 'Complete the following number of rules: 1' with a block total of 3; interpreted as choose one course.",
-   "COMMC1004 and ENGLC1002 are marked catalog additions because their codes differ from closed-list COM 5 and ENG 2, though titles match (likely C-ID common course renumbering).",
-   "Program Outcomes list is cut off at 'PSLO 5' with no text; only PSLO 1-4 recorded.",
-   "The Recommended Sequence lists GE and elective courses; these are not placed in blocks."
+   "The only total printed for the program requirements is 'Total 60', which includes Cal-GETC (28) and transferable electives (14); recorded as degree_total, total_units left null. Core 15 + electives 3 = 18 major units, but the page prints no major total.",
+   "Catalog codes are printed without spaces (COMMC1000, COM002, PSYCC1000, SOC001); matched to closed-list COMM C1000, COM 2, COM 3, COM 4, PSYC C1000, SOC 1.",
+   "COMMC1004 (Interpersonal Communication) and ENGLC1002 (Introduction to Literature) appear to be renumbered versions of closed-list COM 5 and ENG 2; marked as catalog additions — reviewer should confirm.",
+   "Program Electives: 'Complete the following number of rules: 1' read as choose one course (Total 3).",
+   "The general description states Cal-GETC requires 34 units, while the requirements table prints Cal-GETC Requirements 28 (presumably after double counting); ge_units recorded as 28 as printed in the table.",
+   "Program Outcomes list is cut off: 'PSLO 5' appears with no text; only PSLO 1-4 recorded. PSLO labels removed as list numbers.",
+   "Recommended Sequence section lists GE and elective courses; not recorded as blocks."
   ]
  },
- "extracted_run": "38979392604"
+ "extracted_run": "44112323039",
+ "catalog_year": "2026-2027"
 }
