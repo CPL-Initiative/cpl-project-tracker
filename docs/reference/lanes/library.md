@@ -120,17 +120,14 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   CPL-AI figures are header boxes that still filter; the introduction starts closed, review cards are short until
   opened, field groups fold (`cpl_catalog_folds`, layout only); Clear all filters sits by the chips. #3407: 16
   not-yet-evaluated credentials carry a CPL-AI course match chip by folded title and issuer (Certiport's Swift row held
-  out; never from CIP alone). **Built, chips held off (S669, #3410, #3413):** `kb/_build_adopt_align.py` scores the 191 unreviewed
-  credentials with issuer skill areas against every harvested course (`unreviewed`, `chips_shown: false`). Measured on
-  the live run: all words, 151 standouts at all 19 colleges (absurd); distinctive words plus a course-title gate, 24, of
-  which about a quarter are still wrong (CSSLP to aviation maintenance, AI Agent Essentials to fire behavior). **DECIDED:**
-  no chip from the lexical score; **NEXT:** a semantic scorer (the Jev Score or an embedding per skill area) in the same
-  file, re-measured before `chips_shown` turns on.
+  out; never from CIP alone). **NEXT:** COBIx's next step, scoring the 185 unreviewed credentials with issuer skill
+  areas against harvested outcomes in `kb/_build_adopt_align.py` (a chip only for a clear standout at 0.20).
 - **Sam's test of pictures passed (2026-11-11):** request `71931018` drafted with its five MAP screens under their
   steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
   `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
   the link from the public funding dashboard that his brief asks for.
-- **The JST guide (S642):** moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669, second)*.
+- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
+  is Sam's press, linked from the funding dashboard's 75% JST condition.
 - **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
   [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669)*.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
@@ -159,9 +156,23 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
   and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
   header's lengths, never `24px`.
-- **The Veteran map and the Fact Sheet carry the public header (S653b):** shipped; moved verbatim to
-  [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669, second)*. **NEXT (minor), still open:** the vault's `header.html` has
-  no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a second copy.
+- **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
+  in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
+  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
+  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
+  page has one banner; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
+  Colleges-only logo is out (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added to the top of fact
+  sheet. Leave masthead in." then "Confusion by me on masthead vs header. I just want the ccc Cpl back in and the ccc
+  only logo out"; then "Picture 2: CPL logo only"; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342).
+  **DECIDED:** the header carries the page's controls, moved whole (same ids): map.rccd.edu, the snapshot chip, Collapse
+  all, Print or save; the masthead is the title. On paper the header prints its logo, the map link and the chip (Sam,
+  S653b, 2026-11-14: "2 is right. Can you move all the buttons and map website link and update chip all into the header
+  to clean up the title?"; `sam-fact-sheet-controls-into-header-2026-11-14`; #3342).
+  **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
+  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). Records: lessons,
+  *Moved from the lane (S651 checkpoint)* and *(S653b)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the

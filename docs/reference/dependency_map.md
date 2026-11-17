@@ -80,7 +80,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `college_contacts_harvest` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `college_short_names` | tabs: `college-identity` · scripts: `kb/_apply_college_short_names.py` | tabs: `college-identity` |
-| `course_outcomes` | tabs: `coci-lookup`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
+| `course_outcomes` | tabs: `coci-lookup`, `commons`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html`, `library/cpl-opportunity/index.html` |
 | `cpl_comms` | tabs: `letters` | — |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
@@ -796,7 +796,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/butte/records/20001.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
@@ -1250,7 +1249,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_extraction_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_fragment_path_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
-| `tests/program_requirements_ncl_extract_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_prior_read_test.py` | workflows: `js-tests.yml` | — |
@@ -1360,7 +1358,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `canadacollege.edu` | tabs: `map-queue`, `map-users` |
 | `catalog.cccd.edu` | scripts: `kb/_course_outcomes_read.py` |
 | `catalog.example` | modules: `a11y.config.js` |
-| `catalog.example.edu` | scripts: `kb/_program_requirements_college.py` |
 | `cdn.jsdelivr.net` | tabs: `pipeline` |
 | `cdnjs.cloudflare.com` | scripts: `prototype/globe/build_globe.py` |
 | `chaffey.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
@@ -1558,5 +1555,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1017 file
-datasets · 196 external services · 605 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1015 file
+datasets · 195 external services · 605 consumers · 72 workflows · 41 tabs.

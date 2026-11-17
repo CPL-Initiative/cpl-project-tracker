@@ -4,8 +4,8 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1017,
-  "external_services": 196,
+  "file_datasets": 1015,
+  "external_services": 195,
   "consumers": 605,
   "workflows": 72,
   "data_js_files": 71,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2834
+     "line": 2580
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2790
+     "line": 2536
     }
    ],
    "main_committers": []
@@ -666,7 +666,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 138
+     "line": 133
     },
     {
      "id": "script:kb/_xai_smoke.py",
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2727
+     "line": 2473
     }
    ],
    "main_committers": []
@@ -838,18 +838,6 @@
      "direction": "read",
      "how": "url",
      "line": 665
-    }
-   ],
-   "main_committers": []
-  },
-  "external:catalog.example.edu": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 1929
     }
    ],
    "main_committers": []
@@ -3025,7 +3013,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2320
+     "line": 2066
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -8696,14 +8684,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6955
+     "line": 6669
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 389
+     "line": 380
     }
    ],
    "served": false,
@@ -8716,14 +8704,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7031
+     "line": 6745
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 403
+     "line": 394
     }
    ],
    "served": false,
@@ -17578,19 +17566,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/program_requirements_college/butte/records/20001.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_program_requirements_college.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 1908
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
    "consumers": [
     {
@@ -17598,7 +17573,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3678
+     "line": 3424
     }
    ],
    "served": true,
@@ -17611,7 +17586,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7653
+     "line": 7346
     }
    ],
    "served": true,
@@ -21461,14 +21436,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7376
+     "line": 7080
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 383
+     "line": 374
     }
    ],
    "served": false,
@@ -21481,7 +21456,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6393
+     "line": 6110
     }
    ],
    "served": false,
@@ -22105,14 +22080,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6993
+     "line": 6707
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 397
+     "line": 388
     }
    ],
    "served": false,
@@ -26746,19 +26721,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:tests/program_requirements_ncl_extract_test.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:tests/program_requirements_pdf_numbers_after_test.py": {
    "consumers": [
     {
@@ -29726,7 +29688,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7627
+     "line": 7320
     }
    ],
    "main_committers": []
@@ -29738,7 +29700,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7740
+     "line": 7429
     }
    ],
    "main_committers": []
@@ -30539,6 +30501,16 @@
      "line": 206,
      "tabs": [
       "coci-lookup"
+     ]
+    },
+    {
+     "id": "module:commons_data.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "helper",
+     "line": 877,
+     "tabs": [
+      "commons"
      ]
     },
     {
@@ -34855,7 +34827,6 @@
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
-    "tests/program_requirements_ncl_extract_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
