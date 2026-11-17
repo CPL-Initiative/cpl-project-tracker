@@ -207,10 +207,23 @@ YIELDS_S668 = [("cabrillo", "20410", "41948"), ("chaffey", "18435", "45032"), ("
                ("gavilan", "33048", "21277"), ("gavilan", "45720", "18456"), ("gavilan", "46046", "08461"),
                ("lemoore", "10954", "20341"), ("lemoore", "19305", "33017"), ("skyline", "32337", "10529"),
                ("skyline", "46296", "10546")]
+# Judged in S676 (#3456): three of the 13 no longer reach the yield, because the fresh captures under the #3408 code
+# file each holder under page_claimed and the lookup finds the taker's own page, the end the yield was for. They
+# leave the census's yield list and must stay resolved that way: holder claimed, taker found.
+RESOLVED_BY_CLAIM_S676 = [("feather_river", "36176", "04321"), ("gavilan", "46046", "08461"),
+                          ("lemoore", "19305", "33017")]
+for slug, holder, taker in RESOLVED_BY_CLAIM_S676:
+    capj = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", slug, "capture.json")))
+    claimed = {p.get("control_number") for p in capj.get("page_claimed") or []}
+    found = {p.get("control_number") for p in (capj.get("catalog_lookup") or {}).get("found_programs") or []}
+    check(holder in claimed and taker in found,
+          "%s %s stays page_claimed and %s stays found by the lookup (S676)" % (slug, holder, taker))
+expected = sorted(set(YIELDS_S668) - set(RESOLVED_BY_CLAIM_S676))
 moved = sorted((y["college"], y["holder"], y["taker"]) for y in sw["yield_list"])
-check(moved == YIELDS_S668 and sw["yields"] == 13 and sw["yields_passing_moved"] == 0,
-      "the census yields exactly the 13 judged in S668, Skyline's Dance A.A. and Automotive Advanced Engine "
-      "Performance Technology among them, whether a filing has applied them yet or not: %r" % moved)
+check(moved == expected and sw["yields"] == len(expected) and sw["yields_passing_moved"] == 0,
+      "the census yields exactly the 13 judged in S668 less the 3 resolved by a page claim in S676, Skyline's Dance "
+      "A.A. and Automotive Advanced Engine Performance Technology among them, whether a filing has applied them yet "
+      "or not: %r" % moved)
 
 if failures:
     print("FAIL: harvest ncl lookup census (%d of %d)" % (len(failures), checks[0]))

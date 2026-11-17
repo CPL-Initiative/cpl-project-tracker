@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s676_cpl_memory_rows.sql",
+ "name": "s676_cpl_memory_rows",
+ "version": "20261117143259",
+ "sha256": "59f89e8c79fd205654cca42c0012702504ea97c54faa167d48f88f4c14d46d27",
+ "run": "44103790810",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (c6430889-c823-43b2-8b6f-490d9a8874bf, 2026-11-17 14:32:59.413063+00, 2026-11-17 14:32:59.413063+00, decision, S676: Cabrillo, College of San Mateo, Crafton Hills, Feather Riv..., null, cpl, t, null, {program-requirements,harvest,slice-b}, S676 SkyPipit, #3456; receipts kb/receipts/program_requirement_r..., {}, {}, proposed, null, internal, 2026-11-17, SkyPipit (S676), null, null, null, d-slice-b-six-no-live-holder-rows-s676, null, Slice B: six yield colleges filed, and none of their dropped rec...).\\n\"}"
+}

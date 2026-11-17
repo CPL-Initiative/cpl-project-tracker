@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8909,
-    "output_tokens": 4123,
+    "output_tokens": 4490,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 4123,
+  "output_tokens": 4490,
   "output_tokens_details": {
-   "thinking_tokens": 1722
+   "thinking_tokens": 2017
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1181,
- "ms": 31784,
- "seconds": 32.0,
+ "cost_usd": 0.12544,
+ "ms": 35340,
+ "seconds": 35.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 41,
    "listed": 41,
-   "share": 0.927,
-   "missing": [
-    "SOC132",
-    "SOC141",
-    "SOC141H"
-   ],
-   "unexplained": [
-    "SOC132",
-    "SOC141",
-    "SOC141H"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 2,
    "codes": [
     "POLSC1000",
-    "POLSC1000H",
-    "SOCI132",
-    "SOCI141",
-    "SOCI141H"
+    "POLSC1000H"
    ],
    "flagged": [
     "POLSC1000",
     "POLSC1000H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -106,7 +95,7 @@
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -116,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -131,7 +120,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "CAL-GETC",
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -151,7 +140,8 @@
    "careers": [
     "legal",
     "governmental",
-    "public service fields"
+    "public service fields",
+    "policy-related"
    ]
   },
   "blocks": [
@@ -387,7 +377,7 @@
        {
         "code": "SOCI 132",
         "units": 3,
-        "catalog_addition": false
+        "catalog_addition": true
        },
        {
         "code": "SOCI 132H",
@@ -418,7 +408,7 @@
        {
         "code": "SOCI 141H",
         "units": 3,
-        "catalog_addition": false
+        "catalog_addition": true
        },
        {
         "code": "ETHS 141",
@@ -431,7 +421,7 @@
         "catalog_addition": false
        }
       ],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "SOCI 145",
@@ -451,15 +441,31 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "SOC 132",
+    "why": "catalog prints SOCI 132 (recorded as catalog addition alternative to ETHS 132)"
+   },
+   {
+    "code": "SOC 141",
+    "why": "catalog prints SOCI 141 (recorded as catalog addition)"
+   },
+   {
+    "code": "SOC 141H",
+    "why": "catalog prints SOCI 141H (recorded as catalog addition alternative)"
+   }
+  ],
   "notes": [
-   "In the core, ENGL C1001/C1001H OR COMM 125/125H, STAT C1000/C1000H OR PSYC 120, and HIST C1001/C1001H OR HIST C1002/C1002H are each recorded as one required entry with alternatives.",
-   "List A requires two courses from two different areas: Area 1 Economics (ECON C2001, ECON C2002), Area 2 Political Science (POLS 104, 106, 110), Area 3 Public Policy (SOCI 105), Area 4 Diversity (SOCI 105, ANTH 102, COMM 174, ETHS/SOCI 132, GEOG 102, SOCI/ETHS 141, SOCI 145), Area 5 College Success (COUN 100). Courses must not have been used above. SOCI 105 appears under both Area 3 and Area 4 and is listed once.",
-   "The catalog prints SOCI 132, SOCI 141 and SOCI 141H; the closed list stores them as SOC 132, SOC 141, SOC 141H (same titles). They were treated as the same courses, not catalog additions. Closed-list codes without spaces (ANTH102, SOCI105, SOCI132H, SOCI145) were matched to the catalog's spaced codes.",
-   "POLS C1000 and POLS C1000H (American Government and Politics) are not in the closed list and are marked as catalog additions.",
-   "The catalog labels the total 'TOTAL CREDIT HOURS: 32.00-33.00'; recorded as units (credit program). It equals the core (26-27) plus List A (6).",
-   "The outcomes are printed under 'A student receiving a degree/certificate in the field will be able to:' and were recorded for this award."
+   "Core rows joined by 'OR' (ENGL C1001/H or COMM 125/H; STAT C1000/H or PSYC 120; HIST C1001/H or HIST C1002/H) recorded as single entries with alternatives; the ENGL vs COMM choice differs in units (4 vs 3), which accounts for the 32-33 total.",
+   "List A requires two courses from two different areas (Area 1 Economics, Area 2 Political Science, Area 3 Public Policy, Area 4 Diversity, Area 5 College Success); courses must not have been used above. Area membership not captured in block structure.",
+   "SOCI 105 is printed under both Area 3 and Area 4; listed once.",
+   "Closed list writes ANTH102, ANTH102H, SOCI105, SOCI132H, SOCI145 without a space; treated as matching the catalog's ANTH 102, ANTH 102H, SOCI 105, SOCI 132H, SOCI 145.",
+   "Closed list uses SOC 132, SOC 141, SOC 141H while catalog prints SOCI 132, SOCI 141, SOCI 141H; catalog codes recorded as additions - likely the same courses, reviewer should check.",
+   "POLS C1000 and POLS C1000H are not in the closed list; recorded as catalog additions.",
+   "Outcomes are introduced as 'A student receiving a degree/certificate in the field will be able to:'; recorded for this award.",
+   "Cal-GETC named as the GE pattern; no GE units or degree total printed."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": "44090908924",
+ "catalog_year": "2026-2027"
 }

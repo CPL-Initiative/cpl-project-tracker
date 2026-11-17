@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s676b_cpl_memory_rows.sql",
+ "name": "s676b_cpl_memory_rows",
+ "version": "20261117173115",
+ "sha256": "576f306c3b6fd28964c4341cbc23832ee3727dc6138dd9e1217878f0100a4c90",
+ "run": "44137393668",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (19f975dd-2d34-4218-8c5b-55252c324b41, 2026-11-17 17:31:16.247595+00, 2026-11-17 17:31:16.247595+00, pitfall, S676: Sam opened a session from a stale greeting (S672) at 14:21..., null, cpl, t, null, {coordination,harvest,pitfall,slice-b}, S676 second writer; #3456; receipt kb/receipts/migration_s676b_r..., {}, {}, proposed, null, internal, 2026-11-17, S676 second writer, null, null, null, p-two-writers-one-lane-refetch-main-s676b, null, Two sessions worked slice B at once; re-fetch main before every ...).\\n\"}"
+}

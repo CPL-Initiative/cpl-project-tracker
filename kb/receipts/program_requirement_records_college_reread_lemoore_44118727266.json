@@ -1,0 +1,932 @@
+{
+ "college": "Lemoore College",
+ "reread_run": "44118727266",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44112323039",
+ "at": "2026-11-17T15:50:50Z",
+ "posted": 5,
+ "batches": 1,
+ "skipped": [],
+ "error": null,
+ "replaced": 5,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "32899",
+  "32933",
+  "37134",
+  "44247",
+  "45975"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 5,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Lemoore College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 44112323039;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "COMMC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMMC1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Program Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYCC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "marketing",
+      "broadcasting",
+      "mass communication"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 28,
+      "min": 28
+     },
+     "outcomes": [
+      "Students will be able to demonstrate basic public speaking delivery techniques.",
+      "Students will be able to solve problems utilizing effective conflict management styles, decision making, and leadership.",
+      "Students will be able to understand and utilize the interdependent nature of verbal and nonverbal communication in the communication transactional process.",
+      "Students will be able to demonstrate effective argumentation by formulating written and/or oral arguments that are free of errors in reasoning."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Communication Studies 2.0 (AAT)",
+     "open_elective_units": 14,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44090929578,
+   "program_title": "Communication Studies",
+   "control_number": "32899"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 19,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "EDUC001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMMC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLSC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEVC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "PHYSCI002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PA001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS042",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART042",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "MATH010A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST020",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Student attending ITEP must complete MATH010B. Student attending CSU must completed LING011.",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MATH010B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING011",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "operating a daycare",
+      "social work",
+      "school administration"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 13,
+      "min": 13
+     },
+     "outcomes": [
+      "Student will be able to compose a formal, argumentative MLA-style research paper that shows an understanding of the writing process, technical correctness, and higher level critical thinking skills.",
+      "Student will be able to identify a career path and educational goals for a career in education taking into consideration the level(s) they want to teach and the institution(s) where they want to complete their degree(s) and credential(s).",
+      "Student will be able to provide a college-level in-class written analysis of authors’ content and style.",
+      "Student will be able to develop and teach a standards-based lesson in an authentic educational setting that will include intention/rationale, process, assessment, and reflection.",
+      "Student will be able to demonstrate basic public speaking delivery techniques."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Elementary Teacher Education: Integrated Programs (AAT)",
+     "open_elective_units": 3,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44090929578,
+   "program_title": "Elementary Teacher Education",
+   "control_number": "32933"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 11,
+    "placed": 11,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGLC1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG005",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENG025",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Program Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "COM002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOURN001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOURN002A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING011",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PA001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 28,
+      "min": 25
+     },
+     "outcomes": [
+      "Students will be able to compose essays based on topics in a manner that demonstrates college-level writing skills with articulate claims for a variety of purposes and audiences. This writing will exhibit critical thinking, control of meaning, maturity of style, and appropriate tone.",
+      "Students will be able to analyze the strengths and weaknesses of a piece of writing, including cogent or fallacious reasoning, as well as the assumptions, values, rhetorical moves, premises, and logical progressions.",
+      "Students will be able to exhibit an ability to interpret and analyze a variety of fiction and non-fiction works from a variety of genres, eras, and cultures.",
+      "Students will be able to locate, evaluate, interpret, and engage appropriate and credible sources and correctly incorporate source material into their arguments in rhetorically effective ways."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "English (AAT)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": 17,
+      "min": 14
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/english-aat-fall-2026",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44090929578,
+   "program_title": "English",
+   "control_number": "37134"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 8,
+    "placed": 8,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 15,
+       "min": 15
+      },
+      "courses": [
+       {
+        "code": "COMMC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM003",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COM004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMMC1004",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Program Electives",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYCC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "marketing",
+      "broadcasting",
+      "mass communication"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 28,
+      "min": 28
+     },
+     "outcomes": [
+      "Students will be able to demonstrate basic public speaking delivery techniques.",
+      "Students will be able to solve problems utilizing effective conflict management styles, decision making, and leadership.",
+      "Students will be able to understand and utilize the interdependent nature of verbal and nonverbal communication in the communication transactional process.",
+      "Students will be able to demonstrate effective argumentation by formulating written and/or oral arguments that are free of errors in reasoning."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Communication Studies 2.0 (AAT)",
+     "open_elective_units": 14,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/communication-studies-2-0-aat-fall-2026",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44090929578,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "44247"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 17,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core Courses",
+      "rule": "all",
+      "stated": {
+       "max": 25,
+       "min": 25
+      },
+      "courses": [
+       {
+        "code": "EDUC001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMMC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLSC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HISTC1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "CDEVC1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "BIO010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLC1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "PHYSCI002",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PA001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUS042",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART042",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List C",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "MATH010A",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST020",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Student attending ITEP must complete MATH010B. Student attending CSU must completed LING011.",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "MATH010B",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING011",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "teaching",
+      "operating a daycare",
+      "social work",
+      "school administration"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": 13,
+      "min": 13
+     },
+     "outcomes": [
+      "Student will be able to compose a formal, argumentative MLA-style research paper that shows an understanding of the writing process, technical correctness, and higher level critical thinking skills.",
+      "Student will be able to identify a career path and educational goals for a career in education taking into consideration the level(s) they want to teach and the institution(s) where they want to complete their degree(s) and credential(s).",
+      "Student will be able to provide a college-level in-class written analysis of authors’ content and style.",
+      "Student will be able to develop and teach a standards-based lesson in an authentic educational setting that will include intention/rationale, process, assessment, and reflection.",
+      "Student will be able to demonstrate basic public speaking delivery techniques."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Elementary Teacher Education: Integrated Programs (AAT)",
+     "open_elective_units": 3,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://westhillslemoore.elumenapp.com/catalog/26-27/program/elementary-teacher-education-integrated-programs-aat-fall-2026",
+   "catalog_year": "2026-2027",
+   "extracted_run": 44090929578,
+   "program_title": "Elementary Teacher Education: Integrated Programs",
+   "control_number": "45975"
+  }
+ ]
+}

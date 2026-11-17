@@ -6584,6 +6584,25 @@
    "hints": "2ed0f74427",
    "asked": "2026-10-18"
   },
+  "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson": {
+   "raw_title": "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson",
+   "unified_title": "Nondestructive Testing Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "American Aerospace Technical Academy (AATA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "No house family exists, so the title is new and follows the house apprenticeship shape. AATA is taken as the registered program sponsor and issuer of the journeyperson completion; verify against the DAS sponsor listing.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
   "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)": {
    "raw_title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
    "unified_title": "Personal Training Certification",
@@ -8204,6 +8223,24 @@
    "rules": "e9d6bb7f8641",
    "hints": "08c49a2e99",
    "asked": "2026-10-31"
+  },
+  "Aviation Mechanic- Airframe and Powerplant": {
+   "raw_title": "Aviation Mechanic- Airframe and Powerplant",
+   "unified_title": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+   "issuing_agency": "Federal Aviation Administration (FAA)",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "brand-family",
+    "Rule 4",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
   },
   "BA Empowering Entrepreneurs- HS CE(MVUSD)": {
    "raw_title": "BA Empowering Entrepreneurs- HS CE(MVUSD)",
@@ -15467,6 +15504,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "Goodwill Retail Operations Specialist Apprenticeship Journeyperson": {
+   "raw_title": "Goodwill Retail Operations Specialist Apprenticeship Journeyperson",
+   "unified_title": "Retail Operations Specialist Apprenticeship — Journeyperson",
+   "issuing_agency": "Goodwill Industries",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "No house family exists, so the title is new. The Goodwill affiliate that sponsors the program (likely Goodwill of Silicon Valley, given Foothill) is unconfirmed; the canonical issuer name needs review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
   "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )": {
    "raw_title": "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )",
    "unified_title": "Graphic Communications I — Orthographic Drawings",
@@ -15772,6 +15827,63 @@
    "_notes": "The Cx-typed row has no mechanism phrase, so the content is kept verbatim.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+   "raw_title": "High School Articulation- Criminal Justice/Crime Scene Investigation",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Local High School",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "_notes": "The cx hint was set aside because it kept the mechanism phrasing and gave CCC as issuer. The title is a generic high-school articulation with no school named, so the issuer is Local High School. The title joins the house Crime Scene Investigation course title on a guess; the aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "513bb8255b",
+   "asked": "2026-11-17"
+  },
+  "High School Articulation- Developmental Psychology of Children 1": {
+   "raw_title": "High School Articulation- Developmental Psychology of Children 1",
+   "unified_title": "Developmental Psychology of Children 1",
+   "issuing_agency": "Local High School",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "_notes": "The hint's title was mended by stripping the articulation phrase, and its CCC issuer was replaced with Local High School because no school is named. The aligned Las Positas course (possibly Child Growth and Development) is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "738a028745",
+   "asked": "2026-11-17"
+  },
+  "High School Articulation- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulation- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Local High School",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The hint's title was mended: the articulation phrase was stripped and Roman II became Arabic 2. The issuer is Local High School because no school is named. The aligned college course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "7da16baa97",
+   "asked": "2026-11-17"
   },
   "History of Fashion - Credit by Exam (FASH 31 )": {
    "raw_title": "History of Fashion - Credit by Exam (FASH 31 )",
@@ -17273,6 +17385,78 @@
    "rules": "e9d6bb7f8641",
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
+  },
+  "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson": {
+   "raw_title": "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson",
+   "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Santa Clara County Electrical Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman is the IBEW electrician classification, so this joins the house journeyperson family. The Local 332 JATC is taken as the training agency.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson": {
+   "raw_title": "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson",
+   "unified_title": "IBEW Residential Wireman Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Santa Clara County Electrical Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 4",
+    "Rule 7",
+    "mechanism-collapses"
+   ],
+   "_notes": "Residential Wireman has a narrower scope than Inside Wireman, so it is kept as a separate title. The Local 332 JATC is taken as the training agency.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson": {
+   "raw_title": "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson",
+   "unified_title": "IBEW Residential and Inside Wireman Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Santa Clara County Electrical Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 4",
+    "Rule 7",
+    "Rule 9"
+   ],
+   "_notes": "This exhibit bundles two classifications. It is given its own title for now; a person should decide whether to split it or fold it into the IBEW Electrician Journeyperson family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "IBEW Local 6 Inside Wireman Apprenticeship Journeyperson": {
+   "raw_title": "IBEW Local 6 Inside Wireman Apprenticeship Journeyperson",
+   "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "San Francisco Electrical Construction Industry Joint Apprenticeship and Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Inside Wireman joins the house IBEW Electrician Journeyperson family. The Local 6 JATC is taken as the training agency.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
   },
   "IBEW- Inside Wireman, Apprenticeship Year 1": {
    "raw_title": "IBEW- Inside Wireman, Apprenticeship Year 1",
@@ -20412,6 +20596,42 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "JOURN 018 News Production IV": {
+   "raw_title": "JOURN 018 News Production IV",
+   "unified_title": "News Production 4",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The hs-lane hint was mended by changing Roman IV to Arabic 4. The title comes from the Laney course title; no CCN or C-ID is known.",
+   "rules": "75e72fb99f8c",
+   "hints": "e232778122",
+   "asked": "2026-11-17"
+  },
+  "JOURN 018A  News Production I": {
+   "raw_title": "JOURN 018A  News Production I",
+   "unified_title": "News Production 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The hint was mended by changing Roman I to Arabic 1. The title comes from the Laney course title.",
+   "rules": "75e72fb99f8c",
+   "hints": "290ad6a862",
+   "asked": "2026-11-17"
+  },
   "JOURN 062 Survey of Mass Media": {
    "raw_title": "JOURN 062 Survey of Mass Media",
    "unified_title": "Survey of Mass Media",
@@ -20428,6 +20648,24 @@
    "rules": "d20f2caab9db",
    "hints": "be57a7ab3e",
    "asked": "2026-11-10"
+  },
+  "JOURN 18B News Production II": {
+   "raw_title": "JOURN 18B News Production II",
+   "unified_title": "News Production 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The hint was mended by changing Roman II to Arabic 2. The title comes from the Laney course title.",
+   "rules": "75e72fb99f8c",
+   "hints": "a14c579705",
+   "asked": "2026-11-17"
   },
   "Juvenile Corrections Training": {
    "raw_title": "Juvenile Corrections Training",
@@ -24654,6 +24892,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson": {
+   "raw_title": "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson",
+   "unified_title": "Sound and Communication Systems Installer Apprenticeship",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Northern California Sound and Communication Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "This joins the house IBEW Sound and Communication Installer family. The house title carries no journeyperson level, so a level-specific split may be wanted.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
   "Nursing Care of Children and Families": {
    "raw_title": "Nursing Care of Children and Families",
    "unified_title": "Nursing Care of Children and Families",
@@ -25164,6 +25420,328 @@
    "_notes": "Course content is taken verbatim. It is kept distinct from the numbered 'Photoshop for Photography 1/2/3' families.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Air-conditioning and refrigeration technology is taken as the UA Refrigeration Service Technician trade. The Pipe Trades Training Center is assumed to be UA Local 393's (San Jose); verify both.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1",
+   "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Trainer name taken out of the title. The title follows the UA house shape. Not folded into UA Refrigeration Service Technician Level 1, because this program runs five years and the Level family has only four. A curator may join the two. Local 393 (Santa Clara) as the trainer is an inference from Foothill College.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2",
+   "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Year 1: a UA HVACR apprenticeship year, kept apart from the four-level UA Refrigeration Service Technician family. The trainer is inferred.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3",
+   "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4",
+   "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+   "raw_title": "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5",
+   "unified_title": "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 5",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Year 5 has no counterpart in the existing four-level UA refrigeration family, which supports keeping this program separate. The trainer is inferred.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson": {
+   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson",
+   "unified_title": "UA Plumbing Technology Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Trainer name taken out of the title; UA house shape used. This could be a candidate to join UA Plumbers/Pipefitters Apprenticeship — Journeyperson, but this program covers plumbing only, so it is kept separate for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1": {
+   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1",
+   "unified_title": "UA Plumbing Technology Apprenticeship — Year 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "A plumbing-only UA apprenticeship year, kept apart from the combined Plumbers/Pipefitters Level family pending curator review. The trainer is inferred.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2": {
+   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2",
+   "unified_title": "UA Plumbing Technology Apprenticeship — Year 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3": {
+   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3",
+   "unified_title": "UA Plumbing Technology Apprenticeship — Year 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4": {
+   "raw_title": "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4",
+   "unified_title": "UA Plumbing Technology Apprenticeship — Year 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Plumbing Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson": {
+   "raw_title": "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson",
+   "unified_title": "UA Residential Plumbing Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4",
+    "mechanism-collapses"
+   ],
+   "_notes": "Residential Plumbing is a narrower scope than Plumbing Technology, so it is kept as its own credential. The trainer is inferred.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson": {
+   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson",
+   "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "This could join UA Steamfitter Apprenticeship — Journeyperson. It is kept separate because the program names differ and this program counts in years. Flagged for curator review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1": {
+   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1",
+   "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "A UA steamfitting/pipefitting apprenticeship year; it could join UA Steamfitter Apprenticeship — Level 1. The trainer is inferred.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2": {
+   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2",
+   "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Steamfitting Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3": {
+   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3",
+   "unified_title": "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "issuer-issues-the-card",
+    "Rule 7",
+    "Rule 4"
+   ],
+   "_notes": "Same reading as Steamfitting Year 1. The trainer is inferred from Foothill College's articulation.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4": {
+   "raw_title": "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4",
+   "unified_title": "UA Steamfitter and Pipefitter Apprenticeship — Year 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "Pipe Trades Training Center (UA Local 393)",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7",
+    "Rule 3"
+   ],
+   "_notes": "The Pipe Trades Training Center is taken to be the UA Local 393 JATC. This is a year-based program, so it was not mapped onto the level-based 'UA Steamfitter Apprenticeship — Level 4' family; a curator may merge it if Year 4 equals Level 4.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
   },
   "Pipe Welding-Credit by Exam": {
    "raw_title": "Pipe Welding-Credit by Exam",
@@ -27725,6 +28303,23 @@
    "hints": "a594ff3bf3",
    "asked": "2026-10-18"
   },
+  "Semiconductor Processing Apprenticeship Certificate": {
+   "raw_title": "Semiconductor Processing Apprenticeship Certificate",
+   "unified_title": "Semiconductor Processing Apprenticeship",
+   "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.4,
+   "procedures": [
+    "Rule 1",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "The title does not name a sponsor. DAS is a best guess as the body that registers the apprenticeship and issues its certificate; the actual sponsor still needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
   "Sheet Metal Apprenticeship SMART Local 105 Journeyperson": {
    "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
    "unified_title": "SMART Sheet Metal Apprenticeship — Journeyperson",
@@ -27832,6 +28427,94 @@
    "rules": "575c290d755b",
    "hints": "4f53cda18c",
    "asked": "2026-10-30"
+  },
+  "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson": {
+   "raw_title": "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson",
+   "unified_title": "Sheet Metal Air Conditioning Mechanic Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 104",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "This was kept apart from 'Sheet Metal Service Technician Apprenticeship — Journeyperson' because the air conditioning mechanic trade may be a distinct scope.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate": {
+   "raw_title": "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate",
+   "unified_title": "Sheet Metal Air Conditioning Specialist Career Certificate",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 104",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a non-apprenticeship career certificate from Local 104, so it was given a new title rather than joined to a family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson": {
+   "raw_title": "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson",
+   "unified_title": "Sheet Metal Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 104",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "The building trades sheet metal journeyperson was joined to the existing SMART Sheet Metal Apprenticeship journeyperson family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement": {
+   "raw_title": "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement",
+   "unified_title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 104",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "join-when-likely-one",
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "The Certificate of Achievement is assumed to be the completion award of the TAB apprenticeship, so it was joined with the Journeyperson row. Faculty may split them if it marks a different stage.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson": {
+   "raw_title": "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson",
+   "unified_title": "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 104",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a new title for the TAB technician trade; no house family exists for it.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
   },
   "Smog Check Inspector and Smog Check Repair Technician": {
    "raw_title": "Smog Check Inspector and Smog Check Repair Technician",
@@ -28312,6 +28995,202 @@
    "_notes": null,
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "join-when-likely-one",
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "Air conditioning and refrigeration journeyperson was joined to the UA Refrigeration Service Technician journeyperson family as likely the same trade completion.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1",
+   "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2",
+   "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3",
+   "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4",
+   "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a 5-year program, so the years were not mapped onto the 4-level UA Refrigeration Service Technician family; a curator may merge.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
+   "raw_title": "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5",
+   "unified_title": "UA Air Conditioning and Refrigeration Apprenticeship — Year 5",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "This is a 5-year program with no Level 5 in the UA family, so it gets a new year-based title.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "This joins the existing UA Plumbers/Pipefitters journeyperson family, with the local as trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1": {
+   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Year 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "Kept as Year 1 rather than merged into the 'UA Plumbers and Pipefitters Apprenticeship — Level 1' family because Local 467's year-to-level equivalence is unverified. A curator may merge them.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2": {
+   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467 Joint Apprenticeship Training Committee",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "Joined the house UA Plumbers/Pipefitters family on the assumption that Year 2 is Level 2. The local number moves to the trainer, because the family is local-agnostic (only Local 342 has its own course-coded family). The trainer name is inferred and should be checked.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3": {
+   "raw_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 467 Joint Apprenticeship Training Committee",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "Joined the house UA Plumbers/Pipefitters family on the assumption that Year 3 is Level 3. The local number moves to the trainer. The trainer name is inferred and should be checked.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
+  },
+  "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+   "raw_title": "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": "UA Local 62 Joint Apprenticeship Training Committee",
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "apprenticeship-trades",
+    "Rule 7"
+   ],
+   "_notes": "Joined the house UA Plumbers/Pipefitters Journeyperson family, with Local 62 as the trainer. The trainer name is inferred and should be checked.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-17"
   },
   "Unity Certified Professional Programmer": {
    "raw_title": "Unity Certified Professional Programmer",

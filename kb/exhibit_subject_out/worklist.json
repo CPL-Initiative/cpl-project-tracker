@@ -2,7 +2,7 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-16T17:30:50Z",
+ "written_at": "2026-11-17T17:10:05Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
@@ -551,8 +551,8 @@
     "MAPICA-NCCT42-1-001"
    ],
    "votes": {
-    "WEXP": 1,
-    "CNST": 1
+    "CNST": 1,
+    "WEXP": 1
    }
   },
   {
@@ -1307,10 +1307,10 @@
     "BSOT": 7,
     "CDEV": 13,
     "AUTO": 7,
-    "AVIA": 1,
+    "EMST": 1,
     "BIOL": 2,
     "BUSI": 2,
-    "EMST": 1,
+    "AVIA": 1,
     "PARA": 1
    }
   },
@@ -2178,8 +2178,8 @@
     "MAPPRA-J1P-1-001"
    ],
    "votes": {
-    "ENGL": 1,
-    "COMM": 1
+    "COMM": 1,
+    "ENGL": 1
    }
   },
   {

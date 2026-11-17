@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-17T10:44:37Z",
-  "session": 675,
-  "moniker": "SkyLinnet",
+  "written_at": "2026-11-17T14:29:09Z",
+  "session": 676,
+  "moniker": "SkyPipit",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_676_handoff.md",
+  "handoff": "docs/session_677_handoff.md",
   "next_step": {
     "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, slice B: the other seven yield colleges capture again under the current code."
+    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Beside it, Chaffey, the last slice B yield college, is reread, loaded and merged once its read finishes."
   },
   "calls": [
     {
@@ -338,6 +338,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-17T14:30:00Z",
+      "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
+    },
+    {
       "at": "2026-11-17T10:40:00Z",
       "text": "Norco's Music Industry Studies: Performance degree and certificate now add up: each ensemble option counts its courses the number of times its own heading says, so every option comes to its printed 8 units."
     },
@@ -638,14 +642,14 @@
     {
       "day": "2026-11-17",
       "active": 20282,
-      "complete": 14623,
+      "complete": 14632,
       "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-17T11:12:00Z"
+    "at": "2026-11-17T15:12:00Z"
   },
   "harvest": {
     "day": "2026-11-17",
@@ -670,7 +674,7 @@
         20282
       ],
       "coci": [
-        16749,
+        16753,
         20282
       ],
       "outcomes": {
@@ -679,12 +683,12 @@
           88736
         ],
         "plo": [
-          16749,
+          16753,
           20282
         ]
       },
       "careers": [
-        15739,
+        15743,
         20282
       ]
     }

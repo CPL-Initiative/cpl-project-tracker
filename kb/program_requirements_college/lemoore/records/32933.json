@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8506,
-    "output_tokens": 3521,
+    "output_tokens": 3743,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,53 @@
     "model": null
    }
   ],
-  "output_tokens": 3521,
+  "output_tokens": 3743,
   "output_tokens_details": {
-   "thinking_tokens": 1365
+   "thinking_tokens": 1639
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10444,
- "ms": 28170,
- "seconds": 29.1,
+ "cost_usd": 0.10888,
+ "ms": 30727,
+ "seconds": 31.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 19,
-   "share": 0.684,
+   "share": 0.737,
    "missing": [
     "CD5",
     "EDUC5",
-    "ENG2",
     "ESCI2",
     "HIST17A",
     "SOC2"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "BIO10",
     "CDEVC1000",
-    "ENGLC1002",
     "HISTC1001"
    ],
    "flagged": [
     "BIO10",
     "CDEVC1000",
-    "ENGLC1002",
     "HISTC1001"
    ],
    "pass": true
@@ -340,10 +344,6 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "HIST 017A",
-    "why": "not in the text; catalog lists HISTC1001 United States History to 1877 instead"
-   },
-   {
     "code": "CD 5",
     "why": "not in the text; catalog lists CDEVC1000 Child Growth and Development instead"
    },
@@ -352,8 +352,12 @@
     "why": "not in the text; catalog lists ENGLC1002 Introduction to Literature instead"
    },
    {
+    "code": "HIST 017A",
+    "why": "not in the text; catalog lists HISTC1001 United States History to 1877 instead"
+   },
+   {
     "code": "ESCI 2",
-    "why": "named only in the recommended sequence as a Cal-GETC Area 5A course, not a major requirement"
+    "why": "named only in the Recommended Sequence as a Cal-GETC Area 5A course, not a major requirement"
    },
    {
     "code": "EDUC 5",
@@ -365,14 +369,14 @@
    }
   ],
   "notes": [
-   "The page prints 'Total 60' / 'Complete the following number of credits: 60' over the major lists, 'Cal-GETC requirements 13' and 'Transferable elective units ... 3'; recorded as degree_total 60, ge_units 13, open_elective_units 3. No separate major total is printed (major lists sum to 44).",
-   "ge_units records the 13 Cal-GETC units printed in the requirements table (remaining after double counting); the description separately states Cal-GETC requires 34 semester units.",
-   "List C prints 'Complete the following number of rules: 4' and 'Total 12' but lists only three courses; the fourth rule appears to be the following nested group (MATH010B or LING011, Total 3). Recorded List C's three courses as required with stated 12 as printed; the 12 includes the nested 3-unit block, so do not add both.",
-   "The MATH010B/LING011 choice is determined by transfer destination: ITEP students must take MATH010B, CSU-bound students must take LING011. The recommended sequence lists both MATH010B and LING011.",
-   "HISTC1001, CDEVC1000 and ENGLC1002 appear to be renumbered (C-ID/common course numbering) versions of closed-list HIST 017A, CD 5 and ENG 2, but are marked catalog additions because the codes differ. BIO010 is not on the closed list.",
-   "Codes recorded as printed without spaces (e.g., EDUC001 = closed-list EDUC 1, COMMC1000 = COMM C1000).",
-   "Program outcomes are printed under the heading 'Elementary Teacher Education, A.A- T Degree' and apply to this award."
+   "List C prints 'Complete the following number of rules: 4' (Total 12) but lists only three courses; the fourth rule appears to be the following MATH010B/LING011 choice block (Total 3), so that block's 3 units are likely inside List C's 12. List C recorded as 'all' of its three courses with stated 12; reviewer should avoid double counting the 3 units.",
+   "Printed component totals: Core 25 + List A 4 + List B 3 + List C 12 + Cal-GETC requirements 13 + transferable electives 3 = 60. No separate major total is printed, so total_units is null and 60 is recorded as degree_total.",
+   "ge_units records the 'Cal-GETC requirements 13' line from the requirements table (GE remaining after double counting); the general ADT text states Cal-GETC requires 34 semester units.",
+   "The Recommended Sequence lists Cal-GETC courses (ESCI002, ENGLC1001, STATC1000, ES001) that are not major requirements; they were not placed in blocks. It also places LING011 under List C.",
+   "Catalog codes HISTC1001, CDEVC1000, ENGLC1002 appear to be renumbered (C-ID common course numbering) versions of closed-list HIST 017A, CD 5 and ENG 2; marked as catalog additions. BIO010 is not in the closed list.",
+   "Program outcomes are printed under 'Elementary Teacher Education, A.A- T Degree'; PSLO numbering removed."
   ]
  },
- "extracted_run": "38979392604"
+ "extracted_run": "44090929578",
+ "catalog_year": "2026-2027"
 }
