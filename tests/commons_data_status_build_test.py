@@ -351,6 +351,41 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(14) the sidecars go beside --out when one is given, never into the repo", p1 == os.path.join(tmp, B.PROGRAMS_DIR)
           and p2 == os.path.join(tmp, "x", "commons_data_programs"), (p1, p2))
 
+# (14b) a units cause carries the two figures it rests on, and the sidecar says whether the college has correction
+# rules of its own (S678, #3461 page findings 3 and 4: "our lists add up to A; the catalog prints B", and who acts).
+with tempfile.TemporaryDirectory() as tmp:
+    cd = os.path.join(tmp, B.COLLEGE_DIR, "ridge")
+    os.makedirs(os.path.join(cd, "records"))
+    json.dump([{"control_number": "42987", "title": "Physical Therapist Assistant", "award": "A.S. Degree", "method": "sitemap_page",
+                "source": {"url": "https://ridge.example.edu/pta"}},
+               {"control_number": "20677", "title": "Business", "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+                "method": "sitemap_page", "source": {"url": "https://ridge.example.edu/bus"}},
+               {"control_number": "07777", "title": "Welding", "award": "A.S. Degree", "method": "sitemap_page", "source": {"url": "https://ridge.example.edu/w"}}],
+              open(os.path.join(cd, "sources.json"), "w"))
+    json.dump({"control_number": "42987", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [56.0, 56.0], "stated": [65.0, 65.0]}}},
+              open(os.path.join(cd, "records", "42987.json"), "w"))
+    json.dump({"control_number": "20677", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [18.0, 19.0], "stated": [18.0, None]}}},
+              open(os.path.join(cd, "records", "20677.json"), "w"))
+    json.dump({"control_number": "07777", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [30, 30], "stated": [60, 60]}}},
+              open(os.path.join(cd, "records", "07777.json"), "w"))
+    os.makedirs(os.path.join(tmp, "kb"), exist_ok=True)
+    json.dump({"colleges": {"Hill College": {"steps": []}}}, open(os.path.join(tmp, "kb", "program_requirements_reconcile.json"), "w"))
+    census = {"programs": [
+        {"college": "Ridge College", "control_number": "42987", "cause": "units_unequal", "lever": "reconcile_steps"},
+        {"college": "Ridge College", "control_number": "20677", "cause": "units_unequal", "lever": "reconcile_steps"},
+        {"college": "Ridge College", "control_number": "07777", "cause": "coverage_fails", "lever": "reconcile_steps"},
+        {"college": "Hill College", "control_number": "11111", "cause": "page_not_found", "lever": "reader_page_search"}]}
+    sc = B.cause_programs(tmp, census, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}})
+    by = {r["cn"]: r for r in (sc.get("ridge") or {}).get("programs") or []}
+    check("(14b) ⭐ a units cause carries our lists' sum beside the figure the catalog prints",
+          by.get("42987", {}).get("units") == {"sum": [56.0, 56.0], "printed": [65.0, 65.0], "status": "unequal", "measure": "units", "against": "program"},
+          by.get("42987"))
+    check("(14b) a one-ended figure reads as its low end twice", by.get("20677", {}).get("units", {}).get("printed") == [18.0, 18.0], by.get("20677"))
+    check("(14b) a cause that is not a units cause carries no figures", "units" not in by.get("07777", {"units": 1}), by.get("07777"))
+    check("(14b) ⭐ the sidecar says whether the college has correction rules of its own on file",
+          sc["ridge"]["correction_rules"] is False and sc["hill"]["correction_rules"] is True, (sc["ridge"].get("correction_rules"), sc["hill"].get("correction_rules")))
+    check("(14b) the sidecar still reads back whole", json.loads(B.dumps_programs(sc["ridge"])) == sc["ridge"])
+
 # Then the repo: each committed sidecar agrees with its college's cause counts, and --check covers them.
 PD = os.path.join(ROOT, B.PROGRAMS_DIR)
 off = []
