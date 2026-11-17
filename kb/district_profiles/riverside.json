@@ -200,12 +200,13 @@
         "auto_award": null,
         "evidence": {
           "sources": [
-            "cobix_start_brief",
-            "cip_fitcheck"
+            "exhibits_adoption",
+            "cip_fitcheck",
+            "cobix_start_brief"
           ],
-          "confidence": "limited",
+          "confidence": "partial",
           "checked_at": "2026-11-17T07:00:00Z",
-          "note": "MAP exhibits show Basic Military Training awarding KIN A81A, KIN A81B and HES 1 at the district's colleges (start brief; the course codes exist in Riverside City's COCI list). The SIS posting code is not known."
+          "note": "MAP exhibits award Basic Military Training KIN A81A (1 unit, Weight Training I), KIN A81B (1 unit, Advanced Strength Training) and HES 1 (3 units, Principles of Health Education) at the district's colleges (kb/exhibits_adoption.json). The SIS posting code is not known."
         }
       }
     ],
@@ -477,6 +478,14 @@
         "kind": "repo_file",
         "ref": "kb/status/harvest_gap_census.json (per_college, 2026-11-13)",
         "title": "Harvest gap census",
+        "read_at": "2026-11-17T07:00:00Z",
+        "http_status": null
+      },
+      {
+        "id": "exhibits_adoption",
+        "kind": "repo_file",
+        "ref": "kb/exhibits_adoption.json",
+        "title": "MAP exhibit adoption: Basic Military Training at the RCCD colleges awards KIN A81A, KIN A81B and HES 1 (5 units)",
         "read_at": "2026-11-17T07:00:00Z",
         "http_status": null
       },
