@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 118,
  "with_closed_list": 79,
- "started": "2026-10-18T09:41:56Z",
+ "started": "2026-11-17T13:16:55Z",
  "scope": null,
  "sitemap": {
   "url": "https://craftonhills.smartcatalogiq.com/sitemap.xml",
@@ -14,14 +14,400 @@
   "nested": 0,
   "program_pages": 0,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null
  },
  "index_fallback": 3,
+ "index_failed": [],
+ "listing_failed": 0,
  "pages_read": 229,
+ "pages_listed": 229,
+ "pages_answered": 229,
  "child_pages": 226,
  "banner_h1": "2026-2027 Catalog",
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 64,
+   "hits": 60,
+   "recall": 0.938,
+   "false": 2,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 10,
+   "false_matches": [
+    {
+     "control_number": "11766",
+     "title": "Teacher",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/teacher-certificate-of-achievement"
+    },
+    {
+     "control_number": "41675",
+     "title": "Social Justice Studies",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/social-justice-studies-associate-in-arts-for-transfer-degree-aa-t"
+    },
+    {
+     "control_number": "11766",
+     "title": "Teacher",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/teacher-certificate-of-achievement",
+     "h1": ""
+    },
+    {
+     "control_number": "41675",
+     "title": "Social Justice Studies",
+     "award": "A.A- T Degree",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/social-justice-studies-associate-in-arts-for-transfer-degree-aa-t",
+     "h1": ""
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "11766",
+     "title": "Teacher",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/teacher-certificate-of-achievement",
+     "h1": ""
+    },
+    {
+     "control_number": "41675",
+     "title": "Social Justice Studies",
+     "award": "A.A- T Degree",
+     "page": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/social-justice-studies-associate-in-arts-for-transfer-degree-aa-t",
+     "h1": ""
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 39,
+  "by_result": {
+   "not_searched": 38,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "04823",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04825",
+    "title": "Business Administration",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04826",
+    "title": "Marketing Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04829",
+    "title": "Computer Information Systems",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04831",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04832",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04833",
+    "title": "Theatre Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04838",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04839",
+    "title": "English",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04840",
+    "title": "Speech",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04841",
+    "title": "Philosophy",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04842",
+    "title": "Religious Studies",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04843",
+    "title": "Mathematics",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04844",
+    "title": "Physics",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04845",
+    "title": "Chemistry",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04846",
+    "title": "Geology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04847",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04849",
+    "title": "Fire Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04850",
+    "title": "Anthropology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04852",
+    "title": "History",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04853",
+    "title": "Geography",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04854",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "04855",
+    "title": "Sociology",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "07491",
+    "title": "Emergency Medical Services",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11767",
+    "title": "Master Teacher",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "11768",
+    "title": "Site Supervisor",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17040",
+    "title": "Environmental Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17041",
+    "title": "Multiple Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "17042",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18161",
+    "title": "CSU General Education - Breadth",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18162",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "18598",
+    "title": "Liberal Studies - Teacher Preparation",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18678",
+    "title": "Humanities",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18679",
+    "title": "Health Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20894",
+    "title": "Business Management",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20896",
+    "title": "Computer Information Systems",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20906",
+    "title": "Radiologic Technology",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "20907",
+    "title": "EMT-Paramedic",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "35849",
+    "title": "Job Readiness Skills",
+    "award": null,
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 60 of 64 closed-list programs on their own page, 2 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 231,
- "seconds": 1229.3,
+ "seconds": 1131.5,
  "found": 76,
  "by_method": {
   "no_closed_list": 39,
@@ -58,7 +444,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   }
  ],
  "page_claimed": [
@@ -67,9 +454,9 @@
    "title": "Public Health Science",
    "award": "A.S. T Degree",
    "pages": [
-    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t",
-    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement"
-   ]
+    "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t"
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "41365",
@@ -77,19 +464,414 @@
    "award": "A.S. Degree",
    "pages": [
     "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
-  "0.8-1.0": 15,
-  "1.0": 55
+  "0.5-0.8": 2,
+  "0.8-1.0": 17,
+  "1.0": 57
  },
  "would_extract": {
   "against": "kb/program_requirements_college/crafton_hills",
-  "kept": 76,
-  "programs": 0,
-  "list": []
+  "kept": 68,
+  "kept_moved": 0,
+  "programs": 8,
+  "list": [
+   {
+    "control_number": "04856",
+    "title": "Child Development",
+    "award": "A.A. Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+    "coverage": 0.889,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+    "was_coverage": 0.778,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11766",
+    "title": "Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+    "coverage": 0.875,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30555",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/sociology-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/sociology-associate-in-arts-for-transfer-degree-aa-t",
+    "was_coverage": 0.941,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32014",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/early-childhood-education-associate-in-science-for-transfer-degree-as-t",
+    "coverage": 0.875,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/early-childhood-education-associate-in-science-for-transfer-degree-as-t",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33145",
+    "title": "Anthropology",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/anthropology-anth/anthropology-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 0.958,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/anthropology-anth/anthropology-associate-in-arts-for-transfer-degree-aa-t",
+    "was_coverage": 0.917,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41675",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+    "coverage": 0.955,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+    "was_coverage": 0.773,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45714",
+    "title": "California General Education Transfer Curriculum",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement",
+    "coverage": 0.972,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement",
+    "was_coverage": 0.949,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "46347",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t",
+    "coverage": 1.0,
+    "was_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t",
+    "was_coverage": 0.927,
+    "was_method": "sitemap_page"
+   }
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39116269641"
+ "fingerprints": {
+  "04836": {
+   "sha256": "7a8eb13c90afd86c299d69ea856e94730b8976ad6e3851315fffcd99019f8bb6",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-degree"
+  },
+  "04837": {
+   "sha256": "97c6f45ba226acc761a4d333dea82dff5c4dac18aeffd270eeb332e248e9fad7",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/respiratory-care-associate-of-science-degree"
+  },
+  "04856": {
+   "sha256": "0c60e808fd24689700a17a36e009a9b7083572e053d57199a9828652a3fa3f6b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree"
+  },
+  "11766": {
+   "sha256": "b3658f488376651f65258e466f46c856e3321df3bdb3e2c197271c58b66a90f5",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/master-teacher-certificate-of-achievement"
+  },
+  "18677": {
+   "sha256": "55c2414d73d4d130d425db7fab21287ac0b137a920c2a3726c591210cd5d59fa",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multidisciplinary-studies/fine-arts-associate-of-arts-degree"
+  },
+  "30451": {
+   "sha256": "f8abb05bb0a7034b4ba127e2da7997666ae2640ea67e62c559a7e10dad8cdbea",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-certificate-of-achievement"
+  },
+  "30453": {
+   "sha256": "728115649cb7511a875eabe22106aaab9b7f59273a3387b1b3eb776c19ac4a34",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/american-sign-language-asl/american-sign-language-associate-of-arts-degree"
+  },
+  "30555": {
+   "sha256": "9597b0432393940cdb8dc2ed1aa8a1453275459e73266196f99533382b99a0b7",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/sociology-soci/sociology-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "30556": {
+   "sha256": "b45b99fd701f5ecc2d97262988b4207ae0dc523740bacf0dae9b052dda2676e8",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "30559": {
+   "sha256": "c349e0709ec6f7904bac5ed193b2887fc123c68af6b2ba090c63628474b2497a",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t"
+  },
+  "31355": {
+   "sha256": "2c70f1fa8b5b5e85bead39f1134ff453d87f9eebb8afc3b62efe14bb99ac535c",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/psychology-psyc/psychology-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "31384": {
+   "sha256": "19188b988e722d691e4cff6dfc6220ccd46c36f66ef93088082cf351d3442cfb",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geology-geol/geology-associate-in-science-for-transfer-degree-as-t"
+  },
+  "31385": {
+   "sha256": "6d006eaf9fa6276a7b60782ac257e6abc065a4e8897494f5d901c0afb8b664a7",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t"
+  },
+  "31386": {
+   "sha256": "f1bfbb37984d3df86d6f137b7a5a64ab9a3af9094e2dafe03f72ff750132994c",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/english-engl/english-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "31387": {
+   "sha256": "7929e3f3d0fbaa28bc15d8f3e1e9f40b2d5f08349d0c93621bc0e9e07b85ccae",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/theatre-arts-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "31388": {
+   "sha256": "7fb404e7db0d5c2d09acd3ed4781c3caabe2ee846ffddab00ed08c54028ef021",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/history-hist/history-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "31389": {
+   "sha256": "281ee57af56e56fedd63ca12941c7ce7fd45ac9066a3282695869bdbb7ae3a67",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/political-science-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "31418": {
+   "sha256": "a91589e686599eebd8763e9a1646d9ef79a0f9f5cb48ae3483a945430cb3e87f",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/retail-management-certificate-of-achievement"
+  },
+  "31770": {
+   "sha256": "e8b1028e22ac31a4efb44743976ca98df86e3b774200e947f69c5cb6dcf1375a",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t"
+  },
+  "32014": {
+   "sha256": "a5f12c7ad0afb780eed61908304450a0f1270831ea215573885ad280fcc9a805",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/early-childhood-education-associate-in-science-for-transfer-degree-as-t"
+  },
+  "33027": {
+   "sha256": "41b92423d9c7fcd6c0d3c5c14a5a9f9abb8913c284bb95fa6456ae2a0620342a",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/studio-arts-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33037": {
+   "sha256": "0e8666637dd34850806540d65251a463ac128fe77fed0bbfb19d637b5bae1220",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/art-art/art-history-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33068": {
+   "sha256": "94d52206fd0cf8707a95045f6f30350df234a1bc5711d5a9e047c70612f78605",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-in-science-for-transfer-degree-as-t"
+  },
+  "33105": {
+   "sha256": "2b954629382fa4139a2cd7cbccce124b0ef32475faaf4db75f62356c99623219",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/kinesiology-kin/kinesiology-associate-in-arts-for-transfer-degree"
+  },
+  "33106": {
+   "sha256": "a0739768a21961449e01e4a0c9ee0e0f99b2ff85357078c84624c3160ed38d47",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/spanish-associate-of-arts-for-transfer-degree-aa-t"
+  },
+  "33107": {
+   "sha256": "dbf5efe6f807f8d38e700051d3be531393e696a4d36da1f74b7e8210be5d918a",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/geography-geog/geography-associate-in-arts-for-transfer-degree-aat"
+  },
+  "33145": {
+   "sha256": "bcfe74e9dfca123bc77a8e2b9605f6345910117acb8220def2b20dca485c6a7b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/anthropology-anth/anthropology-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33232": {
+   "sha256": "aa25a6b76452abc0055b4715ad2acecf13ff15a65f32254bc9c12a39dfa154bb",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/economics-econ/economics-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33345": {
+   "sha256": "e7a5d3050219da1a1697dec496fade2511c53f376afb89a011bda4d89d03a270",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/philosophy-phil/philosophy-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33539": {
+   "sha256": "2051f979809a616add2df8941dd391347ea3b8a41114d777c090825a12f5f821",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/music-music/music-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "33545": {
+   "sha256": "63a7c18101a79b91ddf0741f77fa1c6dd8751c9bb37b8361bf4c627caba952df",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t"
+  },
+  "33618": {
+   "sha256": "84f4c3f6e9c9656b237e033e3eaab725a8e686833a543ebdfe441040d5904b23",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/chemistry-chem/chemistry-associate-of-science-for-transfer-degree-as-t"
+  },
+  "35149": {
+   "sha256": "d6a106e992a28aa13fa7828c3936041ed443f6ba164360a41f15245689ffbc35",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/biology-biol/biology-associate-of-science-for-transfer-degree-as-t"
+  },
+  "35451": {
+   "sha256": "1a89d2aed4c4c1a8a9d911d871dbbe99867d6074e7ec27c3cee9a2cf7164af64",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-science-csci/computer-science-associate-of-science"
+  },
+  "35822": {
+   "sha256": "3d6b80b42a075430f66dd02393d9e80564909e792e0b7be4b7333056ac1b0d60",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/workforce-literacy-skills"
+  },
+  "37652": {
+   "sha256": "7f6c279b20e69e142d054c636d60657b1ad3ed07c76cf711dc0b144e7efa3470",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/fire-technology-firet/firefighter-i-basic-training-academy-certificate-of-achievement"
+  },
+  "37794": {
+   "sha256": "331e8bdea913b343fdb570f889ba4825560227927f39edd5d14c48380fbc040b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/nutrition-and-dietetics-associate-in-science-for-transfer-degree-as-t"
+  },
+  "38418": {
+   "sha256": "023f68dd61656415e76f891720697825e8b15c89864a8133967169f51c2e0c73",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-esl"
+  },
+  "38464": {
+   "sha256": "f57aac26d901963cdf8ed089baf4b7a6f7675557f13a65ab0896fe7784f2909f",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-competency/basic-skills-in-math-elementary-level"
+  },
+  "38495": {
+   "sha256": "6d26dc19bad300a0ae53da29de043a0c7336a34a70f9762c861034284c6cf900",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-associate-of-science-degree"
+  },
+  "38513": {
+   "sha256": "01abfd1aeaa7994e712e4269d8913baa0876b8daf34a0309aca49e36a2d59ff4",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-graphic-and-media-design-associate-of-science-degree"
+  },
+  "38518": {
+   "sha256": "f8313bc657dd2694484e80fa5261ee4593a893157019238e2c5a2b39fc76089b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cloud-technology-specialist-certificate-of-achievement"
+  },
+  "38519": {
+   "sha256": "408d89b591585d58adbe5640ec2b67f01f3e4c235f2f2ac752bb15045e31923b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cybersecurity-specialist-certificate-of-achievement"
+  },
+  "38520": {
+   "sha256": "b501cd32e819110e37e01130e59c681f649d404c28e77155b07b4646e320db70",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/3d-modeling-for-animation-game-art-and-visual-effects-certificate-of-achievement"
+  },
+  "38521": {
+   "sha256": "a4b354373af816fbdd955a97d43afcbb6cebe6967703fb157b9b20272e792dcd",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/graphic-and-media-design-certificate-of-achievement"
+  },
+  "38537": {
+   "sha256": "456f716ff5a260a960c62ec3df729e4722ac3e75191ae4c6c6c89a7a8a71c0e7",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/web-development-certificate-of-achievement"
+  },
+  "38538": {
+   "sha256": "e3cbd5217bf08259a6ebc3f81dbad571294848d8bca560dd0fcf62dbfe7d6ed8",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/user-interface-design-certificate-of-achievement"
+  },
+  "38539": {
+   "sha256": "31b387d3ec3698eee981b6129a729be518061c4c8b919ba441e3f8472f24e73f",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/multimedia-multi/multimedia-web-development-and-interface-design-associate-of-science-degree"
+  },
+  "41025": {
+   "sha256": "fed0b6966cb25e14b3bcd66876cd471e50381c53c0f4dde163bed5e6eebdbca5",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-network-administration-associate-of-science-degree"
+  },
+  "41140": {
+   "sha256": "6d006eaf9fa6276a7b60782ac257e6abc065a4e8897494f5d901c0afb8b664a7",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/business-administration-busad/business-administration-20-associate-in-science-for-transfer-degree-as-t"
+  },
+  "41284": {
+   "sha256": "f690284b804ac666e146d81e0ffec07df4e2a3ae615212f06b1bea37d2617ad3",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/marketing-market/marketing-associate-of-arts-degree"
+  },
+  "41285": {
+   "sha256": "5495db55391dd284c912987a2323bc8f66c47b2716a0aff392a2529811cae18e",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/accounting-acct/accounting-associate-of-arts-degree"
+  },
+  "41286": {
+   "sha256": "8a742870446261e991095c7e1a549e80f90b2fbe8ac88875a68d9a8e4b882872",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/cisco-certified-network-associate-certificate-of-achievement"
+  },
+  "41335": {
+   "sha256": "199b04487d204db5c6aa1bbb48d9bc6ae4b0f3c1fb4f86cb4178111e6c737536",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/computer-information-systems-cis/computer-information-systems-certificate-of-achievement"
+  },
+  "41675": {
+   "sha256": "e6c07586ca9625eec9aa5f25d838f5c158e061ab04bae93fa22637fa5718bb07",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree"
+  },
+  "42455": {
+   "sha256": "1af981d8f4cf448af155ffc2fa0f3a2719760e2e8d2e21f09fa3c5e6a38b480b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/certified-nursing-assistant"
+  },
+  "43313": {
+   "sha256": "c90935be50896915713fe1e276285d6c1642b060f8f0c472d691eda8f8119ec9",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/respiratory-care-resp/bachelor-of-science-in-respiratory-care"
+  },
+  "43530": {
+   "sha256": "b45b99fd701f5ecc2d97262988b4207ae0dc523740bacf0dae9b052dda2676e8",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/communication-studies-comm/communication-studies-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "43604": {
+   "sha256": "87ab084c2de2b04048779f35784155bc1746edf909b1fabbec56176bb73374f1",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/acute-care-nursing-assistant"
+  },
+  "43611": {
+   "sha256": "fd535c08fee2b27ca07eaf36392d5075deec6d49c4b3aed6a9e924b3f468143f",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/home-health-aide"
+  },
+  "44042": {
+   "sha256": "41af2cce2eaa31e701d8dbee0501f4ddc29aabe1e22d11964b73719b62cad225",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/essential-asl-and-deaf-culture-for-customer-service-professionals"
+  },
+  "44088": {
+   "sha256": "b6dd7ac5caaa8eb5e5518f8320c111d83b1c42de62e12ecfe3a9a0ee324bf459",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/mathematics-for-medical-professionals"
+  },
+  "44341": {
+   "sha256": "a759ba101023b5e4acf90892a60333719bc8648c32fb6ffb6d52627bea350caa",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/library-science-libr/library-support-staff-certificate-of-achievement"
+  },
+  "44342": {
+   "sha256": "3cdc156548344b9a0d0c57934504f5cade2fc60bbf3020a252e9af05ace1808b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/theatre-arts-thart/technical-theatre-certificate-of-achievement"
+  },
+  "44736": {
+   "sha256": "d6ce19402529c502b87c46c317de66a0c709fd14a1a3520163dc991d8885ef24",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/health-heatlth/public-health-associate-in-science-for-transfer-degree-as-t"
+  },
+  "44803": {
+   "sha256": "7893e128e0751c7a5b1e2dd77dfb1a02b0e9a097746f2139a68d50a08b00432b",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/phlebotomy-technician"
+  },
+  "44826": {
+   "sha256": "081f25484f908bb9b5b0c47763a26ce4801aa54848769dd7180ea8a4a262420c",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/spanish-span/basic-spanish-language-certificate-of-achievement"
+  },
+  "45083": {
+   "sha256": "73952050d331a1488211f5c7c323bb77dbb9fa0acea4f09875ab464e825f84e8",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/noncredit-certificates/certificates-of-completion/personal-trainer"
+  },
+  "45714": {
+   "sha256": "8175492747ef6083e5b5146dcc908dad7514dfe0d9079a10e56092249045da9e",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/cal-getc-certificate-of-achievement"
+  },
+  "45730": {
+   "sha256": "168f763776548ea9c91ddaf3cf0f0298498e38b25815d4d9787a61d7a74f71bd",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/transitional-kindergarten-teacher-certificate-of-achievement"
+  },
+  "46010": {
+   "sha256": "5205fe547c3228f15ef49c81dec627d9ee4bdba5b40a8791fe799b2ca57fe2d6",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-certificate-of-achievement"
+  },
+  "46011": {
+   "sha256": "582c03d71591b1d387215fc7d13a0cbfca15a47f1c63f0d14a76c1088b98ca34",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/vocational-nursing/vocational-nursing-associate-of-science"
+  },
+  "46347": {
+   "sha256": "52e38685912a5adcfd10b219b1414e839159b6b8280e2c4a4b9e0c0e6a292df2",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/political-science-pols/law-public-policy-and-society-associate-in-arts-for-transfer-degree-aa-t"
+  },
+  "46384": {
+   "sha256": "63a7c18101a79b91ddf0741f77fa1c6dd8751c9bb37b8361bf4c627caba952df",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/associate-in-arts-in-elementary-teacher-education-for-transfer-aa-t"
+  },
+  "46391": {
+   "sha256": "c349e0709ec6f7904bac5ed193b2887fc123c68af6b2ba090c63628474b2497a",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/mathematics-math/mathematics-associate-in-science-for-transfer-degree-as-t"
+  },
+  "46553": {
+   "sha256": "0b4a497d95eab37abc9528515a9ba2395b8ec2f705f1e45e174b6bb37a37d3dd",
+   "url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/physics-physic/physics-associate-in-science-for-transfer-degree-as-t"
+  }
+ },
+ "run": "44090908924"
 }

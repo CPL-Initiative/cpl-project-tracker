@@ -5,16 +5,19 @@
  "found": 76,
  "extracted": 76,
  "errors": 0,
- "passed_machine_checks": 53,
+ "passed_machine_checks": 56,
  "failed": {
   "coverage": 6,
-  "invented": 5,
-  "arithmetic": 20,
+  "invented": 4,
+  "arithmetic": 18,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 5.37,
- "cost_per_program": 0.0707,
+ "cost_usd_run": 1.63,
+ "cost_usd_filed": 6.0,
+ "cost_per_program": 0.0789,
+ "extract_calls": 8,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "30347",
@@ -22,8 +25,9 @@
    "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   }
  ],
- "run": "39116269641"
+ "run": "44090908924"
 }

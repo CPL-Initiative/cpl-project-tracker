@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6994,
-    "output_tokens": 1379,
+    "output_tokens": 1572,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,45 @@
     "model": null
    }
   ],
-  "output_tokens": 1379,
+  "output_tokens": 1572,
   "output_tokens_details": {
-   "thinking_tokens": 360
+   "thinking_tokens": 438
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05556,
- "ms": 11294,
- "seconds": 11.8,
+ "cost_usd": 0.05942,
+ "ms": 14261,
+ "seconds": 17.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 7,
    "listed": 8,
-   "share": 0.75,
+   "share": 0.875,
    "missing": [
-    "CD115",
-    "CD205"
+    "CD115"
    ],
    "unexplained": [
-    "CD115",
-    "CD205"
+    "CD115"
    ],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "CDEV205",
+     "listed": "CD205",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": false
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CDEV115",
-    "CDEV205",
     "CDEVC1000H"
    ],
    "flagged": [
@@ -126,7 +130,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Cal-GETC",
+   "ge_pattern": "CAL-GETC (California General Education Transfer Curriculum)",
    "degree_total": {
     "min": null,
     "max": null
@@ -152,8 +156,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 25,
+     "max": 25
     },
     "courses": [
      {
@@ -224,11 +228,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The closed list stores CD 115 (Health, Safety, and Nutrition, 3) and CD 205 (Child Development Practicum, 4); the catalog prints these as CDEV 115 and CDEV 205 with matching titles and units, so they were treated as the same closed-list courses (catalog_addition false). Reviewer should confirm the subject prefix change.",
-   "CDEV C1000H (honors twin) is not in the closed list and is marked as a catalog addition.",
-   "Total printed as 'TOTAL CREDIT HOURS: 25.00'; treated as 25 units for the major. No degree total or Cal-GETC unit count is printed.",
-   "Outcomes are printed under 'A student receiving a degree in this field will be able to:' and copied verbatim, including original typos."
+   "The closed list stores 'CD 115' (Health, Safety, and Nutrition) and 'CD 205' (Child Development Practicum); the catalog prints these as CDEV 115 and CDEV 205 with matching titles and units. They were matched to the closed-list entries (catalog_addition false); a reviewer should confirm the CD/CDEV prefix difference.",
+   "CDEV C1000H (honors twin) is not in the closed list and is recorded as a catalog addition alternative.",
+   "'TOTAL CREDIT HOURS: 25.00' is read as the major total in units; no degree total or GE unit figure is printed.",
+   "The block's stated total of 25 is taken from the TOTAL CREDIT HOURS line, which covers the single required-courses list.",
+   "The outcomes are printed under 'A student receiving a degree in this field will be able to:' and recorded verbatim, including the original wording 'development all play' and 'children's''.",
+   "No careers are named; the description mentions only transfer to a CSU major in Early Childhood Education 'or a related field of study'."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": "44090908924",
+ "catalog_year": "2026-2027"
 }
