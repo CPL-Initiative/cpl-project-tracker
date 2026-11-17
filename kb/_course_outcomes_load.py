@@ -91,6 +91,13 @@ def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
         key = (_slug_set(d), d["part"], d["of"])
         if key not in best or int(d["run"]) > int(best[key][0]):
             best[key] = (d["run"], path)
+    # A college set re-read in a different number of parts: its newest run's split is the one that counts, so an
+    # older split's parts never stand beside the new ones (COBIx on #3420, S670).
+    newest_of: dict[frozenset, tuple] = {}
+    for (sset, _part, of), (run, _path) in best.items():
+        if sset not in newest_of or int(run) > int(newest_of[sset][0]):
+            newest_of[sset] = (run, of)
+    best = {k: v for k, v in best.items() if k[2] == newest_of[k[0]][1]}
     return [p for _, p in sorted(best.values(), key=lambda x: x[1])]
 
 

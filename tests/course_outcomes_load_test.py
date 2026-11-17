@@ -161,6 +161,28 @@ def _():
     assert len(acct["outcomes"]) == 2 and acct["source_url"].endswith(",course,acct151a?tenant=cabrillo.elumenapp.com"), acct
 
 
+@check("a host's slices: one per college set and part, and a college re-read in fewer parts drops its older split (S670)")
+def _():
+    import tempfile
+    tmp = tempfile.mkdtemp(prefix="co_slices_")
+    os.makedirs(os.path.join(tmp, "h"))
+    def put(run, part, of, slugs, complete=True):
+        json.dump({"run": str(run), "part": part, "of": of, "slugs": slugs, "complete": complete, "rows": []},
+                  open(os.path.join(tmp, "h", "read_%d_p%dof%d.json" % (run, part, of)), "w"))
+    put(100, 1, 3, "a"); put(100, 2, 3, "a"); put(100, 3, 3, "a")  # a's first read, 3 parts
+    put(300, 1, 2, "a"); put(300, 2, 2, "a")                        # a re-read in 2 parts
+    put(200, 1, 2, "b"); put(200, 2, 2, "b")                        # b, same split as a's newest, older run
+    put(400, 1, 2, "b", complete=False); put(400, 2, 2, "b")        # b's newer read failed part 1
+    saved = load.OUT_DIR
+    load.OUT_DIR = tmp
+    try:
+        got = sorted(os.path.basename(p) for p in load.read_files("h"))
+    finally:
+        load.OUT_DIR = saved
+    want = ["read_200_p1of2.json", "read_300_p1of2.json", "read_300_p2of2.json", "read_400_p2of2.json"]
+    assert got == want, got
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):
