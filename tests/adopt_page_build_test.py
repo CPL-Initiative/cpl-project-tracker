@@ -154,6 +154,10 @@ with tempfile.TemporaryDirectory() as root:
     d2 = B.build(root)
     d2["written_at"] = "2099-01-01T00:00:00Z"
     check("a stamp-only change leaves the file alone", B.write_if_changed(out, d2) is False)
+    for k in ("_more", "_ai"):
+        if isinstance(d2.get(k), dict):
+            d2[k]["written_at"] = "2099-01-01T00:00:00Z"
+    check("a nested stamp-only change leaves the file alone too (S676)", B.write_if_changed(out, d2) is False)
 
     # The real files, when this checkout holds them: every listed credential is settled.
     if os.path.exists(os.path.join(ROOT, "kb", "exhibits_adoption.json")):

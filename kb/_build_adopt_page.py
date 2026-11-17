@@ -607,7 +607,12 @@ def write_if_changed(path, data):
         try:
             with open(path, encoding="utf-8") as f:
                 old = json.load(f)
-            strip = lambda d: {k: v for k, v in (d or {}).items() if k != "written_at"}  # noqa: E731
+            # Every written_at, nested ones too (_more and _ai carry their own): two builds a second apart
+            # differ only there (S676, a CI flake on #3455).
+            def strip(d):
+                if isinstance(d, dict):
+                    return {k: strip(v) for k, v in d.items() if k != "written_at"}
+                return d
             if strip(old) == strip(data):
                 return False
         except (OSError, ValueError):
