@@ -2,19 +2,22 @@
  "college": "Feather River College",
  "programs": 62,
  "with_closed_list": 49,
- "found": 45,
- "extracted": 45,
+ "found": 44,
+ "extracted": 44,
  "errors": 0,
- "passed_machine_checks": 33,
+ "passed_machine_checks": 37,
  "failed": {
-  "coverage": 2,
+  "coverage": 1,
   "invented": 2,
-  "arithmetic": 10,
+  "arithmetic": 5,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 3.15,
- "cost_per_program": 0.07,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 3.1,
+ "cost_per_program": 0.0705,
+ "extract_calls": 0,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "34001",
@@ -22,7 +25,8 @@
    "award": "Baccalaureate of Science (B.S.) Degree.",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46533",
@@ -30,8 +34,9 @@
    "award": "Baccalaureate of Science (B.S.) Degree.",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38935127435"
+ "run": "44118964414"
 }

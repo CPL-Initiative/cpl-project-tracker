@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 62,
  "with_closed_list": 49,
- "started": "2026-10-16T16:52:03Z",
+ "started": "2026-11-17T15:52:15Z",
  "curriqunet": {
   "catalog": 5,
   "view_prefix": "https://frc.curriqunet.com/Catalog/iq/",
@@ -18,19 +18,189 @@
   "calls": 8,
   "entries": 81,
   "stopped_at_cap": false,
-  "same_title_entries": 0,
-  "entries_read": 81
+  "same_title_entries": 2,
+  "entries_read": 81,
+  "twin_ids": {
+   "1775": [
+    1753
+   ],
+   "1773": [
+    1751
+   ]
+  },
+  "failed_calls": 0
  },
  "pages_read": 81,
+ "pages_listed": 81,
+ "pages_answered": 81,
+ "listing_failed": 0,
  "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 42,
+   "hits": 37,
+   "recall": 0.881,
+   "false": 0,
+   "false_off_own": 0,
+   "false_no_claims": 0,
+   "shared": 2,
+   "false_matches": [],
+   "no_claims_matches": [],
+   "searches": true,
+   "catalog_list": null
+  },
+  "programs": 13,
+  "by_result": {
+   "found": 6,
+   "not_matched": 7
+  },
+  "found": 6,
+  "found_active": 6,
+  "found_pages": 6,
+  "found_programs": [
+   {
+    "control_number": "04321",
+    "title": "Biology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
+    "h1": "Biology - A.S.",
+    "page_title": "Biology - A.S.",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "04326",
+    "title": "Physical Science",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1828",
+    "h1": "Physical Science - A.S.",
+    "page_title": "Physical Science - A.S.",
+    "awards": [
+     "as"
+    ]
+   },
+   {
+    "control_number": "04332",
+    "title": "Early Childhood Education",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1798",
+    "h1": "Early Childhood Education - A.A.",
+    "page_title": "Early Childhood Education - A.A.",
+    "awards": [
+     "aa"
+    ]
+   },
+   {
+    "control_number": "20877",
+    "title": "Health & Exercise Studies",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1846",
+    "h1": "Health and Exercise Studies - Certificate of Achievement",
+    "page_title": "Health and Exercise Studies - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "20881",
+    "title": "Early Childhood Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1799",
+    "h1": "Early Childhood Education - Certificate of Achievement",
+    "page_title": "Early Childhood Education - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ]
+   },
+   {
+    "control_number": "31776",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1816",
+    "h1": "History - A.A.-T",
+    "page_title": "History - A.A.-T",
+    "awards": [
+     "adt"
+    ]
+   }
+  ],
+  "other_programs": [
+   {
+    "control_number": "04334",
+    "title": "Social Science",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "12243",
+    "title": "Equine Studies: Ranch Skills",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "12244",
+    "title": "Equine Studies: Horse Training Skills",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "15817",
+    "title": "Equine Studies: Rodeo",
+    "award": "A.S. Degree",
+    "status": "Approved",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "17753",
+    "title": "Nutrition, Foods & Culinary Arts",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "30384",
+    "title": "Health and Exercise Sciences",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   },
+   {
+    "control_number": "32763",
+    "title": "English as a Second Language",
+    "award": null,
+    "status": "Active",
+    "result": "not_matched",
+    "why": "no page read names it by title and award"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
  "loads": 312,
- "seconds": 1366.4,
- "found": 45,
+ "seconds": 1362.9,
+ "found": 44,
  "by_method": {
   "no_closed_list": 13,
   "not_found": 2,
-  "page_claimed": 2,
-  "sitemap_page": 45
+  "page_claimed": 3,
+  "sitemap_page": 44
  },
  "shared_pages": {
   "https://frc.curriqunet.com/Catalog/iq/1464/1774": [
@@ -45,7 +215,8 @@
    "award": "Baccalaureate of Science (B.S.) Degree.",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "46533",
@@ -53,7 +224,8 @@
    "award": "Baccalaureate of Science (B.S.) Degree.",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -63,7 +235,17 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "pages": [
     "https://frc.curriqunet.com/Catalog/iq/1464/1785"
-   ]
+   ],
+   "status": "Approved"
+  },
+  {
+   "control_number": "36176",
+   "title": "MATHEMATICS",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://frc.curriqunet.com/Catalog/iq/1464/1826"
+   ],
+   "status": "Active"
   },
   {
    "control_number": "44714",
@@ -71,470 +253,205 @@
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "pages": [
     "https://frc.curriqunet.com/Catalog/iq/1464/1772"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
+  "0.5-0.8": 5,
   "0.8-1.0": 12,
   "1.0": 27
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 45,
-  "list": [
-   {
-    "control_number": "04320",
-    "title": "Equine Studies",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1788",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04322",
-    "title": "Business",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1803",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04331",
-    "title": "Administration of Justice",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1809",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04333",
-    "title": "Outdoor Recreation Leadership",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1813",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "04335",
-    "title": "History",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1817",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "07075",
-    "title": "Environmental Studies",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1792",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "11771",
-    "title": "Vocational Nursing",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1905",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16444",
-    "title": "Agricultural Studies",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1776",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "16693",
-    "title": "Studio Arts",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1830",
-    "coverage": 0.864,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18714",
-    "title": "Liberal Arts: Fine Arts and Humanities",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1769",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18718",
-    "title": "General Studies: Social & Behavioral Sciences",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1821",
-    "coverage": 0.977,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20859",
-    "title": "Equine Studies: Horse Training Skills",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1783",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "20879",
-    "title": "Licensed Vocational Nursing",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1840",
-    "coverage": 0.789,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30974",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1797",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "30998",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1842",
-    "coverage": 0.625,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31895",
-    "title": "Office Technology",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1857",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "31896",
-    "title": "Office Technology",
-    "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1856",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32356",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1808",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32537",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1822",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32567",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1827",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32743",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1835",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33191",
-    "title": "Forensic Crime Scene Investigation",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1785",
-    "coverage": 0.875,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36176",
-    "title": "MATHEMATICS",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
-    "coverage": 0.6,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36248",
-    "title": "Geology",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1819",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36252",
-    "title": "Geography",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1820",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36296",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1818",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36333",
-    "title": "Political Science",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1901",
-    "coverage": 0.833,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41355",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1814",
-    "coverage": 0.944,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42704",
-    "title": "Sociology",
-    "award": "A.A. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1834",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42761",
-    "title": "Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1851",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42786",
-    "title": "Hydrologic Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1844",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42796",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1831",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42985",
-    "title": "Ecological Farming",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1796",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43018",
-    "title": "Forestry Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1784",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43300",
-    "title": "Fire and Fuels Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1786",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43301",
-    "title": "Environmental Science",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1793",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44471",
-    "title": "Agriculture Business",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44510",
-    "title": "Business 2.0 A.S.-T",
-    "award": "A.S. T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1801",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44522",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1826",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44639",
-    "title": "Agriculture Business",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44713",
-    "title": "Allied Health",
-    "award": "A.S. Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1772",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44841",
-    "title": "Hatchery Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1770",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44843",
-    "title": "Biological Science Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1804",
-    "coverage": 0.727,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "45095",
-    "title": "CalGETC",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1771",
-    "coverage": 0.966,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46487",
-    "title": "Elementary Teacher Education: Integrated Programs",
-    "award": "A.A- T Degree",
-    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1909",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   }
-  ]
+  "against": "kb/program_requirements_college/feather_river",
+  "kept": 44,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "38935127435"
+ "fingerprints": {
+  "04320": {
+   "sha256": "0b7daf46a5d995ce6e1a83a48b6e43d54dcbee9a47add1f38bc61918e03aa796",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1788"
+  },
+  "04322": {
+   "sha256": "10631484c3ba3468dbcccb2f9c62d2f3b63c9a24aa586809c0c9430e6058b97f",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1803"
+  },
+  "04331": {
+   "sha256": "e0c5abec7c17564792966badf2d11bf1eeace613656186f6b3a6c9641ecf3b91",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1809"
+  },
+  "04333": {
+   "sha256": "200c23fe2489ac82df902e7bf57a85c538271875131093938d8ad51aa5898f94",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1813"
+  },
+  "04335": {
+   "sha256": "ba3f34b4598c4ab0dbea4e4fe1509b48fe4226effdec90c56d6ae6664265171e",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1817"
+  },
+  "07075": {
+   "sha256": "bf2d08934359b25c40b3a6cc27ecd3841e95a0db782469487b960abaaac497cd",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1792"
+  },
+  "11771": {
+   "sha256": "bbe9e42bf294bbc018a24b17c65b6766a8dd5b7a58b2bf998658ff283a3b82d2",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1905"
+  },
+  "16444": {
+   "sha256": "3504cc842edb58a4932972ddd644c6c3f51d42b46cc685a1cbe228b10821d50c",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1776"
+  },
+  "16693": {
+   "sha256": "b15b18226b1118f5370b8532c778de6ae616697343b1dd08a2cba11468651388",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1830"
+  },
+  "18714": {
+   "sha256": "88a5d836d7796212a1419cc8fa2a83c8b17344d29d2be73e55a2e346bb5bb22f",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1769"
+  },
+  "18718": {
+   "sha256": "29cc9d6ab7ea812430a03139f46e5b8ae818bb436e38960b9f550682f119db48",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1821"
+  },
+  "20859": {
+   "sha256": "a8bdbae9b8192c281d97014d4a774c66974fb13c662e7f33dd0ce25985d3af1e",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1783"
+  },
+  "20879": {
+   "sha256": "99eae0f21cff4058eaac79cca7c135edb6f7efda2175a862563053ffdc6bbd9f",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1840"
+  },
+  "30974": {
+   "sha256": "fb8872dfe1bdcb97614328975dfd165d0f01a5c3bcfe42759d6cf935336b968b",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1797"
+  },
+  "30998": {
+   "sha256": "8ca880496788e1c30577d17970d958e15e1d971a919d70c6ef529899c2193eb0",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1842"
+  },
+  "31895": {
+   "sha256": "b52ac8a8162b8397f1bd95f05f609f991563b8eab5cd357fbdc1aaa5c3401b40",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1857"
+  },
+  "31896": {
+   "sha256": "78c0362e6d617e0e93e4f03d2f25cdfe0d67f1d3e1ef80cefd58701f83663471",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1856"
+  },
+  "32356": {
+   "sha256": "80c297526c5daad0e5798a96e193d10fdab4bcc3355b9fd9452f0867f70a7641",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1808"
+  },
+  "32537": {
+   "sha256": "ffd22f7cb0f18c80b6e48b3e5f4edd1efc50f413ca3c4472f9dbfedb16be124d",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1822"
+  },
+  "32567": {
+   "sha256": "4fd61236b0b65fa1924b1fd6537c8d995cd14759c934b93d9b57d1cadd761aa2",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1827"
+  },
+  "32743": {
+   "sha256": "a09285cebe36794f4dbcb51c75e9b4e09956bdbdac2283b0790d5fe232d435d6",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1835"
+  },
+  "33191": {
+   "sha256": "408431254a1a7b90dba4c52c51acaf9ebaf59e75ff9c6455e234a4adccfd846a",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1785"
+  },
+  "36248": {
+   "sha256": "f65ef056f501d5a3cdc10d4399d6f86e0abf206c4292b725672cd5ad673f6ecc",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1819"
+  },
+  "36252": {
+   "sha256": "190cff81dbddb50a65d800b0f0e4a9705b1c806d3b5d17d5b3b80e4b824977a1",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1820"
+  },
+  "36296": {
+   "sha256": "b3b87d56a5099533615b4e811a1122b95f9e6b66c4fa28a47cf7e0aa16f1e5b1",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1818"
+  },
+  "36333": {
+   "sha256": "04e8bac600a49473981bdd24d3ffdc16eaae4d64674376d4a72ac4c450d03baf",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1901"
+  },
+  "41355": {
+   "sha256": "94a484a0fb790e79d2e5d606cc6632b15bd6573bcb1b69da3d70fb61dedac424",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1814"
+  },
+  "42704": {
+   "sha256": "8b5934244cd60ff264ddd6a1e79ade5cdbecd973641e26365aa1ed7c3db81b80",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1834"
+  },
+  "42761": {
+   "sha256": "bc39920bc39380dfe2f2b35008b8dd79183a7662216779f3f1ba6b23ef9d4717",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1851"
+  },
+  "42786": {
+   "sha256": "4dd405fb1205145bc100306bd2c6a1fe877fe0edd7b33b7e078580c90234a4f7",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1844"
+  },
+  "42796": {
+   "sha256": "bc864f84ee814377c8ff12d8700b8af77a7590d753c5e188e753b6239b19674f",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1831"
+  },
+  "42985": {
+   "sha256": "69822e36a495fd22effb95ce6618c5c044907d5bc0f616cd14e6c1980a272ce1",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1796"
+  },
+  "43018": {
+   "sha256": "6a59d7e2608ce064e71d0046d822cc025a5d32ce50406e05632273f1306b3c4b",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1784"
+  },
+  "43300": {
+   "sha256": "c353d1c3e102c689c178be90aa60b38870b929925186ef1646da2eb42e8fa553",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1786"
+  },
+  "43301": {
+   "sha256": "52158337015bffe44be7ba91194f6693ddd4622835363ade4172bf47dae13aad",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1793"
+  },
+  "44471": {
+   "sha256": "e16d77779055b066900c9f6c32c170e0aab7927c0f3b95f1248ab13b0ebbb593",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774"
+  },
+  "44510": {
+   "sha256": "2923de6b6700d55beb6fdae7955fbf5dc28aec812222e72ae3c975ae4017eea4",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1801"
+  },
+  "44522": {
+   "sha256": "443ec443c0dd1a03bd5b83d86a40b0d27945d89ed1c0ed0b1338cfcd4852d2b2",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1826"
+  },
+  "44639": {
+   "sha256": "e16d77779055b066900c9f6c32c170e0aab7927c0f3b95f1248ab13b0ebbb593",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1774"
+  },
+  "44713": {
+   "sha256": "3d58b0a05399d070ee7ae3bd87ed7c8bb7eb51dde071a4bc2f5ffe8d418dbcf1",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1772"
+  },
+  "44841": {
+   "sha256": "31206272c4b1db554cdc5db8bc733707ae8a1e413a7d820d136bf46e0d38bfbb",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1770"
+  },
+  "44843": {
+   "sha256": "90e8a2eee96b1ab30542bc0118ed6dba714b0789c936372ec6bb100ca20717c3",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1804"
+  },
+  "45095": {
+   "sha256": "203360c106ad21a2ed9389d117b15fa0ac52320f162b5b36b0b0d6006c1840f7",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1771"
+  },
+  "46487": {
+   "sha256": "6ffc2ba6980e644859cf49453a0e0b8a9a4b03e6768138e61ff806c49beb4f8f",
+   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1909"
+  }
+ },
+ "run": "44118964414"
 }
