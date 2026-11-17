@@ -101,6 +101,7 @@ jobs:
           EOF
 
   apply:
+    environment: live-counts
     needs: check
     runs-on: ubuntu-latest
     concurrency:
