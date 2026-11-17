@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T14:20:31Z",
+ "written_at": "2026-11-17T20:34:10Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,8 +171,8 @@
   "passing": 15875,
   "gap": 6460,
   "with_gap": 118,
-  "cost_usd": 1343.22,
-  "passed_at_read": 15397,
+  "cost_usd": 1343.25,
+  "passed_at_read": 15398,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -1554,8 +1554,8 @@
    "gap": 20,
    "causes": {
     "no_closed_list": 3,
-    "page_not_found": 6,
-    "places_none": 2,
+    "page_not_found": 7,
+    "places_none": 1,
     "unknown_without_live": 9
    },
    "census_causes": {
@@ -1579,10 +1579,10 @@
    "outcomes_file": "kb/status/commons_data_programs/chaffey.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-12T11:21:28Z",
+   "read_at": "2026-11-17T13:17:13Z",
    "read_kind": "capture",
-   "cost_usd": 10.48,
-   "passed_at_read": 181,
+   "cost_usd": 10.51,
+   "passed_at_read": 182,
    "slo_queue": {
     "state": "none",
     "why": "both public dashboard reports (225 and 1225) print objectives only; its outcomes FAQ keeps course outcomes on section syllabi",
@@ -1595,13 +1595,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 199,
-   "found": 193,
-   "extracted": 193,
+   "found": 192,
+   "extracted": 192,
    "errors": 0,
    "failed_checks": {
-    "coverage": 3,
+    "coverage": 2,
     "invented": 1,
-    "arithmetic": 11,
+    "arithmetic": 9,
     "repeated": 0,
     "outcomes": 0
    },
@@ -1611,23 +1611,23 @@
    "capture_root": "https://chaffey.curriqunet.com/catalog/iq/18783",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 2804.7,
-   "run": "38242003226",
+   "read_seconds": 3645.0,
+   "run": "44090894573",
    "levers": {
     "reconcile_steps": 9,
-    "reader_page_search": 6,
+    "reader_page_search": 7,
     "program_course_file_check": 3,
-    "reader_page_assignment": 2
+    "reader_page_assignment": 1
    },
    "collection": {
     "program_reader": {
-     "records": 193,
+     "records": 192,
      "models": {
-      "claude-opus-5-5": 193
+      "claude-opus-5-5": 192
      },
-     "run": "38242003226",
-     "at": "2026-10-12T11:21:28Z",
-     "cost_usd": 10.48,
+     "run": "44090894573",
+     "at": "2026-11-17T13:17:13Z",
+     "cost_usd": 10.51,
      "platform": "curriqunet"
     },
     "slo_read": null,

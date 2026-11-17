@@ -218,10 +218,20 @@ for slug, holder, taker in RESOLVED_BY_CLAIM_S676:
     found = {p.get("control_number") for p in (capj.get("catalog_lookup") or {}).get("found_programs") or []}
     check(holder in claimed and taker in found,
           "%s %s stays page_claimed and %s stays found by the lookup (S676)" % (slug, holder, taker))
-expected = sorted(set(YIELDS_S668) - set(RESOLVED_BY_CLAIM_S676))
+# Judged in S677: Chaffey 18435 (Physical Science), the suspect yield of S668, no longer holds the Cal-GETC page.
+# The fresh capture files it under not_found, so the holder is unread and no taker's page is moved. The yield's
+# premise is gone, which is the end the suspicion asked for. It must stay unread on that page.
+RESOLVED_BY_NOT_FOUND_S677 = [("chaffey", "18435", "45032")]
+for slug, holder, taker in RESOLVED_BY_NOT_FOUND_S677:
+    capj = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", slug, "capture.json")))
+    nf = {p.get("control_number") for p in capj.get("not_found") or []}
+    rec = os.path.join(ROOT, "kb", "program_requirements_college", slug, "records", holder + ".json")
+    check(holder in nf and not os.path.exists(rec),
+          "%s %s stays not_found with no record filed, so it holds no page of %s (S677)" % (slug, holder, taker))
+expected = sorted(set(YIELDS_S668) - set(RESOLVED_BY_CLAIM_S676) - set(RESOLVED_BY_NOT_FOUND_S677))
 moved = sorted((y["college"], y["holder"], y["taker"]) for y in sw["yield_list"])
 check(moved == expected and sw["yields"] == len(expected) and sw["yields_passing_moved"] == 0,
-      "the census yields exactly the 13 judged in S668 less the 3 resolved by a page claim in S676, Skyline's Dance "
+      "the census yields exactly the 13 judged in S668 less the 3 resolved by a page claim in S676 and Chaffey 18435 (S677), Skyline's Dance "
       "A.A. and Automotive Advanced Engine Performance Technology among them, whether a filing has applied them yet "
       "or not: %r" % moved)
 

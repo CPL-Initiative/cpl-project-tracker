@@ -1,7 +1,7 @@
 window.CPL_PATHWAYS_ROEP = {
  "_generated_by": "kb/_build_roep_display.py",
  "_note": "Each harvested program's catalog record and its display facts: CPL in three kinds per course, the up-to figure, the gaps and the map's status. The same facts sit in program_requirement_records.display, where Sierra reads them; both carry this build stamp. Do not edit; rerun the builder.",
- "build": "71b67268c567",
+ "build": "cdd185495ce4",
  "built": "2026-11-13",
  "inputs": {
   "records": 18209,
@@ -262,7 +262,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -835,7 +835,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -1865,7 +1865,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -2758,7 +2758,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -3829,7 +3829,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": null
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -4731,7 +4731,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -5633,7 +5633,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -7177,7 +7177,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -7707,7 +7707,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -9134,7 +9134,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -10404,7 +10404,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "fix"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -11125,7 +11125,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -11478,7 +11478,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "unstated",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -11801,7 +11801,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -13752,7 +13752,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -14103,7 +14103,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -14862,7 +14862,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -16505,7 +16505,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "incomplete",
      "reviewer": null
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -17320,7 +17320,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -18364,7 +18364,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -19142,7 +19142,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   },
@@ -19310,7 +19310,7 @@ window.CPL_PATHWAYS_ROEP = {
      "arithmetic": "equal",
      "reviewer": "ok"
     },
-    "build": "71b67268c567",
+    "build": "cdd185495ce4",
     "built": "2026-11-13"
    }
   }

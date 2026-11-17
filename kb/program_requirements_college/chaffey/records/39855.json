@@ -5,11 +5,11 @@
  "title": "Environmental Science",
  "award": "A.S. T Degree",
  "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/18924",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6219,
+  "input_tokens": 7395,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6219,
-    "output_tokens": 2225,
+    "input_tokens": 7395,
+    "output_tokens": 2441,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 2225,
+  "output_tokens": 2441,
   "output_tokens_details": {
-   "thinking_tokens": 607
+   "thinking_tokens": 794
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06938,
- "ms": 17614,
- "seconds": 17.9,
+ "cost_usd": 0.0784,
+ "ms": 19927,
+ "seconds": 20.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "ECON4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2001"
-   ],
-   "flagged": [
-    "ECONC2001"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -76,6 +78,7 @@
     41.0,
     41.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -97,18 +100,37 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science in Environmental Science for Transfer - AS-T - Requirements",
+   "section_heading": "Associate in Science in Environmental Science for Transfer - AS-T",
    "measure": "units",
    "total_units": {
     "min": 41,
     "max": 41
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate skills in scientific thinking, communication, problem solving and experimental methodology.",
     "Apply physical and biological science concepts to environmental science issues, voting decisions, personal habits, and lifestyle choices.",
@@ -187,7 +209,7 @@
     ]
    },
    {
-    "name": "List A - Choose one group: Group 1",
+    "name": "List A - Group 1",
     "rule": "all",
     "minimum": null,
     "option_group": "List A group",
@@ -206,7 +228,7 @@
     ]
    },
    {
-    "name": "List A - Choose one group: Group 2",
+    "name": "List A - Group 2",
     "rule": "all",
     "minimum": null,
     "option_group": "List A group",
@@ -251,7 +273,7 @@
     ]
    },
    {
-    "name": "List B - Choose one group: Group 1",
+    "name": "List B - Group 1",
     "rule": "all",
     "minimum": null,
     "option_group": "List B group",
@@ -277,7 +299,7 @@
     ]
    },
    {
-    "name": "List B - Choose one group: Group 2",
+    "name": "List B - Group 2",
     "rule": "all",
     "minimum": null,
     "option_group": "List B group",
@@ -307,16 +329,17 @@
   "missing_explained": [
    {
     "code": "ECON 4",
-    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics in its place (likely common course numbering renumber)"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics in its place (likely renumbered)"
    }
   ],
   "notes": [
-   "The page's top heading is cut off ('ironmental Science for Transfer - AS-T Degree'); section_heading uses the requirements heading as printed.",
-   "List A stated 16 units includes the 4-unit 'Choose one group' (Group 1 GEOL 1 or Group 2 GEOG 4 + GEOG 4L); List B stated 11 units includes the 8-unit 'Choose one group' physics sequence. The group choices are recorded as separate option_group blocks.",
-   "ECON C2001 is recorded as a catalog addition; it appears to replace closed-list ECON 4 (same title, 3 units). Reviewer should confirm.",
-   "Career field taken from 'pursue a career in the field of environmental science'; the listed upper-division specialization areas (Environmental Toxicology, Public Health, etc.) were read as areas of study, not careers.",
-   "The outcomes list is printed for the program as a whole on the AS-T page."
+   "List A's printed 16 units include the 4-unit 'Choose one group' (GEOL 1, or GEOG 4 + GEOG 4L); stated 16 recorded on the List A block that holds the three required courses.",
+   "List B's printed 11 units include the 8-unit 'Choose one group' (PHYS 20A/20B or PHYS 35/36); stated 11 recorded on the List B block that holds ECON C2001.",
+   "The 'A minimum of 60 CSU-transferable semester units' sentence is the generic ADT requirement, not recorded as degree_total; 'minimum of 18 semester units of major requirements' likewise not used as total. Major total taken from 'Total : 41.00'.",
+   "Specialization areas (Environmental Toxicology, Public Health, etc.) are upper-division study areas, not recorded as careers; only 'environmental science' career field recorded.",
+   "Section heading text at top of excerpt is truncated ('ironmental Science for Transfer - AS-T Degree')."
   ]
  },
- "extracted_run": "38242003226"
+ "extracted_run": "44090894573",
+ "catalog_year": "2026-2027"
 }
