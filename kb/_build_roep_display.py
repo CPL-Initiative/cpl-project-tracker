@@ -1001,14 +1001,21 @@ def build() -> dict:
                     # for consideration
                     cids = {re.sub(r"\s+", " ", v).strip().upper() for v in
                             (lc.get("cid"), (ref or {}).get("cid")) if v}
-                    consider, seen_c = [], set()
+                    # One entry per folded title (Fire Inspector I and Fire Inspector 1 are one): the spelling with
+                    # the most adopting colleges is shown, and its count (COBIx on #3429, FIPT 103 and FIRE 3).
+                    consider, seen_c = [], {}
                     for cid in sorted(cids):
                         for s in statewide.get(cid, []):
-                            if fold_label(s["credential"]) in here_set or s["credential"] in seen_c:
+                            fk = fold_label(s["credential"])
+                            if fk in here_set:
                                 continue
-                            seen_c.add(s["credential"])
-                            consider.append({"credential": s["credential"], "credit": s["credit"], "cid": cid,
-                                             "colleges_n": adopters.get(s["credential"], 0)})
+                            crow = {"credential": s["credential"], "credit": s["credit"], "cid": cid,
+                                   "colleges_n": adopters.get(s["credential"], 0)}
+                            if fk not in seen_c:
+                                seen_c[fk] = len(consider)
+                                consider.append(crow)
+                            elif crow["colleges_n"] > consider[seen_c[fk]]["colleges_n"]:
+                                consider[seen_c[fk]] = crow
                     if consider:
                         entry["consider"] = consider
                     courses[x["code"]] = entry
