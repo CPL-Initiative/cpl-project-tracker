@@ -1,4 +1,4 @@
--- cpl_memory rows for S669, second set (2026-11-16 to 17): #3412 built, the unreviewed alignment held off. Applied by
+-- cpl_memory rows for S669, second set (2026-11-16 to 17): #3412 built, the unreviewed alignment held off. Applied by (applied from a plain commit: the runner skips a merge commit)
 -- supabase-migrate.yml (kb/migrations/.apply), never Execute SQL. Summaries at most 400 characters, measured when written.
 -- INSERT ... ON CONFLICT (slug) DO NOTHING. ROLLBACK (by slug): kb/migrations/2026-11-17_s669_cpl_memory_rows_2_rollback.sql.
 
