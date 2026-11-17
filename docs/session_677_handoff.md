@@ -19,7 +19,7 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
 
 ## What shipped
 
-- **#3456, slice B at six colleges.** Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore read
+- **#3456 (merged, fbedee5a), slice B at six colleges.** Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore read
   again under the #3408 page yield, each on `claude/<college>-yield-s676`, then `step=reread` (45 unchecked rows replaced) and
   `step=load` (4 inserted), merged onto `claude/yield-wave-s676` for one Commons rebuild and display build 71b67268c567.
   Passing +22 for $6.85 of extraction. COBIx checked it (comment 6950870616): nothing blocking; its cost-total note is harvest
@@ -40,7 +40,7 @@ Read this file first, then the harvest lane's NEXT (3) and `docs/program_require
    green `test`, then read the live rows of the records it drops. If the run failed or timed out, dispatch the read again.
    Its holder 18435 is pinned in `tests/harvest_ncl_lookup_census_test.py`: if the fresh capture files it under `page_claimed`
    with the taker 45032 found, move it to `RESOLVED_BY_CLAIM_S676`'s list, as #3456 did for three; anything else is a finding.
-3. **If #3456 or #3455 is still open:** `test` green on the head, COBIx's last page read, squash-merge, `git log origin/main`.
+3. **If #3455 is still open:** `test` green on the head, COBIx's last page read, squash-merge, `git log origin/main`.
 4. Harvest NEXT (3)'s tail: the self-test recall (27 to 26 of 28), then the `NCL_EXTRACT` switch items.
 5. **governance-team-enablement** NEXT (1), then harvest NEXT (4) to (7) (NEXT 7 now opens with the Commons `spent` figure).
 6. **The CCN display fix** (`f-ccn-renumber-shows-as-catalog-addition-s673`), after checking other colleges' renumbered codes.
@@ -60,7 +60,7 @@ Several college reads share the Commons and display files: merge their branches 
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3456 slice B, six colleges | merge on green `test` | First thing 3 |
+| #3456 slice B, six colleges | merged (fbedee5a) | none |
 | #3455 this checkpoint | merge on green `test` | First thing 3 |
 | `claude/chaffey-yield-s676` | read running | First thing 2 |
 | `claude/<six>-yield-s676` | merged through #3456 | none (branches stay; never delete from a session) |
@@ -70,13 +70,14 @@ Several college reads share the Commons and display files: merge their branches 
 ## Decisions
 
 `cpl_memory` rows in `kb/migrations/2026-11-17_s676_cpl_memory_rows.sql` (rollback beside it), applied by `supabase-migrate.yml`
-from #3455's branch: `d-slice-b-six-no-live-holder-rows-s676`, `p-wave-branch-for-shared-builds-s676`. Sam gave no new ruling.
+from #3455's branch (run 44104888300, receipt `kb/receipts/migration_s676_cpl_memory_rows_v2_44104888300.json`; the first try failed
+on the 400-character summary check and wrote nothing): `d-slice-b-six-no-live-holder-rows-s676`, `p-wave-branch-for-shared-builds-s676`. Sam gave no new ruling.
 
 ## Let go
 
 S676 holds no PR subscription, check-in or artifact watch. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-Spend: not available; 2026-11-17T13:12Z to about 14:45Z. Extraction on the runners: $6.85.
+Spend: not available; 2026-11-17T13:12Z to about 14:55Z. Extraction on the runners: $6.85.
 
 Session cost: `get_session` not available. Substantive PRs merged: 1 (#3456).
