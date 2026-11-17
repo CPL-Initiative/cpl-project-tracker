@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T03:13:26Z",
+ "written_at": "2026-11-17T17:10:12Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14618,
+     "n": 14632,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2844,
+     "n": 2822,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2820,
+     "n": 2828,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-13T18:26:08Z",
+    "at": "2026-11-17T13:17:16Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 14618,
-    "failing": 2844,
-    "unread": 2820,
-    "records": 19129,
+    "complete": 14632,
+    "failing": 2822,
+    "unread": 2828,
+    "records": 19112,
     "colleges": 118,
-    "outside_active": 1667,
+    "outside_active": 1658,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -118,6 +118,14 @@
    ],
    "issues": [
     {
+     "n": 40,
+     "words": "titles held for a person",
+     "owner": "a curator (the classifier is unsure 40)",
+     "carry": "unsure",
+     "open": "#exhibits/held",
+     "error": null
+    },
+    {
      "n": 499,
      "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
@@ -158,7 +166,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-14T20:24:27Z",
+    "at": "2026-11-17T17:10:03Z",
     "every_hours": 24
    },
    "facts": {
@@ -171,7 +179,7 @@
     "confirmed": 1435,
     "records": 3185,
     "records_stamped": 2415,
-    "saved_at": "2026-11-14T14:34:56Z",
+    "saved_at": "2026-11-17T17:10:03Z",
     "fold_at": "2026-11-14T20:24:27Z",
     "map_titles": 5297,
     "unclassified": 50,
@@ -368,7 +376,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-16T22:57:22Z",
+    "at": "2026-11-17T03:13:28Z",
     "every_hours": null
    },
    "facts": {
@@ -566,9 +574,9 @@
    ],
    "pair": [
     {
-     "n": 42611,
+     "n": 42623,
      "of": null,
-     "words": "outcomes read from 11,844 courses at 16 colleges",
+     "words": "outcomes read from 11,846 courses at 16 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -576,8 +584,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 42611,
-    "courses": 11844,
+    "outcomes": 42623,
+    "courses": 11846,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -600,7 +608,7 @@
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-16T07:39:59Z",
+    "at": "2026-11-17T00:51:26Z",
     "every_hours": null
    },
    "sources": [
@@ -671,6 +679,14 @@
     "key": "unsure",
     "items": [
      {
+      "ref": "exhibit",
+      "title": "Common Exhibit Reference",
+      "n": 40,
+      "words": "titles held for a person",
+      "owner": "a curator (the classifier is unsure 40)",
+      "open": "#exhibits/held"
+     },
+     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 4,
@@ -735,7 +751,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2844,
+    "n": 2822,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -743,7 +759,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2820,
+    "n": 2828,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -767,15 +783,6 @@
   ],
   "stalled": [
    {
-    "ref": "exhibit",
-    "title": "Common Exhibit Reference",
-    "kind": "stopped",
-    "what": "the saving run and the fold",
-    "since": "2026-11-14T20:24:27Z",
-    "every_hours": 24,
-    "open": "#exhibits"
-   },
-   {
     "ref": "course",
     "title": "Common Course Reference",
     "kind": "not_shrinking",
@@ -795,13 +802,13 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 950,
+     "placed": 956,
      "untouched": 874,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 6,
      "looked": 57
     },
     {
@@ -817,24 +824,24 @@
     },
     {
      "name": "course-identity",
-     "placed": 192,
+     "placed": 194,
      "untouched": 167,
      "kept": 0,
      "renamed": 25,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 2,
      "looked": 25
     },
     {
      "name": "high-school-rop",
-     "placed": 55,
+     "placed": 57,
      "untouched": 31,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 2,
      "looked": 24
     },
     {
@@ -883,13 +890,13 @@
     }
    ],
    "total": {
-    "placed": 1453,
+    "placed": 1463,
     "untouched": 1321,
     "kept": 23,
     "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 10,
     "looked": 108
    }
   },
