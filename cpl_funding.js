@@ -7978,6 +7978,11 @@
     function earnCells(row) {
       // Earned figures follow the public-view dollar rule (earnedCsv): the
       // export never carries a figure the screen withholds.
+      // The CSV carries the window, so each figure is tested against the
+      // window award (row.total), never the per-year share curCap() divides out.
+      // Withheld is tested against the whole award too (COBIx on #3471,
+      // finding 2): it reaches that cap only when an institution's entire award
+      // is withheld, and then it prints the max the row already shows exactly.
       return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0), row.total), earnedCsv(row.earned_withheld || 0, row.total)];
     }
     // The Funds Qualified So Far columns' twins (2026-09-28; named so 2026-10-29,
@@ -16775,8 +16780,15 @@
     var n = members.length, word = numWord(n);
     var line = (word === String(n) ? word : word.charAt(0).toUpperCase() + word.slice(1)) + " institutions";
     if (g) {
-      line += ", with a combined max award of " + fmtMoney(g.total || 0) + " and funds qualified so far of " +
-        earnedMoney(curFig(g, "earned_total").fig, g.total || 0);
+      // The max and the figure for one span (COBIx on #3471, finding 1): under
+      // Annual funding the figure is the viewed year's (cellFig), so the max
+      // beside it, and the cap the public rule tests it against, is the year's
+      // share of the award, as in the table's Max cells. Before, the window max
+      // sat beside a one-year figure and read "$300,000 of $600,000" for a
+      // district that had met its year.
+      var cap = curCap(g, "earned_total");
+      line += ", with a combined max award of " + fmtMoney(cap) + awardSpanWords() + " and funds qualified so far of " +
+        earnedMoney(curFig(g, "earned_total").fig, cap);
     }
     return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
       '<p class="dk">' + line + ". Each institution&#39;s funding follows.</p></div>";
@@ -19529,6 +19541,7 @@
     // The public dollar rule beside a cap, for tests (2026-11-17, Cabrillo).
     _earnedMoney: function (v, cap) { return earnedMoney(v, cap); },
     _diffMoney: function (max, actual) { return diffMoney(max, actual); },
+    _districtHead: function (d) { return oneDistrictHeadHtml(d, districtMembers(d)); },
     // test hook: the per-render memo (S613). Inside one scope, two reads, the
     // first altered by its caller, and the uncached answer beside them.
     _memoProbe: function (slot) {
