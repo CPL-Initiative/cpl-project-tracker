@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-16
+updated: 2026-11-17
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -21,6 +21,19 @@ and want to further automate so curation is manageable."*
 
 **The classifier's HTTP 413 (2026-11-07 to #2925, S604) and the procedures report's Pages fix (#2924):** `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S640)*. Read each nightly report's `classifier_run.answered` and `errors`.
 
+## Titles that have left MAP (S678, 2026-11-17)
+
+**LIVE (#3466 `a9f7eec2`, item 2):** on the Exhibits List a leftover title takes Keep, Move or Remove (`_LEFT_MAP::`
+rows, `left_map_decision`; a link only, nothing deleted), split and bulk, CPL type labels, and the graded and
+cert-based guard on Move and an accepted combine. `kb/_build_left_map.py` writes `kb/exhibit_left_map.json`;
+`kb/_apply_left_map.py` carries decisions out; `excel_to_dashboard.py` leaves a removed title out. 446 titles used
+against COBIx's 434 (his pointer rule came from an unposted file). Tests `tests/exhibits_list_left.test.js`,
+`tests/left_map_build_test.py`. **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local
+title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 607 applied,
+73 held; the split reads 219 against 265 because the MAP snapshot is not committed; no real apply has run.
+**NEXT:** (1) wire `kb/_apply_left_map.py` into a nightly job; (2) Rename and Combine on the leftover row (the regular
+List has them; the guard covers Accept); (3) #3472: commit the MAP snapshot run, then the reviewed apply.
+
 ## Certification naming, the fold, the subject fill and the ASE plans (S637, S638; 2026-11-11)
 
 The S637 build record (Sam's title ruling, the rename batch, related titles, aliases, the canonical model, the fold
@@ -39,16 +52,7 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   (cohort `cred-fold-s638@bot`); no issuer row a person wrote is changed; every reader resolves through
   `effective_issuer` (`issuer_resolution.js` in the browser). `kb/_cred_rename_undo.py <receipt>` reverses an apply.
   The guarded writes and the undo have run only against a test double.
-- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
-  guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
-  `<date>-<2-9>` only (run 43104136989 refused the first names); #3120 renamed them `kb/cer_decisions_out/2026-11-11`,
-  `-2`, `-3`. **Phases 1 and 2 applied** (22:13Z and 22:26Z; receipts in each folder): every insert, replace and
-  exhibit re-point stands. They also retired 17 rows on the titles they emptied; the 13 a person saved were restored
-  by `kb/cer_decisions_out/2026-11-11-4` (below), and the 4 July `reviewed_marker` ticks stay retired. The applier's `reinstates` put a row back
-  exactly as its receipt kept it, under the person's own reviewer and stamp, insert-only; `while_emptied` holds the
-  plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
-  fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
-  deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
+- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`; phases 1 and 2 applied 2026-11-11, the restore `-4` after them) moved verbatim to `docs/exhibit_canonicalization_lessons_archive.md`, *Moved from the lane (S678 checkpoint)*; its guards (`reviewed_at`, `while_emptied`, `--rollback`) stand.
 - **Moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S642)*:** the applier's retry-safe undo (S639, #3123; `tests/cer_decision_apply_retry_test.py`), the family live on 25 titles under `credential-family-s638@bot` (undo `credential-family-apply.yml` `mode=rollback`), Sheet 181's four rulings (all carried out; `d-sheet-181-replies-2026-11-11`) and the S639 conductor's two titles left for a person.
 - **Readers ignore a saved row on an emptied title** (a title no `kb/unified_titles.json` raw maps to, the fold's own
   test). `fold_issuer.hold_emptied_folds` keeps its saved fold out of the rename dry run and the apply (`held_emptied`

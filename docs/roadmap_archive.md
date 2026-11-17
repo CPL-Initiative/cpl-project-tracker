@@ -337,3 +337,52 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 <!-- docs/INDEX.md Update history, trimmed at the S677 checkpoint -->
 - 2026-11-16 (S663 SkyLark, the CPL Queue routine's 06:12Z firing, full checkpoint): #3385 (a prior-year record is scored against its own year's course numbers, `course_renumbers_by_year`; Riverside City's Mathematics 32692 filed from its 2025-2026 page and reread); Las Positas' objectives reread (#3386) and College of the Redwoods' trial (#3387) started; handoff 664 (SkyWren).
+
+## Moved from lanes/common-cr-reference.md (S678 checkpoint, 2026-11-17)
+
+## The magic half is one module now (2026-09-21, S281 SkyAnvil)
+
+`kb/_jev_adjudicate.py` is the single Jev adjudication routine for every
+reference — CSR, CER and CCRR wired, CCR deliberately not. The method+magic
+pattern is [`playbook-trail-crew-method-magic-audit`](../../kb-notes/playbook-trail-crew-method-magic-audit.md),
+which ran it twice on 2026-07-10; every reference already owns a METHOD half and
+what differs is the magic one. CCRR's blocking is **imported** from
+`_typesafe_cr_trial.build_pairs()`, never reimplemented.
+
+⚠️ **THE SECOND LOOK NEVER SEES THE VERDICT IT CHECKS.** The playbook requires a
+skeptic on every merge; its working version re-derived the numbers rather than
+re-reading the claim. Jev cannot read a registry, so re-derivation here is the
+NEGATIVE question put to the same evidence in a separate call with the first
+answer withheld — "critique this proposal" is the shape that rubber-stamps. A
+refuted proposal routes to the curator however confident the first look was, and
+a 0.5 hedge is not a refutation. Run it from
+`.github/workflows/typesafe-smoke.yml` (typesafe.ai is egress-blocked from the
+sandbox); it SUGGESTS and writes nothing.
+
+**Triage, measured 2026-09-29 on fresh scans (#1735):** CER 38 worth a call ·
+CSR 15 · CCRR 55 anchored pairs, the receipt's 51 all present; the 4 new ones sit
+under `community relations`, the named hard case.
+
+⚠️ **SCORE AGAINST `by: "sam"` ROWS ONLY.** The decision sheet went opt-out on
+2026-09-21, so an untouched item carries the recommendation marked
+`by: "default"`. Scoring a matcher against those measures it against its own
+proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
+why it is the ground truth.
+
+## Moved from lanes/commons.md (S678 checkpoint, 2026-11-17)
+
+**The identities map, APPLIED and DROPPED (S652; `sam-identities-apply-and-drop-2026-11-14`):** 2,316 entries; undo in order by `python3 kb/_identities_rebuild.py --undo` (the drop receipt, then 14b). The paragraph: lessons, *Moved from the lane (S653 checkpoint)*.
+
+**Honors, the field (#3313 `1ef02a84`; follow-ups #3325 `faaa7a9b`, S654, COBIx verified):** `kb/honors_of.py` (the fold guard, a trial check over every pair), `kb/curation_pointers.py` re-keys `merge_into` and `honors_of`, the Allocator refuses an H id; the hold covers every base of a list value, the CCR worklist fails closed, the daily Summary counts joined pairs. `d-honors-open-questions-s653` stands. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
+
+**APPLIED: Honors step 1** (#3329 `7e017287`; **DECIDED** `d-honors-step1-applied-s653`; undo `kb/migrations/2026-11-14_s653_honors_of_field_rollback.sql`, run BEFORE the S652 follow-ups rollback): lessons, *Moved from the lane (S655 checkpoint)*.
+
+**Honors step 2: APPLIED (S666, 2026-11-16).** **DECIDED** `d-honors-step2-applied-not-a-hold-s666`: Sheet 200 card 1 was not a hold under the ask test (Sam, 2026-11-16, relayed by COBIx on issue #3358). The check reran on the day's payload (380 rows, digest `29667c0741e7e7fafb509b4c2937e9db`, classes `8240706b0d789142ba3134c1a216db80`); `supabase-migrate.yml` run 43889173474 inserted 380 rows under `honors-rows-s653@bot` (receipt `kb/receipts/migration_s653_honors_of_rows_43889173474.json`). Rollback: `kb/migrations/2026-11-14_s653_honors_of_rows_rollback.sql`, by cohort. `d-honors-anchored-rows-s654` and `d-honors-no-mint-on-split-candidate-s654` stand.
+
+### Also moved from lanes/commons.md (S678 checkpoint)
+
+**IN PROGRESS: M-ID re-clustering by outcomes, Step 1 (S642, issue #2962; reports and plans under `kb/reclustering_s6*_out/`).** Sam's rulings (Sheets 186, 191, 195, 197; `sam-honors-own-mid-2026-11-13`, `sam-sheet-195-answers-2026-11-14`, `sam-ccn-structures-gold-standard-2026-11-14`: *"CCN structures should be our gold standard"*) and `d-math-m1044-stays-no-one-asked-s652`, `d-huma-m10oi-into-m1110-s652` (not done) stand. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*. **The six cases are settled; nothing waits to apply (S667, checked against #3245 and #3274; DECIDED `d-six-cases-settled-s667`).** Applied: case 2, FIRE M1274 into FIRE 130 X (#3245), and case 6, the BUSI M1228 split (Sheet 195 card 3, #3274). Stay as they are by Sam's Sheet 195 card 2 (*"Take every recommendation"*): case 1 AJ 160, case 3 REAL M1038 with M1040, case 5 MUS 130. Case 4, MATH M1044, stays apart from M1036 by Sam's word in session (`d-math-m1044-stays-no-one-asked-s652`). COBIx's Nov 16 ask to apply all six as #3245 proposed yields to those rulings. Still open in this paragraph: `d-huma-m10oi-into-m1110-s652`.
+
+## Moved from docs/INDEX.md's update history (S678 checkpoint)
+
+- 2026-11-16 (S664 SkyWren, the CPL Queue routine's 10:12Z firing, full checkpoint): #3389 (the SLO reader reads Las Positas' lead-in *Upon the completion of this course* as the lead; the 505 live rows corrected in place under a receipt, `d-laspositas-lead-fix-in-place-s664`); handoff 665 (SkyThrush).
