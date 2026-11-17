@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "History",
  "award": "A.A- T Degree",
- "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/art-history-associate-in-arts-for-transfer-a-a-t-fall-2026",
- "record_shape": 4,
+ "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/history-associate-in-arts-for-transfer-a-a-t-fall-2026",
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12998,
+  "input_tokens": 13747,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12998,
-    "output_tokens": 2855,
+    "input_tokens": 13747,
+    "output_tokens": 4615,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,82 +30,86 @@
     "model": null
    }
   ],
-  "output_tokens": 2855,
+  "output_tokens": 4615,
   "output_tokens_details": {
-   "thinking_tokens": 753
+   "thinking_tokens": 1527
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.10909,
- "ms": 22247,
- "seconds": 22.8,
+ "cost_usd": 0.14729,
+ "ms": 40924,
+ "seconds": 41.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 38,
    "listed": 40,
-   "share": 0.0,
+   "share": 0.95,
    "missing": [
-    "ENGL27BN",
-    "ETHN21A",
-    "ETHN21AH",
     "ETHN21B",
-    "ETHN21BH",
-    "ETHN27AN",
-    "ETHN27BN",
-    "FR3",
-    "HIST14",
-    "HIST14H",
-    "HIST15",
-    "HIST16A",
-    "HIST16B",
-    "HIST16C",
-    "HIST17A",
-    "HIST17AH",
-    "HIST17B",
-    "HIST17BH",
-    "HIST19B",
-    "HIST19C",
-    "HIST21A",
-    "HIST21AH",
-    "HIST21B",
-    "HIST21BH",
-    "HIST27AN",
-    "HIST27BN",
-    "HIST29A",
-    "HIST29B",
-    "HIST2A",
-    "HIST2B",
-    "HIST4A",
-    "HIST4AH",
-    "HIST4B",
-    "HIST4BH",
-    "HIST6",
-    "ITAL3",
-    "SPAN16",
-    "SPAN17",
-    "SPAN3",
-    "SPAN4"
+    "ETHN21BH"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST17A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST17AH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST17B",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST17BH",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SPAN3S",
+     "listed": "SPAN16",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "ENGL27AN",
+    "HIST11",
+    "HIST9",
+    "POLSC1000",
+    "POLSC1000H",
+    "PS2"
+   ],
+   "flagged": [
+    "ENGL27AN",
+    "HIST11",
+    "HIST9",
+    "POLSC1000",
+    "POLSC1000H",
+    "PS2"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    34.0,
-    34.0
+    58.0,
+    60.0
    ],
    "stated": [
     60.0,
@@ -117,48 +121,46 @@
     34.0
    ],
    "why": [],
-   "transfer": true,
-   "fill": [
-    26.0,
-    26.0
-   ]
+   "within": true
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 10,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Art History Associate in Arts for Transfer (A.A.-T)",
+   "section_heading": "History Associate in Arts for Transfer (A.A.-T)",
    "measure": "units",
    "total_units": {
     "min": null,
     "max": null
    },
-   "open_elective_units": null,
-   "ge_pattern": null,
-   "outcomes": [],
-   "careers": [],
+   "open_elective_units": 6,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -166,200 +168,434 @@
    "ge_units": {
     "min": 34,
     "max": 34
-   }
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Write analytical essays arguing a thesis about causality, context, and the significance of change over time, using appropriate historical evidence, and showing awareness of counter-arguments to the thesis.",
+    "Analyze major events, ideas, and transformations in religious, social, cultural, political, economic, and diplomatic history through written assignments and discussions.",
+    "Critically analyze primary historical sources and scholarly research to investigate specific events or issues in history.",
+    "Evaluate historical myths, cliches, and/or prejudices, including those about race, class, gender, and hegemonic power."
+   ],
+   "careers": [
+    "teaching",
+    "law",
+    "business",
+    "communications",
+    "journalism",
+    "librarianship",
+    "archival and research work",
+    "public administration",
+    "web content development",
+    "public service and government careers"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HISTC1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - Core",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HISTC1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HISTC1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST2A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST4A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST4AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List A",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HIST2B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST4B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST4BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "HIST6",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST14H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST16A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST16B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST16C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST19B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST19C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST21A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ETHN21A",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST21AH",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN21AH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST21B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST21BH",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST29A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST29B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST27AN",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL27AN",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ETHN27AN",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST27BN",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL27BN",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHN27BN",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FR3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN3S",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPAN17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Requirements - List B",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "POLSC1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "PS2",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST9",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST11",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ENGL 27BN",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 21A",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 21AH",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 21B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 21BH",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 27AN",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ETHN 27BN",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "FR 3",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 14",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 14H",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 15",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 16A",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 16B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 16C",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
     "code": "HIST 17A",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints HISTC1001 in its place"
    },
    {
     "code": "HIST 17AH",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints HISTC1001H in its place"
    },
    {
     "code": "HIST 17B",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints HISTC1002 in its place"
    },
    {
     "code": "HIST 17BH",
-    "why": "not in the text"
+    "why": "not in the text; catalog prints HISTC1002H in its place"
    },
    {
-    "code": "HIST 19B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
+    "code": "ETHN 21B",
+    "why": "not in the major requirements; appears only in the Cal-GETC Area 4 list of the program map"
    },
    {
-    "code": "HIST 19C",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 21A",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 21AH",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 21B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 21BH",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 27AN",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 27BN",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 29A",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 29B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 2A",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 2B",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 4A",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 4AH",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 4B",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 4BH",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "HIST 6",
-    "why": "appears only in Art History program map GE Area 4; History A.A.-T section not in the text"
-   },
-   {
-    "code": "ITAL 3",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
+    "code": "ETHN 21BH",
+    "why": "not in the major requirements; appears only in the Cal-GETC Area 4 list of the program map"
    },
    {
     "code": "SPAN 16",
-    "why": "not in the text"
-   },
-   {
-    "code": "SPAN 17",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "SPAN 3",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
-   },
-   {
-    "code": "SPAN 4",
-    "why": "appears only in Art History A.A.-T List C; History A.A.-T section not in the text"
+    "why": "not in the text; catalog lists SPAN3S - Spanish for Spanish Speakers I instead"
    }
   ],
   "notes": [
-   "The source URL and catalog text are for the Art History Associate in Arts for Transfer (A.A.-T), not the History A.A.-T named in the request. No History A.A.-T section appears in the text, so no blocks, totals, outcomes or careers were recorded.",
-   "The Art History page's program outcomes, Cal-GETC pattern, 18-unit major minimum and List A/B/C requirements were deliberately not recorded because they belong to a different program.",
-   "Many closed-list History courses appear on this page only as Art History List C options or in the program map's Cal-GETC Area 4/3B/6 lists; they were not placed.",
-   "Reviewer should locate the correct History A.A.-T page for Cabrillo College 2026-2027 and re-extract.",
-   "The text begins mid-sentence and is cut off at the end (program map, 'PSYCH2B - Researc')."
+   "Catalog text begins mid-sentence ('ills including:'); the program description is cut off at the start.",
+   "No major total printed; the generic statement of a minimum of 18 units in the major for all A.A.-T/A.S.-T degrees was not used as total_units.",
+   "Degree total 60 and Cal-GETC 34 recorded as printed under the program requirements.",
+   "General Electives section states 'Complete the following number of credits: 6-8' with 'any transferable course' rows of 2 and 3 units; open_elective_units recorded as the low end 6 (printed range 6-8).",
+   "Both List B blocks end with 'or any course not selected from List A' (3-5 units in the first, 3 in the second); this open option is not recorded as a course.",
+   "Two separate blocks are both headed 'Major Requirements - List B' as printed; the second (POLSC1000, PS2, HIST9, HIST11) may be a mislabelled List C—reviewer should check.",
+   "Cross-listed courses (HIST21A/ETHN21A/HIST21AH/ETHN21AH; HIST27AN/ENGL27AN/ETHN27AN; HIST27BN/ENGL27BN/ETHN27BN) recorded as alternatives of one choice.",
+   "Program outcomes are printed for the program as a whole; recorded for this award.",
+   "Program map and Cal-GETC area course lists were not recorded as blocks; the text is cut off within the Area 4 list."
   ]
  },
- "extracted_run": 38639316727,
- "reconciled": [
-  {
-   "field": "degree_total",
-   "was": null,
-   "now": {
-    "min": 60,
-    "max": 60
-   },
-   "words": "Program Requirements\nArt History Associate in Arts for Transfer (A.A.-T)\nComplete the following number of credits: 60"
-  },
-  {
-   "field": "ge_units",
-   "was": null,
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Cal-GETC General Education\n34"
-  }
- ],
- "read_run": "38442109713"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }

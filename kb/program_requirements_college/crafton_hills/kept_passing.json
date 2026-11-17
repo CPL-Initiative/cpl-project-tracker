@@ -1,0 +1,436 @@
+{
+ "run": "44090908924",
+ "programs": [
+  {
+   "control_number": "04856",
+   "title": "Child Development",
+   "award": "A.A. Degree",
+   "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+   "filed_source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/child-development-cdev/child-development-associate-of-arts-degree",
+   "cost_usd": 0.07106,
+   "usage": {
+    "input_tokens": 6985,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 6985,
+      "output_tokens": 2156,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2156,
+    "output_tokens_details": {
+     "thinking_tokens": 608
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 9,
+     "share": 0.889,
+     "missing": [
+      "CD115"
+     ],
+     "unexplained": [
+      "CD115"
+     ],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "CDEV205",
+       "listed": "CD205",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": false
+    },
+    "invented": {
+     "count": 13,
+     "codes": [
+      "CDEV100",
+      "CDEV115",
+      "CDEV133",
+      "CDEV134",
+      "CDEV137",
+      "CDEV185",
+      "CDEV186",
+      "CDEV211",
+      "CDEV244",
+      "CDEV250",
+      "CDEV270",
+      "CDEV271",
+      "CDEV272"
+     ],
+     "flagged": [
+      "CDEV100",
+      "CDEV133",
+      "CDEV134",
+      "CDEV137",
+      "CDEV185",
+      "CDEV186",
+      "CDEV211",
+      "CDEV244",
+      "CDEV250",
+      "CDEV270",
+      "CDEV271",
+      "CDEV272"
+     ],
+     "pass": false
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      25.0,
+      25.0
+     ],
+     "stated": [
+      25.0,
+      25.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 9,
+     "share": 0.778,
+     "missing": [
+      "CD115",
+      "CD205"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 14,
+     "codes": [
+      "CDEV100",
+      "CDEV115",
+      "CDEV133",
+      "CDEV134",
+      "CDEV137",
+      "CDEV185",
+      "CDEV186",
+      "CDEV205",
+      "CDEV211",
+      "CDEV244",
+      "CDEV250",
+      "CDEV270",
+      "CDEV271",
+      "CDEV272"
+     ],
+     "flagged": [
+      "CDEV100",
+      "CDEV115",
+      "CDEV133",
+      "CDEV134",
+      "CDEV137",
+      "CDEV185",
+      "CDEV186",
+      "CDEV205",
+      "CDEV211",
+      "CDEV244",
+      "CDEV250",
+      "CDEV270",
+      "CDEV271",
+      "CDEV272"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      25.0,
+      25.0
+     ],
+     "stated": [
+      25.0,
+      25.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 2,
+     "courses": 0,
+     "count": 2,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "41675",
+   "title": "Social Justice Studies",
+   "award": "A.A- T Degree",
+   "source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+   "filed_source_url": "https://craftonhills.smartcatalogiq.com/en/2026-2027/catalog/credit-programs/ethnic-studies-eths/associate-in-art-in-social-justice-ethnic-studies-for-transfer-aat-degree",
+   "cost_usd": 0.10832,
+   "usage": {
+    "input_tokens": 8506,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 8506,
+      "output_tokens": 3715,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3715,
+    "output_tokens_details": {
+     "thinking_tokens": 1261
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 21,
+     "listed": 22,
+     "share": 0.955,
+     "missing": [
+      "ANTHRO107"
+     ],
+     "unexplained": [
+      "ANTHRO107"
+     ],
+     "none_placed": false,
+     "pass": false
+    },
+    "invented": {
+     "count": 6,
+     "codes": [
+      "ANTH107",
+      "ETHS132H",
+      "ETHS141H",
+      "SOCI132H",
+      "STATC1000",
+      "STATC1000H"
+     ],
+     "flagged": [
+      "ETHS132H",
+      "ETHS141H",
+      "SOCI132H",
+      "STATC1000",
+      "STATC1000H"
+     ],
+     "pass": false
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      21.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": [],
+     "meets": true
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 22,
+     "share": 0.773,
+     "missing": [
+      "ANTHRO107",
+      "SOC106",
+      "SOC132",
+      "SOC141",
+      "SOC141H"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 10,
+     "codes": [
+      "ANTH107",
+      "ETHS132H",
+      "ETHS141H",
+      "SOCI106",
+      "SOCI132",
+      "SOCI132H",
+      "SOCI141",
+      "SOCI141H",
+      "STATC1000",
+      "STATC1000H"
+     ],
+     "flagged": [
+      "ANTH107",
+      "ETHS132H",
+      "ETHS141H",
+      "SOCI106",
+      "SOCI132",
+      "SOCI132H",
+      "SOCI141",
+      "SOCI141H",
+      "STATC1000",
+      "STATC1000H"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      18.0,
+      21.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 18.0-21.0; the catalog states 18.0-19.0"
+     ],
+     "meets": true,
+     "rescored": "Open Asks Sheet 120 card 1"
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}
