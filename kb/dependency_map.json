@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1016,
+  "file_datasets": 1019,
   "external_services": 195,
-  "consumers": 605,
+  "consumers": 606,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -1551,7 +1551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3237,
+     "line": 3276,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2332,7 +2332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3236,
+     "line": 3275,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3495,7 +3495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3235,
+     "line": 3274,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3567,7 +3567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 165
+     "line": 171
     }
    ],
    "main_committers": []
@@ -4455,7 +4455,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 398
+     "line": 442
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -6271,7 +6271,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4005,
+     "line": 4044,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6312,7 +6312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3341,
+     "line": 3380,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6630,7 +6630,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4286,
+     "line": 4325,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6881,7 +6881,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4273,
+     "line": 4312,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6951,7 +6951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4267,
+     "line": 4306,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7297,7 +7297,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2626,
+     "line": 2665,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7347,7 +7347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4233,
+     "line": 4272,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7370,7 +7370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2798,
+     "line": 2837,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7433,7 +7433,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4281,
+     "line": 4320,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7633,7 +7633,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4254,
+     "line": 4293,
      "tabs": [
       "cpl-pathways"
      ]
@@ -8076,7 +8076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 250
+     "line": 256
     }
    ],
    "served": false,
@@ -8089,7 +8089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 887
+     "line": 939
     }
    ],
    "served": false,
@@ -10055,6 +10055,19 @@
    "consumers": [
     {
      "id": "workflow:pages.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_spend_daily.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -14312,7 +14325,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 151
     }
    ],
    "served": true,
@@ -16798,7 +16811,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 152
     }
    ],
    "served": false,
@@ -17715,7 +17728,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 590
     }
    ],
    "served": false,
@@ -17788,6 +17801,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 480
+    },
     {
      "id": "script:kb/_course_id_rescore_estimate.py",
      "kind": "script",
@@ -18766,7 +18786,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 591
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19350,6 +19370,26 @@
     "workflow:moc-crosswalk-sync.yml"
    ]
   },
+  "file:kb/reference/model_spend_daily.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 325
+    },
+    {
+     "id": "script:kb/_build_spend_daily.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/mq_disciplines.json": {
    "consumers": [
     {
@@ -19897,7 +19937,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 153
     }
    ],
    "served": false,
@@ -19910,7 +19950,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 155
     }
    ],
    "served": true,
@@ -20048,7 +20088,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 146
     }
    ],
    "served": true,
@@ -20125,7 +20165,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 147
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -21610,7 +21650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3698,
+     "line": 3737,
      "tabs": [
       "cpl-pathways"
      ]
@@ -23036,7 +23076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 474
+     "line": 526
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23308,7 +23348,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 492
+     "line": 511
     }
    ],
    "served": true,
@@ -23798,7 +23838,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2039,
+     "line": 2078,
      "tabs": [
       "cpl-pathways"
      ]
@@ -24366,7 +24406,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 492
+     "line": 511
     }
    ],
    "served": true,
@@ -27053,6 +27093,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/spend_daily_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/standards_2_ruled_renames_test.py": {
    "consumers": [
     {
@@ -27463,7 +27516,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 591
     }
    ],
    "served": false,
@@ -30394,7 +30447,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3541,
+     "line": 3580,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30433,7 +30486,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3544,
+     "line": 3583,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30540,7 +30593,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 877,
+     "line": 933,
      "tabs": [
       "commons"
      ]
@@ -30550,7 +30603,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1873,
+     "line": 1912,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33105,7 +33158,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1668,
+     "line": 1682,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33195,7 +33248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1669,
+     "line": 1705,
      "tabs": [
       "cpl-pathways"
      ]
@@ -34814,9 +34867,12 @@
   },
   "harvest-gap-census.yml": {
    "name": "Harvest gap census",
-   "crons": [],
+   "crons": [
+    "47 17 * * *"
+   ],
    "scripts": [
     "kb/_commons_data_live.py",
+    "kb/_build_spend_daily.py",
     "kb/_harvest_gap_census.py",
     "kb/_program_requirements_heading_agreement.py",
     "kb/_build_commons_data_status.py"
@@ -35037,6 +35093,7 @@
     "tests/honors_of_rows_check_test.py",
     "tests/honors_subject_reading_test.py",
     "tests/session_spend_build_test.py",
+    "tests/spend_daily_build_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",

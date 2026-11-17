@@ -542,6 +542,14 @@ def college_records(pilot_keys: set) -> list[tuple]:
 
 
 # ── the figure: the mock-up's plan(), ported ────────────────────────────────────
+def course_id_printed(score: dict | None) -> set:
+    """The printed codes the scorer met to a listed code by the Program Course File id (coverage.course_id): those
+    courses are on the program's state list under another code (a CCN renumber such as Riverside City HIST-C1001 for
+    HIST 1, or a prefix id), so they are never catalog additions on the display (f-ccn-renumber-shows-as-catalog-
+    addition-s673; S678: 617 course mentions at 15 colleges read as off the list before this)."""
+    return {ck(m.get("printed")) for m in ((score or {}).get("coverage") or {}).get("course_id") or [] if m.get("printed")}
+
+
 def tag_course_id(courses: dict, score: dict | None) -> dict:
     """Each display course the scorer met to its listed code by the Program Course File id names that route
     ("matched_by": "course_id", "listed_as": the listed code), from coverage.course_id on the filed score, so
@@ -721,8 +729,10 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     # A course printed in two blocks is one course off the list (Irvine Valley's Art
     # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once. One the
     # program carries under another status gets its own gap, naming that status.
+    by_id = course_id_printed(score)
     adds = list(OrderedDict.fromkeys(x["code"] for b in rec["blocks"] for c in courses_of(b)
-                                     for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")))
+                                     for x in [c] + list(c.get("alternatives") or [])
+                                     if x.get("catalog_addition") and ck(x["code"]) not in by_id))
     unlisted = [a for a in adds if not coci_of(a)]
     for a in adds:
         f = coci_of(a)
@@ -761,9 +771,7 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     # An associate degree whose record holds the major alone (Sam, 2026-10-14, Cabrillo Biology
     # 06328): the reading procedure's gap, found without a person reading the record.
     if degree_reading(rec, award)["status"] == "major only":
-        g.append({"kind": "Major only", "owner": "procedure", "where": proc,
-                  "text": "The record holds the major's requirements. The degree's general education and "
-                          "electives, which bring an associate degree to at least 60 units, are not in it."})
+        g += major_only_gap(rec, total, measure, proc)
     if re.search(r"noncredit", award or "", re.I) and measure != "hours":
         g.append({"kind": "Possible misread", "owner": "procedure", "where": proc,
                   "text": "A noncredit program recorded in %s; noncredit programs count hours." % measure})
@@ -773,6 +781,30 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     for n in rec.get("notes") or []:
         g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": n})
     return g
+
+
+GE_WORDS = re.compile(r"general\s+education|\bGE\s+area", re.I)
+
+
+def major_only_gap(rec: dict, total: dict, measure: str, proc: str) -> list:
+    """The Major only gap, unless the printed total already reaches an associate degree's 60 units (S678, #3461 page
+    finding 7: Chaffey's Physical Therapist Assistant, 42987, prints 65 units with general education inside its
+    "Required Prerequisites and General Education" block, and the gap said general education was not in the record).
+    There, a record whose blocks or notes name general education gets the gap that is true of it: the catalog's
+    general education area lines are not kept as courses. A total of 60 or more with no such words raises nothing."""
+    lo = (total or {}).get("min")
+    if lo is None or lo < 60:
+        return [{"kind": "Major only", "owner": "procedure", "where": proc,
+                 "text": "The record holds the major's requirements. The degree's general education and "
+                         "electives, which bring an associate degree to at least 60 units, are not in it."}]
+    said = [b.get("name") or "" for b in rec.get("blocks") or []] + list(rec.get("notes") or [])
+    if not any(GE_WORDS.search(t) for t in said):
+        return []
+    return [{"kind": "General education lines", "owner": "procedure", "where": proc,
+             "text": "The catalog's total of %s includes general education. The record keeps the courses the "
+                     "catalog names; a line that asks for one course from a general education area is not kept "
+                     "as a course, so its units are not in the blocks."
+                     % amount(lo, total.get("max"), measure)}]
 
 
 def units_differ(arith: dict, total: dict) -> dict | None:
@@ -1043,8 +1075,10 @@ def build() -> dict:
         cov = score.get("coverage") or {}
         # A course the program lists through a retired version is on its list (coci_facts):
         # it leaves the additions and joins the listed and placed counts, once per code.
+        by_id = course_id_printed(filed.get("score"))
         adds = sum(1 for b in blocks for c in courses_of(b) for x in [c] + list(c.get("alternatives") or [])
-                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed"))
+                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed")
+                   and ck(x["code"]) not in by_id)
         relisted = len({ck(code) for code, e in courses.items() if (e.get("coci") or {}).get("listed")})
         display = OrderedDict()
         display["v"] = SHAPE_VERSION

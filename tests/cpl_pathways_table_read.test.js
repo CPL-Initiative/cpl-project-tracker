@@ -141,10 +141,10 @@ function pickRecord(w, root, title) {
     check("(a) a checked program carries no mark", !/not yet confirmed/.test(opts[0] || "x"), opts[0]);
     const listCall = f.calls.find((c) => /program_requirement_records\?select=/.test(c.url) && !/college=eq/.test(c.url));
     check("(b) a signed-out page reads the list with the anon key", !!listCall && !listCall.reviewer, listCall && listCall.auth);
-    // The light columns plus each program's four counts (SkyHarbor, 2026-11-06: the statewide view's figures), never the
-  // record or the whole display build.
-  check("(b) the list read asks for the light columns and the counts only", !!listCall && (function (sel) {
-    return sel === "college,control_number,program_title,award,checked,counts:display->counts" && !/(^|,)(record|display)(,|$)/.test(sel);
+    // The light columns only: a path into display on an OFFSET page evaluates every skipped row, and the last pages ran
+  // past anon's statement timeout (#3461 page finding 5). The counts come after, by key (k).
+  check("(b) the list read asks for the light columns only, nothing out of display", !!listCall && (function (sel) {
+    return sel === "college,control_number,program_title,award,checked" && !/(^|,)(record|display|counts)/.test(sel);
   })(listCall.url.split("select=")[1].split("&")[0]), listCall && listCall.url);
   }
 
@@ -381,6 +381,66 @@ function pickRecord(w, root, title) {
     check("(j) all 2,600 programs arrive, the first and the last included", nAll === "2,600" && find("Wave Program 0").includes("Wave Program 0") && find("Wave Program 2599").includes("Wave Program 2599"), nAll);
     check("(j) the pages after the first are read side by side", most > 1, most);
     check("(j) and the read stops at the short page", indexReads <= 7, indexReads);
+  }
+
+  // ── (k) the counts are read by key, never past an offset (#3461 page finding 5, S678) ──
+  // Chaffey's CPL Pathways, framed in the Commons, said the table could not be read: the index read display->counts
+  // on OFFSET pages, each evaluating every row it skipped, and the deep pages ran past anon's 3-second statement
+  // timeout (500). The stub answers 500 to any offset page that reads display, as the database did. The list must
+  // still be the table's, and each program keeps its counts from reads bounded by its keys.
+  {
+    const colleges = ["Chaffey College", "Norco College", "Mt. San Antonio College, Walnut"];
+    const many = [];
+    colleges.forEach((c, ci) => { for (let i = 0; i < 700; i++) many.push({ college: c, control_number: String(70000 + ci * 1000 + i), program_title: c.split(" ")[0] + " Keyed Program " + i, award: "Associate in Science", checked: true }); });
+    const counts = (r) => ({ courses: 10, here: Number(r.control_number) % 3, adopt: 1, consider: 0 });
+    const seen = { offsetDisplay: 0, countReads: [] };
+    function inRange(r, q) {
+      // A tiny reading of the two filter shapes the page sends: college=eq + control_number gte/lte, or the or= triple.
+      const p = new URLSearchParams(q);
+      const unq = (v) => v.replace(/^"|"$/g, "").replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+      if (p.get("or")) {
+        const m = /^\(and\(college\.eq\.("(?:[^"\\]|\\.)*"),control_number\.gte\.("[^"]*")\),and\(college\.gt\.("(?:[^"\\]|\\.)*"),college\.lt\.("(?:[^"\\]|\\.)*")\),and\(college\.eq\.("(?:[^"\\]|\\.)*"),control_number\.lte\.("[^"]*")\)\)$/.exec(p.get("or"));
+        if (!m) return null;
+        const c1 = unq(m[1]), n1 = unq(m[2]), c2 = unq(m[5]), n2 = unq(m[6]);
+        return (r.college === c1 && r.control_number >= n1) || (r.college > c1 && r.college < c2) || (r.college === c2 && r.control_number <= n2);
+      }
+      const ns = p.getAll("control_number");
+      const lo = (ns.find((x) => /^gte\./.test(x)) || "").slice(4), hi = (ns.find((x) => /^lte\./.test(x)) || "").slice(4);
+      return r.college === (p.get("college") || "").slice(3) && r.control_number >= lo && r.control_number <= hi;
+    }
+    const f = function (url, init) {
+      const h = (init && init.headers) || {};
+      const json = (body, st) => Promise.resolve({ ok: !st, status: st || 200, json: () => Promise.resolve(body) });
+      if (/program_source_registry/.test(url)) return json([]);
+      if (!/program_requirement_records/.test(url)) return json([]);
+      const q = url.split("?")[1];
+      const sel = new URLSearchParams(q).get("select") || "";
+      const m = /^(\d+)-(\d+)$/.exec(h.Range || "");
+      if (/display/.test(sel) && m && +m[1] > 0) { seen.offsetDisplay++; return json({ code: "57014", message: "canceling statement due to statement timeout" }, 500); }
+      if (/counts:display->counts/.test(sel) && !/control_number=eq\./.test(url) && /control_number|or=/.test(url) && !/loaded_at/.test(sel)) {
+        seen.countReads.push({ url, range: h.Range });
+        return json(many.filter((r) => inRange(r, q)).map((r) => ({ college: r.college, control_number: r.control_number, counts: counts(r) })));
+      }
+      if (/college=eq\./.test(url)) return json([]);
+      const from = m ? +m[1] : 0, to = m ? +m[2] : 999;
+      return json(many.slice(from, to + 1));
+    };
+    const w = freshWindow(f);
+    w.CPL_PATHWAYS_TAB.activate();
+    await settle(80);
+    const root = w.document.getElementById("cpl-pathways-root");
+    const idx = w.CPL_PATHWAYS_TAB._roepTable ? w.CPL_PATHWAYS_TAB._roepTable.index : null;
+    check("(k) the list is the table's, with no note that the table could not be read", !!idx && idx.length === 2100 && !root.querySelector(".cplpw-rnote"),
+      idx ? idx.length : (root.querySelector(".cplpw-rnote") || {}).textContent);
+    check("(k) no offset page reads display", seen.offsetDisplay === 0, seen.offsetDisplay);
+    check("(k) the counts reads carry no offset and are bounded by keys, one across colleges by or=",
+      seen.countReads.length >= 5 && seen.countReads.every((c) => !c.range) && seen.countReads.some((c) => /[?&]or=/.test(c.url)), seen.countReads.map((c) => c.url.slice(0, 160)));
+    const withCounts = idx ? idx.filter((r) => r.counts && r.counts.courses === 10).length : 0;
+    check("(k) every program keeps its counts, the comma-and-period college included", withCounts === 2100 &&
+      idx.filter((r) => /Walnut/.test(r.college)).every((r) => r.counts && r.counts.here === Number(r.control_number) % 3), withCounts);
+    DRIVE.chooseCollege(w, root, "Chaffey College");
+    check("(k) Chaffey's List loads its programs", root.querySelector(".cplpw-card-n") && root.querySelector(".cplpw-card-n").textContent === "700",
+      root.querySelector(".cplpw-card-n") && root.querySelector(".cplpw-card-n").textContent);
   }
 
   let failed = 0;
