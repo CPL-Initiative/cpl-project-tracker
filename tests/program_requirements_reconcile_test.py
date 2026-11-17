@@ -1643,7 +1643,9 @@ norco = ("MUS-93" + D + "The Business of Music" + D + "3.00" + D + "Take MUS-39 
          + "6.00" + D + "MUS-39" + D + "Applied Music I" + D + "3.00" + D + "Take MUS-79 twice for a total of six units:"
          + D + "6.00" + D + "MUS-79" + D + "Applied Music II" + D + "3.00\nOption 1: Take MUS-41 four times over four "
          "semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 2: Take both MUS-41 and MIS-81 two "
-         "times each over four semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00")
+         "times each over four semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 3: Take both "
+         "MIS-11A and MIS-11B two times each over four semesters:\n8.00" + D + "MIS-11A" + D + "Studio Ensemble I" + D
+         + "2.00")
 for cn, text, want, code, n in (("38626", piano, (18.5, 18.5), "MUS-P12", 4), ("38627", jazz, (17, 17), "MUS-39", 2),
                                 ("38628", perf, (17.5, 17.5), "MUS-39", 3)):
     rec = _as_read("riverside_city", cn)
@@ -1666,8 +1668,26 @@ nrec = _as_read("norco", "30606")
 nnew, nnotes = R.reconcile(nrec, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)
 ntimes = {c["code"]: c.get("times") for b in nnew["blocks"] for c in b["courses"] if c["code"] in ("MUS-39", "MUS-79", "MUS-41")}
 check("Norco 30606: MUS-39 and MUS-79 twice", ntimes.get("MUS-39") == 2 and ntimes.get("MUS-79") == 2)
-check("Norco 30606: the option lines' MUS-41 is left as read (two options, two counts)",
-      all(c.get("times") is None for b in nnew["blocks"] for c in b["courses"] if c["code"] == "MUS-41"))
+# S673: each option's heading gives its own courses their count, so MUS-41 takes 4 in Option 1 and 2 in Option 2.
+opt = {b["name"].split(":")[0]: {c["code"]: c.get("times") for c in b["courses"]}
+       for b in nnew["blocks"] if b["name"].startswith("Option")}
+check("Norco 30606: Option 1's MUS-41 four times", opt.get("Option 1") == {"MUS-41": 4})
+check("Norco 30606: Option 2's MUS-41 and MUS-81 two times each", opt.get("Option 2") == {"MUS-41": 2, "MUS-81": 2})
+check("Norco 30606: Option 3's MIS-11A and MIS-11B two times each", opt.get("Option 3") == {"MIS-11A": 2, "MIS-11B": 2})
+check("Norco 30606: the blocks sum to the page's 36-37", S.program_units(nnew, {})[0] == (36, 37))
+check("Norco 30606: a second run changes nothing",
+      not [x for x in R.reconcile(nnew, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("Norco 30606: an option heading the page does not print changes nothing",
+      not [x for x in R.reconcile(nrec, norco.split("\nOption 1")[0], "Norco College", "A.A. Degree",
+                                  steps=RCCD_STEPS)[1] if x["words"].startswith("Take MUS-41")])
+_odd = json.loads(json.dumps(nrec))
+for b in _odd["blocks"]:
+    if b["name"].startswith("Option 1"):
+        b["stated"] = {"min": 6, "max": 6}
+check("Norco 30606: a count whose sum is not the option's stated figure changes nothing",
+      all(c.get("times") is None for b in R.reconcile(_odd, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[0]["blocks"]
+          if b["name"].startswith("Option 1") for c in b["courses"]))
 check("Norco 30606: the required list sums to its printed 25",
       sum(c["units"] * (c.get("times") or 1) for c in nnew["blocks"][0]["courses"]) == 25)
 
