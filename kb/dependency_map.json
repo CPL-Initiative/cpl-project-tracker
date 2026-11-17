@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1015,
+  "file_datasets": 1018,
   "external_services": 195,
-  "consumers": 605,
+  "consumers": 606,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -4455,7 +4455,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 398
+     "line": 442
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -8089,7 +8089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 887
+     "line": 899
     }
    ],
    "served": false,
@@ -10055,6 +10055,19 @@
    "consumers": [
     {
      "id": "workflow:pages.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_spend_daily.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -17715,7 +17728,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 550
     }
    ],
    "served": false,
@@ -18766,7 +18779,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 551
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19349,6 +19362,26 @@
    "main_committers": [
     "workflow:moc-crosswalk-sync.yml"
    ]
+  },
+  "file:kb/reference/model_spend_daily.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 319
+    },
+    {
+     "id": "script:kb/_build_spend_daily.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 28
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/reference/mq_disciplines.json": {
    "consumers": [
@@ -23036,7 +23069,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 474
+     "line": 486
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23308,7 +23341,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 492
+     "line": 511
     }
    ],
    "served": true,
@@ -24366,7 +24399,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 492
+     "line": 511
     }
    ],
    "served": true,
@@ -27033,6 +27066,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/spend_daily_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/standards_2_ruled_renames_test.py": {
    "consumers": [
     {
@@ -27443,7 +27489,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 539
+     "line": 551
     }
    ],
    "served": false,
@@ -34767,9 +34813,12 @@
   },
   "harvest-gap-census.yml": {
    "name": "Harvest gap census",
-   "crons": [],
+   "crons": [
+    "47 17 * * *"
+   ],
    "scripts": [
     "kb/_commons_data_live.py",
+    "kb/_build_spend_daily.py",
     "kb/_harvest_gap_census.py",
     "kb/_program_requirements_heading_agreement.py",
     "kb/_build_commons_data_status.py"
@@ -34989,6 +35038,7 @@
     "tests/honors_of_rows_check_test.py",
     "tests/honors_subject_reading_test.py",
     "tests/session_spend_build_test.py",
+    "tests/spend_daily_build_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",
     "tests/credential_title_resolver_single_source_test.py",
