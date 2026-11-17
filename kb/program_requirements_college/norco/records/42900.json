@@ -44,27 +44,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -367,6 +370,6 @@
    "Total : 33.00 is printed for the certificate (30 required + 3 elective)."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

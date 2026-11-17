@@ -22,43 +22,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 313,
+   "placed": 316,
    "listed": 316,
-   "share": 0.991,
-   "missing": [
-    "AHS1",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 7,
    "codes": [
     "ARE36",
-    "ARTHC1100",
     "ARTHC1200",
     "ASL10",
     "COMM3",
     "DAND19",
     "ENGL16",
-    "ENGL48",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL48"
    ],
    "flagged": [
     "ARE36",
-    "ARTHC1100",
     "ARTHC1200",
     "ASL10",
     "COMM3",
     "DAND19",
     "ENGL16",
-    "ENGL48",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL48"
    ],
    "pass": true
   },
@@ -2466,6 +2473,6 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38113150250"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

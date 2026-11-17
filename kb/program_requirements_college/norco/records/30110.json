@@ -44,30 +44,43 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 130,
+   "placed": 134,
    "listed": 134,
-   "share": 0.97,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 8,
    "codes": [
     "ADJ13",
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS3",
     "PSYC2H",
@@ -78,10 +91,6 @@
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS3",
     "PSYC2H",
@@ -1197,6 +1206,6 @@
    "No general education pattern is named; the text refers only to general education as described in the college catalog."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38095619629"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

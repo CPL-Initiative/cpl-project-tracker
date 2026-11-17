@@ -44,30 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 29,
    "listed": 29,
-   "share": 0.897,
-   "missing": [
-    "ECO7",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -383,6 +388,6 @@
    "Total of 18.00 units is the major total; the degree requires 60 CSU-transferable units including Cal-GETC."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

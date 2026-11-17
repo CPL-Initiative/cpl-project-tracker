@@ -44,21 +44,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 216,
+   "placed": 217,
    "listed": 217,
-   "share": 0.995,
-   "missing": [
-    "AHS1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 6,
    "codes": [
     "ART41B",
-    "ARTHC1100",
     "ARTHC1200",
     "COMM3",
     "MUS8A",
@@ -67,7 +71,6 @@
    ],
    "flagged": [
     "ART41B",
-    "ARTHC1100",
     "ARTHC1200",
     "COMM3",
     "MUS8A",
@@ -1719,6 +1722,6 @@
    "The catalog notes not all listed courses are offered at all three RCCD colleges."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38095619629"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

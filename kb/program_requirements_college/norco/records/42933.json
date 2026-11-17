@@ -44,28 +44,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "CSC61",
-    "MATHC2210",
-    "MATHC2220"
+    "CSC61"
    ],
    "flagged": [
-    "CSC61",
-    "MATHC2210",
-    "MATHC2220"
+    "CSC61"
    ],
    "pass": true
   },
@@ -379,6 +384,6 @@
    "No general education pattern is named in this section; it refers generally to general education requirements in the college catalog."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

@@ -44,24 +44,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 17,
-   "share": 0.941,
-   "missing": [
-    "AHS1"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ARTHC1100"
-   ],
-   "flagged": [
-    "ARTHC1100"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -292,6 +293,6 @@
    "Total : 24.00 is the major total; the degree requires 60 CSU-transferable units with Cal-GETC."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

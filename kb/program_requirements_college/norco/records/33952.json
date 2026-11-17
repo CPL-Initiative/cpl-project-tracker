@@ -44,27 +44,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -233,6 +236,6 @@
    "Program Learning Outcomes are printed for this ADT section and recorded as printed."
   ]
  },
- "extracted_run": 43609971090,
- "read_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }
