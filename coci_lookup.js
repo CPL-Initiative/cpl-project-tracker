@@ -575,7 +575,9 @@
           CC.rule[c.id] = null;
           if (ruling === "move") ccSave(c, "discipline", to, after);
           else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow, after);
-          else if (ruling === "keep" && c.disc && (c.mt || !ccVerified(c))) ccSave(c, "confirm", c.disc, after);
+          // A Keep always writes its discipline row, verified card or not: the fold counts a ruling only when that row
+          // exists (RULING_NEEDS), so a reason alone would leave the card asked again (second reader on #3467).
+          else if (ruling === "keep" && c.disc) ccSave(c, "confirm", c.disc, after);
           else { landed(); CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
         });
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
