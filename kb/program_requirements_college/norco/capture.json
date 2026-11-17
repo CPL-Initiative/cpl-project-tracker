@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 161,
  "with_closed_list": 150,
- "started": "2026-11-17T08:46:01Z",
+ "started": "2026-11-17T10:21:06Z",
  "curriqunet": {
   "catalog": 116,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
@@ -455,7 +455,7 @@
   "yield_refused_passing": 0
  },
  "loads": 197,
- "seconds": 913.6,
+ "seconds": 920.2,
  "found": 148,
  "by_method": {
   "no_closed_list": 11,
@@ -664,100 +664,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/norco",
-  "kept": 124,
+  "kept": 146,
   "kept_moved": 0,
-  "programs": 24,
+  "programs": 2,
   "list": [
-   {
-    "control_number": "30105",
-    "title": "Administration & Information Systems",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5541",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5541",
-    "was_coverage": 0.941,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30107",
-    "title": "Math & Sciences",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5546",
-    "coverage": 0.991,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5546",
-    "was_coverage": 0.954,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30108",
-    "title": "Fine & Applied Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5543",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5543",
-    "was_coverage": 0.995,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30109",
-    "title": "Humanities, Philosophy & Arts",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5551",
-    "was_coverage": 0.965,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30110",
-    "title": "Social and Behavioral Studies",
-    "award": "A.A. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5547",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5547",
-    "was_coverage": 0.91,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31834",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5235",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5235",
-    "was_coverage": 0.941,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32594",
-    "title": "Computer Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5159",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5159",
-    "was_coverage": 0.778,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32624",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5205",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5205",
-    "was_coverage": 0.75,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32625",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5219",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5219",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   },
    {
     "control_number": "32830",
     "title": "Philosophy",
@@ -766,136 +676,6 @@
     "coverage": 1.0,
     "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
     "was_coverage": 0.957,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33090",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5220",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5220",
-    "was_coverage": 0.92,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33951",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5573",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5573",
-    "was_coverage": 0.862,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33952",
-    "title": "Chemistry",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153",
-    "was_coverage": 0.778,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "35027",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5143",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5143",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37232",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5141",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5141",
-    "was_coverage": 0.96,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "37311",
-    "title": "Environmental Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41479",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5144",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5144",
-    "was_coverage": 0.786,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42900",
-    "title": "Data Analytics",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5166",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5166",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42933",
-    "title": "Data Science",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5167",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5167",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43937",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5471",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5471",
-    "was_coverage": 0.857,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44792",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5578",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5578",
-    "was_coverage": 0.976,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44961",
-    "title": "Law, Public Policy, and Society",
-    "award": "A.A- T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581",
-    "was_coverage": 0.925,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45750",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6344",
-    "coverage": 1.0,
-    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6344",
-    "was_coverage": 0.923,
     "was_method": "sitemap_page"
    },
    {
@@ -1509,5 +1289,5 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342"
   }
  },
- "run": "44046021561"
+ "run": "44063769303"
 }

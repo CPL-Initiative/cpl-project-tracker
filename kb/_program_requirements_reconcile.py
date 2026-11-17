@@ -839,6 +839,35 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                                     now = {entry["code"]: {"times": n, "units_total": total}}
                                 notes.append({"field": "times", "was": None, "now": now,
                                               "words": m.group(0).strip()})
+            # A count printed in a block's own heading (Norco's Music Industry Studies: Performance 30606,
+            # S673): "Option 1: Take MUS-41 four times over four semesters" and "Option 2: Take both MUS-41
+            # and MIS-81 two times each over four semesters", each over its own "8.00". name_pattern's n
+            # (and code, where the pattern names one) gives the courses of that block alone their times, so a
+            # code that sits in two options at two counts takes each block's own. Only a rule-all block, only
+            # where its heading's words are on the page, every course it touches carries units and no count,
+            # and the counted sum is exactly the figure the block states.
+            heading = re.compile(st["name_pattern"]) if st.get("name_pattern") else None
+            flat = re.sub(r"\s+", " ", text)
+            for block in (out.get("blocks") or []) if heading else []:
+                bm = heading.search(block.get("name") or "")
+                n = _count(bm.group("n")) if bm else None
+                if not n or n < 2 or block.get("rule") != "all" or bm.group(0).strip() not in flat:
+                    continue
+                code = norm_code(bm.group("code")) if "code" in bm.re.groupindex and bm.group("code") else None
+                courses = block.get("courses") or []
+                hit = [c for c in courses if code is None or norm_code(c.get("code")) == code]
+                if not hit or any(c.get("times") is not None or _num(c.get("units")) is None for c in hit):
+                    continue
+                lo = _span_of(block.get("stated"))[0]
+                ids = {id(c) for c in hit}
+                counted = sum(_num(c.get("units")) * (n if id(c) in ids else 1) for c in courses
+                              if _num(c.get("units")) is not None)
+                if lo is None or abs(counted - lo) > 1e-9:
+                    continue
+                for c in hit:
+                    c["times"] = n
+                notes.append({"field": "times", "was": None, "now": {c["code"]: n for c in hit},
+                              "words": bm.group(0).strip()})
             named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
             for block in (out.get("blocks") or []) if named else []:
                 bm = named.search(block.get("name") or "")
