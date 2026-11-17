@@ -44,6 +44,7 @@ withhold tools
 # Root workbooks.
 withhold *.xlsx
 # kb/ staging, curated anchors and lexicons: generator inputs baked into the served unified_courses_*.js.
+withhold kb/ccr_curator_precedent.json
 withhold kb/cdc_data_dictionary.json
 withhold kb/cdc_integrations.json
 withhold kb/cid_articulation_joins.json
