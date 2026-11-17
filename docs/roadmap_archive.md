@@ -330,3 +330,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## Moved from docs/INDEX.md's update history (S670 checkpoint)
 
 - 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).
+
+<!-- docs/INDEX.md Update history, trimmed at the S676 checkpoint -->
+- 2026-11-16 (S662 SkyQuill, Sam's session, full checkpoint): two merges: #3378 (the Commons Curation ETA's exhibit universe counts MAP's unclassified backlog, the larger of the two readings, never their sum) and #3379 (the ETA cost feed: `kb/reference/model_spend_daily.json` and `kb/status/session_spend.json`, built at Pages deploy from the handoffs' `Spend:` lines, shown side by side); the `commons` lane compacted under 20,000 bytes; handoff 663 (SkyLark).
+- 2026-11-15 (S661 SkyKnot, Sam's session, full checkpoint): five merges (#3371 to #3375): the Commons ETA clock and the College Collections ETA on College Data Collection, the date controls as small chips (Sam), CPL Pathways framed beside every college row, the College Collections Plan in the Library, the Commons Curation ETA on CPL Commons; KB note `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`; handoff 662.
