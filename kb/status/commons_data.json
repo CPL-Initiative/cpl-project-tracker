@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T11:39:13Z",
+ "written_at": "2026-11-17T17:00:14Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -171,8 +171,8 @@
   "passing": 15866,
   "gap": 6469,
   "with_gap": 118,
-  "cost_usd": 1343.27,
-  "passed_at_read": 15375,
+  "cost_usd": 1342.94,
+  "passed_at_read": 15377,
   "cost_receipts": 118,
   "slo_waiting": 9,
   "scouted": 11,
@@ -6231,8 +6231,7 @@
    "gap": 25,
    "causes": {
     "no_closed_list": 8,
-    "page_not_found": 9,
-    "places_none": 5,
+    "page_not_found": 14,
     "unknown_without_live": 3
    },
    "census_causes": {
@@ -6253,10 +6252,10 @@
    "outcomes_file": "kb/status/commons_data_programs/lemoore.outcomes.json",
    "outline_system": null,
    "objectives_printed": null,
-   "read_at": "2026-10-16T23:05:16Z",
+   "read_at": "2026-11-17T14:28:40Z",
    "read_kind": "capture",
-   "cost_usd": 5.29,
-   "passed_at_read": 63,
+   "cost_usd": 4.96,
+   "passed_at_read": 65,
    "slo_queue": {
     "state": "none",
     "why": "its eLumen 26-27 course pages print units, transfer, requisites and hours, and no SLOs (0 of 12)",
@@ -6269,13 +6268,13 @@
     "why": "machine checks only; no spot-check yet"
    },
    "listed_closed": 82,
-   "found": 73,
-   "extracted": 73,
+   "found": 68,
+   "extracted": 68,
    "errors": 0,
    "failed_checks": {
-    "coverage": 5,
+    "coverage": 0,
     "invented": 0,
-    "arithmetic": 10,
+    "arithmetic": 3,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6285,23 +6284,22 @@
    "capture_root": "https://westhillslemoore.elumenapp.com/catalog/26-27/Welcome",
    "catalog_now": null,
    "catalog_checks": null,
-   "read_seconds": 341.0,
-   "run": "38979392604",
+   "read_seconds": 343.2,
+   "run": "44112323039",
    "levers": {
-    "reader_page_search": 9,
+    "reader_page_search": 14,
     "program_course_file_check": 8,
-    "reader_page_assignment": 5,
     "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
-     "records": 73,
+     "records": 68,
      "models": {
-      "claude-opus-5-5": 73
+      "claude-opus-5-5": 68
      },
-     "run": "38979392604",
-     "at": "2026-10-16T23:05:16Z",
-     "cost_usd": 5.29,
+     "run": "44112323039",
+     "at": "2026-11-17T14:28:40Z",
+     "cost_usd": 4.96,
      "platform": "elumen"
     },
     "slo_read": null,
