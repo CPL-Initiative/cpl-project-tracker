@@ -53,8 +53,8 @@ Read this file first. Then read the harvest lane's NEXT (0) and (1) in `docs/ref
    (card 11 is Sam's), `csm-workspace`, `common-subjects-reference`, `college-district-identity`, `eacr-exhibit-cr-adoption`,
    `reviewer-session-lifetime`, `sierra-retrieval-corpus`, `sierra-page-redesign` (#3159 is Sam's), `workplan-annual-goals` and
    `map-users-student-contact`.
-8. **Memory rows:** `kb/migrations/2026-11-17_s671_cpl_memory_rows.sql` is named in `.apply` on this checkpoint's branch. Confirm
-   its receipt landed. S670's landed (receipt 44012970941).
+8. **Memory rows:** `kb/migrations/2026-11-17_s671_cpl_memory_rows.sql` applied through the runner (receipt
+   `kb/receipts/migration_s671_cpl_memory_rows_44035989076.json`, status 201). S670's landed too (receipt 44012970941).
 
 ## Session settings
 
