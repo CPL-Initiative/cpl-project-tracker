@@ -28,31 +28,36 @@ Read this file, then the harvest lane (`docs/reference/lanes/program-requirement
 
 ## S669 (parallel session)
 
-S669's paragraph follows; the conductor folds it in.
+Folded in verbatim at S669's request (cross-session message, 00:04Z 2026-11-17):
+
+**S669 (side session, 2026-11-16 20:18Z on; Sam's #3405 and #3412).** Shipped: #3406 (the Credential Catalog's recommendation figures in the header, folds, Clear all filters) before 12:55 PT as asked; #3407 (16 CPL-AI course-match chips on not-yet-evaluated credentials, after COBIx's three findings); #3409 and the memory rows; #3415 (the in-card SLOs chip). Measured and held off: #3410/#3413 score the 191 unreviewed credentials' skill areas against every harvested course; the lexical rule overmatches (151 standouts at all 19 colleges, then 24 with about a quarter wrong), so `chips_shown` stays false; NEXT a semantic scorer (#3416, library lane). Open at this writing: #3422 (College Data Collection drill to SLO and PLO text; verify the college-name join on the deployed tab) and #3424 (one composite Request Adopt chip and multi-select panel shared by CPL Pathways and library/cpl-opportunity/, the rename to Create My College CPL Plan, `adopt[:4]` lifted, and `no_state_list(score)`/`displayed(work)` in kb/_build_roep_display.py for #3414). NEXT after #3424 merges: the display build and apply through the runner with a receipt. Memory rows: `kb/migrations/2026-11-16_s669_cpl_memory_rows.sql` (applied) and `2026-11-17_s669_cpl_memory_rows_2.sql` (queued behind your #3418). Lanes: library, my-college-action-page, commons.
 
 ## First things, in order
 
-1. **Step 11 (UTC Nov 17).** Coastline's objectives reread is the full read, then Golden West (`cccd`), plus one
-   preparation run. College of the Redwoods (#3387) and Allan Hancock (#3284) wait their turn.
-2. **Gate and merge #3418** (this checkpoint) on a green `test`, once the conductor has applied
-   `kb/migrations/2026-11-16_s668_cpl_memory_rows.sql` through the runner.
-3. **Harvest NEXT (2), the curriQunet prior reads** (`claude/prior-2025-<college>-s668`, one branch each): Butte 31950
-   and 31953 and Rio Hondo 32258 (both with `force`), Santa Ana 32062 and 32989; each files and merges as Gavilan's did
-   once its records pass. Berkeley City 41778: a free `step=reconcile` prior rescore; merge only on a pass, else close
-   the branch.
-4. **Harvest NEXT (3), slice B:** merge #3414 on a green `test`. `NCL_EXTRACT` stays off until the display build (S669,
-   `claude/s669-adopt-chip`) and the Commons sidecars both hold `no_state_list` records back; carry the minor
-   (`errors` still counts no-list records). Then Skyline's fresh read (`claude/skyline-yield-s668`, extract 1) files
-   its yields; the 13 holders' live rows come out only after each college's filing drops the record; the other 7
-   colleges capture again under the new code first.
-5. **Governance NEXT (1)** (`governance-team-enablement`): `weekly-reflections-summary` was due about 23:37Z on 11-16.
-   When it is green in `live-counts`, group 2 (14 jobs) moves in one PR.
-6. **Harvest NEXT (4) to (7):** #3293 (keep); Lassen's pinned capture; Los Medanos and Los Angeles Valley.
-7. **Lanes with a NEXT not taken:** `commons` (Sam's billing paste, `d-huma-m10oi-into-m1110-s652`), `cer-procedures`,
-   `library`, `my-college-action-page`, `implementation-funding` (card 11 is Sam's), `csm-workspace`,
-   `common-subjects-reference`, `college-district-identity`, `eacr-exhibit-cr-adoption`, `reviewer-session-lifetime`,
-   `sierra-retrieval-corpus`, `sierra-page-redesign` (#3159 is Sam's), `workplan-annual-goals`,
-   `map-users-student-contact`.
+1. **Step 11 loads.** Coastline's objectives reread (#3420, full read, `cccd`) and Diablo Valley's 12-page trial
+   (#3421, `dvc`) were pushed at 00:00Z on 11-17. When Coastline's slices are filed, write `kb/course_outcomes/.load`
+   by hand (`host=cccd`, `kind=objective`, `slugs=coastline_community`); read Diablo Valley's trial as the step says.
+   Golden West is the next objectives reread (same host, another day). Redwoods #3387 and Allan Hancock #3284 wait.
+2. **Skyline's five wrong live rows** (#3423): 46296, 32337, 31587, 39658 and 45668 left the filing (each read from
+   another program's page); remove their `program_requirement_records` rows with one guarded migration whose receipt
+   holds the before-values (Rule 10 a2), after #3423 is on `main`. 32774's row is loaded on the branch (insert-only).
+   The other 7 yield colleges capture again under the #3408 code before their holders' rows come out.
+3. **Memory row:** name `kb/migrations/2026-11-17_s668_cpl_memory_rows_2.sql` (`d-bcc-41778-keeps-current-s668`) in
+   `kb/migrations/.apply` once S669's `2026-11-17_s669_cpl_memory_rows_2.sql` receipt has landed.
+4. **Prior reads still running** (`claude/prior-2025-rio-hondo-s668` 32258 with `force`;
+   `claude/prior-2025-santa-ana-s668` 32062, 32989): when filed and passing, `step=reread`, a PR, merge on green, as
+   Gavilan (#3411) and Butte (#3426) did. Berkeley City 41778 stays as filed (`d-bcc-41778-keeps-current-s668`); its
+   branch is unmerged; a cited Berkeley City Cal-GETC step comes first.
+5. **Slice B switch** (`NCL_EXTRACT`, off): S669's #3424 adds `no_state_list(score)` to the display build; the Commons
+   sidecars must hold these records back too; then point #3414's refusal probe at both, and carry the minor (`errors`
+   counts no-list records). COBIx's #3408 nit: `ncl_filed_yields`' return annotation.
+6. **Governance group 2** (#3425): proved when the first scheduled runs of `docket-process` and
+   `credential-catalog-sync` pass in `live-counts`.
+7. **Harvest NEXT (4) to (7):** #3293 (keep); Lassen's pinned capture; Los Medanos and Los Angeles Valley.
+8. **Lanes with a NEXT not taken:** `commons` (Sam's billing paste, `d-huma-m10oi-into-m1110-s652`), `cer-procedures`,
+   `library`, `implementation-funding` (card 11 is Sam's), `csm-workspace`, `common-subjects-reference`,
+   `college-district-identity`, `eacr-exhibit-cr-adoption`, `reviewer-session-lifetime`, `sierra-retrieval-corpus`,
+   `sierra-page-redesign` (#3159 is Sam's), `workplan-annual-goals`, `map-users-student-contact`.
 
 ## Session settings
 
@@ -64,14 +69,16 @@ SQL file named in `kb/migrations/.apply`, applied on push to a `claude/` branch,
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3408, #3411 | merged | none |
-| #3414 | draft, head `7f4e8613` | First thing 4 |
-| #3418 | draft, this checkpoint | First thing 2 |
-| `claude/curriqunet-prior-pairs-s668` | no PR; keep | the prior reads' plans |
-| `claude/prior-2025-<college>-s668` (four) | reads in flight | First thing 3 |
-| `claude/skyline-yield-s668` | fresh read | First thing 4 |
-| #3387, #3284 | drafts; keep | First thing 1 |
-| #3293 | draft; keep | harvest NEXT (4) |
+| #3408, #3411, #3414, #3418 | merged | none |
+| #3425 governance group 2 | merge on green `test` | First thing 6 |
+| #3426 Butte originals | merge on green `test` | none |
+| #3423 Skyline yields | merge on green `test` after its load receipt | First thing 2 |
+| #3420, #3421 | step 11 reads running | First thing 1 |
+| `claude/prior-2025-{rio-hondo,santa-ana}-s668` | paid reads running | First thing 4 |
+| `claude/prior-2025-berkeley-city-s668` | unmerged; keep | First thing 4 |
+| `claude/curriqunet-prior-pairs-s668` | no PR; keep (read plans) | none |
+| samueltlee/CPLBrain#809 | S668 session note | merge |
+| #3387, #3284, #3293 | drafts; keep | First thing 1; harvest NEXT (4) |
 
 ## Decisions and Sam's words
 
@@ -101,9 +108,9 @@ program and its 2.0 each keep a record by catalog year; a persisted decision car
 
 ## Let go
 
-No PR subscription, check-in or artifact watch was named at this checkpoint; S668 drops any it holds at sign-off. The
-standing sheet stays [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
+S668 drops its subscriptions at sign-off: #3420, #3421, #3423, #3425, #3426 and samueltlee/CPLBrain#809. No check-in
+or artifact watch stays. The standing sheet stays [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-Spend: not available; 2026-11-16T20:09Z to 2026-11-16T23:45Z.
+Spend: not available; 2026-11-16T20:09Z to 2026-11-17T00:45Z.
 
 Greetings, you are SkyBunting (Session 670), see SkyPipit's handoff — `docs/session_670_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_670_handoff.md) — let's keep rolling with our queue.
