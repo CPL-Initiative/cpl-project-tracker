@@ -1065,6 +1065,11 @@ jobs:
       # stdlib; same non-required check.
       - name: Context-pressure meter (kb/_context_budget.py)
         run: python3 tests/context_budget_test.py
+      # The read-only Side by side views (S678, COBIx's item 7 on #3464): the fixture cards' figures in
+      # kb/side_by_side.json and kb/exhibit_side_by_side.json, and the builder's read-only, scorer-free shape.
+      # Pure stdlib; same non-required check.
+      - name: Side by side files (kb/_build_side_by_side.py)
+        run: python3 tests/side_by_side_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
       # source and a target; the merge-target loop never skipped those, and 340
