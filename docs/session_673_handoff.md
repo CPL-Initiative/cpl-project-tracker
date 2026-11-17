@@ -76,7 +76,7 @@ worklist): the sandbox has no `openpyxl`.
 
 ## Decisions
 
-The `cpl_memory` rows are in `kb/migrations/2026-11-17_s672_cpl_memory_rows_v2.sql` (the first file failed on the 400-character summary check; nothing landed), with a rollback beside it:
+The `cpl_memory` rows are in `kb/migrations/2026-11-17_s672_cpl_memory_rows_v2.sql` (the first file failed on the 400-character summary check, and nothing landed; v2 applied by run 44057791432, receipt `kb/receipts/migration_s672_cpl_memory_rows_v2_44057791432.json`, status 201), with a rollback beside it:
 `d-rccd-repeat-rows-reconcile-steps-s672` and `f-norco-mis-performance-options-ungrouped-s672`. The same file corrects S671's
 `d-rccd-pilot-no-blind-force-s671` with a guarded update: the force fixed none, not one. Sam gave no new ruling this run.
 
@@ -85,7 +85,7 @@ The `cpl_memory` rows are in `kb/migrations/2026-11-17_s672_cpl_memory_rows_v2.s
 S672 holds no PR subscription, check-in or artifact watch. The standing sheet stays
 [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y) (current).
 
-Spend: not available; 2026-11-17T08:12Z to 2026-11-17T09:40Z. No model calls: every read was free.
+Spend: not available; 2026-11-17T08:12Z to 2026-11-17T10:05Z. No model calls: every read was free.
 
 Session cost: `get_session` not available. Substantive PRs merged: 1 (#3441).
 
