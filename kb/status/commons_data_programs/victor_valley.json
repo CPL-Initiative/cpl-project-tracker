@@ -1,4 +1,4 @@
-{"schema":1,"college":"Victor Valley College","slug":"victor_valley","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Victor Valley College","slug":"victor_valley","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"38120","title":"Philosophy","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.vvc.edu//degrees-certificates/philosophy/philosophy-aat/"},
 {"cn":"04942","title":"Basic Business Real Estate","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"38575","title":"Basic Firefighter","award":"Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},

@@ -1,4 +1,4 @@
-{"schema":1,"college":"San Jose City College","slug":"san_jose_city","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"San Jose City College","slug":"san_jose_city","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"06185","title":"Accounting","award":"A.S. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/"},
 {"cn":"22220","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-certificate-achievement/"},
 {"cn":"18921","title":"Air Conditioning & Refrigeration Technology 3","award":"Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/"},

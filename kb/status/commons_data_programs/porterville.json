@@ -1,4 +1,4 @@
-{"schema":1,"college":"Porterville College","slug":"porterville","basis":"live","census_at":"2026-11-17 21:57Z","programs":[
+{"schema":1,"college":"Porterville College","slug":"porterville","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
 {"cn":"45511","title":"Kinesiology","award":"A.A- T Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=92"},
 {"cn":"43554","title":"Popular Music Studies","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.portervillecollege.edu/_resources/assets/pdfs/Academics/Catalog/Porterville_College_2026-2027_Catalog_FINAL_JUNE_1_2026.pdf#page=115"},
 {"cn":"45470","title":"Computer Science & Software Engineering (AS-T)","award":"A.S. T Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
