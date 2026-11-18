@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1051,
+  "file_datasets": 1052,
   "external_services": 195,
   "consumers": 616,
   "workflows": 73,
@@ -458,7 +458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2580
+     "line": 2591
     }
    ],
    "main_committers": []
@@ -505,7 +505,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2536
+     "line": 2547
     }
    ],
    "main_committers": []
@@ -701,7 +701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2473
+     "line": 2484
     }
    ],
    "main_committers": []
@@ -3013,7 +3013,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 2066
+     "line": 2077
     },
     {
      "id": "workflow:program-requirements-college.yml",
@@ -8737,7 +8737,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6670
+     "line": 6722
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8757,7 +8757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6746
+     "line": 6798
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17956,7 +17956,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3424
+     "line": 3435
     }
    ],
    "served": true,
@@ -17969,7 +17969,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7347
+     "line": 7399
     }
    ],
    "served": true,
@@ -20850,7 +20850,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 53
     }
    ],
    "served": false,
@@ -21998,7 +21998,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7081
+     "line": 7133
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22018,7 +22018,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6110
+     "line": 6162
     }
    ],
    "served": false,
@@ -22642,7 +22642,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6708
+     "line": 6760
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22740,7 +22740,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 117
     }
    ],
    "served": false,
@@ -27557,6 +27557,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/reader_page_checks_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/receipt_move_gate_test.py": {
    "consumers": [
     {
@@ -30511,7 +30524,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7321
+     "line": 7373
     }
    ],
    "main_committers": []
@@ -30523,7 +30536,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7430
+     "line": 7482
     }
    ],
    "main_committers": []
@@ -35714,6 +35727,7 @@
     "tests/harvest_gap_census_test.py",
     "tests/program_requirements_units_rules_test.py",
     "tests/program_discontinued_test.py",
+    "tests/reader_page_checks_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
     "tests/program_requirements_dated_reads_test.py",
@@ -36812,6 +36826,7 @@
   "kb/memory_audit",
   "kb/migrations",
   "kb/program_requirements_reread_plan_s680.json",
+  "kb/program_requirements_reread_plan_s683.json",
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",

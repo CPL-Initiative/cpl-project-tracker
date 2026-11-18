@@ -118,6 +118,9 @@ jobs:
         id: capture
         env:
           CENSUS_DELAY_MS: '4000'
+          # The reader's page checks (S683): the same repository variables as program-requirements-college.yml.
+          CPL_READER_PAGE_CHECKS: ${{ vars.CPL_READER_PAGE_CHECKS || '1' }}
+          CPL_RULE_D_NOT_PRINTED: ${{ vars.CPL_RULE_D_NOT_PRINTED || '0' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit 0
       - name: Price the extraction
         id: price

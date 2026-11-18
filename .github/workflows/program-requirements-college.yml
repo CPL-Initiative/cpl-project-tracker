@@ -218,6 +218,11 @@ jobs:
           # A push carries no input, so the lookup is on there too; ncl_lookup=0 runs one college as before S652.
           NCL_CATALOG_LOOKUP: ${{ github.event.inputs.ncl_lookup || '1' }}
           CAPTURE_PRIOR: ${{ github.event.inputs.prior || '' }}
+          # The reader's page checks (S683, kb/_reader_page_checks.py): rules A to C read the programs whose filed record
+          # places none of its courses; the repository variable CPL_READER_PAGE_CHECKS=0 turns them off, and
+          # CPL_RULE_D_NOT_PRINTED=1 turns rule D on (off by default).
+          CPL_READER_PAGE_CHECKS: ${{ vars.CPL_READER_PAGE_CHECKS || '1' }}
+          CPL_RULE_D_NOT_PRINTED: ${{ vars.CPL_RULE_D_NOT_PRINTED || '0' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       # Every extraction is priced before any model call, fresh or restaged ($40 a college a run on the estimate,
       # Sam's standing go; S653): over the limit, nothing is extracted. extract=0 prints the estimate and pays

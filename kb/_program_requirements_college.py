@@ -69,6 +69,9 @@ import xml.etree.ElementTree as ET
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _program_requirements_pilot as P  # noqa: E402
+# The reader's page checks, rules A to D (S683; #3480 Source 7): a program whose filed record places none of its courses
+# is read only from a page printing its own title with its award, never from course descriptions or a GE page.
+import _reader_page_checks as RC  # noqa: E402
 
 PAGE_SIZE = 1000          # PostgREST answers at most this many rows a request
 MAX_PAGES = 900           # program pages read at one college, at most
@@ -768,6 +771,14 @@ def candidates(program: dict, pages: list[dict], programs: list | None = None,
             continue
         if field == "textContent" and not heading_names_program(pg, program):
             continue   # hidden text alone is no evidence: an index names every course
+        if RC.applies(program):
+            # Rules B, C and A (S683): a program whose filed record placed none of its courses reads only a page
+            # printing its own title with its award, read with every tab; never course descriptions or a GE page.
+            kept, _ = RC.site_page(pg, program, text, found, field)
+            if kept is None:
+                continue
+            text, found, field = kept
+            cov = P.coverage(found, courses)
         award_hit, title = label_score(pg, program)
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too
@@ -4975,6 +4986,16 @@ def read_hand_filed(hf: dict) -> dict:
     return out
 
 
+def pdf_page_check(prog: dict, pages: list[str], year: str | None, ctx: dict | None, pinned: dict,
+                   coded: dict | None) -> dict | None:
+    """Rules B, A and D (kb/_reader_page_checks.py, S683) for one program of a PDF catalog, or None where they do not
+    read it: no closed list, no mark (its filed record places courses, or the switch is off), or its page named by
+    something stronger than its codes (a curator's pin, a code heading, the printed control numbers)."""
+    if not prog["closed_list"] or not RC.applies(prog) or ctx or prog["control_number"] in pinned or coded is not None:
+        return None
+    return RC.pdf_page(pages, prog, year)
+
+
 def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict,
                 hf: dict | None = None) -> list[dict]:
     """Every program at a college whose catalog is one PDF: the file read once
@@ -5078,8 +5099,24 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
           % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
     recs = []
     for prog in programs:
+        # Rules B, A and D (S683) for a program whose filed record placed none of its courses, where neither a pin,
+        # a code heading nor the printed control numbers name its page: the heading the window opens on, or why none.
+        rule = pdf_page_check(prog, pages, reg.get("catalog_year"), ctx, pinned, coded)
+        if rule is not None:
+            report["pdf"].setdefault("page_checks", {"read": 0, "own_page": 0, "no_own_page": 0, "not_printed": 0})
+            report["pdf"]["page_checks"]["read"] += 1
+            report["pdf"]["page_checks"]["own_page" if rule["heading"] else
+                                         "not_printed" if rule.get("gap") else "no_own_page"] += 1
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
+        elif rule is not None and not rule["heading"]:
+            # No page prints the program's own heading outside descriptions and GE pages: read from no page, so no
+            # extraction is sent for it. Its filed record places none (the mark's scope), so the filing drops it as
+            # any failing record read as not_found (keep_no_read keeps passing ones only), and the source names why.
+            rec = source_record(college, prog, reg, None, "not_found")
+            rec["near_miss"] = {"why": rule["why"], "rule": rule["rule"], "refused_b": rule["refused_b"]}
+            if rule.get("gap"):
+                rec["gap"] = rule["gap"]
         elif prog["control_number"] in pinned and not pinned[prog["control_number"]]:
             # A refused pin (S650, finding A): the picker's page is the one the pin exists to refuse, so the program
             # gets no fresh text, and the reconcile and the reread leave its filed record as it stands.
@@ -5091,7 +5128,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"]), above,
+                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"])
+                            or (rule or {}).get("heading"), above,
                             numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
             # picker found no window): a passing filed record stays on file unless the run forces it.
@@ -5116,6 +5154,9 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             elif best and best.get("text") and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                if rule is not None:
+                    rec["source"]["page_check"] = {"rule": rule["rule"], "page": rule["page_number"],
+                                                   "share": rule["share"]}
                 if unbound:
                     rec["source"]["after_unbound"] = unbound["why"]
                 if best["opens_on_list"]:
@@ -5221,6 +5262,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         _write(os.path.join(out_dir, "capture.json"), {"college": college, "stopped": refused})
         print(refused)
         return 1
+    if not prior:
+        # The reader's page checks read the programs whose filed record places none of their courses (S683).
+        RC.mark(programs, os.path.join(COLLEGE_DIR, slug_of(college)))
     if prior:
         programs = [p for p in programs if p["control_number"] in prior["only"]]
         reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
@@ -5404,6 +5448,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
+                    if b and RC.applies(prog):
+                        # Rules B, C and A (S683) on the page the link search found, as on every page read.
+                        got_b = b.get("got") or {}
+                        kept, _ = RC.site_page({"url": b.get("url"), "h1": got_b.get("h1"), "title": got_b.get("title"),
+                                                "got": got_b}, prog, b.get("text") or "", b.get("found") or {},
+                                               b.get("field") or "innerText")
+                        b = dict(b, text=kept[0], found=kept[1], field=kept[2],
+                                 coverage=P.coverage(kept[1], prog["closed_list"])) if kept else {}
                     if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
