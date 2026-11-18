@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T09:49:55Z",
-  "session": 680,
-  "moniker": "SkyPhoebe",
+  "written_at": "2026-11-18T11:45:16Z",
+  "session": 681,
+  "moniker": "SkyGrebe",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_681_handoff.md",
+  "handoff": "docs/session_682_handoff.md",
   "next_step": {
-    "title": "The display build through the new path",
-    "text": "No display build ran on Nov 18, so the page still shows build cdd185495ce4 while the filed records are on ee6d9daa5226. A session rebuilds the page on a branch, commits only the page file, and starts the display step, which now builds, stores and applies the record copy on the runner. The 56 records the units rules rescored reach the tab with it."
+    "title": "Apply the two reviewed record plans, then read Chabot again",
+    "text": "The night stopped new writes after a wrong outline load at Chabot was undone, so two reviewed plans wait: 99 program records with corrected gap labels and confidence scores (PR 3497), and 13 records whose paired courses take the state's units once two review findings are fixed (PR 3508). Then Chabot's outlines are read again with the fixed reader, and the next display build brings Lassen's five records to the page."
   },
   "calls": [
     {
@@ -337,6 +337,26 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-18T11:38:00Z",
+      "text": "The night's wave merged (PR 3509): the program pages' first build through the private store, the Allan Hancock and Santiago Canyon outline rows, and Lassen's five records."
+    },
+    {
+      "at": "2026-11-18T11:06:00Z",
+      "text": "Chabot's outline load filed each course's objectives as its learning outcomes, so the night started no new read, load or record write, and the 1,013 rows were undone at 11:32 (run 44292682081); no Chabot rows remain. The reader is fixed on PR 3492 and Chabot will be read again."
+    },
+    {
+      "at": "2026-11-18T10:42:00Z",
+      "text": "The program pages were rebuilt for the first time through the private store: build 545de21a6edc, 18,209 records written, none failed (run 44286209178)."
+    },
+    {
+      "at": "2026-11-18T10:36:00Z",
+      "text": "Lassen's five reread records are live: two pass, and three are collected with the gap named, two at 58 of 60 units and one at 54 of 60. Three held records were left as they were."
+    },
+    {
+      "at": "2026-11-18T10:27:00Z",
+      "text": "Course outlines were loaded at Allan Hancock, 1,772 rows, and Santiago Canyon, 498 rows, 2,270 in all."
+    },
     {
       "at": "2026-11-18T09:47:00Z",
       "text": "The night's wave merged (PR 3504): the record copies and old audit reports now live outside the repository, the size check runs on every pull request, the plan for paid rereads, and the four colleges' outline rows. The repository download fell from about 2.0 GB to 438.6 MB."
@@ -696,7 +716,7 @@
         ]
       },
       "roep": [
-        19974,
+        19978,
         20282
       ],
       "coci": [
@@ -705,7 +725,7 @@
       ],
       "outcomes": {
         "slo": [
-          14701,
+          15699,
           88736
         ],
         "plo": [
