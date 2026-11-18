@@ -236,7 +236,7 @@ STATE_SCORE = {
     "aggregated-modal":      0.80,  # ≥⅔ members agree; surface modal+spread
     "inferred-high":         0.80,  # subject_map (curator-anchored subject code)
     "inferred-low":          0.60,  # title_keyword / description / top_code / top_division (heuristic)
-    "machine-decided":       0.80,  # confidence_v1 / past_rulings_v1 (issue 3454): score >= 80, two signals agree
+    "machine-decided":       0.80,  # confidence_v1 / past_rulings_v1 / music_split_v1 (issue 3454): the scorer decided
     "aggregated-varied":     0.40,  # members disagree; spread shown, no single value
     "seed-untouched":        0.30,  # original Phase B seed, never re-checked
     "off-scheme":            0.00,  # ID family doesn't follow CCN-aligned scheme
@@ -338,12 +338,15 @@ def _classify_mid_discipline(rec):
     if src in ("subject_map", "description_and_top"):
         return {"state": "inferred-high", "value": v, "source": src,
                 "confidence": rec.get("discipline_confidence")}
-    # Issue 3454: the confidence scorer's decisions (kb/_ccr_confidence_score.py). The machine accepted the guess
-    # (confidence_v1) or followed past rulings to a narrower field (past_rulings_v1) on stated evidence. That is
-    # not a person's confirmation, and it is no longer an untouched seed either; a person always overrides it.
-    if src in ("confidence_v1", "past_rulings_v1"):
+    # Issue 3454: the confidence scorer's decisions (kb/_ccr_confidence_score.py, stamped by
+    # kb/_ccr_confidence_apply.py). The machine accepted the guess (confidence_v1, rules G and M's keeps among them),
+    # followed past rulings to a narrower field (past_rulings_v1) or split Music by title (music_split_v1, rule M) on
+    # stated evidence. That is not a person's confirmation, and it is no longer an untouched seed either; a person
+    # always overrides it (the overlay's discipline reads as curated).
+    if src in ("confidence_v1", "past_rulings_v1", "music_split_v1"):
         return {"state": "machine-decided", "value": v, "source": src,
-                "confidence": rec.get("discipline_confidence")}
+                "confidence": rec.get("discipline_confidence"),
+                "rule": (rec.get("_confidence_from") or {}).get("rule")}
     if src in ("title_keyword", "description", "top_code", "top_division"):
         # TOP is faculty-entered in COCI with no data-entry gatekeeper, so it is
         # a last-in-line signal — never authoritative (see the TOP caveat in
