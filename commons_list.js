@@ -317,6 +317,9 @@
     function listFilterBar() {
       var L = listState(), n = listFilterCounts();
       var fl = el("div", { cls: P + "filters", id: P + "filters", role: "group", "aria-label": "Show" });
+      // The address names this filter and it is the one shown: the arrival landed (the click-through test reads it).
+      var arr0 = arrivalFilter();
+      if (arr0 && arr0.f === L.f) fl.setAttribute("data-arrived", arr0.f);
       var one = function (f, into) {
         var label = f[1] + (n[f[0]] != null ? " (" + fmt(n[f[0]]) + ")" : "");
         if (f[0] === L.f) into.appendChild(el("span", { cls: CL.on, "aria-current": "true", text: label }));
@@ -342,6 +345,9 @@
         });
         S.filters.forEach(function (f) { if (!seen[f[0]]) one(f, fl); });
       } else S.filters.forEach(function (f) { one(f, fl); });
+      // The unit each count is in, said once beside the counts (#3510 B2): the Courses List counts local courses while
+      // the Commons counts common courses, so the same label can read 42,787 here and 12,540 there.
+      if (S.filterUnit) fl.appendChild(el("span", { cls: CL.small + " " + P + "funit", "data-unit": "", text: typeof S.filterUnit === "function" ? S.filterUnit() : S.filterUnit }));
       return fl;
     }
     function listRows() {
@@ -638,6 +644,16 @@
       bar.appendChild(q);
       if (S.filters && S.filters.length) bar.appendChild(listFilterBar());
       wrap.appendChild(bar);
+      // The arrival's filter in view: once per address, after the page has drawn, the selected filter word scrolls into
+      // view and takes focus' place in the reading order (it is not focused, so a screen reader is not moved).
+      var arr = arrivalFilter();
+      if (arr && arr.key !== arrivedAt && L.f === arr.f && S.filters && S.filters.length) {
+        arrivedAt = arr.key;
+        setTimeout(function () {
+          var fl = document.getElementById(P + "filters"), cur = fl && (fl.querySelector("[aria-current]") || fl);
+          if (cur && typeof cur.scrollIntoView === "function") cur.scrollIntoView({ block: "center" });
+        }, 0);
+      }
       if (S.afterBar) S.afterBar(wrap, api);
       if (L.note) wrap.appendChild(el("p", { cls: CL.note, role: "status", text: L.note }));
       if (S.beforeTable) S.beforeTable(wrap, api);
@@ -1564,6 +1580,7 @@
 
   /* Whether the top of every Commons view is folded: one choice for all five (a fold is no filter, so it lasts across
      visits, CLAUDE.md "Tabs never remember a filter"). Storage may be blocked; the fold then lasts the page. */
+  var arrivedAt = null;   // the List-filter address whose filter was last scrolled into view (once per arrival)
   var PANEL_KEY = "cplCommonsPanelW", panelMem, PANEL_MIN = 300, PANEL_MAX = 1100;
   function panelW() {
     if (panelMem === undefined) { try { panelMem = parseInt(window.localStorage.getItem(PANEL_KEY), 10) || null; } catch (e) { panelMem = null; } }
@@ -1573,13 +1590,20 @@
     panelMem = w || null;
     try { if (panelMem) window.localStorage.setItem(PANEL_KEY, String(panelMem)); else window.localStorage.removeItem(PANEL_KEY); } catch (e) { /* storage blocked */ }
   }
-  var TOP_KEY = "cplCommonsTopFolded", topMem = null;
+  var TOP_KEY = "cplCommonsTopFolded", topMem = null, topTouched = false;
+  /* A link that names a List filter (#coci-lookup/list/seedless, #exhibits/list/nosubj, the Commons' Start and its
+     "Waiting on a person" links) opens with the top folded, so the named filter and its rows are on the first screen
+     (Commons Clarity's walk, #3447 item 6e; #3510 B1). The arrival folds for the visit only: nothing is stored, and the
+     reader's own Show the top or Hide the top wins from then on. */
+  var ARRIVE_RE = /^#([a-z0-9-]+)\/list\/([a-z0-9-]+)/i;
+  function arrivalFilter() { var m = ARRIVE_RE.exec(String(location.hash || "")); return m ? { tab: m[1], f: m[2], key: m[0] } : null; }
   function topFolded() {
+    if (!topTouched && arrivalFilter()) return true;
     if (topMem == null) { try { topMem = window.localStorage.getItem(TOP_KEY) === "1"; } catch (e) { topMem = false; } }
     return topMem;
   }
   function setTopFolded(v) {
-    topMem = !!v;
+    topMem = !!v; topTouched = true;
     try { window.localStorage.setItem(TOP_KEY, topMem ? "1" : "0"); } catch (e) { /* storage blocked */ }
   }
   /* The Commons' figures for every List: kb/status/commons.json, read once a visit (fresh reads it again). A failed read

@@ -85,7 +85,7 @@
         ["Workflow", (sloR.workflow || NOT) + (sr.run ? "; GitHub Actions run " + sr.run : "")],
         ["Last run", sr.at ? H.when(sr.at) : NOT], ["Cost", sloR.cost || NOT]] });
     else if (lo.slo_courses || lo.objective_courses) L.push({ key: "slos", label: "Course SLOs and objectives", state: "Held", word: ["The SLO and objective courses collected", { k: "slos" }],
-      lines: [["Who or what", "Not recorded: the live read holds them, and no committed read names this college"],
+      lines: [["Who or what", "Not recorded: the database count holds them, and no committed read names this college"],
         ["Last run", lo.slo_loaded_at ? H.when(lo.slo_loaded_at) + " (loaded)" : NOT], ["Cost", NOT]] });
     else L.push({ key: "slos", label: "Course SLOs and objectives", state: "Not read yet", lines: [["Who or what", NOT], ["Last run", NOT], ["Cost", NOT]] });
 
@@ -113,7 +113,7 @@
     lines.push(["Program source registry", reg === "held" ? "Holds a map source" + (H.liveRead(M) ? " (" + H.liveWords(M) + ")" : "")
       : reg === "none" ? "None found when looked for" + (H.liveRead(M) ? " (" + H.liveWords(M) + ")" : "") : "Not looked for yet"]);
     lines.push(["Program Pathways Mapper member list", ppm ? "Listed, at " + ppm.host : "Not on the committed list"]);
-    lines.push(["Where", ppm ? ppm.host : state === "held" ? "Not recorded: the live read holds whether a source is on record, never its address" : state === "none" ? "None found" : "Not known"]);
+    lines.push(["Where", ppm ? ppm.host : state === "held" ? "Not recorded: the database count holds whether a source is on record, never its address" : state === "none" ? "None found" : "Not known"]);
     lines.push(["Platform", ppm ? "Program Pathways Mapper" : state === "held" ? NOT : state === "none" ? "None found" : "Not known"]);
     lines.push(["Maps we hold", held ? H.fmt(held) + (held === 1 ? " term-by-term map" : " term-by-term maps") + ", committed" : "None"]);
     lines.push(["Against Active programs", held
@@ -121,7 +121,7 @@
       : "None held, so none to line up" + (act != null ? " with its " + H.fmt(act) + " Active programs (" + H.liveWords(M) + ")" : "")]);
     var note = ppm && reg === "none" ? "The member list and the registry's check disagree: the list names a mapper, and the registry's reader found none." : null;
     return { state: state, lines: lines, note: note,
-      src: "The program source registry (live read); the Program Pathways Mapper member list copied from programmapper.org/ppm-schools on Oct 21, 2026 ("
+      src: "The program source registry (database count); the Program Pathways Mapper member list copied from programmapper.org/ppm-schools on Oct 21, 2026 ("
         + (((M.collection || {}).ppm_list || {}).file || NOT) + "); the committed maps (" + ((((M.collection || {}).maps) || {}).files || NOT) + ")." };
   }
 

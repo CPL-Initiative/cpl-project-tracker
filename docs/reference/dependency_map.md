@@ -1074,12 +1074,14 @@ collapse to one `<date>` family so writer and reader edges join.
 | `roadmap_archive*.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
 | `rolled_back_*.json` | scripts: `kb/_cer_decision_apply.py` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
+| `scripts/commons_clickthrough.js` | workflows: `commons-clickthrough.yml` | — |
+| `scripts/commons_clickthrough.json` | modules: `scripts/commons_clickthrough.js` | — |
 | `scripts/cpl_funding.js` | modules: `scripts/build_funding_faq.js` | — |
 | `scripts/daily_build.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
-| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `commons-clickthrough.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-requirements-wave.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/write_receipt.py` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` |
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/library` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
@@ -1305,6 +1307,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
+| `tests/reader_page_checks_recall_test.py` | workflows: `js-tests.yml` | — |
+| `tests/reader_page_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/receipt_move_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_reader_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_window_fill_test.py` | workflows: `js-tests.yml` | — |
@@ -1388,7 +1392,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `%s` | scripts: `kb/_college_contacts_harvest.py`, `kb/_program_sequence_ppm.py` |
 | `*.github.io` | scripts: `scripts/catalog_framing.py` |
 | `127.0.0.1` | `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
-| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/commons_data_values_check.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
+| `127.0.0.1:` | modules: `prototype/check_ccr_atlas.js`, `prototype/check_skyview_sweep.js`, `scripts/a11y.js`, `scripts/check_memory_briefing_layout.js`, `scripts/commons_clickthrough.js`, `scripts/commons_data_values_check.js`, `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` · scripts: `prototype/mockup_harness/capture.mjs`, `prototype/mockup_harness/capture_model_words.mjs`, `prototype/mockup_harness/capture_mycpl.mjs` |
 | `127.0.0.1:9333` | scripts: `prototype/funding_video/render.mjs` |
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
 | `[a-z0-9]+` | workflows: `sierra-ask.yml` |
@@ -1610,5 +1614,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1066 file
-datasets · 195 external services · 624 consumers · 73 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1070 file
+datasets · 195 external services · 626 consumers · 74 workflows · 41 tabs.
