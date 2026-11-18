@@ -1145,6 +1145,8 @@ jobs:
           python3 tests/credential_family_test.py
           # Sheet 181's naming form and its frozen plan: an "or" between two tests coded as written, a choice kept (S648).
           python3 tests/sheet181_ruled_renames_test.py
+          # A slash joining words in a canonical title is written "and" (Sam, 2026-11-18): the rule, the plan, the guard.
+          python3 tests/slash_titles_test.py
           # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
           python3 tests/credential_family_apply_test.py
           # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.

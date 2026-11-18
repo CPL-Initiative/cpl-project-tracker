@@ -1,0 +1,698 @@
+{
+ "_about": "What the reviewed rename apply would write for plan slash-to-and-2026-11-18, measured by the S679 worker from the committed files and a local run of kb/_cred_rename_dryrun.py --only-plan slash-to-and-2026-11-18 on origin/main 82a3dad7 merged into the branch, 2026-11-18. Rebuilt after the S679 conductor's rulings on COBIx's review (#3479, comment 6966714099): a spaced slash between two whole names is held for a person, \"Medical/Surgical\" keeps its slash as an official phrase, and the combine check compares case-folded, whitespace-squashed titles against every credential and search alias. Per-title counts are the earlier preview's, measured on the same files. A preview, not a receipt: no apply has run. The apply writes its own receipt, kb/cred_rename_out/<date>/ (undo.json, supabase_log), and kb/_cred_rename_undo.py reverses it.",
+ "plan_id": "slash-to-and-2026-11-18",
+ "dry_run": {
+  "clean_renames": 80,
+  "confirmed_merges": 0,
+  "collisions": 0,
+  "ruled_held": 0,
+  "apply_safe": true
+ },
+ "renames": 80,
+ "credential_keys": 80,
+ "local_title_values": 95,
+ "articulations": 103,
+ "kb_curation_titles_with_rows": 20,
+ "kb_curation_fields": {
+  "issuing_agency_additional_override": 4,
+  "issuing_agency_override": 18,
+  "reviewed_marker": 2,
+  "training_agency_override": 1
+ },
+ "held_for_a_person": [
+  {
+   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
+   "would_read": "DSST A History of the Vietnam War and Civil War and Reconstruction",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (DSST A History of the Vietnam War | Civil War and Reconstruction): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Metal Building Erection 1 / Foreman Training",
+   "would_read": "Metal Building Erection 1 and Foreman Training",
+   "why": "a spaced slash between two full titles (Metal Building Erection 1 | Foreman Training): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
+   "would_read": "Nursing Skills and Clinical Simulation Laboratory Advanced",
+   "why": "a spaced slash between two full titles (Nursing Skills | Clinical Simulation Laboratory Advanced): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+   "would_read": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Standards and Training for Corrections (STC) | Board of Parole Hearings): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 8,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Video Gaming 1 / Computer Programming and Game Design",
+   "would_read": "Video Gaming 1 and Computer Programming and Game Design",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Video Gaming 1 | Computer Programming and Game Design): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
+   "would_read": "Wall and Column Forms and Cutting and Burning (Carpentry)",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Wall and Column Forms | Cutting and Burning): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
+   "would_read": "Water Treatment Operator Grade T3 and Distribution Grade D3",
+   "why": "a spaced slash between two full titles (Water Treatment Operator Grade T3 | Distribution Grade D3): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  }
+ ],
+ "slash_kept_now": [
+  "Acute Medical/Surgical Nursing and Mental Health Nursing",
+  "Acute Medical/Surgical and Nursing of the Childbearing Family",
+  "Medical/Surgical Nursing and Pediatric Nursing Advanced"
+ ],
+ "per_title": [
+  {
+   "old": "Adv ESL: Writing/Grammar",
+   "new": "Adv ESL: Writing and Grammar",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Advanced Desserts and Pastry/Chocolate/Sugar",
+   "new": "Advanced Desserts and Pastry, Chocolate, and Sugar",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Arboriculture/Urban Forestry",
+   "new": "Arboriculture and Urban Forestry",
+   "local_titles": 2,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Architecture/Green Design: Implementation using AutoCAD",
+   "new": "Architecture and Green Design: Implementation using AutoCAD",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_additional_override",
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Architecture/Green Design: Planning and Construction",
+   "new": "Architecture and Green Design: Planning and Construction",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_additional_override",
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Architecture/Green Design: Principles and Practices",
+   "new": "Architecture and Green Design: Principles and Practices",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_additional_override",
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Autodesk Certified User/Professional — AutoCAD",
+   "new": "Autodesk Certified User and Professional — AutoCAD",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Autodesk Certified User/Professional — Revit Architecture",
+   "new": "Autodesk Certified User and Professional — Revit Architecture",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+   "new": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "issuing_agency_additional_override",
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+   "new": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications",
+   "local_titles": 1,
+   "articulations": 2,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Calculations in Water/Wastewater Technology",
+   "new": "Calculations in Water and Wastewater Technology",
+   "local_titles": 2,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather",
+   "new": "Carpenters Apprenticeship — Drywall and Lather",
+   "local_titles": 2,
+   "articulations": 58,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Journeyperson",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 1",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 2",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 3",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 4",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+   "new": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Confined Space Rescue Operations/Technician",
+   "new": "Confined Space Rescue Operations and Technician",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Diesel Electrical/Electronic Systems",
+   "new": "Diesel Electrical and Electronic Systems",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Doors, Windows, Exterior Systems/Building Documents",
+   "new": "Doors, Windows, Exterior Systems and Building Documents",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Education / Careers in Education Intermediate",
+   "new": "Education and Careers in Education Intermediate",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override",
+    "training_agency_override"
+   ]
+  },
+  {
+   "old": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+   "new": "Emergency Medical Response — CPR Pro and Healthcare Provider",
+   "local_titles": 2,
+   "articulations": 2,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Exterior/Advanced Fire Control System and Partitions",
+   "new": "Exterior and Advanced Fire Control System and Partitions",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+   "new": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "reviewed_marker"
+   ]
+  },
+  {
+   "old": "Fuel Systems/Emission Controls",
+   "new": "Fuel Systems and Emission Controls",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "HAZWOPER First Responder Awareness/Operations",
+   "new": "HAZWOPER First Responder Awareness and Operations",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Hairstyling Services/Haircutting 2",
+   "new": "Hairstyling Services and Haircutting 2",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Heavy/Medium Duty Truck Technology Apprenticeship",
+   "new": "Heavy and Medium Duty Truck Technology Apprenticeship",
+   "local_titles": 1,
+   "articulations": 9,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Hydraulics/Pneumatics",
+   "new": "Hydraulics and Pneumatics",
+   "local_titles": 2,
+   "articulations": 2,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Infant/Toddler Practicum",
+   "new": "Infant and Toddler Practicum",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Introduction to Engineering Design/Graphics",
+   "new": "Introduction to Engineering Design and Graphics",
+   "local_titles": 6,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Introduction to UNIX/Linux",
+   "new": "Introduction to UNIX and Linux",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "reviewed_marker"
+   ]
+  },
+  {
+   "old": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+   "new": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+   "new": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+   "local_titles": 2,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+   "new": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+   "local_titles": 2,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Layout/Leveling Construction Site Practice",
+   "new": "Layout and Leveling Construction Site Practice",
+   "local_titles": 2,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Maternal/Newborn Nursing Care",
+   "new": "Maternal and Newborn Nursing Care",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Mathematics for Drywall/Lathers",
+   "new": "Mathematics for Drywall and Lathers",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "NCCER Commercial Electrician Level 4/Journey Level",
+   "new": "NCCER Commercial Electrician Level 4 and Journey Level",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "NCCER Industrial Electrician Level 4/Journey Level",
+   "new": "NCCER Industrial Electrician Level 4 and Journey Level",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+   "new": "Nursing Skills and Clinical Simulation Laboratory Beginning",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Oil/Acrylic Painting: Beginning 1",
+   "new": "Oil and Acrylic Painting: Beginning 1",
+   "local_titles": 2,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Prefab/Sound Panels",
+   "new": "Prefab and Sound Panels",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Principles of Infant/Toddler Caregiving",
+   "new": "Principles of Infant and Toddler Caregiving",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Principles of Power Mechanics/Small Engines",
+   "new": "Principles of Power Mechanics and Small Engines",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Spanish/English Linguistics Analysis",
+   "new": "Spanish and English Linguistics Analysis",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Standard First Aid/CPR/AED",
+   "new": "Standard First Aid, CPR, and AED",
+   "local_titles": 2,
+   "articulations": 2,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Tool/Equipment Applications — Emergency Response Procedures",
+   "new": "Tool and Equipment Applications — Emergency Response Procedures",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Tool/Equipment Applications — Fall Protection",
+   "new": "Tool and Equipment Applications — Fall Protection",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Transit Level/Laser",
+   "new": "Transit Level and Laser",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 4",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "UNIX/Linux Systems and Programming",
+   "new": "UNIX and Linux Systems and Programming",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Water/Wastewater Operator Certification",
+   "new": "Water and Wastewater Operator Certification",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  }
+ ]
+}
