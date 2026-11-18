@@ -18,6 +18,8 @@ Pinned on fixtures:
   * the census takes a row with checks.gaps out of the gap only when coverage and invented pass;
   * the guarded UPDATE adds the keys only where the run, the arithmetic and the absence of gaps still hold,
     and the rollback removes only what it wrote;
+  * the rollback is rebuilt from the rows the apply returned (run 44273638344): it names exactly those 75, each
+    with its before-image checks, and a rollback built from fewer returned rows names fewer (Rule 10 a2);
   * the collection lane's colleges are left out.
 
 Run from repo root: python3 tests/program_named_gaps_test.py
@@ -176,7 +178,62 @@ if os.path.isfile(RECEIPT):
           "the receipt's recall: 1,938 held, right 1,938, wrong 0")
     with open(os.path.join(ROOT, "kb", "migrations", "2026-11-18_s680_prreq_named_gaps_rollback.sql"),
               encoding="utf-8") as fh:
-        check("lasts only until the next load" in fh.read(4000), "the rollback says how long it lasts")
+        rollback_text = fh.read()
+    check("lasts only until the next load" in rollback_text[:4000], "the rollback says how long it lasts")
+
+    # Rule 10 (a2): the rollback is rebuilt from the rows the apply returned, and names exactly those rows.
+    import hashlib  # noqa: E402
+    import re  # noqa: E402
+    import _program_requirements_rescore as RS  # noqa: E402
+    MIGRATE = os.path.join(ROOT, "kb", "receipts", "migration_s680_prreq_named_gaps_apply_44273638344.json")
+    APPLY = os.path.join(ROOT, "kb", "migrations", "2026-11-18_s680_prreq_named_gaps_apply.sql")
+    with open(MIGRATE, encoding="utf-8") as fh:
+        mig = json.load(fh)
+    with open(APPLY, "rb") as fh:
+        apply_bytes = fh.read()
+    check(hashlib.sha256(apply_bytes).hexdigest() == mig["sha256"],
+          "the committed apply is the file the runner applied (its sha256 is the migrate receipt's)")
+    check(NG.update_sql(rc["records"]) == rc["apply"] and rc["apply"] in apply_bytes.decode("utf-8"),
+          "the applied guard matched on the receipt's before-images (the apply rebuilds from the receipt's rows)")
+    got = RS.returned_value(mig)
+    returned = sorted(got["keys"])
+    check(len(returned) == 75 and len(set(returned)) == 75 and not got.get("skipped_checked"),
+          "the apply returned 75 places, none twice, none skipped as checked")
+    applied = rc.get("applied") or {}
+    check(applied.get("keys") == returned and applied.get("returned") == 75
+          and applied.get("from") == "kb/receipts/migration_s680_prreq_named_gaps_apply_44273638344.json",
+          "the receipt marks the returned rows applied, from the migrate receipt")
+    row_re = re.compile(r"^  \((\d+), '((?:[^']|'')*)', '((?:[^']|'')*)', (\d+), '((?:[^']|'')*)'::jsonb, "
+                        r"'((?:[^']|'')*)'::jsonb, '((?:[^']|'')*)'::jsonb\)", re.M)
+    named = [(int(m.group(1)), m.group(2).replace("''", "'"), m.group(3), int(m.group(4)),
+              json.loads(m.group(6).replace("''", "'")), json.loads(m.group(7).replace("''", "'")))
+             for m in row_re.finditer(rollback_text)]
+    by_i = {r["i"]: r for r in rc["records"]}
+    want = {(i, by_i[i]["college"], str(by_i[i]["control_number"])) for i in returned}
+    have = {(i, c, n) for i, c, n, _, _, _ in named}
+    check(len(named) == 75 and have == want,
+          "the rollback names exactly the 75 returned rows (missing %d, extra %d)" % (len(want - have), len(have - want)))
+    check(all(b == by_i[i]["before_image"]["checks"] and a == by_i[i]["after_image"]["checks"]
+              and run == int(by_i[i]["extracted_run"]) for i, _, _, run, b, a in named),
+          "each rollback row restores its before-image checks from its after-image, on its filed run")
+    check("e(expect) as (values (75))" in rollback_text and "set checks = v.before_checks" in rollback_text
+          and "r.checks = v.after_checks" in rollback_text and "r.checked is not true" in rollback_text,
+          "the rollback is the guarded shape: count 75, before from after, a person's check skipped")
+    with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as fh:
+        check("named_gaps_rollback" not in fh.read(), "the rollback is committed, not applied")
+    # The failure mode: a rollback built from the plan, not from what the apply returned.
+    short = {"response": json.dumps([{"returned": {"returned": 74, "keys": returned[1:], "skipped_checked": []}}])}
+    trial = NG.replan_applied(json.loads(json.dumps(rc)), short, "trial")
+    check("e(expect) as (values (74))" in trial["rollback"]
+          and "(%d, %s" % (returned[0], NG._q(by_i[returned[0]]["college"])) not in trial["rollback"],
+          "a rollback rebuilt from 74 returned rows names 74 and leaves the unreturned row out")
+    stray = {"response": json.dumps([{"returned": {"returned": 1, "keys": [999], "skipped_checked": []}}])}
+    try:
+        NG.replan_applied(json.loads(json.dumps(rc)), stray, "trial")
+        check(False, "a returned place outside the plan is refused")
+    except ValueError:
+        check(True, "")
+    print("rollback: %d rows named, the %d the apply returned" % (len(named), len(returned)))
 
 check(CL.held("Chabot College") and not CL.held("Butte College"), "the collection lane's colleges are held")
 

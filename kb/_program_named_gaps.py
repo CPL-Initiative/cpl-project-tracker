@@ -44,6 +44,8 @@ THE COLLECTION LANE'S COLLEGES are left out: COLLECTION_LANE_S680 in kb/collecti
 
     python3 kb/_program_named_gaps.py --dry-run     # counts and the self-check; writes nothing
     python3 kb/_program_named_gaps.py --tag s680    # rewrite the records, the label file and the receipt
+    python3 kb/_program_named_gaps.py --receipt R --applied M   # after the apply: rebuild the rollback from the
+                                                    # rows the migrate receipt M returned (no rescoring)
 
 Guard: tests/program_named_gaps_test.py.
 """
@@ -463,12 +465,75 @@ def rollback_sql(rows: list[dict], tag: str = "s680 named-gaps rollback") -> str
     return GS.guarded(V % _values(rows), _update("before", "after"), len(rows), tag, rollback=True)
 
 
+def replan_applied(body: dict, migrate: dict, applied_from: str, tag: str = "s680") -> dict:
+    """The receipt after the apply, in place, without rescoring (Rule 10 a2; the shape of #3496's replan): the rows
+    the migrate receipt returned are marked applied and the rollback is rebuilt from those rows alone. The apply's
+    guard matched each returned row on the filed run and the before-image's record and checks, so the before-image
+    a returned row carries is the value the row held. Places i never change, so a returned key still names its row."""
+    import _program_requirements_rescore as RS
+    got = RS.returned_value(migrate)
+    by_i = {r["i"]: r for r in body["records"]}
+    keys = got["keys"]
+    stray = [i for i in keys if i not in by_i]
+    if stray:
+        raise ValueError("returned places outside the plan: %s" % stray[:10])
+    if len(set(keys)) != len(keys):
+        raise ValueError("the response lists a place twice")
+    rows = [by_i[i] for i in sorted(keys)]
+    for r in rows:
+        r["applied"] = {"from": applied_from}
+    body["applied"] = {"from": applied_from, "returned": len(rows), "keys": [r["i"] for r in rows],
+                       "skipped_checked": got.get("skipped_checked") or []}
+    body["rollback"] = rollback_sql(rows, "%s named-gaps rollback" % tag)
+    return body
+
+
+def write_rollback(body: dict, receipt: str, day: str, tag: str) -> str:
+    """The rollback alone as a committed file: the pre-read and the apply ran as committed (the migrate receipts
+    hold their sha256) and stay as they ran."""
+    ap_ = body["applied"]
+    hdr = ("-- %s cheap piles, item 4: named gaps (%s). Each row's checks became the college load's image of its\n"
+           "-- committed record (load_rows): checks.gaps and checks.confidence added, checks.arithmetic and the record\n"
+           "-- unchanged. Receipt: %s (before_image per row).\n"
+           "-- The collection lane's twelve colleges (kb/collection_lane.py) and the parked colleges are not in the list.\n"
+           % (tag.upper(), ", ".join("%s %d" % kv for kv in sorted(body["by_gap"].items())), receipt))
+    path = os.path.join(HERE, "migrations", "%s_%s_prreq_named_gaps_rollback.sql" % (day, tag))
+    with open(path, "w", encoding="utf-8") as fh:
+        fh.write(hdr + "-- Rollback, NOT applied: the %d rows the apply returned (%s), the before-image's checks\n"
+                 "-- back where the row still holds the after-image, skipping and listing a row a person checked; it\n"
+                 "-- aborts unless it matches those rows less the checked ones (edit expect for a partial rollback).\n"
+                 "-- A rollback lasts only until the next load of that college: the load posts the committed\n"
+                 "-- record files, which still carry score.gaps, so revert those files too (git revert of this\n"
+                 "-- plan's commit) or the next load writes the gaps back.\n"
+                 % (ap_["returned"], ap_["from"]) + body["rollback"] + "\n")
+    return path
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--tag", default="s680")
     ap.add_argument("--skip-college", action="append", default=[])
+    ap.add_argument("--receipt", help="replan this receipt after the apply (no rescoring); needs --applied")
+    ap.add_argument("--applied", help="the apply's migrate receipt: mark its rows applied and rebuild the rollback "
+                                      "from them")
     a = ap.parse_args(argv)
+    if a.receipt or a.applied:
+        if not (a.receipt and a.applied):
+            ap.error("--receipt and --applied go together")
+        with open(a.receipt, encoding="utf-8") as fh:
+            body = json.load(fh)
+        with open(a.applied, encoding="utf-8") as fh:
+            mig = json.load(fh)
+        rel = lambda p: os.path.relpath(os.path.abspath(p), ROOT)  # noqa: E731
+        replan_applied(body, mig, rel(a.applied), a.tag)
+        with open(a.receipt, "w", encoding="utf-8") as fh:
+            json.dump(body, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
+        day = re.search(r"_(\d{4}-\d{2}-\d{2})_", os.path.basename(a.receipt)).group(1)
+        out = write_rollback(body, rel(a.receipt), day, a.tag)
+        print("replanned: %d rows applied (%s), rollback %s" % (body["applied"]["returned"], rel(a.applied), rel(out)))
+        return 0
     r = run(write=not a.dry_run, skip=tuple(a.skip_college))
     print("records collected with a named gap: %d (%s)" % (len(r["moved"]), ", ".join(
         "%s %d" % kv for kv in sorted(r["by_gap"].items())) or "none"))

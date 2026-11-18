@@ -1,9 +1,10 @@
--- S680 cheap piles, item 4: named gaps (no_units_read 75). Each row's checks become the college load's image of its
+-- S680 cheap piles, item 4: named gaps (no_units_read 75). Each row's checks became the college load's image of its
 -- committed record (load_rows): checks.gaps and checks.confidence added, checks.arithmetic and the record
 -- unchanged. Receipt: kb/receipts/program_requirement_records_named_gaps_2026-11-18_s680.json (before_image per row).
 -- The collection lane's twelve colleges (kb/collection_lane.py) and the parked colleges are not in the list.
--- Rollback, NOT applied: the before-image's checks back where the row still holds the
--- after-image, skipping and listing a row a person checked.
+-- Rollback, NOT applied: the 75 rows the apply returned (kb/receipts/migration_s680_prreq_named_gaps_apply_44273638344.json), the before-image's checks
+-- back where the row still holds the after-image, skipping and listing a row a person checked; it
+-- aborts unless it matches those rows less the checked ones (edit expect for a partial rollback).
 -- A rollback lasts only until the next load of that college: the load posts the committed
 -- record files, which still carry score.gaps, so revert those files too (git revert of this
 -- plan's commit) or the next load writes the gaps back.
