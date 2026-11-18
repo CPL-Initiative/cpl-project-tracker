@@ -2,7 +2,7 @@
 -- holds no object, and changes nothing otherwise.
 --
 -- A bucket that holds receipts is NOT rolled back by this file: those objects are the receipts that
--- kb/receipts/index.json names, and deleting them breaks Rule 10 (a2) for every display build stored
+-- kb/receipts/index/ names, and deleting them breaks Rule 10 (a2) for every display build stored
 -- there. Restore the files to kb/receipts from the bucket first (kb/_receipt_store.py, Storage.get, each
 -- checked against its index sha256), commit them, then empty the bucket through the Storage API
 -- (POST /storage/v1/bucket/cpl-receipts/empty, then DELETE /storage/v1/bucket/cpl-receipts, with the

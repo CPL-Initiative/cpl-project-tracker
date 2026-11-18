@@ -63,9 +63,18 @@ name: Program requirements, one college
 #   megabytes. From S680 (#3476) no display receipt is committed: the job builds
 #   it from the branch's committed records (refused when its build is not the
 #   page's), stores it in the private cpl-receipts bucket, and names it with its
-#   sha256 in kb/receipts/index.json, in that order and before the apply; a
-#   failed step stops the job before the apply. The commit holds the index entry
-#   and the applied record only.
+#   sha256 in kb/receipts/index/<name>.json (one file an entry), in that order
+#   and before the apply; a failed step stops the job before the apply. The commit
+#   holds the index entry and the applied record only. force= on a display:
+#   "supersede" stores a rebuilt receipt beside other bytes already under its
+#   name; "<receipt name> [<applied record>]" re-applies that stored receipt
+#   instead of the page's build, limited to the keys the applied record sends
+#   back to it: the display rollback (docs/reference/data_write_rollback.md).
+#
+# fetch (a dispatch with step=fetch and force=<receipt name>, never a push): reads
+#   a stored receipt from cpl-receipts, checked against its index sha256, and
+#   leaves it as this run's artifact receipt-<run>, so a session that cannot reach
+#   the bucket can read it (gh run download <run> -n receipt-<run>).
 
 on:
   workflow_dispatch:
@@ -83,11 +92,11 @@ on:
         required: false
         default: "0"
       step:
-        description: "read (capture, extract, file), reconcile (capture, then the college's reconcile steps on the filed records; extract 0), load (the committed records, unchecked), reread (replace unchecked rows from the newest run) or display (the page's display build)"
+        description: "read (capture, extract, file), reconcile (capture, then the college's reconcile steps on the filed records; extract 0), load (the committed records, unchecked), reread (replace unchecked rows from the newest run), display (the page's display build) or fetch (a stored receipt as this run's artifact)"
         required: false
         default: "read"
       force:
-        description: "read: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'. reread: an extraction run id to post instead of the newest"
+        description: "read: control numbers to extract again though their page is unchanged (comma-separated), or 'incomplete'. reread: an extraction run id to post instead of the newest. display: 'supersede', or a stored receipt's name to re-apply, optionally followed by an applied record whose rollback keys it is limited to. fetch: a stored receipt's name"
         required: false
         default: ""
       route:
@@ -129,7 +138,7 @@ jobs:
     # The filing commit (github-actions[bot]) never runs the workflow again.
     if: >-
       github.actor != 'github-actions[bot]' && (
-      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'reread' && github.event.inputs.step != 'display') ||
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.step != 'load' && github.event.inputs.step != 'reread' && github.event.inputs.step != 'display' && github.event.inputs.step != 'fetch') ||
       (github.event_name == 'push' && (startsWith(github.event.head_commit.message, '[read]') ||
                                        startsWith(github.event.head_commit.message, '[extract]'))))
     runs-on: ubuntu-latest
@@ -347,29 +356,58 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      # force= names what this display does: empty (the page's build), supersede (the same, storing beside
+      # other bytes under the receipt's name), or a stored receipt to re-apply (the rollback). Refused otherwise.
+      - name: Read force
+        id: mode
+        env:
+          FORCE: ${{ github.event.inputs.force }}
+        run: |
+          set -f; set -- $FORCE
+          if [ $# -eq 0 ]; then echo "receipt=" >> "$GITHUB_OUTPUT"; echo "supersede=" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if [ "$1" = "supersede" ] && [ $# -eq 1 ]; then
+            echo "receipt=" >> "$GITHUB_OUTPUT"; echo "supersede=1" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          if ! [[ "$1" =~ ^program_requirement_records_display_[0-9a-z._-]+$ ]] || [ $# -gt 2 ] || \
+             { [ $# -eq 2 ] && ! [[ "$2" =~ ^kb/receipts/[0-9A-Za-z._-]+\.applied_[0-9A-Za-z._-]+\.json$ ]]; }; then
+            echo "::error::force on a display is empty, 'supersede', or '<stored receipt name> [<applied record>]'"; exit 1
+          fi
+          echo "receipt=$1" >> "$GITHUB_OUTPUT"; echo "keys=${2:-}" >> "$GITHUB_OUTPUT"; echo "supersede=" >> "$GITHUB_OUTPUT"
       # The builder reads the COCI course list (kb/reference/coci_course_list.xlsx) through openpyxl.
       - run: pip install --quiet openpyxl
       # S680 (#3476): the receipt is built here, never committed. A build other than the page's is refused
       # (the inputs moved after the page was built): rebuild the page on the branch, push, dispatch again.
       # An index entry already naming the page's build, or a committed receipt of it, skips the build.
+      # A re-apply of a stored receipt builds and stores nothing: the receipt is already stored.
       - name: Build the receipt of the page's build from the committed records
-        run: python3 kb/_build_roep_display.py --receipt-only
+        env:
+          RECEIPT: ${{ steps.mode.outputs.receipt }}
+          SUPERSEDE: ${{ steps.mode.outputs.supersede }}
+        run: |
+          if [ -n "$RECEIPT" ]; then echo "re-applying the stored $RECEIPT: nothing to build"; exit 0; fi
+          python3 kb/_build_roep_display.py --receipt-only ${SUPERSEDE:+--ignore-index}
       # Upload to the private bucket, read it back, and file the entry only when the sha256 matches.
-      - name: Store the receipt in cpl-receipts and name it in kb/receipts/index.json
+      - name: Store the receipt in cpl-receipts and name it in kb/receipts/index/
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_receipt_store.py store-display
-      - name: Apply the display build the page carries
+          RECEIPT: ${{ steps.mode.outputs.receipt }}
+          SUPERSEDE: ${{ steps.mode.outputs.supersede }}
+        run: |
+          if [ -n "$RECEIPT" ]; then echo "re-applying the stored $RECEIPT: nothing to store"; exit 0; fi
+          python3 kb/_receipt_store.py store-display ${SUPERSEDE:+--supersede}
+      - name: Apply the display build the page carries, or the stored receipt force names
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}
+          RECEIPT: ${{ steps.mode.outputs.receipt }}
+          KEYS: ${{ steps.mode.outputs.keys }}
         # A college the receipt does not name is refused; empty applies the whole build.
         run: |
-          if [ -n "$DISPLAY_COLLEGE" ]; then
-            python3 kb/_program_requirements_display_apply.py --apply --college "$DISPLAY_COLLEGE"
-          else
-            python3 kb/_program_requirements_display_apply.py --apply
-          fi
+          args=(--apply)
+          if [ -n "$DISPLAY_COLLEGE" ]; then args+=(--college "$DISPLAY_COLLEGE"); fi
+          if [ -n "$RECEIPT" ]; then args+=(--receipt "$RECEIPT"); fi
+          if [ -n "$KEYS" ]; then args+=(--only-keys-from "$KEYS"); fi
+          python3 kb/_program_requirements_display_apply.py "${args[@]}"
       # Only the receipts this run wrote (kb/receipts holds over a thousand files); an upload that fails
       # never fails a job whose write and push succeed: the push stays the gate.
       - uses: actions/upload-artifact@v7
@@ -379,7 +417,7 @@ jobs:
           name: receipts-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             kb/receipts/*${{ github.run_id }}*
-            kb/receipts/index.json
+            kb/receipts/index/
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit the applied record to the branch that ran it
@@ -401,3 +439,31 @@ jobs:
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
           done
           exit 1
+
+  fetch:
+    # A session cannot reach the bucket (Rule 10 (a2)): the runner reads a stored receipt for it, checked
+    # against its index sha256, and leaves it as this run's artifact. Writes nothing and commits nothing.
+    if: >-
+      github.actor != 'github-actions[bot]' &&
+      github.event_name == 'workflow_dispatch' && github.event.inputs.step == 'fetch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Fetch the stored receipt force names, checked against its sha256
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          NAME: ${{ github.event.inputs.force }}
+        run: |
+          if ! [[ "$NAME" =~ ^[0-9A-Za-z._-]+$ ]]; then echo "::error::force names one stored receipt"; exit 1; fi
+          python3 kb/_receipt_store.py fetch "$NAME" --out fetched
+      - uses: actions/upload-artifact@v7
+        with:
+          name: receipt-${{ github.run_id }}
+          path: fetched/
+          retention-days: 90

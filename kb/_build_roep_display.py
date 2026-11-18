@@ -23,7 +23,7 @@ program-requirements-college.yml rebuilds the receipt on the runner from the bra
 committed records (--receipt-only), which refuses a build other than the page's, so
 the stored receipt and the page agree by construction; kb/_receipt_store.py stores it
 in the private cpl-receipts bucket and names it, with its sha256, in
-kb/receipts/index.json before the apply.
+kb/receipts/index/ before the apply.
 
 THE THREE KINDS OF CPL ON A COURSE (DEFINITIONS below say them in full):
   here      MAP holds a credit recommendation this college articulated to the course
@@ -1190,7 +1190,7 @@ def unstalled(json_text: str) -> str:
 
 
 RUNNER_NOTE = ("-- Built on the display job's runner from the branch's committed records; the stored receipt is "
-               "named with its sha256 in kb/receipts/index.json. Its rollback is the applied record the job files "
+               "named with its sha256 in kb/receipts/index/. Its rollback is the applied record the job files "
                "beside it (each row's before-build).")
 
 
@@ -1285,7 +1285,7 @@ def write_receipt(path: str, sql: str) -> None:
         gz.write(sql.encode("utf-8"))
 
 
-def receipt_only(page_src: str | None = None, build_fn=None, log=print) -> int:
+def receipt_only(page_src: str | None = None, build_fn=None, log=print, ignore_index: bool = False) -> int:
     """The display job's first step (S680). 0 when the index already names the page's
     build, when the receipt of the page's build is on disk, or when it is written; 3 when the committed
     records build another than the page carries (inputs moved after the page was built:
@@ -1293,7 +1293,7 @@ def receipt_only(page_src: str | None = None, build_fn=None, log=print) -> int:
     import _program_requirements_display_apply as A
     import _receipt_store as S
     page = A.page_build(page_src)
-    entry = S.display_entry(page)
+    entry = None if ignore_index else S.display_entry(page)
     if entry:
         log("build %s is indexed (%s, sha256 %s); nothing to build" % (page, entry["object"], entry["sha256"]))
         return 0
@@ -1330,9 +1330,11 @@ def main(argv=None) -> int:
     ap.add_argument("--receipt-only", action="store_true",
                     help="the display job: write the receipt of the build the page carries, refused when the "
                          "committed records build another; the page is left as it is")
+    ap.add_argument("--ignore-index", action="store_true",
+                    help="with --receipt-only: build even when the index names the page's build (a supersede)")
     args = ap.parse_args(argv)
     if args.receipt_only:
-        return receipt_only()
+        return receipt_only(ignore_index=args.ignore_index)
     b = build()
     if args.verify_sql:
         print(verify_sql(b), end="")

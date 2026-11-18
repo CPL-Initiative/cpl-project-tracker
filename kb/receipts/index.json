@@ -1,6 +1,0 @@
-{
- "_about": "Receipts kept in the private Supabase Storage bucket cpl-receipts instead of git (S680, #3476; Sam, 2026-11-17). Each entry names the object, its size, sha256 and row count. The runner writes an entry only after the upload reads back with the same sha256 (kb/_receipt_store.py), and the display apply refuses bytes whose sha256 differs (kb/_program_requirements_display_apply.py). Rule 10 (a2): this file is how a stored receipt is found and checked.",
- "bucket": "cpl-receipts",
- "receipts": [
- ]
-}

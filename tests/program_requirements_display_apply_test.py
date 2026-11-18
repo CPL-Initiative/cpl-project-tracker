@@ -431,13 +431,12 @@ try:
     open(page, "w").write('{"build": "%s"}' % BUILD)
     big = os.path.join(tmp, "program_requirement_records_display_2026-11-13_%s.sql" % BUILD)
     open(big, "w").write("\n".join(stmt(r["college"], r["control_number"], r["display"]) for r in many) + "\n")
-    # S680: main() applies only a receipt kb/receipts/index.json names, read here from the repo
+    # S680: main() applies only a receipt kb/receipts/index/ names, read here from the repo
     # copy (no fetch is passed and no service key is set) and checked against its sha256.
-    index = os.path.join(tmp, "index.json")
+    index = os.path.join(tmp, "index")
 
     def index_big():
-        if os.path.exists(index):
-            os.remove(index)
+        shutil.rmtree(index, ignore_errors=True)
         S.add_entry({"name": os.path.basename(big), "kind": S.DISPLAY_KIND, "bucket": S.BUCKET,
                      "object": S.object_name(S.DISPLAY_KIND, os.path.basename(big)), "build": BUILD,
                      "built": "2026-11-13", "bytes": os.path.getsize(big), "sha256": S.sha256_file(big),

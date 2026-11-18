@@ -22,8 +22,10 @@ WHERE THE RECEIPT COMES FROM (S680, #3476). Git ignores the display receipts
 (about 17 MB each; 1,531 MB of a 2.0 GB clone). The display job builds the
 receipt from the branch's committed records (kb/_build_roep_display.py
 --receipt-only, refused when its build differs from the page's), stores it in the
-private cpl-receipts bucket and files its sha256 in kb/receipts/index.json
-(kb/_receipt_store.py store-display), and then runs this. --apply reads the bucket
+private cpl-receipts bucket and files its sha256 in kb/receipts/index/
+(kb/_receipt_store.py store-display), and then runs this. --receipt NAME re-applies
+one stored receipt instead (the display rollback, step=display force=NAME), and
+--only-keys-from limits it to the keys an applied record sends back to that build. --apply reads the bucket
 first and the repo copy second (an older build's committed receipt), and refuses
 both unless their bytes carry the sha256 the index names: no apply without a
 stored, checked receipt. --dry-run also reads a receipt the index does not name
@@ -150,18 +152,25 @@ def receipt_for(build: str, folder: str = RECEIPTS) -> str:
     return hits[0]
 
 
-def stored_receipt(build: str, *, fetch=None, folder: str | None = None, index_path: str | None = None,
-                   allow_unindexed: bool = False) -> dict:
+def stored_receipt(build: str | None, *, fetch=None, folder: str | None = None, index_path: str | None = None,
+                   allow_unindexed: bool = False, name: str | None = None) -> dict:
     """The receipt of a build as {repo, local, entry, source}. `repo` is its name under
     kb/receipts (the applied record sits beside it), `local` the file holding its bytes.
     With an index entry: the bucket first (`fetch(object)` returns bytes), then the repo
     copy, and only bytes whose sha256 is the entry's; neither is refused. With none: a
-    refusal, unless `allow_unindexed` (--dry-run), which reads the repo copy as before."""
+    refusal, unless `allow_unindexed` (--dry-run), which reads the repo copy as before.
+    `name` asks for one stored receipt by its file name instead (--receipt: a re-apply,
+    the display rollback), whatever build the page carries."""
     folder = folder or RECEIPTS
-    entry = S.display_entry(build, S.load_index(index_path))
+    if name:
+        entry = S.read_entry(name, index_path)
+        if entry is None or entry.get("kind") != S.DISPLAY_KIND:
+            raise SystemExit("REFUSING: kb/receipts/index/ names no stored display receipt %s" % name)
+    else:
+        entry = S.display_entry(build, S.load_index(index_path))
     if entry is None:
         if not allow_unindexed:
-            raise SystemExit("REFUSING: kb/receipts/index.json names no stored receipt of build %s; the display "
+            raise SystemExit("REFUSING: kb/receipts/index/ names no stored receipt of build %s; the display "
                              "job stores it (kb/_receipt_store.py store-display) before it applies" % build)
         path = receipt_for(build, folder)
         return {"repo": path, "local": path, "entry": None, "source": "the repo, not stored yet"}
@@ -191,7 +200,7 @@ def stored_receipt(build: str, *, fetch=None, folder: str | None = None, index_p
         tried.append("the repo copy: sha256 %s" % got)
     else:
         tried.append("the repo copy: none")
-    raise SystemExit("REFUSING: no copy of %s carries the sha256 kb/receipts/index.json names (%s): %s"
+    raise SystemExit("REFUSING: no copy of %s carries the sha256 its kb/receipts/index/ entry names (%s): %s"
                      % (entry["name"], entry["sha256"], "; ".join(tried)))
 
 
@@ -312,7 +321,7 @@ def _rollback(before: dict, keys: list) -> dict:
         "to_null": [k for k in keys if before[k] is None],
         "reapply": {b: [k for k in keys if before[k] == b] for b in held},
         "how": "set display to null for to_null; for each build in reapply, re-apply that build's "
-               "full receipt to those keys: the one kb/receipts/index.json names (stored in cpl-receipts, "
+               "full receipt to those keys: the one kb/receipts/index/ names (stored in cpl-receipts, "
                "from S680), or a committed kb/receipts/program_requirement_records_display_*_<build>.sql(.gz).",
     }
 
@@ -506,8 +515,24 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=No
                     help="the run's attempt; above 1 it joins the applied record's name")
     ap.add_argument("--workers", type=int, default=WORKERS, help="PATCHes at once (default %d)" % WORKERS)
     ap.add_argument("--college", help="apply only this college's statements, as the receipt names it")
+    ap.add_argument("--receipt", help="re-apply this stored receipt (its file name in kb/receipts/index/) "
+                                      "instead of the page's build: the display rollback")
+    ap.add_argument("--only-keys-from", help="with --receipt: only the keys an applied record's rollback "
+                                             "sends back to that receipt's build (rollback.reapply)")
     args = ap.parse_args(argv)
-    build = page_build()
+    if args.only_keys_from and not args.receipt:
+        print("REFUSING: --only-keys-from names the keys to put back to a stored receipt; name it with --receipt")
+        return 1
+    build = None
+    if args.receipt:
+        named = S.read_entry(args.receipt)
+        if named is None or named.get("kind") != S.DISPLAY_KIND:
+            print("REFUSING: kb/receipts/index/ names no stored display receipt %s" % args.receipt)
+            return 1
+        build = named["build"]
+        print("re-applying the stored receipt %s (build %s), not the page's build" % (args.receipt, build))
+    else:
+        build = page_build()
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if args.apply and request is None and not key:
         print("SUPABASE_SERVICE_KEY is not set; the display write takes the service role.")
@@ -515,7 +540,8 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=No
     if fetch is None and key:
         fetch = S.Storage(key).get
     try:
-        stored = stored_receipt(build, fetch=fetch, allow_unindexed=args.dry_run)
+        stored = stored_receipt(build, fetch=fetch, allow_unindexed=args.dry_run and not args.receipt,
+                                name=args.receipt)
     except SystemExit as exc:
         print(exc)
         return 1
@@ -534,6 +560,19 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=No
         print("REFUSING: %d keys appear in more than one statement; parallel writes would land in no set order"
               % (len(keys) - len(set(keys))))
         return 1
+    if args.only_keys_from:
+        with open(args.only_keys_from, encoding="utf-8") as fh:
+            back = ((json.load(fh).get("rollback") or {}).get("reapply") or {}).get(build) or []
+        if not back:
+            print("REFUSING: %s sends no key back to build %s" % (args.only_keys_from, build))
+            return 1
+        want = set(back)
+        rows = [r for r in rows if _key(r["college"], r["control_number"]) in want]
+        print("only the %d keys %s sends back to build %s (%d of them in the receipt)"
+              % (len(want), os.path.relpath(os.path.abspath(args.only_keys_from), ROOT), build, len(rows)))
+        if not rows:
+            print("REFUSING: the receipt holds none of those keys")
+            return 1
     if args.college:
         rows = [r for r in rows if r["college"] == args.college]
         if not rows:

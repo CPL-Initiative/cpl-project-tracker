@@ -102,7 +102,7 @@ tmp = tempfile.mkdtemp()
 try:
     folder = os.path.join(tmp, "receipts")
     os.makedirs(folder)
-    index = os.path.join(folder, "index.json")
+    index = os.path.join(folder, "index")
     page = '{"build": "%s"}' % BUILD
     path = os.path.join(folder, NAME)
     data = receipt_bytes()
@@ -154,9 +154,8 @@ try:
         check(False, "a name filed again with other bytes is refused")
     except SystemExit:
         check(True, "a name filed again with other bytes is refused")
-    raw = open(index).read()
-    check(json.loads(raw) == idx and raw == S.index_text(idx) and raw.count("\n") == 6 + len(idx["receipts"]),
-          "the index is one entry a line, sorted, and round-trips")
+    check(os.listdir(index) == [NAME + ".json"] and json.load(open(os.path.join(index, NAME + ".json"))) == e
+          and S.read_entry(NAME, index) == e, "the entry is its own file, named by the receipt, and round-trips")
     two = {"receipts": [e, dict(e, name=NAME.replace(".sql.gz", ".sql"))]}
     try:
         S.display_entry(BUILD, two)
@@ -167,7 +166,7 @@ try:
     check(committed.get("bucket") == "cpl-receipts"
           and all(S.entry_problems(x) == [] for x in committed.get("receipts", []))
           and len({x["name"] for x in committed["receipts"]}) == len(committed["receipts"]),
-          "the committed kb/receipts/index.json is sound")
+          "the committed kb/receipts/index/ is sound")
 
     # ---- a re-run: the index already names the build, so the bucket copy is checked, not uploaded.
     bucket.puts.clear()
@@ -177,6 +176,93 @@ try:
     check(S.store_display(bucket, folder=folder, index_path=index, page_src=page, log=log) == 1,
           "a stored build whose bucket copy no longer matches its sha256 exits 1")
     bucket.corrupt = False
+
+    # ---- F2: one file an entry, so two branches that each store a receipt merge without a conflict.
+    repo = os.path.join(tmp, "two_branches")
+    os.makedirs(repo)
+
+    def git(*a):
+        return subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", *a], cwd=repo,
+                              capture_output=True, text=True)
+    git("init", "-q", "-b", "main")
+    ix = os.path.join(repo, "index")
+    S.add_entry(dict(e), ix)
+    git("add", "-A")
+    git("commit", "-q", "-m", "base")
+    for br, other_build in (("a", "aaaaaaaaaaaa"), ("b", "bbbbbbbbbbbb")):
+        git("checkout", "-q", "-b", br, "main")
+        n = "program_requirement_records_display_2026-11-18_%s.sql.gz" % other_build
+        S.add_entry(dict(e, name=n, object="display/" + n, build=other_build, built="2026-11-18"), ix)
+        git("add", "-A")
+        git("commit", "-q", "-m", br)
+    git("checkout", "-q", "main")
+    git("merge", "-q", "--no-edit", "a")
+    merged = git("merge", "-q", "--no-edit", "b")
+    check(merged.returncode == 0 and not git("diff", "--name-only", "--diff-filter=U").stdout.strip()
+          and len(S.load_index(ix)["receipts"]) == 3,
+          "two branches that each add an index entry merge cleanly, and the index reads all three")
+
+    # ---- F3: a name held by other bytes is refused, and --supersede stores beside it, keeping both.
+    f3 = Bucket()
+    f3.objects["display/" + NAME] = b"older bytes"
+    ix3 = os.path.join(tmp, "index3")
+    check(S.store_display(f3, folder=folder, index_path=ix3, page_src=page, log=log) == 1
+          and "--supersede" in logs[-1] and not os.path.exists(ix3) and f3.objects["display/" + NAME] == b"older bytes",
+          "an object under the name with other bytes is refused, kept, and the refusal names --supersede")
+    check(S.store_display(f3, folder=folder, index_path=ix3, page_src=page, supersede=True, log=log) == 0,
+          "--supersede stores the receipt")
+    e3 = S.read_entry(NAME, ix3)
+    side = "display/%s/%s" % (S.sha256_bytes(data)[:12], NAME)
+    check(e3["object"] == side and f3.objects.get(side) == data and f3.objects["display/" + NAME] == b"older bytes"
+          and e3["supersedes"] == [{"object": "display/" + NAME, "sha256": S.sha256_bytes(b"older bytes"),
+                                   "seen_in": "bucket"}] and S.entry_problems(e3) == [],
+          "a superseding copy sits beside the old object, which is untouched, and the entry lists what it replaces")
+    got3 = A.stored_receipt(BUILD, fetch=f3.get, folder=folder, index_path=ix3)
+    check(open(got3["local"], "rb").read() == data, "the apply reads the superseding copy")
+    os.remove(got3["local"])
+    # An indexed build whose object was replaced under it: refused, then superseded from the rebuilt bytes.
+    f4 = Bucket()
+    ix4 = os.path.join(tmp, "index4")
+    S.store_display(f4, folder=folder, index_path=ix4, page_src=page, log=log)
+    f4.objects["display/" + NAME] = b"replaced"
+    check(S.store_display(f4, folder=folder, index_path=ix4, page_src=page, log=log) == 1 and "--supersede" in logs[-1],
+          "an indexed build whose bucket copy changed is refused, naming --supersede")
+    check(S.store_display(f4, folder=folder, index_path=ix4, page_src=page, supersede=True, log=log) == 0
+          and S.read_entry(NAME, ix4)["object"] == side and f4.objects["display/" + NAME] == b"replaced",
+          "--supersede files the same bytes beside the changed object and the entry moves to them")
+    # An entry naming other bytes for the name is superseded only when it is listed.
+    ix5 = os.path.join(tmp, "index5")
+    S.add_entry(dict(e, sha256="1" * 64), ix5)
+    try:
+        S.store_file(path, kind=S.DISPLAY_KIND, build=BUILD, built="2026-11-13", rows=2, storage=Bucket(),
+                     index_path=ix5, log=log)
+        check(False, "an entry naming other bytes is refused without --supersede")
+    except SystemExit as exc:
+        check("--supersede" in str(exc), "an entry naming other bytes is refused without --supersede")
+    e5 = S.store_file(path, kind=S.DISPLAY_KIND, build=BUILD, built="2026-11-13", rows=2, storage=Bucket(),
+                      index_path=ix5, supersede=True, log=log)
+    check({"object": "display/" + NAME, "sha256": "1" * 64, "seen_in": "index"} in e5["supersedes"]
+          and S.read_entry(NAME, ix5)["sha256"] == S.sha256_bytes(data),
+          "--supersede over an index entry records the entry's sha256 it replaces")
+
+    # ---- F1: a stored receipt comes back to a session only through the runner, checked.
+    out = os.path.join(tmp, "fetched")
+    p1 = S.fetch(NAME, bucket, out=out, index_path=index, log=log)
+    check(open(p1, "rb").read() == data and os.path.basename(p1) == NAME, "fetch writes the stored bytes under its name")
+    os.remove(p1)
+    bucket.corrupt = True
+    try:
+        S.fetch(NAME, bucket, out=out, index_path=index, log=log)
+        check(False, "fetch refuses bytes whose sha256 is not the entry's")
+    except SystemExit:
+        check(not os.listdir(out), "fetch refuses bytes whose sha256 is not the entry's and writes nothing")
+    bucket.corrupt = False
+    try:
+        S.fetch("program_requirement_records_display_2026-01-01_000000000000.sql.gz", bucket, out=out,
+                index_path=index, log=log)
+        check(False, "fetch refuses a name the index does not hold")
+    except SystemExit:
+        check(True, "fetch refuses a name the index does not hold")
 
     # ---- (a) the apply: the bucket first, then the repo copy, each only at the index's sha256.
     got = A.stored_receipt(BUILD, fetch=bucket.get, folder=folder, index_path=index)
@@ -249,6 +335,24 @@ try:
               and rec["receipt_sha256"] == S.sha256_bytes(data) and rec["receipt"].endswith(NAME)
               and os.path.dirname(A.applied_path(path, "2")) == folder,
               "an apply from the bucket files its applied record in kb/receipts, naming the object and sha256")
+        # F1 (a): the rollback re-applies a named stored receipt, whatever build the page carries, to the
+        # keys an applied record sends back to it.
+        open(pagefile, "w").write('{"build": "eeeeeeeeeeee"}')
+        record = os.path.join(tmp, "later.applied_9.json")
+        json.dump({"rollback": {"to_null": [], "reapply": {BUILD: ["Cerritos College|02201"]}}}, open(record, "w"))
+        rows.clear()
+        calls.clear()
+        code = A.main(["--apply", "--run", "3", "--attempt", "1", "--receipt", NAME, "--only-keys-from", record],
+                      request=table, sleep=lambda s: None, fetch=bucket.get)
+        rec3 = json.load(open(A.applied_path(path, "3")))
+        check(code == 0 and len(rows) == 1 and "control_number=eq.02201" in rows[0] and rec3["statements"] == 1
+              and rec3["receipt_sha256"] == S.sha256_bytes(data),
+              "--receipt with --only-keys-from writes that stored receipt to the record's keys alone")
+        check(A.main(["--apply", "--run", "4", "--only-keys-from", record], request=table, sleep=lambda s: None,
+                      fetch=bucket.get) == 1, "--only-keys-from without --receipt is refused")
+        check(A.main(["--apply", "--run", "4", "--receipt", "program_requirement_records_display_2026-01-01_"
+                      "000000000000.sql.gz"], request=table, sleep=lambda s: None, fetch=bucket.get) == 1,
+              "--receipt naming no stored receipt is refused")
     finally:
         A.PAGE, A.RECEIPTS, S.INDEX = saved[:3]
         if saved[3] is not None:
@@ -282,7 +386,7 @@ for n in (NAME, "program_requirement_records_display_2026-10-06_5be53871ebf4.sql
     check(ignored("kb/receipts/" + n), "git ignores the display receipt %s" % n)
 for n in ("program_requirement_records_display_2026-11-13_%s.applied_44003384689.json" % BUILD,
           "program_requirement_records_display_2026-11-13_%s.applied_44001779139_2_cerritos-college.json" % BUILD,
-          "index.json", "program_requirement_records_load_2026-10-04.sql",
+          "index/%s.json" % NAME, "program_requirement_records_load_2026-10-04.sql",
           "program_requirement_records_college_cerritos-college_38000000000.json"):
     check(not ignored("kb/receipts/" + n), "git keeps %s" % n)
 
@@ -300,8 +404,8 @@ def at(needle):
 
 b_i = at("kb/_build_roep_display.py --receipt-only")
 s_i = at("kb/_receipt_store.py store-display")
-a_i = at("kb/_program_requirements_display_apply.py --apply")
-check(0 < b_i < s_i < a_i, "the display job builds, then stores, then applies (steps %d, %d, %d)" % (b_i, s_i, a_i))
+a_i = at("kb/_program_requirements_display_apply.py")
+check(0 < b_i < s_i < a_i and "--apply" in steps[a_i], "the display job builds, then stores, then applies (steps %d, %d, %d)" % (b_i, s_i, a_i))
 for i in range(b_i, a_i + 1):
     check(not re.search(r"^\s*(if:|continue-on-error:)", steps[i], re.M),
           "no step from the build to the apply runs past a failure (step %d)" % i)
@@ -310,5 +414,34 @@ commit = [st for st in steps if "git commit" in st]
 check(len(commit) == 1 and "program_requirement_records_display_" in commit[0] and "exit 1" in commit[0]
       and commit[0].index("program_requirement_records_display_") < commit[0].index("git commit"),
       "the commit step refuses a staged display receipt before it commits")
+
+mode = [st for st in steps if st.startswith("name: Read force")]
+check(len(mode) == 1 and steps.index(mode[0]) < b_i, "the display job reads force before it builds")
+body = mode[0][mode[0].index("run: |") + len("run: |"):]
+script = "\n".join(line[4:] if line.startswith("    ") else line for line in body.splitlines())
+
+
+def mode_of(force):
+    outp = tempfile.mktemp()
+    r = subprocess.run(["bash", "-e", "-c", script], env={"FORCE": force, "GITHUB_OUTPUT": outp,
+                                                           "PATH": os.environ["PATH"]},
+                       capture_output=True, text=True)
+    got = dict(x.split("=", 1) for x in open(outp).read().splitlines()) if os.path.exists(outp) else {}
+    return r.returncode, got
+
+
+check(mode_of("") == (0, {"receipt": "", "supersede": ""}), "an empty force applies the page's build")
+check(mode_of("supersede") == (0, {"receipt": "", "supersede": "1"}), "force=supersede stores beside other bytes")
+check(mode_of(NAME) == (0, {"receipt": NAME, "keys": "", "supersede": ""}), "force=<name> re-applies that receipt")
+rec_path = "kb/receipts/program_requirement_records_display_2026-11-18_eeeeeeeeeeee.applied_44100000009.json"
+check(mode_of(NAME + " " + rec_path) == (0, {"receipt": NAME, "keys": rec_path, "supersede": ""}),
+      "force=<name> <applied record> re-applies it to that record's keys")
+for bad in ("Cerritos College", NAME + " ../etc/passwd", NAME + " a b", "supersede now", "*"):
+    check(mode_of(bad)[0] != 0, "force=%r is refused on a display" % bad)
+fj = wf[wf.index("\n  fetch:\n"):]
+check("step == 'fetch'" in fj and "kb/_receipt_store.py fetch" in fj and "upload-artifact" in fj
+      and "git commit" not in fj and "SUPABASE_SERVICE_KEY" in fj,
+      "step=fetch reads a stored receipt on the runner and leaves it as an artifact, committing nothing")
+check("github.event.inputs.step != 'fetch'" in wf[:wf.index("\n  load:\n")], "step=fetch never runs the read job")
 
 print("ok: display receipt store pass (%d checks)" % passed)
