@@ -1,4 +1,4 @@
-{"schema":1,"college":"Ohlone College","slug":"ohlone","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
+{"schema":1,"college":"Ohlone College","slug":"ohlone","basis":"live","census_at":"2026-11-18 23:45Z","correction_rules":false,"programs":[
 {"cn":"18040","title":"Social Science","award":"A.A. Degree","cause":"coverage_fails","lever":"reconcile_steps","url":"https://www.ohlone.edu/sites/default/files/group/Catalog/20262027/chapter_7-curriculum_guides.pdf#page=71"},
 {"cn":"01244","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"01249","title":"Administrative Assistant","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
