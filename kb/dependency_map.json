@@ -10138,6 +10138,13 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    },
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": false,
@@ -16464,11 +16471,16 @@
     {
      "by": "workflow:cred-rename-apply.yml",
      "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
-    "workflow:cred-rename-apply.yml"
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
    ]
   },
   "file:kb/exhibit_slo_neighbors.json": {
@@ -20295,11 +20307,16 @@
     {
      "by": "workflow:cred-rename-apply.yml",
      "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
-    "workflow:cred-rename-apply.yml"
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
    ]
   },
   "file:kb/sjcoe_occupation_scope_map.json": {
@@ -35206,6 +35223,7 @@
     "kb/credential_aliases.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
+    "kb/_build_side_by_side.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
     "kb/_build_adopt_align.py",
@@ -35277,6 +35295,8 @@
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",
+    "kb/exhibit_side_by_side.json",
+    "kb/side_by_side.json",
     "library/adopt/adopt_data.json",
     "library/adopt/adopt_more.json",
     "library/adopt/adopt_align.json",

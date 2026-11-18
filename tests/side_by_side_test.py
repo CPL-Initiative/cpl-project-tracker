@@ -108,6 +108,27 @@ rc = rw[rw.index("name: Commit + push"):]
 rc = rc[:rc.index("git diff --cached")]
 check("5 the rename workflow rebuilds the side by side with the files derived from the credential keys, and commits it",
       "python3 kb/_build_side_by_side.py" in rb and "kb/side_by_side.json" in rc and "kb/exhibit_side_by_side.json" in rc)
+# The daily rebuilds both files after the steps that write what the rows read (the review queue's
+# kb/exhibits_adoption.json, the cert links), commits them, and a failure turns the run red under the failure watch.
+wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
+build_sh = open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read()
+full = wf.replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + build_sh, 1)
+rq, cl = full.find('step "Build the Exhibits review queue"'), full.find('step "Build the exhibit-to-cert link"')
+sb, cms = full.find('step "Build the Side by side views"'), full.find('step "Build the Commons status"')
+check("5 the daily rebuilds the side by side after the review queue writes kb/exhibits_adoption.json and the cert links, "
+      "before the Commons status", -1 < rq < cl < sb < cms and "python3 kb/_build_side_by_side.py" in full[sb:cms],
+      (rq, cl, sb, cms))
+blk = full[sb:full.find("\nSTEP", sb)]
+check("5 a failed side by side build is an ::error and records SIDE_BY_SIDE_STATUS=failed, never a bare echo",
+      "::error title=Side by side not rebuilt::" in blk and 'SIDE_BY_SIDE_STATUS=failed" >> "$GITHUB_ENV"' in blk
+      and 'SIDE_BY_SIDE_STATUS=success" >> "$GITHUB_ENV"' in blk, blk[:400])
+commit = full[full.find("name: Commit and push to main"):]
+check("5 the daily commit carries both side by side files, and a rebuild on a new main restores the first build's status",
+      "git add kb/exhibit_side_by_side.json kb/side_by_side.json" in commit
+      and "first_side=${SIDE_BY_SIDE_STATUS:-}" in commit and 'echo "SIDE_BY_SIDE_STATUS=$first_side"' in commit)
+fail = full[full.find("name: Fail the run when the Side by side views did not rebuild"):]
+check("5 the run ends red when the side by side did not rebuild, so the failure watch reports it",
+      "env.SIDE_BY_SIDE_STATUS == 'failed'" in fail[:400] and "always()" in fail[:400] and "exit 1" in fail[:700])
 
 fails = [r for r in results if not r[1]]
 for name, ok, why in results:
