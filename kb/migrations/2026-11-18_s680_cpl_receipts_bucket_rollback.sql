@@ -11,3 +11,6 @@
 delete from storage.buckets b
  where b.id = 'cpl-receipts'
    and not exists (select 1 from storage.objects o where o.bucket_id = 'cpl-receipts');
+
+-- Applied: supabase-migrate run 44255184017 created the bucket on 2026-11-18 (run finished 07:17Z; noted 2026-11-18T07:20Z).
+-- Its receipt is the migration_s680_cpl_receipts_bucket_44255184017.json file the runner committed.
