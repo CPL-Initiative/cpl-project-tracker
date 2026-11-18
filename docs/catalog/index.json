@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 588,
+   "count": 589,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1385,6 +1385,26 @@
      "title": "A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage",
      "type": "methodology",
      "updated": "2026-09-10"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [
+      ".github/workflows/harvest-gap-census.yml",
+      ".github/workflows/workflow-failure-watch.yml",
+      "kb/status/commons_data.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-dispatch-only-feed-goes-stale-without-a-sound.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "github-actions",
+      "scheduling",
+      "commons",
+      "live-data"
+     ],
+     "title": "A dispatch-only feed goes stale without a sound",
+     "type": "methodology",
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-09-15",
@@ -13774,7 +13794,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-11-14",
@@ -16075,7 +16095,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-09-08",
@@ -16129,7 +16149,7 @@
      ],
      "title": "Common CR Reference \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-10-19",
@@ -16272,7 +16292,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-08-28",
@@ -16473,7 +16493,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-08-28",
@@ -16599,7 +16619,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-08-28",
@@ -17125,8 +17145,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 637,
+   "count": 638,
    "docs": [
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 679,
+     "path": "docs/session_679_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 679 handoff (from SkyWaxwing, S678)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27817,5 +27851,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1507
+ "total": 1509
 }

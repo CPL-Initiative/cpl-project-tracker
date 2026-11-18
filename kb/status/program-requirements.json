@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-17T21:03:21Z",
-  "session": 677,
-  "moniker": "SkyTanager",
-  "run": "Session 677, the queue's one writer",
+  "written_at": "2026-11-17T23:55:10Z",
+  "session": 678,
+  "moniker": "SkyWaxwing",
+  "run": "Session 678, the queue's one writer",
   "decider": "Sam",
-  "handoff": "docs/session_678_handoff.md",
+  "handoff": "docs/session_679_handoff.md",
   "next_step": {
     "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Slice B's seven yield colleges are done, so the queue then turns to the switch that holds back programs with no state course list."
+    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the switch that holds back programs with no state course list, and Lassen's pinned capture."
   },
   "calls": [
     {
@@ -337,6 +337,14 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-17T23:05:00Z",
+      "text": "Today's headline pair, 20,282 active programs and 14,632 with complete requirements at 118 colleges, came from the census runner's live read at 23:05 UTC (run 44195716880), not from a query in the session."
+    },
+    {
+      "at": "2026-11-17T23:02:00Z",
+      "text": "The Commons now shows what the reads have spent, from each read's own cost, beside what the filed records cost (PR 3465). The census of collected data runs every day at 17:47 UTC instead of only when someone starts it."
+    },
     {
       "at": "2026-11-17T20:53:00Z",
       "text": "Chaffey read again so that programs listed without their own requirements take back the catalog page another program had been read from, the seventh and last college of this pass. One more program now has complete requirements, 182 of 192. Physical Science 18435 had been read from the transfer general education page; its page is not found now, so no record is filed for it."
