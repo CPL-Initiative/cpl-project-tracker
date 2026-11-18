@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     84.0,
     84.0
@@ -76,9 +76,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 84.0-84.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -157,7 +157,8 @@
     "reserves",
     "K-9 handler",
     "traffic"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -322,5 +323,14 @@
    "The section ends with the note 'Effective Summer 2025'."
   ]
  },
- "extracted_run": "39046786897"
+ "extracted_run": "39046786897",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 46, the major total the catalog prints; the major and general education sum to 84 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

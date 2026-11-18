@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     64.0
@@ -86,9 +86,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education come to 64.0-64.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -103,7 +101,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -127,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -157,7 +157,8 @@
     "Apply design problem-solving processes, including various research techniques, brainstorming, thumbnail sketches, maquettes, prototypes, comps, safe and ethical use of materials and shared studio space, self-evaluations, and resulting in a final portfolio of art and design solutions.",
     "Evaluate works of art and design through critical discussion and written assignments, using vocabulary specific to the visual arts."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -517,5 +518,14 @@
    "The description lists fields of study for transfer (Fine Arts, Graphic Design, Industrial Design, etc.); read as academic fields, not careers, so careers left empty."
   ]
  },
- "extracted_run": "38748875071"
+ "extracted_run": "38748875071",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 30, the major total the catalog prints; the major and general education sum to 64 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

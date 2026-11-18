@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     71.0,
     71.0
@@ -76,9 +76,7 @@
     21.0,
     21.0
    ],
-   "why": [
-    "the blocks and general education sum to 71.0-71.0; the catalog prints 62.0-65.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -156,7 +156,8 @@
     "Nurse Midwives",
     "Nurse Practitioners",
     "Registered Nurses"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -355,6 +356,13 @@
     "max": 21
    },
    "words": "A.S. Degree (\n62.0 - 65.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096))"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 50, the major total the catalog prints; the major and general education sum to 71 against the degree's 62-65 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
   }
  ],
  "read_run": "38979396148"
