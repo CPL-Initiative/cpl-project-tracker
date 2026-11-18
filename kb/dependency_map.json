@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1060,
+  "file_datasets": 1061,
   "external_services": 195,
-  "consumers": 620,
+  "consumers": 621,
   "workflows": 73,
   "data_js_files": 71,
   "tabs": 41
@@ -11564,7 +11564,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 229
     }
    ],
    "served": false,
@@ -12435,7 +12435,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 219
     },
     {
      "id": "script:kb/_ccr_seed_confirm_apply.py",
@@ -12652,7 +12652,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1374
+     "line": 1377
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -12945,11 +12945,18 @@
      "line": 170
     },
     {
+     "id": "script:kb/_ccr_confidence_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
+    },
+    {
      "id": "script:kb/_ccr_confidence_score.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 176
+     "line": 209
     },
     {
      "id": "script:kb/_ccr_seed_confirm_apply.py",
@@ -13201,7 +13208,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1353
+     "line": 1356
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -13486,7 +13493,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 178
+     "line": 211
     },
     {
      "id": "script:kb/_ccr_seed_confirm_apply.py",
@@ -13668,7 +13675,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1409
+     "line": 1412
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -13883,7 +13890,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 177
+     "line": 210
     },
     {
      "id": "script:kb/_ccr_seed_confirm_apply.py",
@@ -14135,7 +14142,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1354
+     "line": 1357
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -14610,7 +14617,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1360
+     "line": 1363
     },
     {
      "id": "script:kb/_seed_coci_minted_mids.py",
@@ -16036,6 +16043,13 @@
      "line": 567
     },
     {
+     "id": "script:kb/_ccr_confidence_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    },
+    {
      "id": "script:kb/_csr_confirm_authority.py",
      "kind": "script",
      "direction": "read",
@@ -16284,7 +16298,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1379
+     "line": 1382
     }
    ],
    "served": false,
@@ -19105,7 +19119,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1370
+     "line": 1373
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -19307,7 +19321,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1364
+     "line": 1367
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -20097,7 +20111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 194
+     "line": 227
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -20293,7 +20307,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 190
+     "line": 223
     },
     {
      "id": "script:kb/_esl_new_identities_dryrun.py",
@@ -21403,7 +21417,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 192
+     "line": 225
     },
     {
      "id": "script:kb/_ccr_seed_confirm_apply.py",
@@ -21438,7 +21452,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1393
+     "line": 1396
     }
    ],
    "served": true,
@@ -25636,6 +25650,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/ccr_rules_g_m_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/ccr_seed_confirm_test.py": {
    "consumers": [
     {
@@ -29551,7 +29578,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1433
+     "line": 1436
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -36007,6 +36034,7 @@
     "tests/ccr_doubt_test.py",
     "tests/apply_curation_rulings_test.py",
     "tests/ccr_confidence_rules_test.py",
+    "tests/ccr_rules_g_m_test.py",
     "tests/ccr_seed_confirm_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
