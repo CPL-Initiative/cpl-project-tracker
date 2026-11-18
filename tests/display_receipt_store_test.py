@@ -269,12 +269,16 @@ try:
     check(open(p2, "rb").read() == data and S.DISPLAY_KIND in S.PUBLIC_SAFE,
           "a display receipt, declared public-safe, is fetched for an artifact")
     os.remove(p2)
+    check("row_audit" in S.PUBLIC_SAFE and "private_example" not in S.PUBLIC_SAFE,
+          "row_audit is declared public-safe, and the made-up kind is not")
     ixp = os.path.join(tmp, "index_private")
-    other_name = "row_audit_2026-11-01.md"
-    S.add_entry({"name": other_name, "kind": "row_audit", "bucket": S.BUCKET, "object": "row_audit/" + other_name,
+    # A made-up kind stands for one not declared public-safe (row_audit is public-safe since S680: every report was
+    # committed to this public repository).
+    other_name = "private_example_2026-11-01.sql"
+    S.add_entry({"name": other_name, "kind": "private_example", "bucket": S.BUCKET, "object": "private_example/" + other_name,
                  "build": None, "built": None, "bytes": 3, "sha256": S.sha256_bytes(b"abc"), "rows": 0,
                  "stored_at": "2026-11-18T00:00:00Z", "run": None}, ixp)
-    bucket.objects["row_audit/" + other_name] = b"abc"
+    bucket.objects["private_example/" + other_name] = b"abc"
     try:
         S.fetch(other_name, bucket, out=out, index_path=ixp, log=log, for_artifact=True)
         check(False, "a kind not declared public-safe is refused for an artifact")

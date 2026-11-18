@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1046,
+  "file_datasets": 1047,
   "external_services": 195,
   "consumers": 614,
   "workflows": 72,
@@ -5182,7 +5182,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 180
+     "line": 246
     }
    ],
    "served": false,
@@ -27504,6 +27504,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/receipt_move_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/reconcile_reader_gaps_test.py": {
    "consumers": [
     {
@@ -30772,7 +30785,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 276
+     "line": 347
     }
    ],
    "main_committers": []
@@ -35645,6 +35658,7 @@
     "tests/program_requirements_display_apply_test.py",
     "tests/display_receipt_store_test.py",
     "tests/row_audit_prune_test.py",
+    "tests/receipt_move_gate_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
