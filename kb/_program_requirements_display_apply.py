@@ -16,7 +16,20 @@ service key already lives: the college workflow's display job
 
 WHAT IT APPLIES. The receipt of the build the page carries: the build stamp in
 cpl_pathways_roep_data.js names it, so the table and the page agree by
-construction, and a dispatch needs no input to get it right. Each statement's
+construction, and a dispatch needs no input to get it right.
+
+WHERE THE RECEIPT COMES FROM (S680, #3476). Git ignores the display receipts
+(about 17 MB each; 1,531 MB of a 2.0 GB clone). The display job builds the
+receipt from the branch's committed records (kb/_build_roep_display.py
+--receipt-only, refused when its build differs from the page's), stores it in the
+private cpl-receipts bucket and files its sha256 in kb/receipts/index/
+(kb/_receipt_store.py store-display), and then runs this. --receipt NAME re-applies
+one stored receipt instead (the display rollback, step=display force=NAME), and
+--only-keys-from limits it to the keys an applied record sends back to that build. --apply reads the bucket
+first and the repo copy second (an older build's committed receipt), and refuses
+both unless their bytes carry the sha256 the index names: no apply without a
+stored, checked receipt. --dry-run also reads a receipt the index does not name
+yet (a session's own build), and says so. Each statement's
 display JSON is applied exactly as the receipt prints it (the receipt is the
 reviewed artifact; nothing here rebuilds it), with one PATCH a program on its
 key, writing display and nothing else. The verdict trigger
@@ -71,11 +84,12 @@ this on a push.
 
 Usage, from the repo root:
   python3 kb/_program_requirements_display_apply.py --dry-run [--college NAME]
-      name the build and receipt, parse every statement, write nothing
+      name the build and receipt, parse every statement, write nothing (a
+      receipt the index does not name yet is read from kb/receipts)
   python3 kb/_program_requirements_display_apply.py --apply [--run N] [--workers 8] [--college NAME]
       apply it with SUPABASE_SERVICE_KEY and file the applied record
 
-Guard: tests/program_requirements_display_apply_test.py.
+Guards: tests/program_requirements_display_apply_test.py, tests/display_receipt_store_test.py.
 """
 from __future__ import annotations
 
@@ -93,12 +107,16 @@ import threading
 import time
 import urllib.error
 import urllib.parse
+import tempfile
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 RECEIPTS = os.path.join(HERE, "receipts")
+sys.path.insert(0, HERE)
+import _receipt_store as S  # noqa: E402  (the one index and bucket)
+
 PAGE = os.path.join(ROOT, "cpl_pathways_roep_data.js")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 TABLE = "program_requirement_records"
@@ -132,6 +150,58 @@ def receipt_for(build: str, folder: str = RECEIPTS) -> str:
     if len(hits) != 1:
         raise SystemExit("%d full receipts name build %s in %s" % (len(hits), build, folder))
     return hits[0]
+
+
+def stored_receipt(build: str | None, *, fetch=None, folder: str | None = None, index_path: str | None = None,
+                   allow_unindexed: bool = False, name: str | None = None) -> dict:
+    """The receipt of a build as {repo, local, entry, source}. `repo` is its name under
+    kb/receipts (the applied record sits beside it), `local` the file holding its bytes.
+    With an index entry: the bucket first (`fetch(object)` returns bytes), then the repo
+    copy, and only bytes whose sha256 is the entry's; neither is refused. With none: a
+    refusal, unless `allow_unindexed` (--dry-run), which reads the repo copy as before.
+    `name` asks for one stored receipt by its file name instead (--receipt: a re-apply,
+    the display rollback), whatever build the page carries."""
+    folder = folder or RECEIPTS
+    if name:
+        entry = S.read_entry(name, index_path)
+        if entry is None or entry.get("kind") != S.DISPLAY_KIND:
+            raise SystemExit("REFUSING: kb/receipts/index/ names no stored display receipt %s" % name)
+    else:
+        entry = S.display_entry(build, S.load_index(index_path))
+    if entry is None:
+        if not allow_unindexed:
+            raise SystemExit("REFUSING: kb/receipts/index/ names no stored receipt of build %s; the display "
+                             "job stores it (kb/_receipt_store.py store-display) before it applies" % build)
+        path = receipt_for(build, folder)
+        return {"repo": path, "local": path, "entry": None, "source": "the repo, not stored yet"}
+    repo = os.path.join(folder, entry["name"])
+    tried = []
+    if fetch is not None:
+        try:
+            data = fetch(entry["object"])
+        except Exception as exc:
+            data = None
+            tried.append("the bucket: " + _first(exc))
+        if data is not None:
+            if S.sha256_bytes(data) == entry["sha256"]:
+                fd, local = tempfile.mkstemp(prefix="display_receipt_", suffix="_" + entry["name"],
+                                             dir=os.environ.get("RUNNER_TEMP") or None)
+                with os.fdopen(fd, "wb") as fh:
+                    fh.write(data)
+                return {"repo": repo, "local": local, "entry": entry,
+                        "source": "%s/%s" % (entry["bucket"], entry["object"])}
+            tried.append("the bucket: sha256 %s" % S.sha256_bytes(data))
+    else:
+        tried.append("the bucket: not read (no service key)")
+    if os.path.exists(repo):
+        got = S.sha256_file(repo)
+        if got == entry["sha256"]:
+            return {"repo": repo, "local": repo, "entry": entry, "source": os.path.relpath(repo, ROOT)}
+        tried.append("the repo copy: sha256 %s" % got)
+    else:
+        tried.append("the repo copy: none")
+    raise SystemExit("REFUSING: no copy of %s carries the sha256 its kb/receipts/index/ entry names (%s): %s"
+                     % (entry["name"], entry["sha256"], "; ".join(tried)))
 
 
 def _literal(line: str, start: int) -> tuple[str, int]:
@@ -251,7 +321,8 @@ def _rollback(before: dict, keys: list) -> dict:
         "to_null": [k for k in keys if before[k] is None],
         "reapply": {b: [k for k in keys if before[k] == b] for b in held},
         "how": "set display to null for to_null; for each build in reapply, re-apply that build's "
-               "full receipt (kb/receipts/program_requirement_records_display_*_<build>.sql, or .sql.gz) to those keys.",
+               "full receipt to those keys: the one kb/receipts/index/ names (stored in cpl-receipts, "
+               "from S680), or a committed kb/receipts/program_requirement_records_display_*_<build>.sql(.gz).",
     }
 
 
@@ -267,11 +338,13 @@ def _file(rec: dict, out: str | None) -> None:
 
 def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=None, *,
           out: str | None = None, workers: int = WORKERS, college: str | None = None,
-          sleep=time.sleep, log=print) -> dict:
+          sleep=time.sleep, log=print, stored: dict | None = None) -> dict:
     """Read every row's build in pages, file the plan to `out`, write the
     planned rows in a pool, then confirm them with a second paged read and
     finish the record from it. Returns the applied record;
-    `request(method, path_qs, body)` and `sleep` are injectable for the test."""
+    `request(method, path_qs, body)` and `sleep` are injectable for the test.
+    `stored` (stored_receipt's answer) names the receipt by its kb/receipts name,
+    its object and its sha256, where `receipt` may be a fetched copy."""
     request = request or (lambda m, p, b=None: _request(m, p, os.environ["SUPABASE_SERVICE_KEY"], b))
     with open(receipt, "rb") as fh:
         md5 = hashlib.md5(fh.read()).hexdigest()
@@ -283,6 +356,11 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
         "missing": [], "present_now": [], "errors": [], "unconfirmed": [], "before": {},
         "rollback": _rollback({}, []),
     }
+    if stored and stored.get("entry"):
+        rec["receipt"] = os.path.relpath(stored["repo"], ROOT)
+        rec["receipt_sha256"] = stored["entry"]["sha256"]
+        rec["receipt_object"] = "%s/%s" % (stored["entry"]["bucket"], stored["entry"]["object"])
+        rec["receipt_read_from"] = stored["source"]
     by_key = {}
     for r in rows:
         by_key.setdefault(_key(r["college"], r["control_number"]), r)
@@ -427,7 +505,7 @@ def applied_path(receipt: str, run: str | None, college: str | None = None, atte
     return stem[:-len(".sql")] + ".applied_%s%s%s.json" % (run or "local", tag, slug)
 
 
-def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
+def main(argv: list[str] | None = None, request=None, sleep=time.sleep, fetch=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     mode = ap.add_mutually_exclusive_group(required=True)
     mode.add_argument("--dry-run", action="store_true", help="parse the receipt; write nothing")
@@ -437,12 +515,41 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
                     help="the run's attempt; above 1 it joins the applied record's name")
     ap.add_argument("--workers", type=int, default=WORKERS, help="PATCHes at once (default %d)" % WORKERS)
     ap.add_argument("--college", help="apply only this college's statements, as the receipt names it")
+    ap.add_argument("--receipt", help="re-apply this stored receipt (its file name in kb/receipts/index/) "
+                                      "instead of the page's build: the display rollback")
+    ap.add_argument("--only-keys-from", help="with --receipt: only the keys an applied record's rollback "
+                                             "sends back to that receipt's build (rollback.reapply)")
     args = ap.parse_args(argv)
-    build = page_build()
-    receipt = receipt_for(build)
+    if args.only_keys_from and not args.receipt:
+        print("REFUSING: --only-keys-from names the keys to put back to a stored receipt; name it with --receipt")
+        return 1
+    build = None
+    if args.receipt:
+        named = S.read_entry(args.receipt)
+        if named is None or named.get("kind") != S.DISPLAY_KIND:
+            print("REFUSING: kb/receipts/index/ names no stored display receipt %s" % args.receipt)
+            return 1
+        build = named["build"]
+        print("re-applying the stored receipt %s (build %s), not the page's build" % (args.receipt, build))
+    else:
+        build = page_build()
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if args.apply and request is None and not key:
+        print("SUPABASE_SERVICE_KEY is not set; the display write takes the service role.")
+        return 2
+    if fetch is None and key:
+        fetch = S.Storage(key).get
+    try:
+        stored = stored_receipt(build, fetch=fetch, allow_unindexed=args.dry_run and not args.receipt,
+                                name=args.receipt)
+    except SystemExit as exc:
+        print(exc)
+        return 1
+    receipt = stored["local"]
+    print("receipt of build %s read from %s" % (build, stored["source"]))
     rows = parse(read_receipt(receipt))
     if not rows:
-        print("REFUSING: the receipt of build %s (%s) holds no statement" % (build, os.path.relpath(receipt, ROOT)))
+        print("REFUSING: the receipt of build %s (%s) holds no statement" % (build, os.path.relpath(stored["repo"], ROOT)))
         return 1
     stale =[r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
     if stale:
@@ -453,21 +560,31 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
         print("REFUSING: %d keys appear in more than one statement; parallel writes would land in no set order"
               % (len(keys) - len(set(keys))))
         return 1
+    if args.only_keys_from:
+        with open(args.only_keys_from, encoding="utf-8") as fh:
+            back = ((json.load(fh).get("rollback") or {}).get("reapply") or {}).get(build) or []
+        if not back:
+            print("REFUSING: %s sends no key back to build %s" % (args.only_keys_from, build))
+            return 1
+        want = set(back)
+        rows = [r for r in rows if _key(r["college"], r["control_number"]) in want]
+        print("only the %d keys %s sends back to build %s (%d of them in the receipt)"
+              % (len(want), os.path.relpath(os.path.abspath(args.only_keys_from), ROOT), build, len(rows)))
+        if not rows:
+            print("REFUSING: the receipt holds none of those keys")
+            return 1
     if args.college:
         rows = [r for r in rows if r["college"] == args.college]
         if not rows:
             print("REFUSING: no statement of build %s names the college %r" % (build, args.college))
             return 1
-    print("build %s: %s, %d statements%s" % (build, os.path.relpath(receipt, ROOT), len(rows),
+    print("build %s: %s, %d statements%s" % (build, os.path.relpath(stored["repo"], ROOT), len(rows),
                                              " of %s" % args.college if args.college else ""))
     if args.dry_run:
         return 0
-    if request is None and not os.environ.get("SUPABASE_SERVICE_KEY"):
-        print("SUPABASE_SERVICE_KEY is not set; the display write takes the service role.")
-        return 2
-    out = applied_path(receipt, args.run, args.college, args.attempt)
+    out = applied_path(stored["repo"], args.run, args.college, args.attempt)
     rec = apply(rows, build, receipt, args.run, request, out=out, workers=args.workers,
-                college=args.college, sleep=sleep)
+                college=args.college, sleep=sleep, stored=stored)
     gone, now = still_missing(rec), rec.get("present_now", [])
     if gone:
         print("missing %d (no row holds the key): %s%s" % (len(gone), ", ".join(gone[:SHOW]),
