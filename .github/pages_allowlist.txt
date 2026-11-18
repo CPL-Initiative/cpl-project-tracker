@@ -48,10 +48,13 @@ withhold kb/ccr_curator_precedent.json
 withhold kb/cdc_data_dictionary.json
 withhold kb/cdc_integrations.json
 withhold kb/cid_articulation_joins.json
+withhold kb/coci_inactive_cards.json
 withhold kb/coci_minted_courses.json
 withhold kb/coci_minted_memberships.json
 withhold kb/coci_minted_singletons.json
 withhold kb/coci_unified_courses.json
+# The course flags kb/_flags.py reads at build time (S683); the auditor carries the card flags into kb/row_audit/latest.json.
+withhold kb/coci_retired_cards.json
 withhold kb/common_courses.json
 withhold kb/course_crosswalk.json
 withhold kb/discipline_inference.json
@@ -67,6 +70,11 @@ withhold kb/*_out
 withhold kb/subj4_*
 # Audit provenance: only the slim latest.json summaries are served.
 withhold kb/exhibit_audit/*.md
+# The pair-keyed re-point list (S678, #3472): the reviewed apply reads it; no page does.
+withhold kb/exhibit_repoint_list.json
+# The blocker round's rules 1 and 2 (S683, #3480): their scope and pair rows; the reviewed apply reads them; no page does.
+withhold kb/exhibit_blocker_scope.json
+withhold kb/exhibit_blocker_rules_list.json
 withhold kb/row_audit/*.md
 # Data-write receipts (Rule 10 a2): 2.0 GB of the 2.9 GB site on 2026-11-10 (COBIx on #3077).
 withhold kb/receipts
@@ -281,6 +289,7 @@ publish kb/cid_claim_audit.json
 publish kb/coci_articulations.json
 publish kb/coci_curation.json
 publish kb/coci_duplicate_control_numbers.json
+publish kb/coci_not_applicable.json
 publish kb/coci_title_corrections.json
 publish kb/college_cr_evidence
 publish kb/college_reads

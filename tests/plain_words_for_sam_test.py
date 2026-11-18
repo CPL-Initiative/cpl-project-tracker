@@ -85,6 +85,21 @@ for where, text in list(open_call_texts(ROOT)) + list(commons_texts(ROOT)):
         found.append("%s: %r in %r" % (where, t, s))
 check("no open call and no Commons string uses an insider term undefined", not found, found[:12])
 
+# The page words to avoid (#3510 A5): kb/ui_plain_words.json's avoid_words, which tests/cdc_plain_words.test.js runs
+# over the College Data Collection pages as drawn. Each is a pattern with its reason, and each catches its own example.
+AV = json.load(open(os.path.join(ROOT, "kb", "ui_plain_words.json"), encoding="utf-8")).get("avoid_words") or []
+bad_av = [a for a in AV if not (a.get("pattern") and a.get("why"))]
+try:
+    pats = [re.compile(a["pattern"]) for a in AV]
+except re.error as e:
+    pats, bad_av = [], bad_av + [str(e)]
+check("avoid_words: each entry is a pattern with its reason, and compiles", AV and not bad_av, bad_av)
+samples = ["from the live read, Nov 17", "Claude billing", "key overall, basis live", "profiles (#3198)", "at 21:57Z",
+           "counted from 2026-11-17", "in kb/status/x.json", "the headline series"]
+check("avoid_words: each of COBIx's examples (#3480 Source 4) is caught", all(any(p.search(x) for p in pats) for x in samples),
+      [x for x in samples if not any(p.search(x) for p in pats)])
+check("avoid_words: plain words pass", not any(p.search("Since Nov 17, 2026, the database count reads 94 of 134 Active programs.") for p in pats))
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else "\n    " + "\n    ".join(map(str, why)) if isinstance(why, list) else "  " + str(why)))

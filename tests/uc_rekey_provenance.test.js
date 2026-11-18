@@ -25,6 +25,7 @@ const mkRow = (id, title) => ({
 const rows = [
   mkRow("BUSI M9039", "QuickBooks Fundamentals for Financial Office Applications"),
   mkRow("MATH M1002", "College Algebra"),
+  mkRow("ARTS M1004", "Painting II"),
 ];
 
 const html = `<!DOCTYPE html><html><head></head><body>
@@ -45,6 +46,8 @@ window.fetch = (u) => Promise.resolve({ ok: true, status: 200,
     ? { _generated_at: "2026-06-13", rows: [
         { id: "BUSI M9039", tags: ["blank_description"], fts: 0.78, rk: "CISC M9030" },
         { id: "MATH M1002", tags: ["seed_untouched_discipline"], fts: 0.60 },
+        // A course flag (nc, kb/_flags.py) keeps the card on record and out of every triage filter (S683).
+        { id: "ARTS M1004", tags: ["blank_description"], fts: 0.60, nc: 1, fl: ["inactive"] },
       ] }
     : []) });
 window.alert = () => {};
@@ -71,6 +74,9 @@ check("init does not throw", !threw);
     reKeyed && /not a fresh mint/.test(reKeyed.getAttribute("title") || ""));
   check("a flagged row WITHOUT rk shows NO re-keyed line",
     plain && !/re-keyed from/.test(plain.getAttribute("title") || ""));
+
+  check("a card a course flag takes out (nc) shows NO audit chip, though it carries a tag",
+    !!rowFor("ARTS M1004") && !auditChip(rowFor("ARTS M1004")));
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

@@ -281,6 +281,8 @@ jobs:
       # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
       - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
         run: python3 tests/ccr_confidence_rules_test.py
+      - name: Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)
+        run: python3 tests/ccr_rules_g_m_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py
@@ -706,6 +708,14 @@ jobs:
       # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
       - name: Credential fold issuer precedence and undo
         run: python3 tests/cred_rename_fold_issuer_test.py
+      # The pair re-point (COBIx's item 6, #3464, S678): one (MAP exhibit id + local title) moves and nothing beside it,
+      # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
+      - name: Exhibit pair re-point list and apply
+        run: python3 tests/exhibit_repoint_test.py
+      # The blocker round's rules 1 and 2 (COBIx, #3480, S683): the cert-based twin of a course title and the referenced
+      # leftover kept in place, as pair rows; the counts, the 3-college tests, the guard, and the undo.
+      - name: Exhibit blocker rules 1 and 2
+        run: python3 tests/exhibit_blocker_rules_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
@@ -1525,6 +1535,9 @@ jobs:
           python3 tests/top_gate_test.py
           python3 tests/row_audit_subject_outlier_test.py
           python3 tests/row_audit_top_source_score_test.py
+          python3 tests/row_audit_zero_members_test.py
+          python3 tests/coci_flags_test.py
+          python3 kb/_not_applicable_rule.py
           test_group_end
       - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene
         run: |

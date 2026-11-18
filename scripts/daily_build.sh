@@ -292,6 +292,17 @@ step "Build ESS 25-82 statewide-recommendation rollup" <<'STEP'
 python3 funding/_build_funding_ess.py || echo "funding-ess build failed (non-fatal; prior artifact kept)"
 STEP
 
+# ── Step 4a9: The course flags (Sam, 2026-11-17: "flag the record, never delete it; take flagged
+# records out of counts, waiting piles, to-dos and fetch plans") ──
+# Retired, inactive and not-applicable cards and courses, read by kb/_flags.py, which the auditor
+# below and every counter import. After the pipeline (they read unified_courses_members.js and
+# credential_reference_data.js) and before the auditor. Non-fatal: the prior files stand.
+step "Build the course flags" <<'STEP'
+python3 kb/_build_retired_cards.py || echo "::warning title=Course flags::kb/_build_retired_cards.py failed; the prior file stands."
+python3 kb/_build_inactive_cards.py || echo "::warning title=Course flags::kb/_build_inactive_cards.py failed; the prior file stands."
+python3 kb/_build_not_applicable.py || echo "::warning title=Course flags::kb/_build_not_applicable.py failed; the prior file stands."
+STEP
+
 # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
 # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
 # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.

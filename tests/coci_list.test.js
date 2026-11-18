@@ -151,7 +151,8 @@ function input(w, node, v) { node.value = v; node.dispatchEvent(new w.Event("inp
   check("the filter words carry their counts", fgroups.join("|") === "To do|Browse" &&
     // S574: the Commons' jobs, uncounted until their file is read (commons_jobs_filtered guards them).
     fwords.join(" | ") === "Discipline in doubt | On a stray identity code | No catalog description | A unit anomaly | Discipline no seed has touched"
-    + " | All (9) | Has an M-ID (6) | No M-ID (3) | Has a C-ID (2) | Has a CCN (1) | Has any identity (6) | No identity (3) | Credit (7) | Noncredit (1) | Noncredit enhanced (1)", fwords.join(" | "));
+    + " | All (9) | Has an M-ID (6) | No M-ID (3) | Has a C-ID (2) | Has a CCN (1) | Has any identity (6) | No identity (3) | Credit (7) | Noncredit (1) | Noncredit enhanced (1)"
+    + " | Kept, not counted (0)", fwords.join(" | "));
   word(d, /^No identity \(3\)$/).click();
   check("No identity narrows to the three courses with none", titles(d).join("|") === "Conversation|English Fundamentals|Rigging");
   check("the current filter is marked, not a button", txt(d.querySelector("." + P + "filters [aria-current]")) === "No identity (3)");

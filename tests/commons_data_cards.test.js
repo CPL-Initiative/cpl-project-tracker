@@ -119,7 +119,7 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
   check("maps, none found ⭐: Columbia reads None found when looked for, apart from not looked for yet",
     txt(mp.querySelector(".cdd-state")) === "None found when looked for" && /^None found when looked for/.test(val(mp, "Program source registry"))
     && val(mp, "Publishes maps") === "None found when looked for" && val(mp, "Where") === "None found" && val(mp, "Maps we hold") === "None", txt(mp));
-  check("maps: against Active programs, Columbia's 82 from the live read", /None held, so none to line up with its 82 Active programs \(live read/.test(val(mp, "Against Active programs")));
+  check("maps: against Active programs, Columbia's 82 from the database count", /None held, so none to line up with its 82 Active programs \(database count/.test(val(mp, "Against Active programs")));
   check("maps: the Pathway source line left the Catalog source card for this one", !/Pathway source/.test(txt(x.d.querySelector('#cdd-panel [data-ds="cat"]'))));
 
   // Data sources
@@ -130,8 +130,8 @@ async function panel(slug) { const x = load("#commons/data/college/" + slug, DAT
     val(ds, "Curriculum system (course outlines)") === "eLumen. Read directly: the course pages of its public catalog.", val(ds, "Curriculum system (course outlines)"));
   check("sources, held: the catalog platform is eLumen, read directly by the capture", /^eLumen\. Read directly: its public catalog pages, by the program requirements capture\.$/.test(val(ds, "Catalog platform")));
   check("sources, none found: the program maps read None found when looked for", /^None found when looked for\. Nothing to read\.$/.test(val(ds, "Program maps")), val(ds, "Program maps"));
-  check("sources: COCI is read through an export, with the Active programs the live read holds from it",
-    /^COCI\. Read through an export: the committed COCI course and program extracts, loaded by the COCI offerings sync workflow; the 82 Active programs here come from it \(live read, .*\)\.$/.test(val(ds, "COCI (the Chancellor's Office Curriculum Inventory)")));
+  check("sources: COCI is read through an export, with the Active programs the database count holds from it",
+    /^COCI\. Read through an export: the committed COCI course and program extracts, loaded by the COCI offerings sync workflow; the 82 Active programs here come from it \(database count, .*\)\.$/.test(val(ds, "COCI (the Chancellor's Office Curriculum Inventory)")));
   const ig = ds.querySelector('[data-lane="integration"]');
   check("integration ⭐: SIS and curriculum system integration reads None known", txt(ig.querySelector(".cdd-state")) === "None known" && /None is recorded for this college/.test(txt(ig)));
   check("no person's name or email on any card", !/\bSam\b|Pedro|Malone|Craig|Jory|@/.test(["how", "maps", "sources"].map((k) => txt(card(x, k))).join(" ")));

@@ -79,19 +79,19 @@
     cms: "The goal is a college curriculum-system connection that makes outlines, SLOs, and objectives more accurate, complete, efficient, and current. Not connected yet.",
     cccstart: "The goal is to get major data and aggregate student population and demographic data from CCCStart (totals only, not individual students). It can also help colleges know which military students gave permission for a Joint Services Transcript request. Not connected yet.",
     sis: "The goal is a college student-system connection that eliminates double work by letting records update both ways. Not connected yet.",
-    unblockcatalogs: "Some college catalogs still cannot be read automatically: a site or firewall block at 2 colleges, a robots.txt rule at 2, a user-agent block on the 4 Los Rios PDF catalogs, and 3 colleges whose program rules are waiting on a person. Together that is 11 colleges and 705 of the 5,751 Active programs that still lacked a passing record on November 13. Unblocking would mean a path the named reader can use, or a person to set the held colleges' rules, so that stalled share can be read at the same pace as the rest.",
+    unblockcatalogs: "Some college catalogs still cannot be read automatically: a site or firewall block at 2 colleges, a robots.txt rule at 2, a user-agent block on the 4 Los Rios PDF catalogs, and 3 colleges whose program rules are waiting on a person. Together that is 11 colleges and 705 of the 5,751 Active programs that still lacked a passing record on November 13. Unblocking would mean a path the named reader can use, or a person to set the waiting colleges' rules, so that stalled share can be read at the same pace as the rest.",
     unblockoutlines: "Course outlines sit behind a sign-in, a refused page, or an unanswered curriculum-system host at 10 colleges, covering 6,266 of the 88,736 courses in active programs, and none of those courses has an SLO or objective in our file yet. Unblocking would mean a public outline view, or a college-granted login, so that stalled share can be read at the same pace as the rest. Fifty-nine other colleges have no public outline link in the registry; most have not been read yet, but that is not the same as a measured login or block.",
     tworeads: "Right now COBI reads each college's course outlines once a day. Reading twice a day would collect SLOs and objectives about twice as fast. It costs very little because it doesn't use AI time.",
     assumptions: "Opens a short table of the pace and start-date assumptions used when you turn a connection on. These are projections, not partner commitments.",
     college: "Choose a college to see its own counts and an estimated finish date. All colleges (statewide) is the default.",
     nearly: "Shows only the colleges that are almost done with their program lists, so you can find them quickly. These are colleges that are 90% or more complete, or have only a few programs left."
   };
-  var COST_TIP = "Daily spend: API usage from the Claude Console plus Claude Code top-ups from Claude billing. Top-ups show the day credit was bought, which can lag use by a day.";
-  var ASSUMPTIONS_INTRO = "We treat the remaining catalog work as three steps, based on the November 13 gap census: about 30% finding the list (1,699 programs had no closed course list that day, about 30% of the remaining gap), about 30% reading requirements, and about 40% confirming (units and coverage checks). When you turn a connection on, it is assumed to take over a share of those steps after its start date, which speeds the pace by the factor shown. Several connections multiply together, up to 8×. A connection only changes the date if it starts before the work would already be done. These are projections, not partner commitments.";
+  var COST_TIP = "Daily spend: what the team paid for AI time each day, from the Claude Console account plus the Claude Code credit bought that day. Credit shows on the day it was bought, which can be a day before it is used.";
+  var ASSUMPTIONS_INTRO = "We treat the remaining catalog work as three steps, based on the November 13 gap census: about 30% finding the list (1,699 programs had no list of their required courses that day, about 30% of the remaining gap), about 30% reading requirements, and about 40% confirming (units and coverage checks). When you turn a connection on, it is assumed to take over a share of those steps after its start date, which speeds the pace by the factor shown. Several connections multiply together, up to 8×. A connection only changes the date if it starts before the work would already be done. These are projections, not partner commitments.";
 
   var SERIES = [
-    { id: "programs", title: "Catalog programs, course requirements, and PLOs", daily: true },
-    { id: "slo", title: "Course SLOs", daily: false },
+    { id: "programs", title: "Catalog programs, course requirements, and program learning outcomes (PLOs)", daily: true },
+    { id: "slo", title: "Course student learning outcomes (SLOs)", daily: false },
     { id: "objectives", title: "Course objectives", daily: false },
     { id: "skills", title: "Issuer-published credential skills", daily: true }];
 
@@ -102,12 +102,12 @@
   var LEVERS = [
     { id: "unblockcatalogs", name: "Unblock catalogs", short: "Unblock catalogs", phase: "1", start: "now", factor: F(1.14, 1), moves: true, status: "Assumption, start now", effects: ["speed"],
       why: "The 705 programs behind those access holds (12% of the November 13 remaining gap) are treated as stalled. Unblocking lets them move at the same pace as the rest, about 1.14 times faster overall.",
-      source: "program_source_registry catalog access, live read November 15, 2026 (census checked November 8); harvest gap census written 10:04 AM PT November 13, 2026 (5,751 Active programs without a passing record); the Southwestern College scout of November 12, 2026 (firewall); the harvest lane's NEXT for Los Medanos, Monterey Peninsula, and Los Angeles Valley (rules first, with a person).",
+      source: "program_source_registry catalog access, database count November 15, 2026 (census checked November 8); harvest gap census written 10:04 AM PT November 13, 2026 (5,751 Active programs without a passing record); the Southwestern College scout of November 12, 2026 (firewall); the harvest lane's NEXT for Los Medanos, Monterey Peninsula, and Los Angeles Valley (rules first, with a person).",
       replaces: "Reading around site blocks, robots.txt rules, user-agent refusals, and colleges waiting on a person.",
       note: "This is an access assumption, not a partner feed. It moves the program-requirements date if the stalled share starts moving at the unblocked pace." },
     { id: "unblockoutlines", name: "Unblock course outlines", short: "Unblock course outlines", phase: "1", start: "now", factor: F(1, 1.09, 1.08), moves: true, status: "Assumption, start now", effects: ["speed"],
       why: "The 6,266 courses behind a sign-in or a refused or unanswered outline system are treated as stalled. Unblocking lets them move at the same pace as the rest, about 1.09 times faster for SLOs and 1.08 times faster for objectives.",
-      source: "program_source_registry course-outline fields, live read November 15, 2026; the live course counts of November 13, 2026 (88,736 courses on Active programs). The outline system asks for a sign-in, refused, or did not answer at 10 colleges, 6,266 courses, none yet with an SLO or objective in the live file.",
+      source: "program_source_registry course-outline fields, database count November 15, 2026; the live course counts of November 13, 2026 (88,736 courses on Active programs). The outline system asks for a sign-in, refused, or did not answer at 10 colleges, 6,266 courses, none yet with an SLO or objective in the live file.",
       replaces: "Collecting SLOs and objectives only where a public outline or catalog page already opens.",
       note: "This moves the SLO and objectives dates. Phase 1 moves only if one of those collections is the last to finish." },
     { id: "comis", name: "COMIS Data Mart (public)", short: "COMIS", phase: "2", start: "2027-03-01", factor: F(1.1, 1), moves: true, status: "In progress", effects: ["speed", "cost", "integrity"],
@@ -122,7 +122,7 @@
       note: "The v2 agreed plan already moved the COCI reload to Next. A scheduled export is the proposed step, not a dated commitment." },
     { id: "cvc", name: "CVC", short: "CVC", phase: "2", start: "2027-07-01", factor: F(1, 1), moves: false, status: "Not dated, parked", effects: ["currency"],
       why: "This mainly adds a new capability: linking to CVC courses from program pages. It is not assumed to speed the current collections.",
-      source: "API checklist: planned, parked (#3217) until access is in place.", replaces: "A feed of exchange offerings and equivalencies. None is in the repo.",
+      source: "API checklist: planned, parked until access is in place.", replaces: "A feed of exchange offerings and equivalencies. None is in the repo.",
       note: "No remaining-work series is measured, so this lever does not move a collection date." },
     { id: "ppm", name: "Program Pathways Mapper", short: "PPM", phase: "2", start: "2027-07-01", factor: F(1.2, 1), moves: false, status: "Not dated", effects: ["speed", "scalability"],
       why: "Program maps would help us find and check program requirements a little faster.",
@@ -154,7 +154,7 @@
       note: "Student-level data would flow to MAP, not COBI. This would mainly speed JST requests and CPL reach, not catalog collection, so it does not move the Active program-requirements date." },
     { id: "sis", name: "College SIS APIs", short: "College SIS", phase: "3", start: "2028-07-01", factor: F(1.1, 1), moves: false, status: "Not dated, not started", effects: ["governance", "scalability"],
       why: "A live student-system connection would help confirm records and cut double work.",
-      source: "Registry: not started. District profiles (#3198) name each college's SIS first.",
+      source: "Registry: not started. The district profiles name each college's student information system (SIS) first.",
       replaces: "Not recorded per college today. Banner, Colleague, and PeopleSoft districts would connect through the Common Cloud lakes or their own APIs.",
       note: "No per-college remaining work is recorded, so this lever does not move a collection date." }];
   var START_OPTIONS = ["now", "2026-12-01", "2027-01-01", "2027-03-01", "2027-07-01", "2028-01-01", "2028-07-01", "2029-01-01"];
@@ -186,8 +186,8 @@
   }
   function creWindow(M, asOf) {
     var cfg = ST.cre, bd = M && M.live && M.live.by_day;
-    if (!cfg || !cfg.weights) return { tba: "the CRE weights file could not be read" };
-    if (!bd) return { tba: "the daily load counts arrive with the next live read" };
+    if (!cfg || !cfg.weights) return { tba: "the file of CRE weights could not be read" };
+    if (!bd) return { tba: "the daily load counts arrive with the next database count" };
     var w = cfg.weights, n = cfg.window_days || 7, cre = 0, usd = 0, days = 0, measured = 0, last = asOf;
     for (var k = 0; k < n; k++) {
       var d = dstr(last - k), rows = (bd.outline_rows || {})[d] || 0, recs = (bd.program_records || {})[d] || 0, $ = dayDollars(d);
@@ -196,13 +196,22 @@
     }
     return { from: last - n + 1, to: last, cre: cre, usd: usd, per: cre > 0 && days ? usd / cre : null, days: days, measured: measured, n: n, base: cfg.baseline };
   }
+  /* The CRE spelled out where it first shows (COBIx on #3510, A1): the unit in words, both weights. */
+  var CRE_DEF = "A CRE (collected record equivalent) is the unit we price collection in: one course outline row counts 1, and one program's requirements count 15, a record with gaps noted counting in full.";
+  /* A stamp in Pacific time, in words ("Nov 18, 2026, 3:45 AM Pacific time"), never "21:57Z" (COBIx on #3510, A5). */
+  function pacific(v) {
+    var d = new Date(v);
+    if (isNaN(d.getTime())) return "on a date the file does not give";
+    try { return d.toLocaleString("en-US", { timeZone: "America/Los_Angeles", month: "short", day: "numeric", year: "numeric", hour: "numeric", minute: "2-digit" }) + " Pacific time"; }
+    catch (e) { return d.toDateString(); }
+  }
   function creWords(X) {
-    if (X.tba) return "Cost per CRE: TBA (" + X.tba + ").";
+    if (X.tba) return CRE_DEF + " Cost per CRE: TBA (" + X.tba + ").";
     var span = shortDate(X.from) + " to " + shortDate(X.to);
-    var b = X.base, base = b ? " Baseline, " + b.label + ": about " + fmt(b.cre) + " CRE at about $" + b.usd_per_cre[0].toFixed(2) + " to $" + b.usd_per_cre[1].toFixed(2) + " per CRE." : "";
-    if (X.per == null) return "Cost per CRE, " + span + ": TBA (" + (X.cre ? "no dollars recorded for these days" : "no CRE collected") + ")." + base;
-    return "Cost per CRE, " + span + ": $" + X.per.toFixed(2) + " ($" + Math.round(X.usd).toLocaleString("en-US") + " over " + fmt(X.cre) + " CRE; dollars on " + X.days + " of " + X.n + " days"
-      + (X.measured ? ", " + X.measured + " of them from the runs' and sessions' own figures, the rest from billing" : ", from billing") + ")." + base;
+    var b = X.base, base = b ? " Baseline, " + (b.from && b.to ? shortDate(dnum(b.from)) + " to " + shortDate(dnum(b.to)) + ", 2026" : "an earlier week") + ": about " + fmt(b.cre) + " CRE at about $" + b.usd_per_cre[0].toFixed(2) + " to $" + b.usd_per_cre[1].toFixed(2) + " per CRE." : "";
+    if (X.per == null) return CRE_DEF + " Cost per CRE, " + span + ": TBA (" + (X.cre ? "no dollars recorded for these days" : "no CRE collected") + ")." + base;
+    return CRE_DEF + " Cost per CRE, " + span + ": $" + X.per.toFixed(2) + " ($" + Math.round(X.usd).toLocaleString("en-US") + " over " + fmt(X.cre) + " CRE; dollars on " + X.days + " of " + X.n + " days"
+      + (X.measured ? ", " + X.measured + " of them from the reading jobs' and sessions' own figures, the rest from the account totals pasted by hand" : ", from the account totals pasted by hand") + ")." + base;
   }
 
   /* ── dates: whole UTC days, as yyyy-mm-dd ── */
@@ -285,19 +294,19 @@
   /* A window's pace in words: its count and its days, or why it cannot date (a fall reads apart from a gap). */
   function paceWords(B, m) {
     var n = B.pace[m], d = B.span[m];
-    if (n == null) return "a pace the headline series cannot date";
+    if (n == null) return "a pace the daily count cannot date";
     if (n <= 0) return "no net progress (" + fmt(n) + " in " + d + " days)";
     return fmt(n) + " in " + d + " days";
   }
   /* The days a window averages, in plain words: "the pace of Nov 10 to 17" (or "Oct 28 to Nov 3" across a month). */
   function paceDays(B, m) {
     var w = B.window && B.window[m];
-    if (!w) return "a pace the headline series cannot date";
+    if (!w) return "a pace the daily count cannot date";
     var a = shortDate(w[0]), b = shortDate(w[1]), same = a.split(" ")[0] === b.split(" ")[0];
     return "the pace of " + a + " to " + (same ? b.split(" ")[1] : b);
   }
   /* The SLO and objective rate, said as what it is: a fixed estimate, never a measured pace. */
-  function rateWords(m) { return "a fixed estimate of about " + fmt(EST_DAILY[m]) + " courses a night for course SLOs and objectives, not a measured rate"; }
+  function rateWords(m) { return "a fixed estimate of about " + fmt(EST_DAILY[m]) + " courses a night for course student learning outcomes (SLOs) and objectives, not a measured rate"; }
   function nearComplete(c) { if (c.a <= 0) return c.r <= 0; var f = c.p / c.a; return f >= NEAR_COMPLETE || (c.r <= 8 && f >= 0.85); }
 
   /* The pace model, ported from the mock: each connection on applies its factor from its start day; factors multiply,
@@ -397,10 +406,10 @@
     lines.push("This is a projection, not a promise.");
     return lines.join(" ");
   }
-  var COLLEGE_AS_OF = "These counts are from the live read and may be a little behind the statewide total.";
+  var COLLEGE_AS_OF = "These counts are from the database count and may be a little behind the statewide total.";
   function collegeDateTip(c, mode) {
     var pace = mode === "soonest" ? "a recent faster week" : "a recent slower week";
-    if (c.r <= 0) return "All active programs at " + c.name + " are done in the live read's counts. " + COLLEGE_AS_OF;
+    if (c.r <= 0) return "All active programs at " + c.name + " are done in the database count's counts. " + COLLEGE_AS_OF;
     if (nearComplete(c)) return "At " + c.name + ", " + fmt(c.p) + " of " + fmt(c.a) + " active programs are done (" + pctWord(c.p, c.a) + "). " + fmt(c.r) + " remain. We don't have a daily pace just for this college, so a calendar date would be an estimate from its share of statewide progress in " + pace + ". " + COLLEGE_AS_OF;
     return "At " + c.name + ", " + fmt(c.r) + " of " + fmt(c.a) + " active programs remain. We don't have a daily pace just for this college, so this date is an estimate from its share of statewide progress in " + pace + ". " + COLLEGE_AS_OF;
   }
@@ -561,7 +570,7 @@
     var nb = pill("Nearly complete (" + nearN + ")", S.near, function () { S.near = !S.near; nb.setAttribute("aria-pressed", S.near ? "true" : "false"); fill(); }, { "data-eta": "near" });
     fill();
     wrap.appendChild(el("div", { cls: "eta-pop eta-pickpop" }, [q, withTip(nb, CHIP_TIPS.nearly), list,
-      el("p", { cls: "eta-note", text: "College program counts are from the live read of " + liveDay(B) + " and may lag the statewide headline." })]));
+      el("p", { cls: "eta-note", text: "College program counts are from the database count of " + liveDay(B) + " and may lag the statewide count." })]));
     return wrap;
   }
   function liveDay(B) { return B.liveAt ? longDate(dnum(B.liveAt.slice(0, 10))) : "a date the file does not give"; }
@@ -615,7 +624,7 @@
     return el("div", { cls: "eta-pop eta-assume", "data-eta-assumptions": "" }, [el("p", { cls: "eta-note", text: ASSUMPTIONS_INTRO }),
       el("div", { cls: "eta-scroll", role: "region", "aria-label": "Assumptions", tabindex: "0" }, [el("table", { cls: "eta-table" }, [
         el("colgroup", null, [el("col", { style: "width:16%" }), el("col", { style: "width:14%" }), el("col", { style: "width:12%" }), el("col", { style: "width:14%" }), el("col", { style: "width:44%" })]),
-        el("thead", null, [el("tr", null, ["Connection", "Start", "Catalog programs", "SLOs and objectives", "What we assume"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), tb])])]);
+        el("thead", null, [el("tr", null, ["Connection", "Start", "Catalog programs", "Student learning outcomes (SLOs) and objectives", "What we assume"].map(function (h) { return el("th", { scope: "col", text: h }); }))]), tb])])]);
   }
 
   function spend(d) { return (apiCost(d) || 0) + (topups(d) || []).reduce(function (a, b) { return a + b; }, 0); }
@@ -626,8 +635,8 @@
       "Sessions' own figures (handoffs' Spend: lines): " + (sd.sessions ? usd(sd.usd) + " from " + fmt(sd.sessions) + (sd.sessions === 1 ? " session" : " sessions") : "none given") +
       (sd.not_available ? ", " + fmt(sd.not_available) + " not available" : "") + "." : null;
     var rd = runnerDay(d);
-    if (rd != null) sess = (sess ? sess + " " : "") + "Extraction runs' own cost (read receipts): " + usd(rd) + ".";
-    if (!hasSpend(d)) return [ST.billing ? "No spend recorded for this day." : "The billing file (" + FILES.billing + ") could not be read."].concat(sess ? [sess] : []);
+    if (rd != null) sess = (sess ? sess + " " : "") + "The reading jobs' own cost, from the record each job files: " + usd(rd) + ".";
+    if (!hasSpend(d)) return [ST.billing ? "No spend recorded for this day." : "The file of daily account totals could not be read."].concat(sess ? [sess] : []);
     var t = topups(d) || [], code = t.reduce(function (a, b) { return a + b; }, 0), out = ["Total this day: " + usd((apiCost(d) || 0) + code) + "."];
     out.push("API (Console): " + (apiCost(d) != null ? usd(apiCost(d)) : "no figure") + ".");
     out.push(t.length ? "Claude Code top-ups (" + t.length + " × ~$200): " + usd(code) + "." : "Claude Code top-ups: none this day.");
@@ -702,7 +711,7 @@
       }
       legend.appendChild(withTip(el("span", { cls: "eta-key", "data-series": x.id }, [el("span", { cls: "eta-swatch eta-sw-" + x.id + (x.daily ? "" : " eta-hatch"), "aria-hidden": "true" }), t]), tips[x.id], !x.daily));
     });
-    if (S.costs) legend.appendChild(el("span", { cls: "eta-key", "data-series": "spend" }, [el("span", { cls: "eta-swatch eta-sw-spend", "aria-hidden": "true" }), "Daily spend (line; $1,500 scale cap; Oct 26–27*)"]));
+    if (S.costs) legend.appendChild(el("span", { cls: "eta-key", "data-series": "spend" }, [el("span", { cls: "eta-swatch eta-sw-spend", "aria-hidden": "true" }), "Daily spend (line; the scale stops at $1,500; a day marked * has a note, such as October 26 and 27, when a runaway process ran)"]));
     wrap.appendChild(legend);
     var hover = el("div", { cls: "eta-hover", "aria-live": "polite" });
     wrap.appendChild(hover);
@@ -718,7 +727,7 @@
       tb.appendChild(el("tr", null, [el("th", { scope: "row", text: longDate(b.day) }), el("td", { text: b.programs == null ? "no count" : fmt(b.programs) }), el("td", { text: fmt(b.skills) }),
         S.costs ? el("td", { text: spendLabel(dstr(b.day)) || "none recorded" }) : null]));
     });
-    var heads = ["Day", "Catalog programs newly finished", "Credential skills collected"].concat(S.costs ? ["Daily spend"] : []);
+    var heads = ["Day", "Catalog programs newly finished", "Credential skills collected"].concat(S.costs ? ["Daily spend (a figure marked * has a note on that day)"] : []);
     wrap.appendChild(el("details", { cls: "eta-daytable" }, [el("summary", { text: "The daily counts as a table" }),
       el("div", { cls: "eta-scroll", role: "region", "aria-label": "Daily counts", tabindex: "0" }, [el("table", { cls: "eta-table" }, [
         el("thead", null, [el("tr", null, heads.map(function (h) { return el("th", { scope: "col", text: h }); }))]), tb])])]));
@@ -738,7 +747,7 @@
     sec.appendChild(sw);
     var pr = function (m) { return paceWords(B, m); };
     sec.appendChild(el("p", { cls: "eta-callout" }, [el("strong", { text: "Projections, not partner commitments. " }), S.phase === "1"
-      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the committed headline series (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
+      ? "The Phase 1 date is the latest of programs and requirements, course SLOs, and course objectives. Programs are dated from the daily count of Active programs complete (" + fmt(B.complete) + " of " + fmt(B.active) + " complete): Soonest uses " + paceDays(B, "soonest") + " (" + pr("soonest") + "), Latest " + paceDays(B, "latest") + " (" + pr("latest") + "). Course SLOs and objectives have no day-by-day count, so their rates are fixed estimates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night), not measured, and their dates are estimates. Colleges and partners should not read a lever as a promise."
       : "Phase 2 and Phase 3 are dated only when a partner or college feed has a start date in the registry. None of those feeds is dated today, so this phase's completion is not dated."]));
     var grid = el("div", { cls: "eta-grid" });
     function cell(h, v, d, key) { grid.appendChild(el("div", { cls: "eta-cell", "data-cell": key }, [el("h4", { text: h }), el("p", { cls: "eta-v", text: v }), d ? el("p", { cls: "eta-note", text: d }) : null])); }
@@ -748,9 +757,9 @@
       var lbl = function (X) { return X.day == null ? "pace not measured yet" : longDate(X.day) + (X.est ? " est." : ""); };
       cell(soon.moved ? "Soonest date (projected)" : "Soonest date", lbl(soon), "Soonest: " + paceDays(B, "soonest") + " for programs, and " + rateWords("soonest") + ".", "soonest");
       cell(late.moved ? "Latest date (projected)" : "Latest date", lbl(late), "Latest: " + paceDays(B, "latest") + " for programs, and " + rateWords("latest") + ".", "latest");
-      cell("Cost per CRE", (function () { var X = creWindow(M, B.asOf); return X.per == null ? "TBA" : "$" + X.per.toFixed(2); })(), creWords(creWindow(M, B.asOf))
-        + " 1 CRE is one course outline row (an SLO or an objective); one program record is 15 CRE, and a record with gaps noted counts in full. The weights are fixed for Phase 1.", "cre");
-      cell("As of", longDate(B.asOf) + " headline", "The headline in kb/status/program-requirements.json, written " + (B.written ? B.written.replace("T", " ").slice(0, 16) + " UTC" : "on a date the file does not give") + ".", "asof");
+      cell("Cost per collected record equivalent (CRE)", (function () { var X = creWindow(M, B.asOf); return X.per == null ? "TBA" : "$" + X.per.toFixed(2); })(), creWords(creWindow(M, B.asOf))
+        + " The weights are fixed for Phase 1.", "cre");
+      cell("As of", longDate(B.asOf), "The daily count of Active programs complete, written " + (B.written ? pacific(B.written) : "on a date the file does not give") + ".", "asof");
     } else { cell("Soonest date", "Not dated"); cell("Latest date", "Not dated"); cell("As of", "Integrations registry" + (ST.integ && ST.integ.updated ? ", " + longDate(dnum(ST.integ.updated)) : "")); }
     sec.appendChild(grid);
     if (S.phase === "1") sec.appendChild(el("p", { cls: "eta-p eta-eq", text: "Finish day = as-of day + remaining units ÷ (7-day complete ÷ 7), rounded up to a whole day." }));
@@ -760,12 +769,12 @@
     sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-plan-h" }, [el("h4", { id: "eta-plan-h", text: "The College Collections Plan" }),
       el("p", { cls: "eta-p", text: "The plan behind this clock, on one page: what the Commons answers, its four parts, the top line, the three phases, the first slice and the scorecard." }),
       el("ul", { cls: "eta-links" }, [el("li", null, [el("a", { href: PLAN_PAGE, target: "_blank", rel: "noopener", "data-eta-plan": "", text: "Open the College Collections Plan in a new tab" })]),
-        el("li", null, [el("a", { href: PLAN_URL, target: "_blank", rel: "noopener", text: "Its source, the v2 agreed final on #3111 (November 11, 2026)" })]),
-        el("li", null, [el("a", { href: BRIEF_URL, target: "_blank", rel: "noopener", text: "The ETA clock brief (#3360, November 15, 2026)" })])])]));
+        el("li", null, [el("a", { href: PLAN_URL, target: "_blank", rel: "noopener", text: "Its source, the plan the team agreed on November 11, 2026" })]),
+        el("li", null, [el("a", { href: BRIEF_URL, target: "_blank", rel: "noopener", text: "The ETA clock brief (November 15, 2026)" })])])]));
     sec.appendChild(el("section", { cls: "eta-sub", "aria-labelledby": "eta-real-h" }, [el("h4", { id: "eta-real-h", text: "What is real, and what is not dated" }),
-      el("p", { cls: "eta-p", text: "Real, from committed files: the Active programs complete and their daily series, the live read's SLO, objective and course counts, each college's counts, the references' counts, the integrations by status, and the credential skills by harvest day. The Soonest and Latest program dates are computed from that headline series." }),
+      el("p", { cls: "eta-p", text: "Real, from committed files: the Active programs complete and their daily series, the database count's SLO, objective and course counts, each college's counts, the references' counts, the integrations by status, and the credential skills by harvest day. The Soonest and Latest program dates are computed from that daily series." }),
       el("p", { cls: "eta-p", text: "Estimates and assumptions, labeled where they appear: the SLO and objectives rates (about " + fmt(EST_DAILY.soonest) + " or " + fmt(EST_DAILY.latest) + " courses a night, from reading one host's outlines a night), the stalled shares behind the two Unblock chips (the November 13 gap census), and every connection's factor and start date. Any date that moves when a connection is on is a projection, not a partner commitment." }),
-      el("p", { cls: "eta-p", text: "Data gaps: course SLOs and objectives have no day-by-day counts, and some public pages print neither, so those dates may never reach every course. No committed file has day-by-day counts by college, so the bars stay statewide when a college is selected, and a college's date uses its share of statewide progress. Credential skills have no remaining count, so they do not set the date. The billing figures are pasted by hand (October 17 to November 15, 2026 so far); the extraction runs' own cost and the sessions' own figures are measured every day from the committed files, from November 17, 2026 on, and shown beside billing, never added to it." })]));
+      el("p", { cls: "eta-p", text: "Data gaps: course SLOs and objectives have no day-by-day counts, and some public pages print neither, so those dates may never reach every course. No committed file has day-by-day counts by college, so the bars stay statewide when a college is selected, and a college's date uses its share of statewide progress. Credential skills have no remaining count, so they do not set the date. The account totals for AI time are pasted by hand (October 17 to November 15, 2026 so far); the reading jobs' own cost and the sessions' own figures are measured every day from the committed files, from November 17, 2026 on, and shown beside those totals, never added to them." })]));
     return sec;
   }
 
@@ -781,15 +790,15 @@
     ((ST.integ && ST.integ.integrations) || []).forEach(function (x) { integ[x.status] = (integ[x.status] || 0) + 1; });
     var tiles = [
       [fmt(st.harvested) + " of " + fmt(st.colleges), "Colleges collected", "A committed program-requirements capture with records is on file for each college and continuing-education campus in the identity crosswalk."],
-      [fmt(st.passing) + " of " + fmt(st.programs), "Program requirements passing", "Programs the committed captures listed (Active, Teachout, and Approved) that pass coverage, nothing invented, and units equal or unstated. The ETA uses the Active-only headline (" + fmt(B.complete) + " of " + fmt(B.active) + ")."],
-      [typeof ov === "number" ? (Math.round(ov * 1000) / 10) + "%" : "TBA", "Overall completeness", "Average of catalog source, program requirements passing, and (SLOs + PLOs) / 2, unread parts counting as zero, from the live read of " + liveDay(B) + "."],
-      [fmt(B.slo.have) + " of " + fmt(B.slo.universe), "Course SLOs", "Distinct courses on Active programs with an SLO, from the live read of " + liveDay(B) + "."],
+      [fmt(st.passing) + " of " + fmt(st.programs), "Program requirements passing", "Programs the committed captures listed (Active, Teachout, and Approved) that pass coverage, nothing invented, and units equal or unstated. The date estimate uses the count of Active programs only (" + fmt(B.complete) + " of " + fmt(B.active) + ")."],
+      [typeof ov === "number" ? (Math.round(ov * 1000) / 10) + "%" : "TBA", "Overall completeness", "Average of catalog source, program requirements passing, and the mean of student learning outcomes (SLOs) and program learning outcomes (PLOs), unread parts counting as zero, from the database count of " + liveDay(B) + "."],
+      [fmt(B.slo.have) + " of " + fmt(B.slo.universe), "Course student learning outcomes (SLOs)", "Distinct courses on Active programs with an SLO, from the database count of " + liveDay(B) + "."],
       [fmt(conf.strong || 0) + " strong, " + fmt(conf.partial || 0) + " partial, " + fmt(conf.limited || 0) + " limited", "Confidence", ((M && M.rule) || {}).confidence_card || ""],
       [fmt(fr.fresh) + " fresh, " + fmt(fr.recent) + " recent, " + fmt(fr.stale) + " stale", "Collection freshness", "Fresh within " + rule.fresh + " days of the file's written time, recent within " + rule.recent + ", stale after, from each capture's last read."],
       [["live", "in progress", "proposed", "not started"].map(function (k) { return fmt(integ[k] || 0) + " " + k; }).join(", "), "Integrations", "From the integrations registry."]];
     var g = el("div", { cls: "eta-tiles" });
     tiles.forEach(function (t) { g.appendChild(el("div", { cls: "eta-cell" }, [el("p", { cls: "eta-v", text: t[0] }), el("h5", { text: t[1] }), el("p", { cls: "eta-note", text: t[2] })])); });
-    var cost = st.cost_usd && st.passed_at_read ? "Cost, where a receipt supports it: " + usd(st.cost_usd / st.passed_at_read) + " per program that passed at read time (" + usd(st.cost_usd) + " over " + fmt(st.passed_at_read) + " programs, " + fmt(st.cost_receipts) + " receipts)." : "";
+    var cost = st.cost_usd && st.passed_at_read ? "Cost, where a college's read recorded one: " + usd(st.cost_usd / st.passed_at_read) + " per program that passed when it was read (" + usd(st.cost_usd) + " over " + fmt(st.passed_at_read) + " programs at " + fmt(st.cost_receipts) + " colleges)." : "";
     return el("section", { cls: "eta-sub", "aria-labelledby": "eta-prog-h" }, [el("h4", { id: "eta-prog-h", text: "How far we have come" }), g,
       el("p", { cls: "eta-note", text: "Person-confirmed program records are not a Phase 1 target and are not shown here. " + cost })]);
   }
@@ -832,7 +841,7 @@
     row.appendChild(chip("Clear levers", null, function () { var f = freshState(); S.on = f.on; S.factors = f.factors; S.start = f.start; S.twoReads = false; S.open = null; S.catalogParts = f.catalogParts; S.outlineParts = f.outlineParts; redraw("clear"); }, { "data-eta": "clear" }));
     box.appendChild(row);
     var active = LEVERS.filter(function (l) { return S.on[l.id]; });
-    if (!active.length) box.appendChild(el("p", { cls: "eta-note", text: "No lever is on. The dates above are the baseline from the committed headline series." }));
+    if (!active.length) box.appendChild(el("p", { cls: "eta-note", text: "No lever is on. The dates above are the baseline from the daily count of Active programs complete." }));
     active.forEach(function (l) {
       box.appendChild(el("div", { cls: "eta-lever", "data-lever": l.id }, [el("h5", { text: l.name + ": " + l.status }),
         el("p", { cls: "eta-note", text: "Affects " + l.effects.join(", ") + ". " + (l.moves ? "If this lands by " + (S.start[l.id] === "now" ? longDate(B.asOf) : longDate(dnum(S.start[l.id]))) + "; a projection, not a partner commitment." : "Does not move this ETA.") }),
@@ -851,7 +860,7 @@
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Phase" }), el("p", { text: "Phase 1, current collection" })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Soonest date" }), el("p", { text: lbl(P) }), el("p", { cls: "eta-note", "data-eta-days": "soonest", text: "Soonest: " + paceDays(B, "soonest") })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Latest date" }), el("p", { text: lbl(Q) }), el("p", { cls: "eta-note", "data-eta-days": "latest", text: "Latest: " + paceDays(B, "latest") })]),
-      el("div", { cls: "eta-cell", "data-eta-cre": "" }, [el("h4", { text: "Cost per CRE" }), el("p", { text: creWords(creWindow(M, B.asOf)) })]),
+      el("div", { cls: "eta-cell", "data-eta-cre": "" }, [el("h4", { text: "Cost per collected record equivalent (CRE)" }), el("p", { text: creWords(creWindow(M, B.asOf)) })]),
       el("div", { cls: "eta-cell" }, [el("h4", { text: "Pace" }), el("p", { text: paceWords(B, "soonest") + " newly complete" }),
         el("a", { href: "#commons/data/" + VIEW_KEY, text: "Open the ETA clock" })])]);
   }
@@ -873,9 +882,9 @@
     return root;
   }
   function tbaRoot(root, M) {
-    if (!ST.pr) { root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series (" + FILES.pr + ") could not be read, so the clock has no pace to date. Reload the tab to try again."])); return null; }
+    if (!ST.pr) { root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The daily count of Active programs complete could not be read, so the clock has no pace to date. Reload the tab to try again."])); return null; }
     var B = base(M, ST.pr, ST.skills);
-    if (!B) root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The headline series holds no day with a complete count."]));
+    if (!B) root.appendChild(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: "TBA. " }), "The daily count of Active programs complete holds no day with a count."]));
     return B;
   }
   function view(key, M, host) {

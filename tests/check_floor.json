@@ -84,6 +84,7 @@
     "commons_data_sharing.test.js": 36,
     "commons_data_integrations.test.js": 26,
     "coci_list.test.js": 40,
+    "coci_list_kept.test.js": 14,
     "college_activity.test.js": 7,
     "college_activity_jst.test.js": 18,
     "college_briefing.test.js": 246,
@@ -370,7 +371,7 @@
     "uc_pending_merges_panel.test.js": 14,
     "uc_perrow_merge_dock.test.js": 19,
     "uc_redistribute_discipline_merge.test.js": 9,
-    "uc_rekey_provenance.test.js": 6,
+    "uc_rekey_provenance.test.js": 7,
     "uc_subj4_member_sort.test.js": 23,
     "uc_title_lane.test.js": 24,
     "uc_triage_subjdisc_filter.test.js": 4,
@@ -419,6 +420,9 @@
     "pages_allowlist.test.js": 33,
     "veteran_map_controls_words.test.js": 12,
     "program_requirements_lassen_calgetc.test.js": 34,
-    "veteran_map_public_header.test.js": 25
+    "veteran_map_public_header.test.js": 25,
+    "cdc_plain_words.test.js": 15,
+    "commons_arrival.test.js": 7,
+    "coci_list_doubt.test.js": 53
   }
 }

@@ -44,12 +44,30 @@ closed while the CPL types are unread, keys the second press per surface and pai
 is fixing the second reader's findings: an untyped title (1,025 of 2,849) gets an `unknown` two-press check with the
 override logged, the reject in `load` is caught, and the undo handles a double rename. **DECIDED (the S679
 conductor):** an untyped title takes the two-press check, never a silent pass.
-**OPEN: #3472 (draft, head `4ca0f456`, item 6):** one re-point list keyed by MAP exhibit id and local title
-(`kb/exhibit_repoint_list.json`) and `--pairs` in the reviewed apply, with undo; new keys take the "and" form and C-ID
-titles are exempt; the dry run reads 590 applied and 89 held; no real apply has run.
-**NEXT:** (1) #3482: merge on green `test` once the worker's fixes and a second read land; (2) #3472: rebuild on
-`main`'s renamed titles, then the MAP snapshot run, then the reviewed apply; (3) read the first nightly's receipt and
-the leftover count once Sam's first decisions land.
+**OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local title
+(`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo. Rebuilt after the
+slash-to-and rename (S679, 2026-11-18): dry run 606 applied, 73 held (58 exhibit grain, 15 Sam-curated targets),
+against 590 and 89 before the rename, when 16 more rows waited on it (`exhibit_repoint.slash_wait`). UA Local 467
+Plumbing and Pipefitting Years 1 to 3 assign to the "UA Plumbers and Pipefitters Apprenticeship" Level 1 to 3 keys,
+and the 14 CTCNC drywall modules re-point to *Carpenters Apprenticeship — Drywall and Lather*. Apprenticeship 13
+assign, 2 person; split 167 re-point, 112 person; the split reads 219 against 265 because the MAP snapshot is not
+committed; no real apply has run. COBIx's review (S679): the apply decides holds before grain, so a held row never
+moves under a sibling's title rewrite; `--undo-pairs --force` leaves each changed title whole and lists what it left.
+The builder spells family heads and trade keys with `kb/slash_titles.ruled_form`, the one rule (a code slash such as
+HVAC/R stays), and the apply holds an assign or repoint row whose target the rule spells differently
+(`slash_wait`), so a later slash title waits for its rename the same way. DECIDED (S679 conductor, 2026-11-18): a key
+a re-point creates is written `slash_titles.ruled_form` (*Fire Service in-Service Training and EMS*, the source's
+capitalization kept); a C-ID descriptor title keeps its slash as an official name (*Algebra/Trigonometry-Based
+Physics A*, C-ID PHYS 105; the exemption reads `kb/reference/cid_descriptors.json`); a name the rule holds for two
+whole names goes to a person (*Emergency Medical Responder (EMR) / Healthcare Provider CPR*).
+`tests/exhibit_repoint_test.py` fails a re-point key that `slash_titles --check` would fail.
+**OPEN: #3515 (draft, stacks on #3472, Sam merges):** blocker rules 1 (`cert_twin`) and 2 (`left_keep`) as pair
+rows in `kb/exhibit_blocker_rules_list.json` (`kb/exhibit_blocker_rules.py`), with a Rule 10 plan for 71
+`_LEFT_MAP::` keep rows under `exhibits-rules-s683@bot`; nothing applied.
+**NEXT:** (1) #3482: merge on green `test` once the worker's fixes and a second read land; (2) #3472 (the slash-to-and rename it
+waited on is done, commit 64f13edc): the MAP snapshot run rebuilds the list with `--map`, then the reviewed `--pairs`
+apply, then #3515's; (3) read the first nightly's receipt and the leftover count once Sam's first
+decisions land.
 
 ## Certification naming, the fold, the subject fill and the ASE plans (S637, S638; 2026-11-11)
 
@@ -66,8 +84,9 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
 - **A slash joining words is written "and" (Sam, in session S679, 2026-11-18):** *"I believe I replaced the / with and
   to avoid formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters"*. The S679
   conductor drew the line, which Sam can revise: a code slash (a code on each side, a digit or capitals: *SP/2*,
-  *CAD/CAM*) and an official name's slash (an ASE test name's pair in an ASE title, or a phrase in `OFFICIAL_PHRASES`:
-  *Fire Apparatus Driver/Operator*, *Division/Group Supervisor*, *Medical/Surgical*) stay. On COBIx's review (#3479)
+  *CAD/CAM*) and an official name's slash (an ASE test name's pair in an ASE title, a phrase in `OFFICIAL_PHRASES`:
+  *Fire Apparatus Driver/Operator*, *Division/Group Supervisor*, *Medical/Surgical*, or one of the 18 C-ID descriptor
+  titles that print a slash) stay. On COBIx's review (#3479)
   the conductor added two lines: a spaced slash between two whole names (either side holds "and", or both sides run
   two words or more: *DSST A History of the Vietnam War / Civil War and Reconstruction*) is held for a person, and a
   combine is found case-folded and whitespace squashed, against every credential and search alias.
@@ -78,8 +97,8 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   **APPLIED (S679):** `cred-rename-apply.yml` run 44227947795 (`only_plan=slash-to-and-2026-11-18`, 03:09Z
   2026-11-18, commit `64f13edc`): 80 keys, 95 local-title values, 103 articulations, `kb_curation` 81 ok, 0 failed,
   22 no-op; receipt `kb/cred_rename_out/2026-11-18/`, undo `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-18`
-  (`--supabase-plan` for the `kb_curation` reversal). **NEXT:** rebuild #3472's list, whose CTCNC family read
-  *Drywall/Lather*; the 7 held titles stay as printed until a person answers.
+  (`--supabase-plan` for the `kb_curation` reversal). #3472's list is rebuilt on the new keys (CTCNC
+  *Drywall and Lather*); the 7 held titles stay as printed until a person answers.
 - **Moved verbatim to `docs/exhibit_canonicalization_lessons_archive.md`:** the CER decision-plan applier (#3118, #3120; *Moved from the lane (S678 checkpoint)*), and in *Moved from the lane (S679 checkpoint)* the fold's one issuer (#3116, `kb/fold_issuer.py`, `effective_issuer`), readers ignoring a saved row on an emptied title (**DECIDED** Sky and COBIx, 2026-11-11, #3110), the exhibit subject fill (#3119; `kb/exhibit_subject_out/worklist.json`), a person's save never returning (`d-person-saved-never-returns-s666`), the *(ASE <code> standards)* title rule, and a decided Review card staying decided (`d-exhibits-review-reads-saved-titles-s649`, `d-review-builder-anon-read-s649`). All stand.
 - **Moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S642)*:** the applier's retry-safe undo (S639, #3123; `tests/cer_decision_apply_retry_test.py`), the family live on 25 titles under `credential-family-s638@bot` (undo `credential-family-apply.yml` `mode=rollback`), Sheet 181's four rulings (all carried out; `d-sheet-181-replies-2026-11-11`) and the S639 conductor's two titles left for a person.
 - **A credential family is a field, never a fold (#3117; the write, S639)** moved verbatim to `docs/exhibit_canonicalization_lessons_archive.md`, *Moved from the lane (S648 checkpoint)*. It stands: `kb/reference/credential_families.json` declares the family, `credential-family-apply.yml` writes it under `credential-family-s638@bot` (undo `mode=rollback`), and Sam's 31 fold rows stay beside the tags.
