@@ -45,7 +45,11 @@ check("a noncredit title is never an industry title's kind", B.kind("Noncredit f
 text = open(os.path.join(ROOT, B.OUT), encoding="utf-8").read()
 check("the committed file names no address", chr(64) not in text)
 d = json.loads(text)
-check("the committed file holds the auditor's 810 titles under 577 canonical titles", d["counts"]["titles"] == 810 and d["counts"]["credentials"] == 577, d["counts"])
+# The nightly auditor moves the counts (810 under 577 on 2026-11-17, 812 under 579 after the 2026-11-18 daily), so the
+# check reads them against the file's own rows, with a floor that catches an empty or truncated read.
+check("the committed file's counts are its own titles and their canonical titles, and the auditor's read is whole",
+      d["counts"]["titles"] == len(d["titles"]) >= 700
+      and d["counts"]["credentials"] == len({r["canonical"] for r in d["titles"].values()}) >= 500, d["counts"])
 check("the committed file is current", json.dumps(B.build(), indent=1, ensure_ascii=False) + "\n" == text)
 
 ut = {"Old A": {"unified_title": "Brakes"}, "Old B": {"unified_title": "Brakes"}, "Live": {"unified_title": "Wheels"}}
