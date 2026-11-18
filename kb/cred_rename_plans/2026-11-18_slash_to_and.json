@@ -10,22 +10,13 @@
   "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a title that names ASE (kb/cert_naming.py), or a phrase in OFFICIAL_PHRASES",
   "official_phrases": {
    "Fire Apparatus Driver/Operator": "California State Fire Training's certification title (Fire Apparatus Driver/Operator 1A, 1B and Tiller)",
-   "Division/Group Supervisor": "NWCG's position and course title for S-339"
-  }
+   "Division/Group Supervisor": "NWCG's position and course title for S-339",
+   "Medical/Surgical": "the standard nursing term for the adult acute-care specialty (the S679 conductor on COBIx's review of #3479, 2026-11-18)"
+  },
+  "whole_names": "a spaced slash between two whole names is held for a person: either side holds \"and\", or both sides are full titles (two or more words each)",
+  "combine": "a rename whose \"and\" title matches a credential or a search alias in kb/credential_aliases.py, case-folded and whitespace squashed, is held as a combine"
  },
  "entries": [
-  {
-   "old": "Acute Medical/Surgical Nursing and Mental Health Nursing",
-   "new": "Acute Medical and Surgical Nursing and Mental Health Nursing",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Acute Medical/Surgical and Nursing of the Childbearing Family",
-   "new": "Acute Medical and Surgical and Nursing of the Childbearing Family",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
   {
    "old": "Adv ESL: Writing/Grammar",
    "new": "Adv ESL: Writing and Grammar",
@@ -137,12 +128,6 @@
   {
    "old": "Confined Space Rescue Operations/Technician",
    "new": "Confined Space Rescue Operations and Technician",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
-   "new": "DSST A History of the Vietnam War and Civil War and Reconstruction",
    "kind": "rename",
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   },
@@ -267,18 +252,6 @@
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   },
   {
-   "old": "Medical/Surgical Nursing and Pediatric Nursing Advanced",
-   "new": "Medical and Surgical Nursing and Pediatric Nursing Advanced",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Metal Building Erection 1 / Foreman Training",
-   "new": "Metal Building Erection 1 and Foreman Training",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
    "old": "NCCER Commercial Electrician Level 4/Journey Level",
    "new": "NCCER Commercial Electrician Level 4 and Journey Level",
    "kind": "rename",
@@ -287,12 +260,6 @@
   {
    "old": "NCCER Industrial Electrician Level 4/Journey Level",
    "new": "NCCER Industrial Electrician Level 4 and Journey Level",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
-   "new": "Nursing Skills and Clinical Simulation Laboratory Advanced",
    "kind": "rename",
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   },
@@ -335,12 +302,6 @@
   {
    "old": "Standard First Aid/CPR/AED",
    "new": "Standard First Aid, CPR, and AED",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
-   "new": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
    "kind": "rename",
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   },
@@ -531,31 +492,49 @@
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   },
   {
-   "old": "Video Gaming 1 / Computer Programming and Game Design",
-   "new": "Video Gaming 1 and Computer Programming and Game Design",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
-   "new": "Wall and Column Forms and Cutting and Burning (Carpentry)",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
-   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
-   "new": "Water Treatment Operator Grade T3 and Distribution Grade D3",
-   "kind": "rename",
-   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
-  },
-  {
    "old": "Water/Wastewater Operator Certification",
    "new": "Water and Wastewater Operator Certification",
    "kind": "rename",
    "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
   }
  ],
- "held": [],
+ "held": [
+  {
+   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
+   "new": "DSST A History of the Vietnam War and Civil War and Reconstruction",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (DSST A History of the Vietnam War | Civil War and Reconstruction): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Metal Building Erection 1 / Foreman Training",
+   "new": "Metal Building Erection 1 and Foreman Training",
+   "why": "a spaced slash between two full titles (Metal Building Erection 1 | Foreman Training): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
+   "new": "Nursing Skills and Clinical Simulation Laboratory Advanced",
+   "why": "a spaced slash between two full titles (Nursing Skills | Clinical Simulation Laboratory Advanced): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+   "new": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Standards and Training for Corrections (STC) | Board of Parole Hearings): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Video Gaming 1 / Computer Programming and Game Design",
+   "new": "Video Gaming 1 and Computer Programming and Game Design",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Video Gaming 1 | Computer Programming and Game Design): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
+   "new": "Wall and Column Forms and Cutting and Burning (Carpentry)",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Wall and Column Forms | Cutting and Burning): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  },
+  {
+   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
+   "new": "Water Treatment Operator Grade T3 and Distribution Grade D3",
+   "why": "a spaced slash between two full titles (Water Treatment Operator Grade T3 | Distribution Grade D3): whole names, held for a person (the S679 conductor, 2026-11-18)"
+  }
+ ],
  "kept": [
   {
    "title": "ASE A2 — Automatic Transmission/Transaxle",
@@ -647,6 +626,20 @@
    "kept": [
     "ation — D1.1/D1.3/D17.1 (code)",
     "— D1.1/D1.3/D17.1 (code)"
+   ]
+  },
+  {
+   "title": "Acute Medical/Surgical Nursing and Mental Health Nursing",
+   "kind": "official",
+   "kept": [
+    "cute Medical/Surgical Nur (official)"
+   ]
+  },
+  {
+   "title": "Acute Medical/Surgical and Nursing of the Childbearing Family",
+   "kind": "official",
+   "kept": [
+    "cute Medical/Surgical and (official)"
    ]
   },
   {
@@ -902,6 +895,13 @@
    "kind": "code",
    "kept": [
     "elding (GMAW/FCAW) (code)"
+   ]
+  },
+  {
+   "title": "Medical/Surgical Nursing and Pediatric Nursing Advanced",
+   "kind": "official",
+   "kept": [
+    "Medical/Surgical Nur (official)"
    ]
   },
   {

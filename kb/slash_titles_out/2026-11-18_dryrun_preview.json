@@ -1,39 +1,94 @@
 {
- "_about": "What the reviewed rename apply would write for plan slash-to-and-2026-11-18, measured by the S679 worker from the committed files and a local run of kb/_cred_rename_dryrun.py --only-plan slash-to-and-2026-11-18 on origin/main 14b598b9, 2026-11-18. A preview, not a receipt: no apply has run. The apply writes its own receipt, kb/cred_rename_out/<date>/ (undo.json, supabase_log), and kb/_cred_rename_undo.py reverses it.",
+ "_about": "What the reviewed rename apply would write for plan slash-to-and-2026-11-18, measured by the S679 worker from the committed files and a local run of kb/_cred_rename_dryrun.py --only-plan slash-to-and-2026-11-18 on origin/main 82a3dad7 merged into the branch, 2026-11-18. Rebuilt after the S679 conductor's rulings on COBIx's review (#3479, comment 6966714099): a spaced slash between two whole names is held for a person, \"Medical/Surgical\" keeps its slash as an official phrase, and the combine check compares case-folded, whitespace-squashed titles against every credential and search alias. Per-title counts are the earlier preview's, measured on the same files. A preview, not a receipt: no apply has run. The apply writes its own receipt, kb/cred_rename_out/<date>/ (undo.json, supabase_log), and kb/_cred_rename_undo.py reverses it.",
+ "plan_id": "slash-to-and-2026-11-18",
  "dry_run": {
-  "clean_renames": 90,
+  "clean_renames": 80,
   "confirmed_merges": 0,
   "collisions": 0,
   "ruled_held": 0,
   "apply_safe": true
  },
- "plan_id": "slash-to-and-2026-11-18",
- "renames": 90,
- "credential_keys": 90,
- "local_title_values": 105,
- "articulations": 114,
- "kb_curation_titles_with_rows": 23,
+ "renames": 80,
+ "credential_keys": 80,
+ "local_title_values": 95,
+ "articulations": 103,
+ "kb_curation_titles_with_rows": 20,
  "kb_curation_fields": {
-  "issuing_agency_override": 21,
   "issuing_agency_additional_override": 4,
-  "training_agency_override": 1,
-  "reviewed_marker": 2
+  "issuing_agency_override": 18,
+  "reviewed_marker": 2,
+  "training_agency_override": 1
  },
+ "held_for_a_person": [
+  {
+   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
+   "would_read": "DSST A History of the Vietnam War and Civil War and Reconstruction",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (DSST A History of the Vietnam War | Civil War and Reconstruction): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Metal Building Erection 1 / Foreman Training",
+   "would_read": "Metal Building Erection 1 and Foreman Training",
+   "why": "a spaced slash between two full titles (Metal Building Erection 1 | Foreman Training): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
+   "would_read": "Nursing Skills and Clinical Simulation Laboratory Advanced",
+   "why": "a spaced slash between two full titles (Nursing Skills | Clinical Simulation Laboratory Advanced): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+   "would_read": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Standards and Training for Corrections (STC) | Board of Parole Hearings): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 8,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Video Gaming 1 / Computer Programming and Game Design",
+   "would_read": "Video Gaming 1 and Computer Programming and Game Design",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Video Gaming 1 | Computer Programming and Game Design): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 0,
+   "kb_curation_fields": []
+  },
+  {
+   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
+   "would_read": "Wall and Column Forms and Cutting and Burning (Carpentry)",
+   "why": "a spaced slash between two names, one of which already holds \"and\" (Wall and Column Forms | Cutting and Burning): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": [
+    "issuing_agency_override"
+   ]
+  },
+  {
+   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
+   "would_read": "Water Treatment Operator Grade T3 and Distribution Grade D3",
+   "why": "a spaced slash between two full titles (Water Treatment Operator Grade T3 | Distribution Grade D3): whole names, held for a person (the S679 conductor, 2026-11-18)",
+   "local_titles": 1,
+   "articulations": 1,
+   "kb_curation_fields": []
+  }
+ ],
+ "slash_kept_now": [
+  "Acute Medical/Surgical Nursing and Mental Health Nursing",
+  "Acute Medical/Surgical and Nursing of the Childbearing Family",
+  "Medical/Surgical Nursing and Pediatric Nursing Advanced"
+ ],
  "per_title": [
-  {
-   "old": "Acute Medical/Surgical Nursing and Mental Health Nursing",
-   "new": "Acute Medical and Surgical Nursing and Mental Health Nursing",
-   "local_titles": 1,
-   "articulations": 0,
-   "kb_curation_fields": []
-  },
-  {
-   "old": "Acute Medical/Surgical and Nursing of the Childbearing Family",
-   "new": "Acute Medical and Surgical and Nursing of the Childbearing Family",
-   "local_titles": 1,
-   "articulations": 0,
-   "kb_curation_fields": []
-  },
   {
    "old": "Adv ESL: Writing/Grammar",
    "new": "Adv ESL: Writing and Grammar",
@@ -181,13 +236,6 @@
    "new": "Confined Space Rescue Operations and Technician",
    "local_titles": 1,
    "articulations": 1,
-   "kb_curation_fields": []
-  },
-  {
-   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
-   "new": "DSST A History of the Vietnam War and Civil War and Reconstruction",
-   "local_titles": 1,
-   "articulations": 0,
    "kb_curation_fields": []
   },
   {
@@ -344,22 +392,6 @@
    "kb_curation_fields": []
   },
   {
-   "old": "Medical/Surgical Nursing and Pediatric Nursing Advanced",
-   "new": "Medical and Surgical Nursing and Pediatric Nursing Advanced",
-   "local_titles": 1,
-   "articulations": 0,
-   "kb_curation_fields": []
-  },
-  {
-   "old": "Metal Building Erection 1 / Foreman Training",
-   "new": "Metal Building Erection 1 and Foreman Training",
-   "local_titles": 1,
-   "articulations": 0,
-   "kb_curation_fields": [
-    "issuing_agency_override"
-   ]
-  },
-  {
    "old": "NCCER Commercial Electrician Level 4/Journey Level",
    "new": "NCCER Commercial Electrician Level 4 and Journey Level",
    "local_titles": 1,
@@ -372,15 +404,6 @@
    "local_titles": 1,
    "articulations": 0,
    "kb_curation_fields": []
-  },
-  {
-   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
-   "new": "Nursing Skills and Clinical Simulation Laboratory Advanced",
-   "local_titles": 1,
-   "articulations": 1,
-   "kb_curation_fields": [
-    "issuing_agency_override"
-   ]
   },
   {
    "old": "Nursing Skills/Clinical Simulation Laboratory Beginning",
@@ -437,13 +460,6 @@
    "new": "Standard First Aid, CPR, and AED",
    "local_titles": 2,
    "articulations": 2,
-   "kb_curation_fields": []
-  },
-  {
-   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
-   "new": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
-   "local_titles": 1,
-   "articulations": 8,
    "kb_curation_fields": []
   },
   {
@@ -670,29 +686,6 @@
    "kb_curation_fields": [
     "issuing_agency_override"
    ]
-  },
-  {
-   "old": "Video Gaming 1 / Computer Programming and Game Design",
-   "new": "Video Gaming 1 and Computer Programming and Game Design",
-   "local_titles": 1,
-   "articulations": 0,
-   "kb_curation_fields": []
-  },
-  {
-   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
-   "new": "Wall and Column Forms and Cutting and Burning (Carpentry)",
-   "local_titles": 1,
-   "articulations": 1,
-   "kb_curation_fields": [
-    "issuing_agency_override"
-   ]
-  },
-  {
-   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
-   "new": "Water Treatment Operator Grade T3 and Distribution Grade D3",
-   "local_titles": 1,
-   "articulations": 1,
-   "kb_curation_fields": []
   },
   {
    "old": "Water/Wastewater Operator Certification",

@@ -24,9 +24,21 @@ cred-rename-apply.yml with only_plan=slash-to-and-2026-11-18), and the guard: `-
 kb/credentials.json holds a word-joining slash that no plan entry covers, so a new one is named at build time and
 carried through the same route. Old titles stay search aliases (kb/credential_aliases.py reads the apply's receipt).
 
-The plan is append-only. A rebuild keeps every committed entry (an applied entry reads as done in kb/ruled_renames.py)
-and adds each new word-joining slash title. A rename whose "and" title is already a credential is a combine: it is
-held, listed under `held`, and never planned (a person or a new plan names the merge).
+The S679 conductor's three rulings on COBIx's review of #3479 (comment 6966714099), 2026-11-18:
+  (d) A SPACED SLASH BETWEEN TWO WHOLE NAMES is held for a person, never planned: " / " where either side already
+      holds " and " or both sides are full titles (two or more words each). "DSST A History of the Vietnam War /
+      Civil War and Reconstruction" names two DSST exams; written "and" it reads as one. A side runs from the slash
+      to the title's edge, a dash, a colon or the next spaced slash; the right side stops at an opening parenthesis.
+  (e) "Medical/Surgical" is the standard nursing term, an official phrase: "Acute Medical/Surgical ..." keeps it.
+  (f) A COMBINE is found on the title's key (case-folded, whitespace squashed), against every credential and every
+      search alias in kb/credential_aliases.py: "Drywall And Lather" or an alias "Drywall and Lather" holds a rename
+      to "Drywall and Lather".
+
+The plan is append-only for applied entries. A rebuild keeps every committed entry whose old title has left
+kb/credentials.json (it reads as done in kb/ruled_renames.py) and every committed entry the rule still plans as
+written; it drops an unapplied entry the rule now holds, and adds each new word-joining slash title. A rename whose
+"and" title is already a credential or an alias is a combine: it is held, listed under `held`, and never planned (a
+person or a new plan names the merge).
 
 Usage, from the repo root:
     python3 kb/slash_titles.py            write the plan
@@ -57,6 +69,8 @@ OFFICIAL_PHRASES = {
     "Fire Apparatus Driver/Operator": "California State Fire Training's certification title (Fire Apparatus "
                                       "Driver/Operator 1A, 1B and Tiller)",
     "Division/Group Supervisor": "NWCG's position and course title for S-339",
+    "Medical/Surgical": "the standard nursing term for the adult acute-care specialty (the S679 conductor on COBIx's "
+                        "review of #3479, 2026-11-18)",
 }
 
 _SLASH = re.compile(r"\s*/\s*")
@@ -113,6 +127,42 @@ def slashes(title):
     return out
 
 
+_SIDE_STOP_LEFT = re.compile(r".*(?:\s[—–-]\s|:\s|\s/\s)")
+_SIDE_STOP_RIGHT = re.compile(r"\s[—–-]\s|:\s|\s/\s|\s\(")
+
+
+def sides(title, m):
+    """The two names a spaced slash stands between: from the slash to the title's edge, a dash, a colon or the next
+    spaced slash; the right side also stops at an opening parenthesis."""
+    left = title[:m.start()]
+    cut = _SIDE_STOP_LEFT.match(left)
+    if cut:
+        left = left[cut.end():]
+    right = title[m.end():]
+    cut = _SIDE_STOP_RIGHT.search(right)
+    if cut:
+        right = right[:cut.start()]
+    return left.strip(), right.strip()
+
+
+def whole_names(title, m):
+    """The reason a spaced word slash stands between two whole names, or None. Either side holds " and ", or both
+    sides are full titles (two or more words each)."""
+    if not (m.group(0).startswith(" ") and m.group(0).endswith(" ")):
+        return None
+    left, right = sides(title, m)
+    if re.search(r"\band\b", left) or re.search(r"\band\b", right):
+        return "a spaced slash between two names, one of which already holds \"and\" (%s | %s)" % (left, right)
+    if len(left.split()) >= 2 and len(right.split()) >= 2:
+        return "a spaced slash between two full titles (%s | %s)" % (left, right)
+    return None
+
+
+def title_key(title):
+    """The comparison key for a combine: case-folded, whitespace squashed."""
+    return re.sub(r"\s+", " ", (title or "")).strip().casefold()
+
+
 def word_slash(title):
     """True when the title holds a slash that joins words (the rule rewrites it)."""
     return any(k == "word" for _, k in slashes(title))
@@ -162,35 +212,60 @@ def read(title):
     return {"title": title, "kind": kind, "new": and_form(title) if kind == "word" else title, "kept": kept}
 
 
-def build(credentials, committed=None):
-    """The plan doc. `committed` is the plan on disk, whose entries stay (append-only)."""
+def build(credentials, committed=None, aliases=None):
+    """The plan doc. `committed` is the plan on disk, whose applied entries stay (append-only). `aliases` is
+    kb/credential_aliases.load(): current title -> [its search aliases]."""
     creds = credentials or {}
-    entries = list((committed or {}).get("entries") or [])
-    have = {e["old"] for e in entries}
+    aliases = aliases or {}
     held = []
-    news = {}
+    plan = {}       # old -> new, for each title the rule renames today
+    news = {}       # key of the "and" title -> [old titles]
     for title in sorted(creds):
         r = read(title)
-        if r["kind"] != "word" or title in have:
+        if r["kind"] != "word":
             continue
-        news.setdefault(r["new"], []).append(title)
-    for new in sorted(news):
-        olds = news[new]
-        if new in creds:
+        whole = [w for m, k in slashes(title) if k == "word" for w in [whole_names(title, m)] if w]
+        if whole:
+            held.append({"old": title, "new": r["new"], "why": "; ".join(whole) + ": whole names, held for a person "
+                         "(the S679 conductor, 2026-11-18)"})
+            continue
+        news.setdefault(title_key(r["new"]), []).append(title)
+    owner = {}      # key -> [(the existing title or alias, the credential it names)]
+    for t in creds:
+        owner.setdefault(title_key(t), []).append((t, t))
+    for cur, names in aliases.items():
+        for a in names or []:
+            owner.setdefault(title_key(a), []).append((a, cur))
+    for key in sorted(news):
+        olds = news[key]
+        hits = [(t, c) for t, c in owner.get(key, []) if c not in olds]
+        if hits:
+            names = "; ".join(t if t == c else "%s (an alias of %s)" % (t, c) for t, c in hits)
             for old in olds:
-                held.append({"old": old, "new": new, "why": "the \"and\" title is already a credential: a combine, "
-                             "held for a person or a plan that names the merge"})
+                held.append({"old": old, "new": and_form(old), "why": "the \"and\" title matches an existing "
+                             "credential or alias, case and spacing aside (%s): a combine, held for a person or a plan "
+                             "that names the merge" % names})
             continue
         if len(olds) > 1:
             for old in olds:
-                held.append({"old": old, "new": new, "why": "%d slash titles read as one \"and\" title (%s): a "
-                             "combine, held" % (len(olds), "; ".join(olds))})
+                held.append({"old": old, "new": and_form(old), "why": "%d slash titles read as one \"and\" title "
+                             "(%s): a combine, held" % (len(olds), "; ".join(olds))})
             continue
-        r = read(olds[0])
+        plan[olds[0]] = and_form(olds[0])
+    entries = []
+    for e in (committed or {}).get("entries") or []:
+        if e["old"] not in creds or plan.get(e["old"]) == e["new"]:
+            entries.append(e)
+    have = {e["old"] for e in entries}
+    for old in sorted(plan):
+        if old in have:
+            continue
+        r = read(old)
         why = "a slash joining words is written \"and\" (Sam, 2026-11-18)"
         if r["kept"]:
             why += "; kept as printed: " + "; ".join(r["kept"])
-        entries.append({"old": olds[0], "new": new, "kind": "rename", "why": why})
+        entries.append({"old": old, "new": plan[old], "kind": "rename", "why": why})
+    held.sort(key=lambda h: h["old"])
     kept = [{"title": t, "kind": r["kind"], "kept": r["kept"]}
             for t in sorted(creds) for r in [read(t)] if r["kind"] in ("code", "official")]
     return {
@@ -207,7 +282,11 @@ def build(credentials, committed=None):
                  "code": "a slash with a code on each side stays: the token holds a digit or is written in capitals",
                  "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a "
                              "title that names ASE (kb/cert_naming.py), or a phrase in OFFICIAL_PHRASES",
-                 "official_phrases": OFFICIAL_PHRASES},
+                 "official_phrases": OFFICIAL_PHRASES,
+                 "whole_names": "a spaced slash between two whole names is held for a person: either side holds "
+                                "\"and\", or both sides are full titles (two or more words each)",
+                 "combine": "a rename whose \"and\" title matches a credential or a search alias in "
+                            "kb/credential_aliases.py, case-folded and whitespace squashed, is held as a combine"},
         "entries": entries,
         "held": held,
         "kept": kept,
@@ -244,7 +323,8 @@ def main(argv=None):
                      % (len(left), "; ".join(left[:5])))
         print("slash-to-and plan covers every word-joining slash title")
         return
-    doc = build(creds, committed)
+    import credential_aliases  # noqa: E402  (the search aliases: a rename onto one is a combine)
+    doc = build(creds, committed, credential_aliases.load(os.path.dirname(HERE)))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(json.dumps(doc, indent=1, ensure_ascii=False) + "\n")
