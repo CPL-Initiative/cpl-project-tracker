@@ -5,12 +5,15 @@
      matches the catalog exactly, and whose major and general education run past the degree total, takes
      ge_overlap in the reconcile stage (local_degree_ge_overlap) and passes as overlap, as a transfer degree does.
   2. "Pass short high ends the same way as over-high ends": a printed unit range whose low end the sum meets
-     exactly, the high end short, passes as short_high (the scorer, beside Sheet 120 card 1's meets).
-  3. The general education open slot (correction step 4 of #3461): a line naming a general education area and its
+     exactly, the high end short, passes as short_high (the scorer, beside Sheet 120 card 1's meets), only where
+     the sum is a range itself (S679, the conductor's call): Mt. San Jacinto 38847's 30 against 30-35 fails.
+  3.The general education open slot (correction step 4 of #3461): a line naming a general education area and its
      units is kept as an open slot, only when the printed total includes general education, and only when the
      slots bring the sum to that total exactly. Tested on Chaffey Physical Therapist Assistant (42987), Los Angeles
      Harbor Nursing RN (02790), Riverside Registered Nursing (38259) and Ventura Veterinary Assistant (39995), each
-     from its committed record and page lines as ge-slot-rule-test.md on #3464 quotes them.
+     from its committed record and page lines as ge-slot-rule-test.md on #3464 quotes them. The matcher is built
+     and off (GE_AREA_SLOT_FILL) until a self-recall run on captured pages; this test sets it on.
+  The rescore receipt's guarded UPDATE returns the rows it moved, and its rollback is built from them alone.
 
 Stdlib only; committed records only."""
 import copy
@@ -72,15 +75,32 @@ check("a single printed figure is no range: 37 against 37-37 is equal, never sho
       not S.program_verdict({"measure": "units"}, (37.0, 37.0), 37.0, 37.0).get("short_high"))
 check("an hours range stays out of the ruling (108 against 108-216 hours fails)",
       not S.program_verdict({"measure": "hours"}, (108.0, 216.0), 108.0, 108.0)["pass"])
-d = S.degree_verdict({}, (68.5, 74.5), 68.5, 68.5, "A.S. Degree")
-check("a degree range (Butte 35937's shape, 68.5 against 68.5-74.5) passes as short_high",
+d = S.degree_verdict({}, (68.5, 74.5), 68.5, 70.0, "A.S. Degree")
+check("a degree range whose sum is a range (68.5-70 against 68.5-74.5) passes as short_high",
       d["pass"] and d.get("short_high"))
+check("a single-figure sum against a degree range (Butte 35937's shape, 68.5 against 68.5-74.5) still fails",
+      not S.degree_verdict({}, (68.5, 74.5), 68.5, 68.5, "A.S. Degree")["pass"])
+check("a single-figure sum against a program range (Mt. San Jacinto 38847's shape, 30 against 30-35) still fails",
+      not S.program_verdict({"measure": "units"}, (30.0, 35.0), 30.0, 30.0)["pass"])
+with open(os.path.join(ROOT, "kb", "program_requirements_college", "mt_san_jacinto", "records", "38847.json")) as fh:
+    msj = json.load(fh)
+check("the filed Mt. San Jacinto 38847 (30 against 30-35) stays failing under the rescore",
+      msj["score"]["arithmetic"]["computed"] == [30.0, 30.0] and msj["score"]["arithmetic"]["stated"] == [30.0, 35.0]
+      and not msj["score"]["arithmetic"]["pass"] and RS.rescore(msj) is None)
+failing = {"award": "Certificate of Achievement", "record": {"program": {"measure": "units"}},
+           "score": {"arithmetic": {"pass": False, "status": "unequal", "against": "program", "computed": [37.0, 38.0],
+                                    "stated": [37.0, 40.0],
+                                    "why": ["the blocks sum to 37.0-38.0; the catalog states 37.0-40.0"]}}}
+new = RS.rescore(failing)
+check("a filed record the rescore passes as short_high keeps no failure reason",
+      new and new["pass"] and new.get("short_high") and new["why"] == [] and RS.how(new) == "short_high")
 rec = {"program": {"measure": "units", "total_units": {"min": 18, "max": 21}},
        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "HIST 1", "units": 3},
                                                                     {"code": "HIST 2", "units": 3}]},
-                  {"name": "List A", "rule": "choose_units", "stated": {"min": 12, "max": 12}, "courses": []}]}
+                  {"name": "List A", "rule": "choose_units", "stated": {"min": 12, "max": 13}, "courses": []}]}
 a = S.score(rec, [{"code": "HIST 1", "units": 3}, {"code": "HIST 2", "units": 3}], None, "A.A. Degree")["arithmetic"]
-check("score() carries short_high on the arithmetic", a["pass"] and a.get("short_high") and a["computed"] == [18.0, 18.0])
+check("score() carries short_high on the arithmetic (18-19 against 18-21)",
+      a["pass"] and a.get("short_high") and a["computed"] == [18.0, 19.0] and a["why"] == [])
 
 # ── ruling 1: a local degree's major counts toward general education ───────────────────────────────────────────────
 print("ruling 1: a local degree's major counts toward general education")
@@ -120,6 +140,17 @@ sa = S.score(short, MAJ, None, "A.A. Degree")["arithmetic"]
 check("a major-only record short of the 60 (33 against 60) is held: overlap cannot close a short sum",
       R.reconcile(short, "x", "Ventura College", "A.A. Degree", closed=MAJ)[1] == []
       and "cannot close" in R.local_overlap_hold(short["program"], "A.A. Degree", sa))
+MAJ57 = [{"code": "BUS %d" % i, "units": 3} for i in range(1, 20)]   # 57 units
+wide = {"program": {"measure": "units", "total_units": {"min": 57, "max": 57}, "degree_total": {"min": 60, "max": 60},
+                    "ge_units": {"min": 3, "max": 3}, "degree_elective_units": {"min": 20, "max": 20}},
+        "blocks": [{"name": "Required Core", "rule": "all", "courses": [dict(c) for c in MAJ57]}]}
+wa = S.score(wide, MAJ57, None, "A.A. Degree")["arithmetic"]
+check("57 major, 3 general education and 20 electives (80 against 60) is held: the overshoot passes the 3 units",
+      not wa["pass"] and wa["computed"] == [80.0, 80.0] and R.plain_equal(wa["major"])
+      and "more than the general education" in (R.local_overlap_hold(wide["program"], "A.A. Degree", wa) or "")
+      and R.reconcile(wide, "x", "Ventura College", "A.A. Degree", closed=MAJ57)[1] == [])
+check("and the rescore leaves the filed 80 against 60 failing",
+      RS.rescore({"award": "A.A. Degree", "record": wide, "score": {"arithmetic": wa}}) is None)
 check("a record that already carries ge_overlap is not set again",
       R.reconcile(local(ge_overlap=True), "x", "Ventura College", "A.A. Degree", closed=MAJ)[1] == [])
 
@@ -139,6 +170,10 @@ check("each is a local degree whose major matched exactly",
 
 # ── ruling 3: the general education open slot ──────────────────────────────────────────────────────────────────────
 print("ruling 3: the general education open slot")
+check("the slot matcher is off unless CPL_GE_AREA_SLOT_FILL=1 turns it on",
+      R.GE_AREA_SLOT_FILL is (os.environ.get("CPL_GE_AREA_SLOT_FILL") == "1"))
+# Every check below runs with the matcher on.
+R.GE_AREA_SLOT_FILL = True
 
 
 def slot_run(college, cn, college_name, text, closed_extra=None, rec=None):
@@ -168,6 +203,11 @@ check("Chaffey 42987: one statewide note names the three lines and the ruling",
       and "Ethnic Studies" in notes[0]["words"] and "2026-11-17" in notes[0]["words"])
 check("Chaffey 42987: without the closed list nothing changes",
       R.reconcile(rec, chaffey, "Chaffey College", f["award"])[1] == [])
+R.GE_AREA_SLOT_FILL = False
+check("Chaffey 42987: with the switch off, the same page and closed list take no slot",
+      R.reconcile(rec, chaffey, "Chaffey College", f["award"], closed=closed_of(rec))[1] == []
+      and R.ge_area_slot_fill(rec, chaffey, lambda r: S.score(r, closed_of(rec), chaffey, f["award"]))[1] == [])
+R.GE_AREA_SLOT_FILL = True
 
 # Los Angeles Harbor Nursing RN (02790): three area lines in the semester blocks; Area 4A printed as waived.
 f, rec = filed("los_angeles_harbor", "02790")
@@ -238,6 +278,45 @@ check("a passing record is left alone",
 check("a filed slot note stands while the record carries the slots",
       R.statewide_note_stands({"statewide": "ge_area_slot"}, new)
       and not R.statewide_note_stands({"statewide": "ge_area_slot"}, rec))
+
+# ── the receipt: the guarded UPDATE and its rollback ────────────────────────────────────────────────────────────────
+print("the rescore receipt")
+rows = [{"i": 1, "college": "A College", "control_number": "00001", "extracted_run": 11},
+        {"i": 2, "college": "B College", "control_number": "00002", "extracted_run": 12},
+        {"i": 3, "college": "O'Neill College", "control_number": "00003", "extracted_run": 13}]
+up = RS.update_sql(rows, "equal", "unequal")
+check("the UPDATE returns r.checked beside the keys, and writes checks.arithmetic alone",
+      "returning v.i, r.college, r.control_number, r.checked" in up and up.count(" set ") == 1
+      and "checked =" not in up and "record =" not in up and "r.checks->>'arithmetic' = 'unequal'" in up)
+migrate = {"response": json.dumps([{"returned": {"returned": 2, "keys": [1, 3], "checked": [3]}}])}
+back = RS.rollback_from({"records": rows}, migrate)
+check("the rollback moves back only the rows the UPDATE returned",
+      "'A College'" in back and "'O''Neill College'" in back and "'B College'" not in back
+      and "r.checks->>'arithmetic' = 'equal'" in back and "'\"unequal\"'" in back)
+check("an UPDATE that moved no row gives no rollback",
+      RS.rollback_from({"records": rows}, {"returned": 0, "keys": [], "checked": []}).startswith("--"))
+for bad in ({"response": json.dumps([{"returned": {"returned": 3, "keys": [1, 3]}}])},
+            {"response": '[{"returned": {"returned": 2, "keys": [1,'},
+            {"returned": 1, "keys": [9]}):
+    try:
+        RS.rollback_from({"records": rows}, bad)
+        refused = False
+    except ValueError:
+        refused = True
+    check("a response cut short, miscounted or naming a place the receipt lacks is refused (%s)"
+          % json.dumps(bad)[:40], refused)
+with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_rescore_2026-11-18_s679.json")) as fh:
+    rc = json.load(fh)
+check("the committed receipt carries the returning UPDATE, the trigger note, and no rollback until the UPDATE runs",
+      "r.checked" in rc["apply"] and rc["rollback"] is None and rc["applied"] is None
+      and "follow_verdict" in rc["follow_verdict"] and "checked" in rc["follow_verdict"]
+      and "Person-settled" in rc["person_settled"]
+      and [c["i"] for c in rc["records"]] == list(range(1, rc["rescored"] + 1)))
+check("the committed receipt passes no single-figure sum as short_high",
+      all(c["computed"][1] > c["computed"][0] for c in rc["records"] if c["how"] == "short_high"))
+check("the UPDATE's returned value fits the migrate receipt's 4,000 characters",
+      len(json.dumps({"returned": {"returned": rc["rescored"], "keys": list(range(1, rc["rescored"] + 1)),
+                                   "checked": list(range(1, rc["rescored"] + 1))}})) < 3500)
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

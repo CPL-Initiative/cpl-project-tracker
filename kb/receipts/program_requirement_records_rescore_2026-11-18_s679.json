@@ -1,25 +1,8 @@
 {
  "rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14; Sheet 120 card 1 (narrow: a printed total the low end meets exactly passes as meets), Sam, 2026-10-23; Sam's rulings of 2026-11-17 (a short high end passes; a local degree's major counts toward general education)",
- "at": "2026-11-18T00:51:49Z",
- "rescored": 243,
+ "at": "2026-11-18T01:11:24Z",
+ "rescored": 145,
  "records": [
-  {
-   "college": "Allan Hancock College",
-   "control_number": "33693",
-   "award": "A.S. Degree",
-   "extracted_run": "38843474519",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    34.0,
-    34.0
-   ],
-   "stated": [
-    34.0,
-    38.0
-   ],
-   "path": "kb/program_requirements_college/allan_hancock/records/33693.json"
-  },
   {
    "college": "Antelope Valley College",
    "control_number": "17750",
@@ -35,7 +18,8 @@
     106.0,
     108.0
    ],
-   "path": "kb/program_requirements_college/antelope_valley/records/17750.json"
+   "path": "kb/program_requirements_college/antelope_valley/records/17750.json",
+   "i": 1
   },
   {
    "college": "Barstow Community College",
@@ -52,143 +36,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/barstow_community/records/18491.json"
-  },
-  {
-   "college": "Berkeley City College",
-   "control_number": "37921",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39891604919",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/berkeley_city/records/37921.json"
-  },
-  {
-   "college": "Berkeley City College",
-   "control_number": "37935",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39891604919",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/berkeley_city/records/37935.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "01323",
-   "award": "A.S. Degree",
-   "extracted_run": 42973457189,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    63.0,
-    63.0
-   ],
-   "stated": [
-    63.0,
-    69.0
-   ],
-   "path": "kb/program_requirements_college/butte/records/01323.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "01325",
-   "award": "A.S. Degree",
-   "extracted_run": 42985449223,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    75.0,
-    75.0
-   ],
-   "stated": [
-    75.0,
-    81.0
-   ],
-   "path": "kb/program_requirements_college/butte/records/01325.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "35937",
-   "award": "A.S. Degree",
-   "extracted_run": 42985449223,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    68.5,
-    68.5
-   ],
-   "stated": [
-    68.5,
-    74.5
-   ],
-   "path": "kb/program_requirements_college/butte/records/35937.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "38056",
-   "award": "A.S. Degree",
-   "extracted_run": 42973457189,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    83.0,
-    83.0
-   ],
-   "stated": [
-    83.0,
-    89.0
-   ],
-   "path": "kb/program_requirements_college/butte/records/38056.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "38059",
-   "award": "A.S. Degree",
-   "extracted_run": 42985449223,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    69.0,
-    69.0
-   ],
-   "stated": [
-    69.0,
-    75.0
-   ],
-   "path": "kb/program_requirements_college/butte/records/38059.json"
-  },
-  {
-   "college": "Butte College",
-   "control_number": "38066",
-   "award": "A.S. Degree",
-   "extracted_run": 42985449223,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    70.5,
-    70.5
-   ],
-   "stated": [
-    70.5,
-    76.5
-   ],
-   "path": "kb/program_requirements_college/butte/records/38066.json"
+   "path": "kb/program_requirements_college/barstow_community/records/18491.json",
+   "i": 2
   },
   {
    "college": "Butte College",
@@ -205,7 +54,8 @@
     60.0,
     63.0
    ],
-   "path": "kb/program_requirements_college/butte/records/43185.json"
+   "path": "kb/program_requirements_college/butte/records/43185.json",
+   "i": 3
   },
   {
    "college": "Butte College",
@@ -222,41 +72,8 @@
     60.0,
     63.0
    ],
-   "path": "kb/program_requirements_college/butte/records/43186.json"
-  },
-  {
-   "college": "Cañada College",
-   "control_number": "30834",
-   "award": "A.A- T Degree",
-   "extracted_run": 39202270482,
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/ca_ada/records/30834.json"
-  },
-  {
-   "college": "Cerro Coso Community College",
-   "control_number": "30766",
-   "award": "A.S. T Degree",
-   "extracted_run": 43520153161,
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/cerro_coso_community/records/30766.json"
+   "path": "kb/program_requirements_college/butte/records/43186.json",
+   "i": 4
   },
   {
    "college": "Chabot College",
@@ -273,41 +90,8 @@
     21.0,
     24.0
    ],
-   "path": "kb/program_requirements_college/chabot/records/37172.json"
-  },
-  {
-   "college": "Chabot College",
-   "control_number": "37910",
-   "award": "A.A- T Degree",
-   "extracted_run": "38843479215",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/chabot/records/37910.json"
-  },
-  {
-   "college": "Chabot College",
-   "control_number": "44597",
-   "award": "A.A- T Degree",
-   "extracted_run": "38843479215",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/chabot/records/44597.json"
+   "path": "kb/program_requirements_college/chabot/records/37172.json",
+   "i": 5
   },
   {
    "college": "Chabot College",
@@ -324,58 +108,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/chabot/records/44791.json"
-  },
-  {
-   "college": "Citrus College",
-   "control_number": "30365",
-   "award": "A.A. Degree",
-   "extracted_run": "38675245799",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    21.0
-   ],
-   "path": "kb/program_requirements_college/citrus/records/30365.json"
-  },
-  {
-   "college": "Citrus College",
-   "control_number": "41842",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "38675245799",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    24.0,
-    24.0
-   ],
-   "stated": [
-    24.0,
-    26.0
-   ],
-   "path": "kb/program_requirements_college/citrus/records/41842.json"
-  },
-  {
-   "college": "Citrus College",
-   "control_number": "41843",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "extracted_run": "38675245799",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    36.5
-   ],
-   "path": "kb/program_requirements_college/citrus/records/41843.json"
+   "path": "kb/program_requirements_college/chabot/records/44791.json",
+   "i": 6
   },
   {
    "college": "Citrus College",
@@ -392,24 +126,8 @@
     37.0,
     40.0
    ],
-   "path": "kb/program_requirements_college/citrus/records/42170.json"
-  },
-  {
-   "college": "Citrus College",
-   "control_number": "42172",
-   "award": "A.S. Degree",
-   "extracted_run": "38675245799",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    37.0,
-    37.0
-   ],
-   "stated": [
-    37.0,
-    40.0
-   ],
-   "path": "kb/program_requirements_college/citrus/records/42172.json"
+   "path": "kb/program_requirements_college/citrus/records/42170.json",
+   "i": 7
   },
   {
    "college": "City College of San Francisco",
@@ -426,7 +144,8 @@
     49.0,
     54.0
    ],
-   "path": "kb/program_requirements_college/city_of_san_francisco/records/09191.json"
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/09191.json",
+   "i": 8
   },
   {
    "college": "City College of San Francisco",
@@ -443,7 +162,8 @@
     41.0,
     46.0
    ],
-   "path": "kb/program_requirements_college/city_of_san_francisco/records/09194.json"
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/09194.json",
+   "i": 9
   },
   {
    "college": "City College of San Francisco",
@@ -460,7 +180,8 @@
     47.0,
     52.0
    ],
-   "path": "kb/program_requirements_college/city_of_san_francisco/records/09195.json"
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/09195.json",
+   "i": 10
   },
   {
    "college": "City College of San Francisco",
@@ -477,7 +198,8 @@
     53.5,
     58.5
    ],
-   "path": "kb/program_requirements_college/city_of_san_francisco/records/22727.json"
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/22727.json",
+   "i": 11
   },
   {
    "college": "City College of San Francisco",
@@ -494,7 +216,8 @@
     24.0,
     35.0
    ],
-   "path": "kb/program_requirements_college/city_of_san_francisco/records/37602.json"
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/37602.json",
+   "i": 12
   },
   {
    "college": "Clovis Community College",
@@ -511,7 +234,8 @@
     18.0,
     20.0
    ],
-   "path": "kb/program_requirements_college/clovis_community/records/33499.json"
+   "path": "kb/program_requirements_college/clovis_community/records/33499.json",
+   "i": 13
   },
   {
    "college": "Clovis Community College",
@@ -528,7 +252,8 @@
     19.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/clovis_community/records/35886.json"
+   "path": "kb/program_requirements_college/clovis_community/records/35886.json",
+   "i": 14
   },
   {
    "college": "Clovis Community College",
@@ -545,41 +270,8 @@
     18.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/clovis_community/records/36632.json"
-  },
-  {
-   "college": "Clovis Community College",
-   "control_number": "43174",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006155986",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.0,
-    17.0
-   ],
-   "stated": [
-    17.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/clovis_community/records/43174.json"
-  },
-  {
-   "college": "Clovis Community College",
-   "control_number": "43175",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006155986",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.0,
-    17.0
-   ],
-   "stated": [
-    17.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/clovis_community/records/43175.json"
+   "path": "kb/program_requirements_college/clovis_community/records/36632.json",
+   "i": 15
   },
   {
    "college": "Coalinga College",
@@ -596,7 +288,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/coalinga/records/19019.json"
+   "path": "kb/program_requirements_college/coalinga/records/19019.json",
+   "i": 16
   },
   {
    "college": "Coalinga College",
@@ -613,75 +306,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/coalinga/records/19023.json"
-  },
-  {
-   "college": "Coalinga College",
-   "control_number": "35492",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39032865307",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/coalinga/records/35492.json"
-  },
-  {
-   "college": "Coalinga College",
-   "control_number": "39230",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39032865307",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.0,
-    17.0
-   ],
-   "stated": [
-    17.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/coalinga/records/39230.json"
-  },
-  {
-   "college": "Coalinga College",
-   "control_number": "44545",
-   "award": "A.A- T Degree",
-   "extracted_run": "39032865307",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    32.0,
-    32.0
-   ],
-   "stated": [
-    32.0,
-    34.0
-   ],
-   "path": "kb/program_requirements_college/coalinga/records/44545.json"
-  },
-  {
-   "college": "College of the Canyons",
-   "control_number": "32389",
-   "award": "A.A- T Degree",
-   "extracted_run": "39006378829",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/32389.json"
+   "path": "kb/program_requirements_college/coalinga/records/19023.json",
+   "i": 17
   },
   {
    "college": "College of the Canyons",
@@ -698,24 +324,8 @@
     20.0,
     27.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/32723.json"
-  },
-  {
-   "college": "College of the Canyons",
-   "control_number": "33581",
-   "award": "A.A- T Degree",
-   "extracted_run": "39006378829",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/33581.json"
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/32723.json",
+   "i": 18
   },
   {
    "college": "College of the Canyons",
@@ -732,7 +342,8 @@
     19.0,
     22.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/40090.json"
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/40090.json",
+   "i": 19
   },
   {
    "college": "College of the Canyons",
@@ -749,24 +360,8 @@
     31.0,
     34.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/41713.json"
-  },
-  {
-   "college": "College of the Canyons",
-   "control_number": "42861",
-   "award": "A.A- T Degree",
-   "extracted_run": "39006378829",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_canyons/records/42861.json"
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/41713.json",
+   "i": 20
   },
   {
    "college": "College of the Desert",
@@ -783,92 +378,8 @@
     67.5,
     70.5
    ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/04362.json"
-  },
-  {
-   "college": "College of the Desert",
-   "control_number": "18684",
-   "award": "A.S. Degree",
-   "extracted_run": "39056007346",
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    64.0,
-    64.0
-   ],
-   "stated": [
-    64.0,
-    65.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/18684.json"
-  },
-  {
-   "college": "College of the Desert",
-   "control_number": "30546",
-   "award": "A.A- T Degree",
-   "extracted_run": "39056007346",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/30546.json"
-  },
-  {
-   "college": "College of the Desert",
-   "control_number": "33321",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39056007346",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    24.0,
-    24.0
-   ],
-   "stated": [
-    24.0,
-    25.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/33321.json"
-  },
-  {
-   "college": "College of the Desert",
-   "control_number": "44280",
-   "award": "A.A- T Degree",
-   "extracted_run": "39056007346",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/44280.json"
-  },
-  {
-   "college": "College of the Desert",
-   "control_number": "45566",
-   "award": "A.A- T Degree",
-   "extracted_run": "39056007346",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/college_of_the_desert/records/45566.json"
+   "path": "kb/program_requirements_college/college_of_the_desert/records/04362.json",
+   "i": 21
   },
   {
    "college": "College of the Redwoods",
@@ -885,7 +396,8 @@
     78.0,
     81.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_redwoods/records/01831.json"
+   "path": "kb/program_requirements_college/college_of_the_redwoods/records/01831.json",
+   "i": 22
   },
   {
    "college": "College of the Redwoods",
@@ -902,7 +414,8 @@
     62.0,
     65.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_redwoods/records/08393.json"
+   "path": "kb/program_requirements_college/college_of_the_redwoods/records/08393.json",
+   "i": 23
   },
   {
    "college": "College of the Sequoias",
@@ -919,7 +432,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06717.json"
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06717.json",
+   "i": 24
   },
   {
    "college": "College of the Sequoias",
@@ -936,7 +450,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06738.json"
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06738.json",
+   "i": 25
   },
   {
    "college": "College of the Sequoias",
@@ -953,7 +468,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06762.json"
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/06762.json",
+   "i": 26
   },
   {
    "college": "College of the Sequoias",
@@ -970,7 +486,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_sequoias/records/18441.json"
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/18441.json",
+   "i": 27
   },
   {
    "college": "College of the Sequoias",
@@ -987,7 +504,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/college_of_the_sequoias/records/36660.json"
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/36660.json",
+   "i": 28
   },
   {
    "college": "Contra Costa College",
@@ -1004,7 +522,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/contra_costa/records/07598.json"
+   "path": "kb/program_requirements_college/contra_costa/records/07598.json",
+   "i": 29
   },
   {
    "college": "Contra Costa College",
@@ -1021,160 +540,8 @@
     20.0,
     26.0
    ],
-   "path": "kb/program_requirements_college/contra_costa/records/32925.json"
-  },
-  {
-   "college": "Contra Costa College",
-   "control_number": "33353",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "38979730323",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/contra_costa/records/33353.json"
-  },
-  {
-   "college": "Copper Mountain College",
-   "control_number": "32579",
-   "award": "A.S. T Degree",
-   "extracted_run": "39035222722",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/copper_mountain/records/32579.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "11766",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "44090908924",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    36.0,
-    36.0
-   ],
-   "stated": [
-    36.0,
-    37.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/11766.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "30453",
-   "award": "A.A. Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    21.0,
-    21.0
-   ],
-   "stated": [
-    21.0,
-    22.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/30453.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "30556",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/30556.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "31386",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    20.0,
-    20.0
-   ],
-   "stated": [
-    20.0,
-    22.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/31386.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "31388",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/31388.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "33037",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/33037.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "33107",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/33107.json"
+   "path": "kb/program_requirements_college/contra_costa/records/32925.json",
+   "i": 30
   },
   {
    "college": "Crafton Hills College",
@@ -1191,24 +558,8 @@
     27.0,
     34.0
    ],
-   "path": "kb/program_requirements_college/crafton_hills/records/37794.json"
-  },
-  {
-   "college": "Crafton Hills College",
-   "control_number": "43530",
-   "award": "A.A- T Degree",
-   "extracted_run": "39093935031",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/crafton_hills/records/43530.json"
+   "path": "kb/program_requirements_college/crafton_hills/records/37794.json",
+   "i": 31
   },
   {
    "college": "Cuyamaca College",
@@ -1225,7 +576,8 @@
     22.0,
     26.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/05053.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/05053.json",
+   "i": 32
   },
   {
    "college": "Cuyamaca College",
@@ -1242,7 +594,8 @@
     40.0,
     48.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/07753.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/07753.json",
+   "i": 33
   },
   {
    "college": "Cuyamaca College",
@@ -1259,7 +612,8 @@
     34.0,
     37.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/07758.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/07758.json",
+   "i": 34
   },
   {
    "college": "Cuyamaca College",
@@ -1276,7 +630,8 @@
     29.0,
     34.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/12128.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/12128.json",
+   "i": 35
   },
   {
    "college": "Cuyamaca College",
@@ -1293,7 +648,8 @@
     29.0,
     33.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/15701.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/15701.json",
+   "i": 36
   },
   {
    "college": "Cuyamaca College",
@@ -1310,7 +666,8 @@
     26.0,
     29.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/15804.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/15804.json",
+   "i": 37
   },
   {
    "college": "Cuyamaca College",
@@ -1327,7 +684,8 @@
     22.0,
     26.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/21068.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/21068.json",
+   "i": 38
   },
   {
    "college": "Cuyamaca College",
@@ -1344,7 +702,8 @@
     29.0,
     34.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/21072.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/21072.json",
+   "i": 39
   },
   {
    "college": "Cuyamaca College",
@@ -1361,7 +720,8 @@
     34.0,
     37.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/21087.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/21087.json",
+   "i": 40
   },
   {
    "college": "Cuyamaca College",
@@ -1378,7 +738,8 @@
     19.0,
     22.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/42769.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/42769.json",
+   "i": 41
   },
   {
    "college": "Cuyamaca College",
@@ -1395,7 +756,8 @@
     17.0,
     20.0
    ],
-   "path": "kb/program_requirements_college/cuyamaca/records/46455.json"
+   "path": "kb/program_requirements_college/cuyamaca/records/46455.json",
+   "i": 42
   },
   {
    "college": "East Los Angeles College",
@@ -1412,7 +774,8 @@
     60.0,
     61.0
    ],
-   "path": "kb/program_requirements_college/east_los_angeles/records/39823.json"
+   "path": "kb/program_requirements_college/east_los_angeles/records/39823.json",
+   "i": 43
   },
   {
    "college": "East Los Angeles College",
@@ -1429,7 +792,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/east_los_angeles/records/40042.json"
+   "path": "kb/program_requirements_college/east_los_angeles/records/40042.json",
+   "i": 44
   },
   {
    "college": "Evergreen Valley College",
@@ -1446,7 +810,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/evergreen_valley/records/06154.json"
+   "path": "kb/program_requirements_college/evergreen_valley/records/06154.json",
+   "i": 45
   },
   {
    "college": "Evergreen Valley College",
@@ -1463,7 +828,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/evergreen_valley/records/13549.json"
+   "path": "kb/program_requirements_college/evergreen_valley/records/13549.json",
+   "i": 46
   },
   {
    "college": "Evergreen Valley College",
@@ -1480,7 +846,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/evergreen_valley/records/36954.json"
+   "path": "kb/program_requirements_college/evergreen_valley/records/36954.json",
+   "i": 47
   },
   {
    "college": "Evergreen Valley College",
@@ -1497,24 +864,8 @@
     19.0,
     23.0
    ],
-   "path": "kb/program_requirements_college/evergreen_valley/records/46457.json"
-  },
-  {
-   "college": "Feather River College",
-   "control_number": "31895",
-   "award": "A.S. Degree",
-   "extracted_run": "38935127435",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    31.0
-   ],
-   "path": "kb/program_requirements_college/feather_river/records/31895.json"
+   "path": "kb/program_requirements_college/evergreen_valley/records/46457.json",
+   "i": 48
   },
   {
    "college": "Foothill College",
@@ -1531,7 +882,8 @@
     29.0,
     33.0
    ],
-   "path": "kb/program_requirements_college/foothill/records/32417.json"
+   "path": "kb/program_requirements_college/foothill/records/32417.json",
+   "i": 49
   },
   {
    "college": "Foothill College",
@@ -1548,7 +900,8 @@
     30.0,
     38.0
    ],
-   "path": "kb/program_requirements_college/foothill/records/32772.json"
+   "path": "kb/program_requirements_college/foothill/records/32772.json",
+   "i": 50
   },
   {
    "college": "Foothill College",
@@ -1565,7 +918,8 @@
     28.5,
     45.0
    ],
-   "path": "kb/program_requirements_college/foothill/records/33001.json"
+   "path": "kb/program_requirements_college/foothill/records/33001.json",
+   "i": 51
   },
   {
    "college": "Foothill College",
@@ -1582,24 +936,8 @@
     52.0,
     53.5
    ],
-   "path": "kb/program_requirements_college/foothill/records/33359.json"
-  },
-  {
-   "college": "Foothill College",
-   "control_number": "42334",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39671107254",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    24.0,
-    24.0
-   ],
-   "stated": [
-    24.0,
-    27.0
-   ],
-   "path": "kb/program_requirements_college/foothill/records/42334.json"
+   "path": "kb/program_requirements_college/foothill/records/33359.json",
+   "i": 52
   },
   {
    "college": "Fresno City College",
@@ -1616,41 +954,8 @@
     18.0,
     23.5
    ],
-   "path": "kb/program_requirements_college/fresno_city/records/41433.json"
-  },
-  {
-   "college": "Fullerton College",
-   "control_number": "18164",
-   "award": "A.A. Degree",
-   "extracted_run": "38675136988",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    22.0
-   ],
-   "path": "kb/program_requirements_college/fullerton/records/18164.json"
-  },
-  {
-   "college": "Gavilan College",
-   "control_number": "31771",
-   "award": "A.A- T Degree",
-   "extracted_run": "38948144064",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    21.0,
-    21.0
-   ],
-   "stated": [
-    21.0,
-    24.0
-   ],
-   "path": "kb/program_requirements_college/gavilan/records/31771.json"
+   "path": "kb/program_requirements_college/fresno_city/records/41433.json",
+   "i": 53
   },
   {
    "college": "Glendale Community College",
@@ -1667,24 +972,8 @@
     16.0,
     18.0
    ],
-   "path": "kb/program_requirements_college/glendale_community/records/19560.json"
-  },
-  {
-   "college": "Glendale Community College",
-   "control_number": "19581",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "43415972509",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    27.0,
-    27.0
-   ],
-   "stated": [
-    27.0,
-    30.0
-   ],
-   "path": "kb/program_requirements_college/glendale_community/records/19581.json"
+   "path": "kb/program_requirements_college/glendale_community/records/19560.json",
+   "i": 54
   },
   {
    "college": "Glendale Community College",
@@ -1701,7 +990,8 @@
     19.0,
     21.5
    ],
-   "path": "kb/program_requirements_college/glendale_community/records/30813.json"
+   "path": "kb/program_requirements_college/glendale_community/records/30813.json",
+   "i": 55
   },
   {
    "college": "Glendale Community College",
@@ -1718,75 +1008,8 @@
     20.0,
     25.0
    ],
-   "path": "kb/program_requirements_college/glendale_community/records/32462.json"
-  },
-  {
-   "college": "Glendale Community College",
-   "control_number": "44484",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "43415972509",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    17.0
-   ],
-   "path": "kb/program_requirements_college/glendale_community/records/44484.json"
-  },
-  {
-   "college": "Glendale Community College",
-   "control_number": "44486",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "43415972509",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    18.5
-   ],
-   "path": "kb/program_requirements_college/glendale_community/records/44486.json"
-  },
-  {
-   "college": "Glendale Community College",
-   "control_number": "44487",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "43415972509",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.0,
-    17.0
-   ],
-   "stated": [
-    17.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/glendale_community/records/44487.json"
-  },
-  {
-   "college": "Glendale Community College",
-   "control_number": "44488",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "43415972509",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    19.5
-   ],
-   "path": "kb/program_requirements_college/glendale_community/records/44488.json"
+   "path": "kb/program_requirements_college/glendale_community/records/32462.json",
+   "i": 56
   },
   {
    "college": "Golden West College",
@@ -1803,24 +1026,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/golden_west/records/03903.json"
-  },
-  {
-   "college": "Golden West College",
-   "control_number": "31432",
-   "award": "A.A- T Degree",
-   "extracted_run": "39688079435",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/golden_west/records/31432.json"
+   "path": "kb/program_requirements_college/golden_west/records/03903.json",
+   "i": 57
   },
   {
    "college": "Golden West College",
@@ -1837,7 +1044,8 @@
     21.0,
     26.0
    ],
-   "path": "kb/program_requirements_college/golden_west/records/32118.json"
+   "path": "kb/program_requirements_college/golden_west/records/32118.json",
+   "i": 58
   },
   {
    "college": "Golden West College",
@@ -1854,24 +1062,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/golden_west/records/45056.json"
-  },
-  {
-   "college": "Grossmont College",
-   "control_number": "37453",
-   "award": "A.A- T Degree",
-   "extracted_run": 43355014570,
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/grossmont/records/37453.json"
+   "path": "kb/program_requirements_college/golden_west/records/45056.json",
+   "i": 59
   },
   {
    "college": "Imperial Valley College",
@@ -1888,24 +1080,8 @@
     23.0,
     27.0
    ],
-   "path": "kb/program_requirements_college/imperial_valley/records/32662.json"
-  },
-  {
-   "college": "Irvine Valley College",
-   "control_number": "04179",
-   "award": "A.A. Degree",
-   "extracted_run": "39539599944",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.5
-   ],
-   "path": "kb/program_requirements_college/irvine_valley/records/04179.json"
+   "path": "kb/program_requirements_college/imperial_valley/records/32662.json",
+   "i": 60
   },
   {
    "college": "Laney College",
@@ -1922,7 +1098,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/laney/records/01163.json"
+   "path": "kb/program_requirements_college/laney/records/01163.json",
+   "i": 61
   },
   {
    "college": "Laney College",
@@ -1939,24 +1116,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/laney/records/09034.json"
-  },
-  {
-   "college": "Laney College",
-   "control_number": "36089",
-   "award": "A.S. Degree",
-   "extracted_run": "38935141023",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/laney/records/36089.json"
+   "path": "kb/program_requirements_college/laney/records/09034.json",
+   "i": 62
   },
   {
    "college": "Laney College",
@@ -1973,75 +1134,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/laney/records/42812.json"
-  },
-  {
-   "college": "Lassen College",
-   "control_number": "45344",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006337658",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/lassen/records/45344.json"
-  },
-  {
-   "college": "Lassen College",
-   "control_number": "45346",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006337658",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/lassen/records/45346.json"
-  },
-  {
-   "college": "Lassen College",
-   "control_number": "45611",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006337658",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    18.0
-   ],
-   "path": "kb/program_requirements_college/lassen/records/45611.json"
-  },
-  {
-   "college": "Los Angeles City College",
-   "control_number": "32496",
-   "award": "A.A- T Degree",
-   "extracted_run": "43212072618",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    21.0,
-    21.0
-   ],
-   "stated": [
-    21.0,
-    22.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_city/records/32496.json"
+   "path": "kb/program_requirements_college/laney/records/42812.json",
+   "i": 63
   },
   {
    "college": "Los Angeles City College",
@@ -2058,41 +1152,8 @@
     18.0,
     20.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_city/records/43169.json"
-  },
-  {
-   "college": "Los Angeles City College",
-   "control_number": "44931",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006380342",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.5,
-    17.5
-   ],
-   "stated": [
-    17.5,
-    18.5
-   ],
-   "path": "kb/program_requirements_college/los_angeles_city/records/44931.json"
-  },
-  {
-   "college": "Los Angeles City College",
-   "control_number": "46527",
-   "award": "A.A- T Degree",
-   "extracted_run": "43212072618",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_city/records/46527.json"
+   "path": "kb/program_requirements_college/los_angeles_city/records/43169.json",
+   "i": 64
   },
   {
    "college": "Los Angeles Harbor College",
@@ -2109,109 +1170,8 @@
     24.0,
     25.5
    ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/10693.json"
-  },
-  {
-   "college": "Los Angeles Harbor College",
-   "control_number": "18706",
-   "award": "A.A. Degree",
-   "extracted_run": "39006381839",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/18706.json"
-  },
-  {
-   "college": "Los Angeles Harbor College",
-   "control_number": "18708",
-   "award": "A.A. Degree",
-   "extracted_run": "39006381839",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/18708.json"
-  },
-  {
-   "college": "Los Angeles Harbor College",
-   "control_number": "18709",
-   "award": "A.A. Degree",
-   "extracted_run": "39006381839",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/18709.json"
-  },
-  {
-   "college": "Los Angeles Harbor College",
-   "control_number": "31029",
-   "award": "A.A- T Degree",
-   "extracted_run": "39006381839",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    24.0,
-    24.0
-   ],
-   "stated": [
-    24.0,
-    26.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/31029.json"
-  },
-  {
-   "college": "Los Angeles Harbor College",
-   "control_number": "33087",
-   "award": "A.S. T Degree",
-   "extracted_run": "39006381839",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_harbor/records/33087.json"
-  },
-  {
-   "college": "Los Angeles Trade Technical College",
-   "control_number": "30904",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "extracted_run": "39054673977",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    21.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/30904.json"
+   "path": "kb/program_requirements_college/los_angeles_harbor/records/10693.json",
+   "i": 65
   },
   {
    "college": "Los Angeles Trade Technical College",
@@ -2228,58 +1188,8 @@
     40.0,
     43.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/30963.json"
-  },
-  {
-   "college": "Los Angeles Trade Technical College",
-   "control_number": "31081",
-   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-   "extracted_run": "39054673977",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    26.0,
-    26.0
-   ],
-   "stated": [
-    26.0,
-    28.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/31081.json"
-  },
-  {
-   "college": "Los Angeles Trade Technical College",
-   "control_number": "31090",
-   "award": "A.S. Degree",
-   "extracted_run": "39115770293",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    40.0,
-    40.0
-   ],
-   "stated": [
-    40.0,
-    42.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/31090.json"
-  },
-  {
-   "college": "Los Angeles Trade Technical College",
-   "control_number": "31280",
-   "award": "A.S. Degree",
-   "extracted_run": "39115770293",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    40.0,
-    40.0
-   ],
-   "stated": [
-    40.0,
-    42.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/31280.json"
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/30963.json",
+   "i": 66
   },
   {
    "college": "Los Angeles Trade Technical College",
@@ -2296,24 +1206,8 @@
     21.0,
     24.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/32948.json"
-  },
-  {
-   "college": "Los Angeles Valley College",
-   "control_number": "30699",
-   "award": "A.A- T Degree",
-   "extracted_run": 41114987325,
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_valley/records/30699.json"
+   "path": "kb/program_requirements_college/los_angeles_trade_technical/records/32948.json",
+   "i": 67
   },
   {
    "college": "Los Angeles Valley College",
@@ -2330,7 +1224,8 @@
     32.0,
     49.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_valley/records/33593.json"
+   "path": "kb/program_requirements_college/los_angeles_valley/records/33593.json",
+   "i": 68
   },
   {
    "college": "Los Angeles Valley College",
@@ -2347,7 +1242,8 @@
     18.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_valley/records/33629.json"
+   "path": "kb/program_requirements_college/los_angeles_valley/records/33629.json",
+   "i": 69
   },
   {
    "college": "Los Angeles Valley College",
@@ -2364,41 +1260,8 @@
     21.0,
     25.0
    ],
-   "path": "kb/program_requirements_college/los_angeles_valley/records/35526.json"
-  },
-  {
-   "college": "Los Angeles Valley College",
-   "control_number": "43774",
-   "award": "A.A- T Degree",
-   "extracted_run": 41114987325,
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/los_angeles_valley/records/43774.json"
-  },
-  {
-   "college": "Mendocino College",
-   "control_number": "31425",
-   "award": "A.A- T Degree",
-   "extracted_run": "39006339282",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/mendocino/records/31425.json"
+   "path": "kb/program_requirements_college/los_angeles_valley/records/35526.json",
+   "i": 70
   },
   {
    "college": "Merced College",
@@ -2415,7 +1278,8 @@
     39.0,
     42.0
    ],
-   "path": "kb/program_requirements_college/merced/records/03483.json"
+   "path": "kb/program_requirements_college/merced/records/03483.json",
+   "i": 71
   },
   {
    "college": "MiraCosta College",
@@ -2432,7 +1296,8 @@
     22.0,
     27.0
    ],
-   "path": "kb/program_requirements_college/miracosta/records/37407.json"
+   "path": "kb/program_requirements_college/miracosta/records/37407.json",
+   "i": 72
   },
   {
    "college": "Mission College",
@@ -2449,7 +1314,8 @@
     31.0,
     35.0
    ],
-   "path": "kb/program_requirements_college/mission/records/06288.json"
+   "path": "kb/program_requirements_college/mission/records/06288.json",
+   "i": 73
   },
   {
    "college": "Mission College",
@@ -2466,7 +1332,8 @@
     19.0,
     23.0
    ],
-   "path": "kb/program_requirements_college/mission/records/43230.json"
+   "path": "kb/program_requirements_college/mission/records/43230.json",
+   "i": 74
   },
   {
    "college": "Moorpark College",
@@ -2483,7 +1350,8 @@
     64.0,
     64.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/06847.json"
+   "path": "kb/program_requirements_college/moorpark/records/06847.json",
+   "i": 75
   },
   {
    "college": "Moorpark College",
@@ -2500,7 +1368,8 @@
     60.0,
     64.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/06859.json"
+   "path": "kb/program_requirements_college/moorpark/records/06859.json",
+   "i": 76
   },
   {
    "college": "Moorpark College",
@@ -2517,7 +1386,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/06878.json"
+   "path": "kb/program_requirements_college/moorpark/records/06878.json",
+   "i": 77
   },
   {
    "college": "Moorpark College",
@@ -2534,7 +1404,8 @@
     60.0,
     66.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/07106.json"
+   "path": "kb/program_requirements_college/moorpark/records/07106.json",
+   "i": 78
   },
   {
    "college": "Moorpark College",
@@ -2551,7 +1422,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/07114.json"
+   "path": "kb/program_requirements_college/moorpark/records/07114.json",
+   "i": 79
   },
   {
    "college": "Moorpark College",
@@ -2568,7 +1440,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/07123.json"
+   "path": "kb/program_requirements_college/moorpark/records/07123.json",
+   "i": 80
   },
   {
    "college": "Moorpark College",
@@ -2585,7 +1458,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/07124.json"
+   "path": "kb/program_requirements_college/moorpark/records/07124.json",
+   "i": 81
   },
   {
    "college": "Moorpark College",
@@ -2602,7 +1476,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/33686.json"
+   "path": "kb/program_requirements_college/moorpark/records/33686.json",
+   "i": 82
   },
   {
    "college": "Moorpark College",
@@ -2619,24 +1494,8 @@
     60.0,
     68.0
    ],
-   "path": "kb/program_requirements_college/moorpark/records/46473.json"
-  },
-  {
-   "college": "Mt. San Jacinto College",
-   "control_number": "38847",
-   "award": "A.S. T Degree",
-   "extracted_run": "39779328144",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    35.0
-   ],
-   "path": "kb/program_requirements_college/mt_san_jacinto/records/38847.json"
+   "path": "kb/program_requirements_college/moorpark/records/46473.json",
+   "i": 83
   },
   {
    "college": "Mt. San Jacinto College",
@@ -2653,41 +1512,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/mt_san_jacinto/records/40386.json"
-  },
-  {
-   "college": "Napa Valley College",
-   "control_number": "32314",
-   "award": "A.A- T Degree",
-   "extracted_run": "38748853261",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    21.0
-   ],
-   "path": "kb/program_requirements_college/napa_valley/records/32314.json"
-  },
-  {
-   "college": "Orange Coast College",
-   "control_number": "08629",
-   "award": "A.S. Degree",
-   "extracted_run": 43136182950,
-   "against": "degree",
-   "how": "short_high",
-   "computed": [
-    77.5,
-    77.5
-   ],
-   "stated": [
-    77.5,
-    80.5
-   ],
-   "path": "kb/program_requirements_college/orange_coast/records/08629.json"
+   "path": "kb/program_requirements_college/mt_san_jacinto/records/40386.json",
+   "i": 84
   },
   {
    "college": "Oxnard College",
@@ -2704,58 +1530,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/oxnard/records/06899.json"
-  },
-  {
-   "college": "Oxnard College",
-   "control_number": "30820",
-   "award": "A.A- T Degree",
-   "extracted_run": "38842203500",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/oxnard/records/30820.json"
-  },
-  {
-   "college": "Oxnard College",
-   "control_number": "32109",
-   "award": "A.S. Degree",
-   "extracted_run": "39612119359",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    33.0
-   ],
-   "path": "kb/program_requirements_college/oxnard/records/32109.json"
-  },
-  {
-   "college": "Oxnard College",
-   "control_number": "32110",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "extracted_run": "39612119359",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    33.0
-   ],
-   "path": "kb/program_requirements_college/oxnard/records/32110.json"
+   "path": "kb/program_requirements_college/oxnard/records/06899.json",
+   "i": 85
   },
   {
    "college": "Oxnard College",
@@ -2772,24 +1548,8 @@
     39.0,
     41.0
    ],
-   "path": "kb/program_requirements_college/oxnard/records/37398.json"
-  },
-  {
-   "college": "Oxnard College",
-   "control_number": "37639",
-   "award": "A.A. Degree",
-   "extracted_run": "39612119359",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/oxnard/records/37639.json"
+   "path": "kb/program_requirements_college/oxnard/records/37398.json",
+   "i": 86
   },
   {
    "college": "Oxnard College",
@@ -2806,7 +1566,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/oxnard/records/40769.json"
+   "path": "kb/program_requirements_college/oxnard/records/40769.json",
+   "i": 87
   },
   {
    "college": "Oxnard College",
@@ -2823,7 +1584,8 @@
     60.0,
     68.0
    ],
-   "path": "kb/program_requirements_college/oxnard/records/46369.json"
+   "path": "kb/program_requirements_college/oxnard/records/46369.json",
+   "i": 88
   },
   {
    "college": "Oxnard College",
@@ -2840,7 +1602,8 @@
     60.0,
     63.0
    ],
-   "path": "kb/program_requirements_college/oxnard/records/46385.json"
+   "path": "kb/program_requirements_college/oxnard/records/46385.json",
+   "i": 89
   },
   {
    "college": "Palo Verde College",
@@ -2857,58 +1620,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/palo_verde/records/45376.json"
-  },
-  {
-   "college": "Palomar College",
-   "control_number": "33736",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "extracted_run": "38843467865",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    12.0,
-    12.0
-   ],
-   "stated": [
-    12.0,
-    17.0
-   ],
-   "path": "kb/program_requirements_college/palomar/records/33736.json"
-  },
-  {
-   "college": "Palomar College",
-   "control_number": "44988",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "extracted_run": "38843467865",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    12.0,
-    12.0
-   ],
-   "stated": [
-    12.0,
-    17.0
-   ],
-   "path": "kb/program_requirements_college/palomar/records/44988.json"
-  },
-  {
-   "college": "Pasadena City College",
-   "control_number": "22634",
-   "award": "Certificate of Achievement requiring 60+S/90+Q units",
-   "extracted_run": "39061730187",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    78.0,
-    78.0
-   ],
-   "stated": [
-    78.0,
-    81.0
-   ],
-   "path": "kb/program_requirements_college/pasadena_city/records/22634.json"
+   "path": "kb/program_requirements_college/palo_verde/records/45376.json",
+   "i": 90
   },
   {
    "college": "Pasadena City College",
@@ -2925,7 +1638,8 @@
     19.0,
     24.0
    ],
-   "path": "kb/program_requirements_college/pasadena_city/records/31428.json"
+   "path": "kb/program_requirements_college/pasadena_city/records/31428.json",
+   "i": 91
   },
   {
    "college": "Porterville College",
@@ -2942,24 +1656,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/porterville/records/45637.json"
-  },
-  {
-   "college": "Reedley College",
-   "control_number": "35745",
-   "award": "A.A- T Degree",
-   "extracted_run": "39616074283",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    49.0,
-    49.0
-   ],
-   "stated": [
-    49.0,
-    52.0
-   ],
-   "path": "kb/program_requirements_college/reedley/records/35745.json"
+   "path": "kb/program_requirements_college/porterville/records/45637.json",
+   "i": 92
   },
   {
    "college": "Sacramento City College",
@@ -2976,41 +1674,8 @@
     16.0,
     25.0
    ],
-   "path": "kb/program_requirements_college/sacramento_city/records/33801.json"
-  },
-  {
-   "college": "San Bernardino Valley College",
-   "control_number": "09255",
-   "award": "A.A. Degree",
-   "extracted_run": "38748858322",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    31.0
-   ],
-   "path": "kb/program_requirements_college/san_bernardino_valley/records/09255.json"
-  },
-  {
-   "college": "San Bernardino Valley College",
-   "control_number": "16509",
-   "award": "A.A. Degree",
-   "extracted_run": "38748858322",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    30.0,
-    30.0
-   ],
-   "stated": [
-    30.0,
-    31.0
-   ],
-   "path": "kb/program_requirements_college/san_bernardino_valley/records/16509.json"
+   "path": "kb/program_requirements_college/sacramento_city/records/33801.json",
+   "i": 93
   },
   {
    "college": "San Bernardino Valley College",
@@ -3027,24 +1692,8 @@
     19.0,
     22.0
    ],
-   "path": "kb/program_requirements_college/san_bernardino_valley/records/32595.json"
-  },
-  {
-   "college": "San Bernardino Valley College",
-   "control_number": "44013",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "38748858322",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    16.0,
-    16.0
-   ],
-   "stated": [
-    16.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/san_bernardino_valley/records/44013.json"
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/32595.json",
+   "i": 94
   },
   {
    "college": "San Jose City College",
@@ -3061,7 +1710,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/san_jose_city/records/42242.json"
+   "path": "kb/program_requirements_college/san_jose_city/records/42242.json",
+   "i": 95
   },
   {
    "college": "Santa Ana College",
@@ -3078,7 +1728,8 @@
     11.5,
     15.0
    ],
-   "path": "kb/program_requirements_college/santa_ana/records/08745.json"
+   "path": "kb/program_requirements_college/santa_ana/records/08745.json",
+   "i": 96
   },
   {
    "college": "Santa Ana College",
@@ -3095,7 +1746,8 @@
     39.5,
     43.0
    ],
-   "path": "kb/program_requirements_college/santa_ana/records/10664.json"
+   "path": "kb/program_requirements_college/santa_ana/records/10664.json",
+   "i": 97
   },
   {
    "college": "Santa Ana College",
@@ -3112,41 +1764,8 @@
     39.5,
     43.0
    ],
-   "path": "kb/program_requirements_college/santa_ana/records/21783.json"
-  },
-  {
-   "college": "Santa Ana College",
-   "control_number": "32050",
-   "award": "A.A- T Degree",
-   "extracted_run": "38843461766",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    25.0,
-    25.0
-   ],
-   "stated": [
-    25.0,
-    26.0
-   ],
-   "path": "kb/program_requirements_college/santa_ana/records/32050.json"
-  },
-  {
-   "college": "Santa Barbara City College",
-   "control_number": "19011",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "38670933359",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    21.0
-   ],
-   "path": "kb/program_requirements_college/santa_barbara_city/records/19011.json"
+   "path": "kb/program_requirements_college/santa_ana/records/21783.json",
+   "i": 98
   },
   {
    "college": "Santa Barbara City College",
@@ -3163,7 +1782,8 @@
     19.0,
     23.0
    ],
-   "path": "kb/program_requirements_college/santa_barbara_city/records/30746.json"
+   "path": "kb/program_requirements_college/santa_barbara_city/records/30746.json",
+   "i": 99
   },
   {
    "college": "Santa Barbara City College",
@@ -3180,7 +1800,8 @@
     18.0,
     23.0
    ],
-   "path": "kb/program_requirements_college/santa_barbara_city/records/33257.json"
+   "path": "kb/program_requirements_college/santa_barbara_city/records/33257.json",
+   "i": 100
   },
   {
    "college": "Santa Barbara City College",
@@ -3197,7 +1818,8 @@
     21.0,
     27.0
    ],
-   "path": "kb/program_requirements_college/santa_barbara_city/records/33664.json"
+   "path": "kb/program_requirements_college/santa_barbara_city/records/33664.json",
+   "i": 101
   },
   {
    "college": "Santa Barbara City College",
@@ -3214,7 +1836,8 @@
     18.0,
     24.0
    ],
-   "path": "kb/program_requirements_college/santa_barbara_city/records/43540.json"
+   "path": "kb/program_requirements_college/santa_barbara_city/records/43540.json",
+   "i": 102
   },
   {
    "college": "Santiago Canyon College",
@@ -3231,7 +1854,8 @@
     27.0,
     28.5
    ],
-   "path": "kb/program_requirements_college/santiago_canyon/records/41770.json"
+   "path": "kb/program_requirements_college/santiago_canyon/records/41770.json",
+   "i": 103
   },
   {
    "college": "Shasta College",
@@ -3248,7 +1872,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06412.json"
+   "path": "kb/program_requirements_college/shasta/records/06412.json",
+   "i": 104
   },
   {
    "college": "Shasta College",
@@ -3265,7 +1890,8 @@
     60.5,
     60.5
    ],
-   "path": "kb/program_requirements_college/shasta/records/06423.json"
+   "path": "kb/program_requirements_college/shasta/records/06423.json",
+   "i": 105
   },
   {
    "college": "Shasta College",
@@ -3282,7 +1908,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06430.json"
+   "path": "kb/program_requirements_college/shasta/records/06430.json",
+   "i": 106
   },
   {
    "college": "Shasta College",
@@ -3299,7 +1926,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06433.json"
+   "path": "kb/program_requirements_college/shasta/records/06433.json",
+   "i": 107
   },
   {
    "college": "Shasta College",
@@ -3316,7 +1944,8 @@
     82.0,
     82.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06440.json"
+   "path": "kb/program_requirements_college/shasta/records/06440.json",
+   "i": 108
   },
   {
    "college": "Shasta College",
@@ -3333,7 +1962,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06444.json"
+   "path": "kb/program_requirements_college/shasta/records/06444.json",
+   "i": 109
   },
   {
    "college": "Shasta College",
@@ -3350,7 +1980,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/06457.json"
+   "path": "kb/program_requirements_college/shasta/records/06457.json",
+   "i": 110
   },
   {
    "college": "Shasta College",
@@ -3367,7 +1998,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/09477.json"
+   "path": "kb/program_requirements_college/shasta/records/09477.json",
+   "i": 111
   },
   {
    "college": "Shasta College",
@@ -3384,7 +2016,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/09478.json"
+   "path": "kb/program_requirements_college/shasta/records/09478.json",
+   "i": 112
   },
   {
    "college": "Shasta College",
@@ -3401,7 +2034,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/09485.json"
+   "path": "kb/program_requirements_college/shasta/records/09485.json",
+   "i": 113
   },
   {
    "college": "Shasta College",
@@ -3418,7 +2052,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/09505.json"
+   "path": "kb/program_requirements_college/shasta/records/09505.json",
+   "i": 114
   },
   {
    "college": "Shasta College",
@@ -3435,7 +2070,8 @@
     103.0,
     103.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/09513.json"
+   "path": "kb/program_requirements_college/shasta/records/09513.json",
+   "i": 115
   },
   {
    "college": "Shasta College",
@@ -3452,7 +2088,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/10718.json"
+   "path": "kb/program_requirements_college/shasta/records/10718.json",
+   "i": 116
   },
   {
    "college": "Shasta College",
@@ -3469,7 +2106,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/17479.json"
+   "path": "kb/program_requirements_college/shasta/records/17479.json",
+   "i": 117
   },
   {
    "college": "Shasta College",
@@ -3486,24 +2124,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/30491.json"
-  },
-  {
-   "college": "Shasta College",
-   "control_number": "31844",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39006384701",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    21.0
-   ],
-   "path": "kb/program_requirements_college/shasta/records/31844.json"
+   "path": "kb/program_requirements_college/shasta/records/30491.json",
+   "i": 118
   },
   {
    "college": "Shasta College",
@@ -3520,7 +2142,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/38138.json"
+   "path": "kb/program_requirements_college/shasta/records/38138.json",
+   "i": 119
   },
   {
    "college": "Shasta College",
@@ -3537,7 +2160,8 @@
     64.0,
     64.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/43880.json"
+   "path": "kb/program_requirements_college/shasta/records/43880.json",
+   "i": 120
   },
   {
    "college": "Shasta College",
@@ -3554,7 +2178,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/shasta/records/44718.json"
+   "path": "kb/program_requirements_college/shasta/records/44718.json",
+   "i": 121
   },
   {
    "college": "Solano Community College",
@@ -3571,75 +2196,8 @@
     25.0,
     32.0
    ],
-   "path": "kb/program_requirements_college/solano_community/records/20981.json"
-  },
-  {
-   "college": "Southwestern College",
-   "control_number": "05400",
-   "award": "A.S. Degree",
-   "extracted_run": "38563578596",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    61.5,
-    61.5
-   ],
-   "stated": [
-    61.5,
-    70.0
-   ],
-   "path": "kb/program_requirements_college/southwestern/records/05400.json"
-  },
-  {
-   "college": "Southwestern College",
-   "control_number": "20731",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "extracted_run": "38563578596",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    61.5,
-    61.5
-   ],
-   "stated": [
-    61.5,
-    70.0
-   ],
-   "path": "kb/program_requirements_college/southwestern/records/20731.json"
-  },
-  {
-   "college": "Southwestern College",
-   "control_number": "31624",
-   "award": "A.A. Degree",
-   "extracted_run": "38563578596",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    22.0,
-    22.0
-   ],
-   "stated": [
-    22.0,
-    26.0
-   ],
-   "path": "kb/program_requirements_college/southwestern/records/31624.json"
-  },
-  {
-   "college": "Southwestern College",
-   "control_number": "31889",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "38563578596",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    17.0,
-    17.0
-   ],
-   "stated": [
-    17.0,
-    19.0
-   ],
-   "path": "kb/program_requirements_college/southwestern/records/31889.json"
+   "path": "kb/program_requirements_college/solano_community/records/20981.json",
+   "i": 122
   },
   {
    "college": "Southwestern College",
@@ -3656,24 +2214,8 @@
     18.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/southwestern/records/32659.json"
-  },
-  {
-   "college": "Southwestern College",
-   "control_number": "32733",
-   "award": "A.A- T Degree",
-   "extracted_run": "38563578596",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    19.0,
-    19.0
-   ],
-   "stated": [
-    19.0,
-    20.0
-   ],
-   "path": "kb/program_requirements_college/southwestern/records/32733.json"
+   "path": "kb/program_requirements_college/southwestern/records/32659.json",
+   "i": 123
   },
   {
    "college": "Southwestern College",
@@ -3690,7 +2232,8 @@
     19.0,
     23.0
    ],
-   "path": "kb/program_requirements_college/southwestern/records/32760.json"
+   "path": "kb/program_requirements_college/southwestern/records/32760.json",
+   "i": 124
   },
   {
    "college": "Taft College",
@@ -3707,24 +2250,8 @@
     41.0,
     45.0
    ],
-   "path": "kb/program_requirements_college/taft/records/43511.json"
-  },
-  {
-   "college": "Taft College",
-   "control_number": "44621",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "extracted_run": "39100858309",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    21.0,
-    21.0
-   ],
-   "stated": [
-    21.0,
-    25.0
-   ],
-   "path": "kb/program_requirements_college/taft/records/44621.json"
+   "path": "kb/program_requirements_college/taft/records/43511.json",
+   "i": 125
   },
   {
    "college": "Ventura College",
@@ -3741,7 +2268,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06971.json"
+   "path": "kb/program_requirements_college/ventura/records/06971.json",
+   "i": 126
   },
   {
    "college": "Ventura College",
@@ -3758,7 +2286,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06972.json"
+   "path": "kb/program_requirements_college/ventura/records/06972.json",
+   "i": 127
   },
   {
    "college": "Ventura College",
@@ -3775,7 +2304,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06976.json"
+   "path": "kb/program_requirements_college/ventura/records/06976.json",
+   "i": 128
   },
   {
    "college": "Ventura College",
@@ -3792,7 +2322,8 @@
     79.0,
     79.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06980.json"
+   "path": "kb/program_requirements_college/ventura/records/06980.json",
+   "i": 129
   },
   {
    "college": "Ventura College",
@@ -3809,7 +2340,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06992.json"
+   "path": "kb/program_requirements_college/ventura/records/06992.json",
+   "i": 130
   },
   {
    "college": "Ventura College",
@@ -3826,7 +2358,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/06993.json"
+   "path": "kb/program_requirements_college/ventura/records/06993.json",
+   "i": 131
   },
   {
    "college": "Ventura College",
@@ -3843,24 +2376,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/15323.json"
-  },
-  {
-   "college": "Ventura College",
-   "control_number": "35198",
-   "award": "A.A- T Degree",
-   "extracted_run": "39622549965",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    21.0,
-    21.0
-   ],
-   "stated": [
-    21.0,
-    22.0
-   ],
-   "path": "kb/program_requirements_college/ventura/records/35198.json"
+   "path": "kb/program_requirements_college/ventura/records/15323.json",
+   "i": 132
   },
   {
    "college": "Ventura College",
@@ -3877,7 +2394,8 @@
     60.0,
     61.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/40713.json"
+   "path": "kb/program_requirements_college/ventura/records/40713.json",
+   "i": 133
   },
   {
    "college": "Ventura College",
@@ -3894,7 +2412,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/41884.json"
+   "path": "kb/program_requirements_college/ventura/records/41884.json",
+   "i": 134
   },
   {
    "college": "Ventura College",
@@ -3911,7 +2430,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/43209.json"
+   "path": "kb/program_requirements_college/ventura/records/43209.json",
+   "i": 135
   },
   {
    "college": "Ventura College",
@@ -3928,7 +2448,8 @@
     63.0,
     63.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/44993.json"
+   "path": "kb/program_requirements_college/ventura/records/44993.json",
+   "i": 136
   },
   {
    "college": "Ventura College",
@@ -3945,7 +2466,8 @@
     61.0,
     61.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45198.json"
+   "path": "kb/program_requirements_college/ventura/records/45198.json",
+   "i": 137
   },
   {
    "college": "Ventura College",
@@ -3962,7 +2484,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45422.json"
+   "path": "kb/program_requirements_college/ventura/records/45422.json",
+   "i": 138
   },
   {
    "college": "Ventura College",
@@ -3979,7 +2502,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45488.json"
+   "path": "kb/program_requirements_college/ventura/records/45488.json",
+   "i": 139
   },
   {
    "college": "Ventura College",
@@ -3996,7 +2520,8 @@
     62.0,
     62.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45503.json"
+   "path": "kb/program_requirements_college/ventura/records/45503.json",
+   "i": 140
   },
   {
    "college": "Ventura College",
@@ -4013,7 +2538,8 @@
     60.0,
     66.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45529.json"
+   "path": "kb/program_requirements_college/ventura/records/45529.json",
+   "i": 141
   },
   {
    "college": "Ventura College",
@@ -4030,7 +2556,8 @@
     33.0,
     46.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/45831.json"
+   "path": "kb/program_requirements_college/ventura/records/45831.json",
+   "i": 142
   },
   {
    "college": "Ventura College",
@@ -4047,41 +2574,8 @@
     60.0,
     60.0
    ],
-   "path": "kb/program_requirements_college/ventura/records/46422.json"
-  },
-  {
-   "college": "Victor Valley College",
-   "control_number": "37582",
-   "award": "A.S. T Degree",
-   "extracted_run": "38675237912",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    26.0,
-    26.0
-   ],
-   "stated": [
-    26.0,
-    28.0
-   ],
-   "path": "kb/program_requirements_college/victor_valley/records/37582.json"
-  },
-  {
-   "college": "Victor Valley College",
-   "control_number": "41784",
-   "award": "A.S. T Degree",
-   "extracted_run": "38675237912",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    26.0,
-    26.0
-   ],
-   "stated": [
-    26.0,
-    28.0
-   ],
-   "path": "kb/program_requirements_college/victor_valley/records/41784.json"
+   "path": "kb/program_requirements_college/ventura/records/46422.json",
+   "i": 143
   },
   {
    "college": "Yuba College",
@@ -4098,24 +2592,8 @@
     19.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/yuba/records/07014.json"
-  },
-  {
-   "college": "Yuba College",
-   "control_number": "07146",
-   "award": "A.S. Degree",
-   "extracted_run": "39006517642",
-   "against": "program",
-   "how": "short_high",
-   "computed": [
-    33.0,
-    33.0
-   ],
-   "stated": [
-    33.0,
-    34.0
-   ],
-   "path": "kb/program_requirements_college/yuba/records/07146.json"
+   "path": "kb/program_requirements_college/yuba/records/07014.json",
+   "i": 144
   },
   {
    "college": "Yuba College",
@@ -4132,10 +2610,15 @@
     19.0,
     21.0
    ],
-   "path": "kb/program_requirements_college/yuba/records/20210.json"
+   "path": "kb/program_requirements_college/yuba/records/20210.json",
+   "i": 145
   }
  ],
- "apply": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Allan Hancock College', '33693', 38843474519),\n  ('Antelope Valley College', '17750', 38979725726),\n  ('Barstow Community College', '18491', 39006332820),\n  ('Berkeley City College', '37921', 39891604919),\n  ('Berkeley City College', '37935', 39891604919),\n  ('Butte College', '01323', 42973457189),\n  ('Butte College', '01325', 42985449223),\n  ('Butte College', '35937', 42985449223),\n  ('Butte College', '38056', 42973457189),\n  ('Butte College', '38059', 42985449223),\n  ('Butte College', '38066', 42985449223),\n  ('Butte College', '43185', 42985449223),\n  ('Butte College', '43186', 42973457189),\n  ('Cañada College', '30834', 39202270482),\n  ('Cerro Coso Community College', '30766', 43520153161),\n  ('Chabot College', '37172', 38843479215),\n  ('Chabot College', '37910', 38843479215),\n  ('Chabot College', '44597', 38843479215),\n  ('Chabot College', '44791', 38843479215),\n  ('Citrus College', '30365', 38675245799),\n  ('Citrus College', '41842', 38675245799),\n  ('Citrus College', '41843', 38675245799),\n  ('Citrus College', '42170', 38675245799),\n  ('Citrus College', '42172', 38675245799),\n  ('City College of San Francisco', '09191', 39047128472),\n  ('City College of San Francisco', '09194', 39047128472),\n  ('City College of San Francisco', '09195', 39047128472),\n  ('City College of San Francisco', '22727', 39047128472),\n  ('City College of San Francisco', '37602', 39056434592),\n  ('Clovis Community College', '33499', 39006155986),\n  ('Clovis Community College', '35886', 39006155986),\n  ('Clovis Community College', '36632', 39006155986),\n  ('Clovis Community College', '43174', 39006155986),\n  ('Clovis Community College', '43175', 39006155986),\n  ('Coalinga College', '19019', 39032865307),\n  ('Coalinga College', '19023', 39032865307),\n  ('Coalinga College', '35492', 39032865307),\n  ('Coalinga College', '39230', 39032865307),\n  ('Coalinga College', '44545', 39032865307),\n  ('College of the Canyons', '32389', 39006378829),\n  ('College of the Canyons', '32723', 39006378829),\n  ('College of the Canyons', '33581', 39006378829),\n  ('College of the Canyons', '40090', 39006378829),\n  ('College of the Canyons', '41713', 39006378829),\n  ('College of the Canyons', '42861', 39006378829),\n  ('College of the Desert', '04362', 39056007346),\n  ('College of the Desert', '18684', 39056007346),\n  ('College of the Desert', '30546', 39056007346),\n  ('College of the Desert', '33321', 39056007346),\n  ('College of the Desert', '44280', 39056007346),\n  ('College of the Desert', '45566', 39056007346),\n  ('College of the Redwoods', '01831', 43018781168),\n  ('College of the Redwoods', '08393', 43018781168),\n  ('College of the Sequoias', '06717', 38748848139),\n  ('College of the Sequoias', '06738', 38748848139),\n  ('College of the Sequoias', '06762', 38748848139),\n  ('College of the Sequoias', '18441', 38748848139),\n  ('College of the Sequoias', '36660', 38748848139),\n  ('Contra Costa College', '07598', 38979730323),\n  ('Contra Costa College', '32925', 38979730323),\n  ('Contra Costa College', '33353', 38979730323),\n  ('Copper Mountain College', '32579', 39035222722),\n  ('Crafton Hills College', '11766', 44090908924),\n  ('Crafton Hills College', '30453', 39093935031),\n  ('Crafton Hills College', '30556', 39093935031),\n  ('Crafton Hills College', '31386', 39093935031),\n  ('Crafton Hills College', '31388', 39093935031),\n  ('Crafton Hills College', '33037', 39093935031),\n  ('Crafton Hills College', '33107', 39093935031),\n  ('Crafton Hills College', '37794', 39093935031),\n  ('Crafton Hills College', '43530', 39093935031),\n  ('Cuyamaca College', '05053', 38748833332),\n  ('Cuyamaca College', '07753', 38748833332),\n  ('Cuyamaca College', '07758', 38748833332),\n  ('Cuyamaca College', '12128', 38748833332),\n  ('Cuyamaca College', '15701', 38748833332),\n  ('Cuyamaca College', '15804', 38748833332),\n  ('Cuyamaca College', '21068', 38748833332),\n  ('Cuyamaca College', '21072', 38748833332),\n  ('Cuyamaca College', '21087', 38748833332),\n  ('Cuyamaca College', '42769', 38748833332),\n  ('Cuyamaca College', '46455', 38748833332),\n  ('East Los Angeles College', '39823', 39063389278),\n  ('East Los Angeles College', '40042', 43357061643),\n  ('Evergreen Valley College', '06154', 38748875071),\n  ('Evergreen Valley College', '13549', 38748875071),\n  ('Evergreen Valley College', '36954', 38748875071),\n  ('Evergreen Valley College', '46457', 38748875071),\n  ('Feather River College', '31895', 38935127435),\n  ('Foothill College', '32417', 38675242638),\n  ('Foothill College', '32772', 38675242638),\n  ('Foothill College', '33001', 38675242638),\n  ('Foothill College', '33359', 39726637264),\n  ('Foothill College', '42334', 39671107254),\n  ('Fresno City College', '41433', 38563582873),\n  ('Fullerton College', '18164', 38675136988),\n  ('Gavilan College', '31771', 38948144064),\n  ('Glendale Community College', '19560', 43415972509),\n  ('Glendale Community College', '19581', 43415972509),\n  ('Glendale Community College', '30813', 43415972509),\n  ('Glendale Community College', '32462', 43415972509),\n  ('Glendale Community College', '44484', 43415972509),\n  ('Glendale Community College', '44486', 43415972509),\n  ('Glendale Community College', '44487', 43415972509),\n  ('Glendale Community College', '44488', 43415972509),\n  ('Golden West College', '03903', 38748828247),\n  ('Golden West College', '31432', 39688079435),\n  ('Golden West College', '32118', 38748828247),\n  ('Golden West College', '45056', 38748828247),\n  ('Grossmont College', '37453', 43355014570),\n  ('Imperial Valley College', '32662', 38935136329),\n  ('Irvine Valley College', '04179', 39539599944),\n  ('Laney College', '01163', 38935141023),\n  ('Laney College', '09034', 38935141023),\n  ('Laney College', '36089', 38935141023),\n  ('Laney College', '42812', 38935141023),\n  ('Lassen College', '45344', 39006337658),\n  ('Lassen College', '45346', 39006337658),\n  ('Lassen College', '45611', 39006337658),\n  ('Los Angeles City College', '32496', 43212072618),\n  ('Los Angeles City College', '43169', 43136137275),\n  ('Los Angeles City College', '44931', 39006380342),\n  ('Los Angeles City College', '46527', 43212072618),\n  ('Los Angeles Harbor College', '10693', 39006381839),\n  ('Los Angeles Harbor College', '18706', 39006381839),\n  ('Los Angeles Harbor College', '18708', 39006381839),\n  ('Los Angeles Harbor College', '18709', 39006381839),\n  ('Los Angeles Harbor College', '31029', 39006381839),\n  ('Los Angeles Harbor College', '33087', 39006381839),\n  ('Los Angeles Trade Technical College', '30904', 39054673977),\n  ('Los Angeles Trade Technical College', '30963', 39115770293),\n  ('Los Angeles Trade Technical College', '31081', 39054673977),\n  ('Los Angeles Trade Technical College', '31090', 39115770293),\n  ('Los Angeles Trade Technical College', '31280', 39115770293),\n  ('Los Angeles Trade Technical College', '32948', 39115028720),\n  ('Los Angeles Valley College', '30699', 41114987325),\n  ('Los Angeles Valley College', '33593', 41141747238),\n  ('Los Angeles Valley College', '33629', 41141747238),\n  ('Los Angeles Valley College', '35526', 41114987325),\n  ('Los Angeles Valley College', '43774', 41114987325),\n  ('Mendocino College', '31425', 39006339282),\n  ('Merced College', '03483', 39117489616),\n  ('MiraCosta College', '37407', 39709840590),\n  ('Mission College', '06288', 39000023893),\n  ('Mission College', '43230', 39000023893),\n  ('Moorpark College', '06847', 38748862351),\n  ('Moorpark College', '06859', 38748862351),\n  ('Moorpark College', '06878', 39600815599),\n  ('Moorpark College', '07106', 38748862351),\n  ('Moorpark College', '07114', 39600815599),\n  ('Moorpark College', '07123', 38748862351),\n  ('Moorpark College', '07124', 39600815599),\n  ('Moorpark College', '33686', 39600815599),\n  ('Moorpark College', '46473', 39600815599),\n  ('Mt. San Jacinto College', '38847', 39779328144),\n  ('Mt. San Jacinto College', '40386', 39779328144),\n  ('Napa Valley College', '32314', 38748853261),\n  ('Orange Coast College', '08629', 43136182950),\n  ('Oxnard College', '06899', 38842203500),\n  ('Oxnard College', '30820', 38842203500),\n  ('Oxnard College', '32109', 39612119359),\n  ('Oxnard College', '32110', 39612119359),\n  ('Oxnard College', '37398', 38842203500),\n  ('Oxnard College', '37639', 39612119359),\n  ('Oxnard College', '40769', 38842203500),\n  ('Oxnard College', '46369', 38842203500),\n  ('Oxnard College', '46385', 38842203500),\n  ('Palo Verde College', '45376', 39852997888),\n  ('Palomar College', '33736', 38843467865),\n  ('Palomar College', '44988', 38843467865),\n  ('Pasadena City College', '22634', 39061730187),\n  ('Pasadena City College', '31428', 39061730187),\n  ('Porterville College', '45637', 39046786897),\n  ('Reedley College', '35745', 39616074283),\n  ('Sacramento City College', '33801', 39047070975),\n  ('San Bernardino Valley College', '09255', 38748858322),\n  ('San Bernardino Valley College', '16509', 38748858322),\n  ('San Bernardino Valley College', '32595', 43609973859),\n  ('San Bernardino Valley College', '44013', 38748858322),\n  ('San Jose City College', '42242', 43357106423),\n  ('Santa Ana College', '08745', 38843461766),\n  ('Santa Ana College', '10664', 38843461766),\n  ('Santa Ana College', '21783', 38843461766),\n  ('Santa Ana College', '32050', 38843461766),\n  ('Santa Barbara City College', '19011', 38670933359),\n  ('Santa Barbara City College', '30746', 38670933359),\n  ('Santa Barbara City College', '33257', 38670933359),\n  ('Santa Barbara City College', '33664', 38670933359),\n  ('Santa Barbara City College', '43540', 38670933359),\n  ('Santiago Canyon College', '41770', 43339249633),\n  ('Shasta College', '06412', 39006384701),\n  ('Shasta College', '06423', 39006384701),\n  ('Shasta College', '06430', 39006384701),\n  ('Shasta College', '06433', 39006384701),\n  ('Shasta College', '06440', 39006384701),\n  ('Shasta College', '06444', 39006384701),\n  ('Shasta College', '06457', 39006384701),\n  ('Shasta College', '09477', 39006384701),\n  ('Shasta College', '09478', 39006384701),\n  ('Shasta College', '09485', 39006384701),\n  ('Shasta College', '09505', 39006384701),\n  ('Shasta College', '09513', 39006384701),\n  ('Shasta College', '10718', 39006384701),\n  ('Shasta College', '17479', 39006384701),\n  ('Shasta College', '30491', 39006384701),\n  ('Shasta College', '31844', 39006384701),\n  ('Shasta College', '38138', 39006384701),\n  ('Shasta College', '43880', 39006384701),\n  ('Shasta College', '44718', 39006384701),\n  ('Solano Community College', '20981', 39037377728),\n  ('Southwestern College', '05400', 38563578596),\n  ('Southwestern College', '20731', 38563578596),\n  ('Southwestern College', '31624', 38563578596),\n  ('Southwestern College', '31889', 38563578596),\n  ('Southwestern College', '32659', 38563578596),\n  ('Southwestern College', '32733', 38563578596),\n  ('Southwestern College', '32760', 38563578596),\n  ('Taft College', '43511', 39100858309),\n  ('Taft College', '44621', 39100858309),\n  ('Ventura College', '06971', 38756014587),\n  ('Ventura College', '06972', 38756014587),\n  ('Ventura College', '06976', 39622549965),\n  ('Ventura College', '06980', 38756014587),\n  ('Ventura College', '06992', 38756014587),\n  ('Ventura College', '06993', 38756014587),\n  ('Ventura College', '15323', 39622549965),\n  ('Ventura College', '35198', 39622549965),\n  ('Ventura College', '40713', 38756014587),\n  ('Ventura College', '41884', 39622549965),\n  ('Ventura College', '43209', 38756014587),\n  ('Ventura College', '44993', 38756014587),\n  ('Ventura College', '45198', 38756014587),\n  ('Ventura College', '45422', 38756014587),\n  ('Ventura College', '45488', 38756014587),\n  ('Ventura College', '45503', 38756014587),\n  ('Ventura College', '45529', 38756014587),\n  ('Ventura College', '45831', 39622549965),\n  ('Ventura College', '46422', 38756014587),\n  ('Victor Valley College', '37582', 38675237912),\n  ('Victor Valley College', '41784', 38675237912),\n  ('Yuba College', '07014', 39006517642),\n  ('Yuba College', '07146', 39006517642),\n  ('Yuba College', '20210', 39006517642)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;",
- "rollback": "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Allan Hancock College', '33693', 38843474519),\n  ('Antelope Valley College', '17750', 38979725726),\n  ('Barstow Community College', '18491', 39006332820),\n  ('Berkeley City College', '37921', 39891604919),\n  ('Berkeley City College', '37935', 39891604919),\n  ('Butte College', '01323', 42973457189),\n  ('Butte College', '01325', 42985449223),\n  ('Butte College', '35937', 42985449223),\n  ('Butte College', '38056', 42973457189),\n  ('Butte College', '38059', 42985449223),\n  ('Butte College', '38066', 42985449223),\n  ('Butte College', '43185', 42985449223),\n  ('Butte College', '43186', 42973457189),\n  ('Cañada College', '30834', 39202270482),\n  ('Cerro Coso Community College', '30766', 43520153161),\n  ('Chabot College', '37172', 38843479215),\n  ('Chabot College', '37910', 38843479215),\n  ('Chabot College', '44597', 38843479215),\n  ('Chabot College', '44791', 38843479215),\n  ('Citrus College', '30365', 38675245799),\n  ('Citrus College', '41842', 38675245799),\n  ('Citrus College', '41843', 38675245799),\n  ('Citrus College', '42170', 38675245799),\n  ('Citrus College', '42172', 38675245799),\n  ('City College of San Francisco', '09191', 39047128472),\n  ('City College of San Francisco', '09194', 39047128472),\n  ('City College of San Francisco', '09195', 39047128472),\n  ('City College of San Francisco', '22727', 39047128472),\n  ('City College of San Francisco', '37602', 39056434592),\n  ('Clovis Community College', '33499', 39006155986),\n  ('Clovis Community College', '35886', 39006155986),\n  ('Clovis Community College', '36632', 39006155986),\n  ('Clovis Community College', '43174', 39006155986),\n  ('Clovis Community College', '43175', 39006155986),\n  ('Coalinga College', '19019', 39032865307),\n  ('Coalinga College', '19023', 39032865307),\n  ('Coalinga College', '35492', 39032865307),\n  ('Coalinga College', '39230', 39032865307),\n  ('Coalinga College', '44545', 39032865307),\n  ('College of the Canyons', '32389', 39006378829),\n  ('College of the Canyons', '32723', 39006378829),\n  ('College of the Canyons', '33581', 39006378829),\n  ('College of the Canyons', '40090', 39006378829),\n  ('College of the Canyons', '41713', 39006378829),\n  ('College of the Canyons', '42861', 39006378829),\n  ('College of the Desert', '04362', 39056007346),\n  ('College of the Desert', '18684', 39056007346),\n  ('College of the Desert', '30546', 39056007346),\n  ('College of the Desert', '33321', 39056007346),\n  ('College of the Desert', '44280', 39056007346),\n  ('College of the Desert', '45566', 39056007346),\n  ('College of the Redwoods', '01831', 43018781168),\n  ('College of the Redwoods', '08393', 43018781168),\n  ('College of the Sequoias', '06717', 38748848139),\n  ('College of the Sequoias', '06738', 38748848139),\n  ('College of the Sequoias', '06762', 38748848139),\n  ('College of the Sequoias', '18441', 38748848139),\n  ('College of the Sequoias', '36660', 38748848139),\n  ('Contra Costa College', '07598', 38979730323),\n  ('Contra Costa College', '32925', 38979730323),\n  ('Contra Costa College', '33353', 38979730323),\n  ('Copper Mountain College', '32579', 39035222722),\n  ('Crafton Hills College', '11766', 44090908924),\n  ('Crafton Hills College', '30453', 39093935031),\n  ('Crafton Hills College', '30556', 39093935031),\n  ('Crafton Hills College', '31386', 39093935031),\n  ('Crafton Hills College', '31388', 39093935031),\n  ('Crafton Hills College', '33037', 39093935031),\n  ('Crafton Hills College', '33107', 39093935031),\n  ('Crafton Hills College', '37794', 39093935031),\n  ('Crafton Hills College', '43530', 39093935031),\n  ('Cuyamaca College', '05053', 38748833332),\n  ('Cuyamaca College', '07753', 38748833332),\n  ('Cuyamaca College', '07758', 38748833332),\n  ('Cuyamaca College', '12128', 38748833332),\n  ('Cuyamaca College', '15701', 38748833332),\n  ('Cuyamaca College', '15804', 38748833332),\n  ('Cuyamaca College', '21068', 38748833332),\n  ('Cuyamaca College', '21072', 38748833332),\n  ('Cuyamaca College', '21087', 38748833332),\n  ('Cuyamaca College', '42769', 38748833332),\n  ('Cuyamaca College', '46455', 38748833332),\n  ('East Los Angeles College', '39823', 39063389278),\n  ('East Los Angeles College', '40042', 43357061643),\n  ('Evergreen Valley College', '06154', 38748875071),\n  ('Evergreen Valley College', '13549', 38748875071),\n  ('Evergreen Valley College', '36954', 38748875071),\n  ('Evergreen Valley College', '46457', 38748875071),\n  ('Feather River College', '31895', 38935127435),\n  ('Foothill College', '32417', 38675242638),\n  ('Foothill College', '32772', 38675242638),\n  ('Foothill College', '33001', 38675242638),\n  ('Foothill College', '33359', 39726637264),\n  ('Foothill College', '42334', 39671107254),\n  ('Fresno City College', '41433', 38563582873),\n  ('Fullerton College', '18164', 38675136988),\n  ('Gavilan College', '31771', 38948144064),\n  ('Glendale Community College', '19560', 43415972509),\n  ('Glendale Community College', '19581', 43415972509),\n  ('Glendale Community College', '30813', 43415972509),\n  ('Glendale Community College', '32462', 43415972509),\n  ('Glendale Community College', '44484', 43415972509),\n  ('Glendale Community College', '44486', 43415972509),\n  ('Glendale Community College', '44487', 43415972509),\n  ('Glendale Community College', '44488', 43415972509),\n  ('Golden West College', '03903', 38748828247),\n  ('Golden West College', '31432', 39688079435),\n  ('Golden West College', '32118', 38748828247),\n  ('Golden West College', '45056', 38748828247),\n  ('Grossmont College', '37453', 43355014570),\n  ('Imperial Valley College', '32662', 38935136329),\n  ('Irvine Valley College', '04179', 39539599944),\n  ('Laney College', '01163', 38935141023),\n  ('Laney College', '09034', 38935141023),\n  ('Laney College', '36089', 38935141023),\n  ('Laney College', '42812', 38935141023),\n  ('Lassen College', '45344', 39006337658),\n  ('Lassen College', '45346', 39006337658),\n  ('Lassen College', '45611', 39006337658),\n  ('Los Angeles City College', '32496', 43212072618),\n  ('Los Angeles City College', '43169', 43136137275),\n  ('Los Angeles City College', '44931', 39006380342),\n  ('Los Angeles City College', '46527', 43212072618),\n  ('Los Angeles Harbor College', '10693', 39006381839),\n  ('Los Angeles Harbor College', '18706', 39006381839),\n  ('Los Angeles Harbor College', '18708', 39006381839),\n  ('Los Angeles Harbor College', '18709', 39006381839),\n  ('Los Angeles Harbor College', '31029', 39006381839),\n  ('Los Angeles Harbor College', '33087', 39006381839),\n  ('Los Angeles Trade Technical College', '30904', 39054673977),\n  ('Los Angeles Trade Technical College', '30963', 39115770293),\n  ('Los Angeles Trade Technical College', '31081', 39054673977),\n  ('Los Angeles Trade Technical College', '31090', 39115770293),\n  ('Los Angeles Trade Technical College', '31280', 39115770293),\n  ('Los Angeles Trade Technical College', '32948', 39115028720),\n  ('Los Angeles Valley College', '30699', 41114987325),\n  ('Los Angeles Valley College', '33593', 41141747238),\n  ('Los Angeles Valley College', '33629', 41141747238),\n  ('Los Angeles Valley College', '35526', 41114987325),\n  ('Los Angeles Valley College', '43774', 41114987325),\n  ('Mendocino College', '31425', 39006339282),\n  ('Merced College', '03483', 39117489616),\n  ('MiraCosta College', '37407', 39709840590),\n  ('Mission College', '06288', 39000023893),\n  ('Mission College', '43230', 39000023893),\n  ('Moorpark College', '06847', 38748862351),\n  ('Moorpark College', '06859', 38748862351),\n  ('Moorpark College', '06878', 39600815599),\n  ('Moorpark College', '07106', 38748862351),\n  ('Moorpark College', '07114', 39600815599),\n  ('Moorpark College', '07123', 38748862351),\n  ('Moorpark College', '07124', 39600815599),\n  ('Moorpark College', '33686', 39600815599),\n  ('Moorpark College', '46473', 39600815599),\n  ('Mt. San Jacinto College', '38847', 39779328144),\n  ('Mt. San Jacinto College', '40386', 39779328144),\n  ('Napa Valley College', '32314', 38748853261),\n  ('Orange Coast College', '08629', 43136182950),\n  ('Oxnard College', '06899', 38842203500),\n  ('Oxnard College', '30820', 38842203500),\n  ('Oxnard College', '32109', 39612119359),\n  ('Oxnard College', '32110', 39612119359),\n  ('Oxnard College', '37398', 38842203500),\n  ('Oxnard College', '37639', 39612119359),\n  ('Oxnard College', '40769', 38842203500),\n  ('Oxnard College', '46369', 38842203500),\n  ('Oxnard College', '46385', 38842203500),\n  ('Palo Verde College', '45376', 39852997888),\n  ('Palomar College', '33736', 38843467865),\n  ('Palomar College', '44988', 38843467865),\n  ('Pasadena City College', '22634', 39061730187),\n  ('Pasadena City College', '31428', 39061730187),\n  ('Porterville College', '45637', 39046786897),\n  ('Reedley College', '35745', 39616074283),\n  ('Sacramento City College', '33801', 39047070975),\n  ('San Bernardino Valley College', '09255', 38748858322),\n  ('San Bernardino Valley College', '16509', 38748858322),\n  ('San Bernardino Valley College', '32595', 43609973859),\n  ('San Bernardino Valley College', '44013', 38748858322),\n  ('San Jose City College', '42242', 43357106423),\n  ('Santa Ana College', '08745', 38843461766),\n  ('Santa Ana College', '10664', 38843461766),\n  ('Santa Ana College', '21783', 38843461766),\n  ('Santa Ana College', '32050', 38843461766),\n  ('Santa Barbara City College', '19011', 38670933359),\n  ('Santa Barbara City College', '30746', 38670933359),\n  ('Santa Barbara City College', '33257', 38670933359),\n  ('Santa Barbara City College', '33664', 38670933359),\n  ('Santa Barbara City College', '43540', 38670933359),\n  ('Santiago Canyon College', '41770', 43339249633),\n  ('Shasta College', '06412', 39006384701),\n  ('Shasta College', '06423', 39006384701),\n  ('Shasta College', '06430', 39006384701),\n  ('Shasta College', '06433', 39006384701),\n  ('Shasta College', '06440', 39006384701),\n  ('Shasta College', '06444', 39006384701),\n  ('Shasta College', '06457', 39006384701),\n  ('Shasta College', '09477', 39006384701),\n  ('Shasta College', '09478', 39006384701),\n  ('Shasta College', '09485', 39006384701),\n  ('Shasta College', '09505', 39006384701),\n  ('Shasta College', '09513', 39006384701),\n  ('Shasta College', '10718', 39006384701),\n  ('Shasta College', '17479', 39006384701),\n  ('Shasta College', '30491', 39006384701),\n  ('Shasta College', '31844', 39006384701),\n  ('Shasta College', '38138', 39006384701),\n  ('Shasta College', '43880', 39006384701),\n  ('Shasta College', '44718', 39006384701),\n  ('Solano Community College', '20981', 39037377728),\n  ('Southwestern College', '05400', 38563578596),\n  ('Southwestern College', '20731', 38563578596),\n  ('Southwestern College', '31624', 38563578596),\n  ('Southwestern College', '31889', 38563578596),\n  ('Southwestern College', '32659', 38563578596),\n  ('Southwestern College', '32733', 38563578596),\n  ('Southwestern College', '32760', 38563578596),\n  ('Taft College', '43511', 39100858309),\n  ('Taft College', '44621', 39100858309),\n  ('Ventura College', '06971', 38756014587),\n  ('Ventura College', '06972', 38756014587),\n  ('Ventura College', '06976', 39622549965),\n  ('Ventura College', '06980', 38756014587),\n  ('Ventura College', '06992', 38756014587),\n  ('Ventura College', '06993', 38756014587),\n  ('Ventura College', '15323', 39622549965),\n  ('Ventura College', '35198', 39622549965),\n  ('Ventura College', '40713', 38756014587),\n  ('Ventura College', '41884', 39622549965),\n  ('Ventura College', '43209', 38756014587),\n  ('Ventura College', '44993', 38756014587),\n  ('Ventura College', '45198', 38756014587),\n  ('Ventura College', '45422', 38756014587),\n  ('Ventura College', '45488', 38756014587),\n  ('Ventura College', '45503', 38756014587),\n  ('Ventura College', '45529', 38756014587),\n  ('Ventura College', '45831', 39622549965),\n  ('Ventura College', '46422', 38756014587),\n  ('Victor Valley College', '37582', 38675237912),\n  ('Victor Valley College', '41784', 38675237912),\n  ('Yuba College', '07014', 39006517642),\n  ('Yuba College', '07146', 39006517642),\n  ('Yuba College', '20210', 39006517642)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;",
+ "pre_read": "with v(i, college, control_number, extracted_run) as (values\n  (1, 'Antelope Valley College', '17750', 38979725726),\n  (2, 'Barstow Community College', '18491', 39006332820),\n  (3, 'Butte College', '43185', 42985449223),\n  (4, 'Butte College', '43186', 42973457189),\n  (5, 'Chabot College', '37172', 38843479215),\n  (6, 'Chabot College', '44791', 38843479215),\n  (7, 'Citrus College', '42170', 38675245799),\n  (8, 'City College of San Francisco', '09191', 39047128472),\n  (9, 'City College of San Francisco', '09194', 39047128472),\n  (10, 'City College of San Francisco', '09195', 39047128472),\n  (11, 'City College of San Francisco', '22727', 39047128472),\n  (12, 'City College of San Francisco', '37602', 39056434592),\n  (13, 'Clovis Community College', '33499', 39006155986),\n  (14, 'Clovis Community College', '35886', 39006155986),\n  (15, 'Clovis Community College', '36632', 39006155986),\n  (16, 'Coalinga College', '19019', 39032865307),\n  (17, 'Coalinga College', '19023', 39032865307),\n  (18, 'College of the Canyons', '32723', 39006378829),\n  (19, 'College of the Canyons', '40090', 39006378829),\n  (20, 'College of the Canyons', '41713', 39006378829),\n  (21, 'College of the Desert', '04362', 39056007346),\n  (22, 'College of the Redwoods', '01831', 43018781168),\n  (23, 'College of the Redwoods', '08393', 43018781168),\n  (24, 'College of the Sequoias', '06717', 38748848139),\n  (25, 'College of the Sequoias', '06738', 38748848139),\n  (26, 'College of the Sequoias', '06762', 38748848139),\n  (27, 'College of the Sequoias', '18441', 38748848139),\n  (28, 'College of the Sequoias', '36660', 38748848139),\n  (29, 'Contra Costa College', '07598', 38979730323),\n  (30, 'Contra Costa College', '32925', 38979730323),\n  (31, 'Crafton Hills College', '37794', 39093935031),\n  (32, 'Cuyamaca College', '05053', 38748833332),\n  (33, 'Cuyamaca College', '07753', 38748833332),\n  (34, 'Cuyamaca College', '07758', 38748833332),\n  (35, 'Cuyamaca College', '12128', 38748833332),\n  (36, 'Cuyamaca College', '15701', 38748833332),\n  (37, 'Cuyamaca College', '15804', 38748833332),\n  (38, 'Cuyamaca College', '21068', 38748833332),\n  (39, 'Cuyamaca College', '21072', 38748833332),\n  (40, 'Cuyamaca College', '21087', 38748833332),\n  (41, 'Cuyamaca College', '42769', 38748833332),\n  (42, 'Cuyamaca College', '46455', 38748833332),\n  (43, 'East Los Angeles College', '39823', 39063389278),\n  (44, 'East Los Angeles College', '40042', 43357061643),\n  (45, 'Evergreen Valley College', '06154', 38748875071),\n  (46, 'Evergreen Valley College', '13549', 38748875071),\n  (47, 'Evergreen Valley College', '36954', 38748875071),\n  (48, 'Evergreen Valley College', '46457', 38748875071),\n  (49, 'Foothill College', '32417', 38675242638),\n  (50, 'Foothill College', '32772', 38675242638),\n  (51, 'Foothill College', '33001', 38675242638),\n  (52, 'Foothill College', '33359', 39726637264),\n  (53, 'Fresno City College', '41433', 38563582873),\n  (54, 'Glendale Community College', '19560', 43415972509),\n  (55, 'Glendale Community College', '30813', 43415972509),\n  (56, 'Glendale Community College', '32462', 43415972509),\n  (57, 'Golden West College', '03903', 38748828247),\n  (58, 'Golden West College', '32118', 38748828247),\n  (59, 'Golden West College', '45056', 38748828247),\n  (60, 'Imperial Valley College', '32662', 38935136329),\n  (61, 'Laney College', '01163', 38935141023),\n  (62, 'Laney College', '09034', 38935141023),\n  (63, 'Laney College', '42812', 38935141023),\n  (64, 'Los Angeles City College', '43169', 43136137275),\n  (65, 'Los Angeles Harbor College', '10693', 39006381839),\n  (66, 'Los Angeles Trade Technical College', '30963', 39115770293),\n  (67, 'Los Angeles Trade Technical College', '32948', 39115028720),\n  (68, 'Los Angeles Valley College', '33593', 41141747238),\n  (69, 'Los Angeles Valley College', '33629', 41141747238),\n  (70, 'Los Angeles Valley College', '35526', 41114987325),\n  (71, 'Merced College', '03483', 39117489616),\n  (72, 'MiraCosta College', '37407', 39709840590),\n  (73, 'Mission College', '06288', 39000023893),\n  (74, 'Mission College', '43230', 39000023893),\n  (75, 'Moorpark College', '06847', 38748862351),\n  (76, 'Moorpark College', '06859', 38748862351),\n  (77, 'Moorpark College', '06878', 39600815599),\n  (78, 'Moorpark College', '07106', 38748862351),\n  (79, 'Moorpark College', '07114', 39600815599),\n  (80, 'Moorpark College', '07123', 38748862351),\n  (81, 'Moorpark College', '07124', 39600815599),\n  (82, 'Moorpark College', '33686', 39600815599),\n  (83, 'Moorpark College', '46473', 39600815599),\n  (84, 'Mt. San Jacinto College', '40386', 39779328144),\n  (85, 'Oxnard College', '06899', 38842203500),\n  (86, 'Oxnard College', '37398', 38842203500),\n  (87, 'Oxnard College', '40769', 38842203500),\n  (88, 'Oxnard College', '46369', 38842203500),\n  (89, 'Oxnard College', '46385', 38842203500),\n  (90, 'Palo Verde College', '45376', 39852997888),\n  (91, 'Pasadena City College', '31428', 39061730187),\n  (92, 'Porterville College', '45637', 39046786897),\n  (93, 'Sacramento City College', '33801', 39047070975),\n  (94, 'San Bernardino Valley College', '32595', 43609973859),\n  (95, 'San Jose City College', '42242', 43357106423),\n  (96, 'Santa Ana College', '08745', 38843461766),\n  (97, 'Santa Ana College', '10664', 38843461766),\n  (98, 'Santa Ana College', '21783', 38843461766),\n  (99, 'Santa Barbara City College', '30746', 38670933359),\n  (100, 'Santa Barbara City College', '33257', 38670933359),\n  (101, 'Santa Barbara City College', '33664', 38670933359),\n  (102, 'Santa Barbara City College', '43540', 38670933359),\n  (103, 'Santiago Canyon College', '41770', 43339249633),\n  (104, 'Shasta College', '06412', 39006384701),\n  (105, 'Shasta College', '06423', 39006384701),\n  (106, 'Shasta College', '06430', 39006384701),\n  (107, 'Shasta College', '06433', 39006384701),\n  (108, 'Shasta College', '06440', 39006384701),\n  (109, 'Shasta College', '06444', 39006384701),\n  (110, 'Shasta College', '06457', 39006384701),\n  (111, 'Shasta College', '09477', 39006384701),\n  (112, 'Shasta College', '09478', 39006384701),\n  (113, 'Shasta College', '09485', 39006384701),\n  (114, 'Shasta College', '09505', 39006384701),\n  (115, 'Shasta College', '09513', 39006384701),\n  (116, 'Shasta College', '10718', 39006384701),\n  (117, 'Shasta College', '17479', 39006384701),\n  (118, 'Shasta College', '30491', 39006384701),\n  (119, 'Shasta College', '38138', 39006384701),\n  (120, 'Shasta College', '43880', 39006384701),\n  (121, 'Shasta College', '44718', 39006384701),\n  (122, 'Solano Community College', '20981', 39037377728),\n  (123, 'Southwestern College', '32659', 38563578596),\n  (124, 'Southwestern College', '32760', 38563578596),\n  (125, 'Taft College', '43511', 39100858309),\n  (126, 'Ventura College', '06971', 38756014587),\n  (127, 'Ventura College', '06972', 38756014587),\n  (128, 'Ventura College', '06976', 39622549965),\n  (129, 'Ventura College', '06980', 38756014587),\n  (130, 'Ventura College', '06992', 38756014587),\n  (131, 'Ventura College', '06993', 38756014587),\n  (132, 'Ventura College', '15323', 39622549965),\n  (133, 'Ventura College', '40713', 38756014587),\n  (134, 'Ventura College', '41884', 39622549965),\n  (135, 'Ventura College', '43209', 38756014587),\n  (136, 'Ventura College', '44993', 38756014587),\n  (137, 'Ventura College', '45198', 38756014587),\n  (138, 'Ventura College', '45422', 38756014587),\n  (139, 'Ventura College', '45488', 38756014587),\n  (140, 'Ventura College', '45503', 38756014587),\n  (141, 'Ventura College', '45529', 38756014587),\n  (142, 'Ventura College', '45831', 39622549965),\n  (143, 'Ventura College', '46422', 38756014587),\n  (144, 'Yuba College', '07014', 39006517642),\n  (145, 'Yuba College', '20210', 39006517642))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run_unequal', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'),\n  'on_run_equal', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'),\n  'off_run', count(*) filter (where r.extracted_run is distinct from v.extracted_run),\n  'checked_now', count(*) filter (where r.checked),\n  'verdict_confirm_fp_match', count(*) filter (where pv.verdict = 'confirm' and pv.requirements_fp = public.program_record_fp(r.record)),\n  'verdict_other_fp_match', count(*) filter (where pv.verdict <> 'confirm' and pv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select verdict, requirements_fp from public.program_record_verdicts x\n                      where x.college = r.college and x.control_number = r.control_number\n                      order by x.id desc limit 1) pv on true;",
+ "apply": "with v(i, college, control_number, extracted_run) as (values\n  (1, 'Antelope Valley College', '17750', 38979725726),\n  (2, 'Barstow Community College', '18491', 39006332820),\n  (3, 'Butte College', '43185', 42985449223),\n  (4, 'Butte College', '43186', 42973457189),\n  (5, 'Chabot College', '37172', 38843479215),\n  (6, 'Chabot College', '44791', 38843479215),\n  (7, 'Citrus College', '42170', 38675245799),\n  (8, 'City College of San Francisco', '09191', 39047128472),\n  (9, 'City College of San Francisco', '09194', 39047128472),\n  (10, 'City College of San Francisco', '09195', 39047128472),\n  (11, 'City College of San Francisco', '22727', 39047128472),\n  (12, 'City College of San Francisco', '37602', 39056434592),\n  (13, 'Clovis Community College', '33499', 39006155986),\n  (14, 'Clovis Community College', '35886', 39006155986),\n  (15, 'Clovis Community College', '36632', 39006155986),\n  (16, 'Coalinga College', '19019', 39032865307),\n  (17, 'Coalinga College', '19023', 39032865307),\n  (18, 'College of the Canyons', '32723', 39006378829),\n  (19, 'College of the Canyons', '40090', 39006378829),\n  (20, 'College of the Canyons', '41713', 39006378829),\n  (21, 'College of the Desert', '04362', 39056007346),\n  (22, 'College of the Redwoods', '01831', 43018781168),\n  (23, 'College of the Redwoods', '08393', 43018781168),\n  (24, 'College of the Sequoias', '06717', 38748848139),\n  (25, 'College of the Sequoias', '06738', 38748848139),\n  (26, 'College of the Sequoias', '06762', 38748848139),\n  (27, 'College of the Sequoias', '18441', 38748848139),\n  (28, 'College of the Sequoias', '36660', 38748848139),\n  (29, 'Contra Costa College', '07598', 38979730323),\n  (30, 'Contra Costa College', '32925', 38979730323),\n  (31, 'Crafton Hills College', '37794', 39093935031),\n  (32, 'Cuyamaca College', '05053', 38748833332),\n  (33, 'Cuyamaca College', '07753', 38748833332),\n  (34, 'Cuyamaca College', '07758', 38748833332),\n  (35, 'Cuyamaca College', '12128', 38748833332),\n  (36, 'Cuyamaca College', '15701', 38748833332),\n  (37, 'Cuyamaca College', '15804', 38748833332),\n  (38, 'Cuyamaca College', '21068', 38748833332),\n  (39, 'Cuyamaca College', '21072', 38748833332),\n  (40, 'Cuyamaca College', '21087', 38748833332),\n  (41, 'Cuyamaca College', '42769', 38748833332),\n  (42, 'Cuyamaca College', '46455', 38748833332),\n  (43, 'East Los Angeles College', '39823', 39063389278),\n  (44, 'East Los Angeles College', '40042', 43357061643),\n  (45, 'Evergreen Valley College', '06154', 38748875071),\n  (46, 'Evergreen Valley College', '13549', 38748875071),\n  (47, 'Evergreen Valley College', '36954', 38748875071),\n  (48, 'Evergreen Valley College', '46457', 38748875071),\n  (49, 'Foothill College', '32417', 38675242638),\n  (50, 'Foothill College', '32772', 38675242638),\n  (51, 'Foothill College', '33001', 38675242638),\n  (52, 'Foothill College', '33359', 39726637264),\n  (53, 'Fresno City College', '41433', 38563582873),\n  (54, 'Glendale Community College', '19560', 43415972509),\n  (55, 'Glendale Community College', '30813', 43415972509),\n  (56, 'Glendale Community College', '32462', 43415972509),\n  (57, 'Golden West College', '03903', 38748828247),\n  (58, 'Golden West College', '32118', 38748828247),\n  (59, 'Golden West College', '45056', 38748828247),\n  (60, 'Imperial Valley College', '32662', 38935136329),\n  (61, 'Laney College', '01163', 38935141023),\n  (62, 'Laney College', '09034', 38935141023),\n  (63, 'Laney College', '42812', 38935141023),\n  (64, 'Los Angeles City College', '43169', 43136137275),\n  (65, 'Los Angeles Harbor College', '10693', 39006381839),\n  (66, 'Los Angeles Trade Technical College', '30963', 39115770293),\n  (67, 'Los Angeles Trade Technical College', '32948', 39115028720),\n  (68, 'Los Angeles Valley College', '33593', 41141747238),\n  (69, 'Los Angeles Valley College', '33629', 41141747238),\n  (70, 'Los Angeles Valley College', '35526', 41114987325),\n  (71, 'Merced College', '03483', 39117489616),\n  (72, 'MiraCosta College', '37407', 39709840590),\n  (73, 'Mission College', '06288', 39000023893),\n  (74, 'Mission College', '43230', 39000023893),\n  (75, 'Moorpark College', '06847', 38748862351),\n  (76, 'Moorpark College', '06859', 38748862351),\n  (77, 'Moorpark College', '06878', 39600815599),\n  (78, 'Moorpark College', '07106', 38748862351),\n  (79, 'Moorpark College', '07114', 39600815599),\n  (80, 'Moorpark College', '07123', 38748862351),\n  (81, 'Moorpark College', '07124', 39600815599),\n  (82, 'Moorpark College', '33686', 39600815599),\n  (83, 'Moorpark College', '46473', 39600815599),\n  (84, 'Mt. San Jacinto College', '40386', 39779328144),\n  (85, 'Oxnard College', '06899', 38842203500),\n  (86, 'Oxnard College', '37398', 38842203500),\n  (87, 'Oxnard College', '40769', 38842203500),\n  (88, 'Oxnard College', '46369', 38842203500),\n  (89, 'Oxnard College', '46385', 38842203500),\n  (90, 'Palo Verde College', '45376', 39852997888),\n  (91, 'Pasadena City College', '31428', 39061730187),\n  (92, 'Porterville College', '45637', 39046786897),\n  (93, 'Sacramento City College', '33801', 39047070975),\n  (94, 'San Bernardino Valley College', '32595', 43609973859),\n  (95, 'San Jose City College', '42242', 43357106423),\n  (96, 'Santa Ana College', '08745', 38843461766),\n  (97, 'Santa Ana College', '10664', 38843461766),\n  (98, 'Santa Ana College', '21783', 38843461766),\n  (99, 'Santa Barbara City College', '30746', 38670933359),\n  (100, 'Santa Barbara City College', '33257', 38670933359),\n  (101, 'Santa Barbara City College', '33664', 38670933359),\n  (102, 'Santa Barbara City College', '43540', 38670933359),\n  (103, 'Santiago Canyon College', '41770', 43339249633),\n  (104, 'Shasta College', '06412', 39006384701),\n  (105, 'Shasta College', '06423', 39006384701),\n  (106, 'Shasta College', '06430', 39006384701),\n  (107, 'Shasta College', '06433', 39006384701),\n  (108, 'Shasta College', '06440', 39006384701),\n  (109, 'Shasta College', '06444', 39006384701),\n  (110, 'Shasta College', '06457', 39006384701),\n  (111, 'Shasta College', '09477', 39006384701),\n  (112, 'Shasta College', '09478', 39006384701),\n  (113, 'Shasta College', '09485', 39006384701),\n  (114, 'Shasta College', '09505', 39006384701),\n  (115, 'Shasta College', '09513', 39006384701),\n  (116, 'Shasta College', '10718', 39006384701),\n  (117, 'Shasta College', '17479', 39006384701),\n  (118, 'Shasta College', '30491', 39006384701),\n  (119, 'Shasta College', '38138', 39006384701),\n  (120, 'Shasta College', '43880', 39006384701),\n  (121, 'Shasta College', '44718', 39006384701),\n  (122, 'Solano Community College', '20981', 39037377728),\n  (123, 'Southwestern College', '32659', 38563578596),\n  (124, 'Southwestern College', '32760', 38563578596),\n  (125, 'Taft College', '43511', 39100858309),\n  (126, 'Ventura College', '06971', 38756014587),\n  (127, 'Ventura College', '06972', 38756014587),\n  (128, 'Ventura College', '06976', 39622549965),\n  (129, 'Ventura College', '06980', 38756014587),\n  (130, 'Ventura College', '06992', 38756014587),\n  (131, 'Ventura College', '06993', 38756014587),\n  (132, 'Ventura College', '15323', 39622549965),\n  (133, 'Ventura College', '40713', 38756014587),\n  (134, 'Ventura College', '41884', 39622549965),\n  (135, 'Ventura College', '43209', 38756014587),\n  (136, 'Ventura College', '44993', 38756014587),\n  (137, 'Ventura College', '45198', 38756014587),\n  (138, 'Ventura College', '45422', 38756014587),\n  (139, 'Ventura College', '45488', 38756014587),\n  (140, 'Ventura College', '45503', 38756014587),\n  (141, 'Ventura College', '45529', 38756014587),\n  (142, 'Ventura College', '45831', 39622549965),\n  (143, 'Ventura College', '46422', 38756014587),\n  (144, 'Yuba College', '07014', 39006517642),\n  (145, 'Yuba College', '20210', 39006517642)),\nu as (\nupdate public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning v.i, r.college, r.control_number, r.checked)\nselect json_build_object('returned', count(*),\n       'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),\n       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned\n  from u;",
+ "follow_verdict": "The follow_verdict trigger (program_requirement_records_follow_verdict, chatbox/supabase_program_record_verdicts.sql) runs on this UPDATE. Where a person's latest verdict on the row is a confirm whose fingerprint matches the record, and the machine checks now pass, it marks the row checked, and a checked row is public. The UPDATE returns those rows' places as \"checked\". The rollback reverses this: it moves checks.arithmetic back to \"unequal\", the machine checks fail again, and the trigger unmarks the row.",
+ "person_settled": "Person-settled rows win. The UPDATE writes checks.arithmetic alone, only where the row still holds the filed run and still reads \"unequal\" (the machine's value). It never writes the record, checked, checked_by or checked_at: the trigger sets those from a person's verdict, a confirm marks the row checked and any other verdict (needs a fix) keeps it unchecked. A person's reload or reread changes the run and drops the row out of the guard.",
+ "rollback": null,
+ "rollback_how": "Built from the UPDATE's returned value, after it runs: python3 kb/_program_requirements_rescore.py --rollback-from <the migrate receipt> --receipt <this file>. It moves back only the rows the UPDATE returned.",
  "applied": null
 }

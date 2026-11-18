@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     77.5,
     77.5
@@ -75,7 +75,9 @@
     21.0,
     21.0
    ],
-   "why": [],
+   "why": [
+    "the blocks and general education sum to 77.5-77.5; the catalog prints 77.5-80.5 for the degree"
+   ],
    "major": {
     "pass": true,
     "status": "equal",
@@ -89,9 +91,7 @@
     ],
     "against": "program",
     "why": []
-   },
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   }
   },
   "repeated": {
    "codes": [],
@@ -115,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {

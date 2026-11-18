@@ -120,7 +120,7 @@ to the records already filed.
 Sam's ruling of 2026-11-17 ("Pass short high ends the same way as over-high
 ends", docs/reference/sam_rulings.md) is the mirror of Sheet 120 card 1: a
 printed unit range whose low end the sum meets exactly, with the sum's high end
-short of the range's top, passes as "short_high" (program_verdict for a program
+short of the range's top (the sum a range itself, S679), passes as "short_high" (program_verdict for a program
 total, degree_verdict for a degree total). An hours record stays out: the ruling
 names a unit range, and hours ranges have their own reading (hours_meets_top).
 
@@ -807,8 +807,11 @@ def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: fl
 def short_high(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
     """Sam's ruling of 2026-11-17, "Pass short high ends the same way as over-high ends": a printed unit range
     (its top past its low end) whose low end the sum meets exactly, the sum's high end short of the top. Units
-    only: the ruling names a unit range, and an hours range reads by hours_meets_top."""
-    return (prog.get("measure") != "hours" and stated[1] > stated[0] + TOL
+    only: the ruling names a unit range, and an hours range reads by hours_meets_top. The sum must be a range too
+    (its high end past its low end; the conductor's call, S679): the ruling speaks of "our high end", and a sum of
+    one figure (Mt. San Jacinto 38847: 30 against 30-35) has no high end to fall short. Range sums alone come to
+    about the 33 the ruling estimated."""
+    return (prog.get("measure") != "hours" and stated[1] > stated[0] + TOL and hi > lo + TOL
             and abs(lo - stated[0]) <= TOL and hi < stated[1] - TOL)
 
 

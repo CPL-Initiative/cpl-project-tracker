@@ -78,9 +78,7 @@
     46.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 33.0-35.0; the catalog states 33.0-46.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",

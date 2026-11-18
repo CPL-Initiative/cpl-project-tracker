@@ -104,8 +104,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     22.0,
     22.0
@@ -117,9 +117,7 @@
    "against": "program",
    "why": [
     "the blocks sum to 22.0-22.0; the catalog states 22.0-26.0"
-   ],
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -140,7 +138,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {

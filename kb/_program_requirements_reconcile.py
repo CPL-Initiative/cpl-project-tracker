@@ -550,8 +550,9 @@ def statewide_cal_getc(record, text: str | None, award: str | None, title: str |
 #     major matches the catalog's major total exactly, and whose major and general education run past the degree
 #     total at both ends, takes ge_overlap, the field the scorer's Sheet 82 card 2 overlap already reads for a
 #     transfer degree (and for Hartnell's nursing tabs, where the page says so). A sum short of the degree total is
-#     left alone: counting a major course toward general education cannot close it.
-#   * ruling 3, the general education open slot (correction step 4 of #3461; ge-slot-rule-test.md on #3464): a line
+#     left alone: counting a major course toward general education cannot close it, and so is a sum past the total
+#     by more than the general education units.
+#   * ruling 3 (built and off: GE_AREA_SLOT_FILL below), the general education open slot (correction step 4 of #3461; ge-slot-rule-test.md on #3464): a line
 #     inside the program's requirements naming a general education area and a unit figure, and no course ("One course
 #     from: VCCCD GE Area 1b, 6 or 7  3", "Arts and Humanities LACCD GE Area 3 (3)"), is kept as an open slot
 #     carrying its units, only when the printed total includes general education: the record counts no general
@@ -603,6 +604,10 @@ def local_overlap_hold(prog: dict, award: str | None, arith: dict | None) -> str
     ge = a.get("ge")
     if not ge or not ge[1] > 0:
         return "no general education units to count major courses toward"
+    if comp[0] - st[0] > ge[0] + TOL:
+        # A major course counted toward general education removes at most the general education units from the
+        # sum: an overshoot past them (57 major, 3 general education and 20 electives against 60) is another cause.
+        return "the sum runs past the degree total by more than the general education units"
     if a["major"]["computed"][1] > st[1] + TOL:
         return "the major alone runs past the degree total"
     return None
@@ -723,11 +728,20 @@ def ge_area_slots(record: dict, text: str | None) -> list[dict]:
     return out
 
 
+# Ruling 3's matcher is built and OFF (the second reader on #3478, S679): it runs inside every extraction
+# (kb/_program_requirements_college.py passes the closed list to reconcile), and it has no self-recall test on
+# captured pages yet (p-new-matcher-needs-self-recall-test-s652). A self-recall run on captured pages turns it on
+# for that run with CPL_GE_AREA_SLOT_FILL=1; once that run is committed and reviewed, a PR sets the default here.
+# The rulings test sets it on.
+GE_AREA_SLOT_FILL = os.environ.get("CPL_GE_AREA_SLOT_FILL") == "1"
+
+
 def ge_area_slot_fill(record: dict, text: str | None, score_fn) -> tuple[dict, list[dict]]:
     """Ruling 3: the record with an open-slot block (rule choose_units, no courses, ge_area_slot) per slot line and
     one note, kept only when the record failed its program total and the slots bring it to that total exactly at
-    both ends; else the record unchanged and no note. score_fn scores a record (the scorer, with its closed list)."""
-    if not isinstance(record, dict) or not text:
+    both ends; else the record unchanged and no note. score_fn scores a record (the scorer, with its closed list).
+    Off unless GE_AREA_SLOT_FILL is set."""
+    if not GE_AREA_SLOT_FILL or not isinstance(record, dict) or not text:
         return record, []
     prog = record.get("program") or {}
     if prog.get("measure") == "hours" or not _empty(prog.get("degree_total")) or not _no_ge_units(prog.get("ge_units")):

@@ -72,9 +72,7 @@
     28.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.0-28.0; the catalog states 27.0-28.5"
-   ],
+   "why": [],
    "short_high": true,
    "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
