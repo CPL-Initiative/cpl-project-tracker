@@ -527,3 +527,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 ## Moved from docs/INDEX.md's update history (S681 checkpoint)
 
 - 2026-11-16 (S668 SkyPipit, Sam's session, full checkpoint): #3408 (the no-closed-list lookup's page yield: 13 yields at 8 colleges, 0 passing moved), #3411 (Gavilan Mathematics 31444 and Physics 33047 from their 2025-2026 catalog); #3414 (slice B part 1) waits on `test`; eight `cpl_memory` rows drafted as a migration; the harvest lane compacted; handoff 670 (S669 ran in parallel).
+
+## Moved from docs/INDEX.md's update history (S682 checkpoint)
+
+- 2026-11-17 (S670 SkyBunting, Sam's session, full checkpoint): #3420 (Coastline's objectives loaded, 522 rows; a course outcomes slice keyed by its colleges), #3423 (Skyline's yield read after display build b640e31b114a), #3436 (Skyline 32337's live row removed, full image filed), #3433 and #3434 (Rio Hondo and Santa Ana from their own 2025-2026 catalogs), #3435 (S668's Berkeley City row); five `cpl_memory` rows through the runner; handoff 671 for SkyKinglet.
