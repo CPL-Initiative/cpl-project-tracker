@@ -160,6 +160,32 @@
     if (!x.t) return "No CPL type on the record or in the exhibit id";
     return x.t + (x.k ? ", " + x.k : "") + (x.ts === "id" ? " (read from the exhibit id; MAP's type is not on the record)" : "");
   }
+  /* A local title's CPL type, for the List's rows and panel (issue 3510, C1): by its exhibit id, or by the local title as the
+     college typed it (every exhibit under that wording). Words while the file is still on its way, never a blank. */
+  function exhibitTypeWords(id) {
+    if (EXH_SBS.failed) return "CPL type did not load";
+    if (!EXH_SBS.data) return "Reading the CPL type…";
+    var x = (EXH_SBS.data.exhibits || {})[id];
+    if (!x || !x.t) return "CPL type not recorded";
+    return x.t + (x.ts === "id" ? " (read from the exhibit id)" : "");
+  }
+  function localTypeWords(raw) {
+    if (EXH_SBS.failed) return "CPL type did not load.";
+    if (!EXH_SBS.data) return "Reading the CPL type…";
+    var by = EXH_SBS.byLocal;
+    if (!by) {
+      by = EXH_SBS.byLocal = {};
+      var ex = EXH_SBS.data.exhibits || {};
+      Object.keys(ex).forEach(function (id) {
+        var x = ex[id], k = String(x.l || "").trim();
+        if (!k || !x.t) return;
+        var o = by[k] = by[k] || [];
+        if (o.indexOf(x.t) < 0) o.push(x.t);
+      });
+    }
+    var t = by[String(raw || "").trim()];
+    return "CPL type: " + (t && t.length ? t.join(" and ") : "not recorded") + ".";
+  }
   /* rows: [{ id, title }] in the order the view holds them; proposed: the Review card's proposed name, when there is one. */
   function exhSbsBody(rows, label, proposed) {
     if (EXH_SBS.failed) return [el("p", { cls: "exh-muted exh-small", text: "The side by side file (" + EXH_SBS_URL + ") did not arrive: " + EXH_SBS.failed + ". Close the view and open it again to try once more." })];
@@ -1985,12 +2011,29 @@
     var rows = list.slice().sort(function (a, b) { return order.indexOf(a.kind) - order.indexOf(b.kind); });
     var box = el("details", { cls: "exh-l-rxmore exh-small", id: "exh-renamed", open: state.rlOpen ? true : null }, [
       el("summary", { text: "The " + fmt(list.length) + " renamed title" + (list.length === 1 ? "" : "s") + " to look at" }),
+      el("p", { cls: "exh-muted exh-small", "data-rl-how": "" }, ["A title still in the reference opens in the List, where its Rename undoes or redoes "
+        + "the rename and its Flag marks it until you clear the flag; leaving it as it reads keeps it. A dead end names two titles the reference no longer "
+        + "holds, so the List has no row for it. A save there does not yet take a title off this list: the list is rebuilt from the "
+        + "rename records each night."]),
       el("ul", { cls: "exh-l-rxlist", "aria-label": "Renamed titles to look at" }, rows.map(function (r) {
-        return el("li", null, [el("span", { cls: "exh-strong", text: r.title }),
-          el("span", { cls: "exh-muted", text: ", " + r.kind + ". " }), r.words]);
+        return el("li", { "data-rl-title": r.title }, [el("span", { cls: "exh-strong", text: r.title }),
+          el("span", { cls: "exh-muted", text: ", " + r.kind + ". " }), r.words, reviewListAct(r)]);
       }))]);
     box.addEventListener("toggle", function () { state.rlOpen = box.open; });
     return box;
+  }
+  /* Each renamed title's action (issue 3510, C2): a title the reference still holds opens in the List's side panel, where the
+     List's own Rename and Flag save it (the existing kb_curation fields, unified_title_override and list_flag, through
+     the List's write path). No new field: a dead end has no row to act on, and says so. */
+  function reviewListLive(r) {
+    if (/^brought back/.test(r.kind)) return true;
+    if (r.kind === "dead retire") return /in the reference again itself/.test(String(r.words || ""));
+    return false;
+  }
+  function reviewListAct(r) {
+    if (!reviewListLive(r)) return el("span", { cls: "exh-muted exh-small", "data-rl-act": "none", text: " The List has no row for it." });
+    return el("span", { cls: "exh-rl-acts" }, [word("Open it in the List", function () { state.rlOpen = true; openCredential(r.title); },
+      { "data-rl-act": "open", "aria-label": "Open " + r.title + " in the List to keep, rename or flag it" })]);
   }
   function stepTile(step, label) {
     var n = step === "Saved, not folded" ? savedNotFolded() : stepCount(step);
@@ -3627,6 +3670,66 @@
     var o = state.cs.overlay[r.ut] || {};
     return o.title ? o.title : credName(r);
   }
+  /* The CPL type beside every canonical title on the List's rows (Sam, issue 3510, C1: "I need to have the Cpl type for each
+     canon and local title nearby"): muted words after the title, from the reference's own types for the row. */
+  function listTypeWords(types, none) {
+    types = (types || []).filter(Boolean);
+    return types.length ? types.join(" and ") : (none || "CPL type not recorded");
+  }
+  /* The lines under a row's title that issue 3510 asks for, outside the title's own control so its name stays the title:
+     the CPL type, and on the No Common SUBJ filter why the row is there (C3), from the subject fill's worklist. */
+  function listTitleTypeSubs(r) {
+    var out = [el("span", { cls: "exh-l-sub exh-l-type", "data-cpl-type": "", text: "CPL type: " + listTypeWords(r.cpl_types, "not recorded") })];
+    if (listState().f === "nosubj" && !listSubj(r)) {
+      var x = subjWhy(r);
+      if (x) out.push(el("span", { cls: "exh-l-sub exh-l-why", "data-subj-why": "", text: "Why no Common SUBJ: " + subjWhyWords(x) }));
+    }
+    return out;
+  }
+  /* The subject fill's worklist (kb/_exhibit_subject_fill.py writes kb/exhibit_subject_out/worklist.json): each credential
+     with no Common SUBJ, why, and a subject its title words suggest. Read once a visit, when the No Common SUBJ filter is
+     first chosen. A suggestion is never a decision (title words were wrong on ASE MIL7; Sam, 2026-11-11). */
+  var SUBJ_WL_URL = "kb/exhibit_subject_out/worklist.json";
+  var SUBJ_WL = { p: null, data: null, by: null, error: "" };
+  function subjWorklistLoad() {
+    if (SUBJ_WL.p) return SUBJ_WL.p;
+    SUBJ_WL.p = fetch(SUBJ_WL_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(SUBJ_WL_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (d) {
+      var by = {};
+      ((d && d.items) || []).forEach(function (x) { if (x && x.title) by[x.title] = x; });
+      SUBJ_WL.data = d || {}; SUBJ_WL.by = by; SUBJ_WL.error = "";
+    }, function (e) { SUBJ_WL.error = String(e && e.message || e); });
+    return SUBJ_WL.p;
+  }
+  function subjWhy(r) { return (SUBJ_WL.by && (SUBJ_WL.by[r.ut] || SUBJ_WL.by[listTitle(r)])) || null; }
+  var SUBJ_WHY = {
+    "no signal": "no course colleges credit for it and no issuer family names a subject",
+    "courses split": "the courses colleges credit for it split between subjects",
+    "credited to a GE area": "colleges credit it to a general education area, not to a subject",
+    "subject not in the Common Subjects Reference": "the subject its courses name is not in the Common Subjects Reference",
+    "held: the issuer family or a certification link names another subject": "its issuer family or a certification link names another subject, so it waits for a person"
+  };
+  function subjWhyWords(x) {
+    var why = SUBJ_WHY[x.why] || String(x.why || "no reason recorded").replace(/^held: /, "waits for a person: ");
+    if (x.courses) why += " (the courses name " + x.courses + ")";
+    if (x.suggested) why += "; its title words suggest " + x.suggested + ", a suggestion only";
+    return why + ".";
+  }
+  function subjWhen(t) {
+    var d = t ? new Date(t) : null;
+    return d && !isNaN(d) ? d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "America/Los_Angeles" }) : "a date not recorded";
+  }
+  function listSubjNote() {
+    if (SUBJ_WL.error) return el("p", { cls: "exh-empty", role: "alert", text: "The subject fill's list did not load (" + SUBJ_WL.error + "), so the rows below do not say why. Reload the tab to try again." });
+    if (!SUBJ_WL.data) return el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading why each credential has no Common SUBJ…" });
+    var d = SUBJ_WL.data, wait = (d.items || []).length, nyw = d.not_yet_written || 0;
+    var words = fmt(d.no_subject || 0) + " credentials had no Common SUBJ when the subject fill last looked (" + subjWhen(d.written_at) + "). "
+      + fmt(wait) + (wait === 1 ? " waits" : " wait") + " for a person, each with its reason under its title below.";
+    if (nyw) words += " The fill would take " + fmt(nyw) + " more from the courses colleges credit for them, once the nightly fill is turned on" + (d.mode === "preview" ? "; today it only previews, so it has written none." : ".");
+    return el("p", { cls: "exh-muted exh-small", "data-subj-note": "", text: words });
+  }
   function listCollision(r) {
     var c = listState().collisions;
     if (!c) return null;
@@ -4048,8 +4151,9 @@
     var L = h.L, box = h.box, line = h.line, list = h.list, listFilterBy = h.filterBy;
     var ad = credAdopt(r) || {};
     if (name === "Title") {
-      line("Local titles in MAP, as colleges typed them:");
-      list((r.raw_variants || []).map(function (v) { return v.r + (v.c != null ? " (title " + Math.round(v.c * 100) + "%)" : "") + (v.q ? ", " + String(v.q).replace(/_/g, " ") : ""); }));
+      line("Local titles in MAP, as colleges typed them, each with its CPL type:");
+      if (!EXH_SBS.data && !EXH_SBS.failed) exhSbsLoad(redrawKeepFocus);
+      list((r.raw_variants || []).map(function (v) { return v.r + (v.c != null ? " (title " + Math.round(v.c * 100) + "%)" : "") + (v.q ? ", " + String(v.q).replace(/_/g, " ") : "") + ". " + localTypeWords(v.r); }));
       var cl = listCertLink(r);
       if (cl && (cl.certs.length || (cl.unresolved || []).length)) {
         line(cl.relation === "aligned" ? "Aligned to this test: the college issues the course, and ASE issues only the test."
@@ -4171,6 +4275,10 @@
           if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listLeftNote());
         }
+        if (L.f === "nosubj") {
+          if (!SUBJ_WL.p) subjWorklistLoad().then(function () { if (state.view === "list") render(); });
+          wrap.appendChild(listSubjNote());
+        }
         return true;
       },
       filters: LIST_FILTERS,
@@ -4261,7 +4369,7 @@
           + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
       },
       titleSubs: function (r, L, aiOn) {
-        var out = [], o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
+        var out = listTitleTypeSubs(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
         var pf = listPendingFold(r);
         if (pf) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
           ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
@@ -4383,6 +4491,12 @@
     });
   }
   function redrawList() { if (listApi()) LIST_ENGINE.redraw(); else render(); }
+  /* A redraw a file's arrival starts, not a press: focus stays where the reader left it (the panel's bar, a word). */
+  function redrawKeepFocus() {
+    var a = document.activeElement, id = a && a !== document.body ? a.id : "";
+    redrawList();
+    if (id) { var e = document.getElementById(id); if (e && e !== document.activeElement) e.focus(); }
+  }
   /* ── The side panel (Sam, 2026-11-03: "when you click on an exhibit in the list and open the side bar it shows a list
      (like you've designed) of the folded members"; the mock https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, after
      SkyView's course outline). One line of what the credential is, its members (the MAP exhibits folded under it,
@@ -4676,7 +4790,9 @@
           + fmt(c.strong_colleges) + (c.strong_colleges === 1 ? " college holds" : " colleges hold") + " a Strong evidence course."]);
       })));
     }
-    var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2] }; }) : [];
+    var members = ad && Array.isArray(ad.x) ? ad.x.map(function (x) { return { id: x[0], title: x[1], units: x[2], type: exhibitTypeWords(x[0]) }; }) : [];
+    // Each local title's CPL type beside it (issue 3510, C1), from the side by side file, read once a visit.
+    if (members.length && !EXH_SBS.data && !EXH_SBS.failed) exhSbsLoad(redrawKeepFocus);
     out.push(h.heading("Members"));
     if (!members.length) {
       out.push(el2("p", { cls: "exh-muted exh-small", text: state.cs.adopt ? "MAP records no exhibit under this name."
@@ -4685,9 +4801,10 @@
       // Each exhibit's number links to it in MAP; the table opens A to Z by local title.
       out.push(h.table({ id: "members", label: "Members of " + listTitle(r), sort: { col: 1, dir: 1 },
         note: "The MAP exhibits folded under this name, as colleges entered them. Press a header to sort; an exhibit's number opens it in MAP.",
-        cols: [["id", "Exhibit"], ["title", "Local title"], ["units", "Units", true]],
+        cols: [["id", "Exhibit"], ["title", "Local title"], ["type", "CPL type"], ["units", "Units", true]],
         rows: members,
         cell: function (m, k) {
+          if (k === "type") return exhibitTypeWords(m.id);
           if (k !== "id") return m[k];
           return el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", cls: "exh-pn-id", text: m.id, "aria-label": m.id + " in MAP (opens a new tab)" });
         } }));
@@ -5464,6 +5581,7 @@
     ".exh-l-rx { display:grid; gap:4px; margin:4px 0 10px; padding:8px 12px; border-left:3px solid var(--border); max-width:var(--cpl-measure,none); }",
     ".exh-l-rxhead { margin:0; font-weight:600; color:var(--text-strong); }",
     ".exh-l-rxlist { margin:0; padding-left:1.2em; display:grid; gap:2px; }",
+    ".exh-rl-acts { display:inline-flex; flex-wrap:wrap; gap:4px 12px; margin-left:6px; }",
     ".exh-l-rxmore summary { cursor:pointer; color:var(--seal-blue-text); text-decoration:underline; min-height:24px; }",
     ".exh-l-rxmore summary:focus-visible { outline:2px solid var(--seal-blue-text); outline-offset:2px; }",
     ".exh-small { font-size:.88rem; }",

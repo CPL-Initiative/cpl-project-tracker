@@ -184,6 +184,13 @@ def receipt_time(v):
     return "%sT%s:%s:%sZ" % m.groups() if m else v
 
 
+def exhibit_machine_at(saved_at, fold_at, run_at):
+    """The newest of the last save, the last fold and the last successful procedures run, as written (or None).
+    The stamps come in different shapes (Z, an offset, a bare date), so they compare as times, never as text."""
+    stamps = [t for t in (saved_at, fold_at, run_at) if _when(t)]
+    return max(stamps, key=_when) if stamps else None
+
+
 def row_exhibit(root):
     # The Exhibits tab carries the reference's queue now (Sam, Open Asks Sheet 148, 2026-10-31: link-retire);
     # the counts open its routes. Titles that left MAP stay at the CER's address, which still opens, until Exhibits
@@ -239,7 +246,11 @@ def row_exhibit(root):
     if folds:
         with open(folds[-1], encoding="utf-8") as f:
             fold_at = json.load(f).get("_generated_at")
-    stamps = [t for t in (saved_at, fold_at) if t]
+    # The last successful procedures run counts as the machine running too (#3510 C4): on a quiet day the queue is
+    # empty, nothing saves and nothing folds, and dating the row by the last save or fold alone read as stalled while
+    # the nightly ran on time. kb/cer_procedures_out/latest.json is written only when the run finishes.
+    run_at = (run["n"] or {}).get("_generated_at") if run["n"] is not None else None
+    machine_at = exhibit_machine_at(saved_at, fold_at, run_at)
     # Credentials with no Common SUBJ (Sam, in session 2026-11-11: "many of the exhibits don't have a subj"): the
     # subject fill (kb/_exhibit_subject_fill.py, nightly in cer-procedures.yml) counts what is left; routine, so the
     # day history carries its trend and a count that stops shrinking surfaces as stalled.
@@ -308,7 +319,7 @@ def row_exhibit(root):
             {"words": "A procedure's saves undo together"},
             {"words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"},
         ],
-        "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
+        "machine": {"what": "the procedures run, the saving run and the fold", "at": machine_at, "every_hours": 24},
         "facts": {"titles": len(ut), "backlog": backlog, "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
                   "confirmed": person,
                   "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,

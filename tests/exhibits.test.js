@@ -588,7 +588,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the credit shows: the recommendation, the CPL type, the discipline and the courses", /Credit recommendation: 3\.5 hours in Electrical Theory/.test(txt(more))
     && /CPL type: Portfolio Review/.test(txt(more)) && /Discipline: Electricity/.test(txt(more)) && /Courses: M-ID ELEC M1001, Electrical Theory/.test(txt(more)), txt(more));
   check("the median and the exhibit in MAP", /The median articulating college awards 3\.5 units/.test(txt(more))
-    && Array.from(cp.querySelector(".exh-l-pn-table tbody tr").children).slice(0, 3).map(txt).join("|") === "MAPAPP-IBEW-1-001|IBEW Year 1|3.5", txt(cp.querySelector(".exh-l-pn-table tbody tr")) + " // " + txt(more));
+    && Array.from(cp.querySelector(".exh-l-pn-table tbody tr").children).map(txt).filter(function (x, i) { return i !== 2; }).join("|") === "MAPAPP-IBEW-1-001|IBEW Year 1|3.5", txt(cp.querySelector(".exh-l-pn-table tbody tr")) + " // " + txt(more));
   check("MAP's line for the credential, with Request Quick Adopt", !!cp.querySelector('.cpl-maplinks[data-ml-title="' + IBEW + '"]') && /Request Quick Adopt/.test(txt(more)));
   const norco = Array.from(more.querySelectorAll(".exh-pn-ul li")).find(function (li) { return /^Norco College/.test(txt(li)); });
   check("an articulating college: its line, its units and the exhibit it built, in MAP", !!norco && /3\.5 units: ELC 401, 3\.5 hours in Introduction to Electrical Theory/.test(txt(norco))

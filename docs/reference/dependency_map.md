@@ -750,7 +750,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_side_by_side.json` | tabs: `exhibits` · scripts: `kb/_build_side_by_side.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_subject_out` | none found | committed by: `cer-procedures.yml` |
-| `kb/exhibit_subject_out/worklist.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/exhibit_subject_out/worklist.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_side_by_side.py`, `kb/_build_standards_rename_plan.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py`, `scripts/next_slo_colleges.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_ai_sort.json` | scripts: `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_ai_sort.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibits_ai_sort.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibits_reanalysis/latest.json` | tabs: `exhibits` | — |
@@ -1154,6 +1154,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/commons_data_live_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_data_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_status_build_test.py` | workflows: `js-tests.yml` | — |
+| `tests/commons_status_exhibit_machine_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_id_route_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_outcomes_load_test.py` | workflows: `js-tests.yml` | — |
@@ -1595,5 +1596,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1051 file
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1052 file
 datasets · 195 external services · 616 consumers · 73 workflows · 41 tabs.

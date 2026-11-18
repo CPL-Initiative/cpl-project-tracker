@@ -59,7 +59,9 @@ withhold kb/promotions.json
 # Re-mint, fold, dry-run and apply output (alias maps, collisions). kb/csr_out/latest.json and
 # kb/cer_procedures_out/latest.json are published by their own lines below, and so are the credential rename
 # dry run's alias_map.json and collisions.json, which the Exhibits tab reads (S650; their reviewer address is
-# already public in kb/credential_review_overlay.json).
+# already public in kb/credential_review_overlay.json). kb/exhibit_subject_out/worklist.json is published too: the
+# Exhibits List's No Common SUBJ filter reads it to say why each credential has no subject (#3510 C3; it carries
+# credential titles, issuing organizations and exhibit ids, no person's name or address).
 withhold kb/*_apply
 withhold kb/*_dryrun
 withhold kb/*_fold
@@ -319,6 +321,7 @@ publish kb/exhibit_cert_links.json
 publish kb/exhibit_left_map.json
 publish kb/exhibit_side_by_side.json
 publish kb/exhibit_slo_neighbors.json
+publish kb/exhibit_subject_out/worklist.json
 publish kb/exhibits_adoption.json
 publish kb/exhibits_ai_sort.json
 publish kb/exhibits_reanalysis

@@ -97,7 +97,8 @@ async function openIt(t, sel) {
     await settle(); await settle();
     let f = t.d.querySelector("#exh-l-panel details.exh-sbs");
     check("(1) ⭐ the List panel carries the side by side, closed", !!f && !f.open && /^Side by side/.test(txt(f.querySelector("summary"))), f && txt(f.querySelector("summary")));
-    check("(1) its file is not read before it opens", sbsReads(t) === 0, String(sbsReads(t)));
+    // Opening the panel reads the file once, for each member's CPL type (issue 3510, C1); the fold reuses it.
+    check("(1) the panel reads its file once, for the members' CPL types", sbsReads(t) === 1, String(sbsReads(t)));
     const before = t.calls.length;
     f = await openIt(t, "#exh-l-panel details.exh-sbs");
     const r = rows(f);

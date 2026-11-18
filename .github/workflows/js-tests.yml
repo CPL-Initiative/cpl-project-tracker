@@ -620,6 +620,10 @@ jobs:
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
         run: python3 tests/commons_status_build_test.py
+      # The Exhibits row's machine stamp counts the last successful procedures run, so a quiet day with an empty
+      # queue reads as fine and not as stalled (#3510 C4, S683).
+      - name: Commons Exhibits row dated by the procedures run too
+        run: python3 tests/commons_status_exhibit_machine_test.py
       # The Commons data dashboard (#3215): the universe is the crosswalk, every harvest name resolves, the
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder

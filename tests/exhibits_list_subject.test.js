@@ -73,7 +73,7 @@ function catalogSubjOf() {
   const col = heads.indexOf("Common SUBJ");
   check("the List has its Common SUBJ column", col > -1, heads.join(","));
   const subj = {};
-  rows(t.d).forEach(function (r) { const v = txt(r.children[col]); subj[txt(r.children[2]).split("collides")[0].trim()] = v === "\u2014" ? "" : v; });
+  rows(t.d).forEach(function (r) { const v = txt(r.children[col]); subj[txt(r.children[2]).split(/collides|CPL type: /)[0].trim()] = v === "\u2014" ? "" : v; });
   check("(1) ⭐ a credential with only C-ID articulations is not blank in Exhibits", subj["Justice Intro"] === "AJ", JSON.stringify(subj));
   check("(2) ⭐ a stored subj_override fills a credential with no articulation (MIL7 reads AUTO)",
     subj["Heating and Air Conditioning"] === "AUTO", JSON.stringify(subj));

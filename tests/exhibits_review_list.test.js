@@ -57,7 +57,7 @@ function tileOf(d, label) { return Array.from(d.querySelectorAll(".exh-tile")).f
   check("(1) the titles open under the tiles", !!box && txt(box.querySelector("summary")) === "The 4 renamed titles to look at", box && txt(box));
   const items = box ? Array.from(box.querySelectorAll("li")).map(txt) : [];
   check("(1) every title is listed with its kind and its words", items.length === 4
-    && items.some((x) => /^Old Carpentry, dead end\. Renamed to .Gone Title., which is no longer in the reference\.$/.test(x)), items.join(" | "));
+    && items.some((x) => /^Old Carpentry, dead end\. Renamed to .Gone Title., which is no longer in the reference\. The List has no row for it\.$/.test(x)), items.join(" | "));
   check("(2) a returned title no one acknowledged reads first, in words", /^Put Back, brought back, not acknowledged\. .*no record of who brought it back or why/.test(items[0] || ""), items[0]);
   check("(5) no glyph in the rendered list", items.every((x) => !/[←-⇿☀-➿\u{1F300}-\u{1FAFF}]/u.test(x)));
 
