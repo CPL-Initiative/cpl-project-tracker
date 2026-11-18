@@ -22,13 +22,24 @@ nothing else. A program record whose degree check also fails stays failing.
 
 Sam's rulings of 2026-11-17 (docs/reference/sam_rulings.md) ride the same pass:
 a printed unit range whose low end the sum meets with its high end short passes
-as "short_high" (the scorer's short_high), and a local degree whose major
+as "short_high" (the scorer's short_high; the sum a range or a single figure,
+COBIx on #3478), and a local degree whose major
 matches the catalog exactly and whose major and general education run past the
 degree total takes ge_overlap, with the reconcile stage's statewide note
 (local_overlap_hold in kb/_program_requirements_reconcile.py), and passes as
 overlap. The general education open slot needs the page text, and its matcher is
 off until a self-recall run on captured pages (GE_AREA_SLOT_FILL in
 kb/_program_requirements_reconcile.py), so the rescore never adds one.
+
+The scorer's arithmetic_note rides it too (COBIx on #3478, 6965717631): a record
+passing as short_high whose required list adds up short of its own printed
+figure keeps a note that the list looks short ("note", "lists_short"), and a
+local degree whose major matches and whose sum falls short of the degree total
+stays failing with "major matches; degree total short of 60, electives probably
+not listed". A record that only takes a note is rewritten on disk and listed in
+the receipt's "noted", never in the UPDATE: the live row's checks.arithmetic is
+a status alone. The receipt's "counts" split ruling 2 into single-figure and
+range sums.
 
     python3 kb/_program_requirements_rescore.py           # rewrite the records it passes, write the receipt
     python3 kb/_program_requirements_rescore.py --check   # fail when a filed record would change
@@ -56,7 +67,7 @@ import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from _program_requirements_score import degree_verdict, program_verdict  # noqa: E402
+from _program_requirements_score import arithmetic_note, degree_verdict, program_verdict  # noqa: E402
 import _program_requirements_reconcile as R  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
@@ -68,9 +79,31 @@ def _q(s: str) -> str:
     return "'%s'" % str(s).replace("'", "''")
 
 
+NOTE_KEYS = ("note", "lists_short")
+
+
 def rescore(filed: dict) -> dict | None:
-    """The filed record's arithmetic under the current rule, or None when it
-    does not change."""
+    """The filed record's arithmetic under the current rule, its note included (the scorer's arithmetic_note), or
+    None when it does not change."""
+    arith = ((filed.get("score") or {}).get("arithmetic")) or {}
+    new = _verdict(filed)
+    base = new if new is not None else arith
+    if not base:
+        return None
+    out = {k: v for k, v in base.items() if k not in NOTE_KEYS}
+    out.update(arithmetic_note(filed.get("record") or {}, filed.get("award"), out))
+    return None if out == arith else out
+
+
+def moved(filed: dict, new: dict) -> bool:
+    """Whether the rescore moves the check from "unequal" to passing: the rows the live UPDATE writes. A record that
+    only takes a note is rewritten on disk and stays out of the UPDATE."""
+    old = ((filed.get("score") or {}).get("arithmetic")) or {}
+    return old.get("status") == "unequal" and bool(new.get("pass"))
+
+
+def _verdict(filed: dict) -> dict | None:
+    """The filed record's arithmetic under the current verdicts, or None when it does not pass."""
     score = filed.get("score") or {}
     arith = score.get("arithmetic") or {}
     comp, stated = arith.get("computed"), arith.get("stated")
@@ -109,6 +142,23 @@ RULING_SHORT_HIGH = "Sam's ruling of 2026-11-17, short high end"
 RULING_LOCAL_OVERLAP = "Sam's ruling of 2026-11-17, local degree overlap"
 
 
+def counts(changed: list[dict], noted: list[dict]) -> dict:
+    """The receipt's counts, so the scope can be checked against the rulings (COBIx on #3478, 6965840725): each way a
+    record passes, ruling 2 split into single-figure and range sums, and the notes."""
+    out: dict = {}
+    for c in changed:
+        out[c["how"]] = out.get(c["how"], 0) + 1
+    sh = [c for c in changed if c["how"] == "short_high"]
+    single = sum(1 for c in sh if abs(float(c["computed"][0]) - float(c["computed"][1])) < 1e-9)
+    out["short_high_single_figure_sums"] = single
+    out["short_high_range_sums"] = len(sh) - single
+    out["short_high_colleges"] = len({c["college"] for c in sh})
+    out["short_high_list_looks_short"] = sum(1 for c in sh if c.get("note"))
+    out["noted_degree_short"] = sum(1 for c in noted if (c.get("note") or "").startswith("major matches"))
+    out["noted_other"] = len(noted) - out["noted_degree_short"]
+    return out
+
+
 def arith_against(filed: dict) -> str | None:
     return (((filed.get("score") or {}).get("arithmetic") or {}).get("against"))
 
@@ -124,7 +174,9 @@ def passes(score: dict) -> bool:
     return all((score.get(k) or {}).get("pass") for k in ("coverage", "invented", "arithmetic", "repeated", "outcomes"))
 
 
-def run(write: bool) -> list[dict]:
+def run(write: bool, noted: list[dict] | None = None) -> list[dict]:
+    """The records the rescore moves to passing (the UPDATE's rows). noted, where given, collects the records that
+    only take or drop a note: rewritten on disk, never in the UPDATE."""
     changed = []
     for path in sorted(p for g in GLOBS for p in glob.glob(g)):
         with open(path) as fh:
@@ -132,11 +184,17 @@ def run(write: bool) -> list[dict]:
         new = rescore(filed)
         if new is None:
             continue
-        changed.append({"college": filed["college"], "control_number": filed["control_number"],
-                        "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
-                        "against": arith_against(filed), "how": how(new),
-                        "computed": new.get("computed"), "stated": new.get("stated"),
-                        "path": os.path.relpath(path, ROOT)})
+        row = {"college": filed["college"], "control_number": filed["control_number"],
+               "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
+               "against": arith_against(filed), "how": how(new),
+               "computed": new.get("computed"), "stated": new.get("stated"),
+               "path": os.path.relpath(path, ROOT)}
+        if new.get("note"):
+            row["note"] = new["note"]
+        if moved(filed, new):
+            changed.append(row)
+        elif noted is not None:
+            noted.append(dict(row, how="note" if new.get("note") else "note dropped"))
         if write:
             if new.get("rescored") == RULING_LOCAL_OVERLAP:
                 # The record takes the field the scorer read, with the reconcile stage's statewide note.
@@ -268,7 +326,8 @@ def main(argv=None) -> int:
         print("rollback for %d returned rows (%d marked checked) written to %s"
               % (len(got["keys"]), len(got.get("checked") or []), args.receipt))
         return 0
-    changed = run(write=not args.check)
+    noted: list[dict] = []
+    changed = run(write=not args.check, noted=noted)
     for i, c in enumerate(changed, 1):
         c["i"] = i
     by = {}
@@ -276,14 +335,16 @@ def main(argv=None) -> int:
         by.setdefault((c["college"], c["how"]), []).append(c["control_number"])
     for (college, how), keys in sorted(by.items()):
         print("%s, %s: %d (%s)" % (college, how, len(keys), ", ".join(keys)))
+    if noted:
+        print("%d records take or drop a note only (rewritten on disk, not in the UPDATE)" % len(noted))
     if args.check:
-        if changed:
+        if changed or noted:
             print("%d filed records score differently under the current rule: run kb/_program_requirements_rescore.py"
-                  % len(changed))
+                  % (len(changed) + len(noted)))
             return 1
         print("every filed record's degree arithmetic is scored by the current rule")
         return 0
-    if not changed:
+    if not changed and not noted:
         print("nothing to rescore")
         return 0
     path = os.path.join(RECEIPTS, "program_requirement_records_rescore_%s_%s.json"
@@ -293,7 +354,13 @@ def main(argv=None) -> int:
                        "Sam's rulings of 2026-11-17 (a short high end passes; a local degree's major counts toward "
                        "general education)",
                "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-               "rescored": len(changed), "records": changed,
+               "rescored": len(changed), "counts": counts(changed, noted), "records": changed,
+               "noted": [{k: c[k] for k in ("college", "control_number", "award", "how", "note") if k in c}
+                         for c in noted],
+               "noted_how": ("Records that only take a note (the scorer's arithmetic_note). The note lives in the "
+                             "filed record and reaches readers through the display build; the live row's "
+                             "checks.arithmetic is a status alone and does not change, so these stay out of the "
+                             "UPDATE."),
                "pre_read": pre_read_sql(changed),
                "apply": update_sql(changed, "equal", "unequal"),
                "follow_verdict": FOLLOW_VERDICT,

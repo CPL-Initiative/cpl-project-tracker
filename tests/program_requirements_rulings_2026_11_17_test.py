@@ -5,8 +5,12 @@
      matches the catalog exactly, and whose major and general education run past the degree total, takes
      ge_overlap in the reconcile stage (local_degree_ge_overlap) and passes as overlap, as a transfer degree does.
   2. "Pass short high ends the same way as over-high ends": a printed unit range whose low end the sum meets
-     exactly, the high end short, passes as short_high (the scorer, beside Sheet 120 card 1's meets), only where
-     the sum is a range itself (S679, the conductor's call): Mt. San Jacinto 38847's 30 against 30-35 fails.
+     exactly, the high end short, passes as short_high (the scorer, beside Sheet 120 card 1's meets). The range is
+     the catalog's (COBIx on #3478, 6965840725): a single-figure sum passes too, so Mt. San Jacinto 38847's 30
+     against 30-35 passes, and a sum whose low end misses the printed floor still fails. A record whose required
+     list adds up short of its own printed figure passes with a note that the list looks short.
+  The notes (COBIx on #3478, 6965717631): a local degree whose major matches and whose sum falls short of the
+     degree total stays failing with "major matches; degree total short of 60, electives probably not listed".
   3.The general education open slot (correction step 4 of #3461): a line naming a general education area and its
      units is kept as an open slot, only when the printed total includes general education, and only when the
      slots bring the sum to that total exactly. Tested on Chaffey Physical Therapist Assistant (42987), Los Angeles
@@ -78,15 +82,31 @@ check("an hours range stays out of the ruling (108 against 108-216 hours fails)"
 d = S.degree_verdict({}, (68.5, 74.5), 68.5, 70.0, "A.S. Degree")
 check("a degree range whose sum is a range (68.5-70 against 68.5-74.5) passes as short_high",
       d["pass"] and d.get("short_high"))
-check("a single-figure sum against a degree range (Butte 35937's shape, 68.5 against 68.5-74.5) still fails",
-      not S.degree_verdict({}, (68.5, 74.5), 68.5, 68.5, "A.S. Degree")["pass"])
-check("a single-figure sum against a program range (Mt. San Jacinto 38847's shape, 30 against 30-35) still fails",
-      not S.program_verdict({"measure": "units"}, (30.0, 35.0), 30.0, 30.0)["pass"])
+d1 = S.degree_verdict({}, (68.5, 74.5), 68.5, 68.5, "A.S. Degree")
+check("a single-figure sum against a degree range (Butte 35937's shape, 68.5 against 68.5-74.5) passes as short_high",
+      d1["pass"] and d1.get("short_high"))
+p1 = S.program_verdict({"measure": "units"}, (30.0, 35.0), 30.0, 30.0)
+check("a single-figure sum against a program range (Mt. San Jacinto 38847's shape, 30 against 30-35) passes",
+      p1["pass"] and p1.get("short_high"))
+check("a single-figure sum below the printed floor still fails (29 against 30-35)",
+      not S.program_verdict({"measure": "units"}, (30.0, 35.0), 29.0, 29.0)["pass"])
+check("a single-figure sum inside the range, off the floor, still fails (31 against 30-35)",
+      not S.program_verdict({"measure": "units"}, (30.0, 35.0), 31.0, 31.0)["pass"])
+check("a single-figure degree sum below the printed floor still fails (68 against 68.5-74.5)",
+      not S.degree_verdict({}, (68.5, 74.5), 68.0, 68.0, "A.S. Degree")["pass"])
 with open(os.path.join(ROOT, "kb", "program_requirements_college", "mt_san_jacinto", "records", "38847.json")) as fh:
     msj = json.load(fh)
-check("the filed Mt. San Jacinto 38847 (30 against 30-35) stays failing under the rescore",
+check("the filed Mt. San Jacinto 38847 (30 against 30-35) passes as short_high after the rescore",
       msj["score"]["arithmetic"]["computed"] == [30.0, 30.0] and msj["score"]["arithmetic"]["stated"] == [30.0, 35.0]
-      and not msj["score"]["arithmetic"]["pass"] and RS.rescore(msj) is None)
+      and msj["score"]["arithmetic"]["pass"] and msj["score"]["arithmetic"].get("short_high")
+      and msj["score"]["arithmetic"]["why"] == [] and RS.rescore(msj) is None)
+msj_before = copy.deepcopy(msj)
+msj_before["score"]["arithmetic"] = {"pass": False, "status": "unequal", "against": "program",
+                                     "computed": [30.0, 30.0], "stated": [30.0, 35.0],
+                                     "why": ["the blocks sum to 30.0-30.0; the catalog states 30.0-35.0"]}
+m2 = RS.rescore(msj_before)
+check("and the rescore moves its pre-ruling score to passing, into the UPDATE",
+      m2 and m2["pass"] and m2.get("short_high") and RS.moved(msj_before, m2))
 failing = {"award": "Certificate of Achievement", "record": {"program": {"measure": "units"}},
            "score": {"arithmetic": {"pass": False, "status": "unequal", "against": "program", "computed": [37.0, 38.0],
                                     "stated": [37.0, 40.0],
@@ -100,7 +120,30 @@ rec = {"program": {"measure": "units", "total_units": {"min": 18, "max": 21}},
                   {"name": "List A", "rule": "choose_units", "stated": {"min": 12, "max": 13}, "courses": []}]}
 a = S.score(rec, [{"code": "HIST 1", "units": 3}, {"code": "HIST 2", "units": 3}], None, "A.A. Degree")["arithmetic"]
 check("score() carries short_high on the arithmetic (18-19 against 18-21)",
-      a["pass"] and a.get("short_high") and a["computed"] == [18.0, 19.0] and a["why"] == [])
+      a["pass"] and a.get("short_high") and a["computed"] == [18.0, 19.0] and a["why"] == [] and not a.get("note"))
+# A required list whose courses add up short of its own printed figure (Golden West 31432's shape: "Required Core",
+# 9 units printed over two 3-unit courses, 18 against 18-20): it passes under ruling 2 and says the list looks short.
+gw = {"program": {"measure": "units", "total_units": {"min": 18, "max": 20}},
+      "blocks": [{"name": "Required Core", "rule": "all", "stated": {"min": 9, "max": 9},
+                  "courses": [{"code": "TA 1", "units": 3}, {"code": "TA 2", "units": 3}]},
+                 {"name": "List A", "rule": "choose_units", "stated": {"min": 12, "max": 12}, "courses": []}]}
+ga = S.score(gw, [{"code": "TA 1", "units": 3}, {"code": "TA 2", "units": 3}], None, "Certificate of Achievement")
+ga = ga["arithmetic"]
+check("a required list short of its printed figure passes as short_high and keeps the note (18 against 18-20)",
+      ga["pass"] and ga.get("short_high") and ga.get("lists_short") == ["Required Core"]
+      and "looks short" in ga.get("note", "") and ga["why"] == [])
+check("a required list that meets its printed figure carries no note",
+      S.short_required_lists({"blocks": [{"name": "R", "rule": "all", "stated": {"min": 6, "max": 6},
+                                          "courses": [{"code": "A 1", "units": 3}, {"code": "A 2", "units": 3}]}]}) == [])
+check("a course with no units lets the printed figure stand: no note",
+      S.short_required_lists({"blocks": [{"name": "R", "rule": "all", "stated": {"min": 9, "max": 9},
+                                          "courses": [{"code": "A 1", "units": 3}, {"code": "A 2"}]}]}) == [])
+gwf = {"award": "Certificate of Achievement", "record": gw,
+       "score": {"arithmetic": {"pass": False, "status": "unequal", "against": "program", "computed": [18.0, 18.0],
+                                "stated": [18.0, 20.0], "why": ["the blocks sum to 18.0-18.0; the catalog states 18.0-20.0"]}}}
+gn = RS.rescore(gwf)
+check("the rescore passes the filed shape with the same note and lists",
+      gn and gn["pass"] and gn.get("short_high") and gn.get("lists_short") == ["Required Core"] and RS.moved(gwf, gn))
 
 # ── ruling 1: a local degree's major counts toward general education ───────────────────────────────────────────────
 print("ruling 1: a local degree's major counts toward general education")
@@ -140,6 +183,15 @@ sa = S.score(short, MAJ, None, "A.A. Degree")["arithmetic"]
 check("a major-only record short of the 60 (33 against 60) is held: overlap cannot close a short sum",
       R.reconcile(short, "x", "Ventura College", "A.A. Degree", closed=MAJ)[1] == []
       and "cannot close" in R.local_overlap_hold(short["program"], "A.A. Degree", sa))
+check("and it stays failing with the note, not as a plain failure",
+      not sa["pass"] and sa.get("note") == "major matches; degree total short of 60, electives probably not listed")
+check("a certificate of the same shape takes no degree note",
+      not S.score(short, MAJ, None, "Certificate of Achievement")["arithmetic"].get("note"))
+sf = {"award": "A.A. Degree", "record": short,
+      "score": {"arithmetic": {k: v for k, v in sa.items() if k != "note"}}}
+sn = RS.rescore(sf)
+check("the rescore writes the note onto a filed short record and leaves it out of the UPDATE",
+      sn and not sn["pass"] and sn.get("note") == sa["note"] and not RS.moved(sf, sn))
 MAJ57 = [{"code": "BUS %d" % i, "units": 3} for i in range(1, 20)]   # 57 units
 wide = {"program": {"measure": "units", "total_units": {"min": 57, "max": 57}, "degree_total": {"min": 60, "max": 60},
                     "ge_units": {"min": 3, "max": 3}, "degree_elective_units": {"min": 20, "max": 20}},
@@ -312,8 +364,20 @@ check("the committed receipt carries the returning UPDATE, the trigger note, and
       and "follow_verdict" in rc["follow_verdict"] and "checked" in rc["follow_verdict"]
       and "Person-settled" in rc["person_settled"]
       and [c["i"] for c in rc["records"]] == list(range(1, rc["rescored"] + 1)))
-check("the committed receipt passes no single-figure sum as short_high",
-      all(c["computed"][1] > c["computed"][0] for c in rc["records"] if c["how"] == "short_high"))
+sh = [c for c in rc["records"] if c["how"] == "short_high"]
+single = [c for c in sh if c["computed"][0] == c["computed"][1]]
+check("the committed receipt counts ruling 2's single-figure and range sums (%d and %d)" % (len(single),
+                                                                                           len(sh) - len(single)),
+      rc["counts"]["short_high_single_figure_sums"] == len(single) > 0
+      and rc["counts"]["short_high_range_sums"] == len(sh) - len(single) > 0
+      and any(c["control_number"] == "38847" and c["college"].startswith("Mt. San Jacinto") for c in single))
+check("every short_high row meets the catalog's floor with its high end short of a printed range",
+      all(c["computed"][0] == c["stated"][0] and c["computed"][1] < c["stated"][1] for c in sh))
+check("the receipt lists the noted records apart from the UPDATE's rows",
+      rc["noted"] and all(c["how"] == "note" for c in rc["noted"])
+      and rc["counts"]["noted_degree_short"] == sum(1 for c in rc["noted"] if c["note"].startswith("major matches"))
+      and not ({(c["college"], c["control_number"]) for c in rc["noted"]}
+               & {(c["college"], c["control_number"]) for c in rc["records"]}))
 check("the UPDATE's returned value fits the migrate receipt's 4,000 characters",
       len(json.dumps({"returned": {"returned": rc["rescored"], "keys": list(range(1, rc["rescored"] + 1)),
                                    "checked": list(range(1, rc["rescored"] + 1))}})) < 3500)
