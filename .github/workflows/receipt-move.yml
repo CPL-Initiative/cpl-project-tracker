@@ -1,0 +1,77 @@
+name: Receipt move (one time)
+# S680 (#3476 Part 4 step 4; Sam, 2026-11-17: "Let's move the bloated data out first thing and make sure we
+# don't allow to go beyond a limit."). Stores every display receipt committed before S680 (141 files, 2.4 GB of
+# the tree) in the private cpl-receipts bucket through kb/_receipt_store.py's store_file(): each one checked
+# against the blob the tree names, a plain .sql gzipped first, read back, and named in its own index entry
+# under kb/receipts/index/ with the stored object's sha256 and the repo file's. The job commits those entries
+# alone, to the branch that ran it. A later commit on that branch removes the stored files with git rm, and
+# tests/receipt_move_gate_test.py fails CI if any left the tree without an entry naming its blob.
+#
+# Runs when a claude/** push changes kb/receipts/.move to something main does not hold (the gate job), never on
+# a merge commit. To run it again, change a line in the trigger: a re-run skips every file already indexed.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/receipts/.move'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: receipt-move-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: kb/receipts/.move
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/receipts/.move; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/receipts/.move matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  move:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    # The full tree is about 2 GB to fetch; the receipts are 1.6 GB to upload once gzipped, and as much to read back.
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: What moves, by kind
+        run: python3 kb/_receipt_move_display.py --dry-run
+      - name: Store every committed display receipt in cpl-receipts and index it
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_receipt_move_display.py --apply --workers 4
+      # The entries a partial run filed are committed too: a re-run then skips them.
+      - name: Commit the index entries to the branch that ran it
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts/index
+          if git diff --cached --name-only | grep -v '^kb/receipts/index/'; then
+            echo "::error::Only index entries are committed by the move."; exit 1
+          fi
+          if git diff --cached --quiet; then echo "no new entry"; exit 0; fi
+          git commit -m "Index entries: the committed display receipts stored in cpl-receipts (run $GITHUB_RUN_ID)"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:$GITHUB_REF_NAME" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "$GITHUB_REF_NAME"
+          done
+          exit 1

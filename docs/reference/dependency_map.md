@@ -621,6 +621,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
+| `kb/_receipt_move_display.py` | workflows: `receipt-move.yml` | — |
 | `kb/_receipt_store.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
@@ -836,6 +837,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/receipts` | none found | committed by: `college-contacts-harvest.yml`, `course-outcomes-load.yml`, `program-requirements-college.yml`, `supabase-migrate.yml` |
 | `kb/receipts/cr_reference_decisions_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/receipts/cr_reference_decisions_<date>_s280.json` | scripts: `kb/_build_decision_sheet_demo.py` | — |
+| `kb/receipts/index` | none found | committed by: `receipt-move.yml` |
 | `kb/receipts/jev_ccr_title_rung_<date>_s282.json` | scripts: `kb/_build_ccr_title_rung_sheet.py` | — |
 | `kb/receipts/left_map_apply_*.json` | none found | committed by: `daily-dashboard.yml` |
 | `kb/receipts/library_publish` | none found | committed by: `library-publish.yml` |
@@ -1283,6 +1285,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
+| `tests/receipt_move_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_reader_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_window_fill_test.py` | workflows: `js-tests.yml` | — |
 | `tests/refresh_button_no_secret_test.py` | workflows: `js-tests.yml` | — |
@@ -1583,5 +1586,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1040 file
-datasets · 195 external services · 613 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1043 file
+datasets · 195 external services · 614 consumers · 73 workflows · 41 tabs.

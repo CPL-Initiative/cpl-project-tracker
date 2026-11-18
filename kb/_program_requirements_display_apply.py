@@ -184,6 +184,7 @@ def stored_receipt(build: str | None, *, fetch=None, folder: str | None = None, 
             tried.append("the bucket: " + _first(exc))
         if data is not None:
             if S.sha256_bytes(data) == entry["sha256"]:
+                data = S.file_bytes(entry, data)     # gunzipped when the move gzipped a plain .sql (S680)
                 fd, local = tempfile.mkstemp(prefix="display_receipt_", suffix="_" + entry["name"],
                                              dir=os.environ.get("RUNNER_TEMP") or None)
                 with os.fdopen(fd, "wb") as fh:
@@ -195,7 +196,7 @@ def stored_receipt(build: str | None, *, fetch=None, folder: str | None = None, 
         tried.append("the bucket: not read (no service key)")
     if os.path.exists(repo):
         got = S.sha256_file(repo)
-        if got == entry["sha256"]:
+        if got == (entry.get("repo_sha256") or entry["sha256"]):
             return {"repo": repo, "local": repo, "entry": entry, "source": os.path.relpath(repo, ROOT)}
         tried.append("the repo copy: sha256 %s" % got)
     else:

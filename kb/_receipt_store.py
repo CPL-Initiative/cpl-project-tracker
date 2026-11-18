@@ -54,6 +54,7 @@ Guard: tests/display_receipt_store_test.py.
 from __future__ import annotations
 
 import argparse
+import gzip
 import hashlib
 import json
 import os
@@ -71,10 +72,23 @@ INDEX = os.path.join(RECEIPTS, "index")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 BUCKET = "cpl-receipts"
 DISPLAY_KIND = "program_requirement_records_display"
+# ---- The kinds a receipt is stored under: its bucket folder and the names it takes. One block (S680); add a
+# kind here and nowhere else. A kind not listed stores under "<kind>/" and takes any bare name.
+KINDS = {
+    DISPLAY_KIND: ("display/", r"^program_requirement_records_display_\d{4}-\d{2}-\d{2}_[0-9a-f]{12}\.sql(\.gz)?$"),
+    "program_requirement_records_display_delta": (
+        "display/delta/", r"^program_requirement_records_display_.+_delta\.sql(\.gz)?$"),
+    "program_requirement_records_display_dated": (
+        "display/dated/", r"^program_requirement_records_display_\d{4}-\d{2}-\d{2}\.sql(\.gz)?$"),
+}
+# ---- end of the kinds
 # A display build's full receipt; a delta (…_delta.sql.gz) never stands for a build.
 DISPLAY_NAME = re.compile(r"^program_requirement_records_display_(\d{4}-\d{2}-\d{2})_([0-9a-f]{12})\.sql(\.gz)?$")
 FIELDS = ("name", "kind", "bucket", "object", "build", "built", "bytes", "sha256", "rows", "stored_at", "run")
-OPTIONAL = ("supersedes",)
+# The move of committed receipts (S680) adds the repo file's own sha256, size and git blob id, and `gzip`
+# when a plain .sql was gzipped to be stored (its object then ends .gz; `sha256` and `bytes` are the object's).
+OPTIONAL = ("supersedes", "gzip", "repo_sha256", "repo_bytes", "repo_blob")
+BLOB = re.compile(r"^[0-9a-f]{40}$")
 SHA = re.compile(r"^[0-9a-f]{64}$")
 STAMP = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$")
 TRIES = 4
@@ -92,10 +106,41 @@ def sha256_file(path: str) -> str:
     return h.hexdigest()
 
 
-def object_name(kind: str, name: str, sha: str | None = None) -> str:
-    """Where a receipt sits in the bucket: display receipts under display/. A superseding
-    copy sits in a folder named by its sha256's first 12, beside the object it replaces."""
-    return ("display/" if kind == DISPLAY_KIND else kind + "/") + (sha[:12] + "/" if sha else "") + name
+def object_name(kind: str, name: str, sha: str | None = None, gz: bool = False) -> str:
+    """Where a receipt sits in the bucket: its kind's folder (KINDS). A superseding copy
+    sits in a folder named by its sha256's first 12, beside the object it replaces; a
+    plain file gzipped to be stored takes .gz."""
+    folder = KINDS[kind][0] if kind in KINDS else kind + "/"
+    return folder + (sha[:12] + "/" if sha else "") + name + (".gz" if gz else "")
+
+
+def kind_of(name: str) -> str | None:
+    """The display kind a committed receipt's name belongs to, or None."""
+    for kind, (_, pattern) in KINDS.items():
+        if kind.startswith(DISPLAY_KIND) and re.match(pattern, name):
+            return kind
+    return None
+
+
+def git_blob(data: bytes) -> str:
+    """The id git gives these bytes as a blob (git hash-object)."""
+    return hashlib.sha1(b"blob %d\0" % len(data) + data).hexdigest()
+
+
+def gzip_bytes(data: bytes) -> bytes:
+    """mtime 0 and no name, so the same bytes always gzip the same."""
+    return gzip.compress(data, compresslevel=9, mtime=0)
+
+
+def file_bytes(entry: dict, stored: bytes) -> bytes:
+    """The receipt's own bytes from its stored object: gunzipped when the store gzipped it,
+    and refused unless they carry the entry's repo_sha256 when it names one."""
+    data = gzip.decompress(stored) if entry.get("gzip") else stored
+    want = entry.get("repo_sha256")
+    if want and sha256_bytes(data) != want:
+        raise SystemExit("REFUSING: %s unpacks with sha256 %s, the index names %s" % (entry["name"], sha256_bytes(data),
+                                                                                     want))
+    return data
 
 
 def content_type(name: str) -> str:
@@ -126,12 +171,16 @@ def entry_problems(e: dict) -> list:
     if e.get("bucket") != BUCKET:
         out.append("bucket must be %s" % BUCKET)
     sups = e.get("supersedes")
+    gz = bool(e.get("gzip"))
+    if "gzip" in e and (e["gzip"] is not True or name.endswith(".gz")):
+        out.append("gzip is true, and only on a plain file stored gzipped")
     if sups is None:
-        if e.get("object") != object_name(kind, name):
-            out.append("object must be %s" % object_name(kind, name))
+        if e.get("object") != object_name(kind, name, gz=gz):
+            out.append("object must be %s" % object_name(kind, name, gz=gz))
     else:
-        if e.get("object") != object_name(kind, name, str(e.get("sha256") or "")):
-            out.append("a superseding entry's object must be %s" % object_name(kind, name, str(e.get("sha256") or "")))
+        if e.get("object") != object_name(kind, name, str(e.get("sha256") or ""), gz=gz):
+            out.append("a superseding entry's object must be %s"
+                       % object_name(kind, name, str(e.get("sha256") or ""), gz=gz))
         if not isinstance(sups, list) or not sups or not all(
                 isinstance(s, dict) and set(s) == {"object", "sha256", "seen_in"} and SHA.match(str(s["sha256"]))
                 and s["seen_in"] in ("bucket", "index") and s["sha256"] != e.get("sha256") for s in sups):
@@ -150,6 +199,18 @@ def entry_problems(e: dict) -> list:
             out.append("a display entry names a build's full receipt")
         elif (m.group(1), m.group(2)) != (e.get("built"), e.get("build")):
             out.append("built and build must match the name")
+    elif kind in KINDS and not re.match(KINDS[kind][1], name):
+        out.append("a %s entry's name must match %s" % (kind, KINDS[kind][1]))
+    repo = [f for f in ("repo_sha256", "repo_bytes", "repo_blob") if f in e]
+    if repo and len(repo) != 3:
+        out.append("repo_sha256, repo_bytes and repo_blob come together")
+    if repo and not (SHA.match(str(e["repo_sha256"])) and BLOB.match(str(e["repo_blob"]))
+                     and isinstance(e["repo_bytes"], int) and e["repo_bytes"] > 0):
+        out.append("repo_sha256 is a sha256, repo_blob a git blob id, repo_bytes a positive size")
+    if gz and not repo:
+        out.append("a gzipped store names the repo file's sha256, size and blob")
+    if repo and not gz and (e["repo_sha256"] != e.get("sha256") or e["repo_bytes"] != e.get("bytes")):
+        out.append("stored as it is, the repo file's sha256 and size are the object's")
     return out
 
 
@@ -194,8 +255,13 @@ def add_entry(entry: dict, folder: str | None = None) -> bool:
     was = read_entry(entry["name"], folder)
     if was is not None:
         if was["sha256"] == entry["sha256"] and was["object"] == entry["object"]:
-            return False
-        if was["sha256"] == entry["sha256"] and not entry.get("supersedes"):
+            adds = {k: entry[k] for k in ("repo_sha256", "repo_bytes", "repo_blob") if k in entry and k not in was}
+            if not adds:
+                return False
+            # The move (S680) names the repo blob of a receipt a display run stored first: the entry
+            # keeps when and by which run it was stored, and gains the repo file's identity.
+            entry = dict(was, **adds)
+        if was["sha256"] == entry["sha256"] and was["object"] != entry["object"] and not entry.get("supersedes"):
             raise SystemExit("REFUSING: %s is indexed at %s; an entry at %s must list what it supersedes"
                              % (entry["name"], was["object"], entry["object"]))
         if was["sha256"] != entry["sha256"] and was["sha256"] not in {s["sha256"] for s in entry.get("supersedes") or []}:
@@ -301,17 +367,24 @@ def _put_and_check(storage, obj: str, data: bytes, sha: str) -> tuple[str, str |
 
 
 def store_file(path: str, *, kind: str, build: str | None, built: str | None, rows: int, storage,
-               run: str | None = None, index_path: str | None = None, supersede: bool = False, log=print) -> dict:
+               run: str | None = None, index_path: str | None = None, supersede: bool = False, log=print,
+               repo_blob: str | None = None, gzip_store: bool = False) -> dict:
     """Upload one receipt, read it back, and file its entry only when the read-back's
     sha256 equals the file's. A name already held by other bytes (in the bucket or the
     index) is refused unless `supersede`, which stores these bytes at
     object_name(kind, name, sha) beside the old object and lists what they supersede.
-    Returns the entry; raises SystemExit on any failure."""
+    `repo_blob` (the move of a committed receipt) records the repo file's sha256, size
+    and git blob id, refused unless the bytes hash to that blob; `gzip_store` gzips a
+    plain file before it is stored. Returns the entry; raises SystemExit on any failure."""
     name = os.path.basename(path)
     with open(path, "rb") as fh:
-        data = fh.read()
+        raw = fh.read()
+    if repo_blob is not None and git_blob(raw) != repo_blob:
+        raise SystemExit("REFUSING: %s hashes to blob %s, not the tree's %s" % (name, git_blob(raw), repo_blob))
+    gz = bool(gzip_store) and not name.endswith(".gz")
+    data = gzip_bytes(raw) if gz else raw
     sha = sha256_bytes(data)
-    obj = object_name(kind, name)
+    obj = object_name(kind, name, gz=gz)
     was = read_entry(name, index_path)
     replaced = []
     if was is not None and was["sha256"] != sha:
@@ -326,7 +399,7 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
                          % (name, "; ".join("%s in the %s, sha256 %s" % (r["object"], r["seen_in"], r["sha256"])
                                             for r in replaced), sha))
     if replaced:
-        obj = object_name(kind, name, sha)
+        obj = object_name(kind, name, sha, gz=gz)
         how, other = _put_and_check(storage, obj, data, sha)
         if other:
             raise SystemExit("REFUSING: %s/%s holds other bytes (sha256 %s); nothing is applied" % (BUCKET, obj, other))
@@ -334,6 +407,10 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
              "bytes": len(data), "sha256": sha, "rows": rows, "stored_at": utc_now(), "run": run}
     if replaced:
         entry["supersedes"] = replaced
+    if gz:
+        entry["gzip"] = True
+    if repo_blob is not None:
+        entry.update(repo_sha256=sha256_bytes(raw), repo_bytes=len(raw), repo_blob=repo_blob)
     added = add_entry(entry, index_path)
     log("%s %s/%s: %d bytes, sha256 %s, %d rows (%s%s)" % (
         "stored" if how == "stored" else "found", BUCKET, obj, len(data), sha, rows,
@@ -344,7 +421,8 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
 
 def fetch(name: str, storage, *, out: str | None = None, index_path: str | None = None, log=print) -> str:
     """Write the stored receipt NAME to `out` (a folder; kb/receipts by default, which git
-    ignores) only when its bytes carry the entry's sha256. Returns the path."""
+    ignores) only when its bytes carry the entry's sha256, as the repo held it (gunzipped
+    when the store gzipped it, and then checked against repo_sha256). Returns the path."""
     entry = read_entry(name, index_path)
     if entry is None:
         raise SystemExit("REFUSING: the index names no stored receipt %s" % name)
@@ -355,6 +433,7 @@ def fetch(name: str, storage, *, out: str | None = None, index_path: str | None 
     if sha256_bytes(data) != entry["sha256"]:
         raise SystemExit("REFUSING: %s/%s reads with sha256 %s, the index names %s"
                          % (BUCKET, entry["object"], sha256_bytes(data), entry["sha256"]))
+    data = file_bytes(entry, data)
     out = out or RECEIPTS
     os.makedirs(out, exist_ok=True)
     path = os.path.join(out, name)
