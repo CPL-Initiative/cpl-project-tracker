@@ -515,6 +515,10 @@ jobs:
       # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
       - name: ACE catalog CR text guard (key, typographic rule, grants)
         run: python3 tests/map_ace_catalog_cr_test.py
+      # The CR exact-match pass, a read-only dry run (S683; COBIx's draft on #3480): every inventory row gets one of
+      # four labels and the four add up; the gated read pages and stops on an empty answer; no fetch but that GET.
+      - name: CR exact-match pass (dry run, hand-built fixtures)
+        run: python3 tests/cr_exact_match_pass_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull

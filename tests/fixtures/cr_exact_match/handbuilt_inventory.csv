@@ -1,0 +1,11 @@
+exhibit_id,source_text,ace_id,source,inventory_grain,origin
+TEST-EXACT-01,3 hours in Supervision,TEST-EXACT-01,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-CASE-02,3 hours in supervision,TEST-CASE-02,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-UNIT-03,1 hours in Basic DC Laboratory,TEST-UNIT-03,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-MAP-04,3 hours in Welding,TEST-MAP-04,MAP,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-NONE-05,3 hours in Welding,,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-TRUNC-06,4 hours in Companion Animal Surgical Assistance And,TEST-TRUNC-06,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-HOURS-07,3 hours in Diesel Engine Fundamentals,TEST-HOURS-07,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-TOPIC-08,3 hours in Supervision,TEST-TOPIC-08,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-SEVERAL-09,3 hours in First Aid,TEST-SEVERAL-09,ACE,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-SPACE-10,3 hours in  Supervision,TEST-SPACE-10,unlabeled,exhibit_cr,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"

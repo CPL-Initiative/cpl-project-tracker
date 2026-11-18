@@ -1,0 +1,11 @@
+exhibit_id,credit_recommendation,origin
+TEST-EXACT-01,3 hours in Supervision,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-CASE-02,3 hours in Supervision,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-UNIT-03,1 hour in Basic DC Laboratory,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-MAP-04,3 hours in Welding,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-TRUNC-06,4 hours in Companion Animal Surgical Assistance And Anesthesia,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-HOURS-07,1 hour in Diesel Engine Fundamentals,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-TOPIC-08,3 hours in Leadership,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-SEVERAL-09,3 hours in Emergency Care,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-SEVERAL-09,2 hours in Trauma,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"
+TEST-SPACE-10,3 hours in Supervision,"HAND-BUILT TEST DATA, NOT REAL ACE TEXT"

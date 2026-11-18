@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1051,
+  "file_datasets": 1052,
   "external_services": 195,
   "consumers": 616,
   "workflows": 73,
@@ -25884,6 +25884,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/cr_exact_match_pass_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/cred_rename_fold_issuer_test.py": {
    "consumers": [
     {
@@ -35735,6 +35748,7 @@
     "tests/roep_display_test.py",
     "tests/map_custom_report_sync_test.py",
     "tests/map_ace_catalog_cr_test.py",
+    "tests/cr_exact_match_pass_test.py",
     "tests/map_key_sketch_one_pull_test.py",
     "tests/anchor_rekey_dryrun_test.py",
     "tests/ccr_seed_recheck_dryrun_test.py",
@@ -36850,6 +36864,7 @@
   "cr_progress.js",
   "exhibit_progress.js",
   "kb/_chatbox_ghost_delete.py",
+  "kb/_cr_exact_match_pass.py",
   "kb/_program_requirements_extract.py",
   "kb/_row_audit_prune.py",
   "scripts/supabase_migrate.py"
