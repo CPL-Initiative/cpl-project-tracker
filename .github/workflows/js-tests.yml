@@ -468,6 +468,10 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # ACE's catalog CR text (S678): keyed on AceID, one row per pair, the typographic rule agreeing with
+      # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
+      - name: ACE catalog CR text guard (key, typographic rule, grants)
+        run: python3 tests/map_ace_catalog_cr_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull
