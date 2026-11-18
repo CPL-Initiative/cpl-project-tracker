@@ -41,7 +41,7 @@
     "ccr_subject_standing_note.test.js": 9,
     "cer.test.js": 18,
     "cer_arts_width.test.js": 8,
-    "cer_combine_guard.test.js": 26,
+    "cer_combine_guard.test.js": 40,
     "cer_consolidation.test.js": 15,
     "cer_cos_badge.test.js": 11,
     "cer_eligible.test.js": 10,

@@ -11,8 +11,9 @@
 //       the guard covers Combine (S679);
 //   (7) the guard reads a pending rename's chain, and Move and Remove only where nothing uses the title;
 //   (8) one choke point writes every fold: the List's Accept, Combine and Re-point, guarded on the title the write lands on;
-//   (9) the guard fails closed: an unread types file or a title with no type along its chain holds the fold, a retry
-//       fetches the file again, and the second press that overrides the guard is armed per surface and per pair;
+//   (9) the guard fails closed: an unread types file holds the fold and a retry fetches the file again; a title with no
+//       CPL type recorded along its chain asks on the first press and writes on the second, logged with the reason "CPL
+//       type not recorded"; and the second press that overrides the guard is armed per surface and per pair;
 //   (10) the two-step case: a Rename onto an existing title of the other group, then the Common Exhibit Reference tab's
 //       Confirm merge, which reads the same guard (combine_guard.js).
 // Run from repo root: `npm test` (or `node tests/exhibits_list_left.test.js`).
@@ -210,6 +211,25 @@ const AUDIT = { title_cards: [
   const mp = posts().pop();
   check("(5) ⭐ the second try moves it, link only, and logs the override", mp && mp.body.some((x) => x.field === "left_map_decision" && x.value === "moved:Paramedic")
     && mp.body.some((x) => x.field === "cpl_type_group_override" && /cert into graded/.test(x.value)) && !mp.body.some((x) => /^_UNCLASSIFIED::|^_CREDENTIAL_REVIEW::/.test(x.course_id)), mp && JSON.stringify(mp.body));
+  // Move under a canonical title with no CPL type recorded asks on the first try and logs on the second.
+  const LMAPM = JSON.parse(JSON.stringify(LMAP)); LMAPM.canonicals["Unrecorded Course"] = { type: "CPL type not recorded", group: "" };
+  const mu = await boot({ hash: "#exhibits/list/left", signedIn: true, files: { "kb/exhibit_audit/latest.json": AUD3, "kb/exhibit_left_map.json": LMAPM } });
+  await settle(); await settle();
+  titleBtn(mu.d, "Emergency Medical Technician").click(); await settle();
+  const murow = () => Array.from(panel(mu.d).querySelectorAll("[data-left-raw]")).find((x) => x.getAttribute("data-left-raw") === "EMT-B old");
+  murow().querySelector('[data-left-act="move"]').click(); await settle();
+  const muOpt = Array.from(murow().querySelectorAll("option")).find((o) => o.value === "Unrecorded Course");
+  murow().querySelector(".exh-left-q").value = "Unrecorded Course";
+  murow().querySelector("[data-left-go]").click(); await settle();
+  const muPosts = () => mu.calls.filter((c) => c.method === "POST" && /kb_curation/.test(c.url));
+  check("(5) ⭐ a move under a canonical with no CPL type recorded asks on the first try, with nothing written, and the list names the untyped title",
+    muOpt && /CPL type not recorded/.test(muOpt.getAttribute("label")) && muPosts().length === 0
+    && /Unrecorded Course has no CPL type recorded, so this combine could join graded and cert-based records\. Press again to combine\./.test(txt(murow())), txt(murow()));
+  murow().querySelector("[data-left-go]").click(); await settle(); await settle();
+  const mup = muPosts().pop();
+  check("(5) ⭐ the second try moves it and logs the override with the reason CPL type not recorded",
+    mup && mup.body.some((x) => x.field === "left_map_decision" && x.value === "moved:Unrecorded Course")
+    && mup.body.some((x) => x.field === "cpl_type_group_override" && x.value === "move with CPL type not recorded (Unrecorded Course): EMT-B old -> Unrecorded Course"), mup && JSON.stringify(mup.body));
 
   // (6) S679, the lane's NEXT 2: Rename and Combine on the leftover row act on the canonical title through the List's
   //     own title Edit (listCellSave) and Accept (listSuggestAccept), and the graded and cert-based guard covers Combine.
@@ -490,21 +510,66 @@ const AUDIT = { title_cards: [
   const none9 = await listAt({ "kb/exhibit_left_map.json": 404, "kb/exhibits_ai_sort.json": AIS9("Paramedic") });
   await settle(); await settle();
   check("(9a) the List's own draw never retries a missing file in a loop", mapFetches(none9) === 1, String(mapFetches(none9)));
-  // (b) A title with no CPL type along its chain holds the fold, on either side.
+  // (b) A title with no CPL type recorded along its chain asks on the first press and writes on the second, on either
+  //     side (the conductor's call, S679): a title the file does not hold, or the nightly build's untyped entry.
+  const notRec = (b) => /^combine with CPL type not recorded \(/.test(b.value || "");
   const noLand = JSON.parse(JSON.stringify(LMAP8)); delete noLand.canonicals["CompTIA Security+"];
   const b9 = await listAt({ "kb/exhibit_left_map.json": noLand, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
-  await press(b9); await press(b9);
-  check("(9b) ⭐ a picked title missing from the types file, with no typed title along its chain, holds the fold on every press",
-    postsOf(b9).length === 0 && /^This combine is held: CompTIA Security\+ has no CPL type in the types file/.test(cellNote(b9)), cellNote(b9));
+  await press(b9);
+  const b9first = postsOf(b9).length === 0 && cellNote(b9) === "CompTIA Security+ has no CPL type recorded, so this combine could join graded and cert-based records. Press again to combine.";
+  check("(9b) ⭐ a picked title missing from the types file, with no typed title along its chain, asks on the first press with nothing written", b9first, cellNote(b9));
+  await press(b9);
+  check("(9b) ⭐ the second press writes the fold and logs the override with the reason CPL type not recorded",
+    fieldOf(postsOf(b9), "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+")
+    && fieldOf(postsOf(b9), "cpl_type_group_override").some((b) => b.value === "combine with CPL type not recorded (CompTIA Security+): Emergency Medical Technician -> CompTIA Security+"),
+    JSON.stringify(postsOf(b9)));
   const b9c = await listAt({ "kb/exhibit_left_map.json": noLand, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") }, [ren("CompTIA Security+", "CompTIA Network+")]);
   await press(b9c);
   check("(9b) the same title takes the type of a typed title along its chain, and the fold saves",
     postsOf(b9c).length === 2 && fieldOf(postsOf(b9c), "unified_title_merge_confirm").some((b) => b.value === "CompTIA Network+"), cellNote(b9c) + " | " + JSON.stringify(postsOf(b9c)));
-  const noSrc = JSON.parse(JSON.stringify(LMAP8)); delete noSrc.canonicals["Emergency Medical Technician"];
-  const b9s = await listAt({ "kb/exhibit_left_map.json": noSrc, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
-  await press(b9s); await press(b9s);
-  check("(9b) ⭐ a source title missing from the types file holds the fold on every press",
-    postsOf(b9s).length === 0 && /^This combine is held: Emergency Medical Technician has no CPL type in the types file/.test(cellNote(b9s)), cellNote(b9s));
+  // The nightly build's untyped entry ("CPL type not recorded", no group) on the source: untyped into cert asks twice.
+  const unSrc = JSON.parse(JSON.stringify(LMAP8)); unSrc.canonicals["Emergency Medical Technician"] = { type: "CPL type not recorded", group: "" };
+  const b9s = await listAt({ "kb/exhibit_left_map.json": unSrc, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
+  await press(b9s);
+  const b9sFirst = postsOf(b9s).length === 0 && /^Emergency Medical Technician has no CPL type recorded, so this combine could join graded and cert-based records\. Press again to combine\.$/.test(cellNote(b9s));
+  await press(b9s);
+  check("(9b) ⭐ an untyped source (CPL type not recorded) into a cert-based title asks on the first press, then writes and logs on the second",
+    b9sFirst && fieldOf(postsOf(b9s), "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+") && fieldOf(postsOf(b9s), "cpl_type_group_override").filter(notRec).length === 1,
+    cellNote(b9s) + " | " + JSON.stringify(postsOf(b9s)));
+  // The leftover row's Combine over a map that carries an untyped canonical.
+  const LMAPU = JSON.parse(JSON.stringify(LMAP8));
+  LMAPU.canonicals["Unrecorded Course"] = { type: "CPL type not recorded", group: "" };
+  async function combineAt(lmap, ov, pick) {
+    const x = await boot({ hash: "#exhibits/list/left", signedIn: true, overlay: ov, files: { "kb/exhibit_audit/latest.json": AUD8, "kb/exhibit_left_map.json": lmap } });
+    await settle(); await settle();
+    titleBtn(x.d, "Emergency Medical Technician").click(); await settle();
+    const row = () => rowIn(x, "EMT Basic 1998");
+    row().querySelector('[data-left-act="combine"]').click(); await settle();
+    const box = () => row() && row().querySelector('[data-left-box="combine"]');
+    const go = async () => { if (box()) { box().querySelector('[data-left-go="combine"]').click(); await settle(); await settle(); } };
+    box().querySelector("input").value = pick;
+    await go();
+    const first = { posts: postsOf(x).slice(), words: box() ? txt(box()) : txt(panel(x.d)) };
+    await go();
+    return { first: first, posts: postsOf(x) };
+  }
+  const gU = JSON.parse(JSON.stringify(LMAPU)); gU.canonicals["Emergency Medical Technician"] = { type: "Credit By Exam", group: "graded" };
+  const u9 = await combineAt(gU, [], "Unrecorded Course");
+  check("(9b) ⭐ a graded title combined into an untyped one asks on the first press with nothing written, and the picker offers the untyped title",
+    u9.first.posts.length === 0 && /Unrecorded Course has no CPL type recorded, so this combine could join graded and cert-based records\. Press again to combine\./.test(u9.first.words), u9.first.words);
+  check("(9b) ⭐ the second press writes it and logs the override",
+    fieldOf(u9.posts, "unified_title_merge_confirm").some((b) => b.value === "Unrecorded Course")
+    && fieldOf(u9.posts, "cpl_type_group_override").some((b) => b.value === "combine with CPL type not recorded (Unrecorded Course): Emergency Medical Technician -> Unrecorded Course"), JSON.stringify(u9.posts));
+  // A chain whose end is the untyped entry: the guard reads the typed title before it.
+  const c9 = await combineAt(LMAPU, [ren("Paramedic", "Unrecorded Course")], "Paramedic");
+  check("(9b) ⭐ a chain ending on an untyped title (Paramedic saved to become Unrecorded Course) checks Paramedic's type: cert into it is blocked as a cross",
+    c9.first.posts.length === 0 && /Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Unrecorded Course \(Paramedic is saved to become Unrecorded Course\), which is graded \(Credit By Exam or Portfolio Review\), the type of Paramedic, since Unrecorded Course has no CPL type of its own/.test(c9.first.words),
+    c9.first.words);
+  check("(9b) its second press logs the cross, never the untyped reason",
+    fieldOf(c9.posts, "cpl_type_group_override").some((b) => /^combine across groups: cert into graded: Emergency Medical Technician -> Unrecorded Course$/.test(b.value)) && !fieldOf(c9.posts, "cpl_type_group_override").some(notRec), JSON.stringify(c9.posts));
+  const k9 = await combineAt(LMAPU, [], "CompTIA Security+");
+  check("(9b) ⭐ two typed titles in one group still combine on one press, with the untyped entry in the file",
+    k9.first.posts.length === 2 && !fieldOf(k9.first.posts, "cpl_type_group_override").length && fieldOf(k9.first.posts, "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+"), JSON.stringify(k9.first.posts));
   // (c) The override's second press is armed per surface and per pair: a block on the List's Accept never arms the
   //     leftover row's Combine for the same pair, and the reverse.
   const s9 = await listAt({ "kb/exhibit_left_map.json": LMAP8, "kb/exhibits_ai_sort.json": AIS9("Paramedic") });

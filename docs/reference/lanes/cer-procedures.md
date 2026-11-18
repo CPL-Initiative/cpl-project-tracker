@@ -58,20 +58,40 @@ Rule 10 plan with its receipt), since a decided title has left the List.
 canonical title* and *Combine the canonical title with another*. They act on the canonical title the row sits under
 (the local title stays as it is) through the List's own title Edit (`listCellSave`) and the fold's one writer.
 
-**The fold's guard (S679, #3477):** `foldWrite` writes every single fold (the List's Accept, the leftover row's
+**The combine guard (S679, #3477, #3482):** one module, `combine_guard.js` (`window.CPL_COMBINE_GUARD`; both HTMLs
+load it before `credential_reference.js`, and `exhibits.js` loads it by name on a page without it), decides every
+combine on both tabs. On the Exhibits tab `foldWrite` writes every single fold (the List's Accept, the leftover row's
 Combine, Re-point) and `foldGate` guards a save that folds many titles (the related titles' Save, the rename batch's
-merges). Both read `foldLanding`: the landing title is the end of the picked title's chain of saved renames
-(`listChainPath`), and its type is the last typed title along that chain. A fold across Sam's graded and cert-based
-groups is blocked on the first press and written on the second with a `cpl_type_group_override` row. Every surface
-writes the landing title the guard checked, `relSave` and `approveRename` included. The guard fails closed: while
-`kb/exhibit_left_map.json` is unread the fold is held (*"The CPL types did not load, so this combine is held. Try
-again."*), the failed read is not cached so the next press fetches the file again, and the List's own draw does not
-retry it. A title with no type along its chain holds the fold, on either side. The second press is armed per surface
-and per pair (`guardKey`), so a block on one surface never arms a press on another. Move and Combine share one
-canonical-title picker (`leftPicker`). Tests `tests/exhibits_list_left.test.js` (62), `tests/exhibits_related.test.js`
-and `tests/exhibits_related_actions.test.js` (the batch's and the related Save's landing title and hold),
-`tests/left_map_build_test.py` (44; it pins the nightly's order, the red step, the status write-back, the failure
-watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).
+merges). On the Common Exhibit Reference tab its five merge writers ask it: the pending merges' Confirm merge, the
+grid's Save, Merge into this, and the issuer lane's Save and Save all. The guard follows the picked title's chain of
+saved renames to the title the write lands on; every surface writes that title, and the grid's title cell shows it
+after the save. A title's type is its entry in `kb/exhibit_left_map.json` with a group; an entry with no group (the
+nightly's *CPL type not recorded*, 1,025 of 2,849 canonical titles on 2026-11-18) or a title the file does not hold is
+untyped, and the chain reads past an untyped title to the last typed one, so an untyped end never hides a typed title
+before it. The rules, in order: a chain that lands back on the source is refused; while the file is unread, or answers
+with no CPL types (a 200 of `null` or `{}` included), every combine is held (*"The CPL types did not load, so this
+combine is held. Try again."*), the miss is not cached and the next press fetches the file again; a combine across
+Sam's graded and cert-based groups is blocked on the first press; a combine whose source or landing title is still
+untyped after the chain is `unknown` (the conductor's call, S679): the first press says, for example, *"Unrecorded Card has no CPL type
+recorded, so this combine could join graded and cert-based records. Press again to combine."* Either way the second
+press on the same surface and pair (`guardKey`) writes the merge with a `cpl_type_group_override` row beside it, its
+value naming the crossing (*combine across groups: cert into graded: ...*) or the reason (*combine with CPL type not
+recorded (Unrecorded Card): ...*). A combine inside one group goes through on one press. When the chain runs through a saved
+rename onto an existing credential with no merge confirm (a collision the rename apply holds), the Common Exhibit
+Reference's confirm dialog says so. The leftover row's Move moves one local title, with no chain: it reads the local
+title's type and the picked canonical's from the guard, blocks a cross and asks on an untyped side the same way, and
+logs *move across groups* or *move with CPL type not recorded*. Move and Combine share one canonical-title picker
+(`leftPicker`), which offers untyped canonical titles too. Tests `tests/cer_combine_guard.test.js` (40),
+`tests/exhibits_list_left.test.js` (73), `tests/exhibits_related.test.js` and `tests/exhibits_related_actions.test.js`
+(the batch's and the related Save's landing title and hold), `tests/left_map_build_test.py` (48; it pins the
+nightly's order, the red step, the status write-back, the failure watch, the undo, the Move hold, the 416 end, the
+receipt names and the atomic write).
+
+**The rename apply and `left_map.from`:** `kb/_cred_rename_apply.py` renames a leftover title's `left_map.from` with
+its canonical title and records each in the receipt's `unified_titles_left_map_from`. `kb/_cred_rename_undo.py` puts
+it back. A keep saved after the apply (marker gone, link on `from`'s new name) is no drift: the undo returns the link
+to `from`'s name before the apply, also when the apply renamed the title's own link, whether to a different title or
+into the same one. A marker gone with the link anywhere else is drift.
 
 **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local title
 (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 607 applied, 73 held;

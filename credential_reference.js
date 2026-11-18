@@ -2144,14 +2144,14 @@
     return gate.then(function (g) {
       if (g && g.status !== "ok") return { ok: false, err: "guard", words: g.words };
       if (g) titleVal = g.to;
-      return saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, g && g.log);
+      return saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, g && g.log, g && g.f);
     });
   }
-  function saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, guardLog) {
+  function saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, guardLog, landed) {
     var ut = r.unified_title;
     var writes = [];
     if (titleChanged) {
-      if (target && !window.confirm(mergeConfirmMessage(r, titleVal))) {
+      if (target && !window.confirm(mergeConfirmMessage(r, titleVal, landed))) {
         return Promise.resolve({ ok: false, err: "merge declined" });
       }
       writes.push(saveOverride(ut, FIELD_UTITLE_OVERRIDE, titleVal));
@@ -2247,6 +2247,10 @@
         return;
       }
       showGuardWords(tr, "");
+      // The title cell shows the title the save wrote: a merge writes the end of the picked title's chain.
+      var tin = tr.querySelector(".cr-title-in");
+      if (tin) tin.value = r.display_title || r.unified_title;
+      refreshMergeStrip(r, tr);
       tr.classList.remove("cr-dirty", "cr-save-failed");
       tr.classList.add("cr-saved");
       refreshRowStatus(r, tr);
@@ -3600,11 +3604,11 @@
         (target ? guardMerge(ut, val, "Press Confirm merge again", "cer-confirm") : Promise.resolve(null)).then(function (g) {
           if (g && g.status !== "ok") { note.textContent = g.words; return; }
           if (g) val = g.to;
-          confirmPending(ut, val, target, g && g.log);
+          confirmPending(ut, val, target, g && g.log, g && g.f);
         });
       };
-      function confirmPending(ut, val, target, guardLog) {
-        if (target && !window.confirm(mergeConfirmMessage(p.r, val))) return;
+      function confirmPending(ut, val, target, guardLog, landed) {
+        if (target && !window.confirm(mergeConfirmMessage(p.r, val, landed))) return;
         btn.disabled = true; btn.textContent = "saving…";
         var writes = [saveOverride(ut, FIELD_UTITLE_OVERRIDE, val)];
         if (target) {
@@ -4148,8 +4152,10 @@
   // the merge lands on; the writer saves that title as both the rename and the
   // merge confirm. A merge across Sam's graded and cert-based groups is blocked
   // on the first press and saved on a second, with a cpl_type_group_override
-  // row logged beside it. The guard holds every merge while it or the CPL
-  // types file cannot be read. One store per visit remembers the first press.
+  // row logged beside it. A merge where a side has no CPL type recorded asks
+  // the same way (status "unknown"), and its override row gives the reason "CPL
+  // type not recorded". The guard holds every merge while it or the CPL types
+  // file cannot be read. One store per visit remembers the first press.
   var FIELD_TYPE_GROUP_OVERRIDE = "cpl_type_group_override";
   var combineGuardStore = {};
   function combineGuard() { return window.CPL_COMBINE_GUARD || null; }
@@ -4194,12 +4200,24 @@
     if (!target) return jobs;
     return jobs.concat([{ field: FIELD_UTITLE_MERGE_CONFIRM, value: titleJob.value }]);
   }
-  function mergeConfirmMessage(r, targetTitle) {
+  // `landed` is the guard's landing (its `path` runs from the picked title to
+  // `targetTitle`). A link along that path onto an existing credential with no
+  // merge confirm of its own is a collision the rename apply holds, so the
+  // dialog says so before the curator sends a merge down it.
+  function mergeConfirmMessage(r, targetTitle, landed) {
+    var path = (landed && landed.path) || [], held = [];
+    for (var k = 0; k + 1 < path.length; k++) {
+      var t = path[k], nx = path[k + 1];
+      if (credKeyIndex()[nx] && ((state.overlay[t] || {}).merge_confirm || "") !== nx) held.push(t + "” to “" + nx);
+    }
     return "“" + targetTitle + "” already exists as its own credential.\n\n"
       + "Saving CONFIRMS A MERGE: on the next rename apply, “"
       + (r.display_title || r.unified_title)
       + "”’s records fold into the existing “" + targetTitle
-      + "” and the two become one credential.\n\nContinue?";
+      + "” and the two become one credential."
+      + (held.length ? "\n\nThis merge follows a saved rename that collides with an existing credential and was never confirmed as a merge (“"
+        + held.join("”; “") + "”). The rename apply holds that rename until someone confirms it, so the records wait there until then." : "")
+      + "\n\nContinue?";
   }
 
   function saveIssuerLaneRow(r, tr, titleInp, inp, inp2Wrap, saveBtn) {
@@ -4216,7 +4234,7 @@
       if (g.status !== "ok") { note.textContent = g.words; return; }
       note.textContent = "";
       var landed = landLaneJobs(grown, g.to);
-      if (!window.confirm(mergeConfirmMessage(r, g.to))) return;  // curator declined — inputs stay editable
+      if (!window.confirm(mergeConfirmMessage(r, g.to, g.f))) return;  // curator declined — inputs stay editable
       writeIssuerLaneRow(r, tr, landed, saveBtn, g.log);
     });
   }

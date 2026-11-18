@@ -371,6 +371,29 @@ with tempfile.TemporaryDirectory() as td:
         check("(4) a marker gone with the link on another title is still drift, and its fold group is held whole",
               any(d["key"] == "Moved" and d["file"] == "unified_titles.json#kept" for d in drift9) and "Brake Systems" in skipped9
               and not changes9, (changes9, drift9, skipped9))
+        # (4, the second reader on #3482) A title in both the rename map and the left map: its own link was renamed and
+        #     its left_map.from too. After a keep (marker gone, link on left_map.from's new name), the undo puts the link
+        #     back on left_map.from's old name, never on the link's own old name.
+        for label, renames, kept_on in (("renamed to different titles", {"Wheels": "Wheel Sets", "Brakes": "Brake Systems"}, "Brake Systems"),
+                                        ("both folded into one title", {"Wheels": "Running Gear", "Brakes": "Running Gear"}, "Running Gear")):
+            with open(R.UNIFIED_TITLES, "w") as f:
+                json.dump({"Moved": {"unified_title": "Wheels", "left_map": {"decision": "moved", "from": "Brakes", "at": "t1"}},
+                           "Other": {"unified_title": "Brakes"}, "Rim": {"unified_title": "Wheels"}}, f)
+            res2 = R.rewrite_unified_titles_values(renames)
+            both = json.load(open(R.UNIFIED_TITLES))
+            ok_before = both["Moved"] == {"unified_title": renames["Wheels"], "left_map": {"decision": "moved", "from": kept_on, "at": "t1"}}
+            chk, skk = A.plan(both, [{"course_id": "_LEFT_MAP::Moved", "value": "keep", "reviewed_at": "t2"}], {e["unified_title"] for e in both.values()})
+            A.apply(both, chk)
+            ok_kept = both["Moved"] == {"unified_title": kept_on}
+            groups2 = {}
+            for o, n in renames.items():
+                groups2.setdefault(n, []).append(o)
+            undo2 = {"unified_titles": res2["_changed"], "unified_titles_left_map_from": res2["_left_map_from"], "groups": groups2}
+            ch2, dr2, sk2 = U.plan_undo(undo2, {}, both, [])
+            U.apply_undo(ch2, {}, both, [])
+            check("(4) ⭐ a title in both maps, " + label + ", kept after the apply: the undo restores the link to left_map.from's old name",
+                  ok_before and ok_kept and not dr2 and not sk2 and both["Moved"] == {"unified_title": "Brakes"}
+                  and both["Other"]["unified_title"] == "Brakes" and both["Rim"]["unified_title"] == "Wheels", (ok_before, ok_kept, dr2, sk2, both))
         apply_src = open(os.path.join(ROOT, "kb", "_cred_rename_apply.py"), encoding="utf-8").read()
         check("(4) the apply's undo receipt carries the left_map.from renames", '"unified_titles_left_map_from": ut_res["_left_map_from"]' in apply_src)
     finally:

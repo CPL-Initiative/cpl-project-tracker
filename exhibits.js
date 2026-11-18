@@ -3888,13 +3888,14 @@
      Re-point all come here. The guard is combine_guard.js, shared with the Common Exhibit Reference tab: it follows the
      picked title's chain of saved renames (listNext) to the title the write lands on, so the guard reads that title, never
      a title a caller passed along. A fold across Sam's groups is blocked on the first try; a second try on the same
-     surface writes it and logs the override beside it. It fails closed: with the CPL types file unread, or a side with no
-     type along its chain, the fold is held. Resolves { ok, words, to }. */
+     surface writes it and logs the override beside it. A fold where a side has no CPL type recorded asks the same way
+     (the guard's "unknown"), logged with the reason "CPL type not recorded". It fails closed: with the CPL types file
+     unread, the fold is held. Resolves { ok, words, to }. */
   function foldWrite(r, pick, o) {
     o = o || {};
     var from = r.ut;
     return guardCheck({ from: from, pick: pick, again: o.again, surface: o.surface || "accept" }).then(function (d) {
-      if (d.status !== "ok") return { ok: false, blocked: d.status === "blocked", held: d.status === "held", words: d.words };
+      if (d.status !== "ok") return { ok: false, blocked: d.status === "blocked", unknown: d.status === "unknown", held: d.status === "held", words: d.words };
       var f = d.f, writes = [[FIELD_CRED_TITLE, d.to], [FIELD_MERGE_CONFIRM, d.to]];
       if (d.log) writes.push([FIELD_TYPE_OVERRIDE, d.log]);
       return session().then(function (sess) {
@@ -3912,7 +3913,8 @@
     });
   }
   /* The same guard for a save that folds many titles in one request (the related titles' Save and the rename batch):
-     any pair that lands on itself or is held holds the whole save; any pair that crosses Sam's groups holds it on the
+     any pair that lands on itself or is held holds the whole save; any pair that crosses Sam's groups, or has a side with
+     no CPL type recorded, holds it on the
      first try, and a second try writes it with one override row per crossing pair. Resolves { words } to hold, or
      { logs, ends } to write, where ends[i] is the title pair i lands on: the caller writes that title, so the title
      checked is the title written. */
@@ -4440,7 +4442,11 @@
     LEFT.by = by;
   }
   function leftInfo(raw) { return (LEFT.map && LEFT.map.titles && LEFT.map.titles[raw]) || null; }
+  /* A canonical title's CPL type, or null when it has none recorded (combine_guard.js typeOf); canonEntry is its entry in
+     the file, typed or not, for the picker and the panel. */
   function canonType(ut) { var G = guardLib(); return G ? G.typeOf(LEFT.map, ut) : null; }
+  function canonEntry(ut) { var G = guardLib(); return G ? G.entryOf(LEFT.map, ut) : null; }
+  function typeWords(e) { return (e && e.type) || "CPL type not recorded"; }
   function leftOpen() { return (LEFT.cards || []).filter(function (c) { return !LEFT.dec[c.raw]; }); }
   /* Sam's two groups and the words for them: combine_guard.js (groupWords, crossesGroups, guardKey), shared with the
      Common Exhibit Reference tab. Mixing inside a group is fine; a move or combine across them is blocked by default. */
@@ -4554,30 +4560,37 @@
     var inp = el("input", { type: "search", list: id, "aria-label": o.label, placeholder: "Search canonical titles", cls: "exh-left-q" });
     var dl = el("datalist", { id: id });
     var names = Object.keys((LEFT.map && LEFT.map.canonicals) || {});
-    names.forEach(function (n) { if (n !== ut) dl.appendChild(el("option", { value: n, label: n + " (" + canonType(n).type + ")" })); });
+    names.forEach(function (n) { if (n !== ut) dl.appendChild(el("option", { value: n, label: n + " (" + typeWords(canonEntry(n)) + ")" })); });
     var say = el("p", { cls: "exh-small", role: "status" });
     var go = word(o.go, function () {
       var to = String(inp.value || "").trim();
-      if (!to || !canonType(to)) { say.textContent = "Pick a canonical title from the list."; return; }
+      if (!to || !canonEntry(to)) { say.textContent = "Pick a canonical title from the list."; return; }
       if (to === ut) { say.textContent = "Pick a canonical title other than " + ut + "."; return; }
       o.act(to, say);
     }, { "data-left-go": o.kind === "move" ? "" : o.kind });
-    inp.addEventListener("input", function () { var t = canonType(String(inp.value || "").trim()); say.textContent = t ? "CPL type: " + t.type + "." : ""; });
+    inp.addEventListener("input", function () { var t = canonEntry(String(inp.value || "").trim()); say.textContent = t ? "CPL type: " + typeWords(t) + "." : ""; });
     box.appendChild(inp); box.appendChild(dl); box.appendChild(document.createTextNode(" ")); box.appendChild(go); box.appendChild(say);
     return box;
   }
   /* Move: a move across Sam's two groups is blocked on the first try and goes through only on a second, explicit one that
-     names both groups, which is logged. */
+     names both groups, which is logged. A move where the local title or the picked title has no CPL type recorded asks
+     the same way, logged with the reason "CPL type not recorded". */
   function leftMoveBox(raw, ut, info) {
     return leftPicker(raw, ut, { kind: "move", go: "Move here", label: "Canonical title to move " + raw.trim() + " under", act: function (to, say) {
-      if (!guardLib()) { say.textContent = guardMissingWords(); return; }
-      var cross = crossesGroups(info, canonType(to)), k = guardKey("move", raw + " -> " + to), log = null;
-      if (cross && !LEFT.guard[k]) {
+      var G = guardLib();
+      if (!G) { say.textContent = guardMissingWords(); return; }
+      var mine = info && info.group ? info : null, theirs = canonType(to), untyped = [];
+      if (!mine) untyped.push(raw.trim());
+      if (!theirs) untyped.push(to);
+      var cross = untyped.length ? null : crossesGroups(mine, theirs), k = guardKey("move", raw + " -> " + to), log = null;
+      if ((cross || untyped.length) && !LEFT.guard[k]) {
         LEFT.guard[k] = true;
-        say.textContent = "Blocked: " + raw.trim() + " is " + groupWords(cross.a) + " and " + to + " is " + groupWords(cross.b) + ". Sam's rule keeps these apart. Press Move here again to move it anyway; that override is logged.";
+        say.textContent = cross ? "Blocked: " + raw.trim() + " is " + groupWords(cross.a) + " and " + to + " is " + groupWords(cross.b) + ". Sam's rule keeps these apart. Press Move here again to move it anyway; that override is logged."
+          : G.unknownWords(untyped);
         return;
       }
       if (cross) log = "move across groups: " + cross.a + " into " + cross.b + ": " + raw.trim() + " -> " + to;
+      else if (untyped.length) log = "move with " + G.UNKNOWN_REASON + " (" + untyped.join(" and ") + "): " + raw.trim() + " -> " + to;
       leftSave([raw], "moved:" + to, log).then(function (ok) { LEFT.moving = null; leftDone(ok ? "Moved: " + raw.trim() + " now sits under " + to + " once the reference is rebuilt tonight." : LEFT.note); });
     } });
   }
@@ -4620,8 +4633,8 @@
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
     var cip = listCip(r), n = r.raw_count || 0;
     // The engine's shared parts (commons_list.js h.title, h.meta, h.heading, h.table, h.fold), so every List's panel reads alike.
-    var ctype = canonType(r.ut);
-    var out = [h.title(listTitle(r)), h.meta([ctype ? "CPL type: " + ctype.type : "", cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
+    var ctype = canonEntry(r.ut);
+    var out = [h.title(listTitle(r)), h.meta([ctype ? "CPL type: " + typeWords(ctype) : "", cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
       could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
     // Its family (#3117), beside the issuer the fold may have set (#3116): the family names the set, the fold line the issuer.

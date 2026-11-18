@@ -6,9 +6,15 @@
 //       panel, and (4) the issuer lane's Save: each blocks a cert-based title merged into a graded one on the first press
 //       with nothing written, writes it on a second press with the override logged, and lets a merge inside one group
 //       through on the first press with no override;
-//   (5) each holds, with nothing written on any press, when the CPL types file answers 404;
+//   (5) each holds, with nothing written on any press, when the CPL types file answers 404, and the grid's Save holds
+//       with the guard's words, never stuck on "saving…", when the file answers 200 with no CPL types in it;
 //   (6) the merge lands on the end of the picked title's chain of saved renames, and the guard and the write name it;
-//   (7) one copy of the guard: the tab decides through combine_guard.js and holds none of its logic.
+//       after the save the grid's title cell shows the title written, and the confirm dialog says in words when the
+//       chain runs through a saved rename the rename apply holds as an unconfirmed collision;
+//   (7) one copy of the guard: the tab decides through combine_guard.js and holds none of its logic;
+//   (8) a title with no CPL type recorded (the nightly build's "CPL type not recorded", with no group, or a title the
+//       file does not hold) asks on the first press and writes on the second, the override logged with the reason
+//       "CPL type not recorded"; a chain whose end is untyped reads the typed title before it.
 // The two-step case (a rename on the Exhibits List, then Confirm merge here) is in tests/exhibits_list_left.test.js.
 // Run from repo root: `npm test` (or `node tests/cer_combine_guard.test.js`).
 const fs = require("fs");
@@ -30,7 +36,9 @@ const PAYLOAD = { _generated_at: "t", top_categories: {}, unified_titles: [
   rec("CompTIA Security+", "CompTIA", "Industry Certification"),
   rec("Security+ CompTIA", "CompTIA", "Industry Certification"),
   rec("Medic Card Old", null, "Industry Certification"),
-  rec("Net Card Old", null, "Industry Certification")] };
+  rec("Net Card Old", null, "Industry Certification"),
+  rec("Unrecorded Card", null, "Credit By Exam"),
+  rec("Unrecorded Badge", null, "Credit By Exam")] };
 const TYPES = { schema: 1, titles: {}, canonicals: {
   "Paramedic": { type: "Credit By Exam", group: "graded" },
   "Basic EMT": { type: "Credit By Exam", group: "graded" },
@@ -38,7 +46,10 @@ const TYPES = { schema: 1, titles: {}, canonicals: {
   "CompTIA Security+": { type: "Industry Certification", group: "cert" },
   "Security+ CompTIA": { type: "Industry Certification", group: "cert" },
   "Medic Card Old": { type: "Industry Certification", group: "cert" },
-  "Net Card Old": { type: "Industry Certification", group: "cert" } } };
+  "Net Card Old": { type: "Industry Certification", group: "cert" },
+  // The nightly build's untyped entry: 1,025 of 2,849 titles carried it on 2026-11-18.
+  "Unrecorded Card": { type: "CPL type not recorded", group: "" },
+  "Unrecorded Badge": { type: "CPL type not recorded", group: "" } } };
 function row(ut, field, value) { return { course_id: P + ut, field: field, value: value, reviewer_email: "map@rccd.edu", reviewed_at: "2026-11-17T16:00:00Z" }; }
 const bodies = (t) => t.writes.map((w) => w.body).filter(Boolean);
 const of = (t, ut) => bodies(t).filter((b) => b.course_id === P + ut);
@@ -177,14 +188,106 @@ const rowByTitle = (doc, ut) => Array.from(doc.querySelectorAll("tr.cr-row")).fi
     field(of(la, "Medic Card Old"), "unified_title_merge_confirm").length === 1 && field(of(la, "Net Card Old"), "unified_title_merge_confirm").length === 1
     && field(bodies(la), "cpl_type_group_override").length === 1 && field(bodies(la), "cpl_type_group_override")[0].course_id === P + "Medic Card Old", JSON.stringify(bodies(la)));
 
-  // ── (5) a title with no CPL type holds the merge too ──
-  const UNTYPED = JSON.parse(JSON.stringify(TYPES));
-  delete UNTYPED.canonicals["Security+ CompTIA"];
-  const u = await grid(UNTYPED);
-  tr = type(u, "Security+ CompTIA", "CompTIA Security+");
-  tr.querySelector(".cr-grid-save").click(); await sleep(60); tr.querySelector(".cr-grid-save").click(); await sleep(60);
-  check("(5) ⭐ a merge whose title has no CPL type along its chain is held on every press",
-    bodies(u).length === 0 && /^This combine is held: Security\+ CompTIA has no CPL type in the types file/.test(txt(tr.querySelector(".cr-guard-note"))), txt(tr.querySelector(".cr-guard-note")));
+  // ── (5) a 200 answer with no CPL types in it holds, and never leaves the button on "saving…" ──
+  for (const body of [{}, { schema: 1, canonicals: null }]) {
+    const e = await grid(body);
+    tr = type(e, "EMT Basic", "Paramedic");
+    tr.querySelector(".cr-grid-save").click(); await sleep(80);
+    const sv = tr.querySelector(".cr-grid-save");
+    check("(5) ⭐ the grid's Save on a 200 answer of " + JSON.stringify(body) + " holds with the guard's words, writes nothing, and the button reads Save again",
+      bodies(e).length === 0 && /^The CPL types did not load, so this combine is held\. Try again\.$/.test(txt(tr.querySelector(".cr-guard-note")))
+      && sv && !sv.disabled && txt(sv) === "Save", txt(tr.querySelector(".cr-guard-note")) + " | " + (sv ? txt(sv) + " disabled=" + sv.disabled : "no button"));
+  }
+  {
+    const G = require("../combine_guard.js");
+    const nul = await G.load(() => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(null) }));
+    const bad = await G.load(() => Promise.resolve({ ok: true, status: 200, json: () => Promise.reject(new Error("not JSON")) }));
+    check("(5) load() resolves a miss, never a rejection, for a 200 answer of null or a body that is not JSON",
+      nul.map === null && /carries no CPL types/.test(nul.error) && bad.map === null && /not JSON/.test(bad.error) && G.loaded() === null, JSON.stringify([nul, bad]));
+  }
+
+  // ── (8) a title with no CPL type recorded asks twice and logs ──
+  const notRec = (w) => /^combine with CPL type not recorded \(/.test(w.value || "");
+  const u = await grid(TYPES);
+  tr = type(u, "Unrecorded Card", "CompTIA Security+");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(8) ⭐ an untyped title merged into a cert-based one asks on the first press, with nothing written",
+    of(u, "Unrecorded Card").length === 0
+    && txt(tr.querySelector(".cr-guard-note")) === "Unrecorded Card has no CPL type recorded, so this combine could join graded and cert-based records. Press again to combine.",
+    txt(tr.querySelector(".cr-guard-note")));
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  const uw = of(u, "Unrecorded Card");
+  check("(8) ⭐ the second press writes the merge and logs the override with the reason CPL type not recorded",
+    uw.length === 3 && field(uw, "unified_title_merge_confirm")[0].value === "CompTIA Security+"
+    && (field(uw, "cpl_type_group_override")[0] || {}).value === "combine with CPL type not recorded (Unrecorded Card): Unrecorded Card -> CompTIA Security+", JSON.stringify(uw));
+  // graded into untyped, on the pending merges' Confirm merge.
+  const ugo = await boot({ payload: PAYLOAD, overlay: [row("Basic EMT", "unified_title_override", "Unrecorded Badge")], types: TYPES });
+  cerLane(ugo.doc, /Merge/).click(); await sleep(60);
+  const ugRow = () => ugo.doc.querySelector('.cr-mg-row[data-ut="Basic EMT"]');
+  ugRow().querySelector(".cr-mg-confirm").click(); await sleep(60);
+  const ugNote = txt(ugRow().querySelector(".cr-guard-note"));
+  check("(8) ⭐ a graded title merged into an untyped one asks on the first press, with nothing written",
+    of(ugo, "Basic EMT").length === 0 && ugNote === "Unrecorded Badge has no CPL type recorded, so this combine could join graded and cert-based records. Press again to combine.", ugNote);
+  ugRow().querySelector(".cr-mg-confirm").click(); await sleep(60);
+  check("(8) ⭐ pressed again, it writes the merge into the untyped title and logs the override",
+    field(of(ugo, "Basic EMT"), "unified_title_merge_confirm").length === 1 && notRec(field(of(ugo, "Basic EMT"), "cpl_type_group_override")[0] || {}),
+    JSON.stringify(of(ugo, "Basic EMT")));
+  // A chain whose end is untyped: Paramedic is saved to become Unrecorded Badge, so a cert-based merge into Paramedic
+  // checks Paramedic's type (graded) and is blocked as a cross, never waved through as unknown.
+  const uc = await boot({ payload: PAYLOAD, overlay: [row("Paramedic", "unified_title_override", "Unrecorded Badge"), row("Paramedic", "unified_title_merge_confirm", "Unrecorded Badge")], types: TYPES });
+  tr = type(uc, "Medic Card Old", "Paramedic");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(8) ⭐ a chain ending on an untyped title reads the typed title before it: cert into Paramedic (saved to become Unrecorded Badge) is blocked as a cross",
+    of(uc, "Medic Card Old").length === 0 && /^Blocked: Medic Card Old is cert-based .*the fold lands on Unrecorded Badge \(Paramedic is saved to become Unrecorded Badge\), which is graded .*the type of Paramedic, since Unrecorded Badge has no CPL type of its own/.test(txt(tr.querySelector(".cr-guard-note"))),
+    txt(tr.querySelector(".cr-guard-note")));
+  tr = type(uc, "Basic EMT", "Paramedic");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(8) the same chain takes a graded merge on one press, onto the untyped end, with no override",
+    field(of(uc, "Basic EMT"), "unified_title_merge_confirm").length === 1 && field(of(uc, "Basic EMT"), "unified_title_merge_confirm")[0].value === "Unrecorded Badge"
+    && !field(of(uc, "Basic EMT"), "cpl_type_group_override").length, JSON.stringify(of(uc, "Basic EMT")));
+  // Two typed titles in one group still pass on one press, with the untyped entries in the file.
+  const ut2 = await grid(TYPES);
+  tr = type(ut2, "Net Card Old", "CompTIA Security+");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(8) ⭐ two typed titles in one group still merge on one press with no override", inside(ut2, "Net Card Old", "CompTIA Security+"), JSON.stringify(of(ut2, "Net Card Old")));
+  // A title the file does not hold at all is untyped too: it asks, never holds.
+  const MISSING = JSON.parse(JSON.stringify(TYPES));
+  delete MISSING.canonicals["Security+ CompTIA"];
+  const um = await grid(MISSING);
+  tr = type(um, "Security+ CompTIA", "CompTIA Security+");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  const umFirst = of(um, "Security+ CompTIA").length === 0 && /^Security\+ CompTIA has no CPL type recorded/.test(txt(tr.querySelector(".cr-guard-note")));
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(8) a title missing from the file asks on the first press and writes on the second",
+    umFirst && field(of(um, "Security+ CompTIA"), "unified_title_merge_confirm").length === 1 && notRec(field(of(um, "Security+ CompTIA"), "cpl_type_group_override")[0] || {}),
+    JSON.stringify(of(um, "Security+ CompTIA")));
+  // The issuer lane's Save all: an untyped merge holds the whole save on the first press as unknown.
+  const lu = await lane(TYPES);
+  lu.fill("Net Card Old", "Unrecorded Card");
+  const allU = Array.from(lu.doc.querySelectorAll(".cr-wl-saveall")).find((b) => /Save all filled shown/.test(txt(b)));
+  allU.click(); await sleep(60);
+  const luFirst = bodies(lu).length === 0 && /^Unrecorded Card has no CPL type recorded/.test(txt(allU.parentNode.querySelector(".cr-guard-note")));
+  allU.click(); await sleep(150);
+  check("(8) ⭐ the issuer lane's Save all asks once for an untyped merge, then writes it with the override",
+    luFirst && field(of(lu, "Net Card Old"), "unified_title_merge_confirm").length === 1 && notRec(field(of(lu, "Net Card Old"), "cpl_type_group_override")[0] || {}),
+    txt(allU.parentNode) + " | " + JSON.stringify(bodies(lu)));
+
+  // ── (6) the grid shows the title written; the confirm names a held collision along the chain ──
+  // Security+ CompTIA is saved to become CompTIA Security+, an existing credential, with no merge confirm: the rename
+  // apply holds it. A merge picked onto Security+ CompTIA lands on CompTIA Security+ and the dialog says so.
+  const hc = await boot({ payload: PAYLOAD, overlay: [row("Security+ CompTIA", "unified_title_override", "CompTIA Security+")], types: TYPES });
+  tr = type(hc, "Net Card Old", "Security+ CompTIA");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  const hcIn = rowByTitle(hc.doc, "CompTIA Security+") || tr;
+  check("(6) ⭐ the confirm says in words that the chain runs through a saved rename held as an unconfirmed collision",
+    hc.confirms.length === 1 && /never confirmed as a merge \(“Security\+ CompTIA” to “CompTIA Security\+”\)\. The rename apply holds that rename/.test(hc.confirms[0]), hc.confirms.join(" || "));
+  check("(6) ⭐ after the save, the grid's title cell shows the title written, the end of the chain",
+    field(of(hc, "Net Card Old"), "unified_title_override")[0].value === "CompTIA Security+" && tr.querySelector(".cr-title-in").value === "CompTIA Security+",
+    tr.querySelector(".cr-title-in").value + " | " + JSON.stringify(of(hc, "Net Card Old")) + " | " + (hcIn === tr));
+  const hk = await boot({ payload: PAYLOAD, overlay: [row("Security+ CompTIA", "unified_title_override", "CompTIA Security+"), row("Security+ CompTIA", "unified_title_merge_confirm", "CompTIA Security+")], types: TYPES });
+  tr = type(hk, "Net Card Old", "Security+ CompTIA");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(6) a confirmed rename along the chain adds no such words", hk.confirms.length === 1 && !/never confirmed/.test(hk.confirms[0]), hk.confirms.join(" || "));
 
   // ── the second press is armed per surface ──
   // A block on the grid's Save never arms the issuer lane's Save for the same merge: the lane's first press blocks too.

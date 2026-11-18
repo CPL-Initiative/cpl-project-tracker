@@ -26,7 +26,8 @@ which skips each drifted fold group WHOLE (a target and every title renamed or m
 plan leaves out the same groups' row moves, so the two halves agree. Undo the newest apply first.
 A keep saved after the apply (kb/_apply_left_map.py) drops a leftover title's left_map marker and puts its link on
 the marker's renamed `from`: the undo reads that as expected, moves the link back with its canonical title, and does
-not put the marker back. A marker gone with the link anywhere else is drift.
+not put the marker back. That holds for a title whose own link the apply renamed too: the kept link goes back to the
+marker's `from` before the apply, never to the link's own before. A marker gone with the link anywhere else is drift.
 
 The SQL plan: the same ops, each guarded on the row the apply left (value, reviewer_email and reviewed_at
 for a moved row; the cohort and the written value for a resolution row), each in a block that raises a
@@ -99,10 +100,21 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
             drift.append({"file": "credentials.json", "key": key})
             continue
         changes.append({"file": "credentials.json", "key": key, "to": ba.get("before")})
+    left_from = undo.get("unified_titles_left_map_from") or {}
+
+    def kept_after_apply(raw):
+        # A keep saved after the apply dropped the marker and put the link on left_map.from's "after".
+        ent = ut.get(raw) or {}
+        lm = ent.get("left_map")
+        return (raw in left_from and not (isinstance(lm, dict) and lm.get("from"))
+                and ent.get("unified_title") == left_from[raw]["after"])
+
     for raw, ba in sorted((undo.get("unified_titles") or {}).items()):
         cur = (ut.get(raw) or {}).get("unified_title")
         if cur == ba["before"]:
             continue
+        if kept_after_apply(raw):
+            continue  # the link sits where the keep put it; the left_map pass below puts back the name the keep restored
         if cur != ba["after"]:
             drift.append({"file": "unified_titles.json", "key": raw})
             continue
@@ -111,8 +123,11 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
     # A keep saved after the apply (kb/_apply_left_map.py) puts the link back on left_map.from, which the apply had
     # renamed to its "after", and drops the marker. That is the keep doing its job, never drift: the undo moves the kept
     # link back with its canonical title and leaves the marker the keep removed out (S679).
+    # A title in both maps whose link was renamed too: once the keep has put the link on left_map.from's "after", the
+    # link is the kept one, so it goes back to left_map.from's "before", whether the two renames named different titles
+    # or folded both into one.
     renamed_raws = undo.get("unified_titles") or {}
-    for raw, ba in sorted((undo.get("unified_titles_left_map_from") or {}).items()):
+    for raw, ba in sorted(left_from.items()):
         ent = ut.get(raw) or {}
         lm = ent.get("left_map")
         cur = lm.get("from") if isinstance(lm, dict) else None
@@ -120,10 +135,10 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
             continue
         if not cur:
             link = ent.get("unified_title")
-            if raw in renamed_raws or link == ba["before"]:
-                continue  # the unified_titles pass above moves this link, or it is back already
-            if link == ba["after"]:
+            if kept_after_apply(raw):
                 changes.append({"file": "unified_titles.json#kept", "key": raw, "to": ba["before"], "after": ba["after"]})
+            elif raw in renamed_raws or link == ba["before"]:
+                continue  # the unified_titles pass above moves this link, or it is back already
             else:
                 drift.append({"file": "unified_titles.json#kept", "key": raw, "after": ba["after"]})
             continue

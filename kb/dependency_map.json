@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4366,
+     "line": 4368,
      "tabs": [
       "exhibits"
      ]
@@ -1670,7 +1670,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5490,
+     "line": 5508,
      "tabs": [
       "credential-reference"
      ]
@@ -3815,7 +3815,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3920,
+     "line": 3924,
      "tabs": [
       "credential-reference"
      ]
@@ -6569,7 +6569,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3930,
+     "line": 3932,
      "tabs": [
       "exhibits"
      ]
@@ -6693,7 +6693,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4358,
+     "line": 4360,
      "tabs": [
       "exhibits"
      ]
@@ -6786,7 +6786,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4871,
+     "line": 4884,
      "tabs": [
       "exhibits"
      ]
@@ -6832,7 +6832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5852,
+     "line": 5870,
      "tabs": [
       "credential-reference"
      ]
@@ -7686,7 +7686,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5970,
+     "line": 5988,
      "tabs": [
       "credential-reference"
      ]
@@ -8627,7 +8627,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5853,
+     "line": 5871,
      "tabs": [
       "credential-reference"
      ]
@@ -8663,7 +8663,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5160,
+     "line": 5173,
      "tabs": [
       "exhibits"
      ]
@@ -11538,7 +11538,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5591,
+     "line": 5609,
      "tabs": [
       "credential-reference"
      ]
@@ -11859,7 +11859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 49
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -14374,7 +14374,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5227,
+     "line": 5245,
      "tabs": [
       "credential-reference"
      ]
@@ -15129,7 +15129,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -16261,7 +16261,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4389,
+     "line": 4391,
      "tabs": [
       "exhibits"
      ]
@@ -17184,7 +17184,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5250,
+     "line": 5268,
      "tabs": [
       "credential-reference"
      ]
@@ -21547,7 +21547,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 48
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -32584,14 +32584,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 338
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 330
+     "line": 345
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
