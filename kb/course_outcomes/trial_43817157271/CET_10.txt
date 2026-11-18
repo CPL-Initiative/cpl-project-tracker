@@ -1,0 +1,38 @@
+Print
+CET 10: Survey of Electronics
+3.0 Units / LEC
+
+An introductory course in electricity and electronics. Students will learn basic components of physics, chemistry, and mathematical analysis, as needed. Topics include methods for generating and storing electricity, design and selection of energy efficient devices, and the impact of electricity and electronics on society and the environment.
+
+Transferability:
+
+Transferable to CSU only
+
+Grading Options:
+
+Letter Grade Methods
+
+Toggle  
+Prerequisites, Corequisites & Advisories
+
+Advisory: MATH301 - Pre-Algebra Review
+
+Students in CET-10 will be performing basic algebraic manipulations as they relate to electricity. Concepts such as Ohm's law, Watt's law, and series/parallel circuit analysis will require students to be familiar with simplifying expressions and solving for variables in mathematical formulas.These skills are practiced in Math 301.
+
+Objectives
+Simplify expressions involving integers, fractions, and decimals.
+Solve equations involving integers, fractions, and decimals.
+Solve equations and applications involving percents.
+Toggle  
+General Education Status
+
+CR General Education: Area 5: Natural Sciences (Approved)
+
+Toggle  
+Student Learning Outcomes
+
+Describe the operation of electrical and electronic devices, circuits, and systems.
+
+Analyze circuits and compute electrical and electronic variables.
+
+Explain the influence of electricity and electronics on world history and cultures.
