@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s679_cpl_memory_rows.sql",
+ "name": "s679_cpl_memory_rows",
+ "version": "20261118033017",
+ "sha256": "3c7b0c585301b3fbb99bea0b5f90cc3e738af34150801f9e3306f741d817295b",
+ "run": "44230439678",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-ace-checks-warn-never-block-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":334},{\"slug\":\"d-combine-guard-one-choke-point-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":352},{\"slug\":\"d-course-list-note-is-the-mark-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":325},{\"slug\":\"d-left-map-move-only-unused-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":387},{\"slug\":\"d-short-high-scope-follows-catalog-range-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":341},{\"slug\":\"d-slash-rule-line-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":361},{\"slug\":\"d-untyped-titles-two-press-s679\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":300},{\"slug\":\"m-prreq-rescore-applied-s679\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":354},{\"slug\":\"m-slash-to-and-renames-applied-s679\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":335},{\"slug\":\"p-apply-trigger-conflict-markers-s679\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":286},{\"slug\":\"p-dependency-map-serializes-merges-s679\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":302},{\"slug\":\"pr-harness-worktree-cleanup-s679\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":283},{\"slug\":\"sam-slash-joining-words-is-and-2026-11-18\",\"kind\":\"decision\",\"status\":\"verified\",\"summary_len\":379}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
