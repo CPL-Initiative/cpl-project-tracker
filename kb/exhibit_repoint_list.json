@@ -14,9 +14,9 @@
     "person": 1
    },
    "apprenticeship": {
-    "assign": 12,
+    "assign": 13,
     "skip": 35,
-    "person": 3
+    "person": 2
    },
    "low_confidence": {
     "confirm": 376,
@@ -3524,7 +3524,7 @@
    "action": "person",
    "from": null,
    "to": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "reason": "the one existing family for UA + trade + rung; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
+   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3535,12 +3535,15 @@
    "batch": "apprenticeship",
    "exhibit_id": "MAPICA-UL4P-1-001",
    "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1",
-   "action": "person",
+   "action": "assign",
    "from": null,
-   "to": "UA Plumbers/Pipefitters Apprenticeship — Level 1",
-   "reason": "the rung key 'UA Plumbers and Pipefitters Apprenticeship — Level 1' spells the family differently from its other rungs (UA Plumbers/Pipefitters Apprenticeship): merge the key into the family's spelling, then rebuild, so the series lands under one family name; the key is Sam-curated, so the merge is his tap",
-   "target_exists": false,
-   "target_sam_curated": false
+   "to": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+   "reason": "the one existing family for UA + trade + rung",
+   "target_exists": true,
+   "target_sam_curated": true,
+   "allow_sam_target": true,
+   "target_issuer": null,
+   "confidence": 0.85
   },
   {
    "batch": "apprenticeship",
@@ -3549,7 +3552,7 @@
    "action": "assign",
    "from": null,
    "to": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
-   "reason": "the one existing family for UA + trade + rung",
+   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3563,7 +3566,7 @@
    "action": "assign",
    "from": null,
    "to": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
-   "reason": "the one existing family for UA + trade + rung",
+   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3577,7 +3580,7 @@
    "action": "person",
    "from": null,
    "to": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "reason": "the one existing family for UA + trade + rung; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
+   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,

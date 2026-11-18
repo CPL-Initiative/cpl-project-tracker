@@ -29,11 +29,13 @@ cert-based guard on Move and an accepted combine. `kb/_build_left_map.py` writes
 `kb/_apply_left_map.py` carries decisions out; `excel_to_dashboard.py` leaves a removed title out. 446 titles used
 against COBIx's 434 (his pointer rule came from an unposted file). Tests `tests/exhibits_list_left.test.js`,
 `tests/left_map_build_test.py`. **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local
-title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 606 applied,
-73 held; the split reads 219 against 265 because the MAP snapshot is not committed; no real apply has run. COBIx's
-review (S679): the apply decides holds before grain, so a held row never moves under a sibling's title rewrite;
-`--undo-pairs --force` leaves each changed title whole and lists what it left; UA Local 467 Year 1 goes to a person,
-since Sam's Level 1 key spells the family "Plumbers and Pipefitters" and his other rungs "Plumbers/Pipefitters".
+title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 607 applied,
+73 held; apprenticeship 13 assign, 2 person; the split reads 219 against 265 because the MAP snapshot is not
+committed; no real apply has run. COBIx's review (S679): the apply decides holds before grain, so a held row never
+moves under a sibling's title rewrite; `--undo-pairs --force` leaves each changed title whole and lists what it left.
+The UA plumbing family is spelled "UA Plumbers and Pipefitters" (Sam, 2026-11-18: a slash joining words becomes
+"and"), so UA Local 467 Year 1 assigns to his Level 1 key and Years 2 and 3 to the slash rungs, which the
+slash-to-and rename re-keys.
 **NEXT:** (1) wire `kb/_apply_left_map.py` into a nightly job; (2) Rename and Combine on the leftover row (the regular
 List has them; the guard covers Accept); (3) #3472: commit the MAP snapshot run, then the reviewed apply.
 

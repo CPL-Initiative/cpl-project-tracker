@@ -356,24 +356,36 @@ def test_naming():
 
 
 def test_one_family_spelling():
-    """COBIx finding 3 on #3472: one apprenticeship series never lands across two family names. The family's rungs
-    are spelled two ways; the spelling most rungs carry is the family's, and a rung keyed under the other spelling
-    goes to a person (merge the key, then rebuild) instead of assigning."""
+    """COBIx finding 3 on #3472, then Sam's ruling of 2026-11-18 ("I believe I replaced the / with and to avoid
+    formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters"). The family's
+    rungs are keyed "Plumbers and Pipefitters" (Level 1, Sam's key) and "Plumbers/Pipefitters" (Levels 2 and 3): one
+    family, spelled the "and" way, so every year assigns to its existing rung key and none goes to a person. A head
+    that still differs once the slash reads "and" is a second spelling: the rung keyed under it goes to a person."""
     creds = {"UA Plumbers and Pipefitters Apprenticeship — Level 1": [{"issuing_agency": "UA"}],
              "UA Plumbers/Pipefitters Apprenticeship — Level 2": [{"issuing_agency": "UA"}],
              "UA Plumbers/Pipefitters Apprenticeship — Level 3": [{"issuing_agency": "UA"}]}
     titles = ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (1, 2, 3)]
     arts = [{"course_id": "P%d" % n, "exhibit_id": "MAPICA-UL4P%d-1-001" % n, "exhibit_title": t, "unified_title": None,
              "cpl_type_description": "Other"} for n, t in enumerate(titles, 1)]
-    idx = xr.Index({}, creds, arts)
     audit = {"title_cards": [{"raw_title": t, "tags": ["unclassified_in_map"]} for t in titles]}
-    out = {r["local_title"]: r for r in builder.batch_apprenticeship(idx, audit, {})}
-    check(out[titles[1]]["action"] == "assign" and out[titles[2]]["action"] == "assign",
-          "Years 2 and 3 no longer assign to the family: %r" % [out[t]["action"] for t in titles])
-    check(out[titles[0]]["action"] == "person" and out[titles[0]]["to"] == "UA Plumbers/Pipefitters Apprenticeship — Level 1",
-          "Year 1 assigned under a second family spelling: %r" % ((out[titles[0]]["action"], out[titles[0]]["to"]),))
-    fams = {out[t]["to"].split(" Apprenticeship — ")[0] for t in titles if out[t]["action"] == "assign"}
-    check(fams == {"UA Plumbers/Pipefitters"}, "the series assigns across family spellings: %r" % fams)
+    out = {r["local_title"]: r for r in builder.batch_apprenticeship(xr.Index({}, creds, arts), audit, {})}
+    check([out[t]["action"] for t in titles] == ["assign"] * 3,
+          "a year of the family did not assign: %r" % [out[t]["action"] for t in titles])
+    check(out[titles[0]]["to"] == "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+          "Year 1 did not take Sam's Level 1 key: %r" % out[titles[0]]["to"])
+    fams = {builder._and_form(out[t]["to"].split(" Apprenticeship — ")[0]) for t in titles}
+    check(fams == {"UA Plumbers and Pipefitters"}, "the series resolves to more than one family: %r" % fams)
+    check("slash-to-and rename" in out[titles[1]]["reason"] and "slash-to-and" not in out[titles[0]]["reason"],
+          "a slash rung does not say the rename re-keys it")
+    # A real second spelling (here a capital "And") is still one family's two names: the minority rung goes to a person.
+    creds2 = {"UA Plumbers And Pipefitters Apprenticeship — Level 1": [{"issuing_agency": "UA"}],
+              "UA Plumbers/Pipefitters Apprenticeship — Level 2": [{"issuing_agency": "UA"}],
+              "UA Plumbers/Pipefitters Apprenticeship — Level 3": [{"issuing_agency": "UA"}]}
+    out2 = {r["local_title"]: r for r in builder.batch_apprenticeship(xr.Index({}, creds2, arts), audit, {})}
+    check(out2[titles[0]]["action"] == "person"
+          and out2[titles[0]]["to"] == "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+          "a second spelling assigned: %r" % ((out2[titles[0]]["action"], out2[titles[0]]["to"]),))
+    check(out2[titles[1]]["action"] == "assign", "the majority spelling stopped assigning")
 
 
 def test_committed_list():
@@ -405,15 +417,18 @@ def test_committed_list():
           "the shared CTCNC canonicals do not split to different families")
     # Apprenticeship: COBIx 15 clear. Measured 13 keyed + 2 that clear by the rule but carry no exhibit id in the
     # committed record (UA Local 467 and Local 62 Plumbing and Pipefitting Journeyperson): rebuild with --map.
-    # Then COBIx's finding 3 on #3472 (S679): UA Local 467 Year 1 matched Sam's key "UA Plumbers and Pipefitters
-    # Apprenticeship — Level 1" while Years 2 and 3 matched "UA Plumbers/Pipefitters ..."; it goes to a person (Sam's
-    # merge of his own key), so 12 assign and 3 person.
+    # UA Local 467 Year 1 matches Sam's key "UA Plumbers and Pipefitters Apprenticeship — Level 1" and Years 2 and 3
+    # match "UA Plumbers/Pipefitters ..." keys: one family under Sam's 2026-11-18 slash-to-and ruling, so all three
+    # assign (13 assign, 2 person: the two Journeyperson rows with no exhibit id).
     appr = [r for r in rs if r["batch"] == "apprenticeship"]
-    check(got["apprenticeship"]["assign"] == 12 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 3,
+    check(got["apprenticeship"]["assign"] == 13 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 2,
           "apprenticeship counts moved: %r" % got["apprenticeship"])
     ua = [r for r in appr if r["local_title"].startswith("UA Local 467 Plumbing") and r["action"] == "assign"]
-    check(len(ua) == 2 and {r["to"].split(" Apprenticeship — ")[0] for r in ua} == {"UA Plumbers/Pipefitters"},
-          "the UA Local 467 series assigns across more than one family spelling: %r" % [r["to"] for r in ua])
+    check(len(ua) == 3 and {builder._and_form(r["to"].split(" Apprenticeship — ")[0]) for r in ua}
+          == {"UA Plumbers and Pipefitters"},
+          "the UA Local 467 series does not resolve to the one 'and' family: %r" % [r["to"] for r in ua])
+    check(any(r["to"] == "UA Plumbers and Pipefitters Apprenticeship — Level 1" for r in ua),
+          "UA Local 467 Year 1 is not assigned to Sam's Level 1 key")
     check(sum(1 for r in appr if r.get("minted")) == 7, "COBIx's mints are 7 (his text says eight but lists seven)")
     # The 710: COBIx 2 re-points (CULART010, FLIGHT 101): equal. Confirm-as-is: COBIx 369 of the 710; measured 371
     # titles over every unreviewed title below 0.80, since his first typographic pass (407) is not in the repo.

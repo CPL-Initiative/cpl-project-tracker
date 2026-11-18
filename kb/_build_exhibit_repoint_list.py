@@ -179,6 +179,12 @@ def _stems(text):
     return {w[:5] for w in re.findall(r"[a-z]+", (text or "").lower()) if w not in GENERIC}
 
 
+def _and_form(head):
+    """A family head with each word-joining slash written as " and " (Sam, 2026-11-18): "UA Plumbers/Pipefitters" is
+    "UA Plumbers and Pipefitters". A family head is words, so every slash in it joins words."""
+    return re.sub(r"\s*/\s*", " and ", head or "")
+
+
 def _trade_key(text):
     return re.sub(r"\s+", " ", (text or "").lower().replace("/", " and ")).strip()
 
@@ -198,16 +204,19 @@ def batch_apprenticeship(idx, audit, review):
                 rung = m.group("rung")
                 rk = "J" if rung == "Journeyperson" else rung.split()[1]
                 families[prefix][(_trade_key(trade), rk)] = t
-    # One family, one spelling (COBIx on #3472, S679): the UA plumbing family's Level 1 key reads "UA Plumbers and
-    # Pipefitters" while Levels 2 to 4 and Journeyperson read "UA Plumbers/Pipefitters". The spelling most of a
-    # family's rungs carry is the family's; a rung key spelled otherwise goes to a person (merge the key into the
-    # family's spelling, then rebuild), so one series never lands across two family names. A tie has no family
-    # spelling, and every rung of it goes to a person.
-    spelling = {}  # (prefix, trade key) -> the family's head, or None on a tie
+    # One family, one spelling (COBIx on #3472, S679), and that spelling joins words with "and" (Sam, 2026-11-18, in
+    # session: "I believe I replaced the / with and to avoid formatting issues and should be a general rule for other
+    # titles. UA Plumbers and Pipefitters"). The UA plumbing family's Level 1 key reads "UA Plumbers and Pipefitters"
+    # and Levels 2 to 4 and Journeyperson read "UA Plumbers/Pipefitters": one family under Sam's rule, spelled the
+    # "and" way. Each rung assigns to its existing key, and the slash-to-and rename (S679, its own PR) re-keys the
+    # slash rungs to the "and" spelling, carrying every exhibit under them. Heads that still differ once the rule is
+    # applied are two spellings: the one most rungs carry is the family's, a rung keyed under the other goes to a
+    # person (merge the key, then rebuild), and a tie sends every rung to a person.
+    spelling = {}  # (prefix, trade key) -> the family's head ("and" form), or None on a tie
     for prefix, fam in families.items():
         heads = defaultdict(Counter)
         for (tk, _), t in fam.items():
-            heads[tk][FAMILY.match(t).group("head")] += 1
+            heads[tk][_and_form(FAMILY.match(t).group("head"))] += 1
         for tk, c in heads.items():
             top = c.most_common()
             spelling[(prefix, tk)] = top[0][0] if len(top) == 1 or top[0][1] > top[1][1] else None
@@ -261,7 +270,7 @@ def batch_apprenticeship(idx, audit, review):
         hit = fam.get((tkey, rk))
         if hit:
             head, fam_head = FAMILY.match(hit).group("head"), spelling.get((prefix, tkey))
-            if head != fam_head:
+            if _and_form(head) != fam_head:
                 to = (hit.replace(head + " Apprenticeship", fam_head + " Apprenticeship", 1) if fam_head else None)
                 mk("person", to, ("the rung key %r spells the family differently from its other rungs (%s): merge "
                                   "the key into the family's spelling, then rebuild, so the series lands under one "
@@ -270,8 +279,10 @@ def batch_apprenticeship(idx, audit, review):
                                                      "; the key is Sam-curated, so the merge is his tap"
                                                      if idx.sam_curated(hit) else "")))
                 continue
-            mk("assign", hit, "the one existing family for %s + trade + rung" % prefix, allow_sam_target=True,
-               target_issuer=None, confidence=0.85)
+            mk("assign", hit, "the one existing family for %s + trade + rung%s" % (
+                prefix, "" if head == fam_head else "; the key spells the family %r, and the slash-to-and rename "
+                "(Sam, 2026-11-18) re-keys it to %r with this exhibit under it" % (head, fam_head)),
+               allow_sam_target=True, target_issuer=None, confidence=0.85)
             continue
         rivals = sorted({t for (k, _), t in fam.items() if k != tkey and _stems(k) & _stems(tkey)},
                         key=lambda t: (-len(_stems(t) & _stems(tkey)), t))
