@@ -275,8 +275,14 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const { window, doc, T } = setup({ public: true });
   const q = T._alloc(QUAL);
   const cell = cellByKey(doc, rowOf(doc, QUAL), "cr_current").textContent.trim();
-  check("3a: the public Curr CR Funds figure coarsens to the nearest $1,000 (or reads <$1,000)",
-    cell === "<$1,000" || (/^\$[\d,]+$/.test(cell) && num(cell) % 1000 === 0 && Math.abs(num(cell) - q.earned_cr) <= 500));
+  // A figure at its max prints the max exactly, since the max is printed
+  // exactly beside it (Sam's go on #3471, 2026-11-17); a figure short of it
+  // coarsens to the nearest $1,000 and never rounds past the max's thousand.
+  const crMet = Math.abs(q.earned_cr - q.cr_award) < 0.5;
+  check("3a: the public Curr CR Funds figure coarsens to the nearest $1,000 (or reads <$1,000), or prints its max exactly when met",
+    crMet ? cell === money(q.cr_award)
+      : (cell === "<$1,000" || (/^\$[\d,]+$/.test(cell) && num(cell) % 1000 === 0 && Math.abs(num(cell) - q.earned_cr) <= 500 &&
+         num(cell) <= q.cr_award)));
   check("3b: the cap beside it stays exact",
     cellByKey(doc, rowOf(doc, QUAL), "cr_award").textContent.trim() === money(q.cr_award));
   const csv = T._csv().split("\r\n");
@@ -284,7 +290,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const line = csv.find((l) => l.split(",")[1] === QUAL).split(",");
   const iCur = head.findIndex((x) => /^Credit funds qualified so far /.test(x));
   check("3c: the public CSV's Credit funds qualified so far column coarsens the same way",
-    iCur > 0 && (line[iCur] === "<1000" || Number(line[iCur]) % 1000 === 0));
+    iCur > 0 && (crMet ? line[iCur] === String(Math.round(q.cr_award))
+      : (line[iCur] === "<1000" || Number(line[iCur]) % 1000 === 0)));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

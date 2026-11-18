@@ -1270,6 +1270,9 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "confidence": {lv: sum(1 for c in colleges if c["confidence"] and c["confidence"]["level"] == lv)
                        for lv in ("strong", "partial", "limited")},
     }
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _blocked_catalogs as BC  # noqa: E402  (the one source of the blocked-catalog hunt, S678)
+    blocked_hunt = BC.status(root)
     if previous is None:
         previous = _maybe(os.path.join(root, OUT)) or {}
     live = live_block(live_path, previous.get("live"), len(entities), accept_active_shift)
@@ -1310,6 +1313,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "dictionary": dictionary,
         "apis": apis,
         "collection": collection,
+        "blocked_hunt": blocked_hunt,
         "_sidecars": dict([(k + ".json", v) for k, v in sidecars.items()] + [(k + ".outcomes.json", v) for k, v in outcomes.items()]),
     }
 

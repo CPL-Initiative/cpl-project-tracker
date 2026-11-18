@@ -834,6 +834,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
+| `kb/reference/blocked_catalog_hunt.json` | scripts: `kb/_blocked_catalogs.py` | — |
 | `kb/reference/california_occupational_licenses.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/cb_course_basic_fall2025.csv` | scripts: `chatbox/build_program_courses.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_oc_medical_assistant_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py`, `kb/_prefix_alias_census.py` | — |
 | `kb/reference/ccc_coll_dist_2025.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
@@ -1095,6 +1096,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
+| `tests/blocked_catalogs_test.py` | workflows: `js-tests.yml` | — |
 | `tests/browser_install_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/budget_ledger_structure_test.py` | workflows: `js-tests.yml` | — |
 | `tests/budget_section_first_light_test.py` | workflows: `js-tests.yml` | — |
@@ -1563,5 +1565,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1021 file
-datasets · 195 external services · 608 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1023 file
+datasets · 195 external services · 609 consumers · 72 workflows · 41 tabs.
