@@ -221,11 +221,11 @@ TBA = {
                         "source registry, which this file does not carry.",
     "ppm": "Program Pathways Mapper has no official export; 4 pilot term maps are committed "
            "(kb/program_requirements_pilot/sequences/), not yet read per college here.",
-    "descriptions": "Usable course descriptions per college come from the description classifier (#3219), whose "
+    "descriptions": "Usable course descriptions per college come from the description classifier, whose "
                     "counts are not a committed file yet.",
     "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
     "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
-    "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
+    "coe": "The regional labor market crosswalk is committed but not yet read per college here.",
     # The load time only (Sam, Nov 13, on #3229: downfocus whether a person reviewed something; the reason now
     # names the load time alone).
     "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
@@ -236,18 +236,20 @@ TBA = {
 RULE = {
     "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
     "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
-    "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-collection "
-               "rule), from the live counts (key overall, basis live); unread parts count as zero",
+    # Plain words on the page (COBIx on #3510, A5): no "key overall, basis live", the acronyms spelled out.
+    "overall": "the average of three parts: catalog source, program requirements passing, and the mean of course student "
+               "learning outcomes (SLOs) and program learning outcomes (PLOs), from the nightly database count; a part not "
+               "read yet counts as zero",
     "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = 5 or more "
                   "checked with one differing, or 5 agree beside an unreachable page; limited = machine checks only, "
-                  "fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (display "
-                  "held). An unreachable page is not a checked record; the newest receipt by checked_at counts, and "
-                  "on a tie the receipt with the later source comment (kb/spot_checks/README.md)",
+                  "fewer than 5 checked whatever they found (a cross-college check), or 2 or more differ (the "
+                  "college's figures stay hidden until they agree). An unreachable page is not a checked record; the newest check counts, and on a tie the one "
+                  "whose source note is later",
     # The Confidence card's one line on the College Data Collection page (#3229), from the same thresholds as
     # confidence() below, so the page never types a threshold of its own.
     "confidence_card": "Strong: %d or more spot-checked records at the college, all agreeing. Partial: %d or more "
                        "checked with one differing, or %d agreeing beside an unreachable page. Limited: machine checks "
-                       "only, fewer than %d checked, or %d or more differing (display held)."
+                       "only, fewer than %d checked, or %d or more differing (the college's figures stay hidden until they agree)."
                        % (STRONG_AT, STRONG_AT, STRONG_AT, STRONG_AT, HOLD_AT),
     "age_days": AGE_DAYS,
 }
