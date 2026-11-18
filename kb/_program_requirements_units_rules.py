@@ -519,12 +519,118 @@ def _parts(moved: list[dict]) -> tuple[list[dict], list[dict]]:
     return ([m for m in moved if m["rule"] in CHECKS_ONLY], [m for m in moved if m["rule"] not in CHECKS_ONLY])
 
 
+MIGRATIONS = os.path.join(HERE, "migrations")
+
+
+def replan(receipt: dict, applied_checks: dict | None = None, applied_from: str | None = None,
+           drop: tuple = (), why: str | None = None, tag: str = "s680") -> dict:
+    """The receipt after a live step, in place, without rescoring a record a second time:
+      * applied_checks, the checks-only apply's migrate receipt: the rows it returned are marked applied, and the
+        checks-only rollback is rebuilt from those rows alone (the guarded shape, kb/_guarded_sql.py);
+      * drop, (college, control_number) pairs: each leaves the full-row plan for receipt["held_out"] with why, and
+        the full-row apply and rollback are rebuilt from the rows left. Places i never change, so a returned key
+        still names its row."""
+    by_i = {r["i"]: r for r in receipt["records"]}
+    if applied_checks is not None:
+        got = RS.returned_value(applied_checks)
+        plan = set(receipt["plan"]["checks_only"])
+        stray = [i for i in got["keys"] if i not in plan]
+        if stray:
+            raise ValueError("returned places outside the checks-only plan: %s" % stray[:10])
+        rows = [by_i[i] for i in sorted(set(got["keys"]))]
+        for r in rows:
+            r["applied"] = {"part": "checks_only", "from": applied_from}
+        receipt["applied"] = dict(receipt.get("applied") or {}, checks_only={
+            "from": applied_from, "returned": len(rows), "keys": [r["i"] for r in rows],
+            "skipped_checked": got.get("skipped_checked") or []})
+        receipt["rollback_checks_only"] = checks_only_rollback(rows, tag)
+    if drop:
+        want = {(c, str(n)) for c, n in drop}
+        out = [r for r in receipt["records"] if (r["college"], str(r["control_number"])) in want]
+        if len(out) != len(want):
+            raise ValueError("a dropped row is not in the receipt")
+        if any(r["i"] not in set(receipt["plan"]["full_row"]) for r in out):
+            raise ValueError("only a full-row row can leave the plan here")
+        receipt["records"] = [r for r in receipt["records"] if r not in out]
+        receipt["plan"]["full_row"] = [i for i in receipt["plan"]["full_row"] if i not in {r["i"] for r in out}]
+        receipt["held_out"] = (receipt.get("held_out") or []) + [dict(r, why=why) for r in out]
+        receipt["by_rule"] = dict(collections.Counter(r["rule"] for r in receipt["records"]))
+        receipt["rescored"] = len(receipt["records"])
+        full = [by_i[i] for i in receipt["plan"]["full_row"]]
+        receipt["apply_full_row"] = full_row_apply(full, tag)
+        receipt["rollback_full_row"] = full_row_rollback(full, tag)
+    return receipt
+
+
+def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> None:
+    """The full-row apply, its rollback and the checks-only rollback as committed files (the pre-read and the
+    checks-only apply already ran and stay as they ran)."""
+    by_i = {r["i"]: r for r in receipt["records"]}
+    full = [by_i[i] for i in receipt["plan"]["full_row"]]
+    checks = receipt["plan"]["checks_only"]
+    nr = collections.Counter(r["rule"] for r in full)
+    applied = (receipt.get("applied") or {}).get("checks_only")
+    hdr = ("-- %s cheap piles, item 2: the units rules. Receipt: %s.\n"
+           "-- The plan in two parts (second reader's F1): checks-only, A1 %d rows%s; full-row, A4 and A5 %d rows (%s).\n"
+           "-- A6 is off (F5). The collection lane's twelve colleges are not in the list (kb/collection_lane.py).\n"
+           % (tag.upper(), receipt_path, len(checks),
+              (", applied (%s returned %d)" % (applied["from"], applied["returned"])) if applied else "",
+              len(full), ", ".join("%s %d" % kv for kv in sorted(nr.items()))))
+    held = "".join("-- Held out of the full-row plan: %s %s (%s).\n" % (h["college"], h["control_number"], h["why"])
+                   for h in receipt.get("held_out") or [])
+    base = os.path.join(MIGRATIONS, "%s_%s_prreq_units_rules_" % (day, tag))
+    parts = {
+        "apply_rows.sql": (held + "-- Part 2: the %d corrected rows take the record and checks the college load (load_rows) "
+                           "posts for their\n-- committed record, where the row holds the filed run, the load's image of "
+                           "main's record and checks, and no\n-- person's check. The statement aborts, writing nothing, "
+                           "unless it matches the plan's %d rows less those a person\n-- checked (listed as "
+                           "skipped_checked). Before-images: the receipt's before_image per row.\n"
+                           % (len(full), len(full)) + receipt["apply_full_row"]),
+        "rollback_rows.sql": (held + "-- Rollback of part 2, NOT applied: the before-image back where the row still "
+                              "holds the after-image, skipping\n-- and listing a row a person checked; it aborts unless "
+                              "it matches the plan less those rows (edit expect).\n" + receipt["rollback_full_row"]),
+        "rollback_checks.sql": ("-- Rollback of part 1, NOT applied: the %d rows the checks-only apply returned, back "
+                                "from \"equal\" to\n-- \"unequal\", guarded on the run, skipping and listing a row a "
+                                "person checked; it aborts unless it matches\n-- those rows less the checked ones (edit "
+                                "its expect line for a partial rollback).\n"
+                                % (applied["returned"] if applied else len(checks)) + receipt["rollback_checks_only"]),
+    }
+    for name, text in parts.items():
+        with open(base + name, "w", encoding="utf-8") as fh:
+            fh.write(hdr + text + "\n")
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--dry-run", action="store_true", help="count and self-check; write nothing")
     ap.add_argument("--tag", default="s680")
     ap.add_argument("--skip-college", action="append", default=[])
+    ap.add_argument("--receipt", help="replan this receipt after a live step (no rescoring)")
+    ap.add_argument("--applied-checks", help="the checks-only apply's migrate receipt: mark its rows applied and "
+                                             "rebuild the checks-only rollback from them")
+    ap.add_argument("--drop", action="append", default=[], help="COLLEGE:CONTROL_NUMBER out of the full-row plan")
+    ap.add_argument("--drop-why", help="why the dropped rows leave the plan")
     a = ap.parse_args(argv)
+    if a.receipt:
+        with open(a.receipt, encoding="utf-8") as fh:
+            receipt = json.load(fh)
+        mig = None
+        if a.applied_checks:
+            with open(a.applied_checks, encoding="utf-8") as fh:
+                mig = json.load(fh)
+        if a.drop and not a.drop_why:
+            ap.error("--drop needs --drop-why")
+        replan(receipt, mig, os.path.relpath(os.path.abspath(a.applied_checks), ROOT) if a.applied_checks else None,
+               tuple(tuple(d.rsplit(":", 1)) for d in a.drop), a.drop_why, a.tag)
+        with open(a.receipt, "w", encoding="utf-8") as fh:
+            json.dump(receipt, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
+        day = re.search(r"_(\d{4}-\d{2}-\d{2})_", os.path.basename(a.receipt)).group(1)
+        write_migrations(receipt, os.path.relpath(os.path.abspath(a.receipt), ROOT), day, a.tag)
+        print("replanned: checks-only %d (applied %s), full-row %d, held out %d" % (
+            len(receipt["plan"]["checks_only"]), ((receipt.get("applied") or {}).get("checks_only") or {}).get("returned"),
+            len(receipt["plan"]["full_row"]), len(receipt.get("held_out") or [])))
+        return 0
     r = run(write=not a.dry_run, skip=tuple(a.skip_college))
     print("moved %d at %d colleges: %s" % (len(r["moved"]), r["colleges"],
                                            ", ".join("%s %d" % kv for kv in sorted(r["by_rule"].items()))))

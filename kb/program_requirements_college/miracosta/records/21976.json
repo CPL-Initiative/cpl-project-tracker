@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    25.0,
+    24.5,
     25.0
    ],
    "stated": [
@@ -72,8 +72,9 @@
     25.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "why": [
+    "the blocks sum to 24.5-25.0; the catalog states 25.0-25.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -97,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -205,9 +206,8 @@
       "alternatives": [
        {
         "code": "HORT 299",
-        "units": 1,
-        "catalog_addition": false,
-        "units_max": null
+        "units": null,
+        "catalog_addition": false
        }
       ],
       "catalog_addition": false
@@ -223,13 +223,5 @@
    "The Degrees tab says the A.A. in Nursery/Horticulture Crop Production is earned by completing this certificate plus MiraCosta A.A. general education; this record covers the certificate only."
   ]
  },
- "extracted_run": "39726634443",
- "reconciled": [
-  {
-   "rule": "A4",
-   "code": "HORT 299",
-   "words": "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units",
-   "statewide": "units_rules_A4"
-  }
- ]
+ "extracted_run": "39726634443"
 }

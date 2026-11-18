@@ -204,6 +204,23 @@ if os.path.isfile(RECEIPT):
           and all(r["rule"] == "A1" for r in rc["records"] if r["i"] in set(rc["plan"]["checks_only"])),
           "A1 alone is checks-only")
     check(not any(r["rule"] == "A6" for r in rc["records"]), "A6 is not in the plan")
+    # The checks-only apply ran (migrate run 44259625861, 17 returned, none checked): its rows are marked applied
+    # and its rollback names exactly the returned rows.
+    ap_ = (rc.get("applied") or {}).get("checks_only") or {}
+    check(ap_.get("returned") == 17 and sorted(ap_.get("keys") or []) == sorted(rc["plan"]["checks_only"])
+          and all((r.get("applied") or {}).get("part") == "checks_only" for r in rc["records"]
+                  if r["i"] in set(ap_.get("keys") or [])) and "e(expect) as (values (17))" in rc["rollback_checks_only"],
+          "the 17 checks-only rows are marked applied and the rollback names them")
+    # MiraCosta 21976 is live on an older run than its filed record: out of the full-row plan, a load question.
+    check(len(rc["plan"]["full_row"]) == 39 and "e(expect) as (values (39))" in rc["apply_full_row"]
+          and "e(expect) as (values (39))" in rc["rollback_full_row"]
+          and [(h["college"], h["control_number"]) for h in rc.get("held_out") or []] == [("MiraCosta College", "21976")]
+          and not any((r["college"], r["control_number"]) == ("MiraCosta College", "21976") for r in rc["records"])
+          and "'MiraCosta College', '21976'" not in rc["apply_full_row"],
+          "the full-row plan is 39 rows, MiraCosta 21976 held out")
+    with open(os.path.join(ROOT, "kb", "program_requirements_college", "miracosta", "records", "21976.json"),
+              encoding="utf-8") as fh:
+        check("units_rules_" not in fh.read(), "MiraCosta 21976's record file is main's, with no units-rules note")
     for k in ("apply_checks_only", "apply_full_row", "rollback_checks_only", "rollback_full_row"):
         sql = rc[k]
         check("r.checked is not true" in sql and "e(expect) as (values (" in sql and "skipped_checked" in sql

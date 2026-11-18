@@ -1,9 +1,9 @@
 -- S680 cheap piles, item 2: the units rules. Receipt: kb/receipts/program_requirement_records_units_rules_2026-11-18_s680.json.
--- The plan in two parts (second reader's F1): checks-only, A1 17 rows; full-row, A4 and A5 40 rows (A4 35, A5 5).
+-- The plan in two parts (second reader's F1): checks-only, A1 17 rows, applied (kb/receipts/migration_s680_prreq_units_rules_apply_checks_44259625861.json returned 17); full-row, A4 and A5 39 rows (A4 34, A5 5).
 -- A6 is off (F5). The collection lane's twelve colleges are not in the list (kb/collection_lane.py).
--- Rollback of part 1, NOT applied: the 17 A1 rows back from "equal" to "unequal", guarded on the run,
--- skipping and listing a row a person checked; it aborts unless it matches the plan less those rows (edit its
--- expect line for a partial rollback).
+-- Rollback of part 1, NOT applied: the 17 rows the checks-only apply returned, back from "equal" to
+-- "unequal", guarded on the run, skipping and listing a row a person checked; it aborts unless it matches
+-- those rows less the checked ones (edit its expect line for a partial rollback).
 with v(i, college, control_number, extracted_run) as (values
   (1, 'Bakersfield College', '35984', 38414480070),
   (2, 'Cabrillo College', '43652', 38442109713),
