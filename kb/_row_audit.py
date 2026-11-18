@@ -55,6 +55,13 @@ import re
 from collections import Counter, defaultdict
 from datetime import date, datetime, timezone
 
+try:  # the course flags (Sam, 2026-11-17: flag the record, never delete it); absent -> no flags
+    import sys as _sys
+    _sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import _flags
+except ImportError:  # pragma: no cover
+    _flags = None
+
 # ─── token vocabulary for the discipline_title_mismatch rule ───────────────
 # STOP: common English words that don't carry discipline signal.
 # GENERIC: course-catalog scaffolding terms ("introduction", "advanced", etc.)
@@ -251,6 +258,38 @@ def tier_of(score: float) -> str:
         if score >= lo:
             return label
     return "not_ready"
+
+
+# ─── zero college courses is never ready (#3480 Source 13, item 3) ───────────
+# The score reads a card's stored fields, and those survive after every college's
+# course has moved off the card (re-mints, C-ID routing, the re-home steps in
+# excel_to_dashboard.py): 270 emptied cards scored ready on 2026-11-17. Ready means
+# faculty can adopt the card's fields, which needs at least one college's course
+# behind them, so a live card with none on the Courses List's file
+# (unified_courses_members.js, merged cards' courses folded into their target) is
+# capped below ready and tagged. An exhibit link does not exempt it.
+NO_MEMBER_TAG = "no_member_courses"
+NO_MEMBER_CAP = round(READINESS_TIERS[0][0] - 0.01, 2)
+
+
+def _list_member_counts(list_members, curation):
+    """Card id -> its college courses on the Courses List, merged cards folded in; None when the file is absent."""
+    if not list_members or not list_members.get("members") or not _flags:
+        return None
+    counts = Counter()
+    for cid, rows in list_members["members"].items():
+        counts[_flags.final_target(cid, curation)] += len(rows or [])
+    return counts
+
+
+def _no_member_cap(course_id, tags, f_score, list_counts, curation):
+    """Tag and cap a live card with no college course; a merged card counts on its target and is left alone."""
+    if list_counts is None or (curation.get(course_id) or {}).get("merge_into"):
+        return f_score
+    if list_counts.get(course_id, 0) == 0:
+        tags.append(NO_MEMBER_TAG)
+        return min(f_score, NO_MEMBER_CAP)
+    return f_score
 
 
 # ─── id-scheme classifier ────────────────────────────────────────────────────
@@ -1388,6 +1427,14 @@ def main():
         if tgt:
             cluster_members[tgt].append(mid)
 
+    # The Courses List's college courses per card, for the zero-courses cap.
+    try:
+        list_counts = _list_member_counts(
+            _flags.loadjs(os.path.join(os.path.dirname(HERE), "unified_courses_members.js")) if _flags else None,
+            curation)
+    except (IOError, ValueError):
+        list_counts = None
+
     cards = []
 
     # ── M-IDs ─────────────────────────────────────────────────────────
@@ -1419,6 +1466,7 @@ def main():
         tags += _curation_orphan_tags(cur, course_id, courses, singletons, anchor_ids)
         mc = {}
         f_score, m_score = _compute_scores(faculty, _virtual_mc(mc), tags=tags)
+        f_score = _no_member_cap(course_id, tags, f_score, list_counts, curation)
         card = {
             "row_id": course_id,
             "row_kind": "Course",
@@ -1576,7 +1624,13 @@ def main():
         cards.append(card)
 
     # ── outputs ───────────────────────────────────────────────────────
-    _write_outputs(cards)
+    flags = None
+    if _flags:
+        titles = {k: v.get("common_title") for k, v in courses.items() if isinstance(v, dict) and v.get("common_title")}
+        titles.update({k: v.get("unified_title") for k, v in curation.items()
+                       if isinstance(v, dict) and v.get("unified_title")})
+        flags = _flags.load_flags(os.path.dirname(HERE), titles=titles)
+    _write_outputs(cards, flags)
 
 
 def _build_cluster_fix(cluster_id, fields):
@@ -1598,7 +1652,7 @@ def _build_cluster_fix(cluster_id, fields):
     }
 
 
-def _write_outputs(cards):
+def _write_outputs(cards, flags=None):
     if not os.path.isdir(OUT):
         os.makedirs(OUT)
 
@@ -1650,7 +1704,15 @@ def _write_outputs(cards):
             "fr":   "faculty_readiness tier",
             "mcr":  "mc_readiness tier",
             "tags": "rule tags fired on this row",
+            "fl":   "course flags on this card, in order (kb/_flags.py: retired, merged, inactive, not_applicable)",
+            "nc":   "1 when a flag takes the card out of every count, waiting pile, to-do and fetch plan",
+            "mi":   "a merged card's target (its colleges are counted there)",
+            "note": "the full note, only on a flagged card a person's review keeps in the counts",
         },
+        "_flags_rule": "Sam, 2026-11-17: flag the record, never delete it; take flagged records out of counts, "
+                       "waiting piles, to-dos and fetch plans. Every row is still written; stats count the distinct "
+                       "cards no flag takes out.",
+        "_flag_notes": (dict(_flags.NOTES, not_applicable=_flags.NA_CARD_NOTES) if _flags else {}),
     }
 
     def _summary(c):
@@ -1666,6 +1728,14 @@ def _write_outputs(cards):
         }
         if c.get("rekey"):
             s["rk"] = c["rekey"]   # prior cross-SUBJ4 identity (re-key provenance)
+        if flags is not None and flags.kinds(c["row_id"]):
+            s["fl"] = flags.kinds(c["row_id"])
+            if "merged" in s["fl"]:
+                s["mi"] = flags.merged.get(c["row_id"])
+            if flags.counted(c["row_id"]):
+                s["note"] = flags.note(c["row_id"])   # a person's ruling keeps it in: the note says so
+            else:
+                s["nc"] = 1
         # Inline the suggested correction wherever we computed one (flagged
         # subject_discipline_outlier rows on any kind) — small subset, high value
         # for the tab's bulk re-discipline pre-fill.
@@ -1686,7 +1756,7 @@ def _write_outputs(cards):
 
     summary_payload = {
         **metadata,
-        "stats": _stats(cards),
+        "stats": _stats(cards, flags),
         "rows": [_summary(c) for c in cards],
     }
     latest_path = os.path.join(OUT, "latest.json")
@@ -1694,7 +1764,7 @@ def _write_outputs(cards):
         json.dump(summary_payload, f, ensure_ascii=False, separators=(",", ":"))
 
     full_path = os.path.join(OUT, f"{TODAY}.full.json")
-    full_payload = {**metadata, "stats": _stats(cards), "rows": cards}
+    full_payload = {**metadata, "stats": _stats(cards, flags), "rows": cards}
     with open(full_path, "w", encoding="utf-8") as f:
         json.dump(full_payload, f, ensure_ascii=False, separators=(",", ":"))
 
@@ -1715,18 +1785,39 @@ def _write_outputs(cards):
     print(f"           wrote: {full_path}    ({os.path.getsize(full_path)//1024} KB, gitignored)")
 
 
-def _stats(cards):
+def _stats(cards, flags=None):
+    """Counts over the distinct cards no flag takes out (Sam, 2026-11-17). A merge target writes a Course row and a
+    Unified row; it counts once, at the better of its two tiers (a merge target's Unified row reads the fields its
+    members carry), with the union of both rows' tags. by_kind still counts rows; rows_written and distinct_cards
+    say how many of each there are."""
+    rank = {label: n for n, (_lo, label) in enumerate(READINESS_TIERS)}
     by_kind = Counter(c["row_kind"] for c in cards)
-    faculty_readiness = Counter(c["faculty_readiness"] for c in cards)
-    mc_readiness = Counter(c["mc_readiness"] for c in cards)
-    tag_counts = Counter(t for c in cards for t in c["tags"])
-    return {
-        "total_cards": len(cards),
+    first, tagset, fr, mcr = {}, defaultdict(set), {}, {}
+    for c in cards:
+        i = c["row_id"]
+        first.setdefault(i, c)
+        tagset[i].update(c["tags"])
+        if i not in fr or rank.get(c["faculty_readiness"], 9) < rank.get(fr[i], 9):
+            fr[i] = c["faculty_readiness"]
+        if i not in mcr or rank.get(c["mc_readiness"], 9) < rank.get(mcr[i], 9):
+            mcr[i] = c["mc_readiness"]
+    counted = [i for i in first if flags is None or flags.counted(i)]
+    out = {
+        "total_cards": len(counted),
         "by_kind": by_kind,
-        "faculty_readiness": faculty_readiness,
-        "mc_readiness": mc_readiness,
-        "tag_counts": tag_counts,
+        "faculty_readiness": Counter(fr[i] for i in counted),
+        "mc_readiness": Counter(mcr[i] for i in counted),
+        "tag_counts": Counter(t for i in counted for t in tagset[i]),
+        "rows_written": len(cards),
+        "distinct_cards": len(first),
     }
+    if flags is not None:
+        out["kept_not_counted"] = Counter(flags.hidden_kind(i) for i in first if not flags.counted(i))
+        out["kept_in_counts_by_a_person"] = sum(1 for i in first if flags.kinds(i) and flags.counted(i))
+        if getattr(flags, "stale", None):
+            # A flag file older than the latest re-mint is set aside until the daily build rebuilds it (kb/_flags.py).
+            out["flag_files_set_aside"] = list(flags.stale)
+    return out
 
 
 def _render_md(payload):

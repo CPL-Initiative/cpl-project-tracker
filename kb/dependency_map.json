@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1051,
+  "file_datasets": 1060,
   "external_services": 195,
-  "consumers": 616,
+  "consumers": 620,
   "workflows": 73,
   "data_js_files": 71,
   "tabs": 41
@@ -1259,7 +1259,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 336
+     "line": 342
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -2201,7 +2201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4513,
+     "line": 4514,
      "tabs": [
       "unified-courses"
      ]
@@ -2264,7 +2264,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3701,
+     "line": 3702,
      "tabs": [
       "unified-courses"
      ]
@@ -5963,6 +5963,13 @@
      "line": 163
     },
     {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
+    },
+    {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -5975,6 +5982,13 @@
      "direction": "read",
      "how": "literal",
      "line": 262
+    },
+    {
+     "id": "script:kb/_build_retired_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     },
     {
      "id": "script:kb/_csr_trail.py",
@@ -6162,7 +6176,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1466,
+     "line": 1510,
      "tabs": [
       "coci-lookup"
      ]
@@ -6673,7 +6687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1254,
+     "line": 1298,
      "tabs": [
       "coci-lookup"
      ]
@@ -6776,7 +6790,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1342,
+     "line": 1386,
      "tabs": [
       "coci-lookup"
      ]
@@ -7812,6 +7826,13 @@
      "direction": "read",
      "how": "literal",
      "line": 42
+    },
+    {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -10050,6 +10071,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_inactive_cards.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_left_map.py": {
    "consumers": [
     {
@@ -10059,6 +10093,19 @@
      "how": "yaml",
      "line": 0
     },
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_not_applicable.py": {
+   "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
@@ -10141,6 +10188,19 @@
     },
     {
      "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_retired_cards.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -10730,6 +10790,19 @@
     },
     {
      "id": "workflow:sierra-preflight.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_not_applicable_rule.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11504,7 +11577,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 354
+     "line": 360
     },
     {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
@@ -11607,7 +11680,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 228
+     "line": 234
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -11654,7 +11727,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 217
+     "line": 223
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -11698,7 +11771,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 232
+     "line": 238
     }
    ],
    "served": false,
@@ -11893,6 +11966,13 @@
      "direction": "read",
      "how": "literal",
      "line": 149
+    },
+    {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 40
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -12299,7 +12379,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 402
+     "line": 421
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -12316,11 +12396,32 @@
      "line": 269
     },
     {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
+    },
+    {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
      "id": "script:kb/_build_remint_blast_radius.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 75
+    },
+    {
+     "id": "script:kb/_build_retired_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -12377,6 +12478,13 @@
      "direction": "read",
      "how": "literal",
      "line": 443
+    },
+    {
+     "id": "script:kb/_flags.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 62
     },
     {
      "id": "script:kb/_honors_followups_s652.py",
@@ -12544,7 +12652,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1335
+     "line": 1374
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -12641,6 +12749,34 @@
     }
    ],
    "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/coci_inactive_cards.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
+    },
+    {
+     "id": "script:kb/_flags.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -12779,6 +12915,20 @@
      "direction": "read",
      "how": "literal",
      "line": 33
+    },
+    {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    },
+    {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -13051,7 +13201,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1314
+     "line": 1353
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -13304,11 +13454,25 @@
      "line": 234
     },
     {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
      "id": "script:kb/_build_remint_blast_radius.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 73
+    },
+    {
+     "id": "script:kb/_build_retired_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -13504,7 +13668,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1370
+     "line": 1409
     },
     {
      "id": "script:kb/_seed_canonical_subj4.py",
@@ -13692,6 +13856,20 @@
      "direction": "read",
      "how": "literal",
      "line": 236
+    },
+    {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    },
+    {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -13957,7 +14135,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1315
+     "line": 1354
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -14079,6 +14257,72 @@
    "main_committers": [
     "workflow:overmerge-apply.yml",
     "workflow:phase-1e-apply.yml"
+   ]
+  },
+  "file:kb/coci_not_applicable.json": {
+   "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 293,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 31
+    },
+    {
+     "id": "script:kb/_flags.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/coci_retired_cards.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_retired_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    },
+    {
+     "id": "script:kb/_flags.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
    ]
   },
   "file:kb/coci_title_corrections.json": {
@@ -14366,7 +14610,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1321
+     "line": 1360
     },
     {
      "id": "script:kb/_seed_coci_minted_mids.py",
@@ -14560,7 +14804,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 681
+     "line": 713
     }
    ],
    "served": false,
@@ -14732,7 +14976,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 447
+     "line": 479
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -15085,7 +15329,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 257
     },
     {
      "id": "script:kb/credential_aliases.py",
@@ -15156,7 +15400,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 203
     },
     {
      "id": "script:kb/_build_cpl_ai_join.py",
@@ -15457,7 +15701,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 965
+     "line": 997
     }
    ],
    "served": false,
@@ -15480,7 +15724,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 556
+     "line": 588
     }
    ],
    "producers": [
@@ -15537,7 +15781,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 557
+     "line": 589
     }
    ],
    "served": true,
@@ -15723,7 +15967,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3377,
+     "line": 3378,
      "tabs": [
       "unified-courses"
      ]
@@ -15789,7 +16033,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 535
+     "line": 567
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -16040,7 +16284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1340
+     "line": 1379
     }
    ],
    "served": false,
@@ -16053,7 +16297,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1112
+     "line": 1144
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -16382,7 +16626,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 200
+     "line": 206
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -16622,7 +16866,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 252
     }
    ],
    "served": false,
@@ -16962,7 +17206,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1055
+     "line": 1087
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -17337,7 +17581,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 660
+     "line": 692
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -18511,7 +18755,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 450
+     "line": 482
     }
    ],
    "served": false,
@@ -18739,6 +18983,13 @@
      "line": 45
     },
     {
+     "id": "script:kb/_build_retired_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
      "id": "script:kb/_prefix_alias_census.py",
      "kind": "script",
      "direction": "read",
@@ -18854,7 +19105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1331
+     "line": 1370
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -19056,7 +19307,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1325
+     "line": 1364
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -20267,7 +20518,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 301
+     "line": 307
     },
     {
      "id": "script:kb/credential_aliases.py",
@@ -20338,7 +20589,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 344
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -20373,7 +20624,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 933,
+     "line": 973,
      "tabs": [
       "coci-lookup"
      ]
@@ -20590,7 +20841,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 791
+     "line": 823
     }
    ],
    "producers": [
@@ -20615,7 +20866,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 368
+     "line": 384
     }
    ],
    "served": true,
@@ -20628,7 +20879,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 480
+     "line": 512
     }
    ],
    "served": true,
@@ -20641,7 +20892,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 261
+     "line": 267
     }
    ],
    "served": true,
@@ -20888,7 +21139,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 615
+     "line": 647
     }
    ],
    "served": true,
@@ -21187,7 +21438,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1354
+     "line": 1393
     }
    ],
    "served": true,
@@ -21449,7 +21700,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 237
+     "line": 243
     }
    ],
    "served": false,
@@ -21615,7 +21866,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 193
+     "line": 199
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -23110,7 +23361,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 347
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -23633,7 +23884,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 679
+     "line": 711
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -25594,6 +25845,19 @@
    "main_committers": []
   },
   "file:tests/cobi_live_banner.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/coci_flags_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27728,6 +27992,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/row_audit_zero_members_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/run.js": {
    "consumers": [
     {
@@ -28677,7 +28954,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 691,
+     "line": 731,
      "tabs": [
       "coci-lookup"
      ]
@@ -29016,7 +29293,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1105,
+     "line": 1106,
      "tabs": [
       "unified-courses"
      ]
@@ -29100,7 +29377,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1255,
+     "line": 1299,
      "tabs": [
       "coci-lookup"
      ]
@@ -29186,6 +29463,20 @@
      "line": 923
     },
     {
+     "id": "script:kb/_build_inactive_cards.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 39
+    },
+    {
+     "id": "script:kb/_build_not_applicable.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "read",
@@ -29256,6 +29547,13 @@
      "line": 217
     },
     {
+     "id": "script:kb/_row_audit.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1433
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -29292,7 +29590,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1228,
+     "line": 1229,
      "tabs": [
       "unified-courses"
      ]
@@ -29323,7 +29621,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 342
+     "line": 348
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -32625,7 +32923,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 401,
+     "line": 436,
      "tabs": [
       "coci-lookup"
      ]
@@ -32635,7 +32933,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 577,
+     "line": 613,
      "tabs": [
       "coci-lookup"
      ]
@@ -35426,6 +35724,9 @@
     "chatbox/sync_chatbox_exhibits.py",
     "funding/_build_funding_performance.py",
     "funding/_build_funding_ess.py",
+    "kb/_build_retired_cards.py",
+    "kb/_build_inactive_cards.py",
+    "kb/_build_not_applicable.py",
     "kb/_row_audit.py",
     "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
@@ -35483,6 +35784,9 @@
     "credential_reference_data.js",
     "kb/row_audit/latest.json",
     "kb/row_audit/*.md",
+    "kb/coci_retired_cards.json",
+    "kb/coci_inactive_cards.json",
+    "kb/coci_not_applicable.json",
     "exports/unified_courses.xlsx",
     "cpl_pathways_membership_data.js",
     "kb/discipline_canonical_subj4.json",
@@ -35933,6 +36237,9 @@
     "tests/top_gate_test.py",
     "tests/row_audit_subject_outlier_test.py",
     "tests/row_audit_top_source_score_test.py",
+    "tests/row_audit_zero_members_test.py",
+    "tests/coci_flags_test.py",
+    "kb/_not_applicable_rule.py",
     "tests/cpl_pathway_membership_test.py",
     "tests/program_course_graph_test.py",
     "tests/program_requirements_extract_schema_test.py",
@@ -36813,9 +37120,11 @@
   "kb/cdc_data_dictionary.json",
   "kb/cdc_integrations.json",
   "kb/cid_articulation_joins.json",
+  "kb/coci_inactive_cards.json",
   "kb/coci_minted_courses.json",
   "kb/coci_minted_memberships.json",
   "kb/coci_minted_singletons.json",
+  "kb/coci_retired_cards.json",
   "kb/coci_unified_courses.json",
   "kb/college_identity",
   "kb/common_courses.json",
