@@ -194,9 +194,19 @@ if os.path.isfile(RECEIPT):
     for college in sorted({r["college"] for r in full}):
         for row in C.load_rows(college)[0]:
             images[(college, str(row["control_number"]))] = row
+    # A later plan may add scores to a row's checks and leave the record: S681's part C gives the five A5 rows a
+    # unit-arithmetic score and its note (kb/_program_named_gaps.py). There the load posts S681's after-image.
+    later = {}
+    R681 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-18_s681.json")
+    if os.path.isfile(R681):
+        with open(R681, encoding="utf-8") as fh:
+            for r in json.load(fh)["records"]:
+                later[(r["college"], str(r["control_number"]))] = r
     same = sum(1 for r in full if (images.get((r["college"], str(r["control_number"]))) or {}).get("record")
                == r["after_image"]["record"] and images[(r["college"], str(r["control_number"]))]["checks"]
-               == r["after_image"]["checks"])
+               == (later.get((r["college"], str(r["control_number"]))) or r)["after_image"]["checks"]
+               and (not later.get((r["college"], str(r["control_number"])))
+                    or later[(r["college"], str(r["control_number"]))]["before_image"]["checks"] == r["after_image"]["checks"]))
     check(full and same == len(full), "the load posts the after-image for %d of %d full-row records" % (same, len(full)))
     check(all(r["before_image"]["record"] != r["after_image"]["record"] for r in full),
           "every full-row record's blocks change (else it belongs in the checks-only part)")

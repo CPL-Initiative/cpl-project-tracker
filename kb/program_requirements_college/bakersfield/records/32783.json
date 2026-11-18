@@ -93,7 +93,21 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "catalog_figures_differ",
+    "label": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
+    "words": "the printed list figures sum to 22, past the program's printed total 18"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 50,
+   "course_list_match": 100,
+   "ge_pattern": null,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

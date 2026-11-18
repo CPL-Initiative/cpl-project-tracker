@@ -119,7 +119,21 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "no_units_printed",
+    "label": "The catalog prints no units for at least one required course.",
+    "words": "the catalog prints no units for a required course (a required course in 'Select one of the following: A&P 120' has no units)"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 40,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

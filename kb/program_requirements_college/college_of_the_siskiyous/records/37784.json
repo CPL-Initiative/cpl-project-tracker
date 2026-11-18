@@ -110,15 +110,15 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "no_units_read",
-    "label": "A required course carries no units as read, so the program's units cannot be added.",
-    "words": "the record carries no units for HOSP0501, WORK0510, BA0504, BA0505, so the program's units cannot be added"
+    "gap": "no_hours_read",
+    "label": "A required course carries no hours as read, so the program's hours cannot be added.",
+    "words": "the record carries no hours for HOSP0501, WORK0510, BA0504, BA0505, so the program's hours cannot be added"
    }
   ],
   "confidence": {
    "unit_arithmetic": 20,
    "course_list_match": 100,
-   "ge_pattern": 100,
+   "ge_pattern": null,
    "catalog_year": 100,
    "source": 100
   }

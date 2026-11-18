@@ -31,6 +31,13 @@ RECORD RULES (a filed record exists, so the program is collected with the gap):
                        14583, West Los Angeles 42627). Unit arithmetic scores 20. (no_units_printed, the same where
                        the notes say the catalog prints none, scored 40, is off: its note matcher fails its
                        self-recall, matcher_recall.)
+  no_hours_read        no_units_read on a program measured in hours (record.program.measure "hours"): its courses
+                       carry hours, not units (COBIx's finding 1 on #3497). Unit arithmetic scores 20.
+
+PLANNED GAPS (S681, from #3502's committed plan, kb/program_requirements_reread_plan_s680.json):
+  catalog_figures_differ  every list matches its printed figure and the lists sum past the program's printed total
+                       (Long Beach City 41220: 30 against a printed 29). Unit arithmetic scores 50.
+  no_units_printed     the reader's note says the catalog prints no units for a required course. Scores 40.
 
 LABELS (no record exists, so the program stays in its pile with a plain reason; kb/status/program_named_gaps.json):
   noncredit_names_only a noncredit program whose catalog page names it (the capture's near miss: the title
@@ -46,6 +53,8 @@ THE COLLECTION LANE'S COLLEGES are left out: COLLECTION_LANE_S680 in kb/collecti
     python3 kb/_program_named_gaps.py --tag s680    # rewrite the records, the label file and the receipt
     python3 kb/_program_named_gaps.py --receipt R --applied M   # after the apply: rebuild the rollback from the
                                                     # rows the migrate receipt M returned (no rescoring)
+    python3 kb/_program_named_gaps.py --three-part --tag s681   # S681: one plan in three parts (A the S680 rows to
+                                                    # the corrected values, B #3502's records, C units rule A5's five)
 
 Guard: tests/program_named_gaps_test.py.
 """
@@ -78,9 +87,16 @@ GAPS = {
     "major_total_differs": "major total differs from catalog",
     "no_units_printed": "The catalog prints no units for at least one required course.",
     "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+    # COBIx's finding 1 on #3497: a program measured in hours (program.measure "hours") carries hours, not units.
+    "no_hours_read": "A required course carries no hours as read, so the program's hours cannot be added.",
+    # #3502's plan (kb/program_requirements_reread_plan_s680.json, gap_catalog): every list matches its printed
+    # figure and the lists sum past the program's printed total, so the catalog's own figures disagree.
+    "catalog_figures_differ": ("The catalog's own figures do not add up: each list matches its printed figure, and "
+                               "the lists sum past the program's printed total."),
     "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list.",
 }
-ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20}
+ARITH_SCORE = {"major_total_differs": 30, "no_units_printed": 40, "no_units_read": 20, "no_hours_read": 20,
+               "catalog_figures_differ": 50}
 MAJOR_NOT_EXACT = "the major does not match the catalog's major total exactly"
 NO_UNITS_WHY = re.compile(r"^a required course in '.*' has no units$")
 PRINTED_NO_UNITS = re.compile(r"\b(?:no|without)\s+units\b|\bunits?\s+(?:are\s+|is\s+)?not\s+(?:printed|listed|given)\b"
@@ -96,24 +112,51 @@ INCOMPLETE_READ = re.compile(
 # The S680 second reader's held answers: the two no-units records whose notes say the list is incomplete.
 HELD_INCOMPLETE = frozenset({("Butte College", "14583"), ("West Los Angeles College", "42627")})
 FOUND_SOURCE = {"sitemap_page": 100, "link_search": 100, "pdf_pages": 80}
+UNKNOWN_SOURCE = 60
+# A note sentence saying the record's requirements or course list may continue past the text read (COBIx's
+# finding 3 on #3497: Taft 31290, "a requirements table may follow"). INCOMPLETE_READ does not take these, so the
+# record keeps its gap; course_list_match is capped instead. "Students may follow AHC GE" is not one. Over every
+# filed record it touches three: Fullerton 18166, Santa Ana 34014, Taft 31290 (MAY_CONTINUE_TOUCHES).
+MAY_CONTINUE = re.compile(r"\b(?:requirements?|course\s+list|courses)\b(?:(?!\bstudents?\b)[^.;|]){0,40}"
+                          r"\bmay\s+(?:follow|continue)\b", re.I)
+MAY_CONTINUE_TOUCHES = frozenset({("Fullerton College", "18166"), ("Santa Ana College", "34014"),
+                                  ("Taft College", "31290")})
+MAY_CONTINUE_CAP = 50
 
 
 # ── confidence ─────────────────────────────────────────────────────────────
+def may_continue(filed: dict) -> str | None:
+    """The note sentence saying the requirements or course list may continue past the text read, or None."""
+    for n in (filed.get("record") or {}).get("notes") or []:
+        for s in re.split(r"(?<=[.!?])\s+", str(n)):
+            if MAY_CONTINUE.search(s):
+                return s
+    return None
+
+
 def confidence(filed: dict, gap: str | None, method: str | None = None, year_ok: bool | None = True) -> dict:
-    """The five scores, 0-100. Unit arithmetic: 100 when the check passes, else the gap's score. Course-list
-    match: the share of the closed list placed. GE pattern: 100 unless a degree names a pattern with no units
-    (50). Catalog year: 100 for the registry's current year, 60 for a prior year. Source: by how the page was
-    found (a sitemap or link page 100, a PDF slice 80)."""
+    """The five scores, 0-100, or None where a score does not apply. Unit arithmetic: 100 when the check passes,
+    else the gap's score. Course-list match: the share of the closed list placed, None with no closed list, and at
+    most 50 when the record's own note says its requirements or course list may continue (MAY_CONTINUE). GE pattern:
+    None for a program with no degree total (general education does not apply: a certificate, a noncredit
+    program), else 50 when it names a pattern with no units, else 100. Catalog year: 100 for the registry's current
+    year, 60 for a prior year. Source: by how the page was found: a sitemap or link page 100, a PDF slice 80, and 60
+    (UNKNOWN_SOURCE) when the sources file names another method or none."""
     sc = filed.get("score") or {}
     a = sc.get("arithmetic") or {}
     prog = (filed.get("record") or {}).get("program") or {}
     share = (sc.get("coverage") or {}).get("share")
-    ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None
-                and S._span(prog.get("degree_total")) is not None) else 100
+    if S._span(prog.get("degree_total")) is None:
+        ge = None
+    else:
+        ge = 50 if (prog.get("ge_pattern") and S._span(prog.get("ge_units")) is None) else 100
+    clm = None if share is None else int(round(float(share) * 100))
+    if clm is not None and may_continue(filed):
+        clm = min(clm, MAY_CONTINUE_CAP)
     return {"unit_arithmetic": 100 if a.get("pass") else ARITH_SCORE.get(gap, 0),
-            "course_list_match": None if share is None else int(round(float(share) * 100)),
+            "course_list_match": clm,
             "ge_pattern": ge, "catalog_year": 100 if year_ok in (True, None) else 60,
-            "source": FOUND_SOURCE.get(method or "", 60)}
+            "source": FOUND_SOURCE.get(method or "", UNKNOWN_SOURCE)}
 
 
 # ── the record rules ───────────────────────────────────────────────────────
@@ -168,11 +211,22 @@ def incomplete_read(filed: dict) -> str | None:
     return None
 
 
+def hours_measured(filed: dict) -> bool:
+    """The program counts hours (record.program.measure "hours"): a noncredit certificate, for one."""
+    return (((filed.get("record") or {}).get("program") or {}).get("measure") or "").lower() == "hours"
+
+
 def no_units_read(filed: dict) -> str | None:
     codes = _no_units_codes(filed)
     if not codes or (NO_UNITS_PRINTED_ON and no_units_printed(filed)) or incomplete_read(filed):
         return None
-    return "the record carries no units for %s, so the program's units cannot be added" % _listed(codes)
+    m = "hours" if hours_measured(filed) else "units"
+    return "the record carries no %s for %s, so the program's %s cannot be added" % (m, _listed(codes), m)
+
+
+def by_measure(name, filed: dict):
+    """no_units_read names no_hours_read on a program measured in hours (COBIx's finding 1 on #3497)."""
+    return "no_hours_read" if name == "no_units_read" and hours_measured(filed) else name
 
 
 def no_units_printed(filed: dict) -> str | None:
@@ -212,7 +266,7 @@ def answer(filed: dict) -> tuple[str, str] | None:
     for name, fn in RECORD_RULES:
         words = fn(filed)
         if words:
-            return name, words
+            return by_measure(name, filed), words
     return None
 
 
@@ -278,7 +332,9 @@ def held_answer(filed: dict) -> str | None:
     why = [w for w in a.get("why") or [] if w != "the record names no total"]
     if (a.get("status") == "incomplete" and why and all(w.endswith(" has no units") for w in why)
             and (filed.get("college"), str(filed.get("control_number"))) not in HELD_INCOMPLETE):
-        return "no_units_read"
+        # The held answer reads the measure itself, apart from by_measure.
+        prog = (filed.get("record") or {}).get("program") or {}
+        return "no_hours_read" if str(prog.get("measure") or "").lower() == "hours" else "no_units_read"
     return None
 
 
@@ -465,6 +521,229 @@ def rollback_sql(rows: list[dict], tag: str = "s680 named-gaps rollback") -> str
     return GS.guarded(V % _values(rows), _update("before", "after"), len(rows), tag, rollback=True)
 
 
+# ── the S681 plan: one plan, three parts ───────────────────────────────────
+# The S681 conductor's held colleges for parts B and C: tonight's collection lane (five) and the seven released
+# colleges; another worker plans those. Frozen here and in the plan's receipt ("held_colleges"), so a later change to
+# kb/collection_lane.py never moves what this plan ran under. Part A takes every row the S680 apply wrote.
+HELD_S681 = ("Lassen College", "Cosumnes River College", "Allan Hancock College", "Chabot College",
+             "Santiago Canyon College",
+             "Golden West College", "Coastline Community College", "Orange Coast College", "Los Medanos College",
+             "Diablo Valley College", "College of the Redwoods", "Antelope Valley College")
+REREAD_PLAN = os.path.join(HERE, "program_requirements_reread_plan_s680.json")
+# #3502's two lanes and the gap each names: 38 whose catalog figures do not add up, 16 whose reader's note says the
+# catalog prints no units for a required course.
+PLAN_LANES = {"gap_catalog": "catalog_figures_differ", "gap_no_units": "no_units_printed"}
+# Units rule A5's five rows stay applied and passing (cpl_memory d-a5-five-rows-stay-applied-s680): they take a
+# unit-arithmetic score of 56 and its note, and no gap.
+A5_FIVE = frozenset({("Chaffey College", "38854"), ("College of Marin", "36465"), ("Madera College", "44516"),
+                     ("Merritt College", "33540"), ("Saddleback College", "40326")})
+A5_SCORE = 56
+A5_NOTE = "Passed by units rule A5, right on 69 of 123 held answers in its self-check."
+S680_RECEIPT = os.path.join(RECEIPTS, "program_requirement_records_named_gaps_2026-11-18_s680.json")
+PARTS = {"A": "the corrective write on the rows the S680 apply wrote: its image to the corrected names and scores",
+         "B": "#3502's records collected with their named gap (kb/program_requirements_reread_plan_s680.json)",
+         "C": "units rule A5's five rows: unit arithmetic 56 with its note, passing, no gap"}
+
+
+def planned(path: str = REREAD_PLAN) -> dict:
+    """{(college, control_number): (gap, words)} from #3502's committed plan."""
+    with open(path, encoding="utf-8") as fh:
+        lanes = json.load(fh)["lanes"]["units_unequal"]
+    out = {}
+    for lane, gap in PLAN_LANES.items():
+        for c in lanes[lane]["colleges"]:
+            for it in c["items"]:
+                if gap == "catalog_figures_differ":
+                    words = ("the printed list figures sum to %s, past the program's printed total %s"
+                             % (it["sums_to"], it["catalog_prints"]))
+                else:
+                    words = re.sub(r"^the reader's note says ", "", it["cause"])
+                out[(c["college"], str(it["control_number"]))] = (gap, words)
+    return out
+
+
+def plan_s681(write: bool, skip: tuple = (), plan_path: str = REREAD_PLAN) -> dict:
+    """The three parts as one list of rows, each with its part, its gap (or none) and scores, and the load's image
+    before and after the record file is rewritten. Part A takes every row the S680 apply wrote. A part B or C row at a
+    held college (HELD_S681 and skip, never the moving kb/collection_lane.py) or a parked one is left out and listed."""
+    import _harvest_gap_census as G
+    parked = set(G.PARKED)
+    held = set(HELD_S681) | set(skip)
+    plan = planned(plan_path)
+    rows, left_out, unchanged, seen_plan, seen_a5 = [], [], [], set(), set()
+    for path in sorted(glob.glob(os.path.join(COLLEGE_DIR, "*", "records", "*.json"))):
+        with open(path, encoding="utf-8") as fh:
+            filed = json.load(fh)
+        sc = filed.get("score")
+        if not isinstance(sc, dict):
+            continue
+        key = (filed.get("college"), str(filed.get("control_number")))
+        a5 = key if key in A5_FIVE else None
+        ours = [g for g in sc.get("gaps") or [] if isinstance(g, dict) and g.get("gap") in GAPS]
+        part = ("A" if ours and len(ours) == len(sc.get("gaps") or []) else
+                "B" if key in plan else "C" if a5 else None)
+        if part is None:
+            continue
+        if part == "B":
+            seen_plan.add(key)
+        if part == "C":
+            seen_a5.add(a5)
+        if part != "A" and (key[0] in held or key[0] in parked):
+            left_out.append({"part": part, "college": key[0], "control_number": key[1],
+                             "why": "held college" if key[0] in held else "parked college"})
+            continue
+        src, year = _sources(path)
+        e = src.get(key[1]) or {}
+        year_ok = (e.get("catalog_year") or year) == year
+        new = dict(sc)
+        if part == "A":
+            bare = dict(filed, score={k: v for k, v in sc.items() if k not in ("gaps", "confidence")})
+            got = answer(bare)
+            if not got:
+                left_out.append({"part": "A", "college": key[0], "control_number": key[1],
+                                 "why": "the corrected rules name no gap"})
+                continue
+            name, words = got
+            new["gaps"] = [{"gap": name, "label": GAPS[name], "words": words}]
+            new["confidence"] = confidence(filed, name, e.get("method"), year_ok)
+        elif part == "B":
+            arith = sc.get("arithmetic") or {}
+            if arith.get("pass") or not collectable(sc) or sc.get("gaps"):
+                left_out.append({"part": "B", "college": key[0], "control_number": key[1],
+                                 "why": "passes, fails coverage or invented, or already files a gap"})
+                continue
+            name, words = plan[key]
+            new["gaps"] = [{"gap": name, "label": GAPS[name], "words": words}]
+            new["confidence"] = confidence(filed, name, e.get("method"), year_ok)
+        else:
+            if not (sc.get("arithmetic") or {}).get("pass") or sc.get("gaps"):
+                left_out.append({"part": "C", "college": key[0], "control_number": key[1],
+                                 "why": "its units check does not pass, or it files a gap"})
+                continue
+            name, words = None, None
+            conf = confidence(filed, None, e.get("method"), year_ok)
+            conf["unit_arithmetic"] = A5_SCORE
+            new["confidence"] = conf
+            new["confidence_notes"] = {"unit_arithmetic": A5_NOTE}
+        if new == sc:
+            unchanged.append({"part": part, "college": key[0], "control_number": key[1]})
+            continue
+        rows.append({"part": part, "college": key[0], "control_number": key[1], "award": filed.get("award"),
+                     "extracted_run": filed.get("extracted_run"), "gap": name, "words": words,
+                     "confidence": new["confidence"], "measure": ((filed.get("record") or {}).get("program")
+                                                                   or {}).get("measure"),
+                     "path": os.path.relpath(path, ROOT), "_filed": filed, "_score": new})
+    missing_plan = sorted(set(plan) - seen_plan)
+    missing_a5 = sorted(A5_FIVE - seen_a5)
+    if write:
+        before = _load_images({r["college"] for r in rows})
+        for r in rows:
+            img = before[(r["college"], str(r["control_number"]))]
+            r["before_image"] = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url",
+                                                     "measure", "total_min", "total_max", "record", "checks",
+                                                     "extracted_run")}
+            r["_filed"]["score"] = r["_score"]
+            with open(os.path.join(ROOT, r["path"]), "w", encoding="utf-8") as fh:
+                json.dump(r["_filed"], fh, ensure_ascii=False, indent=1)
+                fh.write("\n")
+        after = _load_images({r["college"] for r in rows})
+        for r in rows:
+            img = after[(r["college"], str(r["control_number"]))]
+            if img["record"] != r["before_image"]["record"]:
+                raise SystemExit("the plan changed the record of %s %s" % (r["college"], r["control_number"]))
+            r["after_image"] = {"checks": img["checks"]}
+    for r in rows:
+        r.pop("_filed"), r.pop("_score")
+    order = {"A": 0, "B": 1, "C": 2}
+    rows.sort(key=lambda r: (order[r["part"]], r["college"], r["control_number"]))
+    for i, r in enumerate(rows, 1):
+        r["i"] = i
+    s680_left = sorted((x["college"], x["control_number"]) for x in left_out + unchanged if x["part"] == "A")
+    return {"rows": rows, "left_out": left_out, "unchanged": unchanged, "missing_plan": missing_plan,
+            "s680_left": s680_left,
+            "missing_a5": missing_a5,
+            "by_part": dict(collections.Counter(r["part"] for r in rows)),
+            "by_gap": {p: dict(collections.Counter(r["gap"] or "none" for r in rows if r["part"] == p))
+                       for p in PARTS}}
+
+
+V3 = ("with v(i, part, college, control_number, extracted_run, before_record, before_checks, after_checks) as "
+      "(values\n  %s)")
+
+
+def _values3(rows: list[dict]) -> str:
+    return ",\n  ".join("(%d, %s, %s, %s, %d, %s, %s, %s)" % (
+        r["i"], _q(r["part"]), _q(r["college"]), _q(r["control_number"]), int(r["extracted_run"]),
+        _jb(r["before_image"]["record"]), _jb(r["before_image"]["checks"]), _jb(r["after_image"]["checks"]))
+        for r in rows)
+
+
+def pre_read3_sql(rows: list[dict]) -> str:
+    """One SELECT, one JSON value: per part, the rows as they stand live before the UPDATE."""
+    parts = sorted({r["part"] for r in rows})
+    per = ",\n".join(
+        "  %s, json_build_object('listed', count(*) filter (where v.part = %s), "
+        "'on_run', count(*) filter (where v.part = %s and r.extracted_run = v.extracted_run), "
+        "'both_before', count(*) filter (where v.part = %s and r.extracted_run = v.extracted_run "
+        "and r.record = v.before_record and r.checks = v.before_checks), "
+        "'already_after', count(*) filter (where v.part = %s and r.checks = v.after_checks), "
+        "'checked_now', count(*) filter (where v.part = %s and r.checked))" % ((_q(p),) * 6)
+        for p in parts)
+    return (V3 % _values3(rows) + "\n"
+            "select json_build_object(\n"
+            "  'listed', (select count(*) from v),\n"
+            "  'matched', count(*),\n"
+            "  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record "
+            "and r.checks = v.before_checks),\n"
+            "  'checked_now', count(*) filter (where r.checked),\n" + per + ")\n"
+            "  from v join public.program_requirement_records r\n"
+            "    on r.college = v.college and r.control_number = v.control_number;")
+
+
+def update3_sql(rows: list[dict], tag: str = "s681 named-gaps") -> str:
+    return GS.guarded(V3 % _values3(rows), _update("after", "before"), len(rows), tag)
+
+
+def rollback3_sql(rows: list[dict], tag: str = "s681 named-gaps rollback") -> str:
+    return GS.guarded(V3 % _values3(rows), _update("before", "after"), len(rows), tag, rollback=True)
+
+
+def write_s681(res: dict, receipt_path: str, day: str, tag: str) -> list[str]:
+    rows = res["rows"]
+    bp = res["by_part"]
+    gaps = "; ".join("part %s %d (%s)" % (p, bp.get(p, 0), ", ".join("%s %d" % kv for kv in sorted(g.items())))
+                     for p, g in res["by_gap"].items())
+    hdr = ("-- %s named gaps, one plan in three parts: %s.\n"
+           "-- A: %s. B: %s. C: %s.\n"
+           "-- Receipt: %s (before_image and after_image per row). Parts B and C leave out the\n"
+           "-- held colleges (HELD_S681 in kb/_program_named_gaps.py, frozen in the receipt) and the parked ones.\n"
+           % (tag.upper(), gaps, PARTS["A"], PARTS["B"], PARTS["C"], receipt_path))
+    base = os.path.join(HERE, "migrations", "%s_%s_prreq_named_gaps_" % (day, tag))
+    parts = {
+        "preread.sql": "-- Pre-read, read-only: one SELECT, one JSON value, per part.\n" + pre_read3_sql(rows),
+        "apply.sql": ("-- Guarded UPDATE: only where the row holds the filed run, the before-image's record and checks\n"
+                      "-- (for part A, the image the S680 apply wrote), and no person's check. It aborts, writing\n"
+                      "-- nothing, unless it matches the plan's %d rows less those a person checked.\n"
+                      % len(rows) + update3_sql(rows, tag + " named-gaps")),
+        "rollback.sql": ("-- Rollback, NOT applied: each row's before-image checks back where the row still holds the\n"
+                         "-- after-image, skipping and listing a row a person checked. Two steps for part A: this file\n"
+                         "-- first, back to the image the S680 apply wrote; then, to go further back,\n"
+                         "-- kb/migrations/2026-11-18_s680_prreq_named_gaps_rollback.sql back to the image before S680.\n"
+                         "-- That one names all 75 S680 rows: the %d here and the %d this plan leaves on the S680 image\n"
+                         "-- (%s); edit its expect line if another plan has moved one of those since.\n"
+                         "-- A rollback lasts only until the next load of that college: revert the record files too.\n"
+                         % (sum(1 for r in rows if r["part"] == "A"), len(res["s680_left"]),
+                            ", ".join("%s %s" % k for k in res["s680_left"]))
+                         + rollback3_sql(rows, tag + " named-gaps rollback")),
+    }
+    out = []
+    for name, text in parts.items():
+        with open(base + name, "w", encoding="utf-8") as fh:
+            fh.write(hdr + text + "\n")
+        out.append(base + name)
+    return out
+
+
 def replan_applied(body: dict, migrate: dict, applied_from: str, tag: str = "s680") -> dict:
     """The receipt after the apply, in place, without rescoring (Rule 10 a2; the shape of #3496's replan): the rows
     the migrate receipt returned are marked applied and the rollback is rebuilt from those rows alone. The apply's
@@ -514,10 +793,42 @@ def main(argv=None) -> int:
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--tag", default="s680")
     ap.add_argument("--skip-college", action="append", default=[])
+    ap.add_argument("--three-part", action="store_true",
+                    help="S681: write the one plan in three parts (A corrective, B #3502's records, C A5's five)")
     ap.add_argument("--receipt", help="replan this receipt after the apply (no rescoring); needs --applied")
     ap.add_argument("--applied", help="the apply's migrate receipt: mark its rows applied and rebuild the rollback "
                                       "from them")
     a = ap.parse_args(argv)
+    if a.three_part:
+        res = plan_s681(write=not a.dry_run, skip=tuple(a.skip_college))
+        print("plan: %s; left out %d; unchanged %d; #3502 records not found %d; A5 rows not found %d" % (
+            ", ".join("%s %d" % kv for kv in sorted(res["by_part"].items())), len(res["left_out"]),
+            len(res["unchanged"]), len(res["missing_plan"]), len(res["missing_a5"])))
+        for p, g in res["by_gap"].items():
+            print("  part %s: %s" % (p, ", ".join("%s %d" % kv for kv in sorted(g.items()))))
+        for x in res["left_out"]:
+            print("  left out: part %(part)s %(college)s %(control_number)s (%(why)s)" % x)
+        if a.dry_run or not res["rows"]:
+            return 0
+        day = time.strftime("%Y-%m-%d", time.gmtime())
+        path = os.path.join(RECEIPTS, "program_requirement_records_named_gaps_%s_%s.json" % (day, a.tag))
+        rows = res["rows"]
+        body = {"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                "parts": PARTS, "held_colleges": list(HELD_S681) + list(a.skip_college),
+                "held_applies_to": "parts B and C; part A takes every row the S680 apply wrote",
+                "planned_from": os.path.relpath(REREAD_PLAN, ROOT), "a5_note": A5_NOTE, "a5_score": A5_SCORE,
+                "collected": len(rows), "by_part": res["by_part"], "by_gap": res["by_gap"],
+                "left_out": res["left_out"], "unchanged": res["unchanged"], "missing_plan": res["missing_plan"],
+                "missing_a5": res["missing_a5"], "records": rows,
+                "pre_read": pre_read3_sql(rows), "apply": update3_sql(rows, a.tag + " named-gaps"),
+                "rollback": rollback3_sql(rows, a.tag + " named-gaps rollback")}
+        with open(path, "w", encoding="utf-8") as fh:
+            json.dump(body, fh, ensure_ascii=False, indent=1)
+            fh.write("\n")
+        for f in write_s681(res, os.path.relpath(path, ROOT), day, a.tag):
+            print("wrote %s" % os.path.relpath(f, ROOT))
+        print("receipt %s" % os.path.relpath(path, ROOT))
+        return 0
     if a.receipt or a.applied:
         if not (a.receipt and a.applied):
             ap.error("--receipt and --applied go together")

@@ -829,6 +829,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_pilot_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_reconcile.json` | scripts: `kb/_build_commons_data_status.py`, `kb/_course_id_rescore_estimate.py`, `kb/_course_id_route_census.py`, `kb/_prefix_alias_census.py`, `kb/_program_requirements_reconcile.py` | — |
 | `kb/program_requirements_reconcile_out/course_id_rescore_2026-11-15/estimate.json` | scripts: `kb/_course_id_rescore_estimate.py` | scripts: `kb/_course_id_rescore_estimate.py` |
+| `kb/program_requirements_reread_plan_s680.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `kb/program_requirements_wave` | none found | committed by: `program-requirements-wave.yml` |
 | `kb/project_lifecycle.json` | scripts: `kb/_load_projects.py` | scripts: `kb/_load_projects.py` · committed by: `daily-dashboard.yml` |
 | `kb/projects_seed_out` | none found | committed by: `projects-seed-apply.yml` |
@@ -1008,6 +1009,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
 | `prior_*.json` | scripts: `kb/_program_discontinued.py` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
+| `program_requirement_records_named_gaps_<date>_s680.json` | scripts: `kb/_program_named_gaps.py` | — |
 | `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
 | `projects_editor.js` | pages: `CPL_Dashboard.html` | — |
@@ -1597,5 +1599,5 @@ check these BY HAND before trusting an absence:
 - `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1053 file
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1055 file
 datasets · 195 external services · 617 consumers · 73 workflows · 41 tabs.

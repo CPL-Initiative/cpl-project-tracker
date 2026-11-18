@@ -1304,7 +1304,11 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "rule": dict(RULE, causes=census_words()["causes"], levers=census_words()["levers"]), "fields": FIELDS,
         "tba": tba,
         "statewide": statewide,
-        "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
+        # A record collected with a named gap, and a discontinued program, leave the census's gap without passing its
+        # checks; the dashboard counts them outside the gap with the passing (programs = passing + gap).
+        "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"],
+                         "collected_with_gaps": (census.get("collected_with_gaps") or {}).get("programs", 0),
+                         "discontinued": (census.get("discontinued") or {}).get("programs", 0)},
         "census_live": census_card,
         "unmatched": unmatched,
         "colleges": colleges,

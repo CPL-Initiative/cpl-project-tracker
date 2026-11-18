@@ -20,11 +20,18 @@ Pinned on fixtures:
     and the rollback removes only what it wrote;
   * the rollback is rebuilt from the rows the apply returned (run 44273638344): it names exactly those 75, each
     with its before-image checks, and a rollback built from fewer returned rows names fewer (Rule 10 a2);
-  * the collection lane's colleges are left out.
+  * the collection lane's colleges are left out, each plan judged against the held list frozen in its receipt;
+  * COBIx's four findings on #3497: no_hours_read on an hours program, GE None with no degree total, course-list
+    match capped at 50 where a note says the list may continue, the 60 source score named;
+  * the S681 plan, one plan in three parts: A the S680 apply's rows to the corrected values (guarded on the image
+    S680 wrote), B #3502's 54 with the plan's gap, C units rule A5's five with 56 and its note; each file names
+    exactly the plan's rows, and a part B or C row at a held college fails.
 
 Run from repo root: python3 tests/program_named_gaps_test.py
 """
+import collections
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -160,13 +167,20 @@ if os.path.isfile(RECEIPT):
     for college in sorted({r["college"] for r in rc["records"]}):
         for r in C.load_rows(college)[0]:
             imgs[(college, str(r["control_number"]))] = r
+    # S681's part A rewrote most of these rows' scores: there the load posts S681's after-image, elsewhere S680's.
+    R681 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-18_s681.json")
+    with open(R681, encoding="utf-8") as fh:
+        rc681 = json.load(fh)
+    a681 = {(r["college"], str(r["control_number"])): r for r in rc681["records"] if r["part"] == "A"}
     same = sum(1 for r in rc["records"] if imgs.get((r["college"], str(r["control_number"])), {}).get("checks")
-               == r["after_image"]["checks"] and imgs[(r["college"], str(r["control_number"]))]["record"]
-               == r["before_image"]["record"])
-    check(same == len(rc["records"]), "the load posts the after-image for %d of %d rows" % (same, len(rc["records"])))
+               == (a681.get((r["college"], str(r["control_number"]))) or r)["after_image"]["checks"]
+               and imgs[(r["college"], str(r["control_number"]))]["record"] == r["before_image"]["record"])
+    check(same == len(rc["records"]), "the load posts the latest after-image for %d of %d rows" % (same, len(rc["records"])))
     check(all(r["after_image"]["checks"].get("gaps") and r["before_image"]["checks"].get("gaps") is None
               for r in rc["records"]), "every row gains its gap and had none")
-    check(not any(CL.held(r["college"]) for r in rc["records"]), "no collection-lane college in the plan")
+    # Each plan is judged against the held list it ran under, frozen in its receipt: kb/collection_lane.py moves.
+    check(len(rc["held_colleges"]) == 12 and not any(r["college"] in set(rc["held_colleges"]) for r in rc["records"]),
+          "no college the S680 plan held (its receipt's frozen twelve) is in the plan")
     check(len(rc["records"]) == 75 and rc["by_gap"] == {"no_units_read": 75}
           and all(r["after_image"]["checks"]["gaps"] == ["no_units_read"] for r in rc["records"]),
           "the plan is 75 rows, all no_units_read, stored by name")
@@ -236,6 +250,107 @@ if os.path.isfile(RECEIPT):
     print("rollback: %d rows named, the %d the apply returned" % (len(named), len(returned)))
 
 check(CL.held("Chabot College") and not CL.held("Butte College"), "the collection lane's colleges are held")
+
+# ── COBIx's four findings on #3497, on fixtures ───────────────────────────
+hrs = no_units([])
+hrs["record"]["program"]["measure"] = "hours"
+check(NG.judge(hrs)[0] == "no_hours_read" and "no hours" in NG.judge(hrs)[1] and "units" not in NG.judge(hrs)[1],
+      "finding 1: a program measured in hours names no_hours_read, in hours")
+check(NG.judge(no_units([]))[0] == "no_units_read", "finding 1: a units program keeps no_units_read")
+check(NG.GAPS["no_hours_read"] == "A required course carries no hours as read, so the program's hours cannot be added.",
+      "finding 1: the hours sentence")
+check(NG.confidence(no_units([]), "no_units_read")["ge_pattern"] is None,
+      "finding 2: no degree total, so general education does not apply (None, never 100)")
+check(NG.confidence(f, "major_total_differs")["ge_pattern"] == 100, "finding 2: a degree with its GE units scores 100")
+cont = no_units(["The text is cut off partway through the outcomes; a requirements table may follow in the full page."])
+check(NG.confidence(cont, "no_units_read")["course_list_match"] == 50,
+      "finding 3: a note saying the list may continue caps course-list match at 50")
+check(NG.may_continue(no_units(["Students may follow AHC GE or Cal-GETC; no GE units printed."])) is None,
+      "finding 3: 'students may follow a GE pattern' is not a list that continues")
+check(NG.confidence(no_units([]), "no_units_read", None)["source"] == 60 and "60" in NG.confidence.__doc__
+      and "UNKNOWN_SOURCE" in NG.confidence.__doc__, "finding 4: an unknown or missing method scores 60, and says so")
+touched = {(d.get("college"), str(d.get("control_number"))) for d in every if NG.may_continue(d)}
+check(touched == set(NG.MAY_CONTINUE_TOUCHES),
+      "finding 3: the new matcher touches the three records it names over every filed record (%d)" % len(touched))
+
+
+# ── the S681 plan: one plan, three parts ──────────────────────────────────
+HELD681 = set(rc681["held_colleges"])
+
+
+def held_rows(rows):
+    """The plan's part B and C rows at a college its receipt holds (the frozen list) or a parked one."""
+    return [r for r in rows if r["part"] != "A" and (r["college"] in HELD681 or r["college"] in G.PARKED)]
+
+
+rows681 = rc681["records"]
+key = lambda r: (r["college"], str(r["control_number"]))  # noqa: E731
+by_part = {p: {key(r) for r in rows681 if r["part"] == p} for p in "ABC"}
+check(HELD681 == set(NG.HELD_S681) and len(HELD681) == 12 and "College of the Siskiyous" not in HELD681,
+      "the receipt freezes the twelve held colleges: tonight's lane five and the released seven")
+check(not held_rows(rows681), "no part B or C row of the plan is at a held college")
+fake = [r for r in rows681 if r["part"] == "B"][0]
+check(held_rows(rows681 + [dict(fake, college="Lassen College")])
+      and held_rows([dict(fake, college="Golden West College")]),
+      "a part B or C row at a held college fails this test (Lassen, Golden West)")
+s680_keys = {key(r) for r in rc["records"]}
+left_a = {(x["college"], x["control_number"]) for x in rc681["left_out"] + rc681["unchanged"] if x["part"] == "A"}
+check(by_part["A"] | left_a == s680_keys and not by_part["A"] & left_a and len(by_part["A"]) == 73,
+      "part A is every row the S680 apply wrote less the unchanged: %d" % len(by_part["A"]))
+check(left_a == {("Hartnell College", "11803"), ("Oxnard College", "36569")} and not rc681["left_out"],
+      "part A leaves only Hartnell 11803 and Oxnard 36569, whose live values are already the corrected ones")
+s680_after = {key(r): r["after_image"]["checks"] for r in rc["records"]}
+check(all(r["before_image"]["checks"] == s680_after[key(r)] for r in rows681 if r["part"] == "A"),
+      "part A is guarded on the image the S680 apply wrote")
+plan3502 = NG.planned()
+check(len(plan3502) == 54 and collections.Counter(g for g, _ in plan3502.values())
+      == {"catalog_figures_differ": 38, "no_units_printed": 16}, "#3502's plan names 54: 38 figures, 16 no units")
+want_b = {k for k in plan3502 if k[0] not in HELD681}
+check(by_part["B"] == want_b and len(want_b) == 54, "part B is #3502's 54, none at a held college: %d" % len(want_b))
+check(all(r["gap"] == plan3502[key(r)][0] for r in rows681 if r["part"] == "B"), "part B takes the plan's gap")
+check(by_part["C"] == set(NG.A5_FIVE), "part C is units rule A5's five rows")
+check(all(r["confidence"]["unit_arithmetic"] == 56 and r["gap"] is None
+          and r["after_image"]["checks"].get("confidence_notes") == {"unit_arithmetic": NG.A5_NOTE}
+          and "gaps" not in r["after_image"]["checks"] and r["after_image"]["checks"]["arithmetic"] == "equal"
+          for r in rows681 if r["part"] == "C"), "part C: 56 and its note, passing, no gap")
+hours_gap = [r for r in rows681 if r["gap"] in ("no_units_read", "no_hours_read")]
+check(all((r["gap"] == "no_hours_read") == (r["before_image"]["record"]["program"].get("measure") == "hours")
+          for r in hours_gap) and sum(r["gap"] == "no_hours_read" for r in hours_gap) == 52,
+      "the hours label lands on exactly the hours-measured programs (52)")
+filed_gaps = [(d, g["gap"]) for d in every for g in (d["score"].get("gaps") or []) if isinstance(g, dict)
+              and g.get("gap") in ("no_units_read", "no_hours_read")]
+check(filed_gaps and all((g == "no_hours_read") == NG.hours_measured(d) for d, g in filed_gaps),
+      "every filed record: no_hours_read exactly where the program counts hours (%d)" % len(filed_gaps))
+check(all(r["confidence"]["ge_pattern"] is None for r in rows681
+          if NG.S._span(r["before_image"]["record"]["program"].get("degree_total")) is None),
+      "no row with no degree total scores GE")
+check(next(r for r in rows681 if key(r) == ("Taft College", "31290"))["confidence"]["course_list_match"] == 50,
+      "Taft 31290's course-list match is capped at 50")
+imgs681 = {}
+for college in sorted({r["college"] for r in rows681}):
+    for r in C.load_rows(college)[0]:
+        imgs681[(college, str(r["control_number"]))] = r
+check(all(imgs681[key(r)]["checks"] == r["after_image"]["checks"] and imgs681[key(r)]["record"]
+          == r["before_image"]["record"] for r in rows681), "the load posts each plan row's after-image, record unchanged")
+MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-18_s681_prreq_named_gaps_")
+texts = {}
+for part in ("preread", "apply", "rollback"):
+    with open(MIG + part + ".sql", encoding="utf-8") as fh:
+        texts[part] = fh.read()
+check(NG.update3_sql(rows681, "s681 named-gaps") == rc681["apply"] and rc681["apply"] in texts["apply"]
+      and rc681["rollback"] in texts["rollback"] and rc681["pre_read"] in texts["preread"],
+      "the three files are the receipt's SQL, rebuilt from its rows")
+row3 = re.compile(r"^  \((\d+), '([ABC])', '((?:[^']|'')*)', '((?:[^']|'')*)', (\d+), ", re.M)
+for part in ("preread", "apply", "rollback"):
+    named3 = {(m.group(2), m.group(3).replace("''", "'"), m.group(4)) for m in row3.finditer(texts[part])}
+    check(named3 == {(r["part"], r["college"], r["control_number"]) for r in rows681} and len(named3) == 132,
+          "the %s names exactly the plan's 132 rows (A 73, B 54, C 5)" % part)
+check("e(expect) as (values (132))" in texts["apply"] and "e(expect) as (values (132))" in texts["rollback"]
+      and "kb/migrations/2026-11-18_s680_prreq_named_gaps_rollback.sql" in texts["rollback"][:3000],
+      "the apply and rollback abort off 132, and the rollback names the two-step order")
+with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as fh:
+    check("s681_prreq_named_gaps" not in fh.read(), "the S681 plan is committed, not applied")
+print("S681 plan: A %d, B %d, C %d" % tuple(len(by_part[p]) for p in "ABC"))
 
 if failures:
     for m in failures:

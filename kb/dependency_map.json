@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1053,
+  "file_datasets": 1055,
   "external_services": 195,
   "consumers": 617,
   "workflows": 73,
@@ -18230,6 +18230,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_reread_plan_s680.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 532
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/program_requirements_wave": {
    "consumers": [],
    "producers": [
@@ -20863,14 +20876,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 73
+     "line": 82
     },
     {
      "id": "script:kb/_program_named_gaps.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 73
+     "line": 82
     }
    ],
    "served": false,
@@ -22777,6 +22790,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:program_requirement_records_named_gaps_<date>_s680.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_named_gaps.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 542
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:program_requirements.js": {
@@ -30556,7 +30582,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7434
+     "line": 7438
     }
    ],
    "main_committers": []
