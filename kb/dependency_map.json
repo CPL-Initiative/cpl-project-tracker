@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1037,
+  "file_datasets": 1040,
   "external_services": 195,
-  "consumers": 612,
+  "consumers": 613,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -20574,7 +20574,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 60
     },
     {
      "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
@@ -20600,7 +20600,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 61
     }
    ],
    "producers": [
@@ -20769,6 +20769,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/program_discontinued.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_discontinued.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 47
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/status/subjects.json": {
@@ -22646,6 +22659,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:prior_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_discontinued.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 111
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:privacy.html": {
@@ -27128,6 +27154,19 @@
    "main_committers": []
   },
   "file:tests/program_courses_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/program_discontinued_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35501,6 +35540,7 @@
     "tests/program_requirements_extraction_gate_test.py",
     "tests/model_run_gates_test.py",
     "tests/harvest_gap_census_test.py",
+    "tests/program_discontinued_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/harvest_ncl_lookup_census_test.py",
     "tests/program_requirements_dated_reads_test.py",
@@ -36592,6 +36632,7 @@
   "kb/status/harvest_heading_agreement.md",
   "kb/status/harvest_ncl_lookup_census.json",
   "kb/status/mid_outcomes_compare_*",
+  "kb/status/program_discontinued.json",
   "kb/subj4_*",
   "kb/supabase_*.sql",
   "map",
