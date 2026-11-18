@@ -117,7 +117,7 @@
   "gaps": [
    {
     "gap": "A required course carries no units as read, so the program's units cannot be added.",
-    "words": "the record carries no units for BOT-101B, BOT-102B and its notes do not say the catalog prints none"
+    "words": "the record carries no units for BOT-101B, BOT-102B, so the program's units cannot be added"
    }
   ],
   "confidence": {

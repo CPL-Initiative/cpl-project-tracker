@@ -21,8 +21,9 @@ RECORD RULES (a filed record exists, so the program is collected with the gap):
                        Unit arithmetic scores 30.
   no_units_printed     the units cannot be added because a required course has no units, and the record's own
                        notes say the catalog prints it without units. Unit arithmetic scores 40.
-  no_units_read        the same, where the notes do not say so (the reader may have dropped the figure).
-                       Unit arithmetic scores 20.
+  no_units_read        a required course carries no units as read, the only reason the units cannot be added.
+                       Unit arithmetic scores 20. (no_units_printed, the same where the notes say the catalog
+                       prints none, scored 40, is off: its note matcher fails its self-recall, matcher_recall.)
 
 LABELS (no record exists, so the program stays in its pile with a plain reason; kb/status/program_named_gaps.json):
   noncredit_names_only a noncredit program whose catalog page names it (the capture's near miss: the title
@@ -55,6 +56,7 @@ sys.path.insert(0, HERE)
 import _program_requirements_reconcile as R  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
 import collection_lane as CL  # noqa: E402
+import _guarded_sql as GS  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
@@ -132,9 +134,9 @@ def _no_units_codes(filed: dict) -> list[str] | None:
 
 def no_units_read(filed: dict) -> str | None:
     codes = _no_units_codes(filed)
-    if not codes or no_units_printed(filed):
+    if not codes or (NO_UNITS_PRINTED_ON and no_units_printed(filed)):
         return None
-    return "the record carries no units for %s and its notes do not say the catalog prints none" % ", ".join(codes[:4])
+    return "the record carries no units for %s, so the program's units cannot be added" % ", ".join(codes[:4])
 
 
 def no_units_printed(filed: dict) -> str | None:
@@ -161,8 +163,12 @@ def no_units_printed(filed: dict) -> str | None:
     return "the catalog prints %s with no units, so the program's units cannot be added" % ", ".join(said[:4])
 
 
-RECORD_RULES = (("major_total_differs", major_total_differs), ("no_units_printed", no_units_printed),
-                ("no_units_read", no_units_read))
+# no_units_printed is off: its note matcher (PRINTED_NO_UNITS) claims "no units" beside 673 of 107,852 required
+# courses whose units the record holds (matcher_recall), so it fails its own self-check. Its records take
+# no_units_read, the gap that claims only what the record shows.
+NO_UNITS_PRINTED_ON = False
+RECORD_RULES = (("major_total_differs", major_total_differs),) + (
+    (("no_units_printed", no_units_printed),) if NO_UNITS_PRINTED_ON else ()) + (("no_units_read", no_units_read),)
 
 
 def judge(filed: dict) -> tuple[str, str] | None:
@@ -233,8 +239,60 @@ def self_check(files: list[dict]) -> dict:
     return out
 
 
+NONCREDIT_AWARD = re.compile(r"^\s*(?:noncredit\s+program|certificate\s+of\s+(?:competency|completion))", re.I)
+
+
+def matcher_recall(files: list[dict], base: str = COLLEGE_DIR) -> dict:
+    """Each new matcher against answers already held (the second reader's test on #3496):
+    NONCREDIT on every committed program's award and title, against the state's own award (a noncredit program,
+    a certificate of competency or completion is noncredit); PRINTED_NO_UNITS on every required course that carries
+    its units, where a hit would claim the catalog prints none."""
+    nc = {"held": 0, "right": 0, "wrong": 0, "missed": 0}
+    for sp in sorted(glob.glob(os.path.join(base, "*", "sources.json"))):
+        with open(sp, encoding="utf-8") as fh:
+            for e in json.load(fh):
+                award = e.get("award") or ""
+                if not award:
+                    continue
+                truth = bool(NONCREDIT_AWARD.search(award))
+                got = bool(NONCREDIT.search("%s %s" % (award, e.get("title") or "")))
+                nc["held"] += 1
+                if got == truth:
+                    nc["right"] += 1
+                elif got:
+                    nc["wrong"] += 1
+                else:
+                    nc["missed"] += 1
+    pu = {"held": 0, "right": 0, "wrong": 0}
+    for f in files:
+        rec = f.get("record") or {}
+        notes = " ".join(str(n) for n in (rec.get("notes") or []))
+        for b in rec.get("blocks") or []:
+            if b.get("rule") != "all":
+                continue
+            for c in b.get("courses") or []:
+                code = c.get("code") or ""
+                if not code or S._num(c.get("units")) is None:
+                    continue
+                pu["held"] += 1
+                m = re.search(r"%s[^.]{0,120}" % re.escape(code), notes)
+                pu["wrong" if m and PRINTED_NO_UNITS.search(m.group(0)) else "right"] += 1
+    return {"noncredit": nc, "printed_no_units": pu}
+
+
+def _load_images(colleges: set) -> dict:
+    """{(college, control_number): the row the college load would post}, built by the load's own code (load_rows in
+    kb/_program_requirements_college.py, which carries checks.gaps and checks.confidence from the filed score)."""
+    import _program_requirements_college as C
+    out = {}
+    for college in sorted(colleges):
+        for r in C.load_rows(college)[0]:
+            out[(college, str(r["control_number"]))] = r
+    return out
+
+
 def run(write: bool, skip: tuple = ()) -> dict:
-    moved, files = [], []
+    moved, files, hits = [], [], []
     # A college the harvest parks (the census's PARKED) takes no gap from this lane either.
     import _harvest_gap_census as G
     parked = set(G.PARKED)
@@ -246,29 +304,42 @@ def run(write: bool, skip: tuple = ()) -> dict:
             continue
         files.append(filed)
         j = judge(filed)
-        if not j:
-            continue
-        name, words = j
+        if j:
+            hits.append((path, filed, j))
+    # The load's image of each record before any rewrite (the guard), and after it (what the row takes).
+    before = _load_images({f["college"] for _, f, _ in hits}) if write else {}
+    for path, filed, (name, words) in hits:
         src, year = _sources(path)
         e = src.get(str(filed.get("control_number"))) or {}
         conf = confidence(filed, name, e.get("method"), (e.get("catalog_year") or year) == year)
-        a = filed["score"]["arithmetic"]
+        key = (filed["college"], str(filed["control_number"]))
+        if write and key not in before:
+            raise SystemExit("the load does not post %s %s" % key)
         moved.append({"college": filed["college"], "control_number": filed["control_number"],
                       "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
                       "gap": name, "words": words, "confidence": conf,
-                      "before": {"arithmetic": a.get("status"), "gaps": None},
-                      "after": {"arithmetic": a.get("status"), "gaps": [GAPS[name]]},
                       "path": os.path.relpath(path, ROOT)})
         if write:
+            img = before[key]
+            moved[-1]["before_image"] = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url",
+                                                             "measure", "total_min", "total_max", "record", "checks",
+                                                             "extracted_run")}
             filed["score"]["gaps"] = [{"gap": GAPS[name], "words": words}]
             filed["score"]["confidence"] = conf
             with open(path, "w", encoding="utf-8") as fh:
                 json.dump(filed, fh, ensure_ascii=False, indent=1)
                 fh.write("\n")
+    if write:
+        after = _load_images({m["college"] for m in moved})
+        for m in moved:
+            img = after[(m["college"], str(m["control_number"]))]
+            if img["record"] != m["before_image"]["record"]:
+                raise SystemExit("a named gap changed the record of %s %s" % (m["college"], m["control_number"]))
+            m["after_image"] = {"checks": img["checks"]}
     for i, m in enumerate(moved, 1):
         m["i"] = i
     labs = labels(skip=skip)
-    return {"moved": moved, "labels": labs, "self_check": self_check(files),
+    return {"moved": moved, "labels": labs, "self_check": self_check(files), "matcher_recall": matcher_recall(files),
             "by_gap": dict(collections.Counter(m["gap"] for m in moved)),
             "labels_by_gap": dict(collections.Counter(x["gap"] for x in labs))}
 
@@ -277,59 +348,54 @@ def _q(s) -> str:
     return "'%s'" % str(s).replace("'", "''")
 
 
+def _jb(v) -> str:
+    return "%s::jsonb" % _q(json.dumps(v, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
+
+
 def _values(rows: list[dict]) -> str:
-    return ",\n  ".join("(%d, %s, %s, %d, %s, %s::jsonb, %s::jsonb)" % (
-        r["i"], _q(r["college"]), _q(r["control_number"]), int(r["extracted_run"]), _q(r["before"]["arithmetic"]),
-        _q(json.dumps(r["after"]["gaps"], ensure_ascii=False)), _q(json.dumps(r["confidence"], sort_keys=True)))
+    return ",\n  ".join("(%d, %s, %s, %d, %s, %s, %s)" % (
+        r["i"], _q(r["college"]), _q(r["control_number"]), int(r["extracted_run"]),
+        _jb(r["before_image"]["record"]), _jb(r["before_image"]["checks"]), _jb(r["after_image"]["checks"]))
         for r in rows)
 
 
-V = "with v(i, college, control_number, extracted_run, arith_before, gaps, confidence) as (values\n  %s)"
-
-
+V = "with v(i, college, control_number, extracted_run, before_record, before_checks, after_checks) as (values\n  %s)"
 def pre_read_sql(rows: list[dict]) -> str:
     """One SELECT, one JSON value: the rows as they stand live, before the UPDATE."""
     return (V % _values(rows) + "\n"
             "select json_build_object(\n"
             "  'listed', (select count(*) from v),\n"
-            "  'on_run_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = v.arith_before and not (r.checks ? 'gaps')),\n"
-            "  'on_run_has_gaps', count(*) filter (where r.extracted_run = v.extracted_run and r.checks ? 'gaps'),\n"
-            "  'on_run_arith_moved', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' is distinct from v.arith_before),\n"
-            "  'off_run', count(*) filter (where r.extracted_run is distinct from v.extracted_run),\n"
+            "  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n"
+            "  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n"
+            "  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n"
+            "  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n"
+            "  'already_after', count(*) filter (where r.checks = v.after_checks),\n"
             "  'checked_now', count(*) filter (where r.checked))\n"
             "  from v join public.program_requirement_records r\n"
             "    on r.college = v.college and r.control_number = v.control_number;")
 
 
-def update_sql(rows: list[dict]) -> str:
-    """The guarded UPDATE: adds checks.gaps and checks.confidence, only where the row holds the filed run, its
-    arithmetic still reads the before-value and it carries no gaps yet. It writes nothing else."""
-    return (V % _values(rows) + ",\n"
-            "u as (\n"
-            "update public.program_requirement_records r\n"
-            "   set checks = r.checks || jsonb_build_object('gaps', v.gaps, 'confidence', v.confidence)\n"
+def _update(to: str, frm: str) -> str:
+    return ("update public.program_requirement_records r\n"
+            "   set checks = v.%s_checks\n"
             "  from v\n"
             " where r.college = v.college and r.control_number = v.control_number\n"
-            "   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = v.arith_before\n"
-            "   and not (r.checks ? 'gaps')\n"
-            "returning v.i, r.checked)\n"
-            "select json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),\n"
-            "       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned\n"
-            "  from u;")
+            "   and r.extracted_run = v.extracted_run and r.checks = v.%s_checks%s"
+            % (to, frm, " and r.record = v.before_record" if frm == "before" else ""))
 
 
-def rollback_sql(rows: list[dict]) -> str:
-    """Takes back exactly what the UPDATE added: where the row still holds the run and the gaps written."""
-    return (V % _values(rows) + ",\n"
-            "u as (\n"
-            "update public.program_requirement_records r\n"
-            "   set checks = (r.checks - 'gaps') - 'confidence'\n"
-            "  from v\n"
-            " where r.college = v.college and r.control_number = v.control_number\n"
-            "   and r.extracted_run = v.extracted_run and r.checks->'gaps' = v.gaps\n"
-            "returning v.i)\n"
-            "select json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json)) as returned\n"
-            "  from u;")
+def update_sql(rows: list[dict], tag: str = "s680 named-gaps") -> str:
+    """The guarded UPDATE: each row's checks become the load's image of its committed record (checks.gaps and
+    checks.confidence added, checks.arithmetic unchanged), only where the row holds the filed run, the load's image
+    of main's record and checks (the before-image), and no person's check; it aborts unless it matches the plan
+    less the rows a person checked (kb/_guarded_sql.py)."""
+    return GS.guarded(V % _values(rows), _update("after", "before"), len(rows), tag)
+
+
+def rollback_sql(rows: list[dict], tag: str = "s680 named-gaps rollback") -> str:
+    """The before-image's checks back where the row still holds the after-image, skipping and listing a row a
+    person checked; it aborts on fewer rows unless a person edits its expect line."""
+    return GS.guarded(V % _values(rows), _update("before", "after"), len(rows), tag, rollback=True)
 
 
 def main(argv=None) -> int:
@@ -345,6 +411,8 @@ def main(argv=None) -> int:
         "%s %d" % kv for kv in sorted(r["labels_by_gap"].items())) or "none"))
     for n, c in r["self_check"].items():
         print("self-check %s on %d records that pass: right %d, wrong %d" % (n, c["held_records"], c["right"], c["wrong"]))
+    for n, c in r["matcher_recall"].items():
+        print("matcher recall %s: %s" % (n, ", ".join("%s %d" % kv for kv in c.items())))
     if a.dry_run:
         return 0
     held = list(CL.COLLECTION_LANE_S680) + list(a.skip_college)
@@ -359,7 +427,9 @@ def main(argv=None) -> int:
     with open(path, "w", encoding="utf-8") as fh:
         json.dump({"rule": RULING, "gaps": GAPS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                    "held_colleges": held, "collected": len(r["moved"]), "by_gap": r["by_gap"],
-                   "self_check": r["self_check"], "records": r["moved"],
+                   "self_check": r["self_check"], "matcher_recall": r["matcher_recall"], "records": r["moved"],
+                   "decided": ("The 77 no_units_read records count as collected (the S680 conductor, on Sam's rule of "
+                               "2026-11-17: never drop a record for failing; collect it with gaps noted and scores)."),
                    "representation": ("checks.gaps (a list of gap names) and checks.confidence (five scores 0-100) "
                                       "added to program_requirement_records.checks; checks.arithmetic unchanged"),
                    "pre_read": pre_read_sql(r["moved"]), "apply": update_sql(r["moved"]),

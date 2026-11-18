@@ -101,7 +101,7 @@
   "gaps": [
    {
     "gap": "A required course carries no units as read, so the program's units cannot be added.",
-    "words": "the record carries no units for CIT 601, WST 601, WST 611, WST 629 and its notes do not say the catalog prints none"
+    "words": "the record carries no units for CIT 601, WST 601, WST 611, WST 629, so the program's units cannot be added"
    }
   ],
   "confidence": {

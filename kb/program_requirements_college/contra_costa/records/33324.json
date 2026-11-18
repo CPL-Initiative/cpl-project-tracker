@@ -109,12 +109,12 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "The catalog prints no units for at least one required course.",
-    "words": "the catalog prints AUSER-190 with no units, so the program's units cannot be added"
+    "gap": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for AUSER-190, so the program's units cannot be added"
    }
   ],
   "confidence": {
-   "unit_arithmetic": 40,
+   "unit_arithmetic": 20,
    "course_list_match": 100,
    "ge_pattern": 100,
    "catalog_year": 100,

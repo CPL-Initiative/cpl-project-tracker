@@ -7397,7 +7397,11 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
                        "invented": (score.get("invented") or {}).get("pass"),
                        "arithmetic": (score.get("arithmetic") or {}).get("status"),
                        "placed": (score.get("coverage") or {}).get("placed"),
-                       "listed": (score.get("coverage") or {}).get("listed")},
+                       "listed": (score.get("coverage") or {}).get("listed"),
+                       # A named gap and its scores (kb/_program_named_gaps.py; Sam, 2026-11-17: collect with gaps
+                       # noted and confidence scores) ride in checks, and only where the filed score carries them.
+                       **({"gaps": [g.get("gap") if isinstance(g, dict) else g for g in score["gaps"]],
+                           "confidence": score.get("confidence")} if score.get("gaps") else {})},
             "extracted_run": run})
     return rows, skipped
 

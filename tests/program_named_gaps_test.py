@@ -9,8 +9,10 @@ Pinned on fixtures:
 
   * a local degree the overlap ruling would pass but for a major that differs is collected, unit arithmetic 30;
   * a degree whose major matches exactly is never flagged;
-  * a required course with no units names no_units_printed when the notes say the catalog prints none (40),
-    else no_units_read (20); a record failing for another reason too takes neither;
+  * a required course with no units names no_units_read (20); no_units_printed is off, its note matcher failing
+    its self-recall; a record failing for another reason too takes neither;
+  * each new matcher's self-recall on held answers (noncredit awards; required courses that carry units);
+  * the live row ends as the college load posts the committed record (load_rows carries checks.gaps);
   * the census takes a row with checks.gaps out of the gap only when coverage and invented pass;
   * the guarded UPDATE adds the keys only where the run, the arithmetic and the absence of gaps still hold,
     and the rollback removes only what it wrote;
@@ -65,8 +67,8 @@ def no_units(notes, extra_why=()):
                                      "why": ["a required course in 'Required' has no units"] + list(extra_why)}}}
 
 
-check(NG.judge(no_units(["EMED 135 is printed with no units and marked current."]))[0] == "no_units_printed",
-      "notes saying the catalog prints no units name no_units_printed")
+check(not NG.NO_UNITS_PRINTED_ON and NG.judge(no_units(["EMED 135 is printed with no units."]))[0] == "no_units_read",
+      "no_units_printed is off: a note saying the catalog prints none still names no_units_read")
 check(NG.judge(no_units(["The page was cut off."]))[0] == "no_units_read", "otherwise no_units_read")
 check(NG.judge(no_units([], ["'Electives' chooses courses but names no minimum"])) is None,
       "a record failing for another reason too takes neither")
@@ -84,15 +86,53 @@ check(G.flat_checks({"coverage": {"pass": True}, "invented": {"pass": True}, "ar
                      "gaps": [{"gap": "major total differs from catalog"}]})["gaps"] == ["major total differs from catalog"],
       "a filed score's gaps reach the flat checks by name")
 
-# The SQL guards.
+# The SQL guards (kb/_guarded_sql.py, the shape #3496's review settled).
 row = {"i": 1, "college": "O'Neill College", "control_number": "1", "extracted_run": "9",
-       "before": {"arithmetic": "unequal"}, "after": {"gaps": ["major total differs from catalog"]},
-       "confidence": {"unit_arithmetic": 30}}
+       "before_image": {"record": {"a": 1}, "checks": {"arithmetic": "unequal"}},
+       "after_image": {"checks": {"arithmetic": "unequal", "gaps": ["x"]}}}
 up, rb, pre = NG.update_sql([row]), NG.rollback_sql([row]), NG.pre_read_sql([row])
-check("r.extracted_run = v.extracted_run" in up and "r.checks->>'arithmetic' = v.arith_before" in up
-      and "not (r.checks ? 'gaps')" in up, "the UPDATE is guarded on run, before-value and no gaps yet")
-check("r.checks->'gaps' = v.gaps" in rb and "- 'confidence'" in rb, "the rollback removes only what it wrote")
+check("r.extracted_run = v.extracted_run" in up and "r.checks = v.before_checks" in up and "r.record = v.before_record" in up
+      and "r.checked is not true" in up and "e(expect) as (values (1))" in up and "::int::text::json" in up,
+      "the UPDATE is guarded on run, the before-image and a person's check, and aborts off its count")
+check("r.checks = v.after_checks" in rb and "r.checked is not true" in rb and "A partial rollback" in rb,
+      "the rollback takes back only the after-image, skips a checked row, and aborts off its count")
 check("O''Neill" in up and pre.startswith("with v(") and "json_build_object" in pre, "quoting and one JSON value")
+
+# Self-recall of the new matchers on held answers, from the committed files.
+import glob  # noqa: E402
+import json  # noqa: E402
+files = []
+for p_ in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "records", "*.json")):
+    with open(p_, encoding="utf-8") as fh:
+        d = json.load(fh)
+    if isinstance(d.get("score"), dict) and not CL.held(d.get("college")):
+        files.append(d)
+mr = NG.matcher_recall(files)
+check(mr["noncredit"]["wrong"] == 0 and mr["noncredit"]["missed"] == 0,
+      "NONCREDIT against the state's award: %s" % mr["noncredit"])
+check(mr["printed_no_units"]["wrong"] > 0 and not NG.NO_UNITS_PRINTED_ON,
+      "PRINTED_NO_UNITS fails its self-recall (%s), so its rule stays off" % mr["printed_no_units"])
+print("matcher recall: noncredit %(held)d held, right %(right)d, wrong %(wrong)d, missed %(missed)d" % mr["noncredit"]
+      + "; printed_no_units %(held)d held, right %(right)d, wrong %(wrong)d (rule off)" % mr["printed_no_units"])
+
+# The live row ends as the college load posts the committed record.
+RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_named_gaps_2026-11-18_s680.json")
+if os.path.isfile(RECEIPT):
+    import _program_requirements_college as C  # noqa: E402
+    with open(RECEIPT, encoding="utf-8") as fh:
+        rc = json.load(fh)
+    imgs = {}
+    for college in sorted({r["college"] for r in rc["records"]}):
+        for r in C.load_rows(college)[0]:
+            imgs[(college, str(r["control_number"]))] = r
+    same = sum(1 for r in rc["records"] if imgs.get((r["college"], str(r["control_number"])), {}).get("checks")
+               == r["after_image"]["checks"] and imgs[(r["college"], str(r["control_number"]))]["record"]
+               == r["before_image"]["record"])
+    check(same == len(rc["records"]), "the load posts the after-image for %d of %d rows" % (same, len(rc["records"])))
+    check(all(r["after_image"]["checks"].get("gaps") and r["before_image"]["checks"].get("gaps") is None
+              for r in rc["records"]), "every row gains its gap and had none")
+    check(not any(CL.held(r["college"]) for r in rc["records"]), "no collection-lane college in the plan")
+
 check(CL.held("Chabot College") and not CL.held("Butte College"), "the collection lane's colleges are held")
 
 if failures:
