@@ -56,7 +56,7 @@
     },
     {
       "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
-      "text": "Your rule of Nov 18 writes a slash between words as and. These titles put a slash between two whole names, so the session held them: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3; Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
+      "text": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
       "if_no_reply": "They stay as printed.",
       "view": {
         "href": "#exhibits",
@@ -67,7 +67,7 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-18T03:24:04Z",
+  "written_at": "2026-11-18T03:30:05Z",
   "project": "exhibit",
   "next_step": {
     "title": "One combine guard for the whole tab, then the re-point",
