@@ -10186,6 +10186,13 @@
   "file:kb/_build_side_by_side.py": {
    "consumers": [
     {
+     "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:cred-rename-apply.yml",
      "kind": "workflow",
      "direction": "run",
@@ -16548,6 +16555,10 @@
    ],
    "producers": [
     {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
+    {
      "by": "workflow:cred-rename-apply.yml",
      "how": "commit-to-main"
     },
@@ -20383,6 +20394,10 @@
     }
    ],
    "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
     {
      "by": "workflow:cred-rename-apply.yml",
      "how": "commit-to-main"
@@ -34998,6 +35013,7 @@
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
     "kb/_build_exhibits_related.py",
+    "kb/_build_side_by_side.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -35008,6 +35024,8 @@
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
+    "kb/exhibit_side_by_side.json",
+    "kb/side_by_side.json",
     "kb/exhibits_sweep.json",
     "kb/exhibits_related.json",
     "kb/status/commons.json",
