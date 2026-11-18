@@ -18,12 +18,14 @@ the queue at 10:20Z. A firing that finds this pull request updated in the last h
 
 Two lanes, never on one college, one writer per college.
 
-- **The collection lane holds seven colleges tonight:** Lassen College (#3499), Cosumnes River College (#3500),
-  Allan Hancock College (#3284), Chabot College (#3492), Santiago Canyon College (#3494), Crafton Hills College and
-  College of the Siskiyous (the next two outcome preparation runs the helper names).
+- **The collection lane holds five colleges tonight:** Lassen College (#3499), Cosumnes River College (#3500),
+  Allan Hancock College (#3284), Chabot College (#3492) and Santiago Canyon College (#3494).
+  *Amended at 10:51Z, before any cheap-piles write:* the split first named Crafton Hills College and College of the
+  Siskiyous too, for two outcome preparation runs. No run was started at either, none will be tonight, and S680's
+  applied named-gaps plan holds a Siskiyous row the corrective write must reach, so both left the lane.
 - **The cheap-piles lane takes every other college,** including the seven that S680's collection lane held and has
   finished with: Golden West, Coastline, Orange Coast, Los Medanos, Diablo Valley, College of the Redwoods and
-  Antelope Valley. `COLLECTION_LANE_S680` in `kb/collection_lane.py` is renamed and narrowed to the seven colleges
+  Antelope Valley. `COLLECTION_LANE_S680` in `kb/collection_lane.py` is renamed and narrowed to the five colleges
   above in the cheap-piles pull request, before any cheap-piles write.
 
 ## The plan, in the handoff's order
@@ -48,3 +50,12 @@ The checkpoint replaces this file with the full handoff.
   merge of `main`, fixing COBIx's four findings and writing one plan (the corrective write on the 75, #3502's 54
   records, the five A5 rows). #3508 plans the released colleges: one record (Coastline 18223, rule A4); a second
   reader is on it.
+
+- **10:51Z: the second reader held #3508's apply.** Units rule A4 copies a row's units onto each member of a paired
+  alternative (Coastline 18223: SPAN C180A and C180B each carry 5 where the state stores 2.5). The total stays right,
+  so A4's self-check (74 of 74) could not see it. The reader counted 26 rows of the same class in S680's applied A4
+  set, already live. The worker is fixing the rule, adding a per-course self-recall against the state course file,
+  and planning one corrective write. Nothing was applied from #3508.
+- **Display confirmed:** run 44286209178 stored the receipt in `cpl-receipts`, filed its index entry and wrote
+  18,209 statements, state confirmed; a live count shows 18,209 rows on build `545de21a6edc`. Santiago Canyon's
+  load inserted 498 rows: 3,283 outline rows tonight.
