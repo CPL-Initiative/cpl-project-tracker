@@ -273,6 +273,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | Dataset | Read by | Written by |
 |---|---|---|
 | `ccr-desc` | pages: `prototype/skyview.html` | — |
+| `cpl-receipts` | scripts: `kb/_receipt_store.py` | — |
 | `factsheet-images` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 
 ## Generated JS data artifacts
@@ -566,6 +567,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
+| `kb/_build_roep_display.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_build_session_spend.py` | workflows: `pages.yml` | — |
 | `kb/_build_side_by_side.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_spend_daily.py` | workflows: `harvest-gap-census.yml` | — |
@@ -619,6 +621,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
+| `kb/_receipt_store.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
 | `kb/_second_reader.py` | workflows: `second-reader.yml` | — |
@@ -1180,6 +1183,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_blanks_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_edge_fill_test.py` | workflows: `js-tests.yml` | — |
+| `tests/display_receipt_store_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docket_rulings_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_index_build_test.py` | workflows: `js-tests.yml` | — |
@@ -1579,5 +1583,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1037 file
-datasets · 195 external services · 612 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1040 file
+datasets · 195 external services · 613 consumers · 72 workflows · 41 tabs.

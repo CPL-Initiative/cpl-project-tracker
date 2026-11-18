@@ -60,7 +60,12 @@ name: Program requirements, one college
 #   so a dispatch is that go carried out. It reads each row's build first and
 #   commits the applied record beside the receipt, which is the rollback. Until
 #   S356 a session pushed each receipt through apply_migration; a college's is
-#   megabytes.
+#   megabytes. From S680 (#3476) no display receipt is committed: the job builds
+#   it from the branch's committed records (refused when its build is not the
+#   page's), stores it in the private cpl-receipts bucket, and names it with its
+#   sha256 in kb/receipts/index.json, in that order and before the apply; a
+#   failed step stops the job before the apply. The commit holds the index entry
+#   and the applied record only.
 
 on:
   workflow_dispatch:
@@ -342,6 +347,18 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      # The builder reads the COCI course list (kb/reference/coci_course_list.xlsx) through openpyxl.
+      - run: pip install --quiet openpyxl
+      # S680 (#3476): the receipt is built here, never committed. A build other than the page's is refused
+      # (the inputs moved after the page was built): rebuild the page on the branch, push, dispatch again.
+      # An index entry already naming the page's build, or a committed receipt of it, skips the build.
+      - name: Build the receipt of the page's build from the committed records
+        run: python3 kb/_build_roep_display.py --receipt-only
+      # Upload to the private bucket, read it back, and file the entry only when the sha256 matches.
+      - name: Store the receipt in cpl-receipts and name it in kb/receipts/index.json
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_receipt_store.py store-display
       - name: Apply the display build the page carries
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -360,7 +377,9 @@ jobs:
         continue-on-error: true
         with:
           name: receipts-${{ github.run_id }}-${{ github.run_attempt }}
-          path: kb/receipts/*${{ github.run_id }}*
+          path: |
+            kb/receipts/*${{ github.run_id }}*
+            kb/receipts/index.json
           if-no-files-found: ignore
           retention-days: 90
       - name: Commit the applied record to the branch that ran it
@@ -372,6 +391,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/receipts
+          if git diff --cached --name-only | grep -E '^kb/receipts/program_requirement_records_display_[^/]*\.sql(\.gz)?$'; then
+            echo "::error::A display receipt is staged. It belongs in cpl-receipts (S680), never in a commit."; exit 1
+          fi
           if git diff --cached --quiet; then echo "no applied record"; exit 0; fi
           git commit -m "Applied record: the page's display build${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE} (run $GITHUB_RUN_ID)"
           for i in 1 2 3 4; do

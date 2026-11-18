@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1037,
+  "file_datasets": 1040,
   "external_services": 195,
-  "consumers": 612,
+  "consumers": 613,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -7463,21 +7463,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 103
+     "line": 113
     },
     {
      "id": "script:kb/_build_roep_display.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 103
+     "line": 113
     },
     {
      "id": "script:kb/_program_requirements_display_apply.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 102
+     "line": 118
     }
    ],
    "producers": [
@@ -7813,7 +7813,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 102
+     "line": 112
     },
     {
      "id": "script:kb/_exhibit_reanalysis_checks.py",
@@ -10117,6 +10117,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_roep_display.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_session_spend.py": {
    "consumers": [
     {
@@ -10874,6 +10887,19 @@
    "consumers": [
     {
      "id": "workflow:college-briefing-publish.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_receipt_store.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-college.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -11841,7 +11867,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 97
+     "line": 107
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -12706,7 +12732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 100
+     "line": 110
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -17923,7 +17949,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 85
+     "line": 95
     },
     {
      "id": "script:kb/_program_requirements_dated_reads.py",
@@ -17980,7 +18006,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 86
+     "line": 96
     },
     {
      "id": "script:kb/_program_requirements_dated_reads.py",
@@ -21543,7 +21569,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 101
+     "line": 111
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -26085,6 +26111,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/display_receipt_store_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/docket_rulings_test.py": {
    "consumers": [
     {
@@ -28724,7 +28763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 99
+     "line": 109
     },
     {
      "id": "script:kb/_esl_package_actionable.py",
@@ -28979,7 +29018,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 108
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -30644,6 +30683,18 @@
      "direction": "read",
      "how": "seeded",
      "line": 0
+    }
+   ],
+   "main_committers": []
+  },
+  "storage:cpl-receipts": {
+   "consumers": [
+    {
+     "id": "script:kb/_receipt_store.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 208
     }
    ],
    "main_committers": []
@@ -35512,6 +35563,7 @@
     "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
+    "tests/display_receipt_store_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
@@ -35943,6 +35995,8 @@
     "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_program_requirements_wave.py",
+    "kb/_build_roep_display.py",
+    "kb/_receipt_store.py",
     "kb/_program_requirements_display_apply.py"
    ],
    "adds": [
