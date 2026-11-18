@@ -44,27 +44,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "CIS70A",
-    "MATHC2210",
-    "MATHC2220"
+    "CIS70A"
    ],
    "flagged": [
-    "CIS70A",
-    "MATHC2210",
-    "MATHC2220"
+    "CIS70A"
    ],
    "pass": true
   },
@@ -79,6 +85,7 @@
     33.0,
     33.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -94,6 +101,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -345,5 +360,6 @@
    "Catalog total: 33.00 units (30 required + 3 elective)."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

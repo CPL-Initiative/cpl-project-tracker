@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s674_cpl_memory_rows.sql",
+ "name": "s674_cpl_memory_rows",
+ "version": "20261117112627",
+ "sha256": "72c822086c7c782d2877bbc7f168b0ea2fb9960b7ef874ba158a3c1b88fc4d27",
+ "run": "44073641990",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (4cada4e1-c81b-4b80-9a58-298a9699c75a, 2026-11-17 11:26:28.085207+00, 2026-11-17 11:26:28.085207+00, decision, S674, COBIx #3438 point 3: 41749 and 43896 carry degree_total 60..., null, cpl, t, null, {program-requirements,harvest,rccd}, S674 SkyRedpoll; records kb/program_requirements_college/riversi..., {}, {}, proposed, null, internal, 2026-11-17, SkyRedpoll (S674), null, null, null, d-rcc-social-justice-degree-total-stays-s674, null, Riverside City Social Justice: the degree totals stay as filed).\\n\"}"
+}

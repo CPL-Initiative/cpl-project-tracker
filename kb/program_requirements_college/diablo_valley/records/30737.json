@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 20,
    "listed": 20,
-   "share": 0.9,
-   "missing": [
-    "BIOSC102",
-    "BIOSC117"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL117",
+     "listed": "BIOSC117",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "BIOL117",
-    "BIOLC1000"
-   ],
-   "flagged": [
-    "BIOL117",
-    "BIOLC1000"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -368,5 +371,6 @@
    "Program learning outcomes are printed for the program page as a whole and recorded for this award; outcomes copied verbatim including 'effective user'."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

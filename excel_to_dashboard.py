@@ -1739,7 +1739,7 @@ _ACTIVITY_KPI_LADDER_KEYS = [
 # sync: the Annual Workplan "Current" column of a mapped sub-activity is driven
 # from the merged live KPI value (read-only, matching the headline card by
 # construction), and the same map seeds the KPI-card display order. Unmapped
-# sub-activities keep a hand-entered manual Current (workplan_goals.current).
+# sub-activities keep a hand-entered manual Current (workplan_goals.cur_<year>).
 #   3.2 "CPL Units Transcription" → transcripted_units (was eligible_units, a
 #   latent mismatch — the card is transcription, not eligibility). Safe to fix
 #   here: the ordering use is a no-op today (no project sets kpi_order), and the
@@ -7716,6 +7716,10 @@ def export_credential_reference():
     raw_to_ut = {}  # raw_title → unified_title (for audit-tag rollup)
     raw_variants_by_ut = defaultdict(list)  # item 6: lean variant list per ut
     for raw_title, ent in ut_doc.items():
+        # A leftover local title Sam removed from its canonical title (kb/_apply_left_map.py, S678): the row and its
+        # history stay in the reference, but it is no longer one of that canonical title's local titles.
+        if (ent.get("left_map") or {}).get("decision") == "removed":
+            continue
         ut = ent.get("unified_title") or "(blank)"
         raw_count_by_ut[ut] += 1
         raw_to_ut[raw_title] = ut
@@ -8302,7 +8306,7 @@ def legacy_anchor_duplicate_groups(cc, cat, sg, merge_into, rows, disc_of=None, 
         # system from the id shape, the way applyMergeLocal does client-side.
         if re.search(r"\sC\d{4}", i):
             k = "CCN-ID"
-        elif re.search(r"\sM[0-9A-Z]{4}\b", i):
+        elif re.search(r"\sM[0-9A-Z]{4}H?\b", i):   # H: an Honors M-ID (kb/honors_of.py)
             k = "M-ID"
         else:
             k = "C-ID"
@@ -8492,9 +8496,13 @@ def export_unified_courses():
         c = curation.get(cid)
         if not c:
             return None
+        # `honors_of` (S653) is the same kind of record: a bot-written
+        # equivalence on the Honors id, not a review of the row.
+        # A `ruling` (issue 3447) is the Discipline-in-doubt reason folded
+        # under its M-ID; its discipline row, when one landed, is what verifies.
         return c if any(k for k in c if k not in (
-            "merge_dismissed", "reviewed_by", "reviewed_at",
-            "validated_at", "validated_by")) else None
+            "merge_dismissed", "honors_of", "reviewed_by", "reviewed_at",
+            "validated_at", "validated_by", "ruling")) else None
 
     def reviewed_by_of(cid):
         return (curation.get(cid) or {}).get("reviewed_by")
@@ -8528,6 +8536,21 @@ def export_unified_courses():
         _t = _c.get("merge_into")
         if _t:
             merge_into[_cid] = _t
+    # An Honors M-ID and its base (`honors_of`, S653) never fold together: a
+    # merge that would join them is cut here, pairwise, before chains flatten.
+    # kb/_apply_curation.py already resolved a person's merge (Rule 10) when it
+    # wrote the overlay, so any join left here is cut. No-op without the field.
+    # A stored base outside the live set resolves through kb/alias_chain.py
+    # (honors_of.resolve_base). The later in-memory folds (Phase B, R4,
+    # routing) ask `would_join` before each write: they also consume rows, so a
+    # cut after them could not restore what they removed.
+    import honors_of as _honors_of
+    _hmap = _honors_of.honors_map(curation, live=set(cat) | set(sg)) if any(
+        isinstance(_c, dict) and _c.get("honors_of") for _c in curation.values()) else {}
+    _hpairs = _honors_of.pair_list(_hmap)
+    merge_into, _honors_held, _ = _honors_of.hold_merges(merge_into, _hmap)
+    if _honors_held:
+        print(f"  honors_of: {len(_honors_held)} merge(s) held apart from their base")
     # Chains are flattened BEFORE the member lists are built — see
     # flatten_merge_chains(). Building merge_members from the raw one-hop map is
     # what let a mid-chain identity render as its own row while also being
@@ -9310,6 +9333,11 @@ def export_unified_courses():
         consumed, synthesized, folds = set(), [], 0
         for oid, g in groups.items():
             mems = g["members"]
+            if _hpairs:
+                # honors_of: a member whose partner is the official id, sits in
+                # this group, or already ends there stays its own row. Bases
+                # fold first, so the Honors side is the one left standing.
+                mems = _honors_of.phase_b_members(mems, oid, merge_into, _hpairs, set(_hmap))
             anchor = anchor_by_id.get(oid)
             if not anchor and len(mems) < 2:
                 continue
@@ -9426,6 +9454,9 @@ def export_unified_courses():
                 continue
             oid = m.get("ccn") or m.get("cid")
             tgt = row_by_id.get(oid) if oid else None
+            if (tgt is not None and _hpairs
+                    and _honors_of.would_join(sid, oid, merge_into, _hpairs)):
+                continue  # honors_of: the stand-alone stays apart from its partner
             if tgt is not None and tgt.get("id_system") in ("C-ID", "CCN-ID"):
                 merge_into[sid] = oid
                 merge_members.setdefault(oid, []).append(sid)
@@ -9459,6 +9490,9 @@ def export_unified_courses():
                 if not cn or cn not in _routed_live or sid in merge_into:
                     continue
                 tgt = row_by_id.get(ROUTE.get(cn))
+                if (tgt is not None and _hpairs
+                        and _honors_of.would_join(sid, tgt["id"], merge_into, _hpairs)):
+                    continue  # honors_of: the stand-alone stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[sid] = tgt["id"]
                     merge_members.setdefault(tgt["id"], []).append(sid)
@@ -9475,6 +9509,9 @@ def export_unified_courses():
                     continue  # entangled rows just shrink; curation owns them
                 targets = {ROUTE[c] for c in cns if c in ROUTE}
                 tgt = row_by_id.get(next(iter(targets))) if len(targets) == 1 else None
+                if (tgt is not None and _hpairs
+                        and _honors_of.would_join(mid, tgt["id"], merge_into, _hpairs)):
+                    continue  # honors_of: the M-ID stays apart from its partner
                 if tgt is not None and tgt.get("id_system") == "C-ID":
                     merge_into[mid] = tgt["id"]
                     merge_members.setdefault(tgt["id"], []).append(mid)
@@ -9486,6 +9523,19 @@ def export_unified_courses():
             print(f"  Unified Courses: C-ID articulation routing — {len(_routed_live)} "
                   f"members display under their descriptor rows; {_r_mids} fully-routed "
                   f"M-IDs + {_r_single} stand-alones folded (rfold)")
+
+    # honors_of: after every fold, no pair may end under one id. would_join is
+    # complete by construction, so this never fires; when it does, a fold was
+    # added without the guard. The test suite and --check (or
+    # HONORS_OF_STRICT=1) fail the run; the daily run puts the count on its
+    # Summary table (HONORS_PAIRS_JOINED) and a warning on the run page.
+    _hleft = []
+    if _hpairs:
+        _hleft = _honors_of.check_apart(
+            merge_into, _hpairs,
+            strict=os.environ.get("HONORS_OF_STRICT") == "1" or "--check" in sys.argv)
+    for _line in _honors_of.report_joined(_hleft):
+        print(_line)
 
     # ---- per-course CPL impact: Eligible units + Students -------------------
     # Roll the CER's per-credential eligible-credit + student totals up to each
@@ -10236,7 +10286,12 @@ def export_unified_courses():
                # What's already folded into git (kb/coci_curation.json at build
                # time) — the client diffs the live Supabase overlay against this
                # to count edits still awaiting the daily sync.
-               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()},
+               # Only entries carrying a discipline or a merge_into: the client reads the discipline
+               # (pendingSyncCount) and the key's presence for a baked merge (replayLiveMerges); an
+               # honors_of-only or title-only entry would arrive as a null it never reads (#3315's
+               # fourth review). _curated rows always carry a non-null discipline, so the count holds.
+               "committed_curation": {cid: c.get("discipline") for cid, c in curation.items()
+                                      if c.get("discipline") or c.get("merge_into")},
                # Descriptions already folded into git (kb/coci_curation.json) — the
                # client diffs the live description overlay against this to count
                # description edits still awaiting the daily sync.
@@ -11380,10 +11435,11 @@ def _num_or_none(v):
 
 def _row_current_years(goal_row, stretch_row):
     """Manual Current per year from the cur_* columns (GOAL row canonical, STRETCH
-    row fallback). 2025-26 also reads the one-column `current` the cur_* columns
-    replaced (a row the migration has not reached, an older snapshot). Returns
-    {label: float} for the years that carry a value; {} when none does, and the
-    caller falls back to the legacy Excel kpi_metric for 2025-26."""
+    row fallback). cur_2025_26 is the one source for 2025-26: the one-column
+    `current` the cur_* columns replaced is never read (S653b, the column is
+    dropped in a second step; tests/workplan_goals_current_column_guard_test.py).
+    Returns {label: float} for the years that carry a value; {} when none does,
+    and the caller falls back to the legacy Excel kpi_metric for 2025-26."""
     out = {}
     for label in WORKPLAN_YEARS:
         col = WORKPLAN_CURRENT_COL[label]
@@ -11391,8 +11447,6 @@ def _row_current_years(goal_row, stretch_row):
             if not r:
                 continue
             v = _num_or_none(r.get(col))
-            if v is None and label == "2025-26":
-                v = _num_or_none(r.get("current"))
             if v is not None:
                 out[label] = v
                 break
@@ -11577,7 +11631,7 @@ def apply_live_activity_current(activity_kpis, annual_goals, kpis, live_data=Non
         / Apprentice) → the matching BREAKDOWN row of a headline KPI (the live
         STUDENTS-SERVED Military/Workforce/Apprentice split), also metric_source
         ='live', so each card matches the headline breakdown by construction.
-      • Unmapped sub-activities that carry an EXPLICIT workplan_goals.current →
+      • Unmapped sub-activities that carry an EXPLICIT workplan_goals.cur_<year> →
         that manual value, so editing Current on the Annual Workplan tab updates
         the card too; stamped metric_source='workplan'. Percentage ladders are
         skipped (their Current isn't a card-style count).
@@ -11801,8 +11855,7 @@ def build_workplan_goals_from_supabase(
         #    kpi_key + a manual baseline (the fallback if that KPI has no live value).
         #  • Unmapped sub-activities use the hand-entered Current of each year,
         #    stored in workplan_goals.cur_<year> (GOAL row; falls back to STRETCH;
-        #    2025-26 also reads the one-column `current` these replaced, then the
-        #    legacy Excel kpi_metric for back-compat / pre-column snapshots).
+        #    2025-26 then falls back to the legacy Excel kpi_metric).
         current_kpi_key = PID_TO_KPI_KEY.get(aid)
         # Population sub-activities map to a breakdown of a headline KPI rather
         # than a top-level KPI; apply_live_workplan_current resolves it.
@@ -12960,7 +13013,7 @@ def main():
 
     # Session 86 — wire the Activity Metrics sub-activity cards' big number to the
     # same authoritative Current (live headline KPI for the PID_TO_KPI_KEY-mapped
-    # sub-activities; explicit manual workplan_goals.current otherwise) so the
+    # sub-activities; explicit manual workplan_goals.cur_<year> otherwise) so the
     # cards stop drifting from the headline + Annual Workplan. Mutates
     # activity_kpis in place; must run after both merges + the workplan sync and
     # before render_activity_kpis_html.

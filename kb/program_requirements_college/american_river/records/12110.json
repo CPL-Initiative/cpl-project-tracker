@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 18,
    "listed": 18,
-   "share": 0.944,
-   "missing": [
-    "ENGWR301"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL301"
-   ],
-   "flagged": [
-    "ENGL301"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -347,5 +348,6 @@
    "The text also includes the A.S. in General Science and the Biotechnology Certificate of Achievement; those sections were not used."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

@@ -58,6 +58,7 @@ concurrency:
 
 jobs:
   run:
+    environment: live-counts
     runs-on: ubuntu-latest
     timeout-minutes: 90
     permissions:
@@ -78,7 +79,15 @@ jobs:
       - name: Install the catalog reader
         run: pip install "$(grep -i '^openpyxl==' requirements.txt)"
 
+      # The classifier's $40 gate (S655, card 10): before any call kb/_cer_procedures.py prices each chunk at the
+      # spend meter's worst case for its size (kb/_spend_meter.py) and asks the longest run of titles from the
+      # front of the queue that fits within $40; the rest wait for the next night, the log (and this summary)
+      # says how many, and a warning marks the run, which stays green. During the run the meter reserves each
+      # post's true worst case, three attempts (the function's SDK client retries twice), a retry of ours
+      # included, so posts in flight cannot carry the run past $40. When not even one chunk fits, or the hard stop
+      # holds a post, classifier_held is set and the last step ends the job red.
       - name: Run the procedures
+        id: procedures
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           CLASSIFY: ${{ inputs.classify || '400' }}
@@ -172,4 +181,10 @@ jobs:
             git checkout -- . && git pull --rebase origin "${{ github.ref_name }}"
           done
           echo "Push failed after 5 attempts."
+          exit 1
+      # After the commit, so the night's rule settlements and receipts land first.
+      - name: Red when the classifier's $40 gate held it
+        if: ${{ always() && steps.procedures.outputs.classifier_held == 'true' }}
+        run: |
+          echo "::error::the classifier's \$40 gate or hard stop held it this run; see the Run the procedures step"
           exit 1

@@ -5,11 +5,11 @@
  "title": "Social and Behavioral Studies",
  "award": "A.A. Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8484,
+  "input_tokens": 10097,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8484,
-    "output_tokens": 8478,
+    "input_tokens": 10097,
+    "output_tokens": 8735,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,57 +30,85 @@
     "model": null
    }
   ],
-  "output_tokens": 8478,
+  "output_tokens": 8735,
   "output_tokens_details": {
-   "thinking_tokens": 1962
+   "thinking_tokens": 2154
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.2035,
- "ms": 60453,
- "seconds": 61.5,
+ "cost_usd": 0.21509,
+ "ms": 61254,
+ "seconds": 62.1,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 118,
+   "placed": 126,
    "listed": 126,
-   "share": 0.937,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS1",
-    "HIS2",
-    "HIS2H",
-    "HIS35",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST35",
+     "listed": "HIS35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 24,
+   "count": 16,
    "codes": [
     "ADJ13",
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST1",
     "HIST14",
     "HIST15",
-    "HIST2",
     "HIST28",
     "HIST29",
-    "HIST2H",
     "HIST31",
-    "HIST35",
     "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -93,20 +121,12 @@
     "ADJ14",
     "ADJ25",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
-    "HIST1",
     "HIST14",
     "HIST15",
-    "HIST2",
     "HIST28",
     "HIST29",
-    "HIST2H",
     "HIST31",
-    "HIST35",
     "HIST44",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -127,6 +147,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -143,23 +164,60 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Social and Behavioral Studies — Associate of Arts Degree",
+   "section_heading": "Social and Behavioral Studies",
    "measure": "units",
    "total_units": {
     "min": 18,
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate a knowledge and understanding that the development, maintenance, and adaptation of the individual self and the personality is a product of the interaction between the individual and their social environment.",
     "Demonstrate a breadth of knowledge of the social and cultural environments at the local, regional and global levels.",
     "Demonstrate a working knowledge of the many facets and intricacies of social interaction from the intrapersonal, to the interpersonal to the societal levels.",
     "Demonstrate an ability to apply the theories and principles of human development, human interaction, cultural diversity, and global awareness to their everyday lives."
+   ],
+   "careers": [
+    "Law Enforcement",
+    "Law",
+    "Human Relations",
+    "Human Resources",
+    "Social Work",
+    "Professional Childcare and Public Service Agencies",
+    "Teaching across the educational and academic spectrum",
+    "Consultation in the public and private sectors",
+    "Governmental Advisors",
+    "Speechwriting",
+    "domestic and international business professions"
    ]
   },
   "blocks": [
@@ -169,8 +227,8 @@
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -1153,48 +1211,48 @@
   "missing_explained": [
    {
     "code": "ECO 7",
-    "why": "not in the text; catalog prints ECON C2002 (likely successor)"
+    "why": "not in the text; catalog lists ECON C2002/ECON C2002H instead"
    },
    {
     "code": "ECO 8",
-    "why": "not in the text; catalog prints ECON C2001 (likely successor)"
+    "why": "not in the text; catalog lists ECON C2001/ECON C2001H instead"
    },
    {
     "code": "HIS 1",
-    "why": "catalog prints HIST 1 instead; recorded as catalog addition"
+    "why": "catalog prints it as HIST 1 (recorded as catalog addition)"
    },
    {
     "code": "HIS 2",
-    "why": "catalog prints HIST 2 instead; recorded as catalog addition"
+    "why": "catalog prints it as HIST 2 (recorded as catalog addition)"
    },
    {
     "code": "HIS 2H",
-    "why": "catalog prints HIST 2H instead; recorded as catalog addition"
+    "why": "catalog prints it as HIST 2H (recorded as catalog addition)"
    },
    {
     "code": "HIS 35",
-    "why": "catalog prints HIST 35 instead; recorded as catalog addition"
+    "why": "catalog prints it as HIST 35 (recorded as catalog addition)"
    },
    {
     "code": "HIS 6",
-    "why": "not in the text; catalog prints HIST C1001 (likely successor)"
+    "why": "not in the text; catalog lists HIST C1001/HIST C1001H instead"
    },
    {
     "code": "HIS 7",
-    "why": "not in the text; catalog prints HIST C1002 (likely successor)"
+    "why": "not in the text; catalog lists HIST C1002/HIST C1002H instead"
    }
   ],
   "notes": [
-   "Requirement reads: 18 units across a minimum of three disciplines from the listed courses, grade C or better or P; the three-discipline minimum is not captured by the block rule.",
-   "The catalog prints no units beside any course; all units are null.",
-   "Honors twins (e.g., ADJ 1/ADJ 1H, SOC 1/SOC 1H, ECON C2001/C2001H) are printed as separate list items in the catalog but recorded here as one entry with the honors course as an alternative.",
-   "EAR 40 and HMS 16 are matched to closed-list entries 'EAR40' and 'HMS16' (spacing difference only), so catalog_addition is false.",
-   "Catalog uses subject HIST while the closed list uses HIS for HIS 1, 2, 2H, 35; these were marked as catalog additions though they are likely the same courses. Reviewer should confirm.",
-   "Catalog notes not all courses are offered at all three district colleges.",
-   "Program learning outcomes are printed for the area of emphasis as a whole; the A.A. degree shares them.",
-   "The degree mentions general education requirements but names no GE pattern.",
-   "The text begins mid-sentence ('n of academic disciplines...'); the start of the section introduction appears cut off."
+   "Catalog text begins mid-sentence; the page heading is not printed in the extract, so section_heading uses the program title.",
+   "Requirement: 18 units across a minimum of three disciplines from the listed courses, grade C or better or P; the three-discipline rule is not captured by the block structure.",
+   "The catalog prints no units beside the courses; units left null.",
+   "Honors versions listed next to their base course were recorded as alternatives.",
+   "EAR 40 and HMS 16 matched to closed-list codes EAR40 and HMS16 (spacing difference only).",
+   "The catalog uses subject HIST while the closed list uses HIS; HIST codes recorded as catalog additions and the corresponding HIS codes listed in missing_explained—reviewer should confirm they are the same courses.",
+   "No units total for the degree or a named GE pattern is printed; only 'general education and other graduation requirements as described in the college catalog'.",
+   "Program learning outcomes are printed for the area of emphasis as a whole; the A.A. degree shares them."
   ]
  },
- "extracted_run": "38095615434"
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-14T02:38:10+00:00",
+ "_reference_generated_at": "2026-11-18T03:59:11+00:00",
  "counts": {
-  "certs_linked": 238,
-  "titles_linked": 286,
-  "holds": 275,
-  "bundles": 49,
+  "certs_linked": 229,
+  "titles_linked": 281,
+  "holds": 270,
+  "bundles": 45,
   "aligned": 11,
   "codes_not_in_catalog": [
    "G1"
@@ -370,13 +370,6 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC1433": {
-   "code": null,
-   "name": "Commercial Electrician",
-   "catalog_name": "Commercial Electrician",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
   "ITC1437": {
    "code": null,
    "name": "Construction Foreman",
@@ -395,20 +388,6 @@
    "code": null,
    "name": "Industrial Carpenter",
    "catalog_name": "Industrial Carpenter",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
-  "ITC1460": {
-   "code": null,
-   "name": "Industrial Electrician",
-   "catalog_name": "Industrial Electrician",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
-  "ITC1502": {
-   "code": null,
-   "name": "NCCER Commercial Electrician",
-   "catalog_name": "NCCER Commercial Electrician",
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
@@ -489,52 +468,10 @@
    "issuer": "American Society of Mechanical Engineers International",
    "family": "ASME"
   },
-  "ITC2466": {
-   "code": null,
-   "name": "AutoCAD Certified Professional",
-   "catalog_name": "AutoCAD Certified Professional",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2467": {
-   "code": null,
-   "name": "Autodesk Associate (Certified User) AutoCAD",
-   "catalog_name": "Autodesk Associate (Certified User) AutoCAD",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
   "ITC2471": {
    "code": null,
    "name": "Autodesk Certified User",
    "catalog_name": "Autodesk Certified User",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2474": {
-   "code": null,
-   "name": "AutoCAD Certified User",
-   "catalog_name": "AutoCAD Certified User",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2478": {
-   "code": null,
-   "name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
-   "catalog_name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2483": {
-   "code": null,
-   "name": "Autodesk Certified Professional in Revit for Architectural Design",
-   "catalog_name": "Autodesk Certified Professional in Revit for Architectural Design",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2492": {
-   "code": null,
-   "name": "Autodesk Certified User - Revit",
-   "catalog_name": "Autodesk Certified User - Revit",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
@@ -1609,84 +1546,84 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC7629": {
+  "ITC7630": {
    "code": null,
    "name": "Airplane Instrument Rating",
    "catalog_name": "Airplane Instrument Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7632": {
+  "ITC7633": {
    "code": null,
    "name": "Certified Flight Instrument Instructor Rating",
    "catalog_name": "Certified Flight Instrument Instructor Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7633": {
+  "ITC7634": {
    "code": null,
    "name": "Commercial Pilot",
    "catalog_name": "Commercial Pilot",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7637": {
+  "ITC7638": {
    "code": null,
    "name": "Commercial Pilot, Helicopter Rating",
    "catalog_name": "Commercial Pilot, Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7640": {
+  "ITC7641": {
    "code": null,
    "name": "Helicopter Class Rating",
    "catalog_name": "Helicopter Class Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7641": {
+  "ITC7642": {
    "code": null,
    "name": "Instrument - Powered-lift Rating",
    "catalog_name": "Instrument - Powered-lift Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7643": {
+  "ITC7644": {
    "code": null,
    "name": "Instrument-Helicopter Rating",
    "catalog_name": "Instrument-Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7648": {
+  "ITC7649": {
    "code": null,
    "name": "Private Pilot",
    "catalog_name": "Private Pilot",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7651": {
+  "ITC7652": {
    "code": null,
    "name": "Private Pilot, Helicopter Rating",
    "catalog_name": "Private Pilot, Helicopter Rating",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7652": {
+  "ITC7653": {
    "code": null,
    "name": "Remote Pilot Certificate",
    "catalog_name": "Remote Pilot Certificate",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7656": {
+  "ITC7657": {
    "code": null,
    "name": "Drone Pilot Certification",
    "catalog_name": "Drone Pilot Certification",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC7659": {
+  "ITC7660": {
    "code": null,
    "name": "Private Pilot Certificate",
    "catalog_name": "Private Pilot Certificate",
@@ -2506,24 +2443,6 @@
     "ITC2471"
    ]
   },
-  "Autodesk Certified User/Professional — AutoCAD": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC2467",
-    "ITC2474",
-    "ITC2466",
-    "ITC2478"
-   ]
-  },
-  "Autodesk Certified User/Professional — Revit Architecture": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC2492",
-    "ITC2483"
-   ]
-  },
   "Automatic Transmission/Transaxle (ASE A2 standards)": {
    "relation": "aligned",
    "rule": "all",
@@ -3069,23 +2988,23 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC7632"
+    "ITC7633"
    ]
   },
   "FAA Commercial Pilot Certificate": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC7633"
+    "ITC7634"
    ]
   },
   "FAA Instrument Rating": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7629",
-    "ITC7643",
-    "ITC7641"
+    "ITC7630",
+    "ITC7644",
+    "ITC7642"
    ]
   },
   "FAA Mechanic Certificate — Airframe Rating": {
@@ -3121,25 +3040,25 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7651",
-    "ITC7637",
-    "ITC7640"
+    "ITC7652",
+    "ITC7638",
+    "ITC7641"
    ]
   },
   "FAA Private Pilot Certificate": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7648",
-    "ITC7659"
+    "ITC7649",
+    "ITC7660"
    ]
   },
   "FAA Remote Pilot Certificate (Part 107)": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7652",
-    "ITC7656"
+    "ITC7653",
+    "ITC7657"
    ]
   },
   "Heating and Air Conditioning (ASE A7 standards)": {
@@ -3610,14 +3529,6 @@
     "ITC1432"
    ]
   },
-  "NCCER Commercial Electrician Level 4/Journey Level": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC1433",
-    "ITC1502"
-   ]
-  },
   "NCCER Construction Foreman Management": {
    "relation": "holds",
    "rule": "all",
@@ -3644,13 +3555,6 @@
    "rule": "all",
    "certs": [
     "ITC1459"
-   ]
-  },
-  "NCCER Industrial Electrician Level 4/Journey Level": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC1460"
    ]
   },
   "NCCER Welding Level 1": {
@@ -3692,8 +3596,8 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC7648",
-    "ITC7659"
+    "ITC7649",
+    "ITC7660"
    ]
   },
   "Project Management Professional (PMP)": {
@@ -3789,15 +3693,6 @@
    ]
   },
   "Water and Wastewater Mathematics 1": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC4381",
-    "ITC4378",
-    "ITC4380"
-   ]
-  },
-  "Water/Wastewater Operator Certification": {
    "relation": "holds",
    "rule": "any",
    "certs": [

@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-13
+updated: 2026-11-14
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -31,7 +31,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
 ✅ **A piece's link beside a file** (2026-11-09, #3000): moved verbatim to the lessons, *Moved from the lane (tender-fermi, 2026-11-10)*.
 
-✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
+✅ **Any file, and a new piece drafted on its card** (#3077): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
 ✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
 (kind, now including spreadsheet; working title; occasion; needed by; for; what it must
@@ -116,19 +116,20 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
+- **DECIDED (S669, 2026-11-16): the Credential Catalog (`library/adopt/`), #3405 built.** #3406: the Statewide and
+  CPL-AI figures are header boxes that still filter; the introduction starts closed, review cards are short until
+  opened, field groups fold (`cpl_catalog_folds`, layout only); Clear all filters sits by the chips. #3407: 16
+  not-yet-evaluated credentials carry a CPL-AI course match chip by folded title and issuer (Certiport's Swift row held
+  out; never from CIP alone). **NEXT:** COBIx's next step, scoring the 185 unreviewed credentials with issuer skill
+  areas against harvested outcomes in `kb/_build_adopt_align.py` (a chip only for a clear standout at 0.20).
 - **Sam's test of pictures passed (2026-11-11):** request `71931018` drafted with its five MAP screens under their
   steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
   `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
   the link from the public funding dashboard that his brief asks for.
 - **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
   is Sam's press, linked from the funding dashboard's 75% JST condition.
-- **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
-  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
-- **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
-  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
-  **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
-  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. Open (#3227's review):
-  a comment in `cpl-chat-deploy.yml` names only `group_queue.mjs`.
+- **Publish now and one queue check (S642, S643, S648):** shipped and deployed; detail moved verbatim to
+  [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S669)*.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
@@ -144,37 +145,48 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
   served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
   run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
-- **A draft read off Pages drops its version stamps (2026-11-11, #3097):** Pages serves local scripts as
-  `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
-  stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
-  `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+- **A draft read off Pages drops its version stamps** (#3097; `unstamp`): lessons, *Moved from the lane (S653b)*.
 - **The box says what it did beside its field (Sam, 2026-11-11, #3097):** *"the text showing they uploaded is below
   the window of view and I thought nothing happened when I first clicked"*. The line shows inside the card's box under
   the document field; a file added twice says so and saves its words and pictures once.
-- **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
-  simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
-  folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
-  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
-  drafts on its card with Draft it now (2026-11-10, above).
+- **Create is one form** (Sam, 2026-11-06): lessons, *Moved from the lane (S653b)*.
 - DSP Credit Starting Points, Version 3 in public (S641, #3151): lessons, *Moved from the lane (S646)*.
 - **Public targets have a 25px floor (S641, #3151).** Eight targets at exactly `min-height:24px` measured 23.9 at 90% and
   133% browser zoom: the shared header's Links, Light and Dark, and five Request Adopt links. The floor sits in the vault
   sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
   and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
   header's lengths, never `24px`.
+- **The Veteran map and the Fact Sheet carry the public header (S653b).** The Veteran map (S651, #3294 `f0339e38`): built
+  in `build_selfcontained.py`, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one column; since #3333
+  it embeds the 480px logos. Guard `tests/veteran_map_public_header.test.js`. The Fact Sheet (#3333 `908d9b8d`, read live
+  19:51Z 2026-11-14): in `fact-sheet/index.html`, between the skip link and the masthead; the masthead is a `div`, so the
+  page has one banner; nothing frames the page, so it has no embed case. Guard `tests/factsheet_public_header.test.js`.
+  **DECIDED:** the Fact Sheet shows one logo, the CPL Initiative's, in the header; the masthead's California Community
+  Colleges-only logo is out (Sam, in session S653b, 2026-11-14: "Don't need the ccc logo added to the top of fact
+  sheet. Leave masthead in." then "Confusion by me on masthead vs header. I just want the ccc Cpl back in and the ccc
+  only logo out"; then "Picture 2: CPL logo only"; `sam-fact-sheet-no-header-logo-2026-11-14`; #3342).
+  **DECIDED:** the header carries the page's controls, moved whole (same ids): map.rccd.edu, the snapshot chip, Collapse
+  all, Print or save; the masthead is the title. On paper the header prints its logo, the map link and the chip (Sam,
+  S653b, 2026-11-14: "2 is right. Can you move all the buttons and map website link and update chip all into the header
+  to clean up the title?"; `sam-fact-sheet-controls-into-header-2026-11-14`; #3342).
+  **NEXT (minor):** the vault's `header.html` has no `aria-current`, so the Fact Sheet's own "CPL Fact Sheet" link opens a
+  second copy; that test checks the links against the Veteran map's copy, not the vault's header; a theme choice
+  on a public page sets `cpl_theme` for the whole github.io origin, COBI included (the existing design). Records: lessons,
+  *Moved from the lane (S651 checkpoint)* and *(S653b)*.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
   overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
-- **Ally Barker's "How to confirm and qualify for CPL funding" (S647, #3216 `42b2d9eb`):** Draft 2 (`b18c5759`) is
-  stored on `...mwdvs6l1`, her card, and `...mwdv9pl5`'s ask is closed with a note pointing at it. Receipt
-  `kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql` (cohort `library-s647@bot`, one
-  plain `with` statement, md5 `087e2c7c08e4b653fc4d76332006b376`, 49,995 characters); its `_rollback.sql` restores
-  from `cpl_library_history`. **Waits:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio, 2026-10-26) has no note or
-  sources and waits on what she wants changed; S647 did not work it. "Adding CPL Coordinator & Noncredit Lead to
-  MAP" (`...mwauxci5`) has its ready draft. ELL IET reads 33,971 of Sierra's 34,000 characters: room for more comes
-  out of repeated wording or a `cpl-chat` cap raise. The Coordinator Guide's Draft 2: lessons, *Moved from the lane (S646)*.
+- **Four open rows, each waiting on a person (S650; DECIDED `d-library-four-wait-on-people-s650`).** Ally Barker's
+  "How to confirm and qualify for CPL funding": Draft 2 (`b18c5759`, S647, #3216) is stored on `...mwdvs6l1`, her card,
+  and waits on her *Publish it*; `...mwdv9pl5` is its superseded duplicate, and retiring it is her press. Receipt
+  `kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql` (its `_rollback.sql` restores
+  from `cpl_library_history`). "Adding CPL Coordinator & Noncredit Lead to MAP" (`...mwauxci5`) has ready draft
+  `7a26c199` (2026-11-12 18:04Z), which answers her note (the MAP login link, the two role names bold, *Open Ambassador
+  Module*, pictures 25% smaller); pictures 4, 5 and 14 show names or emails and need covering before it publishes. IACA's
+  `regen` (`iaca-mvpmcjyl`, Crystal Nasio) waits on her file, a SharePoint deck a session cannot read. ELL IET reads
+  33,971 of Sierra's 34,000 characters. The paragraph as it stood: lessons, *Moved from the lane (S650 checkpoint)*.
 - **Once RCCD's admin approves it, Sam connects the Microsoft 365 connector** (held, Sam, 2026-10-26); the next session after that reads the CPLLibrary folder, confirms the 16
   copies he made on 2026-10-08, and moves the three Drive-linked records and the six repo pieces to their SharePoint links
   (a guarded update per record). The Summit film's v3 cuts (S482) go into the SharePoint Drafts folder, Sam's by hand.
@@ -192,16 +204,12 @@ Sam's ask (2026-10-28) and his comments on mockup Version 10 are in [`docs/libra
 
 The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
-✅ **① One card per project is built (S509, #2538).** `cpl_library.project` names a piece's project; pieces that share it draw as one card, a row per piece with its title as the link, and Edit, Regenerate and Details on each row (each acts on one record; the one departure from the mockup). Edit sets the project; a college's pair files under one. Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql` (13 projects of 2, read back). Test: `library` block (15).
+✅ **① One card per project and ② the one panel are built (S509, #2538).** Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S650 checkpoint)*.
 
-✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form. A dropped file filed as is asks for its SharePoint link: a record holds a link, not bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
-
-✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
-
-✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
+✅ **③ Remediation in the browser (S509) and ④ ⑤ the contrast checks (S510, S511) are built.** Their summaries moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S653b, T9)*.
 
 
-✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S577)*.
+✅ **⑥ to ⑰ are built** (S512 to S576): `docs/library_lessons.md`, *Moved from the lane (S667 checkpoint)*.
 
 ✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks
@@ -209,3 +217,5 @@ what to do with it; long instructions go whole into `sources`, and every rebuild
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
 
 **The Chancellor's address** is on Pages with its film: lessons S531.
+
+**FILED (S661): the College Collections Plan** (Sam, in session: *"Make a Visual for the Moonshot plan and add it to the Library and call it 'College Collections Plan'"*): the #3111 v2 agreed final on one page at `library/college-collections-plan/` (source in the vault, `04-projects/cpl-initiative/college-collections-plan/`), record `college-collections-plan` (draft, seen by the team, not publicly listed; receipt `kb/receipts/library_college_collections_plan_s661_2026-11-15.sql`). The full College Collections ETA opens it in a new tab.

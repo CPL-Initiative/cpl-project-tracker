@@ -46,38 +46,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 13,
    "listed": 14,
-   "share": 0.571,
+   "share": 0.929,
    "missing": [
-    "CMST2",
-    "CMST20",
-    "CMST3",
-    "CMST4",
-    "CMST6",
-    "ENGL1B"
+    "CMST6"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM2",
+     "listed": "CMST2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM20",
+     "listed": "CMST20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM3",
+     "listed": "CMST3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1003",
+     "listed": "ENGL1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 1,
    "codes": [
-    "COMM12",
-    "COMM2",
-    "COMM20",
-    "COMM3",
-    "COMM4",
-    "ENGLC1003"
+    "COMM12"
    ],
    "flagged": [
-    "COMM12",
-    "COMM2",
-    "COMM20",
-    "COMM3",
-    "COMM4",
-    "ENGLC1003"
+    "COMM12"
    ],
    "pass": true
   },
@@ -294,5 +306,6 @@
    "Catalog prints COMM 2, 3, 4, 20 where the closed list has CMST 2, 3, 4, 20 with matching titles; recorded as printed with catalog_addition true. Reviewer should confirm the subject renaming."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

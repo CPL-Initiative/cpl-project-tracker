@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 10,
-   "share": 0.8,
-   "missing": [
-    "ECON220",
-    "ECON221"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -282,5 +285,6 @@
    "Careers taken from 'employment in business administration, accounting, management, marketing, finance, international business, or other business related area'."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": "43353452924"
 }

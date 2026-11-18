@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 25,
+   "placed": 26,
    "listed": 26,
-   "share": 0.962,
-   "missing": [
-    "ECON302"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "CISA315",
-    "CISA340",
-    "ECONC2002"
+    "CISA340"
    ],
    "flagged": [
     "CISA315",
-    "CISA340",
-    "ECONC2002"
+    "CISA340"
    ],
    "pass": true
   },
@@ -401,5 +404,6 @@
    "Footnotes name Folsom Lake College substitute courses (BUSTEC 307, 360, 362, 366); not recorded as alternatives."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

@@ -51,6 +51,7 @@
     "ENGLC1000H"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -76,6 +77,7 @@
     19.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,6 +93,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -183,5 +193,6 @@
    "ENGL C1000H is on the closed list but the catalog section does not name it as an alternative to ENGL-C1000; reviewer may confirm whether the honors twin is accepted."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43605883626,
+ "read_run": "38082999076"
 }

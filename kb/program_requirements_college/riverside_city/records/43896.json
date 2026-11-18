@@ -5,11 +5,11 @@
  "title": "Social Justice: LGBTQ Studies",
  "award": "A.A- T Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6253",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6235,
+  "input_tokens": 7848,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6235,
-    "output_tokens": 2718,
+    "input_tokens": 7848,
+    "output_tokens": 3145,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,51 @@
     "model": null
    }
   ],
-  "output_tokens": 2718,
+  "output_tokens": 3145,
   "output_tokens_details": {
-   "thinking_tokens": 790
+   "thinking_tokens": 1172
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.0793,
- "ms": 21579,
- "seconds": 22.4,
+ "cost_usd": 0.09429,
+ "ms": 25841,
+ "seconds": 26.0,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 18,
    "listed": 18,
-   "share": 0.889,
-   "missing": [
-    "HIS34",
-    "HIS38"
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST38",
+     "listed": "HIS38",
+     "matched_by": "course_id"
+    }
    ],
-   "unexplained": [
-    "HIS34",
-    "HIS38"
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "HIST34",
-    "HIST38",
     "SOC48"
    ],
    "flagged": [
     "SOC48"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -80,9 +87,33 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 15.0-16.0; the catalog states 18.0-19.0"
-   ]
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     49.0,
+     50.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     10.0,
+     11.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,6 +129,14 @@
    "heading_without_outcomes": false,
    "pass": true
   },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
   "pass": false
  },
  "record": {
@@ -109,7 +148,20 @@
     "max": 19
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Utilize queer and transgender theory along with feminist theory to explore and analyze conceptions of power and oppression.",
     "Employ the principles of Queer and Transgender Studies to identify, explore, and analyze examples of prejudice, discrimination, or oppression in historical or cultural frameworks.",
@@ -118,7 +170,8 @@
     "Engage critical thinking and communication skills with a focus on cultural and global awareness.",
     "Use statistics or research methods in the behavioral and social sciences to better analyze issues related to Queer and Transgender Studies.",
     "Analyze issues across multiple disciplines through the lens of gender and sexuality."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -288,14 +341,36 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The 'Required Courses' heading prints Units: 9.00, but the courses listed under it (ETS-1 at 3 units plus one 3-unit course from the 'Select one of the following' list) total 6 units; the stated 9 is recorded on the Required Courses block as printed. With 9-10 elective units the printed program total of 18-19 also implies 9 required units. Reviewer should check whether a required course is missing from the text.",
-   "Elective Courses: 'Choose three courses from at least two areas.' Area 1 – History or Government: HIST-34, HIST-38. Area 2 - Arts and Humanities: ETS-7, ETS-8, ETS-13/PHI-14. Area 3 - Social Science: BIO-16, COMM-13, ETS-40, PSYC-11, SOC-21. Area 4 - Quantitative Reasoning and Research Methods: STAT-C1000, STAT-C1000H, PSYC-48, SOC-48. The at-least-two-areas constraint is not captured by the block rule.",
-   "ETS-13 and PHI-14 are printed under 'Only one may be used', so they are recorded as alternatives of a single choice. STAT-C1000, STAT-C1000H, PSYC-48 and SOC-48 are also printed under 'Only one may be used' and are recorded as alternatives of a single choice.",
-   "The catalog prints HIST-34 and HIST-38, while the closed list has HIS 34 and HIS 38 with the same numbers and titles. They are treated as the same courses (catalog_addition false). Reviewer should confirm the subject prefix.",
-   "SOC-48 (Statistics for the Behavioral Sciences) is not in the closed list and is marked catalog_addition true.",
-   "Closed-list PSYC48 is matched to the printed PSYC-48.",
-   "The catalog's ETS-8 title is 'Introduction to Black Feminism and Womanism', which differs slightly from the closed-list title 'Introduction to Black Feminism'."
+   "The 'Required Courses' heading prints 'Units: 9.00', but ETS-1 (3) plus one course from the 'Select one of the following' list (3) totals only 6 units; the overall total of 18-19 also implies 9 required units. A reviewer should check whether a required course is missing from the page or the header is misprinted.",
+   "Elective Courses: choose three courses from at least two areas. Area 1 – History or Government: HIST-34, HIST-38. Area 2 - Arts and Humanities: ETS-7, ETS-8, ETS-13/PHI-14. Area 3 - Social Science: BIO-16, COMM-13, ETS-40, PSYC-11, SOC-21. Area 4 - Quantitative Reasoning and Research Methods: STAT-C1000, STAT-C1000H, PSYC-48, SOC-48.",
+   "The 'at least two areas' constraint is recorded only in this note.",
+   "ETS-13 and PHI-14 ('Only one may be used') are recorded as alternatives.",
+   "STAT-C1000, STAT-C1000H, PSYC-48 and SOC-48 ('Only one may be used') are recorded as alternatives.",
+   "The catalog prints HIST-34 and HIST-38, while the closed list has HIS 34 and HIS 38 with the same titles. They are treated as the same courses (catalog_addition false). A reviewer should verify this.",
+   "ETS-8 is titled 'Introduction to Black Feminism and Womanism' in the catalog and 'Introduction to Black Feminism' in the closed list.",
+   "degree_total 60 is taken from the sentence that this degree 'will be awarded upon completion of 60 California State University (CSU) transferable units including the above major requirements and the ... (Cal-GETC) requirements'. This may be boilerplate.",
+   "No units are printed for Cal-GETC.",
+   "No careers are named. The fields listed (Women and Gender Studies, etc.) are transfer majors, not careers."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 44046016854,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Social Justice: LGBTQ Studies - Associate of Arts for Transfer (ADT) - AA1080 (CalGETC) (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)",
+   "statewide": "cal_getc_34",
+   "standing": "under",
+   "basis": "sheet-81"
+  }
+ ],
+ "read_run": "44030368835"
 }

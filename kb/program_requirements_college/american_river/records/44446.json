@@ -46,39 +46,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 12,
    "listed": 12,
-   "share": 0.5,
-   "missing": [
-    "ET260",
-    "ET261",
-    "ET262",
-    "ET263",
-    "ET425",
-    "ET426"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BMET260",
+     "listed": "ET260",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BMET261",
+     "listed": "ET261",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BMET262",
+     "listed": "ET262",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BMET263",
+     "listed": "ET263",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BMET425",
+     "listed": "ET425",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BMET426",
+     "listed": "ET426",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "BMET260",
-    "BMET261",
-    "BMET262",
-    "BMET263",
-    "BMET425",
-    "BMET426"
-   ],
-   "flagged": [
-    "BMET260",
-    "BMET261",
-    "BMET262",
-    "BMET263",
-    "BMET425",
-    "BMET426"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -357,5 +368,6 @@
    "Certificate section (Total Units 21, includes ET 312 and ET 298) was not used."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

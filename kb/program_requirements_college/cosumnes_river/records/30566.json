@@ -64,34 +64,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
     19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    19.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     19.0,
-     19.0
+     53.0,
+     53.0
     ],
     "stated": [
-     19.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     7.0,
+     7.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -280,5 +286,23 @@
    "Careers 'Clinical psychologists' and 'Research psychologists' are drawn from the Career Information paragraph describing psychologists with graduate degrees."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43567824391,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Education Transfer Curriculum (Cal-GETC) Requirement. (statewide Cal-GETC, 34 units; Sam, Sheet 187 card 5, 2026-11-13)",
+   "statewide": "cal_getc_34",
+   "standing": "under",
+   "basis": "sheet-81"
+  }
+ ],
+ "read_run": "39047009824"
 }

@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-11-12
+updated: 2026-11-14
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -54,6 +54,8 @@ cannot see this class** — one simple question, and it passed straight through 
 hours of blanks on broad questions.
 
 
+**Test traffic (S651, plan v2 Q4 on #3111).** Sierra's test callers carry fixed session ids (`smoke-ci`, `health-probe`, `preflight`, `sierra-ask-workflow`, `ab-cap-probe`): 30 days of `chat_interactions` read 09:21Z 2026-11-14 held 2,391 turns, 2,146 from those five (`smoke-ci` 2,024), 245 across 141 other sessions. **DECIDED** `d-sierra-test-session-ids-excluded-s651`: a report excludes the five ids. **NEXT:** an `is_test` column set by the edge function (a deploy, so not built unattended).
+
 **Cost (measured 2026-09-11):** Sonnet 5 runs 1.72× Haiku per input token and the spend is trivial, so choose on answer quality; price is a tiebreak. The table: lessons, *Moved from the lane (beside S539)*.
 
 ⭐ **The cache line names the model that answered** (Sam's ruling, sheet item 3) — from
@@ -76,10 +78,7 @@ College** rides a destination key, `cplSierraTestDest.v1`, which `cpl_chat.js`
 reads; without it a My College hand-off typed into the hidden CPL Assistant input.
 Guard: `tests/sierra_training_round1.test.js`.
 
-**RULED (Sam, 2026-09-29, sheet 3 card 12, as proposed):** keep the word
-*Sierra*, and where a site hides CPL Assistant show only *My College*.
-`sierraHost()` already sent the Sierra button there, so the two buttons opened
-one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sierra Assistant into Sierra AI and sunset the separate assistant ... only gain"*, `sam-sierra-one-assistant-2026-10-16`).** The CPL Assistant tab (`#chatbot`) is retired: `CPL_CHAT.open({question, send})` opens Sierra AI full screen over any COBI tab, unscoped (surface `cobi-assistant`, kept), with the reader's sign-in. *Try it in: Sierra* and *Save & ask Sierra* ask her over the Training tab and send; *My College* keeps its hand-off; both words always show. Each box keeps its own scope and starters. Its ratings carry page `cobi-sierra`. Guard: `tests/sierra_one_cobi.test.js`. **Open:** the live `cobi_nav` row `chatbot`; the Fact Sheet drawer still names itself CPL Assistant; the floating bubble is one `open()` call away.
+**RULED (Sam, 2026-09-29, sheet 3 card 12):** keep the word *Sierra*. **One Sierra in COBI (S398, #2163; `sam-sierra-one-assistant-2026-10-16`):** `CPL_CHAT.open({question, send})` opens Sierra AI full screen over any COBI tab (surface `cobi-assistant`); guard `tests/sierra_one_cobi.test.js`. **Open:** the live `cobi_nav` row `chatbot`; the Fact Sheet drawer still names itself CPL Assistant. The paragraph as it stood: `docs/cpl_assistant_lessons.md`, *Moved from the lane (S651 checkpoint)*.
 
 **The funding FAQ (S518, #2559):** Sierra reads the page's FAQ. Mechanics: [`docs/cpl_assistant_lessons.md`](../../cpl_assistant_lessons.md), *Moved from the lane (S518)*.
 
@@ -102,7 +101,7 @@ Sam asked Sierra for the military and non-military split of Chaffey's applied un
 
 **Item 3 went to the funding lane and is ruled there:** P1 keeps every applied unit, Needs Action credit included (Sam, sheet 11 card 1, 2026-09-30; [implementation-funding](implementation-funding.md); `cpl_memory` `summary-applied-includes-needs-action-articulated-2026-09-30`).
 
-⚠️ **Never infer a unit split from counts of articulated exhibits.** Her Chaffey answer read "110 Standardized, 77 Credit by Exam" off the articulated-exhibit list; by units, Standardized Assessment carried 95% of Chaffey's applied credit and Credit by Exam none. ⚠️ **MAP's two views disagree by 5% on applied in plan** (171,078 articulation view vs 162,603 student view, 26 colleges); the breakdowns use the student view so they add up to the totals beside them. Most of the gap is a double count in the catalog-year view (below); the note for Pedro is Sam's to edit and send ([map-custom-reports](map-custom-reports.md)). **Item 7 is closed:** Sam added the layout rule in Training (`sierra_guidance` `f3a529ae`, 2026-09-30): one table per source answer, non-military rows first, each group ending on its "<10 each" line. It carries layout only; the substance ships in `CREDIT_STATUS_RULE`. Sessions cannot write `sierra_guidance` or `sierra_feedback` (the SQL guard denies INSERT and UPDATE), so a Training change goes to Sam as text to paste. Lessons: [`student_detail_load_lessons`](../../student_detail_load_lessons.md) (2026-09-30). `cpl_memory`: `sierra-credit-sources-live-2026-09-30`, `sam-sierra-real-totals-lt10-no-governance-gate-2026-09-30`, `credit-summary-per-figure-suppression-live-2026-09-30`, `map-military-columns-partition-applied-credit-2026-09-30`.
+⚠️ **Never infer a unit split from counts of articulated exhibits** (Chaffey: by units, Standardized Assessment carried 95% of applied credit, Credit by Exam none). ⚠️ **MAP's two views disagree by 5% on applied in plan**; the breakdowns use the student view so they add up. Sessions cannot write `sierra_guidance` or `sierra_feedback`: a Training change goes to Sam as text to paste. The paragraph as it stood: `docs/cpl_assistant_lessons.md`, *Moved from the lane (S651 checkpoint)*.
 
 **S308-S315 (the two-view double count, CCCSF's split, the place leading only where it teaches, 7c catalog timeouts):** moved verbatim to `docs/cpl_assistant_lessons.md`, *Moved from the lane (S372)*.
 

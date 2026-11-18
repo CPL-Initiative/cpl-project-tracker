@@ -44,30 +44,37 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 18,
-   "share": 0.833,
+   "share": 0.944,
    "missing": [
-    "BIO61",
-    "ECO8",
-    "MAT1A"
+    "BIO61"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 3,
    "codes": [
     "CHE1BH",
-    "ECONC2001",
-    "MATHC2210",
     "PSYC48",
     "SOC48"
    ],
    "flagged": [
     "CHE1BH",
-    "ECONC2001",
-    "MATHC2210",
     "PSYC48",
     "SOC48"
    ],
@@ -84,6 +91,7 @@
     41.0,
     41.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,6 +107,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -309,5 +328,6 @@
    "Degree requires 60 CSU-transferable units including Cal-GETC; major total printed as 41.00."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

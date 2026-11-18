@@ -46,30 +46,49 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 20,
    "listed": 20,
-   "share": 0.7,
-   "missing": [
-    "BIOSC102",
-    "BIOSC117",
-    "BIOSC119",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL117",
+     "listed": "BIOSC117",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 11,
+   "count": 5,
    "codes": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOLC1000",
     "PH100",
     "PH126",
     "PH128",
@@ -77,12 +96,6 @@
     "PH250"
    ],
    "flagged": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOLC1000",
     "PH100",
     "PH126",
     "PH128",
@@ -425,5 +438,6 @@
    "Catalog text begins mid-sentence ('jor or campus.'); the program description may be cut off, so careers could not be checked there."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

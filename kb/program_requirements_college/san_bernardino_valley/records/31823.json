@@ -45,24 +45,20 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 25,
    "listed": 25,
-   "share": 0.96,
-   "missing": [
-    "ANTHRO125"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ANTH125",
     "ENGL261"
    ],
    "flagged": [
-    "ANTH125",
     "ENGL261"
    ],
    "pass": true
@@ -403,5 +399,6 @@
    "ENGL 271H closed-list title ('Late 18th Century') matches the catalog title for ENGL 271/271H."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43609973859,
+ "read_run": "38748858322"
 }

@@ -46,49 +46,68 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 99,
+   "placed": 108,
    "listed": 108,
-   "share": 0.917,
-   "missing": [
-    "COMM321",
-    "HIST310",
-    "HIST311",
-    "HIST483",
-    "HIST484",
-    "HSER330",
-    "HSER340",
-    "HSER341",
-    "HSER342"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST483",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST311",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002H",
+     "listed": "HIST484",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD341",
+     "listed": "HSER341",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD342",
+     "listed": "HSER342",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 1,
    "codes": [
-    "COMMC1004",
-    "DEAF355",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H",
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
+    "DEAF355"
    ],
    "flagged": [
-    "COMMC1004",
-    "DEAF355",
-    "HISTC1001",
-    "HISTC1001H",
-    "HISTC1002",
-    "HISTC1002H",
-    "SWCD330",
-    "SWCD340",
-    "SWCD341",
-    "SWCD342"
+    "DEAF355"
    ],
    "pass": true
   },
@@ -986,5 +1005,6 @@
    "Text names fields of study for transfer majors (Anthropology, Child Development, etc.) but no careers; careers left empty."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

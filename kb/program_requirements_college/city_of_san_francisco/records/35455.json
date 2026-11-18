@@ -46,33 +46,38 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 39,
+   "placed": 41,
    "listed": 41,
-   "share": 0.951,
-   "missing": [
-    "ECON1",
-    "ECON3"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON3",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON1",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "CHEM101A",
     "CHEM101B",
     "CHEM40",
-    "ECONC2001",
-    "ECONC2002",
     "STATC1000E"
    ],
    "flagged": [
     "CHEM101A",
     "CHEM101B",
     "CHEM40",
-    "ECONC2001",
-    "ECONC2002",
     "STATC1000E"
    ],
    "pass": true
@@ -593,5 +598,6 @@
    "The page refers to CCSF associate degree general education requirements without naming a pattern or units; ge_pattern left null."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }

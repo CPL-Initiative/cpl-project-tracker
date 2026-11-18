@@ -44,29 +44,36 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 15,
-   "share": 0.733,
+   "share": 0.867,
    "missing": [
     "CIS1A",
-    "ECO7",
-    "ECO8",
     "PSYC48"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 2,
    "codes": [
-    "ECONC2001",
-    "ECONC2002",
     "MATHC2210",
     "MATHC2210H"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2002",
     "MATHC2210",
     "MATHC2210H"
    ],
@@ -83,6 +90,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +106,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -323,5 +342,6 @@
    "ECON-C2001, ECON-C2002, MATH-C2210 and MATH-C2210H are not in the closed list. The closed list has ECO 7 and ECO 8 instead, which appear to be the older numbering."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626
 }

@@ -46,33 +46,42 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 13,
    "listed": 13,
-   "share": 0.692,
-   "missing": [
-    "BIOSC119",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "NUTRI160"
    ],
    "flagged": [
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
     "NUTRI160"
    ],
    "pass": true
@@ -324,5 +333,6 @@
    "Catalog text starts mid-sentence; description mentions organizations (medical facilities, research labs, etc.) and further training in medicine/public health, but no explicit career titles were recorded. The beginning of the description may have been cut off."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

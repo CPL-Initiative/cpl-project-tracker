@@ -46,42 +46,55 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 17,
    "listed": 17,
-   "share": 0.588,
-   "missing": [
-    "COMM321",
-    "HSER300",
-    "HSER310",
-    "HSER330",
-    "HSER340",
-    "HSER360",
-    "HSER365"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM321",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD300",
+     "listed": "HSER300",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD310",
+     "listed": "HSER310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD330",
+     "listed": "HSER330",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD340",
+     "listed": "HSER340",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD360",
+     "listed": "HSER360",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "SWCD365",
+     "listed": "HSER365",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
-   "codes": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD365"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "SWCD300",
-    "SWCD310",
-    "SWCD330",
-    "SWCD340",
-    "SWCD360",
-    "SWCD365"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -358,5 +371,6 @@
    "Outcomes and career information are printed in this award's own section; careers text: 'Entry to mid-level care management and social services positions ... Graduates with this focus may also become self-employed.'"
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

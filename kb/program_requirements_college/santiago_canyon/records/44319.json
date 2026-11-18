@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "MATH225"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "DATA100",
+     "listed": "MATH225",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "DATA100"
-   ],
-   "flagged": [
-    "DATA100"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -287,7 +288,7 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "43387912036",
+ "extracted_run": 43693830334,
  "source_sha": "8a05db99fdad52a0",
  "source_codes": [
   "CIS111",
@@ -306,5 +307,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.938
+ "source_coverage": 0.938,
+ "read_run": "43387912036"
 }

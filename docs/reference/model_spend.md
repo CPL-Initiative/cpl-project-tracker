@@ -1,7 +1,7 @@
 ---
 title: Model spend — what calls a model, on which key, and how to measure it
 date: 2026-10-27
-updated: 2026-10-27
+updated: 2026-11-15
 tags: [reference, model-spend, sierra, anthropic-api, cost, governance-team-enablement]
 ---
 
@@ -14,6 +14,10 @@ Opus 5.5 for two days. The steps for Sierra's tests are in
 [`pipeline_reference`](pipeline_reference.md) §7c ("Smoke-test on a RUNNER, once
 per deploy"). The incident record, with the key's name and its figures, is
 private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
+
+## Where the daily figures live
+
+Billing totals by UTC day, pasted by hand (no billing credentials in the repo): `kb/reference/model_spend_daily.json`. Each session's own figure, from its handoff's `Spend:` line: `kb/status/session_spend.json` (`kb/_build_session_spend.py`, built at Pages deploy, never committed). The Commons ETA clock's Show costs reads both and keeps them apart.
 
 ## What calls a model
 
@@ -42,6 +46,22 @@ balance's auto-reload stays on for her. To tie a Console key to a caller, compar
 the key's hourly usage in the Console with the caller's hours in the logs below.
 A model missing from a key's Console chart rules that caller out: Sierra runs
 Sonnet 5, so a key whose chart shows no Sonnet 5 never pays for her.
+
+## The $40 gate on every run
+
+Sam's standing limit is $40 a run on the estimate. One meter prices every paid call
+(`kb/_spend_meter.py`, which holds the limit as `STANDING_LIMIT_USD`). The extraction and
+the second reader price the run before any call and refuse it above $40; `cer-classify`
+asks the longest run of titles that fits within $40 and leaves the rest for the next
+night. All three then hold every further call once the run's charges and the calls in
+flight would pass $40. `cpl-news-harvest` and `cpl-chat` return no usage, so
+`kb/_model_run_gate.py` refuses their run before any call when its worst case passes $40,
+computed from each function's own limits in this repo: the harvest's 9 calls at the
+context window in, at its Sonnet 4.6, $27.27; Sierra at $0.70 an answer, from her
+8,192-token output cap and a 100,000-token input allowance (her function caps no prompt
+total), priced as Opus 4.8, the dearest model that accepts her request. The A/B may ask 56
+answers, 27 runs a side, so a comparison of every mode is two dispatches. Lane state:
+[governance](lanes/governance-team-enablement.md).
 
 ## How to measure
 

@@ -46,22 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 47,
+   "placed": 49,
    "listed": 49,
-   "share": 0.959,
-   "missing": [
-    "BIOSC139",
-    "BIOSC140"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 6,
    "codes": [
-    "BIOL139",
-    "BIOL140",
     "KINES247",
     "KINES248",
     "KINES249",
@@ -70,8 +77,6 @@
     "KNACT168B"
    ],
    "flagged": [
-    "BIOL139",
-    "BIOL140",
     "KINES247",
     "KINES248",
     "KINES249",
@@ -607,5 +612,6 @@
    "Cal-GETC is named as the GE pattern but no GE units are printed."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

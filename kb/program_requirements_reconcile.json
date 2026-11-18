@@ -6,20 +6,22 @@
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE); 'noncredit': a noncredit program by the state file's award (S644: the no-colon hours total's flag, San Bernardino Valley and Coalinga)",
   "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
-  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
+  "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed). prefix_aliases_cited names each pair's evidence and source where a census wrote it (S652, kb/_prefix_alias_census.py: at least three courses of the same number and title at that college, and no number naming two different courses)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call. A catalog that prints each course's hours only in its course descriptions carries them in hours_file, a committed map beside the read that printed them (Victor Valley, S639), and the note names that read",
   "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix",
   "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
-  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)",
+  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four); name_pattern's n (and code, where it names one), read on a rule-all block's own heading, gives that block's courses alone the count, only where the heading's words are on the page and the counted sum is the block's stated figure (Norco's options, S673)",
   "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n",
   "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)",
   "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535); parent_from_block (S590) first gives a block of one course and its alternatives, read 'all' with one stated figure, that figure where the course has none (the heading line carries it: 'Select one of the following: 2 \u00b7 WORK 96 \u00b7 or WORK 99')",
   "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)",
   "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units",
   "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course",
-  "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)"
+  "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)",
+  "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644)",
+  "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
   "Cerro Coso Community College": {
@@ -44,7 +46,35 @@
     "evidence": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=95 (PDF pp.95-96, printed 95-96; read from the hand-filed copy, college-page-read run 43519918667): '2026-2027 Cal-GETC Requirements' prints a minimum per area and no total: Area 1 'Choose one course (three units minimum) from each area for a minimum of nine semester units.'; Area 2 'Choose one course for a minimum of three semester units.'; Area 3 'Choose one course (three units minimum) from each area for a minimum of six semester units.'; Area 4 'Choose two courses from different disciplines for a minimum of six semester units.'; Area 5 'Choose a minimum of two courses, with one from 5A. Physical Sciences and one from 5B. Biological Sciences' (no unit figure); Area 6 'Choose one course for a minimum of three semester units.' The three transfer degrees name Cal-GETC with no figure: Psychology AA-T 30566 (p.552) '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.'; History AA-T 33072 (p.404) 'Students must complete a total of 60 transferable semester units with a minimum 2.0 GPA, to include the California General Education Transfer Curriculum (Cal-GETC) pattern'; Social Justice Studies: Race and Ethnicity AA-T 39656 (p.576) '(b) the California General Education Transfer Curriculum (Cal-GETC) requirements.'",
     "checked": "2026-11-13",
     "hold": {}
-   }
+   },
+   "pdf_pages": {
+    "30566": {
+     "page": 552,
+     "words": "ADTs also require that students must earn a",
+     "evidence": "Psychology AA-T 30566: the capture of 2026-10-17 (capture.json pdf.picks, pages 552-554, named, coverage 0.8) opened on PDF p.552 '[page 552] ADTs also require that students must earn a “C” or better in all courses required for the major or area of emphasis.'; the reading's section heading 'Degree Requirements' and its Cal-GETC words '(b) the California General Education Transfer Curriculum (Cal-GETC) Requirement.' are on p.552 (college-page-read run 43519918667). Reconcile 43521338550's fresh capture took it to pp.467-470, a page naming 'History, Psychology or Sociology AA-T' as another degree."
+    },
+    "33072": {
+     "page": 404,
+     "words": "The Associate in Arts in History for Transfer Degree (AA-T) is designed",
+     "evidence": "History AA-T 33072: the capture of 2026-10-17 (capture.json pdf.picks, pages 404-407, named, coverage 1.0) opened on PDF p.404 '[page 404] The Associate in Arts in History for Transfer Degree (AA-T) is designed to provide a seamless transfer pathway for students interested in pursuing a History degree'; its Cal-GETC words 'to include the California General Education Transfer Curriculum (Cal-GETC) pattern' are on p.404 (college-page-read run 43519918667). Reconcile 43521338550's fresh capture took it to pp.94-96, the Cal-GETC pattern page."
+    }
+   },
+   "pdf_pages_why": "S650: the two transfer degrees the statewide 34 waits on (calgetc_apply_plan.json waiting.own_pages) are read from their own pages, named here with the words the filed capture opened on, never found by a pattern over the catalog's text. A pin binds only while the hand-filed file (sha256 pinned in kb/hand_filed_catalogs) prints the words and every title word on that page; otherwise the program gets no fresh text, its filed record stands, and the capture says why. Reversible by deleting this entry."
+  },
+  "Lassen College": {
+   "why": "S651, d-calgetc-34-per-college-evidence-s648. Lassen's catalog prints its own Cal-GETC figure: the pattern page (2026-2027 catalog, PDF p.72, printed p.70), headed 'California General Education Transfer Curriculum (Cal-GETC) Certification', prints 'Cal-GETC General Education Certificate of Achievement requires 34 Units.' and the six areas it counts (Area 1 '9 units', Area 2 '3 units', Area 3 '6 units', Area 4 '6 units', Area 5 '7 units', Area 6 '3 units', 34 in all), read by college-page-read run 43570566375 (plan kb/college_reads/lassen_cal_getc_page.json) from the catalog every Lassen record was extracted from (capture run 39006337658). The transfer degrees name Cal-GETC with no units read. A catalog printing its own figure takes a set step, so a transfer degree naming Cal-GETC with no units read takes 34 from that page, only where the record names its pattern, its degree total and its major's printed total (S651, the conductor: without a printed major total the 34 would pass a record on the electives fill alone, the S650 false-pass class; Kinesiology 33388 so stays empty). The set step holds no record by name: 31297 (42300's legacy number), 35106 and 41912 (overlap) are restored from main after each reconcile run by --calgetc-review, from the apply plan. Reversible by deleting this entry.",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {"min": 34, "max": 34},
+     "awards": "transfer",
+     "only_with": ["ge_pattern", "degree_total", "total_units"],
+     "pattern": "Cal-?\\s?GETC",
+     "source": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=72",
+     "source_words": "Cal-GETC General Education Certificate of Achievement requires 34 Units."
+    }
+   ]
   },
   "College of the Redwoods": {
    "why": "S608 SkyCondor, 2026-11-08, read Redwoods' failures by shape: 14 transfer degrees name the degree's 60 and CalGETC with no units and fail the degree check as incomplete; 8 local degrees name the 60 and no GE pattern. A free page read (college-page-read 42479757804, kb/college_reads/redwoods_ge_units.json) gave the transfer words: the Biology AS-T page prints 'Completion of 60 semester units or 90 quarter units that are eligible for transfer to the California State University, including the CalGETC General Education requirements and a minimum of 18 semester units or 27 quarter units in the major or area of emphasis.' Redwoods' own Cal-GETC page (grad5) renders no text to the reader, so this step sets Cal-GETC's statewide 34 on transfer degrees only, cited from Monterey Peninsula's GE page as Columbia's, Taft's and Los Medanos's steps are. The local degrees wait: their pages print no GE pattern or figure, and the CR-GE page (grad4) was not read. Proceeded on the recommendation; reversible by deleting this entry. S636 SkyAntennae, 2026-11-11: the 8 local degrees. COBIx found the college's 2026-2027 CRGE pattern sheet on its counseling page (#3096); read 43013608134 verified it: 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60'. Read 43015726456 gave the local pages' own words as the capture holds them: the title line 'A.S. Degree ( 60.0 Credits )', blocks headed '(Total N)', no general education line, and on Forestry 'This program includes requirements that can be double counted for GE requirements'. Three local steps: ge_units 21; degree_total_minimum where the title prints 60.0; ge_overlap where the page says double counted. Simulated on the filed records: 6 of the 8 read equal; Registered Nursing 01831 and LVN to RN 08393 print their own totals and stay. Session call, cpl_memory d-redwoods-crge-21-s636; reversible by deleting the three local steps. The college-level gate read 'transfer' and held the local steps out (reconcile 43016437012 changed none); it now reads 'associate', and each step keeps its own gate.",
@@ -411,6 +441,50 @@
    ]
   },
   "Merced College": {
+   "prefix_aliases": {
+    "POSC": "POLS",
+    "SOC": "SOCI"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "POSC",
+     "file": "POLS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "POSC 2 = POLS 2, Introduction to Comparative Government and Politics",
+      "POSC 3 = POLS 3, Introduction to International Relations",
+      "POSC 4 = POLS 4, Introduction to Political Theory and Thought"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "SOC",
+     "file": "SOCI",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (mis_course_record; 5 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 5,
+     "same_control": 5,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "SOC 2 = SOCI 2, Contemporary Social Problems",
+      "SOC 3 = SOCI 3, Marriage and the Family",
+      "SOC 4 = SOCI 4, Introduction to Gender"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S423 SkyLaurel, 2026-10-19. Merced's capture (run 39115547722) left five agriculture-mechanics programs unread at coverage 0.08-0.18: Diesel Equipment Technology A.S. 03485 and certificate 19495, Mechanized Agriculture Technology A.S. 07710 and certificate 19496, Compact Power Equipment 16653. Their Requisites pages (college-page-read 39229076688, catalog.mccd.edu 2026-27) print MECH12, MECH22A ... MECH51 and AGMA-20 where the state's file (coci_program_courses, read 2026-10-19) lists AGMA 2, AGMA 11 ... AGMA 21 and AGMA 20: the same title and units for each course, the numbers not derivable from each other. Fable, asked once, advised an explicit cited map over a general title rule (a title match is weaker evidence than a prefix swap) and holding out the noncredit Agriculture Systems certificate 44160, whose page prints AGT-701 to AGT-705 at 0 credits where the file lists AGAT 51 to AGAT 55 at 2-3 units: the units disagree, so it stays unread and the disagreement is the college's to settle in COCI. Second read (college-page-read 39234806863), the own pages of the ten programs that lost every page to a sibling: Equine Science and Management (07708, 19493) prints ANSC, AGBS and MECH31 for the file's AGAS, AGAB and AGMA 1; Landscape Horticulture 20802, which the catalog now calls Environmental Horticulture (01350.CN), prints LAND for AGEH; Drone Technology 38831 prints CPSC-17 and CPSC-18 for DRON 10 and DRON 11; each pair the same title and units. Not renumbered: Small Business Entrepreneurship (03473, 19498), HVAC Technician 19505 and Engineering 44678 print revised, shorter lists than the file keeps; Child Development A.A. 03515's Requisites tab prints no courses; Biological Science A.S. 03469 and International Studies A.A. 17943 are not in the catalog's list. Those stay unread, the disagreement the college's.",
    "steps": [],
    "course_renumbers": {
@@ -803,6 +877,30 @@
    ]
   },
   "Los Medanos College": {
+   "prefix_aliases": {
+    "CNT": "COMSC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "CNT",
+     "file": "COMSC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: four courses of the same number and title and the same control numbers; no title exists on file for CNT 91, and the college is parked, so the pair is config only.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "CNT 10 = COMSC 10, Computer Network Fundamentals",
+      "CNT 11 = COMSC 11, Systems and Network Administration",
+      "CNT 12 = COMSC 12, Introduction to Information Systems Security"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S600 SkyWhirlpool, 2026-11-07: about 19 of Los Medanos's transfer-degree records failed arithmetic because the record names the 60-unit degree and the Cal-GETC pattern with no units for it. Every transfer page prints 'Completion of California General Education Transfer Curriculum (Cal-GETC)' and no figure (college page read 42376216539: Sociology AA-T 30849, Biology AS-T 35128). Its local A.A. and A.S. pages name no GE units or electives (Accounting A.S. 01528, Fine Arts A.A. 01546), so no step reads them until LMC's GE page is read.",
    "awards": "transfer",
    "steps": [
@@ -1249,6 +1347,50 @@
    ]
   },
   "San Bernardino Valley College": {
+   "prefix_aliases": {
+    "ANTH": "ANTHRO",
+    "ARTH": "ART"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "ANTH",
+     "file": "ANTHRO",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ANTH 102, 102H and 125 for the file's ANTHRO 102, 102H and 125), confirmed by C-ID articulations (ANTH 102 and 125; the second reader on #3301).",
+     "evidence": 3,
+     "same_control": 0,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "ANTH 102 = ANTHRO 102, Cultural Anthropology",
+      "ANTH 102H = ANTHRO 102H, Cultural Anthropology - Honors",
+      "ANTH 125 = ANTHRO 125, Language and Culture"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    },
+    {
+     "printed": "ARTH",
+     "file": "ART",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: successor courses on new control numbers, matched on title (ARTH 105, 107 and 108 for the file's ART 105, 107 and 108), confirmed by C-ID articulations (ARTH 105 and 107; the second reader on #3301). Record 39404 (Studio Arts AA-T) passes on this pair alone.",
+     "evidence": 3,
+     "same_control": 0,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "ARTH 105 = ART 105, History of Modern Art",
+      "ARTH 107 = ART 107, Art History: Africa, Oceania and the Americas",
+      "ARTH 108 = ART 108, Art of Mexico and Mesoamerica"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
    "why": "S644, the harvest's NEXT 5 (a noncredit total printed 'Total Hours N-M' with no colon). San Bernardino Valley's noncredit certificates print the course list with a UNITS column of 0 and the line 'Total Hours 48-54' (each reading's notes: Job Readiness Skills 35699 'Total Hours 48-54', Workforce Literacy Skills 35700 'Total Hours 194-297', Office Technology Fundamentals 36070 'Total Hours 108'; 'The course list prints 0 in a UNITS column beside each course ... The page prints no per-course hours'). The step names the scorer's no-colon reading for this catalog alone (program.hours_total_printed), which then asks the page for positive evidence in the record's own section (total_hours_printed, kb/_program_requirements_score.py): one total after the last listed course, both ends the record's, each course's row an explicit 0 or N/A and no other number, no other hours figure. Measured on the filed records by kb/_program_requirements_readings_measure.py: 19 noncredit records fail as incomplete with a total and no course figure, and each reading quotes the no-colon total and a UNITS column of 0; none passes today, so none can fail. Free page read to confirm the table before the reconcile run: the diagnosis's plan san_bernardino_valley_noncredit_hours (docs/harvest_wave3_diagnoses_s639.md). Session decision for Sam to revise (d-hours-total-no-colon-s644), beside the S422 total-only reading; reversible by deleting this entry.",
    "awards": "noncredit",
    "steps": [
@@ -1277,6 +1419,34 @@
    ]
   },
   "Santiago Canyon College": {
+   "prefix_aliases_cited": [
+    {
+     "printed": "PASV",
+     "file": "PBLC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 9 courses of the same number and title (mis_course_record; 9 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 9,
+     "same_control": 9,
+     "catalog_sources": [
+      "mis_course_record"
+     ],
+     "examples": [
+      "PASV 150 = PBLC 150, Introduction to Public Administration",
+      "PASV 151 = PBLC 151, Ethics and Professionalism: The High Calling of Public Service",
+      "PASV 152 = PBLC 152, Preparing for Supervision Public Sector"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 17 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    }
+   ],
    "why": "S645, the conductor's design for #3201 (review of the S644 fix, 13 findings standing). Santiago Canyon's 2026-2027 catalog PDF prints 'Control Number: N' AFTER each program and opens the next program on the following line ('Control Number: 11856' / 'Biology, AS-T' / 'A.S. Degree for Transfer'). The reader cut each page from the number's line, so a window opened on the program printed next: COBIx's spot-check (#3194 comment 6841001207) found Biology AS 11856 holding the Biology AS-T, and Economics AA 11943 and Sociology AA 11947 passing while holding their AA-T's requirements. pdf_numbers_after names the reader setting for this catalog alone (kb/_program_requirements_college.py pdf_best): a program whose own number line prints takes the block that ends at that line, only when the block opens on the program's own title and award; anything else reads by the heading picker, refused only where another listed program's number closes the window. The reader's own count of the habit is a measurement filed in every PDF capture (capture.json pdf.numbers_after) and never switches the reading: a gated catalog whose count disagrees reads by the heading picker and files numbers_after_disagrees. Session decision for Sam to revise; reversible by deleting this entry.",
    "pdf_numbers_after": true,
    "pdf_numbers_after_votes": {
@@ -1286,6 +1456,374 @@
     "earlier_count": "29 after, 0 before over the 114 distinct pick openings of the capture on claude/harvest-santiago-canyon-s644@1ab5e293"
    },
    "steps": []
+  },
+  "American River College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BMET n, SWCD n where the state's Program Course File lists ET n, HSER n, the same number and title in every case kb/_prefix_alias_census.py could title (BMET for ET, 6 courses; SWCD for HSER, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases_cited": [
+    {
+     "printed": "BMET",
+     "file": "ET",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 6 courses of the same number and title (program_course_file_crsid; 6 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 6,
+     "same_control": 6,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "BMET 260 = ET 260, Introduction to Medical Ultrasound Equipment",
+      "BMET 261 = ET 261, Introduction to Biomedical Equipment Networking",
+      "BMET 262 = ET 262, Introduction to Respiratory Therapy Ventilators"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 12 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    },
+    {
+     "printed": "SWCD",
+     "file": "HSER",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (program_course_file_crsid; 7 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 7,
+     "same_control": 7,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "SWCD 310 = HSER 310, Ethical Issues and Client's Rights",
+      "SWCD 330 = HSER 330, Issues of Diverse Populations",
+      "SWCD 340 = HSER 340, Introduction to Chemical Dependency"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 75 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    }
+   ],
+   "steps": []
+  },
+  "Barstow Community College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints CDEV n, POLS n where the state's Program Course File lists CHLD n, POLI n, the same number and title in every case kb/_prefix_alias_census.py could title (CDEV for CHLD, 18 courses; POLS for POLI, 3 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "POLS": "POLI"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "CDEV",
+     "file": "CHLD",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 18 courses of the same number and title (program_course_file_crsid; 18 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 18,
+     "same_control": 18,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "CDEV 11A = CHLD 11A, Principles and Practices in Early Childhood Education",
+      "CDEV 12A = CHLD 12A, Creative Activities for Early Childhood Education",
+      "CDEV 14 = CHLD 14, Child Health, Safety, and Nutrition"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 18 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    },
+    {
+     "printed": "POLS",
+     "file": "POLI",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 3 courses of the same number and title (coci_course_list; 3 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 3,
+     "same_control": 3,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "POLS 2 = POLI 2, Comparative Government",
+      "POLS 3 = POLI 3, Introduction to International Relations",
+      "POLS 4 = POLI 4, Introduction to Political Theory and Thought"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "City College of San Francisco": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints COMM n where the state's Program Course File lists CMST n, the same number and title in every case kb/_prefix_alias_census.py could title (COMM for CMST, 5 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases_cited": [
+    {
+     "printed": "COMM",
+     "file": "CMST",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 5 courses of the same number and title (coci_course_list; 5 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 5,
+     "same_control": 5,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "COMM 20 = CMST 20, Interpersonal Communication",
+      "COMM 3 = CMST 3, Argumentation and Debate",
+      "COMM 4 = CMST 4, Group Communication"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 30 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    }
+   ],
+   "steps": []
+  },
+  "Crafton Hills College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints SOCI n where the state's Program Course File lists SOC n, the same number and title in every case kb/_prefix_alias_census.py could title (SOCI for SOC, 4 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "SOCI": "SOC"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "SOCI",
+     "file": "SOC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 4 courses of the same number and title (program_course_file_crsid; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 4,
+     "same_control": 4,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "SOCI 106 = SOC 106, Introduction to Women's Studies Through an Ethnic Studies Lens",
+      "SOCI 132 = SOC 132, Identity and Ideology: Intro to Chicano/a & Latino/a Studies",
+      "SOCI 141 = SOC 141, Race, Ethnicity and Diversity"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Diablo Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints BIOL n where the state's Program Course File lists BIOSC n, the same number and title in every case kb/_prefix_alias_census.py could title (BIOL for BIOSC, 14 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases_cited": [
+    {
+     "printed": "BIOL",
+     "file": "BIOSC",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 14 courses of the same number and title (program_course_file_crsid; 14 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 14,
+     "same_control": 14,
+     "catalog_sources": [
+      "program_course_file_crsid"
+     ],
+     "examples": [
+      "BIOL 116 = BIOSC 116, Human Biology",
+      "BIOL 117 = BIOSC 117, Human Biology with Laboratory",
+      "BIOL 119 = BIOSC 119, Fundamentals of Microbiology"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 71 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    }
+   ],
+   "steps": []
+  },
+  "Irvine Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints FILM n where the state's Program Course File lists HUM n, the same number and title in every case kb/_prefix_alias_census.py could title (FILM for HUM, 7 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "FILM": "HUM"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "FILM",
+     "file": "HUM",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 7 courses of the same number and title (coci_course_list, mis_course_record; 4 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 7,
+     "same_control": 4,
+     "catalog_sources": [
+      "coci_course_list",
+      "mis_course_record"
+     ],
+     "examples": [
+      "FILM 70 = HUM 70, HISTORY OF FILM",
+      "FILM 71 = HUM 71, INTRODUCTION TO FILM",
+      "FILM 71H = HUM 71H, INTRODUCTION TO FILM HONORS"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": []
+  },
+  "Moreno Valley College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 12 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "HIST": "HIS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 12 courses of the same number and title (course_outline; 12 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 12,
+     "same_control": 12,
+     "catalog_sources": [
+      "course_outline"
+     ],
+     "examples": [
+      "HIST 16 = HIS 16, African History to 1800",
+      "HIST 17 = HIS 17, African History from 1800 to Present",
+      "HIST 18 = HIS 18, Modern European History"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": [
+    {
+     "kind": "printed_total",
+     "field": "total_units",
+     "pattern": "(?s)Required\\s+Courses\\s*\\(\\s*(?P<lo>\\d{1,2})(?:\\.\\d+)?\\s*-\\s*(?P<hi>\\d{1,2})(?:\\.\\d+)?\\s+Units\\s*\\).{0,4000}?Total\\s*:\\s*(?P<total>\\d{1,2}(?:\\.\\d+)?)",
+     "requires": "\\(\\s*Test\\s+out\\s+option\\s+available\\s*\\)",
+     "source": "the range's low end is a test-out; credit by exam still awards the units (d-mvc-38758-total-is-20-s673)",
+     "why": "S674 SkyRedpoll, 2026-11-17: Guitar Performance 38758 prints Required Courses (16-20 Units), MUS-3* with * (Test out option available), Units: 20.00 and Total : 20.00. The reading took 16-20; the record takes the printed 20."
+    }
+   ]
+  },
+  "Norco College": {
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 15 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "HIST": "HIS"
+   },
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 15 courses of the same number and title (course_outline; 15 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 15,
+     "same_control": 15,
+     "catalog_sources": [
+      "course_outline"
+     ],
+     "examples": [
+      "HIST 1 = HIS 1, World History to 1500",
+      "HIST 15 = HIS 15, African American History II",
+      "HIST 16 = HIS 16, African History to 1800"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
+    }
+   ],
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice)\\s+for\\s+a\\s+total\\s+of\\s+",
+     "why": "S672 SkyWren, 2026-11-17: Music Industry Studies: Performance 30606 and 30607 (one page) list MUS-39 and MUS-79 once at 3 units, and the page prints 'Take MUS-39 twice for a total of six units: \u00b7 6.00' and 'Take MUS-79 twice for a total of six units: \u00b7 6.00' under 'Units: 25.00' (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json). With both twice the required list sums to its 25. The step reads only 'twice for a total of', never the option lines ('Option 1: Take MUS-41 four times over four semesters'), because MUS-41 sits in two options at two counts; the three options are one choice of 8 units the record does not yet group, a separate fix."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "name_pattern": "Take\\s+(?:both\\s+[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?\\s+and\\s+[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?|(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?))\\s+(?P<n>two|three|four|twice)\\s+times(?:\\s+each)?",
+     "why": "S673 SkyPhoebe, 2026-11-17: Music Industry Studies: Performance 30606 and 30607 (one page) print 'Complete one of the following options: 8.00' over three options the reading already groups as one choice (option_group 'Ensemble option'), each stating 8 with each course listed once at 2 units: 'Option 1: Take MUS-41 four times over four semesters', 'Option 2: Take both MUS-41 and MIS-81 two times each over four semesters', 'Option 3: Take both MIS-11A and MIS-11B two times each over four semesters'. The count is read on each option's own heading, so MUS-41 takes 4 in Option 1 and 2 in Option 2, and only where the counted sum is the option's stated 8. With the required 25 and the 3-4 elective units the record sums to its printed 36-37 (college page read 44045355408, kb/college_reads/rccd_music_repeat_rows.json). Handoff 673 read the options as ungrouped; the group was there, the counts were not."
+    }
+   ]
+  },
+  "Riverside City College": {
+   "statewide_cal_getc": {
+    "evidence": "Riverside City's own catalog, read by college page read runs 43858134900 and 43859115063 (S665; plan kb/college_reads/rcc_calgetc_page.json). The 2025-2026 catalog's 'California General Education Transfer Curriculum (Cal-GETC)' page (https://rccd.curriqunet.com/Catalog/archive/71/iq/4081/calgetc) and the 2026-2027 catalog's (https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5844/calgetc) print a minimum per area and no total: Area 1 'Minimum 3 courses (9 semester or 12 quarter units).'; Area 2 'Minimum 1 course (3 semester or 4 quarter units).'; Area 3 'Minimum 2 courses (6 semester or 8 quarter units).'; Area 4 'Minimum 2 courses (6 semester or 8 quarter units) from two different academic disciplines.'; Area 5 'Minimum 2 courses (7 semester or 9 quarter units).'; Area 6 'Minimum 1 course (3 semester or 4 quarter units).' Physics 2.0 AS-T 32745's 2025-2026 read (run 43816942139) names Cal-GETC with a 60-unit degree total and no Cal-GETC figure.",
+    "checked": "2026-11-16",
+    "hold": {}
+   },
+   "course_renumbers_by_year": {"2025-2026": {"_evidence": "S663, college page read 43815976514 (kb/college_reads/rcc_prior_year_course_codes.json): the 2025-2026 catalog (curriQunet archive 71) prints each code below with the title and units the state's Program Course File gives the code it maps to (MAT-1C Calculus III 4 for MATH 1C Calculus III 4.0; ECO-7H Honors Principles of Macroeconomics 3 for ECON C2002H Principles of Macroeconomics - Honors 3.0). Not mapped: MAT-1AH Honors Calculus I (MATH C2210H is Calculus I: Early Transcendentals - Honors under a new control number, a replacement, not a renumber) and CIS-5 (printed beside CSC-5, a cross-listing).", "MAT 1C": "MATH 1C", "MAT 2": "MATH 2", "MAT 3": "MATH 3", "MAT 5": "MATH 5", "ECO 7H": "ECON C2002H", "ECO 8H": "ECON C2001H"}},
+   "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 25 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases_cited": [
+    {
+     "printed": "HIST",
+     "file": "HIS",
+     "session": "S652",
+     "issue": "#3299 slice C",
+     "date": "2026-11-14",
+     "source": "S652, issue #3299 slice C, 2026-11-14: 25 courses of the same number and title (coci_course_list; 25 on the same control number), and no number naming two different courses at the college.",
+     "evidence": 25,
+     "same_control": 25,
+     "catalog_sources": [
+      "coci_course_list"
+     ],
+     "examples": [
+      "HIST 1 = HIS 1, World History to 1500",
+      "HIST 11 = HIS 11, Military History of the United States to 1900",
+      "HIST 12 = HIS 12, Military History of the United States Since 1900"
+     ],
+     "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json",
+     "retired": {
+      "session": "S653",
+      "date": "2026-11-14",
+      "by": "the course-id route (kb/_course_id_route.py)",
+      "proof": "the route reproduces all 86 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
+      "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     }
+    }
+   ],
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\*(?:(?!\\*\\s*Course\\s+must)[\\s\\S]){0,800}?\\*\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times",
+     "why": "S672 SkyWren, 2026-11-17: Piano Performance certificate 38626 read 9.5 against 18.5 because the page prints the row 'MUS-P12* \u00b7 Applied Piano I* \u00b7 3.00' four times under 'Required Courses (12.5 units)' with the footnote '*Course must be taken four times' (college page read 44034775728), and the reading keeps one row. The starred code nearest ahead of the footnote takes the count, so MUS-P12 counts 12 units and the blocks sum to the page's 'Total: 18.50' (p-repeated-course-row-undercounts-s671). The pattern reads any whitespace between its words, since a capture may join the cells with a tab, a space or a line break."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)\\b",
+     "why": "S672 SkyWren, 2026-11-17: Jazz Performance certificate 38627 read 14 against 17 because the page prints the row 'MUS-39Course must be taken twice \u00b7 Applied Music ICourse must be taken twice \u00b7 3.00' twice under 'Units: 12.00', the footnote's words run into the code's cell (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json), and the reading keeps one row. With MUS-39 twice the required list sums to its 12 and the blocks to the page's 'Total: 17.00'."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)(?:\\s+times)?\\s+over\\s+(?:two|three|four|five|six|[0-9]+)\\s+semesters",
+     "why": "S672 SkyWren, 2026-11-17: Music Performance certificate 38628 read 11.5 against 17.5 because the page prints 'Take MUS-39 three times over three semesters.' and the row 'MUS-39 \u00b7 Applied Music I \u00b7 3.00' three times under 'Units: 9.50' (college page read 44045355408), and the reading keeps one row. With MUS-39 three times the required list sums to 9.5 and the blocks to the page's 'Total: 17.50'."
+    }
+   ]
   }
  }
 }

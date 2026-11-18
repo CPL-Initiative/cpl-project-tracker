@@ -219,6 +219,25 @@ read = {"record": {"program": {"total_units": {"min": 30, "max": 30}, "degree_to
 gm = b.gaps_for("X College", "elumen", "A.S. Degree", "units", read, None, {"min": 30, "max": 30}, None, lambda c: None)
 check(not any(g["kind"] == "Major only" for g in gm), "gaps: a record that reads the degree raises no Major only gap")
 
+# 2d2b. A printed total that already reaches an associate degree's 60 units (S678, #3461 page finding 7, Chaffey's
+# Physical Therapist Assistant 42987: 65 units with general education inside a block titled "Required Prerequisites
+# and General Education"). The failure this guards: "Major only... general education not in it" under that block.
+pta = {"record": {"program": {"total_units": {"min": 65, "max": 65}},
+                  "blocks": [{"name": "Required Prerequisites and General Education (or equivalent)", "rule": "all", "courses": []},
+                             {"name": "Required Core:", "rule": "all", "courses": []}],
+                  "notes": ["These GE placeholders are not recorded as courses."]},
+       "score": {"arithmetic": {"status": "unequal", "against": "program", "computed": [56, 56], "stated": [65, 65]}}}
+gp = b.gaps_for("Chaffey College", "curriqunet_meta", "A.S. Degree", "units", pta, None, {"min": 65, "max": 65}, None, lambda c: None)
+check(not any(g["kind"] == "Major only" for g in gp), "gaps: a 65-unit total with general education in it raises no Major only gap (got %s)" % gp)
+ge = [g for g in gp if g["kind"] == "General education lines"]
+check(len(ge) == 1 and "total of 65 units includes general education" in ge[0]["text"] and ge[0]["owner"] == "procedure",
+      "gaps: the gap names the general education area lines the record leaves out (got %s)" % ge)
+plain = {"record": {"program": {"total_units": {"min": 62, "max": 62}}, "blocks": [{"name": "Core", "rule": "all", "courses": []}]},
+         "score": {"arithmetic": {"status": "equal", "against": "program", "computed": [62, 62]}}}
+gq = b.gaps_for("X College", "elumen", "A.S. Degree", "units", plain, None, {"min": 62, "max": 62}, None, lambda c: None)
+check(not any(g["kind"] in ("Major only", "General education lines") for g in gq),
+      "gaps: a total of 60 or more that names no general education raises neither gap (got %s)" % gq)
+
 # 2d3. The units chip (Sam, 2026-10-11 and 2026-10-14: "Highlight the mismatches in units in the
 # summary row"): a major total and a degree total each get one, and an equal sum gets none.
 ud = b.units_differ({"status": "unequal", "against": "program", "computed": [33, 36]}, {"min": 30, "max": 30})
@@ -473,5 +492,58 @@ check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re
 check(not b.STALL.search(b.read_receipt(receipt)) if os.path.exists(receipt) else False,
       "the receipt names no word the Supabase connector holds")
 
+# S659: an identity's title drops an Honors marker only where the curated title is the minted one without it (LIBR
+# M1040, S652's retitle, Cerro Coso 18917's LIBR C111); every other minted common title stays as built.
+check(b.shown_title("Media & Information Literacy (Honors)", "Media & Information Literacy") == "Media & Information Literacy"
+      and b.shown_title("Calculus I: Honors", "Calculus I") == "Calculus I"
+      and b.shown_title("Religions of the World", "World Religions") == "Religions of the World"
+      and b.shown_title("Honors Seminar (Honors)", "Honors Seminar (Honors)") == "Honors Seminar (Honors)"
+      and b.shown_title("Chemistry (Honors)", "Organic Chemistry") == "Chemistry (Honors)"
+      and b.shown_title("", "Live title") == "Live title",
+      "an identity drops an Honors marker only where the curated title is the minted one without it")
+
+# S668 #3414: a record filed for a program the state lists no courses for (coverage basis "no_state_list") is
+# left out of the display entirely, so none reaches cpl_pathways_roep_data.js; every other record stays.
+_kept = {"score": {"coverage": {"basis": "closed_list"}}}
+_gone = {"score": {"coverage": {"basis": "no_state_list"}}}
+_work = [("k1", "college", "p1", _kept, {}, {}), ("k2", "college", "p2", _gone, {}, {}), ("k3", "records", "p3", {}, {}, {})]
+check([w[0] for w in b.displayed(_work)] == ["k1", "k3"] and b.no_state_list(_gone["score"])
+      and not b.no_state_list(None) and not b.no_state_list(_kept["score"]),
+      "the display build leaves out a record whose coverage basis is no_state_list, and keeps the rest")
+check("in displayed(work):" in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
+      "the build's program loop reads displayed(work), so the skip is where it chooses what to display")
+check(not [p["key"] for p in progs if b.no_state_list(p.get("score"))],
+      "no program on the page carries a no_state_list basis")
+
+# #3412 item 4: the display keeps every Could-adopt credential, so the course card's panel can list each one.
+check('"credentials": adopt[:4]' not in open(os.path.join(ROOT, "kb", "_build_roep_display.py")).read(),
+      "the display build no longer caps a course's Could-adopt credentials at four")
+
+# COBIx's spot-check on #3429: an umbrella credit-by-exam exhibit lends no title, and Roman numerals fold.
+import importlib.util as _u, os as _o
+_sp = _u.spec_from_file_location("rd2", _o.path.join(_o.path.dirname(_o.path.dirname(_o.path.abspath(__file__))), "kb", "_build_roep_display.py"))
+_rd = _u.module_from_spec(_sp); _sp.loader.exec_module(_rd)
+assert _rd.fold_label("Firefighter I") == _rd.fold_label("firefighter 1"), "a Roman numeral folds to its digit"
+assert _rd.fold_label("Fire Officer II") == "fire officer 2" and _rd.fold_label("Spanish IV") == "spanish 4"
+_rows = [{"exhibit_id": "MAPCBES-X-1", "local_courses": [{"subject": s, "number": "1"}]} for s in ("ARCH", "CHIL", "AIRE")]
+_rows += [{"exhibit_id": "MAPICI-P-BL-1-001", "local_courses": [{"subject": s, "number": "1"}]} for s in ("AJ", "PE", "EMS", "ADJU")]
+_rows += [{"exhibit_id": "MAPCBEN-BCK-1-001", "local_courses": [{"subject": "CABT", "number": "210"}]}]
+assert _rd.cbe_umbrellas(_rows) == {"MAPCBES-X-1"}, "only a credit-by-exam exhibit across three subjects is an umbrella"
+print("umbrella and numeral checks passed")
+
+# S678 (f-ccn-renumber-shows-as-catalog-addition-s673): a course the scorer met by the Program Course File id is on
+# the state list under another code, so it is neither an addition nor a gap (Riverside City HIST-C1001 for HIST 1).
+_score = {"coverage": {"course_id": [{"printed": "HIST-C1001", "listed": "HIST 1"}]}}
+check(b.course_id_printed(_score) == {b.ck("HIST-C1001")} and b.course_id_printed(None) == set(), "course id: the printed codes the scorer met by id")
+_rec = {"blocks": [{"courses": [{"code": "HIST-C1001", "catalog_addition": True}, {"code": "ART 99", "catalog_addition": True}]}]}
+try:
+    _g = b.gaps_for("Riverside City College", "acalog", "AA", "units", {"record": _rec, "score": _score}, None, {"min": None, "max": None})
+    _txt = " ".join(x.get("text", "") for x in _g)
+    check("HIST-C1001" not in _txt and "ART 99" in _txt, "course id: a course met by id is no gap; a true addition still is (got %s)" % _txt[:200])
+except TypeError as e:
+    check(False, "course id: gaps_for signature changed (%s)" % e)
+
 print("\n%d failure(s)" % len(fails))
+
 sys.exit(1 if fails else 0)
+

@@ -169,6 +169,9 @@
   var CSS_ID = "cpl-pathways-css";
   var CSS = [
     ".cplpw { color: var(--text-body); max-width: none; margin: 0; }",
+    /* The whole tab runs the full width of the window (Sam, 2026-11-16: "Use full width of window for everything on
+       this tab"): the shell's 1400px cap and its 2rem sides give way to a 16-32px gutter, as on the CPL Commons. */
+    "#tab-cpl-pathways .main-container { max-width:none; padding-left:clamp(16px, 2vw, 32px); padding-right:clamp(16px, 2vw, 32px); }",
     /* Status toolbar (selector + PDF) — above the fold */
     ".cplpw-toolbar { display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin: 12px 0 4px; }",
     ".cplpw-toolbar .lbl { font-size:.76rem; font-weight:700; color: var(--text-muted); letter-spacing:.04em; text-transform:uppercase; }",
@@ -201,7 +204,7 @@
     ".cplpw-hero .meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin: 6px 0 2px; }",
     ".cplpw-chip { display:inline-block; border-radius:10px; font-size:.7rem; font-weight:600; padding:2px 8px; border:1px solid var(--border-strong); color: var(--text-body); background: var(--surface-subtle); }",
     ".cplpw-chip.start { background: var(--mustard-fill); color: var(--on-mustard); border-color: transparent; }",
-    ".cplpw-hero .blurb { margin: 8px 0 0; color: var(--text-body); font-size:.9rem; max-width: 860px; }",
+    ".cplpw-hero .blurb { margin: 8px 0 0; color: var(--text-body); font-size:.9rem; max-width: var(--cpl-measure, none); }",
     ".cplpw-hero .facts { display:flex; flex-wrap:wrap; gap:6px 14px; margin-top:10px; }",
     ".cplpw-fact { font-size:.76rem; color: var(--text-muted); }",
     ".cplpw-fact::before { content:\"▪ \"; color: var(--mustard-text, var(--yellow-warning)); }",
@@ -302,7 +305,7 @@
     /* Directory card (the auto-generated per-baccalaureate CPL landscape) */
     ".cplpw-dirtag { display:flex; flex-wrap:wrap; align-items:center; gap:6px 10px; background: var(--surface-subtle); border:1px solid var(--border); border-radius:8px; padding:8px 14px; margin: 8px 0 10px; font-size:.78rem; color: var(--text-muted); }",
     ".cplpw-dirtag b { color: var(--text-strong); }",
-    ".cplpw-dirintro { font-size:.86rem; color: var(--text-body); margin: 4px 0 8px; max-width: 900px; }",
+    ".cplpw-dirintro { font-size:.86rem; color: var(--text-body); margin: 4px 0 8px; max-width: var(--cpl-measure, none); }",
     ".cplpw-cohort { display:flex; flex-wrap:wrap; gap:6px; margin-top:4px; }",
     ".cplpw-cohort .peer { font-size:.74rem; border:1px solid var(--border); border-radius:10px; padding:2px 8px; background: var(--surface-subtle); color: var(--text-body); }",
     ".cplpw-cohort .peer.home { background: var(--hunter,var(--green-progress)); color: var(--surface-opaque); border-color:transparent; font-weight:700; }",
@@ -351,7 +354,7 @@
     ".cplpw-recs-top { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 20px; }",
     ".cplpw-recs h3 { margin:0; font-family: var(--cmn-serif, Georgia, serif); font-size:1.35rem; color: var(--text-strong); }",
     ".cplpw-recs-s { margin:6px 0 10px; font-size:.88rem; color: var(--text-muted); }",
-    ".cplpw-recs-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:12px; }",
+    ".cplpw-recs-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:12px; }",
     ".cplpw-rec { display:flex; flex-direction:column; gap:6px; padding:12px 14px; border:1px solid var(--border); border-radius:9px; min-width:0; }",
     ".cplpw-rec h4 { margin:0; font-size:1rem; color: var(--text-strong); }",
     ".cplpw-rec-i { margin:0; font-size:.82rem; color: var(--text-muted); }",
@@ -365,6 +368,7 @@
   ].join("\n");
 
   function ensureCss() {
+    ensurePanelCss();
     if (document.getElementById(CSS_ID)) return;
     var s = document.createElement("style");
     s.id = CSS_ID;
@@ -882,6 +886,7 @@
       t.title = r.detail || r.title;
       row.appendChild(t);
       if (r.units != null) row.appendChild(el("span", "u", fmtU(r.units) + "u"));
+      if (r.code) row.appendChild(outcomeSlot(prog && prog.college, r.code, r.title));
       if (r.status === "cpl") {
         var chip = el("span", "how cpl", r.how);
         chip.title = r.detail || "";
@@ -1199,7 +1204,7 @@
     return m ? "Option " + m[1] + ", " + m[2] : (name || "Option " + i);
   }
 
-  function blockTable(b, i) {
+  function blockTable(b, i, college) {
     var wrap = el("div", "cplpw-lblock");
     var label = blockLabel(b.name, i);
     var head = el("div", "bh");
@@ -1226,7 +1231,7 @@
     var tb = document.createElement("tbody");
     b.rows.forEach(function (r) {
       var tr = document.createElement("tr");
-      var th = el("th", null, [el("span", "code", r.code), el("span", "ctitle", r.title)]);
+      var th = el("th", null, [el("span", "code", r.code), el("span", "ctitle", r.title), outcomeSlot(college, r.code, r.title)]);
       th.setAttribute("scope", "row");
       tr.appendChild(th);
       tr.appendChild(el("td", "num", fmtU(r.units)));
@@ -1373,7 +1378,7 @@
             document.createTextNode(", articulated at " + (prog.college || "this college") + " as credit by exam."),
           ]));
           var bl = el("div", "cplpw-lblocks");
-          model.blocks.forEach(function (b, i) { bl.appendChild(blockTable(b, i)); });
+          model.blocks.forEach(function (b, i) { bl.appendChild(blockTable(b, i, prog.college)); });
           sec.appendChild(bl);
         } else {
           sec.appendChild(el("p", "cplpw-lcpl", "The A.S. record did not load, so its courses and CPL figure are not shown."));
@@ -1510,6 +1515,11 @@
     ".cplpw-rmark { font-size:.8rem; color: var(--text-body); overflow-wrap:anywhere; }",
     ".cplpw-rmark b { font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--seal-blue-text); margin-right:4px; }",
     ".cplpw-rmark.lead b { color: var(--text-muted); }",
+    ".cplpw-outchip { display:inline-block; margin-right:8px; border:0; background:none; padding:0; min-height:24px; font:inherit; font-size:.8rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
+    ".cplpw-outinline { display:block; margin-top:6px; padding:8px 10px; border-top:1px dashed var(--border-strong); font-size:.85rem; min-width:0; overflow-wrap:anywhere; }",
+    ".cplpw-outinline .cplpw-outblock h3 { font-size:.9rem; margin:4px 0; }",
+    ".cplpw-radopts { display:block; min-width:0; overflow-wrap:anywhere; }",
+    ".cpladp-panel .cpl-maplinks:empty, .cplpw-panel .cpl-maplinks:empty { display:none; }",
     ".cplpw-rdiffer { margin:0 0 10px; font-size:.88rem; color: var(--text-body); }",
     ".cplpw-rdiffer b { display:inline-block; margin-right:8px; padding:0 6px; border:1px solid var(--border-strong); border-radius:4px; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; color: var(--text-muted); }",
     ".cplpw-ralt { font-size:.8rem; color: var(--text-muted); border-top:1px dashed var(--border-strong); padding-top:4px; margin-top:2px; overflow-wrap:anywhere; }",
@@ -1583,7 +1593,13 @@
   // A failed list read falls back to the pilot file and says so; a failed record read
   // shows the file's copy where it has one, and otherwise says the read failed.
   var ROEP_REST = SUPABASE_URL + "/rest/v1";
-  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked,counts:display->counts";
+  // The index reads the light columns alone. Its course counts sit inside display (3.5 KB a row), and an OFFSET
+  // page evaluates every row it skips: on 17,000 records the last pages ran past anon's 3-second statement
+  // timeout, the table answered 500, and CPL Pathways said the table could not be read (#3461 page finding 5,
+  // Chaffey's row in the Commons; the same cost S405 measured on the Program Requirements tab). The counts are read
+  // after the list, in pages bounded by the list's own keys, so no page skips a row (readRoepCounts).
+  var ROEP_INDEX_SELECT = "college,control_number,program_title,award,checked";
+  var ROEP_COUNTS_SELECT = "college,control_number,counts:display->counts";
   var ROEP_RECORD_SELECT = "college,control_number,program_title,award,catalog_year,source_url,measure,record,checked,display";
   var ROEP_READ_MS = 10000;
   var roepTable = { index: null, error: null, platforms: {}, reviewer: false, records: {} };
@@ -1645,6 +1661,36 @@
       return rows.length < ROEP_PAGE ? out : wave(ROEP_PAGE);
     });
   }
+  // A PostgREST filter value in double quotes, so a college's comma, period or parenthesis reads as text.
+  function roepQ(v) { return '"' + String(v).replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'; }
+  // The filter for one page of the index, from its first row's key to its last row's, inclusive. The keys come from
+  // the list the table just answered in its own order, so the database compares them as it sorted them.
+  function roepKeyRange(first, last) {
+    var c1 = first.college, n1 = first.control_number, c2 = last.college, n2 = last.control_number;
+    if (c1 === c2) return "&college=eq." + encodeURIComponent(c1) + "&control_number=gte." + encodeURIComponent(n1) +
+      "&control_number=lte." + encodeURIComponent(n2);
+    return "&or=" + encodeURIComponent("(and(college.eq." + roepQ(c1) + ",control_number.gte." + roepQ(n1) + "),and(college.gt." +
+      roepQ(c1) + ",college.lt." + roepQ(c2) + "),and(college.eq." + roepQ(c2) + ",control_number.lte." + roepQ(n2) + "))");
+  }
+  // Each listed program's course counts (display->counts), ROEP_WAVE pages at a time, each page bounded by keys
+  // rather than an offset. Resolves either way: a failed page leaves its programs without counts.
+  function readRoepCounts(index) {
+    var pages = [];
+    for (var i = 0; i < index.length; i += ROEP_PAGE) pages.push([index[i], index[Math.min(index.length, i + ROEP_PAGE) - 1]]);
+    var byId = {};
+    function one(pg) {
+      return roepGet("/program_requirement_records?select=" + ROEP_COUNTS_SELECT + roepKeyRange(pg[0], pg[1]) + "&order=college,control_number")
+        .then(function (rows) { (rows || []).forEach(function (r) { if (r && r.counts) byId[roepId(r.college, r.control_number)] = r.counts; }); },
+          function () { return null; });
+    }
+    function wave(from) {
+      if (from >= pages.length) return Promise.resolve();
+      return Promise.all(pages.slice(from, from + ROEP_WAVE).map(one)).then(function () { return wave(from + ROEP_WAVE); });
+    }
+    return wave(0).then(function () {
+      index.forEach(function (r) { var k = roepId(r.college, r.control_number); if (byId[k]) r.counts = byId[k]; });
+    });
+  }
   // The list of programs, and each college's catalog platform for the record's
   // provenance line. Resolves either way; a failure leaves the index null.
   function readRoepIndex() {
@@ -1660,10 +1706,13 @@
       ]).then(function (got) {
         var plat = {};
         (got[1] || []).forEach(function (r) { if (r && r.college) plat[r.college] = r.catalog_platform; });
-        roepTable.index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
-        roepTable.platforms = plat;
-        roepTable.reviewer = reviewer;
-        roepTable.error = null;
+        var index = (got[0] || []).filter(function (r) { return r && r.college && r.control_number; });
+        return readRoepCounts(index).then(function () {
+          roepTable.index = index;
+          roepTable.platforms = plat;
+          roepTable.reviewer = reviewer;
+          roepTable.error = null;
+        });
       }, function (e) {
         roepTable.index = null;
         roepTable.error = (e && e.message) || "the read failed";
@@ -1779,9 +1828,11 @@
     var adopt = info && info.adopt;
     if (adopt && (adopt.credentials || []).length) {
       var a = adopt.credentials[0];
+      // The build's full count: the record's list may still hold four until the display apply lands (#3412).
+      var adoptN = Math.max(adopt.credentials_n || 0, adopt.credentials.length);
       out.push({ kind: "adopt", label: "Could adopt", text: a.credential + " (articulated at " + (a.colleges || []).slice(0, 2).join(", ")
         + ((a.colleges || []).length > 2 ? " and " + ((a.colleges || []).length - 2) + " more" : "") + ")"
-        + (adopt.credentials.length > 1 ? "; " + (adopt.credentials.length - 1) + " more credential" + (adopt.credentials.length === 2 ? "" : "s") : "") });
+        + (adoptN > 1 ? "; " + (adoptN - 1) + " more credential" + (adoptN === 2 ? "" : "s") : "") });
     }
     var consider = info && info.consider;
     if (consider && consider.length) {
@@ -1841,6 +1892,333 @@
     return roepMapTerm(rec, code);
   }
 
+  /* ── a course's SLOs and objectives, beside the page (Sam, 2026-11-16: "Add link on course cards to SLOs and
+   * Objectives if they are collected and have them open to a side bar") ──
+   * course_outcomes holds each course's student learning outcomes (kind slo) and its course objectives (kind
+   * objective) as the outline or catalog prints them, public read; the newest read_run of each kind is current, as the
+   * Program Requirements tab reads them (program_requirements.js openOutcomes). A college's codes are read once, as an
+   * index, when a card of it is on screen; a course's rows when its word is pressed. A catalog record's own course
+   * outcomes (record.course_outcomes) count as collected too. The two sides print a code with or without its space or
+   * hyphen, so they meet on statKey. A course with nothing collected carries no word, and a failed index read leaves
+   * only the record's own; it never passes for none. */
+  var OUT_SELECT = "course_code,course_title,kind,heading,lead,outcomes,shape,fingerprint,source_url,source_kind,source_system,read_run,loaded_at";
+  var OUT_SOURCE = { course_outline: "the course outline of record", catalog: "the catalog's course page" };
+  var OUT_KIND = { slo: "Student learning outcomes", objective: "Course objectives" };
+  var outIndex = {};
+  var outPrinted = {};
+  var outPending = false;
+  function outcomeIndex(college) {
+    if (!outIndex[college]) {
+      outIndex[college] = roepGetAll("/course_outcomes?select=course_code,kind&kind=in.(slo,objective)&college=eq." + encodeURIComponent(college) + "&order=id")
+        .then(function (rows) {
+          var m = {};
+          (rows || []).forEach(function (r) {
+            var k = statKey(r.course_code);
+            if (!k) return;
+            var e = m[k] || (m[k] = { codes: [], slo: 0, objective: 0 });
+            if (e.codes.indexOf(r.course_code) < 0) e.codes.push(r.course_code);
+            if (r.kind === "objective") e.objective += 1; else e.slo += 1;
+          });
+          return m;
+        }, function (err) { delete outIndex[college]; throw err; });
+    }
+    return outIndex[college];
+  }
+  // The outcomes a catalog record prints for one course, with where they were read.
+  function roepPrintedOutcomes(rec, code) {
+    var hit = ((rec && rec.record && rec.record.course_outcomes) || []).filter(function (x) {
+      return x && statKey(x.code) === statKey(code) && (x.outcomes || []).length;
+    })[0];
+    return hit ? { outcomes: hit.outcomes, year: rec.catalog_year || "", url: rec.source_url || "" } : null;
+  }
+  // The card's place for the word; filled once the college's index is read.
+  function outcomeSlot(college, code, title, printed) {
+    var s = el("span", "cplpw-outslot");
+    if (!college || !code) return s;
+    s.setAttribute("data-college", college);
+    s.setAttribute("data-code", code);
+    if (title) s.setAttribute("data-title", title);
+    if (printed) outPrinted[college + "|" + statKey(code)] = printed;
+    if (!outPending) {
+      outPending = true;
+      setTimeout(function () { outPending = false; fillOutcomeSlots(); }, 0);
+    }
+    return s;
+  }
+  function outcomeWords(entry, printed) {
+    var slo = !!((entry && entry.slo) || printed), obj = !!(entry && entry.objective);
+    return slo && obj ? "SLOs and objectives" : obj ? "Objectives" : slo ? "SLOs" : "";
+  }
+  function paintOutcomeSlot(slot, entry) {
+    var college = slot.getAttribute("data-college"), code = slot.getAttribute("data-code");
+    var printed = outPrinted[college + "|" + statKey(code)] || null;
+    var words = outcomeWords(entry, printed);
+    clearNode(slot);
+    if (!words) return;
+    // The chip opens the text on the card itself (Sam, 2026-11-16, #3412); the word beside it still opens the panel.
+    var o = { college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed };
+    var region = el("div", "cplpw-outinline");
+    region.id = "cplpw-outinline-" + (++outInlineSeq);
+    region.hidden = true;
+    var chip = el("button", "cplpw-outchip", words);
+    chip.type = "button";
+    chip.setAttribute("aria-expanded", "false");
+    chip.setAttribute("aria-controls", region.id);
+    chip.setAttribute("aria-label", words + " of " + code + " at " + college + "; show the text on this card");
+    chip.addEventListener("click", function () {
+      var open = chip.getAttribute("aria-expanded") !== "true";
+      chip.setAttribute("aria-expanded", String(open));
+      region.hidden = !open;
+      if (open && !region.getAttribute("data-filled")) { region.setAttribute("data-filled", "1"); fillOutcomes(o, region, function () { return true; }); }
+    });
+    slot.appendChild(chip);
+    var b = el("button", "cplpw-outword", words);
+    b.type = "button";
+    b.setAttribute("aria-haspopup", "dialog");
+    b.setAttribute("aria-controls", "cplpw-panel");
+    b.setAttribute("aria-label", words + " of " + code + " at " + college + "; open them beside the page");
+    b.addEventListener("click", function () {
+      openOutcomePanel({ college: college, code: code, title: slot.getAttribute("data-title") || "", entry: entry, printed: printed }, b);
+    });
+    slot.appendChild(b);
+    slot.appendChild(region);
+  }
+  var outInlineSeq = 0;
+  function fillOutcomeSlots() {
+    var slots = document.querySelectorAll(".cplpw-outslot[data-code]:not([data-out-done])");
+    var by = {};
+    Array.prototype.forEach.call(slots, function (s) {
+      s.setAttribute("data-out-done", "1");
+      var c = s.getAttribute("data-college");
+      (by[c] || (by[c] = [])).push(s);
+    });
+    Object.keys(by).forEach(function (college) {
+      outcomeIndex(college).then(function (idx) {
+        by[college].forEach(function (s) { paintOutcomeSlot(s, idx[statKey(s.getAttribute("data-code"))] || null); });
+      }, function () {
+        by[college].forEach(function (s) { paintOutcomeSlot(s, null); });
+      });
+    });
+  }
+  // The newest read of each kind, one row per printed list.
+  function currentOutcomeRows(rows) {
+    var top = {}, seen = {};
+    rows.forEach(function (r) { var k = r.kind || "slo"; top[k] = Math.max(top[k] || 0, Number(r.read_run) || 0); });
+    return rows.filter(function (r) {
+      var k = r.kind || "slo", f = k + "|" + r.fingerprint;
+      if ((Number(r.read_run) || 0) !== top[k] || seen[f]) return false;
+      seen[f] = true;
+      return true;
+    });
+  }
+  function outcomeList(items, paragraph) {
+    if (paragraph && items.length === 1) return el("p", null, items[0]);
+    var ol = el("ol");
+    items.forEach(function (t) { ol.appendChild(el("li", null, t)); });
+    return ol;
+  }
+  function outcomeDay(ts) { return statDay(ts); }
+  function outcomeSource(url, words) {
+    if (!url) return words;
+    var a = el("a", null, words);
+    a.href = url; a.target = "_blank"; a.rel = "noopener";
+    return a;
+  }
+  function outcomeBlock(o) {
+    var box = el("section", "cplpw-outblock");
+    var items = o.outcomes || [];
+    var kindWords = OUT_KIND[o.kind] || OUT_KIND.slo;
+    box.appendChild(el("h3", null, kindWords + " (" + items.length + ")"));
+    if (o.heading && String(o.heading).toLowerCase() !== kindWords.toLowerCase()) box.appendChild(el("p", "cplpw-outsrc", "Printed under " + o.heading));
+    if (o.lead) box.appendChild(el("p", null, o.lead));
+    box.appendChild(outcomeList(items, o.shape === "paragraph"));
+    box.appendChild(el("p", "cplpw-outsrc", ["As printed in ", outcomeSource(o.source_url, OUT_SOURCE[o.source_kind] || "the college's page"),
+      (o.source_system ? " (" + o.source_system + ")" : "") + (o.loaded_at ? ", read " + outcomeDay(o.loaded_at) : "") + "."]));
+    return box;
+  }
+  function printedBlock(p) {
+    var box = el("section", "cplpw-outblock");
+    box.appendChild(el("h3", null, "Learning outcomes in the program's catalog record (" + p.outcomes.length + ")"));
+    box.appendChild(outcomeList(p.outcomes, false));
+    box.appendChild(el("p", "cplpw-outsrc", ["Copied word for word from ", outcomeSource(p.url, "the " + (p.year ? p.year + " " : "") + "catalog"), "."]));
+    return box;
+  }
+
+  /* ── Ask Sierra beside the tab (Sam, 2026-11-16: "Add Sierra bubble on bottom right and have it open to sidebar
+   * instead of new tab") ──
+   * sierra/sidebar.js, the chip and side bar the Library tab and the public visuals carry, loaded on the first visit
+   * and shown on the tabs that name themselves in window.CPL_SIERRA_TABS. Every such tab asks the same question of the
+   * tab now showing (library.js reads the same registry), so no tab's listener undoes another's. Its tokens take First
+   * Light's roles under the Library's id, lib-sbar-css, so whichever tab loads first maps them once; the two strings are
+   * pinned equal by tests/cpl_pathways_side_panels.test.js. */
+  var SIERRA_TABS = window.CPL_SIERRA_TABS = window.CPL_SIERRA_TABS || {};
+  SIERRA_TABS["cpl-pathways"] = true;
+  var SBAR_TOKENS = ".sbar,.sbar-chip{--sierra-bar-bg:var(--surface-opaque);--sierra-bar-ink:var(--text-body);" +
+    "--sierra-bar-heading:var(--text-strong);--sierra-bar-link:var(--accent-link);--sierra-bar-line:var(--border);" +
+    "--sierra-bar-focus:var(--focus-ring);--sierra-bar-chip-bg:var(--seal-blue);--sierra-bar-chip-ink:var(--on-seal-blue);" +
+    "--sierra-bar-shadow:color-mix(in srgb,var(--text-strong) 16%,transparent);" +
+    "--sierra-bar-head-font:'Playfair Display',Georgia,serif;}";
+  function sierraChipWanted() {
+    var T = window.CPL_TABS;
+    return !!(T && typeof T.current === "function" && SIERRA_TABS[T.current()]);
+  }
+  function showSierraChip() {
+    var B = window.CPL_SIERRA_BAR;
+    if (B && typeof B.setChip === "function") B.setChip(sierraChipWanted());
+  }
+  function ensureSierraBar() {
+    if (!document.getElementById("lib-sbar-css")) {
+      var st = document.createElement("style");
+      st.id = "lib-sbar-css";
+      st.textContent = SBAR_TOKENS;
+      document.head.appendChild(st);
+    }
+    if (window.CPL_SIERRA_BAR) { showSierraChip(); return; }
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript("sierra/sidebar.js", "CPL_SIERRA_BAR", showSierraChip);
+    }
+  }
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "cpl-pathways") ensureSierraBar();
+    else showSierraChip();
+  });
+
+  /* The side panel: one, reused, on the right like Ask Sierra's bar, non-modal so the cards stay in reach. Close and
+     Escape shut it and hand focus back to the word that opened it; another tab shuts it. It shuts Sierra's bar on
+     opening, and Sierra's word shuts it, so the two never stack. */
+  var PANEL_CSS_ID = "cplpw-panel-css";
+  var PANEL_CSS = [
+    ".cplpw-panel { position:fixed; z-index:9002; top:0; right:0; bottom:0; width:min(520px, 100vw); display:flex; flex-direction:column; background: var(--surface-opaque); color: var(--text-body); border-left:1px solid var(--border); box-shadow:-8px 0 24px color-mix(in srgb, var(--text-strong) 16%, transparent); }",
+    ".cplpw-panel[hidden] { display:none !important; }",
+    ".cplpw-panel-head { flex:0 0 auto; display:flex; align-items:flex-start; justify-content:space-between; gap:12px; padding:max(12px, env(safe-area-inset-top, 0px)) 18px 10px; border-bottom:1px solid var(--border); }",
+    ".cplpw-panel-head h2 { margin:0; font-size:1.15rem; line-height:1.3; color: var(--text-strong); }",
+    ".cplpw-panel-head h2:focus { outline:none; }",
+    ".cplpw-panel-head h2:focus-visible { outline:2px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-panel-head p { margin:2px 0 0; font-size:.88rem; color: var(--text-muted); }",
+    ".cplpw-panel-close { flex:0 0 auto; background:none; border:0; padding:0 2px; min-height:24px; min-width:24px; font:inherit; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }",
+    ".cplpw-panel-close:focus-visible, .cplpw-panel a:focus-visible { outline:2px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    ".cplpw-panel-body { flex:1 1 auto; overflow:auto; padding:6px 18px 28px; line-height:1.5; }",
+    ".cplpw-panel-body h3 { margin:16px 0 6px; font-size:1rem; color: var(--text-strong); }",
+    ".cplpw-panel-body ol { margin:0 0 6px; padding-left:1.4em; }",
+    ".cplpw-panel-body li { margin:4px 0; }",
+    ".cplpw-panel-body a { color: var(--accent-link); }",
+    ".cplpw-outsrc { margin:4px 0 0; font-size:.82rem; color: var(--text-muted); }",
+    ".cplpw-outslot:empty { display:none; }",
+    ".cplpw-outword { justify-self:start; background:none; border:0; padding:0; min-height:24px; font:inherit; font-size:.82rem; font-weight:600; color: var(--accent-link); text-decoration:underline; text-underline-offset:3px; cursor:pointer; text-align:left; }",
+    ".cplpw-outword:focus-visible { outline:2px solid var(--focus-ring, var(--cobalt)); outline-offset:2px; }",
+    "@media print { .cplpw-panel { display:none !important; } }"
+  ].join("\n");
+  var panel = null, panelOpener = null, panelSeq = 0;
+  function ensurePanelCss() {
+    if (document.getElementById(PANEL_CSS_ID)) return;
+    var st = document.createElement("style");
+    st.id = PANEL_CSS_ID;
+    st.textContent = PANEL_CSS;
+    document.head.appendChild(st);
+  }
+  function ensurePanel() {
+    if (panel) return panel;
+    ensurePanelCss();
+    panel = el("aside", "cplpw-panel");
+    panel.id = "cplpw-panel";
+    panel.hidden = true;
+    panel.setAttribute("role", "dialog");
+    panel.setAttribute("aria-modal", "false");
+    panel.setAttribute("aria-labelledby", "cplpw-panel-h");
+    var head = el("div", "cplpw-panel-head");
+    var words = el("div");
+    var h = el("h2", null, "");
+    h.id = "cplpw-panel-h";
+    h.tabIndex = -1;
+    words.appendChild(h);
+    words.appendChild(el("p", "cplpw-panel-sub", ""));
+    var close = el("button", "cplpw-panel-close", "Close");
+    close.type = "button";
+    close.addEventListener("click", closePanel);
+    head.appendChild(words);
+    head.appendChild(close);
+    panel.appendChild(head);
+    panel.appendChild(el("div", "cplpw-panel-body"));
+    panel.addEventListener("keydown", function (e) { if (e.key === "Escape") closePanel(); });
+    document.body.appendChild(panel);
+    return panel;
+  }
+  function closePanel() {
+    if (!panel || panel.hidden) return;
+    panel.hidden = true;
+    panelSeq++;
+    var back = panelOpener;
+    panelOpener = null;
+    if (back && back.hasAttribute && back.hasAttribute("aria-expanded")) back.setAttribute("aria-expanded", "false");
+    if (back && document.contains(back)) { try { back.focus(); } catch (e) { /* best effort */ } }
+  }
+  function openPanel(title, sub, opener) {
+    ensurePanel();
+    var bar = window.CPL_SIERRA_BAR;
+    if (bar && typeof bar.isOpen === "function" && bar.isOpen() && typeof bar.close === "function") bar.close();
+    if (panelOpener && panelOpener !== opener && panelOpener.hasAttribute && panelOpener.hasAttribute("aria-expanded")) panelOpener.setAttribute("aria-expanded", "false");
+    panelOpener = opener || null;
+    panel.querySelector("#cplpw-panel-h").textContent = title;
+    panel.querySelector(".cplpw-panel-sub").textContent = sub || "";
+    var body = panel.querySelector(".cplpw-panel-body");
+    clearNode(body);
+    panel.hidden = false;
+    try { panel.querySelector("#cplpw-panel-h").focus(); } catch (e) { /* best effort */ }
+    return body;
+  }
+  function openOutcomePanel(o, opener) {
+    var body = openPanel(outcomeWords(o.entry, o.printed), o.code + (o.title ? " " + o.title : "") + ", " + o.college, opener);
+    var seq = ++panelSeq;
+    fillOutcomes(o, body, function () { return seq === panelSeq; });
+  }
+  // The same text in the panel or on the card: the record's printed outcomes, then the newest read of each kind.
+  function fillOutcomes(o, body, live) {
+    if (o.printed) body.appendChild(printedBlock(o.printed));
+    if (!o.entry || !(o.entry.codes || []).length) return;
+    var wait = el("p", "cplpw-outsrc", "Reading the outlines…");
+    body.appendChild(wait);
+    // Both kinds by name, each shown under its own heading, so an objective never stands in for an SLO.
+    var path = "/course_outcomes?select=" + OUT_SELECT + "&kind=in.(slo,objective)&college=eq." + encodeURIComponent(o.college) +
+      "&course_code=in.(" + o.entry.codes.map(function (c) { return encodeURIComponent('"' + String(c).replace(/"/g, "") + '"'); }).join(",") + ")" +
+      "&order=read_run.desc,id.desc";
+    roepGet(path).then(function (rows) {
+      if (!live()) return;
+      if (wait.parentNode) wait.parentNode.removeChild(wait);
+      var cur = currentOutcomeRows(rows || []);
+      // SLOs first, then objectives, as the outline prints them.
+      cur.sort(function (a, b) { return (a.kind === "objective" ? 1 : 0) - (b.kind === "objective" ? 1 : 0); });
+      if (!cur.length && !o.printed) { body.appendChild(el("p", null, "No outcomes or objectives are on file for " + o.code + " yet.")); return; }
+      cur.forEach(function (r) { if ((r.outcomes || []).length) body.appendChild(outcomeBlock(r)); });
+    }, function (err) {
+      if (!live()) return;
+      wait.textContent = "The outlines could not be read (" + ((err && err.message) || "no answer") + ").";
+    });
+  }
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (!(e && e.detail && e.detail.tab === "cpl-pathways")) closePanel();
+  });
+
+  /* One Adopt chip per catalog-record course card (issue #3412 item 4, Sam, 2026-11-16): the shared component in
+     adopt_panel.js names a college that already gives CPL for the course, its own Strong Workforce region first, and
+     opens this tab's side panel with every Could-adopt and For-consideration exhibit, each with a checkbox, and one
+     request for the checked ones. map_links.js's MAP line sits beside each exhibit in the panel, never on the card. */
+  function roepAdoptChip(rec, code, info) {
+    var P = window.CPL_ADOPT_PANEL;
+    if (!P) return null;
+    var m = P.fromRoep(info);
+    if (!m.items.length) return null;
+    m.items.forEach(function (it) { it.links = mapLinksNode; });
+    if (!adoptState.data && !adoptState.error) loadAdopt();
+    var chip = P.chip(m, { home: rec.college, adopterCollege: rec.college, controls: "cplpw-panel", open: openPanel,
+      sub: rec.college + (rec.title ? ", " + rec.title : ""),
+      course: { code: code, title: (info && info.title) || "" },
+      program: { id: rec.key || (rec.college + " " + rec.control_number), label: rec.college + (rec.title ? " — " + rec.title : "") } });
+    if (!chip) return null;
+    var box = el("span", "cplpw-radopts");
+    box.appendChild(chip);
+    return box;
+  }
+
   function roepTile(rec, c, b) {
     var courses = rec.display.courses || {};
     var m = roepMeasure(rec);
@@ -1861,6 +2239,9 @@
     marks.forEach(function (k) {
       li.appendChild(el("span", "cplpw-rmark" + (k.kind === "here" ? "" : " lead"), [el("b", null, k.label), k.text]));
     });
+    var adoptChip = roepAdoptChip(rec, c.code, info);
+    if (adoptChip) li.appendChild(adoptChip);
+    li.appendChild(outcomeSlot(rec.college, c.code, info.title, roepPrintedOutcomes(rec, c.code)));
     (c.alternatives || []).forEach(function (a) {
       var ai = courses[a.code] || {};
       var bits = ["or ", el("b", null, a.code)];
@@ -2247,10 +2628,20 @@
     controls.appendChild(roepSeg("Viewer", "who", [["college", "College"], ["public", "Student or public"]], roepView.who,
       function (v) { roepView.who = v; renderRoepProgram(root, rec, note); }));
     var ask = el("a", "cplpw-rask", "Ask Sierra");
-    ask.href = "sierra/?ask=" + encodeURIComponent("What does the " + rec.title + " (" + roepAward(rec) + ") at " + rec.college
-      + " require, and which of its courses can a learner clear through credit for prior learning?");
+    var question = "What does the " + rec.title + " (" + roepAward(rec) + ") at " + rec.college
+      + " require, and which of its courses can a learner clear through credit for prior learning?";
+    ask.href = "sierra/?ask=" + encodeURIComponent(question);
     ask.target = "_blank";
     ask.rel = "noopener";
+    // Beside the page, in her side bar, when the bar has loaded; her own page in a new tab only when it has not.
+    ask.setAttribute("aria-haspopup", "dialog");
+    ask.addEventListener("click", function (e) {
+      var B = window.CPL_SIERRA_BAR;
+      if (!B || typeof B.ask !== "function") return;
+      e.preventDefault();
+      closePanel();
+      B.ask(question, ask);
+    });
     controls.appendChild(ask);
     wrap.appendChild(controls);
 
@@ -2502,7 +2893,7 @@
     if (cpl && cpl.agree) return { g: "◍", cls: "pot" };
     return { g: "·", cls: "none" };
   }
-  function memCourseRow(c, showCore) {
+  function memCourseRow(c, showCore, college) {
     var row = el("div", "mem-row");
     var top = el("div", "mem-top");
     var gl = memGlyph(c.cpl);
@@ -2519,6 +2910,7 @@
       top.appendChild(b);
     }
     if (c.units != null) top.appendChild(el("span", "mem-u", fmtU(c.units) + "u"));
+    if (c.code && college) top.appendChild(outcomeSlot(college, c.code, c.title));
     if (c.cpl && c.cpl.ref && c.cpl.ref.id) {
       var chip = el("span", "mem-chip col-only", c.cpl.ref.id);
       chip.title = "Common Course Reference — the shared identifier linking this course to the same course at other colleges (C-ID / Common Course Number, or a minted M-ID crosswalk).";
@@ -2573,7 +2965,7 @@
     var body = el("div", "mem-qbody");
     body.style.display = "none";
     if (full && full.courses) {
-      full.courses.forEach(function (c) { body.appendChild(memCourseRow(c, true)); });
+      full.courses.forEach(function (c) { body.appendChild(memCourseRow(c, true, full.cer_college)); });
     }
     head.addEventListener("click", function () {
       var open = body.style.display !== "none";
@@ -2622,7 +3014,7 @@
       document.createTextNode("The bachelor's own (largely upper-division) courses, from the CCCCO program→course master file. These are new degrees, so most upper-division courses carry no CPL yet — the CPL power is in the "),
       el("b", null, "qualifying associate credential below"),
       document.createTextNode(", and that credit is accepted toward this bachelor's with none of the transfer limits CSU and UC apply.")]));
-    (mem.courses || []).forEach(function (c) { box.appendChild(memCourseRow(c, false)); });
+    (mem.courses || []).forEach(function (c) { box.appendChild(memCourseRow(c, false, mem.cer_college || (prog && prog.college))); });
 
     // ── Where the CPL lives: qualifying associate credentials ──
     var qual = mem.qualifying || [];
@@ -2953,10 +3345,18 @@
     var opp = el("span", "cplpw-oppacts");
     var oppView = document.createElement("a");
     oppView.className = "cplpw-oppact"; oppView.target = "_blank"; oppView.rel = "noopener";
-    oppView.textContent = "View CPL Visual";
+    oppView.textContent = "Create My College CPL Plan";
     var oppGet = document.createElement("button");
     oppGet.type = "button"; oppGet.className = "cplpw-oppact"; oppGet.textContent = "Download CPL Extract";
     opp.appendChild(oppView); opp.appendChild(oppGet);
+    /* The visual builds in its own tab and shows its progress there (Sam, 2026-11-16: "the users needs to know to wait
+       rather than click again"); here the word says the tab opened, for a few seconds, then reads as before. */
+    var oppWas = "Create My College CPL Plan", oppTimer = 0;
+    oppView.addEventListener("click", function () {
+      oppView.textContent = "Opened in a new tab, building";
+      clearTimeout(oppTimer);
+      oppTimer = setTimeout(function () { oppView.textContent = oppWas; }, 8000);
+    });
     function syncOpp() {
       opp.hidden = !col.value;
       if (col.value) oppView.href = "library/cpl-opportunity/?college=" + encodeURIComponent(col.value);
@@ -2964,8 +3364,16 @@
     oppGet.addEventListener("click", function () {
       var college = col.value, was = "Download CPL Extract";
       if (!college || !(window.CPL_TABS && window.CPL_TABS.loadScript)) return;
-      oppGet.disabled = true; oppGet.textContent = "Building… (the first time reads about 45 MB)";
+      oppGet.disabled = true;
+      var t0 = Date.now();
+      var tick = function () {
+        var sec = Math.floor((Date.now() - t0) / 1000);
+        oppGet.textContent = "Building, " + Math.floor(sec / 60) + ":" + (sec % 60 < 10 ? "0" : "") + (sec % 60) + " so far (the first time reads about 45 MB)";
+      };
+      tick();
+      var clock = setInterval(tick, 1000);
       var done = function (msg) {
+        clearInterval(clock);
         oppGet.disabled = false; oppGet.textContent = msg;
         setTimeout(function () { oppGet.textContent = was; }, 3200);
       };
@@ -3342,6 +3750,8 @@
       .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
       .then(function (d) { adoptState.data = d && Array.isArray(d.credentials) ? d : null; if (!adoptState.data) adoptState.error = "the file holds no credentials"; })
       .catch(function (e) { adoptState.error = (e && e.message) || "the read failed"; });
+    // The Adopt chip's component reads the same file through this one read (adopt_panel.js).
+    if (window.CPL_ADOPT_PANEL) window.CPL_ADOPT_PANEL.useLoading(adoptState.loading.then(function () { return adoptState.data; }));
     return adoptState.loading;
   }
   /* { here: [...], could: [...], recs: [...] } for a college, or every college when college is "". */
@@ -3851,6 +4261,7 @@
 
   function activate() {
     ensureCss();
+    ensureSierraBar();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     wireSharedChoice();
@@ -3948,5 +4359,13 @@
     _readCollegeStatus: readCollegeStatus,
     _choiceKey: choiceKey,
     _pickedCollege: function () { return pickedCollege; },
+    _roepAdoptChip: roepAdoptChip,
+    _outcomeSlot: outcomeSlot,
+    _fillOutcomeSlots: fillOutcomeSlots,
+    _openOutcomePanel: openOutcomePanel,
+    _closePanel: closePanel,
+    _currentOutcomeRows: currentOutcomeRows,
+    _ensureSierraBar: ensureSierraBar,
+    _SBAR_TOKENS: SBAR_TOKENS,
   };
 })();

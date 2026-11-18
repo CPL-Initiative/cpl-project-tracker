@@ -5,11 +5,11 @@
  "title": "Political Economics",
  "award": "A.A. Degree",
  "source_url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/19152",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 5840,
+  "input_tokens": 7021,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 5840,
-    "output_tokens": 1899,
+    "input_tokens": 7021,
+    "output_tokens": 2114,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 1899,
+  "output_tokens": 2114,
   "output_tokens_details": {
-   "thinking_tokens": 501
+   "thinking_tokens": 639
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.06134,
- "ms": 14939,
- "seconds": 15.5,
+ "cost_usd": 0.07036,
+ "ms": 18525,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 12,
    "listed": 12,
-   "share": 0.833,
-   "missing": [
-    "ECON2",
-    "ECON4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON4",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "ECONC2001",
-    "ECONC2002",
     "SCSCI10"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2002",
     "SCSCI10"
    ],
    "pass": true
@@ -81,6 +87,7 @@
     20.0,
     21.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -102,6 +109,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": true
  },
  "record": {
@@ -113,7 +126,20 @@
     "max": 21
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Identify the three macroeconomic goals and determine economic policies to achieve them.",
     "Explain how deviations from the optimal output level might occur including an analysis of the impact of taxes, externalities, and price controls by correctly applying these issues to the demand and supply model.",
@@ -279,20 +305,21 @@
   "missing_explained": [
    {
     "code": "ECON 2",
-    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics (common course numbering) instead"
    },
    {
     "code": "ECON 4",
-    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics instead (likely renumbered)"
+    "why": "not in the text; catalog prints ECON C2001 Principles of Microeconomics (common course numbering) instead"
    }
   ],
   "notes": [
-   "The 'Required Core' stated total of 17.00-18.00 units covers the two ECON courses plus the three nested 'Choose one' groups; it is recorded on the Required Core block, while each nested choice is recorded as its own block with its own printed total.",
-   "ECON C2002 and ECON C2001 appear to be the Common Course Numbering versions of closed-list ECON 2 and ECON 4 (same titles); reviewer should confirm.",
-   "SCSCI 10 Statistics for Social Science is not in the closed list.",
-   "Program total printed as 'Total : 20.00- 21.00'.",
-   "No careers are named in the section."
+   "The Required Core's printed 17.00-18.00 units covers the two ECON courses plus the three nested 'Choose one' groups (6 + 4 + 4 + 3-4); the nested choices are recorded as separate blocks.",
+   "ECON C2002 and ECON C2001 appear to be the common-course-numbered versions of closed-list ECON 2 and ECON 4; recorded as catalog additions.",
+   "SCSCI 10 is not in the closed list; recorded as a catalog addition.",
+   "JOUR 10 is titled 'Introduction to Newswriting' in the catalog vs. 'Newswriting' in the closed list.",
+   "Total printed as 20.00-21.00 for the major; no degree total or GE pattern is printed on the page."
   ]
  },
- "extracted_run": "38242003226"
+ "extracted_run": "44090894573",
+ "catalog_year": "2026-2027"
 }

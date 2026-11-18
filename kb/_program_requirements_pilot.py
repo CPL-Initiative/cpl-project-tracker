@@ -177,6 +177,14 @@ def run_numbers(text: str, subj: str) -> list[tuple[str, int]]:
     return out
 
 
+def printed_forms(course: dict) -> list[str]:
+    """Every code the catalog may print for a listed course besides its own: "printed" (a
+    renumber, a prefix alias or the Program Course File id) and "printed_also" (the id where
+    a kept alias already holds "printed"; S653). The one reader of both: net_hits and
+    find_codes count a course by any of them."""
+    return ([course["printed"]] if course.get("printed") else []) + list(course.get("printed_also") or [])
+
+
 def find_codes(text: str, courses: list[dict]) -> dict[str, list[int]]:
     """{normalized code: [positions]} for each listed course the text names."""
     out: dict[str, list[int]] = {}
@@ -185,7 +193,8 @@ def find_codes(text: str, courses: list[dict]) -> dict[str, list[int]]:
         pos: set[int] = set()
         # A renumbered course is looked for as the catalog prints it too ("printed", from
         # the college's course_renumbers; Merced's MECH22A for the file's AGMA 11, S423).
-        for code in [c.get("code") or ""] + ([c["printed"]] if c.get("printed") else []):
+        # A course an alias and its course id both reach carries both forms (printed_forms, S653).
+        for code in [c.get("code") or ""] + printed_forms(c):
             pat = code_pattern(code)
             if pat is None:
                 continue

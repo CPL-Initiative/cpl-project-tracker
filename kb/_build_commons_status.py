@@ -144,7 +144,7 @@ def row_requirements(root):
         "issues": [
             {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "carry": "routine", "open": tab + "/list/fail"},
             {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "carry": "routine", "open": tab + "/list/unread"},
-        ],
+        ] + blocked_hunt_issues(root),
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
             {"words": "A misread is fixed in the procedure, and the records it touched are reread together"},
@@ -202,6 +202,15 @@ def row_exhibit(root):
     # The auditor's own tallies, for the tab's Progress view (S436): the titles MAP carries today,
     # the ones with no identity yet, and the classifier's title confidence below 0.80 and 0.60.
     stats = figure(lambda: load_json(root, "kb/exhibit_audit/latest.json")["stats"])
+    # The universe is every title in the reference plus the titles MAP carries with no entry yet (the auditor's
+    # unclassified backlog): a procedure that classifies a backlog title writes it already stamped, so a universe of
+    # the reference's keys alone grew by exactly the day's stamps and its remaining work could never fall
+    # (q-exhibit-universe-grows-with-stamps-s661; d-exhibit-universe-includes-map-backlog-s662).
+    # The audit and the reference are written at different times: a backlog title the audit counted may already be a
+    # key here, so take the larger of the two readings rather than their sum (COBIx on #3378, point 1).
+    st_ = stats["n"] or {}
+    backlog = st_.get("unclassified_in_map") or 0
+    universe = max(len(ut), (st_.get("total_raw_titles") or 0) + backlog)
     bands = (stats["n"] or {}).get("title_confidence_bands") or {}
     below_60 = sum(bands.get(b, 0) for b in ("0.40-0.59", "<0.40")) if bands else None
     below_80 = below_60 + bands.get("0.60-0.79", 0) if bands else None
@@ -250,11 +259,13 @@ def row_exhibit(root):
         # conflicts keep the Review card, where Change to Proposed Title and Teach a rule live.
         "links": [{"href": tab + "/list", "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
-        "pair": [{"n": len(stamped), "of": len(ut),
-                  "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/list"},
+        "pair": [{"n": len(stamped), "of": universe,
+                  "words": "titles carry a review stamp (%s a person's, %s a cohort's)%s; %s credentials, %s of %s records stamped"
+                           % (fmt(person), fmt(cohort),
+                              ", counting %s titles MAP carries with no entry yet" % fmt(backlog) if backlog else "",
+                              fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/list"},
                  # A person's stamp is complete by definition here (complete is a review stamp), so no "of them" clause.
-                 confirmed_pair(person, len(ut), None, "", tab + "/list")],
+                 confirmed_pair(person, universe, None, "", tab + "/list")],
         "tests": ["curator-stamped", "procedure-settled", "confirmed by a person"],
         # An issue that reads zero has nothing in it and is left out; an unread one (null, its error) stays.
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
@@ -298,7 +309,7 @@ def row_exhibit(root):
             {"words": "Counted from the nightly procedures run; the tab's Progress view also lists its own queues (another look, rules to turn on) and drops a title from them the moment a person decides it"},
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
-        "facts": {"titles": len(ut), "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
+        "facts": {"titles": len(ut), "backlog": backlog, "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
                   "confirmed": person,
                   "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,
                   "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),
@@ -734,6 +745,19 @@ CARRY_REASONS = ["no_procedure", "unsure", "reaches", "keep_call"]
 CARRY_KEYS = set(CARRY_REASONS) | {"routine"}
 
 
+def blocked_hunt_issues(root):
+    """Sam's blocked-catalog hunt (S678, #3464 item 8): the same to-do the College Data Collection page shows, from the
+    one source kb/_blocked_catalogs.py; it leaves this list once every college is filed."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_blocked_catalogs", os.path.join(root, "kb", "_blocked_catalogs.py"))
+    if spec is None or not os.path.exists(spec.origin):
+        return []
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    i = m.queue_issue(root)
+    return [i] if i else []
+
+
 def build_queue(rows):
     groups = {k: [] for k in CARRY_REASONS}
     carried, unsorted = [], []
@@ -794,11 +818,32 @@ def load_history(root):
     return h
 
 
-def record_history(history, day, readings):
+def pair_readings(rows):
+    """Each reference's settled count, its universe and its person-confirmed count for the day (S661, the Commons
+    curation ETA reads its pace from these): {key: [n, of, person]}."""
+    out = {}
+    for r in rows:
+        p = r.get("pair") or []
+        n = p[0].get("n") if p else None
+        of = p[0].get("of") if p else None
+        # Both counts or neither: a missing universe would read as a negative remaining (COBIx on #3375).
+        if isinstance(n, int) and not isinstance(n, bool) and isinstance(of, int) and not isinstance(of, bool):
+            person = p[1].get("n") if len(p) > 1 and isinstance(p[1].get("n"), int) else None
+            out[r.get("key")] = [n, p[0].get("of"), person]
+    return out
+
+
+def record_history(history, day, readings, pairs=None):
     days = dict(history.get("days") or {})
     days[day] = readings
     keep = sorted(days)[-HISTORY_KEEP_DAYS:]
-    return {"schema": 1, "days": {d: days[d] for d in keep}}
+    out = {"schema": 1, "days": {d: days[d] for d in keep}}
+    P = dict(history.get("pairs") or {})
+    if pairs is not None:
+        P[day] = pairs
+    if P:
+        out["pairs"] = {d: P[d] for d in sorted(P)[-HISTORY_KEEP_DAYS:]}
+    return out
 
 
 def _when(stamp):
@@ -1043,7 +1088,9 @@ def decision_batches(root):
                 continue
             out.append({"kind": "decision", "project": p, "n": 1, "title": c.get("title"), "teaches": c.get("text"),
                         "open": c.get("link"), "todo_id": c.get("todo_id"),
-                        "stop": "It ends when you answer the sheet."})
+                        "chosen": c.get("if_no_reply"),
+                        # An ask never blocks the queue (Sam, 2026-11-16, issue #3358): the default already stands.
+                        "stop": "It stands unless you change it."})
     return out
 
 
@@ -1113,7 +1160,7 @@ def build_with_history(root, now=None):
         building.append(row)
     queue = build_queue(rows)
     now = now or iso_now()
-    history = record_history(load_history(root), now[:10], routine_readings(rows))
+    history = record_history(load_history(root), now[:10], routine_readings(rows), pair_readings(rows))
     queue["stalled"] = build_stalled(rows, history, now)
     dk = _safe(docket, root)
     bl = _safe(lambda r: batches(r, queue, dk if isinstance(dk, list) else []), root)

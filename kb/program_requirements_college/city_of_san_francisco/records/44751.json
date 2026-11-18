@@ -46,20 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 16,
+   "placed": 17,
    "listed": 19,
-   "share": 0.842,
+   "share": 0.895,
    "missing": [
     "BIO112",
-    "HLTH52",
-    "STAT1000E"
+    "HLTH52"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "STATC1000E",
+     "listed": "STAT1000E",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 26,
+   "count": 25,
    "codes": [
     "BIO111",
     "BIO134",
@@ -85,8 +91,7 @@
     "HLTH91C",
     "HLTH91H",
     "HLTH95",
-    "PSYC21",
-    "STATC1000E"
+    "PSYC21"
    ],
    "flagged": [
     "BIO111",
@@ -113,8 +118,7 @@
     "HLTH91C",
     "HLTH91H",
     "HLTH95",
-    "PSYC21",
-    "STATC1000E"
+    "PSYC21"
    ],
    "pass": true
   },
@@ -571,5 +575,6 @@
    "The Community Health Worker Certificate of Achievement section that follows (pages 236-237) was not used."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

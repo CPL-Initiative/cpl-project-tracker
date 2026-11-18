@@ -44,33 +44,39 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "CIS17A",
     "CIS5",
     "CIS7",
-    "CSC17A",
-    "MATHC2210",
-    "MATHC2220"
+    "CSC17A"
    ],
    "flagged": [
     "CIS17A",
     "CIS5",
     "CIS7",
-    "CSC17A",
-    "MATHC2210",
-    "MATHC2220"
+    "CSC17A"
    ],
    "pass": true
   },
@@ -85,6 +91,7 @@
     29.0,
     29.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -100,6 +107,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -238,5 +256,6 @@
    "Per-group stated units (4, 3, 3, 3, 4) are printed for each 'Choose one course' group; block total 29 units as printed."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

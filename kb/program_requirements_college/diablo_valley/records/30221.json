@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 7,
    "listed": 7,
-   "share": 0.571,
-   "missing": [
-    "BIOSC119",
-    "BIOSC120",
-    "BIOSC146"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL120",
+     "listed": "BIOSC120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "BIOL119",
-    "BIOL120",
-    "BIOL146"
-   ],
-   "flagged": [
-    "BIOL119",
-    "BIOL120",
-    "BIOL146"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -258,5 +263,6 @@
    "Award field in the request is truncated ('12 to fewer than 18 semester(or 18 to fewer than 27'); the catalog states 13 units total."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

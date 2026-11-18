@@ -44,32 +44,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 28,
    "listed": 28,
-   "share": 0.857,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -83,6 +91,7 @@
     20.0,
     22.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -98,6 +107,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -408,5 +428,6 @@
    "Degree requires 60 CSU-transferable units including Cal-GETC; all major courses with grade C or better (or P)."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

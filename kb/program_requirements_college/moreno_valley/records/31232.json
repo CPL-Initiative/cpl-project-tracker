@@ -44,45 +44,44 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 48,
+   "placed": 54,
    "listed": 54,
-   "share": 0.889,
-   "missing": [
-    "ECO7",
-    "HIS28",
-    "HIS29",
-    "HIS44",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 4,
    "codes": [
-    "ECONC2002",
     "ENGL20",
     "ENGL25",
     "HIST11",
-    "HIST12",
-    "HIST28",
-    "HIST29",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "HIST12"
    ],
    "flagged": [
-    "ECONC2002",
     "ENGL20",
     "ENGL25",
     "HIST11",
-    "HIST12",
-    "HIST28",
-    "HIST29",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "HIST12"
    ],
    "pass": true
   },
@@ -97,6 +96,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -112,6 +112,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -806,5 +817,6 @@
    "No GE pattern is named; the text only refers to general education requirements in the college catalog."
   ]
  },
- "extracted_run": "38095617505"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

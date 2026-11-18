@@ -22,66 +22,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 305,
+   "placed": 316,
    "listed": 316,
-   "share": 0.965,
-   "missing": [
-    "AHS1",
-    "HIS15",
-    "HIS2",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS32",
-    "HIS35",
-    "HIS44",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 18,
+   "count": 7,
    "codes": [
     "ARE36",
-    "ARTHC1100",
     "ARTHC1200",
     "ASL10",
     "COMM3",
     "DAND19",
     "ENGL16",
-    "ENGL48",
-    "HIST15",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST32",
-    "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL48"
    ],
    "flagged": [
     "ARE36",
-    "ARTHC1100",
     "ARTHC1200",
     "ASL10",
     "COMM3",
     "DAND19",
     "ENGL16",
-    "ENGL48",
-    "HIST15",
-    "HIST2",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST32",
-    "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL48"
    ],
    "pass": true
   },
@@ -96,6 +80,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Applicable Studio Courses Include:' chooses units but names no minimum"
    ]
@@ -118,6 +103,12 @@
    "count": 5,
    "not_verbatim": [],
    "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -2482,5 +2473,6 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "38113150250"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

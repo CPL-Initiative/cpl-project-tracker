@@ -50,9 +50,899 @@
   },
   "2026-11-14": {
    "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
-   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 374,
-   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2866,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 499,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2855,
    "requirements|#program-requirements/list/unread|active programs with no record yet": 2820
+  },
+  "2026-11-15": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 499,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2844,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 2820
+  },
+  "2026-11-16": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 499,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2844,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 2820
+  },
+  "2026-11-17": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 499,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2822,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 2828
+  },
+  "2026-11-18": {
+   "course|#coci-lookup/list/nodesc|blank descriptions": 5750,
+   "exhibit|#exhibits/list/nosubj|credentials with no Common SUBJ (# exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist": 499,
+   "requirements|#program-requirements/list/fail|active programs whose record fails a check": 2617,
+   "requirements|#program-requirements/list/unread|active programs with no record yet": 2829
+  }
+ },
+ "pairs": {
+  "2026-10-18": {
+   "course": [
+    3208,
+    27581,
+    null
+   ],
+   "cr": [
+    156,
+    2159,
+    30
+   ],
+   "exhibit": [
+    1729,
+    5311,
+    null
+   ],
+   "requirements": [
+    11625,
+    20282,
+    null
+   ],
+   "subjects": [
+    122,
+    147,
+    null
+   ]
+  },
+  "2026-10-19": {
+   "course": [
+    3208,
+    27581,
+    null
+   ],
+   "cr": [
+    156,
+    2159,
+    30
+   ],
+   "exhibit": [
+    1729,
+    5313,
+    null
+   ],
+   "requirements": [
+    11689,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-20": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1729,
+    5320,
+    null
+   ],
+   "requirements": [
+    11689,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-21": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1737,
+    5339,
+    null
+   ],
+   "requirements": [
+    12134,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-22": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1754,
+    5381,
+    null
+   ],
+   "requirements": [
+    12885,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-23": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1770,
+    5388,
+    null
+   ],
+   "requirements": [
+    12977,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-24": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1770,
+    5388,
+    null
+   ],
+   "requirements": [
+    13183,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-25": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1770,
+    5388,
+    null
+   ],
+   "requirements": [
+    13183,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-26": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1770,
+    5388,
+    null
+   ],
+   "requirements": [
+    13194,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-27": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1770,
+    5388,
+    null
+   ],
+   "requirements": [
+    13201,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-28": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1824,
+    5445,
+    null
+   ],
+   "requirements": [
+    13211,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-29": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1838,
+    5479,
+    null
+   ],
+   "requirements": [
+    13211,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-30": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    1844,
+    5480,
+    null
+   ],
+   "requirements": [
+    13243,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-10-31": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    2339,
+    5493,
+    null
+   ],
+   "requirements": [
+    13545,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-11-01": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    2402,
+    5493,
+    null
+   ],
+   "requirements": [
+    13545,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-11-02": {
+   "course": [
+    3205,
+    27581,
+    null
+   ],
+   "cr": [
+    459,
+    2344,
+    null
+   ],
+   "exhibit": [
+    2457,
+    5493,
+    null
+   ],
+   "requirements": [
+    13553,
+    20282,
+    null
+   ],
+   "subjects": [
+    136,
+    147,
+    null
+   ]
+  },
+  "2026-11-03": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    460,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2457,
+    5508,
+    1173
+   ],
+   "requirements": [
+    13553,
+    20282,
+    32
+   ],
+   "subjects": [
+    136,
+    147,
+    122
+   ]
+  },
+  "2026-11-04": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2483,
+    5582,
+    1173
+   ],
+   "requirements": [
+    13553,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-05": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2502,
+    5582,
+    1173
+   ],
+   "requirements": [
+    13553,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-06": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2552,
+    5594,
+    1227
+   ],
+   "requirements": [
+    13554,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-07": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2556,
+    5594,
+    1220
+   ],
+   "requirements": [
+    13595,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-08": {
+   "course": [
+    3205,
+    27581,
+    957
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2556,
+    5596,
+    1220
+   ],
+   "requirements": [
+    13654,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-09": {
+   "course": [
+    4500,
+    27581,
+    965
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2556,
+    5596,
+    1226
+   ],
+   "requirements": [
+    13654,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-10": {
+   "course": [
+    5026,
+    27581,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2571,
+    5713,
+    1226
+   ],
+   "requirements": [
+    13675,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-11": {
+   "course": [
+    5026,
+    27581,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2680,
+    5894,
+    1236
+   ],
+   "requirements": [
+    13782,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-12": {
+   "course": [
+    5026,
+    27581,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2696,
+    5896,
+    1236
+   ],
+   "requirements": [
+    13987,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-13": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    2894,
+    5924,
+    1435
+   ],
+   "requirements": [
+    14598,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-14": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    3027,
+    6057,
+    1435
+   ],
+   "requirements": [
+    14615,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-15": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    3027,
+    6057,
+    1435
+   ],
+   "requirements": [
+    14618,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-16": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    3027,
+    6107,
+    1435
+   ],
+   "requirements": [
+    14618,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-17": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    3027,
+    6107,
+    1435
+   ],
+   "requirements": [
+    14632,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
+  },
+  "2026-11-18": {
+   "course": [
+    5027,
+    27582,
+    968
+   ],
+   "cr": [
+    461,
+    2344,
+    97
+   ],
+   "exhibit": [
+    3037,
+    6145,
+    1435
+   ],
+   "requirements": [
+    14836,
+    20282,
+    32
+   ],
+   "subjects": [
+    147,
+    147,
+    133
+   ]
   }
  },
  "schema": 1

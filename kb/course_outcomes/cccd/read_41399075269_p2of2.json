@@ -199,9 +199,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes:",
    "outcomes": [
-    "Course outcomes:",
     "Record periodic interest on an outstanding bond or long-term note payable and amortize any related premium or discount in accordance with the effective interest method.",
     "Compute diluted earnings per share utilizing the treasury stock method and the if-converted method.",
     "Calculate taxable income, identify permanent differences, recognize temporary differences and their reversal over multiple years, and reconcile taxable income to net income in the preparation of income taxes to be reported on the income statement and balance sheet.",
@@ -211,7 +210,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "ee2e06db31b5f48b2625f27d976efe61"
+   "fingerprint": "9ecfc9814f1228c765af870fd0009999"
   },
   {
    "code": "ACCT G220",
@@ -1770,9 +1769,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course Outcomes:",
    "outcomes": [
-    "Course Outcomes:",
     "Prepare a set of financial goals to support a personal financial plan that includes a balance sheet, a cash flow statement, and a monthly budget.",
     "Analyze the types, uses, costs, and consequences of consumer credit.",
     "Assess types of insurance coverage, long-term savings, and retirement and estate planning.",
@@ -1780,7 +1778,7 @@
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "cb9ea797d30ca6b16e624929fb0903ee"
+   "fingerprint": "7069cfb3f1e026dc816125efd29799e3"
   },
   {
    "code": "BUS G139",

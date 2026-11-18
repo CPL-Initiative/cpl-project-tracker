@@ -1,36 +1,36 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-11-14T02:36:49.480Z",
+ "_as_of": "2026-11-18T03:57:49.012Z",
  "credit_recommendations": {
-  "total": "16,958",
-  "ccc": "1,522",
-  "local": "15,436",
+  "total": "17,421",
+  "ccc": "1,529",
+  "local": "15,892",
   "by_type": [
-   "Standardized Assessment: 8,161",
-   "Industry Certification: 5,748",
-   "Credit By Exam: 2,345",
-   "Portfolio Review: 447",
-   "Military: 155"
+   "Standardized Assessment: 8,151",
+   "Industry Certification: 6,177",
+   "Credit By Exam: 2,376",
+   "Portfolio Review: 456",
+   "Military: 159"
   ]
  },
  "map_exhibits": {
-  "total": "2,732",
+  "total": "2,681",
   "ccc": "162",
-  "local": "2,570",
+  "local": "2,519",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
   "total": "162",
   "program_areas": "12",
-  "distinct_credit_recs": "1,312",
-  "adoptions": "1,509",
+  "distinct_credit_recs": "1,317",
+  "adoptions": "1,516",
   "adopting_colleges": "70",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 54,
-    "credit_recs": 173,
-    "adoptions": 173,
+    "credit_recs": 175,
+    "adoptions": 175,
     "could_adopt": 0
    },
    {
@@ -43,15 +43,15 @@
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 303,
-    "adoptions": 356,
-    "could_adopt": 45
+    "credit_recs": 305,
+    "adoptions": 358,
+    "could_adopt": 44
    },
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 124,
-    "adoptions": 128,
+    "credit_recs": 125,
+    "adoptions": 130,
     "could_adopt": 74
    },
    {
@@ -93,7 +93,7 @@
     "sector": "World Languages",
     "exhibits": 2,
     "credit_recs": 19,
-    "adoptions": 56,
+    "adoptions": 57,
     "could_adopt": 34
    },
    {
@@ -108,7 +108,7 @@
     "exhibits": 1,
     "credit_recs": 34,
     "adoptions": 42,
-    "could_adopt": 40
+    "could_adopt": 49
    },
    {
     "sector": "Other Statewide",
@@ -118,7 +118,7 @@
     "could_adopt": 0
    }
   ],
-  "could_adopt_total": 114,
+  "could_adopt_total": 115,
   "in_progress": [
    "HVAC — faculty currently meeting"
   ]
@@ -129,7 +129,7 @@
   "adopting_ccc": "70"
  },
  "veteran_sprint": {
-  "star_colleges": "68",
+  "star_colleges": "69",
   "basic_training_colleges": "91 Colleges"
  }
 }

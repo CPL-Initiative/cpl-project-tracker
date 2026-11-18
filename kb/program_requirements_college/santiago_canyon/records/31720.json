@@ -46,29 +46,33 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 26,
+   "placed": 27,
    "listed": 29,
-   "share": 0.897,
+   "share": 0.931,
    "missing": [
     "ECONC2002",
-    "HIST120",
     "HISTC1002H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ECON102",
-    "HIST121H",
-    "HISTC1001"
+    "HIST121H"
    ],
    "flagged": [
     "ECON102",
-    "HIST121H",
-    "HISTC1001"
+    "HIST121H"
    ],
    "pass": true
   },
@@ -407,7 +411,7 @@
    "The page also prints a Global Studies Certificate of Achievement section, which was not read for this record."
   ]
  },
- "extracted_run": "43339249633",
+ "extracted_run": 43693830334,
  "source_sha": "7509b08f7b81036d",
  "source_codes": [
   "GEOG100",
@@ -439,5 +443,6 @@
   "POLT221",
   "POLT230"
  ],
- "source_coverage": 0.966
+ "source_coverage": 0.966,
+ "read_run": "43339249633"
 }

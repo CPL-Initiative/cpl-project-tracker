@@ -5,22 +5,47 @@
  "found": 148,
  "extracted": 148,
  "errors": 0,
- "passed_machine_checks": 126,
+ "passed_machine_checks": 132,
  "failed": {
-  "coverage": 3,
-  "invented": 4,
-  "arithmetic": 20,
+  "coverage": 1,
+  "invented": 1,
+  "arithmetic": 15,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 10.12,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 10.12,
  "cost_per_program": 0.0684,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "31317",
    "title": "Game Art: Environments and Vehicles",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5194",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2271,
+     "content": 2271,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "38113150250"
+ "run": "44063769303"
 }

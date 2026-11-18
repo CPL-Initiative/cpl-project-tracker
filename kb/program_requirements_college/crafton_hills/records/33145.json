@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8234,
-    "output_tokens": 4097,
+    "output_tokens": 4164,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,36 @@
     "model": null
    }
   ],
-  "output_tokens": 4097,
+  "output_tokens": 4164,
   "output_tokens_details": {
-   "thinking_tokens": 1581
+   "thinking_tokens": 1663
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11488,
- "ms": 30528,
- "seconds": 30.9,
+ "cost_usd": 0.11622,
+ "ms": 32099,
+ "seconds": 33.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 23,
    "listed": 24,
-   "share": 0.917,
+   "share": 0.958,
    "missing": [
-    "ANTHRO107",
-    "SOC141H"
+    "ANTHRO107"
    ],
    "unexplained": [
-    "ANTHRO107",
-    "SOC141H"
+    "ANTHRO107"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 14,
+   "count": 13,
    "codes": [
     "ANTH107",
     "ETHS107",
@@ -74,7 +72,6 @@
     "HIST171",
     "HIST171H",
     "SOCI141",
-    "SOCI141H",
     "STATC1000",
     "STATC1000H"
    ],
@@ -499,15 +496,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total printed as 'TOTAL CREDIT HOURS: 21-23'; recorded as major units (credit units), not noncredit hours.",
-   "Geology options in Lists B and C are printed as OR/AND rows: GEOL 100 or 100H alone (4), OR GEOL 101 or 101H AND GEOL 160, OR GEOL 140 AND GEOL 141 (the page's 'Combinations' note confirms these pairings). Recorded as separate entries; reviewer should note the required pairings.",
-   "List B also allows 'any List A not already used'; List C allows 'any List A or List B course not already used'.",
-   "HIST 171 or HIST 171H is printed twice in List B (once after the geology OR rows); recorded once.",
-   "Catalog prints ANTH 107; closed list stores ANTHRO 107 with the same title (Native Peoples of North America); treated as the same course.",
-   "Catalog prints SOCI 141H; closed list stores SOC 141H with the same title; treated as the same course. SOCI 141 (non-honors) is not in the closed list and marked as an addition.",
-   "Closed-list codes without spaces (ANTH100, ANTHC1001, SOCIC1000, RELIG110, etc.) matched to the catalog's spaced codes.",
-   "No careers named; description mentions only 'a vast range of occupations'."
+   "List B and List C GEOL options are printed as combinations: GEOL 100 (or 100H) alone, OR GEOL 101 (or 101H) AND GEOL 160, OR GEOL 140 AND GEOL 141; the lab pairs are recorded as separate entries in each block.",
+   "List B allows 'any List A not already used'; List C allows 'any List A or List B course not already used'.",
+   "HIST 171 / HIST 171H is printed twice in List B; recorded once.",
+   "Catalog prints ANTH 107; closed list has ANTHRO 107 (same title, Native Peoples of North America). Treated as the same course, not a catalog addition — reviewer should confirm.",
+   "Catalog prints SOCI 141H; closed list has SOC 141H (same title). Treated as the same course — reviewer should confirm. SOCI 141 (non-honors) is not in the closed list.",
+   "Closed-list codes without spaces (ANTH100, ANTHC1001, RELIG110, SOCIC1000, etc.) matched to the catalog's spaced codes.",
+   "Total printed as 'TOTAL CREDIT HOURS: 21-23' for the major; no degree total or Cal-GETC unit figure printed.",
+   "Description mentions 'a vast range of occupations' but names no specific careers."
   ]
  },
- "extracted_run": "39093935031"
+ "extracted_run": "44090908924",
+ "catalog_year": "2026-2027"
 }

@@ -351,6 +351,41 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(14) the sidecars go beside --out when one is given, never into the repo", p1 == os.path.join(tmp, B.PROGRAMS_DIR)
           and p2 == os.path.join(tmp, "x", "commons_data_programs"), (p1, p2))
 
+# (14b) a units cause carries the two figures it rests on, and the sidecar says whether the college has correction
+# rules of its own (S678, #3461 page findings 3 and 4: "our lists add up to A; the catalog prints B", and who acts).
+with tempfile.TemporaryDirectory() as tmp:
+    cd = os.path.join(tmp, B.COLLEGE_DIR, "ridge")
+    os.makedirs(os.path.join(cd, "records"))
+    json.dump([{"control_number": "42987", "title": "Physical Therapist Assistant", "award": "A.S. Degree", "method": "sitemap_page",
+                "source": {"url": "https://ridge.example.edu/pta"}},
+               {"control_number": "20677", "title": "Business", "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+                "method": "sitemap_page", "source": {"url": "https://ridge.example.edu/bus"}},
+               {"control_number": "07777", "title": "Welding", "award": "A.S. Degree", "method": "sitemap_page", "source": {"url": "https://ridge.example.edu/w"}}],
+              open(os.path.join(cd, "sources.json"), "w"))
+    json.dump({"control_number": "42987", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [56.0, 56.0], "stated": [65.0, 65.0]}}},
+              open(os.path.join(cd, "records", "42987.json"), "w"))
+    json.dump({"control_number": "20677", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [18.0, 19.0], "stated": [18.0, None]}}},
+              open(os.path.join(cd, "records", "20677.json"), "w"))
+    json.dump({"control_number": "07777", "score": {"measure": "units", "arithmetic": {"status": "unequal", "computed": [30, 30], "stated": [60, 60]}}},
+              open(os.path.join(cd, "records", "07777.json"), "w"))
+    os.makedirs(os.path.join(tmp, "kb"), exist_ok=True)
+    json.dump({"colleges": {"Hill College": {"steps": []}}}, open(os.path.join(tmp, "kb", "program_requirements_reconcile.json"), "w"))
+    census = {"programs": [
+        {"college": "Ridge College", "control_number": "42987", "cause": "units_unequal", "lever": "reconcile_steps"},
+        {"college": "Ridge College", "control_number": "20677", "cause": "units_unequal", "lever": "reconcile_steps"},
+        {"college": "Ridge College", "control_number": "07777", "cause": "coverage_fails", "lever": "reconcile_steps"},
+        {"college": "Hill College", "control_number": "11111", "cause": "page_not_found", "lever": "reader_page_search"}]}
+    sc = B.cause_programs(tmp, census, {"ridge": {"name": "Ridge College"}, "hill": {"name": "Hill College"}})
+    by = {r["cn"]: r for r in (sc.get("ridge") or {}).get("programs") or []}
+    check("(14b) ⭐ a units cause carries our lists' sum beside the figure the catalog prints",
+          by.get("42987", {}).get("units") == {"sum": [56.0, 56.0], "printed": [65.0, 65.0], "status": "unequal", "measure": "units", "against": "program"},
+          by.get("42987"))
+    check("(14b) a one-ended figure reads as its low end twice", by.get("20677", {}).get("units", {}).get("printed") == [18.0, 18.0], by.get("20677"))
+    check("(14b) a cause that is not a units cause carries no figures", "units" not in by.get("07777", {"units": 1}), by.get("07777"))
+    check("(14b) ⭐ the sidecar says whether the college has correction rules of its own on file",
+          sc["ridge"]["correction_rules"] is False and sc["hill"]["correction_rules"] is True, (sc["ridge"].get("correction_rules"), sc["hill"].get("correction_rules")))
+    check("(14b) the sidecar still reads back whole", json.loads(B.dumps_programs(sc["ridge"])) == sc["ridge"])
+
 # Then the repo: each committed sidecar agrees with its college's cause counts, and --check covers them.
 PD = os.path.join(ROOT, B.PROGRAMS_DIR)
 off = []
@@ -414,6 +449,49 @@ nob = sorted(c["name"] for c in C if c.get("objectives_printed") is False)
 check("(15) ⭐ the colleges whose committed reads are all on an outline system that prints no objectives, and hold none, are flagged",
       all(k in B.FIELDS for k in ("outcomes_file", "outline_system", "objectives_printed"))
       and all(set(c["outline_system"] or []) <= set(B.NO_OBJECTIVES_SYSTEMS) for c in C if c.get("objectives_printed") is False), nob)
+# (15b) S650: the no-objectives list is the SLO reader's OBJECTIVES_BY_SYSTEM, read and never restated: every system
+# whose "printed" is not True, and no literal list left in the builder to drift from it.
+_rs = importlib.util.spec_from_file_location("course_outcomes_read_t", os.path.join(ROOT, "kb", "_course_outcomes_read.py"))
+_R = importlib.util.module_from_spec(_rs)
+_rs.loader.exec_module(_R)
+_src = open(os.path.join(ROOT, "kb", "_build_commons_data_status.py"), encoding="utf-8").read()
+check("(15b) the no-objectives list is derived from OBJECTIVES_BY_SYSTEM, the one source",
+      set(B.NO_OBJECTIVES_SYSTEMS) == {k for k, v in _R.OBJECTIVES_BY_SYSTEM.items() if v.get("printed") is not True}
+      and "OBJECTIVES_BY_SYSTEM" in _src and not re.search(r"NO_OBJECTIVES_SYSTEMS\s*=\s*[(\[{]", _src), B.NO_OBJECTIVES_SYSTEMS)
+# (15b) COBIx on #3286: the table lives in kb/_objectives_by_system.py; the reader imports it, and neither the reader
+# nor the builder holds a literal copy or imports the other.
+_rsrc = open(os.path.join(ROOT, "kb", "_course_outcomes_read.py"), encoding="utf-8").read()
+check("(15b) OBJECTIVES_BY_SYSTEM has one home, which the reader and the builder both read",
+      "_objectives_by_system.py" in _rsrc and "_objectives_by_system.py" in _src
+      and not re.search(r"OBJECTIVES_BY_SYSTEM\s*=\s*\{", _rsrc) and not re.search(r"OBJECTIVES_BY_SYSTEM\s*=\s*\{", _src)
+      and "_course_outcomes_read.py\"" not in _src)
+# (15c) S650, COBIx on #3229: the displayed catalog link splits from the capture root, and a check reads in words.
+check("(15c) a 500 from Pingora with an empty body reads unreachable from here, never not found; a 404 reads not found",
+      B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 0}) == "unreachable from here"
+      and B.link_check_result({"status": 500, "server": "pingora"}) == "unreachable from here"
+      and B.link_check_result({"status": 500, "server": "Pingora", "body_bytes": 812}) == "the site answered with a server error"
+      and B.link_check_result({"status": 500, "server": "nginx"}) == "the site answered with a server error"
+      and B.link_check_result({"status": 403}) == "the site refused the request"
+      and B.link_check_result({"status": 404}) == "not found" and B.link_check_result({"status": 200}) == "answered"
+      and B.link_check_result({}) == "not checked")
+_OLD = "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf"
+_NEW = "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf"
+_one = B.catalog_links("no_such_college", "https://catalog.example.edu/")
+_two = B.catalog_links("copper_mountain", _OLD)
+check("(15c) the capture root stays what the capture read; a listed college displays its catalog page",
+      _one == {"catalog_url": "https://catalog.example.edu/", "capture_root": "https://catalog.example.edu/", "catalog_now": None, "catalog_checks": None}
+      and _two["capture_root"] == _OLD and _two["catalog_url"] == B.CATALOG_LINKS["copper_mountain"]["display"]
+      and all(k.get("result") for k in _two["catalog_checks"])
+      and all(k in B.FIELDS for k in ("capture_root", "catalog_now", "catalog_checks")), _two)
+# (15d) COBIx on #3286: the override expires. After a recapture names the 10.26.26 PDF, the builder stops with a plain
+# message to remove the stale entry, never keeping the hand-entered link and checks.
+_stop = None
+try:
+    B.catalog_links("copper_mountain", _NEW)
+except SystemExit as e:
+    _stop = str(e)
+check("(15d) a recaptured college's override stops the builder with a plain message naming the entry to remove",
+      _stop is not None and "copper_mountain" in _stop and "stale" in _stop and "Remove the entry" in _stop, _stop)
 oc = [c for c in C if c.get("outcomes_file")]
 bad15 = []
 for c in oc:
@@ -448,6 +526,35 @@ with tempfile.TemporaryDirectory() as tmp:
     check("(15) objectives_printed is false only when every read is on a system that prints none and none was found",
           B.objectives_printed({"obj": set(), "systems": {"elumen"}}) is False and B.objectives_printed({"obj": {"X1"}, "systems": {"elumen"}}) is None
           and B.objectives_printed({"obj": set(), "systems": {"elumen", "curriqunet"}}) is None and B.objectives_printed(None) is None)
+# (16) #3310: the three college cards' facts, from committed files only
+members = B.ppm_members(ROOT)
+check("(16) the Program Pathways Mapper list is parsed from the committed SQL, every row a (college, host) pair",
+      len(members) >= 60 and ("Modesto Junior College", "programmap.mjc.edu") in members and all(h and "." in h for _, h in members), len(members))
+check("(16) ⭐ every VALUES row of the mapper list is parsed: the parsed count equals the rows the SQL holds (60), so a row "
+      "with an escaped quote or a different shape cannot vanish before it reaches unmatched",
+      len(members) == B.ppm_values_rows(ROOT) == 60 and d["collection"]["ppm_list"]["colleges"] == len(members), (len(members), B.ppm_values_rows(ROOT)))
+with tempfile.TemporaryDirectory() as tmp16:
+    os.makedirs(os.path.join(tmp16, os.path.dirname(B.PPM_LIST)))
+    with open(os.path.join(tmp16, B.PPM_LIST), "w", encoding="utf-8") as f16:
+        f16.write("with v(college, host) as (values\n('A College','a.edu'),\n( 'St. Mary''s College' , 'b.edu' ),\n('C College','c.edu')\n)\nselect 1;\n")
+    m16 = B.ppm_members(tmp16)
+    check("(16) the parse reads an escaped quote and loose spacing as rows, never dropping one",
+          len(m16) == B.ppm_values_rows(tmp16) == 3 and ("St. Mary's College", "b.edu") in m16, m16)
+col16 = {c["name"]: c for c in d["colleges"]}
+cc16 = col16["Columbia College"]["collection"]
+check("(16) ⭐ Columbia: the program reader's model, records, run and cost from the receipts; its SLO read's run, system and kind",
+      cc16["program_reader"]["models"] == {"claude-opus-5-5": 82} and cc16["program_reader"]["run"] == "42471133430" and cc16["program_reader"]["cost_usd"] == 5.46
+      and cc16["slo_read"]["run"] == "41979319035" and cc16["slo_read"]["system"] == "elumen" and cc16["slo_read"]["source_kind"] == "catalog", cc16)
+check("(16) Columbia holds no mapper entry and no committed map; Mt. SAC's two maps both name a program in its records",
+      cc16["ppm_member"] is None and cc16["maps"]["held"] == 0
+      and col16["Mt. San Antonio College"]["collection"]["maps"]["held"] == 2 and col16["Mt. San Antonio College"]["collection"]["maps"]["on_records"] == 2)
+check("(16) ⭐ the SIS and curriculum system integration reads none known for every college: nothing records one",
+      not B.SIS_CMS_INTEGRATION and all(c["collection"]["integration"] == {"state": "none_known"} for c in d["colleges"]))
+check("(16) every college carries the collection key, flagged internal, and the statewide facts name their files",
+      all("collection" in c for c in d["colleges"]) and B.FIELDS["collection"] == "internal"
+      and d["collection"]["ppm_list"]["file"] == B.PPM_LIST and d["collection"]["coci"]["workflow"] == B.COCI_WORKFLOW
+      and all(os.path.exists(os.path.join(ROOT, p)) for p in d["collection"]["coci"]["exports"]) and d["collection"]["coci"]["exports"])
+check("(16) no person's name in the facts the cards read", "Sam" not in json.dumps(d["collection"]) and "Pedro" not in json.dumps(d["collection"]))
 wf = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
 check("(14) ⭐ the census workflow commits the sidecar folder with the file", "git add -A " + B.PROGRAMS_DIR in wf, "")
 

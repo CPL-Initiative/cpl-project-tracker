@@ -1110,3 +1110,85 @@ Verbatim from the lane's Next list, moved at the S646 checkpoint when Ally Barke
   of 2026-11-11 15:30Z, approved 15:31Z).** ELL IET Version 5's form, from the vault source. The record moved by guarded
   UPDATE (version `3`, a fourth `versions` entry, `refresh_note` and `regen` emptied, `library-s641@bot`); receipt and
   rollback `kb/receipts/cpl_library_dsp_v3_public_s641_2026-11-12.sql`.
+
+## Moved from the lane (S650 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md`, replaced by short lines in the S650 checkpoint (the four open rows restated as one current paragraph).
+
+✅ **① One card per project is built (S509, #2538).** `cpl_library.project` names a piece's project; pieces that share it draw as one card, a row per piece with its title as the link, and Edit, Regenerate and Details on each row (each acts on one record; the one departure from the mockup). Edit sets the project; a college's pair files under one. Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql` (13 projects of 2, read back). Test: `library` block (15).
+
+✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form. A dropped file filed as is asks for its SharePoint link: a record holds a link, not bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
+
+- **Ally Barker's "How to confirm and qualify for CPL funding" (S647, #3216 `42b2d9eb`):** Draft 2 (`b18c5759`) is
+  stored on `...mwdvs6l1`, her card, and `...mwdv9pl5`'s ask is closed with a note pointing at it. Receipt
+  `kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql` (cohort `library-s647@bot`, one
+  plain `with` statement, md5 `087e2c7c08e4b653fc4d76332006b376`, 49,995 characters); its `_rollback.sql` restores
+  from `cpl_library_history`. **Waits:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio, 2026-10-26) has no note or
+  sources and waits on what she wants changed; S647 did not work it. "Adding CPL Coordinator & Noncredit Lead to
+  MAP" (`...mwauxci5`) has its ready draft. ELL IET reads 33,971 of Sierra's 34,000 characters: room for more comes
+  out of repeated wording or a `cpl-chat` cap raise. The Coordinator Guide's Draft 2: lessons, *Moved from the lane (S646)*.
+
+## Moved from the lane (S651 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md`, replaced when #3294 built the Veteran map's public header (S651).
+
+- **NEXT (S650 UI pass): the public veteran map carries no public header.** `veteran-sprint-map/ca_cpl_map_selfcontained.html`
+  has no `cpl-public-header` block, no Links and no Light or Dark words (it follows `cpl_theme` only); the Fact Sheet has
+  none either. The fix belongs in `build_selfcontained.py`, not the HTML (`--check` in `scripts/check_generated.sh`): take
+  the header's markup and its 25px lengths, hidden under `?embed=1` so COBI's Military Partnerships iframe stays one
+  column, and loading nothing from another host (the page is self-contained: logos as data URIs, as `apply.py` writes them).
+  The same pass raised the map's own control floors to 25px and the directory's CPL page link to its 44px row.
+
+## Moved from the lane (S653b)
+
+The Fact Sheet took the public header and the Veteran map its 480px logos (#3333, 2026-11-14); the lane's text as it stood moved here verbatim.
+
+From the *One queue check* bullet: Open (#3227's review):
+  a comment in `cpl-chat-deploy.yml` names only `group_queue.mjs`.
+
+- **The Veteran map carries the public header (S651, #3294 merged `f0339e38` about 10:10Z 2026-11-14).** Built in
+  `build_selfcontained.py` (logos as data URIs, the header's 25px lengths), hidden under `?embed=1` (absent from the
+  accessibility tree and the tab order), so COBI's Military Partnerships iframe stays one column; `npm run a11y` passes
+  light, dark and embed; a second reader served it and found nothing broken. Guard `tests/veteran_map_public_header.test.js`.
+  **NEXT (minor):** the two embedded logos are 1115px copies (480px copies would cut about 55 KB); a public HTML comment
+  names the vault path; a theme choice on the public map sets `cpl_theme` for the whole github.io origin, COBI included
+  (the existing design). The Fact Sheet still has no header. The record as it stood: lessons, *Moved from the lane (S651 checkpoint)*.
+
+- **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
+  simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
+  folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
+  second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
+  drafts on its card with Draft it now (2026-11-10, above).
+
+- **A draft read off Pages drops its version stamps (2026-11-11, #3097):** Pages serves local scripts as
+  `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
+  stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
+  `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+
+From the *Veteran map and the Fact Sheet* bullet, when the Fact Sheet's logo was settled (#3342), these phrases moved
+here verbatim: "(`sierra/cpl-initiative-logo-navy-480.png`, `sierra/cpl-initiative-logo-480.png`; 225,221 to 166,896 bytes)"; "and no public comment names the vault path"; "(no generator writes it)"; "its `--cplh-*` roles map onto `factsheet.css` `:root`;".
+
+## Moved from the lane (S653b, T9)
+
+Moved verbatim from `docs/reference/lanes/library.md` on 2026-11-14 to keep the lane under 20,000 bytes.
+
+✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
+
+✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
+
+## Moved from the lane (S667 checkpoint)
+
+Verbatim from `docs/reference/lanes/library.md` (links rewritten for this folder):
+
+✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
+
+✅ **⑥ to ⑰ are built** (S512 to S576: Word headers and text boxes, PDFs, workbooks, charts, drafting first, slide titles and scripts, every draft applied, Finish remediation, last modified first and the draft's version named). Their records moved verbatim to [`docs/library_lessons.md`](library_lessons.md), *Moved from the lane (S577)*.
+
+## Moved from the lane (S669)
+
+- **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
+  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
+- **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
+  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
+  **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
+  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. The SHARED CODE comment in `cpl-chat-deploy.yml` already named both shared files (S653b): closed, no change.

@@ -44,54 +44,64 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 105,
+   "placed": 109,
    "listed": 109,
-   "share": 0.963,
-   "missing": [
-    "MAT11",
-    "MAT1A",
-    "MAT1B",
-    "MAT25"
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATH11",
+     "listed": "MAT11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATH25",
+     "listed": "MAT25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
    ],
-   "unexplained": [
-    "MAT11",
-    "MAT25"
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 4,
    "codes": [
     "BIO4",
     "CIS5",
     "HES1",
-    "MATH11",
-    "MATH25",
-    "MATHC2210",
-    "MATHC2220",
     "PSYC2H"
    ],
    "flagged": [
     "BIO4",
     "CIS5",
     "HES1",
-    "MATHC2210",
-    "MATHC2220",
     "PSYC2H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    8.0,
+    7.0,
     16.0
    ],
    "stated": [
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Elective Courses' chooses units but names no minimum"
    ]
@@ -109,6 +119,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -1318,5 +1339,6 @@
    "Catalog additions: MATH C2210, MATH C2220, BIO 4, CIS 5, HES 1, PSYC 2H."
   ]
  },
- "extracted_run": "38095619629"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

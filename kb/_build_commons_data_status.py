@@ -96,7 +96,8 @@ THE CAUSE SIDECARS (S649, #3229: COBIx's item 1, Sam's "make sure any card that 
 to something"). Beside the file, one small file per harvested college, PROGRAMS_DIR/<slug>.json, so a cause in the
 college's row opens the programs it counts. The page fetches a college's file only when its row or panel opens.
                   {"schema", "college", "slug", "basis": "committed files only",
-                   "programs": [{"cn", "title", "award", "cause", "lever", "url"}]}
+                   "correction_rules": true | false,
+                   "programs": [{"cn", "title", "award", "cause", "lever", "url"[, "units"]}]}
 One entry per program the gap census counts as still to pass at that college: its live read (CENSUS,
 programs_by_college, the cause before "|", the lever from its levers' members) where it holds the college, else the
 committed-files census, and the file and the row's census_basis say which (review of #3261: the lists had come from
@@ -106,6 +107,11 @@ same entries, so a cause's list and its count agree; the row's causes, levers an
 source_url where a record is filed (it names the page the reader used), else the capture's source page, and null
 when neither is an http(s) address. Sorted by cause, then title. A college with nothing still to pass gets no file.
 A college the run no longer holds loses its file. --check compares every sidecar too.
+A units cause (units_unequal, units_incomplete, units_unstated) carries "units", the filed record's own sum beside the
+figure the catalog prints, from its score (S678, #3461 page finding 3, "our lists add up to A; the catalog prints B"):
+{"sum": [lo, hi], "printed": [lo, hi], "status", "measure", "against"}, each figure null where the score holds none.
+correction_rules says whether the college has correction rules of its own on file (a "colleges" entry in
+kb/program_requirements_reconcile.json), so the page can say who acts and whether anything is there yet (page finding 4).
 
 THE OUTCOME SIDECARS (S649, Sam's asks 4 and 5 in session: the Overall card's SLO and PLO lines open what is
 collected). Beside them, PROGRAMS_DIR/<slug>.outcomes.json for each harvested college with either:
@@ -130,6 +136,7 @@ from __future__ import annotations
 import argparse
 import datetime as dt
 import glob
+import importlib.util
 import json
 import os
 import re
@@ -154,7 +161,28 @@ IN_SCOPE = ("college", "continuing_education")
 # stale after. The page reads these from the file and never restates them.
 AGE_DAYS = {"fresh": 7, "recent": 30}
 
+# A college whose displayed catalog link differs from its capture root (COBIx's correction on #3229, comment
+# 6867640358, 23:35Z 2026-11-13; taken by the S649 conductor at 02:59Z 2026-11-14): only Copper Mountain. Its capture
+# read the 09.03.26 catalog PDF, which now answers 404; the academic-catalogs page answers and links the 26-27 catalog
+# reissued 10.26.26. The capture root stays what the capture read until a recapture moves the registry's catalog_url
+# (a live write, not this file's). Cosumnes River, El Camino and Citrus answered from outside and stay as stored.
+CATALOG_LINKS = {
+    "copper_mountain": {
+        "display": "https://www.cmccd.edu/academic-catalogs/",
+        "current_file": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+        "checks": [
+            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/09/Final-26-27-Catalog-09.03.26r1.pdf",
+             "status": 404, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+            {"url": "https://www.cmccd.edu/academic-catalogs/",
+             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+            {"url": "https://www.cmccd.edu/wp-content/uploads/2026/10/Final-26-27-Catalog-10.26.26.pdf",
+             "status": 200, "checked_at": "2026-11-13T23:35:00Z", "by": "COBIx, #3229 comment 6867640358"},
+        ],
+    },
+}
+
 # Every field a college row carries, flagged for the College view (a later slice draws only "shareable").
+# catalog_url here is the displayed link; the capture root (capture_root) is the registry's catalog_url field.
 FIELDS = {
     "id": "shareable", "name": "shareable", "district": "shareable", "kind": "shareable",
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
@@ -167,7 +195,10 @@ FIELDS = {
     # slice 2 (the expanding row and the side panel): what the college's read receipt says about its read
     "listed_closed": "shareable", "found": "shareable", "extracted": "shareable", "errors": "internal",
     "failed_checks": "internal", "platform": "shareable", "catalog_year": "shareable", "catalog_url": "shareable",
+    "capture_root": "shareable", "catalog_now": "shareable", "catalog_checks": "internal",
     "read_seconds": "internal", "run": "internal", "levers": "internal",
+    # #3310: who collected each lane, the program maps and the integration line (costs among them, so internal)
+    "collection": "internal",
     # the field list the slice 2 read figures take from a harvested college (None, never a zero, when unread)
 }
 
@@ -278,6 +309,27 @@ class Resolver:
         return self.by.get(norm(name))
 
 
+def filed_cost(summary: dict) -> float | None:
+    """What the college's filed records cost to read. summarize() in _program_requirements_college.py writes
+    cost_usd_filed (every filed record's cost, whichever run paid it) beside cost_usd_run (this run's spend,
+    0.0 on a free rescore); a summary written before S647 carries cost_usd alone, the run that filed every
+    record. A free rescore must never zero a college's cost or drop it from the totals (S653)."""
+    v = summary.get("cost_usd_filed")
+    return v if isinstance(v, (int, float)) else summary.get("cost_usd")
+
+
+def spent_block(root: str) -> dict:
+    """What the extraction runs themselves cost (S678, COBIx's item 1a): the sum of each run's cost_usd_run in the
+    ledger kb/_build_spend_daily.py keeps in kb/reference/model_spend_daily.json, shown beside cost_usd (what the filed
+    records cost, whichever run paid). Empty when the ledger is absent, so the page shows TBA."""
+    d = _maybe(os.path.join(root, "kb/reference/model_spend_daily.json")) or {}
+    runs = d.get("runner_runs") or {}
+    if not runs:
+        return {}
+    return {"spent_usd": round(sum(r.get("usd") or 0 for r in runs.values()), 2), "spent_runs": len(runs),
+            "spent_since": d.get("runner_since")}
+
+
 def harvest(root: str):
     """Per harvested college, from the committed files through the census's own functions."""
     sys.path.insert(0, os.path.join(root, "kb"))
@@ -306,11 +358,11 @@ def harvest(root: str):
         out[slug] = {
             "name": name, "programs": programs, "passing": programs - gap, "gap": gap, "causes": causes,
             "read_at": acct.get("started"), "read_kind": "capture" if cap else ("capture_preview" if prev else None),
-            "cost_usd": summary.get("cost_usd"), "passed_at_read": summary.get("passed_machine_checks"),
+            "cost_usd": filed_cost(summary), "passed_at_read": summary.get("passed_machine_checks"),
             "listed_closed": summary.get("with_closed_list"), "found": summary.get("found"),
             "extracted": summary.get("extracted"), "errors": summary.get("errors"),
             "failed_checks": summary.get("failed"), "platform": acct.get("platform"),
-            "catalog_year": acct.get("catalog_year"), "catalog_url": acct.get("catalog_url"),
+            "catalog_year": acct.get("catalog_year"), **catalog_links(slug, acct.get("catalog_url")),
             "read_seconds": acct.get("seconds"), "run": summary.get("run") or acct.get("run"),
             "levers": dict(sorted(levers.items(), key=lambda x: (-x[1], x[0]))),
         }
@@ -372,7 +424,7 @@ def cause_programs(root: str, census: dict, harvested: dict, basis: dict | None 
         slug = slug_of.get(g["college"])
         if slug:
             by_slug.setdefault(slug, []).append(g)
-    out = {}
+    out, rules = {}, correction_rule_colleges(root)
     for slug, gs in sorted(by_slug.items()):
         d = os.path.join(root, COLLEGE_DIR, slug)
         src = {G.norm_cn(s.get("control_number")): s for s in (_maybe(os.path.join(d, "sources.json")) or [])}
@@ -382,17 +434,51 @@ def cause_programs(root: str, census: dict, harvested: dict, basis: dict | None 
         for g in gs:
             cn = g["control_number"]
             s = src.get(cn) or {}
-            url = None
+            url, filed = None, None
             if cn in files:
-                url = _http((_maybe(os.path.join(rd, files[cn])) or {}).get("source_url"))
+                filed = _maybe(os.path.join(rd, files[cn])) or {}
+                url = _http(filed.get("source_url"))
             url = url or _http((s.get("source") or {}).get("url"))
-            rows.append({"cn": cn, "title": s.get("title"), "award": s.get("award"), "cause": g["cause"],
-                         "lever": g["lever"], "url": url})
+            row = {"cn": cn, "title": s.get("title"), "award": s.get("award"), "cause": g["cause"],
+                   "lever": g["lever"], "url": url}
+            u = units_figures(filed) if str(g["cause"]).startswith("units_") else None
+            if u:
+                row["units"] = u
+            rows.append(row)
         rows.sort(key=lambda x: (x["cause"], (x["title"] or "").lower(), x["cn"]))
         b = (basis or {}).get(slug) or {"basis": "committed files only", "at": None}
         out[slug] = {"schema": SCHEMA, "college": harvested[slug]["name"], "slug": slug, "basis": b["basis"],
-                     "census_at": b["at"], "programs": rows}
+                     "census_at": b["at"], "correction_rules": harvested[slug]["name"] in rules,
+                     "programs": rows}
     return out
+
+
+def _pair(v):
+    """A score's [lo, hi] as two numbers, or None where it holds no figure."""
+    if not isinstance(v, (list, tuple)) or not v or v[0] is None:
+        return None
+    lo = v[0]
+    hi = v[1] if len(v) > 1 and v[1] is not None else lo
+    return [lo, hi]
+
+
+def units_figures(filed: dict | None) -> dict | None:
+    """The filed record's sum of its blocks beside the total the catalog prints, from its score's arithmetic check
+    (see THE CAUSE SIDECARS above). None when the record or its check holds neither figure."""
+    sc = (filed or {}).get("score") or {}
+    ar = sc.get("arithmetic") or {}
+    total, printed = _pair(ar.get("computed")), _pair(ar.get("stated"))
+    if total is None and printed is None:
+        return None
+    return {"sum": total, "printed": printed, "status": ar.get("status"),
+            "measure": "hours" if sc.get("measure") == "hours" else "units",
+            "against": ar.get("against") or "program"}
+
+
+def correction_rule_colleges(root: str) -> set:
+    """The colleges with correction rules of their own on file (kb/program_requirements_reconcile.json)."""
+    d = _maybe(os.path.join(root, "kb", "program_requirements_reconcile.json")) or {}
+    return set((d.get("colleges") or {}).keys())
 
 
 def course_key(code) -> str:
@@ -405,11 +491,20 @@ def subject_of(key: str) -> str:
     return m.group(0) if m else "(no subject)"
 
 
-# The outline systems whose course outlines print no objectives (the SLO worker's read on #3263, S649: the five eLumen
-# colleges read so far, Cabrillo, Modesto, Mission, Columbia and Lake Tahoe, print none). A college read only on such a
-# system that holds no objective course reads "the outlines print none", never a missing figure. Once
-# kb/_course_outcomes_read.py's OBJECTIVES_BY_SYSTEM is on main, it is the source and this line goes.
-NO_OBJECTIVES_SYSTEMS = ("elumen",)
+def _no_objectives_systems() -> tuple:
+    """The outline systems whose course outlines are not known to print objectives, read from OBJECTIVES_BY_SYSTEM in
+    kb/_objectives_by_system.py, the one source the SLO reader imports too (S650, COBIx on #3286): every system whose
+    "printed" is not True ("template" for eLumen, where each college's catalog template decides and the trial pages
+    printed none). A college read only on such a system that holds no objective course reads "the outlines print
+    none", never a missing figure. Never restated here."""
+    here = os.path.dirname(os.path.abspath(__file__))
+    spec = importlib.util.spec_from_file_location("objectives_by_system", os.path.join(here, "_objectives_by_system.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return tuple(sorted(k for k, v in mod.OBJECTIVES_BY_SYSTEM.items() if (v or {}).get("printed") is not True))
+
+
+NO_OBJECTIVES_SYSTEMS = _no_objectives_systems()
 
 
 def objectives_printed(s: dict | None):
@@ -481,6 +576,133 @@ def college_outcomes(root: str, harvested: dict) -> dict:
                                  "by_subject": subjects},
                      "programs": plos}
     return out
+
+
+# ── #3310 (Sam, 2026-11-14): three cards on a college's panel, How it's collected, Program pathway maps, Data
+# sources, and the SIS and curriculum system integration line. Each line is what a committed file says, or it says
+# plainly that nothing records it. The live registry's pathway state stays in the live block; the page joins the two.
+# The Program Pathways Mapper member list: the 60 VALUES rows the S444 file holds. Its header says the list pasted
+# from programmapper.org/ppm-schools named 63 community colleges. Why three were not filed, in Sam's answer (Sheet 198
+# card 11, 2026-11-14): "I think the 3 were not cccs so no need to worry about it." His 2026-10-21 remark in the S444
+# file says the same. The parse reads all 60, and tests/commons_data_status_build_test.py (16) pins that count.
+PPM_LIST = "kb/supabase_program_source_ppm_hosts_s444.sql"
+PPM_LIST_BY = "programmapper.org/ppm-schools, copied 2026-10-21"   # supplied by Sam (S444); the cards name roles, never people
+MAP_FILES = "kb/program_requirements_pilot/sequences/*.json"   # the committed term-by-term program maps
+COCI_EXPORTS = ("kb/reference/coci_course_list.xlsx", "tmc/source_data/coci_program_export_*.csv")
+COCI_WORKFLOW = "COCI offerings sync"
+# the script named in words; split so (15b) still finds no import of the reader in this file
+SLO_READER = {"script": "kb/_course_outcomes_read" + ".py", "workflow": "Course outcomes read",
+              "cost": "No model cost: the reader opens public pages and calls no model. Runner time is not recorded."}
+PROGRAM_READER = {"scripts": "kb/_program_requirements_college.py (capture, extract, file)",
+                  "workflows": ["Program requirements, one college", "Program requirements, a wave of colleges"]}
+# A college whose SIS or curriculum system connection someone has confirmed: {college_id: {"state", "note", "by"}}.
+# Empty: nothing in the repo records one (Sam thinks the MAP team has curriculum system connections at a few
+# colleges; until its curriculum-system lead confirms which, every college reads "none known", never a guess).
+SIS_CMS_INTEGRATION: dict = {}
+
+
+def ppm_members(root: str) -> list:
+    """[(college, host)] from the VALUES list Sam supplied (the whole list, whichever rows the update wrote)."""
+    text = _read_text(os.path.join(root, PPM_LIST))
+    m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
+    return [(a.replace("''", "'"), b) for a, b in re.findall(r"\(\s*'((?:[^']|'')*)'\s*,\s*'((?:[^']|'')*)'\s*\)", m.group(1))] if m else []
+
+
+def ppm_values_rows(root: str) -> int:
+    """How many rows the list's VALUES block holds, counted by line, so a row the parse drops cannot vanish unseen."""
+    text = _read_text(os.path.join(root, PPM_LIST))
+    m = re.search(r"with v\(college, host\) as \(values(.*?)\n\)", text, re.S)
+    return sum(1 for line in (m.group(1) if m else "").splitlines() if line.strip().startswith("("))
+
+
+def collection_facts(root: str, harvested: dict, outcomes: dict, resolve, unmatched: list) -> tuple[dict, dict]:
+    """({college_id: facts}, statewide) for the #3310 cards, from committed files only."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _harvest_gap_census as G  # noqa: E402
+    slug_id = {}
+    for slug, h in harvested.items():
+        cid = resolve(h["name"])
+        if cid is not None:
+            slug_id[slug] = cid
+    out: dict = {}
+
+    def entry(cid):
+        return out.setdefault(cid, {"program_reader": None, "slo_read": None, "plo_programs": 0,
+                                    "ppm_member": None, "maps": {"held": 0, "on_records": 0, "files": []}})
+
+    # the program requirements reader: the model each filed record names, and the records' control numbers
+    cns = {}
+    for slug, h in harvested.items():
+        cid = slug_id.get(slug)
+        rd = os.path.join(root, COLLEGE_DIR, slug, "records")
+        if cid is None or not os.path.isdir(rd):
+            continue
+        models, n = {}, 0
+        cns[cid] = set()
+        for f in sorted(os.listdir(rd)):
+            if not f.endswith(".json"):
+                continue
+            r = _maybe(os.path.join(rd, f)) or {}
+            n += 1
+            cns[cid].add(G.norm_cn(r.get("control_number") or f[:-5]))
+            if r.get("model"):
+                models[r["model"]] = models.get(r["model"], 0) + 1
+        e = entry(cid)
+        e["program_reader"] = {"records": n, "models": dict(sorted(models.items(), key=lambda x: (-x[1], x[0]))),
+                               "run": h.get("run"), "at": h.get("read_at"), "cost_usd": h.get("cost_usd"), "platform": h.get("platform")}
+        e["plo_programs"] = len((outcomes.get(slug) or {}).get("programs") or [])
+
+    # the course outcomes reader: the newest committed read that names the college (trial runs left out)
+    for path in sorted(glob.glob(os.path.join(root, OUTCOMES, "*", "read_*.json"))):
+        if os.path.basename(os.path.dirname(path)).startswith("trial_"):
+            continue
+        d = _maybe(path) or {}
+        named = set()
+        for row in d.get("rows") or []:
+            if isinstance(row, dict):
+                named.update(row.get("named_by") or [])
+        for slug in named:
+            cid = slug_id.get(slug)
+            if cid is None:
+                continue
+            e = entry(cid)
+            cur = e["slo_read"]
+            if cur is None or (d.get("at") or "") > (cur.get("at") or ""):
+                e["slo_read"] = {"run": str(d.get("run") or "") or None, "at": d.get("at"), "system": d.get("system"),
+                                 "source_kind": d.get("source_kind"), "file": os.path.relpath(path, root)}
+
+    # Program Pathways Mapper members, as Sam supplied them
+    members = ppm_members(root)
+    for college, host in members:
+        name = college.replace("''", "'")
+        cid = resolve(name)
+        if cid is None:
+            unmatched.append({"file": PPM_LIST, "name": name})
+            continue
+        entry(cid)["ppm_member"] = {"host": host, "by": PPM_LIST_BY}
+
+    # the committed program maps, and whether each names a program in the college's committed records
+    for path in sorted(glob.glob(os.path.join(root, MAP_FILES))):
+        d = _maybe(path) or {}
+        cid = resolve(d.get("college"))
+        if cid is None:
+            unmatched.append({"file": os.path.relpath(path, root), "name": d.get("college")})
+            continue
+        m = entry(cid)["maps"]
+        m["held"] += 1
+        m["files"].append(os.path.relpath(path, root))
+        if G.norm_cn(d.get("control_number")) in cns.get(cid, set()):
+            m["on_records"] += 1
+
+    coci = []
+    for pat in COCI_EXPORTS:
+        coci.extend(sorted(os.path.relpath(p, root) for p in glob.glob(os.path.join(root, pat))))
+    statewide = {"ppm_list": {"file": PPM_LIST, "by": PPM_LIST_BY, "colleges": len(members)},
+                 "maps": {"files": MAP_FILES, "held": sum(e["maps"]["held"] for e in out.values())},
+                 "coci": {"exports": coci, "workflow": COCI_WORKFLOW},
+                 "slo_reader": SLO_READER, "program_reader": PROGRAM_READER,
+                 "integration": {"known": len(SIS_CMS_INTEGRATION)}}
+    return out, statewide
 
 
 def dumps_programs(d: dict) -> str:
@@ -593,7 +815,45 @@ def confidence(spot: dict | None, harvested: bool):
 
 
 SLICE2 = ("listed_closed", "found", "extracted", "errors", "failed_checks", "platform", "catalog_year", "catalog_url",
-          "read_seconds", "run", "levers")
+          "capture_root", "catalog_now", "catalog_checks", "read_seconds", "run", "levers")
+
+
+def link_check_result(chk: dict) -> str:
+    """One link check in the page's words. A 500 whose server is Pingora with an empty body is the checker's own
+    egress refusing (COBIx on #3229, 23:35Z 2026-11-13: his box's egress answers 500 to every plain-http request), so
+    it reads "unreachable from here", never as a dead link. Only a 404 or 410 reads "not found"."""
+    st = chk.get("status")
+    if st == 500 and "pingora" in str(chk.get("server") or "").lower() and not chk.get("body_bytes"):
+        return "unreachable from here"
+    if st in (404, 410):
+        return "not found"
+    if isinstance(st, int) and 200 <= st < 400:
+        return "answered"
+    if isinstance(st, int) and st >= 500:
+        return "the site answered with a server error"
+    if isinstance(st, int):
+        return "the site refused the request"
+    return "not checked"
+
+
+def catalog_links(slug: str, capture_url) -> dict:
+    """The catalog link the page displays, split from the capture root the readers use (S650). The capture root stays
+    the capture's own catalog_url, the address it read; a college in CATALOG_LINKS shows its display link instead, the
+    file its catalog page links to now, and the checks behind the split, each with its result in words.
+
+    An entry holds only while the capture still names the file its checks found missing (COBIx on #3286): once a
+    recapture moves the capture root, the builder stops with a plain message, so a stale hand-entered line never
+    outlives the problem it fixed."""
+    o = CATALOG_LINKS.get(slug) or {}
+    if o:
+        missing = {c.get("url") for c in o.get("checks") or [] if link_check_result(c) == "not found"}
+        if capture_url not in missing:
+            raise SystemExit("The catalog link override for %s in CATALOG_LINKS (kb/_build_commons_data_status.py) is "
+                             "stale: the capture now reads %s, which is not the file its checks found missing. Remove "
+                             "the entry, then rerun the builder." % (slug, capture_url))
+    return {"catalog_url": o.get("display") or capture_url, "capture_root": capture_url,
+            "catalog_now": o.get("current_file"),
+            "catalog_checks": [dict(c, result=link_check_result(c)) for c in o.get("checks") or []] or None}
 
 
 def slice2_fields(h: dict | None) -> dict:
@@ -962,6 +1222,7 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
                            "platform": c.get("platform"), "catalog_year": cu.get("catalog_year"), "catalog_url": cu.get("found")}
 
     spot = read_spot_checks(root, resolve, unmatched)
+    facts, collection = collection_facts(root, harvested, outcomes, resolve, unmatched)
 
     colleges = []
     for e in sorted(entities, key=lambda x: display_name(x["college_name"])):
@@ -985,6 +1246,10 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
             "confidence": confidence(spot.get(cid), h is not None),
             **slice2_fields(h),
+            # #3310: what the three college cards read (who collected each lane, the program maps, the integration)
+            "collection": dict(facts.get(cid) or {"program_reader": None, "slo_read": None, "plo_programs": 0, "ppm_member": None,
+                                                  "maps": {"held": 0, "on_records": 0, "files": []}},
+                               integration=SIS_CMS_INTEGRATION.get(cid) or {"state": "none_known"}),
         })
 
     hv = [c for c in colleges if c["harvested"]]
@@ -998,12 +1263,16 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "gap": sum(c["gap"] for c in hv), "with_gap": sum(1 for c in hv if c["gap"]),
         "cost_usd": round(sum(c["cost_usd"] for c in costed), 2),
         "passed_at_read": sum(c["passed_at_read"] for c in costed), "cost_receipts": len(costed),
+        **spent_block(root),
         "slo_waiting": len(slo), "scouted": len(scouts),
         "scout_barrier": sum(1 for v in scouts.values() if (v.get("challenge") or "none") != "none" or v.get("recommendation") == "blocked"),
         "spot_checked": len(spot),
         "confidence": {lv: sum(1 for c in colleges if c["confidence"] and c["confidence"]["level"] == lv)
                        for lv in ("strong", "partial", "limited")},
     }
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _blocked_catalogs as BC  # noqa: E402  (the one source of the blocked-catalog hunt, S678)
+    blocked_hunt = BC.status(root)
     if previous is None:
         previous = _maybe(os.path.join(root, OUT)) or {}
     live = live_block(live_path, previous.get("live"), len(entities), accept_active_shift)
@@ -1043,6 +1312,8 @@ def build(root: str, live_path: str | None = None, previous: dict | None = None,
         "overall": overall_block(live),
         "dictionary": dictionary,
         "apis": apis,
+        "collection": collection,
+        "blocked_hunt": blocked_hunt,
         "_sidecars": dict([(k + ".json", v) for k, v in sidecars.items()] + [(k + ".outcomes.json", v) for k, v in outcomes.items()]),
     }
 

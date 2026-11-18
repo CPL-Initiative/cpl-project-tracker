@@ -943,6 +943,8 @@ check(sorted(e["id"] for e in bents) == [27919, 27923, 28225, 28226] and bacct["
       and sorted(e["id"] for e in bdist) == [27923, 28225, 28226] and bdrop == 1,
       "Butte's walk takes the entries under both views and reads each program once, the subject view's "
       "title first: %r %r" % ([e["id"] for e in bents], [e["id"] for e in bdist]))
+check([t for e in bdist for t in e.get("twin_ids") or []] == [27919],
+      "Butte's second listing of Automotive Technology is a twin, its id kept on the entry read")
 HIDE = json.dumps({"nodeConfig": {"excludeFromWebView": True}})
 
 check(C.cq_hidden({"text": " ", "config": HIDE}) and C.cq_hidden({"text": "Notes", "config": HIDE})
@@ -1074,6 +1076,76 @@ check([e["id"] for e in same] == [19915, 19951] and dropped == 1,
       "a program the index and its school both list is read once, from the first entry")
 check([e["id"] for e in C.cq_distinct([ENTRY, {"id": 5877, "text": "Accounting Basics for Small Business - Certificate of Completion - CC8009"}])[0]]
       == [5878, 5877], "Riverside City's entries, each titled once, are all kept")
+check(same[0].get("twin_ids") == [18990] and "twin_ids" not in same[1] and "twin_ids" not in BUS,
+      "the twin listing's id is kept on the entry read, not lost: %r" % [e.get("twin_ids") for e in same])
+# S653: the identity is the title and the award, and a pattern or kind the title
+# names keeps two programs apart (Riverside City titles its transfer degrees
+# "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)").
+SOC = "Sociology - Associate in Arts for Transfer (ADT) - AA696"
+for a, b in ((SOC, SOC + " (CalGETC)"), (SOC + " (IGETC)", SOC + " (CSU GE)"),
+             ("Child Development - Certificate of Completion", "Child Development - Noncredit Certificate of Completion"),
+             ("Welding - Certificate of Achievement - CA524", "Welding - Certificate of Achievement - CA524C")):
+    kept, gone = C.cq_distinct([{"id": 1, "text": a}, {"id": 2, "text": b}])
+    check([e["id"] for e in kept] == [1, 2] and gone == 0 and C.cq_identity({"text": a}) != C.cq_identity({"text": b}),
+          "two programs one marker apart are both read: %r / %r" % (a, b))
+check(C.cq_identity({"text": "AS Degree in Automotive Technology"})
+      == C.cq_identity({"text": "Automotive Technology (AS Degree)"})
+      and C.cq_identity({"text": SOC})[1] == "codes:AA696"
+      and C.cq_identity({"text": "Automotive Technology (AS Degree)"})[1] == "as degree",
+      "the award is the local codes, else the award words; Butte's two forms stay one identity")
+
+
+class CqPage:
+    def on(self, *a):
+        pass
+
+    def remove_listener(self, *a):
+        pass
+
+    def wait_for_timeout(self, *a):
+        pass
+
+
+class CqReader:
+    page = CqPage()
+
+    def load(self, url):
+        pass
+
+
+# The caller's walk: a program nested under an entry is read unless its id is
+# known or its identity is an entry's, and then its id joins that entry's twins.
+NEST = {
+    "page:19915": {"body": [{"navlist": [{"id": 30000}]}]},
+    "nav:30000": {"navs": [{"id": 18990, "text": BUS["text"]},                       # BUS's twin
+                           {"id": 19951, "text": "Accounting - A.S. Degree"},          # an entry, by id
+                           {"id": 19998, "text": BUS["text"] + " (CalGETC)"},          # a program of its own
+                           {"id": 19997, "text": "Accounting - A.S. Degree"}]},        # the entry's twin
+}
+
+
+def nest_json(reader, url, errors):
+    q = urllib.parse.parse_qs(urllib.parse.urlparse(url).query)
+    if "parentId" in q:
+        return NEST.get("nav:" + q["parentId"][0])
+    if "navigationtypeId" in q:
+        return {"navs": []}
+    return NEST.get("page:" + q["id"][0]) or {"body": []}
+
+
+saved = (C.cq_json, C.cq_catalog_id, C.cq_index)
+C.cq_json, C.cq_catalog_id = nest_json, (lambda heard: 718)
+C.cq_index = lambda get, catalog, root: ([dict(BUS), dict(ACC_AS, haschildbodynavs=False)], {"entries": 2})
+try:
+    nrep = {"college": "Chaffey College"}
+    npages = C.cq_pages(CqReader(), "https://chaffey.curriqunet.com/catalog/iq/19210", nrep)
+finally:
+    C.cq_json, C.cq_catalog_id, C.cq_index = saved
+check([p["node"] for p in npages] == [19915, 19951, 19998]
+      and nrep["curriqunet"]["twin_ids"] == {"19915": [18990], "19951": [19997]}
+      and npages[0].get("twin_ids") == [18990] and nrep["curriqunet"]["same_title_entries"] == 2,
+      "a nested program of its own is read, a nested twin is recorded on its entry: %r %r"
+      % ([p["node"] for p in npages], nrep["curriqunet"].get("twin_ids")))
 
 # ── the source a full college files keeps the pilot's shape ─────────────────
 reg = {"catalog_url": start, "catalog_year": "2026-2027", "catalog_platform": "courseleaf", "catalog_format": "html_per_program"}
@@ -1193,7 +1265,8 @@ check(_env_lines(_commit) == [_env_line]
       and len(_msg) == 1 and "${{" not in _msg[0] and "${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE}" in _msg[0]
       and "$GITHUB_RUN_ID" in _msg[0],
       "the applied record's commit message names a scoped run's college, by env, with no ${{ }} in the line")
-check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
+check(wf.count("contents: write") == 3
+      and wf.count('git push origin "HEAD:${{ github.ref_name }}"') + wf.count('git push origin "HEAD:$GITHUB_REF_NAME"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
 
@@ -3558,6 +3631,325 @@ ge_given = C.assign([calgetc, speech], [ge_page])
 check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
       and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
       "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+check(not C.ge_page_names_program(ge_page, speech) and not C.ge_page_names_program(ge_page, calgetc),
+      "the Cal-GETC page names no program once the pattern is set aside (S646 holds)")
+
+# A page that names a program beside the pattern is that program's page (S653). Riverside City heads its transfer
+# degrees "Sociology - Associate in Arts for Transfer (ADT) - AA696 (CalGETC)"; under S646's rule each lost its own
+# page (capture 43619958385: 36 page_claimed, 4 not_found). Read on the committed capture (run 38108461470): every
+# filed page, its heading as filed and its listed codes printed, and the five degrees the conductor checked.
+def _printed(code):
+    m = re.match(r"^([A-Z]+?)(C\d{4}H?)$", code) or re.match(r"^([A-Z]+)(\d.*)$", code)
+    return "%s %s" % m.groups() if m else code
+
+
+# The filed rows these checks read live in a committed fixture (S654; p-test-reads-live-review-file-s649), so a new
+# filing never moves them: tests/fixtures/ge_page_owner_assign_s654.json, measured 2026-11-15.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_assign_s654.json")) as _fh:
+    GE_ASSIGN = {k: [{"control_number": cn, "title": t, "award": a, "source": {"url": u, "h1": h}, "codes_found": c}
+                     for cn, t, a, u, h, c in rows] for k, rows in json.load(_fh)["colleges"].items()}
+rcc_src = GE_ASSIGN["riverside_city"]
+rcc_pages, rcc_seen = [], set()
+for s in rcc_src:
+    if s["source"]["url"] in rcc_seen:
+        continue
+    rcc_seen.add(s["source"]["url"])
+    body = s["source"]["h1"] + "\n" + "\n".join(_printed(c) + " Course" for c in s["codes_found"]) + "\nTotal 18 units"
+    rcc_pages.append(page(s["source"]["url"], s["source"]["h1"], body))
+# Communication Studies 2.0 (42892) owns /5928; the plain 30578 filed it wrongly (second reader, #3324).
+rcc_own = {"30581": "/6053", "32658": "/6040", "32813": "/Anthro_ADT", "42892": "/5928", "31561": "/5960"}
+rcc_progs = [{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+              "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]}
+             for s in rcc_src if s["control_number"] in rcc_own]
+check(len(rcc_progs) == 5 and all(C.ge_pattern_page(next(p for p in rcc_pages if p["url"].endswith(rcc_own[g["control_number"]])))
+                                  for g in rcc_progs),
+      "each of the five degrees' own pages names a general education pattern")
+rcc_given = C.assign(rcc_progs, rcc_pages)
+check(all((rcc_given[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "the five degrees claim their own pages: %r" % {cn: (v["best"] or {}).get("url", "")[-12:] for cn, v in rcc_given.items()})
+_names = C.ge_page_names_program
+C.ge_page_names_program = lambda pg, program, titles=None, owners=None: False      # S646's rule as it stood
+rcc_before = C.assign(rcc_progs, rcc_pages)
+C.ge_page_names_program = _names
+check(not any((rcc_before[cn]["best"] or {}).get("url", "").endswith(tail) for cn, tail in rcc_own.items()),
+      "under S646's rule as it stood, none of the five reads its own page")
+check(not C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Sociology", "award": "A.A- T Degree"})
+      and C.ge_page_names_program({"h1": "Psychology for Transfer - Associate in Arts for Transfer (ADT) - AA568 (CalGETC)"},
+                                  {"title": "Psychology", "award": "A.A- T Degree"}),
+      "a degree's page names its own program, never a sibling's")
+
+# The second reader's findings on #3324 (S653): ge_page_owner() gives a pattern's page to the one listed program
+# every component its heading prints agrees with (title words, award, version), or to none.
+def _gp(*rows):
+    return [{"control_number": cn, "title": t, "award": a} for cn, t, a in rows]
+
+
+mv_list = _gp(("30150", "Administration of Justice", "A.S. Degree"),
+              ("30151", "Administration of Justice", "Certificate of Achievement requiring 16S/24Q"),
+              ("37196", "Administration of Justice", "A.S. T Degree"),
+              ("37533", "Art History", "A.A- T Degree"), ("33240", "History", "A.A- T Degree"),
+              ("43792", "Physics", "A.S. T Degree"))
+mv_head = {"h1": "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643 (Cal-GETC)"}
+check((C.ge_page_owner(mv_head, mv_list) or {}).get("control_number") == "37196",
+      "award: a page that says it is a transfer degree goes to the A.S.-T, never the A.S. (30150) or the certificate")
+check((C.ge_page_owner({"h1": "Music - Associate in Arts (CalGETC)"},
+                       _gp(("1", "Music", "A.A- T Degree"), ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2",
+      "award: a page that names a local award goes to that award")
+check((C.ge_page_owner({"h1": "Art History - Associate in Arts for Transfer (ADT) - MAA743 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "37533", "title: the Art History page is Art History's, never History's")
+check((C.ge_page_owner({"h1": "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074 (CalGETC)"},
+                       _gp(("31163", "American Studies", "A.A- T Degree"),
+                           ("43897", "Social Justice: African American Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "43897",
+      "title: the Social Justice page goes to the listed title naming more of it, never American Studies")
+cs = _gp(("30578", "Communication Studies", "A.A- T Degree"), ("42892", "Communication Studies 2.0", "A.A- T Degree"))
+check((C.ge_page_owner({"h1": "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059(CalGETC)"}, cs) or {})
+      .get("control_number") == "42892"
+      and (C.ge_page_owner({"h1": "Communication Studies - Associate in Arts for Transfer (ADT) - AA600 (CalGETC)"}, cs) or {})
+      .get("control_number") == "30578",
+      "version: a 2.0 heading goes to the 2.0 program, a heading with none to the sibling with none")
+check((C.ge_page_owner({"h1": "Physics 2.0 - Associate in Science for Transfer (ADT) - MAS1108 (Cal-GETC)"}, mv_list) or {})
+      .get("control_number") == "43792",
+      "version: Moreno Valley's one Physics, listed with no version, keeps its 2.0 page")
+check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC 21-24 - 21-24"},
+                       _gp(("32948", "Kinesiology", "A.A- T Degree"))) or {}).get("control_number") == "32948",
+      "control: a heading printing the program's control number is its page, its unit counts no version")
+# The third reader's synthetic headings (S653): every identity the heading prints agrees, both ways.
+_phys = _gp(("1", "Physics", "A.S. T Degree"), ("2", "Physics 2.0", "A.S. T Degree"))
+for _h in ("Physics 2 - Associate in Science for Transfer (CalGETC)", "Physics v2 - Associate in Science for Transfer (CalGETC)",
+           "Physics Version 2 - Associate in Science for Transfer (CalGETC)"):
+    check((C.ge_page_owner({"h1": _h}, _phys) or {}).get("control_number") == "2",
+          "version in any spelling: %r goes to Physics 2.0, never Physics" % _h)
+check((C.ge_page_owner({"h1": "Chemistry 2.0 AS-T Cal-GETC 37.5"},
+                       _gp(("1", "Chemistry", "A.S. T Degree"), ("2", "Chemistry 2.0", "A.S. T Degree"))) or {})
+      .get("control_number") == "2", "version: a number after the award is units, never a version (37.5)")
+_span = _gp(("1", "Spanish I", "Certificate of Achievement"), ("2", "Spanish II", "Certificate of Achievement"))
+check((C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span) or {}).get("control_number") == "2"
+      and C.ge_page_owner({"h1": "Spanish II - Certificate of Achievement (CalGETC)"}, _span[:1]) is None,
+      "identity: Spanish II is Spanish II's page, never Spanish I's")
+check(C.ge_page_owner({"h1": "Accounting Level II (CalGETC)"}, _gp(("1", "Accounting Level I", "Certificate of Achievement"))) is None,
+      "identity: Level II is never Level I's")
+check(C.ge_page_owner({"h1": "Kinesiology Option B - Associate in Arts (CSU GE)"}, _gp(("1", "Kinesiology Option A", "A.A. Degree"))) is None,
+      "identity: Option B is never Option A's")
+_ba = {"h1": "Business Administration: Accounting - Associate in Science (IGETC)"}
+check(C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"),
+                               ("2", "Business Administration: Management", "A.S. Degree"))) is None
+      and C.ge_page_owner(_ba, _gp(("1", "Business Administration", "A.S. Degree"))) is None,
+      "title: an emphasis after a colon is never plain Business Administration's")
+check(C.ge_page_owner({"h1": "Psychology (UC) - Associate in Arts (IGETC)"}, _gp(("1", "Psychology (CSU)", "A.A. Degree"))) is None,
+      "title: Psychology (UC) is never Psychology (CSU)'s")
+check((C.ge_page_owner({"h1": "Equine Science AS P002809C Cal-GETC (34 units) LACCD GE (21 units)"},
+                       _gp(("02809", "Equine Science", "A.S. Degree"))) or {}).get("control_number") == "02809",
+      "noise: LACCD and GE beside the units name no program")
+# A printed five-digit run alone never settles the owner (COBIx on #3324, S654): it names a listed program only when
+# that program's title agrees with the heading's words at least one way; otherwise the title, award and version
+# route decides. Owners written from the headings by hand.
+_zip = {"h1": "Kinesiology - Associate in Arts for Transfer (ADT) - Riverside, CA 92506 (CalGETC)"}
+check((C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"), ("32948", "Kinesiology", "A.A- T Degree"))) or {})
+      .get("control_number") == "32948"
+      and C.ge_page_owner(_zip, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a ZIP code that is a listed program's control number never makes Nursing the Kinesiology page's owner")
+_cid = {"h1": "Music - Associate in Arts (CalGETC) MUS 10250"}
+check((C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"),
+                                  ("2", "Music", "A.A. Degree"))) or {}).get("control_number") == "2"
+      and C.ge_page_owner(_cid, _gp(("10250", "Welding Technology", "Certificate of Achievement"))) is None,
+      "control: a five-digit course id that is a listed program's control number never takes Music's page")
+check((C.ge_page_owner({"h1": "Development T038461G AA-T Cal-GETC 10 9-10 19-20"},
+                       _gp(("38461", "Child Development", "A.A- T Degree"), ("1", "Child Development", "A.S. Degree"),
+                           ("2", "Human Development", "A.A. Degree"))) or {}).get("control_number") == "38461"
+      and (C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                           _gp(("31018", "Business Administration", "A.S. T Degree"),
+                               ("3", "Business Administration", "A.S. Degree"))) or {}).get("control_number") == "31018",
+      "control: a heading printing its own program's control number still resolves, a cut window with no title too")
+# A control number in the district's own print (a campus letter, six digits, a letter) names its program with or
+# without title words, wherever the award sits; a bare five-digit run only beside title words that agree with the
+# program's title one way, so a wordless heading or a blank-titled program refuses it (COBIx 6887933755; the S654
+# second reader's self-recall).
+check(C.ge_page_owner({"h1": "LACCD 92506 Cal-GETC"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None
+      and C.ge_page_owner({"h1": "92506 Cal-GETC (34 units)"}, _gp(("92506", "Nursing", "A.S. Degree"))) is None,
+      "control: a bare number in a heading with no title words names no program")
+check(C.ge_page_owner({"h1": "Kinesiology 32948 AA-T Cal-GETC"}, _gp(("32948", "", "A.A- T Degree"))) is None
+      and C.ge_page_owner({"h1": "32948 AA-T Cal-GETC"}, _gp(("32948", None, "A.A- T Degree"))) is None,
+      "control: a listed program with a blank title is never named by a bare number")
+check((C.ge_page_owner({"h1": "T031018H AS-T Cal-GETC 25 - 25"},
+                       _gp(("31018", "Early Childhood Education", "A.S. T Degree"))) or {}).get("control_number") == "31018"
+      and (C.ge_page_owner({"h1": "T039546G AAT Cal-GETC 18-19 - 18-19"},
+                           _gp(("39546", "Social Justice Studies - Gender Studies", "A.A- T Degree"))) or {})
+      .get("control_number") == "39546"
+      and (C.ge_page_owner({"h1": "AA-T V032851G Cal-GETC"}, _gp(("32851", "Geography", "A.A- T Degree"))) or {})
+      .get("control_number") == "32851"
+      and (C.ge_page_owner({"h1": "T042296D C 8.5 - 8.5"}, _gp(("42296", "Welding", "Certificate of Achievement"))) or {})
+      .get("control_number") == "42296",
+      "control: a district-print number names its program in a heading with no title words, the award before or after")
+# LA Mission's "ASSOCIATE OF ARTS (AA) Accounting (M003340C)" refused under the cut-window rule: ge_identity reads a
+# heading's title words before its award, and this heading begins with the award, so it read as wordless.
+check((C.ge_page_owner({"h1": "ASSOCIATE OF ARTS (AA) Accounting (M003340C)"},
+                       _gp(("03340", "Accounting", "A.A. Degree"), ("03341", "Accounting", "Certificate of Achievement")))
+       or {}).get("control_number") == "03340",
+      "control: a heading that leads with its award names the program its district-print number prints")
+check((C.ge_page_owner({"h1": "Kinesiology T032948G AA-T Cal-GETC"}, _gp(("32948", "", "A.A- T Degree"))) or {})
+      .get("control_number") == "32948", "control: a district-print number names its program though the title is blank")
+# The three cut windows on 38461 (Child and Adolescent Development) each print T038461G, the district's own number for
+# the program: the number names it, so each owns 38461. The words beside it are a PDF window's cut ("Development"), an
+# abbreviation ("Child Dev") or a fragment ("elopment"), and the number is what identifies the page.
+_cad = _gp(("38461", "Child and Adolescent Development", "A.A- T Degree"), ("38462", "Child Development", "A.S. Degree"))
+check(all((C.ge_page_owner({"h1": h + " T038461G AA-T Cal-GETC 10 9-10 19-20"}, _cad) or {}).get("control_number")
+          == "38461" for h in ("Development", "Child Dev", "elopment")),
+      "control: each of three cut windows printing T038461G owns 38461, whatever fragment of the title it prints")
+
+# The self-recall (S654): every filed heading that prints exactly one listed program's control number, with the program
+# that number identifies (tests/fixtures/ge_control_recall_s654.json, measured 2026-11-15). The expected owner comes
+# from the printed number, never from the title logic. Every district-print heading names its program and no heading
+# names a wrong one; a bare number beside label words ("STATE CODE 02808", "Control Number: 11909") refuses by rule.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_control_recall_s654.json")) as _fh:
+    GE_RECALL = json.load(_fh)["colleges"]
+_rc = {"district": [0, 0, 0], "bare": [0, 0, 0]}   # right, none, wrong
+_rc_wrong = []
+for _slug, _c in sorted(GE_RECALL.items()):
+    _progs = _gp(*_c["programs"])
+    for _h, _want in _c["headings"]:
+        _kind = "district" if C.DISTRICT_CONTROL.search(C.GE_PATTERN.sub(" ", _h)) else "bare"
+        _got = (C.ge_page_owner({"h1": _h}, _progs) or {}).get("control_number")
+        _rc[_kind][0 if _got == _want else (1 if _got is None else 2)] += 1
+        if _got not in (None, _want):
+            _rc_wrong.append((_slug, _h[:50], _want, _got))
+print("report: self-recall over %d filed headings printing a control number: district print %d right, %d none; "
+      "bare %d right, %d none; %d wrong" % (sum(map(sum, _rc.values())), _rc["district"][0], _rc["district"][1],
+                                             _rc["bare"][0], _rc["bare"][1], len(_rc_wrong)))
+check(_rc["district"] == [589, 0, 0] and _rc["bare"][2] == 0 and sum(_rc["bare"]) == 250 and not _rc_wrong,
+      "self-recall: all 589 district-print headings name their program and none of the 839 names a wrong one: %r %r"
+      % (_rc, _rc_wrong[:3]))
+check(C.ge_pattern("California General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental General Education Transfer Curriculum")
+      and C.ge_pattern("Intersegmental GE Transfer Curriculum")
+      and C.ge_pattern("California State University General Education"),
+      "the patterns under their long names (Crafton Hills, Victor Valley, Taft, Skyline) are patterns")
+
+# HAND-CHECKED. Every filed pattern page that more than one listed program could own (programs whose title
+# words the heading names), with its owner written from the heading's own text: the award code or words (AA-T,
+# AS-T, "for Transfer", AS, AA), the version ("2.0") and the full title. Read from the headings, not from the rule
+# or the filed claim (the filed claim is wrong for Riverside City's four 2.0 pages and Moreno Valley's MAS643).
+# 29 pages: 13 award sibling sets, 4 version sibling sets, 7 longer-title sets (Art History, Social Justice),
+# and five LA Trade-Tech PDF windows whose cut headings print the program's own control number (T031018H).
+GE_OWNERS = {
+    # award siblings: the heading prints AS or AA, a degree, never the certificate of the same title
+    ("los_angeles_pierce", "Equine Science AS P002809C"): "02809",
+    ("los_angeles_pierce", "Administrative Professional AA P002820C"): "02820",
+    ("los_angeles_pierce", "Legal Office Procedures AA P002821C"): "02821",
+    ("los_angeles_pierce", "Numerical Control Programming AS P002831C"): "02831",
+    # award siblings: the heading prints AA-T or AS-T, the transfer degree
+    ("los_angeles_trade_technical", "English T032905G AA-T"): "32905",
+    ("los_angeles_valley", "Geography AA-T V032850G"): "32850",
+    ("los_angeles_valley", "Geology AS-T V036004H"): "36004",
+    ("moreno_valley", "Administration of Justice - Associate in Science for Transfer (ADT) - MAS643"): "37196",
+    ("moreno_valley", "Early Childhood Education - Associate in Science for Transfer (ADT) - MAS530"): "31220",
+    ("norco", "Administration of Justice - Associate in Science for Transfer (ADT) - NAS643"): "35853",
+    ("riverside_city", "Early Childhood Education - Associate in Arts for Transfer (ADT) - AS530"): "31218",
+    ("riverside_city", "Administration of Justice - Associate in Science for Transfer (ADT) - AS643"): "31456",
+    ("riverside_city", "Music - Associate in Arts for Transfer (ADT) - AA705"): "32075",
+    # version siblings: the heading prints 2.0
+    ("riverside_city", "Communication Studies 2.0 - Associate in Arts for Transfer (ADT) - AA1059"): "42892",
+    ("riverside_city", "Mathematics 2.0 - Associate in Science for Transfer (ADT) - AS1107"): "46237",
+    ("riverside_city", "Physics 2.0 for Transfer - Associate in Science for Transfer (ADT) - AS1108"): "46317",
+    ("riverside_city", "Business Administration 2.0 - Associate in Science for Transfer (ADT) - AS1002"): "41364",
+    # longer titles: the heading's full title, never History or American Studies
+    ("los_angeles_valley", "Art History AA-T V032117G"): "32117",
+    ("moreno_valley", "Art History - Associate in Arts for Transfer (ADT) - MAA743"): "37533",
+    ("norco", "Art History - Associate in Arts for Transfer (ADT) - NAA743"): "37232",
+    ("riverside_city", "Art History - Associate in Arts for Transfer (ADT) - AA743"): "32912",
+    ("riverside_city", "Social Justice Studies: Asian American Studies - Associate of Arts for Transfer (ADT) - AA1072"): "43695",
+    ("riverside_city", "Social Justice: African American Studies - Associate in Arts for Transfer (ADT) - AA1074"): "43897",
+    ("riverside_city", "Social Justice: Native American and Indigenous Studies - Associate in Arts for Transfer (ADT)"): "44469",
+    # control numbers: the heading prints the program's own
+    ("los_angeles_trade_technical", "T031018H AS-T"): "31018",
+    ("los_angeles_trade_technical", "Development T038461G AA-T"): "38461",
+    ("los_angeles_trade_technical", "T039546G AAT"): "39546",
+    ("los_angeles_trade_technical", "Dietetics T040026H AST"): "40026",
+    ("los_angeles_trade_technical", "Administration 2.0 T042785H AS-T"): "42785",
+}
+# Read on a committed fixture, never the live filings (COBIx on #3324, S654; p-test-reads-live-review-file-s649):
+# tests/fixtures/ge_page_owner_s653.json holds every filed pattern page's address, heading and title, the claims
+# filed on it, and the listed programs that can bear on its owner, measured 2026-11-15 on the 118 filed colleges
+# (40 with a pattern page). A new filing changes the live counts printed below and never these.
+with open(os.path.join(ROOT, "tests", "fixtures", "ge_page_owner_s653.json")) as _fh:
+    GE_FIX = json.load(_fh)["colleges"]
+ge_seen, ge_two, ge_allow, ge_refuse, ge_cache_off, ge_cache_n = {}, [], set(), set(), [], 0
+
+
+def _ge_fix(slug, c):
+    return (slug, _gp(*c["programs"]), [{"url": u, "h1": h, "title": t} for u, h, t in c["pages"]], c["claims"])
+
+
+for _slug, _progs, _pages, _claims in (_ge_fix(k, v) for k, v in sorted(GE_FIX.items())):
+    for _cn, _i in _claims:
+        _p = next(p for p in _progs if p["control_number"] == _cn)
+        if not C.ge_pattern(_p["title"]):
+            (ge_allow if C.ge_page_names_program(_pages[_i], _p, _progs) else ge_refuse).add((_slug, _cn))
+    _cache: dict = {}
+    for _pg in _pages:
+        _owners = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs)]
+        # assign()'s cache: the owner read once per page gives every program the answer the uncached call gives
+        _cached = [p["control_number"] for p in _progs if not C.ge_pattern(p["title"])
+                   and C.ge_page_names_program(_pg, p, _progs, _cache)]
+        if _cached != _owners:
+            ge_cache_off.append((_slug, _pg["url"], _owners, _cached))
+        if len(_owners) > 1:
+            ge_two.append((_slug, _pg["url"], _owners))
+        _head = _pg.get("h1") or _pg.get("title") or ""
+        for (_k, _start), _cn in GE_OWNERS.items():
+            if _k == _slug and _head.replace("\xa0", " ").startswith(_start):
+                ge_seen[(_k, _start)] = _owners
+    # one owner per distinct heading, none where only the pattern's own program is listed (it never asks)
+    ge_cache_n += len(_cache) == (len({(pg["h1"], pg["title"]) for pg in _pages})
+                                  if any(not C.ge_pattern(p["title"]) for p in _progs) else 0)
+check(all(C.ge_pattern_page(pg) for _, _, pgs, _ in (_ge_fix(k, v) for k, v in GE_FIX.items()) for pg in pgs),
+      "every fixture page is a pattern page")
+check(ge_cache_off == [] and ge_cache_n == len(GE_FIX) == 40,
+      "the owner cached once per page agrees with the uncached owner on every fixture page and program: %r"
+      % ge_cache_off[:2])
+check(ge_two == [], "no filed pattern page is allowed to two programs: %r" % ge_two[:3])
+check(len(ge_seen) == len(GE_OWNERS) == 29,
+      "every hand-checked sibling page is among the fixture's pages (%d of %d)" % (len(ge_seen), len(GE_OWNERS)))
+check(all(ge_seen.get(k) == [cn] for k, cn in GE_OWNERS.items()),
+      "each hand-checked sibling page goes to the owner its heading names: %r"
+      % [(k[0], k[1][:30], ge_seen.get(k), cn) for k, cn in GE_OWNERS.items() if ge_seen.get(k) != [cn]][:4])
+# Measured on the fixture, not hand-checked: the filed claims on a pattern's page S646's rule refused whole (140),
+# as the rule reads them now. Moreno Valley's 30150 on MAS643 and Riverside City's 30578, 32692, 32745 and 33829 on
+# their 2.0 siblings' pages are refused; the rest are a pattern's own page another program claimed.
+check(len(ge_allow) == 88 and len(ge_refuse) == 52,
+      "88 fixture claims on a pattern's page allowed, 52 refused (%d, %d)" % (len(ge_allow), len(ge_refuse)))
+# A report line, never a check: the same counts on the live filings, which move with every new filing.
+_live_allow = _live_refuse = 0
+for _path in sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json"))):
+    _src = [s for s in json.load(open(_path)) if isinstance(s, dict)]
+    _progs = _gp(*[(s["control_number"], s.get("title"), s.get("award")) for s in _src])
+    for s in _src:
+        _own = s.get("source") or {}
+        if _own.get("url") and C.ge_pattern_page(_own) and not C.ge_pattern(s.get("title")):
+            _p = next(p for p in _progs if p["control_number"] == s["control_number"])
+            if C.ge_page_names_program(_own, _p, _progs):
+                _live_allow += 1
+            else:
+                _live_refuse += 1
+print("report: live filed claims on a pattern's page: %d allowed, %d refused (fixture: 88, 52)"
+      % (_live_allow, _live_refuse))
+check({("moreno_valley", "30150"), ("riverside_city", "30578"), ("riverside_city", "32692"),
+       ("riverside_city", "32745"), ("riverside_city", "33829")} <= ge_refuse,
+      "the five wrong filed claims (30150 and the four 2.0 pages' plain siblings) are refused")
+mv_rs = GE_ASSIGN["moreno_valley"]
+mv_pages = {}
+for s in mv_rs:
+    mv_pages.setdefault(s["source"]["url"], (s["source"]["h1"], set()))[1].update(s["codes_found"])
+mv_pages = [page(u, h, h + "\n" + "\n".join(_printed(c) + " Course" for c in sorted(cs)) + "\nTotal 18 units")
+            for u, (h, cs) in mv_pages.items()]
+mv_given = C.assign([{"control_number": s["control_number"], "title": s["title"], "award": s["award"],
+                      "closed_list": [{"code": _printed(c)} for c in s["codes_found"]]} for s in mv_rs], mv_pages)
+check("MAS643" not in ((mv_given["30150"]["best"] or {}).get("heading") or "")
+      and "MAS643" in ((mv_given["37196"]["best"] or {}).get("heading") or ""),
+      "on Moreno Valley's filed pages the A.S.-T keeps MAS643 and the A.S. never takes it: %r"
+      % {k: (mv_given[k]["best"] or {}).get("heading", "")[-26:] for k in ("30150", "37196")})
 
 # Two different current programs never share one page's list on a title tie alone (the S646 conductor's
 # ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's
@@ -4720,6 +5112,532 @@ check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["sources_fro
       and _rorder[-1] == "Fail a run whose extraction calls failed",
       "a staged read downloads the earlier run's artifact, loads no page, prices at $40 before extracting, and its "
       "job ends with the failed-calls check: %r" % _rorder)
+
+# ── a program with no closed list, looked up by title and award (S652; #3299 slice A) ─────────
+# Sam's rule: one second look in the catalog for each COCI program we do not hold, and "nothing stops the
+# collection bus from rolling." Skyline's Accounting A.S. (05809) has no closed list in the Program Course File
+# and read "no closed list" beside its own page, catalog.skylinecollege.edu/current/programs/accounting-as.php.
+# The repository keeps no Skyline page text (a run's pages live in its artifact), so these pages are built in
+# the shape Skyline's custom_html catalog serves: one sitemap, each program page at <slug>-<award>.php and again
+# at .xml with no heading. Each case below is an input the second reader of #3300 reproduced. Run through
+# capture() itself (the S646 lesson).
+SK = "https://catalog.skylinecollege.edu/current/"
+SK_PAGES = {
+    "programs/accounting-as.php": ("Accounting", ""),
+    "programs/accounting-as.xml": ("", ""),
+    "programs/accounting-ca.php": ("Accounting", "ACTG 100 ACTG 121 ACTG 131"),
+    "programs/digital-media-aa.php": ("Digital Media", "DGME 100 DGME 105 DGME 110"),
+    "programs/biology-as.php": ("Biology", "BIOL 100 BIOL 110 BIOL 120"),
+    "programs/chemistry-as.php": ("Chemistry", "CHEM 100 CHEM 110 CHEM 120"),
+    "programs/economics-aa.php": ("Economics", "ECON 100 ECON 110 ECON 120"),
+    "programs/history-aa.php": ("History", "HIST 100 HIST 110 HIST 120"),
+    "programs/nursing-as.php": ("Nursing", "NURS 100 NURS 110 NURS 120"),
+    "programs/geology-as.php": ("Geology", "GEOL 100 GEOL 110 GEOL 120"),
+    "programs/philosophy-aa.php": ("Philosophy", "PHIL 100 PHIL 110 PHIL 120"),
+    "programs/sociology-aa.php": ("Sociology", "SOCI 100 SOCI 110 SOCI 120"),
+    "programs/astronomy-as.php": ("Astronomy", "ASTR 100 ASTR 110 ASTR 120"),
+    "programs/graphic-design-as.php": ("Graphic Design", ""),
+    "programs/graphic-design.php": ("Graphic Design A.S.", ""),
+    "programs/paralegal.php": ("Paralegal", ""),
+    "programs/allied-health-science-as.php": ("Allied Health Science", ""),
+    "programs/allied-health-sciences-as.php": ("Allied Health Sciences", ""),
+    "programs/welding-technology-2-ca.php": ("Welding Technology 2", ""),
+    "programs/bookkeeping-option-a-ca.php": ("Bookkeeping Option A", ""),
+    "programs/spanish-aa.php": ("Spanish", ""),
+    "programs/real-estate/index.php": ("Real Estate", ""),
+    "programs/english-as-a-second-language-aa.php": ("English as a Second Language", ""),
+}
+
+
+def _sk_prog(cn, title, award, codes=(), status="Active"):
+    return {"control_number": cn, "title": title, "award": award, "status": status, "top_code": None,
+            "shape": C.shape_of(award), "load_id": None,
+            "closed_list": [{"code": c, "title": c, "units": 3} for c in codes]}
+
+
+SK_PROGS = [
+    _sk_prog("05809", "Accounting", "A.S. Degree"),
+    _sk_prog("90001", "Accounting", "Certificate of Achievement", ("ACTG 100", "ACTG 121", "ACTG 131")),
+    _sk_prog("90002", "Business", "A.S. Degree"),
+    _sk_prog("90003", "Digital Media", "A.A. Degree", ("DGME 100", "DGME 105", "DGME 110")),
+    _sk_prog("90004", "Digital Media", "A.A. Degree", status="Active - Teachout Only"),
+    _sk_prog("90005", "Graphic Design", "A.S. Degree"),
+    _sk_prog("90006", "Paralegal", "A.S. Degree"),
+    _sk_prog("90007", "Paralegal", "Certificate of Achievement"),
+    _sk_prog("90008", "Allied Health Science", "A.S. Degree"),
+    _sk_prog("90010", "Biology", "A.S. Degree", ("BIOL 100", "BIOL 110", "BIOL 120")),
+    _sk_prog("90011", "Chemistry", "A.S. Degree", ("CHEM 100", "CHEM 110", "CHEM 120")),
+    _sk_prog("90012", "Economics", "A.A. Degree", ("ECON 100", "ECON 110", "ECON 120")),
+    _sk_prog("90013", "History", "A.A. Degree", ("HIST 100", "HIST 110", "HIST 120")),
+    _sk_prog("90014", "Nursing", "A.S. Degree", ("NURS 100", "NURS 110", "NURS 120")),
+    _sk_prog("90015", "Geology", "A.S. Degree", ("GEOL 100", "GEOL 110", "GEOL 120")),
+    _sk_prog("90016", "Philosophy", "A.A. Degree", ("PHIL 100", "PHIL 110", "PHIL 120")),
+    _sk_prog("90017", "Sociology", "A.A. Degree", ("SOCI 100", "SOCI 110", "SOCI 120")),
+    _sk_prog("90018", "Astronomy", "A.S. Degree", ("ASTR 100", "ASTR 110", "ASTR 120")),
+    _sk_prog("90020", "Welding Technology 1", "Certificate of Achievement"),
+    _sk_prog("90021", "Welding Technology 2", "Certificate of Achievement"),
+    _sk_prog("90022", "Bookkeeping Option A", "Certificate of Achievement"),
+    _sk_prog("90023", "Bookkeeping Option B", "Certificate of Achievement"),
+    _sk_prog("90024", "Spanish I", "A.A. Degree"),
+    _sk_prog("90025", "Accounting", "Certificate of Accomplishment"),
+    _sk_prog("90026", "Real Estate", "A.S. Degree"),
+    _sk_prog("90027", "English as a Second Language", "A.A. Degree"),
+]
+
+
+def _sk_got(path, pages):
+    h1, codes = pages[path]
+    words = codes.split()
+    listed = [" ".join(words[i:i + 2]) for i in range(0, len(words), 2)]
+    body = "%s\nProgram Requirements\n%s" % (h1, "\n".join(c + " Course 3 units" for c in listed))
+    return {"final_url": SK + path, "url": SK + path, "title": h1, "h1": h1, "body": body, "content": body,
+            "status": 200, "access": "ok", "links": []}
+
+
+def run_sk_capture(lookup, progs=None, pages=None, filed=None, college_dir=None, year="2026-2027"):
+    """capture() and file_run() on the Skyline fixture; filed: {control number: record} placed in the college's
+    records folder first, as the read filed now (ncl_yield reads it); college_dir: the colleges folder to file
+    into and keep (a second capture reads what the first filed), else a fresh one; year: the registry's catalog
+    year."""
+    progs, pages = progs or SK_PROGS, pages or SK_PAGES
+    names = ("college_programs", "hand_filed", "host_registry_urls", "read_sitemap", "index_links", "COLLEGE_DIR")
+    saved_c = {n: getattr(C, n) for n in names}
+    saved_p = (P.fetch_registry, P.open_reader, P.load, P.locate_html)
+    saved_env = os.environ.get(C.NCL_LOOKUP_ENV), os.environ.get("CAPTURE_ROUTE")
+    with tempfile.TemporaryDirectory() as td:
+        C.college_programs = lambda college: json.loads(json.dumps(progs))
+        C.hand_filed = lambda college: None
+        C.host_registry_urls = lambda start: [SK]
+        C.read_sitemap = lambda reader, start: {"url": SK + "sitemap.xml", "status": 200, "nested": [],
+                                                "pages": [SK + p for p in sorted(pages)]}
+        C.index_links = lambda *a, **k: []
+        C.COLLEGE_DIR = college_dir or os.path.join(td, "colleges")
+        for cn, rec in (filed or {}).items():
+            os.makedirs(os.path.join(C.COLLEGE_DIR, "skyline", "records"), exist_ok=True)
+            with open(os.path.join(C.COLLEGE_DIR, "skyline", "records", cn + ".json"), "w") as fh:
+                json.dump(rec, fh)
+        P.fetch_registry = lambda college: {"catalog_url": SK, "catalog_platform": "custom_html",
+                                            "catalog_year": year}
+        P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
+        P.load = lambda reader, u, cache, late=False: _sk_got(u[len(SK):], pages)
+        P.locate_html = lambda *a, **k: {"best": None}
+        os.environ[C.NCL_LOOKUP_ENV] = lookup
+        os.environ.pop("CAPTURE_ROUTE", None)
+        out = os.path.join(td, "out")
+        try:
+            code = C.capture("Skyline College", out)
+            srcs = {f[:-5]: open(os.path.join(out, "sources", f)).read() for f in os.listdir(os.path.join(out, "sources"))}
+            rep = json.load(open(os.path.join(out, "capture.json")))
+            os.makedirs(os.path.join(out, "records"))
+            C.file_run("Skyline College", out, "1")
+            filed = json.load(open(os.path.join(C.COLLEGE_DIR, "skyline", "sources.json")))
+        finally:
+            for n, v in saved_c.items():
+                setattr(C, n, v)
+            P.fetch_registry, P.open_reader, P.load, P.locate_html = saved_p
+            for k, v in zip((C.NCL_LOOKUP_ENV, "CAPTURE_ROUTE"), saved_env):
+                if v is None:
+                    os.environ.pop(k, None)
+                else:
+                    os.environ[k] = v
+    return code, srcs, rep, filed
+
+
+sk_code, sk_src, sk_rep, sk_filed = run_sk_capture("1")
+sk = {cn: json.loads(t) for cn, t in sk_src.items()}
+lk = {cn: s.get("catalog_lookup") or {} for cn, s in sk.items()}
+NCL_CNS = [p["control_number"] for p in SK_PROGS if not p["closed_list"]]
+st = sk_rep["catalog_lookup"]["self_test"]
+check(sk_code == 0 and st["searches"] and st["tested"] == 11 and st["hits"] == 10 and st["false"] == 0
+      and st["false_off_own"] == 0,
+      "the capture tests its matcher on its own closed-list programs first (10 of 11 back to their page, none "
+      "elsewhere, none found off its own page), and looks up only when that clears the floor: %r" % st)
+check(lk["05809"].get("result") == "found"
+      and lk["05809"]["page"]["url"] == SK + "programs/accounting-as.php" and lk["05809"]["page"]["award"] == "named",
+      "Skyline's Accounting A.S. (05809), no closed list, is found on its own page by title and award: %r" % lk["05809"])
+check(all(sk[cn]["method"] == "no_closed_list" and sk[cn]["source"] is None and sk[cn]["text"] == "" for cn in NCL_CNS),
+      "a looked-up program keeps method no_closed_list, no source and no text: nothing extracts it, the census counts it as before")
+check(sk["90001"]["source"]["url"] == SK + "programs/accounting-ca.php" and sk["90003"]["method"] == "sitemap_page",
+      "the closed-list programs take their pages first")
+check(lk["90002"] == {"result": "not_matched", "why": "no page read names it by title and award"},
+      "a search that finds nothing files not_matched, never not_listed: %r" % lk["90002"])
+check(not any(a.get("result") == "not_listed" for a in lk.values()),
+      "not_listed needs the catalog's own list behind it; a site search files none")
+check(lk["90004"].get("result") == "not_matched" and "closed-list 90003" in lk["90004"].get("why", ""),
+      "a no-closed-list program never takes a closed-list sibling's page: %r" % lk["90004"])
+check(lk["90005"].get("result") == "not_matched" and lk["90005"]["why"].startswith("two pages name it"),
+      "two pages naming one program is ambiguous, filed not_matched with the reason: %r" % lk["90005"])
+check(lk["90006"].get("result") == "not_matched" and lk["90007"].get("result") == "not_matched"
+      and lk["90006"]["why"].startswith("the page names"),
+      "a page that prints no award and names two programs (Paralegal A.S. and certificate) goes to neither: %r" % lk["90006"])
+check(lk["90008"].get("result") == "not_matched" and "two pages" in lk["90008"]["why"],
+      "Allied Health Science beside an Allied Health Sciences page is ambiguous, never a guess: %r" % lk["90008"])
+check(lk["90021"].get("result") == "found" and lk["90020"].get("result") == "not_matched"
+      and lk["90022"].get("result") == "found" and lk["90023"].get("result") == "not_matched"
+      and lk["90024"].get("result") == "not_matched",
+      "numbers, option letters and roman numerals are identity: Welding Technology 1 never reads the 2's page, "
+      "Bookkeeping Option B never the A's, Spanish I never Spanish's: %r" % [lk[c] for c in ("90020", "90023", "90024")])
+check(lk["90025"].get("result") == "not_matched",
+      "an award the state's file leaves unnamed (Certificate of Accomplishment) never takes a page printing an A.S. or "
+      "a certificate of achievement: %r" % lk["90025"])
+check(lk["90026"].get("result") == "not_matched",
+      "a department's landing page (real-estate/index.php) is no program's page: %r" % lk["90026"])
+check(lk["90027"].get("result") == "found",
+      "\"as\" in English as a Second Language is a title word, not an award: %r" % lk["90027"])
+found_pages = [a["page"]["url"] for a in lk.values() if a.get("result") == "found"]
+check(len(found_pages) == len(set(found_pages)), "one page gives found to one program at most")
+check(not any(r["control_number"] in NCL_CNS for r in (sk_rep["would_extract"].get("list") or []))
+      and sk_rep["catalog_lookup"]["found"] == 4 and sk_rep["catalog_lookup"]["programs"] == len(NCL_CNS)
+      and sk_rep["by_method"].get("no_closed_list") == len(NCL_CNS),
+      "the account counts the lookup's pages for a price, and nothing found extracts in this slice: %r"
+      % {k: v for k, v in sk_rep["catalog_lookup"].items() if k != "found_programs"})
+check(next(e for e in sk_filed if e["control_number"] == "05809")["catalog_lookup"]["result"] == "found"
+      and "catalog_lookup" not in next(e for e in sk_filed if e["control_number"] == "90001"),
+      "the filed sources.json carries a no-closed-list program's answer, and nothing new on a closed-list entry")
+acct = sk_rep["catalog_lookup"]
+acct_found = {f["control_number"]: f for f in acct["found_programs"]}
+acct_other = {o["control_number"]: o for o in acct["other_programs"]}
+check(acct_found["05809"]["h1"] == "Accounting" and acct_found["05809"]["awards"] == ["as"]
+      and lk["05809"]["page"]["awards"] == ["as"]
+      and acct_other["90002"] == {"control_number": "90002", "title": "Business", "award": "A.S. Degree",
+                                  "status": "Active", "result": "not_matched",
+                                  "why": "no page read names it by title and award"}
+      and acct_other["90004"]["url"] == SK + "programs/digital-media-aa.php"
+      and set(acct_found) | set(acct_other) == set(NCL_CNS)
+      and "text" not in json.dumps(acct) and acct["self_test"]["recall"] == round(10 / 11, 3),
+      "the filed account carries each looked-up program's answer in short (a found page's heading and printed "
+      "awards, any other's reason) and the self-test, and no page text: %r" % acct_other.get("90002"))
+off_code, off_src, off_rep, off_filed = run_sk_capture("0")
+check(off_code == 0 and "catalog_lookup" not in off_rep and not any("catalog_lookup" in t for t in off_src.values()),
+      "NCL_CATALOG_LOOKUP=0 runs the capture as before S652")
+check(all(off_src[p["control_number"]] == sk_src[p["control_number"]] for p in SK_PROGS if p["closed_list"])
+      and {k: v for k, v in sk_rep.items() if k not in ("catalog_lookup", "seconds", "started")}
+      == {k: v for k, v in off_rep.items() if k not in ("seconds", "started")},
+      "the lookup leaves every closed-list program's source and the rest of the account byte for byte as before")
+# A college whose own closed-list programs the matcher does not find (their pages print another heading) is not
+# looked up: its programs file not_searched with the reason, never not_listed or not_matched.
+gate_pages = {("programs/p%d.php" % i if v[1] else k): ((v[0] + " Overview Studies Extra") if v[1] else v[0], v[1])
+              for i, (k, v) in enumerate(sorted(SK_PAGES.items()))}
+g_code, g_src, g_rep, _ = run_sk_capture("1", pages=gate_pages)
+g = {cn: (json.loads(t).get("catalog_lookup") or {}) for cn, t in g_src.items()}
+check(g_code == 0 and not g_rep["catalog_lookup"]["self_test"]["searches"]
+      and g_rep["catalog_lookup"]["self_test"]["tested"] >= C.NCL_MIN_TESTED
+      and all(g[cn].get("result") == "not_searched" for cn in NCL_CNS),
+      "under the self-test's floor every no-closed-list program files not_searched: %r" % g_rep["catalog_lookup"]["self_test"])
+check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["ncl_lookup"]["default"] == "1"
+      and _rsteps["Capture"]["env"]["NCL_CATALOG_LOOKUP"] == "${{ github.event.inputs.ncl_lookup || '1' }}",
+      "the college workflow's ncl_lookup input (default 1) sets the capture's NCL_CATALOG_LOOKUP")
+# A no-closed-list program takes its own page back from a closed-list program that holds it wrongly (ncl_yield, S668).
+# Skyline's capture gave dance-aa.php, headed "Dance Associate in Arts Degree Program", to Musical Theater (46296),
+# and filed Dance A.A. (10546, no closed list) not_matched "its page went to closed-list 46296". Four shapes, one
+# capture: the holder's filed record fails (the page moves), passes (Lemoore's 43533: nothing moves), is absent
+# (nothing moves, unjudged), and a page that names its holder (Palomar's 08937 heading: nothing moves).
+YIELD_PAGES = dict(SK_PAGES, **{
+    "programs/dance-aa.php": ("Dance Associate in Arts Degree Program", "DANC 100 DANC 110 MUS 100"),
+    "programs/networking-fundamentals-ca.php": ("Networking Fundamentals (COA)", "CIS 100 CIS 110 CIS 120"),
+    "programs/web-design-ca.php": ("Web Design Certificate of Achievement", "ART 100 ART 110 ART 120"),
+    "programs/water-technology-education.php": (
+        "Water Technology Education - A.S. Degree Major/Cert. Achievement (18 units or more)", "WTE 100 WTE 110 WTE 120")})
+YIELD_PROGS = SK_PROGS + [
+    _sk_prog("91001", "Musical Theater", "Certificate of Achievement", ("DANC 100", "DANC 110", "MUS 100")),
+    _sk_prog("91002", "Dance", "A.A. Degree"),
+    _sk_prog("91003", "Information Technology Specialist", "Certificate of Achievement", ("CIS 100", "CIS 110", "CIS 120")),
+    _sk_prog("91004", "Networking Fundamentals", "Certificate of Achievement"),
+    _sk_prog("91005", "Digital Art", "Certificate of Achievement", ("ART 100", "ART 110", "ART 120")),
+    _sk_prog("91006", "Web Design", "Certificate of Achievement"),
+    _sk_prog("91007", "Water Technology Education", "A.S. Degree", ("WTE 100", "WTE 110", "WTE 120")),
+    _sk_prog("91008", "Water Technology Education", "Certificate of Achievement")]
+Y_FAIL = {"coverage": {"pass": False}, "invented": {"pass": True}, "arithmetic": {"status": "unequal"}}
+Y_PASS = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}}
+
+
+def y_rec(cn, path, score, year="2026-2027"):
+    return {"control_number": cn, "source_url": SK + path, "record": {"parts": []}, "score": score, "catalog_year": year}
+
+
+Y_FILED = {"91001": y_rec("91001", "programs/dance-aa.php", Y_FAIL),
+           "91003": y_rec("91003", "programs/networking-fundamentals-ca.php", Y_PASS),
+           "91007": y_rec("91007", "programs/water-technology-education.php", Y_FAIL)}
+y_code, y_src, y_rep, y_filed = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, Y_FILED)
+ys = {cn: json.loads(t) for cn, t in y_src.items()}
+ylk = {cn: s.get("catalog_lookup") or {} for cn, s in ys.items()}
+yacct = y_rep["catalog_lookup"]
+check(y_code == 0 and yacct["self_test"]["searches"],
+      "the yield fixture's college clears the self-test, so its lookup runs: %r" % yacct["self_test"])
+check(ylk["91002"].get("result") == "found" and ylk["91002"].get("took_from") == "91001"
+      and ylk["91002"]["page"]["url"] == SK + "programs/dance-aa.php",
+      "Dance A.A., no closed list, takes back the page headed \"Dance Associate in Arts Degree Program\" from Musical "
+      "Theater, whose filed record from that page fails (Skyline 46296): %r" % ylk["91002"])
+check(ys["91001"]["method"] == "page_claimed" and ys["91001"]["source"] is None and ys["91001"]["text"] == ""
+      and ys["91001"]["lost_pages"] == [SK + "programs/dance-aa.php"] and ys["91001"]["yielded_to"] == "91002"
+      and next(e for e in y_rep["page_claimed"] if e["control_number"] == "91001")["pages"]
+      == [SK + "programs/dance-aa.php"],
+      "the holder files page_claimed, its source and text cleared, the page it lost and the program it yielded to "
+      "named, so it stays in Still to pass: %r" % {k: ys["91001"].get(k) for k in ("method", "lost_pages", "yielded_to")})
+check(not any(r["control_number"] == "91001" for r in (y_rep["would_extract"].get("list") or []))
+      and "91001" not in y_rep["fingerprints"],
+      "the holder has no text, so nothing extracts it")
+check(ylk["91004"].get("result") == "not_matched" and ylk["91004"]["why"].startswith(C.NCL_WENT_TO + " 91003")
+      and ylk["91004"].get("yield_held", {}).get("held") == "refused_passing"
+      and ys["91003"]["method"] == "sitemap_page",
+      "a holder whose filed record from the page passes live keeps it (Lemoore 43533 on \"Networking Fundamentals "
+      "(COA)\"): %r" % ylk["91004"])
+check(ylk["91006"].get("result") == "not_matched" and ylk["91006"].get("yield_held", {}).get("held") == "unjudged"
+      and ys["91005"]["method"] == "sitemap_page",
+      "a holder with no filed record keeps its page, counted unjudged: %r" % ylk["91006"])
+check(ylk["91008"].get("result") == "not_matched" and "took_from" not in ylk["91008"] and "yield_held" not in ylk["91008"]
+      and ys["91007"]["method"] == "sitemap_page",
+      "a page that names its holder (Palomar 08937's heading, \"Water Technology Education - A.S. Degree Major/Cert. "
+      "Achievement\") stays its holder's, though the holder's filed record fails: %r" % ylk["91008"])
+check(yacct["yields"] == [{"holder": "91001", "holder_title": "Musical Theater", "taker": "91002", "taker_title": "Dance",
+                           "url": SK + "programs/dance-aa.php", "h1": "Dance Associate in Arts Degree Program",
+                           "catalog_year": "2026-2027"}]
+      and yacct["yield_unjudged"] == 1 and yacct["yield_refused_passing"] == 1,
+      "the account names each move (holder, taker, page, heading) and counts the candidates whose page stayed: %r"
+      % {k: yacct[k] for k in ("yields", "yield_unjudged", "yield_refused_passing")})
+check(next(e for e in y_filed if e["control_number"] == "91001")["method"] == "page_claimed"
+      and next(e for e in y_filed if e["control_number"] == "91002")["catalog_lookup"]["took_from"] == "91001",
+      "the filed sources.json carries the move on both programs")
+# keep_no_read carries only a passing record: the holder's failing one is not carried.
+with tempfile.TemporaryDirectory() as ytd:
+    os.makedirs(os.path.join(ytd, "keep", "records"))
+    with open(os.path.join(ytd, "keep", "records", "91001.json"), "w") as fh:
+        json.dump(Y_FILED["91001"], fh)
+    check(C.keep_no_read(os.path.join(ytd, "keep"), os.path.join(ytd, "out"), [ys["91001"]]) == [],
+          "the holder's failing record is not carried by keep_no_read")
+# The page's own test, directly: the holder named on the page keeps it whatever its record (ncl_yield's gate (a)),
+# and a holder's passing record read from another page leaves the move unjudged.
+y_feats = C.ncl_pages([{"url": SK + p, "title": h, "h1": h} for p, (h, _) in YIELD_PAGES.items()], "Skyline College")
+y_own = {"91007": C.page_stem(SK + "programs/water-technology-education.php"),
+         "91001": C.page_stem(SK + "programs/dance-aa.php")}
+y_claimed = C.ncl_claims(y_own, y_feats)
+y_by = {p["control_number"]: p for p in YIELD_PROGS}
+check(C.ncl_yield(y_by["91008"], y_feats, y_claimed, YIELD_PROGS, lambda cn: Y_FILED.get(cn)) is None,
+      "a page whose readings name its holder by title and award is never given away")
+y_other = C.ncl_yield(y_by["91002"], y_feats, y_claimed, YIELD_PROGS,
+                      lambda cn: y_rec(cn, "programs/history-aa.php", Y_FAIL))
+check(y_other and y_other["held"] == "unjudged" and y_other["holder"] == "91001",
+      "a holder's failing record read from another page does not judge this one: %r" % y_other)
+y_off_code, y_off_src, _, _ = run_sk_capture("0", YIELD_PROGS, YIELD_PAGES, Y_FILED)
+y_off = {cn: json.loads(t) for cn, t in y_off_src.items()}
+check(y_off_code == 0 and y_off["91001"]["method"] == "sitemap_page", "NCL_CATALOG_LOOKUP=0 moves no page")
+y_raw = [_sk_got(p, YIELD_PAGES) for p in sorted(YIELD_PAGES)]
+y_all_own = {cn: C.page_stem(s["source"]["url"]) for cn, s in y_off.items() if s.get("source")}
+y_args = (YIELD_PROGS, y_raw, y_all_own, None, C.ncl_named(list(y_off.values())), "Skyline College", "2026-2027")
+y_with, y_test = C.ncl_lookup(*y_args, filed=lambda cn: Y_FILED.get(cn))
+y_without, _ = C.ncl_lookup(*y_args)
+check(y_test["searches"] and y_with["91002"].get("took_from") == "91001" and "took_from" not in y_without["91002"]
+      and not any("yield_held" in a for a in y_without.values()),
+      "the lookup moves a page only when it is given the filed records (filed); without them, none moves")
+y_under, y_under_test = C.ncl_lookup(YIELD_PROGS, y_raw, y_own, filed=lambda cn: Y_FILED.get(cn))
+check(not y_under_test["searches"] and y_under["91002"]["result"] == "not_searched"
+      and not any("took_from" in a or "yield_held" in a for a in y_under.values()),
+      "a college under the self-test's floor yields nothing: %r" % y_under["91002"])
+# A failing record moves a page only from the capture's catalog year (the #3408 review): a 2024-2025 record at the same
+# address judges no 2026-2027 page. A record naming no year reads its filing's (kept_year); both empty is one year.
+y_old, _ = C.ncl_lookup(*y_args, filed=lambda cn: dict(Y_FILED[cn], catalog_year="2024-2025") if cn in Y_FILED else None)
+y_noyear, _ = C.ncl_lookup(*y_args[:-1], None, filed=lambda cn: dict(Y_FILED[cn], catalog_year=None) if cn in Y_FILED else None)
+check(y_old["91002"].get("yield_held", {}).get("held") == "unjudged" and "2024-2025" in y_old["91002"]["yield_held"]["why"]
+      and "took_from" not in y_old["91002"] and y_noyear["91002"].get("took_from") == "91001",
+      "a failing record from another catalog year moves no page; with no year on either side it does: %r" % y_old["91002"])
+# A holder whose filed record passes live keeps its page wherever the record was read from, even against a yield the
+# filed capture names (the #3408 review, round two): a person's fix or a later re-read wins over the earlier move.
+y_dance = {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"), "2026-2027")}
+y_fixed, _ = C.ncl_lookup(*y_args, filed=lambda cn: y_rec(cn, "programs/musical-theater-ca.php", Y_PASS)
+                          if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
+y_stood, _ = C.ncl_lookup(*y_args, filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn), yielded=y_dance)
+check(y_fixed["91002"].get("yield_held", {}).get("held") == "refused_passing" and "took_from" not in y_fixed["91002"]
+      and y_stood["91002"].get("took_from") == "91001",
+      "a passing record of the holder, read from another page, keeps the page against a filed yield; with no record "
+      "the filed yield stands: %r" % y_fixed["91002"])
+# A filed yield stands only in the year it was made under (COBIx on #3408): a 2026-2027 yield under a 2027-2028
+# lookup, and a yield naming no year, move nothing; the holder, with no record, is unjudged.
+y_moved, _ = C.ncl_lookup(*y_args[:-1], "2027-2028", filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn),
+                          yielded=y_dance)
+y_noyear_y, _ = C.ncl_lookup(*y_args, filed=lambda cn: None if cn == "91001" else Y_FILED.get(cn),
+                             yielded={t[:3] + (None,) for t in y_dance})
+check("took_from" not in y_moved["91002"] and y_moved["91002"].get("yield_held", {}).get("held") == "unjudged"
+      and "took_from" not in y_noyear_y["91002"] and y_noyear_y["91002"].get("yield_held", {}).get("held") == "unjudged",
+      "a filed yield from another year, or naming none, lapses: %r" % [y_moved["91002"].get("yield_held"),
+                                                                       y_noyear_y["91002"].get("yield_held")])
+check(C.ncl_capture_yields({"catalog_lookup": {"yields": [{"holder": "1", "taker": "2", "url": SK + "a.php"}]}})
+      == {("1", "2", C.page_stem(SK + "a.php"), None)}, "a filed yield row naming no year reads as None")
+y_kept = C.kept_year({"catalog_year": None, "x": 1}, "2026-2027")
+check(y_kept["catalog_year"] == "2026-2027", "a record naming no year reads its filing's year (kept_year)")
+# A yield stands on the next capture (the #3408 review, blocking): the filing drops the holder's failing record, and the
+# next capture finds none. The filed capture.json's account names the yield, so the page stays with the taker, and
+# the holder is never sent to the model again.
+with tempfile.TemporaryDirectory() as y_two:
+    y_cd = os.path.join(y_two, "colleges")
+    y1 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, Y_FILED, college_dir=y_cd)
+    check(not os.path.exists(os.path.join(y_cd, "skyline", "records", "91001.json"))
+          and (C.ncl_filed_yields(os.path.join(y_cd, "skyline"))
+               >= {("91001", "91002", C.page_stem(SK + "programs/dance-aa.php"), "2026-2027")}),
+          "the first filing drops the holder's failing record, and its capture.json names the yield")
+    # The extraction carries the passing record it kept (91003) and the failing one it read again (91007); 91001 is gone.
+    y2 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
+    y3 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd)
+    # A filed yield carries the year it was made under and lapses when the registry moves a year (COBIx on #3408):
+    # the holder, with no record, is judged again and keeps its page (unjudged), so its new year's read is taken.
+    y4 = run_sk_capture("1", YIELD_PROGS, YIELD_PAGES, {cn: Y_FILED[cn] for cn in ("91003", "91007")}, college_dir=y_cd,
+                        year="2027-2028")
+y4s1, y4s2 = json.loads(y4[1]["91001"]), json.loads(y4[1]["91002"])
+check(y4[0] == 0 and y4s1["method"] == "sitemap_page" and "took_from" not in y4s2["catalog_lookup"]
+      and y4s2["catalog_lookup"].get("yield_held", {}).get("held") == "unjudged" and y4[2]["catalog_lookup"]["yields"] == [],
+      "a 2026-2027 filed yield moves nothing under a 2027-2028 capture: %r" % {"91001": y4s1["method"],
+                                                                             "91002": y4s2["catalog_lookup"]})
+for n, (yc, ysrc, yrep, _) in enumerate((y1, y2, y3), 1):
+    s1, s2 = json.loads(ysrc["91001"]), json.loads(ysrc["91002"])
+    check(yc == 0 and s1["method"] == "page_claimed" and s1.get("yielded_to") == "91002"
+          and s2["catalog_lookup"].get("took_from") == "91001"
+          and not any(e["control_number"] == "91001" for e in yrep["would_extract"].get("list") or [])
+          and [y["holder"] for y in yrep["catalog_lookup"]["yields"]] == ["91001"],
+          "capture %d in a row: the page stays with the taker and the holder is not extracted: %r"
+          % (n, {"91001": s1["method"], "91002": s2["catalog_lookup"]}))
+# The catalog's own list (a Coursedog search, kept since S423): not_listed rests on it alone.
+# not_listed is gated twice (the #3300 review, DECIDED): the page self-test passes, and the catalog's own list
+# names at least NCL_LIST_FLOOR of the closed-list programs whose pages were read. A title that strips to no words
+# ("Cal-GETC") is never looked up.
+LT = ["Biology", "Chemistry", "Physics", "History", "Economics", "Geography", "Philosophy", "Sociology",
+      "Psychology", "Astronomy"]
+lt_progs = [_sk_prog("L%d" % i, t, "A.S. Degree", ("X%d 1" % i,)) for i, t in enumerate(LT)] + [
+    _sk_prog("N1", "Accounting", "A.S. Degree"), _sk_prog("N2", "Welding", "A.S. Degree"),
+    _sk_prog("N3", "Cal-GETC", "Certificate of Achievement")]
+lt_pages = [{"url": "https://c.edu/programs/%s/req" % t.lower(), "h1": "%s - Associate in Science" % t} for t in LT]
+lt_own = {"L%d" % i: C.page_stem(pg["url"]) for i, pg in enumerate(lt_pages)}
+
+
+def lt_list(names):
+    return C.ncl_listed_names({"catalog": [{"code": "%s-AS" % n[:4].upper(), "name": "%s - Associate in Science" % n}
+                                           for n in names], "errors": []})
+
+
+lt_ans, lt_test = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT + ["Accounting"]),
+                               {"L%d" % i for i in range(10)})
+check(lt_test["searches"] and lt_test["catalog_list"]["files_not_listed"]
+      and lt_ans["N2"] == {"result": "not_matched", "why": "absent_from_catalog_list"}
+      and lt_ans["N1"]["result"] == "not_matched" and lt_ans["N3"] == {"result": "not_matched", "why": "title_has_no_words"},
+      "a program absent from the catalog's own list files not_matched, absent_from_catalog_list (this slice files no "
+      "not_listed, round three); a listed one with no page is not_matched; Cal-GETC, a title of decorations alone, "
+      "is never looked up: %r" % lt_ans)
+lt_ans2, lt_test2 = C.ncl_lookup(lt_progs, lt_pages, lt_own, lt_list(LT[:7] + ["Accounting"]),
+                                 {"L%d" % i for i in range(10)})
+check(not lt_test2["catalog_list"]["files_not_listed"] and lt_test2["catalog_list"]["recall"] == 0.7
+      and lt_ans2["N2"] == {"result": "not_matched", "why": "no page read names it by title and award"}
+      and not any(a.get("result") == "not_listed" for a in list(lt_ans.values()) + list(lt_ans2.values())),
+      "a list that fails its own test (Merced's 45 missed) gives no reason: the page search's own stands, and no "
+      "answer is ever not_listed: %r"
+      % lt_test2["catalog_list"])
+lt_ans3, lt_test3 = C.ncl_lookup(lt_progs, lt_pages[:9], lt_own, lt_list(LT + ["Accounting"]),
+                                 {"L%d" % i for i in range(9)})
+check(lt_test3["tested"] == 9 and lt_test3["hits"] == 9 and not lt_test3["searches"]
+      and lt_ans3["N2"]["result"] == "not_searched",
+      "fewer than NCL_MIN_TESTED (10) closed-list programs tested is no test: 9 of 9 does not open the lookup")
+# The pages read are the catalog; the list is only its index (COBIx on #3300): a program the list lacks but a
+# read page names is found, even where the list passes its own test.
+lt_ans4, lt_test4 = C.ncl_lookup(lt_progs, lt_pages + [{"url": "https://c.edu/programs/welding/req",
+                                                        "h1": "Welding - Associate in Science"}],
+                                 lt_own, lt_list(LT + ["Accounting"]), {"L%d" % i for i in range(10)})
+check(lt_test4["catalog_list"]["files_not_listed"] and lt_ans4["N2"]["result"] == "found"
+      and lt_ans4["N2"]["page"]["url"] == "https://c.edu/programs/welding/req",
+      "a program the catalog's list lacks is found on a read page that names it; the page search comes first: %r"
+      % lt_ans4["N2"])
+cd_ans, _ = C.ncl_lookup([_sk_prog("1", "Accounting", "A.S. Degree"), _sk_prog("2", "Welding", "A.S. Degree")],
+                         [], {}, lt_list(["Accounting"]))
+check(cd_ans["1"]["result"] == "not_searched" and cd_ans["2"]["result"] == "not_searched",
+      "a college whose page self-test cannot run files not_searched, never not_listed: %r" % cd_ans)
+# A transfer degree's page names no A.S. beside it (Diablo Valley's 01512 and 30218, the #3300 review).
+ece = C.ncl_page({"url": "https://dvc.example.edu/programs/ece/", "h1": "A.S. in Early Childhood Education for Transfer"})
+check(ece["kinds"] == {"adt"} and C.ncl_match(ece, _sk_prog("1", "Early Childhood Education", "A.S. Degree")) is None
+      and C.award_kinds_in("Biology for Transfer, Associate in Science") == {"adt"}
+      and C.ncl_match(ece, _sk_prog("2", "Early Childhood Education", "A.S. T Degree")) is not None,
+      "a transfer heading is the A.S.-T alone: a local A.S. never reads its page")
+rcc = C.ncl_page({"url": "https://rccd.example.edu/catalog/iq/5852/6117/5911", "group": "codes:AS523",
+                  "h1": "Business Administration: Accounting Concentration - Associate of Science Degree and Certificate "
+                        "of Achievement - AS523/AS523C/CE523"})
+rcc_as = _sk_prog("A1", "Business Administration: Accounting Concentration", "A.S. Degree")
+rcc_coa = _sk_prog("C1", "Business Administration: Accounting Concentration", "Certificate of Achievement", ("ACCT 1",))
+rcc_ans = C.ncl_answer(rcc_as, [rcc], {k: ["C1"] for k in rcc["keys"]}, [rcc_as, rcc_coa])
+check(rcc_ans["result"] == "not_matched" and rcc_ans["why"].startswith("page_shared_by_awards"),
+      "a page printing two awards, taken by one, is never given to the other: page_shared_by_awards: %r" % rcc_ans)
+check(C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q2/", "h1": "Management, A.S."}),
+                  _sk_prog("1", "Hospitality: Management", "A.S. Degree")) is None,
+      "a title with a colon matches on the whole title: Hospitality: Management never takes a bare Management page")
+check(C.ncl_match(C.ncl_pages([{"url": "https://x.example.edu/p/q1/", "h1": "Test Accounting, A.S."}], "Test College")[0],
+                  _sk_prog("1", "Accounting", "A.S. Degree")) is None
+      and C.ncl_match(C.ncl_pages([{"url": "https://x.example.edu/p/q3/", "h1": "Accounting - Test, A.S."}],
+                                  "Test College")[0], _sk_prog("1", "Accounting", "A.S. Degree")) is None
+      and C.strip_college("Accounting - San Diego Mesa College, A.S.",
+                          frozenset({"san", "diego", "mesa", "college"})) == "Accounting - A.S.",
+      "the college's full name alone is set aside, as a segment of its own at a heading's start or end; a part of "
+      "it (\"Test\" at Test College) never is")
+check(C.ncl_listed_names({"catalog": [{"code": "A", "name": "A"}], "errors": ["skip 50: HTTP 500"]}) is None,
+      "a catalog list the read did not finish is no basis")
+# Acalog: every program is preview_program.php, told apart by poid; the print view is the same page.
+EC = "http://catalog.elcamino.edu/preview_program.php?catoid=13&poid="
+check(C.page_stem(EC + "3523&print") != C.page_stem(EC + "3548&print")
+      and C.page_stem(EC + "3523&print") == C.page_stem(EC + "3523")
+      and len(C.ncl_pages([{"url": EC + "3523&print", "h1": "Marketing, AS"},
+                           {"url": EC + "3548&print", "h1": "Journalism, AA"}])) == 2,
+      "an Acalog page's identity keeps its poid and folds the print view")
+check(C.page_award_kinds({"url": EC + "3523&print", "h1": "Marketing, AS",
+                          "title": "Degree & Certificate: Marketing, AS - El Camino College"}) == {"as"},
+      "an Acalog page's award is its heading's, not the catalog's \"Degree & Certificate\" banner")
+# The headings the second reader found carrying words a title lacks: each reads as its title.
+for heading, title in (("Business Administration: General Business Concentration - Associate of Science Degree and "
+                        "Certificate of Achievement - AS524/AS524C/CE524", "Business Administration: General Business"),
+                       ("Accounting - A.S. Degree Major/Cert. Achievement (18 units or more)", "Accounting"),
+                       ("Welding (COA)", "Welding"), ("Agribusiness AA499", "Agribusiness"),
+                       ("Accounting, Associate of Science - Major #2010", "Accounting"),
+                       ("Psychology for Transfer", "Psychology"), ("Sociology ADT CalGETC", "Sociology"),
+                       ("Basic Skills (Noncredit)", "Basic Skills"),
+                       ("Biology - Formerly Life Science Degree, Associate of Science", "Biology"),
+                       ("ENGLISH AS A SECOND LANGUAGE", "English as a Second Language"),
+                       ("Business Administration 2.0, A.S.-T", "Business Administration 2.0")):
+    check(C.ncl_words(heading) == C.ncl_words(title), "%r reads as %r: %r" % (heading, title, C.ncl_words(heading)))
+# Round three of the #3300 review: a found needs the whole title both ways; landing, department, archived and
+# past-year pages are no program's page; the transfer forms ADT and A.S.T. read as the A.S.-T.
+check(C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q4", "h1": "Computer Information Systems Security, A.S."}),
+                  _sk_prog("1", "Computer Information Systems", "A.S. Degree")) is None
+      and C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q5", "h1": "Marketing Management, A.S."}),
+                      _sk_prog("2", "Marketing", "A.S. Degree")) is None
+      and C.ncl_match(C.ncl_page({"url": "https://x.example.edu/p/q6", "h1": "Marketing, A.S."}),
+                      _sk_prog("3", "Marketing", "A.S. Degree")) is not None,
+      "a page's heading must be the whole title both ways: Computer Information Systems Security is not Computer "
+      "Information Systems, Marketing Management is not Marketing")
+check(C.award_kinds_in("Sociology ADT CalGETC") == {"adt"} and C.award_kinds_in("Biology - A.S.T.") == {"adt"}
+      and C.ncl_words("Biology - A.S.T.") == C.ncl_words("Biology"),
+      "ADT and A.S.T. are the transfer degree, and read as decoration beside the title")
+MS = "https://catalog.mtsac.example.edu/programs/programsaz/"
+land = {f["pg"]["url"]: f for f in C.ncl_pages([
+    {"url": MS + "accounting/", "h1": "Accounting"},
+    {"url": MS + "accounting/accounting-degree/", "h1": "Accounting, A.S."},
+    {"url": MS + "nursing/", "h1": "Nursing Degrees and Certificates"},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/", "h1": "Ethnic Studies",
+     "got": {"links": [{"href": "https://napa.example.edu/areas-of-study/ethnic-studies/ethnic-studies-aa/"},
+                       {"href": "https://napa.example.edu/areas-of-study/ethnic-studies/chicano-studies-aa/"}]}},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/ethnic-studies-aa/", "h1": "Ethnic Studies, A.A."},
+    {"url": "https://napa.example.edu/areas-of-study/ethnic-studies/chicano-studies-aa/", "h1": "Chicano Studies, A.A."},
+    {"url": "https://x.example.edu/archive/biology-as/", "h1": "Biology, A.S."},
+    {"url": "https://x.example.edu/catalog/2024-2025/programs/chemistry-as/", "h1": "Chemistry, A.S."},
+    {"url": "https://x.example.edu/catalog/2026-2027/programs/physics-as/", "h1": "Physics, A.S."},
+], "Example College", "2026-2027")}
+check([u for u, f in land.items() if not f["program_page"]] == [
+      MS + "accounting/", MS + "nursing/", "https://napa.example.edu/areas-of-study/ethnic-studies/",
+      "https://x.example.edu/archive/biology-as/", "https://x.example.edu/catalog/2024-2025/programs/chemistry-as/"],
+      "landing pages (a parent of another page read, a plural heading, an areas-of-study page linking two program "
+      "pages read), an archived copy and a past catalog year are refused; the program pages stand: %r"
+      % {u: f.get("refused") for u, f in land.items()})
+check(C.ncl_match(land[MS + "accounting/accounting-degree/"], _sk_prog("1", "Accounting", "A.S. Degree")) is not None
+      and C.ncl_match(land[MS + "accounting/"], _sk_prog("1", "Accounting", "A.S. Degree")) is None,
+      "Accounting A.S. reads its degree page, never the department page above it")
+check(C.ncl_match(C.ncl_page({"url": "https://catalog.mtsac.edu/programs/programsaz/accounting/accounting-certificate/",
+                              "h1": "Accounting"}), _sk_prog("1", "Accounting", "A.S. Degree")) is None,
+      "an address that says certificate is no degree's page (Mt. San Antonio)")
+check(C.page_award_kinds({"url": SK + "programs/accounting-as.php"}) == {"as"}
+      and C.page_award_kinds({"url": SK + "programs/user-experience-design-ca.php"}) == {"coa"}
+      and C.slug_awards(SK + "programs/accounting-as.php") == set(),
+      "the lookup reads an award from an address with its extension set aside; SLUG_AWARD stays as it was")
 
 if failures:
     print("FAIL: %d" % len(failures))

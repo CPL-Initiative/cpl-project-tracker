@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s653b_workplan_goals_drop_current.sql",
+ "name": "s653b_workplan_goals_drop_current",
+ "version": "20261114204116",
+ "sha256": "a9dac7d6da6d52d7e5b537c9d6a3427a1310682b449513246c883dfbef0b13ec",
+ "run": "43638452928",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"receipt\":{\"dropped\":\"public.workplan_goals.current\",\"rows\":72,\"before\":[{\"id\":3,\"current\":2}]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

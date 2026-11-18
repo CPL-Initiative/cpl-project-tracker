@@ -139,6 +139,61 @@ const P = "_UNCLASSIFIED::";
       return t.studentReads.length >= 2 && last.p_ids.filter((id, k) => last.p_keys[k] === "*").indexOf("MAPCX-Open Title") < 0;
     })());
 
+    // Cleared in another browser tab (COBIx on #3260): the next read reopens a card an earlier read settled, with no
+    // reload, and puts its exhibits back in Students waiting. The read fires when this browser tab comes back into view.
+    const visible = (w, on) => { Object.defineProperty(w.document, "hidden", { value: !on, configurable: true });
+      w.document.dispatchEvent(new w.Event("visibilitychange")); };
+    const fileSaved = t.M._state.data.held.filter((h) => h.raw === "Open Title")[0];
+    delete saved[P + "Open Title"];
+    let readsBefore = t.reads.length;
+    visible(t.w, true); await settle();
+    check("a browser tab coming back into view reads the saves again", t.reads.length === readsBefore + 1);
+    check("a title cleared in another tab reopens its card without a reload", shownRaws(t).indexOf("Open Title") >= 0
+      && !t.M._state.reviewSettled["Open Title"]);
+    check("and the reopened card drops the saved title the earlier read gave it", fileSaved && fileSaved.saved === undefined);
+    check("and its exhibits count in Students waiting again", (function () {
+      const last = t.studentReads[t.studentReads.length - 1];
+      return last.p_ids.filter((id, k) => last.p_keys[k] === "*").indexOf("MAPCX-Open Title") >= 0;
+    })());
+    check("a title still saved stays settled on that read", shownRaws(t).indexOf("Industry Training Evidence for EMS 10") < 0);
+    // On another COBI tab, coming back into view reads nothing.
+    t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
+    readsBefore = t.reads.length;
+    visible(t.w, true); await settle();
+    check("on another COBI tab a return to the browser tab reads nothing", t.reads.length === readsBefore);
+
+    // The reviewer stays on their card across a reread (second reader on #3285): loadStudents starts the queue at the
+    // top, so without this the view jumped to card 1 with Teach open and card 3's draft under it.
+    const live = {};
+    t = load({ saved: live });
+    await t.M.boot(); await settle();
+    const S = t.M._state;
+    S.cur = 2; S.teach = true; S.teachDraft = "my words for this card";
+    const mine = t.M._shown()[2].raw, other = t.M._shown()[0].raw;
+    live[P + other] = "Saved Elsewhere";
+    visible(t.w, true); await settle();
+    check("a title settled elsewhere keeps the reviewer on the card they were on",
+      shownRaws(t).indexOf(other) < 0 && t.M._shown()[S.cur] && t.M._shown()[S.cur].raw === mine);
+    check("and their Teach draft stays open with what they typed", S.teach === true && S.teachDraft === "my words for this card");
+    live[P + mine] = "Saved Elsewhere Too";
+    visible(t.w, true); await settle();
+    check("when their own card is settled elsewhere it leaves the queue and its draft goes with it",
+      shownRaws(t).indexOf(mine) < 0 && S.teach === false && S.teachDraft === "");
+
+    // A card decided on this page stays decided when a later read finds its title cleared: Back reopens it, not a read.
+    t = load({ saved: {} });
+    await t.M.boot(); await settle();
+    const first = t.M._shown()[0].raw;
+    const changeHere = button(t, /^Change to Proposed Title$/);
+    if (changeHere) changeHere.click();
+    await settle();
+    check("a card decided on this page leaves the queue", changeHere && shownRaws(t).indexOf(first) < 0);
+    t.reads.length = 0;
+    t.M._state.reviewSettled[first] = true;  // as a read that found this page's save would leave it
+    visible(t.w, true); await settle();
+    check("a read that finds no row for a card decided on this page leaves it decided",
+      t.reads.length === 1 && shownRaws(t).indexOf(first) < 0);
+
     // A clear deletes the row. On an ordinary card that reopens it; a conflict card exists only because of a saved
     // title, so a cleared one is decided and never comes back.
     t = load({ saved: {} });

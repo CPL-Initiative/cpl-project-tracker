@@ -46,27 +46,31 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 20,
    "listed": 22,
-   "share": 0.864,
+   "share": 0.909,
    "missing": [
     "BSEN74",
-    "CMST4",
     "CMST6"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "COMM12",
-    "COMM4"
+    "COMM12"
    ],
    "flagged": [
-    "COMM12",
-    "COMM4"
+    "COMM12"
    ],
    "pass": true
   },
@@ -358,5 +362,6 @@
    "Careers are taken from the description sentence 'Opportunities upon entry into the profession are varied and include ...', which is partly cut off at the top of the excerpt."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

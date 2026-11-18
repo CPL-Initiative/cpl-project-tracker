@@ -46,35 +46,41 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 24,
+   "placed": 26,
    "listed": 27,
-   "share": 0.889,
+   "share": 0.963,
    "missing": [
-    "CMST20",
-    "CMST4",
     "CMST6"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM20",
+     "listed": "CMST20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
+   "count": 4,
    "codes": [
     "CHEM101B",
     "CHEM32",
     "CHEM40",
-    "COMM12",
-    "COMM20",
-    "COMM4"
+    "COMM12"
    ],
    "flagged": [
     "CHEM101B",
     "CHEM32",
     "CHEM40",
-    "COMM12",
-    "COMM20",
-    "COMM4"
+    "COMM12"
    ],
    "pass": true
   },
@@ -450,5 +456,6 @@
    "Careers drawn from the Program Summary and Employment paragraphs."
   ]
  },
- "extracted_run": "39056434592"
+ "extracted_run": 43693267535,
+ "read_run": "39056434592"
 }

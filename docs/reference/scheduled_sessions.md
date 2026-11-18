@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-12
+updated: 2026-11-15
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -34,6 +34,17 @@ day. 3. Decide on the fly the effort to set and feel free to add Fable as an
 advisor when needed."* He chose to create the schedule himself after the
 session's permission check held a session-started relay twice (S329: "Create
 Unsafe Agents").
+
+**No conductor (Sam, 2026-11-15).** The queue runs as it did before 2026-11-11: one Opus 5.5 session works the queue
+itself, at an effort it chooses, under the terms above, **and keeps collaborating with COBIx** (Sam, 2026-11-15: *"i
+still want opus to collaborate with cobix"*): the PR review loop in [`cobix_pr_loop`](cobix_pr_loop.md), reading
+COBIx's threads and every PR comment to the last page at the start and before each merge, verifying each finding and
+answering on the thread. Fable 5.2 conducting Opus workers with ultracode on is retired
+for cost (*"he conducted me out of business:)"*); [`conductor_mode`](conductor_mode.md) is the record. The $40 limits
+stay (*Extraction cost* below). COBIx's nightly brief is the latest comment on issue #3358: a firing reads it
+first. An older
+handoff's `## Conductor settings` block, or a routine prompt that still names the conductor, does not bring it back:
+follow this page and tell Sam in one line that the routine's prompt needs his edit.
 
 ## You are a scheduled session when
 
@@ -438,14 +449,19 @@ Reversible means `git revert` undoes it, or its Rule 10 receipt does. Put a card
 on the standing sheet that says *Proceeded on the recommendation (S<N>, <date>);
 reply to reverse*, so Sam's reading is a review, never a gate.
 
-**Hold for Sam, still:** the one hold list in `CLAUDE.md` (*Decisions arrive as decision sheets*, Sam's Sheet 109 card 3, 2026-10-21), which covers a session Sam opens by hand too. A held item becomes a card; move on to the next queue item.
+**Hold for Sam, still:** only what the ask test in `CLAUDE.md` names (Sam, 2026-11-16, relayed by COBIx on issue #3358), which covers a session Sam opens by hand too. A held item becomes a card on the chosen default; move on to the next queue item.
 
 **Extraction cost: a standing go up to $40 a college (Sam, 2026-10-14, S393,
 his words: *"limit is $40 per college"*; `cpl_memory`
 `sam-extraction-standing-go-40-per-college-2026-10-14`).** A college's
 program-requirements extraction whose estimate is $40 or less runs without a
 card; record its actual cost in the lane. Above $40 it is a card. It holds for a
-session Sam opens by hand too.
+session Sam opens by hand too. **A separate $40 per college covers SLOs, PLOs and
+course objectives.** Each limit is per run, on the estimate, and never a remaining
+pot (relayed by COBIx on #3111, comment 6808460886; kept by Sam's 2026-11-15 cost
+rules on issue #3358). With no conductor, the session that dispatches a paid run
+checks its estimate against the limit itself; the code gates of #3351
+(`kb/_spend_meter.py`, [`model_spend`](model_spend.md)) stay.
 
 **A permission-check denial is a hold.** Do not route around it. Record what was
 asked and why on the sheet, finish what does not depend on it, and move on. A
@@ -457,6 +473,10 @@ effort level). For a judgment with nothing to score against (a definition, a
 naming call, a design choice, a doctrine reading), ask Fable once through the
 Agent tool (`model: "fable"`), record the advice in the lane or the lessons doc,
 and decide. Fable advises; a call that is Sam's stays Sam's.
+
+**Tool trials.** A repo, library or service tried for the stack gets one line in
+[`reference/stack_scouting`](stack_scouting.md) (candidate, measured cost,
+result, kept or dropped); COBIx scans every other Monday (#3306).
 
 ## At the end
 

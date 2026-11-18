@@ -44,33 +44,41 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 26,
    "listed": 26,
-   "share": 0.846,
-   "missing": [
-    "HIS1",
-    "HIS2",
-    "HIS2H",
-    "HIS31"
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    }
    ],
-   "unexplained": [
-    "HIS1",
-    "HIS2",
-    "HIS2H",
-    "HIS31"
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "HIST1",
-    "HIST2",
-    "HIST2H",
-    "HIST31"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -83,6 +91,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,7 +108,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -365,5 +385,7 @@
    "Program learning outcomes are printed once for the program and recorded for this ADT."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }

@@ -46,39 +46,50 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 27,
    "listed": 27,
-   "share": 0.778,
-   "missing": [
-    "BIOL303",
-    "ENGWR301",
-    "ENGWR303",
-    "ENGWR481",
-    "HIST310",
-    "HIST483"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOL303",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL481",
+     "listed": "ENGWR481",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1003",
+     "listed": "ENGWR303",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST310",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST483",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 6,
-   "codes": [
-    "BIOLC1000",
-    "ENGL301",
-    "ENGL481",
-    "ENGLC1003",
-    "HISTC1001",
-    "HISTC1001H"
-   ],
-   "flagged": [
-    "BIOLC1000",
-    "ENGL301",
-    "ENGL481",
-    "ENGLC1003",
-    "HISTC1001",
-    "HISTC1001H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -382,5 +393,6 @@
    "Careers 'before and after school programs' is a work setting named in Career Information; reviewer may decide whether to keep it."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43693265189,
+ "read_run": "39047245752"
 }

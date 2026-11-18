@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     69.0,
     69.0
@@ -76,9 +76,7 @@
     21.0,
     21.0
    ],
-   "why": [
-    "the blocks and general education sum to 69.0-69.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -148,7 +148,8 @@
     "Compare and contrast allied healthcare roles similar to nursing, nutrition, physical therapy, and dental hygiene.",
     "Apply knowledge of evidence- based concepts related to evolving scientific and social issues that affect contemporary healthcare systems."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -246,5 +247,14 @@
    "The same courses also appear in the Allied Health University Studies emphasis (AA.1511) and Dental Hygiene prerequisites on this page; only the Health Sciences A.S. (AS.1605) section was read."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "39006384701",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 29, the major total the catalog prints; the major and general education sum to 69 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

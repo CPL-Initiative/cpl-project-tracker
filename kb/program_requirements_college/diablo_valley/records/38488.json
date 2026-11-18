@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 9,
    "listed": 9,
-   "share": 0.889,
-   "missing": [
-    "ECON221"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
-    "ECONC2001",
     "HORT111",
     "HORT112",
     "HORT120",
     "HORT121"
    ],
    "flagged": [
-    "ECONC2001",
     "HORT111",
     "HORT112",
     "HORT120",
@@ -278,5 +281,6 @@
    "The outcomes are printed under a 'Program Learning Outcomes' heading for the program; recorded for this award."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": "43379378196"
 }

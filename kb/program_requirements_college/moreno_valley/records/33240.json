@@ -44,33 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 36,
+   "placed": 39,
    "listed": 39,
-   "share": 0.923,
-   "missing": [
-    "HIS2",
-    "HIS6",
-    "HIS7"
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
    ],
-   "unexplained": [
-    "HIS2"
-   ],
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 1,
    "codes": [
-    "ARTH4",
-    "HIST2",
-    "HISTC1001",
-    "HISTC1002"
+    "ARTH4"
    ],
    "flagged": [
-    "ARTH4",
-    "HISTC1001",
-    "HISTC1002"
+    "ARTH4"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -83,6 +85,7 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -99,7 +102,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -464,5 +478,6 @@
    "Program outcomes are printed once for the program and recorded for this award."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

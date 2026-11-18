@@ -117,6 +117,13 @@ records as adding up, each "equal" with a field that says how:
 degree_verdict() holds both, and kb/_program_requirements_rescore.py applies it
 to the records already filed.
 
+Sam's ruling of 2026-11-17 ("Pass short high ends the same way as over-high
+ends", docs/reference/sam_rulings.md) is the mirror of Sheet 120 card 1: a
+printed unit range whose low end the sum meets exactly, with the sum's high end
+short of the range's top (the sum a range or a single figure, #3478), passes as "short_high" (program_verdict for a program
+total, degree_verdict for a degree total). An hours record stays out: the ruling
+names a unit range, and hours ranges have their own reading (hours_meets_top).
+
 When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
 names no hours, no units and no total), there is nothing to add. Arithmetic is
 then "unstated", and it passes only when all three hold: the record carries no
@@ -137,6 +144,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from _program_requirements_pilot import norm_code  # noqa: E402
+import _course_id_route as CI  # noqa: E402
 
 TOL = 0.01
 
@@ -228,6 +236,38 @@ def _listed_key(code: str | None, listed: dict) -> str:
     if m and m.group(1) + m.group(2) in listed:
         return m.group(1) + m.group(2)
     return k
+
+
+def with_course_ids(record: dict, listed: dict, ids: dict | None, aliases: dict | None = None) -> dict:
+    """The record with each code the list lacks named as the listed course whose Program
+    Course File id it is (S653, kb/_course_id_route.py): Riverside City's catalog prints
+    HIST 14, the list names that control number HIS 14 and the file's CrsId says HIST14.
+    ids maps a course id to its listed code (CI.listed_ids). It runs before the college's
+    prefix_aliases, which stay as the fallback; a code the list holds is never renamed.
+    A listed course the record already places under its own code is never named a second
+    time: Laney's page prints COMM C1004 beside COMM 20, the file's id for COMM 20's control
+    number is the common-course number, and renaming it would repeat COMM 20 in its block.
+    aliases is the college's prefix_aliases that run after: a listed course the record
+    places only through one (SPCH 20 for COMM 20) counts as placed, so the route never
+    names it a second time (S653 review)."""
+    if not ids:
+        return record
+    out = json.loads(json.dumps(record))
+    seen = with_prefix_aliases(record, listed, aliases) if aliases else record
+    have = {k for k, _, _ in placed_codes(seen) if k in listed}
+
+    def rename(entry: dict) -> None:
+        k = norm_code(entry.get("code"))
+        if k and k not in listed and ids.get(k) in listed and ids[k] not in have:
+            entry["code"], entry["printed_code"], entry["matched_by"] = ids[k], k, "course_id"
+
+    for b in out.get("blocks") or []:
+        for c in b.get("courses") or []:
+            rename(c)
+            for a in c.get("alternatives") or []:
+                if isinstance(a, dict):
+                    rename(a)
+    return out
 
 
 def with_prefix_aliases(record: dict, listed: dict, aliases: dict | None) -> dict:
@@ -702,6 +742,10 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
     if fits and transfer_degree(award, prog) and not _num(prog.get("open_elective_units")):
         # Sheet 81 card 2: transferable electives make up a transfer degree's 60.
         return {"pass": True, "status": "equal", "transfer": True, "fill": fill, "why": []}
+    if short_high(prog, degree, lo, hi):
+        # Sam, 2026-11-17 ("Pass short high ends the same way as over-high ends"): the low end meets a
+        # printed range's low end exactly and the high end falls short of its top.
+        return {"pass": True, "status": "equal", "short_high": True, "why": []}
     return {"pass": False, "status": "unequal",
             "why": ["the blocks and general education sum to %s-%s; the catalog prints %s-%s "
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
@@ -760,6 +804,68 @@ def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: fl
     return True
 
 
+def short_high(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
+    """Sam's ruling of 2026-11-17, "Pass short high ends the same way as over-high ends": a printed unit range
+    (its top past its low end) whose low end the sum meets exactly, the sum's high end short of the top. Units
+    only: the ruling names a unit range, and an hours range reads by hours_meets_top. The range is the catalog's
+    (COBIx on #3478, 6965840725, relaying #3461's "When the low end of a unit range matches but our high end is
+    short"): the sum may be a range or a single figure, whose low and high ends are the same number, so Mt. San
+    Jacinto 38847's 30 against 30-35 passes."""
+    return (prog.get("measure") != "hours" and stated[1] > stated[0] + TOL
+            and abs(lo - stated[0]) <= TOL and hi < stated[1] - TOL)
+
+
+# The notes a check keeps beside its verdict (COBIx on #3478, 6965717631, accepted by the S679 conductor; Sam's Nov 17
+# rule that records keep their gaps noted). A short high end can mean a missing option: where a required list's courses
+# add up short of the list's own printed figure, the record passes under ruling 2 and says the list looks short. A local
+# degree whose major matches the catalog and whose sum falls short of the degree total stays failing, and says why: a
+# major course counted toward general education cannot close a short sum, and the electives are probably not listed.
+LIST_SHORT_NOTE = ("a required list adds up short of its own printed figure (%s): the list looks short, and a course "
+                   "line may be missing")
+DEGREE_SHORT_NOTE = "major matches; degree total short of %s, electives probably not listed"
+
+
+def short_required_lists(record: dict) -> list[str]:
+    """The names of the required lists (rule "all") whose courses add up, at their high end, below the low end of the
+    list's own printed figure. Read from the record alone (no closed list), so a filed record and a fresh score read
+    the same: a course with no units of its own lets the printed figure stand, and the list is not counted short."""
+    hours = measure(record) == "hours"
+    out = []
+    for b in record.get("blocks") or []:
+        st = _span(b.get("stated"))
+        if b.get("rule") != "all" or not st:
+            continue
+        span, _ = block_units_summed(b, {}, hours)
+        if span is not None and span[1] < st[0] - TOL:
+            out.append(b.get("name") or "")
+    return out
+
+
+def _fig(lo: float, hi: float) -> str:
+    f = lambda n: str(int(n)) if float(n).is_integer() else str(round(float(n), 2))
+    return f(lo) if abs(lo - hi) <= TOL else "%s-%s" % (f(lo), f(hi))
+
+
+def arithmetic_note(record: dict, award: str | None, arith: dict) -> dict:
+    """The note fields a check carries, or {}: "note" in plain words, and "lists_short" naming the lists that look
+    short. kb/_program_requirements_rescore.py writes the same fields onto the filed records."""
+    from _program_requirements_reconcile import awards_match, plain_equal
+    a = arith or {}
+    if a.get("pass") and (a.get("short_high") or (a.get("degree") or {}).get("short_high")
+                          or (a.get("major") or {}).get("short_high")):
+        names = short_required_lists(record)
+        if names:
+            return {"note": LIST_SHORT_NOTE % "; ".join("'%s'" % n for n in names), "lists_short": names}
+        return {}
+    comp, st = a.get("computed"), a.get("stated")
+    prog = record.get("program") or {}
+    if (not a.get("pass") and a.get("against") == "degree" and a.get("status") == "unequal" and comp and st
+            and awards_match("local", award) and not transfer_degree(award, prog)
+            and isinstance(a.get("major"), dict) and plain_equal(a["major"]) and comp[1] < st[0] - TOL):
+        return {"note": DEGREE_SHORT_NOTE % _fig(float(st[0]), float(st[1]))}
+    return {}
+
+
 def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float,
                     record: dict | None = None) -> dict:
     """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
@@ -783,6 +889,12 @@ def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: floa
     # totals and 9 electives-filled degrees read so; any total inside the span would pass 738.
     if abs(lo - stated[0]) <= TOL and hi > stated[1] + TOL:
         return {"pass": True, "status": "equal", "meets": True}
+    if short_high(prog, stated, lo, hi):
+        # Sam, 2026-11-17 ("Pass short high ends the same way as over-high ends"; Sheet 120 card 1's mirror):
+        # the low end meets the printed range's low end exactly and the high end falls short of its top (Citrus
+        # Business - Accounting 42170: 37-38 against 37-40). A student taking each choice at its least reaches
+        # the printed low end, as under meets.
+        return {"pass": True, "status": "equal", "short_high": True}
     if record is not None and hours_meets_top(record, stated, lo, hi):
         return {"pass": True, "status": "equal", "meets_top": True}
     return {"pass": False, "status": "unequal"}
@@ -949,16 +1061,23 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
-          aliases: dict | None = None, packed: bool = False) -> dict:
+          aliases: dict | None = None, packed: bool = False, course_ids: dict | None = None) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass. award is the
     state file's award, which names an associate degree for transfer. aliases is the
-    college's prefix_aliases (with_prefix_aliases)."""
+    college's prefix_aliases (with_prefix_aliases). course_ids maps a Program Course
+    File id to its listed code (with_course_ids); left None, it is read from the
+    closed list's own control numbers (CI.listed_ids), and it runs before the aliases."""
     listed = {}
     for c in closed:
         k = norm_code(c.get("code"))
         if k:
             listed[k] = _num(c.get("units"))
+    record = with_course_ids(record, listed, CI.listed_ids(closed) if course_ids is None else course_ids, aliases)
+    # The matches the course-id route made, so a filed score names them and the display can pick them out
+    # (S653 review: 806 of its 1,634 matches have no course name on file to confirm them).
+    by_id = sorted({(e["printed_code"], e["code"]) for _, e, _ in placed_codes(record)
+                    if e.get("matched_by") == "course_id"})
     record = with_prefix_aliases(record, listed, aliases)
     placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
@@ -1027,6 +1146,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             arith["minimum"] = True
         if pv.get("meets"):
             arith["meets"] = True
+        if pv.get("short_high"):
+            arith["short_high"] = True
         if pv.get("meets_top"):
             arith["meets_top"] = True
         if ge_included:
@@ -1039,6 +1160,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             # and the record names the one it misses (the major first).
             deg = degree_check(prog, degree, lo + de[0], hi + de[1], [], text, award)
             arith = dict(arith, degree=deg) if not ok or deg["pass"] else dict(deg, major=arith)
+    arith = dict(arith, **arithmetic_note(record, award, arith))
 
     rep_codes = repeated(record)
     outs = outcomes_check(record, text)
@@ -1055,6 +1177,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
                      "share": round((n - len(missing)) / n, 3) if n else None,
                      "missing": missing, "unexplained": unexplained,
                      "none_placed": none_placed,
+                     **({"course_id": [{"printed": p, "listed": k, "matched_by": "course_id"} for p, k in by_id]}
+                        if by_id else {}),
                      "pass": cov_ok},
         "invented": {"count": len(invented), "codes": invented, "flagged": flagged,
                      "pass": not unflagged},

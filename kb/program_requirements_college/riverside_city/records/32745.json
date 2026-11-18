@@ -44,27 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 5,
+   "placed": 7,
    "listed": 7,
-   "share": 0.714,
-   "missing": [
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 6,
    "codes": [
     "CIS30A",
     "CIS5",
     "CSC5",
     "MATH2",
     "MATH3",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
+    "MATHC2210H"
    ],
    "flagged": [
     "CIS30A",
@@ -72,9 +80,7 @@
     "CSC5",
     "MATH2",
     "MATH3",
-    "MATHC2210",
-    "MATHC2210H",
-    "MATHC2220"
+    "MATHC2210H"
    ],
    "pass": true
   },
@@ -89,6 +95,7 @@
     38.0,
     39.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -104,6 +111,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -257,5 +275,7 @@
    "Award titled 'Physics 2.0 for Transfer' (AS-T); Cal-GETC named as the GE pattern."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }

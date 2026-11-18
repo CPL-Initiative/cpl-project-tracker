@@ -44,27 +44,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 8,
+   "placed": 10,
    "listed": 11,
-   "share": 0.727,
+   "share": 0.909,
    "missing": [
-    "MAT1A",
-    "MAT1B",
     "MATHC2210H"
    ],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -78,6 +83,7 @@
     36.0,
     36.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -93,6 +99,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -217,5 +234,7 @@
    "Degree requires 60 CSU-transferable units including Cal-GETC; 36 units is the major total."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }

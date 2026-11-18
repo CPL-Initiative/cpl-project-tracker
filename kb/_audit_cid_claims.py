@@ -144,7 +144,7 @@ def main():
     cols = mem.get("colleges", [])
     found = []
     for k, v in mem.get("members", {}).items():
-        if re.search(r" M\d{3,}$", k):
+        if re.search(r" M\d{3,}H?$", k):   # H: an Honors M-ID (kb/honors_of.py)
             continue  # M-IDs are ours; a claim is a C-ID or CCN key
         for x, signals in group_findings(k, v, approved, desc):
             found.append({"claimed_cid": k, "college": cols[x["c"]] if x["c"] < len(cols) else x["c"],

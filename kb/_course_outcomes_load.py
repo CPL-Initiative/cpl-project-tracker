@@ -74,7 +74,8 @@ def fingerprint(outcomes: list[str]) -> str:
 
 
 def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
-    """The newest complete read of each slice: a later run's slice replaces an earlier one. With slugs, only the
+    """The newest complete read of each slice (a college set's part of a read): a later run's slice replaces an
+    earlier one of the same colleges. With slugs, only the
     reads whose slugs name one of them (the Coast district files three colleges under cccd: an objectives reread of
     one college must not repost the others)."""
     best: dict[tuple, tuple] = {}
@@ -85,9 +86,18 @@ def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
             continue
         if want and not (want & set(str(d.get("slugs") or "").split(","))):
             continue
-        key = (d["part"], d["of"])
+        # A slice is one college set's part of one read: the Coast district files three colleges under cccd, so a
+        # newer Coastline slice must never stand in for Golden West's (S670).
+        key = (_slug_set(d), d["part"], d["of"])
         if key not in best or int(d["run"]) > int(best[key][0]):
             best[key] = (d["run"], path)
+    # A college set re-read in a different number of parts: its newest run's split is the one that counts, so an
+    # older split's parts never stand beside the new ones (COBIx on #3420, S670).
+    newest_of: dict[frozenset, tuple] = {}
+    for (sset, _part, of), (run, _path) in best.items():
+        if sset not in newest_of or int(run) > int(newest_of[sset][0]):
+            newest_of[sset] = (run, of)
+    best = {k: v for k, v in best.items() if k[2] == newest_of[k[0]][1]}
     return [p for _, p in sorted(best.values(), key=lambda x: x[1])]
 
 

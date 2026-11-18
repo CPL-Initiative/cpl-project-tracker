@@ -68,8 +68,8 @@ NEWS = {n for _, n in EXPECT}
 # ── 1. the frozen plan ──────────────────────────────────────────────────────────────────────────────────
 plans = ruled_renames.load()
 ids = [p["plan_id"] for p in plans]
-check("the committed ruled plans are exactly Sheet 181's and the two standards plans",
-      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN1, PLAN_ID]), ids)
+check("the committed ruled plans are exactly Sheet 181's, the two standards plans and the slash-to-and plan",
+      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN1, PLAN_ID, "slash-to-and-2026-11-18"]), ids)
 plan = next(p for p in plans if p["plan_id"] == PLAN_ID)
 plan1 = next(p for p in plans if p["plan_id"] == PLAN1)
 check("the plan names Sam's saves, ruling A's principle and its memory row, and who carried it out",
@@ -148,6 +148,28 @@ try:
     # Undo any applied snapshot that carried an entry of either standards plan, so the copies stand before both
     # whatever main holds; plan 1's file half is then applied below, as the dispatch order has it.
     std_olds = olds | {e["old"] for e in plan1["entries"]}
+    # A later finished apply moved a title these plans created, so the undo below has nothing to put back for it.
+    # The 2026-11-12 unclassified fold (Sam's CER assignment at 12:06:24Z, receipt
+    # kb/unclassified_fold/2026-11-12/applied.json, "credential_moved") moved "Electrical/Electronic Systems (ASE A6
+    # standards)" onto "Auto Electrical/Electronic Systems (ASE A6 standards)", and its raw titles with it. Reverse
+    # each such move on the copies from the fold's committed receipt first (S653b, 2026-11-14), so the copies stand
+    # as they did when plan 2 ran and the plan's logic stays tested against main's moving data.
+    std_news = NEWS | {e["new"] for e in plan1["entries"]}
+    cr_w = json.load(open(W["credentials.json"], encoding="utf-8"))
+    ut_w = json.load(open(W["unified_titles.json"], encoding="utf-8"))
+    for fold in sorted(glob.glob(os.path.join(KB, "unclassified_fold", "*", "applied.json")), reverse=True):
+        for mv in json.load(open(fold, encoding="utf-8")).get("credential_moved") or []:
+            src, dst = mv.get("title"), mv.get("to")
+            if src not in std_news or src in cr_w or dst not in cr_w:
+                continue
+            cr_w[src] = mv["records"]
+            if all(r.get("_renamed_from") == src for r in cr_w[dst]):
+                del cr_w[dst]
+            for raw, rec in ut_w.items():
+                if isinstance(rec, dict) and rec.get("unified_title") == dst and rec.get("_revised_from") == src:
+                    rec["unified_title"] = src
+    json.dump(cr_w, open(W["credentials.json"], "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    json.dump(ut_w, open(W["unified_titles.json"], "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     snaps = [os.path.dirname(p) for p in sorted(glob.glob(os.path.join(KB, "cred_rename_out", "*", "alias_map.json")))
              if (lambda d: d.get("_applied_at") and (set(d.get("renames") or {}) | set(d.get("merges") or {})) & std_olds)(
                  json.load(open(p, encoding="utf-8"))) and os.path.isfile(os.path.join(os.path.dirname(p), "undo.json"))]
@@ -193,7 +215,9 @@ try:
     am = json.load(open(os.path.join(work, "dry", "alias_map.json"), encoding="utf-8"))
     check("--only-plan plans exactly the seven renames, apply-safe, none held",
           am["renames"] == dict(EXPECT) and not am["merges"] and am["summary"]["apply_safe"] is True
-          and not am["ruled"]["held"] and am["only_plan"] == PLAN_ID)
+          and not am["ruled"]["held"] and am["only_plan"] == PLAN_ID,
+          {"renames": sorted(set(am["renames"].items()) ^ set(EXPECT))[:4], "merges": len(am["merges"]),
+           "apply_safe": am["summary"].get("apply_safe"), "held": am["ruled"]["held"][:3]})
     check("every other rename and merge waits, none of the seven", not {d["old"] for d in am["deferred"]} & olds)
     check("no fold group, so no issuer decision", am["issuer_preview"] == {})
     check("the eight restored titles stay held as emptied, planned nowhere",

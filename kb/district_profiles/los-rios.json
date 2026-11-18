@@ -1,0 +1,468 @@
+{
+  "schema": 1,
+  "profile_id": "los-rios",
+  "district": {
+    "name": "Los Rios Community College District",
+    "name_caps": "LOS RIOS CCD",
+    "mis_district_code": "230",
+    "district_type": "M",
+    "website": "https://losrios.edu/",
+    "colleges": [
+      {
+        "college_id": 18,
+        "registry_name": "American River College",
+        "short": "American River",
+        "mis_college_code": "231",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 43,
+        "registry_name": "Cosumnes River College",
+        "short": "Cosumnes River",
+        "mis_college_code": "232",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 53,
+        "registry_name": "Folsom Lake College",
+        "short": "Folsom Lake",
+        "mis_college_code": "234",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 95,
+        "registry_name": "Sacramento City College",
+        "short": "Sacramento City",
+        "mis_college_code": "233",
+        "entity_kind": "college",
+        "map_landing_page": null
+      }
+    ],
+    "evidence": {
+      "sources": [
+        "crosswalk",
+        "registry"
+      ],
+      "confidence": "partial",
+      "checked_at": "2026-11-17T11:40:00Z",
+      "note": "MAP CollegeIDs and MIS codes from the 2026-11-10 crosswalk, matching program_source_registry. Harvest slugs: american_river, cosumnes_river, folsom_lake, sacramento_city."
+    }
+  },
+  "systems": {
+    "sis": {
+      "vendor": null,
+      "product": null,
+      "version": null,
+      "scope": null,
+      "self_service_url": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read. The Los Rios hosts answer the reader 404 (census of 2026-11-15), so no district page names the SIS yet."
+      }
+    },
+    "cms": {
+      "product": null,
+      "scope": null,
+      "public_view_url": null,
+      "publishes_catalog": null,
+      "previous_product": null,
+      "evidence": {
+        "sources": [
+          "registry"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "program_source_registry's cms_public_view is empty for all four colleges, and the course outline census (run 38305389870) found no course outline system linked from any college's pages. Not proof that none exists."
+      }
+    },
+    "catalogs": [
+      {
+        "college_id": 18,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "not_found",
+          "robots_allows": null,
+          "challenge": "other",
+          "needs_render": false
+        },
+        "fallback_hosts": [
+          {
+            "kind": "archive",
+            "url": "kb/hand_filed_catalogs/american_river.json"
+          }
+        ],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry",
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T11:40:00Z",
+          "note": "One compiled PDF per catalog. The college's host answers the reader 404 while search engines index it, so the reader reads Sam's filed copy. Read 39047245752 (2026-10-17) extracted 368 programs; 299 of 368 filed records pass on 2026-11-17. The fallback is that filed copy (#2199), its sha256 pinned on first fetch."
+        }
+      },
+      {
+        "college_id": 43,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "not_found",
+          "robots_allows": null,
+          "challenge": "other",
+          "needs_render": false
+        },
+        "fallback_hosts": [
+          {
+            "kind": "archive",
+            "url": "kb/hand_filed_catalogs/cosumnes_river.json"
+          }
+        ],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry",
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T11:40:00Z",
+          "note": "One compiled PDF per catalog. The college's host answers the reader 404 while search engines index it, so the reader reads Sam's filed copy. Read 39047009824 (2026-10-17) extracted 217 programs; 138 of 217 filed records pass on 2026-11-17. The fallback is that filed copy (#2199), its sha256 pinned on first fetch."
+        }
+      },
+      {
+        "college_id": 53,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://flc.losrios.edu/catalog/compiled-catalog/flc-catalog-26-27.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "not_found",
+          "robots_allows": null,
+          "challenge": "other",
+          "needs_render": false
+        },
+        "fallback_hosts": [
+          {
+            "kind": "archive",
+            "url": "kb/hand_filed_catalogs/folsom_lake.json"
+          }
+        ],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry",
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T11:40:00Z",
+          "note": "One compiled PDF per catalog. The college's host answers the reader 404 while search engines index it, so the reader reads Sam's filed copy. Read 39046850071 (2026-10-17) extracted 107 programs; 86 of 107 filed records pass on 2026-11-17. The fallback is that filed copy (#2199), its sha256 pinned on first fetch."
+        }
+      },
+      {
+        "college_id": 95,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://scc.losrios.edu/catalog/compiled-catalog/scc-catalog-26-27.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "not_found",
+          "robots_allows": null,
+          "challenge": "other",
+          "needs_render": false
+        },
+        "fallback_hosts": [
+          {
+            "kind": "archive",
+            "url": "kb/hand_filed_catalogs/sacramento_city.json"
+          }
+        ],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry",
+            "harvest_files"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-17T11:40:00Z",
+          "note": "One compiled PDF per catalog. The college's host answers the reader 404 while search engines index it, so the reader reads Sam's filed copy. Read 39047070975 (2026-10-17) extracted 204 programs; 149 of 204 filed records pass on 2026-11-17. The fallback is that filed copy (#2199), its sha256 pinned on first fetch."
+        }
+      }
+    ],
+    "other_systems": [
+      {
+        "role": "program_mapper",
+        "product": "Program Mapper (mapmaker.losrios.edu)",
+        "public_url": "https://mapmaker.losrios.edu/",
+        "college_ids": null,
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "limited",
+          "checked_at": "2026-11-17T11:40:00Z",
+          "note": "A web search (2026-10-08) found maps as PDFs there, in Cal-GETC and Local GE versions; the host answered the reader 404 (run 37825341320)."
+        }
+      }
+    ]
+  },
+  "cpl_coding": {
+    "policies": [],
+    "transcript_notation": {
+      "annotated": null,
+      "cpl_type_shown": null,
+      "where": null,
+      "notation_list_ref": null,
+      "term_posting": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read."
+      }
+    },
+    "grading": {
+      "by_type": [],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read."
+      }
+    },
+    "type_codes": [],
+    "ownership": {
+      "policy_owner_role": null,
+      "posting_owner_role": null,
+      "coordination": null,
+      "contacts_source": [
+        {
+          "table": "map_college_contacts",
+          "roles": [
+            "primary_contact",
+            "cpl_coordinator"
+          ]
+        }
+      ],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read."
+      }
+    },
+    "map_integration": {
+      "district_state": "unknown",
+      "by_college": [
+        {
+          "college_id": 18,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T11:40:00Z"
+          }
+        },
+        {
+          "college_id": 43,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T11:40:00Z"
+          }
+        },
+        {
+          "college_id": 53,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T11:40:00Z"
+          }
+        },
+        {
+          "college_id": 95,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [],
+            "confidence": null,
+            "checked_at": "2026-11-17T11:40:00Z"
+          }
+        }
+      ],
+      "known_issues": [],
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read."
+      }
+    }
+  },
+  "data_flows": [
+    {
+      "id": "cms_to_catalog",
+      "from": "cms",
+      "to": "catalog",
+      "carries": "Programs, requirements and course outlines",
+      "mode": "unknown",
+      "mechanism": "unknown",
+      "frequency": "per catalog year",
+      "redundant": {
+        "flag": false,
+        "note": null,
+        "api_candidate": false
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "No curriculum system found; the catalog is a compiled PDF."
+      }
+    },
+    {
+      "id": "catalog_to_harvest",
+      "from": "catalog",
+      "to": "cobi_harvest",
+      "carries": "Program pages (requirements) and course outlines (SLOs, objectives)",
+      "mode": "automated",
+      "mechanism": "pdf_harvest",
+      "frequency": "per read",
+      "redundant": {
+        "flag": null,
+        "note": null,
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "harvest_files"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Program pages from the filed compiled PDF, by pypdf; no course outlines (none found)."
+      }
+    },
+    {
+      "id": "map_to_sis_cpl_posting",
+      "from": "map",
+      "to": "sis",
+      "carries": "Approved CPL to post on the transcript",
+      "mode": "unknown",
+      "mechanism": "unknown",
+      "frequency": null,
+      "redundant": {
+        "flag": null,
+        "note": null,
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": "2026-11-17T11:40:00Z",
+        "note": "Not read."
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "system": "catalog",
+      "vendor_key": "pdf",
+      "task": "Read the filed compiled PDF (capture, extract, file, load, reread)",
+      "doc": ".github/workflows/program-requirements-college.yml",
+      "status": "tested",
+      "last_run": null
+    },
+    {
+      "system": "catalog",
+      "vendor_key": "pdf",
+      "task": "Pin a program's own PDF page where the picker lands elsewhere (pdf_pages, Cosumnes River)",
+      "doc": "kb/program_requirements_reconcile.json",
+      "status": "tested",
+      "last_run": null
+    },
+    {
+      "system": "cpl_coding",
+      "vendor_key": null,
+      "task": "Read the district's CPL board policy and procedure and record the notation",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    }
+  ],
+  "provenance": {
+    "checked_at": "2026-11-17T11:40:00Z",
+    "checked_by": "district-bot:los_rios (S674 SkyRedpoll)",
+    "confidence": "limited",
+    "sources": [
+      {
+        "id": "crosswalk",
+        "kind": "repo_file",
+        "ref": "kb/college_identity/2026-11-10/crosswalk.json",
+        "title": "College identity crosswalk (MIS codes, district)",
+        "read_at": "2026-11-17T11:40:00Z",
+        "http_status": null
+      },
+      {
+        "id": "registry",
+        "kind": "supabase_table",
+        "ref": "program_source_registry",
+        "title": "Program source registry (census of 2026-11-15)",
+        "read_at": "2026-11-17T11:40:00Z",
+        "http_status": null
+      },
+      {
+        "id": "harvest_files",
+        "kind": "repo_file",
+        "ref": "kb/program_requirements_college/{american_river,cosumnes_river,folsom_lake,sacramento_city}/",
+        "title": "The filed program requirements reads",
+        "read_at": "2026-11-17T11:40:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cobix_start_brief",
+        "kind": "github_comment",
+        "ref": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3237#issuecomment-6935299361",
+        "title": "COBIx start brief for the district pilots (step 5: the Los Rios profile)",
+        "read_at": "2026-11-17T11:40:00Z",
+        "http_status": null
+      }
+    ],
+    "open_questions": [
+      "The SIS and curriculum system are not named by any page the reader can open: every Los Rios host answers it 404. A person or a district contact can name them.",
+      "The CPL board policy and transcript notation are not read.",
+      "Harvest is not part of this profile (the start brief's step 5): the four colleges' arithmetic failures stay with the harvest lane."
+    ],
+    "change_log": [
+      {
+        "at": "2026-11-17T11:40:00Z",
+        "by": "S674 SkyRedpoll",
+        "change": "First profile, from the crosswalk, the registry and the filed reads. No Los Rios page was read; unknowns are null."
+      }
+    ]
+  }
+}

@@ -27,6 +27,8 @@ import urllib.request
 from datetime import datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 OUT = os.path.join(HERE, "coci_curation.json")
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 KEY = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -45,8 +47,13 @@ KEY = os.environ.get("SUPABASE_SERVICE_KEY")
 # `merge_note` is a curator annotation captured at merge time on the surviving
 # target (e.g. "Complete both parts for full credit" on a course minted from
 # segmented A/B / 1-2 members); the generator emits it as the row's `note`.
+# `honors_of` (S653) sits on an Honors M-ID and names its base; the equivalence
+# runs both ways and the base's partner is derived (kb/honors_of.py), never
+# stored twice. It holds the pair apart pairwise: `fold_rows` cuts a bot merge
+# that would join the two, and a person's merge wins (Rule 10). Design:
+# docs/reference/honors_of_design.md.
 FIELDS = {"discipline", "merge_into", "unified_title", "description",
-          "cross_listed_disciplines", "merge_dismissed", "merge_note"}
+          "cross_listed_disciplines", "merge_dismissed", "merge_note", "honors_of"}
 
 
 def _fetch_json(req, attempts=4):
@@ -92,21 +99,115 @@ def fetch_rows():
         start += page
 
 
-def main():
-    if not KEY:
-        sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
-    rows = fetch_rows()
+# A ruling in the Courses List's "Discipline in doubt" panel (Keep, Move, Keep and also list as, Not sure) is a
+# `ccr_procedure_request` row keyed `_CCR_PROCEDURE_REQUEST::<when>-<M-ID>`; its JSON value names the M-ID. Issue
+# 3447: the fold dropped these, so the reseed asked Sam again about cards he had ruled on. Each folds under its M-ID
+# as `ruling: {ruling, to, at}` (latest wins), with no reviewer account beyond what the overlay already carries.
+RULE_FIELD = "ccr_procedure_request"
+BOT_SUFFIX = "@" + "bot"
 
+
+def is_person(account):
+    """A reviewer account that is a person: bot cohorts write under a `<lane>-s<N>` account ending BOT_SUFFIX."""
+    e = (account or "").strip().lower()
+    return bool(e) and not e.endswith(BOT_SUFFIX)
+
+
+# A ruling lands only with the write that carries it (second reader on #3467): Keep and Move write a `discipline`
+# row, Keep and also list as a `cross_listed_disciplines` row. When that write failed after the reason saved, the
+# reason row alone is not a ruling, so the card is asked about again. "Not sure yet" decides nothing and never folds.
+RULING_NEEDS = {"keep": "discipline", "move": "discipline", "crosslist": "cross_listed_disciplines"}
+# A synthetic merge target is minted by the merge dialog (UC-CUR..., UC-CUR-EXT...); its discipline row is written by
+# that dialog in the same save, so it never verifies (excel_to_dashboard.py, Sam's 2026-06-10 rule).
+SYNTHETIC_PREFIX = "UC-CUR"
+
+
+def _ruling_value(row):
+    try:
+        v = json.loads(row.get("value") or "{}")
+    except (TypeError, ValueError):
+        return None
+    if not isinstance(v, dict) or not (v.get("mid") or "").strip():
+        return None
+    return v
+
+
+def ruling_landed(v, rows_by_mid):
+    """True when the write a ruling needs exists: a person's row of the needed field on the ruled M-ID."""
+    need = RULING_NEEDS.get(v.get("ruling"))
+    if not need:
+        return False
+    return any((r.get("field") or "").strip() == need and is_person(r.get("reviewer_email"))
+               for r in rows_by_mid.get(v["mid"].strip(), ()))
+
+
+def fold_rulings(curations, rule_rows, rows):
+    """Fold the landed rulings into curations[mid]["ruling"] (latest wins). Returns the count of rows not folded
+    (no M-ID, Not sure yet, or the discipline write never landed)."""
+    by_mid = {}
+    for r in rows:
+        by_mid.setdefault(r.get("course_id"), []).append(r)
+    skipped = 0
+    for row in rule_rows:
+        v = _ruling_value(row)
+        if v is None or not ruling_landed(v, by_mid):
+            skipped += 1
+            continue
+        mid, at = v["mid"].strip(), row.get("reviewed_at") or ""
+        entry = curations.setdefault(mid, {})
+        if at >= ((entry.get("ruling") or {}).get("at") or ""):
+            entry["ruling"] = {"ruling": v.get("ruling"), "to": v.get("to"), "at": at}
+    return skipped
+
+
+def stamp_person_validation(curations, rows):
+    """Issue 3447 and Sam's 2026-06-10 rule (a merged card reads Verified only after he verifies it): a person's
+    `discipline` row on an existing merge target, saved after the latest merge into it, sets that target's
+    validated_at / validated_by in the overlay. This replaces the confirmation PATCH the merge bots' row policy
+    refused. A synthetic UC-CUR target is never stamped, and neither is a discipline row written with the merge
+    itself (the merge dialog's own row). An explicit validated_at that is later wins."""
+    merged_at = {}
+    for r in rows:
+        if (r.get("field") or "").strip() == "merge_into" and r.get("value"):
+            t = r["value"]
+            merged_at[t] = max(merged_at.get(t, ""), r.get("reviewed_at") or "")
+    for row in rows:
+        if (row.get("field") or "").strip() != "discipline" or not is_person(row.get("reviewer_email")):
+            continue
+        cid = row.get("course_id") or ""
+        if cid not in merged_at or cid not in curations or cid.startswith(SYNTHETIC_PREFIX):
+            continue
+        at = row.get("reviewed_at") or ""
+        if not at or at <= merged_at[cid]:
+            continue
+        entry = curations[cid]
+        if at >= (entry.get("validated_at") or ""):
+            entry["validated_at"] = at
+            entry["validated_by"] = row.get("reviewer_email")
+
+
+def fold_rows(rows, live=None, maps=None):
+    """kb_curation rows -> (curations, skipped, honors): the overlay's `curations` map, the count of rows whose
+    field is not folded, and the Honors holds ({} when no row carries honors_of, so the overlay is byte-identical
+    to the fold before the field existed)."""
     curations = {}
     skipped = 0
+    rule_rows = []
     for row in rows:
         field = (row.get("field") or "").strip()
+        if field == RULE_FIELD:
+            rule_rows.append(row)
+            continue
         if field not in FIELDS:
             skipped += 1
             continue
         cid = row["course_id"]
         entry = curations.setdefault(cid, {})
         entry[field] = row.get("value")
+        # An honors_of row is a bot's equivalence, never a review of the entry: it must not restamp a
+        # person's save as the bot's (Rule 10; COBIx's review of #3313). It leaves the ledger alone.
+        if field == "honors_of":
+            continue
         # latest reviewer/timestamp wins for the course_id
         if row.get("reviewed_at", "") >= entry.get("reviewed_at", ""):
             entry["reviewed_by"] = row.get("reviewer_email")
@@ -120,7 +221,60 @@ def main():
             if row.get("validated_at"):
                 entry["validated_at"] = row.get("validated_at")
                 entry["validated_by"] = row.get("validated_by")
+    skipped += fold_rulings(curations, rule_rows, rows)
+    stamp_person_validation(curations, rows)
+    return curations, skipped, hold_honors_pairs(curations, rows, live, maps)
 
+
+def hold_honors_pairs(curations, rows, live=None, maps=None):
+    """Apply `honors_of` to the folded overlay, in place. A bot's merge_into that would join an Honors id and its
+    base (directly, through a chain, or through a third id both land on) leaves the overlay and is reported under
+    `held`; a person's merge stands and that pair's honors_of is set aside, reported under `set_aside`. A stored base
+    that is not live resolves through kb/alias_chain.py first (honors_of.resolve_base); `live` defaults to the
+    minted courses and stand-alones in kb/, read only when some entry carries the field."""
+    import honors_of as ho
+    if not any(isinstance(v, dict) and v.get(ho.FIELD) for v in curations.values()):
+        return {}
+    if live is None:
+        live = ho.load_live_ids(HERE)
+    hmap = ho.honors_map(curations, live=live, maps=maps)
+    merge_into = {cid: v["merge_into"] for cid, v in curations.items() if v.get("merge_into")}
+    merge_by = {r["course_id"]: r.get("reviewer_email") for r in rows
+                if (r.get("field") or "").strip() == "merge_into" and r.get("value")}
+    _, held, person_wins = ho.hold_merges(merge_into, hmap, merge_by)
+    for h in held:
+        src = h["merge_source"]
+        curations[src].pop("merge_into", None)
+        if not any(k in FIELDS or k == "ruling" for k in curations[src]):
+            del curations[src]
+    for p in person_wins:
+        hid = p["honors_id"]
+        if hid in curations:
+            curations[hid].pop(ho.FIELD, None)
+            if not any(k in FIELDS or k == "ruling" for k in curations[hid]):
+                del curations[hid]
+    return {"held": held, "set_aside": person_wins}
+
+
+def main():
+    if not KEY:
+        sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
+    rows = fetch_rows()
+    curations, skipped, honors = fold_rows(rows)
+    out = overlay_doc(curations, honors, datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"))
+    with open(OUT, "w", encoding="utf-8") as f:
+        f.write(serialize(out))
+    print(f"wrote {OUT}: {len(curations)} curated course_ids "
+          f"({len(rows)} rows from Supabase, {skipped} non-overlay fields skipped)")
+    print("Review the diff, then commit kb/coci_curation.json.")
+
+
+def serialize(doc):
+    return json.dumps(doc, indent=2, ensure_ascii=False) + "\n"
+
+
+def overlay_doc(curations, honors, synced_at):
+    """The overlay document kb/coci_curation.json holds."""
     out = {
         "_about": ("Human curation overlay for the COCI staging KB. Git-canonical and "
                    "reviewable. Synced from the Supabase kb_curation table by "
@@ -129,16 +283,16 @@ def main():
                    "Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated "
                    "common_courses.json / course_crosswalk.json."),
         "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-        "_synced_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "_synced_at": synced_at,
         "count": len(curations),
         "curations": dict(sorted(curations.items())),
     }
-    with open(OUT, "w", encoding="utf-8") as f:
-        json.dump(out, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"wrote {OUT}: {len(curations)} curated course_ids "
-          f"({len(rows)} rows from Supabase, {skipped} non-overlay fields skipped)")
-    print("Review the diff, then commit kb/coci_curation.json.")
+    # Present only when a hold or a set-aside happened: otherwise the field leaves the overlay as it was.
+    if honors.get("held"):
+        out["_honors_held"] = honors["held"]
+    if honors.get("set_aside"):
+        out["_honors_set_aside"] = honors["set_aside"]
+    return out
 
 
 if __name__ == "__main__":

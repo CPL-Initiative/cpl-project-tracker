@@ -46,25 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 39,
    "listed": 40,
-   "share": 0.95,
+   "share": 0.975,
    "missing": [
-    "ART314",
-    "ARTH302"
+    "ART314"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "ARTH302",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ARTHC1100"
-   ],
-   "flagged": [
-    "ARTHC1100"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -514,7 +516,7 @@
    "ARTH 335 is listed in the catalog as Same As ARTPH 345, which is not printed in the requirement list."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "3ed53467075ec7bc",
  "source_codes": [
   "ART300",
@@ -557,5 +559,6 @@
   "ARTPH305",
   "ARTPH360"
  ],
- "source_coverage": 0.975
+ "source_coverage": 0.975,
+ "read_run": "43212067552"
 }

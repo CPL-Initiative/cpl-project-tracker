@@ -1240,9 +1240,11 @@ async function seedCommonsData(page, theme) {
 
 // The Commons data dashboard, slice 3 (#3215): the data dictionary or the API checklist, opened by its address.
 async function seedCommonsDataView(page, theme, view) {
-  await page.evaluate((v) => { const h = "commons/data/" + v; if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
+  await page.evaluate((v) => { const h = "commons/data/" + (v === "pathways" ? "college/cerritos-college/pathways" : v); if (location.hash.replace(/^#/, "") !== h) location.hash = h; }, view);
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
+  await page.waitForSelector(view === "dictionary" ? "#commons-root #cdd-dict" : view === "districts" ? "#commons-root #cdd-districts"
+    : view === "slos" ? "#commons-root #cdd-slos" : view === "sharing" ? "#commons-root #cdc-sw-view" : view === "integrations" ? "#commons-root #cdc-in-view" : view === "eta" ? "#commons-root [data-eta-view]" : view === "clock" ? "#commons-root [data-eta-pane]"
+    : view === "pathways" ? "#commons-root iframe[data-pathways-frame]" : "#commons-root #cdd-apis", { state: "attached", timeout: 60000 });
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
     const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
@@ -1256,6 +1258,8 @@ async function seedCommonsDataView(page, theme, view) {
 async function seedCommonsDataOpen(page, theme, what) {
   // The reduced-motion and keyboard passes open the file bare, so the panel's address is set here too.
   if (what === "panel") await page.evaluate(() => { const h = "commons/data/college/san-jose-city-college"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
+  // S650: Copper Mountain's catalog pane, the one college whose displayed link is split from its capture root.
+  if (what === "catalog") await page.evaluate(() => { const h = "commons/data/college/copper-mountain-college/catalog"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
   await seedCommonsData(page, theme);
   if (what === "row") {
     await page.evaluate(() => {
@@ -3005,7 +3009,7 @@ module.exports = {
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,
      Sheet 131 card 2, 2026-10-26), one college per ?college=, linked from My
-     College and the CPL Pathways college picker ("View CPL Visual"). Measured
+     College and the CPL Pathways college picker ("Create My College CPL Plan"). Measured
      here with no college chosen: the picker, the status line and the empty
      state, which is what the page paints before its ~45 MB of data arrive. */
   "cpl-opportunity": {
@@ -3748,49 +3752,34 @@ module.exports = {
     routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel" }],
     widths: [320, 390, 768, 1440],
     seed: (page) => seedCommonsDataOpen(page, "light", "panel"),
-    /* The panel is a dialog: Tab stays inside it, and Escape closes it and returns the focus to the list. */
+    /* The panel is a non-modal dialog (#3310): the page beside it stays live. A real click on the list behind it
+       works with the panel open (main had it inert, so the click landed on nothing), and Escape closes it and returns
+       the focus to the list. jsdom cannot see what a click lands on; this pass can. */
     keyboard: async (page) => {
       const out = [];
-      /* At 390 the width edge is display:none, so Tab on the last control must wrap to Close (#3231 review). */
-      await page.setViewportSize({ width: 390, height: 844 });
+      await page.setViewportSize({ width: 1440, height: 900 });
       await page.waitForTimeout(150);
-      const narrow = await page.evaluate(() => {
-        const P = document.getElementById("cdd-panel");
-        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled])'));
-        f[f.length - 1].focus();
-        return f.length;
-      });
-      await page.keyboard.press("Tab");
-      const wrapped390 = await page.evaluate(() => document.activeElement && document.activeElement.id);
-      await page.keyboard.press("Shift+Tab");
-      const back390 = await page.evaluate(() => !!document.activeElement && document.getElementById("cdd-panel").contains(document.activeElement) && document.activeElement.id !== "cdd-panel-close");
-      out.push({ name: "at 390, Tab wraps past the hidden width edge to Close, and Shift+Tab wraps back", ok: wrapped390 === "cdd-panel-close" && back390, detail: narrow + " drawn controls; Tab lands on " + wrapped390 });
-      await page.setViewportSize({ width: 1024, height: 900 });
-      await page.waitForTimeout(150);
-      /* The list behind an open panel is inert: a real click on a college word there opens nothing. */
-      const box = await page.evaluate(() => {
-        const w = document.querySelector("#cdd-colleges [data-expand]");
+      const pt = (sel) => page.evaluate((q) => {
+        const w = Array.from(document.querySelectorAll(q)).find((e) => !e.closest("#cdd-panel") && !/San Jose City/.test(e.textContent));
         w.scrollIntoView({ block: "center" });
-        const r = w.getBoundingClientRect();
-        return { x: r.left + 4, y: r.top + r.height / 2 };
-      });
-      await page.mouse.click(box.x, box.y);
-      const behind = await page.evaluate(() => ({ opened: !!document.querySelector("#cdd-colleges tr.cdd-more"), panel: !document.getElementById("cdd-panel").hasAttribute("hidden"),
-        inert: !!document.querySelector("#cdd-colleges [data-expand]").closest("[inert]") }));
-      out.push({ name: "a college word behind the open panel cannot be activated", ok: !behind.opened && behind.panel && behind.inert, detail: JSON.stringify(behind) });
-      const inside = await page.evaluate(() => {
-        const P = document.getElementById("cdd-panel");
-        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
-        f[f.length - 1].focus();
-        return { n: f.length, last: document.activeElement === f[f.length - 1] };
-      });
-      await page.keyboard.press("Tab");
-      const wrapped = await page.evaluate(() => document.getElementById("cdd-panel").contains(document.activeElement));
-      out.push({ name: "Tab stays inside the side panel", ok: inside.last && wrapped, detail: inside.n + " controls; after Tab on the last, the focus is " + (wrapped ? "inside" : "outside") });
+        const r = w.getBoundingClientRect(), x = r.left + 4, y = r.top + r.height / 2, hit = document.elementFromPoint(x, y);
+        return { x: x, y: y, name: w.textContent, lands: !!hit && (hit === w || w.contains(hit)) };
+      }, sel);
+      const w = await pt("#cdd-colleges [data-expand]");
+      await page.mouse.click(w.x, w.y);
+      await page.waitForTimeout(200);
+      const swapped = await page.evaluate(() => ({ open: !document.getElementById("cdd-panel").hasAttribute("hidden"), h: document.getElementById("cdd-panel-h").textContent,
+        hash: location.hash, inert: document.querySelectorAll("[inert]").length }));
+      out.push({ name: "with the panel open, a real click on a college word in the list replaces the panel's college", ok: w.lands && swapped.open && swapped.h === w.name && swapped.inert === 0 && /\/college\//.test(swapped.hash),
+        detail: JSON.stringify({ lands: w.lands, word: w.name, now: swapped }) });
+      const s = await pt('button.cdd-sort[data-sort="name"]');
+      await page.mouse.click(s.x, s.y);
+      await page.waitForTimeout(200);
+      const sorted = await page.evaluate(() => /^Sorted by college, A to Z/.test(document.getElementById("cdd-sortline").textContent) && !document.getElementById("cdd-panel").hasAttribute("hidden"));
+      out.push({ name: "with the panel open, a real click on a column heading sorts the list", ok: s.lands && sorted, detail: "lands " + s.lands + ", sorted " + sorted });
       await page.keyboard.press("Escape");
-      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")),
-        inert: document.querySelectorAll("[inert]").length }));
-      out.push({ name: "Escape closes the side panel, returns the focus to the list and releases inert", ok: closed.hidden && closed.back && closed.inert === 0, detail: JSON.stringify(closed) });
+      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")) }));
+      out.push({ name: "Escape closes the side panel and returns the focus to the list", ok: closed.hidden && closed.back, detail: JSON.stringify(closed) });
       return out;
     },
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
@@ -3828,6 +3817,74 @@ module.exports = {
     seed: (page) => seedCommonsDataView(page, "light", "apis"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  /* #3310: Data elements and sharing, the data dictionary by sharing class (commons_data_sharing.js). */
+  "commons-data-sharing": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, data elements and sharing",
+    routes: [{ hash: "commons/data/sharing", name: "data-sharing" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "sharing"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-sharing-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, data elements and sharing, dark",
+    routes: [{ hash: "commons/data/sharing", name: "data-sharing-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "sharing"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* #3310 item 5: the statewide integration view (commons_data_integrations.js). */
+  "commons-data-integrations": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, integrations",
+    routes: [{ hash: "commons/data/integrations", name: "data-integrations" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "integrations"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-integrations-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, integrations, dark",
+    routes: [{ hash: "commons/data/integrations", name: "data-integrations-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "integrations"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* #3360: the ETA clock, a preview at its own address (commons_eta_clock.js). */
+  "commons-data-eta": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the ETA clock",
+    routes: [{ hash: "commons/data/eta", name: "data-eta" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "eta"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-eta-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the ETA clock, dark",
+    routes: [{ hash: "commons/data/eta", name: "data-eta-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "eta"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* S661: the full College Collections ETA in the side panel, and a college's CPL Pathways framed there. */
+  "commons-data-clock": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, the full ETA in the side panel",
+    routes: [{ hash: "commons/data/clock", name: "data-clock" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "clock"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-pathways": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a college's CPL Pathways in the side panel",
+    routes: [{ hash: "commons/data/college/cerritos-college/pathways", name: "data-pathways" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "pathways"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   /* S648: the district roll-up, a fourth view of College Data Collection. */
   "commons-data-districts": {
     file: "index.html",
@@ -3843,6 +3900,32 @@ module.exports = {
     routes: [{ hash: "commons/data/districts", name: "data-districts-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsDataView(page, "dark", "districts"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* S650: the views and panes added since (#3261, this PR): Colleges with collected SLOs, and the catalog pane whose
+     displayed link is split from the capture root (Copper Mountain). */
+  "commons-data-slos": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, colleges with collected SLOs",
+    routes: [{ hash: "commons/data/slos", name: "data-slos" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataView(page, "light", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-slos-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, colleges with collected SLOs, dark",
+    routes: [{ hash: "commons/data/slos", name: "data-slos-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "slos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-catalog": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, a catalog pane with its link split from the capture root",
+    routes: [{ hash: "commons/data/college/copper-mountain-college/catalog", name: "data-catalog" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "light", "catalog"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "commons-data-apis-dark": {

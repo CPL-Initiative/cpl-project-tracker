@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -58,19 +59,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    24.0,
-    27.0
+    36.0,
+    37.0
    ],
    "stated": [
     36.0,
     37.0
    ],
-   "why": [
-    "the blocks sum to 24.0-27.0; the catalog states 36.0-37.0"
-   ]
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,7 +86,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -157,14 +168,16 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS-79",
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    },
@@ -183,7 +196,8 @@
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 4
      }
     ]
    },
@@ -202,14 +216,16 @@
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MUS-81",
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    },
@@ -228,14 +244,16 @@
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      },
      {
       "code": "MIS-11B",
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 2
      }
     ]
    },
@@ -312,5 +330,34 @@
    "Catalog prints codes with hyphens (e.g., MIS-1A); these match closed-list codes written with spaces."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 44063769303,
+ "read_run": 44046021561,
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-41": 4
+   },
+   "words": "Take MUS-41 four times"
+  },
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-41": 2,
+    "MUS-81": 2
+   },
+   "words": "Take both MUS-41 and MIS-81 two times each"
+  },
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MIS-11A": 2,
+    "MIS-11B": 2
+   },
+   "words": "Take both MIS-11A and MIS-11B two times each"
+  }
+ ]
 }

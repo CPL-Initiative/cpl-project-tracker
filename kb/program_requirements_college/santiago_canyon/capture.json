@@ -3325,641 +3325,10 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/santiago_canyon",
-  "kept": 0,
+  "kept": 67,
   "kept_moved": 0,
-  "programs": 63,
-  "list": [
-   {
-    "control_number": "11856",
-    "title": "Biology",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
-    "coverage": 0.667,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11857",
-    "title": "Business Administration",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
-    "coverage": 0.818,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
-    "was_coverage": 0.818,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11858",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11860",
-    "title": "Entrepreneurship",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11861",
-    "title": "Management",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11874",
-    "title": "Gemology",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11902",
-    "title": "Computer Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11928",
-    "title": "English",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
-    "coverage": 0.944,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
-    "was_coverage": 0.944,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11948",
-    "title": "Cosmetology",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11985",
-    "title": "Apprenticeship: Electricity, Industrial",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11986",
-    "title": "Apprenticeship Carpentry, Millwrighting",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
-    "coverage": 0.667,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "13230",
-    "title": "Apprenticeship: Surveying, Chainman",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "13231",
-    "title": "Apprenticeship: Carpentry, Finish Carpentry",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
-    "coverage": 0.929,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "13232",
-    "title": "Apprenticeship: Carpentry, Framing",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
-    "coverage": 0.933,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
-    "was_coverage": 0.933,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "13234",
-    "title": "Apprenticeship Carpentry, Drywall Finisher, AS",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18317",
-    "title": "Liberal Arts: Arts, Humanities, and Communication, AA",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=103",
-    "coverage": 0.991,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104",
-    "was_coverage": 0.781,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18319",
-    "title": "Liberal Arts: Multi-Cultural Studies",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=105",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=106",
-    "was_coverage": 0.711,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "18320",
-    "title": "Liberal Arts: Social and Behavioral Sciences, AA",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=106",
-    "coverage": 0.98,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107",
-    "was_coverage": 0.687,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19590",
-    "title": "Apprenticeship: Electricity, Sound Technician",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=325",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19624",
-    "title": "Water Treatment, CA",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19625",
-    "title": "Water Distribution, CA",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21647",
-    "title": "Computer Information Systems",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
-    "was_coverage": 0.692,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21658",
-    "title": "Apprenticeship: Carpentry, Finish Carpentry",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
-    "coverage": 0.929,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21663",
-    "title": "Apprenticeship: Carpentry, Drywall Finisher",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21668",
-    "title": "Land Surveying",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "22271",
-    "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "24426",
-    "title": "Executive Assistant",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
-    "coverage": 0.875,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
-    "was_coverage": 0.625,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31588",
-    "title": "Apprenticeship: Carpentry, Pile Driver",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31601",
-    "title": "Adult High School Diploma",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31730",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
-    "coverage": 0.929,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
-    "was_coverage": 0.571,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31735",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
-    "coverage": 0.98,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
-    "was_coverage": 0.98,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31847",
-    "title": "Environmental Management",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32043",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=87",
-    "was_coverage": 0.679,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32045",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=140",
-    "was_coverage": 0.848,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32319",
-    "title": "Construction Inspection for Public Works, AS",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
-    "coverage": 0.615,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
-    "was_coverage": 0.769,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32434",
-    "title": "Kinesiology",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122",
-    "coverage": 0.882,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=123",
-    "was_coverage": 0.824,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32602",
-    "title": "General Biotechnology Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
-    "coverage": 0.938,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33161",
-    "title": "Multi-Media Artists and Animators",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35110",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35735",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36214",
-    "title": "Effective Communication Skills",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36215",
-    "title": "Employment Readiness",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36216",
-    "title": "Technical Skills for Higher Learning",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36217",
-    "title": "Transition to Higher Learning",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "36914",
-    "title": "Secondary Education",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
-    "coverage": 0.988,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37132",
-    "title": "Social Justice Studies: Chicano",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
-    "coverage": 0.786,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37133",
-    "title": "Social Justice Studies: Gender",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
-    "coverage": 0.929,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37164",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
-    "coverage": 0.941,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=109",
-    "was_coverage": 0.706,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37803",
-    "title": "Office Leadership Skills",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 0.75,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38157",
-    "title": "After School Program Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
-    "coverage": 0.6,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "38399",
-    "title": "Office Technology",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39807",
-    "title": "Global Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39917",
-    "title": "Kinesiology - Fitness and Active Lifestyle",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
-    "coverage": 0.887,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=119",
-    "was_coverage": 0.903,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39918",
-    "title": "Kinesiology - Health Promotion",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=119",
-    "coverage": 0.903,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=120",
-    "was_coverage": 0.903,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "39919",
-    "title": "Kinesiology - Health Promotion",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=120",
-    "coverage": 0.908,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=121",
-    "was_coverage": 0.908,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "43319",
-    "title": "Vocational Real Estate Salesperson",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44319",
-    "title": "Data Science, CA",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
-    "coverage": 0.938,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
-    "was_coverage": 0.812,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44326",
-    "title": "Apprenticeship in Early Childhood, AS",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45579",
-    "title": "Apprenticeship Carpentry, General Carpenter",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
-    "coverage": 0.964,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
-    "was_coverage": 0.964,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45580",
-    "title": "Apprenticeship Carpentry, General Carpenter",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
-    "coverage": 0.964,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
-    "was_coverage": 0.964,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45606",
-    "title": "ESL Advanced Writing",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
-    "coverage": 0.5,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45737",
-    "title": "Social Work and Human Services Assistant",
-    "award": "A.S. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107",
-    "coverage": 0.96,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
-    "was_coverage": 0.96,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46027",
-    "title": "Adult Secondary Education Advanced Mathematical Concepts, COM",
-    "award": "Noncredit program",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
-    "coverage": 1.0,
-    "was_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   }
-  ],
+  "programs": 0,
+  "list": [],
   "held_worse_window": [
    {
     "control_number": "11910",
@@ -4084,22 +3453,6 @@
     "was_coverage": 1.0
    },
    {
-    "control_number": "11943",
-    "title": "Economics",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
-    "coverage": 0.875,
-    "was_coverage": 0.875
-   },
-   {
-    "control_number": "11947",
-    "title": "Sociology",
-    "award": "A.A. Degree",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
     "control_number": "17688",
     "title": "Apprenticeship: Operating Engineers, Special Inspector",
     "award": "A.S. Degree",
@@ -4127,14 +3480,6 @@
     "control_number": "19587",
     "title": "Apprenticeship: Electricity, Sound Installer",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19588",
-    "title": "Apprenticeship: Electricity, Sound Installer",
-    "award": "A.S. Degree",
     "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
     "coverage": 1.0,
     "was_coverage": 1.0
@@ -4868,14 +4213,6 @@
     "was_coverage": 1.0
    },
    {
-    "control_number": "40639",
-    "title": "Biotechnology Lab Assistant",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
     "control_number": "41165",
     "title": "Financial Advisor Preparation",
     "award": "Noncredit program",
@@ -5148,38 +4485,830 @@
     "why": "number_not_printed"
    }
   ],
-  "forced_unbound": [
-   {
-    "control_number": "11909",
-    "title": "Construction Management",
-    "award": "A.S. Degree",
-    "closed_by": null,
-    "why": "block_names_other_program",
-    "judged": "Construction Administration for Public Works, AS A.S. Degree Major Unit Range for Completion : 21.0 - 21.0 This Associate of Science degree in Construction Admi",
-    "filed": true,
-    "passing": false
-   },
-   {
-    "control_number": "37073",
-    "title": "Code Enforcement and Compliance",
-    "award": "A.S. Degree",
-    "closed_by": null,
-    "why": "low_coverage",
-    "judged": "Code Enforcement and Compliance, AS A.S. Degree Major Unit Range for Completion : 18.0 - 18.0 This program is designed to provide academic and professional trai",
-    "filed": true,
-    "passing": false
-   },
-   {
-    "control_number": "42990",
-    "title": "Public Administration",
-    "award": "A.S. Degree",
-    "closed_by": null,
-    "why": "low_coverage",
-    "judged": "Public Administration, AS A.S. Degree Major Unit Range for Completion : 18.0 - 18.0 The Associate in Science in Public Administration provides students with the",
-    "filed": true,
-    "passing": false
-   }
-  ]
+  "forced_unbound": []
  },
- "run": "43387912036"
+ "fingerprints": {
+  "11856": {
+   "sha256": "06c9afaccfb05227b3c0f2433cb9a3962cbd9703c6a8dc872d2d7145f910e85a",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89"
+  },
+  "11857": {
+   "sha256": "2d7af79cace1b1d1b1a3357b6eacf9323ed846bf69a236aa583720e244880270",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91"
+  },
+  "11858": {
+   "sha256": "c59a5ee7f5321dcf49aefde90aff52a40a38007557a766b9313843ba3973978b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84"
+  },
+  "11859": {
+   "sha256": "e377a21a60686c5a6a3ecabb3cb527f0bf72e90ce672de1ffd22f0dc32eea40e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92"
+  },
+  "11860": {
+   "sha256": "21620d753b40ca999d0df9ebcb50d6a3b5af95ae5b8c13ca943dd8b13b96a8e8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93"
+  },
+  "11861": {
+   "sha256": "7207a8f70438a3d97d0a31cd2db3a356cda3a8d5e2462e7528a8f60310c1e2ae",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=123"
+  },
+  "11874": {
+   "sha256": "905289028fab8a99b1551a1b9934354024c30548d5cc7d401586e6242a078d81",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115"
+  },
+  "11902": {
+   "sha256": "954336cb1b533d1bcb281fcfdcdfd8ee1e26cbe387d2d7ead8bb4e800eb52709",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97"
+  },
+  "11903": {
+   "sha256": "13d645fcd96c480618d5a320a7aaf33e46155d63d041aeb1d3fac82a9c598e30",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98"
+  },
+  "11905": {
+   "sha256": "b632d10af66ee78e509516219a70d75093a0e01f93f4e270eea1b6391cddd058",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85"
+  },
+  "11906": {
+   "sha256": "71bc0802762cf5824659d0f67cad3d3e92f9b28c1221c8540581b0d2aba06076",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328"
+  },
+  "11907": {
+   "sha256": "e3d8c2248eb0164ddff7668b8a95f04cadfa53ed636af4c61f600da3b12b7347",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141"
+  },
+  "11910": {
+   "sha256": "a6b84e84753c1c1c4f51cbfaba70469ad6b0720ea5c7872efcc54e77b042f960",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132"
+  },
+  "11911": {
+   "sha256": "64686e0bd624b448a820d75ee3f7cc553310496fafe8f57a3bc2c41df53b4bd9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=87"
+  },
+  "11921": {
+   "sha256": "4dddccfcd857489677d1523a1e70cf5c8878b602e33631d0c3428d656856da09",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88"
+  },
+  "11925": {
+   "sha256": "4934c726c71ceeee7d57c6f5f56170139ca6b3d7b4e2d7e18913ca1eb0b72d2e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126"
+  },
+  "11928": {
+   "sha256": "fed4b03c2233c526e656be7396ef0567500b797facc76d9c4745dffc9d3b3527",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113"
+  },
+  "11933": {
+   "sha256": "eb21d79569e506d6b03c5c43814bbd30dfed57ac80c032adac138807512c3bb7",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93"
+  },
+  "11938": {
+   "sha256": "2d28c2c3b784305c4cead8bba146e1c8a83803d85e93eb5b9c91628d0db98eab",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115"
+  },
+  "11943": {
+   "sha256": "48529289e9ff96c72849af13da9dc14bdc4edc76d6aaf0d5b88eb393f5c1b9d8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110"
+  },
+  "11947": {
+   "sha256": "57aa05e366e7e595a807d58c55c3d7f408299ba7e0c245931a914f341c724dff",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138"
+  },
+  "11948": {
+   "sha256": "d4c0a8736cc72b1bcf244b77276dd7f1b95e34dcb520a78c85c912fa5a0526c1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99"
+  },
+  "11985": {
+   "sha256": "392e919bfc064bf3c040a9d18088c8eb35af86069f37766870ecfcdb18731cbe",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323"
+  },
+  "11986": {
+   "sha256": "c064b0730208e48591ee3e53792e850bea9bd872adaf8817937700156f456e86",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319"
+  },
+  "13230": {
+   "sha256": "5891ea82942d4c55fcb75aec8621a871144037b2085bc8f6b7bf1ebf237e8971",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329"
+  },
+  "13231": {
+   "sha256": "f3281294117993e2152c65db7fa90def21ea9811f0a9d2c5f611d55565461082",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316"
+  },
+  "13232": {
+   "sha256": "23c1a8b76434c642faaf222d273d6d14ca56bdc53f006af4355c36ea179b9cc9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317"
+  },
+  "13234": {
+   "sha256": "1207ea1c5a73bd0d9ed3ac1d7cb6d89a70f4b98037be7afba72fdf71c144e4a7",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315"
+  },
+  "17688": {
+   "sha256": "1f1d948e0a7886849b9730fc7437f9acd7f0255d25159a788183c233030476dd",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=327"
+  },
+  "17759": {
+   "sha256": "48a423e1eda4dfa5104d322cefb3c50ec18dac51aa06105ab9b2211a3c60ea5a",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111"
+  },
+  "18317": {
+   "sha256": "29ebc6a601994bab42f9a88a949ade42e7addef84eb554e59d942b75c44a5cfb",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=103"
+  },
+  "18318": {
+   "sha256": "0c0e8762a1bdfbe199539a5842fabd8dadbae8fecb82e91873a9334e83bfeffe",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104"
+  },
+  "18319": {
+   "sha256": "ea29249080ea1e6c73ed864120bec804257cb96e9f4346abec6060b1ed567fbb",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=105"
+  },
+  "18320": {
+   "sha256": "71686606d57fb8c87f117dedae38783b617c14f0915967628f2cc9938239cfd3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=106"
+  },
+  "19587": {
+   "sha256": "e80bb33f80b421ceb3ba60120abb274f0548d16ece3f5ae5fd4b4f6794364162",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324"
+  },
+  "19588": {
+   "sha256": "e57cdb308633b40f5adc076797adba34ae5e519d813e72636bd46d49cb9ba0a4",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324"
+  },
+  "19589": {
+   "sha256": "951aec319f68a3efe56686863886c51a21cea837e5b95675de818cf3a7139026",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=325"
+  },
+  "19590": {
+   "sha256": "2689afc90327731d4e8a04ae7d6cd9062ddc9d597d051d8c7d226adf4063a891",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324"
+  },
+  "19623": {
+   "sha256": "2060029a03ed2a44482dcc4a6fa51adc7d64993a9136594c7e2dc09d12b3bc47",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142"
+  },
+  "19624": {
+   "sha256": "1432db4da409bfb56ba4b00905cdc707cae097256bbd76218c6afa682f558a43",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142"
+  },
+  "19625": {
+   "sha256": "a4ca7c26562f672cda5e4bd3345ce4686c0ecb77861bf092a3398b1d92f903b9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141"
+  },
+  "21631": {
+   "sha256": "80ab2215369fa4aa57547eb8817bf5ab8ebbf4670b147f90973ff344ae404364",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84"
+  },
+  "21635": {
+   "sha256": "5a72d8df4c4389c10b97ffdbe5e8c98a2e288c5a1d7aae4386286f01b434253e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93"
+  },
+  "21639": {
+   "sha256": "9a6cd32050ead14d9cfae9809a0bbe514c5bba0b0d1a6598eb537a1efd44cec5",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=135"
+  },
+  "21644": {
+   "sha256": "f2c1383c03e67420702833a8d4552f1642d982781740675e255bca5d2f064174",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115"
+  },
+  "21647": {
+   "sha256": "9367cfd3adf5547e31247a94f91e22eb8164f4e949b6d63287d5feb9d4a23a1a",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97"
+  },
+  "21649": {
+   "sha256": "864962ebb768d27fc12cf37203f9aebe2403e4ef985e55ccca7887a1a53591b4",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99"
+  },
+  "21657": {
+   "sha256": "da5453693cf8eb11a110069d8315125575a9e470996e7cb44e65d5126f99804c",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315"
+  },
+  "21658": {
+   "sha256": "946204f72f2386f5520af33c3bf97bf5b4fe3a115be7b4727a180c691899cd40",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317"
+  },
+  "21659": {
+   "sha256": "2e25708f29d0eb58a94677bee7182c8280b8b99afbc7d2a71428d861d7868739",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317"
+  },
+  "21660": {
+   "sha256": "24a629f1dc116bbad44c4d41048c8c768c0b7a48251e241048d7664e661e7961",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322"
+  },
+  "21661": {
+   "sha256": "bead22a2ae27626c428f040021b28ad9a4afd83260ae6da2c968a917ed129e40",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323"
+  },
+  "21662": {
+   "sha256": "98ab2cc0b2183faca2106fa412631a83479947da33e58d9ff185840667edfad2",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319"
+  },
+  "21663": {
+   "sha256": "6ca4bacaacf97753274f7957eedaaa9ddaa0af21ca9c3f9eece76bd294e04639",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315"
+  },
+  "21667": {
+   "sha256": "68159d757c9bfd0bf39a514dbeff85240806ee9136c8705ebcef9da6be4dba8c",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329"
+  },
+  "21668": {
+   "sha256": "8b704c7aaa405f1f95b6fe6b6f86b8ab94e1e875bcb1490e7c66bf30300ecc5d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328"
+  },
+  "21669": {
+   "sha256": "7fa15baa270e9f987fcaeaaad933e199975c34a7173adab2752baf6551ee7916",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141"
+  },
+  "21674": {
+   "sha256": "d7f8070e014f41bc773287edc1229244a7d825d86be50cdf624a95a2683f42a8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99"
+  },
+  "22270": {
+   "sha256": "49d9367bd2420b426e78b52e5cef28421d649fc35f88e1a9a3afdc8d8073f59d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324"
+  },
+  "22271": {
+   "sha256": "46a7737b1535b4f466f217eac6c884fef24bc3eeed5e4bf77f9c24486740232c",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323"
+  },
+  "24037": {
+   "sha256": "428689ce3664fa3fb2bd5c033803e27f38e5ba521b164753b6fd9730a3cb929f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "24052": {
+   "sha256": "303ed7fc0daf3da55ec43d58df8ba173f207f3a751312f68db6386eaecd41082",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269"
+  },
+  "24093": {
+   "sha256": "0b05fffa0c7233fb9e928a941ed6e06d1d722a136733aea5a7440a3ae12cac5b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260"
+  },
+  "24095": {
+   "sha256": "109fb1d03db4183f1a88b0bb6ceb19c58828cd775e5ee9a800401db1213fcd96",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265"
+  },
+  "24097": {
+   "sha256": "f4af84b68b6e375b44daf15f1f82746a7a7c2d5a827826f40f05f6b974bf8306",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "24146": {
+   "sha256": "16a42aab4912e0073d68c0a7145301c66516c81fbe25cec933104276b90fec69",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "24187": {
+   "sha256": "271a69fe2f1874cd3bafd10d3624618b79579dc327c7098d05cfa3c4203870d1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265"
+  },
+  "24191": {
+   "sha256": "8cb04f1d1aab0d29568049f7c4b474e19bf212a839d793cc2de73e25d3bf960f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "24195": {
+   "sha256": "7b2b036dbaae4fd8e8d589b1594ff5b0b164b52c40f24b5c13b704fb848ea8af",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "24196": {
+   "sha256": "3595777e80d75417baa0788badb953e47636073692b6b089be8e61258289798e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "24198": {
+   "sha256": "600cb7ca0d40262d120c89e06ba8b0c5d47af48641fec28ec5b3089f4624a3ab",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "24230": {
+   "sha256": "6b4eec17d105560e57f652d71753cad01a88bcf1ae2396764fb4a24e9c760f09",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "24233": {
+   "sha256": "b56e657a121455a131c989ff403c97c018cace3837532f6b27df05665a6fe9ac",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "24234": {
+   "sha256": "15ee79a0a91baeab9b4538e1bd3fc7d47f3927877461e4c9dc1882e4f396803b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "24285": {
+   "sha256": "dedc0aefd11f68be26ded1081729f742bff789bf2cbc25de6de80e3bfa2bd0e1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257"
+  },
+  "24420": {
+   "sha256": "460335b4553603646323d5f03ab1801b0a0b1144e4a0cefbc407979b7f3867d2",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "24426": {
+   "sha256": "40b0d7a9ad31bdde8a98e007b3b6cc3afec9390382d138ded0d88c89ffd64d17",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264"
+  },
+  "24427": {
+   "sha256": "bda64108bf8f72fb08d0fddce14e4c72c1cb2d1b36d61bc5d31acc0a3b04f64e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264"
+  },
+  "30644": {
+   "sha256": "86323c5cc0dc3a1499a74021965c24b0a563ae1f2547fae4c099ade9b8073877",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "30646": {
+   "sha256": "2d42a248bd9a5f221a3c536f34f7b0956546b85bc59777f99cf017eecf9ffa36",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "30647": {
+   "sha256": "edc16acc66a35d79d0db2b6f46b6c08b2c88616dfc9049f5410c606431fc9a86",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "30690": {
+   "sha256": "279be37cbc80552a309994726a4ef6e912595c39e08278b37889b4d50f5e354b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "30985": {
+   "sha256": "1c93c6ccc94d53828f9074ceaafdce737e122686ff6d00b2bfc0127f5d299210",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "31039": {
+   "sha256": "aa9f39ab5f73d8166c3a94a1357609d023adddd3bcd7fd72ef3d7dca1c2b70fb",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128"
+  },
+  "31040": {
+   "sha256": "f945920bb6ac1657b9607957b6f98d39682445c50774d87bab09d945be0ab2d8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126"
+  },
+  "31041": {
+   "sha256": "eb98c5efdbb4ffdbab2d4e169ee8064d49139666802a90b00fe5ce91cd9eeae3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129"
+  },
+  "31366": {
+   "sha256": "4adf3d453884acd9d2434e964828093ad74c6af173a0329a92fb4011787d4e78",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114"
+  },
+  "31574": {
+   "sha256": "bbbda1696ee5dfe8a65c1cc6884bd8b19930f41cc72aee00dc6bbcf3a46112d2",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=326"
+  },
+  "31588": {
+   "sha256": "6a6ae37ee7cd1cf24d0c200aaaacce6a7665324ec46697b8bdd4b7e06effc294",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320"
+  },
+  "31589": {
+   "sha256": "a6c0bbe7f8f6dd003f4179da7aa133232bc8f0b9365b21c11fa99aa2401543df",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320"
+  },
+  "31601": {
+   "sha256": "0991030c90d482505adbe88f014386f80f8168c6ef86d124872adbc29ed9a965",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263"
+  },
+  "31706": {
+   "sha256": "090b90c23221d57ebd095f892c1fcb429cc12db2ac7bdc61193ce6e0dfe93e18",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=321"
+  },
+  "31715": {
+   "sha256": "7ea832b692a7509d271fe4e0870489b64d339a32c77a5d495d2a804e56304d8d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88"
+  },
+  "31720": {
+   "sha256": "ece41c01b5cec2c40ff6facd17b640bfecd13593187ce2c1e7f0fca2acea9c91",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117"
+  },
+  "31730": {
+   "sha256": "acf9cfa043dbd0491066c7023c382cc85c59066aeb2ab91441e390fe254078d2",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128"
+  },
+  "31735": {
+   "sha256": "ceaf6a8619504ad28eaf2b171f2422ead937b1fd30c62e0e0c268dc0a2e45ad8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111"
+  },
+  "31847": {
+   "sha256": "5bea80bff9c1e43f92446797b1e4e816c0cd620324a0d83a9f7dff69c199b9d2",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133"
+  },
+  "31848": {
+   "sha256": "e4909976231119ea677de597a87d6ab3b28544fe7e6b4764ad3e9113e70d74f8",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133"
+  },
+  "32042": {
+   "sha256": "b0dd85c1f8ec0a35f14af30a142afac0d7283d3ab03feecdc3e7148bb0efbdc9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128"
+  },
+  "32043": {
+   "sha256": "b6339b37c9333ab2dbb67f947efec397a9f0b2be40048b76d9d29c2b4ed8daf7",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=86"
+  },
+  "32044": {
+   "sha256": "2da62ba87ba17f2110161c20fbf421f2dde49874eb799cf69443798bddf35be0",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116"
+  },
+  "32045": {
+   "sha256": "5a0495c2c10051b51e975ce30833485e2fa158d695f6d553cc18488b9dd01e86",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=139"
+  },
+  "32319": {
+   "sha256": "5935ef39abef827946d46b70c2c233babab01eea40a90374c33ae7dbfc564c31",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131"
+  },
+  "32364": {
+   "sha256": "af273f15514932c8a1dc24dab2d3c80b3ee92ba2f918a1909ab493672e5dbdab",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116"
+  },
+  "32434": {
+   "sha256": "969b09405034a4f61ff4f9fd31f503dfdd73f74befd14e85341af2fbf6e105d5",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122"
+  },
+  "32599": {
+   "sha256": "bc66835618037b6e90068bb1ab8c89257548e1c8f6b7ab1f3f28e1b3d51066e4",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90"
+  },
+  "32602": {
+   "sha256": "fb2a19e202664d302d46b2914c3ce5e4fbb6dd47ce7abf52608c16453d70a2ed",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90"
+  },
+  "32648": {
+   "sha256": "5751297226ec9fdceebc7d85d42bb18aa9a2d0f95ce8edee27bc2adbc8c952ef",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90"
+  },
+  "32968": {
+   "sha256": "3e7c07faa662970be52bfa28ec55805f9e60dfd82159287acbe8caf9c3ebb130",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110"
+  },
+  "33137": {
+   "sha256": "8442ea633434393b3133c76ed8fcce0bca712ad12cb728382eea19e18b27190d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "33161": {
+   "sha256": "3649bc304e621f9594747d26ceec3d726fe0f12380a150a918b272648e46ae47",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265"
+  },
+  "33379": {
+   "sha256": "f84e99cdb7bfff4546f34e8ffff95bc3d3538c0f712440aea07e21be54befeac",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98"
+  },
+  "33422": {
+   "sha256": "d948fadad5324d5f40404dc1697083cb9a93e880e7f39b43f5f53061ac2732db",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255"
+  },
+  "33561": {
+   "sha256": "dc0da0c410d6e3c96de878a4029cf6d191d6a6a2a75c2648fbe3f945f63e76d6",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "33562": {
+   "sha256": "b7e280b7897ff9175d7b914effa81e2b69a5beaad368845e1e090b57acbb8c94",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "33941": {
+   "sha256": "bc34f245358330a880a492d3e34d3041e69451f31f8ad607fdabbefba9965e50",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "35110": {
+   "sha256": "aa302b0402dc2bb04774f8db77a2c94a97187ee0d0d558345ac08aebca1783c1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89"
+  },
+  "35233": {
+   "sha256": "e31383401652b760df5809ee74bede6b70e92389ac49c687533207e3783b3b6f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318"
+  },
+  "35234": {
+   "sha256": "3c0614cd5aea628c7138f1f554ee7a8687cd02c1ff857abea76280c7293318e5",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319"
+  },
+  "35614": {
+   "sha256": "052887240d6a25ba4ea1e1291db8847c3c55acede5fe8175a238ee13bb60ceb9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=94"
+  },
+  "35735": {
+   "sha256": "513673fa90642575ff8afc8df51e2daf704b3bdf606e97e437b7175bf28a46e7",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=127"
+  },
+  "36208": {
+   "sha256": "0bbf7663619432d1d40b04427dfe19ac08bc72e60d2007359e8a34db17016bc1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270"
+  },
+  "36209": {
+   "sha256": "63c2d27b02a584370e55abcb39a75adf881ff072acd67f1ac43b98a23f074ffa",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260"
+  },
+  "36210": {
+   "sha256": "d6328e2bf51115f534c4a65c22f037398d942d2d4404066f0b7dcf55ab9f0ff5",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264"
+  },
+  "36211": {
+   "sha256": "6795518609b4cc7feaf8f5450cf6a6bb677f93d283a2a32cd64b01059a8dbd6d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "36212": {
+   "sha256": "0e8c1d389e852aa9b36f891c20128279677655802acb0b70bd7e0252f0a296e1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268"
+  },
+  "36213": {
+   "sha256": "ea2a13aa8eb0678068e75b45cc0ba921ea1d86827e73db5aa0cdbd0b401e97bf",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269"
+  },
+  "36214": {
+   "sha256": "66aec65445bc96c230e5ef3d60528cf1b08986bc32ec687b1f1a9f2f441f6b78",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "36215": {
+   "sha256": "717d78c2bcd812aa9e079f60ae441822990a418f9b42ff1388cc150a86b40431",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "36216": {
+   "sha256": "b300bd804cf738538415b8ae55c85c787142c73c265fbabd02b6eff03ebbf80f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "36217": {
+   "sha256": "d675ecdd424f1adac90f587a95bac601aaba08f43d51910c4af73d2b22794894",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "36370": {
+   "sha256": "7d24b03c9d892c0310f72680f587745dc401195a3a71d4b07a9285e8a2a1852f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270"
+  },
+  "36371": {
+   "sha256": "8d0c706757f507b165dd170edc188daf8fd04dcd33b73adf184ce4843eb2deea",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265"
+  },
+  "36372": {
+   "sha256": "00cea34174b89429b433cd81efe00fb8a943649aec867b721baf12ab4aedc276",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "36585": {
+   "sha256": "f52b466cfeb961381a679f1398c4ed42a66572f35a6b4eab3baf3f840f48ca4d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264"
+  },
+  "36665": {
+   "sha256": "063e143653de9df3aaf4f2960dc57e3d66f11853adf233fdb75a0868a12d508d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "36897": {
+   "sha256": "d64b385a2c0451b99c2dc3fc4efd3273ad257a3369c85ff0eacaad3dd3fa2819",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "36898": {
+   "sha256": "59117cc2c5cb6e28024ee4e55e80483b662c545a2ae926e5a58357a166f92a98",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "36900": {
+   "sha256": "78185bbd63a93dde6d402c4987e51299895d6e5da33ee1af9c9c1413585add19",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257"
+  },
+  "36901": {
+   "sha256": "e13c3c153bd355c268a9d24aae416b6d0a260ee384b4a1c5ec67fd38739fd685",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "36914": {
+   "sha256": "f9742658a148ee03baff77a2ce388c79261182f8a307793451c6938aaf9be476",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "37102": {
+   "sha256": "4501fde29e77bec8adcb9011111540cf0ea5a24f16f77803b8b6035866916506",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130"
+  },
+  "37132": {
+   "sha256": "68e0cd11e241f3ec0203698d8a083cab5e15e6f6cc938ad480f45d8e70ced1ff",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137"
+  },
+  "37133": {
+   "sha256": "183807af3f8a5f298b38e9f8cdd30210614ad4bc8788f8113cb4f521f7fda59a",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137"
+  },
+  "37161": {
+   "sha256": "52db87b2eb8afb8ec89f0a5ef41b7c56ee05732fbe246f2e08c7c711c612d258",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138"
+  },
+  "37162": {
+   "sha256": "d619925911d6475ccddf8d5df38810ff5c81e7faf5e3994a035c88a9ba10adc1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137"
+  },
+  "37164": {
+   "sha256": "43593ab91b461aae7cb19e2f2a03345d7b778776127ebefa39bebf6fdc168557",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108"
+  },
+  "37478": {
+   "sha256": "e4977c4995780e89120a721cbf4c07331fdc9110875fee13b44cec3fc6142841",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85"
+  },
+  "37803": {
+   "sha256": "ce0b177ea2bf71e4ea4e497de1a081ec5d5c3edeb79a7cd955ebf4aa9659ff50",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "37805": {
+   "sha256": "02be06638fb70e41f2273e2437df867f0e8c12fa6dbf090570ab0174b4fb984c",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269"
+  },
+  "37806": {
+   "sha256": "025565dfb573d974f0a3052f439171218f5fbb45368088fc6094c2a5ffe46896",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268"
+  },
+  "37807": {
+   "sha256": "2759fca3300987690c564722a15cca2726f3eb7fa2c94983673dc1926c080b96",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268"
+  },
+  "37825": {
+   "sha256": "0ed3768ca4e0649d131fa973bb689ad6ab648ec28192d46f3902405378adda05",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270"
+  },
+  "37911": {
+   "sha256": "24166fc3f95ff5cca86da5be3321406b5335ba6e3bfa708ad274e140bd948fff",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111"
+  },
+  "38157": {
+   "sha256": "0e002132dc7c5aa3af976450addd7b95c5bb1bbddfc8d873541f2589247d25eb",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111"
+  },
+  "38398": {
+   "sha256": "03843fedd435650a8a1f9d1b0cf9868d4d432348d952b03b2b8438eb28e127dc",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "38399": {
+   "sha256": "155a964f9fae36749659ee5c7235a597d7691adb67d0f6195ffd156e186c2dd3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "38400": {
+   "sha256": "585c6a754e09b805f1b7cbc355ce3a33279cd8d88b097ff7806ae8890c5e7494",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257"
+  },
+  "39807": {
+   "sha256": "5c17624be9d32b9dbe441dc7dda936690e509440cad90bcf669cd8131e17cafe",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117"
+  },
+  "39808": {
+   "sha256": "3866020173a06bfc7f58bcf51d2b8d1bc465ec45dc3a5d5692c9ab32c6741fbd",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114"
+  },
+  "39916": {
+   "sha256": "3bd517f978cfa2f6b12041a7cfb3c1c60cbb9f3d8ee4fe0b6ee784ff63e37c5b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118"
+  },
+  "39917": {
+   "sha256": "89fa310b87342bf135f1fe5784da116f930cd024c13b654376cd4182ba8e00da",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118"
+  },
+  "39918": {
+   "sha256": "27c133008a06180f21900bc98775f46874e2e93a5f88304008f50e37ed5a99a6",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=119"
+  },
+  "39919": {
+   "sha256": "729e533589076731382479ef1954a190ed18f7b4a868026533d3d7b7449a0314",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=120"
+  },
+  "39920": {
+   "sha256": "bb907d0b278cc4f452d826f20b1f96de6ae5a62673a4ba3b52edbbc528d2d1bf",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=121"
+  },
+  "39921": {
+   "sha256": "57aba50da4d787764809175757e537526a06b16a6474de1f2fa4a6366f2e198d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122"
+  },
+  "40510": {
+   "sha256": "8ae1ec8e48ad5c74b0d93c095624dc767470ced51d3122ecc320a7e25b9b02b3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257"
+  },
+  "40639": {
+   "sha256": "b3d079e7cc956be4b3e2544df9ec621613790c0bf24c5d1f3dc3fe13b147334d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89"
+  },
+  "41165": {
+   "sha256": "fafee44d2f7097f49094b50367de1c4eb3cb18da2b301eab940e03067860ad37",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265"
+  },
+  "42027": {
+   "sha256": "8d2586ed052e230aafa9f94da180c461c72b2a3ea3020698b2802f0cce2554c3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261"
+  },
+  "42317": {
+   "sha256": "40b30a033b2fb5dfb3ecc9a1cbec65125fdbcd4ae2d221517b14690786b87fdc",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258"
+  },
+  "42387": {
+   "sha256": "54cba3d3e0cdcf4440ea4f864213d15b6973eef139d75a80d83a7e8b032f811b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268"
+  },
+  "42497": {
+   "sha256": "42cf931a8cfe277e8e1efd98d71a7a94698bee68240e8b86efabb743c17bff98",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113"
+  },
+  "42815": {
+   "sha256": "8b6c603cf3ea04f888acb2986cda1b9440d15bb75fad2196ef5cde68c6ed80d9",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260"
+  },
+  "42991": {
+   "sha256": "33353a5fd90150b63b271c58b67276ca428f57473363ee33f635f1ef06a26de6",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91"
+  },
+  "43227": {
+   "sha256": "9ebee8b918c3083185819a508661b2564012d2e5a3a44eb22d96e2306d47d4b7",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255"
+  },
+  "43259": {
+   "sha256": "78da14773be5362947c668ce1da44a8bc6d7077139ff819d7361ab4b9df349e1",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "43319": {
+   "sha256": "c205ca2c77ffe8f851da39e41ba6bd39db219e19c3af8ddc243a375bdf4a5d82",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269"
+  },
+  "43691": {
+   "sha256": "b36248f9c917f574c6670a60f551c0a5f7d69664295a1893b20f19628cba9e79",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129"
+  },
+  "43692": {
+   "sha256": "e4b0dd7be36c5486c4cae82ac317ba22645679aabf4e1d3978260cc2aceca2ab",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125"
+  },
+  "43876": {
+   "sha256": "5fec2044efb5479c1d45f121d6088caf3c0e72d34ca4b449391a091f0776c87f",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264"
+  },
+  "44174": {
+   "sha256": "4ecfbcf33d8418a5c1d985d86448eaaf482560e60e3c21c8f60f2e6ab4c731f3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322"
+  },
+  "44233": {
+   "sha256": "08cd7092d024e496acc62d60103e1da5914f1602e17452474582a1e89ba1d21e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256"
+  },
+  "44319": {
+   "sha256": "597fae4e40b6d2cd8c2a22010afe3024b22c05da150403c2daa0bdcbb6ee8b9d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125"
+  },
+  "44326": {
+   "sha256": "98932206232163e3cc3cb078f05de54f825a4162cc475292321862aa16a14cfe",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322"
+  },
+  "44436": {
+   "sha256": "07130549e83d2c08dd7f017e77347dfe8826a34ed7e369e57ac1735373767384",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143"
+  },
+  "44459": {
+   "sha256": "7543ce99d6e27497af72e80cc17c80d8a082cca5ef871a05c4eb795d91cf5539",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143"
+  },
+  "44797": {
+   "sha256": "702215f3884b89e987b4e1ae6e40353bab0bba08a42e41fa271ca86d68d8646e",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125"
+  },
+  "44861": {
+   "sha256": "5905e9e15776174682b34fc9efcfd656916f051a71dbbdb72178ff26dbc6b635",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268"
+  },
+  "44862": {
+   "sha256": "ec391a27fb702eafa5ad2e7f73ff4eb4ecc89d5c668833a78c59b2ea451a5316",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266"
+  },
+  "45504": {
+   "sha256": "88245ab38334f88e9f8e37c0954be2be39ef20d31e2207e675712d3ceead24b3",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "45505": {
+   "sha256": "519be8176a5b0e73fd945822d411e52dfe2ed5e1bb0ec294a8b5ac92191cc77c",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267"
+  },
+  "45579": {
+   "sha256": "e26d727e735d27990cd03906ab95fddbc73bcead7d119d87d08d90a78380279d",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317"
+  },
+  "45580": {
+   "sha256": "b13069c995a189b792627d0b5cc97234d52778ec8ab3b345248bbcf40ff41bcd",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318"
+  },
+  "45581": {
+   "sha256": "1324929379320924adbfd5d4f952f90b5f724a90f79b6f064d488e6eaff8bc45",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98"
+  },
+  "45606": {
+   "sha256": "ce3c403137de356ae8161cabe26f52c5e63ddaa973800400bec4b3a6a30bc154",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259"
+  },
+  "45607": {
+   "sha256": "2cfd99f8111b7b384745915aa857a4ddd215cad767028b291dcdbdb5dcba64af",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260"
+  },
+  "45609": {
+   "sha256": "9eb7afd3d6ee1b9b73426b40c01cc3645bd4afaace9fe7e7601ca2619d1d7148",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270"
+  },
+  "45737": {
+   "sha256": "45fa7390e89551eb9824602f10dc5861d2c2f48a764380c3ae3b9e8d07596775",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107"
+  },
+  "45881": {
+   "sha256": "b7c8816d8fb435c9568429da4a9b53c8531f4e8027bc0d3f05a224ca36604d73",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255"
+  },
+  "46019": {
+   "sha256": "2d195c8b74150f8feb8199f768a256690434fb27b05d544f2f08557324b3922b",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257"
+  },
+  "46027": {
+   "sha256": "d56ec9cc4cbc1e32cd18ee2406b06d39a4cf46547301f78bb9b3fb9fec566050",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260"
+  },
+  "46150": {
+   "sha256": "6055f3412b6effc5b22b8c57c99cf80e4da42cf695879ab78a2bcdabb5ad2386",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108"
+  },
+  "46367": {
+   "sha256": "3ad604c9cd69378b1b80b36bda65e82c1b6ed12c5d3e21de1a108cb5882c2dbb",
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269"
+  }
+ },
+ "staged_from": {
+  "run": "43387912036",
+  "proof": "the filed account equal but for its run, and 204 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43693830334"
 }

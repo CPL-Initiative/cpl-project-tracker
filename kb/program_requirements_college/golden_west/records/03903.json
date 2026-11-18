@@ -78,8 +78,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     61.0,
     71.0
@@ -93,9 +93,7 @@
     24.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education come to 61.0-71.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -110,7 +108,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -134,7 +134,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -170,7 +170,8 @@
     "Teacher for the Deaf and Hard of Hearing",
     "Audiologist",
     "Speech Pathologist"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -316,5 +317,14 @@
    "Outcomes are printed on the program overview; they appear to apply to this A.A. degree page."
   ]
  },
- "extracted_run": "38748828247"
+ "extracted_run": "38748828247",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 37, the major total the catalog prints; the major and general education sum to 61-71 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

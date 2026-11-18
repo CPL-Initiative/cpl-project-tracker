@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "MATH225"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "DATA100",
+     "listed": "MATH225",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "DATA100"
-   ],
-   "flagged": [
-    "DATA100"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -288,7 +289,7 @@
    "The Data Science, CA certificate printed next has identical requirements; only the AS section was read."
   ]
  },
- "extracted_run": "43339249633",
+ "extracted_run": 43693830334,
  "source_sha": "874b281ae572e2d6",
  "source_codes": [
   "CIS111",
@@ -307,5 +308,6 @@
   "STATC1000E",
   "STATC1000H"
  ],
- "source_coverage": 0.938
+ "source_coverage": 0.938,
+ "read_run": "43339249633"
 }

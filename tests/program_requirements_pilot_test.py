@@ -524,16 +524,20 @@ for path in fixtures:
 # ── The filed records: today's scorer must agree with the run that filed them ─
 records = sorted(glob.glob(os.path.join(ROOT, "kb", "program_requirements_pilot", "records", "*.json")))
 check(len(records) >= 16, "extraction run 2's 16 records are filed (37171952080)")
+# Matches the course-id route makes that the run did not (S653): Mt. San Antonio's page prints NURS 212 where the
+# list names that control number NURS 11, and the Program Course File's id for it is NURS212. {missing: invented}.
+ID_ROUTE_GAINS = {"mtsac_08086.json": {"NURS11": "NURS212"}}
 for path in records:
     with open(path) as fh:
         fr = json.load(fh)
     with open(os.path.join(ROOT, fr["source_file"])) as fh:
         fx = json.load(fh)
     again = S.score(fr["record"], fx["closed_list"], fx["text"])
+    gains = ID_ROUTE_GAINS.get(os.path.basename(path), {})
     check(again["pass"] == fr["score"]["pass"]
           and again["arithmetic"]["status"] == fr["score"]["arithmetic"]["status"]
-          and again["coverage"]["missing"] == fr["score"]["coverage"]["missing"]
-          and again["invented"]["codes"] == fr["score"]["invented"]["codes"],
+          and again["coverage"]["missing"] == [k for k in fr["score"]["coverage"]["missing"] if k not in gains]
+          and again["invented"]["codes"] == [k for k in fr["score"]["invented"]["codes"] if k not in gains.values()],
           "%s: today's scorer reads the filed record as the run did (%s %s now, %s %s then)"
           % (os.path.basename(path), again["pass"], again["arithmetic"]["status"],
              fr["score"]["pass"], fr["score"]["arithmetic"]["status"]))
@@ -557,7 +561,7 @@ check(not re.search(r"^\s*schedule:", xwf, re.M) and "sources" not in xwf,
 # On a push, the guard compares the script with main's; the extraction and its setup wait on it.
 _guard = re.search(r"id: guard\n\s+if: github\.event_name == 'push'\n(?:.*\n)*?\s+if git diff --quiet FETCH_HEAD -- "
                    r"kb/_program_requirements_extract\.py; then\n\s+echo \"run=no\"", xwf)
-_extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.run != 'no'\n", xwf)
+_extract = re.search(r"- name: Extract and score\n\s+if: steps\.guard\.outputs\.run != 'no'(?: && [^\n]*)?\n", xwf)
 check(bool(_guard) and bool(_extract) and xwf.index("id: guard") < xwf.index("- name: Extract and score"),
       "a push whose extraction script matches main's makes no model calls (the guard runs first, "
       "and Extract and score waits on it); a dispatch always runs")
@@ -776,9 +780,15 @@ check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get
       and r["arithmetic"]["computed"] == [64.0, 68.0],
       "a printed degree total of 66 inside the 64-68 the blocks and CalGETC allow adds up: %s"
       % json.dumps(r["arithmetic"]))
+# Sam's ruling of 2026-11-17 ("Pass short high ends the same way as over-high ends") passes the span whose low end
+# meets the printed range's and whose high end is short of its top; a low end the sum misses still fails.
 r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 64, "max": 70}}}, AUT, AUT_TEXT)
-check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("within"),
-      "a printed degree total reaching past the span (64-70 against 64-68) still fails")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("short_high")
+      and not r["arithmetic"].get("within"),
+      "a printed degree total reaching past the span (64-70 against 64-68) passes as short_high (2026-11-17)")
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 63, "max": 70}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("short_high"),
+      "a printed degree range whose low end the span misses (63-70 against 64-68) still fails")
 r = S.score(aut, AUT, AUT_TEXT)
 check(r["pass"] and not r["arithmetic"].get("within"), "an exact match is equal, not within")
 
@@ -2059,6 +2069,76 @@ PC.with_renumbers(LAV, RC.course_renumbers("Los Angeles Valley College"), LAV_AL
 check(sorted(P.find_codes("COMPLETE THE FOLLOWING: T & M 027 Basic Machine Shop 4; MSCNC 114 Print Interpretation 3",
                           LAV[0]["closed_list"])) == ["MSCNC114", "TM27"],
       "the capture finds TM027 printed as T & M 027: %s" % LAV[0]["closed_list"])
+# S652, issue #3299 slice C: kb/_prefix_alias_census.py proposes a college's pair only on its own evidence (at least
+# three courses of the same number and title, no number naming two different courses). Fixtures, never the live files.
+import _prefix_alias_census as PA  # noqa: E402
+_FILE = {"HIS14": "African American History I", "HIS15": "African American History II", "HIS44": "Asian American History",
+         "SOC2": "Contemporary Social Problems", "SOC5": "Race, Ethnicity & Inequality", "SOC6": "Introduction to Crime",
+         "SOC120": "Medical Sociology", "KPEA105A": "Fitness Walking"}
+_CAT = {"HIST14": "African American History I", "HIST15": "AFRICAN AMERICAN HISTORY II", "HIST44": "Asian American History.",
+        "SOCI2": "Contemporary Social Problems", "SOCI5": "Race, Ethnicity and Inequality", "SOCI6": "Introduction to Crime",
+        "SOCI120": "Health and Social Justice", "KPEA105": "Fitness Walking"}
+_ft = lambda code: {("", _FILE[code], "closed_list")} if code in _FILE else set()
+_ct = lambda code: {("", _CAT[code], "course_outline")} if code in _CAT else set()
+ok = PA.decide(("HIS", "HIST"), {"14", "15", "44"}, _ft, _ct, {"14", "15", "44"})
+check(ok["verdict"] == "propose" and len(ok["evidence"]) == 3,
+      "a valid pair: three courses, the same number and title (case, punctuation and & folded): %s" % ok["reason"])
+check(PA.decide(("HIS", "HIST"), {"14", "15"}, _ft, _ct, {"14", "15"})["reason"] == "fewer_than_3",
+      "two courses are not enough evidence")
+bad = PA.decide(("SOC", "SOCI"), {"2", "5", "6"}, _ft, _ct, {"2", "5", "6", "120"})
+check(bad["verdict"] == "hold" and bad["reason"] == "counterexample"
+      and [c["file"] for c in bad["counterexamples"]] == ["SOC 120"],
+      "a counterexample (SOC 120 Medical Sociology, SOCI 120 Health and Social Justice) refuses the pair: %s" % bad["reason"])
+same_ctl = lambda code: {("CCC1", _CAT.get(code, "Med Soc"), "mis_course_record")} if code in _CAT else set()
+check(PA.decide(("SOC", "SOCI"), {"2", "5", "6"}, lambda c: {("CCC1", _FILE[c], "closed_list")} if c in _FILE else set(),
+                same_ctl, {"2", "5", "6", "120"})["verdict"] == "propose",
+      "one control number under two titles is one course, never a counterexample")
+# Sacramento City's ATC 300 names two courses: the file's ATCAD 300 (one control number, the same title) and a new
+# Basic Air Traffic Control Part 1 (another control number). A same-titled match never hides the second course.
+two = lambda code: ({("CCC1", "Basic Terminal Procedures", "mis_course_record"),
+                     ("CCC9", "ATC 300 Basic Air Traffic Cont", "mis_course_record")} if code == "ATC300"
+                    else {("CCC%s" % code[-1], "Course %s" % code[-1], "mis_course_record")} if code.startswith("ATC") else set())
+one = lambda code: ({("CCC1", "Basic Terminal Procedures", "closed_list")} if code == "ATCAD300"
+                    else {("CCC%s" % code[-1], "Course %s" % code[-1], "closed_list")} if code.startswith("ATCAD") else set())
+atc = PA.decide(("ATCAD", "ATC"), {"300", "301", "302"}, one, two, {"300", "301", "302"})
+check(atc["reason"] == "counterexample" and atc["counterexamples"][0]["catalog_title"] == "ATC 300 Basic Air Traffic Cont",
+      "a printed code naming a second course under another control number is a counterexample: %s" % atc["reason"])
+# MIS writes Los Rios's ids with a record id after the number (ENGL304-2507, ENG303-26954): the course is ENGL 304,
+# so the counterexample rule sees it. A subject and a number alone (Southwestern's NC-1001) stay as written.
+check(PA.mis_code("ENGL304-2507") == "ENGL304" and PA.mis_code("ENG303-26954  ") == "ENG303"
+      and PA.mis_code("NC-1001") == "NC1001" and PA.mis_code("PSYC-C1000") == "PSYCC1000",
+      "a MIS record id after the course number is set aside, and nothing else")
+check(PA.decide(("HIS", "HIST"), {"14", "15", "44"}, _ft, lambda c: set(), {"14"})["reason"] == "no_catalog_title",
+      "no catalog title in committed files holds the pair: numbers alone never make one")
+check(PA.near_miss("KPEA105A", ["KPEA105"]) == [("suffix_letter", "KPEA105")]
+      and PA.near_miss("CHEM49549300", ["CHEM495"]) == [("glued", "CHEM495")]
+      and PA.near_miss("PSYCH104", ["PSYCC1000"]) == [("common_course", "PSYCC1000")]
+      and PA.near_miss("BIO102", ["BIO1"]) == [("weak_number", "BIO1")]
+      and PA.near_miss("HIS14", ["HIST14"]) == [("prefix", "HIST14")],
+      "a suffix letter, a glued code, a common-course number and a weak number are never a prefix pair")
+# The direction flips between colleges (Solano's catalog prints SOCI for the file's SOC; Merced's SOC for the file's
+# SOCI), so each college's aliases are its own: Merced's never rename a Solano-like record.
+MER = RC.prefix_aliases("Merced College")
+check(MER.get("SOC") == "SOCI" and "SOCI" not in (RC.prefix_aliases("Solano Community College") or {}),
+      "Merced carries SOC for SOCI; Solano's SOCI is held (no catalog title in committed files), never statewide")
+soci = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "SOCI 2", "units": 3}]}]}
+SOLANO_LIKE = {"SOCI": "SOC"}
+check(S.score(soci, [{"code": "SOC 2", "units": 3}], "x", "A.A. Degree", MER)["coverage"]["missing"] == ["SOC2"],
+      "Merced's SOC for SOCI never reads a printed SOCI 2 as the listed SOC 2")
+check(not S.score(soci, [{"code": "SOC 2", "units": 3}], "x", "A.A. Degree", SOLANO_LIKE)["coverage"]["missing"],
+      "the flipped pair, at the college whose evidence it is, reads SOCI 2 as SOC 2")
+soc = {"program": {"total_units": {"min": 3, "max": 3}, "measure": "units"},
+       "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "SOC 2", "units": 3}]}]}
+check(not S.score(soc, [{"code": "SOCI 2", "units": 3}], "x", "A.A. Degree", MER)["coverage"]["missing"],
+      "and Merced's reads its own SOC 2 as the listed SOCI 2")
+# Riverside City's HIST for HIS retired in S653: the course-id route reproduces all its matches
+# (kb/_course_id_route_census.py; tests/course_id_route_test.py), and its cited evidence stays, marked retired.
+RCC_CONF = RC.load_steps().get("Riverside City College") or {}
+check(not RC.prefix_aliases("Riverside City College")
+      and [c.get("retired", {}).get("session") for c in RCC_CONF.get("prefix_aliases_cited") or []] == ["S653"]
+      and not (RC.prefix_aliases("College of the Canyons") or {}),
+      "Riverside City's HIST for HIS is retired to the course-id route, its evidence kept; College of the Canyons stays held")
 # Los Angeles Valley (S533): "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)" read with the count and
 # not the repeat (Music 02962). The repeat step takes a minimum equal to n; another figure stays the reading's.
 mus = {"program": {"total_units": {"min": 33, "max": 35}, "measure": "units"},

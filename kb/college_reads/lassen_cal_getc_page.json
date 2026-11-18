@@ -1,0 +1,21 @@
+{
+ "_readme": "S650 (worker for SkyPlover), the catalog sweep, the lane's NEXT (12): a free GE page read at Lassen before any statewide_cal_getc step (d-calgetc-34-per-college-evidence-s648: the statewide 34 runs only where the reconcile config quotes the catalog's own words that it prints no figure). kb/program_requirements_calgetc_34_plan.json lists Lassen under needs_a_page_read with 14 transfer degrees naming Cal-GETC alone and no figure; reproduced from the committed records at origin/main 26d3849b: 11 under on the stated basis (each page says the remaining units to 60 'may be selected from courses numbered 1-49'), of which 31297 is the legacy number of 42300's 2.0 section and holds itself, 2 overlap (35106, 41912; held unless the page states double counting) and 1 unknown (33388, no major units). The ten others (30947, 31015, 31037, 31132, 31379, 32083, 33263, 33729, 33730, 42300) fail arithmetic alone, on 'no units for it'. No Lassen record names the Cal-GETC pattern page, so this read prints the catalog pages that carry the pattern's area headings (keywords chosen so a degree page's 'Cal-GETC' does not spend the 14-page cap), from the 2026-2027 catalog every Lassen record was extracted from (capture run 39006337658), so the session can quote whether the pattern prints a total. One load of the PDF, no model call, nothing written.",
+ "college": "Lassen College",
+ "questions": {
+  "ge_units": "Whether Lassen's Cal-GETC pattern pages print a total unit figure for Cal-GETC (or only a minimum per area), and their words; and the same for any page naming the Cal-GETC pattern among the graduation requirements."
+ },
+ "keywords": [
+  "Area 1A",
+  "Area 5A",
+  "English Communication",
+  "Cal-GETC Certification"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf"
+  }
+ ]
+}

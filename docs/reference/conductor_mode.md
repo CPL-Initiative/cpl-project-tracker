@@ -1,13 +1,23 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-14
-tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
+updated: 2026-11-15
+status: retired
+tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
 ---
 
 # Conductor mode
+
+> **Retired (Sam, 2026-11-15).** *"my thinking now is to go back to pre-nov 11 cpl queue process and ditch fable 5.2
+> ultracode medium as conductor--he conducted me out of business:)"* The sessions' own transcripts priced conductor
+> mode at $830 to $1,830 a day from 2026-11-11 to 11-14, against $170 to $360 a day before it, and the Team plan hit
+> its monthly spend limit on 2026-11-13. About two thirds of each session's cost was its Opus workers, the rest the Fable
+> conductor's growing context, re-read at every wake. **No session runs this way, and no session adopts it from this
+> page.** The queue runs as it did before 2026-11-11: one Opus 5.5 session working the queue itself and
+> collaborating with COBIx on its PRs ([`scheduled_sessions`](scheduled_sessions.md), [`cobix_pr_loop`](cobix_pr_loop.md)). The page stays as the record of what was tried; its merge-gate and
+> review lessons still hold wherever another doc cites them.
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
@@ -52,7 +62,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
    per open branch from its PR diff and the ledger. `SendMessage` to a worker's name nudges it or gives it its next task.
 5. `git worktree list` and `df -h /home/user` before spawning. A locked worktree whose worker is not in `ListAgents`
    is dead: push any unpushed commits from it, then `git worktree unlock`, `git worktree remove --force`, `git worktree
-   prune`. Each checkout is 4.4 GB.
+   prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
+   in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
+   only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
 6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
    or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
    merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
@@ -70,6 +82,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
   the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+- The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
+  brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
+  `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
+  holds the brief's shape and the review rules.
 - **SQL a worker sends:** the conductor runs a SELECT as sent, kept narrow (aggregates, never `select *`; `kb_curation`
   paged by Range). A write runs only in Rule 10's shape and only from a plan the conductor has read.
 
@@ -83,6 +99,12 @@ at the top of each piece of work so Sam can change the dial before it runs.
   `kb/migrations/.apply`) gets a review of at most 9 agents: independent readers by dimension, then a second reader who
   tries to refute each finding. Its findings are fixed forward unless one breaks the undo. A file landing in
   `kb/migrations/.apply` applies at once on merge (Rule 10 c); a new function also needs the Rule 10 (b2) revoke.
+- Two hooks enforce two lessons (`docs/reference/approval_prompt_hooks.md`, 2026-11-14): `merge_read_guard.py`
+  refuses `merge_pull_request` unless this session read that PR's comments in the last 3 minutes (read and merge in
+  one step; a review posted between the two still passes, and `pr-gate` step 4 is what sees it) and always refuses
+  `enable_pr_auto_merge` and a `gh` merge, and
+  `clock_time_guard.py` refuses a comment, PR or commit with a time 2 minutes or more ahead of the clock (every wrong
+  time in S652 ran ahead), or a `written` claim more than 5 minutes stale. Both fail open with a warning; `python3 scripts/check_hooks_live.py` reports each `yes` or `NO`.
 - A PR that makes something the first writer to a shared table, or gives a read-only surface writes, waits until
   `kb/governance_surface_map.json` maps it and the student-detail disclosure ADR is checked (Rule 10 a3).
 
@@ -123,14 +145,22 @@ at the top of each piece of work so Sam can change the dial before it runs.
   asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
   not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
   multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
-  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
+  with how to reverse it, and shows one real example before and after with where on the Commons to see it; its chips are Fine, Change it and Revisit later. An outward send, a go-live or anything else
   that needs Sam is a card carrying a labeled block above its replies — "Yours to do", "Needs your word" or "Yours to
   rule" — with numbered steps, a link wherever one exists, and replies that name the act, never a status chip (Sam,
   2026-11-13: "change the button to be clearer an include specific instructions and links for me"); and an unanswered
   card holds only its own item. First built as Open Asks Sheet
   181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
+- **Pick a lane (Sam, in session S652, about 14:45Z 2026-11-14; `cpl_memory` `sam-conductor-picks-a-lane-2026-11-14`).**
+  On Sheet 197's asks: "would be more effective to show examples of each ask." "stop being so cautious and pick a lane
+  and go with it. I will see the results on the commons and if there is a problem, I can address it based on the
+  reality I'm seeing rather than vague choices." "Conductor can conduct!" A choice among near-equal options is the
+  conductor's to make, carry out and record; it never becomes an ask. The `CLAUDE.md` hold list stands. An ask that
+  remains on it shows a worked example on real rows: the row today, and the row under each choice.
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
+
+- **M-IDs are ours (Sam, in session S652, 2026-11-14, verbatim):** "why are we asking anyone anything about a MID course, which is our own construct (synthetic). what makes this MID so important that we would bother someone at SDCCD about it--they have no idea that MIDs even exist" and "we will be adjusting and deleting and refolding and reminting MIDs for quite a while as we figure out the best way to do it almost through trial and error" and "think of MIDs as low stakes attempts to get our course clusters as close to right as we can with the expectation that we will do lots of adjusting along the way" (`sam-mids-are-ours-trial-and-error-2026-11-14`). And, about 14:53Z: "the thing that probably makes them not low stakes to you is all the ways mids are wired to dependencies that have to be rewired when changes are made. that probs takes a lot of compute (which is not low stakes on the compute side) but still low stakes on the end user side provided that all the rewiring along the way is done correctly" (`sam-mid-care-goes-into-the-rewiring-2026-11-14`). So the choice is low stakes and the care goes into the rewiring: every M-ID change runs its dependents (the alias chain, the identities map, the dependency map's consumers) and proves them, and that is what a reader checks. An M-ID question never goes to a college. A change to the M-ID staging layer is the conductor's to decide and carry out under a receipt that undoes it; a row a person saved still wins (Rule 10); Sam reacts to the result on the Commons.
 
 ## Checkpoint and sign-off
 
@@ -142,6 +172,155 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+- A worker's PR subscribes the session when the worker opens it. **Unsubscribe from a worker's PR at once** and gate it
+  at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
+- A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
+  measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S655, and what worked
+
+- The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
+
+- Handoff 655 said #3330 was merged at `5a4a9c68`. It had merged into its stacked base (`claude/extraction-gate-always-s653`), and #3327 then closed with a pointer, so the cost gates and the spend meter never reached `main`. A stack merges through its top only when the top's base is `main`: retarget the top to `main` first, and confirm the merge by `git log origin/main`, never by the PR's merged flag (#3350, #3351 reland it).
+  `d-stack-top-retarget-s655` amends `d-merge-stack-tops-s654`.
+- The permission check refused a worker's edit to `kb/migrations/.apply` (Honors step 2). The brief lifted the limit in
+  words and the harness did not: an apply by a push of `.apply` needs a session where that edit is permitted. The
+  conductor held the apply for Sam and did not make the edit itself, since making it for the worker routes around a
+  denial (`p-apply-edit-refused-by-permission-check-s655`). Sam was notified by push at about 07:31Z.
+- A pr-gate report came back under an automatic security warning; the conductor read the check run and the thread
+  itself before merging.
+- The second reader's count (10 records rescored against pages `main` holds as wrong) was lower than the true class
+  (26). A fix worker measures the whole class, never only the reader's list.
+- A handoff's expected count with no file behind it cannot gate a write (handoff 655's "66 scores and one status"
+  against a measured 189 and 4): the reconcile's own count and a reader's classification do
+  (`p-handoff-count-not-derivable-s655`).
+- Worked: a second reader before every live write (it found 07206 and the held pages); COBIx's finding read at the
+  gate within the three-minute read (07:08Z finding, the merge held until it was fixed); finalizer workers; one timer
+  per wait; context at 31% at 07:33Z.
+- The checkpoint-docs worker checked out the session branch in its own worktree while the main checkout held the same
+  branch, so the main checkout's index fell one commit behind and the stop hook reported uncommitted changes; the
+  conductor confirmed the index equaled its own last commit, reset and detached. Give the documents worker its own
+  branch name, or detach the main checkout first.
+
+## What went wrong in S654, and what worked
+
+- The `worker` agent type always creates a worktree, so a fourth worker cannot be a `worker`. A general-purpose agent
+  told to read `.claude/agents/worker.md` and to work in the main checkout did the CDC fixes and the rescore wave at no
+  extra disk; the disk stood at 8.4 GB free with three worktrees (`p-worker-type-always-makes-a-worktree-s654`).
+- Between 02:28Z and 02:33Z an API 522 ended three Opus workers mid-task. Each resumed by one SendMessage with its
+  worktree intact. Tell a long worker to commit and push at each coherent step (`p-api-522-kills-workers-s654`).
+- Context went 17% to 50% in 70 minutes, mostly the read-in's nine reports (about 60,000 tokens) and briefs written
+  inline. What held it after: briefs and finding lists as scratchpad files, capped reports, `get_check_runs` with
+  `perPage` 1, one check-in per CI wait (`p-context-half-in-70-minutes-s654`).
+- Two times written from memory ran 1 to 6 minutes ahead of the clock (a chat status, a ledger heading). Read `date -u`
+  in the same command (`p-conductor-times-from-memory-again-s654`).
+- A stacked PR still conflicts after its base squash-merges (identical lines changed on both sides of a generated
+  file), so a stacked train cannot skip CI cycles (`p-stack-squash-conflicts-s654`). **DECIDED**
+  `d-merge-stack-tops-s654`: a strictly stacked pair merges as one squash through its top branch (#3330 carries #3327;
+  #3326 carries #3323) and the lower PR closes with a pointer: one CI cycle instead of two.
+- The conductor wrote a matching rule into a brief (#3346, the award-led cut window) without the self-recall test the
+  conductor-brief skill requires; a second reader's recall run found it kept 230 of 314 right answers. Every brief that
+  states a matching rule asks for recall counts on records whose answer is already held
+  (`p-conductor-rule-without-self-recall-s654`).
+- COBIx posted a real fault on #3326 at 02:40Z; the conductor read the thread only at the merge gate, 86 minutes later,
+  after a second reader's wording fix had made it sharper. Read a PR's thread when its worker reports, not only at the
+  gate (`p-thread-unread-until-merge-s654`). The fix was a fifth data class, restricted (`d-cdc-restricted-class-s654`).
+- Honors step 2's design was replaced at the fourth round of one finding class (lump and sequence); rows now rest on
+  same-college anchors (`d-honors-anchored-rows-s654`); COBIx's design read added "row yes, mint no" on a split-candidate
+  base (`d-honors-no-mint-on-split-candidate-s654`).
+- Worked: a merge finalizer worker whose only job is to bring one named PR up to `main` and rebuild generated files
+  (about 3 minutes each, six times, no red `main`); fix workers never merged `main`. A second reader on every fix delta
+  found real faults each time (#3328, the CDC fix, the gates). Reading each PR's last comment page in the same step as
+  the merge caught COBIx's 02:27Z and 02:35Z reads. Review counts: read-in 9 agents; #3328, CDC and PPM 6; Honors
+  review four 7; gates 4; meter 3; single second readers on #3324's delta and the CDC delta.
+
+## What went wrong in S653, and what worked
+
+- Four worker checkouts (4.7 GB each) filled the disk twice within ten minutes, and one worker pushed through the GitHub
+  API with `check_generated.sh` unrun. Three checkouts is the ceiling; a read-only task takes no worktree; never write a
+  tar (`p-disk-three-checkouts-s653`).
+- The Riverside City diagnosis flipped three times: `cq_distinct` blamed (S652), cleared, blamed again from one
+  capture's counts, then cleared by a capture on instrumented code (#3311). The fault was the S646 claim rule (#3324).
+  Instrument the code and run it before fixing (`p-diagnosis-flipped-three-times-s653`).
+- Five readers on #3312 checked scoring and none ran the page finder; COBIx found the capture-path gap. Name each code
+  path in the review brief, and remember a restaged run loads no page, so it proves the scorer only
+  (`p-reviewers-missed-the-capture-path-s653`).
+- Two tests took the rule's own output as truth (#3324's `GE_ALLOWED`; #3315's recall "right" was pairs minus a wrong
+  list). Expected answers come from a person or an independent derivation (`p-snapshot-test-pins-the-rule-s653`;
+  [note](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md)).
+- `sources_from` was given the day's reconcile run, not the run that captured the pages (Moreno Valley 38111056537); the
+  guard refused it (`p-sources-from-wants-the-capture-run-s653`).
+- Each PR subscription notice cost about 8,000 tokens, and workers' PRs subscribed the session: context went 16% to 73%
+  in 100 minutes. Unsubscribe from a worker's PR at once (`p-subscription-notices-cost-context-s653`).
+- A worker's comment opened "@COBIx", not his login (`cobi-cto`); it was edited out
+  (`p-at-mention-in-worker-comment-s653`).
+- A worker could not be resumed after its checkout was removed (`p-worker-not-resumable-after-worktree-removed-s653`).
+- Worked: one finding list per PR, with a refuter; replacing a design at the second recurrence of a finding class
+  (`would_join` to a trial check; the GE sibling rule; Honors step 2); splitting the safe part of a data write off
+  (Honors step 1, #3329) so it could land; `pr-gate` before each merge; two sessions from one opening line agreeing one
+  writer per file by message before either wrote (`d-two-sessions-one-writer-s653`).
+
+## What went wrong in S653b, and what worked
+
+- A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
+  `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
+- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
+  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
+  events, or read the saved file by script (`p-list-events-floods-context-s653b`).
+- Worked: one `send_message` before any write settled the split with the older session in a minute
+  (`d-two-sessions-one-writer-s653`); briefs as scratchpad files kept workflow arguments and completion notices small; a
+  clean-up stage at the end of each task freed its checkout, so the disk never held more than three; reading each PR's
+  thread in the same step as its check runs caught COBIx's reviews on #3332 and #3334 before the merge. The second
+  session's subscription notice for each new PR costs about 3,000 tokens.
+
+## What went wrong in S652, and what worked
+
+- The 12:12Z firing of 2026-11-14 (SkyAvocet) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 10:55Z) and `main` at the S651 checkpoint (`5278e928`) were the one-writer check, and this PR declared the queue at 12:19Z.
+
+- The conductor merged the display design (#3296) twelve minutes after COBIx posted four findings on its thread, without reading them; they became a follow-up. Read the PR's own comments in the same batch of calls as the check runs, every time (S642's lesson again).
+- The sheet's type-ahead pickers showed Sam no options (Sheet 196 card 4: he typed "Go" twice). A picker's choices are buttons printed on the card.
+- A worker's delete was refused by the permission check; the conductor surfaced it to Sam, who was in session, and ran the one command itself on his word. The refusal went to a person and was never worked around.
+- A second reader's self-recall test (look up each program whose page is already held as if it were unknown) measured a new matcher at 63% before it ran on any college. Ask for that test in the brief of any new lookup.
+- Times written from memory were wrong twice: a note on #3299 said 13:05Z where GitHub stamped 12:59Z, and the conductor's messages put Sam's words at 13:15Z where the clock read 13:07Z. Run `date -u` before writing any time, and take a comment's time from its GitHub stamp.
+- A stray `inspect.py` in the shared scratchpad shadowed the standard library in a worker's run. Workers run scripts with `python3 -I`, from a subfolder of their own.
+- `git ls-remote` with several patterns dropped a branch line three times. Ask for one ref per call.
+- The Agent tool's worktree isolation failed once, when the shell's directory had reset to `/home/user`. `cd` into the checkout before spawning a worker with a worktree.
+- Worked: check runs read on the current head each time a PR was marked ready and merged right after; second readers who rebuilt the evidence from independent sources (seven for the prefix aliases, which removed Los Rios's ENGL for ENGWR); one daily-run dispatch after two stacked data PRs, so every list rebuilt once.
+- A reader's findings on slice A stopped being a new class at round three; the conductor merged the residue fix without a fourth round because nothing consumes the field yet. COBIx's one finding was a design point three code readers missed (the order of evidence: pages before the catalog list). Ask him for design, the readers for code.
+- The checkpoint's lane compaction dropped a link a test reads (`objectives_reread_plan`), and the lints job failed. After compacting a lane, run the Python tests that read lanes and status files before the push.
+- The conductor wrote times from memory five times this session, each wrong by 2 to 10 minutes. Every time written comes from `date -u` in the same command.
+- A config change proved on a fresh capture measured the reader, not the change: Riverside City's fresh capture lost 191 pages to `cq_distinct`. Prove a config change on the filed pages (`sources_from`).
+- Two written lessons recurred the same day (the unread review on #3296; times written from memory, every one ahead
+  of the clock), so each became a hook that refuses the act, and the forty lines every brief repeated became agent
+  definitions and the `conductor-brief` skill (#3306, #3307).
+
+## What went wrong in S651, and what worked
+
+- The 09:12Z firing of 2026-11-14 (SkyDunlin) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 08:26Z) and `main` at the S650 checkpoint were the one-writer check, and this PR declared the queue at 09:14Z.
+- A second reader before the capture cleared Lassen's ten and found the holds lived only in a plan a rebuild erases; the worker moved one into the config before the reconcile ran. The review then kept five of the ten, and two passed: a dry run's count is an upper bound until the review's `fail_to_pass_kept` is read.
+- A read-only reader settled a question three sessions had left as "not checked" (the August drop: one college) in under a minute, from three commits of one file. Ask a reader before carrying an unknown forward.
+- A per-college live read (118 rows) cost about 8,000 tokens to relay to a worker as a file. Have the worker's SQL return one JSON value, and save it with a script.
+- A display rule built into a college PR was withdrawn before the merge (`7f0f1b91`): it quoted `reconciled[].words` as "the catalog's words" across 724 rows at 26 colleges, and a second reader found only 225 led clean. `words` holds curator notes, not catalog quotations. A rule that rewrites free text across colleges gets its second reader before it is built into a college PR, and goes out as its own design item (`d-display-rule-withdrawn-structured-fields-s651`).
+- Disclosing a borderline pass on the PR (Lassen 32083, a word match on the next program's page) let COBIx rule on it at once ("leave it as loaded"), and turned the pitfall into a count he asked for before the rule changes.
+- The outcomes helper never prints **load** for an objectives reread: the earlier SLO receipt makes the colleges read as done. Write `.load` by hand (`host=`, `kind=objective`) once every slice is filed.
+- `list_workflow_runs` and `get_workflow_run` on a run whose head is a squash merge return the whole squash message (about 9,000 tokens each, twice this session). Find a run's state from the branch's "Applied record" commit or a live read instead.
+- A relayed count can differ from a dry run's (noncredit Total Hours: COBIx's relay 118, the dry run 45). Post both on the thread and let the rescore decide on captured text; do not reconcile them by assumption.
+
+## What went wrong in S650, and what worked
+
+- The 06:12Z firing of 2026-11-14 (SkyPlover) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs and `main` since handoff 650 were the one-writer check, and this PR declared the queue at 06:20Z.
+- Reusing one finished worker's worktree for four tasks in turn held the disk at four worktrees; it fell to 4.7 GB free with four. Removing a merged worktree needs `git worktree unlock` first.
+- A second reader on a shared-data plan, before the free capture, found a false-pass class the worker's plan would have loaded (the degree electives fill; `p-degree-electives-fill-false-pass-s650`). Put the second reader before the capture, not after the load.
+- COBIx and the second reader found the same fault on #3285 independently (a browser-tab return put the reviewer on card 1 with the Teach draft open); it was fixed before the merge.
+- Relaying a 10-row draft table through the conductor's context cost about 15,000 tokens. A worker's SELECT returns scalars and lengths only.
+- Merging one dependency-map PR at a time, with a `main` merge on the next, worked five times with no red `main`.
+- Background `sleep` timers were the only wait (no `send_later`); one timer per wait, one batch of calls per wake.
+- The conductor used `gh api` once for check runs, against the rule. MCP `get_check_runs` with `perPage` 1 is the way.
+- A worker copied #3265's Claude-Session trailer into #3283's first commit; it was left, since a push would start a second reader. A brief names the session's own trailer.
+- A college load changes `kb/status/commons_data.json` and `commons.json`: #3288's `test` failed in lints on head 74a05742 after Cosumnes River's 136 to 138. The college PR rebuilds both before its last test run (S649's stale-status lesson, a third time).
+- Worked: the checkpoint's documents went to one worker while the conductor kept the Supabase reads and the memory receipt's run.
 
 ## What went wrong in S649, and what worked
 

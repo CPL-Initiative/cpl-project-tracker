@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-584 document(s).
+590 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -86,6 +86,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A dispatch-only feed goes stale without a sound](../kb-notes/methodology-a-dispatch-only-feed-goes-stale-without-a-sound.md) | methodology | published | 2026-11-17 | 2026-11-17 |
 | [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-30 |
 | [A double-decoded string needs the codec that decoded it — cp1252, a C1 passthrough, and repair before you collapse whitespace](../kb-notes/methodology-a-double-decoded-string-needs-the-codec-that-decoded-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A dropped row still needs its own name](../kb-notes/methodology-a-dropped-row-still-needs-its-own-name.md) | methodology | published | 2026-09-17 | 2026-09-17 |
@@ -96,6 +97,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A figure is only wrong relative to the payload it names](../kb-notes/methodology-a-figure-is-only-wrong-relative-to-the-payload-it-names.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A figure tagged to two owners is claimed twice](../kb-notes/methodology-a-figure-tagged-to-two-owners-is-claimed-twice.md) | methodology | published | 2026-09-14 | 2026-09-14 |
 | [A file generated for a public page carries past the table's read gate](../kb-notes/methodology-a-published-file-carries-past-the-tables-read-gate.md) | methodology | published | 2026-10-11 | 2026-10-11 |
+| [A fill must check the units it fills, not the word that licenses it](../kb-notes/methodology-a-fill-must-check-what-it-fills.md) | methodology | published | 2026-11-14 | 2026-11-14 |
 | [A fill that does not flip needs ink that does not flip either](../kb-notes/methodology-a-fill-that-does-not-flip-needs-ink-that-does-not-either.md) | methodology | published | 2026-09-09 | 2026-10-11 |
 | [A filter must be able to see what you are about to declare missing](../kb-notes/methodology-a-filter-must-be-able-to-see-what-you-declare-missing.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A filter needs a field — prose is not a facet](../kb-notes/methodology-a-filter-needs-a-field.md) | methodology | published | 2026-08-18 |  |
@@ -117,6 +119,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-10-14 |
 | [A grid past a few hundred thousand cells needs a window, not chunks](../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md) | methodology | internal | 2026-09-24 | 2026-09-24 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A guard must fail closed when it cannot decide](../kb-notes/methodology-a-guard-must-fail-closed-when-it-cannot-decide.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
@@ -161,6 +164,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A name a join keys on is a key, whatever the table calls it](../kb-notes/methodology-a-name-a-join-keys-on-is-a-key.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
+| [A new matcher is gated by a self-recall test on records whose answer is already held](../kb-notes/methodology-a-new-matcher-is-gated-by-a-self-recall-test.md) | methodology | published | 2026-11-14 | 2026-11-14 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A not-applicable score must be confirmed by the source](../kb-notes/methodology-a-not-applicable-score-must-be-confirmed-by-the-source.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
@@ -182,6 +186,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A prefix match on a stem is not a match on the word](../kb-notes/methodology-a-prefix-match-on-a-stem-is-not-a-match-on-the-word.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A program's CIP labels the program, not the courses it lists](../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md) | methodology | published | 2026-09-25 | 2026-09-25 |
+| [A progress pace is the net fall of remaining work](../kb-notes/methodology-a-progress-pace-is-the-net-fall-of-remaining-work.md) | methodology | published | 2026-11-15 | 2026-11-16 |
 | [A prompt that quotes the wrong sentence teaches it](../kb-notes/methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it.md) | methodology | published | 2026-10-02 | 2026-10-02 |
 | [A proof run needs a same-day baseline](../kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |
@@ -256,6 +261,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [A test must not take its own rule as the truth](../kb-notes/methodology-a-test-must-not-take-its-rule-as-the-truth.md) | methodology | published | 2026-11-14 | 2026-11-14 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A test that only fails under load is racing a timer the product owns](../kb-notes/methodology-a-test-that-only-fails-under-load-is-racing-a-timer.md) | methodology | published | 2026-09-06 | 2026-09-06 |
 | [A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect](../kb-notes/methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh.md) | methodology | published | 2026-09-17 | 2026-11-12 |

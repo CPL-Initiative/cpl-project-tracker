@@ -1,0 +1,696 @@
+{
+ "_what": "Daily model spend by UTC day, pasted by hand from billing (no billing credentials live in the repo). api: Claude Console API totals. topups: Claude Code auto-reload top-ups on the day credit was bought, which can lag use by a day. notes: a word on a day. partial: a day not yet over when pasted.",
+ "_source": "Sam, pasted in session S661, 2026-11-15 (the Commons ETA clock mock, #3360)",
+ "updated": "2026-11-15",
+ "api": {
+  "2026-10-17": 527.31,
+  "2026-10-18": 68.63,
+  "2026-10-19": 2.81,
+  "2026-10-20": 1,
+  "2026-10-21": 80.84,
+  "2026-10-22": 55.03,
+  "2026-10-23": 19.76,
+  "2026-10-24": 0.26,
+  "2026-10-25": 6.74,
+  "2026-10-26": 1569.11,
+  "2026-10-27": 2685.95,
+  "2026-10-28": 8.68,
+  "2026-10-29": 7.26,
+  "2026-10-30": 8.56,
+  "2026-10-31": 4.62,
+  "2026-11-01": 13.91,
+  "2026-11-02": 9.7,
+  "2026-11-03": 1.47,
+  "2026-11-04": 7.81,
+  "2026-11-05": 4.85,
+  "2026-11-06": 1.82,
+  "2026-11-07": 14.73,
+  "2026-11-08": 0.18,
+  "2026-11-09": 0.91,
+  "2026-11-10": 1.39,
+  "2026-11-11": 21.85,
+  "2026-11-12": 31.32,
+  "2026-11-13": 67.5,
+  "2026-11-14": 0.55,
+  "2026-11-15": 1.99
+ },
+ "topups": {
+  "2026-11-01": [
+   196.22
+  ],
+  "2026-11-07": [
+   200
+  ],
+  "2026-11-13": [
+   198.82,
+   196.67,
+   195.04,
+   196.69,
+   196.51,
+   200.73,
+   197.13
+  ],
+  "2026-11-14": [
+   199.82,
+   195.7
+  ]
+ },
+ "notes": {
+  "2026-10-26": "A runaway process; caught and fixed.",
+  "2026-10-27": "A runaway process; caught and fixed."
+ },
+ "partial": [
+  "2026-11-15"
+ ],
+ "runner": {
+  "2026-10-12": 15.34,
+  "2026-10-13": 56.46,
+  "2026-10-14": 52.73,
+  "2026-10-15": 57.08,
+  "2026-10-16": 119.89,
+  "2026-10-17": 216.04,
+  "2026-10-18": 14.2,
+  "2026-10-19": 9.65,
+  "2026-10-21": 106.13,
+  "2026-10-22": 100.86,
+  "2026-10-23": 51.86,
+  "2026-10-26": 6.33,
+  "2026-10-27": 13.42,
+  "2026-10-31": 15.45,
+  "2026-11-06": 22.76,
+  "2026-11-07": 29.62,
+  "2026-11-08": 5.46,
+  "2026-11-10": 16.14,
+  "2026-11-11": 33.25,
+  "2026-11-12": 85.79,
+  "2026-11-13": 96.85,
+  "2026-11-16": 0.34,
+  "2026-11-17": 7.87
+ },
+ "runner_runs": {
+  "38322747831": {
+   "college": "san_diego_mesa",
+   "usd": 15.34,
+   "day": "2026-10-12"
+  },
+  "38347787891": {
+   "college": "san_diego_city",
+   "usd": 12.88,
+   "day": "2026-10-13"
+  },
+  "38355780721": {
+   "college": "san_diego_miramar",
+   "usd": 9.65,
+   "day": "2026-10-13"
+  },
+  "38414480070": {
+   "college": "bakersfield",
+   "usd": 13.38,
+   "day": "2026-10-13"
+  },
+  "38445051060": {
+   "college": "coastline_community",
+   "usd": 8.52,
+   "day": "2026-10-13"
+  },
+  "38477845911": {
+   "college": "modesto_junior",
+   "usd": 12.03,
+   "day": "2026-10-13"
+  },
+  "38563578596": {
+   "college": "southwestern",
+   "usd": 13.77,
+   "day": "2026-10-14"
+  },
+  "38563582873": {
+   "college": "fresno_city",
+   "usd": 14.1,
+   "day": "2026-10-14"
+  },
+  "38631686677": {
+   "college": "el_camino",
+   "usd": 8.08,
+   "day": "2026-10-14"
+  },
+  "38656800189": {
+   "college": "cerritos",
+   "usd": 16.78,
+   "day": "2026-10-14"
+  },
+  "38675136988": {
+   "college": "fullerton",
+   "usd": 22.21,
+   "day": "2026-10-15"
+  },
+  "38748833332": {
+   "college": "cuyamaca",
+   "usd": 13.84,
+   "day": "2026-10-15"
+  },
+  "38748848139": {
+   "college": "college_of_the_sequoias",
+   "usd": 8.75,
+   "day": "2026-10-15"
+  },
+  "38748853261": {
+   "college": "napa_valley",
+   "usd": 6.36,
+   "day": "2026-10-15"
+  },
+  "38748875071": {
+   "college": "evergreen_valley",
+   "usd": 5.92,
+   "day": "2026-10-15"
+  },
+  "38843461766": {
+   "college": "santa_ana",
+   "usd": 22.03,
+   "day": "2026-10-16"
+  },
+  "38843470509": {
+   "college": "saddleback",
+   "usd": 25.88,
+   "day": "2026-10-16"
+  },
+  "38843474519": {
+   "college": "allan_hancock",
+   "usd": 12.41,
+   "day": "2026-10-16"
+  },
+  "38843479215": {
+   "college": "chabot",
+   "usd": 15.83,
+   "day": "2026-10-16"
+  },
+  "38935141023": {
+   "college": "laney",
+   "usd": 10.1,
+   "day": "2026-10-16"
+  },
+  "38935148408": {
+   "college": "madera",
+   "usd": 6.89,
+   "day": "2026-10-16"
+  },
+  "38935152199": {
+   "college": "merritt",
+   "usd": 6.13,
+   "day": "2026-10-16"
+  },
+  "38979725726": {
+   "college": "antelope_valley",
+   "usd": 14.18,
+   "day": "2026-10-16"
+  },
+  "38979730323": {
+   "college": "contra_costa",
+   "usd": 6.44,
+   "day": "2026-10-16"
+  },
+  "38984692790": {
+   "college": "lake_tahoe_community",
+   "usd": 4.95,
+   "day": "2026-10-17"
+  },
+  "38984695817": {
+   "college": "college_of_marin",
+   "usd": 6.13,
+   "day": "2026-10-17"
+  },
+  "39000023893": {
+   "college": "mission",
+   "usd": 7.56,
+   "day": "2026-10-17"
+  },
+  "39006155986": {
+   "college": "clovis_community",
+   "usd": 8.34,
+   "day": "2026-10-17"
+  },
+  "39006334571": {
+   "college": "calbright_credit",
+   "usd": 0.5,
+   "day": "2026-10-17"
+  },
+  "39006336111": {
+   "college": "compton",
+   "usd": 5.84,
+   "day": "2026-10-17"
+  },
+  "39006337658": {
+   "college": "lassen",
+   "usd": 4.54,
+   "day": "2026-10-17"
+  },
+  "39006339282": {
+   "college": "mendocino",
+   "usd": 7.4,
+   "day": "2026-10-17"
+  },
+  "39006340803": {
+   "college": "woodland_community",
+   "usd": 4.7,
+   "day": "2026-10-17"
+  },
+  "39006378829": {
+   "college": "college_of_the_canyons",
+   "usd": 13.55,
+   "day": "2026-10-17"
+  },
+  "39006381839": {
+   "college": "los_angeles_harbor",
+   "usd": 8.94,
+   "day": "2026-10-17"
+  },
+  "39006384701": {
+   "college": "shasta",
+   "usd": 11.12,
+   "day": "2026-10-17"
+  },
+  "39006517642": {
+   "college": "yuba",
+   "usd": 7.44,
+   "day": "2026-10-17"
+  },
+  "39035222722": {
+   "college": "copper_mountain",
+   "usd": 3.84,
+   "day": "2026-10-17"
+  },
+  "39035224783": {
+   "college": "san_diego_of_continuing_education",
+   "usd": 4.95,
+   "day": "2026-10-17"
+  },
+  "39037637820": {
+   "college": "santa_rosa_junior",
+   "usd": 22.48,
+   "day": "2026-10-17"
+  },
+  "39046786897": {
+   "college": "porterville",
+   "usd": 6.13,
+   "day": "2026-10-17"
+  },
+  "39046789844": {
+   "college": "cerro_coso_community",
+   "usd": 4.87,
+   "day": "2026-10-17"
+  },
+  "39046850071": {
+   "college": "folsom_lake",
+   "usd": 9.43,
+   "day": "2026-10-17"
+  },
+  "39047009824": {
+   "college": "cosumnes_river",
+   "usd": 18.96,
+   "day": "2026-10-17"
+  },
+  "39047070975": {
+   "college": "sacramento_city",
+   "usd": 18.5,
+   "day": "2026-10-17"
+  },
+  "39054675770": {
+   "college": "los_angeles_mission",
+   "usd": 8.92,
+   "day": "2026-10-17"
+  },
+  "39061735776": {
+   "college": "los_angeles_southwest",
+   "usd": 6.0,
+   "day": "2026-10-17"
+  },
+  "39063337090": {
+   "college": "ohlone",
+   "usd": 10.02,
+   "day": "2026-10-17"
+  },
+  "39063368678": {
+   "college": "cuesta",
+   "usd": 10.93,
+   "day": "2026-10-17"
+  },
+  "39115770293": {
+   "college": "los_angeles_trade_technical",
+   "usd": 14.2,
+   "day": "2026-10-18"
+  },
+  "39202270482": {
+   "college": "ca_ada",
+   "usd": 5.5,
+   "day": "2026-10-19"
+  },
+  "39259699774": {
+   "college": "taft",
+   "usd": 4.15,
+   "day": "2026-10-19"
+  },
+  "39536207109": {
+   "college": "west_los_angeles",
+   "usd": 14.97,
+   "day": "2026-10-21"
+  },
+  "39539599944": {
+   "college": "irvine_valley",
+   "usd": 11.02,
+   "day": "2026-10-21"
+  },
+  "39567439681": {
+   "college": "santa_monica",
+   "usd": 20.34,
+   "day": "2026-10-21"
+  },
+  "39600815599": {
+   "college": "moorpark",
+   "usd": 10.4,
+   "day": "2026-10-21"
+  },
+  "39612119359": {
+   "college": "oxnard",
+   "usd": 8.98,
+   "day": "2026-10-21"
+  },
+  "39616074283": {
+   "college": "reedley",
+   "usd": 11.18,
+   "day": "2026-10-21"
+  },
+  "39622549965": {
+   "college": "ventura",
+   "usd": 12.5,
+   "day": "2026-10-21"
+  },
+  "39688079435": {
+   "college": "golden_west",
+   "usd": 8.72,
+   "day": "2026-10-21"
+  },
+  "39691376155": {
+   "college": "imperial_valley",
+   "usd": 8.02,
+   "day": "2026-10-21"
+  },
+  "39726637264": {
+   "college": "foothill",
+   "usd": 14.82,
+   "day": "2026-10-22"
+  },
+  "39726639865": {
+   "college": "citrus",
+   "usd": 11.56,
+   "day": "2026-10-22"
+  },
+  "39746427354": {
+   "college": "miracosta",
+   "usd": 11.96,
+   "day": "2026-10-22"
+  },
+  "39758679671": {
+   "college": "pasadena_city",
+   "usd": 20.91,
+   "day": "2026-10-22"
+  },
+  "39782741424": {
+   "college": "santa_barbara_city",
+   "usd": 18.39,
+   "day": "2026-10-22"
+  },
+  "39852997888": {
+   "college": "palo_verde",
+   "usd": 5.08,
+   "day": "2026-10-22"
+  },
+  "39853370754": {
+   "college": "cypress",
+   "usd": 18.14,
+   "day": "2026-10-22"
+  },
+  "39891607837": {
+   "college": "mt_san_antonio",
+   "usd": 22.47,
+   "day": "2026-10-23"
+  },
+  "39891611701": {
+   "college": "long_beach_city",
+   "usd": 19.18,
+   "day": "2026-10-23"
+  },
+  "39993005180": {
+   "college": "sierra",
+   "usd": 10.21,
+   "day": "2026-10-23"
+  },
+  "40314109801": {
+   "college": "hartnell",
+   "usd": 6.33,
+   "day": "2026-10-26"
+  },
+  "40523400149": {
+   "college": "san_joaquin_delta",
+   "usd": 13.42,
+   "day": "2026-10-27"
+  },
+  "41188677929": {
+   "college": "los_angeles_valley",
+   "usd": 15.45,
+   "day": "2026-10-31"
+  },
+  "42195216637": {
+   "college": "monterey_peninsula",
+   "usd": 13.48,
+   "day": "2026-11-06"
+  },
+  "42212319155": {
+   "college": "mt_san_jacinto",
+   "usd": 9.28,
+   "day": "2026-11-06"
+  },
+  "42354853403": {
+   "college": "college_of_the_siskiyous",
+   "usd": 4.86,
+   "day": "2026-11-07"
+  },
+  "42371822077": {
+   "college": "palomar",
+   "usd": 18.75,
+   "day": "2026-11-07"
+  },
+  "42376691800": {
+   "college": "los_medanos",
+   "usd": 6.01,
+   "day": "2026-11-07"
+  },
+  "42471133430": {
+   "college": "columbia",
+   "usd": 5.46,
+   "day": "2026-11-08"
+  },
+  "42892238131": {
+   "college": "las_positas",
+   "usd": 12.09,
+   "day": "2026-11-10"
+  },
+  "42892493763": {
+   "college": "college_of_alameda",
+   "usd": 4.05,
+   "day": "2026-11-10"
+  },
+  "42985449223": {
+   "college": "butte",
+   "usd": 10.69,
+   "day": "2026-11-11"
+  },
+  "43018781168": {
+   "college": "college_of_the_redwoods",
+   "usd": 5.41,
+   "day": "2026-11-11"
+  },
+  "43072075772": {
+   "college": "de_anza",
+   "usd": 17.15,
+   "day": "2026-11-11"
+  },
+  "43136182950": {
+   "college": "orange_coast",
+   "usd": 19.44,
+   "day": "2026-11-12"
+  },
+  "43141644775": {
+   "college": "berkeley_city",
+   "usd": 5.81,
+   "day": "2026-11-12"
+  },
+  "43142245126": {
+   "college": "west_valley",
+   "usd": 11.19,
+   "day": "2026-11-12"
+  },
+  "43154073220": {
+   "college": "rio_hondo",
+   "usd": 18.94,
+   "day": "2026-11-12"
+  },
+  "43212072618": {
+   "college": "los_angeles_city",
+   "usd": 20.28,
+   "day": "2026-11-12"
+  },
+  "43215222441": {
+   "college": "victor_valley",
+   "usd": 10.13,
+   "day": "2026-11-12"
+  },
+  "43342034608": {
+   "college": "north_orange_continuing_education",
+   "usd": 3.66,
+   "day": "2026-11-13"
+  },
+  "43355010411": {
+   "college": "coalinga",
+   "usd": 3.48,
+   "day": "2026-11-13"
+  },
+  "43355018296": {
+   "college": "los_angeles_pierce",
+   "usd": 15.01,
+   "day": "2026-11-13"
+  },
+  "43355021555": {
+   "college": "solano_community",
+   "usd": 13.17,
+   "day": "2026-11-13"
+  },
+  "43357061643": {
+   "college": "east_los_angeles",
+   "usd": 10.74,
+   "day": "2026-11-13"
+  },
+  "43357106423": {
+   "college": "san_jose_city",
+   "usd": 6.63,
+   "day": "2026-11-13"
+  },
+  "43421133593": {
+   "college": "college_of_the_desert",
+   "usd": 28.43,
+   "day": "2026-11-13"
+  },
+  "43482160320": {
+   "college": "grossmont",
+   "usd": 10.61,
+   "day": "2026-11-13"
+  },
+  "43497305929": {
+   "college": "glendale_community",
+   "usd": 5.12,
+   "day": "2026-11-13"
+  },
+  "43609965348": {
+   "college": "merced",
+   "usd": 0.0,
+   "day": "2026-10-19"
+  },
+  "43609973859": {
+   "college": "san_bernardino_valley",
+   "usd": 0.0,
+   "day": "2026-11-13"
+  },
+  "43691943622": {
+   "college": "diablo_valley",
+   "usd": 0.0,
+   "day": "2026-11-13"
+  },
+  "43691950026": {
+   "college": "barstow_community",
+   "usd": 0.0,
+   "day": "2026-10-17"
+  },
+  "43693265189": {
+   "college": "american_river",
+   "usd": 0.0,
+   "day": "2026-11-12"
+  },
+  "43693267535": {
+   "college": "city_of_san_francisco",
+   "usd": 0.0,
+   "day": "2026-10-17"
+  },
+  "43693830334": {
+   "college": "santiago_canyon",
+   "usd": 0.0,
+   "day": "2026-11-13"
+  },
+  "43968403561": {
+   "college": "skyline",
+   "usd": 0.34,
+   "day": "2026-11-16"
+  },
+  "44046016854": {
+   "college": "riverside_city",
+   "usd": 0.0,
+   "day": "2026-11-17"
+  },
+  "44063769303": {
+   "college": "norco",
+   "usd": 0.0,
+   "day": "2026-11-17"
+  },
+  "44072968931": {
+   "college": "moreno_valley",
+   "usd": 0.0,
+   "day": "2026-11-17"
+  },
+  "44090886950": {
+   "college": "cabrillo",
+   "usd": 3.71,
+   "day": "2026-11-17"
+  },
+  "44090894573": {
+   "college": "chaffey",
+   "usd": 1.02,
+   "day": "2026-11-17"
+  },
+  "44090902577": {
+   "college": "college_of_san_mateo",
+   "usd": 0.74,
+   "day": "2026-11-17"
+  },
+  "44090908924": {
+   "college": "crafton_hills",
+   "usd": 1.63,
+   "day": "2026-11-17"
+  },
+  "44090915912": {
+   "college": "feather_river",
+   "usd": 0.0,
+   "day": "2026-11-17"
+  },
+  "44090922437": {
+   "college": "gavilan",
+   "usd": 0.33,
+   "day": "2026-11-17"
+  },
+  "44090929578": {
+   "college": "lemoore",
+   "usd": 0.44,
+   "day": "2026-11-17"
+  }
+ },
+ "runner_since": "2026-11-17",
+ "sessions": {
+  "2026-11-16": {
+   "usd": 0.0,
+   "sessions": 0,
+   "not_available": 6
+  },
+  "2026-11-17": {
+   "usd": 5.44,
+   "sessions": 1,
+   "not_available": 3
+  }
+ },
+ "measured_note": "runner and sessions are measured by kb/_build_spend_daily.py, not pasted: runner is the extraction runs' own cost_usd_run by the day each read started, a ledger from 2026-11-17 on (runs an earlier read overwrote before then are not in it); sessions is the handoffs' Spend: lines by the day each session ended. Neither is added to the billing totals in api and topups."
+}

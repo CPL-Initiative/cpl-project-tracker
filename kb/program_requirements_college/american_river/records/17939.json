@@ -46,30 +46,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 33,
+   "placed": 36,
    "listed": 36,
-   "share": 0.917,
-   "missing": [
-    "ENGWR301",
-    "ENGWR303",
-    "ENGWR481"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGL301",
+     "listed": "ENGWR301",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGL481",
+     "listed": "ENGWR481",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1003",
+     "listed": "ENGWR303",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ENGL301",
-    "ENGL481",
-    "ENGLC1003"
-   ],
-   "flagged": [
-    "ENGL301",
-    "ENGL481",
-    "ENGLC1003"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -454,7 +459,7 @@
    "Section spans pages 690-691; the Social Science section that follows was not read."
   ]
  },
- "extracted_run": "43212067552",
+ "extracted_run": 43693265189,
  "source_sha": "674c10bf6ea0a63c",
  "source_codes": [
   "COMM331",
@@ -491,5 +496,6 @@
   "SPAN413",
   "SPAN415"
  ],
- "source_coverage": 0.917
+ "source_coverage": 0.917,
+ "read_run": "43212067552"
 }

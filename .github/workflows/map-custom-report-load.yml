@@ -6,6 +6,12 @@ name: MAP Custom Report load (staging)
 #   View_CollegeExhibitCRByCatalogYear_APIDataset  ->  stg_map_college_cr_unit
 #   View_StudentDetailsCredits_APIDataset          ->  stg_map_student_credit
 #
+# After the promotion it keeps ACE's own credit recommendation text from the
+# catalog view the same pull carries (S678): one row per distinct (AceID,
+# CreditRecommendation) into map_ace_catalog_cr, through
+# map_ace_catalog_cr_load(), with the service key. Until that migration is
+# applied the step says so and the run still passes.
+#
 # It loads staging, then asks Postgres to PROMOTE staging to live through
 # map_promote_custom_reports() — gated, in ONE transaction.
 #
@@ -54,6 +60,7 @@ permissions:
 
 jobs:
   load:
+    environment: live-counts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -84,6 +91,7 @@ jobs:
         run: |
           python3 tests/custom_report_payload_test.py
           python3 tests/map_custom_report_sync_test.py
+          python3 tests/map_ace_catalog_cr_test.py
           python3 tests/map_key_sketch_one_pull_test.py
 
       - name: Load staging and promote

@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     39.0,
     40.0
@@ -85,9 +85,7 @@
     41.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 39.0-40.0; the catalog states 39.0-41.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
@@ -106,7 +104,9 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
    "codes": [],
@@ -130,7 +130,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

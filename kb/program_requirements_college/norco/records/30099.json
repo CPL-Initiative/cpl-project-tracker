@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -80,6 +81,7 @@
     31.0,
     31.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +97,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": true
  },
@@ -332,5 +342,6 @@
    "EAR-33, EAR-41, EDU-1, ENGL-30 and MUS-1 appear in the electives list but are not in the closed list; recorded as catalog additions."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

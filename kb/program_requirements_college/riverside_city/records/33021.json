@@ -44,26 +44,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "AHS1",
-    "AHS2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHS2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
-   "flagged": [
-    "ARTHC1100",
-    "ARTHC1200"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -77,6 +81,7 @@
     24.0,
     24.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -92,6 +97,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -300,5 +316,7 @@
    "Program learning outcomes are printed for the program as a whole; the A.A.-T shares them."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }

@@ -2,19 +2,22 @@
  "college": "Gavilan College",
  "programs": 135,
  "with_closed_list": 120,
- "found": 106,
- "extracted": 106,
+ "found": 103,
+ "extracted": 103,
  "errors": 0,
- "passed_machine_checks": 77,
+ "passed_machine_checks": 82,
  "failed": {
-  "coverage": 5,
+  "coverage": 1,
   "invented": 0,
-  "arithmetic": 29,
+  "arithmetic": 21,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 7.53,
- "cost_per_program": 0.071,
+ "cost_usd_run": 0.33,
+ "cost_usd_filed": 7.35,
+ "cost_per_program": 0.0713,
+ "extract_calls": 3,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "31719",
@@ -40,7 +43,17 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33134",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "35176",
@@ -48,7 +61,8 @@
    "award": "A.A. Degree",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "35177",
@@ -56,7 +70,8 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36978",
@@ -82,15 +97,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
-  },
-  {
-   "control_number": "40557",
-   "title": "Small Business Development",
-   "award": "Noncredit program",
-   "near_miss": {
-    "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42771",
@@ -116,7 +124,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42890",
@@ -124,8 +133,9 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "38948144064"
+ "run": "44090922437"
 }

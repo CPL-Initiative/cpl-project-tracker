@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-14_s653_honors_of_rows.sql",
+ "name": "s653_honors_of_rows",
+ "version": "20261116145041",
+ "sha256": "925f3dd0836e39b60cb85bfa68d408d67b12c6e1368a674cd6ceaea572eeae87",
+ "run": "43889173474",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"changed\":{\"md5\":\"29667c0741e7e7fafb509b4c2937e9db\",\"cohort\":\"honors-rows-s653@bot\",\"inserted\":380}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

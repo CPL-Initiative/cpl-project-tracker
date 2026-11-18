@@ -44,24 +44,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 13,
-   "share": 0.923,
-   "missing": [
-    "ECO8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BIO14",
-    "ECONC2001"
+    "BIO14"
    ],
    "flagged": [
-    "BIO14",
-    "ECONC2001"
+    "BIO14"
    ],
    "pass": true
   },
@@ -76,6 +80,7 @@
     24.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -91,6 +96,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -285,5 +301,6 @@
    "Program learning outcomes are printed once for the program, which is this ADT award."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

@@ -78,8 +78,9 @@ STOP = re.compile(
 SLO_TITLE = re.compile(r"^[ \t]*(student|course) learning outcomes?\b", re.I | re.M)
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
-# The lead-in a college prints between the heading and the list.
-LEAD = re.compile(r"(upon (successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
+# The lead-in a college prints between the heading and the list. Las Positas prints "Upon the completion of this
+# course, the student should be able to:" (S664: 505 live SLO rows had filed it as their first outcome).
+LEAD = re.compile(r"(upon (the )?(successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
                   re.I)
 # The colleges an RCCD integrated outline names as offering the course.
 OFFERED = re.compile(r"^College:[ \t]*\n((?:[ \t]*[A-Z]{3}[ \t]*\n)+)", re.M)
@@ -315,25 +316,9 @@ OBJ_STOP = re.compile(r"^(section [ivx\d]+|disciplines?|minimum qualifications?|
 # collection list of data from cors. they should be collected when slos are collected"). parse_page files both on
 # every read path; a read's head carries this list, and the loader posts each as its own course_outcomes.kind.
 COR_COLLECTS = ("slo", "objective")
-# Whether each outline system's public page prints a Course Objectives section, from the filed trials (S649), so an
-# empty objectives column is a fact about the host and never a reader that passed them over. Held to its trials by
-# tests/course_outcomes_objectives_standing_test.py; the colleges still to read again: objectives_reread_plan.json.
-OBJECTIVES_BY_SYSTEM = {
-    "curriqunet": {"printed": True,
-                   "evidence": "every page of trials 38317539422 (RCCD), 38350787486 (SDCCD All Fields), 41436124244 "
-                               "(Santa Ana), 41595084107 (Las Positas), 42573515439 (Cuesta) and 43157883293 (Shasta)"},
-    "courseleaf": {"printed": True,
-                   "evidence": "the Coast district's outline: 9 of the 9 trial pages with SLOs (trial 38508460207, "
-                               "Coastline); 1,519 of 1,584 pages in Orange Coast's read 42585338847"},
-    "elumen": {"printed": "template",
-               "evidence": "each college's catalog template decides. None printed on the trial pages of Modesto Junior, "
-                           "Cabrillo, Mission or Lake Tahoe (SLOs on 11 or 12 of 12 each). Columbia (12 of 12) and Contra "
-                           "Costa (11 of 12) carry Course Objectives inside an HTML comment, not printed, so not read: "
-                           "reading a comment is a decision, not a reread; 11 of Contra Costa's 520 pages print an "
-                           "Objectives heading in their text (read 42434894498). West Hills Lemoore's and College of "
-                           "Marin's trial pages printed neither SLOs nor objectives. De Anza: one trial page answered "
-                           "and it printed both (trial 43168229927)."},
-}
+# Whether each outline system's public page prints a Course Objectives section: kb/_objectives_by_system.py holds it,
+# the one source the College Data Collection builder reads too (S650, COBIx on #3286). Never a copy here.
+OBJECTIVES_BY_SYSTEM = _load("objectives_by_system", "_objectives_by_system.py").OBJECTIVES_BY_SYSTEM
 
 
 def _obj_ends(s: str) -> bool:
@@ -542,6 +527,9 @@ def elumen_outcomes_from_html(page_html: str) -> dict | None:
 # list, then Course Objectives (trial 38508460207: <h3>Course Level Student Learning
 # Outcome(s)</h3><ol><li>...). The text reader does not take that heading.
 CCCD_SLO_HEAD = re.compile(r"^course level student learning outcomes?(?:\(s\))?:?$", re.I)
+# A sub-heading a CourseLeaf outline prints as the list's first item. Golden West prints "Course outcomes:" there
+# (S665: 3 live SLO rows had filed it as outcome 1), so it is the lead, never an outcome.
+CCCD_SUBHEAD = re.compile(r"^course (?:learning )?outcomes?:$", re.I)
 
 
 def cccd_outcomes_from_html(page_html: str) -> dict | None:
@@ -559,9 +547,10 @@ def cccd_outcomes_from_html(page_html: str) -> dict | None:
                 items = [MARKER.sub("", _ws(li.text(skip=("ol", "ul"))), count=1).strip()
                          for li in k.kids if not isinstance(li, str) and li.tag == "li"]
                 items = [x for x in items if x]
+                lead = items.pop(0) if items and CCCD_SUBHEAD.match(items[0]) else None
                 if items:
                     return {"shape": "list" if len(items) > 1 else "paragraph",
-                            "heading": _ws(head.text()), "lead": None, "outcomes": items,
+                            "heading": _ws(head.text()), "lead": lead, "outcomes": items,
                             "maps_to": None, "parsed_from": "html"}
         return None
     return None

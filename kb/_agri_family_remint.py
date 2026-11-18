@@ -98,8 +98,7 @@ def compute_plan(courses, singletons, curations, reservations, pins):
     alloc = rec.Allocator(real - set(moves), reservations)
     order = sorted(moves)
     for cid in order:                                   # pass 1: keep the number
-        _, letter, band, tail, _ = rec.parse_id(cid)
-        want = f"{moves[cid]['route']} {letter}{band}{tail}"
+        want = rec.kept_number(cid, moves[cid]['route'])   # refuses an Honors id
         moves[cid]["new_id"], moves[cid]["how"] = None, None
         if alloc.free(want):
             alloc.taken.add(want)

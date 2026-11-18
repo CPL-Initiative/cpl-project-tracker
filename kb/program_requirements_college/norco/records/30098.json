@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -86,6 +87,7 @@
     31.0,
     31.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -101,6 +103,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -339,5 +352,6 @@
    "Elective codes EAR-23, EAR-33, EAR-38, EAR-41, EAR-44, EAR-54, EDU-1 and ENGL-30 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

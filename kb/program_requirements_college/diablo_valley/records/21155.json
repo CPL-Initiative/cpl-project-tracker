@@ -46,27 +46,32 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 15,
-   "share": 0.867,
-   "missing": [
-    "BIOSC126",
-    "BIOSC170"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL126",
+     "listed": "BIOSC126",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL170",
+     "listed": "BIOSC170",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "BIOL126",
-    "BIOL170",
     "WRKX170"
    ],
    "flagged": [
-    "BIOL126",
-    "BIOL170",
     "WRKX170"
    ],
    "pass": true
@@ -316,5 +321,6 @@
    "The description also names occupations that use GIS (planners, architects, foresters, geologists); only the job titles the program prepares students for were recorded as careers."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

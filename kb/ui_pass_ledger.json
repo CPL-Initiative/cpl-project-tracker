@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-11-08",
-   "outcome": "S604: npm run a11y passes all three targets (light, dark, embedded) at nine widths; no datasets to wire; First Light holds (every hex sits in a token definition; the one change since the last pass, #2867, added data files and extract scripts, no styles). Nothing to fix."
+   "last": "2026-11-14",
+   "outcome": "S650: npm run a11y passes light, dark and embedded at nine widths before and after; no datasets to wire; First Light holds (every hex in a token definition, Playfair Display and Source Sans 3 through var(--display) and var(--font), no rendered glyph). Fixed in build_selfcontained.py: the directory's CPL page link painted 21px tall (passed only on the spacing exception) and now fills its 44px row; .btn and .linkbtn floors 24 to 25px, the public header's lengths (S641). Guard: veteran_map_controls_words.test.js, floored at 12. Lane item (library.md NEXT): the page carries no public header."
   },
   {
    "id": "skyview",
@@ -30,8 +30,8 @@
    "name": "Fact Sheet",
    "page": "fact-sheet/index.html",
    "audience": "public",
-   "last": "2026-11-09",
-   "outcome": "S616: npm run a11y fact-sheet passes light and dark at 9 widths (axe 4.10.2, WCAG 2.2 AA); no raw hex in the page; wiring: the six headline KPIs read live_metrics.json (scraped 2026-11-09T06:25Z) and match it on screen (59,466 students, 285k eligible, 85k transcribed). Nothing to fix. COBI's CPL Pathways and College Briefing, which share live_metrics.json, were not rendered (sign-in)."
+   "last": "2026-11-15",
+   "outcome": "S655: npm run a11y passes fact-sheet light and dark (9 widths) and its Sierra targets (axe 4.10.2, WCAG 2.2 AA): 0 contrast, 0 target, 0 focus, 0 mobile findings. First Light: no raw hex outside the token blocks (the Word export keeps literals Word needs); glyphs: only the ruled star and Curate marks. Two geometry/type faults found and fixed: the Print or save list ran 2px past the screen at 600px and scrolled the page sideways (it now opens from the summary's right edge when it would pass the edge), and two screen rules asked for weight 800 that no loaded face carries (now 700, what drew). Lane item: a Source Sans 3 italic face (9 synthesized italic runs), NEXT in sierra-page-redesign. Wiring: all 45 bound figures match live_metrics.json and fact_sheet_metrics.json (scraped 2026-11-15T06:18Z; 60,347 students, 289k eligible, 85k transcribed, 68 Star colleges), and CPL_Dashboard.html shows the same; COBI's sharing tabs were not rendered (sign-in)."
   },
   {
    "id": "privacy",

@@ -14,11 +14,12 @@
  "summary": {
   "read": 258,
   "shapes": {
-   "list": 252,
+   "list": 223,
+   "paragraph": 29,
    "none": 6
   },
   "status_not_200": 0,
-  "outcomes": 1010
+  "outcomes": 758
  },
  "rows": [
   {
@@ -37,9 +38,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critically analyze and discuss issues of crime and justice.",
     "Define causal theories, criminal types and societal factors used to explain the nature of crime.",
     "Describe the evolution of the American criminal justice system, including the history, development,structure, and function of police, courts, and corrections.",
@@ -47,7 +47,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2a02857c730c0e639cea6a0688ea9bb1"
+   "fingerprint": "7e6441a1bc5dc55cac5ad9dd47b3b381"
   },
   {
    "code": "AJ 59",
@@ -65,9 +65,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and describe crimes that may be committed against children.",
     "Explain the types and frequency of child abuse.",
     "Explain who is a mandated child abuse reporter under the California Child Abuse and Neglect Reporting Act (CANRA).",
@@ -75,7 +74,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fcbaa046d23be7a9aef15c17818879ce"
+   "fingerprint": "190726fc05de6bd1d81ea2d5a5d2a6c5"
   },
   {
    "code": "AJ 63",
@@ -93,9 +92,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Conduct a preliminary criminal investigation.",
     "Conduct a preliminary interview/interrogation.",
     "Explain the role of forensic examination in the criminal investigative process.",
@@ -103,7 +101,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b1f6060463f8d3046866655ee62df3bb"
+   "fingerprint": "691da57f6b184c40489873c4d17622db"
   },
   {
    "code": "AJ 68",
@@ -121,9 +119,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe effective responses when witnessing unethical behavior.",
     "Discuss the importance of ethical conduct by law enforcement personnel and its impact on publicperception of police authority and legitimacy.",
     "Working understanding of and explain the purpose and benefits of good leadership and the importance of sound ethical decision making in a law enforcement agency and by the individual officer.",
@@ -131,7 +128,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "aeefa23af0be91c3705ec9e5c000f225"
+   "fingerprint": "4491c7134b464a978751ec24ffd44a4a"
   },
   {
    "code": "ANTR 1",
@@ -149,16 +146,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Deconstruct the biological concept of \"race.\"",
     "Describe and identify fossil hominid species.",
     "Explain how natural selection works."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "10102cd859bb1697510256ea892e79e7"
+   "fingerprint": "55f37a5bd11ff334cea0737467fd0965"
   },
   {
    "code": "ANTR 1L",
@@ -176,16 +172,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Practice and apply understandings of the scientific method in a laboratory setting.",
     "Critically analyze and interpret biological anthropological data to illustrate evolutionary trends.",
     "Apply anthropological principles for solving human problems on the local, regional and world scales."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a63c7191e96e8e69751b787dba7e088c"
+   "fingerprint": "c9969016625ee2c7da27d2e5794bbf05"
   },
   {
    "code": "ANTR 3",
@@ -203,16 +198,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply anthropological principles of holism, ethnocentrism, and cultural relativism, to solve human problems on the local, regional and world scales.",
     "Recognize forms of discrimination, both explicit and implicit, incidental and institutionalized, and gain cultural competence in approaching, understanding and solving such inequities.",
     "Appreciate and be sensitive to the cultural diversity of the world through a variety of ethnographic studies and cross-cultural explorations."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b42285ae544bf4cdb89abe14f8119883"
+   "fingerprint": "c7246273eae4d3a85cced173d86bc393"
   },
   {
    "code": "ANTR 8",
@@ -230,16 +224,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of ANTR 8, students will be able to describe the factual knowledge (terminology, classifications, and methods) that form the basis of archaeology.",
     "Upon completion of ANTR 8, students will be able to explain fundamental principles and theories regarding the cultural processes that have shaped past human societies.",
     "Upon completion of ANTR 8, students will be able to analyze cultural diversity in the human past as it relates to systems of oppression, racism, and self-determination."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ebe6538c022607de91cdef1582d0891c"
+   "fingerprint": "490ad928bdd6e660db2ee53018b0925f"
   },
   {
    "code": "APAG 2",
@@ -255,16 +248,15 @@
    "title_printed": "Admin Outline",
    "chars": 8980,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Research the service manual to determine proper repair procedures."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "25e5384dd4eed72ecf96705492735f47"
+   "fingerprint": "32cd5f2b48c8e21742e3a1f0a95d6185"
   },
   {
    "code": "APAG 3L",
@@ -280,16 +272,15 @@
    "title_printed": "Admin Outline",
    "chars": 5875,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Diagnose an MIL light using proper service information and diagnostic strategies."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d876c2bce0f5363ed817ba2698b7ff83"
+   "fingerprint": "4cf2bee2e2ed09e62764deaf41cdc9b7"
   },
   {
    "code": "APCL 100",
@@ -307,15 +298,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 100, the student should be able to identify the main parts of Rough Terrain Lift trucks.",
     "Upon completion of APCL 100, the student should be able to perform pre-shift inspection and safe operation of Variable Reach Lift truck as determined by the instructor."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f4ba4b65b09a6349b984b1f447c36fb7"
+   "fingerprint": "e45269a629a94fee6f3fb69113c9cded"
   },
   {
    "code": "APCL 103",
@@ -333,15 +323,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 103, the student should be able to know general guidelines to safely operate equipment.",
     "Upon completion of APCL 103, the student should be able to identify, evaluate, and control health and safety hazards in the work place."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "719b86df2a82ad0c15b1ac70ea5d6818"
+   "fingerprint": "a0f7f343e75fae37dc5ad5ebe8e03531"
   },
   {
    "code": "APCL 106",
@@ -359,15 +348,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 106, the student should be able to demonstrate concrete construction techniques to industry standards.",
     "Upon completion of APCL 106, the student should be able to explain how weight distribution affects skid-steer loader stability and steering."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ee67c42676da1d509dba52f7716ead9d"
+   "fingerprint": "f7af276aeea698ae52ae1e04e419f89a"
   },
   {
    "code": "APCL 109",
@@ -385,15 +373,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 109, the student should be able to demonstrate proper reading of blueprint legends.",
     "Upon completion of APCL 109, the student should be able to utilize proper skills to work with blueprint scaling."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5ebac6301ee7b932e54b6174a7445307"
+   "fingerprint": "4b6ac0683ac89aab5622ebeb6058ccf0"
   },
   {
    "code": "APCL 112",
@@ -411,15 +398,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 112, the student should be able to summarize the requirements listed in the MUTCD Part 6E Flogger Control.",
     "Upon completion of APCL 112, the student should be able to recognize different types of drivers."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "60fd58ea372484c967a92f4109acd591"
+   "fingerprint": "4145295f56d9730da000aa6eaffa4e10"
   },
   {
    "code": "APCL 115",
@@ -437,15 +423,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of APCL 115, the student should be able to summarize General Safety and Health requirements from Subpart C.",
     "Upon completion of APCL 115, the student should be able to describe Personal Protective Equipment from Subpart E."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a182d9a8cc1c579bcc2163750a8594f4"
+   "fingerprint": "ad90cd5ae45578847b2247c8918be45f"
   },
   {
    "code": "APMT 53",
@@ -463,16 +448,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Replace an alternator.",
     "Perform a compression test.",
     "Perform a cylinder balance test."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f6f15b7b46b9719376ceae7de91b7a0a"
+   "fingerprint": "402fb697a4546aef1b7bdb0edb685059"
   },
   {
    "code": "ARHS 1",
@@ -490,16 +474,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate critical and creative thinking by applying interdisciplinary approaches to the interpretation of artwork.",
     "Identify formal elements in an artwork and be able to ascertain how these elements create meaning in the chosen art work.",
     "Identify themes of art within a chosen art work across a broad range of cultures and time periods."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "65416e77b541ce0de773625f726ced6c"
+   "fingerprint": "b5838f95f0b3538b916017dfa4778bf5"
   },
   {
    "code": "ARHS 6",
@@ -517,9 +500,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create written exhibition proposals.",
     "Evaluate ethical debates within the museum and gallery field.",
     "Identify the history of the contemporary art world.",
@@ -527,7 +509,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "cd4ef46aed57694897af62e32e20bff2"
+   "fingerprint": "d710072888e0fc9f8df1767653ce6527"
   },
   {
    "code": "ARTH C1100",
@@ -545,16 +527,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the religious, cultural, economic and political issues of the ancient Western world and their relationship to artistic and architectural production.",
     "Articulate connections between artistic movements and historical events in the Western world from pre-history through the Gothic period.",
     "Identify ancient Western art movements, artists, and technical processes."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a414020af3dd05bfda52a2c5663d6b48"
+   "fingerprint": "97a1a1d270cdf4ff1227895f5061e7bc"
   },
   {
    "code": "ARTS 12B",
@@ -572,9 +553,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Administer appropriate terminology for critiquing and analyzing paintings.",
     "Apply Content to paintings and explain its meaning.",
     "Compose paintings with the elements and principles of visual art and design.",
@@ -583,7 +563,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d523b0dc3612ecf4a15a2f28f8ba42a2"
+   "fingerprint": "3dbd5f589fc91e7fcb7a9ffd4b69a8ac"
   },
   {
    "code": "ARTS 23",
@@ -601,9 +581,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create lines and shapes that express the content of their design.",
     "Choose colors that express the content of their design.",
     "Choose a value scheme appropriate to the content of their design.",
@@ -612,7 +591,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "76f6bdb79d2b3ea5c76dd4d8fa637575"
+   "fingerprint": "597306fe337e3834fa66619b72f74e17"
   },
   {
    "code": "ARTS 2A",
@@ -630,16 +609,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate ability to recognize and recreate, on a picture plane, observed values and proportions.",
     "Compose drawings with the elements and principles of visual art and design.",
     "Implement materials common to the drawing process."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fbe5e5765fcf8f836a048a5a46907469"
+   "fingerprint": "96790861b106392a302f12d926f9e1cc"
   },
   {
    "code": "ARTS 3C",
@@ -657,16 +635,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Comprehend and create a well-informed body of work using artistic anatomy of the human figure.",
     "Create a series of advanced level investigative drawings with different expressive strategies for the figure.",
     "Demonstrate an advanced ability to analyze the human form, and represent that form on a 2-D surface."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9023be0cd5a208a67babaf2c5b7ae873"
+   "fingerprint": "4ec0a78c4648b3cb385c3b211955fc04"
   },
   {
    "code": "ARTS 7B",
@@ -684,9 +661,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Complete a body of paintings that demonstrates an understanding of specific subject based material.",
     "Demonstrate a knowledge of composition.",
     "Demonstrate a mastery of watercolor application and techniques.",
@@ -695,7 +671,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "151c080c1b6cad1e09211c6a4eba08af"
+   "fingerprint": "dd7c7e71bfbbe9a6d8675e085b6833af"
   },
   {
    "code": "ASL 1A",
@@ -713,16 +689,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate proficiency in comprehension of American Sign Language for daily living contexts.",
     "Demonstrate receptive and expressive ASL grammatical functions and knowledge for daily living.",
     "Properly respond in American Sign Language to simple questions about their selves and surroundings."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a7377a45186ed49fdaa79a43f8475b23"
+   "fingerprint": "070ac567bea4a34aa84b04f0e6bd391e"
   },
   {
    "code": "ASL 2B",
@@ -738,16 +713,15 @@
    "title_printed": "Admin Outline",
    "chars": 10211,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate comprehension and production of ASL discourse."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ee76690b38356642d8f800b844d136bb"
+   "fingerprint": "9c2eb1bb9727023a3d4619234b7ba2b0"
   },
   {
    "code": "ASTR 32",
@@ -765,16 +739,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe the ways in which scientific principles have shaped the modern world and relate todaily life.",
     "Use quantitative reasoning to determine relationships between physical quantities in astronomy.",
     "Explain physical principles relevant to light, telescopes, stars, galaxies, and cosmology."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b5bb8e7e69f072c4078b1da4e50770d8"
+   "fingerprint": "244bc0e06e4b71b26f2828295322821e"
   },
   {
    "code": "AUTO A3",
@@ -792,16 +765,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Measure pinion preload.",
     "Obtain and interpret powertrain data related to manual gearboxes and axles.",
     "Apply Manual Drive Train and axle repair safety precautions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c898b0570991502a0a4619c958439f06"
+   "fingerprint": "725b761cac23e0c565b9a26580972688"
   },
   {
    "code": "AUTO A6",
@@ -819,16 +791,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use a fluke meter to measure voltage.",
     "Apply electrical precautions.",
     "Obtain and interpret data related to the electrical system"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "57ef095ba80d620338b8a649b32839c4"
+   "fingerprint": "25926664f856159f72f11d470e9eea65"
   },
   {
    "code": "AUTO A9",
@@ -846,16 +817,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply safety in all lab conditions.",
     "Diagnose and repair diesel engine mechanical systems.",
     "Diagnose and repair diesel turbo systems."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d64b14083fd213bc31cde8f0411e1a4d"
+   "fingerprint": "a972a4644e7dcdda056f42c3a9c90812"
   },
   {
    "code": "AUTO P1",
@@ -873,16 +843,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Follow proper safety standards in lab.",
     "Use powertrain data gathered from a dyno test to determine fuel mixture.",
     "Determine the proper way to modify an exhaust system and stay within the legal limits of emissions and noise."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "94948f55eac295774f6d7a9b92ad03d3"
+   "fingerprint": "02dbfaa2d84cf5fb6c1791730501ab74"
   },
   {
    "code": "BD 3",
@@ -900,15 +869,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Illustrate the block defense and when to employ this strategy in doubles play.",
     "Select when to apply movement pressure and when to hit to the middle."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3df78d0a28e86f34fda669b27b69475c"
+   "fingerprint": "17490b3ef03e147940eb8c3d9ed2d8ff"
   },
   {
    "code": "BIO 1R",
@@ -926,9 +894,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Gain hands-on experience with and demonstrate proficiency in standard biological techniques, using industry level biology laboratory equipment and/or discipline-specific computer hardware and software.",
     "Conduct a research project and communicate experimental results using standard scientific methods.",
     "Explain and apply principles and processes of organismal biology and evolution at different organizational levels, from tissues to the ecological.",
@@ -936,7 +903,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "181666aed9f3f39bc27f3bf0ab77cf6a"
+   "fingerprint": "470f3f75a47f2eacee422947392d2fa7"
   },
   {
    "code": "BIO 30",
@@ -954,9 +921,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Conduct guided experiments in the laboratory and interpret the results of these investigations, individually and/or in collaboration with other students.",
     "Demonstrate writing proficiency on a written assignment which incorporates scientific data and/or basic principles of biology.",
     "Explain basic principles of biochemistry, ecology, and cellular, evolutionary, and organismal biology.",
@@ -965,7 +931,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a38642937cfe27bca5d9163d94ba4d20"
+   "fingerprint": "8c4feb2546321bb1c97792dedd0b9ed2"
   },
   {
    "code": "BIO 55",
@@ -983,15 +949,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Discuss contemporary physiological, psychological, ethical, social, and public health issues.",
     "Explore different health care occupations and create an educational action plan that aligns their interests, skills, and personality characteristics to a particular career path."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3c3c84809d263f22ff2d69f421d54f5a"
+   "fingerprint": "8700b5be9690eb4da6d8083958cbe4f7"
   },
   {
    "code": "BIO 7A",
@@ -1009,16 +974,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify the structures of the body systems using models, slides, cadavers, and/or visual media.",
     "Relate structure to the function of anatomical structures and understand how a change in structure would alter function.",
     "Analyze clinical cases and/or human pathologies and communicate findings utilizing academic language."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c94005fa82156372ea5adb78ff5b5d49"
+   "fingerprint": "adc016afd5eca98d6189b3e9bfc42e7d"
   },
   {
    "code": "BL 1",
@@ -1036,15 +1000,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Differentiate the four basic shots in bowling.",
     "Display appropriate bowling etiquette."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "4664c0ab2fe6db6a1e905b33e61dce92"
+   "fingerprint": "1fa86b5dd62203387293dd50e9756b5f"
   },
   {
    "code": "BL 4",
@@ -1084,16 +1047,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze and calculate the impact of changes in business income using cost volume profit analysis and construct contribution margin statements.",
     "Identify and categorize different cost classifications for fixed, variable, and mixed costs.",
     "Prepare operating and financial budgets and analyze variances."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e2b27de21f6e41d196e2a9587d17a01a"
+   "fingerprint": "ca75a92f94f6d3cae9f77099ddb31163"
   },
   {
    "code": "BUSN 33",
@@ -1111,9 +1073,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Compare the common types of consumer credits including credit cards and installment loans.",
     "Develop a comprehensive personal financial plan.",
     "Explain fundamental economic considerations that affect decision-making in personal finance.",
@@ -1121,7 +1082,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "830d8674065e57f9b4383ee07ae4a7fd"
+   "fingerprint": "ce38d30386331a0049dcf2d3e5fc0f7f"
   },
   {
    "code": "BUSN 48",
@@ -1139,9 +1100,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the primary leadership styles.",
     "Compare and contrast the concepts of work, worth and leisure in the United States.",
     "Describe the characteristics of change.",
@@ -1149,7 +1109,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a3194f96e92e890c68f9ddde17e29f9d"
+   "fingerprint": "38137823b6a6dd0766c443fe018ed67e"
   },
   {
    "code": "BUSN 55",
@@ -1167,15 +1127,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and interpret trends over a period using percentage increase or decrease.",
     "Use percentages to calculate period over period increase or decrease in a given set of data."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "90d426570d80ce70f01f280255f79ed8"
+   "fingerprint": "f7daf394e6544a0c5ecd6a5cfeea2f61"
   },
   {
    "code": "BUSN 61",
@@ -1193,9 +1152,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Complete end-of-period accounting procedures.",
     "Correctly reconcile the bank statement.",
     "Record depreciation and enter the adjusting entries required for accrual-basis accounting.",
@@ -1203,7 +1161,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "21e2f045d451551ca58d581d27e87c94"
+   "fingerprint": "3fce548d03b964cfb8571bf6390d6e1a"
   },
   {
    "code": "BUSN 88",
@@ -1221,9 +1179,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the typical non-exempt compensation strategies.",
     "Compare and contrast workplace security options.",
     "Describe the process of human resources planning.",
@@ -1231,7 +1188,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "565bf4b92f71a1ec3517878a64cf2920"
+   "fingerprint": "d1f3f43b704d373613b341e20e672d42"
   },
   {
    "code": "CA 3",
@@ -1249,16 +1206,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use service information to research a repair.",
     "Obtain and interpret powertrain data related to manual gearboxes and axles.",
     "Apply Manual Drive Train and axle repair safety precautions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d1df7ff6882376768b1706790d3a3342"
+   "fingerprint": "bad3a696e83bdf7f44fc2932e4072855"
   },
   {
    "code": "CA 6",
@@ -1276,16 +1232,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use service information to research a repair.",
     "Apply electrical precautions.",
     "Obtain and interpret data related to the electrical system"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a9eb9656bd2add81e66b1ebe61e55c37"
+   "fingerprint": "fad08e28a850b87dee5849cb483464ba"
   },
   {
    "code": "CA 9",
@@ -1303,16 +1258,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use service information to research a repair.",
     "Diagnose and repair diesel engine mechanical systems.",
     "Diagnose and repair diesel turbo systems."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fb28aa7e95f778d57892e93438e8de56"
+   "fingerprint": "601f9792542cd72e77be9d6d30c6bdc4"
   },
   {
    "code": "CHEM 1A",
@@ -1328,16 +1282,15 @@
    "title_printed": "Admin Outline",
    "chars": 10166,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Skillfully perform experimental measurements, techniques, and protocols, properly use standard laboratory instruments, and adhere to safe laboratory practices."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e194d45349a299e39e964a7e7437341a"
+   "fingerprint": "f4da30b9b6308de634f19757dd571621"
   },
   {
    "code": "CHEM 30B",
@@ -1355,9 +1308,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe the functions of different types of biological molecules.",
     "Succinctly summarize laboratory procedures, clearly document laboratory measurements and observations, and effectively communicate rationale for the experiment, data analysis, and interpretation.",
     "Skillfully perform experimental measurements, techniques, and protocols, properly use standard laboratory instruments, and adhere to safe laboratory practices.",
@@ -1366,7 +1318,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b284a013d2b4424da48b86f1d7a228b4"
+   "fingerprint": "922c6e156dba6aae2d92b1e84a56f299"
   },
   {
    "code": "CIS 10",
@@ -1382,16 +1334,15 @@
    "title_printed": "Admin Outline",
    "chars": 7972,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify the different data types and data roles and how they are used"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ce36ee79d62553eeed3a6664de5b8e57"
+   "fingerprint": "0a5cef114c02f0a92d6a5072e62d4080"
   },
   {
    "code": "CIS 50",
@@ -1407,16 +1358,15 @@
    "title_printed": "Admin Outline",
    "chars": 10898,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate basic computing literacy by using office applications, the Internet and computer-based tutorials."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "428d2a78203ac2a43829f54fc0a80f2b"
+   "fingerprint": "e45f9fe3abd7f5d9647a5ea704de1caa"
   },
   {
    "code": "CIS 59",
@@ -1432,16 +1382,15 @@
    "title_printed": "Admin Outline",
    "chars": 10891,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Build web sites using Hypertext Markup Language (HTML) and Cascading Style Sheets (CSS) with the foundation skills such as: text configurations, color configuration and page layout to create Web Sites with enhanced focus on design, accessibility and Web standards."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "804c0a35c6d4498a983f688fd823ddf8"
+   "fingerprint": "d79117c52379f22f88808f000f8959a9"
   },
   {
    "code": "CIS 62",
@@ -1457,16 +1406,15 @@
    "title_printed": "Admin Outline",
    "chars": 12077,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of CIS 62, the student should be able to produce a project plan to ensure successful delivery and stakeholder satisfaction."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d304c9c16b0334f50b7d74cd987a86ed"
+   "fingerprint": "88fa31d9916bbc9f3ac4193e3556d049"
   },
   {
    "code": "CIS 74",
@@ -1484,15 +1432,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe the characteristics and personal qualities that are important for administrative professionals and the importance of ethics, customer service, and teamwork in the workplace.",
     "Upon completion of CIS 74, students will show mastery of office principles and procedures including the ability to produce correctly formatted business documents, manage business records, and appropriately use email and the Internet in the workplace."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "24fb78468a58e16ed07abd0997ac8968"
+   "fingerprint": "087c5c0a5449e4eb86bc4b51d632b9b7"
   },
   {
    "code": "CIS 81B",
@@ -1510,9 +1457,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create, deploy, design, configure, terminate, and migrate cloud databases.",
     "Describe database services offered by cloud providers, such as Amazon AWS.",
     "Describe Relational and Non-Relational Databases.",
@@ -1520,7 +1466,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9295288253e40fc7129dc26d47b112bb"
+   "fingerprint": "22a80e1843f1b925b040a9a0170605b0"
   },
   {
    "code": "CIS 89A",
@@ -1536,16 +1482,15 @@
    "title_printed": "Admin Outline",
    "chars": 8271,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Design, create, and view slide show presentation."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7f97ee3d1d37e53cc88acb542789f354"
+   "fingerprint": "c00e416eee45bbf5b856e2a425b55422"
   },
   {
    "code": "CL 3",
@@ -1563,16 +1508,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use service information to research a repair.",
     "Perform hybrid safety precautions with 100% accuracy.",
     "Perform the hybrid battery disconnect procedure."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9a34ea2b7825234201fbf19d6bc4c0da"
+   "fingerprint": "0e7ac89887d8e03906a5bd546e0b8485"
   },
   {
    "code": "CMST 2",
@@ -1590,15 +1534,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of CMST 2, the student should be able to compile a collection of literature from different genres that unite a central theme.",
     "Upon completion of CMST 2, the student should be able to perform a selection of literature aloud."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3a44905f64d6649ce31bc459301e06ce"
+   "fingerprint": "e72a471dd3f0f2567b2bd7b3d5ee901d"
   },
   {
    "code": "CMST 46",
@@ -1616,15 +1559,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critically analyze an argument.",
     "Develop and deliver an argument."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5e760f6b1425dccc8a3556f559adbcb1"
+   "fingerprint": "1437262c42f783284d4a318c9d853b8c"
   },
   {
    "code": "CNT 51",
@@ -1642,15 +1584,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Install, configure, and troubleshoot operating systems and applications.",
     "Install, configure, secure, and troubleshoot PC/Networking/Mobile devices."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "dfdd72def46da34f01cabbb5168ddb94"
+   "fingerprint": "b923007a814e3aa44a2d49afd4473268"
   },
   {
    "code": "CNT 56",
@@ -1666,16 +1607,15 @@
    "title_printed": "Admin Outline",
    "chars": 14170,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Install, configure, secure, and troubleshoot IP Services in a Windows server domain environment."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d397487247fa9dfd56fe8123f4a26986"
+   "fingerprint": "f21d7ff38278f44920e038fb84cb8768"
   },
   {
    "code": "CNT 7285",
@@ -1691,16 +1631,15 @@
    "title_printed": "Admin Outline",
    "chars": 16280,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and differentiate various infrastructure components of classic and virtualized data center."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3488cf4ab49fffdd7b92b1c3ec2d42fb"
+   "fingerprint": "fb409ccc6f13e54b1262e26ce51d13a8"
   },
   {
    "code": "CNT 7501",
@@ -1716,16 +1655,15 @@
    "title_printed": "Admin Outline",
    "chars": 12874,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of CNT 7501, students will be able to report network security analysis observations."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b6f2156fb8c8e6857941342245e6e964"
+   "fingerprint": "90b200821d1ae9f4fb9812f2e4c0664f"
   },
   {
    "code": "CNT 8003",
@@ -1743,16 +1681,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Design and secure enterprise networks.",
     "Operate and troubleshoot enterprise networks.",
     "Use wide area network (WAN) technologies, quality of service (QoS) mechanisms, and software-defined networking (SDN) concepts."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fd3a380de76ef1357ab4f2e45576700b"
+   "fingerprint": "38b66bde55cb1d5dcfb2c28aee4ee86b"
   },
   {
    "code": "CS 17",
@@ -1770,9 +1707,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create an undirected graph that represents the network of objects in a set and find a minimum spanning tree for the graph.",
     "Determine whether a relation is an equivalence relation.",
     "Use mathematical reasoning and counting techniques to correctly enumerate the number of ways in which a specified event can occur.",
@@ -1780,7 +1716,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6e9be041b8ea0b3b73c5292119748271"
+   "fingerprint": "08b41365ea104606df1b7c6416a28d07"
   },
   {
    "code": "CS 21",
@@ -1798,15 +1734,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Implement the assembly equivalent of while loops, for loops and switch statements.",
     "Interpret and apply the machine representation of integers, characters, strings and floating point (e.g IEEE format) numbers."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2c144b05684766decc9351a3f323c956"
+   "fingerprint": "d40c7e62175c8c67dd73f27e4f4f5b14"
   },
   {
    "code": "CS 4",
@@ -1822,16 +1757,15 @@
    "title_printed": "Admin Outline",
    "chars": 11894,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Formulate an appropriate model for a well-defined problem by defining states, actions, a transition model, and goal testing."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7e9d59e423edb2c1639916b733f16470"
+   "fingerprint": "c00f02dec4f404c9d85cd15a51515378"
   },
   {
    "code": "CS 45",
@@ -1849,16 +1783,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon successful completion of CS 45, students will be able to convert business rules into a database design to support such rules.",
     "Upon successful completion of CS 45, students will be able to develop applications using both relational and non-relational (no-sql) database systems.",
     "Upon successful completion of CS 45, students will be able to implement a data model on both local and server-based RDBMS systems."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2676fba4859c86610e262aafa62a06f4"
+   "fingerprint": "4b1dc9a25d4c21b6ace932ce1dcc9199"
   },
   {
    "code": "CS 7",
@@ -1874,16 +1807,15 @@
    "title_printed": "Admin Outline",
    "chars": 9695,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Olain and implement programmer-defined functions in Python."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ac77ae0511b675f2ba2190abb233eb34"
+   "fingerprint": "04be6266a39ec49f72c949f6c26e258f"
   },
   {
    "code": "DANC 2A",
@@ -1901,16 +1833,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critique jazz dance performances in terms of the intent, success of the choreographer, technique of the dancers, and incorporation of the elements of dance.",
     "Execute movement reflecting the desired timing and musicality at an introductory level.",
     "Perform dance technique specific to jazz dance at an introductory level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "bc9a68cbbe3ea6e8a9fbda4fd3cf7a4b"
+   "fingerprint": "8432c10aa704f35f7b052228d9bd6593"
   },
   {
    "code": "DANC 4A",
@@ -1928,16 +1859,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of DANC 4A, students should be able to critique modern dance performances in terms of the intent, success of the choreographer, technique of the dancers, and incorporation of the elements of dance.",
     "Upon completion of DANC 4A, students should be able to execute movement reflecting the desired timing and musicality at an introductory level.",
     "Upon completion of DANC 4A, students should be able to perform dance technique specific to modern dance at an introductory level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e7e9a452683806a033b4d50627e80f77"
+   "fingerprint": "3f4eba63f893c5093078c0208ce2f19b"
   },
   {
    "code": "DANC 6A",
@@ -1955,16 +1885,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critique dance performances in terms of the intent, success of the choreographer, technique of the dancers, and incorporation of the elements of dance.",
     "Identify appropriate music and costuming for a dance work.",
     "Interact in a professional manner with their choreographer."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "96e78b75cd8b08178f91aa00587a2fa4"
+   "fingerprint": "ba8e4692fab93a2b9b8ef6d8cad36453"
   },
   {
    "code": "ECE 40",
@@ -1980,16 +1909,15 @@
    "title_printed": "Admin Outline",
    "chars": 10114,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of ECE 40, students will be able to identify personal strengths and the professional role in supporting the positive development of children’s social and emotional well-being."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7841bfb3f7ad6ec6d35e313c938d7266"
+   "fingerprint": "ee5ed2d6ff15d21a763b8d73da8e7800"
   },
   {
    "code": "ECE 56",
@@ -2007,16 +1935,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply knowledge of development and major theoretical frameworks to child observations.",
     "Describe development of children from conception through adolescence in the physical, social,emotional and cognitive domains.",
     "Identify cultural, economic, political and historical contexts that impact children's development."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a6d1ff73f4a9ee87131333b95a18d67f"
+   "fingerprint": "4ffe99ebcdc00ce82dcf4f72d786fa0b"
   },
   {
    "code": "ECE 62",
@@ -2034,9 +1961,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply understanding of the foundational role of primary relationships and cultural differences in childrearing practices to create a culturally and linguistically appropriate learning environment.",
     "Assess how their own values, goals, family history and life experiences, impact their relationships with children and families.",
     "Describe socialization of the child focusing on the interrelationship of family, school, community and society.",
@@ -2045,7 +1971,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "cc1025a7d3231f617f8f74bd2f98e6f3"
+   "fingerprint": "34a78c90fcec9236b72fc178d37fde2b"
   },
   {
    "code": "ECE 69",
@@ -2063,16 +1989,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Complete systematic observations and assessments using a variety of data collection methods to inform environment design, interactions, and curriculum.",
     "Describe and evaluate the characteristics, strengths, and limitations of common assessment tools with all children's developmental, cultural, and linguistic characteristics.",
     "Discuss the role of partnerships with families and other professionals in utilizing interpretations of observational and assessment data."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ef2ff406944cf46c6dabb9d455cf786e"
+   "fingerprint": "62f319510cdac041d2a18b8146869991"
   },
   {
    "code": "ECE 90",
@@ -2088,16 +2013,15 @@
    "title_printed": "Admin Outline",
    "chars": 21900,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critically assess one's own teaching experiences to reflect and guide practice."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e710abf7f9205ad6fc41b84cd9f14af5"
+   "fingerprint": "4210323acecc9306d7b69cb33392fe2f"
   },
   {
    "code": "ECE 96",
@@ -2113,16 +2037,15 @@
    "title_printed": "Admin Outline",
    "chars": 4427,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Utilize the code of ethics in making appropriate decisions for the children and families."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "646c2c0306de08186ef6ed02315d8b70"
+   "fingerprint": "58ff86509fcd7225ba9e303df11e3d90"
   },
   {
    "code": "ECON C2002",
@@ -2140,16 +2063,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Define market and explain how market forces of supply and demand lead to efficient allocation of goods, services and factors of production.",
     "Define key economic indicators, including GDP, CPI, and Unemployment Rate, and use these quantitative measures to analyze the economy.",
     "Describe monetary and fiscal policies and explain how they affect short-term economic fluctuations."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a159b3dbf50a1af9f30664cb7e7315db"
+   "fingerprint": "e1628eeadeb19548b1f8a3b6726ec9e4"
   },
   {
    "code": "EMS 12",
@@ -2167,9 +2089,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate the successful insertion of an endotracheal tube into a simulated trachea.",
     "Demonstrate the successful insertion of an intravenous catheter into a simulated vein.",
     "Perform medication calculations.",
@@ -2178,7 +2099,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "268ea33a786b39a19bcb0d9af1ebd988"
+   "fingerprint": "859c396758467e59b791aef60e1bff5e"
   },
   {
    "code": "EMS 17",
@@ -2194,16 +2115,15 @@
    "title_printed": "Admin Outline",
    "chars": 13723,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Manage an emergency in the out-of-hospital setting by directing the resources of the local fire department and support personnel from the ambulance provider."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "35e55e423c627cee3c39aa4c25d3968e"
+   "fingerprint": "bd2084611f7365f3f26ce6076971a5d6"
   },
   {
    "code": "EMS 62",
@@ -2219,16 +2139,15 @@
    "title_printed": "Admin Outline",
    "chars": 6662,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Break down complex medical terms into simple root words and infer larger meanings through knowledge of smaller component word parts."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "edfc92009d20b99d5a21ce9e1fa44669"
+   "fingerprint": "7a6d1c930823fe586d4d014417a4ddab"
   },
   {
    "code": "ENG 12A",
@@ -2244,16 +2163,15 @@
    "title_printed": "Admin Outline",
    "chars": 11916,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "rite and revise a story or chapter demonstrating proficiency in the basic elements of fiction, i.e., character, plot, setting, point of view, and theme."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "db728bd4da5c29b44ccbb0057426a505"
+   "fingerprint": "7e64f6264c731c664dc79adae1e758de"
   },
   {
    "code": "ENG 13A",
@@ -2269,16 +2187,15 @@
    "title_printed": "Admin Outline",
    "chars": 4525,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of English 13A, the student will be able to write poems in traditional and modern forms, demonstrating proficiency in techniques including image, metaphor, sound, and symbolism to develop ideas and create meaning."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c7d09f4d0133948f0872a726437d3663"
+   "fingerprint": "87c15091952363f28068e01a01724edf"
   },
   {
    "code": "ENG 19B",
@@ -2296,9 +2213,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply techniques of design and layout to produce a print book.",
     "Edit and proofread solicited submissions according to the conventions of a chosen style guide.",
     "Lead a team of editors in assessing works submitted by authors and artists.",
@@ -2306,7 +2222,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "94f9a16b2d6b2ef1b2e58571a92949e9"
+   "fingerprint": "229977b56e630ad9089832fe95bfd5f7"
   },
   {
    "code": "ENG 35",
@@ -2324,16 +2240,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze, evaluate, and interpret how 20th century American literature creates and reflects an American identity.",
     "Analyze an author's use of literary techniques to develop a theme.",
     "Recognize, appreciate, and compare the similarities and differences between authors, characters, and self that stem from historical era and cultural tradition."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "77217f663748f8becc122abc67f5b888"
+   "fingerprint": "e1d04dd9e94de2da9f5c07caf4fe1648"
   },
   {
    "code": "ENG 42",
@@ -2351,15 +2266,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze an author's use of literary techniques to develop a theme.",
     "Recognize, appreciate, and compare the similarities and differences between authors, characters, and self that stem from historical era and cultural tradition."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "09f5fe9c5ee400fe0d0bf389d6fdc66b"
+   "fingerprint": "6c916e37d762b9104e4e860a678c5433"
   },
   {
    "code": "ENGL C1000",
@@ -2377,9 +2291,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Read analytically to understand and respond to diverse academic texts.",
     "Compose thesis-driven academic writing that demonstrates analysis and synthesis of sources as appropriate to the rhetorical situation.",
     "Demonstrate strategies for planning, outlining, drafting, revising, editing, and proofreading written work.",
@@ -2389,7 +2302,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6f90061d050210851ba868765c1cd232"
+   "fingerprint": "6bfae1a84e097f913350039641048f55"
   },
   {
    "code": "ENGR 23",
@@ -2407,9 +2320,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Construct a solid model within CAD given only information found in orthographic projection.",
     "Construct an assembly drawing in SolidWorks.",
     "Create a drawing using several different geometric dimensions and tolerances.",
@@ -2417,7 +2329,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "093b42b2fdbdfe1af1af23471590354f"
+   "fingerprint": "6bb66a94fc656bd9a6755ef668b89727"
   },
   {
    "code": "ENGR 37",
@@ -2435,9 +2347,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze a self-built structure in static equilibrium.",
     "Use standard materials-testing equipment to determine material properties.",
     "Analyze materials-related curves to interpret the structure and properties of materials.",
@@ -2445,7 +2356,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "96d2818793c7266070f5c663c5b74768"
+   "fingerprint": "b7fd1286a35eb86c0a9b886090808bbd"
   },
   {
    "code": "ENGR 50",
@@ -2463,9 +2374,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze basic AC circuits.",
     "Analyze basic resistive circuits.",
     "Assemble circuits on a breadboard from an electrical schematic.",
@@ -2473,7 +2383,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "869ddccae8f399356744549bd81da2c2"
+   "fingerprint": "5b304fa0ddedde2b88e4c857382bafec"
   },
   {
    "code": "ESL 25",
@@ -2491,15 +2401,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate a high-advanced ability to identify main ideas and supporting details in levelappropriate texts.",
     "Write an essay of five to seven paragraphs that demonstrates clear organization, logical development, and correct language use."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6d9897a092a048bdb49472e02776a142"
+   "fingerprint": "5531cbbb7ac3918cbc1a6183368d7e78"
   },
   {
    "code": "ETHS 20",
@@ -2517,9 +2426,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify major concepts and theories of ethnic studies.",
     "Apply standpoints of Asian American communities to describe their lived experiences and struggles.",
     "Critically analyze the intersection of race and ethnicity with other forms of social differences in Asian American communities.",
@@ -2528,7 +2436,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "41e5b5928b5559298a1ed661f9e00301"
+   "fingerprint": "6481e81f3ca0f76f71fac83af12ce219"
   },
   {
    "code": "ETHS 6",
@@ -2546,9 +2454,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe relevant theories and concepts to accurately explain how race and ethnicity are socially constructed.",
     "Identify institutional factors that produce racialized consequences on the lived experiences of Native Americans, African Americans, Hispanic/Latinx Americans, and Asian Americans.",
     "Evaluate active social movements and relevant policy issues for racial justice and equity.",
@@ -2556,7 +2463,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e37f0074cbdbf955a1a35999a352357f"
+   "fingerprint": "a0cb56e758ecb252ce94eca76c59e1dd"
   },
   {
    "code": "FG 1",
@@ -2572,16 +2479,15 @@
    "title_printed": "Admin Outline",
    "chars": 6234,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the influence of alignment and grip on ball flight"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f0d7a041d37d2f0804a8d781bdba8401"
+   "fingerprint": "4a71af082288c48995aff7212a7d222a"
   },
   {
    "code": "FJW 1",
@@ -2599,16 +2505,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Compare and contrast various methods of evaluating exercise intensity.",
     "Demonstrate an increase in their cardiorespiratory fitness.",
     "Demonstrate safe walking posture, gait, and foot placement while walking at an easy pace."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7e2425773fdea4fca016f4d64360006d"
+   "fingerprint": "e0811a840c5eb3292c861c66ac29e610"
   },
   {
    "code": "FJW 4",
@@ -2626,16 +2531,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Design an effective warm up and cool down.",
     "Estimate their maximum heart rate and identify their target heart rate.",
     "Walk and jog safely and effectively as a way to exercise and develop their overall aerobic fitness level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ea7581c5fc58b49c1a293fe4c57203ea"
+   "fingerprint": "fc2fd92f6eb6d4eef4a3dacdb83f6dd4"
   },
   {
    "code": "FLMS 7",
@@ -2653,9 +2557,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Pitch short film and video scripts and create screenplays using the required formatting of professional screenwriting.",
     "Analyze screenplays for their formal and technical characteristics, as well as their story structures and themes.",
     "Demonstrate the process of narrative script development for both fiction and non-fiction films, referencing the essentials of visual storytelling.",
@@ -2663,7 +2566,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d14a7a68336b0f932f9e19297f32c327"
+   "fingerprint": "1d57ddcad426126e6043c38d36448d60"
   },
   {
    "code": "FREN 1B",
@@ -2681,16 +2584,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Communicate orally at the advanced-beginning level.",
     "Comprehend spoken French at the advanced-beginning level.",
     "Write at the advanced-beginning level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f310a7887bb9479699f4f1b1f031a788"
+   "fingerprint": "0e408f146072ff9809c1fde839887055"
   },
   {
    "code": "FST 2",
@@ -2708,16 +2610,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Define the role of the National Fire Protection Association (NFPA) and the Occupational Safety and Health Administration’s (OSHA) related to Firefighter Health and Safety mandates.",
     "Identify the 16 Firefighter Life and Safety Initiatives and their benefits for preventing Firefighter deaths and injuries.",
     "Identify the means of preventing firefighter’s deaths and injuries through a wellness and health program."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "dff55726079123340d19610d902a8ca3"
+   "fingerprint": "4bb676ddf52130809f2978d974c6373c"
   },
   {
    "code": "FST 5",
@@ -2735,9 +2636,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe fire protection systems in various structures and the history of sprinkler ordinances and legislation.",
     "Describe the components of a fire alarm system and different types of detectors and how they detect fire.",
     "Explain the operation and application of portable fire extinguishing systems.",
@@ -2745,7 +2645,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "da6998031c37f406db9ef65f1169a0d3"
+   "fingerprint": "b07424556e6198ab0089e3e87779229e"
   },
   {
    "code": "GBW 1",
@@ -2763,16 +2663,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate an increase in their core and glute strength.",
     "Demonstrate proper form during beginning level exercises that target the gluteal and abdominal musculature.",
     "Identify the major muscle groups of the gluteal and abdominal musculature."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "0288fe4ad9f958fe9599bfdd84b42812"
+   "fingerprint": "d1e91881bb135ab861361c376a1c6a9f"
   },
   {
    "code": "GBW 4",
@@ -2790,15 +2689,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate proper form while performing advanced strength training movements.",
     "Create an effective full body strength training workout utilizing the 5 main movement patterns."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b418942604266d7af3a1f9c3ef1980f4"
+   "fingerprint": "cfb1702094ca2f5719d54bbb965d5547"
   },
   {
    "code": "GDDM 2",
@@ -2816,9 +2714,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Determine the best content management system to use for a given web development project.",
     "Develop dynamic websites using content management systems.",
     "Install and set up WordPress and other content management systems such as Joomla and Drupal.",
@@ -2826,7 +2723,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "46ca8021d98a266da4db7aa2dc018e96"
+   "fingerprint": "d4e081e16777af13de00d487932713f9"
   },
   {
    "code": "GDDM 40",
@@ -2844,9 +2741,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of GDDM 40, the student should be able to complete a project from concept to conclusion alone or in a team, to deadline, and to client’s stated criteria, with disciplined control and craftsmanship.",
     "Upon completion of GDDM 40, the student should be able to explain the components of the design business, both front and back end.",
     "Upon completion of GDDM 40, the student should be able to lead client presentations at the professional-level, including an ability to discuss objectives, research, conceptual process and strategies, and lead critique and feedback sessions using industry-standard terminology.",
@@ -2854,7 +2750,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "36d1f28730652b16659ab8680552c960"
+   "fingerprint": "3021dc930f0d1bd84076054c53098e06"
   },
   {
    "code": "GDDM 50",
@@ -2872,15 +2768,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of GDDM 50, the student should be able to define a verbal concept as spatial and proportional relationships; refine concept as an abstract or pictorial image; work through multiple revisions; present and defend image in instructor critique.",
     "Upon completion of GDDM 50, the student should be able to understand design as a visual language that is built on fundamental principles and elements."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "36b0089da69c5fbc437a62878680f2cc"
+   "fingerprint": "d45666b9fb3d0f2b68bf718329fcad1d"
   },
   {
    "code": "GDDM 53",
@@ -2898,16 +2793,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create photographic montages using Adobe Photoshop.",
     "Use Photoshop tools to manipulate images for retouching, color correction, and basic adjustments.",
     "Use various tools for creating Selections, Mask, and Alpha Channels to isolate and manipulate images."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "28c6dcf8d7829a86ddc6f25ed6cf2bd1"
+   "fingerprint": "686da3f1fd9be098a2ce4e6faa1849bd"
   },
   {
    "code": "GDDM 56",
@@ -2925,9 +2819,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critically analyze graphic design problems and artwork solutions.",
     "Design and assemble a technically proficient body of two-dimensional design work that demonstrates the successful visualization of ideas and applies the fundamental knowledge and related set of skills to produce two-dimensional design work.",
     "Develop and practice and the knowledge and skills to work in two-dimensional spaces utilizingthe basic elements and principles of design: unity, balance, scale, hierarchy, emphasis, similarity and contrast, pattern and texture, color, etc.",
@@ -2935,7 +2828,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1ae2908e8516ff4e9bab4e1ab416ec6c"
+   "fingerprint": "232d671eaf985ab0d4f4cbf3fee2eca1"
   },
   {
    "code": "GDDM 59",
@@ -2953,16 +2846,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create artwork that is easy to revise and demonstrate the ability to modify by changing the color scheme, filters, and other appearance attributes.",
     "Incorporate raster images into their work and be able to develop their artwork using both raster and vector art.",
     "Set up a perspective grid using the perspective tools and apply the basic principals of linear perspective."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "37cbb7467cef3d05f410c8ba7d756598"
+   "fingerprint": "3fd9b7b9726213f06393c7702602ea53"
   },
   {
    "code": "GDDM 64",
@@ -2980,9 +2872,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply the fundamental principles and considerations of page layout design by properly setting up a document to correct trim, bleed, margins, page count, and folds.",
     "Create an effective layout by combining text and images and manage all related art assets for press ready output.",
     "Effectively combine text and images into a single layout and manage all related art assets for final output.",
@@ -2992,7 +2883,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "578797c6c329211467211c424aac23e0"
+   "fingerprint": "a3de874d5565cdd2bb0de3e8890a9727"
   },
   {
    "code": "GEOG 12",
@@ -3010,16 +2901,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify different California cities, rivers, landforms on a blank map.",
     "Identify different canals in California and state if they are federal, state or privately controlled.",
     "Identify the different climates that exist in California."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "93218ada76532f2ae7afeb25649a1861"
+   "fingerprint": "5eb3742800fb3673acf521adefabe252"
   },
   {
    "code": "GEOG 2",
@@ -3037,16 +2927,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Define, describe and explain the Multi-Nuclei model or urban development.",
     "Differentiate between the different types of cultural diffusion.",
     "Explain the Demographic Transition Model."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9d57ecf9d34b19eb5818d2905ac91376"
+   "fingerprint": "412663ce1f6a7328cd704d6ef89b310c"
   },
   {
    "code": "GEOL 1",
@@ -3064,16 +2953,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Define and identify the geology of divergent, convergent and transform plate tectonic environments.",
     "Identify and define the basic properties of minerals.",
     "Identify and differentiate the basic ages of the Geologic Time Scale."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "32bdbe6f1a7f7585defd65da4d1e9498"
+   "fingerprint": "5d1ae4803367b45e514ed7a2f75b548c"
   },
   {
    "code": "GEOL 13",
@@ -3091,9 +2979,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze and discuss past climate data, models, and forecasts.",
     "Discuss the social, political, economic, and ecological impacts of climate change.",
     "Describe the key ocean-atmosphere interactions and their effect on local weather and climate.",
@@ -3102,7 +2989,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f15002dae0dc63751ca110360cd6f762"
+   "fingerprint": "5aac61314ee26f72523bb4a2b778f5b6"
   },
   {
    "code": "GEOL 20",
@@ -3120,16 +3007,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Define and identify the geology of divergent, convergent, and transform plate tectonic environments.",
     "Define the basic propertiesof minerals.",
     "Evaluate and differentiate rock samples."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "40ed72e8f357c2d2545db6897ae54f76"
+   "fingerprint": "41c8d2d742b9021e564bb3f4581857e3"
   },
   {
    "code": "GF 1",
@@ -3147,15 +3033,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the influence of alignment and grip on ball flight.",
     "Distinguish between the overlapping, interlocking and ten-finger grips."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "996c287a19e7bf7f58a2499ceb3e010d"
+   "fingerprint": "907af540cd6a05ef703d28dd8f596eb0"
   },
   {
    "code": "GS 1",
@@ -3173,9 +3058,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze a current event using a variety of international news sources.",
     "Apply world systems theory to explain global phenomena.",
     "Identify concrete examples of the various ways that culture is globalized.",
@@ -3183,7 +3067,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "600f791e9b904b6ea7f151a869ce91e0"
+   "fingerprint": "670c8c0c32f685f89a3a06d22160b668"
   },
   {
    "code": "HEA 11",
@@ -3201,16 +3085,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Discuss disparities in health outcomes in the United States.",
     "Recognize the impacts of the unequal distribution of power, wealth and education, as well as race, socioeconomic status, and gender on health outcomes.",
     "Utilize credible sources of health data and information, and communicate that information to a wide range of audiences through an array of media."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7e1bb2c4a0bd89d42e5f81f316783c3d"
+   "fingerprint": "2fb3a7fd968a90b35b6f7f4de4be9ef0"
   },
   {
    "code": "HIST 1",
@@ -3228,9 +3111,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Explain the major political, economic, social, and cultural developments in Western Civilization before 1600, their causes and effects, and their historical significance.",
     "Explain the significance of major discoveries and developments in technology, science, art, architecture, and literature.",
     "Identify and distinguish the physical and political geography of Western Civilization.",
@@ -3239,7 +3121,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "babd6ad863063f558e9032cbb0cf9ee0"
+   "fingerprint": "a9d6d95eb9ef17d0dda63170190d5415"
   },
   {
    "code": "HIST 25",
@@ -3257,9 +3139,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and explain the major changes to American Indians resulting from European contact and colonization as well as from the formation and expansion of the United States.",
     "Identify and explain the historical antecedents of the major contemporary issues facing American Indians.",
     "Interpret primary and secondary sources relating to American Indian history and to compose a historical argument which uses them, as appropriate, for support.",
@@ -3267,7 +3148,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "02df21ccdceb2a5e1bd18b99f58f51c5"
+   "fingerprint": "2ff3ba93a6095409a37c2674879c2d4c"
   },
   {
    "code": "HIST 32",
@@ -3285,16 +3166,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate skills in speaking and writing effectively while incorporating theoretical perspectives in Women’s History and research methodology.",
     "Explain the significant social, cultural, and economic developments and their impact upon women’s lives.",
     "Interpret primary and secondary sources."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "68a5d20cc4ee77166d378d1bf7f0651b"
+   "fingerprint": "44e0758a3560ff40b819660420410009"
   },
   {
    "code": "HIST C1002",
@@ -3312,9 +3192,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze major political trends, attitudes, conflicts, and events - including both mainstream and reform efforts - and to explain their historical significance.",
     "Explain America's growth in a global context.",
     "Explain the major social, cultural, economic, and technological developments in United States History since Reconstruction, their causes and effects, and their historical significance.",
@@ -3323,7 +3202,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "adc3756714caee5f9b01618593075258"
+   "fingerprint": "a046bf794e0060a90a47842f0364e4ef"
   },
   {
    "code": "HORT 51",
@@ -3341,16 +3220,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Choose appropriate plants based on their climatic needs.",
     "Identify Fall landscape plants by their botanical and common names.",
     "Select the proper care and maintenance of landscape plants."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d791402bc7a0dc5079914e82ed4b501d"
+   "fingerprint": "d543a2dffc73e07d84ac1ea5a7eca748"
   },
   {
    "code": "HORT 54",
@@ -3368,15 +3246,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Accurately describe the \"capillary action\" of soil.",
     "Accurately describe what \"field capacity\" is and the different ways that it can be reached."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6f871fd43f110f03e5e474a01d9a5a76"
+   "fingerprint": "2762721999392ab2ab59aa624873c716"
   },
   {
    "code": "HORT 57",
@@ -3394,9 +3271,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate how to properly schedule and perform basic landscape and turf maintenance tasks such as mowing, edging, nutritional amendments, and irrigation system adjustment and monitoring.",
     "Identify the species and varieties of turf grasses commonly used in Northern California.",
     "Understand and communicate landscape maintenance industry standards and businesspractices.",
@@ -3404,7 +3280,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "a34dd2887a014c0f42d5e2b8b3824fd1"
+   "fingerprint": "f2b8d44084ff338fffea1400cb981628"
   },
   {
    "code": "HORT 60",
@@ -3422,16 +3298,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "identify and install landscape irrigation components.",
     "read and prepare a landscape irrigation plan.",
     "repair common irrigation malfunctions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "0d4e611fca58b6a98f4e6784938fbdea"
+   "fingerprint": "00c749a3298ddef9bb32720027183157"
   },
   {
    "code": "HORT 67",
@@ -3449,16 +3324,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify the interior plants used on the (CCNPRO) California Certified Nursery Professional, exam.",
     "Propagate interior plants using various propagation techniques.",
     "Understand the physiological and psychological benefit of interior plants."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "49eccadf7b19656164de7771eb4f17ac"
+   "fingerprint": "ac562dd4c62d14aa5edaffd0a76991ae"
   },
   {
    "code": "HUMN 10",
@@ -3476,9 +3350,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the ways in which American writers, philosophers, visual artists, musicians, and filmmakers have explored and portrayed American identity throughout the nation’s history.",
     "Discuss how works of art from the United States reflect the values and meanings of the American cultural experience.",
     "Evaluate the contributions made to American culture of various ethnic and culture groups.",
@@ -3486,7 +3359,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "df71a6f92c123bba15c067d108c6febf"
+   "fingerprint": "17ca15ad5b378650bae938040387a2ef"
   },
   {
    "code": "HUMN 2",
@@ -3504,16 +3377,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Compare and contrast major film types and film genres.",
     "Analyze films in terms of their formal elements, e.g. narrative structure, mise-en-scene, cinematography, editing, and sound.",
     "Describe the evolution of cinema as an art form and a business, referencing the major film styles and industries in film history."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3a357757e7e4a1f865438128befb273e"
+   "fingerprint": "7b77de189b17bf96e13a80a8fca3be45"
   },
   {
    "code": "HUMN 4",
@@ -3531,16 +3403,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze films in terms of both formal aspects and narrative or thematic content.",
     "Compare and contrast characteristics of major global film styles and traditions.",
     "Identify major developments in global film history in terms of how they relate to important historical and cultural contexts."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "0547f2f3294cb291a42db30996b1b356"
+   "fingerprint": "198722d8f44b26af62247f2966abbd06"
   },
   {
    "code": "INTD 15",
@@ -3558,16 +3429,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Design a floor plan based on conceptual bubble diagrams.",
     "Render drawings, calculate scale sizes of an elevation drawing.",
     "Measure, calculate and draw a room using standard drafting procedures."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "0bb2ac882a004c6ba606d4743a3f0479"
+   "fingerprint": "0197e9b0734ab92d85b60582a073d0b5"
   },
   {
    "code": "INTD 30",
@@ -3585,9 +3455,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Select appropriate lighting sources for specific uses in residential and commercial applications.",
     "Demonstrate knowledge of the different categories of lighting: ambient, task, decorative, direct and indirect.",
     "Learn the process by which fixtures selection should begin to include the proper scale and hanging heights.",
@@ -3596,7 +3465,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "067cb0efb76e87cb2763c3a48f72d01d"
+   "fingerprint": "fa6833e955491238ccbd5403a73193db"
   },
   {
    "code": "INTD 45",
@@ -3614,9 +3483,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Design a kitchen or bath with a recognition of codes and guidelines affecting safety and functionality for the user.",
     "Be fully aware of the specific and unique challenges of kitchen and bath design.",
     "Have knowledge of various mechanical/technical infrastructure within their floor plan.",
@@ -3624,7 +3492,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "683f13250d31eca2c6d307c640aef658"
+   "fingerprint": "622078bf9497dce10c3a9ad0418f8a2d"
   },
   {
    "code": "JAMS 1",
@@ -3642,15 +3510,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create a comparative analysis of how different media outlets cover a single news story.",
     "Describe the history, social impact, economics, and regulation of Journalism and Media Studies."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1001a7dc6376d72da570a717a5f76c4b"
+   "fingerprint": "9db82e509369fca62a2f192a94982735"
   },
   {
    "code": "JAMS 19A",
@@ -3668,9 +3535,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Organize a ceremony for contributors.",
     "Edit and format journal content.",
     "Solicit, assess, and select submissions for publication.",
@@ -3678,7 +3544,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c0ea27043017e3e9d61f6779556d31c6"
+   "fingerprint": "c6e28dccd41249152d846f55545ef49b"
   },
   {
    "code": "JAMS 21A",
@@ -3694,16 +3560,15 @@
    "title_printed": "Admin Outline",
    "chars": 13715,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create The Express, demonstrating increasing understanding of use of headlines and text, architecture and design, content and organization, and elements that serve to establish a house style."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "fd23c380ef68c03494564803e41463f5"
+   "fingerprint": "b4d9f31bb8748f9566ab1539e64148cd"
   },
   {
    "code": "JAMS 21D",
@@ -3719,16 +3584,15 @@
    "title_printed": "Admin Outline",
    "chars": 18432,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critique The Express, demonstrating advanced understanding of the standards of journalism, including effective use of journalistic writing style, visuals, design, layout, and editing."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9118054515f23a193ffbc590eb4be35e"
+   "fingerprint": "6e814b4089ba5623515fcd64905134ea"
   },
   {
    "code": "JAMS 24A",
@@ -3746,15 +3610,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Contribute to the student magazine, Naked, with an increasing degree of proficiency, demonstrating professionalism, functional skills, teamwork, commitment to the organization, and completion of assigned stories and visuals in proper magazine style.",
     "Design and edit stories and visuals in proper magazine style at a beginner level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3e614af2276e3482605453a37511addf"
+   "fingerprint": "6e9babba9cbfcc0c8de39c1e0a9ab246"
   },
   {
    "code": "KIN 1",
@@ -3772,16 +3635,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Communicate nutrition information using credible resources.",
     "Analyze and evaluate dietary intake relative to government guidelines and recommendations for athletes.",
     "Describe the basic principles of nutrition as they relate to sports performance."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5dc5832f740158a9520ad1a930087b39"
+   "fingerprint": "625225c6fa9896313c5b4bda759ebce3"
   },
   {
    "code": "KIN 18A",
@@ -3799,9 +3661,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate techniques in passive stretching.",
     "Apply first aid and acute care for wounds and injuries.",
     "Demonstrate appropriate taping techniques for joint stability and injury prevention.",
@@ -3809,7 +3670,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "17ecb08ac86a127dc651055a2026c62b"
+   "fingerprint": "c6d70bbbcb51803d57e9c0e12aba3073"
   },
   {
    "code": "KIN 24",
@@ -3827,15 +3688,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe the relationship between coach expectations and athlete performance.",
     "Identify guidelines for coaches for building team cohesion."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6c7923a4e8d6b4f39e793b7f87704ebf"
+   "fingerprint": "1346f94b6db25068c6222de8289644c0"
   },
   {
    "code": "KIN 32A",
@@ -3853,16 +3713,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Communicate the responsibilities and assignments of each position on the basketball court from an offensive and defensive standpoint.",
     "Demonstrate proper ball handling, passing, and shooting technique.",
     "Demonstrate the physical training (i.e., strength, speed, conditioning) needed to compete at the intercollegiate level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c6c6bf580e67c3f66551039f6de2aa8a"
+   "fingerprint": "bc7f8231980c76b54e3246b53e724630"
   },
   {
    "code": "KIN 33",
@@ -3880,9 +3739,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "At the completion of KIN 33, students will be able to have an understanding of the demands and/or requirements associated with preparation for competitive athletic performance at the Intercollegiate level.",
     "At the completion of KIN 33, students will be able to verbally and physically demonstrate how to properly physically train for the preparation of an intercollegiate cross-country season.",
     "At the completion of KIN 33, students will be able to explain the general strategy and tactics of the sport as it relates to certain opponents.",
@@ -3893,7 +3751,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "02862f5a6a8ad7c11e38ba08352269b7"
+   "fingerprint": "1e691df6a009f7f674424f0ecae7971b"
   },
   {
    "code": "KIN 37C",
@@ -3911,15 +3769,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Reflect on their season and create an offseason training and conditioning program.",
     "Execute an off-season training and conditioning program that enhances strength, speed, agility, and skill."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d059f15cccc30c6987b3caae87190080"
+   "fingerprint": "7361466485e7f7ddc4ddf5725a72ded3"
   },
   {
    "code": "KIN 38C",
@@ -3937,15 +3794,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate effective defensive techniques.",
     "Demonstrate effective offensive techniques."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "4f04a7102eeafa2d12b21f72d770bb14"
+   "fingerprint": "3a620e073b29e5b3370cfc93b2cbd311"
   },
   {
    "code": "KIN 40C",
@@ -3963,16 +3819,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate effective on-court communication and leadership behaviors that contribute to coordinated team play.",
     "Execute targeted attacking to specific areas of the court (e.g., deep line, cross-court angle, tip short) with consistency during competitive play.",
     "Identify individual areas (technical or tactical) for improvement"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b3cc71235df4ed6268293e9aae75d31b"
+   "fingerprint": "2b9d4a6f2f6fbc00cd2481bca9431044"
   },
   {
    "code": "KIN 41C",
@@ -3990,9 +3845,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate an understanding of the responsibilities and assignments of each position on the basketball team from an offensive and defensive standpoint.",
     "Utilize competitive motivation.",
     "Identify correct rules, scoring and strategies for successful completion of an Intercollegiate Basketball game.",
@@ -4000,7 +3854,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b4377a627b771d7934d6bd351ccfe507"
+   "fingerprint": "dcd22de92e211826fcb6bf41285647d7"
   },
   {
    "code": "KIN 44B",
@@ -4018,16 +3872,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate appropriate offensive and defensive strategies to compete at the intercollegiate level.",
     "Demonstrate and apply etiquette and sportsmanship during intercollegiate competition.",
     "Demonstrate effective technical skills used in intercollegiate badminton competitions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "28a5d6692695e83135882b356625d59b"
+   "fingerprint": "e1679138a5bfda9319b20f6be53b1517"
   },
   {
    "code": "KIN 48B",
@@ -4045,15 +3898,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate an increase in fitness level.",
     "Understand and apply the laws of the game during an official soccer match."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1297317666bc590eb7feba4183f4fdc7"
+   "fingerprint": "c61d69b37681fb62bec64348c21095b0"
   },
   {
    "code": "KIN 50B",
@@ -4071,16 +3923,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of KIN 50B, students should be able to demonstrate and apply etiquette and sportsmanship through intercollegiate competition.",
     "Upon completion of KIN 50B, students should be able to demonstrate the ability to compete and excel at the highest level of community college competition.",
     "Upon completion of KIN 50B, students should be able to demonstrate the ability to maintain good academic standing with a 2.0 GPA and 12 units."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "204e2803a4454fc87938f706222c3787"
+   "fingerprint": "2adc926cee20c21fbc799ab18b47d069"
   },
   {
    "code": "KIN 61A",
@@ -4120,9 +3971,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Explain the social, economic, political, intellectual, and cultural contributions of LGBTQ+ people of the past and present.",
     "Explain how sexual identity and gender identity combine with nationality, race and ethnicity, religion, social class, and physical ability to shape the experiences of LGBTQ+ individuals.",
     "Synthesize the relationships between epistemological frameworks used in LGBTQ+ studies and those used in other areas (i.e. Queer Theory, Feminist Theory, and Critical Theory).",
@@ -4130,7 +3980,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e00ba3320822be2e55ce162895f2bd5e"
+   "fingerprint": "936462702e95ab9fc94f0db1bd237c78"
   },
   {
    "code": "LIBR 4",
@@ -4148,16 +3998,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Construct a search statement using topic relevant vocabulary in order to search with maximum effectiveness.",
     "Examine sources for characteristics that will impact its value as a research source; such as, currency, authorship, authority, relevance, bias, and purpose.",
     "Frmulate citations in the appropriate format and style."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b8037588b08c7a918d3ac20fee9797b9"
+   "fingerprint": "110209468c101783ad808802cb0f5a2f"
   },
   {
    "code": "MATH 10",
@@ -4175,9 +4024,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create an undirected graph that represents the network of objects in a set and find a minimum spanning tree for the graph.",
     "Determine whether a relation is an equivalence relation.",
     "Use mathematical reasoning and counting techniques to correctly enumerate the number of ways in which a specified event can occur.",
@@ -4185,7 +4033,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6e9be041b8ea0b3b73c5292119748271"
+   "fingerprint": "08b41365ea104606df1b7c6416a28d07"
   },
   {
    "code": "MATH 27",
@@ -4225,9 +4073,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze problems involving limits and continuity.",
     "Evaluate derivatives.",
     "Evaluate indefinite and definite integrals.",
@@ -4236,7 +4083,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1a9980d8b65d7a206676506bb9599a3c"
+   "fingerprint": "f95ac5e1939d47b97061d4dbeaf18192"
   },
   {
    "code": "MATH 5",
@@ -4254,9 +4101,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Construct and interpret the solution of a mass-spring system.",
     "Model an RLC using differential equations.",
     "Use a 4th order Runge-Kutta algorithm to solve an equation numerically.",
@@ -4264,7 +4110,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "deedeb4e95ebfd332a24509478e5ad09"
+   "fingerprint": "42ae631758c1fdaba85872eb9a4b4318"
   },
   {
    "code": "MKTG 56",
@@ -4282,16 +4128,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply customer service principles to retain and grow customer loyalty through recognized consistent systematic improvement processes and use of social media.",
     "Compare the tools and techniques used to create and enhance profitable customer service experiences in the traditional and digital sales environment.",
     "Create effective online marketing strategies and campaigns, and employ free web analytics tools to track and measure success."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6ed1fb9605f5277938bc977b736efa1e"
+   "fingerprint": "f8689c7f1b7656e5588edabfef59adea"
   },
   {
    "code": "MUS 10A",
@@ -4309,16 +4154,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze harmonic, melodic, and formal elements of chromatic music using a variety of techniques and approaches.",
     "Transcribe and correctly notate moderately advanced rhythms, chord progressions, and melodies.",
     "Utilize their knowledge of music theory to compose a variety of short pieces."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "756f5eec26d7ec9d76c6e1a70aae9019"
+   "fingerprint": "949e005696815e1ca8362c9b58abe803"
   },
   {
    "code": "MUS 13",
@@ -4336,15 +4180,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Articulate the influence of modern technology on musical instruments and recording techniques.",
     "Differentiate between various styles of rock and popular music."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2157ac405cf9eb784f0bf37261e27177"
+   "fingerprint": "d6cd2ee9f83fbc278d4993de6527bb75"
   },
   {
    "code": "MUS 146",
@@ -4362,16 +4205,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Tune upright and grand pianos at an intermediate level using industry standard equipment.",
     "Make intermediate repairs to upright and grand pianos.",
     "Voice a piano at an intermediate level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "29867eb2114910b30aa0a0dd0050b990"
+   "fingerprint": "984407fe603fa4980ec8f4ed1393677a"
   },
   {
    "code": "MUS 16",
@@ -4389,16 +4231,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "At the end of the semester the students will demonstrate the ability to play on pitch in a section and ensemble as directed by a conductor.",
     "Perform stylistically appropriately to the period/style of the composition.",
     "Students will demonstrate an adherence to recognized standards of professionalism is a rehearsal setting."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2b084cef5273bde015aadf309155ca7c"
+   "fingerprint": "6e5776d6ceb7572b7acb94cbf70add0c"
   },
   {
    "code": "MUS 18B",
@@ -4416,16 +4257,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply intermediate jazz/pop voicings and stylistic approaches to jazz/pop repertoire.",
     "Demonstrate the ability to interpret and perform intermediate lead-sheets.",
     "Improvise an intermediate piano solo over an intermediate chord progression."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5be1370dbfba3165b12cb198ee4ed798"
+   "fingerprint": "e217d8425c8ac92f08df9f8806b00a21"
   },
   {
    "code": "MUS 21B",
@@ -4443,16 +4283,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply intermediate music theory when performing scales, chords, and progressions.",
     "Employ intermediate piano technique and incorporate it into daily practice.",
     "Practice, master, and memorize intermediate repertoire in a variety of styles while displaying accurate rhythm, fingering, and expression."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "4b8b4cf713edd30e92bcaf9d5dc1b4e0"
+   "fingerprint": "cfb6c94aebf9ada59f3e54f9b44b290f"
   },
   {
    "code": "MUS 23A",
@@ -4470,16 +4309,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate an acute awareness of diction, vowels, and pronunciation in English and Italian singing.",
     "Demonstrate knowledge of the basic anatomy and physiology involved in tone production and the respiratory system and its contribution to singing.",
     "Present a polished performance of two songs. These songs must be memorized and demonstrate an improvement in vocal technique (clarity of tone, resonance and breath support) as proscribed by the instructor."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "101014692bf09a3c5d6ebe04062bf530"
+   "fingerprint": "49d7b11f21e77a9f17dd2d2d717054f0"
   },
   {
    "code": "MUS 27",
@@ -4497,16 +4335,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Address common challenges that are common to the piano teaching profession.",
     "Evaluate a variety of methods for teaching intermediate pianists.",
     "Present intermediate pieces to their students by explaining the form, compositional technique, style and mood of the piece, as well as the intent of the composer."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5c13d74eb6d001d964d1dde9cc21557f"
+   "fingerprint": "d6c7197a400ae4a940eab6d635079943"
   },
   {
    "code": "MUS 31",
@@ -4524,9 +4361,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Develop an understanding of intermediate to advanced music theory and be able to apply it to their piano playing through scales, chords, and simple progressions.",
     "Iillustrate a mastery of course knowledge through in-class performance.",
     "Learn and employ advanced piano technique and incorporate it into daily practice.",
@@ -4534,7 +4370,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "6927bbe37e058dcad0bcce42cfa96849"
+   "fingerprint": "ba4aff7a3fb6fe0c0e0894c92acf92e6"
   },
   {
    "code": "MUS 36",
@@ -4552,16 +4388,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate advanced techniques using a Digital Audio Workstation with MIDI and live audio capability.",
     "Explain and demonstrate advanced principles of sound and acoustics.",
     "Present completed audio projects using recorded live audio with appropriate editing, mixing, and mastering in a variety of formats."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9dcb5b73601a4d624ea4a9d3711ec3da"
+   "fingerprint": "8d177e8faf1ac0944bb186718da0d27a"
   },
   {
    "code": "MUS 4",
@@ -4579,16 +4414,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze particular musical works with regard to style, technical elements.",
     "Compare the parallel political and social climate that has affected jazz's evolution.",
     "Through informed listening and reading, students should be able to apply critical thinking and writing to distinguish the different styles of jazz and its most important pioneers and innovators."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "9e023709b250081a903794a969633d1e"
+   "fingerprint": "71f2b1d52dacf22d08081d8fc8f49b00"
   },
   {
    "code": "MUS 45",
@@ -4606,16 +4440,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate appropriate stage appearance and overall ability through multiples performances of music in a variety of cultural styles.",
     "Demonstrate improvements in advanced rhythms, intonation, overall musicianship, and ability to carry one’s part singing within an ensemble.",
     "Demonstrate successful ensemble methods, adhering to director’s instructions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b8d88097e1ffe94a7104e77f382b46b4"
+   "fingerprint": "d9371a9a4cc6dedcc73e3dcf883ae468"
   },
   {
    "code": "MUS 5",
@@ -4633,16 +4466,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze and interpret particular musical works with regard to style and technical elements.",
     "Distinguish and debate the contributions of the various cultures that make up America's popular music and its people.",
     "Synthesize factual information and historical evidence through informed listening, analysis, form, and repertoire."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ef2677cf9fda43f1240d40fb0d75ba0a"
+   "fingerprint": "77310c1c3bad726165e0b83a2b243304"
   },
   {
    "code": "MUS 8A",
@@ -4660,16 +4492,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze basic chord progressions using standard Roman Numeral analysis.",
     "Hear music with understanding, recognizing patterns, and musical function. To demonstrate this ability, students should be able to aurally identify all intervals - ascending, descending, and harmonic.",
     "Transcribe and correctly notate basic rhythms and melodies."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "43181a319b72c7af0190b28187705ff0"
+   "fingerprint": "02ce264fe7fb8858c5a015d65cdb6c32"
   },
   {
    "code": "NAUT A2",
@@ -4687,16 +4518,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Obtain and interpret powertrain data related to the transmission.",
     "Apply transmission/Transaxle repair safety precautions.",
     "Replace front pump seal."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "81bfcbf530525772accb2597474966af"
+   "fingerprint": "83585448f6196fee83f504d33251793f"
   },
   {
    "code": "NAUT A5",
@@ -4714,16 +4544,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Recognize and apply shop safety precautions.",
     "Obtain and interpret powertrain data related to the brake system.",
     "Apply brakes repair safety precautions."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "44f340a7def8217ebac186b0623d31ff"
+   "fingerprint": "41c37215374322f52d040e18a8ed47f6"
   },
   {
    "code": "NAUT A8",
@@ -4741,16 +4570,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply service manual techniques.",
     "Apply emission safety precautions.",
     "Read and interpret scanner data."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "850445db05684d0f63eb2e5925e58927"
+   "fingerprint": "319967cb86f807a3333802d7771d05df"
   },
   {
    "code": "NAUT L3",
@@ -4768,16 +4596,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use service information to perform a HV battery disconnect.",
     "Perform hybrid safety precautions with 100% accuracy.",
     "Perform the hybrid battery disconnect procedure."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5230e7029c1a649d7ff379c5199d7ab3"
+   "fingerprint": "240c4f164a006352c8601bdf300b2152"
   },
   {
    "code": "NAVI 202B",
@@ -4817,9 +4644,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Proficiently use standard biotech laboratory technique to correctly prepare assays.",
     "Accurately record procedures, and collect and interpret their data.",
     "Explain the principles underlying at least two common biotechnology techniques.",
@@ -4827,7 +4653,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f29d87162afc6b8933f9683a2458bfd3"
+   "fingerprint": "43d24e397d316222563b141a8bb4e723"
   },
   {
    "code": "NBUS 203",
@@ -4845,9 +4671,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Differentiate between decision making and problem solving.",
     "Acquire the knowledge to recognize the importance of creativity, and identify various blocks to problem solving",
     "Apply problem solving techniques in a role-play",
@@ -4855,7 +4680,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5e23af2853a426a4e55f744fe9c8909a"
+   "fingerprint": "99ec0934dafab53591f05d18ea87823a"
   },
   {
    "code": "NBUS 207",
@@ -4873,9 +4698,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Describe the meaning of conflict, recognize the causes of conflict, and design conflict resolution strategies.",
     "Determine one's own conflict style and develop skills for resolving interpersonal conflict.",
     "Identify different conflict styles and how they affect the workplace.",
@@ -4883,7 +4707,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e7947a7b4201fa2333ccda09411a639c"
+   "fingerprint": "730b98f71adba967f6b2fc18c1160ea9"
   },
   {
    "code": "NBUS 212",
@@ -4901,16 +4725,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Prepare an outline of the elements in a business plan.",
     "Identify and describe a business' target market.",
     "Identify multiple forms of capital attainment for their new business venture."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "62c4ba5ac108a5cbd77f9fc1e0ff6144"
+   "fingerprint": "d00f9fd2d73d632a24c86747a5706286"
   },
   {
    "code": "NBUS 215",
@@ -4928,9 +4751,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "When working with clients or customers, makes decisions based on client or customer needs and points of view, and ask how satisfied they are with the outcome.",
     "Look at the bigger picture of the work situation when solving problems.",
     "Share leadership by gathering ideas and using the skills of all team members.",
@@ -4938,7 +4760,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "05d6a87c907c084d3e05a8d09dfce626"
+   "fingerprint": "9ce94d0b1722ca4a4999342b53e09925"
   },
   {
    "code": "NENG 215",
@@ -4956,15 +4778,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and use a multi-step process for reading and writing assignments.",
     "Identify and use strategies to improve self-efficacy, including campus supports."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7be6142a5f3c77266fc17a40cd1fe53d"
+   "fingerprint": "f9745dbf9c5b44eac0b76b6d6d7b2813"
   },
   {
    "code": "NESL 213",
@@ -4982,16 +4803,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Present a researched topic accurately, professionally and persuasively.",
     "Understand main ideas and details in an oral presentation like an academic lecture or TED Talk.",
     "Distinguish between fact, opinion, and inference in an oral presentation."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "16b5a34583c3d93d6f3a8a823acab44c"
+   "fingerprint": "3b8566765b801a3068420342f9a61c29"
   },
   {
    "code": "NESL 221A",
@@ -5009,15 +4829,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate a low-intermediate ability to identify main ideas and supporting details in level-appropriate texts.",
     "Produce an essay of three or more paragraphs that demonstrates level-appropriate and coherent writing through organization, development, and language use."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e07fcd955d922f074c065ab9fc102077"
+   "fingerprint": "e159719f12c88905355d9e763f64cbb2"
   },
   {
    "code": "NESL 226",
@@ -5035,9 +4854,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "apply grammar and pronunciation rules to produce correct simple, compound, and learned complex sentences with stress on content words rather that function words.",
     "give oral directions and instructions.",
     "pronounce learned vocabulary and idiomatic expressions understandably.",
@@ -5045,7 +4863,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e702e048e03fc6920843a731780a6164"
+   "fingerprint": "34cbd35202f0102bf5b6214f3b176325"
   },
   {
    "code": "NESL 231A",
@@ -5063,15 +4881,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate a low-beginning ability to identify main ideas and supporting details in level appropriate texts.",
     "Produce paragraphs of 8 -12 sentences that demonstrate level appropriate and coherent writing through organization, development and language use."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "cb22a5e71d41e3005f1020de38c18874"
+   "fingerprint": "9b63a8687b0493d949381863a8f2460d"
   },
   {
    "code": "NESL 236",
@@ -5089,9 +4906,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Correctly pronounce level-appropriate vocabulary and idiomatic expressions.",
     "Identify and stress appropriate content word(s) in a sentence.",
     "Distinguish sounds in minimal pairs.",
@@ -5099,7 +4915,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "34304cfc0fcbd6511a82c5535e4b5ae3"
+   "fingerprint": "20fd006356be545997b19f9047f6c6a3"
   },
   {
    "code": "NLIB 203",
@@ -5117,16 +4933,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of NLIB 203, the student should be able to effectively use online tools to find quality information.",
     "Upon completion of NLIB 203, the student should be able to examine sources for characteristics that will impact its value as a research source.",
     "Upon completion of NLIB 203, the student should be able to identify different types of online content."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e79f3be3be74d40b8db0b574bacd9243"
+   "fingerprint": "2247d6f6ec8fe6f5b9806ddaa9807602"
   },
   {
    "code": "NMAT 201C",
@@ -5144,9 +4959,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Develop study skills and life skills that will improve the likelihood of succeeding in their academic goals, such as identifying individual growth mindset and learning about brain research, personal time management, study skills, test taking and conquering math anxiety strategies, etc.",
     "Identify challenging mathematics topics and be able to communicate in writing the correct strategies and processes for solving relevant mathematics problems.",
     "Read mathematical writing with understanding and use this skill as preparation to solve relevant mathematics problems.",
@@ -5154,7 +4968,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "152c320a977512c4e83ca8a157d8e8ab"
+   "fingerprint": "162c59e0435958a5147ee5a655a49cec"
   },
   {
    "code": "NMAT 256",
@@ -5172,15 +4986,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Construct a proof.",
     "Solve triangles."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "850da4aea749a7c7a09f7ea0fc1f1598"
+   "fingerprint": "6629e15021bc1701b61657fe6a52e791"
   },
   {
    "code": "NTRN 1",
@@ -5198,16 +5011,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply fundamental biological and biochemical principles to explain how nutrients function in the human body and influence health outcomes at both cellular and systemic levels.",
     "Evaluate nutrition claims and research using scientific methodology and evidence-based reasoning, distinguishing between scientifically supported information and pseudoscience while recognizing nutritional science's limitations and evolving nature",
     "Analyze nutrient intake using evidence-based recommendations and create informed dietary recommendations based on current nutritional guidelines supported by scientific consensus."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "75415da7e96b228cfb501e7a8ef55b8f"
+   "fingerprint": "9803ed7d8c87dc9b4dd9ec8f349ae8bc"
   },
   {
    "code": "OSH 50",
@@ -5225,9 +5037,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Articulate the historical development of occupational safety in the United States.",
     "Discuss the various occupational safety and health disciplines and related roles and responsibilities.",
     "Implement basic safety management principles, including hazard determination and control identification, development and implementation of effective training programs, accident investigation, and OSHA required record-keeping and reporting.",
@@ -5235,7 +5046,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5c48b2a7dc8b6771b3db324fbfe2c960"
+   "fingerprint": "e925f02f85956951b0516ba250ed0855"
   },
   {
    "code": "OSH 67",
@@ -5253,9 +5064,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Assess the applicability of current regulations to their organization and regulatory trends needing incorporation into their health and safety program.",
     "Describe the responsibilities of the employer and the employee under the Occupation Safety and Health Act.",
     "Discuss the structure of an OSHA inspection and the role of the safety specialist when an OSHA inspection occurs at their workplace.",
@@ -5264,7 +5074,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "559096a32861b0dde20ca2720684caea"
+   "fingerprint": "0dcc09c1f84d1295753551c537b82f55"
   },
   {
    "code": "PCN 5",
@@ -5282,16 +5092,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze various case studies to determine the proper role of a social worker and the various factors influencing the situation.",
     "Identify the legal, ethical, and professional practice responsibilities of working within social work and human service organizations.",
     "Investigate social worker duties in dealing with a wide variety of difficult social issues such as discrimination, oppression, maltreatment, poverty and injustice."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3cf371efbbd9c8b61e97ba18f36053f4"
+   "fingerprint": "9bc901d6cf8369954d6c58008158d198"
   },
   {
    "code": "PHIL 1",
@@ -5309,15 +5118,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Effectively participate and express opinions in a group and whole-class setting in a way that is respectful and well thought-through.",
     "Use philosophical methods to explain, apply and evaluate philosophical positions of their own and of significant historical figures."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "817d23b14ea2841280031654ab25d896"
+   "fingerprint": "874278704e16f2167730b2a34ae06ed6"
   },
   {
    "code": "PHIL 4",
@@ -5335,15 +5143,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Effectively participate and express opinions in a group and whole-class setting in a way that is respectful and well thought-through.",
     "Use philosophical methods to explain, apply, and evaluate specific epistemic theories."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3766cd78e0230fe5452a8404216f768b"
+   "fingerprint": "b968c50138d1333dc819ea5114b62155"
   },
   {
    "code": "PHTO 29P",
@@ -5381,16 +5188,15 @@
    "title_printed": "Admin Outline",
    "chars": 3157,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Produce a portfolio of photographic prints demonstrating proficiency with film-based darkroom or digital, computer-based equipment."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "099630b08927d23c07d54143a52129e2"
+   "fingerprint": "419be6d563652ed4d7a84f59e443cd59"
   },
   {
    "code": "PHTO 58",
@@ -5408,16 +5214,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate knowledge of both the technical and aesthetic aspects of video field production.",
     "Correctly operate field and video equipment.",
     "Successfully use an industry-standard digital video editing program to produce completed video projects combining video, sound, and titles."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "79bba233fb5bac760155a1a6aad7a913"
+   "fingerprint": "54cac0ad39bacc321b3d9323623c8906"
   },
   {
    "code": "PHTO 66",
@@ -5433,16 +5238,15 @@
    "title_printed": "Admin Outline",
    "chars": 9622,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply intermediate level functions found in image editing and image processing software"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3fd6b7756ce6c07cbe456760661243a6"
+   "fingerprint": "ea2dfccc949a1791b86b9b244018efd7"
   },
   {
    "code": "PHTO 69",
@@ -5458,16 +5262,15 @@
    "title_printed": "Admin Outline",
    "chars": 12316,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Successfully utilize field-recording equipment, such as off-camera microphones and audio mixers to improve sound quality of footage."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f4c5a1868bbe723b8ac59f6374d9fe79"
+   "fingerprint": "1980c39222508393d1a9b859c661b4d5"
   },
   {
    "code": "PHYS 10",
@@ -5485,16 +5288,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of PHYS 10, students should be able to describe the ways in which scientific principles have shaped the modern world and relate to daily life.",
     "Explain fundamental physical principles in mechanics, electricity and magnetism, thermodynamics, optics, relativity, and modern physics.",
     "Use quantitative reasoning to determine relationships between physical quantities."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "751d93eafc48a2b6c03ab81df13af165"
+   "fingerprint": "a2a7370cbdce399dfc35952b8ad34e30"
   },
   {
    "code": "PHYS 1B",
@@ -5512,16 +5314,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze physical situations quantitatively using principles of hydrodynamics, thermodynamics, harmonic motion, wave motion, and optics.",
     "Design and conduct laboratory experiments, and analyze and interpret their data.",
     "Effectively communicate the methods, analysis, results, and conclusions of their own scientific experiments."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "aab85a99aa33d3f24663114479adefaa"
+   "fingerprint": "7b59ef57958699a5ac59eaeef5770d27"
   },
   {
    "code": "PHYS 2A",
@@ -5539,16 +5340,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze physical situations quantitatively using Newtonian mechanics, conservation laws, thermodynamics, hydrodynamics, and principles of harmonic and wave motion.",
     "Design and conduct laboratory experiments, and analyze and interpret their data.",
     "Effectively communicate the methods, analysis, results, and conclusions of their own scientific experiments."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d1abce1ba843e7dfa2545c62f3c767de"
+   "fingerprint": "5e9e9a29bed7dd10c3d3c033e30b3a56"
   },
   {
    "code": "PIC 2",
@@ -5566,16 +5366,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate when and how to disguise drop shots, execute smashes and implement lob shots.",
     "Demonstrate knowledge of when and how to utilize pickleball singles strategies.",
     "Apply Dweck's Self Theory to pickleball performance."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d1189fa35242ddd1a76d2d8b234291bc"
+   "fingerprint": "3a8849521bef275802418b20375f8fe9"
   },
   {
    "code": "PL 1",
@@ -5593,15 +5392,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate correct alignment for Pilates mat work.",
     "Demonstrate neutral spine, c-shape, and scoop."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5e4639deb05804c65f1cf55802457dab"
+   "fingerprint": "71b0afaf860b1c99f454ed335ed32ce7"
   },
   {
    "code": "POLI 20",
@@ -5619,9 +5417,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Assess and analyze contemporary issues in comparative government, institutions, and political problems drawn from selected national governments.",
     "Assess and analyze relevant comparative theories and apply them to contemporary political phenomena.",
     "Demonstrate an understanding of socioeconomic and/or political power disparities existing along the lines of identities such as race, class, gender, sexuality, legal status, and religion.",
@@ -5629,7 +5426,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3a3e3e5fc87bc654748e78ed8098cd2b"
+   "fingerprint": "683ef5c9361610f767e649b77cfae0d7"
   },
   {
    "code": "POLS C1000",
@@ -5647,9 +5444,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze and critically assess various types of sources in the field of U.S. and California government and politics.",
     "Demonstrate understanding and application of theories and concepts in U.S. and California politics.",
     "Explain the civil liberties and civil rights of individuals as articulated in the U.S. Constitution and federal court decisions.",
@@ -5659,7 +5455,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ad79c60e5a7df4ef864a4b5610a75699"
+   "fingerprint": "f262e62515baea1d222a510ddd6129a2"
   },
   {
    "code": "PSYC 13",
@@ -5677,9 +5473,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze the ways in which the course material could be applied to real world problems and issues.",
     "Apply theories, concepts and findings in the field of psychology of women for self-understanding, self-improvement, and lifelong learning.",
     "Demonstrate critical thinking skills and information competence as applied to topics in the field of psychology of women.",
@@ -5688,7 +5483,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "705df425023f671721b3132dd110e395"
+   "fingerprint": "b27a1fab2e0107f8368966881296e45a"
   },
   {
    "code": "PSYC 21",
@@ -5706,9 +5501,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Appraise one's own ethnic/cultural origins and one's biases towards certain groups.",
     "Compare and contrast research biases in the study of individuals from diverse populations.",
     "Compare and contrast the effects of prejudice, stereotyping, and discriminatory attitudes and behaviors upon majority and minority groups.",
@@ -5718,7 +5512,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "21802ae419a532dd2c6e6ea9b8aa5434"
+   "fingerprint": "6971f432d3ccf557185e943633588571"
   },
   {
    "code": "PSYC 3",
@@ -5736,9 +5530,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate familiarity with the major concepts, theoretical perspectives, research methods, and empirical findings in social psychology.",
     "Explain ways in which the influence of others, situational factors, and the surrounding culture affect human social behavior.",
     "Analyze the ways in which social psychological principles and research apply to real world problems and issues.",
@@ -5747,7 +5540,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b647ffd2a58b77001dfc46c9fa58aeab"
+   "fingerprint": "fe6e8e7a10ade08fb3c5e43cb29e2618"
   },
   {
    "code": "PSYC C1000",
@@ -5765,9 +5558,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Explain the major concepts, theoretical perspectives, research methods, core empirical findings, and historic trends in psychology.",
     "Discuss the impact of diversity on psychological research, theory, and application.",
     "Apply theories, concepts, and findings in psychology for self-understanding, self-improvement, and lifelong learning.",
@@ -5775,7 +5567,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "f2e2d475f0057bcb209233e7e0605033"
+   "fingerprint": "3dd10f7d900278ea7e97679a1b3b95e8"
   },
   {
    "code": "RADS 40C",
@@ -5793,16 +5585,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify appropriate waste disposal processes.",
     "Describe requirements for safe transportation of radiological materials.",
     "Determine pathways for radiological transport in the environment and sampling strategies."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7cc90177c4d34c67c1340299eb76164b"
+   "fingerprint": "d77f1bc727d1deecb69c92480feacd5e"
   },
   {
    "code": "SBV 1",
@@ -5820,16 +5611,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate appropriate offensive and defensive strategies of soccer beach volleyball",
     "Demonstrate cooperation and team work within round-robin play.",
     "Demonstrate knowledge of the basic terminology and skills needed to participate in Soccer beach volleyball."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "89c9781eecac350f2bf2eef2966afb68"
+   "fingerprint": "9028102c5b8e31a89571760f047c4735"
   },
   {
    "code": "SI 1",
@@ -5847,16 +5637,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate beginning-level soccer skills.",
     "Integrate the rules of the soccer during small and large sided scrimmages.",
     "Recognize indoor soccer terminology."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "49fbff414bcd599d30ba0273042cb4ec"
+   "fingerprint": "286b03a9d96cb6347b37e90804d3b3b6"
   },
   {
    "code": "SO 2",
@@ -5874,16 +5663,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate soccer knowledge including five phases of trapping, heading, kicking, passing, dribbling, and soccer field dimensions.",
     "Evaluate, with use of video playback, individuals' soccer technique when demonstrating the: Push pass, driven pass, bent pass, shooting with laces, moves to beat the defender, 1v1 defending, and attacking and defensive heading.",
     "Your opponent's tactic is to defend deep in numbers and counter-attack. Devise a practice and strategy that will prepare your team to outwit the opposition."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "529f70139dd799f6c31559e595acff74"
+   "fingerprint": "5d836e6edc3c07b9ef513845357e78e3"
   },
   {
    "code": "SOC 12",
@@ -5901,9 +5689,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify various theories of popular culture.",
     "Outline the various processes of globalizing popular culture.",
     "Outline the growing role of popular culture in the various stages of socialization.",
@@ -5913,7 +5700,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ea8f1cf9966d291fa4c222a43a421508"
+   "fingerprint": "ff2b19f6e7d8ba032715e0073cfeff8d"
   },
   {
    "code": "SOC 4",
@@ -5931,16 +5718,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Outline multiple family theories.",
     "Apply family theory to changing family structures.",
     "Produce a document that connects sociological research methods to family theory."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "2c60757b88d9d4d64f592e08d5e3d24e"
+   "fingerprint": "6a406fee159b74e8cd4b11e7afb7e92d"
   },
   {
    "code": "SOC 7",
@@ -5958,16 +5744,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Outline major sociological theories of sexuality.",
     "Apply major sociological theories of sexuality to current sexual practices.",
     "Produce a document which connects sociological research methods to sexuality theory."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "946ae7d8a2e9a5aae1f21a1201eb5ca8"
+   "fingerprint": "e5a3c6360c1dd94184c99ea26ab011bd"
   },
   {
    "code": "SPAN 21",
@@ -5983,16 +5768,15 @@
    "title_printed": "Admin Outline",
    "chars": 13205,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Write a composition of at least 500 words demonstrating the correct use of an expanded vocabulary, using advanced grammatical structures, and appropriate register."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c68ddd40aaec08ff1e660d7abde8ce4b"
+   "fingerprint": "e6ea15cc29b5bc8dfadf5d07e9a76a17"
   },
   {
    "code": "SPAN 2B",
@@ -6010,16 +5794,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Comprehend spoken Spanish at the advanced intermediate level.",
     "Orally communicate at the advanced intermediate level.",
     "Write at the advanced intermediate level."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ad29311acfe26b10bfa22fdda0f7c972"
+   "fingerprint": "be843238662d891a59b62978d16bc47c"
   },
   {
    "code": "SW 2",
@@ -6037,15 +5820,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate competency of beginning-level swimming skills; including basic swim strokes (competitive and non-competitive) for 25 yards.",
     "Illustrate the basic breathing technique for each of the four competitive strokes."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "445b1983cf1945543e38f33d1e148a26"
+   "fingerprint": "6c3a8fd5f34da0eb4a2841df6357093c"
   },
   {
    "code": "SWF 1",
@@ -6063,15 +5845,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Illustrate a personalized training program based upon aquatic training principles.",
     "Demonstrate improvement in a timed swim."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "8f8c785a8ef8966a4e2c8cfcd874bdd7"
+   "fingerprint": "cc1a7cb6671a72cc986f312e9ea640fe"
   },
   {
    "code": "SWF 4",
@@ -6089,16 +5870,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate improvement in a timed distance swim.",
     "Demonstrate the benefit of interval training and pacing through demonstrated improvement in a timed 20 minute swim.",
     "Identify the benefits of interval training and pacing as they relate to distance training."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "84eaaa8295b6c2f78952593c10e57362"
+   "fingerprint": "08a0e64b543a1dbfb8259ceeb8f1da92"
   },
   {
    "code": "THEA 11",
@@ -6116,9 +5896,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze motion pictures utilizing proper film vocabulary.",
     "Compare and contrast stage scripts and film adaptations.",
     "Discuss the purposes of dramatic art (film and theatrical).",
@@ -6126,7 +5905,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "bcf9866fb4a8b39a058538d415d2ed88"
+   "fingerprint": "7c629ec4766bab01fe2e7acdcffcac7e"
   },
   {
    "code": "THEA 25",
@@ -6144,9 +5923,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply basic skills and methods of voice & speech production to prepare for a role onstage.",
     "Apply elements of the International Phonetic Alphabet as a personal standard in text analysis.",
     "Perform a compelling solo piece utilizing voice & speech techniques for greater clarity and effectiveness.",
@@ -6154,7 +5932,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "e49485b71462219c180bb454bbbd3d70"
+   "fingerprint": "f0ca6522548f0dc6e28044c903bb67a8"
   },
   {
    "code": "THEA 31C",
@@ -6172,9 +5950,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create and dramatize the behavioral life of a character in rehearsal and performance using advanced acting skills.",
     "Assist in the design of basic production elements such as props, costumes, and sets to create the world of a play.",
     "Demonstrate a responsible work ethic within a professional framework of collaboration with directors and fellow actors in rehearsal and performance.",
@@ -6182,7 +5959,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d18aa9bbe19983f29eca55e958affdbe"
+   "fingerprint": "03c20b0f2c6092bbda52dd0b6cb8adaa"
   },
   {
    "code": "THEA 39B",
@@ -6200,9 +5977,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create a professional portfolio for auditioning with sheet music, resume and headshot/photo.",
     "Demonstrate a responsible work ethic within a professional framework of collaboration in rehearsal and performance.",
     "Examine major genres and contributors of the American Musical Theater.",
@@ -6210,7 +5986,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1b73b4ba83a0b13effefdb90e8fcde81"
+   "fingerprint": "7c97af51c4d8e4c970c9931920c27ce4"
   },
   {
    "code": "THEA 3B",
@@ -6228,16 +6004,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Critique a live improvisation and identify the use of accepted rules of engagement.",
     "Demonstrate the ability to act appropriately and spontaneously to a variety of audio, visual, or written materials without prior rehearsal.",
     "Synthesize the ideas of others within an improvisation."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "8021a21950ca923fca2fcac139660aab"
+   "fingerprint": "a60c2e76574eacbe8d3cefad80e241e3"
   },
   {
    "code": "THEA 47A",
@@ -6255,9 +6030,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Apply physical and vocal techniques in rehearsal and performance.",
     "Identify and explain the responsibilities of an actor in a play.",
     "Rehearse and perform a characterization that is believable, accurate, consistent and energized in a play.",
@@ -6267,7 +6041,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "ca21b5f79986f8ee117fa9d6c2e44ef4"
+   "fingerprint": "e7afc0e3b52421abe82e7804d0895505"
   },
   {
    "code": "THEA 47D",
@@ -6285,9 +6059,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create a leading role character, and perform this role in a live theatre event.",
     "Create a small outreach event to bring theater to local organizations, schools, and community centers.",
     "Demonstrate professionalism in community outreach events and public publicity endeavors to advertise the program and production to local community.",
@@ -6298,7 +6071,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c3b2d017d562ddfad1720a2c80365267"
+   "fingerprint": "9e3f34095b23a01f32f68a585f0bbbfe"
   },
   {
    "code": "THEA 48C",
@@ -6316,16 +6089,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and produce all of the material typically required in one of the design areas, lighting, projection, sound, costume, or scenic.",
     "Work as a designer or assistant designer at a beginning or intermediate level.",
     "Work collaboratively with designers, technicians, and other theater personnel."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "4f96ed7cab5c0014757fcb67c2255d9f"
+   "fingerprint": "6d8debece48e0135c0047a5a164d539d"
   },
   {
    "code": "THEA 50",
@@ -6343,9 +6115,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze technical theatre production problems; evaluate alternatives and recommend solutions.",
     "Recognize and use at a fundamental level terminology, tools, materials, and processes and techniques, typically found in a theatrical environment.",
     "Recognize theatrical crew organization, and perform basic tasks typically associated with lighting, sound, scenic, or costume crews.",
@@ -6353,7 +6124,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "1c8233031d905fded71bc21cbb28353a"
+   "fingerprint": "a330fddb006117ab86b2518fc2a66dbd"
   },
   {
    "code": "THEA 52",
@@ -6371,9 +6142,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze a script and create a scenic, lighting, sound, or costume design for an assigned production.",
     "Evaluate the effectiveness of a scenic, lighting, sound, or costume design in a given production at a fundamental level.",
     "Produce fundamental technical and creative paperwork for a scenic, lighting, costume, or sound design for an assigned production.",
@@ -6381,7 +6151,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3fd65e4a58462a8c0596ec9391be4607"
+   "fingerprint": "621f5ce7f93467045b5abd03472a93c6"
   },
   {
    "code": "THEA 55",
@@ -6399,16 +6169,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Use of physicality in storytelling by creating three short presentations using the techniques of a chosen methodology (Alexander, Laban, Suzuki, Viewpoints).",
     "Design a personalized physical warm up and maintenance schedule for the body as an instrument in performing as an actor.",
     "Execute activities and sequences that demonstrate the Alexander Technique, Laban, Suzuki, and the Viewpoints methods of movement."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "7ba4af4bc0e11f286d921c51fbc23b32"
+   "fingerprint": "26dc1e135c891f0747f3abe53b64ce09"
   },
   {
    "code": "THEA 57B",
@@ -6426,15 +6195,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Complete a thorough and written character analysis, completed with imagined and specified historical background of the character.",
     "Use at least two rehearsal techniques for creating character and making acting choices."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "88fb9ac4b910efae925d90e11c420a49"
+   "fingerprint": "5c421dac6ca9dba0758e35bd0a1e3ef8"
   },
   {
    "code": "THEA 58",
@@ -6452,9 +6220,8 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Analyze a scripted scene for fight choreography notation.",
     "Participate with safety and confidence in armed and unarmed stage combat.",
     "Perform a short scene with armed and unarmed stage combat as a certification requirement.",
@@ -6462,7 +6229,7 @@
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "471dc84b00608e6d3bce320adb83758f"
+   "fingerprint": "29b73497e0f693658fdc3c425c43132b"
   },
   {
    "code": "VB 2",
@@ -6480,16 +6247,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate basic skills to include forearm passing, setting, attacking, digging, blocking, andserving.",
     "Explain basic rules for indoor volleyball.",
     "Perform agility footwork general to athletics and sport specific to volleyball."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "46e8d7b2ecdf9d26cee52d9a9c98480a"
+   "fingerprint": "0ee9e4183a84081e98433d55c16e6134"
   },
   {
    "code": "VWT 10",
@@ -6507,15 +6273,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "describe the seasonal appearance and physiological functions of a grapevine from \"pruned\" dormancy to harvest.",
     "identify the external, structural components of a modern trellis system trained grape vine."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b6d6613b5657b0eef2b32b84bc2d55e1"
+   "fingerprint": "95386a0a7b16ea55dac9afc5798d9339"
   },
   {
    "code": "VWT 20",
@@ -6533,15 +6298,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Explain the impact that oak aging can have on the organoleptic components of red and white wines.",
     "Explain the process of alcoholic fermentation."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "8b89dd20a7f4ab5821d4987124df5ec1"
+   "fingerprint": "3e3701b6c3cece9e4e142eb4761fc2bc"
   },
   {
    "code": "VWT 25",
@@ -6559,15 +6323,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Accurately describe a wine's qualities both objectively and subjectively and understand when each of these assessments are appropriate to apply.",
     "Describe the organoleptic properties of both sound and flawed wines."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "176bb84bff41ea70b332965bc2450e28"
+   "fingerprint": "c00ad544ba7f6b49f33efeaff66239a2"
   },
   {
    "code": "VWT 33",
@@ -6585,15 +6348,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify and explain the functions of the components that make up a working vineyard irrigation system including PVC piping and fittings, low voltage valves, filters, tubing, emitters, and the system controller.",
     "Identify the external, structural components of a modern trellis system trained grape vine."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "c8056a785279b66727eb8c4284bd0cfd"
+   "fingerprint": "cb231bce4b0ce6dc98a322ad553c7936"
   },
   {
    "code": "VWT 42",
@@ -6611,15 +6373,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate a working knowledge of the fermentation process",
     "Demonstrate proficiency at measuring and analyzing the required analysis parameters of must and wine"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "64b5d110af160b7ce72f03ba0154ef5e"
+   "fingerprint": "88b9a7d0ea105dd1713c7a89542d4efe"
   },
   {
    "code": "VWT 55",
@@ -6637,15 +6398,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Identify the external, structural components of a modern trellis system trained grape vine",
     "Describe the seasonal appearance and physiological functions of a grapevine from \"pruned\" dormancy to harvest"
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "b928444c1855143e34ac6e116dafc1ae"
+   "fingerprint": "9eec7bf9d491e93d7c2215bad0045d27"
   },
   {
    "code": "WLDT 55",
@@ -6663,16 +6423,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate GD&T symbol identification and usage.",
     "Identify the three primary views in an orthographic drawing.",
     "Read and interpret a detail part drawing."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3f198add3c5539dde50a937a590a1f71"
+   "fingerprint": "63c3600b259691a893e3bdb355ebdd40"
   },
   {
    "code": "WLDT 61BL",
@@ -6690,16 +6449,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate safety awareness in the welding workplace.",
     "Demonstrate skills required to pass AWS D1.1 - 3G limited thickness A36 steel test plate using FCAW.",
     "Demonstrate skills required to pass AWS D1.1 - 3G limited thickness A36 steel test plate using SMAW."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "d63ecd62d6a150f2d92b1654a77a7dd8"
+   "fingerprint": "5ad0c778f83ba3f211414c59d58befb4"
   },
   {
    "code": "WLDT 62BL",
@@ -6717,16 +6475,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate safety awareness in the welding workplace.",
     "Demonstrate skills required to pass AWS D1.1 - 3G limited thickness A36 steel test plate using GMAW.",
     "Demonstrate skills required to pass AWS D1.1 - 3G limited thickness A36 steel test plate using GTAW."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "3c55cef921f8f33b8a57836b9d801b1c"
+   "fingerprint": "247c404e8102eb5b6c1e7e0531ec9a1b"
   },
   {
    "code": "WLDT 67A",
@@ -6744,15 +6501,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate safety awareness in the welding workplace.",
     "Demonstrates self directed goals achievement."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "995503cba58ead345888439e7cafa572"
+   "fingerprint": "4b6ff9af7eef49e1021f41647a93ab6b"
   },
   {
    "code": "WLDT 67D",
@@ -6770,15 +6526,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate safety awareness in the welding workplace.",
     "Demonstrate self-directed goals achievement."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "428858f93bfcdf97701b7d975bc31290"
+   "fingerprint": "5b296a6f86928509b88dee0774df74ae"
   },
   {
    "code": "WLDT 69BL",
@@ -6796,16 +6551,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate safety awareness in the welding workplace.",
     "Demonstrate skills required to pass AWS D1.1 - 5G - 6\" Schedule 40 carbon steel pipe welding test with ER70S GTAW root and ER7018 SMAW cover.",
     "Layout a mitered offset on a piece of pipe."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "99407c8c620df33ee42fbae8f8a57907"
+   "fingerprint": "393e3b97b7f40fa23631a2c9ffc01666"
   },
   {
    "code": "WLDT 72",
@@ -6821,16 +6575,15 @@
    "title_printed": "Admin Outline",
    "chars": 5827,
    "offered_at": null,
-   "shape": "list",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Calculate the power density of a laser weld based on a given spot size."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "42ddcde5eb117b3e49b4cc7ae5810393"
+   "fingerprint": "1a71d50a2a1d87f55951e78eebb390b3"
   },
   {
    "code": "WLDT 79",
@@ -6848,15 +6601,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Upon completion of WLDT 79, a student should be able to produce a manufacturing traveler for a manufactured item or component.",
     "Upon completion of WLDT 79, a student should be able to provide an oral description of the processes used to make a manufactured item."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "28b3db7e37e017bb048473431ebe83ab"
+   "fingerprint": "87b09dff598f0727f1d5f7488e32553d"
   },
   {
    "code": "WRKX 94",
@@ -6874,15 +6626,14 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate development of professional work skills at the workplace.",
     "Create a professional résumé."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "467869a62025a852a0b101b126c560fe"
+   "fingerprint": "d00991eab0414171319d3b422f8db983"
   },
   {
    "code": "WT 2",
@@ -6900,16 +6651,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Demonstrate an increase in muscular strength.",
     "Demonstrate proper form while performing intermediate weight training exercises.",
     "Identify which major muscle groups are activated during specific weight training exercises."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "78372cd1afb360de9d13ca4860c74a0d"
+   "fingerprint": "8dcba58ff4fc9c3afe0f00d0fdc2a336"
   },
   {
    "code": "YIN 1",
@@ -6949,15 +6699,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
-    "Upon the completion of this course, the student should be able to:",
     "Create and demonstrate a logical flow of yoga poses.",
     "Demonstrate intermediate/ advanced yoga poses with proper alignment and appropriate breathing technique."
    ],
    "maps_to": null,
    "parsed_from": "text",
-   "fingerprint": "5c9cf541f9a9a051502f105e4d721585"
+   "fingerprint": "c013eb93e422deeae10782f723a764de"
   }
- ]
+ ],
+ "lead_fixed_note": "S664: the lead-in filed as outcome 1 moved to lead in 252 rows, fingerprints recomputed (receipt kb/receipts/course_outcomes_laspositas_lead_fix_s664.md)."
 }

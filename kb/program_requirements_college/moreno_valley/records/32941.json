@@ -44,29 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 20,
    "listed": 20,
-   "share": 0.85,
-   "missing": [
-    "ECO7",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
-   "flagged": [
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -80,6 +86,7 @@
     18.0,
     19.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +102,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -309,5 +327,6 @@
    "Program learning outcomes are printed for the program as a whole and recorded for this award."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

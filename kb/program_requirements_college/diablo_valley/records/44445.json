@@ -46,41 +46,55 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 24,
    "listed": 26,
-   "share": 0.692,
+   "share": 0.923,
    "missing": [
-    "BIOSC102",
-    "BIOSC117",
-    "BIOSC119",
     "BIOSC130",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146",
     "PSYC214"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL117",
+     "listed": "BIOSC117",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 1,
    "codes": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOLC1000",
     "PH250"
    ],
    "flagged": [
-    "BIOL117",
-    "BIOL119",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOLC1000",
     "PH250"
    ],
    "pass": true
@@ -428,5 +442,6 @@
    "Program learning outcomes are printed once for the program and recorded for this A.S.-T award."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

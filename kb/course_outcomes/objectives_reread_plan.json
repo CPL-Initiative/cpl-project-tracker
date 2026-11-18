@@ -18,121 +18,6 @@
  "order": [
   {
    "step": 1,
-   "host": "sdccd",
-   "system": "curriqunet",
-   "colleges": [
-    "San Diego Miramar College",
-    "San Diego City College",
-    "San Diego Mesa College"
-   ],
-   "slugs": [
-    "san_diego_miramar",
-    "san_diego_city",
-    "san_diego_mesa"
-   ],
-   "articulations": 319,
-   "first_read": "38351637385",
-   "pages": 1641,
-   "parts": 4,
-   "expect": "objectives on every trial page of the All Fields report (trial 38350787486, 12 of 12)",
-   "branch": "claude/slo-objectives-sdccd",
-   "read": [
-    "index=kb/course_outline_index/index_38350560193.json",
-    "slugs=san_diego_city,san_diego_mesa,san_diego_miramar",
-    "parts=4",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=sdccd",
-    "kind=objective",
-    "slugs=san_diego_city,san_diego_mesa,san_diego_miramar"
-   ]
-  },
-  {
-   "step": 2,
-   "host": "sac",
-   "system": "curriqunet",
-   "colleges": [
-    "Santa Ana College"
-   ],
-   "slugs": [
-    "santa_ana"
-   ],
-   "articulations": 216,
-   "first_read": "41589637097",
-   "pages": 1373,
-   "parts": 4,
-   "expect": "objectives on every trial page (trial 41436124244, 12 of 12)",
-   "branch": "claude/slo-objectives-sac",
-   "read": [
-    "index=kb/course_outline_index/index_41399078640.json",
-    "slugs=santa_ana",
-    "parts=4",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=sac",
-    "kind=objective",
-    "slugs=santa_ana"
-   ]
-  },
-  {
-   "step": 3,
-   "host": "laspositas",
-   "system": "curriqunet",
-   "colleges": [
-    "Las Positas College"
-   ],
-   "slugs": [
-    "las_positas"
-   ],
-   "articulations": 174,
-   "first_read": "41784805869",
-   "pages": 776,
-   "parts": 3,
-   "expect": "objectives on every trial page (trial 41595084107, 12 of 12)",
-   "branch": "claude/slo-objectives-laspositas",
-   "read": [
-    "index=kb/course_outline_index/index_41589640082.json",
-    "slugs=las_positas",
-    "parts=3",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=laspositas",
-    "kind=objective",
-    "slugs=las_positas"
-   ]
-  },
-  {
-   "step": 4,
-   "host": "cccd",
-   "system": "courseleaf",
-   "colleges": [
-    "Coastline Community College"
-   ],
-   "slugs": [
-    "coastline_community"
-   ],
-   "articulations": 123,
-   "first_read": "38508963773",
-   "pages": 555,
-   "parts": 2,
-   "expect": "objectives on the pages that print SLOs (trial 38508460207, 9 of 9)",
-   "branch": "claude/slo-objectives-coastline",
-   "read": [
-    "catalog=coastline_community",
-    "parts=2",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=cccd",
-    "kind=objective",
-    "slugs=coastline_community"
-   ]
-  },
-  {
-   "step": 5,
    "host": "cccd",
    "system": "courseleaf",
    "colleges": [
@@ -156,8 +41,7 @@
     "host=cccd",
     "kind=objective",
     "slugs=golden_west"
-   ],
-   "after": "step 5 loaded (the same host, catalog.cccd.edu)"
+   ]
   }
  ],
  "not_reread": [
@@ -258,6 +142,31 @@
    "slug": "norco",
    "read": "43532407553",
    "objectives": "754 objective rows loaded (load 43546799435)"
+  },
+  {
+   "slug": "san_diego_city",
+   "read": "43566273142",
+   "objectives": "698 objective rows loaded (load 43585473767)"
+  },
+  {
+   "slug": "san_diego_mesa",
+   "read": "43566273142",
+   "objectives": "1151 objective rows loaded (load 43585473767)"
+  },
+  {
+   "slug": "san_diego_miramar",
+   "read": "43566273142",
+   "objectives": "683 objective rows loaded (load 43585473767)"
+  },
+  {
+   "slug": "santa_ana",
+   "read": "43666467090",
+   "objectives": "1362 objective rows loaded (load 43684986821)"
+  },
+  {
+   "slug": "las_positas",
+   "read": "43816095571",
+   "objectives": "776 objective rows loaded (load 43825849738)"
   }
  ]
 }

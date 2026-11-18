@@ -52,6 +52,7 @@
     "MIS10B"
    ],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -69,8 +70,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     34.0,
     37.0
@@ -79,9 +80,9 @@
     34.0,
     36.0
    ],
-   "why": [
-    "the blocks sum to 34.0-37.0; the catalog states 34.0-36.0"
-   ]
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +98,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -279,5 +291,6 @@
    "General education is mentioned generically ('including general education') without naming a pattern."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

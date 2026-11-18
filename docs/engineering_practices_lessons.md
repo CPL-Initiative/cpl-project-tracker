@@ -1,7 +1,7 @@
 ---
 title: Engineering Practices — Decisions & Lessons (dev infra, testing, design system)
 date: 2026-06-04
-last_updated: 2026-06-04
+last_updated: 2026-11-18
 session: 32 (Busy Feynman) — established from the Session-32 retrospective
 status: ACTIVE — committed test harness + CI + stop-hook fix shipped; design-system tokens established; CLAUDE.md trim + bulk CSS migration STAGED
 tags: [engineering, dev-infra, testing, jsdom, ci, design-system, process]
@@ -136,3 +136,31 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
 - **Hold a merge that a cron run could overwrite until that run finishes.** The ETHS re-key had to follow the merge before any dashboard run synced curation; the session waited for the in-flight dispatch to finish, merged, re-keyed, read back (0/0/4/3), then dispatched the dashboard.
 - **A bot commit on a feature branch is routine**: the First Light art job pushes `[skip ci]` after each push to a branch. A rejected push means fetch and look before blaming a person.
 - **A clean head can still get no CI.** #1766's pushes at 23:40Z and 23:56Z (heads `58d19030`, `841bbb77`) produced no workflow run in the whole repo for over half an hour, with `mergeable_state` stuck at `unknown`, though `git merge-tree` against main was clean and `git ls-remote` showed the head. Rule out a conflict first; then the next push is the remedy, on Sam's word (*"Try pushing"*, 2026-09-30), never a close and reopen.
+
+## 2026-11-18 — S679 (SkyKinglet, Sam's session, the conductor): nine merges, one generated file, one guard
+
+- **A generated file every PR touches serializes the merges.** `kb/dependency_map.json` (and its `.md`) changed on every
+  open PR after each merge, so each PR conflicted with `main` the moment the one before it landed. A PR in conflict gets
+  no `pull_request` CI at all (the S303 lesson above), and the `test` gate takes about 11 minutes, so nine merges ran
+  one after another. Regenerate the map after merging `main` (`python3 kb/_build_dependency_map.py`), push, and wait
+  for `test` on the new head; there is no way to batch them.
+- **Auto-resolve only the dependency maps; stop on any other conflict.** One merge of `main` ran `git add -A` over a
+  conflicted `kb/migrations/.apply` and committed the conflict markers. The migrate runner read no valid `file=` line and
+  skipped, so nothing ran, but a trigger file is the one place where a bad merge could apply the wrong SQL. The rule
+  for a worker: regenerate `kb/dependency_map.*` on a conflict, and on a conflict in any other file stop and report it.
+- **A guard patched one bypass at a time keeps leaking; on the third round, redesign it into one choke point that fails
+  closed.** The combine guard on the Exhibits List had three rounds of the same finding class (a surface that folded
+  without the graded and cert-based check). The third round moved every fold behind `foldWrite` and `foldGate`. The
+  fourth read still found two fail-open paths, both where the guard did not know the answer: the CPL types file had not
+  loaded, and 1,025 of 2,849 titles carry no type. A guard has to treat "unknown" as "hold", by design, not as a case
+  to add later. KB note: `methodology-a-guard-must-fail-closed-when-it-cannot-decide`.
+- **A worker worktree inside the repo trips the stop hook, and harness worktrees stay locked after their agent ends.**
+  Put worker worktrees outside the repo folder. To clean one up: check its branch matches the pushed head
+  (`git -C <wt> rev-parse HEAD` against `git ls-remote origin <branch>`), then `git worktree unlock`, then
+  `git worktree remove`.
+- **Ask pr-gate for facts, not for a merge call.** Auto mode flagged a brief that asked pr-gate whether to merge. Ask it
+  for the head sha, the `test` result on that head and the mergeable state; the conductor makes the call from those.
+- **A count settles a scope dispute faster than an argument.** The conductor narrowed Sam's ruling 2 (`short_high`) to
+  range sums; COBIx answered with the number of records the narrow reading left failing (single-figure sums inside a
+  printed range), and the conductor reversed it in one exchange. Detail: `docs/program_requirements_harvest_lessons.md`,
+  *S679*.

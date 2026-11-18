@@ -241,7 +241,12 @@ const OVERLAP_OK = {
 };
 const hidesServed = L.withhold.filter((w) => !OVERLAP_OK[w] && must.some((p) => matches(p, w)));
 check("G no withhold line matches a path the served-path assertion names (outside OVERLAP_OK)", hidesServed.length === 0, hidesServed.join(", "));
-const overlaps = patternWh.filter((w) => [...published].some((f) => matches(f, w)) && !OVERLAP_OK[w]);
+// A pattern listed here may overlap only the files it names, so a later publish line inside it still fails G.
+const OVERLAP_FILES = {
+  "kb/*_dryrun": ["kb/cred_rename_dryrun/alias_map.json", "kb/cred_rename_dryrun/collisions.json"],  // the Exhibits tab's two reads (S650)
+};
+const overlaps = patternWh.filter((w) => !OVERLAP_OK[w]
+  && [...published].some((f) => matches(f, w) && (OVERLAP_FILES[w] || []).indexOf(f) < 0));
 check("G a withhold pattern overlaps a published file only where OVERLAP_OK says why", overlaps.length === 0, overlaps.join(", "));
 const deadPatterns = patternWh.filter((w) => !tracked.some((f) => matches(f, w)) && !staged.some(([, p]) => matches(sample(p), w)));
 check("G every withhold pattern matches a tracked file or a staged path", deadPatterns.length === 0, deadPatterns.join(", "));

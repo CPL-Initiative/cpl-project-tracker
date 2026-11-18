@@ -10,7 +10,7 @@
   The shareable CPL opportunity visual (Ashley and Sam, 2026-10-20): one page per
   college, addressed as ?college=<name>, built in the browser by
   college_cpl_workbook.js from files COBI already publishes. My College and the
-  CPL Pathways college picker link here ("View CPL Visual") and download the
+  CPL Pathways college picker link here ("Create My College CPL Plan") and download the
   same build as an Excel extract ("Download CPL Extract").
 
   Since 2026-10-26 it lives under the public library (Sam, Open Asks Sheet 131 card 2,
@@ -75,6 +75,17 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   .cpo-pick select, .cpo-find input { font: inherit; min-height: 40px; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 8px;
     background: var(--surface); color: var(--ink); max-width: 100%; }
   .cpo-status { color: var(--muted); font-size: .92rem; }
+  /* The build's progress: a bar, the step in words, and the time so far (Sam, 2026-11-16). */
+  .cpo-build { display: grid; gap: 10px; margin-top: 18px; max-width: 46rem; }
+  .cpo-meter { -webkit-appearance: none; appearance: none; width: 100%; height: 12px; border: 1px solid var(--line-strong); border-radius: 999px;
+    background: var(--surface); overflow: hidden; }
+  .cpo-meter::-webkit-progress-bar { background: var(--surface); border-radius: 999px; }
+  .cpo-meter::-webkit-progress-value { background: var(--bar-hi); border-radius: 999px; transition: width .4s ease; }
+  .cpo-meter::-moz-progress-bar { background: var(--bar-hi); border-radius: 999px; }
+  .cpo-build-line { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: .95rem; }
+  .cpo-build-step { font-weight: 600; color: var(--heading); }
+  .cpo-build-clock { color: var(--muted); font-variant-numeric: tabular-nums; }
+  @media (prefers-reduced-motion: reduce) { .cpo-meter::-webkit-progress-value { transition: none; } }
   .cpo-hero { border-bottom: 1px solid var(--line); background: linear-gradient(90deg, var(--surface) 0%, var(--surface) 50%, var(--page) 75%, var(--hero-end) 100%); }
   .cpo-hero-in { padding: clamp(22px, 3vw, 36px) var(--gutter-r) clamp(28px, 4vw, 40px) var(--gutter-l); display: grid; }
   .cpo-eyebrow { color: var(--muted); font-size: .82rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
@@ -276,33 +287,132 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
   <div class="cpo-pick">
     <label for="cpo-college">College</label>
     <select id="cpo-college" disabled><option value="">Loading the college list…</option></select>
-    <span class="cpo-status" id="cpo-status" role="status">The first build reads about 45 MB of COBI data.</span>
+    <span class="cpo-status" id="cpo-status" role="status"></span>
   </div>
   <div id="cpo-root"><div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis</h1></div></div></div>
 </main>
 <script src="../../college_short_names.js"></script>
 <script src="../../map_links.js"></script>
+<!-- One Adopt chip per course and its multi-select side panel, the same component CPL Pathways' course cards use (#3412). -->
+<script src="../../adopt_panel.js"></script>
 <script src="../../college_cpl_workbook.js"></script>
 <script>
 (function () {
   var W = window.CPL_COLLEGE_WORKBOOK, root = document.getElementById("cpo-root");
   var pick = document.getElementById("cpo-college"), status = document.getElementById("cpo-status");
-  function loadScript(src, g, cb) {
-    if (window[g]) { cb(); return; }
-    var s = document.createElement("script");
-    s.src = src; s.onload = cb; s.onerror = cb;
-    document.head.appendChild(s);
+  function esc(t) { return String(t == null ? "" : t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;"); }
+
+  /* The build's progress (Sam, 2026-11-16: "add a timer that shows progress on creating the visual--since it takes a
+     while to open and the users needs to know to wait rather than click again"). The first build reads about 45 MB of
+     COBI data, so the page shows a bar, the step it is on and the time so far until the visual paints. Each data file is
+     read as a stream, so the bar counts its bytes as they arrive against its rough size (FILE_MB, megabytes on
+     2026-11-16; a file not named weighs 1 and moves the bar when it lands), then the college's records and the build.
+     A browser that cannot stream a file loads it as a plain script and the bar moves when it lands. The step line is
+     the live region; the clock is not, so a screen reader hears each step once and never a tick. */
+  var FILE_MB = { "coci_lookup_data.js": 16.6, "unified_courses_members.js": 13.7, "statewide_data.js": 11.9, "coci_programs_data.js": 2.3,
+    "unified_courses_aligned.js": 0.7 };
+  var NEED = (W && W.need) || Object.keys(FILE_MB);
+  var built = { files: {}, bytes: {}, step: "", college: "", t0: 0, timer: 0, seq: 0 };
+  function fileName(src) { return String(src).split("/").pop(); }
+  function filesRead() { return NEED.filter(function (n) { return built.files[n]; }).length; }
+  function buildPct() {
+    if (built.step === "records") return 88;
+    if (built.step === "build") return 96;
+    var all = 0, got = 0;
+    NEED.forEach(function (n) {
+      var w = FILE_MB[n] || 1;
+      all += w;
+      got += built.files[n] ? w : Math.min(w, (built.bytes[n] || 0) / 1048576);
+    });
+    return Math.round(85 * (all ? got / all : 1));
   }
+  function buildWords() {
+    if (built.step === "records") return "Reading " + (built.college || "the college") + "'s catalog records";
+    if (built.step === "build") return "Building the page";
+    return "Reading COBI's data files: " + filesRead() + " of " + NEED.length;
+  }
+  function clockText() {
+    var s = Math.max(0, Math.floor((Date.now() - built.t0) / 1000));
+    return Math.floor(s / 60) + ":" + (s % 60 < 10 ? "0" : "") + (s % 60) + " so far";
+  }
+  function paintBuild() {
+    var bar = document.getElementById("cpo-meter"), step = document.getElementById("cpo-step");
+    if (bar) { bar.value = buildPct(); bar.textContent = buildPct() + "%"; }
+    if (step && step.textContent !== buildWords()) step.textContent = buildWords();
+  }
+  function tickClock() { var c = document.getElementById("cpo-clock"); if (c) c.textContent = clockText(); }
+  // carry: the build the page opened with goes on from reading the files to the college, so its clock keeps running.
+  function startBuild(college, carry) {
+    built.college = college;
+    built.step = filesRead() === NEED.length ? "records" : "files";
+    if (!(carry && built.timer)) {
+      built.t0 = Date.now();
+      clearInterval(built.timer);
+      built.timer = setInterval(tickClock, 1000);
+    }
+    root.innerHTML = '<div class="cpo-hero"><div class="cpo-hero-in">' +
+      (college ? '<p class="cpo-eyebrow">CPL Opportunity Analysis</p><h1>' + esc(college) + "</h1>" : "<h1>CPL Opportunity Analysis</h1>") +
+      '<div class="cpo-build" id="cpo-build"><p class="cpo-lede">' +
+      (college ? "Building this college's CPL visual. " : "Reading the data the visual is built from. ") +
+      "The first build reads about 45 MB of COBI data and can take a minute or more. Keep this tab open: the page fills in by itself.</p>" +
+      '<progress class="cpo-meter" id="cpo-meter" max="100" value="0" aria-labelledby="cpo-step">0%</progress>' +
+      '<p class="cpo-build-line"><span class="cpo-build-step" id="cpo-step" role="status" aria-live="polite"></span>' +
+      '<span class="cpo-build-clock" id="cpo-clock"></span></p></div></div></div>';
+    status.textContent = "";
+    paintBuild();
+    tickClock();
+    return ++built.seq;
+  }
+  function setStep(seq, step) { if (seq !== built.seq) return; built.step = step; paintBuild(); }
+  function stopBuild() { clearInterval(built.timer); built.timer = 0; }
+  function loadScript(src, g, cb) {
+    var name = fileName(src);
+    function done() { built.files[name] = true; paintBuild(); cb(); }
+    function tag(url, after) {
+      var s = document.createElement("script");
+      s.src = url;
+      s.onload = s.onerror = function () { if (after) after(); done(); };
+      document.head.appendChild(s);
+    }
+    if (window[g]) { done(); return; }
+    if (!FILE_MB[name] || !window.fetch || !window.Blob || !window.URL || !URL.createObjectURL) { tag(src); return; }
+    window.fetch(src).then(function (r) {
+      if (!r.ok || !r.body || typeof r.body.getReader !== "function") throw new Error("no stream");
+      var reader = r.body.getReader(), parts = [];
+      built.bytes[name] = 0;
+      function pump() {
+        return reader.read().then(function (x) {
+          if (x.done) return;
+          parts.push(x.value);
+          built.bytes[name] += x.value.length;
+          paintBuild();
+          return pump();
+        });
+      }
+      return pump().then(function () { return URL.createObjectURL(new Blob(parts, { type: "text/javascript" })); });
+    }).then(function (url) { tag(url, function () { URL.revokeObjectURL(url); }); }, function () { built.bytes[name] = 0; tag(src); });
+  }
+  /* The Credential Catalog gives the Adopt panel each exhibit's issuer, units and colleges, and the chip its region-first
+     college (adopt_panel.js). It is read beside the build; a page painted before it lands repaints once it does. */
+  var ADOPT = window.CPL_ADOPT_PANEL, adoptRead = ADOPT ? ADOPT.load("../adopt/adopt_data.json") : null;
   var first = true, draftOn = false;
   try { draftOn = new URLSearchParams(location.search).get("draft") === "1"; } catch (e) { /* the public notes */ }
   function wanted() {
     try { return new URLSearchParams(location.search).get("college") || ""; } catch (e) { return ""; }
   }
   function show(college) {
-    if (!college) { root.innerHTML = '<div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis</h1><p class="cpo-lede">Choose a college to see its CPL opportunities.</p></div></div>'; return; }
-    status.textContent = "Building " + college + "…";
-    W.prepare({ college: college, loadScript: loadScript, base: "../../" }, function (err, b) {
-      if (err || !b) { status.textContent = "Could not build it: " + (err && err.message || "no data"); return; }
+    if (!college) { stopBuild(); built.seq++; root.innerHTML = '<div class="cpo-hero"><div class="cpo-hero-in"><h1>CPL Opportunity Analysis</h1><p class="cpo-lede">Choose a college to see its CPL opportunities.</p></div></div>'; return; }
+    var seq = startBuild(college, first);
+    W.prepare({ college: college, loadScript: loadScript, base: "../../", onStep: function (step) { setStep(seq, step); } }, function (err, b) {
+      if (seq !== built.seq) return; // the reader picked another college meanwhile
+      if (err || !b) {
+        stopBuild();
+        var why = "Could not build it: " + (err && err.message || "no data");
+        status.textContent = why;
+        var st = document.getElementById("cpo-step");
+        if (st) st.textContent = why;
+        return;
+      }
       // The MAP team's notes on this college, when a file holds them (notes/<slug>.json);
       // a missing file or a failed read paints the page without them.
       function paint(notes) {
@@ -312,11 +422,14 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
         // ?course=), so a shared link opens where the sender was; a college picked here starts fresh.
         var st = W.pageState(first ? location.search : "");
         first = false;
+        if (seq !== built.seq) return;
+        stopBuild();
         root.innerHTML = W.pageHtml(b, st);
-        W.wirePage(root, b, { state: st,
+        var wired = W.wirePage(root, b, { state: st,
           shareUrl: function (s2) { return W.shareUrl(b.college).split("?")[0] + W.pageQuery(b.college, s2); },
           onState: function (s2) { try { history.replaceState(null, "", W.pageQuery(b.college, s2) + (draftOn ? "&draft=1" : "")); } catch (e) { /* the link still works */ } } });
         status.textContent = "";
+        if (adoptRead && !ADOPT.catalog()) adoptRead.then(function (d) { if (d && seq === built.seq && wired) wired.redraw(null); });
       }
       // ?draft=1 shows a draft waiting on Replace the public copy (notes/<slug>.draft.json).
       if (!window.fetch) { paint(null); return; }
@@ -328,9 +441,10 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
         .then(paint, function () { paint(null); });
     });
   }
-  // Load the data once, fill the picker, then build the college the link names.
+  // Load the data once, fill the picker, then build the college the link names. The bar shows from the first byte.
+  startBuild(wanted());
   W.load({ loadScript: loadScript, base: "../../" }, function (err) {
-    if (err) { status.textContent = err.message; return; }
+    if (err) { stopBuild(); status.textContent = err.message; var st = document.getElementById("cpo-step"); if (st) st.textContent = err.message; return; }
     var names = W.colleges(), want = W.resolve(names, wanted()) || wanted();
     pick.innerHTML = '<option value="">Choose a college</option>' + names.map(function (n) {
       return '<option' + (n === want ? " selected" : "") + ">" + n.replace(/&/g, "&amp;").replace(/</g, "&lt;") + "</option>";

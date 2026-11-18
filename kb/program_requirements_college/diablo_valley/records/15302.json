@@ -46,35 +46,44 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 22,
    "listed": 22,
-   "share": 0.818,
-   "missing": [
-    "BIOSC101",
-    "BIOSC116",
-    "BIOSC139",
-    "BIOSC140"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL116",
+     "listed": "BIOSC116",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOSC101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 3,
    "codes": [
-    "BIOL116",
-    "BIOL139",
-    "BIOL140",
-    "BIOLC1001",
     "KINES240",
     "KINES248",
     "NUTRI160"
    ],
    "flagged": [
-    "BIOL116",
-    "BIOL139",
-    "BIOL140",
-    "BIOLC1001",
     "KINES240",
     "KINES248",
     "NUTRI160"
@@ -397,5 +406,6 @@
    "PH 230 title in catalog is 'Advanced First Aid/EMR/CPR and Basic Life Support', differing slightly from the closed list title."
   ]
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

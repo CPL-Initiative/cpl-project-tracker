@@ -1,0 +1,226 @@
+{
+ "run": "43968403561",
+ "programs": [
+  {
+   "control_number": "36344",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "source_url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
+   "filed_source_url": "https://catalog.skylinecollege.edu/current/programs/public-health-for-transfer-as-t.php",
+   "cost_usd": 0.07895,
+   "usage": {
+    "input_tokens": 7572,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 7572,
+      "output_tokens": 2433,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 2433,
+    "output_tokens_details": {
+     "thinking_tokens": 824
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 14,
+     "share": 0.571,
+     "missing": [
+      "BIOL310",
+      "ECONC2001",
+      "ECONC2002",
+      "HSCI130",
+      "PSYCC1000",
+      "SOCIC1000"
+     ],
+     "unexplained": [
+      "PSYCC1000"
+     ],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "BIOLC1000",
+       "listed": "BIOL110",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": false
+    },
+    "invented": {
+     "count": 9,
+     "codes": [
+      "BIOL240",
+      "BUS123",
+      "CHEM220",
+      "CHEM410",
+      "HSCI122",
+      "PHYS210",
+      "POLS210",
+      "PSYC171",
+      "PSYC200"
+     ],
+     "flagged": [
+      "BIOL240",
+      "BUS123",
+      "CHEM220",
+      "CHEM410",
+      "HSCI122",
+      "PHYS210",
+      "POLS210",
+      "PSYC171",
+      "PSYC200"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      23.0,
+      27.0
+     ],
+     "stated": [
+      23.0,
+      27.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 14,
+     "share": 0.5,
+     "missing": [
+      "BIOL110",
+      "BIOL310",
+      "ECONC2001",
+      "ECONC2002",
+      "HSCI130",
+      "PSYCC1000",
+      "SOCIC1000"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 10,
+     "codes": [
+      "BIOL240",
+      "BIOLC1000",
+      "BUS123",
+      "CHEM220",
+      "CHEM410",
+      "HSCI122",
+      "PHYS210",
+      "POLS210",
+      "PSYC171",
+      "PSYC200"
+     ],
+     "flagged": [
+      "BIOL240",
+      "BIOLC1000",
+      "BUS123",
+      "CHEM220",
+      "CHEM410",
+      "HSCI122",
+      "PHYS210",
+      "POLS210",
+      "PSYC171",
+      "PSYC200"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      23.0,
+      27.0
+     ],
+     "stated": [
+      23.0,
+      27.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}

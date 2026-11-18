@@ -44,24 +44,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 41,
    "listed": 41,
-   "share": 0.976,
-   "missing": [
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ADJ5",
-    "HISTC1002"
+    "ADJ5"
    ],
    "flagged": [
-    "ADJ5",
-    "HISTC1002"
+    "ADJ5"
    ],
    "pass": true
   },
@@ -76,6 +80,7 @@
     48.0,
     48.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 42.0-42.0; the catalog states 48.0-48.0"
    ]
@@ -93,6 +98,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -573,5 +589,6 @@
    "The program learning outcomes are printed under the A.S. degree page for the program."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 44046021561,
+ "read_run": 43609971090
 }

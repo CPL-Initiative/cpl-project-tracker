@@ -44,39 +44,49 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 22,
    "listed": 22,
-   "share": 0.818,
-   "missing": [
-    "HIS14",
-    "HIS15",
-    "HIS16",
-    "HIS17"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST16",
+     "listed": "HIS16",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST17",
+     "listed": "HIS17",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "HIST14",
-    "HIST15",
-    "HIST16",
-    "HIST17",
     "SOC48"
    ],
    "flagged": [
-    "HIST14",
-    "HIST15",
-    "HIST16",
-    "HIST17",
     "SOC48"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     21.0
@@ -85,9 +95,9 @@
     18.0,
     19.0
    ],
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 18.0-19.0"
-   ]
+   "against": "program",
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -103,7 +113,18 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
  },
  "record": {
   "program": {
@@ -346,5 +367,7 @@
    "ETS-8 title in catalog is 'Introduction to Black Feminism and Womanism' vs closed list 'Introduction to Black Feminism'."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }

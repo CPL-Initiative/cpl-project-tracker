@@ -46,26 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 17,
-   "share": 0.882,
+   "share": 0.941,
    "missing": [
-    "CMST20",
     "CMST6"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM20",
+     "listed": "CMST20",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "CAHS208",
-    "COMM20"
+    "CAHS208"
    ],
    "flagged": [
-    "CAHS208",
-    "COMM20"
+    "CAHS208"
    ],
    "pass": true
   },
@@ -330,5 +334,6 @@
    "Page 146 (AS-T Degree) was not used for this record."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

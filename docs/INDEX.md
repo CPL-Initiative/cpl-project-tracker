@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-14
+updated: 2026-11-18
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 584 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 590 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
-| Reference (pull-side) | 72 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 611 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1472** | |
+| Workstream docs | 105 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
+| Session handoffs | 639 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1511** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,11 +124,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-11-14 (S649 SkyOriole, the light final refresh): Sheet 195 answered and carried out (#3274 the BUSI split delete, #3275 the three CVMA rows, #3250 closed); the Riverside district's 2,536 objective rows loaded (#3265); the conductor's positions on #3237, #3229 and #3111; Sheet 196 owed for the Honors cards
-- 2026-11-14 (S649 SkyOriole, conductor, Sam in session; written while the session continued): seven merges (#3260, #3263, #3259, #3269, #3266, #3261, #3262); the Exhibits Review reads saved titles live (held 168 to 0); objectives collected with every SLO read; Cal-GETC applied at Cerro Coso (35) and Cosumnes River (39656 at 34); College Data Collection on Sam's six asks; lanes `cer-procedures` and `commons` compacted under budget; new archives `commons_lessons_archive.md` and `program_requirements_harvest_lessons_archive_5.md`; handoff 650 (SkyPlover).
-- 2026-11-13 (S648 SkyTanager, the light refresh, while the session continued): #3248, #3239, #3252 (Grossmont Cal-GETC 34) and #3245 (FIRE M1274 into FIRE 130 X, applied) merged; Glendale loaded, rereads to come; Open Asks Sheet 194 replaces 193 (the BUSI row delete as its own card); handoff 649 rewritten in place; refresh receipt not yet run.
-- 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
-- 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.
-- 2026-11-13 (S647 SkyPipit, conductor, two halves of the CPL Queue routine; the first stopped without a handoff): nine merges (#3211, #3214, #3194, #3205, #3218, #3206, #3216, #3207, #3222); Santiago Canyon, Diablo Valley and San Jose City displayed, then the whole build; College of the Desert read in ranges; Glendale's keep rule; the Commons data dashboard live; Open Asks Sheet 190; handoff 648.
-- 2026-11-13 (S646 SkyOriole, conductor, the CPL Queue routine): four merges (#3208, #3210, #3212, #3201); the PDF reader merged with a `refused` method and an exact own heading, decision 16(b) reversed; Diablo Valley loaded to 213; Glendale's bot-check page read as a refusal, a slow paid read; the first real daily run after #3180 green; Open Asks Sheet 189; handoff 647.
-- 2026-11-13 (S645 SkyFinch, conductor, Sam's session): three merges (#3196, #3200, #3204); the display apply's first live runs, North Orange alone then the whole build; the #3193 rescore at six colleges; Diablo Valley and San Jose City loaded; Glendale unparked; Open Asks Sheet 188; handoff 646.
+- 2026-11-18 (S679 SkyKinglet, Sam's session, full checkpoint): #3477 (the left-map apply nightly, Rename and Combine, the combine guard as one choke point), #3478 and #3481 (Sam's three Nov 17 harvest rulings, 243 records rescored live), #3479 (slash-to-and, 80 renames applied by run 44227947795), #3468 (ACE text kept), #3467, #3473, #3474, #3475; four lanes compacted under 20,000 bytes; KB note `methodology-a-guard-must-fail-closed-when-it-cannot-decide`; handoff 680.
+- 2026-11-17 (S678 SkyWaxwing, Sam's session, full checkpoint): #3465 (College Data Collection's cost and counts: measured runner and session spend, the Commons spent figure, a daily census at 17:47 UTC, ETA dates that name their days, cost per CRE), #3466 (Exhibits: act on titles that have left MAP from their row), #3469 (CPL Pathways: a course met by its Program Course File id is no catalog addition), #3470 (Commons Clarity units findings); drafts #3467, #3468, #3472, #3473, #3474. KB note `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`. Handoff 679.
+- 2026-11-17 (S677 SkyTanager, full checkpoint): #3462 (Chaffey's yield read: reread 13 rows, load kept 191, display build cdd185495ce4; its suspect yield resolved as not found; slice B complete at seven colleges); the self-test miss named, Skyline 38299. Handoff 678.
+- 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.
+- 2026-11-17 (S672 SkyWren, the CPL Queue routine, full checkpoint): #3441 (RCCD music: the repeated-course-row reconcile steps; Riverside City 229 to 232 passing, Norco's required list counted twice). Handoff 673.
+- 2026-11-17 (S670 SkyBunting, Sam's session, full checkpoint): #3420 (Coastline's objectives loaded, 522 rows; a course outcomes slice keyed by its colleges), #3423 (Skyline's yield read after display build b640e31b114a), #3436 (Skyline 32337's live row removed, full image filed), #3433 and #3434 (Rio Hondo and Santa Ana from their own 2025-2026 catalogs), #3435 (S668's Berkeley City row); five `cpl_memory` rows through the runner; handoff 671 for SkyKinglet.
+- 2026-11-16 (S668 SkyPipit, Sam's session, full checkpoint): #3408 (the no-closed-list lookup's page yield: 13 yields at 8 colleges, 0 passing moved), #3411 (Gavilan Mathematics 31444 and Physics 33047 from their 2025-2026 catalog); #3414 (slice B part 1) waits on `test`; eight `cpl_memory` rows drafted as a migration; the harvest lane compacted; handoff 670 (S669 ran in parallel).
+- 2026-11-16 (S667 SkyPlover, Sam's session, full checkpoint): #3402 (CPL Pathways: Request Adopt on course cards, Ask Sierra's side bar, an SLOs and objectives panel, full width, the CPL Visual's progress bar), #3403 (`kb/plain_words.py`, one term list; the six re-clustering cases settled), samueltlee/CPLBrain#806 (sheets refuse undefined insider terms from 201), #3404 (harvest and governance decisions; seven memory rows through the runner). Handoff 668 (SkyPipit).

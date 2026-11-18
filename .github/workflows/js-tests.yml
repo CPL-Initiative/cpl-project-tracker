@@ -238,6 +238,10 @@ jobs:
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
         run: python3 tests/refresh_button_no_secret_test.py
+      # Plain words in what Sam reads (Sam, 2026-11-16, COBIx on #3395 item 1): an open call or a Commons string
+      # never uses an insider term ("closed course list", "headline", "receipt", ...) without defining it.
+      - name: Plain words for Sam (insider terms defined or gone)
+        run: python3 tests/plain_words_for_sam_test.py
       # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
       # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
       - name: Daily scrape fails loudly
@@ -256,6 +260,12 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
+      - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
+        run: python3 tests/apply_curation_rulings_test.py
+      # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
+      - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
+        run: python3 tests/ccr_confidence_rules_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py
@@ -314,20 +324,48 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: Program requirements pilot (course codes, page finder, scorer)
         run: python3 tests/program_requirements_pilot_test.py
+      # The course-id route (S653): the scorer meets a printed code by the Program Course File's
+      # own id for the listed course, before the prefix aliases. Rebuilds the proof that each
+      # retired alias pair's matches are reproduced, and the self-recall test with its floor,
+      # from committed files (openpyxl, installed at the top of this job; about 35 s).
+      - name: Course-id route (suffix reading, self-recall, retired alias pairs)
+        run: python3 tests/course_id_route_test.py
+      # A reconcile from filed pages never turns a mid-table window passing through the program-total fill
+      # (American River 07206, S655); committed records only, about 1 s.
+      - name: Reconcile window and fill (American River 07206)
+        run: python3 tests/reconcile_window_fill_test.py
       # The reconcile steps' award filters and Cañada's Cal-GETC step (S421): a transfer-only
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
         run: python3 tests/program_requirements_reconcile_test.py
+      # Sam's rulings of 2026-11-17 (#3461): a local degree's major counts toward general education, a short
+      # high end passes as an over-high end does, and the general education open slot, on the four tested programs.
+      - name: Program requirements rulings of 2026-11-17 (local overlap, short high end, GE open slot)
+        run: python3 tests/program_requirements_rulings_2026_11_17_test.py
+      - name: Reconcile reader gaps (holds, sources.json, rescore marker; S658)
+        run: python3 tests/reconcile_reader_gaps_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
       # pages listed once from its sitemap, each program given the page naming
       # its listed courses (the award breaks a tie), the state's file read past
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # S663: a prior-year read files the programs it names beside the college's records, never in place of
+      # them, each with the catalog year it was read from. Pure stdlib.
+      - name: Program requirements, a prior-year read
+        run: python3 tests/program_requirements_prior_read_test.py
+      # S663: a prior-year record is scored against its own year's course numbers (course_renumbers_by_year),
+      # and a current-year record never gets an old code. Pure stdlib.
+      - name: Program requirements, year-scoped renumbers
+        run: python3 tests/program_requirements_year_renumbers_test.py
       # S647 (Sam, Sheet 190 card 6): a read stops at the extraction function's 503 (or 401) and files
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
         run: python3 tests/program_requirements_extract_halt_test.py
+      # S653: a fragment a catalog includes (Skyline's programs/_program-headers/) is never a page; the measure
+      # over the committed captures' URLs, none of them a claimed page. Pure stdlib.
+      - name: Program requirements fragment paths are no pages
+        run: python3 tests/program_requirements_fragment_path_test.py
       # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
       # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
       # Python with PyYAML for the workflow's shape; same non-required check.
@@ -335,6 +373,16 @@ jobs:
         run: |
           pip install --quiet pyyaml
           python3 tests/program_requirements_wave_test.py
+      # S653: every extraction is priced before a model call, fresh or restaged ($40 a college a run), and a
+      # workflow step that runs the college extraction without its price step's go, or with an empty hard
+      # stop, fails here. Python with PyYAML (installed above).
+      - name: Program requirements extraction gate (every extraction priced)
+        run: python3 tests/program_requirements_extraction_gate_test.py
+      # The $40 gate on the other paid callers (S655, card 10): cer-classify's estimate and hard stop, the
+      # worst-case bound for cpl-news-harvest and cpl-chat run as each workflow step with a stub model call, a
+      # refused second-reader rate, and the most a call costs over every committed request. PyYAML (above).
+      - name: Model run gates (cer-classify, cpl-news-harvest, cpl-chat)
+        run: python3 tests/model_run_gates_test.py
       # The harvest gap census (S644): one cause and one lever per program without a passing
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
@@ -343,6 +391,9 @@ jobs:
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
+      # The no-closed-list lookup's self-test on the committed captures (#3299 slice A): none false. Pure stdlib.
+      - name: Harvest no-closed-list lookup census (recall and false matches)
+        run: python3 tests/harvest_ncl_lookup_census_test.py
       - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
         run: python3 tests/program_requirements_dated_reads_test.py
       # A record's heading against its program, and a PDF that prints the number after (S644):
@@ -421,6 +472,10 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # ACE's catalog CR text (S678): keyed on AceID, one row per pair, the typographic rule agreeing with
+      # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
+      - name: ACE catalog CR text guard (key, typographic rule, grants)
+        run: python3 tests/map_ace_catalog_cr_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull
@@ -530,6 +585,13 @@ jobs:
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder
         run: python3 tests/commons_data_status_build_test.py
+      # College Data Collection's dictionary and integrations builder (S654): each rule broken in a fixture repo,
+      # and the builder must exit 1 and name it.
+      - name: CDC data dictionary builder rules
+        run: python3 tests/cdc_sharing_build_test.py
+      # Its cost read (S653): a college's cost is what its filed records cost, so a free rescore never drops it.
+      - name: Commons data dashboard cost read
+        run: python3 tests/commons_cost_read_test.py
       # Its live counts (S647, COBIx's conditions on #3222): counts only, the service key alone, fail soft, over a
       # fixture; no network. PyYAML for the census workflow's shape.
       - name: Commons data dashboard live counts
@@ -567,6 +629,10 @@ jobs:
         run: |
           pip install --quiet pyyaml
           python3 tests/apply_concurrency_test.py
+      # Every job that reads the service key declares the main-only `live-counts` environment or is on the test's
+      # PENDING list with its group and a reason (S653b, governance lane NEXT 1). PyYAML, installed by the step above.
+      - name: Service-key readers run in the live-counts environment or are listed
+        run: python3 tests/service_key_environment_test.py
       # The Docket (#2963 step 2): the cases file carries no email and names its register row, and the
       # ruling reader acts only on an open case's offered choice.
       - name: Docket cases and the ruling reader
@@ -654,6 +720,14 @@ jobs:
       # hook's own allow does not stop the prompt; the rule does.
       - name: Prompt-guard installer (the execute_sql rule never ships without its hook)
         run: python3 tests/install_prompt_guards_test.py
+      # The S652 lesson hooks (#3306). Each refuses one recurring mistake (a merge
+      # before reading the PR's comments; a "now" time written from memory) and
+      # fails open with a warning, so a broken hook never blocks every merge.
+      # Pure stdlib, no network; the clock is pinned by CPL_HOOK_NOW.
+      - name: Merge-read guard (a merge waits until the PR's comments were read)
+        run: python3 tests/merge_read_guard_test.py
+      - name: Clock guard (a published "now" time must match the clock)
+        run: python3 tests/clock_time_guard_test.py
       # The Jev magic half (S281). Guards the ways an AI adjudication pass fails
       # while LOOKING like it worked: a skeptic shown the verdict rubber-stamps
       # it, a refuted proposal reaching the plan, a noul probability read as a
@@ -734,8 +808,10 @@ jobs:
       # this step. Pure-stdlib python, no network.
       - name: Re-mint apply guards (kb/_authority_recode_apply.py, kb/_zband_retire_apply.py)
         run: |
+          source scripts/test_group.sh
           python3 tests/authority_recode_apply_test.py
           python3 tests/zband_retire_apply_test.py
+          test_group_end
       # UC-CUR placeholder promotion (Session 226) — the promote step the Z-band
       # retirement left open: a client or auto-merge mint's transient UC-CUR
       # target becomes a real M-ID record. Guards the number allocation (every
@@ -976,6 +1052,16 @@ jobs:
       - name: Workplan reports year pair (excel_to_dashboard.py)
         run: |
           python3 tests/workplan_reports_year_pair_test.py
+      # workplan_goals.current stops being read (S653b): the per-year cur_* columns
+      # replaced it, and a second step drops it, after which a select naming it
+      # answers 400. The guard fails any reader or writer of the table that names the
+      # old column again; the hybrid test (run nowhere before S653b) pins that
+      # _row_current_years ignores it. Both import the generator (openpyxl, installed
+      # at the top). Same non-required check.
+      - name: workplan_goals.current is never read (guard + Current hybrid)
+        run: |
+          python3 tests/workplan_goals_current_column_guard_test.py
+          python3 kb/_test_workplan_current_hybrid.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs
@@ -993,6 +1079,11 @@ jobs:
       # stdlib; same non-required check.
       - name: Context-pressure meter (kb/_context_budget.py)
         run: python3 tests/context_budget_test.py
+      # The read-only Side by side views (S678, COBIx's item 7 on #3464): the fixture cards' figures in
+      # kb/side_by_side.json and kb/exhibit_side_by_side.json, and the builder's read-only, scorer-free shape.
+      # Pure stdlib; same non-required check.
+      - name: Side by side files (kb/_build_side_by_side.py)
+        run: python3 tests/side_by_side_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
       # source and a target; the merge-target loop never skipped those, and 340
@@ -1045,6 +1136,7 @@ jobs:
       # Both import the generator (openpyxl, installed at the top of this job).
       - name: EACR CIP route (TOP lookup column D + the matrix payload)
         run: |
+          source scripts/test_group.sh
           python3 tests/top_code_lookup_code4_test.py
           python3 tests/eacr_matrix_payload_test.py
           # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
@@ -1053,12 +1145,15 @@ jobs:
           python3 tests/credential_family_test.py
           # Sheet 181's naming form and its frozen plan: an "or" between two tests coded as written, a choice kept (S648).
           python3 tests/sheet181_ruled_renames_test.py
+          # A slash joining words in a canonical title is written "and" (Sam, 2026-11-18): the rule, the plan, the guard.
+          python3 tests/slash_titles_test.py
           # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
           python3 tests/credential_family_apply_test.py
           # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.
           python3 tests/credential_family_fold_contact_test.py
           # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
           python3 tests/cid_claim_audit_test.py
+          test_group_end
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
       # detector proposes re-levels against live curation rows, so its failure
       # modes are confident-wrong writes: reading a PREREQUISITE clause as the
@@ -1172,10 +1267,12 @@ jobs:
       # check.
       - name: Docs corpus — lint, index generator, spelling
         run: |
+          source scripts/test_group.sh
           python3 tests/docs_audit_test.py
           python3 tests/docs_index_build_test.py
           python3 tests/american_spelling_test.py
           python3 kb/_build_docs_index.py --check
+          test_group_end
       # Dependency map (Sam's ruling A, 2026-08-29) — the dataset→consumers
       # artifact every session's cross-impact flag depends on. `--check` turns
       # "somebody forgot to rebuild after adding a fetch()" into a red check
@@ -1298,19 +1395,108 @@ jobs:
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
         run: python3 tests/browser_install_single_source_test.py
+      # The honors_of field (S653): an Honors M-ID and its base never fold together and are never offered for merge,
+      # an H id passes every M-ID shape check, and the fold is byte-identical while no row carries the field.
+      # Pure-stdlib python. Design: docs/reference/honors_of_design.md.
+      - name: Honors equivalence field (fold hold, pairwise worklist hold, H id shape, byte-identical fold)
+        run: python3 tests/honors_of_test.py
+      # The Honors rows plan's apply-day check (S653, #3315): it re-measures the pairs on the checkout's payload and
+      # refuses a dissolved pair, a pre-delete overlay and a checkout without origin/main's head.
+      - name: Honors rows plan, the apply-day check refuses a stale plan
+        run: python3 tests/honors_of_rows_check_test.py
+      # How the rows plan reads a subject (S655, COBIx's two findings on #3315): engineering, computing and
+      # biotechnology read apart from English, communication and biology; the Honors subject marker is Victor Valley's.
+      - name: Honors rows plan, the subject family and the Honors subject marker
+        run: python3 tests/honors_subject_reading_test.py
       # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
       # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
       # guard against a second copy. Pure-stdlib python.
+      # The sessions' own spend for the Commons ETA clock, from the handoffs' Spend: lines (Sam, 2026-11-15, #3358).
+      # The daily run rebuilds the file (scripts/daily_build.sh), so no staleness check here (COBIx on #3379).
+      - name: Session spend parser (kb/_build_session_spend.py)
+        run: python3 tests/session_spend_build_test.py
+      # The blocked-catalog hunt: one to-do on the College Data Collection page and the Commons (S678, #3464 item 8).
+      - name: Blocked-catalog to-do (kb/_blocked_catalogs.py)
+        run: python3 tests/blocked_catalogs_test.py
+      # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
+      - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
+        run: python3 tests/left_map_build_test.py
+      # The daily spend file's measured series and the Commons spent figure (S678, kb/_build_spend_daily.py).
+      - name: Daily spend measured series (kb/_build_spend_daily.py)
+        run: python3 tests/spend_daily_build_test.py
       - name: Credential title moves table is current (kb/credential_aliases.py --check)
         run: python3 kb/credential_aliases.py --check
       - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)
         run: python3 tests/credential_title_resolver_test.py
       - name: Credential title resolver has one copy
         run: python3 tests/credential_title_resolver_single_source_test.py
+      # The tests no workflow ran (S653b, 2026-11-14). The census found 32 Python tests under tests/ that no
+      # pull-request step named; four had gone red unseen (standards_2_ruled_renames, ccc_metric,
+      # custom_report_duplicate_view, powershell_ascii), now repaired. A 33rd, custom_report_payload, ran only in the
+      # scheduled map-custom-report-load.yml. The five steps below run the 33 in about 8 s (measured 2026-11-14).
+      # tests/every_test_runs_test.py fails when a file under tests/ is run by no pull-request step that can fail
+      # and is not on its UNRUN list with a reason. A step naming several tests sources scripts/test_group.sh
+      # and ends with test_group_end, so every red test in it shows, not only the first.
+      - name: Every file under tests/ runs in CI or is listed with its reason
+        run: python3 tests/every_test_runs_test.py
+      - name: Workplan, budget and KPI Trends (goals grouping and contrast, charts, drafts, the CCC row)
+        run: |
+          source scripts/test_group.sh
+          python3 tests/annual_goals_activity_grouping_test.py
+          python3 tests/annual_goals_contrast_test.py
+          python3 tests/annual_goals_reflect_all_projects_test.py
+          python3 tests/workplan_charts_zero_ladder_test.py
+          python3 tests/workplan_description_drafts_test.py
+          python3 tests/budget_ledger_structure_test.py
+          python3 tests/ccc_metric_test.py
+          test_group_end
+      - name: Funding (config edit apply, consolidated measures, CPL types, CR backlog, portal applied)
+        run: |
+          source scripts/test_group.sh
+          python3 tests/funding_config_edit_apply_test.py
+          python3 tests/funding_consolidated_measures_test.py
+          python3 tests/funding_cpl_types_test.py
+          python3 tests/funding_cr_backlog_test.py
+          python3 tests/funding_portal_applied_test.py
+          test_group_end
+      - name: Credential renames (both standards plans, the row-move receipt, re-analysis checks)
+        run: |
+          source scripts/test_group.sh
+          python3 tests/standards_ruled_renames_test.py
+          python3 tests/standards_2_ruled_renames_test.py
+          python3 tests/cred_rename_row_move_receipt_test.py
+          python3 tests/exhibit_reanalysis_checks_test.py
+          test_group_end
+      - name: M-ID and authority dry runs (authority codes, recode, z-band, UC-CUR z-scheme, subjects list)
+        run: |
+          source scripts/test_group.sh
+          python3 tests/authority_codes_seed_test.py
+          python3 tests/authority_recode_dryrun_test.py
+          python3 tests/zband_retire_dryrun_test.py
+          python3 tests/uc_cur_zscheme_dryrun_test.py
+          python3 tests/subjects_list_recode_test.py
+          python3 tests/top_gate_test.py
+          python3 tests/row_audit_subject_outlier_test.py
+          python3 tests/row_audit_top_source_score_test.py
+          test_group_end
+      - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene
+        run: |
+          source scripts/test_group.sh
+          python3 tests/cpl_pathway_membership_test.py
+          python3 tests/program_course_graph_test.py
+          python3 tests/program_requirements_extract_schema_test.py
+          python3 tests/veteran_jst_test.py
+          python3 tests/veteran_sprint_jst_test.py
+          python3 tests/custom_report_duplicate_view_test.py
+          python3 tests/mojibake_repair_test.py
+          python3 tests/powershell_ascii_test.py
+          python3 tests/custom_report_payload_test.py
+          test_group_end
       # Every mapped credential title still resolves in the live index. Red on main from a rename
       # that retired titles until #3148, with no workflow running it (S640); run like the other Python tests here.
       # Last in the job on purpose: a red step ends the job, so a red crosswalk test hides no
-      # other check (tests/apply_concurrency_test.py keeps it last).
+      # other check (tests/apply_concurrency_test.py keeps it last). Grouped steps above collect every red
+      # test before they fail (scripts/test_group.sh).
       - name: Partner crosswalk (the shared map has no stale credential titles)
         run: python3 tests/partner_crosswalk_test.py
 

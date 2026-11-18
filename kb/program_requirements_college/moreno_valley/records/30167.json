@@ -44,20 +44,38 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 99,
+   "placed": 103,
    "listed": 103,
-   "share": 0.961,
-   "missing": [
-    "MAT11",
-    "MAT1A",
-    "MAT1B",
-    "MAT25"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATH11",
+     "listed": "MAT11",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATH25",
+     "listed": "MAT25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 10,
    "codes": [
     "CHE1BH",
     "CHE2B",
@@ -65,12 +83,8 @@
     "CIS18B",
     "CIS18C",
     "CIS5",
-    "MATH11",
-    "MATH25",
     "MATH26",
-    "MATHC2210",
     "MATHC2210H",
-    "MATHC2220",
     "PHS1",
     "PSYC2H"
    ],
@@ -81,12 +95,8 @@
     "CIS18B",
     "CIS18C",
     "CIS5",
-    "MATH11",
-    "MATH25",
     "MATH26",
-    "MATHC2210",
     "MATHC2210H",
-    "MATHC2220",
     "PHS1",
     "PSYC2H"
    ],
@@ -96,13 +106,14 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    8.0,
+    7.0,
     16.0
    ],
    "stated": [
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
     "'Elective Courses' chooses units but names no minimum"
    ]
@@ -120,6 +131,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": false
  },
@@ -1337,5 +1359,6 @@
    "The catalog notes that not all courses are offered at all three district colleges."
   ]
  },
- "extracted_run": "38095617505"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

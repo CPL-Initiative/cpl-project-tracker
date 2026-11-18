@@ -46,33 +46,41 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 16,
    "listed": 16,
-   "share": 0.75,
-   "missing": [
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC170",
-    "ECON221"
-   ],
-   "unexplained": [
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC170",
-    "ECON221"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "course_id": [
+    {
+     "printed": "BIOL130",
+     "listed": "BIOSC130",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL131",
+     "listed": "BIOSC131",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL170",
+     "listed": "BIOSC170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    }
+   ],
+   "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 4,
    "codes": [
-    "BIOL130",
-    "BIOL131",
-    "BIOL170",
     "BIOL171",
     "BUS240",
-    "ECONC2001",
     "MATH182",
     "PSYC214"
    ],
@@ -82,7 +90,7 @@
     "MATH182",
     "PSYC214"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -123,7 +131,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -419,5 +427,6 @@
    "Program learning outcomes are printed for the program as a whole; recorded for this award."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

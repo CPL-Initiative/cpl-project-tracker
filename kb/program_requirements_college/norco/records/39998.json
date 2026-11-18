@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -86,6 +87,7 @@
     30.0,
     31.0
    ],
+   "against": "program",
    "why": [
     "the blocks sum to 32.0-32.0; the catalog states 30.0-31.0"
    ]
@@ -103,6 +105,14 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
   },
   "pass": false
  },
@@ -321,5 +331,6 @@
    "Cross-listed DFT/ENE and ELE/MAN pairs are recorded as one entry with alternatives; codes outside the closed list (APP-450, DFT-30, DFT-42, ENE-42, DFT-51, ENE-60, ELE-55, MAN-35) are marked as catalog additions."
   ]
  },
- "extracted_run": "38085495452"
+ "extracted_run": 43609971090,
+ "read_run": "38085495452"
 }

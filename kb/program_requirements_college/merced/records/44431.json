@@ -46,41 +46,27 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 11,
    "listed": 11,
-   "share": 0.636,
-   "missing": [
-    "POLS5",
-    "SOCI2",
-    "SOCI5",
-    "SOCI6"
-   ],
-   "unexplained": [
-    "POLS5",
-    "SOCI2",
-    "SOCI5",
-    "SOCI6"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 7,
+   "count": 3,
    "codes": [
     "ANTH2",
     "ARCH1",
-    "ETHN1",
-    "POSC5",
-    "SOC2",
-    "SOC5",
-    "SOC6"
+    "ETHN1"
    ],
    "flagged": [
     "ANTH2",
     "ARCH1",
     "ETHN1"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -305,5 +291,6 @@
    "The page prints no program outcomes and names no careers."
   ]
  },
- "extracted_run": "39117489616"
+ "extracted_run": 43609965348,
+ "read_run": "39117489616"
 }

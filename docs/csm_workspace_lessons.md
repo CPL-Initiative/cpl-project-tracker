@@ -172,3 +172,123 @@ The two paragraphs below left `docs/reference/lanes/csm-workspace.md` verbatim t
   waiting on its denominator read TBA; a suppressed actual reads *fewer than* the privacy floor. Guard
   `tests/csm_workspace.test.js` 5f5a to 5f5c. This test needs the runner's heap (`--max-old-space-size=12288`, as
   `tests/run.js` passes); run bare, it runs out of memory on `main` too.
+
+## Moved from the lane (S667 checkpoint)
+
+Verbatim from `docs/reference/lanes/csm-workspace.md`, moved to bring the lane under its 20 KB budget:
+
+**LIVE: the clarity mock, built (S624, 2026-11-10, on Sam's "go ahead and build it"; #3049, #3050 and the two after).**
+The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team does most of this work; the address
+stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is the seven stage
+counts (2026-11-13), each opening its list, the deadline apart. Every row names the email or the date. The record is a table of conditions (Condition, Status, Next step), then *Recommended action* with the email as
+a preview and *Edit email*; the email is the one that is due (`recTpl`) in every list, and Sent is offered for that
+email alone. One side panel under the record holds People (one list: role, person, source), CPL landing page and
+History, and the review opens there; Accept says what it does. Access requests are one word in the header;
+*Implementation Funding* opens a drawer with the college's max award, what qualifies now, the conditions met and the
+date due. The Action center heading and the four-column board are gone. Tests: `tests/csm_workspace.test.js`
+(5b6 to 5f8, 13a0, 13a1).
+
+**LIVE: the review and the panel, after Sam's look at the live page (2026-11-10, his go in session on all five; #3061,
+#3063, #3064 and the two after).** Sam: *"why do we click on Review when that's what we're there to do? shouldn't it just
+be open for review and action?"* and *"links still opening to new tabs instead of sidebars"*. A waiting request's review
+opens in the panel by itself (`sideOf`; a **Review** word closes it, `state.side = "none"`). The scroll gate is gone, which
+reverses his 2026-11-02 *"unless they seen that section"*: Deny is open, Accept waits on the checks. Implementation
+Funding in the record opens the drawer, which shows the CO Monitor's note (`fundWord`, `fundOpener`). The landing page
+draws in a sandboxed frame in the panel and behind *Show the landing page here* in the review (`landingFrame`); MAP's
+landing pages send no X-Frame-Options (read 2026-11-10), and a refusing site leaves a blank frame with the new-tab link
+beside it. Contacts on file and the people filter sit in People; the pop-ups are gone (`contactsOnFileHtml`,
+`state.psrc`). Not yet seen in a signed-in browser: the a11y sweep reads the signed-out view only.
+
+**LIVE: Email templates a reviewer can change (2026-11-10, #3068; Sam: *"can you add a place for me or any reviewer to
+make changes to the templates for these and later make additional changes if needed?"*).** The four emails the
+dashboard writes itself (the lead ask, both asks, the nudge, the follow-up) are templates in `TPL_DEFAULT`, with words in
+braces (`TPL_WORDS`: `{name}`, `{college}`, `{deadline}`, `{funding_page}`, `{close_title}`, `{open_items}`). *Email
+templates* in the header (reviewers only) opens the pane: edit, preview for the chosen college, *Save for every
+reviewer*; *Earlier versions* loads one back; *Put back the shipped wording* saves a reset. Store `csm_templates`
+(insert-only, RLS `is_funding_reviewer()` select and insert, saver stamped from the JWT; DR-09; migration
+`kb/migrations/2026-11-10_csm_templates.sql`, rollback beside it, applied by run 42847222590). A save re-reads first and
+refuses to write over a teammate's newer version. With nothing saved the four emails match the old `seedMail` word for
+word (the fixture that pinned it went with the stage emails, 2026-11-13). The two acceptances stay the funding tab's
+(`acceptMail`).
+
+**LIVE once its PR merges: the plainer review, the conditions panel and the copied email (2026-11-12, asked in session
+from the MAP account; asked who was driving, the reply was *"I think Malone is the one driving this session"*, so it is recorded as Malone's, likely).** The concern, in the driver's words: the recommended action
+*"is not immediately clear to someone who isn't swimming in this water"*, and *"some of the wording doesn't make it
+immediately obvious what has happened yet or how each of those lines tracks with the minimum conditions"*.
+- **The review reads three words:** Met, Check this, Not met (`REQ_PILL`). The lines that need the reviewer lead; the
+  met ones fold under *N requirements already met, with nothing for you to check* (`reqDone`, `state.doneOpen`). One
+  line names the minimum condition the review settles, in the funding tab's label (`settlesWords`). The checks, the
+  gate and what Accept requires are unchanged.
+- **The conditions table's third column is *Next step*:** None, The team reviews the request, The team emails the
+  college, The college updates MAP (`stepWord`). It replaces *Email* with *Status only* and *When not met*.
+- **Recommended action says what has happened** (`recOf`): the college named, what it has not sent, what the email asks.
+- **Funding conditions explained** under the summary opens a drawer (`condxHtml`, `CONDX`, `state.condx`): each
+  condition under the funding tab's own label from the snapshot, then how a college meets it, who settles it and what
+  the dashboard does. The sentences were written from the funding tab's code; the driver recalled a document of
+  2026-11-10 that no repo, the vault or the Drive showed, so the wording waits on their read.
+- **A copied or drafted request keeps its Sent word** (`draftedOf`). A copy or a draft counts as asked for 14 days, so
+  the email stopped being due and Sent left with it: the log read *Email copied* for good. The record now reads
+  *Copied Nov 12 and not yet marked as sent* with Sent beside it, and Sent files the receipt with the copy's subject
+  and address. What is due and when is unchanged; the college stays out of *Needs you*.
+- **The guide (2026-11-12):** *Funding Follow-up Dashboard Guide*, step by step with screenshots on sample data, one
+  section for each stage a college can be in (https://claude.ai/artifact/XqJpfTdCWPhAkGFLA3gsBq; Library record
+  `funding-follow-up-dashboard-guide`, a team draft, applied by run 43275652355 and read back live 18:07Z, receipt
+  `kb/receipts/migration_library_funding_followup_guide_43275652355.json`; source and `capture.js` in
+  `CPLBrain/04-projects/cpl-initiative/funding-follow-up-guide/`). Redraw the screenshots when the dashboard changes.
+  Writing it found two things: the coordinator sentence in *Funding conditions explained* named parts the live label
+  no longer has (reworded to point at the label), and a college whose email is due appears under *Ready to send* and
+  not under *All open items*, the list the page opens on.
+- **Rollback:** one squash commit; `git revert` of it restores every piece. No table, migration or stored value changed.
+Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
+
+**LIVE once its PR merges: the lists redrawn, every email in the editor, and the guide's stamp (2026-11-12, Malone in
+session).** His words: *"the filters are either not working or not corresponding to logical divisions ... I recently
+got a list of 14 colleges with Non-credit CPL leads from COBI, but in the NC attestation filter, it's only got 7 ...
+right now the filters are many and the accuracy seems few"*; and *"make sure that every single Email template is
+contained in the Email Template editor"*.
+- **What was wrong.** Every list counted what its code said, and the definitions overlapped. Read live 2026-11-12: 13
+  attestations (5 accepted, 8 waiting) and 3 colleges with the role in MAP, 14 colleges in all. *Noncredit
+  attestations waiting* read 7 (8 less Chaffey, which holds the role) and *With a Noncredit CPL Lead* read 7 (5
+  accepted and the 3 with the role, LA Mission in both); no list held the 14. *All open items* left out every email
+  that was due and held colleges with nothing to do; *Ready to send* held requests still under review.
+- **The lists of 2026-11-12 are replaced by the seven stages** (below, *The seven stages*). What was found that day stands: the definitions overlapped, and `csm_log` held almost no Sent receipt.
+- **Every email is in Email templates (`TPL_EDITABLE`, seven since the stages).** The four stage emails, the follow-up on a condition, and
+  the funding tab's two: the acceptance (one wording for the confirmation and the attestation) and the follow-up
+  on a request under review. Their saved versions live in `csm_templates` under `accept` and `request_follow`; the
+  funding tab reads them when a reviewer's data loads (`csmTplLoad`) and the dashboard hands them back after a save
+  (`setTemplates`), so both pages write the same words. With none saved the wording is the funding tab's own, and
+  *the response email* editor on Implementation Funding still sets that default: once a version is saved in the
+  dashboard, an edit there shows only after *Put back the shipped wording*. Guards `csm_workspace_templates` 5b to 5b4.
+- **The acceptance's message was the empty letter (found on Malone's screen, 2026-11-12, Napa; fixed the same day).**
+  `seedMail` took the acceptance's words from the funding tab and then ran the Blank branch over them, so the preview
+  read *Dear ..., The CPL Initiative team* under a subject that was right. It had done so since the templates landed;
+  the guide's own screenshot showed it and was not read closely. Guards 10c2 to 10c4.
+- **The guide follows the page (`tests/csm_workspace_guide_stamp.test.js`).** Malone: *"Make a note somewhere to
+  automatically update this documentation whenever this page gets changed in functionality or layout."* The test
+  reads every control and label on the dashboard and fails when the set differs from the one the guide was written
+  against, naming what was added and removed; the fix is the guide's update and `--restamp` in the same change.
+- **DECIDED 2026-11-12 (in session, recorded here for Sam and Malone to revise):** a copied request counts as to do
+  until marked Sent; the list group headings are second-level headings.
+- **Rollback:** one squash commit; no table or migration. A template saved under `accept` or `request_follow` is a
+  row in `csm_templates`, undone with *Put back the shipped wording*.
+
+**LIVE once its PR merges: the acceptance no longer hidden, the email record, the minute check and Bcc (2026-11-13,
+Malone in session).** His words: *"we should save who completes a step (attestation confirmation, NC confirmation, sent
+attestation request)"*; *"do refresh every minute, ideally a backend check first, if none of the data is different then
+we don't need a refresh ... We don't want to accidentally send 2 of the same email or send conflicting emails"*;
+*"put MAP@rccd.edu in bcc for the mailto: links. that way we at least always know that the map email is in the mix."*
+- **Email record (`emails`, Look up; `emailRecord`).** Every confirmed college: who accepted and when, and what the log
+  holds for the acceptance email (marked sent, copied or drafted with no Sent, or no record), each with the reviewer.
+  Read live the same day: 17 confirmed, 3 acceptances marked Sent. Guard 14b6.
+- **Who completed a step.** The acceptances already stored it (`confirmed_by` on the confirmation and the attestation;
+  `by_email` on every log entry); the snapshot now carries it (`part.by`, `nc.by`) and the record shows *Confirmation
+  accepted by ...*. The ticks inside a review are still kept in the browser alone, by his word.
+- **The once-a-minute check (`watchCheck`, `WATCH`).** Three small reads (confirmations, attestations, log ids and
+  closures) make one string; the same string does nothing, a different one has the funding tab read again
+  (`csm.reload`) and the log reload, and the page says so. It also runs when a college is opened, and before Sent is
+  filed: a receipt another reviewer filed in the meantime stops a second one. Guard 14b7. Not yet seen across two
+  live browsers.
+- **Bcc.** Every draft the page opens (Outlook, Gmail, and the funding tab's own mail window) carries the team's
+  mailbox on Bcc (`TEAM_BCC`, `teamBcc`); the preview shows the line, and a copied email says to add it by hand.
+- **DECIDED, left as it is by his word:** the review's ticks and what Accept requires.
+- **Rollback:** one squash commit; no table or migration.

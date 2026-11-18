@@ -500,6 +500,18 @@
     return items.map(function (i, n) { return { i: i, n: n }; })
       .sort(function (a, b) { return at(a.i) - at(b.i) || a.n - b.n; }).map(function (x) { return x.i; });
   }
+  /* A top card's explainer, folded by default to save room (Sam, S661: "Save real estate on cpl commons by default
+     collapsing the text explainer part of the top cards"): one word opens it for the visit; nothing is stored. */
+  function explainer(id, text) {
+    var p = el("p", { cls: "cmn-sub cmn-explain", id: id, hidden: "", text: text });
+    var b = el("button", { type: "button", cls: "cmn-word cmn-explain-word", "aria-expanded": "false", "aria-controls": id, text: "About this" });
+    b.addEventListener("click", function () {
+      var open = p.hasAttribute("hidden");
+      if (open) p.removeAttribute("hidden"); else p.setAttribute("hidden", "");
+      b.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    return el("div", { cls: "cmn-explain-box" }, [b, p]);
+  }
   function queueSection(q) {
     if (!q || !Array.isArray(q.reasons)) return null;
     var groups = q.reasons.slice();
@@ -527,7 +539,7 @@
     groups.forEach(function (g) { (g.items || []).forEach(function (i) { if (typeof i.n === "number") pooled += i.n; }); });
     return el("section", { cls: "cmn-queue", "aria-labelledby": "cmn-queue-h" }, [
       el("h3", { id: "cmn-queue-h", cls: "cmn-band-h", text: "Waiting on a person" }),
-      el("p", { cls: "cmn-sub", text: "A person sees an item only for one of four reasons, or when a routine stalls. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs." }),
+      explainer("cmn-queue-x", "A person sees an item only for one of four reasons, or when a routine stalls. The routines carry the rest. Each card lists its items in the order the work goes: subjects, then courses, exhibits, credit recommendations and programs."),
       el("details", { cls: "cmn-fold" }, [
         el("summary", { cls: "cmn-fold-word", text: "Show the " + fmt(pooled) + " items in the pools" + (stalled.length ? ", " + fmt(stalled.length) + (stalled.length === 1 ? " stalled routine" : " stalled routines") : "") + (carried.length ? ", and what the routines carry" : "") }),
         el("div", { cls: "cmn-queue-grid" }, boxes),
@@ -544,7 +556,7 @@
     var fold = el("details", { cls: "cmn-fold", id: "cmn-conf-fold" }, [el("summary", { cls: "cmn-fold-word", text: "Show each procedure's count" })]);
     var kids = [
       el("h3", { id: "cmn-conf-h", cls: "cmn-band-h", text: "How far to trust the procedures" }),
-      el("p", { cls: "cmn-sub", text: "A procedure earns trust by what a person does with its work afterward. A result a person keeps, or renames with its whole family, counts for it; a result a person moves elsewhere counts against it." })
+      explainer("cmn-conf-x", "A procedure earns trust by what a person does with its work afterward. A result a person keeps, or renames with its whole family, counts for it; a result a person moves elsewhere counts against it.")
     ];
     list.forEach(function (c) {
       var name = (CARDS[c.ref] && CARDS[c.ref].name) || c.ref;
@@ -604,7 +616,8 @@
       return (d ? fmt(d) + " of " + fmt(b.n) + " decided. " : "") + fmt(b.n) + (b.n === 1 ? " card" : " cards")
         + " as of last night's sweep; Start counts again. " + (b.stop || "");
     }
-    if (b.kind === "decision") return "One decision, on its sheet. " + (b.stop || "");
+    /* A real ask is plain (Sam, 2026-11-16, issue #3358): the default already chosen, and it stands unless he changes it. */
+    if (b.kind === "decision") return (b.chosen ? "We went with this: " + b.chosen + " " : "") + (b.stop || "It stands unless you change it.");
     return "In the " + (b.title || "reference") + ". Each ruling saves where you make it.";
   }
   function nextBatchSection(b, opts) {
@@ -628,7 +641,7 @@
          el("p", { cls: "cmn-next-meta", text: batchMeta(b) })];
     return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": b ? b.kind : "none" }, [
       el("div", { cls: "cmn-next-text" }, text.filter(Boolean)),
-      b && b.open ? openLink(b.open, "Start", "cmn-start") : null
+      b && b.open ? openLink(b.open, b.kind === "decision" ? "Change it" : "Start", "cmn-start") : null
     ].filter(Boolean));
   }
   /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
@@ -672,7 +685,7 @@
   function doneLine(j) {
     if (!j) return null;
     var text = j.kind === "case"
-      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and files its receipt."
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and keeps a record that can undo it."
       : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
     var line = el("p", { cls: "cmn-next-done", role: "status", text: text });
     return j.kind === "case" ? el("div", null, [line, processNow()]) : line;
@@ -702,7 +715,7 @@
     }).then(function (x) {
       PROCESS.busy = false;
       PROCESS.said = x.status === 200 && x.j.ok
-        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
+        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, keeps a record of each ruling that can undo it, and marks its case done.")
         : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
         : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
         /* The shared queue (S643): the function starts nothing while another run waits in the queue it shares, since
@@ -734,7 +747,7 @@
       + "On no ruling: " + (c.no_reply || "nothing changes.") }));
     if (R) {
       kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
-        + ". The processor carries it out and files its receipt." }), processNow());
+        + ". The processor carries it out and keeps a record that can undo it." }), processNow());
       return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
         [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
     }
@@ -968,6 +981,16 @@
       el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["What we have collected for each college, how complete it is, how confident we are in it and what is in the way: ", el("a", { href: "#commons/data", text: "College Data Collection" }), "."])
     ]));
 
+    /* The Commons Curation ETA tops the tab (Sam, S661: "Add the new widget to the top of cpl commons"). It loads with
+       its module; a module that fails to load leaves the page as it was. */
+    var curHost = el("div", { id: "cmn-cur" });
+    wrap.appendChild(curHost);
+    (function () {
+      function put() { if (window.CPL_COMMONS_CURATION_ETA) curHost.appendChild(window.CPL_COMMONS_CURATION_ETA.band(data)); }
+      if (window.CPL_COMMONS_CURATION_ETA || !(window.CPL_TABS && CPL_TABS.loadScript)) put();
+      else CPL_TABS.loadScript("commons_curation_eta.js", "CPL_COMMONS_CURATION_ETA", put);
+    })();
+
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
     var waiting = [], openTitles = {};
     cards.forEach(function (c) { c.open.forEach(function (call) { waiting.push({ card: c, call: call }); if (call.title) openTitles[call.title] = true; }); });
@@ -1194,6 +1217,8 @@
     ".cmn-title { margin:0; font-family:var(--cmn-serif); font-weight:700; color:var(--cmn-title); font-size:clamp(2rem, 1.5rem + 1.8vw, 3rem); line-height:1; letter-spacing:-0.03em; }",
     ".cmn-rule { width:66px; height:4px; background:var(--cmn-gold); margin:16px 0 14px; }",
     ".cmn-lede { margin:0; color:var(--cmn-ink-2); font-size:1.1rem; }",
+    ".cmn-explain-box { display:grid; gap:4px; justify-items:start; }",
+    ".cmn-explain-word { font-size:.82rem; }",
     ".cmn-sub { margin:6px 0 0; color:var(--cmn-muted); font-size:.95rem; max-width:var(--cpl-measure,none); }",
     ".cmn-sub .cmn-note { font-variant-numeric:tabular-nums; }",
     ".cmn-band { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-top:4px solid var(--cmn-gold); border-radius:12px; padding:18px 22px; display:grid; gap:10px; }",

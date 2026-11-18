@@ -1425,7 +1425,9 @@ check("Cosumnes River's apply plan: the statewide route fills 30566, 33072 and 3
       and _cr_plan["held"] == ["31055", "31995", "41992", "46419"] and _cr_plan["restore_before_reread"] == []
       and _cr_plan["counts"]["pass_to_fail"] == 0 and _cr_plan["first_reconcile"] is True
       and _cr_plan["page_read"]["run"] == "43519918667")
-_cr_rv = _cr_plan["run_review"]
+# A later reconcile's review keeps this one in earlier_run_reviews (S650).
+_cr_rv = next(r for r in [_cr_plan["run_review"]] + (_cr_plan.get("earlier_run_reviews") or [])
+              if r.get("run") == "43521338550")
 check("Cosumnes River's first reconcile (43521338550): only 39656 filled and is kept; the 14 rescored records restored; "
       "none passing to failing",
       _cr_rv["run"] == "43521338550" and _cr_rv["kept"] == ["39656"] and len(_cr_rv["restored"]) == 14
@@ -1450,6 +1452,150 @@ check("Cosumnes River 30566: the section ends at the sibling's heading, before a
       _cr_why is None and "(Cal-GETC) Requirement" in _cr_read["words"]
       and R.calgetc_hold(_cr_rec, _cr_text, "A.A- T Degree", "Psychology", [], _cr_conf, "30566")[0] is not None)
 
+# Cosumnes River's own pages for 30566 and 33072 (S650): reconcile 43521338550's fresh capture took them to pp.467-470
+# and 94-96, so neither took the 34. The college's entry names each page with the words the filed capture of
+# 2026-10-17 opened on there (pdf_pages), and the capture binds a pin only while the page prints them.
+print("Cosumnes River's pinned pages (S650)")
+import re as _re  # noqa: E402
+import shutil as _shutil  # noqa: E402
+import tempfile as _tempfile  # noqa: E402
+_CR = "Cosumnes River College"
+_CR_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river")
+_cr_pins = _cr_conf.get("pdf_pages") or {}
+_cr_capture = json.load(open(os.path.join(_CR_DIR, "capture.json")))
+_cr_picks = {p["control_number"]: p for p in _cr_capture["pdf"]["picks"]}
+check("the entry pins 30566 to p.552 and 33072 to p.404, and nothing else",
+      {cn: v["page"] for cn, v in _cr_pins.items()} == {"30566": 552, "33072": 404})
+check("each pin's words are what the filed capture opened on, on the pinned page, and its evidence names both runs",
+      all(" ".join(v["words"].split()) in _cr_picks[cn]["opens"] and _cr_picks[cn]["pages"][0] == v["page"]
+          and "43519918667" in v["evidence"] and "43521338550" in v["evidence"] for cn, v in _cr_pins.items()))
+check("each pinned page is the page the filed record was extracted from",
+      all(as_read(os.path.join(_CR_DIR, "records", cn + ".json"))["source_url"].endswith("#page=%d" % v["page"])
+          for cn, v in _cr_pins.items()))
+check("no other college names pdf_pages", [k for k, v in R.load_steps().items() if v.get("pdf_pages")] == [_CR])
+_fx = json.load(open(os.path.join(ROOT, "tests", "fixtures", "program_requirements_cosumnes_pinned_pages.json")))
+_fx_pages = [""] * _fx["pages_total"]
+for _k, _v in _fx["pages"].items():
+    _fx_pages[int(_k) - 1] = _v
+_fx_progs = {p["control_number"]: dict(p, closed_list=[{"code": c} for c in p["courses"]]) for p in _fx["programs"]}
+_fx_want = {"30566": (552, 467), "33072": (404, 94)}
+for _cn, (_own, _decoy) in _fx_want.items():
+    _p = _fx_progs[_cn]
+    _plain = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _p, _p["closed_list"], "pypdf")
+    _head, _why = C.pdf_pinned_heading(_fx_pages, _p, _cr_pins[_cn])
+    _got = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _p, _p["closed_list"], "pypdf", _head)
+    check("%s: on the fixture the heading picker takes the decoy p.%d" % (_cn, _decoy), _plain["pages"][0] == _decoy)
+    check("%s: the pin binds p.%d, its window opens on the pin's words and names every listed course" % (_cn, _own),
+          _why is None and _got["pages"][0] == _own and _got["url"].endswith("#page=%d" % _own)
+          and _re.sub(r"\s+", " ", _got["text"]).startswith("[page %d] %s" % (_own, _cr_pins[_cn]["words"]))
+          and _got["coverage"] == 1.0)
+_p30 = _fx_progs["30566"]
+check("a pinned page that lacks the words binds nothing, and says so",
+      C.pdf_pinned_heading(_fx_pages[:551] + ["Degree Requirements\nPSYC C1000 3"], _p30, _cr_pins["30566"])
+      == (None, "the quoted words are not on PDF page 552"))
+check("a pinned page that lacks a title word binds nothing",
+      C.pdf_pinned_heading(_fx_pages, dict(_p30, title="Sociology"), _cr_pins["30566"])[0] is None)
+check("a pin past the file's last page binds nothing",
+      C.pdf_pinned_heading(_fx_pages[:400], _p30, _cr_pins["30566"])[0] is None)
+check("no pin, no heading", C.pdf_pinned_heading(_fx_pages, _p30, None) == (None, None))
+# The pinned text is what reconcile reads: the filed records take the statewide 34 on it.
+_cr_family = [{"control_number": f.get("control_number"), "title": f.get("title"),
+               "section_heading": ((f.get("record") or {}).get("program") or {}).get("section_heading")}
+              for f in (as_read(os.path.join(_CR_DIR, "records", n)) for n in sorted(os.listdir(os.path.join(_CR_DIR, "records"))))]
+for _cn, (_own, _decoy) in _fx_want.items():
+    _f = as_read(os.path.join(_CR_DIR, "records", _cn + ".json"))
+    _sibs = [x for x in _cr_family if x["control_number"] != _cn]
+    _head, _ = C.pdf_pinned_heading(_fx_pages, _fx_progs[_cn], _cr_pins[_cn])
+    _txt = C.pdf_best("https://x.edu/c.pdf", _fx_pages, _fx_progs[_cn], _fx_progs[_cn]["closed_list"], "pypdf", _head)["text"]
+    _new, _notes = R.reconcile(_f["record"], _txt, _CR, _f["award"], title=_f["title"], siblings=_sibs,
+                               control_number=_cn, steps=R.load_steps())
+    check("%s: on its pinned page the filed record takes the statewide 34 and nothing else moves" % _cn,
+          _new["program"]["ge_units"] == {"min": 34, "max": 34} and [n["field"] for n in _notes] == ["ge_units"])
+
+
+def _cr_capture_run(pages):
+    """capture_pdf on the fixture under Cosumnes River's own entry, the hand-filed file stood in by the pages."""
+    tmp = _tempfile.mkdtemp()
+    os.makedirs(os.path.join(tmp, "sources"))
+    programs = [dict(p, shape="adt", status="active", load_id="1") for p in _fx_progs.values()]
+    saved = C.read_hand_filed
+    C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages,
+                                    "extractor": "pypdf"}
+    try:
+        report = {}
+        C.capture_pdf(_CR, tmp, programs, {"catalog_url": "https://x.edu/c.pdf"}, report,
+                      {"meta": {"url": "https://x.edu/c.pdf", "fetched_by": "test", "fetched_at": "2026-11-14", "sha256": "0"}})
+        srcs = {n[:-5]: json.load(open(os.path.join(tmp, "sources", n))) for n in os.listdir(os.path.join(tmp, "sources"))}
+        return report, srcs
+    finally:
+        C.read_hand_filed = saved
+        _shutil.rmtree(tmp)
+
+
+_rep, _srcs = _cr_capture_run(_fx_pages)
+check("capture_pdf: both programs are read from their own pages, the picks marked pinned",
+      _srcs["30566"]["source"]["pages"][0] == 552 and _srcs["33072"]["source"]["pages"][0] == 404
+      and all(p.get("pinned") for p in _rep["pdf"]["picks"])
+      and _rep["pdf"]["pinned"] == {"30566": {"page": 552, "bound": True}, "33072": {"page": 404, "bound": True}})
+_moved = list(_fx_pages)
+_moved[551] = _moved[551].replace("ADTs also require", "Transfer degrees require")
+_rep2, _srcs2 = _cr_capture_run(_moved)
+check("capture_pdf: a refused pin gives its program no fresh text (never the picker's p.467), and the capture says why",
+      _srcs2["30566"]["method"] == "not_found" and not _srcs2["30566"].get("text")
+      and "pin is refused" in _srcs2["30566"]["near_miss"]["why"]
+      and _srcs2["33072"]["source"]["pages"][0] == 404
+      and _rep2["pdf"]["pinned"]["30566"] == {"page": 552, "bound": False,
+                                              "why": "the quoted words are not on PDF page 552"})
+
+# The review of the run, on the fixture's captures (S650, the second reader's findings A, B1, B2).
+print("Cosumnes River's review: only the two pinned rows, on main's pages (S650)")
+_rv_main = {cn: as_read(os.path.join(_CR_DIR, "records", cn + ".json")) for cn in ("30566", "33072", "31055")}
+_rv_branch = {}
+for _cn in ("30566", "33072"):
+    _f = _rv_main[_cn]
+    _txt = _srcs[_cn]["text"]
+    _new, _notes = R.reconcile(_f["record"], _txt, _CR, _f["award"], title=_f["title"],
+                               siblings=[x for x in _cr_family if x["control_number"] != _cn],
+                               control_number=_cn, steps=R.load_steps())
+    _rv_branch[_cn] = dict(_f, record=_new, reconciled=_notes, extracted_run="9")
+_f31 = _rv_main["31055"]
+_rv_branch["31055"] = dict(_f31, record=dict(_f31["record"], program=dict(_f31["record"]["program"],
+                                                                           ge_units={"min": 34, "max": 34})),
+                           extracted_run="9")
+_own = {cn: _srcs[cn]["source"]["pages"] for cn in ("30566", "33072")}
+_pg = {cn: {"main": p, "run": p} for cn, p in _own.items()}
+_pg["31055"] = {"main": [1], "run": [1]}
+_pins_ok = _rep["pdf"]["pinned"]
+_rv = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("both pinned rows are kept on main's pages, and the held overlap 31055 is restored",
+      _rv["kept"] == ["30566", "33072"] and _rv["restored"] == ["31055"] and _rv["fail_to_pass_kept"] == []
+      and _rv["pass_to_fail_kept"] == [])
+_pg_moved = dict(_pg, **{"30566": {"main": _own["30566"], "run": [467]}})
+_rv_b1 = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg_moved, _pins_ok)
+check("B1: a row the fresh capture moved is restored though only ge_units changed",
+      _rv_b1["kept"] == ["33072"] and "30566" in _rv_b1["restored"]
+      and "other pages" in next(r["why"] for r in _rv_b1["records"] if r["control_number"] == "30566"))
+_rv_a = RM2.reconcile_run_review(_cr_plan, _rv_branch, _rv_main, "9", None, _pg, _rep2["pdf"]["pinned"])
+check("A: a pinned program whose pin was refused is restored",
+      _rv_a["kept"] == ["33072"] and "30566" in _rv_a["restored"]
+      and "pin was refused" in next(r["why"] for r in _rv_a["records"] if r["control_number"] == "30566"))
+_plan_b2 = dict(_cr_plan, held=_cr_plan["held"] + ["30566"])
+_rv_b2 = RM2.reconcile_run_review(_plan_b2, _rv_branch, _rv_main, "9", {"31055": "a keep naming a held row"}, _pg,
+                                  _pins_ok)
+check("B2: a row on the held list is restored though the apply list or a keep names it",
+      _rv_b2["kept"] == ["33072"] and set(_rv_b2["restored"]) == {"30566", "31055"})
+_plan_noheld = {k: v for k, v in _cr_plan.items() if k != "held"}
+_rv_nh = RM2.reconcile_run_review(_plan_noheld, _rv_branch, _rv_main, "9", None, _pg, _pins_ok)
+check("B2: with no held list the review runs, and 31055 (no apply row, no keep) is still restored",
+      _rv_nh["kept"] == ["30566", "33072"] and _rv_nh["restored"] == ["31055"])
+check("Cosumnes River's next run names the two pinned rows alone; the seven rescore-only rows are out and wait",
+      _cr_plan["next_run"]["apply"] == ["30566", "33072"] and "rescore_apply" not in _cr_plan
+      and "rescore_apply" not in _cr_plan["next_run"] and _cr_plan["next_run"]["expect"]["kept"] == ["30566", "33072"]
+      and _cr_plan["next_run"]["expect"]["pins"] == {"30566": {"page": 552, "bound": True},
+                                                      "33072": {"page": 404, "bound": True}}
+      and all(cn in _cr_plan["next_run"]["not_in_this_run"]
+              for cn in ("04602", "04607", "04614", "07305", "11319", "11338", "33542")))
+
 # Glendale's 2026-27 site read beside its 2025-2026 PDF's units (S646): where the page's own call priced the
 # read, a code the call does not price stays unpriced, and the note says so instead of naming the call.
 GST = {"Glendale Community College": {"steps": [{"kind": "course_units", "field": "units",
@@ -1467,6 +1613,134 @@ check("Glendale 2026-27: the note names the call and the code left unpriced",
       and g_notes[0]["words"].startswith(gcall["call"]))
 g_pdf = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST)[0]["blocks"][0]["courses"]
 check("Glendale 2025-26: with no call, the step's figures fill as before", [c["units"] for c in g_pdf] == [5, 5])
+
+print("RCCD's repeated course rows (S672; college page reads 44034775728 and 44045355408)")
+# Each page prints a course's row once per enrollment, and the reading keeps one row. The filed record may already
+# carry the step's result once a reconcile has run, so the record as read is that one with times taken off.
+def _as_read(college_slug, cn):
+    rec = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", college_slug, "records",
+                                      cn + ".json")))["record"]
+    for b in rec["blocks"]:
+        for c in b["courses"]:
+            for e in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)]:
+                e.pop("times", None)
+    return rec
+RCCD_STEPS = R.load_steps()
+D = " \u00b7 "
+piano = ("Required Courses (12.5 units)" + D + "Units: 12.50" + D + "COURSE" + D + "TITLE" + D + "UNITS"
+         + (D + "MUS-P12*" + D + "Applied Piano I*" + D + "3.00") * 4 + D + "MUS-52" + D + "Recital Performance" + D
+         + "0.50" + D + "*Course must be taken four times\nElective Courses (6 units) Course must be repeated up to four "
+         "times.\nUnits: 6.00" + D + "MUS-P36" + D + "Piano Ensemble" + D + "1.50" + D + "Total: 18.50")
+jazz = ("Required Courses (12.5 units)" + D + "Units: 12.00" + D + "MUS-25" + D + "Jazz Appreciation" + D + "3.00" + D
+        + "MUS-36" + D + "Instrumental Chamber Ensembles" + D + "1.50"
+        + (D + "MUS-39Course must be taken twice" + D + "Applied Music ICourse must be taken twice" + D + "3.00") * 2
+        + D + "MUS-52" + D + "Recital Performance" + D + "0.50" + D + "MUS-74" + D + "Jazz Proficiency" + D + "1.00\n"
+        "Course must be taken twiceThis course must be taken twice.")
+perf = ("Required Courses" + D + "Units: 9.50" + D + "COURSE" + D + "TITLE" + D + "UNITS\nTake MUS-39 three times over "
+        "three semesters.\n9.00" + (D + "MUS-39" + D + "Applied Music I" + D + "3.00") * 3 + D + "MUS-52" + D
+        + "Recital Performance" + D + "0.50")
+norco = ("MUS-93" + D + "The Business of Music" + D + "3.00" + D + "Take MUS-39 twice for a total of six units:" + D
+         + "6.00" + D + "MUS-39" + D + "Applied Music I" + D + "3.00" + D + "Take MUS-79 twice for a total of six units:"
+         + D + "6.00" + D + "MUS-79" + D + "Applied Music II" + D + "3.00\nOption 1: Take MUS-41 four times over four "
+         "semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 2: Take both MUS-41 and MIS-81 two "
+         "times each over four semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 3: Take both "
+         "MIS-11A and MIS-11B two times each over four semesters:\n8.00" + D + "MIS-11A" + D + "Studio Ensemble I" + D
+         + "2.00")
+for cn, text, want, code, n in (("38626", piano, (18.5, 18.5), "MUS-P12", 4), ("38627", jazz, (17, 17), "MUS-39", 2),
+                                ("38628", perf, (17.5, 17.5), "MUS-39", 3)):
+    rec = _as_read("riverside_city", cn)
+    new, notes = R.reconcile(rec, text, "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)
+    hit = [c for b in new["blocks"] for c in b["courses"] if c["code"] == code]
+    check("RCC %s: %s carries times %d" % (cn, code, n), hit and all(c.get("times") == n for c in hit))
+    check("RCC %s: the blocks sum to the page's total" % cn, S.program_units(new, {})[0] == want)
+    check("RCC %s: a second run changes nothing" % cn,
+          not [x for x in R.reconcile(new, text, "Riverside City College", "Certificate of Achievement",
+                                      steps=RCCD_STEPS)[1] if x["field"] == "times"])
+check("RCC: a footnote with no starred code ahead of it changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P12 3.00 *Course must be taken four times",
+                                  "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("RCC: 'repeated up to four times' on an elective list changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P36 1.50 Course must be repeated up to four "
+                                  "times.", "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+nrec = _as_read("norco", "30606")
+nnew, nnotes = R.reconcile(nrec, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)
+ntimes = {c["code"]: c.get("times") for b in nnew["blocks"] for c in b["courses"] if c["code"] in ("MUS-39", "MUS-79", "MUS-41")}
+check("Norco 30606: MUS-39 and MUS-79 twice", ntimes.get("MUS-39") == 2 and ntimes.get("MUS-79") == 2)
+# S673: each option's heading gives its own courses their count, so MUS-41 takes 4 in Option 1 and 2 in Option 2.
+opt = {b["name"].split(":")[0]: {c["code"]: c.get("times") for c in b["courses"]}
+       for b in nnew["blocks"] if b["name"].startswith("Option")}
+check("Norco 30606: Option 1's MUS-41 four times", opt.get("Option 1") == {"MUS-41": 4})
+check("Norco 30606: Option 2's MUS-41 and MUS-81 two times each", opt.get("Option 2") == {"MUS-41": 2, "MUS-81": 2})
+check("Norco 30606: Option 3's MIS-11A and MIS-11B two times each", opt.get("Option 3") == {"MIS-11A": 2, "MIS-11B": 2})
+check("Norco 30606: the blocks sum to the page's 36-37", S.program_units(nnew, {})[0] == (36, 37))
+check("Norco 30606: a second run changes nothing",
+      not [x for x in R.reconcile(nnew, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("Norco 30606: an option heading the page does not print changes nothing",
+      not [x for x in R.reconcile(nrec, norco.split("\nOption 1")[0], "Norco College", "A.A. Degree",
+                                  steps=RCCD_STEPS)[1] if x["words"].startswith("Take MUS-41")])
+_odd = json.loads(json.dumps(nrec))
+for b in _odd["blocks"]:
+    if b["name"].startswith("Option 1"):
+        b["stated"] = {"min": 6, "max": 6}
+check("Norco 30606: a count whose sum is not the option's stated figure changes nothing",
+      all(c.get("times") is None for b in R.reconcile(_odd, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[0]["blocks"]
+          if b["name"].startswith("Option 1") for c in b["courses"]))
+check("Norco 30606: the required list sums to its printed 25",
+      sum(c["units"] * (c.get("times") or 1) for c in nnew["blocks"][0]["courses"]) == 25)
+
+print("printed_total: Moreno Valley 38758 (S674)")
+_mrec = json.load(open(os.path.join(ROOT, "kb/program_requirements_college/moreno_valley/records/38758.json")))["record"]
+_mrec = json.loads(json.dumps(_mrec))
+_mrec["program"]["total_units"] = {"min": 16, "max": 20}
+mvc = ("Guitar Performance - Certificate of Achievement - MCE930\nRequired Courses (16-20 Units)\n"
+       "Music Theory (includes musicianship)\nMUS-3*\tMusicianship\t4.00\nMUS-4\t4.00\nMUS-5\t4.00\n"
+       "Applied Music (1 unit per semester for a total of 4 units)\t0.00\nMUS-87\t4.00\n"
+       "Ensemble (1 unit per semester for a total of 4 units)\nMUS-70\t4.00\nUnits: 20.00\n"
+       "* (Test out option available)\nTotal : 20.00\n")
+mnew, mnotes = R.reconcile(_mrec, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)
+check("Moreno Valley 38758: the record takes the printed total 20",
+      mnew["program"]["total_units"] == {"min": 20, "max": 20})
+check("Moreno Valley 38758: one note, from 16-20", [n["was"] for n in mnotes if n["field"] == "total_units"] == [{"min": 16, "max": 20}])
+check("Moreno Valley 38758: a second run changes nothing",
+      not [n for n in R.reconcile(mnew, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if n["field"] == "total_units"])
+check("Moreno Valley 38758: no test-out words, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\n", ""), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: a total that is not the range's top, no change",
+      R.reconcile(_mrec, mvc.replace("Total : 20.00", "Total : 18.00"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+_mchoose = json.loads(json.dumps(_mrec))
+_mchoose["blocks"][2]["rule"] = "choose_units"
+check("Moreno Valley 38758: a block that is a choice, no change",
+      R.reconcile(_mchoose, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_msum = json.loads(json.dumps(_mrec))
+_msum["blocks"][1]["stated"] = {"min": 2, "max": 2}
+check("Moreno Valley 38758: blocks that do not sum to the total, no change",
+      R.reconcile(_msum, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_mother = json.loads(json.dumps(_mrec))
+_mother["program"]["total_units"] = {"min": 18, "max": 20}
+check("Moreno Valley 38758: a record holding another range, no change",
+      R.reconcile(_mother, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 18, "max": 20})
+
+_mwide = json.loads(json.dumps(_mrec))
+_mwide["program"]["total_units"] = {"min": 12, "max": 20}
+check("Moreno Valley 38758: a 12-20 range a 4-unit starred course does not account for, no change",
+      R.reconcile(_mwide, mvc.replace("(16-20 Units)", "(12-20 Units)"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 12, "max": 20})
+check("Moreno Valley 38758: test-out words after the total, outside the span, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\nTotal : 20.00\n", "Total : 20.00\n* (Test out option available)\n"),
+                  "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: the note keeps the heading and the total, not the course table",
+      [n for n in mnotes if n["field"] == "total_units"][0]["words"].startswith("Required Courses (16-20 Units)")
+      and "Total : 20" in [n for n in mnotes if n["field"] == "total_units"][0]["words"]
+      and "MUS-87" not in [n for n in mnotes if n["field"] == "total_units"][0]["words"])
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

@@ -5,16 +5,19 @@
  "found": 214,
  "extracted": 214,
  "errors": 0,
- "passed_machine_checks": 197,
+ "passed_machine_checks": 199,
  "failed": {
-  "coverage": 6,
-  "invented": 4,
+  "coverage": 4,
+  "invented": 2,
   "arithmetic": 12,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 13.85,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 13.85,
  "cost_per_program": 0.0647,
+ "extract_calls": null,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "18369",
@@ -141,5 +144,5 @@
    }
   }
  ],
- "run": "43379378196"
+ "run": "43691943622"
 }

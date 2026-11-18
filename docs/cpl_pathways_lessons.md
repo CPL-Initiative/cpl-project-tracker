@@ -664,3 +664,30 @@ list sorted alpha; then: a college picked after a search left the old matches on
   painting over Sign in and Theme at 1,024 to 1,180 px (or 125% zoom); the chip sat 6 px low on a `vertical-align`
   nudge. `cobi_brand.js`: the box follows its slot, its own row below 1,180 px, one column below 760 px, the chip
   centered by flex (#2353).
+
+## Moved from the lane (S667 checkpoint)
+
+Verbatim from `docs/reference/lanes/my-college-action-page.md`, moved to keep the lane under its budget:
+
+✅ **Folding My College into CPL Pathways, done S448 (Sam, 2026-10-21: "consolidate the My College tab with in CPL Pthways"; S442 advised three steps; his go: "go on step 1, move funding to Implementation Funding").** Step 1: one college choice for both tabs, held in memory only (`window.CPL_COLLEGE_CHOICE`, names matched through `college_short_names.js`), an Open CPL Pathways link (Open My College retired at step 3), and CPL Pathways keeping its college when its record list lands (#2313, `tests/college_choice_shared.test.js`). Funding moved (S443): My CPL Funding is a link to the funding page's My Institution view (`funding-model/?college=<roster key>&view=one`, #2316), and the expenditure reports sit at the top of Implementation Funding's 2026-28 view through `reportsPanel` (#2320). **Step 2 (Sam, 2026-10-22: "go on step 2"; S448, #2355):** a folded *My College: <college>* section under CPL Pathways' college line, loaded on its first open, drawn by My College's own renderer through `CPL_COLLEGE_BRIEFING.mountInto(host, college)` (host marked `data-cb-embed`; the scope question, picker and duplicate header actions do not show; a college My College does not hold says so). Guard `tests/college_briefing_embed.test.js`. `tab:cpl-pathways` maps to DR-09/CA-06 with My College. **Step 3 (Sam, 2026-10-22: "go on step 3"; S448):** My College is off the side menu (`cobi_nav` hidden, `kb/receipts/cobi_nav_my_college_hidden_2026-10-22_s448.sql`, through supabase-migrate.yml); `#college-briefing` still opens it. CPL Pathways' Open My College link is gone, and the statewide map's Create Handout opens CPL Pathways with the college and its My College section open (an in-memory hand-off, `open: "my-college"`). Sierra Training's "Try it in: My College" still opens the tab by its address. Hold: one Sierra per page, each section loads when opened, and no choice is remembered across visits (Sam, 2026-10-21, #2325: My College reads only a hand-off another tab marks `handoff`, once, and clears it). Story: lessons S442, S443.
+
+## S667 (SkyPlover, Sam's session, 2026-11-16): five changes, one registry, a bar that counts bytes
+
+- **Sam's five asks in one PR (#3402, `da29bf82`).** Request Adopt on catalog-record course cards (the `map_links.js`
+  line per Could adopt or For consideration credential; 342 of 358 could-adopt titles have a verified exhibit in the
+  pilot file), Ask Sierra's chip and side bar, an SLOs and objectives panel, the full window width, and the CPL Visual's
+  build progress. Guard `tests/cpl_pathways_side_panels.test.js` (36 checks; a mutation run caught a lost kind, a lost
+  newest-run filter and the old Library-only chip rule).
+- **Two tabs that toggle one shared widget must ask one registry.** `library.js` hid the Sierra chip on every tab but
+  its own, so with CPL Pathways also showing it, whichever `cpl-tab-activated` listener ran last won. Both now ask
+  `window.CPL_SIERRA_TABS[current tab]` (`p-tab-listeners-share-one-registry-s667`).
+- **A reader of `course_outcomes` names its kind, even one that wants both.** CI's standing guard
+  (`course_outcomes_objectives_standing_test.py` check 25) failed the panel's first read, which selected `kind` but
+  never filtered on it. The panel reads `kind=in.(slo,objective)` and heads each kind separately.
+- **Five files loading in parallel finish together, so a per-file bar sits still and then jumps.** Measured under a
+  4 MB/s throttle: 6% for eight seconds, then 88%. The visual now streams each file (`fetch` body reader into a blob
+  URL script) and counts bytes against its rough size; the bar moved 7, 15, 22 ... 85 a second. The clock freezes for
+  the synchronous build, about five seconds, which no timer can paint through.
+- **The full `npm run a11y` sweep crashes Chromium in the cloud container partway through** (197 "did not finish",
+  all after one browser close). A narrowed config of the touched targets passed 10 of 10; the 42 COBI tabs in light
+  passed before the crash.

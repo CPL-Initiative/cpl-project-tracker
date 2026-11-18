@@ -49,6 +49,7 @@
    "share": 1.0,
    "missing": [],
    "unexplained": [],
+   "none_placed": false,
    "pass": true
   },
   "invented": {
@@ -58,19 +59,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     20.0,
     20.0
    ],
    "stated": [
-    16.0,
+    20.0,
     20.0
    ],
-   "why": [
-    "the blocks sum to 20.0-20.0; the catalog states 16.0-20.0"
-   ]
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,14 +86,22 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Guitar Performance - Certificate of Achievement - MCE930",
    "measure": "units",
    "total_units": {
-    "min": 16,
+    "min": 20,
     "max": 20
    },
    "open_elective_units": null,
@@ -188,5 +196,20 @@
    "Codes are recorded as printed with hyphens (MUS-3 etc.); they correspond to closed-list MUS 3, MUS 4, MUS 5, MUS 70, MUS 87."
   ]
  },
- "extracted_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": 16,
+    "max": 20
+   },
+   "now": {
+    "min": 20,
+    "max": 20
+   },
+   "words": "Required Courses (16-20 Units)\nUnits: 20.00\nCOURSE\nTITLE\nUNITS\nMusic Theory (includes musicianship)\n12.00\n12.00\nMUS-3*\nFundamentals of Music ( Active ) *\n4.00\nMUS-4\nMusic Theory I ( Active )\n4.00\nMUS-5\nMusic Theory II ( Active )\n4.00\nApplied Music (1 unit per semester for a total of 4 units)\n0.00\nMUS-87\nApplied Music Training ( Active )\n4.00\nEnsemble (1 unit per semester for a total of 4 units)\nMUS-70\nGuitar Lab Ensemble ( Active )\n4.00\n* (Test out option available)\nTotal : 20.00 (the range's low end is a test-out; credit by exam still awards the units (d-mvc-38758-total-is-20-s673))"
+  }
+ ]
 }

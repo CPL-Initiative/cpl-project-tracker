@@ -31,11 +31,15 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
+      # The $40 gate (S655, card 10): cpl-chat returns no usage, so the stop is a worst case through the spend
+      # meter (kb/_model_run_gate.py): each answer is one model call of at most MAX_TOKENS out and a
+      # 100,000-token input allowance in, at the dearest rate. Over $40 the gate exits 1 before any answer.
       - name: Ask
         env:
           QUESTION: ${{ inputs.question || 'Has Cabrillo College met the CPL funding conditions, and is it at 75 percent on veteran JSTs?' }}
         run: |
           set -euo pipefail
+          python3 kb/_model_run_gate.py cpl-chat --calls 1
           URL=$(grep -oE 'https://[a-z0-9]+\.supabase\.co/functions/v1/cpl-chat' chatbox/health_check.sh | head -1)
           ANON=$(grep -oE 'eyJ[A-Za-z0-9_.-]+' chatbox/health_check.sh | head -1)
           BODY=$(python3 -c 'import json,os;print(json.dumps({"query":os.environ["QUESTION"],"session_id":"sierra-ask-workflow"}))')

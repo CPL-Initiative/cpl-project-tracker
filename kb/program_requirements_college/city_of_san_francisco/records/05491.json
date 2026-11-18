@@ -46,27 +46,30 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 19,
    "listed": 19,
-   "share": 0.895,
-   "missing": [
-    "CMST20",
-    "CMST4"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMM20",
+     "listed": "CMST20",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMM4",
+     "listed": "CMST4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMM20",
-    "COMM4"
-   ],
-   "flagged": [
-    "COMM20",
-    "COMM4"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -375,5 +378,6 @@
    "Courses meeting the Board of Registered Nursing licensure requirement must be completed before the NCLEX, per the catalog. No general education pattern or degree total is printed in the excerpt."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": 43693267535,
+ "read_run": "39047128472"
 }

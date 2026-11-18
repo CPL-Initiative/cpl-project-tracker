@@ -46,34 +46,44 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 42,
    "listed": 43,
-   "share": 0.884,
+   "share": 0.977,
    "missing": [
-    "ECON220",
-    "ECON221",
-    "HIST120",
-    "HIST121",
     "WRKX180"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON221",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECON220",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIST121",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "WRKX170"
    ],
    "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "HISTC1001",
-    "HISTC1002",
     "WRKX170"
    ],
    "pass": true
@@ -623,5 +633,6 @@
   ],
   "notes": []
  },
- "extracted_run": "43379378196"
+ "extracted_run": 43691943622,
+ "read_run": "43379378196"
 }

@@ -92,14 +92,25 @@ def _span_of(v):
     return (v, v)
 
 
-def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
+def year_renumbers(conf: dict, year: str | None) -> dict:
+    """The renumbers a catalog year printed (course_renumbers_by_year[year]): a prior-year page prints
+    the codes of its own year, and the state's list names today's (Riverside City's 2025-2026 MAT-1C
+    for MATH 1C, S663). Keys starting with _ are notes. Only a record read from that year gets them,
+    so a current-year record is never scored against an old code."""
+    got = ((conf.get("course_renumbers_by_year") or {}).get(year or "") or {}) if year else {}
+    return {k: v for k, v in got.items() if not k.startswith("_")}
+
+
+def prefix_aliases(college: str, steps: dict | None = None, year: str | None = None) -> dict | None:
     """The college's subject prefixes as its catalog prints them, mapped to the state file's
     (the scorer's aliases; kb/_program_requirements_score.py with_prefix_aliases), and its
     renumbered courses, a whole printed code mapped to the file's (Merced's MECH22A for
-    AGMA 11, S423). A key with a digit is a course; one without, a prefix."""
+    AGMA 11, S423). A key with a digit is a course; one without, a prefix. A record's own
+    catalog year adds that year's renumbers (year_renumbers)."""
     conf = (steps if steps is not None else load_steps()).get(college) or {}
     out = dict(conf.get("prefix_aliases") or {})
     out.update(conf.get("course_renumbers") or {})
+    out.update(year_renumbers(conf, year))
     return out or None
 
 
@@ -120,15 +131,17 @@ def numbers_after(college: str, steps: dict | None = None) -> bool:
     return conf.get("pdf_numbers_after") is True
 
 
-def course_renumbers(college: str, steps: dict | None = None) -> dict:
+def course_renumbers(college: str, steps: dict | None = None, year: str | None = None) -> dict:
     """{the file's code, normalized: the catalog's code, its subject spaced from its number}:
     what the capture looks for on the page in place of a renumbered listed course. The space
     is load-bearing: code_pattern() reads "CPSC17" as letters C-P-S then "C17", which never
     matches the page's "CPSC-17" (Merced's Drone Technology and Equine pages, S423)."""
     from _program_requirements_pilot import norm_code
     conf = (steps if steps is not None else load_steps()).get(college) or {}
+    both = dict(conf.get("course_renumbers") or {})
+    both.update(year_renumbers(conf, year))
     return {norm_code(v): re.sub(r"^([A-Z&]+)(?=\d)", r"\1 ", norm_code(k))
-            for k, v in (conf.get("course_renumbers") or {}).items()}
+            for k, v in both.items()}
 
 
 def awards_match(kind: str | None, award: str | None) -> bool:
@@ -201,18 +214,24 @@ def fill_course_hours(out: dict, hours: dict) -> dict:
 def reconcile(record: dict, text: str | None, college: str, award: str | None = None,
               steps: dict | None = None, course_units: dict | None = None,
               course_hours: dict | None = None, title: str | None = None,
-              siblings: list | None = None, control_number: str | None = None) -> tuple[dict, list[dict]]:
-    """The record with the college's reconcile steps, then the statewide ones (statewide_cal_getc), applied to
-    its page text, and a note per change: the field, what it was, what it is now, and the words. A college's own
-    step runs first, so a figure its catalog prints is set before a statewide figure is asked for. title is the
-    program's title and siblings the college's other filed programs ([{"control_number", "title",
-    "section_heading"}]), which the statewide rule reads; without siblings it fills nothing. The statewide rule
-    runs only at a college whose config carries a statewide_cal_getc step (calgetc_step)."""
+              siblings: list | None = None, control_number: str | None = None,
+              closed: list | None = None, year: str | None = None) -> tuple[dict, list[dict]]:
+    """The record with the college's reconcile steps, then the statewide ones (statewide_cal_getc, then Sam's
+    rulings of 2026-11-17, statewide_rulings), applied to its page text, and a note per change: the field, what
+    it was, what it is now, and the words. A college's own step runs first, so a figure its catalog prints is set
+    before a statewide figure is asked for. title is the program's title and siblings the college's other filed
+    programs ([{"control_number", "title", "section_heading"}]), which the statewide rule reads; without siblings
+    it fills nothing. The statewide Cal-GETC rule runs only at a college whose config carries a
+    statewide_cal_getc step (calgetc_step). closed is the program's closed list (the scorer's), and year its
+    catalog year: the 2026-11-17 rulings score the record before and after their change, so without closed they
+    change nothing."""
     conf = (steps if steps is not None else load_steps()).get(college) or {}
     out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours)
     out, more = statewide_cal_getc(out, text, award, title=title, siblings=siblings, conf=conf,
                                    control_number=control_number)
-    return (out, notes + more) if (notes or more) else (record, [])
+    out, ruled = statewide_rulings(out, text, college, award, closed, steps=steps, year=year)
+    notes = notes + more + ruled
+    return (out, notes) if notes else (record, [])
 
 
 # Sam, Open Asks Sheet 187 card 5, 13:19:50Z 2026-11-13, "Use 34 statewide" (cpl_memory
@@ -518,6 +537,262 @@ def statewide_cal_getc(record, text: str | None, award: str | None, title: str |
     if read.get("double_count"):
         note["double_count"] = read["double_count"]
     return out, [note]
+
+
+# Sam's rulings of 2026-11-17, relayed by COBIx on #3461 ("Sam's rulings"; final, docs/reference/sam_rulings.md).
+# Two of them change the record, so they run here, at every college, after the college's own steps and the
+# statewide Cal-GETC fill; the third ("Pass short high ends the same way as over-high ends") changes how a sum
+# meets a printed range and sits in the scorer beside Sheet 120 card 1 (short_high in
+# kb/_program_requirements_score.py). Both rules here score the record with its closed list before the change and
+# after it, and keep the change only when the after-score passes; each change carries a "statewide" note so it can
+# be told apart from a catalog's own reading and undone.
+#   * ruling 1, "Let major courses count toward general education for local degrees too": a local degree whose
+#     major matches the catalog's major total exactly, and whose major and general education run past the degree
+#     total at both ends, takes ge_overlap, the field the scorer's Sheet 82 card 2 overlap already reads for a
+#     transfer degree (and for Hartnell's nursing tabs, where the page says so). A sum short of the degree total is
+#     left alone: counting a major course toward general education cannot close it, and so is a sum past the total
+#     by more than the general education units.
+#   * ruling 3 (built and off: GE_AREA_SLOT_FILL below), the general education open slot (correction step 4 of #3461; ge-slot-rule-test.md on #3464): a line
+#     inside the program's requirements naming a general education area and a unit figure, and no course ("One course
+#     from: VCCCD GE Area 1b, 6 or 7  3", "Arts and Humanities LACCD GE Area 3 (3)"), is kept as an open slot
+#     carrying its units, only when the printed total includes general education: the record counts no general
+#     education beside a degree total, and the slots bring the sum to the printed total exactly at both ends.
+RULING_LOCAL_OVERLAP = ('Sam, 2026-11-17, "Let major courses count toward general education for local degrees too" '
+                        '(#3461, ruling 1)')
+RULING_GE_SLOT = ('Sam, 2026-11-17, "good, so we have a procedural solution for this limited gap" (the general '
+                  'education open slot; #3461 ruling 3, correction step 4)')
+# The ways a check passes other than a sum equal to its total at both ends.
+PASS_HOW = ("meets", "minimum", "meets_top", "fill", "ge_included", "total_only", "within", "overlap", "transfer",
+            "short_high", "unstated")
+
+
+def _ends_equal(a: dict | None) -> bool:
+    from _program_requirements_score import TOL
+    comp, st = (a or {}).get("computed"), (a or {}).get("stated")
+    return bool(comp and st) and abs(comp[0] - st[0]) <= TOL and abs(comp[1] - st[1]) <= TOL
+
+
+def plain_equal(a: dict | None) -> bool:
+    """A check whose sum equals its printed total at both ends, passing on no other reading."""
+    return bool(a) and bool(a.get("pass")) and a.get("status") == "equal" and _ends_equal(a) \
+        and not any(a.get(k) for k in PASS_HOW)
+
+
+def local_overlap_hold(prog: dict, award: str | None, arith: dict | None) -> str | None:
+    """Why ruling 1 leaves a record alone, or None to set ge_overlap. arith is the scorer's arithmetic for the
+    record as it stands (a filed score's, for kb/_program_requirements_rescore.py)."""
+    from _program_requirements_score import TOL, transfer_degree
+    if not awards_match("local", award):
+        return "not a local degree"
+    if transfer_degree(award, prog):
+        return "the heading names a transfer degree, which the overlap already reads"
+    if prog.get("ge_overlap"):
+        return "the record already counts major courses toward general education"
+    a = arith or {}
+    if a.get("pass"):
+        return "the arithmetic passes"
+    if a.get("against") != "degree" or not isinstance(a.get("major"), dict):
+        return "no major total checked beside the degree total"
+    if not plain_equal(a["major"]):
+        return "the major does not match the catalog's major total exactly"
+    comp, st = a.get("computed"), a.get("stated")
+    if a.get("status") != "unequal" or not comp or not st:
+        return "the degree check is not an unequal sum"
+    if not (comp[0] > st[0] + TOL and comp[1] > st[1] + TOL):
+        return "the sum is not past the degree total at both ends: counting a major course toward general " \
+               "education cannot close it"
+    ge = a.get("ge")
+    if not ge or not ge[1] > 0:
+        return "no general education units to count major courses toward"
+    if comp[0] - st[0] > ge[0] + TOL:
+        # A major course counted toward general education removes at most the general education units from the
+        # sum: an overshoot past them (57 major, 3 general education and 20 electives against 60) is another cause.
+        return "the sum runs past the degree total by more than the general education units"
+    if a["major"]["computed"][1] > st[1] + TOL:
+        return "the major alone runs past the degree total"
+    return None
+
+
+def local_degree_ge_overlap(record: dict, award: str | None, arith: dict | None) -> tuple[dict, list[dict]]:
+    """Ruling 1: the record with ge_overlap set and its note, or the record unchanged and no note."""
+    prog = (record or {}).get("program") or {} if isinstance(record, dict) else {}
+    if local_overlap_hold(prog, award, arith) is not None:
+        return record, []
+    out = copy.deepcopy(record)
+    out.setdefault("program", {})["ge_overlap"] = True
+    a = arith or {}
+    words = ("the major sums to %s, the major total the catalog prints; the major and general education sum to "
+             "%s against the degree's %s (%s)" % (_fig(a["major"]["computed"]), _fig(a["computed"]),
+                                                   _fig(a["stated"]), RULING_LOCAL_OVERLAP))
+    return out, [{"field": "ge_overlap", "was": prog.get("ge_overlap"), "now": True, "words": words,
+                  "statewide": "local_degree_ge_overlap"}]
+
+
+def _fig(span) -> str:
+    lo, hi = (_num(span[0]), _num(span[1])) if span else (None, None)
+    return "%s" % lo if lo == hi else "%s-%s" % (lo, hi)
+
+
+GE_AREA = re.compile(r"\b(?:GE|general[\s-]+education)\s+areas?\s*:?\s*[0-9][A-Za-z0-9]?"
+                     r"(?:\s*(?:,|or|and|&)\s*[0-9][A-Za-z0-9]?)*", re.I)
+# A slot line that is no open slot: a line saying the area is waived, met another way, or only recommended.
+GE_SLOT_NOT = re.compile(r"\bwaive|\bexempt|\bnot\s+required\b|\brecommend|\bsatisf(?:y|ies|ied)\s+by\b|"
+                         r"double[\s-]+count|\boptional\b", re.I)
+SLOT_FIG_PAREN = re.compile(r"\(\s*(%s)\s*(?:%s)?\s*\)" % (_FIG, _UNIT_WORD), re.I)
+SLOT_FIG_END = re.compile(r"(?<![\w.])(%s)\s*(?:%s)?\s*\.?\s*$" % (_FIG, _UNIT_WORD), re.I)
+TOTAL_WORD = re.compile(r"\btotal\b", re.I)
+
+
+def _fig_span(s: str) -> tuple[float, float] | None:
+    nums = [float(n) for n in re.findall(r"\d{1,2}(?:\.\d{1,2})?", s)]
+    if not nums or len(nums) > 2:
+        return None
+    lo, hi = nums[0], nums[-1]
+    return (lo, hi) if 0.5 <= lo <= hi <= 10 else None
+
+
+def _code_find(code: str, text: str, frm: int = 0) -> int | None:
+    """Where a course code is printed at or after frm, spaces and hyphens inside it optional ("BIOL C1001",
+    "BIO-50A", "ENGL C1000")."""
+    code = re.sub(r"[\s-]+", "", code or "")
+    if not re.match(r"[A-Za-z]+.*\d", code):
+        return None
+    pat = r"(?<![A-Za-z0-9])%s(?![0-9A-Za-z])" % r"[\s-]*".join(re.escape(ch) for ch in code)
+    hit = re.compile(pat).search(text, frm)
+    return hit.start() if hit else None
+
+
+def ge_slot_window(record: dict, text: str) -> tuple[int, int] | None:
+    """The program's requirements on the page: from the line printing its first course (or its first block's name
+    just above it) to the first line after its last course that prints "total" and the record's total; None when
+    no course or no such total line is found."""
+    prog = record.get("program") or {}
+    tot = [float(v) for v in _span_of(prog.get("total_units")) if v is not None]
+    if not tot:
+        return None
+    frm = _heading_end(text, prog.get("section_heading")) or 0
+    hits = [p for b in record.get("blocks") or [] for c in b.get("courses") or []
+            for p in [_code_find(c.get("code"), text, frm)] if p is not None]
+    if not hits:
+        return None
+    first, last = min(hits), max(hits)
+    start = text.rfind("\n", 0, first) + 1
+    name = ((record.get("blocks") or [{}])[0].get("name") or "")
+    named = _alnum_find(text, name, max(frm, start - 600)) if name else None
+    if named and named[0] < start:
+        start = text.rfind("\n", 0, named[0]) + 1
+    pos = text.find("\n", last)
+    pos = len(text) if pos < 0 else pos
+    while pos < len(text):
+        nxt = text.find("\n", pos + 1)
+        line = text[pos:nxt if nxt >= 0 else len(text)]
+        if TOTAL_WORD.search(line) and any(abs(float(n) - t) <= 0.01 for n in re.findall(r"\d+(?:\.\d+)?", line)
+                                           for t in tot):
+            return start, (nxt if nxt >= 0 else len(text))
+        if nxt < 0:
+            break
+        pos = nxt
+    return None
+
+
+def ge_area_slots(record: dict, text: str | None) -> list[dict]:
+    """The open-slot lines in the program's requirements (ge_slot_window): [{"words", "units": (lo, hi)}]."""
+    if not text or not isinstance(record, dict):
+        return []
+    win = ge_slot_window(record, text)
+    if win is None:
+        return []
+    lines = text[win[0]:win[1]].split("\n")
+    codes = [e.get("code") for b in record.get("blocks") or [] for c in b.get("courses") or []
+             for e in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)] if e.get("code")]
+    out = []
+    for i, line in enumerate(lines):
+        area = GE_AREA.search(line)
+        if not area or GE_SLOT_NOT.search(line) or TOTAL_WORD.search(line):
+            continue
+        rest = line[:area.start()] + " " + line[area.end():]
+        if any(_code_find(c, rest) is not None for c in codes):
+            # The line prints one of the record's own courses (a required course tagged with its area): no slot.
+            continue
+        m = SLOT_FIG_PAREN.search(rest) or SLOT_FIG_END.search(rest)
+        units = _fig_span(m.group(1)) if m else None
+        words = line.strip()
+        if units is None and not m:
+            nxt = next((ln for ln in lines[i + 1:] if ln.strip()), "")
+            if FIG_ALONE.match(nxt):
+                units = _fig_span(nxt)
+                words = "%s / %s" % (words, nxt.strip())
+        if units is None:
+            continue
+        out.append({"words": words[:160], "units": units})
+    return out
+
+
+# Ruling 3's matcher is built and OFF (the second reader on #3478, S679): it runs inside every extraction
+# (kb/_program_requirements_college.py passes the closed list to reconcile), and it has no self-recall test on
+# captured pages yet (p-new-matcher-needs-self-recall-test-s652). A self-recall run on captured pages turns it on
+# for that run with CPL_GE_AREA_SLOT_FILL=1; once that run is committed and reviewed, a PR sets the default here.
+# The rulings test sets it on.
+GE_AREA_SLOT_FILL = os.environ.get("CPL_GE_AREA_SLOT_FILL") == "1"
+
+
+def ge_area_slot_fill(record: dict, text: str | None, score_fn) -> tuple[dict, list[dict]]:
+    """Ruling 3: the record with an open-slot block (rule choose_units, no courses, ge_area_slot) per slot line and
+    one note, kept only when the record failed its program total and the slots bring it to that total exactly at
+    both ends; else the record unchanged and no note. score_fn scores a record (the scorer, with its closed list).
+    Off unless GE_AREA_SLOT_FILL is set."""
+    if not GE_AREA_SLOT_FILL or not isinstance(record, dict) or not text:
+        return record, []
+    prog = record.get("program") or {}
+    if prog.get("measure") == "hours" or not _empty(prog.get("degree_total")) or not _no_ge_units(prog.get("ge_units")):
+        return record, []
+    if any(b.get("ge_area_slot") for b in record.get("blocks") or []):
+        return record, []
+    before = (score_fn(record) or {}).get("arithmetic") or {}
+    if before.get("pass") or before.get("against") != "program" or before.get("status") != "unequal":
+        return record, []
+    slots = ge_area_slots(record, text)
+    if not slots:
+        return record, []
+    out = copy.deepcopy(record)
+    for s in slots:
+        lo, hi = _num(s["units"][0]), _num(s["units"][1])
+        out.setdefault("blocks", []).append({"name": s["words"], "rule": "choose_units", "stated": {"min": lo, "max": hi},
+                                             "minimum": lo, "option_group": None, "courses": [], "ge_area_slot": True})
+    after = (score_fn(out) or {}).get("arithmetic") or {}
+    if not plain_equal(after) or after.get("against") != "program":
+        return record, []
+    note = {"field": "ge_area_slot", "was": _fig(before.get("computed")), "now": [s["words"] for s in slots],
+            "words": "%s; the sum %s meets the %s printed (%s)" % (" | ".join(s["words"] for s in slots),
+                                                                  _fig(after["computed"]), _fig(after["stated"]),
+                                                                  RULING_GE_SLOT),
+            "statewide": "ge_area_slot"}
+    return out, [note]
+
+
+def statewide_rulings(record, text: str | None, college: str, award: str | None, closed: list | None,
+                      steps: dict | None = None, year: str | None = None) -> tuple[dict, list[dict]]:
+    """Sam's rulings of 2026-11-17 that change the record (ruling 3's open slot, then ruling 1's overlap), scored with
+    the college's own prefix aliases and packed codes; closed None changes nothing."""
+    if closed is None or not isinstance(record, dict):
+        return record, []
+    from _program_requirements_score import score
+
+    def score_fn(rec):
+        return score(rec, closed, text, award, prefix_aliases(college, steps, year), packed_codes(college, steps))
+    out, notes = ge_area_slot_fill(record, text, score_fn)
+    out, more = local_degree_ge_overlap(out, award, score_fn(out).get("arithmetic"))
+    return out, notes + more
+
+
+def statewide_note_stands(note: dict, record: dict) -> bool:
+    """Whether a statewide note an earlier run wrote still describes the record, so a later reconcile keeps it: the
+    field still holds its value, or the record still carries the open slots."""
+    if not note.get("statewide"):
+        return False
+    if note.get("statewide") == "ge_area_slot":
+        return any(b.get("ge_area_slot") for b in (record or {}).get("blocks") or [])
+    return ((record or {}).get("program") or {}).get(note.get("field")) == note.get("now")
 
 
 def _college_steps(record: dict, text: str | None, college: str, award: str | None = None,
@@ -826,6 +1101,35 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                                     now = {entry["code"]: {"times": n, "units_total": total}}
                                 notes.append({"field": "times", "was": None, "now": now,
                                               "words": m.group(0).strip()})
+            # A count printed in a block's own heading (Norco's Music Industry Studies: Performance 30606,
+            # S673): "Option 1: Take MUS-41 four times over four semesters" and "Option 2: Take both MUS-41
+            # and MIS-81 two times each over four semesters", each over its own "8.00". name_pattern's n
+            # (and code, where the pattern names one) gives the courses of that block alone their times, so a
+            # code that sits in two options at two counts takes each block's own. Only a rule-all block, only
+            # where its heading's words are on the page, every course it touches carries units and no count,
+            # and the counted sum is exactly the figure the block states.
+            heading = re.compile(st["name_pattern"]) if st.get("name_pattern") else None
+            flat = re.sub(r"\s+", " ", text)
+            for block in (out.get("blocks") or []) if heading else []:
+                bm = heading.search(block.get("name") or "")
+                n = _count(bm.group("n")) if bm else None
+                if not n or n < 2 or block.get("rule") != "all" or bm.group(0).strip() not in flat:
+                    continue
+                code = norm_code(bm.group("code")) if "code" in bm.re.groupindex and bm.group("code") else None
+                courses = block.get("courses") or []
+                hit = [c for c in courses if code is None or norm_code(c.get("code")) == code]
+                if not hit or any(c.get("times") is not None or _num(c.get("units")) is None for c in hit):
+                    continue
+                lo = _span_of(block.get("stated"))[0]
+                ids = {id(c) for c in hit}
+                counted = sum(_num(c.get("units")) * (n if id(c) in ids else 1) for c in courses
+                              if _num(c.get("units")) is not None)
+                if lo is None or abs(counted - lo) > 1e-9:
+                    continue
+                for c in hit:
+                    c["times"] = n
+                notes.append({"field": "times", "was": None, "now": {c["code"]: n for c in hit},
+                              "words": bm.group(0).strip()})
             named = re.compile(st["block_pattern"]) if st.get("block_pattern") else None
             for block in (out.get("blocks") or []) if named else []:
                 bm = named.search(block.get("name") or "")
@@ -935,6 +1239,37 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])
             notes.append({"field": field, "was": prog.get(field), "now": st["value"], "words": words})
             prog[field] = copy.deepcopy(st["value"])
+        elif st["kind"] == "printed_total":
+            # A range in the required heading whose low end is a test-out, beside a printed total that is its
+            # high end (Moreno Valley Guitar 38758, S674: "Required Courses (16-20 Units)", "MUS-3*" with
+            # "* (Test out option available)", and "Total : 20.00"; d-mvc-38758-total-is-20-s673). Credit by
+            # exam still awards the units, so the record takes the printed total. It replaces a filled figure,
+            # so it runs only where the record holds exactly the heading's range, the page prints the step's
+            # requires words, the total is the range's top, and the rule-all blocks' stated figures sum to it.
+            lo, hi, total = _num(m.group("lo")), _num(m.group("hi")), _num(m.group("total"))
+            if _span_of(prog.get(field)) != (lo, hi) or total != hi or lo is None or lo >= hi:
+                continue
+            # The test-out words inside the matched span, never a neighbor's footnote (COBIx on #3444).
+            span = m.group(0)
+            if st.get("requires") and not re.search(st["requires"], span):
+                continue
+            blocks = out.get("blocks") or []
+            if not blocks or any(b.get("rule") != "all" or b.get("option_group") for b in blocks):
+                continue
+            spans = [_span_of(b.get("stated")) for b in blocks]
+            if any(sp[0] is None or sp[0] != sp[1] for sp in spans) or sum(sp[0] for sp in spans) != total:
+                continue
+            # The starred courses (the test-out) account for the range: their units are hi - lo (COBIx on #3444).
+            starred = set(re.findall(r"([A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\*", span))
+            units = {c.get("code"): c.get("units") for b in blocks for c in b.get("courses") or []}
+            if not starred or any(units.get(c) is None for c in starred) or sum(units[c] for c in starred) != hi - lo:
+                continue
+            now = {"min": total, "max": total}
+            words = "%s ... %s" % (span[:m.end("hi") - m.start() + 8].strip(), span[m.start("total") - m.start() - 8:].strip())
+            if st.get("source"):
+                words = "%s (%s)" % (words, st["source"])
+            notes.append({"field": field, "was": prog.get(field), "now": now, "words": words})
+            prog[field] = now
         elif st["kind"] == "clear_minimum":
             n = _num(m.group("n"))
             if _span_of(prog.get(field)) != (n, n) or _empty(prog.get("degree_total")):

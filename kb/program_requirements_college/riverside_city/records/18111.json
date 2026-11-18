@@ -5,56 +5,135 @@
  "title": "Humanities, Philosophy & Arts",
  "award": "A.A. Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
- "record_shape": 4,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 29816,
+  "input_tokens": 32156,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
-  "output_tokens": 19251
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 19240,
+  "output_tokens_details": {
+   "thinking_tokens": 4030
+  }
  },
- "cost_usd": 0.50428,
- "ms": 73024,
- "seconds": 74.9,
+ "cost_usd": 0.51342,
+ "ms": 78380,
+ "seconds": 79.2,
  "parts": 2,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 295,
+   "placed": 313,
    "listed": 313,
-   "share": 0.942,
-   "missing": [
-    "AHS1",
-    "AHS2",
-    "HIS1",
-    "HIS14",
-    "HIS15",
-    "HIS2",
-    "HIS25",
-    "HIS26",
-    "HIS28",
-    "HIS29",
-    "HIS2H",
-    "HIS31",
-    "HIS32",
-    "HIS34",
-    "HIS35",
-    "HIS44",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ARTHC1100",
+     "listed": "AHS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ARTHC1200",
+     "listed": "AHS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST1",
+     "listed": "HIS1",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST14",
+     "listed": "HIS14",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST15",
+     "listed": "HIS15",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2",
+     "listed": "HIS2",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST25",
+     "listed": "HIS25",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST26",
+     "listed": "HIS26",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST28",
+     "listed": "HIS28",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST29",
+     "listed": "HIS29",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST2H",
+     "listed": "HIS2H",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST31",
+     "listed": "HIS31",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST32",
+     "listed": "HIS32",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST34",
+     "listed": "HIS34",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST35",
+     "listed": "HIS35",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HIST44",
+     "listed": "HIS44",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 28,
+   "count": 10,
    "codes": [
     "ARE36",
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "ASL10",
     "DAND19",
     "ENGL16",
@@ -62,29 +141,11 @@
     "ENGL40",
     "ENGL41",
     "ENGL48",
-    "ENGL9",
-    "HIST1",
-    "HIST14",
-    "HIST15",
-    "HIST2",
-    "HIST25",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
-    "HIST32",
-    "HIST34",
-    "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL9"
    ],
    "flagged": [
     "ARE36",
     "ARTH4",
-    "ARTHC1100",
-    "ARTHC1200",
     "ASL10",
     "DAND19",
     "ENGL16",
@@ -92,23 +153,7 @@
     "ENGL40",
     "ENGL41",
     "ENGL48",
-    "ENGL9",
-    "HIST1",
-    "HIST14",
-    "HIST15",
-    "HIST2",
-    "HIST25",
-    "HIST26",
-    "HIST28",
-    "HIST29",
-    "HIST2H",
-    "HIST31",
-    "HIST32",
-    "HIST34",
-    "HIST35",
-    "HIST44",
-    "HISTC1001",
-    "HISTC1002"
+    "ENGL9"
    ],
    "pass": true
   },
@@ -123,8 +168,10 @@
     18.0,
     18.0
    ],
+   "against": "program",
    "why": [
-    "'Applicable Studio Courses Include:' chooses units but names no minimum"
+    "'Applicable Studio Courses Include:' chooses units but names no minimum",
+    "'Applicable Studio Courses Include' chooses units but names no minimum"
    ]
   },
   "repeated": {
@@ -146,6 +193,12 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
   "pass": false
  },
  "record": {
@@ -157,7 +210,20 @@
     "max": 18
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Interpret key philosophical, religious and literary texts, as well as creative works, in historical and cultural contexts and express that interpretation persuasively in oral and/or written form.",
     "Analyze the role and use of language, rhetoric and/or the arts in informing and contextualizing human experience.",
@@ -1465,6 +1531,25 @@
       "catalog_addition": false
      },
      {
+      "code": "DAN D19",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Applicable Studio Courses Include",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
       "code": "ART 25A",
       "units": null,
       "units_max": null,
@@ -1736,13 +1821,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "DAN D19",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "DAN D20",
@@ -2444,94 +2522,97 @@
   "missing_explained": [
    {
     "code": "AHS 1",
-    "why": "not in the text; catalog lists ARTH courses instead"
+    "why": "not in the text; catalog lists ARTH C1100/C1100H instead"
    },
    {
     "code": "AHS 2",
-    "why": "not in the text; catalog lists ARTH courses instead"
+    "why": "not in the text; catalog lists ARTH C1200/C1200H instead"
    },
    {
     "code": "HIS 1",
-    "why": "not in the text as HIS; catalog prints HIST 1 (catalog addition)"
-   },
-   {
-    "code": "HIS 14",
-    "why": "not in the text as HIS; catalog prints HIST 14 (catalog addition)"
-   },
-   {
-    "code": "HIS 15",
-    "why": "not in the text as HIS; catalog prints HIST 15 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 1"
    },
    {
     "code": "HIS 2",
-    "why": "not in the text as HIS; catalog prints HIST 2 (catalog addition)"
-   },
-   {
-    "code": "HIS 25",
-    "why": "not in the text as HIS; catalog prints HIST 25 (catalog addition)"
-   },
-   {
-    "code": "HIS 26",
-    "why": "not in the text as HIS; catalog prints HIST 26 (catalog addition)"
-   },
-   {
-    "code": "HIS 28",
-    "why": "not in the text as HIS; catalog prints HIST 28 (catalog addition)"
-   },
-   {
-    "code": "HIS 29",
-    "why": "not in the text as HIS; catalog prints HIST 29 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 2"
    },
    {
     "code": "HIS 2H",
-    "why": "not in the text as HIS; catalog prints HIST 2H (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 2H"
+   },
+   {
+    "code": "HIS 14",
+    "why": "not in the text as HIS; catalog prints HIST 14"
+   },
+   {
+    "code": "HIS 15",
+    "why": "not in the text as HIS; catalog prints HIST 15"
+   },
+   {
+    "code": "HIS 25",
+    "why": "not in the text as HIS; catalog prints HIST 25"
+   },
+   {
+    "code": "HIS 26",
+    "why": "not in the text as HIS; catalog prints HIST 26"
+   },
+   {
+    "code": "HIS 28",
+    "why": "not in the text as HIS; catalog prints HIST 28"
+   },
+   {
+    "code": "HIS 29",
+    "why": "not in the text as HIS; catalog prints HIST 29"
    },
    {
     "code": "HIS 31",
-    "why": "not in the text as HIS; catalog prints HIST 31 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 31"
    },
    {
     "code": "HIS 32",
-    "why": "not in the text as HIS; catalog prints HIST 32 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 32"
    },
    {
     "code": "HIS 34",
-    "why": "not in the text as HIS; catalog prints HIST 34 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 34"
    },
    {
     "code": "HIS 35",
-    "why": "not in the text as HIS; catalog prints HIST 35 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 35"
    },
    {
     "code": "HIS 44",
-    "why": "not in the text as HIS; catalog prints HIST 44 (catalog addition)"
+    "why": "not in the text as HIS; catalog prints HIST 44"
    },
    {
     "code": "HIS 6",
-    "why": "not in the text; catalog lists HIST C1001 instead"
+    "why": "not in the text; catalog lists HIST C1001/C1001H instead"
    },
    {
     "code": "HIS 7",
-    "why": "not in the text; catalog lists HIST C1002 instead"
+    "why": "not in the text; catalog lists HIST C1002/C1002H instead"
    }
   ],
   "notes": [
-   "Rule as printed: 18 units of study across three disciplines; 9 units must be taken in a single discipline; up to three units may be taken in a studio course. The 18-unit choice is recorded on the 'Included Disciplines and Courses' block; the studio block is optional with a cap of 3 units counting toward the 18, so its minimum is null.",
-   "The catalog prints no units beside any course; all units fields are null.",
-   "Honors twins printed consecutively (e.g., ARA 11/ARA 11H, ART 6/ART 6H, COMM 9/COMM 9H, SPA 2/SPA 2H) are recorded as alternatives of the base course; the catalog lists them as separate items in a comma list.",
-   "The catalog uses subject HIST for History while the closed list uses HIS (HIS 1, HIS 2, HIS 2H, HIS 14, etc.); HIST numbered courses are marked catalog additions. Reviewer should check whether these correspond to the HIS courses.",
-   "Closed-list codes stored without a space (ENGL8, ENGL23, HISTC1001H, SPA2H) were matched to the catalog's ENGL 8, ENGL 23, HIST C1001H and SPA 2H.",
-   "ARTH C1100, ARTH C1200, HIST C1001 and HIST C1002 (non-honors) are not in the closed list and are marked catalog additions; their honors versions are in the closed list.",
-   "Careers taken from the description: 'provides an excellent foundation for students interested in administration, communications, law, public service, and teaching.'",
-   "The catalog notes not all courses are offered at all three district colleges.",
-   "Part 2: The rule is prose: 18 units across three disciplines, 9 units in a single discipline, up to three units may be from a studio course. Recorded as a choose_units block of 18 for the discipline list and a choose_units studio block with minimum null because the catalog sets only a maximum (up to 3 units), not a minimum.",
-   "Part 2: The catalog prints no units beside any course; all units are null.",
-   "Part 2: The discipline list prints history courses with subject HIST (HIST 1, HIST 2, HIST 2H, etc.) while the closed list stores HIS; these HIST entries are catalog additions and are not listed in this part because their codes are not among this part's courses. Likewise DAN D19 in the studio list is a catalog addition not in the closed list and is not listed in this part.",
-   "Part 2: The text says the degree includes general education but names no GE pattern.",
-   "Part 2: Careers recorded from the description: 'provides an excellent foundation for students interested in administration, communications, law, public service, and teaching.'",
-   "Part 2: The section notes not all courses are offered at all three district colleges.",
-   "Read in 2 parts, because one reply could not hold the whole record."
+   "The rule is: 18 units across three disciplines, 9 units in a single discipline, up to three units may be from a studio course; all with C or better or P. The 18-unit choose_units minimum is placed on the main discipline list, but the 18 units may include up to 3 studio units from the second block.",
+   "The studio block's minimum is left null because the catalog sets a cap ('Up to three units may be taken in a studio course'), not a requirement; reviewer should check how this optional cap is represented.",
+   "The catalog prints no units beside any course, so all units are null.",
+   "Honors twins (e.g., ARA 11/11H, ART 6/6H, COMM 9/9H, HUM 10/10H, SPA 2/2H) are recorded as one entry with the honors course as an alternative, though the catalog lists them separately in a flat list.",
+   "The catalog prints history courses with subject 'HIST' (HIST 1, HIST 2, HIST 2H, HIST 14 ... HIST 44, HIST C1001, HIST C1002), while the closed list stores most of them as 'HIS' (HIS 1, HIS 2, HIS 2H, etc.). They are recorded as printed and flagged as catalog additions; they likely correspond to the closed-list HIS courses. HIST C1001H matches closed-list HISTC1001H, and HIST C1002H matches the closed list.",
+   "ENGL 8, ENGL 23 and SPA 2H are matched to closed-list entries ENGL8, ENGL23 and SPA2H, which differ only by spacing.",
+   "No general education pattern is named; the page says only that general education and other graduation requirements apply as described in the college catalog. No degree total is printed.",
+   "The page notes that not all courses are offered at all three colleges (district-wide Area of Emphasis list).",
+   "Careers are taken from 'provides an excellent foundation for students interested in administration, communications, law, public service, and teaching.'",
+   "Part 2: Rule: 18 units across three disciplines, with 9 units in a single discipline; up to three units may come from a studio course. Recorded the discipline list as a choose_units 18 block and the studio list as a separate choose_units block with minimum null, since the catalog states only a 3-unit maximum for studio courses, counting within the 18.",
+   "Part 2: The catalog prints no units beside any course; units are left null.",
+   "Part 2: The catalog prints history courses with the HIST prefix (HIST 1, HIST 2, ...) while the closed list stores HIS; these HIST entries are not this part's courses and are left to the other part. Reviewer should check whether HIS and HIST are the same courses.",
+   "Part 2: DAN D19 appears in the studio list but is not in the closed list; it is not one of this part's courses and is not listed here.",
+   "Part 2: Program learning outcomes are printed once for the program and recorded for this award.",
+   "Part 2: No general education pattern or degree total is printed; the text only says general education and graduation requirements apply.",
+   "Read in 2 parts, because one reply could not hold the whole record.",
+   "Reviewer: part 2 names blocks part 1 does not: 'Applicable Studio Courses Include' (kept beside 'Applicable Studio Courses Include:')"
   ]
  },
- "extracted_run": "38108461470"
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

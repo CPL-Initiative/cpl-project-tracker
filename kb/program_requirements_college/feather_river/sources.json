@@ -63,7 +63,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "equine studies - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 48,
@@ -79,7 +82,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
+    "title": "Biology - A.S.",
+    "h1": "Biology - A.S.",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "04322",
@@ -108,7 +125,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -124,7 +144,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1828",
+    "title": "Physical Science - A.S.",
+    "h1": "Physical Science - A.S.",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "04331",
@@ -152,7 +186,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "administration of justice - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -168,7 +205,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1798",
+    "title": "Early Childhood Education - A.A.",
+    "h1": "Early Childhood Education - A.A.",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "04333",
@@ -217,7 +268,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "outdoor recreation leadership - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 31,
@@ -233,7 +287,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "04335",
@@ -262,7 +320,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "history - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -311,7 +372,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental studies - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -353,7 +417,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "vocational nursing - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -369,7 +436,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "12244",
@@ -381,7 +452,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "15817",
@@ -393,7 +468,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "16444",
@@ -448,7 +527,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agricultural studies - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
@@ -489,7 +571,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "studio arts - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -505,7 +590,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "18714",
@@ -543,7 +632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 24,
@@ -608,7 +700,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: social and behavioral sciences emphasis - a.a.",
+    "section_fit": 0.833
    }
   },
   "listed": 44,
@@ -631,7 +726,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.6
+    "title": 0.6,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -647,7 +745,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1846",
+    "title": "Health and Exercise Studies - Certificate of Achievement",
+    "h1": "Health and Exercise Studies - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "20879",
@@ -680,7 +792,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "licensed vocational nursing - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -696,7 +811,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1799",
+    "title": "Early Childhood Education - Certificate of Achievement",
+    "h1": "Early Childhood Education - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "20882",
@@ -720,7 +849,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "30974",
@@ -745,7 +878,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -777,7 +913,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -793,7 +932,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://frc.curriqunet.com/Catalog/iq/1464/1816",
+    "title": "History - A.A.-T",
+    "h1": "History - A.A.-T",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "31895",
@@ -814,7 +967,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "office technology - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -838,7 +994,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "office technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -875,7 +1034,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -912,7 +1074,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -945,7 +1110,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -973,7 +1141,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -989,7 +1160,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "33191",
@@ -1014,7 +1189,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forensic crime scene investigation - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1037,25 +1215,12 @@
   "title": "MATHEMATICS",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.6,
-  "codes_found": [
-   "MATHC2211",
-   "MATHC2221",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://frc.curriqunet.com/Catalog/iq/1464/1824",
-   "title": "Biology - A.S.",
-   "h1": "Biology - A.S.",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 3759
+  "text_chars": 0
  },
  {
   "control_number": "36248",
@@ -1077,7 +1242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geology - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1105,7 +1273,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "geography - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1131,7 +1302,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1158,7 +1332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "political science - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1197,7 +1374,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services  - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -1233,7 +1413,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "sociology - a.a.",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1263,7 +1446,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "teacher - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1297,7 +1483,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hydrologic technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1333,7 +1522,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - a.a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1366,7 +1558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ecological farming - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1397,7 +1592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forestry technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1434,7 +1632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire and fuels technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1468,7 +1669,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental science - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1500,7 +1704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture business - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1528,7 +1735,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business - a.s.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1557,7 +1767,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mathematics - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1590,7 +1803,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1629,7 +1845,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "allied health - a.s.",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1671,7 +1890,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hatchery technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1701,7 +1923,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "biological science technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1807,7 +2032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "calgetc - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 87,
@@ -1842,7 +2070,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education: integrated programs - a. a.-t",
+    "section_fit": 1.0
    }
   },
   "listed": 14,

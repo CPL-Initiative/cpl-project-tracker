@@ -1,0 +1,999 @@
+{
+  "generated": "2026-11-15",
+  "thresholds": {
+    "always_loaded": 60000,
+    "kb_note": 40000,
+    "index": 40000,
+    "lessons": 120000,
+    "handoff": 60000,
+    "roadmap_lane": 20000,
+    "other": 150000
+  },
+  "summary": {
+    "files": 1505,
+    "bytes": 15946089,
+    "over_budget": 6,
+    "handoff_max": 662,
+    "always_loaded_files": 1,
+    "always_loaded_bytes": 59992,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
+    "lanes": {
+      "always_loaded": {
+        "files": 1,
+        "bytes": 59992,
+        "over": 0
+      },
+      "other": {
+        "files": 161,
+        "bytes": 5156029,
+        "over": 1
+      },
+      "index": {
+        "files": 1,
+        "bytes": 10729,
+        "over": 0
+      },
+      "lessons": {
+        "files": 87,
+        "bytes": 2812166,
+        "over": 0
+      },
+      "kb_note": {
+        "files": 590,
+        "bytes": 2874255,
+        "over": 0
+      },
+      "roadmap_lane": {
+        "files": 43,
+        "bytes": 562763,
+        "over": 5
+      },
+      "handoff": {
+        "files": 622,
+        "bytes": 4470155,
+        "over": 0
+      }
+    },
+    "by_rule": {
+      "kb_note_dialect": 1,
+      "oversized_doc": 6,
+      "vault_heavy_path": 76
+    },
+    "vault": {
+      "files": 28091,
+      "bytes": 4983080702,
+      "heavy_bytes": 3633450964,
+      "heavy_share": 0.729,
+      "ignore_filters": [
+        "wtA/kb/receipts",
+        "wtA/kb/program_requirements_college",
+        "wtA/kb/regional_cpl_out",
+        "wtA/kb/reference",
+        "wtA/cip_fitcheck",
+        "wtA/kb/unclassified_fold",
+        "wtA/prototype/landing_page_video",
+        "wtA/kb/cpl_ai",
+        "wtA/library",
+        "wtA/tmc",
+        "wtA/tests",
+        "wtA/kb/status/commons_data_programs",
+        "wtA/unified_courses_member_desc.js",
+        "wtA/kb/coci_minted_singletons.json",
+        "wtA/kb/coci_minted_courses.json",
+        "wtA/unified_courses_details.js",
+        "wtA/kb/subj4_fold_out/2026-06-12/alias_map.json",
+        "wtA/kb/subj4_dryrun/alias_map.json",
+        "wtA/kb/subj4_apply/alias_map.json",
+        "wtA/kb/coci_minted_memberships.json",
+        "wtA/coci_lookup_data.js",
+        "wtA/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+        "wtA/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+        "wtA/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
+        "wtA/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
+        "wtA/unified_courses_standalone.js",
+        "wtA/kb/subj4_dryrun/collisions.json",
+        "wtA/unified_courses_members.js",
+        "wtA/prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+        "wtA/statewide_data.js",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
+        "wtA/prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
+        "wtA/kb/row_audit/latest.json",
+        "wtA/prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+        "wtA/unified_courses_data.js",
+        "wtA/kb/remint_dryrun/alias_map.json",
+        "wtA/kb/cid_articulation_joins.json",
+        "wtA/coci_lookup_desc_A.js",
+        "wtA/tmc_college_courses.js",
+        "wtA/prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+        "wtA/kb/coci_articulations.json",
+        "wtA/prototype/ccr_universe.json",
+        "wtA/coci_lookup_desc_C.js",
+        "wtA/coci_lookup_desc_E.js",
+        "wtA/exports/unified_courses.xlsx",
+        "wtA/kb/automerge_out/2026-06-13-titlelane/plan.json",
+        "wtA/kb/it_ai_credential_catalog.json",
+        "wtA/kb/coci_curation.json",
+        "wtA/coci_lookup_desc_M.js",
+        "wtA/kb/status/mid_outcomes_compare_2026-11-12.json",
+        "wtA/coci_lookup_desc_P.js",
+        "wtA/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+        "wtA/tools/first_light_candidates.json",
+        "wtA/prototype/ccr_universe_members.json",
+        "wtA/unified_courses_index.js",
+        "wtA/credential_reference_data.js",
+        "wtA/unified_courses_suggestions.js",
+        "wtA/regional_cpl_opportunity_bay.js",
+        "wtA/regional_cpl_opportunity_la.js",
+        "wtA/coci_lookup_desc_B.js",
+        "wtA/coci_lookup_desc_H.js",
+        "wtA/coci_lookup_desc_D.js",
+        "wtA/prototype/noncredit_video/narration.mp3",
+        "wtA/kb/remint_out/alias_map.json",
+        "wtA/coci_programs_data.js",
+        "wtA/kb/exhibit_audit/latest.json",
+        "wtA/kb/unified_titles.json",
+        "wtA/kb/cr_reference_worklist.json",
+        "wtA/coci_lookup_desc_F.js",
+        "wtA/prototype/funding_video/narration_s1.mp3",
+        "wtA/kb/authority_recode_out/2026-09-03/alias_map.json",
+        "wtA/coci_lookup_desc_K.js"
+      ]
+    }
+  },
+  "findings": [
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)"
+        ]
+      },
+      "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 179762,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 29762,
+        "ratio": 1.2
+      },
+      "message": "179,762 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/reference/dependency_map.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 24876,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 4876,
+        "ratio": 1.24
+      },
+      "message": "24,876 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/commons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 31148,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 11148,
+        "ratio": 1.56
+      },
+      "message": "31,148 B is 1.6× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/csm-workspace.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 25585,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 5585,
+        "ratio": 1.28
+      },
+      "message": "25,585 B is 1.3× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20340,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 340,
+        "ratio": 1.02
+      },
+      "message": "20,340 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/library.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 22196,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 2196,
+        "ratio": 1.11
+      },
+      "message": "22,196 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/receipts",
+      "detail": {
+        "bytes": 2450013191,
+        "kind": "dir"
+      },
+      "message": "directory totals 2,450,013,191 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/program_requirements_college",
+      "detail": {
+        "bytes": 152655201,
+        "kind": "dir"
+      },
+      "message": "directory totals 152,655,201 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/regional_cpl_out",
+      "detail": {
+        "bytes": 92716700,
+        "kind": "dir"
+      },
+      "message": "directory totals 92,716,700 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/reference",
+      "detail": {
+        "bytes": 84470192,
+        "kind": "dir"
+      },
+      "message": "directory totals 84,470,192 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "cip_fitcheck",
+      "detail": {
+        "bytes": 51991148,
+        "kind": "dir"
+      },
+      "message": "directory totals 51,991,148 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/unclassified_fold",
+      "detail": {
+        "bytes": 48792456,
+        "kind": "dir"
+      },
+      "message": "directory totals 48,792,456 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/landing_page_video",
+      "detail": {
+        "bytes": 26846596,
+        "kind": "dir"
+      },
+      "message": "directory totals 26,846,596 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cpl_ai",
+      "detail": {
+        "bytes": 23921731,
+        "kind": "dir"
+      },
+      "message": "directory totals 23,921,731 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "library",
+      "detail": {
+        "bytes": 20360120,
+        "kind": "dir"
+      },
+      "message": "directory totals 20,360,120 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc",
+      "detail": {
+        "bytes": 14868311,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,868,311 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tests",
+      "detail": {
+        "bytes": 13404955,
+        "kind": "dir"
+      },
+      "message": "directory totals 13,404,955 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/status/commons_data_programs",
+      "detail": {
+        "bytes": 10128280,
+        "kind": "dir"
+      },
+      "message": "directory totals 10,128,280 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_member_desc.js",
+      "detail": {
+        "bytes": 47883522,
+        "kind": "file"
+      },
+      "message": "47,883,522 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_singletons.json",
+      "detail": {
+        "bytes": 37143411,
+        "kind": "file"
+      },
+      "message": "37,143,411 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_courses.json",
+      "detail": {
+        "bytes": 35184277,
+        "kind": "file"
+      },
+      "message": "35,184,277 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_details.js",
+      "detail": {
+        "bytes": 21822897,
+        "kind": "file"
+      },
+      "message": "21,822,897 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_fold_out/2026-06-12/alias_map.json",
+      "detail": {
+        "bytes": 21616218,
+        "kind": "file"
+      },
+      "message": "21,616,218 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 21616130,
+        "kind": "file"
+      },
+      "message": "21,616,130 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_apply/alias_map.json",
+      "detail": {
+        "bytes": 19689335,
+        "kind": "file"
+      },
+      "message": "19,689,335 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_minted_memberships.json",
+      "detail": {
+        "bytes": 17743649,
+        "kind": "file"
+      },
+      "message": "17,743,649 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_data.js",
+      "detail": {
+        "bytes": 17358026,
+        "kind": "file"
+      },
+      "message": "17,358,026 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4",
+      "detail": {
+        "bytes": 16149357,
+        "kind": "file"
+      },
+      "message": "16,149,357 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4",
+      "detail": {
+        "bytes": 15865434,
+        "kind": "file"
+      },
+      "message": "15,865,434 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4",
+      "detail": {
+        "bytes": 15851035,
+        "kind": "file"
+      },
+      "message": "15,851,035 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4",
+      "detail": {
+        "bytes": 15146138,
+        "kind": "file"
+      },
+      "message": "15,146,138 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4",
+      "detail": {
+        "bytes": 15054609,
+        "kind": "file"
+      },
+      "message": "15,054,609 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_standalone.js",
+      "detail": {
+        "bytes": 14837114,
+        "kind": "file"
+      },
+      "message": "14,837,114 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/subj4_dryrun/collisions.json",
+      "detail": {
+        "bytes": 14572839,
+        "kind": "file"
+      },
+      "message": "14,572,839 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_members.js",
+      "detail": {
+        "bytes": 14341179,
+        "kind": "file"
+      },
+      "message": "14,341,179 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4",
+      "detail": {
+        "bytes": 14148729,
+        "kind": "file"
+      },
+      "message": "14,148,729 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "statewide_data.js",
+      "detail": {
+        "bytes": 12524314,
+        "kind": "file"
+      },
+      "message": "12,524,314 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4",
+      "detail": {
+        "bytes": 10757052,
+        "kind": "file"
+      },
+      "message": "10,757,052 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4",
+      "detail": {
+        "bytes": 10598480,
+        "kind": "file"
+      },
+      "message": "10,598,480 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4",
+      "detail": {
+        "bytes": 10563038,
+        "kind": "file"
+      },
+      "message": "10,563,038 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4",
+      "detail": {
+        "bytes": 10558231,
+        "kind": "file"
+      },
+      "message": "10,558,231 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4",
+      "detail": {
+        "bytes": 10492818,
+        "kind": "file"
+      },
+      "message": "10,492,818 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/row_audit/latest.json",
+      "detail": {
+        "bytes": 10407303,
+        "kind": "file"
+      },
+      "message": "10,407,303 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4",
+      "detail": {
+        "bytes": 10273174,
+        "kind": "file"
+      },
+      "message": "10,273,174 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_data.js",
+      "detail": {
+        "bytes": 10146913,
+        "kind": "file"
+      },
+      "message": "10,146,913 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_dryrun/alias_map.json",
+      "detail": {
+        "bytes": 9371742,
+        "kind": "file"
+      },
+      "message": "9,371,742 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cid_articulation_joins.json",
+      "detail": {
+        "bytes": 8593791,
+        "kind": "file"
+      },
+      "message": "8,593,791 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_A.js",
+      "detail": {
+        "bytes": 8209035,
+        "kind": "file"
+      },
+      "message": "8,209,035 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tmc_college_courses.js",
+      "detail": {
+        "bytes": 8035276,
+        "kind": "file"
+      },
+      "message": "8,035,276 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4",
+      "detail": {
+        "bytes": 7844532,
+        "kind": "file"
+      },
+      "message": "7,844,532 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_articulations.json",
+      "detail": {
+        "bytes": 7625028,
+        "kind": "file"
+      },
+      "message": "7,625,028 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_universe.json",
+      "detail": {
+        "bytes": 7503903,
+        "kind": "file"
+      },
+      "message": "7,503,903 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_C.js",
+      "detail": {
+        "bytes": 7019178,
+        "kind": "file"
+      },
+      "message": "7,019,178 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_E.js",
+      "detail": {
+        "bytes": 6738457,
+        "kind": "file"
+      },
+      "message": "6,738,457 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "exports/unified_courses.xlsx",
+      "detail": {
+        "bytes": 6718277,
+        "kind": "file"
+      },
+      "message": "6,718,277 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/plan.json",
+      "detail": {
+        "bytes": 6713055,
+        "kind": "file"
+      },
+      "message": "6,713,055 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/it_ai_credential_catalog.json",
+      "detail": {
+        "bytes": 5475815,
+        "kind": "file"
+      },
+      "message": "5,475,815 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/coci_curation.json",
+      "detail": {
+        "bytes": 5334099,
+        "kind": "file"
+      },
+      "message": "5,334,099 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_M.js",
+      "detail": {
+        "bytes": 4951655,
+        "kind": "file"
+      },
+      "message": "4,951,655 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/status/mid_outcomes_compare_2026-11-12.json",
+      "detail": {
+        "bytes": 4715906,
+        "kind": "file"
+      },
+      "message": "4,715,906 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_P.js",
+      "detail": {
+        "bytes": 4616887,
+        "kind": "file"
+      },
+      "message": "4,616,887 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
+      "detail": {
+        "bytes": 4454134,
+        "kind": "file"
+      },
+      "message": "4,454,134 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "tools/first_light_candidates.json",
+      "detail": {
+        "bytes": 4088562,
+        "kind": "file"
+      },
+      "message": "4,088,562 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_universe_members.json",
+      "detail": {
+        "bytes": 3849833,
+        "kind": "file"
+      },
+      "message": "3,849,833 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_index.js",
+      "detail": {
+        "bytes": 3725966,
+        "kind": "file"
+      },
+      "message": "3,725,966 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "credential_reference_data.js",
+      "detail": {
+        "bytes": 3638192,
+        "kind": "file"
+      },
+      "message": "3,638,192 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "unified_courses_suggestions.js",
+      "detail": {
+        "bytes": 3478463,
+        "kind": "file"
+      },
+      "message": "3,478,463 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "regional_cpl_opportunity_bay.js",
+      "detail": {
+        "bytes": 3443439,
+        "kind": "file"
+      },
+      "message": "3,443,439 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "regional_cpl_opportunity_la.js",
+      "detail": {
+        "bytes": 3039468,
+        "kind": "file"
+      },
+      "message": "3,039,468 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_B.js",
+      "detail": {
+        "bytes": 2915411,
+        "kind": "file"
+      },
+      "message": "2,915,411 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_H.js",
+      "detail": {
+        "bytes": 2799319,
+        "kind": "file"
+      },
+      "message": "2,799,319 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_D.js",
+      "detail": {
+        "bytes": 2626394,
+        "kind": "file"
+      },
+      "message": "2,626,394 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/noncredit_video/narration.mp3",
+      "detail": {
+        "bytes": 2565477,
+        "kind": "file"
+      },
+      "message": "2,565,477 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/remint_out/alias_map.json",
+      "detail": {
+        "bytes": 2501051,
+        "kind": "file"
+      },
+      "message": "2,501,051 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_programs_data.js",
+      "detail": {
+        "bytes": 2442036,
+        "kind": "file"
+      },
+      "message": "2,442,036 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/exhibit_audit/latest.json",
+      "detail": {
+        "bytes": 2409280,
+        "kind": "file"
+      },
+      "message": "2,409,280 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/unified_titles.json",
+      "detail": {
+        "bytes": 2369381,
+        "kind": "file"
+      },
+      "message": "2,369,381 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/cr_reference_worklist.json",
+      "detail": {
+        "bytes": 2357697,
+        "kind": "file"
+      },
+      "message": "2,357,697 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_F.js",
+      "detail": {
+        "bytes": 2322891,
+        "kind": "file"
+      },
+      "message": "2,322,891 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/funding_video/narration_s1.mp3",
+      "detail": {
+        "bytes": 2242124,
+        "kind": "file"
+      },
+      "message": "2,242,124 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/authority_recode_out/2026-09-03/alias_map.json",
+      "detail": {
+        "bytes": 2162802,
+        "kind": "file"
+      },
+      "message": "2,162,802 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "coci_lookup_desc_K.js",
+      "detail": {
+        "bytes": 2038305,
+        "kind": "file"
+      },
+      "message": "2,038,305 B single file inside the vault"
+    }
+  ]
+}

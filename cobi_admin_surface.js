@@ -208,7 +208,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_pathways.js",
         "cpl_pathways_ccr_data.js",
         "cpl_pathways_data.js",
-        "cpl_pathways_membership_data.js"
+        "cpl_pathways_membership_data.js",
+        "sierra/sidebar.js"
       ],
       "reads": [
         "budget_funding",
@@ -454,7 +455,9 @@ window.COBI_ADMIN_SURFACE = {
         "cr_progress.js",
         "cr_reference.js"
       ],
-      "reads": [],
+      "reads": [
+        "map_exhibit_cr_side_by_side"
+      ],
       "writes": [
         "cr_reference_decisions",
         "kb_curation"
@@ -513,11 +516,13 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "commons.js",
         "commons_ase.js",
+        "commons_curation_eta.js",
         "commons_data.js",
         "commons_look.js",
         "commons_progress.js"
       ],
       "reads": [
+        "course_outcomes",
         "queue_todo_done"
       ],
       "writes": [

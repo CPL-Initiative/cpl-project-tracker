@@ -46,51 +46,101 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 38,
+   "placed": 54,
    "listed": 55,
-   "share": 0.691,
+   "share": 0.982,
    "missing": [
-    "BIOSC101",
-    "BIOSC102",
-    "BIOSC116",
-    "BIOSC117",
-    "BIOSC119",
-    "BIOSC120",
-    "BIOSC126",
-    "BIOSC130",
-    "BIOSC131",
-    "BIOSC139",
-    "BIOSC140",
-    "BIOSC146",
-    "BIOSC161",
-    "BIOSC162",
-    "BIOSC170",
-    "BIOSC171",
     "PHYS111"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "BIOL116",
+     "listed": "BIOSC116",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL117",
+     "listed": "BIOSC117",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL119",
+     "listed": "BIOSC119",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL120",
+     "listed": "BIOSC120",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL126",
+     "listed": "BIOSC126",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL130",
+     "listed": "BIOSC130",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL131",
+     "listed": "BIOSC131",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL139",
+     "listed": "BIOSC139",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL140",
+     "listed": "BIOSC140",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL146",
+     "listed": "BIOSC146",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL161",
+     "listed": "BIOSC161",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL162",
+     "listed": "BIOSC162",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL170",
+     "listed": "BIOSC170",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOL171",
+     "listed": "BIOSC171",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1000",
+     "listed": "BIOSC102",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "BIOLC1001",
+     "listed": "BIOSC101",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 34,
+   "count": 18,
    "codes": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL119",
-    "BIOL120",
-    "BIOL126",
-    "BIOL130",
-    "BIOL131",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOL161",
-    "BIOL162",
-    "BIOL170",
-    "BIOL171",
-    "BIOLC1000",
-    "BIOLC1001",
     "HORT111",
     "HORT112",
     "HORT113",
@@ -111,22 +161,6 @@
     "NUTRI160"
    ],
    "flagged": [
-    "BIOL116",
-    "BIOL117",
-    "BIOL119",
-    "BIOL120",
-    "BIOL126",
-    "BIOL130",
-    "BIOL131",
-    "BIOL139",
-    "BIOL140",
-    "BIOL146",
-    "BIOL161",
-    "BIOL162",
-    "BIOL170",
-    "BIOL171",
-    "BIOLC1000",
-    "BIOLC1001",
     "HORT111",
     "HORT112",
     "HORT113",
@@ -1061,5 +1095,6 @@
    "Program learning outcomes are printed once for the program (Natural Science) and recorded for this A.S. award; text begins mid-sentence ('ences students who intend...'), so earlier description may be cut off."
   ]
  },
- "extracted_run": "43353452924"
+ "extracted_run": 43691943622,
+ "read_run": 43609976980
 }

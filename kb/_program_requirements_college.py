@@ -53,6 +53,7 @@ without a browser or a network.
 from __future__ import annotations
 
 import argparse
+import functools
 import glob
 import gzip
 import hashlib
@@ -98,10 +99,20 @@ PROGRAM_PATH = re.compile(
 # and Santa Barbara City's /justice-studies/administration-justice-ast/ were both dropped, so
 # every Administration of Justice program at the two colleges lost its own page to a C-ID chart
 # or another degree (sitemap read 39770285975, S447).
+# A fragment a catalog includes into its pages, never a page of its own: a folder whose name starts with an
+# underscore and names headers, includes or partials (Skyline's programs/_program-headers/english.xml tied
+# English A.A. 05825 with english-aa.php, and the lookup filed it not_matched; S653). The other underscore
+# folders the committed captures name (_data, _documents, _pdf-books, _resources, _web-items) hold catalog
+# PDFs and feeds pages are read from, and stay (tests/program_requirements_fragment_path_test.py). No path reads
+# a fragment as a program page: program_candidates() and link_page_ok() through NOT_PROGRAM_PATH, ncl_page()
+# directly, a program code or not (S654). The keyword may sit anywhere in the folder's name (_header-files,
+# _partials-v2, _includes_old; COBIx 6888023433, S654).
+FRAGMENT_PATH = re.compile(r"/_[^/]*(?:header|include|partial|fragment|snippet)[^/]*(?=/)", re.I)
 NOT_PROGRAM_PATH = re.compile(
     r"course-?descriptions?|/courses?/|coursesaz|/archive|/previous|/policies|/policy|"
     r"/services|/student-services|/admission|/calendar|/faculty|/staff|/search|/pdf/|"
-    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend", re.I)
+    r"\.pdf$|/general-information|/administration(?=/|$)|/glossary|/index\.html?$|/addend|"
+    + FRAGMENT_PATH.pattern, re.I)
 
 
 # ── the college's programs, from the state's files ─────────────────────────
@@ -152,26 +163,45 @@ def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None =
     course_renumbers; Merced, S423). A listed course under a prefix the catalog prints
     otherwise (prefix_aliases) carries the catalog's prefix the same way: Glendale's program
     pages print TART 101 where its file lists THTR 101, and without it the capture handed 21
-    Theatre records the THTR course descriptions (S505). A renumber wins over an alias."""
+    Theatre records the THTR course descriptions (S505). A renumber wins over an alias.
+    The course-id route (S653, kb/_course_id_route.py): a listed course whose Program Course
+    File id differs from its code carries that id, as Riverside City's HIS 14 carries HIST 14.
+    A listed course both a kept alias and its id reach carries both forms: the alias's
+    as "printed", the id as "printed_also", and every reader counts each (P.printed_forms;
+    S653 review: a college with a kept SPCH for COMM alias whose COMM 20 carries the id
+    COMM C1004 prints SPCH 20, and a capture looking only for the id lost the page)."""
+    import _course_id_route as CI
     back = [(P.norm_code(v), P.norm_code(k)) for k, v in (aliases or {}).items()]
-    for p in programs if (renumbers or back) else []:
+    for p in programs:
+        ids = CI.listed_ids(p["closed_list"])
+        by_code = {v: k for k, v in ids.items()}
         for c in p["closed_list"]:
             k = P.norm_code(c.get("code"))
             if k in renumbers:
                 c["printed"] = renumbers[k]
                 continue
+            forms = []
             for listed, printed in back:
                 m = re.fullmatch(re.escape(listed) + r"(C?\d.*)", k)
                 if m:
-                    c["printed"] = "%s %s" % (printed, m.group(1))
+                    forms.append("%s %s" % (printed, m.group(1)))
                     break
+            if k in by_code:
+                forms.append(CI.spaced(by_code[k]))
+            seen = []
+            for f in forms:
+                if P.norm_code(f) not in {P.norm_code(x) for x in seen} and P.norm_code(f) != k:
+                    seen.append(f)
+            if seen:
+                c["printed"] = seen[0]
+            if seen[1:]:
+                c["printed_also"] = seen[1:]
     return programs
 
 
 def net_hits(courses: list[dict], codes: set) -> int:
-    """How many listed courses the page's code tokens name, a renumbered one by either code."""
-    return sum(1 for c in courses if P.norm_code(c.get("code") or "") in codes
-               or (c.get("printed") and P.norm_code(c["printed"]) in codes))
+    """How many listed courses the page's code tokens name, a renumbered one by any of its codes."""
+    return sum(1 for c in courses if any(P.norm_code(f) in codes for f in [c.get("code") or ""] + P.printed_forms(c)))
 
 
 # San Jose City's rows in the state's file store a course code under its subject's name:
@@ -550,7 +580,12 @@ def heading_names_program(page: dict, program: dict) -> bool:
 # certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
 # A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
 GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
-                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)|"
+                        # the patterns under their long names (Crafton Hills, Victor Valley; S653)
+                        r"\b(?:california|intersegmental)[\s-](?:general[\s-]education|ge)[\s-]transfer[\s-]curriculum\b|"
+                        # Taft's "Intersegmental GE Transfer Curriculum", Skyline's "California State University
+                        # General Education" (S653)
+                        r"\bcalifornia[\s-]state[\s-]university[\s-]general[\s-]education\b", re.I)
 
 
 def ge_pattern(text: str | None) -> bool:
@@ -564,10 +599,146 @@ def ge_pattern_page(pg: dict) -> bool:
     return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
 
 
-def candidates(program: dict, pages: list[dict]) -> list[dict]:
+# A heading's state control number: LACCD's catalog PDFs print it beside the award ("English T032905G AA-T",
+# "Equine Science AS P002809C"), a letter, the number with a leading zero, a letter.
+GE_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]?0*(\d{5})[A-Z]?(?![A-Za-z0-9])")
+# The district's own print of a control number: a campus letter, six digits, a letter (T042296D, V032851G, M003340C).
+# Unambiguous, it names its program with or without title words, wherever the award sits (S654 second reader).
+DISTRICT_CONTROL = re.compile(r"(?<![A-Za-z0-9])[A-Z]0(\d{5})[A-Z](?![A-Za-z0-9])")
+# Words a pattern page's heading prints that say nothing of which program it is (S653 third reader): the district,
+# a stray "GE" or "Associate" left once the award and the pattern are set aside, a PDF table's "Y".
+GE_HEAD_NOISE = {"laccd", "ge", "associate", "y"}
+# A version or a number in a title: "2.0", "2", "v2", "Version 2", "V2.0" all read 2.
+GE_NUMBER = re.compile(r"\b(?:v(?:ersion)?\s*)?(\d+(?:\.\d+)?)\b", re.I)
+
+
+def _award_start(text: str) -> int:
+    """Where a heading's award begins (NCL_ADT, NCL_KIND), the end when it prints none: the title and its version
+    sit before it, its unit counts after ("Chemistry 2.0 AS-T 37.5")."""
+    letters = [c for c in text if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    at = len(text)
+    for pat in NCL_ADT + [p for _, p in NCL_KIND if not (shouting and not p.flags & re.I)]:
+        m = pat.search(text)
+        if m:
+            at = min(at, m.start())
+    return at
+
+
+def ge_identity(text: str | None, heading: bool = False) -> tuple[frozenset, frozenset, frozenset]:
+    """(title words, identity tokens, numbers) of a title, or of a heading's part before its award with its
+    control number and noise words set aside. Identity is a Roman numeral or an option letter (Spanish II,
+    Level I, Option A); numbers are versions in any spelling, "2.0" and "v2" alike."""
+    t = text or ""
+    if heading:
+        t = GE_CONTROL.sub(" ", t[:_award_start(t)])
+    nums = frozenset(re.sub(r"\.0+$", "", m.group(1)) for m in GE_NUMBER.finditer(t))
+    words, ident = ncl_words(GE_NUMBER.sub(" ", t))
+    words = frozenset(w for w in words if not (heading and w in GE_HEAD_NOISE))
+    return words, frozenset(x for x in ident if not x.isdigit()), nums
+
+
+def ge_page_owner(pg: dict, programs: list[dict]) -> dict | None:
+    """The one listed program a general education pattern's page belongs to, or None (S653). Riverside City
+    heads each transfer degree's own page with the degree and the pattern it follows, "Sociology - Associate
+    in Arts for Transfer (ADT) - AA696 (CalGETC)", and under the S646 rule each lost its own page (36
+    page_claimed in capture 43619958385). The pattern's words set aside, every component the heading prints
+    must agree with the program, each one comparison here:
+      control  a heading printing a listed program's control number in the district's print (T038461G) is
+               that program's page and no other's (LA Trade-Tech's cut PDF windows, "Development T038461G
+               AA-T"); a bare five-digit run only when the heading's title words agree with the program's at
+               least one way (S654);
+      title    the heading's words before its award are the program's title words, both ways ("Art History
+               AA-T" is never History's, "Business Administration: Accounting" never plain Business
+               Administration's);
+      identity a Roman numeral or option letter agrees (Spanish II is never Spanish I's, Option B never A's);
+      award    a heading that names an award takes that award only (Moreno Valley's MAS643, the A.S.-T's
+               page, is never its Administration of Justice A.S.'s);
+      version  a number in the title part ("2.0", "2", "v2") goes to the sibling printing the same one where
+               one is listed; where none is, a program printing no number keeps it (Moreno Valley's one
+               Physics, 43792, on its 2.0 page), and a heading printing none goes to the sibling printing none.
+               A number after the award is units, never a version.
+    More than one program left, or none, owns nothing. A pattern's own page ("Cal-GETC - Certificate of
+    Achievement", Glendale's, the S646 case) names no program once the pattern is set aside."""
+    head = GE_PATTERN.sub(" ", pg.get("h1") or TITLE_SPLIT.split(pg.get("title") or "")[0] or "")
+    words, ident, nums = ge_identity(head, heading=True)
+    # A control number in the district's own print (DISTRICT_CONTROL: "T042296D C", "AA-T V032851G", "ASSOCIATE OF
+    # ARTS (AA) Accounting (M003340C)") names its listed program, whatever words or award sit around it (S654 second
+    # reader: the narrower cut-window rule refused 84 of main's 314 right namings).
+    district = {m.group(1) for m in DISTRICT_CONTROL.finditer(head)}
+    if district:
+        named = [p for p in programs if str(p.get("control_number") or "").lstrip("0").zfill(5) in district]
+        if named:
+            return named[0] if len(named) == 1 else None
+    # A bare five-digit run names its program only when the heading has title words and they agree with the
+    # program's title at least one way (COBIx on #3324 and 6887933755, S654): a ZIP code, a five-digit course id or
+    # "LACCD 92506 Cal-GETC" never skips the title, award and version checks below, and a program with no title
+    # words is never named by a bare number.
+    ctl = {m.group(1) for m in GE_CONTROL.finditer(head)} - district
+    if ctl and words:
+        named = []
+        for p in programs:
+            if str(p.get("control_number") or "").lstrip("0").zfill(5) not in ctl:
+                continue
+            tw = ge_identity(p.get("title"))[0]
+            if tw and _ge_title_one_way(tw, words):
+                named.append(p)
+        if named:
+            return named[0] if len(named) == 1 else None
+    if not words:
+        return None
+    kinds = award_kinds_in(head)
+    classes = [c for c in kinds if c in NCL_CLASS]
+    kinds = {k for k in kinds if k not in NCL_CLASS}
+
+    def award_agrees(p):
+        kind = P.award_kind(p.get("award"))
+        return all(kind in NCL_CLASS[c] for c in classes) and (not kinds or kind in kinds)
+    fits = []
+    for p in programs:
+        tw, tid, tn = ge_identity(p.get("title"))
+        if tw and all(_named(w, words) for w in tw) and all(_named(h, tw) for h in words) and tid == ident \
+                and award_agrees(p) and (not tn or not nums or tn == nums):
+            fits.append((p, tn))
+    if any(tn == nums for _, tn in fits):
+        fits = [f for f in fits if f[1] == nums]
+    return fits[0][0] if len(fits) == 1 else None
+
+
+def _ge_title_one_way(title_words: frozenset, head_words: frozenset) -> bool:
+    """Whether a program's title words and a heading's agree at least one way: every title word in the heading,
+    or every heading word in the title."""
+    return all(_named(w, head_words) for w in title_words) or all(_named(h, title_words) for h in head_words)
+
+
+def ge_page_names_program(pg: dict, program: dict, programs: list | None = None,
+                          owners: dict | None = None) -> bool:
+    """Whether a general education pattern's page belongs to this program among the college's listed
+    programs (ge_page_owner); programs left None weighs the program alone. owners, when given, holds each
+    page's owner among these same programs, keyed by the heading and title the owner is read from, so
+    assign() works a page's owner out once (COBIx on #3324, S654); never share one across program lists."""
+    if owners is None or programs is None:
+        owner = ge_page_owner(pg, programs if programs is not None else [program])
+    else:
+        key = (pg.get("h1"), pg.get("title"))
+        if key not in owners:
+            owners[key] = ge_page_owner(pg, programs)
+        owner = owners[key]
+    if owner is None:
+        return False
+    if owner is program:
+        return True
+    cn = program.get("control_number")
+    return cn is not None and owner.get("control_number") == cn
+
+
+def candidates(program: dict, pages: list[dict], programs: list | None = None,
+               owners: dict | None = None) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
-    then the higher coverage."""
+    then the higher coverage. programs is every listed program at the college (assign()
+    passes it), so a pattern's page goes to the one program it belongs to (ge_page_owner);
+    owners is assign()'s cache of those owners, one per page (ge_page_names_program)."""
     courses = program["closed_list"]
     if not courses:
         return []
@@ -584,8 +755,10 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         # A general education pattern's page lists courses in every discipline, so it names
         # most of many programs' lists; it is the list of a program only when the program is
-        # that pattern (ge_pattern(), S646).
-        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
+        # that pattern (ge_pattern(), S646), or when its heading names the program beside the
+        # pattern (ge_page_names_program(), S653: Riverside City's transfer degrees).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")) \
+                and not ge_page_names_program(pg, program, programs, owners):
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
@@ -972,7 +1145,8 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
-    ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    owners: dict = {}   # a pattern page's owner, worked out once per page (ge_page_names_program)
+    ranked = {p["control_number"]: candidates(p, pages, programs, owners) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
     plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
@@ -1022,6 +1196,664 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
             best = None
         out[cn] = {"best": best, "lost": lost.get(cn, [])}
     return out
+
+
+# ── a program with no closed list, looked up by title and award (S652; #3299 slice A) ──────────
+# Sam's rule (relayed by COBIx on #3299, 2026-11-14): collection starts from the published catalog, and
+# each Active COCI program we do not hold gets one second look in the catalog, by title and award; one
+# still not found is flagged and never holds up collection. A program whose Program Course File keeps
+# no course (1,699 Active statewide) was marked and never looked for: Skyline's Accounting A.S. (05809)
+# read "no closed list" beside its own page, catalog.skylinecollege.edu/current/programs/accounting-as.php.
+#
+# The lookup reads the pages the capture already read (no page is loaded for it, no model call is made),
+# after every closed-list program has its page, and files its answer beside the program's method, which
+# stays no_closed_list: the record carries no source and no text, so nothing extracts it and the census,
+# the scorer and the status builders count the program as before (slice B changes that).
+#
+# A program with no list has no courses to break a tie, so nothing is guessed. A page matches when it is a
+# program page (no landing, department, index or archived page), prints the program's award (an award the
+# state's file leaves unnamed matches only a page printing no other award), and one of its readings (heading,
+# title, address) is the program's whole title, word for word both ways, numbers, roman numerals and option
+# letters the same, once award, code and unit decorations are set aside (the #3300 review, round three). The answer is found only when one page
+# matches, no closed-list program took it, and no other program matches it at all. Before any of that, the
+# capture tests the matcher on its own closed-list programs (ncl_self_test): each is looked up as if it had
+# no list, and a college where fewer than NCL_FLOOR come back to their own page, or any lands on another
+# program's page, files not_searched. The second reader's measure of the first rule, every word both ways,
+# found 63% of the closed-list programs statewide and none at Cerritos or Riverside City (S652).
+NCL_LOOKUP_ENV = "NCL_CATALOG_LOOKUP"   # "0" (or off, false, no) runs a capture as before S652
+NCL_OWN = 1.0                           # a reading's words and the title's words are one set (round three)
+NCL_FLOOR = 0.8                         # the self-test's recall below which a college is not looked up
+NCL_MIN_TESTED = 10                     # fewer closed-list programs on read pages than this: no test, no lookup
+NCL_LIST_FLOOR = 0.95                   # the catalog list's own recall below which nothing is filed not_listed
+PAGE_EXT = re.compile(r"\.(?:php|xml|s?html?|aspx?)$", re.I)
+# A query parameter that names no program: Acalog's print view (El Camino's preview_program.php?catoid=13&
+# poid=3523&print, every filed address) and tracking tags. catoid and poid name the program and stay.
+NCL_QUERY_NOISE = re.compile(r"^(?:print|utm_\w+)$", re.I)
+# Skyline addresses a certificate of achievement user-experience-design-ca.php, which SLUG_AWARD does not
+# read. The lookup reads it; the closed-list search keeps SLUG_AWARD as it stands.
+NCL_SLUG_AWARD = [("coa", re.compile(r"-ca/?$"))]
+# The award a heading or title prints. A transfer degree's words are read first, and a heading that names a
+# transfer degree names no A.S. or A.A. beside it: "A.S. in Early Childhood Education for Transfer" and "Biology for
+# Transfer, Associate in Science" are each the A.S.-T alone (Diablo Valley's 01512 and 30218, the #3300 review). The short capitals forms (AS, AA, CA, COA) are read only in
+# a line that is not all capitals: "ENGLISH AS A SECOND LANGUAGE" names no award.
+NCL_ADT = [re.compile(r"associate (?:in|of) (?:arts|science)(?: degree)? for transfer|\bfor transfer\b|"
+                      r"\btransfer degree\b", re.I),
+           re.compile(r"\bA\.?\s?[AS]\.?\s?-\s?T\b|\bA[AS]T\b|\bA\.\s?[AS]\.\s?T\b\.?|\bADT\b")]
+NCL_KIND = [("bs", re.compile(r"\bbachelor", re.I)),
+            ("noncredit", re.compile(r"\bnon-?credit\b|certificate of (?:completion|competency)", re.I)),
+            ("coa", re.compile(r"certificate of achievement|\bcert\.?\s*(?:of\s+)?achievement", re.I)),
+            ("other", re.compile(r"certificate of (?:accomplishment|specialization|proficiency|career preparation)|"
+                                 r"\bskills? certificate", re.I)),
+            ("as", re.compile(r"associate (?:in|of) science", re.I)),
+            ("aa", re.compile(r"associate (?:in|of) arts", re.I)),
+            ("as", re.compile(r"\bA\.\s?S\.", re.I)),
+            ("aa", re.compile(r"\bA\.\s?A\.", re.I)),
+            ("bs", re.compile(r"\bB\.\s?S\.", re.I)),
+            ("coa", re.compile(r"\bCOA\b|\bCA\b")),
+            ("as", re.compile(r"\bAS\b")),
+            ("aa", re.compile(r"\bAA\b")),
+            ("bs", re.compile(r"\bBS\b"))]
+# An address that says only "certificate" or "degree" (Mt. San Antonio's accounting/accounting-certificate/ beside
+# accounting/accounting-degree/) names the class of award: a degree page is never a certificate's, nor the reverse.
+NCL_SLUG_CLASS = [("certificate", re.compile(r"-certificates?/?$")), ("degree", re.compile(r"-degrees?/?$"))]
+NCL_CLASS = {"certificate": {"coa", "other", "noncredit"}, "degree": {"as", "aa", "adt", "bs"}}
+# What a heading adds to a program's title and the title does not carry: the award, a program code (Riverside
+# City's AS524/AS524C/CE524, Allan Hancock's AA499, Fresno City's "Major #2010"), units ("Major/Cert.
+# Achievement (18 units or more)"), the college's name after a dash, and the words degree, certificate,
+# major and program, a general education pattern's name ("Sociology ADT CalGETC"), and an old name after
+# "Formerly" (Fresno City). The word "as" is set aside only as an award in capitals (A.S., AS), never in
+# "English as a Second Language".
+NCL_DECOR_I = re.compile(
+    r"associate (?:in|of) (?:arts|science)(?: degree)?(?: for transfer)?(?: degree)?|"
+    r"certificate of (?:achievement|accomplishment|completion|competency|proficiency|specialization|career preparation)|"
+    r"\bcert\.?\s*(?:of\s+)?achievement|\bfor transfer\b|\btransfer degree\b|\bnon-?credit\b|"
+    r"\ba\.\s?[as]\.(?:\s?-?\s?t\b\.?)?|\bb\.\s?s\.|"
+    r"#\s*\d+|\b\d+(?:\.\d+)?(?:\s*(?:-|–|to)\s*\d+(?:\.\d+)?)?\s*(?:semester\s+|quarter\s+)?units?\b(?:\s+or\s+(?:more|greater))?|"
+    r"\s[-–|]\s[^-–|]*\bcollege\b[^-–|]*$|\b(?:degree|certificate|majors?|program)\b|"
+    r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge(?:[\s-]breadth)?\b|\(?\bformerly\b[^,)]*\)?", re.I)
+NCL_DECOR_CAPS = re.compile(r"\b[A-Z]{1,4}\d{2,}[A-Z]?\b|\bA\.?\s?[AS]\.?(?:\s?-?\s?T\.?)?(?![\w.])|\bA[AS]T\b|\bADT\b|"
+                            r"\bCOA\b|\bCA\b|\bB\.?\s?S\.?(?![\w.])")
+NCL_STOP = set(P.STOP) | {"opt", "concentration", "emphasis"}
+ROMAN = re.compile(r"^(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)$")
+OPTION_WORD = {"option", "opt", "level", "track", "part", "plan", "pathway", "emphasis"}
+
+
+def ncl_lookup_on() -> bool:
+    """Whether a capture looks up its no-closed-list programs (on unless NCL_CATALOG_LOOKUP says no)."""
+    return os.environ.get(NCL_LOOKUP_ENV, "1").strip().lower() not in ("0", "off", "false", "no")
+
+
+def _path_stem(url: str | None) -> str:
+    p = urllib.parse.urlparse(url or "")
+    return (p.netloc + PAGE_EXT.sub("", urllib.parse.unquote(p.path)).rstrip("/")).lower()
+
+
+def page_stem(url: str | None) -> str:
+    """A page's identity: its address without its extension or a trailing slash, its query kept but for the
+    parameters that name no program (NCL_QUERY_NOISE). Skyline serves each program page as accounting-as.php
+    and accounting-as.xml, one page; every Acalog program is preview_program.php, told apart by its poid."""
+    q = sorted((k, v) for k, v in urllib.parse.parse_qsl(urllib.parse.urlparse(url or "").query, keep_blank_values=True)
+               if not NCL_QUERY_NOISE.match(k))
+    return _path_stem(url) + ("?" + urllib.parse.urlencode(q).lower() if q else "")
+
+
+def page_keys(pg: dict) -> set[str]:
+    return {page_stem(pg.get("url"))} | ({pg["group"]} if pg.get("group") else set())
+
+
+def award_kinds_in(text: str | None) -> set[str]:
+    """The awards a heading or title prints (NCL_ADT, NCL_KIND)."""
+    t, kinds = text or "", set()
+    for pat in NCL_ADT:
+        if pat.search(t):
+            kinds.add("adt")
+            t = pat.sub(" ", t)
+    letters = [c for c in t if c.isalpha()]
+    shouting = bool(letters) and sum(c.isupper() for c in letters) > 0.6 * len(letters)
+    for kind, pat in NCL_KIND:
+        if shouting and not pat.flags & re.I:
+            continue
+        if pat.search(t):
+            kinds.add(kind)
+    return kinds - {"as", "aa"} if "adt" in kinds else kinds
+
+
+def page_award_kinds(pg: dict) -> set[str]:
+    """The awards a page prints: a Coursedog code's letters, else its address (its extension set aside, so
+    accounting-as.php names the A.S.), else its heading, else its title; empty when none does."""
+    if pg.get("code_kind"):
+        return {pg["code_kind"]}
+    url = pg.get("url") or ""
+    named = slug_awards(url) or slug_awards("https://" + _path_stem(url))
+    if named:
+        return named
+    last = _path_stem(url).rsplit("/", 1)[-1]
+    named = {k for k, pat in NCL_SLUG_AWARD + NCL_SLUG_CLASS if pat.search(last)}
+    return named or award_kinds_in(pg.get("h1")) or award_kinds_in(pg.get("title"))
+
+
+@functools.lru_cache(maxsize=None)
+def ncl_words(text: str | None) -> tuple[tuple, tuple]:
+    """A title or a page reading as (its words, its identity: numbers, versions, roman numerals and option
+    letters), decorations set aside (NCL_DECOR_I, NCL_DECOR_CAPS)."""
+    t = text or ""
+    letters = [c for c in t if c.isalpha()]
+    if not (letters and sum(c.isupper() for c in letters) > 0.6 * len(letters)):
+        t = NCL_DECOR_CAPS.sub(" ", t)
+    t = re.sub(r"\b(\d+)\.(\d+)\b", r" v\1\2 ", NCL_DECOR_I.sub(" ", t))
+    toks = re.findall(r"[a-z0-9]+", t.lower())
+    words, ident = [], []
+    for i, w in enumerate(toks):
+        if w.isdigit() or re.fullmatch(r"v\d+", w) or ROMAN.match(w):
+            ident.append(w.lstrip("0") or "0")
+        elif len(w) == 1:
+            if w != "a" or i == len(toks) - 1 or (i and toks[i - 1] in OPTION_WORD):
+                ident.append(w)
+        elif w not in NCL_STOP:
+            words.append(w)
+    return tuple(words), tuple(sorted(ident))
+
+
+NCL_SEGMENT = re.compile(r"\s+[-–|]\s+|\s*[:,()]\s*")
+
+
+def strip_college(text: str, college_words: frozenset) -> str:
+    """A reading with the college's full name set aside where it stands as a segment of its own, at the start
+    or the end ("Accounting - San Diego Mesa College, A.S."); a part of the name never is ("Accounting - Test,
+    A.S." at Test College keeps "Test", round three)."""
+    if not college_words:
+        return text
+    segs = [x for x in NCL_SEGMENT.split(text) if x.strip()]
+
+    def campus(seg):
+        w = ncl_words(seg)[0]
+        return bool(w) and set(w) == college_words
+
+    def bare(seg):           # a decoration alone ("A.S."), with no word or number of its own
+        return ncl_words(seg) == ((), ())
+    for end in (-1, 0):
+        idx = [i for i in (range(len(segs) - 1, -1, -1) if end else range(len(segs)))]
+        drop = set()
+        for i in idx:
+            if bare(segs[i]):
+                continue
+            if campus(segs[i]):
+                drop.add(i)
+                continue
+            break
+        segs = [x for i, x in enumerate(segs) if i not in drop]
+    joined = " - ".join(segs)
+    return joined if joined != " - ".join(x for x in NCL_SEGMENT.split(text) if x.strip()) else text
+
+
+def ncl_readings(pg: dict, college_words: frozenset = frozenset()) -> list[str]:
+    """The page's readings a title is matched against: its heading, its title whole and before a "|" or
+    " < ", each with the college's own name set aside (strip_college), and its address's last part with its
+    award set aside."""
+    out = []
+    for t in (pg.get("h1"), pg.get("title")):
+        if t and t.strip():
+            for x in [t] + [y for y in [TITLE_SPLIT.split(t)[0]] if y != t]:
+                out.append(strip_college(x, college_words))
+    last = "/" + _path_stem(pg.get("url")).rsplit("/", 1)[-1]
+    for pat in [SLUG_DEGREE_CERT] + [p for _, p in SLUG_AWARD + NCL_SLUG_AWARD + NCL_SLUG_CLASS]:
+        last = pat.sub("", last)
+    last = re.sub(r"(?<!\d)(\d)-(\d)(?!\d)", r"\1.\2", last)    # an address writes version 2.0 as 2-0
+    last = re.sub(r"[-_/]+", " ", last).strip()
+    if last:
+        out.append(last)
+    return out
+
+
+def _named(word: str, others) -> bool:
+    return word in others or any(len(word) > 3 and len(x) > 3 and (x.startswith(word) or word.startswith(x))
+                                 for x in others)
+
+
+NOT_PROGRAM_PAGE = re.compile(r"/(?:index|default|home|overview)$|/(?:departments?|disciplines?)/[^/]+$")
+
+
+def ncl_page(pg: dict, college_words: frozenset = frozenset()) -> dict:
+    """The page as the lookup reads it, worked out once: its key, readings, awards and whether it is a
+    program page (a department's landing page or an index is not)."""
+    path = _path_stem(pg.get("url"))
+    readings = [ncl_words(r) for r in ncl_readings(pg, college_words)]
+    return {"pg": pg, "key": pg.get("group") or page_stem(pg.get("url")), "keys": page_keys(pg),
+            "readings": readings, "kinds": page_award_kinds(pg),
+            # a fragment a catalog includes is no program page, whatever code it carries (FRAGMENT_PATH, S654)
+            "program_page": not FRAGMENT_PATH.search(urllib.parse.urlparse(pg.get("url") or "").path) and (
+                bool(pg.get("code") or pg.get("node") or pg.get("group")) or not (
+                    NOT_PROGRAM_PATH.search(pg.get("url") or "") or NOT_PROGRAM_PAGE.search(path))),
+            # A GE pattern's own page: it names a pattern and nothing else once the pattern is set aside
+            # (Riverside City heads its transfer degrees "Sociology ADT CalGETC", a program's page).
+            "ge": ge_pattern_page(pg) and not any(w for w, _ in readings)}
+
+
+# A landing page lists programs and is none of them (round three of the #3300 review): its heading names a
+# plural kind of award ("Accounting Degrees and Certificates"), it is the parent of another page the capture read
+# (programsaz/accounting/ above accounting/accounting-degree/), or it prints no award and links to two or more of
+# the program pages read (an areas-of-study or department page). An archived or past catalog's copy is refused too.
+LANDING_HEADING = re.compile(r"\b(?:degrees|certificates|programs)\b", re.I)
+ARCHIVED = re.compile(r"archiv|\bprevious\b|past[\s_-]catalog", re.I)
+YEAR_SPAN = re.compile(r"(?<!\d)(20\d\d)\s*[-–_]\s*(?:20)?\d\d(?!\d)")
+
+
+def ncl_past_year(text: str, catalog_year: str | None) -> bool:
+    """Whether text names catalog years and every one is earlier than the capture's own."""
+    m = re.match(r"\s*(20\d\d)", catalog_year or "")
+    years = [int(y) for y in YEAR_SPAN.findall(text or "")]
+    return bool(m and years and max(years) < int(m.group(1)))
+
+
+def ncl_pages(pages: list[dict], college: str | None = None, catalog_year: str | None = None) -> list[dict]:
+    """Each distinct page once (ncl_page), by its key; of one page's two addresses, the one that prints a
+    heading. The college's full name is what strip_college() sets aside. A landing page and an archived or
+    past catalog's copy are marked no program page (LANDING_HEADING, ARCHIVED, ncl_past_year)."""
+    college_words = frozenset(ncl_words(college)[0])
+    feats: dict[str, dict] = {}
+    for pg in pages:
+        f = ncl_page(pg, college_words)
+        prev = feats.get(f["key"])
+        if prev is None or (not (prev["pg"].get("h1") or prev["pg"].get("title")) and (pg.get("h1") or pg.get("title"))):
+            feats[f["key"]] = f
+    out = list(feats.values())
+    paths = {_path_stem(f["pg"].get("url")) for f in out}
+    stems = {k for f in out for k in f["keys"]}
+    for f in out:
+        pg, path = f["pg"], _path_stem(f["pg"].get("url"))
+        heading = (pg.get("h1") or "").strip() or TITLE_SPLIT.split(pg.get("title") or "")[0]
+        links = {page_stem(l.get("href")) for l in ((pg.get("got") or {}).get("links") or []) if isinstance(l, dict)}
+        why = None
+        if LANDING_HEADING.search(heading):
+            why = "landing: its heading names a plural kind of award"
+        elif path and any(q != path and q.startswith(path + "/") for q in paths):
+            why = "landing: the parent of another page read"
+        elif not f["kinds"] and len((links & stems) - f["keys"]) >= 2:
+            why = "landing: no award printed, and it links to program pages read"
+        elif ARCHIVED.search(path) or ARCHIVED.search(heading):
+            why = "archived"
+        elif ncl_past_year(urllib.parse.unquote(pg.get("url") or "") + " " + heading, catalog_year):
+            why = "a past catalog year"
+        if why:
+            f["program_page"], f["refused"] = False, why
+    return out
+
+
+def ncl_title_forms(title: str | None) -> list[tuple]:
+    """The title as the readings must name it (ncl_words): the whole title, both sides of a colon. A part after
+    a colon alone would let "Hospitality: Management" take a bare "Management, A.S." page (the #3300 review)."""
+    words, ident = ncl_words(title)
+    return [(words, ident)] if words else []
+
+
+def ncl_match(page: dict, program: dict) -> dict | None:
+    """How a page (ncl_page) names a program by title and award, or None:
+    {"award": "named" | "unprinted", "title_share", "heading_share"}."""
+    if not page["program_page"] or (page["ge"] and not ge_pattern(program.get("title"))):
+        return None
+    kind, kinds = P.award_kind(program.get("award")), page["kinds"]
+    classes = {c for c in kinds if c in NCL_CLASS}
+    if classes:
+        if not any(kind in NCL_CLASS[c] for c in classes):
+            return None          # a degree's page for a certificate, or the reverse
+        kinds = (kinds - classes) | ({kind} if kind != "other" else {"other"})
+    if kind == "other":
+        if kinds - {"other"}:
+            return None          # an award the state's file leaves unnamed never takes a page naming another
+        award = "named" if kinds else "unprinted"
+    elif kind in kinds:
+        award = "named"
+    elif not kinds:
+        award = "unprinted"      # the page prints no award: the title decides, and a rival undoes it
+    else:
+        return None
+    best = None
+    for t_words, t_ident in ncl_title_forms(program.get("title")):
+        for words, ident in page["readings"]:
+            if ident != t_ident or not words or not all(_named(w, words) for w in t_words):
+                continue
+            own = round(sum(1 for w in words if _named(w, t_words)) / len(words), 3)
+            if own >= NCL_OWN and (best is None or own > best):
+                best = own      # NCL_OWN is 1.0: the reading names nothing the title does not
+    if best is None:
+        return None
+    return {"award": award, "title_share": 1.0, "heading_share": best}
+
+
+def ncl_page_ref(page: dict, m: dict) -> dict:
+    """The page an answer names, compact (no page text): its heading and title as printed, the awards it
+    prints (page_award_kinds), and how the title matched."""
+    pg = page["pg"]
+    return {"url": pg.get("url"), "title": pg.get("title"), "h1": pg.get("h1"), "awards": sorted(page["kinds"]),
+            "award": m["award"], "title_share": m["title_share"], "heading_share": m["heading_share"]}
+
+
+def ncl_listed_names(info: dict | None) -> list[dict] | None:
+    """The catalog's own program list, where the capture holds one whole (a Coursedog catalog's search,
+    kept as coursedog.catalog since S423), as pages the title match can read; None otherwise."""
+    info = info or {}
+    if not info.get("catalog") or info.get("error") or info.get("errors"):
+        return None
+    return [{"url": "", "title": e.get("name") or "", "code": e.get("code"), "code_kind": cd_code_kind(e.get("code")),
+             "h1": " ".join(x for x in (e.get("name") or "", cd_award_words(e.get("name") or "")) if x)}
+            for e in info["catalog"]]
+
+
+NCL_NO_PAGE = "no page read names it by title and award"
+NCL_WENT_TO = "its page went to closed-list"
+
+
+def ncl_shared_by_awards(page: dict, a: dict, b: dict) -> bool:
+    """A page that prints two programs' different awards (Riverside City's "... Associate of Science Degree and
+    Certificate of Achievement"): kept apart under the reason page_shared_by_awards, for a later slice."""
+    ka, kb = P.award_kind(a.get("award")), P.award_kind(b.get("award"))
+    return ka != kb and {ka, kb} <= page["kinds"]
+
+
+def ncl_answer(prog: dict, pages: list[dict], claimed: dict[str, list[str]], everyone: list[dict]) -> dict:
+    """One program's answer from the pages (ncl_page): found, or not_matched with the reason. One page gives
+    found to one program at most: a page a closed-list program took is never given to a program without a
+    list, and a page another program matches too goes to neither."""
+    if not ncl_title_forms(prog.get("title")):
+        return {"result": "not_matched", "why": "title_has_no_words"}
+    hits = [(pg, m) for pg in pages for m in [ncl_match(pg, prog)] if m]
+    if not hits:
+        return {"result": "not_matched", "why": NCL_NO_PAGE}
+    if len(hits) > 1:
+        return {"result": "not_matched", "why": "two pages name it: " + ", ".join(
+            sorted(pg["pg"].get("url") or "" for pg, _ in hits)[:4])}
+    pg, m = hits[0]
+    by_cn = {p["control_number"]: p for p in everyone}
+    for cn in sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]}):
+        other = by_cn.get(cn) or {}
+        why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else NCL_WENT_TO
+        return {"result": "not_matched", "why": "%s %s (%s)" % (why, cn, other.get("title")), "page": ncl_page_ref(pg, m)}
+    for other in everyone:
+        if other["control_number"] != prog["control_number"] and ncl_match(pg, other):
+            why = "page_shared_by_awards" if ncl_shared_by_awards(pg, prog, other) else "the page names"
+            return {"result": "not_matched", "why": "%s %s (%s)" % (why, other["control_number"], other.get("title")),
+                    "page": ncl_page_ref(pg, m)}
+    return {"result": "found", "page": ncl_page_ref(pg, m)}
+
+
+def ncl_named(sources: list[dict], award: bool = False) -> set[str]:
+    """The closed-list programs whose page the closed-list search's own label says names them: its title share
+    at least half (label_score), and with award=True its award too. Skyline's Mathematics A.S.-T was filed from
+    the Economics page at title share 0.0; Antelope Valley's Professional Bookkeeping A.S. from the certificate's
+    page (award 0); no title-and-award matcher should come back to either."""
+    out = set()
+    for s in sources:
+        label = (s.get("source") or {}).get("label") or {}
+        if label.get("title", 0) >= 0.5 and (not award or label.get("award") == 1):
+            out.add(s["control_number"])
+    return out
+
+
+def ncl_claims(own: dict[str, str], pages: list[dict]) -> dict[str, list[str]]:
+    """{page key: the closed-list programs whose page it is}, every key of each page (page_keys)."""
+    by_stem = {}
+    for pg in pages:
+        for k in pg["keys"]:
+            by_stem.setdefault(k, pg["keys"])
+    out: dict[str, list[str]] = {}
+    for cn, stem in own.items():
+        for k in by_stem.get(stem, {stem}):
+            out.setdefault(k, []).append(cn)
+    return out
+
+
+def ncl_self_test(programs: list[dict], pages: list[dict], own: dict[str, str], named: set[str] | None = None) -> dict:
+    """The matcher tried on the college's closed-list programs, each looked up as if it had no list, three ways:
+    (1) recall: against every page, the other closed-list programs' pages claimed; a hit comes back to its own
+    page, a false match lands on another; (2) the strict false match (the #3300 review): against every page but
+    its own, the claims kept, where any found is false; (3) the same without the claims, reported only (what an
+    unclaimed page would let through). own: {control number: page_stem() of its own page}. Tested: a program whose
+    page is among `pages` (ncl_page), which the closed-list search's own label says names it (`named`; None
+    tests all), and which no other closed-list program shares (counted as shared). A college is searched when at
+    least NCL_MIN_TESTED are tested, recall reaches NCL_FLOOR, and neither false measure finds one."""
+    keys = {k for pg in pages for k in pg["keys"]}
+    own = {cn: s for cn, s in own.items() if s in keys}
+    claimed = ncl_claims(own, pages)
+    hits, false, strict, loose, shared, tested = 0, [], [], [], 0, 0
+    for prog in programs:
+        cn = prog["control_number"]
+        if cn not in own or (named is not None and cn not in named):
+            continue
+        if len(claimed.get(own[cn], ())) > 1:
+            shared += 1
+            continue
+        tested += 1
+        ans = ncl_answer(prog, pages, claimed, programs)
+        if ans["result"] == "found":
+            if cn in claimed.get(page_stem(ans["page"]["url"]), ()):
+                hits += 1
+            else:
+                false.append({"control_number": cn, "title": prog.get("title"), "page": ans["page"]["url"]})
+        others = [pg for pg in pages if own[cn] not in pg["keys"]]
+        for out, cl in ((strict, claimed), (loose, {})):
+            a = ncl_answer(prog, others, cl, programs)
+            if a["result"] == "found":
+                out.append({"control_number": cn, "title": prog.get("title"), "award": prog.get("award"),
+                            "page": a["page"]["url"], "h1": a["page"].get("h1")})
+    n = tested
+    return {"tested": n, "hits": hits, "recall": round(hits / n, 3) if n else None, "false": len(false),
+            "false_off_own": len(strict), "false_no_claims": len(loose), "shared": shared,
+            "false_matches": (false + strict)[:20], "no_claims_matches": loose[:20],
+            "searches": bool(n >= NCL_MIN_TESTED and hits / n >= NCL_FLOOR and not false and not strict)}
+
+
+def ncl_list_test(programs: list[dict], pages: list[dict], own: dict[str, str], lists: list[dict]) -> dict:
+    """The catalog list's own self-test: every closed-list program whose page was read must be named on the
+    catalog's own list (ncl_match against its entries). Below NCL_LIST_FLOOR, or under NCL_MIN_TESTED programs,
+    the college files no not_listed (the #3300 review: the list missed 8 at Glendale, 12 at Hartnell, 45 at
+    Merced)."""
+    keys = {k for pg in pages for k in pg["keys"]}
+    tested = [p for p in programs if p.get("closed_list") and own.get(p["control_number"]) in keys
+              and ncl_title_forms(p.get("title"))]
+    missed = [p["control_number"] for p in tested if not any(ncl_match(e, p) for e in lists)]
+    n = len(tested)
+    recall = round((n - len(missed)) / n, 3) if n else None
+    return {"tested": n, "on_list": n - len(missed), "recall": recall, "missed": missed[:20],
+            "files_not_listed": bool(n >= NCL_MIN_TESTED and recall >= NCL_LIST_FLOOR)}
+
+
+# ── a page a closed-list program holds wrongly, given back (S668) ───────────────────────────────────────
+# Skyline's Dance A.A. (10546, no closed list) is the whole heading of dance-aa.php, "Dance Associate in Arts Degree
+# Program", and the closed-list search gave that page to Musical Theater (46296); Skyline's Automotive Advanced Engine
+# Performance Technology certificate (10529) lost automotive-advanced-engine-performance-technology-ca.php to Asian
+# Engine Performance Technology (32337). Both holders' filed records fail. After every rule above has given its answer,
+# a no-closed-list program whose one match is a page one closed-list program holds (NCL_WENT_TO) takes the page when
+# the page's readings do not name the holder (ncl_match) and the holder's filed record (records/<holder>.json, the read
+# filed now) was read from that page and does not pass as the live table counts it (passes_live). Every other rule
+# stands: the page must give the taker found once the holder's claim is lifted. A holder with no filed record from
+# that page keeps it (yield_unjudged), and so does one whose record passes (yield_refused_passing): Lemoore's 43533
+# passes every check on the "Networking Fundamentals (COA)" page, so that page is functionally its own. The holder
+# files page_claimed, with the page in lost_pages and the taker in yielded_to, so it stays in Still to pass, and
+# keep_no_read carries only a passing record, so its failing record is not carried. A college under the self-test's
+# floor, a re-read and a prior-year read look nothing up, so none of them yields a page.
+# A yield stands on the next capture (the #3408 review): the filing drops the holder's failing record, so the next
+# capture finds none, and the page would go back to the holder, be extracted again and refile the failing record. A
+# yield the filed capture.json's account names for the same holder, taker and page, made under the same catalog
+# year (ncl_filed_yields), moves again without a record; sources.json does not keep yielded_to, so the account is the
+# record of it. A filed yield from another year, or naming none, lapses (COBIx on #3408). A failing record
+# moves a page only when it was read from the capture's catalog year (its own catalog_year, else its filing's, as
+# kept_year reads it; both empty is the same year): a 2024-2025 record at the same address judges no 2026-2027 page.
+# A holder whose filed record passes live keeps its page wherever the record was read from, a filed yield or not: a
+# person's fix, or a later re-read, wins over the earlier move.
+def ncl_filed_records(folder: str):
+    """filed(control number) for ncl_lookup: the record filed under folder/records with the catalog year it was read
+    from (kept_year: its own, else the filed capture's, filed_year), or None. capture() and the census read filed
+    records through this one rule, and each compares the year with the year it looks up under."""
+    year = filed_year(folder)
+    return lambda cn: kept_year(_filed(os.path.join(folder, "records", cn + ".json")), year)
+
+
+def ncl_capture_yields(capture: dict | None) -> set[tuple[str, str, str, str | None]]:
+    """{(holder, taker, page_stem(url), catalog_year)} of each yield a capture's account names (ncl_account), with
+    the year the lookup ran under when it moved the page (None on a row that names none)."""
+    acct = (capture or {}).get("catalog_lookup") or {}
+    return {(y.get("holder"), y.get("taker"), page_stem(y.get("url")), y.get("catalog_year") or None)
+            for y in acct.get("yields") or [] if isinstance(y, dict)}
+
+
+def ncl_filed_yields(folder: str | None) -> set[tuple[str, str, str]]:
+    """The yields the filed capture.json names (ncl_capture_yields); none without one."""
+    try:
+        with open(os.path.join(folder or "", "capture.json")) as fh:
+            capture = json.load(fh)
+    except (OSError, ValueError):
+        return set()
+    return ncl_capture_yields(capture if isinstance(capture, dict) else None)
+
+
+def ncl_read_from(rec: dict | None, page: dict) -> bool:
+    """Whether a filed record (records/<cn>.json) was read from the page (ncl_page): its source address is one of
+    the page's keys (page_stem), or the same address but for letter case and a doubled slash (same_address)."""
+    url = ((rec or {}).get("source_url") or "").split("#")[0]
+    return bool(url) and (page_stem(url) in page["keys"] or same_address(url, page["pg"].get("url") or ""))
+
+
+def ncl_yield(prog: dict, pages: list[dict], claimed: dict[str, list[str]], everyone: list[dict],
+              filed, catalog_year: str | None = None, yielded: set | None = None) -> dict | None:
+    """Whether a no-closed-list program takes its one page back from the closed-list program holding it (the rule
+    above), or None where the program is no such case: its one match (ncl_match) is a page exactly one closed-list
+    program holds, the page does not name that holder, and ncl_answer finds the page for the program once the
+    holder's claim on it is lifted. filed(control number) gives the holder's filed record with the catalog year it
+    was read from (ncl_filed_records), or None; catalog_year is the capture's; yielded: the filed capture's yields
+    (ncl_filed_yields). A passing record refuses the move wherever it was read from. Returns {"holder", "holder_title", "answer": the found answer, "held": None (the page
+    moves), "unjudged" or "refused_passing", "why"}."""
+    hits = [pg for pg in pages if ncl_match(pg, prog)]
+    if len(hits) != 1:
+        return None
+    pg = hits[0]
+    holders = sorted({c for k in pg["keys"] for c in claimed.get(k, ())} - {prog["control_number"]})
+    if len(holders) != 1:
+        return None
+    h = holders[0]
+    holder = next((p for p in everyone if p["control_number"] == h), None)
+    if holder is None or ncl_match(pg, holder):
+        return None
+    lifted = dict(claimed, **{k: [c for c in claimed.get(k, ()) if c != h] for k in pg["keys"]})
+    ans = ncl_answer(prog, pages, lifted, everyone)
+    if ans["result"] != "found":
+        return None
+    rec = filed(h)
+    from_page = bool(rec) and ncl_read_from(rec, pg)
+    if _passing_filed_rec(rec):
+        # Wherever it was read from, and before a filed yield: a person's fix or a later re-read wins (#3408 review).
+        held, why = "refused_passing", "its filed record passes live"
+    elif catalog_year and any((h, prog["control_number"], k, catalog_year) in (yielded or ()) for k in pg["keys"]):
+        # A filed yield stands only in the year it was made under; one from another year, or naming none, lapses
+        # and the holder is judged again from its record (COBIx on #3408).
+        held, why = None, "the filed capture's account names this yield, made under %s" % catalog_year
+    elif not rec:
+        held, why = "unjudged", "no filed record"
+    elif not from_page:
+        held, why = "unjudged", "its filed record was read from another page"
+    elif (rec.get("catalog_year") or "") != (catalog_year or ""):
+        held, why = "unjudged", "its filed record was read from the %s catalog" % (rec.get("catalog_year") or "unnamed")
+    else:
+        held, why = None, "its filed record, read from the page, fails live"
+    return {"holder": h, "holder_title": holder.get("title"), "answer": ans, "held": held, "why": why}
+
+
+def ncl_lookup(programs: list[dict], pages: list[dict], own: dict[str, str], listed: list[dict] | None = None,
+               named: set[str] | None = None, college: str | None = None,
+               catalog_year: str | None = None, filed=None,
+               yielded: set | None = None) -> tuple[dict[str, dict], dict]:
+    """({control number: answer} for each no-closed-list program, the self-test). An answer is found (with
+    the page); not_matched with the reason (title_has_no_words for a title of decorations alone;
+    absent_from_catalog_list where no page read names the program, the capture holds the catalog's own list,
+    `listed`, that list passes its own test, and it lacks the program); or not_searched when the page self-test
+    fails. This slice files no not_listed (round three): the claim "not
+    listed in the catalog" waits for slice B, with its own gate; ncl_list_test is measured, not applied. own: {control number: page_stem()} of each closed-list program's page, which it claims
+    first; named: the ones whose page names them by the search's own label (ncl_self_test). filed(control
+    number): a closed-list program's filed record, or None; given, a found answer may take its page from the
+    closed-list program holding it (ncl_yield, S668), naming it as took_from, and one that may not names why
+    (yield_held: the holder, unjudged or refused_passing, and why); not given, no page moves. yielded: the filed
+    capture's yields (ncl_filed_yields), which stand without the holder's record."""
+    feats = ncl_pages(pages, college, catalog_year)
+    test = ncl_self_test(programs, feats, own, named)
+    claimed = ncl_claims(own, feats)
+    lists = [ncl_page(e) for e in listed] if listed is not None else None
+    test["catalog_list"] = ncl_list_test(programs, feats, own, lists) if lists is not None else None
+    list_ok = bool(test["catalog_list"] and test["catalog_list"]["files_not_listed"])
+    out: dict[str, dict] = {}
+    for prog in programs:
+        if prog.get("closed_list"):
+            continue
+        cn = prog["control_number"]
+        if not ncl_title_forms(prog.get("title")):
+            out[cn] = {"result": "not_matched", "why": "title_has_no_words"}
+        elif not test["searches"]:
+            out[cn] = {"result": "not_searched", "why": "the matcher found %s of %s closed-list programs on their own "
+                       "page, %d on another program's and %d off their own page (floor %.0f%% of at least %d, none false)"
+                       % (test["hits"], test["tested"], test["false"], test["false_off_own"], NCL_FLOOR * 100,
+                          NCL_MIN_TESTED)}
+        else:
+            # The pages read are the catalog; the list is only its index (COBIx on #3300). The page search runs
+            # first, and absent_from_catalog_list replaces its reason only when it found no page at all and the
+            # list passed its own test (ncl_list_test): Glendale's list missed 8 closed-list programs whose pages
+            # were read, Hartnell's 12, Merced's 45.
+            ans = ncl_answer(prog, feats, claimed, programs)
+            if (ans["result"] == "not_matched" and ans["why"] == NCL_NO_PAGE and list_ok
+                    and not any(ncl_match(e, prog) for e in lists)):
+                ans = {"result": "not_matched", "why": "absent_from_catalog_list"}
+            # A page a closed-list program holds wrongly, given back (ncl_yield, S668): only where the capture
+            # passes the read filed now (filed), and only a page the answer says went to closed-list.
+            y = (ncl_yield(prog, feats, claimed, programs, filed, catalog_year, yielded)
+                 if filed is not None and ans["result"] == "not_matched" and ans["why"].startswith(NCL_WENT_TO)
+                 else None)
+            if y and y["held"]:
+                ans = dict(ans, yield_held={"holder": y["holder"], "held": y["held"], "why": y["why"]})
+            elif y:
+                ans = dict(y["answer"], took_from=y["holder"])
+            out[cn] = ans
+    return out, test
+
+
+def ncl_account(recs: list[dict], answers: dict[str, dict], test: dict, catalog_year: str | None = None) -> dict:
+    """The capture's account of the lookup: the self-test, how many it searched and found, the pages found
+    (so a paid read of them can be priced before it is asked for), and every looked-up program's answer in
+    short: a found one's page heading and the awards it prints, any other's reason or basis. A capture-only
+    run files this account alone (capture_preview.json), and a run's artifact cannot be read from a session,
+    so the branch has to carry enough to judge each answer (S652). yields: each page a program took from the
+    closed-list program holding it (holder, taker, the page and its heading, and catalog_year, the year the lookup
+    ran under, which a later capture's filed yield must match: ncl_capture_yields); yield_unjudged and
+    yield_refused_passing: the candidates whose page stayed (ncl_yield, S668)."""
+    by: dict[str, int] = {}
+    for a in answers.values():
+        by[a["result"]] = by.get(a["result"], 0) + 1
+    found = [{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+              "status": r.get("status"), "url": answers[r["control_number"]]["page"]["url"],
+              "h1": answers[r["control_number"]]["page"].get("h1"),
+              "page_title": answers[r["control_number"]]["page"].get("title"),
+              "awards": answers[r["control_number"]]["page"].get("awards")}
+             for r in recs if (answers.get(r["control_number"]) or {}).get("result") == "found"]
+    others = []
+    for r in recs:
+        a = answers.get(r["control_number"])
+        if a is None or a["result"] == "found":
+            continue
+        row = {"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+               "status": r.get("status"), "result": a["result"]}
+        row.update({k: a[k] for k in ("why", "basis", "yield_held") if k in a})
+        if a.get("page"):
+            row.update(url=a["page"]["url"], h1=a["page"].get("h1"), awards=a["page"].get("awards"))
+        others.append(row)
+    # Each page a no-closed-list program took from the closed-list program holding it (ncl_yield, S668), and the
+    # candidates whose page stayed, by why: enough to judge each move from the branch a capture-only run files.
+    titles = {r["control_number"]: r["title"] for r in recs}
+    yields = [{"holder": a["took_from"], "holder_title": titles.get(a["took_from"]), "taker": cn,
+               "taker_title": titles.get(cn), "url": a["page"]["url"], "h1": a["page"].get("h1"),
+               "catalog_year": catalog_year}
+              for cn, a in sorted(answers.items()) if a.get("took_from")]
+    held = [(a.get("yield_held") or {}).get("held") for a in answers.values()]
+    return {"self_test": test, "programs": len(answers), "by_result": by, "found": by.get("found", 0),
+            "found_active": sum(1 for f in found if f["status"] == "Active"),
+            "found_pages": len({page_stem(f["url"]) for f in found}), "found_programs": found,
+            "other_programs": others, "yields": yields, "yield_unjudged": held.count("unjudged"),
+            "yield_refused_passing": held.count("refused_passing")}
 
 
 REFUSED = "refused"                 # a gated PDF block refused (decision 16): filed as no read page
@@ -1424,17 +2256,42 @@ def cq_title_key(nav: dict) -> str:
     return "title:" + re.sub(r"[\s\u2013\u2014-]+", " ", text.lower()).strip()
 
 
+def cq_identity(nav: dict) -> tuple[str, str]:
+    """An entry's identity: its title key and its award. The title key keeps
+    every word of the title but case, spacing and dashes, so a pattern or kind
+    the title names ("(CalGETC)", "(IGETC)", "(CSU GE)", "Noncredit") keeps two
+    programs apart; the award is the local award codes the title ends with, else
+    the award its words name, else none."""
+    text = nav.get("text") or ""
+    codes = cq_group(text, "")
+    award = codes or (cq_name_award(text)[1] or "").lower()
+    return cq_title_key(nav), award
+
+
+def cq_twin(kept: dict, other: dict) -> None:
+    """Record on the kept entry the id of a twin listing it stands for."""
+    oid = other.get("id")
+    if oid is not None and oid != kept.get("id") and oid not in kept.setdefault("twin_ids", []):
+        kept["twin_ids"].append(oid)
+
+
 def cq_distinct(entries: list[dict]) -> tuple[list[dict], int]:
     """Each program entry once. Chaffey lists every program in its index and
-    again under its school, under two ids with one title (401 entries for 202
-    programs, 1,226 loads in run 38203335820); the first is read."""
-    out, keys = [], set()
+    again under its school, under two ids with one title and award (401 entries
+    for 202 programs, 1,226 loads in run 38203335820): the two are a twin
+    listing, the first is read, and the other's id is kept on it as `twin_ids`.
+    The entries returned are copies; the list passed in is left as it was."""
+    out, kept = [], {}
     for e in entries:
-        k = cq_title_key(e)
-        if k in keys:
+        k = cq_identity(e)
+        if k in kept:
+            cq_twin(kept[k], e)
             continue
-        keys.add(k)
-        out.append(e)
+        kept[k] = dict(e, twin_ids=[]) if "twin_ids" not in e else dict(e, twin_ids=list(e["twin_ids"]))
+        out.append(kept[k])
+    for e in out:
+        if not e["twin_ids"]:
+            del e["twin_ids"]
     return out, len(entries) - len(out)
 
 
@@ -1483,8 +2340,11 @@ def cq_page(entry: dict, page: dict | None, prefix: str, children: list | None =
     url = prefix + (entry.get("aliaspath") or str(entry.get("id")))
     got = {"final_url": url, "title": title, "h1": title, "body": text, "content": text,
            "status": 200, "access": "ok", "links": []}
-    return {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
-            "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
+    out = {"url": url, "title": title, "h1": title, "body": text, "content": text, "got": got,
+           "codes": page_codes(text), "node": entry.get("id"), "group": cq_group(entry.get("text") or title, url)}
+    if entry.get("twin_ids"):
+        out["twin_ids"] = list(entry["twin_ids"])
+    return out
 
 
 # A dropped connection loses a whole branch of the walk: Las Positas's two
@@ -1554,7 +2414,12 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
     get = lambda u: cq_json(reader, u, errors)  # noqa: E731
     entries, dropped = cq_distinct(entries)
     report["curriqunet"]["same_title_entries"] = dropped
-    queue, seen, i = list(entries), {e.get("id") for e in entries} | {cq_title_key(e) for e in entries}, 0
+    # Ids and identities are kept apart: a program nested under another is a
+    # twin only when its title and award match an entry's, and then its id is
+    # recorded on that entry rather than dropped unseen.
+    queue, i = list(entries), 0
+    ids = {e.get("id") for e in entries} | {t for e in entries for t in e.get("twin_ids") or []}
+    by_identity = {cq_identity(e): e for e in entries}
     while i < len(queue) and i < MAX_PAGES:
         e = queue[i]
         i += 1
@@ -1563,15 +2428,23 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         if page and e.get("haschildbodynavs"):
             children, more = cq_children(get, catalog, root, page)
             for m in more:
-                if m.get("id") not in seen and cq_title_key(m) not in seen:
-                    seen.update((m.get("id"), cq_title_key(m)))
-                    queue.append(m)
+                if m.get("id") in ids:
+                    continue
+                ids.add(m.get("id"))
+                twin = by_identity.get(cq_identity(m))
+                if twin is not None:
+                    cq_twin(twin, m)
+                    report["curriqunet"]["same_title_entries"] += 1
+                    continue
+                by_identity[cq_identity(m)] = m
+                queue.append(m)
         pg = cq_page(e, page, prefix, children)
         if pg:
             pages.append(pg)
         if i % 50 == 0:
             print("  read %d of %d program pages" % (i, len(queue)), flush=True)
     report["curriqunet"]["entries_read"] = i
+    report["curriqunet"]["twin_ids"] = {str(e.get("id")): e["twin_ids"] for e in queue if e.get("twin_ids")}
     report["curriqunet"]["failed_calls"] = failed_calls(errors)   # before the list is cut (pages_account())
     del errors[40:]
     return pages
@@ -3328,6 +4201,35 @@ def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) 
     return s
 
 
+# ── A program's own page, named by its college's reconcile entry (S650) ──────────────────────────────
+# Cosumnes River's capture of 2026-10-17 read Psychology AA-T 30566 from PDF p.552 and History AA-T
+# 33072 from p.404, the pages the reading and the Cal-GETC evidence quote. Reconcile 43521338550's fresh
+# capture of the same hand-filed file (its sha256 pinned) took 30566 to pp.467-470, a page naming
+# "History, Psychology or Sociology AA-T" as another degree, and 33072 to pp.94-96, the Cal-GETC pattern
+# page, so neither took the statewide 34 (calgetc_apply_plan.json, waiting.own_pages). A regex over free
+# catalog text is what failed three review rounds (p-gate-free-text-reading-per-college-s644), so the
+# page is named per program in the college's entry (pdf_pages), with the words the filed capture opened
+# on there, and it binds only while the file prints those words on that page and every title word.
+def pdf_pinned_heading(pages: list[str], program: dict, pin: dict | None) -> tuple[dict | None, str | None]:
+    """(the heading pdf_best reads the program from, or None; why a pin was refused, or None). pin is the
+    college's pdf_pages entry for the program: its PDF page (1-based) and the words the program's text opens
+    on there. The window opens at the start of the line carrying the words, read as the page prints them
+    with any run of white space between them; a page missing the words or a title word binds nothing."""
+    if not pin:
+        return None, None
+    i = int(pin.get("page") or 0) - 1
+    words = (pin.get("words") or "").split()
+    if not (0 <= i < len(pages)) or not words:
+        return None, "the pinned page is not in the file"
+    m = re.search(r"\s+".join(re.escape(w) for w in words), pages[i] or "")
+    if not m:
+        return None, "the quoted words are not on PDF page %d" % (i + 1)
+    pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in P.title_tokens(program.get("title") or "")]
+    if not pats or not _titled(pages[i], pats):
+        return None, "PDF page %d does not print every title word" % (i + 1)
+    return {"page": i, "at": pages[i].rfind("\n", 0, m.start()) + 1, "pinned": True}, None
+
+
 # ── A catalog that prints the control number AFTER its program (S644; rebuilt S645) ───────────────
 # Santiago Canyon's 2026-2027 PDF closes each program with "Control Number: N" and opens the next
 # program on the following line ("Control Number: 11856" / "Biology, AS-T" / "A.S. Degree for
@@ -4147,6 +5049,18 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         report["pdf"]["numbers_after_suspected"] = {
             "votes": votes, "why": "the catalog's number lines look printed after each program, and no reconcile "
                                    "entry says so: read by the heading picker, for a person to check"}
+    # A program's own page named by the college's entry (pdf_pages, S650), bound only on the page's own words.
+    pins, pinned = (steps.get(college) or {}).get("pdf_pages") or {}, {}
+    for prog in listed:
+        pin = pins.get(prog["control_number"])
+        if pin:
+            head, why = pdf_pinned_heading(pages, prog, pin)
+            pinned[prog["control_number"]] = head
+            report["pdf"].setdefault("pinned", {})[prog["control_number"]] = (
+                {"page": pin.get("page"), "bound": True} if head else {"page": pin.get("page"), "bound": False, "why": why})
+            if not head:
+                print("::warning::%s %s: the reconcile entry's pdf_pages pin is refused (%s); no page is read for it"
+                      % (college, prog["control_number"], why), flush=True)
     coded = pdf_code_assign(programs, pages)
     if coded is not None:
         report["pdf"]["code_headings"] = {"codes": len({h["code"] for h in pdf_code_headings(pages)}),
@@ -4166,12 +5080,19 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     for prog in programs:
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
-        elif coded is not None and not coded.get(prog["control_number"]):
+        elif prog["control_number"] in pinned and not pinned[prog["control_number"]]:
+            # A refused pin (S650, finding A): the picker's page is the one the pin exists to refuse, so the program
+            # gets no fresh text, and the reconcile and the reread leave its filed record as it stands.
+            rec = source_record(college, prog, reg, None, "not_found")
+            rec["near_miss"] = {"why": "the reconcile entry's pdf_pages pin is refused: %s"
+                                       % report["pdf"]["pinned"][prog["control_number"]]["why"]}
+        elif coded is not None and not coded.get(prog["control_number"]) and not pinned.get(prog["control_number"]):
             rec = source_record(college, prog, reg, None, "not_found")
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]), above, numbers_after=ctx or False)
+                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"]), above,
+                            numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
             # picker found no window): a passing filed record stays on file unless the run forces it.
             unbound = ({"refused": (best or {}).get("refused"), "why": (best or {}).get("after_unbound") or "no_window",
@@ -4214,6 +5135,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                      "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220]),
                      **({"opens_on_list": True} if best["opens_on_list"] else {}),
                      **({"bound": best["bound"]} if best.get("bound") else {}),
+                     **({"pinned": True} if pinned.get(prog["control_number"]) else {}),
                      # A uniform catalog's block bound by its number line alone, naming no program: a note for
                      # the conductor, with what was judged (decision 13); it refuses nothing.
                      **({"after_unnamed": True, "judged": best.get("judged")} if best.get("after_unnamed") else {}),
@@ -4243,20 +5165,79 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     return recs
 
 
+# A prior-year read (Sam, d-both-versions-by-catalog-year-sam-2026-11-15: "both need to be in our collection with
+# catalog years associated to them"). A plain program whose current catalog prints only its 2.0 successor's page is
+# read from the catalog year it was last printed in. CAPTURE_PRIOR names "<start> <catalog_year> <cn,cn,...>": the
+# start page of that year's catalog on the registry's own host (Riverside City's 2025-2026 is curriQunet archive 71,
+# Catalog/archive/71/iq/4079/4130, S663), its year, and the control numbers to read there. Only those programs are
+# read, and file_run files them beside the college's records rather than in place of them.
+PRIOR_PLATFORMS = ("curriqunet",)
+
+
+def prior_read(spec: str | None, reg: dict, programs: list[dict]) -> tuple[dict | None, str | None]:
+    """({start, catalog_year, only}, None) for a well-formed CAPTURE_PRIOR, (None, why) for a refused one, and
+    (None, None) with none."""
+    if not (spec or "").strip():
+        return None, None
+    parts = spec.split()
+    if len(parts) != 3:
+        return None, "CAPTURE_PRIOR is '<start> <catalog_year> <cn,cn,...>'"
+    start, year, cns = parts
+    if (reg.get("catalog_platform") or "") not in PRIOR_PLATFORMS:
+        return None, "a prior-year read opens on %s catalogs; this one is %s" % (
+            ", ".join(PRIOR_PLATFORMS), reg.get("catalog_platform"))
+    host = (urllib.parse.urlparse(start).hostname or "").lower()
+    if not host or host != (urllib.parse.urlparse(reg.get("catalog_url") or "").hostname or "").lower():
+        return None, "the prior catalog's start page must be on the registry's catalog host"
+    m = re.fullmatch(r"(20\d\d)-(20\d\d)", year)
+    if not m or int(m.group(2)) != int(m.group(1)) + 1:
+        return None, "catalog_year is YYYY-YYYY"
+    cur = re.match(r"\s*(20\d\d)", reg.get("catalog_year") or "")
+    if cur and int(m.group(1)) >= int(cur.group(1)):
+        return None, "a prior-year read reads a year before the registry's %s" % reg.get("catalog_year")
+    only = [c for c in cns.split(",") if c]
+    have = {p["control_number"] for p in programs}
+    if not only or any(not c.isdigit() for c in only):
+        return None, "name the control numbers to read, comma-separated"
+    missing = [c for c in only if c not in have]
+    if missing:
+        return None, "not programs the harvest reads at this college: %s" % ", ".join(missing)
+    listless = sorted(p["control_number"] for p in programs if p["control_number"] in only and not p.get("closed_list"))
+    if listless:
+        # The read finds a program by its closed list; the no-closed-list lookup refuses archive pages (COBIx, #3382).
+        return None, "a prior-year read finds a program by its closed list; none for %s" % ", ".join(listless)
+    return {"start": start, "catalog_year": year, "only": sorted(set(only))}, None
+
+
 def capture(college: str, out_dir: str, limit: int = 0) -> int:
     t0 = time.time()
     programs = college_programs(college)
     if limit:
         programs = programs[:limit]
     reg = P.fetch_registry(college)
+    prior, refused = prior_read(os.environ.get("CAPTURE_PRIOR"), reg, programs)
+    if refused:
+        os.makedirs(out_dir, exist_ok=True)
+        _write(os.path.join(out_dir, "capture.json"), {"college": college, "stopped": refused})
+        print(refused)
+        return 1
+    if prior:
+        programs = [p for p in programs if p["control_number"] in prior["only"]]
+        reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
+        # The prior year's pages print that year's codes (course_renumbers_by_year; S663).
+        import _program_requirements_reconcile as RY
+        programs = with_renumbers(programs, RY.course_renumbers(college, year=prior["catalog_year"]),
+                                  (RY.load_steps().get(college) or {}).get("prefix_aliases"))
     start = reg.get("catalog_url")
     report = {"college": college, "catalog_url": start, "platform": reg.get("catalog_platform"),
               "catalog_year": reg.get("catalog_year"), "programs": len(programs),
               "with_closed_list": sum(1 for p in programs if p["closed_list"]),
               "started": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+    if prior:
+        report["prior"] = prior
     os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
     platform = reg.get("catalog_platform")
-    hf = hand_filed(college)
+    hf = hand_filed(college) if not prior else None   # a prior-year read opens on the catalog's own pages
     if hf:
         if hf["meta"].get("catalog_year"):
             # A refused host's row often names no year; the person who fetched the file names it.
@@ -4432,6 +5413,38 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
             print("%-6s %-12s cov %-5s %s" % (prog["control_number"], rec["method"][:12], rec["coverage"],
                                               (rec.get("source") or {}).get("url") or ""), flush=True)
+        # After every closed-list program has its page: the no-closed-list programs, by title and award, on
+        # the pages read (ncl_lookup, S652). A re-read reads a few codes, so it looks up nothing.
+        # A prior-year read's pages sit under the catalog's archive path (Catalog/archive/71/...), which ncl_pages
+        # refuses as an archived copy (ARCHIVED); its programs are read by their closed lists alone (COBIx on #3382).
+        if ncl_lookup_on() and not report.get("reread") and not report.get("prior"):
+            own = {r["control_number"]: page_stem(r["source"]["url"]) for r in recs if r.get("source")}
+            folder = os.path.join(COLLEGE_DIR, slug_of(college))
+            answers, test = ncl_lookup(programs, pages, own,
+                                       ncl_listed_names(report.get("coursedog")) if platform == "coursedog" else None,
+                                       ncl_named(recs), college, reg.get("catalog_year"),
+                                       filed=ncl_filed_records(folder), yielded=ncl_filed_yields(folder))
+            # A page a no-closed-list program took back (ncl_yield, S668): its holder is read from no page now.
+            took = {a["took_from"]: cn for cn, a in answers.items() if a.get("took_from")}
+            by_cn = {p["control_number"]: p for p in programs}
+            for i, rec in enumerate(recs):
+                taker = took.get(rec["control_number"])
+                if taker is None:
+                    continue
+                lost = (rec.get("source") or {}).get("url") or answers[taker]["page"]["url"]
+                recs[i] = source_record(college, by_cn[rec["control_number"]], reg, None, "page_claimed")
+                recs[i].update(lost_pages=[lost], yielded_to=taker)
+                _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), recs[i])
+                print("%-6s page_claimed %s (yielded to %s)" % (rec["control_number"], lost, taker), flush=True)
+            for rec in recs:
+                ans = answers.get(rec["control_number"])
+                if ans is not None and rec["method"] == "no_closed_list":
+                    rec["catalog_lookup"] = ans
+                    _write(os.path.join(out_dir, "sources", rec["control_number"] + ".json"), rec)
+                    print("%-6s catalog_lookup %-12s %s" % (rec["control_number"], ans["result"],
+                                                           (ans.get("page") or {}).get("url") or ans.get("basis")
+                                                           or ans.get("why") or ""), flush=True)
+            report["catalog_lookup"] = ncl_account(recs, answers, test, reg.get("catalog_year"))
     finally:
         browser.close()
         pw.stop()
@@ -4552,8 +5565,10 @@ def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, fo
     a whole capture, and each program's text matching its fingerprint. A capture filed before fingerprints
     (S647) proves its text another way: its account, written from that text, equals the filed account in every
     field but the run's id, and each program the account lists sits at the address and coverage it names. The
-    refusal set is recomputed on the current code, and would_extract against the records filed now. Returns
-    0, or 2 with the reason, having written nothing to out_dir."""
+    refusal set is recomputed on the current code, and would_extract against the records filed now. It runs no
+    no-closed-list lookup, so no page yield either (ncl_yield, S668): an artifact captured before S668 keeps each
+    holder on its page as captured (Skyline's preview run 43607267460 keeps 46296 on dance-aa.php), and only a
+    fresh capture gives the page back. Returns 0, or 2 with the reason, having written nothing to out_dir."""
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
 
     def refuse(why: str) -> int:
@@ -4986,27 +6001,23 @@ def forced(folder: str, tokens: str) -> set[str]:
     for t in (x.strip() for x in (tokens or "").split(",")):
         if t.lower() == "incomplete":
             for path in glob.glob(os.path.join(folder, "records", "*.json")):
-                with open(path) as fh:
-                    r = json.load(fh)
+                # A record that does not read is named and passed over, so a free capture's price step never
+                # stops on it (S653 review).
+                try:
+                    with open(path) as fh:
+                        r = json.load(fh)
+                except (OSError, ValueError) as exc:
+                    print("::warning::force=incomplete passes over %s: it does not read (%s)" % (path, exc))
+                    continue
+                if not isinstance(r, dict):
+                    print("::warning::force=incomplete passes over %s: it is no record" % path)
+                    continue
                 sc = r.get("score") or {}
                 if (sc.get("arithmetic") or {}).get("status") == "incomplete" and not places_none(sc):
                     out.add(r.get("control_number") or os.path.splitext(os.path.basename(path))[0])
         elif t:
             out.add(t)
     return out
-
-
-def call_charge(cost_usd, usage) -> float:
-    """What one call counts toward a ceiling (S644): its price, or, for a call that carries usage and
-    no price (a fallback model the table does not price), its usage at the most expensive model's
-    price, so an unpriced call never slips under the stop. A call with neither spent nothing the
-    function reported."""
-    import _program_requirements_extract as X
-    if isinstance(cost_usd, (int, float)):
-        return float(cost_usd)
-    if usage:
-        return max((X.cost(m, usage) or 0.0) for m in X.PRICE) if X.PRICE else 0.0
-    return 0.0
 
 
 REFUSED_METHODS = ("page_challenged",)
@@ -5297,10 +6308,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             keep_from: str | None = None, force: set[str] | None = None,
             ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S) -> int:
     """Send each source that needs a model call, score it and write its record under out_dir.
-    ceiling_usd (the wave sets it to its limit; None, the default, is no ceiling): the run's
-    actual cost is summed as each call comes back, and once it reaches the ceiling no further program
-    is sent. The calls already in flight finish, so the run can pass the ceiling by at most `workers`
-    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json.
+    ceiling_usd (the workflows set it to $40; None, the default, is no ceiling) is the spend meter's
+    (kb/_spend_meter.py, S654): before each post it reserves the program's estimate (the college's rate x the
+    margin, as the price step priced it) and refuses when the charges, the reservations in flight and this one
+    would pass the ceiling; from then on no program is sent. A call settles at its priced usage, at its worst case
+    when it was sent and answered no usage, and at $0 when it never reached the model. The run can pass the
+    ceiling only by calls in flight costing more than their estimates: a call costs at most $1.55
+    (X.CALL_MAX_USD, M.worst_case over every committed request), $1.45 over a $0.10 estimate, so $8.70 with six
+    workers, and $1.45 more for each further part of a read in parts in flight. A
+    program not sent keeps its filed record and is listed in not_sent_<shard>.json with the meter's total
+    (meter_charge_usd); check-extract then ends the run red.
     A call the function answers 503 (its caller check could not reach the database) or 401 (the key
     refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
     (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
@@ -5320,6 +6337,16 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A prior-year read extracts every program it names: its filed record is another catalog year's, so a
+    # window's coverage against it is no measure of gain, and the holds would keep the wrong year (run
+    # 43799222099 held 30578, 32692 and 33829 so; S663).
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            _prior = json.load(fh).get("prior") or {}
+    except (OSError, ValueError):
+        _prior = {}
+    if _prior.get("only"):
+        force = set(force or ()) | set(_prior["only"])
     # A record kept from the filing without a new read keeps the catalog year it was read from (kept_year).
     keep_year = filed_year(keep_from) if keep_from else None
     if keep_from and shard == 0:
@@ -5425,7 +6452,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     import threading
     kept_list: list[dict] = []
     kept_lock = threading.Lock()
-    spend = {"usd": 0.0, "stopped": False}
+    import _program_requirements_wave as W
+    import _spend_meter as M
+    # The reservation per post: the college's rate (its filed records' mean cost, never below the default) x the
+    # margin, the same figure the price step multiplied by the programs to send.
+    _cpp = W.cost_per_program(W.load_records(keep_from))[0] if keep_from else W.DEFAULT_COST_PER_PROGRAM
+    meter = M.Meter(ceiling_usd, round(_cpp * W.PRICE_MARGIN, 5))
+    stop_said = [False]
     not_sent: list[str] = []
     failed: list[dict] = []
     calls = [0]
@@ -5446,14 +6479,26 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
 
     def one(src: dict) -> None:
         t0 = time.time()
-        with kept_lock:
-            stopped = spend["stopped"] or bool(halt)
-            if stopped:
+        def held() -> None:
+            # The stop held this program before any post: it keeps its filed record and is sent next run.
+            with kept_lock:
                 not_sent.append(src["control_number"])
-        if stopped:
+                say = not stop_said[0] and meter.stopped and not halt
+                stop_said[0] = stop_said[0] or say
+            if say:
+                print("ceiling: the hard stop held the read at $%.2f charged against $%.2f; no further program is "
+                      "sent" % (meter.spent, ceiling_usd or 0), flush=True)
             keep_filed(src["control_number"])
+
+        with kept_lock:
+            stopped = meter.stopped or bool(halt)
+        if stopped:
+            held()
             return
-        got = X.call(src, key)
+        got = X.call(src, key, meter=meter)
+        if got.get("stopped"):
+            held()
+            return
         h = X.halt_of(got)
         if h and not halt and halt_wait_s:
             # One more try after a pause, so a single slow probe does not end a long read (S647).
@@ -5463,7 +6508,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 retry = not halt
             if retry:
                 earlier = got
-                got = X.call(src, key)
+                got = X.call(src, key, meter=meter)
                 h = X.halt_of(got)
                 if earlier.get("usage"):
                     # A read in parts can answer 503 after its other parts were paid: the retry's record carries
@@ -5479,7 +6524,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
             # Usage the halting answer carries (paid parts of a read in parts) still counts (S648 review).
             # cost_usd is priced as a record's is (X.cost; unpriced usage counted apart), so run_cost adds like to
-            # like; call_charge's dearest-model price is for the ceiling only.
+            # like; the meter already counted the call toward the ceiling.
             price = priced(got)
             with kept_lock:
                 first = not halt
@@ -5490,8 +6535,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     halt_paid["usd"] += price
                 elif got.get("usage"):
                     halt_paid["unpriced"] += 1
-                if ceiling_usd is not None:
-                    spend["usd"] += call_charge(price, got.get("usage"))
             if first:
                 print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
                       "over; the filed records stay." % (
@@ -5499,13 +6542,6 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                           ", " + h["reason"] if h.get("reason") else ""), flush=True)
             keep_filed(src["control_number"])
             return
-        if ceiling_usd is not None:
-            with kept_lock:
-                spend["usd"] += call_charge(priced(got), got.get("usage"))
-                if spend["usd"] >= ceiling_usd and not spend["stopped"]:
-                    spend["stopped"] = True
-                    print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
-                          flush=True)
         rec = got.get("record")
         with kept_lock:
             calls[0] += 1
@@ -5534,12 +6570,14 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
                                  course_units=src.get("course_units"),
-                                 course_hours=src.get("course_hours"))
+                                 course_hours=src.get("course_hours"),
+                                 closed=src.get("closed_list"), year=src.get("catalog_year"))
         if notes:
             got = dict(got, record=rec)
         try:
             sc = X.score(rec, src["closed_list"], src["text"], src.get("award"),
-                         R.prefix_aliases(src["college"]), R.packed_codes(src["college"])) if isinstance(rec, dict) else None
+                         R.prefix_aliases(src["college"], year=src.get("catalog_year")),
+                         R.packed_codes(src["college"])) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -5593,7 +6631,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         if not_sent:
             # file_run keeps each listed program's previous sources.json entry, so the next run sends it again.
             _write(os.path.join(out_dir, "not_sent_%d.json" % shard),
-                   {"ceiling_usd": ceiling_usd, "spent_usd": round(spend["usd"], 2),
+                   {"ceiling_usd": ceiling_usd, "meter_charge_usd": round(meter.spent, 2),
                     "halted": dict(halt) or None, "programs": sorted(not_sent)})
             print("%s: %d programs not sent" % ("halted" if halt else "ceiling", len(not_sent)), flush=True)
         if halt:
@@ -5612,7 +6650,9 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # check-extract reads to end the job red (extract_failed_run).
         _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
                {"run": run_id, "shard": shard, "calls": calls[0],
-                "failed": sorted(failed, key=lambda x: x["control_number"])})
+                "failed": sorted(failed, key=lambda x: x["control_number"]),
+                # what the spend meter counted toward the hard stop: priced usage, worst cases, $0 refusals
+                "meter_charge_usd": round(meter.spent, 5)})
         if failed:
             print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
     if halt:
@@ -5650,6 +6690,32 @@ def check_extract(out_dir: str) -> int:
     h = extract_halt(out_dir)
     if h:
         print("::error::" + halt_message(h))
+        return 1
+    # An extraction asked for and refused over the limit ends red (S654), so a session reading the run's conclusion
+    # never takes the refusal for a read; a free run (extract=0, nothing to send) stays green.
+    try:
+        with open(os.path.join(out_dir, "wave_price.json")) as fh:
+            priced = json.load(fh)
+    except (OSError, ValueError):
+        priced = {}
+    if isinstance(priced, dict) and priced.get("extract_asked") and not priced.get("go") \
+            and priced.get("within_limit") is False:
+        print("::error::the extraction was asked for and refused: the estimate $%.2f is over the $%.0f limit, so "
+              "nothing was extracted" % (priced.get("price_usd") or 0, priced.get("limit_usd") or 0))
+        return 1
+    # A read the hard stop held ends red too (S654 review): the run is no whole read, though spending stopped.
+    held = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "not_sent_*.json"))):
+        try:
+            with open(path) as fh:
+                ns = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if isinstance(ns, dict) and ns.get("programs") and not ns.get("halted"):
+            held += list(ns["programs"])
+    if held:
+        print("::error::the hard stop held %d programs (first: %s); the run is no whole read, and the next run sends "
+              "them" % (len(held), held[0]))
         return 1
     acct = extract_accounts(out_dir)
     if acct["calls"] is None:
@@ -5793,11 +6859,29 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             continue
         family.append({"control_number": f.get("control_number"), "title": f.get("title"),
                        "section_heading": ((f.get("record") or {}).get("program") or {}).get("section_heading")})
+    # (a) The filed capture's holds (S658). The staged capture recomputes would_extract against a sources.json
+    # that already names this capture's page, so held_worse_window and held_no_gain come back empty; the
+    # filed capture's lists are the decision, and a held record is never reconciled from the held page
+    # (American River 07206, p-degree-electives-fill-false-pass-s650). The lists are put back on the run's
+    # capture so file_run files them.
+    held = filed_holds(keep_from)
+    restore_holds(out_dir, keep_from)
+    # (b) Every record this run leaves as filed, so file_run keeps the sources.json entry it was read from.
+    kept: list[str] = []
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
         src = sources.get(filed.get("control_number"))
         rec = filed.get("record")
+        hold = held.get(filed.get("control_number"))
+        if hold and hold[1] != filed.get("source_url"):
+            # Held on another page than the record was read from (07206's mid-table window). A hold on the
+            # record's own page (Santiago Canyon's held_no_gain) guards a paid read only, and the reconcile reads it.
+            print("%-6s held by the filed capture (%s, %s): kept as filed"
+                  % (filed["control_number"], hold[0], hold[1]), flush=True)
+            kept.append(filed["control_number"])
+            _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
+            continue
         if src and filed.get("source_url") and (src.get("source") or {}).get("url") \
                 and (src.get("source") or {}).get("url") != filed.get("source_url") \
                 and not own_heading_kept(src, filed):
@@ -5812,7 +6896,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
                                      course_units=src.get("course_units"),
                                      course_hours=src.get("course_hours"), title=filed.get("title"),
-                                     siblings=sibs, control_number=filed.get("control_number"))
+                                     siblings=sibs, control_number=filed.get("control_number"),
+                                     closed=src.get("closed_list"), year=filed.get("catalog_year"))
             # Every record the statewide Cal-GETC rule asks about says filled or held, and why, so the compare
             # gate shows the held ones beside the filled (S648).
             trace = R.calgetc_trace(filed.get("control_number"), rec, notes, src["text"],
@@ -5824,13 +6909,16 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # A statewide fill a run made earlier keeps its note while its value stands, so the fill stays
                 # told apart from a catalog's own figure if the ruling is ever reversed (S648).
                 for old in filed.get("reconciled") or []:
-                    if old.get("statewide") and old not in notes \
-                            and (new.get("program") or {}).get(old.get("field")) == old.get("now"):
+                    if old not in notes and R.statewide_note_stands(old, new):
                         notes = notes + [old]
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
-                             score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                           R.prefix_aliases(college), R.packed_codes(college)))
+                             score=keep_rescored_marker(filed.get("control_number"), filed.get("score"),
+                                                        S.score(new, src["closed_list"], src["text"],
+                                                                filed.get("award") or src.get("award"),
+                                                                R.prefix_aliases(college, year=filed.get("catalog_year")),
+                                                                R.packed_codes(college)),
+                                                        dict(filed, record=new)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -5841,17 +6929,130 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # score carries the run too, or step=reread keeps the loaded row's old checks
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                R.prefix_aliases(college), R.packed_codes(college))
+                                R.prefix_aliases(college, year=filed.get("catalog_year")), R.packed_codes(college))
+                fresh = keep_rescored_marker(filed.get("control_number"), filed.get("score"), fresh, filed)
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
                     rescored += 1
+                else:
+                    kept.append(filed["control_number"])
         elif not src:
             unread += 1
+        if filed.get("extracted_run") != (int(run_id) if str(run_id or "").isdigit() else run_id):
+            if filed["control_number"] not in kept:
+                kept.append(filed["control_number"])
         _write(os.path.join(out_dir, "records", os.path.basename(path)), filed)
-    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page)"
-          % (len(changed), rescored, unread, moved), flush=True)
+    _write(os.path.join(out_dir, RECONCILE_KEPT), {"run": run_id, "programs": sorted(set(kept))})
+    # A record this run read (its own-page hold guards a paid read only) leaves the restored hold lists, so the
+    # filed capture never names as held a record that carries this run's read (COBIx, #3363).
+    read_now = {os.path.basename(p)[:-5] for p in glob.glob(os.path.join(out_dir, "records", "*.json"))} - set(kept)
+    drop_holds(out_dir, read_now)
+    print("reconcile: %d filed records changed, %d rescored, %d had no fresh page (%d of them on another page), "
+          "%d held on another page" % (len(changed), rescored, unread, moved,
+                                        sum(1 for k in kept if k in held)), flush=True)
     return 0
+
+
+RECONCILE_KEPT = "reconcile_kept.json"
+HOLD_KEYS = ("held_worse_window", "held_no_gain")
+
+
+def filed_holds(keep_from: str) -> dict[str, tuple]:
+    """{control_number: (hold list, url)} from the filed capture's would_extract (S658, gap a)."""
+    try:
+        with open(os.path.join(keep_from, "capture.json")) as fh:
+            we = json.load(fh).get("would_extract") or {}
+    except (OSError, ValueError):
+        return {}
+    if not isinstance(we, dict):
+        return {}
+    return {e["control_number"]: (k, e.get("url")) for k in HOLD_KEYS for e in we.get(k) or []
+            if e.get("control_number")}
+
+
+def restore_holds(out_dir: str, keep_from: str) -> None:
+    """Put the filed capture's hold lists back on the run's capture.json, so the filing keeps them (gap a)."""
+    try:
+        with open(os.path.join(keep_from, "capture.json")) as fh:
+            fwe = json.load(fh).get("would_extract") or {}
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            cap = json.load(fh)
+    except (OSError, ValueError):
+        return
+    we = cap.get("would_extract")
+    if not isinstance(fwe, dict) or not isinstance(we, dict):
+        return
+    keys = HOLD_KEYS + ("held_opens_on_list",)
+    held = {e.get("control_number") for k in keys for e in fwe.get(k) or []}
+    if not held:
+        return
+    for k in keys:
+        # Merged: the filed decision first, then anything the staged capture held on its own.
+        mine = fwe.get(k) or []
+        names = {e.get("control_number") for e in mine}
+        merged = mine + [e for e in we.get(k) or [] if e.get("control_number") not in names]
+        if merged or k in we:
+            we[k] = merged
+    if isinstance(we.get("list"), list):
+        we["list"] = [e for e in we["list"] if e.get("control_number") not in held]
+        if "programs" in we:
+            we["programs"] = len(we["list"])
+    _write(os.path.join(out_dir, "capture.json"), cap)
+
+
+def drop_holds(out_dir: str, read_now: set) -> None:
+    """Take the records this reconcile read off the run's hold lists (gap a)."""
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            cap = json.load(fh)
+    except (OSError, ValueError):
+        return
+    we = cap.get("would_extract")
+    if not isinstance(we, dict) or not read_now:
+        return
+    hit = False
+    for k in HOLD_KEYS + ("held_opens_on_list",):
+        if isinstance(we.get(k), list):
+            keep = [e for e in we[k] if e.get("control_number") not in read_now]
+            hit = hit or len(keep) != len(we[k])
+            we[k] = keep
+    if hit:
+        _write(os.path.join(out_dir, "capture.json"), cap)
+
+
+def keep_rescored_marker(cn, filed_score: dict | None, fresh: dict, scored: dict | None = None) -> dict:
+    """The arithmetic.rescored marker a ruling's rescore wrote (Sheet 120 card 1, Sheets 81, 82, 144) survives a
+    reconcile (S658, gap c). Equal but for the marker: the filed score, whole. The fresh arithmetic still passing:
+    the marker carried onto it. The fresh arithmetic failing: the ruling's own rescore is applied again to the
+    record as now scored (scored: the filed record with the record and score this run made), and its result
+    stands; when the ruling no longer passes it, the fresh score stands with a warning. The filed score is never
+    kept beside a changed record (second reader, #3363)."""
+    fa = ((filed_score or {}).get("arithmetic") or {})
+    if not fa.get("rescored") or not isinstance(fresh, dict):
+        return fresh
+    na = fresh.get("arithmetic") or {}
+    if dict(fresh, arithmetic=dict(na, rescored=fa["rescored"])) == filed_score:
+        return filed_score
+    if na.get("pass"):
+        return dict(fresh, arithmetic=dict(na, rescored=fa["rescored"]))
+    if scored is not None:
+        new = None
+        try:
+            if str(fa["rescored"]).startswith("Open Asks Sheet 144"):
+                import _program_requirements_floor_rescore as F
+                new = F.move(dict(scored, score=fresh))[1]
+            else:
+                import _program_requirements_rescore as RS
+                new = RS.rescore(dict(scored, score=fresh))
+        except Exception as e:  # a rule that cannot read the record leaves the fresh score, said aloud
+            print("::warning::%s: the ruling's rescore could not run (%s)" % (cn, e), flush=True)
+        if new and new.get("pass"):
+            return dict(fresh, arithmetic=new)
+    if fa.get("pass"):
+        print("::warning::%s: the fresh arithmetic fails where the ruling's rescore (%s) passed, and the rule no "
+              "longer passes it" % (cn, fa["rescored"]), flush=True)
+    return fresh
 
 
 def held_summary(dest: str, prior: dict) -> dict:
@@ -5913,6 +7114,69 @@ def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | N
             "not_found": capture_report.get("not_found")}
 
 
+def file_prior(dest: str, out_dir: str, report: dict) -> int:
+    """File a prior-year read (CAPTURE_PRIOR) beside the college's filing: each named program's new record
+    replaces its filed one, its sources.json entry follows, and prior_<year>.json is the read's account. The
+    college's capture.json, summary.json and every other record stay as filed. A program whose extraction
+    failed or found no page keeps its filed record, and the account says so."""
+    prior = report["prior"]
+    only = set(prior["only"])
+    year = prior["catalog_year"]
+    if not os.path.isdir(os.path.join(out_dir, "records")):
+        # A capture-only prior read (extract 0) files its account as a preview and never touches the account of
+        # an earlier prior read that filed records (COBIx on #3382).
+        os.makedirs(dest, exist_ok=True)
+        _write(os.path.join(dest, "prior_%s_preview.json" % year), report)
+        print("prior-year read (%s), capture only: filed prior_%s_preview.json" % (year, year))
+        return 0
+    # The address every page of this read sits under: curriQunet's view prefix (Catalog/archive/71/iq/), else the
+    # start page's own.
+    prefix = (report.get("curriqunet") or {}).get("view_prefix") or cq_base(prior["start"])[1]
+    os.makedirs(os.path.join(dest, "records"), exist_ok=True)
+    filed, kept = [], []
+    for cn in sorted(only):
+        path = os.path.join(out_dir, "records", cn + ".json")
+        row = None
+        if os.path.isfile(path):
+            with open(path) as fh:
+                row = json.load(fh)
+        # This run's own extraction is the prior year's reading, whatever year its source carried (run
+        # 43799222099 filed 32745's without one); a record copied from the filing keeps its own run and is refused.
+        # This run read it as cost_usd_run counts one (its run, no read_run, no carried_in: a record moved_record or
+        # reconcile_filed restamped is not a read), from a page under this read's own catalog (COBIx on #3384).
+        fresh = (isinstance(row, dict) and report.get("run") and str(row.get("extracted_run")) == str(report["run"])
+                 and not row.get("read_run") and not row.get("carried_in"))
+        in_year = isinstance(row, dict) and str(row.get("source_url") or "").startswith(prefix)
+        if not (isinstance(row, dict) and isinstance(row.get("record"), dict) and not row.get("error")
+                and fresh and in_year):
+            why = ((row or {}).get("error") or ("no record" if row is None else
+                   "not read by this run" if not fresh else "source not in the %s catalog" % year))
+            kept.append({"control_number": cn, "why": "no record read from %s (%s)" % (year, why)})
+            continue
+        _write(os.path.join(dest, "records", cn + ".json"), dict(row, catalog_year=year))
+        filed.append(cn)
+    srcs = {}
+    for path in glob.glob(os.path.join(out_dir, "sources", "*.json")):
+        with open(path) as fh:
+            src = json.load(fh)
+        if src.get("control_number") in filed:
+            srcs[src["control_number"]] = dict(
+                {k: src.get(k) for k in ("control_number", "title", "award", "shape", "method", "coverage",
+                                         "codes_found", "source")},
+                listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or ""), catalog_year=year)
+    index_path = os.path.join(dest, "sources.json")
+    index = []
+    if os.path.isfile(index_path):
+        with open(index_path) as fh:
+            index = [x for x in json.load(fh) if x.get("control_number") not in srcs]
+    index = sorted(index + list(srcs.values()), key=lambda x: str(x.get("control_number")))
+    _write(index_path, index)
+    _write(os.path.join(dest, "prior_%s.json" % year), dict(report, filed=filed, kept=kept))
+    print("prior-year read (%s): filed %d of %d (%s); kept %d as filed" % (
+        year, len(filed), len(only), ", ".join(filed) or "none", len(kept)))
+    return 0
+
+
 def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     """Copy the run's records and account into the repository. A run that
     extracted replaces the records, sources and summary together, so the three
@@ -5938,6 +7202,8 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         we = report["would_extract"]
         we["forced_unbound"] = [fu[k] for k in sorted(fu)]
         we["refused_passing"] = [e for e in we.get("refused_passing") or [] if e["control_number"] not in fu]
+    if report.get("prior"):
+        return file_prior(dest, out_dir, report)
     if not os.path.isdir(os.path.join(out_dir, "records")):
         os.makedirs(dest, exist_ok=True)
         _write(os.path.join(dest, "capture_preview.json"), report)
@@ -5975,6 +7241,12 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
         with open(path) as fh:
             kept_unbound.update(json.load(fh).get("programs") or [])
+    # A reconcile's records left as filed keep the entry they were read from (S658, gap b; Santiago Canyon's 18).
+    try:
+        with open(os.path.join(out_dir, RECONCILE_KEPT)) as fh:
+            kept_unbound.update(json.load(fh).get("programs") or [])
+    except (OSError, ValueError):
+        pass
     prev: dict = {}
     if (not_sent or kept_unbound) and os.path.isfile(os.path.join(dest, "sources.json")):
         with open(os.path.join(dest, "sources.json")) as fh:
@@ -5991,9 +7263,23 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
             # A kept record keeps the entry it was read from; with none, the new entry (not_found) stands.
             index.append(prev[src["control_number"]])
             continue
-        index.append(dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
-                                                   "coverage", "codes_found", "source")},
-                          listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))
+        entry = dict({k: src.get(k) for k in ("control_number", "title", "award", "shape", "method",
+                                              "coverage", "codes_found", "source")},
+                     listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or ""))
+        if src.get("catalog_lookup"):
+            entry["catalog_lookup"] = src["catalog_lookup"]   # a no-closed-list program's answer (S652)
+        index.append(entry)
+    # A reconcile's kept record with no sources file in this run keeps its earlier entry too (COBIx, #3363).
+    have = {e.get("control_number") for e in index}
+    try:
+        with open(os.path.join(out_dir, RECONCILE_KEPT)) as fh:
+            rk = json.load(fh).get("programs") or []
+    except (OSError, ValueError):
+        rk = []
+    if rk and not prev and os.path.isfile(os.path.join(dest, "sources.json")):
+        with open(os.path.join(dest, "sources.json")) as fh:
+            prev = {x["control_number"]: x for x in json.load(fh)}
+    index.extend(prev[cn] for cn in sorted(rk) if cn not in have and cn in prev)
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
     # The programs whose read failed where the filed record passed, for a person (kept_passing).

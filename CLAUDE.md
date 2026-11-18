@@ -42,10 +42,10 @@ behind these rules) · cobix_pr_loop ·
 industry-credential watch) · `lanes/`.
 
 **Skills** (`.claude/skills/`) are pull-side too, fired by their own
-`description` rather than by a pointer: **consult-doctrine** (what this repo has
-already decided about the files you are reading), **exhibit-canonicalization**
+`description`, not by a pointer: **consult-doctrine** (what this repo
+already decided about files you read), **exhibit-canonicalization**
 (freehand MAP exhibit titles into unified credential names), **video-context**
-(a screen recording read locally) and
+(a screen recording read locally), **conductor-brief** (agent briefs) and
 **obsidian-markdown**. Named here because a store nobody names is a store
 nobody finds; `unreferenced_offload` flags any that stop being.
 
@@ -399,18 +399,42 @@ first day.** Do the remembering for them.
   could always confer with cobix on them, but we should not slow down with all
   these decision sheets which are generally pro-forma approved by me."* Make
   the call, carry it out when `git revert` or its Rule 10 receipt can undo it,
-  and store it: a `cpl_memory` decision row and a DECIDED line in the lane;
-  COBIx may be consulted. **The sheet is the record of those decisions**, his to
+  and store it: a `cpl_memory` decision row and a DECIDED line in the lane.
+  **The sheet is the record of those decisions**, his to
   open and revise (*"a record of your decisions that i can access when needed
-  and revise if needed"*). **An ask that waits for his reply only when there is
-  no recommended way forward, the blast radius is in doubt, or it is on the hold list:** anything outward, a public KB merge, deleting data, a production
-  deploy outside a standing authorization, funding figures published to
-  colleges, the program's name or identity, who does what on the team, a cost
-  above a standing limit, reversing a dated ruling of his, a permission-check
-  denial, and any call a lane marks as his. This is the one hold list.
+  and revise if needed"*). **The ask test (Sam, 2026-11-16, relayed by COBIx on issue #3358):** *"it's better for sky
+  with your collaboration to pick a side when ambiguity is the current state, run with it, and I will see how it
+  looks when I can see it in action."* File an ask only for an act that is irreversible, an external send, a
+  go-live, a touch of student or staff data, or a delete of college- or person-entered data. Beside those, the
+  standing holds: a public KB merge, funding figures published to colleges, the program's name or identity, who
+  does what on the team, a cost above a standing limit, reversing a dated ruling of his, and a call a lane marks as
+  his. Decide everything else, record it in `cpl_memory` and the lane, and reverse it if he reacts. A COBI-made
+  write or delete with a rollback receipt (course_outcomes loads, M-IDs, CERs, memory rows) is not an ask. A
+  write still waiting on a permission prompt is noted on the sheet, and the session takes the next item instead of
+  idling. A permission-check denial is never routed around; record it and move on.
+  - **Pick a lane (Sam, S652, 2026-11-14):** *"stop being so cautious and pick a lane and go with it. I will see
+    the results on the commons and if there is a problem, I can address it based on the reality I'm seeing rather
+    than vague choices."* A choice among near-equal options is the session's to make, carry out and record; take
+    the least fuzzy one.
+  - **An ask never blocks the queue.** Work continues on the default the card names; no card says *"Nothing is
+    applied until you answer."*
+  - **No re-asking.** Never ask again what a `cpl_memory` ruling or an answered sheet settles; an unanswered
+    *yours to revise* record is a decision, not an ask; never leave a superseded sheet in front of him.
+  - **Person-settled wins.** A person's save in the Commons, or any direct curation, is terminal, keyed by raw
+    title or record key so it survives re-id, re-cluster and rebuilds. A machine reopens one only on new source
+    evidence (never because a score, fold or wording pass moved) and logs the reopen without asking. Where a sheet
+    answer conflicts with his curation, the curation wins and the answer is marked suspect.
+  - **The Execute SQL prompt is the app's, not ours (Sam and COBIx, 2026-11-16, #3395).** The connector has been
+    on *Always allow* for months; the app asks per call above the session, and no repo setting clears it. Check a
+    write by the runner's committed receipt, not a live read; batch the reads that remain into one call; and while a
+    prompt waits, take work that does not need it. `apply_migration` stays off the committed allow-list: migrations
+    go through `supabase-migrate.yml` with a rollback receipt.
+  - **A real ask is plain:** one question in full sentences, no coined labels or bare ids, one real example (a
+    program, an M-ID course, an exhibit), the default already chosen, what changes otherwise, and two chips:
+    *Fine* or *Change it*.
   **An unanswered card holds only itself (Sam, 2026-11-02):** *"Let's keep building even when there is a
   decision sheet unanswered. Just build all that you can apart from the issue raised by the sheet. I don't
-  want to hold up the bus for outliers."* Never park a lane's other work behind an open card.
+  want to hold up the bus for outliers."*
   ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
@@ -739,7 +763,7 @@ stays here.
 > time. [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([Sheet 195](https://claude.ai/artifact/WqSfUB7wrQdxpX1ShbYRhX), current; waiting: 195 2-5). An answer
+> ([Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y), 2026-11-15; one card waits on Sam). An answer
 > changes its lane's marker in one PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

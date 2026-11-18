@@ -19,7 +19,74 @@
    "p53: ' \\nwww.lassencollege.edu                                     Lassen Community College 2026-2027 Page 51 \\n \\nAssociate in Arts in Studio Arts for Transfer  \\nTotal units for the Associate in Arts Degree with a minimum grade point average of 2.0'",
    "p106: ' \\nwww.lassencollege.edu                                     Lassen Community College 2026-2027 Page 104 \\n \\nCOUNSELING & GUIDANCE  \\nCG 150 - College Success Skills Workshop Series \\n0.0 unit \\n48 hours lecture (R) \\nBy attending success skills '"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "picks": [
+   {
+    "control_number": "30947",
+    "pages": [
+     44,
+     45,
+     46
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 44] of Justice for Transfer Associate in Arts in Administration of Justice CERTIFICATE OF ACHIEVEMENT Administration of Justice Administration of Justice – Law Enforcement Administration of Justice – C"
+   },
+   {
+    "control_number": "31015",
+    "pages": [
+     61,
+     62
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 61] The Associate in Science Degree in Early Childhood Education for Transfer is designed to provide the lower division major courses to transfer to a California State University and earn a Bachelor’s degree in Ch"
+   },
+   {
+    "control_number": "31037",
+    "pages": [
+     98
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] Associate in Arts in Sociology for Transfer The Associate in Arts Degree for Transfer in Sociology is designed to provide students with a strong foundation for the study of society and social behavior. Th"
+   },
+   {
+    "control_number": "31379",
+    "pages": [
+     77
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 77] Associate in Arts in History for Transfer The Associates in Arts Degree in History is designed to provide students with a strong foundation for the study of the historical past in order to transfer to a "
+   },
+   {
+    "control_number": "32083",
+    "pages": [
+     92,
+     93,
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 92] Associate in Arts in Psychology for Transfer The Associate in Arts Degree in Psychology for Transfer is designed to provide students with a strong foundation for the study of Psychology in order to transfe"
+   }
+  ]
  },
  "loads": 1,
  "seconds": 30.3,
@@ -842,5 +909,27 @@
    }
   ]
  },
- "run": "39006337658"
+ "run": "39006337658",
+ "fingerprints": {
+  "30947": {
+   "sha256": "b7ed5fb742c587d97b60f7ab0bcc40e1fd87814e8e0cf98e3e3455fa7627e7ee",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=44"
+  },
+  "31015": {
+   "sha256": "dd6097265fb6fc519df4a090ec55a05845bc41f08ad78a5d8a25935d9317aa33",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=61"
+  },
+  "31037": {
+   "sha256": "eb513bb28125f554c1fd79de96b50ad45b460208ace4cd1d040d5acf2f5680cb",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=98"
+  },
+  "31379": {
+   "sha256": "c36f5b0491dfb96d4133d42e3a6b8f5755cb3b5d2f8541bd4594edfc54ee0d98",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=77"
+  },
+  "32083": {
+   "sha256": "01fbd993a7dc690cfae704eb5602fab526df6aa5362a529d02c517351f81037b",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92"
+  }
+ }
 }

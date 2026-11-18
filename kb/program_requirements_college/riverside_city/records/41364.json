@@ -44,29 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 15,
    "listed": 15,
-   "share": 0.8,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
+   "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -80,6 +86,7 @@
     26.0,
     26.0
    ],
+   "against": "program",
    "why": []
   },
   "repeated": {
@@ -95,6 +102,17 @@
    "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -312,5 +330,7 @@
    "Several courses are labeled '( Historical )' in the catalog (ACC-1A, ACC-1B, BUS-18A); a reviewer may wish to confirm they remain current."
   ]
  },
- "extracted_run": "38082999076"
+ "extracted_run": 43693827797,
+ "read_run": 43605883626,
+ "catalog_year": "2026-2027"
 }
