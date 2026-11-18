@@ -59,3 +59,10 @@ The checkpoint replaces this file with the full handoff.
 - **Display confirmed:** run 44286209178 stored the receipt in `cpl-receipts`, filed its index entry and wrote
   18,209 statements, state confirmed; a live count shows 18,209 rows on build `545de21a6edc`. Santiago Canyon's
   load inserted 498 rows: 3,283 outline rows tonight.
+- **11:06Z: the stop rule fired (the brief: "Stop if a rollback undoes over 1% of a day's rows").** Chabot's load
+  (run 44285558570, 1,013 rows) filed every course's objectives as its student learning outcomes: Chabot prints
+  `Measurable Objectives:` and `3. Student Learning Outcomes`, two headings the reader did not know. The rows are
+  being rolled back from the load's own receipt after a second reader checks the finding; the reader fix and its test
+  are on #3492, which stays open for a re-read on a later night. Chabot left the wave (#3509). **From here this
+  session starts no new read, load or apply.** The two cheap-piles plans (#3497, 132 rows; #3508, the A4 corrective)
+  finish their reviews on their branches and wait unapplied.
