@@ -2,20 +2,20 @@
  "schema": 1,
  "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
  "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
- "written_at": "2026-11-17T17:10:05Z",
+ "written_at": "2026-11-18T16:47:33Z",
  "mode": "preview",
  "live_read": true,
  "by_rung": {
   "courses, several colleges": 0,
-  "courses, one college": 132,
+  "courses, one college": 135,
   "issuer family": 0
  },
  "written": 0,
- "not_yet_written": 132,
- "no_subject": 499,
- "left": 367,
- "left_exhibits": 461,
- "suggested": 69,
+ "not_yet_written": 135,
+ "no_subject": 504,
+ "left": 369,
+ "left_exhibits": 464,
+ "suggested": 71,
  "not_held": [
   "Theater Arts"
  ],
@@ -444,7 +444,7 @@
    ]
   },
   {
-   "title": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+   "title": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
    "why": "no signal",
    "issuer": "Johnson Controls Training Institute",
    "exhibits": [
@@ -1001,7 +1001,7 @@
    ]
   },
   {
-   "title": "Diesel Electrical/Electronic Systems",
+   "title": "Diesel Electrical and Electronic Systems",
    "why": "no signal",
    "issuer": "California Community Colleges",
    "exhibits": [
@@ -1304,10 +1304,10 @@
    "votes": {
     "FIRE": 9,
     "CRIM": 3,
-    "BSOT": 7,
     "CDEV": 13,
-    "AUTO": 7,
+    "BSOT": 7,
     "EMST": 1,
+    "AUTO": 7,
     "BIOL": 2,
     "BUSI": 2,
     "AVIA": 1,
@@ -1793,7 +1793,7 @@
    "exhibits": []
   },
   {
-   "title": "Introduction to Engineering Design/Graphics",
+   "title": "Introduction to Engineering Design and Graphics",
    "why": "no signal",
    "issuer": "California Community Colleges",
    "exhibits": [
@@ -2178,8 +2178,8 @@
     "MAPPRA-J1P-1-001"
    ],
    "votes": {
-    "COMM": 1,
-    "ENGL": 1
+    "ENGL": 1,
+    "COMM": 1
    }
   },
   {
@@ -2392,7 +2392,7 @@
    ]
   },
   {
-   "title": "NCCER Commercial Electrician Level 4/Journey Level",
+   "title": "NCCER Commercial Electrician Level 4 and Journey Level",
    "why": "no signal",
    "issuer": "NCCER",
    "exhibits": [
@@ -2448,7 +2448,7 @@
    ]
   },
   {
-   "title": "NCCER Industrial Electrician Level 4/Journey Level",
+   "title": "NCCER Industrial Electrician Level 4 and Journey Level",
    "why": "no signal",
    "issuer": "NCCER",
    "exhibits": [
@@ -2605,6 +2605,14 @@
     "MAPCXH-CHAT-1-001",
     "MAPCXH-CHAT1-1-001"
    ]
+  },
+  {
+   "title": "Principles & Practices of Teaching Young Children",
+   "why": "no signal",
+   "issuer": "Local High School",
+   "exhibits": [],
+   "suggested": "CDEV",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Principles of Engineering",
@@ -2928,7 +2936,7 @@
    ]
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": [],
@@ -2936,118 +2944,137 @@
    "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
   },
   {
-   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
    "why": "no signal",
    "issuer": "United Association (UA) Local 342",
    "exhibits": []
+  },
+  {
+   "title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+   "why": "courses split",
+   "issuer": "United Association (UA)",
+   "exhibits": [
+    "MAPICA-PPJ-1-001",
+    "MAPICA-UL4P3-1-001",
+    "MAPICA-UL6P-1-001"
+   ],
+   "votes": {
+    "PLMB": 22,
+    "STMF": 4,
+    "WEXP": 2,
+    "HVAC": 24,
+    "AUTB": 1
+   },
+   "suggested": "PLMB",
+   "suggested_from": "title words (a suggestion, never a decision)"
   },
   {
    "title": "Understanding Street and Prison Gangs",

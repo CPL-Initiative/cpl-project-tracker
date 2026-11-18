@@ -571,7 +571,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
 | `kb/_build_roep_display.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_build_session_spend.py` | workflows: `pages.yml` | — |
-| `kb/_build_side_by_side.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
+| `kb/_build_side_by_side.py` | workflows: `cer-procedures.yml`, `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_spend_daily.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_ccr_seed_recheck_dryrun.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
@@ -747,7 +747,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_build_left_map.py`, `kb/_clep_official_titles.py`, `kb/_ib_official_titles.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_cert_links.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_cert_links.py`, `kb/_build_side_by_side.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibit_cert_links.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_left_map.json` | tabs: `exhibits` · scripts: `kb/_apply_left_map.py`, `kb/_build_left_map.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
-| `kb/exhibit_side_by_side.json` | tabs: `exhibits` · scripts: `kb/_build_side_by_side.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/exhibit_side_by_side.json` | tabs: `exhibits` · scripts: `kb/_build_side_by_side.py` | committed by: `cer-procedures.yml`, `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_subject_out` | none found | committed by: `cer-procedures.yml` |
 | `kb/exhibit_subject_out/worklist.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py` | — |
@@ -897,7 +897,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/row_audit` | none found | committed by: `overmerge-apply.yml`, `phase-1e-apply.yml` |
 | `kb/row_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/row_audit/latest.json` | tabs: `pipeline`, `unified-courses` · scripts: `kb/_build_commons_status.py` · workflows: `overmerge-apply.yml`, `phase-1e-apply.yml` | committed by: `daily-dashboard.yml` |
-| `kb/side_by_side.json` | tabs: `coci-lookup` · scripts: `kb/_build_side_by_side.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/side_by_side.json` | tabs: `coci-lookup` · scripts: `kb/_build_side_by_side.py` | committed by: `cer-procedures.yml`, `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/sjcoe_occupation_scope_map.json` | scripts: `kb/_build_occupation_cpl_crosswalk.py` | — |
 | `kb/spot_checks/*.check.json` | scripts: `kb/_build_commons_data_status.py` | — |
 | `kb/spot_checks/README.md` | scripts: `kb/_build_commons_data_status.py` | — |

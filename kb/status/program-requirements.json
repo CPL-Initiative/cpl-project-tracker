@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T11:45:16Z",
-  "session": 681,
-  "moniker": "SkyGrebe",
+  "written_at": "2026-11-18T14:57:59Z",
+  "session": 682,
+  "moniker": "SkyVireo",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_682_handoff.md",
+  "handoff": "docs/session_683_handoff.md",
   "next_step": {
     "title": "Apply the two reviewed record plans, then read Chabot again",
-    "text": "The night stopped new writes after a wrong outline load at Chabot was undone, so two reviewed plans wait: 99 program records with corrected gap labels and confidence scores (PR 3497), and 13 records whose paired courses take the state's units once two review findings are fixed (PR 3508). Then Chabot's outlines are read again with the fixed reader, and the next display build brings Lassen's five records to the page."
+    "text": "The stop that held the night of November 18 still stands, so the first run of November 19 follows that evening's brief. On no word from Sam or the brief it applies the two reviewed plans: 99 program records with corrected gap labels and confidence scores (PR 3497), and 13 records whose paired courses take the state's units once two review findings are fixed (PR 3508). Then Chabot's outlines are read again with the fixed reader, and the next display build brings Lassen's five records to the page."
   },
   "calls": [
     {
@@ -337,6 +337,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-18T14:20:00Z",
+      "text": "Nothing in the harvest changed this run. The stop from the 11:06 run still held, so no read, load or record write started."
+    },
     {
       "at": "2026-11-18T11:38:00Z",
       "text": "The night's wave merged (PR 3509): the program pages' first build through the private store, the Allan Hancock and Santiago Canyon outline rows, and Lassen's five records."
