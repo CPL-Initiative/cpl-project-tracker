@@ -663,6 +663,10 @@ jobs:
       # a tap-only row never applies, the undo restores, and the committed list's batch counts stay as measured.
       - name: Exhibit pair re-point list and apply
         run: python3 tests/exhibit_repoint_test.py
+      # The blocker round's rules 1 and 2 (COBIx, #3480, S683): the cert-based twin of a course title and the referenced
+      # leftover kept in place, as pair rows; the counts, the 3-college tests, the guard, and the undo.
+      - name: Exhibit blocker rules 1 and 2
+        run: python3 tests/exhibit_blocker_rules_test.py
       # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
       # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
       # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.

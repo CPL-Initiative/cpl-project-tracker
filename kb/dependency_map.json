@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1039,
+  "file_datasets": 1042,
   "external_services": 195,
-  "consumers": 614,
+  "consumers": 615,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -12087,6 +12087,13 @@
      "direction": "read",
      "how": "literal",
      "line": 65
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 272
     }
    ],
    "producers": [
@@ -14995,6 +15002,13 @@
      "direction": "read",
      "how": "literal",
      "line": 99
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 273
     }
    ],
    "producers": [
@@ -15309,6 +15323,13 @@
      "direction": "read",
      "how": "literal",
      "line": 146
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 271
     },
     {
      "id": "script:kb/slash_titles.py",
@@ -16366,6 +16387,39 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibit_blocker_rules_list.json": {
+   "consumers": [
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 54
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 54
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/exhibit_blocker_scope.json": {
+   "consumers": [
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/exhibit_cert_links.json": {
    "consumers": [
     {
@@ -16450,6 +16504,13 @@
      "direction": "read",
      "how": "literal",
      "line": 35
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
     }
    ],
    "producers": [
@@ -21788,6 +21849,13 @@
      "direction": "read",
      "how": "literal",
      "line": 60
+    },
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 270
     }
    ],
    "producers": [
@@ -26304,6 +26372,19 @@
    "main_committers": []
   },
   "file:tests/every_test_runs_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/exhibit_blocker_rules_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35629,6 +35710,7 @@
     "tests/cert_naming_test.py",
     "tests/cred_rename_fold_issuer_test.py",
     "tests/exhibit_repoint_test.py",
+    "tests/exhibit_blocker_rules_test.py",
     "tests/fold_issuer_resolution_test.py",
     "tests/fold_issuer_single_source_test.py",
     "tests/emptied_title_guard_test.py",
@@ -36652,6 +36734,8 @@
   "kb/discipline_inference.json",
   "kb/docs_audit",
   "kb/exhibit_audit/*.md",
+  "kb/exhibit_blocker_rules_list.json",
+  "kb/exhibit_blocker_scope.json",
   "kb/exhibit_repoint_list.json",
   "kb/harvest_scouting",
   "kb/memory_audit",
