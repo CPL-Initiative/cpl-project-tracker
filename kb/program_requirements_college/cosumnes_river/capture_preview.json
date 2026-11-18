@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 226,
  "with_closed_list": 219,
- "started": "2026-11-18T07:29:55Z",
+ "started": "2026-11-18T07:44:09Z",
  "pdf": {
   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -28,16 +28,8 @@
    "read": "heading"
   },
   "pinned": {
-   "04602": {
-    "page": 248,
-    "bound": true
-   },
    "04607": {
     "page": 179,
-    "bound": true
-   },
-   "04614": {
-    "page": 169,
     "bound": true
    },
    "07305": {
@@ -208,18 +200,17 @@
    {
     "control_number": "04602",
     "pages": [
-     248,
      249,
      250,
-     251
+     251,
+     252
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 248] • Implement network perimeter defense (PSLO 6). Career Information Some career opportunities associated with this degree include: security analyst, network systems security administrator, security policy a",
-    "pinned": true
+    "coverage": 0.833,
+    "opens": "[page 249] Course Code Course Title Units or MATH 400 Calculus I (5) 2nd Semester: ACCT 301 Financial Accounting 4 CISA 315 Introduction to Electronic Spreadsheets 2 STAT C1000E Introduction to Statistics 4 3rd "
    },
    {
     "control_number": "04607",
@@ -268,18 +259,17 @@
    {
     "control_number": "04614",
     "pages": [
-     169,
      170,
      171,
-     172
+     172,
+     173
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.968,
-    "opens": "[page 169] Course Code Course Title Units ART 301 Digital Drawing and Composition (3) or ART 338 Introduction to Digital Painting I (3) Art History Electives: A minimum of 3 units from the following: 3 ARTH C1100",
-    "pinned": true
+    "coverage": 0.774,
+    "opens": "[page 170] Course Code Course Title Units ARTH 332 Asian Art (3) ARTH 333 Introduction to Islamic Art (3) Take two (2) Art History courses selected from: A minimum of 12 units from the following: 12 ART 301 Digital "
    },
    {
     "control_number": "04615",
@@ -3141,7 +3131,7 @@
  "loads": 0,
  "pages_listed": 1,
  "pages_answered": 1,
- "seconds": 182.5,
+ "seconds": 347.4,
  "found": 217,
  "by_method": {
   "no_closed_list": 7,
@@ -3170,14 +3160,6 @@
    "20197",
    "39139"
   ],
-  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248": [
-   "04602",
-   "07302",
-   "11330",
-   "35336",
-   "35408",
-   "36447"
-  ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=179": [
    "04607",
    "11336",
@@ -3194,6 +3176,10 @@
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=277": [
    "04611",
    "20220"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170": [
+   "04614",
+   "20367"
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=498": [
    "04615",
@@ -3252,6 +3238,13 @@
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=246": [
    "07300",
    "35175"
+  ],
+  "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248": [
+   "07302",
+   "11330",
+   "35336",
+   "35408",
+   "36447"
   ],
   "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=212": [
    "07305",
@@ -3401,15 +3394,15 @@
  "page_claimed": [],
  "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
+  "0.5-0.8": 13,
   "0.8-1.0": 49,
-  "1.0": 156
+  "1.0": 155
  },
  "would_extract": {
   "against": "kb/program_requirements_college/cosumnes_river",
-  "kept": 156,
+  "kept": 158,
   "kept_moved": 0,
-  "programs": 28,
+  "programs": 26,
   "list": [
    {
     "control_number": "04586",
@@ -3432,16 +3425,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "04602",
-    "title": "Management Information Systems",
-    "award": "A.S. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248",
-    "coverage": 1.0,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "04607",
     "title": "Automotive Mechanics Technology",
     "award": "A.S. Degree",
@@ -3449,16 +3432,6 @@
     "coverage": 0.882,
     "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=180",
     "was_coverage": 0.647,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04614",
-    "title": "Art - Studio Art",
-    "award": "A.A. Degree",
-    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169",
-    "coverage": 0.968,
-    "was_url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170",
-    "was_coverage": 0.774,
     "was_method": "pdf_pages"
    },
    {
@@ -4003,8 +3976,8 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=211"
   },
   "04602": {
-   "sha256": "c86347fbac451f1b9bbf2c345045685ae0126ca2569c1de3b292b8a0016dcaab",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=248"
+   "sha256": "11c389b088eb0ba1e4069642ec3674654a3e1411c83c65093b4a54354dfaa61f",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=249"
   },
   "04607": {
    "sha256": "e87475471511065637bb4bd767512fbf0fdc9096a1fb62309c36b7582be99d89",
@@ -4019,8 +3992,8 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=277"
   },
   "04614": {
-   "sha256": "6f26d66c725dbb2124d84086e23fffcc2379549cc7cb8109a81fc06582e3d4b8",
-   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=169"
+   "sha256": "c4e1cfd6f21867f07962502b7a5d2a93cd1565dedf46ffd0c0b690d9e35534cc",
+   "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=170"
   },
   "04615": {
    "sha256": "0e1b6d2b1f314c6990531f4409ebec2f2ce59ff3dd1832eabed4ec85df31e149",
@@ -4835,5 +4808,5 @@
    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=316"
   }
  },
- "run": "44259120093"
+ "run": "44260307293"
 }
