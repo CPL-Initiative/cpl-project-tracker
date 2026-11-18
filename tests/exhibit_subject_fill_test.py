@@ -197,6 +197,11 @@ with tempfile.TemporaryDirectory() as tmp:
     check(r3["planned"] == len(p["fills"]) and len(store2.rows) == len(live_rows()), "preview reads live and writes no row")
     check(json.load(open(pv))["no_subject"] == len(p["left"]) + len(p["fills"]),
           "a preview counts the planned fills as still without a subject")
+    pend = json.load(open(pv)).get("pending")
+    check(isinstance(pend, list) and sorted(x["title"] for x in pend) == sorted(f["title"] for f in p["fills"])
+          and all(set(x) == {"title", "subject", "source"} for x in pend),
+          "a preview names each pending fill (title, subject, source only), so the Exhibits List can say why (#3510 C3)")
+    check(w.get("pending") == [], "after a write the worklist names no pending fill")
 
 # the PostgREST shape: Range-paginated read, ignore-duplicates insert, delete by cohort on the two fields
 seen = []

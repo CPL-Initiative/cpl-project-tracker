@@ -1091,6 +1091,13 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
             f.write("\n")
     if save in ("on", "preview"):
         save_sure(stage, report, cur or Curation(key), run_id=run_id, preview=(save == "preview"), now=now)
+    # The run finished, save included (#3510 C4): the Commons status dates the Exhibits machine by this stamp, never by
+    # _generated_at, which is written above before the save and is committed even when the save fails.
+    report["_finished_at"] = (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ")
+    report["_finished_save"] = save or "off"
+    with open(REPORT, "w", encoding="utf-8") as f:
+        json.dump(report, f, indent=1, ensure_ascii=False)
+        f.write("\n")
     return report, stage
 
 

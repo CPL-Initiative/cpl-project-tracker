@@ -349,6 +349,9 @@ try:
     check("fixture: the unlisted title goes on the Exhibits review list, said in plain words, ahead of the listed one",
           [(r["title"], r["kind"]) for r in rl] == [("Kept Back", "brought back"), ("Put Back", "brought back, not acknowledged")]
           and "no record of who brought it back" in rl[1]["words"] and "a curator" in rl[0]["words"], rl)
+    live7 = ca.live_titles(tmp7)
+    check("fixture: each review list row says whether the reference holds the title (in_reference), the field the "
+          "Exhibits page keys its action on (#3510 C2)", all(r["in_reference"] is (r["title"] in live7) for r in rl), rl)
     rep = ca.table(tmp7)["report"]
     check("fixture: the table's report carries unacknowledged and the review list, and --check still ignores the report",
           rep["unacknowledged"] == ["Put Back"] and len(rep["review_list"]) == 2

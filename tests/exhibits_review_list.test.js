@@ -18,10 +18,10 @@ function txt(el) { return (el && el.textContent || "").trim(); }
 const src = fs.readFileSync("exhibits.js", "utf8");
 
 const REVIEW_LIST = [
-  { title: "Kept Back", kind: "brought back", words: "Renamed once and back in the reference, so it reads as itself. Brought back by a curator on 2026-10-18." },
-  { title: "Old Carpentry", kind: "dead end", words: "Renamed to “Gone Title”, which is no longer in the reference." },
-  { title: "Water Supply", kind: "dead retire", words: "Retired into “Credit by Exam”, which is no longer in the reference, so it is no search alias." },
-  { title: "Put Back", kind: "brought back, not acknowledged", words: "Renamed once and back in the reference with no record of who brought it back or why. Retire it, or add who, when and why to kb/returned_titles_acknowledged.json." }
+  { title: "Kept Back", in_reference: true, kind: "brought back", words: "Renamed once and back in the reference, so it reads as itself. Brought back by a curator on 2026-10-18." },
+  { title: "Old Carpentry", in_reference: false, kind: "dead end", words: "Renamed to “Gone Title”, which is no longer in the reference." },
+  { title: "Water Supply", in_reference: false, kind: "dead retire", words: "Retired into “Credit by Exam”, which is no longer in the reference, so it is no search alias." },
+  { title: "Put Back", in_reference: true, kind: "brought back, not acknowledged", words: "Renamed once and back in the reference with no record of who brought it back or why. Retire it, or add who, when and why to kb/returned_titles_acknowledged.json." }
 ];
 function load(review) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',

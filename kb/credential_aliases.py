@@ -269,12 +269,13 @@ def unacknowledged(root="."):
 
 
 def review_list(root=".", report=None):
-    """Sam's Exhibits review list, in plain words: [{title, kind, words}] for each returned title (acknowledged or
+    """Sam's Exhibits review list, in plain words: [{title, kind, words, in_reference}] for each returned title (acknowledged or
     not), each dead end and each dead retire, in that order. Read by kb/_build_exhibits_review.py (the Review view)
     and kb/_build_commons_status.py (the scorecard), so the card and the count agree."""
     rep = report or {"returned": returned(root), "dead_ends": dead_ends(root),
                      "dead_retires": retired(root, report=True)[1]}
     why = {(e.get("title") or "").strip(): e for e in acknowledged(root)}
+    live = live_titles(root)
     out = []
     for t in rep.get("returned") or []:
         e = why.get(t)
@@ -294,6 +295,10 @@ def review_list(root=".", report=None):
         out.append({"title": r["title"], "kind": "dead retire",
                     "words": "Retired into “%s”, which is no longer in the reference, so it is no search alias."
                              % r["to"] + (" It is in the reference again itself." if "live again" in (r.get("why") or "") else "")})
+    # in_reference: the title is itself in the reference today, so the Exhibits List has a row for it (#3510 C2). The
+    # page keys each title's action on this field, never on the words.
+    for r in out:
+        r["in_reference"] = r["title"] in live
     return out
 
 

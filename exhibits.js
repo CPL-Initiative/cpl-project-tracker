@@ -169,11 +169,10 @@
     if (!x || !x.t) return "CPL type not recorded";
     return x.t + (x.ts === "id" ? " (read from the exhibit id)" : "");
   }
-  function localTypeWords(raw) {
-    if (EXH_SBS.failed) return "CPL type did not load.";
-    if (!EXH_SBS.data) return "Reading the CPL type…";
+  // {local title as typed: [CPL types]} over the side by side file, built once it has arrived.
+  function sbsByLocal() {
     var by = EXH_SBS.byLocal;
-    if (!by) {
+    if (!by && EXH_SBS.data) {
       by = EXH_SBS.byLocal = {};
       var ex = EXH_SBS.data.exhibits || {};
       Object.keys(ex).forEach(function (id) {
@@ -183,8 +182,27 @@
         if (o.indexOf(x.t) < 0) o.push(x.t);
       });
     }
-    var t = by[String(raw || "").trim()];
+    return by || null;
+  }
+  function localTypeWords(raw) {
+    if (EXH_SBS.failed) return "CPL type did not load.";
+    if (!EXH_SBS.data) return "Reading the CPL type…";
+    var t = sbsByLocal()[String(raw || "").trim()];
     return "CPL type: " + (t && t.length ? t.join(" and ") : "not recorded") + ".";
+  }
+  /* A List row's CPL type (issue 3510, C1): the reference's own types for the credential, else, for a credential no
+     college has articulated yet (the reference has no type for it), the types of its local titles in the side by side
+     file. "not recorded" only when both are empty. */
+  function rowTypeWords(r) {
+    var types = (r.cpl_types || []).filter(Boolean);
+    if (types.length) return types.join(" and ");
+    if (EXH_SBS.failed) return "not on the credential, and its local titles' types did not load";
+    if (!EXH_SBS.data) return "reading its local titles' types…";
+    var by = sbsByLocal(), got = [];
+    (r.raw_variants || []).forEach(function (v) {
+      (by[String(v && v.r || "").trim()] || []).forEach(function (t) { if (got.indexOf(t) < 0) got.push(t); });
+    });
+    return got.length ? got.join(" and ") + " (from its local titles)" : "not recorded";
   }
   /* rows: [{ id, title }] in the order the view holds them; proposed: the Review card's proposed name, when there is one. */
   function exhSbsBody(rows, label, proposed) {
@@ -2011,27 +2029,43 @@
     var rows = list.slice().sort(function (a, b) { return order.indexOf(a.kind) - order.indexOf(b.kind); });
     var box = el("details", { cls: "exh-l-rxmore exh-small", id: "exh-renamed", open: state.rlOpen ? true : null }, [
       el("summary", { text: "The " + fmt(list.length) + " renamed title" + (list.length === 1 ? "" : "s") + " to look at" }),
-      el("p", { cls: "exh-muted exh-small", "data-rl-how": "" }, ["A title still in the reference opens in the List, where its Rename undoes or redoes "
-        + "the rename and its Flag marks it until you clear the flag; leaving it as it reads keeps it. A dead end names two titles the reference no longer "
-        + "holds, so the List has no row for it. A save there does not yet take a title off this list: the list is rebuilt from the "
+      el("p", { cls: "exh-muted exh-small", "data-rl-how": "" }, ["A title still in the reference opens in the List, where its Rename changes the name "
+        + "the List shows and its Flag marks it until you clear the flag; leaving it as it reads keeps it. A dead end names two titles the reference no longer "
+        + "holds, so the List has no row for it. A save there does not take a title off this list: the list is rebuilt from the "
         + "rename records each night."]),
       el("ul", { cls: "exh-l-rxlist", "aria-label": "Renamed titles to look at" }, rows.map(function (r) {
         return el("li", { "data-rl-title": r.title }, [el("span", { cls: "exh-strong", text: r.title }),
           el("span", { cls: "exh-muted", text: ", " + r.kind + ". " }), r.words, reviewListAct(r)]);
       }))]);
-    box.addEventListener("toggle", function () { state.rlOpen = box.open; });
+    box.addEventListener("toggle", function () { state.rlOpen = box.open; if (box.open) reviewListRef(); });
+    if (box.open) reviewListRef();
     return box;
+  }
+  /* A review list built before it carried in_reference waits on the reference itself, read once, when the list opens. */
+  function reviewListRef() {
+    var d = state.data, cs = state.cs;
+    if (cs.rows || cs.loading || cs.error || !d) return;
+    if ((d.review_list || []).every(function (r) { return typeof r.in_reference === "boolean"; })) return;
+    loadCredentials().then(function () { if (state.view === "review" || state.view === "") render(); });
   }
   /* Each renamed title's action (issue 3510, C2): a title the reference still holds opens in the List's side panel, where the
      List's own Rename and Flag save it (the existing kb_curation fields, unified_title_override and list_flag, through
-     the List's write path). No new field: a dead end has no row to act on, and says so. */
+     the List's write path). No new field: a dead end has no row to act on, and says so. Whether the List has a row for
+     the title: the reference itself once it is read, else the list's own in_reference (kb/credential_aliases.py
+     review_list), else not known yet. Never the words. */
   function reviewListLive(r) {
-    if (/^brought back/.test(r.kind)) return true;
-    if (r.kind === "dead retire") return /in the reference again itself/.test(String(r.words || ""));
-    return false;
+    var rows = state.cs.rows;
+    if (rows) {
+      var ix = state.cs.utIx;
+      if (!ix || ix.rows !== rows) { ix = state.cs.utIx = { rows: rows, by: {} }; rows.forEach(function (x) { ix.by[x.ut] = 1; }); }
+      return !!ix.by[r.title];
+    }
+    return typeof r.in_reference === "boolean" ? r.in_reference : null;
   }
   function reviewListAct(r) {
-    if (!reviewListLive(r)) return el("span", { cls: "exh-muted exh-small", "data-rl-act": "none", text: " The List has no row for it." });
+    var live = reviewListLive(r);
+    if (live === null) return el("span", { cls: "exh-muted exh-small", "data-rl-act": "wait", text: " Reading whether the List has a row for it…" });
+    if (!live) return el("span", { cls: "exh-muted exh-small", "data-rl-act": "none", text: " The List has no row for it." });
     return el("span", { cls: "exh-rl-acts" }, [word("Open it in the List", function () { state.rlOpen = true; openCredential(r.title); },
       { "data-rl-act": "open", "aria-label": "Open " + r.title + " in the List to keep, rename or flag it" })]);
   }
@@ -3670,19 +3704,12 @@
     var o = state.cs.overlay[r.ut] || {};
     return o.title ? o.title : credName(r);
   }
-  /* The CPL type beside every canonical title on the List's rows (Sam, issue 3510, C1: "I need to have the Cpl type for each
-     canon and local title nearby"): muted words after the title, from the reference's own types for the row. */
-  function listTypeWords(types, none) {
-    types = (types || []).filter(Boolean);
-    return types.length ? types.join(" and ") : (none || "CPL type not recorded");
-  }
   /* The lines under a row's title that issue 3510 asks for, outside the title's own control so its name stays the title:
      the CPL type, and on the No Common SUBJ filter why the row is there (C3), from the subject fill's worklist. */
   function listTitleTypeSubs(r) {
-    var out = [el("span", { cls: "exh-l-sub exh-l-type", "data-cpl-type": "", text: "CPL type: " + listTypeWords(r.cpl_types, "not recorded") })];
-    if (listState().f === "nosubj" && !listSubj(r)) {
-      var x = subjWhy(r);
-      if (x) out.push(el("span", { cls: "exh-l-sub exh-l-why", "data-subj-why": "", text: "Why no Common SUBJ: " + subjWhyWords(x) }));
+    var out = [el("span", { cls: "exh-l-sub exh-l-type", "data-cpl-type": "", text: "CPL type: " + rowTypeWords(r) })];
+    if (listState().f === "nosubj" && !listSubj(r) && SUBJ_WL.data) {
+      out.push(el("span", { cls: "exh-l-sub exh-l-why", "data-subj-why": "", text: "Why no Common SUBJ: " + subjRowWhy(r) }));
     }
     return out;
   }
@@ -3697,13 +3724,31 @@
       if (!r.ok) throw new Error(SUBJ_WL_URL + " answered " + r.status);
       return r.json();
     }).then(function (d) {
-      var by = {};
+      var by = {}, pend = {};
       ((d && d.items) || []).forEach(function (x) { if (x && x.title) by[x.title] = x; });
-      SUBJ_WL.data = d || {}; SUBJ_WL.by = by; SUBJ_WL.error = "";
+      ((d && d.pending) || []).forEach(function (x) { if (x && x.title) pend[x.title] = x; });
+      SUBJ_WL.data = d || {}; SUBJ_WL.by = by; SUBJ_WL.pend = pend; SUBJ_WL.error = "";
     }, function (e) { SUBJ_WL.error = String(e && e.message || e); });
     return SUBJ_WL.p;
   }
   function subjWhy(r) { return (SUBJ_WL.by && (SUBJ_WL.by[r.ut] || SUBJ_WL.by[listTitle(r)])) || null; }
+  function subjPending(r) { return (SUBJ_WL.pend && (SUBJ_WL.pend[r.ut] || SUBJ_WL.pend[listTitle(r)])) || null; }
+  /* Every row on the No Common SUBJ filter says why it is there (C3): the fill's own reason when it lists the title; the
+     subject the fill would give it, when it holds one waiting for the nightly fill; else why the fill's list leaves it
+     out. The fill counts the credentials with no subject from the baked articulations and the saved subjects of that
+     night (kb/_exhibit_subject_fill.py plan), so a title the list does not name is new or renamed since then, or, in a
+     list written before it named its pending subjects, one the fill would fill. */
+  function subjRowWhy(r) {
+    var d = SUBJ_WL.data || {}, x = subjWhy(r), p = subjPending(r), when = subjWhen(d.written_at);
+    if (x) return subjWhyWords(x);
+    if (p) return "the subject fill would give it " + p.subject + ", from " + (SUBJ_FROM[p.source] || "the courses colleges credit for it")
+      + ", once the nightly fill is turned on.";
+    if (Array.isArray(d.pending)) return "the subject fill's list of " + when + " does not name it; that list names every credential with no "
+      + "Common SUBJ that night, so this one is new or renamed since then and joins the next night's list.";
+    return "the subject fill's list of " + when + " does not name it: either the fill would give it a subject from the courses colleges "
+      + "credit for it once the nightly fill is turned on (that list counts " + fmt(d.not_yet_written || 0) + " such credentials but does not yet "
+      + "name them), or it is new or renamed since that night.";
+  }
   var SUBJ_WHY = {
     "no signal": "no course colleges credit for it and no issuer family names a subject",
     "courses split": "the courses colleges credit for it split between subjects",
@@ -3711,6 +3756,8 @@
     "subject not in the Common Subjects Reference": "the subject its courses name is not in the Common Subjects Reference",
     "held: the issuer family or a certification link names another subject": "its issuer family or a certification link names another subject, so it waits for a person"
   };
+  var SUBJ_FROM = { "courses, several colleges": "the courses several colleges credit for it",
+    "courses, one college": "the courses one college credits for it", "issuer family": "its issuer family" };
   function subjWhyWords(x) {
     var why = SUBJ_WHY[x.why] || String(x.why || "no reason recorded").replace(/^held: /, "waits for a person: ");
     if (x.courses) why += " (the courses name " + x.courses + ")";
@@ -3725,9 +3772,12 @@
     if (SUBJ_WL.error) return el("p", { cls: "exh-empty", role: "alert", text: "The subject fill's list did not load (" + SUBJ_WL.error + "), so the rows below do not say why. Reload the tab to try again." });
     if (!SUBJ_WL.data) return el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading why each credential has no Common SUBJ…" });
     var d = SUBJ_WL.data, wait = (d.items || []).length, nyw = d.not_yet_written || 0;
-    var words = fmt(d.no_subject || 0) + " credentials had no Common SUBJ when the subject fill last looked (" + subjWhen(d.written_at) + "). "
-      + fmt(wait) + (wait === 1 ? " waits" : " wait") + " for a person, each with its reason under its title below.";
-    if (nyw) words += " The fill would take " + fmt(nyw) + " more from the courses colleges credit for them, once the nightly fill is turned on" + (d.mode === "preview" ? "; today it only previews, so it has written none." : ".");
+    var here = (state.cs.rows || []).filter(function (r) { return !listSubj(r); }).length;
+    var words = fmt(here) + (here === 1 ? " credential has" : " credentials have") + " no Common SUBJ in the List today, and each says why under its title. "
+      + "The subject fill counted " + fmt(d.no_subject || 0) + " when it last looked (" + subjWhen(d.written_at) + "): "
+      + fmt(wait) + (wait === 1 ? " waits" : " wait") + " for a person";
+    words += nyw ? ", and the fill would take " + fmt(nyw) + " more from the courses colleges credit for them, once the nightly fill is turned on"
+      + (d.mode === "preview" ? "; today it only previews, so it has written none." : ".") : ".";
     return el("p", { cls: "exh-muted exh-small", "data-subj-note": "", text: words });
   }
   function listCollision(r) {
@@ -4275,6 +4325,8 @@
           if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listLeftNote());
         }
+        // The local titles' CPL types, for a row the reference gives none (issue 3510, C1).
+        if (!EXH_SBS.data && !EXH_SBS.failed) exhSbsLoad(redrawKeepFocus);
         if (L.f === "nosubj") {
           if (!SUBJ_WL.p) subjWorklistLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listSubjNote());

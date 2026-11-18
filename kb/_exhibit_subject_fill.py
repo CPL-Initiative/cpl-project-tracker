@@ -397,6 +397,9 @@ def write_worklist(p, mode, inserted_titles=None, now=None, path=WORKLIST):
         "suggested": sum(1 for i in p["left"] if i.get("suggested")),
         "not_held": p["not_held"],
         "items": p["left"],
+        # The titles the fill would give a subject and has not written, so the Exhibits List's No Common SUBJ filter
+        # can say why each of them is there (#3510 C3). Titles and subjects only.
+        "pending": [{"title": f["title"], "subject": f["subject"], "source": f["source"]} for f in pending],
     }
     _write_json(path, doc)
     return doc
