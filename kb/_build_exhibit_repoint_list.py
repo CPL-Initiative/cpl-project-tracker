@@ -140,6 +140,8 @@ def batch_ctcnc(idx):
                 mk("person", None, "CARP %03d has no series entry and the title names no trade" % n)
                 continue
             to = "Carpenters Apprenticeship — " + trade
+            if to not in idx.creds and _and_form(to) in idx.creds:
+                to = _and_form(to)  # the family after the slash-to-and rename (Sam, 2026-11-18): Drywall and Lather
             evidence = ("title names %s" % trade) if named else ("CARP series %03d" % n)
             if to not in idx.creds:
                 mk("person", None, "no existing family %r" % to)

@@ -388,6 +388,20 @@ def test_one_family_spelling():
     check(out2[titles[1]]["action"] == "assign", "the majority spelling stopped assigning")
 
 
+def test_ctcnc_family_after_rename():
+    """After the slash-to-and rename (Sam, 2026-11-18) the CTCNC family is keyed "Drywall and Lather"; a module of the
+    Drywall/Lather series re-points to that key instead of going to a person for a missing family."""
+    key = "Carpenter’s Training Center CTCNC CARP 150"
+    ut = {key: {"unified_title": "Drywall Basics", "confidence_title": 0.5}}
+    arts = [{"course_id": "D1", "exhibit_id": "MAPICA-CTCC10-1-001", "exhibit_title": key, "unified_title": "Drywall Basics",
+             "cpl_type_description": "Other"}]
+    for fam in ("Carpenters Apprenticeship — Drywall/Lather", "Carpenters Apprenticeship — Drywall and Lather"):
+        creds = {fam: [{}], "Drywall Basics": [{}]}
+        rows = builder.batch_ctcnc(xr.Index(ut, creds, arts))
+        check([(r["action"], r["to"]) for r in rows] == [("repoint", fam)],
+              "the CTCNC module does not re-point to %r: %r" % (fam, [(r["action"], r["to"]) for r in rows]))
+
+
 def test_committed_list():
     """The committed list's own counts, pinned at what this session measured on origin/main 2026-11-17 (no MAP
     snapshot in the sandbox). COBIx's figure sits beside each; where they differ the reason is the comment."""
@@ -453,6 +467,7 @@ if __name__ == "__main__":
     test_cli_force_undo()
     test_naming()
     test_one_family_spelling()
+    test_ctcnc_family_after_rename()
     test_committed_list()
     if FAILS:
         sys.exit("%d failure(s)" % len(FAILS))
