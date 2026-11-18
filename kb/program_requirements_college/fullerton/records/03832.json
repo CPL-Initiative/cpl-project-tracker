@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
+    18.0,
     20.0
    ],
    "stated": [
@@ -71,9 +71,8 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-20.0; the catalog states 18.0-20.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -100,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,13 +154,15 @@
       "alternatives": [
        {
         "code": "BIOL 102 F",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "BIOL 102LF",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -254,5 +255,19 @@
    "The description says the degree requires a total of 18-20 units; the table's Total Units also reads 18-20. No GE pattern or degree total is printed."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": "38675136988",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "BIOL 102 F",
+   "words": "BIOL 102 F, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BIOL 102LF",
+   "words": "BIOL 102LF, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

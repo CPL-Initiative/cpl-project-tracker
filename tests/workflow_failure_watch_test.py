@@ -21,6 +21,7 @@ WATCHER = os.path.join(WF_DIR, "workflow-failure-watch.yml")
 EXCUSED = {
     "Sierra health (hourly uptime probe)": "raises and closes its own sierra-outage issue",
     "MAP Users sync (gated, PII-safe)": "raises and closes its own college-identity issue",
+    "Repo size guard": "a red weekly run is the whole alert: #3476 asks it to open no issue and post no comment",
 }
 
 results = []

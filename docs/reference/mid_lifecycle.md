@@ -103,7 +103,7 @@ Read-only auditor over every M-ID + Cluster. Per row, produces a Trust Card:
 
 **Outputs:**
 - `kb/row_audit/latest.json` — slim per-row summaries + full Cluster cards (~2 MB, committed)
-- `kb/row_audit/<date>.md` — human report with top-50 cleanup queue (~7 KB, committed)
+- `kb/row_audit/<date>.md` — human report with top-50 cleanup queue (about 7 MB; the newest 14 committed, older ones in the private `cpl-receipts` bucket under `row_audit/`, named in `kb/receipts/index/`; `kb/_row_audit_prune.py`, #3476)
 - `kb/row_audit/<date>.full.json` — full per-row breakdown (~12 MB, gitignored)
 
 Re-runnable, never mutates. Suggested-fix payloads on aggregable Cluster

@@ -13,7 +13,15 @@ The line's shape (one line, anywhere in the handoff; the first one wins, and the
     Spend: not available; 2026-11-15T23:38Z to 2026-11-16T01:10Z.
 
 The first dollar figure is the session's total; `Name $x` pairs inside parentheses are its models. A session counts on
-the UTC day it ended. A line without the two times still records the figure, with no day. Older free-text `Spend:`
+the UTC day it ended.
+
+Since S680 (COBIx's Nov 17 brief on #3358) the line may also say what the dollars bought, as `<tag> $x` pairs after the
+models and before the times, each tag one of collection, curation or infrastructure:
+
+    Spend: $123.45 (Opus 5.5 $123.45); collection $100.00, curation $20.00, infrastructure $3.45; 2026-11-15T17:06Z to 2026-11-15T23:19Z.
+
+A line without tags reads as before, its dollars untagged. The tags need not add up to the total; what they leave is
+`untagged_usd`, and a tag sum past the total is warned about and kept as written. A line without the two times still records the figure, with no day. Older free-text `Spend:`
 lines (per-run extraction notes such as "Merced $9.14") do not carry the times and are left out of the daily series.
 
     python3 kb/_build_session_spend.py           # write kb/status/session_spend.json for a local look (gitignored)
@@ -37,8 +45,13 @@ STAMP = r"(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2})?Z)"
 TIMES = re.compile(STAMP + r"\s*(?:to|–|-)\s*" + STAMP)
 USD = re.compile(r"\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
 MODEL = re.compile(r"([A-Za-z][A-Za-z0-9.-]*(?: [A-Za-z0-9.-]+)*?)\s+\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)")
-# The example in .claude/commands/checkpoint.md step 8, pasted bare, is never a session's spend (COBIx on #3379).
+# What a session's dollars bought (S680): collection, curation or infrastructure, each "<tag> $x".
+TAGS = ("collection", "curation", "infrastructure")
+TAG = re.compile(r"\b(" + "|".join(TAGS) + r")\s*:?\s*\$\s*([0-9][0-9,]*(?:\.[0-9]+)?)", re.I)
+# The examples in .claude/commands/checkpoint.md step 8, pasted bare, are never a session's spend (COBIx on #3379).
 EXAMPLE = "$123.45 (Opus 5.5 $123.45); 2026-11-15T17:06Z to 2026-11-15T23:19Z."
+EXAMPLES = (EXAMPLE, "$123.45 (Opus 5.5 $123.45); collection $100.00, curation $20.00, infrastructure $3.45; "
+                     "2026-11-15T17:06Z to 2026-11-15T23:19Z.")
 
 
 def money(s):
@@ -62,8 +75,20 @@ def parse_line(text):
                 models[mm.group(1).strip()] = money(mm.group(2))
             elif "$" in part:
                 print("warning: no model name read from %r" % part.strip(), file=sys.stderr)
-    return {"available": m is not None, "usd": money(m.group(1)) if m else None, "models": models,
-            "start": t.group(1), "end": t.group(2), "day": t.group(2)[:10]}
+    tags = {}
+    if not na:
+        # Outside the models' parentheses only, so a model named like a tag is never read as one.
+        for tm in TAG.finditer(re.sub(r"\([^)]*\)", "", body)):
+            k = tm.group(1).lower()
+            tags[k] = round(tags.get(k, 0.0) + money(tm.group(2)), 2)
+    out = {"available": m is not None, "usd": money(m.group(1)) if m else None, "models": models,
+           "start": t.group(1), "end": t.group(2), "day": t.group(2)[:10]}
+    if tags:
+        if out["usd"] is not None and sum(tags.values()) > out["usd"] + 0.005:
+            print("warning: the tags add up to $%.2f, past the total $%.2f" % (sum(tags.values()), out["usd"]),
+                  file=sys.stderr)
+        out["tags"] = tags
+    return out
 
 
 def build(root):
@@ -76,7 +101,7 @@ def build(root):
         with open(path, encoding="utf-8") as f:
             for raw in f:
                 mm = LINE.match(raw)
-                if mm and mm.group(1).strip().strip("`") != EXAMPLE:
+                if mm and mm.group(1).strip().strip("`") not in EXAMPLES:
                     got = parse_line(mm.group(1))
                     if got:
                         found = got
@@ -91,8 +116,16 @@ def build(root):
         if s["available"]:
             d["usd"] = round(d["usd"] + s["usd"], 2)
             d["sessions"] += 1
+            # Tags by day only where a session tagged its line, so an untagged day keeps its old shape.
+            if s.get("tags") or "tags" in d:
+                tg = d.setdefault("tags", {})
+                for k, v in (s.get("tags") or {}).items():
+                    tg[k] = round(tg.get(k, 0.0) + v, 2)
         else:
             d["not_available"] += 1
+    for d in by_day.values():
+        if "tags" in d:
+            d["untagged_usd"] = round(d["usd"] - sum(d["tags"].values()), 2)
     return {"schema": 1, "source": "the Spend: line of each docs/session_<N>_handoff.md (kb/_build_session_spend.py)",
             "sessions": sessions, "by_day": {k: by_day[k] for k in sorted(by_day)}}
 

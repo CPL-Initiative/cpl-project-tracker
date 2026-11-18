@@ -1207,7 +1207,8 @@ check("status.like.Active*" in C.STATUS_FILTER and "status.eq.Approved" in C.STA
 wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
 read_job = wf.split("\n  read:\n")[1].split("\n  load:\n")[0]
 load_job = wf.split("\n  load:\n")[1].split("\n  display:\n")[0]
-display_job = wf.split("\n  display:\n")[1]
+display_job = wf.split("\n  display:\n")[1].split("\n  fetch:\n")[0]
+fetch_job = wf.split("\n  fetch:\n")[1]
 check("CENSUS_DELAY_MS: '4000'" in wf, "the capture reads at the census's pace")
 check("startsWith(github.event.head_commit.message, '[extract]')" in wf and "workflow_dispatch" in wf
       and "contains(github.event.head_commit.message" not in wf,
@@ -1253,9 +1254,9 @@ check(any(x.strip() == 'default: ""' for x in _dc)
       and "${{" not in _run(_apply)
       and not re.search(r"inputs\.college\b", _apply)
       and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=|read\s.*DISPLAY_COLLEGE", _run(_apply))
-      and 'if [ -n "$DISPLAY_COLLEGE" ]; then' in _apply
-      and '--apply --college "$DISPLAY_COLLEGE"\n' in _apply
-      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply,
+      and 'if [ -n "$DISPLAY_COLLEGE" ]; then args+=(--college "$DISPLAY_COLLEGE"); fi' in _apply
+      and "args=(--apply)\n" in _apply
+      and 'python3 kb/_program_requirements_display_apply.py "${args[@]}"' in _apply,
       "the display step takes display_college (empty by default) by env into --college, never assigned in the "
       "shell and never the college input, and a bare --apply without it")
 _msg = [x for x in _run(_commit).splitlines() if "git commit" in x]
@@ -1276,15 +1277,19 @@ def steps(job):
 
 
 key_line = "SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}"
-holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job)
+holders = [st.splitlines()[0] for st in steps(read_job) + steps(load_job) + steps(display_job) + steps(fetch_job)
            if "SUPABASE_SERVICE_KEY" in st]
-check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 6
+# S680: the display job stores its receipt in the private cpl-receipts bucket before it applies, and step=fetch
+# reads one back for a session; both take the key, and nothing else does.
+check(wf.count("SUPABASE_SERVICE_KEY") == 2 * wf.count(key_line) == 10
       and holders == ["- name: Extract and score",
                       "- name: Load the committed records, unchecked (or replace unchecked rows from the newest run)",
-                      "- name: Apply the display build the page carries"],
+                      "- name: Store the receipt in cpl-receipts and name it in kb/receipts/index/",
+                      "- name: Apply the display build the page carries, or the stored receipt force names",
+                      "- name: Fetch the stored receipt force names, checked against its sha256"],
       "the service key reaches the extraction, load and display steps, and no other: %r" % holders)
 check("if: env.EXTRACT == 'true'" in read_job, "the extraction step runs only when asked")
-check(wf.count("github.actor != 'github-actions[bot]'") == 3, "the filing and receipt commits never run the workflow again")
+check(wf.count("github.actor != 'github-actions[bot]'") == 4, "the filing and receipt commits never run the workflow again")
 
 # ── the load: unchecked, insert-only, and reversible from its receipt ───────
 import json  # noqa: E402
