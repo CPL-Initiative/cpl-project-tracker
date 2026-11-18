@@ -23,6 +23,11 @@ rows, `course_outcomes` 30,321). **Reviewed and unapplied:** #3497's 99-row name
 plan and #3508's 13-row A4 corrective write. **The default Sam was given at about 11:20Z:** on no reply, the next
 night's run applies the two reviewed plans and reads Chabot again with the fixed reader.
 
+**The rest of this night stands down.** The routine fires hourly. A firing that starts before 06:12Z on 2026-11-19
+ends in one line: while the stop holds, nothing in this queue is work a conductor run may start. The first firing of
+2026-11-19 follows that evening's COBIx brief; on no word from Sam or the brief, it applies the two reviewed plans
+and reads Chabot again. This is a dated stand-down, not the `Scheduled run: paused` line, which only Sam lifts.
+
 Read this file, then the NEXT lines of the `program-requirements-harvest`, `repo-size` and `commons` lanes, then
 `docs/reference/conductor_mode.md` *What went wrong in S681*.
 
@@ -75,7 +80,8 @@ COBIx's paraphrase) are in `docs/reference/sam_rulings.md`. The conductor's: `d-
 
 ## Patterns that worked
 
-- Reading a live session's handoff from its open PR (`refs/pull/N/head`): the firing started when #3487 merged.
+- Reading S680's handoff from its open checkpoint PR (`refs/pull/3487/head`): the firing started when #3487 merged.
+  The rule stays end in one line; whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's.
 - Second readers caught A4's per-course units, 33 unsupported labels and Chabot's mislabel, and checked the rollback.
 - One wave; a wrong carried branch leaves by `git revert -m 1` of its merge. Resume a worker with one fix list.
 
@@ -110,11 +116,19 @@ conductor. A session Sam starts by hand works the queue itself.
 Subscriptions: none held (the conductor unsubscribed from #3506, #3507, #3508 and #3509 as each opened). Check-ins: a
 20-minute background timer in the session's own shell, gone when the session ends. No artifact watch.
 
-PENDING-CONDUCTOR: the Spend line (start 2026-11-18T10:13Z, the end time the conductor's).
+Spend: not available; 2026-11-18T10:13Z to 2026-11-18T11:46Z.
 
-PENDING-CONDUCTOR: the token paragraph.
+This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts
+at 11:46Z: the conductor 136 API calls, 0.22 million output, 0.48 million cache-write and 43.2 million cache-read
+tokens; ten worker and reader agents 730 calls, 0.43 million output, 2.60 million cache-write and 112.7 million
+cache-read tokens; six small gate and lookup agents 22 calls. At list prices read from the pricing page on 2026-11-18
+(cache writes at the one-hour rate) that is about $25 for the conductor and $52 for the agents, about $77 in all: an
+estimate, and the billing page is the record. By lane: cheap piles about $32 (two workers, two second readers), the
+collection lane about $14 (five agents), the checkpoint's documents about $6. All of it was collection work; none was
+curation or infrastructure. Priced the same way, S680's counts in handoff 681 (taken at 09:13Z) come to about $35 for
+its conductor and $132 for its agents, about $167.
 
-PENDING-CONDUCTOR: the final one-line count.
+S681: cost not available (token counts above; about $77 at list prices, an estimate); records collected: 0 new program records (Lassen's five landed: two pass, three collected with a named gap; 112 rows planned and reviewed, unapplied); outline rows added 2,270 (Allan Hancock 1,772, Santiago Canyon 498; Chabot's 1,013 loaded and rolled back); substantive PRs merged 1 (the wave #3509, which carries four PRs' work).
 
 Opening line: *Greetings, you are SkyVireo (Session 682), see SkyGrebe's handoff, `docs/session_682_handoff.md`,
 let's keep rolling with our queue.*

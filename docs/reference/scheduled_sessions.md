@@ -83,8 +83,10 @@ is his standing preference there too.
    handoff. On 2026-10-17 the 05:12Z and 06:12Z firings both lacked it, both ran
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
-   the last half hour is a live session: end in one line. When it is a checkpoint, read its handoff from the PR's head
-   (`get_file_contents` at `refs/pull/N/head`) and take the queue the minute it merges (S681, 10:14Z 2026-11-18).
+   the last half hour is a live session: end in one line. (S681, 2026-11-18: the 10:12Z firing found S680's own
+   checkpoint #3487 at its last step, read handoff 681 from the PR's head with `get_file_contents` at
+   `refs/pull/3487/head`, and took the queue when it merged two minutes later. A session Sam runs by hand may checkpoint
+   and keep working, so the rule stays as written until Sam or COBIx rules on a routine firing's checkpoint.)
    **Except a declared side session** (Sam, 2026-11-05, S583: *"go"*): when that PR's body declares a scope
    (*Library side session (<moniker>): <files> and <tables>*), the firing proceeds, stays off every file, table and
    routine step the scope names (a Library scope takes step 6 with it), and says so in its handoff. A PR with no

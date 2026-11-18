@@ -218,7 +218,8 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
   minutes. Cancel CI on branches a wave carries, batch a worker's pushes, and expect a migrate run to wait behind CI.
 - **A carried branch leaves a wave by `git revert -m 1` of its merge** (`bf9703bb` took Chabot out of #3509), since the
   wave lands as one squash.
-- **A live session's handoff reads from its open pull request** (`get_file_contents` at `refs/pull/N/head`), so the next
-  firing can start the minute the checkpoint merges.
+- **A live session's handoff reads from its open pull request** (`get_file_contents` at `refs/pull/N/head`). S681 read
+  S680's that way and took the queue when its checkpoint merged two minutes later. The one-session rule stays end in
+  one line; whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to rule.
 - **Worker worktrees are heavy.** Under `.claude/worktrees/` each took about 2.3 GB; six took the disk from 27 GB free to
   13 GB. Remove a finished worker's worktree once its head is pushed. `git -C`, never `cd`, into one.

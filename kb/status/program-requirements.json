@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T09:49:55Z",
+  "written_at": "2026-11-18T11:45:16Z",
   "session": 681,
   "moniker": "SkyGrebe",
   "run": "the CPL Queue routine",
@@ -716,7 +716,7 @@
         ]
       },
       "roep": [
-        19974,
+        19978,
         20282
       ],
       "coci": [
@@ -725,7 +725,7 @@
       ],
       "outcomes": {
         "slo": [
-          14701,
+          15699,
           88736
         ],
         "plo": [

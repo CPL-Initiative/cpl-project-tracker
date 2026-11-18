@@ -212,8 +212,10 @@ The CPL Queue routine's 10:12Z firing of 2026-11-18 (SkyGrebe), collection only,
   worker's pushes, and expect a migrate run to queue behind CI.
 - **One wave again** (#3509: five branches, one merge of `main`, one CI); a carried branch that turns out wrong leaves
   by `git revert -m 1` of its merge (Chabot, `bf9703bb`), since the wave lands as a squash.
-- **Reading a live session's handoff from its open pull request** (`get_file_contents` at `refs/pull/N/head`) let the
-  firing start the minute the checkpoint merged instead of ending in one line.
+- **Reading S680's handoff from its open checkpoint pull request** (`get_file_contents` at `refs/pull/3487/head`) let
+  the firing start the minute that checkpoint merged. The rule stays end in one line: a session Sam runs by hand may
+  checkpoint and keep working, and whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to
+  rule (`q-wait-for-a-routine-firings-checkpoint-s681`).
 - **`cd` into a worktree moved the conductor's working directory again.** `git -C` only.
 - **Worker worktrees under `.claude/worktrees/` are about 2.3 GB each;** six took the disk from 27 GB free to 13 GB.
   Remove a finished worker's worktree once its head is pushed.
