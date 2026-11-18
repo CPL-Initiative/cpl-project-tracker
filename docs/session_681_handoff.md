@@ -28,13 +28,15 @@ Read this file, then the NEXT lines of `docs/reference/lanes/program-requirement
   the runner from the private bucket `cpl-receipts`, never committed. **#3498** (+ #3501): 141 display receipts and 165
   row audit reports left the tree, each verified by sha256 (runs 44259862567, 44258551009); the daily run keeps the
   newest 14 reports. **#3490**: the size guard in `lints` (5 MB a file outside a shrink-only list of 68, 25 MB
-  compressed a PR, 2,000 MB total, a weekly growth job). The tree: 4,862 MB before, about 1,620 MB after.
+  compressed a PR, 2,000 MB total, a weekly growth job). Measured on the wave's tree: 1,619.8 MB (was 4,862 MB); a
+  depth-1 download 438.6 MB (was about 2.0 GB).
 - **Cheap piles.** **#3491** (`main` e50a87fb): 9 discontinued programs out of the gap census. **#3496**: units rules
   A1, A4, A5 applied to 56 records (runs 44259625861, 44261575737), rollbacks committed, NOT applied; A6 off.
-  **#3497**: 75 named gaps (`no_units_read`); pre-read queued; the apply follows. **#3502**: the paid reread plan (no
+  **#3497**: 75 named gaps (`no_units_read`); pre-read run 44266799069 clean; applied, 75 rows returned (run 44273638344). **#3502**: the paid reread plan (no
   blind paid reads). **#3503**: the Spend line's tags and the sessions key rebuilt at each checkpoint.
 - **Collection.** 2,452 outline rows loaded: Diablo Valley 946, Los Medanos 483, College of the Redwoods 443, Golden West
-  580 objectives (the objectives reread plan is done); Antelope Valley `held`. All carried by the wave **#3504**.
+  580 objectives (the objectives reread plan is done); Antelope Valley `held`. The wave **#3504** carries #3498 with
+  #3501, #3490, #3503, #3502 and the outcome PRs #3387, #3493, #3488, #3489 and #3421.
   Lassen #3499 and Cosumnes River #3500 pinned.
 
 ## Open work, in order (from the lane NEXT lines)
@@ -42,7 +44,10 @@ Read this file, then the NEXT lines of `docs/reference/lanes/program-requirement
 1. **The display build through the new path** (program-requirements-harvest NEXT 1; no display build ran in S680): on
    a branch run `kb/_build_roep_display.py`, commit only `cpl_pathways_roep_data.js`, then `step=display`. `main`'s
    records build `ee6d9daa5226`; the page and the table carry `cdd185495ce4`.
-2. **Cheap piles** (NEXT 2): #3497's apply after its pre-read; the 54 named-gap records of #3502 through #3497's
+2. **Cheap piles** (NEXT 2): #3497: rebuild its rollback from the returned rows, merge `main`, CI, merge. A5: list
+   its 31 wrong answers by cause before it runs on any further record; the five applied A5 rows (Chaffey 38854, Marin
+   36465, Madera 44516, Merritt 33540, Saddleback 40326) take a lower unit-arithmetic confidence and a note through
+   `checks.confidence`. Then the 54 named-gap records of #3502 through #3497's
    mechanism (38 whose catalog figures do not add up, 16 that print no units for a required course); then the
    cheap-pile rules at the collection lane's twelve colleges (`COLLECTION_LANE_S680` in `kb/collection_lane.py`).
 3. **Outcomes** (NEXT 3, step 11): load Allan Hancock (#3284), Chabot (#3492, run 44264136885) and Santiago Canyon
@@ -82,15 +87,18 @@ college"* · *"Spend caps: about $750 a day for everything. $10k and $30k are ru
 daily limits."* · *"No new UI, tooling or governance work in conductor runs."* · *"Stop a review after two rounds and
 send what is left to Sam or COBIx."* All in `docs/reference/sam_rulings.md`.
 
-The conductor's: one full outcome read per host on a funded night; A6 off; MiraCosta 21976 left out (live on a newer
-run than its filed record); no blind paid reads; the 54 records take a named gap with no page read; the session trim
-not done (it breaks a three-repo session). Rows: `kb/migrations/2026-11-18_s680_cpl_memory_rows.sql` (14, rollback
-beside it); the conductor points `.apply` at it.
+The conductor's: one full outcome read per host on a funded night; A6 off; MiraCosta 21976 left out (live on an older
+run than its filed record); the five A5 rows stay applied and A5 runs on nothing further until its 31 wrong answers
+are listed by cause (COBIx on #3496, 08:41Z, not blocking); no blind paid reads; the 54 records take a named gap with no page read; the session trim
+not done (it breaks a three-repo session). Rows: `kb/migrations/2026-11-18_s680_cpl_memory_rows.sql` (14, applied by
+the runner) and `kb/migrations/2026-11-18_s680_cpl_memory_rows_2.sql` (the corrected wave procedure and MiraCosta fact,
+plus two rows), each with its rollback; the conductor points `.apply` at the second.
 
 ## Patterns that worked
 
 - The college split written before any worker started, one list the statewide rules skip.
-- The PR chain, each branch holding the one before it, and the outcome PRs as one wave (KB note
+- One wave PR when every merge conflicts a generated file: the chain landed #3496 and then conflicted; #3504 carried
+  the rest in one merge of `main`, one CI run and one squash (KB note
   `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`).
 - Second readers before every live write, and the pre-read before every apply. `kb/_guarded_sql.py` as the one shape.
 - A sparse checkout before spawning (2.5 GB worktrees instead of 4.85); `git -C`, never `cd`, into a worker's tree.
@@ -102,12 +110,15 @@ A read is free in dollars, not in runner slots: cap concurrent reads when PRs mu
 the Commons data reads rebuilds `commons_data.json` (CI's `lints` checks it; `check_generated.sh` does not). Hand a
 worker's PRs to a fresh worker near 350,000 tokens. Read a run's status before re-tasking a worker. `cpl_memory`
 summaries stay at or under 400 characters. Never commit a display receipt; the size guard fails a file over 5 MB.
+A branch that merges another branch keeps `main`'s `kb/migrations/.apply` text: a carried line re-ran #3496's apply
+twice (runs 44269433074, 44272782139), and only the count guard stopped it. Every apply file stays guarded and
+idempotent.
 
 ## Session settings
 
 A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
 the banner note): two lanes, never on one college; about $750 a day for everything, $10k and $30k running totals for
-the whole job; Opus 5.5 workers, high effort on any worker that writes shared data; $40 per college per run. Tonight
+the whole job; workers on the worker model Sam's cost rules name, high effort on any worker that writes shared data; $40 per college per run. Tonight
 was night one of the two-night conductor comparison; the routine's form set the conductor. A session Sam starts by
 hand works the queue itself.
 
@@ -115,14 +126,10 @@ hand works the queue itself.
 
 | PR | State | Next |
 |---|---|---|
-| #3496 units rules | applies landed, rollbacks committed | merge first, on green `test` |
-| #3498 (+ #3501) receipts and reports out | moves stored and verified | merge after #3496 |
-| #3490 size guard | in the chain | merge after #3498 |
-| #3503 Spend line | in the chain | merge after #3490 |
-| #3502 paid reread plan | in the chain | merge after #3503 |
-| #3504 outcomes wave | holds the five above | merge after #3502 |
-| #3487 this checkpoint | holds the wave | the conductor applies the memory rows, then merges last |
-| #3497 named gaps | pre-read queued | apply, then merge |
+| #3491, #3495, #3496 | merged | none |
+| #3504 the wave (#3498, #3501, #3490, #3503, #3502, #3387, #3493, #3488, #3489, #3421) | merged | each carried PR closed with a pointer |
+| #3487 this checkpoint | holds `main` with the wave | the conductor merges it last |
+| #3497 named gaps | applied, 75 rows returned (run 44273638344) | rebuild the rollback from the returned rows, merge `main`, CI, merge |
 | #3284, #3492, #3494 | outcome reads in flight | load, then merge |
 | #3499 Lassen, #3500 Cosumnes River | pinned | per NEXT 4 |
 | #3293, #3482, #3472, #3383 | untouched | a plain session |

@@ -531,9 +531,20 @@ NEXT (2) and (3) as they stood, verbatim:
 - **One shape for every guarded write.** `kb/_guarded_sql.py` writes each apply and each rollback: it skips rows a person
   checked and aborts unless the count matches the plan. Second readers found a count guard that was only a comment and
   an apply that would have written rows a person checked; the shared shape closes both for every later apply.
-- **The pre-read earns its run.** MiraCosta 21976 was live on run 38748842603 while its filed record is run
-  39726634443; the pre-read (run 44258162212) caught it and the apply left it out. 56 records were rescored (17 checks
+- **The pre-read earns its run.** MiraCosta 21976 was live on an older run (38748842603) than its filed record
+  (39726634443); the pre-read (run 44258162212) caught it and the apply left it out. 56 records were rescored (17 checks
   only, 39 full row), none skipped; both rollbacks were rebuilt from the returned rows.
+- **A rule's self-check must support every row it applies** (COBIx on #3496, 08:41Z, not blocking). A5 scored 69 right
+  and 31 wrong of 123, which does not support its five applied rows (Chaffey 38854, Marin 36465, Madera 44516, Merritt
+  33540, Saddleback 40326). Decided: they stay applied, since each lands on the catalog's printed range at both ends and
+  the rollback is committed; A5 runs on no further record until the 31 are listed by cause; the five take a lower
+  unit-arithmetic confidence and a note through `checks.confidence` once #3497 lands.
+- **A guarded apply survives being re-triggered.** Chaining carried #3496's `.apply` line onto other branches, and two
+  pushes re-ran its full-row apply (runs 44269433074, 44272782139); the count guard refused both ("the UPDATE matched 0
+  rows, the plan names 39"). A branch that merges another keeps `main`'s `.apply` text.
+- **#3497's named gaps:** pre-read run 44266799069 clean (75 listed, 75 on run with the before-image, 0 checked);
+  the apply (run 44273638344) returned 75 rows, none skipped as checked. Its rollback is rebuilt from the returned rows
+  next.
 - **A rule that cannot be scored on held answers stays off.** A6 was right on 0 of 4 held answers.
 - **A paid reread needs an aimed input.** The ask priced a reread aimed at one list ($140 to $170), but the extractor has
   no such input, and the same page and prompt give the same blocks. Of the candidates, two records have a changed page;
@@ -566,3 +577,7 @@ Three standing paragraphs, shortened in the lane to pointers, verbatim:
 **The List (2026-11-01, `#program-requirements/list`):** one row per active COCI program (20,282), read only, and the workspace: a program's side panel carries its record's card and drafts the message to the college; program records retired into it (SkyLoquat, 2026-11-04). Guards `tests/program_requirements_list.test.js`, `tests/program_requirements_list_panel.test.js`, `tests/program_requirements_list_record_port.test.js` and `tests/program_requirements.test.js`. The paragraph as it stood: lessons, *Moved from the lane (S639 side session)*.
 
 **Course objectives, collected with every SLO read (Sam, 2026-11-02; `sam-data-collection-six-asks-2026-11-13`):** filed as `course_outcomes.kind` `objective` (`kb/_objectives_by_system.py`; guard `tests/course_outcomes_objectives_standing_test.py`), one host at a time and never replacing an SLO row (`d-objectives-reread-order-s649`; [plan](../../../kb/course_outcomes/objectives_reread_plan.json)). Loaded: RCCD, SDCCD, Santa Ana, Las Positas, Coastline and Golden West (load 44263910106, 580 rows), so the plan has no step left; De Anza and Marin held. **PITFALL:** an objectives `.load` is written by hand. **DECIDED** `d-outcomes-slice-keys-college-set-s670`: the loader keeps one slice per college set, part and split. The paragraph as it stood, with its loads and DECIDED slugs: lessons, *Moved from the lane (S679 checkpoint)*.
+
+**The display apply runs live (#3190, #3204).** `step=display` writes the whole build the page carries; `display_college` runs one college. First runs and live counts: lessons, *Running a display, one college first (S645)*. **DECIDED (`d-display-first-run-one-college-s645`):** a new apply's first live run goes out on one college, the whole build after its record is confirmed. **DECIDED (`d-merge-is-publication-spot-check-first-s645`):** merging a college PR publishes its display build, so COBIx's five-record spot-check comes before the merge. `d-display-missing-threshold-s644` stands.
+
+**Standing from S645 to S648** (the #3193 rescore, the PDF reader, Desert #3240, Glendale #3202, district profiles #3198; COBIx: run 43421133593's artifact must never be reposted for Desert 10195): every DECIDED slug and the paragraph as it stood, lessons, *Moved from the lane (S653 checkpoint)*.

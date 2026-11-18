@@ -23,7 +23,7 @@ obsidian-folder: cpl-project-tracker/reference
 > collection only."* · *"Two lanes, never on the same college"* · *"Spend caps: about $750 a day for everything. $10k
 > and $30k are running totals for the whole job, not daily limits."* · *"No new UI, tooling or governance work in
 > conductor runs."* · *"Stop a review after two rounds and send what is left to Sam or COBIx."* The routine's form sets
-> the conductor; workers stay Opus 5.5. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
+> the conductor; workers run on the worker model Sam's cost rules name. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
 > 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
 > `sam-conductor-back-for-collection-only-2026-11-17`).
 
@@ -194,10 +194,20 @@ started.
 - **Runner saturation.** Eight outcome runs plus CI on a dozen PRs saturated the runner pool; each CI took 25 to 40
   minutes. A read is free in dollars and not in runner slots: cap concurrent reads when PRs must merge the same night
   (`p-runner-pool-saturation-s680`).
-- **Every merge conflicted every other code PR** on the dependency maps. What worked: a chain, each branch already
-  holding the one before it, assembled by one worker, so CI ran once a PR and each stayed clean as the one before it
-  merged; the outcome PRs landed as one wave (#3504). KB note:
+- **Every merge conflicted every other code PR** on the generated files. A chain (each branch holding the one before
+  it) landed one link, #3496 (`71548415`); #3498 then conflicted, since the squash on `main` and a branch holding the
+  same change plus more edit the same hunks, and each further link needed a merge of `main`, a new head and a new CI
+  run. What worked: ONE wave PR, #3504, carrying #3498 with #3501, #3490, #3503, #3502 and the outcome PRs #3387, #3493,
+  #3488, #3489 and #3421: one merge of `main`, one CI run, one squash, each carried PR closed with a pointer. KB note:
   `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **Chaining carried #3496's `.apply` line onto other branches,** and each push re-triggered its full-row apply (runs
+  44269433074 and 44272782139); the count guard refused both ("the UPDATE matched 0 rows, the plan names 39"). A branch
+  that merges another branch keeps `main`'s `.apply` text; every apply file stays guarded and idempotent
+  (`p-apply-line-carried-by-merge-s680`).
+- **Reviews past two rounds go to COBIx, not blocking:** on #3496 (08:41Z) A5's self-check (69 right, 31 wrong of 123)
+  does not support its five applied rows, so they stay applied with a lower confidence and A5 runs on nothing further
+  until the 31 are listed by cause (`d-a5-five-rows-stay-applied-s680`); on #3490 (08:49Z) the weekly run's failure
+  reached nobody, fixed in the wave.
 - **The Commons data rebuild.** A PR that changes what the Commons data reads must rebuild `commons_data.json`;
   `scripts/check_generated.sh` does not run that check and CI's `lints` does, and three PRs went red.
 - **Second readers earned their cost:** an apply that wrote checks while the committed blocks had changed, a count guard

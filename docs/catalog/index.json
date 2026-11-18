@@ -6111,25 +6111,6 @@
      "updated": ""
     },
     {
-     "created": "2026-11-18",
-     "governs": [
-      "kb/_build_dependency_map.py",
-      "scripts/check_generated.sh"
-     ],
-     "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
-     "status": "published",
-     "tags": [
-      "methodology",
-      "merging",
-      "generated-files",
-      "ci",
-      "conductor"
-     ],
-     "title": "Chain pull requests when every merge conflicts a generated file, and land shared-data work as one wave",
-     "type": "methodology",
-     "updated": "2026-11-18"
-    },
-    {
      "created": "2026-07-27",
      "governs": [
       "cpl_funding.js",
@@ -9841,6 +9822,26 @@
      "title": "When an authoritative identity key exists, use it before you score strings",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_build_dependency_map.py",
+      "scripts/check_generated.sh",
+      "kb/migrations/.apply"
+     ],
+     "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "merging",
+      "generated-files",
+      "ci",
+      "conductor"
+     ],
+     "title": "When every merge conflicts a generated file, land the work as one wave pull request, not a chain",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",

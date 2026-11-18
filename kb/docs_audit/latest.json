@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1528,
-    "bytes": 16249389,
+    "bytes": 16255200,
     "over_budget": 3,
     "handoff_max": 681,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 162,
-        "bytes": 5314819,
+        "bytes": 5315917,
         "over": 1
       },
       "index": {
@@ -36,34 +36,33 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2846106,
+        "bytes": 2849273,
         "over": 1
       },
       "kb_note": {
         "files": 593,
-        "bytes": 2885253,
+        "bytes": 2885248,
         "over": 0
       },
       "roadmap_lane": {
         "files": 44,
-        "bytes": 535558,
+        "bytes": 536118,
         "over": 0
       },
       "handoff": {
         "files": 640,
-        "bytes": 4594394,
+        "bytes": 4595385,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 3,
       "kb_note_dialect": 1,
-      "vault_heavy_path": 76,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 76
     },
     "vault": {
-      "files": 28315,
-      "bytes": 1577068546,
+      "files": 28319,
+      "bytes": 1577082684,
       "heavy_bytes": 1189437190,
       "heavy_share": 0.754,
       "ignore_filters": [
@@ -956,17 +955,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_681_handoff.md",
-      "detail": {
-        "commits_since": 123,
-        "budget": 6,
-        "handoff": "session_681_handoff.md"
-      },
-      "message": "123 commit(s) have landed since `docs/session_681_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

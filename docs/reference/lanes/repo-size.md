@@ -59,8 +59,11 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
 - #3498 (+ #3501): 141 display receipts (2,266.4 MB in the tree) and 165 row audit reports left the tree after the
   one-time moves (runs 44259862567 and 44258551009), each verified by sha256; `tests/receipt_move_gate_test.py` holds
   every removed path to an index entry.
-- #3490: the size guard.
-- The tree: 4,862 MB before, about 1,620 MB after these land.
+- #3490: the size guard. COBIx on #3490 (08:49Z, not blocking): a red weekly run reached nobody, and the cron's pushes
+  skip the file rules; fixed in the wave: the weekly job stays on the failure watch list, and weekly mode lists the
+  over-limit files on `main`.
+- #3498, #3501 and #3490 landed inside the wave PR #3504 (one merge of `main`, one CI run, one squash).
+- Measured on the wave's tree: the tree 1,619.8 MB (was 4,862 MB); a depth-1 download 438.6 MB (was about 2.0 GB).
 - **FACT** `f-display-receipts-hold-no-person-data-s680`: the conductor scanned all 141 committed display receipts and
   found no email address and no person key, so the history rewrite is a size question only (COBIx agreed).
 

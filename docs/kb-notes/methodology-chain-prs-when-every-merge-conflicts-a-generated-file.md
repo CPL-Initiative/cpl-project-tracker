@@ -1,5 +1,5 @@
 ---
-title: Chain pull requests when every merge conflicts a generated file, and land shared-data work as one wave
+title: When every merge conflicts a generated file, land the work as one wave pull request, not a chain
 created: 2026-11-18
 updated: 2026-11-18
 tags: [methodology, merging, generated-files, ci, conductor]
@@ -13,47 +13,44 @@ related:
 artifacts:
   - kb/_build_dependency_map.py
   - scripts/check_generated.sh
+  - kb/migrations/.apply
 ---
 
-# Chain pull requests when every merge conflicts a generated file, and land shared-data work as one wave
+# When every merge conflicts a generated file, land the work as one wave pull request, not a chain
 
 > **One-sentence summary** — when each merge to `main` rewrites a generated file that every open pull request also
-> carries, build the pull requests as a chain, each branch already holding the one before it, and land the PRs that
-> share data as one wave, so CI runs once a PR instead of once a PR per merge ahead of it.
+> carries, a chain of branches (each holding the one before it) survives one link and then conflicts, because a squash
+> on `main` and a branch carrying the same change plus more both edit the same hunks; land the rest as one wave pull
+> request: one merge of `main`, one CI run, one squash, and each carried pull request closed with a pointer.
 
 ## Context
 
-The tracker regenerates `kb/dependency_map.json` and its `.md` from the code, and CI `--check`s them. Every code PR
-changes the map, so the moment one merges, every other open code PR conflicts with `main`. A PR in conflict gets no
-`pull_request` CI at all, and the `test` gate is the one sanctioned merge wait. On S679's night nine merges ran one after
-another at about 11 minutes each. On S680's night (2026-11-18) the runner pool was saturated by eight outcome reads, CI
-took 25 to 40 minutes, and the same pattern would have cost hours. Detail: `docs/engineering_practices_lessons.md`, *S679*
-and *S680*.
+The tracker regenerates `kb/dependency_map.json` and its `.md`, and the Commons data (`commons_data.json`), and CI
+`--check`s them. Every code PR changes them, so the moment one merges, every other open code PR conflicts with `main`. A
+PR in conflict gets no `pull_request` CI at all, and the `test` gate is the one sanctioned merge wait. S679 ran nine
+merges in series at about 11 minutes each; on S680's night (2026-11-18) the runner pool was saturated and CI took 25 to
+40 minutes. Detail: `docs/engineering_practices_lessons.md`, *S679* and *S680*.
 
 ## The claim
 
-1. **Order the PRs once, then chain them.** Pick the merge order (S680: #3496, #3498, #3490, #3503, #3502). Each branch
-   merges the one before it and regenerates the generated files with their builders (never by picking a side). One
-   worker assembles the chain, so there is one writer of the merge commits.
-2. **CI then runs once a PR.** When the first PR merges, the second already contains it, so its diff against `main`
-   shrinks and it stays clean; nothing needs a rebuild and a fresh 25-minute CI wait.
-3. **PRs that touch shared data land as one wave.** The outcome PRs each rebuilt the Commons data (`commons_data.json`);
-   merged one by one they would conflict on it as well. One wave branch (#3504) took them together, merged the chain's
-   top, built the Commons data once, and lands as one PR.
-4. **The checkpoint lands last.** The checkpoint branch merges the wave, so it carries every generated file at its final
-   state and conflicts with nothing.
-5. **The merge to `main` is still one PR at a time, each on a green `test` on its own head**, in the chain's order.
-   Confirm each landing by `git log origin/main`, never by the merged flag alone (`d-stack-top-retarget-s655`): a
-   chain is not a stack, and each PR targets `main` directly.
-
-## How we got here
-
-S679 measured the serial cost (one generated file, nine merges). S680's conductor built the chain after the first
-merge put every other code PR in conflict, and the chain held: each PR stayed clean as the one before it merged. A gap
-the chain exposed: `scripts/check_generated.sh` does not run CI's Commons data check, so three PRs went red before the
-wave rebuilt it once; that check belongs in `check_generated.sh`.
+1. **A chain breaks after its first link.** S680 built five code PRs as a chain, each branch merging the one before it
+   and regenerating the generated files. #3496 merged (`71548415`). #3498 then reported conflicts: `main` held #3496 as
+   one squash commit, and #3498's branch held #3496's commits plus its own regenerations, and both edited the same
+   hunks of the dependency maps and the Commons data. Git does not see the squash as the branch's commits, so every
+   later link needed a merge of `main`, a new head and a new CI run, the serial cost the chain was meant to avoid.
+2. **One wave PR lands the rest.** #3504 carried #3498 with #3501, #3490, #3503 and #3502, and the outcome PRs #3387,
+   #3493, #3488, #3489 and #3421: one merge of `main`, generated files rebuilt once by their builders, one CI run, one
+   squash. Each carried PR closes with a pointer to the wave.
+3. **A merged branch carries its `kb/migrations/.apply` line.** Chaining copied #3496's `.apply` line onto other
+   branches, and each push of such a branch re-triggered #3496's full-row apply (runs 44269433074 and 44272782139). The
+   count guard refused both ("the UPDATE matched 0 rows, the plan names 39"), so nothing was written twice. A branch
+   that merges another branch keeps `main`'s `.apply` text, and every apply file stays guarded and idempotent
+   (`kb/_guarded_sql.py`).
+4. **The checkpoint lands last**, after merging `main` with the wave on it, so it carries every generated file at its
+   final state.
+5. **Confirm each landing by `git log origin/main`**, never by the merged flag alone (`d-stack-top-retarget-s655`).
 
 ## When it does not apply
 
-A PR that touches no generated file merges beside the chain. A single PR needs no chain. A chain whose middle PR fails
-review is rebuilt from that point, never merged past it.
+A PR that touches no generated file merges on its own. A wave whose carried work has not all passed its second reader
+waits for it, or leaves that PR out.
