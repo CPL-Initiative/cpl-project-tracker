@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-590 document(s).
+591 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -331,6 +331,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Build a hierarchy from dotted ids without migrating stored keys](../kb-notes/methodology-tree-from-dotted-ids-stable-keys.md) | methodology | published | 2026-06-26 | 2026-06-26 |
 | [Calibrate a signal against an independent source before you rank the queue](../kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md) | methodology | published | 2026-08-24 | 2026-08-24 |
 | [CER ⇄ CCR crossover — course-identity integrations for exhibit-title curation](../kb-notes/cer-ccr-crossover-integrations.md) | methodology | published | 2026-07-07 |  |
+| [Chain pull requests when every merge conflicts a generated file, and land shared-data work as one wave](../kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [Change the input, not the consumers — derive the old field at the single seam](../kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md) | methodology | published | 2026-07-27 |  |
 | [Check a page inside every frame that embeds it](../kb-notes/methodology-check-a-page-inside-every-frame-that-embeds-it.md) | methodology | published | 2026-10-09 | 2026-10-09 |
 | [Coarse TOP-division discipline fallback — make the orphan tail visible without faking precision](../kb-notes/methodology-coarse-top-division-discipline-fallback.md) | methodology | published | 2026-06-09 | 2026-06-09 |

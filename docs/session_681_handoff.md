@@ -9,63 +9,130 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyGrebe (Session 681)
 
-**In progress.** SkyPhoebe (S680), the routine's 06:12Z firing of 2026-11-18, holds the queue and is conducting. This
-file is its declaration and the college split, written at 06:22Z before any worker started. The checkpoint rewrites it.
-A later firing that finds this pull request updated within the half hour ends in one line.
+From SkyPhoebe, S680, the CPL Queue routine's 06:12Z firing of 2026-11-18, a conductor run for collection only. A
+**full checkpoint**: the run made Rule 10 data writes. Its documents were written by the conductor's checkpoint-docs
+worker. Skipped: step 3 `README.md` (no surface listed there changed) and step 7, the Pipeline tab (no roadmap phase,
+auditor count or re-mint moved). This firing had no `get_trigger`, so `next_run` in
+`kb/status/program-requirements.json` was not refreshed; the headline and the whole-harvest row were.
 
-## The college split (written before any worker started)
+Read this file, then the NEXT lines of `docs/reference/lanes/program-requirements-harvest.md`,
+`docs/reference/lanes/repo-size.md` (new) and `docs/reference/lanes/commons.md` (*S680*), then
+`docs/reference/conductor_mode.md` *What went wrong in S680* and `docs/engineering_practices_lessons.md` *S680*.
 
-- **Collection lane** (harvest workers), twelve colleges, frozen at 06:46Z: Golden West, Coastline and Orange Coast
-  (the `cccd` host; Golden West's objectives full read, #3488), Cosumnes River (#3293's seven), Lassen (its five pinned
-  records), Los Medanos (#3489, trial 12 of 12, full read tonight), Diablo Valley (#3421), College of the Redwoods
-  (#3387) and Allan Hancock (#3284), whose full outcome reads run tonight, and Chabot, Antelope Valley and Santiago
-  Canyon (preparation runs). One reader per host.
-- **Cheap-piles lane** (one worker): every other college. Its statewide rules (the discontinued flags, units rules A1,
-  A4, A5, A6, A8 and A11, the retired-course flags, the named-gap labels and the two paid reread lanes) leave the
-  collection lane's twelve colleges out tonight and reach them on a later night.
-- One writer per college. A college changes lanes only by an edit to this section before the write.
-- The slimming pull requests (#3476) touch no college record.
+## What shipped
 
-## Ledger at 08:23Z (in progress)
+<<FINAL-MERGED>>
 
-**Merged (2):** #3491 (cheap piles: 9 discontinued programs flagged out of the gap census; `main` e50a87fb) and #3495 (#3476 step 1: display receipts are built, stored and applied by the runner from the private bucket `cpl-receipts`, never committed; `main` 25c79493).
+- **Slimming, #3476 Part 4** (Sam, relayed by COBIx: *"Let's move the bloated data out first thing and make sure we
+  don't allow to go beyond a limit."*). **#3495** (`main` 25c79493): display receipts are built, stored and applied by
+  the runner from the private bucket `cpl-receipts`, never committed. **#3498** (+ #3501): 141 display receipts and 165
+  row audit reports left the tree, each verified by sha256 (runs 44259862567, 44258551009); the daily run keeps the
+  newest 14 reports. **#3490**: the size guard in `lints` (5 MB a file outside a shrink-only list of 68, 25 MB
+  compressed a PR, 2,000 MB total, a weekly growth job). The tree: 4,862 MB before, about 1,620 MB after.
+- **Cheap piles.** **#3491** (`main` e50a87fb): 9 discontinued programs out of the gap census. **#3496**: units rules
+  A1, A4, A5 applied to 56 records (runs 44259625861, 44261575737), rollbacks committed, NOT applied; A6 off.
+  **#3497**: 75 named gaps (`no_units_read`); pre-read queued; the apply follows. **#3502**: the paid reread plan (no
+  blind paid reads). **#3503**: the Spend line's tags and the sessions key rebuilt at each checkpoint.
+- **Collection.** 2,452 outline rows loaded: Diablo Valley 946, Los Medanos 483, College of the Redwoods 443, Golden West
+  580 objectives (the objectives reread plan is done); Antelope Valley `held`. All carried by the wave **#3504**.
+  Lassen #3499 and Cosumnes River #3500 pinned.
 
-**Data written so far, each with a committed receipt and an unapplied rollback:** 56 program requirement records rescored by the units rules (#3496: 17 checks only, migrate run 44259625861; 39 full row, run 44261575737; none skipped). 443 course outline rows loaded for College of the Redwoods (load run 44259060063). The bucket (migrate run 44255184017) holds 141 display receipts (1,596.1 MB) and 165 row audit reports (982.5 MB), by a live count.
+## Open work, in order (from the lane NEXT lines)
 
-**The merge chain.** Every merge to `main` puts each other code pull request in conflict on the dependency maps, and the runner pool is saturated, so the remaining code pull requests merge as a chain, each branch already holding the one before it: #3496, then #3498 (which now carries #3501 too), then #3497, #3490, #3503, #3502, #3499. The outcome pull requests touch only data and merge beside the chain.
+1. **The display build through the new path** (program-requirements-harvest NEXT 1; no display build ran in S680): on
+   a branch run `kb/_build_roep_display.py`, commit only `cpl_pathways_roep_data.js`, then `step=display`. `main`'s
+   records build `ee6d9daa5226`; the page and the table carry `cdd185495ce4`.
+2. **Cheap piles** (NEXT 2): #3497's apply after its pre-read; the 54 named-gap records of #3502 through #3497's
+   mechanism (38 whose catalog figures do not add up, 16 that print no units for a required course); then the
+   cheap-pile rules at the collection lane's twelve colleges (`COLLECTION_LANE_S680` in `kb/collection_lane.py`).
+3. **Outcomes** (NEXT 3, step 11): load Allan Hancock (#3284), Chabot (#3492, run 44264136885) and Santiago Canyon
+   (#3494, run 44258693099) once their slices file complete; on a funded night, one full read per host.
+4. **Lassen #3499** (NEXT 4): read reread run 44263840460, then the `set` step with a per-record hold. **Cosumnes River
+   #3500** (NEXT 5): the paid read waits on a named-programs-only input. **#3293** (NEXT 6): decide without COBIx, in
+   a plain session.
+5. **repo-size** NEXT: confirm the first bucket-path `step=display`; Part 5 waits on Sam's go; the spreadsheet export
+   and the videos; capping timed workflows' commits; the session trim and the `CLAUDE.md` cut wait on COBIx.
+6. **commons** NEXT: add CI's Commons data check to `scripts/check_generated.sh` (a plain session); the retired-course
+   drops (Sam: *"Yes, drop all retired courses"*); Sam's billing paste after Nov 15.
+7. **For a plain session** (conductor runs do no UI, tooling or governance work): **cer-procedures** #3482 and #3472
+   (S679's drafts, each green on its head and in conflict with `main`), Exhibits rules 1 and 2; reader rules A to C;
+   the CDC widget; Courses G and M; **common-cr-reference**'s CR exact match and its first `map_ace_catalog_cr` read;
+   two Library briefs requested 2026-11-12 and three open revise requests; the credential harvest (step 10, skipped
+   tonight); #3383 (dependabot).
+8. **implementation-funding** waits on others: card 11's measure texts in the tab, the request to Pedro, the `ppa`
+   cutover, and map@rccd.edu after Governance maps the sender.
 
-| PR | What | State |
-|---|---|---|
-| #3496 | cheap piles: units rules A1, A4, A5; A6 off | both applies landed, rollbacks rebuilt from the returned rows; `main` being merged in; first in the chain |
-| #3498 (+ #3501) | #3476 steps 4 and 5: 141 display receipts and 165 old row audit reports leave the tree; the daily run keeps the newest 14 reports | both one-time moves stored and verified; being combined on `main` behind #3496 |
-| #3497 | cheap piles: named gaps, 75 rows, all `no_units_read` | second read's findings fixed (ac452730); pre-read and apply follow #3496 |
-| #3490 | the repo size check (#3476 step 2) | draft; after the receipts leave the tree |
-| #3503 | the Spend line: sessions key rebuilt at each checkpoint; collection, curation and infrastructure tags | draft; CI running |
-| #3502 | cheap piles: the paid reread plan | plan of record: no blind paid reads; two records ($0.20) have a changed page; 54 more records take a named gap through #3497's mechanism; the rest wait on reader changes |
-| #3387 | College of the Redwoods outcomes, 443 rows loaded | ready; CI running |
-| #3493 | Antelope Valley outcomes: trial parsed 0 of 12; verdict `held`, as College of Marin | ready; CI running |
-| #3488, #3489, #3421 | Golden West (580 objective rows in the dry run), Los Medanos (483), Diablo Valley (946) | reads filed; load runs 44263910106, 44264033797, 44264252782 queued |
-| #3284, #3494, #3492 | Allan Hancock (2 of 3 slices), Santiago Canyon (queued), Chabot (trial 12 of 12, full read pushed; its run to be rechecked) | reads in flight |
-| #3499 | Lassen: five records pinned to `main`'s pages | reconcile 44259115005: 33729 and 33730 pass, the other three carry `ge_units` 34 with the gap named; reread run 44263840460 |
-| #3500 | Cosumnes River: four clean pins | the paid read is off tonight: the preview lists programs beyond the pinned set; needs a named-programs input |
-| #3293 | the passing dry run | still waits on COBIx after four days; a plain-session decision |
-| #3482, #3472 | S679's drafts, green on their heads, each conflicts with `main` | left for a plain session |
+## For Sam
 
-## Order tonight (COBIx's brief on #3358, written 6:45 PM PT Nov 17)
+Nothing waits on him tonight beyond [Open Asks Sheet 200](https://claude.ai/artifact/5ShC7pGgNuz9bJUhkdsc8Y)'s one card
+(current) and **Part 5's go**, the history rewrite (Rule 5: cron paused, his go, every session re-clones). The scan of
+all 141 display receipts found no email address and no person key, so it is a size question only. He may want to
+look at: the Commons count (49 active programs moved from failing to passing on the units rules), the repo-size lane,
+and #3502's priced reader changes (aimed lists 260 records at 74 colleges, $26.20; the rest under $22 each).
 
-1. The slimming pull requests (#3476 Part 4): display receipts to the private bucket, the size check, the existing
-   receipts moved out, the row audit kept to 14 days.
-2. Both collection lanes. No display build is committed the old way; the wave's one display build waits for step 1.
-3. Left for a plain session: reader rules A to C, the CDC widget, Courses G and M, Exhibits rules 1 and 2, the CR exact
-   match, #3482 and #3472, the two Library briefs requested on 2026-11-12 and three open revise requests.
+## Decisions
+
+Sam's, relayed by COBIx on #3358 (brief written 6:45 PM PT, 2026-11-17) and #3476, verbatim: *"Let's move the bloated
+data out first thing and make sure we don't allow to go beyond a limit."* · *"As cto you can restructure us."* · *"my
+priority is completion and will find the funding to make it happen"* · *"Yes, run both tonight with separate
+colleges"* · *"Yes, drop all retired courses"*. In paraphrase (COBIx): never drop a record for failing; collect it with
+gaps noted and confidence scores, and report records collected and confidence gained, never "newly passing". The
+routine's stored prompt (2026-11-17): *"Conductor mode is back for collection only."* · *"Two lanes, never on the same
+college"* · *"Spend caps: about $750 a day for everything. $10k and $30k are running totals for the whole job, not
+daily limits."* · *"No new UI, tooling or governance work in conductor runs."* · *"Stop a review after two rounds and
+send what is left to Sam or COBIx."* All in `docs/reference/sam_rulings.md`.
+
+The conductor's: one full outcome read per host on a funded night; A6 off; MiraCosta 21976 left out (live on a newer
+run than its filed record); no blind paid reads; the 54 records take a named gap with no page read; the session trim
+not done (it breaks a three-repo session). Rows: `kb/migrations/2026-11-18_s680_cpl_memory_rows.sql` (14, rollback
+beside it); the conductor points `.apply` at it.
+
+## Patterns that worked
+
+- The college split written before any worker started, one list the statewide rules skip.
+- The PR chain, each branch holding the one before it, and the outcome PRs as one wave (KB note
+  `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`).
+- Second readers before every live write, and the pre-read before every apply. `kb/_guarded_sql.py` as the one shape.
+- A sparse checkout before spawning (2.5 GB worktrees instead of 4.85); `git -C`, never `cd`, into a worker's tree.
+
+## Safety patterns to honor
+
+A read is free in dollars, not in runner slots: cap concurrent reads when PRs must merge the same night.
+`supabase-migrate` runs one at a time: push one `.apply` change, read its receipt, then the next. A PR that changes what
+the Commons data reads rebuilds `commons_data.json` (CI's `lints` checks it; `check_generated.sh` does not). Hand a
+worker's PRs to a fresh worker near 350,000 tokens. Read a run's status before re-tasking a worker. `cpl_memory`
+summaries stay at or under 400 characters. Never commit a display receipt; the size guard fails a file over 5 MB.
 
 ## Session settings
 
-A conductor run for collection only (Sam's cost rules of 2026-11-17): one conductor, Opus 5.5 workers, high effort on
-any worker that writes shared data, about $750 a day for everything, $40 per college per run. This is night one of the
-two-night conductor comparison; the routine form set tonight's conductor.
+A conductor run for collection only, under Sam's routine prompt of 2026-11-17 (`docs/reference/conductor_mode.md`,
+the banner note): two lanes, never on one college; about $750 a day for everything, $10k and $30k running totals for
+the whole job; Opus 5.5 workers, high effort on any worker that writes shared data; $40 per college per run. Tonight
+was night one of the two-night conductor comparison; the routine's form set the conductor. A session Sam starts by
+hand works the queue itself.
 
-Spend: not available; 2026-11-18T06:12Z to (in progress).
+## Ledger and let go
+
+| PR | State | Next |
+|---|---|---|
+| #3496 units rules | applies landed, rollbacks committed | merge first, on green `test` |
+| #3498 (+ #3501) receipts and reports out | moves stored and verified | merge after #3496 |
+| #3490 size guard | in the chain | merge after #3498 |
+| #3503 Spend line | in the chain | merge after #3490 |
+| #3502 paid reread plan | in the chain | merge after #3503 |
+| #3504 outcomes wave | holds the five above | merge after #3502 |
+| #3487 this checkpoint | holds the wave | the conductor applies the memory rows, then merges last |
+| #3497 named gaps | pre-read queued | apply, then merge |
+| #3284, #3492, #3494 | outcome reads in flight | load, then merge |
+| #3499 Lassen, #3500 Cosumnes River | pinned | per NEXT 4 |
+| #3293, #3482, #3472, #3383 | untouched | a plain session |
+
+The conductor drops every PR subscription, check-in and artifact watch it holds at sign-off and names each in its
+closing message. This firing had no `get_trigger`, so the routine's next run is not recorded here.
+
+<<FINAL-SPEND>>
+
+<<FINAL-LINE>>
 
 Opening line: *Greetings, you are SkyGrebe (Session 681), see SkyPhoebe's handoff, `docs/session_681_handoff.md`,
 let's keep rolling with our queue.*

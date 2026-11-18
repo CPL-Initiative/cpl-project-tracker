@@ -164,3 +164,30 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
   range sums; COBIx answered with the number of records the narrow reading left failing (single-figure sums inside a
   printed range), and the conductor reversed it in one exchange. Detail: `docs/program_requirements_harvest_lessons.md`,
   *S679*.
+
+## 2026-11-18 — S680 (SkyPhoebe, the CPL Queue routine's conductor night): slimming the repo, chaining the merges
+
+- **Move bulky generated data out, then hold the line in CI.** 141 display receipts (2,266.4 MB in the tree) and 165
+  row audit reports left for the private bucket `cpl-receipts`, each verified by sha256 against its index entry before a
+  `git rm`; a gate test (`tests/receipt_move_gate_test.py`) holds every removed path to an entry. Then the size guard
+  (`scripts/repo_size_guard.py`) runs inside `lints`, so a red guard is a red `test`. The tree went from 4,862 MB to
+  about 1,620 MB. Lane: `docs/reference/lanes/repo-size.md`.
+- **A fetch from a private store on a public repo is a publication.** A run artifact on this public repo is readable by
+  anyone, so `step=fetch` hands out only the kinds in `kb/_receipt_store.py`'s `PUBLIC_SAFE` table (COBIx's finding).
+- **Scan before you call a history rewrite a privacy question.** All 141 display receipts held no email address and no
+  person key, so Part 5 is a size question only.
+- **A read is free in dollars and not in runner slots.** Eight outcome runs and CI on a dozen PRs saturated the runner
+  pool; each CI took 25 to 40 minutes. Cap concurrent reads when PRs must merge the same night.
+- **Chain the PRs when every merge conflicts a generated file.** Each branch already holds the one before it, one
+  worker assembles the chain, CI runs once a PR, and each stays clean as the one before it merges; shared-data PRs land
+  as one wave. KB note: `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **`check_generated.sh` is not the whole of CI's generated checks.** A PR that changes what the Commons data reads must
+  rebuild `commons_data.json`; CI's `lints` checks it and `check_generated.sh` does not, so three PRs went red. NEXT for
+  a plain session: add it.
+- **Sparse checkout and `git -C` keep a conductor's checkout sane.** `git sparse-checkout set --no-cone '/*'
+  '!/kb/receipts/program_requirement_records_display_*'` before spawning made each worktree 2.5 GB instead of 4.85; a
+  `cd` into a worker's worktree moved the conductor's working directory, so use `git -C`, and push `.apply` commits
+  from a tiny sparse worktree with `HEAD:<branch>`.
+- **The session trim waits.** As written it assumes a session rooted at the repo; ours root at the parent with three
+  repos, the repo's own settings do not load there, and a trimmed tree breaks `check_generated.sh` and the tests until
+  the data folders come back. It needs COBIx and a plain session.

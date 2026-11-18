@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-15
+updated: 2026-11-18
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -18,6 +18,14 @@ obsidian-folder: cpl-project-tracker/reference
 > page.** The queue runs as it did before 2026-11-11: one Opus 5.5 session working the queue itself and
 > collaborating with COBIx on its PRs ([`scheduled_sessions`](scheduled_sessions.md), [`cobix_pr_loop`](cobix_pr_loop.md)). The page stays as the record of what was tried; its merge-gate and
 > review lessons still hold wherever another doc cites them.
+
+> **Back for collection only (Sam, 2026-11-17, the CPL Queue routine's stored prompt).** *"Conductor mode is back for
+> collection only."* · *"Two lanes, never on the same college"* · *"Spend caps: about $750 a day for everything. $10k
+> and $30k are running totals for the whole job, not daily limits."* · *"No new UI, tooling or governance work in
+> conductor runs."* · *"Stop a review after two rounds and send what is left to Sam or COBIx."* The routine's form sets
+> the conductor; workers stay Opus 5.5. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
+> 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
+> `sam-conductor-back-for-collection-only-2026-11-17`).
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
@@ -176,6 +184,35 @@ at the top of each piece of work so Sam can change the dial before it runs.
   at a scheduled check-in instead (S653: context went from 16% to 73% in 100 minutes on notices).
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
+
+## What went wrong in S680, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-18 (SkyPhoebe), collection only: no `list_sessions`, `get_trigger`,
+`set_session_tags` or `get_session`; declared with draft #3487 at 06:22Z, the college split written before any worker
+started.
+
+- **Runner saturation.** Eight outcome runs plus CI on a dozen PRs saturated the runner pool; each CI took 25 to 40
+  minutes. A read is free in dollars and not in runner slots: cap concurrent reads when PRs must merge the same night
+  (`p-runner-pool-saturation-s680`).
+- **Every merge conflicted every other code PR** on the dependency maps. What worked: a chain, each branch already
+  holding the one before it, assembled by one worker, so CI ran once a PR and each stayed clean as the one before it
+  merged; the outcome PRs landed as one wave (#3504). KB note:
+  `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **The Commons data rebuild.** A PR that changes what the Commons data reads must rebuild `commons_data.json`;
+  `scripts/check_generated.sh` does not run that check and CI's `lints` does, and three PRs went red.
+- **Second readers earned their cost:** an apply that wrote checks while the committed blocks had changed, a count guard
+  that was only a comment, an apply that would write rows a person checked, four mislabeled gap rows, two pins that
+  pulled a neighbor's list. The pre-read caught MiraCosta 21976.
+- **A `cd` into a worker's worktree moved the conductor's working directory.** Use `git -C`, and a tiny sparse worktree
+  for the `.apply` commits, pushed with `HEAD:<branch>` from a detached head.
+- **Sparse checkout before spawning:** `git sparse-checkout set --no-cone '/*'
+  '!/kb/receipts/program_requirement_records_display_*'` in the main checkout; worktrees inherit it, 2.5 GB instead of
+  4.85.
+- **`supabase-migrate` runs one at a time:** push one `.apply` change, read its receipt, then the next.
+- **A worker's context fills near 350,000 to 400,000 tokens;** hand its PRs to a fresh worker with the fix list.
+- **A brief that says "push, tell me, then wait" makes a worker poll in the background;** it can only report by ending
+  its turn. Brief it to report and end.
+- **Re-tasking a worker before a run finished wasted cycles;** read the run's status first.
 
 ## What went wrong in S655, and what worked
 
