@@ -455,7 +455,9 @@ window.COBI_ADMIN_SURFACE = {
         "cr_progress.js",
         "cr_reference.js"
       ],
-      "reads": [],
+      "reads": [
+        "map_exhibit_cr_side_by_side"
+      ],
       "writes": [
         "cr_reference_decisions",
         "kb_curation"
