@@ -70,6 +70,15 @@ Opportunity record pair in one step, and opens Start a piece for any other entit
 are in `docs/library_lessons.md`, *Moved from the lane (S467)*, verbatim; Sam's 2026-10-05 rulings, his calls 7 to 9
 and the Drive filing history moved there with them.
 
+✅ **A duplicate is a warning, never a refusal (COBIx relaying Sam, 2026-11-18; DECIDED
+`d-library-duplicate-is-a-warning`).** Ashley Mooney's *Foothill College Sheet Metal CPL Opportunities*
+(Apprenticeship Sprint) was refused at Start because Foothill's CPL Opportunity pair existed. A college visual now
+writes the pair only with no working title of its own or the pair's own title; one with its own title is a Requested
+piece under its own `slugFor` slug. A piece is a duplicate only when its working title and occasion both match a
+live record (the pair's fixed slugs always count), and then Start offers three choices: open it, add this as a new
+version of it, or start a separate piece anyway under its own slug. `library.js` `duplicateOf`/`askDuplicate`;
+`tests/library.test.js` (11e).
+
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)

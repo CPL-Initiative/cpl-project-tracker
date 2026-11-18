@@ -541,7 +541,8 @@ block("(11b)", function () {
     go(m);
     return settle();
   }).then(function () {
-    check("(11b) a college whose pair exists is refused, and nothing is written", m.writes.length === 0 && /Bakersfield College's pair is already in the Library/.test(m.root.textContent));
+    check("(11b) a college whose pair exists is asked about, not refused, and nothing is written",
+      m.writes.length === 0 && !!doc.getElementById("lib-dup") && /Bakersfield College: CPL Opportunity Analysis is already in the Library/.test(m.root.textContent));
     doc.getElementById("ls-forname").value = "Nowhere College";
     go(m);
     return settle();
@@ -565,6 +566,54 @@ block("(11b)", function () {
     const text = m.M._briefText({ slug: "ell-iet-grantees", title: "ELL IET grantees", kind: "visual", for_kind: "agency", for_name: "EDD ELL IET Fund grantees", brief: { say: "x" } });
     check("(11b) the paste names who it is made for and the agency template", /Made for: Made for Agency · For EDD ELL IET Fund grantees/.test(text) && /agency template/.test(text) && /20261020_DSP_Credit_Starting_Points\.html/.test(text), text);
     check("(11b) a college's paste names no agency template", !/agency template/.test(m.M._briefText({ slug: "s", title: "t", kind: "visual", for_kind: "college", for_name: "Norco College", brief: {} })));
+  });
+});
+// ── (11e) A duplicate is a warning with three ways on (COBIx relaying Sam, 2026-11-18) ───
+// Ashley's "Foothill College Sheet Metal CPL Opportunities" was refused because Foothill's pair existed. The same
+// college is not a duplicate; a matching working title and occasion is, and even then the person chooses.
+block("(11e)", function () {
+  const m = loadFor("Ashley"), doc = m.w.document;
+  const fill = function (title, occasion, instr) {
+    openStart(m, instr || "The sheet metal apprenticeship and the credit it could earn");
+    change(m, "ls-forkind", "college");
+    return settle().then(function () {
+      doc.getElementById("ls-forname").value = "Bakersfield College";
+      doc.getElementById("ls-title").value = title;
+      doc.getElementById("ls-occasion").value = occasion;
+      go(m);
+      return settle();
+    });
+  };
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    return fill("Bakersfield College Sheet Metal CPL Opportunities", "Apprenticeship Sprint");
+  }).then(function () {
+    const w = m.writes, b = w[0] ? w[0].body : {};
+    check("(11e) a college visual with its own title is one new piece, though the college's pair exists", w.length === 1 && !doc.getElementById("lib-dup"), String(w.length));
+    check("(11e) it is Requested, under its own slug, never the pair's",
+      b.status === "requested" && /^bakersfield-college-sheet-metal-cpl-opportunities-/.test(b.slug) && !/^cpl-opportunity-/.test(b.slug) && b.for_name === "Bakersfield College" && b.occasion === "Apprenticeship Sprint", JSON.stringify(b));
+    m.writes.length = 0;
+    return fill("Bakersfield College: CPL Opportunity Analysis", "CPL college workgroup meeting");
+  }).then(function () {
+    check("(11e) a matching title and occasion asks, writing nothing", m.writes.length === 0 && !!doc.getElementById("lib-dup"));
+    check("(11e) with three choices: open it, add a new version, start a separate piece",
+      !!doc.querySelector('[data-dupopen="f1"]') && !!doc.querySelector('[data-dupver="f1"]') && !!doc.querySelector("[data-dupgo]"));
+    click(m.w, doc.querySelector("[data-dupgo]"));
+    return settle();
+  }).then(settle).then(function () {
+    const b = m.writes[0] ? m.writes[0].body : {};
+    check("(11e) Start a separate piece anyway writes one piece under its own slug, leaving the pair alone",
+      m.writes.length === 1 && b.status === "requested" && b.slug !== "cpl-opportunity-bakersfield-visual" && !/^cpl-opportunity-/.test(b.slug), JSON.stringify(b));
+    m.writes.length = 0;
+    return fill("Update to the Board of Governors", "Board of Governors, July 2026", "Slides for the board");
+  }).then(function () {
+    check("(11e) any new piece matching a title and occasion asks too", m.writes.length === 0 && !!doc.getElementById("lib-dup"));
+    const ver = doc.querySelector("[data-dupver]");
+    click(m.w, ver);
+    check("(11e) Add this as a new version opens the new-version filing for that piece", !!doc.getElementById("la-url") && !doc.getElementById("lib-dup") && m.writes.length === 0);
+    click(m.w, doc.querySelector("[data-unpiece]"));
+    return fill("Update to the Board of Governors", "A different occasion", "Slides for the board");
+  }).then(function () {
+    check("(11e) the same title for a different occasion is not a duplicate", m.writes.length === 1 && !doc.getElementById("lib-dup"), String(m.writes.length));
   });
 });
 block("(11c)", function () {
