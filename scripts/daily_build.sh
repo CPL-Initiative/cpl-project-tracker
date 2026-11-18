@@ -526,6 +526,22 @@ step "Build the exhibit-to-cert link" <<'STEP'
 python3 kb/_build_exhibit_cert_links.py || echo "::warning title=Cert links not rebuilt::kb/_build_exhibit_cert_links.py failed; the List reads the previous links until the next run. Check the step log."
 STEP
 
+# The read-only Side by side views (S678 item 7, wired nightly S679): kb/exhibit_side_by_side.json, one row per MAP
+# exhibit with its canonical title, and kb/side_by_side.json, the Courses List's fold. Rows read this run's
+# kb/exhibits_adoption.json (the review queue step), kb/coci_articulations.json, kb/exhibits_review.json and
+# kb/exhibit_cert_links.json (the step above); a rename or the night's fold moves them, and the file went stale on main
+# after the 2026-11-18 rename. Committed files only, no secret. A failure keeps the publish going and is never silent:
+# SIDE_BY_SIDE_STATUS=failed turns the run red in daily-dashboard.yml's last steps, which the failure watch reports.
+# tests/side_by_side_test.py fails when the committed files are not current.
+step "Build the Side by side views" <<'STEP'
+if python3 kb/_build_side_by_side.py; then
+  echo "SIDE_BY_SIDE_STATUS=success" >> "$GITHUB_ENV"
+else
+  echo "::error title=Side by side not rebuilt::kb/_build_side_by_side.py exited non-zero; the Exhibits tab and the Courses List read the previous files and the run ends red. Check the step log."
+  echo "SIDE_BY_SIDE_STATUS=failed" >> "$GITHUB_ENV"
+fi
+STEP
+
 # The Exhibits List's Outcomes match hints (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): credentials
 # whose articulated courses' SLOs match at cosine 0.5+ through distinct courses, each with its AI sort group. Reads
 # public.course_outcomes (public record) through PostgREST with the service key, and this run's adoption file and AI

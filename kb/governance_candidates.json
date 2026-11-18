@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 16,
-    "scanned": 76
+    "dismissed": 17,
+    "scanned": 77
   },
   "candidates": [
     {
@@ -109,6 +109,14 @@
       "detail": "Scheduled: 37 * * * *",
       "where": ".github/workflows/first-light-apply.yml",
       "why": "The First Light tab's Apply (S643; #3153 comments 6826461825 and 6829695812). An hourly look reads one row of first_light_apply_requests before any checkout and ends there when nothing is pending; a pending request or a dispatch turns the reviewers' marks into ONE pull request (selection, hero list, the three views' copies, story photos) and dispatches js-tests.yml on it. No cadence row: no person owns a recurring outcome here, since the run does nothing until a reviewer presses Apply. No new decision right: the workflow never merges, approves or enables auto-merge, so what reaches the views is decided by Sam's merge of the pull request, recorded on GitHub. It holds no student data: painting files, hero photos, and My CPL Story photos MAP already publishes, carried with only the story's link and the name as MAP printed it."
+    },
+    {
+      "key": "workflow:harvest-gap-census.yml",
+      "kind": "cadence",
+      "label": "Harvest gap census",
+      "detail": "Scheduled: 47 17 * * *",
+      "where": ".github/workflows/harvest-gap-census.yml",
+      "why": "A new READ by a workflow on shared tables, no new writer (S647, #3215; COBIx's conditions on PR #3222, 2026-11-13). Two jobs. The census job reads coci_college_programs, program_requirement_records, program_source_registry and coci_program_courses with the public anon key and runs on any ref. The live-counts job (kb/_commons_data_live.py) reads coci_college_programs, program_requirement_records, coci_program_courses, course_outcomes and program_source_registry with the service key held in the GitHub environment live-counts, which Sam set up on 2026-11-13 on COBIx's recommendation (restricted to main), read at one step's scope alone; the job runs on main only (its if, and the environment's branch policy), never with the anon key, and adds no grant, table, function, migration or secret. It exports counts per college only: the two tables that name a person (program_requirement_records.checked_by, program_source_registry.corrected_by) are read by HEAD count alone, no row, no select and no person column named anywhere; the other three by a narrow column read reduced to counts on the runner (COLUMN_READS, guarded by tests/commons_data_live_test.py). Its one file is scrubbed for the key before it is uploaded as the run's artifact. Disclosure (adr-student-detail-aggregate-disclosure-control): none of the five tables holds student detail; they are curriculum and harvest tables (programs, program requirements, program courses, course outcomes, catalog sources), so the ADR's small-cell rule has nothing to apply to. It writes no table. One writer of kb/status/commons_data.json (kb/_build_commons_data_status.py --live, in the census job) and one push, by the census job, to the branch it ran on; dispatch only. It adds no decision right: what the page shows is the Commons lane's, and the figures are counts of rows other workflows write."
     },
     {
       "key": "workflow:k10-disclosure-check.yml",

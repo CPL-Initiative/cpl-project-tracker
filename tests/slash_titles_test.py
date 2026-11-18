@@ -143,7 +143,12 @@ def test_committed():
             FAILS.append("--check failed on the committed files: %s" % e)
     targets = [e["new"] for e in plan["entries"]]
     check(len(targets) == len(set(targets)), "two entries share a target")
-    check(not any(t in creds for t in targets), "an entry's target is already a credential (a combine)")
+    # An applied entry (its old title has left the credentials; commit 64f13edc ran the plan) has its target in the
+    # credentials by design, so the combine checks read the entries still waiting to run.
+    pending = [e for e in plan["entries"] if e["old"] in creds]
+    check(not any(e["new"] in creds for e in pending), "an entry's target is already a credential (a combine)")
+    check(all(e["new"] in creds for e in plan["entries"] if e["old"] not in creds),
+          "an applied entry's target is not a credential")
     check(all(st.and_form(e["old"]) == e["new"] for e in plan["entries"]), "an entry disagrees with the rule")
     # Measured on origin/main 82a3dad7 merged in, 2026-11-18: 151 slash titles, 80 word joins planned, 7 whole-name
     # slashes held for a person, 64 kept (code or official name, "Medical/Surgical" among them), 0 combines. The plan
@@ -160,7 +165,7 @@ def test_committed():
         "plan size moved: %d entries, held %r" % (len(plan["entries"]), held))
     check(not any("Medical/Surgical" in e["old"] for e in plan["entries"]), "a Medical/Surgical title is planned")
     keys = {st.title_key(t) for t in creds}
-    check(not any(st.title_key(e["new"]) in keys for e in plan["entries"]),
+    check(not any(st.title_key(e["new"]) in keys for e in pending),
           "an entry's target matches a credential, case and spacing aside")
     # The guard catches a new one.
     bad = dict(creds, **{"Heating/Cooling Fundamentals": [{}]})

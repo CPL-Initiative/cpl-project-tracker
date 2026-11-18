@@ -40,6 +40,7 @@ CREDS = os.path.join(HERE, "credentials.json")
 # The newest committed baseline (kb/_college_identity_latest.py), never a folder named here.
 sys.path.insert(0, HERE)
 from _college_identity_latest import latest_crosswalk_path  # noqa: E402
+import credential_aliases  # noqa: E402  (the one resolver of a stored credential title)
 CROSSWALK = latest_crosswalk_path()
 ADOPT = os.path.join(HERE, "..", "library", "adopt", "adopt_data.json")
 DECIDED = "SkyLantern session, 2026-11-06, at Sam's ask; a curator's correction wins"
@@ -114,6 +115,22 @@ J = {
 }
 
 
+def joined():
+    """J with each exhibit read through the applied credential renames (kb/credential_aliases.py, the one reader of the
+    rename snapshots): J records a title as the session judged it, and a later rename moves it here, at read time. The
+    slash-to-and rename of 2026-11-18 moved two Autodesk titles; nothing rewrites J."""
+    now = credential_aliases.resolver(os.path.dirname(HERE))
+    out = {}
+    for code, (kind, ex, why) in J.items():
+        names = []
+        for e in ex:
+            t = now(e)
+            if t not in names:
+                names.append(t)
+        out[code] = (kind, names, why)
+    return out
+
+
 def colleges_map(names):
     """CPL-AI college names to MAP's names, through the identity crosswalk; None where MAP has no such college."""
     cw = json.load(open(CROSSWALK, encoding="utf-8"))["colleges"]
@@ -136,7 +153,7 @@ def colleges_map(names):
 def build():
     index = json.load(open(INDEX, encoding="utf-8"))
     titles = {c["code"]: c["title"] for c in index["credentials"]}
-    joins = {code: {"kind": kind, "exhibits": ex, "reason": why} for code, (kind, ex, why) in sorted(J.items())}
+    joins = {code: {"kind": kind, "exhibits": ex, "reason": why} for code, (kind, ex, why) in sorted(joined().items())}
     # The other direction, for the Exhibits List (Sam, 2026-11-06: "have the Exhibits List row name its CPL-AI pairs"):
     # each exhibit's certifications, their pairs, Strong evidence pairs, and colleges holding a Strong evidence course.
     lines = {c["code"]: c for c in index["credentials"]}
@@ -179,7 +196,7 @@ def check():
     pending = pending_titles()
     codes = {c["code"] for c in json.load(open(INDEX, encoding="utf-8"))["credentials"]}
     bad = [code for code in J if code not in codes]
-    named = {e for kind, ex, why in J.values() for e in ex}
+    named = {e for kind, ex, why in joined().values() for e in ex}
     gone = sorted(e for e in named if e not in creds and e not in pending)
     waiting = sorted(e for e in named if e not in creds and e in pending)
     have = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else None

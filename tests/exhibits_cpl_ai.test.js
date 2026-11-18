@@ -203,6 +203,24 @@ function btn(d, words) { return Array.from(d.querySelectorAll("#exh-cplai button
     const jo = require("child_process").spawnSync("python3", ["kb/_build_cpl_ai_join.py", "--check"], { encoding: "utf8" });
     check("the join is current: " + (jo.stdout || jo.stderr).trim(), jo.status === 0);
   }
+  // A credential rename moves an exhibit J names (2026-11-18: two Autodesk titles lost their slash, and main's join
+  // check failed). The builder reads J through kb/credential_aliases.py, and the rename workflow rebuilds and commits
+  // the join with the other files derived from the credential keys.
+  const joinSrc = fs.readFileSync("kb/_build_cpl_ai_join.py", "utf8");
+  check("the join builder reads J's exhibits through the credential title resolver",
+    /import credential_aliases/.test(joinSrc) && /credential_aliases\.resolver\(/.test(joinSrc)
+    && /in sorted\(joined\(\)\.items\(\)\)/.test(joinSrc) && /in joined\(\)\.values\(\)/.test(joinSrc));
+  const rs = require("child_process").spawnSync("python3", ["-c", [
+    "import sys; sys.path.insert(0, 'kb')",
+    "import _build_cpl_ai_join as J, credential_aliases as A",
+    "old = J.J['autodesk1'][1][0]; now = A.current_title(old)",
+    "print('ok' if J.joined()['autodesk1'][1] == [now] else 'bad %r %r' % (old, now))"].join("\n")], { encoding: "utf8" });
+  check("a renamed exhibit in J reads as the title it names now: " + (rs.stdout || rs.stderr).trim(), rs.status === 0 && rs.stdout.trim() === "ok");
+  const rwf = fs.readFileSync(".github/workflows/cred-rename-apply.yml", "utf8");
+  const rb = rwf.slice(rwf.indexOf("name: Rebuild the files derived from the credential keys"), rwf.indexOf("name: Rebuild the credential title moves table"));
+  const rc = rwf.slice(rwf.indexOf("name: Commit + push"));
+  check("the rename workflow rebuilds the CPL-AI join and commits it",
+    rb.includes("python3 kb/_build_cpl_ai_join.py") && rc.slice(0, rc.indexOf("git diff --cached")).includes("kb/cpl_ai/exhibit_join.json"));
   // The hosted files, when present, are whole.
   if (fs.existsSync("kb/cpl_ai/hosted/index.json")) {
     const out = require("child_process").spawnSync("python3", ["kb/_build_cpl_ai_hosted.py", "--check"], { encoding: "utf8" });
