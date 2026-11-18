@@ -6,8 +6,11 @@ name: Repo size guard
 # pull_request: the named check. The same guard also runs as a step of js-tests.yml's `lints` job, because this
 # repo's merge gate is the `test` check there (GitHub cannot require checks here, since the daily cron pushes to
 # main), so a red guard is a red `test`. The cron's direct pushes to main run neither.
-# schedule: once a week, goes red when main grew more than 50 MB compressed in the last 7 days, and names the
-# paths that grew most. It opens no issue and posts no comment; workflow-failure-watch.yml sees a red run.
+# schedule: once a week, goes red when main grew more than 50 MB compressed in the last 7 days (naming the paths
+# that grew most), or when main holds a file over 5 MB the exceptions list does not name, or a listed file past
+# 1.5 times its listed size: the cron's direct pushes skip the pull request checks, so this is where its big files
+# are checked (COBIx on #3490). It is on workflow-failure-watch.yml's list, so a red week opens an issue (Sam:
+# "make sure we don't allow to go beyond a limit"; a limit someone hears about).
 #
 # Rules, limits and how "compressed" is measured: scripts/repo_size_guard.py. Tests: tests/repo_size_guard_test.py.
 on:

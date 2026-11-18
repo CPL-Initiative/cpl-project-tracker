@@ -170,6 +170,7 @@ r = tempfile.mkdtemp(dir=ROOT)
 run(r, "init", "-q", "-b", "main")
 old = "@%d +0000" % (int(time.time()) - 30 * 86400)
 write(r, "old/history.bin", os.urandom(60 * MB))
+write(r, guard.EXCEPTIONS, "%d old/history.bin\n%d new/week.bin\n" % (60 * MB, 55 * MB))
 run(r, "add", "-A")
 run(r, "commit", "-qm", "old", env={"GIT_AUTHOR_DATE": old, "GIT_COMMITTER_DATE": old})
 write(r, "small.txt", "x")
@@ -186,6 +187,37 @@ finally:
     os.chdir(cwd)
 check("a week that adds 55 MB fails", any("weekly limit" in x for x in f), f)
 check("the weekly report names the path that grew most", any("new/week.bin" in x for x in n), n)
+
+# 9. Weekly: main's big files against the exceptions list (COBIx on #3490), since the cron's pushes skip the PR
+#    checks. A listed file within 1.5 times passes; an unlisted file over 5 MB fails; a listed file past 1.5 fails.
+r = new_repo("%d data/listed.bin\n" % (6 * MB))
+write(r, "data/listed.bin", b"\0" * (6 * MB))
+commit(r)
+cwd = os.getcwd()
+os.chdir(r)
+try:
+    f1 = guard.check_listed_files()
+    write(r, "data/unlisted.bin", b"\0" * (6 * MB))
+    commit(r)
+    f2 = guard.check_listed_files()
+    run(r, "rm", "-q", "data/unlisted.bin")
+    write(r, "data/listed.bin", b"\0" * (10 * MB))
+    commit(r)
+    f3 = guard.check_listed_files()
+    fw, nw = guard.check_weekly()
+finally:
+    os.chdir(cwd)
+check("weekly: a listed big file within 1.5 times its size passes", not f1, f1)
+check("weekly: an unlisted file over 5 MB on main fails", any("data/unlisted.bin" in x and "not on" in x for x in f2), f2)
+check("weekly: a listed file past 1.5 times its size on main fails", any("past 1.5 times" in x for x in f3), f3)
+check("weekly mode runs the list check", any("past 1.5 times" in x for x in fw), fw)
+
+# 10. A red weekly run is heard: the workflow is on workflow-failure-watch.yml's list, and the comments agree.
+watch = open(os.path.join(HERE, "..", ".github", "workflows", "workflow-failure-watch.yml"), encoding="utf-8").read()
+own = open(os.path.join(HERE, "..", ".github", "workflows", "repo-size-guard.yml"), encoding="utf-8").read()
+check("the weekly job is on the failure watch's list, so a red week opens an issue",
+      '      - "Repo size guard"\n' in watch and "stays off" not in watch and "opens an issue" in own
+      and "opens no issue" not in own)
 
 shutil.rmtree(ROOT, ignore_errors=True)
 failed = [x for x in results if not x[1]]

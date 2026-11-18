@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T09:02:20Z",
+  "written_at": "2026-11-18T09:49:55Z",
   "session": 680,
   "moniker": "SkyPhoebe",
   "run": "the CPL Queue routine",
@@ -338,16 +338,20 @@
   },
   "changes": [
     {
+      "at": "2026-11-18T09:47:00Z",
+      "text": "The night's wave merged (PR 3504): the record copies and old audit reports now live outside the repository, the size check runs on every pull request, the plan for paid rereads, and the four colleges' outline rows. The repository download fell from about 2.0 GB to 438.6 MB."
+    },
+    {
+      "at": "2026-11-18T09:16:00Z",
+      "text": "75 program records that list a required course with no units are stored with the gap named and a confidence score (PR 3497). The read first was clean and the write landed, run 44273638344, 75 rows. Next its undo is rebuilt from the rows the write returned."
+    },
+    {
       "at": "2026-11-18T09:00:00Z",
       "text": "Four colleges' course outlines were loaded: Diablo Valley 946 rows, Los Medanos 483, College of the Redwoods 443 and Golden West's 580 course objectives, 2,452 in all, so the objectives reread plan is done. Antelope Valley's trial read none of 12 pages and is held, as College of Marin is."
     },
     {
       "at": "2026-11-18T08:50:00Z",
       "text": "The plan for paid rereads (PR 3502): no reread runs without an input aimed at the list it should fix. Two records have a changed page, for 20 cents. 54 records whose catalog figures do not add up, or that print no units for a required course, take a named gap with no page read."
-    },
-    {
-      "at": "2026-11-18T08:25:00Z",
-      "text": "75 program records that list a required course with no units are stored with the gap named and a confidence score (PR 3497). The read first was clean and the write landed, run 44273638344."
     },
     {
       "at": "2026-11-18T08:23:00Z",
@@ -394,28 +398,24 @@
       "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
     },
     {
-      "at": "2026-11-17T06:46:00Z",
-      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
-    },
-    {
       "at": "2026-11-17T06:52:00Z",
       "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
     },
     {
-      "at": "2026-11-17T03:07:00Z",
-      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
+      "at": "2026-11-17T06:46:00Z",
+      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
     },
     {
-      "at": "2026-11-17T03:19:00Z",
-      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
+      "at": "2026-11-17T03:36:00Z",
+      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
     },
     {
       "at": "2026-11-17T03:28:00Z",
       "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
     },
     {
-      "at": "2026-11-17T03:36:00Z",
-      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
+      "at": "2026-11-17T03:19:00Z",
+      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
     }
   ],
   "headline": [

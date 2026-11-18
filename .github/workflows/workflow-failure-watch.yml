@@ -8,8 +8,6 @@ name: Workflow failure watch
 #
 # The two workflows that already raise their own issue stay off the list:
 # Sierra health (sierra-outage) and MAP Users sync (college-identity).
-# Repo size guard stays off too: its weekly run goes red and stops there (#3476 asks
-# for no issue and no comment).
 # tests/workflow_failure_watch_test.py fails when a scheduled workflow is neither
 # listed here nor named there with its reason.
 #
@@ -39,6 +37,7 @@ on:
       - "MAP Custom Report load (staging)"
       - "My College public layer"
       - "Program source census"
+      - "Repo size guard"
       - "Secret scan"
       - "Source CPL Stories"
       - "Weekly reflections summary (public-safe)"

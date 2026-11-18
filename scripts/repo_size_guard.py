@@ -14,7 +14,9 @@ Pull request mode (the default) fails when:
 It warns, and never fails, when START_HERE.md passes 600 words or CLAUDE.md passes 2,000.
 
 Weekly mode (--weekly) fails when main grew more than WEEKLY_CAP_MB compressed in the last 7 days, and names
-the paths that grew most.
+the paths that grew most; and when main holds a file over FILE_CAP_MB the exceptions list does not name, or a
+listed file past GROWTH_FACTOR times its listed size (the cron's direct pushes skip the pull request checks).
+A red weekly run opens an issue through workflow-failure-watch.yml.
 
 Every size comes from git objects (ls-tree, cat-file, diff-tree), never from the working tree, so a sparse
 checkout gives the same answer as a full one. A megabyte here is 1,048,576 bytes, the unit COBIx measured in.
@@ -250,7 +252,26 @@ def check_weekly(days=7, cwd=None):
     if total > WEEKLY_CAP_MB * MB:
         fails.append("main grew %s compressed in the last %d days, over the %d MB weekly limit; the paths above "
                      "grew most" % (mb(total), days, WEEKLY_CAP_MB))
+    fails.extend(check_listed_files(cwd))
     return fails, notes
+
+
+def check_listed_files(cwd=None):
+    """main's files over the cap against the exceptions list (COBIx on #3490): the cron's direct pushes skip the
+    pull request checks, so its big files are checked here. A file over FILE_CAP_MB the list does not name, or a
+    listed file past GROWTH_FACTOR times its listed size, fails."""
+    listed = parse_exceptions(read_blob("HEAD:" + EXCEPTIONS, cwd))
+    fails = []
+    for line in list_over_limit(cwd):
+        size, path = line.split(" ", 1)
+        size = int(size)
+        if path not in listed:
+            fails.append("main holds %s, %s, over the %d MB file limit and not on %s" % (path, mb(size), FILE_CAP_MB,
+                                                                                      EXCEPTIONS))
+        elif size > GROWTH_FACTOR * listed[path]:
+            fails.append("main's %s is %s, past %.1f times its listed %s" % (path, mb(size), GROWTH_FACTOR,
+                                                                         mb(listed[path])))
+    return fails
 
 
 def list_over_limit(cwd=None):

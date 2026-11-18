@@ -21,7 +21,7 @@ Read this file, then the NEXT lines of `docs/reference/lanes/program-requirement
 
 ## What shipped
 
-<<FINAL-MERGED>>
+Merged to `main`, not counting this checkpoint: #3491 (e50a87fb), #3495 (25c79493), #3496 (71548415) and the wave #3504 (c2b1adcc), which carries ten PRs: #3498, #3501, #3490, #3503, #3502, #3387, #3493, #3488, #3489 and #3421, each closed with a pointer.
 
 - **Slimming, #3476 Part 4** (Sam, relayed by COBIx: *"Let's move the bloated data out first thing and make sure we
   don't allow to go beyond a limit."*). **#3495** (`main` 25c79493): display receipts are built, stored and applied by
@@ -126,9 +126,10 @@ hand works the queue itself.
 
 | PR | State | Next |
 |---|---|---|
-| #3491, #3495, #3496 | merged | none |
-| #3504 the wave (#3498, #3501, #3490, #3503, #3502, #3387, #3493, #3488, #3489, #3421) | merged | each carried PR closed with a pointer |
-| #3487 this checkpoint | holds `main` with the wave | the conductor merges it last |
+| #3491, #3495, #3496 | merged (e50a87fb, 25c79493, 71548415) | none |
+| #3504 the wave | merged, c2b1adcc | none |
+| #3498, #3501, #3490, #3503, #3502, #3387, #3493, #3488, #3489, #3421 | closed with a pointer to #3504 | none |
+| #3487 this checkpoint | holds `main` (c2b1adcc) with the wave | the conductor merges it last |
 | #3497 named gaps | applied, 75 rows returned (run 44273638344) | rebuild the rollback from the returned rows, merge `main`, CI, merge |
 | #3284, #3492, #3494 | outcome reads in flight | load, then merge |
 | #3499 Lassen, #3500 Cosumnes River | pinned | per NEXT 4 |
@@ -137,9 +138,11 @@ hand works the queue itself.
 The conductor drops every PR subscription, check-in and artifact watch it holds at sign-off and names each in its
 closing message. This firing had no `get_trigger`, so the routine's next run is not recorded here.
 
-<<FINAL-SPEND>>
+Spend: not available; 2026-11-18T06:12Z to 2026-11-18T09:49Z.
 
-<<FINAL-LINE>>
+This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts at 09:13Z, for pricing: the conductor 177 API calls, 0.28 million output, 0.58 million cache-write and 70.5 million cache-read tokens; 23 worker and reader agents 1,466 calls, 1.02 million output, 6.84 million cache-write and 285.2 million cache-read tokens; the small gate checks 27 calls. The collection, curation and infrastructure split was not measured.
+
+S680: cost not available (token counts above); records collected: 131 program records (56 rescored by the units rules, 75 collected with a named gap, #3497 run 44273638344) plus 9 discontinued programs flagged; outline rows added 2,452; substantive PRs merged 4 (#3491, #3495, #3496 and the wave #3504, which carries ten PRs' work).
 
 Opening line: *Greetings, you are SkyGrebe (Session 681), see SkyPhoebe's handoff, `docs/session_681_handoff.md`,
 let's keep rolling with our queue.*

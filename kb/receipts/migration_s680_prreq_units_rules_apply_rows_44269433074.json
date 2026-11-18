@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_prreq_units_rules_apply_rows.sql",
+ "name": "s680_prreq_units_rules_apply_rows",
+ "version": "20261118084743",
+ "sha256": "269e067f61340b588e221fc825a12b5403c1c5caedc54133407ac767d3f22d0d",
+ "run": "44269433074",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  22P02: invalid input syntax for type integer: \\\"s680 full-row guard: the UPDATE matched 0 rows, the plan names 39\\\"\\n\"}"
+}
