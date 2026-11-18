@@ -523,13 +523,16 @@ MIGRATIONS = os.path.join(HERE, "migrations")
 
 
 def replan(receipt: dict, applied_checks: dict | None = None, applied_from: str | None = None,
-           drop: tuple = (), why: str | None = None, tag: str = "s680") -> dict:
+           drop: tuple = (), why: str | None = None, tag: str = "s680",
+           applied_rows: dict | None = None, rows_from: str | None = None) -> dict:
     """The receipt after a live step, in place, without rescoring a record a second time:
       * applied_checks, the checks-only apply's migrate receipt: the rows it returned are marked applied, and the
         checks-only rollback is rebuilt from those rows alone (the guarded shape, kb/_guarded_sql.py);
       * drop, (college, control_number) pairs: each leaves the full-row plan for receipt["held_out"] with why, and
-        the full-row apply and rollback are rebuilt from the rows left. Places i never change, so a returned key
-        still names its row."""
+        the full-row apply and rollback are rebuilt from the rows left;
+      * applied_rows, the full-row apply's migrate receipt: the rows it returned are marked applied, and the
+        full-row rollback is rebuilt from those rows alone.
+    Places i never change, so a returned key still names its row."""
     by_i = {r["i"]: r for r in receipt["records"]}
     if applied_checks is not None:
         got = RS.returned_value(applied_checks)
@@ -559,6 +562,19 @@ def replan(receipt: dict, applied_checks: dict | None = None, applied_from: str 
         full = [by_i[i] for i in receipt["plan"]["full_row"]]
         receipt["apply_full_row"] = full_row_apply(full, tag)
         receipt["rollback_full_row"] = full_row_rollback(full, tag)
+    if applied_rows is not None:
+        got = RS.returned_value(applied_rows)
+        plan = set(receipt["plan"]["full_row"])
+        stray = [i for i in got["keys"] if i not in plan]
+        if stray:
+            raise ValueError("returned places outside the full-row plan: %s" % stray[:10])
+        rows = [by_i[i] for i in sorted(set(got["keys"]))]
+        for r in rows:
+            r["applied"] = {"part": "full_row", "from": rows_from}
+        receipt["applied"] = dict(receipt.get("applied") or {}, full_row={
+            "from": rows_from, "returned": len(rows), "keys": [r["i"] for r in rows],
+            "skipped_checked": got.get("skipped_checked") or []})
+        receipt["rollback_full_row"] = full_row_rollback(rows, tag)
     return receipt
 
 
@@ -571,11 +587,14 @@ def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> No
     nr = collections.Counter(r["rule"] for r in full)
     applied = (receipt.get("applied") or {}).get("checks_only")
     hdr = ("-- %s cheap piles, item 2: the units rules. Receipt: %s.\n"
-           "-- The plan in two parts (second reader's F1): checks-only, A1 %d rows%s; full-row, A4 and A5 %d rows (%s).\n"
+           "-- The plan in two parts (second reader's F1): checks-only, A1 %d rows%s; full-row, A4 and A5 %d rows (%s)%s.\n"
            "-- A6 is off (F5). The collection lane's twelve colleges are not in the list (kb/collection_lane.py).\n"
            % (tag.upper(), receipt_path, len(checks),
               (", applied (%s returned %d)" % (applied["from"], applied["returned"])) if applied else "",
-              len(full), ", ".join("%s %d" % kv for kv in sorted(nr.items()))))
+              len(full), ", ".join("%s %d" % kv for kv in sorted(nr.items())),
+              (", applied (%s returned %d)" % ((receipt.get("applied") or {})["full_row"]["from"],
+                                               (receipt.get("applied") or {})["full_row"]["returned"]))
+              if (receipt.get("applied") or {}).get("full_row") else ""))
     held = "".join("-- Held out of the full-row plan: %s %s (%s).\n" % (h["college"], h["control_number"], h["why"])
                    for h in receipt.get("held_out") or [])
     base = os.path.join(MIGRATIONS, "%s_%s_prreq_units_rules_" % (day, tag))
@@ -595,6 +614,16 @@ def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> No
                                 "its expect line for a partial rollback).\n"
                                 % (applied["returned"] if applied else len(checks)) + receipt["rollback_checks_only"]),
     }
+    rows_applied = (receipt.get("applied") or {}).get("full_row")
+    if rows_applied:
+        # The full-row apply ran as committed (its migrate receipt holds the file's sha256): it stays as it ran, and
+        # the rollback names the rows it returned.
+        del parts["apply_rows.sql"]
+        parts["rollback_rows.sql"] = (
+            held + "-- Rollback of part 2, NOT applied: the %d rows the full-row apply returned (%s), the before-image\n"
+            "-- back where the row still holds the after-image, skipping and listing a row a person checked; it aborts\n"
+            "-- unless it matches those rows less the checked ones (edit expect for a partial rollback).\n"
+            % (rows_applied["returned"], rows_applied["from"]) + receipt["rollback_full_row"])
     for name, text in parts.items():
         with open(base + name, "w", encoding="utf-8") as fh:
             fh.write(hdr + text + "\n")
@@ -608,6 +637,8 @@ def main(argv=None) -> int:
     ap.add_argument("--receipt", help="replan this receipt after a live step (no rescoring)")
     ap.add_argument("--applied-checks", help="the checks-only apply's migrate receipt: mark its rows applied and "
                                              "rebuild the checks-only rollback from them")
+    ap.add_argument("--applied-rows", help="the full-row apply's migrate receipt: mark its rows applied and rebuild "
+                                           "the full-row rollback from them")
     ap.add_argument("--drop", action="append", default=[], help="COLLEGE:CONTROL_NUMBER out of the full-row plan")
     ap.add_argument("--drop-why", help="why the dropped rows leave the plan")
     a = ap.parse_args(argv)
@@ -618,10 +649,15 @@ def main(argv=None) -> int:
         if a.applied_checks:
             with open(a.applied_checks, encoding="utf-8") as fh:
                 mig = json.load(fh)
+        rows_mig = None
+        if a.applied_rows:
+            with open(a.applied_rows, encoding="utf-8") as fh:
+                rows_mig = json.load(fh)
         if a.drop and not a.drop_why:
             ap.error("--drop needs --drop-why")
-        replan(receipt, mig, os.path.relpath(os.path.abspath(a.applied_checks), ROOT) if a.applied_checks else None,
-               tuple(tuple(d.rsplit(":", 1)) for d in a.drop), a.drop_why, a.tag)
+        rel = lambda p: os.path.relpath(os.path.abspath(p), ROOT) if p else None  # noqa: E731
+        replan(receipt, mig, rel(a.applied_checks), tuple(tuple(d.rsplit(":", 1)) for d in a.drop), a.drop_why,
+               a.tag, rows_mig, rel(a.applied_rows))
         with open(a.receipt, "w", encoding="utf-8") as fh:
             json.dump(receipt, fh, ensure_ascii=False, indent=1)
             fh.write("\n")

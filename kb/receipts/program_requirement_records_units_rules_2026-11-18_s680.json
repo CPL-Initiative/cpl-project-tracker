@@ -485,7 +485,11 @@
      "listed": 18
     }
    },
-   "i": 4
+   "i": 4,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Cerritos College",
@@ -723,7 +727,11 @@
      "listed": 8
     }
    },
-   "i": 5
+   "i": 5,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Cerritos College",
@@ -1507,7 +1515,11 @@
      "listed": 42
     }
    },
-   "i": 6
+   "i": 6,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Cerritos College",
@@ -1988,7 +2000,11 @@
      "listed": 10
     }
    },
-   "i": 10
+   "i": 10,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -2208,7 +2224,11 @@
      "listed": 5
     }
    },
-   "i": 11
+   "i": 11,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -2900,7 +2920,11 @@
      "listed": 29
     }
    },
-   "i": 12
+   "i": 12,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -3120,7 +3144,11 @@
      "listed": 5
     }
    },
-   "i": 13
+   "i": 13,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Citrus College",
@@ -4040,7 +4068,11 @@
      "listed": 51
     }
    },
-   "i": 14
+   "i": 14,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "College of Marin",
@@ -4423,7 +4455,11 @@
      "listed": 10
     }
    },
-   "i": 15
+   "i": 15,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -5007,7 +5043,11 @@
      "listed": 29
     }
    },
-   "i": 16
+   "i": 16,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -5367,7 +5407,11 @@
      "listed": 13
     }
    },
-   "i": 17
+   "i": 17,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "College of the Desert",
@@ -5617,7 +5661,11 @@
      "listed": 7
     }
    },
-   "i": 18
+   "i": 18,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "College of the Sequoias",
@@ -5988,7 +6036,11 @@
      "listed": 13
     }
    },
-   "i": 20
+   "i": 20,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Folsom Lake College",
@@ -6375,7 +6427,11 @@
      "listed": 12
     }
    },
-   "i": 22
+   "i": 22,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Fullerton College",
@@ -6651,7 +6707,11 @@
      "listed": 10
     }
    },
-   "i": 23
+   "i": 23,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Fullerton College",
@@ -7139,7 +7199,11 @@
      "listed": 21
     }
    },
-   "i": 24
+   "i": 24,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -7575,7 +7639,11 @@
      "listed": 14
     }
    },
-   "i": 25
+   "i": 25,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -7983,7 +8051,11 @@
      "listed": 10
     }
    },
-   "i": 30
+   "i": 30,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Long Beach City College",
@@ -8625,7 +8697,11 @@
      "listed": 36
     }
    },
-   "i": 31
+   "i": 31,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Los Angeles Mission College",
@@ -8919,7 +8995,11 @@
      "listed": 10
     }
    },
-   "i": 32
+   "i": 32,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Madera College",
@@ -9286,7 +9366,11 @@
      "listed": 9
     }
    },
-   "i": 33
+   "i": 33,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Merritt College",
@@ -9610,7 +9694,11 @@
      "listed": 8
     }
    },
-   "i": 34
+   "i": 34,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -9916,7 +10004,11 @@
      "listed": 11
     }
    },
-   "i": 35
+   "i": 35,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -10222,7 +10314,11 @@
      "listed": 11
     }
    },
-   "i": 36
+   "i": 36,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -10516,7 +10612,11 @@
      "listed": 10
     }
    },
-   "i": 38
+   "i": 38,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -10806,7 +10906,11 @@
      "listed": 10
     }
    },
-   "i": 39
+   "i": 39,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -11096,7 +11200,11 @@
      "listed": 10
     }
    },
-   "i": 40
+   "i": 40,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "MiraCosta College",
@@ -11390,7 +11498,11 @@
      "listed": 10
     }
    },
-   "i": 41
+   "i": 41,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Modesto Junior College",
@@ -12015,7 +12127,11 @@
      "listed": 20
     }
    },
-   "i": 45
+   "i": 45,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Mt. San Antonio College",
@@ -12240,7 +12356,11 @@
      "listed": 7
     }
    },
-   "i": 46
+   "i": 46,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Oxnard College",
@@ -12594,7 +12714,11 @@
      "listed": 14
     }
    },
-   "i": 47
+   "i": 47,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Pasadena City College",
@@ -12924,7 +13048,11 @@
      "listed": 11
     }
    },
-   "i": 48
+   "i": 48,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Saddleback College",
@@ -13271,7 +13399,11 @@
      "listed": 7
     }
    },
-   "i": 49
+   "i": 49,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "San Diego City College",
@@ -13951,7 +14083,11 @@
      "listed": 31
     }
    },
-   "i": 51
+   "i": 51,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Santa Rosa Junior College",
@@ -14171,7 +14307,11 @@
      "listed": 5
     }
    },
-   "i": 52
+   "i": 52,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Sierra College",
@@ -14586,7 +14726,11 @@
      "listed": 10
     }
    },
-   "i": 53
+   "i": 53,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Sierra College",
@@ -14902,7 +15046,11 @@
      "listed": 12
     }
    },
-   "i": 54
+   "i": 54,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Taft College",
@@ -15284,7 +15432,11 @@
      "listed": 12
     }
    },
-   "i": 56
+   "i": 56,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   },
   {
    "college": "Ventura College",
@@ -15809,7 +15961,11 @@
      "listed": 25
     }
    },
-   "i": 57
+   "i": 57,
+   "applied": {
+    "part": "full_row",
+    "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json"
+   }
   }
  ],
  "plan": {
@@ -15905,6 +16061,52 @@
     44,
     50,
     55
+   ],
+   "skipped_checked": []
+  },
+  "full_row": {
+   "from": "kb/receipts/migration_s680_prreq_units_rules_apply_rows_44261575737.json",
+   "returned": 39,
+   "keys": [
+    4,
+    5,
+    6,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    22,
+    23,
+    24,
+    25,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    38,
+    39,
+    40,
+    41,
+    45,
+    46,
+    47,
+    48,
+    49,
+    51,
+    52,
+    53,
+    54,
+    56,
+    57
    ],
    "skipped_checked": []
   }

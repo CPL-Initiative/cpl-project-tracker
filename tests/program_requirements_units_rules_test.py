@@ -211,6 +211,22 @@ if os.path.isfile(RECEIPT):
           and all((r.get("applied") or {}).get("part") == "checks_only" for r in rc["records"]
                   if r["i"] in set(ap_.get("keys") or [])) and "e(expect) as (values (17))" in rc["rollback_checks_only"],
           "the 17 checks-only rows are marked applied and the rollback names them")
+    # The full-row apply ran (migrate run 44261575737, 39 returned, none checked): marked applied, its rollback
+    # names exactly the returned rows, and the committed apply is byte for byte the file that ran.
+    apr = (rc.get("applied") or {}).get("full_row") or {}
+    check(apr.get("returned") == 39 and sorted(apr.get("keys") or []) == sorted(rc["plan"]["full_row"])
+          and all((r.get("applied") or {}).get("part") == "full_row" for r in rc["records"]
+                  if r["i"] in set(apr.get("keys") or [])) and "e(expect) as (values (39))" in rc["rollback_full_row"],
+          "the 39 full-row rows are marked applied and the rollback names them")
+    import hashlib  # noqa: E402
+    mig_dir = os.path.join(ROOT, "kb", "migrations")
+    for part, run_ in (("apply_rows", "44261575737"), ("apply_checks", "44259625861")):
+        rp = os.path.join(ROOT, "kb", "receipts", "migration_s680_prreq_units_rules_%s_%s.json" % (part, run_))
+        if os.path.isfile(rp):
+            with open(rp, encoding="utf-8") as fh:
+                want = json.load(fh)["sha256"]
+            with open(os.path.join(mig_dir, "2026-11-18_s680_prreq_units_rules_%s.sql" % part), "rb") as fh:
+                check(hashlib.sha256(fh.read()).hexdigest() == want, "%s is the file migrate run %s applied" % (part, run_))
     # MiraCosta 21976 is live on an older run than its filed record: out of the full-row plan, a load question.
     check(len(rc["plan"]["full_row"]) == 39 and "e(expect) as (values (39))" in rc["apply_full_row"]
           and "e(expect) as (values (39))" in rc["rollback_full_row"]
