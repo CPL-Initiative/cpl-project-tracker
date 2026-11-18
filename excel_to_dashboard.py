@@ -8498,9 +8498,11 @@ def export_unified_courses():
             return None
         # `honors_of` (S653) is the same kind of record: a bot-written
         # equivalence on the Honors id, not a review of the row.
+        # A `ruling` (issue 3447) is the Discipline-in-doubt reason folded
+        # under its M-ID; its discipline row, when one landed, is what verifies.
         return c if any(k for k in c if k not in (
             "merge_dismissed", "honors_of", "reviewed_by", "reviewed_at",
-            "validated_at", "validated_by")) else None
+            "validated_at", "validated_by", "ruling")) else None
 
     def reviewed_by_of(cid):
         return (curation.get(cid) or {}).get("reviewed_by")

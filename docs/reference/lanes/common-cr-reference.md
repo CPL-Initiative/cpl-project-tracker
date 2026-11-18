@@ -33,6 +33,7 @@ anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six
 are Sam's to decide on the tab. The title-rung sitting at the foot of this file is the CCR's ladder,
 not this reference's.
 
+<<<<<<< HEAD
 ## ACE's own text beside MAP's (S678, 2026-11-17; COBIx item 5 on #3464)
 
 `View_ExhibitCRsCatalog_Dataset`'s `CreditRecommendation` is now kept: one row per distinct (AceID, wording) in
@@ -49,6 +50,12 @@ compares and never rewrites source text. The runner log prints, from the same pu
 differs + ACE text missing = MAP pairs, and the MAP pairs the rule settles on their own exhibit. COBIx measured 859
 rows for the rule and 25,984 waiting on ACE text; both re-measure from the first fill's log. Open: the truncation
 and run-on rule (AR-0102-0007, 593 rows), and whether a settled state is stored anywhere beyond the log and panel.
+=======
+**NEXT (S678, #3468 draft, COBIx item 5):** ACE's `CreditRecommendation` kept beside MAP's wording (migration
+`map_ace_catalog_cr`, not applied; side by side in `#cr-reference`; the typographic rule); its section rides on the
+PR's branch. Before the apply, the second reader's three: the view's `btrim` filter (not leakproof, 1.3 to 2.8 s against
+anon's 3 s timeout), the matcher's self-recall test (measurable only on first fill), and a sum check that can fire.
+>>>>>>> origin/main
 
 ## The List (S542, 2026-11-01)
 
@@ -100,34 +107,8 @@ verified member-by-member against
 `kb/receipts/cr_reference_decisions_2026-09-20_s280.json`; rollback is one delete
 on that `updated_by`. The table still holds exactly these 30 (read 2026-09-29).
 
-## The magic half is one module now (2026-09-21, S281 SkyAnvil)
+**The magic half is one module (S281 SkyAnvil, 2026-09-21), with its triage of 2026-09-29,** moved verbatim to [`docs/roadmap_archive.md`](../../roadmap_archive.md), *Moved from lanes/common-cr-reference.md (S678 checkpoint)*.
 
-`kb/_jev_adjudicate.py` is the single Jev adjudication routine for every
-reference — CSR, CER and CCRR wired, CCR deliberately not. The method+magic
-pattern is [`playbook-trail-crew-method-magic-audit`](../../kb-notes/playbook-trail-crew-method-magic-audit.md),
-which ran it twice on 2026-07-10; every reference already owns a METHOD half and
-what differs is the magic one. CCRR's blocking is **imported** from
-`_typesafe_cr_trial.build_pairs()`, never reimplemented.
-
-⚠️ **THE SECOND LOOK NEVER SEES THE VERDICT IT CHECKS.** The playbook requires a
-skeptic on every merge; its working version re-derived the numbers rather than
-re-reading the claim. Jev cannot read a registry, so re-derivation here is the
-NEGATIVE question put to the same evidence in a separate call with the first
-answer withheld — "critique this proposal" is the shape that rubber-stamps. A
-refuted proposal routes to the curator however confident the first look was, and
-a 0.5 hedge is not a refutation. Run it from
-`.github/workflows/typesafe-smoke.yml` (typesafe.ai is egress-blocked from the
-sandbox); it SUGGESTS and writes nothing.
-
-**Triage, measured 2026-09-29 on fresh scans (#1735):** CER 38 worth a call ·
-CSR 15 · CCRR 55 anchored pairs, the receipt's 51 all present; the 4 new ones sit
-under `community relations`, the named hard case.
-
-⚠️ **SCORE AGAINST `by: "sam"` ROWS ONLY.** The decision sheet went opt-out on
-2026-09-21, so an untouched item carries the recommendation marked
-`by: "default"`. Scoring a matcher against those measures it against its own
-proposals. The 2026-09-20 receipt predates opt-out and is entirely his, which is
-why it is the ground truth.
 
 ## Moved to the lessons doc (S467, 2026-10-24)
 
