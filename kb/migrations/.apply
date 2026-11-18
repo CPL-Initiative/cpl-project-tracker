@@ -1,7 +1,2 @@
-<<<<<<< HEAD
-file=kb/migrations/2026-11-17_s678_map_ace_catalog_cr.sql
-name=s678_map_ace_catalog_cr
-=======
 file=kb/migrations/2026-11-17_s678_cpl_memory_rows.sql
 name=s678_cpl_memory_rows
->>>>>>> origin/main
