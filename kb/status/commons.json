@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T04:02:00Z",
+ "written_at": "2026-11-18T08:39:04Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14836,
+     "n": 14885,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2617,
+     "n": 2568,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -75,8 +75,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14836,
-    "failing": 2617,
+    "complete": 14885,
+    "failing": 2568,
     "unread": 2829,
     "records": 19111,
     "colleges": 118,
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-17T03:13:28Z",
+    "at": "2026-11-18T04:02:04+00:00",
     "every_hours": null
    },
    "facts": {
@@ -766,7 +766,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2617,
+    "n": 2568,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -1042,6 +1042,17 @@
     }
    ],
    "at": "2026-11-18T04:01:30Z"
+  },
+  {
+   "kind": "decision",
+   "project": "exhibit",
+   "n": 1,
+   "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
+   "teaches": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
+   "open": null,
+   "todo_id": "slash-whole-name-titles-s679",
+   "chosen": "They stay as printed.",
+   "stop": "It stands unless you change it."
   },
   {
    "kind": "job",
