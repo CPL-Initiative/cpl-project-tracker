@@ -36,6 +36,15 @@ check("top_code is NOT inferred-high", c["state"] != "inferred-high")
 check("top_division classifies inferred-low",
       ra._classify_mid_discipline(rec("top_division"))["state"] == "inferred-low")
 
+# (2b) Issue 3454: the confidence scorer's decisions are machine-decided, never seed-untouched (so the seedless tag
+# stops counting them) and never a person's confirmation.
+for src in ("confidence_v1", "past_rulings_v1"):
+    st = ra._classify_mid_discipline(rec(src))["state"]
+    check(src + " classifies machine-decided", st == "machine-decided")
+    check(src + " is NOT seed-untouched", st != "seed-untouched")
+    check(src + " is NOT curated", st != "curated")
+check("machine-decided carries a field score", ra.STATE_SCORE.get("machine-decided") == 0.80)
+
 # (3) subject_map (curator-anchored) KEEPS the high tier — the split we protect.
 check("subject_map stays inferred-high",
       ra._classify_mid_discipline(rec("subject_map"))["state"] == "inferred-high")
