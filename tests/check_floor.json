@@ -197,6 +197,7 @@
     "issuer_tags.test.js": 12,
     "exhibits_review_list.test.js": 22,
     "exhibits_review_reconcile.test.js": 50,
+    "exhibits_same_subject.test.js": 24,
     "exhibits_served_paths.test.js": 9,
     "factsheet_a11y.test.js": 69,
     "factsheet_edit.test.js": 35,
