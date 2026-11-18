@@ -1462,12 +1462,12 @@ import tempfile as _tempfile  # noqa: E402
 _CR = "Cosumnes River College"
 _CR_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river")
 _cr_all_pins = _cr_conf.get("pdf_pages") or {}
-# S680 pins six local degrees too (checked below, "the heading's page"); the S650 checks read the two.
-_CR_S680 = {"11338": 168, "04614": 169, "04607": 179, "11319": 205, "07305": 212, "04602": 248}
+# S680 pins four local degrees too (checked below, "the heading's page"); the S650 checks read the two.
+_CR_S680 = {"11338": 168, "04607": 179, "11319": 205, "07305": 212}
 _cr_pins = {cn: v for cn, v in _cr_all_pins.items() if cn not in _CR_S680}
 _cr_capture = json.load(open(os.path.join(_CR_DIR, "capture.json")))
 _cr_picks = {p["control_number"]: p for p in _cr_capture["pdf"]["picks"]}
-check("the entry pins 30566 to p.552 and 33072 to p.404, and beside them only the six S680 pins",
+check("the entry pins 30566 to p.552 and 33072 to p.404, and beside them only the four S680 pins",
       {cn: v["page"] for cn, v in _cr_all_pins.items()} == dict({"30566": 552, "33072": 404}, **_CR_S680))
 check("each pin's words are what the filed capture opened on, on the pinned page, and its evidence names both runs",
       all(" ".join(v["words"].split()) in _cr_picks[cn]["opens"] and _cr_picks[cn]["pages"][0] == v["page"]
@@ -1648,16 +1648,26 @@ _s6_cut = {cn: _re.sub(r"\s+", " ", C.pdf_best("https://x.edu/c.pdf", _s6_pages,
                                                 C.pdf_pinned_heading(_s6_pages, dict(_s6_lists[cn]),
                                                                      _cr_all_pins[cn])[0])["text"])
            for cn in _CR_S680}
-check("11338, 04607, 11319 and 07305: the text opens on the pin's words",
-      all(_s6_cut[cn].startswith("[page %d] %s" % (_CR_S680[cn], _cr_all_pins[cn]["words"]))
-          for cn in ("11338", "04607", "11319", "07305")))
-check("the S680 pins raise the share of the listed courses read: 11338, 04614, 04607, 07305 and 04602",
+check("every S680 pin's text opens on the pin's words, its own heading",
+      all(_s6_cut[cn].startswith("[page %d] %s" % (_CR_S680[cn], _cr_all_pins[cn]["words"])) for cn in _CR_S680))
+# The S680 second reader: 04614 and 04602 share the cause, but on their pages the lines above the heading name listed
+# codes, so pdf_best does not cut there and the text opens on the program before (Art - Design's tail; Information
+# Technology's whole list, CISC 310 found only there). Neither is pinned until a reader fix makes the cut.
+_s6_uncut = {"04614": {"page": 169, "words": "A.A. in Art - Studio Art"},
+             "04602": {"page": 248, "words": "A.S. in Management Information Systems"}}
+for _cn, _pin in _s6_uncut.items():
+    _h, _ = C.pdf_pinned_heading(_s6_pages, dict(_s6_lists[_cn]), _pin)
+    _t = _re.sub(r"\s+", " ", C.pdf_best("https://x.edu/c.pdf", _s6_pages, dict(_s6_lists[_cn], control_number=_cn),
+                                         [{"code": c} for c in _s6_lists[_cn]["codes"]], "pypdf", _h)["text"])
+    check("%s carries no pin, and a pin at its heading would open on the program before it" % _cn,
+          _cn not in _cr_all_pins and _h is not None and not _t.startswith("[page %d] %s" % (_pin["page"], _pin["words"])))
+check("the S680 pins raise the share of the listed courses read: 11338, 04607 and 07305",
       all(C.pdf_best("https://x.edu/c.pdf", _s6_pages, dict(_s6_lists[cn], control_number=cn),
                      [{"code": c} for c in _s6_lists[cn]["codes"]], "pypdf",
                      C.pdf_pinned_heading(_s6_pages, dict(_s6_lists[cn]), _cr_all_pins[cn])[0])["coverage"]
           > C.pdf_best("https://x.edu/c.pdf", _s6_pages, dict(_s6_lists[cn], control_number=cn),
                        [{"code": c} for c in _s6_lists[cn]["codes"]], "pypdf")["coverage"]
-          for cn in ("11338", "04614", "04607", "07305", "04602")))
+          for cn in ("11338", "04607", "07305")))
 
 print("RCCD's repeated course rows (S672; college page reads 44034775728 and 44045355408)")
 # Each page prints a course's row once per enrollment, and the reading keeps one row. The filed record may already
