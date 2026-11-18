@@ -100,6 +100,7 @@ function makeDom(opts) {
   window.sessionStorage.setItem("cpl_sb", JSON.stringify({
     access_token: jwt, refresh_token: "rt", email: "map@rccd.edu",
     exp: Date.now() + 3600000 }));
+  require("./lib/combine_guard_env.js").install(window);
   window.eval(src);
   return { window, log };
 }

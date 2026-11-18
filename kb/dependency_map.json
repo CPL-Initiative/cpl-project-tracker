@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1031,
+  "file_datasets": 1032,
   "external_services": 195,
   "consumers": 611,
   "workflows": 72,
@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4360,
+     "line": 4359,
      "tabs": [
       "exhibits"
      ]
@@ -1670,7 +1670,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5359,
+     "line": 5488,
      "tabs": [
       "credential-reference"
      ]
@@ -3815,7 +3815,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3881,
+     "line": 3920,
      "tabs": [
       "credential-reference"
      ]
@@ -6542,6 +6542,29 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:combine_guard.js": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3923,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:commons.js": {
    "consumers": [
     {
@@ -6650,7 +6673,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4352,
+     "line": 4351,
      "tabs": [
       "exhibits"
      ]
@@ -6743,7 +6766,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4864,
+     "line": 4854,
      "tabs": [
       "exhibits"
      ]
@@ -6789,7 +6812,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5721,
+     "line": 5850,
      "tabs": [
       "credential-reference"
      ]
@@ -7643,7 +7666,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5839,
+     "line": 5968,
      "tabs": [
       "credential-reference"
      ]
@@ -8584,7 +8607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5722,
+     "line": 5851,
      "tabs": [
       "credential-reference"
      ]
@@ -8620,7 +8643,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5153,
+     "line": 5143,
      "tabs": [
       "exhibits"
      ]
@@ -11495,7 +11518,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5460,
+     "line": 5589,
      "tabs": [
       "credential-reference"
      ]
@@ -11816,7 +11839,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 48
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -14331,7 +14354,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5096,
+     "line": 5225,
      "tabs": [
       "credential-reference"
      ]
@@ -15086,7 +15109,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 46
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -16211,7 +16234,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4383,
+     "line": 4382,
      "tabs": [
       "exhibits"
      ]
@@ -16331,16 +16354,6 @@
   },
   "file:kb/exhibit_left_map.json": {
    "consumers": [
-    {
-     "id": "module:exhibits.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 4380,
-     "tabs": [
-      "exhibits"
-     ]
-    },
     {
      "id": "script:kb/_apply_left_map.py",
      "kind": "script",
@@ -17144,7 +17157,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5119,
+     "line": 5248,
      "tabs": [
       "credential-reference"
      ]
@@ -21507,7 +21520,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 47
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -32479,14 +32492,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 305
+     "line": 323
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 312
+     "line": 330
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

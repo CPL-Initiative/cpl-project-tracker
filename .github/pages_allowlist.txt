@@ -193,6 +193,7 @@ publish college_identity_data.js
 publish college_lookup.js
 publish college_report_generator.js
 publish college_short_names.js
+publish combine_guard.js
 publish commons.js
 publish commons_ase.js
 publish commons_curation_eta.js

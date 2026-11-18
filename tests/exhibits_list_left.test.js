@@ -11,6 +11,8 @@
 //       the guard covers Combine (S679);
 //   (7) the guard reads a pending rename's chain, and Move and Remove only where nothing uses the title;
 //   (8) one choke point writes every fold: the List's Accept, Combine and Re-point, guarded on the title the write lands on.
+//   (9) the two-step case: a Rename onto an existing title of the other group, then the Common Exhibit Reference tab's
+//       Confirm merge, which reads the same guard (combine_guard.js).
 // Run from repo root: `npm test` (or `node tests/exhibits_list_left.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -25,6 +27,7 @@ function txt(el) {
 }
 const src = fs.readFileSync("exhibits.js", "utf8");
 const listSrc = fs.readFileSync("commons_list.js", "utf8");
+const GSRC = fs.readFileSync("combine_guard.js", "utf8");
 check("the engine documents the panel hook", /\/\/   panel              \{ label\(r\)/.test(listSrc));
 check("the panel's CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(src.slice(src.indexOf('".exh-l-pn-h'), src.indexOf('".exh-vh'))));
 
@@ -114,6 +117,7 @@ function load(opts) {
     if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
     setTimeout(cb, 0);
   } };
+  require("./lib/combine_guard_env.js").install(w, 404);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, root: w.document.getElementById("exhibits-root"), calls: calls };
 }
@@ -234,6 +238,34 @@ const AUDIT = { title_cards: [
     && rpost[0].value === "Emergency Medical Technician (EMT)" && !rpost.some((b) => /^_LEFT_MAP::|^_UNCLASSIFIED::/.test(b.course_id || "")), JSON.stringify(rpost));
   check("(6) the row says what the rename did", /Renamed: Emergency Medical Technician is saved as Emergency Medical Technician \(EMT\)/.test(txt(panel(rn.d))), txt(panel(rn.d)).slice(0, 600));
 
+  // (9) S679, the two-step case: Rename saves a canonical title's new name with no merge, even when the name is an existing
+  //     title of the other group; the Common Exhibit Reference tab's Confirm merge then reads the same guard, so the two
+  //     steps together cannot combine graded and cert-based titles without the second press and its logged override.
+  const by = await openLeft();
+  rowIn(by, "EMT Basic 1998").querySelector('[data-left-act="rename"]').click(); await settle();
+  const bybox = rowIn(by, "EMT Basic 1998").querySelector('[data-left-box="rename"]');
+  bybox.querySelector("input").value = "Paramedic";
+  bybox.querySelector('[data-left-go="rename"]').click(); await settle(); await settle();
+  const step1 = postsOf(by);
+  check("(9) step one: Rename onto an existing graded title saves the rename alone, no merge confirm",
+    step1.length === 1 && step1[0].field === "unified_title_override" && step1[0].value === "Paramedic", JSON.stringify(step1));
+  const cer = require("./lib/cer_harness.js");
+  const cerRec = (ut) => ({ ut: ut, raw_count: 1, conf_title: 0.9, issuer: "National Registry", cpl_types: [], audit_tags: {}, audit_tag_total: 0, articulations: [] });
+  const tab = await cer.boot({ payload: { _generated_at: "t", top_categories: {}, unified_titles: [cerRec("Emergency Medical Technician"), cerRec("Paramedic")] },
+    overlay: step1.map((b) => Object.assign({ reviewer_email: "reviewer@example.org", reviewed_at: "2026-11-17T16:00:00Z" }, b)), types: LMAP });
+  const { cerLane } = require("./_cer_views");
+  cerLane(tab.doc, /Merge/).click(); await cer.sleep(60);
+  const mgRow = tab.doc.querySelector('.cr-mg-row[data-ut="Emergency Medical Technician"]');
+  if (mgRow) { mgRow.querySelector(".cr-mg-confirm").click(); await cer.sleep(60); }
+  check("(9) ⭐ step two: the Common Exhibit Reference's Confirm merge blocks the combine the rename set up, with nothing written",
+    mgRow && tab.writes.length === 0 && /^Blocked: Emergency Medical Technician is a mix of graded and cert-based types and the fold lands on Paramedic, which is graded/.test(txt(mgRow.querySelector(".cr-guard-note"))),
+    mgRow ? txt(mgRow) : "no pending merge row");
+  if (mgRow) { mgRow.querySelector(".cr-mg-confirm").click(); await cer.sleep(60); }
+  const step2 = tab.writes.map((w) => w.body);
+  check("(9) ⭐ pressed again, the merge is written with the override logged beside it",
+    step2.length === 3 && step2.some((b) => b.field === "unified_title_merge_confirm" && b.value === "Paramedic")
+    && step2.some((b) => b.field === "cpl_type_group_override" && b.value === "combine across groups: mixed into graded: Emergency Medical Technician -> Paramedic"), JSON.stringify(step2));
+
   // Combine across Sam's two groups: the canonical is a mix and Paramedic is graded, so the first try is blocked.
   const cm = await openLeft();
   rowIn(cm, "EMT Basic 1998").querySelector('[data-left-act="combine"]').click(); await settle();
@@ -265,7 +297,7 @@ const AUDIT = { title_cards: [
     c2.length === 2 && c2.every((b) => b.field !== "cpl_type_group_override") && c2.some((b) => b.field === "unified_title_merge_confirm" && b.value === "CompTIA Security+"), JSON.stringify(c2));
   check("(6) Combine and Rename reuse the List's handlers rather than a copy",
     /function leftCombineBox[\s\S]*?foldWrite\(r, to,/.test(src) && /function leftRenameBox[\s\S]*?listCellSave\(r, "title", inp, "Title"\)/.test(src)
-    && (src.match(/combine across groups: /g) || []).length === 1);
+    && !/combine across groups: /.test(src) && (GSRC.match(/combine across groups: /g) || []).length === 1);
 
   // (7) S679, the second reader's blocker: the guard reads the picked title before its chain of saved renames. A pending
   //     rename names a title the map does not hold yet ("Paramedic (Advanced)"), so a guard that read only the chain's
@@ -409,7 +441,8 @@ const AUDIT = { title_cards: [
   check("(8) one choke point: Accept, Combine and Re-point call foldWrite, the guard's words live once, and the old chain-type walk is gone",
     /function listSuggestAccept\(r, sg\) \{ return foldWrite\(r, sg\.to\); \}/.test(src) && /function leftCombineBox[\s\S]*?foldWrite\(r, to,/.test(src)
     && /function listRepoint[\s\S]*?foldWrite\(r, pf\.to,/.test(src) && !/chainType|sg\.via|via: to/.test(src)
-    && (src.match(/combine across groups: /g) || []).length === 1 && (src.match(/function foldLanding\(/g) || []).length === 1
+    && !/combine across groups: /.test(src) && !/function foldLanding\(|function landing\(/.test(src)
+    && (GSRC.match(/combine across groups: /g) || []).length === 1 && (GSRC.match(/function landing\(/g) || []).length === 1
     && /function relSave[\s\S]*?foldGate\(/.test(src) && /function approveRename[\s\S]*?foldGate\(/.test(src));
 
   const failed = results.filter(function (r) { return !r[1]; });

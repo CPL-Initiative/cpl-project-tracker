@@ -109,6 +109,7 @@ function load(opts) {
     setTimeout(function () { if (name === "fact-sheet/statewide_recs.js" && !opts.noStatewide) w.CPL_STATEWIDE_RECS = JSON.parse(JSON.stringify(opts.real ? REAL_STATEWIDE : STATEWIDE)); cb(); }, 0);
   } };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, ""); };
+  require("./lib/combine_guard_env.js").install(w);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls, opts: opts };
 }

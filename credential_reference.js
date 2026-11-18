@@ -2116,7 +2116,9 @@
       Promise.all(dirtyRows().map(function (r) { return saveGridRowCore(r); }))
         .then(function (results) {
           var failed = results.filter(function (x) { return !x.ok; }).length;
-          if (failed) toast(failed + " row(s) failed to save — retry from the row", true);
+          var held = results.filter(function (x) { return x.err === "guard"; });
+          if (held.length) toast(held[0].words + (results.length > 1 ? " Rows held: " + held.length + "; the rest saved." : ""), true);
+          else if (failed) toast(failed + " row(s) failed to save — retry from the row", true);
           else toast("Saved " + results.length + " rows");
           render();
         });
@@ -2133,19 +2135,29 @@
     if (!state.sess || !rowIsDirty(r)) return Promise.resolve({ ok: true, noop: true });
     var d = draftOf(r);
     var ov = state.overlay[ut] || {};
-    var writes = [];
     var titleVal = (d.title || "").trim();
     var titleChanged = titleVal !== (r.display_title || ut);
-    var target = null;
+    if (titleChanged && !titleVal) return Promise.resolve({ ok: false, err: "empty title" });
+    var target = titleChanged ? mergeTargetFor(r, titleVal) : null;
+    // A merge asks the combine guard first, and saves the title it lands on.
+    var gate = target ? guardMerge(ut, titleVal, "Press Save again") : Promise.resolve(null);
+    return gate.then(function (g) {
+      if (g && g.status !== "ok") return { ok: false, err: "guard", words: g.words };
+      if (g) titleVal = g.to;
+      return saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, g && g.log);
+    });
+  }
+  function saveGridRowWrites(r, d, ov, titleChanged, titleVal, target, guardLog) {
+    var ut = r.unified_title;
+    var writes = [];
     if (titleChanged) {
-      if (!titleVal) return Promise.resolve({ ok: false, err: "empty title" });
-      target = mergeTargetFor(r, titleVal);
       if (target && !window.confirm(mergeConfirmMessage(r, titleVal))) {
         return Promise.resolve({ ok: false, err: "merge declined" });
       }
       writes.push(saveOverride(ut, FIELD_UTITLE_OVERRIDE, titleVal));
       if (target) writes.push(saveOverride(ut, FIELD_UTITLE_MERGE_CONFIRM, titleVal));
       else if (ov.merge_confirm) writes.push(clearOverride(ut, FIELD_UTITLE_MERGE_CONFIRM));
+      if (guardLog) writes.push(saveOverride(ut, FIELD_TYPE_GROUP_OVERRIDE, guardLog));
     }
     var issuerVal = (d.issuer || "").trim();
     var issuerChanged = issuerVal !== (r.primary_issuer || "");
@@ -2222,12 +2234,19 @@
     var btn = tr.querySelector(".cr-grid-save");
     if (btn) { btn.disabled = true; btn.textContent = "saving…"; }
     saveGridRowCore(r).then(function (res) {
+      if (!res.ok && res.err === "guard") {
+        if (btn) { btn.disabled = false; btn.textContent = "Save"; }
+        showGuardWords(tr, res.words);
+        toast(res.words, true);
+        return;
+      }
       if (!res.ok) {
         tr.classList.add("cr-save-failed");
         if (btn) { btn.disabled = false; btn.textContent = "retry"; }
         if (res.err !== "merge declined") toast("Save failed", true);
         return;
       }
+      showGuardWords(tr, "");
       tr.classList.remove("cr-dirty", "cr-save-failed");
       tr.classList.add("cr-saved");
       refreshRowStatus(r, tr);
@@ -2235,6 +2254,14 @@
       renderLanes();
       toast("Saved · " + (r.display_title || r.unified_title));
     });
+  }
+  // The guard's words under the row's title, where the merge strip sits.
+  function showGuardWords(tr, words) {
+    var cell = tr.querySelector(".cr-title-cell") || tr;
+    var p = cell.querySelector(".cr-guard-note");
+    if (!words) { if (p) p.parentNode.removeChild(p); return; }
+    if (!p) { p = el("p", { class: "cr-guard-note", role: "status" }); cell.appendChild(p); }
+    p.textContent = words;
   }
   function markRowDirty(r, tr) {
     delete state.rowSaved[r.unified_title];
@@ -3562,16 +3589,27 @@
         var again = mergeTargetFor(p.r, inp.value);
         btn.textContent = again ? "Confirm merge" : "Save re-title";
       };
+      var note = el("p", { class: "cr-guard-note", role: "status" });
       btn.onclick = function () {
         var ut = p.r.unified_title;
         var val = (inp.value || "").trim();
         if (!val) return;
         var target = mergeTargetFor(p.r, val);
+        note.textContent = "";
+        // A merge asks the combine guard first, and saves the title it lands on.
+        (target ? guardMerge(ut, val, "Press Confirm merge again") : Promise.resolve(null)).then(function (g) {
+          if (g && g.status !== "ok") { note.textContent = g.words; return; }
+          if (g) val = g.to;
+          confirmPending(ut, val, target, g && g.log);
+        });
+      };
+      function confirmPending(ut, val, target, guardLog) {
         if (target && !window.confirm(mergeConfirmMessage(p.r, val))) return;
         btn.disabled = true; btn.textContent = "saving…";
         var writes = [saveOverride(ut, FIELD_UTITLE_OVERRIDE, val)];
         if (target) {
           writes.push(saveOverride(ut, FIELD_UTITLE_MERGE_CONFIRM, val));
+          if (guardLog) writes.push(saveOverride(ut, FIELD_TYPE_GROUP_OVERRIDE, guardLog));
         } else if ((state.overlay[ut] || {}).merge_confirm) {
           writes.push(clearOverride(ut, FIELD_UTITLE_MERGE_CONFIRM));
         }
@@ -3591,8 +3629,9 @@
           btn.disabled = false; btn.textContent = "retry";
           tr.classList.add("cr-wl-save-failed");
         });
-      };
+      }
       actTd.appendChild(btn);
+      actTd.appendChild(note);
       tr.appendChild(actTd);
       tbody.appendChild(tr);
     });
@@ -4101,6 +4140,48 @@
     var hit = credKeyIndex()[t];
     return (hit && hit !== r) ? hit : null;
   }
+  // ── The graded and cert-based guard on a combine (S679) ──────────────────
+  // Every writer here that saves a merge confirm (the pending merges' Confirm,
+  // the grid's Save and its Merge into this, the issuer lane's Save and Save
+  // all) asks combine_guard.js first, the one guard the Exhibits tab's folds
+  // use too. It follows the picked title's chain of saved renames to the title
+  // the merge lands on; the writer saves that title as both the rename and the
+  // merge confirm. A merge across Sam's graded and cert-based groups is blocked
+  // on the first press and saved on a second, with a cpl_type_group_override
+  // row logged beside it. The guard holds every merge while it or the CPL
+  // types file cannot be read. One store per visit remembers the first press.
+  var FIELD_TYPE_GROUP_OVERRIDE = "cpl_type_group_override";
+  var combineGuardStore = {};
+  function combineGuard() { return window.CPL_COMBINE_GUARD || null; }
+  function combineGuardMissing() {
+    return "Held: the combine guard (combine_guard.js) did not load, so nothing was saved. Reload the tab to try again.";
+  }
+  // The saved rename of a credential key, the link the guard's chain follows.
+  function savedRenameOf(t) { return ((state.overlay[t] || {}).utitle_override || "").trim(); }
+  // One merge: resolves the guard's decision ({ status, words, to, log }).
+  function guardMerge(fromUt, pick, again) {
+    var G = combineGuard();
+    if (!G) return Promise.resolve({ status: "held", words: combineGuardMissing() });
+    return G.check({ fetch: window.fetch, from: fromUt, pick: pick, nextOf: savedRenameOf,
+      store: combineGuardStore, again: again });
+  }
+  // Many merges in one save: pairs of [fromUt, pick]; resolves
+  // { status, words } or { status: "ok", logs, landings } in the pairs' order.
+  function guardMerges(pairs, again) {
+    var G = combineGuard();
+    if (!G) return Promise.resolve({ status: "held", words: combineGuardMissing() });
+    return G.checkMany({ fetch: window.fetch, pairs: pairs, nextOf: savedRenameOf,
+      store: combineGuardStore, again: again });
+  }
+  // An issuer lane row's jobs with the merge pointed at the guard's landing
+  // title: the title job and the confirm job both name `to`.
+  function landLaneJobs(jobs, to) {
+    return jobs.map(function (j) {
+      return (j.field === FIELD_UTITLE_OVERRIDE || j.field === FIELD_UTITLE_MERGE_CONFIRM)
+        ? { field: j.field, value: to } : j;
+    });
+  }
+
   // Append the merge-confirm job when the row's title job collides and the
   // curator has said yes. Returns the (possibly grown) jobs array.
   function withMergeConfirmJob(r, jobs) {
@@ -4126,16 +4207,35 @@
       return;
     }
     var grown = withMergeConfirmJob(r, jobs);
-    if (grown.length !== jobs.length) {
-      var target = grown[grown.length - 1].value;
-      if (!window.confirm(mergeConfirmMessage(r, target))) return;  // curator declined — inputs stay editable
-      jobs = grown;
+    if (grown.length === jobs.length) { writeIssuerLaneRow(r, tr, jobs, saveBtn, null); return; }
+    // A merge asks the combine guard first, and saves the title it lands on.
+    guardMerge(r.unified_title, grown[grown.length - 1].value, "Press Save again").then(function (g) {
+      var note = laneGuardNote(tr);
+      if (g.status !== "ok") { note.textContent = g.words; return; }
+      note.textContent = "";
+      var landed = landLaneJobs(grown, g.to);
+      if (!window.confirm(mergeConfirmMessage(r, g.to))) return;  // curator declined — inputs stay editable
+      writeIssuerLaneRow(r, tr, landed, saveBtn, g.log);
+    });
+  }
+  // The guard's words on an issuer lane row.
+  function laneGuardNote(tr) {
+    var p = tr.querySelector(".cr-guard-note");
+    if (!p) {
+      p = el("p", { class: "cr-guard-note", role: "status" });
+      var host = tr.querySelector(".cr-ni-save");
+      (host && host.parentNode ? host.parentNode : tr).appendChild(p);
     }
+    return p;
+  }
+  function writeIssuerLaneRow(r, tr, jobs, saveBtn, guardLog) {
     saveBtn.disabled = true; saveBtn.textContent = "saving…";
     saveBtn.setAttribute("data-busy", "1");
-    Promise.all(jobs.map(function (j) {
+    var writes = jobs.map(function (j) {
       return saveOverride(r.unified_title, j.field, j.value);
-    })).then(function (rs) {
+    });
+    if (guardLog) writes.push(saveOverride(r.unified_title, FIELD_TYPE_GROUP_OVERRIDE, guardLog));
+    Promise.all(writes).then(function (rs) {
       saveBtn.removeAttribute("data-busy");
       if (!rs.every(function (resp) { return resp && resp.ok; })) { markRowFailed(tr); return; }
       applySavedLane(r, tr, jobs);
@@ -4216,6 +4316,33 @@
       todo.push({ ut: ut, tr: tr, jobs: jobs });
     });
     if (!todo.length) return;
+    // The merges in the batch ask the combine guard first: one crossing merge
+    // holds the whole save on the first press; each saves the title it lands on.
+    var merging = todo.filter(function (job) {
+      return job.jobs.some(function (j) { return j.field === FIELD_UTITLE_MERGE_CONFIRM; });
+    });
+    var pairs = merging.map(function (job) {
+      var c = job.jobs.filter(function (j) { return j.field === FIELD_UTITLE_MERGE_CONFIRM; })[0];
+      return [job.ut, c.value];
+    });
+    (pairs.length ? guardMerges(pairs, "Press Save all again") : Promise.resolve({ status: "ok", logs: [], landings: [] })).then(function (g) {
+      if (g.status !== "ok") { toast(g.words, true); bulkGuardNote(btn, g.words); return; }
+      bulkGuardNote(btn, "");
+      merging.forEach(function (job, k) { job.jobs = landLaneJobs(job.jobs, g.landings[k].end); });
+      var logs = {};
+      g.logs.forEach(function (l) { logs[l[0]] = l[1]; });
+      todo.forEach(function (job) { job.log = logs[job.ut] || null; });
+      bulkSaveIssuersRun(btn, todo, byUt, nIssuer, nEmpty, nTitle, nTrainer, nMerge);
+    });
+  }
+  function bulkGuardNote(btn, words) {
+    var host = btn.parentNode || document.body;
+    var p = host.querySelector(".cr-guard-note");
+    if (!words) { if (p) p.parentNode.removeChild(p); return; }
+    if (!p) { p = el("p", { class: "cr-guard-note", role: "status" }); host.appendChild(p); }
+    p.textContent = words;
+  }
+  function bulkSaveIssuersRun(btn, todo, byUt, nIssuer, nEmpty, nTitle, nTrainer, nMerge) {
     var parts = [];
     if (nIssuer) parts.push(nIssuer + " issuer" + (nEmpty ? " (" + nEmpty + " as “no formal issuer”)" : ""));
     if (nTitle) parts.push(nTitle + " unified-title");
@@ -4241,9 +4368,11 @@
       }
       var job = todo[i];
       btn.textContent = "saving " + (i + 1) + " / " + todo.length + "…";
-      Promise.all(job.jobs.map(function (j) {
+      var writes = job.jobs.map(function (j) {
         return saveOverride(job.ut, j.field, j.value);
-      })).then(function (rs) {
+      });
+      if (job.log) writes.push(saveOverride(job.ut, FIELD_TYPE_GROUP_OVERRIDE, job.log));
+      Promise.all(writes).then(function (rs) {
         if (rs.every(function (resp) { return resp && resp.ok; })) {
           done++;
           job.tr.classList.remove("cr-wl-save-failed");

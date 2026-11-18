@@ -421,6 +421,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_identity.js` | pages: `CPL_Dashboard.html` | — |
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_apply_college_short_names.py`, `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
+| `combine_guard.js` | tabs: `exhibits` · pages: `CPL_Dashboard.html` | — |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_ase.js` | tabs: `commons` | — |
 | `commons_curation_eta.js` | tabs: `commons` | — |
@@ -735,7 +736,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_build_left_map.py`, `kb/_clep_official_titles.py`, `kb/_ib_official_titles.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_cert_links.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_cert_links.py`, `kb/_build_side_by_side.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibit_cert_links.py` · committed by: `daily-dashboard.yml` |
-| `kb/exhibit_left_map.json` | tabs: `exhibits` · scripts: `kb/_apply_left_map.py`, `kb/_build_left_map.py` | committed by: `daily-dashboard.yml` |
+| `kb/exhibit_left_map.json` | scripts: `kb/_apply_left_map.py`, `kb/_build_left_map.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_side_by_side.json` | tabs: `exhibits` · scripts: `kb/_build_side_by_side.py` | — |
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_subject_out` | none found | committed by: `cer-procedures.yml` |
@@ -1571,5 +1572,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1031 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1032 file
 datasets · 195 external services · 611 consumers · 72 workflows · 41 tabs.

@@ -95,6 +95,7 @@ function load(opts) {
     if (s === "fact-sheet/statewide_recs.js") w[name] = { "Welding Level 1": [{ t: "Welding 101", u: "3", id: "MAPICI-WELD-1-001" }, { t: "Welding 102", u: "3", id: "MAPICI-WELD-1-001" }] };
     setTimeout(cb, 0); } };
   w.CCC_COLLEGE_LOOKUP = LOOKUP;
+  require("./lib/combine_guard_env.js").install(w);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls };
 }

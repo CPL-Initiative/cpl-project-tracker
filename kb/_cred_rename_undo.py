@@ -24,6 +24,9 @@ value the enforcement produced from the apply's own "after" as unchanged, never 
 Safety: a value that changed since the apply is drift, and the undo refuses the whole run unless --force,
 which skips each drifted fold group WHOLE (a target and every title renamed or merged onto it); the SQL
 plan leaves out the same groups' row moves, so the two halves agree. Undo the newest apply first.
+A keep saved after the apply (kb/_apply_left_map.py) drops a leftover title's left_map marker and puts its link on
+the marker's renamed `from`: the undo reads that as expected, moves the link back with its canonical title, and does
+not put the marker back. A marker gone with the link anywhere else is drift.
 
 The SQL plan: the same ops, each guarded on the row the apply left (value, reviewer_email and reviewed_at
 for a moved row; the cohort and the written value for a resolution row), each in a block that raises a
@@ -105,9 +108,24 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
             continue
         changes.append({"file": "unified_titles.json", "key": raw, "to": ba["before"]})
     # A leftover title's left_map.from, renamed with its canonical title: put back the name it held before the apply.
+    # A keep saved after the apply (kb/_apply_left_map.py) puts the link back on left_map.from, which the apply had
+    # renamed to its "after", and drops the marker. That is the keep doing its job, never drift: the undo moves the kept
+    # link back with its canonical title and leaves the marker the keep removed out (S679).
+    renamed_raws = undo.get("unified_titles") or {}
     for raw, ba in sorted((undo.get("unified_titles_left_map_from") or {}).items()):
-        cur = ((ut.get(raw) or {}).get("left_map") or {}).get("from")
+        ent = ut.get(raw) or {}
+        lm = ent.get("left_map")
+        cur = lm.get("from") if isinstance(lm, dict) else None
         if cur == ba["before"]:
+            continue
+        if not cur:
+            link = ent.get("unified_title")
+            if raw in renamed_raws or link == ba["before"]:
+                continue  # the unified_titles pass above moves this link, or it is back already
+            if link == ba["after"]:
+                changes.append({"file": "unified_titles.json#kept", "key": raw, "to": ba["before"], "after": ba["after"]})
+            else:
+                drift.append({"file": "unified_titles.json#kept", "key": raw, "after": ba["after"]})
             continue
         if cur != ba["after"]:
             drift.append({"file": "unified_titles.json#left_map.from", "key": raw, "after": ba["after"]})
@@ -161,7 +179,7 @@ def apply_undo(changes, creds, ut, arts):
                 creds.pop(c["key"], None)
             else:
                 creds[c["key"]] = c["to"]
-        elif c["file"] == "unified_titles.json":
+        elif c["file"] in ("unified_titles.json", "unified_titles.json#kept"):
             ut[c["key"]]["unified_title"] = c["to"]
         elif c["file"] == "unified_titles.json#left_map.from":
             ut[c["key"]]["left_map"]["from"] = c["to"]

@@ -93,6 +93,7 @@ function load(opts) {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, ""); };
+  require("./lib/combine_guard_env.js").install(w);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls };
 }

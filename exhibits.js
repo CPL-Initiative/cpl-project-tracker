@@ -3869,17 +3869,8 @@
      (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles").
      The path holds every title from the one named to the end; the fold's choke point reads the same path for the title
      it writes and for the type it guards, so the two cannot disagree. */
-  function listChainPath(t) {
-    var seen = {}, ov = state.cs.overlay || {}, path = [];
-    for (var k = 0; k < 12 && t && !seen[t]; k++) {
-      seen[t] = true;
-      path.push(t);
-      var nx = (ov[t] || {}).title;
-      if (!nx || nx === t) break;
-      t = nx;
-    }
-    return path;
-  }
+  function listNext(t) { return ((state.cs.overlay || {})[t] || {}).title || ""; }
+  function listChainPath(t) { var G = guardLib(); return G ? G.chainPath(t, listNext) : (t ? [t] : []); }
   function listChainEnd(t) { var p = listChainPath(t); return p.length ? p[p.length - 1] : t; }
   /* A fold accepted and waiting for the reviewed apply: a rename and a merge confirm naming the same target. */
   function listPendingFold(r) {
@@ -3887,36 +3878,20 @@
     if (!o.title || !o.merge || o.merge !== o.title) return null;
     return { to: o.title, end: listChainEnd(o.title) };
   }
-  /* Where a fold of `from` into the picked title lands, and whether that crosses Sam's graded and cert-based groups
-     (2026-11-17). The landing title is the end of the picked title's chain of saved renames, read by listChainPath, the
-     resolver the write itself uses. Its type is its own; a pending rename names a title the map does not hold yet, so an
-     untyped landing title takes the type of the last typed title along the chain, which reaches back to the picked title. */
-  function foldLanding(from, pick) {
-    var path = listChainPath(pick), end = path[path.length - 1] || pick, at = null, type = null;
-    for (var k = path.length - 1; k >= 0 && !type; k--) { type = canonType(path[k]); if (type) at = path[k]; }
-    if (!type) { type = canonType(pick); at = type ? pick : null; }
-    return { pick: pick, end: end, type: type, typedAt: at, cross: crossesGroups(canonType(from), type), key: "combine " + from + " -> " + end };
-  }
-  function foldBlockWords(from, f, again) {
-    return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the fold lands on " + f.end
-      + (f.end !== f.pick ? " (" + f.pick + " is saved to become " + f.end + ")" : "") + ", which is " + groupWords(f.cross.b)
-      + (f.typedAt !== f.end ? ", the type of " + f.typedAt + ", since " + f.end + " has no CPL type of its own" : "")
-      + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged.";
-  }
-  function foldOverride(from, f) { return "combine across groups: " + f.cross.a + " into " + f.cross.b + ": " + from + " -> " + f.end; }
   /* THE one place a credential's fold is written (S679, the third round on the graded and cert-based guard): the rename
      and the merge confirm naming the end of the picked title's chain. The List's Accept, the leftover row's Combine and
-     Re-point all come here, so the guard reads the title the write lands on, never a title a caller passed along.
-     A fold across Sam's groups is blocked on the first try; a second try writes it and logs the override beside it.
-     It reads the CPL types file first, so the guard never passes for want of it. Resolves { ok, words, to }. */
+     Re-point all come here. The guard itself is combine_guard.js, shared with the Common Exhibit Reference tab: it follows
+     the picked title's chain of saved renames (listNext) to the title the write lands on, so the guard reads that title,
+     never a title a caller passed along. A fold across Sam's groups is blocked on the first try; a second try writes it
+     and logs the override beside it. The guard holds every fold while the CPL types file cannot be read. Resolves
+     { ok, words, to }. */
   function foldWrite(r, pick, o) {
     o = o || {};
     var from = r.ut;
-    return leftMapLoad().then(function () {
-      var f = foldLanding(from, pick), writes = [[FIELD_CRED_TITLE, f.end], [FIELD_MERGE_CONFIRM, f.end]];
-      if (f.end === from) return { ok: false, words: (f.end === pick ? pick + " is " + from + " itself" : pick + " is already saved to become " + from) + "; pick another title." };
-      if (f.cross && !LEFT.guard[f.key]) { LEFT.guard[f.key] = true; return { ok: false, blocked: true, words: foldBlockWords(from, f, o.again) }; }
-      if (f.cross) writes.push([FIELD_TYPE_OVERRIDE, foldOverride(from, f)]);
+    return guardCheck({ from: from, pick: pick, again: o.again }).then(function (d) {
+      if (d.status !== "ok") return { ok: false, blocked: d.status === "blocked", held: d.status === "held", words: d.words };
+      var f = d.f, writes = [[FIELD_CRED_TITLE, d.to], [FIELD_MERGE_CONFIRM, d.to]];
+      if (d.log) writes.push([FIELD_TYPE_OVERRIDE, d.log]);
       return session().then(function (sess) {
         if (!sess) throw new Error("signin");
         return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
@@ -3932,20 +3907,44 @@
     });
   }
   /* The same guard for a save that folds many titles in one request (the related titles' Save and the rename batch):
-     foldLanding reads each pair's landing; any pair that crosses Sam's groups holds the whole save on the first try, and
-     a second try writes it with one override row per crossing pair. Resolves { words } to hold, or { logs } to write. */
+     any pair that crosses Sam's groups holds the whole save on the first try, and a second try writes it with one
+     override row per crossing pair. Resolves { words } to hold, or { logs } to write. */
   function foldGate(pairs, again) {
-    return leftMapLoad().then(function () {
-      var cross = pairs.map(function (p) { return { from: p[0], f: foldLanding(p[0], p[1]) }; }).filter(function (x) { return x.f.cross; });
-      var fresh = cross.filter(function (x) { return !LEFT.guard[x.f.key]; });
-      if (fresh.length) {
-        fresh.forEach(function (x) { LEFT.guard[x.f.key] = true; });
-        return { words: foldBlockWords(fresh[0].from, fresh[0].f, again) + (fresh.length > 1 ? " " + fmt(fresh.length - 1) + " more "
-          + (fresh.length === 2 ? "fold crosses" : "folds cross") + " the groups the same way." : "") };
-      }
-      return { logs: cross.map(function (x) { return [x.from, foldOverride(x.from, x.f)]; }) };
+    return guardReady().then(function (G) {
+      if (!G) return { words: guardMissingWords() };
+      return G.checkMany({ fetch: fetch, pairs: pairs, nextOf: listNext, store: LEFT.guard, again: again }).then(function (d) {
+        noteGuardMap(G);
+        return d.status === "ok" ? { logs: d.logs } : { words: d.words };
+      });
     });
   }
+  /* combine_guard.js: both HTMLs load it before this file; a page without it loads it by name. A guard that cannot load
+     holds the fold. */
+  var GUARD_SRC = "combine_guard.js", guardP = null;
+  function guardLib() { return window.CPL_COMBINE_GUARD || null; }
+  function guardReady() {
+    if (guardLib()) return Promise.resolve(guardLib());
+    if (!guardP) {
+      var T = window.CPL_TABS;
+      guardP = new Promise(function (res) {
+        if (!T || typeof T.loadScript !== "function") { res(); return; }
+        T.loadScript(GUARD_SRC, "CPL_COMBINE_GUARD", function () { res(); });
+      }).then(function () { guardP = null; return guardLib(); });
+    }
+    return guardP;
+  }
+  function guardMissingWords() { return "Held: the combine guard (" + GUARD_SRC + ") did not load, so nothing was saved. Reload the tab to try again."; }
+  function guardCheck(o) {
+    return guardReady().then(function (G) {
+      if (!G) return { status: "held", words: guardMissingWords() };
+      return G.check({ fetch: fetch, from: o.from, pick: o.pick, nextOf: listNext, store: LEFT.guard, again: o.again }).then(function (d) {
+        noteGuardMap(G);
+        return d;
+      });
+    });
+  }
+  /* A types file the guard read after the List's first read failed: the panels carry the CPL types from then on. */
+  function noteGuardMap(G) { if (!LEFT.map && G.loaded()) LEFT.map = G.loaded(); }
   function foldLogRows(email, logs) {
     var at = new Date().toISOString();
     return logs.map(function (l) { return { course_id: CRED_PREFIX + l[0], field: FIELD_TYPE_OVERRIDE, value: l[1], reviewer_email: email, reviewed_at: at }; });
@@ -4377,7 +4376,7 @@
      still points at it, its live near-twin and whether Sam reviewed it; the decisions are read live, so a decision drops
      the title from this list the same day. */
   var LEFT_PREFIX = "_LEFT_MAP::", FIELD_LEFT = "left_map_decision", FIELD_TYPE_OVERRIDE = "cpl_type_group_override";
-  var LEFT_MAP_URL = "kb/exhibit_left_map.json";
+  // The types file itself (kb/exhibit_left_map.json) is read through combine_guard.js, the one reader the guard trusts.
   function listLeftLoad() {
     if (LEFT.p) return LEFT.p;
     var audit = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
@@ -4399,8 +4398,8 @@
      carry its type (Sam: "I need to have the Cpl type for each canon and local title nearby"). */
   function leftMapLoad() {
     if (LEFT.mp) return LEFT.mp;
-    LEFT.mp = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { LEFT.map = j; }, function () { LEFT.map = null; });
+    LEFT.mp = guardReady().then(function (G) { return G ? G.load(fetch) : { map: null }; })
+      .then(function (got) { LEFT.map = got.map; }, function () { LEFT.map = null; });
     return LEFT.mp;
   }
   /* The decisions saved so far, read live (anon read, Range-paged): a decided title leaves the list on reload the same day. */
@@ -4425,22 +4424,12 @@
     LEFT.by = by;
   }
   function leftInfo(raw) { return (LEFT.map && LEFT.map.titles && LEFT.map.titles[raw]) || null; }
-  function canonType(ut) { return (LEFT.map && LEFT.map.canonicals && LEFT.map.canonicals[ut]) || null; }
+  function canonType(ut) { var G = guardLib(); return G ? G.typeOf(LEFT.map, ut) : null; }
   function leftOpen() { return (LEFT.cards || []).filter(function (c) { return !LEFT.dec[c.raw]; }); }
-  /* Sam's two groups (2026-11-17: "Keep Cx and portfolio together since they function the same and result in a letter
-     grade"): graded is Credit By Exam and Portfolio Review; cert-based is Industry Certification, Standardized Assessment,
-     Military and Other. Mixing inside a group is fine; a move or combine across them is blocked by default. */
-  function groupWords(g) {
-    if (g === "mixed") return "a mix of graded and cert-based types";
-    return g === "graded" ? "graded (Credit By Exam or Portfolio Review)" : "cert-based (Industry Certification, Standardized Assessment, Military or Other)";
-  }
-  /* The result would hold both groups: null when either side's type is not recorded or both stay in one group. */
-  function crossesGroups(a, b) {
-    var x = a && a.group, y = b && b.group, has = {};
-    if (!x || !y) return null;
-    [x, y].forEach(function (g) { if (g === "mixed") { has.graded = 1; has.cert = 1; } else has[g] = 1; });
-    return has.graded && has.cert ? { a: x, b: y } : null;
-  }
+  /* Sam's two groups and the words for them: combine_guard.js (groupWords, crossesGroups), shared with the Common Exhibit
+     Reference tab. Mixing inside a group is fine; a move or combine across them is blocked by default. */
+  function groupWords(g) { return guardLib().groupWords(g); }
+  function crossesGroups(a, b) { return guardLib().crossesGroups(a, b); }
   function leftSave(raws, value, log) {
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
@@ -4564,6 +4553,7 @@
      names both groups, which is logged. */
   function leftMoveBox(raw, ut, info) {
     return leftPicker(raw, ut, { kind: "move", go: "Move here", label: "Canonical title to move " + raw.trim() + " under", act: function (to, say) {
+      if (!guardLib()) { say.textContent = guardMissingWords(); return; }
       var cross = crossesGroups(info, canonType(to)), k = raw + " -> " + to, log = null;
       if (cross && !LEFT.guard[k]) {
         LEFT.guard[k] = true;

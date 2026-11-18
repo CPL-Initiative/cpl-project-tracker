@@ -354,6 +354,23 @@ with tempfile.TemporaryDirectory() as td:
         check("(4) the rename's undo puts left_map.from back with the unified_title",
               not drift and got["Moved"]["left_map"]["from"] == "Brakes" and got["Removed"]["left_map"]["from"] == "Brakes"
               and got["Removed"]["unified_title"] == "Brakes" and got["Plain"]["unified_title"] == "Brakes", (drift, got))
+        # (4) A keep saved after the rename apply drops the marker and puts the link on the new name: the undo reads that
+        #     as expected, moves the kept link back with its canonical title, and never puts the removed marker back.
+        kept = json.load(open(R.UNIFIED_TITLES))
+        ch8, sk8 = A.plan(kept, [{"course_id": "_LEFT_MAP::Moved", "value": "keep", "reviewed_at": "t2"}], {e["unified_title"] for e in kept.values()})
+        A.apply(kept, ch8)
+        changes8, drift8, skipped8 = U.plan_undo(undo, {}, kept, [])
+        U.apply_undo(changes8, {}, kept, [])
+        check("(4) ⭐ a keep after the rename is not drift: the undo moves the kept link back and holds no fold group",
+              not drift8 and not skipped8 and kept["Moved"] == {"unified_title": "Brakes"} and "left_map" not in kept["Moved"]
+              and kept["Removed"]["left_map"]["from"] == "Brakes" and kept["Removed"]["unified_title"] == "Brakes"
+              and kept["Plain"]["unified_title"] == "Brakes", (drift8, skipped8, kept))
+        moved_on = json.load(open(R.UNIFIED_TITLES))
+        moved_on["Moved"] = {"unified_title": "Rotors"}  # the marker gone, the link somewhere the keep never put it
+        changes9, drift9, skipped9 = U.plan_undo(undo, {}, moved_on, [])
+        check("(4) a marker gone with the link on another title is still drift, and its fold group is held whole",
+              any(d["key"] == "Moved" and d["file"] == "unified_titles.json#kept" for d in drift9) and "Brake Systems" in skipped9
+              and not changes9, (changes9, drift9, skipped9))
         apply_src = open(os.path.join(ROOT, "kb", "_cred_rename_apply.py"), encoding="utf-8").read()
         check("(4) the apply's undo receipt carries the left_map.from renames", '"unified_titles_left_map_from": ut_res["_left_map_from"]' in apply_src)
     finally:
