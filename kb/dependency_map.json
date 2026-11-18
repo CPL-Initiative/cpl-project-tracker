@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1026,
+  "file_datasets": 1029,
   "external_services": 195,
-  "consumers": 610,
+  "consumers": 611,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4251,
+     "line": 4309,
      "tabs": [
       "exhibits"
      ]
@@ -1561,7 +1561,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 134,
+     "line": 185,
      "tabs": [
       "exhibits"
      ]
@@ -2171,7 +2171,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 165,
+     "line": 216,
      "tabs": [
       "exhibits"
      ]
@@ -5998,7 +5998,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 177,
+     "line": 190,
      "tabs": [
       "coci-lookup"
      ]
@@ -6008,7 +6008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2254,
+     "line": 2305,
      "tabs": [
       "exhibits"
      ]
@@ -6109,7 +6109,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1312,
+     "line": 1466,
      "tabs": [
       "coci-lookup"
      ]
@@ -6398,7 +6398,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3565,
+     "line": 3623,
      "tabs": [
       "exhibits"
      ]
@@ -6620,7 +6620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1100,
+     "line": 1254,
      "tabs": [
       "coci-lookup"
      ]
@@ -6650,7 +6650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4243,
+     "line": 4301,
      "tabs": [
       "exhibits"
      ]
@@ -6723,7 +6723,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1188,
+     "line": 1342,
      "tabs": [
       "coci-lookup"
      ]
@@ -6743,7 +6743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4683,
+     "line": 4749,
      "tabs": [
       "exhibits"
      ]
@@ -8620,7 +8620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4972,
+     "line": 5038,
      "tabs": [
       "exhibits"
      ]
@@ -11432,7 +11432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 163,
+     "line": 214,
      "tabs": [
       "exhibits"
      ]
@@ -11479,7 +11479,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 164,
+     "line": 215,
      "tabs": [
       "exhibits"
      ]
@@ -11756,6 +11756,13 @@
      "direction": "read",
      "how": "literal",
      "line": 97
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 280
     },
     {
      "id": "script:kb/_ccr_trail.py",
@@ -12149,6 +12156,13 @@
      "direction": "read",
      "how": "literal",
      "line": 75
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 171
     },
     {
      "id": "script:kb/_ccr_confidence_score.py",
@@ -12607,6 +12621,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 170
     },
     {
      "id": "script:kb/_ccr_confidence_score.py",
@@ -13125,6 +13146,13 @@
      "line": 73
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 106
+    },
+    {
      "id": "script:kb/_ccr_confidence_score.py",
      "kind": "script",
      "direction": "read",
@@ -13499,6 +13527,13 @@
      "direction": "read",
      "how": "literal",
      "line": 236
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 285
     },
     {
      "id": "script:kb/_ccr_confidence_score.py",
@@ -14421,7 +14456,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3343,
+     "line": 3401,
      "tabs": [
       "exhibits"
      ]
@@ -14600,7 +14635,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1119,
+     "line": 1170,
      "tabs": [
       "exhibits"
      ]
@@ -16150,7 +16185,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4274,
+     "line": 4332,
      "tabs": [
       "exhibits"
      ]
@@ -16236,6 +16271,13 @@
      "line": 60
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    },
+    {
      "id": "script:kb/_exhibit_subject_fill.py",
      "kind": "script",
      "direction": "read",
@@ -16268,7 +16310,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4271,
+     "line": 4329,
      "tabs": [
       "exhibits"
      ]
@@ -16284,6 +16326,29 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/exhibit_side_by_side.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 136,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/exhibit_slo_neighbors.json": {
    "consumers": [
     {
@@ -16291,7 +16356,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3338,
+     "line": 3396,
      "tabs": [
       "exhibits"
      ]
@@ -16394,6 +16459,13 @@
      "line": 77
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 279
+    },
+    {
      "id": "script:kb/_build_standards_rename_plan.py",
      "kind": "script",
      "direction": "read",
@@ -16486,7 +16558,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3752,
+     "line": 3810,
      "tabs": [
       "exhibits"
      ]
@@ -16502,7 +16574,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 142,
+     "line": 193,
      "tabs": [
       "exhibits"
      ]
@@ -16569,6 +16641,13 @@
      "direction": "read",
      "how": "literal",
      "line": 75
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 283
     },
     {
      "id": "script:kb/_mid_outcomes_compare.py",
@@ -16656,7 +16735,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 140,
+     "line": 191,
      "tabs": [
       "exhibits"
      ]
@@ -18520,6 +18599,13 @@
      "line": 83
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 292
+    },
+    {
      "id": "script:kb/_overmerge_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -18699,6 +18785,13 @@
      "direction": "read",
      "how": "literal",
      "line": 82
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 289
     },
     {
      "id": "script:kb/_jev_agri_families.py",
@@ -19708,6 +19801,13 @@
      "line": 68
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 131
+    },
+    {
      "id": "script:kb/_ccr_confidence_score.py",
      "kind": "script",
      "direction": "read",
@@ -19844,6 +19944,13 @@
      "direction": "read",
      "how": "literal",
      "line": 513
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 133
     },
     {
      "id": "script:kb/_correct_top_lookup_code4.py",
@@ -20028,6 +20135,29 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/side_by_side.json": {
+   "consumers": [
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 933,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/sjcoe_occupation_scope_map.json": {
    "consumers": [
@@ -20751,6 +20881,13 @@
      "line": 92
     },
     {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 132
+    },
+    {
      "id": "script:kb/_ccr_confidence_score.py",
      "kind": "script",
      "direction": "read",
@@ -21254,6 +21391,13 @@
      "direction": "read",
      "how": "literal",
      "line": 138
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 281
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -24214,7 +24358,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2155,
+     "line": 2206,
      "tabs": [
       "exhibits"
      ]
@@ -27258,6 +27402,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/side_by_side_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/skyview_built_from_source_test.py": {
    "consumers": [
     {
@@ -28116,7 +28273,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 678,
+     "line": 691,
      "tabs": [
       "coci-lookup"
      ]
@@ -28539,7 +28696,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1101,
+     "line": 1255,
      "tabs": [
       "coci-lookup"
      ]
@@ -28560,7 +28717,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2156,
+     "line": 2207,
      "tabs": [
       "exhibits"
      ]
@@ -28630,6 +28787,13 @@
      "direction": "read",
      "how": "literal",
      "line": 98
+    },
+    {
+     "id": "script:kb/_build_side_by_side.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 90
     },
     {
      "id": "script:kb/_ccr_desc_signal.py",
@@ -29533,7 +29697,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 636,
+     "line": 687,
      "tabs": [
       "exhibits"
      ]
@@ -29563,7 +29727,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 522,
+     "line": 573,
      "tabs": [
       "exhibits"
      ]
@@ -30756,7 +30920,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 206,
+     "line": 219,
      "tabs": [
       "coci-lookup"
      ]
@@ -31488,7 +31652,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 612,
+     "line": 663,
      "tabs": [
       "exhibits"
      ]
@@ -31503,7 +31667,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 635,
+     "line": 686,
      "tabs": [
       "exhibits"
      ]
@@ -32026,7 +32190,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 388,
+     "line": 401,
      "tabs": [
       "coci-lookup"
      ]
@@ -32036,7 +32200,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 564,
+     "line": 577,
      "tabs": [
       "coci-lookup"
      ]
@@ -32106,7 +32270,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 427,
+     "line": 478,
      "tabs": [
       "exhibits"
      ]
@@ -32116,7 +32280,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 770,
+     "line": 821,
      "tabs": [
       "exhibits"
      ]
@@ -35201,6 +35365,7 @@
     "kb/_test_workplan_current_hybrid.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
+    "tests/side_by_side_test.py",
     "tests/merge_chain_flatten_test.py",
     "tests/unified_units_range_test.py",
     "tests/budget_section_first_light_test.py",
