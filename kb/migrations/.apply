@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s680_prreq_units_rules_apply_checks.sql
-name=s680_prreq_units_rules_apply_checks
+file=kb/migrations/2026-11-18_s680_prreq_units_rules_apply_rows.sql
+name=s680_prreq_units_rules_apply_rows
