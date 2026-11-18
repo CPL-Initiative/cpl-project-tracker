@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    27.0,
+    28.0,
     29.0
    ],
    "stated": [
@@ -72,14 +72,12 @@
     29.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.0-29.0; the catalog states 28.0-29.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     64.0,
+     65.0,
      67.0
     ],
     "stated": [
@@ -93,7 +91,8 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -117,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -171,8 +170,9 @@
       "alternatives": [
        {
         "code": "ACCT R101H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -198,8 +198,9 @@
       "alternatives": [
        {
         "code": "ECON C2001H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -211,8 +212,9 @@
       "alternatives": [
        {
         "code": "ECON C2002H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -224,8 +226,9 @@
       "alternatives": [
        {
         "code": "STAT C1000H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -237,8 +240,9 @@
       "alternatives": [
        {
         "code": "MATH C2210",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        }
       ],
       "catalog_addition": false
@@ -250,8 +254,9 @@
       "alternatives": [
        {
         "code": "BUS R140",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -269,5 +274,43 @@
    "Outcomes are printed for 'this program' on the page's outcomes tab; recorded as applying to this award."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "38842203500",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ACCT R101H",
+   "words": "ACCT R101H, printed as an alternative to ACCT R101 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ECON C2001H",
+   "words": "ECON C2001H, printed as an alternative to ECON C2001 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ECON C2002H",
+   "words": "ECON C2002H, printed as an alternative to ECON C2002 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "STAT C1000H",
+   "words": "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "MATH C2210",
+   "words": "MATH C2210, printed as an alternative to MATH R106 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BUS R140",
+   "words": "BUS R140, printed as an alternative to BUS R120 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

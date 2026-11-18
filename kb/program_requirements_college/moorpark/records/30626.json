@@ -64,10 +64,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
+    19.0,
     21.0
    ],
    "stated": [
@@ -75,14 +75,12 @@
     21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 19.0-21.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     66.0,
+     67.0,
      75.0
     ],
     "stated": [
@@ -96,7 +94,8 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -120,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -171,8 +170,9 @@
       "alternatives": [
        {
         "code": "PSYC C1000H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -191,18 +191,21 @@
       "alternatives": [
        {
         "code": "STAT C1000H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "PSY M125",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "SOC M125",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -226,8 +229,9 @@
       "alternatives": [
        {
         "code": "PSY M02H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -291,8 +295,9 @@
       "alternatives": [
        {
         "code": "BIOL M02AH",
-        "units": null,
-        "catalog_addition": false
+        "units": 5,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -354,5 +359,43 @@
    "The section heading is the 'REQUIREMENTS' tab; no separate award heading appears in the extracted text."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "38748862351",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "PSYC C1000H",
+   "words": "PSYC C1000H, printed as an alternative to PSYC C1000 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "STAT C1000H",
+   "words": "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PSY M125",
+   "words": "PSY M125, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "SOC M125",
+   "words": "SOC M125, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PSY M02H",
+   "words": "PSY M02H, printed as an alternative to PSY M02 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BIOL M02AH",
+   "words": "BIOL M02AH, printed as an alternative to BIOL M02A with no units, takes its row's 5 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

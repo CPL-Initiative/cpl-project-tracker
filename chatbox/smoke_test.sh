@@ -963,7 +963,7 @@ rrow="$(curl -sS --max-time 30 "$REST_BASE/program_requirement_records?select=co
   -H "apikey: $ANON" -H "Authorization: Bearer $ANON")"
 case "$rrow" in
   *'"up_to":"31.5"'*) echo "  [assert ok] 7t ⭐ the anon key reads the Ironworker A.S. display facts (up to 31.5 units; $(printf '%s' "$rrow" | grep -o '"build":"[^"]*"'))" ;;
-  *) echo "::error::7t ⭐ the anon key read $(printf '%s' "$rrow" | head -c 200) for Cerritos 42158 — expected display.figure.up_to 31.5. Check that kb/receipts/program_requirement_records_display_2026-10-04.sql was applied (python3 kb/_build_roep_display.py --verify-sql)."; fail=1 ;;
+  *) echo "::error::7t ⭐ the anon key read $(printf '%s' "$rrow" | head -c 200) for Cerritos 42158 — expected display.figure.up_to 31.5. Check that the display build the page carries was applied: its receipt is stored in cpl-receipts and named in kb/receipts/index/ (python3 kb/_build_roep_display.py --verify-sql)."; fail=1 ;;
 esac
 run "7t CPL on a checked program (Cerritos, Field Ironworkers A.S.)" \
   '{"query":"Which courses in the Field Ironworkers A.S. degree at Cerritos College can a learner clear through credit for prior learning?","session_id":"smoke-ci","history":[]}'

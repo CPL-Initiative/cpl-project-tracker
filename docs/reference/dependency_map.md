@@ -273,6 +273,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | Dataset | Read by | Written by |
 |---|---|---|
 | `ccr-desc` | pages: `prototype/skyview.html` | — |
+| `cpl-receipts` | scripts: `kb/_receipt_store.py` | — |
 | `factsheet-images` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 
 ## Generated JS data artifacts
@@ -363,6 +364,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `.claude/commands/checkpoint.md` | scripts: `kb/_consolidation_loss_audit.py`, `kb/_doctrine_scenarios.py` | — |
 | `.claude/settings.json` | scripts: `scripts/check_hooks_live.py`, `scripts/install_prompt_guards.py` | scripts: `scripts/install_prompt_guards.py` |
 | `.github/pages_allowlist.txt` | scripts: `kb/_build_cdc_sharing.py` | — |
+| `.github/repo_size_exceptions.txt` | scripts: `scripts/repo_size_guard.py` | — |
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `/tmp/scrape_detail` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
@@ -371,12 +373,13 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<date>_slash_to_and.json` | scripts: `kb/slash_titles.py` | scripts: `kb/slash_titles.py` |
 | `<date>_standards.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
 | `<date>_standards_2.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
-| `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
+| `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py`, `scripts/repo_size_guard.py` | — |
 | `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
 | `TOP_Code_Lookup.xlsx` | scripts: `chatbox/sync_chatbox_exhibits.py`, `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
+| `a row_audit entry names row_audit_<date>.md` | scripts: `kb/_receipt_store.py` | — |
 | `a11y.config.js` | scripts: `scripts/ui_pass.py` | — |
 | `activity_summaries.js` | pages: `CPL_Dashboard.html` | — |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
@@ -566,6 +569,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_peer_articulations.py` | workflows: `credential-catalog-sync.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_program_course_graph.py` | workflows: `daily-dashboard.yml`, `program-course-fetch.yml` | — |
 | `kb/_build_remint_blast_radius.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
+| `kb/_build_roep_display.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_build_session_spend.py` | workflows: `pages.yml` | — |
 | `kb/_build_side_by_side.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_build_spend_daily.py` | workflows: `harvest-gap-census.yml` | — |
@@ -619,8 +623,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
+| `kb/_receipt_store.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
+| `kb/_row_audit_prune.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_second_reader.py` | workflows: `second-reader.yml` | — |
 | `kb/_seed_projects_apply.py` | workflows: `projects-seed-apply.yml` | — |
 | `kb/_seed_workplan_goals_apply.py` | workflows: `workplan-goals-seed-apply.yml` | — |
@@ -915,6 +921,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/mid_outcomes_compare_<date>.json` | scripts: `kb/_reclustering_s648_dryrun.py` | — |
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
 | `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
+| `kb/status/program_discontinued.json` | scripts: `kb/_program_discontinued.py` | — |
 | `kb/status/subjects.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
@@ -998,6 +1005,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `partners/ctdl-exchange/seed/contract/file_kinds.json` | scripts: `partners/ctdl-exchange/seed/tools/check_drop.py` | — |
 | `picks kb/<slug-with-underscores>_domain_map.json` | scripts: `kb/_build_domain_cpl_crosswalk.py` | — |
 | `pipeline.js` | pages: `CPL_Dashboard.html` | — |
+| `prior_*.json` | scripts: `kb/_program_discontinued.py` | — |
 | `privacy.html` | scripts: `scripts/ui_pass.py` | — |
 | `program_requirements.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/queue_status.py` | — |
 | `project_lifecycle.js` | pages: `CPL_Dashboard.html` | — |
@@ -1069,6 +1077,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/panel.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
+| `scripts/repo_size_guard.py` | workflows: `js-tests.yml`, `repo-size-guard.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
 | `scripts/supabase_migrate.py` | workflows: `supabase-migrate.yml` | — |
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
@@ -1180,6 +1189,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/dependency_map_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_blanks_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/discipline_edge_fill_test.py` | workflows: `js-tests.yml` | — |
+| `tests/display_receipt_store_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docket_rulings_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/docs_index_build_test.py` | workflows: `js-tests.yml` | — |
@@ -1259,6 +1269,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_course_graph_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_discontinued_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
@@ -1274,18 +1285,22 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_prior_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_rulings_2026_11_17_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_units_rules_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_year_renumbers_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_census_test.py` | workflows: `js-tests.yml` | — |
 | `tests/queue_status_test.py` | workflows: `js-tests.yml` | — |
+| `tests/receipt_move_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_reader_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/reconcile_window_fill_test.py` | workflows: `js-tests.yml` | — |
 | `tests/refresh_button_no_secret_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
+| `tests/repo_size_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
+| `tests/row_audit_prune_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_subject_outlier_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_top_source_score_test.py` | workflows: `js-tests.yml` | — |
 | `tests/run.js` | workflows: `js-tests.yml` | — |
@@ -1577,7 +1592,8 @@ check these BY HAND before trusting an absence:
 - `exhibit_progress.js`
 - `kb/_chatbox_ghost_delete.py`
 - `kb/_program_requirements_extract.py`
+- `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1037 file
-datasets · 195 external services · 612 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1051 file
+datasets · 195 external services · 616 consumers · 73 workflows · 41 tabs.

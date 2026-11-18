@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    35.0,
+    37.0,
     38.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     38.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-38.0; the catalog states 37.0-38.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -151,13 +150,15 @@
       "alternatives": [
        {
         "code": "CHEM 0003A",
-        "units": null,
-        "catalog_addition": false
+        "units": 5,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "CHEM 0003B",
-        "units": null,
-        "catalog_addition": false
+        "units": 5,
+        "catalog_addition": false,
+        "units_max": 6
        }
       ],
       "catalog_addition": false
@@ -240,5 +241,19 @@
    "Other sections on the page (Chemistry AS Degree, UC Transfer Pathway) were not read for this record."
   ]
  },
- "extracted_run": "39709837031"
+ "extracted_run": "39709837031",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "CHEM 0003A",
+   "words": "CHEM 0003A, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "CHEM 0003B",
+   "words": "CHEM 0003B, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

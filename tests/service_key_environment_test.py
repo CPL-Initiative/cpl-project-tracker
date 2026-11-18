@@ -65,6 +65,8 @@ PENDING = {
     ("program-requirements-college.yml", "load"): ("other-session", "the harvest's file today; runs on claude/ branches"),
     ("program-requirements-college.yml", "display"): (
         "other-session", "the harvest's file today; runs on claude/ branches"),
+    ("program-requirements-college.yml", "fetch"): (
+        "other-session", "the harvest's file today; reads a stored receipt for a session on any branch (S680)"),
     ("program-requirements-dated-reads.yml", "read"): (
         "other-session", "the harvest's file today; dispatched on claude/ branches"),
     ("program-requirements-extract.yml", "extract"): ("other-session", "the harvest's file today; push to claude/**"),

@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    35.0,
+    36.0,
     36.0
    ],
    "stated": [
@@ -71,9 +71,8 @@
     36.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-36.0; the catalog states 36.0-36.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -220,8 +219,9 @@
       "alternatives": [
        {
         "code": "JOUR 290 F",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -320,5 +320,13 @@
    "Careers taken from the description: 'Commercial photographers' and the areas they work in. The description also names work arrangements (freelancers, contracted employees, staff members), not recorded as careers."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": "38675136988",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "JOUR 290 F",
+   "words": "JOUR 290 F, printed as an alternative to PHOT 290 F with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

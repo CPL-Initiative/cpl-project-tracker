@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    24.0,
+    23.0,
     25.0
    ],
    "stated": [
@@ -72,14 +72,12 @@
     25.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.0-25.0; the catalog states 23.0-25.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     65.0,
+     64.0,
      68.0
     ],
     "stated": [
@@ -93,7 +91,8 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "rescored": "A5 a choose list takes the courses of the list it names (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -117,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -235,6 +234,27 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "BUS 001A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 001B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 003B",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -249,5 +269,13 @@
    "Several courses are marked '( Historical )' in the catalog (MATH 003A, BUS 001A, BUS 001B, MATH 003B); a reviewer may want to check whether they are still offered."
   ]
  },
- "extracted_run": "38935152199"
+ "extracted_run": "38935152199",
+ "reconciled": [
+  {
+   "rule": "A5",
+   "block": "List B- Select One course for 4-5 units from the list below or any course in List A not already used.",
+   "words": "'List B- Select One course for 4-5 units from the list below or any course in List A not already used.' says any course from List A: 3 courses added as options (BUS 001A, BUS 001B, MATH 003B)",
+   "statewide": "units_rules_A5"
+  }
+ ]
 }

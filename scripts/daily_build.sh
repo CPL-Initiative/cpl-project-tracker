@@ -301,6 +301,18 @@ step "Run row Trust-Card auditor" <<'STEP'
 python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
 STEP
 
+# ── Step 4b1: Keep the newest 14 row audit reports (#3476 Part 4 step 5) ──
+# After the day's report is written: each dated report past the newest 14 goes to the
+# private bucket cpl-receipts (row_audit/) and leaves the tree only once its entry in
+# kb/receipts/index/ names its sha256. latest.json always stays. Never fails the run: a
+# failed upload or read-back leaves the files where they are and the log says so.
+step "Keep the newest 14 row audit reports" SUPABASE_SERVICE_KEY <<'STEP'
+# --budget-seconds bounds every bucket call (one try, timeout within what is left); `timeout 200`
+# stops the process outright if a call trickles past its socket timeout.
+timeout 200 python3 kb/_row_audit_prune.py --max-store 3 --budget-seconds 180 \
+  || echo "Row audit prune did not finish (non-fatal; the reports stay)"
+STEP
+
 # ── Step 4b2: Re-run the EXHIBIT auditor (credential layer) ───
 # Writes kb/exhibit_audit/{latest.json, <date>.md} — the CER's triage
 # worklist reads latest.json LIVE, and it had been frozen at 2026-05-24
