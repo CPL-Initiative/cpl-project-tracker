@@ -414,6 +414,10 @@ jobs:
       # none reads only a page printing its own title with its award, never descriptions or a GE page. Pure stdlib.
       - name: Reader page checks, rules A to D (own heading, page types, every tab, not printed)
         run: python3 tests/reader_page_checks_test.py
+      # Rule A's self-recall (S683 second reader): over the committed site records that place courses, rule A finds
+      # the own page of at least 75% and accepts at most 30 sister programs' pages. Reads the committed records.
+      - name: Reader page checks, rule A self-recall (own pages found, sister pages refused)
+        run: python3 tests/reader_page_checks_recall_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)

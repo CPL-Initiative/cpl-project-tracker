@@ -121,6 +121,10 @@ on:
         description: "read: a prior-year read, '<start> <catalog_year> <cn,cn,...>': the named programs read from that year's catalog start page on the registry's host, filed beside the college's records (S663; Riverside City 2025-2026 is https://rccd.curriqunet.com/Catalog/archive/71/iq/4079/4130). Empty = the current catalog"
         required: false
         default: ""
+      rule_d:
+        description: "read: 1 = rule D for this run only (S683, kb/_reader_page_checks.py): a program no line of the current PDF catalog prints gets the gap 'not printed in the <year> catalog'. Empty = the repository variable CPL_RULE_D_NOT_PRINTED, else off"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -219,10 +223,11 @@ jobs:
           NCL_CATALOG_LOOKUP: ${{ github.event.inputs.ncl_lookup || '1' }}
           CAPTURE_PRIOR: ${{ github.event.inputs.prior || '' }}
           # The reader's page checks (S683, kb/_reader_page_checks.py): rules A to C read the programs whose filed record
-          # places none of its courses; the repository variable CPL_READER_PAGE_CHECKS=0 turns them off, and
-          # CPL_RULE_D_NOT_PRINTED=1 turns rule D on (off by default).
+          # places none of its courses; the repository variable CPL_READER_PAGE_CHECKS=0 turns them off. Rule D is
+          # off by default: the dispatch input rule_d=1 turns it on for one run (the repository variable
+          # CPL_RULE_D_NOT_PRINTED=1 would turn it on for every run while it is set).
           CPL_READER_PAGE_CHECKS: ${{ vars.CPL_READER_PAGE_CHECKS || '1' }}
-          CPL_RULE_D_NOT_PRINTED: ${{ vars.CPL_RULE_D_NOT_PRINTED || '0' }}
+          CPL_RULE_D_NOT_PRINTED: ${{ github.event.inputs.rule_d || vars.CPL_RULE_D_NOT_PRINTED || '0' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       # Every extraction is priced before any model call, fresh or restaged ($40 a college a run on the estimate,
       # Sam's standing go; S653): over the limit, nothing is extracted. extract=0 prints the estimate and pays

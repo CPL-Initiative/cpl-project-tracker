@@ -11,9 +11,15 @@ choose the page by the heading:
 
   Rule B  A course-descriptions page or a general-education page is never a program's page. Checked first.
   Rule A  A page counts as the program's own only when one of its lines prints every word of the program's title,
-          with its award type within three lines ("Geology, A.S."). Matching course codes alone are not enough. A
-          table-of-contents line or a "(p. 250)" cross-reference never counts. Among the pages that pass, the one
-          whose window (that page and the next) prints the most listed codes is the page.
+          with its award type within three lines ("Geology, A.S."; a certificate's word on that line or the next).
+          Matching course codes alone are not enough. The line must print no other program beside the title: no
+          other word before it, between its words or after it before the award, and no option the award introduces
+          ("Wildland Fire Technology AS", "Accounting: Bookkeeping - Certificate of Achievement", "Automotive
+          Technology Certificate - Engine Specialist"). An A.S. or A.A. never reads a transfer degree's award line, a
+          credit certificate never reads a certificate of completion, and a bare "AS" counts only beside the title or
+          punctuation ("courses such as GEOL 1" names none). A table-of-contents line, a "(p. 250)" cross-reference
+          or a breadcrumb never counts. Among the pages that pass, the one whose window (that page and the next)
+          prints the most listed codes is the page. Self-recall: tests/reader_page_checks_recall_test.py.
   Rule C  On a site catalog, the page is read with every tab, and rule A's title check still applies (a subject's
           landing page can hold course descriptions in its courses tab).
   Rule D  Behind its own switch, off by default (CPL_RULE_D_NOT_PRINTED=1): a PDF catalog in which no line prints
@@ -24,8 +30,11 @@ choose the page by the heading:
 SCOPE. The rules apply only to a program whose committed record places none of its listed courses
 (S.places_none on records/<cn>.json), and never to a general-education pattern program (its page is a pattern
 page by definition). Every other program reads exactly as before: a record that places courses keeps the
-picker that placed them. capture() marks the programs (mark()); candidates(), capture_pdf() and the link search
-read the mark. CPL_READER_PAGE_CHECKS=0 turns rules A to C off for every program, as a kill switch.
+picker that placed them. Programs share pages, so a marked program could move an unmarked one; it never does:
+assign() gives every unmarked program the page it gets with no program marked, and a marked program claims an
+unmarked holder's page only where page_winners() keeps the holder beside it; pdf_unproven() takes its control-number
+share over the picks as they were without the checks (pdf_basis). capture() marks the programs (mark());
+candidates(), capture_pdf() and the link search read the mark. CPL_READER_PAGE_CHECKS=0 turns rules A to C off for every program, as a kill switch.
 
 A curator's pin (pdf_pages in the reconcile file), a catalog that heads its programs with codes
 (pdf_code_assign) and a catalog read by its printed control numbers (numbers_after) keep their own binding:
@@ -62,18 +71,42 @@ GE_MENTION = re.compile(r"\bIGETC\b|\bCal[\s-]?GETC\b|\bCSU\s?GE\b|general\s+edu
 DESC_FIELDS_MIN, DESC_UNITS_MIN, GE_MIN = 4, 3, 4
 DESC_PATH = re.compile(r"course[-_ ]?descriptions?", re.I)
 
-# Each award's words as a heading prints them. A bare abbreviation must be capitals (AS, A.S.), so "such as" never
-# names an A.S.; a local degree's words never stand for a transfer degree.
+# Each award's words as a heading prints them. A bare abbreviation must be capitals, next to the title or punctuation
+# (", AS", "(AS)", at the line's end), so "courses such as GEOL 1" never names an A.S.; a local degree's words never
+# stand for a transfer degree (heading_line refuses an A.S. or A.A. award line that prints a transfer degree's words);
+# a credit certificate's word never stands for a noncredit certificate of completion or competency.
+_ABBR_END = r"(?=\s*(?:$|[),;:.\]]|(?i:degree)\b|-\s*(?![Tt]\b)))"
 AWARD_WORDS = {
     "adt": re.compile(r"(?i:\bfor\s+transfer\b|\b(?:aa|as)\s?-\s?t\b|\ba\.\s?[as]\.\s?-\s?t\b|\ba[as]t\b|\btransfer\s+degree\b)"),
     "as": re.compile(r"(?i:associate\s+(?:in|of)\s+science)(?!\s+(?i:degree\s+)?(?i:for\s+transfer))"
-                     r"|\bA\.\s?S\.(?!\s?-\s?T)|\bAS\b(?!\s?-\s?T)"),
+                     r"|\bA\.\s?S\.(?!\s?-\s?T)|\bAS\b" + _ABBR_END),
     "aa": re.compile(r"(?i:associate\s+(?:in|of)\s+arts)(?!\s+(?i:degree\s+)?(?i:for\s+transfer))"
-                     r"|\bA\.\s?A\.(?!\s?-\s?T)|\bAA\b(?!\s?-\s?T)"),
-    "coa": re.compile(r"certificate", re.I),
+                     r"|\bA\.\s?A\.(?!\s?-\s?T)|\bAA\b" + _ABBR_END),
+    "coa": re.compile(r"(?i:certificate(?!\s+of\s+(?:completion|competency))|\bcert\b|\bcoa\b)|\bCA\b" + _ABBR_END),
     "noncredit": re.compile(r"certificate\s+of\s+(?:completion|competency)|\bnoncredit\b", re.I),
-    "bs": re.compile(r"bachelor|baccalaureate|\bB\.\s?S\.|\bBS\b", re.I),
+    "bs": re.compile(r"(?i:bachelor|baccalaureate|\bB\.\s?[SA]\.?)|\bB[SA]\b" + _ABBR_END),
 }
+COA_REACH = 1                # a certificate's word prints on the heading line or the line after it
+NAV_LINE = re.compile(r"\s>\s|\u00bb|\u203a")   # a breadcrumb ("Home > Degrees & Certificates > Accounting")
+
+# Words a heading may print beside the title (award words, the STOP words, filler). Any other word before the title,
+# between its words, or after it before the award names a sister program ("Wildland Fire Technology", "Accounting:
+# Bookkeeping", "Mathematics with Physics Emphasis"), and the line is not the program's heading.
+HEADING_FILLER = STOP | {
+    "degrees", "certificates", "achievement",
+    "accomplishment", "completion", "competency", "proficiency", "recognition", "transfer", "as", "aa", "ast", "aat",
+    "ba", "bs", "bachelor", "baccalaureate", "noncredit", "credit", "cert", "coa", "ca", "major", "programs", "requirements",
+    "required", "units", "unit", "total", "fall", "spring", "summer", "catalog", "year", "code", "home", "overview",
+}
+AWARD_PHRASE = re.compile(r"\bassociates?\s+(?:in|of)\s+(?:science|arts)\b|\bassociates?\s+degree\b"
+                          r"|\bbachelors?\s+of\s+(?:science|arts)\b")
+AWARD_TOKENS = {"degree", "certificate", "achievement", "accomplishment", "completion",
+                "competency", "proficiency", "transfer", "as", "aa", "ast", "aat", "ba", "bs", "bachelor",
+                "baccalaureate", "noncredit", "cert", "coa", "ca"}
+TOKEN = re.compile(r"[a-z0-9]+")
+# "science" and "arts" are filler only inside an award's phrase ("Associate in Science"), which _sister_words reads as
+# one award word: "Public Health Science Associate in Science" prints Public Health Science, and "History Associate
+# in Arts" never prints Art History. "Associate" alone is no award and no filler ("Associate Teacher Certificate").
 
 
 def abc_on() -> bool:
@@ -178,12 +211,62 @@ def _level(text: str) -> str | None:
     return m.group(1).lower() if m else None
 
 
+ACRONYM = re.compile(r"\(\s*[a-z0-9.&/-]{1,8}\s*\)")
+ABBR = re.compile(r"\b([a-z])\.\s?([a-z])\b\.?")      # "a.s." and "b.a" read as "as" and "ba"
+SEP = re.compile(r"[a-z0-9]+|:|(?<=\s)[-\u2013\u2014]|[-\u2013\u2014](?=\s)")   # a dash beside a space; "Media-Web" is one name
+
+
+def _heading_tokens(text: str) -> list[str]:
+    t = ABBR.sub(r"\1\2", ACRONYM.sub(" ", (text or "").lower().replace("2.0", " ")))
+    return SEP.findall(AWARD_PHRASE.sub(" degree ", t.replace("(", " ").replace(")", " ")))
+
+
+def _sister_words(seg: str, words: list[str], title: str | None) -> bool:
+    """Whether the segment prints another program beside the title, so it is not the program's heading: a word of the
+    title missing (a parenthesized emphasis, a level's "1" or "B"), or a word that is neither the title's own, an
+    award word nor filler before the title, between its words, after it before the award, or in an option the award
+    introduces with a dash or colon ("Automotive Technology Certificate - Engine Specialist")."""
+    need = [t for t in _heading_tokens(title) if t not in ":-\u2013\u2014" and t not in STOP]
+    own = set(need) | set(_heading_tokens(title))
+    toks = _heading_tokens(seg)
+    at = []
+    for w in dict.fromkeys(need or words):
+        j = next((k for k, t in enumerate(toks)
+                  if (t == w if len(w) <= 2 else t.startswith(w) and (t == w or t not in AWARD_TOKENS))), None)
+        if j is None:
+            return True       # a title word prints nowhere, or only inside an award's words: not its heading
+        at.append(j)
+    start, end = min(at), max(at)
+    ok = HEADING_FILLER | own
+
+    def plain(t, lead=False):
+        return (t in ok or t in ":-\u2013\u2014" or (t.isdigit() and (lead or len(t) >= 3))
+                or (lead and len(t) == 1))
+
+    if not all(plain(t, lead=True) for t in toks[:start]) or not all(
+            plain(t) for k, t in enumerate(toks[start:end + 1], start) if k not in at):
+        return True
+    awarded = option = False
+    for t in toks[end + 1:]:
+        if t in AWARD_TOKENS:
+            awarded, option = True, False
+        elif t in ":-\u2013\u2014":
+            option = awarded or option
+        elif awarded and not option:
+            return False      # prose after the award: the heading ended
+        elif not plain(t):
+            return True
+    return False
+
+
 def _prints_title(line: str, words: list[str], title_len: int, toc_ok: bool = False,
-                  level: str | None = None) -> bool:
+                  level: str | None = None, title: str | None = None) -> bool:
     if not toc_ok and TOC_LINE.search(line):
         return False
     seg = _segment(line, words)
     if not (all(re.search(r"\b" + re.escape(w), seg) for w in words) and len(seg) <= title_len + HEADING_SLACK):
+        return False
+    if title is not None and _sister_words(seg, words, title):
         return False
     if level is not None:
         lv = C_LEVEL.search(seg)
@@ -194,17 +277,29 @@ def _prints_title(line: str, words: list[str], title_len: int, toc_ok: bool = Fa
 
 
 def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
-    """Rule A: the index of the first line printing every title word with the award within HEADING_REACH lines, or
-    -1. A table-of-contents line or a page cross-reference never counts."""
+    """Rule A: the index of the first line printing every title word, with no other program's words beside them,
+    and the award within HEADING_REACH lines (a certificate's word within COA_REACH), or -1. A table-of-contents
+    line, a page cross-reference or a breadcrumb never counts, and an A.S. or A.A. never reads a transfer degree's
+    award line."""
     words = title_words(title)
     if not words:
         return -1
     arx = award_pattern(award)
+    kind = P.award_kind(award)
+    reach = COA_REACH if arx is AWARD_WORDS["coa"] else HEADING_REACH
     tlen, level = len(title or ""), _level(title)
+
+    def names_award(x: str) -> bool:
+        if not x or NAV_LINE.search(x) or not arx.search(x):
+            return False
+        if kind in ("as", "aa") and AWARD_WORDS["adt"].search(x):
+            return False      # a transfer degree's award line is never a local degree's
+        return not (arx is AWARD_WORDS["coa"] and AWARD_WORDS["noncredit"].search(x))
+
     for i, ln in enumerate(lines):
-        if not ln or not _prints_title(ln, words, tlen, level=level):
+        if not ln or NAV_LINE.search(ln) or not _prints_title(ln, words, tlen, level=level, title=title):
             continue
-        if arx is None or any(arx.search(x or "") for x in lines[max(0, i - HEADING_REACH): i + HEADING_REACH + 1]):
+        if arx is None or any(names_award(x) for x in lines[max(0, i - reach): i + reach + 1]):
             return i
     return -1
 

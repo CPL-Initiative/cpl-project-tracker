@@ -25,6 +25,7 @@ Run from repo root: python3 tests/reader_page_checks_test.py
 """
 import json
 import os
+import re
 import shutil
 import sys
 import tempfile
@@ -115,7 +116,7 @@ MOS = ["CS 101A", "CS 101B", "CS 101C", "CS 101D", "CS 101E"]
 DESC = ("COURSE DESCRIPTIONS\nComputer Science (CS)\n"
         + "".join("CS 101%s Microsoft Office Specialist Part %s 1 unit\nPrerequisite: none. Advisory: CS 100.\n"
                   "Transfer: CSU. Repeatability: 0. Grading: letter.\n" % (x, x) for x in "ABCDE")
-        + "These courses prepare for the Microsoft Office Specialist Certificate of Achievement.\n")
+        + "Microsoft Office Specialist, Certificate of Achievement: CS 101A to CS 101E.\n")
 OWN = ("MICROSOFT OFFICE SPECIALIST\nCertificate of Achievement\nRequired Courses\n"
        + "".join("CS 101%s Microsoft Office Part %s 1\n" % (x, x) for x in "ABCDE"))
 ccsf = ["CCSF CATALOG 2026/27\n"] * 600
@@ -143,6 +144,37 @@ check(RC.heading_at("Geology Associate in Science for Transfer\n", "Geology", "A
 check(RC.heading_at("Geology A.S.-T Degree\n", "Geology", "A.S. T Degree") == 0, "rule A: 'A.S.-T' names a transfer degree")
 check(RC.heading_at("Radiologic Technology (AS)\n", "Radiologic Technology", "A.S. Degree") == 0,
       "rule A: 'Radiologic Technology (AS)' is a heading")
+
+# The second reader's inputs (S683 finding 1): a transfer degree's heading, "SUCH AS", a breadcrumb and a sister program
+# never stand for the program; its own heading does.
+COA = "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+for line, title, award in [
+        ("Associate in Science in Accounting for Transfer (AS-T)", "Accounting", "A.S. Degree"),
+        ("ASSOCIATE IN SCIENCE IN ACCOUNTING FOR TRANSFER", "Accounting", "A.S. Degree"),
+        ("Business Administration 2.0, A.S. Degree for Transfer", "Business Administration", "A.S. Degree"),
+        ("GEOLOGY\nCOURSES SUCH AS GEOL 1", "Geology", "A.S. Degree"),
+        ("Home > Degrees & Certificates > Accounting\nAccounting", "Accounting", COA),
+        ("Accounting: Bookkeeping - Certificate of Achievement", "Accounting", COA),
+        ("Wildland Fire Technology AS", "Fire Technology", "A.S. Degree"),
+        ("Commercial Dance - Certificate of Achievement", "Dance", COA),
+        ("Mathematics with Physics Emphasis - Associate in Arts", "Physics", "A.A. Degree"),
+        ("Automotive Technology Certificate - Engine Specialist", "Automotive Technology", COA),
+        ("English (Emphasis in Literature) - Associate in Arts", "English (Emphasis in Creative Writing)", "A.A. Degree"),
+        ("Electricity Fundamentals 1, Certificate of Achievement", "Electricity Fundamentals 2", COA),
+        ("History Associate in Arts for Transfer", "Art History", "A.A- T Degree"),
+        ("Real Estate Salesperson Certificate of Completion", "Real Estate Salesperson", COA)]:
+    check(RC.heading_at(line, title, award) < 0, "rule A: %r is never %s's heading (%s)" % (line, title, award))
+for line, title, award in [
+        ("Associate in Science in Accounting for Transfer (AS-T)", "Accounting", "A.S. T Degree"),
+        ("Accounting, Certificate of Achievement", "Accounting", COA),
+        ("Fire Technology AS", "Fire Technology", "A.S. Degree"),
+        ("AS Degree in Computer System Administration", "Computer System Administration", "A.S. Degree"),
+        ("Geomatics, CA", "Geomatics", COA),
+        ("Liberal Arts Emphasis in Natural Sciences: A.A. Degree", "Liberal Arts Emphasis in Natural Science", "A.A. Degree"),
+        ("English (Emphasis in Creative Writing) - Associate in Arts", "English (Emphasis in Creative Writing)", "A.A. Degree"),
+        ("Electricity Fundamentals 2, Certificate of Achievement - Major #8192", "Electricity Fundamentals 2", COA),
+        ("Paralegal Studies: B.A Degree", "Paralegal Studies", "Baccalaureate Degree")]:
+    check(RC.heading_at(line, title, award) == 0, "rule A: %r is %s's heading (%s)" % (line, title, award))
 
 check(RC.heading_at("Viticulture Level 1 - Certificate of Achievement\n", "Viticulture Level 2",
                     "Certificate of Achievement") < 0, "rule A: Level 1's heading is never Level 2's")
@@ -198,6 +230,48 @@ check([c["url"] for c in off] == [c["url"] for c in before], "switch: CPL_READER
 check(C.pdf_page_check(bm, MENDO, None, None, {}, None) is None, "switch: off, the PDF checks do not run")
 del os.environ["CPL_READER_PAGE_CHECKS"]
 
+# ── finding 2: a marked program never moves an unmarked one ─────────────────────────────────────────────────────
+# assign(): a certificate "Accounting" and its unmarked A.S. sister, page X headed "Accounting" with no award. Read as
+# before, the certificate keeps X and the A.S. reads the hub page Y; marked, the certificate leaves X, and the A.S.
+# must still read Y, as before.
+ACC6 = ["ACCT 101", "ACCT 102", "ACCT 103", "ACCT 104", "ACCT 105", "ACCT 106"]
+X = site("https://cat.example.edu/programs/accounting/", "Accounting",
+         "Accounting\nProgram Requirements\n" + "".join("%s Course %d 3\n" % (c, i) for i, c in enumerate(ACC6)))
+Y = site("https://cat.example.edu/programs/business-hub/", "Business Programs",
+         "Business programs\n" + "".join("%s Course 3\n" % c for c in ACC6[:5]))
+got = {}
+for marked in (False, True):
+    a_cert = prog("10001", "Accounting", COA, ACC6, marked)
+    a_as = prog("10002", "Accounting", "A.S. Degree", ACC6, False)
+    got[marked] = {cn: (v["best"] or {}).get("url") for cn, v in C.assign([a_cert, a_as], [X, Y]).items()}
+check(got[False] == {"10001": X["url"], "10002": Y["url"]}, "fixture: read as before, the A.S. reads the hub, got %r" % got[False])
+check(got[True]["10002"] == got[False]["10002"], "assign: the unmarked A.S. keeps its page when its sister is marked, got %r"
+      % got[True])
+check(got[True]["10001"] is None, "assign: the marked certificate refuses the page that names no certificate")
+# On a page heading both awards, the unmarked A.S. reads exactly what it reads with its sister unmarked.
+both = site("https://cat.example.edu/programs/accounting-as-coa/", "Accounting, A.S. and Certificate of Achievement",
+            "Accounting, A.S. and Certificate of Achievement\n" + "".join("%s Course 3\n" % c for c in ACC6))
+r = {m: C.assign([prog("10001", "Accounting", COA, ACC6, m), prog("10002", "Accounting", "A.S. Degree", ACC6, False)],
+                 [both, Y]) for m in (False, True)}
+check(r[True]["10002"] == r[False]["10002"] and r[True]["10001"]["best"] is not None,
+      "assign: on a page heading both awards, the marked certificate reads it and the A.S. reads as before, got %r"
+      % {m: {cn: (v["best"] or {}).get("url") for cn, v in r[m].items()} for m in r})
+
+# pdf_unproven(): 4 picks print their control numbers, 1 unmarked pick prints none, and 4 marked programs, whose picks
+# printed none before the checks, lose their page. The share stays 4 of 9 as before, so the unmarked pick stays.
+def pk(cn, printed):
+    return {"control_number": cn, "cn_printed": printed, "titled": False, "named": False}
+picks = {("1%04d" % i): pk("1%04d" % i, True) for i in range(4)}
+picks["20000"] = pk("20000", False)
+before_checks = {("3%04d" % i): pk("3%04d" % i, False) for i in range(4)}
+check(C.pdf_unproven(list(picks.values())) == {"20000"}, "fixture: over the picks alone, the unmarked pick drops")
+check(C.pdf_unproven(list(picks.values()), C.pdf_basis(picks, before_checks)) == set(),
+      "pdf_unproven: over the picks as they were before the checks, the unmarked pick stays")
+check(len(C.pdf_basis(dict(picks, **{"30000": pk("30000", True)}), before_checks)) == 9,
+      "pdf_basis: a marked program counts once, with its pick from before the checks")
+b0 = C.pdf_pick_before("https://example.edu/catalog.pdf", MENDO, bm, "pypdf", None)
+check(b0 is not None and b0["control_number"] == "21969", "pdf_pick_before: the picker's window from before the checks")
+
 # ── capture_pdf's gate: a pin, a code heading, the printed numbers, or no mark keep their own binding ──────────
 check(C.pdf_page_check(bm, MENDO, None, None, {}, None) is not None, "gate: a marked program is read by the rules")
 check(C.pdf_page_check(dict(bm, **{RC.MARK: False}), MENDO, None, None, {}, None) is None,
@@ -240,6 +314,14 @@ try:
     check("not_printed" not in D.build([], base=tmp), "rule D: with no capture the committed file keeps its shape")
 finally:
     shutil.rmtree(tmp)
+
+# ── finding 4: rule D turns on for one run by its dispatch input, never only by a repository variable ───────────
+with open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml"), encoding="utf-8") as fh:
+    wf = fh.read()
+check(re.search(r"\n      rule_d:\n        description: .*\n        required: false\n        default: \"\"\n", wf) is not None,
+      "workflow: program-requirements-college.yml takes a rule_d input, empty by default")
+check("CPL_RULE_D_NOT_PRINTED: ${{ github.event.inputs.rule_d || vars.CPL_RULE_D_NOT_PRINTED || '0' }}" in wf,
+      "workflow: the capture reads rule_d first, then the repository variable, else off")
 
 for f in failures:
     print("FAIL:", f)

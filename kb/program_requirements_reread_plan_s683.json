@@ -1,5 +1,5 @@
 {
- "written": "2026-11-18T15:24:17Z",
+ "written": "2026-11-18T18:03:27Z",
  "measured_on": {
   "commit": "afc29292c115e0d0de1b4ef5368f173a208dfbfb",
   "census": "kb/status/harvest_gap_census.json (written 2026-11-17 23:09Z): 725 programs places_none",
@@ -21,24 +21,26 @@
   },
   "against_the_ask": "the ask projected about 245 to 265 programs handed their own page, about $26; this plan expects about 210 outside the collection lane (about 21 more at its twelve colleges). It counts COBIx's tested programs by their own verdicts, and it expects no new page for the 92 whose current page already prints the program's heading with its award (the rules keep that page), where the ask applied the cause rates to every program",
   "moved_out_12": "the 12 programs COBIx kept apart (section 9 of Source 7: 10 page not found, 2 out of the gap) are not in today's 725 and not in this plan",
-  "cost_rule": "estimate = expected own pages x the college's rate (kb/_program_requirements_wave.py cost_per_program, 0.08 floor) x 1.25; ceiling = every listed program extracted; within_40 reads the ceiling"
+  "cost_rule": "estimate = expected own pages x the college's rate (kb/_program_requirements_wave.py cost_per_program, 0.08 floor) x 1.25; ceiling = every listed program extracted; within_40 reads the ceiling",
+  "matcher": "rule A was tightened after the second reader (S683 finding 1): over the 13,243 committed site records that place courses, it finds the own page of 10,046 (75.9%; certificates 80.0%) and accepts 22 sister programs' pages, where the first matcher found 10,507 and accepted 1,433 (tests/reader_page_checks_recall_test.py). The expected counts below are projected from COBIx's test verdicts, not measured on page text (the committed files keep none); the Mendocino and CCSF previews measure them first"
  },
  "decided": {
-  "decision": "rules A to C are on by default and read only the programs whose filed record places none of its courses (and no general-education pattern program); every record that places courses reads exactly as before, so no switch is needed to keep tonight's runs unchanged for them. CPL_READER_PAGE_CHECKS=0 (a repository variable) turns them off. Rule D is off (CPL_RULE_D_NOT_PRINTED=1 turns it on).",
+  "decision": "rules A to C are on by default and read only the programs whose filed record places none of its courses (and no general-education pattern program). A record that places courses reads exactly as before, so no switch is needed to keep tonight's runs unchanged for them: assign() gives every unmarked program the page it gets with no program marked, and pdf_unproven() takes its control-number share over the picks as they were before the checks (S683 second reader, finding 2; tests/reader_page_checks_test.py pins both). CPL_READER_PAGE_CHECKS=0 (a repository variable) turns them off. Rule D is off; the dispatch input rule_d=1 turns it on for one run of program-requirements-college.yml.",
   "by": "the S683 worker for conductor S683 (SkyNuthatch), on Sam's rules of 2026-11-17 (collect with gaps noted, never pass/fail) and 2026-11-16 (pick a side)"
  },
  "next_session": [
   {
    "order": 1,
-   "what": "tonight: the aim colleges below in order, each a capture preview (extract 0), then extract 1 when the preview's price is within $40 and its pass set holds",
+   "what": "tonight: Mendocino College and City College of San Francisco first, each a capture preview (extract 0); then the gate below; then the other aim colleges in order, each a preview, then extract 1 when the preview's price is within $40, its pass set holds, and no unmarked program's page changed",
    "records": 444,
    "colleges": 73,
    "expected_own_page": 209.9,
-   "estimate_usd": 21.38
+   "estimate_usd": 21.38,
+   "gate": "run nothing paid at any college until both previews hold: Mendocino College's capture.json pdf.page_checks shows own_page >= 9, and City College of San Francisco's source for 40432 (Microsoft Office Specialist) no longer reads page 564"
   },
   {
    "order": 2,
-   "what": "rule D: set the repository variable CPL_RULE_D_NOT_PRINTED=1 for a PDF college's read to name its not-printed programs; kb/_program_discontinued.py --capture lists them under not_printed for a prior-year read",
+   "what": "rule D: dispatch program-requirements-college.yml with rule_d=1 for a PDF college's read to name its not-printed programs (the input turns it on for that run only); kb/_program_discontinued.py --capture lists them under not_printed for a prior-year read",
    "tested": {
     "City College of San Francisco": 28,
     "College of the Desert": 6,
@@ -87,6 +89,164 @@
     },
     "colleges": [
      {
+      "college": "Mendocino College",
+      "slug": "mendocino",
+      "records": 11,
+      "expected_own_page": 10.5,
+      "control_numbers": "03442,03458,03461,07783,21969,30601,30677,31446,32708,35224,43563",
+      "dispatch": [
+       {
+        "workflow": "program-requirements-college.yml",
+        "inputs": {
+         "college": "Mendocino College",
+         "step": "read",
+         "extract": "0",
+         "limit": "0"
+        },
+        "why": "a capture preview first, free: it files the page checks' counts (capture.json pdf.page_checks, or each source's page) and prices would_extract"
+       },
+       {
+        "workflow": "program-requirements-college.yml",
+        "inputs": {
+         "college": "Mendocino College",
+         "step": "read",
+         "extract": "1",
+         "limit": "0"
+        },
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
+        "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)",
+        "gate": "run nothing paid at any college until both previews hold: Mendocino College's capture.json pdf.page_checks shows own_page >= 9, and City College of San Francisco's source for 40432 (Microsoft Office Specialist) no longer reads page 564"
+       }
+      ],
+      "rate_usd": 0.08,
+      "estimate_usd": 1.05,
+      "ceiling_usd": 1.1,
+      "within_40": true,
+      "items": [
+       {
+        "control_number": "03442",
+        "title": "Theatre Arts",
+        "award": "A.A. Degree",
+        "platform": "pdf",
+        "cause": "ge_or_list_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333"
+       },
+       {
+        "control_number": "03458",
+        "title": "Ethnic Studies",
+        "award": "A.A. Degree",
+        "platform": "pdf",
+        "cause": "ge_or_list_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, 50 to 79% of codes (places some; a code-variant step may follow)",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79"
+       },
+       {
+        "control_number": "03461",
+        "title": "Psychology",
+        "award": "A.A. Degree",
+        "platform": "pdf",
+        "cause": "ge_or_list_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79"
+       },
+       {
+        "control_number": "07783",
+        "title": "Theatre Arts: Dance",
+        "award": "A.A. Degree",
+        "platform": "pdf",
+        "cause": "course_descriptions_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333"
+       },
+       {
+        "control_number": "21969",
+        "title": "Business-Management",
+        "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+        "platform": "pdf",
+        "cause": "sibling_award_page",
+        "rule": "A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117"
+       },
+       {
+        "control_number": "30601",
+        "title": "Sociology",
+        "award": "A.A- T Degree",
+        "platform": "pdf",
+        "cause": "ge_or_list_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81"
+       },
+       {
+        "control_number": "30677",
+        "title": "Mathematics",
+        "award": "A.S. T Degree",
+        "platform": "pdf",
+        "cause": "ge_or_list_page",
+        "rule": "B then A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78"
+       },
+       {
+        "control_number": "31446",
+        "title": "Geology",
+        "award": "A.S. T Degree",
+        "platform": "pdf",
+        "cause": "sibling_award_page",
+        "rule": "A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147"
+       },
+       {
+        "control_number": "32708",
+        "title": "Recording Arts and Technology",
+        "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+        "platform": "pdf",
+        "cause": "sibling_award_page",
+        "rule": "A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189"
+       },
+       {
+        "control_number": "35224",
+        "title": "Art - Printmaking",
+        "award": "A.A. Degree",
+        "platform": "pdf",
+        "cause": "unexplained",
+        "rule": "A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, 50 to 79% of codes (places some; a code-variant step may follow)",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=238"
+       },
+       {
+        "control_number": "43563",
+        "title": "Network Defense",
+        "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+        "platform": "pdf",
+        "cause": "sibling_award_page",
+        "rule": "A",
+        "expected": 0.957,
+        "basis": "COBIx test: own page found, at least 80% of codes",
+        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131"
+       }
+      ]
+     },
+     {
       "college": "City College of San Francisco",
       "slug": "city_of_san_francisco",
       "records": 10,
@@ -111,8 +271,9 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
-        "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
+        "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)",
+        "gate": "run nothing paid at any college until both previews hold: Mendocino College's capture.json pdf.page_checks shows own_page >= 9, and City College of San Francisco's source for 40432 (Microsoft Office Specialist) no longer reads page 564"
        }
       ],
       "rate_usd": 0.08,
@@ -257,7 +418,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -348,7 +509,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -437,163 +598,6 @@
       ]
      },
      {
-      "college": "Mendocino College",
-      "slug": "mendocino",
-      "records": 11,
-      "expected_own_page": 10.5,
-      "control_numbers": "03442,03458,03461,07783,21969,30601,30677,31446,32708,35224,43563",
-      "dispatch": [
-       {
-        "workflow": "program-requirements-college.yml",
-        "inputs": {
-         "college": "Mendocino College",
-         "step": "read",
-         "extract": "0",
-         "limit": "0"
-        },
-        "why": "a capture preview first, free: it files the page checks' counts (capture.json pdf.page_checks, or each source's page) and prices would_extract"
-       },
-       {
-        "workflow": "program-requirements-college.yml",
-        "inputs": {
-         "college": "Mendocino College",
-         "step": "read",
-         "extract": "1",
-         "limit": "0"
-        },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
-        "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
-       }
-      ],
-      "rate_usd": 0.08,
-      "estimate_usd": 1.05,
-      "ceiling_usd": 1.1,
-      "within_40": true,
-      "items": [
-       {
-        "control_number": "03442",
-        "title": "Theatre Arts",
-        "award": "A.A. Degree",
-        "platform": "pdf",
-        "cause": "ge_or_list_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333"
-       },
-       {
-        "control_number": "03458",
-        "title": "Ethnic Studies",
-        "award": "A.A. Degree",
-        "platform": "pdf",
-        "cause": "ge_or_list_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, 50 to 79% of codes (places some; a code-variant step may follow)",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79"
-       },
-       {
-        "control_number": "03461",
-        "title": "Psychology",
-        "award": "A.A. Degree",
-        "platform": "pdf",
-        "cause": "ge_or_list_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=79"
-       },
-       {
-        "control_number": "07783",
-        "title": "Theatre Arts: Dance",
-        "award": "A.A. Degree",
-        "platform": "pdf",
-        "cause": "course_descriptions_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=333"
-       },
-       {
-        "control_number": "21969",
-        "title": "Business-Management",
-        "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-        "platform": "pdf",
-        "cause": "sibling_award_page",
-        "rule": "A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=117"
-       },
-       {
-        "control_number": "30601",
-        "title": "Sociology",
-        "award": "A.A- T Degree",
-        "platform": "pdf",
-        "cause": "ge_or_list_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=81"
-       },
-       {
-        "control_number": "30677",
-        "title": "Mathematics",
-        "award": "A.S. T Degree",
-        "platform": "pdf",
-        "cause": "ge_or_list_page",
-        "rule": "B then A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=78"
-       },
-       {
-        "control_number": "31446",
-        "title": "Geology",
-        "award": "A.S. T Degree",
-        "platform": "pdf",
-        "cause": "sibling_award_page",
-        "rule": "A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=147"
-       },
-       {
-        "control_number": "32708",
-        "title": "Recording Arts and Technology",
-        "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-        "platform": "pdf",
-        "cause": "sibling_award_page",
-        "rule": "A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=189"
-       },
-       {
-        "control_number": "35224",
-        "title": "Art - Printmaking",
-        "award": "A.A. Degree",
-        "platform": "pdf",
-        "cause": "unexplained",
-        "rule": "A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, 50 to 79% of codes (places some; a code-variant step may follow)",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=238"
-       },
-       {
-        "control_number": "43563",
-        "title": "Network Defense",
-        "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-        "platform": "pdf",
-        "cause": "sibling_award_page",
-        "rule": "A",
-        "expected": 0.957,
-        "basis": "COBIx test: own page found, at least 80% of codes",
-        "read_from": "https://www.mendocino.edu/sites/default/files/2026-09/Mendocino%20College%202026-27%20Catalog.web_.pdf#page=131"
-       }
-      ]
-     },
-     {
       "college": "Santa Rosa Junior College",
       "slug": "santa_rosa_junior",
       "records": 30,
@@ -618,7 +622,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -984,7 +988,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1174,7 +1178,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1254,7 +1258,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1323,7 +1327,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1414,7 +1418,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1505,7 +1509,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1563,7 +1567,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1610,7 +1614,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1657,7 +1661,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1737,7 +1741,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1795,7 +1799,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -1886,7 +1890,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2021,7 +2025,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2222,7 +2226,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2324,7 +2328,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2426,7 +2430,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2550,7 +2554,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2707,7 +2711,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2765,7 +2769,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2812,7 +2816,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2859,7 +2863,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -2961,7 +2965,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3294,7 +3298,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3418,7 +3422,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3641,7 +3645,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3710,7 +3714,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3768,7 +3772,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3826,7 +3830,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3884,7 +3888,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -3942,7 +3946,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4000,7 +4004,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4135,7 +4139,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4303,7 +4307,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4372,7 +4376,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4441,7 +4445,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4576,7 +4580,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4634,7 +4638,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -4747,7 +4751,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5069,7 +5073,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5193,7 +5197,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5317,7 +5321,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5397,7 +5401,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5477,7 +5481,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5590,7 +5594,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5725,7 +5729,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5816,7 +5820,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -5929,7 +5933,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6141,7 +6145,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6188,7 +6192,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6235,7 +6239,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6282,7 +6286,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6329,7 +6333,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6376,7 +6380,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6423,7 +6427,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6470,7 +6474,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6517,7 +6521,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6564,7 +6568,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6611,7 +6615,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6658,7 +6662,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6705,7 +6709,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6752,7 +6756,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6799,7 +6803,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -6846,7 +6850,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -7014,7 +7018,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -7061,7 +7065,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -7196,7 +7200,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -7342,7 +7346,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
@@ -7466,7 +7470,7 @@
          "extract": "1",
          "limit": "0"
         },
-        "after": "the preview's price is within $40 and its pass set equals the filed one (p-capture-can-lose-passing-page-s671)",
+        "after": "the preview's price is within $40, its pass set equals the filed one (p-capture-can-lose-passing-page-s671), and no unmarked program's page changed (each source whose filed record places courses names the page it names on file)",
         "why": "no force: a program the rules hand a new page has new text, so its fingerprint sends it; a program they leave on its page is not read again (d-rccd-pilot-no-blind-force-s671)"
        }
       ],
