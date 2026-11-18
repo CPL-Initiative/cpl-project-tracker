@@ -104,6 +104,15 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
             drift.append({"file": "unified_titles.json", "key": raw})
             continue
         changes.append({"file": "unified_titles.json", "key": raw, "to": ba["before"]})
+    # A leftover title's left_map.from, renamed with its canonical title: put back the name it held before the apply.
+    for raw, ba in sorted((undo.get("unified_titles_left_map_from") or {}).items()):
+        cur = ((ut.get(raw) or {}).get("left_map") or {}).get("from")
+        if cur == ba["before"]:
+            continue
+        if cur != ba["after"]:
+            drift.append({"file": "unified_titles.json#left_map.from", "key": raw, "after": ba["after"]})
+            continue
+        changes.append({"file": "unified_titles.json#left_map.from", "key": raw, "to": ba["before"], "after": ba["after"]})
     index = {}
     for i, r in enumerate(arts):
         index.setdefault((r.get("course_id"), r.get("exhibit_id"), r.get("exhibit_title")), []).append(i)
@@ -154,6 +163,8 @@ def apply_undo(changes, creds, ut, arts):
                 creds[c["key"]] = c["to"]
         elif c["file"] == "unified_titles.json":
             ut[c["key"]]["unified_title"] = c["to"]
+        elif c["file"] == "unified_titles.json#left_map.from":
+            ut[c["key"]]["left_map"]["from"] = c["to"]
         else:
             arts[c["index"]]["unified_title"] = c["to"]
 

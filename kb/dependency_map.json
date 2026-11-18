@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4324,
+     "line": 4360,
      "tabs": [
       "exhibits"
      ]
@@ -6008,7 +6008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2305,
+     "line": 2318,
      "tabs": [
       "exhibits"
      ]
@@ -6398,7 +6398,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3623,
+     "line": 3636,
      "tabs": [
       "exhibits"
      ]
@@ -6650,7 +6650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4316,
+     "line": 4352,
      "tabs": [
       "exhibits"
      ]
@@ -6743,7 +6743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4829,
+     "line": 4864,
      "tabs": [
       "exhibits"
      ]
@@ -8620,7 +8620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5118,
+     "line": 5153,
      "tabs": [
       "exhibits"
      ]
@@ -14482,7 +14482,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3401,
+     "line": 3414,
      "tabs": [
       "exhibits"
      ]
@@ -16211,7 +16211,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4347,
+     "line": 4383,
      "tabs": [
       "exhibits"
      ]
@@ -16336,7 +16336,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4344,
+     "line": 4380,
      "tabs": [
       "exhibits"
      ]
@@ -16346,7 +16346,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 57
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -16397,7 +16397,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3396,
+     "line": 3409,
      "tabs": [
       "exhibits"
      ]
@@ -16599,7 +16599,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3810,
+     "line": 3823,
      "tabs": [
       "exhibits"
      ]
@@ -21388,7 +21388,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 56
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -24412,7 +24412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2206,
+     "line": 2219,
      "tabs": [
       "exhibits"
      ]
@@ -28758,7 +28758,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2207,
+     "line": 2220,
      "tabs": [
       "exhibits"
      ]
@@ -32423,7 +32423,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 123
+     "line": 132
     },
     {
      "id": "script:kb/_apply_unclassified_triage.py",
@@ -32479,14 +32479,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 294
+     "line": 305
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 301
+     "line": 312
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

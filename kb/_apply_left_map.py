@@ -7,6 +7,8 @@ List's leftover-title rows (exhibits.js leftSave). The newest row per title is t
 
 - keep: the title stays a search name of its canonical title, and the List no longer shows it as waiting. A keep newer
   than an applied Move or Remove undoes it: the raw key's unified_title returns to `left_map.from` and the marker goes.
+  A keep whose `left_map.from` is no longer a canonical title in the reference is held and logged, never restored
+  (kb/_cred_rename_apply.py renames `left_map.from` with its canonical title, so a rename does not strand it).
 - moved:<canonical title>: that one raw key's unified_title becomes the named canonical title. No articulation is
   reminted, no credential is renamed or retired, and kb/unclassified_fold/retires.json is never written: this is
   deliberately not the fold's path (kb/_fold_unclassified.py) nor the reviewed rename apply (kb/_cred_rename_apply.py).
@@ -75,9 +77,16 @@ def plan(ut, rows, canonicals, used=frozenset()):
         prev = marker or {}
         at = row.get("reviewed_at")
         if val == "keep":
-            # The newest decision wins: a keep after an applied Move or Remove puts the original link back.
+            # The newest decision wins: a keep after an applied Move or Remove puts the original link back, but only to
+            # a title the reference still holds. A `from` renamed or retired since (kb/_cred_rename_apply.py renames it
+            # with its canonical title; a retirement does not) is held and logged, never restored as a dead title.
             if prev.get("decision") in ("moved", "removed"):
-                out.append((raw, "keep", cur, prev.get("from") or cur, at, marker))
+                back = prev.get("from") or cur
+                if back not in canonicals:
+                    skips.append((raw, "held: a keep would restore its link to " + str(back) + ", which is no longer a "
+                                       "canonical title in the reference; save a Move to the title it belongs under"))
+                    continue
+                out.append((raw, "keep", cur, back, at, marker))
             continue
         if val.startswith("moved:"):
             to = val[len("moved:"):].strip()
@@ -229,15 +238,20 @@ def main(argv=None):
     if not changes:
         print("nothing to apply: %d skips; no file written" % len(skips))
         return 0
-    # The receipt first (Rule 10 a2): a write that fails after it still leaves every before-value on disk.
+    # The receipt first (Rule 10 a2), so the before-values are on disk before the file changes; a write of the file
+    # that fails takes the receipt with it, so no receipt ever names a change that did not land.
     stamp, rec = receipt_path()
     os.makedirs(os.path.dirname(rec), exist_ok=True)
     with open(rec, "x", encoding="utf-8") as f:
         json.dump({"what": "kb/_apply_left_map.py", "at": stamp, "changes": [
             {"raw": r, "decision": d, "before": b, "after": t, "before_left_map": m}
             for r, d, b, t, _, m in changes]}, f, indent=1, ensure_ascii=False)
-    apply(ut, changes)
-    write_atomic(os.path.join(ROOT, UT), json.dumps(ut, indent=2, ensure_ascii=False) + "\n")
+    try:
+        apply(ut, changes)
+        write_atomic(os.path.join(ROOT, UT), json.dumps(ut, indent=2, ensure_ascii=False) + "\n")
+    except BaseException:
+        os.unlink(rec)
+        raise
     print("applied %d; receipt %s" % (len(changes), os.path.relpath(rec, ROOT)))
     return 0
 

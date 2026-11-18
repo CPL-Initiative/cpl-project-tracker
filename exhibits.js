@@ -1457,8 +1457,12 @@
         var why = relTargetWhyNot(target, a, live);
         if (why) throw new Error("held:" + why);
         titles.forEach(function (t) { var w = relWhyNot(t, a, live); if (w) throw new Error("held:" + t + ": " + w); });
-        var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: target, merge: true }; }), skips: [] };
-        return postRows(sess, renameRows(sess.email, plan));
+        // The fold's guard on Sam's graded and cert-based groups, read the way foldWrite reads it.
+        return foldGate(titles.map(function (t) { return [t, target]; }), "Press Save again").then(function (g) {
+          if (g.words) throw new Error("guard:" + g.words);
+          var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: target, merge: true }; }), skips: [] };
+          return postRows(sess, renameRows(sess.email, plan).concat(foldLogRows(sess.email, g.logs)));
+        });
       });
     }).then(function () {
       var writes = [[FIELD_CRED_TITLE, target], [FIELD_MERGE_CONFIRM, target]];
@@ -1474,7 +1478,9 @@
       render(); relFocus("exh-rel-note");
     }).catch(function (e) {
       var m = String(e && e.message || e);
-      a.busy = false; a.ask = null;
+      a.busy = false;
+      if (m.indexOf("guard:") === 0) { a.note = m.slice(6); render(); relFocus("exh-rel-note"); return; }
+      a.ask = null;
       a.note = m === "signin" ? "Sign in as a reviewer to save. Nothing was saved."
         : m.indexOf("held:") === 0 ? "Nothing was saved: " + m.slice(5) + " The panel shows the rows as they stand now."
         : "The save did not reach the reference (" + m + "). Nothing changed; try again.";
@@ -1530,10 +1536,17 @@
     var plan = renamePlan(b);
     if (!plan.renames.length && !plan.skips.length) { state.note = "Nothing to save: every row is left as it is."; state.rb.ask = false; render(); return Promise.resolve(); }
     state.rb.busy = true; render();
+    var held = false;
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
-      return postRows(sess, renameRows(sess.email, plan));
+      // A merge in the batch folds one title into another: the fold's guard on Sam's groups, read the way foldWrite reads it.
+      var folds = plan.renames.filter(function (x) { return x.merge; }).map(function (x) { return [x.r.current, x.to]; });
+      return foldGate(folds, "Press Save the batch again").then(function (g) {
+        if (g.words) { held = g.words; return null; }
+        return postRows(sess, renameRows(sess.email, plan).concat(foldLogRows(sess.email, g.logs)));
+      });
     }).then(function () {
+      if (held) { state.rb.busy = false; state.note = held; render(); return; }
       plan.renames.forEach(function (x) { state.rb.done[x.r.current] = "renamed"; });
       plan.skips.forEach(function (r) { state.rb.done[r.current] = "skipped"; });
       state.rb.busy = false; state.rb.ask = false;
@@ -3841,7 +3854,8 @@
     return el("section", { cls: "exh-l-rx", id: "exh-l-rx", "aria-label": "The last re-analysis" }, kids);
   }
   /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
-     see?"). Shown until it is accepted, dismissed for the visit, or the credential already carries a rename. */
+     see?"). Shown until it is accepted, dismissed for the visit, or the credential already carries a rename. `to` is the
+     title the suggestion names, which Accept hands the fold's one choke point; `end` is where the fold lands, for the words. */
   function listSuggest(r) {
     var L = listState(), sg = L.aiData && L.aiData.suggest && L.aiData.suggest[r.ut];
     if (!sg || (L.sgDone || {})[r.ut]) return null;
@@ -3849,85 +3863,107 @@
     if (o.title) return null;
     var end = listChainEnd(sg.to);
     if (end === r.ut) return null;
-    return end === sg.to ? sg : { to: end, via: sg.to, why: sg.why + "; " + sg.to + " itself now folds into " + end };
+    return { to: sg.to, end: end, why: end === sg.to ? sg.why : sg.why + "; " + sg.to + " itself now folds into " + end };
   }
   /* Where a title lands once the pending renames run: follow each credential's saved rename until one has none
-     (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles"). */
-  function listChainEnd(t) {
-    var seen = {}, ov = state.cs.overlay || {};
+     (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles").
+     The path holds every title from the one named to the end; the fold's choke point reads the same path for the title
+     it writes and for the type it guards, so the two cannot disagree. */
+  function listChainPath(t) {
+    var seen = {}, ov = state.cs.overlay || {}, path = [];
     for (var k = 0; k < 12 && t && !seen[t]; k++) {
       seen[t] = true;
+      path.push(t);
       var nx = (ov[t] || {}).title;
       if (!nx || nx === t) break;
       t = nx;
     }
-    return t;
+    return path;
   }
-  /* The CPL type the guard reads for a picked title: the picked title's own, else the first title along its chain of saved
-     renames that has one. A pending rename names a title the map does not hold yet, so reading the chain's end alone
-     found no type and let a combine across Sam's groups through (S679, the second reader's blocker). */
-  function chainType(t) {
-    var seen = {}, ov = state.cs.overlay || {};
-    for (var k = 0; k < 12 && t && !seen[t]; k++) {
-      var ty = canonType(t);
-      if (ty) return ty;
-      seen[t] = true;
-      var nx = (ov[t] || {}).title;
-      if (!nx || nx === t) break;
-      t = nx;
-    }
-    return null;
-  }
+  function listChainEnd(t) { var p = listChainPath(t); return p.length ? p[p.length - 1] : t; }
   /* A fold accepted and waiting for the reviewed apply: a rename and a merge confirm naming the same target. */
   function listPendingFold(r) {
     var o = state.cs.overlay[r.ut] || {};
     if (!o.title || !o.merge || o.merge !== o.title) return null;
     return { to: o.title, end: listChainEnd(o.title) };
   }
+  /* Where a fold of `from` into the picked title lands, and whether that crosses Sam's graded and cert-based groups
+     (2026-11-17). The landing title is the end of the picked title's chain of saved renames, read by listChainPath, the
+     resolver the write itself uses. Its type is its own; a pending rename names a title the map does not hold yet, so an
+     untyped landing title takes the type of the last typed title along the chain, which reaches back to the picked title. */
+  function foldLanding(from, pick) {
+    var path = listChainPath(pick), end = path[path.length - 1] || pick, at = null, type = null;
+    for (var k = path.length - 1; k >= 0 && !type; k--) { type = canonType(path[k]); if (type) at = path[k]; }
+    if (!type) { type = canonType(pick); at = type ? pick : null; }
+    return { pick: pick, end: end, type: type, typedAt: at, cross: crossesGroups(canonType(from), type), key: "combine " + from + " -> " + end };
+  }
+  function foldBlockWords(from, f, again) {
+    return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the fold lands on " + f.end
+      + (f.end !== f.pick ? " (" + f.pick + " is saved to become " + f.end + ")" : "") + ", which is " + groupWords(f.cross.b)
+      + (f.typedAt !== f.end ? ", the type of " + f.typedAt + ", since " + f.end + " has no CPL type of its own" : "")
+      + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged.";
+  }
+  function foldOverride(from, f) { return "combine across groups: " + f.cross.a + " into " + f.cross.b + ": " + from + " -> " + f.end; }
+  /* THE one place a credential's fold is written (S679, the third round on the graded and cert-based guard): the rename
+     and the merge confirm naming the end of the picked title's chain. The List's Accept, the leftover row's Combine and
+     Re-point all come here, so the guard reads the title the write lands on, never a title a caller passed along.
+     A fold across Sam's groups is blocked on the first try; a second try writes it and logs the override beside it.
+     It reads the CPL types file first, so the guard never passes for want of it. Resolves { ok, words, to }. */
+  function foldWrite(r, pick, o) {
+    o = o || {};
+    var from = r.ut;
+    return leftMapLoad().then(function () {
+      var f = foldLanding(from, pick), writes = [[FIELD_CRED_TITLE, f.end], [FIELD_MERGE_CONFIRM, f.end]];
+      if (f.end === from) return { ok: false, words: (f.end === pick ? pick + " is " + from + " itself" : pick + " is already saved to become " + from) + "; pick another title." };
+      if (f.cross && !LEFT.guard[f.key]) { LEFT.guard[f.key] = true; return { ok: false, blocked: true, words: foldBlockWords(from, f, o.again) }; }
+      if (f.cross) writes.push([FIELD_TYPE_OVERRIDE, foldOverride(from, f)]);
+      return session().then(function (sess) {
+        if (!sess) throw new Error("signin");
+        return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
+      }).then(function (rs) {
+        if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+        listApply(r, writes);
+        return { ok: true, to: f.end, words: "Saved: " + from + " folds " + (o.straight ? "straight " : "") + "into " + f.end
+          + (f.end !== pick ? ", where " + pick + "'s saved rename lands" : "") + ". The daily dry-run pairs them, and a reviewed apply merges the records." };
+      }).catch(function (e) {
+        return { ok: false, words: e && e.message === "signin" ? "Sign in as a reviewer to " + (o.verb || "accept a fold") + "." : "The fold of " + from
+          + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed." };
+      });
+    });
+  }
+  /* The same guard for a save that folds many titles in one request (the related titles' Save and the rename batch):
+     foldLanding reads each pair's landing; any pair that crosses Sam's groups holds the whole save on the first try, and
+     a second try writes it with one override row per crossing pair. Resolves { words } to hold, or { logs } to write. */
+  function foldGate(pairs, again) {
+    return leftMapLoad().then(function () {
+      var cross = pairs.map(function (p) { return { from: p[0], f: foldLanding(p[0], p[1]) }; }).filter(function (x) { return x.f.cross; });
+      var fresh = cross.filter(function (x) { return !LEFT.guard[x.f.key]; });
+      if (fresh.length) {
+        fresh.forEach(function (x) { LEFT.guard[x.f.key] = true; });
+        return { words: foldBlockWords(fresh[0].from, fresh[0].f, again) + (fresh.length > 1 ? " " + fmt(fresh.length - 1) + " more "
+          + (fresh.length === 2 ? "fold crosses" : "folds cross") + " the groups the same way." : "") };
+      }
+      return { logs: cross.map(function (x) { return [x.from, foldOverride(x.from, x.f)]; }) };
+    });
+  }
+  function foldLogRows(email, logs) {
+    var at = new Date().toISOString();
+    return logs.map(function (l) { return { course_id: CRED_PREFIX + l[0], field: FIELD_TYPE_OVERRIDE, value: l[1], reviewer_email: email, reviewed_at: at }; });
+  }
   /* Re-point a waiting fold at the end of its chain, so the dry-run never holds it as stale. */
   function listRepoint(r, pf) {
-    var L = listState(), writes = [[FIELD_CRED_TITLE, pf.end], [FIELD_MERGE_CONFIRM, pf.end]];
     listCellNote("Re-pointing the fold of " + r.ut + " to " + pf.end + "…");
-    return session().then(function (sess) {
-      if (!sess) throw new Error("signin");
-      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
-    }).then(function (rs) {
-      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
-      listApply(r, writes);
-      L.cellNote = "Saved: " + r.ut + " now folds straight into " + pf.end + ".";
+    return foldWrite(r, pf.to, { again: "Press Re-point again", verb: "re-point a fold", straight: true }).then(function (res) {
+      if (!res.ok) { listCellNote(res.words); return; }
+      listState().cellNote = res.words;
       redrawList();
-    }).catch(function (e) {
-      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to re-point a fold." : "The re-point of " + r.ut
-        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
     });
   }
   /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
      one credential's records into the other; a reviewed apply does the merge. The engine's suggestion slot draws the
-     line and its two words, keeps what was accepted or dismissed for the visit, and marks the row changed; this hands it
-     the write and the words for the status line (the List norms' step 1, onto Exhibits in S545). */
-  function listSuggestAccept(r, sg, again) {
-    var from = r.ut, writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
-    /* Sam's graded and cert-based groups (2026-11-17): a combine across them is blocked on the first try; a second try,
-       which names both groups, goes through and is logged beside the fold. */
-    var cross = crossesGroups(canonType(from), chainType(sg.via || sg.to) || chainType(sg.to)), gk = "combine " + from + " -> " + sg.to;
-    if (cross && !LEFT.guard[gk]) {
-      LEFT.guard[gk] = true;
-      return Promise.resolve({ ok: false, words: "Blocked: " + from + " is " + groupWords(cross.a) + " and " + sg.to + " is " + groupWords(cross.b)
-        + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged." });
-    }
-    if (cross) writes.push([FIELD_TYPE_OVERRIDE, "combine across groups: " + cross.a + " into " + cross.b + ": " + from + " -> " + sg.to]);
-    return session().then(function (sess) {
-      if (!sess) throw new Error("signin");
-      return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
-    }).then(function (rs) {
-      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
-      listApply(r, writes);
-      return { ok: true, words: "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records." };
-    }).catch(function (e) {
-      return { ok: false, words: e && e.message === "signin" ? "Sign in as a reviewer to accept a fold." : "The fold of " + from
-        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed." };
-    });
-  }
+     line and its two words, keeps what was accepted or dismissed for the visit, and marks the row changed; this hands
+     foldWrite the title the suggestion names (the List norms' step 1, onto Exhibits in S545). */
+  function listSuggestAccept(r, sg) { return foldWrite(r, sg.to); }
   function listCellSave(r, kind, inp, label) {
     var cur = credCurrent(r), value = inp.value.replace(/\s+/g, " ").trim(), before = inp.getAttribute("data-was"), sites = null;
     if (kind === "title" && !value) { inp.value = before; listCellNote("A title cannot be empty; " + before + " stays."); return Promise.resolve(); }
@@ -4219,8 +4255,8 @@
       drawer: listDrawerFill,
       // The engine draws a spelling twin's fold under its title (with the AI sort on, or under Suggested folds), owns the
       // filter ids suggested, changed and selected, and keeps the visit's changed set that Re-analyze sends.
-      suggest: { get: function (r) { var sg = listSuggest(r); return sg ? { text: "fold into " + sg.to, why: sg.why, to: sg.to } : null; },
-        verb: "Accept", accept: listSuggestAccept, label: function (r, sg) { return "Fold " + r.ut + " into " + sg.to; } },
+      suggest: { get: function (r) { var sg = listSuggest(r); return sg ? { text: "fold into " + sg.end, why: sg.why, to: sg.to, end: sg.end } : null; },
+        verb: "Accept", accept: listSuggestAccept, label: function (r, sg) { return "Fold " + r.ut + " into " + sg.end; } },
       changed: true,
       flag: { get: listFlag, set: listSetFlag },
       edit: {
@@ -4461,7 +4497,7 @@
   }
   /* One old title's row in the panel: its CPL type, its live twin, the three decisions on its link, and Rename and Combine
      on the canonical title it sits under (none for a title Sam reviewed). Rename and Combine are the List's own title Edit
-     and Accept (listCellSave, listSuggestAccept), offered here so the job finishes from the row (S679, the lane's NEXT 2). */
+     and the fold its Accept writes (listCellSave, foldWrite), offered here so the job finishes from the row (S679, the lane's NEXT 2). */
   function leftOpenBox(raw, act) {
     if (LEFT.moving === raw && LEFT.act === act) LEFT.moving = null; else { LEFT.moving = raw; LEFT.act = act; }
     if (state.view === "list") render();
@@ -4538,15 +4574,14 @@
       leftSave([raw], "moved:" + to, log).then(function (ok) { LEFT.moving = null; leftDone(ok ? "Moved: " + raw.trim() + " now sits under " + to + " once the reference is rebuilt tonight." : LEFT.note); });
     } });
   }
-  /* Combine: the List's Accept (listSuggestAccept), which writes the rename and the merge confirm naming the picked title
-     (the end of its chain of saved renames) and carries the graded and cert-based guard: blocked on the first try, logged
-     on the second. Every local title under the canonical goes with it; a reviewed apply does the merge. */
+  /* Combine: the fold's one choke point (foldWrite), the same one the List's Accept uses. It writes the rename and the
+     merge confirm naming the end of the picked title's chain of saved renames and carries the graded and cert-based guard:
+     blocked on the first try, logged on the second. Every local title under the canonical goes with it; a reviewed apply
+     does the merge. */
   function leftCombineBox(raw, r) {
     var ut = r.ut;
     return leftPicker(raw, ut, { kind: "combine", go: "Combine here", label: "Canonical title to combine " + listTitle(r) + " with", act: function (to, say) {
-      var end = listChainEnd(to);
-      if (end === ut) { say.textContent = to + " is already saved to combine into " + ut + "; pick another title."; return; }
-      listSuggestAccept(r, { to: end, via: to }, "Press Combine here again").then(function (res) {
+      foldWrite(r, to, { again: "Press Combine here again" }).then(function (res) {
         if (!res.ok) { say.textContent = res.words; return; }
         LEFT.moving = null;
         leftDone(res.words);
@@ -5726,7 +5761,6 @@
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
     _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel, _seriesLine: seriesLine,
-    _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents,
-    _listSuggest: listSuggest, _listSuggestAccept: listSuggestAccept
+    _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

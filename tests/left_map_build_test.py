@@ -290,8 +290,74 @@ with tempfile.TemporaryDirectory() as td:
               and "held:" in buf.getvalue() and [c["raw"] for c in rec.get("changes", [])] == ["Old A"]
               and rec["changes"][0]["before_left_map"] is None
               and not [n for n in os.listdir(os.path.join(td, "kb")) if n.startswith(".tmp_")], (rc, out_ut, recs, buf.getvalue()))
+        # (5, the third reader) A write of kb/unified_titles.json that fails takes its receipt with it: no receipt names a
+        # change that did not land, and the file stays as it was.
+        for n in os.listdir(os.path.join(td, "kb", "receipts")):
+            os.unlink(os.path.join(td, "kb", "receipts", n))
+        with open(os.path.join(td, "kb", "unified_titles.json"), "w") as f:
+            json.dump({"Old A": {"unified_title": "Brakes"}, "Live": {"unified_title": "Wheels"}}, f)
+        before_text = open(os.path.join(td, "kb", "unified_titles.json")).read()
+        os.replace = boom
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                A.main(["--rows", rowsf, "--apply"])
+            failed_loud = False
+        except OSError:
+            failed_loud = True
+        finally:
+            os.replace = real_replace
+        check("(5) a failed write of the file deletes its receipt, leaves the file whole and fails loud",
+              failed_loud and os.listdir(os.path.join(td, "kb", "receipts")) == []
+              and open(os.path.join(td, "kb", "unified_titles.json")).read() == before_text,
+              (failed_loud, os.listdir(os.path.join(td, "kb", "receipts"))))
     finally:
         A.ROOT = real_root
+
+# (4, the third reader) A keep whose left_map.from is no longer a canonical title is held and logged, never restored.
+ut6 = {"Gone": {"unified_title": "Wheels", "left_map": {"decision": "moved", "from": "Old Brakes", "at": "t1"}},
+       "Here": {"unified_title": "Wheels", "left_map": {"decision": "moved", "from": "Brakes", "at": "t1"}},
+       "Other": {"unified_title": "Brakes"}}
+keeps = [{"course_id": "_LEFT_MAP::Gone", "value": "keep", "reviewed_at": "t2"}, {"course_id": "_LEFT_MAP::Here", "value": "keep", "reviewed_at": "t2"}]
+cans6 = {e["unified_title"] for e in ut6.values()}
+ch6, sk6 = A.plan(ut6, keeps, cans6)
+check("(4) a keep whose from is no longer a canonical title is held and logged; one whose from is still one restores it",
+      [c[0] for c in ch6] == ["Here"] and ch6[0][3] == "Brakes" and len(sk6) == 1 and sk6[0][0] == "Gone"
+      and sk6[0][1].startswith("held:") and "Old Brakes" in sk6[0][1], (ch6, sk6))
+
+# (4) The reviewed rename apply renames left_map.from with its canonical title, and its undo puts it back.
+R = mod("_cred_rename_apply")
+U = mod("_cred_rename_undo")
+real_ut = R.UNIFIED_TITLES
+with tempfile.TemporaryDirectory() as td:
+    R.UNIFIED_TITLES = os.path.join(td, "unified_titles.json")
+    try:
+        with open(R.UNIFIED_TITLES, "w") as f:
+            json.dump({"Moved": {"unified_title": "Wheels", "left_map": {"decision": "moved", "from": "Brakes", "at": "t1"}},
+                       "Removed": {"unified_title": "Brakes", "left_map": {"decision": "removed", "from": "Brakes", "at": "t1"}},
+                       "Plain": {"unified_title": "Brakes"}, "Elsewhere": {"unified_title": "Wheels",
+                                                                            "left_map": {"decision": "moved", "from": "Rims", "at": "t1"}}}, f)
+        res = R.rewrite_unified_titles_values({"Brakes": "Brake Systems"})
+        got = json.load(open(R.UNIFIED_TITLES))
+        check("(4) the rename apply renames left_map.from with the unified_title, and only where it names the old title",
+              got["Moved"] == {"unified_title": "Wheels", "left_map": {"decision": "moved", "from": "Brake Systems", "at": "t1"}}
+              and got["Removed"]["unified_title"] == "Brake Systems" and got["Removed"]["left_map"]["from"] == "Brake Systems"
+              and got["Plain"]["unified_title"] == "Brake Systems" and got["Elsewhere"]["left_map"]["from"] == "Rims"
+              and res["_left_map_from"] == {"Moved": {"before": "Brakes", "after": "Brake Systems"},
+                                            "Removed": {"before": "Brakes", "after": "Brake Systems"}}, (got, res.get("_left_map_from")))
+        cans7 = {e["unified_title"] for e in got.values()}
+        ch7, sk7 = A.plan(got, [{"course_id": "_LEFT_MAP::Moved", "value": "keep", "reviewed_at": "t2"}], cans7)
+        check("(4) after the rename, a keep restores the link to the canonical title's new name",
+              [(c[0], c[3]) for c in ch7] == [("Moved", "Brake Systems")] and not sk7, (ch7, sk7))
+        undo = {"unified_titles": res["_changed"], "unified_titles_left_map_from": res["_left_map_from"], "groups": {"Brake Systems": ["Brakes"]}}
+        changes, drift, _ = U.plan_undo(undo, {}, got, [])
+        U.apply_undo(changes, {}, got, [])
+        check("(4) the rename's undo puts left_map.from back with the unified_title",
+              not drift and got["Moved"]["left_map"]["from"] == "Brakes" and got["Removed"]["left_map"]["from"] == "Brakes"
+              and got["Removed"]["unified_title"] == "Brakes" and got["Plain"]["unified_title"] == "Brakes", (drift, got))
+        apply_src = open(os.path.join(ROOT, "kb", "_cred_rename_apply.py"), encoding="utf-8").read()
+        check("(4) the apply's undo receipt carries the left_map.from renames", '"unified_titles_left_map_from": ut_res["_left_map_from"]' in apply_src)
+    finally:
+        R.UNIFIED_TITLES = real_ut
 
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)
