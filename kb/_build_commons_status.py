@@ -446,15 +446,22 @@ HEAD_BANDS = (50, 100, 250)
 # curator saves on the tab lands only in cr_reference_decisions. A sync of that table (group_key, decision, members,
 # excluded, updated_at; never who saved it) is read after the receipts, so a live decision moves the Commons counts.
 CR_LIVE = "kb/status/cr_decisions_live.json"
+# The only columns a synced row may carry. A sync that copies the table row whole would bring updated_by or another
+# staff-contact field into a committed, Pages-served file, so the read refuses any other key (COBIx on #3517, finding 3).
+CR_LIVE_KEYS = frozenset(("group_key", "decision", "members", "excluded", "updated_at"))
 
 
 def live_cr_rows(root):
-    """The synced rows, oldest first, or [] while no sync is committed."""
+    """The synced rows, oldest first, or [] while no sync is committed. A row with a column outside CR_LIVE_KEYS
+    raises ValueError, so a sync that copies who saved a decision fails the build."""
     p = os.path.join(root, CR_LIVE)
     if not os.path.exists(p):
         return []
     with open(p, encoding="utf-8") as f:
         D = json.load(f)
+    extra = sorted({k for r in (D.get("rows") or []) for k in r} - CR_LIVE_KEYS)
+    if extra:
+        raise ValueError(CR_LIVE + " carries columns outside its allowlist: " + ", ".join(extra))
     return sorted((r for r in (D.get("rows") or []) if r.get("group_key")), key=lambda r: str(r.get("updated_at") or ""))
 
 

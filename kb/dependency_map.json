@@ -6169,7 +6169,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1478,
+     "line": 1480,
      "tabs": [
       "coci-lookup"
      ]
@@ -6680,7 +6680,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1266,
+     "line": 1268,
      "tabs": [
       "coci-lookup"
      ]
@@ -6783,7 +6783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1354,
+     "line": 1356,
      "tabs": [
       "coci-lookup"
      ]
@@ -14567,7 +14567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 710
+     "line": 717
     }
    ],
    "served": false,
@@ -14739,7 +14739,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 463
+     "line": 470
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -15464,7 +15464,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1008
+     "line": 1015
     }
    ],
    "served": false,
@@ -15487,7 +15487,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 585
+     "line": 592
     }
    ],
    "producers": [
@@ -15544,7 +15544,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 586
+     "line": 593
     }
    ],
    "served": true,
@@ -15796,7 +15796,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 564
+     "line": 571
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -16060,7 +16060,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1157
+     "line": 1164
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -16969,7 +16969,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1100
+     "line": 1107
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -17344,7 +17344,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 689
+     "line": 696
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -18518,7 +18518,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 466
+     "line": 473
     }
    ],
    "served": false,
@@ -20380,7 +20380,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 942,
+     "line": 944,
      "tabs": [
       "coci-lookup"
      ]
@@ -20597,7 +20597,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 820
+     "line": 827
     }
    ],
    "producers": [
@@ -20635,7 +20635,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 509
+     "line": 516
     }
    ],
    "served": true,
@@ -20895,7 +20895,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 644
+     "line": 651
     }
    ],
    "served": true,
@@ -23640,7 +23640,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 708
+     "line": 715
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -28717,7 +28717,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 700,
+     "line": 702,
      "tabs": [
       "coci-lookup"
      ]
@@ -29140,7 +29140,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1267,
+     "line": 1269,
      "tabs": [
       "coci-lookup"
      ]

@@ -192,6 +192,17 @@ with tempfile.TemporaryDirectory() as fx:
     check("CR fixture: once the live rows are synced, the 'saved through' words leave the card",
           live["facts"]["decisions_through"] is None and "saved through" not in live["pair"][0]["words"], live["pair"][0]["words"])
     check("CR fixture: the row names the synced file among its sources", B.CR_LIVE in (live.get("sources") or []), live.get("sources"))
+    # COBIx on #3517 finding 3: the sync keeps only its allowlisted columns; a row carrying who saved it fails the read.
+    with open(os.path.join(fx, B.CR_LIVE), "w") as f:
+        json.dump({"rows": [{"group_key": "e", "decision": "confirmed", "members": ["e1"], "excluded": [],
+                             "updated_at": "2026-11-17T20:00:00Z", "updated_by": "someone@example.edu"}]}, f)
+    try:
+        B.live_cr_rows(fx)
+        refused = None
+    except ValueError as e:
+        refused = str(e)
+    check("CR fixture ⭐: a synced row naming who saved it (updated_by) fails the read, never reaches the card",
+          refused is not None and "updated_by" in refused, refused)
 sub = rows[4].get("facts") or {}
 check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed"))
 # S425: the pair is the settled count (confirmed, on the authority rule, in no collision), never above the confirmed count,

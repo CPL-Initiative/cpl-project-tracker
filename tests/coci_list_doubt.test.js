@@ -425,6 +425,21 @@ function rule(t, value, words, similar) {
       !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0), dataRows(t.d).map((r) => txt(cell(r, t.d, "Title"))));
   }
   {
+    // (12) ⭐ COBIx on #3517 finding 1: a "not sure" changed to a Keep replaces its card's ruling without changing how
+    // many rulings there are; the in-doubt count still drops with the card's rows.
+    const unsure = [Object.assign({}, RULED[0], { value: JSON.stringify({ mid: "CNST M1009", discipline_was: "Construction", ruling: "unsure", words: "", similar: false }) })];
+    const t = tab({ ruled: unsure, signedIn: true });
+    await until(() => { const c = t.d.querySelector("[id$='filters'] [aria-current]"); return c && /^Discipline in doubt \(4\)$/.test(txt(c)); });
+    const before = t.d.querySelector("[id$='filters'] [aria-current]");
+    check("(12) a not-sure card stays in doubt: 4 local courses", before && /\(4\)$/.test(txt(before)), before && txt(before));
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    rule(t, "keep", "Shop tools are taught for the trade.", false);
+    await until(() => t.writes.length >= 2);
+    await until(() => { const c = t.d.querySelector("[id$='filters'] [aria-current]"); return c && /\(3\)$/.test(txt(c)); });
+    const after = t.d.querySelector("[id$='filters'] [aria-current]");
+    check("(12) ⭐ a changed ruling moves the in-doubt count with its rows: 4 becomes 3", after && /^Discipline in doubt \(3\)$/.test(txt(after)), after && txt(after));
+  }
+  {
     const t = tab({ doubtFail: true });
     await until(() => /ccr_doubt\.json answered 404/.test(txt(t.d.body)));
     check("(7) the file failing says so, never an empty list as a zero", /kb\/ccr_doubt\.json answered 404, so this filter shows nothing/.test(txt(t.d.body)));

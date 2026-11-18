@@ -444,7 +444,7 @@
      ruling stays on its panel through All or a search (#3447 item 6; #3510 B3). A "not sure" stays in doubt. */
   function ruledCard(id) { var R = JOBS.rulings && JOBS.rulings[id]; return !!R && !!R.v && R.v.ruling !== "unsure"; }
   function jobCounts() {
-    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0) + "|" + Object.keys(JOBS.rulings || {}).length;
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0) + "|" + Object.keys(JOBS.rulings || {}).length + "|" + (JOBS.saves || 0);
     if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
     var n = {};
     JOB_FILTERS.forEach(function (j) {
@@ -592,7 +592,9 @@
           // Issue 3447: the ruling counts as landed only once its discipline write lands. A merged card's Keep POSTs the
           // discipline like any other (its old confirmation PATCH was refused by the merge bots' row policy, and 6 of
           // Sam's 13 Keeps never saved); the overlay fold stamps validated_at from that row.
-          var landed = function () { (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) }; };
+          // A changed ruling replaces its card's entry without changing the key count, so every save bumps JOBS.saves, which
+          // jobCounts() keys on: the in-doubt label then follows the rows (COBIx on #3517, finding 1).
+          var landed = function () { (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) }; JOBS.saves = (JOBS.saves || 0) + 1; };
           var after = function (ok) { if (ok) landed(); else { CC.said[c.id] = "The reason is saved, but the discipline did not save, so the ruling has not landed. " + CC.said[c.id]; ccRedraw(); } };
           CC.rule[c.id] = null;
           if (ruling === "move") ccSave(c, "discipline", to, after);
