@@ -79,6 +79,18 @@ live record (the pair's fixed slugs always count), and then Start offers three c
 version of it, or start a separate piece anyway under its own slug. `library.js` `duplicateOf`/`askDuplicate`;
 `tests/library.test.js` (11e).
 
+✅ **Start drafts at once; the drafter reads COBI's college data (Sam with Ashley, 2026-11-18; DECIDED
+`d-library-start-drafts-and-reads-cobi-data`).** Start on a new piece that can draft opens its card beside the list
+and calls library-revise-draft with no Draft it now press (`draftOnStart`). A new piece whose draft came back with no
+change offers **Change what you asked** and opens the draft it builds on. A piece that drafts on its card offers no
+File it beside the card and no File a new version (the In development list keeps File it for a session-made piece).
+The drafter adds a reference block for each college a request names: its MAP landing page
+(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits MAP lists for it, each with the
+`exhibit-courses?Exhibit=` link Request Adopt uses (`reference_data.mjs`). **Open:** MAP's landing pages take no
+course filter we know of, so a card's filtered link is the exhibit link; ask the MAP team whether a landing page
+takes one. **Full access** stays bounded: public data only, never a person's contact or student detail, because a
+draft becomes a public page; a new dataset joins as one function in `reference_data.mjs`.
+
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
 ## How a file reaches the SharePoint folder (Sam, Open Asks Sheet 49, 2026-10-08)

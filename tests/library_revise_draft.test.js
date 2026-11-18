@@ -36,6 +36,7 @@ function response(status, body) {
     json: function () { return Promise.resolve(body); },
     text: function () { return Promise.resolve(JSON.stringify(body)); } });
 }
+function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); }
 const settle = () => new Promise((r) => setTimeout(r, 0)).then(() => new Promise((r) => setTimeout(r, 0)));
 
 function rec(over) {
@@ -233,6 +234,49 @@ function load(rows, onFetch) {
     sb.versions.push({ label: "Version 7", status: "Current: rebuilt from the source." });
     sb.versions[0].status = "Replaced by v7";
     check("E3: a version built from the source clears it", M._flagsOf(sb).indexOf("source_behind") < 0);
+  }
+
+  // ── F. Reference data from COBI, and the card after a draft that changed nothing (Sam, 2026-11-18) ──
+  // "we want to add buttons to the college landing pages and apparently, the library routine can't access that data
+  // in cobi"; "after the second draft, there was no way to try a new draft by adding more instructions"; "The file
+  // it now function does not seem to be necessary".
+  {
+    const R = await import("../chatbox/supabase/functions/library-revise-draft/reference_data.mjs");
+    const names = ["Modesto Junior College", "Riverside City College", "Cabrillo College", "Chaffey College", "Laney College", "Norco College", "Foothill College"];
+    const named = R.collegesNamed("Cards for Cabrillo, Chaffey, Laney, Modesto Junior and Norco", names);
+    check("F1: the drafter finds the colleges a request names, by full name or the name without College",
+      named.join("|") === "Modesto Junior College|Cabrillo College|Chaffey College|Laney College|Norco College", named.join("|"));
+    check("F1: a college the request does not name is left out", R.collegesNamed("Sheet metal at Laney", names).join("|") === "Laney College");
+    const ex = R.exhibitsFor({ found: { "MAPICA-SM-1-001": { title: "Sheet Metal Worker", college: "Laney College" }, "X-1": { title: "Other", college: "Norco College" } } }, ["Laney College"]);
+    const block = R.referenceBlock(["Laney College", "Norco College"], { "Laney College": "https://cpldashboardcccco.azurewebsites.net/Laney" }, ex);
+    check("F2: the block gives each college's MAP landing page and CPL Opportunity page",
+      /Laney College\n- MAP landing page \(where a student requests CPL at this college\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
+      /cpl-opportunity\/\?college=Laney%20College/.test(block), block);
+    check("F2: a college with no landing page on file points to MAP's Find your college list, never an invented link",
+      /Norco College\n- MAP landing page: none on file; link MAP's Find your college list, https:\/\/map\.rccd\.edu\/cpllandingpages\//.test(block), block);
+    check("F2: each exhibit carries the MAP link Request Adopt uses",
+      block.indexOf("Sheet Metal Worker (MAPICA-SM-1-001): https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-SM-1-001&View=Non-Military") >= 0, block);
+    check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
+    check("F3: the drafter reads the contacts table for landing_page_url alone, with the caller's credential, on both paths",
+      /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
+      /the reference data from COBI/.test(FN) && !/primary_contact_email|cpl_coordinator_email/.test(FN));
+    const RD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/reference_data.mjs", "utf8");
+    check("F3: the boundary is written where a dataset joins", /no person's name, email or phone/.test(RD) && /no student detail/.test(RD));
+
+    const waiting = rec({ id: "22222222-2222-2222-2222-222222222222", slug: "sheet-metal-cards", title: "Sheet Metal Cards", status: "requested",
+      url: null, home: "not_filed", public_listed: false, version: null, brief: { say: "Cards per college" }, refresh_note: "Add the landing page links.",
+      regen: { requested_at: "2026-11-18T21:00:00Z", requested_by: "Ashley", publish: "show", based_on_draft: "33333333-3333-3333-3333-333333333333" } });
+    const m = load([waiting]); await m.M.activate(); await settle();
+    check("F4: a new piece whose last draft changed nothing still offers Draft it now", !!m.root.querySelector('form[data-draftnowform="' + waiting.id + '"]'));
+    check("F4: ⭐ and Change what you asked, so more instructions can be added", !!m.root.querySelector('[data-change="' + waiting.id + '"]'));
+    check("F4: and the draft it builds on opens", !!m.root.querySelector('[data-draftopen="33333333-3333-3333-3333-333333333333"]'));
+    click(m.w, m.root.querySelector('[data-change="' + waiting.id + '"]'));
+    const ta = m.w.document.getElementById("cb-instr-" + waiting.id);
+    check("F4: Change what you asked opens the card's box with the request in it", !!ta && ta.value === "Add the landing page links.");
+    const tgl = m.root.querySelector('[data-toggle="' + waiting.id + '"]'); if (tgl) click(m.w, tgl);
+    check("F5: a piece that drafts and publishes on its card offers no File a new version, and no File it beside its card",
+      !m.root.querySelector('[data-newver="' + waiting.id + '"]') && /: draftsOnCard\(r\) \? "" : word\("data-file"/.test(SRC) &&
+      /function draftsOnCard\(r\) \{ return isNewPiece\(r\) && canDraftNew\(r\); \}/.test(SRC));
   }
 
   let pass = 0;

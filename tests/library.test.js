@@ -381,7 +381,7 @@ block("(9)", function () {
       w0.body.sources[0].text === "Eight projects funded." && w0.body.sources[0].url === null, JSON.stringify(w0.body.sources));
     check("(9) For defaults to the team", w0.body.seen_by === "team");
     check("(9) the write carries the team phrase", w0.init.headers["x-team-pass"] === "p");
-    check("(9) the saved brief opens for copying, and the page says what happens next", m.M._state.briefShown.new1 === true && /Requested: Summit table \(Spreadsheet\)/.test(m.root.textContent) && /Press Draft it now on its card/.test(m.root.textContent));
+    check("(9) the saved brief opens for copying", m.M._state.briefShown.new1 === true);
     check("(9) the panel empties for the next piece", m.w.document.getElementById("ls-title").value === "" && m.w.document.getElementById("lc-instr").value === "");
   });
 });

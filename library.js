@@ -771,7 +771,7 @@
 
   function details(r) {
     var recActs = '<div class="lib-recacts">' + word("data-edittop", r.id, "Edit the record", false, r.title) +
-      word("data-newver", r.id, "File a new version") + word("data-fromit", r.id, "Start something new from it") + "</div>" +
+      (draftsOnCard(r) ? "" : word("data-newver", r.id, "File a new version")) + word("data-fromit", r.id, "Start something new from it") + "</div>" +
       (state.edit === r.id ? editForm(r) : "");
     return recActs + detailsList(r);
   }
@@ -926,7 +926,7 @@
     var acts = r.url
       ? (withOpen ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" : "") +
         word("data-copy", r.id, "Copy link")
-      : word("data-file", r.id, "File it", r.remediation === "remediated");
+      : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
     if (r.url && !r.public_listed) acts += word("data-pubtop", r.id, "List publicly");
     acts += '<button type="button" class="lib-word" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     return acts;
@@ -1145,7 +1145,7 @@
     return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && !linkOnly && (r.refresh_note || pasted));
   }
   function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
-  function draftNow(id, byName) {
+  function draftNow(id, byName, lead) {
     var r = byId(id);
     var fresh = isNewPiece(r) && !regenState(r);
     if (!r || (regenState(r) !== "waiting" && !fresh)) return;
@@ -1154,7 +1154,7 @@
     rememberAuthor(by);
     var h = headers({ "Content-Type": "application/json" }), tok = reviewerToken();
     if (tok && !teamPhrase()) h.Authorization = "Bearer " + tok;
-    state.busy = true; sayOn(id, (isNewPiece(r) ? "Claude is drafting " + r.title + " from its brief and documents." : "Claude is drafting the changes to " + r.title + ".") + " This takes about a minute."); render(); focusState(id);
+    state.busy = true; sayOn(id, (lead ? lead + " " : "") + (isNewPiece(r) ? "Claude is drafting " + r.title + " from its brief and documents." : "Claude is drafting the changes to " + r.title + ".") + " This takes about a minute."); render(); focusState(id);
     return window.fetch(REVISE_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ id: id, by: by }) })
       .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j || {} }; }); })
       .then(function (o) {
@@ -1437,6 +1437,9 @@
   // yet--always need some sort of out side intervention"; 2026-11-10: "all the way to posting in the public library").
   // library-revise-draft writes Draft 1 from the brief and the documents in the public library's look; Publish it
   // approves it, and library-publish puts it at library/<slug>/ as Version 1. Then List publicly, as for any piece.
+  // A new piece Claude drafts and publishes on its card needs no File it or File a new version (Sam, 2026-11-18: "The
+  // file it now function does not seem to be necessary"); the In development list keeps File it for a piece a session makes from its copied brief.
+  function draftsOnCard(r) { return isNewPiece(r) && canDraftNew(r); }
   function isNewPiece(r) { return !!r && r.status === "requested" && !r.url; }
   function googleLink(u) { return /^https:\/\/docs\.google\.com\/(document|presentation|spreadsheets)\/d\//.test(String(u || "")); }
   function canDraftNew(r) {
@@ -1450,6 +1453,12 @@
       if (canDraftNew(r)) {
         next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
           '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>");
+        // A draft that came back with no change, or not at all, can always be asked again in other words (Sam,
+        // 2026-11-18: "after the second draft, there was no way to try a new draft by adding more instructions").
+        if (rs === "waiting") {
+          next.push(word("data-change", r.id, "Change what you asked", false, "for " + r.title));
+          if (g.based_on_draft) next.push(openDraftWord({ regen: { draft_id: g.based_on_draft }, title: r.title }, false));
+        }
         why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is public until you press Publish it.";
       } else why = "Say what it must say (Edit record), or add a document to work from, and Claude drafts it here.";
       // The piece's documents, added on the card itself (Sam's request 71931018 was saved before its PDF was read).
@@ -2491,7 +2500,7 @@
         (pr.public_listed ? "; the public copy stays until you press Replace the public copy" : "") +
         ". A session reads a public link or a file's words read here, and cannot open SharePoint until RCCD approves the Microsoft 365 connector. Never add a student's record."
       : isNew ? "Start saves it in the Library as Requested" + (pu === "background" || pk ? ", with " + (pr ? pr.title : pk.name) + " as a document to work from" : "") +
-        ". Then Draft it now on its card, and Claude drafts it in the public library's look in about a minute; nothing is public until you publish it. A visual made for a college with no working title of its own writes its CPL Opportunity page and workbook at once; one with its own title is a separate piece."
+        ". Claude then drafts it on its card in the public library's look, in about a minute; nothing is public until you publish it. A visual made for a college with no working title of its own writes its CPL Opportunity page and workbook at once; one with its own title is a separate piece."
       : "A deck starts on the Chancellor's Office template, with a speaker script in each slide's notes for you to edit; a memo or report starts in the Chancellor's Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.";
     var asks = pu === "details" ? editForm(pr) : pu === "version" ? "" :
       (pr ? pieceDocsHtml() : "") +
@@ -3267,12 +3276,24 @@
       if (id) state.briefShown[id] = true;
       var held = state.pics.ls; state.pics.ls = [];
       if (id && held.length) savePictures(id, held, f.by).then(function (n) { if (n) { sayOn(id, picsWord(n) + " found in the document: Claude places each under the steps it shows."); render(); } });
-      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Press Draft it now on its card and Claude drafts it here in about a minute; Copy the brief still hands it to a session.");
+      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Claude starts drafting it on its card now; Copy the brief still hands it to a session.");
       // The panel empties for the next piece (render restores typed values, so the fields are cleared first).
       Array.prototype.forEach.call(document.querySelectorAll("[id^='ls-'], #lc-instr, #lc-link"), function (n) { if (n.tagName !== "DETAILS" && n.id !== "ls-by") n.value = n.tagName === "SELECT" ? (n.id === "ls-seen" ? "team" : "") : ""; });
       state.pick = null; state.use = null; state.piece = null; state.pieceUse = null; delete state.forPick.ls; state.src.ls = []; state.moreOpen = false;
-      return load().then(function () { if (id) goToBrief(id); });
+      return load().then(function () { if (id) draftOnStart(id, f.by, note); });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+  // Start drafts at once (Sam, 2026-11-18: "there should be no reason to have to click on the doc in the list and
+  // click draft it now in the side bar, it should just draft it once you click start and open the side bar to show
+  // you the progress and result"). The piece's card opens beside the list, and its state block shows the progress
+  // and then the draft or what stopped it. A piece with nothing to draft from keeps the old road: its brief.
+  function draftOnStart(id, by, note) {
+    var r = byId(id);
+    if (!r || !isNewPiece(r) || !canDraftNew(r)) { goToBrief(id); return; }
+    say("");
+    if (state.view === "list") openInList(id); else state.open[id] = true;
+    render();
+    return draftNow(id, by, "Requested: " + r.title + "." + (note ? " " + note : ""));
   }
   function goToBrief(id) {
     var btn = document.querySelector('[data-brief="' + id + '"]');
@@ -3530,7 +3551,7 @@
     var size = sizeWord(r), fl = cardFlags(r);
     var words = r.url
       ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" + word("data-copy", r.id, "Copy link")
-      : word("data-file", r.id, "File it", r.remediation === "remediated");
+      : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
     if (r.url && !r.public_listed) words += word("data-pubtop", r.id, "List publicly");
     if (r.status === "requested") words += word("data-brief", r.id, state.briefShown[r.id] ? "Copied. Copy again" : "Copy the brief", true);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) + (r.public_listed ? chip("In the public library") : "") +
