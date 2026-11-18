@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1035,
+  "file_datasets": 1037,
   "external_services": 195,
   "consumers": 612,
   "workflows": 72,
@@ -9814,6 +9814,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_build_cpl_ai_join.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_build_cpl_pathway_ccr.py": {
    "consumers": [
     {
@@ -10007,6 +10020,13 @@
   "file:kb/_build_left_map.py": {
    "consumers": [
     {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
@@ -10101,6 +10121,26 @@
    "consumers": [
     {
      "id": "workflow:pages.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_side_by_side.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -14539,8 +14579,16 @@
      "line": 37
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/cpl_ai/hosted/index.json": {
    "consumers": [
@@ -16385,12 +16433,17 @@
    ],
    "producers": [
     {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
+    "workflow:cred-rename-apply.yml",
     "workflow:daily-dashboard.yml"
    ]
   },
@@ -16414,8 +16467,21 @@
      "line": 56
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/exhibit_slo_neighbors.json": {
    "consumers": [
@@ -20237,8 +20303,21 @@
      "line": 55
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/sjcoe_occupation_scope_map.json": {
    "consumers": [
@@ -22052,7 +22131,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 45
     }
    ],
    "producers": [
@@ -34999,6 +35078,9 @@
     "kb/_cred_rename_apply_supabase.py",
     "kb/_build_remint_blast_radius.py",
     "kb/_build_ccr_cpl.py",
+    "kb/_build_left_map.py",
+    "kb/_build_cpl_ai_join.py",
+    "kb/_build_side_by_side.py",
     "kb/credential_aliases.py"
    ],
    "adds": [
@@ -35011,7 +35093,11 @@
     "kb/credential_title_moves.json",
     "kb/remint_blast_worklist.json",
     "prototype/ccr_remint_blast.json",
-    "prototype/ccr_cpl.json"
+    "prototype/ccr_cpl.json",
+    "kb/exhibit_left_map.json",
+    "kb/cpl_ai/exhibit_join.json",
+    "kb/side_by_side.json",
+    "kb/exhibit_side_by_side.json"
    ],
    "push": "main",
    "deploys": [],
@@ -35137,6 +35223,7 @@
     "kb/credential_aliases.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
+    "kb/_build_side_by_side.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
     "kb/_build_adopt_align.py",
@@ -35208,6 +35295,8 @@
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",
+    "kb/exhibit_side_by_side.json",
+    "kb/side_by_side.json",
     "library/adopt/adopt_data.json",
     "library/adopt/adopt_more.json",
     "library/adopt/adopt_align.json",

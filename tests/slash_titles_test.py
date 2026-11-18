@@ -143,10 +143,12 @@ def test_committed():
             FAILS.append("--check failed on the committed files: %s" % e)
     targets = [e["new"] for e in plan["entries"]]
     check(len(targets) == len(set(targets)), "two entries share a target")
-    # An applied entry (run 44227947795, 2026-11-18: its old title is gone and its new one is a credential) is the
-    # rename done, not a combine; the combine checks read the entries not yet applied.
-    pending = [e for e in plan["entries"] if not (e["old"] not in creds and e["new"] in creds)]
+    # An applied entry (its old title has left the credentials; commit 64f13edc ran the plan) has its target in the
+    # credentials by design, so the combine checks read the entries still waiting to run.
+    pending = [e for e in plan["entries"] if e["old"] in creds]
     check(not any(e["new"] in creds for e in pending), "an entry's target is already a credential (a combine)")
+    check(all(e["new"] in creds for e in plan["entries"] if e["old"] not in creds),
+          "an applied entry's target is not a credential")
     check(all(st.and_form(e["old"]) == e["new"] for e in plan["entries"]), "an entry disagrees with the rule")
     # Measured on origin/main 82a3dad7 merged in, 2026-11-18: 151 slash titles, 80 word joins planned, 7 whole-name
     # slashes held for a person, 64 kept (code or official name, "Medical/Surgical" among them), 0 combines. The plan

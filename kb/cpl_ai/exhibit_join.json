@@ -110,7 +110,7 @@
   "autodesk1": {
    "kind": "exact",
    "exhibits": [
-    "Autodesk Certified User/Professional — AutoCAD"
+    "Autodesk Certified User and Professional — AutoCAD"
    ],
    "reason": "Autodesk's AutoCAD certification; the exhibit folds User and Professional."
   },
@@ -138,7 +138,7 @@
   "autodesk5": {
    "kind": "exact",
    "exhibits": [
-    "Autodesk Certified User/Professional — Revit Architecture"
+    "Autodesk Certified User and Professional — Revit Architecture"
    ],
    "reason": "Autodesk's Revit certification; the exhibit folds User and Professional."
   },
@@ -575,7 +575,7 @@
     "strong_colleges": 34
    }
   ],
-  "Autodesk Certified User/Professional — AutoCAD": [
+  "Autodesk Certified User and Professional — AutoCAD": [
    {
     "code": "autodesk1",
     "title": "Autodesk Certified User: AutoCAD",
@@ -585,7 +585,7 @@
     "strong_colleges": 39
    }
   ],
-  "Autodesk Certified User/Professional — Revit Architecture": [
+  "Autodesk Certified User and Professional — Revit Architecture": [
    {
     "code": "autodesk5",
     "title": "Autodesk Certified User: Revit Architecture",
