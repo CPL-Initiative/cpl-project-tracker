@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-17T17:10:02Z",
- "_queue_count": 50,
+ "_generated_at": "2026-11-18T16:47:29Z",
+ "_queue_count": 78,
  "_counts": {
-  "staged": 50,
-  "needs_you": 40,
+  "staged": 68,
+  "needs_you": 70,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -23,19 +23,6 @@
     "issuer-issues-the-card"
    ]
   },
-  "Aviation Mechanic- Airframe and Powerplant": {
-   "title": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
-   "issuer": "Federal Aviation Administration (FAA)",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 4",
-    "Rule 6"
-   ]
-  },
   "Goodwill Retail Operations Specialist Apprenticeship Journeyperson": {
    "title": "Retail Operations Specialist Apprenticeship — Journeyperson",
    "issuer": "Goodwill Industries",
@@ -49,9 +36,9 @@
     "issuer-issues-the-card"
    ]
   },
-  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+  "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation": {
    "title": "Introduction to Criminal Justice",
-   "issuer": "Local High School",
+   "issuer": "Emerald High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
@@ -60,26 +47,294 @@
     "high-school-rop"
    ]
   },
-  "High School Articulation- Developmental Psychology of Children 1": {
+  "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation": {
+   "title": "Introduction to Criminal Justice",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Amador Valley)- Developmental Psychology of Children 1": {
    "title": "Developmental Psychology of Children 1",
-   "issuer": "Local High School",
+   "issuer": "Amador Valley High School",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "The hint's title was mended by stripping the articulation phrase, and its CCC issuer was replaced with Local High School because no school is named. The aligned Las Positas course (possibly Child Growth and Development) is unverified.",
+   "confidence": 0.65,
+   "note": "The school is stripped and becomes the agency. The aligned Las Positas course (possibly Child Growth and Development) is unverified, so the HS course name is kept.",
    "procedure": "classifier",
    "rests_on": [
     "high-school-rop",
     "local-trainer-is-agency",
     "Rule 5f",
-    "Rule 1"
-   ]
+    "arabic-level-numerals"
+   ],
+   "trainer": "Amador Valley High School"
   },
-  "High School Articulation- Developmental Psychology of Children II": {
+  "High School Articulation (Amador Valley)- Developmental Psychology of Children II": {
    "title": "Principles & Practices of Teaching Young Children",
-   "issuer": "Local High School",
+   "issuer": "Amador Valley High School",
    "via": "school",
    "confidence": 1.0,
    "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Amador Valley)- Emergency Medical Response": {
+   "title": "Emergency Medical Responder",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Amador Valley)- Introduction to Athletic Training": {
+   "title": "Introduction to Athletic Training and Sports Medicine",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Amador Valley)- Introduction to Health Careers": {
+   "title": "Orientation to Health Care",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Dublin)- Criminal Justice/ CSI": {
+   "title": "Criminal Investigation",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Dublin)- Introduction to Athletic Training": {
+   "title": "Introduction to Athletic Training and Sports Medicine",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Dublin)- Introduction to Health Careers": {
+   "title": "Orientation to Health Care",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (BIO 55 at Las Positas College) names it, the college's own title for BIO 55; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Dublin)- Medical Occuptations": {
+   "title": "Medical Terminology",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Emerald)- Criminal Justice/ CSI": {
+   "title": "Criminal Investigation",
+   "issuer": "Emerald High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 63 at Las Positas College) names it, C-ID AJ 140; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Emerald)- Developmental Psychology of Children I": {
+   "title": "Developmental Psychology of Children 1",
+   "issuer": "Emerald High School",
+   "via": "classifier",
+   "confidence": 0.65,
+   "note": "The school is stripped and becomes the agency, and Roman I becomes 1. The aligned Las Positas course is unverified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "trainer": "Emerald High School"
+  },
+  "High School Articulation (Emerald)- Developmental Psychology of Children II": {
+   "title": "Principles & Practices of Teaching Young Children",
+   "issuer": "Emerald High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Emerald)- Emergency Medical Response": {
+   "title": "Emergency Medical Responder",
+   "issuer": "Emerald High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulation (Emerald)- Introduction to Athletic Training": {
+   "title": "Introduction to Athletic Training and Sports Medicine",
+   "issuer": "Emerald High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (KIN 17 at Las Positas College) names it, the college's own title for KIN 17; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Amador Valley)- Medical Occupations": {
+   "title": "Medical Terminology",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 62 at Las Positas College) names it, C-ID HIT 103 X; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Amador Valley)- Nursing Careers": {
+   "title": "Nursing Careers",
+   "issuer": "Amador Valley High School",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "The school was stripped and the cx hint was rejected. This shares one title with the Dublin variant, with the issuer as the discriminator. The aligned Las Positas course is unverified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "trainer": "Amador Valley High School"
+  },
+  "High School Articulations (Amador Valley)- Principles of Engineering": {
+   "title": "Introduction to Engineering",
+   "issuer": "Amador Valley High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation": {
+   "title": "Introduction to Criminal Justice",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (AJ 50 at Las Positas College) names it, C-ID AJ 110; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Dublin)- Developmental Psychology of Children I": {
+   "title": "Developmental Psychology of Children 1",
+   "issuer": "Dublin High School",
+   "via": "classifier",
+   "confidence": 0.68,
+   "note": "The school was stripped and the Roman numeral I was changed to 1. The aligned Las Positas ECD course is unverified; it may be Child Growth and Development.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "trainer": "Dublin High School"
+  },
+  "High School Articulations (Dublin)- Developmental Psychology of Children II": {
+   "title": "Principles & Practices of Teaching Young Children",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ECE 50 at Las Positas College) names it, C-ID ECE 120; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Dublin)- Emergency Medical Response": {
+   "title": "Emergency Medical Responder",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (EMS 30 at Las Positas College) names it, M-ID EMST M1056; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Dublin)- Nursing Careers": {
+   "title": "Nursing Careers",
+   "issuer": "Dublin High School",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "The school was stripped and the cx hint was rejected. This shares one title with the Amador Valley variant. The aligned course is unverified.",
+   "procedure": "classifier",
+   "rests_on": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "trainer": "Dublin High School"
+  },
+  "High School Articulations (Dublin)- Principles of Engineering": {
+   "title": "Introduction to Engineering",
+   "issuer": "Dublin High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it.",
+   "procedure": "high-school-rop",
+   "rests_on": [
+    "high-school-rop"
+   ]
+  },
+  "High School Articulations (Emerald) -Principles of Engineering": {
+   "title": "Introduction to Engineering",
+   "issuer": "Emerald High School",
+   "via": "school",
+   "confidence": 1.0,
+   "note": "Sheet 147 card 2: the aligned course (ENGR 1 at Las Positas College) names it, C-ID ENGR 110; the school issues it.",
    "procedure": "high-school-rop",
    "rests_on": [
     "high-school-rop"
@@ -140,61 +395,6 @@
     "Rule 7"
    ],
    "trainer": "San Francisco Electrical Construction Industry Joint Apprenticeship and Training Committee (JATC)"
-  },
-  "JOURN 018 News Production IV": {
-   "title": "News Production 4",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The hs-lane hint was mended by changing Roman IV to Arabic 4. The title comes from the Laney course title; no CCN or C-ID is known.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "arabic-level-numerals"
-   ]
-  },
-  "JOURN 018A  News Production I": {
-   "title": "News Production 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The hint was mended by changing Roman I to Arabic 1. The title comes from the Laney course title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "arabic-level-numerals"
-   ]
-  },
-  "JOURN 020 Photojournalism I": {
-   "title": "Introduction to Photojournalism",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.85,
-   "note": "Rule 5c: title anchored to C-ID JOUR 160; issuer = CCC.",
-   "procedure": "course-identity"
-  },
-  "JOURN 18B News Production II": {
-   "title": "News Production 2",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "The hint was mended by changing Roman II to Arabic 2. The title comes from the Laney course title.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "arabic-level-numerals"
-   ]
-  },
-  "JOURN 18C News Production III": {
-   "title": "News Production III",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for JOURN 18C; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson": {
    "title": "Sound and Communication Systems Installer Apprenticeship",
@@ -464,6 +664,45 @@
    ],
    "trainer": "Pipe Trades Training Center (UA Local 393)"
   },
+  "Portfolio Evidence for BUSN 55": {
+   "title": "Business Mathematics",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for BUSN 55' was set aside because it is a strip artifact.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Portfolio Evidence for BUSN 87": {
+   "title": "Organizational Management and Leadership",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for BUSN 87' was set aside because it is a strip artifact.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
+  "Portfolio Evidence for CIS 59C": {
+   "title": "Web Programming - JavaScript",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for CIS 59C' was set aside because it is a strip artifact.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ]
+  },
   "Semiconductor Processing Apprenticeship Certificate": {
    "title": "Semiconductor Processing Apprenticeship",
    "issuer": "California Division of Apprenticeship Standards (DAS)",
@@ -623,21 +862,6 @@
    ],
    "trainer": "UA Local 467"
   },
-  "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "This joins the existing UA Plumbers/Pipefitters journeyperson family, with the local as trainer.",
-   "procedure": "classifier",
-   "rests_on": [
-    "apprenticeship-trades",
-    "join-when-likely-one",
-    "Rule 4",
-    "Rule 7"
-   ],
-   "trainer": "UA Local 467"
-  },
   "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1": {
    "title": "UA Plumbers/Pipefitters Apprenticeship — Year 1",
    "issuer": "United Association (UA)",
@@ -652,7 +876,7 @@
    "trainer": "UA Local 467"
   },
   "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+   "title": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
    "issuer": "United Association (UA)",
    "via": "classifier",
    "confidence": 0.8,
@@ -667,7 +891,7 @@
    "trainer": "UA Local 467 Joint Apprenticeship Training Committee"
   },
   "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+   "title": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
    "issuer": "United Association (UA)",
    "via": "classifier",
    "confidence": 0.8,
@@ -680,21 +904,6 @@
     "Rule 7"
    ],
    "trainer": "UA Local 467 Joint Apprenticeship Training Committee"
-  },
-  "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
-   "title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "issuer": "United Association (UA)",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "Joined the house UA Plumbers/Pipefitters Journeyperson family, with Local 62 as the trainer. The trainer name is inferred and should be checked.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "apprenticeship-trades",
-    "Rule 7"
-   ],
-   "trainer": "UA Local 62 Joint Apprenticeship Training Committee"
   }
  }
 }
