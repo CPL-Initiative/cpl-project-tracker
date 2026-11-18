@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1040,
+  "file_datasets": 1043,
   "external_services": 195,
-  "consumers": 613,
-  "workflows": 72,
+  "consumers": 614,
+  "workflows": 73,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -5170,6 +5170,19 @@
      "direction": "write",
      "how": "literal",
      "line": 36
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:a row_audit entry names row_audit_<date>.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_receipt_store.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 171
     }
    ],
    "served": false,
@@ -10940,6 +10953,26 @@
     },
     {
      "id": "workflow:phase-1e-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_row_audit_prune.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:row-audit-store.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -27530,6 +27563,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/row_audit_prune_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/row_audit_subject_outlier_test.py": {
    "consumers": [
     {
@@ -30694,7 +30740,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 246
+     "line": 267
     }
    ],
    "main_committers": []
@@ -35252,6 +35298,7 @@
     "funding/_build_funding_performance.py",
     "funding/_build_funding_ess.py",
     "kb/_row_audit.py",
+    "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
     "kb/_build_left_map.py",
     "kb/_suggest_unclassified.py",
@@ -35564,6 +35611,7 @@
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/display_receipt_store_test.py",
+    "tests/row_audit_prune_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
@@ -36111,6 +36159,18 @@
     "kb/projects_seed_out/"
    ],
    "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "row-audit-store.yml": {
+   "name": "Row audit reports to the receipt store",
+   "crons": [],
+   "scripts": [
+    "kb/_row_audit_prune.py"
+   ],
+   "adds": [],
+   "push": "triggering branch",
    "deploys": [],
    "chain": [],
    "urls": []
@@ -36671,6 +36731,7 @@
   "exhibit_progress.js",
   "kb/_chatbox_ghost_delete.py",
   "kb/_program_requirements_extract.py",
+  "kb/_row_audit_prune.py",
   "scripts/supabase_migrate.py"
  ],
  "warnings": []

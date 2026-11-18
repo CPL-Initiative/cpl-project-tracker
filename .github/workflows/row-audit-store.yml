@@ -1,0 +1,84 @@
+name: Row audit reports to the receipt store
+# The one-time move of #3476 Part 4 step 5 (S680): every kb/row_audit/<date>.md past the newest 14
+# goes to the private bucket cpl-receipts (row_audit/), is named with its sha256 in
+# kb/receipts/index/row_audit_<date>.md.json, and only then leaves the branch's tree. latest.json
+# stays. The daily dashboard does the same each day after the auditor writes (scripts/daily_build.sh,
+# "Keep the newest 14 row audit reports"); this job moves the backlog once, from the branch, so the
+# daily run never uploads a gigabyte. kb/_row_audit_prune.py is the one code path for both.
+#
+# Runs when a claude/** push changes kb/receipts/row_audit_move.run to something main does not hold
+# (the gate job), never on a merge commit or the bot's own push. To run again, change run= in it.
+# The file's fields: run=<any value>, keep=<the newest N to keep, 14>.
+on:
+  push:
+    branches: ['claude/**']
+    paths:
+      - 'kb/receipts/row_audit_move.run'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: row-audit-store-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  gate:
+    if: github.actor != 'github-actions[bot]' && !startsWith(github.event.head_commit.message, 'Merge')
+    runs-on: ubuntu-latest
+    outputs:
+      go: ${{ steps.diff.outputs.go }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          filter: blob:none
+          sparse-checkout: kb/receipts/index
+      - id: diff
+        run: |
+          git fetch -q --depth=1 origin main
+          if git diff --quiet FETCH_HEAD -- kb/receipts/row_audit_move.run; then
+            echo "go=0" >> "$GITHUB_OUTPUT"; echo "kb/receipts/row_audit_move.run matches main's: nothing to run."
+          else
+            echo "go=1" >> "$GITHUB_OUTPUT"
+          fi
+
+  move:
+    needs: gate
+    if: needs.gate.outputs.go == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      # The reports, the store and the index only: the rest of the tree is never read or written here.
+      - uses: actions/checkout@v7
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /kb/*.py
+            /kb/row_audit/
+            /kb/receipts/index/
+            /kb/receipts/row_audit_move.run
+      - name: Store each old report, read it back, index it, then remove it
+        id: move
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          keep=$(sed -n 's/^keep=//p' kb/receipts/row_audit_move.run)
+          rc=0
+          python3 kb/_row_audit_prune.py --strict --keep "${keep:-14}" || rc=$?
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+      # Whatever left the tree has its entry, so the removals and entries commit even when some stayed.
+      - name: Commit the removals and their index entries to this branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- 'kb/row_audit/*.md' 'kb/receipts/index/row_audit_*.json'
+          if git diff --cached --quiet; then echo "Nothing moved."; else
+            git commit -q -m "Row audit reports past the newest 14 to cpl-receipts (#3476 step 5, run ${{ github.run_id }})"
+            git push origin HEAD:${{ github.ref_name }}
+          fi
+      - name: Fail the run when a report that should have gone stayed
+        if: steps.move.outputs.rc != '0'
+        run: |
+          echo "::error::kb/_row_audit_prune.py --strict exited ${{ steps.move.outputs.rc }}; the log above names each report that stayed and why."
+          exit 1

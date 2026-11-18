@@ -150,7 +150,28 @@ def entry_problems(e: dict) -> list:
             out.append("a display entry names a build's full receipt")
         elif (m.group(1), m.group(2)) != (e.get("built"), e.get("build")):
             out.append("built and build must match the name")
+    if kind == ROW_AUDIT_KIND:
+        out.extend(row_audit_problems(e))
     return out
+
+
+# ── Kind: row_audit (S680, #3476 Part 4 step 5) ─────────────────────────────────
+# A dated row Trust-Card report, kb/row_audit/<date>.md, older than the newest 14.
+# kb/_row_audit_prune.py stores it as row_audit_<date>.md (the prefix keeps its index
+# file, kb/receipts/index/row_audit_<date>.md.json, apart from any other kind's dated
+# name), at row_audit/row_audit_<date>.md in the bucket. `built` is the report's date,
+# `build` is null, and `rows` is its line count.
+ROW_AUDIT_KIND = "row_audit"
+ROW_AUDIT_NAME = re.compile(r"^row_audit_(\d{4}-\d{2}-\d{2})\.md$")
+
+
+def row_audit_problems(e: dict) -> list:
+    m = ROW_AUDIT_NAME.match(str(e.get("name") or ""))
+    if not m:
+        return ["a row_audit entry names row_audit_<date>.md"]
+    if e.get("built") != m.group(1) or e.get("build") is not None:
+        return ["a row_audit entry's built is the name's date and its build is null"]
+    return []
 
 
 def entry_path(name: str, folder: str | None = None) -> str:

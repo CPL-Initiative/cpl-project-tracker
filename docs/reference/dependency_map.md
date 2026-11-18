@@ -378,6 +378,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
 | `TOP_Code_Lookup.xlsx` | scripts: `chatbox/sync_chatbox_exhibits.py`, `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
+| `a row_audit entry names row_audit_<date>.md` | scripts: `kb/_receipt_store.py` | — |
 | `a11y.config.js` | scripts: `scripts/ui_pass.py` | — |
 | `activity_summaries.js` | pages: `CPL_Dashboard.html` | — |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
@@ -624,6 +625,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_receipt_store.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
+| `kb/_row_audit_prune.py` | workflows: `daily-dashboard.yml`, `row-audit-store.yml` | — |
 | `kb/_second_reader.py` | workflows: `second-reader.yml` | — |
 | `kb/_seed_projects_apply.py` | workflows: `projects-seed-apply.yml` | — |
 | `kb/_seed_workplan_goals_apply.py` | workflows: `workplan-goals-seed-apply.yml` | — |
@@ -1290,6 +1292,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
+| `tests/row_audit_prune_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_subject_outlier_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_top_source_score_test.py` | workflows: `js-tests.yml` | — |
 | `tests/run.js` | workflows: `js-tests.yml` | — |
@@ -1581,7 +1584,8 @@ check these BY HAND before trusting an absence:
 - `exhibit_progress.js`
 - `kb/_chatbox_ghost_delete.py`
 - `kb/_program_requirements_extract.py`
+- `kb/_row_audit_prune.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1040 file
-datasets · 195 external services · 613 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1043 file
+datasets · 195 external services · 614 consumers · 73 workflows · 41 tabs.

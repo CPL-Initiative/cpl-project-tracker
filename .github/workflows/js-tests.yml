@@ -443,6 +443,10 @@ jobs:
       # whose sha256 kb/receipts/index/ names. Pure-stdlib python and git.
       - name: Display receipt store (index, bucket first, ignore rule, step order)
         run: python3 tests/display_receipt_store_test.py
+      # The row audit prune (S680, #3476 step 5): the newest 14 reports and latest.json stay, an older report
+      # leaves only once its index entry names its sha256, and a store failure never fails the daily run.
+      - name: Row audit prune (newest 14 kept, indexed before removed, daily run unharmed)
+        run: python3 tests/row_audit_prune_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.

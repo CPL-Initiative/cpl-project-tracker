@@ -13962,7 +13962,7 @@
      "governs": [
       "kb/_row_audit.py",
       "kb/row_audit/latest.json",
-      "kb/row_audit/2026-05-23.md",
+      "kb/row_audit/<date>.md",
       "unified_courses.js",
       "excel_to_dashboard.py",
       ".github/workflows/daily-dashboard.yml"
