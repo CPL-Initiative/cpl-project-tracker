@@ -60,6 +60,10 @@ const REAL_REVIEW = JSON.parse(fs.readFileSync("kb/exhibits_review.json", "utf8"
 const MEASURED = JSON.parse(fs.readFileSync("tests/fixtures/exhibits_review_measured_cards.json", "utf8"));
 const REAL_RELATED = JSON.parse(fs.readFileSync("kb/exhibits_related.json", "utf8"));
 const REAL_PLANS = JSON.parse(fs.readFileSync("kb/cred_rename_dryrun/alias_map.json", "utf8"));
+const REAL_TYPES = JSON.parse(fs.readFileSync("kb/exhibit_left_map.json", "utf8"));
+// Every title here is cert-based, so the graded and cert-based guard passes; the guard's own cases sit at the end.
+const TYPES = { schema: 1, titles: {}, canonicals: {} };
+RELATED.titles.concat([["Firefighter 2"]]).forEach(function (t) { TYPES.canonicals[t[0]] = { type: "Industry Certification", group: "cert" }; });
 const REAL_SW_SRC = fs.readFileSync("fact-sheet/statewide_recs.js", "utf8");
 const REAL_STATEWIDE = JSON.parse(REAL_SW_SRC.slice(REAL_SW_SRC.indexOf("{"), REAL_SW_SRC.lastIndexOf("}") + 1));
 function realCard(raw) { return MEASURED.held.find(function (h) { return h.raw === raw; }); }
@@ -79,6 +83,8 @@ function load(opts) {
     if (url === "kb/exhibits_review.json") return ok(review(opts.card || FIRE));
     if (url === "kb/exhibits_related.json") return ok(opts.real ? REAL_RELATED : RELATED);
     if (url === "kb/cred_rename_dryrun/alias_map.json") return opts.noPlans ? bad(404) : ok(opts.real ? REAL_PLANS : ALIAS_MAP);
+    // The CPL types file the fold's guard reads; the guard holds the save without it (S679).
+    if (url === "kb/exhibit_left_map.json") return opts.noTypes ? bad(404) : ok(opts.real ? REAL_TYPES : (opts.types || TYPES));
     if (/\/rest\/v1\/rpc\//.test(url)) return ok([]);
     if (opts.store && /\/rest\/v1\/kb_curation/.test(url)) {
       if ((init.method || "GET") === "GET") return ok(Object.keys(opts.store).map(function (k) { return opts.store[k]; }));
@@ -409,6 +415,35 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   t = await boot({ store: { "_CREDENTIAL_REVIEW::Firefighter I Academy|unified_title_merge_confirm": { course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_merge_confirm", value: "Firefighter 2" } } });
   await showAll(t);
   check("a lone merge confirm's hold names the step that ends it", /in the List, Edit its title to Firefighter 2 and Save, then Edit it back and Save/.test(txt(item(t.d, "Firefighter I Academy"))));
+
+  // ── the fold's guard on this Save (S679, the second reader's third pass) ──
+  // The title checked is the title written: graded Firefighter 1 carries a saved rename to cert-based Firefighter 2, so a
+  // cert-based title's Save lands on Firefighter 2, the title the guard read, and writes that title.
+  const T9 = JSON.parse(JSON.stringify(TYPES)); T9.canonicals["Firefighter 1"] = { type: "Credit By Exam", group: "graded" };
+  async function saveInto(opts, setup) {
+    const x = await boot(opts);
+    if (setup) setup(x);
+    await showAll(x);
+    await tickBox(x, "Firefighter 1 Academy");
+    byText(panel(x.d), "button", "Change the checked titles to Firefighter 1").click(); await settle();
+    byText(panel(x.d), "button", "Save").click(); await settle(); await settle();
+    return x;
+  }
+  t = await saveInto({ types: T9 }, function (x) { x.M._state.cs.overlay = { "Firefighter 1": { title: "Firefighter 2" } }; });
+  let r9 = rowsOf(t);
+  check("⭐ the Save writes the landing title the guard checked: Firefighter 1's saved rename lands on Firefighter 2, and both rows name it",
+    r9.length === 2 && r9.every(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::Firefighter 1 Academy" && r.value === "Firefighter 2"; })
+    && r9.some(function (r) { return r.field === "unified_title_merge_confirm"; }) && !r9.some(function (r) { return r.field === "cpl_type_group_override"; }), JSON.stringify(r9));
+  check("its note names the landing title and where it came from",
+    /folds into Firefighter 2, where Firefighter 1's saved rename lands\./.test(txt(t.d.getElementById("exh-rel-note"))), txt(t.d.getElementById("exh-rel-note")));
+  t = await saveInto({ types: T9 });
+  r9 = rowsOf(t);
+  check("with no saved rename, a cert-based title into graded Firefighter 1 is blocked on the first press, with nothing written",
+    r9.length === 0 && /^Blocked: Firefighter 1 Academy is cert-based .* and the fold lands on Firefighter 1, which is graded .*Press Save again/.test(txt(t.d.getElementById("exh-rel-note"))),
+    txt(t.d.getElementById("exh-rel-note")));
+  t = await saveInto({ noTypes: true });
+  check("⭐ with the CPL types file unread, the Save is held in plain words, with nothing written",
+    rowsOf(t).length === 0 && txt(t.d.getElementById("exh-rel-note")) === "The CPL types did not load, so this combine is held. Try again.", txt(t.d.getElementById("exh-rel-note")));
 
   // ── the look ──
   const css = src.slice(src.indexOf('".exh-rel-mark'), src.indexOf('".exh-align[hidden]'));

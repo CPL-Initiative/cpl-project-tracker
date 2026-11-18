@@ -56,13 +56,22 @@ Rule 10 plan with its receipt), since a decided title has left the List.
 
 **Rename and Combine on the leftover row (S679, #3477):** each undecided leftover row also offers *Rename the
 canonical title* and *Combine the canonical title with another*. They act on the canonical title the row sits under
-(the local title stays as it is) through the List's own title Edit (`listCellSave`) and Accept
-(`listSuggestAccept`), so Combine carries the graded and cert-based guard (blocked first, logged
-`cpl_type_group_override` on the second try). The guard reads the CPL type of the title picked, then each title along
-its chain of saved renames (`chainType`), so a pending rename to a name the map does not hold yet still blocks; the
-List's suggested folds share the path. Move and Combine share one canonical-title picker (`leftPicker`). Tests
-`tests/exhibits_list_left.test.js` (36), `tests/left_map_build_test.py` (38; it pins the nightly's order, the red step,
-the status write-back, the failure watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).
+(the local title stays as it is) through the List's own title Edit (`listCellSave`) and the fold's one writer.
+
+**The fold's guard (S679, #3477):** `foldWrite` writes every single fold (the List's Accept, the leftover row's
+Combine, Re-point) and `foldGate` guards a save that folds many titles (the related titles' Save, the rename batch's
+merges). Both read `foldLanding`: the landing title is the end of the picked title's chain of saved renames
+(`listChainPath`), and its type is the last typed title along that chain. A fold across Sam's graded and cert-based
+groups is blocked on the first press and written on the second with a `cpl_type_group_override` row. Every surface
+writes the landing title the guard checked, `relSave` and `approveRename` included. The guard fails closed: while
+`kb/exhibit_left_map.json` is unread the fold is held (*"The CPL types did not load, so this combine is held. Try
+again."*), the failed read is not cached so the next press fetches the file again, and the List's own draw does not
+retry it. A title with no type along its chain holds the fold, on either side. The second press is armed per surface
+and per pair (`guardKey`), so a block on one surface never arms a press on another. Move and Combine share one
+canonical-title picker (`leftPicker`). Tests `tests/exhibits_list_left.test.js` (62), `tests/exhibits_related.test.js`
+and `tests/exhibits_related_actions.test.js` (the batch's and the related Save's landing title and hold),
+`tests/left_map_build_test.py` (44; it pins the nightly's order, the red step, the status write-back, the failure
+watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).
 
 **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local title
 (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 607 applied, 73 held;

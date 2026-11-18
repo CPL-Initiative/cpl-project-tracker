@@ -10,7 +10,9 @@
 //   (6) Rename and Combine on the leftover row act on the canonical title through the List's own Edit and Accept, and
 //       the guard covers Combine (S679);
 //   (7) the guard reads a pending rename's chain, and Move and Remove only where nothing uses the title;
-//   (8) one choke point writes every fold: the List's Accept, Combine and Re-point, guarded on the title the write lands on.
+//   (8) one choke point writes every fold: the List's Accept, Combine and Re-point, guarded on the title the write lands on;
+//   (9) the guard fails closed: an unread types file or a title with no type along its chain holds the fold, a retry
+//       fetches the file again, and the second press that overrides the guard is armed per surface and per pair.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_left.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -102,7 +104,11 @@ function load(opts) {
     calls.push({ url: url, method: init.method || "GET", body: init.body ? JSON.parse(init.body) : null });
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(st) { return Promise.resolve({ ok: false, status: st, json: function () { return Promise.resolve({}); } }); }
-    if (Object.prototype.hasOwnProperty.call(files, url)) return files[url] === 404 ? bad(404) : ok(files[url]);
+    if (Object.prototype.hasOwnProperty.call(files, url)) {
+      // A file given as a function is read at each fetch, so a test can make it answer 404 first and load later.
+      const v = typeof files[url] === "function" ? files[url]() : files[url];
+      return v === 404 ? bad(404) : ok(v);
+    }
     if (/\/rest\/v1\/kb_curation/.test(url) && /_CREDENTIAL_REVIEW/.test(url) && (!init.method || init.method === "GET")) return ok(opts.overlay || []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return ok(init.method && init.method !== "GET" ? {} : (/left_map_decision/.test(url) ? (opts.decisions || []) : []));
     return bad(404);
@@ -411,6 +417,83 @@ const AUDIT = { title_cards: [
     && /function listRepoint[\s\S]*?foldWrite\(r, pf\.to,/.test(src) && !/chainType|sg\.via|via: to/.test(src)
     && (src.match(/combine across groups: /g) || []).length === 1 && (src.match(/function foldLanding\(/g) || []).length === 1
     && /function relSave[\s\S]*?foldGate\(/.test(src) && /function approveRename[\s\S]*?foldGate\(/.test(src));
+
+  // (9) S679, the second reader's third pass. (a) The guard fails closed: a 404 on the CPL types file holds the List's
+  //     Accept with nothing written, the next press fetches the file again, and the guard then reads the types.
+  const mapFetches = (x) => x.calls.filter((c) => c.url === "kb/exhibit_left_map.json").length;
+  const AIS9 = (to) => ({ schema: 1, groups: [], order: {}, counts: { suggested_folds: 1 }, suggest: { "Emergency Medical Technician": { to: to, why: "spelled another way" } } });
+  async function listAt(files, ov) {
+    const x = await boot({ hash: "#exhibits/list", signedIn: true, overlay: ov || [], files: Object.assign({ "kb/exhibit_audit/latest.json": AUD8 }, files) });
+    await settle(); await settle();
+    const ed = x.d.getElementById("exh-l-editall"); if (ed) { ed.click(); await settle(); }
+    const sf = Array.from(x.d.querySelectorAll("button")).find((b) => /^Suggested folds/.test(txt(b))); if (sf) { sf.click(); await settle(); }
+    return x;
+  }
+  const acceptBtn = (x) => Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Accept" && /Emergency Medical Technician/.test(b.getAttribute("aria-label") || ""));
+  const cellNote = (x) => txt(x.d.getElementById("exh-l-cellnote"));
+  async function press(x) { const b = acceptBtn(x); if (b) { b.click(); await settle(); await settle(); } return !!b; }
+  let up9 = false;
+  const f9 = await listAt({ "kb/exhibit_left_map.json": () => (up9 ? LMAP8 : 404), "kb/exhibits_ai_sort.json": AIS9("Paramedic") });
+  const p9 = await press(f9);
+  check("(9a) ⭐ a 404 on the CPL types file holds the List's Accept of cert-based Emergency Medical Technician into graded Paramedic, with nothing written",
+    p9 && postsOf(f9).length === 0 && cellNote(f9) === "The CPL types did not load, so this combine is held. Try again.", cellNote(f9) + " | " + JSON.stringify(postsOf(f9)));
+  const n9 = mapFetches(f9);
+  up9 = true;
+  await press(f9);
+  check("(9a) ⭐ a retry after the file loads fetches it again and proceeds to the guard, which blocks the cross on its first read",
+    mapFetches(f9) === n9 + 1 && postsOf(f9).length === 0 && /^Blocked: Emergency Medical Technician is cert-based .* and the fold lands on Paramedic, which is graded/.test(cellNote(f9)), mapFetches(f9) + " | " + cellNote(f9));
+  await press(f9);
+  check("(9a) the press after that writes the fold and logs the override",
+    fieldOf(postsOf(f9), "unified_title_merge_confirm").some((b) => b.value === "Paramedic") && fieldOf(postsOf(f9), "cpl_type_group_override").length === 1, JSON.stringify(postsOf(f9)));
+  let upG = false;
+  const g9 = await listAt({ "kb/exhibit_left_map.json": () => (upG ? LMAP8 : 404), "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
+  await press(g9);
+  const heldG = postsOf(g9).length === 0 && /did not load/.test(cellNote(g9));
+  upG = true;
+  await press(g9);
+  check("(9a) inside one group, the retry after the file loads saves on that press", heldG && postsOf(g9).length === 2
+    && fieldOf(postsOf(g9), "unified_title_merge_confirm").some((b) => b.value === "CompTIA Security+") && !fieldOf(postsOf(g9), "cpl_type_group_override").length, cellNote(g9) + " | " + JSON.stringify(postsOf(g9)));
+  const none9 = await listAt({ "kb/exhibit_left_map.json": 404, "kb/exhibits_ai_sort.json": AIS9("Paramedic") });
+  await settle(); await settle();
+  check("(9a) the List's own draw never retries a missing file in a loop", mapFetches(none9) === 1, String(mapFetches(none9)));
+  // (b) A title with no CPL type along its chain holds the fold, on either side.
+  const noLand = JSON.parse(JSON.stringify(LMAP8)); delete noLand.canonicals["CompTIA Security+"];
+  const b9 = await listAt({ "kb/exhibit_left_map.json": noLand, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
+  await press(b9); await press(b9);
+  check("(9b) ⭐ a picked title missing from the types file, with no typed title along its chain, holds the fold on every press",
+    postsOf(b9).length === 0 && /^This combine is held: CompTIA Security\+ has no CPL type in the types file/.test(cellNote(b9)), cellNote(b9));
+  const b9c = await listAt({ "kb/exhibit_left_map.json": noLand, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") }, [ren("CompTIA Security+", "CompTIA Network+")]);
+  await press(b9c);
+  check("(9b) the same title takes the type of a typed title along its chain, and the fold saves",
+    postsOf(b9c).length === 2 && fieldOf(postsOf(b9c), "unified_title_merge_confirm").some((b) => b.value === "CompTIA Network+"), cellNote(b9c) + " | " + JSON.stringify(postsOf(b9c)));
+  const noSrc = JSON.parse(JSON.stringify(LMAP8)); delete noSrc.canonicals["Emergency Medical Technician"];
+  const b9s = await listAt({ "kb/exhibit_left_map.json": noSrc, "kb/exhibits_ai_sort.json": AIS9("CompTIA Security+") });
+  await press(b9s); await press(b9s);
+  check("(9b) ⭐ a source title missing from the types file holds the fold on every press",
+    postsOf(b9s).length === 0 && /^This combine is held: Emergency Medical Technician has no CPL type in the types file/.test(cellNote(b9s)), cellNote(b9s));
+  // (c) The override's second press is armed per surface and per pair: a block on the List's Accept never arms the
+  //     leftover row's Combine for the same pair, and the reverse.
+  const s9 = await listAt({ "kb/exhibit_left_map.json": LMAP8, "kb/exhibits_ai_sort.json": AIS9("Paramedic") });
+  await press(s9);
+  const blockedAccept = postsOf(s9).length === 0 && /^Blocked: /.test(cellNote(s9));
+  const leftF = Array.from(s9.d.querySelectorAll("button")).find((b) => /^A title that has left MAP/.test(txt(b)));
+  if (leftF) { leftF.click(); await settle(); await settle(); await settle(); }
+  // Leave Edit every row, so the title opens its panel again.
+  const edOff = s9.d.getElementById("exh-l-editall"); if (edOff) { edOff.click(); await settle(); }
+  const emt = titleBtn(s9.d, "Emergency Medical Technician");
+  if (emt) { emt.click(); await settle(); }  const srow = () => panel(s9.d) && rowIn(s9, "EMT Basic 1998");
+  if (srow()) { srow().querySelector('[data-left-act="combine"]').click(); await settle(); }
+  const sbox = () => srow() && srow().querySelector('[data-left-box="combine"]');
+  if (sbox()) { sbox().querySelector("input").value = "Paramedic"; sbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle(); }
+  check("(9c) ⭐ after a block on the List's Accept, the leftover row's Combine of the same pair is blocked on its own first press, with nothing written",
+    blockedAccept && !!sbox() && postsOf(s9).length === 0 && /Blocked: Emergency Medical Technician is cert-based .*Press Combine here again/.test(txt(sbox())),
+    (leftF ? "" : "no left filter; ") + (sbox() ? txt(sbox()) : "no combine box") + " | " + JSON.stringify(postsOf(s9)));
+  if (sbox()) { sbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle(); }
+  check("(9c) its own second press writes the fold and logs the override once",
+    fieldOf(postsOf(s9), "unified_title_merge_confirm").some((b) => b.value === "Paramedic") && fieldOf(postsOf(s9), "cpl_type_group_override").length === 1, JSON.stringify(postsOf(s9)));
+  check("(9c) every arm and read of the override goes through guardKey, keyed by a surface",
+    /function guardKey\(surface, key\)/.test(src) && !(src.match(/LEFT\.guard\[(?!gk\]|k\]|guardKey\()/g) || []).length
+    && /surface: "combine"/.test(src) && /surface: "repoint"/.test(src) && /"related"\)/.test(src) && /"batch"\)/.test(src) && /guardKey\("move"/.test(src));
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });

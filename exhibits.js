@@ -1449,7 +1449,7 @@
   }
   /* Save: the reviewer signed in, the rows read again, then the rename batch's fold rows for each title. */
   function relSave(a) {
-    var titles = a.ask.slice(), target = a.target;
+    var titles = a.ask.slice(), target = a.target, ends = {};
     a.busy = true; render(); relFocus("exh-rel-ask-h");
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
@@ -1458,23 +1458,26 @@
         if (why) throw new Error("held:" + why);
         titles.forEach(function (t) { var w = relWhyNot(t, a, live); if (w) throw new Error("held:" + t + ": " + w); });
         // The fold's guard on Sam's graded and cert-based groups, read the way foldWrite reads it.
-        return foldGate(titles.map(function (t) { return [t, target]; }), "Press Save again").then(function (g) {
+        return foldGate(titles.map(function (t) { return [t, target]; }), "Press Save again", "related").then(function (g) {
           if (g.words) throw new Error("guard:" + g.words);
-          var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: target, merge: true }; }), skips: [] };
+          // Each title writes the landing title the guard checked, the end of the target's chain of saved renames.
+          titles.forEach(function (t, i) { ends[t] = g.ends[i]; });
+          var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: ends[t], merge: true }; }), skips: [] };
           return postRows(sess, renameRows(sess.email, plan).concat(foldLogRows(sess.email, g.logs)));
         });
       });
     }).then(function () {
-      var writes = [[FIELD_CRED_TITLE, target], [FIELD_MERGE_CONFIRM, target]];
+      var land = ends[titles[0]] || target;
       titles.forEach(function (t) {
-        state.rel.folded[t] = target;
+        var to = ends[t] || target;
+        state.rel.folded[t] = to;
         delete a.checked[t];
-        if (a.live) { a.live.override[t] = target; a.live.merge[t] = target; }
-        listApply({ ut: t }, writes);
+        if (a.live) { a.live.override[t] = to; a.live.merge[t] = to; }
+        listApply({ ut: t }, [[FIELD_CRED_TITLE, to], [FIELD_MERGE_CONFIRM, to]]);
       });
       a.busy = false; a.ask = null;
-      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title folds" : " titles fold") + " into " + target
-        + ". The daily dry run pairs them and a reviewed rename apply merges the records; each old title stays a search alias. They are in the List's Changed this visit.";
+      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title folds" : " titles fold") + " into " + land
+        + (land !== target ? ", where " + target + "'s saved rename lands" : "") + ". The daily dry run pairs them and a reviewed rename apply merges the records; each old title stays a search alias. They are in the List's Changed this visit.";
       render(); relFocus("exh-rel-note");
     }).catch(function (e) {
       var m = String(e && e.message || e);
@@ -1540,9 +1543,11 @@
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
       // A merge in the batch folds one title into another: the fold's guard on Sam's groups, read the way foldWrite reads it.
-      var folds = plan.renames.filter(function (x) { return x.merge; }).map(function (x) { return [x.r.current, x.to]; });
-      return foldGate(folds, "Press Save the batch again").then(function (g) {
+      var merges = plan.renames.filter(function (x) { return x.merge; });
+      return foldGate(merges.map(function (x) { return [x.r.current, x.to]; }), "Press Save the batch again", "batch").then(function (g) {
         if (g.words) { held = g.words; return null; }
+        // Each merge writes the landing title the guard checked, the end of its target's chain of saved renames.
+        merges.forEach(function (x, i) { x.to = g.ends[i]; });
         return postRows(sess, renameRows(sess.email, plan).concat(foldLogRows(sess.email, g.logs)));
       });
     }).then(function () {
@@ -3892,11 +3897,26 @@
      resolver the write itself uses. Its type is its own; a pending rename names a title the map does not hold yet, so an
      untyped landing title takes the type of the last typed title along the chain, which reaches back to the picked title. */
   function foldLanding(from, pick) {
-    var path = listChainPath(pick), end = path[path.length - 1] || pick, at = null, type = null;
-    for (var k = path.length - 1; k >= 0 && !type; k--) { type = canonType(path[k]); if (type) at = path[k]; }
-    if (!type) { type = canonType(pick); at = type ? pick : null; }
-    return { pick: pick, end: end, type: type, typedAt: at, cross: crossesGroups(canonType(from), type), key: "combine " + from + " -> " + end };
+    var path = listChainPath(pick), end = path[path.length - 1] || pick, land = typeAlong(path), src = canonType(from);
+    if (!src) src = typeAlong(listChainPath(from)).type;
+    // The guard fails closed (S679, the second reader's third pass): with the types file unread, or a side that has no
+    // CPL type along its chain, the fold is held, never passed for want of a type.
+    var held = !LEFT.map ? LEFT_HELD
+      : !src ? "This combine is held: " + from + " has no CPL type in the types file, nor does any title its saved renames reach. "
+        + "It can be combined once the nightly types file carries it."
+      : !land.type ? "This combine is held: " + end + (end !== pick ? " (where " + pick + "'s saved renames land)" : "")
+        + " has no CPL type in the types file, nor does any title along its saved renames. It can be combined once the nightly types file carries it."
+      : "";
+    return { pick: pick, end: end, type: land.type, typedAt: land.at, held: held, cross: held ? null : crossesGroups(src, land.type), key: from + " -> " + end };
   }
+  /* The type a chain carries: the last typed title along it, which reaches back to its first title. */
+  function typeAlong(path) {
+    for (var k = path.length - 1; k >= 0; k--) { var t = canonType(path[k]); if (t) return { type: t, at: path[k] }; }
+    return { type: null, at: null };
+  }
+  /* The second press that overrides the guard is armed per surface and per pair, so a block on one surface never arms a
+     press on another. */
+  function guardKey(surface, key) { return surface + ": " + key; }
   function foldBlockWords(from, f, again) {
     return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the fold lands on " + f.end
       + (f.end !== f.pick ? " (" + f.pick + " is saved to become " + f.end + ")" : "") + ", which is " + groupWords(f.cross.b)
@@ -3913,9 +3933,10 @@
     o = o || {};
     var from = r.ut;
     return leftMapLoad().then(function () {
-      var f = foldLanding(from, pick), writes = [[FIELD_CRED_TITLE, f.end], [FIELD_MERGE_CONFIRM, f.end]];
+      var f = foldLanding(from, pick), writes = [[FIELD_CRED_TITLE, f.end], [FIELD_MERGE_CONFIRM, f.end]], gk = guardKey(o.surface || "accept", f.key);
       if (f.end === from) return { ok: false, words: (f.end === pick ? pick + " is " + from + " itself" : pick + " is already saved to become " + from) + "; pick another title." };
-      if (f.cross && !LEFT.guard[f.key]) { LEFT.guard[f.key] = true; return { ok: false, blocked: true, words: foldBlockWords(from, f, o.again) }; }
+      if (f.held) return { ok: false, held: true, words: f.held };
+      if (f.cross && !LEFT.guard[gk]) { LEFT.guard[gk] = true; return { ok: false, blocked: true, words: foldBlockWords(from, f, o.again) }; }
       if (f.cross) writes.push([FIELD_TYPE_OVERRIDE, foldOverride(from, f)]);
       return session().then(function (sess) {
         if (!sess) throw new Error("signin");
@@ -3933,17 +3954,23 @@
   }
   /* The same guard for a save that folds many titles in one request (the related titles' Save and the rename batch):
      foldLanding reads each pair's landing; any pair that crosses Sam's groups holds the whole save on the first try, and
-     a second try writes it with one override row per crossing pair. Resolves { words } to hold, or { logs } to write. */
-  function foldGate(pairs, again) {
+     a second try writes it with one override row per crossing pair. Resolves { words } to hold, or { logs, ends } to
+     write, where ends[i] is the title pair i lands on: the caller writes that title, so the title checked is the title
+     written. A pair held for want of a type holds the whole save. */
+  function foldGate(pairs, again, surface) {
     return leftMapLoad().then(function () {
-      var cross = pairs.map(function (p) { return { from: p[0], f: foldLanding(p[0], p[1]) }; }).filter(function (x) { return x.f.cross; });
-      var fresh = cross.filter(function (x) { return !LEFT.guard[x.f.key]; });
+      var all = pairs.map(function (p) { return { from: p[0], f: foldLanding(p[0], p[1]) }; });
+      var self = all.filter(function (x) { return x.f.end === x.from; })[0], held = all.filter(function (x) { return x.f.held; })[0];
+      if (self) return { words: self.f.pick + " is already saved to become " + self.from + ", so " + self.from + " cannot fold into it; nothing was saved." };
+      if (held) return { words: held.f.held };
+      var cross = all.filter(function (x) { return x.f.cross; });
+      var fresh = cross.filter(function (x) { return !LEFT.guard[guardKey(surface, x.f.key)]; });
       if (fresh.length) {
-        fresh.forEach(function (x) { LEFT.guard[x.f.key] = true; });
+        fresh.forEach(function (x) { LEFT.guard[guardKey(surface, x.f.key)] = true; });
         return { words: foldBlockWords(fresh[0].from, fresh[0].f, again) + (fresh.length > 1 ? " " + fmt(fresh.length - 1) + " more "
           + (fresh.length === 2 ? "fold crosses" : "folds cross") + " the groups the same way." : "") };
       }
-      return { logs: cross.map(function (x) { return [x.from, foldOverride(x.from, x.f)]; }) };
+      return { logs: cross.map(function (x) { return [x.from, foldOverride(x.from, x.f)]; }), ends: all.map(function (x) { return x.f.end; }) };
     });
   }
   function foldLogRows(email, logs) {
@@ -3953,7 +3980,7 @@
   /* Re-point a waiting fold at the end of its chain, so the dry-run never holds it as stale. */
   function listRepoint(r, pf) {
     listCellNote("Re-pointing the fold of " + r.ut + " to " + pf.end + "…");
-    return foldWrite(r, pf.to, { again: "Press Re-point again", verb: "re-point a fold", straight: true }).then(function (res) {
+    return foldWrite(r, pf.to, { again: "Press Re-point again", verb: "re-point a fold", straight: true, surface: "repoint" }).then(function (res) {
       if (!res.ok) { listCellNote(res.words); return; }
       listState().cellNote = res.words;
       redrawList();
@@ -4139,7 +4166,7 @@
         }
         if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
         if (!CPJ.data && !CPJ.loading && !CPJ.error) listCplAiLoad().then(function () { if (state.view === "list") render(); });
-        if (!LEFT.mp) leftMapLoad().then(function () { if (state.view === "list") render(); });
+        if (!LEFT.mp && !LEFT.map && !LEFT.mapErr) leftMapLoad().then(function () { if (state.view === "list") render(); });
         if (L.f === "left") {
           if (!LEFT.by && !LEFT.error) listLeftLoad().then(function () { if (state.view === "list") render(); });
           wrap.appendChild(listLeftNote());
@@ -4368,7 +4395,7 @@
   /* The titles in the reference MAP no longer carries (the auditor's stale_kb_entry, never an unclassified title still in
      MAP), by the credential they fold under: the Commons' keep-or-retire count opens this filter (Sam, 2026-11-04: "the
      links on all surfaces should open to the filtered view of the job needed"). Read only when it is chosen. */
-  var LEFT = { by: null, error: null, p: null, cards: null, map: null, dec: {}, decErr: "", moving: null, act: "", guard: {}, note: "" };
+  var LEFT = { by: null, error: null, p: null, cards: null, map: null, mapErr: "", dec: {}, decErr: "", moving: null, act: "", guard: {}, note: "" };
   /* Acting on a title that has left MAP (Sam, 2026-11-17: "Need a way to take action on them"; "These are local exhibit
      titles, right? I don't change those, just canonicalized titles they sit under"; COBIx's item 2 on #3464). Three
      link-only decisions, stored as kb_curation rows `_LEFT_MAP::<raw local title>` + left_map_decision, never as an
@@ -4378,6 +4405,7 @@
      the title from this list the same day. */
   var LEFT_PREFIX = "_LEFT_MAP::", FIELD_LEFT = "left_map_decision", FIELD_TYPE_OVERRIDE = "cpl_type_group_override";
   var LEFT_MAP_URL = "kb/exhibit_left_map.json";
+  var LEFT_HELD = "The CPL types did not load, so this combine is held. Try again.";
   function listLeftLoad() {
     if (LEFT.p) return LEFT.p;
     var audit = fetch("kb/exhibit_audit/latest.json", { cache: "no-store" }).then(function (r) {
@@ -4399,8 +4427,17 @@
      carry its type (Sam: "I need to have the Cpl type for each canon and local title nearby"). */
   function leftMapLoad() {
     if (LEFT.mp) return LEFT.mp;
-    LEFT.mp = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { LEFT.map = j; }, function () { LEFT.map = null; });
+    LEFT.mp = fetch(LEFT_MAP_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(LEFT_MAP_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (j) {
+      if (!j || !j.canonicals) throw new Error(LEFT_MAP_URL + " carries no CPL types");
+      LEFT.map = j; LEFT.mapErr = "";
+    }).catch(function (e) {
+      // A miss is not cached: the guard holds every fold while the file is unread (foldLanding), and the next save
+      // fetches it again. The List's own draw does not retry, so a missing file never loops.
+      LEFT.map = null; LEFT.mapErr = String(e && e.message || e); LEFT.mp = null;
+    });
     return LEFT.mp;
   }
   /* The decisions saved so far, read live (anon read, Range-paged): a decided title leaves the list on reload the same day. */
@@ -4564,7 +4601,7 @@
      names both groups, which is logged. */
   function leftMoveBox(raw, ut, info) {
     return leftPicker(raw, ut, { kind: "move", go: "Move here", label: "Canonical title to move " + raw.trim() + " under", act: function (to, say) {
-      var cross = crossesGroups(info, canonType(to)), k = raw + " -> " + to, log = null;
+      var cross = crossesGroups(info, canonType(to)), k = guardKey("move", raw + " -> " + to), log = null;
       if (cross && !LEFT.guard[k]) {
         LEFT.guard[k] = true;
         say.textContent = "Blocked: " + raw.trim() + " is " + groupWords(cross.a) + " and " + to + " is " + groupWords(cross.b) + ". Sam's rule keeps these apart. Press Move here again to move it anyway; that override is logged.";
@@ -4581,7 +4618,7 @@
   function leftCombineBox(raw, r) {
     var ut = r.ut;
     return leftPicker(raw, ut, { kind: "combine", go: "Combine here", label: "Canonical title to combine " + listTitle(r) + " with", act: function (to, say) {
-      foldWrite(r, to, { again: "Press Combine here again" }).then(function (res) {
+      foldWrite(r, to, { again: "Press Combine here again", surface: "combine" }).then(function (res) {
         if (!res.ok) { say.textContent = res.words; return; }
         LEFT.moving = null;
         leftDone(res.words);
