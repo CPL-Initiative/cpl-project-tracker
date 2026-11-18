@@ -914,7 +914,7 @@
     }
     return out;
   }
-  /* ── Side by side (S678, COBIx's item 7; courses/ask-sky-side-by-side.md on #3464) ───────────────────────────────
+  /* ── Side by side (S678, COBIx's item 7; courses/ask-sky-side-by-side.md on issue 3464) ───────────────────────────────
      One card's record next to every source behind it, read-only: no button writes, no flag, no edit. The card above
      keeps Rename, Set the discipline and Confirm; a ruling on a discipline pair stays in Discipline in doubt. The fold
      reads kb/side_by_side.json (kb/_build_side_by_side.py) the first time it opens, the way the job filters read the
