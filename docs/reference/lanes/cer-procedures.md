@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-17
+updated: 2026-11-18
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -21,34 +21,80 @@ and want to further automate so curation is manageable."*
 
 **The classifier's HTTP 413 (2026-11-07 to #2925, S604) and the procedures report's Pages fix (#2924):** `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S640)*. Read each nightly report's `classifier_run.answered` and `errors`.
 
-## Titles that have left MAP (S678, 2026-11-17)
+## Titles that have left MAP (S678, 2026-11-17; nightly and Rename and Combine S679)
 
 **LIVE (#3466 `a9f7eec2`, item 2):** on the Exhibits List a leftover title takes Keep, Move or Remove (`_LEFT_MAP::`
 rows, `left_map_decision`; a link only, nothing deleted), split and bulk, CPL type labels, and the graded and
 cert-based guard on Move and an accepted combine. `kb/_build_left_map.py` writes `kb/exhibit_left_map.json`;
 `kb/_apply_left_map.py` carries decisions out; `excel_to_dashboard.py` leaves a removed title out. 446 titles used
-against COBIx's 434 (his pointer rule came from an unposted file). Tests `tests/exhibits_list_left.test.js`,
-`tests/left_map_build_test.py`. **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local
-title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 590 applied,
-89 held; apprenticeship 13 assign, 2 person; split 167 re-point, 112 person; the split reads 219 against 265 because the MAP snapshot is not
+against COBIx's 434 (his pointer rule came from an unposted file).
+
+**DECIDED (S679, the conductor): Move and Remove only on a title nothing uses.** Move changes only
+`kb/unified_titles.json`, and the articulation rows that carry a used title stay grouped under the old canonical title
+in the reference bake (`excel_to_dashboard.py`, the CER grouping), so a moved used title would sit in two places. The
+List offers Move only where `kb/exhibit_left_map.json` marks the title unused, the same limit Remove has; a used title
+takes Keep, Rename or Combine. The apply holds a saved Move on a used title and logs it (`skip: ... held:`).
+
+**Nightly (S679, #3477):** the daily build (`scripts/daily_build.sh`, *Sync curation overlay from Supabase*) runs
+`kb/_apply_left_map.py --live --apply` after the unclassified fold and before `excel_to_dashboard.py` bakes the
+reference. It reads the `left_map_decision` rows with the service key (read only, Range-paged, HTTP 416 read as the
+end of the rows) and writes repo files only: `kb/unified_titles.json` (a temp file renamed into place) and, when
+something changed, `kb/receipts/left_map_apply_<UTC stamp to the second>.json` (a `_2` suffix when the name is taken),
+written before the file. It writes no Supabase row. A failure keeps yesterday's links, records `LEFT_MAP_STATUS=failed`,
+and `daily-dashboard.yml`'s last step turns the run red after the push, so the workflow failure watch opens its issue.
+When an input rebuild fails and the first build is pushed, the commit step writes back the first pass's
+`LEFT_MAP_STATUS` beside the scrape status. A block, *Build the titles that have left MAP*, rebuilds
+`kb/exhibit_left_map.json` after the exhibit auditor and before the Commons status; the commit stages both. That file's
+counts are the auditor's leftover titles and ignore saved decisions (a kept title stays counted; the List subtracts the
+decisions from its live read). The counts stay that way for now.
+
+**Undo:** the newest decision per title is the one in force. A newer `keep` after an applied Move or Remove returns the
+raw key to `left_map.from` and drops the marker; `from` is the canonical title before the first decision, and a later
+Move or Remove keeps it. Each receipt change records `before_left_map`. A `git revert` of the nightly commit alone does
+not hold, because the next run reads the decision row and applies it again; undo by saving a newer `keep` row (a
+Rule 10 plan with its receipt), since a decided title has left the List.
+
+**Rename and Combine on the leftover row (S679, #3477):** each undecided leftover row also offers *Rename the
+canonical title* and *Combine the canonical title with another*. They act on the canonical title the row sits under
+(the local title stays as it is) through the List's own title Edit (`listCellSave`) and the fold's one writer.
+
+**The fold's guard (S679, #3477):** `foldWrite` writes every single fold (the List's Accept, the leftover row's
+Combine, Re-point) and `foldGate` guards a save that folds many titles (the related titles' Save, the rename batch's
+merges). Both read `foldLanding`: the landing title is the end of the picked title's chain of saved renames
+(`listChainPath`), and its type is the last typed title along that chain. A fold across Sam's graded and cert-based
+groups is blocked on the first press and written on the second with a `cpl_type_group_override` row. Every surface
+writes the landing title the guard checked, `relSave` and `approveRename` included. The guard fails closed: while
+`kb/exhibit_left_map.json` is unread the fold is held (*"The CPL types did not load, so this combine is held. Try
+again."*), the failed read is not cached so the next press fetches the file again, and the List's own draw does not
+retry it. A title with no type along its chain holds the fold, on either side. The second press is armed per surface
+and per pair (`guardKey`), so a block on one surface never arms a press on another. Move and Combine share one
+canonical-title picker (`leftPicker`). Tests `tests/exhibits_list_left.test.js` (62), `tests/exhibits_related.test.js`
+and `tests/exhibits_related_actions.test.js` (the batch's and the related Save's landing title and hold),
+`tests/left_map_build_test.py` (44; it pins the nightly's order, the red step, the status write-back, the failure
+watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).
+
+**OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local title
+(`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo. Rebuilt after the
+slash-to-and rename (S679, 2026-11-18): dry run 606 applied, 73 held (58 exhibit grain, 15 Sam-curated targets),
+against 590 and 89 before the rename, when 16 more rows waited on it (`exhibit_repoint.slash_wait`). UA Local 467
+Plumbing and Pipefitting Years 1 to 3 assign to the "UA Plumbers and Pipefitters Apprenticeship" Level 1 to 3 keys,
+and the 14 CTCNC drywall modules re-point to *Carpenters Apprenticeship — Drywall and Lather*. Apprenticeship 13
+assign, 2 person; split 167 re-point, 112 person; the split reads 219 against 265 because the MAP snapshot is not
 committed; no real apply has run. COBIx's review (S679): the apply decides holds before grain, so a held row never
 moves under a sibling's title rewrite; `--undo-pairs --force` leaves each changed title whole and lists what it left.
-The UA plumbing family is spelled "UA Plumbers and Pipefitters" (Sam, 2026-11-18: a slash joining words becomes
-"and"), so UA Local 467 Year 1 assigns to his Level 1 key and Years 2 and 3 to the slash rungs. The builder spells
-family heads and trade keys with `kb/slash_titles.ruled_form`, the one rule (a code slash such as HVAC/R stays). The
-apply holds an assign or repoint row whose target the rule spells differently (`exhibit_repoint.slash_wait`): today UA
-Local 467 Years 2 and 3 and the 14 CTCNC modules under *Drywall/Lather*, until the slash-to-and rename runs and the
-list is rebuilt. DECIDED (S679 conductor, 2026-11-18): a key a re-point creates is written
-`slash_titles.ruled_form` (*Fire Service in-Service Training and EMS*, the source's capitalization kept); a C-ID
-descriptor title keeps its slash as an official name (*Algebra/Trigonometry-Based Physics A*, C-ID PHYS 105; the
-exemption reads `kb/reference/cid_descriptors.json`); a name the rule holds for two whole names goes to a person
-(*Emergency Medical Responder (EMR) / Healthcare Provider CPR*). `tests/exhibit_repoint_test.py` fails a re-point key
-that `slash_titles --check` would fail.
-**NEXT:** (1) wire `kb/_apply_left_map.py` into a nightly job; (2) Rename and Combine on the leftover row (the regular
-List has them; the guard covers Accept).
-**NEXT for #3472, in order:** (1) the slash-to-and rename runs (`cred-rename-apply.yml`,
-`only_plan=slash-to-and-2026-11-18`); (2) the MAP snapshot run rebuilds and commits the list with `--map`; (3) the
+The builder spells family heads and trade keys with `kb/slash_titles.ruled_form`, the one rule (a code slash such as
+HVAC/R stays), and the apply holds an assign or repoint row whose target the rule spells differently
+(`slash_wait`), so a later slash title waits for its rename the same way. DECIDED (S679 conductor, 2026-11-18): a key
+a re-point creates is written `slash_titles.ruled_form` (*Fire Service in-Service Training and EMS*, the source's
+capitalization kept); a C-ID descriptor title keeps its slash as an official name (*Algebra/Trigonometry-Based
+Physics A*, C-ID PHYS 105; the exemption reads `kb/reference/cid_descriptors.json`); a name the rule holds for two
+whole names goes to a person (*Emergency Medical Responder (EMR) / Healthcare Provider CPR*).
+`tests/exhibit_repoint_test.py` fails a re-point key that `slash_titles --check` would fail.
+**NEXT for #3472, in order:** (1) DONE: the slash-to-and rename (commit 64f13edc, receipts
+`kb/cred_rename_out/2026-11-18/`); (2) the MAP snapshot run rebuilds and commits the list with `--map`; (3) the
 reviewed `--pairs` apply.
+**NEXT:** (1) done (S679, #3477): the nightly apply; (2) done (S679, #3477): Rename and Combine on the leftover
+row; (3) #3472, above; (4) read the first nightly's receipt and the leftover count once Sam's first decisions land.
 
 ## Certification naming, the fold, the subject fill and the ASE plans (S637, S638; 2026-11-11)
 
@@ -75,16 +121,25 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   renames; 7 whole-name titles held, 0 combines; 64 code and official-name titles kept, listed in it), and its
   `--check` (in `scripts/check_generated.sh`) fails a new word-joining slash title the plan does not cover. Test
   `tests/slash_titles_test.py`. **NEEDS A PERSON:** the 7 held titles, listed under `held_for_a_person` in the preview.
-  **NEXT:** dispatch `cred-rename-apply.yml` with `only_plan=slash-to-and-2026-11-18` (dry-run preview
-  `kb/slash_titles_out/2026-11-18_dryrun_preview.json`: 80 keys, 95 local-title values, 103 articulations, 20 titles'
-  `kb_curation` rows moved to the new name); then rebuild #3472's list, whose CTCNC family reads *Drywall/Lather*.
+  **DONE (S679, commit 64f13edc):** `cred-rename-apply.yml` applied `slash-to-and-2026-11-18`, 80 renames
+  (receipts `kb/cred_rename_out/2026-11-18/`), and #3472's list is rebuilt on the new keys (CTCNC *Drywall and
+  Lather*).
 - **The fold keeps one issuer, in one pass (#3116):** `kb/fold_issuer.py` holds the rules in order: (1) a person's
   issuer saved at or after the group's earliest fold save wins, (2) a cert-form target keeps its issuer, (2b) an "(ASE
   ... standards)" target keeps the college, (3) additive. The decision is one `issuer_resolution` row per folded target
   (cohort `cred-fold-s638@bot`); no issuer row a person wrote is changed; every reader resolves through
   `effective_issuer` (`issuer_resolution.js` in the browser). `kb/_cred_rename_undo.py <receipt>` reverses an apply.
   The guarded writes and the undo have run only against a test double.
-- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`; phases 1 and 2 applied 2026-11-11, the restore `-4` after them) moved verbatim to `docs/exhibit_canonicalization_lessons_archive.md`, *Moved from the lane (S678 checkpoint)*; its guards (`reviewed_at`, `while_emptied`, `--rollback`) stand.
+- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
+  guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
+  `<date>-<2-9>` only (run 43104136989 refused the first names); #3120 renamed them `kb/cer_decisions_out/2026-11-11`,
+  `-2`, `-3`. **Phases 1 and 2 applied** (22:13Z and 22:26Z; receipts in each folder): every insert, replace and
+  exhibit re-point stands. They also retired 17 rows on the titles they emptied; the 13 a person saved were restored
+  by `kb/cer_decisions_out/2026-11-11-4` (below), and the 4 July `reviewed_marker` ticks stay retired. The applier's `reinstates` put a row back
+  exactly as its receipt kept it, under the person's own reviewer and stamp, insert-only; `while_emptied` holds the
+  plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
+  fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
+  deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
 - **Moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S642)*:** the applier's retry-safe undo (S639, #3123; `tests/cer_decision_apply_retry_test.py`), the family live on 25 titles under `credential-family-s638@bot` (undo `credential-family-apply.yml` `mode=rollback`), Sheet 181's four rulings (all carried out; `d-sheet-181-replies-2026-11-11`) and the S639 conductor's two titles left for a person.
 - **Readers ignore a saved row on an emptied title** (a title no `kb/unified_titles.json` raw maps to, the fold's own
   test). `fold_issuer.hold_emptied_folds` keeps its saved fold out of the rename dry run and the apply (`held_emptied`

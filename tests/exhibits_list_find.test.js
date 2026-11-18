@@ -82,6 +82,9 @@ function load(opts) {
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
     if (url === "kb/exhibits_ai_sort.json") return opts.noAiSort ? Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } }) : ok(AISORT);
     if (url === "kb/exhibit_cert_links.json") return ok(CERTLINKS);
+    // The CPL types file the fold's guard reads; Accept and Re-point hold without it (S679). One group, so the guard passes.
+    if (url === "kb/exhibit_left_map.json") return ok({ schema: 1, titles: {}, canonicals: { "Welding Level 1": { type: "Industry Certification", group: "cert" },
+      "10-Key Data Entry": { type: "Industry Certification", group: "cert" }, "Apiary Basics": { type: "Industry Certification", group: "cert" } } });
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: !opts.refuse, status: opts.refuse ? 403 : 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });

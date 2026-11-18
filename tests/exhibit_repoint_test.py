@@ -31,6 +31,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
 import exhibit_repoint as xr  # noqa: E402
 import _build_exhibit_repoint_list as builder  # noqa: E402
+import slash_titles  # noqa: E402
 import _cred_rename_apply as app  # noqa: E402
 
 FAILS = []
@@ -464,21 +465,25 @@ def test_apply_waits_on_slash_rename():
     check([h["local_title"][-6:] for h in rep4["held"]] == ["Year 1"] and "new key" in rep4["held"][0]["why"]
           and [a["to"] for a in rep4["applied"]] == ["UA HVAC/R Apprenticeship — Year 1"],
           "a minted slash key or a code slash was misread: %r" % rep4["held"])
-    # The committed list against the committed plan: UA Local 467 Years 2 and 3 (assign) and the 14 CTCNC modules
-    # re-pointed under "Carpenters Apprenticeship — Drywall/Lather" wait on the rename. A repoint row waits too (the
-    # S679 conductor, 2026-11-18): once the rename has run, the slash key is gone and the row would mint it again.
+    # The committed list against the committed plan, rebuilt after the slash-to-and rename ran (commit 64f13edc,
+    # S679, 2026-11-18): UA Local 467 Years 2 and 3 now assign to the "and" keys and the 14 CTCNC modules re-point
+    # under "Carpenters Apprenticeship — Drywall and Lather", so no row of the committed list waits on the rename.
+    # Before the rename those 16 rows waited (590 applied, 89 held in the dry run; 606 and 73 after).
     doc = json.load(open(xr.LIST_PATH, encoding="utf-8"))
     ut = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
     cr = json.load(open(app.CREDENTIALS, encoding="utf-8"))
     ar = json.load(open(app.ARTICULATIONS, encoding="utf-8")).get("articulations") or []
     decided = xr.plan(doc["rows"], ut, cr, ar)
     waits = [r for r in decided if (r["_held"] or "").startswith("slash-to-and")]
-    check(sorted(r["local_title"] for r in waits if r["batch"] == "apprenticeship")
-          == ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (2, 3)]
-          and Counter(r["batch"] for r in waits) == Counter({"ctcnc": 14, "apprenticeship": 2})
-          and {r["to"] for r in waits if r["batch"] == "ctcnc"} == {"Carpenters Apprenticeship — Drywall/Lather"},
-          "the committed list's rows waiting on the slash rename moved: %r"
+    check(waits == [], "the committed list has rows waiting on the slash rename: %r"
           % sorted((r["batch"], r["local_title"], r["to"]) for r in waits))
+    check(not any("/" in (r.get("to") or "") and slash_titles.ruled_form(r["to"]) != r["to"] for r in doc["rows"]
+                  if r["action"] in xr.APPLIED_ACTIONS),
+          "an applicable row of the committed list names a slash key the rule spells with 'and'")
+    dry = [r for r in decided if r["batch"] == "ctcnc" and r["to"] == "Carpenters Apprenticeship — Drywall and Lather"
+           and r["action"] == "repoint"]
+    check(len(dry) == 14 and all(not r["_held"] for r in dry),
+          "the 14 CTCNC drywall modules do not apply under 'Drywall and Lather': %r" % [r["_held"] for r in dry])
     # A repoint row onto a slash key that is still a credential waits; after the rename it still waits (stale).
     rp = {"batch": "ctcnc", "exhibit_id": CTC, "local_title": "Carpenter’s Training Center CTCNC CARP 150",
           "action": "repoint", "from": "Drywall Basics", "to": "Carpenters Apprenticeship — Drywall/Lather"}
@@ -560,7 +565,7 @@ def test_committed_list():
     # COBIx 121 re-point, 3 CTCNC tap-only (of 14; the other 11 are not CTCNC), 1 CTCNC person (FA/C). Equal.
     check(got["ctcnc"]["repoint"] == 121 and got["ctcnc"]["tap_only"] == 3, "CTCNC counts moved: %r" % got["ctcnc"])
     fam = Counter(r["to"].split(" — ")[1] for r in ctc if r["action"] == "repoint")
-    want = {"Carpenter": 17, "Pile Driver": 16, "Millwright": 16, "Cabinetmaker": 16, "Drywall/Lather": 14,
+    want = {"Carpenter": 17, "Pile Driver": 16, "Millwright": 16, "Cabinetmaker": 16, "Drywall and Lather": 14,
             "Acoustical Installer": 12, "Scaffold Erector": 12, "Modular Installer": 8, "Insulator": 6,
             "Hardwood Floor Layer": 2, "Shingler": 2}
     check(dict(fam) == want, "the CTCNC family table moved: %r" % dict(fam))
@@ -576,10 +581,9 @@ def test_committed_list():
           "the shared CTCNC canonicals do not split to different families")
     # Apprenticeship: COBIx 15 clear. Measured 13 keyed + 2 that clear by the rule but carry no exhibit id in the
     # committed record (UA Local 467 and Local 62 Plumbing and Pipefitting Journeyperson): rebuild with --map.
-    # UA Local 467 Year 1 matches Sam's key "UA Plumbers and Pipefitters Apprenticeship — Level 1" and Years 2 and 3
-    # match "UA Plumbers/Pipefitters ..." keys: one family under Sam's 2026-11-18 slash-to-and ruling, so all three
-    # assign (13 assign, 2 person: the two Journeyperson rows with no exhibit id). The apply holds Years 2 and 3 until
-    # the slash-to-and rename runs (test_apply_waits_on_slash_rename).
+    # UA Local 467 Years 1 to 3 assign to the "UA Plumbers and Pipefitters Apprenticeship" Level 1 to 3 keys, one
+    # family under Sam's 2026-11-18 slash-to-and ruling, now that the rename has run (13 assign, 2 person: the two
+    # Journeyperson rows with no exhibit id).
     appr = [r for r in rs if r["batch"] == "apprenticeship"]
     check(got["apprenticeship"]["assign"] == 13 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 2,
           "apprenticeship counts moved: %r" % got["apprenticeship"])
@@ -587,8 +591,8 @@ def test_committed_list():
     check(len(ua) == 3 and {builder._and_form(r["to"].split(" Apprenticeship — ")[0]) for r in ua}
           == {"UA Plumbers and Pipefitters"},
           "the UA Local 467 series does not resolve to the one 'and' family: %r" % [r["to"] for r in ua])
-    check(any(r["to"] == "UA Plumbers and Pipefitters Apprenticeship — Level 1" for r in ua),
-          "UA Local 467 Year 1 is not assigned to Sam's Level 1 key")
+    check(sorted(r["to"] for r in ua) == ["UA Plumbers and Pipefitters Apprenticeship — Level %d" % n for n in (1, 2, 3)],
+          "UA Local 467 Years 1 to 3 are not assigned to the 'and' Level 1 to 3 keys: %r" % [r["to"] for r in ua])
     check(sum(1 for r in appr if r.get("minted")) == 7, "COBIx's mints are 7 (his text says eight but lists seven)")
     # The 710: COBIx 2 re-points (CULART010, FLIGHT 101): equal. Confirm-as-is: COBIx 369 of the 710; measured 371
     # titles over every unreviewed title below 0.80, since his first typographic pass (407) is not in the repo.

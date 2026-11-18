@@ -251,6 +251,11 @@ def rewrite_unified_titles_values(renames: dict):
     """Rewrite the `unified_title` VALUE on each raw_title entry that
     points at an old name. Dict KEYS (raw_titles) stay untouched per the
     supersede-don't-mutate ADR.
+
+    A leftover title's `left_map.from` (kb/_apply_left_map.py) names the canonical title its link sat under before a
+    Move or Remove, so a keep can put the link back. It is a canonical title too: renamed here with the value, one
+    lookup in the same map, so a later keep restores the link to the title's new name rather than to a name the
+    reference no longer holds (S679). Each one is in `_left_map_from`, before and after, for the undo.
     """
     with open(UNIFIED_TITLES, encoding="utf-8") as f:
         ut = json.load(f)
@@ -258,6 +263,7 @@ def rewrite_unified_titles_values(renames: dict):
     rewrites = 0
     untouched = 0
     changed = {}
+    left_from = {}
     for raw_title, rec in ut.items():
         old_ut = (rec or {}).get("unified_title")
         if old_ut and old_ut in renames:
@@ -266,11 +272,15 @@ def rewrite_unified_titles_values(renames: dict):
             rewrites += 1
         else:
             untouched += 1
+        lm = (rec or {}).get("left_map")
+        if isinstance(lm, dict) and lm.get("from") and lm["from"] in renames:
+            left_from[raw_title] = {"before": lm["from"], "after": renames[lm["from"]]}
+            lm["from"] = renames[lm["from"]]
     if before_count != len(ut):
         sys.exit("unified_titles.json count mutated (would never happen — defensive).")
     _atomic_write_json(UNIFIED_TITLES, ut)
     return {"before_count": before_count, "rewrites": rewrites, "untouched": untouched,
-            "_changed": changed}
+            "_changed": changed, "_left_map_from": left_from}
 
 
 def rewrite_articulations_values(renames: dict):
@@ -513,7 +523,8 @@ def main():
     results["coci_articulations.json"] = art_res
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_after = json.load(f)
-    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]):
+    if (creds_after == creds_before and not ut_res["_changed"] and not ut_res["_left_map_from"]
+            and not art_res["_changed"]):
         # A re-dispatch after a failed Supabase step finds everything applied. A new <date>-N snapshot
         # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay.
         print("  nothing changed (already applied): no new receipt; the newest snapshot stays the "
@@ -531,6 +542,8 @@ def main():
         "_applied_at": NOW_ISO,
         "credentials": {k: {"before": creds_before.get(k), "after": creds_after.get(k)} for k in touched},
         "unified_titles": ut_res["_changed"],
+        # A leftover title's left_map.from, renamed with its canonical title (kb/_apply_left_map.py's undo by keep).
+        "unified_titles_left_map_from": ut_res["_left_map_from"],
         "articulations": art_res["_changed"],
     }
     for t, g in issuer_plan.items():

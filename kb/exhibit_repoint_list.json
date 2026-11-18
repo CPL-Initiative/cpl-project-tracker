@@ -490,7 +490,7 @@
     "Introduction to Statistics"
    ]
   },
-  "CCDET Clean Truck-Check & HD Safety/Pollution Certifications": {
+  "CCDET Clean Truck-Check & HD Safety and Pollution Certifications": {
    "state": "sam",
    "grain": "exhibit",
    "names": []
@@ -682,7 +682,7 @@
     "Introduction to Statistics"
    ]
   },
-  "Emergency Medical Response — CPR Pro/Healthcare Provider": {
+  "Emergency Medical Response — CPR Pro and Healthcare Provider": {
    "state": "auto",
    "grain": "title",
    "names": [
@@ -927,7 +927,7 @@
     "Human Anatomy with Lab"
    ]
   },
-  "Hydraulics/Pneumatics": {
+  "Hydraulics and Pneumatics": {
    "state": "person",
    "grain": "title",
    "names": []
@@ -1343,7 +1343,7 @@
     "Spanish for Heritage Speakers II"
    ]
   },
-  "Standard First Aid/CPR/AED": {
+  "Standard First Aid, CPR, and AED": {
    "state": "auto",
    "grain": "title",
    "names": [
@@ -1501,7 +1501,7 @@
    "exhibit_id": "MAPICA-CTCC10-1-001",
    "local_title": "Carpenter’s Training Center CTCNC CARP 012",
    "action": "repoint",
-   "from": "Layout/Leveling Construction Site Practice",
+   "from": "Layout and Leveling Construction Site Practice",
    "to": "Carpenters Apprenticeship — Carpenter",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
@@ -1628,7 +1628,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 102",
    "action": "repoint",
    "from": "Basic Applications",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1640,8 +1640,8 @@
    "exhibit_id": "MAPICA-CTCC10-1-001",
    "local_title": "Carpenter’s Training Center CTCNC CARP 103",
    "action": "repoint",
-   "from": "Mathematics for Drywall/Lathers",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "from": "Mathematics for Drywall and Lathers",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1653,8 +1653,8 @@
    "exhibit_id": "MAPICA-CTCC10-1-001",
    "local_title": "Carpenter’s Training Center CTCNC CARP 104",
    "action": "repoint",
-   "from": "Exterior/Advanced Fire Control System and Partitions",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "from": "Exterior and Advanced Fire Control System and Partitions",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1666,8 +1666,8 @@
    "exhibit_id": "MAPICA-CTCC10-1-001",
    "local_title": "Carpenter’s Training Center CTCNC CARP 105",
    "action": "repoint",
-   "from": "Doors, Windows, Exterior Systems/Building Documents",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "from": "Doors, Windows, Exterior Systems and Building Documents",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1680,7 +1680,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 106",
    "action": "tap_only",
    "from": "Blueprint Reading 1",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "the current canonical is Sam-curated: shown on a tap, never applied",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1692,7 +1692,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 107",
    "action": "repoint",
    "from": "Blueprint Reading 2",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1705,7 +1705,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 108",
    "action": "repoint",
    "from": "Blueprint Reading 3",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1718,7 +1718,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 110",
    "action": "repoint",
    "from": "Welding 1",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1731,7 +1731,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 111",
    "action": "repoint",
    "from": "Residential Metal Framing",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1744,7 +1744,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 112",
    "action": "repoint",
    "from": "Exterior Systems and Trims",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1757,7 +1757,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 113",
    "action": "repoint",
    "from": "Interior Metal Lathing System, Sound Control",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1770,7 +1770,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 114",
    "action": "repoint",
    "from": "Ceilings, Shaft Protection and Demountable Partitions",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1783,7 +1783,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 115",
    "action": "repoint",
    "from": "Arches, Furring and Advanced Systems",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1796,7 +1796,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 116",
    "action": "repoint",
    "from": "Advanced Construction Techniques",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -1809,7 +1809,7 @@
    "local_title": "Carpenter’s Training Center CTCNC CARP 117",
    "action": "repoint",
    "from": "Drywall Lathing Trade Safety",
-   "to": "Carpenters Apprenticeship — Drywall/Lather",
+   "to": "Carpenters Apprenticeship — Drywall and Lather",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
    "target_sam_curated": false,
@@ -2211,7 +2211,7 @@
    "exhibit_id": "MAPICA-CTCC10-1-001",
    "local_title": "Carpenter’s Training Center CTCNC CARP 310",
    "action": "repoint",
-   "from": "Layout/Leveling Construction Site Practice",
+   "from": "Layout and Leveling Construction Site Practice",
    "to": "Carpenters Apprenticeship — Scaffold Erector",
    "reason": "CTCNC module under its trade family; the local title stays as an alias",
    "target_exists": true,
@@ -3295,7 +3295,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3304,7 +3304,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3313,7 +3313,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3322,7 +3322,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3331,7 +3331,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3354,7 +3354,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3363,7 +3363,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3372,7 +3372,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3381,7 +3381,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3390,7 +3390,7 @@
    "action": "skip",
    "from": null,
    "to": null,
-   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Level 1): no second family, no auto-alias"
+   "reason": "a similarly named family exists (UA Plumbers and Pipefitters Apprenticeship — Journeyperson): no second family, no auto-alias"
   },
   {
    "batch": "apprenticeship",
@@ -3521,8 +3521,8 @@
    "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
    "action": "person",
    "from": null,
-   "to": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
+   "to": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+   "reason": "the one existing family for UA + trade + rung; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3549,8 +3549,8 @@
    "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2",
    "action": "assign",
    "from": null,
-   "to": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
-   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it",
+   "to": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
+   "reason": "the one existing family for UA + trade + rung",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3563,8 +3563,8 @@
    "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3",
    "action": "assign",
    "from": null,
-   "to": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
-   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it",
+   "to": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
+   "reason": "the one existing family for UA + trade + rung",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -3577,8 +3577,8 @@
    "local_title": "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
    "action": "person",
    "from": null,
-   "to": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
-   "reason": "the one existing family for UA + trade + rung; the key spells the family 'UA Plumbers/Pipefitters', and the slash-to-and rename (Sam, 2026-11-18) re-keys it to 'UA Plumbers and Pipefitters' with this exhibit under it; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
+   "to": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+   "reason": "the one existing family for UA + trade + rung; no MAP exhibit id in the committed record (the runner's CustomReport carries it: rebuild with --map)",
    "target_exists": true,
    "target_sam_curated": true,
    "allow_sam_target": true,
@@ -4415,8 +4415,8 @@
    "exhibit_id": "MAPCXS-BNSS-1-001",
    "local_title": "Beginning Nursing Skills/Clinical Simulation Laboratory",
    "action": "confirm",
-   "from": "Nursing Skills/Clinical Simulation Laboratory Beginning",
-   "to": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+   "from": "Nursing Skills and Clinical Simulation Laboratory Beginning",
+   "to": "Nursing Skills and Clinical Simulation Laboratory Beginning",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -4613,8 +4613,8 @@
    "exhibit_id": "MAPPRA-C0-A-1-001",
    "local_title": "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar",
    "action": "confirm",
-   "from": "Advanced Desserts and Pastry/Chocolate/Sugar",
-   "to": "Advanced Desserts and Pastry/Chocolate/Sugar",
+   "from": "Advanced Desserts and Pastry, Chocolate, and Sugar",
+   "to": "Advanced Desserts and Pastry, Chocolate, and Sugar",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -4658,8 +4658,8 @@
    "exhibit_id": "MAPCxS-CIWT-1-001",
    "local_title": "Calculations in Water/Wastewater Technology WTEC 049 Cx",
    "action": "confirm",
-   "from": "Calculations in Water/Wastewater Technology",
-   "to": "Calculations in Water/Wastewater Technology",
+   "from": "Calculations in Water and Wastewater Technology",
+   "to": "Calculations in Water and Wastewater Technology",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -4911,8 +4911,8 @@
    "exhibit_id": "MAPPRA-CS-1-001",
    "local_title": "Concealed/Glue-Up/Staple-Up Systems",
    "action": "confirm",
-   "from": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
-   "to": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+   "from": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+   "to": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -5572,8 +5572,8 @@
    "exhibit_id": "MAPICI-FRA-1-001",
    "local_title": "First Responder Awareness/Operations",
    "action": "confirm",
-   "from": "HAZWOPER First Responder Awareness/Operations",
-   "to": "HAZWOPER First Responder Awareness/Operations",
+   "from": "HAZWOPER First Responder Awareness and Operations",
+   "to": "HAZWOPER First Responder Awareness and Operations",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -5957,8 +5957,8 @@
    "exhibit_id": "MAPOA-HDTT-1-001",
    "local_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
    "action": "confirm",
-   "from": "Heavy/Medium Duty Truck Technology Apprenticeship",
-   "to": "Heavy/Medium Duty Truck Technology Apprenticeship",
+   "from": "Heavy and Medium Duty Truck Technology Apprenticeship",
+   "to": "Heavy and Medium Duty Truck Technology Apprenticeship",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -6947,8 +6947,8 @@
    "exhibit_id": "MAPPRA-PP-1-001",
    "local_title": "Prefab/Sound Panels",
    "action": "confirm",
-   "from": "Prefab/Sound Panels",
-   "to": "Prefab/Sound Panels",
+   "from": "Prefab and Sound Panels",
+   "to": "Prefab and Sound Panels",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7299,8 +7299,8 @@
    "exhibit_id": "MAPPRA-TA-E-1-001",
    "local_title": "Tool/Equipment Applications - Emergency Response Procedures",
    "action": "confirm",
-   "from": "Tool/Equipment Applications — Emergency Response Procedures",
-   "to": "Tool/Equipment Applications — Emergency Response Procedures",
+   "from": "Tool and Equipment Applications — Emergency Response Procedures",
+   "to": "Tool and Equipment Applications — Emergency Response Procedures",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7310,8 +7310,8 @@
    "exhibit_id": "MAPPRA-TA-F-1-001",
    "local_title": "Tool/Equipment Applications - Fall Protection",
    "action": "confirm",
-   "from": "Tool/Equipment Applications — Fall Protection",
-   "to": "Tool/Equipment Applications — Fall Protection",
+   "from": "Tool and Equipment Applications — Fall Protection",
+   "to": "Tool and Equipment Applications — Fall Protection",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7332,8 +7332,8 @@
    "exhibit_id": "MAPPRA-TL-1-001",
    "local_title": "Transit Level/Laser",
    "action": "confirm",
-   "from": "Transit Level/Laser",
-   "to": "Transit Level/Laser",
+   "from": "Transit Level and Laser",
+   "to": "Transit Level and Laser",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7365,8 +7365,8 @@
    "exhibit_id": "MAPICA-UL3P-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 100",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7376,8 +7376,8 @@
    "exhibit_id": "MAPICA-UL3P1-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 101",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7387,8 +7387,8 @@
    "exhibit_id": "MAPICA-UL3P2-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 110",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7398,8 +7398,8 @@
    "exhibit_id": "MAPICA-UL3P3-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 111",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7409,8 +7409,8 @@
    "exhibit_id": "MAPICA-UL3P4-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 120",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7420,8 +7420,8 @@
    "exhibit_id": "MAPICA-UL3P5-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 121",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7431,8 +7431,8 @@
    "exhibit_id": "MAPICA-UL3P6-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 130",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7442,8 +7442,8 @@
    "exhibit_id": "MAPICA-UL3P7-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 131",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7453,8 +7453,8 @@
    "exhibit_id": "MAPICA-UL3P8-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 140",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7464,8 +7464,8 @@
    "exhibit_id": "MAPICA-UL3P9-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 141",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7475,8 +7475,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 150",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7486,8 +7486,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SHME 151",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7497,8 +7497,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 100",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7508,8 +7508,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 101",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7519,8 +7519,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 110",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7530,8 +7530,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 111",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7541,8 +7541,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 120",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7552,8 +7552,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 121",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7563,8 +7563,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 130",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7574,8 +7574,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 131",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7585,8 +7585,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 140",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -7596,8 +7596,8 @@
    "exhibit_id": "MAPICA-UL3P10-1-001",
    "local_title": "UA Local 342 Plumbers/Pipefitters SMTEC 141",
    "action": "confirm",
-   "from": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
-   "to": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "from": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
+   "to": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
    "reason": "the local title and the canonical are the same credential once typography, codes and abbreviations are read",
    "target_exists": true,
    "target_sam_curated": false
@@ -9107,7 +9107,7 @@
    "exhibit_id": "MAPCXI-CCTC-1-001",
    "local_title": "CCDET Clean Truck-Check Certification, T2, SP/2 HD Safety & Pollution Certifications + Residency Units",
    "action": "tap_only",
-   "from": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+   "from": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications",
    "to": "Heavy Duty Emissions Systems",
    "reason": "Sam-curated mixed canonical: Split on his tap only",
    "target_exists": false,
@@ -10066,7 +10066,7 @@
    "exhibit_id": "MAPCXS-H1MR-1-001",
    "local_title": "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Credit by Exam",
    "action": "repoint",
-   "from": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+   "from": "Emergency Medical Response — CPR Pro and Healthcare Provider",
    "to": "First Aid, CPR and AED",
    "reason": "Split: graded side to its own canonical (C-ID)",
    "target_exists": true,
@@ -11221,7 +11221,7 @@
    "exhibit_id": "MAPCXS-A2-C-1-001",
    "local_title": "AGM 262\tHydraulics/Pneumatics - Credit by Exam",
    "action": "person",
-   "from": "Hydraulics/Pneumatics",
+   "from": "Hydraulics and Pneumatics",
    "to": null,
    "reason": "the graded name would be the current canonical: a person picks a distinct title",
    "split_grain": "title",
@@ -12981,7 +12981,7 @@
    "exhibit_id": "MAPPRA-H1FA-1-001",
    "local_title": "HE 100\tStandard First Aid/CPR/AED - Portfolio Review",
    "action": "repoint",
-   "from": "Standard First Aid/CPR/AED",
+   "from": "Standard First Aid, CPR, and AED",
    "to": "First Aid, CPR and AED",
    "reason": "Split: graded side to its own canonical (C-ID)",
    "target_exists": true,

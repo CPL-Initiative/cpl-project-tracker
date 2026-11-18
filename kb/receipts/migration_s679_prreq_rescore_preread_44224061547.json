@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s679_prreq_rescore_preread.sql",
+ "name": "s679_prreq_rescore_preread",
+ "version": "20261118023542",
+ "sha256": "3f3dd506052a5fc21e84a83cba1a0c1ba415f259d809f6b13c8849cd1705aef3",
+ "run": "44224061547",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"json_build_object\":{\"listed\":243,\"on_run_unequal\":243,\"on_run_equal\":0,\"off_run\":0,\"checked_now\":0,\"verdict_confirm_fp_match\":0,\"verdict_other_fp_match\":0}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
