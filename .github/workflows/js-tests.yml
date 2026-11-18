@@ -391,6 +391,10 @@ jobs:
       # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
       - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
         run: python3 tests/program_requirements_units_rules_test.py
+      # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
+      # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
+      - name: Discontinued programs (own-section mark, out of the gap, the file is current)
+        run: python3 tests/program_discontinued_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
