@@ -580,12 +580,18 @@
         .then(function (res) {
           CC.busy = false;
           if (!res.ok) { CC.said[c.id] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may rule."; ccRedraw(); return; }
-          (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) };
+          // Issue 3447: the ruling counts as landed only once its discipline write lands. A merged card's Keep POSTs the
+          // discipline like any other (its old confirmation PATCH was refused by the merge bots' row policy, and 6 of
+          // Sam's 13 Keeps never saved); the overlay fold stamps validated_at from that row.
+          var landed = function () { (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) }; };
+          var after = function (ok) { if (ok) landed(); else { CC.said[c.id] = "The reason is saved, but the discipline did not save, so the ruling has not landed. " + CC.said[c.id]; ccRedraw(); } };
           CC.rule[c.id] = null;
-          if (ruling === "move") ccSave(c, "discipline", to);
-          else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow);
-          else if (ruling === "keep" && !ccVerified(c)) ccSave(c, "confirm", c.disc);
-          else { CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
+          if (ruling === "move") ccSave(c, "discipline", to, after);
+          else if (ruling === "crosslist") ccSave(c, "crosslist", alsoNow, after);
+          // A Keep always writes its discipline row, verified card or not: the fold counts a ruling only when that row
+          // exists (RULING_NEEDS), so a reason alone would leave the card asked again (second reader on #3467).
+          else if (ruling === "keep" && c.disc) ccSave(c, "confirm", c.disc, after);
+          else { landed(); CC.said[c.id] = (ruling === "keep" ? "Kept " + c.disc : "Marked not sure") + ". The reason is saved" + (v.similar ? " for a session to write as a rule" : "") + "."; ccRedraw(); }
         });
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
@@ -723,12 +729,15 @@
   function ccNames(list) { return list.join(list.some(function (d) { return d.indexOf(",") >= 0; }) ? "; " : ", "); }
   function ccVerified(c) { return !!(c.locked || c.reviewed_by || (c.flags && c.flags.reviewed) || c._saved); }
   function ccOfficial(c) { return c.id_system === "C-ID" || c.id_system === "CCN-ID"; }
-  /* One write: the kb_curation rows the tab wrote, or a merged course's confirmation stamp. Says what happened. */
-  function ccSave(c, kind, value) {
-    if (CC.busy) return;
+  /* One write: the kb_curation rows the tab wrote. A confirmation is a discipline row for every course, merged or not
+     (issue 3447): the overlay fold sets a merge target's validated_at from a person's discipline row. Says what
+     happened, and tells the caller whether it landed. */
+  function ccSave(c, kind, value, done) {
+    done = typeof done === "function" ? done : function () {};
+    if (CC.busy) { done(false); return; }
     CC.busy = true; CC.said[c.id] = "Saving…"; ccRedraw();
     ccFresh().then(function (sess) {
-      if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); return null; }
+      if (!sess) { CC.busy = false; CC.said[c.id] = "Your sign-in has ended. Sign in again, then save."; ccRedraw(); done(false); return null; }
       var req, confirms = false;
       if (kind === "crosslist") {
         // The second discipline is one kb_curation row (cross_listed_disciplines, comma-separated; the daily fold adds
@@ -738,12 +747,9 @@
         // the rows before this tab are, and the daily fold splits it against the MQ list (kb/discipline_list.py); the
         // names themselves are kept here as a list and never split back out of the string.
         var rows = [{ course_id: c.id, field: "cross_listed_disciplines", value: value.join(", "), reviewer_email: sess.email }];
-        confirms = !ccVerified(c) && !c.mt && !!c.disc;
+        confirms = !!c.disc && (!!c.mt || !ccVerified(c));
         if (confirms) rows.push({ course_id: c.id, field: "discipline", value: c.disc, reviewer_email: sess.email });
         req = fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess), body: JSON.stringify(rows) });
-      } else if (kind === "confirm" && c.mt) {
-        req = fetch(REST + "/kb_curation?course_id=eq." + encodeURIComponent(c.id), { method: "PATCH", headers: ccHeaders(sess),
-          body: JSON.stringify({ validated_at: new Date().toISOString(), validated_by: sess.email }) });
       } else {
         var field = kind === "rename" ? "unified_title" : "discipline";
         req = fetch(REST + "/kb_curation", { method: "POST", headers: ccHeaders(sess),
@@ -751,7 +757,7 @@
       }
       return req.then(function (res) {
         CC.busy = false;
-        if (!res.ok) { CC.said[c.id] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may edit the reference."; ccRedraw(); return; }
+        if (!res.ok) { CC.said[c.id] = "Not saved: the server answered " + res.status + ". Only a reviewer on the list may edit the reference."; ccRedraw(); done(false); return; }
         var when = new Date().toISOString().slice(0, 10), who = sess.email;
         if (kind === "rename") { c.title = value; (CC.live[c.id] = CC.live[c.id] || {}).unified_title = { value: value, reviewer_email: who, reviewed_at: when }; }
         else if (kind === "discipline") { c.disc = value; c.dsrc = null; (CC.live[c.id] = CC.live[c.id] || {}).discipline = { value: value, reviewer_email: who, reviewed_at: when }; }
@@ -762,9 +768,10 @@
           : kind === "crosslist" ? "Kept " + c.disc + (value.length ? " and listed it also as " + ccNames(value) : " and cleared its second discipline")
           : "Confirmed " + c.disc + " as the discipline")
           + ". The daily sync folds it into the reference.";
+        done(true);
         ccRedraw();
       });
-    }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
+    }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); done(false); });
   }
   /* Check alignment beside Save the name and Save the discipline (Sam, 2026-11-04: "a Check Alignment button in the
      code box that fires a little audit and recommendation"; "We could use that feature on all our commons list views").

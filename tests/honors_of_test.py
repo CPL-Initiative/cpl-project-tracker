@@ -165,8 +165,14 @@ new_text = ac.serialize(ac.overlay_doc(cur, honors, committed["_synced_at"]))
 honors_rows = [r for r in rows if r["field"] == "honors_of"]
 check("byte-identical: a committed honors_of row never names its own id as its base",
       all(r["course_id"] != r["value"] for r in honors_rows))
+# Issue 3447: the fold now stamps a merge target's validated_at from a person's discipline row (the confirmation
+# PATCH the row policy refused). Until the next daily sync commits those stamps, the committed overlay lacks them, so
+# the identity is pinned against the committed overlay with the same stamp applied; the stamp is idempotent, so once
+# the sync lands this is the committed bytes exactly.
+expected = json.loads(committed_text)
+ac.stamp_person_validation(expected["curations"], rows)
 check("byte-identical: today's overlay, rebuilt as rows, folds back to the committed bytes",
-      new_text == committed_text)
+      new_text == ac.serialize(expected))
 check("byte-identical: no honors key appears without the field", "_honors" not in new_text)
 
 # 6. The live re-key moves honors_of with merge_into.

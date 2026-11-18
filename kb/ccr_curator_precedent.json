@@ -1,0 +1,302 @@
+{
+ "_about": "How people ruled on each discipline pair before: on cards a person already decided where the machine had named another discipline, the counts of moved_to_alt (moved to that discipline), kept (kept the guess) and other (moved to a third field). Key: 'Guess -> Other'. Built by the Courses bot from kb_curation via the nightly overlay (evidence/root_cause/curator_precedent.json), posted on issue #3464 (comment 6962155974), 2026-11-17. Read by kb/_ccr_confidence_score.py for the 'follow past rulings' rule.",
+ "_source": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3464#issuecomment-6962155974",
+ "pairs": {
+  "Administration of Justice -> Law": {
+   "other": 1
+  },
+  "Agricultural Business and Related Services -> Auto Body Technology": {
+   "kept": 1
+  },
+  "Agriculture -> Ornamental Horticulture": {
+   "moved_to_alt": 1
+  },
+  "Air Conditioning, Refrigeration, Heating -> Automotive Technology": {
+   "moved_to_alt": 1
+  },
+  "Air Conditioning, Refrigeration, Heating -> Construction Management": {
+   "other": 2
+  },
+  "Air Conditioning, Refrigeration, Heating -> Diesel Mechanics": {
+   "moved_to_alt": 1,
+   "other": 1
+  },
+  "Air Conditioning, Refrigeration, Heating -> Mathematics": {
+   "moved_to_alt": 1
+  },
+  "Anthropology -> Sociology": {
+   "moved_to_alt": 1
+  },
+  "Architecture -> Art": {
+   "moved_to_alt": 1
+  },
+  "Architecture -> Construction Technology": {
+   "other": 1
+  },
+  "Architecture -> Drafting/CADD": {
+   "moved_to_alt": 1
+  },
+  "Architecture -> Interior Design": {
+   "moved_to_alt": 1
+  },
+  "Art -> Art History": {
+   "moved_to_alt": 9
+  },
+  "Art -> Ceramic Technology": {
+   "moved_to_alt": 1
+  },
+  "Art -> Film and Media Studies": {
+   "other": 1
+  },
+  "Art -> Graphic Arts": {
+   "moved_to_alt": 3
+  },
+  "Art -> Humanities": {
+   "moved_to_alt": 1
+  },
+  "Art -> Interior Design": {
+   "moved_to_alt": 1
+  },
+  "Art -> Media Production": {
+   "other": 1
+  },
+  "Art -> Multimedia": {
+   "moved_to_alt": 1
+  },
+  "Art -> Older Adults: Noncredit": {
+   "kept": 1
+  },
+  "Art -> Photography": {
+   "moved_to_alt": 3
+  },
+  "Art History -> Art": {
+   "kept": 1
+  },
+  "Aviation -> Automotive Technology": {
+   "moved_to_alt": 1
+  },
+  "Biological Sciences -> Dietetics/Nutritional Science": {
+   "other": 1
+  },
+  "Biological Sciences -> Health Information Technology": {
+   "other": 1
+  },
+  "Business -> Accounting": {
+   "moved_to_alt": 22
+  },
+  "Business -> Computer Science": {
+   "kept": 2
+  },
+  "Business -> Insurance": {
+   "moved_to_alt": 1
+  },
+  "Business -> Marketing": {
+   "moved_to_alt": 4
+  },
+  "Business -> Mathematics": {
+   "moved_to_alt": 1
+  },
+  "Business -> Office Technologies": {
+   "moved_to_alt": 4
+  },
+  "Business -> Real Estate": {
+   "moved_to_alt": 1
+  },
+  "Business -> Small Business Development": {
+   "kept": 1
+  },
+  "Communication Studies -> Broadcasting Technology": {
+   "other": 1
+  },
+  "Communication Studies -> Journalism": {
+   "moved_to_alt": 1
+  },
+  "Communication Studies -> Multimedia": {
+   "moved_to_alt": 2
+  },
+  "Computer Information Systems -> Art": {
+   "other": 2
+  },
+  "Computer Information Systems -> Multimedia": {
+   "other": 1
+  },
+  "Computer Science -> Computer Information Systems": {
+   "moved_to_alt": 2
+  },
+  "Computer Science -> Mathematics": {
+   "moved_to_alt": 1
+  },
+  "Computer Science -> Multimedia": {
+   "moved_to_alt": 1
+  },
+  "Counseling -> Addiction Paraprofessional Training": {
+   "moved_to_alt": 2
+  },
+  "Counseling -> Child Development/Early Childhood Education": {
+   "other": 1
+  },
+  "Counseling -> Health": {
+   "other": 1
+  },
+  "Counseling -> Psychology": {
+   "other": 1
+  },
+  "Culinary Arts/Food Technology -> Hotel and Motel Services": {
+   "moved_to_alt": 1
+  },
+  "Culinary Arts/Food Technology -> Mathematics": {
+   "moved_to_alt": 1
+  },
+  "Culinary Arts/Food Technology -> Restaurant Management": {
+   "moved_to_alt": 1
+  },
+  "Dance -> Music": {
+   "moved_to_alt": 1
+  },
+  "Disabled Student Programs and Services (DSPS) -> English": {
+   "moved_to_alt": 1
+  },
+  "Drama/Theater Arts -> Stagecraft": {
+   "moved_to_alt": 2
+  },
+  "Electricity -> Electronic Technology": {
+   "kept": 1
+  },
+  "Electronics -> Electricity": {
+   "moved_to_alt": 1,
+   "other": 1
+  },
+  "English -> Drama/Theater Arts": {
+   "kept": 1
+  },
+  "English -> Film and Media Studies": {
+   "moved_to_alt": 2
+  },
+  "English -> Reading": {
+   "moved_to_alt": 2
+  },
+  "Environmental Technologies -> Carpentry": {
+   "other": 1
+  },
+  "Ethnic Studies -> Political Science": {
+   "moved_to_alt": 1
+  },
+  "Family and Consumer Studies/ Home Economics -> Business": {
+   "other": 2
+  },
+  "Family and Consumer Studies/ Home Economics -> Child Development/Early Childhood Education": {
+   "moved_to_alt": 1,
+   "other": 1
+  },
+  "Film and Media Studies -> Broadcasting Technology": {
+   "moved_to_alt": 1,
+   "other": 1
+  },
+  "Film and Media Studies -> Multimedia": {
+   "moved_to_alt": 1
+  },
+  "Film and Media Studies -> Music": {
+   "other": 1
+  },
+  "Health -> Art": {
+   "moved_to_alt": 1
+  },
+  "Health -> Business": {
+   "moved_to_alt": 1
+  },
+  "Health -> Nursing": {
+   "other": 1
+  },
+  "History -> Art History": {
+   "kept": 1
+  },
+  "Humanities -> English": {
+   "other": 1
+  },
+  "Humanities -> Linguistics": {
+   "moved_to_alt": 2
+  },
+  "Humanities -> Marketing": {
+   "other": 1
+  },
+  "Humanities -> Religious Studies": {
+   "moved_to_alt": 1
+  },
+  "Interdisciplinary Studies -> Interdisciplinary-Basic Skills: Noncredit": {
+   "moved_to_alt": 1
+  },
+  "Interdisciplinary Studies -> Learning Assistance or Learning Skills": {
+   "other": 1
+  },
+  "Interdisciplinary Studies -> Political Science": {
+   "other": 1
+  },
+  "Kinesiology -> Biological Sciences": {
+   "kept": 1
+  },
+  "Kinesiology -> Dietetics/Nutritional Science": {
+   "other": 1
+  },
+  "Kinesiology -> Environmental Technologies": {
+   "kept": 1
+  },
+  "Kinesiology -> Ethnic Studies": {
+   "kept": 7
+  },
+  "Kinesiology -> Learning Assistance or Learning Skills": {
+   "moved_to_alt": 1
+  },
+  "Kinesiology -> Philosophy": {
+   "kept": 1
+  },
+  "Manufacturing Technology -> Drafting/CADD": {
+   "moved_to_alt": 4,
+   "other": 1
+  },
+  "Mathematics -> Biological Sciences": {
+   "other": 1
+  },
+  "Music -> Commercial Music": {
+   "moved_to_alt": 3
+  },
+  "Philosophy -> Religious Studies": {
+   "moved_to_alt": 1
+  },
+  "Physical Sciences -> Anthropology": {
+   "other": 1
+  },
+  "Physical Sciences -> Astronomy": {
+   "moved_to_alt": 1
+  },
+  "Physical Sciences -> Environmental Technologies": {
+   "other": 1
+  },
+  "Physical Therapy Assisting -> Radiological Technology": {
+   "moved_to_alt": 1
+  },
+  "Political Science -> Administration of Justice": {
+   "moved_to_alt": 1
+  },
+  "Psychology -> Ethnic Studies": {
+   "moved_to_alt": 1
+  },
+  "Real Estate -> Legal Assisting": {
+   "kept": 1
+  },
+  "Social Science -> Anthropology": {
+   "moved_to_alt": 1
+  },
+  "Social Science -> Art History": {
+   "other": 1
+  },
+  "Social Science -> Gerontology": {
+   "moved_to_alt": 1
+  },
+  "Social Science -> History": {
+   "other": 1
+  },
+  "Sociology -> Social Science": {
+   "other": 1
+  }
+ }
+}
