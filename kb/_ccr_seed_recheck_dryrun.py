@@ -59,9 +59,18 @@ def top_code(member):
     return str(member.get("top_code") or "").split(":")[0].strip()
 
 
+# Machine decisions stored on the minted card (issue 3454): never a person's, and a person always overrides them,
+# but a decided card is not asked about again.
+MACHINE_DECIDED = ("confidence_v1", "past_rulings_v1")
+
+
 def curated(cid, rec, cur):
+    """A card the reseed leaves out: a person reviewed it, the overlay holds its discipline, a merge, a merged card's
+    validation or a ruling (issue 3447: Sam ruled KINE M1847 twice because rulings were ignored), or the machine
+    decided it (`confidence_v1`, `past_rulings_v1`)."""
     c = cur.get(cid) or {}
-    return bool(rec.get("reviewed_at") or c.get("discipline") or c.get("merge_into"))
+    return bool(rec.get("reviewed_at") or c.get("discipline") or c.get("merge_into") or c.get("validated_at")
+                or c.get("ruling") or rec.get("discipline_source") in MACHINE_DECIDED)
 
 
 def classify(courses, memberships, topmap, cur, model=None, desc=None):
@@ -132,8 +141,10 @@ def doubt_cards(discipline, rows):
     return cards
 
 
-def write_doubt(discipline, rows, generated_at=None):
-    cards = doubt_cards(discipline, rows)
+def write_doubt(discipline, rows, generated_at=None, cur=None):
+    # Second guard (issue 3447): a card with a ruling never returns to the doubt list, whatever classify() did.
+    ruled = {cid for cid, c in (cur or {}).items() if isinstance(c, dict) and c.get("ruling")}
+    cards = [c for c in doubt_cards(discipline, rows) if c["id"] not in ruled]
     doc = {"_about": "The Courses List's Discipline in doubt job (#coci-lookup/list/doubt), written by "
                      "kb/_ccr_seed_recheck_dryrun.py --doubt. Each card's description points to another discipline, or "
                      "TOP alone does. A person rules on each in the List's side panel and says why; a reason marked for "
@@ -151,6 +162,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--discipline", help="also write this discipline's worklist")
     ap.add_argument("--doubt", action="store_true", help="also write kb/ccr_doubt.json for the active discipline")
+    ap.add_argument("--no-fill-members", action="store_true",
+                    help="read only kb/coci_minted_memberships.json (the reading before the membership fix)")
     args = ap.parse_args()
     if args.doubt and not args.discipline:
         args.discipline = load("ccr_procedures.json").get("active_discipline")
@@ -162,6 +175,10 @@ def main():
     courses = load("coci_minted_courses.json")["courses"]
     mem = load("coci_minted_memberships.json")
     mem = mem.get("memberships", mem)
+    import _ccr_desc_signal as S
+    if not args.no_fill_members:
+        # The membership fix (issue 3454): cards with no minted membership read their courses from the List's file.
+        mem, _filled = S.fill_memberships(mem, only={k for k in courses if not k.startswith("_")})
     cur = load("coci_curation.json").get("curations", {})
     import _ccr_desc_signal as S
     desc = S.load_descriptions()
@@ -229,7 +246,7 @@ def main():
     with open(os.path.join(OUT, "report.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
     if args.doubt:
-        write_doubt(args.discipline, out.get(args.discipline) or {}, plan.get("_generated_at"))
+        write_doubt(args.discipline, out.get(args.discipline) or {}, plan.get("_generated_at"), cur)
     print("seed re-check dry run:", tot)
     return 0
 
