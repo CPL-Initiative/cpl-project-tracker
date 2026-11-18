@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s680_prreq_named_gaps_preread.sql
-name=s680_prreq_named_gaps_preread
+file=kb/migrations/2026-11-18_s680_prreq_named_gaps_apply.sql
+name=s680_prreq_named_gaps_apply
