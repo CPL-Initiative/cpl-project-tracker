@@ -1,0 +1,55 @@
+name: Repo size guard
+
+# The repo may not grow past a limit again (issue #3476 Part 4 step 2; Sam, 2026-11-17, relayed by COBIx: "Let's
+# move the bloated data out first thing and make sure we don't allow to go beyond a limit").
+#
+# pull_request: the named check. The same guard also runs as a step of js-tests.yml's `lints` job, because this
+# repo's merge gate is the `test` check there (GitHub cannot require checks here, since the daily cron pushes to
+# main), so a red guard is a red `test`. The cron's direct pushes to main run neither.
+# schedule: once a week, goes red when main grew more than 50 MB compressed in the last 7 days, and names the
+# paths that grew most. It opens no issue and posts no comment; workflow-failure-watch.yml sees a red run.
+#
+# Rules, limits and how "compressed" is measured: scripts/repo_size_guard.py. Tests: tests/repo_size_guard_test.py.
+on:
+  pull_request:
+  schedule:
+    - cron: '23 15 * * 1'   # Mondays 15:23 UTC (7:23 AM PT), away from the dashboard's 3-cron ladder
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions:
+  contents: read
+
+jobs:
+  size:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      # Every blob at depth 1 (the disk total reads each file's size from git objects), but only scripts/ on
+      # disk: the guard never reads the working tree.
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: scripts
+      - name: Size check
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          python3 scripts/repo_size_guard.py --base "$BASE_SHA"
+
+  weekly:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          sparse-checkout: scripts
+      # Deepen to the last 15 days, so the commit main stood at 7 days ago is present to measure from.
+      - name: Fetch the last 15 days of main
+        run: git fetch --no-tags --shallow-since="15 days ago" origin main
+      - name: Weekly growth
+        run: python3 scripts/repo_size_guard.py --weekly
