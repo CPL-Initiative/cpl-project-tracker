@@ -1266,7 +1266,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 16
+     "line": 15
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -1615,13 +1615,6 @@
      "direction": "read",
      "how": "url",
      "line": 13
-    },
-    {
-     "id": "script:chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 17
     },
     {
      "id": "script:fetch_veteran_jst.py",
@@ -2619,13 +2612,6 @@
      "pages": [
       "library/adopt/index.html"
      ]
-    },
-    {
-     "id": "script:chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
-     "kind": "script",
-     "direction": "read",
-     "how": "url",
-     "line": 60
     },
     {
      "id": "script:kb/_build_cpl_ai.py",

@@ -249,14 +249,19 @@ function load(rows, onFetch) {
     check("F1: a college the request does not name is left out", R.collegesNamed("Sheet metal at Laney", names).join("|") === "Laney College");
     const ex = R.exhibitsFor({ found: { "MAPICA-SM-1-001": { title: "Sheet Metal Worker", college: "Laney College" }, "X-1": { title: "Other", college: "Norco College" } } }, ["Laney College"]);
     const block = R.referenceBlock(["Laney College", "Norco College"], { "Laney College": "https://cpldashboardcccco.azurewebsites.net/Laney" }, ex);
-    check("F2: the block gives each college's MAP landing page and CPL Opportunity page",
-      /Laney College\n- MAP landing page \(where a student requests CPL at this college\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
+    check("F2: the block gives each college's MAP landing page as the button's target, and its CPL Opportunity page",
+      /Laney College\n- MAP landing page \(where a student requests CPL at this college; every button goes here\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
       /cpl-opportunity\/\?college=Laney%20College/.test(block), block);
-    check("F2: a college with no landing page on file points to MAP's Find your college list, never an invented link",
-      /Norco College\n- MAP landing page: none on file; link MAP's Find your college list, https:\/\/map\.rccd\.edu\/cpllandingpages\//.test(block), block);
-    check("F2: each exhibit carries the MAP link Request Adopt uses",
-      block.indexOf("Sheet Metal Worker (MAPICA-SM-1-001): https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-SM-1-001&View=Non-Military") >= 0, block);
+    // Sam, 2:42 PM PT (COBIx on #3527): articulated only; the landing page, not the dashboard; no fallback link.
+    check("F2: ⭐ a college with no landing page on file is said so, with no button and no fallback link",
+      /Norco College\n- MAP landing page: NONE ON FILE\. Say on the page/.test(block) && !/map\.rccd\.edu\/cpllandingpages/.test(block), block);
+    check("F2: ⭐ each articulated exhibit's button goes to the college's landing page, never the MAP dashboard",
+      block.indexOf("Sheet Metal Worker (MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney, labeled with the exhibit") >= 0 &&
+      !/insights\/exhibit-courses/.test(block) && /Name only these; never a potential or unarticulated one/.test(block), block);
+    check("F2: a college with no articulated exhibit names none", /MAP lists no articulated exhibits for Norco College\. Name none\./.test(block));
     check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
+    const CD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/cobi_data.mjs", "utf8");
+    check("F2: the model is told: articulated only, the landing page not the dashboard, no fallback", /only articulated opportunities/.test(CD) && /never the MAP dashboard/.test(CD) && /with no other link in its place/.test(CD));
     check("F3: the drafter adds the reference block on both paths and lets the model use its links",
       /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
       /the reference data from COBI/.test(FN));

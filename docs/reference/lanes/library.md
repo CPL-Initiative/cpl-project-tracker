@@ -85,10 +85,13 @@ and calls library-revise-draft with no Draft it now press (`draftOnStart`). A ne
 change offers **Change what you asked** and opens the draft it builds on. A piece that drafts on its card offers no
 File it beside the card and no File a new version (the In development list keeps File it for a session-made piece).
 The drafter adds a reference block for each college a request names: its MAP landing page
-(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits MAP lists for it, each with the
-`exhibit-courses?Exhibit=` link Request Adopt uses (`reference_data.mjs`). **Open:** MAP's landing pages take no
-course filter we know of, so a card's filtered link is the exhibit link; ask the MAP team whether a landing page
-takes one. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
+(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits it has articulated (MAP names it
+the owner in `map_cpl_opportunities_verified.json`) (`reference_data.mjs`). **Sam's ruling, 2:42 PM PT (COBIx on
+#3527):** student pieces show only articulated opportunities; a button opens the college's landing page, never the MAP
+dashboard; a college with no landing page on file is said so, with no fallback link. **Open (NEEDS-MAP):** MAP's
+landing page reads no exhibit from its address (one route, `/<college>`, its search held in page state; read
+2026-11-18), so the button opens the page and the piece names the exhibit to choose; an `?exhibit=` parameter from MAP
+would join in `landingButton`. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
 (PostgREST GET with the caller's credential) and any published file through three tools (`cobi_data.mjs`); staff
 names, titles and work emails are not filtered; the one student-data rule is that a student count under 10 for a
 category shows as `<10`, applied to every read result and to the finished draft's text, with a prompt rule against a
