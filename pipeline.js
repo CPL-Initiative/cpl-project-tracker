@@ -314,6 +314,9 @@
   function countTags(rows) {
     var counts = {};
     var totalFlagged = 0;
+    // A card a course flag takes out of the counts (nc: merged, retired, inactive, not applicable; kb/_flags.py,
+    // Sam 2026-11-17: "flag the record, never delete it") is kept in the file and counted nowhere here.
+    rows = (rows || []).filter(function (r) { return !r.nc; });
     (rows || []).forEach(function (r) {
       (r.tags || []).forEach(function (t) {
         counts[t] = (counts[t] || 0) + 1;

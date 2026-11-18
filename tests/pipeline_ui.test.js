@@ -82,6 +82,8 @@ const rows = [
   { tags: ["member_top_divergence"] },
   { tags: ["subject_discipline_outlier", "seed_untouched_discipline"] },
   { tags: [] },
+  // A merged card the course flags take out of the counts (kb/_flags.py): kept in the file, counted nowhere.
+  { tags: ["subject_collision_signal", "unit_anomaly"], fl: ["merged"], nc: 1 },
 ];
 window.fetch = function () {
   return Promise.resolve({ ok: true, json: function () {
@@ -122,6 +124,8 @@ function settle() { return new Promise(function (r) { setTimeout(r, 30); }); }
   const collision = stats[0];
   check("an invariant above its target is marked by class AND word",
     collision && collision.classList.contains("above") && /Above target 0/.test(collision.textContent));
+  check("a flagged card (nc) leaves the counts: one collision, not two",
+    collision && collision.querySelector(".pl-stat-value").textContent === "1");
   const offScheme = stats[1];
   check("the off-scheme row with a blank discipline is not counted, in words",
     offScheme && offScheme.classList.contains("at") && /At target 0; 1 more with a blank discipline is not counted/.test(offScheme.textContent));
