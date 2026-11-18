@@ -96,7 +96,9 @@ async function landing(page, tab, filter) {
     const doubt = pane && pane.querySelector("[data-doubt-desc]");
     return { hash: location.hash, shown, selected: !!fl, current: cur ? cur.textContent.replace(/\s+/g, " ").trim() : null,
       inView: !!r && r.bottom > 0 && r.top < window.innerHeight, unit: (pane && pane.querySelector("[data-unit]") || {}).textContent || null,
-      meta, doubtDesc: doubt ? Number(doubt.getAttribute("data-doubt-desc")) : null };
+      meta, doubtDesc: doubt ? Number(doubt.getAttribute("data-doubt-desc")) : null,
+      doubtDescOpen: doubt ? Number(doubt.getAttribute("data-doubt-desc-open")) : null,
+      doubtDescRuled: doubt ? Number(doubt.getAttribute("data-doubt-desc-ruled")) : null };
   }, [tab, filter]);
 }
 
@@ -143,12 +145,29 @@ function listFigure(rule, L) {
         const n = num(link.text);
         let compared = null;
         if (!rule) why.push("no written rule in scripts/commons_clickthrough.json for this link");
-        else if (rule.differs) compared = { differs: rule.differs };
-        else {
+        else if (rule.differs) {
+          // A written difference holds only for the figures it was written against: once recorded, a move on either
+          // side fails, so the reason is re-read. Unrecorded figures (a first run) print so they can be written down.
+          const got = rule.list_pattern ? listFigure({ pattern: rule.list_pattern }, L) : num(L.current);
+          compared = { differs: rule.differs, commons: n, list: got };
+          if (rule.commons == null || rule.list == null) compared.record = "write commons " + n + " and list " + got + " into this rule";
+          else if (n !== rule.commons || got !== rule.list)
+            why.push("the written difference was for Commons " + rule.commons + " and List " + rule.list + "; now the Commons says " + n + " and the List says " + got);
+        } else {
           const got = listFigure(rule, L);
           compared = { commons: n, list: got };
           if (got == null) why.push("the List wrote no figure to compare (" + (rule.compare || rule.pattern) + ")");
           else if (got !== n) why.push("the Commons says " + n + " and the List says " + got + (rule.note ? " (" + rule.note + ")" : ""));
+          // The cards the List shows waiting (data-doubt-open's description share) against the Commons' count: the List may
+          // never hold more, and the Commons may count more only by the cards a person ruled since its last build, which
+          // the List's note names (#3510 B3, the clash Commons Clarity found on KIN P134).
+          if (rule.compare === "doubt_description") {
+            compared.waiting = L.doubtDescOpen; compared.ruled = L.doubtDescRuled;
+            if (L.doubtDescOpen == null) why.push("the List wrote no count of the cards waiting for a ruling");
+            else if (L.doubtDescOpen > n) why.push("the List has " + L.doubtDescOpen + " description cards waiting, more than the Commons' " + n);
+            else if (n - L.doubtDescOpen > (L.doubtDescRuled || 0))
+              why.push("the Commons counts " + n + " and the List has " + L.doubtDescOpen + " waiting; only " + (L.doubtDescRuled || 0) + " are ruled, so the gap is unexplained");
+          }
         }
         if (rule && rule.unit && !(L.unit && new RegExp(rule.unit).test(L.unit))) why.push("the List does not say which unit its counts are in");
         results.push({ href: link.href, text: link.text, ok: !why.length, why, landed: { shown: L.shown, selected: L.selected, inView: L.inView, current: L.current }, compared });
@@ -162,7 +181,8 @@ function listFigure(rule, L) {
     srv.close();
   }
   const bad = results.filter((r) => !r.ok);
-  results.forEach((r) => console.log((r.skipped ? "  skip " : r.ok ? "  ok   " : "  FAIL ") + r.href + "  " + (r.text || "") + (r.skipped ? "  (" + r.skipped + ")" : r.ok ? "" : "\n         " + r.why.join("; "))));
+  results.forEach((r) => console.log((r.skipped ? "  skip " : r.ok ? "  ok   " : "  FAIL ") + r.href + "  " + (r.text || "") + (r.skipped ? "  (" + r.skipped + ")" : r.ok ? "" : "\n         " + r.why.join("; ")) +
+    (r.compared && r.compared.record ? "\n         record: " + r.compared.record : "")));
   console.log("\n" + (results.length - bad.length) + "/" + results.length + " links land on their filter, counts as written");
   if (OUT) { fs.mkdirSync(path.dirname(path.resolve(OUT)), { recursive: true }); } if (OUT) fs.writeFileSync(OUT, JSON.stringify({ checked_at: new Date().toISOString(), results }, null, 1) + "\n");
   process.exit(bad.length ? 1 : 0);

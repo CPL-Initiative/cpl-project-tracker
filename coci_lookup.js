@@ -483,10 +483,14 @@
       var R = JOBS.rulings && JOBS.rulings[id];
       if (R) { ruled++; if (R.v.similar) taught++; }
     });
-    var n = D.map.size, open = 0;
-    D.map.forEach(function (c, id) { if (!ruledCard(id)) open++; });
+    var n = D.map.size, open = 0, descOpen = 0, descRuled = 0;
+    D.map.forEach(function (c, id) {
+      var desc = (c.why || []).indexOf("description") >= 0;
+      if (!ruledCard(id)) { open++; if (desc) descOpen++; } else if (desc) descRuled++;
+    });
     return el("div", { "class": "ccl-doubt-note" }, [
-      el("p", { "class": "cplcoci-meta", "data-doubt-open": String(open), "data-doubt-desc": String(nDesc) }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
+      el("p", { "class": "cplcoci-meta", "data-doubt-open": String(open), "data-doubt-desc": String(nDesc),
+        "data-doubt-desc-open": String(descOpen), "data-doubt-desc-ruled": String(descRuled) }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
         " the daily re-check could not settle. On " + fmt(nDesc) + " the catalog description reads as another discipline; on " + fmt(nTop) +
         " only the colleges' TOP codes do, and TOP is a last-in-line signal. " + fmt(ruled) + " ruled so far" +
         (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + (ruled ? "; a ruled card leaves this list, and its ruling stays on its panel" : "") +

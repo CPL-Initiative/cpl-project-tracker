@@ -7,11 +7,11 @@ name: Commons click-through
 # List draws from them), so nothing is written anywhere and no sign-in is used.
 #
 # On a failure it opens one tracking issue (label commons-clickthrough), or comments on the one already open.
-# 05:37 UTC is 9:37 PM Pacific in standard time: after the evening, before Sam's overnight queue routine starts at
-# 10:12 PM Pacific and before the daily dashboard's 06:17 UTC run rewrites the Commons' figures.
+# 04:37 UTC is 8:37 PM Pacific in standard time and 9:37 PM in daylight time: after the evening, before Sam's overnight
+# queue routine starts at 10:12 PM Pacific all year, and before the daily dashboard's 06:17 UTC run rewrites the Commons' figures.
 on:
   schedule:
-    - cron: '37 5 * * *'
+    - cron: '37 4 * * *'
   workflow_dispatch:
 
 permissions:

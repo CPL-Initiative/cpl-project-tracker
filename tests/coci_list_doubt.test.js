@@ -406,6 +406,11 @@ function rule(t, value, words, similar) {
     check("(12) the filter's count follows: 3 local courses, the ruled card's 1 gone", cur && /^Discipline in doubt \(3\)$/.test(txt(cur)), cur && txt(cur));
     check("(12) the note says a ruled card leaves and how many common courses wait",
       /a ruled card leaves this list, and its ruling stays on its panel\. 1 common course waits for a ruling/.test(txt(t.d.body)), txt(t.d.querySelector(".ccl-doubt-note")));
+    const note = t.d.querySelector("[data-doubt-desc-open]");
+    check("(12) ⭐ the note carries the waiting and ruled description cards the nightly click-through compares with the Commons",
+      note && note.getAttribute("data-doubt-open") === "1" && note.getAttribute("data-doubt-desc") === "1" &&
+      note.getAttribute("data-doubt-desc-open") === "1" && note.getAttribute("data-doubt-desc-ruled") === "0",
+      note && [note.getAttribute("data-doubt-open"), note.getAttribute("data-doubt-desc"), note.getAttribute("data-doubt-desc-open"), note.getAttribute("data-doubt-desc-ruled")]);
     const unit = t.d.querySelector("[id$='filters'] [data-unit]");
     check("(12) ⭐ the List says its counts are local courses and the Commons' are common courses", unit && /local courses/.test(txt(unit)) && /common courses/.test(txt(unit)), unit && txt(unit));
   }

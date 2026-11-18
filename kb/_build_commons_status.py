@@ -471,8 +471,16 @@ def row_cr(root):
             decided[r.get("group_key")] = r
         verdicts += len(R.get("items", []))
         reached += sum(int(i.get("rows") or 0) for i in R.get("items", []))
-    for r in live_cr_rows(root):   # the live table is the record; its row for a group stands over a receipt's
+    live = live_cr_rows(root)
+    for r in live:   # the live table is the record; its row for a group stands over a receipt's
         decided[r["group_key"]] = r
+    # Until a sync of the live table is committed, the card says in words which saves it counts (#3510 B4): the latest
+    # receipt's date, read from its file name, since nothing yet writes CR_LIVE.
+    dates = [m.group(1) for m in (re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p)) for p in receipts) if m]
+    through = None
+    if not live and dates:
+        d = dt.date.fromisoformat(max(dates))
+        through = "%s %d, %d" % (d.strftime("%b"), d.day, d.year)
     # The latest receipt row per group stands; a cleared or deferred decision settles nothing.
     settling = {k: r for k, r in decided.items() if r.get("decision") in SETTLES}
     rows_of = {m["rec"]: int(m.get("rows") or 0) for g in G for m in g["members"]}
@@ -490,6 +498,9 @@ def row_cr(root):
     names = [g for g in G if g.get("official_id") and g.get("title_divergent") and g["key"] not in settling]
     words = ("wordings resolve to a settled reference (%s by a rung 1 to 4 rule, %s more by a curator); %s of %s articulations"
              % (fmt(len(by_rule)), fmt(len(by_curator - by_rule)), fmt(sum(rows_of[w] for w in settled)), fmt(st["total_rows"])))
+    if through:
+        words += ("; the curator count holds the decisions saved through %s, and decisions saved on the tab since then "
+                  "join it once they are copied here" % through)
     return {
         "key": "cr", "title": "Common CR Reference", "tab": tab,
         # The card opens the reference's List (Sam, 2026-11-03); its issues keep the worklist's filters, which the
@@ -513,7 +524,7 @@ def row_cr(root):
         ],
         "machine": {"what": "the worklist build, last changed", "at": git_stamp(root, "kb/cr_reference_worklist.json"), "every_hours": None},
         "facts": {"groups": len(G), "by_rule": st["auto_groups"], "rung_5": st["rung_5_groups"], "rows": st["total_rows"],
-                  "decided": len(decided), "verdicts": verdicts, "reached": reached, "receipts": len(receipts),
+                  "decided": len(decided), "decisions_through": through, "live_rows": len(live), "verdicts": verdicts, "reached": reached, "receipts": len(receipts),
                   "wordings": len(rows_of), "settled": len(settled), "settled_rows": sum(rows_of[w] for w in settled),
                   "rule_wordings": len(by_rule), "rule_rows": sum(rows_of[w] for w in by_rule),
                   "rule_groups": sum(1 for g in G if g.get("acts_automatically")),

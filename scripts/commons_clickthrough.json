@@ -1,5 +1,5 @@
 {
-  "_about": "What scripts/commons_clickthrough.js expects of each Commons link that names a List filter. compare: the List writes a figure that must equal the Commons' count (pattern: a regular expression over the List's notes whose first group is the figure; doubt_description: the description cards the Discipline in doubt note counts). differs: the written reason the two counts are in different units. unit: the List must say its counts' unit. A link with no entry fails, so a new Commons link gets its rule the day it ships.",
+  "_about": "What scripts/commons_clickthrough.js expects of each Commons link that names a List filter. compare: the List writes a figure that must equal the Commons' count (pattern: a regular expression over the List's notes whose first group is the figure; doubt_description: the description cards the Discipline in doubt note counts). differs: the written reason the two counts are in different units, with commons and list, the figures it was written against (a move on either side fails, so the reason is re-read; a rule with none recorded prints them on its first run). For doubt_description the List's waiting description cards must not exceed the Commons' count, and may fall below it only by the cards a person has ruled. unit: the List must say its counts' unit. A link with no entry fails, so a new Commons link gets its rule the day it ships.",
   "links": {
     "#coci-lookup/list/seedless": {
       "pattern": "Discipline no seed has touched: ([\\d,]+) common courses? the auditor marks",
@@ -20,24 +20,28 @@
     "#coci-lookup/list/doubt": {
       "compare": "doubt_description",
       "unit": "local courses",
-      "note": "the Commons counts the description cards in kb/ccr_doubt.json, ruled ones too, until the next re-check drops them"
+      "note": "the Commons counts the description cards in kb/ccr_doubt.json; a card a person rules leaves the List at once and the Commons at its next build"
     },
     "#canonical-subj4/list/person": {
       "compare": "filter_label"
     },
     "#exhibits/list/left": {
-      "differs": "the Commons counts old titles no MAP exhibit uses (812); the Exhibits List counts its rows under A title that has left MAP (579). The Exhibits List does not yet say its unit; that change is in exhibits.js (the NEXT line on #3510 B2)."
+      "differs": "the Commons counts old titles no MAP exhibit uses (812); the Exhibits List counts its rows under A title that has left MAP (579). The Exhibits List does not yet say its unit; that change is in exhibits.js (the NEXT line on #3510 B2).",
+      "commons": 812,
+      "list": 579
     },
     "#exhibits/list/nosubj": {
-      "differs": "the Commons counts credentials with no Common SUBJ (499, on 461 exhibits); the Exhibits List counts its rows under No Common SUBJ (1,251). The unit on the Exhibits side waits on exhibits.js (NEXT on #3510 B2)."
+      "differs": "the Commons counts credentials with no Common SUBJ (499, on 461 exhibits); the Exhibits List counts its rows under No Common SUBJ (1,251). The unit on the Exhibits side waits on exhibits.js (NEXT on #3510 B2).",
+      "commons": 499,
+      "list": 1251
     },
     "#program-requirements/list/fail": {
       "live": true,
-      "differs": "the Commons counts active programs whose record fails a check; the Programs List counts the records it reads. The first nightly run records both figures."
+      "differs": "the Commons counts active programs whose record fails a check; the Programs List counts the records it reads. The first nightly run prints both figures; write them here as commons and list so the rule can fail."
     },
     "#program-requirements/list/unread": {
       "live": true,
-      "differs": "the Commons counts active programs with no record yet; the Programs List counts its own rows. The first nightly run records both figures."
+      "differs": "the Commons counts active programs with no record yet; the Programs List counts its own rows. The first nightly run prints both figures; write them here as commons and list so the rule can fail."
     }
   }
 }
