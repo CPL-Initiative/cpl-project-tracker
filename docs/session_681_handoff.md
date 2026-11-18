@@ -26,22 +26,27 @@ A later firing that finds this pull request updated within the half hour ends in
 - One writer per college. A college changes lanes only by an edit to this section before the write.
 - The slimming pull requests (#3476) touch no college record.
 
-## Ledger at 07:12Z (in progress)
+## Ledger at 07:34Z (in progress)
 
 | PR | What | State |
 |---|---|---|
-| #3495 | display receipts to the private bucket (#3476 step 1) | second read done, its three findings fixed (head 711ca822); the bucket migration run 44255184017 is queued behind busy runners; merge on a green `test` |
-| #3490 | the repo size check (#3476 step 2) | draft; merges after the existing receipts move out (`main` measures 4,862 MB against the 5,000 MB cap) |
-| stacked on #3495 | the one-time move of the 271 display receipts; the row audit kept to 14 days | workers building |
+| #3495 | display receipts to the private bucket `cpl-receipts` (#3476 step 1) | bucket created by migrate run 44255184017; second read done and fixed; COBIx's finding of 07:10Z (the fetch artifact on a public repo) being fixed; merge on a green `test` |
+| #3501 | the one-time move of 141 display receipts, 2,376.5 MB (#3476 step 4), stacked on #3495 | upload started (trigger 48d1397e); the removal commit follows the run |
+| #3498 | row audit reports kept to the newest 14 (#3476 step 5), stacked on #3495 | second read: merge after three minor fixes; its one-time move started (cd5a1571) |
+| #3490 | the repo size check (#3476 step 2) | draft; merges after the receipts leave the tree (`main` measures 4,862 MB against the 5,000 MB cap) |
 | #3491 | cheap piles: 9 discontinued programs flagged, no data write | draft; CI queued |
-| #3496 | cheap piles: units rules, 57 rows at 28 colleges (17 checks only, 40 full row); A6 off | round one's five findings fixed (head 1ff1324f); round two reading; then the pre-read and two applies |
-| #3497 | cheap piles: 80 failing records collected with their gaps named (census 5,650 to 5,572) | draft; count guard being added, then a second reader |
-| #3488, #3421, #3387, #3284, #3489 | full outcome reads: Golden West, Diablo Valley, Redwoods, Allan Hancock, Los Medanos | runs in flight; loads follow |
-| #3492, #3493, #3494 | preparation runs: Chabot, Antelope Valley, Santiago Canyon | runs queued or in flight |
-| Cosumnes River, Lassen | #3293 and the five pinned Lassen records | a worker reading |
+| #3496 | cheap piles: units rules; A6 off | two review rounds done; pre-read run 44258162212 clean for the 17 checks-only rows, their apply pushed (f1e05314); the 40-row part held: MiraCosta 21976 is live on an older run |
+| #3497 | cheap piles: named gaps | second read found 4 of 79 rows mislabeled; a worker is rebuilding the plan at 75 |
+| #3488, #3421, #3284, #3489, #3494 | full outcome reads: Golden West, Diablo Valley, Allan Hancock, Los Medanos, Santiago Canyon | runs in flight or queued |
+| #3387 | College of the Redwoods outcomes | read filed, 443 rows in the dry run, load run 44259060063 queued |
+| #3492 | Chabot outcomes | index done, 12-page trial queued |
+| #3493 | Antelope Valley outcomes | trial parsed 0 of 12; verdict `held`, as College of Marin |
+| #3499, #3500 | Lassen (five pinned records) and Cosumnes River (six records read from the wrong page) | free branch-only runs 44259115005 and 44259120093; a second reader before any table write |
+| reread plan, Spend line | cheap piles items 5 and 6 | a worker planning |
+| #3293 | the passing dry run | still waits on COBIx after four days; a plain-session decision |
 | #3482, #3472 | S679's drafts, green on their heads, each conflicts with `main` | left for a plain session |
 
-The runner pool is saturated (eight outcome runs and CI on nine pull requests), so each merge waits longer than 11 minutes.
+The runner pool is saturated, so each merge waits longer than 11 minutes. No pull request has merged yet.
 
 ## Order tonight (COBIx's brief on #3358, written 6:45 PM PT Nov 17)
 
