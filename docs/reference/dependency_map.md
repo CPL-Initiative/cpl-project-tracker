@@ -743,7 +743,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_blocker_scope.json` | scripts: `kb/exhibit_blocker_rules.py` | — |
 | `kb/exhibit_cert_links.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_cert_links.py`, `kb/_build_side_by_side.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibit_cert_links.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_left_map.json` | tabs: `exhibits` · scripts: `kb/_apply_left_map.py`, `kb/_build_left_map.py`, `kb/exhibit_blocker_rules.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
-| `kb/exhibit_repoint_list.json` | scripts: `kb/exhibit_repoint.py` | — |
+| `kb/exhibit_repoint_list.json` | scripts: `kb/exhibit_blocker_rules.py`, `kb/exhibit_repoint.py` | — |
 | `kb/exhibit_side_by_side.json` | tabs: `exhibits` · scripts: `kb/_build_side_by_side.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_subject_out` | none found | committed by: `cer-procedures.yml` |

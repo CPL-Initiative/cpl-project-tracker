@@ -3,43 +3,58 @@
  "_about": "The blocker round's rules 1 (cert_twin) and 2 (left_keep) as pair rows in kb/exhibit_repoint.py's shape, keyed by (MAP exhibit id + local title). A dry run: nothing is applied. The reviewed apply takes the repoint and confirm rows later (python3 kb/_cred_rename_apply.py --pairs kb/exhibit_blocker_rules_list.json); tap_only rows wait on Sam's tap and are never applied; person and skip rows stay with Sam, listed so the pile stays visible. `rollback` is the apply's undo computed now on copies: every value it would change, before and after.",
  "generated_by": "kb/exhibit_blocker_rules.py",
  "source": "issue #3480, Sources 19 and 21 to 24 (COBIx, 2026-11-17); scope kb/exhibit_blocker_scope.json",
+ "inputs": {
+  "kb/unified_titles.json": "817ff658b059c4c0",
+  "kb/credentials.json": "20d84a6f6dc662aa",
+  "kb/coci_articulations.json": "ac6672e3debe51e2",
+  "kb/credential_review_overlay.json": "05d174bfe8727f06",
+  "kb/exhibit_left_map.json": "9722843dfacc7442",
+  "kb/exhibit_repoint_list.json": "ed9666c2146ef1fe",
+  "kb/exhibit_blocker_scope.json": "ac2dc193f6d3b2c9"
+ },
  "counts": {
   "scope_pairs": 216,
   "by_rule": {
    "cert_twin": {
     "person": 20,
-    "repoint": 101
+    "repoint": 95,
+    "skip": 6
    },
    "left_keep": {
-    "confirm": 79,
+    "confirm": 75,
     "person": 15,
-    "skip": 1
+    "skip": 5
    }
   },
-  "resolved_by_rules": 180,
+  "resolved_by_rules": 170,
+  "resolved_and_applies_now": 163,
+  "resolved_waiting_on_exhibit_grain": 7,
+  "waits_on_apply_key_fix": 4,
   "to_sam_before": 397,
   "moved_by_another_rule": 1,
+  "not_a_pair_here": 6,
   "to_sam_after": 216,
-  "to_sam_after_note": "COBIx's 212 also subtracts 4 Split guard holds that Rule 1 releases; the Split's rows are kb/exhibit_repoint_list.json's, outside this list",
-  "twins": 77,
-  "twins_new": 77,
+  "to_sam_after_note": "Rule outcomes: a resolved pair the apply holds for exhibit grain counts as resolved, since it waits on the --with-exhibit-grain switch, not on Sam. A scope pair whose exhibit id is not on its local title in the committed records is not a pair here, and nor is a scope row that repeats a pair, so both are in neither pile. A pair whose title the apply would read as a same-wording key waits on that fix in #3472, not on Sam. COBIx's 212 also subtracts 4 Split guard holds that Rule 1 releases; the Split's rows are kb/exhibit_repoint_list.json's, outside this list. Rule 2's guard is the Exhibits List's (#3466 crossesGroups on kb/exhibit_left_map.json groups); a keep onto a canonical other titles already mix is written with already_mixed set and counted in kept_on_already_mixed_canonical.",
+  "twins": 76,
+  "twins_new": 76,
   "conflict_a": 0,
   "conflict_b_graded_into_cert": 0,
+  "kept_on_already_mixed_canonical": 24,
   "held_at_apply": {
-   "exhibit grain": 7,
-   "exhibit id not seen on this local title": 4
+   "exhibit grain": 7
   },
   "apply_dry_run": {
-   "applied": 169,
-   "held": 11,
-   "titles_changed": 166,
+   "applied": 163,
+   "held": 7,
+   "titles_changed": 161,
    "credentials_created": 71,
-   "articulations_reissued": 89
+   "articulations_reissued": 87
   },
   "matches_snapshot": {
-   "cert_twin same": 121,
-   "left_keep differs": 1,
-   "left_keep same": 94
+   "cert_twin differs": 6,
+   "cert_twin same": 115,
+   "left_keep differs": 5,
+   "left_keep same": 90
   }
  },
  "college_tests": {
@@ -51,7 +66,9 @@
   },
   "Cabrillo College": {
    "cert_twin": {
-    "repoint": 4
+    "held_at_apply": 2,
+    "repoint": 3,
+    "skip": 1
    },
    "left_keep": {
     "confirm": 1
@@ -59,18 +76,21 @@
   },
   "Moorpark College": {
    "cert_twin": {
+    "held_at_apply": 4,
     "repoint": 4
    }
   },
   "Los Angeles Pierce College": {
    "left_keep": {
-    "confirm": 33,
-    "person": 3
+    "confirm": 32,
+    "person": 3,
+    "skip": 1
    }
   },
   "Chaffey College": {
    "left_keep": {
-    "confirm": 11
+    "confirm": 8,
+    "skip": 3
    }
   },
   "Las Positas College": {
@@ -93,12 +113,92 @@
    "why": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title"
   },
   {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPICI-A6C-1-001",
+   "local_title": "AUTO 600 Completion ",
+   "snapshot": "repoint Introduction to Automotive Technology (Industry Certification)",
+   "now": "skip",
+   "why": "the same pair as an earlier scope row: the two wordings differ only by a trailing space"
+  },
+  {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPICI-BCFF-1-001",
+   "local_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)",
+   "now": "person",
+   "why": "the local title names a license or a specific credential: look it up instead"
+  },
+  {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPICI-CIAT-1-001",
+   "local_title": "CLDV-30 INFANT AND TODDLER DEVELOPMENT",
+   "snapshot": "repoint Infant and Toddler Development (Industry Certification)",
+   "now": "skip",
+   "why": "the exhibit id is not on this local title in the committed record: not a pair here"
+  },
+  {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPICI-BCFF1-1-001",
+   "local_title": "FIRE 34 - Building Construction for Fire Protection",
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)",
+   "now": "skip",
+   "why": "the exhibit id is not on this local title in the committed record: not a pair here"
+  },
+  {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPPRI-FBAC-1-001",
+   "local_title": "FIRE-31 Fire Behavior and Combustion",
+   "snapshot": "repoint Fire Behavior and Combustion (Industry Certification)",
+   "now": "skip",
+   "why": "the exhibit id is not on this local title in the committed record: not a pair here"
+  },
+  {
+   "rule": "cert_twin",
+   "exhibit_id": "MAPICO-IITA-1-001",
+   "local_title": "IC- Introduction to Automotive Technology",
+   "snapshot": "repoint Introduction to Automotive Technology (Industry Certification)",
+   "now": "skip",
+   "why": "the exhibit id is not on this local title in the committed record: not a pair here"
+  },
+  {
+   "rule": "left_keep",
+   "exhibit_id": "",
+   "local_title": "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
+   "snapshot": "keep",
+   "now": "skip",
+   "why": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'AP Exam Physics C: Electricity and Magnetism Score of 4 or 5 ', so a row here would land on that record; #3472's Index needs to read the exact key first"
+  },
+  {
    "rule": "left_keep",
    "exhibit_id": "MAPCXS-GA-1-001",
    "local_title": "Automotive ",
    "snapshot": "keep",
    "now": "skip",
    "why": "another rule moves this pair"
+  },
+  {
+   "rule": "left_keep",
+   "exhibit_id": "",
+   "local_title": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
+   "snapshot": "keep",
+   "now": "skip",
+   "why": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267) ', so a row here would land on that record; #3472's Index needs to read the exact key first"
+  },
+  {
+   "rule": "left_keep",
+   "exhibit_id": "",
+   "local_title": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
+   "snapshot": "keep",
+   "now": "skip",
+   "why": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2\\t', so a row here would land on that record; #3472's Index needs to read the exact key first"
+  },
+  {
+   "rule": "left_keep",
+   "exhibit_id": "",
+   "local_title": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
+   "snapshot": "keep",
+   "now": "skip",
+   "why": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors ', so a row here would land on that record; #3472's Index needs to read the exact key first"
   }
  ],
  "rows": [
@@ -115,7 +215,8 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint 3D Animation (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -129,7 +230,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Substance Abuse (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -143,7 +245,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Profiling Terrorism (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -157,7 +260,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Communications in Criminal Justice (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -171,7 +275,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Leadership in Agriculture B (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -185,7 +290,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Agriculture Education (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -199,7 +305,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Mechanical Technology (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -213,7 +320,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Agricultural Welding (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -227,7 +335,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Advanced Agricultural Welding (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -241,7 +350,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Military",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Advanced Agricultural Welding (Military)"
   },
   {
    "batch": "cert_twin",
@@ -255,7 +365,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Equipment Service and Safety (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -265,7 +376,8 @@
    "from": "Agriculture Occupational Safety",
    "to": null,
    "reason": "an outside licensing issuer (U.S. Occupational Safety and Health Administration (OSHA)) with no cert named",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -279,7 +391,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Irrigation and Drainage (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -293,7 +406,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Irrigation Wells, Pumps, and Drive Systems (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -307,7 +421,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Diesel Engine Principles (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -321,7 +436,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Hydraulics/Pneumatics (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -335,7 +451,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Preparation for Mechanical Technology (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -349,7 +466,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Animal Science (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -363,7 +481,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Dairy Management (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -377,7 +496,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Poultry Science (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -391,7 +511,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Veterinary Technology (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -405,21 +526,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
-  },
-  {
-   "batch": "cert_twin",
-   "exhibit_id": "MAPICI-A6C-1-001",
-   "local_title": "AUTO 600 Completion",
-   "action": "repoint",
-   "from": "Introduction to Automotive Technology",
-   "to": "Introduction to Automotive Technology (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
-   "college": "Long Beach City College",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Basic Automotive Systems (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -433,7 +541,19 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Automotive Technology (Industry Certification)"
+  },
+  {
+   "batch": "cert_twin",
+   "exhibit_id": "MAPICI-A6C-1-001",
+   "local_title": "AUTO 600 Completion ",
+   "action": "skip",
+   "from": "Introduction to Automotive Technology",
+   "to": null,
+   "reason": "the same pair as an earlier scope row: the two wordings differ only by a trailing space",
+   "college": "Long Beach City College",
+   "snapshot": "repoint Introduction to Automotive Technology (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -443,7 +563,8 @@
    "from": "Criminal Justice Report Writing",
    "to": null,
    "reason": "an outside licensing issuer (California Commission on Peace Officer Standards and Training (POST)) with no cert named",
-   "college": "City College of San Francisco"
+   "college": "City College of San Francisco",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -457,7 +578,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Automotive Brake Inspection (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -467,7 +589,8 @@
    "from": "Automotive Wheel Alignment",
    "to": null,
    "reason": "an outside licensing issuer (National Institute for Automotive Service Excellence (ASE)) with no cert named",
-   "college": "Long Beach City College"
+   "college": "Long Beach City College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -477,7 +600,8 @@
    "from": "Automotive Fuel Systems",
    "to": null,
    "reason": "an outside licensing issuer (National Institute for Automotive Service Excellence (ASE)) with no cert named",
-   "college": "Long Beach City College"
+   "college": "Long Beach City College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -491,7 +615,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Automotive Service and Introduction (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -505,7 +630,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint BIM and Sustainable Design Strategies 1 (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -519,7 +645,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Basic DC Electronics (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -533,7 +660,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Standardized Assessment",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Blueprint Reading (Standardized Assessment)"
   },
   {
    "batch": "cert_twin",
@@ -548,21 +676,19 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-BCFF-1-001",
    "local_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
-   "action": "repoint",
+   "action": "person",
    "from": "Building Construction for Fire Protection",
-   "to": "Building Construction for Fire Protection (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
+   "to": null,
+   "reason": "the local title names a license or a specific credential: look it up instead",
    "college": "Lake Tahoe Community College; Mendocino College; San Diego Miramar College",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -572,7 +698,8 @@
    "from": "Pre-General Chemistry",
    "to": null,
    "reason": "names AP, CLEP, IB or DSST but is typed cert-based: a type conflict, not a naming gap",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -586,7 +713,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Pre-General Chemistry (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -596,7 +724,8 @@
    "from": "Introduction to Chemistry",
    "to": null,
    "reason": "names AP, CLEP, IB or DSST but is typed cert-based: a type conflict, not a naming gap",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -610,22 +739,19 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Chemistry (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-CIAT-1-001",
    "local_title": "CLDV-30 INFANT AND TODDLER DEVELOPMENT",
-   "action": "repoint",
+   "action": "skip",
    "from": "Infant and Toddler Development",
-   "to": "Infant and Toddler Development (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
+   "to": null,
+   "reason": "the exhibit id is not on this local title in the committed record: not a pair here",
    "college": "",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit id not seen on this local title"
+   "snapshot": "repoint Infant and Toddler Development (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -639,7 +765,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint IT Support Fundamentals 1 (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -653,7 +780,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Photoshop Beginning (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -663,7 +791,8 @@
    "from": "CPR for Carpenters Apprentices",
    "to": null,
    "reason": "an outside licensing issuer (Carpenters Training Committee for Northern California (CTCNC)) with no cert named",
-   "college": "American River College"
+   "college": "American River College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -677,7 +806,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Principles of Floral Art and Design (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -691,7 +821,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Floral Design Advanced (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -705,7 +836,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Digital Principles and Circuits (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -719,7 +851,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Instrumentation Devices and Systems (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -733,7 +866,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Programmable Logic Controllers (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -747,7 +881,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to PACS: Programmable Automation Controllers (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -761,7 +896,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Troubleshooting Techniques (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -775,7 +911,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Electrical Safety (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -789,7 +926,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Environmental Science (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -803,37 +941,30 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint California Water (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-BCFF1-1-001",
    "local_title": "FIRE 34 - Building Construction for Fire Protection",
-   "action": "repoint",
+   "action": "skip",
    "from": "Building Construction for Fire Protection",
-   "to": "Building Construction for Fire Protection (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
+   "to": null,
+   "reason": "the exhibit id is not on this local title in the committed record: not a pair here",
    "college": "Lake Tahoe Community College; Merced College",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit id not seen on this local title"
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPPRI-FBAC-1-001",
    "local_title": "FIRE-31 Fire Behavior and Combustion",
-   "action": "repoint",
+   "action": "skip",
    "from": "Fire Behavior and Combustion",
-   "to": "Fire Behavior and Combustion (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
+   "to": null,
+   "reason": "the exhibit id is not on this local title in the committed record: not a pair here",
    "college": "Cabrillo College; Lake Tahoe Community College; Merced College",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit id not seen on this local title"
+   "snapshot": "repoint Fire Behavior and Combustion (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -847,7 +978,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Principles of Emergency Services (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -861,7 +993,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Fire Protection Systems (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -875,7 +1008,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Building Construction for Fire Protection (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -889,7 +1023,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Fire Behavior and Combustion (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -903,7 +1038,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Science Tactics & Strategy (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -917,7 +1053,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Fire Science Career Devopment Promotions (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -927,7 +1064,8 @@
    "from": "Firefighter 1 Academy Physical Training",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -941,7 +1079,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — EMS (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -955,7 +1094,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — EMS (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -969,7 +1109,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — EMS (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -983,7 +1124,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — EMS (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -997,7 +1139,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Special Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1011,7 +1154,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Special Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1025,7 +1169,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Special Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1039,7 +1184,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Special Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1053,7 +1199,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Command & Control (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1067,7 +1214,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Command & Control (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1081,7 +1229,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Command & Control (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1095,7 +1244,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Command & Control (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1109,7 +1259,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1123,7 +1274,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1137,12 +1289,13 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Other",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Other)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-F3-F-1-001",
-   "local_title": "FTECH 324B - Fire Service In-ServiceTraining  Administration",
+   "local_title": "FTECH 324B - Fire Service In-ServiceTraining  Administration ",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
    "to": "Fire Service In-Service Training — Administration (Industry Certification)",
@@ -1151,7 +1304,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1165,7 +1319,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1179,7 +1334,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Administration (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1193,7 +1349,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1207,7 +1364,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1221,7 +1379,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1235,7 +1394,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California State Fire Training (SFT)"
+   "target_issuer": "California State Fire Training (SFT)",
+   "snapshot": "repoint Fire Service In-Service Training — Operations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1250,17 +1410,19 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Fire Behavior and Combustion (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-FAW(-1-001",
    "local_title": "Flux-Cored Arc Welding (FCAW) Certification",
-   "action": "person",
+   "action": "skip",
    "from": "Flux Cored Arc Welding (FCAW)",
    "to": null,
-   "reason": "an outside licensing issuer (American Welding Society (AWS)) with no cert named",
-   "college": ""
+   "reason": "the exhibit id is not on this local title in the committed record: not a pair here",
+   "college": "",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1274,7 +1436,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Garde Manger — Intermediate Professional Culinary Cookery (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1284,7 +1447,8 @@
    "from": "Standard First Aid, CPR, and AED",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1298,7 +1462,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Personal Health and Wellness (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1312,7 +1477,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Field Studies & Seminar 1 (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1327,7 +1493,8 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Hospitality Cost Control (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1342,22 +1509,19 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Hospitality Supervision and Guest Relations (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICO-IITA-1-001",
    "local_title": "IC- Introduction to Automotive Technology",
-   "action": "repoint",
+   "action": "skip",
    "from": "Introduction to Automotive Technology",
-   "to": "Introduction to Automotive Technology (Industry Certification)",
-   "reason": "a college course typed cert-based with no issuer and cert named: the cert-based twin of the course title",
+   "to": null,
+   "reason": "the exhibit id is not on this local title in the committed record: not a pair here",
    "college": "",
-   "target_exists": false,
-   "target_sam_curated": false,
-   "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit id not seen on this local title"
+   "snapshot": "repoint Introduction to Automotive Technology (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1371,7 +1535,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Non-Structural Plan Review (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1381,7 +1546,8 @@
    "from": "California Residential Code",
    "to": null,
    "reason": "an outside licensing issuer (International Code Council (ICC)) with no cert named",
-   "college": "San Bernardino Valley College"
+   "college": "San Bernardino Valley College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1391,7 +1557,8 @@
    "from": "Aspects of Building and Safety",
    "to": null,
    "reason": "an outside licensing issuer (International Code Council (ICC)) with no cert named",
-   "college": "San Bernardino Valley College"
+   "college": "San Bernardino Valley College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1406,7 +1573,8 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 2 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 2 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Introduction to Food and Beverage Management (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1421,7 +1589,8 @@
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
    "target_issuer": "California Community Colleges",
-   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)"
+   "held_at_apply": "exhibit grain: the title is shared with 1 exhibit(s) that stay, and the dashboard reads the title alone (pass --with-exhibit-grain once it reads exhibit_unified_titles)",
+   "snapshot": "repoint Introduction to Hotel Management (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1435,7 +1604,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Transportation Management (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1449,7 +1619,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Warehouse Management (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1463,7 +1634,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Purchasing and Contracting (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1477,7 +1649,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Introduction to Customer Service (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1491,7 +1664,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint College Algebra (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1501,7 +1675,8 @@
    "from": "Business Statistics",
    "to": null,
    "reason": "names AP, CLEP, IB or DSST but is typed cert-based: a type conflict, not a naming gap",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1511,7 +1686,8 @@
    "from": "Maternal and Newborn Nursing Care",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Napa Valley College"
+   "college": "Napa Valley College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1525,7 +1701,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Military",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Nursing Process: Pharmacology (Military)"
   },
   {
    "batch": "cert_twin",
@@ -1539,7 +1716,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Military",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Nursing Process: Fundamentals (Military)"
   },
   {
    "batch": "cert_twin",
@@ -1553,7 +1731,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Military",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Nursing Process: Geriatrics (Military)"
   },
   {
    "batch": "cert_twin",
@@ -1567,7 +1746,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Self Defense (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1581,17 +1761,19 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Real Estate Principles (Industry Certification)"
   },
   {
    "batch": "cert_twin",
    "exhibit_id": "MAPICI-R3RE-1-001",
-   "local_title": "REALES 3, Real Estate Practice",
+   "local_title": "REALES 3, Real Estate Practice ",
    "action": "person",
    "from": "Real Estate Practice",
    "to": null,
    "reason": "an outside licensing issuer (California Department of Real Estate (DRE)) with no cert named",
-   "college": ""
+   "college": "",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1605,7 +1787,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Real Estate Principles (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1615,7 +1798,8 @@
    "from": "Real Estate Practice",
    "to": null,
    "reason": "an outside licensing issuer (California Department of Real Estate (DRE)) with no cert named",
-   "college": "Modesto Junior College"
+   "college": "Modesto Junior College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1629,7 +1813,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Legal Aspects of Real Estate (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1639,7 +1824,8 @@
    "from": "Real Estate Finance",
    "to": null,
    "reason": "an outside licensing issuer (California Department of Real Estate (DRE)) with no cert named",
-   "college": "Modesto Junior College; West Los Angeles College"
+   "college": "Modesto Junior College; West Los Angeles College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1649,7 +1835,8 @@
    "from": "Real Estate Economics",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Moreno Valley College; Norco College; Riverside City College"
+   "college": "Moreno Valley College; Norco College; Riverside City College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1659,7 +1846,8 @@
    "from": "Legal Aspects of Real Estate",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College"
+   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1669,7 +1857,8 @@
    "from": "Real Estate Finance",
    "to": null,
    "reason": "the local title names a license or a specific credential: look it up instead",
-   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College"
+   "college": "Moreno Valley College; Norco College; Riverside City College; West Los Angeles College",
+   "snapshot": "to Sam"
   },
   {
    "batch": "cert_twin",
@@ -1683,7 +1872,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Spanish for Heritage Speakers 1 (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1697,7 +1887,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Spanish for Heritage Speakers 2 (Industry Certification)"
   },
   {
    "batch": "cert_twin",
@@ -1711,7 +1902,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Other",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Self Defense (Other)"
   },
   {
    "batch": "cert_twin",
@@ -1725,7 +1917,8 @@
    "target_exists": false,
    "target_sam_curated": false,
    "cpl_type": "Industry Certification",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": "California Community Colleges",
+   "snapshot": "repoint Arc & Gas Welding (Industry Certification)"
   },
   {
    "batch": "left_keep",
@@ -1738,10 +1931,10 @@
    "college": "Los Angeles Pierce College",
    "confidence": 0.82,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 30,
-    "graded": 2
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -1756,10 +1949,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 8,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1774,10 +1967,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 7,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1792,10 +1985,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 17,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1810,10 +2003,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 17,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1828,10 +2021,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 20,
-    "graded": 2
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1846,10 +2039,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 20,
-    "graded": 2
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1864,10 +2057,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 16,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1882,10 +2075,10 @@
    "target_sam_curated": false,
    "confidence": 0.82,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 30,
-    "graded": 2
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1900,10 +2093,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 15,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1918,9 +2111,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 13
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1935,10 +2128,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 9,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1953,10 +2146,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 17,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1971,9 +2164,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 19
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -1988,10 +2181,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 12,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2006,10 +2199,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 16,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2024,10 +2217,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 15,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2042,10 +2235,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 16,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2060,10 +2253,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 12,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2076,10 +2269,10 @@
    "college": "Los Angeles Pierce College",
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {
-    "cert": 12,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -2092,10 +2285,10 @@
    "college": "Los Angeles Pierce College",
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {
-    "cert": 14,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -2110,10 +2303,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 14,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2128,26 +2321,24 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 12
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
    "exhibit_id": "",
    "local_title": "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
-   "action": "confirm",
+   "action": "skip",
    "from": "AP Physics C: Electricity and Magnetism",
-   "to": "AP Physics C: Electricity and Magnetism",
-   "reason": "every listing that carries the title already uses this canonical: keep it here",
+   "to": null,
+   "reason": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'AP Exam Physics C: Electricity and Magnetism Score of 4 or 5 ', so a row here would land on that record; #3472's Index needs to read the exact key first",
    "college": "Los Angeles Pierce College",
-   "target_exists": true,
-   "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {
-    "cert": 12
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2162,9 +2353,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 13
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2179,9 +2370,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 13
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2196,9 +2387,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 23
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2213,9 +2404,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 23
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2230,9 +2421,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 15
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2247,10 +2438,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 14,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2265,9 +2456,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 14
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2282,10 +2473,10 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 15,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2300,10 +2491,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 26,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2318,10 +2509,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 26,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2336,9 +2527,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {
-    "cert": 14
-   }
+   "title_group": "unknown",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2353,10 +2544,10 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 15,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2371,7 +2562,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2386,7 +2579,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2401,7 +2596,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2416,7 +2613,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2431,7 +2630,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2446,7 +2647,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2461,7 +2664,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2476,7 +2681,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2491,7 +2698,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2501,7 +2710,8 @@
    "from": "Introduction to Automotive Technology",
    "to": null,
    "reason": "another rule moves this pair",
-   "college": "Merced College"
+   "college": "Merced College",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2516,7 +2726,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "unknown",
+   "canonical_group": "unknown",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2529,7 +2741,9 @@
    "college": "Las Positas College",
    "confidence": 0.65,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -2542,22 +2756,24 @@
    "college": "Las Positas College",
    "confidence": 0.65,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
    "exhibit_id": "",
    "local_title": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
-   "action": "confirm",
+   "action": "skip",
    "from": "Business Management and Entrepreneurship",
-   "to": "Business Management and Entrepreneurship",
-   "reason": "every listing that carries the title already uses this canonical: keep it here",
+   "to": null,
+   "reason": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267) ', so a row here would land on that record; #3472's Index needs to read the exact key first",
    "college": "Chaffey College",
-   "target_exists": true,
-   "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2572,9 +2788,9 @@
    "target_sam_curated": false,
    "confidence": 0.98,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 6
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2589,9 +2805,9 @@
    "target_sam_curated": false,
    "confidence": 0.95,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 5
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2606,9 +2822,9 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 3
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2623,10 +2839,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 3,
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2641,9 +2857,10 @@
    "target_sam_curated": false,
    "confidence": 0.97,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 4
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "already_mixed": true,
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2658,7 +2875,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2673,22 +2892,24 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
    "exhibit_id": "",
    "local_title": "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
-   "action": "confirm",
+   "action": "skip",
    "from": "Engineering Design 2 Honors Advanced",
-   "to": "Engineering Design 2 Honors Advanced",
-   "reason": "every listing that carries the title already uses this canonical: keep it here",
+   "to": null,
+   "reason": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2\\t', so a row here would land on that record; #3472's Index needs to read the exact key first",
    "college": "Chaffey College",
-   "target_exists": true,
-   "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2703,22 +2924,24 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
    "exhibit_id": "",
    "local_title": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
-   "action": "confirm",
+   "action": "skip",
    "from": "Anatomy and Physiology Honors",
-   "to": "Anatomy and Physiology Honors",
-   "reason": "every listing that carries the title already uses this canonical: keep it here",
+   "to": null,
+   "reason": "waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors ', so a row here would land on that record; #3472's Index needs to read the exact key first",
    "college": "Chaffey College",
-   "target_exists": true,
-   "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2731,7 +2954,9 @@
    "college": "Las Positas College",
    "confidence": 0.7,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -2746,7 +2971,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2761,7 +2988,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2776,7 +3005,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2791,7 +3022,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2806,7 +3039,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2821,7 +3056,9 @@
    "target_sam_curated": false,
    "confidence": 0.85,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2836,7 +3073,9 @@
    "target_sam_curated": false,
    "confidence": 0.85,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2851,7 +3090,9 @@
    "target_sam_curated": false,
    "confidence": 0.82,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2866,7 +3107,9 @@
    "target_sam_curated": false,
    "confidence": 0.85,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2881,7 +3124,9 @@
    "target_sam_curated": false,
    "confidence": 0.82,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2896,7 +3141,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2905,13 +3152,13 @@
    "action": "person",
    "from": "First Aid, CPR, and AED Certification",
    "to": null,
-   "reason": "guard: this cert title would sit on a canonical whose live exhibits are all graded",
+   "reason": "guard: the Exhibits List's guard (#3466) blocks it: keeping this cert title puts a second group on the canonical",
    "college": "Las Positas College",
    "confidence": 0.85,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "graded": 1
-   }
+   "title_group": "cert",
+   "canonical_group": "mixed",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -2926,7 +3173,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2941,7 +3190,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2956,7 +3207,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2971,9 +3224,9 @@
    "target_sam_curated": false,
    "confidence": 0.85,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 8
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -2988,9 +3241,9 @@
    "target_sam_curated": false,
    "confidence": 0.95,
    "group": "cert",
-   "live_groups_on_canonical": {
-    "cert": 7
-   }
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3005,7 +3258,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "unknown",
+   "canonical_group": "unknown",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3018,7 +3273,9 @@
    "college": "",
    "confidence": 0.7,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3033,7 +3290,9 @@
    "target_sam_curated": false,
    "confidence": 1.0,
    "group": "unknown",
-   "live_groups_on_canonical": {}
+   "title_group": "unknown",
+   "canonical_group": "unknown",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3048,7 +3307,9 @@
    "target_sam_curated": false,
    "confidence": 0.8,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3061,7 +3322,9 @@
    "college": "Las Positas College",
    "confidence": 0.65,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3076,7 +3339,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3091,7 +3356,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3106,7 +3373,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3121,7 +3390,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3134,7 +3405,9 @@
    "college": "Las Positas College",
    "confidence": 0.4,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3147,7 +3420,9 @@
    "college": "Las Positas College",
    "confidence": 0.55,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3160,7 +3435,9 @@
    "college": "Las Positas College",
    "confidence": 0.7,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3173,7 +3450,9 @@
    "college": "American River College",
    "confidence": 0.78,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3186,7 +3465,9 @@
    "college": "American River College",
    "confidence": 0.78,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3199,7 +3480,9 @@
    "college": "American River College",
    "confidence": 0.78,
    "group": "cert",
-   "live_groups_on_canonical": {}
+   "title_group": "cert",
+   "canonical_group": "cert",
+   "snapshot": "to Sam"
   },
   {
    "batch": "left_keep",
@@ -3214,7 +3497,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   },
   {
    "batch": "left_keep",
@@ -3229,7 +3514,9 @@
    "target_sam_curated": false,
    "confidence": 0.9,
    "group": "graded",
-   "live_groups_on_canonical": {}
+   "title_group": "graded",
+   "canonical_group": "graded",
+   "snapshot": "keep"
   }
  ],
  "rollback": {
@@ -3961,34 +4248,6 @@
      ],
      "quality_flag": null,
      "_notes": "Likely same as Blueprint Reading; clustered together."
-    }
-   },
-   "Building Construction for Fire Protection 1 or 1A or 2C Certification": {
-    "before": {
-     "unified_title": "Building Construction for Fire Protection",
-     "confidence_title": 0.8,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPICI-BCFF-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "Same fire protection course taught at SFT levels."
-    },
-    "after": {
-     "unified_title": "Building Construction for Fire Protection (Industry Certification)",
-     "confidence_title": 0.8,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPICI-BCFF-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "Same fire protection course taught at SFT levels."
     }
    },
    "CHEM 142\tPre-General Chemistry - Industry Certification": {
@@ -6271,36 +6530,6 @@
      "confirmed_at": "(at apply)"
     }
    },
-   "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5 ": {
-    "before": {
-     "unified_title": "AP Physics C: Electricity and Magnetism",
-     "confidence_title": 0.98,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPSAS-AEPC1-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": null
-    },
-    "after": {
-     "unified_title": "AP Physics C: Electricity and Magnetism",
-     "confidence_title": 0.98,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPSAS-AEPC1-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": null,
-     "confirmed_by": "exhibit-repoint-s678@bot",
-     "confirmed_at": "(at apply)"
-    }
-   },
    "AP Exam Physics C: Mechanics Score of 3": {
     "before": {
      "unified_title": "AP Physics C: Mechanics",
@@ -6939,36 +7168,6 @@
      "confirmed_at": "(at apply)"
     }
    },
-   "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267) ": {
-    "before": {
-     "unified_title": "Business Management and Entrepreneurship",
-     "confidence_title": 0.6,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CHSB1-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "High school articulation."
-    },
-    "after": {
-     "unified_title": "Business Management and Entrepreneurship",
-     "confidence_title": 0.8,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CHSB1-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "High school articulation.",
-     "confirmed_by": "exhibit-repoint-s678@bot",
-     "confirmed_at": "(at apply)"
-    }
-   },
    "CLEP Exam Financial Accounting": {
     "before": {
      "unified_title": "CLEP Financial Accounting",
@@ -7177,36 +7376,6 @@
      "confirmed_at": "(at apply)"
     }
    },
-   "Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2\t": {
-    "before": {
-     "unified_title": "Engineering Design 2 Honors Advanced",
-     "confidence_title": 0.7,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CJU--1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "High-school course articulation, college-specific CBE."
-    },
-    "after": {
-     "unified_title": "Engineering Design 2 Honors Advanced",
-     "confidence_title": 0.8,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CJU--1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "High-school course articulation, college-specific CBE.",
-     "confirmed_by": "exhibit-repoint-s678@bot",
-     "confirmed_at": "(at apply)"
-    }
-   },
    "Cinema 24- Credit by Exam ": {
     "before": {
      "unified_title": "Basic Film Production",
@@ -7231,36 +7400,6 @@
       "MAPCBEA-C2-1-001"
      ],
      "_notes": "Curator triage superseded the unreviewed machine classification 'Cinema 24 — Credit by Exam (CCSF)' (conf 0.55).",
-     "confirmed_by": "exhibit-repoint-s678@bot",
-     "confirmed_at": "(at apply)"
-    }
-   },
-   "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors ": {
-    "before": {
-     "unified_title": "Anatomy and Physiology Honors",
-     "confidence_title": 0.7,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CRAA-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "ROP-articulated high school course CBE."
-    },
-    "after": {
-     "unified_title": "Anatomy and Physiology Honors",
-     "confidence_title": 0.8,
-     "classified_at": "2026-05-20",
-     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-     "reviewed_at": null,
-     "reviewed_by": null,
-     "source_exhibit_ids": [
-      "MAPCXH-CRAA-1-001"
-     ],
-     "quality_flag": null,
-     "_notes": "ROP-articulated high school course CBE.",
      "confirmed_by": "exhibit-repoint-s678@bot",
      "confirmed_at": "(at apply)"
     }
@@ -8307,18 +8446,6 @@
      "reviewed_by": null
     }
    ],
-   "Building Construction for Fire Protection (Industry Certification)": [
-    {
-     "issuing_agency": "California Community Colleges",
-     "training_agency": null,
-     "confidence_issuer": 0.8,
-     "confidence_trainer": null,
-     "classified_at": "(at apply)",
-     "classified_by": "exhibit-repoint-s678@bot (cert_twin)",
-     "reviewed_at": null,
-     "reviewed_by": null
-    }
-   ],
    "Pre-General Chemistry (Industry Certification)": [
     {
      "issuing_agency": "California Community Colleges",
@@ -8500,6 +8627,18 @@
     }
    ],
    "Fire Protection Systems (Industry Certification)": [
+    {
+     "issuing_agency": "California Community Colleges",
+     "training_agency": null,
+     "confidence_issuer": 0.8,
+     "confidence_trainer": null,
+     "classified_at": "(at apply)",
+     "classified_by": "exhibit-repoint-s678@bot (cert_twin)",
+     "reviewed_at": null,
+     "reviewed_by": null
+    }
+   ],
+   "Building Construction for Fire Protection (Industry Certification)": [
     {
      "issuing_agency": "California Community Colleges",
      "training_agency": null,
@@ -9171,32 +9310,6 @@
     },
     "after": {
      "unified_title": "Blueprint Reading (Standardized Assessment)",
-     "issuing_agency": "California Community Colleges"
-    }
-   },
-   {
-    "course_id": "FIRE M1274",
-    "exhibit_id": "MAPICI-BCFF-1-001",
-    "exhibit_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
-    "before": {
-     "unified_title": "Building Construction for Fire Protection",
-     "issuing_agency": "California State Fire Training (SFT)"
-    },
-    "after": {
-     "unified_title": "Building Construction for Fire Protection (Industry Certification)",
-     "issuing_agency": "California Community Colleges"
-    }
-   },
-   {
-    "course_id": "FIRE M1315",
-    "exhibit_id": "MAPICI-BCFF-1-001",
-    "exhibit_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
-    "before": {
-     "unified_title": "Building Construction for Fire Protection",
-     "issuing_agency": "California State Fire Training (SFT)"
-    },
-    "after": {
-     "unified_title": "Building Construction for Fire Protection (Industry Certification)",
      "issuing_agency": "California Community Colleges"
     }
    },
@@ -10033,17 +10146,7 @@
     "value": "keep"
    },
    {
-    "course_id": "_LEFT_MAP::AP Exam Calculus BC (Score 3-5)",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
     "course_id": "_LEFT_MAP::AP Exam Calculus BC/AB Sub-score (Score 3-5)",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
-    "course_id": "_LEFT_MAP::AP Exam Chemistry (Score 3-5)",
     "field": "left_map_decision",
     "value": "keep"
    },
@@ -10099,11 +10202,6 @@
    },
    {
     "course_id": "_LEFT_MAP::AP Exam Physics C: Electricity and Magnetism Score of 3",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
-    "course_id": "_LEFT_MAP::AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
     "field": "left_map_decision",
     "value": "keep"
    },
@@ -10218,11 +10316,6 @@
     "value": "keep"
    },
    {
-    "course_id": "_LEFT_MAP::CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
     "course_id": "_LEFT_MAP::CLEP Exam Financial Accounting",
     "field": "left_map_decision",
     "value": "keep"
@@ -10258,17 +10351,7 @@
     "value": "keep"
    },
    {
-    "course_id": "_LEFT_MAP::Chaffey Joint Union - Rancho Cucamonga HS - Advanced Engineering Design II H 1&2",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
     "course_id": "_LEFT_MAP::Cinema 24- Credit by Exam ",
-    "field": "left_map_decision",
-    "value": "keep"
-   },
-   {
-    "course_id": "_LEFT_MAP::Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors",
     "field": "left_map_decision",
     "value": "keep"
    },
@@ -10397,6 +10480,11 @@
     "field": "left_map_decision",
     "value": "keep"
    }
-  ]
+  ],
+  "not_written": [
+   "AP Exam Calculus BC (Score 3-5)",
+   "AP Exam Chemistry (Score 3-5)"
+  ],
+  "not_written_why": "the title carries an exhibit id outside this scope, which the rule never decided"
  }
 }

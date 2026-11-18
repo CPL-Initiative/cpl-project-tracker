@@ -15,9 +15,17 @@ Its two top causes each got a rule, and the two rules take what still goes to Sa
       California State Fire Training); or when the twin already holds graded exhibits.
   Rule 2, left_keep (cause LEFT-REFERENCED, 95 pairs; Source 23). A leftover local title (gone from current MAP) that
       a course-credit listing still carries stays under its current canonical when every listing that carries it
-      already uses that canonical, its mapping confidence is 0.80 or higher, and the guard passes: the pair's group is
-      not the opposite of every live exhibit on that canonical, and a pair with no type sits only on a canonical that
-      holds one group.
+      already uses that canonical, its mapping confidence is 0.80 or higher, and the guard passes. The guard is the
+      Exhibits List's (exhibits.js crossesGroups, #3466/#3477, ported here as crosses_groups and run against the JS by
+      the test) on kb/exhibit_left_map.json's title and canonical groups. A keep adds nothing to a canonical, so a
+      crossing holds the pair only when this title is what puts the second group there (no other exhibit on the
+      canonical shares its group); a keep onto a canonical other titles already mix is written with already_mixed set.
+      COBIx's two checks run beside it: the pair's group is not the opposite of every live exhibit on the canonical,
+      and a pair with no type sits only on a canonical that holds one group.
+
+Every rule first checks the pair is a pair here: the exhibit id must be on the local title in the committed records
+(the key that carries it, when two keys differ only by a trailing space), a scope row that repeats a pair is skipped,
+and a title the reviewed apply would read as another key of the same wording waits on that fix in #3472.
 
 What neither rule does: edit a local title (a kb/unified_titles.json key), rename a canonical (a kb/credentials.json
 key), or touch a Sam-curated pair (those are tap_only rows, never applied). Rule 1 creates new canonical names, so a
@@ -31,6 +39,10 @@ is kb/exhibit_blocker_scope.json, COBIx's 216 pairs, since the blocker round tha
     python3 kb/exhibit_blocker_rules.py            # write kb/exhibit_blocker_rules_list.json (a dry run, nothing applied)
     python3 kb/exhibit_blocker_rules.py --check    # exit 1 when the committed list differs from a rebuild
 
+The list records a hash of each input file (`inputs`). The daily run rewrites some of them, so the test pins the
+counts and the byte-for-byte rebuild only while the hashes match, and otherwise prints a notice to rebuild before the
+apply; the guard, the never-edit checks and the rule fixtures run either way.
+
 The list goes through the reviewed apply later, as a Rule 10 plan:
     python3 kb/_cred_rename_apply.py --pairs kb/exhibit_blocker_rules_list.json --dry-run
 Its `rollback` section is that apply's undo, computed now on copies: every value the apply would change, before and
@@ -39,6 +51,7 @@ after, which `--undo-pairs` reverses.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import re
@@ -57,7 +70,10 @@ P = lambda *a: os.path.join(HERE, *a)  # noqa: E731
 # Rule 1's skips, COBIx's patterns (Source 21) with Firefighter 1 or 2 added after the Modesto test (FTECH 317).
 ASSESS = re.compile(r"\b(AP|CLEP|IB|DSST)\b|advanced placement", re.I)
 NAMED = re.compile(r"licen[sc]e|licensed|salesperson|\bLVN\b|certified|\bASE\b|comptia|\bOSHA\b|\bNCCER\b|\bAWS\b|"
-                   r"servsafe|\bCPR\b|first aid|fire ?fighter (1|I|2|II)\b", re.I)
+                   r"servsafe|\bCPR\b|first aid|fire ?fighter (1|I|2|II)[A-D]?\b|"
+                   # a State Fire Training certification level (1A, 2C) named as a certification, so a course number
+                   # such as ENGL 1A with no certification word stays out of it (second reader, PR #3515)
+                   r"\b[12][A-D]\b.*certification", re.I)
 OK_ISSUER = re.compile(r"california community colleges|state fire training|\(SFT\)", re.I)
 COLLEGE_ISSUER = "California Community Colleges"
 CONFIDENCE = 0.8
@@ -105,12 +121,60 @@ def canon_groups(idx, skip_titles=()):
     return out
 
 
+def _same_wording(idx, t):
+    """Every unified_titles key whose stripped wording is t's, built once per index."""
+    by = getattr(idx, "_by_stripped", None)
+    if by is None:
+        by = defaultdict(list)
+        for k in idx.ut:
+            by[k.strip()].append(k)
+        idx._by_stripped = by
+    return by.get(t.strip(), [])
+
+
 def _resolve(idx, s):
-    """The unified_titles key for a scope pair: the exact title first, since two keys can differ only by a trailing
-    space or tab and carry different records; else the stripped match."""
-    t = s["local_title"]
-    key = t if t in idx.ut else (idx.key_of.get(t) or idx.key_of.get(t.strip()))
-    return key, (idx.pair_canonical(key, s["exhibit_id"]) if key else None)
+    """The unified_titles key for a scope pair. Two keys can differ only by a trailing space or tab and carry
+    different records, so the key is the one that carries the pair's exhibit id: the exact title when it does, else a
+    key of the same wording that does (COBIx's snapshot strips the trailing space: "AUTO 600 Completion" is the pair
+    on "AUTO 600 Completion "). With no key carrying the id, the exact title, else the stripped match; the rules then
+    hold the pair as not a pair here."""
+    t, e = s["local_title"], s["exhibit_id"]
+    cands = [k for k in [t] + sorted(_same_wording(idx, t)) if k in idx.ut]
+    key = next((k for k in cands if e and e in idx.ids_of.get(k, set())), None)
+    if key is None:
+        key = t if t in idx.ut else (idx.key_of.get(t) or idx.key_of.get(t.strip()))
+    return key, (idx.pair_canonical(key, e) if key else None)
+
+
+def not_on_title(idx, key, e):
+    """True when the scope pair's exhibit id is not on the local title in the committed records: COBIx's snapshot saw
+    a pair this repo does not hold, so a row for it could never apply (second reader, PR #3515)."""
+    return bool(e) and e not in idx.ids_of.get(key, set())
+
+
+NOT_ON_TITLE = "the exhibit id is not on this local title in the committed record: not a pair here"
+DUPLICATE = "the same pair as an earlier scope row: the two wordings differ only by a trailing space"
+SHADOWED = ("waits on the apply: kb/exhibit_repoint.py's Index reads this title as its same-wording key %r, so a row "
+            "here would land on that record; #3472's Index needs to read the exact key first")
+
+
+def shadowed(idx, key):
+    """The other key the reviewed apply would read for this one (Index.key_of maps a key to an earlier key of the
+    same wording), or None."""
+    k = idx.key_of.get(key)
+    return k if k and k != key else None
+
+
+def crosses_groups(a, b):
+    """exhibits.js crossesGroups (#3466/#3477), line for line: the result would hold both groups. None when either
+    side's group is not recorded or both stay in one group. a and b are kb/exhibit_left_map.json group words
+    ('graded', 'cert', 'mixed' or ''). tests/exhibit_blocker_rules_test.py runs the JS beside this to keep them equal."""
+    if not a or not b:
+        return None
+    has = set()
+    for g in (a, b):
+        has |= {"graded", "cert"} if g == "mixed" else {g}
+    return {"a": a, "b": b} if {"graded", "cert"} <= has else None
 
 
 def _row(batch, s, key, action, frm, to, reason, idx, **kw):
@@ -132,6 +196,7 @@ def rule_cert_twin(idx, scope, claimed=None, incoming=None):
     groups another rule's applicable rows send to it."""
     claimed, incoming = claimed or set(), incoming or {}
     groups = canon_groups(idx)
+    seen = set()
     rows = []
     for s in scope:
         key, canon = _resolve(idx, s)
@@ -143,6 +208,13 @@ def rule_cert_twin(idx, scope, claimed=None, incoming=None):
         if pair_sam_curated(idx, key, canon):
             mk("tap_only", None, "Sam-curated: his tap only")
             continue
+        if not_on_title(idx, key, e):
+            mk("skip", None, NOT_ON_TITLE)
+            continue
+        if (e, key) in seen:
+            mk("skip", None, DUPLICATE)
+            continue
+        seen.add((e, key))
         if (e, key) in claimed:
             mk("skip", None, "another rule on the re-point list already moves this pair")
             continue
@@ -168,15 +240,25 @@ def rule_cert_twin(idx, scope, claimed=None, incoming=None):
             mk("person", None, "the twin %r would join words with a slash, which the slash rule holds for a person"
                % twin)
             continue
+        if shadowed(idx, key):
+            mk("skip", None, SHADOWED % shadowed(idx, key))
+            continue
         mk("repoint", twin, "a college course typed cert-based with no issuer and cert named: the cert-based twin of "
            "the course title", cpl_type=typ, target_issuer=iss or COLLEGE_ISSUER)
     return rows
 
 
-def rule_left_keep(idx, scope, leftover, reviewed, claimed=None):
-    """Rule 2 rows. `leftover` is the set of local titles gone from MAP (kb/exhibit_left_map.json), `reviewed` the
-    ones Sam reviewed there, `claimed` the pairs another rule moves."""
+def rule_left_keep(idx, scope, left_map, claimed=None):
+    """Rule 2 rows. `left_map` is kb/exhibit_left_map.json: its `titles` are the local titles gone from MAP (with the
+    ones Sam reviewed marked) and its `titles[].group` and `canonicals[].group` are what the Exhibits List's guard
+    reads. `claimed` is the set of pairs another rule moves."""
     claimed = claimed or set()
+    titles = (left_map or {}).get("titles") or {}
+    canon_g = (left_map or {}).get("canonicals") or {}
+    leftover = set(titles)
+    reviewed = {k for k, v in titles.items() if (v or {}).get("reviewed")}
+    seen = set()
+    allg = canon_groups(idx)
     live = canon_groups(idx, skip_titles=leftover)
     listing = defaultdict(set)
     for a in idx.arts:
@@ -195,6 +277,13 @@ def rule_left_keep(idx, scope, leftover, reviewed, claimed=None):
         if key in reviewed or pair_sam_curated(idx, key, canon):
             mk("tap_only", None, "Sam reviewed or curated it: settled, never re-queued")
             continue
+        if not_on_title(idx, key, e):
+            mk("skip", None, NOT_ON_TITLE)
+            continue
+        if (e, key) in seen:
+            mk("skip", None, DUPLICATE)
+            continue
+        seen.add((e, key))
         if (e, key) in claimed:
             mk("skip", None, "another rule moves this pair")
             continue
@@ -203,17 +292,35 @@ def rule_left_keep(idx, scope, leftover, reviewed, claimed=None):
         lg = live.get(canon, Counter())
         g = pair_group(idx, e) if e else ""
         other = {"graded": "cert", "cert": "graded"}.get(g)
-        kw = {"confidence": conf, "group": g or "unknown", "live_groups_on_canonical": dict(sorted(lg.items()))}
+        tg = (titles.get(key) or {}).get("group") or g
+        cg = (canon_g.get(canon) or {}).get("group") or ""
+        cross = crosses_groups(tg, cg)
+        # A keep adds nothing to the canonical, so the guard asks whether this title is what puts the second group
+        # there: it does when no other exhibit on the canonical shares its group. When others do, the mix comes from
+        # other titles (the Split's pile), and the keep is written with already_mixed set so that pile stays visible.
+        others = allg.get(canon, Counter()) - Counter(pair_group(idx, x) or "unknown"
+                                                      for x in idx.ids_of.get(key, ())
+                                                      if idx.pair_canonical(key, x) == canon)
+        premixed = tg in ("graded", "cert") and others[tg] > 0
+        kw = {"confidence": conf, "group": g or "unknown", "title_group": tg or "unknown",
+              "canonical_group": cg or "unknown"}
+        if cross and premixed:
+            kw["already_mixed"] = True
         if us and us != {canon}:
             mk("person", None, "a course-credit listing uses a different canonical (%s)"
                % "; ".join(sorted(str(x) for x in us if x != canon)), **kw)
         elif conf < CONFIDENCE:
             mk("person", None, "mapping confidence %.2f is below 0.80" % conf, **kw)
+        elif cross and not premixed:
+            mk("person", None, "guard: the Exhibits List's guard (#3466) blocks it: keeping this %s title puts a "
+               "second group on the canonical" % tg, **kw)
         elif other and lg[g] == 0 and lg[other] > 0:
             mk("person", None, "guard: this %s title would sit on a canonical whose live exhibits are all %s"
                % (g, other), **kw)
-        elif not other and lg["graded"] and lg["cert"]:
+        elif not other and (cg == "mixed" or (lg["graded"] and lg["cert"])):
             mk("person", None, "guard: no CPL type on file, on a canonical that mixes graded and cert-based", **kw)
+        elif shadowed(idx, key):
+            mk("skip", None, SHADOWED % shadowed(idx, key), **kw)
         else:
             mk("confirm", canon, "every listing that carries the title already uses this canonical: keep it here",
                **kw)
@@ -249,13 +356,17 @@ def graded_into_cert(idx, rows, leftover):
 
 
 def college_tests(rows, colleges):
-    """Per college named on a pair (a pair naming two colleges counts for each): its rule outcomes."""
+    """Per college named on a pair (a pair naming two colleges counts for each): its rule outcomes, and beside them
+    how many of its repoint and confirm rows the reviewed apply holds today (held_at_apply), so a rule outcome is
+    never read as a pair that lands."""
     out = {}
     for c in colleges:
         per = defaultdict(Counter)
         for r in rows:
             if c in [x.strip() for x in (r.get("college") or "").split(";")]:
                 per[r["batch"]][r["action"]] += 1
+                if r.get("held_at_apply"):
+                    per[r["batch"]]["held_at_apply"] += 1
         out[c] = {b: dict(sorted(v.items())) for b, v in sorted(per.items())}
     return out
 
@@ -265,6 +376,26 @@ TEST_COLLEGES = ["Modesto Junior College", "Cabrillo College", "Moorpark College
 
 
 # ── build ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+# The files a rebuild reads. The list records their hashes, so the test can tell a stale list (code changed: rebuild
+# in the same PR) from one the daily run's data moved under (rebuild before the apply), and pin counts only on the
+# data they were measured on.
+INPUTS = ("unified_titles.json", "credentials.json", "coci_articulations.json", "credential_review_overlay.json",
+          "exhibit_left_map.json", "exhibit_repoint_list.json", "exhibit_blocker_scope.json")
+
+
+def input_hashes():
+    out = {}
+    for name in INPUTS:
+        path = P(name)
+        h = hashlib.sha256()
+        if os.path.exists(path):
+            with open(path, "rb") as f:
+                for chunk in iter(lambda: f.read(1 << 20), b""):
+                    h.update(chunk)
+        out["kb/" + name] = h.hexdigest()[:16] if os.path.exists(path) else None
+    return out
+
 
 def load_index():
     ut = xr.load_json(P("unified_titles.json"), {})
@@ -286,12 +417,10 @@ def build(idx=None, scope_doc=None, repoint_doc=None, left_doc=None):
     for r in others:
         if r.get("to") and r["action"] != "confirm":
             incoming[r["to"]].add(pair_group(idx, r["exhibit_id"]) if r["exhibit_id"] else "")
-    titles = left_doc.get("titles") or {}
-    leftover = set(titles)
-    reviewed = {k for k, v in titles.items() if (v or {}).get("reviewed")}
+    leftover = set(left_doc.get("titles") or {})
     r1 = rule_cert_twin(idx, [s for s in scope if s["rule"] == "cert_twin"], claimed, incoming)
     moved = claimed | {(r["exhibit_id"], r["local_title"]) for r in r1 if r["action"] == "repoint"}
-    r2 = rule_left_keep(idx, [s for s in scope if s["rule"] == "left_keep"], leftover, reviewed, moved)
+    r2 = rule_left_keep(idx, [s for s in scope if s["rule"] == "left_keep"], left_doc, moved)
     rows = r1 + r2
     _, _, _, undo, report = xr.apply_rows(rows, idx.ut, idx.creds, idx.arts, today="(at apply)")
     held = {(h["exhibit_id"], h["local_title"]): h["why"] for h in report["held"]}
@@ -305,22 +434,31 @@ def build(idx=None, scope_doc=None, repoint_doc=None, left_doc=None):
     want = {"cert_twin": "repoint", "left_keep": "confirm"}
     for s, r in zip([s for s in scope if s["rule"] == "cert_twin"] + [s for s in scope if s["rule"] == "left_keep"],
                     rows):
+        # Each row carries COBIx's outcome beside its own, so the test checks the pair, never only the totals.
+        r["snapshot"] = s["snapshot_outcome"] + (" " + s["snapshot_target"] if s["snapshot_target"] else "")
         mine = "rule" if r["action"] == want[r["batch"]] else "to Sam"
         theirs = "rule" if s["snapshot_outcome"] in ("repoint", "keep") else "to Sam"
         snap[(r["batch"], mine == theirs)] += 1
         if mine != theirs or (mine == "rule" and r["batch"] == "cert_twin" and r["to"] != s["snapshot_target"]):
             snap_diff.append({"rule": r["batch"], "exhibit_id": r["exhibit_id"], "local_title": r["local_title"],
-                              "snapshot": s["snapshot_outcome"] + (" " + s["snapshot_target"] if s["snapshot_target"]
-                                                                   else ""),
+                              "snapshot": r["snapshot"],
                               "now": r["action"] + (" " + r["to"] if r.get("to") else ""), "why": r["reason"]})
     resolved = by_rule["cert_twin"].get("repoint", 0) + by_rule["left_keep"].get("confirm", 0)
     moved_elsewhere = sum(1 for r in rows if r["action"] == "skip" and r["reason"].startswith("another rule"))
-    keep_titles = defaultdict(set)
+    not_here = sum(1 for r in rows if r["action"] == "skip" and r["reason"] in (NOT_ON_TITLE, DUPLICATE))
+    shadow_n = sum(1 for r in rows if r["action"] == "skip" and r["reason"].startswith("waits on the apply"))
+    held_n = sum(1 for r in rows if r.get("held_at_apply"))
+    # A title-grain Keep settles every exhibit on the title, so it is written only when every exhibit id the title
+    # carries is a scope pair this rule confirmed (second reader, PR #3515: two AP titles carried an id outside scope).
+    confirmed = defaultdict(set)
+    other_act = set()
     for r in r2:
-        if r["action"] in ("confirm", "person", "tap_only"):
-            keep_titles[r["local_title"]].add(r["action"])
+        (confirmed[r["local_title"]].add(r["exhibit_id"]) if r["action"] == "confirm"
+         else other_act.add(r["local_title"]))
     left_rows = [{"course_id": LEFT_PREFIX + t, "field": "left_map_decision", "value": "keep"}
-                 for t, acts in sorted(keep_titles.items()) if acts == {"confirm"}]
+                 for t, ids in sorted(confirmed.items())
+                 if t not in other_act and (idx.ids_of.get(t, set()) <= ids)]
+    left_partial = sorted(t for t, ids in confirmed.items() if t not in other_act and not idx.ids_of.get(t, set()) <= ids)
     twins = sorted({r["to"] for r in r1 if r["action"] == "repoint"})
     doc = {
         "schema": "exhibit-repoint-list/1",
@@ -332,17 +470,30 @@ def build(idx=None, scope_doc=None, repoint_doc=None, left_doc=None):
                   "undo computed now on copies: every value it would change, before and after.",
         "generated_by": "kb/exhibit_blocker_rules.py",
         "source": "issue #3480, Sources 19 and 21 to 24 (COBIx, 2026-11-17); scope kb/exhibit_blocker_scope.json",
+        "inputs": input_hashes(),
         "counts": {
             "scope_pairs": len(scope),
             "by_rule": by_rule,
             "resolved_by_rules": resolved,
-            "to_sam_before": 397, "moved_by_another_rule": moved_elsewhere,
-            "to_sam_after": 397 - resolved - moved_elsewhere,
-            "to_sam_after_note": "COBIx's 212 also subtracts 4 Split guard holds that Rule 1 releases; the Split's "
-                                 "rows are kb/exhibit_repoint_list.json's, outside this list",
+            "resolved_and_applies_now": resolved - held_n,
+            "resolved_waiting_on_exhibit_grain": held_n,
+            "waits_on_apply_key_fix": shadow_n,
+            "to_sam_before": 397, "moved_by_another_rule": moved_elsewhere, "not_a_pair_here": not_here,
+            "to_sam_after": 397 - resolved - moved_elsewhere - not_here - shadow_n,
+            "to_sam_after_note": (
+                "Rule outcomes: a resolved pair the apply holds for exhibit grain counts as resolved, since it "
+                "waits on the --with-exhibit-grain switch, not on Sam. A scope pair whose exhibit id is not on "
+                "its local title in the committed records is not a pair here, and nor is a scope row that "
+                "repeats a pair, so both are in neither pile. A pair whose title the apply would read as a "
+                "same-wording key waits on that fix in #3472, not on Sam. COBIx's 212 also subtracts 4 Split "
+                "guard holds that Rule 1 releases; the Split's rows are kb/exhibit_repoint_list.json's, outside "
+                "this list. Rule 2's guard is the Exhibits List's (#3466 crossesGroups on "
+                "kb/exhibit_left_map.json groups); a keep onto a canonical other titles already mix is written "
+                "with already_mixed set and counted in kept_on_already_mixed_canonical."),
             "twins": len(twins), "twins_new": sum(1 for t in twins if t not in idx.creds),
             "conflict_a": len(conflicts(rows, others)),
             "conflict_b_graded_into_cert": len(graded_into_cert(idx, rows, leftover)),
+            "kept_on_already_mixed_canonical": sum(1 for r in rows if r["action"] == "confirm" and r.get("already_mixed")),
             "held_at_apply": dict(sorted(Counter(r["held_at_apply"].split(":")[0] for r in rows
                                                  if r.get("held_at_apply")).items())),
             "apply_dry_run": {k: report["counts"][k] for k in ("applied", "held", "titles_changed",
@@ -362,6 +513,8 @@ def build(idx=None, scope_doc=None, repoint_doc=None, left_doc=None):
                       "Remove changes nothing in kb/unified_titles.json, so the repo side has nothing to undo).",
             "reviewer_email": KEEP_COHORT,
             "rows": left_rows,
+            "not_written": left_partial,
+            "not_written_why": "the title carries an exhibit id outside this scope, which the rule never decided",
         },
     }
     return doc

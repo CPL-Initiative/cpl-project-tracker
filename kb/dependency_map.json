@@ -12093,7 +12093,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 272
+     "line": 383
     }
    ],
    "producers": [
@@ -15008,7 +15008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 273
+     "line": 383
     }
    ],
    "producers": [
@@ -15329,7 +15329,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 271
+     "line": 383
     },
     {
      "id": "script:kb/slash_titles.py",
@@ -16394,14 +16394,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 67
     },
     {
      "id": "script:kb/exhibit_blocker_rules.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 54
+     "line": 67
     }
    ],
    "served": false,
@@ -16414,7 +16414,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 66
     }
    ],
    "served": false,
@@ -16510,7 +16510,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 281
+     "line": 384
     }
    ],
    "producers": [
@@ -16531,6 +16531,13 @@
   },
   "file:kb/exhibit_repoint_list.json": {
    "consumers": [
+    {
+     "id": "script:kb/exhibit_blocker_rules.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 384
+    },
     {
      "id": "script:kb/exhibit_repoint.py",
      "kind": "script",
@@ -21855,7 +21862,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 270
+     "line": 383
     }
    ],
    "producers": [
