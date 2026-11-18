@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1043,
+  "file_datasets": 1041,
   "external_services": 195,
-  "consumers": 614,
-  "workflows": 73,
+  "consumers": 613,
+  "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -10896,19 +10896,6 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/_receipt_move_display.py": {
-   "consumers": [
-    {
-     "id": "workflow:receipt-move.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
   "file:kb/_receipt_store.py": {
    "consumers": [
     {
@@ -18481,17 +18468,6 @@
      "direction": "read",
      "how": "literal",
      "line": 15
-    }
-   ],
-   "served": false,
-   "main_committers": []
-  },
-  "file:kb/receipts/index": {
-   "consumers": [],
-   "producers": [
-    {
-     "by": "workflow:receipt-move.yml",
-     "how": "commit"
     }
    ],
    "served": false,
@@ -36149,20 +36125,6 @@
     "kb/projects_seed_out/"
    ],
    "push": "main",
-   "deploys": [],
-   "chain": [],
-   "urls": []
-  },
-  "receipt-move.yml": {
-   "name": "Receipt move (one time)",
-   "crons": [],
-   "scripts": [
-    "kb/_receipt_move_display.py"
-   ],
-   "adds": [
-    "kb/receipts/index"
-   ],
-   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []

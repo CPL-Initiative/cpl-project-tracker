@@ -6,8 +6,9 @@ data out first thing and make sure we don't allow to go beyond a limit." From S6
 no display receipt is committed (kb/_receipt_store.py), but the 141 committed before
 it hold 2.4 GB of the tree. They leave in one PR, in two halves, in order:
 
-  1. The store (this script's --apply, run by .github/workflows/receipt-move.yml when
-     a push changes kb/receipts/.move). The runner checks out the full tree and, for
+  1. The store (this script's --apply, run once by .github/workflows/receipt-move.yml,
+     run 44259862567 on 2026-11-18, then removed with its trigger kb/receipts/.move so
+     no branch can start it again). The runner checked out the full tree and, for
      every tracked display receipt (the small *.applied_*.json records stay), checks
      that its bytes hash to the blob the tree names, gzips a plain .sql (up to 72.7 MB,
      over the bucket's 50 MB an object), stores it through store_file(), reads it back,

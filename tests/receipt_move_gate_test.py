@@ -15,7 +15,7 @@ removes them with `git rm`. The failures this pins:
   * a fetch or an apply that hands back the gzipped bytes instead of the receipt;
   * a re-run that stores everything again, or a display run's earlier entry that the
     move cannot complete with the repo file's identity;
-  * the move workflow committing anything but index entries.
+  * the one-time move's workflow or trigger coming back, so another branch could run it.
 
 The live gate needs the base tree: in GitHub Actions it fetches main's trees alone
 (--filter=blob:none, so no receipt is downloaded); in a session it reads origin/main
@@ -195,15 +195,11 @@ finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
 
-# ---- the move workflow: started by its trigger file on a claude/ branch, commits index entries alone.
-wf = open(os.path.join(ROOT, ".github", "workflows", "receipt-move.yml"), encoding="utf-8").read()
-check("- 'kb/receipts/.move'" in wf and "branches: ['claude/**']" in wf and "git diff --quiet FETCH_HEAD -- kb/receipts/.move" in wf,
-      "a claude/ push that changes kb/receipts/.move from main's starts the move")
-check("python3 kb/_receipt_move_display.py --apply" in wf and "SUPABASE_SERVICE_KEY" in wf
-      and "git add kb/receipts/index" in wf and "git add kb/receipts\n" not in wf and "git add -A" not in wf
-      and "grep -v '^kb/receipts/index/'" in wf, "the move commits index entries and refuses anything else staged")
-check("github.actor != 'github-actions[bot]'" in wf and "startsWith(github.event.head_commit.message, 'Merge')" in wf,
-      "the bot's commit and a merge of main never start it again")
+# ---- the move ran once (run 44259862567, 2026-11-18) and its workflow and trigger are gone, so no branch can
+# start it again after the merge.
+check(not os.path.exists(os.path.join(ROOT, ".github", "workflows", "receipt-move.yml"))
+      and not os.path.exists(os.path.join(ROOT, "kb", "receipts", ".move")),
+      "the one-time move's workflow and trigger file are removed")
 
 
 # ---- the live gate: this tree against the base branch's.

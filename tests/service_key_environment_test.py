@@ -71,8 +71,6 @@ PENDING = {
         "other-session", "the harvest's file today; dispatched on claude/ branches"),
     ("program-requirements-extract.yml", "extract"): ("other-session", "the harvest's file today; push to claude/**"),
     ("program-requirements-wave.yml", "read"): ("other-session", "the harvest's file today; dispatched on claude/ branches"),
-    ("receipt-move.yml", "move"): (
-        "branch", "the one-time move of the display receipts (S680), started by a trigger push on a claude/ branch"),
     ("program-source-census.yml", "census"): ("branch", "push to claude/** fires it; recent runs on claude/ branches"),
     ("second-reader.yml", "read"): ("other-session", "the harvest's second reader, the other session's file today"),
 }
