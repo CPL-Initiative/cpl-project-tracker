@@ -44,18 +44,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 13,
    "listed": 13,
-   "share": 0.923,
-   "missing": [
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 7,
    "codes": [
     "CIS21",
     "CIS25",
@@ -63,7 +68,6 @@
     "CIS26B",
     "CIS27B",
     "CSC5",
-    "MATHC2210",
     "STATC1000H"
    ],
    "flagged": [
@@ -73,7 +77,6 @@
     "CIS26B",
     "CIS27B",
     "CSC5",
-    "MATHC2210",
     "STATC1000H"
    ],
    "pass": true
@@ -322,6 +325,6 @@
    "The certificate prints its own Program Learning Outcomes list; all four recorded as printed (the first outcome begins with 'Providing')."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

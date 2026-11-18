@@ -616,7 +616,8 @@
       return (d ? fmt(d) + " of " + fmt(b.n) + " decided. " : "") + fmt(b.n) + (b.n === 1 ? " card" : " cards")
         + " as of last night's sweep; Start counts again. " + (b.stop || "");
     }
-    if (b.kind === "decision") return "One decision, on its sheet. " + (b.stop || "");
+    /* A real ask is plain (Sam, 2026-11-16, issue #3358): the default already chosen, and it stands unless he changes it. */
+    if (b.kind === "decision") return (b.chosen ? "We went with this: " + b.chosen + " " : "") + (b.stop || "It stands unless you change it.");
     return "In the " + (b.title || "reference") + ". Each ruling saves where you make it.";
   }
   function nextBatchSection(b, opts) {
@@ -640,7 +641,7 @@
          el("p", { cls: "cmn-next-meta", text: batchMeta(b) })];
     return el("section", { cls: "cmn-next", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": b ? b.kind : "none" }, [
       el("div", { cls: "cmn-next-text" }, text.filter(Boolean)),
-      b && b.open ? openLink(b.open, "Start", "cmn-start") : null
+      b && b.open ? openLink(b.open, b.kind === "decision" ? "Change it" : "Start", "cmn-start") : null
     ].filter(Boolean));
   }
   /* The section for the list as it stands: the first batch not done, and a line for an Another look batch this
@@ -684,7 +685,7 @@
   function doneLine(j) {
     if (!j) return null;
     var text = j.kind === "case"
-      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and files its receipt."
+      ? "Ruled: " + choiceWords(caseOf(BATCH.data, j.b.id) || {}, BATCH.ruled[j.b.id].choice) + ". The processor carries it out and keeps a record that can undo it."
       : "Done: you decided " + fmt(j.n) + " of " + fmt(j.n) + (j.n === 1 ? " exhibit title" : " exhibit titles") + ". The nightly sweep learns from them tonight.";
     var line = el("p", { cls: "cmn-next-done", role: "status", text: text });
     return j.kind === "case" ? el("div", null, [line, processNow()]) : line;
@@ -714,7 +715,7 @@
     }).then(function (x) {
       PROCESS.busy = false;
       PROCESS.said = x.status === 200 && x.j.ok
-        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
+        ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, keeps a record of each ruling that can undo it, and marks its case done.")
         : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
         : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
         /* The shared queue (S643): the function starts nothing while another run waits in the queue it shares, since
@@ -746,7 +747,7 @@
       + "On no ruling: " + (c.no_reply || "nothing changes.") }));
     if (R) {
       kids.push(el("p", { cls: "cmn-case-ruled", role: "status", text: "Ruled: " + choiceWords(c, R.choice) + (R.at ? " on " + String(R.at).slice(0, 10) : "")
-        + ". The processor carries it out and files its receipt." }), processNow());
+        + ". The processor carries it out and keeps a record that can undo it." }), processNow());
       return el("section", { cls: "cmn-next cmn-case", id: "cmn-next-sec", "aria-labelledby": "cmn-next-h", "data-kind": "case", "data-case": id },
         [el("div", { cls: "cmn-next-text" }, kids.filter(Boolean))]);
     }

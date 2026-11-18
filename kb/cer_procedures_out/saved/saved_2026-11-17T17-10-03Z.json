@@ -1,0 +1,300 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-17T17-10-03Z",
+ "run_id": "44133095023",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot",
+  "cer-procedure-high-school-rop@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Aviation Mechanic- Airframe and Powerplant",
+   "field": "unified_title_assignment",
+   "value": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Aviation Mechanic- Airframe and Powerplant",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Criminal Justice/Crime Scene Investigation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Criminal Justice/Crime Scene Investigation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Developmental Psychology of Children II",
+   "field": "unified_title_assignment",
+   "value": "Principles & Practices of Teaching Young Children",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Developmental Psychology of Children II",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018 News Production IV",
+   "field": "unified_title_assignment",
+   "value": "News Production 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018 News Production IV",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018A  News Production I",
+   "field": "unified_title_assignment",
+   "value": "News Production 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018A  News Production I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 020 Photojournalism I",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Photojournalism",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 020 Photojournalism I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18B News Production II",
+   "field": "unified_title_assignment",
+   "value": "News Production 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18B News Production II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18C News Production III",
+   "field": "unified_title_assignment",
+   "value": "News Production III",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18C News Production III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "United Association (UA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "United Association (UA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Aviation Mechanic- Airframe and Powerplant",
+   "field": "unified_title_assignment",
+   "value": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Aviation Mechanic- Airframe and Powerplant",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Criminal Justice/Crime Scene Investigation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Criminal Justice/Crime Scene Investigation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Developmental Psychology of Children II",
+   "field": "unified_title_assignment",
+   "value": "Principles & Practices of Teaching Young Children",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation- Developmental Psychology of Children II",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018 News Production IV",
+   "field": "unified_title_assignment",
+   "value": "News Production 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018 News Production IV",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018A  News Production I",
+   "field": "unified_title_assignment",
+   "value": "News Production 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 018A  News Production I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 020 Photojournalism I",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Photojournalism",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 020 Photojournalism I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18B News Production II",
+   "field": "unified_title_assignment",
+   "value": "News Production 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18B News Production II",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18C News Production III",
+   "field": "unified_title_assignment",
+   "value": "News Production III",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::JOURN 18C News Production III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "United Association (UA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "United Association (UA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

@@ -1614,6 +1614,134 @@ check("Glendale 2026-27: the note names the call and the code left unpriced",
 g_pdf = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST)[0]["blocks"][0]["courses"]
 check("Glendale 2025-26: with no call, the step's figures fill as before", [c["units"] for c in g_pdf] == [5, 5])
 
+print("RCCD's repeated course rows (S672; college page reads 44034775728 and 44045355408)")
+# Each page prints a course's row once per enrollment, and the reading keeps one row. The filed record may already
+# carry the step's result once a reconcile has run, so the record as read is that one with times taken off.
+def _as_read(college_slug, cn):
+    rec = json.load(open(os.path.join(ROOT, "kb", "program_requirements_college", college_slug, "records",
+                                      cn + ".json")))["record"]
+    for b in rec["blocks"]:
+        for c in b["courses"]:
+            for e in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)]:
+                e.pop("times", None)
+    return rec
+RCCD_STEPS = R.load_steps()
+D = " \u00b7 "
+piano = ("Required Courses (12.5 units)" + D + "Units: 12.50" + D + "COURSE" + D + "TITLE" + D + "UNITS"
+         + (D + "MUS-P12*" + D + "Applied Piano I*" + D + "3.00") * 4 + D + "MUS-52" + D + "Recital Performance" + D
+         + "0.50" + D + "*Course must be taken four times\nElective Courses (6 units) Course must be repeated up to four "
+         "times.\nUnits: 6.00" + D + "MUS-P36" + D + "Piano Ensemble" + D + "1.50" + D + "Total: 18.50")
+jazz = ("Required Courses (12.5 units)" + D + "Units: 12.00" + D + "MUS-25" + D + "Jazz Appreciation" + D + "3.00" + D
+        + "MUS-36" + D + "Instrumental Chamber Ensembles" + D + "1.50"
+        + (D + "MUS-39Course must be taken twice" + D + "Applied Music ICourse must be taken twice" + D + "3.00") * 2
+        + D + "MUS-52" + D + "Recital Performance" + D + "0.50" + D + "MUS-74" + D + "Jazz Proficiency" + D + "1.00\n"
+        "Course must be taken twiceThis course must be taken twice.")
+perf = ("Required Courses" + D + "Units: 9.50" + D + "COURSE" + D + "TITLE" + D + "UNITS\nTake MUS-39 three times over "
+        "three semesters.\n9.00" + (D + "MUS-39" + D + "Applied Music I" + D + "3.00") * 3 + D + "MUS-52" + D
+        + "Recital Performance" + D + "0.50")
+norco = ("MUS-93" + D + "The Business of Music" + D + "3.00" + D + "Take MUS-39 twice for a total of six units:" + D
+         + "6.00" + D + "MUS-39" + D + "Applied Music I" + D + "3.00" + D + "Take MUS-79 twice for a total of six units:"
+         + D + "6.00" + D + "MUS-79" + D + "Applied Music II" + D + "3.00\nOption 1: Take MUS-41 four times over four "
+         "semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 2: Take both MUS-41 and MIS-81 two "
+         "times each over four semesters:\n8.00" + D + "MUS-41" + D + "Chamber Singers" + D + "2.00\nOption 3: Take both "
+         "MIS-11A and MIS-11B two times each over four semesters:\n8.00" + D + "MIS-11A" + D + "Studio Ensemble I" + D
+         + "2.00")
+for cn, text, want, code, n in (("38626", piano, (18.5, 18.5), "MUS-P12", 4), ("38627", jazz, (17, 17), "MUS-39", 2),
+                                ("38628", perf, (17.5, 17.5), "MUS-39", 3)):
+    rec = _as_read("riverside_city", cn)
+    new, notes = R.reconcile(rec, text, "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)
+    hit = [c for b in new["blocks"] for c in b["courses"] if c["code"] == code]
+    check("RCC %s: %s carries times %d" % (cn, code, n), hit and all(c.get("times") == n for c in hit))
+    check("RCC %s: the blocks sum to the page's total" % cn, S.program_units(new, {})[0] == want)
+    check("RCC %s: a second run changes nothing" % cn,
+          not [x for x in R.reconcile(new, text, "Riverside City College", "Certificate of Achievement",
+                                      steps=RCCD_STEPS)[1] if x["field"] == "times"])
+check("RCC: a footnote with no starred code ahead of it changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P12 3.00 *Course must be taken four times",
+                                  "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("RCC: 'repeated up to four times' on an elective list changes nothing",
+      not [x for x in R.reconcile(_as_read("riverside_city", "38626"), "MUS-P36 1.50 Course must be repeated up to four "
+                                  "times.", "Riverside City College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+nrec = _as_read("norco", "30606")
+nnew, nnotes = R.reconcile(nrec, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)
+ntimes = {c["code"]: c.get("times") for b in nnew["blocks"] for c in b["courses"] if c["code"] in ("MUS-39", "MUS-79", "MUS-41")}
+check("Norco 30606: MUS-39 and MUS-79 twice", ntimes.get("MUS-39") == 2 and ntimes.get("MUS-79") == 2)
+# S673: each option's heading gives its own courses their count, so MUS-41 takes 4 in Option 1 and 2 in Option 2.
+opt = {b["name"].split(":")[0]: {c["code"]: c.get("times") for c in b["courses"]}
+       for b in nnew["blocks"] if b["name"].startswith("Option")}
+check("Norco 30606: Option 1's MUS-41 four times", opt.get("Option 1") == {"MUS-41": 4})
+check("Norco 30606: Option 2's MUS-41 and MUS-81 two times each", opt.get("Option 2") == {"MUS-41": 2, "MUS-81": 2})
+check("Norco 30606: Option 3's MIS-11A and MIS-11B two times each", opt.get("Option 3") == {"MIS-11A": 2, "MIS-11B": 2})
+check("Norco 30606: the blocks sum to the page's 36-37", S.program_units(nnew, {})[0] == (36, 37))
+check("Norco 30606: a second run changes nothing",
+      not [x for x in R.reconcile(nnew, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[1]
+           if x["field"] == "times"])
+check("Norco 30606: an option heading the page does not print changes nothing",
+      not [x for x in R.reconcile(nrec, norco.split("\nOption 1")[0], "Norco College", "A.A. Degree",
+                                  steps=RCCD_STEPS)[1] if x["words"].startswith("Take MUS-41")])
+_odd = json.loads(json.dumps(nrec))
+for b in _odd["blocks"]:
+    if b["name"].startswith("Option 1"):
+        b["stated"] = {"min": 6, "max": 6}
+check("Norco 30606: a count whose sum is not the option's stated figure changes nothing",
+      all(c.get("times") is None for b in R.reconcile(_odd, norco, "Norco College", "A.A. Degree", steps=RCCD_STEPS)[0]["blocks"]
+          if b["name"].startswith("Option 1") for c in b["courses"]))
+check("Norco 30606: the required list sums to its printed 25",
+      sum(c["units"] * (c.get("times") or 1) for c in nnew["blocks"][0]["courses"]) == 25)
+
+print("printed_total: Moreno Valley 38758 (S674)")
+_mrec = json.load(open(os.path.join(ROOT, "kb/program_requirements_college/moreno_valley/records/38758.json")))["record"]
+_mrec = json.loads(json.dumps(_mrec))
+_mrec["program"]["total_units"] = {"min": 16, "max": 20}
+mvc = ("Guitar Performance - Certificate of Achievement - MCE930\nRequired Courses (16-20 Units)\n"
+       "Music Theory (includes musicianship)\nMUS-3*\tMusicianship\t4.00\nMUS-4\t4.00\nMUS-5\t4.00\n"
+       "Applied Music (1 unit per semester for a total of 4 units)\t0.00\nMUS-87\t4.00\n"
+       "Ensemble (1 unit per semester for a total of 4 units)\nMUS-70\t4.00\nUnits: 20.00\n"
+       "* (Test out option available)\nTotal : 20.00\n")
+mnew, mnotes = R.reconcile(_mrec, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)
+check("Moreno Valley 38758: the record takes the printed total 20",
+      mnew["program"]["total_units"] == {"min": 20, "max": 20})
+check("Moreno Valley 38758: one note, from 16-20", [n["was"] for n in mnotes if n["field"] == "total_units"] == [{"min": 16, "max": 20}])
+check("Moreno Valley 38758: a second run changes nothing",
+      not [n for n in R.reconcile(mnew, mvc, "Moreno Valley College", "Certificate of Achievement", steps=RCCD_STEPS)[1]
+           if n["field"] == "total_units"])
+check("Moreno Valley 38758: no test-out words, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\n", ""), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: a total that is not the range's top, no change",
+      R.reconcile(_mrec, mvc.replace("Total : 20.00", "Total : 18.00"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+_mchoose = json.loads(json.dumps(_mrec))
+_mchoose["blocks"][2]["rule"] = "choose_units"
+check("Moreno Valley 38758: a block that is a choice, no change",
+      R.reconcile(_mchoose, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_msum = json.loads(json.dumps(_mrec))
+_msum["blocks"][1]["stated"] = {"min": 2, "max": 2}
+check("Moreno Valley 38758: blocks that do not sum to the total, no change",
+      R.reconcile(_msum, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 16, "max": 20})
+_mother = json.loads(json.dumps(_mrec))
+_mother["program"]["total_units"] = {"min": 18, "max": 20}
+check("Moreno Valley 38758: a record holding another range, no change",
+      R.reconcile(_mother, mvc, "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"]
+      == {"min": 18, "max": 20})
+
+_mwide = json.loads(json.dumps(_mrec))
+_mwide["program"]["total_units"] = {"min": 12, "max": 20}
+check("Moreno Valley 38758: a 12-20 range a 4-unit starred course does not account for, no change",
+      R.reconcile(_mwide, mvc.replace("(16-20 Units)", "(12-20 Units)"), "Moreno Valley College", "Certificate",
+                  steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 12, "max": 20})
+check("Moreno Valley 38758: test-out words after the total, outside the span, no change",
+      R.reconcile(_mrec, mvc.replace("* (Test out option available)\nTotal : 20.00\n", "Total : 20.00\n* (Test out option available)\n"),
+                  "Moreno Valley College", "Certificate", steps=RCCD_STEPS)[0]["program"]["total_units"] == {"min": 16, "max": 20})
+check("Moreno Valley 38758: the note keeps the heading and the total, not the course table",
+      [n for n in mnotes if n["field"] == "total_units"][0]["words"].startswith("Required Courses (16-20 Units)")
+      and "Total : 20" in [n for n in mnotes if n["field"] == "total_units"][0]["words"]
+      and "MUS-87" not in [n for n in mnotes if n["field"] == "total_units"][0]["words"])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

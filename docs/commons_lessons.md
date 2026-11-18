@@ -1,7 +1,7 @@
 ---
 title: "The Commons — lessons"
 date: 2026-10-18
-updated: 2026-11-16
+updated: 2026-11-17
 tags: [lessons, commons, program-requirements, cer-procedures, skyview, common-cr-reference]
 artifacts:
   - commons_progress.js
@@ -71,48 +71,9 @@ Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget ag
 
 Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)*; *Moved from the lane, 2026-11-04 (S573 SkyNeedle; the lane passed its 20,000-byte budget)*; *Moved from the lane, 2026-11-04 (S574)*.
 
-## Moved from the lane, 2026-11-04 (SkyJujube; the lane passed its 20,000-byte budget)
+## 1 sections: moved to the archive (S666 checkpoint compaction)
 
-The S417 record of the Commons tab's first build, verbatim. The Course row's *SkyView alone* ruling it records was reversed on 2026-11-04 (S574: the Courses List first, SkyView beside it).
-
-**LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
-live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
-mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind
-it, the known issues each naming an owner, the settled procedures, the calls in the run log and the two
-stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
-make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
-when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
-stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
-`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
-
-- **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
-  (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
-  from `coci_programs_data.js` and the harvest's record files (the mock-up's own method); Exhibit from
-  `kb/unified_titles.json`, `kb/credentials.json`, the exhibit audit, the procedures run's `latest.json`,
-  the saving receipts and the fold report; Course from the auditor's `kb/row_audit/latest.json`,
-  `prototype/ccr_universe.json` and the stand-alone build; CR from `kb/cr_reference_worklist.json` and
-  the curator receipts under `kb/receipts/`; Subjects from `kb/discipline_canonical_subj4.json`. A figure
-  a source cannot supply is null beside its error and reads *Could not be read* (the S343 rule). Guard:
-  `tests/commons_status_build_test.py` (66 checks).
-- **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
-  alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
-  calls as its last checkpoint left them. A call Sam answered on its sheet carries `answer` {by, at, words}: listed
-  with his words, counted answered (Sam, 2026-10-21: *"the open asks on The Commons doesn't seem to record that I
-  responded"*; #2329).
-- **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
-  `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
-  passes at both widths; UI pass ledger `cobi:commons`.
-- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
-  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
-  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
-  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
-  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
-  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
-  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
-  `#unified-courses/list`) and the Admin tab can show the entry again.
-- The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
-  source `docs/visuals/2026-10-18-commons-mockup.html`).
-
+Moved verbatim to [`commons_lessons_archive.md`](commons_lessons_archive.md): *Moved from the lane, 2026-11-04 (SkyJujube; the lane passed its 20,000-byte budget)*.
 
 ## SkyJujube, 2026-11-04: retiring the Common Course Reference tab (a side session)
 
@@ -506,3 +467,20 @@ Verbatim from `docs/reference/lanes/commons.md`, replaced by one-line pointers t
 
 **DECIDED** `d-data-collection-one-base-per-card-s649` (follows `d-data-collection-two-bases-s648`): where the live census holds a college, the card's Passing now and Still to pass, the list's columns and the statewide card read it (5,751 still to pass), so the causes sum to the figure; the capture's own figures keep the label *the capture*.
 **The College Data Collection wording and order (Sam, Nov 13 on #3229) and the harvest's throughput (S644):** lessons, *Moved from the lane (S654 checkpoint)*. **Catalog links (S650):** only Copper Mountain's link is broken; `CATALOG_LINKS` splits `catalog_url`, `capture_root` and `catalog_now`. The paragraph: lessons, *Moved from the lane (S653 checkpoint)*.
+
+## Moved from the lane (S666 checkpoint)
+
+Verbatim from `docs/reference/lanes/commons.md`, compacted under the lane budget; the cost feed's NEXT (3) was done in #3381.
+
+**LIVE (S661, #3375 `f44a0fcd`): the Commons Curation ETA tops the CPL Commons tab** (Sam, in session: *"Design another ETA widget to estimate completion date on the CPL Commons curation work. This one doesn't so much depend on collecting data but on honing the procedures used to auto-canonicalize and/or speed the human curation/canonicalization process."*). `commons_curation_eta.js`: each reference's pace is the net fall of its remaining work (new work counts against it) over the last 7 days or the 7 before, with people's share apart, from the new daily `pairs` series in `kb/status/commons_history.json` (`kb/_build_commons_status.py` records it each build; backfilled from the committed status file from Oct 18). Procedure chips are the queue's no-procedure blocks (a new procedure settles a stated share on a stated start); people chips multiply people's pace. A reference whose remaining work does not fall is not dated, and the ETA then reads Not dated yet. On Nov 15 the CR wordings do not move, so the honest headline is Not dated yet. **DONE (S662):** the exhibit universe grew by exactly each day's stamps because a MAP title with no entry joins the reference already stamped when a CER procedure classifies it (`f-exhibit-universe-grows-backlog-joins-stamped-s662`). Titles the auditor caught in its unclassified backlog were left out of the universe; titles that arrived and were stamped between two audits (Nov 14's 133) count as new work and new settlement at once, which net fall reads correctly. The universe is now the larger of the reference's titles and the audit's titles plus its backlog (`facts.backlog`; the two files are written at different times, so never their sum), and the pairs series was backfilled the same way from each day's `kb/exhibit_audit/<date>.md`. Exhibit remaining fell from 3,618 (Oct 27) to 3,030 (Nov 15), most of it in the Oct 30 to 31 step; the last week fell about 10, on two days, so the exhibits carry a date years out that rests on that small fall, and the card's words say so. Stale entries stay in the universe, a constant offset. **DECIDED** `d-exhibit-universe-includes-map-backlog-s662`. **DECIDED** `d-curation-eta-net-pace-s661`. The top cards' explainers (Waiting on a person, How far to trust the procedures) fold behind About this by default (Sam: *"Save real estate on cpl commons by default collapsing the text explainer part of the top cards"*). Guard `tests/commons_curation_eta.test.js`.
+
+**LIVE (S662): the ETA cost feed.** The clock's Show costs reads two committed files and no billing credentials: Sam's billing paste, moved out of the module into `kb/reference/model_spend_daily.json` (Console API by UTC day, Claude Code top-ups, a note on a day, partial days; a person or session updates it by hand), and the sessions' own figures, `kb/status/session_spend.json`, which `kb/_build_session_spend.py` reads from each handoff's `Spend:` line (Sam, 2026-11-15, #3358; the shape is in step 8 of `.claude/commands/checkpoint.md`). A day's hover shows the sessions' figure beside the billing total, never added to it, since the two meters differ. The billing file is on the Pages allowlist; its figures were already public inside the module. Guards `tests/commons_eta_clock.test.js`, `tests/session_spend_build_test.py`. Pages builds the sessions' file into the site at deploy (`pages.yml`) and git ignores it, so parallel handoff PRs never conflict over it (COBIx on #3379), and the daily build, which may not read `docs/`, never runs it. **DECIDED** `d-eta-cost-feed-two-files-s662`. **NEXT (the Curation ETA):** (1) The series fills as handoffs carry the line; no handoff before 663 does. (2) Sam's billing paste after Nov 15, into the billing file. (3) COBIx's two optional leftovers on #3379: in `.github/workflows/pages.yml` move the step that builds the sessions' spend (and its three comment lines) above the cache-busting comment block, so that comment sits over the stamp step again; and let `kb/_build_session_spend.py`'s `LINE` accept `**Spend**:` and lowercase `spend:` (`tests/session_spend_build_test.py`). Method: [`methodology-a-progress-pace-is-the-net-fall-of-remaining-work`](../../kb-notes/methodology-a-progress-pace-is-the-net-fall-of-remaining-work.md).
+
+## S678 (SkyWaxwing, 2026-11-17)
+
+- **A dispatch-only workflow that feeds a dashboard goes stale without a sound.** College Data Collection's live counts went unread Nov 13 to 17 because `harvest-gap-census.yml` ran only when someone dispatched it, and nobody did; the first dispatch moved objective courses from 2,983 to 10,711. It now runs daily at 17:47 UTC under the failure watcher (#3465). A workflow whose output a page reads gets a schedule and a watch.
+- **A session rooted above three repos loads the root's settings, not the repo's.** The read-only SQL allow rule Sam asked for already sat in both; `scripts/check_hooks_live.py` names which one is live. The Execute SQL prompt is the app's mark and no settings file clears it, so counts go through the runner.
+- **Sparse worktrees for parallel workers** (no `kb/receipts`, no `kb/row_audit`): 1.4 GB against 4.8 GB for a full one; five full worktrees filled the disk. The open-asks check needs `CPL_VAULT_ROOT` and the receipts, so it reads STALE there and passes in CI.
+- **A test that pins a live-read date breaks the day the read runs.** Derive the date from the data.
+- **Second readers caught two blockers on matcher PRs** (#3467's Verified stamp on a synthetic target and its self-recall: rules that fire on 0 or 1 decided cards yet move hundreds live; #3468's view filter that is not leakproof). The self-recall test is the gate for any rule that moves cards.
+- **A `loaded_at` series counts the last load,** so a reload re-dates rows; the cost-per-CRE series says *loaded on*, never *first collected*.

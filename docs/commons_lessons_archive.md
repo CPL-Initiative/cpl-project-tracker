@@ -776,3 +776,45 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
 `tests/cr_list.test.js` (12), `tests/coci_list_cc_card.test.js` (7), `tests/program_requirements_list_record_port.test.js` (16).
 
 **LIVE: Discipline in doubt, a ruling that teaches the procedure (S614, 2026-11-09).** Sam, in session: *"Can you put these in the appropriate part of the commons process and make a built in way for me to rule on them so our procedures can be adjusted to handle similar edge cases? ... I suspect other edge cases will emerge as we begin to use the subjects more intensly."* It lives in the Courses reference (a common course's discipline is the Courses List's one discipline write; Subjects maps a discipline to its code and is complete). `kb/_ccr_seed_recheck_dryrun.py --doubt`, daily in `daily-dashboard.yml` after the curation sync, writes `kb/ccr_doubt.json`: the active discipline's (`kb/ccr_procedures.json` `active_discipline`) cards whose description reads elsewhere, then those TOP alone doubts, labeled as TOP's word. `#coci-lookup/list/doubt` lists them; the panel shows both signals and takes a ruling (keep, move, keep and also list as a second discipline, not sure), its reason in plain words and *Use this reason for similar cards*. The reason saves first as a `kb_curation` `ccr_procedure_request` row (`_CCR_PROCEDURE_REQUEST::<iso>-<mid>`, DR-25), then the discipline through `ccSave`. **Also list as (S624, issue #2981; Sam, 2026-11-09: a student can take the course as Kinesiology or as Psychology, depending on their major):** the ruling keeps the home discipline and writes one `cross_listed_disciplines` row (comma-separated, added to any the course already lists; one choice clears them); the home and the M-ID never change, an unconfirmed home is confirmed in the same write, and the reason row reads `ruling: "crosslist"` with `also` and `also_was`. *Rule again* adds one to a heading already kept, so the 2026-11-09 keeps need no redoing. Two MQ names carry commas of their own (*Sign Language, American*; *Air Conditioning, Refrigeration, Heating*): the value stays comma-separated and `kb/discipline_list.py` splits it against the MQ names, in the generator's `xdisc_of` too (COBIx on #3025; the plain split had read three phantom disciplines on the one umbrella record that lists them). Guards `tests/coci_list_doubt.test.js` block 10, `tests/discipline_list.test.js`. The Commons queue counts the description's cards under *unsure* (Kinesiology: 8; TOP is no person's item, Sam 2026-11-04). NEXT: when a ruling marked for similar cards arrives, a session reads the rows (MCP), writes the rule into `kb/ccr_procedures.json` switched off, measures the waiting cards it would settle with the dry run, and switches it on with Sam's word; the bulk settle then needs a `--try`, a receipt with before-values and an `--undo` (Rule 10 a2; COBIx on #2948), none built yet; then the next discipline. COBIx's review of #2948, worked in its follow-up: a ruling names who made it only to a signed-in reviewer (read with their token; signed out, "by a reviewer"); *Use this reason for similar cards* starts unticked; the Courses List's panel carries the trail (CPL Commons / Courses / the job / the course). The ruling stays a select (a choice among 150 disciplines is an input, like the discipline select beside it). Open, table-wide: `kb_curation`'s read policy is PUBLIC with `true`, so the anon key reads every row's `reviewer_email`, the older panel reads included; asked of Sam in session 2026-11-09. Guards `tests/coci_list_doubt.test.js` (23), `tests/ccr_doubt_test.py` (9).
+
+## Moved from the lane, 2026-11-04 (SkyJujube; the lane passed its 20,000-byte budget)
+
+The S417 record of the Commons tab's first build, verbatim. The Course row's *SkyView alone* ruling it records was reversed on 2026-11-04 (S574: the Courses List first, SkyView beside it).
+
+**LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
+live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
+mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind
+it, the known issues each naming an owner, the settled procedures, the calls in the run log and the two
+stamps. Every row collapses on its own word to its count and meter (19:08Z: *"Commons looks good. Just
+make sure I can collapse each and we have a collapse all button."*; 20:03Z: *"Keep the count and meter
+when collapsed."*), Collapse all folds the page, the words on a row move it, and the order and the fold
+stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
+`sam-approves-commons-mockup-collapse-2026-10-18` (verified).
+
+- **The machine side** is `kb/status/commons.json`, written daily by `kb/_build_commons_status.py`
+  (daily-dashboard.yml, after the builds it reads) from the committed files alone: Program Requirements
+  from `coci_programs_data.js` and the harvest's record files (the mock-up's own method); Exhibit from
+  `kb/unified_titles.json`, `kb/credentials.json`, the exhibit audit, the procedures run's `latest.json`,
+  the saving receipts and the fold report; Course from the auditor's `kb/row_audit/latest.json`,
+  `prototype/ccr_universe.json` and the stand-alone build; CR from `kb/cr_reference_worklist.json` and
+  the curator receipts under `kb/receipts/`; Subjects from `kb/discipline_canonical_subj4.json`. A figure
+  a source cannot supply is null beside its error and reads *Could not be read* (the S343 rule). Guard:
+  `tests/commons_status_build_test.py` (66 checks).
+- **The session side** is each project's run log, `kb/status/<project>.json`: today Program Requirements
+  alone has one, so four rows read *no run log*. The tab reads a run log's session stamp, next step and
+  calls as its last checkpoint left them. A call Sam answered on its sheet carries `answer` {by, at, words}: listed
+  with his words, counted answered (Sam, 2026-10-21: *"the open asks on The Commons doesn't seem to record that I
+  responded"*; #2329).
+- **The tab** is `commons.js` (jsdom guard `tests/commons.test.js`, 77 checks), booted after
+  `commons_progress.js` (step 1's shared module, whose date helpers it reuses); `npm run a11y -- cobi:commons`
+  passes at both widths; UI pass ledger `cobi:commons`.
+- **The Course row is SkyView alone** (Sam, 2026-10-18 20:40Z: *"the CCR should be the same as SkyView now,
+  right?"*; 20:46Z: *"SkyView alone, since CCR is included as part of it"*): its one word is *Open SkyView*, the map,
+  and every count on the row opens it. The Common Course Reference list left the COBI menu at 20:51Z through
+  `supabase-migrate.yml` (`kb/receipts/cobi_nav_unified_courses_hidden_2026-10-18_s417.sql`, the rollback in its
+  header; the run's receipt `kb/receipts/migration_cobi_nav_unified_courses_hidden_2026_10_18_s417_39165056506.json`;
+  the session's SQL guard holds an UPDATE for that path): `cobi_nav` row `unified-courses` is `hidden`, the `skyview`
+  launcher row kept. The tab and its list view stay reachable by deep link (`#unified-courses`,
+  `#unified-courses/list`) and the Admin tab can show the entry again.
+- The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
+  source `docs/visuals/2026-10-18-commons-mockup.html`).

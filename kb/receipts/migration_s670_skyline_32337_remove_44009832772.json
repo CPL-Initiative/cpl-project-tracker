@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s670_skyline_32337_remove.sql",
+ "name": "s670_skyline_32337_remove",
+ "version": "20261117032820",
+ "sha256": "f97f961c6e613c11e25d14447553cac1f207be236a725d7a322980e6e29ee6fb",
+ "run": "44009832772",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

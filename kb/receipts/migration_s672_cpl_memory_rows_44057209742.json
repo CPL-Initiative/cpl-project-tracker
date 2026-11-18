@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s672_cpl_memory_rows.sql",
+ "name": "s672_cpl_memory_rows",
+ "version": "20261117093943",
+ "sha256": "276986a15d311bb989314f11cb44748dfb0b0f2c77610654acb6d2070757fa32",
+ "run": "44057209742",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (7650c60d-046e-489d-83f7-010a14f5ab84, 2026-11-17 09:39:43.493252+00, 2026-11-17 09:39:43.493252+00, decision, S672: the record shape carries times and the scorer counts it, s..., null, cpl, t, null, {program-requirements,harvest,reconcile,rccd}, S672 SkyWren, #3441; college page read 44045355408, {}, {}, proposed, null, internal, 2026-11-17, SkyWren (S672), null, null, null, d-rccd-repeat-rows-reconcile-steps-s672, null, A course printed once per enrollment is fixed by a reconcile ste...).\\n\"}"
+}

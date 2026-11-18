@@ -5,11 +5,11 @@
  "title": "Piano Performance",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6035",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 4732,
+  "input_tokens": 6345,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 4732,
-    "output_tokens": 1063,
+    "input_tokens": 6345,
+    "output_tokens": 1105,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 1063,
+  "output_tokens": 1105,
   "output_tokens_details": {
-   "thinking_tokens": 268
+   "thinking_tokens": 282
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.04019,
- "ms": 9038,
- "seconds": 9.4,
+ "cost_usd": 0.04748,
+ "ms": 9989,
+ "seconds": 10.3,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -63,20 +65,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.5,
-    9.5
+    18.5,
+    18.5
    ],
    "stated": [
     18.5,
     18.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 9.5-9.5; the catalog states 18.5-18.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -93,14 +93,14 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -111,11 +111,27 @@
     "max": 18.5
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Prepare, and perform in, a solo piano recital and/or chamber ensemble performance. This will include but is not limited to, literature selection and preparation, collaboration with other musicians and written program development.",
     "Demonstrate practice and preparation skills required for music transfer students and/or professional musician. Skills will include but are not limited to, successfully performing scales, arpeggios, exercises, and études.",
     "Communicate effectively and work cooperatively within an ensemble setting."
+   ],
+   "careers": [
+    "piano performers"
    ]
   },
   "blocks": [
@@ -134,7 +150,8 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": false,
+      "times": 4
      },
      {
       "code": "MUS-52",
@@ -175,12 +192,23 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "MUS-P12 is printed four times in the Required Courses table with the note '* Course must be taken four times' (4 x 3.00 = 12.00 units, plus MUS-52 0.50 = 12.50 stated). It is recorded once here at 3 units per enrollment; a reviewer should note the four-time repetition requirement.",
-   "Elective Courses note reads 'Course must be repeated up to four times.' The 6 units are read as choose_units 6 from MUS-P36 and MUS-36 (1.5 units each), reached by repeating the ensemble courses.",
-   "MUS-P36 (Piano Ensemble) is not in the closed list and is marked as a catalog addition.",
-   "The catalog prints Total: 18.50 for the certificate."
+   "MUS-P12 is printed four times in Required Courses with the note '* Course must be taken four times'; it is recorded once (3 units per enrollment, 12 units total across four repetitions, plus MUS-52 0.5 = 12.5).",
+   "Elective Courses note: 'Course must be repeated up to four times.' 6 units are met by repeating the 1.5-unit ensemble courses (MUS-P36 and/or MUS-36) up to four times.",
+   "MUS-P36 Piano Ensemble is not in the closed list; recorded as a catalog addition.",
+   "Printed total is 18.50 units, though the award type in the state file is listed as 16-<30 units; consistent."
   ]
  },
- "extracted_run": 43605883626,
- "read_run": "38082999076"
+ "extracted_run": 44046016854,
+ "catalog_year": "2026-2027",
+ "reconciled": [
+  {
+   "field": "times",
+   "was": null,
+   "now": {
+    "MUS-P12": 4
+   },
+   "words": "MUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-P12*\nApplied Piano I ( Active ) *\n3.00\nMUS-52\nRecital Performance ( Active )\n0.50\n* Course must be taken four times"
+  }
+ ],
+ "read_run": "44030368835"
 }

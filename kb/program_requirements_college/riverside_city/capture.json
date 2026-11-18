@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 268,
  "with_closed_list": 262,
- "started": "2026-10-11T03:28:38Z",
+ "started": "2026-11-17T08:22:55Z",
  "curriqunet": {
   "catalog": 124,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/",
@@ -16,17 +16,711 @@
   "nodes_read": 5,
   "calls": 11,
   "entries": 435,
-  "stopped_at_cap": false
+  "stopped_at_cap": false,
+  "same_title_entries": 191,
+  "entries_read": 244,
+  "twin_ids": {
+   "5877": [
+    5800
+   ],
+   "6257": [
+    6258
+   ],
+   "6284": [
+    6229
+   ],
+   "5879": [
+    5766
+   ],
+   "5880": [
+    5640
+   ],
+   "5881": [
+    5641
+   ],
+   "5882": [
+    5801
+   ],
+   "6357": [
+    6358
+   ],
+   "5883": [
+    5642
+   ],
+   "5884": [
+    5643
+   ],
+   "5885": [
+    5767
+   ],
+   "5886": [
+    5768
+   ],
+   "5887": [
+    5802
+   ],
+   "5888": [
+    5803
+   ],
+   "5889": [
+    5804
+   ],
+   "5897": [
+    5651
+   ],
+   "5891": [
+    5645
+   ],
+   "5892": [
+    5646
+   ],
+   "5893": [
+    5647
+   ],
+   "5894": [
+    5648
+   ],
+   "5895": [
+    5649
+   ],
+   "5896": [
+    5650
+   ],
+   "5898": [
+    5652
+   ],
+   "5899": [
+    5653
+   ],
+   "5900": [
+    5654
+   ],
+   "5901": [
+    5655
+   ],
+   "5902": [
+    5656
+   ],
+   "5903": [
+    5657
+   ],
+   "5904": [
+    5805
+   ],
+   "5905": [
+    5769
+   ],
+   "5906": [
+    5658
+   ],
+   "5910": [
+    5770
+   ],
+   "5911": [
+    5662
+   ],
+   "6081": [
+    6082
+   ],
+   "5983": [
+    5711
+   ],
+   "5912": [
+    5663
+   ],
+   "5988": [
+    5713
+   ],
+   "5913": [
+    5664
+   ],
+   "5994": [
+    5717
+   ],
+   "6083": [
+    6084
+   ],
+   "6012": [
+    5729
+   ],
+   "5914": [
+    5665
+   ],
+   "5997": [
+    5720
+   ],
+   "5909": [
+    5661
+   ],
+   "5915": [
+    5666
+   ],
+   "5916": [
+    5806
+   ],
+   "5917": [
+    5807
+   ],
+   "5918": [
+    5808
+   ],
+   "5919": [
+    5809
+   ],
+   "5920": [
+    5667
+   ],
+   "5921": [
+    5668
+   ],
+   "5923": [
+    5772
+   ],
+   "5924": [
+    5669
+   ],
+   "5925": [
+    5810
+   ],
+   "5926": [
+    5811
+   ],
+   "5927": [
+    5812
+   ],
+   "5929": [
+    5670
+   ],
+   "5930": [
+    5671
+   ],
+   "5931": [
+    5774
+   ],
+   "5932": [
+    5672
+   ],
+   "5934": [
+    5674
+   ],
+   "5935": [
+    5675
+   ],
+   "5936": [
+    5676
+   ],
+   "5937": [
+    5677
+   ],
+   "5938": [
+    5678
+   ],
+   "5939": [
+    5679
+   ],
+   "5940": [
+    5680
+   ],
+   "5941": [
+    5681
+   ],
+   "5942": [
+    5813
+   ],
+   "5943": [
+    5682
+   ],
+   "5944": [
+    5683
+   ],
+   "5946": [
+    5685
+   ],
+   "5947": [
+    5686
+   ],
+   "5871": [
+    5862
+   ],
+   "5948": [
+    5687
+   ],
+   "6353": [
+    6360
+   ],
+   "5949": [
+    5688
+   ],
+   "5950": [
+    5775
+   ],
+   "5951": [
+    5689
+   ],
+   "5953": [
+    5691
+   ],
+   "5952": [
+    5690
+   ],
+   "5954": [
+    5692
+   ],
+   "5955": [
+    5776
+   ],
+   "5957": [
+    5694
+   ],
+   "5956": [
+    5693
+   ],
+   "5958": [
+    5695
+   ],
+   "5855": [
+    5777
+   ],
+   "5959": [
+    5814
+   ],
+   "5961": [
+    5815
+   ],
+   "5962": [
+    5816
+   ],
+   "5963": [
+    5696
+   ],
+   "5964": [
+    5697
+   ],
+   "5965": [
+    5698
+   ],
+   "5966": [
+    5699
+   ],
+   "5967": [
+    5700
+   ],
+   "5971": [
+    5703
+   ],
+   "5972": [
+    5704
+   ],
+   "5973": [
+    5705
+   ],
+   "5976": [
+    5708
+   ],
+   "5974": [
+    5706
+   ],
+   "5977": [
+    5817
+   ],
+   "5978": [
+    5709
+   ],
+   "5979": [
+    5780
+   ],
+   "5980": [
+    5818
+   ],
+   "5981": [
+    5819
+   ],
+   "5982": [
+    5710
+   ],
+   "5984": [
+    5781
+   ],
+   "5985": [
+    5782
+   ],
+   "5986": [
+    5712
+   ],
+   "5987": [
+    5820
+   ],
+   "6354": [
+    6361
+   ],
+   "5989": [
+    5714
+   ],
+   "5990": [
+    5715
+   ],
+   "5991": [
+    5821
+   ],
+   "5992": [
+    5716
+   ],
+   "5993": [
+    5783
+   ],
+   "6237": [
+    6238
+   ],
+   "5995": [
+    5718
+   ],
+   "5996": [
+    5719
+   ],
+   "6352": [
+    6359
+   ],
+   "5998": [
+    5721
+   ],
+   "5999": [
+    5722
+   ],
+   "6000": [
+    5822
+   ],
+   "6001": [
+    5723
+   ],
+   "6356": [
+    6363
+   ],
+   "6003": [
+    5824
+   ],
+   "6004": [
+    5724
+   ],
+   "6005": [
+    5725
+   ],
+   "6006": [
+    5726
+   ],
+   "6007": [
+    5727
+   ],
+   "6008": [
+    5784
+   ],
+   "6009": [
+    5785
+   ],
+   "6010": [
+    5786
+   ],
+   "6013": [
+    5730
+   ],
+   "6014": [
+    5787
+   ],
+   "6015": [
+    5825
+   ],
+   "6016": [
+    5731
+   ],
+   "6355": [
+    6362
+   ],
+   "6017": [
+    5732
+   ],
+   "6019": [
+    5788
+   ],
+   "6018": [
+    5733
+   ],
+   "6020": [
+    5734
+   ],
+   "6021": [
+    5735
+   ],
+   "6022": [
+    5736
+   ],
+   "6027": [
+    5737
+   ],
+   "6028": [
+    5789
+   ],
+   "6029": [
+    5738
+   ],
+   "5874": [
+    5866
+   ],
+   "6030": [
+    5739
+   ],
+   "6031": [
+    5790
+   ],
+   "6032": [
+    5740
+   ],
+   "6033": [
+    5741
+   ],
+   "6034": [
+    5791
+   ],
+   "6035": [
+    5742
+   ],
+   "6036": [
+    5743
+   ],
+   "6037": [
+    5744
+   ],
+   "6038": [
+    5792
+   ],
+   "6039": [
+    5745
+   ],
+   "6041": [
+    5746
+   ],
+   "6042": [
+    5747
+   ],
+   "6043": [
+    5748
+   ],
+   "6044": [
+    5830
+   ],
+   "6045": [
+    5749
+   ],
+   "6046": [
+    5831
+   ],
+   "6047": [
+    5750
+   ],
+   "6048": [
+    5751
+   ],
+   "6049": [
+    5752
+   ],
+   "6255": [
+    6078
+   ],
+   "5875": [
+    5869
+   ],
+   "5876": [
+    5868
+   ],
+   "6051": [
+    5795
+   ],
+   "6050": [
+    5794
+   ],
+   "6052": [
+    5832
+   ],
+   "6053": [
+    5796
+   ],
+   "6054": [
+    5797
+   ],
+   "6055": [
+    5753
+   ],
+   "6056": [
+    5754
+   ],
+   "6057": [
+    5798
+   ],
+   "6058": [
+    5833
+   ],
+   "6059": [
+    5755
+   ],
+   "6060": [
+    5756
+   ],
+   "6061": [
+    5757
+   ],
+   "6062": [
+    5799
+   ],
+   "6063": [
+    5758
+   ],
+   "6064": [
+    5759
+   ],
+   "6065": [
+    5760
+   ],
+   "6066": [
+    5761
+   ],
+   "6067": [
+    5762
+   ],
+   "6068": [
+    5763
+   ],
+   "6069": [
+    5764
+   ],
+   "6070": [
+    5834
+   ]
+  },
+  "failed_calls": 0
  },
- "pages_read": 435,
- "loads": 447,
- "seconds": 2130.5,
- "found": 244,
+ "pages_read": 244,
+ "pages_listed": 244,
+ "pages_answered": 244,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 143,
+   "hits": 136,
+   "recall": 0.951,
+   "false": 1,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 96,
+   "false_matches": [
+    {
+     "control_number": "42720",
+     "title": "Audio and Music Technology",
+     "page": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5644"
+    },
+    {
+     "control_number": "31561",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "page": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5778",
+     "h1": "English - Associate in Arts for Transfer (ADT) - AA649 (CalGETC)"
+    },
+    {
+     "control_number": "42720",
+     "title": "Audio and Music Technology",
+     "award": "A.A. Degree",
+     "page": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5644",
+     "h1": "Audio and Music Technology - Associate of Arts Degree - AA1049/AA1049C"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "31561",
+     "title": "English",
+     "award": "A.A- T Degree",
+     "page": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5778",
+     "h1": "English - Associate in Arts for Transfer (ADT) - AA649 (CalGETC)"
+    },
+    {
+     "control_number": "42720",
+     "title": "Audio and Music Technology",
+     "award": "A.A. Degree",
+     "page": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5644",
+     "h1": "Audio and Music Technology - Associate of Arts Degree - AA1049/AA1049C"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 6,
+  "by_result": {
+   "not_searched": 5,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "18013",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 136 of 143 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "18014",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "36740",
+    "title": "Esthetician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 136 of 143 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "39008",
+    "title": "Financial Literacy",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 136 of 143 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40337",
+    "title": "Family Child Care Provider",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 136 of 143 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41962",
+    "title": "Cosmetology Instructor Training",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "status": "Active - Teachout Only",
+    "result": "not_searched",
+    "why": "the matcher found 136 of 143 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 256,
+ "seconds": 1236.3,
+ "found": 240,
  "by_method": {
   "no_closed_list": 6,
-  "not_found": 14,
-  "page_claimed": 4,
-  "sitemap_page": 244
+  "not_found": 13,
+  "page_claimed": 9,
+  "sitemap_page": 240
  },
  "shared_pages": {
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6081": [
@@ -147,10 +841,6 @@
    "17018",
    "22742"
   ],
-  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928": [
-   "30578",
-   "42892"
-  ],
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5990": [
    "31766",
    "31767"
@@ -158,18 +848,6 @@
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5966": [
    "31892",
    "31898"
-  ],
-  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014": [
-   "32692",
-   "46237"
-  ],
-  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034": [
-   "32745",
-   "46317"
-  ],
-  "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910": [
-   "33829",
-   "41364"
   ],
   "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6022": [
    "37382",
@@ -238,77 +916,296 @@
  },
  "not_found": [
   {
-   "control_number": "33230",
-   "title": "History",
-   "award": "A.A- T Degree"
-  },
-  {
    "control_number": "39084",
    "title": "Building Inspection Technology",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39085",
    "title": "Zero Net Energy",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "44001",
    "title": "Advanced Professional Skills in Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44002",
    "title": "Intermediate Professional Skills Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44003",
    "title": "Introduction to Professional Skills in Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units"
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.167,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44032",
    "title": "Mathematics Readiness",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5926",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1473,
+     "content": 1473,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44144",
    "title": "Anesthesia Technology",
-   "award": "A.S. Degree"
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 0 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2256,
+     "content": 2256,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Approved"
   },
   {
    "control_number": "44145",
    "title": "Professional Skills of Baking & Pastry Arts",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units"
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Baking_Pastry_ASCE",
+    "label": {
+     "award": 1,
+     "title": 0.6
+    },
+    "field": "innerText",
+    "coverage": 0.062,
+    "body": 0.062,
+    "content": 0.062,
+    "net": 1,
+    "listed": 16,
+    "why": "coarse net: the page's code tokens name 1 of 16 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3543,
+     "content": 3543,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "44146",
    "title": "Anesthesia Technology",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 8,
+    "why": "coarse net: the page's code tokens name 0 of 8 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2256,
+     "content": 2256,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Approved"
   },
   {
    "control_number": "44156",
    "title": "Advanced Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44157",
    "title": "Intermediate Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44158",
    "title": "Introduction to Professional Skills in Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "44159",
    "title": "Professional Skills of Baking & Pastry Arts Non-Credit",
-   "award": "Noncredit program"
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
+  {
+   "control_number": "30578",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6231",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6235",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6286",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Info_Systems"
+   ],
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "32692",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5948"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "32745",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5922",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6290",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6236"
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "33829",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Admin_Info_Systems"
+   ],
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "37474",
    "title": "Kinesiology",
@@ -316,16 +1213,17 @@
    "pages": [
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6289",
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6234"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "39120",
    "title": "Building Energy Systems Professional in HVAC Technology",
    "award": "A.S. Degree",
    "pages": [
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995",
-    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/5718"
-   ]
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5995"
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40271",
@@ -336,7 +1234,8 @@
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233"
-   ]
+   ],
+   "status": "Active"
   },
   {
    "control_number": "40446",
@@ -347,20 +1246,45 @@
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6288",
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6232",
     "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6233"
-   ]
+   ],
+   "status": "Active"
+  },
+  {
+   "control_number": "44469",
+   "title": "Social Justice: Native American and Indigenous Studies",
+   "award": "A.A- T Degree",
+   "pages": [
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6291",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6235",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6285",
+    "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6119/6230"
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 13,
-  "0.8-1.0": 56,
-  "1.0": 175
+  "0.5-0.8": 2,
+  "0.8-1.0": 39,
+  "1.0": 199
  },
  "would_extract": {
   "against": "kb/program_requirements_college/riverside_city",
-  "kept": 244,
+  "kept": 239,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 1,
+  "list": [
+   {
+    "control_number": "33230",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
+    "coverage": 1.0,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -632,10 +1556,6 @@
    "sha256": "5f2bc8cb035ec2dfa679aa22436d12246a21a5d280c86d5b36a5f13f763b8825",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5935"
   },
-  "30578": {
-   "sha256": "4f0ed99576015a46e55ad970b423282e065bdcb6d2d0b23b1a8fa746de99bc51",
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5928"
-  },
   "30581": {
    "sha256": "d78a2189a8f0e4dd8084c9331e289720d430959a4404f829ce96f362619a8764",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6053"
@@ -700,14 +1620,6 @@
    "sha256": "a260c947eec038d9325cfab491322cd662609a428bf23b1bcc12c7501d6f5386",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6040"
   },
-  "32692": {
-   "sha256": "49e9543afc8649bb21f71af10deff987bc89d695a54492729fc95a4e3a4fc793",
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6014"
-  },
-  "32745": {
-   "sha256": "6b2230f4e1bb6788c8b7a7a208bd34f2e7532f79aa145ed614aa700009292032",
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034"
-  },
   "32813": {
    "sha256": "71b846942cbfbe9297e84e49455242ed88d15e34b0433ed27d22cc155309e19c",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/Anthro_ADT"
@@ -732,9 +1644,9 @@
    "sha256": "d49bcdda49f96811ff8dc4ae631d93729ac7a4c46513fadcb75c37d9203d9dcc",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5955"
   },
-  "33829": {
-   "sha256": "891a4418b6bb35d88b6c60b1a8a55f2e7c6709950e71cbc6a74317a7e0209121",
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5910"
+  "33230": {
+   "sha256": "d2be15bad92460cfda814162a4de4b86bf9ca8ec202fde94165a2de61c94acfa",
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5993"
   },
   "33964": {
    "sha256": "97617f102c0793aa11af220e8dadcb248c36d283a4b8d5c52b43402a30c1706b",
@@ -1264,10 +2176,6 @@
    "sha256": "ff8600003fc1fb3753d2b7f971321894f0b77525eced354685e6cc671f4ed2c7",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5876"
   },
-  "44469": {
-   "sha256": "2b5df1c3ed8ba61867130b90aa1f402bfd266e613c6377b845659604c89a4c83",
-   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6118/5869"
-  },
   "44816": {
    "sha256": "c2cafcf9b77711b5702399a814c473035000e820d1a4bbf705dd1df8303310ec",
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/5871"
@@ -1345,10 +2253,5 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6034"
   }
  },
- "staged_from": {
-  "run": "43605883626",
-  "proof": "text sha256 of 244 programs",
-  "pages_loaded": 0
- },
- "run": "43693827797"
+ "run": "44046016854"
 }

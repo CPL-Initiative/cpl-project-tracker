@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-11-15
+# Credential Rename Dry-Run — 2026-11-18
 
-Generated: `2026-11-15T06:21:42Z`
+Generated: `2026-11-18T04:01:19Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,7 +12,7 @@ Generated: `2026-11-15T06:21:42Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
@@ -20,7 +20,6 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 
 ## Held: folds into a family title
 
-- `ASE Bundle — A6 or T6 + L3` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Certification (any A1–A8)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Automobile Technician` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
@@ -68,7 +67,9 @@ _No folds._
 
 ## Clean renames (would land on apply)
 
-_None today._ Infrastructure populates the moment a curator enters a rename.
+| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
+|---|---|---|---:|---:|---|
+| `ASE Bundle — A6 or T6 + L3` | → | `ASE Certificate Bundles: A6 or T6 + L3` | 1 | 2 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 

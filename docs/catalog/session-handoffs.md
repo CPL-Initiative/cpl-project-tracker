@@ -15,10 +15,26 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-623 document(s).
+639 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 680 | [Session 680 handoff (from SkyKinglet, S679)](../session_680_handoff.md) | 2026-11-18 |
+| 679 | [Session 679 handoff (from SkyWaxwing, S678)](../session_679_handoff.md) | 2026-11-17 |
+| 678 | [Session 678 handoff (from SkyTanager, S677)](../session_678_handoff.md) | 2026-11-17 |
+| 677 | [Session 677 handoff (from SkyPipit, S676)](../session_677_handoff.md) | 2026-11-17 |
+| 676 | [Session 676 handoff (from SkyLinnet, S675)](../session_676_handoff.md) | 2026-11-17 |
+| 675 | [Session 675 handoff (from SkyRedpoll, S674)](../session_675_handoff.md) | 2026-11-17 |
+| 674 | [Session 674 handoff (from SkyPhoebe, S673)](../session_674_handoff.md) | 2026-11-17 |
+| 673 | [Session 673 handoff (from SkyWren, S672)](../session_673_handoff.md) | 2026-11-17 |
+| 672 | [Session 672 handoff (from SkyKinglet, S671)](../session_672_handoff.md) | 2026-11-17 |
+| 671 | [Session 671 handoff (from SkyBunting, S670)](../session_671_handoff.md) | 2026-11-17 |
+| 670 | [Session 670 handoff (from SkyPipit, S668)](../session_670_handoff.md) | 2026-11-16 |
+| 668 | [Session 668 handoff (from SkyPlover, S667)](../session_668_handoff.md) | 2026-11-16 |
+| 667 | [Session 667 handoff (from SkyDipper, S666)](../session_667_handoff.md) | 2026-11-16 |
+| 666 | [Session 666 handoff (from SkyThrush, S665)](../session_666_handoff.md) | 2026-11-16 |
+| 665 | [Session 665 handoff (from SkyWren, S664)](../session_665_handoff.md) | 2026-11-16 |
+| 664 | [Session 664 handoff (from SkyLark, S663)](../session_664_handoff.md) | 2026-11-16 |
 | 663 | [Session 663 handoff (from SkyQuill, S662)](../session_663_handoff.md) | 2026-11-16 |
 | 662 | [Session 662 handoff (from SkyKnot, S661)](../session_662_handoff.md) | 2026-11-15 |
 | 661 | [Session 661 handoff (from SkyPlover, S660)](../session_661_handoff.md) | 2026-11-15 |

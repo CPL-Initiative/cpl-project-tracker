@@ -44,30 +44,35 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 14,
    "listed": 14,
-   "share": 0.786,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "MAT1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -307,6 +312,6 @@
    "Codes printed with hyphens (e.g., ACC-1A) were matched to closed-list codes with spaces or no separator (ACC 1A, MATH5, PSYC48, ECONC2001H) and not flagged as additions. ECON-C2001, ECON-C2002 and MATH-C2210 do not appear in the closed list and are flagged as catalog additions."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

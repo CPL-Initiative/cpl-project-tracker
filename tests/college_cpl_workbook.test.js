@@ -15,6 +15,7 @@
 //      (Moreno Valley's "ACC-1A") does too
 //   8. each Request Adopt link opens MAP searched for its exhibit ID on its Non-Military card (?Exhibit=, View=Non-Military; live
 //      2026-10-26), so nothing is copied and no reader is told to paste
+//  11. the visual's Adopt chip and panel are adopt_panel.js's, the one component CPL Pathways uses (#3412)
 //   9. a credential joining several colleges' exhibits shows each ID with a chip naming the
 //      college MAP records as its builder, each opening MAP searched for its own ID (Sam,
 //      2026-10-26; the row's one link opened only the first ID)
@@ -329,9 +330,71 @@ check("print leaves out the side panel and the controls", /@media print \{ \.cpo
 check("the page writes its address from the state and starts a picked college fresh",
   /W\.pageState\(first \? location\.search : ""\)/.test(page) && /history\.replaceState\(null, "", W\.pageQuery\(b\.college, s2\)/.test(page));
 
-setTimeout(function () {
+// 11. The CPL Opportunity page uses the same Adopt chip and panel as CPL Pathways (#3412, Sam, 2026-11-16 2:26 PM):
+//     adopt_panel.js, loaded by the page, with no second copy here or in the page.
+const ADOPT_SRC = fs.readFileSync("adopt_panel.js", "utf8");
+check("the visual loads the shared Adopt component after map_links.js and before the workbook",
+  page.indexOf('src="../../adopt_panel.js"') > page.indexOf('src="../../map_links.js"') && page.indexOf('src="../../adopt_panel.js"') < page.indexOf('src="../../college_cpl_workbook.js"'));
+const WB_SRC = fs.readFileSync("college_cpl_workbook.js", "utf8");
+check("no second implementation: the intake, the label and the region rule live only in adopt_panel.js",
+  [WB_SRC, page].every(function (t) { return t.indexOf("cpl_adoption_interest") < 0 && t.indexOf("give CPL for this course") < 0 && t.indexOf("gives CPL for this course") < 0 && t.indexOf("requestBody(") < 0; }) &&
+  /give CPL for this course/.test(ADOPT_SRC) && /cpl_adoption_interest/.test(ADOPT_SRC));
+const oppDone = (async function () {
+  const { JSDOM } = require("jsdom");
+  const dom = new JSDOM('<!doctype html><html><head></head><body><div id="cpo-root"></div></body></html>', { runScripts: "outside-only", url: "https://example.org/library/cpl-opportunity/" });
+  const w = dom.window, posts = [];
+  w.fetch = function (url, opts) {
+    if (opts && opts.method === "POST") { posts.push({ url: String(url), body: opts.body }); return Promise.resolve({ ok: true, status: 201 }); }
+    return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve({ colleges: [[COLLEGE, "Test River", "", "Test Region", "A"], ["Peer A", "Peer A", "", "Test Region", "A"], ["Peer B", "Peer B", "", "Elsewhere", "A"]],
+      credentials: [{ t: "CompTIA Network+", i: "CompTIA", p: 3, a: [[1, 3, "CIS 1"], [2, 3, "CIS 2"]] }] }); } });
+  };
+  w.eval(fs.readFileSync("map_links.js", "utf8"));
+  w.eval(ADOPT_SRC);
+  w.eval(fs.readFileSync("college_cpl_workbook.js", "utf8"));
+  const WW = w.CPL_COLLEGE_WORKBOOK, P = w.CPL_ADOPT_PANEL;
+  await P.load("../adopt/adopt_data.json");
+  const bo = WW.build({ college: COLLEGE, today: "2026-11-16", lookup: lookup, members: members, aligned: aligned,
+    statewide: statewide, programs: programs, catalog: catalog,
+    verified: { checked_at: "2026-11-16T19:00Z", found: { "MAPICI-CN-1-001": { title: "CompTIA Network+", college: "Peer A" } } } });
+  const root = w.document.getElementById("cpo-root");
+  root.innerHTML = WW.pageHtml(bo, { course: "CISC 323" });
+  WW.wirePage(root, bo, { state: { course: "CISC 323" } });
+  const listChip = root.querySelector('.cpladp-chip[data-act="adopt"][data-v="CISC 323"][data-where="list"]');
+  const panelChip = root.querySelector('.cpo-panel .cpladp-chip[data-where="panel"]');
+  check("the Could adopt cell and the course panel each carry the one chip, not a MAP link", !!listChip && !!panelChip &&
+    !/Request Adopt in MAP/.test(root.innerHTML) && !root.querySelector("a.cpo-adopt"));
+  check("its label names the granting college in the page college's own region first, before Other College alphabetically", listChip && listChip.textContent === "Peer A and 2 more give CPL for this course.", listChip && listChip.textContent);
+  listChip.dispatchEvent(new w.Event("click", { bubbles: true }));
+  await new Promise(function (r) { setTimeout(r, 20); });
+  const pn = w.document.getElementById("cpladp-panel");
+  const rows = pn ? Array.from(pn.querySelectorAll(".cpladp-row")) : [];
+  check("the chip opens the shared side panel as a labeled dialog", pn && !pn.hidden && pn.getAttribute("role") === "dialog" && listChip.getAttribute("aria-expanded") === "true" &&
+    /Request Adopt: CISC 323/.test(pn.querySelector("h2").textContent));
+  check("the panel lists every matching recommendation with its issuer, units, colleges and a checkbox",
+    rows.length === bo.swRows.filter(function (r) { return r.courseId === "CISC 323" && r.couldAdopt === "Yes"; }).length && rows.length > 0 &&
+    /Issuer: CompTIA\./.test(rows[0].textContent) && /3 units, the median across the 2 colleges that award it\./.test(rows[0].textContent) &&
+    /Already gives CPL for it: .*Peer A/.test(rows[0].textContent) && rows[0].querySelector('input[type="checkbox"]'), rows[0] && rows[0].textContent);
+  check("MAP's verified chip sits beside the row", rows[0] && rows[0].querySelector('a.cpo-chip[href*="MAPICI-CN-1-001"]'));
+  rows.forEach(function (r) { r.querySelector("input").checked = true; });
+  const f = pn.querySelector(".cpladp-form");
+  f.querySelector('[name="contact_email"]').value = "pat@example.edu";
+  f.dispatchEvent(new w.Event("submit", { cancelable: true }));
+  await new Promise(function (r) { setTimeout(r, 20); });
+  const body = posts.length ? JSON.parse(posts[0].body) : {};
+  check("one button sends ONE intake row for the checked recommendations", posts.length === 1 && body.course_code === "CISC 323" &&
+    body.credentials === rows.map(function (r) { return r.querySelector("label").textContent; }).join(" | ") && body.adopter_college === COLLEGE &&
+    body.program_id === "cpl-opportunity " + COLLEGE, posts.length && posts[0].body);
+  root.innerHTML = WW.pageHtml(bo, { course: "CISC 323" }); // the page repaints under an open panel
+  pn.dispatchEvent(new w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+  const back = w.document.activeElement;
+  check("closing hands focus back to the chip, found again after a repaint", pn.hidden && back && back.getAttribute("data-where") === "list" && back.getAttribute("data-v") === "CISC 323");
+  check("a course with nothing to adopt carries no chip", !root.querySelector('.cpladp-chip[data-v="PLUMB 166"]'));
+  w.close();
+})().catch(function (e) { check("the opportunity page's Adopt panel ran: " + (e && e.message), false); });
+
+oppDone.then(function () {
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
 process.exit(pass === results.length ? 0 : 1);
-}, 0);
+});

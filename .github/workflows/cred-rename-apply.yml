@@ -101,6 +101,7 @@ jobs:
           EOF
 
   apply:
+    environment: live-counts
     needs: check
     runs-on: ubuntu-latest
     concurrency:
@@ -209,8 +210,10 @@ jobs:
       # ── Step 4b: rebuild what reads the credential keys ───────────
       # The 2026-10-01 apply rewrote credentials.json and left three derived
       # files stale, so the lints job's freshness checks failed on main and on
-      # every PR until a session rebuilt them (S313). Both builders are
-      # standard-library Python over committed files.
+      # every PR until a session rebuilt them (S313). The 2026-11-18 apply
+      # left three more stale (the leftover-title map, the CPL-AI join and
+      # the side by side), and main's tests failed until S679 rebuilt them.
+      # Every builder here is standard-library Python over committed files.
       # continue-on-error: a crash here must not keep the kb files and the
       # receipt off main while kb_curation already holds the moves; the job
       # still fails at the end.
@@ -220,6 +223,9 @@ jobs:
         run: |
           python3 kb/_build_remint_blast_radius.py
           python3 kb/_build_ccr_cpl.py
+          python3 kb/_build_left_map.py
+          python3 kb/_build_cpl_ai_join.py
+          python3 kb/_build_side_by_side.py
 
       # kb/credential_title_moves.json, the browser's read of the snapshots (S641, #3148): its own step, so a
       # failure above never skips it, whenever the apply wrote its snapshot. Same continue-on-error reasoning.
@@ -252,7 +258,11 @@ jobs:
                   kb/credential_title_moves.json \
                   kb/remint_blast_worklist.json \
                   prototype/ccr_remint_blast.json \
-                  prototype/ccr_cpl.json
+                  prototype/ccr_cpl.json \
+                  kb/exhibit_left_map.json \
+                  kb/cpl_ai/exhibit_join.json \
+                  kb/side_by_side.json \
+                  kb/exhibit_side_by_side.json
           if git diff --cached --quiet; then
             echo "No changes to commit (apply was a no-op or re-ran on already-applied state)."
             exit 0

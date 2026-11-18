@@ -274,6 +274,31 @@ def shown_title(common: str, live: str | None) -> str | None:
     return common or live
 
 
+_ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5"}
+
+
+def fold_label(t):
+    """A credential label for an already-held check: case folded and a standalone Roman numeral read as its digit,
+    so Firefighter I and Firefighter 1 are one title (COBIx's spot-check on #3429, Miramar FIPT 101)."""
+    return " ".join(_ROMAN.get(w, w) for w in re.split(r"\s+", str(t or "").strip().lower()))
+
+
+def cbe_umbrellas(articulations, min_subjects=3):
+    """MAP credit-by-exam exhibits (ids MAPCBE...) that articulate courses in min_subjects or more subjects under one
+    title: Saddleback's Plant Propagation (28 subjects), Mesa's Basic Computer Keyboarding (16), San Diego City's
+    Basic Refrigeration & AC Lab (14). The title names none of those courses, so it never becomes another college's
+    could-adopt credential (COBIx's spot-check on #3429: RCC CIS-26A and CIS-30A took it). Other multi-subject
+    exhibits (POST Basic Academy, CompTIA Security+) name a real credential and stay."""
+    subj = defaultdict(set)
+    for a in articulations:
+        eid = _clean(a.get("exhibit_id"))
+        if eid.upper().startswith("MAPCBE"):
+            for lc in a.get("local_courses") or []:
+                if str(lc.get("subject", "")).strip():
+                    subj[eid].add(str(lc["subject"]).strip().upper())
+    return {e for e, s in subj.items() if len(s) >= min_subjects}
+
+
 def articulation_index(ident: Identity):
     """From MAP's articulated-exhibit feed: what each college articulated to each of
     its courses, and, per identity, which colleges articulated which credentials."""
@@ -281,6 +306,7 @@ def articulation_index(ident: Identity):
     here = defaultdict(OrderedDict)                      # (college, ck) -> {label: True}
     detail = defaultdict(list)                           # (college, ck) -> [exhibit facts]
     by_identity = defaultdict(lambda: defaultdict(set))  # mid -> label -> {college}
+    umbrellas = cbe_umbrellas(feed["articulations"])
     for a in feed["articulations"]:
         cols = [c for c in (a.get("earned_by_colleges") or []) if _clean(c)]
         if not cols:
@@ -300,6 +326,8 @@ def articulation_index(ident: Identity):
                     ("exhibit", _clean(a.get("exhibit_id")) or None), ("title", _clean(a.get("exhibit_title")) or None),
                     ("credential", label), ("type", _clean(a.get("cpl_type_description")) or None),
                     ("recs", [r for r in (a.get("credit_recommendations") or []) if _clean(r)][:6])]))
+                if _clean(a.get("exhibit_id")) in umbrellas:
+                    continue  # its own course still shows it as articulated here; no other college adopts the title
                 for mid in ident.ids(col, code):
                     by_identity[mid][label].add(col)
     stamp = feed.get("_authority_recode_applied_at") or feed.get("_generated_by")
@@ -514,6 +542,14 @@ def college_records(pilot_keys: set) -> list[tuple]:
 
 
 # ── the figure: the mock-up's plan(), ported ────────────────────────────────────
+def course_id_printed(score: dict | None) -> set:
+    """The printed codes the scorer met to a listed code by the Program Course File id (coverage.course_id): those
+    courses are on the program's state list under another code (a CCN renumber such as Riverside City HIST-C1001 for
+    HIST 1, or a prefix id), so they are never catalog additions on the display (f-ccn-renumber-shows-as-catalog-
+    addition-s673; S678: 617 course mentions at 15 colleges read as off the list before this)."""
+    return {ck(m.get("printed")) for m in ((score or {}).get("coverage") or {}).get("course_id") or [] if m.get("printed")}
+
+
 def tag_course_id(courses: dict, score: dict | None) -> dict:
     """Each display course the scorer met to its listed code by the Program Course File id names that route
     ("matched_by": "course_id", "listed_as": the listed code), from coverage.course_id on the filed score, so
@@ -693,8 +729,10 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     # A course printed in two blocks is one course off the list (Irvine Valley's Art
     # A.A. prints ARTH 4, 25 and 26 in both elective lists): name each once. One the
     # program carries under another status gets its own gap, naming that status.
+    by_id = course_id_printed(score)
     adds = list(OrderedDict.fromkeys(x["code"] for b in rec["blocks"] for c in courses_of(b)
-                                     for x in [c] + list(c.get("alternatives") or []) if x.get("catalog_addition")))
+                                     for x in [c] + list(c.get("alternatives") or [])
+                                     if x.get("catalog_addition") and ck(x["code"]) not in by_id))
     unlisted = [a for a in adds if not coci_of(a)]
     for a in adds:
         f = coci_of(a)
@@ -733,9 +771,7 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     # An associate degree whose record holds the major alone (Sam, 2026-10-14, Cabrillo Biology
     # 06328): the reading procedure's gap, found without a person reading the record.
     if degree_reading(rec, award)["status"] == "major only":
-        g.append({"kind": "Major only", "owner": "procedure", "where": proc,
-                  "text": "The record holds the major's requirements. The degree's general education and "
-                          "electives, which bring an associate degree to at least 60 units, are not in it."})
+        g += major_only_gap(rec, total, measure, proc)
     if re.search(r"noncredit", award or "", re.I) and measure != "hours":
         g.append({"kind": "Possible misread", "owner": "procedure", "where": proc,
                   "text": "A noncredit program recorded in %s; noncredit programs count hours." % measure})
@@ -745,6 +781,30 @@ def gaps_for(college: str, platform: str, award: str, measure: str, filed: dict,
     for n in rec.get("notes") or []:
         g.append({"kind": "Reader's note", "owner": "procedure", "where": proc, "text": n})
     return g
+
+
+GE_WORDS = re.compile(r"general\s+education|\bGE\s+area", re.I)
+
+
+def major_only_gap(rec: dict, total: dict, measure: str, proc: str) -> list:
+    """The Major only gap, unless the printed total already reaches an associate degree's 60 units (S678, #3461 page
+    finding 7: Chaffey's Physical Therapist Assistant, 42987, prints 65 units with general education inside its
+    "Required Prerequisites and General Education" block, and the gap said general education was not in the record).
+    There, a record whose blocks or notes name general education gets the gap that is true of it: the catalog's
+    general education area lines are not kept as courses. A total of 60 or more with no such words raises nothing."""
+    lo = (total or {}).get("min")
+    if lo is None or lo < 60:
+        return [{"kind": "Major only", "owner": "procedure", "where": proc,
+                 "text": "The record holds the major's requirements. The degree's general education and "
+                         "electives, which bring an associate degree to at least 60 units, are not in it."}]
+    said = [b.get("name") or "" for b in rec.get("blocks") or []] + list(rec.get("notes") or [])
+    if not any(GE_WORDS.search(t) for t in said):
+        return []
+    return [{"kind": "General education lines", "owner": "procedure", "where": proc,
+             "text": "The catalog's total of %s includes general education. The record keeps the courses the "
+                     "catalog names; a line that asks for one course from a general education area is not kept "
+                     "as a course, so its units are not in the blocks."
+                     % amount(lo, total.get("max"), measure)}]
 
 
 def units_differ(arith: dict, total: dict) -> dict | None:
@@ -824,6 +884,18 @@ def map_status(college: str, reg: dict) -> dict:
                      % (college, reg.get("census_run_id")))
 
 
+def no_state_list(score) -> bool:
+    """A record filed for a program the state lists no courses for (S668's #3414, behind NCL_EXTRACT): its
+    score's coverage basis is "no_state_list". The display build leaves every such record out, so none reaches
+    cpl_pathways_roep_data.js or program_requirement_records.display."""
+    return (((score or {}).get("coverage") or {}).get("basis")) == "no_state_list"
+
+
+def displayed(work: list) -> list:
+    """The records the build displays: every filed one but a no_state_list record."""
+    return [w for w in work if not no_state_list(w[3].get("score"))]
+
+
 # ── assemble ─────────────────────────────────────────────────────────────────────
 def build() -> dict:
     map_read = json.load(open(MAP_READ))
@@ -859,7 +931,7 @@ def build() -> dict:
                       "source_url": filed.get("source_url"), "checked": None, "record": filed["record"]}))
 
     programs = []
-    for key, folder, path, filed, src, row in work:
+    for key, folder, path, filed, src, row in displayed(work):
         college, control = filed["college"], filed["control_number"]
         reg = registry["colleges"].get(college) or {}
         listed = {ck(c["code"]): c for c in src.get("closed_list") or []}
@@ -908,7 +980,7 @@ def build() -> dict:
                         labels.setdefault(t["title"], True)
                     for t in feed_here.get((norm_college(college), k), {}):
                         labels.setdefault(t, True)
-                    here_set = {t.lower() for t in labels} | {unified[t].lower() for t in labels if t in unified}
+                    here_set = {fold_label(t) for t in labels} | {fold_label(unified[t]) for t in labels if t in unified}
                     if mr.get("recs") or labels:
                         # The exhibits articulated here, for the CPL count and its drill-down (Sam,
                         # 2026-10-10: "the number should be the count of exhibits articulated to the
@@ -937,33 +1009,45 @@ def build() -> dict:
                                          "untitled_n": untitled,
                                          "exhibits": exhibits[:40]}
                     # could adopt
-                    pooled = defaultdict(set)
+                    pooled, shown = defaultdict(set), {}
                     for i in ids:
                         if not ident.cross_disciplinary(i):
                             for label, cols in by_identity.get(i, {}).items():
-                                pooled[label] |= cols
+                                # One entry per folded title (Firefighter I and Firefighter 1 are one), its colleges
+                                # merged; the shown label is the first spelling in sorted order (COBIx on #3429).
+                                fkey = fold_label(label)
+                                if fkey not in shown or label < shown[fkey]:
+                                    shown[fkey] = label
+                                pooled[fkey] |= cols
                     if pooled:
                         adopt = []
-                        for label, cols in sorted(pooled.items()):
+                        for label, cols in sorted((shown[k], c) for k, c in pooled.items()):
                             others = sorted(c for c in cols if norm_college(c) != norm_college(college))
-                            if others and label.lower() not in here_set:
+                            if others and fold_label(label) not in here_set:
                                 adopt.append({"credential": label, "colleges": others})
                         adopt.sort(key=lambda a: (-len(a["colleges"]), a["credential"]))
                         if adopt:
                             peer_set = sorted({c for a in adopt for c in a["colleges"]})
                             entry["adopt"] = {"credentials_n": len(adopt), "colleges_n": len(peer_set),
-                                              "credentials": adopt[:4]}
+                                              "credentials": adopt}
                     # for consideration
                     cids = {re.sub(r"\s+", " ", v).strip().upper() for v in
                             (lc.get("cid"), (ref or {}).get("cid")) if v}
-                    consider, seen_c = [], set()
+                    # One entry per folded title (Fire Inspector I and Fire Inspector 1 are one): the spelling with
+                    # the most adopting colleges is shown, and its count (COBIx on #3429, FIPT 103 and FIRE 3).
+                    consider, seen_c = [], {}
                     for cid in sorted(cids):
                         for s in statewide.get(cid, []):
-                            if s["credential"].lower() in here_set or s["credential"] in seen_c:
+                            fk = fold_label(s["credential"])
+                            if fk in here_set:
                                 continue
-                            seen_c.add(s["credential"])
-                            consider.append({"credential": s["credential"], "credit": s["credit"], "cid": cid,
-                                             "colleges_n": adopters.get(s["credential"], 0)})
+                            crow = {"credential": s["credential"], "credit": s["credit"], "cid": cid,
+                                   "colleges_n": adopters.get(s["credential"], 0)}
+                            if fk not in seen_c:
+                                seen_c[fk] = len(consider)
+                                consider.append(crow)
+                            elif crow["colleges_n"] > consider[seen_c[fk]]["colleges_n"]:
+                                consider[seen_c[fk]] = crow
                     if consider:
                         entry["consider"] = consider
                     courses[x["code"]] = entry
@@ -991,8 +1075,10 @@ def build() -> dict:
         cov = score.get("coverage") or {}
         # A course the program lists through a retired version is on its list (coci_facts):
         # it leaves the additions and joins the listed and placed counts, once per code.
+        by_id = course_id_printed(filed.get("score"))
         adds = sum(1 for b in blocks for c in courses_of(b) for x in [c] + list(c.get("alternatives") or [])
-                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed"))
+                   if x.get("catalog_addition") and not ((courses.get(x["code"]) or {}).get("coci") or {}).get("listed")
+                   and ck(x["code"]) not in by_id)
         relisted = len({ck(code) for code, e in courses.items() if (e.get("coci") or {}).get("listed")})
         display = OrderedDict()
         display["v"] = SHAPE_VERSION

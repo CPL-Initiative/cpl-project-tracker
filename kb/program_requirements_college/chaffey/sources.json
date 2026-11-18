@@ -24,11 +24,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2634
+  "text_chars": 2647
  },
  {
   "control_number": "04756",
@@ -53,11 +56,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1946
+  "text_chars": 1959
  },
  {
   "control_number": "04757",
@@ -96,11 +102,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 3883
+  "text_chars": 3896
  },
  {
   "control_number": "04758",
@@ -137,11 +146,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 2923
+  "text_chars": 2936
  },
  {
   "control_number": "04759",
@@ -167,11 +179,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "retail management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2065
+  "text_chars": 2078
  },
  {
   "control_number": "04761",
@@ -205,11 +220,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "professional administrative management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2687
+  "text_chars": 2700
  },
  {
   "control_number": "04763",
@@ -239,11 +257,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "journalism - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2173
+  "text_chars": 2238
  },
  {
   "control_number": "04764",
@@ -275,11 +296,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "broadcasting and cinema - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2550
+  "text_chars": 2563
  },
  {
   "control_number": "04765",
@@ -312,11 +336,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "information technology and information systems - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 2944
+  "text_chars": 2957
  },
  {
   "control_number": "04768",
@@ -346,11 +373,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2655
+  "text_chars": 2668
  },
  {
   "control_number": "04770",
@@ -379,11 +409,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "master automotive technician - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2906
+  "text_chars": 2919
  },
  {
   "control_number": "04772",
@@ -407,11 +440,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "airframe and powerplant - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2362
+  "text_chars": 2375
  },
  {
   "control_number": "04774",
@@ -437,11 +473,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cad drafting technician: architectural - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3313
+  "text_chars": 3326
  },
  {
   "control_number": "04779",
@@ -466,11 +505,14 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 3333
+  "text_chars": 3346
  },
  {
   "control_number": "04780",
@@ -493,11 +535,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre: acting emphasis - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2052
+  "text_chars": 2065
  },
  {
   "control_number": "04783",
@@ -505,12 +550,13 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ART10",
    "ART14",
    "ARTGD63",
    "ARTH19",
+   "ARTH5",
    "PHOTO1",
    "PHOTO10",
    "PHOTO12",
@@ -527,11 +573,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2260
+  "text_chars": 2273
  },
  {
   "control_number": "04788",
@@ -557,11 +606,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing: adn - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 3064
+  "text_chars": 3077
  },
  {
   "control_number": "04789",
@@ -599,11 +651,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing: vocational - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 4081
+  "text_chars": 4094
  },
  {
   "control_number": "04792",
@@ -644,11 +699,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "radiologic technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
-  "text_chars": 4257
+  "text_chars": 4270
  },
  {
   "control_number": "04794",
@@ -678,11 +736,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "interior design - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 2684
+  "text_chars": 2697
  },
  {
   "control_number": "04795",
@@ -715,11 +776,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion design - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 2546
+  "text_chars": 2559
  },
  {
   "control_number": "04797",
@@ -747,11 +811,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2985
+  "text_chars": 2998
  },
  {
   "control_number": "04798",
@@ -775,11 +842,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "gerontology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2261
+  "text_chars": 2274
  },
  {
   "control_number": "04799",
@@ -807,11 +877,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hospitality management: food service - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2317
+  "text_chars": 2330
  },
  {
   "control_number": "04811",
@@ -840,11 +913,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "correctional science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2085
+  "text_chars": 2098
  },
  {
   "control_number": "04815",
@@ -852,9 +928,11 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG1A",
+   "ECON2",
+   "ECON4",
    "JOUR10",
    "MATH25",
    "MATH60",
@@ -872,11 +950,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "political economics - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 3061
+  "text_chars": 3090
  },
  {
   "control_number": "04822",
@@ -907,11 +988,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fashion merchandising - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2393
+  "text_chars": 2406
  },
  {
   "control_number": "07371",
@@ -951,11 +1035,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "small business entrepreneur - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
-  "text_chars": 3326
+  "text_chars": 3339
  },
  {
   "control_number": "07378",
@@ -989,11 +1076,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial electrical technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3777
+  "text_chars": 3790
  },
  {
   "control_number": "07382",
@@ -1020,11 +1110,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cad drafting technician: mechanical - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2668
+  "text_chars": 2681
  },
  {
   "control_number": "07384",
@@ -1045,11 +1138,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing vn to rn - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 2833
+  "text_chars": 2846
  },
  {
   "control_number": "07389",
@@ -1077,11 +1173,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dietetic service supervisor (dss)/certified dietary manager (cdm) - certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
-  "text_chars": 3004
+  "text_chars": 3017
  },
  {
   "control_number": "07398",
@@ -1110,11 +1209,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "culinary arts - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2466
+  "text_chars": 2487
  },
  {
   "control_number": "12211",
@@ -1143,11 +1245,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "graphic design for digital media - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 1994
+  "text_chars": 2007
  },
  {
   "control_number": "14400",
@@ -1175,11 +1280,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2534
+  "text_chars": 2547
  },
  {
   "control_number": "14401",
@@ -1212,11 +1320,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "supervision - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 2479
+  "text_chars": 2492
  },
  {
   "control_number": "15317",
@@ -1246,11 +1357,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial electrical technology level ii - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 2728
+  "text_chars": 2741
  },
  {
   "control_number": "15318",
@@ -1277,11 +1391,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "microsoft office - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2017
+  "text_chars": 2030
  },
  {
   "control_number": "15528",
@@ -1307,11 +1424,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "general automotive service technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2176
+  "text_chars": 2189
  },
  {
   "control_number": "15535",
@@ -1354,11 +1474,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology: professional firefighter - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2463
+  "text_chars": 2476
  },
  {
   "control_number": "16802",
@@ -1383,11 +1506,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "supply chain management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2615
+  "text_chars": 2628
  },
  {
   "control_number": "17631",
@@ -1423,55 +1549,26 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paralegal studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 3776
+  "text_chars": 3789
  },
  {
   "control_number": "18435",
   "title": "Physical Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.846,
-  "codes_found": [
-   "ASTRON26",
-   "ASTRON35",
-   "CHEM24A",
-   "CHEM24B",
-   "ESC1",
-   "ESC1L",
-   "ESC5",
-   "ESC5L",
-   "GEOG4",
-   "GEOG4L",
-   "GEOL1",
-   "GEOL2",
-   "MATH61",
-   "MATH65A",
-   "MATH65B",
-   "MATH75",
-   "PHYS20A",
-   "PHYS20B",
-   "PHYS44",
-   "PHYS45",
-   "PHYS46",
-   "PHYS47"
-  ],
-  "source": {
-   "url": "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/calgetcca",
-   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 15071
+  "text_chars": 0
  },
  {
   "control_number": "20675",
@@ -1499,11 +1596,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2139
+  "text_chars": 2152
  },
  {
   "control_number": "20677",
@@ -1539,11 +1639,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 2128
+  "text_chars": 2141
  },
  {
   "control_number": "20678",
@@ -1576,11 +1679,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 1998
+  "text_chars": 2011
  },
  {
   "control_number": "20681",
@@ -1618,11 +1724,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "small business entrepreneur - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 2537
+  "text_chars": 2550
  },
  {
   "control_number": "20682",
@@ -1649,11 +1758,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "retail management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2439
+  "text_chars": 2452
  },
  {
   "control_number": "20683",
@@ -1678,11 +1790,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "supply chain management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1880
+  "text_chars": 1893
  },
  {
   "control_number": "20684",
@@ -1710,11 +1825,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2577
+  "text_chars": 2590
  },
  {
   "control_number": "20690",
@@ -1748,11 +1866,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional administrative management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2577
+  "text_chars": 2590
  },
  {
   "control_number": "20691",
@@ -1777,11 +1898,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "graphic design for digital media - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1502
+  "text_chars": 1515
  },
  {
   "control_number": "20697",
@@ -1827,11 +1951,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial electrical technology level iii - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3161
+  "text_chars": 3174
  },
  {
   "control_number": "20708",
@@ -1860,11 +1987,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "master automotive technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2827
+  "text_chars": 2840
  },
  {
   "control_number": "20711",
@@ -1886,11 +2016,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "airframe - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2139
+  "text_chars": 2152
  },
  {
   "control_number": "20714",
@@ -1913,11 +2046,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad drafting technician: architectural - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 2306
+  "text_chars": 2319
  },
  {
   "control_number": "20715",
@@ -1942,11 +2078,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad drafting technician: mechanical - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2812
+  "text_chars": 2825
  },
  {
   "control_number": "20716",
@@ -1977,11 +2116,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2182
+  "text_chars": 2195
  },
  {
   "control_number": "20722",
@@ -2019,11 +2161,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nursing: vocational - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 4096
+  "text_chars": 4109
  },
  {
   "control_number": "20726",
@@ -2053,11 +2198,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interior design - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 3132
+  "text_chars": 3145
  },
  {
   "control_number": "20729",
@@ -2090,11 +2238,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion design - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 2333
+  "text_chars": 2346
  },
  {
   "control_number": "20730",
@@ -2125,11 +2276,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fashion merchandising - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2012
+  "text_chars": 2025
  },
  {
   "control_number": "20732",
@@ -2153,11 +2307,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "nutrition and food - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1696
+  "text_chars": 1709
  },
  {
   "control_number": "20733",
@@ -2185,11 +2342,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management: food service - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2512
+  "text_chars": 2525
  },
  {
   "control_number": "20735",
@@ -2216,11 +2376,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management: hotel management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2148
+  "text_chars": 2161
  },
  {
   "control_number": "20736",
@@ -2241,11 +2404,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "gerontology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 1899
+  "text_chars": 1912
  },
  {
   "control_number": "20737",
@@ -2273,11 +2439,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminal justice - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2647
+  "text_chars": 2660
  },
  {
   "control_number": "20738",
@@ -2306,11 +2475,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "correctional science - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2123
+  "text_chars": 2136
  },
  {
   "control_number": "20739",
@@ -2341,11 +2513,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire technology: professional firefighter - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2219
+  "text_chars": 2232
  },
  {
   "control_number": "30502",
@@ -2357,7 +2532,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 179 of 190 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "30503",
@@ -2369,7 +2548,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "30544",
@@ -2403,11 +2586,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 2498
+  "text_chars": 2511
  },
  {
   "control_number": "30658",
@@ -2433,11 +2619,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "general automotive service technician - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2336
+  "text_chars": 2349
  },
  {
   "control_number": "30702",
@@ -2471,11 +2660,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
-  "text_chars": 3703
+  "text_chars": 3742
  },
  {
   "control_number": "30717",
@@ -2498,11 +2690,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 for transfer - as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 5,
-  "text_chars": 2685
+  "text_chars": 2698
  },
  {
   "control_number": "30941",
@@ -2526,11 +2721,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology for transfer - as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
-  "text_chars": 2992
+  "text_chars": 3005
  },
  {
   "control_number": "31115",
@@ -2556,11 +2754,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
-  "text_chars": 2981
+  "text_chars": 2994
  },
  {
   "control_number": "31204",
@@ -2593,11 +2794,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
-  "text_chars": 3841
+  "text_chars": 3854
  },
  {
   "control_number": "31248",
@@ -2628,11 +2832,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
-  "text_chars": 3548
+  "text_chars": 3561
  },
  {
   "control_number": "31337",
@@ -2660,11 +2867,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 18,
-  "text_chars": 3388
+  "text_chars": 3401
  },
  {
   "control_number": "31657",
@@ -2672,9 +2882,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.96,
+  "coverage": 1.0,
   "codes_found": [
    "COMSTD14",
+   "ENGL1C",
    "ENGL20",
    "ENGL32",
    "ENGL33",
@@ -2706,11 +2917,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 25,
-  "text_chars": 4118
+  "text_chars": 4147
  },
  {
   "control_number": "31873",
@@ -2742,11 +2956,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "engineering technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 3644
+  "text_chars": 3657
  },
  {
   "control_number": "31876",
@@ -2775,11 +2992,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3553
+  "text_chars": 3566
  },
  {
   "control_number": "31877",
@@ -2805,11 +3025,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "chinese studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2081
+  "text_chars": 2094
  },
  {
   "control_number": "31891",
@@ -2817,12 +3040,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "HIST1",
    "HIST10",
    "HIST12",
    "HIST16",
+   "HIST17",
+   "HIST18",
    "HIST19",
    "HIST2",
    "HIST20",
@@ -2845,11 +3070,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
-  "text_chars": 4241
+  "text_chars": 4254
  },
  {
   "control_number": "31999",
@@ -2876,11 +3104,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education for transfer - as-t degree",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
-  "text_chars": 2927
+  "text_chars": 2940
  },
  {
   "control_number": "32073",
@@ -2909,11 +3140,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 20,
-  "text_chars": 3621
+  "text_chars": 3634
  },
  {
   "control_number": "32166",
@@ -2948,11 +3182,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 18,
-  "text_chars": 3867
+  "text_chars": 3916
  },
  {
   "control_number": "32183",
@@ -2984,11 +3221,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 3655
+  "text_chars": 3668
  },
  {
   "control_number": "32344",
@@ -2996,7 +3236,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
    "ART10",
    "ART12",
@@ -3007,6 +3247,8 @@
    "ART30",
    "ARTH11",
    "ARTH19",
+   "ARTH3",
+   "ARTH5",
    "ARTH7",
    "ARTH9",
    "PHOTO10",
@@ -3019,11 +3261,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
-  "text_chars": 3743
+  "text_chars": 3794
  },
  {
   "control_number": "32347",
@@ -3047,7 +3292,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0 for transfer - as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 6,
@@ -3059,11 +3307,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
    "COMSTD12",
    "COMSTD72",
    "COMSTD8",
+   "ECON2",
+   "ECON4",
    "ENGLC1001",
    "JOUR10",
    "JOUR11",
@@ -3082,11 +3332,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 15,
-  "text_chars": 3104
+  "text_chars": 3169
  },
  {
   "control_number": "32748",
@@ -3113,11 +3366,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
-  "text_chars": 3137
+  "text_chars": 3150
  },
  {
   "control_number": "32996",
@@ -3141,11 +3397,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "airframe and powerplant technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2712
+  "text_chars": 2725
  },
  {
   "control_number": "33193",
@@ -3170,11 +3429,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 2157
+  "text_chars": 2170
  },
  {
   "control_number": "33194",
@@ -3200,11 +3462,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "post production editing - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2071
+  "text_chars": 2084
  },
  {
   "control_number": "33195",
@@ -3229,11 +3494,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "motion picture production - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2267
+  "text_chars": 2280
  },
  {
   "control_number": "33201",
@@ -3241,12 +3509,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG1A",
    "ACCTG1B",
    "BUS88",
    "ECON1",
+   "ECON2",
+   "ECON4",
    "ECON8",
    "ITIS10",
    "MATH60",
@@ -3263,11 +3533,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 14,
-  "text_chars": 3528
+  "text_chars": 3670
  },
  {
   "control_number": "33226",
@@ -3291,11 +3564,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "screenwriting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2066
+  "text_chars": 2079
  },
  {
   "control_number": "33227",
@@ -3323,11 +3599,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
-  "text_chars": 3085
+  "text_chars": 3098
  },
  {
   "control_number": "33231",
@@ -3369,11 +3648,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 24,
-  "text_chars": 4121
+  "text_chars": 4134
  },
  {
   "control_number": "33233",
@@ -3403,11 +3685,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music for transfer - aa-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
-  "text_chars": 3798
+  "text_chars": 3811
  },
  {
   "control_number": "33239",
@@ -3415,7 +3700,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.905,
+  "coverage": 1.0,
   "codes_found": [
    "ART10",
    "ART12",
@@ -3432,6 +3717,8 @@
    "ARTGD63",
    "ARTGD73",
    "ARTH11",
+   "ARTH3",
+   "ARTH5",
    "ARTH7",
    "ARTH9",
    "PHOTO10",
@@ -3444,11 +3731,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
-  "text_chars": 3790
+  "text_chars": 3803
  },
  {
   "control_number": "33737",
@@ -3470,11 +3760,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "on-air radio production - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2033
+  "text_chars": 2046
  },
  {
   "control_number": "35060",
@@ -3503,11 +3796,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer - as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
-  "text_chars": 2591
+  "text_chars": 2604
  },
  {
   "control_number": "35069",
@@ -3530,11 +3826,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional office skills - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 1763
+  "text_chars": 1776
  },
  {
   "control_number": "35466",
@@ -3558,11 +3857,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical provider - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2009
+  "text_chars": 2022
  },
  {
   "control_number": "35467",
@@ -3587,11 +3889,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker (biw) stage one - certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
-  "text_chars": 2162
+  "text_chars": 2175
  },
  {
   "control_number": "35468",
@@ -3617,11 +3922,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire prevention inspector - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2807
+  "text_chars": 2820
  },
  {
   "control_number": "35760",
@@ -3648,11 +3956,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "microsoft excel - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 1739
+  "text_chars": 1752
  },
  {
   "control_number": "35762",
@@ -3680,11 +3991,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
-  "text_chars": 3166
+  "text_chars": 3179
  },
  {
   "control_number": "35816",
@@ -3709,11 +4023,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information worker (biw) stage two - certificate of achievement",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
-  "text_chars": 2429
+  "text_chars": 2442
  },
  {
   "control_number": "35819",
@@ -3744,11 +4061,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "global business - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2468
+  "text_chars": 2481
  },
  {
   "control_number": "35827",
@@ -3779,11 +4099,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
-  "text_chars": 5078
+  "text_chars": 5091
  },
  {
   "control_number": "35949",
@@ -3791,7 +4114,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.867,
+  "coverage": 1.0,
   "codes_found": [
    "BUSL10",
    "COMSTD72",
@@ -3799,6 +4122,8 @@
    "ENGLC1001",
    "HIST12",
    "HIST16",
+   "HIST17",
+   "HIST18",
    "HIST19",
    "HIST20",
    "HIST21",
@@ -3814,11 +4139,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "pathway to law school - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3979
+  "text_chars": 3992
  },
  {
   "control_number": "35999",
@@ -3841,11 +4169,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "programming foundations - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 1582
+  "text_chars": 1595
  },
  {
   "control_number": "36000",
@@ -3873,11 +4204,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "facilities management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2357
+  "text_chars": 2370
  },
  {
   "control_number": "36090",
@@ -3903,11 +4237,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global business - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 1803
+  "text_chars": 1816
  },
  {
   "control_number": "36201",
@@ -3915,8 +4252,9 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
+   "ARTH5",
    "BRDCAST3",
    "BRDCAST55",
    "BRDCAST60",
@@ -3938,11 +4276,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "film, television and electronic media for transfer - as-t degree",
+    "section_fit": 0.8
    }
   },
   "listed": 14,
-  "text_chars": 3871
+  "text_chars": 3884
  },
  {
   "control_number": "36238",
@@ -3978,11 +4319,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "paralegal studies - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 3761
+  "text_chars": 3774
  },
  {
   "control_number": "36239",
@@ -4009,11 +4353,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hospitality management: hotel management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2334
+  "text_chars": 2347
  },
  {
   "control_number": "36339",
@@ -4035,11 +4382,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer game development - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1281
+  "text_chars": 1294
  },
  {
   "control_number": "36340",
@@ -4067,11 +4417,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional baking and patisserie - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3107
+  "text_chars": 3128
  },
  {
   "control_number": "36354",
@@ -4097,11 +4450,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "culinary arts - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2390
+  "text_chars": 2411
  },
  {
   "control_number": "36474",
@@ -4129,11 +4485,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "facilities management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2137
+  "text_chars": 2150
  },
  {
   "control_number": "36475",
@@ -4155,11 +4514,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community caregiver - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 1840
+  "text_chars": 1853
  },
  {
   "control_number": "36493",
@@ -4179,11 +4541,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "microsoft word - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 1670
+  "text_chars": 1683
  },
  {
   "control_number": "36531",
@@ -4212,11 +4577,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
-  "text_chars": 3494
+  "text_chars": 3507
  },
  {
   "control_number": "36629",
@@ -4253,11 +4621,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "heating, ventilation, air conditioning and refrigeration level i - noncredit certificate of completion",
+    "section_fit": 0.833
    }
   },
   "listed": 7,
-  "text_chars": 1813
+  "text_chars": 1826
  },
  {
   "control_number": "36771",
@@ -4304,11 +4675,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aircraft electrical and avionics technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 2239
+  "text_chars": 2252
  },
  {
   "control_number": "36903",
@@ -4331,11 +4705,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "technical theatre - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 1803
+  "text_chars": 1816
  },
  {
   "control_number": "37118",
@@ -4373,11 +4750,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dental assisting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3768
+  "text_chars": 3781
  },
  {
   "control_number": "37119",
@@ -4415,11 +4795,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dental assisting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
-  "text_chars": 3753
+  "text_chars": 3766
  },
  {
   "control_number": "37201",
@@ -4445,11 +4828,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mechatronics level i - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2505
+  "text_chars": 2518
  },
  {
   "control_number": "37203",
@@ -4473,11 +4859,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mechatronics level ii - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 2295
+  "text_chars": 2308
  },
  {
   "control_number": "37216",
@@ -4509,11 +4898,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "mechatronics - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2595
+  "text_chars": 2608
  },
  {
   "control_number": "37263",
@@ -4537,11 +4929,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "heating, ventilation, air conditioning and refrigeration level ii - noncredit certificate of completion",
+    "section_fit": 0.714
    }
   },
   "listed": 6,
-  "text_chars": 1806
+  "text_chars": 1819
  },
  {
   "control_number": "37426",
@@ -4566,11 +4961,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial electrical technology level i - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 2402
+  "text_chars": 2415
  },
  {
   "control_number": "37427",
@@ -4595,11 +4993,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic trainer aide - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2044
+  "text_chars": 2057
  },
  {
   "control_number": "37436",
@@ -4623,11 +5024,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "recording arts technician - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1814
+  "text_chars": 1827
  },
  {
   "control_number": "37518",
@@ -4653,11 +5057,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry for transfer - as-t degree",
+    "section_fit": 0.5
    }
   },
   "listed": 8,
-  "text_chars": 3102
+  "text_chars": 3115
  },
  {
   "control_number": "37640",
@@ -4689,11 +5096,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity defender - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
-  "text_chars": 3196
+  "text_chars": 3209
  },
  {
   "control_number": "37641",
@@ -4719,11 +5129,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cybersecurity analyst - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2151
+  "text_chars": 2164
  },
  {
   "control_number": "37643",
@@ -4760,11 +5173,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cybersecurity professional - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
-  "text_chars": 3490
+  "text_chars": 3503
  },
  {
   "control_number": "37647",
@@ -4787,11 +5203,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "interior design visual communication - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 2567
+  "text_chars": 2580
  },
  {
   "control_number": "37985",
@@ -4811,11 +5230,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "caregiving essentials - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
-  "text_chars": 1866
+  "text_chars": 1879
  },
  {
   "control_number": "38434",
@@ -4842,11 +5264,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate salesperson - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 1948
+  "text_chars": 1961
  },
  {
   "control_number": "38854",
@@ -4874,11 +5299,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "hospitality management for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 10,
-  "text_chars": 3480
+  "text_chars": 3493
  },
  {
   "control_number": "39317",
@@ -4906,11 +5334,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "chemistry uctp - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3688
+  "text_chars": 3701
  },
  {
   "control_number": "39410",
@@ -4938,11 +5369,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "professional baking and patisserie - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 2733
+  "text_chars": 2754
  },
  {
   "control_number": "39562",
@@ -4970,11 +5404,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": "adt",
+    "section_line": "physics uctp - as-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 3419
+  "text_chars": 3432
  },
  {
   "control_number": "39855",
@@ -4982,12 +5419,13 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "BIOL2",
    "BIOL40",
    "CHEM24A",
    "CHEM24B",
+   "ECON4",
    "GEOG4",
    "GEOG4L",
    "GEOL1",
@@ -5005,11 +5443,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
-  "text_chars": 3635
+  "text_chars": 3648
  },
  {
   "control_number": "40107",
@@ -5017,7 +5458,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.793,
+  "coverage": 0.931,
   "codes_found": [
    "ANTHRO3",
    "BUSL10",
@@ -5026,10 +5467,14 @@
    "CJ4",
    "COMSTD72",
    "COMSTD74",
+   "ECON2",
+   "ECON4",
    "ENGLC1000",
    "ENGLC1001",
    "GEOG11",
    "GUID3",
+   "HIST17",
+   "HIST18",
    "PHIL72",
    "PHIL76",
    "POLSC1000",
@@ -5050,11 +5495,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society for transfer - aa-t degree",
+    "section_fit": 0.8
    }
   },
   "listed": 29,
-  "text_chars": 4422
+  "text_chars": 4435
  },
  {
   "control_number": "40588",
@@ -5076,11 +5524,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community health worker  - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
-  "text_chars": 2477
+  "text_chars": 2490
  },
  {
   "control_number": "40594",
@@ -5111,11 +5562,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
-  "text_chars": 2475
+  "text_chars": 2488
  },
  {
   "control_number": "40595",
@@ -5142,11 +5596,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "marketing - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 1942
+  "text_chars": 1955
  },
  {
   "control_number": "40969",
@@ -5167,11 +5624,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "nursing assistant  - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
-  "text_chars": 2729
+  "text_chars": 2742
  },
  {
   "control_number": "41393",
@@ -5196,11 +5656,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language (asl) - certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
-  "text_chars": 1538
+  "text_chars": 1551
  },
  {
   "control_number": "41434",
@@ -5208,13 +5671,15 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
    "ACCTG1A",
    "ACCTG1B",
    "BUS10",
    "BUS88",
    "BUSL28A",
+   "ECON2",
+   "ECON4",
    "MATH25",
    "MATH60",
    "MATH61",
@@ -5228,11 +5693,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 for transfer - as-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 12,
-  "text_chars": 4124
+  "text_chars": 4137
  },
  {
   "control_number": "41467",
@@ -5257,11 +5725,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english as a second language - noncredit certificate of competency",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
-  "text_chars": 2699
+  "text_chars": 2712
  },
  {
   "control_number": "42084",
@@ -5285,11 +5756,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "bookkeeping - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1649
+  "text_chars": 1662
  },
  {
   "control_number": "42180",
@@ -5311,11 +5785,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cad/cam operator - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1752
+  "text_chars": 1765
  },
  {
   "control_number": "42181",
@@ -5337,11 +5814,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting for government and not-for-profit organizations - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1676
+  "text_chars": 1689
  },
  {
   "control_number": "42183",
@@ -5366,11 +5846,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electromechanical technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1998
+  "text_chars": 2011
  },
  {
   "control_number": "42185",
@@ -5392,11 +5875,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "payroll and income tax preparer - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1885
+  "text_chars": 1898
  },
  {
   "control_number": "42623",
@@ -5424,11 +5910,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate property management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 1753
+  "text_chars": 1766
  },
  {
   "control_number": "42630",
@@ -5456,11 +5945,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate property management - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 1765
+  "text_chars": 1778
  },
  {
   "control_number": "42684",
@@ -5495,11 +5987,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cloud solutions architecting - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2773
+  "text_chars": 2786
  },
  {
   "control_number": "42942",
@@ -5523,11 +6018,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive electrical systems - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1859
+  "text_chars": 1872
  },
  {
   "control_number": "42987",
@@ -5562,11 +6060,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "physical therapist assistant - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3854
+  "text_chars": 3867
  },
  {
   "control_number": "43062",
@@ -5587,11 +6088,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "phlebotomy technician - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
-  "text_chars": 2853
+  "text_chars": 2866
  },
  {
   "control_number": "44104",
@@ -5619,11 +6123,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "supervision - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
-  "text_chars": 1913
+  "text_chars": 1926
  },
  {
   "control_number": "44105",
@@ -5657,11 +6164,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 for transfer - aa-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 16,
-  "text_chars": 3703
+  "text_chars": 3742
  },
  {
   "control_number": "44353",
@@ -5696,11 +6206,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cloud solutions architecting - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2849
+  "text_chars": 2862
  },
  {
   "control_number": "45032",
@@ -5712,7 +6225,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 179 of 190 closed-list programs on their own page, 0 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45398",
@@ -5734,11 +6251,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management: food and beverage fundamentals - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1909
+  "text_chars": 1922
  },
  {
   "control_number": "45400",
@@ -5760,11 +6280,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hospitality management: hotel fundamentals - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 1854
+  "text_chars": 1867
  },
  {
   "control_number": "46063",
@@ -5788,11 +6311,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "information technology and information systems core - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
-  "text_chars": 1848
+  "text_chars": 1861
  },
  {
   "control_number": "46090",
@@ -5817,11 +6343,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "earth science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 1890
+  "text_chars": 1903
  },
  {
   "control_number": "46091",
@@ -5846,11 +6375,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "geological sciences - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
-  "text_chars": 2403
+  "text_chars": 2416
  },
  {
   "control_number": "46142",
@@ -5879,7 +6411,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "data science - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5918,11 +6453,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "development operations - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3184
+  "text_chars": 3197
  },
  {
   "control_number": "46144",
@@ -5957,11 +6495,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "development operations - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 3255
+  "text_chars": 3268
  },
  {
   "control_number": "46151",
@@ -5985,7 +6526,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "data analytics - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6021,11 +6565,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "networking specialist (ccna) - a.s. degree",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
-  "text_chars": 2582
+  "text_chars": 2595
  },
  {
   "control_number": "46153",
@@ -6057,11 +6604,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "networking specialist (ccna) - certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
-  "text_chars": 2610
+  "text_chars": 2623
  },
  {
   "control_number": "46154",
@@ -6094,7 +6644,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "web development and social media - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6131,7 +6684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "web development and social media - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6167,11 +6723,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "technology and innovation - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2966
+  "text_chars": 2979
  },
  {
   "control_number": "46157",
@@ -6205,11 +6764,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "artificial intelligence - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
-  "text_chars": 2845
+  "text_chars": 2858
  },
  {
   "control_number": "46158",
@@ -6252,11 +6814,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer game development - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
-  "text_chars": 3145
+  "text_chars": 3158
  },
  {
   "control_number": "46159",
@@ -6287,11 +6852,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "technology and innovation - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
-  "text_chars": 2962
+  "text_chars": 2975
  },
  {
   "control_number": "46160",
@@ -6326,11 +6894,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "programmer - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2965
+  "text_chars": 2978
  },
  {
   "control_number": "46161",
@@ -6365,11 +6936,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "programmer - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
-  "text_chars": 2952
+  "text_chars": 2965
  },
  {
   "control_number": "46283",
@@ -6390,11 +6964,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "orthodontic assisting permit - noncredit certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 3,
-  "text_chars": 2575
+  "text_chars": 2588
  },
  {
   "control_number": "46299",
@@ -6415,11 +6992,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "personal training - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 3,
-  "text_chars": 2145
+  "text_chars": 2158
  },
  {
   "control_number": "46302",

@@ -70,7 +70,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/accounting-aa.php",
+    "title": "Accounting Associate in Arts Degree Program",
+    "h1": " Accounting Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05748",
@@ -82,7 +96,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05755",
@@ -94,7 +112,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/computer-and-information-science-as.php",
+    "title": "Computer and Information Science Associate in Science Degree Program",
+    "h1": " Computer and Information Science Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05756",
@@ -132,7 +164,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/engineering-as.php",
+    "title": "Engineering Associate in Science Degree Program",
+    "h1": " Engineering Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05764",
@@ -144,7 +190,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/apprenticeship-electrical-technology-inside-wireman-as.php",
+    "title": "Apprenticeship: Electrical Technology: Inside Wireman Associate in Science Degree Program",
+    "h1": " Apprenticeship: Electrical Technology: Inside Wireman Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05766",
@@ -182,7 +242,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05771",
@@ -194,7 +258,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/fine-arts-general-studio-art-aa.php",
+    "title": "Fine Arts: General Studio Art Associate in Arts Degree Program",
+    "h1": " Fine Arts: General Studio Art Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05772",
@@ -206,7 +284,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/music-aa.php",
+    "title": "Music Associate in Arts Degree Program",
+    "h1": " Music Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05773",
@@ -296,7 +388,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/dental-assisting-as.php",
+    "title": "Dental Assisting Associate in Science Degree Program",
+    "h1": " Dental Assisting Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05783",
@@ -308,7 +414,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/english-aa.php",
+    "title": "English Associate in Arts Degree Program",
+    "h1": " English Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "32203"
+  }
  },
  {
   "control_number": "05785",
@@ -354,7 +475,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/mathematics-as.php",
+    "title": "Mathematics Associate in Science Degree Program",
+    "h1": " Mathematics Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05788",
@@ -366,7 +501,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/physical-science-as.php",
+    "title": "Physical Science Associate in Science Degree Program",
+    "h1": " Physical Science Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05789",
@@ -378,7 +527,27 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "its page went to closed-list 31255 (Physics)",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/physics-as.php",
+    "title": "Physics Associate in Science Degree Program",
+    "h1": " Physics Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "yield_held": {
+    "holder": "31255",
+    "held": "unjudged",
+    "why": "its filed record was read from another page"
+   }
+  }
  },
  {
   "control_number": "05790",
@@ -390,7 +559,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/chemistry-as.php",
+    "title": "Chemistry Associate in Science Degree Program",
+    "h1": " Chemistry Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05793",
@@ -402,7 +585,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05795",
@@ -414,7 +601,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05796",
@@ -426,7 +617,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/fire-technology-as.php",
+    "title": "Fire Technology Associate in Science Degree Program",
+    "h1": " Fire Technology Associate in Science Degree Program",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05797",
@@ -438,7 +643,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "05799",
@@ -450,7 +659,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/ethnic-studies-aa.php",
+    "title": "Ethnic Studies Associate in Arts Degree Program",
+    "h1": " Ethnic Studies Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "05805",
@@ -523,7 +746,27 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "its page went to closed-list 33393 (Music)",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/electronic-music-aa.php",
+    "title": "Electronic Music Associate in Arts Degree Program",
+    "h1": " Electronic Music Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "yield_held": {
+    "holder": "33393",
+    "held": "refused_passing",
+    "why": "its filed record passes live"
+   }
+  }
  },
  {
   "control_number": "09110",
@@ -535,7 +778,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "09111",
@@ -547,19 +794,56 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/film-aa.php",
+    "title": "Film Associate in Arts Degree Program",
+    "h1": " Film Associate in Arts Degree Program",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "10926",
   "title": "Addiction Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.714,
+  "codes_found": [
+   "PSYC410",
+   "PSYCC1000",
+   "SOSC302",
+   "SOSC304",
+   "SOSC307",
+   "SOSC308",
+   "SOSC310",
+   "SOSC314",
+   "SOSC317",
+   "SOSC319"
+  ],
+  "source": {
+   "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-aa.php",
+   "title": "Addiction Studies Associate in Arts Degree Program",
+   "h1": " Addiction Studies Associate in Arts Degree Program",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "addiction studies associate in arts degree program",
+    "section_fit": 1.0
+   }
+  },
   "listed": 14,
-  "text_chars": 0
+  "text_chars": 5166
  },
  {
   "control_number": "10927",
@@ -603,7 +887,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/apprenticeship-electrical-technology-inside-wireman-ca.php",
+    "title": "Apprenticeship: Electrical Technology: Inside Wireman Certificate of Achievement",
+    "h1": " Apprenticeship: Electrical Technology: Inside Wireman Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19389",
@@ -615,7 +913,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/fire-technology-ca.php",
+    "title": "Fire Technology Certificate of Achievement",
+    "h1": " Fire Technology Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19390",
@@ -627,7 +939,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/dental-assisting-ca.php",
+    "title": "Dental Assisting Certificate of Achievement",
+    "h1": " Dental Assisting Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19394",
@@ -668,7 +994,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/accounting-ca.php",
+    "title": "Accounting Certificate of Achievement",
+    "h1": " Accounting Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21843",
@@ -680,7 +1020,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21925",
@@ -692,7 +1036,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21963",
@@ -704,7 +1052,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21965",
@@ -716,7 +1068,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21967",
@@ -728,7 +1084,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/electronic-music-ca.php",
+    "title": "Electronic Music Certificate of Achievement",
+    "h1": " Electronic Music Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22217",
@@ -740,7 +1110,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/addiction-studies-ca.php",
+    "title": "Addiction Studies Certificate of Achievement",
+    "h1": " Addiction Studies Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "22218",
@@ -752,7 +1136,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "30446",
@@ -872,20 +1260,17 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.571,
   "codes_found": [
    "MATH253",
-   "MATH268",
    "MATH270",
-   "MATH275",
    "MATHC2210",
-   "MATHC2220",
-   "PHYS250"
+   "MATHC2220"
   ],
   "source": {
-   "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
-   "title": "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
-   "h1": " University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+   "url": "http://catalog.collegeofsanmateo.edu/current/programs/economics-aa-t.php",
+   "title": "Economics Associate in Arts Degree for Transfer",
+   "h1": " Economics Associate in Arts Degree for Transfer",
    "text_from": "innerText",
    "label": {
     "award": 1,
@@ -896,7 +1281,7 @@
    }
   },
   "listed": 7,
-  "text_chars": 12000
+  "text_chars": 3760
  },
  {
   "control_number": "31224",
@@ -989,20 +1374,20 @@
    "PHYS270"
   ],
   "source": {
-   "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
-   "title": "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
-   "h1": " University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+   "url": "http://catalog.collegeofsanmateo.edu/current/programs/physics-as.php",
+   "title": "Physics Associate in Science Degree Program",
+   "h1": " Physics Associate in Science Degree Program",
    "text_from": "innerText",
    "label": {
-    "award": 1,
-    "title": 0.0,
+    "award": 0,
+    "title": 1.0,
     "section": null,
     "section_line": null,
     "section_fit": 0.0
    }
   },
   "listed": 10,
-  "text_chars": 12087
+  "text_chars": 3874
  },
  {
   "control_number": "31269",
@@ -1010,7 +1395,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "BIOLC1000",
    "PSYC105",
@@ -1018,6 +1403,7 @@
    "PSYC120",
    "PSYC121",
    "PSYC200",
+   "PSYC201",
    "PSYC220",
    "PSYC225",
    "PSYC300",
@@ -1082,58 +1468,12 @@
   "title": "History",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.767,
-  "codes_found": [
-   "ADMJ100",
-   "ANTH110",
-   "ANTH180",
-   "CHIN131",
-   "CHIN132",
-   "COMMC1004",
-   "DGME100",
-   "DGME102",
-   "ECONC2001",
-   "ECONC2002",
-   "ETHN101",
-   "ETHN103",
-   "GEOG110",
-   "GEOG150",
-   "HIST100",
-   "HIST101",
-   "HIST260",
-   "HIST310",
-   "HISTC1001",
-   "HISTC1002",
-   "POLS100",
-   "PSYC105",
-   "PSYC110",
-   "PSYC200",
-   "PSYC220",
-   "PSYC225",
-   "PSYC300",
-   "PSYC410",
-   "PSYCC1000",
-   "SOCI105",
-   "SOCI110",
-   "SOCI141",
-   "SOCIC1000"
-  ],
-  "source": {
-   "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
-   "title": "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
-   "h1": " University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 43,
-  "text_chars": 10946
+  "text_chars": 0
  },
  {
   "control_number": "31554",
@@ -1286,41 +1626,12 @@
   "title": "English",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "link_search",
-  "coverage": 0.846,
-  "codes_found": [
-   "ENGL161",
-   "ENGL162",
-   "ENGL163",
-   "ENGLC1001",
-   "ENGLC1002",
-   "LIT101",
-   "LIT105",
-   "LIT113",
-   "LIT115",
-   "LIT150",
-   "LIT151",
-   "LIT154",
-   "LIT155",
-   "LIT156",
-   "LIT201",
-   "LIT202",
-   "LIT220",
-   "LIT221",
-   "LIT231",
-   "LIT232",
-   "LIT266",
-   "LIT430"
-  ],
-  "source": {
-   "url": "https://catalog.collegeofsanmateo.edu/current/programs/english-aa.php",
-   "title": "English Associate in Arts Degree Program",
-   "h1": " English Associate in Arts Degree Program",
-   "text_from": "innerText",
-   "label": null
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 26,
-  "text_chars": 3297
+  "text_chars": 0
  },
  {
   "control_number": "33042",
@@ -2741,7 +3052,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.967,
+  "coverage": 0.992,
   "codes_found": [
    "ANTH110",
    "ANTH180",
@@ -2841,6 +3152,7 @@
    "PSYC120",
    "PSYC121",
    "PSYC200",
+   "PSYC201",
    "PSYC220",
    "PSYC225",
    "PSYC230",
@@ -2856,6 +3168,8 @@
    "SOCI121",
    "SOCI141",
    "SOCIC1000",
+   "SOSC301",
+   "SOSC302",
    "SPAN110",
    "SPAN120",
    "SPAN131"
@@ -2882,7 +3196,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.989,
+  "coverage": 1.0,
   "codes_found": [
    "ADAP100",
    "ADAP110",
@@ -3035,6 +3349,8 @@
    "PSYC330",
    "PSYCC1000",
    "SOCIC1000",
+   "SOSC301",
+   "SOSC302",
    "STATC1000",
    "TEAM105",
    "TEAM116",
@@ -3093,7 +3409,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "http://catalog.collegeofsanmateo.edu/current/programs/university-transfer-option-a-california-general-education-transfer-curriculum-cal-getc-ca.php",
+    "title": "University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+    "h1": " University Transfer Option A: California General Education Transfer Curriculum (Cal-GETC) Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "45506",

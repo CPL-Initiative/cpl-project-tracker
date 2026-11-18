@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s677_cpl_memory_rows.sql",
+ "name": "s677_cpl_memory_rows",
+ "version": "20261117211021",
+ "sha256": "6a91ad2ec83f9de8c781fd7445bd8755eaae776c0b36ff596858f97821d5c4c8",
+ "run": "44176454133",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-chaffey-18435-not-found-no-live-row-s677\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":317},{\"slug\":\"f-skyline-self-test-miss-38299-pace-s677\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":343}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

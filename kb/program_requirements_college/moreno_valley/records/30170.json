@@ -44,32 +44,45 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 126,
+   "placed": 130,
    "listed": 130,
-   "share": 0.969,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "HIS6",
-    "HIS7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1001",
+     "listed": "HIS6",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "HISTC1002",
+     "listed": "HIS7",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 16,
+   "count": 12,
    "codes": [
     "ADJ14",
     "ADJ22",
     "ADJ25",
     "EAR40",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
     "HIST35",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -83,11 +96,7 @@
     "ADJ25",
     "EAR40",
     "EAR47",
-    "ECONC2001",
-    "ECONC2002",
     "HIST35",
-    "HISTC1001",
-    "HISTC1002",
     "HMS14",
     "POLS2H",
     "POLS3",
@@ -1198,6 +1207,6 @@
    "General education requirements are referenced generally ('as described in the college catalog'); no specific GE pattern named."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38095617505"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

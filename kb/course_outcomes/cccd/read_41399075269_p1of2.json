@@ -2798,16 +2798,15 @@
    "offered_at": null,
    "shape": "list",
    "heading": "Course Level Student Learning Outcome(s)",
-   "lead": null,
+   "lead": "Course outcomes:",
    "outcomes": [
-    "Course outcomes:",
     "Apply complex data storage mechanisms and manipulation algorithms.",
     "Develop programs that use abstract data structures.",
     "Implement object-oriented class hierarchy and inheritance."
    ],
    "maps_to": null,
    "parsed_from": "html",
-   "fingerprint": "3a5ffa3a6bd7d3d4971fe4e5f29c918c"
+   "fingerprint": "388e1583fbdced7b1c2b2eb7dabb9b32"
   },
   {
    "code": "CS G178",

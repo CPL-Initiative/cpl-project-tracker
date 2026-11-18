@@ -5,11 +5,11 @@
  "title": "English",
  "award": "A.A- T Degree",
  "source_url": "https://cabrillo.elumenapp.com/catalog/2026-2027/program/english-associate-in-arts-for-transfer-a-a-t-fall-2026",
- "record_shape": 5,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13682,
+  "input_tokens": 13985,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13682,
-    "output_tokens": 4297,
+    "input_tokens": 13985,
+    "output_tokens": 4026,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,47 @@
     "model": null
    }
   ],
-  "output_tokens": 4297,
+  "output_tokens": 4026,
   "output_tokens_details": {
-   "thinking_tokens": 1578
+   "thinking_tokens": 1352
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.14067,
- "ms": 49202,
- "seconds": 49.4,
+ "cost_usd": 0.13646,
+ "ms": 30954,
+ "seconds": 31.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 34,
+   "placed": 35,
    "listed": 37,
-   "share": 0.919,
+   "share": 0.946,
    "missing": [
-    "ENGL1BH",
     "ENGL2MC",
     "ENGL2MCH"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ENGLC1002H",
+     "listed": "ENGL1BH",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ENGL27AN",
-    "ENGLC1002H"
+    "ENGL27AN"
    ],
    "flagged": [
-    "ENGL27AN",
-    "ENGLC1002H"
+    "ENGL27AN"
    ],
    "pass": true
   },
@@ -86,8 +91,7 @@
     34.0
    ],
    "why": [],
-   "overlap": true,
-   "rescored": "Open Asks Sheet 82"
+   "overlap": true
   },
   "repeated": {
    "codes": [],
@@ -108,6 +112,9 @@
    "not_verbatim": [],
    "pass": true
   },
+  "degree": {
+   "status": "read"
+  },
   "pass": true
  },
  "record": {
@@ -119,6 +126,10 @@
     "max": null
    },
    "open_elective_units": 14,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": 60,
@@ -406,7 +417,13 @@
       "code": "ENGL23A",
       "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "JOURN23A",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
@@ -438,13 +455,6 @@
       "catalog_addition": false
      },
      {
-      "code": "JOURN23A",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "TA9",
       "units": 3,
       "units_max": null,
@@ -470,16 +480,16 @@
    }
   ],
   "notes": [
-   "The catalog text begins mid-sentence; the program description is cut off at the start.",
-   "The page prints no major total; 'Complete the following number of credits: 60' is recorded as degree_total and Cal-GETC 34 as ge_units.",
-   "General Electives: 'Complete the following number of credits: 14' of any transferable course (rows printed as 2 and 3 units); recorded as open_elective_units 14, no block.",
-   "The Program Outcomes are printed once for the program page; recorded for this A.A.-T.",
-   "List B also allows 'any LIST A course not already used' (3 units); List C also allows 'any foreign language course that fulfills Cal-GETC Area 3B' (3-5 units) or 'any LIST A or LIST B course not already used' (3 units). These are not codes and are not recorded as courses.",
-   "In List B the cross-listed ENGL/HIST/ETHN 27AN and 27BN rows are recorded as alternatives of one choice. ENGL27AN is not in the closed list (closed list has ENGL 27BN only), so it is marked catalog_addition.",
-   "In List C, ENGL23A and JOURN23A share a title (Reporting for the News Media) and appear to be cross-listed, but they are printed as separate rows and are kept as separate entries.",
-   "ENGLC1002H (Honors) is not in the closed list and is marked as a catalog addition.",
-   "The Program Map at the end lists the GE and major courses by term. It is a suggested sequence, not a requirement, and its GE courses are not placed in blocks."
+   "Major total not printed; only the generic 'minimum of 18 semester units in the major' sentence for all A.A.-T/A.S.-T degrees, so total_units is null. Degree total 60 and Cal-GETC 34 recorded as printed.",
+   "General Electives block states 14 credits but lists two lines 'any transferable course' printed with 2 and 3; recorded 14 as open_elective_units. Reviewer should check.",
+   "List B also allows 'any LIST A course not already used' (3 units); List C also allows 'any foreign language course that fulfills Cal-GETC Area 3B' (3-5 units) or 'any LIST A or LIST B course not already used' (3 units). These open options are not recorded as courses.",
+   "Cross-listed courses (ENGL/HIST/ETHN 27AN, ENGL/HIST/ETHN 27BN, ENGL 23A/JOURN 23A) are recorded as one entry with alternatives; the catalog prints them as separate rows.",
+   "ENGL C1002H and ENGL 27AN are not in the closed list (catalog additions).",
+   "The first Core block allows ENGL C1002, its honors twin, or ENGL 1BMC for 3 units.",
+   "Catalog text begins mid-sentence and the Program Map is cut off; program map courses (GE) were not recorded.",
+   "Program outcomes are printed for the program as a whole on this A.A.-T page and recorded for this award."
   ]
  },
- "extracted_run": "38565227455"
+ "extracted_run": "44090886950",
+ "catalog_year": "2026-2027"
 }

@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 588,
+   "count": 590,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1387,6 +1387,26 @@
      "updated": "2026-09-10"
     },
     {
+     "created": "2026-11-17",
+     "governs": [
+      ".github/workflows/harvest-gap-census.yml",
+      ".github/workflows/workflow-failure-watch.yml",
+      "kb/status/commons_data.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-dispatch-only-feed-goes-stale-without-a-sound.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "github-actions",
+      "scheduling",
+      "commons",
+      "live-data"
+     ],
+     "title": "A dispatch-only feed goes stale without a sound",
+     "type": "methodology",
+     "updated": "2026-11-17"
+    },
+    {
      "created": "2026-09-15",
      "governs": [
       "funding-model/index.html",
@@ -2023,6 +2043,25 @@
      "title": "A grouping key must come from the authoritative set, not from the rows being grouped",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "exhibits.js",
+      "tests/exhibits_list_left.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-guard-must-fail-closed-when-it-cannot-decide.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "guards",
+      "testing",
+      "exhibits",
+      "review"
+     ],
+     "title": "A guard must fail closed when it cannot decide",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-09-10",
@@ -13774,7 +13813,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-11-14",
@@ -14000,7 +14039,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 104,
+   "count": 105,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15205,6 +15244,21 @@
      "updated": "2026-11-15"
     },
     {
+     "created": "2026-11-16",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_6.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
      "created": "2026-11-12",
      "governs": [],
      "path": "docs/harvest_side_handoff_s639.md",
@@ -16060,7 +16114,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-09-08",
@@ -16114,7 +16168,7 @@
      ],
      "title": "Common CR Reference \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-10-19",
@@ -16257,7 +16311,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-17"
     },
     {
      "created": "2026-08-28",
@@ -16283,7 +16337,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-10-23",
@@ -16458,7 +16512,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -16584,7 +16638,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -16979,7 +17033,7 @@
      ],
      "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-10-04",
@@ -17110,8 +17164,232 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 623,
+   "count": 639,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 680,
+     "path": "docs/session_680_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 680 handoff (from SkyKinglet, S679)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 679,
+     "path": "docs/session_679_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 679 handoff (from SkyWaxwing, S678)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 678,
+     "path": "docs/session_678_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 678 handoff (from SkyTanager, S677)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 677,
+     "path": "docs/session_677_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 677 handoff (from SkyPipit, S676)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 676,
+     "path": "docs/session_676_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 676 handoff (from SkyLinnet, S675)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 675,
+     "path": "docs/session_675_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 675 handoff (from SkyRedpoll, S674)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 674,
+     "path": "docs/session_674_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 674 handoff (from SkyPhoebe, S673)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 673,
+     "path": "docs/session_673_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 673 handoff (from SkyWren, S672)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 672,
+     "path": "docs/session_672_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 672 handoff (from SkyKinglet, S671)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-17",
+     "governs": [],
+     "n": 671,
+     "path": "docs/session_671_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 671 handoff (from SkyBunting, S670)",
+     "type": null,
+     "updated": "2026-11-17"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 670,
+     "path": "docs/session_670_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 670 handoff (from SkyPipit, S668)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 668,
+     "path": "docs/session_668_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 668 handoff (from SkyPlover, S667)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 667,
+     "path": "docs/session_667_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 667 handoff (from SkyDipper, S666)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 666,
+     "path": "docs/session_666_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 666 handoff (from SkyThrush, S665)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 665,
+     "path": "docs/session_665_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 665 handoff (from SkyWren, S664)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
+    {
+     "created": "2026-11-16",
+     "governs": [],
+     "n": 664,
+     "path": "docs/session_664_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 664 handoff (from SkyLark, S663)",
+     "type": null,
+     "updated": "2026-11-16"
+    },
     {
      "created": "2026-11-16",
      "governs": [],
@@ -27606,5 +27884,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1492
+ "total": 1511
 }

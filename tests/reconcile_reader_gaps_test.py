@@ -28,7 +28,7 @@ import _program_requirements_score as S  # noqa: E402
 R.reconcile = lambda rec, text, *a, **k: (dict(rec, reconciled_from=text), [{"field": "f", "now": 1}])
 R.calgetc_trace = lambda *a, **k: None
 R.load_steps = lambda: {}
-R.prefix_aliases = lambda c: {}
+R.prefix_aliases = lambda c, steps=None, year=None: {}
 R.packed_codes = lambda c: {}
 S.score = lambda rec, *a, **k: {"arithmetic": {"status": "equal", "pass": True}}
 

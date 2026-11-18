@@ -1,0 +1,4045 @@
+{
+  "groups": {
+    "Adv ESL: Writing and Grammar": [
+      "Adv ESL: Writing/Grammar"
+    ],
+    "Advanced Desserts and Pastry, Chocolate, and Sugar": [
+      "Advanced Desserts and Pastry/Chocolate/Sugar"
+    ],
+    "Arboriculture and Urban Forestry": [
+      "Arboriculture/Urban Forestry"
+    ],
+    "Architecture and Green Design: Implementation using AutoCAD": [
+      "Architecture/Green Design: Implementation using AutoCAD"
+    ],
+    "Architecture and Green Design: Planning and Construction": [
+      "Architecture/Green Design: Planning and Construction"
+    ],
+    "Architecture and Green Design: Principles and Practices": [
+      "Architecture/Green Design: Principles and Practices"
+    ],
+    "Autodesk Certified User and Professional — AutoCAD": [
+      "Autodesk Certified User/Professional — AutoCAD"
+    ],
+    "Autodesk Certified User and Professional — Revit Architecture": [
+      "Autodesk Certified User/Professional — Revit Architecture"
+    ],
+    "Building Automation System (BAS) Certification — Manufacturer and Vendor": [
+      "Building Automation System (BAS) Certification — Manufacturer/Vendor"
+    ],
+    "CCDET Clean Truck-Check & HD Safety and Pollution Certifications": [
+      "CCDET Clean Truck-Check & HD Safety/Pollution Certifications"
+    ],
+    "Calculations in Water and Wastewater Technology": [
+      "Calculations in Water/Wastewater Technology"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather": [
+      "Carpenters Apprenticeship — Drywall/Lather"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather Journeyperson": [
+      "Carpenters Apprenticeship — Drywall/Lather Journeyperson"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather Year 1": [
+      "Carpenters Apprenticeship — Drywall/Lather Year 1"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather Year 2": [
+      "Carpenters Apprenticeship — Drywall/Lather Year 2"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather Year 3": [
+      "Carpenters Apprenticeship — Drywall/Lather Year 3"
+    ],
+    "Carpenters Apprenticeship — Drywall and Lather Year 4": [
+      "Carpenters Apprenticeship — Drywall/Lather Year 4"
+    ],
+    "Concealed, Glue-Up, and Staple-Up Ceiling Systems": [
+      "Concealed/Glue-Up/Staple-Up Ceiling Systems"
+    ],
+    "Confined Space Rescue Operations and Technician": [
+      "Confined Space Rescue Operations/Technician"
+    ],
+    "Diesel Electrical and Electronic Systems": [
+      "Diesel Electrical/Electronic Systems"
+    ],
+    "Doors, Windows, Exterior Systems and Building Documents": [
+      "Doors, Windows, Exterior Systems/Building Documents"
+    ],
+    "Education and Careers in Education Intermediate": [
+      "Education / Careers in Education Intermediate"
+    ],
+    "Emergency Medical Response — CPR Pro and Healthcare Provider": [
+      "Emergency Medical Response — CPR Pro/Healthcare Provider"
+    ],
+    "Exterior and Advanced Fire Control System and Partitions": [
+      "Exterior/Advanced Fire Control System and Partitions"
+    ],
+    "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations": [
+      "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations"
+    ],
+    "Fuel Systems and Emission Controls": [
+      "Fuel Systems/Emission Controls"
+    ],
+    "HAZWOPER First Responder Awareness and Operations": [
+      "HAZWOPER First Responder Awareness/Operations"
+    ],
+    "Hairstyling Services and Haircutting 2": [
+      "Hairstyling Services/Haircutting 2"
+    ],
+    "Heavy and Medium Duty Truck Technology Apprenticeship": [
+      "Heavy/Medium Duty Truck Technology Apprenticeship"
+    ],
+    "Hydraulics and Pneumatics": [
+      "Hydraulics/Pneumatics"
+    ],
+    "Infant and Toddler Practicum": [
+      "Infant/Toddler Practicum"
+    ],
+    "Introduction to Engineering Design and Graphics": [
+      "Introduction to Engineering Design/Graphics"
+    ],
+    "Introduction to UNIX and Linux": [
+      "Introduction to UNIX/Linux"
+    ],
+    "Ironworker Apprenticeship — OSHA 30 and Extension Review": [
+      "Ironworker Apprenticeship — OSHA 30/Extension Review"
+    ],
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather": [
+      "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather"
+    ],
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)": [
+      "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)"
+    ],
+    "Layout and Leveling Construction Site Practice": [
+      "Layout/Leveling Construction Site Practice"
+    ],
+    "Maternal and Newborn Nursing Care": [
+      "Maternal/Newborn Nursing Care"
+    ],
+    "Mathematics for Drywall and Lathers": [
+      "Mathematics for Drywall/Lathers"
+    ],
+    "NCCER Commercial Electrician Level 4 and Journey Level": [
+      "NCCER Commercial Electrician Level 4/Journey Level"
+    ],
+    "NCCER Industrial Electrician Level 4 and Journey Level": [
+      "NCCER Industrial Electrician Level 4/Journey Level"
+    ],
+    "Nursing Skills and Clinical Simulation Laboratory Beginning": [
+      "Nursing Skills/Clinical Simulation Laboratory Beginning"
+    ],
+    "Oil and Acrylic Painting: Beginning 1": [
+      "Oil/Acrylic Painting: Beginning 1"
+    ],
+    "Prefab and Sound Panels": [
+      "Prefab/Sound Panels"
+    ],
+    "Principles of Infant and Toddler Caregiving": [
+      "Principles of Infant/Toddler Caregiving"
+    ],
+    "Principles of Power Mechanics and Small Engines": [
+      "Principles of Power Mechanics/Small Engines"
+    ],
+    "Spanish and English Linguistics Analysis": [
+      "Spanish/English Linguistics Analysis"
+    ],
+    "Standard First Aid, CPR, and AED": [
+      "Standard First Aid/CPR/AED"
+    ],
+    "Tool and Equipment Applications — Emergency Response Procedures": [
+      "Tool/Equipment Applications — Emergency Response Procedures"
+    ],
+    "Tool and Equipment Applications — Fall Protection": [
+      "Tool/Equipment Applications — Fall Protection"
+    ],
+    "Transit Level and Laser": [
+      "Transit Level/Laser"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140"
+    ],
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141": [
+      "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141"
+    ],
+    "UA Plumbers and Pipefitters Apprenticeship — Journeyperson": [
+      "UA Plumbers/Pipefitters Apprenticeship — Journeyperson"
+    ],
+    "UA Plumbers and Pipefitters Apprenticeship — Level 2": [
+      "UA Plumbers/Pipefitters Apprenticeship — Level 2"
+    ],
+    "UA Plumbers and Pipefitters Apprenticeship — Level 3": [
+      "UA Plumbers/Pipefitters Apprenticeship — Level 3"
+    ],
+    "UA Plumbers and Pipefitters Apprenticeship — Level 4": [
+      "UA Plumbers/Pipefitters Apprenticeship — Level 4"
+    ],
+    "UNIX and Linux Systems and Programming": [
+      "UNIX/Linux Systems and Programming"
+    ],
+    "Water and Wastewater Operator Certification": [
+      "Water/Wastewater Operator Certification"
+    ]
+  },
+  "_about": "Every value kb/_cred_rename_apply.py changed in this apply, before and after. kb/_cred_rename_undo.py reverses it. A key absent before (a rename's new title) or after (a folded or renamed-away title) is null.",
+  "_applied_at": "2026-11-18T03:09:22Z",
+  "credentials": {
+    "Adv ESL: Writing and Grammar": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ]
+    },
+    "Adv ESL: Writing/Grammar": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "after": null
+    },
+    "Advanced Desserts and Pastry, Chocolate, and Sugar": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T17:18:20.46971+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course content via portfolio review."
+        }
+      ]
+    },
+    "Advanced Desserts and Pastry/Chocolate/Sugar": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T17:18:20.46971+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course content via portfolio review."
+        }
+      ],
+      "after": null
+    },
+    "Arboriculture and Urban Forestry": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-06",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-06T20:31:33.726975+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Arboriculture/Urban Forestry": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-06",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-06T20:31:33.726975+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Architecture and Green Design: Implementation using AutoCAD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:11.59789+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "CPL type labels this as Industry Certification but title reads like a local course; issuer unclear."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:11.59789+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ]
+    },
+    "Architecture and Green Design: Planning and Construction": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:32.958894+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Issuer unclear; possibly local cert."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:32.958894+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ]
+    },
+    "Architecture and Green Design: Principles and Practices": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:55.910475+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Issuer unclear."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:55.910475+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ]
+    },
+    "Architecture/Green Design: Implementation using AutoCAD": {
+      "before": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:11.59789+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "CPL type labels this as Industry Certification but title reads like a local course; issuer unclear."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:11.59789+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "after": null
+    },
+    "Architecture/Green Design: Planning and Construction": {
+      "before": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:32.958894+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Issuer unclear; possibly local cert."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:32.958894+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "after": null
+    },
+    "Architecture/Green Design: Principles and Practices": {
+      "before": [
+        {
+          "issuing_agency": "U.S. Green Building Council (USGBC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T20:15:55.910475+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Issuer unclear."
+        },
+        {
+          "issuing_agency": "Green Business Certification Inc. (GBCI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-08",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-08T20:15:55.910475+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "after": null
+    },
+    "Autodesk Certified User and Professional — AutoCAD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Autodesk",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "User vs Professional level not specified."
+        }
+      ]
+    },
+    "Autodesk Certified User and Professional — Revit Architecture": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Autodesk",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "User vs Professional level not specified."
+        }
+      ]
+    },
+    "Autodesk Certified User/Professional — AutoCAD": {
+      "before": [
+        {
+          "issuing_agency": "Autodesk",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "User vs Professional level not specified."
+        }
+      ],
+      "after": null
+    },
+    "Autodesk Certified User/Professional — Revit Architecture": {
+      "before": [
+        {
+          "issuing_agency": "Autodesk",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "User vs Professional level not specified."
+        }
+      ],
+      "after": null
+    },
+    "Building Automation System (BAS) Certification — Manufacturer and Vendor": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:11.950973+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        },
+        {
+          "issuing_agency": "Johnson Controls Training Institute",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Schneider Electric's EcoXpert program",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Siemens",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Honeywell",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ]
+    },
+    "Building Automation System (BAS) Certification — Manufacturer/Vendor": {
+      "before": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:11.950973+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        },
+        {
+          "issuing_agency": "Johnson Controls Training Institute",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Schneider Electric's EcoXpert program",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Siemens",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Honeywell",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "after": null
+    },
+    "CCDET Clean Truck-Check & HD Safety and Pollution Certifications": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Air Resources Board (CARB)",
+          "training_agency": null,
+          "confidence_issuer": 0.55,
+          "confidence_trainer": 0.5,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite of multiple HD diesel certifications; CARB administers Clean Truck Check, SP/2 is industry. | Issuer confirmed (credential curation 2026-05-20)."
+        }
+      ]
+    },
+    "CCDET Clean Truck-Check & HD Safety/Pollution Certifications": {
+      "before": [
+        {
+          "issuing_agency": "California Air Resources Board (CARB)",
+          "training_agency": null,
+          "confidence_issuer": 0.55,
+          "confidence_trainer": 0.5,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite of multiple HD diesel certifications; CARB administers Clean Truck Check, SP/2 is industry. | Issuer confirmed (credential curation 2026-05-20)."
+        }
+      ],
+      "after": null
+    },
+    "Calculations in Water and Wastewater Technology": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-07T20:44:37.955799+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course via CBE."
+        }
+      ]
+    },
+    "Calculations in Water/Wastewater Technology": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-07T20:44:37.955799+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course via CBE."
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall and Lather": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+          "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall and Lather Journeyperson": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:41.093676+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall and Lather Year 1": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:17.246056+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall and Lather Year 2": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:22.664485+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall and Lather Year 3": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:27.360289+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall and Lather Year 4": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:32.596326+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Carpenters Apprenticeship — Drywall/Lather": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California / Southern California Carpenters Joint Apprenticeship",
+          "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall/Lather Journeyperson": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:41.093676+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall/Lather Year 1": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:17.246056+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall/Lather Year 2": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:22.664485+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall/Lather Year 3": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:27.360289+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Carpenters Apprenticeship — Drywall/Lather Year 4": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:30:32.596326+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Concealed, Glue-Up, and Staple-Up Ceiling Systems": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.55,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T22:05:27.133439+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local trades portfolio review; ceiling-system installation."
+        }
+      ]
+    },
+    "Concealed/Glue-Up/Staple-Up Ceiling Systems": {
+      "before": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.55,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T22:05:27.133439+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local trades portfolio review; ceiling-system installation."
+        }
+      ],
+      "after": null
+    },
+    "Confined Space Rescue Operations and Technician": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
+          "confidence_issuer": 0.75,
+          "confidence_trainer": 0.75,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "Confined Space Rescue Operations/Technician": {
+      "before": [
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": "California Department of Forestry and Fire Protection (CAL FIRE)",
+          "confidence_issuer": 0.75,
+          "confidence_trainer": 0.75,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "Diesel Electrical and Electronic Systems": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:11:47.219124+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": null
+        }
+      ]
+    },
+    "Diesel Electrical/Electronic Systems": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:11:47.219124+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "Doors, Windows, Exterior Systems and Building Documents": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "Doors, Windows, Exterior Systems/Building Documents": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "Education / Careers in Education Intermediate": {
+      "before": [
+        {
+          "issuing_agency": "Century High School",
+          "training_agency": "Century High School",
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 1.0,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:33:43.799569+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "HS articulation; topic generic."
+        }
+      ],
+      "after": null
+    },
+    "Education and Careers in Education Intermediate": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Century High School",
+          "training_agency": "Century High School",
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 1.0,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:33:43.799569+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "HS articulation; topic generic."
+        }
+      ]
+    },
+    "Emergency Medical Response — CPR Pro and Healthcare Provider": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "American Red Cross",
+          "training_agency": null,
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Same credential as previous row, different CPL mechanism."
+        }
+      ]
+    },
+    "Emergency Medical Response — CPR Pro/Healthcare Provider": {
+      "before": [
+        {
+          "issuing_agency": "American Red Cross",
+          "training_agency": null,
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Same credential as previous row, different CPL mechanism."
+        }
+      ],
+      "after": null
+    },
+    "Exterior and Advanced Fire Control System and Partitions": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "Exterior/Advanced Fire Control System and Partitions": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:27.087971+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations": {
+      "before": [
+        {
+          "issuing_agency": "California State Fire Training (SFT)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:27.087971+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Fuel Systems and Emission Controls": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:36.73789+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Fuel Systems/Emission Controls": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:36.73789+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "HAZWOPER First Responder Awareness and Operations": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+          "training_agency": null,
+          "confidence_issuer": 0.75,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "HAZWOPER FRA/FRO levels under 29 CFR 1910.120(q)."
+        }
+      ]
+    },
+    "HAZWOPER First Responder Awareness/Operations": {
+      "before": [
+        {
+          "issuing_agency": "U.S. Occupational Safety and Health Administration (OSHA)",
+          "training_agency": null,
+          "confidence_issuer": 0.75,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "HAZWOPER FRA/FRO levels under 29 CFR 1910.120(q)."
+        }
+      ],
+      "after": null
+    },
+    "Hairstyling Services and Haircutting 2": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot",
+          "_renamed_from": "Hairstyling Services/Haircutting II"
+        }
+      ]
+    },
+    "Hairstyling Services/Haircutting 2": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot",
+          "_renamed_from": "Hairstyling Services/Haircutting II"
+        }
+      ],
+      "after": null
+    },
+    "Heavy and Medium Duty Truck Technology Apprenticeship": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
+          "training_agency": null,
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "State-registered apprenticeship program; sponsor unspecified."
+        }
+      ]
+    },
+    "Heavy/Medium Duty Truck Technology Apprenticeship": {
+      "before": [
+        {
+          "issuing_agency": "California Division of Apprenticeship Standards (DAS)",
+          "training_agency": null,
+          "confidence_issuer": 0.6,
+          "confidence_trainer": 0.6,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "State-registered apprenticeship program; sponsor unspecified."
+        }
+      ],
+      "after": null
+    },
+    "Hydraulics and Pneumatics": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:31:49.959557+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Same credential via industry-cert pathway."
+        }
+      ]
+    },
+    "Hydraulics/Pneumatics": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:31:49.959557+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Same credential via industry-cert pathway."
+        }
+      ],
+      "after": null
+    },
+    "Infant and Toddler Practicum": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ]
+    },
+    "Infant/Toddler Practicum": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "after": null
+    },
+    "Introduction to Engineering Design and Graphics": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:38.824626+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Introduction to Engineering Design/Graphics": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:38.824626+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Introduction to UNIX and Linux": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:29.525568+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Introduction to UNIX/Linux": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:29.525568+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Ironworker Apprenticeship — OSHA 30 and Extension Review": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.4,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T22:57:50.40229+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Uninterpretable abbreviation; needs human review per Rule 9."
+        }
+      ]
+    },
+    "Ironworker Apprenticeship — OSHA 30/Extension Review": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.4,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T22:57:50.40229+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Uninterpretable abbreviation; needs human review per Rule 9."
+        }
+      ],
+      "after": null
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T19:04:31.400511+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T19:04:32.124869+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather": {
+      "before": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T19:04:31.400511+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)": {
+      "before": [
+        {
+          "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T19:04:32.124869+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Layout and Leveling Construction Site Practice": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "CTCNC apprenticeship module code preserved."
+        }
+      ]
+    },
+    "Layout/Leveling Construction Site Practice": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        },
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "CTCNC apprenticeship module code preserved."
+        }
+      ],
+      "after": null
+    },
+    "Maternal and Newborn Nursing Care": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Articulated against LVN licensure as the underlying credential."
+        }
+      ]
+    },
+    "Maternal/Newborn Nursing Care": {
+      "before": [
+        {
+          "issuing_agency": "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+          "training_agency": null,
+          "confidence_issuer": 0.7,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Articulated against LVN licensure as the underlying credential."
+        }
+      ],
+      "after": null
+    },
+    "Mathematics for Drywall and Lathers": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "Mathematics for Drywall/Lathers": {
+      "before": [
+        {
+          "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": null
+    },
+    "NCCER Commercial Electrician Level 4 and Journey Level": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "NCCER",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:41.516902+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "NCCER Commercial Electrician Level 4/Journey Level": {
+      "before": [
+        {
+          "issuing_agency": "NCCER",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:41.516902+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "NCCER Industrial Electrician Level 4 and Journey Level": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "NCCER",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:41.895236+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "NCCER Industrial Electrician Level 4/Journey Level": {
+      "before": [
+        {
+          "issuing_agency": "NCCER",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:41.895236+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Nursing Skills and Clinical Simulation Laboratory Beginning": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T21:56:56.016451+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local nursing lab course."
+        }
+      ]
+    },
+    "Nursing Skills/Clinical Simulation Laboratory Beginning": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T21:56:56.016451+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local nursing lab course."
+        }
+      ],
+      "after": null
+    },
+    "Oil and Acrylic Painting: Beginning 1": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot",
+          "_renamed_from": "Oil/Acrylic Painting: Beginning I"
+        }
+      ]
+    },
+    "Oil/Acrylic Painting: Beginning 1": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot",
+          "_renamed_from": "Oil/Acrylic Painting: Beginning I"
+        }
+      ],
+      "after": null
+    },
+    "Prefab and Sound Panels": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:12:53.810442+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local Norco carpentry topic."
+        }
+      ]
+    },
+    "Prefab/Sound Panels": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:12:53.810442+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local Norco carpentry topic."
+        }
+      ],
+      "after": null
+    },
+    "Principles of Infant and Toddler Caregiving": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local ECE course."
+        }
+      ]
+    },
+    "Principles of Infant/Toddler Caregiving": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local ECE course."
+        }
+      ],
+      "after": null
+    },
+    "Principles of Power Mechanics and Small Engines": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:35:16.243163+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course credential."
+        }
+      ]
+    },
+    "Principles of Power Mechanics/Small Engines": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:35:16.243163+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course credential."
+        }
+      ],
+      "after": null
+    },
+    "Spanish and English Linguistics Analysis": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:37.895917+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ]
+    },
+    "Spanish/English Linguistics Analysis": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:37.895917+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "after": null
+    },
+    "Standard First Aid, CPR, and AED": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "American Red Cross",
+          "training_agency": null,
+          "confidence_issuer": 0.5,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Issuer uncertain; pathways via portfolio rather than card presentation."
+        }
+      ]
+    },
+    "Standard First Aid/CPR/AED": {
+      "before": [
+        {
+          "issuing_agency": "American Red Cross",
+          "training_agency": null,
+          "confidence_issuer": 0.5,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Issuer uncertain; pathways via portfolio rather than card presentation."
+        }
+      ],
+      "after": null
+    },
+    "Tool and Equipment Applications — Emergency Response Procedures": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topical exhibit."
+        }
+      ]
+    },
+    "Tool and Equipment Applications — Fall Protection": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topical exhibit."
+        }
+      ]
+    },
+    "Tool/Equipment Applications — Emergency Response Procedures": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topical exhibit."
+        }
+      ],
+      "after": null
+    },
+    "Tool/Equipment Applications — Fall Protection": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topical exhibit."
+        }
+      ],
+      "after": null
+    },
+    "Transit Level and Laser": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topic."
+        }
+      ]
+    },
+    "Transit Level/Laser": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.7,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Apprenticeship topic."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "OJT/work experience component."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module; SHME course code preserved."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ]
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "OJT/work experience component."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module; SHME course code preserved."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA) Local 342",
+          "training_agency": "UA Local 342 Joint Apprenticeship Training Committee",
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Apprenticeship module."
+        }
+      ],
+      "after": null
+    },
+    "UA Plumbers and Pipefitters Apprenticeship — Journeyperson": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:33.414062+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "UA Plumbers and Pipefitters Apprenticeship — Level 2": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:29.067192+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "UA Plumbers and Pipefitters Apprenticeship — Level 3": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:30.223968+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "UA Plumbers and Pipefitters Apprenticeship — Level 4": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:30.858913+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "UA Plumbers/Pipefitters Apprenticeship — Journeyperson": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:33.414062+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "UA Plumbers/Pipefitters Apprenticeship — Level 2": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:29.067192+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "UA Plumbers/Pipefitters Apprenticeship — Level 3": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:30.223968+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "UA Plumbers/Pipefitters Apprenticeship — Level 4": {
+      "before": [
+        {
+          "issuing_agency": "United Association (UA)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-13",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-13T20:42:30.858913+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "UNIX and Linux Systems and Programming": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:52:41.776949+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course exhibit."
+        }
+      ]
+    },
+    "UNIX/Linux Systems and Programming": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-08T23:52:41.776949+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Local college course exhibit."
+        }
+      ],
+      "after": null
+    },
+    "Water and Wastewater Operator Certification": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:53.065162+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Water/Wastewater Operator Certification": {
+      "before": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:53.065162+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    }
+  },
+  "unified_titles": {
+    "AGM 262\tHydraulics/Pneumatics - Credit by Exam": {
+      "before": "Hydraulics/Pneumatics",
+      "after": "Hydraulics and Pneumatics"
+    },
+    "AGM 262\tHydraulics/Pneumatics - Industry Certification": {
+      "before": "Hydraulics/Pneumatics",
+      "after": "Hydraulics and Pneumatics"
+    },
+    "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam": {
+      "before": "Principles of Power Mechanics/Small Engines",
+      "after": "Principles of Power Mechanics and Small Engines"
+    },
+    "Apprenticeship Carpentry, Drywall/Lather, AS": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    "Apprenticeship Carpentry, Drywall/Lather, CA": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    "Architecture/Green Design: Implementation using AutoCAD": {
+      "before": "Architecture/Green Design: Implementation using AutoCAD",
+      "after": "Architecture and Green Design: Implementation using AutoCAD"
+    },
+    "Architecture/Green Design: Planning and Construction": {
+      "before": "Architecture/Green Design: Planning and Construction",
+      "after": "Architecture and Green Design: Planning and Construction"
+    },
+    "Architecture/Green Design: Principles and Practices": {
+      "before": "Architecture/Green Design: Principles and Practices",
+      "after": "Architecture and Green Design: Principles and Practices"
+    },
+    "Autodesk Certification for AutoCAD for Design and Drafting": {
+      "before": "Autodesk Certified User/Professional — AutoCAD",
+      "after": "Autodesk Certified User and Professional — AutoCAD"
+    },
+    "Autodesk Certification for Revit for Architectural Design": {
+      "before": "Autodesk Certified User/Professional — Revit Architecture",
+      "after": "Autodesk Certified User and Professional — Revit Architecture"
+    },
+    "Beginning Nursing Skills/Clinical Simulation Laboratory": {
+      "before": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+      "after": "Nursing Skills and Clinical Simulation Laboratory Beginning"
+    },
+    "CCDET Clean Truck-Check Certification, T2, SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+      "after": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications"
+    },
+    "CSCI 210\tIntroduction to UNIX/Linux System and Programming - Credit by Exam": {
+      "before": "UNIX/Linux Systems and Programming",
+      "after": "UNIX and Linux Systems and Programming"
+    },
+    "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar": {
+      "before": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "after": "Advanced Desserts and Pastry, Chocolate, and Sugar"
+    },
+    "Cal Fire Confined Space Rescue Operations/Technician": {
+      "before": "Confined Space Rescue Operations/Technician",
+      "after": "Confined Space Rescue Operations and Technician"
+    },
+    "Calculations in Water/Wastewater Technology WTEC 049 Cx": {
+      "before": "Calculations in Water/Wastewater Technology",
+      "after": "Calculations in Water and Wastewater Technology"
+    },
+    "Carpenter’s Training Center CTCNC CARP 012": {
+      "before": "Layout/Leveling Construction Site Practice",
+      "after": "Layout and Leveling Construction Site Practice"
+    },
+    "Carpenter’s Training Center CTCNC CARP 103": {
+      "before": "Mathematics for Drywall/Lathers",
+      "after": "Mathematics for Drywall and Lathers"
+    },
+    "Carpenter’s Training Center CTCNC CARP 104": {
+      "before": "Exterior/Advanced Fire Control System and Partitions",
+      "after": "Exterior and Advanced Fire Control System and Partitions"
+    },
+    "Carpenter’s Training Center CTCNC CARP 105": {
+      "before": "Doors, Windows, Exterior Systems/Building Documents",
+      "after": "Doors, Windows, Exterior Systems and Building Documents"
+    },
+    "Carpenter’s Training Center CTCNC CARP 310": {
+      "before": "Layout/Leveling Construction Site Practice",
+      "after": "Layout and Leveling Construction Site Practice"
+    },
+    "Concealed/Glue-Up/Staple-Up Systems": {
+      "before": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "after": "Concealed, Glue-Up, and Staple-Up Ceiling Systems"
+    },
+    "Credit by Exam- Diesel Electrical/Electronic Systems": {
+      "before": "Diesel Electrical/Electronic Systems",
+      "after": "Diesel Electrical and Electronic Systems"
+    },
+    "Ext & Review": {
+      "before": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "after": "Ironworker Apprenticeship — OSHA 30 and Extension Review"
+    },
+    "First Responder Awareness/Operations": {
+      "before": "HAZWOPER First Responder Awareness/Operations",
+      "after": "HAZWOPER First Responder Awareness and Operations"
+    },
+    "HE 100\tStandard First Aid/CPR/AED - Industry Certificate": {
+      "before": "Standard First Aid/CPR/AED",
+      "after": "Standard First Aid, CPR, and AED"
+    },
+    "HE 100\tStandard First Aid/CPR/AED - Portfolio Review": {
+      "before": "Standard First Aid/CPR/AED",
+      "after": "Standard First Aid, CPR, and AED"
+    },
+    "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Credit by Exam": {
+      "before": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+      "after": "Emergency Medical Response — CPR Pro and Healthcare Provider"
+    },
+    "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Industry Certification": {
+      "before": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+      "after": "Emergency Medical Response — CPR Pro and Healthcare Provider"
+    },
+    "Heavy/Medium Duty Truck Technology Apprenticeship Program": {
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    "Intermediate Education or Careers in Education - Century High School": {
+      "before": "Education / Careers in Education Intermediate",
+      "after": "Education and Careers in Education Intermediate"
+    },
+    "Maternal/Newborn Nursing Care - LVN Certification": {
+      "before": "Maternal/Newborn Nursing Care",
+      "after": "Maternal and Newborn Nursing Care"
+    },
+    "Prefab/Sound Panels": {
+      "before": "Prefab/Sound Panels",
+      "after": "Prefab and Sound Panels"
+    },
+    "Principles of Infant Toddler Caregiver": {
+      "before": "Principles of Infant/Toddler Caregiving",
+      "after": "Principles of Infant and Toddler Caregiving"
+    },
+    "Tool/Equipment Applications - Emergency Response Procedures": {
+      "before": "Tool/Equipment Applications — Emergency Response Procedures",
+      "after": "Tool and Equipment Applications — Emergency Response Procedures"
+    },
+    "Tool/Equipment Applications - Fall Protection": {
+      "before": "Tool/Equipment Applications — Fall Protection",
+      "after": "Tool and Equipment Applications — Fall Protection"
+    },
+    "Transit Level/Laser": {
+      "before": "Transit Level/Laser",
+      "after": "Transit Level and Laser"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 100": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 101": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 110": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 111": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 120": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 121": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 130": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 131": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 140": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 141": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 150": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150"
+    },
+    "UA Local 342 Plumbers/Pipefitters SHME 151": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 100": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 101": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 110": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 111": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 120": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 121": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 130": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 131": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 140": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140"
+    },
+    "UA Local 342 Plumbers/Pipefitters SMTEC 141": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141"
+    },
+    "UA Local 342 Plumbers/Pipefitters Work Experience": {
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience"
+    },
+    "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": {
+      "before": "Fuel Systems/Emission Controls",
+      "after": "Fuel Systems and Emission Controls"
+    },
+    "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis": {
+      "before": "Spanish/English Linguistics Analysis",
+      "after": "Spanish and English Linguistics Analysis"
+    },
+    "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology": {
+      "before": "Calculations in Water/Wastewater Technology",
+      "after": "Calculations in Water and Wastewater Technology"
+    },
+    "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "EGTECH-10: Baldy View ROP - Introduction to Engineering Design": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)": {
+      "before": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "after": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)"
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS": {
+      "before": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "after": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather"
+    },
+    "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA": {
+      "before": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "after": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather"
+    },
+    "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)": {
+      "before": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "after": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)"
+    },
+    "NCCER Commercial Electrician Level 4/Journey Level": {
+      "before": "NCCER Commercial Electrician Level 4/Journey Level",
+      "after": "NCCER Commercial Electrician Level 4 and Journey Level"
+    },
+    "NCCER Industrial Electrician Level 4/Journey Level": {
+      "before": "NCCER Industrial Electrician Level 4/Journey Level",
+      "after": "NCCER Industrial Electrician Level 4 and Journey Level"
+    },
+    "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "San Gorgonio High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
+      "before": "Introduction to Engineering Design/Graphics",
+      "after": "Introduction to Engineering Design and Graphics"
+    },
+    "CLDV-30L INFANT/TODDLER PRACTICUM": {
+      "before": "Infant/Toddler Practicum",
+      "after": "Infant and Toddler Practicum"
+    },
+    "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations": {
+      "before": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "after": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations"
+    },
+    "Credit by Exam - ESL 083 F (High Intermediate Reading and Writing)": {
+      "before": "Adv ESL: Writing/Grammar",
+      "after": "Adv ESL: Writing and Grammar"
+    },
+    "Introduciton to UNIX/Linux": {
+      "before": "Introduction to UNIX/Linux",
+      "after": "Introduction to UNIX and Linux"
+    },
+    "Portfolio for ARTS 12A": {
+      "before": "Oil/Acrylic Painting: Beginning 1",
+      "after": "Oil and Acrylic Painting: Beginning 1"
+    },
+    "California State Water Resources Control Board T3, T4, or T5 certification, D3, D4, or D5 certification, or wastewater grade III, IV, or V certification.": {
+      "before": "Water/Wastewater Operator Certification",
+      "after": "Water and Wastewater Operator Certification"
+    },
+    "Manufacturer/Vendor Specific Building Automation System (BAS) Certification": {
+      "before": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "after": "Building Automation System (BAS) Certification — Manufacturer and Vendor"
+    },
+    "Industry for HORT 56": {
+      "before": "Arboriculture/Urban Forestry",
+      "after": "Arboriculture and Urban Forestry"
+    },
+    "COSM 223 Hairstyling Services/Haircutting II": {
+      "before": "Hairstyling Services/Haircutting 2",
+      "after": "Hairstyling Services and Haircutting 2"
+    },
+    "Portfolio Evidence for ARTS 12A": {
+      "before": "Oil/Acrylic Painting: Beginning 1",
+      "after": "Oil and Acrylic Painting: Beginning 1"
+    },
+    "Industry Training Evidence for HORT 56": {
+      "before": "Arboriculture/Urban Forestry",
+      "after": "Arboriculture and Urban Forestry"
+    },
+    "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+      "after": "Carpenters Apprenticeship — Drywall and Lather Year 1"
+    },
+    "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+      "after": "Carpenters Apprenticeship — Drywall and Lather Year 2"
+    },
+    "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+      "after": "Carpenters Apprenticeship — Drywall and Lather Year 3"
+    },
+    "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+      "after": "Carpenters Apprenticeship — Drywall and Lather Year 4"
+    },
+    "Nor Cal Carpenters Training Drywall/Lather Journeyperson": {
+      "before": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+      "after": "Carpenters Apprenticeship — Drywall and Lather Journeyperson"
+    },
+    "Plumbers Pipefitters Apprenticeship Level 2": {
+      "before": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+      "after": "UA Plumbers and Pipefitters Apprenticeship — Level 2"
+    },
+    "Plumbers Pipefitters Apprenticeship Level 3": {
+      "before": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+      "after": "UA Plumbers and Pipefitters Apprenticeship — Level 3"
+    },
+    "Plumbers Pipefitters Apprenticeship Level 4": {
+      "before": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+      "after": "UA Plumbers and Pipefitters Apprenticeship — Level 4"
+    },
+    "Plumbers Pipefitters Journeyperson": {
+      "before": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+      "after": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson"
+    }
+  },
+  "unified_titles_left_map_from": {},
+  "articulations": [
+    {
+      "course_id": "CNST M1008",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1008",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1089",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1089",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1078",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1078",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1009",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1009",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10CZ",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10CZ",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10EN",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10EN",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10EM",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10EM",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "AGMA M10UC",
+      "exhibit_id": "MAPCXS-A2-C-1-001",
+      "exhibit_title": "AGM 262\tHydraulics/Pneumatics - Credit by Exam",
+      "before": "Hydraulics/Pneumatics",
+      "after": "Hydraulics and Pneumatics"
+    },
+    {
+      "course_id": "AGMA M10UC",
+      "exhibit_id": "MAPICI-A2-I-1-001",
+      "exhibit_title": "AGM 262\tHydraulics/Pneumatics - Industry Certification",
+      "before": "Hydraulics/Pneumatics",
+      "after": "Hydraulics and Pneumatics"
+    },
+    {
+      "course_id": "AGMA M10PU",
+      "exhibit_id": "MAPCXS-A2OP-1-001",
+      "exhibit_title": "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam",
+      "before": "Principles of Power Mechanics/Small Engines",
+      "after": "Principles of Power Mechanics and Small Engines"
+    },
+    {
+      "course_id": "INDT M1008",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1008",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1111",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1111",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1059",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M1059",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "ARCH M10BR",
+      "exhibit_id": "MAPICI-ACFA-1-001",
+      "exhibit_title": "Autodesk Certification for AutoCAD for Design and Drafting",
+      "before": "Autodesk Certified User/Professional — AutoCAD",
+      "after": "Autodesk Certified User and Professional — AutoCAD"
+    },
+    {
+      "course_id": "ARCH M10CJ",
+      "exhibit_id": "MAPICI-ACFR-1-001",
+      "exhibit_title": "Autodesk Certification for Revit for Architectural Design",
+      "before": "Autodesk Certified User/Professional — Revit Architecture",
+      "after": "Autodesk Certified User and Professional — Revit Architecture"
+    },
+    {
+      "course_id": "BUS 140",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "INDT M1016",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1016",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CNST M10MA",
+      "exhibit_id": "MAPICA-CTCC10-1-001",
+      "exhibit_title": "Carpenter’s Training Center CTCNC CARP 012",
+      "before": "Layout/Leveling Construction Site Practice",
+      "after": "Layout and Leveling Construction Site Practice"
+    },
+    {
+      "course_id": "CDEV M1092",
+      "exhibit_id": "MAPCBEN-POIT-1-001",
+      "exhibit_title": "Principles of Infant Toddler Caregiver",
+      "before": "Principles of Infant/Toddler Caregiving",
+      "after": "Principles of Infant and Toddler Caregiving"
+    },
+    {
+      "course_id": "CDEV M1091",
+      "exhibit_id": "MAPCXH-IEOC-1-001",
+      "exhibit_title": "Intermediate Education or Careers in Education - Century High School",
+      "before": "Education / Careers in Education Intermediate",
+      "after": "Education and Careers in Education Intermediate"
+    },
+    {
+      "course_id": "INDT M1011",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1011",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1012",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1012",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1015",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1015",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1013",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1013",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1030",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1030",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1033",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1033",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1034",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1034",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CARP M1018",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CARP M1018",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1042",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1042",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1055",
+      "exhibit_id": "MAPPRA-CS-1-001",
+      "exhibit_title": "Concealed/Glue-Up/Staple-Up Systems",
+      "before": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "after": "Concealed, Glue-Up, and Staple-Up Ceiling Systems"
+    },
+    {
+      "course_id": "INDT M1062",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1062",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1071",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1071",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1043",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1043",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1027",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1027",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1044",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1044",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1089",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1089",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "WELD M1092",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "WELD M1092",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1107",
+      "exhibit_id": "MAPPRA-PP-1-001",
+      "exhibit_title": "Prefab/Sound Panels",
+      "before": "Prefab/Sound Panels",
+      "after": "Prefab and Sound Panels"
+    },
+    {
+      "course_id": "INDT M1031",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1031",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CARP M1055",
+      "exhibit_id": "MAPPRA-TL-1-001",
+      "exhibit_title": "Transit Level/Laser",
+      "before": "Transit Level/Laser",
+      "after": "Transit Level and Laser"
+    },
+    {
+      "course_id": "INDT M1085",
+      "exhibit_id": "MAPICA-ACDA-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, AS",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "INDT M1085",
+      "exhibit_id": "MAPICI-ACDC-1-001",
+      "exhibit_title": "Apprenticeship Carpentry, Drywall/Lather, CA",
+      "before": "Carpenters Apprenticeship — Drywall/Lather",
+      "after": "Carpenters Apprenticeship — Drywall and Lather"
+    },
+    {
+      "course_id": "CARP M10AQ",
+      "exhibit_id": "MAPPRA-TA-E-1-001",
+      "exhibit_title": "Tool/Equipment Applications - Emergency Response Procedures",
+      "before": "Tool/Equipment Applications — Emergency Response Procedures",
+      "after": "Tool and Equipment Applications — Emergency Response Procedures"
+    },
+    {
+      "course_id": "CARP M10AR",
+      "exhibit_id": "MAPPRA-TA-F-1-001",
+      "exhibit_title": "Tool/Equipment Applications - Fall Protection",
+      "before": "Tool/Equipment Applications — Fall Protection",
+      "after": "Tool and Equipment Applications — Fall Protection"
+    },
+    {
+      "course_id": "COMP M10SB",
+      "exhibit_id": "MAPCXS-C2TU-1-001",
+      "exhibit_title": "CSCI 210\tIntroduction to UNIX/Linux System and Programming - Credit by Exam",
+      "before": "UNIX/Linux Systems and Programming",
+      "after": "UNIX and Linux Systems and Programming"
+    },
+    {
+      "course_id": "CULN M10BO",
+      "exhibit_id": "MAPPRA-C0-A-1-001",
+      "exhibit_title": "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar",
+      "before": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "after": "Advanced Desserts and Pastry, Chocolate, and Sugar"
+    },
+    {
+      "course_id": "DIES M10ET",
+      "exhibit_id": "MAPCXI-CCTC-1-001",
+      "exhibit_title": "CCDET Clean Truck-Check Certification, T2, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+      "after": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications"
+    },
+    {
+      "course_id": "DIES M10ET",
+      "exhibit_id": "MAPICI-CCTC-1-001",
+      "exhibit_title": "CCDET Clean Truck-Check Certification, T2, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+      "after": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications"
+    },
+    {
+      "course_id": "INDT M10JS",
+      "exhibit_id": "MAPICA-CTCC10-1-001",
+      "exhibit_title": "Carpenter’s Training Center CTCNC CARP 105",
+      "before": "Doors, Windows, Exterior Systems/Building Documents",
+      "after": "Doors, Windows, Exterior Systems and Building Documents"
+    },
+    {
+      "course_id": "INDT M10DY",
+      "exhibit_id": "MAPICA-CTCC10-1-001",
+      "exhibit_title": "Carpenter’s Training Center CTCNC CARP 104",
+      "before": "Exterior/Advanced Fire Control System and Partitions",
+      "after": "Exterior and Advanced Fire Control System and Partitions"
+    },
+    {
+      "course_id": "INDT M10PZ",
+      "exhibit_id": "MAPICA-CTCC10-1-001",
+      "exhibit_title": "Carpenter’s Training Center CTCNC CARP 103",
+      "before": "Mathematics for Drywall/Lathers",
+      "after": "Mathematics for Drywall and Lathers"
+    },
+    {
+      "course_id": "DRAF M10FE",
+      "exhibit_id": "MAPICA-ADIU-1-001",
+      "exhibit_title": "Architecture/Green Design: Implementation using AutoCAD",
+      "before": "Architecture/Green Design: Implementation using AutoCAD",
+      "after": "Architecture and Green Design: Implementation using AutoCAD"
+    },
+    {
+      "course_id": "DRAF M10FG",
+      "exhibit_id": "MAPICA-ADPA1-1-001",
+      "exhibit_title": "Architecture/Green Design: Planning and Construction",
+      "before": "Architecture/Green Design: Planning and Construction",
+      "after": "Architecture and Green Design: Planning and Construction"
+    },
+    {
+      "course_id": "INDT M10HH",
+      "exhibit_id": "MAPICA-ADPA2-1-001",
+      "exhibit_title": "Architecture/Green Design: Principles and Practices",
+      "before": "Architecture/Green Design: Principles and Practices",
+      "after": "Architecture and Green Design: Principles and Practices"
+    },
+    {
+      "course_id": "FIRE M1295",
+      "exhibit_id": "MAPICI-CFCS1-1-001",
+      "exhibit_title": "Cal Fire Confined Space Rescue Operations/Technician",
+      "before": "Confined Space Rescue Operations/Technician",
+      "after": "Confined Space Rescue Operations and Technician"
+    },
+    {
+      "course_id": "FIRE M1363",
+      "exhibit_id": "MAPICI-FRA-1-001",
+      "exhibit_title": "First Responder Awareness/Operations",
+      "before": "HAZWOPER First Responder Awareness/Operations",
+      "after": "HAZWOPER First Responder Awareness and Operations"
+    },
+    {
+      "course_id": "HMDT M1001",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1003",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1008",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1005",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1009",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1010",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "HMDT M1011",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "WELD M10CA",
+      "exhibit_id": "MAPCXA-E&R-1-001",
+      "exhibit_title": "Ext & Review",
+      "before": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "after": "Ironworker Apprenticeship — OSHA 30 and Extension Review"
+    },
+    {
+      "course_id": "KIN 101",
+      "exhibit_id": "MAPCXS-H1MR-1-001",
+      "exhibit_title": "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Credit by Exam",
+      "before": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+      "after": "Emergency Medical Response — CPR Pro and Healthcare Provider"
+    },
+    {
+      "course_id": "KIN 101",
+      "exhibit_id": "MAPICI-H1FA-1-001",
+      "exhibit_title": "HE 100\tStandard First Aid/CPR/AED - Industry Certificate",
+      "before": "Standard First Aid/CPR/AED",
+      "after": "Standard First Aid, CPR, and AED"
+    },
+    {
+      "course_id": "KIN 101",
+      "exhibit_id": "MAPICI-H1MR-1-001",
+      "exhibit_title": "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Industry Certification",
+      "before": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+      "after": "Emergency Medical Response — CPR Pro and Healthcare Provider"
+    },
+    {
+      "course_id": "KIN 101",
+      "exhibit_id": "MAPPRA-H1FA-1-001",
+      "exhibit_title": "HE 100\tStandard First Aid/CPR/AED - Portfolio Review",
+      "before": "Standard First Aid/CPR/AED",
+      "after": "Standard First Aid, CPR, and AED"
+    },
+    {
+      "course_id": "NRSR M10TF",
+      "exhibit_id": "MAPICI-MNC--1-001",
+      "exhibit_title": "Maternal/Newborn Nursing Care - LVN Certification",
+      "before": "Maternal/Newborn Nursing Care",
+      "after": "Maternal and Newborn Nursing Care"
+    },
+    {
+      "course_id": "NRSR M10PD",
+      "exhibit_id": "MAPCXS-BNSS-1-001",
+      "exhibit_title": "Beginning Nursing Skills/Clinical Simulation Laboratory",
+      "before": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+      "after": "Nursing Skills and Clinical Simulation Laboratory Beginning"
+    },
+    {
+      "course_id": "WELD M10UF",
+      "exhibit_id": "MAPICA-UL3P10-1-001",
+      "exhibit_title": "UA Local 342 Plumbers/Pipefitters SHME 150",
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150"
+    },
+    {
+      "course_id": "WELD M10UM",
+      "exhibit_id": "MAPICA-UL3P10-1-001",
+      "exhibit_title": "UA Local 342 Plumbers/Pipefitters SHME 151",
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151"
+    },
+    {
+      "course_id": "INDT M10GU",
+      "exhibit_id": "MAPICA-UL3P10-1-001",
+      "exhibit_title": "UA Local 342 Plumbers/Pipefitters SMTEC 141",
+      "before": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "after": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141"
+    },
+    {
+      "course_id": "WELD M1109",
+      "exhibit_id": "MAPOA-HDTT-1-001",
+      "exhibit_title": "Heavy/Medium Duty Truck Technology Apprenticeship Program",
+      "before": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "after": "Heavy and Medium Duty Truck Technology Apprenticeship"
+    },
+    {
+      "course_id": "ENVS M1026",
+      "exhibit_id": "MAPCxS-CIWT-1-001",
+      "exhibit_title": "Calculations in Water/Wastewater Technology WTEC 049 Cx",
+      "before": "Calculations in Water/Wastewater Technology",
+      "after": "Calculations in Water and Wastewater Technology"
+    }
+  ],
+  "fold_id": "2026-11-18@2026-11-18T03:09:22Z"
+}

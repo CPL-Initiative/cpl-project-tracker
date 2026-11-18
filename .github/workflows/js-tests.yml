@@ -238,6 +238,10 @@ jobs:
       # HTMLs hand the click to cobi_refresh.js. Pure-stdlib python; same check.
       - name: Refresh button carries no secret (SEC-3)
         run: python3 tests/refresh_button_no_secret_test.py
+      # Plain words in what Sam reads (Sam, 2026-11-16, COBIx on #3395 item 1): an open call or a Commons string
+      # never uses an insider term ("closed course list", "headline", "receipt", ...) without defining it.
+      - name: Plain words for Sam (insider terms defined or gone)
+        run: python3 tests/plain_words_for_sam_test.py
       # A failed live-metrics scrape turns the daily run red (S601, #2890 item 1): the
       # scrape checks HTTP 200 and logs an ::error, and the last step fails the run.
       - name: Daily scrape fails loudly
@@ -256,6 +260,12 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
+      - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
+        run: python3 tests/apply_curation_rulings_test.py
+      # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
+      - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
+        run: python3 tests/ccr_confidence_rules_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py
@@ -328,6 +338,10 @@ jobs:
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
         run: python3 tests/program_requirements_reconcile_test.py
+      # Sam's rulings of 2026-11-17 (#3461): a local degree's major counts toward general education, a short
+      # high end passes as an over-high end does, and the general education open slot, on the four tested programs.
+      - name: Program requirements rulings of 2026-11-17 (local overlap, short high end, GE open slot)
+        run: python3 tests/program_requirements_rulings_2026_11_17_test.py
       - name: Reconcile reader gaps (holds, sources.json, rescore marker; S658)
         run: python3 tests/reconcile_reader_gaps_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
@@ -340,6 +354,10 @@ jobs:
       # them, each with the catalog year it was read from. Pure stdlib.
       - name: Program requirements, a prior-year read
         run: python3 tests/program_requirements_prior_read_test.py
+      # S663: a prior-year record is scored against its own year's course numbers (course_renumbers_by_year),
+      # and a current-year record never gets an old code. Pure stdlib.
+      - name: Program requirements, year-scoped renumbers
+        run: python3 tests/program_requirements_year_renumbers_test.py
       # S647 (Sam, Sheet 190 card 6): a read stops at the extraction function's 503 (or 401) and files
       # nothing over a record; run 43384599013 filed 121 stubs in a database outage. Pure stdlib.
       - name: Program requirements extraction halts on an outage (503, 401)
@@ -454,6 +472,10 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # ACE's catalog CR text (S678): keyed on AceID, one row per pair, the typographic rule agreeing with
+      # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
+      - name: ACE catalog CR text guard (key, typographic rule, grants)
+        run: python3 tests/map_ace_catalog_cr_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull
@@ -1057,6 +1079,11 @@ jobs:
       # stdlib; same non-required check.
       - name: Context-pressure meter (kb/_context_budget.py)
         run: python3 tests/context_budget_test.py
+      # The read-only Side by side views (S678, COBIx's item 7 on #3464): the fixture cards' figures in
+      # kb/side_by_side.json and kb/exhibit_side_by_side.json, and the builder's read-only, scorer-free shape.
+      # Pure stdlib; same non-required check.
+      - name: Side by side files (kb/_build_side_by_side.py)
+        run: python3 tests/side_by_side_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
       # source and a target; the merge-target loop never skipped those, and 340
@@ -1118,6 +1145,8 @@ jobs:
           python3 tests/credential_family_test.py
           # Sheet 181's naming form and its frozen plan: an "or" between two tests coded as written, a choice kept (S648).
           python3 tests/sheet181_ruled_renames_test.py
+          # A slash joining words in a canonical title is written "and" (Sam, 2026-11-18): the rule, the plan, the guard.
+          python3 tests/slash_titles_test.py
           # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
           python3 tests/credential_family_apply_test.py
           # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.
@@ -1386,6 +1415,15 @@ jobs:
       # The daily run rebuilds the file (scripts/daily_build.sh), so no staleness check here (COBIx on #3379).
       - name: Session spend parser (kb/_build_session_spend.py)
         run: python3 tests/session_spend_build_test.py
+      # The blocked-catalog hunt: one to-do on the College Data Collection page and the Commons (S678, #3464 item 8).
+      - name: Blocked-catalog to-do (kb/_blocked_catalogs.py)
+        run: python3 tests/blocked_catalogs_test.py
+      # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
+      - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
+        run: python3 tests/left_map_build_test.py
+      # The daily spend file's measured series and the Commons spent figure (S678, kb/_build_spend_daily.py).
+      - name: Daily spend measured series (kb/_build_spend_daily.py)
+        run: python3 tests/spend_daily_build_test.py
       - name: Credential title moves table is current (kb/credential_aliases.py --check)
         run: python3 kb/credential_aliases.py --check
       - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)

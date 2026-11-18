@@ -12,7 +12,7 @@
   "course_hours": "a course a record measured in hours lists without hours takes the top of the hours the page's own course data names (the course_units call's lecture plus lab hours, kept by the reader as the source's course_hours; the tab's noncredit total sums the tops): only in an hours record, never a course the reading gave a figure, and the note names the call. A catalog that prints each course's hours only in its course descriptions carries them in hours_file, a committed map beside the read that printed them (Victor Valley, S639), and the note names that read",
   "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix",
   "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
-  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)",
+  "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four); name_pattern's n (and code, where it names one), read on a rule-all block's own heading, gives that block's courses alone the count, only where the heading's words are on the page and the counted sum is the block's stated figure (Norco's options, S673)",
   "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n",
   "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)",
   "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535); parent_from_block (S590) first gives a block of one course and its alternatives, read 'all' with one stated figure, that figure where the course has none (the heading line carries it: 'Select one of the following: 2 \u00b7 WORK 96 \u00b7 or WORK 99')",
@@ -20,7 +20,8 @@
   "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units",
   "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course",
   "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)",
-  "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644)"
+  "pdf_pages": "a PDF catalog whose picker takes a program to another page than its own (Cosumnes River, S650: Psychology AA-T 30566 to a page naming it as another degree, History AA-T 33072 to the Cal-GETC pattern page): {control number: {page, words, evidence}}, the program's own PDF page (1-based) and the words its filed capture opened on there. The capture reads the program from the start of the line carrying the words (kb/_program_requirements_college.py pdf_pinned_heading), only while the page prints them and every title word; a refused pin is filed in the capture (pdf.pinned), the program gets no fresh text, and its filed record stands. Per program and per college, never a pattern over free catalog text (p-gate-free-text-reading-per-college-s644)",
+  "printed_total": "a heading's range whose low end is a test-out, beside a printed total that is its top (Moreno Valley 38758, S674): pattern's lo, hi and total; the record's total_units becomes the total only where it holds exactly lo-hi, the page prints the step's requires words, total equals hi, and the record's blocks are all rule-all with fixed stated figures summing to the total. The one step that replaces a filled figure"
  },
  "colleges": {
   "Cerro Coso Community College": {
@@ -1715,7 +1716,16 @@
      "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "printed_total",
+     "field": "total_units",
+     "pattern": "(?s)Required\\s+Courses\\s*\\(\\s*(?P<lo>\\d{1,2})(?:\\.\\d+)?\\s*-\\s*(?P<hi>\\d{1,2})(?:\\.\\d+)?\\s+Units\\s*\\).{0,4000}?Total\\s*:\\s*(?P<total>\\d{1,2}(?:\\.\\d+)?)",
+     "requires": "\\(\\s*Test\\s+out\\s+option\\s+available\\s*\\)",
+     "source": "the range's low end is a test-out; credit by exam still awards the units (d-mvc-38758-total-is-20-s673)",
+     "why": "S674 SkyRedpoll, 2026-11-17: Guitar Performance 38758 prints Required Courses (16-20 Units), MUS-3* with * (Test out option available), Units: 20.00 and Total : 20.00. The reading took 16-20; the record takes the printed 20."
+    }
+   ]
   },
   "Norco College": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 15 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
@@ -1743,9 +1753,28 @@
      "plan": "kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json"
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice)\\s+for\\s+a\\s+total\\s+of\\s+",
+     "why": "S672 SkyWren, 2026-11-17: Music Industry Studies: Performance 30606 and 30607 (one page) list MUS-39 and MUS-79 once at 3 units, and the page prints 'Take MUS-39 twice for a total of six units: \u00b7 6.00' and 'Take MUS-79 twice for a total of six units: \u00b7 6.00' under 'Units: 25.00' (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json). With both twice the required list sums to its 25. The step reads only 'twice for a total of', never the option lines ('Option 1: Take MUS-41 four times over four semesters'), because MUS-41 sits in two options at two counts; the three options are one choice of 8 units the record does not yet group, a separate fix."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "name_pattern": "Take\\s+(?:both\\s+[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?\\s+and\\s+[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?|(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?))\\s+(?P<n>two|three|four|twice)\\s+times(?:\\s+each)?",
+     "why": "S673 SkyPhoebe, 2026-11-17: Music Industry Studies: Performance 30606 and 30607 (one page) print 'Complete one of the following options: 8.00' over three options the reading already groups as one choice (option_group 'Ensemble option'), each stating 8 with each course listed once at 2 units: 'Option 1: Take MUS-41 four times over four semesters', 'Option 2: Take both MUS-41 and MIS-81 two times each over four semesters', 'Option 3: Take both MIS-11A and MIS-11B two times each over four semesters'. The count is read on each option's own heading, so MUS-41 takes 4 in Option 1 and 2 in Option 2, and only where the counted sum is the option's stated 8. With the required 25 and the 3-4 elective units the record sums to its printed 36-37 (college page read 44045355408, kb/college_reads/rccd_music_repeat_rows.json). Handoff 673 read the options as ungrouped; the group was there, the counts were not."
+    }
+   ]
   },
   "Riverside City College": {
+   "statewide_cal_getc": {
+    "evidence": "Riverside City's own catalog, read by college page read runs 43858134900 and 43859115063 (S665; plan kb/college_reads/rcc_calgetc_page.json). The 2025-2026 catalog's 'California General Education Transfer Curriculum (Cal-GETC)' page (https://rccd.curriqunet.com/Catalog/archive/71/iq/4081/calgetc) and the 2026-2027 catalog's (https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5844/calgetc) print a minimum per area and no total: Area 1 'Minimum 3 courses (9 semester or 12 quarter units).'; Area 2 'Minimum 1 course (3 semester or 4 quarter units).'; Area 3 'Minimum 2 courses (6 semester or 8 quarter units).'; Area 4 'Minimum 2 courses (6 semester or 8 quarter units) from two different academic disciplines.'; Area 5 'Minimum 2 courses (7 semester or 9 quarter units).'; Area 6 'Minimum 1 course (3 semester or 4 quarter units).' Physics 2.0 AS-T 32745's 2025-2026 read (run 43816942139) names Cal-GETC with a 60-unit degree total and no Cal-GETC figure.",
+    "checked": "2026-11-16",
+    "hold": {}
+   },
+   "course_renumbers_by_year": {"2025-2026": {"_evidence": "S663, college page read 43815976514 (kb/college_reads/rcc_prior_year_course_codes.json): the 2025-2026 catalog (curriQunet archive 71) prints each code below with the title and units the state's Program Course File gives the code it maps to (MAT-1C Calculus III 4 for MATH 1C Calculus III 4.0; ECO-7H Honors Principles of Macroeconomics 3 for ECON C2002H Principles of Macroeconomics - Honors 3.0). Not mapped: MAT-1AH Honors Calculus I (MATH C2210H is Calculus I: Early Transcendentals - Honors under a new control number, a replacement, not a renumber) and CIS-5 (printed beside CSC-5, a cross-listing).", "MAT 1C": "MATH 1C", "MAT 2": "MATH 2", "MAT 3": "MATH 3", "MAT 5": "MATH 5", "ECO 7H": "ECON C2002H", "ECO 8H": "ECON C2001H"}},
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints HIST n where the state's Program Course File lists HIS n, the same number and title in every case kb/_prefix_alias_census.py could title (HIST for HIS, 25 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
    "prefix_aliases_cited": [
     {
@@ -1775,7 +1804,26 @@
      }
     }
    ],
-   "steps": []
+   "steps": [
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\*(?:(?!\\*\\s*Course\\s+must)[\\s\\S]){0,800}?\\*\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>[0-9]+|two|three|four|five|six)\\s+times",
+     "why": "S672 SkyWren, 2026-11-17: Piano Performance certificate 38626 read 9.5 against 18.5 because the page prints the row 'MUS-P12* \u00b7 Applied Piano I* \u00b7 3.00' four times under 'Required Courses (12.5 units)' with the footnote '*Course must be taken four times' (college page read 44034775728), and the reading keeps one row. The starred code nearest ahead of the footnote takes the count, so MUS-P12 counts 12 units and the blocks sum to the page's 'Total: 18.50' (p-repeated-course-row-undercounts-s671). The pattern reads any whitespace between its words, since a capture may join the cells with a tab, a space or a line break."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s*Course\\s+must\\s+be\\s+taken\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)\\b",
+     "why": "S672 SkyWren, 2026-11-17: Jazz Performance certificate 38627 read 14 against 17 because the page prints the row 'MUS-39Course must be taken twice \u00b7 Applied Music ICourse must be taken twice \u00b7 3.00' twice under 'Units: 12.00', the footnote's words run into the code's cell (college page read 44045355408, plan kb/college_reads/rccd_music_repeat_rows.json), and the reading keeps one row. With MUS-39 twice the required list sums to its 12 and the blocks to the page's 'Total: 17.00'."
+    },
+    {
+     "kind": "repeat",
+     "field": "blocks",
+     "pattern": "Take\\s+(?P<code>[A-Z]{2,5}-[A-Z]?[0-9]+[A-Z]?)\\s+(?P<n>twice|two|three|four|five|six|[0-9]+)(?:\\s+times)?\\s+over\\s+(?:two|three|four|five|six|[0-9]+)\\s+semesters",
+     "why": "S672 SkyWren, 2026-11-17: Music Performance certificate 38628 read 11.5 against 17.5 because the page prints 'Take MUS-39 three times over three semesters.' and the row 'MUS-39 \u00b7 Applied Music I \u00b7 3.00' three times under 'Units: 9.50' (college page read 44045355408), and the reading keeps one row. With MUS-39 three times the required list sums to 9.5 and the blocks to the page's 'Total: 17.50'."
+    }
+   ]
   }
  }
 }

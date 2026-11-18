@@ -572,7 +572,7 @@ function cellText(li, title) {
       const AL = { kind: "another-look", n: 6, of: 6, open: "#exhibits/another-look/batch", title: "Another look at 6 exhibit titles",
         teaches: "Keep what works.", stop: "The batch ends when its cards are decided.", cards: six, at: "2026-11-07T15:03:25Z" };
       const DEC = { kind: "decision", project: "program-requirements", n: 1, title: "The Commons mock-up, version 3, waits on Sam's look",
-        teaches: "Look at the mock.", open: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi", stop: "It ends when you answer the sheet." };
+        teaches: "Look at the mock.", open: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi", chosen: "The mock stays as drawn.", stop: "It stands unless you change it." };
       const ANS = { kind: "decision", project: "program-requirements", n: 1, title: "The second reader waits on a new xAI subscription",
         open: "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu" };
       const JOB = { kind: "job", ref: "course", n: 8, title: "Common Course Reference", words: "cards whose catalog description reads as another discipline",
@@ -609,9 +609,10 @@ function cellText(li, title) {
         && h1.querySelector(".cmn-next-done").getAttribute("role") === "status");
       check("docket 2: the next batch is the first decision still open; an answered one is passed over",
         h1.getAttribute("data-kind") === "decision" && txt(h1.querySelector("#cmn-next-h")) === DEC.title
-        && /One decision, on its sheet\. It ends when you answer the sheet\./.test(txt(h1)));
+        && /We went with this: The mock stays as drawn\. It stands unless you change it\./.test(txt(h1))
+        && !/answer the sheet|on its sheet/.test(txt(h1)));
       const st = h1.querySelector("a.cmn-start");
-      check("docket 3: its Start opens the sheet in a new tab", st && st.getAttribute("href") === DEC.open && st.getAttribute("target") === "_blank"
+      check("docket 3: its Change it opens the sheet in a new tab", st && txt(st) === "Change it" && st.getAttribute("href") === DEC.open && st.getAttribute("target") === "_blank"
         && st.getAttribute("rel") === "noopener");
       check("docket 4: the count reads the saves the way Exhibits reconciles them: both fields, since the sweep, the six keys",
         reads.length === 1 && /field=in\.\(title_sweep_kept,unified_title_supersedes\)/.test(reads[0])
@@ -739,7 +740,7 @@ function cellText(li, title) {
         && JSON.stringify(JSON.parse(body.value)) === JSON.stringify({ "case": CASE.id, choice: "five", note: "Music last for the curator cards." }));
       const s2 = sec(inn);
       check("case 10: the ruled case closes on the spot and the next batch comes up",
-        /Ruled: Confirm the five\. The processor carries it out and files its receipt\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
+        /Ruled: Confirm the five\. The processor carries it out and keeps a record that can undo it\./.test(txt(s2)) && s2.getAttribute("data-kind") === "job"
         && txt(s2.querySelector("#cmn-next-h")) === "8 cards in doubt");
 
       const ruled = await open(SIGNED, [{ course_id: "_DOCKET::" + CASE.id, value: JSON.stringify({ "case": CASE.id, choice: "one" }), reviewed_at: "2026-11-09T15:00:00Z" }]);

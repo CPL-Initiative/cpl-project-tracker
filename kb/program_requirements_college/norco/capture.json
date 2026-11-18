@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 161,
  "with_closed_list": 150,
- "started": "2026-10-11T04:56:59Z",
+ "started": "2026-11-17T10:21:06Z",
  "curriqunet": {
   "catalog": 116,
   "view_prefix": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/",
@@ -16,11 +16,446 @@
   "nodes_read": 5,
   "calls": 11,
   "entries": 277,
-  "stopped_at_cap": false
+  "stopped_at_cap": false,
+  "same_title_entries": 92,
+  "entries_read": 185,
+  "twin_ids": {
+   "5129": [
+    5262
+   ],
+   "5130": [
+    5263
+   ],
+   "5131": [
+    5327
+   ],
+   "5541": [
+    5548
+   ],
+   "5133": [
+    5264
+   ],
+   "5583": [
+    5587
+   ],
+   "5134": [
+    5328
+   ],
+   "5518": [
+    5523
+   ],
+   "5520": [
+    5525
+   ],
+   "5136": [
+    5265
+   ],
+   "5137": [
+    5266
+   ],
+   "5138": [
+    5267
+   ],
+   "5139": [
+    5268
+   ],
+   "5140": [
+    5269
+   ],
+   "5142": [
+    5329
+   ],
+   "6346": [
+    6350
+   ],
+   "6345": [
+    6349
+   ],
+   "5150": [
+    5275
+   ],
+   "5151": [
+    5276
+   ],
+   "5152": [
+    5277
+   ],
+   "5542": [
+    5549
+   ],
+   "5156": [
+    5278
+   ],
+   "5158": [
+    5280
+   ],
+   "5160": [
+    5330
+   ],
+   "5161": [
+    5281
+   ],
+   "5162": [
+    5282
+   ],
+   "6347": [
+    6351
+   ],
+   "5163": [
+    5283
+   ],
+   "5164": [
+    5284
+   ],
+   "5165": [
+    5491,
+    5331
+   ],
+   "5166": [
+    5285
+   ],
+   "5167": [
+    5286
+   ],
+   "5168": [
+    5287
+   ],
+   "5169": [
+    5288
+   ],
+   "5171": [
+    5289
+   ],
+   "5172": [
+    5290
+   ],
+   "5173": [
+    5291
+   ],
+   "5174": [
+    5292
+   ],
+   "5175": [
+    5293
+   ],
+   "6385": [
+    6386
+   ],
+   "5176": [
+    5332
+   ],
+   "5177": [
+    5294
+   ],
+   "5179": [
+    5333
+   ],
+   "5180": [
+    5295
+   ],
+   "5181": [
+    5296
+   ],
+   "5473": [
+    5474
+   ],
+   "5182": [
+    5297
+   ],
+   "5183": [
+    5298
+   ],
+   "5184": [
+    5299
+   ],
+   "5186": [
+    5300
+   ],
+   "5187": [
+    5301
+   ],
+   "5188": [
+    5302
+   ],
+   "5189": [
+    5303
+   ],
+   "5190": [
+    5304
+   ],
+   "5191": [
+    5305
+   ],
+   "5192": [
+    5334
+   ],
+   "5193": [
+    5335
+   ],
+   "5543": [
+    5550
+   ],
+   "5194": [
+    5306
+   ],
+   "5195": [
+    5307
+   ],
+   "5196": [
+    5308
+   ],
+   "5197": [
+    5309
+   ],
+   "6342": [
+    6343
+   ],
+   "5198": [
+    5310
+   ],
+   "5199": [
+    5311
+   ],
+   "5200": [
+    5312
+   ],
+   "5201": [
+    5336
+   ],
+   "5202": [
+    5313
+   ],
+   "5204": [
+    5314
+   ],
+   "5546": [
+    5553
+   ],
+   "5207": [
+    5315
+   ],
+   "5208": [
+    5316
+   ],
+   "5209": [
+    5317
+   ],
+   "5210": [
+    5337
+   ],
+   "5211": [
+    5338
+   ],
+   "5212": [
+    5339
+   ],
+   "5221": [
+    5318
+   ],
+   "5223": [
+    5319
+   ],
+   "5224": [
+    5320
+   ],
+   "5225": [
+    5321
+   ],
+   "5226": [
+    5322
+   ],
+   "5579": [
+    5577
+   ],
+   "5227": [
+    5345
+   ],
+   "5228": [
+    5323
+   ],
+   "5229": [
+    5324
+   ],
+   "5547": [
+    5554
+   ],
+   "5231": [
+    5346
+   ],
+   "5233": [
+    5325
+   ],
+   "5236": [
+    5347
+   ],
+   "5237": [
+    5326
+   ],
+   "5238": [
+    5348
+   ]
+  },
+  "failed_calls": 0
  },
- "pages_read": 277,
- "loads": 289,
- "seconds": 1379.7,
+ "pages_read": 185,
+ "pages_listed": 185,
+ "pages_answered": 185,
+ "listing_failed": 0,
+ "banner_h1": null,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 68,
+   "hits": 31,
+   "recall": 0.456,
+   "false": 1,
+   "false_off_own": 2,
+   "false_no_claims": 2,
+   "shared": 76,
+   "false_matches": [
+    {
+     "control_number": "30055",
+     "title": "Business Administration: General Business Concentration",
+     "page": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5271"
+    },
+    {
+     "control_number": "30055",
+     "title": "Business Administration: General Business Concentration",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5271",
+     "h1": "Business Administration: General Business Concentration - Certificate of Achievement - NAS524 / NCE524"
+    },
+    {
+     "control_number": "44880",
+     "title": "Administration of Justice: Corrections",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5588",
+     "h1": "Administration of Justice: Corrections - Certificate of Achievement - NEC1098"
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "30055",
+     "title": "Business Administration: General Business Concentration",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "page": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5271",
+     "h1": "Business Administration: General Business Concentration - Certificate of Achievement - NAS524 / NCE524"
+    },
+    {
+     "control_number": "44880",
+     "title": "Administration of Justice: Corrections",
+     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+     "page": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5588",
+     "h1": "Administration of Justice: Corrections - Certificate of Achievement - NEC1098"
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 11,
+  "by_result": {
+   "not_searched": 10,
+   "not_matched": 1
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "30096",
+    "title": "Construction Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30097",
+    "title": "Construction Technology",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30100",
+    "title": "Early Childhood Intervention Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30101",
+    "title": "Early Childhood Intervention Assistant",
+    "award": "A.A. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30111",
+    "title": "CSU General Education",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "30112",
+    "title": "IGETC",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "status": "Active",
+    "result": "not_matched",
+    "why": "title_has_no_words"
+   },
+   {
+    "control_number": "32821",
+    "title": "Pre-Engineering",
+    "award": "A.S. Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38743",
+    "title": "Computerized Numerical Control Operator",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "38816",
+    "title": "Financial Literacy",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "40293",
+    "title": "Beginning American College English",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "42716",
+    "title": "Noncredit Essential Fusion 360",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 31 of 68 closed-list programs on their own page, 1 on another program's and 2 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 197,
+ "seconds": 920.2,
  "found": 148,
  "by_method": {
   "no_closed_list": 11,
@@ -184,7 +619,29 @@
   {
    "control_number": "31317",
    "title": "Game Art: Environments and Vehicles",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units"
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5194",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2271,
+     "content": 2271,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [
@@ -195,20 +652,43 @@
    "pages": [
     "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5545",
     "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5569/5552"
-   ]
+   ],
+   "status": "Active"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 9,
-  "0.8-1.0": 27,
-  "1.0": 112
+  "0.5-0.8": 4,
+  "0.8-1.0": 9,
+  "1.0": 135
  },
  "would_extract": {
   "against": "kb/program_requirements_college/norco",
-  "kept": 148,
+  "kept": 146,
   "kept_moved": 0,
-  "programs": 0,
-  "list": [],
+  "programs": 2,
+  "list": [
+   {
+    "control_number": "32830",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+    "coverage": 1.0,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218",
+    "was_coverage": 0.957,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45912",
+    "title": "Global Studies",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342",
+    "coverage": 1.0,
+    "was_url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342",
+    "was_coverage": 0.927,
+    "was_method": "sitemap_page"
+   }
+  ],
   "held_worse_window": [],
   "held_no_gain": [],
   "held_opens_on_list": [],
@@ -241,11 +721,11 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5148"
   },
   "30067": {
-   "sha256": "761c8352351ff1c17fbd3ebe310013762ee8bfa417ac991419a5f883a7c77100",
+   "sha256": "96b298eefa1a7d47657ffb4aa3344ee3e7203389acaab6e450f6adee5424a6e3",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5226"
   },
   "30068": {
-   "sha256": "761c8352351ff1c17fbd3ebe310013762ee8bfa417ac991419a5f883a7c77100",
+   "sha256": "96b298eefa1a7d47657ffb4aa3344ee3e7203389acaab6e450f6adee5424a6e3",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5226"
   },
   "30071": {
@@ -293,15 +773,15 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5200"
   },
   "30098": {
-   "sha256": "e53d6adaab04639d7c4f8075266db83c850a97158f9fd090c3a86d03454a6bb3",
+   "sha256": "5c419d2e1c9351464b31afb1b98340abbd0523c929415e0b05b65f40095542c4",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5171"
   },
   "30099": {
-   "sha256": "e53d6adaab04639d7c4f8075266db83c850a97158f9fd090c3a86d03454a6bb3",
+   "sha256": "5c419d2e1c9351464b31afb1b98340abbd0523c929415e0b05b65f40095542c4",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5171"
   },
   "30102": {
-   "sha256": "495624b293af6b5feb94f75c60e255389a85dca1865b2337c73b4ccb1032427b",
+   "sha256": "2892d16e5649c04f10438038f454c36ce6e31917a5dde4da2bcca757c9da6b5a",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5133"
   },
   "30103": {
@@ -309,7 +789,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5545"
   },
   "30104": {
-   "sha256": "495624b293af6b5feb94f75c60e255389a85dca1865b2337c73b4ccb1032427b",
+   "sha256": "2892d16e5649c04f10438038f454c36ce6e31917a5dde4da2bcca757c9da6b5a",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5133"
   },
   "30105": {
@@ -337,11 +817,11 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5547"
   },
   "30572": {
-   "sha256": "274868aa223103843830b159331fc018dc4e2673b163f703f77066333524fbbe",
+   "sha256": "542b01ce6327ebefa16a054af2ce4d3ef06bd549ec5a3ddedcc8d0e93de8ef6d",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198"
   },
   "30585": {
-   "sha256": "e83d1e46f415ef5c022b149ecf8ede067be9daab8f22fb3bb3e5a9e83adae88a",
+   "sha256": "dabc8f0669fb9bf540bd30e9489ebbc4e1b1905677cf60abf873e056da296cc1",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5232"
   },
   "30606": {
@@ -353,15 +833,15 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209"
   },
   "30667": {
-   "sha256": "274868aa223103843830b159331fc018dc4e2673b163f703f77066333524fbbe",
+   "sha256": "542b01ce6327ebefa16a054af2ce4d3ef06bd549ec5a3ddedcc8d0e93de8ef6d",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5198"
   },
   "31219": {
-   "sha256": "3deaddce48471c96735bbfc4d68af1fafaab392448807b935570b90c653560d9",
+   "sha256": "1ef0e79ced6d814aaae8ade895d393ebf8d738b37cd489cfcdd0fd0d67920667",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5170"
   },
   "31313": {
-   "sha256": "5508c78fc031eda949c8c29b0fc3c7f9fddcaf11c8dc03cc7cbe58f02141a109",
+   "sha256": "49b533878aad117537f4aa9279d85b423d76924802d4e5bfd5c02ac4e273096e",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5208"
   },
   "31316": {
@@ -373,7 +853,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5195"
   },
   "31375": {
-   "sha256": "5508c78fc031eda949c8c29b0fc3c7f9fddcaf11c8dc03cc7cbe58f02141a109",
+   "sha256": "49b533878aad117537f4aa9279d85b423d76924802d4e5bfd5c02ac4e273096e",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5208"
   },
   "31376": {
@@ -409,7 +889,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5178"
   },
   "32160": {
-   "sha256": "c7a018f7ee9b887528e69646738c49de8bd2aa195cf725af3c5c7c5230fe84ef",
+   "sha256": "44246e0b1b7eb0e8863bce5e5113c7e711d42783fab31f296cb8944f4bb40909",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5234"
   },
   "32594": {
@@ -425,11 +905,11 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5219"
   },
   "32626": {
-   "sha256": "ea9bc4e2e9dfe3593d1d9c143efb6f565cc7d306e2be4b25e71fedcb9cb6b3c4",
+   "sha256": "9b0bfd6b0dbe8ea7ae2628a1a7ff2102429971dbe3951dee99ff3cd06b791b10",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5222"
   },
   "32631": {
-   "sha256": "8cbff5a7445df18b866258b14337dc88a9a1486840f35335e61d1a20c85427ea",
+   "sha256": "388b1a2618addeb9988c1002be9763afc57e0c7978e705f78dc04a03c7bf7b41",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5135"
   },
   "32830": {
@@ -437,7 +917,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5218"
   },
   "33090": {
-   "sha256": "f018f89fe234d7d88020486419ca27894464872ec45b20ea9349199006a711e6",
+   "sha256": "8fbdae36068cb64b46d18775e83ed62be704aecf650daa96825ee7cad8d9fa45",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5220"
   },
   "33751": {
@@ -465,7 +945,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5174"
   },
   "33951": {
-   "sha256": "8806e2cec091b7d792dd2ea62a44aa8bb15b779fd126ddebeebc63f12c7c5b85",
+   "sha256": "2c1354c30020c6f048290daf037ccbf874eaaab3fec2a658ad5ae4039d78b067",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5573"
   },
   "33952": {
@@ -473,7 +953,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5153"
   },
   "35027": {
-   "sha256": "da5689db750006f045df7030d046a28f2823db86c40631affc9123ce510e8119",
+   "sha256": "2ff70b8238d6bd47ee8fbe7e0389a8eef9529fd58207f2ba0d848a401c8e45f1",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5143"
   },
   "35308": {
@@ -485,7 +965,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5233"
   },
   "35853": {
-   "sha256": "65e9f6124076aed72a84b261bbeae98d184db65787a6fe7ae7136dbf5a6a865f",
+   "sha256": "25f3aeec430aa633f93508e4bb4683950121d1e2c1bfbc045d0328b063ab3be8",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5132"
   },
   "35938": {
@@ -509,7 +989,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5207"
   },
   "37163": {
-   "sha256": "2b4497eab442cf0f764d5631c60090a3e09cd437f1a60b2545049630d3699440",
+   "sha256": "5137bf7182f36c65ce17f29be18f516061b6667af01156818a42eda8b13a71be",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5154"
   },
   "37232": {
@@ -517,7 +997,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5141"
   },
   "37311": {
-   "sha256": "2f4691d5035621d8bba86be1860a38a7c4351567a8726129452aed3b45295715",
+   "sha256": "2904c3280033bdb9020990def15cc82c5bc4f7dd44fcd0bb5ee938c3abe76d43",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5185"
   },
   "37459": {
@@ -661,7 +1141,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5144"
   },
   "41680": {
-   "sha256": "11c8816957397856ef59602994fd0b82c6915b3be9fef427f91b061622742d9a",
+   "sha256": "8c116fafe3c8b96a2b5316d0b49243d75d0b938b104a04c4b76977213d260cf0",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5230"
   },
   "41774": {
@@ -685,7 +1165,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5570/5340"
   },
   "42846": {
-   "sha256": "0e0d690c23dee2f6136ce522f34ff6df57c45b781cbcd8ef91bcaa7faa011a83",
+   "sha256": "77ea5d44a45849f73a02ccf7b1bfe2bfe1d8514e8d1e5cdcbf9622e33681b2ba",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5155"
   },
   "42900": {
@@ -737,7 +1217,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5137"
   },
   "43937": {
-   "sha256": "b899499c212e5e64f9c6e530558fbd21d9f16ba308cc4c7bb60643e655b14bed",
+   "sha256": "63904ed904b8dc6f6bb9ca393fc0a97f5dd498c0b8a8e162bfec0c3994e91f70",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5471"
   },
   "44005": {
@@ -749,11 +1229,11 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5579"
   },
   "44792": {
-   "sha256": "83a72e884e49611892ca03932a42f8b6616aa50c8b0caf10671f4786e2dd293a",
+   "sha256": "f6fd4cf51b450b0ab49541d1686e108d6dca9021342a5290390c21f221e8ff1e",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5578"
   },
   "44879": {
-   "sha256": "9ff5ba335e45a8c3e7b0c98e9d8d6931d64fb6c9b61ffda1bdd51533c2973a0b",
+   "sha256": "5ffa2deb0aec332a606c84aed09c1a2592d91cc799763bc76fafa23b496ab39b",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5583"
   },
   "44880": {
@@ -761,11 +1241,11 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5582"
   },
   "44961": {
-   "sha256": "97d49421d003b37a7e1f3b109c0cfcc72e6cf3679749ee10d41da5aecaad7fb9",
+   "sha256": "4a56422002ca7446fa12eab86fb382e511062fc9e3d356b99be263add36113f9",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5581"
   },
   "44986": {
-   "sha256": "2fa38b1b043a6b7991f7dfeb8b3594e8e7e76122177b8c9136141ad51da5acfd",
+   "sha256": "1fdb3532b645bbc1b14f1a6a1c67d8831ef80b0450d4cf9774674bfffbcd9f6c",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5580"
   },
   "45092": {
@@ -773,7 +1253,7 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5517"
   },
   "45287": {
-   "sha256": "a061e4fea0b8da525631a6ae064989b071219fbaf1c75a6623271f6587cbbb14",
+   "sha256": "4f6f4877b85f132ee541bf6e004f61fca171e03dedde220f381c4cd7f6b0098f",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6346"
   },
   "45364": {
@@ -801,18 +1281,13 @@
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6347"
   },
   "45750": {
-   "sha256": "81ca2b3316002395cf95c1043a172564bfae012ce3cdb6b0697d0fd6baf9883e",
+   "sha256": "3cfb8b6183157ac3252877fe91fa1d93c1a287bbee2a0f4031f8d97127701fa9",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6344"
   },
   "45912": {
-   "sha256": "7434385e669d1eb8af1e076561c017f566d386b96e2c740f9f7662084617aa16",
+   "sha256": "b6a1ca85cd206f3afa23699be5b36f675049e9e8362edccdfd412497b9b6f3cb",
    "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/6342"
   }
  },
- "staged_from": {
-  "run": "38113150250",
-  "proof": "the filed account equal but for its run, and 1 programs at their address and coverage",
-  "pages_loaded": 0
- },
- "run": "43609971090"
+ "run": "44063769303"
 }

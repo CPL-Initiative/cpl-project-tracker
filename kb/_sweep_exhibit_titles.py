@@ -654,6 +654,24 @@ def current_titles(ut, assignments, held, now):
     return current, reviewed
 
 
+def is_person(reviewer):
+    """True for a person's address; a cohort writer signs as <lane>@bot (Rule 10)."""
+    r = (reviewer or "").strip().lower()
+    return bool(r) and not r.endswith("@bot")
+
+
+def person_saved(assignments, current, now):
+    """The local titles whose current title is a person's own save in the overlay (unified_title_assignment):
+    the saved title, read through the applied renames, is the one the sweep would move."""
+    out = set()
+    for raw, a in assignments.items():
+        r = raw.strip()
+        if is_person(a.get("reviewed_by")) and r in current \
+                and now((a.get("unified_title") or "").strip()) == current[r]:
+            out.add(r)
+    return out
+
+
 def build(root="."):
     p = lambda rel: os.path.join(root, rel)  # noqa: E731
     ut = load_json(p("kb/unified_titles.json"), {}) or {}
@@ -799,9 +817,13 @@ def build(root="."):
     # wording: a proposal reworded since (a twin spelling, or the same one ASE test in a newer form) is the same
     # question, and Sam already answered it (#3228, S647: "the Another Look candidates keep popping on the list though
     # I have decided on them"). A person reopens it by changing the title on the card or in the List.
+    # A title a person saved is settled (Sam, 2026-11-16, relayed by COBIx on issue #3358: person-settled wins).
+    # A machine pass never proposes over it; a person reopens it by changing the title on the card or in the List.
+    # Every card on the 2026-11-13 build was one of Sam's own saves of that afternoon.
+    saved = person_saved(assignments, current, now)
     for raw in list(moves):
         new, why = moves[raw]
-        if new == current[raw] or same_decision(new, kept.get(raw) or []):
+        if new == current[raw] or raw in saved or same_decision(new, kept.get(raw) or []):
             del moves[raw]
 
     # Cards: the local titles that share a current and a proposed title.

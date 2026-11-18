@@ -1,0 +1,66 @@
+{
+ "_readme": "S672 SkyWren, 2026-11-17. The repeated-course-row lever (harvest NEXT 0, p-repeated-course-row-undercounts-s671). Piano Performance 38626 prints MUS-P12* four times with '*Course must be taken four times' (read 44034775728); the record keeps one row. This free read prints the five other music pages S671 named, to see which share that footnote before a reconcile step is written for them: Riverside City Jazz 38627 and Music Performance 38628, Moreno Valley Guitar 38758, Norco Music Industry Studies: Performance 30606/30607 (one page). Free: no model call.",
+ "college": "Riverside City College",
+ "questions": {
+  "block_shape": "How the page prints each requirement block: its heading, the units it asks, every course row (a course printed more than once, and any footnote that says how often a course is taken), and the total."
+ },
+ "keywords": [
+  "times",
+  "repeated",
+  "Required",
+  "Choose",
+  "units",
+  "Total",
+  "Option"
+ ],
+ "pages": [
+  {
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6007",
+   "answers": [
+    "block_shape"
+   ],
+   "network": true,
+   "network_find": [
+    "times",
+    "units",
+    "Total"
+   ]
+  },
+  {
+   "url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6020",
+   "answers": [
+    "block_shape"
+   ],
+   "network": true,
+   "network_find": [
+    "times",
+    "units",
+    "Total"
+   ]
+  },
+  {
+   "url": "https://rccd.curriqunet.com/catalog/alias/mvc-catalog/iq/4702/4731/4526",
+   "answers": [
+    "block_shape"
+   ],
+   "network": true,
+   "network_find": [
+    "times",
+    "units",
+    "Total"
+   ]
+  },
+  {
+   "url": "https://rccd.curriqunet.com/catalog/alias/nc-catalog/iq/5367/5467/5209",
+   "answers": [
+    "block_shape"
+   ],
+   "network": true,
+   "network_find": [
+    "times",
+    "units",
+    "Total"
+   ]
+  }
+ ]
+}

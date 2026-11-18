@@ -90,7 +90,7 @@
     try { n = n.normalize("NFD").replace(/[\u0300-\u036f]/g, ""); } catch (e) { /* an old engine keeps the accent */ }
     return n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
-  function bySlug(M, slug) { return slug ? M.colleges.filter(function (c) { return slugOf(c) === slug; })[0] || null : null; }
+  function bySlug(M, slug) { return slug ? M.colleges.filter(function (c) { return slugOf(c) === slug; })[0] || M.colleges.filter(function (c) { return c.slug === slug; })[0] || null : null; }
   function byId(M, id) { return id == null ? null : M.colleges.filter(function (c) { return String(c.id) === String(id); })[0] || null; }
   var PLATFORMS = { courseleaf: "CourseLeaf", acalog: "Acalog", curriqunet: "CurriQunet", elumen: "eLumen", coursedog: "Coursedog",
     smartcatalog: "SmartCatalog", custom_html: "The college's own web pages", pdf: "PDF" };
@@ -168,7 +168,8 @@
     return { colleges: colleges, statewide: data.statewide || {}, rule: data.rule || {}, tba: data.tba || {},
       sources: data.sources || {}, written: data.written_at || "", fields: data.fields || {},
       live: obj(data.live), overall: obj(data.overall), dictionary: obj(data.dictionary), apis: obj(data.apis), census_live: obj(data.census_live),
-      collection: obj(data.collection) };   // the college cards' statewide facts (#3310)
+      collection: obj(data.collection),   // the college cards' statewide facts (#3310)
+      blocked: data.blocked_hunt && typeof data.blocked_hunt === "object" ? data.blocked_hunt : null };
   }
   function listFor(M, filter) {
     var f = FILTERS[filter] || FILTERS.all;
@@ -255,7 +256,7 @@
       { f: "slo", v: fmt(n("slo")), l: "SLO read waiting", d: "Colleges whose public pages print no SLOs, or whose SLO read is held or waiting on a reader." },
       { f: "scouted", v: fmt(n("scouted")), l: "Scouted for a wave", d: "Colleges whose catalog host was checked ahead of a collection wave, " + fmt(S.scout_barrier) + " with an access barrier. Not a completeness score." },
       cp == null ? { v: "TBA", l: "Read cost per passing program", d: "No committed read receipt carries a cost yet.", tba: true }
-        : { v: "$" + cp.toFixed(3), l: "Read cost per passing program", d: "Dollars for the last committed read, divided by programs that passed at read time: $" + Number(S.cost_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.passed_at_read) + ", " + fmt(S.cost_receipts) + " receipts." },
+        : { v: "$" + cp.toFixed(3), l: "Read cost per passing program", d: "Dollars for the last committed read, divided by programs that passed at read time: $" + Number(S.cost_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.passed_at_read) + ", " + fmt(S.cost_receipts) + " receipts." + (S.spent_usd != null ? " Spent by the runs themselves: $" + Number(S.spent_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.spent_runs) + " runs, each run's own cost, counted from " + S.spent_since + "." : " Spent by the runs themselves: TBA.") },
       apiTile(M)
     ];
   }
@@ -555,10 +556,64 @@
   function leversOf(c) { return (c && (c.census_levers || c.levers)) || {}; }
   function censusWords(c) {
     var b = (c && c.census_basis) || {};
-    if (b.basis === "live") return "From the gap census's live read" + (b.at ? ", " + b.at.replace(/^(\d{4}-\d{2}-\d{2}).*$/, "$1") : "") + ": the programs still to pass at this college, by cause, the same counts its lists hold.";
+    if (b.basis === "live") return "From the database check" + (censusDay(c) ? " of " + censusDay(c) : "") + ": the gap census's live read of our saved program records in the database. That check did not read the college's catalog again. These are the programs still to pass at this college, by cause, the same counts its lists hold.";
     return "From the committed files only: the gap census's live read does not hold this college, so these causes can differ from its counts.";
   }
   function causeWord(M, k) { return ((M.rule || {}).causes || {})[k] || words(k); }
+  /* Commons Clarity's units ride-along with Sam (#3461, page findings 1 to 4 and 6, S678). */
+  /* The day of the gap census's live read: the database check of our saved program records. The census writes
+     "2026-11-13 18:04Z", which some browsers will not parse, so the day is read from its date alone. */
+  function censusDay(c) {
+    var b = (c && c.census_basis) || {}, m = /^(\d{4}-\d{2}-\d{2})/.exec(String(b.at || ""));
+    return b.basis === "live" && m ? day(m[1] + "T12:00:00Z") : "";
+  }
+  /* "Live" in the census's words ("live, units unequal") means the database check, and a reader took it for the
+     college's live catalog (finding 2): the word names the check and its day. */
+  function causeSaid(M, k, c) {
+    var w = causeWord(M, k);
+    if (!/^live, /i.test(w)) return cap(w);
+    var d = censusDay(c);
+    return cap(w.replace(/^live, /i, "")) + " at the database check" + (d ? " of " + d : "");
+  }
+  /* A figure pair as the page prints it: "56 units", "60 to 61 units". */
+  function amount(pair, unit) {
+    if (!pair || pair[0] == null) return "";
+    var lo = pair[0], hi = pair[1] == null ? lo : pair[1];
+    return fmt(lo) + (hi !== lo ? " to " + fmt(hi) : "") + " " + unit;
+  }
+  /* The two unit figures a units cause rests on (finding 3), from the builder's units entry. */
+  function unitsSaid(r) {
+    var u = r && r.units;
+    if (!u) return "";
+    var unit = u.measure === "hours" ? "hours" : "units", deg = u.against === "degree";
+    var ours = (deg ? "Our lists and general education add up to " : "Our lists add up to ") + amount(u.sum, unit);
+    var theirs = "the catalog prints " + amount(u.printed, unit) + (deg ? " for the degree" : "");
+    if (u.status === "equal" && u.printed) return "Our saved lists now add up to the catalog's " + amount(u.printed, unit) +
+      (deg ? " for the degree" : "") + ". The database still holds the older check until a team session reloads the record.";
+    if (!u.sum) return "The catalog prints " + amount(u.printed, unit) + (deg ? " for the degree" : "") + "; our lists cannot be added up yet, because a course in them has no units.";
+    if (!u.printed) return ours + "; the catalog prints no total to check them against.";
+    return ours + "; " + theirs + ".";
+  }
+  /* COCI's award names carry the state's size band for the award ("requiring 16S/24Q to fewer than 30S/45Q units"),
+     which a reader took for the program's own units (finding 6). The award reads alone, and the band in words. */
+  function awardName(a) { return String(a || "").replace(/\s+requiring\s+.*$/i, ""); }
+  function awardBand(a) {
+    var m = /\s+requiring\s+(.+?)\s+units?\s*$/i.exec(String(a || ""));
+    if (!m) return "";
+    var b = m[1], r = /^(\d+(?:\.\d+)?)S\/(\d+(?:\.\d+)?)Q to fewer than (\d+(?:\.\d+)?)S\/(\d+(?:\.\d+)?)Q$/i.exec(b),
+      plus = /^(\d+(?:\.\d+)?)\+S\/(\d+(?:\.\d+)?)\+Q$/i.exec(b);
+    var said = r ? r[1] + " to fewer than " + r[3] + " semester units (" + r[2] + " to fewer than " + r[4] + " quarter units)"
+      : plus ? plus[1] + " or more semester units (" + plus[2] + " or more quarter units)" : b + " units";
+    return "The state sets this award's size band at " + said + ". The program's own units are the catalog's figure.";
+  }
+  /* Who acts on a correction-rule lever, and whether the college has rules of its own yet (finding 4). */
+  var CORRECTION_LEVERS = { reconcile_steps: 1, ge_units_steps: 1, reconcile_then_load: 1 };
+  function leverSaid(lw, r, P, c) {
+    if (!lw || !lw.what) return "";
+    var none = r && CORRECTION_LEVERS[r.lever] && P && P.correction === false;
+    return "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") + "." +
+      (none ? " " + c.name + " has no correction rules of its own on file yet." : "");
+  }
   function tbaOf(M, k) { return (M.tba || {})[k] || ""; }
   /* The scout file's name, from the builder's own source line (the page names no internal folder of its own). */
   function scoutFile(M, c) { return String((M.sources || {}).scouts || "").replace(/[^/]*$/, "") + (c.scout.wave || "scout") + ".json"; }
@@ -579,7 +634,7 @@
         c.found != null ? ["Programs whose page the capture found", fmt(c.found)] : null, c.extracted != null ? ["Records extracted (the capture; a reread can add some)", fmt(c.extracted)] : null].filter(Boolean));
       var CC = causesOf(c);
       pr.causes = Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); })
-        .map(function (k) { return [causeWord(M, k), CC[k], k]; });
+        .map(function (k) { return [causeSaid(M, k, c), CC[k], k]; });
       /* Records failing each machine check, from the capture's committed summary (failed_checks); a record can fail
          more than one, so these do not sum to the programs still to pass. Only the checks that failed any. */
       var fc = c.failed_checks || {}, fk = Object.keys(fc).filter(function (k) { return fc[k] > 0; }).sort(function (a, b) { return fc[b] - fc[a] || a.localeCompare(b); });
@@ -682,11 +737,12 @@
     var G = [];
     var CC = causesOf(c);
     Object.keys(CC).sort(function (a, b) { return CC[b] - CC[a] || a.localeCompare(b); }).forEach(function (k) {
-      G.push(causeWord(M, k).replace(/^./, function (x) { return x.toUpperCase(); }) + ": " + fmt(CC[k]) + " program" + (CC[k] === 1 ? "" : "s"));
+      /* Each names its dataset: a reader arriving from the SLO card read the units causes as SLO problems (finding 1). */
+      G.push("Program requirements, " + causeSaid(M, k, c).replace(/^./, function (x) { return x.toLowerCase(); }) + ": " + fmt(CC[k]) + " program" + (CC[k] === 1 ? "" : "s"));
     });
     if (c.scout && ((c.scout.challenge && c.scout.challenge !== "none") || c.scout.recommendation === "blocked"))
       G.push("Source scout: " + words(c.scout.challenge && c.scout.challenge !== "none" ? c.scout.challenge : c.scout.recommendation) + " (recommends " + words(c.scout.recommendation) + ")");
-    if (c.slo_queue) G.push("SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
+    if (c.slo_queue) G.push("Course SLOs, SLO read " + c.slo_queue.state + (c.slo_queue.why ? ": " + c.slo_queue.why : ""));
     var sp = c.spot_check;
     if (sp && sp.held) G.push("Display held: " + sp.differs + " spot-checked records differ from the catalog");
     else if (sp && sp.differs === 1) G.push("One spot-checked record differs from the catalog");
@@ -742,7 +798,7 @@
       if (w) w.addEventListener("click", function () { if (inPanel) pickCause(c, on ? null : k, k); else openPanel(c.id, '[data-expand="' + c.id + '"]', k); });
       return el("tr", { cls: on ? "cdd-on" : null }, [el("th", { scope: "row" }, [w || cap(x[0])]), el("td", { cls: "cdd-num", text: fmt(x[1]) })]);
     });
-    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Still to pass, by cause" }),
+    var t = el("table", { cls: "cdd-causes", "data-causes": "true" }, [el("caption", { text: "Program requirements still to pass, by cause" }),
       el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Cause" }), el("th", { scope: "col", cls: "cdd-num", text: "Programs" })])]),
       el("tbody", null, rows)]);
     if (!c) return t;
@@ -765,7 +821,8 @@
     Promise.resolve(p).then(function (r) {
       if (!r || !r.ok) throw new Error(key + " answered " + (r ? r.status : "nothing"));
       return r.json();
-    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [] }; },
+    }).then(function (j) { PROGS[key] = { state: "ok", rows: (j && Array.isArray(j.programs)) ? j.programs : [],
+      correction: j && typeof j.correction_rules === "boolean" ? j.correction_rules : null }; },
       function () { PROGS[key] = { state: "error" }; })
       .then(function () { redrawFor(c); });
   }
@@ -800,6 +857,154 @@
     }).then(function (j) { OUTS[key] = { state: "ok", d: j || {} }; }, function () { OUTS[key] = { state: "error" }; })
       .then(function () { if (String(S.panel) === String(c.id) && S.pane) redrawFor(c); });
   }
+  /* ── The SLO drill (Sam, Nov 16, relayed by COBIx on #3412, item 2): a subject row of the SLO pane opens to its
+     courses, and a course to its SLO and objective text. The words come from the public course_outcomes table, the
+     same fields and the same "newest read of each kind" rule CPL Pathways' outcome panel uses (cpl_pathways.js
+     OUT_SELECT, currentOutcomeRows), copied here because that module never loads on the Commons; paged 500 rows at a
+     time as its roepGetAll pages. The college's rows are read once, when its first subject opens, and kept for the
+     visit; nothing is written, and no outcome text reaches a committed file. A course meets its subject by the
+     builder's own key (kb/_build_commons_data_status.py course_key, subject_of). ── */
+  var OUT_SELECT = "course_code,course_title,kind,heading,lead,outcomes,shape,fingerprint,source_url,source_kind,source_system,read_run,loaded_at";
+  var OUT_SOURCE = { course_outline: "the course outline of record", catalog: "the catalog's course page" };
+  var OUT_KIND = { slo: "Student learning outcomes", objective: "Course objectives" };
+  var OUT_PAGE = 500;
+  var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
+  var DRILL = {}, DOPEN = {};
+  function courseKey(code) { return String(code || "").replace(/[\s-]+/g, "").toUpperCase(); }
+  function subjectOf(key) { var m = /^[A-Z&/]+/.exec(key); return m ? m[0] : "(no subject)"; }
+  /* A public read: the anon key, from the one session module, whatever the session holds. */
+  function restHeaders(extra) {
+    var Sx = window.CPL_SESSION, h = Sx && typeof Sx.authHeaders === "function" ? Sx.authHeaders(extra) : (extra || {});
+    if (h.apikey) h.Authorization = "Bearer " + h.apikey;
+    return h;
+  }
+  function restGetAll(path) {
+    function page(from) {
+      var p;
+      try { p = fetch(REST + path, { headers: restHeaders({ "Range-Unit": "items", Range: from + "-" + (from + OUT_PAGE - 1) }) }); } catch (e) { p = Promise.reject(e); }
+      return Promise.resolve(p).then(function (r) {
+        if (!r || !r.ok) throw new Error("course_outcomes answered " + (r ? r.status : "nothing"));
+        return r.json();
+      }).then(function (rows) { return rows || []; });
+    }
+    /* One page after another, over the path's own order, until a short page; a failed page fails the read. A
+       college's outlines run to a few thousand rows, so the waves CPL Pathways reads 17,000 records with are left out. */
+    var out = [];
+    function next(from) {
+      return page(from).then(function (rows) { out = out.concat(rows); return rows.length < OUT_PAGE ? out : next(from + OUT_PAGE); });
+    }
+    return next(0);
+  }
+  /* The newest read of each kind, one row per printed list (cpl_pathways.js currentOutcomeRows). */
+  function currentOutcomeRows(rows) {
+    var top = {}, seen = {};
+    rows.forEach(function (r) { var k = r.kind || "slo"; top[k] = Math.max(top[k] || 0, Number(r.read_run) || 0); });
+    return rows.filter(function (r) {
+      var k = r.kind || "slo", f = k + "|" + r.fingerprint;
+      if ((Number(r.read_run) || 0) !== top[k] || seen[f]) return false;
+      seen[f] = true;
+      return true;
+    });
+  }
+  /* The college's rows grouped by subject, then by course, each course holding its current lists, SLOs first. */
+  function drillGroup(rows) {
+    var byCourse = {};
+    rows.forEach(function (r) {
+      var k = courseKey(r.course_code);
+      if (!k) return;
+      (byCourse[k] = byCourse[k] || { key: k, code: r.course_code, title: r.course_title || "", rows: [] }).rows.push(r);
+      if (!byCourse[k].title && r.course_title) byCourse[k].title = r.course_title;
+    });
+    var bySubj = {};
+    Object.keys(byCourse).sort().forEach(function (k) {
+      var co = byCourse[k];
+      co.cur = currentOutcomeRows(co.rows).filter(function (r) { return (r.outcomes || []).length; })
+        .sort(function (a, b) { return (a.kind === "objective" ? 1 : 0) - (b.kind === "objective" ? 1 : 0); });
+      co.slo = co.cur.filter(function (r) { return r.kind !== "objective"; }).length;
+      co.obj = co.cur.length - co.slo;
+      delete co.rows;
+      (bySubj[subjectOf(k)] = bySubj[subjectOf(k)] || []).push(co);
+    });
+    return bySubj;
+  }
+  function loadDrill(c) {
+    var D = DRILL[c.name];
+    if (D && D.state !== "error") return;
+    DRILL[c.name] = { state: "loading" };
+    restGetAll("/course_outcomes?select=" + OUT_SELECT + "&kind=in.(slo,objective)&college=eq." + encodeURIComponent(c.name) + "&order=id")
+      .then(function (rows) { DRILL[c.name] = { state: "ok", bySubj: drillGroup(rows || []) }; },
+        function (e) { DRILL[c.name] = { state: "error", why: (e && e.message) || "no answer" }; })
+      .then(function () { paintDrill(c); });
+  }
+  function drillOpen(c) { return DOPEN[c.id] || (DOPEN[c.id] = { subj: {}, course: {} }); }
+  function domId(s) { return String(s).replace(/[^A-Za-z0-9]/g, function (ch) { return "_" + ch.charCodeAt(0).toString(16); }); }
+  function listsWords(co) {
+    return [co.slo ? plural(co.slo, "SLO list", "SLO lists") : "no SLO list", co.obj ? plural(co.obj, "objective list", "objective lists") : "no objective list"].join(", ");
+  }
+  function outBlock(o) {
+    var items = o.outcomes || [], kw = OUT_KIND[o.kind] || OUT_KIND.slo;
+    var list = o.shape === "paragraph" && items.length === 1 ? el("p", { text: items[0] })
+      : el("ol", null, items.map(function (t) { return el("li", { text: t }); }));
+    return el("section", { cls: "cdd-outblock", "data-kind": o.kind || "slo" }, [el("h5", { text: kw + " (" + fmt(items.length) + ")" }),
+      o.heading && String(o.heading).toLowerCase() !== kw.toLowerCase() ? el("p", { cls: "cdd-of", text: "Printed under " + o.heading }) : null,
+      o.lead ? el("p", { text: o.lead }) : null, list,
+      el("p", { cls: "cdd-of", text: "As printed in " + (OUT_SOURCE[o.source_kind] || "the college's page") + (o.source_system ? " (" + o.source_system + ")" : "") + (o.loaded_at ? ", read " + day(o.loaded_at) : "") + "." })]);
+  }
+  function courseText(co) {
+    return co.cur.length ? co.cur.map(outBlock) : [el("p", { cls: "cdd-of", "data-drill-empty": "course", text: "No SLO or objective text is collected for " + co.code + " yet." })];
+  }
+  /* The courses of one subject: each course's name opens its text below it. */
+  function subjCourses(c, subj, sid) {
+    var D = DRILL[c.name], st = drillOpen(c);
+    if (!D || D.state === "loading") return [el("p", { cls: "cdd-of", role: "status", text: "Reading the course outlines." })];
+    if (D.state === "error") return [el("p", { cls: "cdd-state", text: "The course outlines could not be read (" + D.why + "). The counts above stand; open the subject again to retry." })];
+    var cos = D.bySubj[subj] || [];
+    if (!cos.length) return [el("p", { cls: "cdd-of", "data-drill-empty": "subject", text: "No " + subj + " course has collected SLO or objective text in the live table yet." })];
+    return [el("ul", { cls: "cdd-drill" }, cos.map(function (co, j) {
+      var cid = sid + "-c" + j, open = !!st.course[subj + "|" + co.key];
+      var b = el("button", { type: "button", cls: "cmn-word", id: cid + "-b", "data-course": co.code, "aria-expanded": open ? "true" : "false", "aria-controls": cid,
+        text: co.code + (co.title ? " " + co.title : "") });
+      var box = el("div", { cls: "cdd-drill-text", id: cid, role: "region", "aria-label": co.code + " SLOs and objectives" }, open ? courseText(co) : []);
+      if (!open) box.setAttribute("hidden", "");
+      b.addEventListener("click", function () {
+        var now = !st.course[subj + "|" + co.key];
+        st.course[subj + "|" + co.key] = now;
+        b.setAttribute("aria-expanded", now ? "true" : "false");
+        box.textContent = "";
+        if (now) { courseText(co).forEach(function (n) { box.appendChild(n); }); box.removeAttribute("hidden"); }
+        else box.setAttribute("hidden", "");
+      });
+      return el("li", { "data-course-row": co.code }, [b, el("span", { cls: "cdd-of", text: " " + listsWords(co) }), box]);
+    }))];
+  }
+  /* The rows already drawn take the read in place, so the focus and the scroll stay where they were. */
+  function paintDrill(c) {
+    if (!VIEW.panel || String(S.panel) !== String(c.id)) return;
+    Array.prototype.forEach.call(VIEW.panel.querySelectorAll("tr.cdd-subj-more[data-subj]"), function (tr) {
+      if (tr.hasAttribute("hidden")) return;
+      var td = tr.firstChild;
+      td.textContent = "";
+      subjCourses(c, tr.getAttribute("data-subj"), tr.id).forEach(function (n) { td.appendChild(n); });
+    });
+  }
+  function subjRows(c, r, i) {
+    var st = drillOpen(c), sid = "cdd-sx-" + i + "-" + domId(r.subject), open = !!st.subj[r.subject];
+    var b = el("button", { type: "button", cls: "cmn-word", id: sid + "-b", "data-subj": r.subject, "aria-expanded": open ? "true" : "false", "aria-controls": sid, text: r.subject });
+    var more = el("tr", { cls: "cdd-subj-more", id: sid, "data-subj": r.subject }, [el("td", { colspan: "3" }, open ? subjCourses(c, r.subject, sid) : [])]);
+    if (!open) more.setAttribute("hidden", "");
+    b.addEventListener("click", function () {
+      var now = !st.subj[r.subject];
+      st.subj[r.subject] = now;
+      b.setAttribute("aria-expanded", now ? "true" : "false");
+      var td = more.firstChild;
+      td.textContent = "";
+      if (!now) { more.setAttribute("hidden", ""); return; }
+      more.removeAttribute("hidden");
+      loadDrill(c);
+      subjCourses(c, r.subject, sid).forEach(function (n) { td.appendChild(n); });
+    });
+    return [el("tr", null, [el("th", { scope: "row" }, [b]), el("td", { cls: "cdd-num", text: fmt(r.slo_courses) }), el("td", { cls: "cdd-num", text: fmt(r.objective_courses) })]), more];
+  }
   function pickCause(c, k, from) {
     S.cause = k; S.pane = null;
     drawPanel();
@@ -809,7 +1014,7 @@
   }
   function causePrograms(c, k) {
     var M = VIEW.M, n = causesOf(c)[k] || 0, LW = (M.rule || {}).levers || {};
-    var head = el("h4", { id: "cdd-cprogs-h", text: cap(causeWord(M, k)) + ": " + plural(n, "program", "programs") });
+    var head = el("h4", { id: "cdd-cprogs-h", text: "Program requirements, " + causeSaid(M, k, c).replace(/^./, function (x) { return x.toLowerCase(); }) + ": " + plural(n, "program", "programs") });
     var P = c.programs_file ? PROGS[c.programs_file] : null, body;
     if (!c.programs_file) body = el("p", { cls: "cdd-of", text: "The committed files hold no program list for this college." });
     else if (!P || P.state === "loading") body = el("p", { cls: "cdd-of", role: "status", text: "Reading the programs." });
@@ -819,9 +1024,12 @@
       body = rows.length ? el("ul", { cls: "cdd-progs" }, rows.map(function (r) {
         var t = r.title || ("Program " + r.cn);
         var lw = LW[r.lever] || {};
+        var us = unitsSaid(r), band = awardBand(r.award), mv = leverSaid(lw, r, P, c);
         return el("li", { "data-cn": r.cn }, [r.url ? paneWord(t, { k: "program", a: r.cn }, c.id) : el("span", { cls: "cdd-ptitle", text: t }),
-          el("span", { cls: "cdd-of", text: [r.award, "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
-          lw.what ? el("span", { cls: "cdd-of", text: "What would move it: " + lw.what + (lw.kind ? " (" + lw.kind + ")" : "") }) : null]);
+          el("span", { cls: "cdd-of", text: [awardName(r.award), "control number " + r.cn, r.url ? null : "no catalog page found"].filter(Boolean).join("; ") }),
+          us ? el("span", { cls: "cdd-of cdd-units", "data-units": "true", text: us }) : null,
+          band ? el("span", { cls: "cdd-of", "data-band": "true", text: band }) : null,
+          mv ? el("span", { cls: "cdd-of", "data-lever": r.lever || "", text: mv }) : null]);
       })) : el("p", { cls: "cdd-of", text: "The program list holds none for this cause; the list and the count were built on different days." });
     }
     return el("section", { cls: "cdd-cprogs", id: "cdd-cprogs", "aria-labelledby": "cdd-cprogs-h", "data-cause-programs": k }, [head, body]);
@@ -1027,8 +1235,10 @@
       /* The capture matched this page to the program; a match can be wrong (review of #3261: one program opened
          another's page), so the pane says matched, never that the page is the program's. */
       return { title: r.title || "Program " + r.cn, tab: isHttp(r.url) ? r.url : null, basis: outside,
-        kids: [dl([["Award", r.award || "TBA"], ["Control number", r.cn], ["Still to pass because", cap(causeWord(M, r.cause))],
-          lw.what ? ["What would move it", cap(lw.what) + (lw.kind ? " (" + lw.kind + ")" : "")] : null, ["The page the capture matched", r.url || "No catalog page found"]].filter(Boolean)),
+        kids: [dl([["Award", awardName(r.award) || "TBA"], awardBand(r.award) ? ["The state's size band", awardBand(r.award)] : null, ["Control number", r.cn],
+          ["Still to pass because", "Program requirements: " + causeSaid(M, r.cause, c).replace(/^./, function (x) { return x.toLowerCase(); })],
+          unitsSaid(r) ? ["Units", unitsSaid(r)] : null,
+          lw.what ? ["What would move it", leverSaid(lw, r, P, c).replace(/^What would move it: /, "").replace(/^./, function (x) { return x.toUpperCase(); })] : null, ["The page the capture matched", r.url || "No catalog page found"]].filter(Boolean)),
           r.url ? el("p", { cls: "cdd-of", text: "The capture matched this page to the program by its title and award. A match can be wrong; the new tab shows the page itself." }) : null].filter(Boolean) };
     }
     if (p.k === "slos" || p.k === "plos") return outcomesPane(M, c, p.k);
@@ -1053,13 +1263,15 @@
       if (wait) kids.push(wait);
       else if (!cs || !(cs.by_subject || []).length) kids.push(el("p", { cls: "cdd-of", text: "No committed course outline read names this college yet." }));
       else {
-        kids.push(el("p", { cls: "cdd-of", text: fmt(cs.slo_courses) + " courses with SLOs and " + fmt(cs.objective_courses) + " with objectives, read " + (cs.read_at ? when(cs.read_at) : "on a date the file does not give") + ". Counts only; the outcomes' own words live in the course outline reads." }));
+        kids.push(el("p", { cls: "cdd-of", text: fmt(cs.slo_courses) + " courses with SLOs and " + fmt(cs.objective_courses) + " with objectives, read " + (cs.read_at ? when(cs.read_at) : "on a date the file does not give") + ". A subject opens to its courses, read from the live table, and a course's name shows its SLOs and objectives." }));
         kids.push(el("p", { cls: "cdd-of", "data-subject-note": "true", text: "A district-wide outline counts once for each college that names it, and a course counts here whether or not it sits on an Active program, so this total can differ from the live figure above." }));
         kids.push(el("div", { cls: "cdd-wrap", role: "region", "aria-label": "SLO and objective courses by subject", tabindex: "0" }, [el("table", { cls: "cdd-causes cdd-subj" }, [
           el("caption", { text: "Courses by subject" }),
           el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Subject" }), el("th", { scope: "col", cls: "cdd-num", text: "With SLOs" }), el("th", { scope: "col", cls: "cdd-num", text: "With objectives" })])]),
-          el("tbody", null, cs.by_subject.map(function (r) { return el("tr", null, [el("th", { scope: "row", text: r.subject }), el("td", { cls: "cdd-num", text: fmt(r.slo_courses) }), el("td", { cls: "cdd-num", text: fmt(r.objective_courses) })]); }))])]));
+          el("tbody", null, [].concat.apply([], cs.by_subject.map(function (r, i) { return subjRows(c, r, i); })))])]));
       }
+      kids.push(el("h3", { id: "cdd-plo-h", text: "Program learning outcomes" }));
+      ploBody(M, c, O, lv, lr).forEach(function (n) { kids.push(n); });
       var vw = el("button", { type: "button", cls: "cmn-word", "data-view": "slos", text: "Every college with collected SLOs" });
       vw.addEventListener("click", function () { S.panel = null; S.pane = null; go("slos"); });
       kids.push(el("p", { cls: "cdd-of" }, [vw]));
@@ -1069,19 +1281,26 @@
     kids.push(lv ? dl([["Active programs whose record carries PLOs", fmt(lr.active_with_plos) + " of " + fmt(lp.active)]])
       : tba(liveRead(M) ? "The live read holds no counts for this college." : liveReason(M)));
     kids.push(el("h3", { text: "Each program's PLOs, from the committed records" }));
-    var pl = O && O.state === "ok" ? (O.d.programs || []) : null;
-    if (wait) kids.push(wait);
-    else if (!pl || !pl.length) kids.push(el("p", { cls: "cdd-of", text: "No committed record carries PLOs for this college." }));
-    else {
-      kids.push(el("p", { cls: "cdd-of", text: plural(pl.length, "program carries", "programs carry") + " PLOs in its filed record, in the record's own words. A program's name shows them." }));
-      if (lv && lr.active_with_plos != null && lr.active_with_plos !== pl.length)
-        kids.push(el("p", { cls: "cdd-of", "data-plo-gap": "true", text: fmt(lr.active_with_plos) + " Active programs carry PLOs in the live table; the committed records hold the words for " + fmt(pl.length) + " programs. The rest were loaded from reads whose records are not committed here, or are not Active." }));
-      kids.push(el("div", { cls: "cdd-plos" }, pl.map(function (r) {
-        return el("details", { cls: "cdd-plo", "data-cn": r.cn }, [el("summary", { text: (r.title || "Program " + r.cn) + (r.award ? ", " + r.award : "") + " (" + plural(r.outcomes.length, "PLO", "PLOs") + ")" }),
-          el("ol", null, r.outcomes.map(function (o) { return el("li", { text: o }); }))]);
-      })));
-    }
+    ploBody(M, c, O, lv, lr).forEach(function (n) { kids.push(n); });
     return { title: "Program PLOs", basis: "A view in COBI, from the live read and the committed program records.", kids: kids };
+  }
+  /* Each program's PLOs from the college's committed outcomes file, the one list both panes draw (#3412, item 3: the
+     SLO pane reaches PLOs too, from the same file; no second store). */
+  function ploBody(M, c, O, lv, lr) {
+    var out = [];
+    if (!c.outcomes_file) return [el("p", { cls: "cdd-of", text: "The committed files hold no program record with PLOs for this college." })];
+    if (!O || O.state === "loading") return [el("p", { cls: "cdd-of", role: "status", text: "Reading what is collected." })];
+    if (O.state === "error") return [el("p", { cls: "cdd-state", text: "The outcomes file could not be read (" + c.outcomes_file + "). The live counts above stand." })];
+    var pl = O.d.programs || [];
+    if (!pl.length) return [el("p", { cls: "cdd-of", text: "No committed record carries PLOs for this college." })];
+    out.push(el("p", { cls: "cdd-of", text: plural(pl.length, "program carries", "programs carry") + " PLOs in its filed record, in the record's own words. A program's name shows them." }));
+    if (lv && lr.active_with_plos != null && lr.active_with_plos !== pl.length)
+      out.push(el("p", { cls: "cdd-of", "data-plo-gap": "true", text: fmt(lr.active_with_plos) + " Active programs carry PLOs in the live table; the committed records hold the words for " + fmt(pl.length) + " programs. The rest were loaded from reads whose records are not committed here, or are not Active." }));
+    out.push(el("div", { cls: "cdd-plos" }, pl.map(function (r) {
+      return el("details", { cls: "cdd-plo", "data-cn": r.cn }, [el("summary", { text: (r.title || "Program " + r.cn) + (r.award ? ", " + r.award : "") + " (" + plural(r.outcomes.length, "PLO", "PLOs") + ")" }),
+        el("ol", null, r.outcomes.map(function (o) { return el("li", { text: o }); }))]);
+    })));
+    return out;
   }
 
   /* ── Colleges with collected SLOs (S649; Sam, in session: "need a link to show the colleges with collected slos").
@@ -1125,6 +1344,28 @@
   /* ── the side panel: the same college beside the list (the Funding Follow-up Dashboard's drawer: its heading takes
      the focus on open, Escape closes it and the focus returns to the word that opened it); a non-modal dialog, so the
      page beside it stays live (#3310). Its width lasts the visit; nothing is stored. ── */
+  /* Sam's blocked-catalog hunt (S678, #3464 item 8: "Make sure those blocked catalogs and cors are on my cdc to do"; "To
+     do should be on both cdc and commons"): the one to-do, from the same file the Commons' Waiting on a person list
+     reads (kb/_blocked_catalogs.py). A college leaves it once its catalog or outlines are filed; none left, no block. */
+  function blockedTodo(M) {
+    var b = M.blocked;
+    if (!b || !Array.isArray(b.colleges) || !b.open) return null;
+    var open = b.colleges.filter(function (c) { return !c.filed; });
+    var sec = el("section", { cls: "cdd-psec cdd-todo", id: "cdd-blocked", "aria-labelledby": "cdd-blocked-h", "data-todo": "blocked-catalogs" });
+    sec.appendChild(el("h3", { id: "cdd-blocked-h", cls: "cdd-h3", text: "To do: " + (b.title || "Find catalogs or course outlines for the colleges whose sites block automated reading") }));
+    sec.appendChild(el("p", { cls: "cdd-src", text: fmt(open.length) + " of " + fmt(b.colleges.length) + " colleges still to find, " + fmt(b.local_courses_open)
+      + " local courses in all; " + (b.still_taught_total != null ? fmt(b.still_taught_total) + " of them are still taught, and only those are hunted. " : "")
+      + "File a catalog or the course outlines in " + (b.file_in || "kb/hand_filed_catalogs/outlines") + " and the college clears here and on the Commons." }));
+    var ul = el("ul", { cls: "cdd-todo-list" });
+    open.forEach(function (c) {
+      ul.appendChild(el("li", { "data-todo-college": c.slug }, [c.college + ": " + fmt(c.local_courses) + " local courses, " + (c.reason || "the site blocks automated reading") + ". ",
+        /* The address as words: this page keeps every link out of it to the panel's one new-tab control. */
+        "Its catalog: " + (c.catalog_url || "TBA")]));
+    });
+    sec.appendChild(ul);
+    sec.appendChild(el("p", { cls: "cdd-src", text: Array.isArray(b.courses) && b.courses.length ? "" : "The course-by-course list, still-taught courses first: TBA until the hunt list is filed with the courses." }));
+    return sec;
+  }
   function section(h, kids) { return el("section", { cls: "cdd-psec" }, [el("h3", { text: h })].concat(kids)); }
   /* The panel's further cards, each module its own file (#3310: How it's collected, Program pathway maps, Data
      sources in commons_data_cards.js). A module loads the first time a panel draws, then the panel draws again; it
@@ -1444,6 +1685,8 @@
     });
     wrap.appendChild(grid);
 
+    var hunt = blockedTodo(M);
+    if (hunt) wrap.appendChild(hunt);
     var list = el("section", { cls: "cdd-list", "aria-labelledby": "cdd-list-h" });
     list.appendChild(el("h3", { id: "cdd-list-h", cls: "cdd-h3", tabindex: "-1", text: "Colleges" }));
     var search = el("input", { type: "search", id: "cdd-q", cls: "cdd-q", autocomplete: "off", value: S.q });
@@ -1901,6 +2144,12 @@
     ".cdd-paneacts a.cdd-newtab { color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; min-height:24px; display:inline-flex; align-items:center; }",
     ".cdd-panel h3 { margin:12px 0 4px; font-size:1rem; color:var(--cmn-heading); }",
     ".cdd-plos { display:grid; gap:6px; } details.cdd-plo summary { cursor:pointer; min-height:24px; color:var(--cmn-ink); }",
+    "tr.cdd-subj-more > td { padding:2px 0 8px 12px; }",
+    "ul.cdd-drill { list-style:none; margin:0; padding:0; display:grid; gap:4px; }",
+    ".cdd-drill-text { margin:4px 0 8px 12px; padding-left:10px; border-left:2px solid var(--cmn-line); display:grid; gap:6px; }",
+    ".cdd-outblock h5 { margin:2px 0; font-size:.86rem; color:var(--cmn-heading); }",
+    ".cdd-outblock ol { margin:2px 0 4px; padding-left:22px; display:grid; gap:4px; font-size:.9rem; color:var(--cmn-ink-2); }",
+    ".cdd-outblock p { margin:2px 0; font-size:.9rem; color:var(--cmn-ink-2); }",
     "details.cdd-plo ol { margin:4px 0 6px; padding-left:22px; display:grid; gap:4px; font-size:.9rem; color:var(--cmn-ink-2); }",
     ".cdd-dsword { margin-top:6px; display:flex; flex-wrap:wrap; gap:4px 16px; align-items:center; }",
     ".cdd-level { display:block; font-weight:700; color:var(--cmn-heading); }",
@@ -2030,6 +2279,6 @@
     boot: boot, render: render, model: model, listFor: listFor, tiles: tiles, address: address, pick: pick, load: load, age: age,
     datasets: datasets, gaps: gaps, asks: asks, apiCount: apiCount, parseRouteViews: VIEWS, go: go, slugOf: slugOf, parseRoute: parseRoute, openPanel: openPanel, closePanel: closePanel, PW: PW,
     FILE: FILE, FILTERS: FILTERS, COLUMNS: COLUMNS, CSS: CSS, _state: S,
-    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pane = null; S.pw = PW.start; PROGS = {}; OUTS = {}; }
+    _reset: function () { cache = null; VIEW.M = null; S.filter = "all"; S.view = ""; S.platform = ""; S.district = ""; S.q = ""; S.sort = null; S.open = null; S.panel = null; S.cause = null; S.pane = null; S.pw = PW.start; PROGS = {}; OUTS = {}; DRILL = {}; DOPEN = {}; }
   };
 })();

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s678_map_ace_catalog_cr.sql",
+ "name": "s678_map_ace_catalog_cr",
+ "version": "20261118003906",
+ "sha256": "9f3582024b03c2d034a08d91505d2dcce8ada9aaef9228a036f04ed1013cdc9f",
+ "run": "44209026812",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

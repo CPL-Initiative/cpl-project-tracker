@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-15T22:53:51Z",
-  "session": 661,
-  "moniker": "SkyKnot",
+  "written_at": "2026-11-18T03:20:11Z",
+  "session": 679,
+  "moniker": "SkyKinglet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_662_handoff.md",
+  "handoff": "docs/session_680_handoff.md",
   "next_step": {
-    "title": "Read each plain sibling's own 2025-2026 catalog entry",
-    "text": "List the 99 programs whose plain version and Cal-GETC 2.0 version share a page, by college, then read Riverside City's 2025-2026 catalog for each plain one and file it with its catalog year, as Sam ruled both are kept."
+    "title": "Golden West's objectives reread",
+    "text": "Step 11 for Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the run that tests the general education slot on captured pages, so the slot rule can be turned on, and the switch that holds back programs with no state course list."
   },
   "calls": [
     {
@@ -338,68 +338,84 @@
   },
   "changes": [
     {
-      "at": "2026-11-15T22:44:00Z",
-      "text": "The College Collections ETA tops College Data Collection: a band with each college's projected Phase 1 date, and a card that opens the full clock in the side panel. Every college row also opens that college's CPL Pathways view beside the list."
+      "at": "2026-11-18T02:41:00Z",
+      "text": "Sam's three rulings of Nov 17 are carried out (PR 3478) and applied to the filed records (PR 3481, run 44224714543, after a clean read first). 243 records now pass their unit check: 78 local degrees whose general education overlaps the major, at 21 colleges, and 165 records whose total meets the low end of the catalog's printed unit range, at 56 colleges. No record was marked checked. The undo is written and not run."
     },
     {
-      "at": "2026-11-15T22:12:00Z",
-      "text": "The College Collections Plan, the agreed plan for collecting every college's data, is on one page in the Library as a draft for the team."
+      "at": "2026-11-18T02:30:00Z",
+      "text": "73 local degrees short of 60 units now carry the note that the major matches and the electives are probably not listed, and 9 short required lists keep their note. No record carries a confidence figure for its course list, so the note is the only mark."
     },
     {
-      "at": "2026-11-15T19:50:00Z",
-      "text": "The controls that move the projected date on the ETA clock are small chips, so the date and the bar graph keep the focus."
+      "at": "2026-11-18T02:30:00Z",
+      "text": "The rule that reads a general education area and its units as an open slot is built and turned off. It runs inside every extraction, so it waits for a test run on pages already captured."
     },
     {
-      "at": "2026-11-15T17:59:00Z",
-      "text": "The Commons ETA clock reads the harvest's daily headline and the live counts to project when each phase of the data collection finishes."
+      "at": "2026-11-17T23:05:00Z",
+      "text": "Today's headline pair, 20,282 active programs and 14,632 with complete requirements at 118 colleges, came from the census runner's live read at 23:05 UTC (run 44195716880), not from a query in the session."
     },
     {
-      "at": "2026-11-15T09:03:00Z",
-      "text": "Six colleges reread on the course-id route: 159 records replaced, each with its before-values in a receipt. Three programs move from failing to passing and none falls."
+      "at": "2026-11-17T23:02:00Z",
+      "text": "The Commons now shows what the reads have spent, from each read's own cost, beside what the filed records cost (PR 3465). The census of collected data runs every day at 17:47 UTC instead of only when someone starts it."
     },
     {
-      "at": "2026-11-15T08:00:00Z",
-      "text": "Santa Ana's course objectives loaded: 1,362 rows, with 1,366 SLO rows left as they were."
+      "at": "2026-11-17T20:53:00Z",
+      "text": "Chaffey read again so that programs listed without their own requirements take back the catalog page another program had been read from, the seventh and last college of this pass. One more program now has complete requirements, 182 of 192. Physical Science 18435 had been read from the transfer general education page; its page is not found now, so no record is filed for it."
     },
     {
-      "at": "2026-11-15T07:48:00Z",
-      "text": "Every paid model caller now stops at 40 dollars a run through the one spend meter, which reached main with card 10."
+      "at": "2026-11-17T14:30:00Z",
+      "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
     },
     {
-      "at": "2026-11-15T07:00:00Z",
-      "text": "The Riverside City capture was read: 240 of 268 programs on their own pages, and 35 of 41 transfer degrees claim their own page. Colleges on the same catalog system may capture again."
+      "at": "2026-11-17T10:40:00Z",
+      "text": "Norco's Music Industry Studies: Performance degree and certificate now add up: each ensemble option counts its courses the number of times its own heading says, so every option comes to its printed 8 units."
     },
     {
-      "at": "2026-11-15T06:36:00Z",
-      "text": "A district-format control number now settles which program owns a GE page."
+      "at": "2026-11-17T09:03:00Z",
+      "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
     },
     {
-      "at": "2026-11-15T03:21:00Z",
-      "text": "Six colleges rescored under the prefix aliases merged as one wave. Statewide passing rose 15,840 to 15,856 of 22,335; one display build follows the course-id rescore."
+      "at": "2026-11-17T06:46:00Z",
+      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
     },
     {
-      "at": "2026-11-15T03:21:00Z",
-      "text": "A catalog's header fragment is never a program page, on all three code paths of the page finder."
+      "at": "2026-11-17T06:52:00Z",
+      "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
     },
     {
-      "at": "2026-11-15T02:58:00Z",
-      "text": "A GE-pattern page has one owner: the owner is cached per page, and a printed control number names the owner only when that program's title check agrees. A free Riverside City capture was sent to confirm it."
+      "at": "2026-11-17T03:07:00Z",
+      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
     },
     {
-      "at": "2026-11-14T18:39:58Z",
-      "text": "A course's prefix now comes from the Program Course File's course id first. 7 of the 17 prefix-alias pairs retire and 10 stay; on filed records 8 programs would newly pass and none would fail."
+      "at": "2026-11-17T03:19:00Z",
+      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
     },
     {
-      "at": "2026-11-14T17:57:00Z",
-      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reread from their filed pages: passing rose 141 to 144, 132 to 134, 128 to 130, 161 to 162 and 197 to 198. Their displays wait on COBIx's spot-check."
+      "at": "2026-11-17T03:28:00Z",
+      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
     },
     {
-      "at": "2026-11-14T17:45:01Z",
-      "text": "curriQunet captures record twin ids. A capture on that code showed Riverside City's missing pages come from the claim rule, which skipped each transfer degree's own GE page; the fix is drafted."
+      "at": "2026-11-17T03:36:00Z",
+      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
     },
     {
-      "at": "2026-11-14T15:23:00Z",
-      "text": "Merced, Moreno Valley, Norco, San Bernardino Valley and Diablo Valley were reconciled again from their filed pages under the new prefix aliases, each on its own branch; nothing is written until each compare is read."
+      "at": "2026-11-16T23:45:00Z",
+      "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
+    },
+    {
+      "at": "2026-11-16T22:15:00Z",
+      "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
+    },
+    {
+      "at": "2026-11-16T22:15:00Z",
+      "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
+    },
+    {
+      "at": "2026-11-16T18:30:00Z",
+      "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
+    },
+    {
+      "at": "2026-11-16T18:30:00Z",
+      "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
     }
   ],
   "headline": [
@@ -636,16 +652,28 @@
       "active": 20282,
       "complete": 14617,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-16",
+      "active": 20282,
+      "complete": 14617,
+      "colleges": 118
+    },
+    {
+      "day": "2026-11-17",
+      "active": 20282,
+      "complete": 14632,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-16T06:12:00Z"
+    "at": "2026-11-17T15:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-15",
-    "gaps": 3203,
+    "day": "2026-11-17",
+    "gaps": 3212,
     "parts": {
       "links": {
         "catalog": [
@@ -662,11 +690,11 @@
         ]
       },
       "roep": [
-        19950,
+        19961,
         20282
       ],
       "coci": [
-        16747,
+        16753,
         20282
       ],
       "outcomes": {
@@ -675,12 +703,12 @@
           88736
         ],
         "plo": [
-          16747,
+          16753,
           20282
         ]
       },
       "careers": [
-        15711,
+        15743,
         20282
       ]
     }

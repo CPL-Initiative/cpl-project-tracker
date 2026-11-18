@@ -141,15 +141,45 @@ check("official: the derived partner of a CCN base reads both ways",
 
 
 # 5. Byte-identical with no honors_of row: rebuild rows from the committed overlay; fold with main's code and this.
+# Two overlay keys come from the fold, never from a field row (#3467, issue 3447), and the rebuild writes each the way
+# the live table holds it:
+#   ruling: a `ccr_procedure_request` row keyed `_CCR_PROCEDURE_REQUEST::<when>-<M_ID>` (coci_lookup.js ccRule), its
+#     JSON value naming the M-ID, the ruling and its target, saved at the ruling's `at` by the person whose discipline
+#     row on that M-ID lands it (ac.ruling_landed). The live value carries more keys (words, signals); the fold reads
+#     only these three.
+#   validated_at / validated_by: ac.stamp_person_validation writes them from a person's discipline row on a merge
+#     target, after the field rows fold. A row carries them only where the stamp cannot account for them (a live
+#     validation PATCH); a row carrying a stamped value would fold it before the ruling and reorder the entry.
+RULE_KEY_PREFIX = "_CCR_PROCEDURE_REQUEST::"   # coci_lookup.js RULE_PREFIX
+
+
+def rule_row_for(cid, ruling, reviewer):
+    at = ruling["at"]
+    return {"course_id": RULE_KEY_PREFIX + at[:19] + "Z-" + cid.replace(" ", "_"), "field": ac.RULE_FIELD,
+            "value": json.dumps({"mid": cid, "ruling": ruling.get("ruling"), "to": ruling.get("to")}),
+            "reviewer_email": reviewer, "reviewed_at": at}
+
+
 def rows_from_overlay(doc):
-    out = []
-    for cid, e in doc["curations"].items():
-        fields = [k for k in e if k in ac.FIELDS]
-        for f in fields:
-            out.append({"course_id": cid, "field": f, "value": e[f], "reviewer_email": e.get("reviewed_by"),
-                        "reviewed_at": e.get("reviewed_at"), "validated_at": e.get("validated_at"),
-                        "validated_by": e.get("validated_by")})
-    return out
+    def build(explicit):
+        out = []
+        for cid, e in doc["curations"].items():
+            for f in [k for k in e if k in ac.FIELDS]:
+                r = {"course_id": cid, "field": f, "value": e[f], "reviewer_email": e.get("reviewed_by"),
+                     "reviewed_at": e.get("reviewed_at")}
+                if cid in explicit:
+                    r.update(validated_at=e.get("validated_at"), validated_by=e.get("validated_by"))
+                out.append(r)
+            if isinstance(e.get("ruling"), dict):
+                out.append(rule_row_for(cid, e["ruling"], e.get("reviewed_by")))
+        return out
+    base = build(set())
+    stamped = {cid: {} for cid in doc["curations"]}
+    ac.stamp_person_validation(stamped, base)
+    explicit = {cid for cid, e in doc["curations"].items()
+                if e.get("validated_at") and (e.get("validated_at"), e.get("validated_by"))
+                != (stamped[cid].get("validated_at"), stamped[cid].get("validated_by"))}
+    return build(explicit)
 
 
 committed_text = open(os.path.join(KB, "coci_curation.json"), encoding="utf-8").read()
@@ -165,9 +195,41 @@ new_text = ac.serialize(ac.overlay_doc(cur, honors, committed["_synced_at"]))
 honors_rows = [r for r in rows if r["field"] == "honors_of"]
 check("byte-identical: a committed honors_of row never names its own id as its base",
       all(r["course_id"] != r["value"] for r in honors_rows))
+# Issue 3447: the fold now stamps a merge target's validated_at from a person's discipline row (the confirmation
+# PATCH the row policy refused). Until the next daily sync commits those stamps, the committed overlay lacks them, so
+# the identity is pinned against the committed overlay with the same stamp applied; the stamp is idempotent, so once
+# the sync lands this is the committed bytes exactly.
+expected = json.loads(committed_text)
+ac.stamp_person_validation(expected["curations"], rows)
 check("byte-identical: today's overlay, rebuilt as rows, folds back to the committed bytes",
-      new_text == committed_text)
+      new_text == ac.serialize(expected))
 check("byte-identical: no honors key appears without the field", "_honors" not in new_text)
+# The round trip carries the fold's own keys (#3467): a ruling, a stamped validation and an explicit one.
+RT = {"curations": {
+    "KINE M1150": {"discipline": "Kinesiology", "reviewed_by": "person@example.org",
+                   "reviewed_at": "2026-11-09T14:55:41.687122+00:00",
+                   "ruling": {"ruling": "keep", "to": None, "at": "2026-11-09T14:55:41.208608+00:00"}},
+    "KINE M1663": {"discipline": "Nutritional Science/Dietetics", "reviewed_by": "person@example.org",
+                   "reviewed_at": "2026-11-09T15:04:32.986406+00:00",
+                   "ruling": {"ruling": "move", "to": "Nutritional Science/Dietetics",
+                              "at": "2026-11-09T15:04:32.751379+00:00"},
+                   "validated_at": "2026-11-09T15:04:32.986406+00:00", "validated_by": "person@example.org"},
+    "KINE M1664": {"merge_into": "KINE M1663", "reviewed_by": "merge-s1" + ac.BOT_SUFFIX,
+                   "reviewed_at": "2026-11-01T00:00:00+00:00"},
+    "AUTB M1071": {"discipline": "Automotive Technology", "reviewed_by": "person@example.org",
+                   "reviewed_at": "2026-10-19T22:38:25.197+00:00",
+                   "validated_at": "2026-10-20T10:00:00+00:00", "validated_by": "verifier@example.org"},
+}}
+rt_rows = rows_from_overlay(RT)
+rt_cur, _, rt_honors = ac.fold_rows(rt_rows)
+check("round trip: a ruling row is written the way the live table holds it",
+      any(r["field"] == "ccr_procedure_request" and r["course_id"].startswith(RULE_KEY_PREFIX)
+          and json.loads(r["value"])["mid"] == "KINE M1150" and r["reviewed_at"] == RT["curations"]["KINE M1150"]["ruling"]["at"]
+          for r in rt_rows))
+check("round trip: a ruling entry, a stamped and an explicit validation fold back unchanged, keys in order",
+      json.dumps(rt_cur) == json.dumps(RT["curations"]) and not rt_honors)
+check("round trip: only the explicit validation rides on a row",
+      {r["course_id"] for r in rt_rows if r.get("validated_at")} == {"AUTB M1071"})
 
 # 6. The live re-key moves honors_of with merge_into.
 check("re-key: honors_of is an id pointer", rk.POINTER_FIELDS == ("merge_into", "honors_of")

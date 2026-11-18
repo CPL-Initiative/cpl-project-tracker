@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-15T06:20:07+00:00",
+ "_reference_generated_at": "2026-11-18T03:59:11+00:00",
  "counts": {
-  "certs_linked": 238,
-  "titles_linked": 286,
-  "holds": 275,
-  "bundles": 49,
+  "certs_linked": 229,
+  "titles_linked": 281,
+  "holds": 270,
+  "bundles": 45,
   "aligned": 11,
   "codes_not_in_catalog": [
    "G1"
@@ -370,13 +370,6 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC1433": {
-   "code": null,
-   "name": "Commercial Electrician",
-   "catalog_name": "Commercial Electrician",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
   "ITC1437": {
    "code": null,
    "name": "Construction Foreman",
@@ -395,20 +388,6 @@
    "code": null,
    "name": "Industrial Carpenter",
    "catalog_name": "Industrial Carpenter",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
-  "ITC1460": {
-   "code": null,
-   "name": "Industrial Electrician",
-   "catalog_name": "Industrial Electrician",
-   "issuer": "National Center for Construction Education and Research (NCCER)",
-   "family": "NCCER"
-  },
-  "ITC1502": {
-   "code": null,
-   "name": "NCCER Commercial Electrician",
-   "catalog_name": "NCCER Commercial Electrician",
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
@@ -489,52 +468,10 @@
    "issuer": "American Society of Mechanical Engineers International",
    "family": "ASME"
   },
-  "ITC2466": {
-   "code": null,
-   "name": "AutoCAD Certified Professional",
-   "catalog_name": "AutoCAD Certified Professional",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2467": {
-   "code": null,
-   "name": "Autodesk Associate (Certified User) AutoCAD",
-   "catalog_name": "Autodesk Associate (Certified User) AutoCAD",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
   "ITC2471": {
    "code": null,
    "name": "Autodesk Certified User",
    "catalog_name": "Autodesk Certified User",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2474": {
-   "code": null,
-   "name": "AutoCAD Certified User",
-   "catalog_name": "AutoCAD Certified User",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2478": {
-   "code": null,
-   "name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
-   "catalog_name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2483": {
-   "code": null,
-   "name": "Autodesk Certified Professional in Revit for Architectural Design",
-   "catalog_name": "Autodesk Certified Professional in Revit for Architectural Design",
-   "issuer": "Autodesk, Inc.",
-   "family": "Autodesk"
-  },
-  "ITC2492": {
-   "code": null,
-   "name": "Autodesk Certified User - Revit",
-   "catalog_name": "Autodesk Certified User - Revit",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
@@ -2506,24 +2443,6 @@
     "ITC2471"
    ]
   },
-  "Autodesk Certified User/Professional — AutoCAD": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC2467",
-    "ITC2474",
-    "ITC2466",
-    "ITC2478"
-   ]
-  },
-  "Autodesk Certified User/Professional — Revit Architecture": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC2492",
-    "ITC2483"
-   ]
-  },
   "Automatic Transmission/Transaxle (ASE A2 standards)": {
    "relation": "aligned",
    "rule": "all",
@@ -3610,14 +3529,6 @@
     "ITC1432"
    ]
   },
-  "NCCER Commercial Electrician Level 4/Journey Level": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC1433",
-    "ITC1502"
-   ]
-  },
   "NCCER Construction Foreman Management": {
    "relation": "holds",
    "rule": "all",
@@ -3644,13 +3555,6 @@
    "rule": "all",
    "certs": [
     "ITC1459"
-   ]
-  },
-  "NCCER Industrial Electrician Level 4/Journey Level": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC1460"
    ]
   },
   "NCCER Welding Level 1": {
@@ -3789,15 +3693,6 @@
    ]
   },
   "Water and Wastewater Mathematics 1": {
-   "relation": "holds",
-   "rule": "any",
-   "certs": [
-    "ITC4381",
-    "ITC4378",
-    "ITC4380"
-   ]
-  },
-  "Water/Wastewater Operator Certification": {
    "relation": "holds",
    "rule": "any",
    "certs": [

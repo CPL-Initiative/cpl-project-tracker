@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-16
+updated: 2026-11-18
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,12 +68,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 588 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 590 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 95 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 104 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 105 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 76 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 623 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1492** | |
+| Session handoffs | 639 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1511** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -124,11 +124,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- 2026-11-16 (S662 SkyQuill, Sam's session, full checkpoint): two merges: #3378 (the Commons Curation ETA's exhibit universe counts MAP's unclassified backlog, the larger of the two readings, never their sum) and #3379 (the ETA cost feed: `kb/reference/model_spend_daily.json` and `kb/status/session_spend.json`, built at Pages deploy from the handoffs' `Spend:` lines, shown side by side); the `commons` lane compacted under 20,000 bytes; handoff 663 (SkyLark).
-- 2026-11-15 (S661 SkyKnot, Sam's session, full checkpoint): five merges (#3371 to #3375): the Commons ETA clock and the College Collections ETA on College Data Collection, the date controls as small chips (Sam), CPL Pathways framed beside every college row, the College Collections Plan in the Library, the Commons Curation ETA on CPL Commons; KB note `methodology-a-progress-pace-is-the-net-fall-of-remaining-work`; handoff 662.
-- 2026-11-15 (S660 SkyPlover, Sam's session, light checkpoint): the Fact Sheet's real italic face (#3368); the CDC builder measures who reads each restricted table and fails an open or unmeasured one (#3369); three restricted tables open to the team phrase, flagged for the auth lane; handoff 661 (SkyKnot).
-- 2026-11-15 (S659 SkyWhimbrel, Sam's session, light checkpoint): Riverside City's six claimed transfer degrees traced (#3365); an identity drops an Honors marker only where curation dropped it (#3366); handoff 660.
-- 2026-11-15 (S655 SkyCurlew, the CPL Queue routine's 06:12Z firing, conductor mode, full checkpoint): six merges (#3346, #3315, #3351, #3344, #3353, #3354); #3330 never reached `main` and #3351 landed the spend meter with card 10's $40 gates; the Riverside City capture read (240 of 268); Santa Ana's 1,362 objectives loaded; the Honors step 2 apply held at the permission check (Sheet 200 card 1); the course-id rescore's six rereads posted 159 rows on #3352.
-- 2026-11-15 (S654 SkyWhimbrel, Sam's session, conductor mode, full checkpoint): seven merges (#3343, #3325, #3316, #3324, #3328, #3345, #3329); a GE-pattern page has one owner; six prefix-alias rescores as one wave; one spend meter (`kb/_spend_meter.py`, #3330); Honors step 2 rebuilt on anchors (#3315, nothing applied); handoff `session_655_handoff.md` (SkyCurlew).
-- 2026-11-14 (S653 SkyGodwit, Sam's session, conductor mode, full checkpoint): the course-id route (#3312, 7 of 17 prefix aliases retire); five colleges reread from filed pages (#3317 to #3321); the Honors field (#3313) and step 1 applied (#3329); College Data Collection's sort and panel (#3314); the Riverside City fault found in the S646 claim rule (#3324); new `docs/reference/stack_scouting.md` and the KB note `methodology-a-test-must-not-take-its-rule-as-the-truth`; handoff `session_654_handoff.md` (SkyWhimbrel).
-- 2026-11-14 (S652 SkyAvocet, the CPL Queue routine's 12:12Z firing, Sam in session, full checkpoint): the identities map applied (#3298) and its 625 held entries dropped (#3302) on Sam's word; catalog-first collection on his rule, slice C merged (#3301, 17 prefix aliases) and slice A drafted (#3300); COBIx's electives-fill census (#3297); the display's structured-fields design (#3296, #3303); new KB note `methodology-a-new-matcher-is-gated-by-a-self-recall-test`; lessons compacted into their archives; handoff `session_653_handoff.md`.
+- 2026-11-18 (S679 SkyKinglet, Sam's session, full checkpoint): #3477 (the left-map apply nightly, Rename and Combine, the combine guard as one choke point), #3478 and #3481 (Sam's three Nov 17 harvest rulings, 243 records rescored live), #3479 (slash-to-and, 80 renames applied by run 44227947795), #3468 (ACE text kept), #3467, #3473, #3474, #3475; four lanes compacted under 20,000 bytes; KB note `methodology-a-guard-must-fail-closed-when-it-cannot-decide`; handoff 680.
+- 2026-11-17 (S678 SkyWaxwing, Sam's session, full checkpoint): #3465 (College Data Collection's cost and counts: measured runner and session spend, the Commons spent figure, a daily census at 17:47 UTC, ETA dates that name their days, cost per CRE), #3466 (Exhibits: act on titles that have left MAP from their row), #3469 (CPL Pathways: a course met by its Program Course File id is no catalog addition), #3470 (Commons Clarity units findings); drafts #3467, #3468, #3472, #3473, #3474. KB note `methodology-a-dispatch-only-feed-goes-stale-without-a-sound`. Handoff 679.
+- 2026-11-17 (S677 SkyTanager, full checkpoint): #3462 (Chaffey's yield read: reread 13 rows, load kept 191, display build cdd185495ce4; its suspect yield resolved as not found; slice B complete at seven colleges); the self-test miss named, Skyline 38299. Handoff 678.
+- 2026-11-17 (S676 SkyPipit, the CPL Queue routine, full checkpoint): #3456 (slice B: six yield colleges read, reread and loaded, display build 71b67268c567, passing +22); the harvest lessons doc compacted to archive 6. Handoff 677.
+- 2026-11-17 (S672 SkyWren, the CPL Queue routine, full checkpoint): #3441 (RCCD music: the repeated-course-row reconcile steps; Riverside City 229 to 232 passing, Norco's required list counted twice). Handoff 673.
+- 2026-11-17 (S670 SkyBunting, Sam's session, full checkpoint): #3420 (Coastline's objectives loaded, 522 rows; a course outcomes slice keyed by its colleges), #3423 (Skyline's yield read after display build b640e31b114a), #3436 (Skyline 32337's live row removed, full image filed), #3433 and #3434 (Rio Hondo and Santa Ana from their own 2025-2026 catalogs), #3435 (S668's Berkeley City row); five `cpl_memory` rows through the runner; handoff 671 for SkyKinglet.
+- 2026-11-16 (S668 SkyPipit, Sam's session, full checkpoint): #3408 (the no-closed-list lookup's page yield: 13 yields at 8 colleges, 0 passing moved), #3411 (Gavilan Mathematics 31444 and Physics 33047 from their 2025-2026 catalog); #3414 (slice B part 1) waits on `test`; eight `cpl_memory` rows drafted as a migration; the harvest lane compacted; handoff 670 (S669 ran in parallel).
+- 2026-11-16 (S667 SkyPlover, Sam's session, full checkpoint): #3402 (CPL Pathways: Request Adopt on course cards, Ask Sierra's side bar, an SLOs and objectives panel, full width, the CPL Visual's progress bar), #3403 (`kb/plain_words.py`, one term list; the six re-clustering cases settled), samueltlee/CPLBrain#806 (sheets refuse undefined insider terms from 201), #3404 (harvest and governance decisions; seven memory rows through the runner). Handoff 668 (SkyPipit).

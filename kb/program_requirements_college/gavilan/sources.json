@@ -9,7 +9,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4156",
+    "title": "Biological Science - A.S. Degree",
+    "h1": "Biological Science - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "06113",
@@ -61,7 +75,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business: accounting option - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -87,7 +104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -142,7 +162,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business: office applications option - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -171,7 +194,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "aviation maintenance technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -207,7 +233,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "studio art - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -246,7 +275,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -269,7 +301,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts: acting - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -298,7 +333,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "registered nursing - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -330,7 +368,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "licensed vocational nursing - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -346,7 +387,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4139/3991",
+    "title": "Mathematics - A.S. Degree",
+    "h1": "Mathematics - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "06143",
@@ -358,7 +413,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "06144",
@@ -387,7 +446,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "child development - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -399,7 +461,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.953,
+  "coverage": 0.977,
   "codes_found": [
    "ACCT105",
    "ACCT120",
@@ -441,7 +503,8 @@
    "DM85",
    "ECON11",
    "ECON14",
-   "MATH5"
+   "ECONC2001",
+   "ECONC2002"
   ],
   "source": {
    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4336",
@@ -450,11 +513,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business: technical publishing option - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 43,
-  "text_chars": 3022
+  "text_chars": 2991
  },
  {
   "control_number": "08458",
@@ -482,7 +548,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "law enforcement, option 2 (police academy) - a.a. degree",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -506,7 +575,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "cosmetology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -522,7 +594,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194",
+    "title": "Health Science - A.S. Degree",
+    "h1": "Health Science - A.S. Degree",
+    "awards": [
+     "as"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "08464",
@@ -530,7 +616,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.913,
+  "coverage": 0.942,
   "codes_found": [
    "AH11",
    "ANTH1",
@@ -571,11 +657,14 @@
    "CSIS2",
    "CSIS26",
    "ECOL1",
+   "ECONC2001",
+   "ECONC2002",
    "ENGL2J",
    "ENGL4A",
    "ENGL4B",
    "ENGL5A",
    "ENGL5B",
+   "ENGLC1002",
    "GEOG2",
    "GEOL1",
    "HIST12",
@@ -635,11 +724,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: multiple subjects - a.a. degree",
+    "section_fit": 0.5
    }
   },
   "listed": 104,
-  "text_chars": 7579
+  "text_chars": 7593
  },
  {
   "control_number": "08466",
@@ -694,7 +786,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business: medical office option - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 40,
@@ -731,7 +826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "communication studies - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -756,7 +854,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer networking - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -794,7 +895,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer programming - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -837,7 +941,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "digital media (with options) - a.a. degree",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
@@ -853,7 +960,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4124",
+    "title": "School Age Child Care - Certificate of Achievement",
+    "h1": "School Age Child Care - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "15555",
@@ -872,7 +993,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre arts: technical production - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -903,7 +1027,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -929,7 +1056,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish non-native speakers option 1 - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -978,11 +1108,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: language arts & humanities emphasis - a.a. degree",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
-  "text_chars": 3489
+  "text_chars": 3448
  },
  {
   "control_number": "18454",
@@ -994,7 +1127,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "two pages name it: https://gavilan.curriqunet.com/catalog/iq/4089/4140/4042, https://gavilan.curriqunet.com/catalog/iq/4089/4147/4020"
+  }
  },
  {
   "control_number": "18455",
@@ -1013,7 +1150,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: social science emphasis- behavioral and organizational social sciences - a.a. degree",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -1029,7 +1169,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
+    "title": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+    "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "45720"
+  }
  },
  {
   "control_number": "18457",
@@ -1041,7 +1196,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
+    "title": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+    "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "21284"
+  }
  },
  {
   "control_number": "18458",
@@ -1083,7 +1253,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: elementary education emphasis - a.a. degree",
+    "section_fit": 0.8
    }
   },
   "listed": 24,
@@ -1114,7 +1287,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "liberal arts: business emphasis - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1130,7 +1306,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4091/3980",
+    "title": "Liberal Arts: Administration of Justice Emphasis - A.A. Degree",
+    "h1": "Liberal Arts: Administration of Justice Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "18461",
@@ -1142,7 +1332,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4094/4249",
+    "title": "Liberal Arts: Expressive Arts Emphasis - A.A. Degree",
+    "h1": "Liberal Arts: Expressive Arts Emphasis - A.A. Degree",
+    "awards": [
+     "aa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "18541",
@@ -1163,7 +1367,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "accounting - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1193,7 +1400,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "communication studies: interpersonal communication - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1234,7 +1444,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -1250,7 +1463,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4099/4123",
+    "title": "Early Intervention Assistant - Certificate of Achievement",
+    "h1": "Early Intervention Assistant - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "19656",
@@ -1262,7 +1489,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/4206",
+    "title": "Biotechnology - Certificate of Achievement",
+    "h1": "Biotechnology - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "21277",
@@ -1274,7 +1515,22 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
+    "title": "General Business - Certificate of Achievement",
+    "h1": "General Business - Certificate of Achievement",
+    "awards": [
+     "coa"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   },
+   "took_from": "33048"
+  }
  },
  {
   "control_number": "21281",
@@ -1306,7 +1562,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital design and imaging - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1317,32 +1576,12 @@
   "title": "CSIS: Programming for the Internet",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.909,
-  "codes_found": [
-   "CSIS45",
-   "CSIS51",
-   "CSIS6",
-   "CSIS75",
-   "CSIS84",
-   "CSIS85",
-   "DM6",
-   "DM7",
-   "DM75",
-   "DM85"
-  ],
-  "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4128/4034",
-   "title": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
-   "h1": "Liberal Arts: Computer Science & Information Systems Emphasis - A.A. Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 2917
+  "text_chars": 0
  },
  {
   "control_number": "21285",
@@ -1367,7 +1606,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1392,7 +1634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer networking - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1421,7 +1666,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation maintenance technology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1445,7 +1693,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish non-native speakers option 2 - certificate of achievement",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -1469,7 +1720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish non-native speakers option 2 - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1493,7 +1747,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "spanish non-native speakers option 2 - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1522,7 +1779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "registered nursing - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1550,7 +1810,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "no page read names it by title and award"
+  }
  },
  {
   "control_number": "21297",
@@ -1570,7 +1834,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "law enforcement, option 2 - (police academy) certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 2,
@@ -1595,7 +1862,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cosmetology - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1619,7 +1889,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "ged preparation - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -1644,7 +1917,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation maintenance technology: airframe - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1670,7 +1946,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation maintenance technology: powerplant -  certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1693,7 +1972,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theater arts-television performance - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -1719,7 +2001,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "theater arts-television performance - certificate of achievement",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -1750,7 +2035,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "music composition and production - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1782,7 +2070,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1813,7 +2104,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1840,7 +2134,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1868,7 +2165,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1899,7 +2199,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1930,7 +2233,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "water resources management - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1961,7 +2267,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water resources management - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1992,7 +2301,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -2033,7 +2345,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2115,7 +2430,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 61,
@@ -2142,7 +2460,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "journalism - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2177,7 +2498,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2211,7 +2535,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2239,7 +2566,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0 - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2250,34 +2580,12 @@
   "title": "Economics",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.706,
-  "codes_found": [
-   "ACCT20",
-   "ACCT21",
-   "BUS11",
-   "CSIS2",
-   "ECON11",
-   "MATH1A",
-   "MATH1B",
-   "MATH1C",
-   "MATH2",
-   "MATH5",
-   "MATH6",
-   "MATH7"
-  ],
-  "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4097/4118",
-   "title": "General Business - Certificate of Achievement",
-   "h1": "General Business - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 2336
+  "text_chars": 0
  },
  {
   "control_number": "33049",
@@ -2310,7 +2618,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2341,7 +2652,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2370,7 +2684,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2381,7 +2698,7 @@
   "title": "Psychology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "page_claimed",
+  "method": "not_found",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -2398,7 +2715,21 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "found",
+   "page": {
+    "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4093/4180",
+    "title": "Anthropology - A.A.-T Degree",
+    "h1": "Anthropology - A.A.-T Degree",
+    "awards": [
+     "adt"
+    ],
+    "award": "named",
+    "title_share": 1.0,
+    "heading_share": 1.0
+   }
+  }
  },
  {
   "control_number": "33446",
@@ -2435,7 +2766,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "kinesiology - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2478,7 +2812,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 22,
@@ -2502,7 +2839,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire science - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2534,7 +2874,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2588,7 +2931,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "chemistry - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2629,7 +2975,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2654,7 +3003,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "computer applications for esl students - noncredit certificate of completion",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -2680,7 +3032,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl advanced level - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -2704,7 +3059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl citizenship - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -2732,7 +3090,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "hvac - heating, ventilation and air conditioning - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2760,7 +3121,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "hvac - heating, ventilation and air conditioning - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2800,7 +3164,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2833,7 +3200,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2857,7 +3227,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "welding technology - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -2895,7 +3268,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2966,7 +3342,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "business (with options) - a.a. degree",
+    "section_fit": 0.5
    }
   },
   "listed": 53,
@@ -3011,7 +3390,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health science - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3051,7 +3433,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "elementary teacher education - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -3079,7 +3464,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl lifeskills - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -3107,7 +3495,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3133,7 +3524,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl intermediate i level - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 4,
@@ -3157,7 +3551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl beginning level - noncredit certificate of competency",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -3191,7 +3588,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "film and television production - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3215,7 +3615,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "workforce preparation and success - noncredit certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -3226,12 +3629,27 @@
   "title": "Small Business Development",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS700",
+   "BUS701"
+  ],
+  "source": {
+   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4108/4255",
+   "title": "Small Business Development, Noncredit Certificate of Completion",
+   "h1": "Small Business Development, Noncredit Certificate of Completion",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "small business development, noncredit certificate of completion",
+    "section_fit": 0.75
+   }
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 6664
  },
  {
   "control_number": "41166",
@@ -3251,7 +3669,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "job coaching - noncredit certificate of completion",
+    "section_fit": 0.667
    }
   },
   "listed": 2,
@@ -3283,7 +3704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0 - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3343,7 +3767,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0 - a.a.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3383,7 +3810,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry for uc - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3411,7 +3841,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire technology - a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3436,7 +3869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of engineering i - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3465,7 +3901,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of engineering ii - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3500,7 +3939,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fundamentals of engineering iii - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3528,7 +3970,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "water environment - a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3552,7 +3997,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introductory culinary arts - noncredit certificate of completion",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -3693,7 +4141,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "california general education transfer curriculum (cal-getc) - certificate of achievement",
+    "section_fit": 0.714
    }
   },
   "listed": 134,
@@ -3721,7 +4172,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "water environment - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3732,25 +4186,12 @@
   "title": "Environmental Science I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.6,
-  "codes_found": [
-   "BIO1",
-   "CHEM1A",
-   "GEOL1"
-  ],
-  "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4096/3982",
-   "title": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
-   "h1": "Liberal Arts: Natural Science Emphasis - A.A. Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 2572
+  "text_chars": 0
  },
  {
   "control_number": "45729",
@@ -3828,7 +4269,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "intercollegiate athletics - certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
@@ -3839,28 +4283,12 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "AH11",
-   "BIO7",
-   "BIO8",
-   "BIO9",
-   "CHEM1A",
-   "CHEM1B"
-  ],
-  "source": {
-   "url": "https://gavilan.curriqunet.com/catalog/iq/4089/4136/4194",
-   "title": "Health Science - A.S. Degree",
-   "h1": "Health Science - A.S. Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 1832
+  "text_chars": 0
  },
  {
   "control_number": "46047",
@@ -3886,7 +4314,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health science - a.s.-t degree",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -3918,7 +4349,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics 2.0 - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3948,7 +4382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics 2.0 - a.s.-t degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,

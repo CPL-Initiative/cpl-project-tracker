@@ -5,11 +5,11 @@
  "title": "Social Justice Studies: General",
  "award": "A.A- T Degree",
  "source_url": "https://rccd.curriqunet.com/catalog/alias/rcc-catalog/iq/5852/6117/6050",
- "record_shape": 3,
+ "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7352,
+  "input_tokens": 8965,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7352,
-    "output_tokens": 5054,
+    "input_tokens": 8965,
+    "output_tokens": 5513,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,18 @@
     "model": null
    }
   ],
-  "output_tokens": 5054,
+  "output_tokens": 5513,
   "output_tokens_details": {
-   "thinking_tokens": 1938
+   "thinking_tokens": 2460
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.13049,
- "ms": 39846,
- "seconds": 40.4,
+ "cost_usd": 0.14612,
+ "ms": 45480,
+ "seconds": 45.6,
+ "parts": null,
  "error": null,
  "score": {
   "measure": "units",
@@ -114,7 +116,24 @@
    "against": "program",
    "why": [
     "the blocks sum to 12.0-13.0; the catalog states 18.0-19.0"
-   ]
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     12.0,
+     13.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -136,10 +155,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -152,14 +168,28 @@
     "max": 19
    },
    "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
    "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
    "outcomes": [
     "Utilize theoretical perspectives as they relate to structures and systems of power and oppression including critical ethnic studies, Critical Race Theory (CRT), feminist theory, or queer and trans theory.",
     "Employ the principles of Social Justice Studies, Ethnic Studies, or Women, Gender, & Sexuality Studies to identify, explore, and analyze examples of prejudice, discrimination, or oppression in historical or cultural frameworks.",
     "Engage critical thinking and communication skills with a focus on cultural and global awareness.",
     "Use statistics or research methods in the behavioral and social sciences to better analyze issues related to Social Justice Studies.",
     "Analyze issues across multiple disciplines through a social justice lens."
-   ]
+   ],
+   "careers": []
   },
   "blocks": [
    {
@@ -509,20 +539,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints two headings for this degree: 'Social Justice Studies: General - Associate in Arts for Transfer (ADT) - AA1004 (CalGETC)' and '... - AAA1004 (CalGETC)', followed by 'Social Justice Studies - Associate in Arts for Transfer (ADT)'. All appear to refer to the same single program section.",
-   "Required Courses heading states 'Units: 9.00' but only one 'Select one of the following' list (3.00 units) is printed under it. The program total of 18.00-19.00 equals 9 + 9-10, so the required section may be cut off or mislabelled; recorded only the printed select-one list (stated 3). Reviewer should check the source.",
-   "Elective Courses rule is 'Select 3 courses from at least two areas' (9.00-10.00 units). Recorded as one choose_courses block of 3. The two-area constraint is not expressible in the schema. Area membership: Area 1 - History or Government (HIST-34 through ETS-23/POLS-23); Area 2 - Arts and Humanities (ENGL-18 through PHI-34); Area 3 - Social Science (ANT-4/ETS-27 through SOC-50); Area 4 - Qualitative Reasoning and Research Methods (STAT-C1000/STAT-C1000H/PSYC-48/SOC-48).",
-   "Area unit figures printed (Area 1 6.00, Area 2 36.00, Area 3 12.00, Area 4 4.00) do not appear to be selection minimums; they were not recorded as block totals.",
+   "The 'Required Courses' header prints 'Units: 9.00' but the only rule under it is 'Select one of the following: 3.00'; stated recorded as 3. The page's 9.00 + 9.00-10.00 matches the printed 'Total : 18.00- 19.00', so the required core figure or the course list may be incomplete/inconsistent; reviewer should check.",
+   "Elective Courses: 'Select 3 courses from at least two areas' (9.00-10.00). Recorded as one block; the courses fall in Area 1 - History or Government (HIST-34 through ETS-23/POLS-23), Area 2 - Arts and Humanities (ENGL-18 through PHI-34), Area 3 - Social Science (ANT-4/ETS-27 through SOC-50), and Area 4 - Qualitative Reasoning and Research Methods (STAT-C1000 group). Area totals printed: 6.00, 36.00, 12.00, 4.00 (these look like sums of listed courses, not requirements).",
    "HIST-34 is printed twice in Area 1; listed once.",
-   "The catalog prints history courses as 'HIST-' while the closed list uses 'HIS'. HIST-14, HIST-15, HIST-28, HIST-31, HIST-34 and HIST-44 were treated as the closed-list HIS courses (catalog_addition false). HIST-29 has no HIS 29 in the closed list, so it is marked as an addition.",
-   "Catalog additions not in the closed list: ETS-28, HIST-29, ENGL-25 and SOC-48.",
-   "PSYC-48 is matched to closed-list 'PSYC48', for which the state file stores no units; the catalog prints 4.00.",
-   "ETS-1 appears both in the Required Courses select-one list and in Area 2 of the electives; it is recorded in both blocks.",
-   "ETS-8 is titled 'Introduction to Black Feminism and Womanism' in the catalog, versus 'Introduction to Black Feminism' in the closed list.",
-   "The program learning outcomes are printed once for the program, and this award shares them.",
-   "Degree requires 60 CSU-transferable units with Cal-GETC and minimum 2.0 GPA; major courses need a grade of C or better (or P)."
+   "ETS-1 appears both in Required Courses and in Area 2 of the electives; whether one course may satisfy both is not stated.",
+   "The catalog prints subject 'HIST' where the closed list uses 'HIS' (HIS 14, 15, 28, 31, 34, 44); treated as the same courses (catalog_addition false). HIST-29 has no HIS 29 in the closed list and ETS-28 has no ETS 28 in the closed list, so both are marked catalog additions. ENGL-25 and SOC-48 are also not in the closed list.",
+   "Catalog prints 'Race, Ethnicity, and Politics in America' and 'Introduction to Black Feminism and Womanism' with slightly different titles than the closed list; codes match.",
+   "degree_total of 60 taken from the sentence 'The Associate in Art in Social Justice Studies: General for Transfer degree will be awarded upon completion of 60 California State University (CSU) transferable units including the above major requirements and the ... (Cal-GETC) requirements'; it names this award specifically, but reviewer may judge it a generic ADT statement. No Cal-GETC unit figure is printed.",
+   "The program learning outcomes are printed once for the program; this award is the only award in the section.",
+   "Page header lists two codes (AA1004 and AAA1004), both Associate in Arts for Transfer (CalGETC)."
   ]
  },
- "extracted_run": 43693827797,
- "read_run": 43605883626
+ "extracted_run": "44030368835",
+ "catalog_year": "2026-2027"
 }

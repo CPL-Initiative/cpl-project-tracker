@@ -247,8 +247,14 @@ live_rows = {r["current"]: r for b in live["batches"] for r in b["rows"] if r.ge
 live_exc = {e["title"]: e for e in live["families"][FAM]["exceptions"]}
 live_ruled = rel.ruled_renames.pending(rel.ruled_renames.load(), json.load(open(os.path.join(ROOT, "kb", "credentials.json"),
                                                                                encoding="utf-8")), set())
+# A person's saved override onto the member's family form places it too: the next unscoped apply renames it (Sam re-pointed
+# "ASE Bundle — A6 or T6 + L3" onto "ASE Certificate Bundles: A6 or T6 + L3" on 2026-11-17, and the 2026-11-18 apply,
+# scoped to the slash plan, deferred it). Person-settled wins; the builder never proposes over a saved override.
+live_ov = json.load(open(os.path.join(ROOT, "kb", "credential_review_overlay.json"), encoding="utf-8")).get("overrides") or {}
+live_saved = {t for t, e in live_ov.items() if (e or {}).get("unified_title_override") == test_mix.family_title(FAM, t)}
 unplaced = [t for t, m in live_members.items() if m["family"] == FAM and m["member_kind"] == "bundle"
-            and test_mix.family_title(FAM, t) != t and t not in live_rows and t not in live_exc and t not in live_ruled]
+            and test_mix.family_title(FAM, t) != t and t not in live_rows and t not in live_exc and t not in live_ruled
+            and t not in live_saved]
 check("in the committed data every bundle member is in the family form, proposed in it, on the exception list, or ruled",
       not unplaced and len(live_members) >= 20)
 check("in the committed data no held title is a member, proposed, or an exception",

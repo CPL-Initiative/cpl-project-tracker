@@ -1,0 +1,123 @@
+{
+  "folded": [
+    {
+      "raw": "Aviation Mechanic- Airframe and Powerplant",
+      "assigned": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+      "issuer": "Federal Aviation Administration (FAA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "High School Articulation- Criminal Justice/Crime Scene Investigation",
+      "assigned": "Introduction to Criminal Justice",
+      "issuer": "Local High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "High School Articulation- Developmental Psychology of Children II",
+      "assigned": "Principles & Practices of Teaching Young Children",
+      "issuer": "Local High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 018 News Production IV",
+      "assigned": "News Production 4",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 018A  News Production I",
+      "assigned": "News Production 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 020 Photojournalism I",
+      "assigned": "Introduction to Photojournalism",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 18B News Production II",
+      "assigned": "News Production 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 18C News Production III",
+      "assigned": "News Production III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson",
+      "assigned": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson",
+      "assigned": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+      "issuer": "United Association (UA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "High School Articulation- Developmental Psychology of Children II",
+      "assigned": "Principles & Practices of Teaching Young Children",
+      "issuer": "Local High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 018 News Production IV",
+      "assigned": "News Production 4",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 018A  News Production I",
+      "assigned": "News Production 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 18B News Production II",
+      "assigned": "News Production 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    },
+    {
+      "raw": "JOURN 18C News Production III",
+      "assigned": "News Production III",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 1,
+  "audit_pruned": 10,
+  "unified_titles_count": 6067
+}

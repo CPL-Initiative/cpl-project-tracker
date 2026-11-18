@@ -158,6 +158,18 @@ if [ -n "${SUPABASE_SERVICE_KEY:-}" ]; then
   # listed in the report's `held`; the CER procedures run brings those to
   # the tab's Needs you. --apply-if-safe never fails the run.
   python kb/_fold_unclassified.py --apply-if-safe || echo "::warning title=Unclassified fold failed::kb/_fold_unclassified.py exited non-zero — curator triage assignments are stuck in the overlay until this passes. Check the step log."
+  # The titles that have left MAP (S678 #3466, wired nightly S679): carry out the Exhibits List's Keep, Move and Remove
+  # (_LEFT_MAP::<raw> rows, left_map_decision) on kb/unified_titles.json, one raw key's link each, after the fold above
+  # and before the pipeline below bakes the reference. Reads kb_curation with the service key and writes repo files
+  # only (kb/unified_titles.json, a receipt under kb/receipts/ when something changed). A failure keeps the publish
+  # going and is never silent: LEFT_MAP_STATUS=failed turns the run red in daily-dashboard.yml's last step, which the
+  # workflow failure watch reports.
+  if python kb/_apply_left_map.py --live --apply; then
+    echo "LEFT_MAP_STATUS=success" >> "$GITHUB_ENV"
+  else
+    echo "::error title=Leftover-title decisions not applied::kb/_apply_left_map.py exited non-zero; kb/unified_titles.json keeps yesterday's links and the run ends red. Check the step log."
+    echo "LEFT_MAP_STATUS=failed" >> "$GITHUB_ENV"
+  fi
   # College short names (S545): the College Identity tab's edits in public.college_short_names fold into
   # kb/college_short_names.json + college_short_names.js here, before every builder below joins through them.
   # A changed short keeps the old one as an alias; a collision or a missing college is refused and the
@@ -299,6 +311,15 @@ STEP
 # MAP drift checks (KB-only mode when it's absent — non-fatal either way).
 step "Run exhibit-canonicalization auditor" <<'STEP'
 python3 kb/_audit_exhibits.py || echo "Exhibit auditor failed — CER worklist will use prior latest.json"
+STEP
+
+# ── Step 4b2a: the titles that have left MAP (S679) ───────────
+# kb/exhibit_left_map.json, which the Exhibits List's leftover rows read beside the auditor's latest.json: each old
+# title's CPL type, pointers, twin and review. After the auditor (its stale_kb_entry cards) and after the curation sync
+# applied the night's Keep, Move and Remove to kb/unified_titles.json, so the file agrees with both; before the Commons
+# status. Committed files only, no secret. tests/left_map_build_test.py fails when the committed file is not current.
+step "Build the titles that have left MAP" <<'STEP'
+python3 kb/_build_left_map.py || echo "::warning title=Leftover titles not rebuilt::kb/_build_left_map.py failed; the Exhibits List reads the previous kb/exhibit_left_map.json until the next run. Check the step log."
 STEP
 
 # ── Step 4b3: identity-anchored triage suggestions (Rule 5c) ──
@@ -503,6 +524,22 @@ STEP
 # ids. ASE first. kb/exhibit_cert_links.json; the Exhibits List's finder and title drawer read it.
 step "Build the exhibit-to-cert link" <<'STEP'
 python3 kb/_build_exhibit_cert_links.py || echo "::warning title=Cert links not rebuilt::kb/_build_exhibit_cert_links.py failed; the List reads the previous links until the next run. Check the step log."
+STEP
+
+# The read-only Side by side views (S678 item 7, wired nightly S679): kb/exhibit_side_by_side.json, one row per MAP
+# exhibit with its canonical title, and kb/side_by_side.json, the Courses List's fold. Rows read this run's
+# kb/exhibits_adoption.json (the review queue step), kb/coci_articulations.json, kb/exhibits_review.json and
+# kb/exhibit_cert_links.json (the step above); a rename or the night's fold moves them, and the file went stale on main
+# after the 2026-11-18 rename. Committed files only, no secret. A failure keeps the publish going and is never silent:
+# SIDE_BY_SIDE_STATUS=failed turns the run red in daily-dashboard.yml's last steps, which the failure watch reports.
+# tests/side_by_side_test.py fails when the committed files are not current.
+step "Build the Side by side views" <<'STEP'
+if python3 kb/_build_side_by_side.py; then
+  echo "SIDE_BY_SIDE_STATUS=success" >> "$GITHUB_ENV"
+else
+  echo "::error title=Side by side not rebuilt::kb/_build_side_by_side.py exited non-zero; the Exhibits tab and the Courses List read the previous files and the run ends red. Check the step log."
+  echo "SIDE_BY_SIDE_STATUS=failed" >> "$GITHUB_ENV"
+fi
 STEP
 
 # The Exhibits List's Outcomes match hints (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): credentials

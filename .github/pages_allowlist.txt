@@ -44,6 +44,7 @@ withhold tools
 # Root workbooks.
 withhold *.xlsx
 # kb/ staging, curated anchors and lexicons: generator inputs baked into the served unified_courses_*.js.
+withhold kb/ccr_curator_precedent.json
 withhold kb/cdc_data_dictionary.json
 withhold kb/cdc_integrations.json
 withhold kb/cid_articulation_joins.json
@@ -75,6 +76,8 @@ withhold kb/reference/cos_certifications.json
 withhold kb/reference/moc_crosswalk.json
 # The restricted tables' measured grants and policies (S660); the CDC builder reads it, no page does.
 withhold kb/reference/restricted_table_access.json
+# The blocked-catalog hunt list (S678): the builders read it; the pages read commons_data.json and commons.json.
+withhold kb/reference/blocked_catalog_hunt.json
 # The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
 withhold kb/reference/coci_program_*.csv
 # The harvest's scout files and heading-agreement snapshot (S645, review of #3201).
@@ -128,6 +131,7 @@ publish SKILL-cpl-dashboard-pipeline-UPDATED.md
 publish a11y.config.js
 publish activity_summaries.js
 publish admin.js
+publish adopt_panel.js
 publish annual_report.js
 publish assoc_editor.js
 publish budget-support
@@ -309,6 +313,8 @@ publish kb/doctrine_questions.json
 publish kb/esl_fold_spotcheck
 publish kb/exhibit_audit/latest.json
 publish kb/exhibit_cert_links.json
+publish kb/exhibit_left_map.json
+publish kb/exhibit_side_by_side.json
 publish kb/exhibit_slo_neighbors.json
 publish kb/exhibits_adoption.json
 publish kb/exhibits_ai_sort.json
@@ -377,6 +383,7 @@ publish kb/reference/coci_courses.json
 publish kb/reference/coci_program_course_file.csv.gz
 publish kb/reference/coe_occupation_demand_2024_2029.json
 publish kb/reference/college_identity_rulings.json
+publish kb/reference/cre_weights.json
 publish kb/reference/credential_engine_top50.json
 publish kb/reference/credential_engine_top50_ctids.json
 publish kb/reference/credential_engine_top50_map_check.json
@@ -407,6 +414,7 @@ publish kb/remint_blast_worklist.json
 publish kb/remint_series_readings_rulings_2026-09-03.json
 publish kb/returned_titles_acknowledged.json
 publish kb/row_audit/latest.json
+publish kb/side_by_side.json
 publish kb/sjcoe_occupation_scope_map.json
 publish kb/spot_checks
 publish kb/statewide_exhibit_categories.json

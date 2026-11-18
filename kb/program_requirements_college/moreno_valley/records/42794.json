@@ -44,33 +44,40 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 25,
    "listed": 25,
-   "share": 0.84,
-   "missing": [
-    "ECO7",
-    "ECO8",
-    "MAT1A",
-    "MAT1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECO8",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ECONC2002",
+     "listed": "ECO7",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2210",
+     "listed": "MAT1A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MAT1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "ECONC2001",
-    "ECONC2002",
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -354,6 +361,6 @@
    "ACC-1A, ACC-1B and MATH-3 are marked '( Historical )' in the catalog."
   ]
  },
- "extracted_run": 43609968396,
- "read_run": "38085493318"
+ "extracted_run": 44072968931,
+ "read_run": 43609968396
 }

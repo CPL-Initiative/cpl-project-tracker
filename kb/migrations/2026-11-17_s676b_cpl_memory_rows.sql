@@ -1,0 +1,11 @@
+-- cpl_memory rows for the S676 second writer (session_01Rvwe2WC42wzvi7LbVLETpZ), 2026-11-17. Applied by supabase-migrate.yml.
+-- INSERT ... ON CONFLICT (slug) DO NOTHING. ROLLBACK: kb/migrations/2026-11-17_s676b_cpl_memory_rows_rollback.sql
+insert into public.cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
+('p-two-writers-one-lane-refetch-main-s676b','pitfall','Two sessions worked slice B at once; re-fetch main before every dispatch','S676: a second session worked slice B beside the CPL Queue routine and never re-fetched main, so it missed #3456. Its rereads replaced 43 unchecked rows with duplicate readings; migration s676b_reread_rollback (run 44136158970) restored them from the receipts. Before each dispatch on a shared lane, fetch main and read the newest handoff: a routine is a live writer list_sessions does not show.',array['coordination','harvest','pitfall','slice-b'],'proposed','S676 second writer; #3456; receipt kb/receipts/migration_s676b_reread_rollback_44136158970.json',null,null,'S676 second writer','2026-11-17'),
+('f-crafton-hills-11766-on-master-teacher-page-s676b','fact','Crafton Hills Teacher 11766 is filed on the Master Teacher page','S676: on main after #3456, Teacher 11766 is read from master-teacher-certificate-of-achievement and fails. The catalog has its own page (teacher-certificate-of-achievement); the self-test counts it a false match, so the lookup does not search at Crafton Hills. Until a fix places 11766 on its own page, a fresh read extracts it from the wrong page.',array['program-requirements','harvest','crafton-hills'],'proposed','S676 second writer; capture run 44103239951; main records/11766.json run 44090908924',null,null,'S676 second writer','2026-11-17')
+on conflict (slug) do nothing;
+
+insert into public.cpl_memory_log (memory_id, actor, action, note, after)
+select id, 'S676 second writer', 'create', 'S676 (2026-11-17)', to_jsonb(m)
+from public.cpl_memory m where m.slug in ('p-two-writers-one-lane-refetch-main-s676b','f-crafton-hills-11766-on-master-teacher-page-s676b')
+  and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');

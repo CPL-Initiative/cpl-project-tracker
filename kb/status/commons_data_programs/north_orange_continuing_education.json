@@ -1,4 +1,4 @@
-{"schema":1,"college":"North Orange Continuing Education","slug":"north_orange_continuing_education","basis":"live","census_at":"2026-11-13 18:04Z","programs":[
+{"schema":1,"college":"North Orange Continuing Education","slug":"north_orange_continuing_education","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
 {"cn":"24404","title":"Early Childhood Education Program","award":null,"cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"39461","title":"ESL Civics","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"39364","title":"ESL Reading and Writing Skills, Beginning","award":"Noncredit program","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -30,5 +30,5 @@
 {"cn":"46253","title":"ESL for Personal Care Aides","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-office-assistants/"},
 {"cn":"39325","title":"ESL Specialty Courses","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/"},
 {"cn":"39625","title":"GED/HiSET Test Preparation","award":"Noncredit program","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/"},
-{"cn":"31595","title":"High School Diploma Program","award":"Noncredit program","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/noce/high-school-diploma-program/"}
+{"cn":"31595","title":"High School Diploma Program","award":"Noncredit program","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.nocccd.edu/noce/high-school-diploma-program/","units":{"sum":[160.0,160.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}}
 ]}

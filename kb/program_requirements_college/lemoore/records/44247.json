@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8608,
-    "output_tokens": 1891,
+    "output_tokens": 2010,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1891,
+  "output_tokens": 2010,
   "output_tokens_details": {
-   "thinking_tokens": 695
+   "thinking_tokens": 841
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07225,
- "ms": 15622,
- "seconds": 16.4,
+ "cost_usd": 0.07463,
+ "ms": 16382,
+ "seconds": 21.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "COM5",
-    "ENG2"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COM5",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "ENGLC1002",
+     "listed": "ENG2",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "ENGLC1002"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -233,21 +236,22 @@
   "missing_explained": [
    {
     "code": "COM 5",
-    "why": "not in the text; catalog lists COMMC1004 - Interpersonal Communication (same title) in its place"
+    "why": "not in the text; catalog prints COMMC1004 Interpersonal Communication in its place"
    },
    {
     "code": "ENG 2",
-    "why": "not in the text; catalog lists ENGLC1002 - Introduction to Literature (same title) in its place"
+    "why": "not in the text; catalog prints ENGLC1002 Introduction to Literature in its place"
    }
   ],
   "notes": [
-   "The printed '(Total 60)' covers the whole degree including Cal-GETC Requirements (28) and transferable electives (14), so it is recorded as degree_total; no separate major total is printed (core 15 + electives 3 not summed by the catalog).",
-   "Cal-GETC is printed as 28 units in the requirements table, while the ADT description says Cal-GETC requires 34 semester units (double counting with major courses permitted); ge_units records the 28 printed in the table.",
-   "'Program Electives' reads 'Complete the following number of rules: 1' with a block total of 3; interpreted as choose one course.",
-   "COMMC1004 and ENGLC1002 are marked catalog additions because their codes differ from closed-list COM 5 and ENG 2, though titles match (likely C-ID common course renumbering).",
+   "Program Requirements total of 60 includes Required Core (15), Program Electives (3), Cal-GETC Requirements (28) and transferable electives (14); recorded as degree_total. No separate major total is printed, so total_units is null.",
+   "The prose says Cal-GETC requires 34 semester units, but the requirements table prints 'Cal-GETC Requirements 28' (presumably after double counting); ge_units records the table's 28.",
+   "Program Electives reads 'Complete the following number of rules: 1' with a block total of 3; read as choose one course.",
+   "COMMC1004 and ENGLC1002 appear to be Cal-GETC/common course renumberings of closed-list COM 5 and ENG 2 (same titles); reviewer should confirm.",
    "Program Outcomes list is cut off at 'PSLO 5' with no text; only PSLO 1-4 recorded.",
-   "The Recommended Sequence lists GE and elective courses; these are not placed in blocks."
+   "Recommended Sequence section (GE and elective suggestions) was not recorded as requirements."
   ]
  },
- "extracted_run": "38979392604"
+ "extracted_run": "44090929578",
+ "catalog_year": "2026-2027"
 }

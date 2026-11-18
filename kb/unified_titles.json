@@ -1393,7 +1393,7 @@
     "_notes": "Local college course credential."
   },
   "AGM 262\tHydraulics/Pneumatics - Credit by Exam": {
-    "unified_title": "Hydraulics/Pneumatics",
+    "unified_title": "Hydraulics and Pneumatics",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1406,7 +1406,7 @@
     "_notes": "Local college course credential."
   },
   "AGM 262\tHydraulics/Pneumatics - Industry Certification": {
-    "unified_title": "Hydraulics/Pneumatics",
+    "unified_title": "Hydraulics and Pneumatics",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -1432,7 +1432,7 @@
     "_notes": "Local college course credential."
   },
   "AGM 289\tPrinciples of Power Mechanics/Small Engines - Credit by Exam": {
-    "unified_title": "Principles of Power Mechanics/Small Engines",
+    "unified_title": "Principles of Power Mechanics and Small Engines",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10421,7 +10421,7 @@
     "_notes": null
   },
   "Apprenticeship Carpentry, Drywall/Lather, AS": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10434,7 +10434,7 @@
     "_notes": null
   },
   "Apprenticeship Carpentry, Drywall/Lather, CA": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10538,7 +10538,7 @@
     "_notes": "Local college course."
   },
   "Architecture/Green Design: Implementation using AutoCAD": {
-    "unified_title": "Architecture/Green Design: Implementation using AutoCAD",
+    "unified_title": "Architecture and Green Design: Implementation using AutoCAD",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10551,7 +10551,7 @@
     "_notes": "CPL type labels this as Industry Certification but title reads like a local course; issuer unclear."
   },
   "Architecture/Green Design: Planning and Construction": {
-    "unified_title": "Architecture/Green Design: Planning and Construction",
+    "unified_title": "Architecture and Green Design: Planning and Construction",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10564,7 +10564,7 @@
     "_notes": "Issuer unclear; possibly local cert."
   },
   "Architecture/Green Design: Principles and Practices": {
-    "unified_title": "Architecture/Green Design: Principles and Practices",
+    "unified_title": "Architecture and Green Design: Principles and Practices",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10941,7 +10941,7 @@
     "_notes": null
   },
   "Autodesk Certification for AutoCAD for Design and Drafting": {
-    "unified_title": "Autodesk Certified User/Professional — AutoCAD",
+    "unified_title": "Autodesk Certified User and Professional — AutoCAD",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10954,7 +10954,7 @@
     "_notes": "User vs Professional level not specified."
   },
   "Autodesk Certification for Revit for Architectural Design": {
-    "unified_title": "Autodesk Certified User/Professional — Revit Architecture",
+    "unified_title": "Autodesk Certified User and Professional — Revit Architecture",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -12710,7 +12710,7 @@
     "_notes": "Local CBE; not vendor cert."
   },
   "Beginning Nursing Skills/Clinical Simulation Laboratory": {
-    "unified_title": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+    "unified_title": "Nursing Skills and Clinical Simulation Laboratory Beginning",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -13330,7 +13330,7 @@
     "_notes": "Two distinct certifying bodies for the same SUD counselor role; both listed."
   },
   "CCDET Clean Truck-Check Certification, T2, SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+    "unified_title": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16341,7 +16341,7 @@
     "_notes": "Local college course exhibit."
   },
   "CSCI 210\tIntroduction to UNIX/Linux System and Programming - Credit by Exam": {
-    "unified_title": "UNIX/Linux Systems and Programming",
+    "unified_title": "UNIX and Linux Systems and Programming",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16637,7 +16637,7 @@
     "_notes": "Course code only; college-specific CBE bucket."
   },
   "CULART 043 - Advanced Desserts and Pastry/Chocolate/Sugar": {
-    "unified_title": "Advanced Desserts and Pastry/Chocolate/Sugar",
+    "unified_title": "Advanced Desserts and Pastry, Chocolate, and Sugar",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -16842,7 +16842,7 @@
     "_notes": null
   },
   "Cal Fire Confined Space Rescue Operations/Technician": {
-    "unified_title": "Confined Space Rescue Operations/Technician",
+    "unified_title": "Confined Space Rescue Operations and Technician",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17235,7 +17235,7 @@
     "_notes": null
   },
   "Calculations in Water/Wastewater Technology WTEC 049 Cx": {
-    "unified_title": "Calculations in Water/Wastewater Technology",
+    "unified_title": "Calculations in Water and Wastewater Technology",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17578,7 +17578,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 012": {
-    "unified_title": "Layout/Leveling Construction Site Practice",
+    "unified_title": "Layout and Leveling Construction Site Practice",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17721,7 +17721,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 103": {
-    "unified_title": "Mathematics for Drywall/Lathers",
+    "unified_title": "Mathematics for Drywall and Lathers",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17734,7 +17734,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 104": {
-    "unified_title": "Exterior/Advanced Fire Control System and Partitions",
+    "unified_title": "Exterior and Advanced Fire Control System and Partitions",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -17747,7 +17747,7 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 105": {
-    "unified_title": "Doors, Windows, Exterior Systems/Building Documents",
+    "unified_title": "Doors, Windows, Exterior Systems and Building Documents",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -18317,7 +18317,7 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 310": {
-    "unified_title": "Layout/Leveling Construction Site Practice",
+    "unified_title": "Layout and Leveling Construction Site Practice",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -20565,7 +20565,7 @@
     "_notes": "Course-mapping language; likely Security+ training based on naming pattern with sibling CS 003 (Net+) and CS 005 (CEH)."
   },
   "Concealed/Glue-Up/Staple-Up Systems": {
-    "unified_title": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+    "unified_title": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -21405,7 +21405,7 @@
     "_notes": null
   },
   "Credit by Exam- Diesel Electrical/Electronic Systems": {
-    "unified_title": "Diesel Electrical/Electronic Systems",
+    "unified_title": "Diesel Electrical and Electronic Systems",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -25652,7 +25652,7 @@
     "_notes": "Local college ESL course."
   },
   "Ext & Review": {
-    "unified_title": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+    "unified_title": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
     "confidence_title": 0.2,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -28206,7 +28206,7 @@
     "_notes": "KIN 235 portfolio path referencing first-aid cert."
   },
   "First Responder Awareness/Operations": {
-    "unified_title": "HAZWOPER First Responder Awareness/Operations",
+    "unified_title": "HAZWOPER First Responder Awareness and Operations",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29107,7 +29107,7 @@
     "_notes": "Haas CNC certification; 'residency units' phrasing suggests local program component."
   },
   "HE 100\tStandard First Aid/CPR/AED - Industry Certificate": {
-    "unified_title": "Standard First Aid/CPR/AED",
+    "unified_title": "Standard First Aid, CPR, and AED",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29120,7 +29120,7 @@
     "_notes": "Common issuers include American Red Cross and American Heart Association; specific issuer unspecified."
   },
   "HE 100\tStandard First Aid/CPR/AED - Portfolio Review": {
-    "unified_title": "Standard First Aid/CPR/AED",
+    "unified_title": "Standard First Aid, CPR, and AED",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29133,7 +29133,7 @@
     "_notes": "Issuer uncertain; pathways via portfolio rather than card presentation."
   },
   "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Credit by Exam": {
-    "unified_title": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+    "unified_title": "Emergency Medical Response — CPR Pro and Healthcare Provider",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29146,7 +29146,7 @@
     "_notes": "Emergency Medical Response is a Red Cross-branded course; CPR Healthcare Provider commonly AHA — issuer mixed."
   },
   "HE 101\tEmergency Medical Response; CPR PRO/Healthcare Provider - Industry Certification": {
-    "unified_title": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+    "unified_title": "Emergency Medical Response — CPR Pro and Healthcare Provider",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -29666,7 +29666,7 @@
     "_notes": "Cypress HVAC course."
   },
   "Heavy/Medium Duty Truck Technology Apprenticeship Program": {
-    "unified_title": "Heavy/Medium Duty Truck Technology Apprenticeship",
+    "unified_title": "Heavy and Medium Duty Truck Technology Apprenticeship",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -32263,7 +32263,7 @@
     "_notes": "HS site stripped."
   },
   "Intermediate Education or Careers in Education - Century High School": {
-    "unified_title": "Education / Careers in Education Intermediate",
+    "unified_title": "Education and Careers in Education Intermediate",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -35376,7 +35376,7 @@
     "_notes": "CPL Type Military suggests JST credit for corpsman/medic maternal-newborn coursework."
   },
   "Maternal/Newborn Nursing Care - LVN Certification": {
-    "unified_title": "Maternal/Newborn Nursing Care",
+    "unified_title": "Maternal and Newborn Nursing Care",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -38534,7 +38534,7 @@
     "_notes": "Levels 1 and 2 collapsed; same credential family per Rule 3."
   },
   "Prefab/Sound Panels": {
-    "unified_title": "Prefab/Sound Panels",
+    "unified_title": "Prefab and Sound Panels",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -38685,7 +38685,7 @@
     "_notes": null
   },
   "Principles of Infant Toddler Caregiver": {
-    "unified_title": "Principles of Infant/Toddler Caregiving",
+    "unified_title": "Principles of Infant and Toddler Caregiving",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41483,7 +41483,7 @@
     "_notes": "Carpentry apprenticeship topic."
   },
   "Tool/Equipment Applications - Emergency Response Procedures": {
-    "unified_title": "Tool/Equipment Applications — Emergency Response Procedures",
+    "unified_title": "Tool and Equipment Applications — Emergency Response Procedures",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41496,7 +41496,7 @@
     "_notes": "Apprenticeship topical exhibit."
   },
   "Tool/Equipment Applications - Fall Protection": {
-    "unified_title": "Tool/Equipment Applications — Fall Protection",
+    "unified_title": "Tool and Equipment Applications — Fall Protection",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41535,7 +41535,7 @@
     "_notes": "TCT is commonly an ATSSA credential."
   },
   "Transit Level/Laser": {
-    "unified_title": "Transit Level/Laser",
+    "unified_title": "Transit Level and Laser",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41625,7 +41625,7 @@
     "_notes": null
   },
   "UA Local 342 Plumbers/Pipefitters SHME 100": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41638,7 +41638,7 @@
     "_notes": "Apprenticeship module; SHME course code preserved."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 101": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41651,7 +41651,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 110": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41664,7 +41664,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 111": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41677,7 +41677,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 120": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41690,7 +41690,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 121": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41703,7 +41703,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 130": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41716,7 +41716,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 131": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41729,7 +41729,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 140": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41742,7 +41742,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 141": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41755,7 +41755,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 150": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41768,7 +41768,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SHME 151": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41781,7 +41781,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 100": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41794,7 +41794,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 101": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41807,7 +41807,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 110": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41820,7 +41820,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 111": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41833,7 +41833,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 120": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41846,7 +41846,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 121": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41859,7 +41859,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 130": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41872,7 +41872,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 131": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41885,7 +41885,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 140": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41898,7 +41898,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 141": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -41911,7 +41911,7 @@
     "_notes": "Apprenticeship module."
   },
   "UA Local 342 Plumbers/Pipefitters Work Experience": {
-    "unified_title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+    "unified_title": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -46168,7 +46168,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam AUTO 118 Fuel Systems/Emission Controls": {
-    "unified_title": "Fuel Systems/Emission Controls",
+    "unified_title": "Fuel Systems and Emission Controls",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46299,7 +46299,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam SPAN 033 Spanish/English Linguistics Analysis": {
-    "unified_title": "Spanish/English Linguistics Analysis",
+    "unified_title": "Spanish and English Linguistics Analysis",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46307,7 +46307,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam WWT 100 Calculations in Water/Wastewater Technology": {
-    "unified_title": "Calculations in Water/Wastewater Technology",
+    "unified_title": "Calculations in Water and Wastewater Technology",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46419,7 +46419,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "EGTECH-10 - High School: Introduction to Engineering Design/Graphics": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46427,7 +46427,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "EGTECH-10 SAN BERNARDINO HIGH SCHOOL- PLTW Intro to Engineering Design  IS414H/IS415H": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46435,7 +46435,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "EGTECH-10: Baldy View ROP - Introduction to Engineering Design": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46443,7 +46443,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "EGTECH-10: Upland Unified School District - Introduction to Engineering Design PLTW": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46691,7 +46691,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems), CA (Active from Summer 2025)": {
-    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46699,7 +46699,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, AS": {
-    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46707,7 +46707,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather, CA": {
-    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46811,7 +46811,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Journeyman Certificate-Apprenticeship Carpentry, Drywall/Lather (Interior Systems), AS (Active from Summer 2025)": {
-    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+    "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46951,7 +46951,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "NCCER Commercial Electrician Level 4/Journey Level": {
-    "unified_title": "NCCER Commercial Electrician Level 4/Journey Level",
+    "unified_title": "NCCER Commercial Electrician Level 4 and Journey Level",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -47007,7 +47007,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "NCCER Industrial Electrician Level 4/Journey Level": {
-    "unified_title": "NCCER Industrial Electrician Level 4/Journey Level",
+    "unified_title": "NCCER Industrial Electrician Level 4 and Journey Level",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -47171,7 +47171,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "San Bernardino High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -47179,7 +47179,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "San Gorgonio High School - EGTECH-10: Introduction to Engineering Design/Graphics": {
-    "unified_title": "Introduction to Engineering Design/Graphics",
+    "unified_title": "Introduction to Engineering Design and Graphics",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
@@ -51138,7 +51138,7 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "CLDV-30L INFANT/TODDLER PRACTICUM": {
-    "unified_title": "Infant/Toddler Practicum",
+    "unified_title": "Infant and Toddler Practicum",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
@@ -52026,7 +52026,7 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "Cal Fire Fire Control 4A: Ignitable Liquids and Gases Awareness/Operations": {
-    "unified_title": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+    "unified_title": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
@@ -52373,7 +52373,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Credit by Exam - ESL 083 F (High Intermediate Reading and Writing)": {
-    "unified_title": "Adv ESL: Writing/Grammar",
+    "unified_title": "Adv ESL: Writing and Grammar",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
@@ -54838,7 +54838,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Introduciton to UNIX/Linux": {
-    "unified_title": "Introduction to UNIX/Linux",
+    "unified_title": "Introduction to UNIX and Linux",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
@@ -55962,7 +55962,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Portfolio for ARTS 12A": {
-    "unified_title": "Oil/Acrylic Painting: Beginning 1",
+    "unified_title": "Oil and Acrylic Painting: Beginning 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -58626,7 +58626,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "California State Water Resources Control Board T3, T4, or T5 certification, D3, D4, or D5 certification, or wastewater grade III, IV, or V certification.": {
-    "unified_title": "Water/Wastewater Operator Certification",
+    "unified_title": "Water and Wastewater Operator Certification",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60239,7 +60239,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Manufacturer/Vendor Specific Building Automation System (BAS) Certification": {
-    "unified_title": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+    "unified_title": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -61974,7 +61974,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Industry for HORT 56": {
-    "unified_title": "Arboriculture/Urban Forestry",
+    "unified_title": "Arboriculture and Urban Forestry",
     "confidence_title": 1.0,
     "classified_at": "2026-11-06",
     "classified_by": "curator (CER unclassified-triage)",
@@ -62274,7 +62274,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Facials I' on 2026-11-11."
   },
   "COSM 223 Hairstyling Services/Haircutting II": {
-    "unified_title": "Hairstyling Services/Haircutting 2",
+    "unified_title": "Hairstyling Services and Haircutting 2",
     "confidence_title": 1.0,
     "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
@@ -63027,7 +63027,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Portfolio Evidence for ARTS 12A": {
-    "unified_title": "Oil/Acrylic Painting: Beginning 1",
+    "unified_title": "Oil and Acrylic Painting: Beginning 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
@@ -63924,7 +63924,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Industry Training Evidence for HORT 56": {
-    "unified_title": "Arboriculture/Urban Forestry",
+    "unified_title": "Arboriculture and Urban Forestry",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64348,7 +64348,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather Year 1",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64356,7 +64356,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather Year 2",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64364,7 +64364,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather Year 3",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64372,7 +64372,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather Year 4",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64380,7 +64380,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Nor Cal Carpenters Training Drywall/Lather Journeyperson": {
-    "unified_title": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+    "unified_title": "Carpenters Apprenticeship — Drywall and Lather Journeyperson",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64684,7 +64684,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Plumbers Pipefitters Apprenticeship Level 2": {
-    "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64692,7 +64692,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Plumbers Pipefitters Apprenticeship Level 3": {
-    "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64700,7 +64700,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Plumbers Pipefitters Apprenticeship Level 4": {
-    "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 4",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -64708,7 +64708,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Plumbers Pipefitters Journeyperson": {
-    "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
     "confidence_title": 1.0,
     "classified_at": "2026-11-13",
     "classified_by": "curator (CER unclassified-triage)",
@@ -65986,5 +65986,89 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
     "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Aviation Mechanic- Airframe and Powerplant": {
+    "unified_title": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+    "unified_title": "Introduction to Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-high-school-rop@bot"
+  },
+  "High School Articulation- Developmental Psychology of Children II": {
+    "unified_title": "Principles & Practices of Teaching Young Children",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-high-school-rop@bot"
+  },
+  "JOURN 018 News Production IV": {
+    "unified_title": "News Production 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 018A  News Production I": {
+    "unified_title": "News Production 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 020 Photojournalism I": {
+    "unified_title": "Introduction to Photojournalism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "JOUR 160"
+    }
+  },
+  "JOURN 18B News Production II": {
+    "unified_title": "News Production 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 18C News Production III": {
+    "unified_title": "News Production III",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

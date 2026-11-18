@@ -87,8 +87,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     118.0,
     118.0
@@ -102,9 +102,7 @@
     21.0,
     21.0
    ],
-   "why": [
-    "the blocks and general education sum to 118.0-118.0; the catalog prints 103.0-103.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -118,7 +116,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -142,7 +142,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,7 +173,8 @@
    ],
    "careers": [
     "dental hygienist"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -455,5 +456,14 @@
    "The Health General Studies emphasis that follows belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "39006384701",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 97, the major total the catalog prints; the major and general education sum to 118 against the degree's 103 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

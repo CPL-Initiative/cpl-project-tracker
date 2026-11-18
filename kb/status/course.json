@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 661,
-  "moniker": "SkyKnot",
+  "session": 678,
+  "moniker": "SkyWaxwing",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_662_handoff.md",
+  "handoff": "docs/session_679_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -103,13 +103,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-15T22:53:51Z",
+  "written_at": "2026-11-17T23:55:10Z",
   "project": "course",
   "next_step": {
-    "title": "Apply Honors step 2 once the edit is permitted",
-    "text": "The plan of 380 Honors rows is merged and checked. The apply runs on Sam's word or in a session where the apply file may be edited, after a fresh check against main."
+    "title": "Settle the course confidence rules",
+    "text": "The rules that clear the waiting pile of courses are held until a test shows each rule agrees with the cards people have already decided. Once it passes, the change merges; HUMA M10OI into HUMA M1110 follows."
   },
   "changes": [
+    {
+      "at": "2026-11-17T23:01:00Z",
+      "text": "In CPL Pathways a course matched by its Program Course File id no longer shows as a catalog addition (PR 3469); 617 course mentions at 15 colleges were affected."
+    },
+    {
+      "at": "2026-11-16T18:30:00Z",
+      "text": "The six regrouping cases from the course-outcome comparison are settled. Two were applied earlier (FIRE M1274 into FIRE 130 X, and the BUSI M1228 split), and Sam's rulings keep the other four as they are, so nothing waits to apply."
+    },
     {
       "at": "2026-11-15T22:35:00Z",
       "text": "The Commons Curation ETA, drafted for the top of CPL Commons, gives the common courses a pace from the fall of their remaining cards, people's share counted only where a confirmation lowered it. It is live (PR 3375)."
@@ -153,10 +161,6 @@
     {
       "at": "2026-11-14T13:40:00Z",
       "text": "The 625 held identities entries were dropped on Sam's word, 2,941 to 2,316; no articulation record names any of them. The receipt keeps each entry whole."
-    },
-    {
-      "at": "2026-11-14T13:20:00Z",
-      "text": "The identities map rebuild was applied on Sam's go: 651 fills and 578 refreshes, 2,290 to 2,941 entries, equal to the plan. FIRE 130 X takes FIRE M1274's lists."
     }
   ]
 }

@@ -449,7 +449,10 @@ def _():
     tmp = tempfile.mkdtemp(prefix="co_cs_")
     dst = os.path.join(tmp, "kb", "course_outcomes", "laspositas")
     os.makedirs(dst)
-    one = glob.glob(os.path.join(OUT, "laspositas", "read_*.json"))
+    filed = glob.glob(os.path.join(OUT, "laspositas", "read_*.json"))
+    # The college's newest filed run alone (S663: Las Positas now holds its first read and the objectives reread).
+    newest = max(int(json.load(open(p))["run"]) for p in filed)
+    one = [p for p in filed if int(json.load(open(p))["run"]) == newest]
     for p in one:
         d = json.load(open(p))
         json.dump(d, open(os.path.join(dst, os.path.basename(p)), "w"))
@@ -560,7 +563,8 @@ def _():
 # the newest read_run per course with no kind takes a reread's objectives for SLOs).
 READERS = {
     "coci_lookup.js": "kind=eq.slo",
-    "cpl_pathways.js": "kind=eq.slo",
+    "cpl_pathways.js": "kind=eq.slo; the course panel kind=in.(slo,objective), each kind under its own heading",
+    "commons_data.js": "the SLO panel's subject drill reads kind=in.(slo,objective), each kind under its own heading (#3412)",
     "program_requirements.js": "kind=eq.slo",
     "kb/_build_adopt_align.py": "kind=eq.slo",
     "kb/_build_exhibit_slo_neighbors.py": "kind=eq.slo",
