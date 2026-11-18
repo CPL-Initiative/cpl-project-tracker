@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1051,
+  "file_datasets": 1053,
   "external_services": 195,
-  "consumers": 616,
-  "workflows": 73,
+  "consumers": 618,
+  "workflows": 74,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -393,6 +393,13 @@
      "direction": "read",
      "how": "url",
      "line": 113
+    },
+    {
+     "id": "module:scripts/commons_clickthrough.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 114
     },
     {
      "id": "module:scripts/commons_data_values_check.js",
@@ -4455,7 +4462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 442
+     "line": 451
     },
     {
      "id": "module:fact-sheet/factsheet_edit.js",
@@ -6162,7 +6169,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1466,
+     "line": 1474,
      "tabs": [
       "coci-lookup"
      ]
@@ -6673,7 +6680,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1254,
+     "line": 1262,
      "tabs": [
       "coci-lookup"
      ]
@@ -6776,7 +6783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1342,
+     "line": 1350,
      "tabs": [
       "coci-lookup"
      ]
@@ -8129,7 +8136,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 256
+     "line": 258
     }
    ],
    "served": false,
@@ -8142,7 +8149,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 939
+     "line": 941
     }
    ],
    "served": false,
@@ -14553,7 +14560,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 681
+     "line": 699
     }
    ],
    "served": false,
@@ -14725,7 +14732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 447
+     "line": 463
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -15450,7 +15457,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 965
+     "line": 997
     }
    ],
    "served": false,
@@ -15473,7 +15480,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 556
+     "line": 574
     }
    ],
    "producers": [
@@ -15530,7 +15537,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 557
+     "line": 575
     }
    ],
    "served": true,
@@ -15782,7 +15789,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 535
+     "line": 553
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -16046,7 +16053,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1112
+     "line": 1146
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -16951,7 +16958,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1055
+     "line": 1089
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -17326,7 +17333,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 660
+     "line": 678
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -18098,7 +18105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 590
+     "line": 592
     }
    ],
    "served": false,
@@ -18176,7 +18183,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 480
+     "line": 482
     },
     {
      "id": "script:kb/_course_id_rescore_estimate.py",
@@ -18500,7 +18507,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 450
+     "line": 466
     }
    ],
    "served": false,
@@ -19196,7 +19203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 591
+     "line": 593
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19787,7 +19794,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 325
+     "line": 327
     },
     {
      "id": "script:kb/_build_spend_daily.py",
@@ -20362,7 +20369,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 933,
+     "line": 938,
      "tabs": [
       "coci-lookup"
      ]
@@ -20511,7 +20518,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1587,
+     "line": 1611,
      "tabs": [
       "canonical-subj4",
       "coci-lookup",
@@ -20575,7 +20582,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 791
+     "line": 809
     }
    ],
    "producers": [
@@ -20613,7 +20620,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 480
+     "line": 498
     }
    ],
    "served": true,
@@ -20873,7 +20880,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 615
+     "line": 633
     }
    ],
    "served": true,
@@ -23611,14 +23618,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 526
+     "line": 528
     },
     {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 679
+     "line": 697
     },
     {
      "id": "script:kb/_prefix_alias_census.py",
@@ -23928,6 +23935,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:scripts/commons_clickthrough.js": {
+   "consumers": [
+    {
+     "id": "workflow:commons-clickthrough.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:scripts/commons_clickthrough.json": {
+   "consumers": [
+    {
+     "id": "module:scripts/commons_clickthrough.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 26
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/cpl_funding.js": {
    "consumers": [
     {
@@ -24030,6 +24063,13 @@
     },
     {
      "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:commons-clickthrough.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -28240,7 +28280,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 591
+     "line": 593
     }
    ],
    "served": false,
@@ -28662,7 +28702,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 691,
+     "line": 696,
      "tabs": [
       "coci-lookup"
      ]
@@ -29085,7 +29125,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1255,
+     "line": 1263,
      "tabs": [
       "coci-lookup"
      ]
@@ -31343,7 +31383,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 934,
+     "line": 950,
      "tabs": [
       "commons"
      ]
@@ -32620,7 +32660,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 577,
+     "line": 582,
      "tabs": [
       "coci-lookup"
      ]
@@ -35065,6 +35105,21 @@
     "scripts/install_browser.sh",
     "kb/_college_page_read.py",
     "kb/_description_units.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "commons-clickthrough.yml": {
+   "name": "Commons click-through",
+   "crons": [
+    "37 5 * * *"
+   ],
+   "scripts": [
+    "scripts/install_browser.sh",
+    "scripts/commons_clickthrough.js"
    ],
    "adds": [],
    "push": null,

@@ -419,6 +419,9 @@
     "pages_allowlist.test.js": 33,
     "veteran_map_controls_words.test.js": 12,
     "program_requirements_lassen_calgetc.test.js": 34,
-    "veteran_map_public_header.test.js": 25
+    "veteran_map_public_header.test.js": 25,
+    "cdc_plain_words.test.js": 15,
+    "commons_arrival.test.js": 7,
+    "coci_list_doubt.test.js": 53
   }
 }

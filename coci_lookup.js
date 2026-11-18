@@ -440,8 +440,11 @@
     ]).then(function () { JOBS.loading = null; if (state.view === "courses") mountList(); });
     return JOBS.loading;
   }
+  /* A card someone has ruled on (a ruling row read from kb_curation) leaves the Discipline in doubt filter at once; its
+     ruling stays on its panel through All or a search (#3447 item 6; #3510 B3). A "not sure" stays in doubt. */
+  function ruledCard(id) { var R = JOBS.rulings && JOBS.rulings[id]; return !!R && !!R.v && R.v.ruling !== "unsure"; }
   function jobCounts() {
-    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0);
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0) + "|" + Object.keys(JOBS.rulings || {}).length;
     if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
     var n = {};
     JOB_FILTERS.forEach(function (j) {
@@ -453,7 +456,7 @@
   }
   function jobPass(r, f) {
     if (f === "stray") return !!JOBS.strays && r.mids.some(function (id) { return JOBS.strays.has(String(id).split(" ")[0]); });
-    if (f === "doubt") return !!JOBS.doubt && r.mids.some(function (id) { return JOBS.doubt.map.has(id); });
+    if (f === "doubt") return !!JOBS.doubt && r.mids.some(function (id) { return JOBS.doubt.map.has(id) && !ruledCard(id); });
     var set = JOBS.by && JOBS.by[f];
     return !!set && r.mids.some(function (id) { return set.has(id); });
   }
@@ -480,12 +483,14 @@
       var R = JOBS.rulings && JOBS.rulings[id];
       if (R) { ruled++; if (R.v.similar) taught++; }
     });
-    var n = D.map.size;
+    var n = D.map.size, open = 0;
+    D.map.forEach(function (c, id) { if (!ruledCard(id)) open++; });
     return el("div", { "class": "ccl-doubt-note" }, [
-      el("p", { "class": "cplcoci-meta" }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
+      el("p", { "class": "cplcoci-meta", "data-doubt-open": String(open), "data-doubt-desc": String(nDesc) }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
         " the daily re-check could not settle. On " + fmt(nDesc) + " the catalog description reads as another discipline; on " + fmt(nTop) +
         " only the colleges' TOP codes do, and TOP is a last-in-line signal. " + fmt(ruled) + " ruled so far" +
-        (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + "."]),
+        (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + (ruled ? "; a ruled card leaves this list, and its ruling stays on its panel" : "") +
+        ". " + fmt(open) + (open === 1 ? " common course waits" : " common courses wait") + " for a ruling; the list below shows their local courses."]),
       el("p", { "class": "cplcoci-meta" }, ["Open a course to see both signals and rule on its common course: keep the discipline, move it, or say you are not sure, and say why. " +
         "A reason marked for similar cards becomes a proposed procedure: a session writes it as a rule, counts the waiting cards it would settle, and switches it on with your word, so the next card like it settles without reaching you."])]);
   }
@@ -1218,6 +1223,9 @@
         { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
+      // Which unit the counts are in (#3510 B2; Commons Clarity, #3447 item 6c): local courses here, common courses on
+      // the Commons, so "Discipline no seed has touched" reads 42,787 here beside the Commons' 12,540.
+      filterUnit: "Each count is local courses (a college's own course). The Commons counts the same work in common courses (one per M-ID), so its figures are smaller.",
       onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
     };
     return spec;

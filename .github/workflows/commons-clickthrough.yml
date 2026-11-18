@@ -1,0 +1,63 @@
+name: Commons click-through
+# Every Commons link that names a List filter, clicked in Chromium each night, signed out and read only (#3510 B6;
+# Commons Clarity's walk, #3447 item 6): scripts/commons_clickthrough.js checks each lands on its tab with the filter
+# selected and in view, and that its count matches the List's figure or the written difference in
+# scripts/commons_clickthrough.json. The page is served from this checkout on the runner. Every request that is not a
+# GET is refused, and so is every request off that local server apart from the public tables' anon reads (the Programs
+# List draws from them), so nothing is written anywhere and no sign-in is used.
+#
+# On a failure it opens one tracking issue (label commons-clickthrough), or comments on the one already open.
+# 05:37 UTC is 9:37 PM Pacific in standard time: after the evening, before Sam's overnight queue routine starts at
+# 10:12 PM Pacific and before the daily dashboard's 06:17 UTC run rewrites the Commons' figures.
+on:
+  schedule:
+    - cron: '37 5 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write        # to open, or comment on, the one tracking issue
+
+concurrency:
+  group: commons-clickthrough
+  cancel-in-progress: true
+
+jobs:
+  click:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+      - run: npm install
+      - name: Install the browser
+        run: bash scripts/install_browser.sh node
+      - name: Click every Commons link (the failing links print last)
+        id: click
+        env:
+          COMMONS_CLICKTHROUGH_LIVE: "1"   # the Programs List reads the public tables as anon; GET only, no sign-in
+        run: node scripts/commons_clickthrough.js --json out/commons_clickthrough.json 2>&1 | tee out_clickthrough.log
+        shell: bash -o pipefail {0}
+      - name: Open or update the tracking issue
+        if: failure()   # a failed click or a failed setup: either way the one issue says so
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          RUN="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BODY=$(printf '%s\n' \
+            "The nightly Commons click-through failed: a link that does not land on its filter, a count that differs from the List's without a written reason, or a setup step (the log is empty then)." \
+            "" \
+            '```' "$(grep -E '^  FAIL|^         |links land' out_clickthrough.log 2>/dev/null | head -60 || true)" '```' \
+            "" \
+            "Run: $RUN" \
+            "What each link should do: scripts/commons_clickthrough.json. Read only; no sign-in.")
+          NUM=$(gh issue list --label commons-clickthrough --state open --limit 1 --json number --jq '.[0].number // empty')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body "$BODY"
+          else
+            gh label create commons-clickthrough --color 7DA1D4 --description "The nightly Commons click-through failed" 2>/dev/null || true
+            gh issue create --title "Commons click-through: a link or count needs a look" --label commons-clickthrough --body "$BODY"
+          fi

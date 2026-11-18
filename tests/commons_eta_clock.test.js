@@ -237,24 +237,24 @@ M0.live.by_day = { outline_rows: { "2026-11-09": 1000, "2026-11-14": 5000, "2026
     return s && /Soonest: the pace of Nov 8 to 15/.test(txt(s.querySelector('[data-eta-days="soonest"]'))) && /Latest: the pace of Nov 1 to 8/.test(txt(s.querySelector('[data-eta-days="latest"]'))); })());
   check("(4) the SLO and objective rates are said to be fixed estimates, not measured (S678 item 1c)",
     /not a measured rate/.test(ETA) && /rates are fixed estimates/.test(ETA) && /fixed estimate of about/.test(ETA));
-  check("(4) ⭐ cost per CRE: the 7-day figure from the same days' dollars and CREs, beside Sam's Fable baseline (S678)", (function () {
+  check("(4) ⭐ cost per CRE: the 7-day figure from the same days' dollars and CREs, beside Sam's baseline week (S678), CRE spelled out first (#3510)", (function () {
     const s = E.strip(M), c = s && s.querySelector("[data-eta-cre]"), t = txt(c);
     const W = FILES["kb/reference/cre_weights.json"], bill = FILES["kb/reference/model_spend_daily.json"];
     let usd = 0; for (let d = 9; d <= 15; d++) { const k = "2026-11-" + String(d).padStart(2, "0"); usd += (bill.api[k] || 0) + ((bill.topups || {})[k] || []).reduce((a, b) => a + b, 0); }
     const per = (usd / 7500).toFixed(2);
     return W.weights.course_outline_row === 1 && W.weights.program_record === 15 && W.fixed === true
       && new RegExp("Cost per CRE, Nov 9 to Nov 15: \\$" + per.replace(".", "\\.") + " .*over 7,500 CRE").test(t)
-      && /Baseline, Fable, Nov 11 to 14: about 21,500 CRE at about \$0\.15 to \$0\.34 per CRE\./.test(t); })(), txt(E.strip(M) && E.strip(M).querySelector("[data-eta-cre]")));
-  check("(4) cost per CRE says TBA, never a number, before the live read carries its load counts", (function () {
+      && /Baseline, Nov 11 to Nov 14, 2026: about 21,500 CRE at about \$0\.15 to \$0\.34 per CRE\./.test(t) && !/Fable/.test(t) && /A CRE \(collected record equivalent\)/.test(t); })(), txt(E.strip(M) && E.strip(M).querySelector("[data-eta-cre]")));
+  check("(4) cost per CRE says TBA, never a number, before the database count carries its load counts", (function () {
     const M2 = D.model(Object.assign({}, M0, { live: Object.assign({}, M0.live, { by_day: undefined }) })); const s = E.strip(M2);
-    return s && /Cost per CRE: TBA \(the daily load counts arrive with the next live read\)/.test(txt(s.querySelector("[data-eta-cre]"))); })());
+    return s && /Cost per CRE: TBA \(the daily load counts arrive with the next database count\)/.test(txt(s.querySelector("[data-eta-cre]"))); })());
   check("(4) the strip for the Commons tab carries both dates and opens the clock", (function () { const s = E.strip(M); return s && /December 26, 2026/.test(txt(s)) && s.querySelector('a[href="#commons/data/eta"]'); })());
 
   // (5) a missing file, and the static rules.
   const X = dom("#commons/data/eta", { "kb/status/commons_data.json": M0 });
   await X.w.CPL_COMMONS_DATA.boot(X.root, "eta");
   await flush(X.w);
-  check("(5) without the headline series the view says TBA and why", /TBA\. The headline series/.test(txt(X.root)));
+  check("(5) without the headline series the view says TBA and why", /TBA\. The daily count of Active programs complete could not be read/.test(txt(X.root)));
   const css = E.CSS.replace(/--eta-[a-z-]+:(#[0-9A-Fa-f]{3,6}|rgba\([^)]*\))/g, "");
   check("(5) tokens only: a hex appears only inside an --eta token definition", !/#[0-9a-fA-F]{3,6}\b/.test(css));
   check("(5) every header cell on the page is scoped", [...V.root.querySelectorAll("[data-eta-view] th")].every((th) => th.getAttribute("scope")));

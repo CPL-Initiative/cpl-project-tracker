@@ -177,6 +177,16 @@ with tempfile.TemporaryDirectory() as fx:
     fxr = B.row_cr(fx)["facts"]
     check("CR fixture: a rule settles a1 and a2; a decision b1 and the folded c1, not the split-out b2 or the deferred d1",
           fxr["rule_wordings"] == 2 and fxr["curator_only"] == 2 and fxr["settled"] == 4 and fxr["unsettled"] == 3, fxr)
+    # #3447 item 2 (#3510 B4): a decision saved on the tab lands in the live table only; its synced row moves the count.
+    os.makedirs(os.path.join(fx, "kb", "status"), exist_ok=True)
+    with open(os.path.join(fx, B.CR_LIVE), "w") as f:
+        json.dump({"read_at": "2026-11-18T10:00:00Z", "rows": [
+            {"group_key": "e", "decision": "confirmed", "members": ["e1"], "excluded": [], "updated_at": "2026-11-17T20:00:00Z"},
+            {"group_key": "d", "decision": "confirmed", "members": ["d1"], "excluded": [], "updated_at": "2026-11-16T20:00:00Z"}]}, f)
+    live = B.row_cr(fx)
+    check("CR fixture ⭐: a live decision synced from cr_reference_decisions settles its wordings and moves the unsettled count (3 to 1)",
+          live["facts"]["settled"] == 6 and live["facts"]["unsettled"] == 1 and live["issues"][0]["n"] == 1, live["facts"])
+    check("CR fixture: the row names the synced file among its sources", B.CR_LIVE in (live.get("sources") or []), live.get("sources"))
 sub = rows[4].get("facts") or {}
 check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed"))
 # S425: the pair is the settled count (confirmed, on the authority rule, in no collision), never above the confirmed count,

@@ -142,7 +142,12 @@ function panel(d) { return d.getElementById(P + "panel"); }
 function titleBtn(d, title) { const tr = dataRows(d).find((x) => txt(cell(x, d, "Title")).indexOf(title) === 0); return tr && cell(tr, d, "Title").querySelector("button"); }
 function pword(d, re) { const p = panel(d); return p && Array.from(p.querySelectorAll("button")).find((b) => re.test(txt(b))); }
 async function openPanel(t, title, re) {
-  await until(() => titleBtn(t.d, title));
+  // A ruled card has left Discipline in doubt (#3510 B3); its panel still opens from All, where its ruling shows.
+  if (!(await until(() => titleBtn(t.d, title), 1500))) {
+    const all = Array.from(t.d.querySelectorAll("[id$='filters'] button")).find((b) => /^All\b/.test(txt(b)));
+    if (all) all.click();
+    await until(() => titleBtn(t.d, title));
+  }
   titleBtn(t.d, title).click();
   await until(() => panel(t.d) && re.test(txt(panel(t.d))));
 }
@@ -228,6 +233,10 @@ function rule(t, value, words, similar) {
       /Kept Construction by a reviewer on 2026-11-09\. Why: Shop tools are taught for the trade\. Marked for similar cards\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 500));
     check("(8) ⭐ signed out, the rulings read asks for no email and the card names none",
       t.reads.length >= 1 && t.reads.every((r) => !/reviewer_email/.test(r.url)) && !/sam@rccd\.edu/.test(txt(t.d.body)), JSON.stringify(t.reads));
+    // The trail names the job when the panel opens from it: an unruled card, still on the in-doubt list (#3510 B3).
+    const back = Array.from(t.d.querySelectorAll("[id$='filters'] button")).find((b) => /^Discipline in doubt/.test(txt(b)));
+    if (back) back.click();
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
     const trail = panel(t.d).querySelector("nav[aria-label='Trail']");
     check("(8) the panel's trail: CPL Commons / Courses / the job / the course",
       !!trail && /^CPL Commons \/ Courses \/ Discipline in doubt \/ /.test(txt(trail)) && trail.querySelector("a[href='#commons']"), trail && txt(trail));
@@ -384,6 +393,31 @@ function rule(t, value, words, similar) {
     await until(() => /1 ruled so far/.test(txt(t.d.body)));
     await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
     check("(10) a cross-list ruling read back shows on the card", /Kept Construction, also listed as Welding by a reviewer on 2026-11-09\./.test(txt(panel(t.d))), txt(panel(t.d)).slice(0, 400));
+  }
+  {
+    // (12) ⭐ #3447 items 1 and 6, #3510 B3: a card someone has ruled on leaves Discipline in doubt at once, its count
+    // and note follow, and the List says its counts are local courses (B2).
+    const t = tab({ ruled: RULED });
+    await until(() => /1 ruled so far/.test(txt(t.d.body)) && dataRows(t.d).length);
+    const titles = dataRows(t.d).map((r) => txt(cell(r, t.d, "Title")));
+    check("(12) ⭐ the ruled card's local course is off the in-doubt list; the unruled card's stay",
+      !titles.some((x) => x.indexOf("Tool and Equipment Applications") === 0) && titles.some((x) => x.indexOf("College Composition") === 0), titles);
+    const cur = t.d.querySelector("[id$='filters'] [aria-current]");
+    check("(12) the filter's count follows: 3 local courses, the ruled card's 1 gone", cur && /^Discipline in doubt \(3\)$/.test(txt(cur)), cur && txt(cur));
+    check("(12) the note says a ruled card leaves and how many common courses wait",
+      /a ruled card leaves this list, and its ruling stays on its panel\. 1 common course waits for a ruling/.test(txt(t.d.body)), txt(t.d.querySelector(".ccl-doubt-note")));
+    const unit = t.d.querySelector("[id$='filters'] [data-unit]");
+    check("(12) ⭐ the List says its counts are local courses and the Commons' are common courses", unit && /local courses/.test(txt(unit)) && /common courses/.test(txt(unit)), unit && txt(unit));
+  }
+  {
+    // (12) a Keep saved in the panel takes its card off the list in the same visit.
+    const t = tab({ signedIn: true });
+    await openPanel(t, "College Composition", /Why its discipline is in doubt/);
+    rule(t, "keep", "Composition is English.", false);
+    await until(() => t.writes.length >= 2);
+    await until(() => !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0));
+    check("(12) ⭐ a ruling saved in the panel drops its card's rows from Discipline in doubt at once",
+      !dataRows(t.d).some((r) => txt(cell(r, t.d, "Title")).indexOf("College Composition") === 0), dataRows(t.d).map((r) => txt(cell(r, t.d, "Title"))));
   }
   {
     const t = tab({ doubtFail: true });

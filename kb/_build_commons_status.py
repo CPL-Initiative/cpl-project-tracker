@@ -374,20 +374,20 @@ def row_course(root):
                                 conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"])],
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
-            {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
+            {"n": tags.get("seed_untouched_discipline"), "words": "common courses (cards) carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "carry": "no_procedure", "open": "#coci-lookup/list/seedless"},
             # The queue counts the description's cards alone: TOP is no person's item (Sam, 2026-11-04). The job also
             # lists the cards only TOP doubts, labeled as such, because Sam asked to see them (2026-11-09).
             {"n": (dn.get("counts") or {}).get("description") if doubt["n"] else None,
-             "words": "cards whose catalog description reads as another discipline than the one they carry (%s)"
+             "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (%s)"
                       % (dn.get("discipline") or "the active discipline"),
              "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
              "carry": "unsure", "open": "#coci-lookup/list/doubt", "error": doubt["error"]},
-            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
+            {"n": tags.get("unit_anomaly"), "words": "common courses (cards) with a unit anomaly", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
             # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
             # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
             # more dependable"; Rule 7, TOP is last in line). The count stays in facts.tags for the Progress page.
-            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
+            {"n": tags.get("blank_description"), "words": "common courses (cards) with a blank catalog description", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
@@ -442,6 +442,22 @@ SETTLES = ("confirmed", "not_a_topic")
 HEAD_BANDS = (50, 100, 250)
 
 
+# The live table's decisions, synced (#3447 item 2; #3510 B4): the receipts are the September record, and a decision a
+# curator saves on the tab lands only in cr_reference_decisions. A sync of that table (group_key, decision, members,
+# excluded, updated_at; never who saved it) is read after the receipts, so a live decision moves the Commons counts.
+CR_LIVE = "kb/status/cr_decisions_live.json"
+
+
+def live_cr_rows(root):
+    """The synced rows, oldest first, or [] while no sync is committed."""
+    p = os.path.join(root, CR_LIVE)
+    if not os.path.exists(p):
+        return []
+    with open(p, encoding="utf-8") as f:
+        D = json.load(f)
+    return sorted((r for r in (D.get("rows") or []) if r.get("group_key")), key=lambda r: str(r.get("updated_at") or ""))
+
+
 def row_cr(root):
     tab = "#cr-reference"
     W = load_json(root, "kb/cr_reference_worklist.json")
@@ -455,6 +471,8 @@ def row_cr(root):
             decided[r.get("group_key")] = r
         verdicts += len(R.get("items", []))
         reached += sum(int(i.get("rows") or 0) for i in R.get("items", []))
+    for r in live_cr_rows(root):   # the live table is the record; its row for a group stands over a receipt's
+        decided[r["group_key"]] = r
     # The latest receipt row per group stands; a cleared or deferred decision settles nothing.
     settling = {k: r for k, r in decided.items() if r.get("decision") in SETTLES}
     rows_of = {m["rec"]: int(m.get("rows") or 0) for g in G for m in g["members"]}
@@ -507,7 +525,7 @@ def row_cr(root):
                   "held_by_screen": st.get("groups_held_by_a_screen"), "named_by_range": st.get("groups_named_by_range"),
                   "named_noncredit": st.get("groups_named_noncredit"), "units_differ": sum(1 for g in G if g.get("units_differ")),
                   "named_official": sum(1 for g in G if g.get("official_applied"))},
-        "sources": ["kb/cr_reference_worklist.json", "kb/receipts/cr_reference_decisions_*.json"],
+        "sources": ["kb/cr_reference_worklist.json", "kb/receipts/cr_reference_decisions_*.json", CR_LIVE],
     }
 
 
@@ -794,9 +812,23 @@ STALL_SLACK = 1.5
 HISTORY_KEEP_DAYS = 60
 
 
+# Words that changed only to name their unit (#3510 B2: the Commons counts common courses, the List local courses).
+# The history keys an issue by its words, so each new wording reads as the old one and a stall keeps its first day.
+WORDS_BEFORE = {
+    "common courses (cards) carry a discipline no seed has touched": "cards carry a discipline no seed has touched",
+    "common courses (cards) whose catalog description reads": "cards whose catalog description reads",
+    "common courses (cards) with a unit anomaly": "unit anomalies",
+    "common courses (cards) with a blank catalog description": "blank descriptions",
+}
+
+
 def issue_key(ref, issue):
     """One issue across days: its reference, where it opens and its words with any figure taken out."""
-    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", issue.get("words") or ""))
+    words = issue.get("words") or ""
+    for new, old in WORDS_BEFORE.items():
+        if words.startswith(new):
+            words = old + words[len(new):]
+    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", words))
 
 
 def routine_readings(rows):
@@ -1010,6 +1042,8 @@ def confidence_cr(root):
     for _, _, R in sorted(receipts, key=lambda x: x[:2]):   # by the receipt's own time, then its name
         for r in R.get("rows", []):
             decided[r.get("group_key")] = r   # the latest receipt row per group stands
+    for r in live_cr_rows(root):   # then the live table's synced rows (CR_LIVE), the record a save lands in
+        decided[r["group_key"]] = r
     by = {}
     for g in G:
         if not g.get("acts_automatically"):
