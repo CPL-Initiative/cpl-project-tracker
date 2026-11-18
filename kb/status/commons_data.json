@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T01:38:58Z",
+ "written_at": "2026-11-18T11:07:22Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 8 hosts (ccc, cccd, cuesta, laspositas, rccd, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 16 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 10 hosts (ccc, cccd, cuesta, hancockcollege, laspositas, rccd, redwoods, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -168,16 +168,16 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16102,
-  "gap": 6233,
+  "passing": 16160,
+  "gap": 6175,
   "with_gap": 118,
   "cost_usd": 1343.25,
-  "passed_at_read": 15398,
+  "passed_at_read": 15403,
   "cost_receipts": 118,
   "spent_usd": 1133.52,
   "spent_runs": 118,
   "spent_since": "2026-11-17",
-  "slo_waiting": 9,
+  "slo_waiting": 10,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16102,
-  "gap": 6233
+  "passing": 16160,
+  "gap": 6175
  },
  "census_live": {
   "basis": "live",
@@ -239,7 +239,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/allan_hancock.json",
    "outcomes_file": "kb/status/commons_data_programs/allan_hancock.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-10-16T03:03:09Z",
    "read_kind": "capture",
@@ -290,7 +292,13 @@
      "cost_usd": 12.41,
      "platform": "curriqunet"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44252776105",
+     "at": "2026-11-18T08:08:09Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/hancockcollege/read_44252776105_p3of3.json"
+    },
     "plo_programs": 149,
     "ppm_member": null,
     "maps": {
@@ -454,7 +462,11 @@
    "read_kind": "capture",
    "cost_usd": 14.18,
    "passed_at_read": 153,
-   "slo_queue": null,
+   "slo_queue": {
+    "state": "held",
+    "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
+    "on": "2026-11-18"
+   },
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -523,13 +535,13 @@
    "harvested": true,
    "slug": "bakersfield",
    "programs": 249,
-   "passing": 208,
-   "gap": 41,
+   "passing": 209,
+   "gap": 40,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 10,
     "places_none": 2,
-    "unknown_without_live": 21
+    "unknown_without_live": 20
    },
    "census_causes": {
     "no_closed_list": 8,
@@ -588,7 +600,7 @@
    "read_seconds": 1182.0,
    "run": "38414480070",
    "levers": {
-    "reconcile_steps": 19,
+    "reconcile_steps": 18,
     "reader_page_search": 10,
     "program_course_file_check": 8,
     "reader_page_assignment": 2,
@@ -934,12 +946,12 @@
    "harvested": true,
    "slug": "cabrillo",
    "programs": 291,
-   "passing": 243,
-   "gap": 48,
+   "passing": 244,
+   "gap": 47,
    "causes": {
     "no_closed_list": 10,
     "page_not_found": 12,
-    "unknown_without_live": 26
+    "unknown_without_live": 25
    },
    "census_causes": {
     "no_closed_list": 9,
@@ -993,7 +1005,7 @@
    "read_seconds": 1552.1,
    "run": "44090886950",
    "levers": {
-    "reconcile_steps": 25,
+    "reconcile_steps": 24,
     "reader_page_search": 12,
     "program_course_file_check": 10,
     "scorer_noncredit_hours": 1
@@ -1235,13 +1247,13 @@
    "harvested": true,
    "slug": "cerritos",
    "programs": 325,
-   "passing": 276,
-   "gap": 49,
+   "passing": 281,
+   "gap": 44,
    "causes": {
     "no_closed_list": 4,
     "page_not_found": 16,
     "places_none": 3,
-    "unknown_without_live": 26
+    "unknown_without_live": 21
    },
    "census_causes": {
     "coverage_fails": 4,
@@ -1302,7 +1314,7 @@
    "read_seconds": 1767.0,
    "run": "38656800189",
    "levers": {
-    "reconcile_steps": 25,
+    "reconcile_steps": 20,
     "reader_page_search": 16,
     "program_course_file_check": 4,
     "reader_page_assignment": 3,
@@ -1551,13 +1563,13 @@
    "harvested": true,
    "slug": "chaffey",
    "programs": 202,
-   "passing": 182,
-   "gap": 20,
+   "passing": 185,
+   "gap": 17,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 7,
     "places_none": 1,
-    "unknown_without_live": 9
+    "unknown_without_live": 6
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -1615,8 +1627,8 @@
    "read_seconds": 3645.0,
    "run": "44090894573",
    "levers": {
-    "reconcile_steps": 9,
     "reader_page_search": 7,
+    "reconcile_steps": 6,
     "program_course_file_check": 3,
     "reader_page_assignment": 1
    },
@@ -1658,13 +1670,13 @@
    "harvested": true,
    "slug": "citrus",
    "programs": 193,
-   "passing": 152,
-   "gap": 41,
+   "passing": 156,
+   "gap": 37,
    "causes": {
     "no_closed_list": 8,
     "page_not_found": 10,
     "places_none": 6,
-    "unknown_without_live": 17
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -1720,8 +1732,8 @@
    "read_seconds": 1804.6,
    "run": "39726639865",
    "levers": {
-    "reconcile_steps": 14,
     "reader_page_search": 10,
+    "reconcile_steps": 10,
     "program_course_file_check": 8,
     "reader_page_assignment": 6,
     "ge_units_steps": 3
@@ -2300,12 +2312,12 @@
    "harvested": true,
    "slug": "college_of_marin",
    "programs": 155,
-   "passing": 81,
-   "gap": 74,
+   "passing": 82,
+   "gap": 73,
    "causes": {
     "no_closed_list": 61,
     "page_not_found": 5,
-    "unknown_without_live": 8
+    "unknown_without_live": 7
    },
    "census_causes": {
     "no_closed_list": 61,
@@ -2363,8 +2375,8 @@
    "run": "38984695817",
    "levers": {
     "program_course_file_check": 61,
-    "reconcile_steps": 6,
     "reader_page_search": 5,
+    "reconcile_steps": 5,
     "ge_units_steps": 2
    },
    "collection": {
@@ -2618,13 +2630,13 @@
    "harvested": true,
    "slug": "college_of_the_desert",
    "programs": 374,
-   "passing": 294,
-   "gap": 80,
+   "passing": 297,
+   "gap": 77,
    "causes": {
     "no_closed_list": 9,
     "page_not_found": 7,
     "places_none": 28,
-    "unknown_without_live": 36
+    "unknown_without_live": 33
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -2688,7 +2700,7 @@
    "read_seconds": 494.7,
    "run": "43421133593",
    "levers": {
-    "reconcile_steps": 34,
+    "reconcile_steps": 31,
     "reader_page_assignment": 28,
     "program_course_file_check": 9,
     "reader_page_search": 7,
@@ -2759,7 +2771,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_redwoods.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_redwoods.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "elumen"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-11T12:18:07Z",
    "read_kind": "capture",
@@ -2809,7 +2823,13 @@
      "cost_usd": 5.41,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44252663448",
+     "at": "2026-11-18T07:21:08Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/redwoods/read_44252663448_p2of2.json"
+    },
     "plo_programs": 65,
     "ppm_member": null,
     "maps": {
@@ -2833,12 +2853,12 @@
    "harvested": true,
    "slug": "college_of_the_sequoias",
    "programs": 137,
-   "passing": 91,
-   "gap": 46,
+   "passing": 92,
+   "gap": 45,
    "causes": {
     "page_not_found": 12,
     "places_none": 7,
-    "unknown_without_live": 27
+    "unknown_without_live": 26
    },
    "census_causes": {
     "page_not_found": 12,
@@ -2891,7 +2911,7 @@
    "read_seconds": 879.9,
    "run": "38748848139",
    "levers": {
-    "reconcile_steps": 23,
+    "reconcile_steps": 22,
     "reader_page_search": 12,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 4
@@ -3882,12 +3902,12 @@
    "harvested": true,
    "slug": "cypress",
    "programs": 282,
-   "passing": 252,
-   "gap": 30,
+   "passing": 253,
+   "gap": 29,
    "causes": {
     "page_not_found": 8,
     "places_none": 6,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "page_not_found": 2,
@@ -3941,7 +3961,7 @@
    "read_seconds": 1911.6,
    "run": "39853370754",
    "levers": {
-    "reconcile_steps": 13,
+    "reconcile_steps": 12,
     "reader_page_search": 8,
     "reader_page_assignment": 6,
     "ge_units_steps": 2,
@@ -4124,8 +4144,10 @@
    },
    "programs_file": "kb/status/commons_data_programs/diablo_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/diablo_valley.outcomes.json",
-   "outline_system": null,
-   "objectives_printed": null,
+   "outline_system": [
+    "elumen"
+   ],
+   "objectives_printed": false,
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
@@ -4185,7 +4207,13 @@
      "cost_usd": 13.85,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44252382792",
+     "at": "2026-11-18T07:55:21Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/dvc/read_44252382792_p3of3.json"
+    },
     "plo_programs": 213,
     "ppm_member": null,
     "maps": {
@@ -4628,12 +4656,12 @@
    "harvested": true,
    "slug": "folsom_lake",
    "programs": 108,
-   "passing": 87,
-   "gap": 21,
+   "passing": 88,
+   "gap": 20,
    "causes": {
     "page_not_found": 1,
     "places_none": 3,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
    "census_causes": {
     "page_not_found": 1,
@@ -4686,7 +4714,7 @@
    "read_seconds": 85.9,
    "run": "39046850071",
    "levers": {
-    "reconcile_steps": 12,
+    "reconcile_steps": 11,
     "ge_units_steps": 5,
     "reader_page_assignment": 3,
     "reader_page_search": 1
@@ -4943,13 +4971,13 @@
    "harvested": true,
    "slug": "fullerton",
    "programs": 332,
-   "passing": 279,
-   "gap": 53,
+   "passing": 282,
+   "gap": 50,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 13,
     "places_none": 2,
-    "unknown_without_live": 32
+    "unknown_without_live": 29
    },
    "census_causes": {
     "coverage_fails": 14,
@@ -5005,7 +5033,7 @@
    "read_seconds": 2078.3,
    "run": "38675136988",
    "levers": {
-    "reconcile_steps": 28,
+    "reconcile_steps": 25,
     "reader_page_search": 13,
     "program_course_file_check": 6,
     "ge_units_steps": 4,
@@ -5348,11 +5376,11 @@
      "platform": "courseleaf"
     },
     "slo_read": {
-     "run": "41399075269",
-     "at": "2026-11-02T07:02:26Z",
+     "run": "44251936045",
+     "at": "2026-11-18T07:34:57Z",
      "system": "courseleaf",
      "source_kind": "course_outline",
-     "file": "kb/course_outcomes/cccd/read_41399075269_p2of2.json"
+     "file": "kb/course_outcomes/cccd/read_44251936045_p2of2.json"
     },
     "plo_programs": 128,
     "ppm_member": {
@@ -6125,13 +6153,13 @@
    "harvested": true,
    "slug": "lassen",
    "programs": 78,
-   "passing": 40,
-   "gap": 38,
+   "passing": 42,
+   "gap": 36,
    "causes": {
     "no_closed_list": 5,
     "page_not_found": 9,
     "places_none": 5,
-    "unknown_without_live": 19
+    "unknown_without_live": 17
    },
    "census_causes": {
     "no_closed_list": 4,
@@ -6158,7 +6186,7 @@
    "read_at": "2026-10-17T05:28:43Z",
    "read_kind": "capture",
    "cost_usd": 4.54,
-   "passed_at_read": 37,
+   "passed_at_read": 42,
    "slo_queue": null,
    "scout": null,
    "spot_check": null,
@@ -6173,7 +6201,7 @@
    "failed_checks": {
     "coverage": 5,
     "invented": 0,
-    "arithmetic": 27,
+    "arithmetic": 22,
     "repeated": 0,
     "outcomes": 0
    },
@@ -6186,11 +6214,11 @@
    "read_seconds": 30.3,
    "run": "39006337658",
    "levers": {
-    "ge_units_steps": 14,
+    "ge_units_steps": 9,
     "reader_page_search": 9,
+    "reconcile_steps": 8,
     "program_course_file_check": 5,
-    "reader_page_assignment": 5,
-    "reconcile_steps": 5
+    "reader_page_assignment": 5
    },
    "collection": {
     "program_reader": {
@@ -6329,13 +6357,13 @@
    "harvested": true,
    "slug": "long_beach_city",
    "programs": 391,
-   "passing": 319,
-   "gap": 72,
+   "passing": 326,
+   "gap": 65,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 17,
     "places_none": 19,
-    "unknown_without_live": 30
+    "unknown_without_live": 23
    },
    "census_causes": {
     "no_closed_list": 3,
@@ -6393,7 +6421,7 @@
    "read_seconds": 10701.5,
    "run": "39891611701",
    "levers": {
-    "reconcile_steps": 30,
+    "reconcile_steps": 23,
     "reader_page_assignment": 19,
     "reader_page_search": 17,
     "program_course_file_check": 6
@@ -6648,13 +6676,13 @@
    "harvested": true,
    "slug": "los_angeles_mission",
    "programs": 160,
-   "passing": 116,
-   "gap": 44,
+   "passing": 117,
+   "gap": 43,
    "causes": {
     "no_closed_list": 20,
     "page_not_found": 12,
     "places_none": 3,
-    "unknown_without_live": 9
+    "unknown_without_live": 8
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -6711,7 +6739,7 @@
    "levers": {
     "program_course_file_check": 20,
     "reader_page_search": 12,
-    "reconcile_steps": 9,
+    "reconcile_steps": 8,
     "reader_page_assignment": 3
    },
    "collection": {
@@ -7179,8 +7207,10 @@
    },
    "programs_file": "kb/status/commons_data_programs/los_medanos.json",
    "outcomes_file": "kb/status/commons_data_programs/los_medanos.outcomes.json",
-   "outline_system": null,
-   "objectives_printed": null,
+   "outline_system": [
+    "elumen"
+   ],
+   "objectives_printed": false,
    "read_at": "2026-11-07T13:24:16Z",
    "read_kind": "capture",
    "cost_usd": 6.01,
@@ -7225,7 +7255,13 @@
      "cost_usd": 6.01,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44253304246",
+     "at": "2026-11-18T07:31:04Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/lmc/read_44253304246_p2of2.json"
+    },
     "plo_programs": 82,
     "ppm_member": null,
     "maps": {
@@ -7249,12 +7285,12 @@
    "harvested": true,
    "slug": "madera",
    "programs": 111,
-   "passing": 84,
-   "gap": 27,
+   "passing": 85,
+   "gap": 26,
    "causes": {
     "page_not_found": 5,
     "places_none": 8,
-    "unknown_without_live": 14
+    "unknown_without_live": 13
    },
    "census_causes": {
     "coverage_fails": 5,
@@ -7308,7 +7344,7 @@
    "read_seconds": 925.4,
    "run": "38935148408",
    "levers": {
-    "reconcile_steps": 13,
+    "reconcile_steps": 12,
     "reader_page_assignment": 8,
     "reader_page_search": 5,
     "ge_units_steps": 1
@@ -7560,11 +7596,11 @@
    "harvested": true,
    "slug": "merritt",
    "programs": 83,
-   "passing": 71,
-   "gap": 12,
+   "passing": 72,
+   "gap": 11,
    "causes": {
     "no_closed_list": 2,
-    "unknown_without_live": 10
+    "unknown_without_live": 9
    },
    "census_causes": {
     "no_closed_list": 2,
@@ -7613,7 +7649,7 @@
    "read_seconds": 3791.3,
    "run": "38935152199",
    "levers": {
-    "reconcile_steps": 10,
+    "reconcile_steps": 9,
     "program_course_file_check": 2
    },
    "collection": {
@@ -7651,13 +7687,13 @@
    "harvested": true,
    "slug": "miracosta",
    "programs": 187,
-   "passing": 102,
-   "gap": 85,
+   "passing": 108,
+   "gap": 79,
    "causes": {
     "no_closed_list": 26,
     "page_not_found": 19,
     "places_none": 17,
-    "unknown_without_live": 23
+    "unknown_without_live": 17
    },
    "census_causes": {
     "no_closed_list": 26,
@@ -7712,9 +7748,9 @@
    "run": "39746427354",
    "levers": {
     "program_course_file_check": 26,
-    "reconcile_steps": 23,
     "reader_page_search": 19,
-    "reader_page_assignment": 17
+    "reader_page_assignment": 17,
+    "reconcile_steps": 17
    },
    "collection": {
     "program_reader": {
@@ -7865,13 +7901,13 @@
    "harvested": true,
    "slug": "modesto_junior",
    "programs": 199,
-   "passing": 160,
-   "gap": 39,
+   "passing": 163,
+   "gap": 36,
    "causes": {
     "no_closed_list": 3,
     "page_not_found": 7,
     "places_none": 4,
-    "unknown_without_live": 25
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -7927,7 +7963,7 @@
    "read_seconds": 897.7,
    "run": "38477845911",
    "levers": {
-    "reconcile_steps": 25,
+    "reconcile_steps": 22,
     "reader_page_search": 7,
     "reader_page_assignment": 4,
     "program_course_file_check": 3
@@ -8063,13 +8099,13 @@
    "harvested": true,
    "slug": "moorpark",
    "programs": 151,
-   "passing": 122,
-   "gap": 29,
+   "passing": 123,
+   "gap": 28,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 1,
     "places_none": 9,
-    "unknown_without_live": 13
+    "unknown_without_live": 12
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -8124,7 +8160,7 @@
    "read_seconds": 1448.3,
    "run": "39600815599",
    "levers": {
-    "reconcile_steps": 13,
+    "reconcile_steps": 12,
     "reader_page_assignment": 9,
     "program_course_file_check": 6,
     "reader_page_search": 1
@@ -8275,13 +8311,13 @@
    "harvested": true,
    "slug": "mt_san_antonio",
    "programs": 469,
-   "passing": 360,
-   "gap": 109,
+   "passing": 361,
+   "gap": 108,
    "causes": {
     "no_closed_list": 41,
     "page_not_found": 31,
     "places_none": 13,
-    "unknown_without_live": 24
+    "unknown_without_live": 23
    },
    "census_causes": {
     "no_closed_list": 41,
@@ -8341,7 +8377,7 @@
    "levers": {
     "program_course_file_check": 41,
     "reader_page_search": 31,
-    "reconcile_steps": 24,
+    "reconcile_steps": 23,
     "reader_page_assignment": 13
    },
    "collection": {
@@ -9008,13 +9044,13 @@
    "harvested": true,
    "slug": "oxnard",
    "programs": 133,
-   "passing": 99,
-   "gap": 34,
+   "passing": 100,
+   "gap": 33,
    "causes": {
     "no_closed_list": 1,
     "page_not_found": 12,
     "places_none": 2,
-    "unknown_without_live": 19
+    "unknown_without_live": 18
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -9066,7 +9102,7 @@
    "read_seconds": 1299.0,
    "run": "39612119359",
    "levers": {
-    "reconcile_steps": 19,
+    "reconcile_steps": 18,
     "reader_page_search": 12,
     "reader_page_assignment": 2,
     "program_course_file_check": 1
@@ -9313,13 +9349,13 @@
    "harvested": true,
    "slug": "pasadena_city",
    "programs": 367,
-   "passing": 249,
-   "gap": 118,
+   "passing": 250,
+   "gap": 117,
    "causes": {
     "no_closed_list": 49,
     "page_not_found": 21,
     "places_none": 4,
-    "unknown_without_live": 44
+    "unknown_without_live": 43
    },
    "census_causes": {
     "no_closed_list": 48,
@@ -9378,7 +9414,7 @@
     "program_course_file_check": 49,
     "scorer_noncredit_hours": 26,
     "reader_page_search": 21,
-    "reconcile_steps": 16,
+    "reconcile_steps": 15,
     "reader_page_assignment": 4,
     "ge_units_steps": 2
    },
@@ -9947,13 +9983,13 @@
    "harvested": true,
    "slug": "saddleback",
    "programs": 367,
-   "passing": 274,
-   "gap": 93,
+   "passing": 275,
+   "gap": 92,
    "causes": {
     "no_closed_list": 14,
     "page_not_found": 32,
     "places_none": 10,
-    "unknown_without_live": 37
+    "unknown_without_live": 36
    },
    "census_causes": {
     "no_closed_list": 6,
@@ -10007,7 +10043,7 @@
    "read_seconds": 8038.2,
    "run": "38843470509",
    "levers": {
-    "reconcile_steps": 36,
+    "reconcile_steps": 35,
     "reader_page_search": 32,
     "program_course_file_check": 14,
     "reader_page_assignment": 10,
@@ -10168,13 +10204,13 @@
    "harvested": true,
    "slug": "san_diego_city",
    "programs": 203,
-   "passing": 163,
-   "gap": 40,
+   "passing": 164,
+   "gap": 39,
    "causes": {
     "no_closed_list": 12,
     "page_not_found": 20,
     "places_none": 4,
-    "unknown_without_live": 4
+    "unknown_without_live": 3
    },
    "census_causes": {
     "no_closed_list": 10,
@@ -10232,7 +10268,7 @@
     "reader_page_search": 20,
     "program_course_file_check": 12,
     "reader_page_assignment": 4,
-    "reconcile_steps": 4
+    "reconcile_steps": 3
    },
    "collection": {
     "program_reader": {
@@ -10912,13 +10948,13 @@
    "harvested": true,
    "slug": "santa_barbara_city",
    "programs": 319,
-   "passing": 224,
-   "gap": 95,
+   "passing": 225,
+   "gap": 94,
    "causes": {
     "no_closed_list": 32,
     "page_not_found": 33,
     "places_none": 7,
-    "unknown_without_live": 23
+    "unknown_without_live": 22
    },
    "census_causes": {
     "coverage_fails": 1,
@@ -10976,7 +11012,7 @@
    "levers": {
     "reader_page_search": 33,
     "program_course_file_check": 32,
-    "reconcile_steps": 21,
+    "reconcile_steps": 20,
     "reader_page_assignment": 7,
     "scorer_noncredit_hours": 2
    },
@@ -11125,15 +11161,15 @@
    "harvested": true,
    "slug": "santa_rosa_junior",
    "programs": 283,
-   "passing": 191,
-   "gap": 92,
+   "passing": 192,
+   "gap": 91,
    "causes": {
     "extraction_error": 1,
     "found_not_extracted": 5,
     "no_closed_list": 4,
     "page_not_found": 6,
     "places_none": 45,
-    "unknown_without_live": 31
+    "unknown_without_live": 30
    },
    "census_causes": {
     "coverage_fails": 10,
@@ -11200,7 +11236,7 @@
    "run": "39037637820",
    "levers": {
     "reader_page_assignment": 45,
-    "reconcile_steps": 31,
+    "reconcile_steps": 30,
     "paid_read": 6,
     "reader_page_search": 6,
     "program_course_file_check": 4
@@ -11272,7 +11308,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/santiago_canyon.json",
    "outcomes_file": "kb/status/commons_data_programs/santiago_canyon.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "curriqunet"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-13T07:46:13Z",
    "read_kind": "capture",
@@ -11332,7 +11370,13 @@
      "cost_usd": 16.03,
      "platform": "pdf"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44258693099",
+     "at": "2026-11-18T08:25:53Z",
+     "system": "curriqunet",
+     "source_kind": "course_outline",
+     "file": "kb/course_outcomes/sac/read_44258693099_p3of3.json"
+    },
     "plo_programs": 1,
     "ppm_member": null,
     "maps": {
@@ -11466,13 +11510,13 @@
    "harvested": true,
    "slug": "sierra",
    "programs": 190,
-   "passing": 85,
-   "gap": 105,
+   "passing": 87,
+   "gap": 103,
    "causes": {
     "no_closed_list": 65,
     "page_not_found": 14,
     "places_none": 9,
-    "unknown_without_live": 17
+    "unknown_without_live": 15
    },
    "census_causes": {
     "coverage_fails": 2,
@@ -11538,7 +11582,7 @@
    "levers": {
     "program_course_file_check": 65,
     "reader_page_search": 14,
-    "reconcile_steps": 14,
+    "reconcile_steps": 12,
     "reader_page_assignment": 9,
     "ge_units_steps": 3
    },
@@ -11913,14 +11957,14 @@
    "harvested": true,
    "slug": "taft",
    "programs": 80,
-   "passing": 38,
-   "gap": 42,
+   "passing": 39,
+   "gap": 41,
    "causes": {
     "found_not_extracted": 1,
     "no_closed_list": 17,
     "page_not_found": 5,
     "places_none": 2,
-    "unknown_without_live": 17
+    "unknown_without_live": 16
    },
    "census_causes": {
     "found_not_extracted": 1,
@@ -11978,7 +12022,7 @@
    "run": "39259699774",
    "levers": {
     "program_course_file_check": 17,
-    "reconcile_steps": 16,
+    "reconcile_steps": 15,
     "reader_page_search": 5,
     "reader_page_assignment": 2,
     "ge_units_steps": 1,
@@ -12019,13 +12063,13 @@
    "harvested": true,
    "slug": "ventura",
    "programs": 184,
-   "passing": 140,
-   "gap": 44,
+   "passing": 142,
+   "gap": 42,
    "causes": {
     "no_closed_list": 6,
     "page_not_found": 5,
     "places_none": 3,
-    "unknown_without_live": 30
+    "unknown_without_live": 28
    },
    "census_causes": {
     "no_closed_list": 6,
@@ -12081,7 +12125,7 @@
    "read_seconds": 1598.6,
    "run": "39622549965",
    "levers": {
-    "reconcile_steps": 24,
+    "reconcile_steps": 22,
     "program_course_file_check": 6,
     "ge_units_steps": 5,
     "reader_page_search": 5,

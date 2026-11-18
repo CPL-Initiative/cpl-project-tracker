@@ -11549,6 +11549,24 @@
    "hints": "503bcc38a4",
    "asked": "2026-10-18"
   },
+  "Computer Networking & Info Tech 113-Portfolio Review": {
+   "raw_title": "Computer Networking & Info Tech 113-Portfolio Review",
+   "unified_title": "Computer Networking and Information Technology (CNIT 113)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Portfolio exhibit for CCSF CNIT 113. The course title could not be looked up, so it uses the discipline (code) fallback. A COCI/CCN/C-ID lookup should replace it.",
+   "rules": "75e72fb99f8c",
+   "hints": "0bac9c9766",
+   "asked": "2026-11-18"
+  },
   "Concept Art HS-CNUSD": {
    "raw_title": "Concept Art HS-CNUSD",
    "unified_title": "Concept Art",
@@ -15828,6 +15846,304 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation": {
+   "raw_title": "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Emerald HS articulation to Las Positas. The school is stripped and becomes the agency. The CSI content joins the existing Crime Scene Investigation family; the aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "c210382085",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation": {
+   "raw_title": "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Amador Valley HS articulation. The school is stripped and becomes the agency. The title joins the Crime Scene Investigation family; the aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "9130b54387",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Developmental Psychology of Children 1": {
+   "raw_title": "High School Articulation (Amador Valley)- Developmental Psychology of Children 1",
+   "unified_title": "Developmental Psychology of Children 1",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school is stripped and becomes the agency. The aligned Las Positas course (possibly Child Growth and Development) is unverified, so the HS course name is kept.",
+   "rules": "75e72fb99f8c",
+   "hints": "1bf5a34395",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulation (Amador Valley)- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school is stripped and becomes the agency, and the Roman II becomes 2. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "9779430fbb",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Emergency Medical Response": {
+   "raw_title": "High School Articulation (Amador Valley)- Emergency Medical Response",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "The school is stripped and becomes the agency. The title joins the existing multi-issuer Emergency Medical Responder family; the aligned course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "7a7ef54f1f",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Introduction to Athletic Training": {
+   "raw_title": "High School Articulation (Amador Valley)- Introduction to Athletic Training",
+   "unified_title": "Introduction to Athletic Training",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school is stripped and becomes the agency. The aligned Las Positas course title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "f5c3026313",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Amador Valley)- Introduction to Health Careers": {
+   "raw_title": "High School Articulation (Amador Valley)- Introduction to Health Careers",
+   "unified_title": "Introduction to Health Careers",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school is stripped and becomes the agency. It may align to a college health-occupations course (e.g. Exploration of Health Professions); unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "eea66d3ffb",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Dublin)- Criminal Justice/ CSI": {
+   "raw_title": "High School Articulation (Dublin)- Criminal Justice/ CSI",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Dublin HS articulation; CSI is expanded. The school is stripped and becomes the agency. The aligned course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f060454c9",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Dublin)- Introduction to Athletic Training": {
+   "raw_title": "High School Articulation (Dublin)- Introduction to Athletic Training",
+   "unified_title": "Introduction to Athletic Training",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "Dublin is read as Dublin High School. The school is stripped and becomes the agency. The aligned course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "e43335a356",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Dublin)- Introduction to Health Careers": {
+   "raw_title": "High School Articulation (Dublin)- Introduction to Health Careers",
+   "unified_title": "Introduction to Health Careers",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school is stripped and becomes the agency. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "d5572dba89",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Dublin)- Medical Occuptations": {
+   "raw_title": "High School Articulation (Dublin)- Medical Occuptations",
+   "unified_title": "Medical Occupations",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The typo 'Occuptations' is fixed. The school is stripped and becomes the agency. It may align to the same college course as Introduction to Health Careers; review.",
+   "rules": "75e72fb99f8c",
+   "hints": "46bd64a44e",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Emerald)- Criminal Justice/ CSI": {
+   "raw_title": "High School Articulation (Emerald)- Criminal Justice/ CSI",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "Emerald HS articulation, a twin of the 'Criminal Scene Investigation' row. The school is stripped and becomes the agency.",
+   "rules": "75e72fb99f8c",
+   "hints": "57cb24e857",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Emerald)- Developmental Psychology of Children I": {
+   "raw_title": "High School Articulation (Emerald)- Developmental Psychology of Children I",
+   "unified_title": "Developmental Psychology of Children 1",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school is stripped and becomes the agency, and Roman I becomes 1. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "8ad95473a6",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Emerald)- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulation (Emerald)- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school is stripped and becomes the agency, and Roman II becomes 2. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "f64c641bfb",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Emerald)- Emergency Medical Response": {
+   "raw_title": "High School Articulation (Emerald)- Emergency Medical Response",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "The cx hint kept the raw text, so it was set aside. The school name and 'High School Articulation' were stripped and the row joins the Emergency Medical Responder family. Emerald High School (Dublin) is the issuer and trainer. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "a47448a7b9",
+   "asked": "2026-11-18"
+  },
+  "High School Articulation (Emerald)- Introduction to Athletic Training": {
+   "raw_title": "High School Articulation (Emerald)- Introduction to Athletic Training",
+   "unified_title": "Introduction to Athletic Training",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint (raw text, CCC issuer) was rejected. The aligned Las Positas kinesiology course is unverified; it may align to Care and Prevention of Athletic Injuries.",
+   "rules": "75e72fb99f8c",
+   "hints": "e8bbe50213",
+   "asked": "2026-11-18"
+  },
   "High School Articulation- Criminal Justice/Crime Scene Investigation": {
    "raw_title": "High School Articulation- Criminal Justice/Crime Scene Investigation",
    "unified_title": "Crime Scene Investigation",
@@ -15884,6 +16200,191 @@
    "rules": "75e72fb99f8c",
    "hints": "7da16baa97",
    "asked": "2026-11-17"
+  },
+  "High School Articulations (Amador Valley)- Medical Occupations": {
+   "raw_title": "High School Articulations (Amador Valley)- Medical Occupations",
+   "unified_title": "Medical Occupations",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. No aligned Las Positas course was verified, so the HS pathway name is kept; it may map to a health-careers course.",
+   "rules": "75e72fb99f8c",
+   "hints": "da1e29a69a",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Amador Valley)- Nursing Careers": {
+   "raw_title": "High School Articulations (Amador Valley)- Nursing Careers",
+   "unified_title": "Nursing Careers",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. This shares one title with the Dublin variant, with the issuer as the discriminator. The aligned Las Positas course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "0c5481256f",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Amador Valley)- Principles of Engineering": {
+   "raw_title": "High School Articulations (Amador Valley)- Principles of Engineering",
+   "unified_title": "Principles of Engineering",
+   "issuing_agency": "Amador Valley High School",
+   "training_agency": "Amador Valley High School",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. Principles of Engineering is likely the PLTW course; if confirmed, the issuer should be Project Lead The Way (PLTW) with the school as trainer, under the PLTW Principles of Engineering family.",
+   "rules": "75e72fb99f8c",
+   "hints": "030ccf3f1e",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation": {
+   "raw_title": "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation",
+   "unified_title": "Crime Scene Investigation",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "join-when-likely-one"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. The pathway names both criminal justice and CSI; the title joins the Crime Scene Investigation family pending the aligned Las Positas AJ course.",
+   "rules": "75e72fb99f8c",
+   "hints": "c8a9d769de",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Developmental Psychology of Children I": {
+   "raw_title": "High School Articulations (Dublin)- Developmental Psychology of Children I",
+   "unified_title": "Developmental Psychology of Children 1",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school was stripped and the Roman numeral I was changed to 1. The aligned Las Positas ECD course is unverified; it may be Child Growth and Development.",
+   "rules": "75e72fb99f8c",
+   "hints": "0dcaea06f4",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Developmental Psychology of Children II": {
+   "raw_title": "High School Articulations (Dublin)- Developmental Psychology of Children II",
+   "unified_title": "Developmental Psychology of Children 2",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The school was stripped and the Roman numeral II was changed to 2. The aligned Las Positas ECD course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "0f1def215c",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Emergency Medical Response": {
+   "raw_title": "High School Articulations (Dublin)- Emergency Medical Response",
+   "unified_title": "Emergency Medical Responder",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 2",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "This row is typed Industry Certification. It shares a title with the Emerald CBE variant (Rule 2). If the card held is American Red Cross Emergency Medical Response, the issuer should be American Red Cross with Dublin High School as trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Nursing Careers": {
+   "raw_title": "High School Articulations (Dublin)- Nursing Careers",
+   "unified_title": "Nursing Careers",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. This shares one title with the Amador Valley variant. The aligned course is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "8d00ed8c91",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Dublin)- Principles of Engineering": {
+   "raw_title": "High School Articulations (Dublin)- Principles of Engineering",
+   "unified_title": "Principles of Engineering",
+   "issuing_agency": "Dublin High School",
+   "training_agency": "Dublin High School",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. This is likely the PLTW course; if confirmed, the issuer should be Project Lead The Way (PLTW) with the school as trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "f919336133",
+   "asked": "2026-11-18"
+  },
+  "High School Articulations (Emerald) -Principles of Engineering": {
+   "raw_title": "High School Articulations (Emerald) -Principles of Engineering",
+   "unified_title": "Principles of Engineering",
+   "issuing_agency": "Emerald High School",
+   "training_agency": "Emerald High School",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.75,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "Rule 5f"
+   ],
+   "_notes": "The school was stripped and the cx hint was rejected. This is likely the PLTW course; if confirmed, the issuer should be Project Lead The Way (PLTW) with the school as trainer.",
+   "rules": "75e72fb99f8c",
+   "hints": "3e4d8d9af6",
+   "asked": "2026-11-18"
   },
   "History of Fashion - Credit by Exam (FASH 31 )": {
    "raw_title": "History of Fashion - Credit by Exam (FASH 31 )",
@@ -17860,6 +18361,23 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Industry Training Evidence for AJ 70": {
+   "raw_title": "Industry Training Evidence for AJ 70",
+   "unified_title": "Administration of Justice (AJ 70)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.4,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is only a course code, so the Las Positas COCI lookup for AJ 70 is needed to get the real course title. The industry trainer is unnamed, so the issuer is uncertain.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
   "Industry Training Evidence for AUTO A1": {
    "raw_title": "Industry Training Evidence for AUTO A1",
    "unified_title": "Engine Repair (ASE A1)",
@@ -18141,6 +18659,23 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Industry Training Evidence for BUSN 55": {
+   "raw_title": "Industry Training Evidence for BUSN 55",
+   "unified_title": "Business (BUSN 55)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.4,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is only a course code, so the Las Positas COCI lookup for BUSN 55 is needed. The industry training provider is unnamed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
   "Industry Training Evidence for BUSN 65": {
    "raw_title": "Industry Training Evidence for BUSN 65",
    "unified_title": "Business (BUSN 65)",
@@ -18158,6 +18693,23 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Industry Training Evidence for CIS 59C": {
+   "raw_title": "Industry Training Evidence for CIS 59C",
+   "unified_title": "Computer Information Systems (CIS 59C)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.45,
+   "confidence_trainer": 0.4,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "The title is only a course code, so the Las Positas COCI lookup for CIS 59C is needed; it may be a vendor-cert course. The industry trainer is unnamed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
   "Industry Training Evidence for CIS 66": {
    "raw_title": "Industry Training Evidence for CIS 66",
    "unified_title": "Computer Information Systems (CIS 66)",
@@ -18174,6 +18726,25 @@
    "rules": "75e72fb99f8c",
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CNT 51": {
+   "raw_title": "Industry Training Evidence for CNT 51",
+   "unified_title": "Computer Networking Technology (CNT 51)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
   },
   "Industry Training Evidence for CNT 52": {
    "raw_title": "Industry Training Evidence for CNT 52",
@@ -18193,6 +18764,44 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Industry Training Evidence for CNT 55": {
+   "raw_title": "Industry Training Evidence for CNT 55",
+   "unified_title": "Computer Networking Technology (CNT 55)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
+  "Industry Training Evidence for CNT 56": {
+   "raw_title": "Industry Training Evidence for CNT 56",
+   "unified_title": "Computer Networking Technology (CNT 56)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
   "Industry Training Evidence for CNT 68": {
    "raw_title": "Industry Training Evidence for CNT 68",
    "unified_title": "Computer Networking Technology (CNT 68)",
@@ -18210,6 +18819,25 @@
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
   },
+  "Industry Training Evidence for CNT 69": {
+   "raw_title": "Industry Training Evidence for CNT 69",
+   "unified_title": "Computer Networking Technology (CNT 69)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
   "Industry Training Evidence for CNT 7285": {
    "raw_title": "Industry Training Evidence for CNT 7285",
    "unified_title": "Computer Networking Technology (CNT 7285)",
@@ -18226,6 +18854,44 @@
    "rules": "75e72fb99f8c",
    "hints": "4f53cda18c",
    "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CNT 7401": {
+   "raw_title": "Industry Training Evidence for CNT 7401",
+   "unified_title": "Computer Networking Technology (CNT 7401)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The course code is unusual (possibly a Cisco academy course) and no catalog hint was supplied. The title falls back to discipline plus code; it needs a COCI lookup and possibly a vendor issuer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
+  },
+  "Industry Training Evidence for CS 41": {
+   "raw_title": "Industry Training Evidence for CS 41",
+   "unified_title": "Computer Science (CS 41)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "The exhibit is typed Industry Certification but names only a Las Positas course. No catalog hint was supplied, so the title falls back to discipline plus code; it needs a COCI lookup. Issuer defaults to CCC because no industry issuer is named.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-18"
   },
   "Industry Training Evidence for EMS 10": {
    "raw_title": "Industry Training Evidence for EMS 10",
@@ -26476,6 +27142,24 @@
    "hints": "918dbaa69d",
    "asked": "2026-11-11"
   },
+  "Portfolio Evidence for BUSN 55": {
+   "raw_title": "Portfolio Evidence for BUSN 55",
+   "unified_title": "Business Mathematics",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for BUSN 55' was set aside because it is a strip artifact.",
+   "rules": "75e72fb99f8c",
+   "hints": "99b11dac14",
+   "asked": "2026-11-18"
+  },
   "Portfolio Evidence for BUSN 56": {
    "raw_title": "Portfolio Evidence for BUSN 56",
    "unified_title": "Introduction to Management",
@@ -26547,6 +27231,24 @@
    "hints": "9d90180829",
    "asked": "2026-11-11"
   },
+  "Portfolio Evidence for BUSN 87": {
+   "raw_title": "Portfolio Evidence for BUSN 87",
+   "unified_title": "Organizational Management and Leadership",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for BUSN 87' was set aside because it is a strip artifact.",
+   "rules": "75e72fb99f8c",
+   "hints": "cc0d9e9b19",
+   "asked": "2026-11-18"
+  },
   "Portfolio Evidence for BUSN 88": {
    "raw_title": "Portfolio Evidence for BUSN 88",
    "unified_title": "Human Resources Management",
@@ -26563,6 +27265,24 @@
    "rules": "75e72fb99f8c",
    "hints": "dd03afdcf9",
    "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for CIS 59C": {
+   "raw_title": "Portfolio Evidence for CIS 59C",
+   "unified_title": "Web Programming - JavaScript",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Title taken from the Las Positas catalog hint. The cx hint 'Evidence for CIS 59C' was set aside because it is a strip artifact.",
+   "rules": "75e72fb99f8c",
+   "hints": "eed6d34e29",
+   "asked": "2026-11-18"
   },
   "Portfolio Evidence for ENG 19A": {
    "raw_title": "Portfolio Evidence for ENG 19A",

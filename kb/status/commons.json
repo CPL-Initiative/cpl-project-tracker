@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T04:02:00Z",
+ "written_at": "2026-11-18T16:47:41Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14836,
+     "n": 14887,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2617,
+     "n": 2566,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -75,8 +75,8 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14836,
-    "failing": 2617,
+    "complete": 14887,
+    "failing": 2566,
     "unread": 2829,
     "records": 19111,
     "colleges": 118,
@@ -125,16 +125,16 @@
    ],
    "issues": [
     {
-     "n": 40,
+     "n": 70,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 40)",
+     "owner": "a curator (the classifier is unsure 44, a merge would join two issuers 16, the classifier's title has a course code left in 10)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 499,
-     "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "n": 504,
+     "words": "credentials with no Common SUBJ (464 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
      "open": "#exhibits/list/nosubj",
@@ -173,7 +173,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-18T03:58:00Z",
+    "at": "2026-11-18T16:47:31Z",
     "every_hours": 24
    },
    "facts": {
@@ -186,14 +186,14 @@
     "confirmed": 1435,
     "records": 3190,
     "records_stamped": 2420,
-    "saved_at": "2026-11-17T17:10:03Z",
+    "saved_at": "2026-11-18T16:47:31Z",
     "fold_at": "2026-11-18T03:58:00Z",
     "map_titles": 5333,
     "unclassified": 78,
     "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 499,
+    "no_subject": 504,
     "review_list": 12,
     "returned_unacknowledged": 0
    },
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-17T03:13:28Z",
+    "at": "2026-11-18T04:02:04Z",
     "every_hours": null
    },
    "facts": {
@@ -581,9 +581,9 @@
    ],
    "pair": [
     {
-     "n": 42623,
+     "n": 56488,
      "of": null,
-     "words": "outcomes read from 11,846 courses at 16 colleges",
+     "words": "outcomes read from 14,812 courses at 21 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -591,17 +591,21 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 42623,
-    "courses": 11846,
+    "outcomes": 56488,
+    "courses": 14812,
     "colleges": [
+     "allan_hancock",
      "cabrillo",
      "coastline_community",
+     "college_of_the_redwoods",
      "columbia",
      "contra_costa",
      "cuesta",
+     "diablo_valley",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
+     "los_medanos",
      "mission",
      "modesto_junior",
      "moreno_valley",
@@ -609,13 +613,14 @@
      "orange_coast",
      "riverside_city",
      "santa_ana",
+     "santiago_canyon",
      "shasta"
     ],
-    "reads": 41
+    "reads": 54
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-17T00:51:26Z",
+    "at": "2026-11-18T08:25:53Z",
     "every_hours": null
    },
    "sources": [
@@ -696,9 +701,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 40,
+      "n": 70,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 40)",
+      "owner": "a curator (the classifier is unsure 44, a merge would join two issuers 16, the classifier's title has a course code left in 10)",
       "open": "#exhibits/held"
      },
      {
@@ -766,7 +771,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2617,
+    "n": 2566,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -782,8 +787,8 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 499,
-    "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "n": 504,
+    "words": "credentials with no Common SUBJ (464 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -801,10 +806,10 @@
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
     "kind": "not_shrinking",
-    "n": 499,
+    "n": 504,
     "was": 362,
     "since": "2026-11-11",
-    "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "words": "credentials with no Common SUBJ (464 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
    },
@@ -828,13 +833,13 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 956,
+     "placed": 959,
      "untouched": 880,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 0,
+     "left": 3,
      "looked": 57
     },
     {
@@ -861,13 +866,13 @@
     },
     {
      "name": "high-school-rop",
-     "placed": 57,
+     "placed": 62,
      "untouched": 33,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 0,
+     "left": 5,
      "looked": 24
     },
     {
@@ -916,13 +921,13 @@
     }
    ],
    "total": {
-    "placed": 1463,
+    "placed": 1471,
     "untouched": 1331,
     "kept": 23,
     "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 8,
     "looked": 108
    }
   },
@@ -1042,6 +1047,17 @@
     }
    ],
    "at": "2026-11-18T04:01:30Z"
+  },
+  {
+   "kind": "decision",
+   "project": "exhibit",
+   "n": 1,
+   "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
+   "teaches": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
+   "open": null,
+   "todo_id": "slash-whole-name-titles-s679",
+   "chosen": "They stay as printed.",
+   "stop": "It stands unless you change it."
   },
   {
    "kind": "job",

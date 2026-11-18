@@ -90,6 +90,9 @@ withhold kb/harvest_scouting
 withhold kb/status/harvest_heading_agreement.json
 withhold kb/status/harvest_heading_agreement.md
 withhold kb/status/harvest_ncl_lookup_census.json
+withhold kb/status/program_discontinued.json
+# The paid reread plan for the cheap-piles lane (S680); the conductor reads it, no page does.
+withhold kb/program_requirements_reread_plan_s680.json
 # Standing pattern for a dated file automation adds (the course-outcomes compare); no page reads one, and the
 # ones already committed stay published by their own lines.
 withhold kb/status/mid_outcomes_compare_*

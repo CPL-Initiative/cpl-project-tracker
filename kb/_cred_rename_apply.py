@@ -60,7 +60,9 @@ issuer_resolution for the Supabase carry and the undo.
 Pair rows (S678, #3464): `--pairs kb/exhibit_repoint_list.json [--dry-run]` applies the reviewed re-point list one
 (MAP exhibit id + local title) pair at a time through kb/exhibit_repoint.py: only that pair's link and its own
 articulations change, the source canonical stays, a missing target key is created; the receipt is
-kb/cred_rename_out/<date>-pairs/pair_undo.json and `--undo-pairs <folder>` reverses it.
+kb/cred_rename_out/<date>-pairs/pair_undo.json and `--undo-pairs <folder>` reverses it. A list that records the
+hashes of the files it was built from (`inputs`, as kb/exhibit_blocker_rules_list.json does) is refused when any of
+them has changed since: rebuild it first (COBIx on #3515). A dry run reports the stale files and still runs.
 
 Run from repo root:  python3 kb/_cred_rename_apply.py
 """
@@ -597,6 +599,28 @@ def _load_optional(path):
 
 # ── Pair rows: one (MAP exhibit id + local title) at a time (COBIx's item 6, #3464, S678) ─────────────────────────
 
+def stale_list_inputs(doc, root=None):
+    """The files a pair list's `inputs` hashes no longer match, as [(path, recorded, now)]; [] when it records none.
+
+    The hash is a file's sha256, first 16 hex digits, or None for a missing file (kb/exhibit_blocker_rules.py
+    input_hashes). Rows decided on yesterday's records must not run on today's, so the apply refuses a stale list."""
+    import hashlib
+    root = root or os.path.dirname(HERE)
+    out = []
+    for rel, recorded in sorted((doc.get("inputs") or {}).items()):
+        path = os.path.join(root, rel)
+        now = None
+        if os.path.exists(path):
+            h = hashlib.sha256()
+            with open(path, "rb") as f:
+                for chunk in iter(lambda: f.read(1 << 20), b""):
+                    h.update(chunk)
+            now = h.hexdigest()[:16]
+        if now != recorded:
+            out.append((rel, recorded, now))
+    return out
+
+
 def _pairs_out_dir():
     """kb/cred_rename_out/<date>-pairs/, or -pairs-2, -3 … so a second apply the same day keeps the first receipt."""
     base = os.path.join(OUT_ROOT, TODAY + "-pairs")
@@ -672,6 +696,14 @@ def pairs_main(argv):
     rows = doc.get("rows") or []
     if not rows:
         sys.exit(f"{a.pairs} has no rows.")
+    stale = stale_list_inputs(doc)
+    if stale:
+        names = ", ".join(s[0] for s in stale)
+        if not a.dry_run:
+            sys.exit(f"Refused: {a.pairs} was built from files that have changed since ({names}). Rebuild it first "
+                     f"(its generated_by names the builder). Nothing written.")
+        print(f"[pairs] STALE: {a.pairs} was built from files that have changed since ({names}); the apply will "
+              f"refuse it until it is rebuilt")
     ut2, creds2, arts2, undo, report = xr.apply_rows(rows, ut, creds, arts, a.with_exhibit_grain, TODAY)
     c = report["counts"]
     print(f"[pairs] {'dry run' if a.dry_run else 'apply'}: {c['applied']} applied, {c['held']} held, "

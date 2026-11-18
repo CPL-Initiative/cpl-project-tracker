@@ -71,9 +71,12 @@ P = lambda *a: os.path.join(HERE, *a)  # noqa: E731
 ASSESS = re.compile(r"\b(AP|CLEP|IB|DSST)\b|advanced placement", re.I)
 NAMED = re.compile(r"licen[sc]e|licensed|salesperson|\bLVN\b|certified|\bASE\b|comptia|\bOSHA\b|\bNCCER\b|\bAWS\b|"
                    r"servsafe|\bCPR\b|first aid|fire ?fighter (1|I|2|II)[A-D]?\b|"
-                   # a State Fire Training certification level (1A, 2C) named as a certification, so a course number
-                   # such as ENGL 1A with no certification word stays out of it (second reader, PR #3515)
-                   r"\b[12][A-D]\b.*certification", re.I)
+                   # a State Fire Training certification level (1A, 2C) named as a certification in a fire title, so
+                   # a course number such as ENGL 1A stays out of it even when "certification" follows (second reader
+                   # and COBIx, PR #3515). The fire term is required, not the level beside the word: "Company Officer
+                   # 2A-2E Certification" and "Driver/Operator 1A - Industry Certification" are SFT levels too.
+                   r"^(?=.*(\bfire|company officer|driver\W{0,3}operator|inspector|\bSFT\b)).*\b[12][A-D]\b.*certification",
+                   re.I)
 OK_ISSUER = re.compile(r"california community colleges|state fire training|\(SFT\)", re.I)
 COLLEGE_ISSUER = "California Community Colleges"
 CONFIDENCE = 0.8

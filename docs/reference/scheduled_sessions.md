@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-15
+updated: 2026-11-18
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -83,7 +83,10 @@ is his standing preference there too.
    handoff. On 2026-10-17 the 05:12Z and 06:12Z firings both lacked it, both ran
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
-   the last half hour is a live session: end in one line.
+   the last half hour is a live session: end in one line. (S681, 2026-11-18: the 10:12Z firing found S680's own
+   checkpoint #3487 at its last step, read handoff 681 from the PR's head with `get_file_contents` at
+   `refs/pull/3487/head`, and took the queue when it merged two minutes later. A session Sam runs by hand may checkpoint
+   and keep working, so the rule stays as written until Sam or COBIx rules on a routine firing's checkpoint.)
    **Except a declared side session** (Sam, 2026-11-05, S583: *"go"*): when that PR's body declares a scope
    (*Library side session (<moniker>): <files> and <tables>*), the firing proceeds, stays off every file, table and
    routine step the scope names (a Library scope takes step 6 with it), and says so in its handoff. A PR with no
@@ -342,8 +345,10 @@ is his standing preference there too.
    - **First, what is in flight.** Read the open `claude/slo-<slug>` PRs and their runs (`actions_list`
      `list_workflow_runs` on the three workflows, by branch). On each branch, after a pull of what the runner committed
      back, run `python3 scripts/next_slo_colleges.py --all` and act on the college's state.
-     **load** (every slice filed complete): write `kb/course_outcomes/.load` as printed (`host=<folder>`; an objectives
-     reread adds `kind=objective`) and push.
+     **load** (every slice filed complete): first run `python3 tests/course_outcomes_objectives_standing_test.py` on
+     the branch, and push no `.load` while a check fails for that college (S681: Chabot's load posted 1,013 objectives
+     as SLOs past red checks 8 and 9, then was rolled back). Then write `kb/course_outcomes/.load` as printed
+     (`host=<folder>`; an objectives reread adds `kind=objective`) and push.
      The load inserts only blocks the table lacks, in about two minutes, and commits
      `kb/receipts/course_outcomes_<host>_<run>.json`: every inserted id and the delete that rolls them back (Rule 10).
      Merge on a passing `test` once the receipt is on the branch. **reading**: a slice is running or failed; one that
@@ -355,7 +360,10 @@ is his standing preference there too.
      report while it lists *All Fields* gets one more index run with `report=^All Fields$` first (SDCCD printed its
      SLOs only there).
    - **Then the next, once a UTC day: at most one full read and one preparation run** (a trial or an index), on two
-     hosts, never two runs on one host. `python3 scripts/next_slo_colleges.py --next --skip <slugs with an open PR>`
+     hosts, never two runs on one host. On a funded night (S680, 2026-11-18, the conductor's decision under Sam's
+     *"my priority is completion"*) the limit is one full read per host instead of one a UTC day, since a read costs
+     runner minutes only; the one-run-per-host rule stands, and the reads share the runner pool with the night's CI.
+     `python3 scripts/next_slo_colleges.py --next --skip <slugs with an open PR>`
      names the college and the trigger file; the plain listing names the first trial or index below it, and `--college <slug>` prints that
      one's file. On a new branch `claude/slo-<slug>` off `main`, write the file with every line it prints (`run=`
      takes the date), commit with a message that does not start with *Merge*, push, and open a draft PR. A workflow
@@ -385,7 +393,7 @@ is his standing preference there too.
    after step 11, while time remains:** read the lane's catalog sweep and its colleges' NEXT lines
    ([`program-requirements-harvest`](lanes/program-requirements-harvest.md)) and work the first college that is neither
    parked nor waiting on a run: its reconcile steps, a read or an extraction under the $40 go, the load, then the display
-   build (`kb/_build_roep_display.py` on the wave branch, then `step=display`). One branch per college, never two on one
+   build (`kb/_build_roep_display.py` on the wave branch, commit the page alone since its receipt is gitignored (S680), then `step=display`). One branch per college, never two on one
    host; dispatch with `college=`. At the checkpoint, count what moved to passing against the stopping rule and park a
    college when it says so. When every college is loaded, parked or waiting, the step ends in one line naming the next
    one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).

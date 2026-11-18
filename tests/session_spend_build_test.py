@@ -79,5 +79,22 @@ with tempfile.TemporaryDirectory() as tmp:
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_session_spend.py"), "--out", o], capture_output=True, text=True)
     check("--out writes the file where the deploy asks, making its folders", r.returncode == 0 and os.path.exists(o), r.stderr)
 
+# S680: what the dollars bought, as collection, curation and infrastructure pairs; an old line still reads.
+g = ss.parse_line("$123.45 (Opus 5.5 $123.45); collection $100.00, curation $20.00, infrastructure $3.45; "
+                  "2026-11-15T17:06Z to 2026-11-15T23:19Z.")
+check("a tagged line reads its total, models and tags", g and g["usd"] == 123.45 and g["models"] == {"Opus 5.5": 123.45}
+      and g["tags"] == {"collection": 100.0, "curation": 20.0, "infrastructure": 3.45}, g)
+o = ss.parse_line("$115.38 (Opus 5.5 $115.38, subagents included); 2026-11-17T21:41Z to 2026-11-17T23:59Z.")
+check("an untagged line reads as before, with no tags key", o and o["usd"] == 115.38 and "tags" not in o, o)
+n = ss.parse_line("not available; collection $5.00; 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
+check("a line with no readout carries no tags", n and not n["available"] and "tags" not in n, n)
+p = ss.parse_line("$9.00 (Collection 2 $9.00); 2026-11-18T00:10Z to 2026-11-18T03:20Z.")
+check("a model named like a tag is a model, never a tag", p and "tags" not in p and p["models"] == {"Collection 2": 9.0}, p)
+with tempfile.TemporaryDirectory() as t:
+    os.makedirs(os.path.join(t, "docs"))
+    with open(os.path.join(t, "docs", "session_900_handoff.md"), "w") as f:
+        f.write("Spend: `" + ss.EXAMPLES[1] + "`\n")
+    check("the checkpoint's tagged example is never a session's spend", ss.build(t)["sessions"] == [])
+
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

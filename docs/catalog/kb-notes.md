@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-589 document(s).
+592 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -119,6 +119,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-10-14 |
 | [A grid past a few hundred thousand cells needs a window, not chunks](../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md) | methodology | internal | 2026-09-24 | 2026-09-24 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A guard must fail closed when it cannot decide](../kb-notes/methodology-a-guard-must-fail-closed-when-it-cannot-decide.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
@@ -224,6 +225,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
+| [A self-check must see what the rule writes](../kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
@@ -516,6 +518,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [When a page and an assistant show the same facts, build them once](../kb-notes/methodology-one-build-two-readers.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [When every merge conflicts a generated file, land the work as one wave pull request, not a chain](../kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |

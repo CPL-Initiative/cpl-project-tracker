@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
+    18.0,
     19.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-19.0; the catalog states 18.0-19.0"
-   ]
+   "why": [],
+   "rescored": "A5 a choose list takes the courses of the list it names (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -227,6 +226,34 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "HRM 154",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HRM 157",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -241,5 +268,13 @@
    "In the careers sentence, 'entry‐level' precedes the whole list ('as entry‐level hotel, motel and restaurant managers, ...'); it was left off the first entry because it modifies all of them. A reviewer may prefer to keep it."
   ]
  },
- "extracted_run": "38843470509"
+ "extracted_run": "38843470509",
+ "reconciled": [
+  {
+   "rule": "A5",
+   "block": "List B: Complete two courses from the following or any course from List A not already used (6-7 units)",
+   "words": "'List B: Complete two courses from the following or any course from List A not already used (6-7 units)' says any course from List A: 4 courses added as options (HRM 154, CUL 176, HRM 157, CUL 101)",
+   "statewide": "units_rules_A5"
+  }
+ ]
 }

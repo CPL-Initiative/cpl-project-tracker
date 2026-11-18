@@ -386,3 +386,148 @@ why it is the ground truth.
 ## Moved from docs/INDEX.md's update history (S678 checkpoint)
 
 - 2026-11-16 (S664 SkyWren, the CPL Queue routine's 10:12Z firing, full checkpoint): #3389 (the SLO reader reads Las Positas' lead-in *Upon the completion of this course* as the lead; the 505 live rows corrected in place under a receipt, `d-laspositas-lead-fix-in-place-s664`); handoff 665 (SkyThrush).
+
+## Moved from lanes/common-cr-reference.md (S679 checkpoint, 2026-11-18)
+
+### The CCR rung, and Sam's ladder design (2026-09-21, S282 SkyLedger)
+
+**Item 1 is RULED and it is his** — the ladder sheet's only `by: "sam"` verdict.
+Sam, 2026-09-21: *"CCR gets the next sitting"*. Item 2 (the Trust Card adapter)
+was its prerequisite and is built: `ccr_findings()` in `kb/_jev_adjudicate.py`,
+guarded by `tests/jev_ccr_adapter.test.js`.
+
+**THE CCR TRIAGES 27,580 TRUST CARDS TO 1,237 QUESTIONS** — the CER/CSR shape
+(239→59, 185→143), reached by asking which tags a curator would recognize as a
+question. Askable: `discipline_title_mismatch` 1,118 ·
+`description_discipline_disagreement` 73 · `generic_title_concrete_discipline`
+46. The state tags are repair, never adjudication.
+
+⚠️ **6,621 ROWS FIRE ON SIGNALS THIS REPO HAS ALREADY RULED NON-AUTHORITATIVE,
+AND ASKING JEV ABOUT THEM IS THE EXPENSIVE MISTAKE.** `unit_anomaly` (4,179) is
+the question the battery MEASURED Jev on at **AUC 0.281, below chance** — units
+are not identity here and a general model assumes otherwise.
+`top_discipline_disagreement` (1,189) and `member_top_divergence` (1,253) ask Jev
+to gate on TOP, which Rule 7 forbids outright. `CCR_NEVER_ASK` names all three
+with the reason; `subject_discipline_outlier` (322) and `subject_collision_signal`
+(113) are `CCR_RANK_ONLY` because a SUBJ4 change is a re-mint.
+
+⚠️ **`discipline_title_mismatch` IS MOSTLY ARTIFACT, WHICH IS WHY THE DESCRIPTION
+RIDES EVERY RULE.** It fires on token overlap, so *Three-Dimensional Design*
+under Art and *Environmental Ethics* under Philosophy are both flagged and both
+right. The real misses are obvious in the description and invisible without it:
+an *Ethics* row under Philosophy whose description is **DEH-24's dental-hygiene
+prerequisites**. COCI's `_x000D_` escapes are stripped; the catalog boilerplate
+STAYS, because that DEH prerequisite list IS the evidence.
+
+#### Sam's ladder design (2026-09-21)
+
+His words verbatim, including the revision that reordered it, are in the
+`CPLBrain` braindump and `docs/common_cr_reference_lessons.md`.
+
+⚠️ **THE PARENT LAYER IS AN UNREVIEWED MAY DRAFT, AND SAM CALLED IT.** Measured
+on `kb/coci_minted_courses.json`: **15,513 of 19,568 parents (79%)** were minted
+in **2026-05** by `claude-opus-4-7 (Phase B M-ID consolidation draft)`. **ZERO of
+the 19,568 carry a human `reviewed_by`.** 15,513 titles read
+`local catalog (representative/modal)` — **the BOTTOM rung of the CCRR naming
+cascade**. 14,751 (75%) carry no `discipline_source` at all. **Zero carry a C-ID
+or CCN**, so the cascade's top two rungs fire on nothing at this layer; the 243
+authority anchors sit in `common_courses.json`, which the auditor excludes by
+design as upstream authority.
+
+**So the rungs run membership first, parent second, and loop.**
+
+| # | Rung | Population | Kind |
+|---|---|---|---|
+| 1 | **Title** — does this course belong under this discipline? | 1,237 | evidence |
+| 2 | **Course description** | 1,237 (same rows, + evidence) | evidence |
+| 3 | **CIP** | 1,237 (same rows, + evidence) | evidence |
+| 4 | **Units** — is the spread a content difference? | **1,538** | population |
+| 5 | **Subject-code outliers** | **435** | population |
+| 6 | **Blanks the aggregate can fill** | **4,065** | population |
+| 7 | The parent's own title, then its number | waits on settled membership | — |
+
+⚠️ **TWO KINDS OF RUNG, AND CONFLATING THEM COSTS A SITTING.** Rungs 1-3 are ONE
+question over ONE population with CUMULATIVE evidence, so "escalate what rung 1
+could not settle" is meaningful. Rungs 4-6 are DIFFERENT questions over DIFFERENT
+populations — they neither accumulate nor escalate into one another, and **each
+earns its own gate**. `CCR_RUNG_KIND` says which is which.
+
+⚠️ **SAM'S 2-UNIT RULE IS THE DOMAIN PRIOR THE BATTERY WAS MISSING**, and it is
+why `unit_anomaly` left `CCR_NEVER_ASK`. Jev scored **AUC 0.281** there — below
+chance — applying the general assumption that different hours mean different
+content. Sam: *"the range should be 2 units variation as a non-critical
+difference."* Measured across all 4,179 cards (every one carries 2+ member unit
+values): **2,641 (63%) clear mechanically at or under 2 units, spending no
+call**; **1,538 (37%) sit above it**, up to 33 apart. ⚠️ **The rule is STATED IN
+the question** — re-adding it as a bare "do these units differ?" reproduces
+0.281 exactly.
+
+⚠️ **THE SUBJECT RUNG ASKS AND NEVER ACTS.** `CCR_NEVER_AUTO` names it: a SUBJ4
+change is a re-mint under the mandatory playbook. Sam's low-stakes framing makes
+the exploration safe; it does not make a model's answer a decision.
+
+The aggregate rung's fill, and why it comes from `unified_courses_member_desc.js`: [`common_cr_reference_lessons`](common_cr_reference_lessons.md), moved S302.
+
+⚠️ **THE TWO TOP TAGS STAY NEVER-ASK** (2,442 rows). No domain rule rescues a
+question whose whole premise is *"TOP disagrees"*; that is what separates them
+from units.
+
+**THE LADDER IS THE TEMPLATE, NOT A CCR SHAPE (Sam, 2026-09-21):** *"I will want
+similar rungs for the other datasets."* The CER, CSR and CCRR each get their own
+rungs on this pattern.
+
+Rung 4's **title** follows Sam's cascade (CCN > C-ID > M-ID > published line >
+modal wording); its **number** is a re-mint under the mandatory playbook, with
+Jev ranking candidates and a curator ruling, the alias chain carrying the old id.
+
+⚠️ **RULE 7 FAVORS DOING THIS NOW, and the window closes on a declaration.**
+M-IDs are in staging-cleanup, re-mints are permitted under the playbook, and
+nothing is faculty-published. ⚠️ **This LOOSENS ladder item 9**, which held the
+CSR out because a SUBJ4 change is a re-mint — more conservative than Rule 7
+requires. What stands is that Jev suggests and a curator rules.
+
+⚠️ **THE PRODUCT IS THE DECISION, NOT THE CLEANUP (Sam, 2026-09-21):** *"the
+MIDs are still experimental, so the stakes are low for mistakes. We want to use
+these process explorations to better configure decisions for faculty to respond
+to and curate where needed--much like our decision sheet procedure."* So the
+M-ID layer is the low-stakes rehearsal room, the measure is whether a reader
+rules quickly and stays right (undo and reversal rates, never clicks), and
+faculty are discipline-bound — **slice the sheet by discipline**. Capture: `CPLBrain` braindump `2026-09-21-1900-the-ladder-is-a-rehearsal-for-faculty-decisions`.
+
+**THE RUNGS ARE BUILT** (`--rung title|cip|description`, cumulative). CIP comes
+from `kb/top_cip_map.json` — the modal CIP colleges assigned to real programs,
+which resolves for **1,235 of the 1,237** questions and rides in WITH its
+majority (`share`, `cips`) so it corroborates rather than gates.
+⚠️ **RUN ONE RUNG.** A rung cannot escalate until it has a gate, and the CCR has
+zero verdicts — 0.85 belongs to the CCRR and a different question. **NEXT: a
+`title`-rung sitting, whose verdicts calibrate that rung; then rung 2 re-asks
+only what rung 1 left unsettled.** Rung 4 (the parent's own title and number)
+waits on settled membership.
+
+## Moved from docs/INDEX.md's update history (S679 checkpoint)
+
+- 2026-11-16 (S666 SkyDipper, Sam's session, full checkpoint): #3395 (doctrine: the ask test, pick a lane, no re-asking, person-settled wins, the Execute SQL prompt is the app's), #3396 (Another look drops a move away from a person's save; 6 cards to 0), #3397 (Honors step 2 applied, 380 rows); #3393 closed (Physics 32745 held on a free prior + reconcile rescore); Riverside City archive 7 read, both records stay; Monterey Peninsula's three reloaded (draft #3399); drafts #3398, #3400; the harvest, commons, cer-procedures and governance lanes compacted under budget; handoff 667 for SkyPlover.
+
+## Moved from lanes/commons.md (S680 checkpoint, 2026-11-18)
+
+Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; the S679 NEXT is rebuilt in the lane's S680 paragraph):
+
+**LIVE: College Data Collection's cost and counts (S678, #3465 `7dc362df`, item 1).** `kb/_build_spend_daily.py` adds two measured parts to `kb/reference/model_spend_daily.json`: `runner` (each run's `cost_usd_run` by read day; the `runner_runs` ledger by run id, from 2026-11-17: 118 runs, $1,133.52) and `sessions` (each handoff's `Spend:` line); billing `api` and `topups` stay hand-pasted (no billing credentials). The statewide figures carry `spent_usd` and `spent_runs` beside `cost_usd` ($1,343.25 filed). The census (`harvest-gap-census.yml`, job `live-counts`) runs daily at 17:47 UTC under the failure watcher; dispatch-only before, its counts went unread Nov 13 to 17. Run 44184389606 (21:54Z): objective courses 2,983 to 10,711; run 44195716880 (23:05Z) carries `by_day` and the spent figure. ETA dates name their days (*Soonest: the pace of Nov 8 to 15*); the SLO and objective rates say they are fixed estimates. **Cost per CRE (Sam, in session; his words in `kb/reference/cre_weights.json` `_what`):** 1 outline row is 1 CRE, 1 program record 15, gaps count in full, weights fixed for Phase 1, a 7-day window beside the Fable baseline (Nov 11 to 14, about 21,500 CRE at about $0.15 to $0.34). `by_day` counts outline rows by `loaded_at` day and program records as head counts. Nov 11 to 17: about 19,537 CRE (9,277 outline rows plus 684 records times 15); dollars are billing where pasted (Nov 11 to 15), else measured. `loaded_at` is the last load, so a reload re-dates rows: the series reads *loaded on*, never *first collected*.
+
+**DONE: the Commons Clarity units findings (S678, #3470 `a7218505`, item 4).** Findings 1 to 6 done; 7 in part (*Major only* fixed in the display builder; the stray 29.5 is in no committed data; the blank first load does not reproduce without a browser). Chaffey's CPL Pathways button: the program index read OFFSET pages and hit anon's 3 s timeout near 17k records; it reads keyset pages now, not yet seen live. Sam's three rulings are in `docs/reference/sam_rulings.md`, not applied (tonight's). Commons data rebuilt with both unit figures.
+
+**OPEN (S678 drafts):** **#3473** (item 8): one to-do from `kb/_blocked_catalogs.py` on the College Data Collection page and the Commons' *Waiting on a person* list, cleared by `kb/hand_filed_catalogs/outlines/<slug>.json`; 6 colleges, 345 courses, 12 still taught; the course list reads TBA until COBIx's hunt-list file is posted. **#3474** (item 7): the Courses List fold and the Exhibits rows side by side, read-only, in progress.
+
+**NEXT (S679):** #3467, #3473 and #3474 are merged, and Sam's three `sam_rulings.md` rulings of Nov 17 are applied (#3478, #3481; [program-requirements-harvest](program-requirements-harvest.md)). Left: the retired-course drops; the Exhibits items in [cer-procedures](cer-procedures.md) (#3482, then #3472); Sam's billing paste after Nov 15.
+
+## Moved from docs/INDEX.md's update history (S680 checkpoint)
+
+- 2026-11-16 (S667 SkyPlover, Sam's session, full checkpoint): #3402 (CPL Pathways: Request Adopt on course cards, Ask Sierra's side bar, an SLOs and objectives panel, full width, the CPL Visual's progress bar), #3403 (`kb/plain_words.py`, one term list; the six re-clustering cases settled), samueltlee/CPLBrain#806 (sheets refuse undefined insider terms from 201), #3404 (harvest and governance decisions; seven memory rows through the runner). Handoff 668 (SkyPipit).
+
+## Moved from docs/INDEX.md's update history (S681 checkpoint)
+
+- 2026-11-16 (S668 SkyPipit, Sam's session, full checkpoint): #3408 (the no-closed-list lookup's page yield: 13 yields at 8 colleges, 0 passing moved), #3411 (Gavilan Mathematics 31444 and Physics 33047 from their 2025-2026 catalog); #3414 (slice B part 1) waits on `test`; eight `cpl_memory` rows drafted as a migration; the harvest lane compacted; handoff 670 (S669 ran in parallel).
+
+## Moved from docs/INDEX.md's update history (S682 checkpoint)
+
+- 2026-11-17 (S670 SkyBunting, Sam's session, full checkpoint): #3420 (Coastline's objectives loaded, 522 rows; a course outcomes slice keyed by its colleges), #3423 (Skyline's yield read after display build b640e31b114a), #3436 (Skyline 32337's live row removed, full image filed), #3433 and #3434 (Rio Hondo and Santa Ana from their own 2025-2026 catalogs), #3435 (S668's Berkeley City row); five `cpl_memory` rows through the runner; handoff 671 for SkyKinglet.

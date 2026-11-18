@@ -322,6 +322,11 @@ def test_rule_fixtures():
         check(br.NAMED.search(named), "%r does not read as a named credential" % named)
     check(not br.NAMED.search("ENGL 1A College Composition - Industry Certification".replace("Certification", "IC")),
           "a course number 1A with no certification word reads as a named credential")
+    check(not br.NAMED.search("ENGL 1A College Composition meets certification requirements"),
+          "a course number 1A followed later by the word certification reads as a named credential")
+    for sft in ("Company Officer 2A-2E Certification", "FTECH 341\tFire Apparatus Driver/Operator 1A - Industry Certification",
+                "Fire Fighting Tactics and Strategy Company Officer 2D and 2E Certifications"):
+        check(br.NAMED.search(sft), "%r, an SFT level named as a certification, does not read as named" % sft)
     check(not br.NAMED.search("FTECH 321A Fire Service In-Service Training/EMS"),
           "an in-service module reads as a named credential")
     claimed = br.rule_cert_twin(idx, [s("MAPICI-A2AW-1-001", rows[0]["local_title"])],
@@ -366,6 +371,36 @@ def test_committed_is_current(doc):
                                          "python3 kb/exhibit_blocker_rules.py")
 
 
+def test_apply_refuses_a_stale_list(committed):
+    """COBIx on #3515: the apply is the hard gate. A list whose input hashes no longer match is refused before any
+    write; the apply's hash agrees with the builder's, so a current list is never refused."""
+    import tempfile
+    import _cred_rename_apply as cra
+    current = committed.get("inputs") == br.input_hashes()
+    check((cra.stale_list_inputs(committed) == []) == current,
+          "the apply's stale check disagrees with the builder's input_hashes")
+    check(cra.stale_list_inputs({"rows": []}) == [], "a list that records no inputs reads as stale")
+    forged = copy.deepcopy(committed)
+    forged["inputs"]["kb/unified_titles.json"] = "0" * 16
+    check("kb/unified_titles.json" in [s[0] for s in cra.stale_list_inputs(forged)],
+          "a forged input hash did not read as stale")
+    writes = []
+    real_write = cra._atomic_write_json
+    cra._atomic_write_json = lambda path, obj: writes.append(path)
+    with tempfile.TemporaryDirectory() as tmp:
+        path = os.path.join(tmp, "forged_list.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(forged, f)
+        try:
+            cra.pairs_main(["--pairs", path])
+            check(False, "the apply ran a list whose inputs changed since it was built")
+        except SystemExit as e:
+            check("Rebuild it first" in str(e), "the apply's refusal does not say to rebuild: %r" % e)
+        finally:
+            cra._atomic_write_json = real_write
+    check(writes == [], "the apply wrote %d file(s) before refusing a stale list" % len(writes))
+
+
 def main():
     idx = br.load_index()
     doc = br.build(idx)
@@ -386,6 +421,7 @@ def main():
     test_never(doc, idx)
     test_guard_matches_exhibits_js()
     test_rule_fixtures()
+    test_apply_refuses_a_stale_list(committed)
     if FAILS:
         sys.exit("%d check(s) failed" % len(FAILS))
     print("exhibit_blocker_rules_test: all checks passed")

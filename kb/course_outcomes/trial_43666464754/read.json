@@ -1,0 +1,506 @@
+{
+ "run": "43666464754",
+ "index": "kb/course_outline_index/index_43566318943.json",
+ "host": "https://hancockcollege.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "allan_hancock",
+ "part": 1,
+ "of": 1,
+ "wanted": 890,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "at": "2026-11-15T02:20:12Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 10,
+   "paragraph": 2
+  },
+  "status_not_200": 0,
+  "outcomes": 39
+ },
+ "rows": [
+  {
+   "code": "AB 117",
+   "title": "Print Reading and Interpretation",
+   "course_id": 2290,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2290?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/2290?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6068,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "AB117 SLO1 - Read and interpret various engineering drawings by completing numerous assignments",
+    "AB117 SLO2 - Identify surface finish marks, tolerance, basic architecture, and welding symbols and be able to explain their meanings.",
+    "AB117 SLO3 - Use an engineering drawing accompanying specifications and materials lists to solve industrial questions, to complete a project, or solve a related problem.",
+    "AB117 SLO4 - Use related handbooks, codes, and other references as they may be needed to solve a print reading question."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "8d78e6037dc177eed287f28b4ab65e0a",
+   "objectives": [
+    "read and interpret various engineering drawings by completing numerous assignments.",
+    "identify surface finish marks, tolerance, basic architecture, and welding symbols and be able to explain their meanings.",
+    "use an engineering drawing accompanying specifications and materials lists to solve industrial questions, to complete a project, or solve a related problem.",
+    "use related handbooks, codes, and other references as they may be needed to solve a print reading question."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "b30832c51639bdb9bce2295b69583fcb"
+  },
+  {
+   "code": "ARTH C1100",
+   "title": "Survey of Art from Prehistory to the Medieval Era ",
+   "course_id": 8522,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8522?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8522?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 12105,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "ARTH C110, SLO 1: Applying art historical terminology and methods, identify, summarize, and discuss representative works of art, architecture and media from prehistory to the medieval era.",
+    "ARTH C1100, SLO 2 - Analyze artworks as visual languages expressing complex and diversified meanings and experiences dependent upon historical context, cultural values, aesthetics, technological advancements, and descriptions and interpretations produced by art historical investigative approaches.",
+    "ARTH C1100, SLO 3 - Develop critical thinking, information literacy and problem solving that will enable them to to explain the historical and social context of artworks from prehistory to the medieval era."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "65dd8721c3d356ec4a3bbfcffdaa34b6",
+   "objectives": [
+    "Identify, examine, and assess representative works of art and architecture from prehistory to the medieval era employing appropriate art historical terminology.",
+    "Analyze works of art and architecture in terms of aesthetic, socio-political, religious, historical, technological, and cultural contexts in which they were created.",
+    "Develop critical thinking, information literacy, and problem solving through an engagement with art, architecture, artists, and patrons from prehistory to the medieval era.",
+    "Identify subject matter, iconography, materials, media, visual elements, and design as descriptive and expressive components of the visual language of an artwork that communicate the values of their artist and their historical, cultural, or social context.",
+    "Recognize and differentiate between the roles of artists, patrons, technology, geography, economy, social organization, culture, and worldview as contributing factors in the production of art in Prehistoric through Medieval periods and styles.",
+    "Using appropriate examples of various art media, describe the general character of various civilizations and cultures, while recognizing their unique differences.",
+    "Identify the functions of art in various civilizations and stylistic periods. Examine their social and political organization, religion, and philosophies.",
+    "Analyze the major period and stylistic changes in terms of their contemporary political, religious, economic, and technological developments.",
+    "Recognize the ways that technological innovation has affected how artists use tools, materials, and techniques to produce artworks, while distinguishing between various disciplines of art.",
+    "Discuss and evaluate topics associated with the origination of artworks and their attribution.",
+    "Recognize and analyze connections between artworks made during the prehistorical to medieval era, and artworks made in current times.",
+    "Recognize and discuss the roles that prehistoric to medieval artworks play in current global issues, such as repatriation.",
+    "Deconstruct the historiography and methods of display used to represent the artists and cultures in this course."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "514df7d4277bf5c67e901b9e6181ead5"
+  },
+  {
+   "code": "CA 118",
+   "title": "Beverage Management",
+   "course_id": 4467,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4467?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4467?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8830,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CA118 SLO1 - Demonstrate the safe, sanitary and cost effective uses of products and equipment commonly used in commercial beverage operations.",
+    "CA118 SLO2 - Design the staffing and supervision schedules and develop marketing and promotional plans to increase operation profitability."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "93a2cf6749c39ef709e12dcecfdd2c26",
+   "objectives": [
+    "identify and describe the types and styles of beers, wines, spirits, and non-alcoholic beverages used in bartending.",
+    "utilize appropriate service techniques for styles of beer, wine, spirits, and non-alcoholic beverages.",
+    "describe the four basic mixing methods and know the recipes for the most common cocktails, tall drinks, frozen drinks, and alcoholic coffee drinks.",
+    "list the steps to properly close a beverage to include bar tools; glassware; beer draft systems; inventory count and storage; and wine dispensers.",
+    "identify equipment, materials, and operational procedures necessary for safe and sanitary conditions.",
+    "describe typical staff positions and determine staffing needs and schedules for varied size and type operations.",
+    "recognize inventory control procedures and develop beverage orders, receiving and storage guidelines, and storage issuing procedures."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "a92f8c0dc1ab382dc7ca0c8e79d42a5c"
+  },
+  {
+   "code": "COMM 100",
+   "title": "Survey of Communication Studies",
+   "course_id": 8340,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8340?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8340?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11268,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "COMM 100 SLO1: Demonstrate knowledge of communication theories",
+    "COMM 100 SLO2: Increase confidence in variety of communication situations",
+    "COMM 100 SLO3: Improve ability to communicate verbally and nonverbally in a public speaking setting."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b3c7e02ae8b8f18117f4c964afe60efc",
+   "objectives": [
+    "understand and articulate the foundational concepts of communication studies.",
+    "identify and utilize effective language techniques in various communication settings.",
+    "understand and utilize Aristotle's proofs.",
+    "analyze and evaluate various historical and contemporary speeches using rhetorical principles.",
+    "organize and deliver informative and persuasive presentations tailored to diverse audiences.",
+    "use critical thinking skills to effectively organize material for a presentation.",
+    "create and utilize presentation aids.",
+    "improve effective use of voice and body to communicate a message and manage apprehension.",
+    "find, critically examine - for credibility, accuracy, and relevance- and use supporting materials from primary and secondary sources in presentations.",
+    "exhibit awareness of diversity, equity, and inclusion in communication practices.",
+    "recognize personal biases and prejudices when communicating with others.",
+    "evaluate effectiveness of verbal and nonverbal communication of self and others.",
+    "critically listen, evaluate, and critique information shared by others.",
+    "provide constructive criticism to peers while practicing critical listening."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "3e9ab349b2540bd51551ed95d339c08c"
+  },
+  {
+   "code": "ECSN 7300",
+   "title": "Family Childcare Business NC",
+   "course_id": 8737,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8737?entityType=Course&reportId=503",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8737?entityType=Course&reportId=503",
+   "access": "public",
+   "title_printed": "Non-Credit Course Outline",
+   "chars": 4907,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "ECSN 7300 SLO 1 - Understand the comprehensive role of the family child care provider as it relates to effective business practices, finances, and Title 22 regulations."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a59ab9100cf3e9c425609cba309acabc",
+   "objectives": [
+    "At the end of the course, the student will be able to:",
+    "discuss personal and financial issues before starting a child care business.",
+    "discuss the impact that rates and fees may have on business viability, sustainability and profitability.",
+    "understand the basic Title 22, Division 12, Chapter 3 requirements and qualifications that apply to licensing family child care homes.",
+    "identify typical expenses needed to operate a child care business.",
+    "understand the components needed for a parent handbook."
+   ],
+   "objectives_heading": "Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "7cf2f3bf38520188e21644abd4eee831"
+  },
+  {
+   "code": "ENTR 101",
+   "title": "Intro to Entrepreneurship",
+   "course_id": 7633,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7633?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7633?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7933,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "ENTR101 SLO1 - Recall significant core entrepreneurship issues, theories, and applications.",
+    "ENTR101 SLO2 - Apply entrepreneurship principles to produce an applied learning log.",
+    "ENTR101 SLO3 - Demonstrate the ability to follow instructions on assignments and class activities."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "75fd9688a6689a926ee8f15fe6dc863b",
+   "objectives": [
+    "describe the components of a business plan.",
+    "identify the characteristics of an entrepreneur.",
+    "define a break-even analysis, cash budgets, and pro forma statements and describe how the statements are interrelated and affect continuing operations and growth.",
+    "explain start-up, fixed, and variable costs.",
+    "recognize and evaluate opportunity and risk from the prespective of an entrepreneur.",
+    "describe the legal requirements of a new venture launch.",
+    "identify and effectively utilize the methods of idea generation.",
+    "define effective leadership traits and practices in an entrepreneurial environment.",
+    "identify the components of a marketing plan from the perspective of an enterpreneur."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "c7bd819207d12e0e00fb1ec9157e0991"
+  },
+  {
+   "code": "FRCH 101",
+   "title": "Elementary French I",
+   "course_id": 4841,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4841?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4841?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 13431,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "FRCH101 SLO1 - Use grammar and vocabulary at the appropriate level for this course.",
+    "FRCH101 SLO2 - Develop and maintain reading skills appropriate to this course level.",
+    "FRCH101 SLO3 - Develop and maintain writing skills appropriate for this course level.",
+    "FRCH101 SLO4 - Develop and maintain listening and oral communication skills appropriate for this course level.",
+    "FRCH101 SLO5 - Appreciate the cultural diversity of the French-speaking World."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "c3ca0bdc8a16527eaa9b2ca27550d77e",
+   "objectives": [
+    "use vocabulary and grammar structures covered in the course to construct basic sentences.",
+    "read and understand basic texts in French.",
+    "write basic texts in French.",
+    "be able to follow short dialogues in French and be able to produce basic language.",
+    "develop the necessary listening skills to achieve mastery of French sound and stress patterns.",
+    "acquire an appreciation for the cultural diversity of the French-speaking world."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "8c50895409263ca1bac07bc68e133e08"
+  },
+  {
+   "code": "HED 100",
+   "title": "Social and Personal Health & Wellness",
+   "course_id": 7865,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7865?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7865?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8462,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "HED100 SLO1 - Understand the concept of health and wellness and social determinates.",
+    "HED100 SLO2 - Identify the six dimensions of health and how they interrelate with one another.",
+    "HED100 SLO3 - Identify the active process of making changes in health behaviors.",
+    "HED100 SLO4- Describe the disparities that occur in health outcomes in the U.S. by education, socioeconomic status, race, sexual orientation, disability and gender."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "80920e6485767ba3bbb71eb7a6da61ea",
+   "objectives": [
+    "evaluate the results of a health risk appraisal and lifestyle assessment inventory.",
+    "outline a behavior management program for enhancing personal wellness based upon health risk appraisal and lifestyle assessment inventory incorporating gender, race, homelessness, disability and socioeconomic status.",
+    "discuss the components of wellness and the relationship to an individual's medical plan.",
+    "identify methods for coping with prevalent stressors as related to social determinants.",
+    "make recommendations to improve diet and design a personal fitness/exercise program.",
+    "identify the hazards of substance use and abuse.",
+    "assess and utilize credible information to identify major diseases, their hazards, risk factors, prevention and current treatments, such as peer-reviewed journals, libraries and databases.",
+    "enumerate methods of managing medical problems, social determinants, and equitable access to care.",
+    "recognize contributing factors impacting relationships, communication and environment."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "d5337ea36ea17ea2621d38a946fd66a4"
+  },
+  {
+   "code": "INTD 100",
+   "title": "Introduction to Interior Design",
+   "course_id": 8238,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8238?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8238?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8831,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "INTD 100 SLO1 - Defend the interior environment as an aesthetic creation and an expression of the human experience",
+    "INTD 100 SLO2 - Develop a comprehensive academic, professional development career plan",
+    "INTD 100 SLO3 - Develop a personalized Interior Design Professional Portfolio",
+    "INTD 100 SLO4 -  Examine and research interior design as a career and profession"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "15624f405288b8b888ea148e95dbfe45",
+   "objectives": [
+    "become familiar with various industry networking associations and how they benefit the interior designer",
+    "introduce design thinking and how it can be applied to problem solving in daily life",
+    "differentiate the roles and responsibilities of interior design professionals and their interaction with allied professionals",
+    "become familiar with the various college support systems, i.e. computer lab, library, career center, student services, etc",
+    "use various basic computer programs to produce INTD related documents and course work requirements i.e. learning management system, Word, MyHancock, etc",
+    "use computer technology to research INTD careers and write career research paper using the American Psychological Association (APA) Style format",
+    "develop the foundation for a professional portfolio",
+    "demonstrate the impact that an interior environment has on human behavior, identity, health productivity, comfort, and well-being",
+    "defend the interior environment as an aesthetic creation and an expression of the human experience",
+    "analyze their personal characteristics and values that makes for an effective interior designer",
+    "identify the various career opportunities within the Interior Design (INTD) field"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "f80ed64f67a8d641563431879021e79b"
+  },
+  {
+   "code": "MMAC 101",
+   "title": "Introduction to Multimedia  ",
+   "course_id": 7738,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7738?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7738?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11118,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "MMAC101 SLO1 - Incorporate a multicultural perspective and/or aesthetic into media analysis and project creation where appropriate.",
+    "MMAC101 SLO2 - Develop media design aesthetics through critical analysis, practice-based research and communication skills.",
+    "MMAC101 SLO2 - Develop creative strategies and skills to plan, design and build a variety of digital media projects based on the project criteria and defined target audience.",
+    "MMAC 101 SLO 4 - Demonstrate skills required to effectively create, manage, and archive digital image, audio and video files for a reel or digital portfolio."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "83d5a3907c534f7999c9c83527f71612",
+   "objectives": [
+    "analyze culturally diverse multimedia works, both western and non-western, in relation to their context of origin and intended audience, and in terms of the design strategies, technology and aesthetics employed.",
+    "distinguish appropriate techniques for the creation and use of vector, raster, sound, and time-based imagery.",
+    "develop a project proposal, concept, design strategy and basic technology skills needed in response to a specific communication goal.",
+    "collaborate with others to design and develop a media project that communicates effectively to a specific audience: identify project goals, technology skills needed; roles and responsibilities, deadlines and deliverables.",
+    "test, troubleshoot, and edit a multimedia project as needed to successfully publish the project in the appropriate format."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "34c7ee401c997b7003ebeb963a938131"
+  },
+  {
+   "code": "PHTO 101",
+   "title": "History of Photography",
+   "course_id": 3863,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/3863?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/3863?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10260,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "PHTO SLO1 - Demonstrate ability to recognize and recall photography’s historical, modern and contemporary aesthetic and technical developments, practitioners, genres and trends in photographic thought."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d17f592e7a481d7040f7a156a339bfee",
+   "objectives": [
+    "identify photographic processes using scientific and technical terms.",
+    "recognize some of the most significant photographs historically and their impact on society and culture.",
+    "identify how photography has functioned in art movements.",
+    "assess the role of photography as it has influenced personal, group, and global perceptions of identity.",
+    "compare, contrast, and evaluate traditional exhibitions of photography.",
+    "evaluate the role of the photographic image in architecture, design, advertising, journalism, and digital compositing.",
+    "demonstrate application of critical thinking practices in interpreting and evaluating photography’s historical and contemporary aesthetic and technical developments, practitioners and genres, and its relationship within broader social, cultural and visual arts contexts."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "08505b639500523630fb25cbad98c39c"
+  },
+  {
+   "code": "REC 101",
+   "title": "Intro to Recreation Management",
+   "course_id": 4600,
+   "report": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4600?entityType=Course&reportId=296",
+   "named_by": [
+    "allan_hancock"
+   ],
+   "status": 200,
+   "final_url": "https://hancockcollege.curriqunet.com/DynamicReports/AllFieldsReportByEntity/4600?entityType=Course&reportId=296",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 9698,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "REC101 SLO1 - Define recreation, leisure, and play.",
+    "REC101 SLO2 - Understand the motivations to participate in recreation on a personal and professional basis.",
+    "REC101 SLO3 - Apply recreation to achieve social change.",
+    "REC101 SLO4 - Identify the various agencies providing recreation.",
+    "REC101 SLO5 - Understand the mission, philosophy, services, and programs of the recreation profession."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0e6d11336abda266900e2bf06d9db078",
+   "objectives": [
+    "identify conceptual foundations of play, recreation and leisure.",
+    "identify the psychological, sociological, and physiological significance of play, recreation, and leisure.",
+    "identify the technical, economic, and political significance of play, recreation, and leisure.",
+    "identify the history and development of the leisure service profession.",
+    "identify the contemporary issues impacting the leisure service profession.",
+    "identify the motivations to participate in recreational activities on both a personal and professional basis.",
+    "identify practices that encourage inclusiveness in the design and operation of leisure services.",
+    "identify the mission, philosophy, programs and services of the recreation profession.",
+    "identify the government, non profit, commercial, and private agencies that provide recreational services.",
+    "demonstrate appropriate professional behavior in the conduct of recreation activities."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": null,
+   "objectives_fingerprint": "671f0e238e01fd89e88d6237b98a387e"
+  }
+ ]
+}
