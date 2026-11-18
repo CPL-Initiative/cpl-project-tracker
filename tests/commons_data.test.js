@@ -253,7 +253,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("row 6: the catalog read's platform and year, the spot-check and its reason, the cost",
     /CourseLeaf/.test(txt(m1)) && /2026-2027/.test(txt(m1)) && /Strong/.test(txt(m1.querySelector('[data-ds="confidence"]'))) && /5 agree, 0 differ, 0 unreachable/.test(txt(m1))
     && /\$8\.00/.test(txt(m1)) && /\$0\.100/.test(txt(m1)) && /Page-finding time \(the capture, before the paid read\)\s*10 minutes/.test(txt(m1)) && !/Run time/.test(txt(m1)));
-  check("row 7: the open gaps are the census's causes in its words", /No closed list in the Program Course File: 20 programs/.test(txt(m1.querySelector(".cdd-gapbox"))));
+  check("row 7: the open gaps are the census's causes in its words, each named as a program requirement (#3461 finding 1)", /Program requirements, no closed list in the Program Course File: 20 programs/.test(txt(m1.querySelector(".cdd-gapbox"))));
   word(2).click();
   const m2 = x.d.getElementById("cdd-more-2");
   check("row 8: one row open at a time; Beta's row shows its SLO queue state", !x.d.getElementById("cdd-more-1") && word(1).getAttribute("aria-expanded") === "false"
@@ -797,8 +797,11 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     !/harvest/i.test(seen) && !/data dashboard/i.test(seen), (seen.match(/.{40}harvest.{40}/i) || [""])[0]);
   check("3243 words 2: the table caption and the views' label use the view's title and collected", /collected program requirements/.test(txt(h1.d.querySelector("#cdd-colleges caption")))
     && h1.d.querySelector('nav.cdd-views').getAttribute("aria-label") === "College Data Collection views");
-  check("3243 lever (review): the reconcile lever names the pipeline, not work for the college",
-    !/the college's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})) && /the pipeline's reconcile steps/.test(JSON.stringify(REAL.rule.levers || {})));
+  // S678 (#3461 page finding 4): the lever says who acts, in plain words: a team session, never the college, and no
+  // "reconcile steps" jargon.
+  check("3243 lever (review): the reconcile lever names who acts (a team session), not work for the college",
+    !/the college's reconcile steps|reconcile steps/.test(JSON.stringify(REAL.rule.levers || {}))
+    && /^a team session writes correction rules/.test(((REAL.rule.levers || {}).reconcile_steps || {}).what || ""));
 
   // ── (14) the default order: highest completeness first (#3310, Sam: "show progress first"), said in words, announced,
   //        a person's own sort for the visit only ──

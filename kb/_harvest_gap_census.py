@@ -301,6 +301,8 @@ def lever_of(cause: str, sub: str | None, college: str, closed_now: bool | None)
     return "reconcile_steps", college
 
 
+# Each lever in plain words that name who acts (S678, #3461 page finding 4: "the pipeline's reconcile steps" read as
+# coder wording). "A team session" is one of the MAP team's Claude sessions; the Commons shows these words.
 LEVER_WORDS = {
     "unpark": ("free", "a session takes the parked college back up under its decision"),
     "first_read": ("paid", "a first read of a college never read (capture free, extraction paid)"),
@@ -311,12 +313,15 @@ LEVER_WORDS = {
     "reader_page_search": ("free", "a reader change finds the program's page (a free page read first)"),
     "paid_read": ("paid", "extraction of a page the capture already found"),
     "reader_page_assignment": ("paid", "a reader change hands it its own page, then extraction"),
-    "load": ("free", "step=load: the filed record passes and was never loaded"),
-    "reconcile_then_load": ("free", "the filed record fails: reconcile steps, then step=load"),
-    "reread": ("free", "step=reread: the filed record passes and the live row is older"),
-    "ge_units_steps": ("free", "reconcile steps give the general education pattern its units"),
+    "load": ("free", "the saved record passes and was never loaded into the database: a team session loads it"),
+    "reconcile_then_load": ("free", "the saved record fails: a team session writes correction rules from the catalog's own "
+                                    "wording, rescores the record, then loads it into the database"),
+    "reread": ("free", "the saved record passes and the database holds an older copy: a team session reloads it"),
+    "ge_units_steps": ("free", "a team session writes a correction rule that gives the general education pattern its "
+                               "units, then rescores the saved record"),
     "scorer_noncredit_hours": ("free", "a scorer reading for a noncredit total in hours"),
-    "reconcile_steps": ("free", "the pipeline's reconcile steps for the college, on the catalog's own words"),
+    "reconcile_steps": ("free", "a team session writes correction rules from the catalog's own wording, then rescores "
+                                "the saved record"),
 }
 
 
