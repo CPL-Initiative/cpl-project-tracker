@@ -104,20 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "A required course carries no units as read, so the program's units cannot be added.",
-    "words": "the record carries no units for VOC ED 411CE, so the program's units cannot be added"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 20,
-   "course_list_match": 75,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

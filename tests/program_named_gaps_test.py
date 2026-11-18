@@ -7,10 +7,12 @@ and confidence scores. kb/_program_named_gaps.py names the gap (score.gaps, chec
 gap on a record that passes, or a census that counted a named gap whose coverage fails, would hide real work.
 Pinned on fixtures:
 
-  * a local degree the overlap ruling would pass but for a major that differs is collected, unit arithmetic 30;
-  * a degree whose major matches exactly is never flagged;
-  * a required course with no units names no_units_read (20); no_units_printed is off, its note matcher failing
-    its self-recall; a record failing for another reason too takes neither;
+  * a local degree the overlap ruling would pass but for a major whose check fails is collected, unit arithmetic
+    30; a major that matches exactly, or passes on another reading, is never flagged;
+  * a required course with no units names no_units_read (20), unless the notes say the requirements list or table
+    is missing or cut off; no_units_printed is off, its note matcher failing its self-recall; a record failing
+    for another reason too takes neither; the words name four courses and how many more;
+  * the rules against the held answer on every failing record (the receipt's 1,938, right 1,938, wrong 0);
   * each new matcher's self-recall on held answers (noncredit awards; required courses that carry units);
   * the live row ends as the college load posts the committed record (load_rows carries checks.gaps);
   * the census takes a row with checks.gaps out of the gap only when coverage and invented pass;
@@ -50,6 +52,11 @@ def local_degree(major_computed, major_stated):
 
 f = local_degree([42.0, 42.0], [40.0, 40.0])
 check(NG.judge(f) and NG.judge(f)[0] == "major_total_differs", "a major that differs names the gap")
+# A major that passes on another reading than plain equality (Alameda 01118, Glendale 02587): the degree fails for
+# another reason, so the major is not the gap (S680 second reader, F2).
+f3 = local_degree([42.0, 42.0], [40.0, 40.0])
+f3["score"]["arithmetic"]["major"].update({"pass": True, "status": "equal", "tolerance": True})
+check(NG.judge(f3) is None, "a major whose check passes on another reading is never major_total_differs")
 check(NG.confidence(f, "major_total_differs")["unit_arithmetic"] == 30, "unit arithmetic scores 30")
 check(NG.confidence(f, "major_total_differs")["course_list_match"] == 90, "course-list match is the placed share")
 check(NG.judge(local_degree([42.0, 42.0], [42.0, 42.0])) is None, "an exact major is never flagged")
@@ -69,12 +76,28 @@ def no_units(notes, extra_why=()):
 
 check(not NG.NO_UNITS_PRINTED_ON and NG.judge(no_units(["EMED 135 is printed with no units."]))[0] == "no_units_read",
       "no_units_printed is off: a note saying the catalog prints none still names no_units_read")
-check(NG.judge(no_units(["The page was cut off."]))[0] == "no_units_read", "otherwise no_units_read")
+check(NG.judge(no_units([]))[0] == "no_units_read", "otherwise no_units_read")
+# An incomplete read is not this gap (S680 second reader, F1): the notes of Butte 14583 and West Los Angeles 42627.
+check(NG.judge(no_units(["The Required Courses list is cut off mid-entry after 'VOC ED 411CE Vocational English as a'; "
+                         "its hours and any further courses are not recorded."])) is None,
+      "a requirements list cut off takes no gap")
+check(NG.judge(no_units(["The catalog text is cut off mid-sentence in the admission point system (Healthcare Experience); "
+                         "the program's course requirements table, any unit totals, and any program learning outcomes "
+                         "are not in the provided text."])) is None, "a requirements table not in the text takes no gap")
+check(NG.judge(no_units(["The Career Opportunities list is cut off at 'Community Health N'."]))[0] == "no_units_read",
+      "a cut-off career list is not an incomplete requirements read")
+check(NG.judge(no_units(["The text is cut off partway through the Program Learning Outcomes; any further outcomes and a "
+                         "requirements table may follow in the full page."]))[0] == "no_units_read",
+      "a page cut off elsewhere is not a requirements list cut off (Taft 31290)")
 check(NG.judge(no_units([], ["'Electives' chooses courses but names no minimum"])) is None,
       "a record failing for another reason too takes neither")
-passing = local_degree([42.0, 42.0], [42.0, 42.0])
-passing["score"]["arithmetic"] = {"pass": True, "status": "equal"}
-check(all(c["wrong"] == 0 for c in NG.self_check([passing]).values()), "the self-check names no gap on a passing record")
+# The words list four courses and say how many more.
+many = no_units([])
+many["record"]["blocks"][0]["courses"] = [{"code": "ESL %d" % i} for i in range(6)]
+check("ESL 3 and 2 more" in NG.judge(many)[1], "the words name four courses and how many more")
+check("and" not in NG._listed(["A", "B"]) and NG._listed(list("ABCDE")) == "A, B, C, D and 1 more", "the list words")
+# F4: the gap's stable name rides on the record and the row; its sentence is GAPS[name].
+check(all(k.isidentifier() for k in NG.GAPS), "gap names are short stable keys")
 
 # The census counts a named gap collected only with coverage and invented passing.
 check(G.collected_with_gaps({"coverage": True, "invented": True, "arithmetic": "unequal", "gaps": ["x"]}) == ["x"],
@@ -83,7 +106,7 @@ check(not G.collected_with_gaps({"coverage": False, "invented": True, "arithmeti
       "not when coverage fails")
 check(not G.collected_with_gaps({"coverage": True, "invented": True, "arithmetic": "unequal"}), "not without gaps")
 check(G.flat_checks({"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "unequal"},
-                     "gaps": [{"gap": "major total differs from catalog"}]})["gaps"] == ["major total differs from catalog"],
+                     "gaps": [{"gap": "no_units_read", "label": NG.GAPS["no_units_read"]}]})["gaps"] == ["no_units_read"],
       "a filed score's gaps reach the flat checks by name")
 
 # The SQL guards (kb/_guarded_sql.py, the shape #3496's review settled).
@@ -101,12 +124,22 @@ check("O''Neill" in up and pre.startswith("with v(") and "json_build_object" in 
 # Self-recall of the new matchers on held answers, from the committed files.
 import glob  # noqa: E402
 import json  # noqa: E402
-files = []
+files, every = [], []
 for p_ in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "records", "*.json")):
     with open(p_, encoding="utf-8") as fh:
         d = json.load(fh)
-    if isinstance(d.get("score"), dict) and not CL.held(d.get("college")):
-        files.append(d)
+    if isinstance(d.get("score"), dict):
+        every.append(d)
+        if not CL.held(d.get("college")):
+            files.append(d)
+# The record rules against the held answer on every failing record that coverage and invented pass (F3): the
+# second reader's count, 1,938 right and 0 wrong, with Butte 14583 and West Los Angeles 42627 held as no gap.
+rc_ = NG.recall(every)
+check(rc_["held"] > 0 and rc_["right"] == rc_["held"] and rc_["wrong"] == 0,
+      "the recall on failing records whose answer is held: %s" % {k: rc_[k] for k in ("held", "right", "wrong")})
+check(not any(NG.answer(d) for d in every if (d["college"], str(d["control_number"])) in NG.HELD_INCOMPLETE),
+      "the reader's two incomplete reads take no gap")
+print("recall: %(held)d failing records held, right %(right)d, wrong %(wrong)d" % rc_)
 mr = NG.matcher_recall(files)
 check(mr["noncredit"]["wrong"] == 0 and mr["noncredit"]["missed"] == 0,
       "NONCREDIT against the state's award: %s" % mr["noncredit"])
@@ -132,6 +165,18 @@ if os.path.isfile(RECEIPT):
     check(all(r["after_image"]["checks"].get("gaps") and r["before_image"]["checks"].get("gaps") is None
               for r in rc["records"]), "every row gains its gap and had none")
     check(not any(CL.held(r["college"]) for r in rc["records"]), "no collection-lane college in the plan")
+    check(len(rc["records"]) == 75 and rc["by_gap"] == {"no_units_read": 75}
+          and all(r["after_image"]["checks"]["gaps"] == ["no_units_read"] for r in rc["records"]),
+          "the plan is 75 rows, all no_units_read, stored by name")
+    held_out = {("Butte College", "14583"), ("West Los Angeles College", "42627"), ("College of Alameda", "01118"),
+                ("Glendale Community College", "02587")}
+    check(not held_out & {(r["college"], str(r["control_number"])) for r in rc["records"]},
+          "the four rows the second reader held are out of the plan")
+    check(rc["recall"]["held"] == 1938 and rc["recall"]["right"] == 1938 and rc["recall"]["wrong"] == 0,
+          "the receipt's recall: 1,938 held, right 1,938, wrong 0")
+    with open(os.path.join(ROOT, "kb", "migrations", "2026-11-18_s680_prreq_named_gaps_rollback.sql"),
+              encoding="utf-8") as fh:
+        check("lasts only until the next load" in fh.read(4000), "the rollback says how long it lasts")
 
 check(CL.held("Chabot College") and not CL.held("Butte College"), "the collection lane's colleges are held")
 

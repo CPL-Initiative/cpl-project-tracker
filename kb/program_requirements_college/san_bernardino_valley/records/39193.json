@@ -106,8 +106,9 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "A required course carries no units as read, so the program's units cannot be added.",
-    "words": "the record carries no units for CIT 601, VOCED 631, WST 629, WST 625, so the program's units cannot be added"
+    "gap": "no_units_read",
+    "label": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for CIT 601, VOCED 631, WST 629, WST 625 and 3 more, so the program's units cannot be added"
    }
   ],
   "confidence": {

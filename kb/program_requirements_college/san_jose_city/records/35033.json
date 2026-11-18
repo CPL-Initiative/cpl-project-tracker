@@ -129,7 +129,8 @@
   "pass": false,
   "gaps": [
    {
-    "gap": "A required course carries no units as read, so the program's units cannot be added.",
+    "gap": "no_units_read",
+    "label": "A required course carries no units as read, so the program's units cannot be added.",
     "words": "the record carries no units for EDUC 010, so the program's units cannot be added"
    }
   ],
