@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
+    20.0,
     22.0
    ],
    "stated": [
@@ -71,9 +71,8 @@
     22.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-22.0; the catalog states 20.0-22.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -177,8 +176,9 @@
       "alternatives": [
        {
         "code": "THEA 140 C",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -190,8 +190,9 @@
       "alternatives": [
        {
         "code": "THEA 225 C",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -203,8 +204,9 @@
       "alternatives": [
        {
         "code": "THEA 148 C",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": 2
        }
       ],
       "catalog_addition": false
@@ -216,13 +218,15 @@
       "alternatives": [
        {
         "code": "THEA 155 C",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": 2
        },
        {
         "code": "THEA 152 C",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": 2
        }
       ],
       "catalog_addition": false
@@ -238,5 +242,37 @@
    "'Stage Management' is recorded as the career field named in the description ('occupational competency in the field of Stage Management'); 'theatre, opera or dance' are listed as kinds of live events, not careers."
   ]
  },
- "extracted_run": "38748866826"
+ "extracted_run": "38748866826",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "THEA 140 C",
+   "words": "THEA 140 C, printed as an alternative to THEA 100 C with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "THEA 225 C",
+   "words": "THEA 225 C, printed as an alternative to THEA 101 C with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "THEA 148 C",
+   "words": "THEA 148 C, printed as an alternative to THEA 149 C with no units, takes its row's 1-2 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "THEA 155 C",
+   "words": "THEA 155 C, printed as an alternative to THEA 150 C with no units, takes its row's 1-2 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "THEA 152 C",
+   "words": "THEA 152 C, printed as an alternative to THEA 150 C with no units, takes its row's 1-2 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

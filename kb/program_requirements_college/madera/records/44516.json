@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
+    17.0,
     20.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-20.0; the catalog states 17.0-20.0"
-   ]
+   "why": [],
+   "rescored": "A5 a choose list takes the courses of the list it names (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -237,6 +236,34 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FSM 35",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSP 20",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HSP 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -252,5 +279,13 @@
    "GE pattern stated generically as IGETC or CSU GE-Breadth; no GE units printed."
   ]
  },
- "extracted_run": "38935148408"
+ "extracted_run": "38935148408",
+ "reconciled": [
+  {
+   "rule": "A5",
+   "block": "List B: Select two courses. Any course from LIST A not already used",
+   "words": "'List B: Select two courses. Any course from LIST A not already used' says any course from LIST A: 4 courses added as options (ECON C2001, FSM 35, HSP 20, HSP 30)",
+   "statewide": "units_rules_A5"
+  }
+ ]
 }

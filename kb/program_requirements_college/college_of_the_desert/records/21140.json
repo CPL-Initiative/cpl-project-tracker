@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.5,
+    22.0,
     26.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     26.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 20.5-26.0; the catalog states 22.0-26.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -151,13 +150,15 @@
       "alternatives": [
        {
         "code": "FIRE 001A",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "FIRE 001B",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -369,5 +370,19 @@
    "Codes are printed zero-padded in the catalog (e.g., FIRE 002, CSFM 070, BIT 026) and were matched to the closed list's unpadded codes (FIRE 2, CSFM 70, BIT 26)."
   ]
  },
- "extracted_run": "39056007346"
+ "extracted_run": "39056007346",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "FIRE 001A",
+   "words": "FIRE 001A, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "FIRE 001B",
+   "words": "FIRE 001B, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }
