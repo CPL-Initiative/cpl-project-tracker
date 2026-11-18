@@ -342,9 +342,10 @@ jobs:
           daily_rebuilt=0
           why=
           pushing="the run's first build"
-          # The first pass's scrape status, as the build step wrote it. A failed input rebuild that scraped again
-          # must not leave its own status for "Fail the run on a stale scrape" to read (the fallback writes it back).
-          first_status=${LIVE_METRICS_STATUS:-} first_detail=${SCRAPE_DETAIL:-}
+          # The first pass's scrape and leftover-title statuses, as the build step wrote them. A failed input rebuild
+          # that ran again must not leave its own status for "Fail the run on a stale scrape" or "Fail the run when the
+          # leftover-title decisions did not apply" to read (the fallback writes them back).
+          first_status=${LIVE_METRICS_STATUS:-} first_detail=${SCRAPE_DETAIL:-} first_left=${LEFT_MAP_STATUS:-}
 
           stage
           if git diff --cached --quiet; then
@@ -429,7 +430,7 @@ jobs:
               # untracked files it wrote stay in this job, so a step added after the push must not read the venv or
               # the tree as the first build's (COBIx #3110, comment 6837874586).
               git reset -q --hard "$pre"
-              { echo "LIVE_METRICS_STATUS=$first_status"; echo "SCRAPE_DETAIL=$first_detail"; } >> "$GITHUB_ENV"
+              { echo "LIVE_METRICS_STATUS=$first_status"; echo "SCRAPE_DETAIL=$first_detail"; echo "LEFT_MAP_STATUS=$first_left"; } >> "$GITHUB_ENV"
               if ! git rebase origin/main; then
                 git rebase --abort 2>/dev/null || true
                 echo "::error title=Daily input rebuild failed::The rebuild failed and the first build no longer rebases cleanly. Nothing is pushed; the later rungs of the ladder are the backstop."

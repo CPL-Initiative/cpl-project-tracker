@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4251,
+     "line": 4266,
      "tabs": [
       "exhibits"
      ]
@@ -6650,7 +6650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4243,
+     "line": 4258,
      "tabs": [
       "exhibits"
      ]
@@ -6743,7 +6743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4745,
+     "line": 4763,
      "tabs": [
       "exhibits"
      ]
@@ -8620,7 +8620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5034,
+     "line": 5052,
      "tabs": [
       "exhibits"
      ]
@@ -16135,7 +16135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4274,
+     "line": 4289,
      "tabs": [
       "exhibits"
      ]
@@ -16253,10 +16253,17 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4271,
+     "line": 4286,
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:kb/_apply_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -21182,7 +21189,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 54
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -32157,7 +32164,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 98
+     "line": 123
     },
     {
      "id": "script:kb/_apply_unclassified_triage.py",

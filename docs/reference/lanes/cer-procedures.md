@@ -29,21 +29,40 @@ cert-based guard on Move and an accepted combine. `kb/_build_left_map.py` writes
 `kb/_apply_left_map.py` carries decisions out; `excel_to_dashboard.py` leaves a removed title out. 446 titles used
 against COBIx's 434 (his pointer rule came from an unposted file).
 
+**DECIDED (S679, the conductor): Move and Remove only on a title nothing uses.** Move changes only
+`kb/unified_titles.json`, and the articulation rows that carry a used title stay grouped under the old canonical title
+in the reference bake (`excel_to_dashboard.py`, the CER grouping), so a moved used title would sit in two places. The
+List offers Move only where `kb/exhibit_left_map.json` marks the title unused, the same limit Remove has; a used title
+takes Keep, Rename or Combine. The apply holds a saved Move on a used title and logs it (`skip: ... held:`).
+
 **Nightly (S679, #3477):** the daily build (`scripts/daily_build.sh`, *Sync curation overlay from Supabase*) runs
 `kb/_apply_left_map.py --live --apply` after the unclassified fold and before `excel_to_dashboard.py` bakes the
-reference. It reads the `left_map_decision` rows with the service key (read only, Range-paged, the newest row per title)
-and writes repo files only: `kb/unified_titles.json` and, when something changed, `kb/receipts/left_map_apply_<stamp>.json`
-(written before the file). It writes no Supabase row. A failure keeps yesterday's links, records
-`LEFT_MAP_STATUS=failed`, and `daily-dashboard.yml`'s last step turns the run red after the push, so the workflow
-failure watch opens its issue. A new block, *Build the titles that have left MAP*, rebuilds `kb/exhibit_left_map.json`
-after the exhibit auditor and before the Commons status; the commit stages both.
+reference. It reads the `left_map_decision` rows with the service key (read only, Range-paged, HTTP 416 read as the
+end of the rows) and writes repo files only: `kb/unified_titles.json` (a temp file renamed into place) and, when
+something changed, `kb/receipts/left_map_apply_<UTC stamp to the second>.json` (a `_2` suffix when the name is taken),
+written before the file. It writes no Supabase row. A failure keeps yesterday's links, records `LEFT_MAP_STATUS=failed`,
+and `daily-dashboard.yml`'s last step turns the run red after the push, so the workflow failure watch opens its issue.
+When an input rebuild fails and the first build is pushed, the commit step writes back the first pass's
+`LEFT_MAP_STATUS` beside the scrape status. A block, *Build the titles that have left MAP*, rebuilds
+`kb/exhibit_left_map.json` after the exhibit auditor and before the Commons status; the commit stages both. That file's
+counts are the auditor's leftover titles and ignore saved decisions (a kept title stays counted; the List subtracts the
+decisions from its live read). The counts stay that way for now.
+
+**Undo:** the newest decision per title is the one in force. A newer `keep` after an applied Move or Remove returns the
+raw key to `left_map.from` and drops the marker; `from` is the canonical title before the first decision, and a later
+Move or Remove keeps it. Each receipt change records `before_left_map`. A `git revert` of the nightly commit alone does
+not hold, because the next run reads the decision row and applies it again; undo by saving a newer `keep` row (a
+Rule 10 plan with its receipt), since a decided title has left the List.
 
 **Rename and Combine on the leftover row (S679, #3477):** each undecided leftover row also offers *Rename the
 canonical title* and *Combine the canonical title with another*. They act on the canonical title the row sits under
-(the local title stays as it is) through the List's own title Edit (`listCellSave`) and Accept (`listSuggestAccept`), so Combine
-carries the graded and cert-based guard (blocked first, logged `cpl_type_group_override` on the second try). Move and
-Combine share one canonical-title picker (`leftPicker`). Tests `tests/exhibits_list_left.test.js` (30),
-`tests/left_map_build_test.py` (22; it pins the nightly's order, the red step and the failure watch).
+(the local title stays as it is) through the List's own title Edit (`listCellSave`) and Accept
+(`listSuggestAccept`), so Combine carries the graded and cert-based guard (blocked first, logged
+`cpl_type_group_override` on the second try). The guard reads the CPL type of the title picked, then each title along
+its chain of saved renames (`chainType`), so a pending rename to a name the map does not hold yet still blocks; the
+List's suggested folds share the path. Move and Combine share one canonical-title picker (`leftPicker`). Tests
+`tests/exhibits_list_left.test.js` (36), `tests/left_map_build_test.py` (38; it pins the nightly's order, the red step,
+the status write-back, the failure watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).
 
 **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local title
 (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 607 applied, 73 held;

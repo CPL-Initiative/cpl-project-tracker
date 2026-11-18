@@ -101,6 +101,7 @@ function load(opts) {
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(st) { return Promise.resolve({ ok: false, status: st, json: function () { return Promise.resolve({}); } }); }
     if (Object.prototype.hasOwnProperty.call(files, url)) return files[url] === 404 ? bad(404) : ok(files[url]);
+    if (/\/rest\/v1\/kb_curation/.test(url) && /_CREDENTIAL_REVIEW/.test(url) && (!init.method || init.method === "GET")) return ok(opts.overlay || []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return ok(init.method && init.method !== "GET" ? {} : (/left_map_decision/.test(url) ? (opts.decisions || []) : []));
     return bad(404);
   };
@@ -261,8 +262,52 @@ const AUDIT = { title_cards: [
   check("(6) ⭐ a combine inside one group goes through on the first try and logs no override",
     c2.length === 2 && c2.every((b) => b.field !== "cpl_type_group_override") && c2.some((b) => b.field === "unified_title_merge_confirm" && b.value === "CompTIA Security+"), JSON.stringify(c2));
   check("(6) Combine and Rename reuse the List's handlers rather than a copy",
-    /function leftCombineBox[\s\S]*?listSuggestAccept\(r, \{ to: end \}/.test(src) && /function leftRenameBox[\s\S]*?listCellSave\(r, "title", inp, "Title"\)/.test(src)
+    /function leftCombineBox[\s\S]*?listSuggestAccept\(r, \{ to: end, via: to \}/.test(src) && /function leftRenameBox[\s\S]*?listCellSave\(r, "title", inp, "Title"\)/.test(src)
     && (src.match(/combine across groups: /g) || []).length === 1);
+
+  // (7) S679, the second reader's blocker: the guard reads the picked title before its chain of saved renames. A pending
+  //     rename names a title the map does not hold yet ("Paramedic (Advanced)"), so a guard that read only the chain's
+  //     end found no type and let a cert-based canonical combine into graded Paramedic on one press.
+  const LMAP7 = { schema: 1, counts: {}, titles: {
+      "EMT Basic 1998": { canonical: "Emergency Medical Technician", type: "Industry Certification", group: "cert", used: false, where: [], twin: null, reviewed: false, only_local: false },
+      "EMT Used": { canonical: "Emergency Medical Technician", type: "Industry Certification", group: "cert", used: true, where: ["course-credit listing"], twin: null, reviewed: false, only_local: false } },
+    canonicals: { "Emergency Medical Technician": { type: "Industry Certification", group: "cert" },
+      "CompTIA Security+": { type: "Industry Certification", group: "cert" }, "Paramedic": { type: "Credit By Exam", group: "graded" } } };
+  const AUD7 = { title_cards: [{ raw_title: "EMT Basic 1998", unified_title: "Emergency Medical Technician", tags: ["stale_kb_entry"] },
+    { raw_title: "EMT Used", unified_title: "Emergency Medical Technician", tags: ["stale_kb_entry"] }] };
+  const PENDING = [{ course_id: "_CREDENTIAL_REVIEW::Paramedic", field: "unified_title_override", value: "Paramedic (Advanced)", reviewed_at: "2026-11-17T00:00:00Z" }];
+  async function bootPending() {
+    const x = await boot({ hash: "#exhibits/list/left", signedIn: true, overlay: PENDING, files: { "kb/exhibit_audit/latest.json": AUD7, "kb/exhibit_left_map.json": LMAP7 } });
+    await settle(); await settle();
+    return x;
+  }
+  const bp = await bootPending();
+  titleBtn(bp.d, "Emergency Medical Technician").click(); await settle();
+  rowIn(bp, "EMT Basic 1998").querySelector('[data-left-act="combine"]').click(); await settle();
+  const bbox = () => rowIn(bp, "EMT Basic 1998").querySelector('[data-left-box="combine"]');
+  bbox().querySelector("input").value = "Paramedic";
+  bbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
+  check("(7) ⭐ Combine into a title whose pending rename the map does not hold yet is still blocked on the first try, with nothing written",
+    postsOf(bp).length === 0 && /Blocked: Emergency Medical Technician is cert-based .* Paramedic \(Advanced\) is graded/.test(txt(bbox())), txt(bbox()) + " | " + JSON.stringify(postsOf(bp)));
+  if (bbox()) { bbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle(); }
+  const bpost = postsOf(bp);
+  check("(7) the second try folds into the chain's end and logs the override",
+    bpost.some((b) => b.field === "unified_title_merge_confirm" && b.value === "Paramedic (Advanced)")
+    && bpost.some((b) => b.field === "cpl_type_group_override" && /cert into graded/.test(b.value)), JSON.stringify(bpost));
+  // The regular List's suggested fold shares listSuggestAccept, so the same chain gets the same guard there.
+  const sl = await bootPending();
+  sl.M._state.ls.aiData = { suggest: { "Emergency Medical Technician": { to: "Paramedic", why: "the same words spelled another way" } }, counts: {} };
+  const ssg = sl.M._listSuggest ? sl.M._listSuggest({ ut: "Emergency Medical Technician" }) : null;
+  check("(7) the List's suggestion follows the chain and keeps the title it named", ssg && ssg.to === "Paramedic (Advanced)" && ssg.via === "Paramedic", JSON.stringify(ssg));
+  const sres = sl.M._listSuggestAccept && ssg ? await sl.M._listSuggestAccept({ ut: "Emergency Medical Technician" }, ssg) : null;
+  check("(7) ⭐ the List's Accept of that suggestion is blocked the same way, with nothing written",
+    sres && !sres.ok && /Blocked: Emergency Medical Technician is cert-based .* is graded/.test(sres.words) && postsOf(sl).length === 0, JSON.stringify(sres) + " | " + JSON.stringify(postsOf(sl)));
+  // The conductor's call (S679): Move only where nothing uses the title, the same limit Remove has.
+  const ua = rowIn(bp, "EMT Used") && rowIn(bp, "EMT Used").querySelector(".exh-left-acts");
+  check("(7) ⭐ a leftover title still used somewhere offers Keep, Rename and Combine, and neither Move nor Remove",
+    ua && ua.querySelector('[data-left-act="keep"]') && !ua.querySelector('[data-left-act="move"]') && !ua.querySelector('[data-left-act="remove"]')
+    && ua.querySelector('[data-left-act="combine"]'), ua && txt(ua));
+  check("(7) a title nothing uses still offers Move and Remove", rowIn(bp, "EMT Basic 1998").querySelector('[data-left-act="move"]') && rowIn(bp, "EMT Basic 1998").querySelector('[data-left-act="remove"]'));
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });

@@ -3791,7 +3791,7 @@
     if (o.title) return null;
     var end = listChainEnd(sg.to);
     if (end === r.ut) return null;
-    return end === sg.to ? sg : { to: end, why: sg.why + "; " + sg.to + " itself now folds into " + end };
+    return end === sg.to ? sg : { to: end, via: sg.to, why: sg.why + "; " + sg.to + " itself now folds into " + end };
   }
   /* Where a title lands once the pending renames run: follow each credential's saved rename until one has none
      (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles"). */
@@ -3804,6 +3804,21 @@
       t = nx;
     }
     return t;
+  }
+  /* The CPL type the guard reads for a picked title: the picked title's own, else the first title along its chain of saved
+     renames that has one. A pending rename names a title the map does not hold yet, so reading the chain's end alone
+     found no type and let a combine across Sam's groups through (S679, the second reader's blocker). */
+  function chainType(t) {
+    var seen = {}, ov = state.cs.overlay || {};
+    for (var k = 0; k < 12 && t && !seen[t]; k++) {
+      var ty = canonType(t);
+      if (ty) return ty;
+      seen[t] = true;
+      var nx = (ov[t] || {}).title;
+      if (!nx || nx === t) break;
+      t = nx;
+    }
+    return null;
   }
   /* A fold accepted and waiting for the reviewed apply: a rename and a merge confirm naming the same target. */
   function listPendingFold(r) {
@@ -3836,7 +3851,7 @@
     var from = r.ut, writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
     /* Sam's graded and cert-based groups (2026-11-17): a combine across them is blocked on the first try; a second try,
        which names both groups, goes through and is logged beside the fold. */
-    var cross = crossesGroups(canonType(from), canonType(sg.to)), gk = "combine " + from + " -> " + sg.to;
+    var cross = crossesGroups(canonType(from), chainType(sg.via || sg.to) || chainType(sg.to)), gk = "combine " + from + " -> " + sg.to;
     if (cross && !LEFT.guard[gk]) {
       LEFT.guard[gk] = true;
       return Promise.resolve({ ok: false, words: "Blocked: " + from + " is " + groupWords(cross.a) + " and " + sg.to + " is " + groupWords(cross.b)
@@ -4403,10 +4418,13 @@
     var row = el("span", { cls: "exh-left-acts" });
     row.appendChild(document.createTextNode(" "));
     row.appendChild(word("Keep under this title", function () { leftSave([raw], "keep").then(function (ok) { leftDone(ok ? "Kept: " + raw.trim() + " stays under " + ut + "." : LEFT.note); }); }, { "data-left-act": "keep" }));
-    row.appendChild(document.createTextNode(" "));
     var opened = function (act) { return LEFT.moving === raw && LEFT.act === act ? "true" : "false"; };
-    row.appendChild(word("Move to another title", function () { leftOpenBox(raw, "move"); }, { "data-left-act": "move", "aria-expanded": opened("move") }));
     if (!i.used) {
+      /* Move and Remove only where nothing uses the title (S679, the conductor's call): a move changes
+         kb/unified_titles.json alone, and the articulation rows that carry a used title stay grouped under the old
+         canonical title in the reference bake, so the title would sit in two places. */
+      row.appendChild(document.createTextNode(" "));
+      row.appendChild(word("Move to another title", function () { leftOpenBox(raw, "move"); }, { "data-left-act": "move", "aria-expanded": opened("move") }));
       row.appendChild(document.createTextNode(" "));
       row.appendChild(word("Remove from this title", function () {
         if (i.only_local && !window.confirm(raw.trim() + " is the only local title under " + ut + ". Removing it leaves that canonical title with no local title; the canonical title stays and is not renamed.")) return;
@@ -4425,7 +4443,7 @@
     if (LEFT.moving === raw) {
       if (LEFT.act === "rename" && r) li.appendChild(leftRenameBox(raw, r));
       else if (LEFT.act === "combine" && r) li.appendChild(leftCombineBox(raw, r));
-      else li.appendChild(leftMoveBox(raw, ut, i));
+      else if (!i.used) li.appendChild(leftMoveBox(raw, ut, i));
     }
     return li;
   }
@@ -4470,7 +4488,7 @@
     return leftPicker(raw, ut, { kind: "combine", go: "Combine here", label: "Canonical title to combine " + listTitle(r) + " with", act: function (to, say) {
       var end = listChainEnd(to);
       if (end === ut) { say.textContent = to + " is already saved to combine into " + ut + "; pick another title."; return; }
-      listSuggestAccept(r, { to: end }, "Press Combine here again").then(function (res) {
+      listSuggestAccept(r, { to: end, via: to }, "Press Combine here again").then(function (res) {
         if (!res.ok) { say.textContent = res.words; return; }
         LEFT.moving = null;
         leftDone(res.words);
@@ -5635,6 +5653,7 @@
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
     _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows, _nameSourceLine: nameSourceLine, _nameSourceLevel: nameSourceLevel, _seriesLine: seriesLine,
-    _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
+    _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents,
+    _listSuggest: listSuggest, _listSuggestAccept: listSuggestAccept
   };
 })();
