@@ -38,7 +38,7 @@
    "desc": [
     [
      "Ethnic Studies",
-     0.2395
+     0.2396
     ],
     [
      "Film and Media Studies",
@@ -118,6 +118,33 @@
    ]
   },
   {
+   "colleges": 1,
+   "desc": [
+    [
+     "Older Adults: Noncredit",
+     0.1122
+    ],
+    [
+     "Physics/Astronomy",
+     0.0494
+    ],
+    [
+     "Office Technologies",
+     0.0493
+    ]
+   ],
+   "desc_kind": "desc_differs_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1697",
+   "members": 2,
+   "title": "Elements of Swim Technique- Beginner Intermediate",
+   "verdict": "for_a_curator",
+   "votes": {},
+   "why": [
+    "description"
+   ]
+  },
+  {
    "colleges": 22,
    "desc": [
     [
@@ -153,7 +180,7 @@
    "desc": [
     [
      "Kinesiology",
-     0.2351
+     0.2352
     ],
     [
      "Counseling",
@@ -161,7 +188,7 @@
     ],
     [
      "Nutritional Science/Dietetics",
-     0.1923
+     0.1924
     ]
    ],
    "desc_kind": "desc_agrees_close",
@@ -212,6 +239,66 @@
    "desc": [
     [
      "Kinesiology",
+     0.3017
+    ],
+    [
+     "Health and Safety: Noncredit",
+     0.2225
+    ],
+    [
+     "Learning Assistance or Learning Skills",
+     0.1079
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1267",
+   "members": 2,
+   "title": "Adapted: Beginning Stretching and Stress Reduction",
+   "verdict": "unsettled",
+   "votes": {
+    "Kinesiology": 1,
+    "Physical Education Disabled Students": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1907
+    ],
+    [
+     "Environmental Technologies",
+     0.1845
+    ],
+    [
+     "Multimedia",
+     0.0905
+    ]
+   ],
+   "desc_kind": "desc_agrees_thin",
+   "discipline": "Kinesiology",
+   "id": "KINE M1481",
+   "members": 2,
+   "title": "Intermediate Aquatic Calisthenics",
+   "verdict": "unsettled",
+   "votes": {
+    "Kinesiology": 1,
+    "Physical Education Disabled Students": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
      0.2655
     ],
     [
@@ -236,11 +323,129 @@
    "why": [
     "top"
    ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
+     0.1861
+    ],
+    [
+     "History",
+     0.1545
+    ],
+    [
+     "Learning Assistance or Learning Skills",
+     0.1316
+    ]
+   ],
+   "desc_kind": "desc_agrees_close",
+   "discipline": "Kinesiology",
+   "id": "KINE M1952",
+   "members": 2,
+   "title": "Heart Healthy Exercise",
+   "verdict": "unsettled",
+   "votes": {
+    "Physical Education Disabled Students": 2
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 2,
+   "desc": [
+    [
+     "Kinesiology",
+     0.2592
+    ],
+    [
+     "Nutritional Science/Dietetics",
+     0.1983
+    ],
+    [
+     "Gerontology",
+     0.1654
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M9023",
+   "members": 2,
+   "title": "Body Dynamics/Aging Process-Older Adults",
+   "verdict": "unsettled",
+   "votes": {
+    "Health": 1,
+    "Kinesiology": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Kinesiology",
+     0.2556
+    ],
+    [
+     "Health and Safety: Noncredit",
+     0.1754
+    ],
+    [
+     "Mathematics",
+     0.1017
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1933",
+   "members": 2,
+   "title": "Core Strengthening and Flexibility",
+   "verdict": "unsettled",
+   "votes": {
+    "Kinesiology": 1,
+    "Physical Education Disabled Students": 1
+   },
+   "why": [
+    "top"
+   ]
+  },
+  {
+   "colleges": 1,
+   "desc": [
+    [
+     "Kinesiology",
+     0.2064
+    ],
+    [
+     "Health and Safety: Noncredit",
+     0.1362
+    ],
+    [
+     "Nutritional Science/Dietetics",
+     0.0782
+    ]
+   ],
+   "desc_kind": "desc_agrees_clear",
+   "discipline": "Kinesiology",
+   "id": "KINE M1953",
+   "members": 2,
+   "title": "Modified Resistive Exercise",
+   "verdict": "unsettled",
+   "votes": {
+    "Physical Education Disabled Students": 2
+   },
+   "why": [
+    "top"
+   ]
   }
  ],
  "counts": {
-  "description": 4,
-  "top_only": 4
+  "description": 5,
+  "top_only": 10
  },
  "discipline": "Kinesiology",
  "schema": 1

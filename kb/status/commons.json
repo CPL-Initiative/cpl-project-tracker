@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-17T17:10:12Z",
+ "written_at": "2026-11-18T04:02:00Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14632,
+     "n": 14836,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,18 +34,25 @@
    ],
    "issues": [
     {
-     "n": 2822,
+     "n": 2617,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 2828,
+     "n": 2829,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
      "open": "#program-requirements/list/unread"
+    },
+    {
+     "n": 6,
+     "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
+     "owner": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+     "carry": "no_procedure",
+     "open": "#commons/data"
     }
    ],
    "procedures": [
@@ -68,10 +75,10 @@
    },
    "facts": {
     "active": 20282,
-    "complete": 14632,
-    "failing": 2822,
-    "unread": 2828,
-    "records": 19112,
+    "complete": 14836,
+    "failing": 2617,
+    "unread": 2829,
+    "records": 19111,
     "colleges": 118,
     "outside_active": 1658,
     "confirmed": 32,
@@ -98,14 +105,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 3027,
-     "of": 6107,
-     "words": "titles carry a review stamp (1,435 a person's, 1,592 a cohort's), counting 50 titles MAP carries with no entry yet; 2,872 credentials, 2,415 of 3,185 records stamped",
+     "n": 3037,
+     "of": 6145,
+     "words": "titles carry a review stamp (1,435 a person's, 1,602 a cohort's), counting 78 titles MAP carries with no entry yet; 2,877 credentials, 2,420 of 3,190 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1435,
-     "of": 6107,
+     "of": 6145,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -134,7 +141,7 @@
      "error": null
     },
     {
-     "n": 810,
+     "n": 812,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -166,24 +173,24 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-17T17:10:03Z",
+    "at": "2026-11-18T03:58:00Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 6057,
-    "backlog": 50,
-    "stamped": 3027,
+    "titles": 6067,
+    "backlog": 78,
+    "stamped": 3037,
     "person": 1435,
-    "cohort": 1592,
-    "credentials": 2872,
+    "cohort": 1602,
+    "credentials": 2877,
     "confirmed": 1435,
-    "records": 3185,
-    "records_stamped": 2415,
+    "records": 3190,
+    "records_stamped": 2420,
     "saved_at": "2026-11-17T17:10:03Z",
-    "fold_at": "2026-11-14T20:24:27Z",
-    "map_titles": 5297,
-    "unclassified": 50,
-    "left_map": 810,
+    "fold_at": "2026-11-18T03:58:00Z",
+    "map_titles": 5333,
+    "unclassified": 78,
+    "left_map": 812,
     "below_80": 1117,
     "below_60": 235,
     "no_subject": 499,
@@ -250,7 +257,7 @@
      "open": "#coci-lookup/list/seedless"
     },
     {
-     "n": 4,
+     "n": 5,
      "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
      "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
      "carry": "unsure",
@@ -288,7 +295,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-17T03:12:31+00:00",
+    "at": "2026-11-18T04:00:41+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -500,7 +507,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-17T03:10:26Z",
+    "at": "2026-11-18T03:57:58Z",
     "every_hours": 24
    },
    "facts": {
@@ -513,7 +520,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-17",
+    "scanned_at": "2026-11-18",
     "procedures_on": 6
    },
    "sources": [
@@ -650,6 +657,14 @@
     "key": "no_procedure",
     "items": [
      {
+      "ref": "requirements",
+      "title": "Program Requirements",
+      "n": 6,
+      "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
+      "owner": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+      "open": "#commons/data"
+     },
+     {
       "ref": "course",
       "title": "Common Course Reference",
       "n": 12540,
@@ -689,7 +704,7 @@
      {
       "ref": "course",
       "title": "Common Course Reference",
-      "n": 4,
+      "n": 5,
       "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
       "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
       "open": "#coci-lookup/list/doubt"
@@ -731,7 +746,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 810,
+      "n": 812,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -751,7 +766,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2822,
+    "n": 2617,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -759,7 +774,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2828,
+    "n": 2829,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -783,12 +798,23 @@
   ],
   "stalled": [
    {
+    "ref": "exhibit",
+    "title": "Common Exhibit Reference",
+    "kind": "not_shrinking",
+    "n": 499,
+    "was": 362,
+    "since": "2026-11-11",
+    "words": "credentials with no Common SUBJ (461 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+    "open": "#exhibits/list/nosubj"
+   },
+   {
     "ref": "course",
     "title": "Common Course Reference",
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-10",
+    "since": "2026-11-11",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
@@ -803,12 +829,12 @@
     {
      "name": "classifier",
      "placed": 956,
-     "untouched": 874,
+     "untouched": 880,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 6,
+     "left": 0,
      "looked": 57
     },
     {
@@ -825,23 +851,23 @@
     {
      "name": "course-identity",
      "placed": 194,
-     "untouched": 167,
+     "untouched": 169,
      "kept": 0,
      "renamed": 25,
      "moved": 0,
      "by_procedure": 0,
-     "left": 2,
+     "left": 0,
      "looked": 25
     },
     {
      "name": "high-school-rop",
      "placed": 57,
-     "untouched": 31,
+     "untouched": 33,
      "kept": 19,
      "renamed": 5,
      "moved": 0,
      "by_procedure": 0,
-     "left": 2,
+     "left": 0,
      "looked": 24
     },
     {
@@ -891,12 +917,12 @@
    ],
    "total": {
     "placed": 1463,
-    "untouched": 1321,
+    "untouched": 1331,
     "kept": 23,
     "renamed": 85,
     "moved": 0,
     "by_procedure": 24,
-    "left": 10,
+    "left": 0,
     "looked": 108
    }
   },
@@ -996,9 +1022,41 @@
  "docket": [],
  "batches": [
   {
+   "kind": "another-look",
+   "n": 1,
+   "of": 1,
+   "open": "#exhibits/another-look/batch",
+   "title": "Another look at 1 exhibit title",
+   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+   "stop": "The batch ends when its cards are decided.",
+   "rules": [
+    "numerals"
+   ],
+   "cards": [
+    {
+     "id": "8a461f1cb091",
+     "current": "News Production III",
+     "keys": [
+      "_UNCLASSIFIED::JOURN 18C News Production III"
+     ]
+    }
+   ],
+   "at": "2026-11-18T04:01:30Z"
+  },
+  {
+   "kind": "job",
+   "ref": "requirements",
+   "n": 6,
+   "title": "Program Requirements",
+   "words": "colleges whose sites block automated reading: find their catalog or course outlines (345 local courses, 12 still taught)",
+   "teaches": "Sam (file it in kb/hand_filed_catalogs/outlines)",
+   "open": "#commons/data",
+   "reason": "no_procedure"
+  },
+  {
    "kind": "job",
    "ref": "course",
-   "n": 4,
+   "n": 5,
    "title": "Common Course Reference",
    "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
    "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
@@ -1007,13 +1065,25 @@
   }
  ],
  "next_batch": {
-  "kind": "job",
-  "ref": "course",
-  "n": 4,
-  "title": "Common Course Reference",
-  "words": "cards whose catalog description reads as another discipline than the one they carry (Kinesiology)",
-  "teaches": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
-  "open": "#coci-lookup/list/doubt",
-  "reason": "unsure"
+  "kind": "another-look",
+  "n": 1,
+  "of": 1,
+  "open": "#exhibits/another-look/batch",
+  "title": "Another look at 1 exhibit title",
+  "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
+  "stop": "The batch ends when its cards are decided.",
+  "rules": [
+   "numerals"
+  ],
+  "cards": [
+   {
+    "id": "8a461f1cb091",
+    "current": "News Production III",
+    "keys": [
+     "_UNCLASSIFIED::JOURN 18C News Production III"
+    ]
+   }
+  ],
+  "at": "2026-11-18T04:01:30Z"
  }
 }
