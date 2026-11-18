@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-17
+updated: 2026-11-18
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -88,7 +88,7 @@ together and places them in some order of priority and completion and known issu
 
 **OPEN (S678 drafts):** **#3473** (item 8): one to-do from `kb/_blocked_catalogs.py` on the College Data Collection page and the Commons' *Waiting on a person* list, cleared by `kb/hand_filed_catalogs/outlines/<slug>.json`; 6 colleges, 345 courses, 12 still taught; the course list reads TBA until COBIx's hunt-list file is posted. **#3474** (item 7): the Courses List fold and the Exhibits rows side by side, read-only, in progress.
 
-**NEXT (S678):** tonight's queue run: the leftover drops, the retired-course drops and Sam's three `sam_rulings.md` rulings. Next session: gate and merge #3473 and #3474 on green `test`; #3467 after its second reader (below); the Exhibits items in [cer-procedures](cer-procedures.md); Sam's billing paste after Nov 15.
+**NEXT (S679):** #3467, #3473 and #3474 are merged, and Sam's three `sam_rulings.md` rulings of Nov 17 are applied (#3478, #3481; [program-requirements-harvest](program-requirements-harvest.md)). Left: the retired-course drops; the Exhibits items in [cer-procedures](cer-procedures.md) (#3482, then #3472); Sam's billing paste after Nov 15.
 
 
 **NEXT:** (1) the ASE slice's public copy on the Credential Catalog; then CompTIA, the American Welding Society, NCCER, military. (2) From the path mock (https://claude.ai/artifact/PYzUNKC3Ni6F8nhbcKdSr9): Teach a rule on every reference; the confidence count for the Course auditor, which needs a receipt of what the auditor scored before a person changed the card (none is committed today); the other references' paths; then every Commons view on the `--cmn` tokens. Data sources: [`data_sources`](../data_sources.md). When a Progress card reads *Could not be read*, check the `coci_college_programs` read first (it once answered 500).

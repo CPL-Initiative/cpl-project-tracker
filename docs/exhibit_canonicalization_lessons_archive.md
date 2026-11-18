@@ -1578,3 +1578,66 @@ residuals, one-off state certs. All still listed in the staged file's
   plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
   fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
   deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
+
+## Moved from the lane (S679 checkpoint, 2026-11-18)
+
+- **The fold keeps one issuer, in one pass (#3116):** `kb/fold_issuer.py` holds the rules in order: (1) a person's
+  issuer saved at or after the group's earliest fold save wins, (2) a cert-form target keeps its issuer, (2b) an "(ASE
+  ... standards)" target keeps the college, (3) additive. The decision is one `issuer_resolution` row per folded target
+  (cohort `cred-fold-s638@bot`); no issuer row a person wrote is changed; every reader resolves through
+  `effective_issuer` (`issuer_resolution.js` in the browser). `kb/_cred_rename_undo.py <receipt>` reverses an apply.
+  The guarded writes and the undo have run only against a test double.
+- **Readers ignore a saved row on an emptied title** (a title no `kb/unified_titles.json` raw maps to, the fold's own
+  test). `fold_issuer.hold_emptied_folds` keeps its saved fold out of the rename dry run and the apply (`held_emptied`
+  in the alias map), so it leads no fold, raises no issuer conflict (Heating and Air Conditioning's 15:47Z issuer) and
+  renames nothing; the same rows act again once a raw maps to the title (`tests/emptied_title_guard_test.py`). The
+  nightly fold reads only `_UNCLASSIFIED::` rows, and `effective_issuer` resolves only a title a fold targeted. The
+  fold's `credential_retires` list these titles' panel rows under `panel_rows_left`: they stay where they are.
+  **DECIDED (Sky and COBIx, 2026-11-11, #3110):** a plan never retires a person's saved row on an emptied title;
+  readers ignore it.
+- **Exhibit subject fill (#3119):** `kb/_exhibit_subject_fill.py` gives a credential with no Common SUBJ the subject of
+  the courses colleges credit for it (several colleges first, then one), else its issuer family's; title words, TOP and
+  CIP never decide. First live run (cer-procedures run 43104720166, 21:41Z): 747 `subj_override` and 747 `subj_source`
+  rows under `exhibit-subject-s638@bot`; undo is the cohort delete. `kb/exhibit_subject_out/worklist.json` lists the
+  rest (362 credentials, 429 exhibits, 70 with a suggestion); the Commons' Exhibit card counts `no_subject`.
+- **Another look never brings back a person's save (S666, #3396 `b460ea57`; issue #3358).** Every card of the Nov 13 sweep was one of Sam's own saves that afternoon. `kb/_sweep_exhibit_titles.py` `person_saved()` drops a move whose current title is a person's overlay save (a bot cohort's save still gets its card), and the fold's revise lane in `_fold_unclassified.py` lets only a person's row supersede a human-reviewed title (0 rows move today). `kb/exhibits_sweep.json` went from 6 cards to 0. **DECIDED** `d-person-saved-never-returns-s666`: a person's save is terminal, reopened only on new source evidence (CLAUDE.md, *person-settled wins*). Test 27/27.
+- **DECIDED (the S647 worker, on Sam's ruling A of 2026-11-11 and his words on #3228, 2026-11-13):** a *(ASE <code> standards)* title stands (`cert_naming.is_standards`, read by the rename batch, Another look and `fold_issuer` rule 2b), and a keep answers a reworded proposal of the same move (`_sweep_exhibit_titles.same_decision`: a twin spelling, or the same one ASE test). The family's hand-coding list holds only the mixes the parser cannot read (`test_mix.exception`, Sam: *"I would just defer to it's mix as written unless there was an obvious error"*); none since S648.
+- **A decided Review card stays decided (S649, #3260 `dc4ba840`, #3269 `88e96c5f`; Sam's words on #3223, `sam-review-loop-las-positas-2026-11-13`).** The tab's `reconcileReview` (`exhibits.js`) and `kb/_build_exhibits_review.py --live` read the saved `unified_title_assignment` rows with the anon key; a card with a saved title leaves the open queue, and while the read is pending or failed the card actions are off. The record: `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S649 final refresh)*. **DECIDED** `d-exhibits-review-reads-saved-titles-s649`, `d-review-builder-anon-read-s649`; pitfall `p-test-reads-live-review-file-s649`. Tests: `tests/exhibits_review_reconcile.test.js`, `tests/exhibits_review_build_test.py`, `tests/exhibits_served_paths.test.js`.
+
+**Nightly (S679, #3477):** the daily build (`scripts/daily_build.sh`, *Sync curation overlay from Supabase*) runs
+`kb/_apply_left_map.py --live --apply` after the unclassified fold and before `excel_to_dashboard.py` bakes the
+reference. It reads the `left_map_decision` rows with the service key (read only, Range-paged, HTTP 416 read as the
+end of the rows) and writes repo files only: `kb/unified_titles.json` (a temp file renamed into place) and, when
+something changed, `kb/receipts/left_map_apply_<UTC stamp to the second>.json` (a `_2` suffix when the name is taken),
+written before the file. It writes no Supabase row. A failure keeps yesterday's links, records `LEFT_MAP_STATUS=failed`,
+and `daily-dashboard.yml`'s last step turns the run red after the push, so the workflow failure watch opens its issue.
+When an input rebuild fails and the first build is pushed, the commit step writes back the first pass's
+`LEFT_MAP_STATUS` beside the scrape status. A block, *Build the titles that have left MAP*, rebuilds
+`kb/exhibit_left_map.json` after the exhibit auditor and before the Commons status; the commit stages both. That file's
+counts are the auditor's leftover titles and ignore saved decisions (a kept title stays counted; the List subtracts the
+decisions from its live read). The counts stay that way for now.
+
+**Undo:** the newest decision per title is the one in force. A newer `keep` after an applied Move or Remove returns the
+raw key to `left_map.from` and drops the marker; `from` is the canonical title before the first decision, and a later
+Move or Remove keeps it. Each receipt change records `before_left_map`. A `git revert` of the nightly commit alone does
+not hold, because the next run reads the decision row and applies it again; undo by saving a newer `keep` row (a
+Rule 10 plan with its receipt), since a decided title has left the List.
+
+**Rename and Combine on the leftover row (S679, #3477):** each undecided leftover row also offers *Rename the
+canonical title* and *Combine the canonical title with another*. They act on the canonical title the row sits under
+(the local title stays as it is) through the List's own title Edit (`listCellSave`) and the fold's one writer.
+
+**The fold's guard (S679, #3477):** `foldWrite` writes every single fold (the List's Accept, the leftover row's
+Combine, Re-point) and `foldGate` guards a save that folds many titles (the related titles' Save, the rename batch's
+merges). Both read `foldLanding`: the landing title is the end of the picked title's chain of saved renames
+(`listChainPath`), and its type is the last typed title along that chain. A fold across Sam's graded and cert-based
+groups is blocked on the first press and written on the second with a `cpl_type_group_override` row. Every surface
+writes the landing title the guard checked, `relSave` and `approveRename` included. The guard fails closed: while
+`kb/exhibit_left_map.json` is unread the fold is held (*"The CPL types did not load, so this combine is held. Try
+again."*), the failed read is not cached so the next press fetches the file again, and the List's own draw does not
+retry it. A title with no type along its chain holds the fold, on either side. The second press is armed per surface
+and per pair (`guardKey`), so a block on one surface never arms a press on another. Move and Combine share one
+canonical-title picker (`leftPicker`). Tests `tests/exhibits_list_left.test.js` (62), `tests/exhibits_related.test.js`
+and `tests/exhibits_related_actions.test.js` (the batch's and the related Save's landing title and hold),
+`tests/left_map_build_test.py` (44; it pins the nightly's order, the red step, the status write-back, the failure
+watch, the undo, the Move hold, the 416 end, the receipt names and the atomic write).

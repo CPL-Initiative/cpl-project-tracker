@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-589 document(s).
+590 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -119,6 +119,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A green check you did not scope is not evidence](../kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) | methodology | published | 2026-08-23 | 2026-10-14 |
 | [A grid past a few hundred thousand cells needs a window, not chunks](../kb-notes/methodology-a-grid-past-a-few-hundred-thousand-cells-needs-a-window-not-chunks.md) | methodology | internal | 2026-09-24 | 2026-09-24 |
 | [A grouping key must come from the authoritative set, not from the rows being grouped](../kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A guard must fail closed when it cannot decide](../kb-notes/methodology-a-guard-must-fail-closed-when-it-cannot-decide.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [A guard on generated output cannot see a regression staged in its source](../kb-notes/methodology-a-guard-on-generated-output-cannot-see-its-source.md) | methodology | published | 2026-09-10 | 2026-09-10 |
 | [A guard on the wrong generation of descendant is not a guard](../kb-notes/methodology-a-guard-on-the-wrong-generation-of-descendant-is-not-a-guard.md) | methodology | published | 2026-09-15 | 2026-09-15 |
 | [A guard test must not be able to fire the action it guards](../kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md) | methodology | published | 2026-08-19 | 2026-08-19 |
