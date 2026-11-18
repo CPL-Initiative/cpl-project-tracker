@@ -26,6 +26,18 @@ A later firing that finds this pull request updated within the half hour ends in
 - One writer per college. A college changes lanes only by an edit to this section before the write.
 - The slimming pull requests (#3476) touch no college record.
 
+## Ledger at 06:51Z (in progress)
+
+| PR | What | State |
+|---|---|---|
+| #3495 | display receipts to the private bucket (#3476 step 1) | draft; second reader reading |
+| #3490 | the repo size check (#3476 step 2) | draft; merges after the existing receipts move out |
+| #3491 | cheap piles: 9 discontinued programs flagged, no data write | draft |
+| #3496 | cheap piles: units rules A1, A4, A5, A6, 59 records at 28 colleges | draft; second reader before the pre-read |
+| #3488, #3421, #3387, #3284, #3489 | full outcome reads: Golden West, Diablo Valley, Redwoods, Allan Hancock, Los Medanos | runs in flight; loads follow |
+| #3492, #3493, #3494 | preparation runs: Chabot, Antelope Valley, Santiago Canyon | runs in flight |
+| #3482, #3472 | S679's drafts, green on their heads, each conflicts with `main` | left for a plain session |
+
 ## Order tonight (COBIx's brief on #3358, written 6:45 PM PT Nov 17)
 
 1. The slimming pull requests (#3476 Part 4): display receipts to the private bucket, the size check, the existing
