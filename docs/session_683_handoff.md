@@ -119,8 +119,8 @@ session Sam starts by hand works the queue itself.
 | #3497 named gaps | draft; 99-row plan reviewed, not applied | pre-read, apply, rebuild rollback, merge |
 | #3508 released colleges, A4 | draft; 13-row write not applied | findings 1 and 2, display readers, then apply |
 | #3492 Chabot | draft; rolled back; reader fix and receipt on the branch; its `.apply` still names the rollback (a rerun aborts on the count guard) | re-read, standing test, load, merge |
-| this checkpoint (`claude/checkpoint-s682`) | draft | the conductor merges it last |
-| the vault note (`samueltlee/CPLBrain`) | draft | merge |
+| #3512 this checkpoint | draft | the conductor merges it last |
+| samueltlee/CPLBrain#821 the vault note | draft | merge |
 | #3500; #3293, #3482, #3472, #3383 | untouched | a named-programs-only input; a plain session |
 
 Subscriptions: none held. Check-ins: none. No artifact watch.
