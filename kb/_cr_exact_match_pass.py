@@ -335,7 +335,8 @@ def run(inventory: list[dict], ace_rows: list[dict]) -> tuple[list[dict], dict]:
 
 # The one SELECT the conductor runs for the live inventory counts (one JSON value). It mirrors
 # inventory_from_units() (one row per distinct trimmed exhibit_id and non-empty credit_rec; source MAP only when no
-# row carries ACE) and classify_row()'s map_only rule. tests/cr_exact_match_pass_test.py pins both.
+# row carries ACE) and classify_row()'s map_only rule. tests/cr_exact_match_pass_test.py pins both. Hash joins, not a
+# correlated EXISTS per row: the EXISTS form ran past the 60-second connector limit on 29,995 rows (S683, 2026-11-18).
 MAP_ONLY_SQL = "((has_map and not has_ace) or exhibit_id = '' or not in_catalog)"
 LIVE_COUNTS_SQL = f"""with inv as (
   select coalesce(btrim(exhibit_id), '') as exhibit_id, btrim(credit_rec) as credit_rec,
@@ -344,12 +345,15 @@ LIVE_COUNTS_SQL = f"""with inv as (
   from public.{UNIT_TABLE}
   where coalesce(btrim(credit_rec), '') <> ''
   group by 1, 2
+), cat as (
+  select distinct btrim({ACE_ID_COLUMN}) as exhibit_id from public.{ACE_TABLE}
+), pairs as (
+  select distinct btrim({ACE_ID_COLUMN}) as exhibit_id, {ACE_TEXT_COLUMN} as credit_rec from public.{ACE_TABLE}
 ), lab as (
-  select i.*,
-         exists (select 1 from public.{ACE_TABLE} c where btrim(c.{ACE_ID_COLUMN}) = i.exhibit_id) as in_catalog,
-         exists (select 1 from public.{ACE_TABLE} c where btrim(c.{ACE_ID_COLUMN}) = i.exhibit_id
-                   and c.{ACE_TEXT_COLUMN} = i.credit_rec) as exact
+  select i.*, (c.exhibit_id is not null) as in_catalog, (p.exhibit_id is not null) as exact
   from inv i
+  left join cat c on c.exhibit_id = i.exhibit_id
+  left join pairs p on p.exhibit_id = i.exhibit_id and p.credit_rec = i.credit_rec
 )
 select json_build_object(
   'n_inventory', count(*),
