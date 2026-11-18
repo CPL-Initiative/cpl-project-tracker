@@ -457,6 +457,10 @@ def calgetc_apply_plan(records: list[dict], college: str, commit: str | None = N
         else:
             sim = st
             fills, held = True, None
+            # The step's own hold by name (S680): the reconcile run leaves the record alone, so the plan does too.
+            why = (st.get("hold") or {}).get(f["control_number"])
+            if why:
+                fills, held = False, "held by name: %s" % why
         what, after = simulate_ge(f, sim)
         if after is None:
             continue

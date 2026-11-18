@@ -6570,7 +6570,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
                                  course_units=src.get("course_units"),
-                                 course_hours=src.get("course_hours"),
+                                 course_hours=src.get("course_hours"), control_number=src.get("control_number"),
                                  closed=src.get("closed_list"), year=src.get("catalog_year"))
         if notes:
             got = dict(got, record=rec)
