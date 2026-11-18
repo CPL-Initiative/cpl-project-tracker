@@ -20,6 +20,15 @@ meets exactly with the high end carried past it passes as "meets", for program
 totals and electives-filled degrees; kb/_program_requirements_score.py), and
 nothing else. A program record whose degree check also fails stays failing.
 
+Sam's rulings of 2026-11-17 (docs/reference/sam_rulings.md) ride the same pass:
+a printed unit range whose low end the sum meets with its high end short passes
+as "short_high" (the scorer's short_high), and a local degree whose major
+matches the catalog exactly and whose major and general education run past the
+degree total takes ge_overlap, with the reconcile stage's statewide note
+(local_overlap_hold in kb/_program_requirements_reconcile.py), and passes as
+overlap. The general education open slot needs the page text, so it runs only
+in a reconcile run.
+
     python3 kb/_program_requirements_rescore.py           # rewrite the records it passes, write the receipt
     python3 kb/_program_requirements_rescore.py --check   # fail when a filed record would change
 
@@ -41,6 +50,7 @@ import time
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from _program_requirements_score import degree_verdict, program_verdict  # noqa: E402
+import _program_requirements_reconcile as R  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 GLOBS = [os.path.join(HERE, "program_requirements_college", "*", "records", "*.json")]
@@ -61,6 +71,10 @@ def rescore(filed: dict) -> dict | None:
     if against not in ("degree", "program") or arith.get("status") != "unequal" or not comp or not stated:
         return None
     prog = (filed.get("record") or {}).get("program") or {}
+    local_overlap = against == "degree" and R.local_overlap_hold(prog, filed.get("award"), arith) is None
+    if local_overlap:
+        # Sam's ruling 1 of 2026-11-17: the major counts toward general education for a local degree too.
+        prog = dict(prog, ge_overlap=True)
     if against == "degree":
         v = degree_verdict(prog, (float(stated[0]), float(stated[1])), float(comp[0]), float(comp[1]),
                            filed.get("award"))
@@ -76,9 +90,15 @@ def rescore(filed: dict) -> dict | None:
     new = dict(arith)
     new.update(v)
     new.setdefault("why", [])
-    new["rescored"] = ("Open Asks Sheet 120 card 1" if v.get("meets")
+    new["rescored"] = (RULING_SHORT_HIGH if v.get("short_high")
+                       else RULING_LOCAL_OVERLAP if local_overlap and v.get("overlap")
+                       else "Open Asks Sheet 120 card 1" if v.get("meets")
                        else "Open Asks Sheet 82" if v.get("overlap") else "Open Asks Sheet 81")
     return new
+
+
+RULING_SHORT_HIGH = "Sam's ruling of 2026-11-17, short high end"
+RULING_LOCAL_OVERLAP = "Sam's ruling of 2026-11-17, local degree overlap"
 
 
 def arith_against(filed: dict) -> str | None:
@@ -86,7 +106,7 @@ def arith_against(filed: dict) -> str | None:
 
 
 def how(new: dict) -> str:
-    for k in ("meets", "within", "overlap", "transfer", "minimum"):
+    for k in ("meets", "short_high", "within", "overlap", "transfer", "minimum"):
         if new.get(k):
             return k
     return "fill"
@@ -110,6 +130,11 @@ def run(write: bool) -> list[dict]:
                         "computed": new.get("computed"), "stated": new.get("stated"),
                         "path": os.path.relpath(path, ROOT)})
         if write:
+            if new.get("rescored") == RULING_LOCAL_OVERLAP:
+                # The record takes the field the scorer read, with the reconcile stage's statewide note.
+                rec, notes = R.local_degree_ge_overlap(filed["record"], filed.get("award"), filed["score"]["arithmetic"])
+                filed["record"] = rec
+                filed["reconciled"] = (filed.get("reconciled") or []) + notes
             filed["score"]["arithmetic"] = new
             filed["score"]["pass"] = passes(filed["score"])
             with open(path, "w") as fh:
@@ -153,7 +178,9 @@ def main(argv=None) -> int:
     path = os.path.join(RECEIPTS, "program_requirement_records_rescore_%s_%s.json"
                         % (time.strftime("%Y-%m-%d", time.gmtime()), args.tag))
     receipt = {"rule": "Open Asks Sheet 81 cards 1 (count) and 2 (adt) and Sheet 82 card 2 (overlap), Sam, 2026-10-14; "
-                       "Sheet 120 card 1 (narrow: a printed total the low end meets exactly passes as meets), Sam, 2026-10-23",
+                       "Sheet 120 card 1 (narrow: a printed total the low end meets exactly passes as meets), Sam, 2026-10-23; "
+                       "Sam's rulings of 2026-11-17 (a short high end passes; a local degree's major counts toward "
+                       "general education)",
                "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "rescored": len(changed), "records": changed,
                "apply": update_sql(changed, "equal", "unequal"),

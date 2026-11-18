@@ -62,8 +62,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     23.0
@@ -75,7 +75,9 @@
    "against": "program",
    "why": [
     "the blocks sum to 18.0-23.0; the catalog states 18.0-24.0"
-   ]
+   ],
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
    "codes": [],
@@ -102,7 +104,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

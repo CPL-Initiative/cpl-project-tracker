@@ -101,8 +101,8 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     36.0,
     36.0
@@ -114,7 +114,9 @@
    "against": "program",
    "why": [
     "the blocks sum to 36.0-36.0; the catalog states 36.0-37.0"
-   ]
+   ],
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end"
   },
   "repeated": {
    "codes": [],

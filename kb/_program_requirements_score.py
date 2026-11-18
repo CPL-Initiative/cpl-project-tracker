@@ -117,6 +117,13 @@ records as adding up, each "equal" with a field that says how:
 degree_verdict() holds both, and kb/_program_requirements_rescore.py applies it
 to the records already filed.
 
+Sam's ruling of 2026-11-17 ("Pass short high ends the same way as over-high
+ends", docs/reference/sam_rulings.md) is the mirror of Sheet 120 card 1: a
+printed unit range whose low end the sum meets exactly, with the sum's high end
+short of the range's top, passes as "short_high" (program_verdict for a program
+total, degree_verdict for a degree total). An hours record stays out: the ruling
+names a unit range, and hours ranges have their own reading (hours_meets_top).
+
 When the catalog prints no figure at all (Mt. San Antonio's Vocational Nursing
 names no hours, no units and no total), there is nothing to add. Arithmetic is
 then "unstated", and it passes only when all three hold: the record carries no
@@ -735,6 +742,10 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
     if fits and transfer_degree(award, prog) and not _num(prog.get("open_elective_units")):
         # Sheet 81 card 2: transferable electives make up a transfer degree's 60.
         return {"pass": True, "status": "equal", "transfer": True, "fill": fill, "why": []}
+    if short_high(prog, degree, lo, hi):
+        # Sam, 2026-11-17 ("Pass short high ends the same way as over-high ends"): the low end meets a
+        # printed range's low end exactly and the high end falls short of its top.
+        return {"pass": True, "status": "equal", "short_high": True, "why": []}
     return {"pass": False, "status": "unequal",
             "why": ["the blocks and general education sum to %s-%s; the catalog prints %s-%s "
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
@@ -793,6 +804,14 @@ def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: fl
     return True
 
 
+def short_high(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
+    """Sam's ruling of 2026-11-17, "Pass short high ends the same way as over-high ends": a printed unit range
+    (its top past its low end) whose low end the sum meets exactly, the sum's high end short of the top. Units
+    only: the ruling names a unit range, and an hours range reads by hours_meets_top."""
+    return (prog.get("measure") != "hours" and stated[1] > stated[0] + TOL
+            and abs(lo - stated[0]) <= TOL and hi < stated[1] - TOL)
+
+
 def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float,
                     record: dict | None = None) -> dict:
     """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
@@ -816,6 +835,12 @@ def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: floa
     # totals and 9 electives-filled degrees read so; any total inside the span would pass 738.
     if abs(lo - stated[0]) <= TOL and hi > stated[1] + TOL:
         return {"pass": True, "status": "equal", "meets": True}
+    if short_high(prog, stated, lo, hi):
+        # Sam, 2026-11-17 ("Pass short high ends the same way as over-high ends"; Sheet 120 card 1's mirror):
+        # the low end meets the printed range's low end exactly and the high end falls short of its top (Citrus
+        # Business - Accounting 42170: 37-38 against 37-40). A student taking each choice at its least reaches
+        # the printed low end, as under meets.
+        return {"pass": True, "status": "equal", "short_high": True}
     if record is not None and hours_meets_top(record, stated, lo, hi):
         return {"pass": True, "status": "equal", "meets_top": True}
     return {"pass": False, "status": "unequal"}
@@ -1067,6 +1092,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             arith["minimum"] = True
         if pv.get("meets"):
             arith["meets"] = True
+        if pv.get("short_high"):
+            arith["short_high"] = True
         if pv.get("meets_top"):
             arith["meets_top"] = True
         if ge_included:

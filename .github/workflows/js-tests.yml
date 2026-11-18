@@ -332,6 +332,10 @@ jobs:
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
         run: python3 tests/program_requirements_reconcile_test.py
+      # Sam's rulings of 2026-11-17 (#3461): a local degree's major counts toward general education, a short
+      # high end passes as an over-high end does, and the general education open slot, on the four tested programs.
+      - name: Program requirements rulings of 2026-11-17 (local overlap, short high end, GE open slot)
+        run: python3 tests/program_requirements_rulings_2026_11_17_test.py
       - name: Reconcile reader gaps (holds, sources.json, rescore marker; S658)
         run: python3 tests/reconcile_reader_gaps_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
