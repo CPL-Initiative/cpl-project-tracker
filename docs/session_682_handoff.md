@@ -76,7 +76,8 @@ No new ruling from Sam; his standing words (the routine prompt of 2026-11-17; "n
 COBIx's paraphrase) are in `docs/reference/sam_rulings.md`. The conductor's: `d-stop-rule-fired-s681`,
 `d-lane-names-only-colleges-in-flight-s681`, `d-named-gap-labels-corrected-s681`, `d-a5-rows-confidence-56-s681`,
 `d-a4-pair-members-carry-state-units-s681`, `d-census-order-s681`, `d-one-wave-chabot-out-s681`. Rows:
-`kb/migrations/2026-11-18_s681_cpl_memory_rows.sql` (15, with its rollback); the conductor points `.apply`.
+`kb/migrations/2026-11-18_s681_cpl_memory_rows.sql` (15, applied by the runner, run 44297880421, receipt
+`kb/receipts/migration_s681_cpl_memory_rows_44297880421.json`; its rollback beside it).
 
 ## Patterns that worked
 
@@ -116,7 +117,7 @@ conductor. A session Sam starts by hand works the queue itself.
 Subscriptions: none held (the conductor unsubscribed from #3506, #3507, #3508 and #3509 as each opened). Check-ins: a
 20-minute background timer in the session's own shell, gone when the session ends. No artifact watch.
 
-Spend: not available; 2026-11-18T10:13Z to 2026-11-18T11:46Z.
+Spend: not available; 2026-11-18T10:13Z to 2026-11-18T11:49Z.
 
 This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts
 at 11:46Z: the conductor 136 API calls, 0.22 million output, 0.48 million cache-write and 43.2 million cache-read
