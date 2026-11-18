@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     72.0,
     72.0
@@ -76,9 +76,7 @@
     21.0,
     21.0
    ],
-   "why": [
-    "the blocks and general education come to 72.0-72.0, past the 60.0-63.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -93,7 +91,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -117,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -152,7 +152,8 @@
     "Demonstrate decision-making coordination with the client, significant support person(s) and members of the healthcare team.",
     "Demonstrate effective management through gathering information, planning, and directing in collaboration with the healthcare team to assist the client to move toward positive outcomes in an efficient and cost-effective manner."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -310,6 +311,13 @@
     "max": 21
    },
    "words": "Map (Butte GE) (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 37, the major total the catalog prints; the major and general education sum to 72 against the degree's 60-63 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
   }
  ],
  "read_run": 42973457189

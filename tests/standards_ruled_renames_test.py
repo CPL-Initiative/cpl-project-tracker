@@ -68,8 +68,8 @@ check("the standards plan loads beside Sheet 181's, each id once",
       ids.count(PLAN_ID) == 1 and ids.count("sheet181-2026-11-12") == 1 and len(ids) == len(set(ids)))
 # An apply dispatched with an empty only_plan carries every committed plan, so a plan file lands only on purpose: the
 # next ruled plan adds its id here (tests/standards_2_ruled_renames_test.py checks the same list).
-check("the committed ruled plans are exactly Sheet 181's and the two standards plans",
-      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN_ID, "standards-2-2026-11-12"]), ids)
+check("the committed ruled plans are exactly Sheet 181's, the two standards plans and the slash-to-and plan",
+      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN_ID, "standards-2-2026-11-12", "slash-to-and-2026-11-18"]), ids)
 plan = next(p for p in plans if p["plan_id"] == PLAN_ID)
 check("the plan names Sam's words, the memory row and who decided",
       '"A, C as recommended"' in plan["ruling"] and "sam-ic-exhibits-go-to-cert-title-2026-11-11" in plan["ruling"]

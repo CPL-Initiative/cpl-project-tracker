@@ -368,6 +368,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
 | `<date>.json` | scripts: `kb/_agri_family_remint.py` | — |
 | `<date>_sheet181.json` | scripts: `kb/_build_sheet181_rename_plan.py` | — |
+| `<date>_slash_to_and.json` | scripts: `kb/slash_titles.py` | scripts: `kb/slash_titles.py` |
 | `<date>_standards.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
 | `<date>_standards_2.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
@@ -703,7 +704,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json` | scripts: `kb/_ib_fold_apply.py` | — |
 | `kb/credential_review_overlay.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_sheet181_rename_plan.py`, `kb/_build_standards_rename_plan.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_fold_unclassified.py` | scripts: `kb/_apply_credential_review.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/credential_title_moves.json` | scripts: `kb/_build_commons_status.py`, `kb/credential_aliases.py` | committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
-| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_cpl_ai_join.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_sheet181_rename_plan.py`, `kb/_build_standards_rename_plan.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_cred_rename_undo.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_family_tag_apply.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py`, `kb/credential_aliases.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_cpl_ai_join.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_sheet181_rename_plan.py`, `kb/_build_standards_rename_plan.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_cred_rename_undo.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_family_tag_apply.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py`, `kb/credential_aliases.py`, `kb/slash_titles.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_reclustering_s648_dryrun.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/csr_out/confirm` | none found | committed by: `csr-confirm.yml` |
@@ -1271,6 +1272,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_prior_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_rulings_2026_11_17_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_year_renumbers_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_source_addenda_read_test.py` | workflows: `js-tests.yml` | — |
@@ -1292,6 +1294,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/sheet181_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/side_by_side_test.py` | workflows: `js-tests.yml` | — |
 | `tests/skyview_built_from_source_test.py` | workflows: `js-tests.yml` | — |
+| `tests/slash_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/spend_daily_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/standards_2_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
 | `tests/standards_ruled_renames_test.py` | workflows: `js-tests.yml` | — |
@@ -1575,5 +1578,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1033 file
-datasets · 195 external services · 611 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1036 file
+datasets · 195 external services · 612 consumers · 72 workflows · 41 tabs.

@@ -92,6 +92,21 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   (`docs/reference/canonical_credential_model.md`, DR-34). The ASE Military Tactical Wheeled Vehicle series MIL1 to MIL8
   carries ASE's official titles, and `ASE_SERIES_CIP` places MIL and A6/A7/T6/T7 in automotive (#3118; Sam: *"so the
   hvac mil should be in auto not hvac subj"*).
+- **A slash joining words is written "and" (Sam, in session S679, 2026-11-18):** *"I believe I replaced the / with and
+  to avoid formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters"*. The S679
+  conductor drew the line, which Sam can revise: a code slash (a code on each side, a digit or capitals: *SP/2*,
+  *CAD/CAM*) and an official name's slash (an ASE test name's pair in an ASE title, or a phrase in `OFFICIAL_PHRASES`:
+  *Fire Apparatus Driver/Operator*, *Division/Group Supervisor*, *Medical/Surgical*) stay. On COBIx's review (#3479)
+  the conductor added two lines: a spaced slash between two whole names (either side holds "and", or both sides run
+  two words or more: *DSST A History of the Vietnam War / Civil War and Reconstruction*) is held for a person, and a
+  combine is found case-folded and whitespace squashed, against every credential and search alias.
+  `kb/slash_titles.py` holds the rule, writes the plan `kb/cred_rename_plans/2026-11-18_slash_to_and.json` (80
+  renames; 7 whole-name titles held, 0 combines; 64 code and official-name titles kept, listed in it), and its
+  `--check` (in `scripts/check_generated.sh`) fails a new word-joining slash title the plan does not cover. Test
+  `tests/slash_titles_test.py`. **NEEDS A PERSON:** the 7 held titles, listed under `held_for_a_person` in the preview.
+  **NEXT:** dispatch `cred-rename-apply.yml` with `only_plan=slash-to-and-2026-11-18` (dry-run preview
+  `kb/slash_titles_out/2026-11-18_dryrun_preview.json`: 80 keys, 95 local-title values, 103 articulations, 20 titles'
+  `kb_curation` rows moved to the new name); then rebuild #3472's list, whose CTCNC family reads *Drywall/Lather*.
 - **The fold keeps one issuer, in one pass (#3116):** `kb/fold_issuer.py` holds the rules in order: (1) a person's
   issuer saved at or after the group's earliest fold save wins, (2) a cert-form target keeps its issuer, (2b) an "(ASE
   ... standards)" target keeps the college, (3) additive. The decision is one `issuer_resolution` row per folded target

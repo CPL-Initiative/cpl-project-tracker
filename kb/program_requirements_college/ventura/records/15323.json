@@ -71,8 +71,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     71.0
@@ -86,9 +86,7 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 64.0-71.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -102,7 +100,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -126,7 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -156,7 +156,8 @@
     "Demonstrate an understanding of assessment methods, treatment planning, and case management.",
     "Demonstrate understanding of recovery-oriented behavior health services."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -371,5 +372,14 @@
    "Outcomes are printed in the page's program student learning outcomes tab for the program; recorded for this A.A. award."
   ]
  },
- "extracted_run": "39622549965"
+ "extracted_run": "39622549965",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 26-28, the major total the catalog prints; the major and general education sum to 64-71 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

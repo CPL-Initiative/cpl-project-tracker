@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     62.0,
     64.0
@@ -75,9 +75,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education come to 62.0-64.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -159,7 +159,8 @@
     "industrial chemistry",
     "pharmacy",
     "materials science"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -266,5 +267,14 @@
    "Careers come from the overview ('research, teaching, scientific consulting, or medicine, and the chemical, pharmaceutical, or biotechnology industries') and from the first program learning outcome's list of career fields. 'teaching' appears in both and is listed once. Reviewer may prefer 'chemical, pharmaceutical, or biotechnology industries' as a single entry."
   ]
  },
- "extracted_run": "38748875071"
+ "extracted_run": "38748875071",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 28-30, the major total the catalog prints; the major and general education sum to 62-64 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }
