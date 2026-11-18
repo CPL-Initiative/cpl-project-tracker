@@ -134,15 +134,17 @@
       "alternatives": [
        {
         "code": "SPAN C180A",
-        "units": 5,
+        "units": 2.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "SPAN C180A + SPAN C180B"
        },
        {
         "code": "SPAN C180B",
-        "units": 5,
+        "units": 2.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "SPAN C180A + SPAN C180B"
        }
       ],
       "catalog_addition": false
@@ -154,15 +156,17 @@
       "alternatives": [
        {
         "code": "SPAN C185A",
-        "units": 5,
+        "units": 2.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "SPAN C185A + SPAN C185B"
        },
        {
         "code": "SPAN C185B",
-        "units": 5,
+        "units": 2.5,
         "catalog_addition": false,
-        "units_max": null
+        "units_max": null,
+        "together": "SPAN C185A + SPAN C185B"
        }
       ],
       "catalog_addition": false
@@ -197,26 +201,16 @@
  "reconciled": [
   {
    "rule": "A4",
-   "code": "SPAN C180A",
-   "words": "SPAN C180A, printed as an alternative to SPAN C180 with no units, takes its row's 5 units",
+   "code": "SPAN C180A + SPAN C180B",
+   "together": "state",
+   "words": "SPAN C180A and SPAN C180B together replace SPAN C180: each carries its own units from the state's course file (2.5, 2.5; 5 in all)",
    "statewide": "units_rules_A4"
   },
   {
    "rule": "A4",
-   "code": "SPAN C180B",
-   "words": "SPAN C180B, printed as an alternative to SPAN C180 with no units, takes its row's 5 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "SPAN C185A",
-   "words": "SPAN C185A, printed as an alternative to SPAN C185 with no units, takes its row's 5 units",
-   "statewide": "units_rules_A4"
-  },
-  {
-   "rule": "A4",
-   "code": "SPAN C185B",
-   "words": "SPAN C185B, printed as an alternative to SPAN C185 with no units, takes its row's 5 units",
+   "code": "SPAN C185A + SPAN C185B",
+   "together": "state",
+   "words": "SPAN C185A and SPAN C185B together replace SPAN C185: each carries its own units from the state's course file (2.5, 2.5; 5 in all)",
    "statewide": "units_rules_A4"
   }
  ]

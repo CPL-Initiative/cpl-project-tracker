@@ -8,7 +8,14 @@ records (kb/program_requirements_college/<slug>/records/<cn>.json) whose units c
   A1  rescore only. The current scorer passes the record as filed. Held: a pass that leans on "electives
       fill the total" (the scorer runs with empty page text, so it never grants one here).
   A4  a blank "or" alternative takes its row's units and top-end units; a lab printed with no units right
-      after its own lecture (BIOL C1001 then C1001L) counts as 0.
+      after its own lecture (BIOL C1001 then C1001L) counts as 0. A PAIRED ALTERNATIVE (S681 second reader, A):
+      A4 never copies a row's units onto each member of a group whose members together replace the row. Two or
+      more blank alternatives are such a group when the state's course file holds every member and their units
+      add up to the row's units (or fall inside the row's printed range), or when a record note says they are
+      taken together; the members then share one "together" label, which the scorer reads as one option. Each
+      member carries its own units as the state's course file stores them when the file confirms them;
+      otherwise the members carry no units, the group carries the row's units ("together_units"), and the
+      record's note says so. The program total and the pass state are the same either way.
   A5  a choose list whose own name or a record note says it may also take any course from List X (or the
       required core) gains that list's courses as options.
   A6  a choose list printed with the sum of every option (Chaffey History's "choose one" groups print 39
@@ -114,7 +121,57 @@ def _entries(record: dict):
 
 
 def _unitless(e: dict) -> bool:
-    return all(S._num(e.get(k)) is None for k in ("units", "units_max", "units_total"))
+    """No figure of its own, and no paired group's figure (a member of a group the state cannot confirm)."""
+    return all(S._num(e.get(k)) is None for k in ("units", "units_max", "units_total", "together_units"))
+
+
+# ── the state's course file ────────────────────────────────────────────────
+MEMBERS_JS = os.path.join(ROOT, "unified_courses_members.js")
+_STATE: dict | None = None
+
+
+def state_units(path: str = MEMBERS_JS) -> dict:
+    """{(college, normalized code): units} from the state's course file as unified_courses_members.js carries it
+    (COCI's units per member course), only where every listing of the course agrees on one figure."""
+    global _STATE
+    if _STATE is not None and path == MEMBERS_JS:
+        return _STATE
+    import subprocess
+    out = subprocess.run(["node", "-e", "global.window={};require(process.argv[1]);"
+                          "process.stdout.write(JSON.stringify(window.CPL_UC_MEMBERS))", path],
+                         capture_output=True, text=True, check=True).stdout
+    mem = json.loads(out)
+    cols = mem["colleges"]
+    seen: dict = collections.defaultdict(set)
+    for members in mem["members"].values():
+        for m in members:
+            u = S._num(m.get("u"))
+            if u is not None:
+                seen[(cols[m["c"]], S.norm_code(m.get("n")))].add(round(u, 3))
+    got = {k: (lambda u: int(u) if u == int(u) else u)(next(iter(v))) for k, v in seen.items() if len(v) == 1}
+    if path == MEMBERS_JS:
+        _STATE = got
+    return got
+
+
+def units_at(college: str | None, state: dict | None = None):
+    """A lookup for one college: code -> the state's units, or None."""
+    st = state if state is not None else state_units()
+    return lambda code: st.get((college, S.norm_code(code)))
+
+
+# "both" alone is no pair: Cerritos 38756's note says DANC 131 and 132 "appear both as the 'or' choice" (S681).
+PAIRED_NOTE = re.compile(r"\b(?:together|paired|pair)\b", re.I)
+
+
+def _notes_pair(record: dict, codes: list[str]) -> bool:
+    """A record note naming every member and saying they are taken together (Coastline 18223: "a paired
+    alternative: both courses together replace SPAN C180")."""
+    for n in record.get("notes") or []:
+        t = str(n)
+        if PAIRED_NOTE.search(t) and all(str(c) in t for c in codes):
+            return True
+    return False
 
 
 def unitless(record: dict) -> collections.Counter:
@@ -155,13 +212,72 @@ def _code_key(code) -> str:
     return S.norm_code(code) or ""
 
 
-def a4_blank_alternative(record: dict) -> tuple[dict, list[dict]]:
+def _blank(a) -> bool:
+    return (isinstance(a, dict) and bool(a.get("code")) and _unitless(a)) or (isinstance(a, str) and bool(a))
+
+
+def _code(a) -> str:
+    return a["code"] if isinstance(a, dict) else a
+
+
+def paired_group(record: dict, c: dict, units_of=None) -> tuple[str | None, list]:
+    """("state", units per member) or ("row", []) when the row's blank alternatives are one group taken together in
+    its place, else (None, []). "state": the state's course file holds every member and their units add up to the
+    row's units, or fall inside the row's printed range. "row": a record note says so, and the file does not."""
+    blanks = [a for a in c.get("alternatives") or [] if _blank(a)]
+    if len(blanks) < 2:
+        return None, []
+    lo = S._num(c.get("units"))
+    hi = S._num(c.get("units_max"))
+    hi = lo if hi is None else hi
+    su = [units_of(_code(a)) if units_of else None for a in blanks]
+    if lo is not None and all(u is not None for u in su):
+        tot = sum(su)
+        if abs(tot - lo) <= TOL or lo - TOL <= tot <= hi + TOL:
+            return "state", su
+    if _notes_pair(record, [_code(a) for a in blanks]):
+        return "row", []
+    return None, []
+
+
+def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]:
+    """units_of(code) is the state's units for a course at the record's college (units_at); without it no group
+    can be confirmed by the file, and a group a note names carries its row's units."""
     out = copy.deepcopy(record)
     notes = []
     for b in out.get("blocks") or []:
         prev = None
         for c in b.get("courses") or []:
             own = S._num(c.get("units"))
+            kind, su = paired_group(out, c, units_of) if own is not None else (None, [])
+            if kind:
+                blanks = [a for a in c.get("alternatives") or [] if _blank(a)]
+                label = " + ".join(_code(a) for a in blanks)
+                by_code = dict(zip([_code(a) for a in blanks], su or [None] * len(blanks)))
+                alts = []
+                for a in c.get("alternatives") or []:
+                    if _blank(a):
+                        base = dict(a) if isinstance(a, dict) else {
+                            "code": a, "catalog_addition": bool(c.get("catalog_addition"))}
+                        if kind == "state":
+                            base.update(units=by_code[_code(a)], units_max=None, together=label)
+                        else:
+                            base.update(units=None, units_max=None, together=label,
+                                        together_units=c.get("units"), together_units_max=c.get("units_max"))
+                        a = base
+                    alts.append(a)
+                c["alternatives"] = alts
+                if kind == "state":
+                    words = ("%s together replace %s: each carries its own units from the state's course file "
+                             "(%s; %g in all)" % (" and ".join(by_code), c.get("code"),
+                                                  ", ".join("%g" % u for u in su), sum(su)))
+                else:
+                    words = ("%s together replace %s, as the record's note says; the state's course file does not "
+                             "confirm each one's units, so the group carries its row's %s and no course carries "
+                             "its own" % (" and ".join(by_code), c.get("code"), _span_words(c)))
+                notes.append({"rule": "A4", "code": label, "together": kind, "words": words})
+                prev = c
+                continue
             if own is not None:
                 alts = []
                 for a in c.get("alternatives") or []:
@@ -303,8 +419,9 @@ def a8_college_ge(record: dict, award: str | None, ge_total: tuple | None) -> tu
 
 
 # ── one record ─────────────────────────────────────────────────────────────
-def judge(filed: dict, ge_totals: dict) -> dict:
-    """{"rule", "why", "record", "notes", "arith"}: the first rule whose self-check lands, or why none moved."""
+def judge(filed: dict, ge_totals: dict, state: dict | None = None) -> dict:
+    """{"rule", "why", "record", "notes", "arith"}: the first rule whose self-check lands, or why none moved.
+    state is the state's course file (state_units(); read once when not given)."""
     a = (filed.get("score") or {}).get("arithmetic") or {}
     rec, award = filed.get("record") or {}, filed.get("award")
     if a.get("status") != "unequal":
@@ -313,7 +430,9 @@ def judge(filed: dict, ge_totals: dict) -> dict:
     if now.get("pass") and now.get("status") == "equal" and exact(filed, rec):
         return {"rule": "A1", "record": rec, "notes": [], "arith": now}
     tried = []
-    for rule, fn in (("A4", a4_blank_alternative), ("A5", a5_any_course_from), ("A6", a6_sum_of_options),
+    units_of = units_at(filed.get("college"), state)
+    for rule, fn in (("A4", lambda r: a4_blank_alternative(r, units_of)), ("A5", a5_any_course_from),
+                     ("A6", a6_sum_of_options),
                      ("A8", lambda r: a8_college_ge(r, award, ge_totals.get(filed["college"])))):
         if (rule == "A6" and not A6_ON) or (rule == "A5" and not A5_ON):
             continue
@@ -347,7 +466,7 @@ def load_files(skip: tuple = (), only: tuple = ()) -> list[tuple[str, dict]]:
     return out
 
 
-def self_check(files: list[dict], ge_totals: dict) -> dict:
+def self_check(files: list[dict], ge_totals: dict, state: dict | None = None) -> dict:
     """Each correction on the records whose answer is already held (their units check reads "equal" today):
     right = the correction applies and the record still lands exactly; wrong = it applies, the sum is exact,
     and the record stops landing. A correction is applied only behind lands(), so a wrong
@@ -358,7 +477,9 @@ def self_check(files: list[dict], ge_totals: dict) -> dict:
         rec, award = f.get("record") or {}, f.get("award")
         if a.get("status") != "equal" or not lands(a) or not (self_contained(rec) or reproduces(f)):
             continue
-        for rule, fn in (("A4", a4_blank_alternative), ("A5", a5_any_course_from), ("A6", a6_sum_of_options),
+        units_of = units_at(f.get("college"), state)
+        for rule, fn in (("A4", lambda r: a4_blank_alternative(r, units_of)), ("A5", a5_any_course_from),
+                         ("A6", a6_sum_of_options),
                          ("A8", lambda r: a8_college_ge(r, award, ge_totals.get(f["college"])))):
             new, notes = fn(rec)
             if not notes:
@@ -383,14 +504,65 @@ def _load_images(colleges: set) -> dict:
     return out
 
 
-def run(write: bool, skip: tuple = (), only: tuple = ()) -> dict:
+def corrections(receipt_path: str, write: bool, skip: tuple = (), state: dict | None = None) -> list[dict]:
+    """The rows an applied A4 plan wrote that the paired-alternative rule changes (S681 second reader, A): fixed A4
+    reruns on each applied A4 row's record as filed before that plan (its before-image's blocks and program, the
+    file's notes), and a row whose blocks come out different is planned again from the row that plan wrote (its
+    after-image, the guard's before-image), so the earlier plan's own rollback stays valid behind this one."""
+    with open(receipt_path, encoding="utf-8") as fh:
+        rc = json.load(fh)
+    rel = os.path.relpath(os.path.abspath(receipt_path), ROOT)
+    out = []
+    for r in rc["records"]:
+        if r["rule"] != "A4" or (r.get("applied") or {}).get("part") != "full_row" or held(r["college"], skip):
+            continue
+        path = os.path.join(ROOT, r["path"])
+        with open(path, encoding="utf-8") as fh:
+            filed = json.load(fh)
+        if (filed["record"].get("blocks") != r["after_image"]["record"].get("blocks")
+                or str(filed.get("extracted_run")) != str(r["extracted_run"])):
+            raise SystemExit("%s %s moved since %s applied: replan by hand" % (r["college"], r["control_number"], rel))
+        orig = copy.deepcopy(filed["record"])
+        orig["blocks"] = copy.deepcopy(r["before_image"]["record"]["blocks"])
+        orig["program"] = copy.deepcopy(r["before_image"]["record"]["program"])
+        new, notes = a4_blank_alternative(orig, units_at(r["college"], state))
+        if new.get("blocks") == filed["record"].get("blocks"):
+            continue
+        got = arith(new, filed.get("award"))
+        if not lands(got):
+            raise SystemExit("%s %s: the paired-alternative rule does not land" % (r["college"], r["control_number"]))
+        old = filed["score"]["arithmetic"]
+        arith_new = dict(got, rescored="%s; paired alternatives corrected (S681 second reader, A)"
+                         % old.get("rescored", "A4"))
+        out.append({"college": r["college"], "control_number": r["control_number"], "award": filed.get("award"),
+                    "extracted_run": r["extracted_run"], "rule": "A4", "against": got.get("against"),
+                    "corrects": {"receipt": rel, "i": r["i"]},
+                    "before": {"status": old.get("status"), "computed": old.get("computed"), "stated": old.get("stated")},
+                    "after": {"status": got.get("status"), "computed": got.get("computed"), "stated": got.get("stated")},
+                    "notes": [n["words"] for n in notes if n.get("together")],
+                    "path": r["path"],
+                    "before_image": {"record": r["after_image"]["record"], "checks": r["after_image"]["checks"]}})
+        if write:
+            filed["record"] = new
+            filed["reconciled"] = ([n for n in filed.get("reconciled") or [] if n.get("statewide") != "units_rules_A4"]
+                                   + [dict(n, statewide="units_rules_A4") for n in notes])
+            filed["score"]["arithmetic"] = arith_new
+            filed["score"]["pass"] = RS.passes(filed["score"])
+            with open(path, "w", encoding="utf-8") as fh:
+                json.dump(filed, fh, ensure_ascii=False, indent=1)
+                fh.write("\n")
+    return out
+
+
+def run(write: bool, skip: tuple = (), only: tuple = (), correct_from: str | None = None) -> dict:
     bad = [c for c in only if held(c, skip)]
     if bad:
         raise SystemExit("the collection lane holds %s: never in a plan" % ", ".join(bad))
     pairs = load_files(skip, only)
     files = [d for _, d in pairs]
     ge_totals = college_ge_totals(files)
-    moved, why = [], collections.Counter()
+    why = collections.Counter()
+    moved = corrections(correct_from, write, skip) if correct_from else []
     before_images = None
     if write:
         # The load's image of every record at a college a correction touches, from the files before any rewrite.
@@ -630,7 +802,30 @@ def _header(receipt: dict, receipt_path: str, tag: str) -> str:
                if applied.get("full_row") else "",
                " A5 is off on every further record." if receipt.get("a5_on") is False else "",
                NUMBER_WORDS.get(held_n, str(held_n)))
-            + ("-- The plan names records at %s alone (--college).\n" % ", ".join(only) if only else ""))
+            + (("-- Its new rows are at %s alone (--college).\n" if receipt.get("corrects") else
+                "-- The plan names records at %s alone (--college).\n") % ", ".join(only) if only else "")
+            + _corrects_words(receipt))
+
+
+def _corrects_words(receipt: dict) -> str:
+    src = receipt.get("corrects")
+    rows = [r for r in receipt["records"] if r.get("corrects")]
+    if not src or not rows:
+        return ""
+    return ("-- %d of these rows correct rows %s applied (A4's paired alternatives, the second reader's A): each one's\n"
+            "-- before-image is the row that apply wrote, and its guard matches that image and its run.\n"
+            % (len(rows), src))
+
+
+def _rollback_order(receipt: dict) -> str:
+    src = receipt.get("corrects")
+    if not src or not any(r.get("corrects") for r in receipt["records"]):
+        return ""
+    mig = os.path.basename(src).replace("program_requirement_records_units_rules_", "").replace(".json", "")
+    day, tag = mig.split("_", 1)
+    return ("-- ORDER: run this rollback first. It puts back the rows %s applied, so that plan's own rollback\n"
+            "-- (kb/migrations/%s_%s_prreq_units_rules_rollback_rows.sql) runs after it unchanged, if wanted.\n"
+            % (src, day, tag))
 
 
 def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> None:
@@ -666,7 +861,7 @@ def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> No
             "skipped_checked). Before-images: the receipt's before_image per row.\n"
             % (len(full), len(full)) + receipt["apply_full_row"])
         parts["rollback_rows.sql"] = (
-            held + "-- Rollback of part 2, NOT applied: the before-image back where the row still "
+            held + _rollback_order(receipt) + "-- Rollback of part 2, NOT applied: the before-image back where the row still "
             "holds the after-image, skipping\n-- and listing a row a person checked; it aborts unless "
             "it matches the plan less those rows (edit expect).\n" + receipt["rollback_full_row"])
     if checks:
@@ -680,7 +875,7 @@ def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> No
         # The full-row apply ran as committed (its migrate receipt holds the file's sha256): it stays as it ran, and
         # the rollback names the rows it returned.
         parts["rollback_rows.sql"] = (
-            held + "-- Rollback of part 2, NOT applied: the %d rows the full-row apply returned (%s), the before-image\n"
+            held + _rollback_order(receipt) + "-- Rollback of part 2, NOT applied: the %d rows the full-row apply returned (%s), the before-image\n"
             "-- back where the row still holds the after-image, skipping and listing a row a person checked; it aborts\n"
             "-- unless it matches those rows less the checked ones (edit expect for a partial rollback).\n"
             % (rows_applied["returned"], rows_applied["from"]) + receipt["rollback_full_row"])
@@ -697,6 +892,11 @@ def main(argv=None) -> int:
     ap.add_argument("--college", action="append", default=[], help="run at the colleges named alone")
     ap.add_argument("--released", action="store_true",
                     help="run at the colleges S680's lane held and released alone (collection_lane.RELEASED)")
+    ap.add_argument("--everywhere", action="store_true",
+                    help="run at every college outside the collection lane (a write needs a scope: this, --college "
+                         "or --released)")
+    ap.add_argument("--correct-from", help="an applied units-rules receipt: plan again, from the rows it wrote, each A4 "
+                                           "row the paired-alternative rule changes")
     ap.add_argument("--receipt", help="replan this receipt after a live step (no rescoring)")
     ap.add_argument("--applied-checks", help="the checks-only apply's migrate receipt: mark its rows applied and "
                                              "rebuild the checks-only rollback from them")
@@ -731,10 +931,14 @@ def main(argv=None) -> int:
             len(receipt["plan"]["full_row"]), len(receipt.get("held_out") or [])))
         return 0
     only = tuple(a.college) + (tuple(CL.RELEASED) if a.released else ())
+    if not a.dry_run and not (a.college or a.released or a.everywhere):
+        # A write with no scope re-plans every unequal record outside the lane, a held-out one included (MiraCosta
+        # 21976, S680), which the guards would only abort live (S681 second reader, C).
+        ap.error("a write names its scope: --college NAME, --released or --everywhere")
     if not a.dry_run and glob.glob(os.path.join(RECEIPTS, "program_requirement_records_units_rules_*_%s.json" % a.tag)):
         # A second write under one tag would rescore records the first already moved and overwrite its receipt.
         raise SystemExit("a units-rules receipt for %s exists: replan it with --receipt, or take a new --tag" % a.tag)
-    r = run(write=not a.dry_run, skip=tuple(a.skip_college), only=only)
+    r = run(write=not a.dry_run, skip=tuple(a.skip_college), only=only, correct_from=a.correct_from)
     print("moved %d at %d colleges: %s" % (len(r["moved"]), r["colleges"],
                                            ", ".join("%s %d" % kv for kv in sorted(r["by_rule"].items()))))
     for rule, c in r["self_check"].items():
@@ -746,7 +950,8 @@ def main(argv=None) -> int:
     path = os.path.join(RECEIPTS, "program_requirement_records_units_rules_%s_%s.json" % (day, a.tag))
     receipt = {"rule": ASK, "words": WORDS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                "held_colleges": list(COLLECTION_LANE) + list(a.skip_college),
-               "only_colleges": list(only) or None, "a5_on": A5_ON, "a6_on": A6_ON,
+               "only_colleges": list(only) or None,
+               "corrects": os.path.relpath(os.path.abspath(a.correct_from), ROOT) if a.correct_from else None, "a5_on": A5_ON, "a6_on": A6_ON,
                "self_check_scope": ("the held answers at the colleges named in only_colleges" if only
                                     else "the held answers outside the collection lane"),
                "rescored": len(r["moved"]), "by_rule": r["by_rule"], "self_check": r["self_check"],

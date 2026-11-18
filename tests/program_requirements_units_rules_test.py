@@ -18,6 +18,7 @@ fixtures, never on the committed records:
 
 Run from repo root: python3 tests/program_requirements_units_rules_test.py
 """
+import collections
 import copy
 import os
 import sys
@@ -133,11 +134,11 @@ check(notes and U.lands(U.arith(new, "A.S. Degree")), "A8 gives the degree its c
 check(not U.a8_college_ge(rec, "A.S.-T Degree", ge["Butte College"])[1], "A8 never fills a transfer degree")
 
 # The collection lane's colleges are left out.
-check(U.held("Lassen College") and U.held("Santiago Canyon College") and U.held("Crafton Hills College")
-      and not U.held("Butte College") and not U.held("Golden West College"),
-      "the collection lane's seven colleges are held; a released college and others are not")
-check(len(CL.COLLECTION_LANE) == 7 and CL.COLLECTION_LANE_S680 is CL.COLLECTION_LANE,
-      "one named constant holds tonight's seven; the old name is an alias of it")
+check(U.held("Lassen College") and U.held("Santiago Canyon College") and not U.held("Crafton Hills College")
+      and not U.held("College of the Siskiyous") and not U.held("Butte College") and not U.held("Golden West College"),
+      "the collection lane's five colleges are held; Crafton Hills, Siskiyous, a released college and others are not")
+check(len(CL.COLLECTION_LANE) == 5 and CL.COLLECTION_LANE_S680 is CL.COLLECTION_LANE,
+      "one named constant holds tonight's five; the old name is an alias of it")
 check(len(CL.RELEASED) == 7 and not set(CL.RELEASED) & set(CL.COLLECTION_LANE),
       "the seven released colleges, none of them in tonight's lane")
 try:
@@ -145,6 +146,55 @@ try:
     check(False, "a run naming a college the lane holds must refuse")
 except SystemExit as e:
     check("Lassen College" in str(e), "a run naming a college the lane holds refuses and names it")
+# A write names its scope (second reader's C): with none it would re-plan MiraCosta 21976, held out of S680's plan.
+import contextlib  # noqa: E402
+import io  # noqa: E402
+try:
+    with contextlib.redirect_stderr(io.StringIO()):
+        U.main(["--tag", "s999-scope-test"])
+    check(False, "a write with no scope must refuse")
+except SystemExit as e:
+    check(e.code == 2, "a write with no scope refuses before it reads a record")
+
+# A paired alternative (second reader's A): A4 never copies the row's units onto each member of a group taken
+# together in the row's place (Coastline 18223's SPAN C180A and C180B for SPAN C180, 2.5 units each in the state's
+# file). The state's course file is injected here, never read.
+pair_rec = {"program": {"measure": "units", "total_units": {"min": 9, "max": 9}},
+            "blocks": [{"name": "Core", "rule": "all", "courses": [
+                course("SPAN C180", 5, alts=[{"code": "SPAN C180A", "units": None}, {"code": "SPAN C180B", "units": None}]),
+                course("SPAN C280", 4)]}],
+            "notes": []}
+CO = "Coastline Community College"
+state = {(CO, U.S.norm_code("SPAN C180A")): 2.5, (CO, U.S.norm_code("SPAN C180B")): 2.5}
+new, notes = U.a4_blank_alternative(pair_rec, U.units_at(CO, state))
+alts = new["blocks"][0]["courses"][0]["alternatives"]
+check([a["units"] for a in alts] == [2.5, 2.5] and len({a.get("together") for a in alts}) == 1 and alts[0]["together"],
+      "a pair the state's file confirms carries each member's own units, under one together label")
+check(U.arith(new, "A.A. Degree")["computed"] == [9.0, 9.0], "the scorer reads the pair as one 5-unit option")
+old_reading = U.arith(U.a4_blank_alternative(pair_rec, U.units_at(CO, {}))[0], "A.A. Degree")["computed"]
+check(old_reading == [9.0, 9.0], "the program total is the same as the old reading's")
+# Not confirmed by the file, but a record note says so: no member carries units, the group carries the row's.
+noted = dict(pair_rec, notes=["SPAN C180A and SPAN C180B are a paired alternative: both together replace SPAN C180."])
+new, notes = U.a4_blank_alternative(noted, U.units_at(CO, {}))
+alts = new["blocks"][0]["courses"][0]["alternatives"]
+check(all(a["units"] is None and a["together_units"] == 5 and a.get("together") for a in alts)
+      and notes and notes[0]["together"] == "row" and "note" in notes[0]["words"],
+      "a pair only a note names: the group carries the row's 5 units, no member its own, and the note says so")
+check(U.arith(new, "A.A. Degree")["computed"] == [9.0, 9.0] and U.self_contained(new), "and it sums exactly")
+# State figures that do not add up to the row, and no note: two standalone options, as before.
+off = {(CO, U.S.norm_code("SPAN C180A")): 5, (CO, U.S.norm_code("SPAN C180B")): 5}
+new, _ = U.a4_blank_alternative(pair_rec, U.units_at(CO, off))
+check(all(a["units"] == 5 and not a.get("together") for a in new["blocks"][0]["courses"][0]["alternatives"]),
+      "two alternatives each worth the row stay two options")
+check(not U._notes_pair({"notes": ["DANC 131 and DANC 132 appear both as the 'or' choice"]}, ["DANC 131", "DANC 132"]),
+      "'both' alone names no pair (Cerritos 38756)")
+# The scorer: a group's members add up; with the closed list, a member's listed units; a group's own figure first.
+grp = course("X 1", 5, alts=[{"code": "X 1A", "together": "g"}, {"code": "X 1B", "together": "g"}])
+lk = {U.S.listed_key("X 1A", {}): 2.5, U.S.listed_key("X 1B", {}): 2.5}
+check(U.S.choice_units(grp, lk) == (2.5 * 2, 5.0), "a group reads its members' listed units added")
+for a in grp["alternatives"]:
+    a["together_units"] = 5
+check(U.S.choice_units(grp, {k: 1 for k in lk}) == (5.0, 5.0), "a group's own figure wins over a closed list")
 
 # A11's named gaps.
 col = {"college": "Butte College", "titles": {"100": "Cal-GETC", "200": "English", "300": "English"},
@@ -211,9 +261,21 @@ if os.path.isfile(RECEIPT):
     for college in sorted({r["college"] for r in full}):
         for row in C.load_rows(college)[0]:
             images[(college, str(row["control_number"]))] = row
+    # A row S681 corrects (its paired alternatives) carries S681's after-image; its before-image is S680's.
+    later = {}
+    p681 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_units_rules_2026-11-18_s681.json")
+    if os.path.isfile(p681):
+        with open(p681, encoding="utf-8") as fh:
+            for r in json.load(fh)["records"]:
+                if (r.get("corrects") or {}).get("receipt", "").endswith("_s680.json"):
+                    later[r["corrects"]["i"]] = r
+    for i, r in later.items():
+        check(r["before_image"]["record"] == next(x for x in full if x["i"] == i)["after_image"]["record"],
+              "S681's correction of S680 row %d starts from the row S680 wrote" % i)
+    want = {r["i"]: (later[r["i"]] if r["i"] in later else r)["after_image"] for r in full}
     same = sum(1 for r in full if (images.get((r["college"], str(r["control_number"]))) or {}).get("record")
-               == r["after_image"]["record"] and images[(r["college"], str(r["control_number"]))]["checks"]
-               == r["after_image"]["checks"])
+               == want[r["i"]]["record"] and images[(r["college"], str(r["control_number"]))]["checks"]
+               == want[r["i"]]["checks"])
     check(full and same == len(full), "the load posts the after-image for %d of %d full-row records" % (same, len(full)))
     check(all(r["before_image"]["record"] != r["after_image"]["record"] for r in full),
           "every full-row record's blocks change (else it belongs in the checks-only part)")
@@ -260,25 +322,40 @@ if os.path.isfile(RECEIPT):
               and "::int::text::json" in sql,
               "%s skips a checked row, lists it, and aborts unless it matches the plan less those rows" % k)
 
-# S681: the plan names records at the seven colleges S680's lane released, and at no other. A planned record at a
-# college tonight's lane holds is a second writer on that college; one at any other college re-plans a record S680
-# already applied (its 56) or held out (MiraCosta 21976).
+# S681: two kinds of row, and no other. A NEW row is at one of the seven colleges S680's lane released (a planned
+# record elsewhere re-plans one S680 applied or held out, MiraCosta 21976); a CORRECTING row is an A4 row S680
+# applied whose paired alternatives the fixed rule changes (second reader's A), planned from the row S680 wrote.
+# Neither is ever at a college tonight's lane holds.
 RECEIPT_681 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_units_rules_2026-11-18_s681.json")
 if os.path.isfile(RECEIPT_681):
     with open(RECEIPT_681, encoding="utf-8") as fh:
         r681 = json.load(fh)
     released, lane = set(CL.RELEASED), set(CL.COLLECTION_LANE)
     planned = [(r["college"], str(r["control_number"])) for r in r681["records"]]
-    check(planned and all(c in released for c, _ in planned),
-          "every S681 planned record is at a released college: %s" % [p for p in planned if p[0] not in released][:5])
-    check(not any(c in lane for c, _ in planned), "no S681 planned record is at a college tonight's lane holds")
+    new_rows = [(r["college"], str(r["control_number"])) for r in r681["records"] if not r.get("corrects")]
+    fixes = [r for r in r681["records"] if r.get("corrects")]
+    check(new_rows and all(c in released for c, _ in new_rows),
+          "every new S681 row is at a released college: %s" % [p for p in new_rows if p[0] not in released][:5])
+    check(not any(c in lane for c, _ in planned), "no S681 row is at a college tonight's lane holds")
     check(set(r681.get("only_colleges") or []) == released, "the S681 run named the seven released colleges alone")
     if os.path.isfile(RECEIPT):
         s680 = {(r["college"], str(r["control_number"])) for r in rc["records"] + (rc.get("held_out") or [])}
-        check(not s680 & set(planned), "S681 re-plans no record S680 planned: %s" % sorted(s680 & set(planned))[:5])
+        check(not s680 & set(new_rows), "no new S681 row is one S680 planned: %s" % sorted(s680 & set(new_rows))[:5])
+        applied_a4 = {r["i"]: r for r in rc["records"]
+                      if r["rule"] == "A4" and (r.get("applied") or {}).get("part") == "full_row"}
+        check(all(f["corrects"]["receipt"].endswith("_s680.json") and f["corrects"]["i"] in applied_a4
+                  and (f["college"], str(f["control_number"])) == (applied_a4[f["corrects"]["i"]]["college"],
+                                                                   str(applied_a4[f["corrects"]["i"]]["control_number"]))
+                  and f["before_image"] == applied_a4[f["corrects"]["i"]]["after_image"]
+                  and str(f["extracted_run"]) == str(applied_a4[f["corrects"]["i"]]["extracted_run"])
+                  for f in fixes), "every correcting row is an applied S680 A4 row, from the row and run S680 wrote")
+        check(not any((h["college"], str(h["control_number"])) in set(planned) for h in rc.get("held_out") or []),
+              "MiraCosta 21976 stays out")
+    check(all(f["before"]["computed"] == f["after"]["computed"] and f["before_image"]["checks"] == f["after_image"]["checks"]
+              for f in fixes), "a correction changes no program total and no check")
     check(not any(r["rule"] in ("A5", "A6") for r in r681["records"]), "A5 and A6 move no S681 record")
     check(r681.get("a5_on") is False and r681.get("a6_on") is False, "the S681 receipt says A5 and A6 were off")
-    # Every row each committed S681 file names is a planned row, at a released college.
+    # Every row each committed S681 file names is a planned row, at no college tonight's lane holds.
     ROW = re.compile(r"^\s*\((\d+), '((?:[^']|'')+)', '([^']+)', \d+", re.M)
     named = {}
     for sql in sorted(glob.glob(os.path.join(ROOT, "kb", "migrations", "2026-11-18_s681_prreq_units_rules_*.sql"))):
@@ -286,12 +363,15 @@ if os.path.isfile(RECEIPT_681):
             text = fh.read()
         rows = [(c.replace("''", "'"), n) for _, c, n in ROW.findall(text)]
         named[os.path.basename(sql)] = rows
-        check(rows and all(c in released and c not in lane for c, _ in rows) and set(rows) <= set(planned),
-              "%s names only planned rows at released colleges (%d rows)" % (os.path.basename(sql), len(rows)))
+        check(rows and all(c not in lane for c, _ in rows) and set(rows) <= set(planned),
+              "%s names only planned rows, none at a lane college (%d rows)" % (os.path.basename(sql), len(rows)))
     full681 = [r for r in r681["records"] if r["i"] in set(r681["plan"]["full_row"])]
     for name in ("preread", "apply_rows", "rollback_rows"):
         check(len(named.get("2026-11-18_s681_prreq_units_rules_%s.sql" % name) or []) == len(full681),
               "the S681 %s file names the %d full-row rows" % (name, len(full681)))
+    with open(os.path.join(ROOT, "kb", "migrations", "2026-11-18_s681_prreq_units_rules_rollback_rows.sql"),
+              encoding="utf-8") as fh:
+        check(not fixes or "ORDER: run this rollback first" in fh.read(), "the rollback says it runs before S680's")
     check(("e(expect) as (values (%d))" % len(full681)) in r681["apply_full_row"]
           and ("e(expect) as (values (%d))" % len(full681)) in r681["rollback_full_row"],
           "the S681 full-row apply and rollback expect the plan's count")
@@ -305,6 +385,45 @@ if os.path.isfile(RECEIPT_681):
     check(all((imgs.get((r["college"], str(r["control_number"]))) or {}).get("record") == r["after_image"]["record"]
               and imgs[(r["college"], str(r["control_number"]))]["checks"] == r["after_image"]["checks"]
               for r in full681), "the load posts the S681 after-image for every full-row record")
+
+# The per-course self-recall (second reader's A, item 2), over every record A4 changed (S680's applied A4 rows and
+# S681's): each alternative A4 filled is compared with the state's course file. A member of a paired alternative
+# (the fixed rule's group on the record as filed) must never carry its row's units where the file says otherwise:
+# it carries the file's figure, or none under the group's together_units. Counts print; the test fails on a wrong
+# paired member.
+if os.path.isfile(RECEIPT) and os.path.isfile(RECEIPT_681):
+    st = U.state_units()
+    seen, tally, paired_wrong = set(), collections.Counter(), []
+    rows = [r for r in rc["records"] if r["rule"] == "A4" and (r.get("applied") or {}).get("part") == "full_row"]
+    rows += [r for r in r681["records"] if r["rule"] == "A4" and not r.get("corrects")]
+    s680_before = {(r["college"], str(r["control_number"])): r["before_image"]["record"] for r in rc["records"]
+                   if r.get("before_image")}
+    for r in rows:
+        key = (r["college"], str(r["control_number"]))
+        if key in seen:
+            continue
+        seen.add(key)
+        with open(os.path.join(ROOT, r["path"]), encoding="utf-8") as fh:
+            filed = json.load(fh)
+        as_filed = dict(filed["record"], blocks=(s680_before.get(key) or r["before_image"]["record"])["blocks"])
+        units_of = U.units_at(r["college"], st)
+        for b, ob in zip(filed["record"].get("blocks") or [], as_filed.get("blocks") or []):
+            for c, oc in zip(b.get("courses") or [], ob.get("courses") or []):
+                kind, _ = U.paired_group(as_filed, oc, units_of)
+                for a, oa in zip(U.S.alternatives(c), U.S.alternatives(oc)):
+                    if not U._unitless(oa):
+                        continue
+                    v, u = units_of(a["code"]), U.S._num(a.get("units"))
+                    k = "not held" if v is None else ("no units" if u is None else ("right" if abs(u - v) < 1e-6 else "wrong"))
+                    tally[k] += 1
+                    if kind:
+                        tally["paired " + k] += 1
+                        ok = a.get("together") and ((u is None and U.S._num(a.get("together_units")) is not None)
+                                                    or (u is not None and v is not None and abs(u - v) < 1e-6))
+                        if not ok:
+                            paired_wrong.append("%s %s %s" % (r["college"], r["control_number"], a["code"]))
+    print("per-course self-recall over %d A4 records: %s" % (len(seen), ", ".join("%s %d" % kv for kv in sorted(tally.items()))))
+    check(not paired_wrong, "no member of a paired alternative carries its row's units: %s" % paired_wrong[:5])
 
 if failures:
     for m in failures:
