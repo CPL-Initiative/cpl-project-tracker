@@ -24,7 +24,9 @@ apply is run with --with-exhibit-grain; it waits on that reader.
 
 Rollback: every apply writes kb/cred_rename_out/<date>-pairs[-N]/pair_undo.json with the before-value of every entry
 it changed; undo_pairs() (python3 kb/_cred_rename_apply.py --undo-pairs <folder>) puts each back and refuses any value
-changed since.
+changed since. With --force it leaves each local title that holds a changed value whole (its link and its
+articulations, so the two stay in step) and any created canonical that changed or is still named, restores the rest,
+and lists what it left in pair_undo_skipped.json.
 
 Readers: kb/_build_exhibit_repoint_list.py (writes the list), kb/_cred_rename_apply.py --pairs (applies it).
 """
@@ -176,7 +178,10 @@ def _row_key(row):
 
 
 def plan(rows, ut, creds, arts, with_exhibit_grain=False):
-    """Decide each applicable row's grain, or why it is held. Pure: reads, never writes."""
+    """Decide each applicable row's grain, or why it is held. Pure: reads, never writes.
+
+    Holds first, grain after (COBIx on #3472, S679): a title-grain rewrite moves every exhibit that reads the title,
+    so a row takes it only when every other exhibit on the title moves to the same target in this same apply."""
     idx = Index(ut, creds, arts)
     live = [r for r in rows if r.get("action") in APPLIED_ACTIONS]
     seen, dupes = set(), set()
@@ -185,13 +190,8 @@ def plan(rows, ut, creds, arts, with_exhibit_grain=False):
         if k in seen:
             dupes.add(k)
         seen.add(k)
-    moving = defaultdict(dict)  # title key -> {exhibit id: target}
-    for r in live:
-        if r["action"] in ("repoint",):
-            key = idx.key_of.get(r["local_title"]) or idx.key_of.get(r["local_title"].strip())
-            if key:
-                moving[key][r["exhibit_id"]] = r["to"]
-    out = []
+    # Pass 1: every hold that does not depend on what the other rows do.
+    decided = []
     for r in live:
         k = _row_key(r)
         held = None
@@ -217,24 +217,38 @@ def plan(rows, ut, creds, arts, with_exhibit_grain=False):
             elif (r.get("target_sam_curated") or (r.get("to") in creds and idx.sam_curated(r["to"]))) \
                     and not r.get("allow_sam_target"):
                 held = "target is Sam-curated; a bot row never lands on it unless its rule allows"
+            elif r["exhibit_id"] not in idx.ids_of.get(key, set()):
+                held = "exhibit id not seen on this local title"
+            elif r.get("to") == r.get("from"):
+                held = "target is the current canonical"
+        decided.append([r, key, grain, held])
+    # Pass 2: each repoint's grain, from the rows that really move. A held row stays where it is, so it never counts
+    # as moving; holding a row can turn a sibling from title grain to exhibit grain (held too, without
+    # --with-exhibit-grain), so the pass repeats until no new hold appears. Holds only grow, so it ends.
+    while True:
+        moving = defaultdict(dict)  # title key -> {exhibit id: target}, held rows left out
+        for r, key, _grain, held in decided:
+            if r["action"] == "repoint" and not held:
+                moving[key][r["exhibit_id"]] = r["to"]
+        new_hold = False
+        for d in decided:
+            r, key, _grain, held = d
+            if held or r["action"] != "repoint":
+                continue
+            others = idx.ids_of.get(key, set()) - {r["exhibit_id"]}
+            stay = [e for e in others if moving[key].get(e) != r["to"]]
+            if stay:
+                d[2] = "exhibit"
+                if not with_exhibit_grain:
+                    d[3] = ("exhibit grain: the title is shared with %d exhibit(s) that stay, and the dashboard "
+                            "reads the title alone (pass --with-exhibit-grain once it reads "
+                            "exhibit_unified_titles)" % len(stay))
+                    new_hold = True
             else:
-                others = idx.ids_of.get(key, set()) - {r["exhibit_id"]}
-                stay = [e for e in others if moving[key].get(e) != r["to"]]
-                if r["exhibit_id"] not in idx.ids_of.get(key, set()):
-                    held = "exhibit id not seen on this local title"
-                elif stay:
-                    grain = "exhibit"
-                    if not with_exhibit_grain:
-                        held = ("exhibit grain: the title is shared with %d exhibit(s) that stay, and the dashboard "
-                                "reads the title alone (pass --with-exhibit-grain once it reads "
-                                "exhibit_unified_titles)" % len(stay))
-                else:
-                    grain = "title"
-            if not held and r["action"] == "repoint":
-                if r.get("to") == r.get("from"):
-                    held = "target is the current canonical"
-        out.append(dict(r, _key=key, _grain=grain, _held=held))
-    return out
+                d[2] = "title"
+        if not new_hold:
+            break
+    return [dict(r, _key=key, _grain=grain, _held=held) for r, key, grain, held in decided]
 
 
 def apply_rows(rows, ut, creds, arts, with_exhibit_grain=False, today=None):
@@ -325,32 +339,64 @@ def apply_rows(rows, ut, creds, arts, with_exhibit_grain=False, today=None):
 
 
 def undo_pairs(undo, ut, creds, arts, force=False):
-    """Reverse one pair apply from its pair_undo.json. Returns (ut, creds, arts, refused)."""
+    """Reverse one pair apply from its pair_undo.json. Returns (ut, creds, arts, skipped).
+
+    The unit is the local title: its unified_titles entry and the articulations the apply re-issued under it. A title
+    whose entry or any of whose articulations changed since the apply is left whole, as it stands, so its link and its
+    articulations stay in step. A created canonical is removed only when it is unchanged and nothing still names it
+    after the undo. `skipped` lists every value left in place as (store, key, why); without `force` the caller
+    refuses the whole undo when it is not empty, and with `force` the rest is restored and `skipped` is the report
+    (COBIx on #3472, S679)."""
     ut, creds, arts = copy.deepcopy(ut), copy.deepcopy(creds), copy.deepcopy(arts)
-    refused = []
-    for k, ba in (undo.get("unified_titles") or {}).items():
-        if ut.get(k) != ba["after"] and not force:
-            refused.append(("unified_titles", k))
-            continue
-        if ba["before"] is None:
-            ut.pop(k, None)
-        else:
-            ut[k] = ba["before"]
-    for k, after in (undo.get("credentials_created") or {}).items():
-        if creds.get(k) != after and not force:
-            refused.append(("credentials", k))
-            continue
-        creds.pop(k, None)
+    skipped = []
     by_pair = defaultdict(list)
     for i, a in enumerate(arts):
         by_pair[(a.get("course_id"), a.get("exhibit_id"), a.get("exhibit_title"))].append(i)
+    groups = defaultdict(lambda: {"ut": [], "arts": []})  # normalized local title -> what the apply changed under it
+    for k in (undo.get("unified_titles") or {}):
+        groups[norm(k)]["ut"].append(k)
     for c in undo.get("articulations") or []:
-        idxs = by_pair.get((c["course_id"], c["exhibit_id"], c["exhibit_title"]), [])
-        hit = [i for i in idxs if arts[i].get("unified_title") == c["after"]["unified_title"]]
-        if not hit:
-            refused.append(("articulations", c["exhibit_id"] + " " + str(c["course_id"])))
+        groups[norm(c["exhibit_title"])]["arts"].append(c)
+    restores = []
+    for g in groups.values():
+        ut_changed = {k for k in g["ut"] if ut.get(k) != undo["unified_titles"][k]["after"]}
+        taken, hits = set(), []  # hits: (articulation change, its index now, or None when it changed since)
+        for c in g["arts"]:
+            idxs = by_pair.get((c["course_id"], c["exhibit_id"], c["exhibit_title"]), [])
+            hit = [i for i in idxs if i not in taken and arts[i].get("unified_title") == c["after"]["unified_title"]
+                   and arts[i].get("issuing_agency") == c["after"]["issuing_agency"]]
+            if hit:
+                taken.add(hit[0])
+            hits.append((c, hit[0] if hit else None))
+        if ut_changed or any(i is None for _, i in hits):
+            for k in g["ut"]:
+                skipped.append(("unified_titles", k, "changed since the apply" if k in ut_changed
+                                else "its local title changed since the apply"))
+            for c, i in hits:
+                skipped.append(("articulations", c["exhibit_id"] + " " + str(c["course_id"]),
+                                "changed since the apply" if i is None
+                                else "its local title changed since the apply"))
             continue
-        a = arts[hit[0]]
-        a["unified_title"] = c["before"]["unified_title"]
-        a["issuing_agency"] = c["before"]["issuing_agency"]
-    return ut, creds, arts, refused
+        restores.append((g, hits))
+    for g, hits in restores:
+        for k in g["ut"]:
+            before = undo["unified_titles"][k]["before"]
+            if before is None:
+                ut.pop(k, None)
+            else:
+                ut[k] = copy.deepcopy(before)
+        for c, i in hits:
+            arts[i]["unified_title"] = c["before"]["unified_title"]
+            arts[i]["issuing_agency"] = c["before"]["issuing_agency"]
+    named = {a.get("unified_title") for a in arts}
+    for r in ut.values():
+        named.add((r or {}).get("unified_title"))
+        named.update(((r or {}).get("exhibit_unified_titles") or {}).values())
+    for k, after in (undo.get("credentials_created") or {}).items():
+        if creds.get(k) != after:
+            skipped.append(("credentials", k, "changed since the apply"))
+        elif k in named:
+            skipped.append(("credentials", k, "still named by a title or articulation the undo left in place"))
+        else:
+            creds.pop(k, None)
+    return ut, creds, arts, skipped

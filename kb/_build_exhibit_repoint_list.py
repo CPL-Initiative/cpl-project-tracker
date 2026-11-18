@@ -198,6 +198,19 @@ def batch_apprenticeship(idx, audit, review):
                 rung = m.group("rung")
                 rk = "J" if rung == "Journeyperson" else rung.split()[1]
                 families[prefix][(_trade_key(trade), rk)] = t
+    # One family, one spelling (COBIx on #3472, S679): the UA plumbing family's Level 1 key reads "UA Plumbers and
+    # Pipefitters" while Levels 2 to 4 and Journeyperson read "UA Plumbers/Pipefitters". The spelling most of a
+    # family's rungs carry is the family's; a rung key spelled otherwise goes to a person (merge the key into the
+    # family's spelling, then rebuild), so one series never lands across two family names. A tie has no family
+    # spelling, and every rung of it goes to a person.
+    spelling = {}  # (prefix, trade key) -> the family's head, or None on a tie
+    for prefix, fam in families.items():
+        heads = defaultdict(Counter)
+        for (tk, _), t in fam.items():
+            heads[tk][FAMILY.match(t).group("head")] += 1
+        for tk, c in heads.items():
+            top = c.most_common()
+            spelling[(prefix, tk)] = top[0][0] if len(top) == 1 or top[0][1] > top[1][1] else None
     rows = []
     for raw in sorted(unclassified):
         h = held.get(raw) or {}
@@ -247,6 +260,16 @@ def batch_apprenticeship(idx, audit, review):
         fam = families.get(prefix, {})
         hit = fam.get((tkey, rk))
         if hit:
+            head, fam_head = FAMILY.match(hit).group("head"), spelling.get((prefix, tkey))
+            if head != fam_head:
+                to = (hit.replace(head + " Apprenticeship", fam_head + " Apprenticeship", 1) if fam_head else None)
+                mk("person", to, ("the rung key %r spells the family differently from its other rungs (%s): merge "
+                                  "the key into the family's spelling, then rebuild, so the series lands under one "
+                                  "family name%s" % (hit, fam_head + " Apprenticeship" if fam_head
+                                                     else "a tie between spellings",
+                                                     "; the key is Sam-curated, so the merge is his tap"
+                                                     if idx.sam_curated(hit) else "")))
+                continue
             mk("assign", hit, "the one existing family for %s + trade + rung" % prefix, allow_sam_target=True,
                target_issuer=None, confidence=0.85)
             continue

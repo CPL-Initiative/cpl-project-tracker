@@ -146,7 +146,98 @@ def test_pairs():
     ut2b = copy.deepcopy(ut2)
     ut2b["CompTIA A+"]["unified_title"] = "Changed by a person"
     _, _, _, refused = xr.undo_pairs(undo2, ut2b, creds2, arts2)
-    check(("unified_titles", "CompTIA A+") in refused, "undo did not refuse a value a person changed since")
+    check(("unified_titles", "CompTIA A+") in [x[:2] for x in refused],
+          "undo did not refuse a value a person changed since")
+
+
+def _shared(n):
+    """One local title carried by n exhibits, all under "Old"; "New" exists."""
+    ids = ["MAPICA-SH%d-1-001" % i for i in range(n)]
+    ut = {"Shared title": {"unified_title": "Old", "confidence_title": 0.7, "source_exhibit_ids": list(ids)}}
+    creds = {"Old": [{"issuing_agency": "X"}], "New": [{"issuing_agency": "Y", "confidence_issuer": 1.0}]}
+    arts = [{"course_id": "C%d" % i, "exhibit_id": e, "exhibit_title": "Shared title", "unified_title": "Old",
+             "issuing_agency": "X", "cpl_type_description": ""} for i, e in enumerate(ids)]
+    return ids, ut, creds, arts
+
+
+def test_held_sibling_never_moves():
+    """COBIx finding 1 on #3472: a held row never counts as moving, so a sibling's move cannot rewrite the title's
+    link under it. Two exhibits on one title, both listed to the same target; one drifts (its row's `from` is stale)."""
+    ids, ut, creds, arts = _shared(2)
+    a, b = ids
+    rs = [{"batch": "t", "exhibit_id": a, "local_title": "Shared title", "action": "repoint", "from": "Stale",
+           "to": "New"},
+          {"batch": "t", "exhibit_id": b, "local_title": "Shared title", "action": "repoint", "from": "Old",
+           "to": "New"}]
+    ut1, _, arts1, _, rep = xr.apply_rows(rs, ut, creds, arts)
+    held = {h["exhibit_id"]: h["why"] for h in rep["held"]}
+    check(held.get(a, "").startswith("drift"), "the drifted row was not held")
+    check(held.get(b, "").startswith("exhibit grain"),
+          "the sibling of a held row was not held at exhibit grain: %r" % held.get(b))
+    check(ut1["Shared title"]["unified_title"] == "Old", "a sibling's title-grain rewrite moved a held row's link")
+    check(arts1 == arts, "an articulation moved while both rows were held")
+    ut2, _, arts2, _, rep2 = xr.apply_rows(rs, ut, creds, arts, with_exhibit_grain=True)
+    check(ut2["Shared title"]["unified_title"] == "Old" and
+          ut2["Shared title"].get("exhibit_unified_titles") == {b: "New"},
+          "with the exhibit grain on, the sibling did not move alone: %r" % ut2["Shared title"])
+    check(arts2[0] == arts[0] and arts2[1]["unified_title"] == "New", "the wrong articulation was re-issued")
+    # Cascade: three exhibits, one held for a Sam-curated target. The other two still move together, at exhibit grain.
+    ids, ut, creds, arts = _shared(3)
+    rs = [{"batch": "t", "exhibit_id": e, "local_title": "Shared title", "action": "repoint", "from": "Old",
+           "to": "New", "target_sam_curated": i == 0} for i, e in enumerate(ids)]
+    ut3, _, _, _, rep3 = xr.apply_rows(rs, ut, creds, arts, with_exhibit_grain=True)
+    check(ut3["Shared title"]["unified_title"] == "Old" and
+          ut3["Shared title"].get("exhibit_unified_titles") == {ids[1]: "New", ids[2]: "New"},
+          "the cascade moved the held exhibit or missed a sibling: %r" % ut3["Shared title"])
+    # The plain case still takes the title grain: every exhibit on the title moves to one target.
+    rs = [dict(r, target_sam_curated=False) for r in rs]
+    ut4, _, _, _, rep4 = xr.apply_rows(rs, ut, creds, arts)
+    check(ut4["Shared title"]["unified_title"] == "New" and rep4["counts"]["by_grain"] == {"title": 3},
+          "a title whose every exhibit moves did not take the title grain: %r" % rep4["counts"])
+
+
+def test_force_undo_skips_whole():
+    """COBIx finding 2 on #3472: --undo-pairs --force skips every value changed since the apply, in all three stores,
+    and keeps a title's link and its articulations in step: a changed title is skipped whole (its link and its
+    articulations), a created canonical still named after the undo stays, and the output lists what it skipped."""
+    ut = {"T1": {"unified_title": "Old1", "source_exhibit_ids": ["E1"]},
+          "T2": {"unified_title": "Old2", "source_exhibit_ids": ["E2"]}}
+    creds = {"Old1": [{"issuing_agency": "X"}], "Old2": [{"issuing_agency": "X"}]}
+    arts = [{"course_id": "C1", "exhibit_id": "E1", "exhibit_title": "T1", "unified_title": "Old1",
+             "issuing_agency": "X"},
+            {"course_id": "C2", "exhibit_id": "E2", "exhibit_title": "T2", "unified_title": "Old2",
+             "issuing_agency": "X"}]
+    rs = [{"batch": "t", "exhibit_id": "E1", "local_title": "T1", "action": "repoint", "from": "Old1", "to": "Made1",
+           "target_issuer": "I1"},
+          {"batch": "t", "exhibit_id": "E2", "local_title": "T2", "action": "repoint", "from": "Old2", "to": "Made2",
+           "target_issuer": "I2"}]
+    ut1, creds1, arts1, undo, rep = xr.apply_rows(rs, ut, creds, arts)
+    check(rep["counts"]["applied"] == 2 and "Made1" in creds1 and "Made2" in creds1, "the fixture apply did not run")
+    # A person sets T1's confidence after the apply: T1 changed since.
+    ut1b = copy.deepcopy(ut1)
+    ut1b["T1"]["reviewed_by"] = "a person"
+    _, _, _, refused = xr.undo_pairs(undo, ut1b, creds1, arts1)
+    check(refused, "the plain undo did not refuse a changed title")
+    ut2, creds2, arts2, skipped = xr.undo_pairs(undo, ut1b, creds1, arts1, force=True)
+    check(ut2["T1"] == ut1b["T1"], "--force overwrote a title a person changed since")
+    check(arts2[0] == arts1[0], "--force restored the articulation of a skipped title (link and articulations out of step)")
+    check("Made1" in creds2 and creds2["Made1"] == creds1["Made1"],
+          "--force deleted a created canonical the skipped title still names")
+    check(ut2["T2"] == ut["T2"] and arts2[1] == arts[1] and "Made2" not in creds2, "--force did not restore the rest")
+    sk = {x[:2] for x in skipped}
+    check(("unified_titles", "T1") in sk and ("credentials", "Made1") in sk and
+          any(s == "articulations" for s, _ in sk), "--force did not list what it skipped: %r" % sorted(sk))
+    # A changed credential and a changed articulation are skipped too, never overwritten or deleted.
+    creds1c = copy.deepcopy(creds1)
+    creds1c["Made2"][0]["reviewed_by"] = "a person"
+    arts1c = copy.deepcopy(arts1)
+    arts1c[0]["unified_title"] = "Moved by a person"
+    ut3, creds3, arts3, skipped3 = xr.undo_pairs(undo, ut1, creds1c, arts1c, force=True)
+    check(creds3.get("Made2") == creds1c["Made2"], "--force deleted a created canonical changed since")
+    check(arts3[0] == arts1c[0] and ut3["T1"] == ut1["T1"],
+          "--force restored T1's link while its articulation had changed (out of step)")
+    check(ut3["T2"] == ut["T2"] and arts3[1] == arts[1], "--force did not restore T2 beside a changed canonical")
+    check(("credentials", "Made2") in {x[:2] for x in skipped3}, "the changed canonical was not listed as skipped")
 
 
 def test_cli_end_to_end():
@@ -193,6 +284,63 @@ def test_cli_end_to_end():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+def test_cli_force_undo():
+    """COBIx finding 2 at the command line: the plain --undo-pairs refuses and writes nothing; --force leaves the
+    changed title whole, restores the rest, and lists what it left in the receipt folder."""
+    ut, creds, arts = fixture()
+    tmp = tempfile.mkdtemp()
+    paths = {"UNIFIED_TITLES": "unified_titles.json", "CREDENTIALS": "credentials.json",
+             "ARTICULATIONS": "coci_articulations.json"}
+    saved = {k: getattr(app, k) for k in paths}
+    saved_out, saved_today = app.OUT_ROOT, app.TODAY
+    try:
+        for k, f in paths.items():
+            setattr(app, k, os.path.join(tmp, f))
+        app.OUT_ROOT = os.path.join(tmp, "out")
+        app.TODAY = "2026-11-17"
+        app._atomic_write_json(app.UNIFIED_TITLES, ut)
+        app._atomic_write_json(app.CREDENTIALS, creds)
+        app._atomic_write_json(app.ARTICULATIONS, {"articulations": arts})
+        lst = os.path.join(tmp, "list.json")
+        app._atomic_write_json(lst, {"rows": rows()})
+        with contextlib.redirect_stdout(io.StringIO()):
+            app.pairs_main(["--pairs", lst])
+        rec = os.path.join(app.OUT_ROOT, "2026-11-17-pairs")
+        moved = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
+        moved["Carpenter’s Training Center CTCNC CARP 312"]["reviewed_by"] = "a person"
+        app._atomic_write_json(app.UNIFIED_TITLES, moved)
+        snap = {f: open(os.path.join(tmp, f), encoding="utf-8").read() for f in paths.values()}
+        try:
+            with contextlib.redirect_stdout(io.StringIO()):
+                app.pairs_main(["--undo-pairs", rec])
+            check(False, "the plain --undo-pairs did not refuse a changed title")
+        except SystemExit as e:
+            check("--force leaves each local title" in str(e), "the refusal does not say what --force does: %s" % e)
+        check(snap == {f: open(os.path.join(tmp, f), encoding="utf-8").read() for f in paths.values()},
+              "a refused undo wrote a file")
+        out = io.StringIO()
+        with contextlib.redirect_stdout(out):
+            app.pairs_main(["--undo-pairs", rec, "--force"])
+        after = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
+        arts2 = json.load(open(app.ARTICULATIONS, encoding="utf-8"))["articulations"]
+        check(after["Carpenter’s Training Center CTCNC CARP 312"] ==
+              moved["Carpenter’s Training Center CTCNC CARP 312"], "--force overwrote the changed title")
+        check(arts2[1]["unified_title"] == "Carpenters Apprenticeship — Scaffold Erector",
+              "--force put back the changed title's articulation")
+        check(after["Carpenter’s Training Center CTCNC CARP 019"] == ut["Carpenter’s Training Center CTCNC CARP 019"]
+              and arts2[0] == arts[0], "--force did not restore the unchanged title")
+        lst_skip = json.load(open(os.path.join(rec, "pair_undo_skipped.json"), encoding="utf-8"))
+        check({(s["store"], s["key"]) for s in lst_skip} >= {
+            ("unified_titles", "Carpenter’s Training Center CTCNC CARP 312"), ("articulations", CTC + " CNST M2")},
+            "pair_undo_skipped.json does not list the title and its articulation: %r" % lst_skip)
+        check("left unified_titles" in out.getvalue(), "--force did not print what it left")
+    finally:
+        for k, v in saved.items():
+            setattr(app, k, v)
+        app.OUT_ROOT, app.TODAY = saved_out, saved_today
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
 def test_naming():
     check(builder.clean_local_title("Intro to Human Resources Management -- (BUS 178)") ==
           "Introduction to Human Resources Management", "Sam's cleaning example failed")
@@ -205,6 +353,27 @@ def test_naming():
     check(builder.cert_link(["ASE A5 — Brakes"], []) == "ASE A5 Standards", "the ASE suffix is missing")
     check(builder.ctcnc_series(506) == "Insulator" and builder.ctcnc_title_trade(
         "Commercial Blueprint Reading and Mobile Tower Scaffolds") == [], "scaffold as equipment overrode the series")
+
+
+def test_one_family_spelling():
+    """COBIx finding 3 on #3472: one apprenticeship series never lands across two family names. The family's rungs
+    are spelled two ways; the spelling most rungs carry is the family's, and a rung keyed under the other spelling
+    goes to a person (merge the key, then rebuild) instead of assigning."""
+    creds = {"UA Plumbers and Pipefitters Apprenticeship — Level 1": [{"issuing_agency": "UA"}],
+             "UA Plumbers/Pipefitters Apprenticeship — Level 2": [{"issuing_agency": "UA"}],
+             "UA Plumbers/Pipefitters Apprenticeship — Level 3": [{"issuing_agency": "UA"}]}
+    titles = ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (1, 2, 3)]
+    arts = [{"course_id": "P%d" % n, "exhibit_id": "MAPICA-UL4P%d-1-001" % n, "exhibit_title": t, "unified_title": None,
+             "cpl_type_description": "Other"} for n, t in enumerate(titles, 1)]
+    idx = xr.Index({}, creds, arts)
+    audit = {"title_cards": [{"raw_title": t, "tags": ["unclassified_in_map"]} for t in titles]}
+    out = {r["local_title"]: r for r in builder.batch_apprenticeship(idx, audit, {})}
+    check(out[titles[1]]["action"] == "assign" and out[titles[2]]["action"] == "assign",
+          "Years 2 and 3 no longer assign to the family: %r" % [out[t]["action"] for t in titles])
+    check(out[titles[0]]["action"] == "person" and out[titles[0]]["to"] == "UA Plumbers/Pipefitters Apprenticeship — Level 1",
+          "Year 1 assigned under a second family spelling: %r" % ((out[titles[0]]["action"], out[titles[0]]["to"]),))
+    fams = {out[t]["to"].split(" Apprenticeship — ")[0] for t in titles if out[t]["action"] == "assign"}
+    check(fams == {"UA Plumbers/Pipefitters"}, "the series assigns across family spellings: %r" % fams)
 
 
 def test_committed_list():
@@ -236,9 +405,15 @@ def test_committed_list():
           "the shared CTCNC canonicals do not split to different families")
     # Apprenticeship: COBIx 15 clear. Measured 13 keyed + 2 that clear by the rule but carry no exhibit id in the
     # committed record (UA Local 467 and Local 62 Plumbing and Pipefitting Journeyperson): rebuild with --map.
+    # Then COBIx's finding 3 on #3472 (S679): UA Local 467 Year 1 matched Sam's key "UA Plumbers and Pipefitters
+    # Apprenticeship — Level 1" while Years 2 and 3 matched "UA Plumbers/Pipefitters ..."; it goes to a person (Sam's
+    # merge of his own key), so 12 assign and 3 person.
     appr = [r for r in rs if r["batch"] == "apprenticeship"]
-    check(got["apprenticeship"]["assign"] == 13 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 2,
+    check(got["apprenticeship"]["assign"] == 12 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 3,
           "apprenticeship counts moved: %r" % got["apprenticeship"])
+    ua = [r for r in appr if r["local_title"].startswith("UA Local 467 Plumbing") and r["action"] == "assign"]
+    check(len(ua) == 2 and {r["to"].split(" Apprenticeship — ")[0] for r in ua} == {"UA Plumbers/Pipefitters"},
+          "the UA Local 467 series assigns across more than one family spelling: %r" % [r["to"] for r in ua])
     check(sum(1 for r in appr if r.get("minted")) == 7, "COBIx's mints are 7 (his text says eight but lists seven)")
     # The 710: COBIx 2 re-points (CULART010, FLIGHT 101): equal. Confirm-as-is: COBIx 369 of the 710; measured 371
     # titles over every unreviewed title below 0.80, since his first typographic pass (407) is not in the repo.
@@ -257,8 +432,12 @@ def test_committed_list():
 
 if __name__ == "__main__":
     test_pairs()
+    test_held_sibling_never_moves()
+    test_force_undo_skips_whole()
     test_cli_end_to_end()
+    test_cli_force_undo()
     test_naming()
+    test_one_family_spelling()
     test_committed_list()
     if FAILS:
         sys.exit("%d failure(s)" % len(FAILS))

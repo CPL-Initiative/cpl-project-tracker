@@ -14,9 +14,9 @@
     "person": 1
    },
    "apprenticeship": {
-    "assign": 13,
+    "assign": 12,
     "skip": 35,
-    "person": 2
+    "person": 3
    },
    "low_confidence": {
     "confirm": 376,
@@ -3535,15 +3535,12 @@
    "batch": "apprenticeship",
    "exhibit_id": "MAPICA-UL4P-1-001",
    "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1",
-   "action": "assign",
+   "action": "person",
    "from": null,
-   "to": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
-   "reason": "the one existing family for UA + trade + rung",
-   "target_exists": true,
-   "target_sam_curated": true,
-   "allow_sam_target": true,
-   "target_issuer": null,
-   "confidence": 0.85
+   "to": "UA Plumbers/Pipefitters Apprenticeship — Level 1",
+   "reason": "the rung key 'UA Plumbers and Pipefitters Apprenticeship — Level 1' spells the family differently from its other rungs (UA Plumbers/Pipefitters Apprenticeship): merge the key into the family's spelling, then rebuild, so the series lands under one family name; the key is Sam-curated, so the merge is his tap",
+   "target_exists": false,
+   "target_sam_curated": false
   },
   {
    "batch": "apprenticeship",

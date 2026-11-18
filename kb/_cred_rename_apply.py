@@ -609,8 +609,10 @@ def _pairs_receipt_md(report, list_path, dry_run):
     lines += ["- %s: %d" % (w, n) for w, n in why.most_common()] or ["_None._"]
     lines += ["", "## Rollback", "",
               "`python3 kb/_cred_rename_apply.py --undo-pairs <this folder>` puts back every value in "
-              "`pair_undo.json` and refuses one changed since. No local title is edited and no canonical is renamed, "
-              "so nothing else needs reversing.", ""]
+              "`pair_undo.json` and refuses one changed since. `--force` leaves each local title that holds a "
+              "changed value whole (its link and its articulations) and any created canonical that changed or is "
+              "still named, restores the rest, and lists what it left in `pair_undo_skipped.json`. No local title "
+              "is edited and no canonical is renamed, so nothing else needs reversing.", ""]
     return "\n".join(lines) + "\n"
 
 
@@ -634,16 +636,25 @@ def pairs_main(argv):
         undo = _load_optional(os.path.join(a.undo_pairs, "pair_undo.json"))
         if not undo:
             sys.exit(f"No pair_undo.json in {a.undo_pairs}.")
-        ut2, creds2, arts2, refused = xr.undo_pairs(undo, ut, creds, arts, force=a.force)
-        if refused and not a.force:
-            sys.exit(f"Refused: {len(refused)} value(s) changed since the apply, e.g. {refused[:3]}. Nothing written. "
-                     f"--force restores the rest and skips those.")
+        ut2, creds2, arts2, skipped = xr.undo_pairs(undo, ut, creds, arts, force=a.force)
+        changed = [s for s in skipped if s[2] == "changed since the apply"] or skipped
+        if skipped and not a.force:
+            sys.exit(f"Refused: {len(changed)} value(s) changed since the apply, e.g. "
+                     f"{[s[:2] for s in changed[:3]]}. Nothing written. --force leaves each local title with a "
+                     f"changed value whole (its link and its articulations) and any created canonical that changed "
+                     f"or is still named, restores the rest, and lists what it left.")
         _atomic_write_json(UNIFIED_TITLES, ut2)
         _atomic_write_json(CREDENTIALS, creds2)
         art_doc["articulations"] = arts2
         _atomic_write_json(ARTICULATIONS, art_doc)
-        print(f"[pairs undo] restored from {a.undo_pairs}; refused {len(refused)}")
-        return
+        print(f"[pairs undo] restored from {a.undo_pairs}; left {len(skipped)} value(s) as they stand")
+        for store, key, why in skipped:
+            print(f"  left {store} {key!r}: {why}")
+        if skipped:
+            _atomic_write_json(os.path.join(a.undo_pairs, "pair_undo_skipped.json"),
+                               [{"store": s, "key": k, "why": w} for s, k, w in skipped])
+            print(f"  list: {a.undo_pairs}/pair_undo_skipped.json")
+        return skipped
     doc = _load_optional(a.pairs)
     rows = doc.get("rows") or []
     if not rows:
