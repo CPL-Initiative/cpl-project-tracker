@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-17_s678_cpl_memory_rows.sql",
+ "name": "s678_cpl_memory_rows",
+ "version": "20261118000130",
+ "sha256": "98050d3d4cc400d4587c51ef234741a162aea4c186218ecad58cc23a42c99c30",
+ "run": "44203876488",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-census-daily-schedule-s678\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":308},{\"slug\":\"d-cost-per-cre-weights-s678\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":357},{\"slug\":\"d-left-map-link-only-decisions-s678\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":360},{\"slug\":\"f-cre-days-are-load-days-s678\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":300},{\"slug\":\"f-execute-sql-prompt-unreachable-s678\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":359},{\"slug\":\"f-sparse-worktrees-for-workers-s678\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":281},{\"slug\":\"p-matcher-rules-need-self-recall-s678\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":320}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

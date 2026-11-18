@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 545,
-  "moniker": "SkyWhirlpool",
+  "session": 678,
+  "moniker": "SkyWaxwing",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_546_handoff.md",
+  "handoff": "docs/session_679_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T04:52:01Z",
+  "written_at": "2026-11-17T23:55:10Z",
   "project": "cr",
   "next_step": {
-    "title": "Decide the head, then the course pairing",
-    "text": "Six of the 50 wordings with the most articulations wait on a curator: the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine Performance I. Then the sitting Sam ruled on Sheet 3 card 9: pair groups by shared course identity behind the course-count guard, run Jev under the 0.85 gate, and a sheet of 40 to 60."
+    "title": "Keep ACE's credit recommendation beside MAP's wording",
+    "text": "The change that keeps ACE's own credit recommendation text beside the wording in MAP is drafted. Before it is applied, its view needs a faster filter, its matcher a test against known answers, and its sum check a case where it can fail."
   },
   "changes": [
+    {
+      "at": "2026-11-17T23:40:00Z",
+      "text": "Drafted, not applied: ACE's credit recommendation text kept beside MAP's wording, shown side by side on the credit recommendation list (PR 3468)."
+    },
     {
       "at": "2026-11-02T03:36:00Z",
       "text": "The List bands its wordings by group, each band named and ordered by the group's reference, a group of one under Single wording; Bands by group takes them off (#2679)."

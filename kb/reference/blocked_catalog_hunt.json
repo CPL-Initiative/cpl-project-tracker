@@ -1,0 +1,16 @@
+{
+ "_what": "Sam's blocked-catalog hunt (Sam, 2026-11-17: \"Make sure those blocked catalogs and cors are on my cdc to do\"; \"To do should be on both cdc and commons\"). Six colleges whose sites serve a bot challenge or refuse robots.txt, so the course outline reader cannot read them. One to-do, read by kb/_blocked_catalogs.py for both the College Data Collection page and the Commons' Waiting on a person list. A college clears when a person files its catalog or course outlines as kb/hand_filed_catalogs/outlines/<slug>.json (the README there says how).",
+ "source": "COBIx's ask on #3464 (comment 6962137371), from the courses bot's step3_fetch_plan.csv route E and step1_targets.json; the course-by-course list was not posted, so the courses are TBA here until it is filed",
+ "title": "Find catalogs or course outlines for the colleges whose sites block automated reading",
+ "hunt": "Hunt only the courses still taught (in the Fall 2025 state course list); Sam, 2026-11-17: \"Why do we need the retired courses\".",
+ "colleges": [
+  {"slug": "north_orange_continuing_education", "college": "North Orange Continuing Education", "reason": "bot challenge or robots.txt refusal", "local_courses": 207},
+  {"slug": "grossmont", "college": "Grossmont College", "reason": "bot challenge or robots.txt refusal", "local_courses": 42},
+  {"slug": "southwestern", "college": "Southwestern College", "reason": "bot challenge or robots.txt refusal", "local_courses": 34},
+  {"slug": "ohlone", "college": "Ohlone College", "reason": "bot challenge or robots.txt refusal", "local_courses": 32},
+  {"slug": "el_camino", "college": "El Camino College", "reason": "bot challenge or robots.txt refusal", "local_courses": 20},
+  {"slug": "fullerton", "college": "Fullerton College", "reason": "bot challenge or robots.txt refusal", "local_courses": 10}
+ ],
+ "still_taught_total": 12,
+ "courses": null
+}

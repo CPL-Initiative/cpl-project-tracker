@@ -144,7 +144,7 @@ def row_requirements(root):
         "issues": [
             {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "carry": "routine", "open": tab + "/list/fail"},
             {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "carry": "routine", "open": tab + "/list/unread"},
-        ],
+        ] + blocked_hunt_issues(root),
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
             {"words": "A misread is fixed in the procedure, and the records it touched are reread together"},
@@ -743,6 +743,19 @@ def fmt_int(n):
 # this order; an issue that names no reason lands under "unsorted", so a new issue cannot hide.
 CARRY_REASONS = ["no_procedure", "unsure", "reaches", "keep_call"]
 CARRY_KEYS = set(CARRY_REASONS) | {"routine"}
+
+
+def blocked_hunt_issues(root):
+    """Sam's blocked-catalog hunt (S678, #3464 item 8): the same to-do the College Data Collection page shows, from the
+    one source kb/_blocked_catalogs.py; it leaves this list once every college is filed."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("_blocked_catalogs", os.path.join(root, "kb", "_blocked_catalogs.py"))
+    if spec is None or not os.path.exists(spec.origin):
+        return []
+    m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    i = m.queue_issue(root)
+    return [i] if i else []
 
 
 def build_queue(rows):
