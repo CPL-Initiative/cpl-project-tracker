@@ -34984,10 +34984,10 @@
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
-    "kb/exhibits_sweep.json",
-    "kb/exhibits_related.json",
     "kb/exhibit_side_by_side.json",
     "kb/side_by_side.json",
+    "kb/exhibits_sweep.json",
+    "kb/exhibits_related.json",
     "kb/status/commons.json",
     "kb/status/commons_history.json",
     "kb/exhibit_subject_out"
