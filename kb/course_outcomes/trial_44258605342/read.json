@@ -22,7 +22,7 @@
    "list": 12
   },
   "status_not_200": 0,
-  "outcomes": 91
+  "outcomes": 39
  },
  "rows": [
   {
@@ -40,9 +40,17 @@
    "chars": 3808,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "analyze and explain the distinctions between adult and juvenile justice systems;",
+    "apply California laws pertaining to juvenile delinquency and dependency to case studies;",
+    "explain constitutional protections extended to juveniles through judicial decisions."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "00d3d37900ac8c837a0f8ba848d8f8e4",
+   "objectives": [
     "critically analyze and describe the juvenile justice system and its context in the criminal justice system;",
     "apply California laws pertaining to juvenile delinquency and dependency to case studies;",
     "critically distinguish between delinquency, status offenses, and dependency;",
@@ -50,13 +58,9 @@
     "critically evaluate constitutional protections extended to juveniles through judicial decisions;",
     "critically appraise and analyze juvenile court dispositions."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "ae74e61652f421a4d897035ebddb6f91",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "ae74e61652f421a4d897035ebddb6f91"
   },
   {
    "code": "APSF 9701",
@@ -73,9 +77,17 @@
    "chars": 5999,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Demonstrate the care and use of hand tools and the operation of sprinkler heads.",
+    "Read and apply blueprint drawings and ruler measurements for pipe dimensions and placement.",
+    "Apply safety and health rules when using hand tools, ladders, scissor lifts, and scaffolds."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b61563e64e3cbb654aff4dbe37ef14be",
+   "objectives": [
     "demonstrate how to safely operate the Ridgid 300 pipe threading machine;",
     "recognize pipe threading and grooving techniques used in the fire protection industry;",
     "interpret standard fire sprinkler blueprints including symbols and abbreviations, find unlisted dimensions through mathematical calculation;",
@@ -90,13 +102,9 @@
     "demonstrate a working knowledge of the use of a MacBook Air and Blackboard in an educational setting;",
     "identify flexible and rigid grooved couplings and corresponding fittings."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "4f950baa56a42fbe046a1f033a94d45f",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "4f950baa56a42fbe046a1f033a94d45f"
   },
   {
    "code": "BAD 1",
@@ -113,9 +121,16 @@
    "chars": 2889,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "demonstrate the physiological importance of warming up",
+    "demonstrate the ability to work and solve problems in a small group"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d99f2404e2f26d8a6868f0048747a78d",
+   "objectives": [
     "describe the rules, scoring system, and equipment of badminton;",
     "execute fundamental badminton skills such as serving, overhead strokes, clears, smash;",
     "demonstrate basic strategies for both singles and doubles matches;",
@@ -124,13 +139,9 @@
     "discuss the origins and dangers of hypertension and pre-diabetes;",
     "demonstrate increased strength, flexibility, agility, and cardiovascular fitness."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "303940df334d362b09029dcfe24d7c4f",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "303940df334d362b09029dcfe24d7c4f"
   },
   {
    "code": "CHIN 1A",
@@ -147,9 +158,17 @@
    "chars": 7776,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Demonstrate orally, proficiency in the use of the grammatical structures presented and vocabulary assigned,",
+    "Demonstrate in writing, proficiency in the use of grammatical structures presented and vocabulary assigned",
+    "Demonstrate an appreciation of the culture, including formative historical events and relevant geographical information."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "769059232dbf9652bfed0e42a393cf25",
+   "objectives": [
     "compare and contrast Chinese and American cultural practices in relation to speech, social attitudes, and values;",
     "demonstrate an understanding and appreciation of the culture of Chinese-speaking people, including formative historical events and relevant geographical information;",
     "demonstrate understanding of the basic principles of writing the simplified version of characters as practiced in mainland China;",
@@ -161,13 +180,9 @@
     "write a coherent and culturally appropriate paragraph of fifty characters or more on a topic studied and/or discussed in class;",
     "make simple descriptions related to size, shape, and color orally and in writing."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "c1beb92222d684926a0fad97139e2411",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "c1beb92222d684926a0fad97139e2411"
   },
   {
    "code": "ECN 10",
@@ -184,21 +199,25 @@
    "chars": 3449,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Demonstrate ability to use economic problem solving.",
+    "Demonstrate ability to understand and analyze economic graphs.",
+    "Demonstrate ability use economic terminology."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "57c5bb310ac4f4df91e8b176a7c65d47",
+   "objectives": [
     "identify the basic principles which govern the process of production and distribution in all economic systems;",
     "analyze the essential elements in the operation of the market system, in theory and in practice;",
     "evaluate the evolution of the U.S. economic system within a historical context;",
     "identify the issues, problems and challenges which historically and currently have characterized the U.S. economy."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "4976046cc6cfe397d06692106f0229ec",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "4976046cc6cfe397d06692106f0229ec"
   },
   {
    "code": "ES 1",
@@ -215,9 +234,17 @@
    "chars": 30027,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Apply theory and knowledge produced by Native American, African American, Asian American and Pacific Islander, and/or Latina and Latino American communities to describe the critical events, histories, cultures, intellectual traditions, contributions, lived-experiences and social struggles of a group with a particular emphasis on agency and group-affirmation;",
+    "Critically analyze the intersection of race and racism as they relate to class, gender, and/or sexuality in Native American, African American, Asian American and Pacific Islander, and Latina and Latino American communities;",
+    "Critically review how struggle, resistance, racial and social justice, solidarity, and liberation, as experienced and enacted by Native Americans, African Americans, Asian Americans and Pacific Islanders, and/or Latina and Latino Americans are relevant to current and structural issues."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "ba13daa27f01b37cf5b09bf45b06ddd9",
+   "objectives": [
     "Apply theory and knowledge produced by Native American, African American, Asian American and Pacific Islander, and Latina and Latino American communities to describe the critical events, histories, cultures, intellectual traditions, contributions, lived-experiences and social struggles of those groups with a particular emphasis on agency and group-affirmation;",
     "Critically analyze the intersection of race and racism as they relate to class, gender, sexuality, religion, spirituality, national origin, immigration status, ability, tribal citizenship, sovereignty, language, and/or age in Native American, African American, Asian American and Pacific Islander, and Latina and Latino American communities;",
     "Critically review how struggle, resistance, racial and social justice, solidarity, and liberation, as experienced and enacted by Native Americans, African Americans, Asian Americans and Pacific Islanders, and Latina and Latino Americans are relevant to current and structural issues such as communal, national, international, and transnational politics as, for example, in immigration, reparations, settler-colonialism, multiculturalism, language policies;",
@@ -225,13 +252,9 @@
     "Analyze the importance of race, ethnicity, identity, and resistance in the creation of cultural/artistic expressions and movements;",
     "Examine theoretical frameworks produced by the core four disciplines: American Indian/Native American Studies, African American/Black Studies, Asian American and Pacific Islander Studies, and Chicana/o/x and Latina/o/x/e Studies that describes an understanding of epistemologies, cultural identities, cultural philosophies, generational trauma, and all manner of struggle and liberation."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "e0aeb7e850847d60f95e6749dfa63c2a",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "e0aeb7e850847d60f95e6749dfa63c2a"
   },
   {
    "code": "GEO 1",
@@ -248,9 +271,18 @@
    "chars": 8172,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Assess the usefulness of the technologies of Geographic Information Systems and Remote Sensing in observing and modeling physical processes",
+    "Critically differentiate regional similarities and contrasts in climate types, landform styles, biomes",
+    "Describe the individuals' role in his/her natural environment",
+    "Identify techniques in observation that could be used to recognize and/or classify a roadside landform and rocktype"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "248565b581ed07014721374e20bc05ae",
+   "objectives": [
     "demonstrate an understanding of the scientific method and practical experience using the tools and concepts of physical geography (e.g., locational reference systems, geographic information systems, maps, remotely-sensed imagery) to the interpretation of spatial information (laboratory component).",
     "demonstrate an understanding of the size, shape, and movements of the Earth in space and their importance to environmental patterns and processes;",
     "apply knowledge of atmospheric processes, air/sea interactions, weather elements/events, and climate controls to the classification, properties, and distribution of world climate types;",
@@ -259,13 +291,9 @@
     "explain how landforms are the result of the interaction of internal tectonic forces and external geomorphic processes and apply that knowledge to an appreciation and understanding of specific landform origins, processes and types;",
     "apply knowledge of the distribution of resources, environmental hazards, and human-environmental interactions to rational decision-making processes and activities which affect the habitability of Planet Earth."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "3087da69ed5427f81247e07c800a0a00",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "3087da69ed5427f81247e07c800a0a00"
   },
   {
    "code": "INDT 62",
@@ -282,9 +310,17 @@
    "chars": 2875,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "The student will describe the key elements of a lean production system and the benefits of lean production.",
+    "The student will describe the key concepts of statistical process control, and provide examples of how this is implemented in a manufacturing operation.",
+    "The student will compare and contrast Big Data vs. traditional RDBMS and provide examples of how Big Data impacts a manufacturing operation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "83d3473dabfe44fc3718030f60a2786f",
+   "objectives": [
     "describe the elements of a lean manufacturing process;",
     "describe the benefits of implementing lean manufacturing;",
     "discuss the barriers to implementation of lean manufacturing in an established operation;",
@@ -292,13 +328,9 @@
     "describe the elements of a quality management system, such as ISO 9000;",
     "define Big Data, and describe the deployment and impact of Big Data analysis on manufacturing operations."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "1ffb5f7d674e144a2bc5f707c40ed419",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "1ffb5f7d674e144a2bc5f707c40ed419"
   },
   {
    "code": "MT 19",
@@ -315,9 +347,17 @@
    "chars": 4425,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Demonstrate improved fitness, and overall wellness, by participating in a consistent training program",
+    "Work within a group, or team, to solve problems",
+    "Demonstrate and explain the physiological reasons for performing a proper warm up."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b2d7edd716aa3ee83fc92a3ab202f849",
+   "objectives": [
     "demonstrate advanced skills of tennis;",
     "demonstrate increased level of physical conditioning from beginning of semester in a progressive sequence;",
     "demonstrate an advanced level of play;",
@@ -329,13 +369,9 @@
     "demonstrate concentric training methods to maximize muscle fiber recruitment;",
     "demonstrate eccentric training to strengthen tendons and ligaments to prevent overuse injuries."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "80ce47e14caaa334e3fb0c5d4524e8b8",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "80ce47e14caaa334e3fb0c5d4524e8b8"
   },
   {
    "code": "OPTN 9701",
@@ -352,9 +388,20 @@
    "chars": 5303,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Review the major components and associated structures of the eye.",
+    "Relate the anatomical composition of the eye to the process of vision, the function of the eye in accommodation, and eye movements in vision.",
+    "Differentiate between structure, function, and pathology of the eye related to contact lens wear and eyeglasses.",
+    "Synthesize knowledge of pathological anomalies of the eye with treatment plans for patient care.",
+    "Correlate knowledge of the developmental stages of vision with aging changes and pathology.",
+    "Apply knowledge of common surgical procedures and basic pharmacological agents to the treatment of common pathological conditions."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6e4e4a506b50dbd6e006830fd0136e83",
+   "objectives": [
     "describe the structures and functions of the eye;",
     "identify refractive errors in the visual system;",
     "relate the anatomical composition of the eye to the process of vision;",
@@ -364,13 +411,9 @@
     "specify the diagnostic test utilized for visual screening and ocular pathologies;",
     "discuss the systemic use and types of ophthalmic medications, including the methods of drug delivery along with their advantages and disadvantages."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "dedc64e818f9297623e04e762d6ee9df",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "dedc64e818f9297623e04e762d6ee9df"
   },
   {
    "code": "PSCN 1",
@@ -387,9 +430,18 @@
    "chars": 7367,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Develop a fundamental plan of action with an individual to affect an individual's desired life change.",
+    "Student will be able to assess cultural and socio-economic barriers.",
+    "Students will be able design interventions to address cultural and socio-economic barriers.",
+    "Students will be able to define and demonstrate the concept of empathy."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "7f35dc8379fdc11fa3a2ede9d531a9c7",
+   "objectives": [
     "apply Psychology-Counseling theory and techniques;",
     "describe fundamental Psychology-Counseling techniques and theories;",
     "describe methods of effective behavioral change;",
@@ -399,13 +451,9 @@
     "identify local intervention or social service programs;",
     "express the importance of an individualized action plan for behavioral change."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "d93b839c298630a74a1bbc5baba24c29",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "d93b839c298630a74a1bbc5baba24c29"
   },
   {
    "code": "SOC 1",
@@ -422,9 +470,16 @@
    "chars": 4271,
    "offered_at": null,
    "shape": "list",
-   "heading": "Upon completion of this course, the student should be able to",
-   "lead": "Upon completion of this course, the student should be able to:",
+   "heading": "Student Learning Outcomes",
+   "lead": "Upon the completion of this course, the student should be able to:",
    "outcomes": [
+    "Demonstrate and explain the physiological reasons for performing a proper warm up.",
+    "Work within a group, or team, to solve problems"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "dd56e1b7b1f6e4db7829ef46b220a0ca",
+   "objectives": [
     "demonstrate the basic fundamentals of the game such as passing, kicking, dribbling, and tackling;",
     "demonstrate appropriate safety and etiquette for non-competitive soccer;",
     "perform a soccer-specific warm-up that prepares the body for the physical demands of the sport;",
@@ -432,13 +487,11 @@
     "demonstrate the ability to take their blood pressure on a regular and consistent basis;",
     "participate in full-field games in a variety of field positions."
    ],
-   "maps_to": null,
-   "parsed_from": "text",
-   "fingerprint": "1f8812f3f6173c446b43e453fa44d025",
-   "objectives": [],
-   "objectives_heading": null,
-   "objectives_lead": null,
-   "objectives_fingerprint": null
+   "objectives_heading": "Measurable Objectives",
+   "objectives_lead": "Upon completion of this course, the student should be able to:",
+   "objectives_fingerprint": "1f8812f3f6173c446b43e453fa44d025"
   }
- ]
+ ],
+ "reparsed_at": "2026-11-18T10:58:26Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }
