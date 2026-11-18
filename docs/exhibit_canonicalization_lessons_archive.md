@@ -1565,3 +1565,16 @@ picks the family shape), IC-* rows (unknown "Industry Certification" issuer),
 fire/IFSAC/ProBoard certs, welding course-content rows, the 5 known CLEP
 residuals, one-off state certs. All still listed in the staged file's
 `_residual` for hand-triage.
+
+## Moved from the lane (S678 checkpoint, 2026-11-17)
+
+- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
+  guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
+  `<date>-<2-9>` only (run 43104136989 refused the first names); #3120 renamed them `kb/cer_decisions_out/2026-11-11`,
+  `-2`, `-3`. **Phases 1 and 2 applied** (22:13Z and 22:26Z; receipts in each folder): every insert, replace and
+  exhibit re-point stands. They also retired 17 rows on the titles they emptied; the 13 a person saved were restored
+  by `kb/cer_decisions_out/2026-11-11-4` (below), and the 4 July `reviewed_marker` ticks stay retired. The applier's `reinstates` put a row back
+  exactly as its receipt kept it, under the person's own reviewer and stamp, insert-only; `while_emptied` holds the
+  plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
+  fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
+  deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
