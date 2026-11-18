@@ -64,6 +64,7 @@ import _program_requirements_score as S  # noqa: E402
 import _program_requirements_reconcile as R  # noqa: E402
 import _program_requirements_rescore as RS  # noqa: E402
 import collection_lane as CL  # noqa: E402
+import _guarded_sql as GS  # noqa: E402
 
 ROOT = os.path.dirname(HERE)
 GLOB = os.path.join(HERE, "program_requirements_college", "*", "records", "*.json")
@@ -440,23 +441,27 @@ def _jb(v) -> str:
     return "%s::jsonb" % _q(json.dumps(v, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
 
 
-def guard(n: int, body: str, tag: str) -> str:
-    """The final SELECT of a guarded UPDATE: the returned value when the UPDATE matched exactly the plan's n rows,
-    else an error that aborts the statement, so nothing it wrote stands (second reader's F3). Postgres runs the
-    data-modifying CTE and this SELECT as one statement: the failed cast rolls back both."""
-    return ("select case when count(*) = %d then %s\n"
-            "       else (%s || count(*) || ' rows, the plan names %d')::int::text::json end as returned\n"
-            "  from u;" % (n, body, _q("%s guard: the UPDATE matched " % tag), n))
+def _checks_v(rows: list[dict]) -> str:
+    return "with v(i, college, control_number, extracted_run) as (values\n  %s)" % RS._values(rows)
 
 
-RETURNED = ("json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json), "
-            "'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json))")
+def _arith_update(to: str, frm: str) -> str:
+    return ("update public.program_requirement_records r\n"
+            "   set checks = jsonb_set(r.checks, '{arithmetic}', '\"%s\"')\n"
+            "  from v\n"
+            " where r.college = v.college and r.control_number = v.control_number\n"
+            "   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = '%s'" % (to, frm))
 
 
 def checks_only_apply(rows: list[dict], tag: str) -> str:
-    sql = RS.update_sql(rows, "equal", "unequal")
-    head = sql[:sql.index("select json_build_object('returned'")]
-    return head + guard(len(rows), RETURNED, tag + " checks-only")
+    """A1: checks.arithmetic "unequal" to "equal", never on a row a person checked (round two, R1), aborting
+    unless it matches the plan less the checked rows (kb/_guarded_sql.py)."""
+    return GS.guarded(_checks_v(rows), _arith_update("equal", "unequal"), len(rows), tag + " checks-only")
+
+
+def checks_only_rollback(rows: list[dict], tag: str) -> str:
+    return GS.guarded(_checks_v(rows), _arith_update("unequal", "equal"), len(rows), tag + " checks-only rollback",
+                      rollback=True)
 
 
 def _full_values(rows: list[dict]) -> str:
@@ -470,31 +475,27 @@ FULL_V = ("with v(i, college, control_number, extracted_run, before_record, befo
           "as (values\n  %s)")
 
 
+def _full_update(to: str, frm: str) -> str:
+    return ("update public.program_requirement_records r\n"
+            "   set record = v.%s_record, checks = v.%s_checks\n"
+            "  from v\n"
+            " where r.college = v.college and r.control_number = v.control_number\n"
+            "   and r.extracted_run = v.extracted_run and r.record = v.%s_record and r.checks = v.%s_checks"
+            % (to, to, frm, frm))
+
+
 def full_row_apply(rows: list[dict], tag: str) -> str:
     """Each corrected row takes the record and checks the college load would post for its committed record, only
     where the live row still holds the filed run and the load's image of main's record and checks (the before-image),
     and no person has checked it."""
-    return (FULL_V % _full_values(rows) + ",\n"
-            "u as (\n"
-            "update public.program_requirement_records r\n"
-            "   set record = v.after_record, checks = v.after_checks\n"
-            "  from v\n"
-            " where r.college = v.college and r.control_number = v.control_number\n"
-            "   and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks\n"
-            "   and r.checked is not true\n"
-            "returning v.i, r.checked)\n" + guard(len(rows), RETURNED, tag + " full-row"))
+    return GS.guarded(FULL_V % _full_values(rows), _full_update("after", "before"), len(rows), tag + " full-row")
 
 
-def full_row_rollback(rows: list[dict]) -> str:
-    return (FULL_V % _full_values(rows) + ",\n"
-            "u as (\n"
-            "update public.program_requirement_records r\n"
-            "   set record = v.before_record, checks = v.before_checks\n"
-            "  from v\n"
-            " where r.college = v.college and r.control_number = v.control_number\n"
-            "   and r.extracted_run = v.extracted_run and r.record = v.after_record and r.checks = v.after_checks\n"
-            "returning v.i, r.checked)\n"
-            "select " + RETURNED + " as returned\n  from u;")
+def full_row_rollback(rows: list[dict], tag: str = "s680") -> str:
+    """The before-image back where the row still holds the after-image, skipping (and listing) a row a person
+    checked after the apply (round two, R3)."""
+    return GS.guarded(FULL_V % _full_values(rows), _full_update("before", "after"), len(rows),
+                      tag + " full-row rollback", rollback=True)
 
 
 def pre_read(checks_rows: list[dict], full_rows: list[dict]) -> str:
@@ -544,12 +545,12 @@ def main(argv=None) -> int:
                "apply_checks_only": checks_only_apply(_parts(r["moved"])[0], a.tag),
                "apply_full_row": full_row_apply(_parts(r["moved"])[1], a.tag),
                "follow_verdict": RS.FOLLOW_VERDICT, "person_settled": RS.PERSON_SETTLED,
-               "rollback_full_row": full_row_rollback(_parts(r["moved"])[1]),
+               "rollback_full_row": full_row_rollback(_parts(r["moved"])[1], a.tag),
+               "rollback_checks_only": checks_only_rollback(_parts(r["moved"])[0], a.tag),
                "rollback": None,
-               "rollback_how": ("checks-only: built from its UPDATE's returned value, after it runs: python3 "
-                                "kb/_program_requirements_rescore.py --rollback-from <the migrate receipt> --receipt "
-                                "<this file>. full-row: rollback_full_row puts the before-image back where the row "
-                                "still holds the after-image."),
+               "rollback_how": ("rollback_checks_only and rollback_full_row each take back the plan's rows, skip and "
+                                "list a row a person checked, and abort unless they match the plan less those rows. "
+                                "Where the apply returned fewer rows, edit the rollback's expect line to that count."),
                "applied": None}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(receipt, fh, ensure_ascii=False, indent=1)

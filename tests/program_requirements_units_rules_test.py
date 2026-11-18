@@ -178,12 +178,9 @@ for d in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*")
                 lt_wrong += 1
             else:
                 lt_right += 1
-check(True, "listed_twice on held listings with a course list: right %d, wrong %d" % (lt_right, lt_wrong))
-# A listing that has its own course list and still pairs with a newer listing of the same title and award name is
-# a second listing whose other half also has a list: the label's claim holds there too, so it counts apart.
-print("self-recall: GE pattern %d held titles, right %d, wrong %d; listed_twice over %d listings with a list: %d pair "
-      "with a newer same-title, same-award listing that has one too" % (len(held_titles), right, len(wrong),
-                                                                         lt_right + lt_wrong, lt_wrong))
+check(lt_wrong == 0, "listed_twice on held listings with a course list: right %d, wrong %d" % (lt_right, lt_wrong))
+print("self-recall: GE pattern %d held titles, right %d, wrong %d; listed_twice on %d listings with their own course "
+      "list, right %d, wrong %d" % (len(held_titles), right, len(wrong), lt_right + lt_wrong, lt_right, lt_wrong))
 
 # F1: after the rewrite the college load posts exactly the plan's after-image for every full-row record, so a
 # later load or a dry run of it reports no change for them.
@@ -207,6 +204,11 @@ if os.path.isfile(RECEIPT):
           and all(r["rule"] == "A1" for r in rc["records"] if r["i"] in set(rc["plan"]["checks_only"])),
           "A1 alone is checks-only")
     check(not any(r["rule"] == "A6" for r in rc["records"]), "A6 is not in the plan")
+    for k in ("apply_checks_only", "apply_full_row", "rollback_checks_only", "rollback_full_row"):
+        sql = rc[k]
+        check("r.checked is not true" in sql and "e(expect) as (values (" in sql and "skipped_checked" in sql
+              and "::int::text::json" in sql,
+              "%s skips a checked row, lists it, and aborts unless it matches the plan less those rows" % k)
 
 if failures:
     for m in failures:

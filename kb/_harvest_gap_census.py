@@ -128,7 +128,9 @@ def named_gap(col: dict | None, cn: str, cause: str, title: str | None = None) -
     if (cause in ("no_closed_list", "page_not_found") and title and GE_PATTERN_TITLE.search(title)
             and not NOT_GE_PATTERN_TITLE.search(title)):
         return "ge_pattern_certificate", None
-    if cause == "no_closed_list" and title:
+    if cause == "no_closed_list" and title and not (col.get("listed") or {}).get(cn):
+        # The label claims this listing has no course list and the other one does: never on a listing that has its
+        # own (round two of #3496, R2).
         # The award's name (award_name): the state's old wording ("Certificate of Achievement: 18 or greater
         # semester units") meets its new wording ("Certificate of Achievement requiring 16S/24Q ..."), and a
         # Certificate of Achievement never meets a Certificate of Proficiency of the same title (F2 review of #3496).

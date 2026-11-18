@@ -1,9 +1,9 @@
 -- S680 cheap piles, item 2: the units rules. Receipt: kb/receipts/program_requirement_records_units_rules_2026-11-18_s680.json.
 -- The plan in two parts (second reader's F1): checks-only, A1 17 rows; full-row, A4 and A5 40 rows (A4 35, A5 5).
 -- A6 is off (F5). The collection lane's twelve colleges are not in the list (kb/collection_lane.py).
--- Rollback of part 1, NOT applied. Provisional: all 17 A1 rows back from "equal" to "unequal", guarded on
--- the run; exact only when the pre-read showed checks_only.on_run_equal = 0. After the apply, rebuild it from the
--- returned rows: python3 kb/_program_requirements_rescore.py --rollback-from <migrate receipt> --receipt kb/receipts/program_requirement_records_units_rules_2026-11-18_s680.json.
+-- Rollback of part 1, NOT applied: the 17 A1 rows back from "equal" to "unequal", guarded on the run,
+-- skipping and listing a row a person checked; it aborts unless it matches the plan less those rows (edit its
+-- expect line for a partial rollback).
 with v(i, college, control_number, extracted_run) as (values
   (1, 'Bakersfield College', '35984', 38414480070),
   (2, 'Cabrillo College', '43652', 38442109713),
@@ -22,14 +22,22 @@ with v(i, college, control_number, extracted_run) as (values
   (44, 'Modesto Junior College', '42279', 38477845911),
   (50, 'San Diego City College', '12093', 38252422845),
   (55, 'Taft College', '44343', 39100858309)),
+c as (select count(*) filter (where r.checked is true) as n,
+             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys
+        from v join public.program_requirement_records r
+          on r.college = v.college and r.control_number = v.control_number),
+-- A partial rollback: set expect below to the smaller count you mean.
+e(expect) as (values (17)),
 u as (
 update public.program_requirement_records r
    set checks = jsonb_set(r.checks, '{arithmetic}', '"unequal"')
   from v
  where r.college = v.college and r.control_number = v.control_number
    and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'
-returning v.i, r.college, r.control_number, r.checked)
-select json_build_object('returned', count(*),
-       'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),
-       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned
-  from u;
+   and r.checked is not true
+returning v.i),
+s as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)
+select case when s.n = e.expect - c.n
+            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)
+            else ('s680 checks-only rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned
+  from s, c, e;
