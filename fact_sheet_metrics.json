@@ -1,36 +1,36 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-11-17T03:10:16.557Z",
+ "_as_of": "2026-11-18T03:57:49.012Z",
  "credit_recommendations": {
-  "total": "17,376",
-  "ccc": "1,525",
-  "local": "15,851",
+  "total": "17,421",
+  "ccc": "1,529",
+  "local": "15,892",
   "by_type": [
    "Standardized Assessment: 8,151",
-   "Industry Certification: 6,162",
-   "Credit By Exam: 2,350",
-   "Portfolio Review: 452",
+   "Industry Certification: 6,177",
+   "Credit By Exam: 2,376",
+   "Portfolio Review: 456",
    "Military: 159"
   ]
  },
  "map_exhibits": {
-  "total": "2,649",
+  "total": "2,681",
   "ccc": "162",
-  "local": "2,487",
+  "local": "2,519",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
   "total": "162",
   "program_areas": "12",
-  "distinct_credit_recs": "1,313",
-  "adoptions": "1,512",
+  "distinct_credit_recs": "1,317",
+  "adoptions": "1,516",
   "adopting_colleges": "70",
   "by_sector": [
    {
     "sector": "Construction Technology",
     "exhibits": 54,
-    "credit_recs": 173,
-    "adoptions": 173,
+    "credit_recs": 175,
+    "adoptions": 175,
     "could_adopt": 0
    },
    {
@@ -43,8 +43,8 @@
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 303,
-    "adoptions": 356,
+    "credit_recs": 305,
+    "adoptions": 358,
     "could_adopt": 44
    },
    {
@@ -129,7 +129,7 @@
   "adopting_ccc": "70"
  },
  "veteran_sprint": {
-  "star_colleges": "68",
+  "star_colleges": "69",
   "basic_training_colleges": "91 Colleges"
  }
 }

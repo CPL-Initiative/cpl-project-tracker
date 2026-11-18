@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-17T03:12:36+00:00",
-  "unified_titles": 6057
+  "audit": "2026-11-18T04:00:50+00:00",
+  "unified_titles": 6067
  },
  "rule": {
   "graded": [
@@ -19,15 +19,15 @@
   "twin": "a title still in MAP with the same wording once spaces and punctuation are ignored, or already under the same canonical title, or a longer form of the same wording; a noncredit title is never a twin of an industry title"
  },
  "counts": {
-  "titles": 810,
-  "credentials": 577,
-  "nothing_points": 364,
+  "titles": 812,
+  "credentials": 579,
+  "nothing_points": 366,
   "still_used": 446,
   "reviewed": 112,
-  "nothing_points_with_twin": 212,
-  "nothing_points_no_twin": 52,
-  "nothing_points_no_twin_only_local": 44,
-  "with_twin": 536
+  "nothing_points_with_twin": 213,
+  "nothing_points_no_twin": 53,
+  "nothing_points_no_twin_only_local": 45,
+  "with_twin": 537
  },
  "titles": {
   "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
@@ -6595,6 +6595,29 @@
     "course-credit listing",
     "Common CR worklist"
    ],
+   "twin": null,
+   "reviewed": false,
+   "only_local": true
+  },
+  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+   "canonical": "Introduction to Criminal Justice",
+   "type": "CPL type not recorded",
+   "group": "",
+   "used": false,
+   "where": [],
+   "twin": {
+    "title": "ADM JUS 001 - Introduction to Administration of Justice",
+    "how": "already under the same title"
+   },
+   "reviewed": false,
+   "only_local": false
+  },
+  "High School Articulation- Developmental Psychology of Children II": {
+   "canonical": "Principles & Practices of Teaching Young Children",
+   "type": "CPL type not recorded",
+   "group": "",
+   "used": false,
+   "where": [],
    "twin": null,
    "reviewed": false,
    "only_local": true
@@ -19204,6 +19227,22 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "News Production 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "News Production 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "News Production 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "News Production III": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "No-Start Diagnosis": {
    "type": "CPL type not recorded",
    "group": ""
@@ -19949,6 +19988,10 @@
    "group": ""
   },
   "Prevention and Care of Athletic Injuries Lab": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Principles & Practices of Teaching Young Children": {
    "type": "CPL type not recorded",
    "group": ""
   },

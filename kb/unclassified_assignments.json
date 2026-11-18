@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-14T20:24:27Z",
-  "count": 2877,
+  "_synced_at": "2026-11-18T03:58:00Z",
+  "count": 2887,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -4924,6 +4924,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T23:44:36.130524+00:00",
       "unified_title": "Automotive Welding, Cutting, and Modification"
+    },
+    "Aviation Mechanic- Airframe and Powerplant": {
+      "issuing_agency": "Federal Aviation Administration (FAA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)"
     },
     "BA Empowering Entrepreneurs- HS CE(MVUSD)": {
       "issuing_agency": "Moreno Valley Unified School District (MVUSD)",
@@ -11018,6 +11024,18 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "High Performance Electric Water Heaters"
     },
+    "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+      "issuing_agency": "Local High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "Introduction to Criminal Justice"
+    },
+    "High School Articulation- Developmental Psychology of Children II": {
+      "issuing_agency": "Local High School",
+      "reviewed_by": "cer-procedure-high-school-rop@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "Principles & Practices of Teaching Young Children"
+    },
     "History of Fashion - Credit by Exam (FASH 31 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -13172,6 +13190,24 @@
       "reviewed_at": "2026-10-31T16:37:03.659044+00:00",
       "unified_title": "Property Management"
     },
+    "JOURN 018 News Production IV": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "News Production 4"
+    },
+    "JOURN 018A  News Production I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "News Production 1"
+    },
+    "JOURN 020 Photojournalism I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "Introduction to Photojournalism"
+    },
     "JOURN 021  Newswriting": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -13189,6 +13225,18 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
       "unified_title": "Multimedia Reporting for Journalists"
+    },
+    "JOURN 18B News Production II": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "News Production 2"
+    },
+    "JOURN 18C News Production III": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "News Production III"
     },
     "Journeyman Certificate- Apprenticeship Carpentry, Acoustical Installer, AS": {
       "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
@@ -17108,6 +17156,18 @@
       "unified_title": "FEMA IS-200 Basic Incident Command System (ICS)",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
+    },
+    "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson"
+    },
+    "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+      "issuing_agency": "United Association (UA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+      "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson"
     },
     "Unity Certified Professional Programmer": {
       "issuing_agency": "Unity Technologies",
