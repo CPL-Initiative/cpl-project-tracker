@@ -1,5 +1,5 @@
 {
- "written": "2026-11-18T07:35:28Z",
+ "written": "2026-11-18T07:39:42Z",
  "measured_on": {
   "commit": "551588d9f1c1c43689cbe2d256bf8c0e5201bb97",
   "census": "kb/status/harvest_gap_census.json (written 2026-11-17 23:09Z, live)",
@@ -58,6 +58,227 @@
   },
   "against_the_ask": "the ask priced P2 at $30-40 and P3 at about $20 on a reread that aims at one list; the extractor has no aim input today, so tonight's paid lane is the two moved records and the rest waits on the changes named in each row's dispatch 'after'"
  },
+ "decided": {
+  "decision": "the named gaps 'the catalog's own figures do not add up' and 'the catalog prints no units for a required course' go on without a page read where the record shows it: every list matches its printed figure and the lists sum past the printed total (Long Beach City 41220: lists sum to 30 against a printed 29), or the reader's note says the catalog prints no units for a required course",
+  "by": "the S680 conductor (SkyPhoebe) on Sam's rule of 2026-11-17 (never drop a record for failing; collect it with gaps noted), as cpl_memory d-rcc-social-justice-catalog-unequal-s675 holds for Riverside City",
+  "records": 54,
+  "covers": {
+   "gap_catalog": [
+    {
+     "college": "Bakersfield College",
+     "control_numbers": "20269,32783,32786,43434"
+    },
+    {
+     "college": "Cabrillo College",
+     "control_numbers": "06366,09594,20406"
+    },
+    {
+     "college": "City College of San Francisco",
+     "control_numbers": "16991,41049"
+    },
+    {
+     "college": "Cuesta College",
+     "control_numbers": "14441,32562"
+    },
+    {
+     "college": "De Anza College",
+     "control_numbers": "41861,41863"
+    },
+    {
+     "college": "Fullerton College",
+     "control_numbers": "08420,33126"
+    },
+    {
+     "college": "Mission College",
+     "control_numbers": "41092,41093"
+    },
+    {
+     "college": "Palomar College",
+     "control_numbers": "10883,22523"
+    },
+    {
+     "college": "Barstow Community College",
+     "control_numbers": "31051"
+    },
+    {
+     "college": "Butte College",
+     "control_numbers": "44349"
+    },
+    {
+     "college": "College of Alameda",
+     "control_numbers": "32714"
+    },
+    {
+     "college": "College of the Sequoias",
+     "control_numbers": "37744"
+    },
+    {
+     "college": "College of the Siskiyous",
+     "control_numbers": "46190"
+    },
+    {
+     "college": "Columbia College",
+     "control_numbers": "32444"
+    },
+    {
+     "college": "Cypress College",
+     "control_numbers": "39887"
+    },
+    {
+     "college": "Feather River College",
+     "control_numbers": "11771"
+    },
+    {
+     "college": "Imperial Valley College",
+     "control_numbers": "11793"
+    },
+    {
+     "college": "Laney College",
+     "control_numbers": "01188"
+    },
+    {
+     "college": "Long Beach City College",
+     "control_numbers": "41220"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "control_numbers": "44271"
+    },
+    {
+     "college": "Merritt College",
+     "control_numbers": "19145"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "control_numbers": "43979"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "control_numbers": "05088"
+    },
+    {
+     "college": "Santa Ana College",
+     "control_numbers": "35673"
+    },
+    {
+     "college": "Santa Monica College",
+     "control_numbers": "33271"
+    },
+    {
+     "college": "Ventura College",
+     "control_numbers": "39961"
+    },
+    {
+     "college": "Victor Valley College",
+     "control_numbers": "40161"
+    }
+   ],
+   "gap_no_units": [
+    {
+     "college": "Cerritos College",
+     "control_numbers": "02219,33343"
+    },
+    {
+     "college": "College of the Sequoias",
+     "control_numbers": "45030"
+    },
+    {
+     "college": "Cuyamaca College",
+     "control_numbers": "21069"
+    },
+    {
+     "college": "Foothill College",
+     "control_numbers": "32281"
+    },
+    {
+     "college": "Grossmont College",
+     "control_numbers": "35805"
+    },
+    {
+     "college": "Long Beach City College",
+     "control_numbers": "42970"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "control_numbers": "35913"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "control_numbers": "38731"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "control_numbers": "08690"
+    },
+    {
+     "college": "Napa Valley College",
+     "control_numbers": "32409"
+    },
+    {
+     "college": "Pasadena City College",
+     "control_numbers": "36777"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "control_numbers": "39483"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "control_numbers": "45486"
+    },
+    {
+     "college": "Sierra College",
+     "control_numbers": "45624"
+    },
+    {
+     "college": "Ventura College",
+     "control_numbers": "44994"
+    }
+   ]
+  },
+  "build": "not in this PR: the labels go through #3497's named-gap mechanism once its rework lands"
+ },
+ "next_session": [
+  {
+   "order": 1,
+   "what": "cheap piles: apply the two named gaps above to their 54 records through #3497's mechanism",
+   "cost_usd": 0
+  },
+  {
+   "order": 2,
+   "what": "the two paid reads: Berkeley City 31984 and Los Angeles Pierce 32620 (lanes.units_unequal.paid_tonight, dispatch inputs there)",
+   "records": 2,
+   "estimate_usd": 0.2
+  },
+  {
+   "order": 3,
+   "what": "reader work, a plain session: the aim input (prerequisites.wait_aim), then its paid reads",
+   "records": 260,
+   "colleges": 74,
+   "estimate_usd": 26.2
+  },
+  {
+   "order": 4,
+   "what": "reader work: A10 in the page finder, then the same-title-sibling reads (prerequisites.wait_a10_strong)",
+   "records": 38,
+   "colleges": 19,
+   "estimate_usd": 3.84
+  },
+  {
+   "order": 5,
+   "what": "reader work: the wider page window (prerequisites.wait_window), then its paid reads",
+   "records": 94,
+   "colleges": 41,
+   "estimate_usd": 9.67
+  },
+  {
+   "order": 6,
+   "what": "A10's other page-claimed programs (prerequisites.wait_a10_other)",
+   "records": 210,
+   "colleges": 53,
+   "estimate_usd": 21.2
+  }
+ ],
  "prerequisites": {
   "wait_aim": "an aim input for the extractor (kb/_program_requirements_extract.py): the read names the list that does not add up, the figure the catalog prints for it, and the closed-list courses not placed, and asks for that list in full, including lines with no course code (Part C's extraction list)",
   "wait_window": "a reader change (kb/_program_requirements_college.py) that widens the page window by the page the record's note names as missing, so the captured text holds the whole list",
