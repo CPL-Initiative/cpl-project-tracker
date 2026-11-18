@@ -1525,6 +1525,9 @@ jobs:
           python3 tests/top_gate_test.py
           python3 tests/row_audit_subject_outlier_test.py
           python3 tests/row_audit_top_source_score_test.py
+          python3 tests/row_audit_zero_members_test.py
+          python3 tests/coci_flags_test.py
+          python3 kb/_not_applicable_rule.py
           test_group_end
       - name: Programs, pathways, veterans, MAP fetch, the custom report payload and repo hygiene
         run: |
