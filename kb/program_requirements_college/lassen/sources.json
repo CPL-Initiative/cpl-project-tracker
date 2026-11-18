@@ -266,20 +266,21 @@
    "WT51"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
+   "title": "Certificate of Achievement: Welding Technology - Two Year",
+   "h1": "Certificate of Achievement: Welding Technology - Two Year",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99,
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "179ddba33d6f11b5"
   },
   "listed": 12,
-  "text_chars": 9161
+  "text_chars": 5097
  },
  {
   "control_number": "17742",
@@ -665,17 +666,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=51",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree University",
+   "h1": "Associate in Arts Degree University",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1a278c585034b86f"
   },
   "listed": 7,
-  "text_chars": 3236
+  "text_chars": 3103
  },
  {
   "control_number": "19321",
@@ -927,20 +930,21 @@
    "WT51"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=100",
+   "title": "Certificate of Achievement: Welding Technology - Two Year",
+   "h1": "Certificate of Achievement: Welding Technology - Two Year",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99,
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "179ddba33d6f11b5"
   },
   "listed": 17,
-  "text_chars": 9161
+  "text_chars": 5097
  },
  {
   "control_number": "21605",
@@ -1131,17 +1135,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts in Studio Arts for Transfer",
+   "h1": "Associate in Arts in Studio Arts for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     53
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "79dbbf044096ace6"
   },
   "listed": 10,
-  "text_chars": 1576
+  "text_chars": 1470
  },
  {
   "control_number": "31178",
@@ -1244,24 +1250,70 @@
   "title": "Graphic Design",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "ART19A",
+   "ART19B",
+   "ART19C",
+   "ART19D",
+   "ART1A",
+   "ART1B",
+   "ART2",
+   "ART23",
+   "ART3",
+   "ART49"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115,
+    116,
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "76d93ef5e4475113"
+  },
   "listed": 15,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "31411",
   "title": "Graphic Design",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.545,
+  "codes_found": [
+   "ART19A",
+   "ART1A",
+   "ART2",
+   "ART23",
+   "ART49",
+   "ART8"
+  ],
+  "source": {
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=115",
+   "title": "",
+   "h1": "",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115,
+    116,
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "76d93ef5e4475113"
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "32083",
@@ -1312,17 +1364,19 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree in Economics for Transfer",
+   "h1": "Associate in Arts Degree in Economics for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     58
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3b62cacaa7976210"
   },
   "listed": 5,
-  "text_chars": 3407
+  "text_chars": 1617
  },
  {
   "control_number": "33322",
@@ -1341,20 +1395,21 @@
    "AT80"
   ],
   "source": {
-   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=54",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=55",
+   "title": "Certificate of Achievement Engine Repair",
+   "h1": "Certificate of Achievement Engine Repair",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    54,
     55,
     56
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c5ae5f74bf8232c6"
   },
   "listed": 7,
-  "text_chars": 7720
+  "text_chars": 4209
  },
  {
   "control_number": "33323",
@@ -1489,8 +1544,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Agriculture Animal Science for Transfer",
+   "h1": "Associate in Science Degree: Agriculture Animal Science for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1498,10 +1553,12 @@
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "148269c8c341d8c6"
   },
   "listed": 10,
-  "text_chars": 7502
+  "text_chars": 7393
  },
  {
   "control_number": "33730",
@@ -1525,8 +1582,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree: Agriculture Business for Transfer",
+   "h1": "Associate in Science Degree: Agriculture Business for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1535,10 +1592,12 @@
     50,
     51
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7d56cd12cfce8d10"
   },
   "listed": 11,
-  "text_chars": 10707
+  "text_chars": 8897
  },
  {
   "control_number": "35106",
@@ -1814,8 +1873,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Arts Degree in Social Work and Human Services for Transfer",
+   "h1": "Associate in Arts Degree in Social Work and Human Services for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1823,10 +1882,12 @@
     97,
     98
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "219eaef92c62973e"
   },
   "listed": 22,
-  "text_chars": 9806
+  "text_chars": 7748
  },
  {
   "control_number": "42300",
@@ -1848,8 +1909,8 @@
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Associate in Science Degree in Business Administration for Transfer 2.0",
+   "h1": "Associate in Science Degree in Business Administration for Transfer 2.0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1857,10 +1918,12 @@
     59,
     60
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0fb7c3be1de23179"
   },
   "listed": 9,
-  "text_chars": 8462
+  "text_chars": 8356
  },
  {
   "control_number": "42798",
@@ -2557,7 +2620,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 0.929,
   "codes_found": [
    "ART8",
    "BIOL32L",
@@ -2568,20 +2631,23 @@
    "ED2",
    "ENGLC1000",
    "HIST14",
+   "HIST16",
    "MATH11A",
    "MUS12",
    "POLSC1000"
   ],
   "source": {
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     66
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "97197928a471981a"
   },
   "listed": 14,
   "text_chars": 2873

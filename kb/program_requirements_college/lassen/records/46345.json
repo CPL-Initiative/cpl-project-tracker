@@ -46,24 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "HIST16"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001",
+     "listed": "HIST16",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "HISTC1001"
-   ],
-   "flagged": [
-    "HISTC1001"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -307,5 +308,6 @@
    "The description notes that 45 hours will be completed in the field; no course is tied to this."
   ]
  },
- "extracted_run": "39006337658"
+ "extracted_run": 44259115005,
+ "read_run": "39006337658"
 }

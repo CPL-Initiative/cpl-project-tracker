@@ -117,8 +117,16 @@
   },
   "careers": {
    "count": 7,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "Social and Human Services Assistant",
+    "Residential counselor",
+    "Substance Abuse and Behavioral Disorder Counselors",
+    "Eligibility Worker",
+    "Community outreach worker",
+    "Social worker",
+    "Therapist"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
@@ -374,5 +382,6 @@
    "Certificate of Achievement section (18 units, includes ES 1, ANTH 1, ANTH 1L) was not recorded; it is a different award."
   ]
  },
- "extracted_run": "39006337658"
+ "extracted_run": 44259115005,
+ "read_run": "39006337658"
 }
