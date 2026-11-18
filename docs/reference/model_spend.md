@@ -17,7 +17,7 @@ private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 
 ## Where the daily figures live
 
-Billing totals by UTC day, pasted by hand (no billing credentials in the repo): `kb/reference/model_spend_daily.json`. Each session's own figure, from its handoff's `Spend:` line: `kb/status/session_spend.json` (`kb/_build_session_spend.py`, built at Pages deploy, never committed). The Commons ETA clock's Show costs reads both and keeps them apart.
+Billing totals by UTC day, pasted by hand (no billing credentials in the repo): `kb/reference/model_spend_daily.json`. Each session's own figure, from its handoff's `Spend:` line: `kb/status/session_spend.json` (`kb/_build_session_spend.py`, built at Pages deploy, never committed). The Commons ETA clock's Show costs reads both and keeps them apart. Since S680 a `Spend:` line may tag its dollars as `collection`, `curation` or `infrastructure` (the shape is in `.claude/commands/checkpoint.md` step 8), and the daily file's `sessions` key is rebuilt with the handoff (`python3 kb/_build_spend_daily.py --sessions-only`, checked by `scripts/check_generated.sh`) instead of waiting for the next census run.
 
 ## What calls a model
 

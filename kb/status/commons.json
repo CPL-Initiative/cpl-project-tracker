@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T08:39:04Z",
+ "written_at": "2026-11-18T08:48:14Z",
  "rows": [
   {
    "key": "requirements",
@@ -581,9 +581,9 @@
    ],
    "pair": [
     {
-     "n": 42623,
+     "n": 52731,
      "of": null,
-     "words": "outcomes read from 11,846 courses at 16 colleges",
+     "words": "outcomes read from 13,677 courses at 19 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -591,17 +591,20 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 42623,
-    "courses": 11846,
+    "outcomes": 52731,
+    "courses": 13677,
     "colleges": [
      "cabrillo",
      "coastline_community",
+     "college_of_the_redwoods",
      "columbia",
      "contra_costa",
      "cuesta",
+     "diablo_valley",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
+     "los_medanos",
      "mission",
      "modesto_junior",
      "moreno_valley",
@@ -611,11 +614,11 @@
      "santa_ana",
      "shasta"
     ],
-    "reads": 41
+    "reads": 48
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-17T00:51:26Z",
+    "at": "2026-11-18T07:55:21Z",
     "every_hours": null
    },
    "sources": [

@@ -1,0 +1,62 @@
+CONST 105 - Survey of the Trades
+Units: 1.5
+Print
+
+Description:
+
+The course presents a survey of career opportunities and requirements of the skilled trades as well as basic theoretical and practical skills common to all construction trades.
+
+Requisites:
+
+Course Note:
+
+Transferable:
+
+Transferable to CSU only
+
+Repeatability:
+
+None
+
+General Education:
+
+Not approved for General Education
+
+Student Learning Outcomes:
+
+Describe construction job site protocols and safety standards.
+Compare and contrast various trades, interactions, interdependencies, and how the basic construction process flows from one trade to another.
+Apply basic construction principles and techniques across several trades, and adapt those basic skills to various construction situations.
+Select specific trades to pursue.
+
+Grade Options:
+
+Letter Grade Methods
+Pass/No Pass
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+1.5
+
+Maximum Credit Units
+
+1.5
+
+Total Course In-Class (Contact) Hours
+
+54.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+18.0
+
+Lab Hours
+
+36.0
+
+Activity Hours
+
+0.0

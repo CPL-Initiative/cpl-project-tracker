@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1044,
+  "file_datasets": 1051,
   "external_services": 195,
-  "consumers": 614,
-  "workflows": 72,
+  "consumers": 616,
+  "workflows": 73,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -4734,6 +4734,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:.github/repo_size_exceptions.txt": {
+   "consumers": [
+    {
+     "id": "script:scripts/repo_size_guard.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:/tmp/metrics_status": {
    "consumers": [
     {
@@ -4890,6 +4903,13 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    },
+    {
+     "id": "script:scripts/repo_size_guard.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 56
     }
    ],
    "served": false,
@@ -5170,6 +5190,19 @@
      "direction": "write",
      "how": "literal",
      "line": 36
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:a row_audit entry names row_audit_<date>.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_receipt_store.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 246
     }
    ],
    "served": false,
@@ -10940,6 +10973,19 @@
     },
     {
      "id": "workflow:phase-1e-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_row_audit_prune.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -19748,7 +19794,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 28
+     "line": 35
     }
    ],
    "served": true,
@@ -24189,6 +24235,26 @@
    "served": false,
    "main_committers": []
   },
+  "file:scripts/repo_size_guard.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:repo-size-guard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/stamp_asset_versions.py": {
    "consumers": [
     {
@@ -24255,7 +24321,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 96
     }
    ],
    "served": false,
@@ -27491,6 +27557,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/receipt_move_gate_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/reconcile_reader_gaps_test.py": {
    "consumers": [
     {
@@ -27569,7 +27648,33 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/repo_size_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/roep_display_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/row_audit_prune_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30746,7 +30851,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 255
+     "line": 347
     }
    ],
    "main_committers": []
@@ -35304,6 +35409,7 @@
     "funding/_build_funding_performance.py",
     "funding/_build_funding_ess.py",
     "kb/_row_audit.py",
+    "kb/_row_audit_prune.py",
     "kb/_audit_exhibits.py",
     "kb/_build_left_map.py",
     "kb/_suggest_unclassified.py",
@@ -35568,6 +35674,8 @@
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
     "tests/pages_allowlist.test.js",
+    "scripts/repo_size_guard.py",
+    "tests/repo_size_guard_test.py",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
@@ -35618,6 +35726,8 @@
     "tests/ctdl_exchange_seed_test.py",
     "tests/program_requirements_display_apply_test.py",
     "tests/display_receipt_store_test.py",
+    "tests/row_audit_prune_test.py",
+    "tests/receipt_move_gate_test.py",
     "tests/college_page_read_test.py",
     "tests/program_map_parse_test.py",
     "tests/queue_status_test.py",
@@ -36169,6 +36279,20 @@
    "chain": [],
    "urls": []
   },
+  "repo-size-guard.yml": {
+   "name": "Repo size guard",
+   "crons": [
+    "23 15 * * 1"
+   ],
+   "scripts": [
+    "scripts/repo_size_guard.py"
+   ],
+   "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "second-reader.yml": {
    "name": "Second reader (program requirements)",
    "crons": [],
@@ -36687,6 +36811,7 @@
   "kb/harvest_scouting",
   "kb/memory_audit",
   "kb/migrations",
+  "kb/program_requirements_reread_plan_s680.json",
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
@@ -36726,6 +36851,7 @@
   "exhibit_progress.js",
   "kb/_chatbox_ghost_delete.py",
   "kb/_program_requirements_extract.py",
+  "kb/_row_audit_prune.py",
   "scripts/supabase_migrate.py"
  ],
  "warnings": []

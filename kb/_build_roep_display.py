@@ -1356,6 +1356,12 @@ def main(argv=None) -> int:
         same_build = was.get("build") == b["build"] and os.path.exists(receipt_path(b))
         if was.get("build") != b["build"] and os.path.exists(receipt_path(was)):
             prior = os.path.relpath(receipt_path(was), ROOT)
+        elif was.get("build") != b["build"]:
+            # From S680 the prior build's receipt is stored, not committed: name its index entry.
+            import _receipt_store as S
+            held = S.display_entry(was.get("build") or "")
+            if held:
+                prior = "%s/%s (kb/receipts/index/%s.json)" % (held["bucket"], held["object"], held["name"])
     sql = sql_text(b, prior)
     hit = STALL.search(sql)
     if hit:
