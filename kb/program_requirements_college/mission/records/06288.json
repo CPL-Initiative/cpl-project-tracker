@@ -67,8 +67,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     31.0,
     33.0
@@ -78,8 +78,12 @@
     35.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 31.0-33.0; the catalog states 31.0-35.0"
+   "why": [],
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end",
+   "note": "a required list adds up short of its own printed figure ('Core Requirements'): the list looks short, and a course line may be missing",
+   "lists_short": [
+    "Core Requirements"
    ]
   },
   "repeated": {
@@ -107,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
