@@ -58,19 +58,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
-    25.0
+    24.0
    ],
    "stated": [
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks sum to 24.0-25.0; the catalog states 24.0-24.0"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -86,7 +86,7 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,13 +155,15 @@
       "alternatives": [
        {
         "code": "DANC 131",
-        "units": null,
-        "catalog_addition": false
+        "units": 2,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "DANC 132",
-        "units": null,
-        "catalog_addition": false
+        "units": 2,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -180,8 +182,9 @@
       "alternatives": [
        {
         "code": "EDEL 105",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -212,8 +215,9 @@
       "alternatives": [
        {
         "code": "PEX 104D",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -225,8 +229,9 @@
       "alternatives": [
        {
         "code": "PEX 157",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -454,5 +459,37 @@
    "Core subtotal 17 plus 7 elective units matches the stated total of 24 units."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37961137169",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "DANC 131",
+   "words": "DANC 131, printed as an alternative to DANC 130B with no units, takes its row's 2 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "DANC 132",
+   "words": "DANC 132, printed as an alternative to DANC 130B with no units, takes its row's 2 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "EDEL 105",
+   "words": "EDEL 105, printed as an alternative to EDEL 100 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PEX 104D",
+   "words": "PEX 104D, printed as an alternative to DANC 102 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PEX 157",
+   "words": "PEX 157, printed as an alternative to DANC 103 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

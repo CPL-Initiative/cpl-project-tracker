@@ -60,19 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
+    18.0,
     19.0
    ],
    "stated": [
     18.0,
     19.0
    ],
-   "why": [
-    "the blocks sum to 19.0-19.0; the catalog states 18.0-19.0"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "A5 a choose list takes the courses of the list it names (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -93,7 +93,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -220,6 +220,55 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "CUL 15",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CUL 17",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 4",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 14",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 21",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 32",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOTFS 42",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -234,5 +283,13 @@
    "No careers are named in the text."
   ]
  },
- "extracted_run": "38242003226"
+ "extracted_run": "38242003226",
+ "reconciled": [
+  {
+   "rule": "A5",
+   "block": "List B - Any two courses from the following, or any courses not taken from List A",
+   "words": "'List B - Any two courses from the following, or any courses not taken from List A' says any course from List A: 7 courses added as options (CUL 15, CUL 17, ECON 4, HOTFS 14, HOTFS 21, HOTFS 32)",
+   "statewide": "units_rules_A5"
+  }
+ ]
 }
