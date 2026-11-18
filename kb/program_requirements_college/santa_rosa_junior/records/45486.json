@@ -116,21 +116,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "no_units_printed",
-    "label": "The catalog prints no units for at least one required course.",
-    "words": "the catalog prints no units for a required course (a required course in 'Nutrition and Dietetics for Transfer Core Requirements' has no units)"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 88,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 80
-  }
+  "pass": false
  },
  "record": {
   "program": {

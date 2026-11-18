@@ -24,8 +24,9 @@ Pinned on fixtures:
   * COBIx's four findings on #3497: no_hours_read on an hours program, GE None with no degree total, course-list
     match capped at 50 where a note says the list may continue, the 60 source score named;
   * the S681 plan, one plan in three parts: A the S680 apply's rows to the corrected values (guarded on the image
-    S680 wrote), B #3502's 54 with the plan's gap, C units rule A5's five with 56 and its note; each file names
-    exactly the plan's rows, and a part B or C row at a held college fails.
+    S680 wrote), B #3502's catalog rows that meet their gap's sentence (the 16 no-units rows and the failing ones
+    held out), C units rule A5's five with 56 and its note; each file names exactly the plan's rows, and a part B
+    or C row at a held college fails.
 
 Run from repo root: python3 tests/program_named_gaps_test.py
 """
@@ -262,16 +263,45 @@ check(NG.GAPS["no_hours_read"] == "A required course carries no hours as read, s
 check(NG.confidence(no_units([]), "no_units_read")["ge_pattern"] is None,
       "finding 2: no degree total, so general education does not apply (None, never 100)")
 check(NG.confidence(f, "major_total_differs")["ge_pattern"] == 100, "finding 2: a degree with its GE units scores 100")
+# Finding 3 (the S681 second reader): an explicit list of reviewed records, each with its note's words; no matcher.
 cont = no_units(["The text is cut off partway through the outcomes; a requirements table may follow in the full page."])
-check(NG.confidence(cont, "no_units_read")["course_list_match"] == 50,
-      "finding 3: a note saying the list may continue caps course-list match at 50")
-check(NG.may_continue(no_units(["Students may follow AHC GE or Cal-GETC; no GE units printed."])) is None,
-      "finding 3: 'students may follow a GE pattern' is not a list that continues")
+check(NG.confidence(cont, "no_units_read")["course_list_match"] == 100,
+      "finding 3: a record off the reviewed list is not capped, whatever its note says")
+taft = no_units([NG.MAY_CONTINUE_REVIEWED[("Taft College", "31290")]])
+taft.update({"college": "Taft College", "control_number": "31290"})
+check(NG.confidence(taft, "no_units_read")["course_list_match"] == 50, "finding 3: a reviewed record is capped at 50")
+taft2 = dict(taft, record=dict(taft["record"], notes=["A different note."]))
+check(NG.may_continue(taft2) is None, "finding 3: a reviewed record whose note no longer says so is not capped")
+check(set(NG.MAY_CONTINUE_REVIEWED) == {("Fullerton College", "18166"), ("Santa Ana College", "34014"),
+                                        ("Taft College", "31290")} and not hasattr(NG, "MAY_CONTINUE")
+      and len(NG.MAY_CONTINUE_MISSES) == 5 and "held-answer test" in NG.MAY_CONTINUE_NEXT,
+      "finding 3: the list is the three reviewed records, no matcher, and the next step names the five misses")
 check(NG.confidence(no_units([]), "no_units_read", None)["source"] == 60 and "60" in NG.confidence.__doc__
       and "UNKNOWN_SOURCE" in NG.confidence.__doc__, "finding 4: an unknown or missing method scores 60, and says so")
 touched = {(d.get("college"), str(d.get("control_number"))) for d in every if NG.may_continue(d)}
-check(touched == set(NG.MAY_CONTINUE_TOUCHES),
-      "finding 3: the new matcher touches the three records it names over every filed record (%d)" % len(touched))
+check(touched == set(NG.MAY_CONTINUE_REVIEWED),
+      "finding 3: over every filed record the cap reaches exactly the three reviewed records (%d)" % len(touched))
+
+# The catalog_figures_differ sentence on fixtures: a record meeting it, and the reader's failure (a required list
+# with a course that carries no units).
+def figs(courses_a, stated_a, computed, stated):
+    return {"record": {"program": {}, "blocks": [
+        {"name": "Required", "rule": "all", "stated": stated_a, "courses": courses_a},
+        {"name": "Select one", "rule": "choose_courses", "minimum": 1, "stated": 3,
+         "courses": [{"code": "X 1", "units": 3}, {"code": "X 2", "units": 4}]}]},
+        "score": {"arithmetic": {"pass": False, "status": "unequal", "computed": computed, "stated": stated}}}
+
+
+check(NG.figures_differ_fails(figs([{"code": "A 1", "units": 3}, {"code": "A 2", "units": 3}], 6, [9, 10], [8, 8]))
+      is None, "a record whose lists match their figures and sum past the total meets the sentence")
+check("carries no units" in (NG.figures_differ_fails(figs([{"code": "A 1", "units": 3}, {"code": "A 2"}], 6,
+                                                          [9, 10], [8, 8])) or ""),
+      "a required list with a course that carries no units fails the sentence")
+check("adds to" in (NG.figures_differ_fails(figs([{"code": "A 1", "units": 3}, {"code": "A 2", "units": 4}], 6,
+                                                   [10, 11], [8, 8])) or ""),
+      "a required list that does not add to its figure fails the sentence")
+check("past" in (NG.figures_differ_fails(figs([{"code": "A 1", "units": 3}, {"code": "A 2", "units": 3}], 6,
+                                                [9, 10], [9, 10])) or ""), "lists that do not sum past the total fail")
 
 
 # ── the S681 plan: one plan, three parts ──────────────────────────────────
@@ -305,8 +335,21 @@ check(all(r["before_image"]["checks"] == s680_after[key(r)] for r in rows681 if 
 plan3502 = NG.planned()
 check(len(plan3502) == 54 and collections.Counter(g for g, _ in plan3502.values())
       == {"catalog_figures_differ": 38, "no_units_printed": 16}, "#3502's plan names 54: 38 figures, 16 no units")
-want_b = {k for k in plan3502 if k[0] not in HELD681}
-check(by_part["B"] == want_b and len(want_b) == 54, "part B is #3502's 54, none at a held college: %d" % len(want_b))
+# Part B: every one of the 38 catalog rows checked against its gap's sentence in code; the 16 no-units rows held out.
+filed_by_key = {(d.get("college"), str(d.get("control_number"))): d for d in every}
+catalog = {k for k, (g, _) in plan3502.items() if g == "catalog_figures_differ"}
+meets = {k for k in catalog if NG.figures_differ_fails(filed_by_key[k]) is None}
+want_b = {k for k in meets if k[0] not in HELD681}
+check(by_part["B"] == want_b and len(want_b) == 21 and len(catalog) == 38,
+      "part B is the 38 catalog rows that meet the sentence: %d (%d fail)" % (len(want_b), len(catalog - meets)))
+held = {(x["college"], x["control_number"]): x for x in rc681["held_out"]}
+check(set(held) == (set(plan3502) - want_b) and len(held) == 33
+      and all(held[k]["why"] == NG.HOLD_NO_UNITS_PRINTED for k, (g, _) in plan3502.items() if g == "no_units_printed")
+      and all(held[k]["why"].startswith("the record does not meet the gap's own sentence: ") for k in catalog - meets),
+      "the receipt holds out the 16 no-units rows and the %d failing catalog rows, each with its reason" % len(catalog - meets))
+check({("College of the Sequoias", "37744"), ("Cypress College", "39887"), ("Ventura College", "39961"),
+       ("Victor Valley College", "40161")} <= set(held), "the second reader's four are held out")
+check(not any(r["gap"] == "no_units_printed" for r in rows681), "no no_units_printed row is in the plan")
 check(all(r["gap"] == plan3502[key(r)][0] for r in rows681 if r["part"] == "B"), "part B takes the plan's gap")
 check(by_part["C"] == set(NG.A5_FIVE), "part C is units rule A5's five rows")
 check(all(r["confidence"]["unit_arithmetic"] == 56 and r["gap"] is None
@@ -343,11 +386,13 @@ check(NG.update3_sql(rows681, "s681 named-gaps") == rc681["apply"] and rc681["ap
 row3 = re.compile(r"^  \((\d+), '([ABC])', '((?:[^']|'')*)', '((?:[^']|'')*)', (\d+), ", re.M)
 for part in ("preread", "apply", "rollback"):
     named3 = {(m.group(2), m.group(3).replace("''", "'"), m.group(4)) for m in row3.finditer(texts[part])}
-    check(named3 == {(r["part"], r["college"], r["control_number"]) for r in rows681} and len(named3) == 132,
-          "the %s names exactly the plan's 132 rows (A 73, B 54, C 5)" % part)
-check("e(expect) as (values (132))" in texts["apply"] and "e(expect) as (values (132))" in texts["rollback"]
-      and "kb/migrations/2026-11-18_s680_prreq_named_gaps_rollback.sql" in texts["rollback"][:3000],
-      "the apply and rollback abort off 132, and the rollback names the two-step order")
+    check(named3 == {(r["part"], r["college"], r["control_number"]) for r in rows681} and len(named3) == 99,
+          "the %s names exactly the plan's 99 rows (A 73, B 21, C 5)" % part)
+check("e(expect) as (values (99))" in texts["apply"] and "e(expect) as (values (99))" in texts["rollback"]
+      and "This rollback runs first" in texts["rollback"][:4000]
+      and "2026-11-18_s680_prreq_named_gaps_rollback.sql" in texts["rollback"][:4000]
+      and "2026-11-18_s680_prreq_units_rules_rollback_rows.sql" in texts["rollback"][:4000],
+      "the apply and rollback abort off 99, and the rollback names the undo order")
 with open(os.path.join(ROOT, "kb", "migrations", ".apply"), encoding="utf-8") as fh:
     check("s681_prreq_named_gaps" not in fh.read(), "the S681 plan is committed, not applied")
 print("S681 plan: A %d, B %d, C %d" % tuple(len(by_part[p]) for p in "ABC"))

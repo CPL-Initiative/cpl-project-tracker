@@ -120,21 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "no_units_printed",
-    "label": "The catalog prints no units for at least one required course.",
-    "words": "the catalog prints no units for a required course ('Pre-Nursing Option: Select one of the following' chooses 1 courses but 0 carry units)"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 40,
-   "course_list_match": 100,
-   "ge_pattern": 100,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {

@@ -98,21 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false,
-  "gaps": [
-   {
-    "gap": "catalog_figures_differ",
-    "label": "The catalog's own figures do not add up: each list matches its printed figure, and the lists sum past the program's printed total.",
-    "words": "the printed list figures sum to 24-27, past the program's printed total 22-25"
-   }
-  ],
-  "confidence": {
-   "unit_arithmetic": 50,
-   "course_list_match": 100,
-   "ge_pattern": null,
-   "catalog_year": 100,
-   "source": 100
-  }
+  "pass": false
  },
  "record": {
   "program": {
