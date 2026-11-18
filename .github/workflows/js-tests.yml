@@ -260,6 +260,12 @@ jobs:
       # two-signal re-check sends to a person, and the store's active discipline. Pure stdlib.
       - name: Discipline in doubt (kb/_ccr_seed_recheck_dryrun.py --doubt)
         run: python3 tests/ccr_doubt_test.py
+      # Issue 3447: rulings fold into the overlay and stay final; a person's discipline row validates a merge target.
+      - name: Rulings stick (kb/_apply_curation.py ruling fold, reseed curated guard)
+        run: python3 tests/apply_curation_rulings_test.py
+      # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
+      - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
+        run: python3 tests/ccr_confidence_rules_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py

@@ -3,7 +3,7 @@
 // Carried from the Common Course Reference tab (unified_courses.js) before it retires into this List (SkyJujube,
 // 2026-11-04; Sam 2026-11-03: the List is each reference's one workspace). The tab's edits curators still used carry:
 // Rename (kb_curation unified_title), Set the discipline (discipline), Confirm (the discipline as it stands; a merged
-// course's confirmation stamps validated_at). Moving a course stays in SkyView, under the re-mint playbook.
+// course's confirmation is a discipline row; issue 3447). Moving a course stays in SkyView, under the re-mint playbook.
 //
 // WHAT THIS GUARDS:
 //   (1) a course's panel reads its common course from the reference's file, once, and shows it: name, discipline and
@@ -190,8 +190,10 @@ async function openPanel(t, title, re) {
     await openPanel(t, "Tool and Equipment Applications", /Confidence/);
     pword(t.d, /^Confirm Construction$/).click(); await until(() => t.writes.length === 1);
     const w4 = t.writes[0] || {};
-    check("(4) ⭐ a merged course's confirmation stamps its rows", w4.method === "PATCH" && /course_id=eq\.CNST%20M1009/.test(w4.url)
-      && w4.body.validated_by === "reviewer@rccd.edu" && !!w4.body.validated_at, JSON.stringify(w4));
+    // Issue 3447: the PATCH that stamped validated_at was refused by the merge bots' row policy; a merged course's
+    // confirmation is a discipline row like any other, and the overlay fold sets validated_at from it.
+    check("(4) ⭐ a merged course's confirmation POSTs its discipline, never a PATCH", w4.method === "POST" && w4.body.course_id === "CNST M1009"
+      && w4.body.field === "discipline" && w4.body.value === "Construction" && w4.body.reviewer_email === "reviewer@rccd.edu", JSON.stringify(w4));
     await openPanel(t, "Welding I", /Confidence/);
     check("(4) an official C-ID course keeps its authority's title", !pword(t.d, /^Rename$/) && /An official C-ID course keeps its authority's title/.test(txt(panel(t.d))));
     check("(4) a confirmed course offers no Confirm", !pword(t.d, /^Confirm /) && /Confirmed by curator@rccd\.edu on 2026-09-01/.test(txt(panel(t.d))));
