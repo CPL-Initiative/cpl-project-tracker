@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-588 document(s).
+589 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -86,6 +86,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A deploy that deploys nothing leaves the old environment running](../kb-notes/methodology-a-deploy-that-deploys-nothing-leaves-the-old-environment-running.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A derived summary field used as a filter is a membership test in disguise](../kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A diagnosis that does not stop the run is a log line: the 2026-09-08 cron outage](../kb-notes/methodology-a-diagnosis-that-does-not-stop-the-run-is-a-log-line.md) | methodology | published | 2026-09-10 | 2026-09-10 |
+| [A dispatch-only feed goes stale without a sound](../kb-notes/methodology-a-dispatch-only-feed-goes-stale-without-a-sound.md) | methodology | published | 2026-11-17 | 2026-11-17 |
 | [A display name is not a key — and the entry that still matches is the one that lies](../kb-notes/methodology-a-display-name-is-not-a-key.md) | methodology | published | 2026-09-15 | 2026-09-30 |
 | [A double-decoded string needs the codec that decoded it — cp1252, a C1 passthrough, and repair before you collapse whitespace](../kb-notes/methodology-a-double-decoded-string-needs-the-codec-that-decoded-it.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A dropped row still needs its own name](../kb-notes/methodology-a-dropped-row-still-needs-its-own-name.md) | methodology | published | 2026-09-17 | 2026-09-17 |

@@ -1400,6 +1400,9 @@ jobs:
       # The daily run rebuilds the file (scripts/daily_build.sh), so no staleness check here (COBIx on #3379).
       - name: Session spend parser (kb/_build_session_spend.py)
         run: python3 tests/session_spend_build_test.py
+      # The blocked-catalog hunt: one to-do on the College Data Collection page and the Commons (S678, #3464 item 8).
+      - name: Blocked-catalog to-do (kb/_blocked_catalogs.py)
+        run: python3 tests/blocked_catalogs_test.py
       # The leftover-title decisions' file and the link-only apply (S678, COBIx's item 2 on #3464).
       - name: Leftover-title decisions (kb/_build_left_map.py, kb/_apply_left_map.py)
         run: python3 tests/left_map_build_test.py
