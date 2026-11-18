@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-18_s679_prreq_rescore_preread.sql
-name=s679_prreq_rescore_preread
+file=kb/migrations/2026-11-18_s679_prreq_rescore_apply.sql
+name=s679_prreq_rescore_apply
