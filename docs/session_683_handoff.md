@@ -37,10 +37,13 @@ COBIx posted at 13:55Z, after handoff 682 was written. Read this file, then the 
 
 ## What shipped
 
-- **#3511** (draft; `claude/awesome-fermat-xx99dj`, head `560dd828`): the 77 paintings Sam dropped in the First Light
-  tab leave the rotation (271 to 194, marks consumed through id 90), as the 2026-11-17 Apply run built them; four
-  First Light tests repaired to pass on an applied list; `kb/dependency_map.json` regenerated;
-  `tools/first_light_verify.json` (194 checked, 0 broken). `js-tests.yml` dispatched on the branch at about 14:50Z.
+- **#3511** (`claude/awesome-fermat-xx99dj`, head `3270ae9d`; ready for Sam's merge, `test` green on that head): the
+  77 paintings Sam dropped in the First Light tab leave the rotation (271 to 194, marks consumed through id 90), as the
+  2026-11-17 Apply run built them; four First Light tests repaired to pass on an applied list;
+  `kb/dependency_map.json` regenerated; `tools/first_light_verify.json` (194 checked, 0 broken). The first `test` run
+  (dispatched, since the art workflow's `[skip ci]` commit was the head) failed on one guard: `first_light_picks_applied`
+  ran 5 checks against a floor of 7. The drop is intended, so its floor in `tests/check_floor.json` went to 5 by hand,
+  with the reason in the file's note; the second run passed.
 - Held back: the 13 My CPL Story photo adds. The public pages' hero rule refuses them (lane, *Phase B*).
 - The conductor's reply to COBIx on #3153 (comment 6981931214), with the 13 photos' alt words in a collapsed table;
   Sam notified by push at about 14:45Z.
@@ -82,11 +85,11 @@ waits. This firing's one notice was the First Light PR #3511, his to merge.
 No new ruling from Sam in his own words, so `docs/reference/sam_rulings.md` gets no row. COBIx relayed two things on
 #3153 (comment 6980642612, 13:55Z 2026-11-18), quoting none of Sam's words: *"Sam asked for this one (Nov 18, 5:54 AM
 PT)"* and *"Sam chose not to turn on the repo setting"*. Both are recorded as COBIx's relay. The second sits beside
-Sam's Sheet 186 card 5 ruling of 2026-11-13 (the repository lets Actions create PRs); both Apply runs read the setting
-off. The lane keeps both. The conductor's: `d-stand-down-firing-took-first-light-ask-s682`,
-`d-first-light-paintings-half-only-s682`, `d-receipt-checks-retire-after-tab-apply-s682`. Rows (8, drafted, not yet
-applied): `kb/migrations/2026-11-18_s682_cpl_memory_rows.sql`, its rollback beside it; the conductor points `.apply`
-at it.
+Sam's Sheet 186 card 5 answer of 13:15Z 2026-11-13 (the chip *on*: the repository lets Actions create PRs); both
+Apply runs read the setting off, the second four days after that answer. The lane keeps both. The conductor's: `d-stand-down-firing-took-first-light-ask-s682`,
+`d-first-light-paintings-half-only-s682`, `d-receipt-checks-retire-after-tab-apply-s682`. Rows (8, applied by the
+runner, run 44331719811, receipt `kb/receipts/migration_s682_cpl_memory_rows_44331719811.json`):
+`kb/migrations/2026-11-18_s682_cpl_memory_rows.sql`, its rollback beside it.
 
 ## Patterns that worked
 
@@ -115,26 +118,27 @@ session Sam starts by hand works the queue itself.
 
 | PR | State | Next |
 |---|---|---|
-| #3511 First Light paintings | draft until `test` passes, then ready for Sam's merge | Sam merges it. No session merges it. |
+| #3511 First Light paintings | ready; `test` green on `3270ae9d` | Sam merges it. No session merges it. |
 | #3497 named gaps | draft; 99-row plan reviewed, not applied | pre-read, apply, rebuild rollback, merge |
 | #3508 released colleges, A4 | draft; 13-row write not applied | findings 1 and 2, display readers, then apply |
 | #3492 Chabot | draft; rolled back; reader fix and receipt on the branch; its `.apply` still names the rollback (a rerun aborts on the count guard) | re-read, standing test, load, merge |
-| #3512 this checkpoint | draft | the conductor merges it last |
-| samueltlee/CPLBrain#821 the vault note | draft | merge |
+| #3512 this checkpoint | open | the conductor merges it last |
+| samueltlee/CPLBrain#821 the vault note | merged 15:06Z, `3d631f0` | none |
 | #3500; #3293, #3482, #3472, #3383 | untouched | a named-programs-only input; a plain session |
 
 Subscriptions: none held. Check-ins: none. No artifact watch.
 
-Spend: not available; 2026-11-18T14:13Z to <END>.
+Spend: not available; 2026-11-18T14:13Z to 2026-11-18T15:35Z.
 
-<!-- s682-counts -->
-This firing had no cost readout (`get_session` was not among its tools). Token counts as of 14:50Z: the conductor
-(served by the routine's configured conductor model throughout) 97 API calls, 0.15 million output, 0.35 million
-cache-write and 25.6 million cache-read tokens; one checkpoint-docs agent. All of it was curation (the First Light
-apply) and the checkpoint; none was collection.
-<!-- /s682-counts -->
+This firing had no cost readout (`get_session` was not among its tools). Token counts from the session's transcripts
+at 15:18Z, a few calls before the end: the conductor (served by the routine's configured conductor model throughout)
+130 API calls, 0.19 million output, 0.43 million cache-write and 39.6 million cache-read tokens; one checkpoint-docs
+agent 50 calls, 0.03 million output, 0.16 million cache-write and 6.4 million cache-read tokens. Priced the way handoff
+682 priced S681's counts, that is about $23 for the conductor and $3 for the agent, about $26 in all: an estimate, and
+the billing page is the record. By purpose: the First Light work (curation) about $17, the checkpoint about $9. None of
+it was collection or infrastructure.
 
-S682: cost not available (no get_session; token counts above); records collected 0; outline rows added 0; substantive PRs merged 0 (one opened for Sam's merge, #3511).
+S682: cost not available (no get_session; token counts above, about $26 at list prices, an estimate); records collected 0; outline rows added 0; substantive PRs merged 0 (one opened for Sam's merge, #3511).
 
 Opening line: *Greetings, you are SkyNuthatch (Session 683), see SkyVireo's handoff, `docs/session_683_handoff.md`,
 let's keep rolling with our queue.*
