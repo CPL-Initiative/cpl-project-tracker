@@ -338,6 +338,10 @@ jobs:
       # step leaves a local degree alone though its captured page spans the sibling section.
       - name: Program requirements reconcile (award filters, the Cal-GETC step)
         run: python3 tests/program_requirements_reconcile_test.py
+      # Sam's rulings of 2026-11-17 (#3461): a local degree's major counts toward general education, a short
+      # high end passes as an over-high end does, and the general education open slot, on the four tested programs.
+      - name: Program requirements rulings of 2026-11-17 (local overlap, short high end, GE open slot)
+        run: python3 tests/program_requirements_rulings_2026_11_17_test.py
       - name: Reconcile reader gaps (holds, sources.json, rescore marker; S658)
         run: python3 tests/reconcile_reader_gaps_test.py
       # Phase 2 (S353): every program at one college. The catalog's program
@@ -468,6 +472,10 @@ jobs:
       # python; same non-required check.
       - name: MAP Custom Report loader guard (mapping, minimization, read-back)
         run: python3 tests/map_custom_report_sync_test.py
+      # ACE's catalog CR text (S678): keyed on AceID, one row per pair, the typographic rule agreeing with
+      # cr_reference.js on one fixture, a side by side that adds up, and the migration's grants closed.
+      - name: ACE catalog CR text guard (key, typographic rule, grants)
+        run: python3 tests/map_ace_catalog_cr_test.py
       # The salt-rotation sketch reads past PostgREST's 1,000-row cap and keeps
       # one pull at rest (S611; Sam's student-grain ruling, #2919 step 3).
       - name: MAP key sketch keeps one pull
@@ -1075,6 +1083,11 @@ jobs:
       # stdlib; same non-required check.
       - name: Context-pressure meter (kb/_context_budget.py)
         run: python3 tests/context_budget_test.py
+      # The read-only Side by side views (S678, COBIx's item 7 on #3464): the fixture cards' figures in
+      # kb/side_by_side.json and kb/exhibit_side_by_side.json, and the builder's read-only, scorer-free shape.
+      # Pure stdlib; same non-required check.
+      - name: Side by side files (kb/_build_side_by_side.py)
+        run: python3 tests/side_by_side_test.py
       # Merge-chain flattening (Session 187) — the curation overlay stores one
       # hop per row, so an identity merged into and then merged onward is both a
       # source and a target; the merge-target loop never skipped those, and 340
@@ -1136,6 +1149,8 @@ jobs:
           python3 tests/credential_family_test.py
           # Sheet 181's naming form and its frozen plan: an "or" between two tests coded as written, a choice kept (S648).
           python3 tests/sheet181_ruled_renames_test.py
+          # A slash joining words in a canonical title is written "and" (Sam, 2026-11-18): the rule, the plan, the guard.
+          python3 tests/slash_titles_test.py
           # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
           python3 tests/credential_family_apply_test.py
           # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.

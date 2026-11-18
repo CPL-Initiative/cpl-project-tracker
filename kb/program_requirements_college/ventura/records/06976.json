@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     63.0,
     63.0
@@ -76,9 +76,7 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 63.0-63.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +146,8 @@
     "Create and critique photographic works utilizing appropriate compositional considerations.",
     "Research and discuss past and present works, recognize and analyze the history and social role of photographic images."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -312,5 +313,14 @@
    "The outcomes are printed in the page's program student learning outcomes tab for this award."
   ]
  },
- "extracted_run": "39622549965"
+ "extracted_run": "39622549965",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 33, the major total the catalog prints; the major and general education sum to 63 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

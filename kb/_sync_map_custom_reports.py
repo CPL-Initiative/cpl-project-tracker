@@ -75,6 +75,9 @@ import urllib.error
 import urllib.request
 from collections import Counter
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from cr_typographic import curator_refs, self_recall, side_by_side, typo_key  # noqa: E402  (kb/, beside this file)
+
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
@@ -107,6 +110,11 @@ STUDENT_VIEW = "View_StudentDetailsCredits_APIDataset"
 # already rolls those up — we take exactly two columns from it, because they are
 # the ones nothing else carries: the ACE id and what that id IS.
 CATALOG_VIEW = "View_ExhibitCRsCatalog_Dataset"
+# ACE's own recommendation wording on that view (S678): one catalog row per credit recommendation. Kept, one row
+# per distinct (AceID, CreditRecommendation), in map_ace_catalog_cr through map_ace_catalog_cr_load().
+ACE_CR_COLUMN = "CreditRecommendation"
+ACE_CR_RPC = "rpc/map_ace_catalog_cr_load"
+ACE_CR_BATCH = 2000
 
 # ── Column contracts ───────────────────────────────────────────────────────
 # Mapped BY NAME, never by position. The API echoes the requested columnName
@@ -287,6 +295,155 @@ def ace_titles(report: list) -> list[dict]:
         return max(sorted(votes), key=lambda c: votes[c]) if votes else None
     return [{"exhibit_id": k, "title": v, "cpl_type_code": _type(k)}
             for k, v in sorted(best.items())]
+
+
+class AceCheckFailed(SystemExit):
+    """An ACE catalog check failed: the all-digit AceID contract stop or the side-by-side sum check.
+
+    A SystemExit, so a caller that runs the check alone still stops. main() catches it, stores no ACE text
+    tonight, lets the MAP load go ahead, and exits 1 at the end (COBIx on #3468, comment 6965997052): the
+    ACE text is enrichment beside the MAP load and never holds back map_college_cr_unit or map_student_credit.
+    """
+
+
+def ace_catalog_crs(report: list) -> tuple[list[dict], dict]:
+    """One row per distinct (AceID, CreditRecommendation), from the catalog the daily pull already fetches.
+
+    WHY (S678, COBIx item 5 on #3464). The catalog's `CreditRecommendation` is ACE's own wording, and 25,984
+    Common CR rows wait on it: without it no MAP wording can be called an exact match to ACE. The pull has asked
+    for the column since 2026-08-14 and this file dropped it, the same cost `ace_titles()` above records.
+
+    THE KEY IS AceID. The catalog also carries a numeric `ExhibitID`, a different namespace; this function never
+    reads it. An AceID that is all digits is skipped and counted (the table's check constraint refuses one too),
+    and when most of them are, the column contract has broken: AceCheckFailed, and main() stores no ACE text.
+
+    THE TEXT IS KEPT AS THE CATALOG SENT IT, trimmed (`_clean`, this file's one convention). `typo_key` rides
+    beside it as the typographic rule's comparison key (kb/cr_typographic.py); the text itself is never cleaned.
+    A view without the column yields no rows, never a guess.
+    """
+    ds = dataset(report, CATALOG_VIEW)
+    stats = {"catalog_rows": 0, "numeric_ace_id": 0, "blank": 0, "pairs": 0}
+    if ds is None:
+        return [], stats
+    cols = [c.strip() for c in (ds.get("columnName") or [])]
+    if "AceID" not in cols or ACE_CR_COLUMN not in cols:
+        return [], stats
+    i_ace, i_cr = cols.index("AceID"), cols.index(ACE_CR_COLUMN)
+    seen: dict[tuple, dict] = {}
+    for row in rows_of(ds):
+        if not isinstance(row, list) or len(row) <= max(i_ace, i_cr):
+            continue
+        stats["catalog_rows"] += 1
+        ace, cr = _clean(row[i_ace]), _clean(row[i_cr])
+        if not ace or not cr:
+            stats["blank"] += 1
+            continue
+        if ace.isdigit():
+            stats["numeric_ace_id"] += 1
+            continue
+        if (ace, cr) not in seen:
+            seen[(ace, cr)] = {"exhibit_id": ace, "credit_recommendation": cr, "typo_key": typo_key(cr)}
+    kept = stats["catalog_rows"] - stats["blank"]
+    if kept and stats["numeric_ace_id"] * 2 > kept:
+        raise AceCheckFailed(
+            f"FATAL: {stats['numeric_ace_id']:,} of {kept:,} {CATALOG_VIEW} rows carry an all-digit AceID. That is "
+            "the catalog's numeric ExhibitID namespace, never an ACE id; fix the column contract before loading.")
+    stats["pairs"] = len(seen)
+    return [seen[k] for k in sorted(seen)], stats
+
+
+def report_ace_crs(pairs: list, stats: dict, cr_rows: list) -> dict:
+    """Print the catalog's pairs and the MAP-to-ACE side by side from this same pull.
+
+    exact + typographic + differs + ace_missing must equal the distinct MAP (exhibit, wording) pairs counted HERE,
+    apart from the classifier, or AceCheckFailed: main() then stores no ACE text and exits 1 after the MAP load.
+    side_by_side() adds each pair to one bucket and to its own total together, so comparing the buckets with that total could never fail (the second reader on #3468); a set built
+    from the rows directly can disagree with it, and a classifier that drops or double counts a pair is caught.
+    """
+    map_pairs = [(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows]
+    sbs = side_by_side(map_pairs, [(p["exhibit_id"], p["credit_recommendation"]) for p in pairs])
+    distinct = {((e or "").strip(), (w or "").strip()) for e, w in map_pairs}
+    distinct = {x for x in distinct if x[0] and x[1]}
+    print(f"\n── {CATALOG_VIEW} → map_ace_catalog_cr ──")
+    print(f"   {stats['catalog_rows']:,} catalog rows → {stats['pairs']:,} distinct (AceID, CreditRecommendation) "
+          f"pairs on {sbs['ace_exhibits']:,} exhibits; {stats['blank']:,} blank, "
+          f"{stats['numeric_ace_id']:,} all-digit ids skipped")
+    print(f"   MAP wording beside ACE's, {sbs['map_pairs']:,} MAP pairs with an exhibit id: "
+          f"exact {sbs['exact']:,} · typographic only {sbs['typographic']:,} · differs {sbs['differs']:,} · "
+          f"ACE text missing {sbs['ace_missing']:,} ({sbs['no_exhibit']:,} with no exhibit id, apart)")
+    print(f"   typographic rule on the MAP side: {sbs['map_typo_settled']:,} MAP pairs share an exhibit and a "
+          "cleaned wording with another MAP wording (source text unchanged)")
+    total = sbs["exact"] + sbs["typographic"] + sbs["differs"] + sbs["ace_missing"]
+    if total != len(distinct):
+        raise AceCheckFailed(f"FATAL: the side by side does not add up: its buckets hold {total:,} MAP pairs and the "
+                         f"pull holds {len(distinct):,} distinct (exhibit, wording) pairs.")
+    return sbs
+
+
+def report_self_recall(cr_rows: list, pairs: list, key: str) -> dict | None:
+    """The self-recall line: the typographic rule against curators' own placements in cr_reference_decisions.
+
+    A read only, with the service key, paged. A failed read says so and never fails the run (the MAP load is live).
+    """
+    rows, offset = [], 0
+    try:
+        while True:
+            _, raw = _request("GET", "cr_reference_decisions?select=group_key,decision,canonical,members,excluded,"
+                                     f"updated_by&order=group_key&limit=1000&offset={offset}", key)
+            page = json.loads(raw or b"[]")
+            rows.extend(page)
+            if len(page) < 1000:
+                break
+            offset += len(page)
+    except Exception as e:
+        print(f"   self-recall NOT measured: cr_reference_decisions could not be read ({_why(e)}).")
+        return None
+    refs, bots = curator_refs(rows)
+    rec = self_recall([(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows],
+                      [(p["exhibit_id"], p["credit_recommendation"]) for p in pairs], refs)
+    print(f"\nSelf-recall of the typographic rule against {len(refs):,} wordings curators confirmed "
+          f"({len(rows):,} decision rows read, {bots:,} bot rows left out):")
+    for k, words in (("ace", "MAP wording beside a typographic-only ACE line"),
+                     ("map", "two MAP wordings on one exhibit")):
+        r = rec[k]
+        print(f"   {words}: {r['pairs']:,} pairs; both placed by a curator {r['agree'] + r['contradict']:,}: "
+              f"agree {r['agree']:,} · contradict {r['contradict']:,} ({r['unplaced']:,} not both placed)")
+    return rec
+
+
+def load_ace_catalog_crs(pairs: list, key: str) -> dict | None:
+    """Send the pairs to map_ace_catalog_cr_load() in batches. Runs after the promotion, so live is already current.
+
+    The function inserts a new pair and moves only last_seen and typo_key on a pair it holds, so a batch sent
+    twice after a transient failure changes nothing: a retry is safe here, unlike the staging inserts.
+    A 404 means the migration (kb/migrations/2026-11-17_s678_map_ace_catalog_cr.sql) is not applied yet; the run
+    says so and goes on, because the night's MAP load has already landed and must not read as failed.
+    """
+    totals = {"sent": 0, "added": 0, "seen_again": 0, "held": None}
+    for i in range(0, len(pairs), ACE_CR_BATCH):
+        chunk = pairs[i:i + ACE_CR_BATCH]
+        for wait in RETRY_WAITS + (None,):
+            try:
+                _, raw = _request("POST", ACE_CR_RPC, key, {"p_rows": chunk}, timeout=300)
+                break
+            except Exception as e:
+                if isinstance(e, urllib.error.HTTPError) and e.code == 404:
+                    print("   map_ace_catalog_cr_load is not in the database yet (HTTP 404): the S678 migration is "
+                          "not applied. ACE catalog text NOT stored tonight; the MAP load above is unaffected.")
+                    return None
+                if isinstance(e, urllib.error.HTTPError) and not _transient(e):
+                    detail = e.read().decode("utf-8", errors="replace")[:400]
+                    raise SystemExit(f"FATAL: map_ace_catalog_cr_load refused the batch at pair {i:,}: HTTP {e.code} "
+                                     f"{detail}\n  The MAP load above is already live and unaffected.")
+                if not _transient(e) or wait is None:
+                    raise SystemExit(f"FATAL: map_ace_catalog_cr_load failed at pair {i:,}: {_why(e)}. The MAP load "
+                                     "above is already live and unaffected; the next night sends every pair again.")
+                _sleep(wait)
+        rep = json.loads(raw or b"{}")
+        for k in ("sent", "added", "seen_again"):
+            totals[k] += int(rep.get(k) or 0)
+        totals["held"] = rep.get("held", totals["held"])
+    return totals
 
 
 def rows_of(ds: dict) -> list:
@@ -847,9 +1004,18 @@ def main() -> int:
     held = [n for n in HELD_COLUMNS if n in (st_ds.get("columnName") or [])]
     print(f"\n   fetched but NOT stored ({len(held)}): {', '.join(held)}")
 
+    ace_fatal = None
+    try:
+        ace_crs, ace_stats = ace_catalog_crs(report)
+        report_ace_crs(ace_crs, ace_stats, cr_rows)
+    except AceCheckFailed as e:
+        ace_fatal, ace_crs = str(e.code), []
+        print(f"::error::{ace_fatal} map_ace_catalog_cr is LEFT ALONE tonight; the MAP load goes ahead, "
+              "and the run exits 1 at the end.")
+
     if args.dry_run:
         print("\n--dry-run: nothing written.")
-        return 0
+        return ace_exit(0, ace_fatal)
 
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
@@ -890,7 +1056,7 @@ def main() -> int:
     if args.no_promote:
         print("\nStaging loaded. --no-promote: NOTHING LIVE HAS CHANGED.")
         print("Promote with docs/map_custom_report_load.md, or re-run without the flag.")
-        return 0
+        return ace_exit(0, ace_fatal)
 
     print("\nPromoting staging -> live (gated, one transaction)...")
     rep = promote(key)
@@ -900,7 +1066,7 @@ def main() -> int:
               f"map_data_loads {rb['id']} at {rb['loaded_at']}")
         print(f"   {rb['note']}")
         print("\nLive is current.")
-        return 0
+        return ace_exit(store_ace_crs(ace_crs, key, cr_rows), ace_fatal)
     cr, st, stu = rep.get("cr_unit", {}), rep.get("student", {}), rep.get("students", {})
     print(f"   map_college_cr_unit   {cr.get('was'):,} -> {cr.get('now'):,}")
     print(f"   map_student_credit    {st.get('was'):,} -> {st.get('now'):,}")
@@ -909,6 +1075,32 @@ def main() -> int:
     for w in rep.get("warnings") or []:
         print(f"   ⚠️  {w}")
     print("\nLive is current.")
+    return ace_exit(store_ace_crs(ace_crs, key, cr_rows), ace_fatal)
+
+
+def ace_exit(rc: int, ace_fatal: str | None) -> int:
+    """The run's exit code: 1 when an ACE catalog check failed, after everything else has run, so the failure watch
+    shows the night red while map_college_cr_unit and map_student_credit are current."""
+    if ace_fatal is None:
+        return rc
+    print(f"\n::error::ACE catalog check failed earlier in this run: {ace_fatal} map_ace_catalog_cr was LEFT ALONE; "
+          "the MAP data above is unaffected. Exiting 1.")
+    return rc or 1
+
+
+def store_ace_crs(ace_crs: list, key: str, cr_rows: list | None = None) -> int:
+    """After the promotion: ACE's catalog text into map_ace_catalog_cr, then the self-recall line. Enrichment beside
+    the MAP load, which is already live; a pull with no catalog column stores nothing and changes nothing."""
+    if not ace_crs:
+        print("\nACE catalog text: no CreditRecommendation pairs parsed; map_ace_catalog_cr LEFT ALONE.")
+        return 0
+    if cr_rows is not None:
+        report_self_recall(cr_rows, ace_crs, key)
+    print(f"\nStoring ACE catalog text ({len(ace_crs):,} pairs, {ACE_CR_BATCH:,} per call)...")
+    got = load_ace_catalog_crs(ace_crs, key)
+    if got is not None:
+        print(f"   map_ace_catalog_cr: {got['added']:,} new pairs, {got['seen_again']:,} seen again, "
+              f"{got['held'] if got['held'] is not None else '?'} held")
     return 0
 
 

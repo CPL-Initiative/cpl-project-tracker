@@ -132,6 +132,9 @@
       "#crl-pn-note{width:100%;box-sizing:border-box}",
       ".crl-pn-hits{margin:6px 0 0;padding-left:1.1em;display:grid;gap:4px;font-size:.88rem}",
       "#crl-pn-pick{width:100%;box-sizing:border-box;margin:4px 0}",
+      "#crl-pn-sbs-ex{width:100%;box-sizing:border-box;margin:4px 0}",
+      ".crl-pn-sbs{margin:10px 0}",
+      ".crl-pn-sbs-t{display:block}",
       ".crl-acts{display:flex;flex-wrap:wrap;gap:6px 18px;align-items:center}",
       ".crr-status{margin:6px 0 0;min-height:1.2em;color:var(--text-body)}",
       ".crr-search{flex:1;min-width:200px;padding:7px 10px;border:1px solid var(--border-strong);",
@@ -742,6 +745,123 @@
      panel), the decision words the Reference drawer carries (Confirm the group, Not a topic), and the rest folded: the
      credentials and courses it is articulated under, the rung's reason and the official title. The title's drawer
      moves in with it (the engine). Its words answer in its own status line. */
+  // ── MAP and ACE text side by side (S678, COBIx item 5 on #3464) ─────────
+  // The typographic rule, the port of kb/cr_typographic.py: two wordings are one recommendation when they read the
+  // same after clean_rec plus a case-insensitive whitespace squash. tests/fixtures/cr_typographic_cases.json holds the
+  // cases both must agree on (tests/map_ace_catalog_cr_test.py, tests/cr_ace_side_by_side.test.js); change all three
+  // together. It compares; it never rewrites a wording.
+  var CR_SMALL = { a: 1, an: 1, and: 1, as: 1, at: 1, but: 1, by: 1, "for": 1, "in": 1, into: 1, of: 1, on: 1, or: 1, the: 1, to: 1, "with": 1 };
+  var CR_HEAD = /^(\d+(?:\.\d+)?)(?:\s*(-|–|to|or)\s*(\d+(?:\.\d+)?))?\s+((?:semester|quarter)\s+)?(hours?|units?|credits?)\s+(in|of)\s+(.*)$/i;
+  function crSquash(t) { return String(t == null ? "" : t).replace(/\s+/g, " ").trim(); }
+  function crNum(n) { return /^\d+\.0+$/.test(n) ? n.split(".")[0] : n; }
+  function crTitle(topic) {
+    return topic.split(" ").map(function (w, i) {
+      return w && w === w.toLowerCase() && /^[a-z]/i.test(w) && !(i && CR_SMALL[w]) ? w.charAt(0).toUpperCase() + w.slice(1) : w;
+    }).join(" ");
+  }
+  function crClean(text) {
+    var t = crSquash(text);
+    if (!t) return "";
+    t = t.replace(/\s*&\s*/g, " and ").replace(/\bintro\.?\s+to\b/gi, "Introduction to").replace(/\bassembler\s+language\b/gi, "Assembly Language");
+    t = crSquash(t);
+    var m = CR_HEAD.exec(t);
+    if (!m) return t;
+    var lo = crNum(m[1]), sep = (m[2] || "").toLowerCase(), hi = m[3], unit = m[5].toLowerCase().replace(/s$/, ""), amount, plural;
+    if (hi != null) { hi = crNum(hi); amount = sep === "-" || sep === "–" ? lo + "-" + hi : lo + " " + sep + " " + hi; plural = true; }
+    else { amount = lo; plural = parseFloat(lo) !== 1; }
+    var term = (m[4] || "").trim().toLowerCase();
+    return [amount, term, unit + (plural ? "s" : "")].filter(Boolean).join(" ") + " " + m[6].toLowerCase() + " " + crTitle(m[7]);
+  }
+  function crTypoKey(text) { return crSquash(crClean(text).toLowerCase().replace(/\s*-\s*/g, "-")); }
+  // Read once per wording or exhibit a visit asks about; a new visit reads again (nothing is stored).
+  var sbs = {};
+  function sbsGet(path) {
+    return timed(function (signal) {
+      return fetch(REST + "/map_exhibit_cr_side_by_side?" + path, { headers: authHeaders(), signal: signal })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); });
+    }, "the MAP and ACE text");
+  }
+  var SBS_EXHIBITS = 6;
+  function sbsLoad(cacheKey, exhibitsOf) {
+    if (sbs[cacheKey]) return;
+    sbs[cacheKey] = { status: "loading" };
+    var paint = function () { var box = document.getElementById("crl-pn-sbs-box"); if (box && box.getAttribute("data-key") === cacheKey && sbsPaint) sbsPaint(); };
+    exhibitsOf().then(function (ids) {
+      ids = (ids || []).filter(Boolean);
+      var shown = ids.slice(0, SBS_EXHIBITS);
+      if (!shown.length) { sbs[cacheKey] = { status: "ok", ids: [], more: 0, lines: [] }; return; }
+      return sbsGet("select=exhibit_id,source,cr_text,rows_n&exhibit_id=in.(" + shown.map(function (x) { return encodeURIComponent('"' + x + '"'); }).join(",")
+        + ")&order=exhibit_id,source,cr_text&limit=2000").then(function (lines) {
+        sbs[cacheKey] = { status: "ok", ids: shown, more: ids.length - shown.length, lines: lines || [] };
+      });
+    }).catch(function (e) { sbs[cacheKey] = { status: "error", why: (e && e.message) || "the read failed" }; })
+      .then(paint);
+  }
+  // One row per typographic key on an exhibit: MAP's wordings and ACE's lines that read the same after the rule sit on
+  // one row, so a casing-only difference shows as two spellings side by side.
+  function sbsRows(c) {
+    var out = [];
+    c.ids.forEach(function (ex) {
+      var lines = c.lines.filter(function (l) { return l.exhibit_id === ex; }), groups = {}, order = [];
+      var hasAce = lines.some(function (l) { return l.source === "ACE"; });
+      lines.forEach(function (l) {
+        var k = crTypoKey(l.cr_text);
+        if (!groups[k]) { groups[k] = { map: [], ace: [] }; order.push(k); }
+        groups[k][l.source === "ACE" ? "ace" : "map"].push(l.cr_text);
+      });
+      if (!lines.length) out.push({ exhibit: ex, map: [], ace: [], note: "Neither MAP nor ACE text is held for this exhibit." });
+      order.forEach(function (k) {
+        var g = groups[k], note;
+        var exact = g.map.some(function (t) { return g.ace.indexOf(t) > -1; });
+        if (!hasAce) note = "ACE text missing: the catalog holds no recommendation for this exhibit.";
+        else if (!g.ace.length) note = "No ACE line matches this MAP wording.";
+        else if (!g.map.length) note = "ACE line with no MAP wording.";
+        else if (exact && g.map.length === 1 && g.ace.length === 1) note = "Same text.";
+        // What the rule found, never a verdict: whether these are one recommendation is a curator's call.
+        else note = "These differ only in capitals, spacing or unit words" + (g.map.length > 1 ? " (" + g.map.length + " MAP spellings)" : "") + ".";
+        out.push({ exhibit: ex, map: g.map, ace: g.ace, note: note });
+      });
+    });
+    return out;
+  }
+  var sbsPaint = null;
+  function sbsSection(r, h) {
+    var L = listState(), look = L.sbsLook || (L.sbsLook = {}), typed = look[r.ut] || "";
+    var ex = crSquash(typed).toUpperCase(), cacheKey = ex ? "x:" + ex : "w:" + r.m.rec;
+    if (!signedIn()) return h.el("div", null, [h.heading("MAP and ACE text"),
+      h.el("p", { cls: "crr-muted", text: "Sign in or unlock with the team phrase to read MAP's wording beside ACE's catalog text." })]);
+    sbsLoad(cacheKey, ex ? function () { return Promise.resolve([ex]); } : function () {
+      return sbsGet("select=exhibit_id&source=eq.MAP&cr_text=eq." + encodeURIComponent(r.m.rec) + "&order=rows_n.desc&limit=200")
+        .then(function (rows) { var seen = {}; return (rows || []).map(function (x) { return x.exhibit_id; }).filter(function (x) { return seen[x] ? false : (seen[x] = 1); }); });
+    });
+    var box = h.el("div", { id: "crl-pn-sbs-box", "data-key": cacheKey });
+    function fill() {
+      var c = sbs[cacheKey];
+      while (box.firstChild) box.removeChild(box.firstChild);
+      if (!c || c.status === "loading") { box.appendChild(h.el("p", { cls: "crr-muted", text: "Reading MAP and ACE text…" })); return; }
+      if (c.status === "error") { box.appendChild(h.el("p", { cls: "crr-warn", text: "MAP and ACE text could not be read (" + c.why + "). This is a failed read, not missing text." })); return; }
+      if (!c.ids.length) { box.appendChild(h.el("p", { cls: "crr-muted", text: ex ? "No MAP or ACE text is held for exhibit " + ex + "." : "No exhibit in MAP's unit table carries this exact wording." })); return; }
+      var rows = sbsRows(c);
+      box.appendChild(h.table({ id: "sbs", label: "MAP and ACE credit recommendation text, by exhibit",
+        note: (ex ? "Exhibit " + ex : "The " + fmt(c.ids.length) + (c.ids.length === 1 ? " exhibit" : " exhibits") + " whose MAP wording reads exactly this")
+          + (c.more ? " (" + fmt(c.more) + " more not shown)" : "") + ". MAP's text comes from the colleges' entries; ACE's from its exhibit catalog. Neither is edited here.",
+        cols: [["exhibit", "Exhibit"], ["map", "MAP wording"], ["ace", "ACE catalog wording"], ["note", "Note"]], rows: rows,
+        // Each wording on its own line, exactly as its source holds it.
+        cell: function (row, k) {
+          if (k !== "map" && k !== "ace") return row[k];
+          return h.el("span", null, row[k].map(function (t) { return h.el("span", { cls: "crl-pn-sbs-t", text: t }); }));
+        } }));
+    }
+    sbsPaint = function () { if (document.getElementById("crl-pn-sbs-box") === box) fill(); };
+    fill();
+    var inp = h.el("input", { id: "crl-pn-sbs-ex", type: "search", cls: "crr-search", value: typed, placeholder: "An exhibit id, such as AR-0702-0030" });
+    var go = h.word("Show this exhibit", function () { look[r.ut] = inp.value; LIST_ENGINE.redraw(); var n = document.getElementById("crl-pn-sbs-ex"); if (n) n.focus(); },
+      { id: "crl-pn-sbs-go", "aria-label": "Show MAP and ACE text for the exhibit typed" });
+    var kids = [h.heading("MAP and ACE text"), box,
+      h.el("label", { "for": "crl-pn-sbs-ex", text: "Or read one exhibit's MAP and ACE text" }), inp, go];
+    if (typed) kids.push(h.word("Back to this wording's exhibits", function () { look[r.ut] = ""; LIST_ENGINE.redraw(); }, { id: "crl-pn-sbs-back" }));
+    return h.el("div", { cls: "crl-pn-sbs" }, kids);
+  }
   function listPanelBody(r, h) {
     var g = r.g, m = r.m, rung = RUNGS[g.rung] || RUNGS[5], d = state.decisions[g.key], L = listState();
     var notes = L.pnNote || (L.pnNote = {}), out = [];
@@ -788,6 +908,7 @@
         if (row.rec === m.rec || row.added) return row.rec;
         return h.word(row.rec, function () { h.open(row.rec); }, { "aria-label": row.rec + ", open its panel" });
       } }));
+    out.push(sbsSection(r, h));
     // Add a wording: pull in a wording from another group that means the same (the worklist's picker).
     var picks = L.pnPick || (L.pnPick = {}), pq = picks[g.key] || "";
     var pin = h.el("input", { id: "crl-pn-pick", type: "search", cls: "crr-search", value: pq, placeholder: "Two or more letters of a wording",
@@ -971,5 +1092,7 @@
     _render: render,
     _needsDecision: needsDecision,
     _unitRange: unitRange,
+    _crClean: crClean,
+    _crTypoKey: crTypoKey,
   };
 })();

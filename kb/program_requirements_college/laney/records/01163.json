@@ -91,8 +91,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     61.0,
     61.0
@@ -106,9 +106,7 @@
     21.0,
     21.0
    ],
-   "why": [
-    "the blocks and general education come to 61.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
+   "why": [],
    "fill": null,
    "major": {
     "pass": true,
@@ -123,7 +121,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -147,7 +147,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -183,7 +183,8 @@
     "site superintendents",
     "building and planning",
     "licensed contractors"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -450,5 +451,14 @@
    "Description contains the odd sentence 'This year can be completed in 2- 3years or less.' CSS styling text appeared in the extracted page and was ignored."
   ]
  },
- "extracted_run": "38935141023"
+ "extracted_run": "38935141023",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 40, the major total the catalog prints; the major and general education sum to 61 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

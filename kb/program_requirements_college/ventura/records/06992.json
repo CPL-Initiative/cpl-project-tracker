@@ -82,8 +82,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     65.0,
     70.0
@@ -97,9 +97,7 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 65.0-70.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -113,7 +111,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -137,7 +137,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -168,7 +168,8 @@
     "Analyze concepts of law and utilize legal investigative proficiencies applied to preparing and presenting case work. Demonstrate the ability to translate this information to written, verbal, and electronic formats.",
     "Collaborate to describe the importance of standards relating to ethics, communication, and cooperation within a variety of cultures and situations in the Criminal Justice System aligned with social justice initiatives."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -406,5 +407,14 @@
    "The outcomes list is printed in the page's program student learning outcomes tab for this program; recorded for the A.S. degree."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "38756014587",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 24-25, the major total the catalog prints; the major and general education sum to 65-70 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

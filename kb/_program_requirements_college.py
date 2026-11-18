@@ -6570,7 +6570,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
                                  course_units=src.get("course_units"),
-                                 course_hours=src.get("course_hours"))
+                                 course_hours=src.get("course_hours"),
+                                 closed=src.get("closed_list"), year=src.get("catalog_year"))
         if notes:
             got = dict(got, record=rec)
         try:
@@ -6895,7 +6896,8 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
                                      course_units=src.get("course_units"),
                                      course_hours=src.get("course_hours"), title=filed.get("title"),
-                                     siblings=sibs, control_number=filed.get("control_number"))
+                                     siblings=sibs, control_number=filed.get("control_number"),
+                                     closed=src.get("closed_list"), year=filed.get("catalog_year"))
             # Every record the statewide Cal-GETC rule asks about says filled or held, and why, so the compare
             # gate shows the held ones beside the filled (S648).
             trace = R.calgetc_trace(filed.get("control_number"), rec, notes, src["text"],
@@ -6907,8 +6909,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # A statewide fill a run made earlier keeps its note while its value stands, so the fill stays
                 # told apart from a catalog's own figure if the ruling is ever reversed (S648).
                 for old in filed.get("reconciled") or []:
-                    if old.get("statewide") and old not in notes \
-                            and (new.get("program") or {}).get(old.get("field")) == old.get("now"):
+                    if old not in notes and R.statewide_note_stands(old, new):
                         notes = notes + [old]
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,

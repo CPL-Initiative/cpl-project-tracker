@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     87.0
@@ -76,9 +76,7 @@
     24.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 64.0-87.0; the catalog prints 60.0-68.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +146,8 @@
     "perform entry-level fitness assessments and develop evidence-based physical activity programs using appropriate training techniques and professional standards.",
     "build a strong foundation in biological and physical sciences, kinesiology, and exercise physiology to support continued academic study, scientific inquiry, and transfer into bachelor’s programs in exercise science, kinesiology, or related fields."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -748,5 +749,14 @@
    "Program learning outcomes taken from the page's outcomes tab, which applies to this A.S. award; outcomes begin lowercase as printed (lead-in not shown)."
   ]
  },
- "extracted_run": "38842203500"
+ "extracted_run": "38842203500",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 39-44, the major total the catalog prints; the major and general education sum to 64-87 against the degree's 60-68 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }
