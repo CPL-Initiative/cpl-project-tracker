@@ -153,8 +153,12 @@ jobs:
       # The read-only Side by side views read kb/exhibits_review.json, which this run rewrites, so they rebuild here
       # too; without it each run left kb/exhibit_side_by_side.json behind and main's side_by_side_test red until the
       # daily (S683, run 44350607385).
+      # A failed rebuild holds back the review files it reads (the commit below) and ends the run red, so main never
+      # carries a new review queue beside a stale side by side (COBIx on #3520).
       - name: Build the Side by side views
-        run: python3 kb/_build_side_by_side.py || echo "::warning title=Side by side not rebuilt::kb/_build_side_by_side.py failed; the daily dashboard rebuilds it."
+        id: sbs
+        continue-on-error: true
+        run: python3 kb/_build_side_by_side.py
 
       - name: Build the Commons status
         run: python3 kb/_build_commons_status.py --quiet || echo "::warning title=Commons status not rebuilt::kb/_build_commons_status.py failed; the Commons tab and the Exhibits tiles read the previous file until the next run."
@@ -170,10 +174,14 @@ jobs:
           git add kb/unclassified_preseed.json kb/cer_procedures_out/latest.json
           git add kb/cer_classified.json 2>/dev/null || true
           git add kb/cer_procedures_out/saved 2>/dev/null || true
-          git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+          if [ "${{ steps.sbs.outcome }}" = "success" ]; then
+            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+            git add kb/exhibit_side_by_side.json kb/side_by_side.json 2>/dev/null || true
+          else
+            echo "::error title=Side by side not rebuilt::kb/_build_side_by_side.py failed, so this run keeps the Exhibits review queue out of its commit."
+          fi
           git add kb/exhibits_sweep.json 2>/dev/null || true
           git add kb/exhibits_related.json 2>/dev/null || true
-          git add kb/exhibit_side_by_side.json kb/side_by_side.json 2>/dev/null || true
           git add kb/status/commons.json 2>/dev/null || true
           git add kb/status/commons_history.json 2>/dev/null || true
           git add kb/exhibit_subject_out 2>/dev/null || true
@@ -188,6 +196,11 @@ jobs:
             git checkout -- . && git pull --rebase origin "${{ github.ref_name }}"
           done
           echo "Push failed after 5 attempts."
+          exit 1
+      - name: Red when the Side by side did not rebuild
+        if: ${{ steps.sbs.outcome == 'failure' }}
+        run: |
+          echo "::error title=Side by side not rebuilt::kb/_build_side_by_side.py failed; the Exhibits review queue was held back. Fix the builder and rerun."
           exit 1
       # After the commit, so the night's rule settlements and receipts land first.
       - name: Red when the classifier's $40 gate held it

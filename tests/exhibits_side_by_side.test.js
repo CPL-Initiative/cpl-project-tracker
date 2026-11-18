@@ -28,14 +28,17 @@ function txt(el) {
 }
 const src = fs.readFileSync("exhibits.js", "utf8");
 const SBS = JSON.parse(fs.readFileSync("kb/exhibit_side_by_side.json", "utf8"));
-// The Review card's fixture is MAPICA-AATA-1-001. A CER procedures run can settle it and the rebuild then drops its
-// row (run 44350607385, 2026-11-18), so the row the builder wrote while it sat on the card stands in for it; every
-// other fixture still reads the committed file.
-if (!SBS.exhibits["MAPICA-AATA-1-001"]) SBS.exhibits["MAPICA-AATA-1-001"] = {
-  l: "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson",
-  c: "Nondestructive Testing Technician Apprenticeship \u2014 Journeyperson", t: "Industry certification", ts: "id",
-  k: "cert-based", n: 1,
-  a: "Foothill College AATA 103A (Ultrasonic Testing Level One) was set aside: this exhibit is an industry certification, not credit by exam." };
+// The Review card's fixture is the exhibit the builder set a course aside for as an industry certification:
+// MAPICA-AATA-1-001 while it sits on a Review card, else the first such row in the built file. A CER procedures run can
+// settle the worked case and the rebuild then drops its row (run 44350607385, 2026-11-18), so the fixture is picked by
+// rule from the built data, never written in by hand (COBIx on #3520).
+const SET_ASIDE = /^(.+) ([A-Z]{2,6} ?\d+[A-Z]?) \(([^()]+)\) was set aside: this exhibit is an industry certification, not credit by exam\.$/;
+const isCase = (r) => r && r.n === 1 && r.k === "cert-based" && SET_ASIDE.test(r.a || "");
+const REV_ID = isCase(SBS.exhibits["MAPICA-AATA-1-001"]) ? "MAPICA-AATA-1-001"
+  : Object.keys(SBS.exhibits).find((id) => isCase(SBS.exhibits[id]));
+const RR = SBS.exhibits[REV_ID] || {};
+const RM = SET_ASIDE.exec(RR.a || "") || [];
+check("(0) the built file holds a set-aside exhibit for the Review card", !!REV_ID, String(REV_ID));
 const css = src.slice(src.indexOf('".exh-sbs {'), src.indexOf('"@media (prefers-reduced-motion: reduce) { .exh-wrap'));
 check("(5) the view's CSS names no raw hex color", css.length > 50 && !/#[0-9a-fA-F]{3,8}\b/.test(css), css.slice(0, 120));
 
@@ -48,16 +51,16 @@ const ADOPT = { schema: 1, written_at: "2026-11-17T03:09:28Z", colleges: ["Rio H
   credentials: { [CANON]: { a: {}, c: {},
     x: [["MAPCXI-ACAO-1-001", "ASE Certifications: A6 or T6, L3 + Residency Units", 3], ["MAPICI-ACAO-1-001", "ASE Certifications: A6 or T6, L3 + Residency Units", 3],
         ["MAPCXS-B0BL-1-001", "BUS 018: Business Law", 4]], s: "47", p: 3 } } };
-const AATA = "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson";
+const AATA = RR.l;
 const REVIEW = { schema: 1, written_at: "2026-11-17T07:50:00Z", sources: { procedures_run: "2026-11-17T07:47:00Z" },
   tiles: { names: { n: 10, of: 12, waiting: 2 }, aligned: { n: 0, of: 2 }, saved_not_folded: 0 }, steps: {},
-  colleges: ["Foothill College"],
+  colleges: [RM[1]],
   held: [{ raw: AATA, step: "Proposed", why: "the classifier is unsure (0.65)", colleges: [0],
-    title: "Nondestructive Testing Technician Apprenticeship — Journeyperson", issuer: "American Aerospace Technical Academy (AATA)",
-    from: "the classifier", ids: ["MAPICA-AATA-1-001"], art: [0], could: [], basis: "M-ID INDT M1154", same: true, under: [], under_count: 0,
+    title: RR.c, issuer: "American Aerospace Technical Academy (AATA)",
+    from: "the classifier", ids: [REV_ID], art: [0], could: [], basis: "M-ID INDT M1154", same: true, under: [], under_count: 0,
     needs_official_name: true,
-    course_title_set_aside: { title: "Ultrasonic Testing Level One", basis: "M-ID INDT M1154", why: "industry certification, not credit by exam" },
-    course: "AATA 103A", course_college: "Foothill College" }] };
+    course_title_set_aside: { title: RM[3], basis: "M-ID INDT M1154", why: "industry certification, not credit by exam" },
+    course: RM[2], course_college: RM[1] }] };
 
 function load(hash) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',
@@ -139,13 +142,13 @@ async function openIt(t, sel) {
     if (f) {
       f = await openIt(t, "#exh-sbs");
       const r = rows(f);
-      check("(2) one row per exhibit behind the card", r.length === 1 && r[0][0] === "MAPICA-AATA-1-001", JSON.stringify(r));
+      check("(2) one row per exhibit behind the card", r.length === 1 && r[0][0] === REV_ID, JSON.stringify(r));
       const x = r[0] || [];
-      check("(2) the local title and the proposed canonical", x[1] === AATA && x[2] === "Nondestructive Testing Technician Apprenticeship — Journeyperson", JSON.stringify(x));
+      check("(2) the local title and the proposed canonical", x[1] === AATA && x[2] === RR.c, JSON.stringify(x));
       check("(2) the header says the canonical is proposed", /Proposed canonical title/.test(txt(f.querySelector("thead"))));
       check("(3) ⭐ the missing official name and the set-aside course, in words",
-        x[3] === "The official certification name is not on file. Foothill College AATA 103A (Ultrasonic Testing Level One) was set aside: this exhibit is an industry certification, not credit by exam.", x[3]);
-      check("(2) its CPL type read from the id", x[4] === "Industry certification, cert-based (read from the exhibit id; MAP's type is not on the record)", x[4]);
+        x[3] === "The official certification name is not on file. " + RR.a, x[3]);
+      check("(2) its CPL type read from the id", x[4] === RR.t + ", cert-based" + (RR.ts === "id" ? " (read from the exhibit id; MAP's type is not on the record)" : ""), x[4]);
       check("(4) ⭐ opening it sends no POST, PATCH or DELETE", t.calls.every((c) => c.method === "GET"), JSON.stringify(t.calls.filter((c) => c.method !== "GET")));
       check("(4) and it holds no control", f.querySelectorAll("button, input, select, textarea").length === 0);
       check("(1) its file is read once", sbsReads(t) === 1, String(sbsReads(t)));

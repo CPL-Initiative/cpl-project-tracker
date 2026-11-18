@@ -86,7 +86,8 @@ if not x.get("a"):
     x = next((r for r in E["exhibits"].values() if " was set aside: this exhibit is an industry certification, not credit by exam." in (r.get("a") or "")), {})
 check("4 the Review card's exhibit: no official certification name on file", x.get("n") == 1 and x.get("k") == "cert-based", x)
 check("4 it names the course the Review builder set aside",
-      " was set aside: this exhibit is an industry certification, not credit by exam." in (x.get("a") or ""), x.get("a"))
+      bool(re.fullmatch(r"[A-Z][^()]+ [A-Z]{2,6} ?\d+[A-Z]? \([^()]+\) was set aside: this exhibit is an industry "
+                        r"certification, not credit by exam\.", x.get("a") or "")), x.get("a"))
 check("4 the type comes from MAP's record when MAP has one",
       all(r.get("ts") == "map" for r in E["exhibits"].values() if r.get("t") in ("Credit By Exam", "Industry Certification")
           and r.get("ts") != "id") and E["counts"]["type_from_map"] > 0)
@@ -119,6 +120,13 @@ cc = cw[cw.index("name: Commit the run"):]
 check("5 the CER procedures run rebuilds the side by side after its review queue, and commits both files",
       0 <= cq < cs and "python3 kb/_build_side_by_side.py" in cw[cs:cs + 400]
       and "kb/exhibit_side_by_side.json" in cc and "kb/side_by_side.json" in cc)
+# A failed rebuild must not commit a new review queue beside a stale side by side (COBIx on #3520): the review files
+# ride only on the rebuild's success, and a closing step turns the run red.
+gate = cc[cc.find('steps.sbs.outcome }}" = "success"'):]
+check("5 a failed rebuild holds the review queue out of the procedures commit and ends the run red",
+      "id: sbs" in cw[cs:cs + 400] and gate and gate.find("kb/exhibits_review.json") < gate.find("else")
+      and "kb/exhibits_review.json" not in cc[:cc.find('steps.sbs.outcome')]
+      and "if: ${{ steps.sbs.outcome == 'failure' }}" in cw and "exit 1" in cw[cw.find("name: Red when the Side by side did not rebuild"):][:400])
 # The daily rebuilds both files after the steps that write what the rows read (the review queue's
 # kb/exhibits_adoption.json, the cert links), commits them, and a failure turns the run red under the failure watch.
 wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
