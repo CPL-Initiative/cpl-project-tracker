@@ -281,6 +281,8 @@ jobs:
       # Issue 3454 (S678): the confidence scorer's membership fix, rule W, variant D and follow past rulings.
       - name: Confidence scorer rules (kb/_ccr_confidence_score.py)
         run: python3 tests/ccr_confidence_rules_test.py
+      - name: Confidence scorer rules G and M, and their apply and undo (kb/_ccr_confidence_apply.py)
+        run: python3 tests/ccr_rules_g_m_test.py
       # The seed cards both second signals confirm (S615, Open Asks Sheet 174 card 1): receipt, auditor state, undo.
       - name: Seed confirmed by description and TOP (kb/_ccr_seed_confirm_apply.py)
         run: python3 tests/ccr_seed_confirm_test.py

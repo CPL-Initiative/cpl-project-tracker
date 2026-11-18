@@ -15,7 +15,8 @@ reads committed files only, scores each seedless card against the evidence, and 
 Then rules run on the waiting pile, each on different cards (COBIx, 2026-11-17 12:06 and 12:19 PM PT). By default
 only "follow past rulings" runs. Rules W and D are HELD (the conductor's second reader on #3467): held out on the
 cards a person decided, D fires on none and W on one, so neither has evidence of its own yet, while they would move
-hundreds of live cards. They run only with `--with-held-rules`, for a dry run.
+hundreds of live cards. They run only with `--with-held-rules`, for a dry run. Rules G and M (S683) run by default,
+after the others; every card they decide carries `rule` "G" or "M" so kb/_ccr_confidence_apply.py can undo it alone.
 
   W    (held) anchor words. A title word that names another discipline does not count against guess D when the title also
        holds an anchor word for D (5+ letters, not generic, compared on its first 7 letters, in 3+ trusted titles,
@@ -28,12 +29,25 @@ hundreds of live cards. They run only with `--with-held-rules`, for a dry run.
        Manufacturing Technology vs Drafting/CADD; Graphic Arts and Photography have 3 moves, 2 once one is left
        out). Music vs Commercial Music and the business-family pairs stay out. Only when the title, as the List shows
        it, names the narrower field. The discipline changes, source `past_rulings_v1`.
-  A card a person renamed (a person's unified_title in the overlay) is never moved by any rule.
+  G    the colleges outvote the description (#3480 Source 14, COBIx yes 2026-11-17 2:43 PM PT). Last on what is still
+       waiting: a card that clears the scorer's own bar (80 or more, two agreeing signals, something to read) and is
+       held back only by its description reading clearly as another field is accepted, keeping its guess, when the
+       title names no other or narrower field, no field is named twice, three-quarters or more of its college
+       courses' subject codes and its own subject code map to the guess, and two or more colleges teach it. Two
+       guards keep it waiting: past rulings moved such cards to the field the description reads as more often than
+       they kept the guess (Art read as Art History), or a noncredit card (M9xxx) reads as a noncredit field. Not on
+       a held card, nor Business read as Accounting, Marketing or Management (the business-family hold).
+  M    the Music vs Commercial Music title split (#3480 Source 15, COBIx yes 2:50 PM PT), straight after G: a card
+       still waiting, guessed Music, whose disagreement is with Commercial Music. Commercial Music words only in the
+       title move it to Commercial Music (source `music_split_v1`); Music words only keep it as Music; both kinds or
+       neither, it stays waiting. Nothing goes to Sam's band.
+  A card a person renamed (a person's unified_title in the overlay) is never moved to another field by any rule; only
+  G, which keeps the guess and changes no field, accepts one.
   Rule T (the 27 missing TOP codes) is held by COBIx and is not here.
 
 Read-only: it writes no curation row, changes no discipline and edits no local MAP title. A person always wins: a
 ruled, merged or person-curated card is never scored into a band a rule can move. `--expect N` exits non-zero
-unless the auto-accept count equals N, the guard kb/_ccr_confidence_apply.py will carry.
+unless the auto-accept count equals N, the guard kb/_ccr_confidence_apply.py carries.
 
 Provenance and what differs from the asks. The Courses bot's version 5 script (`discipline_confidence.py`) never
 reached this repo (its workspace is not reachable from a session and no copy was posted on #3464). This file is
@@ -48,7 +62,7 @@ description source.
 Run from the repo root:
   python3 kb/_ccr_confidence_score.py                       # today's memberships, follow past rulings
   python3 kb/_ccr_confidence_score.py --fill-members        # the membership fix
-  python3 kb/_ccr_confidence_score.py --fill-members --expect 2644   # measured 2026-11-17 (PR #3467)
+  python3 kb/_ccr_confidence_score.py --fill-members --expect 2889   # measured 2026-11-18 with G and M (S683)
   python3 kb/_ccr_confidence_score.py --fill-members --with-held-rules   # dry run of W and D, never applied
   python3 kb/_ccr_confidence_score.py --no-rules            # the base bands only
   python3 kb/_ccr_confidence_score.py --out DIR             # also write DIR/scores.csv and DIR/summary.json
@@ -119,7 +133,7 @@ D_PAIRS = {("History", "Ethnic Studies"), ("Computer Information Systems", "Comp
 
 # "Follow past rulings": the selection rule, and the pairs it leaves out by COBIx's word.
 FPR_MIN_INDEPENDENT = 3   # moves besides the card's own (leave-one-out)
-DEFAULT_RULES = ("FPR",)
+DEFAULT_RULES = ("FPR", "G", "M")
 HELD_RULES = ("W", "D")
 BOT_SUFFIX = "@" + "bot"
 FPR_EXCLUDED = {("Music", "Commercial Music"), ("Business", "Accounting"), ("Business", "Marketing")}
@@ -145,6 +159,24 @@ FPR_TITLE = {
     "Drafting/CADD": ([r"(?-i:\bCAD\b)", r"\bcomputer aided design", r"\bcomputer-aided design", r"\bsolidworks",
                        r"\bcreo\b", r"\bautocad", r"(?-i:\bInventor\b)", r"\bsiemens nx\b", r"\bdraft"], []),
 }
+
+# Rule G (#3480 Source 14): the colleges outvote the description.
+G_MIN_COLLEGES = 2
+G_COLLEGE_SHARE = 0.75   # of the college courses' mapped subject codes, the share that must map to the guess
+G_BUSINESS_FAMILY = {"Business": ("Accounting", "Marketing", "Management")}
+G_NONCREDIT_SUFFIX = ": Noncredit"
+
+# Rule M (#3480 Source 15): the Music vs Commercial Music title split, matched in the lower-cased title. "Popular",
+# "rap" and "hip-hop" are left out of the Commercial Music words on purpose: American Popular Music and the History
+# of Rap and Hip-Hop are music history, and the trusted cards file them under Music.
+M_PAIR = ("Music", "Commercial Music")
+M_CM_WORDS = (r"record|audio|pro tools|production|producing|business|industry|entrepreneur|commercial|songwrit|"
+              r"electronic music|computer music|\bmidi\b|digital audio|\bdj\b|mixer|\bsound\b|scoring for film|"
+              r"film and multimedia|game audio|music technology|pop-commercial")
+M_MUSIC_WORDS = (r"choir|chorus|choral|chorale|carol|orchestra|symphony|ensemble|piano|accompan|string|woodwind|brass|"
+                 r"percussion|marching|chamber|theory|musicianship|sight-?reading|recital|applied music|world music|"
+                 r"music cultures|music in america|honors|\bvoice\b|vocal|singing|history|renaissance|quire|broadway|"
+                 r"conduct|culture|appreciation|survey|popular music|american music")
 
 WORD = re.compile(r"[a-z]+")
 
@@ -364,6 +396,10 @@ def score_card(cid, rec, guess, ctx, use_w):
                 contra[other] += 1; sig["colleges"] = other
                 reasons.append("%d of %d colleges file it under %s" % (votes[other], voters, other))
 
+    mapped = [subj.get((m.get("subject") or "").strip()) for m in members]
+    mapped = [d for d in mapped if d]
+    subj_share = (sum(1 for d in mapped if d == guess) / len(mapped)) if mapped else None
+
     subs = {(m.get("subject") or "").strip() for m in members} - {""}
     prac = ctx["practice"]
     if subs:
@@ -426,7 +462,7 @@ def score_card(cid, rec, guess, ctx, use_w):
         pts = min(pts, CAP_ONE_SIGNAL)
     return {"score": int(round(pts)), "agree": agree, "contra": contra, "block": block, "read": read,
             "narrow": narrow, "signals": sig, "reasons": reasons, "votes": votes, "colleges": n_col,
-            "members": len(members), "title_excused": [w for w, _d in excused]}
+            "members": len(members), "title_excused": [w for w, _d in excused], "subj_share": subj_share}
 
 
 def held(cid, rec):
@@ -466,6 +502,74 @@ def fpr_title_ok(title, narrower):
     if not any(re.search(p, title or "", _I) for p in names):
         return False
     return not any(re.search(p, title or "", _I) for p in but_not)
+
+
+def past_rulings_lean(precedent, guess, other, leave_out=None):
+    """True when people moved cards of this guess to `other` more often than they kept the guess
+    (kb/ccr_curator_precedent.json), with a held-out card's own ruling taken out."""
+    v = precedent.get("%s -> %s" % (guess, other)) or {}
+    moved, kept = int(v.get("moved_to_alt") or 0), int(v.get("kept") or 0)
+    if leave_out and leave_out[0] == guess:
+        if leave_out[1] == other:
+            moved -= 1
+        elif leave_out[1] == guess:
+            kept -= 1
+    return moved > kept
+
+
+def rule_g(cid, guess, s, precedent, leave_out=None):
+    """Rule G on a waiting, unheld card: (verdict, the field its description reads as). The verdict is "accept",
+    "past_rulings" or "noncredit" (a guard keeps it waiting), or None when the rule does not apply."""
+    if not (s["score"] >= AUTO and s["agree"] >= 2 and s["read"]):
+        return None, None
+    sig = s["signals"]
+    d = sig.get("desc") or ""
+    if d.startswith("agree") or not d.endswith("_clear"):
+        return None, None
+    reads = d.rsplit("_", 1)[0]
+    if sig.get("title") or s["narrow"]:
+        return None, reads
+    top = s["contra"].most_common(1)
+    if top and top[0][1] >= 2:
+        return None, reads
+    if s["subj_share"] is None or s["subj_share"] < G_COLLEGE_SHARE or sig.get("own") != "agree":
+        return None, reads
+    if s["colleges"] < G_MIN_COLLEGES or reads in G_BUSINESS_FAMILY.get(guess, ()):
+        return None, reads
+    if past_rulings_lean(precedent, guess, reads, leave_out):
+        return "past_rulings", reads
+    num = cid.split(" M")[-1]
+    if num.startswith("9") and reads.endswith(G_NONCREDIT_SUFFIX):
+        return "noncredit", reads
+    return "accept", reads
+
+
+def g_note(guess, reads):
+    return ("Kept as %s: the colleges that teach it file it under %s. Its description also touches another field "
+            "(%s), but nothing else points there." % (guess, guess, reads))
+
+
+def m_in_scope(guess, s):
+    """Rule M's scope on a waiting, unheld card: guessed Music, and its disagreement is with Commercial Music."""
+    return guess == M_PAIR[0] and bool(s["members"]) and M_PAIR[1] in (s["narrow"], main_pair(s, guess))
+
+
+def split_call(title):
+    """Rule M's title call: "Commercial Music", "Music", "both" or "neither"."""
+    t = (title or "").lower()
+    cm, mu = bool(re.search(M_CM_WORDS, t)), bool(re.search(M_MUSIC_WORDS, t))
+    if cm and not mu:
+        return M_PAIR[1]
+    if mu and not cm:
+        return M_PAIR[0]
+    return "both" if cm else "neither"
+
+
+M_NOTES = {
+    M_PAIR[1]: ("Moved from Music to Commercial Music: the course title is about recording, production or the music "
+                "business. Sam can change it."),
+    M_PAIR[0]: "Kept as Music: the course title is about performance, ensembles, theory or music history.",
+}
 
 
 # ── the run ─────────────────────────────────────────────────────────────────────────────────────────────────────────
@@ -543,6 +647,23 @@ def run(inp, rules=DEFAULT_RULES, ctx=None):
                                          "course like this to %s. Sam can change it." % (guess, other, other)))
                     else:
                         row["fpr_left_alone"] = "title does not name %s" % other
+            # G keeps the guess and changes no field, so it also reads a card whose title a person saved: the title
+            # stays the person's, and the discipline was never ruled on. A rule that changes the discipline (FPR, M)
+            # never touches such a card.
+            # G and M read only cards the base scorer left waiting: a card in Sam's band stays his, whatever W does.
+            if row["band"] == row["base"] == "waiting" and "G" in rules and not hold:
+                verdict, reads = rule_g(cid, guess, s, inp.precedent)
+                if verdict == "accept":
+                    row.update(band="auto_accept", rule="G", reads_as=reads, note=g_note(guess, reads))
+                elif verdict:
+                    row.update(reads_as=reads, g_left={"past_rulings": "past rulings moved such cards",
+                                                       "noncredit": "noncredit card read as a noncredit field"}[verdict])
+            if row["band"] == row["base"] == "waiting" and "M" in rules and not hold and not renamed \
+                    and m_in_scope(guess, s):
+                call = split_call(row["title"])
+                row["m_call"] = call
+                if call in M_NOTES:
+                    row.update(band="auto_accept", rule="M", discipline=call, note=M_NOTES[call])
         out.append((cid, row))
     return out
 
@@ -554,7 +675,9 @@ def summarize(rows):
     return {"seedless": len(rows), "bands": dict(sorted(bands.items())), "base_bands": dict(sorted(base.items())),
             "rule_moves": {"%s: %s -> %s" % k: n for k, n in sorted(moves.items())},
             "auto_accept": bands.get("auto_accept", 0),
-            "held": sum(1 for _c, r in rows if r.get("held"))}
+            "held": sum(1 for _c, r in rows if r.get("held")),
+            "rule_g_left_waiting": dict(sorted(Counter(r["g_left"] for _c, r in rows if r.get("g_left")).items())),
+            "rule_m_calls": dict(sorted(Counter(r["m_call"] for _c, r in rows if r.get("m_call")).items()))}
 
 
 def calibrate(inp, rules=DEFAULT_RULES + HELD_RULES, folds=5):
@@ -586,14 +709,24 @@ def calibrate(inp, rules=DEFAULT_RULES + HELD_RULES, folds=5):
                 if band_of(sw, hold) == "auto_accept":
                     per["W"]["right" if guess == person else "wrong"] += 1
             other = main_pair(s0, guess)
-            if not other or not s0["members"] or s0["narrow"]:
+            if other and s0["members"] and not s0["narrow"]:
+                v = s0["votes"]; n = sum(v.values())
+                if (guess, other) in D_PAIRS:
+                    if "D" in rules and n >= 2 and v.get(guess, 0) * 3 >= 2 * n:
+                        per["D"]["right" if guess == person else "wrong"] += 1
+                    continue
+                if "FPR" in rules and (guess, other) in fpr_pairs(inp.precedent, leave_out=(guess, person)) and \
+                        fpr_title_ok(display_title(cid, rec, inp.cur), other):
+                    per["FPR"]["right" if other == person else "wrong"] += 1
+                    continue
+            # G and M run last, on what the rules above leave waiting.
+            if "G" in rules and rule_g(cid, guess, s0, inp.precedent, leave_out=(guess, person))[0] == "accept":
+                per["G"]["right" if guess == person else "wrong"] += 1
                 continue
-            v = s0["votes"]; n = sum(v.values())
-            if "D" in rules and (guess, other) in D_PAIRS and n >= 2 and v.get(guess, 0) * 3 >= 2 * n:
-                per["D"]["right" if guess == person else "wrong"] += 1
-            if "FPR" in rules and (guess, other) in fpr_pairs(inp.precedent, leave_out=(guess, person)) and \
-                    fpr_title_ok(display_title(cid, rec, inp.cur), other):
-                per["FPR"]["right" if other == person else "wrong"] += 1
+            if "M" in rules and m_in_scope(guess, s0):
+                call = split_call(display_title(cid, rec, inp.cur))
+                if call in M_NOTES:
+                    per["M"]["right" if call == person else "wrong"] += 1
     return {"decided": len(decided), "per_rule": {k: dict(v) for k, v in per.items()}}
 
 
@@ -624,7 +757,8 @@ def main():
     if args.out:
         os.makedirs(args.out, exist_ok=True)
         cols = ["mid", "title", "guess", "discipline", "base", "band", "rule", "proposed", "note", "score", "agree",
-                "held", "renamed", "members", "colleges", "college_votes", "reasons", "fpr_left_alone"]
+                "held", "renamed", "members", "colleges", "college_votes", "reasons", "fpr_left_alone", "reads_as",
+                "g_left", "m_call"]
         with open(os.path.join(args.out, "scores.csv"), "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")
             w.writeheader()

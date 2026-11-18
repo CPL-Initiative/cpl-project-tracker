@@ -61,13 +61,13 @@ def top_code(member):
 
 # Machine decisions stored on the minted card (issue 3454): never a person's, and a person always overrides them,
 # but a decided card is not asked about again.
-MACHINE_DECIDED = ("confidence_v1", "past_rulings_v1")
+MACHINE_DECIDED = ("confidence_v1", "past_rulings_v1", "music_split_v1")
 
 
 def curated(cid, rec, cur):
     """A card the reseed leaves out: a person reviewed it, the overlay holds its discipline, a merge, a merged card's
     validation or a ruling (issue 3447: Sam ruled KINE M1847 twice because rulings were ignored), or the machine
-    decided it (`confidence_v1`, `past_rulings_v1`)."""
+    decided it (`confidence_v1`, `past_rulings_v1`, `music_split_v1`)."""
     c = cur.get(cid) or {}
     return bool(rec.get("reviewed_at") or c.get("discipline") or c.get("merge_into") or c.get("validated_at")
                 or c.get("ruling") or rec.get("discipline_source") in MACHINE_DECIDED)
