@@ -92,6 +92,7 @@ kb/futuro_hth_out/**/*.xlsx
 # the rollback. Files committed before S680 stay tracked until a later PR moves them.
 kb/receipts/program_requirement_records_display_*
 !kb/receipts/program_requirement_records_display_*.applied_*.json
+kb/receipts/row_audit_*.md
 
 # Built by kb/_build_credential_recs.py from statewide_data.js (committed).
 # Rebuildable, ~1.2MB — the runner builds it before syncing.

@@ -625,7 +625,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_receipt_store.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_rekey_kb_curation_supabase.py` | workflows: `supabase-rekey.yml` | — |
 | `kb/_row_audit.py` | workflows: `daily-dashboard.yml`, `overmerge-apply.yml`, `phase-1e-apply.yml` | — |
-| `kb/_row_audit_prune.py` | workflows: `daily-dashboard.yml`, `row-audit-store.yml` | — |
+| `kb/_row_audit_prune.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_second_reader.py` | workflows: `second-reader.yml` | — |
 | `kb/_seed_projects_apply.py` | workflows: `projects-seed-apply.yml` | — |
 | `kb/_seed_workplan_goals_apply.py` | workflows: `workplan-goals-seed-apply.yml` | — |
@@ -1588,4 +1588,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1043 file
-datasets · 195 external services · 614 consumers · 73 workflows · 41 tabs.
+datasets · 195 external services · 613 consumers · 72 workflows · 41 tabs.

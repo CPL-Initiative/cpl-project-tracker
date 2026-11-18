@@ -151,6 +151,56 @@ for label, script in (("the bucket refuses every call", None),
           (p.returncode, p.stdout[-400:], p.stderr[-400:]))
     check("every report stays when %s" % label, len(os.listdir(os.path.join(work, "kb", "row_audit"))) == 17)
 
+# 6b. The budget is a bound (second reader M1): against a server that accepts and never answers, a 3 s budget
+#     ends the run in about 3 s, with one try a call and every report in place.
+import http.server  # noqa: E402
+import socketserver  # noqa: E402
+import threading  # noqa: E402
+import time  # noqa: E402
+
+
+class Hang(http.server.BaseHTTPRequestHandler):
+    def do_POST(self):
+        time.sleep(30)
+
+    do_GET = do_POST
+
+    def log_message(self, *a):
+        pass
+
+
+srv = socketserver.ThreadingTCPServer(("127.0.0.1", 0), Hang)
+srv.daemon_threads = True
+threading.Thread(target=srv.serve_forever, daemon=True).start()
+url = "http://127.0.0.1:%d" % srv.server_address[1]
+calls = []
+real_open = __import__("urllib.request").request.urlopen
+
+
+def counting(req, timeout=None):
+    calls.append(timeout)
+    return real_open(req, timeout=timeout)
+
+
+folder, index = fixture(20)
+t0 = time.monotonic()
+bounded = P.BoundedStorage("k", time.monotonic() + 3, url=url, opener=counting)
+res = quiet(P.prune, folder, storage=bounded, index_path=index, budget_seconds=3)
+took = time.monotonic() - t0
+check("a 3 s budget against a hung bucket ends the run within 5 s (took %.1f s)" % took, took < 5, took)
+check("each call gets one try with a timeout no longer than the budget left",
+      calls and len(calls) <= 2 and all(t <= 3 for t in calls), calls)
+check("every report stays when the budget runs out", len(os.listdir(folder)) == 22 and not res["removed"], res)
+srv.shutdown()
+check("the daily block bounds the process with timeout and the calls with --budget-seconds",
+      "timeout 200 python3 kb/_row_audit_prune.py" in block and "--budget-seconds 180" in block, block)
+
+# 6c. A report fetched back into kb/receipts/ is ignored by git (second reader M2).
+ign = subprocess.run(["git", "check-ignore", "-q", "kb/receipts/row_audit_2026-05-23.md"], cwd=ROOT)
+keep = subprocess.run(["git", "check-ignore", "-q", "kb/receipts/index/row_audit_2026-05-23.md.json"], cwd=ROOT)
+check("git ignores a fetched report in kb/receipts/ and still tracks its index entry",
+      ign.returncode == 0 and keep.returncode == 1, (ign.returncode, keep.returncode))
+
 # 7. The daily commit stages the removals and the entries; the index check accepts the new kind.
 wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
 check("the daily commit stages removed reports and their entries by quoted pathspec",

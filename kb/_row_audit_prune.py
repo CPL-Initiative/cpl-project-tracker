@@ -18,8 +18,15 @@ one-time move). A report with no key, a failed upload or read-back, or an entry 
 bytes stays where it is, and the log says why.
 
 IT NEVER FAILS THE DAILY RUN. Without --strict it exits 0 whatever happens, and
-scripts/daily_build.sh adds `|| echo` beside it. --strict (the one-time move,
-row-audit-store.yml) exits 1 when any report that should have gone stayed.
+scripts/daily_build.sh adds `|| echo` beside it. --strict exits 1 when any report that should
+have gone stayed (the S680 one-time move ran it: run 44258551009 stored 165 reports; its
+workflow is gone). A stray old report needs no command: the next daily run stores it.
+
+THE BUDGET IS A BOUND. With --budget-seconds every bucket call gets one try, no backoff, and a
+timeout of the smaller of CALL_TIMEOUT and the budget left; once the budget is spent no call
+starts. The daily block also wraps the run in `timeout`, so a call that trickles bytes past its
+socket timeout is stopped too. An entry is written whole (a temp file and a rename) or not at all,
+and a report is removed only after its entry, so a stop at any point leaves the files sound.
 
 Usage:
   python3 kb/_row_audit_prune.py [--keep 14] [--max-store N] [--budget-seconds S] [--strict]
@@ -141,6 +148,22 @@ def _opener(req, timeout=None):
     return urllib.request.urlopen(req, timeout=CALL_TIMEOUT)
 
 
+class BoundedStorage(RS.Storage):
+    """The store's bucket calls inside a deadline: one try a call, no backoff, and a timeout
+    of the smaller of CALL_TIMEOUT and the seconds left. A call past the deadline never starts."""
+
+    def __init__(self, key: str, deadline: float, *, clock=time.monotonic, opener=None, **kw):
+        super().__init__(key, opener=opener or urllib.request.urlopen, **kw)
+        self.deadline, self.clock = deadline, clock
+
+    def _call(self, req):
+        left = self.deadline - self.clock()
+        if left < 1:
+            raise TimeoutError("this run's time budget is spent")
+        with self.opener(req, timeout=min(CALL_TIMEOUT, left)) as resp:
+            return resp.read()
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--keep", type=int, default=KEEP)
@@ -154,7 +177,12 @@ def main(argv: list[str] | None = None) -> int:
         return 2 if "--strict" in (argv or sys.argv) else 0
     try:
         key = os.environ.get("SUPABASE_SERVICE_KEY")
-        storage = RS.Storage(key, opener=_opener) if key else None
+        if not key:
+            storage = None
+        elif a.budget_seconds is not None:
+            storage = BoundedStorage(key, time.monotonic() + a.budget_seconds)
+        else:
+            storage = RS.Storage(key, opener=_opener)
         res = prune(a.folder, storage=storage, keep=max(a.keep, 1), max_store=a.max_store,
                     budget_seconds=a.budget_seconds, run=os.environ.get("GITHUB_RUN_ID"))
     except Exception as exc:  # belt and braces: prune() itself never raises

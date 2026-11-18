@@ -6,8 +6,8 @@
   "edge_functions": 15,
   "file_datasets": 1043,
   "external_services": 195,
-  "consumers": 614,
-  "workflows": 73,
+  "consumers": 613,
+  "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -10966,13 +10966,6 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    },
-    {
-     "id": "workflow:row-audit-store.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -36159,18 +36152,6 @@
     "kb/projects_seed_out/"
    ],
    "push": "main",
-   "deploys": [],
-   "chain": [],
-   "urls": []
-  },
-  "row-audit-store.yml": {
-   "name": "Row audit reports to the receipt store",
-   "crons": [],
-   "scripts": [
-    "kb/_row_audit_prune.py"
-   ],
-   "adds": [],
-   "push": "triggering branch",
    "deploys": [],
    "chain": [],
    "urls": []

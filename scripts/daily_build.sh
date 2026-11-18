@@ -307,7 +307,9 @@ STEP
 # kb/receipts/index/ names its sha256. latest.json always stays. Never fails the run: a
 # failed upload or read-back leaves the files where they are and the log says so.
 step "Keep the newest 14 row audit reports" SUPABASE_SERVICE_KEY <<'STEP'
-python3 kb/_row_audit_prune.py --max-store 3 --budget-seconds 180 \
+# --budget-seconds bounds every bucket call (one try, timeout within what is left); `timeout 200`
+# stops the process outright if a call trickles past its socket timeout.
+timeout 200 python3 kb/_row_audit_prune.py --max-store 3 --budget-seconds 180 \
   || echo "Row audit prune did not finish (non-fatal; the reports stay)"
 STEP
 
