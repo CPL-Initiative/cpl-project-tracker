@@ -48,17 +48,31 @@ const known = new Set(index.paintings.map((p) => p.key));
 const unknown = Object.keys(marks).filter((id) => !known.has(id));
 check("(c) every mark resolves to a painting in the gallery index", unknown.length === 0, unknown.join(", "));
 
-const sel = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+// The selection is a list until the First Light tab's first Apply, and from then on an object that carries the
+// list beside the highest mark id the Apply consumed (tools/first_light_apply.mjs).
+const selDoc = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+const sel = Array.isArray(selDoc) ? selDoc : selDoc.paintings;
 const inSel = new Set(sel.map((e) => key(e.file)));
 
-const dropped = Object.keys(marks).filter((id) => marks[id].v === "drop" && inSel.has(id));
-check("(a) no dropped painting is still in the selection", dropped.length === 0, dropped.join(", "));
+// From the First Light tab's first Apply on, the tab's marks are the later word on which paintings the rotation
+// holds. The Apply records the highest mark id it consumed in the selection, and no committed file lists the marks
+// themselves, so the receipts can no longer say what the selection should hold: the Apply of 2026-11-17 dropped 77
+// paintings, among them ones the October receipts added, and a later one may add a dropped painting back. (a) and
+// (b) are therefore checked only while no Apply has landed. The Apply has its own guards
+// (tests/first_light_needs_words.test.js, tests/first_light_marks.test.js).
+const tabApplied = !Array.isArray(selDoc) && Number(selDoc.applied_through_mark_id) > 0;
+if (tabApplied) {
+  check("the tab's Apply has landed (marks through id " + selDoc.applied_through_mark_id + "): the receipts are history, the selection is the tab's", true);
+} else {
+  const dropped = Object.keys(marks).filter((id) => marks[id].v === "drop" && inSel.has(id));
+  check("(a) no dropped painting is still in the selection", dropped.length === 0, dropped.join(", "));
 
-const missing = Object.keys(marks).filter((id) => marks[id].v === "add" && !inSel.has(id) && !held[id]);
-check("(b) every added painting is in the selection or held with a reason", missing.length === 0, missing.join(", "));
+  const missing = Object.keys(marks).filter((id) => marks[id].v === "add" && !inSel.has(id) && !held[id]);
+  check("(b) every added painting is in the selection or held with a reason", missing.length === 0, missing.join(", "));
 
-const heldBad = Object.keys(held).filter((id) => !marks[id] || marks[id].v !== "add" || inSel.has(id) || !String(held[id]).trim());
-check("(b) every held id is an unapplied add mark with a reason", heldBad.length === 0, heldBad.join(", "));
+  const heldBad = Object.keys(held).filter((id) => !marks[id] || marks[id].v !== "add" || inSel.has(id) || !String(held[id]).trim());
+  check("(b) every held id is an unapplied add mark with a reason", heldBad.length === 0, heldBad.join(", "));
+}
 
 // (d) first_light.js carries exactly the selection, in order.
 const js = fs.readFileSync("first_light.js", "utf8");

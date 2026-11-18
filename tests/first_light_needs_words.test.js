@@ -83,6 +83,16 @@ const FILES = ["first_light.js", "cpl_pathways.js", "fact-sheet/cpl_stories.js",
 for (const f of FILES) { fs.mkdirSync(path.dirname(path.join(TMP, f)), { recursive: true }); fs.copyFileSync(f, path.join(TMP, f)); }
 const T = (f) => path.join(TMP, f);
 const readT = (f) => JSON.parse(fs.readFileSync(T(f), "utf8"));
+// The fixtures' marks carry small ids, so the copy starts as never applied. Each committed list records the highest
+// mark id an Apply has consumed for it (the paintings: 90, since the Apply of 2026-11-17), and the Apply reads a mark
+// at or below that id as spent: without this, every fixture mark below is spent before the test begins.
+for (const f of ["tools/first_light_selection.json", "library/photos/hero_photos.json"]) {
+  const doc = readT(f);
+  if (Array.isArray(doc) || !("applied_through_mark_id" in doc)) continue;
+  doc.applied_through_mark_id = 0;
+  doc.held_mark_ids = [];
+  fs.writeFileSync(T(f), JSON.stringify(doc, null, 2) + "\n");
+}
 const FIX = fs.mkdtempSync(path.join(os.tmpdir(), "fl-story-"));
 function run(args, env) {
   return execFileSync("node", [path.join(REPO, "tools/first_light_apply.mjs"), "--root", TMP].concat(args),
@@ -108,7 +118,8 @@ try {
   const addP = gallery.find((g) => !g.in_first_light && !live.has(g.file) && candSet.has(g.file));
   const S = fs.readFileSync("fact-sheet/cpl_stories.js", "utf8");
   const STORIES = JSON.parse(S.slice(S.indexOf("{"), S.lastIndexOf("}") + 1));
-  const story = STORIES.stories.find((s) => M.storyFile(s));
+  const onHero = new Set(HERO.photos.map((p) => p.file));   // a story photo an Apply already added cannot be added again
+  const story = STORIES.stories.find((s) => M.storyFile(s) && !onHero.has(M.storyFile(s)));
   const skey = M.storyFile(story);
   fs.writeFileSync(path.join(FIX, path.basename(skey)), png(640, 480));
   const marks = [
@@ -189,9 +200,11 @@ try {
   // Two stories whose photos land on one key: the second is refused, and the key is held.
   const storiesFile = T("fact-sheet/cpl_stories.js"), storiesText = fs.readFileSync(storiesFile, "utf8");
   const dup = JSON.parse(JSON.stringify(STORIES));
-  dup.stories.push(Object.assign({}, dup.stories[1], { name: "Somebody Else", img: dup.stories[1].img }));
+  // A story whose photo is not yet on the hero list (an Add of one already there changes nothing and holds nothing).
+  const twin = dup.stories.find((s) => M.storyFile(s) && !onHero.has(M.storyFile(s)) && M.storyFile(s) !== skey);
+  dup.stories.push(Object.assign({}, twin, { name: "Somebody Else", img: twin.img }));
   fs.writeFileSync(storiesFile, "window.CPL_STORIES = " + JSON.stringify(dup) + ";\n");
-  const dkey = M.storyFile(dup.stories[1]);
+  const dkey = M.storyFile(twin);
   const pd = JSON.parse(run(["--plan", "--marks", writeMarks([{ id: 50, item_set: "photos", item_key: dkey, mark: "add", collection: "my_cpl_story" }])]).trim().split("\n").pop());
   check("(c) two stories sharing a key: the photo is held, never added under either name", !pd.changed && pd.held.indexOf(dkey) !== -1, JSON.stringify(pd));
   fs.writeFileSync(storiesFile, storiesText);
