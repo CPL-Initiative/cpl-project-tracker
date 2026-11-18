@@ -51,7 +51,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Noncredit CIP categories — lane state](../reference/lanes/noncredit-cip-categories.md) | lanes | `noncredit-cip-categories.md` | 2026-08-28 | 2026-08-28 |
 | [Org & phrase scope / auth model — lane state](../reference/lanes/org-phrase-scope-auth.md) | lanes | `org-phrase-scope-auth.md` | 2026-08-28 | 2026-11-07 |
 | [Partner crosswalks — lane state](../reference/lanes/partner-crosswalks.md) | lanes | `partner-crosswalks.md` | 2026-08-28 | 2026-10-05 |
-| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-16 |
+| [Program requirements harvest — lane state](../reference/lanes/program-requirements-harvest.md) | lanes | `program-requirements-harvest.md` | 2026-10-03 | 2026-11-18 |
 | [Public/private repo split — lane state](../reference/lanes/public-private-repo-split.md) | lanes | `public-private-repo-split.md` | 2026-08-28 | 2026-08-28 |
 | [Reviewer session lifetime & scope — lane state](../reference/lanes/reviewer-session-lifetime.md) | lanes | `reviewer-session-lifetime.md` | 2026-08-28 | 2026-11-10 |
 | [Roadmap lanes — how the pointer index and the lane files divide](../reference/lanes/README.md) | lanes | `README.md` | 2026-09-09 | 2026-09-09 |
@@ -86,7 +86,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Obsidian vault wiring (CLAUDE.md offload)](../reference/obsidian_vault_wiring.md) | — | `obsidian_vault_wiring.md` | 2026-08-28 | 2026-11-05 |
 | [Pipeline Reference — architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)](../reference/pipeline_reference.md) | — | `pipeline_reference.md` | 2026-07-10 |  |
 | [ROEP display gaps from structured fields — design](../reference/roep_display_structured_fields_design.md) | — | `roep_display_structured_fields_design.md` | 2026-11-14 | 2026-11-14 |
-| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-17 |
+| [Sam's rulings — one place to look up what he has ruled, in his words](../reference/sam_rulings.md) | — | `sam_rulings.md` | 2026-11-14 | 2026-11-18 |
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-15 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [Stack scouting: one line per tool trial](../reference/stack_scouting.md) | — | `stack_scouting.md` | 2026-11-14 | 2026-11-14 |

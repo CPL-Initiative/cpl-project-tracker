@@ -1,7 +1,7 @@
 ---
 title: "Program requirements harvest — lane state"
 created: 2026-10-03
-updated: 2026-11-16
+updated: 2026-11-18
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -70,6 +70,8 @@ draft."* The harvest's tab shows its records without a Governance pass, marked
 🔨 **Phase 2, a college at a time:** the load, the display and the $40 go: lessons archive 4, *Moved from the lane (S648, Glendale loaded)*.
 
 🔨 **The reconcile pass (S392; `sam-reconcile-pass-after-harvest-2026-10-14`):** `kb/_program_requirements_reconcile.py` applies each college's steps (`kb/program_requirements_reconcile.json`) at extraction and on filed records (`step=reconcile`, no model call). The paragraph as it stood: lessons, *Moved from the lane (S647)*.
+
+🔨 **Sam's rulings of 2026-11-17 (#3461, final; [`sam_rulings`](../sam_rulings.md)) run in #3478 (S679).** (1) A local degree whose major matches the catalog exactly and whose major and general education run past the degree total takes `ge_overlap` in the reconcile stage (`local_degree_ge_overlap`) and passes as overlap; a major-only record short of 60 stays failing, since counting major courses toward general education cannot close a short sum. (2) A unit range whose low end the sum meets, high end short, passes as `short_high` in the scorer beside Sheet 120 card 1; hours ranges stay out. (3) A line naming a general education area and its units inside the program's requirements becomes an open-slot block (`ge_area_slot`) only where the record counts no general education beside a degree total and the slots meet the printed total exactly at both ends. The rescore moved 243 filed records (78 local degrees at 21 colleges under (1); 165 records at 56 colleges under (2)); the live UPDATE is the receipt `kb/receipts/program_requirement_records_rescore_2026-11-18_s679.json`, for the conductor through `supabase-migrate.yml`. (3) reaches filed records only on a `step=reconcile` run per college: Chaffey 42987, Los Angeles Harbor 02790 and Riverside 38259 meet their totals in the test; Ventura 39995 stays flagged on its BIOL C1001 lab pair until the lab counts as 0. The slot matcher has no self-recall test on real pages yet (`p-new-matcher-needs-self-recall-test-s652`).
 
 **Parked, displayed or standing as filed earlier** (Los Angeles Valley and Los Medanos parked; eleven colleges, Monterey Peninsula to Butte; Redwoods and De Anza open, their NEXT is (8) below; a choose-courses list's printed units are its floor, Sheet 144 card 2): lessons, *Moved from the lane (S644)*. **A refused read follows [`blocked_sources`](../blocked_sources.md) before any card.**
 
