@@ -257,11 +257,49 @@ function load(rows, onFetch) {
     check("F2: each exhibit carries the MAP link Request Adopt uses",
       block.indexOf("Sheet Metal Worker (MAPICA-SM-1-001): https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPICA-SM-1-001&View=Non-Military") >= 0, block);
     check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
-    check("F3: the drafter reads the contacts table for landing_page_url alone, with the caller's credential, on both paths",
+    check("F3: the drafter adds the reference block on both paths and lets the model use its links",
       /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
-      /the reference data from COBI/.test(FN) && !/primary_contact_email|cpl_coordinator_email/.test(FN));
-    const RD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/reference_data.mjs", "utf8");
-    check("F3: the boundary is written where a dataset joins", /no person's name, email or phone/.test(RD) && /no student detail/.test(RD));
+      /the reference data from COBI/.test(FN));
+
+    // ── G. Sam's rulings, 2026-11-18, relayed by COBIx on #3527: full read access, no staff-data block, and student
+    // counts under 10 shown as <10 in every piece.
+    const C = await import("../chatbox/supabase/functions/library-revise-draft/cobi_data.mjs");
+    const rows = C.suppressCounts([{ college: "Laney College", program: "Sheet Metal", students: 7, awards: "3", exhibits: 4 },
+      { college: "Norco College", program: "Welding", students: 12, student_count: 0 }]);
+    check("G1: ⭐ a category with 7 students reads <10", rows[0].students === "<10", JSON.stringify(rows));
+    check("G1: a string count and an award count under 10 read <10 too", rows[0].awards === "<10");
+    check("G1: 10 and over stay as they are, 0 stays 0, a count of exhibits is not a student count",
+      rows[1].students === 12 && rows[1].student_count === 0 && rows[0].exhibits === 4, JSON.stringify(rows));
+    check("G2: in prose, 7 students reads <10 students; 17 students and Step 2 stay",
+      C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4.") === "Laney had <10 students, Norco 17 students. Step 2 of 4.",
+      C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4."));
+    check("G2: in a published file, \"students\": 7 reads \"<10\"", C.suppressText('{"college":"Laney","students": 7,"units":3}') === '{"college":"Laney","students": "<10","units":3}',
+      C.suppressText('{"college":"Laney","students": 7,"units":3}'));
+    const page = '<td class="n" data-n="7">7</td><td>7 students</td><p>3 veterans earned credit; see 7 exhibits.</p>';
+    const outp = C.suppressInHtml(page);
+    check("G3: ⭐ the finished draft's text shows a count under 10 as <10 (escaped), in a table cell and a sentence, leaving attributes and other counts alone",
+      outp === '<td class="n" data-n="7">7</td><td>&lt;10 students</td><p>&lt;10 veterans earned credit; see 7 exhibits.</p>', outp);
+    check("G4: the model is told the rule, including the total that would back a hidden count out",
+      /under 10 for a specific category/.test(C.STUDENT_RULE) && /Never show a total or a remainder that would let a reader work a hidden count back out/.test(C.STUDENT_RULE) &&
+      (FN.match(/STUDENT_RULE \+ TOOL_RULES/g) || []).length === 2 && (FN.match(/suppressInHtml\(pics\.html\)/g) || []).length === 2);
+    check("G5: no staff-data block: staff names, titles and work emails may appear; a student's never",
+      (FN.match(/Staff names, titles/g) || []).length === 2 && !/Never copy a person's (own )?email/.test(FN) && /Never a student's name, email or ID/.test(FN));
+    const seen = [];
+    const fakeRest = (path) => { seen.push(path); return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(JSON.stringify([{ college: "Laney College", headcount: 5 }])) }); };
+    const fakeGet = (url) => { seen.push(url); return Promise.resolve({ ok: true, status: 200,
+      json: () => Promise.resolve({ datasets: { "supabase:map_college_contacts": {}, "rpc:team_pass_ok": {}, "file:x.js": {} } }),
+      text: () => Promise.resolve('{"found":{"X":{"students":2}}}') }); };
+    const read = await C.runTool("cobi_read", { table: "map_college_contacts", query: "select=college,headcount&limit=9999" }, fakeRest, fakeGet);
+    check("G6: ⭐ cobi_read reads any table with the caller's fetcher, caps the rows, and suppresses the count",
+      seen[0] === "map_college_contacts?select=college,headcount&limit=500" && /"headcount":"<10"/.test(read), seen[0] + " " + read);
+    check("G6: a table name that is not one is refused", /Name one table/.test(await C.runTool("cobi_read", { table: "x;drop" }, fakeRest, fakeGet)));
+    const tables = await C.runTool("cobi_tables", {}, fakeRest, fakeGet);
+    check("G6: cobi_tables lists tables and functions from the published dependency map", tables === "map_college_contacts\nrpc/team_pass_ok", tables);
+    const file = await C.runTool("cobi_file", { path: "kb/reference/x.json" }, fakeRest, fakeGet);
+    check("G6: cobi_file reads a published file and suppresses its counts", /"students":"<10"/.test(file) && seen.indexOf("https://cpl-initiative.github.io/cpl-project-tracker/kb/reference/x.json") >= 0, file);
+    check("G6: a path that climbs out of the site is refused", /Give a path/.test(await C.runTool("cobi_file", { path: "../secrets" }, fakeRest, fakeGet)));
+    check("G7: the model reads through the tools in a bounded loop, every read a GET with the caller's credential",
+      /tools: TOOLS/.test(FN) && /for \(let turn = 0; turn <= MAX_TURNS; turn\+\+\)/.test(FN) && /rest\(path, cred, \{ method: "GET" \}\)/.test(FN) && /tool_choice: \{ type: "none" \}/.test(FN));
 
     const waiting = rec({ id: "22222222-2222-2222-2222-222222222222", slug: "sheet-metal-cards", title: "Sheet Metal Cards", status: "requested",
       url: null, home: "not_filed", public_listed: false, version: null, brief: { say: "Cards per college" }, refresh_note: "Add the landing page links.",

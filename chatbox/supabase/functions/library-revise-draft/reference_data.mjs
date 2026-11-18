@@ -10,9 +10,8 @@
 // that exhibit's courses (the link Request Adopt uses). Every value is public already: the landing pages and the
 // exhibit links are MAP's public pages, and the exhibit list is the published kb/reference/map_cpl_opportunities_verified.json.
 //
-// The boundary: the block carries no person's name, email or phone (only landing_page_url is selected from the
-// contacts table) and no student detail (adr-student-detail-aggregate-disclosure-control). A draft becomes a public
-// page, so the drafter reads what a public page may show. A new dataset joins here, one function per dataset.
+// This block is a head start for the commonest ask; the model reads anything else in COBI with the tools in
+// cobi_data.mjs (Sam, 2026-11-18: full read access, no staff-data filter, student counts under 10 shown as <10).
 
 export const OPPORTUNITY_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/cpl-opportunity/?college=";
 export const EXHIBIT_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";

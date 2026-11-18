@@ -6,7 +6,7 @@
   "edge_functions": 15,
   "file_datasets": 1068,
   "external_services": 195,
-  "consumers": 627,
+  "consumers": 628,
   "workflows": 74,
   "data_js_files": 71,
   "tabs": 41
@@ -545,7 +545,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 167
+     "line": 213
     },
     {
      "id": "edgefn:slide-script-draft",
@@ -1135,7 +1135,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 49
+     "line": 50
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1255,11 +1255,18 @@
      "line": 75
     },
     {
+     "id": "script:chatbox/supabase/functions/library-revise-draft/cobi_data.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 18
+    },
+    {
      "id": "script:chatbox/supabase/functions/library-revise-draft/reference_data.mjs",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 17
+     "line": 16
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -1614,7 +1621,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 18
+     "line": 17
     },
     {
      "id": "script:fetch_veteran_jst.py",
@@ -2618,7 +2625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 61
+     "line": 60
     },
     {
      "id": "script:kb/_build_cpl_ai.py",

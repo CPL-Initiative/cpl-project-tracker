@@ -88,8 +88,11 @@ The drafter adds a reference block for each college a request names: its MAP lan
 (`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits MAP lists for it, each with the
 `exhibit-courses?Exhibit=` link Request Adopt uses (`reference_data.mjs`). **Open:** MAP's landing pages take no
 course filter we know of, so a card's filtered link is the exhibit link; ask the MAP team whether a landing page
-takes one. **Full access** stays bounded: public data only, never a person's contact or student detail, because a
-draft becomes a public page; a new dataset joins as one function in `reference_data.mjs`.
+takes one. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
+(PostgREST GET with the caller's credential) and any published file through three tools (`cobi_data.mjs`); staff
+names, titles and work emails are not filtered; the one student-data rule is that a student count under 10 for a
+category shows as `<10`, applied to every read result and to the finished draft's text, with a prompt rule against a
+total that backs a hidden count out.
 
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 
