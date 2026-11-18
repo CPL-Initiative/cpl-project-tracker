@@ -264,7 +264,15 @@ try:
     check("hold_family_folds holds no ruled rename: its target is the member's own title, never the family title",
           not held and not applied & {h["old"] for h in am["held_family"]})
     check("Sam's folds on the titles the plan leaves alone stay held as family tags",
-          {h["old"] for h in am["held_family"]} >= {TRUCK, MASTER, OR_L3, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE)
+          {h["old"] for h in am["held_family"]} >= {TRUCK, MASTER, OR_L3} | ANY_ONE)
+    # Sam re-pointed this one on 2026-11-17 (the overlay the 2026-11-18 apply synced): from the family title to its own
+    # member title. The overlay is the record: held as a family tag while it names the family, a rename onto his title
+    # once it names a member.
+    BUNDLE = "ASE Bundle — A6 or T6 + L3"
+    ov_b = (json.load(open(dry.OVERLAY, encoding="utf-8"))["overrides"].get(BUNDLE) or {}).get("unified_title_override")
+    check("an ASE bundle follows Sam's override in the overlay: held while it names the family, renamed onto a member",
+          (BUNDLE in {h["old"] for h in am["held_family"]}) if ov_b == FAM else am["renames"].get(BUNDLE) == ov_b,
+          (ov_b, am["renames"].get(BUNDLE)))
     mp = am["issuer_preview"].get(MASTER) or {}
     check("the Master merge is planned (not a chain hazard) and its issuer is rule 3, additive, with no conflict",
           am["merges"].get("ASE Master Automobile Technician (A1–A8 + L1)") == MASTER
