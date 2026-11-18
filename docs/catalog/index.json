@@ -16651,7 +16651,7 @@
      ],
      "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -17222,8 +17222,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 641,
+   "count": 642,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 683,
+     "path": "docs/session_683_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 683 handoff (from SkyVireo, S682)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27970,5 +27984,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1516
+ "total": 1517
 }
