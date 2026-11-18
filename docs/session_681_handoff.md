@@ -26,32 +26,30 @@ A later firing that finds this pull request updated within the half hour ends in
 - One writer per college. A college changes lanes only by an edit to this section before the write.
 - The slimming pull requests (#3476) touch no college record.
 
-## Ledger at 08:01Z (in progress)
+## Ledger at 08:23Z (in progress)
 
-**Merged:** #3491 (cheap piles: 9 discontinued programs flagged out of the gap census; `main` e50a87fb).
+**Merged (2):** #3491 (cheap piles: 9 discontinued programs flagged out of the gap census; `main` e50a87fb) and #3495 (#3476 step 1: display receipts are built, stored and applied by the runner from the private bucket `cpl-receipts`, never committed; `main` 25c79493).
 
-**Data written so far, each with a committed receipt and an unapplied rollback:** 56 program requirement records rescored by the units rules (#3496: 17 checks only, migrate run 44259625861; 39 full row, run 44261575737; none skipped). The private bucket `cpl-receipts` (migrate run 44255184017) holds 141 display receipts (1,596.1 MB) and 165 row audit reports (982.5 MB), by a live count.
+**Data written so far, each with a committed receipt and an unapplied rollback:** 56 program requirement records rescored by the units rules (#3496: 17 checks only, migrate run 44259625861; 39 full row, run 44261575737; none skipped). 443 course outline rows loaded for College of the Redwoods (load run 44259060063). The bucket (migrate run 44255184017) holds 141 display receipts (1,596.1 MB) and 165 row audit reports (982.5 MB), by a live count.
+
+**The merge chain.** Every merge to `main` puts each other code pull request in conflict on the dependency maps, and the runner pool is saturated, so the remaining code pull requests merge as a chain, each branch already holding the one before it: #3496, then #3498 (which now carries #3501 too), then #3497, #3490, #3503, #3502, #3499. The outcome pull requests touch only data and merge beside the chain.
 
 | PR | What | State |
 |---|---|---|
-| #3495 | display receipts to the private bucket (#3476 step 1) | ready; second read and COBIx's finding fixed, COBIx confirmed at 07:38Z; `test` running on 1332a699; merge when green |
-| #3501 | the one-time move of 141 display receipts (#3476 step 4), stacked on #3495 | upload run 44259862567 succeeded; the removal commit is being written |
-| #3498 | row audit reports kept to the newest 14 (#3476 step 5), stacked on #3495 | second read done, three minor fixes in (b2f140d5); move run 44258551009 stored 165 and removed them from the branch |
-| #3490 | the repo size check (#3476 step 2) | draft; merges after the receipts leave the tree |
-| #3496 | cheap piles: units rules A1, A4, A5; A6 off | both applies landed; rollbacks rebuilt from the returned rows, `main` merged in, then merge on a green `test` |
-| #3497 | cheap piles: named gaps, 75 rows, all `no_units_read` | second read's findings fixed (ac452730); pre-read and apply after #3496 merges |
-| #3502 | cheap piles: the paid reread plan | plan of record: no blind paid reads; two records ($0.20) have a changed page; the rest wait on reader changes |
-| #3503 | the Spend line: sessions key rebuilt at each checkpoint, and the collection, curation and infrastructure tags | draft |
-| #3488, #3421, #3284, #3489, #3494 | full outcome reads: Golden West, Diablo Valley, Allan Hancock, Los Medanos, Santiago Canyon | runs in flight or queued |
-| #3387 | College of the Redwoods outcomes | read filed, 443 rows in the dry run, load run 44259060063 |
-| #3492 | Chabot outcomes | index done, 12-page trial run 44258605342 |
-| #3493 | Antelope Valley outcomes | trial parsed 0 of 12; verdict `held`, as College of Marin |
-| #3499 | Lassen: five records pinned to `main`'s pages | second reader cleared it; reconcile 44259115005 done; review, restore and reread next |
-| #3500 | Cosumnes River: four clean pins | the paid read is off tonight: the preview lists programs beyond the pinned set |
+| #3496 | cheap piles: units rules A1, A4, A5; A6 off | both applies landed, rollbacks rebuilt from the returned rows; `main` being merged in; first in the chain |
+| #3498 (+ #3501) | #3476 steps 4 and 5: 141 display receipts and 165 old row audit reports leave the tree; the daily run keeps the newest 14 reports | both one-time moves stored and verified; being combined on `main` behind #3496 |
+| #3497 | cheap piles: named gaps, 75 rows, all `no_units_read` | second read's findings fixed (ac452730); pre-read and apply follow #3496 |
+| #3490 | the repo size check (#3476 step 2) | draft; after the receipts leave the tree |
+| #3503 | the Spend line: sessions key rebuilt at each checkpoint; collection, curation and infrastructure tags | draft; CI running |
+| #3502 | cheap piles: the paid reread plan | plan of record: no blind paid reads; two records ($0.20) have a changed page; 54 more records take a named gap through #3497's mechanism; the rest wait on reader changes |
+| #3387 | College of the Redwoods outcomes, 443 rows loaded | ready; CI running |
+| #3493 | Antelope Valley outcomes: trial parsed 0 of 12; verdict `held`, as College of Marin | ready; CI running |
+| #3488, #3489, #3421 | Golden West (580 objective rows in the dry run), Los Medanos (483), Diablo Valley (946) | reads filed; load runs 44263910106, 44264033797, 44264252782 queued |
+| #3284, #3494, #3492 | Allan Hancock (2 of 3 slices), Santiago Canyon (queued), Chabot (trial 12 of 12, full read pushed; its run to be rechecked) | reads in flight |
+| #3499 | Lassen: five records pinned to `main`'s pages | reconcile 44259115005: 33729 and 33730 pass, the other three carry `ge_units` 34 with the gap named; reread run 44263840460 |
+| #3500 | Cosumnes River: four clean pins | the paid read is off tonight: the preview lists programs beyond the pinned set; needs a named-programs input |
 | #3293 | the passing dry run | still waits on COBIx after four days; a plain-session decision |
 | #3482, #3472 | S679's drafts, green on their heads, each conflicts with `main` | left for a plain session |
-
-The runner pool is saturated, so each merge waits longer than 11 minutes.
 
 ## Order tonight (COBIx's brief on #3358, written 6:45 PM PT Nov 17)
 
