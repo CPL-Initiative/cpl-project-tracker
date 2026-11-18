@@ -33,7 +33,8 @@ after the others; every card they decide carries `rule` "G" or "M" so kb/_ccr_co
        waiting: a card that clears the scorer's own bar (80 or more, two agreeing signals, something to read) and is
        held back only by its description reading clearly as another field is accepted, keeping its guess, when the
        title names no other or narrower field, no field is named twice, three-quarters or more of its college
-       courses' subject codes and its own subject code map to the guess, and two or more colleges teach it. Two
+       courses' subject codes and its own subject code map to the guess, two or more colleges teach it, and two or
+       more of those colleges' subject codes map (COBIx on #3513: one mapped code is not a college vote). Two
        guards keep it waiting: past rulings moved such cards to the field the description reads as more often than
        they kept the guess (Art read as Art History), or a noncredit card (M9xxx) reads as a noncredit field. Not on
        a held card, nor Business read as Accounting, Marketing or Management (the business-family hold).
@@ -62,7 +63,7 @@ description source.
 Run from the repo root:
   python3 kb/_ccr_confidence_score.py                       # today's memberships, follow past rulings
   python3 kb/_ccr_confidence_score.py --fill-members        # the membership fix
-  python3 kb/_ccr_confidence_score.py --fill-members --expect 2889   # measured 2026-11-18 with G and M (S683)
+  python3 kb/_ccr_confidence_score.py --fill-members --expect 2862   # measured 2026-11-18 with G and M (S683)
   python3 kb/_ccr_confidence_score.py --fill-members --with-held-rules   # dry run of W and D, never applied
   python3 kb/_ccr_confidence_score.py --no-rules            # the base bands only
   python3 kb/_ccr_confidence_score.py --out DIR             # also write DIR/scores.csv and DIR/summary.json
@@ -161,7 +162,7 @@ FPR_TITLE = {
 }
 
 # Rule G (#3480 Source 14): the colleges outvote the description.
-G_MIN_COLLEGES = 2
+G_MIN_COLLEGES = 2       # colleges that teach it, and colleges whose subject code maps (COBIx on #3513)
 G_COLLEGE_SHARE = 0.75   # of the college courses' mapped subject codes, the share that must map to the guess
 G_BUSINESS_FAMILY = {"Business": ("Accounting", "Marketing", "Management")}
 G_NONCREDIT_SUFFIX = ": Noncredit"
@@ -170,10 +171,10 @@ G_NONCREDIT_SUFFIX = ": Noncredit"
 # "rap" and "hip-hop" are left out of the Commercial Music words on purpose: American Popular Music and the History
 # of Rap and Hip-Hop are music history, and the trusted cards file them under Music.
 M_PAIR = ("Music", "Commercial Music")
-M_CM_WORDS = (r"record|audio|pro tools|production|producing|business|industry|entrepreneur|commercial|songwrit|"
+M_CM_WORDS = (r"record(?!er)|audio|pro tools|production|producing|business|industry|entrepreneur|commercial|songwrit|"
               r"electronic music|computer music|\bmidi\b|digital audio|\bdj\b|mixer|\bsound\b|scoring for film|"
               r"film and multimedia|game audio|music technology|pop-commercial")
-M_MUSIC_WORDS = (r"choir|chorus|choral|chorale|carol|orchestra|symphony|ensemble|piano|accompan|string|woodwind|brass|"
+M_MUSIC_WORDS = (r"choir|chorus|choral|chorale|carol|orchestra|symphony|ensemble|piano|accompan|\bstring|woodwind|brass|"
                  r"percussion|marching|chamber|theory|musicianship|sight-?reading|recital|applied music|world music|"
                  r"music cultures|music in america|honors|\bvoice\b|vocal|singing|history|renaissance|quire|broadway|"
                  r"conduct|culture|appreciation|survey|popular music|american music")
@@ -396,9 +397,11 @@ def score_card(cid, rec, guess, ctx, use_w):
                 contra[other] += 1; sig["colleges"] = other
                 reasons.append("%d of %d colleges file it under %s" % (votes[other], voters, other))
 
-    mapped = [subj.get((m.get("subject") or "").strip()) for m in members]
-    mapped = [d for d in mapped if d]
+    mapped_m = [(m.get("college"), subj.get((m.get("subject") or "").strip())) for m in members]
+    mapped_m = [(c, d) for c, d in mapped_m if d]
+    mapped = [d for _c, d in mapped_m]
     subj_share = (sum(1 for d in mapped if d == guess) / len(mapped)) if mapped else None
+    mapped_colleges = len({c for c, _d in mapped_m if c})
 
     subs = {(m.get("subject") or "").strip() for m in members} - {""}
     prac = ctx["practice"]
@@ -462,7 +465,8 @@ def score_card(cid, rec, guess, ctx, use_w):
         pts = min(pts, CAP_ONE_SIGNAL)
     return {"score": int(round(pts)), "agree": agree, "contra": contra, "block": block, "read": read,
             "narrow": narrow, "signals": sig, "reasons": reasons, "votes": votes, "colleges": n_col,
-            "members": len(members), "title_excused": [w for w, _d in excused], "subj_share": subj_share}
+            "members": len(members), "title_excused": [w for w, _d in excused], "subj_share": subj_share,
+            "mapped_colleges": mapped_colleges}
 
 
 def held(cid, rec):
@@ -534,7 +538,7 @@ def rule_g(cid, guess, s, precedent, leave_out=None):
         return None, reads
     if s["subj_share"] is None or s["subj_share"] < G_COLLEGE_SHARE or sig.get("own") != "agree":
         return None, reads
-    if s["colleges"] < G_MIN_COLLEGES or reads in G_BUSINESS_FAMILY.get(guess, ()):
+    if s["colleges"] < G_MIN_COLLEGES or s["mapped_colleges"] < G_MIN_COLLEGES or reads in G_BUSINESS_FAMILY.get(guess, ()):
         return None, reads
     if past_rulings_lean(precedent, guess, reads, leave_out):
         return "past_rulings", reads

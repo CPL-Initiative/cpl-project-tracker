@@ -62,7 +62,7 @@ def check(name, cond, why=""):
 
 
 def card(score=95, agree=3, desc="Ethnic Studies_clear", title=None, narrow=None, contra=None, share=1.0,
-         own="agree", colleges=4, members=4, colleges_sig="agree"):
+         own="agree", colleges=4, members=4, colleges_sig="agree", mapped_colleges=None):
     """A scored card in score_card's shape, for the unit cases."""
     sig = {"own": own, "colleges": colleges_sig, "desc": desc}
     if title:
@@ -71,7 +71,8 @@ def card(score=95, agree=3, desc="Ethnic Studies_clear", title=None, narrow=None
         sig["narrow"] = narrow
     c = Counter(contra if contra is not None else ({desc.rsplit("_", 1)[0]: 1} if not desc.startswith("agree") else {}))
     return {"score": score, "agree": agree, "read": True, "signals": sig, "narrow": narrow, "contra": c,
-            "subj_share": share, "colleges": colleges, "members": members}
+            "subj_share": share, "colleges": colleges, "members": members,
+            "mapped_colleges": colleges if mapped_colleges is None else mapped_colleges}
 
 
 prec = json.load(open(os.path.join(ROOT, "kb", "ccr_curator_precedent.json")))["pairs"]
@@ -92,7 +93,8 @@ for name, kw in (("a score under 80", {"score": 79}), ("one agreeing signal", {"
                  ("a title that names another field", {"title": "History"}), ("a narrower field named", {"narrow": "Commercial Music"}),
                  ("a field named twice", {"contra": {"Ethnic Studies": 2}}), ("under three-quarters of the subject codes", {"share": 0.7}),
                  ("no mapped subject code", {"share": None}), ("its own subject points elsewhere", {"own": "History"}),
-                 ("one college", {"colleges": 1})):
+                 ("one college", {"colleges": 1}),
+                 ("one college's subject code mapped of four that teach it", {"mapped_colleges": 1})):
     check("(G) does not apply with %s" % name, M.rule_g("MUSI M1046", "Music", card(**kw), prec)[0] is None)
 check("(G) the business-family hold: Business read as Accounting is not accepted",
       M.rule_g("BUSI M1001", "Business", card(desc="Accounting_clear"), prec)[0] is None)
@@ -109,7 +111,9 @@ for t, call in (("Recording Arts", "Commercial Music"), ("The Music Business", "
                 ("College Symphony Orchestra", "Music"), ("Commercial/Jazz Theory and Musicianship", "both"),
                 ("Studio Band", "neither"), ("American Popular Music", "Music"),
                 ("History of Rap and Hip-Hop", "Music"), ("Live Sound", "Commercial Music"),
-                ("Electronic Music Ensemble", "both"), ("Intro to MIDI", "Commercial Music")):
+                ("Electronic Music Ensemble", "both"), ("Intro to MIDI", "Commercial Music"),
+                ("Beginning Recorder", "neither"), ("Recorder Ensemble", "Music"),
+                ("Records and Record Labels", "Commercial Music"), ("Instrument Restringing", "neither")):
     check("(M) title call: %r -> %s" % (t, call), M.split_call(t) == call, M.split_call(t))
 check("(M) ⭐ MUSI M1617's title, Commercial/Jazz Theory and Musicianship, is a both call: it stays waiting",
       M.split_call("Commercial/Jazz Theory and Musicianship") == "both")
@@ -292,6 +296,33 @@ with tempfile.TemporaryDirectory() as tmp:
         again = A.undo("M", receipts, path)
     check("(undo) a second undo restores nothing", again == (0, 2, 0), again)
 
+    # Write order (COBIx on #3513): the receipt lands before the course file, so a failed course write leaves a
+    # receipt and no stamps, and the undo leaves those cards alone.
+    p2, out_w = os.path.join(tmp, "courses_w.json"), os.path.join(tmp, "out_w")
+    A.write(p2, fixture)
+    before_w = open(p2, "rb").read()
+    real_write = A.write
+
+    def failing_write(target, obj):
+        if target == p2:
+            raise OSError("disk full")
+        real_write(target, obj)
+    A.write = failing_write
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            A.apply("G", g_rows, 2, "S0", p2, out_w)
+        failed = False
+    except OSError:
+        failed = True
+    finally:
+        A.write = real_write
+    rw = [os.path.join(out_w, d, "receipt.json") for d in os.listdir(out_w)] if os.path.isdir(out_w) else []
+    with contextlib.redirect_stdout(io.StringIO()):
+        n_w = A.undo("G", rw, p2) if rw else None
+    check("(apply) a failed course write leaves the receipt, no stamps, and an undo that touches nothing",
+          failed and len(rw) == 1 and open(p2, "rb").read() == before_w and n_w == (0, 2, 0)
+          and not [f for f in os.listdir(tmp) if f.endswith(".tmp")], (failed, rw, n_w))
+
     # A re-mint between the apply and the undo: MUSC M2 becomes MUSC M7 under a new alias map.
     import alias_chain as AC  # noqa: E402
     with contextlib.redirect_stdout(io.StringIO()):
@@ -302,10 +333,12 @@ with tempfile.TemporaryDirectory() as tmp:
     A.write(path, d)
     amap = os.path.join(tmp, "alias_map.json")
     A.write(amap, {"alias": {"MUSC M2": "MUSC M7"}})
-    with contextlib.redirect_stdout(io.StringIO()):
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
         lost = A.undo("M", receipts, path)
     check("(undo) ⭐ a card re-minted after the apply and not in the chain is reported as not found, apart from a "
           "changed one", lost == (1, 0, 1) and A.read(path)["courses"]["MUSC M7"]["discipline"] == "Commercial Music", lost)
+    check("(undo) a partial undo says so", buf.getvalue().startswith("PARTIAL undo, rule M: restored 1"), buf.getvalue())
     with contextlib.redirect_stdout(io.StringIO()):
         found = A.undo("M", receipts, path, chain=AC.ALIAS_MAPS + [amap])
     doc = A.read(path)["courses"]

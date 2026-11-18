@@ -72,9 +72,12 @@ def read(path):
 
 
 def write(path, obj):
-    with open(path, "w", encoding="utf-8") as f:
+    """Write through a temporary file and os.replace, so a failed write leaves the old file whole."""
+    tmp = path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    os.replace(tmp, path)
 
 
 def now():
@@ -170,12 +173,7 @@ def apply(rule, rows, expect, run, courses_path=COURSES, out_dir=OUT, fill_membe
             print("refusing: %s changed under the run" % cid)
             return 2
         before[cid] = {k: rec[k] for k in FIELDS if k in rec}
-    wrote = {}
-    for cid, row in rows:
-        new = stamp(row, rule, run, day)
-        courses[cid].update(new)
-        wrote[cid] = new
-    write(courses_path, doc)
+    wrote = {cid: stamp(row, rule, run, day) for cid, row in rows}
     os.makedirs(os.path.join(out_dir, day), exist_ok=True)
     path = os.path.join(out_dir, day, "receipt.json")
     receipt = read(path) if os.path.exists(path) else {
@@ -185,7 +183,11 @@ def apply(rule, rows, expect, run, courses_path=COURSES, out_dir=OUT, fill_membe
     receipt["applies"].append({"rule": rule, "run": run, "date": day, "at": t.strftime("%Y-%m-%dT%H:%M:%SZ"),
                                "fill_members": fill_members, "count": len(rows), "alias_era": list(AC.ALIAS_MAPS),
                                "before": before, "wrote": wrote})
+    # The receipt lands first: if the course write then fails, undo finds no stamp on those cards and leaves them be.
     write(path, receipt)
+    for cid, new in wrote.items():
+        courses[cid].update(new)
+    write(courses_path, doc)
     print("stamped %d rule %s cards; receipt %s" % (len(rows), rule, os.path.relpath(path, os.path.dirname(HERE))))
     return 0
 
@@ -228,8 +230,9 @@ def undo(rule, receipts, courses_path=COURSES, chain=None):
                         c.pop(k, None)
                 restored += 1
     write(courses_path, doc)
-    print("rule %s: restored %d cards, left %d alone (changed since), %d not found%s" % (
-        rule, restored, changed, len(missing), (": " + ", ".join(missing[:5])) if missing else ""))
+    print("%srule %s: restored %d cards, left %d alone (changed since), %d not found%s" % (
+        "PARTIAL undo, " if missing else "", rule, restored, changed, len(missing),
+        (": " + ", ".join(missing[:5])) if missing else ""))
     return restored, changed, len(missing)
 
 
