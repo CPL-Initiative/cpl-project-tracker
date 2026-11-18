@@ -359,8 +359,16 @@ for bad in ({"response": json.dumps([{"returned": {"returned": 3, "keys": [1, 3]
           % json.dumps(bad)[:40], refused)
 with open(os.path.join(ROOT, "kb", "receipts", "program_requirement_records_rescore_2026-11-18_s679.json")) as fh:
     rc = json.load(fh)
-check("the committed receipt carries the returning UPDATE, the trigger note, and no rollback until the UPDATE runs",
-      "r.checked" in rc["apply"] and rc["rollback"] is None and rc["applied"] is None
+if rc["applied"] is None:
+    staged = rc["rollback"] is None
+else:
+    with open(os.path.join(ROOT, rc["applied"]["from"])) as fh:
+        mig = json.load(fh)
+    staged = (rc["applied"]["returned"] == rc["rescored"]
+              and rc["rollback"] == RS.rollback_from(rc, mig))
+check("the committed receipt carries the returning UPDATE and the trigger note; its rollback is none before the UPDATE "
+      "runs and, after, the one built from the UPDATE's own returned rows",
+      "r.checked" in rc["apply"] and staged
       and "follow_verdict" in rc["follow_verdict"] and "checked" in rc["follow_verdict"]
       and "Person-settled" in rc["person_settled"]
       and [c["i"] for c in rc["records"]] == list(range(1, rc["rescored"] + 1)))

@@ -1,0 +1,1787 @@
+{
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-11-18/alias_map.json",
+  "renames_processed": 80,
+  "merges_processed": 0,
+  "_state": "filed",
+  "_applied_at": "2026-11-18T03:09:38Z",
+  "ok": 81,
+  "fail": 0,
+  "no_op": 22,
+  "carried": 0,
+  "log": [
+    {
+      "old_ut": "Adv ESL: Writing/Grammar",
+      "new_ut": "Adv ESL: Writing and Grammar",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "ESOL",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Adv ESL: Writing/Grammar",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adv ESL: Writing and Grammar",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Adv ESL: Writing/Grammar",
+      "new_ut": "Adv ESL: Writing and Grammar",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Adv ESL: Writing/Grammar",
+      "new_course_id": "_CREDENTIAL_REVIEW::Adv ESL: Writing and Grammar",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Advanced Desserts and Pastry/Chocolate/Sugar",
+      "new_ut": "Advanced Desserts and Pastry, Chocolate, and Sugar",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T17:18:20.444056+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Advanced Desserts and Pastry/Chocolate/Sugar",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Desserts and Pastry, Chocolate, and Sugar",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Arboriculture/Urban Forestry",
+      "new_ut": "Arboriculture and Urban Forestry",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Implementation using AutoCAD",
+      "new_ut": "Architecture and Green Design: Implementation using AutoCAD",
+      "kind": "rename",
+      "field": "issuing_agency_additional_override",
+      "before_row": {
+        "value": "Green Business Certification Inc. (GBCI)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:11.597887+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Implementation using AutoCAD",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Implementation using AutoCAD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Implementation using AutoCAD",
+      "new_ut": "Architecture and Green Design: Implementation using AutoCAD",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "U.S. Green Building Council (USGBC)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:11.59789+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Implementation using AutoCAD",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Implementation using AutoCAD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Planning and Construction",
+      "new_ut": "Architecture and Green Design: Planning and Construction",
+      "kind": "rename",
+      "field": "issuing_agency_additional_override",
+      "before_row": {
+        "value": "Green Business Certification Inc. (GBCI)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:32.958894+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Planning and Construction",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Planning and Construction",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Planning and Construction",
+      "new_ut": "Architecture and Green Design: Planning and Construction",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "U.S. Green Building Council (USGBC)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:32.956218+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Planning and Construction",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Planning and Construction",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Principles and Practices",
+      "new_ut": "Architecture and Green Design: Principles and Practices",
+      "kind": "rename",
+      "field": "issuing_agency_additional_override",
+      "before_row": {
+        "value": "Green Business Certification Inc. (GBCI)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:55.904761+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Principles and Practices",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Principles and Practices",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Architecture/Green Design: Principles and Practices",
+      "new_ut": "Architecture and Green Design: Principles and Practices",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "U.S. Green Building Council (USGBC)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T20:15:55.910475+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Architecture/Green Design: Principles and Practices",
+      "new_course_id": "_CREDENTIAL_REVIEW::Architecture and Green Design: Principles and Practices",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Autodesk Certified User/Professional — AutoCAD",
+      "new_ut": "Autodesk Certified User and Professional — AutoCAD",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Autodesk Certified User/Professional — Revit Architecture",
+      "new_ut": "Autodesk Certified User and Professional — Revit Architecture",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "new_ut": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
+      "kind": "rename",
+      "field": "issuing_agency_additional_override",
+      "before_row": {
+        "value": "Schneider Electric's EcoXpert program | Siemens | Honeywell",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:32:39.007902+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "new_course_id": "_CREDENTIAL_REVIEW::Building Automation System (BAS) Certification — Manufacturer and Vendor",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "new_ut": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "Johnson Controls Training Institute",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:32:03.730939+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Building Automation System (BAS) Certification — Manufacturer/Vendor",
+      "new_course_id": "_CREDENTIAL_REVIEW::Building Automation System (BAS) Certification — Manufacturer and Vendor",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+      "new_ut": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Calculations in Water/Wastewater Technology",
+      "new_ut": "Calculations in Water and Wastewater Technology",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:55:39.217158+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Carpenters Apprenticeship — Drywall/Lather",
+      "new_course_id": "_CREDENTIAL_REVIEW::Carpenters Apprenticeship — Drywall and Lather",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather Journeyperson",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather Year 1",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather Year 2",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather Year 3",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+      "new_ut": "Carpenters Apprenticeship — Drywall and Lather Year 4",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "new_ut": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "new_course_id": "_CREDENTIAL_REVIEW::Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "new_ut": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T22:05:27.133427+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Concealed/Glue-Up/Staple-Up Ceiling Systems",
+      "new_course_id": "_CREDENTIAL_REVIEW::Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Confined Space Rescue Operations/Technician",
+      "new_ut": "Confined Space Rescue Operations and Technician",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Diesel Electrical/Electronic Systems",
+      "new_ut": "Diesel Electrical and Electronic Systems",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:11:47.219124+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Diesel Electrical/Electronic Systems",
+      "new_course_id": "_CREDENTIAL_REVIEW::Diesel Electrical and Electronic Systems",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Doors, Windows, Exterior Systems/Building Documents",
+      "new_ut": "Doors, Windows, Exterior Systems and Building Documents",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:55:39.217158+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Doors, Windows, Exterior Systems/Building Documents",
+      "new_course_id": "_CREDENTIAL_REVIEW::Doors, Windows, Exterior Systems and Building Documents",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Education / Careers in Education Intermediate",
+      "new_ut": "Education and Careers in Education Intermediate",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "Century High School",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T23:33:43.783273+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Education / Careers in Education Intermediate",
+      "new_course_id": "_CREDENTIAL_REVIEW::Education and Careers in Education Intermediate",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Education / Careers in Education Intermediate",
+      "new_ut": "Education and Careers in Education Intermediate",
+      "kind": "rename",
+      "field": "training_agency_override",
+      "before_row": {
+        "value": "Century High School",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T23:33:43.799569+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Education / Careers in Education Intermediate",
+      "new_course_id": "_CREDENTIAL_REVIEW::Education and Careers in Education Intermediate",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+      "new_ut": "Emergency Medical Response — CPR Pro and Healthcare Provider",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Exterior/Advanced Fire Control System and Partitions",
+      "new_ut": "Exterior and Advanced Fire Control System and Partitions",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:55:39.217158+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Exterior/Advanced Fire Control System and Partitions",
+      "new_course_id": "_CREDENTIAL_REVIEW::Exterior and Advanced Fire Control System and Partitions",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "kind": "rename",
+      "field": "reviewed_marker",
+      "before_row": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:18.924639+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "FIRE",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_ut": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+      "new_course_id": "_CREDENTIAL_REVIEW::Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Fuel Systems/Emission Controls",
+      "new_ut": "Fuel Systems and Emission Controls",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Fuel Systems/Emission Controls",
+      "new_course_id": "_CREDENTIAL_REVIEW::Fuel Systems and Emission Controls",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Fuel Systems/Emission Controls",
+      "new_ut": "Fuel Systems and Emission Controls",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Fuel Systems/Emission Controls",
+      "new_course_id": "_CREDENTIAL_REVIEW::Fuel Systems and Emission Controls",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "HAZWOPER First Responder Awareness/Operations",
+      "new_ut": "HAZWOPER First Responder Awareness and Operations",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Hairstyling Services/Haircutting 2",
+      "new_ut": "Hairstyling Services and Haircutting 2",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "COSM",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Hairstyling Services/Haircutting 2",
+      "new_course_id": "_CREDENTIAL_REVIEW::Hairstyling Services and Haircutting 2",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Hairstyling Services/Haircutting 2",
+      "new_ut": "Hairstyling Services and Haircutting 2",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Hairstyling Services/Haircutting 2",
+      "new_course_id": "_CREDENTIAL_REVIEW::Hairstyling Services and Haircutting 2",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Heavy/Medium Duty Truck Technology Apprenticeship",
+      "new_ut": "Heavy and Medium Duty Truck Technology Apprenticeship",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Heavy/Medium Duty Truck Technology Apprenticeship",
+      "new_course_id": "_CREDENTIAL_REVIEW::Heavy and Medium Duty Truck Technology Apprenticeship",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Hydraulics/Pneumatics",
+      "new_ut": "Hydraulics and Pneumatics",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T23:31:49.959557+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Hydraulics/Pneumatics",
+      "new_course_id": "_CREDENTIAL_REVIEW::Hydraulics and Pneumatics",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Infant/Toddler Practicum",
+      "new_ut": "Infant and Toddler Practicum",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "CDEV",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Infant/Toddler Practicum",
+      "new_course_id": "_CREDENTIAL_REVIEW::Infant and Toddler Practicum",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Infant/Toddler Practicum",
+      "new_ut": "Infant and Toddler Practicum",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Infant/Toddler Practicum",
+      "new_course_id": "_CREDENTIAL_REVIEW::Infant and Toddler Practicum",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Introduction to Engineering Design/Graphics",
+      "new_ut": "Introduction to Engineering Design and Graphics",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Introduction to UNIX/Linux",
+      "new_ut": "Introduction to UNIX and Linux",
+      "kind": "rename",
+      "field": "reviewed_marker",
+      "before_row": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.627846+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX/Linux",
+      "new_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX and Linux",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Introduction to UNIX/Linux",
+      "new_ut": "Introduction to UNIX and Linux",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "ITIS",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX/Linux",
+      "new_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX and Linux",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Introduction to UNIX/Linux",
+      "new_ut": "Introduction to UNIX and Linux",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX/Linux",
+      "new_course_id": "_CREDENTIAL_REVIEW::Introduction to UNIX and Linux",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "new_ut": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T22:57:50.40229+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Ironworker Apprenticeship — OSHA 30/Extension Review",
+      "new_course_id": "_CREDENTIAL_REVIEW::Ironworker Apprenticeship — OSHA 30 and Extension Review",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "CNST",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "CNST",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_ut": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Layout/Leveling Construction Site Practice",
+      "new_ut": "Layout and Leveling Construction Site Practice",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:55:39.217158+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Layout/Leveling Construction Site Practice",
+      "new_course_id": "_CREDENTIAL_REVIEW::Layout and Leveling Construction Site Practice",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Layout/Leveling Construction Site Practice",
+      "new_ut": "Layout and Leveling Construction Site Practice",
+      "kind": "rename",
+      "field": "discipline_override",
+      "before_row": {
+        "value": "Carpentry",
+        "reviewer_email": "carp-disc-s110@bot",
+        "reviewed_at": "2026-07-09T22:29:58.318563+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Layout/Leveling Construction Site Practice",
+      "new_course_id": "_CREDENTIAL_REVIEW::Layout and Leveling Construction Site Practice",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Layout/Leveling Construction Site Practice",
+      "new_ut": "Layout and Leveling Construction Site Practice",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "CARP",
+        "reviewer_email": "carp-subj-s110@bot",
+        "reviewed_at": "2026-07-09T22:29:58.318563+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Layout/Leveling Construction Site Practice",
+      "new_course_id": "_CREDENTIAL_REVIEW::Layout and Leveling Construction Site Practice",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Maternal/Newborn Nursing Care",
+      "new_ut": "Maternal and Newborn Nursing Care",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Mathematics for Drywall/Lathers",
+      "new_ut": "Mathematics for Drywall and Lathers",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:55:39.217158+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Mathematics for Drywall/Lathers",
+      "new_course_id": "_CREDENTIAL_REVIEW::Mathematics for Drywall and Lathers",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "NCCER Commercial Electrician Level 4/Journey Level",
+      "new_ut": "NCCER Commercial Electrician Level 4 and Journey Level",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "NCCER Industrial Electrician Level 4/Journey Level",
+      "new_ut": "NCCER Industrial Electrician Level 4 and Journey Level",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+      "new_ut": "Nursing Skills and Clinical Simulation Laboratory Beginning",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T21:56:55.984653+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Nursing Skills/Clinical Simulation Laboratory Beginning",
+      "new_course_id": "_CREDENTIAL_REVIEW::Nursing Skills and Clinical Simulation Laboratory Beginning",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Oil/Acrylic Painting: Beginning 1",
+      "new_ut": "Oil and Acrylic Painting: Beginning 1",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "ARTS",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Oil/Acrylic Painting: Beginning 1",
+      "new_course_id": "_CREDENTIAL_REVIEW::Oil and Acrylic Painting: Beginning 1",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Oil/Acrylic Painting: Beginning 1",
+      "new_ut": "Oil and Acrylic Painting: Beginning 1",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Oil/Acrylic Painting: Beginning 1",
+      "new_course_id": "_CREDENTIAL_REVIEW::Oil and Acrylic Painting: Beginning 1",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Prefab/Sound Panels",
+      "new_ut": "Prefab and Sound Panels",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:12:53.810442+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Prefab/Sound Panels",
+      "new_course_id": "_CREDENTIAL_REVIEW::Prefab and Sound Panels",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Principles of Infant/Toddler Caregiving",
+      "new_ut": "Principles of Infant and Toddler Caregiving",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Principles of Infant/Toddler Caregiving",
+      "new_course_id": "_CREDENTIAL_REVIEW::Principles of Infant and Toddler Caregiving",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Principles of Power Mechanics/Small Engines",
+      "new_ut": "Principles of Power Mechanics and Small Engines",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Principles of Power Mechanics/Small Engines",
+      "new_course_id": "_CREDENTIAL_REVIEW::Principles of Power Mechanics and Small Engines",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Spanish/English Linguistics Analysis",
+      "new_ut": "Spanish and English Linguistics Analysis",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "FLNG",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Spanish/English Linguistics Analysis",
+      "new_course_id": "_CREDENTIAL_REVIEW::Spanish and English Linguistics Analysis",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Spanish/English Linguistics Analysis",
+      "new_ut": "Spanish and English Linguistics Analysis",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Spanish/English Linguistics Analysis",
+      "new_course_id": "_CREDENTIAL_REVIEW::Spanish and English Linguistics Analysis",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Standard First Aid/CPR/AED",
+      "new_ut": "Standard First Aid, CPR, and AED",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "Tool/Equipment Applications — Emergency Response Procedures",
+      "new_ut": "Tool and Equipment Applications — Emergency Response Procedures",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Tool/Equipment Applications — Emergency Response Procedures",
+      "new_course_id": "_CREDENTIAL_REVIEW::Tool and Equipment Applications — Emergency Response Procedures",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Tool/Equipment Applications — Fall Protection",
+      "new_ut": "Tool and Equipment Applications — Fall Protection",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Tool/Equipment Applications — Fall Protection",
+      "new_course_id": "_CREDENTIAL_REVIEW::Tool and Equipment Applications — Fall Protection",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Transit Level/Laser",
+      "new_ut": "Transit Level and Laser",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "ccc-bulk-s108@bot",
+        "reviewed_at": "2026-07-09T00:15:18.348746+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Transit Level/Laser",
+      "new_course_id": "_CREDENTIAL_REVIEW::Transit Level and Laser",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "new_ut": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
+      "kind": "rename",
+      "field": "cpl_type_override",
+      "before_row": {
+        "value": "Apprenticeship",
+        "reviewer_email": "apprentice-tag-s109@bot",
+        "reviewed_at": "2026-07-09T18:57:38.114889+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+      "new_course_id": "_CREDENTIAL_REVIEW::UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+      "new_ut": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+      "new_ut": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+      "new_ut": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+      "new_ut": "UA Plumbers and Pipefitters Apprenticeship — Level 4",
+      "kind": "rename",
+      "op": "skip",
+      "reason": "no_rows_in_supabase"
+    },
+    {
+      "old_ut": "UNIX/Linux Systems and Programming",
+      "new_ut": "UNIX and Linux Systems and Programming",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "California Community Colleges",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T23:52:41.776941+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::UNIX/Linux Systems and Programming",
+      "new_course_id": "_CREDENTIAL_REVIEW::UNIX and Linux Systems and Programming",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Water/Wastewater Operator Certification",
+      "new_ut": "Water and Wastewater Operator Certification",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "ENVS",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Water/Wastewater Operator Certification",
+      "new_course_id": "_CREDENTIAL_REVIEW::Water and Wastewater Operator Certification",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Water/Wastewater Operator Certification",
+      "new_ut": "Water and Wastewater Operator Certification",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Water/Wastewater Operator Certification",
+      "new_course_id": "_CREDENTIAL_REVIEW::Water and Wastewater Operator Certification",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    }
+  ]
+}
