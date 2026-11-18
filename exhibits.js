@@ -130,6 +130,57 @@
   /* Which certs each canonical title holds, by the industry credential catalog's ids (kb/_build_exhibit_cert_links.py;
      Sam, 2026-11-01: "a separate canonical list of just our certs, apart from how they might be bundled"). */
   var CERT_LINKS_URL = "kb/exhibit_cert_links.json";
+  /* The read-only side by side (S678, COBIx's item 7; exhibits/ask-sky-side-by-side.md on #3464): one row per MAP
+     exhibit with its local title (never edited), its canonical title, the official source and its CPL type, built by
+     kb/_build_side_by_side.py and read the first time a person opens the view. It writes nothing. */
+  var EXH_SBS_URL = "kb/exhibit_side_by_side.json";
+  var EXH_SBS = { data: null, loading: null, failed: "", open: {} };
+  function exhSbsLoad(redraw) {
+    if (EXH_SBS.data || EXH_SBS.loading) return;
+    EXH_SBS.failed = "";
+    EXH_SBS.loading = fetch(EXH_SBS_URL, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(EXH_SBS_URL + " answered " + r.status);
+      return r.json();
+    }).then(function (d) { EXH_SBS.data = d || {}; EXH_SBS.loading = null; redraw(); },
+      function (e) { EXH_SBS.failed = String((e && e.message) || e); EXH_SBS.loading = null; redraw(); });
+  }
+  function exhSbsSource(x) {
+    var parts = [];
+    if (x.o && x.o.length) parts.push(x.o.map(function (c) { return c[0] + (c[1] ? ", issued by " + c[1] : ""); }).join("; ") + ".");
+    else if (x.n) parts.push("The official certification name is not on file.");
+    if (x.oc && x.oc.length && !(x.o && x.o.length)) {
+      var list = x.oc.slice(0, 3).join("; ") + (x.oc.length > 3 ? "; and " + (x.oc.length - 3) + " more" : "");
+      parts.push((x.k === "cert-based" ? "It articulates to " : "Official course: ") + list + ".");
+    }
+    if (!parts.length) parts.push("No official source on file.");
+    if (x.a) parts.push(x.a);
+    return parts.join(" ");
+  }
+  function exhSbsType(x) {
+    if (!x.t) return "No CPL type on the record or in the exhibit id";
+    return x.t + (x.k ? ", " + x.k : "") + (x.ts === "id" ? " (read from the exhibit id; MAP's type is not on the record)" : "");
+  }
+  /* rows: [{ id, title }] in the order the view holds them; proposed: the Review card's proposed name, when there is one. */
+  function exhSbsBody(rows, label, proposed) {
+    if (EXH_SBS.failed) return [el("p", { cls: "exh-muted exh-small", text: "The side by side file (" + EXH_SBS_URL + ") did not arrive: " + EXH_SBS.failed + ". Close the view and open it again to try once more." })];
+    if (!EXH_SBS.data) return [el("p", { cls: "exh-muted exh-small", text: "Reading the side by side file…" })];
+    var by = EXH_SBS.data.exhibits || {};
+    var cols = [["MAP exhibit", 14], ["Local title, as the college entered it", 22], [proposed ? "Proposed canonical title" : "Canonical title", 18],
+      ["Official source", 30], ["CPL type", 16]];
+    var body = el("tbody", null, rows.map(function (m) {
+      var x = by[m.id] || {};
+      return el("tr", null, [
+        el("td", null, [el("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", cls: "exh-pn-id", text: m.id, "aria-label": m.id + " in MAP (opens a new tab)" })]),
+        el("td", { text: m.title || x.l || "" }),
+        el("td", { text: proposed || x.c || "Not under a canonical title in the file" }),
+        el("td", { text: exhSbsSource(x) }),
+        el("td", { text: exhSbsType(x) })
+      ]);
+    }));
+    return [el("div", { cls: "exh-sbs-wrap", role: "region", tabindex: "0", "aria-label": label }, [
+      el("table", { cls: "exh-sbs-table" }, [el("colgroup", null, cols.map(function (c) { return el("col", { style: "width:" + c[1] + "%" }); })),
+        el("thead", null, [el("tr", null, cols.map(function (c) { return el("th", { scope: "col", text: c[0] }); }))]), body])])];
+  }
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
   var MAP_VIEW = "&View=Non-Military";
@@ -2461,6 +2512,13 @@
       cdBtn.addEventListener("keydown", function (e) { if (e.key === "Escape" && state.cd.open === h.raw) { e.preventDefault(); closeCourseDetails(); } });
       src.appendChild(cdBtn);
       c.appendChild(src);
+      // Side by side, read-only: each MAP exhibit behind the card with the proposed name and the official source.
+      var sbsBody = el("div", { cls: "exh-sbs-body" }, exhSbsBody(h.ids.map(function (id) { return { id: id, title: h.raw }; }),
+        "The MAP exhibits behind " + h.raw + ", side by side", h.title || ""));
+      var sbsD = el("details", { cls: "exh-sbs", id: "exh-sbs" }, [el("summary", { text: "Side by side: each exhibit's local title, proposed name, official source and CPL type" }), sbsBody]);
+      if (EXH_SBS.open[h.raw]) { sbsD.open = true; exhSbsLoad(render); }
+      sbsD.addEventListener("toggle", function () { EXH_SBS.open[h.raw] = sbsD.open; if (sbsD.open) exhSbsLoad(render); });
+      c.appendChild(sbsD);
     }
 
     var acts = el("div", { cls: "exh-acts" });
@@ -4561,6 +4619,14 @@
           if (k !== "id") return m[k];
           return el2("a", { href: mapUrl(m.id), target: "_blank", rel: "noopener", cls: "exh-pn-id", text: m.id, "aria-label": m.id + " in MAP (opens a new tab)" });
         } }));
+      // Side by side: each exhibit's local title, canonical title, official source and CPL type, read-only.
+      var sbsRows = members.slice().sort(function (a, b) { return String(a.title).localeCompare(String(b.title)); });
+      var sbs = h.fold("sbs", "Side by side: each exhibit's local title, canonical title, official source and CPL type",
+        exhSbsBody(sbsRows, "The MAP exhibits under " + listTitle(r) + ", side by side"));
+      sbs.classList.add("exh-sbs");
+      sbs.addEventListener("toggle", function () { if (sbs.open) exhSbsLoad(redrawList); });
+      if (sbs.open) exhSbsLoad(redrawList);
+      out.push(sbs);
     }
     // The issuer and training sites, edited in place.
     out.push(h.fold("edit", "Who issues it, and where it is trained: " + (cur.issuer || "no issuer named") + "; "
@@ -5533,6 +5599,13 @@
     ".exh-rb-in:focus-visible { outline:2px solid var(--seal-blue); outline-offset:1px; }",
     ".exh-rb-skip th .exh-rb-cur, .exh-rb-skip td { color:var(--text-muted); }",
     "@media (max-width: 720px) { .exh-rb-table { min-width:640px; } }",
+    ".exh-sbs { margin:8px 0; }",
+    ".exh-sbs > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.86rem; color:var(--text-body); }",
+    ".exh-sbs-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; margin:6px 0; }",
+    ".exh-sbs-wrap:focus-visible { outline:2px solid var(--seal-blue); outline-offset:1px; }",
+    ".exh-sbs-table { width:100%; min-width:720px; table-layout:fixed; border-collapse:collapse; font-size:.8rem; }",
+    ".exh-sbs-table th { text-align:left; vertical-align:bottom; padding:5px 6px; font-weight:600; color:var(--text-muted); background:var(--surface-subtle); border-bottom:1px solid var(--border-strong); }",
+    ".exh-sbs-table td { vertical-align:top; padding:5px 6px; color:var(--text-body); border-bottom:1px solid var(--border); overflow-wrap:anywhere; }",
     "@media (prefers-reduced-motion: reduce) { .exh-wrap * { transition:none !important; } }"
   ].join("\n");
   function ensureCss() {

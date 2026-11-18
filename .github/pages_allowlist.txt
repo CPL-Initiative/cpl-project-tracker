@@ -44,6 +44,7 @@ withhold tools
 # Root workbooks.
 withhold *.xlsx
 # kb/ staging, curated anchors and lexicons: generator inputs baked into the served unified_courses_*.js.
+withhold kb/ccr_curator_precedent.json
 withhold kb/cdc_data_dictionary.json
 withhold kb/cdc_integrations.json
 withhold kb/cid_articulation_joins.json
@@ -313,6 +314,7 @@ publish kb/esl_fold_spotcheck
 publish kb/exhibit_audit/latest.json
 publish kb/exhibit_cert_links.json
 publish kb/exhibit_left_map.json
+publish kb/exhibit_side_by_side.json
 publish kb/exhibit_slo_neighbors.json
 publish kb/exhibits_adoption.json
 publish kb/exhibits_ai_sort.json
@@ -412,6 +414,7 @@ publish kb/remint_blast_worklist.json
 publish kb/remint_series_readings_rulings_2026-09-03.json
 publish kb/returned_titles_acknowledged.json
 publish kb/row_audit/latest.json
+publish kb/side_by_side.json
 publish kb/sjcoe_occupation_scope_map.json
 publish kb/spot_checks
 publish kb/statewide_exhibit_categories.json

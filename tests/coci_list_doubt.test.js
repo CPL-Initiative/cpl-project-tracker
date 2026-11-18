@@ -87,7 +87,7 @@ function tab(opts) {
     if (/kb_curation/.test(url) && init.method) {
       const body = JSON.parse(init.body || "null");
       writes.push({ url: url, method: init.method, body: body });
-      const refused = opts.refuse && body && body.field === "ccr_procedure_request";
+      const refused = (opts.refuse && body && body.field === "ccr_procedure_request") || (opts.refuseDisc && body && !Array.isArray(body) && body.field === "discipline");
       return Promise.resolve({ ok: !refused, status: refused ? 403 : 201, json: () => Promise.resolve(null) });
     }
     if (/kb_curation/.test(url) && /ccr_procedure_request/.test(url)) {
@@ -291,7 +291,8 @@ function rule(t, value, words, similar) {
       && /Kept English, also listed as Journalism by reviewer@rccd\.edu/.test(p), p.slice(0, 700));
   }
   {
-    // (10) a merged common course (its confirmation is a stamp): the second discipline alone, and never a discipline write.
+    // (10) a merged common course: the second discipline and, since issue 3447, the home discipline row as it stands
+    // (a merged card's confirmation is a POST; the overlay fold stamps validated_at from it), never another discipline.
     const t = tab({ signedIn: true });
     await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
     rule(t, "also:Welding", "", false);
@@ -299,8 +300,34 @@ function rule(t, value, words, similar) {
     await sleep(30);
     const rows = t.writes[1].body;
     check("(10) ⭐ a cross-list never changes the home discipline: no discipline row names another one",
-      t.writes.length === 2 && Array.isArray(rows) && rows.length === 1 && rows[0].field === "cross_listed_disciplines" && rows[0].value === "Welding"
+      t.writes.length === 2 && Array.isArray(rows) && rows.length === 2 && rows[0].field === "cross_listed_disciplines" && rows[0].value === "Welding"
+      && rows[1].field === "discipline" && rows[1].value === "Construction"
+      && !t.writes.some((w) => w.method === "PATCH")
       && !t.writes.some((w) => [].concat(w.body).some((r) => r && r.field === "discipline" && r.value !== "Construction")), JSON.stringify(t.writes));
+  }
+  {
+    // (11) ⭐ issue 3447: a Keep on a merged card POSTs field=discipline and sends no PATCH (6 of Sam's 13 Keeps were
+    // merged cards whose PATCH the row policy refused, so they never saved).
+    const t = tab({ signedIn: true });
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    rule(t, "keep", "Shop tools stay Construction.", false);
+    await until(() => t.writes.length >= 2);
+    await sleep(30);
+    const w2 = t.writes[1] || {};
+    check("(11) ⭐ a Keep on a merged card POSTs the discipline as it stands, and never a PATCH",
+      t.writes.length === 2 && w2.method === "POST" && w2.body.course_id === "CNST M1009" && w2.body.field === "discipline"
+      && w2.body.value === "Construction" && !t.writes.some((w) => w.method === "PATCH"), JSON.stringify(t.writes));
+  }
+  {
+    // (11) a discipline write that fails says the discipline did not save, and the ruling is not shown as landed.
+    const t = tab({ signedIn: true, refuseDisc: true });
+    await openPanel(t, "Tool and Equipment Applications", /Why its discipline is in doubt/);
+    rule(t, "keep", "Shop tools stay Construction.", false);
+    await until(() => /did not save/.test(txt(panel(t.d))));
+    const p = txt(panel(t.d));
+    check("(11) ⭐ a failed discipline write says plainly that the discipline did not save",
+      /the discipline did not save, so the ruling has not landed/.test(p) && /Not saved: the server answered 403/.test(p), p.slice(0, 600));
+    check("(11) and the ruling is not recorded as landed", !/Kept Construction by reviewer@rccd\.edu/.test(p) && !/1 ruled so far/.test(txt(t.d.body)), p.slice(0, 600));
   }
   {
     // (10) a course that already lists a second discipline: a new one adds to it, and one choice clears them.
