@@ -1,0 +1,13 @@
+{
+ "name": "row_audit_2026-09-01.md",
+ "kind": "row_audit",
+ "bucket": "cpl-receipts",
+ "object": "row_audit/row_audit_2026-09-01.md",
+ "build": null,
+ "built": "2026-09-01",
+ "bytes": 7155028,
+ "sha256": "6a67c56a69ef9e91ad317b9680f77441100e1c519f4080bc76e5b9c8739bac97",
+ "rows": 124659,
+ "stored_at": "2026-11-18T07:30:11Z",
+ "run": "44258551009"
+}

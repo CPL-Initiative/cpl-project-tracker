@@ -56,8 +56,43 @@ with tempfile.TemporaryDirectory() as t:
     check("a rebuild changes nothing", d3 == sd.build(t, d3, "2026-11-20"))
     check("spent sums the ledger", sd.spent(d3) == (17.91, 4), sd.spent(d3))
 
+# S680: a handoff's Spend: line that lands after the day's census run still reaches the sessions key (S678's $115.38
+# reached handoff 679 at 00:53Z Nov 18, after the 23:09Z census, and the Nov 17 entry kept S677's $5.44 alone).
+with tempfile.TemporaryDirectory() as t:
+    put(t, "kb/program_requirements_college/a/summary.json", {"run": "11", "cost_usd_run": 4.5})
+    put(t, "docs/session_678_handoff.md", "Spend: $5.44 (Opus 5.5 $5.44); 2026-11-17T20:15Z to 2026-11-17T21:05Z.\n")
+    first = sd.build(t, {"api": {}}, "2026-11-17")
+    put(t, "docs/session_679_handoff.md",
+        "Spend: $115.38 (Opus 5.5 $115.38, subagents included); 2026-11-17T21:41Z to 2026-11-17T23:59Z.\n")
+    later = sd.build_sessions(t, first)
+    check("a Spend: line landing after the build reaches the sessions key with --sessions-only",
+          later["sessions"]["2026-11-17"] == {"usd": 120.82, "sessions": 2, "not_available": 0}, later["sessions"])
+    check("--sessions-only leaves the ledger and the billing keys as they stand",
+          all(later[k] == first[k] for k in first if k != "sessions"))
+    put(t, "docs/session_681_handoff.md", "Spend: $50.00 (Opus 5.5 $50.00); collection $30.00, curation $15.00, "
+        "infrastructure $5.00; 2026-11-18T01:00Z to 2026-11-18T02:00Z.\n")
+    put(t, "docs/session_682_handoff.md", "Spend: $10.00 (Opus 5.5 $10.00); 2026-11-18T03:00Z to 2026-11-18T04:00Z.\n")
+    tagged = sd.build_sessions(t, later)["sessions"]
+    check("a tagged day sums its tags and names the untagged rest",
+          tagged["2026-11-18"] == {"usd": 60.0, "sessions": 2, "not_available": 0,
+                                   "tags": {"collection": 30.0, "curation": 15.0, "infrastructure": 5.0},
+                                   "untagged_usd": 10.0}, tagged["2026-11-18"])
+    check("an untagged day keeps its old shape", "tags" not in tagged["2026-11-17"], tagged["2026-11-17"])
+    d = os.path.join(t, sd.OUT)
+    os.makedirs(os.path.dirname(d), exist_ok=True)
+    with open(d, "w") as f:
+        json.dump(first, f)
+    check("--sessions-only --check is stale when a handoff's line is not in the file",
+          sd.main(["--root", t, "--sessions-only", "--check"]) == 1)
+    sd.main(["--root", t, "--sessions-only"])
+    check("and current after the rebuild", sd.main(["--root", t, "--sessions-only", "--check"]) == 0)
+
 # The committed file and its wiring.
 cur = json.load(open(os.path.join(ROOT, sd.OUT)))
+check("the committed sessions key is what the handoffs' Spend: lines give (run: python3 kb/_build_spend_daily.py "
+      "--sessions-only)", cur.get("sessions") == sd.sessions_by_day(ROOT))
+gen = open(os.path.join(ROOT, "scripts/check_generated.sh")).read()
+check("scripts/check_generated.sh runs the sessions check", "_build_spend_daily.py --sessions-only --check" in gen)
 check("the committed file has a measured row for Nov 16 and Nov 17", "2026-11-16" in cur.get("sessions", {}) and "2026-11-17" in cur.get("sessions", {})
       and "2026-11-17" in cur.get("runner", {}), sorted(cur.get("runner", {}))[-3:])
 check("the committed file's billing rows are still the pasted ones", cur["api"]["2026-10-27"] == 2685.95 and cur["updated"] == "2026-11-15")

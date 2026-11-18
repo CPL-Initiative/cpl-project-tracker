@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    12.5,
+    19.0,
     20.0
    ],
    "stated": [
@@ -72,14 +72,12 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 12.5-20.0; the catalog states 19.0-20.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     61.5,
+     68.0,
      74.0
     ],
     "stated": [
@@ -93,7 +91,8 @@
     ],
     "why": [],
     "overlap": true
-   }
+   },
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -117,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -180,8 +179,9 @@
       "alternatives": [
        {
         "code": "PSY V04",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -240,8 +240,9 @@
       "alternatives": [
        {
         "code": "PSY V05",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -255,7 +256,7 @@
      },
      {
       "code": "BIOL C1001L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -269,7 +270,7 @@
      },
      {
       "code": "CD V04L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -325,7 +326,7 @@
      },
      {
       "code": "CD V66L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -359,5 +360,37 @@
    "One outcomes list is printed for the program; this award is the page's only award, so the list is recorded here."
   ]
  },
- "extracted_run": "39622549965"
+ "extracted_run": "39622549965",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "PSY V04",
+   "words": "PSY V04, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PSY V05",
+   "words": "PSY V05, printed as an alternative to CD V03 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BIOL C1001L",
+   "words": "BIOL C1001L, a lab printed with no units after its lecture BIOL C1001, counts 0",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "CD V04L",
+   "words": "CD V04L, a lab printed with no units after its lecture CD V04, counts 0",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "CD V66L",
+   "words": "CD V66L, a lab printed with no units after its lecture CD V66, counts 0",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

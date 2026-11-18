@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 590,
+   "count": 591,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9824,6 +9824,26 @@
      "updated": "2026-08-13"
     },
     {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_build_dependency_map.py",
+      "scripts/check_generated.sh",
+      "kb/migrations/.apply"
+     ],
+     "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "merging",
+      "generated-files",
+      "ci",
+      "conductor"
+     ],
+     "title": "When every merge conflicts a generated file, land the work as one wave pull request, not a chain",
+     "type": "methodology",
+     "updated": "2026-11-18"
+    },
+    {
      "created": "2026-08-28",
      "governs": [
       "cobi_identity.js",
@@ -13962,7 +13982,7 @@
      "governs": [
       "kb/_row_audit.py",
       "kb/row_audit/latest.json",
-      "kb/row_audit/2026-05-23.md",
+      "kb/row_audit/<date>.md",
       "unified_courses.js",
       "excel_to_dashboard.py",
       ".github/workflows/daily-dashboard.yml"
@@ -16060,7 +16080,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 76,
+   "count": 77,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16528,6 +16548,22 @@
      "updated": "2026-08-28"
     },
     {
+     "created": "2026-11-18",
+     "governs": [],
+     "path": "docs/reference/lanes/repo-size.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "repo-size",
+      "receipts",
+      "infrastructure"
+     ],
+     "title": "Repo size \u2014 what lives in the tree, what lives in the bucket, and the limits \u2014 lane state",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
      "created": "2026-08-28",
      "governs": [],
      "path": "docs/reference/lanes/reviewer-session-lifetime.md",
@@ -16751,7 +16787,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-29",
@@ -17048,7 +17084,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-09-09",
@@ -17164,8 +17200,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 639,
+   "count": 640,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 681,
+     "path": "docs/session_681_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 681 handoff (from SkyPhoebe, S680)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27884,5 +27934,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1511
+ "total": 1514
 }

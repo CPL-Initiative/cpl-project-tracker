@@ -60,19 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    22.5,
+    24.5,
     24.5
    ],
    "stated": [
     24.5,
     24.5
    ],
-   "why": [
-    "the blocks sum to 22.5-24.5; the catalog states 24.5-24.5"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -93,7 +93,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,13 +150,15 @@
       "alternatives": [
        {
         "code": "ARCHT 65A",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "ARCHT 65B",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -202,5 +204,19 @@
    "Program Student Learning Outcomes are printed on the A.S. page itself."
   ]
  },
- "extracted_run": "38152016534"
+ "extracted_run": "38152016534",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ARCHT 65A",
+   "words": "ARCHT 65A, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ARCHT 65B",
+   "words": "ARCHT 65B, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

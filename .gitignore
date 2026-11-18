@@ -84,6 +84,16 @@ kb/partner_crosswalk_out/**/*.xlsx
 # committed by accident in #1142. `**` is required here.
 kb/futuro_hth_out/**/*.xlsx
 
+# Program display receipts (S680, #3476; Sam, 2026-11-17: "Let's move the bloated data
+# out first thing and make sure we don't allow to go beyond a limit."). About 17 MB a
+# build, 1,531 MB of a 2.0 GB clone. The display job builds each on the runner, stores it
+# in the private cpl-receipts bucket and names it with its sha256 in kb/receipts/index/
+# (kb/_receipt_store.py). The small applied records beside them stay committed: they are
+# the rollback. Files committed before S680 stay tracked until a later PR moves them.
+kb/receipts/program_requirement_records_display_*
+!kb/receipts/program_requirement_records_display_*.applied_*.json
+kb/receipts/row_audit_*.md
+
 # Built by kb/_build_credential_recs.py from statewide_data.js (committed).
 # Rebuildable, ~1.2MB — the runner builds it before syncing.
 kb/credential_recs.json

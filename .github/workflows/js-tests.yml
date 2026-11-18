@@ -221,6 +221,21 @@ jobs:
       # every PR and every main run, whatever the gate decides (~3 s).
       - name: Pages allowlist (every tracked and staged path decided)
         run: node tests/pages_allowlist.test.js
+      # The repo size guard (#3476 Part 4 step 2; Sam, 2026-11-17: "make sure we don't allow to go beyond a limit").
+      # A file over 5 MB off the exceptions list, a list that grows, a latest version over the disk cap, or more than
+      # 25 MB compressed in one PR turns `test` red: this repo's merge gate is this check, so the guard runs here as
+      # well as under its own name in repo-size-guard.yml. Pull requests only; the cron's pushes to main never run it.
+      # The checkout is the PR's merge commit at depth 1, so the base is fetched at depth 1 and the script compares
+      # the two trees (scripts/repo_size_guard.py says why that is exactly the PR's change). About 2 s.
+      - name: Repo size guard (file, list, disk total, compressed growth)
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          python3 scripts/repo_size_guard.py --base "$BASE_SHA"
+      - name: Repo size guard tests (a temporary repo the test builds)
+        run: python3 tests/repo_size_guard_test.py
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same
@@ -391,6 +406,14 @@ jobs:
       # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
       - name: Named gaps (collected with the gap named, scored, counted collected)
         run: python3 tests/program_named_gaps_test.py
+      # The units rules (S680; Commons Clarity's Part A on #3480): a correction lands exactly or the record
+      # stays as filed; A11's named gaps; the collection lane's colleges left out. Pure stdlib.
+      - name: Units rules A1, A4, A5, A6, A8 and A11 (self-check, exact sums, named gaps)
+        run: python3 tests/program_requirements_units_rules_test.py
+      # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
+      # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
+      - name: Discontinued programs (own-section mark, out of the gap, the file is current)
+        run: python3 tests/program_discontinued_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
@@ -441,6 +464,22 @@ jobs:
       # each row's prior build as the rollback. Pure-stdlib python.
       - name: Program requirements display apply (receipt parse, rollback)
         run: python3 tests/program_requirements_display_apply_test.py
+      # The display receipt store (S680, #3476): no display receipt in a commit
+      # (the ignore rule), the runner stores it in cpl-receipts before it
+      # applies (the workflow's step order), and the apply reads only bytes
+      # whose sha256 kb/receipts/index/ names. Pure-stdlib python and git.
+      - name: Display receipt store (index, bucket first, ignore rule, step order)
+        run: python3 tests/display_receipt_store_test.py
+      # The row audit prune (S680, #3476 step 5): the newest 14 reports and latest.json stay, an older report
+      # leaves only once its index entry names its sha256, and a store failure never fails the daily run.
+      - name: Row audit prune (newest 14 kept, indexed before removed, daily run unharmed)
+        run: python3 tests/row_audit_prune_test.py
+      # The one-time move of the display receipts committed before S680 (#3476
+      # Part 4 step 4): every display receipt main tracks that this tree removed
+      # must have an index entry naming its blob. It fetches main's trees alone
+      # (--filter=blob:none), never a receipt. Pure-stdlib python and git.
+      - name: Receipt move gate (no display receipt leaves the tree unstored)
+        run: python3 tests/receipt_move_gate_test.py
       # The college page read (S329) reads a named list of one college's
       # pages from a runner for lines marked To confirm: it follows links only
       # on the college's own domain and prints the part that answers.

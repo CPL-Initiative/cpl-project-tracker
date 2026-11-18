@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T03:20:11Z",
-  "session": 679,
-  "moniker": "SkyKinglet",
-  "run": "Sam's session",
+  "written_at": "2026-11-18T09:49:55Z",
+  "session": 680,
+  "moniker": "SkyPhoebe",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_680_handoff.md",
+  "handoff": "docs/session_681_handoff.md",
   "next_step": {
-    "title": "Golden West's objectives reread",
-    "text": "Step 11 for Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the run that tests the general education slot on captured pages, so the slot rule can be turned on, and the switch that holds back programs with no state course list."
+    "title": "The display build through the new path",
+    "text": "No display build ran on Nov 18, so the page still shows build cdd185495ce4 while the filed records are on ee6d9daa5226. A session rebuilds the page on a branch, commits only the page file, and starts the display step, which now builds, stores and applies the record copy on the runner. The 56 records the units rules rescored reach the tab with it."
   },
   "calls": [
     {
@@ -338,6 +338,30 @@
   },
   "changes": [
     {
+      "at": "2026-11-18T09:47:00Z",
+      "text": "The night's wave merged (PR 3504): the record copies and old audit reports now live outside the repository, the size check runs on every pull request, the plan for paid rereads, and the four colleges' outline rows. The repository download fell from about 2.0 GB to 438.6 MB."
+    },
+    {
+      "at": "2026-11-18T09:16:00Z",
+      "text": "75 program records that list a required course with no units are stored with the gap named and a confidence score (PR 3497). The read first was clean and the write landed, run 44273638344, 75 rows. Next its undo is rebuilt from the rows the write returned."
+    },
+    {
+      "at": "2026-11-18T09:00:00Z",
+      "text": "Four colleges' course outlines were loaded: Diablo Valley 946 rows, Los Medanos 483, College of the Redwoods 443 and Golden West's 580 course objectives, 2,452 in all, so the objectives reread plan is done. Antelope Valley's trial read none of 12 pages and is held, as College of Marin is."
+    },
+    {
+      "at": "2026-11-18T08:50:00Z",
+      "text": "The plan for paid rereads (PR 3502): no reread runs without an input aimed at the list it should fix. Two records have a changed page, for 20 cents. 54 records whose catalog figures do not add up, or that print no units for a required course, take a named gap with no page read."
+    },
+    {
+      "at": "2026-11-18T08:23:00Z",
+      "text": "Units rules A1, A4 and A5 rescored 56 program records (PR 3496): 17 checks only, run 44259625861, and 39 full rows, run 44261575737, after a clean read first. None was marked checked by a person. 49 active programs move from failing to passing. Rule A6 stays off. The undo is written and not run."
+    },
+    {
+      "at": "2026-11-18T08:22:00Z",
+      "text": "Nine discontinued programs at five colleges are flagged out of the gap count (PR 3491), with no data write."
+    },
+    {
       "at": "2026-11-18T02:41:00Z",
       "text": "Sam's three rulings of Nov 17 are carried out (PR 3478) and applied to the filed records (PR 3481, run 44224714543, after a clean read first). 243 records now pass their unit check: 78 local degrees whose general education overlaps the major, at 21 colleges, and 165 records whose total meets the low end of the catalog's printed unit range, at 56 colleges. No record was marked checked. The undo is written and not run."
     },
@@ -374,48 +398,24 @@
       "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
     },
     {
-      "at": "2026-11-17T06:46:00Z",
-      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
-    },
-    {
       "at": "2026-11-17T06:52:00Z",
       "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
     },
     {
-      "at": "2026-11-17T03:07:00Z",
-      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
-    },
-    {
-      "at": "2026-11-17T03:19:00Z",
-      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
-    },
-    {
-      "at": "2026-11-17T03:28:00Z",
-      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
+      "at": "2026-11-17T06:46:00Z",
+      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
     },
     {
       "at": "2026-11-17T03:36:00Z",
       "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
     },
     {
-      "at": "2026-11-16T23:45:00Z",
-      "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
+      "at": "2026-11-17T03:28:00Z",
+      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
     },
     {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
-    },
-    {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
+      "at": "2026-11-17T03:19:00Z",
+      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
     }
   ],
   "headline": [
@@ -664,6 +664,12 @@
       "active": 20282,
       "complete": 14632,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-18",
+      "active": 20282,
+      "complete": 14887,
+      "colleges": 118
     }
   ],
   "next_run": {
@@ -672,8 +678,8 @@
     "at": "2026-11-17T15:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-17",
-    "gaps": 3212,
+    "day": "2026-11-18",
+    "gaps": 3225,
     "parts": {
       "links": {
         "catalog": [
@@ -690,7 +696,7 @@
         ]
       },
       "roep": [
-        19961,
+        19974,
         20282
       ],
       "coci": [
@@ -699,7 +705,7 @@
       ],
       "outcomes": {
         "slo": [
-          13293,
+          14701,
           88736
         ],
         "plo": [
