@@ -96,9 +96,11 @@ try:
     doc = dryrun(tmp, real_fam)
     s = doc["summary"]
     saved = {t for t in saved_all if t in pre_cr}
+    # 29 since Sam re-pointed "ASE Bundle — A6 or T6 + L3" from the family title to its own member title on 2026-11-17
+    # (the overlay the 2026-11-18 apply synced); the floor guards against an empty read, never his curation.
     check(f"with the family file, every saved fold into the family title is held as a family tag ({len(saved)}, 31 before the plan)",
           held_set(doc) == saved and s["held_as_family_tags"] == len(saved) == len(doc["held_family"])
-          and plan_olds <= saved and len(saved) >= 30)
+          and plan_olds <= saved and len(saved) >= 29)
     check("every held fold targets the family title", all(h["target"] == FAM for h in doc["held_family"]))
     check("only 'standards' merges fold (the nightly fold settles others, so the count moves)",
           all(t.endswith(" standards)") for t in doc["merges"].values()))

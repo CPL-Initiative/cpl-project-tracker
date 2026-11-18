@@ -45,7 +45,11 @@ check("a noncredit title is never an industry title's kind", B.kind("Noncredit f
 text = open(os.path.join(ROOT, B.OUT), encoding="utf-8").read()
 check("the committed file names no address", chr(64) not in text)
 d = json.loads(text)
-check("the committed file holds the auditor's 810 titles under 577 canonical titles", d["counts"]["titles"] == 810 and d["counts"]["credentials"] == 577, d["counts"])
+# The nightly auditor moves the counts (810 under 577 on 2026-11-17, 812 under 579 after the 2026-11-18 daily), so the
+# check reads them against the file's own rows, with a floor that catches an empty or truncated read.
+check("the committed file's counts are its own titles and their canonical titles, and the auditor's read is whole",
+      d["counts"]["titles"] == len(d["titles"]) >= 700
+      and d["counts"]["credentials"] == len({r["canonical"] for r in d["titles"].values()}) >= 500, d["counts"])
 check("the committed file is current", json.dumps(B.build(), indent=1, ensure_ascii=False) + "\n" == text)
 
 ut = {"Old A": {"unified_title": "Brakes"}, "Old B": {"unified_title": "Brakes"}, "Live": {"unified_title": "Wheels"}}
@@ -358,6 +362,15 @@ with tempfile.TemporaryDirectory() as td:
         check("(4) the apply's undo receipt carries the left_map.from renames", '"unified_titles_left_map_from": ut_res["_left_map_from"]' in apply_src)
     finally:
         R.UNIFIED_TITLES = real_ut
+
+# A credential rename rewrites unified_titles.json and coci_articulations.json, which this file is built from: the
+# 2026-11-18 apply left it stale and main's tests red until S679 rebuilt it. The rename workflow rebuilds and commits it.
+rw = open(os.path.join(ROOT, ".github", "workflows", "cred-rename-apply.yml"), encoding="utf-8").read()
+rb = rw[rw.index("name: Rebuild the files derived from the credential keys"):]
+rb = rb[:rb.index("- name:", 10)]
+rc = rw[rw.index("name: Commit + push"):]
+check("the rename workflow rebuilds the leftover-title file with the files derived from the credential keys, and commits it",
+      "python3 kb/_build_left_map.py" in rb and "kb/exhibit_left_map.json" in rc[:rc.index("git diff --cached")])
 
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

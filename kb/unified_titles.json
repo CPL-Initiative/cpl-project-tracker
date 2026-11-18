@@ -65986,5 +65986,89 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-14T14:34:57.156843+00:00",
     "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Aviation Mechanic- Airframe and Powerplant": {
+    "unified_title": "FAA Mechanic Certificate — Airframe and Powerplant (A&P)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "High School Articulation- Criminal Justice/Crime Scene Investigation": {
+    "unified_title": "Introduction to Criminal Justice",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-high-school-rop@bot"
+  },
+  "High School Articulation- Developmental Psychology of Children II": {
+    "unified_title": "Principles & Practices of Teaching Young Children",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-high-school-rop@bot"
+  },
+  "JOURN 018 News Production IV": {
+    "unified_title": "News Production 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 018A  News Production I": {
+    "unified_title": "News Production 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 020 Photojournalism I": {
+    "unified_title": "Introduction to Photojournalism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "JOUR 160"
+    }
+  },
+  "JOURN 18B News Production II": {
+    "unified_title": "News Production 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "JOURN 18C News Production III": {
+    "unified_title": "News Production III",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "UA Local 467 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "UA Local 62 Plumbing and Pipefitting Apprenticeship Journeyperson": {
+    "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-18",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-17T17:10:04.059413+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }
