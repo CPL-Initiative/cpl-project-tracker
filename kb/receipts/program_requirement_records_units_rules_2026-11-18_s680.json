@@ -1,0 +1,2255 @@
+{
+ "rule": "Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358",
+ "words": {
+  "A1": "rescored as filed under today's adding-up rules",
+  "A4": "a blank alternative takes its row's units",
+  "A5": "a choose list takes the courses of the list it names",
+  "A6": "a choose list printed with the sum of every option counts its cheapest courses",
+  "A8": "the college's own general education total"
+ },
+ "at": "2026-11-18T06:45:12Z",
+ "held_colleges": [
+  "Golden West College",
+  "Coastline Community College",
+  "Orange Coast College",
+  "Cosumnes River College",
+  "Lassen College",
+  "Los Medanos College",
+  "Diablo Valley College",
+  "College of the Redwoods",
+  "Allan Hancock College",
+  "Chabot College",
+  "Antelope Valley College",
+  "Santiago Canyon College"
+ ],
+ "rescored": 59,
+ "by_rule": {
+  "A1": 17,
+  "A4": 35,
+  "A6": 2,
+  "A5": 5
+ },
+ "self_check": {
+  "A4": {
+   "applies": 1030,
+   "right": 1030,
+   "wrong": 0,
+   "not_exact": 0
+  },
+  "A5": {
+   "applies": 124,
+   "right": 70,
+   "wrong": 31,
+   "not_exact": 23
+  },
+  "A6": {
+   "applies": 4,
+   "right": 0,
+   "wrong": 4,
+   "not_exact": 0
+  },
+  "A8": {
+   "applies": 0,
+   "right": 0,
+   "wrong": 0,
+   "not_exact": 0
+  }
+ },
+ "left_as_filed": {
+  "no rule applies": 830,
+  "A4 does not land": 110,
+  "A4 not exact": 68,
+  "A8 does not land": 39,
+  "A5 does not land": 11,
+  "A5 not exact": 9,
+  "A4 does not land; A5 not exact": 5,
+  "A6 does not land": 4,
+  "A4 not exact; A5 not exact": 3,
+  "A4 does not land; A5 does not land": 2,
+  "A8 not exact": 1,
+  "A4 not exact; A8 not exact": 1
+ },
+ "ge_totals": {
+  "Butte College": [
+   21.0,
+   21.0
+  ],
+  "Cerritos College": [
+   24.0,
+   28.0
+  ],
+  "Coalinga College": [
+   21.0,
+   28.0
+  ],
+  "Columbia College": [
+   21.0,
+   34.0
+  ],
+  "Cuyamaca College": [
+   34.0,
+   34.0
+  ],
+  "De Anza College": [
+   29.0,
+   41.0
+  ],
+  "East Los Angeles College": [
+   27.0,
+   27.0
+  ],
+  "Glendale Community College": [
+   16.0,
+   16.0
+  ],
+  "Grossmont College": [
+   34.0,
+   34.0
+  ],
+  "Los Angeles City College": [
+   18.0,
+   27.0
+  ],
+  "Los Angeles Pierce College": [
+   21.0,
+   34.0
+  ],
+  "Los Angeles Valley College": [
+   27.0,
+   34.0
+  ],
+  "Mendocino College": [
+   25.0,
+   25.0
+  ],
+  "Merritt College": [
+   21.0,
+   21.0
+  ],
+  "Palo Verde College": [
+   34.0,
+   38.0
+  ],
+  "Yuba College": [
+   21.0,
+   21.0
+  ]
+ },
+ "records": [
+  {
+   "college": "Bakersfield College",
+   "control_number": "35984",
+   "award": "A.S. Degree",
+   "extracted_run": "38414480070",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     58.0,
+     63.5
+    ],
+    "stated": [
+     58.0,
+     59.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     58.0,
+     63.5
+    ],
+    "stated": [
+     58.0,
+     59.5
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/bakersfield/records/35984.json",
+   "i": 1
+  },
+  {
+   "college": "Cabrillo College",
+   "control_number": "43652",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38442109713",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     16.0,
+     17.0
+    ],
+    "stated": [
+     16.0,
+     16.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     16.0,
+     17.0
+    ],
+    "stated": [
+     16.0,
+     16.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/cabrillo/records/43652.json",
+   "i": 2
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "16721",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "37961137169",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     36.0,
+     39.0
+    ],
+    "stated": [
+     36.0,
+     38.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     36.0,
+     39.0
+    ],
+    "stated": [
+     36.0,
+     38.5
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/cerritos/records/16721.json",
+   "i": 3
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "20507",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "37961137169",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     22.0,
+     23.5
+    ],
+    "stated": [
+     22.0,
+     22.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     22.0,
+     22.0
+    ],
+    "stated": [
+     22.0,
+     22.0
+    ]
+   },
+   "notes": [
+    "ENGT 250, printed as an alternative to ENGT 209 with no units, takes its row's 3 units",
+    "ENGT 251, printed as an alternative to ENGT 209 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/20507.json",
+   "i": 4
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "33093",
+   "award": "A.S. T Degree",
+   "extracted_run": "37961137169",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     23.0,
+     26.0
+    ],
+    "stated": [
+     26.0,
+     26.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     26.0,
+     26.0
+    ],
+    "stated": [
+     26.0,
+     26.0
+    ]
+   },
+   "notes": [
+    "GEOL 102, printed as an alternative to GEOL 101 with no units, takes its row's 4 units",
+    "GEOL 102L, printed as an alternative to GEOL 101 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/33093.json",
+   "i": 5
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "38756",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "37961137169",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.0,
+     25.0
+    ],
+    "stated": [
+     24.0,
+     24.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     24.0,
+     24.0
+    ],
+    "stated": [
+     24.0,
+     24.0
+    ]
+   },
+   "notes": [
+    "DANC 131, printed as an alternative to DANC 130B with no units, takes its row's 2 units",
+    "DANC 132, printed as an alternative to DANC 130B with no units, takes its row's 2 units",
+    "EDEL 105, printed as an alternative to EDEL 100 with no units, takes its row's 1 units",
+    "PEX 104D, printed as an alternative to DANC 102 with no units, takes its row's 1 units",
+    "PEX 157, printed as an alternative to DANC 103 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/38756.json",
+   "i": 6
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "43693",
+   "award": "A.A- T Degree",
+   "extracted_run": "37961137169",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     21.0,
+     28.0
+    ],
+    "stated": [
+     21.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     21.0,
+     28.0
+    ],
+    "stated": [
+     21.0,
+     23.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/cerritos/records/43693.json",
+   "i": 7
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "20677",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38242003226",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/chaffey/records/20677.json",
+   "i": 8
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "31891",
+   "award": "A.A- T Degree",
+   "extracted_run": "44090894573",
+   "rule": "A6",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     78.0,
+     78.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "notes": [
+    "'List A - Group 1' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count",
+    "'List A - Group 2' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count",
+    "'List B - Group 1 - Can include HIST 1 or HIST 2 if not used in List A' prints 39, the sum of all 13 options; it chooses 1, so its 1 cheapest count",
+    "'List B - Group 2 - Any one course from the following, or any course not taken from List A' prints 21, the sum of all 7 options; it chooses 1, so its 1 cheapest count"
+   ],
+   "path": "kb/program_requirements_college/chaffey/records/31891.json",
+   "i": 9
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "35060",
+   "award": "A.S. T Degree",
+   "extracted_run": "38242003226",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     34.0,
+     34.0
+    ],
+    "stated": [
+     34.0,
+     36.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     34.0,
+     34.0
+    ],
+    "stated": [
+     34.0,
+     36.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/chaffey/records/35060.json",
+   "i": 10
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "38854",
+   "award": "A.S. T Degree",
+   "extracted_run": "38242003226",
+   "rule": "A5",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "notes": [
+    "'List B - Any two courses from the following, or any courses not taken from List A' says any course from List A: 7 courses added as options (CUL 15, CUL 17, ECON 4, HOTFS 14, HOTFS 21, HOTFS 32)"
+   ],
+   "path": "kb/program_requirements_college/chaffey/records/38854.json",
+   "i": 11
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "11247",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675245799",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     21.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "notes": [
+    "ESTH 144, printed as an alternative to ESTH 142 with no units, takes its row's 4 units",
+    "ESTH 145, printed as an alternative to ESTH 142 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/citrus/records/11247.json",
+   "i": 12
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "30174",
+   "award": "A.A. Degree",
+   "extracted_run": "38675245799",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     19.0,
+     21.0
+    ],
+    "stated": [
+     20.0,
+     21.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     20.0,
+     21.0
+    ],
+    "stated": [
+     20.0,
+     21.0
+    ]
+   },
+   "notes": [
+    "ENGL C1000E, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+    "ENGL C1000H, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+    "ENGL C1001H, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+    "ENGL C1003, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+    "ENGL C1003H, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+    "ENGL 252, printed as an alternative to ENGL 251 with no units, takes its row's 3 units",
+    "ENGL 262, printed as an alternative to ENGL 261 with no units, takes its row's 3 units",
+    "ENGL 213H, printed as an alternative to ENGL 213 with no units, takes its row's 3 units",
+    "ENGL 224H, printed as an alternative to ENGL 224 with no units, takes its row's 3 units",
+    "ENGL 291H, printed as an alternative to ENGL 291 with no units, takes its row's 3 units",
+    "ENGL 293H, printed as an alternative to ENGL 293 with no units, takes its row's 3 units",
+    "ENGL 294H, printed as an alternative to ENGL 294 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/citrus/records/30174.json",
+   "i": 13
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "36626",
+   "award": "A.S. Degree",
+   "extracted_run": "38675245799",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     21.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "notes": [
+    "ESTH 144, printed as an alternative to ESTH 142 with no units, takes its row's 4 units",
+    "ESTH 145, printed as an alternative to ESTH 142 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/citrus/records/36626.json",
+   "i": 14
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "46195",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "38675245799",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     8.0,
+     14.0
+    ],
+    "stated": [
+     9.0,
+     14.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     9.0,
+     14.0
+    ],
+    "stated": [
+     9.0,
+     14.0
+    ]
+   },
+   "notes": [
+    "COMM C1000H, printed as an alternative to COMM C1000 with no units, takes its row's 3 units",
+    "ENGL C1000H, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+    "ENGL C1000E, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+    "ENGL C1001H, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+    "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/citrus/records/46195.json",
+   "i": 15
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "36465",
+   "award": "A.S. T Degree",
+   "extracted_run": "38984695817",
+   "rule": "A5",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     20.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     20.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     20.0
+    ]
+   },
+   "notes": [
+    "'3. List B - select two courses, may include any courses not used in List A' says any course from List A: 6 courses added as options (ECON C2001, HOSP 110, HOSP 120, HOSP 130, HOSP 140, HOSP 150)"
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/36465.json",
+   "i": 16
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "21140",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39056007346",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     20.5,
+     26.0
+    ],
+    "stated": [
+     22.0,
+     26.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     22.0,
+     26.0
+    ],
+    "stated": [
+     22.0,
+     26.0
+    ]
+   },
+   "notes": [
+    "FIRE 001A, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+    "FIRE 001B, printed as an alternative to FIRE 001 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/college_of_the_desert/records/21140.json",
+   "i": 17
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "32878",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39056007346",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     17.5,
+     22.0
+    ],
+    "stated": [
+     19.0,
+     22.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     19.0,
+     22.0
+    ],
+    "stated": [
+     19.0,
+     22.0
+    ]
+   },
+   "notes": [
+    "EMR 080A, printed as an alternative to EMR 080 with no units, takes its row's 3 units",
+    "EMR 080B, printed as an alternative to EMR 080 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/college_of_the_desert/records/32878.json",
+   "i": 18
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "39116",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "43421133593",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     6.0,
+     9.0
+    ],
+    "stated": [
+     9.0,
+     9.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     9.0,
+     9.0
+    ],
+    "stated": [
+     9.0,
+     9.0
+    ]
+   },
+   "notes": [
+    "FIRE 001A, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+    "FIRE 001B, printed as an alternative to FIRE 001 with no units, takes its row's 3 units",
+    "EMR 080A, printed as an alternative to EMR 080 with no units, takes its row's 3 units",
+    "EMR 080B, printed as an alternative to EMR 080 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/college_of_the_desert/records/39116.json",
+   "i": 19
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "33662",
+   "award": "A.A. Degree",
+   "extracted_run": "38748848139",
+   "rule": "A1",
+   "against": "degree",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     54.0,
+     64.0
+    ],
+    "stated": [
+     60.0,
+     69.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     57.0,
+     70.0
+    ],
+    "stated": [
+     60.0,
+     69.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/33662.json",
+   "i": 20
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "43441",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748866826",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     19.0,
+     22.0
+    ],
+    "stated": [
+     20.0,
+     22.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     20.0,
+     22.0
+    ],
+    "stated": [
+     20.0,
+     22.0
+    ]
+   },
+   "notes": [
+    "THEA 140 C, printed as an alternative to THEA 100 C with no units, takes its row's 3 units",
+    "THEA 225 C, printed as an alternative to THEA 101 C with no units, takes its row's 3 units",
+    "THEA 148 C, printed as an alternative to THEA 149 C with no units, takes its row's 1-2 units",
+    "THEA 155 C, printed as an alternative to THEA 150 C with no units, takes its row's 1-2 units",
+    "THEA 152 C, printed as an alternative to THEA 150 C with no units, takes its row's 1-2 units"
+   ],
+   "path": "kb/program_requirements_college/cypress/records/43441.json",
+   "i": 21
+  },
+  {
+   "college": "Folsom Lake College",
+   "control_number": "15377",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39046850071",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     29.0,
+     29.0
+    ],
+    "stated": [
+     45.0,
+     45.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     45.0,
+     45.0
+    ],
+    "stated": [
+     45.0,
+     45.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/folsom_lake/records/15377.json",
+   "i": 22
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03832",
+   "award": "A.S. Degree",
+   "extracted_run": "38675136988",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     15.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     20.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     20.0
+    ]
+   },
+   "notes": [
+    "BIOL 102 F, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+    "BIOL 102LF, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03832.json",
+   "i": 23
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "10617",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675136988",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     16.0,
+     19.0
+    ],
+    "stated": [
+     19.0,
+     19.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     19.0,
+     19.0
+    ]
+   },
+   "notes": [
+    "BIOL 102 F, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+    "BIOL 102LF, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+    "PE 270 F, printed as an alternative to NUTR 210 F with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/10617.json",
+   "i": 24
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "44076",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38675136988",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     35.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     36.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ]
+   },
+   "notes": [
+    "JOUR 290 F, printed as an alternative to PHOT 290 F with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/44076.json",
+   "i": 25
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "02617",
+   "award": "A.S. Degree",
+   "extracted_run": "38147472758",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     34.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     36.0,
+     36.0
+    ],
+    "stated": [
+     36.0,
+     36.0
+    ]
+   },
+   "notes": [
+    "ARCHT 65A, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units",
+    "ARCHT 65B, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/02617.json",
+   "i": 26
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "31812",
+   "award": "A.A- T Degree",
+   "extracted_run": "38152016534",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/long_beach_city/records/31812.json",
+   "i": 27
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "33670",
+   "award": "A.A- T Degree",
+   "extracted_run": "38152016534",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     20.0,
+     24.0
+    ],
+    "stated": [
+     20.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     20.0,
+     24.0
+    ],
+    "stated": [
+     20.0,
+     23.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/long_beach_city/records/33670.json",
+   "i": 28
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "35540",
+   "award": "A.S. T Degree",
+   "extracted_run": "38152016534",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     28.5,
+     31.0
+    ],
+    "stated": [
+     28.5,
+     30.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     28.5,
+     31.0
+    ],
+    "stated": [
+     28.5,
+     30.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/long_beach_city/records/35540.json",
+   "i": 29
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "35914",
+   "award": "A.A- T Degree",
+   "extracted_run": "38152016534",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     21.0,
+     26.0
+    ],
+    "stated": [
+     21.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     21.0,
+     26.0
+    ],
+    "stated": [
+     21.0,
+     23.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/long_beach_city/records/35914.json",
+   "i": 30
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "43943",
+   "award": "A.S. Degree",
+   "extracted_run": "38152016534",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     22.5,
+     24.5
+    ],
+    "stated": [
+     24.5,
+     24.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     24.5,
+     24.5
+    ],
+    "stated": [
+     24.5,
+     24.5
+    ]
+   },
+   "notes": [
+    "ARCHT 65A, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units",
+    "ARCHT 65B, printed as an alternative to ARCHT 65 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/43943.json",
+   "i": 31
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "44747",
+   "award": "A.A- T Degree",
+   "extracted_run": "39891611701",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     26.0,
+     32.0
+    ],
+    "stated": [
+     29.0,
+     32.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     29.0,
+     32.0
+    ],
+    "stated": [
+     29.0,
+     32.0
+    ]
+   },
+   "notes": [
+    "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4-5 units",
+    "STAT C1000E, printed as an alternative to STAT C1000 with no units, takes its row's 4-5 units",
+    "ANAT 41, printed as an alternative to ANAT 1 with no units, takes its row's 4-5 units",
+    "BIO 60L, printed as an alternative to ANAT 1 with no units, takes its row's 4-5 units",
+    "ECON C2002, printed as an alternative to ECON C2001 with no units, takes its row's 3 units",
+    "ECON C2002H, printed as an alternative to ECON C2001 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/44747.json",
+   "i": 32
+  },
+  {
+   "college": "Los Angeles Mission College",
+   "control_number": "20792",
+   "award": "A.S. Degree",
+   "extracted_run": "39054675770",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     23.0,
+     26.0
+    ],
+    "stated": [
+     24.0,
+     26.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     24.0,
+     26.0
+    ],
+    "stated": [
+     24.0,
+     26.0
+    ]
+   },
+   "notes": [
+    "STAT C1000E, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+    "STAT 101, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+    "MATH 260, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+    "MATH 240, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+    "MATH 245, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+    "MATH 240S, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units"
+   ],
+   "path": "kb/program_requirements_college/los_angeles_mission/records/20792.json",
+   "i": 33
+  },
+  {
+   "college": "Madera College",
+   "control_number": "44516",
+   "award": "A.S. T Degree",
+   "extracted_run": "38935148408",
+   "rule": "A5",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     19.0,
+     20.0
+    ],
+    "stated": [
+     17.0,
+     20.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     17.0,
+     20.0
+    ],
+    "stated": [
+     17.0,
+     20.0
+    ]
+   },
+   "notes": [
+    "'List B: Select two courses. Any course from LIST A not already used' says any course from LIST A: 4 courses added as options (ECON C2001, FSM 35, HSP 20, HSP 30)"
+   ],
+   "path": "kb/program_requirements_college/madera/records/44516.json",
+   "i": 34
+  },
+  {
+   "college": "Merritt College",
+   "control_number": "22011",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38935152199",
+   "rule": "A6",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     46.0,
+     47.0
+    ],
+    "stated": [
+     43.0,
+     44.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     43.0,
+     44.0
+    ],
+    "stated": [
+     43.0,
+     44.0
+    ]
+   },
+   "notes": [
+    "'Choose One' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count"
+   ],
+   "path": "kb/program_requirements_college/merritt/records/22011.json",
+   "i": 35
+  },
+  {
+   "college": "Merritt College",
+   "control_number": "33540",
+   "award": "A.A- T Degree",
+   "extracted_run": "38935152199",
+   "rule": "A5",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.0,
+     25.0
+    ],
+    "stated": [
+     23.0,
+     25.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.0,
+     25.0
+    ],
+    "stated": [
+     23.0,
+     25.0
+    ]
+   },
+   "notes": [
+    "'List B- Select One course for 4-5 units from the list below or any course in List A not already used.' says any course from List A: 3 courses added as options (BUS 001A, BUS 001B, MATH 003B)"
+   ],
+   "path": "kb/program_requirements_college/merritt/records/33540.json",
+   "i": 36
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "05110",
+   "award": "A.A. Degree",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     27.5,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/05110.json",
+   "i": 37
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "21974",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     27.5,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     28.0,
+     28.0
+    ],
+    "stated": [
+     28.0,
+     28.0
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/21974.json",
+   "i": 38
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "21976",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.5,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/21976.json",
+   "i": 39
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "35650",
+   "award": "A.S. Degree",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     23.0,
+     23.5
+    ],
+    "stated": [
+     23.5,
+     23.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.5,
+     23.5
+    ],
+    "stated": [
+     23.5,
+     23.5
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/35650.json",
+   "i": 40
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "35670",
+   "award": "A.S. Degree",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.5,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/35670.json",
+   "i": 41
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "35677",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.5,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/35677.json",
+   "i": 42
+  },
+  {
+   "college": "MiraCosta College",
+   "control_number": "35678",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39726634443",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     23.0,
+     23.5
+    ],
+    "stated": [
+     23.5,
+     23.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.5,
+     23.5
+    ],
+    "stated": [
+     23.5,
+     23.5
+    ]
+   },
+   "notes": [
+    "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/miracosta/records/35678.json",
+   "i": 43
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "08018",
+   "award": "A.S. Degree",
+   "extracted_run": "38477845911",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     29.0,
+     32.0
+    ],
+    "stated": [
+     29.0,
+     29.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     29.0,
+     32.0
+    ],
+    "stated": [
+     29.0,
+     29.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/modesto_junior/records/08018.json",
+   "i": 44
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "32782",
+   "award": "A.A- T Degree",
+   "extracted_run": "38477845911",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/modesto_junior/records/32782.json",
+   "i": 45
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "42279",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "38477845911",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     9.0,
+     9.0
+    ],
+    "stated": [
+     9.0,
+     11.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     9.0,
+     9.0
+    ],
+    "stated": [
+     9.0,
+     11.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/modesto_junior/records/42279.json",
+   "i": 46
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "30626",
+   "award": "A.A- T Degree",
+   "extracted_run": "38748862351",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     18.0,
+     21.0
+    ],
+    "stated": [
+     19.0,
+     21.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     19.0,
+     21.0
+    ],
+    "stated": [
+     19.0,
+     21.0
+    ]
+   },
+   "notes": [
+    "PSYC C1000H, printed as an alternative to PSYC C1000 with no units, takes its row's 3 units",
+    "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+    "PSY M125, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+    "SOC M125, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+    "PSY M02H, printed as an alternative to PSY M02 with no units, takes its row's 3 units",
+    "BIOL M02AH, printed as an alternative to BIOL M02A with no units, takes its row's 5 units"
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/30626.json",
+   "i": 47
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "40186",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39891607837",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     10.5,
+     10.5
+    ],
+    "stated": [
+     10.0,
+     10.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     10.0,
+     10.0
+    ],
+    "stated": [
+     10.0,
+     10.0
+    ]
+   },
+   "notes": [
+    "CISW 24L, a lab printed with no units after its lecture CISW 24, counts 0"
+   ],
+   "path": "kb/program_requirements_college/mt_san_antonio/records/40186.json",
+   "i": 48
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "41263",
+   "award": "A.S. T Degree",
+   "extracted_run": "38842203500",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     27.0,
+     29.0
+    ],
+    "stated": [
+     28.0,
+     29.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     28.0,
+     29.0
+    ],
+    "stated": [
+     28.0,
+     29.0
+    ]
+   },
+   "notes": [
+    "ACCT R101H, printed as an alternative to ACCT R101 with no units, takes its row's 4 units",
+    "ECON C2001H, printed as an alternative to ECON C2001 with no units, takes its row's 3 units",
+    "ECON C2002H, printed as an alternative to ECON C2002 with no units, takes its row's 3 units",
+    "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+    "MATH C2210, printed as an alternative to MATH R106 with no units, takes its row's 4-5 units",
+    "BUS R140, printed as an alternative to BUS R120 with no units, takes its row's 3 units"
+   ],
+   "path": "kb/program_requirements_college/oxnard/records/41263.json",
+   "i": 49
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "43064",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "39061730187",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     21.5,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     23.0,
+     23.0
+    ],
+    "stated": [
+     23.0,
+     23.0
+    ]
+   },
+   "notes": [
+    "HOSP 140, printed as an alternative to HOSP 015 with no units, takes its row's 3 units",
+    "HOSP 141, printed as an alternative to HOSP 121 with no units, takes its row's 3 units",
+    "BUS 070B, printed as an alternative to BUS 070A with no units, takes its row's 2 units"
+   ],
+   "path": "kb/program_requirements_college/pasadena_city/records/43064.json",
+   "i": 50
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "40326",
+   "award": "A.S. T Degree",
+   "extracted_run": "38843470509",
+   "rule": "A5",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     19.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     18.0,
+     19.0
+    ]
+   },
+   "notes": [
+    "'List B: Complete two courses from the following or any course from List A not already used (6-7 units)' says any course from List A: 4 courses added as options (HRM 154, CUL 176, HRM 157, CUL 101)"
+   ],
+   "path": "kb/program_requirements_college/saddleback/records/40326.json",
+   "i": 51
+  },
+  {
+   "college": "San Diego City College",
+   "control_number": "12093",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38252422845",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     35.0,
+     35.0
+    ],
+    "stated": [
+     35.0,
+     36.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     35.0,
+     35.0
+    ],
+    "stated": [
+     35.0,
+     36.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/san_diego_city/records/12093.json",
+   "i": 52
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "05947",
+   "award": "A.S. Degree",
+   "extracted_run": "39782741424",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     48.5,
+     51.5
+    ],
+    "stated": [
+     47.5,
+     50.5
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     47.5,
+     50.5
+    ],
+    "stated": [
+     47.5,
+     50.5
+    ]
+   },
+   "notes": [
+    "BIOL 142, printed as an alternative to BIOL 124 with no units, takes its row's 3-4 units",
+    "ERTH 151, printed as an alternative to BIOL 124 with no units, takes its row's 3-4 units",
+    "DRFT 130, printed as an alternative to DRFT 101 with no units, takes its row's 3-5 units",
+    "ENGR 105, printed as an alternative to DRFT 101 with no units, takes its row's 3-5 units",
+    "PHYS 101L, a lab printed with no units after its lecture PHYS 101, counts 0"
+   ],
+   "path": "kb/program_requirements_college/santa_barbara_city/records/05947.json",
+   "i": 53
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "control_number": "43253",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "39006464249",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     7.5,
+     8.0
+    ],
+    "stated": [
+     8.0,
+     8.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     8.0,
+     8.0
+    ],
+    "stated": [
+     8.0,
+     8.0
+    ]
+   },
+   "notes": [
+    "WEE 99I, printed as an alternative to KIN 50.5 with no units, takes its row's 1 units"
+   ],
+   "path": "kb/program_requirements_college/santa_rosa_junior/records/43253.json",
+   "i": 54
+  },
+  {
+   "college": "Sierra College",
+   "control_number": "31261",
+   "award": "A.S. T Degree",
+   "extracted_run": "39709837031",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     24.0,
+     27.0
+    ],
+    "stated": [
+     26.0,
+     27.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     26.0,
+     27.0
+    ],
+    "stated": [
+     26.0,
+     27.0
+    ]
+   },
+   "notes": [
+    "CHEM 0003A, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+    "CHEM 0003B, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+    "PHYS 0205L, a lab printed with no units after its lecture PHYS 0205, counts 0",
+    "PHYS 0210L, a lab printed with no units after its lecture PHYS 0210, counts 0",
+    "PHYS 0215L, a lab printed with no units after its lecture PHYS 0215, counts 0"
+   ],
+   "path": "kb/program_requirements_college/sierra/records/31261.json",
+   "i": 55
+  },
+  {
+   "college": "Sierra College",
+   "control_number": "33637",
+   "award": "A.S. T Degree",
+   "extracted_run": "39709837031",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     35.0,
+     38.0
+    ],
+    "stated": [
+     37.0,
+     38.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     37.0,
+     38.0
+    ],
+    "stated": [
+     37.0,
+     38.0
+    ]
+   },
+   "notes": [
+    "CHEM 0003A, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units",
+    "CHEM 0003B, printed as an alternative to CHEM 0001A with no units, takes its row's 5-6 units"
+   ],
+   "path": "kb/program_requirements_college/sierra/records/33637.json",
+   "i": 56
+  },
+  {
+   "college": "Taft College",
+   "control_number": "44343",
+   "award": "A.A. Degree",
+   "extracted_run": "39100858309",
+   "rule": "A1",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     17.5,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     24.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.0
+    ],
+    "stated": [
+     18.0,
+     24.0
+    ]
+   },
+   "notes": [],
+   "path": "kb/program_requirements_college/taft/records/44343.json",
+   "i": 57
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "35499",
+   "award": "A.S. T Degree",
+   "extracted_run": "39622549965",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     28.0,
+     30.0
+    ],
+    "stated": [
+     27.0,
+     29.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     27.0,
+     29.0
+    ],
+    "stated": [
+     27.0,
+     29.0
+    ]
+   },
+   "notes": [
+    "BIOL C1001L, a lab printed with no units after its lecture BIOL C1001, counts 0",
+    "PHSO V01, printed as an alternative to ANAT V01 with no units, takes its row's 4 units",
+    "PSY V04, printed as an alternative to STAT C1000 with no units, takes its row's 4 units"
+   ],
+   "path": "kb/program_requirements_college/ventura/records/35499.json",
+   "i": 58
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "46544",
+   "award": "A.A- T Degree",
+   "extracted_run": "39622549965",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     12.5,
+     20.0
+    ],
+    "stated": [
+     19.0,
+     20.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     19.0,
+     20.0
+    ],
+    "stated": [
+     19.0,
+     20.0
+    ]
+   },
+   "notes": [
+    "PSY V04, printed as an alternative to STAT C1000 with no units, takes its row's 4 units",
+    "PSY V05, printed as an alternative to CD V03 with no units, takes its row's 3 units",
+    "BIOL C1001L, a lab printed with no units after its lecture BIOL C1001, counts 0",
+    "CD V04L, a lab printed with no units after its lecture CD V04, counts 0",
+    "CD V66L, a lab printed with no units after its lecture CD V66, counts 0"
+   ],
+   "path": "kb/program_requirements_college/ventura/records/46544.json",
+   "i": 59
+  }
+ ],
+ "pre_read": "with v(i, college, control_number, extracted_run) as (values\n  (1, 'Bakersfield College', '35984', 38414480070),\n  (2, 'Cabrillo College', '43652', 38442109713),\n  (3, 'Cerritos College', '16721', 37961137169),\n  (4, 'Cerritos College', '20507', 37961137169),\n  (5, 'Cerritos College', '33093', 37961137169),\n  (6, 'Cerritos College', '38756', 37961137169),\n  (7, 'Cerritos College', '43693', 37961137169),\n  (8, 'Chaffey College', '20677', 38242003226),\n  (9, 'Chaffey College', '31891', 44090894573),\n  (10, 'Chaffey College', '35060', 38242003226),\n  (11, 'Chaffey College', '38854', 38242003226),\n  (12, 'Citrus College', '11247', 38675245799),\n  (13, 'Citrus College', '30174', 38675245799),\n  (14, 'Citrus College', '36626', 38675245799),\n  (15, 'Citrus College', '46195', 38675245799),\n  (16, 'College of Marin', '36465', 38984695817),\n  (17, 'College of the Desert', '21140', 39056007346),\n  (18, 'College of the Desert', '32878', 39056007346),\n  (19, 'College of the Desert', '39116', 43421133593),\n  (20, 'College of the Sequoias', '33662', 38748848139),\n  (21, 'Cypress College', '43441', 38748866826),\n  (22, 'Folsom Lake College', '15377', 39046850071),\n  (23, 'Fullerton College', '03832', 38675136988),\n  (24, 'Fullerton College', '10617', 38675136988),\n  (25, 'Fullerton College', '44076', 38675136988),\n  (26, 'Long Beach City College', '02617', 38147472758),\n  (27, 'Long Beach City College', '31812', 38152016534),\n  (28, 'Long Beach City College', '33670', 38152016534),\n  (29, 'Long Beach City College', '35540', 38152016534),\n  (30, 'Long Beach City College', '35914', 38152016534),\n  (31, 'Long Beach City College', '43943', 38152016534),\n  (32, 'Long Beach City College', '44747', 39891611701),\n  (33, 'Los Angeles Mission College', '20792', 39054675770),\n  (34, 'Madera College', '44516', 38935148408),\n  (35, 'Merritt College', '22011', 38935152199),\n  (36, 'Merritt College', '33540', 38935152199),\n  (37, 'MiraCosta College', '05110', 39726634443),\n  (38, 'MiraCosta College', '21974', 39726634443),\n  (39, 'MiraCosta College', '21976', 39726634443),\n  (40, 'MiraCosta College', '35650', 39726634443),\n  (41, 'MiraCosta College', '35670', 39726634443),\n  (42, 'MiraCosta College', '35677', 39726634443),\n  (43, 'MiraCosta College', '35678', 39726634443),\n  (44, 'Modesto Junior College', '08018', 38477845911),\n  (45, 'Modesto Junior College', '32782', 38477845911),\n  (46, 'Modesto Junior College', '42279', 38477845911),\n  (47, 'Moorpark College', '30626', 38748862351),\n  (48, 'Mt. San Antonio College', '40186', 39891607837),\n  (49, 'Oxnard College', '41263', 38842203500),\n  (50, 'Pasadena City College', '43064', 39061730187),\n  (51, 'Saddleback College', '40326', 38843470509),\n  (52, 'San Diego City College', '12093', 38252422845),\n  (53, 'Santa Barbara City College', '05947', 39782741424),\n  (54, 'Santa Rosa Junior College', '43253', 39006464249),\n  (55, 'Sierra College', '31261', 39709837031),\n  (56, 'Sierra College', '33637', 39709837031),\n  (57, 'Taft College', '44343', 39100858309),\n  (58, 'Ventura College', '35499', 39622549965),\n  (59, 'Ventura College', '46544', 39622549965))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run_unequal', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'),\n  'on_run_equal', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'),\n  'off_run', count(*) filter (where r.extracted_run is distinct from v.extracted_run),\n  'checked_now', count(*) filter (where r.checked),\n  'verdict_confirm_fp_match', count(*) filter (where pv.verdict = 'confirm' and pv.requirements_fp = public.program_record_fp(r.record)),\n  'verdict_other_fp_match', count(*) filter (where pv.verdict <> 'confirm' and pv.requirements_fp = public.program_record_fp(r.record)))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number\n  left join lateral (select verdict, requirements_fp from public.program_record_verdicts x\n                      where x.college = r.college and x.control_number = r.control_number\n                      order by x.id desc limit 1) pv on true;",
+ "apply": "with v(i, college, control_number, extracted_run) as (values\n  (1, 'Bakersfield College', '35984', 38414480070),\n  (2, 'Cabrillo College', '43652', 38442109713),\n  (3, 'Cerritos College', '16721', 37961137169),\n  (4, 'Cerritos College', '20507', 37961137169),\n  (5, 'Cerritos College', '33093', 37961137169),\n  (6, 'Cerritos College', '38756', 37961137169),\n  (7, 'Cerritos College', '43693', 37961137169),\n  (8, 'Chaffey College', '20677', 38242003226),\n  (9, 'Chaffey College', '31891', 44090894573),\n  (10, 'Chaffey College', '35060', 38242003226),\n  (11, 'Chaffey College', '38854', 38242003226),\n  (12, 'Citrus College', '11247', 38675245799),\n  (13, 'Citrus College', '30174', 38675245799),\n  (14, 'Citrus College', '36626', 38675245799),\n  (15, 'Citrus College', '46195', 38675245799),\n  (16, 'College of Marin', '36465', 38984695817),\n  (17, 'College of the Desert', '21140', 39056007346),\n  (18, 'College of the Desert', '32878', 39056007346),\n  (19, 'College of the Desert', '39116', 43421133593),\n  (20, 'College of the Sequoias', '33662', 38748848139),\n  (21, 'Cypress College', '43441', 38748866826),\n  (22, 'Folsom Lake College', '15377', 39046850071),\n  (23, 'Fullerton College', '03832', 38675136988),\n  (24, 'Fullerton College', '10617', 38675136988),\n  (25, 'Fullerton College', '44076', 38675136988),\n  (26, 'Long Beach City College', '02617', 38147472758),\n  (27, 'Long Beach City College', '31812', 38152016534),\n  (28, 'Long Beach City College', '33670', 38152016534),\n  (29, 'Long Beach City College', '35540', 38152016534),\n  (30, 'Long Beach City College', '35914', 38152016534),\n  (31, 'Long Beach City College', '43943', 38152016534),\n  (32, 'Long Beach City College', '44747', 39891611701),\n  (33, 'Los Angeles Mission College', '20792', 39054675770),\n  (34, 'Madera College', '44516', 38935148408),\n  (35, 'Merritt College', '22011', 38935152199),\n  (36, 'Merritt College', '33540', 38935152199),\n  (37, 'MiraCosta College', '05110', 39726634443),\n  (38, 'MiraCosta College', '21974', 39726634443),\n  (39, 'MiraCosta College', '21976', 39726634443),\n  (40, 'MiraCosta College', '35650', 39726634443),\n  (41, 'MiraCosta College', '35670', 39726634443),\n  (42, 'MiraCosta College', '35677', 39726634443),\n  (43, 'MiraCosta College', '35678', 39726634443),\n  (44, 'Modesto Junior College', '08018', 38477845911),\n  (45, 'Modesto Junior College', '32782', 38477845911),\n  (46, 'Modesto Junior College', '42279', 38477845911),\n  (47, 'Moorpark College', '30626', 38748862351),\n  (48, 'Mt. San Antonio College', '40186', 39891607837),\n  (49, 'Oxnard College', '41263', 38842203500),\n  (50, 'Pasadena City College', '43064', 39061730187),\n  (51, 'Saddleback College', '40326', 38843470509),\n  (52, 'San Diego City College', '12093', 38252422845),\n  (53, 'Santa Barbara City College', '05947', 39782741424),\n  (54, 'Santa Rosa Junior College', '43253', 39006464249),\n  (55, 'Sierra College', '31261', 39709837031),\n  (56, 'Sierra College', '33637', 39709837031),\n  (57, 'Taft College', '44343', 39100858309),\n  (58, 'Ventura College', '35499', 39622549965),\n  (59, 'Ventura College', '46544', 39622549965)),\nu as (\nupdate public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning v.i, r.college, r.control_number, r.checked)\nselect json_build_object('returned', count(*),\n       'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),\n       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned\n  from u;",
+ "follow_verdict": "The follow_verdict trigger (program_requirement_records_follow_verdict, chatbox/supabase_program_record_verdicts.sql) runs on this UPDATE. Where a person's latest verdict on the row is a confirm whose fingerprint matches the record, and the machine checks now pass, it marks the row checked, and a checked row is public. The UPDATE returns those rows' places as \"checked\". The rollback reverses this: it moves checks.arithmetic back to \"unequal\", the machine checks fail again, and the trigger unmarks the row.",
+ "person_settled": "Person-settled rows win. The UPDATE writes checks.arithmetic alone, only where the row still holds the filed run and still reads \"unequal\" (the machine's value). It never writes the record, checked, checked_by or checked_at: the trigger sets those from a person's verdict, a confirm marks the row checked and any other verdict (needs a fix) keeps it unchecked. A person's reload or reread changes the run and drops the row out of the guard.",
+ "rollback": null,
+ "rollback_how": "Built from the UPDATE's returned value, after it runs: python3 kb/_program_requirements_rescore.py --rollback-from <the migrate receipt> --receipt <this file>. It moves back only the rows the UPDATE returned.",
+ "applied": null
+}

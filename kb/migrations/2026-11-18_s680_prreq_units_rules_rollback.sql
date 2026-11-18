@@ -1,0 +1,77 @@
+-- S680 cheap piles, item 2: the units rules (A1 17, A4 35, A5 5, A6 2).
+-- Rollback, NOT applied. Provisional: it moves all 59 listed rows back from "equal" to "unequal", guarded on the
+-- filed run. It is exact only when the pre-read showed on_run_equal = 0. After the apply, rebuild it from the rows the
+-- UPDATE returned: python3 kb/_program_requirements_rescore.py --rollback-from <migrate receipt> --receipt
+-- kb/receipts/program_requirement_records_units_rules_2026-11-18_s680.json, then copy the receipt's rollback here.
+-- Before applying it: a fresh live read and the three-bucket diff of docs/reference/data_write_rollback.md.
+with v(i, college, control_number, extracted_run) as (values
+  (1, 'Bakersfield College', '35984', 38414480070),
+  (2, 'Cabrillo College', '43652', 38442109713),
+  (3, 'Cerritos College', '16721', 37961137169),
+  (4, 'Cerritos College', '20507', 37961137169),
+  (5, 'Cerritos College', '33093', 37961137169),
+  (6, 'Cerritos College', '38756', 37961137169),
+  (7, 'Cerritos College', '43693', 37961137169),
+  (8, 'Chaffey College', '20677', 38242003226),
+  (9, 'Chaffey College', '31891', 44090894573),
+  (10, 'Chaffey College', '35060', 38242003226),
+  (11, 'Chaffey College', '38854', 38242003226),
+  (12, 'Citrus College', '11247', 38675245799),
+  (13, 'Citrus College', '30174', 38675245799),
+  (14, 'Citrus College', '36626', 38675245799),
+  (15, 'Citrus College', '46195', 38675245799),
+  (16, 'College of Marin', '36465', 38984695817),
+  (17, 'College of the Desert', '21140', 39056007346),
+  (18, 'College of the Desert', '32878', 39056007346),
+  (19, 'College of the Desert', '39116', 43421133593),
+  (20, 'College of the Sequoias', '33662', 38748848139),
+  (21, 'Cypress College', '43441', 38748866826),
+  (22, 'Folsom Lake College', '15377', 39046850071),
+  (23, 'Fullerton College', '03832', 38675136988),
+  (24, 'Fullerton College', '10617', 38675136988),
+  (25, 'Fullerton College', '44076', 38675136988),
+  (26, 'Long Beach City College', '02617', 38147472758),
+  (27, 'Long Beach City College', '31812', 38152016534),
+  (28, 'Long Beach City College', '33670', 38152016534),
+  (29, 'Long Beach City College', '35540', 38152016534),
+  (30, 'Long Beach City College', '35914', 38152016534),
+  (31, 'Long Beach City College', '43943', 38152016534),
+  (32, 'Long Beach City College', '44747', 39891611701),
+  (33, 'Los Angeles Mission College', '20792', 39054675770),
+  (34, 'Madera College', '44516', 38935148408),
+  (35, 'Merritt College', '22011', 38935152199),
+  (36, 'Merritt College', '33540', 38935152199),
+  (37, 'MiraCosta College', '05110', 39726634443),
+  (38, 'MiraCosta College', '21974', 39726634443),
+  (39, 'MiraCosta College', '21976', 39726634443),
+  (40, 'MiraCosta College', '35650', 39726634443),
+  (41, 'MiraCosta College', '35670', 39726634443),
+  (42, 'MiraCosta College', '35677', 39726634443),
+  (43, 'MiraCosta College', '35678', 39726634443),
+  (44, 'Modesto Junior College', '08018', 38477845911),
+  (45, 'Modesto Junior College', '32782', 38477845911),
+  (46, 'Modesto Junior College', '42279', 38477845911),
+  (47, 'Moorpark College', '30626', 38748862351),
+  (48, 'Mt. San Antonio College', '40186', 39891607837),
+  (49, 'Oxnard College', '41263', 38842203500),
+  (50, 'Pasadena City College', '43064', 39061730187),
+  (51, 'Saddleback College', '40326', 38843470509),
+  (52, 'San Diego City College', '12093', 38252422845),
+  (53, 'Santa Barbara City College', '05947', 39782741424),
+  (54, 'Santa Rosa Junior College', '43253', 39006464249),
+  (55, 'Sierra College', '31261', 39709837031),
+  (56, 'Sierra College', '33637', 39709837031),
+  (57, 'Taft College', '44343', 39100858309),
+  (58, 'Ventura College', '35499', 39622549965),
+  (59, 'Ventura College', '46544', 39622549965)),
+u as (
+update public.program_requirement_records r
+   set checks = jsonb_set(r.checks, '{arithmetic}', '"unequal"')
+  from v
+ where r.college = v.college and r.control_number = v.control_number
+   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'
+returning v.i, r.college, r.control_number, r.checked)
+select json_build_object('returned', count(*),
+       'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),
+       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned
+  from u;

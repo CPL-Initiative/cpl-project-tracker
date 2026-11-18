@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    27.5,
+    28.0,
     28.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     28.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.5-28.0; the catalog states 28.0-28.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -215,8 +214,9 @@
       "alternatives": [
        {
         "code": "HORT 299",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -234,5 +234,13 @@
    "Careers taken from the certificate's own description ('employment in the California horticulture and landscape contracting industries'). The general Certificates tab intro also names park and grounds supervision, agriculture inspection, agri-sales and services, nurseries, landscape and irrigation design, landscape contracting and water management for all HORT certificates; not recorded as program-specific—reviewer may wish to check."
   ]
  },
- "extracted_run": "39726634443"
+ "extracted_run": "39726634443",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "HORT 299",
+   "words": "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

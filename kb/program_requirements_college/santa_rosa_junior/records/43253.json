@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    7.5,
+    8.0,
     8.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     8.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 7.5-8.0; the catalog states 8.0-8.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -169,8 +168,9 @@
       "alternatives": [
        {
         "code": "WEE 99I",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -186,5 +186,13 @@
    "Block total of 8 taken from 'Requirements - Complete 8.00 Units' and 'Total Hours/Units 8'."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "39006464249",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "WEE 99I",
+   "words": "WEE 99I, printed as an alternative to KIN 50.5 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

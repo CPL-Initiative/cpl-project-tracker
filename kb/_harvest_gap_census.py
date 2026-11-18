@@ -41,6 +41,7 @@ from __future__ import annotations
 import argparse
 import collections
 import json
+import re
 import os
 import statistics
 import sys
@@ -51,6 +52,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _program_requirements_college as C  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
+import collection_lane as CL  # noqa: E402
 
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
 OUT_JSON = os.path.join(HERE, "status", "harvest_gap_census.json")
@@ -95,6 +97,43 @@ CAUSE_IDS = [c for c, _ in CAUSES]
 # filed score's own unstated test fails.
 TAB_ONLY = ("tab_passes_scorer_fails", "counts as passing on the tab; the scorer's own test fails")
 CAUSE_WORDS = dict(CAUSES)
+
+# Named gaps (Commons Clarity's ask A11, #3480 comment 6967374303; COBIx's brief on #3358): a plain reason shown
+# in place of a failure. The program stays in the gap under its cause; the label says why no read will move it.
+# Part 1 gates on the title alone: the state's TOP code (4901) is never a gate (CLAUDE.md, the TOP caveat).
+GE_PATTERN_TITLE = re.compile(r"cal\s*-?\s*getc|\bigetc\b|\bcsu\s*-?\s*(?:ge\b|general\s+education|breadth)"
+                              r"|\bgeneral\s+education\b", re.I)
+NAMED_GAPS = {
+    "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design.",
+    "listed_twice": "The state lists this program twice. The other listing has the course list.",
+}
+
+
+def _title_key(t) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", str(t or "").lower()).strip()
+
+
+def named_gap(col: dict | None, cn: str, cause: str, title: str | None = None) -> tuple[str, str | None] | None:
+    """(label, the other listing's control number or None), or None. Part 1: a general-education pattern
+    certificate, by its title, among no closed list and page not found. Part 2: a program with no closed list
+    whose college lists the same title and award again under a newer control number that has a course list."""
+    col = col or {}
+    if CL.held(col.get("college")):
+        # The collection lane holds this college tonight (kb/collection_lane.py): no label from this lane.
+        return None
+    title = title or (col.get("titles") or {}).get(cn)
+    if cause in ("no_closed_list", "page_not_found") and title and GE_PATTERN_TITLE.search(title):
+        return "ge_pattern_certificate", None
+    if cause == "no_closed_list" and title:
+        # The award type (S.award_type: transfer, local degree, certificate, bachelor), so the state's old award
+        # wording ("Certificate of Achievement: 18 or greater semester units") meets its new wording.
+        award = S.award_type((col.get("awards") or {}).get(cn))
+        key = (_title_key(title), award)
+        for other, t in sorted((col.get("titles") or {}).items()):
+            if (other != cn and other > cn and (col.get("listed") or {}).get(other) and award
+                    and (_title_key(t), S.award_type((col.get("awards") or {}).get(other))) == key):
+                return "listed_twice", other
+    return None
 
 
 def norm_cn(cn) -> str:
@@ -185,6 +224,8 @@ def read_college_dir(path: str) -> dict:
         "cost_per_program": summary.get("cost_per_program"),
         "methods": {norm_cn(s.get("control_number")): s.get("method") for s in sources},
         "titles": {norm_cn(s.get("control_number")): s.get("title") for s in sources},
+        "awards": {norm_cn(s.get("control_number")): s.get("award") for s in sources},
+        "listed": {norm_cn(s.get("control_number")): s.get("listed") or 0 for s in sources},
         "records": records,
         "kept": {norm_cn(k.get("control_number")) for k in kept.get("programs") or []},
     }
@@ -353,8 +394,11 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         college = (col or {}).get("college") or prog["college"]
         lever, scope = lever_of(cause, sub, college, (closed_now or {}).get(cn) if closed_now is not None else None)
-        gap.append({"college": college, "control_number": cn, "cause": cause, "sub": sub,
-                    "lever": lever, "scope": scope})
+        row = {"college": college, "control_number": cn, "cause": cause, "sub": sub, "lever": lever, "scope": scope}
+        ng = named_gap(col, cn, cause, prog.get("title"))
+        if ng:
+            row["named_gap"], row["other_listing"] = ng
+        gap.append(row)
 
     by_cause = collections.Counter(g["cause"] for g in gap)
     by_sub = collections.Counter((g["cause"], g["sub"]) for g in gap if g["sub"])
@@ -416,6 +460,11 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "outside_universe": outside or {},
         "tab_only": {"cause": TAB_ONLY[0], "what": TAB_ONLY[1], "programs": len(tab_only),
                      "members": sorted(tab_only, key=lambda x: (x["college"], x["control_number"]))},
+        "named_gaps": {k: {"words": w, "programs": sum(1 for g in gap if g.get("named_gap") == k),
+                           "by_cause": dict(collections.Counter(g["cause"] for g in gap if g.get("named_gap") == k)),
+                           "members": sorted(([g["college"], g["control_number"]] + ([g["other_listing"]] if g.get("other_listing") else []))
+                                             for g in gap if g.get("named_gap") == k)}
+                       for k, w in NAMED_GAPS.items()},
         "statewide_by_cause": {c: by_cause.get(c, 0) for c in CAUSE_IDS},
         "sub_causes": [{"cause": c, "sub": s, "programs": n}
                        for (c, s), n in sorted(by_sub.items(), key=lambda x: -x[1])],
@@ -438,7 +487,7 @@ def universe_from_live(programs: list[dict]) -> tuple[list[dict], dict]:
         if cn in seen:
             continue
         seen.add(cn)
-        uni.append({"college": p.get("college"), "control_number": cn})
+        uni.append({"college": p.get("college"), "control_number": cn, "title": p.get("program_title")})
     return uni, dict(outside)
 
 
@@ -467,6 +516,9 @@ def render_md(r: dict, when: str) -> str:
     if r["outside_universe"]:
         L += ["Read by the harvest but outside the universe: " + ", ".join(
             "%s %d" % (k, v) for k, v in sorted(r["outside_universe"].items())) + ".", ""]
+    for k, ng in (r.get("named_gaps") or {}).items():
+        if ng["programs"]:
+            L += ["Named gap, %d programs: \"%s\"" % (ng["programs"], ng["words"]), ""]
     L += ["## By cause", "", "| Cause | Programs |", "|---|---:|"]
     for c in CAUSE_IDS:
         if r["statewide_by_cause"].get(c):

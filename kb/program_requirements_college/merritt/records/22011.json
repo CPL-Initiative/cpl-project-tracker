@@ -65,11 +65,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    46.0,
-    47.0
+    43.0,
+    44.0
    ],
    "stated": [
     43.0,
@@ -77,7 +77,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "rescored": "A6 a choose list printed with the sum of every option counts its cheapest courses (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +101,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -397,10 +397,7 @@
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
-    "stated": {
-     "min": 6,
-     "max": 6
-    },
+    "stated": null,
     "courses": [
      {
       "code": "LANHT 033A",
@@ -457,5 +454,13 @@
    "Licensure/certifications named in the description (Landscape Contractor (C-27), QWEL, Irrigation Technician (CIT), Landscape Industry Certified Technician) were not recorded as careers since they are presented as certifications."
   ]
  },
- "extracted_run": "38935152199"
+ "extracted_run": "38935152199",
+ "reconciled": [
+  {
+   "rule": "A6",
+   "block": "Choose One",
+   "words": "'Choose One' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count",
+   "statewide": "units_rules_A6"
+  }
+ ]
 }
