@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T08:48:21Z",
+ "written_at": "2026-11-18T10:38:24Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -168,8 +168,8 @@
   "harvested": 118,
   "unread": 0,
   "programs": 22335,
-  "passing": 16158,
-  "gap": 6177,
+  "passing": 16159,
+  "gap": 6176,
   "with_gap": 118,
   "cost_usd": 1343.25,
   "passed_at_read": 15398,
@@ -189,8 +189,8 @@
  },
  "census_check": {
   "universe": 22335,
-  "passing": 16158,
-  "gap": 6177
+  "passing": 16159,
+  "gap": 6176
  },
  "census_live": {
   "basis": "live",
@@ -2090,13 +2090,13 @@
    "harvested": true,
    "slug": "coastline_community",
    "programs": 175,
-   "passing": 124,
-   "gap": 51,
+   "passing": 125,
+   "gap": 50,
    "causes": {
     "no_closed_list": 16,
     "page_not_found": 5,
     "places_none": 14,
-    "unknown_without_live": 16
+    "unknown_without_live": 15
    },
    "census_causes": {
     "no_closed_list": 11,
@@ -2155,7 +2155,7 @@
    "levers": {
     "program_course_file_check": 16,
     "reader_page_assignment": 14,
-    "reconcile_steps": 11,
+    "reconcile_steps": 10,
     "reader_page_search": 5,
     "scorer_noncredit_hours": 5
    },

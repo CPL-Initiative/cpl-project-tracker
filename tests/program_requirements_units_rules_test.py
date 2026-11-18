@@ -10,7 +10,9 @@ fixtures, never on the committed records:
   * the self-check keeps a record as filed when the corrected sum misses the total at either end;
   * A1 never grants an electives fill (the page text would have to confirm it);
   * a record whose sum the committed files cannot reproduce exactly is left alone;
-  * the collection lane's colleges are left out (kb/collection_lane.py);
+  * the collection lane's colleges are left out (kb/collection_lane.py), and S681's plan names records at the
+    seven colleges S680's lane released alone (none S680 planned, none tonight's lane holds);
+  * A5 is off on every further record (d-a5-five-rows-stay-applied-s680);
   * A11's named gaps: a general-education pattern certificate by its title, a program the state lists twice,
     and neither at a college the collection lane holds.
 
@@ -88,8 +90,14 @@ blocks = [{"name": "List A", "rule": "choose_courses", "minimum": 1, "courses": 
            "minimum": 2, "courses": [course("FSM 35", 4), course("HSP 1", 4)]}]
 f = filed(blocks, (10, 12), award="A.S.-T Degree")
 check(U.arith(f["record"], f["award"])["computed"] == [11.0, 12.0], "the fixture fails as filed, 11-12 against 10-12")
-j = U.judge(f, {})
-check(j["rule"] == "A5" and j["arith"]["computed"] == [10.0, 12.0], "A5 adds List A's courses and lands")
+check(not U.A5_ON and U.judge(f, {})["rule"] is None,
+      "A5 is off on every further record (d-a5-five-rows-stay-applied-s680): its record stays as filed")
+U.A5_ON = True
+try:
+    j = U.judge(f, {})
+finally:
+    U.A5_ON = False
+check(j["rule"] == "A5" and j["arith"]["computed"] == [10.0, 12.0], "A5's code still adds List A's courses and lands")
 
 # The self-check: a correction that does not land leaves the record as filed.
 blocks6 = copy.deepcopy([{"name": "Core", "rule": "all", "courses": [course("HIST 1", 3), course("HIST 2", 3)]},
@@ -125,9 +133,18 @@ check(notes and U.lands(U.arith(new, "A.S. Degree")), "A8 gives the degree its c
 check(not U.a8_college_ge(rec, "A.S.-T Degree", ge["Butte College"])[1], "A8 never fills a transfer degree")
 
 # The collection lane's colleges are left out.
-check(U.held("Lassen College") and U.held("Santiago Canyon College") and not U.held("Butte College"),
-      "the collection lane's twelve colleges are held, others are not")
-check(len(CL.COLLECTION_LANE_S680) == 12, "one named constant holds the twelve")
+check(U.held("Lassen College") and U.held("Santiago Canyon College") and U.held("Crafton Hills College")
+      and not U.held("Butte College") and not U.held("Golden West College"),
+      "the collection lane's seven colleges are held; a released college and others are not")
+check(len(CL.COLLECTION_LANE) == 7 and CL.COLLECTION_LANE_S680 is CL.COLLECTION_LANE,
+      "one named constant holds tonight's seven; the old name is an alias of it")
+check(len(CL.RELEASED) == 7 and not set(CL.RELEASED) & set(CL.COLLECTION_LANE),
+      "the seven released colleges, none of them in tonight's lane")
+try:
+    U.run(False, only=("Golden West College", "Lassen College"))
+    check(False, "a run naming a college the lane holds must refuse")
+except SystemExit as e:
+    check("Lassen College" in str(e), "a run naming a college the lane holds refuses and names it")
 
 # A11's named gaps.
 col = {"college": "Butte College", "titles": {"100": "Cal-GETC", "200": "English", "300": "English"},
@@ -242,6 +259,52 @@ if os.path.isfile(RECEIPT):
         check("r.checked is not true" in sql and "e(expect) as (values (" in sql and "skipped_checked" in sql
               and "::int::text::json" in sql,
               "%s skips a checked row, lists it, and aborts unless it matches the plan less those rows" % k)
+
+# S681: the plan names records at the seven colleges S680's lane released, and at no other. A planned record at a
+# college tonight's lane holds is a second writer on that college; one at any other college re-plans a record S680
+# already applied (its 56) or held out (MiraCosta 21976).
+RECEIPT_681 = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_units_rules_2026-11-18_s681.json")
+if os.path.isfile(RECEIPT_681):
+    with open(RECEIPT_681, encoding="utf-8") as fh:
+        r681 = json.load(fh)
+    released, lane = set(CL.RELEASED), set(CL.COLLECTION_LANE)
+    planned = [(r["college"], str(r["control_number"])) for r in r681["records"]]
+    check(planned and all(c in released for c, _ in planned),
+          "every S681 planned record is at a released college: %s" % [p for p in planned if p[0] not in released][:5])
+    check(not any(c in lane for c, _ in planned), "no S681 planned record is at a college tonight's lane holds")
+    check(set(r681.get("only_colleges") or []) == released, "the S681 run named the seven released colleges alone")
+    if os.path.isfile(RECEIPT):
+        s680 = {(r["college"], str(r["control_number"])) for r in rc["records"] + (rc.get("held_out") or [])}
+        check(not s680 & set(planned), "S681 re-plans no record S680 planned: %s" % sorted(s680 & set(planned))[:5])
+    check(not any(r["rule"] in ("A5", "A6") for r in r681["records"]), "A5 and A6 move no S681 record")
+    check(r681.get("a5_on") is False and r681.get("a6_on") is False, "the S681 receipt says A5 and A6 were off")
+    # Every row each committed S681 file names is a planned row, at a released college.
+    ROW = re.compile(r"^\s*\((\d+), '((?:[^']|'')+)', '([^']+)', \d+", re.M)
+    named = {}
+    for sql in sorted(glob.glob(os.path.join(ROOT, "kb", "migrations", "2026-11-18_s681_prreq_units_rules_*.sql"))):
+        with open(sql, encoding="utf-8") as fh:
+            text = fh.read()
+        rows = [(c.replace("''", "'"), n) for _, c, n in ROW.findall(text)]
+        named[os.path.basename(sql)] = rows
+        check(rows and all(c in released and c not in lane for c, _ in rows) and set(rows) <= set(planned),
+              "%s names only planned rows at released colleges (%d rows)" % (os.path.basename(sql), len(rows)))
+    full681 = [r for r in r681["records"] if r["i"] in set(r681["plan"]["full_row"])]
+    for name in ("preread", "apply_rows", "rollback_rows"):
+        check(len(named.get("2026-11-18_s681_prreq_units_rules_%s.sql" % name) or []) == len(full681),
+              "the S681 %s file names the %d full-row rows" % (name, len(full681)))
+    check(("e(expect) as (values (%d))" % len(full681)) in r681["apply_full_row"]
+          and ("e(expect) as (values (%d))" % len(full681)) in r681["rollback_full_row"],
+          "the S681 full-row apply and rollback expect the plan's count")
+    check(bool(r681["plan"]["checks_only"]) == bool(r681.get("apply_checks_only")),
+          "an empty checks-only part carries no statement")
+    import _program_requirements_college as C  # noqa: E402
+    imgs = {}
+    for college in sorted({r["college"] for r in full681}):
+        for row in C.load_rows(college)[0]:
+            imgs[(college, str(row["control_number"]))] = row
+    check(all((imgs.get((r["college"], str(r["control_number"]))) or {}).get("record") == r["after_image"]["record"]
+              and imgs[(r["college"], str(r["control_number"]))]["checks"] == r["after_image"]["checks"]
+              for r in full681), "the load posts the S681 after-image for every full-row record")
 
 if failures:
     for m in failures:

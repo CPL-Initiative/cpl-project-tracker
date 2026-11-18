@@ -20,8 +20,8 @@ _preview), and, where a runner hands one over, a capture directory (--capture DI
 artifact's out/, with sources/<cn>.json carrying the text the reader saw). The committed files keep no
 page text, so a run without --capture can find only the prior-year rule's programs.
 
-THE COLLECTION LANE'S COLLEGES are left out tonight (S680 conductor, one writer per college): the twelve
-of COLLECTION_LANE_S680 in kb/collection_lane.py, or --skip-college NAME in addition.
+THE COLLECTION LANE'S COLLEGES are left out tonight (the conductor's split, one writer per college): the colleges
+of COLLECTION_LANE in kb/collection_lane.py, or --skip-college NAME in addition.
 
 Writes kb/status/program_discontinued.json. kb/_harvest_gap_census.py reads it and lists each flagged
 program beside the gap, out of it. Writes no table: git revert undoes the flag.
@@ -51,7 +51,7 @@ RULING = ("Sam, 2026-11-17, relayed by COBIx on #3480 (comment 6967372099): flag
 
 # The collection lane's colleges, left out tonight: the one named constant in kb/collection_lane.py.
 sys.path.insert(0, HERE)
-from collection_lane import COLLECTION_LANE_S680  # noqa: E402
+from collection_lane import COLLECTION_LANE  # noqa: E402
 import collection_lane as CL  # noqa: E402
 
 # A program-level mark. Each alternative names the program's state, never a course's.
@@ -173,7 +173,7 @@ def build(captures: list[str] = (), skip: tuple[str, ...] = (), base: str = COLL
     for r in rows:
         by_college[r["college"]] = by_college.get(r["college"], 0) + 1
         by_how[r["how"]] = by_how.get(r["how"], 0) + 1
-    return {"rule": RULING, "held_colleges": list(COLLECTION_LANE_S680) + [s for s in skip],
+    return {"rule": RULING, "held_colleges": list(COLLECTION_LANE) + [s for s in skip],
             "left_out_held": left_out, "flagged": len(rows), "by_how": by_how, "by_college": by_college,
             "page_text": "capture" if captures else "none committed: catalog_mark needs a runner capture (--capture)",
             "flags": rows}

@@ -33,11 +33,16 @@ committed files do not carry. So a record is judged only where the sum here is e
 correction) gives every course and option its own units, or this module's sum of the record as filed equals
 the filed sum and the correction adds no course without units. Every other record is left alone.
 
-THE COLLECTION LANE'S COLLEGES are left out tonight: kb/collection_lane.py's COLLECTION_LANE_S680 (twelve colleges), plus
---skip-college NAME.
+A5 IS OFF ON EVERY FURTHER RECORD (A5_ON; d-a5-five-rows-stay-applied-s680): the five rows S680 applied stay
+applied, and A5 moves no other record until its 31 wrong answers on held records are listed by cause.
+
+THE COLLECTION LANE'S COLLEGES are left out tonight: kb/collection_lane.py's COLLECTION_LANE, plus --skip-college
+NAME. --college NAME (repeatable) limits the run to the colleges named: S681 runs the rules on the seven S680's
+lane held and released (collection_lane.RELEASED), so the plan cannot re-plan a record S680 applied elsewhere.
 
     python3 kb/_program_requirements_units_rules.py --dry-run     # counts by rule, the self-check; writes nothing
     python3 kb/_program_requirements_units_rules.py --tag s680    # rewrite the records, write the receipt
+    python3 kb/_program_requirements_units_rules.py --tag s681 --released   # the seven released colleges alone
 
 The receipt (kb/receipts/program_requirement_records_units_rules_<date>_<tag>.json) lists each moved record
 with its run and place i, and carries the pre-read, the guarded UPDATE (checks.arithmetic "unequal" to
@@ -71,13 +76,17 @@ GLOB = os.path.join(HERE, "program_requirements_college", "*", "records", "*.jso
 RECEIPTS = os.path.join(HERE, "receipts")
 TOL = 1e-6
 
-from collection_lane import COLLECTION_LANE_S680  # noqa: E402  (the one named filter, S680)
+from collection_lane import COLLECTION_LANE  # noqa: E402  (the one named filter)
 
 ASK = "Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358"
 RULES = ("A1", "A4", "A5", "A6", "A8")
 # A6 is off (S680 conductor's ruling on the second reader's F5): it landed 0 of 4 held answers, and landing is its
 # only evidence. Its code stays for the self-check; its records stay as filed, with the note they carry.
 A6_ON = False
+# A5 is off on every further record (d-a5-five-rows-stay-applied-s680): S680's five A5 rows stay applied, and A5
+# moves no other record until its 31 wrong answers on held records are listed by cause. Its code stays for the
+# self-check.
+A5_ON = False
 # The plan's two parts (second reader's F1): A1 changes no record, so its rows move checks.arithmetic alone; a
 # correction rewrites the record's blocks, so its rows take the full image the college load would post.
 CHECKS_ONLY = ("A1",)
@@ -306,7 +315,7 @@ def judge(filed: dict, ge_totals: dict) -> dict:
     tried = []
     for rule, fn in (("A4", a4_blank_alternative), ("A5", a5_any_course_from), ("A6", a6_sum_of_options),
                      ("A8", lambda r: a8_college_ge(r, award, ge_totals.get(filed["college"])))):
-        if rule == "A6" and not A6_ON:
+        if (rule == "A6" and not A6_ON) or (rule == "A5" and not A5_ON):
             continue
         new, notes = fn(rec)
         if not notes:
@@ -325,11 +334,14 @@ def held(college: str | None, skip: tuple = ()) -> bool:
     return CL.held(college, skip)
 
 
-def load_files(skip: tuple = ()) -> list[tuple[str, dict]]:
+def load_files(skip: tuple = (), only: tuple = ()) -> list[tuple[str, dict]]:
+    """The filed records outside the collection lane; with only, at the colleges it names alone."""
     out = []
     for path in sorted(glob.glob(GLOB)):
         with open(path, encoding="utf-8") as fh:
             d = json.load(fh)
+        if only and d.get("college") not in only:
+            continue
         if not held(d.get("college"), skip):
             out.append((path, d))
     return out
@@ -371,8 +383,11 @@ def _load_images(colleges: set) -> dict:
     return out
 
 
-def run(write: bool, skip: tuple = ()) -> dict:
-    pairs = load_files(skip)
+def run(write: bool, skip: tuple = (), only: tuple = ()) -> dict:
+    bad = [c for c in only if held(c, skip)]
+    if bad:
+        raise SystemExit("the collection lane holds %s: never in a plan" % ", ".join(bad))
+    pairs = load_files(skip, only)
     files = [d for _, d in pairs]
     ge_totals = college_ge_totals(files)
     moved, why = [], collections.Counter()
@@ -455,11 +470,15 @@ def _arith_update(to: str, frm: str) -> str:
 
 def checks_only_apply(rows: list[dict], tag: str) -> str:
     """A1: checks.arithmetic "unequal" to "equal", never on a row a person checked (round two, R1), aborting
-    unless it matches the plan less the checked rows (kb/_guarded_sql.py)."""
+    unless it matches the plan less the checked rows (kb/_guarded_sql.py). An empty part has no statement."""
+    if not rows:
+        return None
     return GS.guarded(_checks_v(rows), _arith_update("equal", "unequal"), len(rows), tag + " checks-only")
 
 
-def checks_only_rollback(rows: list[dict], tag: str) -> str:
+def checks_only_rollback(rows: list[dict], tag: str) -> str | None:
+    if not rows:
+        return None
     return GS.guarded(_checks_v(rows), _arith_update("unequal", "equal"), len(rows), tag + " checks-only rollback",
                       rollback=True)
 
@@ -488,20 +507,29 @@ def full_row_apply(rows: list[dict], tag: str) -> str:
     """Each corrected row takes the record and checks the college load would post for its committed record, only
     where the live row still holds the filed run and the load's image of main's record and checks (the before-image),
     and no person has checked it."""
+    if not rows:
+        return None
     return GS.guarded(FULL_V % _full_values(rows), _full_update("after", "before"), len(rows), tag + " full-row")
 
 
 def full_row_rollback(rows: list[dict], tag: str = "s680") -> str:
     """The before-image back where the row still holds the after-image, skipping (and listing) a row a person
     checked after the apply (round two, R3)."""
+    if not rows:
+        return None
     return GS.guarded(FULL_V % _full_values(rows), _full_update("before", "after"), len(rows),
                       tag + " full-row rollback", rollback=True)
 
 
 def pre_read(checks_rows: list[dict], full_rows: list[dict]) -> str:
-    """One SELECT, one JSON value: both parts as they stand live."""
-    a = RS.pre_read_sql(checks_rows)
-    a_with, a_select = a.split("\nselect json_build_object(", 1)
+    """One SELECT, one JSON value: both parts as they stand live. An empty part reads null (a values list cannot be
+    empty)."""
+    if checks_rows:
+        a = RS.pre_read_sql(checks_rows)
+        a_with, a_select = a.split("\nselect json_build_object(", 1)
+        checks_part = "(%s\nselect json_build_object(%s)" % (a_with, a_select.rstrip().rstrip(";"))
+    else:
+        checks_part = "(select null::json)"
     full = ("select json_build_object('listed', (select count(*) from v),\n"
             "  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n"
             "  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n"
@@ -510,8 +538,8 @@ def pre_read(checks_rows: list[dict], full_rows: list[dict]) -> str:
             "  'already_after', count(*) filter (where r.record = v.after_record and r.checks = v.after_checks),\n"
             "  'checked_now', count(*) filter (where r.checked))\n"
             "  from v join public.program_requirement_records r on r.college = v.college and r.control_number = v.control_number")
-    return ("select json_build_object(\n'checks_only', (%s\nselect json_build_object(%s),\n'full_row', (%s\n%s));"
-            % (a_with, a_select.rstrip().rstrip(";"), FULL_V % _full_values(full_rows), full))
+    full_part = "(%s\n%s)" % (FULL_V % _full_values(full_rows), full) if full_rows else "(select null::json)"
+    return "select json_build_object(\n'checks_only', %s,\n'full_row', %s);" % (checks_part, full_part)
 
 
 def _parts(moved: list[dict]) -> tuple[list[dict], list[dict]]:
@@ -578,47 +606,79 @@ def replan(receipt: dict, applied_checks: dict | None = None, applied_from: str 
     return receipt
 
 
-def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> None:
-    """The full-row apply, its rollback and the checks-only rollback as committed files (the pre-read and the
-    checks-only apply already ran and stay as they ran)."""
+NUMBER_WORDS = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven", 8: "eight", 9: "nine",
+                10: "ten", 11: "eleven", 12: "twelve"}
+
+
+def _header(receipt: dict, receipt_path: str, tag: str) -> str:
     by_i = {r["i"]: r for r in receipt["records"]}
     full = [by_i[i] for i in receipt["plan"]["full_row"]]
     checks = receipt["plan"]["checks_only"]
     nr = collections.Counter(r["rule"] for r in full)
+    applied = receipt.get("applied") or {}
+    held_n = len(receipt.get("held_colleges") or [])
+    only = receipt.get("only_colleges") or []
+    return ("-- %s cheap piles, item 2: the units rules. Receipt: %s.\n"
+            "-- The plan in two parts (second reader's F1): checks-only, A1 %d rows%s; full-row, %s %d rows (%s)%s.\n"
+            "-- A6 is off (F5).%s The collection lane's %s colleges are not in the list (kb/collection_lane.py).\n"
+            % (tag.upper(), receipt_path, len(checks),
+               (", applied (%s returned %d)" % (applied["checks_only"]["from"], applied["checks_only"]["returned"]))
+               if applied.get("checks_only") else "",
+               " and ".join(sorted(nr)) or "no correction", len(full),
+               ", ".join("%s %d" % kv for kv in sorted(nr.items())) or "none",
+               (", applied (%s returned %d)" % (applied["full_row"]["from"], applied["full_row"]["returned"]))
+               if applied.get("full_row") else "",
+               " A5 is off on every further record." if receipt.get("a5_on") is False else "",
+               NUMBER_WORDS.get(held_n, str(held_n)))
+            + ("-- The plan names records at %s alone (--college).\n" % ", ".join(only) if only else ""))
+
+
+def write_migrations(receipt: dict, receipt_path: str, day: str, tag: str) -> None:
+    """The committed files of the plan's parts that have not run: the pre-read and the checks-only apply while no
+    part has run, the full-row apply until it runs, and each part's rollback. An empty part writes no file (a values
+    list cannot be empty)."""
+    by_i = {r["i"]: r for r in receipt["records"]}
+    full = [by_i[i] for i in receipt["plan"]["full_row"]]
+    checks = receipt["plan"]["checks_only"]
     applied = (receipt.get("applied") or {}).get("checks_only")
-    hdr = ("-- %s cheap piles, item 2: the units rules. Receipt: %s.\n"
-           "-- The plan in two parts (second reader's F1): checks-only, A1 %d rows%s; full-row, A4 and A5 %d rows (%s)%s.\n"
-           "-- A6 is off (F5). The collection lane's twelve colleges are not in the list (kb/collection_lane.py).\n"
-           % (tag.upper(), receipt_path, len(checks),
-              (", applied (%s returned %d)" % (applied["from"], applied["returned"])) if applied else "",
-              len(full), ", ".join("%s %d" % kv for kv in sorted(nr.items())),
-              (", applied (%s returned %d)" % ((receipt.get("applied") or {})["full_row"]["from"],
-                                               (receipt.get("applied") or {})["full_row"]["returned"]))
-              if (receipt.get("applied") or {}).get("full_row") else ""))
+    rows_applied = (receipt.get("applied") or {}).get("full_row")
+    hdr = _header(receipt, receipt_path, tag)
     held = "".join("-- Held out of the full-row plan: %s %s (%s).\n" % (h["college"], h["control_number"], h["why"])
                    for h in receipt.get("held_out") or [])
     base = os.path.join(MIGRATIONS, "%s_%s_prreq_units_rules_" % (day, tag))
-    parts = {
-        "apply_rows.sql": (held + "-- Part 2: the %d corrected rows take the record and checks the college load (load_rows) "
-                           "posts for their\n-- committed record, where the row holds the filed run, the load's image of "
-                           "main's record and checks, and no\n-- person's check. The statement aborts, writing nothing, "
-                           "unless it matches the plan's %d rows less those a person\n-- checked (listed as "
-                           "skipped_checked). Before-images: the receipt's before_image per row.\n"
-                           % (len(full), len(full)) + receipt["apply_full_row"]),
-        "rollback_rows.sql": (held + "-- Rollback of part 2, NOT applied: the before-image back where the row still "
-                              "holds the after-image, skipping\n-- and listing a row a person checked; it aborts unless "
-                              "it matches the plan less those rows (edit expect).\n" + receipt["rollback_full_row"]),
-        "rollback_checks.sql": ("-- Rollback of part 1, NOT applied: the %d rows the checks-only apply returned, back "
-                                "from \"equal\" to\n-- \"unequal\", guarded on the run, skipping and listing a row a "
-                                "person checked; it aborts unless it matches\n-- those rows less the checked ones (edit "
-                                "its expect line for a partial rollback).\n"
-                                % (applied["returned"] if applied else len(checks)) + receipt["rollback_checks_only"]),
-    }
-    rows_applied = (receipt.get("applied") or {}).get("full_row")
+    parts = {}
+    if not receipt.get("applied") and receipt.get("pre_read"):
+        parts["preread.sql"] = ("-- Pre-read, read-only: one SELECT, one JSON value, both parts as they stand live. A row "
+                                "off its filed run\n-- leaves the plan (--receipt R --drop COLLEGE:CN --drop-why ...) "
+                                "before any apply.\n" + receipt["pre_read"])
+    if checks and not applied and receipt.get("apply_checks_only"):
+        parts["apply_checks.sql"] = (
+            "-- Part 1, applied first: checks.arithmetic \"unequal\" to \"equal\" on the %d A1 rows, where the row holds "
+            "the\n-- filed run, still reads \"unequal\" and no person has checked it. The statement aborts, writing "
+            "nothing, unless it\n-- matches the plan's %d rows less those a person checked (listed as skipped_checked).\n"
+            % (len(checks), len(checks)) + receipt["apply_checks_only"])
+    if full and not rows_applied:
+        parts["apply_rows.sql"] = (
+            held + "-- Part 2: the %d corrected rows take the record and checks the college load (load_rows) "
+            "posts for their\n-- committed record, where the row holds the filed run, the load's image of "
+            "main's record and checks, and no\n-- person's check. The statement aborts, writing nothing, "
+            "unless it matches the plan's %d rows less those a person\n-- checked (listed as "
+            "skipped_checked). Before-images: the receipt's before_image per row.\n"
+            % (len(full), len(full)) + receipt["apply_full_row"])
+        parts["rollback_rows.sql"] = (
+            held + "-- Rollback of part 2, NOT applied: the before-image back where the row still "
+            "holds the after-image, skipping\n-- and listing a row a person checked; it aborts unless "
+            "it matches the plan less those rows (edit expect).\n" + receipt["rollback_full_row"])
+    if checks:
+        parts["rollback_checks.sql"] = (
+            "-- Rollback of part 1, NOT applied: the %d rows the checks-only apply returned, back "
+            "from \"equal\" to\n-- \"unequal\", guarded on the run, skipping and listing a row a "
+            "person checked; it aborts unless it matches\n-- those rows less the checked ones (edit "
+            "its expect line for a partial rollback).\n"
+            % (applied["returned"] if applied else len(checks)) + receipt["rollback_checks_only"])
     if rows_applied:
         # The full-row apply ran as committed (its migrate receipt holds the file's sha256): it stays as it ran, and
         # the rollback names the rows it returned.
-        del parts["apply_rows.sql"]
         parts["rollback_rows.sql"] = (
             held + "-- Rollback of part 2, NOT applied: the %d rows the full-row apply returned (%s), the before-image\n"
             "-- back where the row still holds the after-image, skipping and listing a row a person checked; it aborts\n"
@@ -634,6 +694,9 @@ def main(argv=None) -> int:
     ap.add_argument("--dry-run", action="store_true", help="count and self-check; write nothing")
     ap.add_argument("--tag", default="s680")
     ap.add_argument("--skip-college", action="append", default=[])
+    ap.add_argument("--college", action="append", default=[], help="run at the colleges named alone")
+    ap.add_argument("--released", action="store_true",
+                    help="run at the colleges S680's lane held and released alone (collection_lane.RELEASED)")
     ap.add_argument("--receipt", help="replan this receipt after a live step (no rescoring)")
     ap.add_argument("--applied-checks", help="the checks-only apply's migrate receipt: mark its rows applied and "
                                              "rebuild the checks-only rollback from them")
@@ -667,7 +730,11 @@ def main(argv=None) -> int:
             len(receipt["plan"]["checks_only"]), ((receipt.get("applied") or {}).get("checks_only") or {}).get("returned"),
             len(receipt["plan"]["full_row"]), len(receipt.get("held_out") or [])))
         return 0
-    r = run(write=not a.dry_run, skip=tuple(a.skip_college))
+    only = tuple(a.college) + (tuple(CL.RELEASED) if a.released else ())
+    if not a.dry_run and glob.glob(os.path.join(RECEIPTS, "program_requirement_records_units_rules_*_%s.json" % a.tag)):
+        # A second write under one tag would rescore records the first already moved and overwrite its receipt.
+        raise SystemExit("a units-rules receipt for %s exists: replan it with --receipt, or take a new --tag" % a.tag)
+    r = run(write=not a.dry_run, skip=tuple(a.skip_college), only=only)
     print("moved %d at %d colleges: %s" % (len(r["moved"]), r["colleges"],
                                            ", ".join("%s %d" % kv for kv in sorted(r["by_rule"].items()))))
     for rule, c in r["self_check"].items():
@@ -675,10 +742,13 @@ def main(argv=None) -> int:
               % (rule, c["applies"], c["right"], c["wrong"], c["not_exact"]))
     if a.dry_run or not r["moved"]:
         return 0
-    path = os.path.join(RECEIPTS, "program_requirement_records_units_rules_%s_%s.json"
-                        % (time.strftime("%Y-%m-%d", time.gmtime()), a.tag))
+    day = time.strftime("%Y-%m-%d", time.gmtime())
+    path = os.path.join(RECEIPTS, "program_requirement_records_units_rules_%s_%s.json" % (day, a.tag))
     receipt = {"rule": ASK, "words": WORDS, "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-               "held_colleges": list(COLLECTION_LANE_S680) + list(a.skip_college),
+               "held_colleges": list(COLLECTION_LANE) + list(a.skip_college),
+               "only_colleges": list(only) or None, "a5_on": A5_ON, "a6_on": A6_ON,
+               "self_check_scope": ("the held answers at the colleges named in only_colleges" if only
+                                    else "the held answers outside the collection lane"),
                "rescored": len(r["moved"]), "by_rule": r["by_rule"], "self_check": r["self_check"],
                "left_as_filed": r["left"], "ge_totals": r["ge_totals"], "records": r["moved"],
                "plan": {"checks_only": [m["i"] for m in r["moved"] if m["rule"] in CHECKS_ONLY],
@@ -697,6 +767,7 @@ def main(argv=None) -> int:
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(receipt, fh, ensure_ascii=False, indent=1)
         fh.write("\n")
+    write_migrations(receipt, os.path.relpath(path, ROOT), day, a.tag)
     print("receipt %s" % os.path.relpath(path, ROOT))
     return 0
 

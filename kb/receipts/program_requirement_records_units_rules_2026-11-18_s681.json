@@ -1,0 +1,331 @@
+{
+ "rule": "Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358",
+ "words": {
+  "A1": "rescored as filed under today's adding-up rules",
+  "A4": "a blank alternative takes its row's units",
+  "A5": "a choose list takes the courses of the list it names",
+  "A6": "a choose list printed with the sum of every option counts its cheapest courses",
+  "A8": "the college's own general education total"
+ },
+ "at": "2026-11-18T10:36:26Z",
+ "held_colleges": [
+  "Lassen College",
+  "Cosumnes River College",
+  "Allan Hancock College",
+  "Chabot College",
+  "Santiago Canyon College",
+  "Crafton Hills College",
+  "College of the Siskiyous"
+ ],
+ "only_colleges": [
+  "Golden West College",
+  "Coastline Community College",
+  "Orange Coast College",
+  "Los Medanos College",
+  "Diablo Valley College",
+  "College of the Redwoods",
+  "Antelope Valley College"
+ ],
+ "a5_on": false,
+ "a6_on": false,
+ "self_check_scope": "the held answers at the colleges named in only_colleges",
+ "rescored": 1,
+ "by_rule": {
+  "A4": 1
+ },
+ "self_check": {
+  "A4": {
+   "applies": 74,
+   "right": 74,
+   "wrong": 0,
+   "not_exact": 0
+  },
+  "A5": {
+   "applies": 11,
+   "right": 7,
+   "wrong": 3,
+   "not_exact": 1
+  },
+  "A6": {
+   "applies": 0,
+   "right": 0,
+   "wrong": 0,
+   "not_exact": 0
+  },
+  "A8": {
+   "applies": 0,
+   "right": 0,
+   "wrong": 0,
+   "not_exact": 0
+  }
+ },
+ "left_as_filed": {
+  "no rule applies": 59,
+  "A4 does not land": 14,
+  "A4 not exact": 9
+ },
+ "ge_totals": {
+  "College of the Redwoods": [
+   21.0,
+   21.0
+  ]
+ },
+ "records": [
+  {
+   "college": "Coastline Community College",
+   "control_number": "18223",
+   "award": "A.A. Degree",
+   "extracted_run": "38445051060",
+   "rule": "A4",
+   "against": "program",
+   "before": {
+    "status": "unequal",
+    "computed": [
+     13.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "after": {
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ]
+   },
+   "notes": [
+    "SPAN C180A, printed as an alternative to SPAN C180 with no units, takes its row's 5 units",
+    "SPAN C180B, printed as an alternative to SPAN C180 with no units, takes its row's 5 units",
+    "SPAN C185A, printed as an alternative to SPAN C185 with no units, takes its row's 5 units",
+    "SPAN C185B, printed as an alternative to SPAN C185 with no units, takes its row's 5 units"
+   ],
+   "path": "kb/program_requirements_college/coastline_community/records/18223.json",
+   "before_image": {
+    "program_title": "Spanish",
+    "award": "A.A. Degree",
+    "catalog_year": "2026-2027",
+    "source_url": "https://catalog.cccd.edu/coastline/pathways/language-literature/spanish/spanish-aa/",
+    "measure": "units",
+    "total_min": 18,
+    "total_max": 18,
+    "record": {
+     "program": {
+      "section_heading": "Spanish, Associate of Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "ge_pattern": "Local General Education or CalGETC pattern",
+      "outcomes": [
+       "Demonstrate appropriate level written and spoken fluency in the language.",
+       "Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries."
+      ],
+      "careers": [
+       "international trade",
+       "politics",
+       "interpretation",
+       "translation"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SPAN C180",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN C180A",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "SPAN C180B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C185",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN C185A",
+           "units": null,
+           "catalog_addition": false
+          },
+          {
+           "code": "SPAN C185B",
+           "units": null,
+           "catalog_addition": false
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C280",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C285",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "unequal",
+     "placed": 8,
+     "listed": 8
+    },
+    "extracted_run": "38445051060"
+   },
+   "after_image": {
+    "record": {
+     "program": {
+      "section_heading": "Spanish, Associate of Arts Degree",
+      "measure": "units",
+      "total_units": {
+       "min": 18,
+       "max": 18
+      },
+      "open_elective_units": null,
+      "ge_pattern": "Local General Education or CalGETC pattern",
+      "outcomes": [
+       "Demonstrate appropriate level written and spoken fluency in the language.",
+       "Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries."
+      ],
+      "careers": [
+       "international trade",
+       "politics",
+       "interpretation",
+       "translation"
+      ]
+     },
+     "blocks": [
+      {
+       "name": "Required Core",
+       "rule": "all",
+       "minimum": null,
+       "option_group": null,
+       "stated": {
+        "min": null,
+        "max": null
+       },
+       "courses": [
+        {
+         "code": "SPAN C180",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN C180A",
+           "units": 5,
+           "catalog_addition": false,
+           "units_max": null
+          },
+          {
+           "code": "SPAN C180B",
+           "units": 5,
+           "catalog_addition": false,
+           "units_max": null
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C185",
+         "units": 5,
+         "units_max": null,
+         "alternatives": [
+          {
+           "code": "SPAN C185A",
+           "units": 5,
+           "catalog_addition": false,
+           "units_max": null
+          },
+          {
+           "code": "SPAN C185B",
+           "units": 5,
+           "catalog_addition": false,
+           "units_max": null
+          }
+         ],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C280",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        },
+        {
+         "code": "SPAN C285",
+         "units": 4,
+         "units_max": null,
+         "alternatives": [],
+         "catalog_addition": false
+        }
+       ]
+      }
+     ]
+    },
+    "checks": {
+     "coverage": true,
+     "invented": true,
+     "arithmetic": "equal",
+     "placed": 8,
+     "listed": 8
+    }
+   },
+   "i": 1
+  }
+ ],
+ "plan": {
+  "checks_only": [],
+  "full_row": [
+   1
+  ]
+ },
+ "pre_read": "select json_build_object(\n'checks_only', (select null::json),\n'full_row', (with v(i, college, control_number, extracted_run, before_record, before_checks, after_record, after_checks) as (values\n  (1, 'Coastline Community College', '18223', 38445051060, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb))\nselect json_build_object('listed', (select count(*) from v),\n  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n  'already_after', count(*) filter (where r.record = v.after_record and r.checks = v.after_checks),\n  'checked_now', count(*) filter (where r.checked))\n  from v join public.program_requirement_records r on r.college = v.college and r.control_number = v.control_number));",
+ "apply_checks_only": null,
+ "apply_full_row": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_record, after_checks) as (values\n  (1, 'Coastline Community College', '18223', 38445051060, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set record = v.after_record, checks = v.after_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s681 full-row guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "follow_verdict": "The follow_verdict trigger (program_requirement_records_follow_verdict, chatbox/supabase_program_record_verdicts.sql) runs on this UPDATE. Where a person's latest verdict on the row is a confirm whose fingerprint matches the record, and the machine checks now pass, it marks the row checked, and a checked row is public. The UPDATE returns those rows' places as \"checked\". The rollback reverses this: it moves checks.arithmetic back to \"unequal\", the machine checks fail again, and the trigger unmarks the row.",
+ "person_settled": "Person-settled rows win. The UPDATE writes checks.arithmetic alone, only where the row still holds the filed run and still reads \"unequal\" (the machine's value). It never writes the record, checked, checked_by or checked_at: the trigger sets those from a person's verdict, a confirm marks the row checked and any other verdict (needs a fix) keeps it unchecked. A person's reload or reread changes the run and drops the row out of the guard.",
+ "rollback_full_row": "with v(i, college, control_number, extracted_run, before_record, before_checks, after_record, after_checks) as (values\n  (1, 'Coastline Community College', '18223', 38445051060, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"unequal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb, '{\"blocks\":[{\"courses\":[{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C180A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C180B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C180\",\"units\":5,\"units_max\":null},{\"alternatives\":[{\"catalog_addition\":false,\"code\":\"SPAN C185A\",\"units\":5,\"units_max\":null},{\"catalog_addition\":false,\"code\":\"SPAN C185B\",\"units\":5,\"units_max\":null}],\"catalog_addition\":false,\"code\":\"SPAN C185\",\"units\":5,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C280\",\"units\":4,\"units_max\":null},{\"alternatives\":[],\"catalog_addition\":false,\"code\":\"SPAN C285\",\"units\":4,\"units_max\":null}],\"minimum\":null,\"name\":\"Required Core\",\"option_group\":null,\"rule\":\"all\",\"stated\":{\"max\":null,\"min\":null}}],\"program\":{\"careers\":[\"international trade\",\"politics\",\"interpretation\",\"translation\"],\"ge_pattern\":\"Local General Education or CalGETC pattern\",\"measure\":\"units\",\"open_elective_units\":null,\"outcomes\":[\"Demonstrate appropriate level written and spoken fluency in the language.\",\"Demonstrate understanding and respect for the cultural and global diversity in the Spanish-speaking countries.\"],\"section_heading\":\"Spanish, Associate of Arts Degree\",\"total_units\":{\"max\":18,\"min\":18}}}'::jsonb, '{\"arithmetic\":\"equal\",\"coverage\":true,\"invented\":true,\"listed\":8,\"placed\":8}'::jsonb)),\nc as (select count(*) filter (where r.checked is true) as n,\n             coalesce(json_agg(v.i order by v.i) filter (where r.checked is true), '[]'::json) as keys\n        from v join public.program_requirement_records r\n          on r.college = v.college and r.control_number = v.control_number),\n-- A partial rollback: set expect below to the smaller count you mean.\ne(expect) as (values (1)),\nu as (\nupdate public.program_requirement_records r\n   set record = v.before_record, checks = v.before_checks\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.record = v.after_record and r.checks = v.after_checks\n   and r.checked is not true\nreturning v.i),\ns as (select count(*) as n, coalesce(json_agg(i order by i), '[]'::json) as keys from u)\nselect case when s.n = e.expect - c.n\n            then json_build_object('returned', s.n, 'keys', s.keys, 'skipped_checked', c.keys)\n            else ('s681 full-row rollback guard: the UPDATE matched ' || s.n || ' rows, the plan names ' || (e.expect - c.n))::int::text::json end as returned\n  from s, c, e;",
+ "rollback_checks_only": null,
+ "rollback": null,
+ "rollback_how": "rollback_checks_only and rollback_full_row each take back the plan's rows, skip and list a row a person checked, and abort unless they match the plan less those rows. Where the apply returned fewer rows, edit the rollback's expect line to that count.",
+ "applied": null
+}

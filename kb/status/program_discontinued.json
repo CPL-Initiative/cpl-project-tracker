@@ -1,18 +1,13 @@
 {
  "rule": "Sam, 2026-11-17, relayed by COBIx on #3480 (comment 6967372099): flag discontinued programs out of the queue; flag, never delete",
  "held_colleges": [
-  "Golden West College",
-  "Coastline Community College",
-  "Orange Coast College",
-  "Cosumnes River College",
   "Lassen College",
-  "Los Medanos College",
-  "Diablo Valley College",
-  "College of the Redwoods",
+  "Cosumnes River College",
   "Allan Hancock College",
   "Chabot College",
-  "Antelope Valley College",
-  "Santiago Canyon College"
+  "Santiago Canyon College",
+  "Crafton Hills College",
+  "College of the Siskiyous"
  ],
  "left_out_held": 0,
  "flagged": 9,
