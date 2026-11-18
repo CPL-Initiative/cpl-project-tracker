@@ -15,13 +15,14 @@ A later firing that finds this pull request updated within the half hour ends in
 
 ## The college split (written before any worker started)
 
-- **Collection lane** (harvest workers), nine colleges: Golden West, Coastline and Orange Coast (the `cccd` host;
-  Golden West's objectives full read, #3488, run 44251936045), Cosumnes River (#3293's seven), Lassen (its five pinned
-  records), Los Medanos (the step 11 preparation trial, #3489), and Diablo Valley (#3421), College of the Redwoods
-  (#3387) and Allan Hancock (#3284), whose full outcome reads run tonight, one reader per host.
+- **Collection lane** (harvest workers), twelve colleges, frozen at 06:46Z: Golden West, Coastline and Orange Coast
+  (the `cccd` host; Golden West's objectives full read, #3488), Cosumnes River (#3293's seven), Lassen (its five pinned
+  records), Los Medanos (#3489, trial 12 of 12, full read tonight), Diablo Valley (#3421), College of the Redwoods
+  (#3387) and Allan Hancock (#3284), whose full outcome reads run tonight, and Chabot, Antelope Valley and Santiago
+  Canyon (preparation runs). One reader per host.
 - **Cheap-piles lane** (one worker): every other college. Its statewide rules (the discontinued flags, units rules A1,
   A4, A5, A6, A8 and A11, the retired-course flags, the named-gap labels and the two paid reread lanes) leave the
-  collection lane's nine colleges out tonight and reach them on a later night.
+  collection lane's twelve colleges out tonight and reach them on a later night.
 - One writer per college. A college changes lanes only by an edit to this section before the write.
 - The slimming pull requests (#3476) touch no college record.
 
