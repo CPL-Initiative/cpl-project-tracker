@@ -28,6 +28,14 @@ function txt(el) {
 }
 const src = fs.readFileSync("exhibits.js", "utf8");
 const SBS = JSON.parse(fs.readFileSync("kb/exhibit_side_by_side.json", "utf8"));
+// The Review card's fixture is MAPICA-AATA-1-001. A CER procedures run can settle it and the rebuild then drops its
+// row (run 44350607385, 2026-11-18), so the row the builder wrote while it sat on the card stands in for it; every
+// other fixture still reads the committed file.
+if (!SBS.exhibits["MAPICA-AATA-1-001"]) SBS.exhibits["MAPICA-AATA-1-001"] = {
+  l: "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson",
+  c: "Nondestructive Testing Technician Apprenticeship \u2014 Journeyperson", t: "Industry certification", ts: "id",
+  k: "cert-based", n: 1,
+  a: "Foothill College AATA 103A (Ultrasonic Testing Level One) was set aside: this exhibit is an industry certification, not credit by exam." };
 const css = src.slice(src.indexOf('".exh-sbs {'), src.indexOf('"@media (prefers-reduced-motion: reduce) { .exh-wrap'));
 check("(5) the view's CSS names no raw hex color", css.length > 50 && !/#[0-9a-fA-F]{3,8}\b/.test(css), css.slice(0, 120));
 
