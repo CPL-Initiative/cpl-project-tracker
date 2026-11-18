@@ -808,6 +808,7 @@ stays here.
 | **The CPL Commons** | Every common reference under one tracking system; the first view a card per reference. | ✅ live · open work — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |
 | **CTDL and the partner exchange** | Credential Engine and WestEd plug into COBI through one exchange; COBI's records carry their CTDL identity. | 🔨 seed drafted, waits on Malone · open work — [lane state](docs/reference/lanes/ctdl-partner-exchange.md) |
+| **Repo size** | Bulky generated data out of the tree into the private bucket, and a size limit on every PR. | 🔨 in progress · open work — [lane state](docs/reference/lanes/repo-size.md) |
 | Parked | Seven parked phases with no lane file (1b, PR-D, 2, 4, 5, 6, 7). | parked — [the rows](docs/reference/mid_lifecycle.md#parked-roadmap-rows) |
 
 

@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-15
+updated: 2026-11-18
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -355,7 +355,10 @@ is his standing preference there too.
      report while it lists *All Fields* gets one more index run with `report=^All Fields$` first (SDCCD printed its
      SLOs only there).
    - **Then the next, once a UTC day: at most one full read and one preparation run** (a trial or an index), on two
-     hosts, never two runs on one host. `python3 scripts/next_slo_colleges.py --next --skip <slugs with an open PR>`
+     hosts, never two runs on one host. On a funded night (S680, 2026-11-18, the conductor's decision under Sam's
+     *"my priority is completion"*) the limit is one full read per host instead of one a UTC day, since a read costs
+     runner minutes only; the one-run-per-host rule stands, and the reads share the runner pool with the night's CI.
+     `python3 scripts/next_slo_colleges.py --next --skip <slugs with an open PR>`
      names the college and the trigger file; the plain listing names the first trial or index below it, and `--college <slug>` prints that
      one's file. On a new branch `claude/slo-<slug>` off `main`, write the file with every line it prints (`run=`
      takes the date), commit with a message that does not start with *Merge*, push, and open a draft PR. A workflow
