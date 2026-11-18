@@ -73,8 +73,10 @@ name: Program requirements, one college
 #
 # fetch (a dispatch with step=fetch and force=<receipt name>, never a push): reads
 #   a stored receipt from cpl-receipts, checked against its index sha256, and
-#   leaves it as this run's artifact receipt-<run>, so a session that cannot reach
-#   the bucket can read it (gh run download <run> -n receipt-<run>).
+#   leaves it as this run's artifact receipt-<run> for one day, so a session that
+#   cannot reach the bucket can read it (gh run download <run> -n receipt-<run>).
+#   Only a kind kb/_receipt_store.py declares PUBLIC_SAFE: the repository is public,
+#   and anyone signed in can download an artifact.
 
 on:
   workflow_dispatch:
@@ -459,9 +461,11 @@ jobs:
           NAME: ${{ github.event.inputs.force }}
         run: |
           if ! [[ "$NAME" =~ ^[0-9A-Za-z._-]+$ ]]; then echo "::error::force names one stored receipt"; exit 1; fi
-          python3 kb/_receipt_store.py fetch "$NAME" --out fetched
+          python3 kb/_receipt_store.py fetch "$NAME" --out fetched --for-artifact
+      # The repository is public: anyone signed in can download this artifact, so only a PUBLIC_SAFE kind is
+      # fetched (above), and it is kept one day.
       - uses: actions/upload-artifact@v7
         with:
           name: receipt-${{ github.run_id }}
           path: fetched/
-          retention-days: 90
+          retention-days: 1
