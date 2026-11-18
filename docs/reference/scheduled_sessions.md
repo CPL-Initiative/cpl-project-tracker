@@ -52,6 +52,15 @@ Your opening message says Sam's routine started you. A session Sam opens by hand
 follows CLAUDE.md as always; this page's first rule (go with the recommendation)
 is his standing preference there too.
 
+## A daytime code session takes the night's number (S683, 2026-11-18)
+
+A code session Sam opens by day, while the newest handoff already names the night's run, takes that next number with a
+*daytime* label (S683 daytime, SkyDipper) and adds a dated section, `## Daytime session, <moniker> (S<N> daytime),
+<date>`, to the end of the newest handoff instead of writing a new numbered one. The file's opening, its moniker and
+its opening line stay the night's; the section carries what shipped, the NEXT lines for the night, what to pick up and
+skip, the standing block, and ends with its own `Spend:` line and counts line. **DECIDED**
+`d-daytime-session-appends-handoff-s683` (the S683 conductor, at Sam's word to leave tonight's name for tonight).
+
 ## At the start
 
 0. **The dashboard run, first, on the night's first firing** (Sam, 2026-10-30, S527: "go on 1"). GitHub
@@ -399,6 +408,11 @@ is his standing preference there too.
    one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).
    **A refused read, here or at step 11, follows [`blocked_sources`](blocked_sources.md) before it becomes a card:** the
    college's other hosts, the publisher's copy, an archive copy, then a comment that mentions `cobi-cto` (Sam, 2026-11-10).
+   **The unblocker step, before a document goes on Sam's hand-fetch list** (Sam, 2026-11-18 about 10:43 AM PT, relayed
+   by COBIx on #3510, comment 6988133754): try the college's other public routes first: its HTML catalog index pages,
+   and a plain browser-like page read when the curl reader is blocked (Southwestern and NOCE first). Mark a college read
+   that way *Sky can read 2026-27 HTML* in the harvest lane. Never script around a WAF or a bot check, and never ignore
+   robots.txt; what is still refused after this step follows the order above.
 
 **The handoff's open work is built from the lanes, not copied from the last handoff** (S583, 2026-11-05). Each lane a
 session worked in the past week that still carries a NEXT goes on the list, or the handoff says by slug why it waits.

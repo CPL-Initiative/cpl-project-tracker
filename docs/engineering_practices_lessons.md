@@ -223,3 +223,26 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
   one line; whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to rule.
 - **Worker worktrees are heavy.** Under `.claude/worktrees/` each took about 2.3 GB; six took the disk from 27 GB free to
   13 GB. Remove a finished worker's worktree once its head is pushed. `git -C`, never `cd`, into one.
+
+## 2026-11-18 — S683 daytime (SkyDipper, Sam's code session by day): six merges, three parked, the watcher
+
+- **A Workflow did not honor worker worktree isolation.** Two workers ran in the conductor's checkout; one committed on
+  the session branch and another checked out #3472's old tree over it. A brief now names the worktree path the agent
+  creates off `origin/main` and stays in (`.claude/skills/conductor-brief` item 4;
+  `p-workflow-workers-share-main-checkout-s683`). The checkpoint worker's harness held it to its own worktree and
+  refused a `cd` into the shared checkout: the guard that the Workflow lacked.
+- **A run that changes a view's inputs rebuilds the view.** `cer-procedures.yml` changed what the Side by side views
+  read and left them stale, so `main` went red after run 44350607385 (#3520). The run rebuilds them now, and a failed
+  rebuild holds the review queue back and ends red; tests pick fixtures by rule, never by a fixed title.
+- **Resolve once.** The inactive-card builder read 1,067 where 1,119 belonged because exhibit links were resolved
+  through the alias chain a second time; `kb/coci_articulations.json` is already current-era (#3519). Read a resolved
+  file raw and refuse one without its applied markers.
+- **A generated file every PR rebuilds is a conflict machine.** The dependency map caused most of the day's
+  conflicts; Sam's rule moves its rebuild to one job on `main` (#3526), and a PR leaves it alone.
+- **Watch the reviewer instead of waiting for a relay.** `scripts/cobix_watch.sh` polls two GitHub searches every five
+  minutes from a saved last-seen file; `tests/cobix_watch_test.py` fails any call but `gh api -X GET search/issues`,
+  the one `gh` shape a cloud session may run.
+- **Park a stalled PR as an issue** (PR closed, branch kept: #3522 to #3525) to hold the three-PR cap without losing
+  the work; the issue names the branch and the next step.
+- **A daytime session takes the night's number with a label** and appends a dated section to the newest handoff;
+  `kb/_build_session_spend.py` reads that section's own `Spend:` line as session N daytime.
