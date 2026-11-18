@@ -35,3 +35,16 @@ Two lanes, never on one college, one writer per college.
 4. Lassen (#3499): the reread run, then the `set` step with a per-record hold.
 
 The checkpoint replaces this file with the full handoff.
+
+## Progress (refreshed 10:43Z)
+
+- **Outcomes:** all three loads ran. Allan Hancock 1,772 rows inserted (run 44285436479), Chabot 1,013 (run
+  44285558570), Santiago Canyon loaded (run 44285667921). A wave pull request carries them with Lassen's #3499.
+- **Lassen (#3499):** reread run 44263840460 replaced five rows; 33729 and 33730 pass, and 31132, 33263 and 42300 are
+  collected with a named gap. No dispatch is owed; it merges with the wave.
+- **Display:** build `545de21a6edc` is on #3507; `step=display` run 44286209178 was dispatched on the branch at
+  10:31Z, the first through the bucket path.
+- **Cheap piles:** #3497's rollback was rebuilt from the 75 returned rows (`fb1c7342`); a worker is resolving its
+  merge of `main`, fixing COBIx's four findings and writing one plan (the corrective write on the 75, #3502's 54
+  records, the five A5 rows). #3508 plans the released colleges: one record (Coastline 18223, rule A4); a second
+  reader is on it.
