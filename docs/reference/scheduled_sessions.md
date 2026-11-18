@@ -385,7 +385,7 @@ is his standing preference there too.
    after step 11, while time remains:** read the lane's catalog sweep and its colleges' NEXT lines
    ([`program-requirements-harvest`](lanes/program-requirements-harvest.md)) and work the first college that is neither
    parked nor waiting on a run: its reconcile steps, a read or an extraction under the $40 go, the load, then the display
-   build (`kb/_build_roep_display.py` on the wave branch, then `step=display`). One branch per college, never two on one
+   build (`kb/_build_roep_display.py` on the wave branch, commit the page alone since its receipt is gitignored (S680), then `step=display`). One branch per college, never two on one
    host; dispatch with `college=`. At the checkpoint, count what moved to passing against the stopping rule and park a
    college when it says so. When every college is loaded, parked or waiting, the step ends in one line naming the next
    one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).

@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     34.0,
     34.0
@@ -70,9 +70,14 @@
     34.0,
     36.0
    ],
-   "why": [
-    "the blocks sum to 34.0-34.0; the catalog states 34.0-36.0"
-   ]
+   "against": "program",
+   "why": [],
+   "short_high": true,
+   "note": "a required list adds up short of its own printed figure ('List A'): the list looks short, and a course line may be missing",
+   "lists_short": [
+    "List A"
+   ],
+   "rescored": "A1 rescored as filed under today's adding-up rules (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -93,7 +98,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

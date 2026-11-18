@@ -1,0 +1,76 @@
+PHYS 110 - Elementary Physics
+Units: 3.0
+Print
+
+Description:
+
+This course provides an overview of physics. Forces, motion, heat, electricity and magnetism, optics, and modern physics will be discussed. This course emphasizes topics in classical physics.
+
+Requisites:
+
+Advisory
+PHYS111 - Physics Laboratory
+Concurrent enrollment in PHYS-111 or equivalent
+
+AND
+
+Placement as determined by the college’s multiple measures assessment process or completion of a course taught at or above the level of intermediate algebra.
+
+Course Note:
+
+Students who have successfully completed PHYS-112 should not enroll in PHYS-110. Students who have successfully completed PHYS-112 will not receive credit for PHYS-110.
+
+Transferable:
+
+Transferable to both UC and CSU
+
+Repeatability:
+
+None
+
+General Education:
+
+DVC GE:
+II
+Cal-GETC:
+Area 5A
+UC Transfer Eligibility Area:
+UC-S
+
+Student Learning Outcomes:
+
+Distinguish between personal opinion and rational or scientific theories.
+Apply the basic laws of physics to everyday situations.
+Use quantitative skills in applying the topics of classical physics.
+
+Grade Options:
+
+Pass/No Pass
+Letter Grade Methods
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+54.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+54.0
+
+Lab Hours
+
+0.0
+
+Activity Hours
+
+0.0

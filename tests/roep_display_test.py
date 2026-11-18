@@ -10,8 +10,16 @@ promise the lane makes: MAP's credit-recommendation read carries counts and
 exhibit titles, never a student column.
 
 The CER and the articulation feed are rebuilt every morning, so this guard never
-rebuilds from them (a rebuild would go stale by the next cron). It checks what was
-committed against itself.
+rebuilds from them while the page's receipt is committed (a rebuild would go stale by
+the next cron). It checks what was committed against itself.
+
+From S680 (#3476) a new build's receipt is not committed: the display job rebuilds it
+on the runner, refused unless its build is the page's, and stores it in cpl-receipts.
+With no committed receipt this guard does what the runner does: it rebuilds from the
+committed records. When the rebuild carries the page's build, every check below holds
+the page to it, byte for byte. When it carries another (the morning cron moved an
+input after the page was built), the page-to-receipt equality is the runner's check
+to make, and this guard checks the rebuild's contents and says it skipped the equality.
 
     python3 tests/roep_display_test.py
 """
@@ -44,12 +52,16 @@ def load_js():
 
 
 def sql_displays(path):
+    return sql_displays_text(b.read_receipt(path))
+
+
+def sql_displays_text(text):
     out = {}
     pat = re.compile(r"^insert into public\.program_requirement_records .* select r\.college, r\.control_number, "
                      r"r\.program_title, r\.measure, r\.record, r\.checks, '(.*)'::jsonb from public\.program_requirement_records r "
                      r"where r\.college = '(.*)' and r\.control_number = '(.*)' on conflict \(college, control_number\) "
                      r"do update set display = excluded\.display;$")
-    for line in b.read_receipt(path).splitlines():
+    for line in text.splitlines():
         m = pat.match(line)
         if m:
             out[(m.group(2).replace("''", "'"), m.group(3))] = json.loads(m.group(1).replace("''", "'"))
@@ -296,8 +308,18 @@ check(all(p["filed"] == ("records" if os.path.exists(os.path.join(b.PILOT, "reco
 for k in ("here", "adopt", "consider", "up_to"):
     check(bool(data["definitions"].get(k)), "definition of %s is stated once, for the page and Sierra" % k)
 receipt = b.receipt_path(data)
-check(os.path.exists(receipt), "the display receipt for build date %s exists" % data["built"])
-sql = sql_displays(receipt) if os.path.exists(receipt) else {}
+same_build = True
+if os.path.exists(receipt):
+    receipt_text = b.read_receipt(receipt)
+else:
+    rebuilt = b.build()
+    same_build = rebuilt["build"] == data["build"]
+    receipt_text = b.sql_text(rebuilt, note=b.RUNNER_NOTE)
+    print("note: no committed receipt of build %s (S680: the runner stores it); rebuilt from the committed "
+          "records as build %s%s" % (data["build"], rebuilt["build"], "" if same_build else
+                                     ", so the page-to-receipt equality is left to the runner's check"))
+check(bool(receipt_text), "the display receipt of build %s is committed or rebuilds" % data["build"])
+sql = sql_displays_text(receipt_text)
 # The page carries the pilot's programs; the receipt carries them and every full-college
 # record (S355: the blocks of Cerritos's 270 lacked titles, ids and CPL counts because no
 # build reached them). A full-college record of a program the pilot filed stays the pilot's.
@@ -327,7 +349,7 @@ for p in progs:
     d = p["display"]
     key = (p["college"], p["control_number"])
     check(d.get("build") == data["build"], "%s carries the build stamp" % p["key"])
-    check(sql.get(key) == d, "%s: Sierra's display equals the page's" % p["key"])
+    check(sql.get(key) == d or not same_build, "%s: Sierra's display equals the page's" % p["key"])
 
     def units_of(c, d=d):
         if c.get("units") is not None:
@@ -384,7 +406,7 @@ check(bool(iv) and iv[0]["display"]["figure"]["up_to"] == 3.0 and iv[0]["display
 # Sam loaded both on open-asks sheet 47 card 8 (2026-10-07): every record is filed in records/,
 # so the receipt names none waiting.
 check(all(p["filed"] == "records" for p in progs) and "are filed in records_maps/" not in
-      (b.read_receipt(receipt) if os.path.exists(receipt) else ""),
+      receipt_text,
       "every record is filed in records/ and the receipt names none waiting")
 
 # 4. the figure the approved mock-up shows for the hand-built map
@@ -489,7 +511,7 @@ check("equivalent_units" not in chat and "equivalent units" not in chat.lower(),
 names = field_names(read, set()) | field_names(data, set()) | field_names(list(sql.values()), set())
 check(not [n for n in names if re.search(r"student|learner_id|ssn|emplid", n, re.I)],
       "no student field in the read or either output")
-check(not b.STALL.search(b.read_receipt(receipt)) if os.path.exists(receipt) else False,
+check(not b.STALL.search(receipt_text),
       "the receipt names no word the Supabase connector holds")
 
 # S659: an identity's title drops an Honors marker only where the curated title is the minted one without it (LIBR

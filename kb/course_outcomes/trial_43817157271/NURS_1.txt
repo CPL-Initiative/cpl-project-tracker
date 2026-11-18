@@ -1,0 +1,146 @@
+Print
+NURS 1: Nursing Science and Practice Concepts I
+9.5 Units / LEC-LAB
+
+An introduction to basic nursing skills and assessment as well as nursing process. Development of decision-making framework using evidence-based practice and patient care concepts demonstrating sound clinical judgment skills at the micro (work unit) and macro (health care facility) systems. Topics include safety; professionalism; communication; culture; functional ability; perfusion; evidence; informatics and technology; fluid and electrolytes; thermoregulation; pain elimination; health promotion.
+
+
+
+Note: Admission to the Nursing Program requires passing a background check, a complete physical exam including immunizations and drug screening.
+
+ 
+
+Transferability:
+
+Transferable to CSU only
+
+Grading Options:
+
+Letter Grade Methods
+
+Toggle  
+Limitations on Enrollment
+Incomplete application, missing pre-requisites, positive drug screen, probation
+Toggle  
+Prerequisites, Corequisites & Advisories
+
+Prerequisite: BIOL2 - Microbiology
+
+Objectives
+1. Outline the history of major microbiological discoveries and describe their contributions to world civilization.
+2. State Koch's postulates and apply them to different types of pathogens and to new diseases.
+3. Relate basic principles of chemistry and cell biology to structure and function of microbes.
+4. Explain how the unity of basic cell processes contributes to difficulties in treating infectious disease.
+5. Describe the principles and mechanisms of microbial genetics and coevolution and apply them to the problem of increasing drug resistance in microorganisms.
+6. Describe viruses and their relation to cells.
+7. Compare and evaluate the various mechanisms of control and prevention of microbial disease.
+8. Discuss the mechanisms of pathogenicity in microbes.
+9. Compare and contrast the epidemiology of community acquired and hospital acquired infections.
+10. Describe the functions of the human immune system, its relations to disease, and how vaccination contributes to immunity.
+11. Describe the etiology, epidemiology, treatment and prevention of a variety of important infectious diseases.
+12. Safely and aseptically perform a variety of microbiological laboratory techniques.
+13. Collect and analyze data.
+
+Outcomes
+1. Describe the anatomy, physiology and biochemistry of microorganisms and the consequential effects of various environmental factors upon them.
+2. Know the causative organism of the more common human diseases and the physiological effect of the drugs most commonly used in the fight against these diseases.
+3. Describe the principles and applications of genetic engineering and the role that microorganisms are playing in this process.
+
+AND
+
+Prerequisite: BIOL6 - Human Anatomy
+
+Objectives
+1. Identify cellular structures and describe how they contribute to the diverse functions of different cell types (lab and lecture).
+2. Identify diverse cell types, and explain how diverse cell types become organized into tissues with unique properties (lab and lecture).
+3. Identify diverse tissue types, and explain how diverse tissues become organized into organs with unique properties (lab and lecture).
+4. Identify the organs that comprise specific organ systems, and explain how each organ contributes to the function of the organ system as a whole (lab and lecture).
+5. Recognize anatomical pathology and explain how alterations of structure at molecular, cellular, and histological levels can lead to organ and organ system pathology (lab and lecture).
+6. Diagram the anatomy of afferent and efferent neural pathways, from receptor/effector organs to spinal cord and/or appropriate brain region (lab and lecture).
+7. Explain the overall function of each organ system (lecture).
+8. Explain the embryological basis for adult structure (lecture).
+9. Compare and contrast the cardiovascular system with the lymphatic system, the nervous system with the endocrine system, and the integumentary with the digestive system (lecture).
+10. Use anatomical terminology to indicate body regions and structures, and to identify and describe surface features (lab).
+11. Identify bones and bony landmarks (lab).
+12. Identify skeletal muscle organs and muscle features (lab).
+13. Identify peripheral nerves and their receptors or targets (lab).
+14. Identify the viscera of the body and be able to describe their relative positions (lab).
+
+Outcomes
+1.Describe key structural features of different human cell and major tissue types.
+2. Identify and describe the anatomy of the systems of the human body.
+3. Relate structure and function at the cellular through system levels of organization of human body systems.
+4. Describe structural or anatomical changes that occur in disease, injury or aging of the human body systems.
+
+AND
+
+Prerequisite: BIOL7 - Human Physiology
+
+Objectives
+1. Describe and distinguish various roles of major classes of biomolecules in living cells (lecture).
+2. Describe key functional features of different types of human cells and how they communicate (lecture).
+3. Identify key functions of major organ systems and the physiological mechanisms underlying their operation (lecture).
+4. Describe examples of how organ systems of the body are integrated and regulated (lecture).
+5. Relate normal metabolic and physiological processes to malfunctions that cause disorders of the major organ systems (lecture).
+6. Describe how body systems work together to regulate the homeostasis of different variables of the extracellular fluid (lecture and lab).
+7. Investigate cardiac function through hands-on activities (lab).
+8. Investigate the functions of the kidneys through hands-on activities (lab).
+9. Investigate neural function (including reflexes and sensory systems) through hands-on activities (lab).
+10. Demonstrate an understanding of the scientific method, experimental design, and the philosophy and process of science (lab).
+11. Analyze experimental data to demonstrate physiological principles (lab).
+12. Apply the scientific method and philosophy of science by designing components of, and carrying out, physiological experiments (lab).
+
+Outcomes
+1. Illustrate how the integration and regulation of organ systems affects the maintenance of homeostasis in the human body.
+2. Relate the key functions of major organ systems with the cellular and molecular mechanisms that enable these functions.
+3. Analyze examples of disease processes and relate them to aberrations of normal physiological function.
+4. Utilize the process of science to design and carry out physiological experiments, analyze resulting data, and relate results to physiological principles.
+
+AND
+
+Prerequisite: ENGLC1000 - Academic Reading and Writing
+
+Objectives
+1. Read, analyze, and evaluate a variety of primarily non-fiction texts for content, context, and rhetorical merit with consideration of tone, audience, and purpose.
+2. Apply a variety of rhetorical strategies in writing unified, well-organized essays with arguable theses and persuasive support.
+3. Develop varied and flexible strategies for generating, drafting, and revising essays.
+4. Analyze stylistic choices in their own writing and the writing of others
+5. Write timed/in-class essays exhibiting acceptable college-level. control of mechanics, organization, development, and coherence
+6. Integrate the ideas of others through paraphrasing, summarizing, and quoting without plagiarism.
+7. Find, evaluate, analyze, and interpret primary and secondary sources, incorporating them into written essays using appropriate documentation format.
+8. Proofread and edit essays for presentation so they exhibit no disruptive errors in English grammar, usage, or punctuation.
+
+Outcomes
+1. Demonstrate the capacity to read, analyze and evaluate non-fiction texts in support of academic inquiry and argumentation.
+2. Utilize flexible strategies for writing expository and argumentative college-level essays.
+3. Incorporate primary and secondary sources into essays using appropriate documentation format.
+
+AND
+
+Prerequisite: HO15 - Nutrition
+
+Objectives
+Identify functions and sources of nutrients.
+Demonstrate basic knowledge of nutrient digestion, absorption and metabolism.
+Apply dietary guidelines and current nutrition recommendations.
+Scientifically analyze and evaluate nutrition information.
+Relate nutrition to health, fitness and disease.
+Use a diet analysis program to evaluate a personal diet record.
+Outcomes
+Identify nutrients in foods and explain the digestion, absorption and metabolism of these nutrients.
+Relate nutrition to health, fitness and disease.
+Analyze and evaluate the adequacy of one’s own personal diet by applying the dietary guidelines and current nutrition recommendations.
+Toggle  
+Student Learning Outcomes
+
+Demonstrate basic nursing skills using proper techniques and measures to promote safe, quality patient-centered care.
+
+Integrate knowledge within a concept based framework for application to patient care.
+
+Demonstrate the nurse's role in supporting a patient's psychosocial needs, functional ability, pain, perfusion, fluid and electrolyte balance.
+
+Apply knowldge of pharmacology, pathophysiology and nutrition, as well as established evidence, to the care of patients.
+
+Apply selected concepts related to professionalism, including the nursing process, to the provision of safe, quality patient care.
+
+Integrate fundamental concepts related to the provision of safe, quality, patient-centered care: health promotion, culture, evidence, informatics, professionalism, communication and safety.

@@ -1,0 +1,74 @@
+# Files over 5 MB (5,242,880 bytes) on main at 551588d9, listed 2026-11-18T06:30Z by
+# python3 scripts/repo_size_guard.py --list-over-limit (issue #3476). One line per file: BYTES PATH.
+# The list can only shrink: a pull request that adds a line or raises a number fails.
+# A listed file may change, and fails once it passes 1.5 times its listed size. Remove a line when its file goes.
+# Shrunk 2026-11-18 to the files still over 5 MB after #3476 Part 4 steps 1, 4 and 5 (#3498 at 0750b259);
+# each keeps its size from the first list.
+17358026 coci_lookup_data.js
+8209035 coci_lookup_desc_A.js
+7019178 coci_lookup_desc_C.js
+6738457 coci_lookup_desc_E.js
+6718276 exports/unified_courses.xlsx
+6713055 kb/automerge_out/2026-06-13-titlelane/plan.json
+8593791 kb/cid_articulation_joins.json
+7625447 kb/coci_articulations.json
+5356800 kb/coci_curation.json
+35184277 kb/coci_minted_courses.json
+17743649 kb/coci_minted_memberships.json
+37143411 kb/coci_minted_singletons.json
+5475815 kb/it_ai_credential_catalog.json
+19451138 kb/reference/cb_course_basic_fall2025.csv
+7251389 kb/reference/cid_articulations.json
+25569751 kb/reference/coci_course_list.xlsx
+8410443 kb/reference/coci_program_course_file.csv.gz
+16669399 kb/regional_cpl_out/2026-09-17-bay28/crosswalk.json
+16764509 kb/regional_cpl_out/2026-09-30-bay28/crosswalk.json
+9120478 kb/regional_cpl_out/2026-09-30-cvml15/crosswalk.json
+7322031 kb/regional_cpl_out/2026-09-30-ied12/crosswalk.json
+12943477 kb/regional_cpl_out/2026-09-30-la21/crosswalk.json
+6224583 kb/regional_cpl_out/2026-09-30-oc10/crosswalk.json
+6167380 kb/regional_cpl_out/2026-09-30-sdi10/crosswalk.json
+9371742 kb/remint_dryrun/alias_map.json
+7121625 kb/row_audit/2026-11-05.md
+7121625 kb/row_audit/2026-11-06.md
+7121625 kb/row_audit/2026-11-07.md
+7121625 kb/row_audit/2026-11-08.md
+7121642 kb/row_audit/2026-11-09.md
+7121633 kb/row_audit/2026-11-10.md
+7121633 kb/row_audit/2026-11-11.md
+7121633 kb/row_audit/2026-11-12.md
+7122546 kb/row_audit/2026-11-13.md
+7122514 kb/row_audit/2026-11-14.md
+7122514 kb/row_audit/2026-11-15.md
+7122514 kb/row_audit/2026-11-16.md
+7122514 kb/row_audit/2026-11-17.md
+7122514 kb/row_audit/2026-11-18.md
+10407325 kb/row_audit/latest.json
+19689335 kb/subj4_apply/alias_map.json
+21616130 kb/subj4_dryrun/alias_map.json
+14572839 kb/subj4_dryrun/collisions.json
+21616218 kb/subj4_fold_out/2026-06-12/alias_map.json
+13684360 library/chancellor-summit-address/20261030_Chancellor_Christian_CPL_Summit_Address.mp4
+7503903 prototype/ccr_universe.json
+15865434 prototype/funding_video/20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4
+10492818 prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v10.mp4
+10558231 prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v11.mp4
+10598480 prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v12.mp4
+10757052 prototype/funding_video/20260926_CPL_Funding_in_Motion_Scenario_2_v13.mp4
+10563038 prototype/funding_video/20260926_CPL_Funding_in_Motion_v4.mp4
+14148729 prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_3.mp4
+15054609 prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_4.mp4
+15146138 prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_5.mp4
+15851035 prototype/funding_video/20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4
+7844532 prototype/ironworker_video/20261004_Ironworker_Pathway_in_Motion_v1.mp4
+26835193 prototype/landing_page_video/20261020_Managing_College_Landing_Pages_Intermediate.mp4
+16149357 prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_Narrated_v1.mp4
+10273174 prototype/noncredit_video/20261005_Noncredit_Summit_in_Motion_v1.mp4
+12846388 statewide_data.js
+6189444 tmc/source_data/coci_program_export_2026-06-17.csv
+8035276 tmc_college_courses.js
+10000126 unified_courses_data.js
+21822897 unified_courses_details.js
+47883522 unified_courses_member_desc.js
+14341179 unified_courses_members.js
+14837114 unified_courses_standalone.js

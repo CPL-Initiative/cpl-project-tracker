@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_prreq_units_rules_apply_checks.sql",
+ "name": "s680_prreq_units_rules_apply_checks",
+ "version": "20261118073642",
+ "sha256": "dbd6310b05d78f05384e08d0a40db450b47247e6622eaec065a84859c2f5055a",
+ "run": "44259625861",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"returned\":{\"returned\":17,\"keys\":[1,2,3,7,8,9,19,21,26,27,28,29,42,43,44,50,55],\"skipped_checked\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

@@ -67,10 +67,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.0,
+    18.0,
     20.0
    ],
    "stated": [
@@ -78,14 +78,12 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 20.0-20.0; the catalog states 18.0-20.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     60.0,
+     58.0,
      68.0
     ],
     "stated": [
@@ -99,7 +97,8 @@
     ],
     "why": [],
     "within": true
-   }
+   },
+   "rescored": "A5 a choose list takes the courses of the list it names (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -123,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -260,6 +259,48 @@
        }
       ],
       "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HOSP 150",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    }
@@ -279,5 +320,13 @@
    "BUS 112 Financial Accounting is not in the closed list; marked as catalog addition."
   ]
  },
- "extracted_run": "38984695817"
+ "extracted_run": "38984695817",
+ "reconciled": [
+  {
+   "rule": "A5",
+   "block": "3. List B - select two courses, may include any courses not used in List A",
+   "words": "'3. List B - select two courses, may include any courses not used in List A' says any course from List A: 6 courses added as options (ECON C2001, HOSP 110, HOSP 120, HOSP 130, HOSP 140, HOSP 150)",
+   "statewide": "units_rules_A5"
+  }
+ ]
 }
