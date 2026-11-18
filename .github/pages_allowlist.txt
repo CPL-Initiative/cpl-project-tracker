@@ -310,6 +310,7 @@ publish kb/doctrine_questions.json
 publish kb/esl_fold_spotcheck
 publish kb/exhibit_audit/latest.json
 publish kb/exhibit_cert_links.json
+publish kb/exhibit_left_map.json
 publish kb/exhibit_side_by_side.json
 publish kb/exhibit_slo_neighbors.json
 publish kb/exhibits_adoption.json

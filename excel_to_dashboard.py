@@ -7716,6 +7716,10 @@ def export_credential_reference():
     raw_to_ut = {}  # raw_title → unified_title (for audit-tag rollup)
     raw_variants_by_ut = defaultdict(list)  # item 6: lean variant list per ut
     for raw_title, ent in ut_doc.items():
+        # A leftover local title Sam removed from its canonical title (kb/_apply_left_map.py, S678): the row and its
+        # history stay in the reference, but it is no longer one of that canonical title's local titles.
+        if (ent.get("left_map") or {}).get("decision") == "removed":
+            continue
         ut = ent.get("unified_title") or "(blank)"
         raw_count_by_ut[ut] += 1
         raw_to_ut[raw_title] = ut

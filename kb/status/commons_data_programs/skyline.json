@@ -1,4 +1,4 @@
-{"schema":1,"college":"Skyline College","slug":"skyline","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
+{"schema":1,"college":"Skyline College","slug":"skyline","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
 {"cn":"05809","title":"Accounting","award":"A.S. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21484","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"05832","title":"Administration of Justice","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -92,5 +92,5 @@
 {"cn":"32962","title":"Residential Energy Efficiency","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"30882","title":"Mathematics","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.skylinecollege.edu/current/programs/economics-for-transfer-aa-t.xml"},
 {"cn":"32964","title":"Solar Technology and Business","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.skylinecollege.edu/current/programs/business-management-as.php"},
-{"cn":"45573","title":"Whole Foods & Medicinal Plants","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.xml"}
+{"cn":"45573","title":"Whole Foods & Medicinal Plants","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_incomplete","lever":"reconcile_steps","url":"https://catalog.skylinecollege.edu/current/programs/integrative-health-and-wellness-ca.xml","units":{"sum":[11.0,14.0],"printed":null,"status":"incomplete","measure":"units","against":"program"}}
 ]}

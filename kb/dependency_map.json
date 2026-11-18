@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1021,
+  "file_datasets": 1023,
   "external_services": 195,
-  "consumers": 607,
+  "consumers": 609,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -767,7 +767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4810,
+     "line": 4830,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -915,7 +915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4299,
+     "line": 4309,
      "tabs": [
       "exhibits"
      ]
@@ -1180,7 +1180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6773,
+     "line": 6793,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1538,7 +1538,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4301,
+     "line": 4321,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1551,7 +1551,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3237,
+     "line": 3276,
      "tabs": [
       "cpl-pathways"
      ]
@@ -1936,7 +1936,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15820,
+     "line": 15852,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2332,7 +2332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3236,
+     "line": 3275,
      "tabs": [
       "cpl-pathways"
      ]
@@ -2347,7 +2347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4963,
+     "line": 4983,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2554,7 +2554,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4289,
+     "line": 4309,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -3495,7 +3495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3235,
+     "line": 3274,
      "tabs": [
       "cpl-pathways"
      ]
@@ -3567,7 +3567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 165
+     "line": 171
     }
    ],
    "main_committers": []
@@ -3802,7 +3802,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 7173,
+     "line": 7193,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -4934,7 +4934,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9721,
+     "line": 9748,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6271,7 +6271,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4005,
+     "line": 4044,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6312,7 +6312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3341,
+     "line": 3380,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6473,7 +6473,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13344
+     "line": 13348
     }
    ],
    "served": true,
@@ -6630,7 +6630,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4286,
+     "line": 4325,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6650,7 +6650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4291,
+     "line": 4301,
      "tabs": [
       "exhibits"
      ]
@@ -6743,7 +6743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4584,
+     "line": 4749,
      "tabs": [
       "exhibits"
      ]
@@ -6881,7 +6881,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4273,
+     "line": 4312,
      "tabs": [
       "cpl-pathways"
      ]
@@ -6951,7 +6951,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4267,
+     "line": 4306,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7060,7 +7060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19236,
+     "line": 19275,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7111,7 +7111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13678
+     "line": 13682
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7155,7 +7155,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19148,
+     "line": 19187,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7207,7 +7207,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19133,
+     "line": 19172,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7297,7 +7297,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2626,
+     "line": 2665,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7347,7 +7347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 4233,
+     "line": 4272,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7370,7 +7370,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2798,
+     "line": 2837,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7433,7 +7433,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4281,
+     "line": 4320,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7633,7 +7633,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4254,
+     "line": 4293,
      "tabs": [
       "cpl-pathways"
      ]
@@ -7955,7 +7955,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13285
+     "line": 13289
     }
    ],
    "served": true,
@@ -8076,7 +8076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 250
+     "line": 256
     }
    ],
    "served": false,
@@ -8089,7 +8089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 899
+     "line": 939
     }
    ],
    "served": false,
@@ -8538,7 +8538,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13341
+     "line": 13345
     }
    ],
    "served": true,
@@ -8620,7 +8620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4873,
+     "line": 5038,
      "tabs": [
       "exhibits"
      ]
@@ -8656,7 +8656,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10296
+     "line": 10300
     },
     {
      "id": "script:kb/_identities_rebuild.py",
@@ -8750,7 +8750,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9845,
+     "line": 9872,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -9239,7 +9239,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13902
+     "line": 13906
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -9285,7 +9285,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13922
+     "line": 13926
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -11533,7 +11533,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8931
+     "line": 8935
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -11715,6 +11715,13 @@
      "direction": "read",
      "how": "literal",
      "line": 149
+    },
+    {
+     "id": "script:kb/_build_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
     },
     {
      "id": "script:kb/_build_peer_articulations.py",
@@ -12009,7 +12016,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8457
+     "line": 8461
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -12439,7 +12446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9048
+     "line": 9052
     }
    ],
    "producers": [
@@ -13875,14 +13882,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9013
+     "line": 9017
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9013
+     "line": 9017
     }
    ],
    "producers": [
@@ -14097,7 +14104,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8673
+     "line": 8677
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -14360,7 +14367,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 151
     }
    ],
    "served": true,
@@ -14526,6 +14533,13 @@
      "direction": "write",
      "how": "literal",
      "line": 84
+    },
+    {
+     "id": "script:kb/_build_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 112
     },
     {
      "id": "script:kb/_jev_adjudicate.py",
@@ -15164,7 +15178,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8559
+     "line": 8563
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -15381,7 +15395,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10221
+     "line": 10225
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -15498,7 +15512,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8088
+     "line": 8092
     },
     {
      "id": "script:kb/_anchor_rekey_apply.py",
@@ -16130,7 +16144,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4313,
+     "line": 4332,
      "tabs": [
       "exhibits"
      ]
@@ -16155,6 +16169,13 @@
      "direction": "read",
      "how": "literal",
      "line": 931
+    },
+    {
+     "id": "script:kb/_build_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 95
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -16240,6 +16261,29 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:kb/exhibit_left_map.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 4329,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/exhibit_side_by_side.json": {
    "consumers": [
@@ -16890,7 +16934,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 146
+     "line": 152
     }
    ],
    "served": false,
@@ -17807,7 +17851,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 550
+     "line": 590
     }
    ],
    "served": false,
@@ -17880,6 +17924,13 @@
   },
   "file:kb/program_requirements_reconcile.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 480
+    },
     {
      "id": "script:kb/_course_id_rescore_estimate.py",
      "kind": "script",
@@ -18075,7 +18126,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9064
+     "line": 9068
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -18477,7 +18528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8710
+     "line": 8714
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -18614,7 +18665,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8376
+     "line": 8380
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -18658,7 +18709,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8742
+     "line": 8746
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -18809,7 +18860,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8894
+     "line": 8898
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -18872,7 +18923,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 551
+     "line": 591
     },
     {
      "id": "script:kb/_build_course_top_consensus.py",
@@ -19463,7 +19514,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 319
+     "line": 325
     },
     {
      "id": "script:kb/_build_spend_daily.py",
@@ -19483,7 +19534,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8465
+     "line": 8469
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -20060,7 +20111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 147
+     "line": 153
     }
    ],
    "served": false,
@@ -20073,7 +20124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 149
+     "line": 155
     }
    ],
    "served": true,
@@ -20211,7 +20262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 140
+     "line": 146
     }
    ],
    "served": true,
@@ -20288,7 +20339,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 147
     },
     {
      "id": "script:kb/_harvest_gap_census.py",
@@ -20691,7 +20742,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9782
+     "line": 9786
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -21204,6 +21255,13 @@
      "line": 169
     },
     {
+     "id": "script:kb/_apply_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 32
+    },
+    {
      "id": "script:kb/_audit_exhibits.py",
      "kind": "script",
      "direction": "read",
@@ -21237,6 +21295,13 @@
      "direction": "read",
      "how": "literal",
      "line": 926
+    },
+    {
+     "id": "script:kb/_build_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -21787,7 +21852,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3698,
+     "line": 3737,
      "tabs": [
       "cpl-pathways"
      ]
@@ -23213,7 +23278,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 486
+     "line": 526
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -23602,7 +23667,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5673,
+     "line": 5693,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23975,7 +24040,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2039,
+     "line": 2078,
      "tabs": [
       "cpl-pathways"
      ]
@@ -24245,7 +24310,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13113
+     "line": 13117
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -24410,7 +24475,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13343
+     "line": 13347
     }
    ],
    "served": true,
@@ -24433,14 +24498,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13143
+     "line": 13147
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13143
+     "line": 13147
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -26416,6 +26481,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/left_map_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/legacy_anchor_duplicates_test.py": {
    "consumers": [
     {
@@ -27646,7 +27724,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 551
+     "line": 591
     }
    ],
    "served": false,
@@ -27974,7 +28052,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13345
+     "line": 13349
     }
    ],
    "served": true,
@@ -28088,7 +28166,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8418
+     "line": 8422
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -28246,14 +28324,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10348
+     "line": 10352
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10348
+     "line": 10352
     },
     {
      "id": "script:kb/_honors_two_row_delete_s652.py",
@@ -28305,14 +28383,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9694
+     "line": 9698
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9694
+     "line": 9698
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -28417,14 +28495,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10432
+     "line": 10436
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10432
+     "line": 10436
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -28532,14 +28610,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10420
+     "line": 10424
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10420
+     "line": 10424
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -28686,14 +28764,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10384
+     "line": 10388
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10384
+     "line": 10388
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -28809,14 +28887,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10223
+     "line": 10227
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10223
+     "line": 10227
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -29253,7 +29331,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 6429,
+     "line": 6449,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29341,7 +29419,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 7224,
+     "line": 7244,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29631,7 +29709,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1738,
+     "line": 1758,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29674,7 +29752,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1779,
+     "line": 1799,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -30319,7 +30397,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5973,
+     "line": 5993,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -30572,7 +30650,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3541,
+     "line": 3580,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30611,7 +30689,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 3544,
+     "line": 3583,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30718,7 +30796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 877,
+     "line": 933,
      "tabs": [
       "commons"
      ]
@@ -30728,7 +30806,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1873,
+     "line": 1912,
      "tabs": [
       "cpl-pathways"
      ]
@@ -30978,7 +31056,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5855,
+     "line": 5875,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31016,7 +31094,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6657,
+     "line": 6677,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31034,7 +31112,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5920,
+     "line": 5940,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31047,7 +31125,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6062,
+     "line": 6082,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31072,7 +31150,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7650,
+     "line": 7670,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31085,7 +31163,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7675,
+     "line": 7695,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31116,7 +31194,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6045,
+     "line": 6065,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31141,7 +31219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7715,
+     "line": 7735,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31154,7 +31232,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7836,
+     "line": 7856,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31470,7 +31548,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7117,
+     "line": 7137,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31488,7 +31566,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 6813,
+     "line": 6833,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -32368,7 +32446,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14047,
+     "line": 14078,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -32446,7 +32524,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5916,
+     "line": 5936,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -32500,7 +32578,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5917,
+     "line": 5937,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -32543,7 +32621,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14023,
+     "line": 14054,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -32869,7 +32947,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14002,
+     "line": 14033,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -33268,7 +33346,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1668,
+     "line": 1682,
      "tabs": [
       "cpl-pathways"
      ]
@@ -33358,7 +33436,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 1669,
+     "line": 1705,
      "tabs": [
       "cpl-pathways"
      ]
@@ -35203,6 +35281,7 @@
     "tests/honors_of_rows_check_test.py",
     "tests/honors_subject_reading_test.py",
     "tests/session_spend_build_test.py",
+    "tests/left_map_build_test.py",
     "tests/spend_daily_build_test.py",
     "kb/credential_aliases.py",
     "tests/credential_title_resolver_test.py",

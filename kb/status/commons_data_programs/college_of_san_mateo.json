@@ -1,4 +1,4 @@
-{"schema":1,"college":"College of San Mateo","slug":"college_of_san_mateo","basis":"live","census_at":"2026-11-17 23:09Z","programs":[
+{"schema":1,"college":"College of San Mateo","slug":"college_of_san_mateo","basis":"live","census_at":"2026-11-17 23:09Z","correction_rules":false,"programs":[
 {"cn":"05746","title":"Accounting","award":"A.A. Degree","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"21837","title":"Accounting","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
 {"cn":"22217","title":"Addiction Studies","award":"Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u","cause":"no_closed_list","lever":"program_course_file_refresh","url":null},
@@ -39,7 +39,7 @@
 {"cn":"42023","title":"International Business","award":"A.S. Degree","cause":"page_not_found","lever":"reader_page_search","url":null},
 {"cn":"42137","title":"Business Analytics","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"places_none","lever":"reader_page_assignment","url":"https://catalog.collegeofsanmateo.edu/current/programs/business-analytics-as.php"},
 {"cn":"30818","title":"Mathematics","award":"A.S. T Degree","cause":"places_none","lever":"reader_page_assignment","url":"http://catalog.collegeofsanmateo.edu/current/programs/economics-aa-t.php"},
-{"cn":"33879","title":"Anthropology","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/anthropology-aa-t.php"},
-{"cn":"45547","title":"Mental Imagery","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/mental-imagery-ca.php"},
-{"cn":"35574","title":"Political Science","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/political-science-aa-t.php"}
+{"cn":"33879","title":"Anthropology","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/anthropology-aa-t.php","units":{"sum":[23.0,24.0],"printed":[22.0,24.0],"status":"unequal","measure":"units","against":"program"}},
+{"cn":"45547","title":"Mental Imagery","award":"Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/mental-imagery-ca.php","units":{"sum":[17.0,24.0],"printed":[21.0,23.0],"status":"unequal","measure":"units","against":"program"}},
+{"cn":"35574","title":"Political Science","award":"A.A- T Degree","cause":"units_unequal","lever":"reconcile_steps","url":"http://catalog.collegeofsanmateo.edu/current/programs/political-science-aa-t.php","units":{"sum":[15.0,16.0],"printed":[18.0,19.0],"status":"unequal","measure":"units","against":"program"}}
 ]}
