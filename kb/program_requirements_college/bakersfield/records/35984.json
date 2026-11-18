@@ -77,8 +77,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     58.0,
     63.5
@@ -87,9 +87,10 @@
     58.0,
     59.5
    ],
-   "why": [
-    "the blocks sum to 58.0-63.5; the catalog states 58.0-59.5"
-   ]
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "rescored": "A1 rescored as filed under today's adding-up rules (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -110,7 +111,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

@@ -67,10 +67,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    16.0,
+    19.0,
     19.0
    ],
    "stated": [
@@ -78,9 +78,8 @@
     19.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 16.0-19.0; the catalog states 19.0-19.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -104,7 +103,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -155,13 +154,15 @@
       "alternatives": [
        {
         "code": "BIOL 102 F",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "BIOL 102LF",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -173,8 +174,9 @@
       "alternatives": [
        {
         "code": "PE 270 F",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": true
@@ -229,5 +231,25 @@
    "Outcomes come from the page's outcomes tab for this certificate."
   ]
  },
- "extracted_run": "38675136988"
+ "extracted_run": "38675136988",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "BIOL 102 F",
+   "words": "BIOL 102 F, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BIOL 102LF",
+   "words": "BIOL 102LF, printed as an alternative to ANAT 231 F with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PE 270 F",
+   "words": "PE 270 F, printed as an alternative to NUTR 210 F with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }
