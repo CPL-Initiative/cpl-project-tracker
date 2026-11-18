@@ -83,19 +83,20 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    18.0,
-    18.0
+    78.0,
+    78.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "A6 a choose list printed with the sum of every option counts its cheapest courses (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
+   "why": [
+    "the blocks sum to 78.0-78.0; the catalog states 18.0-18.0"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -122,7 +123,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -195,7 +196,10 @@
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
-    "stated": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
     "courses": [
      {
       "code": "HIST 1",
@@ -218,7 +222,10 @@
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
-    "stated": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
     "courses": [
      {
       "code": "HIST 2",
@@ -241,7 +248,10 @@
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
-    "stated": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
     "courses": [
      {
       "code": "HIST 1",
@@ -341,7 +351,10 @@
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
-    "stated": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
     "courses": [
      {
       "code": "HIST 16",
@@ -415,31 +428,5 @@
   ]
  },
  "extracted_run": "44090894573",
- "catalog_year": "2026-2027",
- "reconciled": [
-  {
-   "rule": "A6",
-   "block": "List A - Group 1",
-   "words": "'List A - Group 1' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count",
-   "statewide": "units_rules_A6"
-  },
-  {
-   "rule": "A6",
-   "block": "List A - Group 2",
-   "words": "'List A - Group 2' prints 6, the sum of all 2 options; it chooses 1, so its 1 cheapest count",
-   "statewide": "units_rules_A6"
-  },
-  {
-   "rule": "A6",
-   "block": "List B - Group 1 - Can include HIST 1 or HIST 2 if not used in List A",
-   "words": "'List B - Group 1 - Can include HIST 1 or HIST 2 if not used in List A' prints 39, the sum of all 13 options; it chooses 1, so its 1 cheapest count",
-   "statewide": "units_rules_A6"
-  },
-  {
-   "rule": "A6",
-   "block": "List B - Group 2 - Any one course from the following, or any course not taken from List A",
-   "words": "'List B - Group 2 - Any one course from the following, or any course not taken from List A' prints 21, the sum of all 7 options; it chooses 1, so its 1 cheapest count",
-   "statewide": "units_rules_A6"
-  }
- ]
+ "catalog_year": "2026-2027"
 }

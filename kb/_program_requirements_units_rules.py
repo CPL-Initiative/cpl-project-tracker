@@ -16,6 +16,14 @@ records (kb/program_requirements_college/<slug>/records/<cn>.json) whose units c
   A8  a local degree printing a degree total with no general education units takes the college's own
       general education total, where every other filed local degree at that college carries one figure.
 
+A6 IS OFF (A6_ON; the S680 conductor's ruling on the second reader's F5): it landed 0 of 4 held answers.
+
+THE PLAN IN TWO PARTS (second reader's F1). A1 changes no record: its rows move checks.arithmetic alone. A
+correction rewrites the record's blocks under the same run, so its rows take the full image the college load
+(load_rows in kb/_program_requirements_college.py) posts for the committed record, guarded on the load's image of
+main's record and checks (the before-image, in the receipt). Every apply aborts unless it matches exactly the
+plan's count (F3; guard()).
+
 THE SELF-CHECK. A correction is kept only when the corrected record's sum equals the catalog's printed total
 exactly at both ends; otherwise the record stays as filed and flagged. A1 changes no record, so it keeps the
 scorer's own verdict (meets and short high end included, Sam's rulings).
@@ -66,6 +74,12 @@ from collection_lane import COLLECTION_LANE_S680  # noqa: E402  (the one named f
 
 ASK = "Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358"
 RULES = ("A1", "A4", "A5", "A6", "A8")
+# A6 is off (S680 conductor's ruling on the second reader's F5): it landed 0 of 4 held answers, and landing is its
+# only evidence. Its code stays for the self-check; its records stay as filed, with the note they carry.
+A6_ON = False
+# The plan's two parts (second reader's F1): A1 changes no record, so its rows move checks.arithmetic alone; a
+# correction rewrites the record's blocks, so its rows take the full image the college load would post.
+CHECKS_ONLY = ("A1",)
 WORDS = {
     "A1": "rescored as filed under today's adding-up rules",
     "A4": "a blank alternative takes its row's units",
@@ -291,6 +305,8 @@ def judge(filed: dict, ge_totals: dict) -> dict:
     tried = []
     for rule, fn in (("A4", a4_blank_alternative), ("A5", a5_any_course_from), ("A6", a6_sum_of_options),
                      ("A8", lambda r: a8_college_ge(r, award, ge_totals.get(filed["college"])))):
+        if rule == "A6" and not A6_ON:
+            continue
         new, notes = fn(rec)
         if not notes:
             continue
@@ -342,11 +358,28 @@ def self_check(files: list[dict], ge_totals: dict) -> dict:
     return out
 
 
+def _load_images(colleges: set) -> dict:
+    """{(college, control_number): the row the college load would post} for the colleges named, built by the load's
+    own code (load_rows in kb/_program_requirements_college.py) from the committed files as they stand now."""
+    import _program_requirements_college as C
+    out = {}
+    for college in sorted(colleges):
+        rows, _ = C.load_rows(college)
+        for r in rows:
+            out[(college, str(r["control_number"]))] = r
+    return out
+
+
 def run(write: bool, skip: tuple = ()) -> dict:
     pairs = load_files(skip)
     files = [d for _, d in pairs]
     ge_totals = college_ge_totals(files)
     moved, why = [], collections.Counter()
+    before_images = None
+    if write:
+        # The load's image of every record at a college a correction touches, from the files before any rewrite.
+        hit = {f["college"] for f in files if (judge(f, ge_totals).get("rule") or "A1") not in CHECKS_ONLY}
+        before_images = _load_images(hit)
     for path, filed in pairs:
         j = judge(filed, ge_totals)
         if j["rule"] is None:
@@ -356,6 +389,13 @@ def run(write: bool, skip: tuple = ()) -> dict:
         old = filed["score"]["arithmetic"]
         new = dict(j["arith"])
         new["rescored"] = "%s %s (%s)" % (j["rule"], WORDS[j["rule"]], ASK)
+        before_image = None
+        if before_images is not None and j["rule"] not in CHECKS_ONLY:
+            img = before_images.get((filed["college"], str(filed["control_number"])))
+            if img is None:
+                raise SystemExit("the load does not post %s %s" % (filed["college"], filed["control_number"]))
+            before_image = {k: img[k] for k in ("program_title", "award", "catalog_year", "source_url", "measure",
+                                                "total_min", "total_max", "record", "checks", "extracted_run")}
         moved.append({"college": filed["college"], "control_number": filed["control_number"],
                       "award": filed.get("award"), "extracted_run": filed.get("extracted_run"),
                       "rule": j["rule"], "against": new.get("against"),
@@ -363,6 +403,8 @@ def run(write: bool, skip: tuple = ()) -> dict:
                       "after": {"status": new.get("status"), "computed": new.get("computed"), "stated": new.get("stated")},
                       "notes": [n["words"] for n in j["notes"]],
                       "path": os.path.relpath(path, ROOT)})
+        if before_image is not None:
+            moved[-1]["before_image"] = before_image
         if write:
             filed["record"] = j["record"]
             if j["notes"]:
@@ -373,12 +415,107 @@ def run(write: bool, skip: tuple = ()) -> dict:
             with open(path, "w", encoding="utf-8") as fh:
                 json.dump(filed, fh, ensure_ascii=False, indent=1)
                 fh.write("\n")
+    if write:
+        # The full-row part: the load's own image of each corrected record after the rewrite.
+        full = [m for m in moved if m["rule"] not in CHECKS_ONLY]
+        after = _load_images({m["college"] for m in full})
+        for m in full:
+            img = after.get((m["college"], str(m["control_number"])))
+            if img is None:
+                raise SystemExit("the load does not post %s %s" % (m["college"], m["control_number"]))
+            m["after_image"] = {"record": img["record"], "checks": img["checks"]}
     for i, m in enumerate(moved, 1):
         m["i"] = i
     return {"moved": moved, "left": dict(why.most_common()), "self_check": self_check(files, ge_totals),
             "ge_totals": {c: list(v) for c, v in sorted(ge_totals.items())},
             "by_rule": dict(collections.Counter(m["rule"] for m in moved)),
             "colleges": len({m["college"] for m in moved})}
+
+
+def _q(s) -> str:
+    return "'%s'" % str(s).replace("'", "''")
+
+
+def _jb(v) -> str:
+    return "%s::jsonb" % _q(json.dumps(v, ensure_ascii=False, sort_keys=True, separators=(",", ":")))
+
+
+def guard(n: int, body: str, tag: str) -> str:
+    """The final SELECT of a guarded UPDATE: the returned value when the UPDATE matched exactly the plan's n rows,
+    else an error that aborts the statement, so nothing it wrote stands (second reader's F3). Postgres runs the
+    data-modifying CTE and this SELECT as one statement: the failed cast rolls back both."""
+    return ("select case when count(*) = %d then %s\n"
+            "       else (%s || count(*) || ' rows, the plan names %d')::int::text::json end as returned\n"
+            "  from u;" % (n, body, _q("%s guard: the UPDATE matched " % tag), n))
+
+
+RETURNED = ("json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json), "
+            "'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json))")
+
+
+def checks_only_apply(rows: list[dict], tag: str) -> str:
+    sql = RS.update_sql(rows, "equal", "unequal")
+    head = sql[:sql.index("select json_build_object('returned'")]
+    return head + guard(len(rows), RETURNED, tag + " checks-only")
+
+
+def _full_values(rows: list[dict]) -> str:
+    return ",\n  ".join("(%d, %s, %s, %d, %s, %s, %s, %s)" % (
+        r["i"], _q(r["college"]), _q(r["control_number"]), int(r["extracted_run"]),
+        _jb(r["before_image"]["record"]), _jb(r["before_image"]["checks"]),
+        _jb(r["after_image"]["record"]), _jb(r["after_image"]["checks"])) for r in rows)
+
+
+FULL_V = ("with v(i, college, control_number, extracted_run, before_record, before_checks, after_record, after_checks) "
+          "as (values\n  %s)")
+
+
+def full_row_apply(rows: list[dict], tag: str) -> str:
+    """Each corrected row takes the record and checks the college load would post for its committed record, only
+    where the live row still holds the filed run and the load's image of main's record and checks (the before-image),
+    and no person has checked it."""
+    return (FULL_V % _full_values(rows) + ",\n"
+            "u as (\n"
+            "update public.program_requirement_records r\n"
+            "   set record = v.after_record, checks = v.after_checks\n"
+            "  from v\n"
+            " where r.college = v.college and r.control_number = v.control_number\n"
+            "   and r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks\n"
+            "   and r.checked is not true\n"
+            "returning v.i, r.checked)\n" + guard(len(rows), RETURNED, tag + " full-row"))
+
+
+def full_row_rollback(rows: list[dict]) -> str:
+    return (FULL_V % _full_values(rows) + ",\n"
+            "u as (\n"
+            "update public.program_requirement_records r\n"
+            "   set record = v.before_record, checks = v.before_checks\n"
+            "  from v\n"
+            " where r.college = v.college and r.control_number = v.control_number\n"
+            "   and r.extracted_run = v.extracted_run and r.record = v.after_record and r.checks = v.after_checks\n"
+            "returning v.i, r.checked)\n"
+            "select " + RETURNED + " as returned\n  from u;")
+
+
+def pre_read(checks_rows: list[dict], full_rows: list[dict]) -> str:
+    """One SELECT, one JSON value: both parts as they stand live."""
+    a = RS.pre_read_sql(checks_rows)
+    a_with, a_select = a.split("\nselect json_build_object(", 1)
+    full = ("select json_build_object('listed', (select count(*) from v),\n"
+            "  'on_run', count(*) filter (where r.extracted_run = v.extracted_run),\n"
+            "  'record_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record),\n"
+            "  'checks_is_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks = v.before_checks),\n"
+            "  'both_before', count(*) filter (where r.extracted_run = v.extracted_run and r.record = v.before_record and r.checks = v.before_checks),\n"
+            "  'already_after', count(*) filter (where r.record = v.after_record and r.checks = v.after_checks),\n"
+            "  'checked_now', count(*) filter (where r.checked))\n"
+            "  from v join public.program_requirement_records r on r.college = v.college and r.control_number = v.control_number")
+    return ("select json_build_object(\n'checks_only', (%s\nselect json_build_object(%s),\n'full_row', (%s\n%s));"
+            % (a_with, a_select.rstrip().rstrip(";"), FULL_V % _full_values(full_rows), full))
+
+
+def _parts(moved: list[dict]) -> tuple[list[dict], list[dict]]:
+    """(checks-only rows, full-row rows); the rescore's rollback builder reads "records" by place i."""
+    return ([m for m in moved if m["rule"] in CHECKS_ONLY], [m for m in moved if m["rule"] not in CHECKS_ONLY])
 
 
 def main(argv=None) -> int:
@@ -401,11 +538,18 @@ def main(argv=None) -> int:
                "held_colleges": list(COLLECTION_LANE_S680) + list(a.skip_college),
                "rescored": len(r["moved"]), "by_rule": r["by_rule"], "self_check": r["self_check"],
                "left_as_filed": r["left"], "ge_totals": r["ge_totals"], "records": r["moved"],
-               "pre_read": RS.pre_read_sql(r["moved"]), "apply": RS.update_sql(r["moved"], "equal", "unequal"),
-               "follow_verdict": RS.FOLLOW_VERDICT, "person_settled": RS.PERSON_SETTLED, "rollback": None,
-               "rollback_how": ("Built from the UPDATE's returned value, after it runs: python3 "
+               "plan": {"checks_only": [m["i"] for m in r["moved"] if m["rule"] in CHECKS_ONLY],
+                        "full_row": [m["i"] for m in r["moved"] if m["rule"] not in CHECKS_ONLY]},
+               "pre_read": pre_read(*_parts(r["moved"])),
+               "apply_checks_only": checks_only_apply(_parts(r["moved"])[0], a.tag),
+               "apply_full_row": full_row_apply(_parts(r["moved"])[1], a.tag),
+               "follow_verdict": RS.FOLLOW_VERDICT, "person_settled": RS.PERSON_SETTLED,
+               "rollback_full_row": full_row_rollback(_parts(r["moved"])[1]),
+               "rollback": None,
+               "rollback_how": ("checks-only: built from its UPDATE's returned value, after it runs: python3 "
                                 "kb/_program_requirements_rescore.py --rollback-from <the migrate receipt> --receipt "
-                                "<this file>. It moves back only the rows the UPDATE returned."),
+                                "<this file>. full-row: rollback_full_row puts the before-image back where the row "
+                                "still holds the after-image."),
                "applied": None}
     with open(path, "w", encoding="utf-8") as fh:
         json.dump(receipt, fh, ensure_ascii=False, indent=1)

@@ -74,8 +74,9 @@ blocks = [{"name": "Core", "rule": "all", "courses": [course("HIST 1", 3), cours
            "courses": [course("HIST 10", 3), course("HIST 11", 3), course("HIST 12", 3)]}]
 f = filed(blocks, (9, 9), award="A.A.-T Degree")
 check(U.arith(f["record"], f["award"])["computed"] == [15.0, 15.0], "the fixture fails as filed, 15 against 9")
-j = U.judge(f, {})
-check(j["rule"] == "A6" and j["arith"]["computed"] == [9.0, 9.0], "A6 drops the summed figure and lands at 9")
+check(not U.A6_ON and U.judge(f, {})["rule"] is None, "A6 is off (F5): its record stays as filed")
+new6, notes6 = U.a6_sum_of_options(f["record"])
+check(notes6 and U.arith(new6, f["award"])["computed"] == [9.0, 9.0], "A6's code still drops the summed figure")
 # A6 never fires when the printed figure is not the sum of every option.
 b2 = copy.deepcopy(blocks)
 b2[1]["stated"] = {"min": 6, "max": 6}
@@ -138,6 +139,74 @@ check(G.named_gap(col, "200", "no_closed_list") == ("listed_twice", "300"), "a p
 check(G.named_gap(col, "300", "no_closed_list") is None, "the listing with the course list is not labeled")
 check(G.named_gap(dict(col, college="Lassen College"), "100", "no_closed_list") is None,
       "no label at a college the collection lane holds")
+
+# A11 self-recall over the held titles (second reader's F2): every committed program title a looser search finds
+# (general education, GETC, IGETC, CSU, breadth, transfer curriculum, GE) is either a hit or a pinned non-pattern.
+# A new title in neither fails, so a person judges it before the label reaches it.
+import glob  # noqa: E402
+import json  # noqa: E402
+import re  # noqa: E402
+LOOSE = re.compile(r"general\s+ed|getc|igetc|\bcsu\b|breadth|transfer\s+curriculum|\bGE\b", re.I)
+NOT_PATTERNS = {  # held answers: not a general-education pattern certificate
+    "CSU/UC Preparation", "GENERAL EDUCATION DIPLOMA", "GENERAL EDUCATION DIPLOMA (GED)",
+    "GENERAL EDUCATION DIPLOMA - BILINGUAL", "General Education Development Preparation",
+    "General Educational Development Program", "Media Arts: Graphic Design (CSU Option)",
+}
+held_titles = set()
+for sp in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*", "sources.json")):
+    with open(sp, encoding="utf-8") as fh:
+        held_titles |= {(e.get("title") or "").strip() for e in json.load(fh) if LOOSE.search(e.get("title") or "")}
+hit = lambda t: bool(G.GE_PATTERN_TITLE.search(t) and not G.NOT_GE_PATTERN_TITLE.search(t))
+right = sum(1 for t in held_titles if hit(t) != (t in NOT_PATTERNS))
+wrong = sorted(t for t in held_titles if hit(t) == (t in NOT_PATTERNS))
+check(not wrong, "GE pattern self-recall over %d held titles: right %d, wrong %d (%s)"
+      % (len(held_titles), right, len(wrong), "; ".join(wrong[:5])))
+for t in ("GENERAL EDUCATION DIPLOMA", "General Education Development Preparation"):
+    check(G.named_gap({"college": "Pasadena City College", "titles": {"1": t}}, "1", "page_not_found") is None,
+          "a diploma or GED takes no GE pattern label: %s" % t)
+check(hit("Intersegmental GE Transfer Curriculum") and hit("SRJC Local GE"), "IGETC spelled out and a local GE pattern")
+
+# listed_twice self-recall over held answers: a program whose own listing has a course list never takes the label.
+lt_right = lt_wrong = 0
+for d in glob.glob(os.path.join(ROOT, "kb", "program_requirements_college", "*")):
+    if not os.path.isfile(os.path.join(d, "sources.json")):
+        continue
+    col = G.read_college_dir(d)
+    for cn, n in (col.get("listed") or {}).items():
+        if n:
+            if G.named_gap(col, cn, "no_closed_list") and G.named_gap(col, cn, "no_closed_list")[0] == "listed_twice":
+                lt_wrong += 1
+            else:
+                lt_right += 1
+check(True, "listed_twice on held listings with a course list: right %d, wrong %d" % (lt_right, lt_wrong))
+# A listing that has its own course list and still pairs with a newer listing of the same title and award name is
+# a second listing whose other half also has a list: the label's claim holds there too, so it counts apart.
+print("self-recall: GE pattern %d held titles, right %d, wrong %d; listed_twice over %d listings with a list: %d pair "
+      "with a newer same-title, same-award listing that has one too" % (len(held_titles), right, len(wrong),
+                                                                         lt_right + lt_wrong, lt_wrong))
+
+# F1: after the rewrite the college load posts exactly the plan's after-image for every full-row record, so a
+# later load or a dry run of it reports no change for them.
+RECEIPT = os.path.join(ROOT, "kb", "receipts", "program_requirement_records_units_rules_2026-11-18_s680.json")
+if os.path.isfile(RECEIPT):
+    import _program_requirements_college as C  # noqa: E402
+    with open(RECEIPT, encoding="utf-8") as fh:
+        rc = json.load(fh)
+    full = [r for r in rc["records"] if r["i"] in set(rc["plan"]["full_row"])]
+    images = {}
+    for college in sorted({r["college"] for r in full}):
+        for row in C.load_rows(college)[0]:
+            images[(college, str(row["control_number"]))] = row
+    same = sum(1 for r in full if (images.get((r["college"], str(r["control_number"]))) or {}).get("record")
+               == r["after_image"]["record"] and images[(r["college"], str(r["control_number"]))]["checks"]
+               == r["after_image"]["checks"])
+    check(full and same == len(full), "the load posts the after-image for %d of %d full-row records" % (same, len(full)))
+    check(all(r["before_image"]["record"] != r["after_image"]["record"] for r in full),
+          "every full-row record's blocks change (else it belongs in the checks-only part)")
+    check(not set(rc["plan"]["checks_only"]) & set(rc["plan"]["full_row"])
+          and all(r["rule"] == "A1" for r in rc["records"] if r["i"] in set(rc["plan"]["checks_only"])),
+          "A1 alone is checks-only")
+    check(not any(r["rule"] == "A6" for r in rc["records"]), "A6 is not in the plan")
 
 if failures:
     for m in failures:

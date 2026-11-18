@@ -102,7 +102,10 @@ CAUSE_WORDS = dict(CAUSES)
 # in place of a failure. The program stays in the gap under its cause; the label says why no read will move it.
 # Part 1 gates on the title alone: the state's TOP code (4901) is never a gate (CLAUDE.md, the TOP caveat).
 GE_PATTERN_TITLE = re.compile(r"cal\s*-?\s*getc|\bigetc\b|\bcsu\s*-?\s*(?:ge\b|general\s+education|breadth)"
-                              r"|\bgeneral\s+education\b", re.I)
+                              r"|\bgeneral\s+education\b|\bintersegmental\b|\blocal\s+GE\b", re.I)
+# A high school equivalency program names "general education" too (Pasadena 33410 "GENERAL EDUCATION DIPLOMA",
+# 33411, Los Angeles Harbor 36919; second reader of #3496, F2): a diploma or GED is never a GE pattern certificate.
+NOT_GE_PATTERN_TITLE = re.compile(r"\bdiploma\b|\bGED\b|\bgeneral\s+education\s+development\b|\bhigh\s+school\b", re.I)
 NAMED_GAPS = {
     "ge_pattern_certificate": "General-education pattern certificate. It has no fixed course list by design.",
     "listed_twice": "The state lists this program twice. The other listing has the course list.",
@@ -122,18 +125,28 @@ def named_gap(col: dict | None, cn: str, cause: str, title: str | None = None) -
         # The collection lane holds this college tonight (kb/collection_lane.py): no label from this lane.
         return None
     title = title or (col.get("titles") or {}).get(cn)
-    if cause in ("no_closed_list", "page_not_found") and title and GE_PATTERN_TITLE.search(title):
+    if (cause in ("no_closed_list", "page_not_found") and title and GE_PATTERN_TITLE.search(title)
+            and not NOT_GE_PATTERN_TITLE.search(title)):
         return "ge_pattern_certificate", None
     if cause == "no_closed_list" and title:
-        # The award type (S.award_type: transfer, local degree, certificate, bachelor), so the state's old award
-        # wording ("Certificate of Achievement: 18 or greater semester units") meets its new wording.
-        award = S.award_type((col.get("awards") or {}).get(cn))
+        # The award's name (award_name): the state's old wording ("Certificate of Achievement: 18 or greater
+        # semester units") meets its new wording ("Certificate of Achievement requiring 16S/24Q ..."), and a
+        # Certificate of Achievement never meets a Certificate of Proficiency of the same title (F2 review of #3496).
+        award = award_name((col.get("awards") or {}).get(cn))
         key = (_title_key(title), award)
         for other, t in sorted((col.get("titles") or {}).items()):
             if (other != cn and other > cn and (col.get("listed") or {}).get(other) and award
-                    and (_title_key(t), S.award_type((col.get("awards") or {}).get(other))) == key):
+                    and (_title_key(t), award_name((col.get("awards") or {}).get(other))) == key):
                 return "listed_twice", other
     return None
+
+
+def award_name(award) -> str:
+    """The award as named, before the state's unit wording: "Certificate of Achievement: 18 or greater semester
+    units" and "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units" both read "certificate
+    of achievement"."""
+    a = re.split(r":|\brequiring\b|\(", str(award or ""), maxsplit=1)[0]
+    return _title_key(a)
 
 
 def norm_cn(cn) -> str:
