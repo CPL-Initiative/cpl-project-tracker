@@ -387,6 +387,10 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # Discontinued programs (S680; Sam, 2026-11-17 on #3480): a program's own catalog section marks it,
+      # or a prior year prints it and this year does not; flagged out of the gap, never deleted. Pure stdlib.
+      - name: Discontinued programs (own-section mark, out of the gap, the file is current)
+        run: python3 tests/program_discontinued_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)
