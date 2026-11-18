@@ -87,7 +87,7 @@ const rowByTitle = (doc, ut) => Array.from(doc.querySelectorAll("tr.cr-row")).fi
   const a4 = await strip(404);
   await a4.press("EMT Basic"); await a4.press("EMT Basic"); await a4.press("Security+ CompTIA");
   check("(5) ⭐ Confirm merge holds every merge while the types file answers 404, on every press",
-    bodies(a4).length === 0 && /^Held: the CPL types file did not load \(kb\/exhibit_left_map\.json answered 404\)/.test(txt(a4.mg("EMT Basic").querySelector(".cr-guard-note"))),
+    bodies(a4).length === 0 && /^The CPL types did not load, so this combine is held\. Try again\.$/.test(txt(a4.mg("EMT Basic").querySelector(".cr-guard-note"))),
     txt(a4.mg("EMT Basic").querySelector(".cr-guard-note")) + " " + JSON.stringify(bodies(a4)));
 
   // ── (2) the grid: the title cell's Confirm merge strip and the row's Save ──
@@ -114,7 +114,7 @@ const rowByTitle = (doc, ut) => Array.from(doc.querySelectorAll("tr.cr-row")).fi
   tr = type(g4, "EMT Basic", "Paramedic");
   tr.querySelector(".cr-merge-confirm").click(); await sleep(60);
   tr.querySelector(".cr-grid-save").click(); await sleep(60);
-  check("(5) ⭐ the grid holds every merge while the types file answers 404", bodies(g4).length === 0 && /^Held: the CPL types file did not load/.test(txt(tr.querySelector(".cr-guard-note"))), txt(tr.querySelector(".cr-guard-note")));
+  check("(5) ⭐ the grid holds every merge while the types file answers 404", bodies(g4).length === 0 && /^The CPL types did not load, so this combine is held/.test(txt(tr.querySelector(".cr-guard-note"))), txt(tr.querySelector(".cr-guard-note")));
   // A plain re-title (no existing title) is not a merge and never waits on the guard.
   tr = type(g4, "Net Card Old", "Network Card");
   tr.querySelector(".cr-grid-save").click(); await sleep(60);
@@ -139,7 +139,7 @@ const rowByTitle = (doc, ut) => Array.from(doc.querySelectorAll("tr.cr-row")).fi
   check("(3) ⭐ Merge into this inside one group goes through on the first press", inside(m, "Security+ CompTIA", "CompTIA Security+"), JSON.stringify(of(m, "Security+ CompTIA")));
   const m4 = await looks(404);
   mr = await mergeInto(m4, "EMT Basic"); mr = await mergeInto(m4, "EMT Basic");
-  check("(5) ⭐ Merge into this holds while the types file answers 404", bodies(m4).length === 0 && /^Held:/.test(txt(mr.querySelector(".cr-guard-note"))), txt(mr));
+  check("(5) ⭐ Merge into this holds while the types file answers 404", bodies(m4).length === 0 && /^The CPL types did not load/.test(txt(mr.querySelector(".cr-guard-note"))), txt(mr));
 
   // ── (4) the issuer lane's Save ──
   async function lane(types) {
@@ -163,7 +163,43 @@ const rowByTitle = (doc, ut) => Array.from(doc.querySelectorAll("tr.cr-row")).fi
   check("(4) ⭐ an issuer lane merge inside one group goes through on the first press", field(nw, "unified_title_merge_confirm").length === 1 && !field(nw, "cpl_type_group_override").length, JSON.stringify(nw));
   const l4 = await lane(404);
   l4.fill("Medic Card Old", "Paramedic"); await l4.save("Medic Card Old"); await l4.save("Medic Card Old");
-  check("(5) ⭐ the issuer lane holds while the types file answers 404", bodies(l4).length === 0 && /^Held:/.test(txt(l4.row("Medic Card Old").querySelector(".cr-guard-note"))), txt(l4.row("Medic Card Old")));
+  check("(5) ⭐ the issuer lane holds while the types file answers 404", bodies(l4).length === 0 && /^The CPL types did not load/.test(txt(l4.row("Medic Card Old").querySelector(".cr-guard-note"))), txt(l4.row("Medic Card Old")));
+
+  // The issuer lane's Save all: one crossing merge holds the whole save on the first press; the second writes both.
+  const la = await lane(TYPES);
+  la.fill("Medic Card Old", "Paramedic"); la.fill("Net Card Old", "CompTIA Security+");
+  const all = Array.from(la.doc.querySelectorAll(".cr-wl-saveall")).find((b) => /Save all filled shown/.test(txt(b)));
+  all.click(); await sleep(60);
+  check("(4) ⭐ the issuer lane's Save all holds the whole save on the first press when one merge crosses the groups",
+    bodies(la).length === 0 && /^Blocked: Medic Card Old is cert-based .*Press Save all again/.test(txt(all.parentNode.querySelector(".cr-guard-note"))), txt(all.parentNode));
+  all.click(); await sleep(150);
+  check("(4) ⭐ pressed again, Save all writes both merges and logs the one override",
+    field(of(la, "Medic Card Old"), "unified_title_merge_confirm").length === 1 && field(of(la, "Net Card Old"), "unified_title_merge_confirm").length === 1
+    && field(bodies(la), "cpl_type_group_override").length === 1 && field(bodies(la), "cpl_type_group_override")[0].course_id === P + "Medic Card Old", JSON.stringify(bodies(la)));
+
+  // ── (5) a title with no CPL type holds the merge too ──
+  const UNTYPED = JSON.parse(JSON.stringify(TYPES));
+  delete UNTYPED.canonicals["Security+ CompTIA"];
+  const u = await grid(UNTYPED);
+  tr = type(u, "Security+ CompTIA", "CompTIA Security+");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60); tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  check("(5) ⭐ a merge whose title has no CPL type along its chain is held on every press",
+    bodies(u).length === 0 && /^This combine is held: Security\+ CompTIA has no CPL type in the types file/.test(txt(tr.querySelector(".cr-guard-note"))), txt(tr.querySelector(".cr-guard-note")));
+
+  // ── the second press is armed per surface ──
+  // A block on the grid's Save never arms the issuer lane's Save for the same merge: the lane's first press blocks too.
+  const ps = await grid(TYPES);
+  tr = type(ps, "Medic Card Old", "Paramedic");
+  tr.querySelector(".cr-grid-save").click(); await sleep(60);
+  const gridBlocked = /^Blocked:/.test(txt(tr.querySelector(".cr-guard-note")));
+  cerLane(ps.doc, /No issuer/).click(); await sleep(60);
+  const psr = Array.from(ps.doc.querySelectorAll(".cr-ni-row")).find((r) => r.getAttribute("data-ut") === "Medic Card Old");
+  if (psr) {
+    psr.querySelector(".cr-ni-title-input").value = "Paramedic"; psr.querySelector(".cr-ni-input").value = "National Registry";
+    psr.querySelector(".cr-ni-save").click(); await sleep(60);
+  }
+  check("(1) the second press is armed per surface: a block on the grid's Save leaves the issuer lane's first press blocked too",
+    gridBlocked && psr && of(ps, "Medic Card Old").length === 0 && /^Blocked: Medic Card Old is cert-based/.test(txt(psr.querySelector(".cr-guard-note"))), psr ? txt(psr) : "no lane row");
 
   // ── (7) one copy ──
   const src = fs.readFileSync("credential_reference.js", "utf8"), ex = fs.readFileSync("exhibits.js", "utf8");

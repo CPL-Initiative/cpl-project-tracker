@@ -3,42 +3,42 @@
    Sam's two groups (2026-11-17: "Keep Cx and portfolio together since they function the same and result in a letter
    grade"): graded is Credit By Exam and Portfolio Review; cert-based is Industry Certification, Standardized Assessment,
    Military and Other. A combine inside a group goes through. A combine across them is blocked on the first press and
-   written on a second press, with an override row logged beside it.
+   written on a second press on the same surface, with an override row logged beside it.
 
-   The Exhibits tab (exhibits.js: the List's Accept, the leftover row's Combine and Re-point, the related titles' Save and
-   the rename batch) and the Common Exhibit Reference tab (credential_reference.js: the pending merges' Confirm, the grid's
-   Save, Merge into this and the issuer lane's saves) all decide here, so the two tabs cannot disagree (S679). Each surface
-   supplies three things: the title being folded, the title picked, and `nextOf(t)`, the saved rename of title t (or "").
-   The guard follows the picked title's chain of saved renames to the title the write lands on, reads that title's CPL type
-   from kb/exhibit_left_map.json, and names the landing title, so the surface checks and writes the same title.
+   The Exhibits tab (exhibits.js: the List's Accept, the leftover row's Combine and Move, Re-point, the related titles'
+   Save and the rename batch) and the Common Exhibit Reference tab (credential_reference.js: the pending merges' Confirm
+   merge, the grid's Save, Merge into this, and the issuer lane's Save and Save all) decide here, so the two tabs cannot
+   disagree (S679). A surface supplies the title being folded, the title picked, `nextOf(t)` (title t's saved rename, or
+   ""), a store that lives for the visit, and its own name. The guard follows the picked title's chain of saved renames
+   to the title the write lands on and names it, so the surface checks and writes the same title.
 
-   It fails closed: when the types file cannot be read, every combine holds, with no second-press override, and the next
-   press reads the file again. Loaded by both HTMLs before credential_reference.js; exhibits.js loads it by name when a
-   page lacks it. Pure apart from `load`, which takes the page's fetch. */
+   It fails closed (S679, the second reader's third pass on #3477): with the CPL types file unread, or a side with no CPL
+   type along its chain of saved renames, the combine is held, with no second-press override. A failed read is never
+   kept, so the next press fetches the file again. Loaded by both HTMLs before credential_reference.js; exhibits.js loads
+   it by name when a page lacks it. Pure apart from `load`, which takes the page's fetch. */
 (function (root) {
   "use strict";
   var TYPES_URL = "kb/exhibit_left_map.json";
   var FIELD_OVERRIDE = "cpl_type_group_override";
   var CHAIN_MAX = 12;
+  var HELD_UNREAD = "The CPL types did not load, so this combine is held. Try again.";
 
-  /* The types file, read once a page while it answers; a failed read is never kept, so the next press tries again.
-     Resolves { map } or { map: null, error }. */
+  /* The types file, read once a page while it answers. Resolves { map, error }; map is null on a miss. */
   var cache = null;
   function load(fetchFn) {
-    if (cache && cache.map) return Promise.resolve(cache);
+    if (cache) return Promise.resolve(cache);
     var f = fetchFn || (root && root.fetch && root.fetch.bind(root));
     if (!f) return Promise.resolve({ map: null, error: "no fetch" });
     return Promise.resolve().then(function () { return f(TYPES_URL, { cache: "no-store" }); }).then(function (r) {
       if (!r || !r.ok) throw new Error(TYPES_URL + " answered " + (r ? r.status : "nothing"));
       return r.json();
     }).then(function (j) {
-      if (!j || typeof j !== "object" || !j.canonicals || typeof j.canonicals !== "object") throw new Error(TYPES_URL + " holds no CPL types");
+      if (!j || typeof j !== "object" || !j.canonicals || typeof j.canonicals !== "object") throw new Error(TYPES_URL + " carries no CPL types");
       cache = { map: j, error: "" };
       return cache;
     }, function (e) { return { map: null, error: String(e && e.message || e) }; });
   }
-  function loaded() { return cache && cache.map ? cache.map : null; }
-  function reset() { cache = null; }
+  function loaded() { return cache ? cache.map : null; }
 
   /* A title's CPL type and group, or null when the file does not hold it. */
   function typeOf(map, ut) { return (map && map.canonicals && map.canonicals[ut]) || null; }
@@ -55,7 +55,11 @@
     }
     return path;
   }
-  function chainEnd(t, nextOf) { var p = chainPath(t, nextOf); return p.length ? p[p.length - 1] : t; }
+  /* The type a chain carries: the last typed title along it, which reaches back to its first title. */
+  function typeAlong(map, path) {
+    for (var k = path.length - 1; k >= 0; k--) { var t = typeOf(map, path[k]); if (t) return { type: t, at: path[k] }; }
+    return { type: null, at: null };
+  }
 
   function groupWords(g) {
     if (g === "mixed") return "a mix of graded and cert-based types";
@@ -68,15 +72,24 @@
     [x, y].forEach(function (g) { if (g === "mixed") { has.graded = 1; has.cert = 1; } else has[g] = 1; });
     return has.graded && has.cert ? { a: x, b: y } : null;
   }
+  /* The second press that overrides the guard is armed per surface and per pair, so a block on one surface never arms a
+     press on another. */
+  function guardKey(surface, key) { return surface + ": " + key; }
 
   /* Where a fold of `from` into the picked title lands, and whether that crosses the groups. The landing title is the end
      of the picked title's chain. Its type is its own; a pending rename names a title the file does not hold yet, so an
-     untyped landing title takes the type of the last typed title along the chain, which reaches back to the picked title. */
+     untyped landing title takes the type of the last typed title along the chain. `held` names why the combine cannot be
+     checked: the file unread, or a side with no type along its chain. */
   function landing(map, from, pick, nextOf) {
-    var path = chainPath(pick, nextOf), end = path[path.length - 1] || pick, at = null, type = null;
-    for (var k = path.length - 1; k >= 0 && !type; k--) { type = typeOf(map, path[k]); if (type) at = path[k]; }
-    if (!type) { type = typeOf(map, pick); at = type ? pick : null; }
-    return { pick: pick, end: end, type: type, typedAt: at, cross: crossesGroups(typeOf(map, from), type), key: "combine " + from + " -> " + end };
+    var path = chainPath(pick, nextOf), end = path[path.length - 1] || pick, land = typeAlong(map, path), src = typeOf(map, from);
+    if (!src) src = typeAlong(map, chainPath(from, nextOf)).type;
+    var held = !map ? HELD_UNREAD
+      : !src ? "This combine is held: " + from + " has no CPL type in the types file, nor does any title its saved renames reach. "
+        + "It can be combined once the nightly types file carries it."
+      : !land.type ? "This combine is held: " + end + (end !== pick ? " (where " + pick + "'s saved renames land)" : "")
+        + " has no CPL type in the types file, nor does any title along its saved renames. It can be combined once the nightly types file carries it."
+      : "";
+    return { pick: pick, end: end, type: land.type, typedAt: land.at, held: held, cross: held ? null : crossesGroups(src, land.type), key: from + " -> " + end };
   }
   function blockWords(from, f, again) {
     return "Blocked: " + from + " is " + groupWords(f.cross.a) + " and the fold lands on " + f.end
@@ -85,58 +98,50 @@
       + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged.";
   }
   function overrideValue(from, f) { return "combine across groups: " + f.cross.a + " into " + f.cross.b + ": " + from + " -> " + f.end; }
-  function heldWords(error) {
-    return "Held: the CPL types file did not load (" + (error || "no answer") + "), so the combine cannot be checked against Sam's graded and cert-based groups. Nothing was saved; press again to read it again.";
-  }
-  /* The second press: a surface keeps one store per visit; the first press on a crossing key arms it and blocks. */
-  function firstPress(store, key) {
-    if (store[key]) return false;
-    store[key] = true;
-    return true;
-  }
 
-  /* One combine. Resolves:
-       { status: "held",    words }               the types file did not load; nothing is written
-       { status: "self",    words, f }            the chain lands back on `from`
-       { status: "blocked", words, f }            the first press across the groups
-       { status: "ok",      f, to, log }          write the rename and the merge confirm naming `to` (f.end); when the
-                                                   combine crosses the groups, `log` is the override row's value
-     o: { map, from, pick, nextOf, store, again } (map from load()). */
+  /* One combine. o: { map, from, pick, nextOf, store, surface, again } (map from load(), null when unread). Returns
+       { status: "self",    words, f }    the chain lands back on `from`
+       { status: "held",    words, f }    the file unread, or a side untyped; nothing is written on any press
+       { status: "blocked", words, f }    the first press across the groups on this surface
+       { status: "ok",      f, to, log }  write the rename and the merge confirm naming `to` (f.end); `log` is the
+                                          override row's value when the combine crosses the groups, else null */
   function decide(o) {
-    if (!o.map) return { status: "held", words: heldWords(o.error) };
-    var f = landing(o.map, o.from, o.pick, o.nextOf);
+    var f = landing(o.map, o.from, o.pick, o.nextOf), gk = guardKey(o.surface || "accept", f.key);
     if (f.end === o.from) return { status: "self", f: f, words: (f.end === o.pick ? o.pick + " is " + o.from + " itself" : o.pick + " is already saved to become " + o.from) + "; pick another title." };
-    if (f.cross && firstPress(o.store, f.key)) return { status: "blocked", f: f, words: blockWords(o.from, f, o.again) };
+    if (f.held) return { status: "held", f: f, words: f.held };
+    if (f.cross && !o.store[gk]) { o.store[gk] = true; return { status: "blocked", f: f, words: blockWords(o.from, f, o.again) }; }
     return { status: "ok", f: f, to: f.end, log: f.cross ? overrideValue(o.from, f) : null };
   }
-  /* Many combines in one save (each pair [from, pick]): any pair that crosses the groups holds the whole save on the first
-     press, and a second press writes it with one override row per crossing pair. Resolves { status: "held"|"blocked",
-     words } or { status: "ok", logs: [[from, value]], landings: [f] } in the pairs' order.
-     o: { map, pairs, nextOf, store, again }. */
+  /* Many combines in one save, each pair [from, pick]. Any pair that lands on itself or is held holds the whole save; any
+     pair that crosses the groups holds it on the first press, and a second press writes it with one override row per
+     crossing pair. o: { map, pairs, nextOf, store, surface, again }. Returns { status, words } to hold, or
+     { status: "ok", logs: [[from, value]], ends } where ends[i] is the title pair i lands on, the title to write. */
   function decideMany(o) {
-    if (!o.map) return { status: "held", words: heldWords(o.error) };
     var all = o.pairs.map(function (p) { return { from: p[0], f: landing(o.map, p[0], p[1], o.nextOf) }; });
+    var self = all.filter(function (x) { return x.f.end === x.from; })[0], held = all.filter(function (x) { return x.f.held; })[0];
+    if (self) return { status: "self", words: self.f.pick + " is already saved to become " + self.from + ", so " + self.from + " cannot fold into it; nothing was saved." };
+    if (held) return { status: "held", words: held.f.held };
     var cross = all.filter(function (x) { return x.f.cross; });
-    var fresh = cross.filter(function (x) { return !o.store[x.f.key]; });
+    var fresh = cross.filter(function (x) { return !o.store[guardKey(o.surface, x.f.key)]; });
     if (fresh.length) {
-      fresh.forEach(function (x) { o.store[x.f.key] = true; });
+      fresh.forEach(function (x) { o.store[guardKey(o.surface, x.f.key)] = true; });
       var n = fresh.length - 1;
       return { status: "blocked", words: blockWords(fresh[0].from, fresh[0].f, o.again) + (n ? " " + n.toLocaleString("en-US") + " more "
         + (n === 1 ? "fold crosses" : "folds cross") + " the groups the same way." : "") };
     }
-    return { status: "ok", logs: cross.map(function (x) { return [x.from, overrideValue(x.from, x.f)]; }), landings: all.map(function (x) { return x.f; }) };
+    return { status: "ok", logs: cross.map(function (x) { return [x.from, overrideValue(x.from, x.f)]; }), ends: all.map(function (x) { return x.f.end; }) };
   }
-  /* load() then decide(): the one call a surface makes for a single combine. */
+  /* load() then decide(): the one call a surface makes for a combine, the file read fresh after a miss. */
   function check(o) {
-    return load(o.fetch).then(function (got) { return decide(Object.assign({}, o, { map: got.map, error: got.error })); });
+    return load(o.fetch).then(function (got) { return decide(Object.assign({}, o, { map: got.map })); });
   }
   function checkMany(o) {
-    return load(o.fetch).then(function (got) { return decideMany(Object.assign({}, o, { map: got.map, error: got.error })); });
+    return load(o.fetch).then(function (got) { return decideMany(Object.assign({}, o, { map: got.map })); });
   }
 
-  var api = { TYPES_URL: TYPES_URL, FIELD_OVERRIDE: FIELD_OVERRIDE, load: load, loaded: loaded, reset: reset, typeOf: typeOf,
-              chainPath: chainPath, chainEnd: chainEnd, groupWords: groupWords, crossesGroups: crossesGroups, landing: landing,
-              blockWords: blockWords, overrideValue: overrideValue, heldWords: heldWords, firstPress: firstPress,
+  var api = { TYPES_URL: TYPES_URL, FIELD_OVERRIDE: FIELD_OVERRIDE, HELD_UNREAD: HELD_UNREAD, load: load, loaded: loaded,
+              typeOf: typeOf, chainPath: chainPath, typeAlong: typeAlong, groupWords: groupWords, crossesGroups: crossesGroups,
+              guardKey: guardKey, landing: landing, blockWords: blockWords, overrideValue: overrideValue,
               decide: decide, decideMany: decideMany, check: check, checkMany: checkMany };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   if (root) root.CPL_COMBINE_GUARD = api;

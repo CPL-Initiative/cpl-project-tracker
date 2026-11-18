@@ -33,10 +33,22 @@ anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six
 are Sam's to decide on the tab. The title-rung sitting at the foot of this file is the CCR's ladder,
 not this reference's.
 
-**NEXT (S678, #3468 draft, COBIx item 5):** ACE's `CreditRecommendation` kept beside MAP's wording (migration
-`map_ace_catalog_cr`, not applied; side by side in `#cr-reference`; the typographic rule); its section rides on the
-PR's branch. Before the apply, the second reader's three: the view's `btrim` filter (not leakproof, 1.3 to 2.8 s against
-anon's 3 s timeout), the matcher's self-recall test (measurable only on first fill), and a sum check that can fire.
+## ACE's own text beside MAP's (S678, 2026-11-17; COBIx item 5 on #3464)
+
+`View_ExhibitCRsCatalog_Dataset`'s `CreditRecommendation` is now kept: one row per distinct (AceID, wording) in
+`map_ace_catalog_cr`, keyed on the ACE exhibit id (never the catalog's numeric ExhibitID), filled by
+`kb/_sync_map_custom_reports.py` after the nightly promotion in `map-custom-report-load.yml` (04:57 UTC). Migration
+`kb/migrations/2026-11-17_s678_map_ace_catalog_cr.sql`, rollback beside it; the table, its load function and the view
+`map_exhibit_cr_side_by_side` are dismissed with reasons in `kb/governance_surface_map.json` (no student data). Applied
+S679, 2026-11-18 (`supabase-migrate` run 44209026812, status 201); the first fill is the next 04:57 UTC load. The panel's *MAP and ACE text* section shows,
+per exhibit, MAP's wordings beside ACE's lines, with a box to read one exhibit (AR-0702-0030).
+
+The typographic rule (`kb/cr_typographic.py`, ported as `crTypoKey` in `cr_reference.js`, one shared fixture): two
+wordings are one recommendation when they match after `clean_rec` plus a case-insensitive whitespace squash. It
+compares and never rewrites source text. The runner log prints, from the same pull, exact + typographic only +
+differs + ACE text missing = MAP pairs, and the MAP pairs the rule settles on their own exhibit. COBIx measured 859
+rows for the rule and 25,984 waiting on ACE text; both re-measure from the first fill's log. Open: the truncation
+and run-on rule (AR-0102-0007, 593 rows), and whether a settled state is stored anywhere beyond the log and panel.
 
 ## The List (S542, 2026-11-01)
 

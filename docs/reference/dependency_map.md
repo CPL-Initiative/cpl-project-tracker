@@ -103,7 +103,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
-| `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
+| `cr_reference_decisions` | tabs: `cr-reference` · scripts: `kb/_sync_map_custom_reports.py` | tabs: `cr-reference` |
 | `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
 | `credential_submissions` | tabs: `exhibits` | — |
 | `csm_log` | none found | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
@@ -147,6 +147,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_cx_exhibit_guidance` | tabs: `map-data-quality` | — |
 | `map_data_loads` | tabs: `map-queue` · scripts: `kb/_sync_map_custom_reports.py` · `edgefn:cpl-chat` | — |
 | `map_data_quality` | tabs: `map-data-quality` | tabs: `map-data-quality` |
+| `map_exhibit_cr_side_by_side` | tabs: `cr-reference` | — |
 | `map_student_credit` | scripts: `chatbox/smoke_test.sh` | — |
 | `map_student_key_sketch` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `merge_doctrine_notes` | none found | tabs: `unified-courses` |
@@ -213,6 +214,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `first-light`, `implementation-funding` · `edgefn:cpl-chat` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
 | `is_funding_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
+| `map_ace_catalog_cr_load` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
@@ -1231,6 +1233,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/legacy_anchor_duplicates_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_file_test.py` | workflows: `js-tests.yml` | — |
 | `tests/library_publish_test.py` | workflows: `js-tests.yml` | — |
+| `tests/map_ace_catalog_cr_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_custom_report_sync_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/map_key_sketch_one_pull_test.py` | workflows: `js-tests.yml`, `map-custom-report-load.yml` | — |
 | `tests/memory_audit_test.py` | workflows: `js-tests.yml` | — |
@@ -1572,5 +1575,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 1032 file
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1033 file
 datasets · 195 external services · 611 consumers · 72 workflows · 41 tabs.

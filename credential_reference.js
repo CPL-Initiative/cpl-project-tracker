@@ -2113,7 +2113,7 @@
       ["Save all (" + dirty.length + ")"]);
     b.onclick = function () {
       b.disabled = true; b.textContent = "saving…";
-      Promise.all(dirtyRows().map(function (r) { return saveGridRowCore(r); }))
+      Promise.all(dirtyRows().map(function (r) { return saveGridRowCore(r, "cer-grid"); }))
         .then(function (results) {
           var failed = results.filter(function (x) { return !x.ok; }).length;
           var held = results.filter(function (x) { return x.err === "guard"; });
@@ -2130,7 +2130,7 @@
   // draft against the overlay-applied baseline and writes ONLY changed
   // fields via the existing override lanes (so Mode A2 / the rename apply
   // see exactly the rows the Curate panel would have written).
-  function saveGridRowCore(r) {
+  function saveGridRowCore(r, surface) {
     var ut = r.unified_title;
     if (!state.sess || !rowIsDirty(r)) return Promise.resolve({ ok: true, noop: true });
     var d = draftOf(r);
@@ -2140,7 +2140,7 @@
     if (titleChanged && !titleVal) return Promise.resolve({ ok: false, err: "empty title" });
     var target = titleChanged ? mergeTargetFor(r, titleVal) : null;
     // A merge asks the combine guard first, and saves the title it lands on.
-    var gate = target ? guardMerge(ut, titleVal, "Press Save again") : Promise.resolve(null);
+    var gate = target ? guardMerge(ut, titleVal, "Press Save again", surface || "cer-grid") : Promise.resolve(null);
     return gate.then(function (g) {
       if (g && g.status !== "ok") return { ok: false, err: "guard", words: g.words };
       if (g) titleVal = g.to;
@@ -2230,10 +2230,10 @@
   }
   // DOM wrapper — in-place row feedback, never a full re-render (typed input
   // in OTHER rows must survive; the worklist's applySavedAssignment lesson).
-  function saveGridRow(r, tr) {
+  function saveGridRow(r, tr, surface) {
     var btn = tr.querySelector(".cr-grid-save");
     if (btn) { btn.disabled = true; btn.textContent = "saving…"; }
-    saveGridRowCore(r).then(function (res) {
+    saveGridRowCore(r, surface).then(function (res) {
       if (!res.ok && res.err === "guard") {
         if (btn) { btn.disabled = false; btn.textContent = "Save"; }
         showGuardWords(tr, res.words);
@@ -2382,7 +2382,7 @@
           var tr2 = btn.closest("tr");
           draftOf(r).title = ut2;      // the target's KB key — the fold's join
           delete state.rowSaved[r.unified_title];
-          saveGridRow(r, tr2);
+          saveGridRow(r, tr2, "cer-merge-into");
         };
         line.appendChild(btn);
       }
@@ -3597,7 +3597,7 @@
         var target = mergeTargetFor(p.r, val);
         note.textContent = "";
         // A merge asks the combine guard first, and saves the title it lands on.
-        (target ? guardMerge(ut, val, "Press Confirm merge again") : Promise.resolve(null)).then(function (g) {
+        (target ? guardMerge(ut, val, "Press Confirm merge again", "cer-confirm") : Promise.resolve(null)).then(function (g) {
           if (g && g.status !== "ok") { note.textContent = g.words; return; }
           if (g) val = g.to;
           confirmPending(ut, val, target, g && g.log);
@@ -4158,20 +4158,22 @@
   }
   // The saved rename of a credential key, the link the guard's chain follows.
   function savedRenameOf(t) { return ((state.overlay[t] || {}).utitle_override || "").trim(); }
-  // One merge: resolves the guard's decision ({ status, words, to, log }).
-  function guardMerge(fromUt, pick, again) {
+  // One merge: resolves the guard's decision ({ status, words, to, log }). The
+  // second press that overrides the guard is armed per surface: a block on the
+  // pending merges' Confirm never arms the grid's Save.
+  function guardMerge(fromUt, pick, again, surface) {
     var G = combineGuard();
     if (!G) return Promise.resolve({ status: "held", words: combineGuardMissing() });
     return G.check({ fetch: window.fetch, from: fromUt, pick: pick, nextOf: savedRenameOf,
-      store: combineGuardStore, again: again });
+      store: combineGuardStore, surface: surface, again: again });
   }
   // Many merges in one save: pairs of [fromUt, pick]; resolves
-  // { status, words } or { status: "ok", logs, landings } in the pairs' order.
-  function guardMerges(pairs, again) {
+  // { status, words } or { status: "ok", logs, ends } in the pairs' order.
+  function guardMerges(pairs, again, surface) {
     var G = combineGuard();
     if (!G) return Promise.resolve({ status: "held", words: combineGuardMissing() });
     return G.checkMany({ fetch: window.fetch, pairs: pairs, nextOf: savedRenameOf,
-      store: combineGuardStore, again: again });
+      store: combineGuardStore, surface: surface, again: again });
   }
   // An issuer lane row's jobs with the merge pointed at the guard's landing
   // title: the title job and the confirm job both name `to`.
@@ -4209,7 +4211,7 @@
     var grown = withMergeConfirmJob(r, jobs);
     if (grown.length === jobs.length) { writeIssuerLaneRow(r, tr, jobs, saveBtn, null); return; }
     // A merge asks the combine guard first, and saves the title it lands on.
-    guardMerge(r.unified_title, grown[grown.length - 1].value, "Press Save again").then(function (g) {
+    guardMerge(r.unified_title, grown[grown.length - 1].value, "Press Save again", "cer-lane").then(function (g) {
       var note = laneGuardNote(tr);
       if (g.status !== "ok") { note.textContent = g.words; return; }
       note.textContent = "";
@@ -4325,10 +4327,10 @@
       var c = job.jobs.filter(function (j) { return j.field === FIELD_UTITLE_MERGE_CONFIRM; })[0];
       return [job.ut, c.value];
     });
-    (pairs.length ? guardMerges(pairs, "Press Save all again") : Promise.resolve({ status: "ok", logs: [], landings: [] })).then(function (g) {
+    (pairs.length ? guardMerges(pairs, "Press Save all again", "cer-lane-all") : Promise.resolve({ status: "ok", logs: [], ends: [] })).then(function (g) {
       if (g.status !== "ok") { toast(g.words, true); bulkGuardNote(btn, g.words); return; }
       bulkGuardNote(btn, "");
-      merging.forEach(function (job, k) { job.jobs = landLaneJobs(job.jobs, g.landings[k].end); });
+      merging.forEach(function (job, k) { job.jobs = landLaneJobs(job.jobs, g.ends[k]); });
       var logs = {};
       g.logs.forEach(function (l) { logs[l[0]] = l[1]; });
       todo.forEach(function (job) { job.log = logs[job.ut] || null; });

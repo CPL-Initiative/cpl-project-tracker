@@ -82,6 +82,9 @@ function load(opts) {
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
     if (url === "kb/exhibits_ai_sort.json") return opts.noAiSort ? Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } }) : ok(AISORT);
     if (url === "kb/exhibit_cert_links.json") return ok(CERTLINKS);
+    // The CPL types file the fold's guard reads; Accept and Re-point hold without it (S679). One group, so the guard passes.
+    if (url === "kb/exhibit_left_map.json") return ok({ schema: 1, titles: {}, canonicals: { "Welding Level 1": { type: "Industry Certification", group: "cert" },
+      "10-Key Data Entry": { type: "Industry Certification", group: "cert" }, "Apiary Basics": { type: "Industry Certification", group: "cert" } } });
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: !opts.refuse, status: opts.refuse ? 403 : 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });
@@ -95,7 +98,7 @@ function load(opts) {
     if (s === "fact-sheet/statewide_recs.js") w[name] = { "Welding Level 1": [{ t: "Welding 101", u: "3", id: "MAPICI-WELD-1-001" }, { t: "Welding 102", u: "3", id: "MAPICI-WELD-1-001" }] };
     setTimeout(cb, 0); } };
   w.CCC_COLLEGE_LOOKUP = LOOKUP;
-  require("./lib/combine_guard_env.js").install(w);
+  require("./lib/combine_guard_env.js").install(w, 404);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls };
 }

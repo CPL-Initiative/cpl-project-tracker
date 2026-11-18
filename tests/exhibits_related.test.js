@@ -81,6 +81,8 @@ function load(opts) {
     if (url === "kb/exhibits_review.json") return ok(REVIEW);
     if (url === "kb/exhibits_sweep.json") return ok(SWEEP);
     if (url === "kb/exhibits_related.json") return opts.noRelated ? bad(404) : ok(RELATED);
+    // The CPL types file the fold's guard reads (S679); a function is read at each fetch, so it can load on a retry.
+    if (url === "kb/exhibit_left_map.json") { const v = typeof opts.types === "function" ? opts.types() : opts.types; return v ? ok(v) : bad(404); }
     if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) {
       return ok((init.body && /E-ASE A5/.test(init.body)) ? [{ key: "ASE A5 — Brakes", students: 41, suppressed: false },
         { key: "Automotive Technology (ASE A5 Brakes)", students: null, suppressed: true }] : []);
@@ -93,7 +95,7 @@ function load(opts) {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, ""); };
-  require("./lib/combine_guard_env.js").install(w);
+  require("./lib/combine_guard_env.js").install(w, 404);
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls };
 }
@@ -296,6 +298,44 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   byText(t.d, "section.exh-rb .exh-acts button", "Save the batch").click(); await settle();
   check("signed out, approving writes nothing and says to sign in",
     writes(t).length === 0 && /Sign in as a reviewer to save\./.test(txt(t.d.querySelector(".exh-status"))) && t.M._renameCount() === 4);
+
+  // The fold's guard on the batch (S679, the second reader's third pass). The title checked is the title written: graded
+  // Brakes (ASE A5) carries a saved rename to cert-based Brakes C, so the twin that folds into it lands on Brakes C, the
+  // title the guard read, and writes that title.
+  const cert = { type: "Industry Certification", group: "cert" };
+  const TB = { schema: 1, titles: {}, canonicals: { "Automotive Technology (ASE A5 Brakes)": cert, "Brakes (ASE A5)": { type: "Credit By Exam", group: "graded" }, "Brakes C": cert } };
+  async function saveBatch(opts, setup, presses) {
+    const x = load(Object.assign({ signedIn: true, hash: "#exhibits/rename-batch" }, opts));
+    await x.M.boot(); await settle();
+    if (setup) setup(x);
+    Array.from(x.d.querySelectorAll("section.exh-rb .exh-acts button"))[0].click(); await settle();
+    for (let i = 0; i < (presses || 1); i++) {
+      if (i && opts.between) opts.between();
+      const b = byText(x.d, "section.exh-rb .exh-acts button", "Save the batch");
+      if (b) { b.click(); await settle(); await settle(); }
+    }
+    return x;
+  }
+  t = await saveBatch({ types: TB }, function (x) { x.M._state.cs.overlay = { "Brakes (ASE A5)": { title: "Brakes C" } }; });
+  rows = rowsOf(t);
+  const tw = rows.filter(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::Automotive Technology (ASE A5 Brakes)"; });
+  check("⭐ the batch writes each merge's landing title, the one the guard checked: the twin folds into Brakes C, where Brakes (ASE A5)'s saved rename lands",
+    tw.length === 2 && tw.every(function (r) { return r.value === "Brakes C"; }) && tw.some(function (r) { return r.field === "unified_title_merge_confirm"; })
+    && !rows.some(function (r) { return r.field === "cpl_type_group_override"; }), JSON.stringify(rows));
+  check("the title that leads keeps its own rename", rows.some(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::ASE A5 — Brakes" && r.field === "unified_title_override" && r.value === "Brakes (ASE A5)"; }));
+  t = await saveBatch({ types: TB });
+  check("with no saved rename, the twin's cert-based fold into graded Brakes (ASE A5) holds the batch on the first press, with nothing written",
+    writes(t).length === 0 && /^Blocked: Automotive Technology \(ASE A5 Brakes\) is cert-based .*Press Save the batch again/.test(txt(t.d.querySelector(".exh-status"))), txt(t.d.querySelector(".exh-status")));
+  let tbUp = false;
+  const TB2 = JSON.parse(JSON.stringify(TB)); TB2.canonicals["Brakes (ASE A5)"] = cert;
+  const held9 = { types: function () { return tbUp ? TB2 : null; }, between: function () { tbUp = true; } };
+  t = await saveBatch(held9, null, 1);
+  check("⭐ with the CPL types file unread, a batch with a merge is held in plain words, with nothing written",
+    writes(t).length === 0 && txt(t.d.querySelector(".exh-status")) === "The CPL types did not load, so this combine is held. Try again.", txt(t.d.querySelector(".exh-status")));
+  tbUp = false;
+  t = await saveBatch(held9, null, 2);
+  check("and a press after the file loads saves the batch", rowsOf(t).some(function (r) { return r.field === "unified_title_merge_confirm" && r.value === "Brakes (ASE A5)"; }),
+    JSON.stringify(rowsOf(t)) + " | " + txt(t.d.querySelector(".exh-status")));
 
   // The file could not be read: the card still works.
   t = load({ signedIn: true, noRelated: true });
