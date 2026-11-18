@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1025,
+  "file_datasets": 1027,
   "external_services": 195,
-  "consumers": 610,
+  "consumers": 611,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -4803,6 +4803,26 @@
      "direction": "read",
      "how": "literal",
      "line": 38
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>_slash_to_and.json": {
+   "consumers": [
+    {
+     "id": "script:kb/slash_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
+    },
+    {
+     "id": "script:kb/slash_titles.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 46
     }
    ],
    "served": false,
@@ -15159,6 +15179,13 @@
      "direction": "read",
      "how": "literal",
      "line": 146
+    },
+    {
+     "id": "script:kb/slash_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     }
    ],
    "producers": [
@@ -27258,6 +27285,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/slash_titles_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/spend_daily_build_test.py": {
    "consumers": [
     {
@@ -35197,6 +35237,7 @@
     "tests/statewide_cid_hold_test.py",
     "tests/credential_family_test.py",
     "tests/sheet181_ruled_renames_test.py",
+    "tests/slash_titles_test.py",
     "tests/credential_family_apply_test.py",
     "tests/credential_family_fold_contact_test.py",
     "tests/cid_claim_audit_test.py",

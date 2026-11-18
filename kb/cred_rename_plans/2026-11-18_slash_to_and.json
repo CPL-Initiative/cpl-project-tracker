@@ -1,0 +1,1003 @@
+{
+ "_about": "A frozen plan of credential renames ruled by Sam in session (S679), read by kb/ruled_renames.py in the rename dry run and the apply (cred-rename-apply.yml, only_plan=slash-to-and-2026-11-18). Built by kb/slash_titles.py from kb/credentials.json; append-only. `held` lists the combines the plan leaves for a person; `kept` lists each title whose slash stays, with the rule that keeps it. Nothing here writes kb_curation.",
+ "plan_id": "slash-to-and-2026-11-18",
+ "ruling": "Sam Lee, in session (S679), 2026-11-18 about 01:10Z: \"I believe I replaced the / with and to avoid formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters\"",
+ "decided_by": "Sam Lee (in session, S679)",
+ "decided_at": "2026-11-18T01:10:00Z",
+ "rule": {
+  "word": "a slash joining words becomes \" and \"; a chain of three or more takes commas",
+  "code": "a slash with a code on each side stays: the token holds a digit or is written in capitals",
+  "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a title that names ASE (kb/cert_naming.py), or a phrase in OFFICIAL_PHRASES",
+  "official_phrases": {
+   "Fire Apparatus Driver/Operator": "California State Fire Training's certification title (Fire Apparatus Driver/Operator 1A, 1B and Tiller)",
+   "Division/Group Supervisor": "NWCG's position and course title for S-339"
+  }
+ },
+ "entries": [
+  {
+   "old": "Acute Medical/Surgical Nursing and Mental Health Nursing",
+   "new": "Acute Medical and Surgical Nursing and Mental Health Nursing",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Acute Medical/Surgical and Nursing of the Childbearing Family",
+   "new": "Acute Medical and Surgical and Nursing of the Childbearing Family",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Adv ESL: Writing/Grammar",
+   "new": "Adv ESL: Writing and Grammar",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Advanced Desserts and Pastry/Chocolate/Sugar",
+   "new": "Advanced Desserts and Pastry, Chocolate, and Sugar",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Arboriculture/Urban Forestry",
+   "new": "Arboriculture and Urban Forestry",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Architecture/Green Design: Implementation using AutoCAD",
+   "new": "Architecture and Green Design: Implementation using AutoCAD",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Architecture/Green Design: Planning and Construction",
+   "new": "Architecture and Green Design: Planning and Construction",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Architecture/Green Design: Principles and Practices",
+   "new": "Architecture and Green Design: Principles and Practices",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Autodesk Certified User/Professional — AutoCAD",
+   "new": "Autodesk Certified User and Professional — AutoCAD",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Autodesk Certified User/Professional — Revit Architecture",
+   "new": "Autodesk Certified User and Professional — Revit Architecture",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+   "new": "Building Automation System (BAS) Certification — Manufacturer and Vendor",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "CCDET Clean Truck-Check & HD Safety/Pollution Certifications",
+   "new": "CCDET Clean Truck-Check & HD Safety and Pollution Certifications",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Calculations in Water/Wastewater Technology",
+   "new": "Calculations in Water and Wastewater Technology",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather",
+   "new": "Carpenters Apprenticeship — Drywall and Lather",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Journeyperson",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Journeyperson",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 1",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 1",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 2",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 2",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 3",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 3",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Carpenters Apprenticeship — Drywall/Lather Year 4",
+   "new": "Carpenters Apprenticeship — Drywall and Lather Year 4",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Concealed/Glue-Up/Staple-Up Ceiling Systems",
+   "new": "Concealed, Glue-Up, and Staple-Up Ceiling Systems",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Confined Space Rescue Operations/Technician",
+   "new": "Confined Space Rescue Operations and Technician",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "DSST A History of the Vietnam War / Civil War and Reconstruction",
+   "new": "DSST A History of the Vietnam War and Civil War and Reconstruction",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Diesel Electrical/Electronic Systems",
+   "new": "Diesel Electrical and Electronic Systems",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Doors, Windows, Exterior Systems/Building Documents",
+   "new": "Doors, Windows, Exterior Systems and Building Documents",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Education / Careers in Education Intermediate",
+   "new": "Education and Careers in Education Intermediate",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Emergency Medical Response — CPR Pro/Healthcare Provider",
+   "new": "Emergency Medical Response — CPR Pro and Healthcare Provider",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Exterior/Advanced Fire Control System and Partitions",
+   "new": "Exterior and Advanced Fire Control System and Partitions",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations",
+   "new": "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Fuel Systems/Emission Controls",
+   "new": "Fuel Systems and Emission Controls",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "HAZWOPER First Responder Awareness/Operations",
+   "new": "HAZWOPER First Responder Awareness and Operations",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Hairstyling Services/Haircutting 2",
+   "new": "Hairstyling Services and Haircutting 2",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Heavy/Medium Duty Truck Technology Apprenticeship",
+   "new": "Heavy and Medium Duty Truck Technology Apprenticeship",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Hydraulics/Pneumatics",
+   "new": "Hydraulics and Pneumatics",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Infant/Toddler Practicum",
+   "new": "Infant and Toddler Practicum",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Introduction to Engineering Design/Graphics",
+   "new": "Introduction to Engineering Design and Graphics",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Introduction to UNIX/Linux",
+   "new": "Introduction to UNIX and Linux",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Ironworker Apprenticeship — OSHA 30/Extension Review",
+   "new": "Ironworker Apprenticeship — OSHA 30 and Extension Review",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather",
+   "new": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)",
+   "new": "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Layout/Leveling Construction Site Practice",
+   "new": "Layout and Leveling Construction Site Practice",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Maternal/Newborn Nursing Care",
+   "new": "Maternal and Newborn Nursing Care",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Mathematics for Drywall/Lathers",
+   "new": "Mathematics for Drywall and Lathers",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Medical/Surgical Nursing and Pediatric Nursing Advanced",
+   "new": "Medical and Surgical Nursing and Pediatric Nursing Advanced",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Metal Building Erection 1 / Foreman Training",
+   "new": "Metal Building Erection 1 and Foreman Training",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "NCCER Commercial Electrician Level 4/Journey Level",
+   "new": "NCCER Commercial Electrician Level 4 and Journey Level",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "NCCER Industrial Electrician Level 4/Journey Level",
+   "new": "NCCER Industrial Electrician Level 4 and Journey Level",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Nursing Skills / Clinical Simulation Laboratory Advanced",
+   "new": "Nursing Skills and Clinical Simulation Laboratory Advanced",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Nursing Skills/Clinical Simulation Laboratory Beginning",
+   "new": "Nursing Skills and Clinical Simulation Laboratory Beginning",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Oil/Acrylic Painting: Beginning 1",
+   "new": "Oil and Acrylic Painting: Beginning 1",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Prefab/Sound Panels",
+   "new": "Prefab and Sound Panels",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Principles of Infant/Toddler Caregiving",
+   "new": "Principles of Infant and Toddler Caregiving",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Principles of Power Mechanics/Small Engines",
+   "new": "Principles of Power Mechanics and Small Engines",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Spanish/English Linguistics Analysis",
+   "new": "Spanish and English Linguistics Analysis",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Standard First Aid/CPR/AED",
+   "new": "Standard First Aid, CPR, and AED",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Standards and Training for Corrections (STC) / Board of Parole Hearings",
+   "new": "Standards and Training for Corrections (STC) and Board of Parole Hearings",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Tool/Equipment Applications — Emergency Response Procedures",
+   "new": "Tool and Equipment Applications — Emergency Response Procedures",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Tool/Equipment Applications — Fall Protection",
+   "new": "Tool and Equipment Applications — Fall Protection",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Transit Level/Laser",
+   "new": "Transit Level and Laser",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "new": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Journeyperson",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 2",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 3",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+   "new": "UA Plumbers and Pipefitters Apprenticeship — Level 4",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "UNIX/Linux Systems and Programming",
+   "new": "UNIX and Linux Systems and Programming",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Video Gaming 1 / Computer Programming and Game Design",
+   "new": "Video Gaming 1 and Computer Programming and Game Design",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Wall and Column Forms / Cutting and Burning (Carpentry)",
+   "new": "Wall and Column Forms and Cutting and Burning (Carpentry)",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Water Treatment Operator Grade T3 / Distribution Grade D3",
+   "new": "Water Treatment Operator Grade T3 and Distribution Grade D3",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  },
+  {
+   "old": "Water/Wastewater Operator Certification",
+   "new": "Water and Wastewater Operator Certification",
+   "kind": "rename",
+   "why": "a slash joining words is written \"and\" (Sam, 2026-11-18)"
+  }
+ ],
+ "held": [],
+ "kept": [
+  {
+   "title": "ASE A2 — Automatic Transmission/Transaxle",
+   "kind": "official",
+   "kept": [
+    "Transmission/Transaxle (official)"
+   ]
+  },
+  {
+   "title": "ASE A6 — Electrical/Electronic Systems",
+   "kind": "official",
+   "kept": [
+    "— Electrical/Electronic S (official)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+   "kind": "code",
+   "kept": [
+    "ins ISX + SP/2 HD (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+   "kind": "code",
+   "kept": [
+    "+ T8 with SP/2 HD (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+   "kind": "code",
+   "kept": [
+    "T8 with MACS/609 (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+   "kind": "code",
+   "kept": [
+    "+ T8 with SP/2 HD (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+   "kind": "code",
+   "kept": [
+    "+ T8 with SP/2 HD (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+   "kind": "code",
+   "kept": [
+    "+ T8 with SP/2 HD (code)"
+   ]
+  },
+  {
+   "title": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+   "kind": "code",
+   "kept": [
+    "T8 with MACS/609 (code)"
+   ]
+  },
+  {
+   "title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+   "kind": "official",
+   "kept": [
+    "Duty Hybrid/Electric Veh (official)"
+   ]
+  },
+  {
+   "title": "ASE Master Medium/Heavy Truck Technician (T1–T8)",
+   "kind": "official",
+   "kept": [
+    "aster Medium/Heavy Truck (official)"
+   ]
+  },
+  {
+   "title": "AWS B2.2/B2.2M Brazing Performance Qualification",
+   "kind": "code",
+   "kept": [
+    "AWS B2.2/B2.2M Brazin (code)"
+   ]
+  },
+  {
+   "title": "AWS Welder Qualification — D1.1/D1.3/D17.1",
+   "kind": "code",
+   "kept": [
+    "ation — D1.1/D1.3/D17.1 (code)",
+    "— D1.1/D1.3/D17.1 (code)"
+   ]
+  },
+  {
+   "title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+   "kind": "official",
+   "kept": [
+    "o Electrical/Electronic S (official)"
+   ]
+  },
+  {
+   "title": "Automatic Transmission/Transaxle (ASE A2 standards)",
+   "kind": "official",
+   "kept": [
+    "Transmission/Transaxle (A (official)"
+   ]
+  },
+  {
+   "title": "Automatic Transmission/Transaxle (ASE A2)",
+   "kind": "official",
+   "kept": [
+    "Transmission/Transaxle (A (official)"
+   ]
+  },
+  {
+   "title": "Automotive Technology 3A/3B",
+   "kind": "code",
+   "kept": [
+    "echnology 3A/3B (code)"
+   ]
+  },
+  {
+   "title": "Basic Wildland Firefighter (S-130/S-190)",
+   "kind": "code",
+   "kept": [
+    "ghter (S-130/S-190) (code)"
+   ]
+  },
+  {
+   "title": "CAD/CAM Engineering",
+   "kind": "code",
+   "kept": [
+    "CAD/CAM Engineer (code)"
+   ]
+  },
+  {
+   "title": "CAD/CAM Engineering Advanced",
+   "kind": "code",
+   "kept": [
+    "CAD/CAM Engineer (code)"
+   ]
+  },
+  {
+   "title": "CSTI Hazardous Materials First Responder Awareness and Operations (FRA/FRO) Instructor",
+   "kind": "code",
+   "kept": [
+    "rations (FRA/FRO) Instruc (code)"
+   ]
+  },
+  {
+   "title": "Correctional Officer Core Course (CDCR/CPOST)",
+   "kind": "code",
+   "kept": [
+    "Course (CDCR/CPOST) (code)"
+   ]
+  },
+  {
+   "title": "Electrical/Electronic Systems (ASE A6)",
+   "kind": "official",
+   "kept": [
+    "Electrical/Electronic S (official)"
+   ]
+  },
+  {
+   "title": "Fire Apparatus Driver/Operator 1A",
+   "kind": "official",
+   "kept": [
+    "ratus Driver/Operator 1A (official)"
+   ]
+  },
+  {
+   "title": "Fire Apparatus Driver/Operator 1A and 1B",
+   "kind": "official",
+   "kept": [
+    "ratus Driver/Operator 1A (official)"
+   ]
+  },
+  {
+   "title": "Fire Apparatus Driver/Operator 1B",
+   "kind": "official",
+   "kept": [
+    "ratus Driver/Operator 1B (official)"
+   ]
+  },
+  {
+   "title": "Fire Apparatus Driver/Operator Tiller Truck",
+   "kind": "official",
+   "kept": [
+    "ratus Driver/Operator Til (official)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 110",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 111",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 120",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 121",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 130",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 131",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 140",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 141",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 150",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
+   "kind": "code",
+   "kept": [
+    "IBEW/NECA Electri (code)"
+   ]
+  },
+  {
+   "title": "Internetworking and TCP/IP",
+   "kind": "code",
+   "kept": [
+    "king and TCP/IP (code)"
+   ]
+  },
+  {
+   "title": "Introduction to CAD/CAM",
+   "kind": "code",
+   "kept": [
+    "ction to CAD/CAM (code)"
+   ]
+  },
+  {
+   "title": "Introduction to UI/UX Design",
+   "kind": "code",
+   "kept": [
+    "uction to UI/UX Design (code)"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — H07/H47/H75/H77",
+   "kind": "code",
+   "kept": [
+    "ceship — H07/H47/H75/H77 (code)",
+    "ip — H07/H47/H75/H77 (code)",
+    "H07/H47/H75/H77 (code)"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — H08/H97",
+   "kind": "code",
+   "kept": [
+    "ceship — H08/H97 (code)"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — H45/B87",
+   "kind": "code",
+   "kept": [
+    "ceship — H45/B87 (code)"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — H62/H18/H95",
+   "kind": "code",
+   "kept": [
+    "ceship — H62/H18/H95 (code)",
+    "ip — H62/H18/H95 (code)"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — H65/H70",
+   "kind": "code",
+   "kept": [
+    "ceship — H65/H70 (code)"
+   ]
+  },
+  {
+   "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+   "kind": "official",
+   "kept": [
+    "Duty Hybrid/Electric Veh (official)"
+   ]
+  },
+  {
+   "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+   "kind": "official",
+   "kept": [
+    "Duty Hybrid/Electric Veh (official)"
+   ]
+  },
+  {
+   "title": "MIG Welding (GMAW/FCAW)",
+   "kind": "code",
+   "kept": [
+    "elding (GMAW/FCAW) (code)"
+   ]
+  },
+  {
+   "title": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+   "kind": "official",
+   "kept": [
+    "Medium/Heavy Truck (official)"
+   ]
+  },
+  {
+   "title": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+   "kind": "official",
+   "kept": [
+    "– Electrical/Electronic S (official)"
+   ]
+  },
+  {
+   "title": "NWCG S-339 — Division/Group Supervisor (All-Risk)",
+   "kind": "official",
+   "kept": [
+    "9 — Division/Group Superv (official)"
+   ]
+  },
+  {
+   "title": "NWCG Wildland Fire Certifications (S-110 / IS-700 / IS-800 / P-101 / FI-110 / ICS-300 bundle)",
+   "kind": "code",
+   "kept": [
+    "tions (S-110 / IS-700 / IS- (code)",
+    "110 / IS-700 / IS-800 / P-1 (code)",
+    "700 / IS-800 / P-101 / FI-1 (code)",
+    "-800 / P-101 / FI-110 / ICS (code)",
+    "101 / FI-110 / ICS-300 bund (code)"
+   ]
+  },
+  {
+   "title": "NWCG Wildland Fire Certifications (S-130 / S-219 / S-230 / S-231 / S-270 bundle)",
+   "kind": "code",
+   "kept": [
+    "tions (S-130 / S-219 / S-23 (code)",
+    "-130 / S-219 / S-230 / S-23 (code)",
+    "-219 / S-230 / S-231 / S-27 (code)",
+    "-230 / S-231 / S-270 bundle (code)"
+   ]
+  },
+  {
+   "title": "NWCG Wildland Fire Certifications (S-130/S-230/S-231/S-270)",
+   "kind": "code",
+   "kept": [
+    "tions (S-130/S-230/S-231/ (code)",
+    "(S-130/S-230/S-231/S-270) (code)",
+    "/S-230/S-231/S-270) (code)"
+   ]
+  },
+  {
+   "title": "NWCG Wildland Fire Certifications (S-190 / S-290 / ICS-100 / ICS-700 bundle)",
+   "kind": "code",
+   "kept": [
+    "tions (S-190 / S-290 / ICS- (code)",
+    "-190 / S-290 / ICS-100 / IC (code)",
+    "90 / ICS-100 / ICS-700 bund (code)"
+   ]
+  },
+  {
+   "title": "Oracle Database PL/SQL Developer Certified Professional (1Z0-149)",
+   "kind": "code",
+   "kept": [
+    "Database PL/SQL Develope (code)"
+   ]
+  },
+  {
+   "title": "Substance Use Disorder Counselor Certification (CCAPP/CADTP)",
+   "kind": "code",
+   "kept": [
+    "ation (CCAPP/CADTP) (code)"
+   ]
+  },
+  {
+   "title": "UAV/UAS Basic",
+   "kind": "code",
+   "kept": [
+    "UAV/UAS Basic (code)"
+   ]
+  },
+  {
+   "title": "Welding for HVAC/R",
+   "kind": "code",
+   "kept": [
+    "ing for HVAC/R (code)"
+   ]
+  },
+  {
+   "title": "Wildland Fire ICS/NWCG Certification Bundle",
+   "kind": "code",
+   "kept": [
+    "and Fire ICS/NWCG Certifi (code)"
+   ]
+  }
+ ]
+}
