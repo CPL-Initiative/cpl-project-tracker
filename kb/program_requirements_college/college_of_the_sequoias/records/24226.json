@@ -107,7 +107,20 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for ESL 402, ESL 403, ESL 410, ESL 411 and its notes do not say the catalog prints none"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 100,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

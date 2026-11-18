@@ -114,7 +114,20 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "major total differs from catalog",
+    "words": "the major sums to 18-19 against the catalog's major total 18; the overlap ruling would pass the degree if the major matched"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 30,
+   "course_list_match": 100,
+   "ge_pattern": 50,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {

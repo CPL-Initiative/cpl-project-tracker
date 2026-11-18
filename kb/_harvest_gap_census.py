@@ -33,6 +33,9 @@ the programs the captures listed, and the causes that need the live table cannot
 Then the committed files under kb/program_requirements_college/<slug>/ (sources.json, records/,
 summary.json, capture.json or capture_preview.json, kept_passing.json).
 
+COLLECTED WITH GAPS. A row whose checks.gaps names a gap (kb/_program_named_gaps.py), with coverage and invented
+passing, is collected (Sam, 2026-11-17): it leaves the gap and is listed under collected_with_gaps by name.
+
 Writes no table. Workflow: .github/workflows/harvest-gap-census.yml (dispatch only, anon only).
 Guard: tests/harvest_gap_census_test.py.
 """
@@ -51,6 +54,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _program_requirements_college as C  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
+import _program_named_gaps as NG  # noqa: E402
 
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
 OUT_JSON = os.path.join(HERE, "status", "harvest_gap_census.json")
@@ -111,8 +115,20 @@ def host_of(url: str | None) -> str | None:
 def flat_checks(score: dict | None) -> dict:
     """A filed score's three checks as the load writes them to the live row (booleans and a status)."""
     sc = score or {}
-    return {"coverage": (sc.get("coverage") or {}).get("pass"), "invented": (sc.get("invented") or {}).get("pass"),
-            "arithmetic": (sc.get("arithmetic") or {}).get("status")}
+    out = {"coverage": (sc.get("coverage") or {}).get("pass"), "invented": (sc.get("invented") or {}).get("pass"),
+           "arithmetic": (sc.get("arithmetic") or {}).get("status")}
+    if sc.get("gaps"):
+        # A named gap (kb/_program_named_gaps.py): the live row carries the names in checks.gaps.
+        out["gaps"] = [g.get("gap") if isinstance(g, dict) else g for g in sc["gaps"]]
+    return out
+
+
+def collected_with_gaps(checks: dict | None) -> list[str]:
+    """The gap names of a row collected with its gaps named (Sam, 2026-11-17: never drop a record for failing;
+    collect it with gaps noted and confidence scores): checks.gaps not empty, coverage and invented passing."""
+    c = checks or {}
+    gaps = c.get("gaps") or []
+    return list(gaps) if gaps and c.get("coverage") is True and c.get("invented") is True else []
 
 
 def scorer_unstated_fails(checks: dict | None, filed: dict | None) -> bool:
@@ -333,7 +349,7 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
-    gap, passing, tab_only = [], 0, []
+    gap, passing, tab_only, collected = [], 0, [], []
     for prog in universe:
         cn = norm_cn(prog["control_number"])
         slug = C.slug_of(prog["college"])
@@ -349,6 +365,10 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
             passing += 1
             if scorer_unstated_fails(checks, filed):
                 tab_only.append({"college": (col or {}).get("college") or prog["college"], "control_number": cn})
+            continue
+        if checks is not None and collected_with_gaps(checks):
+            collected.append({"college": (col or {}).get("college") or prog["college"], "control_number": cn,
+                              "gaps": collected_with_gaps(checks)})
             continue
         cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         college = (col or {}).get("college") or prog["college"]
@@ -416,6 +436,11 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "outside_universe": outside or {},
         "tab_only": {"cause": TAB_ONLY[0], "what": TAB_ONLY[1], "programs": len(tab_only),
                      "members": sorted(tab_only, key=lambda x: (x["college"], x["control_number"]))},
+        "collected_with_gaps": {"what": "collected with its gaps named (checks.gaps), counted as collected",
+                                "programs": len(collected),
+                                "by_gap": dict(collections.Counter(g for c in collected for g in c["gaps"])),
+                                "members": sorted(collected, key=lambda x: (x["college"], x["control_number"]))},
+        "gap_labels": gap_labels(),
         "statewide_by_cause": {c: by_cause.get(c, 0) for c in CAUSE_IDS},
         "sub_causes": [{"cause": c, "sub": s, "programs": n}
                        for (c, s), n in sorted(by_sub.items(), key=lambda x: -x[1])],
@@ -426,6 +451,16 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "next_wave": wave,
         "programs": gap,
     }
+
+
+def gap_labels(path: str = NG.LABELS_OUT) -> dict:
+    """The plain reasons kb/_program_named_gaps.py names for programs with no record (they stay in their pile)."""
+    if not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8") as fh:
+        d = json.load(fh)
+    return {"programs": d.get("labeled", 0), "by_gap": d.get("by_gap") or {},
+            "words": {k: (d.get("gaps") or {}).get(k) for k in d.get("by_gap") or {}}}
 
 
 def universe_from_live(programs: list[dict]) -> tuple[list[dict], dict]:
@@ -464,6 +499,9 @@ def render_md(r: dict, when: str) -> str:
     if (r.get("tab_only") or {}).get("programs"):
         L += ["Of the passing, %d %s (listed in the JSON, not counted as gaps)."
               % (r["tab_only"]["programs"], r["tab_only"]["what"]), ""]
+    if (r.get("collected_with_gaps") or {}).get("programs"):
+        L += ["Collected with a named gap, out of the gap: %d (%s)." % (r["collected_with_gaps"]["programs"], ", ".join(
+            "%s %d" % kv for kv in sorted(r["collected_with_gaps"]["by_gap"].items()))), ""]
     if r["outside_universe"]:
         L += ["Read by the harvest but outside the universe: " + ", ".join(
             "%s %d" % (k, v) for k, v in sorted(r["outside_universe"].items())) + ".", ""]

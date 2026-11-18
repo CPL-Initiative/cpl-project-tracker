@@ -387,6 +387,10 @@ jobs:
       # record, counts that sum to the universe, levers that count their members. Pure stdlib.
       - name: Harvest gap census (one cause per program, levers count their members)
         run: python3 tests/harvest_gap_census_test.py
+      # Named gaps (S680; Sam, 2026-11-17: collect with gaps noted and confidence scores): the gap and its
+      # scores, the census counting the row collected, the guarded SQL. Pure stdlib.
+      - name: Named gaps (collected with the gap named, scored, counted collected)
+        run: python3 tests/program_named_gaps_test.py
       # Why a program has no closed list (S644): one reason per program, from the committed
       # Program Course File and program export. Pure stdlib.
       - name: Harvest no-closed-list diagnosis (one reason per program)

@@ -1,0 +1,2213 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3358 section 2: collect with gaps noted and confidence scores; Commons Clarity's Part B (#3480, comment 6967374303); COBIx's D2 decision (major total differs, about 30)",
+ "gaps": {
+  "major_total_differs": "major total differs from catalog",
+  "no_units_printed": "The catalog prints no units for at least one required course.",
+  "no_units_read": "A required course carries no units as read, so the program's units cannot be added.",
+  "noncredit_names_only": "Noncredit certificate: the catalog names it but prints no course list."
+ },
+ "at": "2026-11-18T06:56:12Z",
+ "held_colleges": [
+  "Golden West College",
+  "Coastline Community College",
+  "Orange Coast College",
+  "Cosumnes River College",
+  "Lassen College",
+  "Los Medanos College",
+  "Diablo Valley College",
+  "College of the Redwoods",
+  "Allan Hancock College",
+  "Chabot College",
+  "Antelope Valley College",
+  "Santiago Canyon College"
+ ],
+ "collected": 80,
+ "by_gap": {
+  "no_units_read": 74,
+  "major_total_differs": 2,
+  "no_units_printed": 4
+ },
+ "self_check": {
+  "major_total_differs": {
+   "held_records": 14220,
+   "right": 14220,
+   "wrong": 0
+  },
+  "no_units_printed": {
+   "held_records": 14220,
+   "right": 14220,
+   "wrong": 0
+  },
+  "no_units_read": {
+   "held_records": 14220,
+   "right": 14220,
+   "wrong": 0
+  }
+ },
+ "records": [
+  {
+   "college": "Berkeley City College",
+   "control_number": "37797",
+   "award": "Noncredit program",
+   "extracted_run": "39891604919",
+   "gap": "no_units_read",
+   "words": "the record carries no units for LIS 511, LIS 512, LIS 513 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 60
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/berkeley_city/records/37797.json",
+   "i": 1
+  },
+  {
+   "college": "Berkeley City College",
+   "control_number": "41869",
+   "award": "Noncredit program",
+   "extracted_run": "39891604919",
+   "gap": "no_units_read",
+   "words": "the record carries no units for HUSV 502A, HUSV 502B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/berkeley_city/records/41869.json",
+   "i": 2
+  },
+  {
+   "college": "Butte College",
+   "control_number": "14583",
+   "award": "A.S. Degree",
+   "extracted_run": 42973457189,
+   "gap": "no_units_read",
+   "words": "the record carries no units for CMST 4, ENGL C1000, FN 2, PSYC C1000 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/butte/records/14583.json",
+   "i": 3
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "40651",
+   "award": "Noncredit program",
+   "extracted_run": "37961137169",
+   "gap": "no_units_read",
+   "words": "the record carries no units for AED 90.43 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 57,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/cerritos/records/40651.json",
+   "i": 4
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "02362",
+   "award": "A.S. Degree",
+   "extracted_run": "38675245799",
+   "gap": "no_units_read",
+   "words": "the record carries no units for COS 141A, COS 141B, COS 202A, COS 202B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/citrus/records/02362.json",
+   "i": 5
+  },
+  {
+   "college": "College of Alameda",
+   "control_number": "01118",
+   "award": "A.A. Degree",
+   "extracted_run": 42600854055,
+   "gap": "major_total_differs",
+   "words": "the major sums to 18-19 against the catalog's major total 18; the overlap ruling would pass the degree if the major matched",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 100,
+    "ge_pattern": 50,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "major total differs from catalog"
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_alameda/records/01118.json",
+   "i": 6
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "43476",
+   "award": "Noncredit program",
+   "extracted_run": "39056007346",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CART 300, CART 301 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_desert/records/43476.json",
+   "i": 7
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "24184",
+   "award": "Noncredit program",
+   "extracted_run": "38748848139",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESL 440, ESL 441, ESL 442, ESL 450 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/24184.json",
+   "i": 8
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "24226",
+   "award": "Noncredit program",
+   "extracted_run": "38748848139",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESL 402, ESL 403, ESL 410, ESL 411 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/24226.json",
+   "i": 9
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "24256",
+   "award": "Noncredit program",
+   "extracted_run": "38748848139",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESL 420, ESL 421, ESL 430, ESL 431 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/24256.json",
+   "i": 10
+  },
+  {
+   "college": "College of the Sequoias",
+   "control_number": "37743",
+   "award": "Noncredit program",
+   "extracted_run": "38748848139",
+   "gap": "no_units_read",
+   "words": "the record carries no units for HLTH 405, HLTH 406 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_sequoias/records/37743.json",
+   "i": 11
+  },
+  {
+   "college": "College of the Siskiyous",
+   "control_number": "37784",
+   "award": "Noncredit program",
+   "extracted_run": "42354853403",
+   "gap": "no_units_read",
+   "words": "the record carries no units for HOSP0501, WORK0510, BA0504, BA0505 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/college_of_the_siskiyous/records/37784.json",
+   "i": 12
+  },
+  {
+   "college": "Contra Costa College",
+   "control_number": "33324",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "extracted_run": "38979730323",
+   "gap": "no_units_printed",
+   "words": "the catalog prints AUSER-190 with no units, so the program's units cannot be added",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "The catalog prints no units for at least one required course."
+    ]
+   },
+   "path": "kb/program_requirements_college/contra_costa/records/33324.json",
+   "i": 13
+  },
+  {
+   "college": "Cuyamaca College",
+   "control_number": "21071",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748833332",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BOT-101B, BOT-102B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 89,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/cuyamaca/records/21071.json",
+   "i": 14
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "41528",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38748866826",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CHIN 101 C, CHIN 102 C, FREN 101 C, FREN 102 C and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/cypress/records/41528.json",
+   "i": 15
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "44420",
+   "award": "Noncredit program",
+   "extracted_run": "38631686677",
+   "gap": "no_units_read",
+   "words": "the record carries no units for PASS 533, PASS 534 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/el_camino/records/44420.json",
+   "i": 16
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "44465",
+   "award": "Noncredit program",
+   "extracted_run": "38631686677",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CDEV 500, CDEV 501 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/el_camino/records/44465.json",
+   "i": 17
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "44466",
+   "award": "Noncredit program",
+   "extracted_run": "38631686677",
+   "gap": "no_units_read",
+   "words": "the record carries no units for PAR 500, PAR 501, PAR 502 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/el_camino/records/44466.json",
+   "i": 18
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "44467",
+   "award": "Noncredit program",
+   "extracted_run": "38631686677",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ALH 501, HDEV 504 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/el_camino/records/44467.json",
+   "i": 19
+  },
+  {
+   "college": "El Camino College",
+   "control_number": "44584",
+   "award": "Noncredit program",
+   "extracted_run": "38631686677",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUS 563, BUS 565C and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/el_camino/records/44584.json",
+   "i": 20
+  },
+  {
+   "college": "Foothill College",
+   "control_number": "39512",
+   "award": "Noncredit program",
+   "extracted_run": "38675242638",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NCEN 401A, NCEL 403A, NCEL 403B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/foothill/records/39512.json",
+   "i": 21
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "37812",
+   "award": "Noncredit program",
+   "extracted_run": "38948144064",
+   "gap": "no_units_read",
+   "words": "the record carries no units for WELD 701, WELD 702, WELD 703 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/gavilan/records/37812.json",
+   "i": 22
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "02587",
+   "award": "A.A. Degree",
+   "extracted_run": "43415972509",
+   "gap": "major_total_differs",
+   "words": "the major sums to 18-19 against the catalog's major total 18; the overlap ruling would pass the degree if the major matched",
+   "confidence": {
+    "unit_arithmetic": 30,
+    "course_list_match": 93,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "unequal",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "unequal",
+    "gaps": [
+     "major total differs from catalog"
+    ]
+   },
+   "path": "kb/program_requirements_college/glendale_community/records/02587.json",
+   "i": 23
+  },
+  {
+   "college": "Grossmont College",
+   "control_number": "43080",
+   "award": "Noncredit program",
+   "extracted_run": "39061728041",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CSIS-070, CSIS-071 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/grossmont/records/43080.json",
+   "i": 24
+  },
+  {
+   "college": "Grossmont College",
+   "control_number": "43081",
+   "award": "Noncredit program",
+   "extracted_run": "39061728041",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CSIS-070, CSIS-072 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/grossmont/records/43081.json",
+   "i": 25
+  },
+  {
+   "college": "Hartnell College",
+   "control_number": "03571",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "extracted_run": 39949570443,
+   "gap": "no_units_read",
+   "words": "the record carries no units for HES120 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 94,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/hartnell/records/03571.json",
+   "i": 26
+  },
+  {
+   "college": "Hartnell College",
+   "control_number": "11803",
+   "award": "A.S. Degree",
+   "extracted_run": 39949570443,
+   "gap": "no_units_read",
+   "words": "the record carries no units for ABT41 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 97,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/hartnell/records/11803.json",
+   "i": 27
+  },
+  {
+   "college": "Hartnell College",
+   "control_number": "44161",
+   "award": "Noncredit program",
+   "extracted_run": 40274398240,
+   "gap": "no_units_read",
+   "words": "the record carries no units for TAC326 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/hartnell/records/44161.json",
+   "i": 28
+  },
+  {
+   "college": "Hartnell College",
+   "control_number": "44574",
+   "award": "Noncredit program",
+   "extracted_run": 40274398240,
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUS690, BUS699 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 75,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/hartnell/records/44574.json",
+   "i": 29
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "35144",
+   "award": "Noncredit program",
+   "extracted_run": "39539599944",
+   "gap": "no_units_read",
+   "words": "the record carries no units for AESL 504 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/irvine_valley/records/35144.json",
+   "i": 30
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "08101",
+   "award": "A.S. Degree",
+   "extracted_run": "38059865531",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ANIM 130, ANIM 132, ANIM 140, ANIM 146 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 89,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/mt_san_antonio/records/08101.json",
+   "i": 31
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "40185",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "extracted_run": "38059865531",
+   "gap": "no_units_read",
+   "words": "the record carries no units for CISP 21, CISP 21L, CISP 71, CISP 71L and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 80,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/mt_san_antonio/records/40185.json",
+   "i": 32
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "45976",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "38064250199",
+   "gap": "no_units_read",
+   "words": "the record carries no units for MUS 172, MUS 173, MUS 172J, MUS 173J and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 97,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/mt_san_antonio/records/45976.json",
+   "i": 33
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "06929",
+   "award": "A.S. Degree",
+   "extracted_run": "38842203500",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ADS R200A, ADS R210A, ADS R200B, ADS R210B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/oxnard/records/06929.json",
+   "i": 34
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "36569",
+   "award": "A.S. T Degree",
+   "extracted_run": "38842203500",
+   "gap": "no_units_read",
+   "words": "the record carries no units for GEOG R101L, GEOL R114L and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 88,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/oxnard/records/36569.json",
+   "i": 35
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "45471",
+   "award": "Noncredit program",
+   "extracted_run": "39852997888",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NBE 100, NBE 145, NBE 111 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/palo_verde/records/45471.json",
+   "i": 36
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "45472",
+   "award": "Noncredit program",
+   "extracted_run": "39852997888",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NBE 120, NBE 227 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/palo_verde/records/45472.json",
+   "i": 37
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "45473",
+   "award": "Noncredit program",
+   "extracted_run": "39852997888",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NBE 130, NBE 131, NBE 135 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/palo_verde/records/45473.json",
+   "i": 38
+  },
+  {
+   "college": "Palo Verde College",
+   "control_number": "46108",
+   "award": "Noncredit program",
+   "extracted_run": "39852997888",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ABE 040, ABE 100, ABE 101 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/palo_verde/records/46108.json",
+   "i": 39
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "31101",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUSN 2601A, BUSN 2601B, BUSN 7301, BUSN 7302 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/31101.json",
+   "i": 40
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "33139",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1060A, ESLN 1060B and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/33139.json",
+   "i": 41
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "33413",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUSN 2601A, BUSN 7304, HLTN 5000, HLTN 5001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/33413.json",
+   "i": 42
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "33416",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLV 3000, ESLV 3001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/33416.json",
+   "i": 43
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "33418",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLV 4000, ESLV 4001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/33418.json",
+   "i": 44
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "33697",
+   "award": null,
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUSN 2601A, BUSN 7301, BUSN 7304, BUSN 7305 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/33697.json",
+   "i": 45
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "35858",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLV 5000, ESLV 5001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/35858.json",
+   "i": 46
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "35859",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1074, ESLN 1084 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/35859.json",
+   "i": 47
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "35861",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1092, ESLN 1102, ESLN 1112 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/35861.json",
+   "i": 48
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "35862",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1094, ESLN 1104, ESLN 1114 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/35862.json",
+   "i": 49
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "38204",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BUSN 7508, BUSN 7308 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/38204.json",
+   "i": 50
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "41939",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for TRLN 2000, TRLN 2001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/41939.json",
+   "i": 51
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "41953",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for TRLN 1000, TRLN 1001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/41953.json",
+   "i": 52
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "41965",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1125, ESLN 1126 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/41965.json",
+   "i": 53
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "42195",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for DSPS 1001, DSPS 1002 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/42195.json",
+   "i": 54
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "42198",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for DSPS 1005, DSPS 1006, DSPS 1007 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/42198.json",
+   "i": 55
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "42199",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for DSPS 1003, DSPS 1004 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/42199.json",
+   "i": 56
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "44543",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for EVST 1001, EVST 1002, EVST 1003, EVST 1004 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/44543.json",
+   "i": 57
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "44896",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1000, ESLN 1001 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/44896.json",
+   "i": 58
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "44897",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESLN 1002, ESLN 1003 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/44897.json",
+   "i": 59
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "45887",
+   "award": "Noncredit program",
+   "extracted_run": "39061730187",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BLDN 2300, BLDN 2301, BLDN 2305 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/pasadena_city/records/45887.json",
+   "i": 60
+  },
+  {
+   "college": "Porterville College",
+   "control_number": "30357",
+   "award": "A.S. Degree",
+   "extracted_run": "39046786897",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NURS P130, NURS P131, NURS P132, NURS P133 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/porterville/records/30357.json",
+   "i": 61
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "44858",
+   "award": "Noncredit program",
+   "extracted_run": "38843465712",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NESL 020, NESL 021 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/rio_hondo/records/44858.json",
+   "i": 62
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "36070",
+   "award": "Noncredit program",
+   "extracted_run": 43355003065,
+   "gap": "no_units_read",
+   "words": "the record carries no units for CIT 601, CIT 602, CIT 605, CIT 606 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/36070.json",
+   "i": 63
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "37788",
+   "award": "Noncredit program",
+   "extracted_run": 43355003065,
+   "gap": "no_units_read",
+   "words": "the record carries no units for ESL 602, ESL 603, ESL 604 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/37788.json",
+   "i": 64
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "38006",
+   "award": "Noncredit program",
+   "extracted_run": 43355003065,
+   "gap": "no_units_read",
+   "words": "the record carries no units for WELD 645, WELD 646, WELD 660, WELD 666 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/38006.json",
+   "i": 65
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "39193",
+   "award": "Noncredit program",
+   "extracted_run": 43355003065,
+   "gap": "no_units_read",
+   "words": "the record carries no units for CIT 601, VOCED 631, WST 629, WST 625 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/39193.json",
+   "i": 66
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "39194",
+   "award": "Noncredit program",
+   "extracted_run": 43355003065,
+   "gap": "no_units_read",
+   "words": "the record carries no units for CIT 601, WST 601, WST 611, WST 629 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/39194.json",
+   "i": 67
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "35033",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "extracted_run": "43357106423",
+   "gap": "no_units_printed",
+   "words": "the catalog prints EDUC 010 with no units, so the program's units cannot be added",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "The catalog prints no units for at least one required course."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_jose_city/records/35033.json",
+   "i": 68
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "37492",
+   "award": "Noncredit program",
+   "extracted_run": "43357106423",
+   "gap": "no_units_read",
+   "words": "the record carries no units for MA 500A, MA 500B, MA 501, MATH 521 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/san_jose_city/records/37492.json",
+   "i": 69
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "control_number": "44788",
+   "award": "A.A. Degree",
+   "extracted_run": "39006464249",
+   "gap": "no_units_read",
+   "words": "the record carries no units for MUSC 2C, MUSC 2D, MUSC 3C, MUSC 3D and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/santa_rosa_junior/records/44788.json",
+   "i": 70
+  },
+  {
+   "college": "Southwestern College",
+   "control_number": "11413",
+   "award": "A.S. Degree",
+   "extracted_run": "38563578596",
+   "gap": "no_units_read",
+   "words": "the record carries no units for BIOL 260, BIOL 261, BIOL 265, CHEM 100 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/southwestern/records/11413.json",
+   "i": 71
+  },
+  {
+   "college": "Southwestern College",
+   "control_number": "24181",
+   "award": null,
+   "extracted_run": "38563578596",
+   "gap": "no_units_read",
+   "words": "the record carries no units for NC 10, NC 33, NC 40, NC 1050 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/southwestern/records/24181.json",
+   "i": 72
+  },
+  {
+   "college": "Taft College",
+   "control_number": "30284",
+   "award": "Certificate of Achievement: 12 to fewer than 18 semester(or 18 to fewer than 27 ",
+   "extracted_run": "39259699774",
+   "gap": "no_units_read",
+   "words": "the record carries no units for COSC 1603, COSC 1703 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 75,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/taft/records/30284.json",
+   "i": 73
+  },
+  {
+   "college": "Taft College",
+   "control_number": "31290",
+   "award": "A.A- T Degree",
+   "extracted_run": "39100858309",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ARTH 1510, ARTH 1520, ARTH 2030, ARTH 2040 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/taft/records/31290.json",
+   "i": 74
+  },
+  {
+   "college": "Taft College",
+   "control_number": "45358",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "extracted_run": "39100858309",
+   "gap": "no_units_read",
+   "words": "the record carries no units for ENGL 1600, COMM C1000 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 83,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/taft/records/45358.json",
+   "i": 75
+  },
+  {
+   "college": "Ventura College",
+   "control_number": "37415",
+   "award": "A.S. Degree",
+   "extracted_run": "38756014587",
+   "gap": "no_units_printed",
+   "words": "the catalog prints POSC V01A, POSC V01 with no units, so the program's units cannot be added",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "The catalog prints no units for at least one required course."
+    ]
+   },
+   "path": "kb/program_requirements_college/ventura/records/37415.json",
+   "i": 76
+  },
+  {
+   "college": "Victor Valley College",
+   "control_number": "37006",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675237912",
+   "gap": "no_units_printed",
+   "words": "the catalog prints AUTO 82.0 with no units, so the program's units cannot be added",
+   "confidence": {
+    "unit_arithmetic": 40,
+    "course_list_match": 75,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "The catalog prints no units for at least one required course."
+    ]
+   },
+   "path": "kb/program_requirements_college/victor_valley/records/37006.json",
+   "i": 77
+  },
+  {
+   "college": "Victor Valley College",
+   "control_number": "38352",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "extracted_run": "38675237912",
+   "gap": "no_units_read",
+   "words": "the record carries no units for AUTO 82.0 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 75,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/victor_valley/records/38352.json",
+   "i": 78
+  },
+  {
+   "college": "Victor Valley College",
+   "control_number": "43590",
+   "award": "Noncredit program",
+   "extracted_run": 43139057384,
+   "gap": "no_units_read",
+   "words": "the record carries no units for COSM 0203 and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 100,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 100
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/victor_valley/records/43590.json",
+   "i": 79
+  },
+  {
+   "college": "West Los Angeles College",
+   "control_number": "42627",
+   "award": "Noncredit program",
+   "extracted_run": "39536207109",
+   "gap": "no_units_read",
+   "words": "the record carries no units for VOC ED 411CE and its notes do not say the catalog prints none",
+   "confidence": {
+    "unit_arithmetic": 20,
+    "course_list_match": 75,
+    "ge_pattern": 100,
+    "catalog_year": 100,
+    "source": 80
+   },
+   "before": {
+    "arithmetic": "incomplete",
+    "gaps": null
+   },
+   "after": {
+    "arithmetic": "incomplete",
+    "gaps": [
+     "A required course carries no units as read, so the program's units cannot be added."
+    ]
+   },
+   "path": "kb/program_requirements_college/west_los_angeles/records/42627.json",
+   "i": 80
+  }
+ ],
+ "representation": "checks.gaps (a list of gap names) and checks.confidence (five scores 0-100) added to program_requirement_records.checks; checks.arithmetic unchanged",
+ "pre_read": "with v(i, college, control_number, extracted_run, arith_before, gaps, confidence) as (values\n  (1, 'Berkeley City College', '37797', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 60, \"unit_arithmetic\": 20}'::jsonb),\n  (2, 'Berkeley City College', '41869', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (3, 'Butte College', '14583', 42973457189, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (4, 'Cerritos College', '40651', 37961137169, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 57, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (5, 'Citrus College', '02362', 38675245799, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (6, 'College of Alameda', '01118', 42600854055, 'incomplete', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 50, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (7, 'College of the Desert', '43476', 39056007346, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (8, 'College of the Sequoias', '24184', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (9, 'College of the Sequoias', '24226', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (10, 'College of the Sequoias', '24256', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (11, 'College of the Sequoias', '37743', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (12, 'College of the Siskiyous', '37784', 42354853403, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (13, 'Contra Costa College', '33324', 38979730323, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (14, 'Cuyamaca College', '21071', 38748833332, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (15, 'Cypress College', '41528', 38748866826, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (16, 'El Camino College', '44420', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (17, 'El Camino College', '44465', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (18, 'El Camino College', '44466', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (19, 'El Camino College', '44467', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (20, 'El Camino College', '44584', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (21, 'Foothill College', '39512', 38675242638, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (22, 'Gavilan College', '37812', 38948144064, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (23, 'Glendale Community College', '02587', 43415972509, 'unequal', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 93, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (24, 'Grossmont College', '43080', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (25, 'Grossmont College', '43081', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (26, 'Hartnell College', '03571', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 94, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (27, 'Hartnell College', '11803', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (28, 'Hartnell College', '44161', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (29, 'Hartnell College', '44574', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (30, 'Irvine Valley College', '35144', 39539599944, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (31, 'Mt. San Antonio College', '08101', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (32, 'Mt. San Antonio College', '40185', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 80, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (33, 'Mt. San Antonio College', '45976', 38064250199, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (34, 'Oxnard College', '06929', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (35, 'Oxnard College', '36569', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 88, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (36, 'Palo Verde College', '45471', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (37, 'Palo Verde College', '45472', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (38, 'Palo Verde College', '45473', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (39, 'Palo Verde College', '46108', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (40, 'Pasadena City College', '31101', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (41, 'Pasadena City College', '33139', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (42, 'Pasadena City College', '33413', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (43, 'Pasadena City College', '33416', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (44, 'Pasadena City College', '33418', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (45, 'Pasadena City College', '33697', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (46, 'Pasadena City College', '35858', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (47, 'Pasadena City College', '35859', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (48, 'Pasadena City College', '35861', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (49, 'Pasadena City College', '35862', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (50, 'Pasadena City College', '38204', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (51, 'Pasadena City College', '41939', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (52, 'Pasadena City College', '41953', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (53, 'Pasadena City College', '41965', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (54, 'Pasadena City College', '42195', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (55, 'Pasadena City College', '42198', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (56, 'Pasadena City College', '42199', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (57, 'Pasadena City College', '44543', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (58, 'Pasadena City College', '44896', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (59, 'Pasadena City College', '44897', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (60, 'Pasadena City College', '45887', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (61, 'Porterville College', '30357', 39046786897, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (62, 'Rio Hondo College', '44858', 38843465712, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (63, 'San Bernardino Valley College', '36070', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (64, 'San Bernardino Valley College', '37788', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (65, 'San Bernardino Valley College', '38006', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (66, 'San Bernardino Valley College', '39193', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (67, 'San Bernardino Valley College', '39194', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (68, 'San Jose City College', '35033', 43357106423, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (69, 'San Jose City College', '37492', 43357106423, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (70, 'Santa Rosa Junior College', '44788', 39006464249, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (71, 'Southwestern College', '11413', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (72, 'Southwestern College', '24181', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (73, 'Taft College', '30284', 39259699774, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (74, 'Taft College', '31290', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (75, 'Taft College', '45358', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 83, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (76, 'Ventura College', '37415', 38756014587, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (77, 'Victor Valley College', '37006', 38675237912, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (78, 'Victor Valley College', '38352', 38675237912, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (79, 'Victor Valley College', '43590', 43139057384, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (80, 'West Los Angeles College', '42627', 39536207109, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb))\nselect json_build_object(\n  'listed', (select count(*) from v),\n  'on_run_before', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = v.arith_before and not (r.checks ? 'gaps')),\n  'on_run_has_gaps', count(*) filter (where r.extracted_run = v.extracted_run and r.checks ? 'gaps'),\n  'on_run_arith_moved', count(*) filter (where r.extracted_run = v.extracted_run and r.checks->>'arithmetic' is distinct from v.arith_before),\n  'off_run', count(*) filter (where r.extracted_run is distinct from v.extracted_run),\n  'checked_now', count(*) filter (where r.checked))\n  from v join public.program_requirement_records r\n    on r.college = v.college and r.control_number = v.control_number;",
+ "apply": "with v(i, college, control_number, extracted_run, arith_before, gaps, confidence) as (values\n  (1, 'Berkeley City College', '37797', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 60, \"unit_arithmetic\": 20}'::jsonb),\n  (2, 'Berkeley City College', '41869', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (3, 'Butte College', '14583', 42973457189, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (4, 'Cerritos College', '40651', 37961137169, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 57, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (5, 'Citrus College', '02362', 38675245799, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (6, 'College of Alameda', '01118', 42600854055, 'incomplete', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 50, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (7, 'College of the Desert', '43476', 39056007346, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (8, 'College of the Sequoias', '24184', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (9, 'College of the Sequoias', '24226', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (10, 'College of the Sequoias', '24256', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (11, 'College of the Sequoias', '37743', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (12, 'College of the Siskiyous', '37784', 42354853403, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (13, 'Contra Costa College', '33324', 38979730323, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (14, 'Cuyamaca College', '21071', 38748833332, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (15, 'Cypress College', '41528', 38748866826, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (16, 'El Camino College', '44420', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (17, 'El Camino College', '44465', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (18, 'El Camino College', '44466', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (19, 'El Camino College', '44467', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (20, 'El Camino College', '44584', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (21, 'Foothill College', '39512', 38675242638, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (22, 'Gavilan College', '37812', 38948144064, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (23, 'Glendale Community College', '02587', 43415972509, 'unequal', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 93, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (24, 'Grossmont College', '43080', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (25, 'Grossmont College', '43081', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (26, 'Hartnell College', '03571', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 94, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (27, 'Hartnell College', '11803', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (28, 'Hartnell College', '44161', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (29, 'Hartnell College', '44574', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (30, 'Irvine Valley College', '35144', 39539599944, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (31, 'Mt. San Antonio College', '08101', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (32, 'Mt. San Antonio College', '40185', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 80, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (33, 'Mt. San Antonio College', '45976', 38064250199, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (34, 'Oxnard College', '06929', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (35, 'Oxnard College', '36569', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 88, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (36, 'Palo Verde College', '45471', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (37, 'Palo Verde College', '45472', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (38, 'Palo Verde College', '45473', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (39, 'Palo Verde College', '46108', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (40, 'Pasadena City College', '31101', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (41, 'Pasadena City College', '33139', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (42, 'Pasadena City College', '33413', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (43, 'Pasadena City College', '33416', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (44, 'Pasadena City College', '33418', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (45, 'Pasadena City College', '33697', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (46, 'Pasadena City College', '35858', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (47, 'Pasadena City College', '35859', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (48, 'Pasadena City College', '35861', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (49, 'Pasadena City College', '35862', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (50, 'Pasadena City College', '38204', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (51, 'Pasadena City College', '41939', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (52, 'Pasadena City College', '41953', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (53, 'Pasadena City College', '41965', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (54, 'Pasadena City College', '42195', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (55, 'Pasadena City College', '42198', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (56, 'Pasadena City College', '42199', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (57, 'Pasadena City College', '44543', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (58, 'Pasadena City College', '44896', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (59, 'Pasadena City College', '44897', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (60, 'Pasadena City College', '45887', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (61, 'Porterville College', '30357', 39046786897, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (62, 'Rio Hondo College', '44858', 38843465712, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (63, 'San Bernardino Valley College', '36070', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (64, 'San Bernardino Valley College', '37788', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (65, 'San Bernardino Valley College', '38006', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (66, 'San Bernardino Valley College', '39193', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (67, 'San Bernardino Valley College', '39194', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (68, 'San Jose City College', '35033', 43357106423, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (69, 'San Jose City College', '37492', 43357106423, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (70, 'Santa Rosa Junior College', '44788', 39006464249, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (71, 'Southwestern College', '11413', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (72, 'Southwestern College', '24181', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (73, 'Taft College', '30284', 39259699774, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (74, 'Taft College', '31290', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (75, 'Taft College', '45358', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 83, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (76, 'Ventura College', '37415', 38756014587, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (77, 'Victor Valley College', '37006', 38675237912, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (78, 'Victor Valley College', '38352', 38675237912, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (79, 'Victor Valley College', '43590', 43139057384, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (80, 'West Los Angeles College', '42627', 39536207109, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb)),\nu as (\nupdate public.program_requirement_records r\n   set checks = r.checks || jsonb_build_object('gaps', v.gaps, 'confidence', v.confidence)\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = v.arith_before\n   and not (r.checks ? 'gaps')\nreturning v.i, r.checked)\nselect json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json),\n       'checked', coalesce(json_agg(u.i order by u.i) filter (where u.checked), '[]'::json)) as returned\n  from u;",
+ "rollback": "with v(i, college, control_number, extracted_run, arith_before, gaps, confidence) as (values\n  (1, 'Berkeley City College', '37797', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 60, \"unit_arithmetic\": 20}'::jsonb),\n  (2, 'Berkeley City College', '41869', 39891604919, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (3, 'Butte College', '14583', 42973457189, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (4, 'Cerritos College', '40651', 37961137169, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 57, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (5, 'Citrus College', '02362', 38675245799, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (6, 'College of Alameda', '01118', 42600854055, 'incomplete', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 50, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (7, 'College of the Desert', '43476', 39056007346, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (8, 'College of the Sequoias', '24184', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (9, 'College of the Sequoias', '24226', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (10, 'College of the Sequoias', '24256', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (11, 'College of the Sequoias', '37743', 38748848139, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (12, 'College of the Siskiyous', '37784', 42354853403, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (13, 'Contra Costa College', '33324', 38979730323, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (14, 'Cuyamaca College', '21071', 38748833332, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (15, 'Cypress College', '41528', 38748866826, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (16, 'El Camino College', '44420', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (17, 'El Camino College', '44465', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (18, 'El Camino College', '44466', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (19, 'El Camino College', '44467', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (20, 'El Camino College', '44584', 38631686677, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (21, 'Foothill College', '39512', 38675242638, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (22, 'Gavilan College', '37812', 38948144064, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (23, 'Glendale Community College', '02587', 43415972509, 'unequal', '[\"major total differs from catalog\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 93, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 30}'::jsonb),\n  (24, 'Grossmont College', '43080', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (25, 'Grossmont College', '43081', 39061728041, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (26, 'Hartnell College', '03571', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 94, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (27, 'Hartnell College', '11803', 39949570443, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (28, 'Hartnell College', '44161', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (29, 'Hartnell College', '44574', 40274398240, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (30, 'Irvine Valley College', '35144', 39539599944, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (31, 'Mt. San Antonio College', '08101', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 89, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (32, 'Mt. San Antonio College', '40185', 38059865531, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 80, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (33, 'Mt. San Antonio College', '45976', 38064250199, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 97, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (34, 'Oxnard College', '06929', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (35, 'Oxnard College', '36569', 38842203500, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 88, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (36, 'Palo Verde College', '45471', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (37, 'Palo Verde College', '45472', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (38, 'Palo Verde College', '45473', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (39, 'Palo Verde College', '46108', 39852997888, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (40, 'Pasadena City College', '31101', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (41, 'Pasadena City College', '33139', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (42, 'Pasadena City College', '33413', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (43, 'Pasadena City College', '33416', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (44, 'Pasadena City College', '33418', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (45, 'Pasadena City College', '33697', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (46, 'Pasadena City College', '35858', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (47, 'Pasadena City College', '35859', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (48, 'Pasadena City College', '35861', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (49, 'Pasadena City College', '35862', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (50, 'Pasadena City College', '38204', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (51, 'Pasadena City College', '41939', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (52, 'Pasadena City College', '41953', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (53, 'Pasadena City College', '41965', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (54, 'Pasadena City College', '42195', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (55, 'Pasadena City College', '42198', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (56, 'Pasadena City College', '42199', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (57, 'Pasadena City College', '44543', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (58, 'Pasadena City College', '44896', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (59, 'Pasadena City College', '44897', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (60, 'Pasadena City College', '45887', 39061730187, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (61, 'Porterville College', '30357', 39046786897, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (62, 'Rio Hondo College', '44858', 38843465712, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (63, 'San Bernardino Valley College', '36070', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (64, 'San Bernardino Valley College', '37788', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (65, 'San Bernardino Valley College', '38006', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (66, 'San Bernardino Valley College', '39193', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (67, 'San Bernardino Valley College', '39194', 43355003065, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (68, 'San Jose City College', '35033', 43357106423, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (69, 'San Jose City College', '37492', 43357106423, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (70, 'Santa Rosa Junior College', '44788', 39006464249, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb),\n  (71, 'Southwestern College', '11413', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (72, 'Southwestern College', '24181', 38563578596, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (73, 'Taft College', '30284', 39259699774, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (74, 'Taft College', '31290', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (75, 'Taft College', '45358', 39100858309, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 83, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (76, 'Ventura College', '37415', 38756014587, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (77, 'Victor Valley College', '37006', 38675237912, 'incomplete', '[\"The catalog prints no units for at least one required course.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 40}'::jsonb),\n  (78, 'Victor Valley College', '38352', 38675237912, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (79, 'Victor Valley College', '43590', 43139057384, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 100, \"ge_pattern\": 100, \"source\": 100, \"unit_arithmetic\": 20}'::jsonb),\n  (80, 'West Los Angeles College', '42627', 39536207109, 'incomplete', '[\"A required course carries no units as read, so the program''s units cannot be added.\"]'::jsonb, '{\"catalog_year\": 100, \"course_list_match\": 75, \"ge_pattern\": 100, \"source\": 80, \"unit_arithmetic\": 20}'::jsonb)),\nu as (\nupdate public.program_requirement_records r\n   set checks = (r.checks - 'gaps') - 'confidence'\n  from v\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->'gaps' = v.gaps\nreturning v.i)\nselect json_build_object('returned', count(*), 'keys', coalesce(json_agg(u.i order by u.i), '[]'::json)) as returned\n  from u;"
+}

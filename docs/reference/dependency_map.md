@@ -915,6 +915,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/mid_outcomes_compare_<date>.json` | scripts: `kb/_reclustering_s648_dryrun.py` | — |
 | `kb/status/program-requirements-checked.json` | scripts: `kb/_build_commons_status.py`, `kb/_sync_program_checked.py` | scripts: `kb/_sync_program_checked.py` · committed by: `daily-dashboard.yml` |
 | `kb/status/program-requirements.json` | tabs: `program-requirements` · scripts: `kb/_build_commons_status.py`, `scripts/queue_status.py` | — |
+| `kb/status/program_named_gaps.json` | scripts: `kb/_program_named_gaps.py` | scripts: `kb/_program_named_gaps.py` |
 | `kb/status/subjects.json` | tabs: `canonical-subj4` · scripts: `kb/_build_commons_status.py` | — |
 | `kb/subj4_apply` | none found | committed by: `phase-1e-apply.yml` |
 | `kb/subj4_apply/alias_map.json` | scripts: `kb/_rekey_promotions.py`, `kb/alias_chain.py` | — |
@@ -1260,6 +1261,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_course_graph_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_courses_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_map_parse_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_named_gaps_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_record_verdicts_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_college_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
@@ -1579,5 +1581,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1037 file
-datasets · 195 external services · 612 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1039 file
+datasets · 195 external services · 613 consumers · 72 workflows · 41 tabs.

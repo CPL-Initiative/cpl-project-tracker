@@ -94,7 +94,20 @@
    "heading_without_outcomes": true,
    "pass": true
   },
-  "pass": false
+  "pass": false,
+  "gaps": [
+   {
+    "gap": "A required course carries no units as read, so the program's units cannot be added.",
+    "words": "the record carries no units for CISP 21, CISP 21L, CISP 71, CISP 71L and its notes do not say the catalog prints none"
+   }
+  ],
+  "confidence": {
+   "unit_arithmetic": 20,
+   "course_list_match": 80,
+   "ge_pattern": 100,
+   "catalog_year": 100,
+   "source": 100
+  }
  },
  "record": {
   "program": {
