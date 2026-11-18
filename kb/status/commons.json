@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T04:02:00Z",
+ "written_at": "2026-11-18T08:43:02Z",
  "rows": [
   {
    "key": "requirements",
@@ -383,7 +383,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-17T03:13:28Z",
+    "at": "2026-11-18T04:02:04+00:00",
     "every_hours": null
    },
    "facts": {
@@ -581,9 +581,9 @@
    ],
    "pair": [
     {
-     "n": 42623,
+     "n": 52731,
      "of": null,
-     "words": "outcomes read from 11,846 courses at 16 colleges",
+     "words": "outcomes read from 13,677 courses at 19 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -591,17 +591,20 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 42623,
-    "courses": 11846,
+    "outcomes": 52731,
+    "courses": 13677,
     "colleges": [
      "cabrillo",
      "coastline_community",
+     "college_of_the_redwoods",
      "columbia",
      "contra_costa",
      "cuesta",
+     "diablo_valley",
      "golden_west",
      "lake_tahoe_community",
      "las_positas",
+     "los_medanos",
      "mission",
      "modesto_junior",
      "moreno_valley",
@@ -611,11 +614,11 @@
      "santa_ana",
      "shasta"
     ],
-    "reads": 41
+    "reads": 48
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-17T00:51:26Z",
+    "at": "2026-11-18T07:55:21Z",
     "every_hours": null
    },
    "sources": [
@@ -1042,6 +1045,17 @@
     }
    ],
    "at": "2026-11-18T04:01:30Z"
+  },
+  {
+   "kind": "decision",
+   "project": "exhibit",
+   "n": 1,
+   "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
+   "teaches": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
+   "open": null,
+   "todo_id": "slash-whole-name-titles-s679",
+   "chosen": "They stay as printed.",
+   "stop": "It stands unless you change it."
   },
   {
    "kind": "job",

@@ -15,35 +15,7 @@
   "how": "Run the receipt's rollback: it deletes exactly the ids the load's responses named, every one kind objective (Rule 10 a2). Only if the receipt carries an error (a batch whose response was lost may still have committed) does it file rollback_by_key_if_error: read_run is a column of course_outcomes and each reread's run is fresh, so it takes exactly the objective rows that read's loads inserted.",
   "never_replaces": "course_outcomes_load() is insert-only (on conflict (college, course_code, source_url, kind, fingerprint) do nothing), and kind is part of the key, so an objective row never updates or replaces an SLO row; with kind=objective no SLO row is posted at all."
  },
- "order": [
-  {
-   "step": 1,
-   "host": "cccd",
-   "system": "courseleaf",
-   "colleges": [
-    "Golden West College"
-   ],
-   "slugs": [
-    "golden_west"
-   ],
-   "articulations": 88,
-   "first_read": "41399075269",
-   "pages": 643,
-   "parts": 2,
-   "expect": "the Coast district's outline, as Coastline and Orange Coast (1,519 of 1,584)",
-   "branch": "claude/slo-objectives-golden-west",
-   "read": [
-    "catalog=golden_west",
-    "parts=2",
-    "run=<today's date>"
-   ],
-   "load": [
-    "host=cccd",
-    "kind=objective",
-    "slugs=golden_west"
-   ]
-  }
- ],
+ "order": [],
  "not_reread": [
   {
    "slug": "modesto_junior",
@@ -172,6 +144,11 @@
    "slug": "coastline_community",
    "read": "43984094171",
    "objectives": "522 objective rows loaded (load 44006629705)"
+  },
+  {
+   "slug": "golden_west",
+   "read": "44251936045",
+   "objectives": "580 objective rows loaded (load 44263910106)"
   }
  ]
 }

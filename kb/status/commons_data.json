@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-18T01:38:58Z",
+ "written_at": "2026-11-18T08:43:20Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -158,8 +158,8 @@
   "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
   "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
-  "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
-  "objectives": "Course objectives are committed for 8 hosts (ccc, cccd, cuesta, laspositas, rccd, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
+  "slo": "Course SLO reads are committed for 15 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
+  "objectives": "Course objectives are committed for 9 hosts (ccc, cccd, cuesta, laspositas, rccd, redwoods, sac, sdccd, shasta) under kb/course_outcomes/<host>/, not yet read per college here."
  },
  "statewide": {
   "colleges": 118,
@@ -177,7 +177,7 @@
   "spent_usd": 1133.52,
   "spent_runs": 118,
   "spent_since": "2026-11-17",
-  "slo_waiting": 9,
+  "slo_waiting": 10,
   "scouted": 11,
   "scout_barrier": 1,
   "spot_checked": 8,
@@ -454,7 +454,11 @@
    "read_kind": "capture",
    "cost_usd": 14.18,
    "passed_at_read": 153,
-   "slo_queue": null,
+   "slo_queue": {
+    "state": "held",
+    "why": "the eLumen 2026-27 catalog prints none: 11 of 12 trial pages answered with the description and units only, no SLO or objective heading in the page source, and PSY 101 came back empty. As at College of Marin, the course outline reports on avc.elumenapp.com/public are untried; waits on the same reader for eLumen's public Course Outline Report, then a 12-page trial",
+    "on": "2026-11-18"
+   },
    "scout": null,
    "spot_check": null,
    "confidence": {
@@ -2759,7 +2763,9 @@
    },
    "programs_file": "kb/status/commons_data_programs/college_of_the_redwoods.json",
    "outcomes_file": "kb/status/commons_data_programs/college_of_the_redwoods.outcomes.json",
-   "outline_system": null,
+   "outline_system": [
+    "elumen"
+   ],
    "objectives_printed": null,
    "read_at": "2026-11-11T12:18:07Z",
    "read_kind": "capture",
@@ -2809,7 +2815,13 @@
      "cost_usd": 5.41,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44252663448",
+     "at": "2026-11-18T07:21:08Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/redwoods/read_44252663448_p2of2.json"
+    },
     "plo_programs": 65,
     "ppm_member": null,
     "maps": {
@@ -4124,8 +4136,10 @@
    },
    "programs_file": "kb/status/commons_data_programs/diablo_valley.json",
    "outcomes_file": "kb/status/commons_data_programs/diablo_valley.outcomes.json",
-   "outline_system": null,
-   "objectives_printed": null,
+   "outline_system": [
+    "elumen"
+   ],
+   "objectives_printed": false,
    "read_at": "2026-11-13T06:35:26Z",
    "read_kind": "capture",
    "cost_usd": 13.85,
@@ -4185,7 +4199,13 @@
      "cost_usd": 13.85,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44252382792",
+     "at": "2026-11-18T07:55:21Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/dvc/read_44252382792_p3of3.json"
+    },
     "plo_programs": 213,
     "ppm_member": null,
     "maps": {
@@ -5348,11 +5368,11 @@
      "platform": "courseleaf"
     },
     "slo_read": {
-     "run": "41399075269",
-     "at": "2026-11-02T07:02:26Z",
+     "run": "44251936045",
+     "at": "2026-11-18T07:34:57Z",
      "system": "courseleaf",
      "source_kind": "course_outline",
-     "file": "kb/course_outcomes/cccd/read_41399075269_p2of2.json"
+     "file": "kb/course_outcomes/cccd/read_44251936045_p2of2.json"
     },
     "plo_programs": 128,
     "ppm_member": {
@@ -7179,8 +7199,10 @@
    },
    "programs_file": "kb/status/commons_data_programs/los_medanos.json",
    "outcomes_file": "kb/status/commons_data_programs/los_medanos.outcomes.json",
-   "outline_system": null,
-   "objectives_printed": null,
+   "outline_system": [
+    "elumen"
+   ],
+   "objectives_printed": false,
    "read_at": "2026-11-07T13:24:16Z",
    "read_kind": "capture",
    "cost_usd": 6.01,
@@ -7225,7 +7247,13 @@
      "cost_usd": 6.01,
      "platform": "elumen"
     },
-    "slo_read": null,
+    "slo_read": {
+     "run": "44253304246",
+     "at": "2026-11-18T07:31:04Z",
+     "system": "elumen",
+     "source_kind": "catalog",
+     "file": "kb/course_outcomes/lmc/read_44253304246_p2of2.json"
+    },
     "plo_programs": 82,
     "ppm_member": null,
     "maps": {

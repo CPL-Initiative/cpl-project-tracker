@@ -16,9 +16,10 @@ read 43566273142, load 43585473767, 2,532 objective rows (698, 1,151, 683), rece
 1,362 objective rows, receipt `kb/receipts/course_outcomes_sac_43684986821.json`. `laspositas` (Las Positas; 174):
 read 43816095571, load 43825849738, 776 objective rows, receipt `kb/receipts/course_outcomes_laspositas_43825849738.json`.
 `cccd` (Coastline; 123): read 43984094171, load 44006629705, 522 objective rows, receipt
-`kb/receipts/course_outcomes_cccd_44006629705.json`.
+`kb/receipts/course_outcomes_cccd_44006629705.json`. `cccd` (Golden West; 88): read 44251936045, load 44263910106,
+580 objective rows, receipt `kb/receipts/course_outcomes_cccd_44263910106.json`.
 
-1. `cccd`: Golden West (88). 2 parts.
+No step is left: every planned host is read and loaded (S680, 2026-11-18).
 
 **The dispatch.** Both workflows start on a push, never `workflow_dispatch`. Branch `claude/slo-objectives-<host>` off
 `main`; write `kb/course_outcomes/.run` with the step's `read` lines; push; open a draft PR. When every slice is filed
