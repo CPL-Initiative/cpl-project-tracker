@@ -84,8 +84,9 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     const ids = (x) => (x || "").split(",").map((v) => v.trim().replace(/"/g, ""));
     const all = (COCI.match(/var LIST_FILTERS = \[([\s\S]*?)\];/)[1].match(/\["[^"]*"/g) || []).map((v) => v.slice(2, -1))
       .concat((COCI.match(/var JOB_FILTERS = \[([\s\S]*?)\];/)[1].match(/\["[a-z]+", "/g) || []).map((v) => v.slice(2, -4)));
-    check("(1c) To do is the five jobs in Sam's order; Browse is the ten census words",
-      !!m && ids(m[1]).join() === "doubt,stray,nodesc,units,seedless" && ids(m[2]).join() === ",mid,nomid,cid,ccn,any,none,C,N,E", m && m[1]);
+    // S683: Browse closes on "Kept, not counted" (Sam, 2026-11-17: flag the record, never delete it).
+    check("(1c) To do is the five jobs in Sam's order; Browse is the ten census words, then Kept, not counted",
+      !!m && ids(m[1]).join() === "doubt,stray,nodesc,units,seedless" && ids(m[2]).join() === ",mid,nomid,cid,ccn,any,none,C,N,E,kept", m && m[1]);
     check("(1c) every filter the list has sits in exactly one group",
       !!m && all.slice().sort().join() === ids(m[1]).concat(ids(m[2])).sort().join(), all.join());
   }

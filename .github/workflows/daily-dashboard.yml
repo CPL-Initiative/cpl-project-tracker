@@ -160,6 +160,7 @@ jobs:
                     unified_courses_aligned.js \
                     credential_reference_data.js \
                     kb/row_audit/latest.json kb/row_audit/*.md \
+                    kb/coci_retired_cards.json kb/coci_inactive_cards.json kb/coci_not_applicable.json \
                     exports/unified_courses.xlsx
             # The reports the prune moved to the bucket leave with their index entries (#3476 step 5).
             # Quoted pathspecs, so git stages a tracked report's removal, which a shell glob cannot name.

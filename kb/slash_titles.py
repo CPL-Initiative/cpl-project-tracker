@@ -16,7 +16,8 @@ The S679 conductor drew the line, which Sam can revise:
   (c) An OFFICIAL-NAME SLASH stays (Sam's ruling of 2026-11-11, the certification's official name first;
       kb/cert_naming.py). A slash is an official-name slash when the words on its two sides are a pair an official
       name prints (each slash pair in cert_naming.ASE and cert_naming.MIL, such as "Electrical/Electronic") and the
-      title names that issuer (ASE), or when the title holds a phrase in OFFICIAL_PHRASES below.
+      title names that issuer (ASE), when the title holds a phrase in OFFICIAL_PHRASES below, or when it holds a
+      C-ID descriptor title that prints a slash (rule g below, read from kb/reference/cid_descriptors.json).
 
 What this module owns: the rule (and_form, slashes), the plan that carries the rule through the reviewed rename route
 (kb/cred_rename_plans/2026-11-18_slash_to_and.json; kb/ruled_renames.py reads it in the dry run and the apply,
@@ -33,6 +34,14 @@ The S679 conductor's three rulings on COBIx's review of #3479 (comment 696671409
   (f) A COMBINE is found on the title's key (case-folded, whitespace squashed), against every credential and every
       search alias in kb/credential_aliases.py: "Drywall And Lather" or an alias "Drywall and Lather" holds a rename
       to "Drywall and Lather".
+
+The S679 conductor's rulings on #3472 (the re-point list), 2026-11-18:
+  (g) A C-ID descriptor title keeps its printed slash, as an official name: "Algebra/Trigonometry-Based Physics A"
+      is the ASCCC C-ID descriptor PHYS 105's wording. OFFICIAL_CID_TITLES reads them from the committed table.
+  (h) A key a re-point creates (kb/_build_exhibit_repoint_list.py) is written ruled_form(): "Fire Service
+      in-Service Training/EMS" is "Fire Service in-Service Training and EMS", the source's capitalization kept. A
+      name the rule holds for a person (d) is never minted; its row goes to a person. The apply
+      (kb/exhibit_repoint.slash_wait) and `--check` read the same slashes(), so the three agree.
 
 The plan is append-only for applied entries. A rebuild keeps every committed entry whose old title has left
 kb/credentials.json (it reads as done in kb/ruled_renames.py) and every committed entry the rule still plans as
@@ -76,6 +85,29 @@ OFFICIAL_PHRASES = {
 _SLASH = re.compile(r"\s*/\s*")
 _TOKEN_EDGE = "()[]{},;:\"'"
 
+# (g) A C-ID DESCRIPTOR TITLE is an official name (the S679 conductor on #3472, 2026-11-18): "Algebra/Trigonometry-Based
+# Physics A" is the ASCCC C-ID descriptor PHYS 105's own wording, so a title holding it keeps the slash. The titles come
+# from the committed descriptor table, never a hand list: kb/reference/cid_descriptors.json (CCCCO's approved C-ID
+# descriptors), the same table kb/_build_exhibit_repoint_list.py names a graded canonical from.
+CID_DESCRIPTORS = os.path.join(HERE, "reference", "cid_descriptors.json")
+
+
+def _cid_titles(path=CID_DESCRIPTORS):
+    """{C-ID descriptor title that prints a slash: "C-ID <descriptor>"}, from kb/reference/cid_descriptors.json."""
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        doc = json.load(f)
+    out = {}
+    for d in doc.get("descriptors") or []:
+        t = (d.get("title") or "").strip()
+        if "/" in t:
+            out.setdefault(t, "C-ID " + (d.get("descriptor") or "").strip())
+    return out
+
+
+OFFICIAL_CID_TITLES = _cid_titles()
+
 
 def _official_pairs():
     pairs = set()
@@ -111,7 +143,7 @@ def slashes(title):
     """Each slash in the title with its reading: [(match, kind)], kind "code", "official" or "word"."""
     out = []
     t = title or ""
-    keep = [(t.find(p), t.find(p) + len(p)) for p in OFFICIAL_PHRASES if p in t]
+    keep = [(t.find(p), t.find(p) + len(p)) for p in list(OFFICIAL_PHRASES) + list(OFFICIAL_CID_TITLES) if p in t]
     ase = bool(_ASE_MARK.search(t))
     for m in _SLASH.finditer(t):
         lt, rt = _neighbors(t, m)
@@ -146,12 +178,12 @@ def sides(title, m):
 
 
 def whole_names(title, m):
-    """The reason a spaced word slash stands between two whole names, or None. Either side holds " and ", or both
-    sides are full titles (two or more words each)."""
+    """The reason a spaced word slash stands between two whole names, or None. Either side holds " and " in any
+    case ("Cutting And Burning" counts; COBIx on #3479), or both sides are full titles (two or more words each)."""
     if not (m.group(0).startswith(" ") and m.group(0).endswith(" ")):
         return None
     left, right = sides(title, m)
-    if re.search(r"\band\b", left) or re.search(r"\band\b", right):
+    if re.search(r"\band\b", left, re.I) or re.search(r"\band\b", right, re.I):
         return "a spaced slash between two names, one of which already holds \"and\" (%s | %s)" % (left, right)
     if len(left.split()) >= 2 and len(right.split()) >= 2:
         return "a spaced slash between two full titles (%s | %s)" % (left, right)
@@ -201,6 +233,16 @@ def and_form(title):
         pos = chain[-1][0].end()
     res.append(t[pos:])
     return re.sub(r"\s{2,}", " ", "".join(res)).strip()
+
+
+def ruled_form(title):
+    """The title as the rule writes it: and_form, except that a title whose word slash stands between two whole names
+    stays as printed, since the plan holds it for a person (rule d). Other modules that need the rule's spelling of a
+    title or a family head call this one (kb/_build_exhibit_repoint_list.py); none keeps its own copy."""
+    t = title or ""
+    if any(k == "word" and whole_names(t, m) for m, k in slashes(t)):
+        return t
+    return and_form(t)
 
 
 def read(title):
@@ -281,8 +323,11 @@ def build(credentials, committed=None, aliases=None):
         "rule": {"word": "a slash joining words becomes \" and \"; a chain of three or more takes commas",
                  "code": "a slash with a code on each side stays: the token holds a digit or is written in capitals",
                  "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a "
-                             "title that names ASE (kb/cert_naming.py), or a phrase in OFFICIAL_PHRASES",
+                             "title that names ASE (kb/cert_naming.py), a phrase in OFFICIAL_PHRASES, or a C-ID "
+                             "descriptor title",
                  "official_phrases": OFFICIAL_PHRASES,
+                 "official_cid_titles": "a C-ID descriptor title that prints a slash keeps it, read from "
+                                        "kb/reference/cid_descriptors.json (%d titles)" % len(OFFICIAL_CID_TITLES),
                  "whole_names": "a spaced slash between two whole names is held for a person: either side holds "
                                 "\"and\", or both sides are full titles (two or more words each)",
                  "combine": "a rename whose \"and\" title matches a credential or a search alias in "
@@ -291,6 +336,11 @@ def build(credentials, committed=None, aliases=None):
         "held": held,
         "kept": kept,
     }
+
+
+def load_plan(path=None):
+    """The committed slash-to-and plan (kb/cred_rename_plans/2026-11-18_slash_to_and.json), or None when absent."""
+    return _load(path or OUT, None)
 
 
 def uncovered(credentials, plan):
