@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 662,
-  "moniker": "SkyQuill",
+  "session": 678,
+  "moniker": "SkyWaxwing",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_663_handoff.md",
+  "handoff": "docs/session_679_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -57,13 +57,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-16T01:34:40Z",
+  "written_at": "2026-11-17T23:55:10Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Speed the exhibit pace through the procedures",
-    "text": "Exhibit remaining now falls, from 3,618 on October 27 to 3,030 on November 15, but only about 10 in the last week, so its date is years out; the next gains come from CER procedures that settle more titles a night."
+    "title": "Carry out the leftover title decisions nightly",
+    "text": "Decisions on titles that have left MAP are saved from their row; the next step runs the script that carries them out every night, then adds Rename and Combine to the leftover row, then the reviewed re-point of exhibits by MAP exhibit id and local title."
   },
   "changes": [
+    {
+      "at": "2026-11-17T23:28:00Z",
+      "text": "A title that has left MAP can now be kept, moved or removed from its own row on the Exhibits List, with its CPL type shown and a guard on graded and certification based exhibits (PR 3466). A removed title is left out of the dashboard; nothing is deleted. 446 titles are in this group."
+    },
     {
       "at": "2026-11-16T00:20:00Z",
       "text": "The exhibit count in the Commons Curation ETA now includes the titles MAP carries with no entry yet, taking the larger of the two readings, never their sum (PR 3378). Remaining exhibit work falls: 3,618 on October 27, 3,030 on November 15."

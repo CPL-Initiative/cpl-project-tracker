@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1021,
+  "file_datasets": 1023,
   "external_services": 195,
-  "consumers": 608,
+  "consumers": 609,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -15201,7 +15201,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 952
+     "line": 965
     }
    ],
    "served": false,
@@ -15797,7 +15797,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1099
+     "line": 1112
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -16625,7 +16625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1042
+     "line": 1055
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18323,6 +18323,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/blocked_catalog_hunt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_blocked_catalogs.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 14
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/reference/california_occupational_licenses.json": {
@@ -20145,7 +20158,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 778
+     "line": 791
     }
    ],
    "producers": [
@@ -24705,6 +24718,19 @@
    "main_committers": []
   },
   "file:tests/bash_read_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/blocked_catalogs_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -30645,7 +30671,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 933,
+     "line": 934,
      "tabs": [
       "commons"
      ]
@@ -35130,6 +35156,7 @@
     "tests/honors_of_rows_check_test.py",
     "tests/honors_subject_reading_test.py",
     "tests/session_spend_build_test.py",
+    "tests/blocked_catalogs_test.py",
     "tests/left_map_build_test.py",
     "tests/spend_daily_build_test.py",
     "kb/credential_aliases.py",
@@ -36041,6 +36068,7 @@
   "kb/promotions.json",
   "kb/receipts",
   "kb/reference/*.xlsx",
+  "kb/reference/blocked_catalog_hunt.json",
   "kb/reference/coci_program_*.csv",
   "kb/reference/cos_certifications.json",
   "kb/reference/moc_crosswalk.json",

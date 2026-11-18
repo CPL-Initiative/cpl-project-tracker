@@ -75,6 +75,8 @@ withhold kb/reference/cos_certifications.json
 withhold kb/reference/moc_crosswalk.json
 # The restricted tables' measured grants and policies (S660); the CDC builder reads it, no page does.
 withhold kb/reference/restricted_table_access.json
+# The blocked-catalog hunt list (S678): the builders read it; the pages read commons_data.json and commons.json.
+withhold kb/reference/blocked_catalog_hunt.json
 # The bulk COCI program and program-course dumps program-course-fetch.yml commits; no page reads them.
 withhold kb/reference/coci_program_*.csv
 # The harvest's scout files and heading-agreement snapshot (S645, review of #3201).
