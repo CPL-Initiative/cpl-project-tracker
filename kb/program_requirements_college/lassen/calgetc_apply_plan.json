@@ -347,7 +347,7 @@
    "degree_total": 60.0
   }
  ],
- "hand_holds": "31297 was moved from apply to held by hand on the conductor's decision (S651, 2026-11-14): the set step holds no record by name, so a rerun of --calgetc-apply applies it again; repeat this edit after one (tests/program_requirements_lassen_calgetc.test.js fails until it is). 33388 is kept out by the step's only_with total_units and never reaches the plan",
+ "hand_holds": "31297 was moved from apply to held by hand on the conductor's decision (S651, 2026-11-14): S680: the set step now holds 31297, 35106 and 41912 by name (its hold in kb/program_requirements_reconcile.json), so the reconcile run leaves them as main files them and a rerun of --calgetc-apply holds them too (tests/program_requirements_lassen_calgetc.test.js fails where the step drops a hold). 33388 is kept out by the step's only_with total_units and never reaches the plan",
  "run_review": {
   "run": "43581021827",
   "changed": 17,
