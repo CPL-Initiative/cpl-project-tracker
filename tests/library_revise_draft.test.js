@@ -287,6 +287,15 @@ function load(rows, onFetch) {
     for (const t of ["Earn 3 units for veterans", "Up to 6 credits for students", "Grade 9 students", "Course 2 of the students' path", "1 in 5 students", "Step 2 of 4 for apprentices"]) {
       check("G2: ⭐ left as it is: " + t, C.suppressText(t) === t, C.suppressText(t));
     }
+    // COBIx's probe of 6342aa46 (#3527): lists, fractions, ranges and the keys the first fix missed.
+    const leaks = [["4 students and 8 veterans", "<10 students and <10 veterans"], ["There were 4 students and 3 veterans", "There were <10 students and <10 veterans"],
+      ["3 of 5 students", "<10 of <10 students"], ["3 out of 7 students", "<10 out of <10 students"], ["5 of 8 students", "<10 of <10 students"],
+      ["2-3 students", "<10 students"], ["2 or 3 students", "<10 students"], ["12 of 40 students", "12 of 40 students"]];
+    for (const [t, want] of leaks) check("G2: ⭐ " + t + " -> " + want, C.suppressText(t) === want, C.suppressText(t));
+    const keys = { students_served: true, num_students_awarded: true, enrollment: true, n_awarded: true, award_count: true, veteranCount: true,
+      count: false, n: false, max_award: false, award_units: false, student_id: false };
+    check("G1: ⭐ a key counts students when a word in it names people, never a unit, an id or a bare count",
+      Object.keys(keys).every((k) => C.isCountKey(k) === keys[k]), Object.keys(keys).map((k) => k + "=" + C.isCountKey(k)).join(" "));
     check("G2: a describing word between the count and the noun still counts", C.suppressText("7 new students") === "<10 new students");
     check("G2: in a published file, \"students\": 7 reads \"<10\"", C.suppressText('{"college":"Laney","students": 7,"units":3}') === '{"college":"Laney","students": "<10","units":3}',
       C.suppressText('{"college":"Laney","students": 7,"units":3}'));
