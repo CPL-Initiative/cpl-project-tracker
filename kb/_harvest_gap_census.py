@@ -33,6 +33,9 @@ the programs the captures listed, and the causes that need the live table cannot
 Then the committed files under kb/program_requirements_college/<slug>/ (sources.json, records/,
 summary.json, capture.json or capture_preview.json, kept_passing.json).
 
+DISCONTINUED. A program kb/_program_discontinued.py flags (kb/status/program_discontinued.json) leaves the gap
+and is listed beside it with the line that marks it, so universe = passing + gap + discontinued-in-gap.
+
 Writes no table. Workflow: .github/workflows/harvest-gap-census.yml (dispatch only, anon only).
 Guard: tests/harvest_gap_census_test.py.
 """
@@ -51,6 +54,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import _program_requirements_college as C  # noqa: E402
 import _program_requirements_score as S  # noqa: E402
+import _program_discontinued as D  # noqa: E402
 
 COLLEGE_DIR = os.path.join(HERE, "program_requirements_college")
 OUT_JSON = os.path.join(HERE, "status", "harvest_gap_census.json")
@@ -94,6 +98,9 @@ CAUSE_IDS = [c for c, _ in CAUSES]
 # Listed beside the gap, never in it: the tab counts the row passing on its "unstated" status while the
 # filed score's own unstated test fails.
 TAB_ONLY = ("tab_passes_scorer_fails", "counts as passing on the tab; the scorer's own test fails")
+# Listed beside the gap, out of it: a program the college has discontinued (kb/_program_discontinued.py; Sam,
+# 2026-11-17, relayed by COBIx on #3480: flag, never delete, never show as needing attention).
+DISCONTINUED = ("discontinued", "discontinued by the college: flagged, kept, not counted as a gap")
 CAUSE_WORDS = dict(CAUSES)
 
 
@@ -327,13 +334,14 @@ LEVER_WORDS = {
 
 def census(universe: list[dict], committed: dict, records: dict | None, registry: dict,
            closed_now: dict | None = None, parked: dict | None = None,
-           outside: dict | None = None) -> dict:
+           outside: dict | None = None, discontinued: dict | None = None) -> dict:
     """universe: [{college, control_number}]; committed: read_committed(); records: {cn: live row} or
-    None when there is no live read; registry: {college: catalog_url}; closed_now: {cn: bool}."""
+    None when there is no live read; registry: {college: catalog_url}; closed_now: {cn: bool};
+    discontinued: {(college, cn): flag} (kb/_program_discontinued.py keys()), each listed apart from the gap."""
     parked = PARKED if parked is None else parked
     live = records is not None
     by_slug = committed
-    gap, passing, tab_only = [], 0, []
+    gap, passing, tab_only, flagged = [], 0, [], []
     for prog in universe:
         cn = norm_cn(prog["control_number"])
         slug = C.slug_of(prog["college"])
@@ -350,8 +358,13 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
             if scorer_unstated_fails(checks, filed):
                 tab_only.append({"college": (col or {}).get("college") or prog["college"], "control_number": cn})
             continue
-        cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         college = (col or {}).get("college") or prog["college"]
+        flag = (discontinued or {}).get((college, cn)) or (discontinued or {}).get((prog["college"], cn))
+        if flag:
+            flagged.append({"college": college, "control_number": cn, "how": flag.get("how"),
+                            "source_line": flag.get("source_line")})
+            continue
+        cause, sub = assign({"control_number": cn, "college": prog["college"]}, col, rec, live, parked)
         lever, scope = lever_of(cause, sub, college, (closed_now or {}).get(cn) if closed_now is not None else None)
         gap.append({"college": college, "control_number": cn, "cause": cause, "sub": sub,
                     "lever": lever, "scope": scope})
@@ -416,6 +429,8 @@ def census(universe: list[dict], committed: dict, records: dict | None, registry
         "outside_universe": outside or {},
         "tab_only": {"cause": TAB_ONLY[0], "what": TAB_ONLY[1], "programs": len(tab_only),
                      "members": sorted(tab_only, key=lambda x: (x["college"], x["control_number"]))},
+        "discontinued": {"cause": DISCONTINUED[0], "what": DISCONTINUED[1], "programs": len(flagged),
+                         "members": sorted(flagged, key=lambda x: (x["college"], x["control_number"]))},
         "statewide_by_cause": {c: by_cause.get(c, 0) for c in CAUSE_IDS},
         "sub_causes": [{"cause": c, "sub": s, "programs": n}
                        for (c, s), n in sorted(by_sub.items(), key=lambda x: -x[1])],
@@ -464,6 +479,9 @@ def render_md(r: dict, when: str) -> str:
     if (r.get("tab_only") or {}).get("programs"):
         L += ["Of the passing, %d %s (listed in the JSON, not counted as gaps)."
               % (r["tab_only"]["programs"], r["tab_only"]["what"]), ""]
+    if (r.get("discontinued") or {}).get("programs"):
+        L += ["Out of the gap, %d %s (listed in the JSON with the catalog line that marks each)."
+              % (r["discontinued"]["programs"], r["discontinued"]["what"]), ""]
     if r["outside_universe"]:
         L += ["Read by the harvest but outside the universe: " + ", ".join(
             "%s %d" % (k, v) for k, v in sorted(r["outside_universe"].items())) + ".", ""]
@@ -543,7 +561,7 @@ def main(argv=None) -> int:
             os.makedirs(os.path.dirname(os.path.abspath(a.export)), exist_ok=True)
             with open(a.export, "w", encoding="utf-8") as fh:
                 json.dump(data, fh)
-    r = census(universe, committed, records, registry, closed_now, outside=outside)
+    r = census(universe, committed, records, registry, closed_now, outside=outside, discontinued=D.keys())
     r["written_at"] = when
     os.makedirs(os.path.dirname(a.json), exist_ok=True)
     with open(a.json, "w", encoding="utf-8") as fh:
