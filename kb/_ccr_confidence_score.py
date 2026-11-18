@@ -8,9 +8,13 @@ reads committed files only, scores each seedless card against the evidence, and 
   1. ruled           Sam (or a curator) ruled on it in the Discipline in doubt panel: final, never reopened by a rule.
   2. merged_away     the overlay folds it into another card.
   3. not_openable    the Courses List's file (unified_courses_members.js) does not carry it.
-  4. auto_accept     score 80 or more, two agreeing signals, nothing clearly contrary, something to read, not held.
-  5. for_sam         score 25 or less, with the same other field named by two or more signals.
-  6. waiting         everything else.
+  4. flagged         a course flag takes it out of the counts: retired, inactive or not applicable (kb/_flags.py
+                     hidden_card_ids(), imported, never copied; Sam's flag-and-hide rule, docs/reference/sam_rulings.md).
+                     It is never scored, so no rule accepts it and the apply never stamps it. A card a named person
+                     reviewed stays in the counts by _flags' own rule and is scored as before.
+  5. auto_accept     score 80 or more, two agreeing signals, nothing clearly contrary, something to read, not held.
+  6. for_sam         score 25 or less, with the same other field named by two or more signals.
+  7. waiting         everything else.
 
 Then rules run on the waiting pile, each on different cards (COBIx, 2026-11-17 12:06 and 12:19 PM PT). By default
 only "follow past rulings" runs. Rules W and D are HELD (the conductor's second reader on #3467): held out on the
@@ -56,14 +60,14 @@ built from the written method in the asks on #3464 (ask-sky-discipline-confidenc
 ask-sky-rule-w.md, ask-sky-pair-default-d.md, ask-sky-follow-past-rulings.md, root-cause-waiting.md). The partition
 counts it shares with version 5 reproduce exactly (12,540 seedless, 2,019 merged away, 840 not openable, 4,036 with no
 minted membership and 113 after the fix); the score itself is a reconstruction, so its band counts differ from
-version 5's. The PR that adds it reports both. Not built here: the retired, inactive and not-applicable flags (their
-lists live in the bot's evidence folder), the auditor's title-mismatch flag, the C-ID signal and the outline-outcomes
+version 5's. The PR that adds it reports both. The retired, inactive and not-applicable flags come from kb/_flags.py
+(#3519, the flagged band). Not built here: the auditor's title-mismatch flag, the C-ID signal and the outline-outcomes
 description source.
 
 Run from the repo root:
   python3 kb/_ccr_confidence_score.py                       # today's memberships, follow past rulings
   python3 kb/_ccr_confidence_score.py --fill-members        # the membership fix
-  python3 kb/_ccr_confidence_score.py --fill-members --expect 2862   # measured 2026-11-18 with G and M (S683)
+  python3 kb/_ccr_confidence_score.py --fill-members --expect 2859   # measured 2026-11-18, G and M, flags out (S683)
   python3 kb/_ccr_confidence_score.py --fill-members --with-held-rules   # dry run of W and D, never applied
   python3 kb/_ccr_confidence_score.py --no-rules            # the base bands only
   python3 kb/_ccr_confidence_score.py --out DIR             # also write DIR/scores.csv and DIR/summary.json
@@ -82,6 +86,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
+from _flags import hidden_card_ids  # noqa: E402  (the one reader of the course flags: imported, never copied)
 
 AUTO, SAM_MAX = 80, 25
 CAP_ONE_SIGNAL = 79
@@ -200,7 +205,7 @@ def title_words(title):
 class Inputs:
     """Everything the scorer reads, from committed files."""
 
-    def __init__(self, fill_members=False):
+    def __init__(self, fill_members=False, flags_root=None):
         import _ccr_desc_signal as S
         from _alias_canon import alternate_to_canonical, resolve_target
         self.S = S
@@ -217,6 +222,8 @@ class Inputs:
                                                   only={k for k in self.courses if not k.startswith("_")})
         self.mem = mem
         self.cur = load("kb/coci_curation.json").get("curations", {})
+        # {card id: flag kind} for every card a flag takes out of the counts (a person-kept card is not in it).
+        self.flagged = hidden_card_ids(flags_root)
         with contextlib.redirect_stdout(quiet), contextlib.redirect_stderr(quiet):
             # resolve_target warns on each folded alternate name; the scorer only needs the canonical.
             self.subj = {c: resolve_target(d, rev, "subject_map[%s]" % c)
@@ -617,6 +624,9 @@ def run(inp, rules=DEFAULT_RULES, ctx=None):
             row["band"] = row["base"] = "merged_away"
         elif cid not in inp.list_members:
             row["band"] = row["base"] = "not_openable"
+        elif cid in inp.flagged:
+            row["band"] = row["base"] = "flagged"
+            row["flag"] = inp.flagged[cid]
         else:
             hold = held(cid, rec)
             renamed = person_renamed(cid, inp.cur)
@@ -680,6 +690,7 @@ def summarize(rows):
             "rule_moves": {"%s: %s -> %s" % k: n for k, n in sorted(moves.items())},
             "auto_accept": bands.get("auto_accept", 0),
             "held": sum(1 for _c, r in rows if r.get("held")),
+            "flagged": dict(sorted(Counter(r["flag"] for _c, r in rows if r["band"] == "flagged").items())),
             "rule_g_left_waiting": dict(sorted(Counter(r["g_left"] for _c, r in rows if r.get("g_left")).items())),
             "rule_m_calls": dict(sorted(Counter(r["m_call"] for _c, r in rows if r.get("m_call")).items()))}
 
@@ -766,7 +777,7 @@ def main():
     if args.out:
         os.makedirs(args.out, exist_ok=True)
         cols = ["mid", "title", "guess", "discipline", "base", "band", "rule", "proposed", "note", "score", "agree",
-                "held", "renamed", "members", "colleges", "college_votes", "reasons", "fpr_left_alone", "reads_as",
+                "held", "flag", "renamed", "members", "colleges", "college_votes", "reasons", "fpr_left_alone", "reads_as",
                 "g_left", "m_call"]
         with open(os.path.join(args.out, "scores.csv"), "w", newline="", encoding="utf-8") as f:
             w = csv.DictWriter(f, fieldnames=cols, extrasaction="ignore")

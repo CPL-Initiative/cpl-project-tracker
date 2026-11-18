@@ -17,6 +17,11 @@ kb/_ccr_seed_confirm_apply.py stamps and kb/_row_audit.py reads. Each decided ca
 `rule` is "base", "FPR", "G" or "M", so each rule's cards are found and undone apart from the others. Rules W and D
 are held on main (the second reader on #3467) and this script refuses them.
 
+A flagged card is never stamped (Sam's flag-and-hide rule, docs/reference/sam_rulings.md). The scorer puts a retired,
+inactive or not-applicable card in its flagged band, and --apply also refuses any decision on a card that
+kb/_flags.py hidden_card_ids() names (imported, never copied), so a flag that lands between the scoring and the write
+still holds. A card a named person reviewed stays in the counts by _flags' own rule.
+
 A person always wins. The scorer never decides a ruled, merged or person-curated card, and kb/_row_audit.py reads a
 person's overlay discipline (kb/coci_curation.json) as curated over any stamp, so a later ruling by Sam or a curator
 replaces the stamp on the next fold. kb/_row_audit.py counts every stamp here as machine-decided, never as a person's
@@ -30,7 +35,9 @@ The write is guarded (Rule 10): --apply refuses unless the recomputed count equa
 card changed under the run (its discipline is not the guess, or it already carries a source). The receipt,
 kb/ccr_confidence_out/<date>/receipt.json, keeps each card's before-values, so --undo --rule X puts back exactly the
 cards whose `_confidence_from.rule` is X and whose stamp is still the one this receipt wrote; every other card,
-including one a later run or a person changed, is left alone. Nothing in Supabase moves.
+including one a later run or a person changed, is left alone. A card that still holds its before-values (the course
+write failed after the receipt landed, or an undo already put it back) is reported on its own line as never stamped.
+Nothing in Supabase moves.
 
 A move needs its code (second reader on #3513). An M-ID carries its field's SUBJ4, and kb/_row_audit.py flags a card
 whose SUBJ4 is not its field's most common one. Rule M's 47 MUSI moves would outnumber Commercial Music's 38 MUSC
@@ -56,6 +63,7 @@ from datetime import datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 if HERE not in sys.path:
     sys.path.insert(0, HERE)
+from _flags import hidden_card_ids  # noqa: E402  (the one reader of the course flags: imported, never copied)
 COURSES = os.path.join(HERE, "coci_minted_courses.json")
 CANON = os.path.join(HERE, "discipline_canonical_subj4.json")
 OUT = os.path.join(HERE, "ccr_confidence_out")
@@ -150,11 +158,19 @@ def stamp(row, rule, run, day):
     return out
 
 
-def apply(rule, rows, expect, run, courses_path=COURSES, out_dir=OUT, fill_members=False, canon_path=CANON):
-    """Stamp `rows` (the scorer's decisions for `rule`) on the cards; write the receipt. Returns 0, or 2 on a refusal."""
+def apply(rule, rows, expect, run, courses_path=COURSES, out_dir=OUT, fill_members=False, canon_path=CANON,
+          hidden=None):
+    """Stamp `rows` (the scorer's decisions for `rule`) on the cards; write the receipt. Returns 0, or 2 on a refusal.
+    `hidden` is {card id: flag kind} (default: kb/_flags.py hidden_card_ids() on this checkout)."""
     import alias_chain as AC
     if expect is None or len(rows) != expect:
         print("refusing: %d %s cards decided now, --expect %s" % (len(rows), rule, expect))
+        return 2
+    hidden = hidden_card_ids() if hidden is None else hidden
+    flagged = [cid for cid, _row in rows if cid in hidden]
+    if flagged:
+        print("refusing: %d decided cards are flagged and leave every count (first: %s, %s); rescore" % (
+            len(flagged), flagged[0], hidden[flagged[0]].replace("_", " ")))
         return 2
     doc = read(courses_path)
     courses = doc["courses"]
@@ -195,12 +211,13 @@ def apply(rule, rows, expect, run, courses_path=COURSES, out_dir=OUT, fill_membe
 def undo(rule, receipts, courses_path=COURSES, chain=None):
     """Restore the cards one rule's applies stamped, from their receipts. Each receipt id resolves through the alias
     maps applied since its apply (kb/alias_chain.py; `chain` defaults to ALIAS_MAPS). Returns (restored, changed,
-    missing): changed cards a later run or a person touched are left alone; missing ids are not found at all."""
+    missing, never): changed cards a later run or a person touched are left alone; missing ids are not found at all;
+    never-stamped cards still hold their before-values, so there is nothing to undo on them."""
     import alias_chain as AC
     chain = list(AC.ALIAS_MAPS if chain is None else chain)
     doc = read(courses_path)
     courses = doc["courses"]
-    restored = changed = 0
+    restored = changed = never = 0
     missing = []
     for path in receipts:
         rec = read(path)
@@ -219,6 +236,11 @@ def undo(rule, receipts, courses_path=COURSES, chain=None):
                     missing.append(cid if now_id == cid else "%s (now %s)" % (cid, now_id))
                     continue
                 wrote = (entry.get("wrote") or {}).get(cid) or {}
+                # A card that holds its before-values was never stamped (the course write failed after the receipt
+                # landed) or was already put back: nothing to undo, and nobody changed it.
+                if all(c.get(k) == prev.get(k) for k in FIELDS):
+                    never += 1
+                    continue
                 # Only a card whose stamp is still this apply's: never a card a later run or a person changed.
                 if (c.get(STAMP) or {}).get("rule") != rule or any(c.get(k) != v for k, v in wrote.items()):
                     changed += 1
@@ -233,7 +255,10 @@ def undo(rule, receipts, courses_path=COURSES, chain=None):
     print("%srule %s: restored %d cards, left %d alone (changed since), %d not found%s" % (
         "PARTIAL undo, " if missing else "", rule, restored, changed, len(missing),
         (": " + ", ".join(missing[:5])) if missing else ""))
-    return restored, changed, len(missing)
+    if never:
+        print("rule %s: %d cards never stamped: each still holds its before-values (the course write failed, or an "
+              "undo already put it back), so there was nothing to undo" % (rule, never))
+    return restored, changed, len(missing), never
 
 
 def main():
@@ -254,7 +279,7 @@ def main():
         ap.error("--rule must be one of %s" % ", ".join(RULES))
     if a.undo:
         receipts = a.receipt or sorted(glob.glob(os.path.join(OUT, "*", "receipt.json")))
-        _restored, _changed, missing = undo(a.rule, receipts)
+        _restored, _changed, missing, _never = undo(a.rule, receipts)
         return 1 if missing else 0
     rows = decisions(a.rule, a.fill_members)
     if a.apply:

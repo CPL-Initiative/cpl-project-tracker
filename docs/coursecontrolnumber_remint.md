@@ -145,6 +145,17 @@ sitting further down the same list.
   `_apply_curation.py` BEFORE export — a cron firing mid-window would pull
   old-keyed Supabase rows back over the re-keyed git overlay.
 
+### Register the alias map before the post-apply chain
+
+- A re-mint adds its alias map to `ALIAS_MAPS` in `kb/alias_chain.py` (the one
+  declaration of the chain) **before** `kb/_post_apply_chain.py` runs, and in
+  the same commit as the re-keyed files. The chain's re-key steps resolve ids
+  through `ALIAS_MAPS`, and `kb/_flags.py` `load_flags()` compares each course
+  flag file's `_ids_current_through` stamp with the last map there: a file
+  stamped before it is set aside until the daily build rebuilds it (COBIx on
+  #3519). A map registered late leaves the old flag files in force over the
+  re-keyed ids, and a re-mint reuses slots, so a flag would hide a live card.
+
 ### Curation: alias, do NOT regenerate
 
 - The 6 curated `M-ID` keys (plus the curated `UC-CUR-…` cluster) are the
