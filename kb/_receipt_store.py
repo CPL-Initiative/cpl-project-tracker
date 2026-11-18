@@ -71,6 +71,15 @@ INDEX = os.path.join(RECEIPTS, "index")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
 BUCKET = "cpl-receipts"
 DISPLAY_KIND = "program_requirement_records_display"
+# ---- The kinds a run may hand out as an artifact (COBIx on #3495, 2026-11-18). The repository is public, so
+# anyone signed in to GitHub can download a run's artifact: a kind goes here only when its receipt holds nothing
+# beyond what a public page already shows. The bucket stays private for every kind. One table; add a kind
+# here, with its reason.
+PUBLIC_SAFE = {
+    DISPLAY_KIND: "sets program_requirement_records.display alone: the facts the public CPL Pathways page "
+                  "shows, and no person column",
+}
+# ---- end of the public-safe kinds
 # A display build's full receipt; a delta (…_delta.sql.gz) never stands for a build.
 DISPLAY_NAME = re.compile(r"^program_requirement_records_display_(\d{4}-\d{2}-\d{2})_([0-9a-f]{12})\.sql(\.gz)?$")
 FIELDS = ("name", "kind", "bucket", "object", "build", "built", "bytes", "sha256", "rows", "stored_at", "run")
@@ -342,12 +351,17 @@ def store_file(path: str, *, kind: str, build: str | None, built: str | None, ro
     return entry
 
 
-def fetch(name: str, storage, *, out: str | None = None, index_path: str | None = None, log=print) -> str:
+def fetch(name: str, storage, *, out: str | None = None, index_path: str | None = None, log=print,
+          for_artifact: bool = False) -> str:
     """Write the stored receipt NAME to `out` (a folder; kb/receipts by default, which git
     ignores) only when its bytes carry the entry's sha256. Returns the path."""
     entry = read_entry(name, index_path)
     if entry is None:
         raise SystemExit("REFUSING: the index names no stored receipt %s" % name)
+    if for_artifact and entry.get("kind") not in PUBLIC_SAFE:
+        raise SystemExit("REFUSING: %s is a %s receipt, which PUBLIC_SAFE does not declare safe to hand out as a "
+                         "run artifact (the repository is public). Re-apply it through step=display with "
+                         "force=%s, which needs no artifact." % (name, entry.get("kind"), name))
     try:
         data = storage.get(entry["object"])
     except Exception as exc:
@@ -424,6 +438,9 @@ def main(argv: list[str] | None = None) -> int:
     fp = sub.add_parser("fetch", help="write a stored receipt to a folder, checked against its sha256")
     fp.add_argument("name", help="the receipt's file name, as its index entry names it")
     fp.add_argument("--out", help="the folder (default kb/receipts, which git ignores)")
+    fp.add_argument("--for-artifact", action="store_true",
+                    help="the file becomes a run artifact anyone signed in can download: refused unless its "
+                         "kind is in PUBLIC_SAFE")
     sub.add_parser("check", help="check every index entry's shape")
     args = ap.parse_args(argv)
     if args.cmd == "check":
@@ -442,7 +459,7 @@ def main(argv: list[str] | None = None) -> int:
         return 2
     if args.cmd == "fetch":
         try:
-            fetch(args.name, Storage(key), out=args.out)
+            fetch(args.name, Storage(key), out=args.out, for_artifact=args.for_artifact)
             return 0
         except SystemExit as exc:
             print(exc)

@@ -264,6 +264,27 @@ try:
     except SystemExit:
         check(True, "fetch refuses a name the index does not hold")
 
+    # ---- A run artifact is public: only a PUBLIC_SAFE kind is handed out as one.
+    p2 = S.fetch(NAME, bucket, out=out, index_path=index, log=log, for_artifact=True)
+    check(open(p2, "rb").read() == data and S.DISPLAY_KIND in S.PUBLIC_SAFE,
+          "a display receipt, declared public-safe, is fetched for an artifact")
+    os.remove(p2)
+    ixp = os.path.join(tmp, "index_private")
+    other_name = "row_audit_2026-11-01.md"
+    S.add_entry({"name": other_name, "kind": "row_audit", "bucket": S.BUCKET, "object": "row_audit/" + other_name,
+                 "build": None, "built": None, "bytes": 3, "sha256": S.sha256_bytes(b"abc"), "rows": 0,
+                 "stored_at": "2026-11-18T00:00:00Z", "run": None}, ixp)
+    bucket.objects["row_audit/" + other_name] = b"abc"
+    try:
+        S.fetch(other_name, bucket, out=out, index_path=ixp, log=log, for_artifact=True)
+        check(False, "a kind not declared public-safe is refused for an artifact")
+    except SystemExit as exc:
+        check("PUBLIC_SAFE" in str(exc) and "step=display" in str(exc) and not os.listdir(out),
+              "a kind not declared public-safe is refused for an artifact, names the re-apply, and writes nothing")
+    check(open(S.fetch(other_name, bucket, out=out, index_path=ixp, log=log), "rb").read() == b"abc",
+          "the runner itself may still fetch any kind it applies")
+    os.remove(os.path.join(out, other_name))
+
     # ---- (a) the apply: the bucket first, then the repo copy, each only at the index's sha256.
     got = A.stored_receipt(BUILD, fetch=bucket.get, folder=folder, index_path=index)
     check(got["source"] == "cpl-receipts/display/" + NAME and got["local"] != path
@@ -439,6 +460,12 @@ check(mode_of(NAME + " " + rec_path) == (0, {"receipt": NAME, "keys": rec_path, 
 for bad in ("Cerritos College", NAME + " ../etc/passwd", NAME + " a b", "supersede now", "*"):
     check(mode_of(bad)[0] != 0, "force=%r is refused on a display" % bad)
 fj = wf[wf.index("\n  fetch:\n"):]
+check("--for-artifact" in fj and "retention-days: 1\n" in fj and fj.count("retention-days") == 1,
+      "the fetch artifact is a public-safe kind only, kept one day")
+dj = wf[wf.index("\n  display:\n"):wf.index("\n  fetch:\n")]
+check(re.findall(r"path: (.*)", dj) == ["kb/receipts/*${{ github.run_id }}*"],
+      "the display job's artifact holds only files carrying the run id (the applied records), never the built "
+      "receipt, whose name carries its date and build")
 check("step == 'fetch'" in fj and "kb/_receipt_store.py fetch" in fj and "upload-artifact" in fj
       and "git commit" not in fj and "SUPABASE_SERVICE_KEY" in fj,
       "step=fetch reads a stored receipt on the runner and leaves it as an artifact, committing nothing")
