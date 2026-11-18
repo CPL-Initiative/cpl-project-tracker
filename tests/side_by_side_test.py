@@ -99,6 +99,15 @@ check("5 it writes only its two outputs", set(re.findall(r'OUT_[A-Z]+ = "([^"]+)
 check("5 it sends nothing over the network", not re.search(r"urllib|requests|http\.client|supabase", src.split('"""', 2)[2], re.I))
 p = subprocess.run([sys.executable, "kb/_build_side_by_side.py", "--check"], cwd=ROOT, capture_output=True, text=True)
 check("5 the committed files are what the builder builds today", p.returncode == 0, p.stderr.strip())
+# A credential rename rewrites coci_articulations.json's canonical titles, which the rows read: the 2026-11-18 apply left
+# kb/exhibit_side_by_side.json stale until S679 rebuilt it. The rename workflow rebuilds and commits both outputs.
+rw = open(os.path.join(ROOT, ".github", "workflows", "cred-rename-apply.yml"), encoding="utf-8").read()
+rb = rw[rw.index("name: Rebuild the files derived from the credential keys"):]
+rb = rb[:rb.index("- name:", 10)]
+rc = rw[rw.index("name: Commit + push"):]
+rc = rc[:rc.index("git diff --cached")]
+check("5 the rename workflow rebuilds the side by side with the files derived from the credential keys, and commits it",
+      "python3 kb/_build_side_by_side.py" in rb and "kb/side_by_side.json" in rc and "kb/exhibit_side_by_side.json" in rc)
 
 fails = [r for r in results if not r[1]]
 for name, ok, why in results:

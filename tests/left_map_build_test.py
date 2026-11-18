@@ -359,5 +359,14 @@ with tempfile.TemporaryDirectory() as td:
     finally:
         R.UNIFIED_TITLES = real_ut
 
+# A credential rename rewrites unified_titles.json and coci_articulations.json, which this file is built from: the
+# 2026-11-18 apply left it stale and main's tests red until S679 rebuilt it. The rename workflow rebuilds and commits it.
+rw = open(os.path.join(ROOT, ".github", "workflows", "cred-rename-apply.yml"), encoding="utf-8").read()
+rb = rw[rw.index("name: Rebuild the files derived from the credential keys"):]
+rb = rb[:rb.index("- name:", 10)]
+rc = rw[rw.index("name: Commit + push"):]
+check("the rename workflow rebuilds the leftover-title file with the files derived from the credential keys, and commits it",
+      "python3 kb/_build_left_map.py" in rb and "kb/exhibit_left_map.json" in rc[:rc.index("git diff --cached")])
+
 print("\n%d/%d checks passed" % (sum(results), len(results)))
 sys.exit(0 if all(results) else 1)

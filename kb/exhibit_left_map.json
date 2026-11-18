@@ -2076,7 +2076,7 @@
    "only_local": true
   },
   "Apprenticeship Carpentry, Drywall/Lather, AS": {
-   "canonical": "Carpenters Apprenticeship — Drywall/Lather",
+   "canonical": "Carpenters Apprenticeship — Drywall and Lather",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -2088,7 +2088,7 @@
    "only_local": false
   },
   "Apprenticeship Carpentry, Drywall/Lather, CA": {
-   "canonical": "Carpenters Apprenticeship — Drywall/Lather",
+   "canonical": "Carpenters Apprenticeship — Drywall and Lather",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -3540,7 +3540,7 @@
    "only_local": true
   },
   "Carpenter’s Training Center CTCNC CARP 012": {
-   "canonical": "Layout/Leveling Construction Site Practice",
+   "canonical": "Layout and Leveling Construction Site Practice",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -3671,7 +3671,7 @@
    "only_local": true
   },
   "Carpenter’s Training Center CTCNC CARP 103": {
-   "canonical": "Mathematics for Drywall/Lathers",
+   "canonical": "Mathematics for Drywall and Lathers",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -3683,7 +3683,7 @@
    "only_local": true
   },
   "Carpenter’s Training Center CTCNC CARP 104": {
-   "canonical": "Exterior/Advanced Fire Control System and Partitions",
+   "canonical": "Exterior and Advanced Fire Control System and Partitions",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -3695,7 +3695,7 @@
    "only_local": true
   },
   "Carpenter’s Training Center CTCNC CARP 105": {
-   "canonical": "Doors, Windows, Exterior Systems/Building Documents",
+   "canonical": "Doors, Windows, Exterior Systems and Building Documents",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -4222,7 +4222,7 @@
    "only_local": true
   },
   "Carpenter’s Training Center CTCNC CARP 310": {
-   "canonical": "Layout/Leveling Construction Site Practice",
+   "canonical": "Layout and Leveling Construction Site Practice",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -7746,7 +7746,7 @@
    "only_local": false
   },
   "Industry for HORT 56": {
-   "canonical": "Arboriculture/Urban Forestry",
+   "canonical": "Arboriculture and Urban Forestry",
    "type": "CPL type not recorded",
    "group": "",
    "used": false,
@@ -9397,7 +9397,7 @@
    "only_local": false
   },
   "Portfolio for ARTS 12A": {
-   "canonical": "Oil/Acrylic Painting: Beginning 1",
+   "canonical": "Oil and Acrylic Painting: Beginning 1",
    "type": "CPL type not recorded",
    "group": "",
    "used": false,
@@ -10359,7 +10359,7 @@
    "only_local": false
   },
   "UA Local 342 Plumbers/Pipefitters SHME 100": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10369,7 +10369,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 101": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10379,7 +10379,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 110": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10389,7 +10389,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 111": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10399,7 +10399,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 120": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10409,7 +10409,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 121": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10419,7 +10419,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 130": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10429,7 +10429,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 131": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10439,7 +10439,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 140": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10449,7 +10449,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 141": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10459,7 +10459,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 150": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -10471,7 +10471,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SHME 151": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -10483,7 +10483,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 100": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10493,7 +10493,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 101": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10503,7 +10503,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 110": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10513,7 +10513,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 111": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10523,7 +10523,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 120": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10533,7 +10533,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 121": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10543,7 +10543,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 130": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10553,7 +10553,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 131": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10563,7 +10563,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 140": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -10573,7 +10573,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters SMTEC 141": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141",
    "type": "Industry Certification",
    "group": "cert",
    "used": true,
@@ -10585,7 +10585,7 @@
    "only_local": true
   },
   "UA Local 342 Plumbers/Pipefitters Work Experience": {
-   "canonical": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "canonical": "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience",
    "type": "Industry Certification",
    "group": "cert",
    "used": false,
@@ -11332,7 +11332,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Adv ESL: Writing/Grammar": {
+  "Adv ESL: Writing and Grammar": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -11376,7 +11376,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Advanced Desserts and Pastry/Chocolate/Sugar": {
+  "Advanced Desserts and Pastry, Chocolate, and Sugar": {
    "type": "Portfolio Review",
    "group": "graded"
   },
@@ -11732,7 +11732,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Arboriculture/Urban Forestry": {
+  "Arboriculture and Urban Forestry": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -11768,15 +11768,15 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Architecture/Green Design: Implementation using AutoCAD": {
+  "Architecture and Green Design: Implementation using AutoCAD": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Architecture/Green Design: Planning and Construction": {
+  "Architecture and Green Design: Planning and Construction": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Architecture/Green Design: Principles and Practices": {
+  "Architecture and Green Design: Principles and Practices": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -11872,11 +11872,11 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Autodesk Certified User/Professional — AutoCAD": {
+  "Autodesk Certified User and Professional — AutoCAD": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Autodesk Certified User/Professional — Revit Architecture": {
+  "Autodesk Certified User and Professional — Revit Architecture": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -12440,7 +12440,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Building Automation System (BAS) Certification — Manufacturer/Vendor": {
+  "Building Automation System (BAS) Certification — Manufacturer and Vendor": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -12600,7 +12600,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "CCDET Clean Truck-Check & HD Safety/Pollution Certifications": {
+  "CCDET Clean Truck-Check & HD Safety and Pollution Certifications": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
   },
@@ -12812,7 +12812,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Calculations in Water/Wastewater Technology": {
+  "Calculations in Water and Wastewater Technology": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -13000,27 +13000,27 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Carpenters Apprenticeship — Drywall/Lather": {
+  "Carpenters Apprenticeship — Drywall and Lather": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Carpenters Apprenticeship — Drywall/Lather Journeyperson": {
+  "Carpenters Apprenticeship — Drywall and Lather Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Carpenters Apprenticeship — Drywall/Lather Year 1": {
+  "Carpenters Apprenticeship — Drywall and Lather Year 1": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Carpenters Apprenticeship — Drywall/Lather Year 2": {
+  "Carpenters Apprenticeship — Drywall and Lather Year 2": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Carpenters Apprenticeship — Drywall/Lather Year 3": {
+  "Carpenters Apprenticeship — Drywall and Lather Year 3": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Carpenters Apprenticeship — Drywall/Lather Year 4": {
+  "Carpenters Apprenticeship — Drywall and Lather Year 4": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -13712,7 +13712,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Concealed/Glue-Up/Staple-Up Ceiling Systems": {
+  "Concealed, Glue-Up, and Staple-Up Ceiling Systems": {
    "type": "Portfolio Review",
    "group": "graded"
   },
@@ -13748,7 +13748,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Confined Space Rescue Operations/Technician": {
+  "Confined Space Rescue Operations and Technician": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -14320,7 +14320,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Diesel Electrical/Electronic Systems": {
+  "Diesel Electrical and Electronic Systems": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -14468,7 +14468,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Doors, Windows, Exterior Systems/Building Documents": {
+  "Doors, Windows, Exterior Systems and Building Documents": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -14608,7 +14608,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Education / Careers in Education Intermediate": {
+  "Education and Careers in Education Intermediate": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -14884,7 +14884,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Emergency Medical Response — CPR Pro/Healthcare Provider": {
+  "Emergency Medical Response — CPR Pro and Healthcare Provider": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
   },
@@ -15120,7 +15120,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Exterior/Advanced Fire Control System and Partitions": {
+  "Exterior and Advanced Fire Control System and Partitions": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -15364,7 +15364,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Fire Control 4A — Ignitable Liquids and Gases Awareness/Operations": {
+  "Fire Control 4A — Ignitable Liquids and Gases Awareness and Operations": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -15876,7 +15876,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Fuel Systems/Emission Controls": {
+  "Fuel Systems and Emission Controls": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -16196,7 +16196,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "HAZWOPER First Responder Awareness/Operations": {
+  "HAZWOPER First Responder Awareness and Operations": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -16228,7 +16228,7 @@
    "type": "Credit By Exam, Portfolio Review, Industry Certification and Military (mixed)",
    "group": "mixed"
   },
-  "Hairstyling Services/Haircutting 2": {
+  "Hairstyling Services and Haircutting 2": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -16332,7 +16332,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Heavy/Medium Duty Truck Technology Apprenticeship": {
+  "Heavy and Medium Duty Truck Technology Apprenticeship": {
    "type": "Other",
    "group": "cert"
   },
@@ -16480,7 +16480,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Hydraulics/Pneumatics": {
+  "Hydraulics and Pneumatics": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
   },
@@ -16772,7 +16772,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Infant/Toddler Practicum": {
+  "Infant and Toddler Practicum": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -17292,7 +17292,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Introduction to Engineering Design/Graphics": {
+  "Introduction to Engineering Design and Graphics": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -17688,7 +17688,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Introduction to UNIX/Linux": {
+  "Introduction to UNIX and Linux": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -17912,7 +17912,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Ironworker Apprenticeship — OSHA 30/Extension Review": {
+  "Ironworker Apprenticeship — OSHA 30 and Extension Review": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -18080,11 +18080,11 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather": {
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Journeyman Certificate- Apprenticeship Carpentry, Drywall/Lather (Interior Systems)": {
+  "Journeyman Certificate- Apprenticeship Carpentry, Drywall and Lather (Interior Systems)": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -18220,7 +18220,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Layout/Leveling Construction Site Practice": {
+  "Layout and Leveling Construction Site Practice": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -18460,12 +18460,12 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Maternal-Newborn Nursing": {
-   "type": "Military",
+  "Maternal and Newborn Nursing Care": {
+   "type": "Industry Certification",
    "group": "cert"
   },
-  "Maternal/Newborn Nursing Care": {
-   "type": "Industry Certification",
+  "Maternal-Newborn Nursing": {
+   "type": "Military",
    "group": "cert"
   },
   "Math for Construction Trades": {
@@ -18488,7 +18488,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Mathematics for Drywall/Lathers": {
+  "Mathematics for Drywall and Lathers": {
    "type": "Industry Certification",
    "group": "cert"
   },
@@ -19080,7 +19080,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "NCCER Commercial Electrician Level 4/Journey Level": {
+  "NCCER Commercial Electrician Level 4 and Journey Level": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19124,7 +19124,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "NCCER Industrial Electrician Level 4/Journey Level": {
+  "NCCER Industrial Electrician Level 4 and Journey Level": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19296,7 +19296,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Nursing Skills/Clinical Simulation Laboratory Beginning": {
+  "Nursing Skills and Clinical Simulation Laboratory Beginning": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -19372,7 +19372,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Oil/Acrylic Painting: Beginning 1": {
+  "Oil and Acrylic Painting: Beginning 1": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19924,7 +19924,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Prefab/Sound Panels": {
+  "Prefab and Sound Panels": {
    "type": "Portfolio Review",
    "group": "graded"
   },
@@ -20000,7 +20000,7 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
-  "Principles of Infant/Toddler Caregiving": {
+  "Principles of Infant and Toddler Caregiving": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -20016,7 +20016,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Principles of Power Mechanics/Small Engines": {
+  "Principles of Power Mechanics and Small Engines": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -20820,6 +20820,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Spanish and English Linguistics Analysis": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Spanish for Heritage Speakers 1": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
@@ -20827,10 +20831,6 @@
   "Spanish for Heritage Speakers 2": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
-  },
-  "Spanish/English Linguistics Analysis": {
-   "type": "CPL type not recorded",
-   "group": ""
   },
   "Speaking and Listening Fluency for Academic and Professional Purposes": {
    "type": "CPL type not recorded",
@@ -20900,7 +20900,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Standard First Aid/CPR/AED": {
+  "Standard First Aid, CPR, and AED": {
    "type": "Portfolio Review and Industry Certification (mixed)",
    "group": "mixed"
   },
@@ -21228,11 +21228,11 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Tool/Equipment Applications — Emergency Response Procedures": {
+  "Tool and Equipment Applications — Emergency Response Procedures": {
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "Tool/Equipment Applications — Fall Protection": {
+  "Tool and Equipment Applications — Fall Protection": {
    "type": "Portfolio Review",
    "group": "graded"
   },
@@ -21264,7 +21264,7 @@
    "type": "Industry Certification",
    "group": "cert"
   },
-  "Transit Level/Laser": {
+  "Transit Level and Laser": {
    "type": "Portfolio Review",
    "group": "graded"
   },
@@ -21356,115 +21356,115 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 100": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 101": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 110": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 111": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 120": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 121": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 130": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 131": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 140": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 141": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 150": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 150": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 151": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SHME 151": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 100": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 101": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 110": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 111": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 120": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 121": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 130": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 131": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 140": {
    "type": "Industry Certification",
    "group": "cert"
   },
-  "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 141": {
+  "UA Local 342 Plumbers and Pipefitters Apprenticeship — SMTEC 141": {
    "type": "Industry Certification",
    "group": "cert"
+  },
+  "UA Plumbers and Pipefitters Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "UA Plumbers and Pipefitters Apprenticeship — Level 1": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "UA Plumbers/Pipefitters Apprenticeship — Journeyperson": {
+  "UA Plumbers and Pipefitters Apprenticeship — Level 2": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "UA Plumbers/Pipefitters Apprenticeship — Level 2": {
+  "UA Plumbers and Pipefitters Apprenticeship — Level 3": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "UA Plumbers/Pipefitters Apprenticeship — Level 3": {
-   "type": "CPL type not recorded",
-   "group": ""
-  },
-  "UA Plumbers/Pipefitters Apprenticeship — Level 4": {
+  "UA Plumbers and Pipefitters Apprenticeship — Level 4": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21516,7 +21516,7 @@
    "type": "Portfolio Review",
    "group": "graded"
   },
-  "UNIX/Linux Systems and Programming": {
+  "UNIX and Linux Systems and Programming": {
    "type": "Credit By Exam",
    "group": "graded"
   },
@@ -21792,7 +21792,7 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "Water/Wastewater Operator Certification": {
+  "Water and Wastewater Operator Certification": {
    "type": "CPL type not recorded",
    "group": ""
   },
