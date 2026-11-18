@@ -79,11 +79,14 @@ check("the counts add up: seedless = merged away + not openable + openable",
 check("every card that reads none is among those that differ", k["scorer_reads_none"] <= k["scorer_and_list_differ"], k)
 
 # 4. Exhibits
+# The worked case is MAPICA-AATA-1-001 while it sits on a Review card; a CER procedures run can settle it (run
+# 44350607385 did), so the check then reads the first exhibit the Review builder set a course aside for as an industry certification.
 x = E["exhibits"].get("MAPICA-AATA-1-001") or {}
+if not x.get("a"):
+    x = next((r for r in E["exhibits"].values() if " was set aside: this exhibit is an industry certification, not credit by exam." in (r.get("a") or "")), {})
 check("4 the Review card's exhibit: no official certification name on file", x.get("n") == 1 and x.get("k") == "cert-based", x)
 check("4 it names the course the Review builder set aside",
-      x.get("a") == "Foothill College AATA 103A (Ultrasonic Testing Level One) was set aside: this exhibit is an industry "
-                    "certification, not credit by exam.", x.get("a"))
+      " was set aside: this exhibit is an industry certification, not credit by exam." in (x.get("a") or ""), x.get("a"))
 check("4 the type comes from MAP's record when MAP has one",
       all(r.get("ts") == "map" for r in E["exhibits"].values() if r.get("t") in ("Credit By Exam", "Industry Certification")
           and r.get("ts") != "id") and E["counts"]["type_from_map"] > 0)
@@ -108,6 +111,14 @@ rc = rw[rw.index("name: Commit + push"):]
 rc = rc[:rc.index("git diff --cached")]
 check("5 the rename workflow rebuilds the side by side with the files derived from the credential keys, and commits it",
       "python3 kb/_build_side_by_side.py" in rb and "kb/side_by_side.json" in rc and "kb/exhibit_side_by_side.json" in rc)
+# The CER procedures run rewrites kb/exhibits_review.json, which the exhibit rows read: run 44350607385 (2026-11-18)
+# left kb/exhibit_side_by_side.json stale and every PR red. It rebuilds after the review queue and commits both files.
+cw = open(os.path.join(ROOT, ".github", "workflows", "cer-procedures.yml"), encoding="utf-8").read()
+cq, cs = cw.find("name: Build the Exhibits review queue"), cw.find("name: Build the Side by side views")
+cc = cw[cw.index("name: Commit the run"):]
+check("5 the CER procedures run rebuilds the side by side after its review queue, and commits both files",
+      0 <= cq < cs and "python3 kb/_build_side_by_side.py" in cw[cs:cs + 400]
+      and "kb/exhibit_side_by_side.json" in cc and "kb/side_by_side.json" in cc)
 # The daily rebuilds both files after the steps that write what the rows read (the review queue's
 # kb/exhibits_adoption.json, the cert links), commits them, and a failure turns the run red under the failure watch.
 wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
