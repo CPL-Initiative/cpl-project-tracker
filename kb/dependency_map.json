@@ -4,10 +4,10 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1037,
+  "file_datasets": 1040,
   "external_services": 195,
-  "consumers": 612,
-  "workflows": 72,
+  "consumers": 614,
+  "workflows": 73,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -4734,6 +4734,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:.github/repo_size_exceptions.txt": {
+   "consumers": [
+    {
+     "id": "script:scripts/repo_size_guard.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:/tmp/metrics_status": {
    "consumers": [
     {
@@ -4890,6 +4903,13 @@
      "direction": "read",
      "how": "literal",
      "line": 86
+    },
+    {
+     "id": "script:scripts/repo_size_guard.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "served": false,
@@ -24137,6 +24157,26 @@
    "served": false,
    "main_committers": []
   },
+  "file:scripts/repo_size_guard.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:repo-size-guard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/stamp_asset_versions.py": {
    "consumers": [
     {
@@ -27466,6 +27506,19 @@
    "main_committers": []
   },
   "file:tests/remint_blast_radius_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:tests/repo_size_guard_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -35465,6 +35518,8 @@
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
     "tests/pages_allowlist.test.js",
+    "scripts/repo_size_guard.py",
+    "tests/repo_size_guard_test.py",
     "prototype/check_contrast.py",
     "tests/supabase_function_grants_test.py",
     "tests/refresh_button_no_secret_test.py",
@@ -36057,6 +36112,20 @@
     "kb/projects_seed_out/"
    ],
    "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "repo-size-guard.yml": {
+   "name": "Repo size guard",
+   "crons": [
+    "23 15 * * 1"
+   ],
+   "scripts": [
+    "scripts/repo_size_guard.py"
+   ],
+   "adds": [],
+   "push": null,
    "deploys": [],
    "chain": [],
    "urls": []

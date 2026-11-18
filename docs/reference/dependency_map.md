@@ -363,6 +363,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `.claude/commands/checkpoint.md` | scripts: `kb/_consolidation_loss_audit.py`, `kb/_doctrine_scenarios.py` | — |
 | `.claude/settings.json` | scripts: `scripts/check_hooks_live.py`, `scripts/install_prompt_guards.py` | scripts: `scripts/install_prompt_guards.py` |
 | `.github/pages_allowlist.txt` | scripts: `kb/_build_cdc_sharing.py` | — |
+| `.github/repo_size_exceptions.txt` | scripts: `scripts/repo_size_guard.py` | — |
 | `/tmp/metrics_status` | workflows: `daily-dashboard.yml` | — |
 | `/tmp/scrape_detail` | workflows: `daily-dashboard.yml` | — |
 | `<date>-skyview-globe-prototype.html` | scripts: `prototype/globe/build_globe.py` | scripts: `prototype/globe/build_globe.py` |
@@ -371,7 +372,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<date>_slash_to_and.json` | scripts: `kb/slash_titles.py` | scripts: `kb/slash_titles.py` |
 | `<date>_standards.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
 | `<date>_standards_2.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
-| `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
+| `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py`, `scripts/repo_size_guard.py` | — |
 | `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
@@ -1069,6 +1070,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/panel.html` | scripts: `scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
+| `scripts/repo_size_guard.py` | workflows: `js-tests.yml`, `repo-size-guard.yml` | — |
 | `scripts/stamp_asset_versions.py` | workflows: `pages.yml` | — |
 | `scripts/supabase_migrate.py` | workflows: `supabase-migrate.yml` | — |
 | `scripts/tab_review_sheet/fs/capture.json` | none found | modules: `scripts/tab_review_sheet/capture.js` |
@@ -1285,6 +1287,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/rekey_crnc_mirrors_test.py` | workflows: `js-tests.yml` | — |
 | `tests/rekey_kb_curation_chain_test.py` | workflows: `js-tests.yml` | — |
 | `tests/remint_blast_radius_test.py` | workflows: `js-tests.yml` | — |
+| `tests/repo_size_guard_test.py` | workflows: `js-tests.yml` | — |
 | `tests/roep_display_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_subject_outlier_test.py` | workflows: `js-tests.yml` | — |
 | `tests/row_audit_top_source_score_test.py` | workflows: `js-tests.yml` | — |
@@ -1579,5 +1582,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1037 file
-datasets · 195 external services · 612 consumers · 72 workflows · 41 tabs.
+Coverage: 116 Supabase tables · 65 RPCs · 15 edge functions · 1040 file
+datasets · 195 external services · 614 consumers · 73 workflows · 41 tabs.
