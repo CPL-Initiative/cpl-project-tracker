@@ -1,0 +1,79 @@
+CNT 010 Computer Network Fundamentals
+
+Units: 3.0
+
+Print Page
+
+Back to department listing
+
+Description:
+
+This course introduces the architecture, structure, functions, components, and models of the Internet and other computer networks. The principles and structure of IP (Internet Protocol) addressing and the fundamentals of Ethernet concepts, media, and operations are introduced to provide a foundation for further study of computer networks. It uses the OSI (Open Systems Interconnection) and TCP (Transmission Control Protocol) layered models to examine the nature and roles of protocols and services at the application, network, data link, and physical layers.
+
+Credits Status:
+
+Credit - Degree Applicable
+
+Requisites:
+
+Advisory
+ENGLC1000 - Academic Reading and Writing
+
+
+Course Note:
+
+None
+
+Enrollment Limitation:
+
+None
+
+Transferable:
+
+Transferable to CSU only
+
+Repeatability:
+
+None
+
+General Education:
+
+Not approved for General Education
+
+Student Learning Outcomes:
+
+CSLO 1: Describe and differentiate the devices and services used to support communications in data networks and the Internet, including the role of protocol layers. (PLSO 1, 2 - Networking & Security; PSLO 1, 3 â€“ Computer Support Specialist)
+CSLO 3: Explain fundamental Ethernet concepts such as media, services, and operations and use them to build a simple network using routers and switches. (PLSO 1, 2, 3 - Networking & Security; PSLO 3 â€“ Computer Support Specialist; PSLO 1, 3 â€“ Computer Systems Specialist)
+CSLO 2: Evaluate and apply the addressing and naming schemes at various layers of data networks in IPv4 and IPv6 environments, including the design, calculation, and application of subnet masks and addresses. (PLSO 1, 2, 3 - Networking & Security)
+CSLO 4: Configure, monitor, and operate small networks using industry standard commands and common network utilities. (PLSO 1, 2, 3 - Networking & Security; PSLO 1, 3 – Computer Support Specialist; PSLO 1, 3 – Computer Systems Specialist)
+
+Grade Options:
+
+Letter Grade Methods (LR)
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+90.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+36.0
+
+Lab Hours
+
+54.0
+
+Activity Hours
+
+0.0

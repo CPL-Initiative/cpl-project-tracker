@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
+    23.5,
     23.5
    ],
    "stated": [
@@ -72,9 +72,8 @@
     23.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 23.0-23.5; the catalog states 23.5-23.5"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,8 +208,9 @@
       "alternatives": [
        {
         "code": "HORT 299",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -228,5 +228,13 @@
    "Careers are taken from the certificate description 'cross-trains students for work in the wine production, wine sales, and viticulture areas'; the general Certificates tab text about landscape management employment was not attributed to this program."
   ]
  },
- "extracted_run": "39726634443"
+ "extracted_run": "39726634443",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "HORT 299",
+   "words": "HORT 299, printed as an alternative to HORT 292 with no units, takes its row's 1 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

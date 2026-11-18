@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-590 document(s).
+591 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -517,6 +517,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [When a page and an assistant show the same facts, build them once](../kb-notes/methodology-one-build-two-readers.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [When every merge conflicts a generated file, land the work as one wave pull request, not a chain](../kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
