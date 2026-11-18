@@ -123,6 +123,19 @@
     ".cplcoci-viewbtn + .cplcoci-viewbtn { border-left:1px solid var(--border); }",
     ".cplcoci-viewbtn.on { background: var(--seal-blue); color:#fff; }",
     ".cplcoci-xfer { text-align:center; white-space:nowrap; }",
+    /* The read-only Side by side fold (S678, COBIx's item 7): one card beside every source behind it. */
+    ".ccl-sbs { margin:8px 0; }",
+    ".ccl-sbs > summary { cursor:pointer; min-height:24px; line-height:24px; font-size:.86rem; font-weight:700; color: var(--navy-primary); }",
+    ".ccl-sbs h4 { margin:10px 0 4px; font-size:.84rem; color: var(--navy-primary); }",
+    ".ccl-sbs p, .ccl-sbs li { font-size:.8rem; max-width:var(--cpl-measure,none); }",
+    ".ccl-sbs ul { margin:0 0 6px; padding-left:18px; }",
+    ".ccl-sbs-note { color: var(--text-body); border-left:3px solid var(--cobalt); padding:2px 0 2px 8px; }",
+    ".ccl-sbs-wrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; margin:4px 0 8px; }",
+    ".ccl-sbs-wrap:focus-visible { outline:2px solid var(--cobalt); outline-offset:1px; }",
+    ".ccl-sbs-table { width:100%; min-width:960px; table-layout:fixed; border-collapse:collapse; font-size:.78rem; }",
+    ".ccl-sbs-table th { text-align:left; vertical-align:bottom; padding:5px 6px; background: var(--surface-subtle); border-bottom:1px solid var(--border-strong); color: var(--text-body); }",
+    ".ccl-sbs-table td { vertical-align:top; padding:5px 6px; border-bottom:1px solid var(--border); color: var(--text-body); overflow-wrap:anywhere; }",
+    ".ccl-sbs-table .ccl-sbs-desc button { font-size:.76rem; }",
   ].join("\n");
 
   // Program rows (COCI Lookup > Programs view). Built by kb/_build_coci_programs.py.
@@ -908,6 +921,146 @@
     }
     return out;
   }
+  /* ── Side by side (S678, COBIx's item 7; courses/ask-sky-side-by-side.md on issue 3464) ───────────────────────────────
+     One card's record next to every source behind it, read-only: no button writes, no flag, no edit. The card above
+     keeps Rename, Set the discipline and Confirm; a ruling on a discipline pair stays in Discipline in doubt. The fold
+     reads kb/side_by_side.json (kb/_build_side_by_side.py) the first time it opens, the way the job filters read the
+     auditor's file: the state's course status per control number, a TOP code's official title and what our TOP table
+     makes of it, what our subject map makes of a subject code, and, per card the scorer reads, what our own tables
+     say and which college courses the scorer's memberships file holds. Descriptions come from the List's own shards
+     and outline outcomes from the public course_outcomes read, both GET only. */
+  var SBS = { data: null, loading: false, failed: "", open: {}, more: {} };
+  var SBS_URL = "kb/side_by_side.json";
+  var SBS_SIGNALS = [["own_subject", "Its own subject code"], ["college_subjects", "Its colleges' subject codes"],
+    ["top", "Its colleges' TOP codes (a last-in-line signal)"]];
+  var SBS_BANDS = { auto_accept: "the machine accepts it", for_sam: "it goes to Sam", waiting: "it waits for a person",
+    ruled: "a person ruled on it", merged_away: "it is folded into another card", not_openable: "the List does not carry it" };
+  function sbsLoad() {
+    if (SBS.data || SBS.loading) return;
+    SBS.loading = true; SBS.failed = "";
+    fetch(SBS_URL, { cache: "no-store" }).then(function (res) {
+      if (!res.ok) throw new Error(SBS_URL + " answered " + res.status);
+      return res.json();
+    }).then(function (d) {
+      d = d || {};
+      // The file lists control numbers under each state status; the fold looks one up by control number.
+      var by = {};
+      Object.keys(d.status || {}).forEach(function (st) { (d.status[st] || []).forEach(function (cn) { by[cn] = st; }); });
+      d.statusOf = by;
+      SBS.loading = false; SBS.data = d; ccRedraw();
+    },
+      function (e) { SBS.loading = false; SBS.failed = String((e && e.message) || e); ccRedraw(); });
+  }
+  function sbsSignal(key, label, raw) {
+    var v = String(raw || "missing").split("|"), w = v[0];
+    var one = key === "own_subject";
+    if (w === "agrees") return label + (one ? " agrees." : " agree.");
+    if (w === "split") return label + " split, with " + v[1] + " the most named.";
+    if (w === "elsewhere") return label + (one ? " points" : " point") + " elsewhere, to " + v[1] + ".";
+    if (w === "unmapped") return label + " is not in the subject map.";
+    return label + (one ? " is missing." : " name no field our tables hold, so the signal is missing.");
+  }
+  function sbsDesc(x) {
+    var cell = el("td", { "class": "ccl-sbs-desc" }, [el("span", { "class": "muted" }, ["reading…"])]);
+    withDesc(x.subj, x.ctrl, function (desc) {
+      clearNode(cell);
+      if (!desc) { cell.appendChild(document.createTextNode("none in the extract")); return; }
+      var key = x.ctrl, long = desc.length > 200;
+      cell.appendChild(document.createTextNode(long && !SBS.more[key] ? desc.slice(0, 200) + "…" : desc));
+      if (long) {
+        var b = el("button", { type: "button", "class": "ccl-sbs-more", "aria-expanded": SBS.more[key] ? "true" : "false",
+          "aria-label": (SBS.more[key] ? "Show less of " : "Read the rest of ") + x.subj + " " + x.num + "'s description" }, [SBS.more[key] ? "Show less" : "Read the rest"]);
+        b.addEventListener("click", function () { SBS.more[key] = !SBS.more[key]; var p = cell.parentNode; if (p) p.replaceChild(sbsDesc(x), cell); });
+        cell.appendChild(document.createTextNode(" "));
+        cell.appendChild(b);
+      }
+    });
+    return cell;
+  }
+  function sbsOutline(x) {
+    var cell = el("td", null, ["reading…"]);
+    withOutcomes(x.college, x.subj, x.num, function (err, rows) {
+      cell.textContent = err ? "not read today" : (rows && rows.length ? "yes" : "no");
+    });
+    return cell;
+  }
+  function sbsBody(mid, members) {
+    var D = SBS.data, out = [];
+    if (SBS.failed) return [el("p", { "class": "cplcoci-meta" }, ["The side by side file (" + SBS_URL + ") did not arrive: " + SBS.failed + ". Close the fold and open it again to try once more."])];
+    if (!D) return [el("p", { "class": "cplcoci-meta" }, ["Reading the side by side file…"])];
+    var c = CC.byId && CC.byId.get(mid), card = (D.cards || {})[mid], tops = D.tops || {}, subjects = D.subjects || {}, status = D.statusOf || {};
+    // 1. Our record.
+    out.push(el("h4", null, ["Our record"]));
+    var disc = c && c.disc ? c.disc + ", " + (String(DSRC_WORDS[c.dsrc] || "").replace("from its seed,", "from its first machine guess,") || (card ? "the first machine guess, never re-checked" : "its source is not named in the file")) : "no discipline yet";
+    out.push(el("ul", null, [
+      el("li", null, ["The card: " + mid + (c && c.title ? ", " + c.title : "")]),
+      el("li", null, ["Subject code: " + (c && c.subj && c.subj.length ? c.subj.join(", ") : "none on the card")]),
+      el("li", null, ["Discipline: " + disc]),
+      el("li", null, ["Credit status: " + (c && c.credit ? c.credit : "not on the card")]),
+      el("li", null, ["Its own description: " + (card ? (card.d || "none") : "kept only for the cards the scorer reads")])
+    ]));
+    // The note: the scorer's memberships file and the List hold different college courses.
+    var read = card && card.s ? card.s : null, inRead = {};
+    if (read) {
+      read.forEach(function (cn) { inRead[cn] = 1; });
+      var listed = {}; members.forEach(function (x) { listed[x.ctrl] = 1; });
+      var missing = read.filter(function (cn) { return !listed[cn]; }).length;
+      out.push(el("p", { "class": "ccl-sbs-note" }, ["The scorer reads " + fmt(read.length) + (read.length === 1 ? " college course" : " college courses")
+        + " for this card; the List shows " + fmt(members.length) + "."
+        + (missing ? " " + fmt(missing) + " of the scorer's are not in the List." : "")]));
+    }
+    // 2. One row per college course on the card.
+    out.push(el("h4", null, ["Its college courses"]));
+    var cols = [["College", 12], ["Course and control number", 12], ["State's title", 13], ["TOP code and its title", 12],
+      ["Our TOP table says", 10], ["Our subject map says", 10], ["State's course status", 8], ["State's description", 17], ["Outline outcomes read", 6]];
+    var head = el("tr", null, cols.map(function (k) { return el("th", { scope: "col" }, [k[0]]); }));
+    var body = el("tbody", null, members.map(function (x) {
+      // The List's TOP reads "1230.10: Registered Nursing"; the file keys the code alone.
+      var tc = String(x.top || "").split(":")[0].trim(), tt = String(x.top || "").split(":").slice(1).join(":").trim();
+      var t = tops[tc] || [], only = read && !inRead[x.ctrl];
+      return el("tr", null, [
+        el("td", null, [x.college + (only ? " (List file only)" : "")]),
+        el("td", null, [x.subj + " " + x.num + ", " + x.ctrl]),
+        el("td", null, [x.title]),
+        el("td", null, [tc ? tc + ((t[0] || tt) ? " (" + (t[0] || tt) + ")" : "") : "none"]),
+        el("td", null, [tc ? (t[1] || "not in our TOP table") : "no TOP code"]),
+        el("td", null, [subjects[x.subj] || "not in the subject map"]),
+        el("td", null, [status[x.ctrl] || "no row in the program course file"]),
+        sbsDesc(x),
+        sbsOutline(x)
+      ]);
+    }));
+    out.push(el("div", { "class": "ccl-sbs-wrap", role: "region", tabindex: "0", "aria-label": "The college courses on " + mid + ", side by side" },
+      [el("table", { "class": "ccl-sbs-table" }, [el("colgroup", null, cols.map(function (k) { return el("col", { style: "width:" + k[1] + "%" }); })),
+        el("thead", null, [head]), body])]));
+    // 3. The scorer's reading.
+    out.push(el("h4", null, ["The scorer's reading"]));
+    if (!card) {
+      out.push(el("p", { "class": "cplcoci-meta" }, ["The scorer reads only the cards whose discipline is the first machine guess, never re-checked. This card's discipline has another source, so the scorer does not read it."]));
+      return out;
+    }
+    var v = card.v;
+    out.push(el("p", null, [v ? "Its band: " + (SBS_BANDS[v.band] || v.band || "not given") + (v.score != null ? "; score " + fmt(v.score) : "")
+      + (v.agree != null ? ", with " + fmt(v.agree) + (v.agree === 1 ? " agreeing signal" : " agreeing signals") : "") + "."
+      : "The scorer's band and score are not in this build; the lines below are what our own tables make of the card's discipline, " + (card.g || "") + "."]));
+    var order = D.signals || SBS_SIGNALS.map(function (sg) { return sg[0]; });
+    out.push(el("ul", null, SBS_SIGNALS.map(function (sg) { return el("li", null, [sbsSignal(sg[0], sg[1], (card.r || [])[order.indexOf(sg[0])])]); })));
+    if (v && v.reasons) out.push(el("p", { "class": "cplcoci-meta" }, ["The scorer's own words: " + v.reasons + "."]));
+    return out;
+  }
+  function sbsFold(mid, members) {
+    var body = el("div", { "class": "ccl-sbs-body" });
+    var d = el("details", { "class": "ccl-sbs", id: "ccl-sbs" }, [el("summary", null, ["Side by side: this card beside every source behind it"]), body]);
+    var fill = function () { clearNode(body); sbsBody(mid, members).forEach(function (n) { body.appendChild(n); }); };
+    if (SBS.open[mid]) { d.open = true; sbsLoad(); fill(); }
+    d.addEventListener("toggle", function () {
+      SBS.open[mid] = d.open;
+      if (!d.open) { if (SBS.failed) SBS.failed = ""; return; }
+      sbsLoad(); fill();
+    });
+    // Wrapped, as the sign-in fold is: the engine anchors the Title drawer before the panel's first direct-child <details>.
+    return el("div", { "class": "ccl-sbs-outer" }, [d]);
+  }
   function listPanelBody(r, h) {
     var m = listBuild(), out = [];
     out.push(h.title(r.subj + " " + r.num + ", " + r.title));
@@ -923,6 +1076,7 @@
       var nCol = Object.keys(seenCol).length;
       out.push(h.heading("Its common course: " + r.mid));
       ccCard(r.mid, h).forEach(function (n) { out.push(n); });
+      out.push(sbsFold(r.mid, members));
       out.push(el("p", { "class": "ccl-pn-acts ccl-pn-sky" }, [skyLink(r.mid, "Open " + r.mid + " in SkyView")]));
       out.push(h.table({ id: "members", label: "The local courses " + r.mid + " holds",
         note: idWords(r.mid) + ", holding " + fmt(members.length) + (members.length === 1 ? " local course" : " local courses") + " at "
