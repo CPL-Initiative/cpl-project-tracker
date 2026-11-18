@@ -197,6 +197,27 @@ with tempfile.TemporaryDirectory() as tmp:
     check("5. the not-applicable course note", flags.course_note(COLLEGES[0], "CCN2") == F.NA_COURSE_NOTES["internship"])
     check("5. a card with two flags carries both notes", flags.note("ARTS M1009").startswith(F.NOTES["retired"]))
 
+    # Era guard (COBIx on #3519, finding 2): a flag file built before the latest re-mint names card ids that may now
+    # belong to other cards, so its card flags are set aside until it is rebuilt; course entries stay in force.
+    for rel in (F.FILES["retired"], F.FILES["inactive"], F.FILES["not_applicable"]):
+        with open(os.path.join(tmp, rel)) as f:
+            doc = json.load(f)
+        check("era: %s carries the current era" % rel, doc.get(F.ERA_KEY) == F.current_era())
+        doc[F.ERA_KEY] = "kb/an_earlier_remint/alias_map.json"
+        with open(os.path.join(tmp, rel), "w") as f:
+            json.dump(doc, f)
+    old = F.load_flags(tmp, titles={"ARTS M1002": "Drawing"})
+    check("era: every stale machine flag file is set aside", sorted(old.stale) == sorted(F.MACHINE_FLAGS))
+    check("era: a stale inactive file hides no card", old.kinds("ARTS M1004") == [] and old.counted("ARTS M1004"))
+    check("era: a stale not-applicable file hides no card", old.counted("ARTS M1005"))
+    check("era: merged still comes from the curation overlay", old.kinds("ARTS M1001") == ["merged"])
+    check("era: course entries survive a re-mint",
+          old.course_flag(COLLEGES[0], "CCN2") == "not_applicable")
+    check("era: the scorer's helper hides only merged cards", set(F.hidden_card_ids(tmp)) == {"ARTS M1001", "ARTS M1009"})
+    r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_inactive_cards.py"), "--root", tmp, "--check"],
+                       capture_output=True, text=True)
+    check("era: --check calls a stale-era file stale", r.returncode == 1)
+
 # The links file is current-era: the inactive builder reads its ids raw and refuses a file without its markers.
 # (S683 second reader: resolving the already-current ids again moved 1,291 links onto unrelated live cards, and 64
 # cards escaped the flag.)
@@ -208,8 +229,19 @@ try:
     check("era: a links file without its applied markers is refused", False)
 except SystemExit:
     check("era: a links file without its applied markers is refused", True)
+try:
+    BI.assert_links_agree({"articulations": [{"course_id": "ARTS M1083"}]},
+                          {"unified_titles": [{"articulations": [{"cid": "ARTS M1068"}]}]})
+    check("era: a credential reference naming an id the links file lacks is refused", False)
+except SystemExit:
+    check("era: a credential reference naming an id the links file lacks is refused", True)
+BI.assert_links_agree({"articulations": [{"course_id": "ARTS M1083"}]},
+                      {"unified_titles": [{"articulations": [{"cid": "ARTS M1083"}]}]})
+check("era: an agreeing credential reference passes", True)
+real_flags = F.load_flags(ROOT)
+check("era: no committed flag file is set aside", real_flags.stale == [])
 with open(os.path.join(ROOT, "kb/coci_articulations.json")) as f:
-    raw_links = {a.get("course_id") for a in json.load(f).get("articulations") or []}
+    raw_links ={a.get("course_id") for a in json.load(f).get("articulations") or []}
 with open(os.path.join(ROOT, F.FILES["inactive"])) as f:
     committed_inactive = set(json.load(f)["cards"])
 check("era: no committed inactive card is a card an exhibit links to as the file writes it",

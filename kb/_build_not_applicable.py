@@ -103,6 +103,7 @@ def main(argv):
         "_card_notes": F.NA_CARD_NOTES,
         "_person_note": F.PERSON_NOTE,
         "_inputs": {k: {"path": v, "sha256": F.sha256_of(p(k))} for k, v in sorted(INPUTS.items())},
+        F.ERA_KEY: F.current_era(),
         "_courses_shape": "college|control number -> [kind, title as the state's course list prints it]",
         "counts": {"courses": len(courses), "courses_by_kind": dict(sorted(by_kind.items())),
                    "courses_with_no_card": len(courses) + real_gaps, "real_gaps": real_gaps,
@@ -112,7 +113,7 @@ def main(argv):
     }
     if check:
         cur = F._read(ROOT, OUT) or {}
-        same = cur.get("courses") == courses and cur.get("cards") == cards
+        same = cur.get("courses") == courses and cur.get("cards") == cards and F.is_current_era(cur)
         print("%s: %s" % (OUT, "current" if same else "STALE: run python3 kb/_build_not_applicable.py"))
         return 0 if same else 1
     F.write_json(os.path.join(ROOT, OUT), payload)

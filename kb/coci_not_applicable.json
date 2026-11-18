@@ -12,6 +12,7 @@
 "internship":"Not applicable: an internship or work experience. Courses like this are set up one student at a time, so they aren't shared across colleges. Kept for the record; nothing to do."
 },
 "_courses_shape":"college|control number -> [kind, title as the state's course list prints it]",
+"_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
 "_inputs":{
 "cards":{
 "path":"kb/coci_minted_courses.json",

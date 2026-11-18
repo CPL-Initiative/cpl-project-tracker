@@ -631,6 +631,9 @@
         });
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
+  /* On purpose (COBIx on #3519, finding 4): the "Has ..." filters say what a record carries, so a kept record still
+     appears under its M-ID, C-ID or CCN and stays findable. "No M-ID" and "No identity" are gap piles, work waiting to
+     be done, and the flag rule takes kept records out of waiting piles, so they leave both. */
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;

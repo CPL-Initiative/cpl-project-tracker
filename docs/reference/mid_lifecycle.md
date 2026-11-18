@@ -502,9 +502,16 @@ file still carries the old ids until `excel_to_dashboard.py` rebuilds it, and a
 builder run before that would read every re-keyed card as empty. The daily build
 runs the three builders after the List file and before the auditor
 (`scripts/daily_build.sh`), so the dispatched daily run that lands a re-mint
-heals them. Between the apply and that run, re-keyed cards can read as having no
-college course in the auditor's output; dispatch the daily run in the same cron
-window, as the playbook already says.
+heals them. Each file carries `_ids_current_through`, the last map in
+`ALIAS_MAPS` when it was built. Once the re-mint's map is registered there,
+`kb/_flags.py` sets aside the card flags of any file with an older stamp, prints
+why, and the auditor lists the kinds under `stats.flag_files_set_aside`: between
+the apply and the daily run, those flagged cards return to the counts, and no
+live card is hidden by an id the re-mint reassigned. The not-applicable file's
+course entries (college and control number) stay in force. The inactive builder
+also refuses a `credential_reference_data.js` that names a card id the links
+file no longer holds. Dispatch the daily run in the same cron window, as the
+playbook already says.
 
 **M-ID structural invariants** (enforced at every re-mint; deviations
 become audit findings):

@@ -93,6 +93,7 @@ def main(argv):
         "_note": F.NOTES["retired"],
         "_not_seen_note": F.NOT_SEEN_NOTE,
         "_inputs": {k: {"path": v, "sha256": F.sha256_of(p(k))} for k, v in sorted(INPUTS.items())},
+        F.ERA_KEY: F.current_era(),
         "count": len(retired),
         "live": sum(1 for v in retired.values() if not v["merged"]),
         "cards": retired,
@@ -100,7 +101,7 @@ def main(argv):
     }
     if check:
         cur = F._read(ROOT, OUT) or {}
-        same = cur.get("cards") == retired and cur.get("not_seen_this_term") == not_seen
+        same = cur.get("cards") == retired and cur.get("not_seen_this_term") == not_seen and F.is_current_era(cur)
         print("%s: %s" % (OUT, "current" if same else "STALE: run python3 kb/_build_retired_cards.py"))
         return 0 if same else 1
     F.write_json(os.path.join(ROOT, OUT), payload)

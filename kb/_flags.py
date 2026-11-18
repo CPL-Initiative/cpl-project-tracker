@@ -37,12 +37,23 @@ Readers:
     F.hidden_band(card_id)      # for a scorer's bands: the kind that takes the card out of every band, or None
 
 Pure stdlib. A missing flag file reads as no flags of that kind, so a fresh checkout or a test fixture still works.
+
+Era guard (COBIx on #3519). Each builder stamps its file with ERA_KEY, the last re-mint in kb/alias_chain.py's
+ALIAS_MAPS when it ran. A re-mint registers its map there before kb/_post_apply_chain.py runs, and it re-keys the
+minted files but not these three, so an older stamp means the file's card ids may now name different cards (a re-mint
+reuses slots). load_flags() then sets that file's card flags aside, prints why, and lists the kind in Flags.stale: the
+flagged cards come back into the counts until the daily build rebuilds the file, and no live card is hidden by a
+stale id. The not-applicable file's course entries are keyed by college and control number, which a re-mint never
+changes, so they stay in force.
 """
 import json
 import os
 import re
+import sys
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(HERE)
+ERA_KEY = "_ids_current_through"
 
 FLAG_ORDER = ("retired", "merged", "inactive", "not_applicable")
 MACHINE_FLAGS = ("retired", "inactive", "not_applicable")
@@ -129,8 +140,23 @@ def _when(iso):
     return "%s %d, %d" % (months[mo - 1], d, y) if 1 <= mo <= 12 else ""
 
 
+def current_era():
+    """The last applied re-mint (kb/alias_chain.py ALIAS_MAPS, imported, never copied): the era a flag file's ids
+    must be built in."""
+    if HERE not in sys.path:
+        sys.path.insert(0, HERE)
+    from alias_chain import ALIAS_MAPS
+    return ALIAS_MAPS[-1]
+
+
+def is_current_era(doc):
+    """True when a flag file was built in the current era (a missing file is no flags, so it passes)."""
+    return doc is None or (doc or {}).get(ERA_KEY) == current_era()
+
+
 class Flags(object):
-    def __init__(self, curation=None, retired=None, inactive=None, not_applicable=None, titles=None):
+    def __init__(self, curation=None, retired=None, inactive=None, not_applicable=None, titles=None, stale=None):
+        self.stale = list(stale or [])   # the kinds whose file predates the latest re-mint (set aside by load_flags)
         self.curation = curation or {}
         self.retired = (retired or {}).get("cards") or {}
         self.inactive = (inactive or {}).get("cards") or {}
@@ -231,7 +257,7 @@ class Flags(object):
             elif ks:
                 kept_by_person += 1
         return {"carried": carried, "not_counted": hidden, "kept_in_counts_by_a_person": kept_by_person,
-                "not_applicable_courses": len(self.na_courses)}
+                "not_applicable_courses": len(self.na_courses), "set_aside_until_rebuilt": list(self.stale)}
 
 
 def load_flags(root=None, titles=None):
@@ -241,8 +267,18 @@ def load_flags(root=None, titles=None):
     cur = (_read(root, FILES["curation"]) or {}).get("curations") or {}
     if titles is None:
         titles = {k: v.get("unified_title") for k, v in cur.items() if isinstance(v, dict) and v.get("unified_title")}
-    return Flags(curation=cur, retired=_read(root, FILES["retired"]), inactive=_read(root, FILES["inactive"]),
-                 not_applicable=_read(root, FILES["not_applicable"]), titles=titles)
+    docs, stale = {}, []
+    for kind in MACHINE_FLAGS:
+        doc = _read(root, FILES[kind])
+        if not is_current_era(doc):
+            stale.append(kind)
+            sys.stderr.write("kb/_flags.py: %s was built before the latest re-mint (%s); its card flags are set aside "
+                             "until the daily build rebuilds it.\n" % (FILES[kind], current_era()))
+            # Course entries (college|control number) survive a re-mint; card ids may not.
+            doc = {"courses": doc.get("courses") or {}} if kind == "not_applicable" else None
+        docs[kind] = doc
+    return Flags(curation=cur, retired=docs["retired"], inactive=docs["inactive"],
+                 not_applicable=docs["not_applicable"], titles=titles, stale=stale)
 
 
 def hidden_card_ids(root=None):

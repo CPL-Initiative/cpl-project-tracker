@@ -1814,6 +1814,9 @@ def _stats(cards, flags=None):
     if flags is not None:
         out["kept_not_counted"] = Counter(flags.hidden_kind(i) for i in first if not flags.counted(i))
         out["kept_in_counts_by_a_person"] = sum(1 for i in first if flags.kinds(i) and flags.counted(i))
+        if getattr(flags, "stale", None):
+            # A flag file older than the latest re-mint is set aside until the daily build rebuilds it (kb/_flags.py).
+            out["flag_files_set_aside"] = list(flags.stale)
     return out
 
 

@@ -1,5 +1,6 @@
 {
 "_about":"Retired shared courses (the version 5 rule), kept for the record and out of every count, waiting pile, to-do and fetch plan (Sam, 2026-11-17). Built by kb/_build_retired_cards.py; read through kb/_flags.py. not_seen_this_term lists cards that stay counted and carry the Fall 2025 note.",
+"_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
 "_inputs":{
 "coci_courses":{
 "path":"coci_lookup_data.js",

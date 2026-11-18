@@ -6176,7 +6176,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1507,
+     "line": 1510,
      "tabs": [
       "coci-lookup"
      ]
@@ -6687,7 +6687,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1295,
+     "line": 1298,
      "tabs": [
       "coci-lookup"
      ]
@@ -6790,7 +6790,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1383,
+     "line": 1386,
      "tabs": [
       "coci-lookup"
      ]
@@ -7832,7 +7832,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 39
+     "line": 41
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -11972,7 +11972,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 38
+     "line": 40
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -12400,7 +12400,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 38
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -12484,7 +12484,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 62
     },
     {
      "id": "script:kb/_honors_followups_s652.py",
@@ -12760,14 +12760,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 31
+     "line": 33
     },
     {
      "id": "script:kb/_flags.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 64
     }
    ],
    "producers": [
@@ -12921,7 +12921,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 33
+     "line": 35
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -13458,7 +13458,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 35
+     "line": 37
     },
     {
      "id": "script:kb/_build_remint_blast_radius.py",
@@ -13862,7 +13862,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 34
+     "line": 36
     },
     {
      "id": "script:kb/_build_not_applicable.py",
@@ -14283,7 +14283,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 65
     }
    ],
    "producers": [
@@ -14311,7 +14311,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 63
     }
    ],
    "producers": [
@@ -20624,7 +20624,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 970,
+     "line": 973,
      "tabs": [
       "coci-lookup"
      ]
@@ -28954,7 +28954,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 728,
+     "line": 731,
      "tabs": [
       "coci-lookup"
      ]
@@ -29377,7 +29377,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1296,
+     "line": 1299,
      "tabs": [
       "coci-lookup"
      ]
@@ -29467,7 +29467,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 39
     },
     {
      "id": "script:kb/_build_not_applicable.py",

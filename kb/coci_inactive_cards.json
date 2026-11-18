@@ -1,5 +1,6 @@
 {
 "_about":"Inactive shared courses, kept for the record and out of every count, waiting pile, to-do and fetch plan (Sam, 2026-11-17: flag the record, never delete it). Built by kb/_build_inactive_cards.py; read through kb/_flags.py.",
+"_ids_current_through":"kb/anchor_rekey_out/2026-11-08/alias_map.json",
 "_inputs":{
 "articulations":{
 "path":"kb/coci_articulations.json",
