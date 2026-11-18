@@ -12792,7 +12792,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 47
+     "line": 59
     },
     {
      "id": "script:kb/_ccr_confidence_score.py",
@@ -15790,6 +15790,13 @@
      "direction": "read",
      "how": "literal",
      "line": 535
+    },
+    {
+     "id": "script:kb/_ccr_confidence_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

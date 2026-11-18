@@ -16,7 +16,18 @@ pinned on the ask's own figures with a unit case:
   - ARTS M1002 is already auto-accepted by main's base scorer; the past-rulings guard is pinned on version 5's
     figures and on every card main's run holds back with it.
   - MUSI M1226 "College Symphony Orchestra" is out of M's scope on main: no signal names Commercial Music (the
-    title word "College" names another field and the description reads as Electricity). It stays Music.
+    title word "College" names another field and the description reads as Electricity). It stays Music, waiting.
+  - MUSI M1617 "Commercial/Jazz Theory and Musicianship" is out of M's scope on main too (no signal names Commercial
+    Music), so it stays waiting for that reason; its title's "both" call, the ask's reason, is pinned as a unit case.
+
+Self-recall (second reader on #3513): M's two word lists are a title matcher, so they are scored on every trusted
+Music and Commercial Music card (a person or the subject map set the field): no wrong call, at least 40 right. G
+makes no call on the held-out decided cards (no decided card meets its bar), so its only evidence is the sample the
+PR reads; the test prints that count so the empty pass shows.
+
+A move needs its code: the apply refuses a move whose card's SUBJ4 is not the new field's (rule M's MUSI moves to
+Commercial Music, MUSC), so the field's most common code stays MUSC; the moves go to a re-mint worklist. The undo
+resolves receipt ids through the alias maps applied since the apply, and reports an id it cannot find.
 
 Also: nothing moves into Sam's band and nothing leaves auto-accept; G never changes a discipline and M changes only
 Music to Commercial Music; a held, ruled or merged card is never decided by G or M; the notes are plain words; the
@@ -100,6 +111,8 @@ for t, call in (("Recording Arts", "Commercial Music"), ("The Music Business", "
                 ("History of Rap and Hip-Hop", "Music"), ("Live Sound", "Commercial Music"),
                 ("Electronic Music Ensemble", "both"), ("Intro to MIDI", "Commercial Music")):
     check("(M) title call: %r -> %s" % (t, call), M.split_call(t) == call, M.split_call(t))
+check("(M) ⭐ MUSI M1617's title, Commercial/Jazz Theory and Musicianship, is a both call: it stays waiting",
+      M.split_call("Commercial/Jazz Theory and Musicianship") == "both")
 check("(M) the scope: a Music card whose disagreement is with Commercial Music",
       M.m_in_scope("Music", card(desc="Commercial Music_clear")) and M.m_in_scope("Music", card(desc="agree_clear", narrow="Commercial Music"))
       and not M.m_in_scope("Music", card(desc="Electricity_clear")) and not M.m_in_scope("Art", card(desc="Commercial Music_clear"))
@@ -173,6 +186,24 @@ for fix in (False, True):
 inp, _b, after = runs["fix"]
 check("(fix) MATH M9037 is held back by the noncredit guard", after["MATH M9037"].get("g_left", "").startswith("noncredit"))
 
+# ── self-recall ──
+tally = Counter()
+for cid, (d, _t, rec) in inp.trusted.items():
+    if d not in M.M_PAIR:
+        continue
+    call = M.split_call(M.display_title(cid, rec, inp.cur))
+    tally["right" if call == d else "wrong" if call in M.M_NOTES else "no call"] += 1
+check("(recall) ⭐ M's word lists on the trusted Music and Commercial Music cards: no wrong call, at least 40 right "
+      "(%d right, %d wrong, %d no call)" % (tally["right"], tally["wrong"], tally["no call"]),
+      tally["wrong"] == 0 and tally["right"] >= 40, dict(tally))
+with contextlib.redirect_stdout(io.StringIO()):
+    cal = M.calibrate(inp, M.DEFAULT_RULES)
+g_cal, m_cal = cal["per_rule"].get("G", {}), cal["per_rule"].get("M", {})
+check("(recall) held out on the %d decided cards, G makes %d calls (%d wrong) and M %d (%d wrong): G's evidence is "
+      "the sample reading" % (cal["decided"], sum(g_cal.values()), g_cal.get("wrong", 0), sum(m_cal.values()),
+                              m_cal.get("wrong", 0)),
+      "G" in cal["per_rule"] and g_cal.get("wrong", 0) == 0 and m_cal.get("wrong", 0) == 0, json.dumps(cal))
+
 # ── the auditor ──
 g_rec = {"discipline": "Music", "discipline_source": "confidence_v1", "discipline_confidence": 0.87,
          "_confidence_from": {"rule": "G"}}
@@ -189,13 +220,15 @@ import _ccr_seed_recheck_dryrun as RS  # noqa: E402
 check("(audit) the reseed leaves a rule M card alone", RS.curated("X", m_rec, {}))
 
 # ── the apply and its undo, on a fixture ──
+# A Music card already on MUSC and an Art card already on ARTH move without a re-mint; MUSI M8 cannot.
 fixture = {"_status": "fixture", "courses": {
     "MUSI M1": {"course_id": "MUSI M1", "discipline": "Music", "common_title": "Music in American Culture"},
-    "MUSI M2": {"course_id": "MUSI M2", "discipline": "Music", "common_title": "Recording Arts"},
+    "MUSC M2": {"course_id": "MUSC M2", "discipline": "Music", "common_title": "Recording Arts"},
     "MUSI M3": {"course_id": "MUSI M3", "discipline": "Music", "common_title": "College Symphony Orchestra"},
-    "ARTS M4": {"course_id": "ARTS M4", "discipline": "Art", "common_title": "History of Art"},
+    "ARTH M4": {"course_id": "ARTH M4", "discipline": "Art", "common_title": "History of Art"},
     "CRIM M5": {"course_id": "CRIM M5", "discipline": "Administration of Justice", "common_title": "Criminal Law 2"},
-    "KINE M6": {"course_id": "KINE M6", "discipline": "Kinesiology", "common_title": "Swim"}}, "count": 6}
+    "KINE M6": {"course_id": "KINE M6", "discipline": "Kinesiology", "common_title": "Swim"},
+    "MUSI M8": {"course_id": "MUSI M8", "discipline": "Music", "common_title": "Audio Production"}}, "count": 7}
 
 
 def row(cid, guess, disc, rule, score=87):
@@ -211,8 +244,14 @@ with tempfile.TemporaryDirectory() as tmp:
     with contextlib.redirect_stdout(io.StringIO()):
         g_rows = [row("MUSI M1", "Music", "Music", "G", 95), row("CRIM M5", "Administration of Justice",
                                                                   "Administration of Justice", "G")]
-        m_rows = [row("MUSI M2", "Music", "Commercial Music", "M", 77), row("MUSI M3", "Music", "Music", "M", 82)]
-        f_rows = [row("ARTS M4", "Art", "Art History", "FPR")]
+        m_rows = [row("MUSC M2", "Music", "Commercial Music", "M", 77), row("MUSI M3", "Music", "Music", "M", 82)]
+        f_rows = [row("ARTH M4", "Art", "Art History", "FPR")]
+        check("(apply) ⭐ refuses a move whose card's SUBJ4 is not the new field's code (MUSI to Commercial Music)",
+              A.apply("M", m_rows + [row("MUSI M8", "Music", "Commercial Music", "M")], 3, "S0", path, out) == 2
+              and open(path, "rb").read() == pristine
+              and [o["course_id"] for o in A.needs_remint(m_rows + [row("MUSI M8", "Music", "Commercial Music", "M")],
+                                                          fixture["courses"], A.field_codes(fixture["courses"]))]
+              == ["MUSI M8"])
         check("(apply) refuses without the expected count", A.apply("G", g_rows, 3, "S0", path, out) == 2
               and open(path, "rb").read() == pristine)
         check("(apply) refuses a card that changed under the run",
@@ -228,8 +267,8 @@ with tempfile.TemporaryDirectory() as tmp:
           doc["MUSI M1"]["discipline"] == "Music" and doc["MUSI M1"]["discipline_source"] == "confidence_v1"
           and doc["MUSI M1"]["discipline_confidence"] == 0.95 and doc["MUSI M1"]["_confidence_from"]["rule"] == "G")
     check("(apply) ⭐ M's move writes Commercial Music, music_split_v1, and the old field",
-          doc["MUSI M2"]["discipline"] == "Commercial Music" and doc["MUSI M2"]["discipline_source"] == "music_split_v1"
-          and doc["MUSI M2"]["_confidence_from"]["from"] == "Music" and doc["MUSI M2"]["_confidence_from"]["rule"] == "M")
+          doc["MUSC M2"]["discipline"] == "Commercial Music" and doc["MUSC M2"]["discipline_source"] == "music_split_v1"
+          and doc["MUSC M2"]["_confidence_from"]["from"] == "Music" and doc["MUSC M2"]["_confidence_from"]["rule"] == "M")
     check("(apply) M's keep is confidence_v1, discipline unchanged",
           doc["MUSI M3"]["discipline"] == "Music" and doc["MUSI M3"]["discipline_source"] == "confidence_v1")
     snap_after = A.read(path)
@@ -240,18 +279,39 @@ with tempfile.TemporaryDirectory() as tmp:
         n_g = A.undo("G", receipts, path)
     doc = A.read(path)["courses"]
     check("(undo) ⭐ --undo --rule G restores only its own unchanged cards",
-          n_g == (1, 1) and doc["MUSI M1"] == fixture["courses"]["MUSI M1"]
+          n_g == (1, 1, 0) and doc["MUSI M1"] == fixture["courses"]["MUSI M1"]
           and doc["CRIM M5"]["_confidence_from"]["run"] == "S9"
-          and doc["MUSI M2"]["discipline_source"] == "music_split_v1" and doc["ARTS M4"]["discipline"] == "Art History", n_g)
+          and doc["MUSC M2"]["discipline_source"] == "music_split_v1" and doc["ARTH M4"]["discipline"] == "Art History", n_g)
     with contextlib.redirect_stdout(io.StringIO()):
         n_m = A.undo("M", receipts, path)
     doc = A.read(path)["courses"]
     check("(undo) ⭐ --undo --rule M puts the moved card back to Music and clears both cards' stamps",
-          n_m == (2, 0) and doc["MUSI M2"] == fixture["courses"]["MUSI M2"] and doc["MUSI M3"] == fixture["courses"]["MUSI M3"]
-          and doc["ARTS M4"]["discipline_source"] == "past_rulings_v1", n_m)
+          n_m == (2, 0, 0) and doc["MUSC M2"] == fixture["courses"]["MUSC M2"] and doc["MUSI M3"] == fixture["courses"]["MUSI M3"]
+          and doc["ARTH M4"]["discipline_source"] == "past_rulings_v1", n_m)
     with contextlib.redirect_stdout(io.StringIO()):
         again = A.undo("M", receipts, path)
-    check("(undo) a second undo restores nothing", again == (0, 2), again)
+    check("(undo) a second undo restores nothing", again == (0, 2, 0), again)
+
+    # A re-mint between the apply and the undo: MUSC M2 becomes MUSC M7 under a new alias map.
+    import alias_chain as AC  # noqa: E402
+    with contextlib.redirect_stdout(io.StringIO()):
+        A.apply("M", m_rows, 2, "S1", path, os.path.join(tmp, "out3"))
+    receipts = [os.path.join(tmp, "out3", d, "receipt.json") for d in os.listdir(os.path.join(tmp, "out3"))]
+    d = A.read(path)
+    d["courses"]["MUSC M7"] = dict(d["courses"].pop("MUSC M2"), course_id="MUSC M7")
+    A.write(path, d)
+    amap = os.path.join(tmp, "alias_map.json")
+    A.write(amap, {"alias": {"MUSC M2": "MUSC M7"}})
+    with contextlib.redirect_stdout(io.StringIO()):
+        lost = A.undo("M", receipts, path)
+    check("(undo) ⭐ a card re-minted after the apply and not in the chain is reported as not found, apart from a "
+          "changed one", lost == (1, 0, 1) and A.read(path)["courses"]["MUSC M7"]["discipline"] == "Commercial Music", lost)
+    with contextlib.redirect_stdout(io.StringIO()):
+        found = A.undo("M", receipts, path, chain=AC.ALIAS_MAPS + [amap])
+    doc = A.read(path)["courses"]
+    check("(undo) ⭐ resolved through the alias chain, the re-minted card is found and restored to Music",
+          found[0] == 1 and found[2] == 0 and doc["MUSC M7"]["discipline"] == "Music"
+          and "_confidence_from" not in doc["MUSC M7"], found)
 
     # ── the committed data on a scratch copy: apply G and M, undo each, byte for byte ──
     real = os.path.join(tmp, "coci_minted_courses.json")
@@ -259,12 +319,33 @@ with tempfile.TemporaryDirectory() as tmp:
     orig = open(real, "rb").read()
     out2 = os.path.join(tmp, "out2")
     with contextlib.redirect_stdout(io.StringIO()):
-        gd, md = A.decisions("G", True), A.decisions("M", True)
+        gd, md_all = A.decisions("G", True), A.decisions("M", True)
+        md = [(c, r) for c, r in md_all if r["discipline"] == r["guess"]]
+        refused = A.apply("M", md_all, len(md_all), "test", real, out2, True) == 2
+    courses0 = A.read(real)["courses"]
+    off = A.needs_remint(md_all, courses0, A.field_codes(courses0))
+    moves = [c for c, r in md_all if r["discipline"] != r["guess"]]
+    check("(real) ⭐ the apply refuses rule M's moves until they are re-minted (%d of %d moves need it), and writes "
+          "nothing" % (len(off), len(moves)),
+          refused and open(real, "rb").read() == orig and off and all(o["field_code"] == "MUSC" for o in off)
+          and {o["course_id"] for o in off} == {c for c in moves if courses0[c].get("subject_4letter") != "MUSC"})
+
+    def cm_modal(courses):
+        return RA._build_disc_to_modal_subj4(courses).get("Commercial Music")
+
+    unguarded = json.loads(json.dumps(courses0))
+    for c, r in md_all:
+        unguarded[c]["discipline"] = r["discipline"]
+    check("(real) without the guard, M's moves would flip Commercial Music's most common code to MUSI",
+          cm_modal(courses0) in (None, "MUSC") and cm_modal(unguarded) == "MUSI", (cm_modal(courses0), cm_modal(unguarded)))
+    with contextlib.redirect_stdout(io.StringIO()):
         okg = A.apply("G", gd, len(gd), "test", real, out2, True) == 0
         okm = A.apply("M", md, len(md), "test", real, out2, True) == 0
     rc = [os.path.join(out2, d, "receipt.json") for d in os.listdir(out2)]
     stamped = A.read(real)["courses"]
-    check("(real) ⭐ the apply stamps exactly the scorer's G and M cards",
+    check("(real) ⭐ after G and M's keeps, Commercial Music's most common code stays MUSC",
+          cm_modal(stamped) in (None, "MUSC"), cm_modal(stamped))
+    check("(real) ⭐ the apply stamps exactly the scorer's G cards and M's keeps",
           okg and okm and {c for c, r in stamped.items() if isinstance(r, dict) and (r.get("_confidence_from") or {}).get("rule") == "G"} == {c for c, _r in gd}
           and {c for c, r in stamped.items() if isinstance(r, dict) and (r.get("_confidence_from") or {}).get("rule") == "M"} == {c for c, _r in md})
     with contextlib.redirect_stdout(io.StringIO()):

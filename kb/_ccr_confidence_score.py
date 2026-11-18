@@ -704,18 +704,23 @@ def calibrate(inp, rules=DEFAULT_RULES + HELD_RULES, folds=5):
                 per["base"]["right" if guess == person else "wrong"] += 1
             if b0 != "waiting" or hold:
                 continue
+            # The same order as run(): W, then D or FPR, then G and M on what is still waiting.
             if "W" in rules:
                 sw = score_card(cid, rec, guess, ctx, use_w=True)
                 if band_of(sw, hold) == "auto_accept":
                     per["W"]["right" if guess == person else "wrong"] += 1
+                    continue
             other = main_pair(s0, guess)
             if other and s0["members"] and not s0["narrow"]:
                 v = s0["votes"]; n = sum(v.values())
-                if (guess, other) in D_PAIRS:
-                    if "D" in rules and n >= 2 and v.get(guess, 0) * 3 >= 2 * n:
+                if "D" in rules and (guess, other) in D_PAIRS:
+                    fo, fx = v.get(guess, 0), v.get(other, 0)
+                    if n >= 2 and fo * 3 >= 2 * n:
                         per["D"]["right" if guess == person else "wrong"] += 1
-                    continue
-                if "FPR" in rules and (guess, other) in fpr_pairs(inp.precedent, leave_out=(guess, person)) and \
+                        continue
+                    if n >= 2 and (fx * 3 >= 2 * n or (fo == fx and fo > 0)):
+                        continue  # D sends it to Sam's band; G and M never read it
+                elif "FPR" in rules and (guess, other) in fpr_pairs(inp.precedent, leave_out=(guess, person)) and \
                         fpr_title_ok(display_title(cid, rec, inp.cur), other):
                     per["FPR"]["right" if other == person else "wrong"] += 1
                     continue
