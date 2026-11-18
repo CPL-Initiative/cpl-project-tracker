@@ -253,10 +253,12 @@ with tempfile.TemporaryDirectory() as tmp:
             "ART M1003": {"unified_title": "Painting", "reviewed_by": "automerge-v1@bot"},
             "ART M9999": {"discipline": "Art", "reviewed_by": "map@rccd.edu"}}}, f)
     cf = B.confirmed_cards(tmp, {"rows": [{"id": "ART M1001", "k": "X", "fr": "ready"}, {"id": "ART M1001", "k": "C", "fr": "needs_review"},
-                                          {"id": "ART M1002", "k": "C", "fr": "needs_review"}, {"id": "ART M10AA", "k": "C", "fr": "ready"},
+                                          {"id": "ART M1002", "k": "C", "fr": "needs_review"}, {"id": "ART M10AA", "k": "C", "fr": "ready", "nc": 1},
                                           {"id": "ART M1003", "k": "C", "fr": "ready"}]})
-    check("confirmed: Course counts the card a save is keyed on and the card it places a course into, in cards (C and X twice); a cohort never",
-          cf == {"confirmed": 4, "ready": 2}, cf)
+    # Distinct cards a course flag leaves in (Sam, 2026-11-17: flag the record, never delete it): a merge target's C and
+    # X rows count once, ready when either is; the merged card itself (nc) counts on its target.
+    check("confirmed: Course counts the card a save is keyed on and the card it places a course into, once per card, "
+          "a flagged card and a cohort never", cf == {"confirmed": 2, "ready": 1}, cf)
 import importlib.util as _iu
 _sp = _iu.spec_from_file_location("sync_checked", os.path.join(ROOT, "kb", "_sync_program_checked.py"))
 SC = _iu.module_from_spec(_sp); _sp.loader.exec_module(SC)

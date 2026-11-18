@@ -361,14 +361,24 @@ def row_course(root):
         {"words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"},
         {"words": "Re-mints follow the playbook, one cron window each"},
     ]
+    # Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts,
+    # waiting piles, to-dos and fetch plans"): the cards a flag leaves out of every figure on this card, still on the
+    # Courses List with their note (kb/_flags.py).
+    kept = st.get("kept_not_counted") or {}
+    if kept:
+        procedures.append({"n": sum(kept.values()),
+                           "words": "cards kept for the record and left out of these counts: %s merged, %s retired, "
+                                    "%s inactive, %s not applicable" % (fmt(kept.get("merged", 0)), fmt(kept.get("retired", 0)),
+                                                                        fmt(kept.get("inactive", 0)), fmt(kept.get("not_applicable", 0))),
+                           "open": tab})
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
         "links": [{"href": tab, "text": "Open the Courses List"}, {"href": sky, "text": "Open SkyView"},
                   {"href": "#coci-lookup/progress", "text": "Open Progress"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
-        "pair": [{"n": fr["ready"], "of": st["total_cards"],
+        "pair": [{"n": fr.get("ready", 0), "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
-                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])),
+                           % (fmt(fr.get("needs_review", 0)), fmt(fr.get("needs_repair", 0)), fmt(fr.get("not_ready", 0))),
                   "open": tab},
                  confirmed_pair(conf["n"]["confirmed"] if conf["n"] else None, st["total_cards"],
                                 conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"])],
@@ -391,8 +401,9 @@ def row_course(root):
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
-        "facts": {"total": st["total_cards"], "ready": fr["ready"], "needs_review": fr["needs_review"],
-                  "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"],
+        "facts": {"total": st["total_cards"], "ready": fr.get("ready", 0), "needs_review": fr.get("needs_review", 0),
+                  "needs_repair": fr.get("needs_repair", 0), "not_ready": fr.get("not_ready", 0), "cap": cap["n"],
+                  "kept_not_counted": dict(kept),
                   "confirmed": conf["n"]["confirmed"] if conf["n"] else None,
                   "confirmed_ready": conf["n"]["ready"] if conf["n"] else None,
                   # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
@@ -415,9 +426,13 @@ def confirmed_cards(root, A):
         if not isinstance(v, dict) or not v.get("reviewed_by") or is_cohort(v.get("reviewed_by")):
             continue
         hit |= {t for t in (k, v.get("merge_into")) if t}
-    # Counted in cards, the page's one denominator: an M-ID that is also a merge target is two cards (C and X).
-    rows = [r for r in A.get("rows") or [] if r.get("id") in hit]
-    return {"confirmed": len(rows), "ready": sum(1 for r in rows if r.get("fr") == "ready")}
+    # Counted in cards, the page's one denominator: distinct cards no flag takes out of the counts (Sam, 2026-11-17:
+    # flag the record, never delete it), so a merge target's Course and Unified rows count once, ready when either is.
+    ready = {}
+    for r in A.get("rows") or []:
+        if r.get("id") in hit and not r.get("nc"):
+            ready[r["id"]] = ready.get(r["id"], False) or r.get("fr") == "ready"
+    return {"confirmed": len(ready), "ready": sum(1 for v in ready.values() if v)}
 
 
 # ── Common CR Reference ───────────────────────────────────────────────────────────────────

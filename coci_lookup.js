@@ -421,6 +421,7 @@
         var by = {};
         JOB_FILTERS.forEach(function (j) { if (j[2]) by[j[0]] = new Set(); });
         (A.rows || []).forEach(function (row) {
+          if (row.nc) return;   // a course flag keeps the card on record and out of every to-do (kb/_flags.py)
           (row.tags || []).forEach(function (t) { JOB_FILTERS.forEach(function (j) { if (j[2] === t) by[j[0]].add(row.id); }); });
         });
         JOBS.by = by;
