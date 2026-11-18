@@ -45,6 +45,7 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import cert_naming  # noqa: E402
 import exhibit_repoint as xr  # noqa: E402
+import slash_titles  # noqa: E402
 
 OUT = xr.LIST_PATH
 P = lambda *a: os.path.join(HERE, *a)  # noqa: E731
@@ -182,13 +183,15 @@ def _stems(text):
 
 
 def _and_form(head):
-    """A family head with each word-joining slash written as " and " (Sam, 2026-11-18): "UA Plumbers/Pipefitters" is
-    "UA Plumbers and Pipefitters". A family head is words, so every slash in it joins words."""
-    return re.sub(r"\s*/\s*", " and ", head or "")
+    """A family head as the slash-to-and rule writes it (Sam, 2026-11-18): "UA Plumbers/Pipefitters" is "UA Plumbers
+    and Pipefitters". The rule is kb/slash_titles.py's, never a copy: a code slash (HVAC/R, A/C) and an official
+    name's slash stay, and a spaced slash between two whole names stays as printed (held for a person)."""
+    return slash_titles.ruled_form(head or "")
 
 
 def _trade_key(text):
-    return re.sub(r"\s+", " ", (text or "").lower().replace("/", " and ")).strip()
+    """The trade's grouping key: the rule's spelling, lowercased, whitespace squashed."""
+    return re.sub(r"\s+", " ", _and_form(text).lower()).strip()
 
 
 def batch_apprenticeship(idx, audit, review):

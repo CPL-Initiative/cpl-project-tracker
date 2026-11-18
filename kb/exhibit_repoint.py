@@ -42,6 +42,7 @@ from datetime import date, datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import exhibit_paths  # noqa: E402
+import slash_titles  # noqa: E402
 
 LIST_PATH = os.path.join(HERE, "exhibit_repoint_list.json")
 COHORT = "exhibit-repoint-s678@bot"
@@ -177,11 +178,44 @@ def _row_key(row):
     return (row["exhibit_id"], row["local_title"])
 
 
-def plan(rows, ut, creds, arts, with_exhibit_grain=False):
+def slash_wait(to, creds, slash_plan):
+    """Why an assign row waits on the slash-to-and rename, or None (COBIx on #3472, comment 6965961839, S679).
+
+    Sam's ruling of 2026-11-18 writes a slash joining words as "and", so the UA plumbing family reads "UA Plumbers and
+    Pipefitters" once kb/slash_titles.py's plan runs. An assign row whose target still spells its family head with
+    the slash would land the exhibit under the old key; if the rename has not run, the series sits under two family
+    names until it does, and if it has run, the apply would create the slash key again. So the row holds while its
+    target differs from the rule's form (kb/slash_titles.ruled_form, the one rule), and a rebuild after the rename
+    points it at the "and" key. The plan's state is read from kb/credentials.json the way kb/ruled_renames.py reads
+    it: an entry is done once its old title has left the credentials."""
+    ruled = slash_titles.ruled_form(to)
+    if ruled == to:
+        return None
+    entries = {e["old"]: e["new"] for e in (slash_plan or {}).get("entries") or []}
+    held = {h["old"]: h.get("why") or "" for h in (slash_plan or {}).get("held") or []}
+    pid = (slash_plan or {}).get("plan_id") or slash_titles.PLAN_ID
+    if to in held:
+        return ("slash-to-and: the plan %s holds the target %r for a person (%s); a person settles its spelling, "
+                "then the list is rebuilt" % (pid, to, held[to].split(":")[0]))
+    if to in creds:
+        return ("slash-to-and: waits on the rename (plan %s), which re-keys the target %r to %r; run the rename, "
+                "rebuild the list, then apply, so one series never sits under two family names"
+                % (pid, to, entries.get(to, ruled)))
+    if to in entries:
+        return ("slash-to-and: the rename has run and %r is now %r; rebuild the list "
+                "(python3 kb/_build_exhibit_repoint_list.py) before the apply" % (to, entries[to]))
+    return ("slash-to-and: the target %r is a new key that joins words with a slash, which the rule writes %r "
+            "(Sam, 2026-11-18); rebuild the list" % (to, ruled))
+
+
+def plan(rows, ut, creds, arts, with_exhibit_grain=False, slash_plan=None):
     """Decide each applicable row's grain, or why it is held. Pure: reads, never writes.
 
     Holds first, grain after (COBIx on #3472, S679): a title-grain rewrite moves every exhibit that reads the title,
-    so a row takes it only when every other exhibit on the title moves to the same target in this same apply."""
+    so a row takes it only when every other exhibit on the title moves to the same target in this same apply.
+    `slash_plan` is the slash-to-and plan; None reads the committed one (kb/slash_titles.load_plan)."""
+    if slash_plan is None:
+        slash_plan = slash_titles.load_plan() or {}
     idx = Index(ut, creds, arts)
     live = [r for r in rows if r.get("action") in APPLIED_ACTIONS]
     seen, dupes = set(), set()
@@ -205,7 +239,8 @@ def plan(rows, ut, creds, arts, with_exhibit_grain=False):
             elif r.get("to") is None:
                 held = "no target"
             else:
-                grain = "new-title"
+                held = slash_wait(r["to"], creds, slash_plan)
+                grain = "" if held else "new-title"
         elif not key:
             held = "local title not in kb/unified_titles.json"
         else:
@@ -251,13 +286,13 @@ def plan(rows, ut, creds, arts, with_exhibit_grain=False):
     return [dict(r, _key=key, _grain=grain, _held=held) for r, key, grain, held in decided]
 
 
-def apply_rows(rows, ut, creds, arts, with_exhibit_grain=False, today=None):
+def apply_rows(rows, ut, creds, arts, with_exhibit_grain=False, today=None, slash_plan=None):
     """Apply the list's applicable rows to in-memory copies. Returns (ut, creds, arts, undo, report). The caller
-    decides whether to write; a dry run simply discards the copies."""
+    decides whether to write; a dry run simply discards the copies. `slash_plan` as in plan()."""
     today = today or date.today().isoformat()
     ut, creds = copy.deepcopy(ut), copy.deepcopy(creds)
     arts = copy.deepcopy(arts)
-    decided = plan(rows, ut, creds, arts, with_exhibit_grain)
+    decided = plan(rows, ut, creds, arts, with_exhibit_grain, slash_plan)
     ut_before, cred_created, art_changed = {}, {}, []
     applied, held = [], []
     pair_arts = defaultdict(list)

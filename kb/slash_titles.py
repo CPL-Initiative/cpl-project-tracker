@@ -146,12 +146,12 @@ def sides(title, m):
 
 
 def whole_names(title, m):
-    """The reason a spaced word slash stands between two whole names, or None. Either side holds " and ", or both
-    sides are full titles (two or more words each)."""
+    """The reason a spaced word slash stands between two whole names, or None. Either side holds " and " in any
+    case ("Cutting And Burning" counts; COBIx on #3479), or both sides are full titles (two or more words each)."""
     if not (m.group(0).startswith(" ") and m.group(0).endswith(" ")):
         return None
     left, right = sides(title, m)
-    if re.search(r"\band\b", left) or re.search(r"\band\b", right):
+    if re.search(r"\band\b", left, re.I) or re.search(r"\band\b", right, re.I):
         return "a spaced slash between two names, one of which already holds \"and\" (%s | %s)" % (left, right)
     if len(left.split()) >= 2 and len(right.split()) >= 2:
         return "a spaced slash between two full titles (%s | %s)" % (left, right)
@@ -201,6 +201,16 @@ def and_form(title):
         pos = chain[-1][0].end()
     res.append(t[pos:])
     return re.sub(r"\s{2,}", " ", "".join(res)).strip()
+
+
+def ruled_form(title):
+    """The title as the rule writes it: and_form, except that a title whose word slash stands between two whole names
+    stays as printed, since the plan holds it for a person (rule d). Other modules that need the rule's spelling of a
+    title or a family head call this one (kb/_build_exhibit_repoint_list.py); none keeps its own copy."""
+    t = title or ""
+    if any(k == "word" and whole_names(t, m) for m, k in slashes(t)):
+        return t
+    return and_form(t)
 
 
 def read(title):
@@ -291,6 +301,11 @@ def build(credentials, committed=None, aliases=None):
         "held": held,
         "kept": kept,
     }
+
+
+def load_plan(path=None):
+    """The committed slash-to-and plan (kb/cred_rename_plans/2026-11-18_slash_to_and.json), or None when absent."""
+    return _load(path or OUT, None)
 
 
 def uncovered(credentials, plan):

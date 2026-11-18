@@ -11754,7 +11754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 534
+     "line": 537
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -14871,7 +14871,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 535
+     "line": 538
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -15031,7 +15031,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 533
+     "line": 536
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -16381,7 +16381,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 46
+     "line": 47
     }
    ],
    "served": false,
@@ -16694,7 +16694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 540
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18859,7 +18859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 541
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -21437,7 +21437,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 532
+     "line": 535
     },
     {
      "id": "script:kb/_build_exhibits_related.py",

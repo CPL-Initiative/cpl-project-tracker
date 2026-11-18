@@ -80,6 +80,11 @@ def test_rule():
               "Metal Building Erection 1 / Foreman Training"]:
         m = [m for m, k in st.slashes(t) if k == "word"][0]
         check(st.whole_names(t, m), "a spaced slash between two whole names was not caught: %r" % t)
+    # The "and" test ignores case (COBIx on #3479): a one-word right side would pass the two-full-titles test, so
+    # only the "And" on the left holds this one.
+    for t in ["Drywall And Lather / Framing", "Drywall AND Lather / Framing"]:
+        m = [m for m, k in st.slashes(t) if k == "word"][0]
+        check(st.whole_names(t, m), "a side holding \"And\" in title case did not hold the slash: %r" % t)
     for t in ["Education / Careers in Education Intermediate", "Pastry/Chocolate and Sugar Arts",
               "Carpenters Apprenticeship — Drywall/Lather"]:
         m = [m for m, k in st.slashes(t) if k == "word"][0]

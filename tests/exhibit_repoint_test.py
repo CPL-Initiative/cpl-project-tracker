@@ -402,6 +402,79 @@ def test_ctcnc_family_after_rename():
               "the CTCNC module does not re-point to %r: %r" % (fam, [(r["action"], r["to"]) for r in rows]))
 
 
+def test_slash_rule_is_one_rule():
+    """COBIx on #3472 (comment 6965961839): the builder's family-head and trade-key spelling is kb/slash_titles.py's
+    rule, never a second copy. A slash inside a code stays (HVAC/R, A/C), an official phrase keeps its slash, a spaced
+    slash between two whole names stays as printed (the plan holds it), and a slash joining words reads "and"."""
+    import slash_titles
+    cases = {"UA Plumbers/Pipefitters": "UA Plumbers and Pipefitters",
+             "Carpenters Apprenticeship — Drywall/Lather": "Carpenters Apprenticeship — Drywall and Lather",
+             "IBEW HVAC/R Technician": "IBEW HVAC/R Technician",
+             "A/C Systems": "A/C Systems",
+             "Fire Apparatus Driver/Operator": "Fire Apparatus Driver/Operator",
+             "Wall and Column Forms / Cutting and Burning (Carpentry)":
+                 "Wall and Column Forms / Cutting and Burning (Carpentry)",
+             "Drywall And Lather / Framing": "Drywall And Lather / Framing"}
+    for t, want in cases.items():
+        check(builder._and_form(t) == want == slash_titles.ruled_form(t),
+              "the builder's slash spelling of %r is %r, not %r" % (t, builder._and_form(t), want))
+    check(builder._trade_key("HVAC/R") == "hvac/r" and builder._trade_key("Plumbers/Pipefitters")
+          == builder._trade_key("Plumbers  and Pipefitters") == "plumbers and pipefitters",
+          "the trade key does not follow the rule: %r" % builder._trade_key("HVAC/R"))
+    src = open(builder.__file__, encoding="utf-8").read()
+    check('replace("/"' not in src and 're.sub(r"\\s*/\\s*"' not in src,
+          "the builder keeps its own copy of the slash rule")
+
+
+def test_apply_waits_on_slash_rename():
+    """COBIx's point 1 on #3472 (comment 6965961839): an assign row whose target spells its family head with a slash
+    the rule writes "and" is held by --pairs until the slash-to-and rename has run and the list is rebuilt, so the
+    UA Local 467 series never sits under two family names and the apply never creates the slash key again."""
+    l1 = "UA Plumbers and Pipefitters Apprenticeship — Level 1"
+    l2 = "UA Plumbers/Pipefitters Apprenticeship — Level 2"
+    l2_and = "UA Plumbers and Pipefitters Apprenticeship — Level 2"
+    slash_plan = {"plan_id": "slash-to-and-2026-11-18", "entries": [{"old": l2, "new": l2_and}], "held": []}
+    arts = [{"course_id": "P%d" % n, "exhibit_id": "MAPICA-UL4P%d-1-001" % n,
+             "exhibit_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n,
+             "unified_title": None, "cpl_type_description": "Other"} for n in (1, 2)]
+
+    def row(n, to):
+        return {"batch": "apprenticeship", "exhibit_id": "MAPICA-UL4P%d-1-001" % n,
+                "local_title": "UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n,
+                "action": "assign", "from": None, "to": to, "allow_sam_target": True, "target_issuer": None}
+    # Before the rename: Year 2's target is the slash key, still a credential. It waits; Year 1 (already "and") lands.
+    creds = {l1: [{"issuing_agency": "UA"}], l2: [{"issuing_agency": "UA"}]}
+    _, _, _, _, rep = xr.apply_rows([row(1, l1), row(2, l2)], {}, creds, arts, slash_plan=slash_plan)
+    held = {h["local_title"][-6:]: h["why"] for h in rep["held"]}
+    check([a["to"] for a in rep["applied"]] == [l1], "the 'and' rung did not apply alone: %r" % rep["applied"])
+    check("Year 2" in held and "waits on the rename" in held["Year 2"] and l2_and in held["Year 2"],
+          "the slash rung was not held for the rename: %r" % held)
+    # After the rename, before a rebuild: the slash key is gone. The stale row is still held and creates nothing.
+    creds_after = {l1: [{"issuing_agency": "UA"}], l2_and: [{"issuing_agency": "UA"}]}
+    _, creds2, _, _, rep2 = xr.apply_rows([row(2, l2)], {}, creds_after, arts, slash_plan=slash_plan)
+    check(not rep2["applied"] and "rename has run" in rep2["held"][0]["why"] and l2 not in creds2,
+          "a stale slash row after the rename was not held, or re-created the slash key: %r" % rep2["held"])
+    # After the rebuild the row names the "and" key and applies.
+    _, _, _, _, rep3 = xr.apply_rows([row(2, l2_and)], {}, creds_after, arts, slash_plan=slash_plan)
+    check([a["to"] for a in rep3["applied"]] == [l2_and], "the rebuilt row did not apply: %r" % rep3["held"])
+    # A new key with a word slash is held too; a code slash is not.
+    _, _, _, _, rep4 = xr.apply_rows([row(1, "UA Welder/Fitter Apprenticeship — Year 1"),
+                                      row(2, "UA HVAC/R Apprenticeship — Year 1")], {}, {}, arts,
+                                     slash_plan=slash_plan)
+    check([h["local_title"][-6:] for h in rep4["held"]] == ["Year 1"] and "new key" in rep4["held"][0]["why"]
+          and [a["to"] for a in rep4["applied"]] == ["UA HVAC/R Apprenticeship — Year 1"],
+          "a minted slash key or a code slash was misread: %r" % rep4["held"])
+    # The committed list against the committed plan: exactly UA Local 467 Years 2 and 3 wait on the rename.
+    doc = json.load(open(xr.LIST_PATH, encoding="utf-8"))
+    ut = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
+    cr = json.load(open(app.CREDENTIALS, encoding="utf-8"))
+    ar = json.load(open(app.ARTICULATIONS, encoding="utf-8")).get("articulations") or []
+    decided = xr.plan(doc["rows"], ut, cr, ar)
+    waits = sorted(r["local_title"] for r in decided if (r["_held"] or "").startswith("slash-to-and"))
+    check(waits == ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (2, 3)],
+          "the committed list's rows waiting on the slash rename moved: %r" % waits)
+
+
 def test_committed_list():
     """The committed list's own counts, pinned at what this session measured on origin/main 2026-11-17 (no MAP
     snapshot in the sandbox). COBIx's figure sits beside each; where they differ the reason is the comment."""
@@ -433,7 +506,8 @@ def test_committed_list():
     # committed record (UA Local 467 and Local 62 Plumbing and Pipefitting Journeyperson): rebuild with --map.
     # UA Local 467 Year 1 matches Sam's key "UA Plumbers and Pipefitters Apprenticeship — Level 1" and Years 2 and 3
     # match "UA Plumbers/Pipefitters ..." keys: one family under Sam's 2026-11-18 slash-to-and ruling, so all three
-    # assign (13 assign, 2 person: the two Journeyperson rows with no exhibit id).
+    # assign (13 assign, 2 person: the two Journeyperson rows with no exhibit id). The apply holds Years 2 and 3 until
+    # the slash-to-and rename runs (test_apply_waits_on_slash_rename).
     appr = [r for r in rs if r["batch"] == "apprenticeship"]
     check(got["apprenticeship"]["assign"] == 13 and sum(1 for r in appr if r["action"] == "person" and r["to"]) == 2,
           "apprenticeship counts moved: %r" % got["apprenticeship"])
@@ -468,6 +542,8 @@ if __name__ == "__main__":
     test_naming()
     test_one_family_spelling()
     test_ctcnc_family_after_rename()
+    test_slash_rule_is_one_rule()
+    test_apply_waits_on_slash_rename()
     test_committed_list()
     if FAILS:
         sys.exit("%d failure(s)" % len(FAILS))
