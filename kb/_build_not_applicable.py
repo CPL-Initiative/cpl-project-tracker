@@ -77,6 +77,10 @@ def build(coci, list_members, curation, universe=None):
             ks = sorted(set(kinds))
             cards[cid] = {"kind": ks[0] if len(ks) == 1 else "mixed", "courses": len(rows),
                           "titles": sorted({str(m.get("t") or "") for m in rows})[:5]}
+            # A person's ruling on the card keeps it in the counts (kb/_flags.py counted); the Courses List reads this.
+            cur = curation.get(cid) or {}
+            if F.is_person(cur.get("reviewed_by")):
+                cards[cid]["person_reviewed"] = F._when(cur.get("reviewed_at")) or "undated"
     return courses, cards, gaps["real_gap"]
 
 
@@ -97,6 +101,7 @@ def main(argv):
         "_rule_version": R.RULE_VERSION,
         "_course_notes": F.NA_COURSE_NOTES,
         "_card_notes": F.NA_CARD_NOTES,
+        "_person_note": F.PERSON_NOTE,
         "_inputs": {k: {"path": v, "sha256": F.sha256_of(p(k))} for k, v in sorted(INPUTS.items())},
         "_courses_shape": "college|control number -> [kind, title as the state's course list prints it]",
         "counts": {"courses": len(courses), "courses_by_kind": dict(sorted(by_kind.items())),

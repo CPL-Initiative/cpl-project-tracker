@@ -3972,6 +3972,25 @@
 ],
 "never_had_a_course":false
 },
+"ARTS M1068":{
+"former_courses":[
+[
+"Foothill College",
+"CCC000636962",
+[
+"ARTH 140"
+]
+],
+[
+"Long Beach City College",
+"CCC000561258",
+[
+"ARTH 140"
+]
+]
+],
+"never_had_a_course":false
+},
 "ARTS M1080":{
 "former_courses":[
 [
@@ -5255,6 +5274,39 @@
 "CCC000016379",
 [
 "ARTH 100"
+]
+]
+],
+"never_had_a_course":false
+},
+"ARTS M1175":{
+"former_courses":[
+[
+"College of the Desert",
+"CCC000248545",
+[
+"ARTS 100"
+]
+],
+[
+"Mission College",
+"CCC000658484",
+[
+"ARTS 270"
+]
+],
+[
+"CaÃ±ada College",
+"CCC000291789",
+[
+"ARTS 100"
+]
+],
+[
+"College of the Sequoias",
+"CCC000173717",
+[
+"ARTS 100"
 ]
 ]
 ],
@@ -6662,6 +6714,53 @@
 ],
 "never_had_a_course":false
 },
+"ARTS M1253":{
+"former_courses":[
+[
+"Los Angeles Mission College",
+"CCC000415033",
+[
+"ARTS 270"
+]
+],
+[
+"Norco College",
+"CCC000519424",
+[
+"ARTS 270"
+]
+],
+[
+"Riverside City College",
+"CCC000289777",
+[
+"ARTS 270"
+]
+],
+[
+"Cosumnes River College",
+"CCC000248210",
+[
+"ARTS 270"
+]
+],
+[
+"Folsom Lake College",
+"CCC000276611",
+[
+"ARTS 270"
+]
+],
+[
+"Sacramento City College",
+"CCC000254928",
+[
+"ARTS 270"
+]
+]
+],
+"never_had_a_course":false
+},
 "ARTS M1257":{
 "former_courses":[
 [
@@ -7457,6 +7556,207 @@
 "CCC000559408",
 [
 "ARTS 110"
+]
+]
+],
+"never_had_a_course":false
+},
+"ARTS M1368":{
+"former_courses":[
+[
+"Crafton Hills College",
+"CCC000432175",
+[
+"ARTS 200"
+]
+],
+[
+"East Los Angeles College",
+"CCC000392901",
+[
+"ARTS 200"
+]
+],
+[
+"El Camino College",
+"CCC000399511",
+[
+"ARTS 200"
+]
+],
+[
+"Evergreen Valley College",
+"CCC000458267",
+[
+"ARTS 200"
+]
+],
+[
+"Feather River College",
+"CCC000048237",
+[
+"ARTS 200"
+]
+],
+[
+"Irvine Valley College",
+"CCC000422098",
+[
+"ARTS 200"
+]
+],
+[
+"Los Angeles Harbor College",
+"CCC000040061",
+[
+"ARTS 200"
+]
+],
+[
+"Los Angeles Mission College",
+"CCC000390663",
+[
+"ARTS 200"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000328279",
+[
+"ARTS 200"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000319180",
+[
+"ARTS 200"
+]
+],
+[
+"San Diego City College",
+"CCC000000209",
+[
+"ARTS 200"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000027529",
+[
+"ARTS 200"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000346880",
+[
+"ARTS 200"
+]
+],
+[
+"San Jose City College",
+"CCC000286052",
+[
+"ARTS 200"
+]
+],
+[
+"Southwestern College",
+"CCC000082258",
+[
+"ARTS 200"
+]
+],
+[
+"West Los Angeles College",
+"CCC000053782",
+[
+"ARTS 200"
+]
+],
+[
+"CaÃ±ada College",
+"CCC000549539",
+[
+"ARTS 200"
+]
+],
+[
+"Cerritos College",
+"CCC000393776",
+[
+"ARTS 200"
+]
+],
+[
+"College of San Mateo",
+"CCC000139753",
+[
+"ARTS 200"
+]
+],
+[
+"College of the Siskiyous",
+"CCC000366830",
+[
+"ARTS 200"
+]
+],
+[
+"Gavilan College",
+"CCC000377860",
+[
+"ARTS 200"
+]
+],
+[
+"Long Beach City College",
+"CCC000422096",
+[
+"ARTS 200"
+]
+],
+[
+"Mission College",
+"CCC000091874",
+[
+"ARTS 200"
+]
+],
+[
+"Mission College",
+"CCC000281897",
+[
+"ARTS 200"
+]
+],
+[
+"Mission College",
+"CCC000658488",
+[
+"ARTS 200"
+]
+],
+[
+"Mission College",
+"CCC000658490",
+[
+"ARTS 200"
+]
+],
+[
+"Pasadena City College",
+"CCC000399717",
+[
+"ARTS 200"
+]
+],
+[
+"Skyline College",
+"CCC000562513",
+[
+"ARTS 200"
 ]
 ]
 ],
@@ -9731,6 +10031,193 @@
 ],
 "never_had_a_course":false
 },
+"BIOL M1023":{
+"former_courses":[
+[
+"Barstow Community College",
+"CCC000402677",
+[
+"BIOL 110 B"
+]
+],
+[
+"Cerritos College",
+"CCC000388874",
+[
+"BIOL 110 B"
+]
+],
+[
+"Citrus College",
+"CCC000398146",
+[
+"BIOL 110 B"
+]
+],
+[
+"Clovis Community College",
+"CCC000563375",
+[
+"BIOL 110 B"
+]
+],
+[
+"College of Alameda",
+"CCC000459351",
+[
+"BIOL 110 B"
+]
+],
+[
+"College of the Sequoias",
+"CCC000558600",
+[
+"BIOL 110 B"
+]
+],
+[
+"Contra Costa College",
+"CCC000103636",
+[
+"BIOL 110 B"
+]
+],
+[
+"Diablo Valley College",
+"CCC000341585",
+[
+"BIOL 110 B"
+]
+],
+[
+"Gavilan College",
+"CCC000334780",
+[
+"BIOL 110 B"
+]
+],
+[
+"Golden West College",
+"CCC000011434",
+[
+"BIOL 110 B"
+]
+],
+[
+"Hartnell College",
+"CCC000202940",
+[
+"BIOL 110 B"
+]
+],
+[
+"Irvine Valley College",
+"CCC000542262",
+[
+"BIOL 110 B"
+]
+],
+[
+"Los Medanos College",
+"CCC000341268",
+[
+"BIOL 110 B"
+]
+],
+[
+"Mendocino College",
+"CCC000010706",
+[
+"BIOL 110 B"
+]
+],
+[
+"Merritt College",
+"CCC000372905",
+[
+"BIOL 110 B"
+]
+],
+[
+"Mission College",
+"CCC000454775",
+[
+"BIOL 110 B"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000406128",
+[
+"BIOL 110 B"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000430435",
+[
+"BIOL 110 B"
+]
+],
+[
+"San Diego City College",
+"CCC000448857",
+[
+"BIOL 110 B"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000448920",
+[
+"BIOL 110 B"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000448959",
+[
+"BIOL 110 B"
+]
+],
+[
+"San Jose City College",
+"CCC000507731",
+[
+"BIOL 110 B"
+]
+],
+[
+"Skyline College",
+"CCC000352866",
+[
+"BIOL 110 B"
+]
+],
+[
+"Taft College",
+"CCC000288096",
+[
+"BIOL 110 B"
+]
+],
+[
+"Victor Valley College",
+"CCC000095095",
+[
+"BIOL 110 B"
+]
+],
+[
+"Victor Valley College",
+"CCC000302653",
+[
+"BIOL 110 B"
+]
+]
+],
+"never_had_a_course":false
+},
 "BIOL M1024":{
 "former_courses":[
 [
@@ -10895,6 +11382,40 @@
 "CCC000560513",
 [
 "BIOL C1001L"
+]
+]
+],
+"never_had_a_course":false
+},
+"BIOL M1115":{
+"former_courses":[
+[
+"Clovis Community College",
+"CCC000654797",
+[
+"BIOL C1000"
+]
+],
+[
+"Reedley College",
+"CCC000656249",
+[
+"BIOL C1000"
+]
+],
+[
+"Skyline College",
+"CCC000359792",
+[
+"BIOL 190",
+"BIOL C1000"
+]
+],
+[
+"Ventura College",
+"CCC000657829",
+[
+"BIOL C1000"
 ]
 ]
 ],
@@ -12629,6 +13150,32 @@
 ],
 "never_had_a_course":false
 },
+"BUSI M1049":{
+"former_courses":[
+[
+"De Anza College",
+"CCC000658949",
+[
+"ACCT 110"
+]
+],
+[
+"Foothill College",
+"CCC000148170",
+[
+"ACCT 110"
+]
+],
+[
+"Lake Tahoe Community College",
+"CCC000362226",
+[
+"ACCT 110"
+]
+]
+],
+"never_had_a_course":false
+},
 "BUSI M1050":{
 "former_courses":[
 [
@@ -12745,6 +13292,25 @@
 [
 "Los Angeles Southwest College",
 "CCC000109827",
+[
+"ACCT 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"BUSI M1072":{
+"former_courses":[
+[
+"Norco College",
+"CCC000519366",
+[
+"ACCT 120"
+]
+],
+[
+"Riverside City College",
+"CCC000235451",
 [
 "ACCT 120"
 ]
@@ -14276,6 +14842,123 @@
 ],
 "never_had_a_course":false,
 "one_course_card":true
+},
+"BUSI M1213":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000646435",
+[
+"MATH 110"
+]
+],
+[
+"Cerritos College",
+"CCC000646442",
+[
+"MATH 110"
+]
+],
+[
+"Chabot College",
+"CCC000597840",
+[
+"MATH 110"
+]
+],
+[
+"College of San Mateo",
+"CCC000629828",
+[
+"MATH 110"
+]
+],
+[
+"College of the Desert",
+"CCC000640245",
+[
+"MATH 110"
+]
+],
+[
+"College of the Sequoias",
+"CCC000199138",
+[
+"MATH 110"
+]
+],
+[
+"Contra Costa College",
+"CCC000644493",
+[
+"MATH 110"
+]
+],
+[
+"East Los Angeles College",
+"CCC000412869",
+[
+"MATH 110"
+]
+],
+[
+"Los Angeles Harbor College",
+"CCC000641411",
+[
+"MATH 110"
+]
+],
+[
+"Los Angeles Valley College",
+"CCC000644595",
+[
+"MATH 110"
+]
+],
+[
+"MiraCosta College",
+"CCC000559229",
+[
+"MATH 110"
+]
+],
+[
+"Saddleback College",
+"CCC000626122",
+[
+"MATH 110"
+]
+],
+[
+"West Los Angeles College",
+"CCC000640719",
+[
+"MATH 110"
+]
+],
+[
+"San Diego City College",
+"CCC000597716",
+[
+"MATH 110"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000598017",
+[
+"MATH 110"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000598019",
+[
+"MATH 110"
+]
+]
+],
+"never_had_a_course":false
 },
 "BUSI M1327":{
 "former_courses":[
@@ -17239,6 +17922,25 @@
 ],
 "never_had_a_course":false
 },
+"CDEV M1212":{
+"former_courses":[
+[
+"Golden West College",
+"CCC000632122",
+[
+"EDUC 200"
+]
+],
+[
+"Orange Coast College",
+"CCC000627483",
+[
+"EDUC 200"
+]
+]
+],
+"never_had_a_course":false
+},
 "CDEV M9030":{
 "former_courses":[
 [
@@ -17402,6 +18104,100 @@
 [
 "Taft College",
 "CCC000557433",
+[
+"CHEM 102"
+]
+]
+],
+"never_had_a_course":false
+},
+"CHEM M1022":{
+"former_courses":[
+[
+"Barstow Community College",
+"CCC000618082",
+[
+"CHEM 102"
+]
+],
+[
+"Berkeley City College",
+"CCC000350080",
+[
+"CHEM 102"
+]
+],
+[
+"Grossmont College",
+"CCC000175518",
+[
+"CHEM 102"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000017301",
+[
+"CHEM 102"
+]
+],
+[
+"Los Angeles Trade Technical College",
+"CCC000126143",
+[
+"CHEM 102"
+]
+],
+[
+"Merritt College",
+"CCC000356322",
+[
+"CHEM 102"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000388939",
+[
+"CHEM 102"
+]
+]
+],
+"never_had_a_course":false
+},
+"CHEM M1031":{
+"former_courses":[
+[
+"Lake Tahoe Community College",
+"CCC000632605",
+[
+"CHEM 102"
+]
+],
+[
+"Sacramento City College",
+"CCC000233586",
+[
+"CHEM 102"
+]
+],
+[
+"San Diego City College",
+"CCC000030379",
+[
+"CHEM 102"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000277711",
+[
+"CHEM 102"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000355795",
 [
 "CHEM 102"
 ]
@@ -18355,6 +19151,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"CHEM M10AC":{
+"former_courses":[
+[
+"College of the Sequoias",
+"CCC000530980",
+[
+"CHEM 150"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "CHEM M10AM":{
 "former_courses":[
 [
@@ -18666,6 +19475,32 @@
 ],
 "never_had_a_course":false,
 "one_course_card":true
+},
+"CNST M1027":{
+"former_courses":[
+[
+"City College of San Francisco",
+"CCC000598928",
+[
+"ENGR 260"
+]
+],
+[
+"Lemoore College",
+"CCC000511876",
+[
+"ENGR 260"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000122917",
+[
+"ENGR 260"
+]
+]
+],
+"never_had_a_course":false
 },
 "COMM M1006":{
 "former_courses":[
@@ -19710,6 +20545,25 @@
 "CCC000302443",
 [
 "COMM 130"
+]
+]
+],
+"never_had_a_course":false
+},
+"COMM M1051":{
+"former_courses":[
+[
+"Southwestern College",
+"CCC000639361",
+[
+"JOUR 100"
+]
+],
+[
+"Southwestern College",
+"CCC000639454",
+[
+"JOUR 100"
 ]
 ]
 ],
@@ -23769,6 +24623,25 @@
 ],
 "never_had_a_course":false
 },
+"CRIM M1042":{
+"former_courses":[
+[
+"Norco College",
+"CCC000641552",
+[
+"AJ 110"
+]
+],
+[
+"Riverside City College",
+"CCC000642799",
+[
+"AJ 110"
+]
+]
+],
+"never_had_a_course":false
+},
 "CRIM M1087":{
 "former_courses":[
 [
@@ -24100,6 +24973,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"CRIM M10ZJ":{
+"former_courses":[
+[
+"De Anza College",
+"CCC000642600",
+[
+"AJ 200"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "CRIM M10ZK":{
 "former_courses":[
 [
@@ -24125,6 +25011,60 @@
 [
 "Sacramento City College",
 "CCC000269080",
+[
+"AJ 160"
+]
+]
+],
+"never_had_a_course":false
+},
+"CRIM M1119":{
+"former_courses":[
+[
+"Citrus College",
+"CCC000420776",
+[
+"AJ 160"
+]
+],
+[
+"College of the Desert",
+"CCC000016476",
+[
+"AJ 160"
+]
+],
+[
+"El Camino College",
+"CCC000128345",
+[
+"AJ 160"
+]
+],
+[
+"Monterey Peninsula College",
+"CCC000543680",
+[
+"AJ 160"
+]
+],
+[
+"Palomar College",
+"CCC000229875",
+[
+"AJ 160"
+]
+],
+[
+"Taft College",
+"CCC000626424",
+[
+"AJ 160"
+]
+],
+[
+"Victor Valley College",
+"CCC000506949",
 [
 "AJ 160"
 ]
@@ -24627,6 +25567,19 @@
 ]
 ],
 "never_had_a_course":false
+},
+"CRIM M11BU":{
+"former_courses":[
+[
+"Madera College",
+"CCC000648935",
+[
+"SOCI 160"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
 },
 "CRIM M11BX":{
 "former_courses":[
@@ -25412,6 +26365,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"CULN M10VV":{
+"former_courses":[
+[
+"Allan Hancock College",
+"CCC000596257",
+[
+"NUTR 120"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "CULN M10VX":{
 "former_courses":[
 [
@@ -25504,6 +26470,93 @@
 "CCC000627583",
 [
 "NUTR 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"CULN M1140":{
+"former_courses":[
+[
+"Allan Hancock College",
+"CCC000654694",
+[
+"HOSP 140"
+]
+],
+[
+"College of Marin",
+"CCC000587596",
+[
+"HOSP 140"
+]
+],
+[
+"Cuesta College",
+"CCC000602843",
+[
+"HOSP 140"
+]
+],
+[
+"Lemoore College",
+"CCC000618273",
+[
+"HOSP 140"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000608315",
+[
+"HOSP 140"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000635939",
+[
+"HOSP 140"
+]
+],
+[
+"Santa Ana College",
+"CCC000636780",
+[
+"HOSP 140"
+]
+]
+],
+"never_had_a_course":false
+},
+"CULN M1151":{
+"former_courses":[
+[
+"Mission College",
+"CCC000632537",
+[
+"HOSP 160"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000637423",
+[
+"HOSP 130"
+]
+],
+[
+"San Joaquin Delta College",
+"CCC000345378",
+[
+"HOSP 130"
+]
+],
+[
+"Santa Rosa Junior College",
+"CCC000344890",
+[
+"HOSP 130"
 ]
 ]
 ],
@@ -25617,6 +26670,19 @@
 [
 "Los Angeles City College",
 "CCC000643263",
+[
+"ENGR 150"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"DRAF M10KR":{
+"former_courses":[
+[
+"Rio Hondo College",
+"CCC000638757",
 [
 "ENGR 150"
 ]
@@ -26036,6 +27102,95 @@
 [
 "Shasta College",
 "CCC000372992",
+[
+"EDUC 200"
+]
+]
+],
+"never_had_a_course":false
+},
+"EDUC M1043":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000604698",
+[
+"EDUC 200"
+]
+],
+[
+"Clovis Community College",
+"CCC000563299",
+[
+"EDUC 200"
+]
+],
+[
+"College of Marin",
+"CCC000356240",
+[
+"EDUC 200"
+]
+],
+[
+"College of the Sequoias",
+"CCC000333991",
+[
+"EDUC 200"
+]
+],
+[
+"East Los Angeles College",
+"CCC000386583",
+[
+"EDUC 200"
+]
+],
+[
+"Fresno City College",
+"CCC000511622",
+[
+"EDUC 200"
+]
+],
+[
+"Los Angeles City College",
+"CCC000462326",
+[
+"EDUC 200"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000150334",
+[
+"EDUC 200"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000097875",
+[
+"EDUC 200"
+]
+],
+[
+"Los Angeles Trade Technical College",
+"CCC000598072",
+[
+"EDUC 200"
+]
+],
+[
+"Madera College",
+"CCC000616034",
+[
+"EDUC 200"
+]
+],
+[
+"Victor Valley College",
+"CCC000244991",
 [
 "EDUC 200"
 ]
@@ -30634,6 +31789,116 @@
 ],
 "never_had_a_course":false
 },
+"ENGL M1314":{
+"former_courses":[
+[
+"Cerritos College",
+"CCC000383593",
+[
+"ANTH 130"
+]
+],
+[
+"College of the Canyons",
+"CCC000642454",
+[
+"ANTH 130"
+]
+],
+[
+"De Anza College",
+"CCC000159402",
+[
+"ANTH 130"
+]
+],
+[
+"Folsom Lake College",
+"CCC000603731",
+[
+"ANTH 130"
+]
+],
+[
+"Golden West College",
+"CCC000569015",
+[
+"ANTH 130"
+]
+],
+[
+"Imperial Valley College",
+"CCC000330490",
+[
+"ANTH 130"
+]
+],
+[
+"Palomar College",
+"CCC000301287",
+[
+"ANTH 130"
+]
+],
+[
+"Pasadena City College",
+"CCC000391144",
+[
+"ANTH 130"
+]
+],
+[
+"Pasadena City College",
+"CCC000417124",
+[
+"ANTH 130"
+]
+],
+[
+"Porterville College",
+"CCC000605325",
+[
+"ANTH 130"
+]
+],
+[
+"Sacramento City College",
+"CCC000150844",
+[
+"ANTH 130"
+]
+],
+[
+"San Diego City College",
+"CCC000161420",
+[
+"ANTH 130"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000264104",
+[
+"ANTH 130"
+]
+],
+[
+"Santa Monica College",
+"CCC000547975",
+[
+"ANTH 130"
+]
+],
+[
+"Santa Rosa Junior College",
+"CCC000255529",
+[
+"ANTH 130"
+]
+]
+],
+"never_had_a_course":false
+},
 "ENGL M1316":{
 "former_courses":[
 [
@@ -31869,6 +33134,46 @@
 [
 "Santa Rosa Junior College",
 "CCC000176327",
+[
+"ENGR 130"
+]
+]
+],
+"never_had_a_course":false
+},
+"ENGR M1060":{
+"former_courses":[
+[
+"Chaffey College",
+"CCC000396529",
+[
+"ENGR 130"
+]
+],
+[
+"College of San Mateo",
+"CCC000178152",
+[
+"ENGR 130"
+]
+],
+[
+"Los Medanos College",
+"CCC000296647",
+[
+"ENGR 130"
+]
+],
+[
+"Monterey Peninsula College",
+"CCC000287967",
+[
+"ENGR 130"
+]
+],
+[
+"Southwestern College",
+"CCC000369545",
 [
 "ENGR 130"
 ]
@@ -34489,6 +35794,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"FIRE M10HQ":{
+"former_courses":[
+[
+"Sierra College",
+"CCC000543868",
+[
+"FIRE 231 X"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "FIRE M10JT":{
 "former_courses":[
 [
@@ -34780,6 +36098,39 @@
 "CCC000608633",
 [
 "FIRE 251 X"
+]
+]
+],
+"never_had_a_course":false
+},
+"FIRE M1329":{
+"former_courses":[
+[
+"Lake Tahoe Community College",
+"CCC000515724",
+[
+"FIRE 110 X"
+]
+],
+[
+"Lassen College",
+"CCC000283722",
+[
+"FIRE 110 X"
+]
+],
+[
+"Los Medanos College",
+"CCC000178337",
+[
+"FIRE 110 X"
+]
+],
+[
+"Mt. San Jacinto College",
+"CCC000102306",
+[
+"FIRE 110 X"
 ]
 ]
 ],
@@ -35621,6 +36972,158 @@
 [
 "West Los Angeles College",
 "CCC000595302",
+[
+"GEOG 130"
+]
+]
+],
+"never_had_a_course":false
+},
+"GEOG M1029":{
+"former_courses":[
+[
+"Bakersfield College",
+"CCC000564743",
+[
+"GEOG 130"
+]
+],
+[
+"Chabot College",
+"CCC000602132",
+[
+"GEOG 130"
+]
+],
+[
+"Citrus College",
+"CCC000617605",
+[
+"GEOG 130"
+]
+],
+[
+"Coastline Community College",
+"CCC000625057",
+[
+"GEOG 130"
+]
+],
+[
+"College of Alameda",
+"CCC000626025",
+[
+"GEOG 130"
+]
+],
+[
+"College of the Sequoias",
+"CCC000640711",
+[
+"GEOG 130"
+]
+],
+[
+"East Los Angeles College",
+"CCC000407543",
+[
+"GEOG 130"
+]
+],
+[
+"East Los Angeles College",
+"CCC000419855",
+[
+"GEOG 130"
+]
+],
+[
+"Golden West College",
+"CCC000618790",
+[
+"GEOG 130"
+]
+],
+[
+"Irvine Valley College",
+"CCC000530388",
+[
+"GEOG 130"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000253489",
+[
+"GEOG 130"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000306419",
+[
+"GEOG 130"
+]
+],
+[
+"Los Angeles Valley College",
+"CCC000413078",
+[
+"GEOG 130"
+]
+],
+[
+"Moorpark College",
+"CCC000428295",
+[
+"GEOG 130"
+]
+],
+[
+"Mt. San Jacinto College",
+"CCC000518613",
+[
+"GEOG 130"
+]
+],
+[
+"Santa Rosa Junior College",
+"CCC000084152",
+[
+"GEOG 130"
+]
+],
+[
+"Santa Rosa Junior College",
+"CCC000584209",
+[
+"GEOG 130"
+]
+],
+[
+"Santiago Canyon College",
+"CCC000550734",
+[
+"GEOG 130"
+]
+],
+[
+"Victor Valley College",
+"CCC000533078",
+[
+"GEOG 130"
+]
+],
+[
+"West Los Angeles College",
+"CCC000637741",
+[
+"GEOG 130"
+]
+],
+[
+"Yuba College",
+"CCC000638601",
 [
 "GEOG 130"
 ]
@@ -36516,6 +38019,81 @@
 ],
 "never_had_a_course":false
 },
+"GEOG M1077":{
+"former_courses":[
+[
+"CaÃ±ada College",
+"CCC000605925",
+[
+"GEOG 111"
+]
+],
+[
+"College of the Desert",
+"CCC000340709",
+[
+"GEOG 111"
+]
+],
+[
+"College of the Siskiyous",
+"CCC000658398",
+[
+"GEOG 111"
+]
+],
+[
+"Columbia College",
+"CCC000640385",
+[
+"GEOG 111"
+]
+],
+[
+"Fullerton College",
+"CCC000237374",
+[
+"GEOG 111"
+]
+],
+[
+"Long Beach City College",
+"CCC000587210",
+[
+"GEOG 111"
+]
+],
+[
+"North Orange Continuing Education",
+"CCC000386951",
+[
+"GEOG 111"
+]
+],
+[
+"North Orange Continuing Education Credit",
+"CCC000386951",
+[
+"GEOG 111"
+]
+],
+[
+"Santa Rosa Junior College",
+"CCC000635660",
+[
+"GEOG 111"
+]
+],
+[
+"Skyline College",
+"CCC000554924",
+[
+"GEOG 111"
+]
+]
+],
+"never_had_a_course":false
+},
 "GEOG M1078":{
 "former_courses":[
 [
@@ -37002,6 +38580,312 @@
 ],
 "never_had_a_course":false
 },
+"GEOG M1080":{
+"former_courses":[
+[
+"Bakersfield College",
+"CCC000551888",
+[
+"GEOG 125"
+]
+],
+[
+"Barstow Community College",
+"CCC000623984",
+[
+"GEOG 125"
+]
+],
+[
+"Berkeley City College",
+"CCC000363457",
+[
+"GEOG 125"
+]
+],
+[
+"Chabot College",
+"CCC000350723",
+[
+"GEOG 125"
+]
+],
+[
+"Citrus College",
+"CCC000574905",
+[
+"GEOG 125"
+]
+],
+[
+"City College of San Francisco",
+"CCC000572164",
+[
+"GEOG 125"
+]
+],
+[
+"Clovis Community College",
+"CCC000568241",
+[
+"GEOG 125"
+]
+],
+[
+"College of Alameda",
+"CCC000591841",
+[
+"GEOG 125"
+]
+],
+[
+"College of the Sequoias",
+"CCC000207768",
+[
+"GEOG 125"
+]
+],
+[
+"Compton College",
+"CCC000450211",
+[
+"GEOG 125"
+]
+],
+[
+"Contra Costa College",
+"CCC000239145",
+[
+"GEOG 125"
+]
+],
+[
+"Cosumnes River College",
+"CCC000325239",
+[
+"GEOG 125"
+]
+],
+[
+"Crafton Hills College",
+"CCC000435328",
+[
+"GEOG 125"
+]
+],
+[
+"Diablo Valley College",
+"CCC000438932",
+[
+"GEOG 125"
+]
+],
+[
+"East Los Angeles College",
+"CCC000558509",
+[
+"GEOG 125"
+]
+],
+[
+"El Camino College",
+"CCC000316556",
+[
+"GEOG 125"
+]
+],
+[
+"Feather River College",
+"CCC000571395",
+[
+"GEOG 125"
+]
+],
+[
+"Foothill College",
+"CCC000329515",
+[
+"GEOG 125"
+]
+],
+[
+"Golden West College",
+"CCC000266649",
+[
+"GEOG 125"
+]
+],
+[
+"Grossmont College",
+"CCC000317372",
+[
+"GEOG 125"
+]
+],
+[
+"Lake Tahoe Community College",
+"CCC000348443",
+[
+"GEOG 125"
+]
+],
+[
+"Long Beach City College",
+"CCC000415438",
+[
+"GEOG 125"
+]
+],
+[
+"Los Angeles City College",
+"CCC000637789",
+[
+"GEOG 125"
+]
+],
+[
+"Los Angeles Harbor College",
+"CCC000091850",
+[
+"GEOG 125"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000334928",
+[
+"GEOG 125"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000568215",
+[
+"GEOG 125"
+]
+],
+[
+"Los Angeles Trade Technical College",
+"CCC000613367",
+[
+"GEOG 125"
+]
+],
+[
+"Madera College",
+"CCC000615747",
+[
+"GEOG 125"
+]
+],
+[
+"Napa Valley College",
+"CCC000246842",
+[
+"GEOG 125"
+]
+],
+[
+"Norco College",
+"CCC000519760",
+[
+"GEOG 125"
+]
+],
+[
+"Palomar College",
+"CCC000187667",
+[
+"GEOG 125"
+]
+],
+[
+"Sacramento City College",
+"CCC000336527",
+[
+"GEOG 125"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000430376",
+[
+"GEOG 125"
+]
+],
+[
+"San Diego City College",
+"CCC000162213",
+[
+"GEOG 125"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000263966",
+[
+"GEOG 125"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000443060",
+[
+"GEOG 125"
+]
+],
+[
+"Santiago Canyon College",
+"CCC000204551",
+[
+"GEOG 125"
+]
+],
+[
+"Sierra College",
+"CCC000079305",
+[
+"GEOG 125"
+]
+],
+[
+"Skyline College",
+"CCC000350570",
+[
+"GEOG 125"
+]
+],
+[
+"Taft College",
+"CCC000131120",
+[
+"GEOG 125"
+]
+],
+[
+"Victor Valley College",
+"CCC000529779",
+[
+"GEOG 125"
+]
+],
+[
+"West Los Angeles College",
+"CCC000293090",
+[
+"GEOG 110"
+]
+],
+[
+"Yuba College",
+"CCC000599547",
+[
+"GEOG 125"
+]
+]
+],
+"never_had_a_course":false
+},
 "GEOG M1084":{
 "former_courses":[
 [
@@ -37063,6 +38947,60 @@
 "CCC000335467",
 [
 "GEOL 100 L"
+]
+]
+],
+"never_had_a_course":false
+},
+"GEOG M1086":{
+"former_courses":[
+[
+"City College of San Francisco",
+"CCC000522974",
+[
+"GEOG 155"
+]
+],
+[
+"College of the Desert",
+"CCC000331879",
+[
+"GEOG 155"
+]
+],
+[
+"College of the Desert",
+"CCC000617702",
+[
+"GEOG 155"
+]
+],
+[
+"El Camino College",
+"CCC000216548",
+[
+"GEOG 155"
+]
+],
+[
+"Glendale Community College",
+"CCC000313172",
+[
+"GEOG 155"
+]
+],
+[
+"Madera College",
+"CCC000617902",
+[
+"GEOG 155"
+]
+],
+[
+"Reedley College",
+"CCC000161213",
+[
+"GEOG 155"
 ]
 ]
 ],
@@ -39586,6 +41524,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"HIST M10AO":{
+"former_courses":[
+[
+"Gavilan College",
+"CCC000449436",
+[
+"HIST 160"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "HIST M10AP":{
 "former_courses":[
 [
@@ -41175,6 +43126,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"HLTH M10LW":{
+"former_courses":[
+[
+"Irvine Valley College",
+"CCC000653592",
+[
+"PH 107"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "HLTH M10MS":{
 "former_courses":[
 [
@@ -41421,6 +43385,74 @@
 ],
 "never_had_a_course":false,
 "one_course_card":true
+},
+"HLTH M1132":{
+"former_courses":[
+[
+"Antelope Valley College",
+"CCC000021738",
+[
+"PH 116"
+]
+],
+[
+"College of Marin",
+"CCC000612874",
+[
+"PH 116"
+]
+],
+[
+"Columbia College",
+"CCC000440401",
+[
+"PH 116"
+]
+],
+[
+"Irvine Valley College",
+"CCC000513464",
+[
+"PH 116"
+]
+],
+[
+"Long Beach City College",
+"CCC000393242",
+[
+"PH 116"
+]
+],
+[
+"Santa Ana College",
+"CCC000533135",
+[
+"PH 116"
+]
+],
+[
+"Santiago Canyon College",
+"CCC000542257",
+[
+"PH 116"
+]
+],
+[
+"Victor Valley College",
+"CCC000619126",
+[
+"PH 116"
+]
+],
+[
+"Victor Valley College",
+"CCC000619126",
+[
+"PH 116"
+]
+]
+],
+"never_had_a_course":false
 },
 "HLTH M1138":{
 "former_courses":[
@@ -48619,6 +50651,214 @@
 ],
 "never_had_a_course":false
 },
+"MATH M1088":{
+"former_courses":[
+[
+"Berkeley City College",
+"CCC000352674",
+[
+"MATH 250"
+]
+],
+[
+"CaÃ±ada College",
+"CCC000165674",
+[
+"MATH 250"
+]
+],
+[
+"Cerro Coso Community College",
+"CCC000504279",
+[
+"MATH 250"
+]
+],
+[
+"City College of San Francisco",
+"CCC000378340",
+[
+"MATH 250"
+]
+],
+[
+"College of Alameda",
+"CCC000373222",
+[
+"MATH 250"
+]
+],
+[
+"College of San Mateo",
+"CCC000252625",
+[
+"MATH 250"
+]
+],
+[
+"College of the Desert",
+"CCC000328559",
+[
+"MATH 250"
+]
+],
+[
+"College of the Sequoias",
+"CCC000535235",
+[
+"MATH 250"
+]
+],
+[
+"Crafton Hills College",
+"CCC000549165",
+[
+"MATH 250"
+]
+],
+[
+"East Los Angeles College",
+"CCC000426097",
+[
+"MATH 250"
+]
+],
+[
+"Foothill College",
+"CCC000182403",
+[
+"MATH 250"
+]
+],
+[
+"Hartnell College",
+"CCC000203325",
+[
+"MATH 250"
+]
+],
+[
+"Lake Tahoe Community College",
+"CCC000382726",
+[
+"MATH 250"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000213317",
+[
+"MATH 250"
+]
+],
+[
+"Los Angeles Southwest College",
+"CCC000315726",
+[
+"MATH 250"
+]
+],
+[
+"Los Angeles Trade Technical College",
+"CCC000060781",
+[
+"MATH 250"
+]
+],
+[
+"Mendocino College",
+"CCC000107193",
+[
+"MATH 250"
+]
+],
+[
+"Mission College",
+"CCC000265566",
+[
+"MATH 250"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000569609",
+[
+"MATH 250"
+]
+],
+[
+"Mt. San Jacinto College",
+"CCC000600347",
+[
+"MATH 250"
+]
+],
+[
+"Napa Valley College",
+"CCC000291468",
+[
+"MATH 250"
+]
+],
+[
+"Riverside City College",
+"CCC000255368",
+[
+"MATH 250"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000525390",
+[
+"MATH 250"
+]
+],
+[
+"San Jose City College",
+"CCC000180915",
+[
+"MATH 250"
+]
+],
+[
+"Santiago Canyon College",
+"CCC000564633",
+[
+"MATH 250"
+]
+],
+[
+"Taft College",
+"CCC000626387",
+[
+"MATH 250"
+]
+],
+[
+"Victor Valley College",
+"CCC000332237",
+[
+"MATH 250"
+]
+],
+[
+"West Los Angeles College",
+"CCC000307599",
+[
+"MATH 250"
+]
+],
+[
+"Yuba College",
+"CCC000261193",
+[
+"MATH 250"
+]
+]
+],
+"never_had_a_course":false
+},
 "MATH M1092":{
 "former_courses":[
 [
@@ -49687,6 +51927,32 @@
 ],
 "never_had_a_course":false
 },
+"MATH M1147":{
+"former_courses":[
+[
+"Fullerton College",
+"CCC000630420",
+[
+"MATH 140"
+]
+],
+[
+"Long Beach City College",
+"CCC000647609",
+[
+"MATH 140"
+]
+],
+[
+"Merced College",
+"CCC000631643",
+[
+"MATH 140"
+]
+]
+],
+"never_had_a_course":false
+},
 "MATH M1158":{
 "former_courses":[
 [
@@ -50192,6 +52458,25 @@
 ],
 "never_had_a_course":false
 },
+"MATH M1204":{
+"former_courses":[
+[
+"Barstow Community College",
+"CCC000619934",
+[
+"MATH 120"
+]
+],
+[
+"Taft College",
+"CCC000586901",
+[
+"MATH 120"
+]
+]
+],
+"never_had_a_course":false
+},
 "MATH M1205":{
 "former_courses":[
 [
@@ -50258,6 +52543,46 @@
 [
 "Los Angeles Pierce College",
 "CCC000016134",
+[
+"MATH 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"MATH M1210":{
+"former_courses":[
+[
+"San Joaquin Delta College",
+"CCC000351228",
+[
+"MATH 120"
+]
+],
+[
+"Yuba College",
+"CCC000108489",
+[
+"MATH 120"
+]
+],
+[
+"Yuba College",
+"CCC000292519",
+[
+"MATH 120"
+]
+],
+[
+"Compton College",
+"CCC000450359",
+[
+"MATH 120"
+]
+],
+[
+"El Camino College",
+"CCC000341335",
 [
 "MATH 120"
 ]
@@ -50591,6 +52916,32 @@
 "CCC000596736",
 [
 "COMP 152"
+]
+]
+],
+"never_had_a_course":false
+},
+"MATH M1237":{
+"former_courses":[
+[
+"Coastline Community College",
+"CCC000082813",
+[
+"MATH 120"
+]
+],
+[
+"Golden West College",
+"CCC000328799",
+[
+"MATH 120"
+]
+],
+[
+"Irvine Valley College",
+"CCC000564935",
+[
+"MATH 120"
 ]
 ]
 ],
@@ -58648,6 +60999,329 @@
 ],
 "never_had_a_course":false
 },
+"MUSI M1307":{
+"former_courses":[
+[
+"Citrus College",
+"CCC000559207",
+[
+"MUS 180"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000620402",
+[
+"MUS 185"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1310":{
+"former_courses":[
+[
+"Allan Hancock College",
+"CCC000510158",
+[
+"MUS 180"
+]
+],
+[
+"Allan Hancock College",
+"CCC000619852",
+[
+"MUS 180"
+]
+],
+[
+"Bakersfield College",
+"CCC000322214",
+[
+"MUS 180"
+]
+],
+[
+"Butte College",
+"CCC000651525",
+[
+"MUS 180"
+]
+],
+[
+"Chabot College",
+"CCC000377544",
+[
+"MUS 180"
+]
+],
+[
+"College of Marin",
+"CCC000370874",
+[
+"MUS 180"
+]
+],
+[
+"Cuyamaca College",
+"CCC000067979",
+[
+"MUS 180"
+]
+],
+[
+"Cuyamaca College",
+"CCC000215932",
+[
+"MUS 180"
+]
+],
+[
+"Diablo Valley College",
+"CCC000285446",
+[
+"MUS 180"
+]
+],
+[
+"East Los Angeles College",
+"CCC000603396",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000028603",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000059816",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000083212",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000180050",
+[
+"MUS 180"
+]
+],
+[
+"Hartnell College",
+"CCC000282455",
+[
+"MUS 180"
+]
+],
+[
+"Irvine Valley College",
+"CCC000555995",
+[
+"MUS 180"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000531497",
+[
+"MUS 180"
+]
+],
+[
+"Palomar College",
+"CCC000100346",
+[
+"MUS 180"
+]
+],
+[
+"Reedley College",
+"CCC000324203",
+[
+"MUS 180"
+]
+],
+[
+"Riverside City College",
+"CCC000329154",
+[
+"MUS 180"
+]
+],
+[
+"Saddleback College",
+"CCC000386984",
+[
+"MUS 185"
+]
+],
+[
+"Santa Monica College",
+"CCC000611998",
+[
+"MUS 180"
+]
+],
+[
+"Sierra College",
+"CCC000563424",
+[
+"MUS 180"
+]
+],
+[
+"Citrus College",
+"CCC000561943",
+[
+"MUS 180"
+]
+],
+[
+"Palo Verde College",
+"CCC000554189",
+[
+"MUS 180"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000620399",
+[
+"MUS 185"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1312":{
+"former_courses":[
+[
+"Compton College",
+"CCC000598390",
+[
+"MUS 180"
+]
+],
+[
+"Diablo Valley College",
+"CCC000023380",
+[
+"MUS 180"
+]
+],
+[
+"El Camino College",
+"CCC000585293",
+[
+"MUS 180"
+]
+],
+[
+"Folsom Lake College",
+"CCC000457476",
+[
+"MUS 180"
+]
+],
+[
+"Fullerton College",
+"CCC000626650",
+[
+"MUS 180"
+]
+],
+[
+"Long Beach City College",
+"CCC000567921",
+[
+"MUS 180"
+]
+],
+[
+"Mendocino College",
+"CCC000552299",
+[
+"MUS 180"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000551770",
+[
+"MUS 185"
+]
+],
+[
+"Norco College",
+"CCC000519875",
+[
+"MUS 180"
+]
+],
+[
+"Riverside City College",
+"CCC000337319",
+[
+"MUS 180"
+]
+],
+[
+"Sierra College",
+"CCC000563133",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000028971",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000051930",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000084090",
+[
+"MUS 180"
+]
+],
+[
+"Grossmont College",
+"CCC000338850",
+[
+"MUS 180"
+]
+],
+[
+"Santa Monica College",
+"CCC000404947",
+[
+"MUS 180"
+]
+]
+],
+"never_had_a_course":false
+},
 "MUSI M1313":{
 "former_courses":[
 [
@@ -58730,6 +61404,25 @@
 ],
 "never_had_a_course":false
 },
+"MUSI M1314":{
+"former_courses":[
+[
+"Porterville College",
+"CCC000657027",
+[
+"MUS 185"
+]
+],
+[
+"Saddleback College",
+"CCC000562116",
+[
+"MUS 185"
+]
+]
+],
+"never_had_a_course":false
+},
 "MUSI M1318":{
 "former_courses":[
 [
@@ -58742,6 +61435,114 @@
 [
 "Sacramento City College",
 "CCC000274090",
+[
+"MUS 185"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1320":{
+"former_courses":[
+[
+"Cabrillo College",
+"CCC000378322",
+[
+"MUS 180"
+]
+],
+[
+"College of Marin",
+"CCC000345529",
+[
+"MUS 180"
+]
+],
+[
+"Diablo Valley College",
+"CCC000276860",
+[
+"MUS 185"
+]
+],
+[
+"Fullerton College",
+"CCC000556498",
+[
+"MUS 180"
+]
+],
+[
+"Pasadena City College",
+"CCC000410480",
+[
+"MUS 180"
+]
+],
+[
+"Riverside City College",
+"CCC000612193",
+[
+"MUS 180"
+]
+],
+[
+"Saddleback College",
+"CCC000561990",
+[
+"MUS 180"
+]
+],
+[
+"Santa Monica College",
+"CCC000410289",
+[
+"MUS 180"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1322":{
+"former_courses":[
+[
+"City College of San Francisco",
+"CCC000575521",
+[
+"MUS 180"
+]
+],
+[
+"Cypress College",
+"CCC000407398",
+[
+"MUS 180"
+]
+],
+[
+"Diablo Valley College",
+"CCC000153354",
+[
+"MUS 180"
+]
+],
+[
+"Fullerton College",
+"CCC000072316",
+[
+"MUS 180"
+]
+],
+[
+"Glendale Community College",
+"CCC000578450",
+[
+"MUS 180"
+]
+],
+[
+"Mt. San Antonio College",
+"CCC000641478",
 [
 "MUS 185"
 ]
@@ -58824,6 +61625,72 @@
 ],
 "never_had_a_course":false
 },
+"MUSI M1356":{
+"former_courses":[
+[
+"Citrus College",
+"CCC000419209",
+[
+"MUS 130"
+]
+],
+[
+"East Los Angeles College",
+"CCC000406405",
+[
+"MUS 140"
+]
+],
+[
+"Glendale Community College",
+"CCC000567203",
+[
+"MUS 130"
+]
+],
+[
+"Irvine Valley College",
+"CCC000556052",
+[
+"MUS 130"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1358":{
+"former_courses":[
+[
+"Citrus College",
+"CCC000421924",
+[
+"MUS 140"
+]
+],
+[
+"East Los Angeles College",
+"CCC000548899",
+[
+"MUS 150"
+]
+],
+[
+"Glendale Community College",
+"CCC000567202",
+[
+"MUS 140"
+]
+],
+[
+"Irvine Valley College",
+"CCC000556053",
+[
+"MUS 140"
+]
+]
+],
+"never_had_a_course":false
+},
 "MUSI M1359":{
 "former_courses":[
 [
@@ -58838,6 +61705,39 @@
 "CCC000653157",
 [
 "MUS 150"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1362":{
+"former_courses":[
+[
+"East Los Angeles College",
+"CCC000467601",
+[
+"MUS 106"
+]
+],
+[
+"Los Angeles Pierce College",
+"CCC000140861",
+[
+"MUS 106"
+]
+],
+[
+"Los Angeles Valley College",
+"CCC000407571",
+[
+"MUS 106"
+]
+],
+[
+"Mendocino College",
+"CCC000240242",
+[
+"MUS 106"
 ]
 ]
 ],
@@ -59120,6 +62020,95 @@
 ],
 "never_had_a_course":false
 },
+"MUSI M1406":{
+"former_courses":[
+[
+"Butte College",
+"CCC000550661",
+[
+"MUS 160"
+]
+],
+[
+"Butte College",
+"CCC000656031",
+[
+"MUS 160"
+]
+],
+[
+"Cerritos College",
+"CCC000416476",
+[
+"MUS 160"
+]
+],
+[
+"Chabot College",
+"CCC000373184",
+[
+"MUS 160"
+]
+],
+[
+"College of Alameda",
+"CCC000547645",
+[
+"MUS 160"
+]
+],
+[
+"College of Marin",
+"CCC000635251",
+[
+"MUS 160"
+]
+],
+[
+"College of San Mateo",
+"CCC000558221",
+[
+"MUS 160"
+]
+],
+[
+"College of the Desert",
+"CCC000217575",
+[
+"MUS 160"
+]
+],
+[
+"Irvine Valley College",
+"CCC000387487",
+[
+"MUS 160"
+]
+],
+[
+"Merced College",
+"CCC000368618",
+[
+"MUS 160"
+]
+],
+[
+"Napa Valley College",
+"CCC000287606",
+[
+"MUS 160"
+]
+],
+[
+"Oxnard College",
+"CCC000659431",
+[
+"MUS 160"
+]
+]
+],
+"never_had_a_course":false
+},
 "MUSI M1423":{
 "former_courses":[
 [
@@ -59181,6 +62170,46 @@
 "CCC000652667",
 [
 "CMUS 100 X"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1431":{
+"former_courses":[
+[
+"Compton College",
+"CCC000611913",
+[
+"MUS 130"
+]
+],
+[
+"Diablo Valley College",
+"CCC000507607",
+[
+"MUS 130"
+]
+],
+[
+"El Camino College",
+"CCC000310165",
+[
+"MUS 130"
+]
+],
+[
+"College of the Sequoias",
+"CCC000220258",
+[
+"MUS 130"
+]
+],
+[
+"Golden West College",
+"CCC000630470",
+[
+"MUS 130"
 ]
 ]
 ],
@@ -59446,6 +62475,25 @@
 "CCC000535310",
 [
 "MUS 140"
+]
+]
+],
+"never_had_a_course":false
+},
+"MUSI M1452":{
+"former_courses":[
+[
+"East Los Angeles College",
+"CCC000637212",
+[
+"CMUS 100 X"
+]
+],
+[
+"Los Angeles City College",
+"CCC000604540",
+[
+"CMUS 100 X"
 ]
 ]
 ],
@@ -61027,6 +64075,19 @@
 ],
 "never_had_a_course":false
 },
+"NUTR M10BX":{
+"former_courses":[
+[
+"Glendale Community College",
+"CCC000318678",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "NUTR M10CG":{
 "former_courses":[
 [
@@ -61097,6 +64158,19 @@
 [
 "Sacramento City College",
 "CCC000499152",
+[
+"NUTR 110"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"NUTR M10CW":{
+"former_courses":[
+[
+"Palomar College",
+"CCC000561681",
 [
 "NUTR 110"
 ]
@@ -63212,6 +66286,25 @@
 ],
 "never_had_a_course":false
 },
+"PHIL M1104":{
+"former_courses":[
+[
+"Barstow Community College",
+"CCC000608278",
+[
+"PHIL 140"
+]
+],
+[
+"Irvine Valley College",
+"CCC000390222",
+[
+"PHIL 140"
+]
+]
+],
+"never_had_a_course":false
+},
 "PHIL M1107":{
 "former_courses":[
 [
@@ -64319,6 +67412,19 @@
 "never_had_a_course":false,
 "one_course_card":true
 },
+"PHSC M10GA":{
+"former_courses":[
+[
+"San Bernardino Valley College",
+"CCC000608528",
+[
+"PHYS 215"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
 "PHYS M1001":{
 "former_courses":[
 [
@@ -64378,6 +67484,25 @@
 "CCC000390394",
 [
 "PHYS 105"
+]
+]
+],
+"never_had_a_course":false
+},
+"PHYS M1008":{
+"former_courses":[
+[
+"East Los Angeles College",
+"CCC000405050",
+[
+"PHYS 110"
+]
+],
+[
+"Los Angeles City College",
+"CCC000398998",
+[
+"PHYS 110"
 ]
 ]
 ],
@@ -64501,6 +67626,25 @@
 "CCC000339552",
 [
 "PHYS 215"
+]
+]
+],
+"never_had_a_course":false
+},
+"PHYS M1039":{
+"former_courses":[
+[
+"Folsom Lake College",
+"CCC000213276",
+[
+"PHYS 205"
+]
+],
+[
+"Sacramento City College",
+"CCC000282162",
+[
+"PHYS 205"
 ]
 ]
 ],
@@ -65436,6 +68580,32 @@
 ],
 "never_had_a_course":false
 },
+"POLS M1051":{
+"former_courses":[
+[
+"College of the Sequoias",
+"CCC000643079",
+[
+"POLS 170"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000650368",
+[
+"POLS 170"
+]
+],
+[
+"Ventura College",
+"CCC000650018",
+[
+"POLS 170"
+]
+]
+],
+"never_had_a_course":false
+},
 "POLS M1055":{
 "former_courses":[
 [
@@ -66020,6 +69190,39 @@
 "CCC000530925",
 [
 "POLS 120"
+]
+]
+],
+"never_had_a_course":false
+},
+"POLS M1073":{
+"former_courses":[
+[
+"Crafton Hills College",
+"CCC000500560",
+[
+"POLS 140"
+]
+],
+[
+"Norco College",
+"CCC000519944",
+[
+"POLS 140"
+]
+],
+[
+"Palomar College",
+"CCC000208360",
+[
+"POLS 140"
+]
+],
+[
+"San Bernardino Valley College",
+"CCC000650365",
+[
+"POLS 140"
 ]
 ]
 ],
@@ -70107,6 +73310,39 @@
 ],
 "never_had_a_course":false
 },
+"SOCI M1018":{
+"former_courses":[
+[
+"Citrus College",
+"CCC000388290",
+[
+"SOCI 115"
+]
+],
+[
+"San Diego City College",
+"CCC000050330",
+[
+"SOCI 115"
+]
+],
+[
+"San Diego Mesa College",
+"CCC000171868",
+[
+"SOCI 115"
+]
+],
+[
+"San Diego Miramar College",
+"CCC000352765",
+[
+"SOCI 115"
+]
+]
+],
+"never_had_a_course":false
+},
 "SOCI M1021":{
 "former_courses":[
 [
@@ -70232,6 +73468,25 @@
 "CCC000442497",
 [
 "SOCI 160"
+]
+]
+],
+"never_had_a_course":false
+},
+"SOCI M1037":{
+"former_courses":[
+[
+"Norco College",
+"CCC000609448",
+[
+"SOCI 150"
+]
+],
+[
+"Riverside City College",
+"CCC000610226",
+[
+"SOCI 150"
 ]
 ]
 ],
@@ -72927,6 +76182,32 @@
 ],
 "never_had_a_course":false
 },
+"SPAN M1013":{
+"former_courses":[
+[
+"CaÃ±ada College",
+"CCC000117526",
+[
+"SPAN 110"
+]
+],
+[
+"College of San Mateo",
+"CCC000201123",
+[
+"SPAN 110"
+]
+],
+[
+"Skyline College",
+"CCC000359675",
+[
+"SPAN 110"
+]
+]
+],
+"never_had_a_course":false
+},
 "SPAN M1069":{
 "former_courses":[
 [
@@ -73196,6 +76477,19 @@
 "CCC000109233",
 [
 "SPAN 230"
+]
+]
+],
+"never_had_a_course":false,
+"one_course_card":true
+},
+"SPAN M10CK":{
+"former_courses":[
+[
+"College of San Mateo",
+"CCC000185408",
+[
+"SPAN 210"
 ]
 ]
 ],
@@ -80048,7 +83342,7 @@
 "never_had_a_course":false
 }
 },
-"count":3293,
+"count":3357,
 "never_had_a_course":2,
-"one_course_cards":2232
+"one_course_cards":2244
 }

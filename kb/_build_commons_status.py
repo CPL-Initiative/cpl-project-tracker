@@ -167,8 +167,14 @@ def row_requirements(root):
 # confirmed CCRs." Complete stays each reference's own test; every row carries a second pair beside it, never in
 # its place: how many of its units a person has confirmed, and how many of those are also complete. Sam asked for
 # it on all five references on 2026-11-03 (S565: "yes to both, build them for all four").
-def confirmed_pair(n, of, done, unit_done, open_, error=None):
+def confirmed_pair(n, of, done, unit_done, open_, error=None, kept=None):
     words = "confirmed by a person" + (", %s of them %s" % (fmt(done), unit_done) if done is not None and n else "")
+    # A person's work a flag keeps out of the denominator stays in the words (Sam, 2026-11-17: flag the record, never
+    # delete it), so the figure never drops it without saying so.
+    if kept:
+        words += "; a person also confirmed %s %s now kept for the record and left out of the counts (%s)" % (
+            fmt(sum(kept.values())), "card" if sum(kept.values()) == 1 else "cards",
+            ", ".join("%s %s" % (fmt(v), k.replace("_", " ")) for k, v in sorted(kept.items(), key=lambda x: (-x[1], x[0]))))
     return {"n": n, "of": of, "words": words, "open": open_, "error": error}
 
 
@@ -381,7 +387,8 @@ def row_course(root):
                            % (fmt(fr.get("needs_review", 0)), fmt(fr.get("needs_repair", 0)), fmt(fr.get("not_ready", 0))),
                   "open": tab},
                  confirmed_pair(conf["n"]["confirmed"] if conf["n"] else None, st["total_cards"],
-                                conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"])],
+                                conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"],
+                                conf["n"]["kept"] if conf["n"] else None)],
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
@@ -406,6 +413,7 @@ def row_course(root):
                   "kept_not_counted": dict(kept),
                   "confirmed": conf["n"]["confirmed"] if conf["n"] else None,
                   "confirmed_ready": conf["n"]["ready"] if conf["n"] else None,
+                  "confirmed_kept": conf["n"]["kept"] if conf["n"] else None,
                   # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
                   # view reads these for its three questions, so the page and this card share one read (S559).
                   "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
@@ -428,11 +436,20 @@ def confirmed_cards(root, A):
         hit |= {t for t in (k, v.get("merge_into")) if t}
     # Counted in cards, the page's one denominator: distinct cards no flag takes out of the counts (Sam, 2026-11-17:
     # flag the record, never delete it), so a merge target's Course and Unified rows count once, ready when either is.
-    ready = {}
+    # A confirmed card a flag keeps out (most are merges a person made) is counted beside the pair, by its first flag.
+    ready, kept = {}, {}
     for r in A.get("rows") or []:
-        if r.get("id") in hit and not r.get("nc"):
+        if r.get("id") not in hit:
+            continue
+        if r.get("nc"):
+            kept.setdefault(r["id"], (r.get("fl") or ["flagged"])[0])
+        else:
             ready[r["id"]] = ready.get(r["id"], False) or r.get("fr") == "ready"
-    return {"confirmed": len(ready), "ready": sum(1 for v in ready.values() if v)}
+    by_kind = {}
+    for cid, k in kept.items():
+        if cid not in ready:
+            by_kind[k] = by_kind.get(k, 0) + 1
+    return {"confirmed": len(ready), "ready": sum(1 for v in ready.values() if v), "kept": by_kind}
 
 
 # ── Common CR Reference ───────────────────────────────────────────────────────────────────

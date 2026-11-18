@@ -71,7 +71,9 @@ FIXTURE = {
         "ARTS M1009": {"merge_into": "ARTS M1002", "reviewed_by": "skyview-s600@bot"},
         "ARTS M1008": {"discipline": "Art", "reviewed_by": "named-curator", "reviewed_at": "2026-11-09T10:00:00Z"},
     }},
-    "kb/coci_articulations.json": {"articulations": [{"course_id": "ARTS M1003"}]},
+    # The applied re-key markers say the ids are current; the builder reads them raw (never resolves them again).
+    "kb/coci_articulations.json": dict({k: "fixture" for k in __import__("_build_remint_blast_radius").APPLIED_MARKERS},
+                                       articulations=[{"course_id": "ARTS M1003"}]),
 }
 LIST = {"generated_at": "fixture", "colleges": COLLEGES, "members": {
     "ARTS M1001": [m(0, "CCC1", "Drawing I")],
@@ -195,8 +197,34 @@ with tempfile.TemporaryDirectory() as tmp:
     check("5. the not-applicable course note", flags.course_note(COLLEGES[0], "CCN2") == F.NA_COURSE_NOTES["internship"])
     check("5. a card with two flags carries both notes", flags.note("ARTS M1009").startswith(F.NOTES["retired"]))
 
+# The links file is current-era: the inactive builder reads its ids raw and refuses a file without its markers.
+# (S683 second reader: resolving the already-current ids again moved 1,291 links onto unrelated live cards, and 64
+# cards escaped the flag.)
+import _build_inactive_cards as BI  # noqa: E402
+check("era: the inactive builder resolves no link id", BI.linked_ids(
+    {"articulations": [{"course_id": "ARTS M1083"}]}, {}) == {"ARTS M1083"})
+try:
+    BI.assert_current_era({"articulations": []})
+    check("era: a links file without its applied markers is refused", False)
+except SystemExit:
+    check("era: a links file without its applied markers is refused", True)
+with open(os.path.join(ROOT, "kb/coci_articulations.json")) as f:
+    raw_links = {a.get("course_id") for a in json.load(f).get("articulations") or []}
+with open(os.path.join(ROOT, F.FILES["inactive"])) as f:
+    committed_inactive = set(json.load(f)["cards"])
+check("era: no committed inactive card is a card an exhibit links to as the file writes it",
+      not (raw_links & committed_inactive))
+check("era: the AP Art History link keeps ARTS M1083 off the inactive list", "ARTS M1083" not in committed_inactive)
+
+# Recall on real records: the cards the Courses bot's ask names (#3480 Source 13), read from the committed files.
+real = F.load_flags(ROOT)
+for cid in ("WEXP M1002", "WELD M1006", "MUSI M1466", "ARTS M1450", "COMM M1045", "ARTS M1514", "IDST M1171",
+            "WEXP M1013", "IDST M9027"):
+    check("recall: %s is not applicable" % cid, "not_applicable" in real.kinds(cid))
+check("recall: ETHS M1171 is not flagged not applicable", "not_applicable" not in real.kinds("ETHS M1171"))
+
 # 6. Rule check.
-check("6. the title rule's %d fixed checks pass" % len(R.CHECKS), not R.self_check() and len(R.CHECKS) == 24)
+check("6. the title rule's %d fixed checks pass" % len(R.CHECKS), not R.self_check() and len(R.CHECKS) == 26)
 
 # 7. Plain words.
 BANNED = ["M-ID", "control number", "merge_into", "seed", "null", "should", "must", "please"]

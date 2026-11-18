@@ -5,8 +5,11 @@ bot's ask, #3480 Source 13, item 3).
 A live card (one that is not merged into another; one-course cards included) is INACTIVE when no college's course sits on it in the Courses
 List's file (unified_courses_members.js, with each merged card's courses folded into the card it merged into) and no
 exhibit points to it in either committed link store:
-  kb/coci_articulations.json      articulations[].course_id (read raw and through kb/alias_chain.py, so an old id
-                                  still lands on today's card)
+  kb/coci_articulations.json      articulations[].course_id, read RAW: the file carries its applied re-key markers,
+                                  so its ids are already current. Resolving them through kb/alias_chain.py again
+                                  applies the permutation twice and moves links onto unrelated live cards (measured
+                                  S683: 1,291 of 2,144 M-ID links moved, 64 cards escaped the flag). The builder
+                                  refuses a file that lacks a marker, as kb/_build_remint_blast_radius.py does.
   credential_reference_data.js    unified_titles[].articulations[].cid (what the Exhibits List's Common SUBJ reads)
 
 Nothing is deleted: the card stays in the minted files, the List files and kb_curation. This writes
@@ -39,16 +42,13 @@ RULE = ("A card that is not merged is inactive when no college's course sits on 
         "(merged cards' courses folded into their target) and no exhibit link in either store points to it.")
 
 
-def linked_ids(articulations, credential_reference, maps=None):
-    """Every card id an exhibit points to, raw and resolved through the alias chain."""
+def linked_ids(articulations, credential_reference):
+    """Every card id an exhibit points to, as each store writes it (both stores are current-era)."""
     out = set()
     for a in (articulations or {}).get("articulations") or []:
         cid = (a or {}).get("course_id")
         if cid:
             out.add(cid)
-            if maps:
-                from alias_chain import resolve_id
-                out.add(resolve_id(cid, maps))
     for t in (credential_reference or {}).get("unified_titles") or []:
         for a in (t or {}).get("articulations") or []:
             if (a or {}).get("cid"):
@@ -56,8 +56,16 @@ def linked_ids(articulations, credential_reference, maps=None):
     return out
 
 
-def build(courses, memberships, curation, list_members, articulations, credential_reference, maps=None,
-          singletons=None):
+def assert_current_era(articulations):
+    """Refuse a links file that does not say its ids are current (the blast-radius script's markers, imported)."""
+    from _build_remint_blast_radius import APPLIED_MARKERS
+    missing = [k for k in APPLIED_MARKERS if not (articulations or {}).get(k)]
+    if missing:
+        raise SystemExit("ABORT: kb/coci_articulations.json lacks applied markers %s; its ids may be from an older "
+                         "era. Re-key it (kb/_remint_apply_articulations.py) before building." % ", ".join(missing))
+
+
+def build(courses, memberships, curation, list_members, articulations, credential_reference, singletons=None):
     singletons = singletons or {}
     names = [str(c or "").strip() for c in (list_members.get("colleges") or [])]
     members = list_members.get("members") or {}
@@ -68,7 +76,7 @@ def build(courses, memberships, curation, list_members, articulations, credentia
             if m.get("cn"):
                 by_key.setdefault(F.course_key(names[m["c"]] if m.get("c") is not None and m["c"] < len(names) else "",
                                                m["cn"]), set()).add(cid)
-    links = linked_ids(articulations, credential_reference, maps)
+    links = linked_ids(articulations, credential_reference)
     # A link to a merged card counts for the card its colleges moved to.
     links |= {F.final_target(x, curation) for x in list(links)}
     cards = {}
@@ -91,17 +99,16 @@ def build(courses, memberships, curation, list_members, articulations, credentia
 def main(argv):
     check = "--check" in argv
     ROOT = argv[argv.index("--root") + 1] if "--root" in argv else globals()["ROOT"]   # a fixture checkout, for tests
-    sys.path.insert(0, HERE)
-    import alias_chain
     p = lambda k: os.path.join(ROOT, INPUTS[k])  # noqa: E731
     load = lambda k: F._read(ROOT, INPUTS[k]) or {}  # noqa: E731
     courses = load("cards").get("courses") or {}
     mem = load("memberships")
     memberships = mem.get("memberships", mem)
     curation = load("curation").get("curations") or {}
-    cards = build(courses, memberships, curation, F.loadjs(p("list_members")), load("articulations"),
-                  F.loadjs(p("credential_reference")), alias_chain.load_maps(alias_chain.ALIAS_MAPS),
-                  load("one_course_cards").get("courses") or {})
+    arts = load("articulations")
+    assert_current_era(arts)
+    cards = build(courses, memberships, curation, F.loadjs(p("list_members")), arts,
+                  F.loadjs(p("credential_reference")), load("one_course_cards").get("courses") or {})
     payload = {
         "_about": "Inactive shared courses, kept for the record and out of every count, waiting pile, to-do and "
                   "fetch plan (Sam, 2026-11-17: flag the record, never delete it). Built by kb/_build_inactive_cards.py; "

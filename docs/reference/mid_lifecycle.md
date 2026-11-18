@@ -492,6 +492,20 @@ Moved from `CLAUDE.md` §11 on 2026-10-21 (S442 SkyManzanita, Open Asks Sheet 10
 >
 > ⚠️ These are **enforced at every re-mint; deviations become audit findings.**
 
+**The course flag files rebuild; a re-mint does not re-key them (S683).**
+`kb/coci_retired_cards.json`, `kb/coci_inactive_cards.json` and
+`kb/coci_not_applicable.json` (read through `kb/_flags.py`) are id-keyed, but
+they are derived from the minted files, the curation overlay and the Courses
+List's file (`unified_courses_members.js`), so a re-mint leaves them out of its
+re-key set and `kb/_post_apply_chain.py` does not run their builders: the List
+file still carries the old ids until `excel_to_dashboard.py` rebuilds it, and a
+builder run before that would read every re-keyed card as empty. The daily build
+runs the three builders after the List file and before the auditor
+(`scripts/daily_build.sh`), so the dispatched daily run that lands a re-mint
+heals them. Between the apply and that run, re-keyed cards can read as having no
+college course in the auditor's output; dispatch the daily run in the same cron
+window, as the playbook already says.
+
 **M-ID structural invariants** (enforced at every re-mint; deviations
 become audit findings):
 - **Honors exception (S653; Sam, Sheet 197 card 3, 2026-11-14).** An Honors

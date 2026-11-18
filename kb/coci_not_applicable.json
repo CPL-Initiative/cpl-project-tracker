@@ -34,8 +34,9 @@
 "sha256":"2f5d08359acd2dc7a9b93d72b583f0eecec7d9a359cd9811e84d72ebf9e0b030"
 }
 },
+"_person_note":"A person reviewed this shared course{on}, and their ruling stands, so it stays in the counts. The machine's note reads: {note}",
 "_rule":"kb/_not_applicable_rule.py",
-"_rule_version":"2026-11-18.1",
+"_rule_version":"2026-11-18.2",
 "cards":{
 "ARTS M10JJ":{
 "courses":1,
@@ -63,6 +64,13 @@
 "kind":"independent",
 "titles":[
 "Individual Projects in Drawing"
+]
+},
+"ARTS M1449":{
+"courses":7,
+"kind":"independent",
+"titles":[
+"INDEPEN STUDY"
 ]
 },
 "ARTS M1450":{
@@ -1145,10 +1153,10 @@
 }
 },
 "counts":{
-"cards":155,
+"cards":156,
 "cards_by_kind":{
 "code_only":86,
-"independent":58,
+"independent":59,
 "internship":11
 },
 "courses":5700,

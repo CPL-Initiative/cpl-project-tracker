@@ -13,7 +13,7 @@ The rule, in full:
 
   Independent or directed study ("independent"):
     flagged:     "independent", "directed" or "individual(ized)" right before study, studies, research, readings,
-                 projects or problems; "dir study"; "directed (independent) study"; "special studies", "special
+                 projects or problems; "dir study"; "indep study" and "indepen study"; "directed (independent) study"; "special studies", "special
                  projects" and "special problems" (Cabrillo, Delta and Butte use the "special" forms).
     not flagged: "independent living", "self-directed", "directed clinical practice", "special topics".
 
@@ -34,7 +34,7 @@ courses is; a card's own title never decides it (ETHS M1171 is titled "Individua
 import re
 import sys
 
-RULE_VERSION = "2026-11-18.1"
+RULE_VERSION = "2026-11-18.2"
 
 KINDS = ("independent", "internship", "code_only")
 
@@ -43,7 +43,7 @@ _INDEPENDENT = [
     re.compile(r"(?<![-\w])(?<!self )(?:independent|directed|individuali[sz]ed|individual)\s+" + _STUDY_OBJ + r"\b", re.I),
     re.compile(r"\bdir\.?\s+stud(?:y|ies)\b", re.I),
     re.compile(r"\bdirected\s*\(\s*independent\s*\)\s*stud(?:y|ies)\b", re.I),
-    re.compile(r"\bindep\.?\s+stud(?:y|ies)\b", re.I),
+    re.compile(r"\bindep(?:en)?\.?\s+stud(?:y|ies)\b", re.I),
     re.compile(r"\bspecial\s+(?:studies|projects?|problems?)\b", re.I),
 ]
 _INTERNSHIP = [
@@ -91,6 +91,8 @@ CHECKS = [
     ("Directed (Independent) Study", "independent"),
     ("Special Studies", "independent"),
     ("Special Projects in Welding", "independent"),
+    ("Indep Study in History", "independent"),
+    ("INDEPEN STUDY", "independent"),
     ("Independent Living Skills", None),
     ("Self-Directed Study Skills", None),
     ("Directed Clinical Practice", None),
