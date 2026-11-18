@@ -17,6 +17,13 @@ before then are not in it. `runner_since` says so, and the page says it too.
 
     python3 kb/_build_spend_daily.py            # update the file in place (the census job runs this daily on main)
     python3 kb/_build_spend_daily.py --check    # exit 1 if a build would change the measured keys
+    python3 kb/_build_spend_daily.py --sessions-only [--check]   # the sessions key alone, from the handoffs
+
+WHY --sessions-only (S680). The daily census job was the only thing that rebuilt `sessions`, and a checkpoint commits
+its handoff after that day's run: S678's $115.38 landed in handoff 679 at 00:53Z Nov 18, after the 23:09Z census and
+before the next one, so the file's Nov 17 entry kept S677's $5.44 alone. scripts/check_generated.sh now runs the
+sessions check, so the checkpoint PR that adds a `Spend:` line rebuilds the key in the same commit. The ledger keys
+stay the census job's: a collection PR rebuilding them would date its runs by the PR day and fight its siblings.
 """
 import argparse
 import glob
@@ -103,6 +110,13 @@ def build(root, current, today):
     return data
 
 
+def build_sessions(root, current):
+    """The file with only `sessions` rebuilt from the handoffs; every other key as it stands."""
+    data = dict(current or {})
+    data["sessions"] = sessions_by_day(root)
+    return data
+
+
 def spent(data):
     """The total the ledger holds: (dollars, runs)."""
     runs = (data or {}).get("runner_runs") or {}
@@ -114,11 +128,23 @@ def main(argv=None):
     ap.add_argument("--root", default=ROOT)
     ap.add_argument("--today", default=None, help="the UTC day for a run whose read day cannot be found")
     ap.add_argument("--check", action="store_true")
+    ap.add_argument("--sessions-only", action="store_true", help="rebuild (or check) the sessions key alone")
     a = ap.parse_args(argv)
     import datetime
     today = a.today or datetime.datetime.now(datetime.timezone.utc).date().isoformat()
     path = os.path.join(a.root, OUT)
     cur = _load(path) or {}
+    if a.sessions_only:
+        new = build_sessions(a.root, cur)
+        if a.check:
+            same = cur.get("sessions") == new["sessions"]
+            print("model_spend_daily sessions are current" if same else
+                  "model_spend_daily sessions are STALE — run: python3 kb/_build_spend_daily.py --sessions-only")
+            return 0 if same else 1
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(json.dumps(new, indent=1, ensure_ascii=False) + "\n")
+        print("wrote %s: sessions only, %d days" % (OUT, len(new["sessions"])))
+        return 0
     new = build(a.root, cur, today)
     if a.check:
         same = all(cur.get(k) == new.get(k) for k in MEASURED)
