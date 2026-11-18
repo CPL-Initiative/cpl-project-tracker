@@ -20,8 +20,8 @@ _preview), and, where a runner hands one over, a capture directory (--capture DI
 artifact's out/, with sources/<cn>.json carrying the text the reader saw). The committed files keep no
 page text, so a run without --capture can find only the prior-year rule's programs.
 
-THE COLLECTION LANE'S COLLEGES are left out tonight (S680 conductor, one writer per college):
-COLLECTION_LANE_S680 below, or --skip-college NAME in addition.
+THE COLLECTION LANE'S COLLEGES are left out tonight (S680 conductor, one writer per college): the twelve
+of COLLECTION_LANE_S680 in kb/collection_lane.py, or --skip-college NAME in addition.
 
 Writes kb/status/program_discontinued.json. kb/_harvest_gap_census.py reads it and lists each flagged
 program beside the gap, out of it. Writes no table: git revert undoes the flag.
@@ -49,13 +49,10 @@ OUT = os.path.join(HERE, "status", "program_discontinued.json")
 RULING = ("Sam, 2026-11-17, relayed by COBIx on #3480 (comment 6967372099): flag discontinued programs out "
           "of the queue; flag, never delete")
 
-# The collection lane holds these colleges tonight (S680 conductor's split, docs/session_681_handoff.md on
-# PR #3487, widened to nine before any write). Every count and flag here leaves them out.
-COLLECTION_LANE_S680 = (
-    "Golden West College", "Coastline Community College", "Orange Coast College", "Cosumnes River College",
-    "Lassen College", "Los Medanos College", "Diablo Valley College", "College of the Redwoods",
-    "Allan Hancock College",
-)
+# The collection lane's colleges, left out tonight: the one named constant in kb/collection_lane.py.
+sys.path.insert(0, HERE)
+from collection_lane import COLLECTION_LANE_S680  # noqa: E402
+import collection_lane as CL  # noqa: E402
 
 # A program-level mark. Each alternative names the program's state, never a course's.
 MARK = re.compile(
@@ -105,7 +102,7 @@ def section_mark(text: str | None, heading: str | None = None) -> str | None:
 
 
 def held(college: str | None, skip: tuple[str, ...] = ()) -> bool:
-    return (college or "") in COLLECTION_LANE_S680 or (college or "") in skip
+    return CL.held(college, skip)
 
 
 def prior_year_flags(base: str = COLLEGE_DIR) -> list[dict]:
