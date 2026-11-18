@@ -1461,11 +1461,14 @@ import shutil as _shutil  # noqa: E402
 import tempfile as _tempfile  # noqa: E402
 _CR = "Cosumnes River College"
 _CR_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "cosumnes_river")
-_cr_pins = _cr_conf.get("pdf_pages") or {}
+_cr_all_pins = _cr_conf.get("pdf_pages") or {}
+# S680 pins six local degrees too (checked below, "the heading's page"); the S650 checks read the two.
+_CR_S680 = {"11338": 168, "04614": 169, "04607": 179, "11319": 205, "07305": 212, "04602": 248}
+_cr_pins = {cn: v for cn, v in _cr_all_pins.items() if cn not in _CR_S680}
 _cr_capture = json.load(open(os.path.join(_CR_DIR, "capture.json")))
 _cr_picks = {p["control_number"]: p for p in _cr_capture["pdf"]["picks"]}
-check("the entry pins 30566 to p.552 and 33072 to p.404, and nothing else",
-      {cn: v["page"] for cn, v in _cr_pins.items()} == {"30566": 552, "33072": 404})
+check("the entry pins 30566 to p.552 and 33072 to p.404, and beside them only the six S680 pins",
+      {cn: v["page"] for cn, v in _cr_all_pins.items()} == dict({"30566": 552, "33072": 404}, **_CR_S680))
 check("each pin's words are what the filed capture opened on, on the pinned page, and its evidence names both runs",
       all(" ".join(v["words"].split()) in _cr_picks[cn]["opens"] and _cr_picks[cn]["pages"][0] == v["page"]
           and "43519918667" in v["evidence"] and "43521338550" in v["evidence"] for cn, v in _cr_pins.items()))
@@ -1613,6 +1616,48 @@ check("Glendale 2026-27: the note names the call and the code left unpriced",
       and g_notes[0]["words"].startswith(gcall["call"]))
 g_pdf = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST)[0]["blocks"][0]["courses"]
 check("Glendale 2025-26: with no call, the step's figures fill as before", [c["units"] for c in g_pdf] == [5, 5])
+
+print("Cosumnes River's six local degrees, pinned to the heading's page (S680; college page read 44255327142)")
+# Each program's heading and the start of its requirement list print at the foot of one PDF page, and the list runs
+# on to the next. The heading picker took the next page alone, so the filed record (capture 39047009824) lost the
+# list's first block: Art - Design 11338 placed 6 of 24 units, Automotive Mechanics Technology 04607 29 of 43,
+# Building Inspection Technology 07305 lacks BIT 100 and 101. The fixture holds the pages as the free read printed
+# them, with the log's folded short lines broken again; the closed lists are the filed records' own (placed and
+# missing). On it the plain picker takes the late page, as the filing did; the pin opens on the heading's page,
+# names at least as many listed courses, and starts the text at the heading wherever the page allows the cut.
+_s6_text = open(os.path.join(ROOT, "tests", "fixtures", "cosumnes_seven_pages.txt")).read()
+_s6_parts = _re.split(r"^\[pdf page (\d+)\]\n", _s6_text, flags=_re.M)
+_s6_fx = {int(_s6_parts[i]): _s6_parts[i + 1] for i in range(1, len(_s6_parts), 2)}
+_s6_pages = [_s6_fx.get(n, "") for n in range(1, 654)]
+_s6_lists = json.load(open(os.path.join(ROOT, "tests", "fixtures", "cosumnes_seven_closed_lists.json")))["programs"]
+for _cn, _own in _CR_S680.items():
+    _p = dict(_s6_lists[_cn], control_number=_cn, closed_list=[{"code": c} for c in _s6_lists[_cn]["codes"]])
+    _plain = C.pdf_best("https://x.edu/c.pdf", _s6_pages, _p, _p["closed_list"], "pypdf")
+    _head, _why = C.pdf_pinned_heading(_s6_pages, _p, _cr_all_pins[_cn])
+    _got = C.pdf_best("https://x.edu/c.pdf", _s6_pages, _p, _p["closed_list"], "pypdf", _head) if _head else None
+    _filed = as_read(os.path.join(_CR_DIR, "records", _cn + ".json"))["source_url"]
+    check("%s: the plain picker takes p.%d, the late page the filed record names" % (_cn, _own + 1),
+          _plain["pages"][0] == _own + 1 and _filed.endswith("#page=%d" % (_own + 1)))
+    check("%s: the pin binds p.%d, its window runs on to p.%d and names at least as many listed courses" % (_cn, _own, _own + 1),
+          _why is None and _got["pages"][:2] == [_own, _own + 1] and _got["coverage"] >= _plain["coverage"])
+    check("%s: the pin's words are not on the late page, so the pin cannot bind there" % _cn,
+          C.pdf_pinned_heading(_s6_pages, _p, dict(_cr_all_pins[_cn], page=_own + 1))[0] is None)
+_s6_cut = {cn: _re.sub(r"\s+", " ", C.pdf_best("https://x.edu/c.pdf", _s6_pages,
+                                                dict(_s6_lists[cn], control_number=cn),
+                                                [{"code": c} for c in _s6_lists[cn]["codes"]], "pypdf",
+                                                C.pdf_pinned_heading(_s6_pages, dict(_s6_lists[cn]),
+                                                                     _cr_all_pins[cn])[0])["text"])
+           for cn in _CR_S680}
+check("11338, 04607, 11319 and 07305: the text opens on the pin's words",
+      all(_s6_cut[cn].startswith("[page %d] %s" % (_CR_S680[cn], _cr_all_pins[cn]["words"]))
+          for cn in ("11338", "04607", "11319", "07305")))
+check("the S680 pins raise the share of the listed courses read: 11338, 04614, 04607, 07305 and 04602",
+      all(C.pdf_best("https://x.edu/c.pdf", _s6_pages, dict(_s6_lists[cn], control_number=cn),
+                     [{"code": c} for c in _s6_lists[cn]["codes"]], "pypdf",
+                     C.pdf_pinned_heading(_s6_pages, dict(_s6_lists[cn]), _cr_all_pins[cn])[0])["coverage"]
+          > C.pdf_best("https://x.edu/c.pdf", _s6_pages, dict(_s6_lists[cn], control_number=cn),
+                       [{"code": c} for c in _s6_lists[cn]["codes"]], "pypdf")["coverage"]
+          for cn in ("11338", "04614", "04607", "07305", "04602")))
 
 print("RCCD's repeated course rows (S672; college page reads 44034775728 and 44045355408)")
 # Each page prints a course's row once per enrollment, and the reading keeps one row. The filed record may already
