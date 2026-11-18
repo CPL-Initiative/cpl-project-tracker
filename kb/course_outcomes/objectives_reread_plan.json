@@ -167,6 +167,11 @@
    "slug": "las_positas",
    "read": "43816095571",
    "objectives": "776 objective rows loaded (load 43825849738)"
+  },
+  {
+   "slug": "coastline_community",
+   "read": "43984094171",
+   "objectives": "522 objective rows loaded (load 44006629705)"
   }
  ]
 }
