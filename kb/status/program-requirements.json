@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-17T23:55:10Z",
-  "session": 678,
-  "moniker": "SkyWaxwing",
-  "run": "Session 678, the queue's one writer",
+  "written_at": "2026-11-18T03:20:11Z",
+  "session": 679,
+  "moniker": "SkyKinglet",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_679_handoff.md",
+  "handoff": "docs/session_680_handoff.md",
   "next_step": {
     "title": "Golden West's objectives reread",
-    "text": "Step 11 on Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the switch that holds back programs with no state course list, and Lassen's pinned capture."
+    "text": "Step 11 for Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the run that tests the general education slot on captured pages, so the slot rule can be turned on, and the switch that holds back programs with no state course list."
   },
   "calls": [
     {
@@ -337,6 +337,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-18T02:41:00Z",
+      "text": "Sam's three rulings of Nov 17 are carried out (PR 3478) and applied to the filed records (PR 3481, run 44224714543, after a clean read first). 243 records now pass their unit check: 78 local degrees whose general education overlaps the major, at 21 colleges, and 165 records whose total meets the low end of the catalog's printed unit range, at 56 colleges. No record was marked checked. The undo is written and not run."
+    },
+    {
+      "at": "2026-11-18T02:30:00Z",
+      "text": "73 local degrees short of 60 units now carry the note that the major matches and the electives are probably not listed, and 9 short required lists keep their note. No record carries a confidence figure for its course list, so the note is the only mark."
+    },
+    {
+      "at": "2026-11-18T02:30:00Z",
+      "text": "The rule that reads a general education area and its units as an open slot is built and turned off. It runs inside every extraction, so it waits for a test run on pages already captured."
+    },
     {
       "at": "2026-11-17T23:05:00Z",
       "text": "Today's headline pair, 20,282 active programs and 14,632 with complete requirements at 118 colleges, came from the census runner's live read at 23:05 UTC (run 44195716880), not from a query in the session."

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 678,
-  "moniker": "SkyWaxwing",
+  "session": 679,
+  "moniker": "SkyKinglet",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_679_handoff.md",
+  "handoff": "docs/session_680_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -53,17 +53,35 @@
         "at": "2026-11-13",
         "words": "I changed those las positas exhibits in the exhibit commons and think we have a loop going where the reanalysis does know I just relied on them and then brings them back endlessly"
       }
+    },
+    {
+      "title": "Eight titles that join two whole names with a slash: write and, or keep the slash?",
+      "text": "Your rule of Nov 18 writes a slash between words as and. These eight put a slash between two whole names, so the rename left them as printed for you to name. Seven are credential titles: DSST A History of the Vietnam War / Civil War and Reconstruction; Wall and Column Forms / Cutting and Burning (Carpentry); Video Gaming 1 / Computer Programming and Game Design; Standards and Training for Corrections (STC) / Board of Parole Hearings; Metal Building Erection 1 / Foreman Training; Nursing Skills / Clinical Simulation Laboratory Advanced; Water Treatment Operator Grade T3 / Distribution Grade D3. The eighth is a course on the re-point list that needs a new title: Emergency Medical Responder (EMR) / Healthcare Provider CPR.",
+      "if_no_reply": "They stay as printed.",
+      "view": {
+        "href": "#exhibits",
+        "text": "Open the Exhibits List"
+      },
+      "todo_id": "slash-whole-name-titles-s679"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-17T23:55:10Z",
+  "written_at": "2026-11-18T03:30:05Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Carry out the leftover title decisions nightly",
-    "text": "Decisions on titles that have left MAP are saved from their row; the next step runs the script that carries them out every night, then adds Rename and Combine to the leftover row, then the reviewed re-point of exhibits by MAP exhibit id and local title."
+    "title": "One combine guard for the whole tab, then the re-point",
+    "text": "Merge the shared combine guard for the Common Exhibit Reference tab's five writers once its fixes and a second read land. Then rebuild the re-point list on the renamed titles, run the MAP snapshot, and run the reviewed re-point of exhibits by MAP exhibit id."
   },
   "changes": [
+    {
+      "at": "2026-11-18T03:09:00Z",
+      "text": "A slash joining words in a title is now written and, on Sam's rule of Nov 18 (PR 3479; rename run 44227947795): 80 titles, 95 local titles and 103 articulations renamed, with the undo kept. Code and official-name slashes stay, and eight titles that join two whole names are held for Sam."
+    },
+    {
+      "at": "2026-11-18T01:50:00Z",
+      "text": "Decisions on titles that have left MAP are now carried out every night, and the leftover row offers Rename and Combine (PR 3477). Move is offered only on a title nothing uses, and every combine passes one guard that holds the fold when the CPL types have not loaded."
+    },
     {
       "at": "2026-11-17T23:28:00Z",
       "text": "A title that has left MAP can now be kept, moved or removed from its own row on the Exhibits List, with its CPL type shown and a guard on graded and certification based exhibits (PR 3466). A removed title is left out of the dashboard; nothing is deleted. 446 titles are in this group."

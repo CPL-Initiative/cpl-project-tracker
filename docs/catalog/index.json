@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 589,
+   "count": 590,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2043,6 +2043,25 @@
      "title": "A grouping key must come from the authoritative set, not from the rows being grouped",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "exhibits.js",
+      "tests/exhibits_list_left.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-guard-must-fail-closed-when-it-cannot-decide.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "guards",
+      "testing",
+      "exhibits",
+      "review"
+     ],
+     "title": "A guard must fail closed when it cannot decide",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-09-10",
@@ -16149,7 +16168,7 @@
      ],
      "title": "Common CR Reference \u2014 lane state",
      "type": null,
-     "updated": "2026-11-17"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-10-19",
@@ -16318,7 +16337,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-10-23",
@@ -16619,7 +16638,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-17"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -17145,8 +17164,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 638,
+   "count": 639,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 680,
+     "path": "docs/session_680_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 680 handoff (from SkyKinglet, S679)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-17",
      "governs": [],
@@ -27851,5 +27884,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1509
+ "total": 1511
 }
