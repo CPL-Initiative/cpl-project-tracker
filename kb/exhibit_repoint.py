@@ -179,7 +179,9 @@ def _row_key(row):
 
 
 def slash_wait(to, creds, slash_plan):
-    """Why an assign row waits on the slash-to-and rename, or None (COBIx on #3472, comment 6965961839, S679).
+    """Why an assign or repoint row waits on the slash-to-and rename, or None (COBIx on #3472, comment 6965961839,
+    S679; repoint rows too, the S679 conductor, 2026-11-18, so no re-point writes a key `kb/slash_titles.py --check`
+    would fail).
 
     Sam's ruling of 2026-11-18 writes a slash joining words as "and", so the UA plumbing family reads "UA Plumbers and
     Pipefitters" once kb/slash_titles.py's plan runs. An assign row whose target still spells its family head with
@@ -190,6 +192,9 @@ def slash_wait(to, creds, slash_plan):
     it: an entry is done once its old title has left the credentials."""
     ruled = slash_titles.ruled_form(to)
     if ruled == to:
+        if to not in creds and slash_titles.word_slash(to):
+            return ("slash-to-and: the target %r is a new key whose slash stands between two whole names, which the "
+                    "rule holds for a person (rule d, S679); a person names it, then the list is rebuilt" % to)
         return None
     entries = {e["old"]: e["new"] for e in (slash_plan or {}).get("entries") or []}
     held = {h["old"]: h.get("why") or "" for h in (slash_plan or {}).get("held") or []}
@@ -256,6 +261,8 @@ def plan(rows, ut, creds, arts, with_exhibit_grain=False, slash_plan=None):
                 held = "exhibit id not seen on this local title"
             elif r.get("to") == r.get("from"):
                 held = "target is the current canonical"
+            elif r["action"] == "repoint":
+                held = slash_wait(r["to"], creds, slash_plan)
         decided.append([r, key, grain, held])
     # Pass 2: each repoint's grain, from the rows that really move. A held row stays where it is, so it never counts
     # as moving; holding a row can turn a sibling from title grain to exhibit grain (held too, without

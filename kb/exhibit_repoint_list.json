@@ -24,16 +24,16 @@
    },
    "split": {
     "tap_only": 98,
-    "person": 111,
-    "repoint": 168
+    "person": 112,
+    "repoint": 167
    }
   },
   "split_canonicals": {
    "mixed": 219,
-   "auto_title_grain": 73,
+   "auto_title_grain": 72,
    "auto_exhibit_grain": 34,
    "sam_tap_only": 47,
-   "person": 65
+   "person": 66
   },
   "pairs_missing_an_exhibit_id": 10
  },
@@ -574,7 +574,7 @@
     "IT Essentials Application Software Fundamentals (CompTIA A+ Standards)",
     "IT Essentials Microcomputer Theory and Servicing (CompTIA A+ Standards)",
     "IT Essentials Networking Personal Computers (CompTIA A+ Standards)",
-    "Microcomputer Specialist/A+ Training (CompTIA A+ Standards)"
+    "Microcomputer Specialist and A+ Training (CompTIA A+ Standards)"
    ]
   },
   "CompTIA Linux+": {
@@ -588,7 +588,7 @@
    "state": "auto",
    "grain": "title",
    "names": [
-    "Computer Network Specialist/Comp TIA Net+ Training (CompTIA Network+ Standards)",
+    "Computer Network Specialist and Comp TIA Net+ Training (CompTIA Network+ Standards)",
     "Network Fundamentals (Network+) (CompTIA Network+ Standards)"
    ]
   },
@@ -834,35 +834,35 @@
    "state": "auto",
    "grain": "title",
    "names": [
-    "Fire Service in-Service Training/Administration"
+    "Fire Service in-Service Training and Administration"
    ]
   },
   "Fire Service In-Service Training — Command & Control": {
    "state": "auto",
    "grain": "title",
    "names": [
-    "Fire Service in-Service Training/Command & Control"
+    "Fire Service in-Service Training and Command & Control"
    ]
   },
   "Fire Service In-Service Training — EMS": {
    "state": "auto",
    "grain": "title",
    "names": [
-    "Fire Service in-Service Training/EMS"
+    "Fire Service in-Service Training and EMS"
    ]
   },
   "Fire Service In-Service Training — Operations": {
    "state": "auto",
    "grain": "title",
    "names": [
-    "Fire Service in-Service Training/Operations"
+    "Fire Service in-Service Training and Operations"
    ]
   },
   "Fire Service In-Service Training — Special Operations": {
    "state": "auto",
    "grain": "title",
    "names": [
-    "Fire Service in-Service Training/Special Operations"
+    "Fire Service in-Service Training and Special Operations"
    ]
   },
   "Fire Technology": {
@@ -885,11 +885,9 @@
    "names": []
   },
   "First Responder with Healthcare Provider CPR": {
-   "state": "auto",
+   "state": "person",
    "grain": "title",
-   "names": [
-    "Emergency Medical Responder (EMR) / Healthcare Provider CPR"
-   ]
+   "names": []
   },
   "Floral Design Advanced": {
    "state": "auto",
@@ -9396,7 +9394,7 @@
    "local_title": "Microcomputer Specialist/A+ Training CS 001 Cx",
    "action": "repoint",
    "from": "CompTIA A+",
-   "to": "Microcomputer Specialist/A+ Training (CompTIA A+ Standards)",
+   "to": "Microcomputer Specialist and A+ Training (CompTIA A+ Standards)",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -9426,7 +9424,7 @@
    "local_title": "Computer Network Specialist/CompTIA Net+ Training CS 003 Cx",
    "action": "repoint",
    "from": "CompTIA Network+",
-   "to": "Computer Network Specialist/Comp TIA Net+ Training (CompTIA Network+ Standards)",
+   "to": "Computer Network Specialist and Comp TIA Net+ Training (CompTIA Network+ Standards)",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -9471,7 +9469,7 @@
    "local_title": "Computer Security Specialist / Security  Training  CS 004 Cx",
    "action": "tap_only",
    "from": "CompTIA Security+",
-   "to": "Computer Security Specialist/ Security Training (CompTIA Security+ Standards)",
+   "to": "Computer Security Specialist and Security Training (CompTIA Security+ Standards)",
    "reason": "Sam-curated mixed canonical: Split on his tap only",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10664,7 +10662,7 @@
    "local_title": "FTECH 324A\tFire Service In-Service Training/Administration - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
-   "to": "Fire Service in-Service Training/Administration",
+   "to": "Fire Service in-Service Training and Administration",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10679,7 +10677,7 @@
    "local_title": "FTECH 324A\tFire Service In-Service Training/Administration - Internship/Apprenticeship",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
-   "to": "Fire Service in-Service Training/Administration",
+   "to": "Fire Service in-Service Training and Administration",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10694,7 +10692,7 @@
    "local_title": "FTECH 324B\tFire Service In-Service Training/Administration - Joint Service Transcript",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
-   "to": "Fire Service in-Service Training/Administration",
+   "to": "Fire Service in-Service Training and Administration",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10709,7 +10707,7 @@
    "local_title": "FTECH 324C\tFire Service In-Service Training/Administration - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
-   "to": "Fire Service in-Service Training/Administration",
+   "to": "Fire Service in-Service Training and Administration",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10724,7 +10722,7 @@
    "local_title": "FTECH 324X\tFire Service In-Service Training/Administration - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Administration",
-   "to": "Fire Service in-Service Training/Administration",
+   "to": "Fire Service in-Service Training and Administration",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10739,7 +10737,7 @@
    "local_title": "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10754,7 +10752,7 @@
    "local_title": "FTECH 323A\tFire Service In-Service Training/Command & Control - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10769,7 +10767,7 @@
    "local_title": "FTECH 323B\tFire Service In-Service Training/Command & Control - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10784,7 +10782,7 @@
    "local_title": "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10799,7 +10797,7 @@
    "local_title": "FTECH 323C\tFire Service In-Service Training/Command & Control - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10814,7 +10812,7 @@
    "local_title": "FTECH 323X\tFire Service In-Service Training/Command & Control - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Command & Control",
-   "to": "Fire Service in-Service Training/Command & Control",
+   "to": "Fire Service in-Service Training and Command & Control",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10829,7 +10827,7 @@
    "local_title": "FTECH 321A\tFire Service In-Service Training/EMS - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — EMS",
-   "to": "Fire Service in-Service Training/EMS",
+   "to": "Fire Service in-Service Training and EMS",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10844,7 +10842,7 @@
    "local_title": "FTECH 321B\tFire Service In-Service Training/EMS - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — EMS",
-   "to": "Fire Service in-Service Training/EMS",
+   "to": "Fire Service in-Service Training and EMS",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10859,7 +10857,7 @@
    "local_title": "FTECH 321C\tFire Service In-Service Training/EMS - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — EMS",
-   "to": "Fire Service in-Service Training/EMS",
+   "to": "Fire Service in-Service Training and EMS",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10874,7 +10872,7 @@
    "local_title": "FTECH 321X\tFire Service In-Service Training/EMS - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — EMS",
-   "to": "Fire Service in-Service Training/EMS",
+   "to": "Fire Service in-Service Training and EMS",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10889,7 +10887,7 @@
    "local_title": "FTECH 325A\tFire Service In-Service Training/Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Operations",
-   "to": "Fire Service in-Service Training/Operations",
+   "to": "Fire Service in-Service Training and Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10904,7 +10902,7 @@
    "local_title": "FTECH 325B\tFire Service In-Service Training/Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Operations",
-   "to": "Fire Service in-Service Training/Operations",
+   "to": "Fire Service in-Service Training and Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10919,7 +10917,7 @@
    "local_title": "FTECH 325C\tFire Service In-Service Training/Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Operations",
-   "to": "Fire Service in-Service Training/Operations",
+   "to": "Fire Service in-Service Training and Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10934,7 +10932,7 @@
    "local_title": "FTECH 325X\tFire Service In-Service Training/Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Operations",
-   "to": "Fire Service in-Service Training/Operations",
+   "to": "Fire Service in-Service Training and Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10949,7 +10947,7 @@
    "local_title": "FTECH 322A\tFire Service In-Service Training/Special Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Special Operations",
-   "to": "Fire Service in-Service Training/Special Operations",
+   "to": "Fire Service in-Service Training and Special Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10964,7 +10962,7 @@
    "local_title": "FTECH 322B\tFire Service In-Service Training/Special Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Special Operations",
-   "to": "Fire Service in-Service Training/Special Operations",
+   "to": "Fire Service in-Service Training and Special Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10979,7 +10977,7 @@
    "local_title": "FTECH 322B\tFire Service In-Service Training/Special Operations - Internship/Apprenticeship",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Special Operations",
-   "to": "Fire Service in-Service Training/Special Operations",
+   "to": "Fire Service in-Service Training and Special Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -10994,7 +10992,7 @@
    "local_title": "FTECH 322C\tFire Service In-Service Training/Special Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Special Operations",
-   "to": "Fire Service in-Service Training/Special Operations",
+   "to": "Fire Service in-Service Training and Special Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -11009,7 +11007,7 @@
    "local_title": "FTECH 322X\tFire Service In-Service Training/Special Operations - Credit by Exam",
    "action": "repoint",
    "from": "Fire Service In-Service Training — Special Operations",
-   "to": "Fire Service in-Service Training/Special Operations",
+   "to": "Fire Service in-Service Training and Special Operations",
    "reason": "Split: graded side to its own canonical (M-ID)",
    "target_exists": false,
    "target_sam_curated": false,
@@ -11080,16 +11078,14 @@
    "batch": "split",
    "exhibit_id": "MAPCXS-E3RW-1-001",
    "local_title": "EMS 350\tFirst Responder with Healthcare Provider CPR - Credit by Exam",
-   "action": "repoint",
+   "action": "person",
    "from": "First Responder with Healthcare Provider CPR",
-   "to": "Emergency Medical Responder (EMR) / Healthcare Provider CPR",
-   "reason": "Split: graded side to its own canonical (M-ID)",
-   "target_exists": false,
-   "target_sam_curated": false,
+   "to": null,
+   "reason": "the new name 'Emergency Medical Responder (EMR) / Healthcare Provider CPR' joins two whole names with a slash, which the slash-to-and rule holds for a person (rule d, S679): a person names it",
    "split_grain": "title",
    "name_source": "M-ID",
    "course_id": "EMST M10JM",
-   "target_issuer": "California Community Colleges"
+   "target_issuer": null
   },
   {
    "batch": "split",

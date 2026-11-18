@@ -68,6 +68,20 @@ def test_rule():
     for t in official:
         check(st.read(t)["kind"] == "official" and st.and_form(t) == t,
               "official-name slash changed: %r -> %r" % (t, st.and_form(t)))
+    # A C-ID descriptor title is an official name (the S679 conductor on #3472, 2026-11-18), read from the committed
+    # descriptor table, never a hand list: every slash title in kb/reference/cid_descriptors.json, and only those.
+    cid = json.load(open(os.path.join(os.path.dirname(st.CREDENTIALS), "reference", "cid_descriptors.json"),
+                         encoding="utf-8"))
+    cid_slash = {d["title"].strip() for d in cid["descriptors"] if "/" in (d.get("title") or "")}
+    check(set(st.OFFICIAL_CID_TITLES) == cid_slash and len(cid_slash) >= 18,
+          "the C-ID exemption is not the descriptor table's slash titles: %d of %d"
+          % (len(st.OFFICIAL_CID_TITLES), len(cid_slash)))
+    for t in ["Algebra/Trigonometry-Based Physics A", "Introduction to Chicana/o Studies",
+              "Zoology / Animal Diversity and Evolution"]:
+        check(st.read(t)["kind"] == "official" and st.ruled_form(t) == t and not st.word_slash(t),
+              "a C-ID descriptor title lost its slash: %r -> %r" % (t, st.ruled_form(t)))
+    check(st.ruled_form("Algebra/Geometry Review") == "Algebra and Geometry Review",
+          "a title that is not a C-ID descriptor's kept a word slash")
     # An ASE pair outside an ASE title is a word join: the official name is ASE's, and the title does not name it.
     check(st.and_form("Diesel Electrical/Electronic Systems") == "Diesel Electrical and Electronic Systems",
           "an ASE pair kept its slash in a title that does not name ASE")

@@ -189,6 +189,24 @@ def _and_form(head):
     return slash_titles.ruled_form(head or "")
 
 
+def _new_key(name, idx):
+    """(key, None) for the canonical key a re-point creates, or (None, why) when the slash rule holds the name for a
+    person. A new key is written kb/slash_titles.ruled_form (the S679 conductor on #3472, 2026-11-18): a slash joining
+    words reads "and" ("Fire Service in-Service Training/EMS" is "Fire Service in-Service Training and EMS", the
+    source's capitalization kept), and a code slash or an official name's slash stays, a C-ID descriptor title among
+    them ("Algebra/Trigonometry-Based Physics A", C-ID PHYS 105). A spaced slash between two whole names is held for a
+    person by the rule (d), so no key is minted for it. An existing key passes as it is: the slash-to-and rename
+    carries it, and kb/exhibit_repoint.slash_wait holds the row until then. The apply writes this string and
+    `kb/slash_titles.py --check` reads it with the same slashes(), so the key never fails the guard."""
+    if not name or name in idx.creds:
+        return name, None
+    key = slash_titles.ruled_form(name)
+    if slash_titles.word_slash(key):
+        return None, ("the new name %r joins two whole names with a slash, which the slash-to-and rule holds for a "
+                      "person (rule d, S679): a person names it" % name)
+    return key, None
+
+
 def _trade_key(text):
     """The trade's grouping key: the rule's spelling, lowercased, whitespace squashed."""
     return re.sub(r"\s+", " ", _and_form(text).lower()).strip()
@@ -297,6 +315,10 @@ def batch_apprenticeship(idx, audit, review):
         rung = "Journeyperson" if rk == "J" else "Year " + rk
         to = "%s %s Apprenticeship — %s" % (prefix, alias if alias else trade, rung)
         to = re.sub(r"^Sheet Metal Sheet Metal ", "Sheet Metal ", to)
+        to, slash_why = _new_key(to, idx)
+        if slash_why:
+            mk("person", None, slash_why)
+            continue
         issuer = h.get("issuer") or next((r.get("issuing_agency") for t in fam.values()
                                           for r in idx.creds.get(t) or [] if r.get("issuing_agency")), None)
         mk("assign", to, "no family and no similarly named rival: minted {Issuer} {Trade} Apprenticeship — {rung}",
@@ -427,10 +449,12 @@ def batch_split(idx, cid_titles):
                 name, src, cid = graded_name(idx, eid, cid_titles)
                 if name and suffix:
                     name = "%s (%s)" % (name, suffix)
+                name, slash_why = _new_key(name, idx)
                 if name and xr.norm(name).casefold() == xr.norm(canon).casefold():
                     name, why = "", "the graded name would be the current canonical: a person picks a distinct title"
                 else:
-                    why = "" if name else "no articulated college course on the graded exhibit to name it from"
+                    why = "" if name else (slash_why or "no articulated college course on the graded exhibit to "
+                                                        "name it from")
                 to, issuer = name or None, "California Community Colleges"
             else:
                 to, src, cid, issuer = None, "", "", None
@@ -515,6 +539,11 @@ def batch_low_confidence(idx, cid_titles, claimed):
                                       for c in crs))
             if official and not idx.sam_curated(canon) and not any(_overlap(t, canon) >= 0.99 for t in course_titles):
                 to = ([t for t in official if t in id_titles] or official)[0]  # the C-ID or M-ID title first
+                to, slash_why = _new_key(to, idx)
+                if slash_why:
+                    rows.append(_row("low_confidence", ids[0], key, "person", canon, None, slash_why, idx,
+                                     exhibit_ids=ids))
+                    continue
                 for e in ids:
                     rows.append(_row("low_confidence", e, key, "repoint", canon, to,
                                      "the course code's official course and its CR agree with each other and not "

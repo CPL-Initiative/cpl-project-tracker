@@ -29,15 +29,21 @@ cert-based guard on Move and an accepted combine. `kb/_build_left_map.py` writes
 `kb/_apply_left_map.py` carries decisions out; `excel_to_dashboard.py` leaves a removed title out. 446 titles used
 against COBIx's 434 (his pointer rule came from an unposted file). Tests `tests/exhibits_list_left.test.js`,
 `tests/left_map_build_test.py`. **OPEN: #3472 (draft, item 6):** one re-point list keyed by MAP exhibit id and local
-title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 605 applied,
-75 held; apprenticeship 13 assign, 2 person; the split reads 219 against 265 because the MAP snapshot is not
+title (`kb/exhibit_repoint_list.json`, 938 rows) and `--pairs` in the reviewed apply, with undo; dry run 590 applied,
+89 held; apprenticeship 13 assign, 2 person; split 167 re-point, 112 person; the split reads 219 against 265 because the MAP snapshot is not
 committed; no real apply has run. COBIx's review (S679): the apply decides holds before grain, so a held row never
 moves under a sibling's title rewrite; `--undo-pairs --force` leaves each changed title whole and lists what it left.
 The UA plumbing family is spelled "UA Plumbers and Pipefitters" (Sam, 2026-11-18: a slash joining words becomes
 "and"), so UA Local 467 Year 1 assigns to his Level 1 key and Years 2 and 3 to the slash rungs. The builder spells
 family heads and trade keys with `kb/slash_titles.ruled_form`, the one rule (a code slash such as HVAC/R stays). The
-apply holds an assign row whose target the rule spells differently (`exhibit_repoint.slash_wait`): today UA Local 467
-Years 2 and 3, until the slash-to-and rename runs and the list is rebuilt.
+apply holds an assign or repoint row whose target the rule spells differently (`exhibit_repoint.slash_wait`): today UA
+Local 467 Years 2 and 3 and the 14 CTCNC modules under *Drywall/Lather*, until the slash-to-and rename runs and the
+list is rebuilt. DECIDED (S679 conductor, 2026-11-18): a key a re-point creates is written
+`slash_titles.ruled_form` (*Fire Service in-Service Training and EMS*, the source's capitalization kept); a C-ID
+descriptor title keeps its slash as an official name (*Algebra/Trigonometry-Based Physics A*, C-ID PHYS 105; the
+exemption reads `kb/reference/cid_descriptors.json`); a name the rule holds for two whole names goes to a person
+(*Emergency Medical Responder (EMR) / Healthcare Provider CPR*). `tests/exhibit_repoint_test.py` fails a re-point key
+that `slash_titles --check` would fail.
 **NEXT:** (1) wire `kb/_apply_left_map.py` into a nightly job; (2) Rename and Combine on the leftover row (the regular
 List has them; the guard covers Accept).
 **NEXT for #3472, in order:** (1) the slash-to-and rename runs (`cred-rename-apply.yml`,
@@ -59,8 +65,9 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
 - **A slash joining words is written "and" (Sam, in session S679, 2026-11-18):** *"I believe I replaced the / with and
   to avoid formatting issues and should be a general rule for other titles. UA Plumbers and Pipefitters"*. The S679
   conductor drew the line, which Sam can revise: a code slash (a code on each side, a digit or capitals: *SP/2*,
-  *CAD/CAM*) and an official name's slash (an ASE test name's pair in an ASE title, or a phrase in `OFFICIAL_PHRASES`:
-  *Fire Apparatus Driver/Operator*, *Division/Group Supervisor*, *Medical/Surgical*) stay. On COBIx's review (#3479)
+  *CAD/CAM*) and an official name's slash (an ASE test name's pair in an ASE title, a phrase in `OFFICIAL_PHRASES`:
+  *Fire Apparatus Driver/Operator*, *Division/Group Supervisor*, *Medical/Surgical*, or one of the 18 C-ID descriptor
+  titles that print a slash) stay. On COBIx's review (#3479)
   the conductor added two lines: a spaced slash between two whole names (either side holds "and", or both sides run
   two words or more: *DSST A History of the Vietnam War / Civil War and Reconstruction*) is held for a person, and a
   combine is found case-folded and whitespace squashed, against every credential and search alias.

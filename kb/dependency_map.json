@@ -4815,14 +4815,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 67
     },
     {
      "id": "script:kb/slash_titles.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 58
+     "line": 67
     }
    ],
    "served": false,
@@ -11754,7 +11754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 566
     },
     {
      "id": "script:kb/_build_left_map.py",
@@ -14871,7 +14871,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 538
+     "line": 567
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -15031,7 +15031,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 536
+     "line": 565
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -15241,7 +15241,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 66
     }
    ],
    "producers": [
@@ -16694,7 +16694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 540
+     "line": 569
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -18859,7 +18859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 541
+     "line": 570
     },
     {
      "id": "script:kb/_build_side_by_side.py",
@@ -18937,6 +18937,13 @@
      "direction": "read",
      "how": "literal",
      "line": 46
+    },
+    {
+     "id": "script:kb/slash_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 92
     },
     {
      "id": "script:tmc/_parse_tmc_pdfs.py",
@@ -21437,7 +21444,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 535
+     "line": 564
     },
     {
      "id": "script:kb/_build_exhibits_related.py",

@@ -464,15 +464,87 @@ def test_apply_waits_on_slash_rename():
     check([h["local_title"][-6:] for h in rep4["held"]] == ["Year 1"] and "new key" in rep4["held"][0]["why"]
           and [a["to"] for a in rep4["applied"]] == ["UA HVAC/R Apprenticeship — Year 1"],
           "a minted slash key or a code slash was misread: %r" % rep4["held"])
-    # The committed list against the committed plan: exactly UA Local 467 Years 2 and 3 wait on the rename.
+    # The committed list against the committed plan: UA Local 467 Years 2 and 3 (assign) and the 14 CTCNC modules
+    # re-pointed under "Carpenters Apprenticeship — Drywall/Lather" wait on the rename. A repoint row waits too (the
+    # S679 conductor, 2026-11-18): once the rename has run, the slash key is gone and the row would mint it again.
     doc = json.load(open(xr.LIST_PATH, encoding="utf-8"))
     ut = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
     cr = json.load(open(app.CREDENTIALS, encoding="utf-8"))
     ar = json.load(open(app.ARTICULATIONS, encoding="utf-8")).get("articulations") or []
     decided = xr.plan(doc["rows"], ut, cr, ar)
-    waits = sorted(r["local_title"] for r in decided if (r["_held"] or "").startswith("slash-to-and"))
-    check(waits == ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (2, 3)],
-          "the committed list's rows waiting on the slash rename moved: %r" % waits)
+    waits = [r for r in decided if (r["_held"] or "").startswith("slash-to-and")]
+    check(sorted(r["local_title"] for r in waits if r["batch"] == "apprenticeship")
+          == ["UA Local 467 Plumbing and Pipefitting Apprenticeship Year %d" % n for n in (2, 3)]
+          and Counter(r["batch"] for r in waits) == Counter({"ctcnc": 14, "apprenticeship": 2})
+          and {r["to"] for r in waits if r["batch"] == "ctcnc"} == {"Carpenters Apprenticeship — Drywall/Lather"},
+          "the committed list's rows waiting on the slash rename moved: %r"
+          % sorted((r["batch"], r["local_title"], r["to"]) for r in waits))
+    # A repoint row onto a slash key that is still a credential waits; after the rename it still waits (stale).
+    rp = {"batch": "ctcnc", "exhibit_id": CTC, "local_title": "Carpenter’s Training Center CTCNC CARP 150",
+          "action": "repoint", "from": "Drywall Basics", "to": "Carpenters Apprenticeship — Drywall/Lather"}
+    ut5 = {rp["local_title"]: {"unified_title": "Drywall Basics", "source_exhibit_ids": [CTC]}}
+    arts5 = [{"course_id": "D1", "exhibit_id": CTC, "exhibit_title": rp["local_title"],
+              "unified_title": "Drywall Basics", "cpl_type_description": "Other"}]
+    plan5 = {"plan_id": "slash-to-and-2026-11-18", "held": [],
+             "entries": [{"old": rp["to"], "new": "Carpenters Apprenticeship — Drywall and Lather"}]}
+    for creds5 in ({rp["to"]: [{}], "Drywall Basics": [{}]},
+                   {"Carpenters Apprenticeship — Drywall and Lather": [{}], "Drywall Basics": [{}]}):
+        _, c5, _, _, rep5 = xr.apply_rows([rp], ut5, creds5, arts5, slash_plan=plan5)
+        check(not rep5["applied"] and rep5["held"] and rep5["held"][0]["why"].startswith("slash-to-and")
+              and (rp["to"] in creds5) == (rp["to"] in c5),
+              "a repoint onto a slash key was not held, or minted the slash key: %r" % rep5["held"])
+
+
+def test_no_repoint_key_fails_slash_check():
+    """The S679 conductor on #3472, 2026-11-18: no re-point creates a canonical key that `kb/slash_titles.py --check`
+    would fail. A new key is written kb/slash_titles.ruled_form (a word slash reads "and", the source's capitalization
+    kept), a C-ID descriptor title keeps its printed slash as an official name, and a name the rule holds for a person
+    (two whole names) is never minted. The builder, the apply and --check read one function, slashes()."""
+    import slash_titles as st
+    idx = xr.Index({}, {"Existing/Key": [{}]}, [])
+    cases = {"Fire Service in-Service Training/EMS": ("Fire Service in-Service Training and EMS", None),
+             "Algebra/Trigonometry-Based Physics A": ("Algebra/Trigonometry-Based Physics A", None),
+             "Microcomputer Specialist/A+ Training (CompTIA A+ Standards)":
+                 ("Microcomputer Specialist and A+ Training (CompTIA A+ Standards)", None),
+             "Welding for HVAC/R": ("Welding for HVAC/R", None),
+             "Existing/Key": ("Existing/Key", None)}
+    for name, want in cases.items():
+        check(builder._new_key(name, idx) == want, "the new key for %r is %r, not %r"
+              % (name, builder._new_key(name, idx), want))
+    key, why = builder._new_key("Emergency Medical Responder (EMR) / Healthcare Provider CPR", idx)
+    check(key is None and "two whole names" in (why or ""), "a whole-names slash was minted: %r" % key)
+    check("Algebra/Trigonometry-Based Physics A" in st.OFFICIAL_CID_TITLES
+          and st.read("Algebra/Trigonometry-Based Physics A")["kind"] == "official",
+          "the C-ID descriptor title PHYS 105 is not an official name")
+    # The committed list: every applied row's new key passes the guard, before and after the dry-run apply.
+    doc = json.load(open(xr.LIST_PATH, encoding="utf-8"))
+    ut = json.load(open(app.UNIFIED_TITLES, encoding="utf-8"))
+    cr = json.load(open(app.CREDENTIALS, encoding="utf-8"))
+    ar = json.load(open(app.ARTICULATIONS, encoding="utf-8")).get("articulations") or []
+    plan = st.load_plan() or {}
+    new = sorted({r["to"] for r in doc["rows"] if r["action"] in xr.APPLIED_ACTIONS | {"tap_only"}
+                  and r.get("to") and r["to"] not in cr})
+    check(not [t for t in new if st.ruled_form(t) != t or st.uncovered({t: [{}]}, plan)],
+          "a re-point creates a key the slash rule spells otherwise or --check fails: %r"
+          % [t for t in new if st.ruled_form(t) != t or st.uncovered({t: [{}]}, plan)][:5])
+    _, cr2, _, _, _ = xr.apply_rows(doc["rows"], ut, cr, ar)
+    check(st.uncovered(cr2, plan) == st.uncovered(cr, plan) == [],
+          "after the dry-run apply, --check fails: %r" % st.uncovered(cr2, plan)[:5])
+    # The 28 S679 named: 26 written "and", 2 C-ID descriptor titles kept; the whole-names one goes to a person.
+    split = [r for r in doc["rows"] if r["batch"] == "split" and r["action"] == "repoint"]
+    fire = Counter(r["to"] for r in split if r["to"].startswith("Fire Service in-Service Training "))
+    check(fire == Counter({"Fire Service in-Service Training and Command & Control": 6,
+                           "Fire Service in-Service Training and Administration": 5,
+                           "Fire Service in-Service Training and Special Operations": 5,
+                           "Fire Service in-Service Training and EMS": 4,
+                           "Fire Service in-Service Training and Operations": 4}),
+          "the Fire Service in-Service Training names moved: %r" % dict(fire))
+    check(sorted(r["to"] for r in split if r["to"].startswith("Algebra/")) ==
+          ["Algebra/Trigonometry-Based Physics A", "Algebra/Trigonometry-Based Physics B"],
+          "the C-ID physics descriptor titles lost their slash")
+    emr = [r for r in doc["rows"] if r["batch"] == "split" and r.get("course_id") == "EMST M10JM"]
+    check(emr and all(r["action"] == "person" and r["to"] is None and "two whole names" in r["reason"] for r in emr),
+          "the EMR / Healthcare Provider CPR split was not sent to a person: %r" % emr)
 
 
 def test_committed_list():
@@ -544,6 +616,7 @@ if __name__ == "__main__":
     test_ctcnc_family_after_rename()
     test_slash_rule_is_one_rule()
     test_apply_waits_on_slash_rename()
+    test_no_repoint_key_fails_slash_check()
     test_committed_list()
     if FAILS:
         sys.exit("%d failure(s)" % len(FAILS))
