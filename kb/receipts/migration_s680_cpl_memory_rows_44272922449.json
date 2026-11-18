@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_cpl_memory_rows.sql",
+ "name": "s680_cpl_memory_rows",
+ "version": "20261118091050",
+ "sha256": "131f945abe3d6f4a2abcb0f011d06c724884ece2da64f3e20542fc2d52c290ed",
+ "run": "44272922449",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-one-read-per-host-funded-night-s680\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":284},{\"slug\":\"d-paid-rereads-need-aimed-input-s680\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":340},{\"slug\":\"d-units-rule-a6-off-s680\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":175},{\"slug\":\"f-display-receipts-hold-no-person-data-s680\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":208},{\"slug\":\"f-miracosta-21976-live-newer-run-s680\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":190},{\"slug\":\"m-receipts-bucket-s680\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":338},{\"slug\":\"m-units-rules-applied-s680\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":342},{\"slug\":\"p-commons-data-rebuild-not-in-check-generated-s680\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":256},{\"slug\":\"p-runner-pool-saturation-s680\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":213},{\"slug\":\"pr-pr-chain-generated-conflicts-s680\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":303},{\"slug\":\"sam-collect-with-gaps-2026-11-17\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":304},{\"slug\":\"sam-conductor-back-for-collection-only-2026-11-17\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"sam-funded-two-lane-collection-2026-11-17\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":327},{\"slug\":\"sam-repo-size-limit-2026-11-17\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":275}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
