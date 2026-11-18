@@ -1,0 +1,113 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3480 (comment 6967372099): flag discontinued programs out of the queue; flag, never delete",
+ "held_colleges": [
+  "Golden West College",
+  "Coastline Community College",
+  "Orange Coast College",
+  "Cosumnes River College",
+  "Lassen College",
+  "Los Medanos College",
+  "Diablo Valley College",
+  "College of the Redwoods",
+  "Allan Hancock College",
+  "Chabot College",
+  "Antelope Valley College",
+  "Santiago Canyon College"
+ ],
+ "left_out_held": 0,
+ "flagged": 9,
+ "by_how": {
+  "prior_year_only": 9
+ },
+ "by_college": {
+  "Butte College": 2,
+  "Gavilan College": 2,
+  "Rio Hondo College": 1,
+  "Riverside City College": 2,
+  "Santa Ana College": 2
+ },
+ "page_text": "none committed: catalog_mark needs a runner capture (--capture)",
+ "flags": [
+  {
+   "college": "Butte College",
+   "control_number": "31950",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43969449378).",
+   "source": "kb/program_requirements_college/butte/prior_2025-2026.json"
+  },
+  {
+   "college": "Butte College",
+   "control_number": "31953",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43969449378).",
+   "source": "kb/program_requirements_college/butte/prior_2025-2026.json"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "31444",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43958278663).",
+   "source": "kb/program_requirements_college/gavilan/prior_2025-2026.json"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "33047",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43958278663).",
+   "source": "kb/program_requirements_college/gavilan/prior_2025-2026.json"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "32258",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974070079).",
+   "source": "kb/program_requirements_college/rio_hondo/prior_2025-2026.json"
+  },
+  {
+   "college": "Riverside City College",
+   "control_number": "32692",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43816942139).",
+   "source": "kb/program_requirements_college/riverside_city/prior_2025-2026.json"
+  },
+  {
+   "college": "Riverside City College",
+   "control_number": "32745",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43816942139).",
+   "source": "kb/program_requirements_college/riverside_city/prior_2025-2026.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32062",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974075411).",
+   "source": "kb/program_requirements_college/santa_ana/prior_2025-2026.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32989",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974075411).",
+   "source": "kb/program_requirements_college/santa_ana/prior_2025-2026.json"
+  }
+ ]
+}
