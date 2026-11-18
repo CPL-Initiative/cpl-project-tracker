@@ -1,0 +1,81 @@
+ENGIN 110 - Introduction to Engineering
+Units: 3.0
+Print
+
+Description:
+
+This course is an introduction to different engineering disciplines and careers, the role of an engineer in society, engineering ethics, the engineering approach to problem-solving, engineering design process and project development, engineering analysis, concurrent engineering, and application of computers in engineering including design and presentation tools. The emphasis is on hands-on creative problem-solving, teamwork, and effective communication. Students will develop design, analysis, and computer skills through work on projects drawn from various engineering majors.
+
+Requisites:
+
+Credit by Exam/Challenge:
+
+Yes
+
+Course Note:
+
+Credit for prior learning available: Credit by examination.
+
+Transferable:
+
+Transferable to both UC and CSU
+
+Repeatability:
+
+None
+
+General Education:
+
+C-ID:
+Engineering
+
+Comparable course: ENGR 110
+
+Student Learning Outcomes:
+
+Identify the activities of engineers in the field and the office.
+Describe academic pathways to degrees in engineering.
+Identify the steps required to solve problems in engineering.
+Identify individual engineer's role in interdisciplinary projects.
+Describe a variety of software applications used by engineers.
+Recognize ethical and legal requirements while engaged in engineering practice.
+Develop library and internet research skills as preliminary research tools before the start of an engineering project. (Laboratory)
+Use software to produce reports and carry out basic calculations and graphs. (Laboratory)
+Apply Computer Aided Drafting (CAD) skills to create objects and produce working drawings. (Laboratory)
+Use electrical measurement equipment such as multimeters and oscilloscopes. (Laboratory)
+Apply basic computer programming skills to solve mathematical problems arising in engineering. (Laboratory)
+Use computers for simple control applications. (Laboratory)
+Apply rapid prototyping methods using 3D printers and laser cutters to complete projects. (Laboratory)
+Perform basic operations with tools and shop equipment. (Laboratory)
+
+Grade Options:
+
+Letter Grade Methods
+Pass/No Pass
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+108.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+36.0
+
+Lab Hours
+
+72.0
+
+Activity Hours
+
+0.0
