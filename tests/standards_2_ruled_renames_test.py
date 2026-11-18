@@ -68,8 +68,8 @@ NEWS = {n for _, n in EXPECT}
 # ── 1. the frozen plan ──────────────────────────────────────────────────────────────────────────────────
 plans = ruled_renames.load()
 ids = [p["plan_id"] for p in plans]
-check("the committed ruled plans are exactly Sheet 181's and the two standards plans",
-      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN1, PLAN_ID]), ids)
+check("the committed ruled plans are exactly Sheet 181's, the two standards plans and the slash-to-and plan",
+      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN1, PLAN_ID, "slash-to-and-2026-11-18"]), ids)
 plan = next(p for p in plans if p["plan_id"] == PLAN_ID)
 plan1 = next(p for p in plans if p["plan_id"] == PLAN1)
 check("the plan names Sam's saves, ruling A's principle and its memory row, and who carried it out",
