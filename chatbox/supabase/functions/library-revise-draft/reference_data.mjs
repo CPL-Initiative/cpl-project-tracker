@@ -48,13 +48,14 @@ export function exhibitsFor(verified, colleges) {
 
 // The block the model reads. Empty when the request names no college.
 //
-// Sam's ruling on the landing-page button (2:42 PM PT, 2026-11-18, relayed by COBIx on #3527): these pieces are for
-// prospective students, so they show only articulated opportunities; the button opens the college's landing page,
-// not the MAP dashboard; a college with no landing page on file is said so on the page, with no fallback link. The
-// exhibits listed here are the ones MAP names this college as the owner of: the ones it articulated. MAP's landing
-// page takes no exhibit in its address today (its exhibit search is held inside the page; read 2026-11-18), so the
-// button opens the page and the piece names the exhibit to choose there. When MAP adds an exhibit parameter, it
-// joins here in landingButton, and every draft after picks it up.
+// Sam's rulings on the landing-page button, relayed by COBIx on #3527 (2:42, 2:44 and 3:03 PM PT, 2026-11-18): the
+// button opens the college's landing page, never the MAP dashboard; the landing page shows only articulated courses,
+// so the drafter checks no articulation and builds no filter; a college with no landing page on file is said so,
+// with no fallback link. MAP's landing page reads no exhibit from its address today (Sam picks one in Possible
+// Qualifications), so the piece names the exhibit to choose there by MAP's exact title. Sam asked MAP (Malone and
+// Pedro) for ?Exhibit=<MAP ID> on the landing-page template; when it ships, landingButton is the one line that
+// changes. Until then no parameter is added. The exhibits listed here are the ones MAP names the college as owner
+// of: a head start for names and MAP IDs, never a filter (an exhibit a college adopted may not be listed).
 export function landingButton(landing, exhibit) {
   return landing || "";
 }
@@ -69,9 +70,9 @@ export function referenceBlock(colleges, landing, exhibits) {
     part += `- CPL Opportunity page (internal pieces only): ${OPPORTUNITY_PAGE}${encodeURIComponent(c)}\n`;
     const ex = (exhibits && exhibits[c]) || [];
     if (ex.length) {
-      part += `- Exhibits ${c} has articulated (MAP lists the college as their owner). Name only these; never a potential or unarticulated one:\n`;
-      for (const e of ex) part += `  - ${e.title} (${e.id})` + (landing[c] ? `: button to ${landingButton(landing[c], e)}, labeled with the exhibit, and a line telling the student to choose ${e.title} on that page` : "") + "\n";
-    } else part += `- MAP lists no articulated exhibits for ${c}. Name none.\n`;
+      part += `- Exhibits MAP lists ${c} as the owner of, with each MAP ID (a head start for exact names; not a filter, and not every exhibit the college offers):\n`;
+      for (const e of ex) part += `  - ${e.title} (MAP ID ${e.id})` + (landing[c] ? `: button to ${landingButton(landing[c], e)}; tell the student to choose "${e.title}" under Possible Qualifications` : "") + "\n";
+    }
     if (out.length + part.length > MAX_REFERENCE) { out += "\n(More colleges were named than fit; name fewer per piece.)\n"; break; }
     out += part;
   }

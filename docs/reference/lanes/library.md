@@ -85,17 +85,18 @@ and calls library-revise-draft with no Draft it now press (`draftOnStart`). A ne
 change offers **Change what you asked** and opens the draft it builds on. A piece that drafts on its card offers no
 File it beside the card and no File a new version (the In development list keeps File it for a session-made piece).
 The drafter adds a reference block for each college a request names: its MAP landing page
-(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits it has articulated (MAP names it
-the owner in `map_cpl_opportunities_verified.json`) (`reference_data.mjs`). **Sam's ruling, 2:42 PM PT (COBIx on
-#3527):** student pieces show only articulated opportunities; a button opens the college's landing page, never the MAP
-dashboard; a college with no landing page on file is said so, with no fallback link. **Open (NEEDS-MAP):** MAP's
-landing page reads no exhibit from its address (one route, `/<college>`, its search held in page state; read
-2026-11-18), so the button opens the page and the piece names the exhibit to choose; an `?exhibit=` parameter from MAP
-would join in `landingButton`. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
+(`map_college_contacts.landing_page_url`), its CPL Opportunity page, and the exhibits MAP names it the owner of, with
+MAP IDs, as a head start for exact names, never a filter (`reference_data.mjs`). **Sam's rulings (COBIx on #3527, 2:42,
+2:44 and 3:03 PM PT):** a button opens the college's landing page, never the MAP dashboard; the landing page shows only
+articulated courses, so the drafter checks no articulation; a college with no landing page on file is said so, with no
+fallback link; the piece tells the student to choose the exhibit by MAP's exact name under Possible Qualifications.
+**Waiting on MAP:** Sam asked Malone and Pedro for `?Exhibit=<MAP ID>` on the landing-page template; when it ships,
+`landingButton` is the one line that changes, and no parameter is added before then. **Full read access (Sam's rulings, relayed by COBIx on #3527, 2026-11-18):** the model reads any COBI table
 (PostgREST GET with the caller's credential) and any published file through three tools (`cobi_data.mjs`); staff
 names, titles and work emails are not filtered; the one student-data rule is that a student count under 10 for a
 category shows as `<10`, applied to every read result and to the finished draft's text, with a prompt rule against a
-total that backs a hidden count out.
+total that backs a hidden count out. The count rule touches count-shaped people fields only (never units, credits or
+hours), and on a revision it runs on each edit's new text, so every rewrite shows in What changed.
 
 ✅ **Version 22 and the List** (2026-11-05): moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (tender-fermi, 2026-11-10)*.
 

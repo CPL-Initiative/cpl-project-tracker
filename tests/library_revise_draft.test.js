@@ -255,13 +255,16 @@ function load(rows, onFetch) {
     // Sam, 2:42 PM PT (COBIx on #3527): articulated only; the landing page, not the dashboard; no fallback link.
     check("F2: ⭐ a college with no landing page on file is said so, with no button and no fallback link",
       /Norco College\n- MAP landing page: NONE ON FILE\. Say on the page/.test(block) && !/map\.rccd\.edu\/cpllandingpages/.test(block), block);
-    check("F2: ⭐ each articulated exhibit's button goes to the college's landing page, never the MAP dashboard",
-      block.indexOf("Sheet Metal Worker (MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney, labeled with the exhibit") >= 0 &&
-      !/insights\/exhibit-courses/.test(block) && /Name only these; never a potential or unarticulated one/.test(block), block);
-    check("F2: a college with no articulated exhibit names none", /MAP lists no articulated exhibits for Norco College\. Name none\./.test(block));
+    check("F2: ⭐ each exhibit's button goes to the college's landing page with its MAP ID kept beside it, never the MAP dashboard, and no parameter yet",
+      block.indexOf('Sheet Metal Worker (MAP ID MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney; tell the student to choose "Sheet Metal Worker" under Possible Qualifications') >= 0 &&
+      !/insights\/exhibit-courses/.test(block) && !/\?Exhibit=/.test(block), block);
+    // Sam, 2:44 PM PT: the drafter checks no articulation; the owner list is a head start, never a filter.
+    check("F2: the exhibit list is labeled a head start, not a filter, and the drafter builds no articulated filter",
+      /a head start for exact names; not a filter/.test(block) && !/Name only these/.test(block) && !/MAP lists no articulated exhibits/.test(block), block);
     check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
     const CD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/cobi_data.mjs", "utf8");
-    check("F2: the model is told: articulated only, the landing page not the dashboard, no fallback", /only articulated opportunities/.test(CD) && /never the MAP dashboard/.test(CD) && /with no other link in its place/.test(CD));
+    check("F2: the model is told: the landing page, not the dashboard; the exact name under Possible Qualifications; no articulation check; no fallback",
+      /never the MAP dashboard/.test(CD) && /under Possible Qualifications by its exact name as MAP lists it/.test(CD) && /you need not check articulation/.test(CD) && /with no other link in its place/.test(CD) && !/only articulated opportunities/.test(CD));
     check("F3: the drafter adds the reference block on both paths and lets the model use its links",
       /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
       /the reference data from COBI/.test(FN));
@@ -273,20 +276,33 @@ function load(rows, onFetch) {
       { college: "Norco College", program: "Welding", students: 12, student_count: 0 }]);
     check("G1: ⭐ a category with 7 students reads <10", rows[0].students === "<10", JSON.stringify(rows));
     check("G1: a string count and an award count under 10 read <10 too", rows[0].awards === "<10");
+    const units = C.suppressCounts([{ award_units: 3, veteran_units: 6, units_awarded: 3, max_award: 4, credit_hours: 2, award_count: 5 }])[0];
+    check("G1: ⭐ unit, credit and hour fields pass unchanged (COBIx review: award_units 3, units_awarded 3); a count of awards does not",
+      units.award_units === 3 && units.veteran_units === 6 && units.units_awarded === 3 && units.max_award === 4 && units.credit_hours === 2 && units.award_count === "<10", JSON.stringify(units));
     check("G1: 10 and over stay as they are, 0 stays 0, a count of exhibits is not a student count",
       rows[1].students === 12 && rows[1].student_count === 0 && rows[0].exhibits === 4, JSON.stringify(rows));
     check("G2: in prose, 7 students reads <10 students; 17 students and Step 2 stay",
       C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4.") === "Laney had <10 students, Norco 17 students. Step 2 of 4.",
       C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4."));
+    for (const t of ["Earn 3 units for veterans", "Up to 6 credits for students", "Grade 9 students", "Course 2 of the students' path", "1 in 5 students", "Step 2 of 4 for apprentices"]) {
+      check("G2: ⭐ left as it is: " + t, C.suppressText(t) === t, C.suppressText(t));
+    }
+    check("G2: a describing word between the count and the noun still counts", C.suppressText("7 new students") === "<10 new students");
     check("G2: in a published file, \"students\": 7 reads \"<10\"", C.suppressText('{"college":"Laney","students": 7,"units":3}') === '{"college":"Laney","students": "<10","units":3}',
       C.suppressText('{"college":"Laney","students": 7,"units":3}'));
-    const page = '<td class="n" data-n="7">7</td><td>7 students</td><p>3 veterans earned credit; see 7 exhibits.</p>';
+    const page = '<td class="n" data-n="7" aria-label="7 students">7</td><td>7 students</td><p>3 veterans earned credit; see 7 exhibits.</p>';
     const outp = C.suppressInHtml(page);
-    check("G3: ⭐ the finished draft's text shows a count under 10 as <10 (escaped), in a table cell and a sentence, leaving attributes and other counts alone",
-      outp === '<td class="n" data-n="7">7</td><td>&lt;10 students</td><p>&lt;10 veterans earned credit; see 7 exhibits.</p>', outp);
+    check("G3: ⭐ text and the attributes a reader hears show a count under 10 as <10 (escaped); a class, data value and other counts stay",
+      outp === '<td class="n" data-n="7" aria-label="&lt;10 students">7</td><td>&lt;10 students</td><p>&lt;10 veterans earned credit; see 7 exhibits.</p>', outp);
+    const eds = C.suppressEdits([{ old: "Laney had twelve students", new: "Laney had 7 students; earn 3 units" }]);
+    check("G3: ⭐ a revision suppresses each edit's new text, so the rewrite shows in What changed",
+      eds[0].new === "Laney had &lt;10 students; earn 3 units" && /ans\.edits = suppressEdits\(ans\.edits\);\n[^]*const done = applyEdits\(page, ans\.edits\)/.test(FN) &&
+      /now: String\(e\?\.new/.test(FN), eds[0].new);
+    check("G3: a revision never suppresses the whole page; a new page suppresses the model's own parts (title, description, main, summary)",
+      !/suppressInHtml\(pics\.html\)/.test(FN) && /\["title", "description", "published", "summary"\]/.test(FN) && /\.main = suppressInHtml\(/.test(FN));
     check("G4: the model is told the rule, including the total that would back a hidden count out",
       /under 10 for a specific category/.test(C.STUDENT_RULE) && /Never show a total or a remainder that would let a reader work a hidden count back out/.test(C.STUDENT_RULE) &&
-      (FN.match(/STUDENT_RULE \+ TOOL_RULES/g) || []).length === 2 && (FN.match(/suppressInHtml\(pics\.html\)/g) || []).length === 2);
+      (FN.match(/STUDENT_RULE \+ TOOL_RULES/g) || []).length === 2);
     check("G5: no staff-data block: staff names, titles and work emails may appear; a student's never",
       (FN.match(/Staff names, titles/g) || []).length === 2 && !/Never copy a person's (own )?email/.test(FN) && /Never a student's name, email or ID/.test(FN));
     const seen = [];
@@ -299,12 +315,12 @@ function load(rows, onFetch) {
       seen[0] === "map_college_contacts?select=college,headcount&limit=500" && /"headcount":"<10"/.test(read), seen[0] + " " + read);
     check("G6: a table name that is not one is refused", /Name one table/.test(await C.runTool("cobi_read", { table: "x;drop" }, fakeRest, fakeGet)));
     const tables = await C.runTool("cobi_tables", {}, fakeRest, fakeGet);
-    check("G6: cobi_tables lists tables and functions from the published dependency map", tables === "map_college_contacts\nrpc/team_pass_ok", tables);
+    check("G6: cobi_tables lists only what cobi_read can read: tables, no rpc (COBIx review)", tables === "map_college_contacts", tables);
     const file = await C.runTool("cobi_file", { path: "kb/reference/x.json" }, fakeRest, fakeGet);
     check("G6: cobi_file reads a published file and suppresses its counts", /"students":"<10"/.test(file) && seen.indexOf("https://cpl-initiative.github.io/cpl-project-tracker/kb/reference/x.json") >= 0, file);
     check("G6: a path that climbs out of the site is refused", /Give a path/.test(await C.runTool("cobi_file", { path: "../secrets" }, fakeRest, fakeGet)));
     check("G7: the model reads through the tools in a bounded loop, every read a GET with the caller's credential",
-      /tools: TOOLS/.test(FN) && /for \(let turn = 0; turn <= MAX_TURNS; turn\+\+\)/.test(FN) && /rest\(path, cred, \{ method: "GET" \}\)/.test(FN) && /tool_choice: \{ type: "none" \}/.test(FN));
+      /tools: TOOLS/.test(FN) && /for \(let turn = 0; turn <= MAX_TURNS; turn\+\+\)/.test(FN) && /rest\(path, cred, \{ method: "GET" \}\)/.test(FN) && /tool_choice: \{ type: "none" \}/.test(FN) && /library-revise-draft usage/.test(FN));
 
     const waiting = rec({ id: "22222222-2222-2222-2222-222222222222", slug: "sheet-metal-cards", title: "Sheet Metal Cards", status: "requested",
       url: null, home: "not_filed", public_listed: false, version: null, brief: { say: "Cards per college" }, refresh_note: "Add the landing page links.",

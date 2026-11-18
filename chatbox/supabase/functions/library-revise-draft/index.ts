@@ -42,7 +42,7 @@ import { readingText, SIERRA_MAX } from "./sierra_text.mjs";
 import { buildNewPage, googleExport, parseNewAnswer, STARTER_SLUG } from "./new_page.mjs";
 import { MAX_PICTURES, PICTURE_RULES, placePictures } from "./pictures.mjs";
 import { collegesNamed, exhibitsFor, referenceBlock, VERIFIED_URL } from "./reference_data.mjs";
-import { MAX_TURNS, runTool, STUDENT_RULE, suppressInHtml, TOOL_RULES, TOOLS } from "./cobi_data.mjs";
+import { MAX_TURNS, runTool, STUDENT_RULE, suppressEdits, suppressInHtml, suppressText, TOOL_RULES, TOOLS } from "./cobi_data.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANON = Deno.env.get("SUPABASE_ANON_KEY") || "";
@@ -170,12 +170,15 @@ Deno.serve(async (req) => {
   const out = asked.out, text = asked.text;
   const ans = parseAnswer(text);
   if (ans.error) return reply(502, { error: ans.error + " Try again." });
+  // Sam's small-count rule on the way out, on each edit's new text only, so every rewrite shows in What changed and
+  // no sentence the request did not touch is changed (COBIx review on #3527).
+  ans.edits = suppressEdits(ans.edits);
+  if (ans.summary) ans.summary = suppressText(ans.summary);
   const done = applyEdits(page, ans.edits);
   if (done.error) return reply(422, { error: done.error, summary: ans.summary });
   // The model's markers become figures here, after its edits passed their checks.
   const pics = placePictures(done.html, pictures);
-  // Sam's small-count rule, on the way out too: a student count under 10 in the page's text reads <10.
-  done.html = suppressInHtml(pics.html);
+  done.html = pics.html;
   const lost = frameKept(page, done.html);
   if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
 
@@ -226,6 +229,8 @@ async function askModel(system: string, content: unknown, cred: Record<string, s
     const calls = blocks.filter((c: any) => c.type === "tool_use");
     if (out?.stop_reason !== "tool_use" || !calls.length) {
       out.usage = usage;
+      // What a draft costs in practice (COBIx review on #3527): the summed tokens and the rounds it read.
+      console.log("library-revise-draft usage", JSON.stringify({ rounds: turn + 1, ...usage }));
       return { out, text: blocks.filter((c: any) => c.type === "text").map((c: any) => c.text).join("") };
     }
     messages.push({ role: "assistant", content: blocks });
@@ -346,11 +351,15 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   const out = asked.out, text = asked.text;
   const ans = parseNewAnswer(text);
   if (ans.error) return reply(502, { error: ans.error + " Try again." });
+  // Sam's small-count rule on the way out: the model's own parts of a new page (title, description, <main>, the foot's
+  // line and the summary), never the starter's frame, so the frame check still compares like with like.
+  for (const k of ["title", "description", "published", "summary"]) if (typeof (ans as any)[k] === "string") (ans as any)[k] = suppressText((ans as any)[k]);
+  if (typeof (ans as any).main === "string") (ans as any).main = suppressInHtml((ans as any).main);
   const built = buildNewPage(starter, r.slug, ans);
   if (built.error) return reply(422, { error: built.error, summary: ans.summary });
   // The allowlist ran on the model's <main> inside buildNewPage; its markers become figures here.
   const pics = placePictures(built.html as string, pictures);
-  built.html = suppressInHtml(pics.html);
+  built.html = pics.html;
   const lost = frameKept(starter, built.html);
   if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
   const sierra = { before: 0, after: readingText(built.html).length, max: SIERRA_MAX };
