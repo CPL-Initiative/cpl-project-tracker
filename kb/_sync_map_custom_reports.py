@@ -297,6 +297,15 @@ def ace_titles(report: list) -> list[dict]:
             for k, v in sorted(best.items())]
 
 
+class AceCheckFailed(SystemExit):
+    """An ACE catalog check failed: the all-digit AceID contract stop or the side-by-side sum check.
+
+    A SystemExit, so a caller that runs the check alone still stops. main() catches it, stores no ACE text
+    tonight, lets the MAP load go ahead, and exits 1 at the end (COBIx on #3468, comment 6965997052): the
+    ACE text is enrichment beside the MAP load and never holds back map_college_cr_unit or map_student_credit.
+    """
+
+
 def ace_catalog_crs(report: list) -> tuple[list[dict], dict]:
     """One row per distinct (AceID, CreditRecommendation), from the catalog the daily pull already fetches.
 
@@ -306,7 +315,7 @@ def ace_catalog_crs(report: list) -> tuple[list[dict], dict]:
 
     THE KEY IS AceID. The catalog also carries a numeric `ExhibitID`, a different namespace; this function never
     reads it. An AceID that is all digits is skipped and counted (the table's check constraint refuses one too),
-    and when most of them are, the column contract has broken and the run stops before anything is written.
+    and when most of them are, the column contract has broken: AceCheckFailed, and main() stores no ACE text.
 
     THE TEXT IS KEPT AS THE CATALOG SENT IT, trimmed (`_clean`, this file's one convention). `typo_key` rides
     beside it as the typographic rule's comparison key (kb/cr_typographic.py); the text itself is never cleaned.
@@ -336,7 +345,7 @@ def ace_catalog_crs(report: list) -> tuple[list[dict], dict]:
             seen[(ace, cr)] = {"exhibit_id": ace, "credit_recommendation": cr, "typo_key": typo_key(cr)}
     kept = stats["catalog_rows"] - stats["blank"]
     if kept and stats["numeric_ace_id"] * 2 > kept:
-        raise SystemExit(
+        raise AceCheckFailed(
             f"FATAL: {stats['numeric_ace_id']:,} of {kept:,} {CATALOG_VIEW} rows carry an all-digit AceID. That is "
             "the catalog's numeric ExhibitID namespace, never an ACE id; fix the column contract before loading.")
     stats["pairs"] = len(seen)
@@ -347,8 +356,8 @@ def report_ace_crs(pairs: list, stats: dict, cr_rows: list) -> dict:
     """Print the catalog's pairs and the MAP-to-ACE side by side from this same pull.
 
     exact + typographic + differs + ace_missing must equal the distinct MAP (exhibit, wording) pairs counted HERE,
-    apart from the classifier, or the run stops. side_by_side() adds each pair to one bucket and to its own total
-    together, so comparing the buckets with that total could never fail (the second reader on #3468); a set built
+    apart from the classifier, or AceCheckFailed: main() then stores no ACE text and exits 1 after the MAP load.
+    side_by_side() adds each pair to one bucket and to its own total together, so comparing the buckets with that total could never fail (the second reader on #3468); a set built
     from the rows directly can disagree with it, and a classifier that drops or double counts a pair is caught.
     """
     map_pairs = [(r.get("exhibit_id"), r.get("credit_rec")) for r in cr_rows]
@@ -366,7 +375,7 @@ def report_ace_crs(pairs: list, stats: dict, cr_rows: list) -> dict:
           "cleaned wording with another MAP wording (source text unchanged)")
     total = sbs["exact"] + sbs["typographic"] + sbs["differs"] + sbs["ace_missing"]
     if total != len(distinct):
-        raise SystemExit(f"FATAL: the side by side does not add up: its buckets hold {total:,} MAP pairs and the "
+        raise AceCheckFailed(f"FATAL: the side by side does not add up: its buckets hold {total:,} MAP pairs and the "
                          f"pull holds {len(distinct):,} distinct (exhibit, wording) pairs.")
     return sbs
 
@@ -995,12 +1004,18 @@ def main() -> int:
     held = [n for n in HELD_COLUMNS if n in (st_ds.get("columnName") or [])]
     print(f"\n   fetched but NOT stored ({len(held)}): {', '.join(held)}")
 
-    ace_crs, ace_stats = ace_catalog_crs(report)
-    report_ace_crs(ace_crs, ace_stats, cr_rows)
+    ace_fatal = None
+    try:
+        ace_crs, ace_stats = ace_catalog_crs(report)
+        report_ace_crs(ace_crs, ace_stats, cr_rows)
+    except AceCheckFailed as e:
+        ace_fatal, ace_crs = str(e.code), []
+        print(f"::error::{ace_fatal} map_ace_catalog_cr is LEFT ALONE tonight; the MAP load goes ahead, "
+              "and the run exits 1 at the end.")
 
     if args.dry_run:
         print("\n--dry-run: nothing written.")
-        return 0
+        return ace_exit(0, ace_fatal)
 
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if not key:
@@ -1041,7 +1056,7 @@ def main() -> int:
     if args.no_promote:
         print("\nStaging loaded. --no-promote: NOTHING LIVE HAS CHANGED.")
         print("Promote with docs/map_custom_report_load.md, or re-run without the flag.")
-        return 0
+        return ace_exit(0, ace_fatal)
 
     print("\nPromoting staging -> live (gated, one transaction)...")
     rep = promote(key)
@@ -1051,7 +1066,7 @@ def main() -> int:
               f"map_data_loads {rb['id']} at {rb['loaded_at']}")
         print(f"   {rb['note']}")
         print("\nLive is current.")
-        return store_ace_crs(ace_crs, key, cr_rows)
+        return ace_exit(store_ace_crs(ace_crs, key, cr_rows), ace_fatal)
     cr, st, stu = rep.get("cr_unit", {}), rep.get("student", {}), rep.get("students", {})
     print(f"   map_college_cr_unit   {cr.get('was'):,} -> {cr.get('now'):,}")
     print(f"   map_student_credit    {st.get('was'):,} -> {st.get('now'):,}")
@@ -1060,7 +1075,17 @@ def main() -> int:
     for w in rep.get("warnings") or []:
         print(f"   ⚠️  {w}")
     print("\nLive is current.")
-    return store_ace_crs(ace_crs, key, cr_rows)
+    return ace_exit(store_ace_crs(ace_crs, key, cr_rows), ace_fatal)
+
+
+def ace_exit(rc: int, ace_fatal: str | None) -> int:
+    """The run's exit code: 1 when an ACE catalog check failed, after everything else has run, so the failure watch
+    shows the night red while map_college_cr_unit and map_student_credit are current."""
+    if ace_fatal is None:
+        return rc
+    print(f"\n::error::ACE catalog check failed earlier in this run: {ace_fatal} map_ace_catalog_cr was LEFT ALONE; "
+          "the MAP data above is unaffected. Exiting 1.")
+    return rc or 1
 
 
 def store_ace_crs(ace_crs: list, key: str, cr_rows: list | None = None) -> int:

@@ -13,6 +13,7 @@ map_ace_catalog_cr. The failure modes guarded here all pass silently if they hap
   * the side by side counting a MAP wording twice, so its buckets stop adding up,
   * Python and cr_reference.js disagreeing on the rule (the shared fixture; tests/cr_ace_side_by_side.test.js),
   * the loader failing the nightly MAP load when the migration is not applied yet,
+  * a failed ACE check (the all-digit stop, the sum check) holding back the MAP load, or passing as green,
   * the load function left callable by an API role, or service_role losing it (Rule 10 b2).
 
 Fixtures only; nothing here reads Supabase or any ACE website.
@@ -249,9 +250,96 @@ check(main_src.index("report_ace_crs(") < main_src.index("if args.dry_run"),
       "the side by side must print on a dry run too")
 check(main_src.index("if args.no_promote") < main_src.index("store_ace_crs("),
       "ACE text must be stored only after the promotion (--no-promote changes nothing live)")
-check(main_src.count("return store_ace_crs(ace_crs, key, cr_rows)") == 2, "both promotion outcomes store the ACE text and measure self-recall")
+check(main_src.count("return ace_exit(store_ace_crs(ace_crs, key, cr_rows), ace_fatal)") == 2,
+      "both promotion outcomes store the ACE text, measure self-recall, and carry a failed ACE check to the exit code")
 check('"ExhibitID"' not in SRC[SRC.index("def ace_catalog_crs"):SRC.index("def report_ace_crs")],
       "ace_catalog_crs must never name the catalog's numeric ExhibitID")
+
+# ── 5b. A failed ACE check never holds back the MAP load (COBIx, #3468 comment 6965997052) ──
+# Both checks run before the dry-run return and before staging is written. When one fires, the run stores no ACE
+# text, still loads staging and promotes map_college_cr_unit and map_student_credit, and exits 1 at the end so the
+# failure watch shows the night red. Everything past the parse is stubbed: nothing here reaches Supabase.
+import io  # noqa: E402
+import tempfile  # noqa: E402
+
+MAIN_STUBS = ("map_rows", "assign_student_keys", "report_cr_unit", "report_student", "clear_staging", "insert",
+              "write_sketch", "verify_staging", "promote", "_request", "side_by_side")
+
+
+def run_main(catalog_rows, argv=(), bend_sbs=None):
+    """Run main() on a pull whose catalog carries catalog_rows; return (exit code, what it touched, its output)."""
+    seen = {"inserted": [], "promoted": 0, "ace_rpc": 0}
+    real = {n: getattr(sync, n) for n in MAIN_STUBS}
+    report = [{"viewName": sync.CR_UNIT_VIEW, "columnName": [], "columnValue": []},
+              {"viewName": sync.STUDENT_VIEW, "columnName": [], "columnValue": []},
+              {"viewName": sync.CATALOG_VIEW, "columnName": COLS, "columnValue": catalog_rows}]
+    map_cr = [{"exhibit_id": e, "credit_rec": r} for e, r in MAP]
+
+    def request(method, path, key, body=None, timeout=180):
+        if path == sync.ACE_CR_RPC:
+            seen["ace_rpc"] += 1
+            n = len(body["p_rows"])
+            return 200, json.dumps({"sent": n, "added": n, "seen_again": 0, "held": n}).encode()
+        return 200, b"[]"                                   # cr_reference_decisions, for the self-recall line
+
+    def promote(key):
+        seen["promoted"] += 1
+        return {"cr_unit": {"was": 1, "now": 2}, "student": {"was": 1, "now": 2}, "students": {"was": 1, "now": 2}}
+
+    sync.map_rows = lambda ds, contract, view, **k: ((map_cr, None) if view == sync.CR_UNIT_VIEW else ([{}], {}))
+    sync.assign_student_keys = lambda ds, rows, index: (rows, {"sketch": []})
+    sync.report_cr_unit = sync.report_student = lambda *a, **k: None
+    sync.clear_staging = lambda key: {}
+    sync.insert = lambda table, rows, key: (seen["inserted"].append(table) or len(rows))
+    sync.write_sketch = lambda sample, key, d: {"verdict": "ok", "overlap": None}
+    sync.verify_staging = lambda expected, key: None
+    sync.promote, sync._request = promote, request
+    if bend_sbs:
+        sync.side_by_side = (lambda m, a, _b=bend_sbs, _r=real["side_by_side"]: _b(_r(m, a)))
+    tmp = tempfile.NamedTemporaryFile("w", suffix=".json", delete=False, encoding="utf-8")
+    json.dump(report, tmp)
+    tmp.close()
+    old_argv, old_key, old_out = sys.argv, os.environ.get("SUPABASE_SERVICE_KEY"), sys.stdout
+    sys.argv, os.environ["SUPABASE_SERVICE_KEY"] = ["sync", tmp.name, *argv], "k"
+    out = io.StringIO()
+    sys.stdout = out
+    try:
+        rc = sync.main()
+    except SystemExit as e:                                 # an escape is the failure this section guards
+        rc = f"escaped SystemExit: {e}"
+    finally:
+        sys.stdout = old_out
+        sys.argv = old_argv
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+        for n, f in real.items():
+            setattr(sync, n, f)
+        os.unlink(tmp.name)
+    return rc, seen, out.getvalue()
+
+
+rc, seen, out = run_main(ROWS)
+check(rc == 0 and seen["promoted"] == 1 and seen["ace_rpc"] == 1,
+      f"a clean pull promotes, stores the ACE text and exits 0: rc={rc!r}, {seen}")
+check("::error::" not in out, "a clean pull printed an ::error line")
+
+ALL_NUMERIC = [[str(i), "L", "3 hours in X", "t", "0", str(9000 + i), "M"] for i in range(5)]
+SUM_OFF = (lambda d: dict(d, differs=d["differs"] - 1, map_pairs=d["map_pairs"] - 1))
+for label, rows, bend in (("an all-digit AceID column (the contract stop)", ALL_NUMERIC, None),
+                          ("a side by side that does not add up", ROWS, SUM_OFF)):
+    rc, seen, out = run_main(rows, bend_sbs=bend)
+    check(rc == 1, f"{label}: the run must exit 1 at the end, got {rc!r}")
+    check(seen["promoted"] == 1, f"{label}: the MAP data must still promote: {seen}")
+    check({"stg_map_college_cr_unit", "stg_map_student_credit"} <= set(seen["inserted"]),
+          f"{label}: staging must still load: {seen['inserted']}")
+    check(seen["ace_rpc"] == 0, f"{label}: map_ace_catalog_cr must be left alone: {seen['ace_rpc']} load calls")
+    check(re.search(r"^::error::FATAL: ", out, re.M) and out.rstrip().splitlines()[-1].startswith("::error::"),
+          f"{label}: an ::error line at the check and another as the run's last line")
+    rc, seen, out = run_main(rows, argv=("--dry-run",), bend_sbs=bend)
+    check(rc == 1 and seen["promoted"] == 0 and not seen["inserted"],
+          f"{label}: a dry run writes nothing and still exits 1: rc={rc!r}, {seen}")
 
 # ── 6. The migration and its rollback ───────────────────────────────────────
 MIG = os.path.join(ROOT, "kb", "migrations", "2026-11-17_s678_map_ace_catalog_cr.sql")
