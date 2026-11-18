@@ -3832,7 +3832,7 @@
      one credential's records into the other; a reviewed apply does the merge. The engine's suggestion slot draws the
      line and its two words, keeps what was accepted or dismissed for the visit, and marks the row changed; this hands it
      the write and the words for the status line (the List norms' step 1, onto Exhibits in S545). */
-  function listSuggestAccept(r, sg) {
+  function listSuggestAccept(r, sg, again) {
     var from = r.ut, writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
     /* Sam's graded and cert-based groups (2026-11-17): a combine across them is blocked on the first try; a second try,
        which names both groups, goes through and is logged beside the fold. */
@@ -3840,7 +3840,7 @@
     if (cross && !LEFT.guard[gk]) {
       LEFT.guard[gk] = true;
       return Promise.resolve({ ok: false, words: "Blocked: " + from + " is " + groupWords(cross.a) + " and " + sg.to + " is " + groupWords(cross.b)
-        + ". Sam's rule keeps these apart. Accept again to combine them anyway; that override is logged." });
+        + ". Sam's rule keeps these apart. " + (again || "Accept again") + " to combine them anyway; that override is logged." });
     }
     if (cross) writes.push([FIELD_TYPE_OVERRIDE, "combine across groups: " + cross.a + " into " + cross.b + ": " + from + " -> " + sg.to]);
     return session().then(function (sess) {
@@ -4259,7 +4259,7 @@
   /* The titles in the reference MAP no longer carries (the auditor's stale_kb_entry, never an unclassified title still in
      MAP), by the credential they fold under: the Commons' keep-or-retire count opens this filter (Sam, 2026-11-04: "the
      links on all surfaces should open to the filtered view of the job needed"). Read only when it is chosen. */
-  var LEFT = { by: null, error: null, p: null, cards: null, map: null, dec: {}, decErr: "", moving: null, guard: {}, note: "" };
+  var LEFT = { by: null, error: null, p: null, cards: null, map: null, dec: {}, decErr: "", moving: null, act: "", guard: {}, note: "" };
   /* Acting on a title that has left MAP (Sam, 2026-11-17: "Need a way to take action on them"; "These are local exhibit
      titles, right? I don't change those, just canonicalized titles they sit under"; COBIx's item 2 on #3464). Three
      link-only decisions, stored as kb_curation rows `_LEFT_MAP::<raw local title>` + left_map_decision, never as an
@@ -4386,8 +4386,14 @@
     if (LEFT.note) box.appendChild(el("p", { cls: "exh-small", role: "status", text: LEFT.note }));
     return box;
   }
-  /* One old title's row in the panel: its CPL type, its live twin, and the three decisions (none for a title Sam reviewed). */
-  function leftRow(raw, ut) {
+  /* One old title's row in the panel: its CPL type, its live twin, the three decisions on its link, and Rename and Combine
+     on the canonical title it sits under (none for a title Sam reviewed). Rename and Combine are the List's own title Edit
+     and Accept (listCellSave, listSuggestAccept), offered here so the job finishes from the row (S679, the lane's NEXT 2). */
+  function leftOpenBox(raw, act) {
+    if (LEFT.moving === raw && LEFT.act === act) LEFT.moving = null; else { LEFT.moving = raw; LEFT.act = act; }
+    if (state.view === "list") render();
+  }
+  function leftRow(raw, ut, r) {
     var i = leftInfo(raw) || {}, li = el("li", { "data-left-raw": raw.trim() });
     li.appendChild(el("span", { text: raw.trim() }));
     li.appendChild(el("span", { cls: "exh-muted exh-small", text: " (" + (i.type || "CPL type not recorded") + ")" }));
@@ -4398,7 +4404,8 @@
     row.appendChild(document.createTextNode(" "));
     row.appendChild(word("Keep under this title", function () { leftSave([raw], "keep").then(function (ok) { leftDone(ok ? "Kept: " + raw.trim() + " stays under " + ut + "." : LEFT.note); }); }, { "data-left-act": "keep" }));
     row.appendChild(document.createTextNode(" "));
-    row.appendChild(word("Move to another title", function () { LEFT.moving = LEFT.moving === raw ? null : raw; if (state.view === "list") render(); }, { "data-left-act": "move", "aria-expanded": LEFT.moving === raw ? "true" : "false" }));
+    var opened = function (act) { return LEFT.moving === raw && LEFT.act === act ? "true" : "false"; };
+    row.appendChild(word("Move to another title", function () { leftOpenBox(raw, "move"); }, { "data-left-act": "move", "aria-expanded": opened("move") }));
     if (!i.used) {
       row.appendChild(document.createTextNode(" "));
       row.appendChild(word("Remove from this title", function () {
@@ -4406,22 +4413,45 @@
         leftSave([raw], "removed").then(function (ok) { leftDone(ok ? "Removed: " + raw.trim() + " no longer sits under " + ut + "." : LEFT.note); });
       }, { "data-left-act": "remove" }));
     }
+    if (r) {
+      row.appendChild(document.createTextNode(" "));
+      row.appendChild(word("Rename the canonical title", function () { leftOpenBox(raw, "rename"); },
+        { "data-left-act": "rename", "aria-expanded": opened("rename"), "aria-label": "Rename the canonical title " + listTitle(r) }));
+      row.appendChild(document.createTextNode(" "));
+      row.appendChild(word("Combine the canonical title with another", function () { leftOpenBox(raw, "combine"); },
+        { "data-left-act": "combine", "aria-expanded": opened("combine"), "aria-label": "Combine the canonical title " + listTitle(r) + " with another canonical title" }));
+    }
     li.appendChild(row);
-    if (LEFT.moving === raw) li.appendChild(leftMoveBox(raw, ut, i));
+    if (LEFT.moving === raw) {
+      if (LEFT.act === "rename" && r) li.appendChild(leftRenameBox(raw, r));
+      else if (LEFT.act === "combine" && r) li.appendChild(leftCombineBox(raw, r));
+      else li.appendChild(leftMoveBox(raw, ut, i));
+    }
     return li;
   }
-  /* Move: a search box over the canonical titles, each with its CPL type; a move across Sam's two groups is blocked on the
-     first try and goes through only on a second, explicit one that names both groups, which is logged. */
-  function leftMoveBox(raw, ut, info) {
-    var id = "exh-left-dl-" + Math.abs(hashStr(raw)), box = el("div", { cls: "exh-left-move" });
-    var inp = el("input", { type: "search", list: id, "aria-label": "Canonical title to move " + raw.trim() + " under", placeholder: "Search canonical titles", cls: "exh-left-q" });
+  /* A search box over the canonical titles, each with its CPL type, and one word that acts on the title picked. Move and
+     Combine both draw it; each brings its own act and its own guard. */
+  function leftPicker(raw, ut, o) {
+    var id = "exh-left-dl-" + o.kind + "-" + Math.abs(hashStr(raw)), box = el("div", { cls: "exh-left-move", "data-left-box": o.kind });
+    var inp = el("input", { type: "search", list: id, "aria-label": o.label, placeholder: "Search canonical titles", cls: "exh-left-q" });
     var dl = el("datalist", { id: id });
     var names = Object.keys((LEFT.map && LEFT.map.canonicals) || {});
     names.forEach(function (n) { if (n !== ut) dl.appendChild(el("option", { value: n, label: n + " (" + canonType(n).type + ")" })); });
     var say = el("p", { cls: "exh-small", role: "status" });
-    var go = word("Move here", function () {
+    var go = word(o.go, function () {
       var to = String(inp.value || "").trim();
       if (!to || !canonType(to)) { say.textContent = "Pick a canonical title from the list."; return; }
+      if (to === ut) { say.textContent = "Pick a canonical title other than " + ut + "."; return; }
+      o.act(to, say);
+    }, { "data-left-go": o.kind === "move" ? "" : o.kind });
+    inp.addEventListener("input", function () { var t = canonType(String(inp.value || "").trim()); say.textContent = t ? "CPL type: " + t.type + "." : ""; });
+    box.appendChild(inp); box.appendChild(dl); box.appendChild(document.createTextNode(" ")); box.appendChild(go); box.appendChild(say);
+    return box;
+  }
+  /* Move: a move across Sam's two groups is blocked on the first try and goes through only on a second, explicit one that
+     names both groups, which is logged. */
+  function leftMoveBox(raw, ut, info) {
+    return leftPicker(raw, ut, { kind: "move", go: "Move here", label: "Canonical title to move " + raw.trim() + " under", act: function (to, say) {
       var cross = crossesGroups(info, canonType(to)), k = raw + " -> " + to, log = null;
       if (cross && !LEFT.guard[k]) {
         LEFT.guard[k] = true;
@@ -4430,11 +4460,43 @@
       }
       if (cross) log = "move across groups: " + cross.a + " into " + cross.b + ": " + raw.trim() + " -> " + to;
       leftSave([raw], "moved:" + to, log).then(function (ok) { LEFT.moving = null; leftDone(ok ? "Moved: " + raw.trim() + " now sits under " + to + " once the reference is rebuilt tonight." : LEFT.note); });
-    }, { "data-left-go": "" });
-    inp.addEventListener("input", function () { var t = canonType(String(inp.value || "").trim()); say.textContent = t ? "CPL type: " + t.type + "." : ""; });
-    box.appendChild(inp); box.appendChild(dl); box.appendChild(document.createTextNode(" ")); box.appendChild(go); box.appendChild(say);
+    } });
+  }
+  /* Combine: the List's Accept (listSuggestAccept), which writes the rename and the merge confirm naming the picked title
+     (the end of its chain of saved renames) and carries the graded and cert-based guard: blocked on the first try, logged
+     on the second. Every local title under the canonical goes with it; a reviewed apply does the merge. */
+  function leftCombineBox(raw, r) {
+    var ut = r.ut;
+    return leftPicker(raw, ut, { kind: "combine", go: "Combine here", label: "Canonical title to combine " + listTitle(r) + " with", act: function (to, say) {
+      var end = listChainEnd(to);
+      if (end === ut) { say.textContent = to + " is already saved to combine into " + ut + "; pick another title."; return; }
+      listSuggestAccept(r, { to: end }, "Press Combine here again").then(function (res) {
+        if (!res.ok) { say.textContent = res.words; return; }
+        LEFT.moving = null;
+        leftDone(res.words);
+      });
+    } });
+  }
+  /* Rename: the List's title Edit (listCellSave), which saves the new name as the canonical title's rename; the daily run
+     checks it for a collision and a reviewed apply renames it in the reference. The local title never changes. */
+  function leftRenameBox(raw, r) {
+    var cur = listTitle(r), box = el("div", { cls: "exh-left-move", "data-left-box": "rename" });
+    var inp = el("input", { type: "text", value: cur, "data-was": cur, "aria-label": "New name for the canonical title " + cur, cls: "exh-left-q" });
+    var say = el("p", { cls: "exh-small", role: "status" });
+    var go = word("Save the name", function () {
+      var value = String(inp.value || "").replace(/\s+/g, " ").trim();
+      if (!value) { say.textContent = "A title cannot be empty; " + cur + " stays."; inp.value = cur; return; }
+      if (value === cur) { say.textContent = cur + " is its name already."; return; }
+      listCellSave(r, "title", inp, "Title").then(function () {
+        if (inp.getAttribute("data-was") !== value) { say.textContent = leftCellNote() || "The name did not save; " + cur + " stays."; return; }
+        LEFT.moving = null;
+        leftDone("Renamed: " + cur + " is saved as " + value + ". The daily run checks the new name for a collision; a reviewed apply renames it in the reference.");
+      });
+    }, { "data-left-go": "rename" });
+    box.appendChild(inp); box.appendChild(document.createTextNode(" ")); box.appendChild(go); box.appendChild(say);
     return box;
   }
+  function leftCellNote() { return String(((listApi() ? LIST_ENGINE.state() : listState()) || {}).cellNote || ""); }
   function hashStr(t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return h; }
   function listPanelBody(r, h) {
     var el2 = h.el, ad = credAdopt(r), cur = credCurrent(r), st = credStudents(r), art = credArt(r), could = credCould(r);
@@ -4454,7 +4516,7 @@
       out.push(el2("p", { cls: "exh-muted exh-small", text: "The reference still keeps " + (gone.length === 1 ? "this old local title" : "these old local titles") +
         " under this canonical title, and no MAP exhibit uses " + (gone.length === 1 ? "it" : "them") + " any more. Nothing breaks while " + (gone.length === 1 ? "it stays" : "they stay") +
         ". For each, keep it under this title, move it to another, or remove it from this title. The local title itself never changes." }));
-      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return leftRow(t, r.ut); })));
+      out.push(el2("ul", { cls: "exh-pn-left" }, gone.map(function (t) { return leftRow(t, r.ut, r); })));
       if (LEFT.note) out.push(el2("p", { cls: "exh-small", role: "status", text: LEFT.note }));
     }
     var cai = listCplAi(r);

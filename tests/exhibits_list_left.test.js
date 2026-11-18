@@ -5,7 +5,10 @@
 //       stale_kb_entry, never an unclassified title still in MAP), and the List says how many titles and what to do;
 //   (2) each panel names its titles that have left MAP and the curator's choice;
 //   (3) the auditor's file is read only for this filter, and a failed read says so, never an empty list as a zero;
-//   (4) the Commons card's words say what the titles are and what the job is, and its count opens this filter.
+//   (4) the Commons card's words say what the titles are and what the job is, and its count opens this filter;
+//   (5) Keep, Move and Remove on each old title's link, the split and the graded and cert-based guard on Move (S678);
+//   (6) Rename and Combine on the leftover row act on the canonical title through the List's own Edit and Accept, and
+//       the guard covers Combine (S679).
 // Run from repo root: `npm test` (or `node tests/exhibits_list_left.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -194,6 +197,72 @@ const AUDIT = { title_cards: [
   const mp = posts().pop();
   check("(5) ⭐ the second try moves it, link only, and logs the override", mp && mp.body.some((x) => x.field === "left_map_decision" && x.value === "moved:Paramedic")
     && mp.body.some((x) => x.field === "cpl_type_group_override" && /cert into graded/.test(x.value)) && !mp.body.some((x) => /^_UNCLASSIFIED::|^_CREDENTIAL_REVIEW::/.test(x.course_id)), mp && JSON.stringify(mp.body));
+
+  // (6) S679, the lane's NEXT 2: Rename and Combine on the leftover row act on the canonical title through the List's
+  //     own title Edit (listCellSave) and Accept (listSuggestAccept), and the graded and cert-based guard covers Combine.
+  const postsOf = (x) => x.calls.filter((c) => c.method === "POST" && /kb_curation/.test(c.url)).map((c) => c.body);
+  const rowIn = (x, raw) => Array.from(panel(x.d).querySelectorAll("[data-left-raw]")).find((e) => e.getAttribute("data-left-raw") === raw);
+  async function openLeft(lmap) {
+    const x = await boot({ hash: "#exhibits/list/left", signedIn: true, files: { "kb/exhibit_audit/latest.json": AUD3, "kb/exhibit_left_map.json": lmap || LMAP } });
+    await settle(); await settle();
+    titleBtn(x.d, "Emergency Medical Technician").click(); await settle();
+    return x;
+  }
+  const rn = await openLeft();
+  const acts = rowIn(rn, "EMT Basic 1998").querySelector(".exh-left-acts");
+  const bRen = acts.querySelector('[data-left-act="rename"]'), bCom = acts.querySelector('[data-left-act="combine"]');
+  check("(6) ⭐ the leftover row offers Rename and Combine as underlined words on the canonical title, never a glyph",
+    bRen && bCom && bRen.tagName === "BUTTON" && bCom.tagName === "BUTTON" && bRen.classList.contains("exh-w") && bCom.classList.contains("exh-w")
+    && txt(bRen) === "Rename the canonical title" && txt(bCom) === "Combine the canonical title with another"
+    && /^[A-Za-z ]+$/.test(txt(bRen) + txt(bCom)) && bRen.getAttribute("aria-expanded") === "false"
+    && /Emergency Medical Technician/.test(bRen.getAttribute("aria-label")) && /Emergency Medical Technician/.test(bCom.getAttribute("aria-label")),
+    acts && acts.outerHTML.slice(0, 400));
+  check("(6) a title Sam reviewed still shows no buttons", !rowIn(rn, "EMT Reviewed").querySelector("button"));
+  bRen.click(); await settle();
+  const rbox = rowIn(rn, "EMT Basic 1998").querySelector('[data-left-box="rename"]');
+  const rin = rbox && rbox.querySelector("input");
+  check("(6) Rename opens a labeled box holding the canonical title's name", rin && rin.value === "Emergency Medical Technician" && /canonical title Emergency Medical Technician/.test(rin.getAttribute("aria-label"))
+    && rowIn(rn, "EMT Basic 1998").querySelector('[data-left-act="rename"]').getAttribute("aria-expanded") === "true");
+  rin.value = "Emergency Medical Technician (EMT)";
+  rbox.querySelector('[data-left-go="rename"]').click(); await settle(); await settle();
+  const rpost = postsOf(rn);
+  check("(6) ⭐ Rename saves the canonical title's rename the way the List's Edit does, and never touches the local title or its link",
+    rpost.length === 1 && rpost[0].course_id === "_CREDENTIAL_REVIEW::Emergency Medical Technician" && rpost[0].field === "unified_title_override"
+    && rpost[0].value === "Emergency Medical Technician (EMT)" && !rpost.some((b) => /^_LEFT_MAP::|^_UNCLASSIFIED::/.test(b.course_id || "")), JSON.stringify(rpost));
+  check("(6) the row says what the rename did", /Renamed: Emergency Medical Technician is saved as Emergency Medical Technician \(EMT\)/.test(txt(panel(rn.d))), txt(panel(rn.d)).slice(0, 600));
+
+  // Combine across Sam's two groups: the canonical is a mix and Paramedic is graded, so the first try is blocked.
+  const cm = await openLeft();
+  rowIn(cm, "EMT Basic 1998").querySelector('[data-left-act="combine"]').click(); await settle();
+  const cbox = () => rowIn(cm, "EMT Basic 1998").querySelector('[data-left-box="combine"]');
+  check("(6) Combine opens a search over the other canonical titles, each with its CPL type", cbox() && Array.from(cbox().querySelectorAll("option")).map((o) => o.value).join("|") === "CompTIA Security+|Paramedic"
+    && /Paramedic \(Credit By Exam\)/.test(Array.from(cbox().querySelectorAll("option")).map((o) => o.getAttribute("label")).join("|")));
+  cbox().querySelector("input").value = "Paramedic";
+  cbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
+  check("(6) ⭐ a combine across graded and cert-based is blocked on the first try, in plain words, with nothing written",
+    postsOf(cm).length === 0 && /Blocked: Emergency Medical Technician is a mix of graded and cert-based types and Paramedic is graded .*Press Combine here again to combine them anyway; that override is logged\./.test(txt(cbox())), txt(cbox()));
+  cbox().querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
+  const cpost = postsOf(cm), cf = (f) => cpost.find((b) => b.field === f);
+  check("(6) ⭐ the second try writes the List's Accept pair on the canonical and logs the override",
+    cpost.length === 3 && cf("unified_title_override") && cf("unified_title_override").value === "Paramedic" && cf("unified_title_merge_confirm") && cf("unified_title_merge_confirm").value === "Paramedic"
+    && cpost.every((b) => b.course_id === "_CREDENTIAL_REVIEW::Emergency Medical Technician")
+    && cf("cpl_type_group_override") && /combine across groups: mixed into graded: Emergency Medical Technician -> Paramedic/.test(cf("cpl_type_group_override").value), JSON.stringify(cpost));
+  check("(6) the row says what the combine did", /Saved: Emergency Medical Technician folds into Paramedic\./.test(txt(panel(cm.d))), txt(panel(cm.d)).slice(0, 600));
+
+  // Combine inside one group goes through on the first try and logs nothing.
+  const LMAP_CERT = JSON.parse(JSON.stringify(LMAP));
+  LMAP_CERT.canonicals["Emergency Medical Technician"] = { type: "Industry Certification", group: "cert" };
+  const cc = await openLeft(LMAP_CERT);
+  rowIn(cc, "EMT Basic 1998").querySelector('[data-left-act="combine"]').click(); await settle();
+  const cbox2 = rowIn(cc, "EMT Basic 1998").querySelector('[data-left-box="combine"]');
+  cbox2.querySelector("input").value = "CompTIA Security+";
+  cbox2.querySelector('[data-left-go="combine"]').click(); await settle(); await settle();
+  const c2 = postsOf(cc);
+  check("(6) ⭐ a combine inside one group goes through on the first try and logs no override",
+    c2.length === 2 && c2.every((b) => b.field !== "cpl_type_group_override") && c2.some((b) => b.field === "unified_title_merge_confirm" && b.value === "CompTIA Security+"), JSON.stringify(c2));
+  check("(6) Combine and Rename reuse the List's handlers rather than a copy",
+    /function leftCombineBox[\s\S]*?listSuggestAccept\(r, \{ to: end \}/.test(src) && /function leftRenameBox[\s\S]*?listCellSave\(r, "title", inp, "Title"\)/.test(src)
+    && (src.match(/combine across groups: /g) || []).length === 1);
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });

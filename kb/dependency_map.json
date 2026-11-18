@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 1020,
+  "file_datasets": 1023,
   "external_services": 195,
   "consumers": 608,
   "workflows": 72,
@@ -6743,7 +6743,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4683,
+     "line": 4745,
      "tabs": [
       "exhibits"
      ]
@@ -8620,7 +8620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4972,
+     "line": 5034,
      "tabs": [
       "exhibits"
      ]
@@ -9571,6 +9571,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/_apply_left_map.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/_apply_unclassified_triage.py": {
    "consumers": [
     {
@@ -9959,6 +9972,19 @@
    "main_committers": []
   },
   "file:kb/_build_governance_candidates.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/_build_left_map.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -16240,8 +16266,16 @@
      "line": 35
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/exhibit_slo_neighbors.json": {
    "consumers": [
@@ -18205,6 +18239,19 @@
    ],
    "served": false,
    "main_committers": []
+  },
+  "file:kb/receipts/left_map_apply_*.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/receipts/library_publish": {
    "consumers": [],
@@ -21122,7 +21169,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 32
+     "line": 43
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -32080,6 +32127,13 @@
      "line": 86
     },
     {
+     "id": "script:kb/_apply_left_map.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 98
+    },
+    {
      "id": "script:kb/_apply_unclassified_triage.py",
      "kind": "script",
      "direction": "read",
@@ -34647,6 +34701,7 @@
     "kb/_apply_credential_review.py",
     "kb/_apply_unclassified_triage.py",
     "kb/_fold_unclassified.py",
+    "kb/_apply_left_map.py",
     "kb/_apply_college_short_names.py",
     "excel_to_dashboard.py",
     "kb/_audit_cid_claims.py",
@@ -34662,6 +34717,7 @@
     "funding/_build_funding_ess.py",
     "kb/_row_audit.py",
     "kb/_audit_exhibits.py",
+    "kb/_build_left_map.py",
     "kb/_suggest_unclassified.py",
     "kb/_cred_rename_dryrun.py",
     "fact-sheet/_build_statewide_recs.py",
@@ -34741,6 +34797,8 @@
     "kb/unclassified_fold/",
     "kb/exhibit_audit/latest.json",
     "kb/exhibit_audit/*.md",
+    "kb/receipts/left_map_apply_*.json",
+    "kb/exhibit_left_map.json",
     "kb/unclassified_suggestions.json",
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
