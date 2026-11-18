@@ -14,7 +14,9 @@ its evidence (the committed files keep no catalog text, and today's session fetc
   * City College of San Francisco: Microsoft Office Specialist no longer matches its own descriptions page,
     page 564 (rule B), and finds its program page;
   * a table-of-contents line is never a heading; "such as" never names an A.S.;
-  * rule D is off by default; on, a title no line prints gets the named gap, and a title the contents print does not;
+  * rule A reads an award line at the top of the next page for a heading at a page's foot;
+  * rule D is off by default; on, a title no line prints gets the named gap, and a title the contents print, or a
+    title wrapped over two lines (in either column), does not;
   * a site page: a descriptions page and a sister award's page are refused, the program's own page is read with
     every tab (rule C);
   * scope: only a program whose filed record places none is marked; a general-education pattern program never is;
@@ -182,6 +184,28 @@ check(RC.heading_at("Viticulture Level 2 - Certificate of Achievement\n", "Vitic
                     "Certificate of Achievement") == 0, "rule A: Level 2's own heading stands")
 check(RC.heading_at("SPANISH I\nAssociate in Arts\n", "Spanish II", "A.A. Degree") < 0, "rule A: Spanish I is never Spanish II")
 
+# A heading at the foot of a page whose award line opens the next page (COBIx on #3514, finding 2): rule A reads the
+# award within HEADING_REACH lines across the page break, past the running header, and the heading stays on its own
+# page.
+foot = catalog(40, {
+    20: "BUSINESS\nThe department offers degrees in management.\nBUSINESS MANAGEMENT\n\n",
+    21: "Certificate of Achievement\nRequired Courses\nBUS 101 Introduction to Business 3\nBUS 102 Business Law 3\n"
+        "BUS 120 Principles of Management 3\nBUS 130 Marketing 3\n"})
+check(RC.heading_at(foot[19], bm["title"], bm["award"]) < 0, "fixture: page 20 alone prints no award beside the title")
+check(RC.heading_at(foot[19], bm["title"], bm["award"], foot[20], RC.furniture(foot)) >= 0,
+      "rule A: a heading at a page's foot reads the award at the top of the next page, past the running header")
+check("mendocino college catalog #-#" in RC.furniture(foot), "rule A: the running header reads as furniture")
+rule = RC.pdf_page(foot, bm, "2026-2027")
+check(rule.get("page_number") == 20, "rule A: the heading's own page 20 stands, got %r" % rule)
+far = catalog(40, {20: "BUSINESS MANAGEMENT\n",
+                   21: "Required Courses\nBUS 101 Introduction\nBUS 102 Business Law\nBUS 120 Management\n"
+                       "Certificate of Achievement\n"})
+check(RC.pdf_page(far, bm, "2026-2027")["heading"] is None,
+      "rule A: an award line past HEADING_REACH on the next page never names the heading's award")
+only_next = ["CATALOG\n", "BUSINESS MANAGEMENT\nCertificate of Achievement\nBUS 101\n"]
+check(RC.heading_at(only_next[0], bm["title"], bm["award"], only_next[1]) < 0,
+      "rule A: a heading that prints only on the next page never stands for this one")
+
 # ── rule D: off by default; on, an unprinted title is a named gap ───────────────────────────────────────────────
 gone = prog("09001", "Computer Accounting", "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
             ["ACCT 101", "ACCT 102"])
@@ -193,6 +217,17 @@ check(rule.get("gap") == "not printed in the 2026-2027 catalog" and rule["rule"]
       "rule D: on, a title no line prints gets the named gap, got %r" % rule)
 toc_only = catalog(10, {2: "CONTENTS\nComputer Accounting Certificate ........ 9\n"})
 check("gap" not in RC.pdf_page(toc_only, gone, "2026-2027"), "rule D: a title the contents print is printed")
+# A long title wrapped onto a second heading line, alone or in one column of a two-column page (COBIx on #3514,
+# finding 1), is printed; its words on lines apart are not.
+wrapped = catalog(10, {4: "COMPUTER\nACCOUNTING CERTIFICATE OF ACHIEVEMENT\nACCT 101\n"})
+check("gap" not in RC.pdf_page(wrapped, gone, "2026-2027"), "rule D: a title wrapped over two lines is printed")
+two_col = catalog(10, {4: "Biology courses meet Area 5B.      COMPUTER\n"
+                          "BIOL 101 General Biology 4      ACCOUNTING CERTIFICATE\nACCT 101\n"})
+check("gap" not in RC.pdf_page(two_col, gone, "2026-2027"),
+      "rule D: a title wrapped in the right column of a two-column page is printed")
+apart = catalog(10, {4: "COMPUTER LITERACY\nThe college offers many programs.\nACCOUNTING\n"})
+check(RC.pdf_page(apart, gone, "2026-2027").get("gap") == "not printed in the 2026-2027 catalog",
+      "rule D: title words on lines apart still read as not printed")
 del os.environ["CPL_RULE_D_NOT_PRINTED"]
 
 # ── a site catalog: rules B, C and A in candidates() ────────────────────────────────────────────────────────────

@@ -18,12 +18,14 @@ choose the page by the heading:
           Technology Certificate - Engine Specialist"). An A.S. or A.A. never reads a transfer degree's award line, a
           credit certificate never reads a certificate of completion, and a bare "AS" counts only beside the title or
           punctuation ("courses such as GEOL 1" names none). A table-of-contents line, a "(p. 250)" cross-reference
-          or a breadcrumb never counts. Among the pages that pass, the one whose window (that page and the next)
+          or a breadcrumb never counts. On a PDF, a heading at a page's foot reads its award on the next page's first
+          lines, past the catalog's running header and footer (furniture()). Among the pages that pass, the one whose window (that page and the next)
           prints the most listed codes is the page. Self-recall: tests/reader_page_checks_recall_test.py.
   Rule C  On a site catalog, the page is read with every tab, and rule A's title check still applies (a subject's
           landing page can hold course descriptions in its courses tab).
   Rule D  Behind its own switch, off by default (CPL_RULE_D_NOT_PRINTED=1): a PDF catalog in which no line prints
-          the program's title gives the program the named gap "not printed in the <year> catalog". The program is
+          the program's title (a line joined with the next counts, so a title wrapped onto a second line, in either
+          column, is printed) gives the program the named gap "not printed in the <year> catalog". The program is
           read from no page, so no reread is aimed at it, and kb/_program_discontinued.py lists it for the
           discontinued-program check (a prior-year read confirms or clears it).
 
@@ -304,17 +306,52 @@ def heading_line(lines: list[str], title: str | None, award: str | None) -> int:
     return -1
 
 
-def heading_at(text: str, title: str | None, award: str | None) -> int:
-    """heading_line() on a page's text: the character offset where the heading's line starts, or -1."""
+FURNITURE_EDGE = 2           # a page's first and last lines that may be its running header or footer
+FURNITURE_SHARE = 0.05       # a line at a page's edge on this share of pages (at least 3) is the catalog's furniture
+
+
+def _furniture_key(line: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"\d+", "#", line.strip().lower()))
+
+
+def furniture(pages: list[str]) -> set[str]:
+    """The catalog's running headers and footers: a line (its digits read as one) at a page's top or foot on
+    FURNITURE_SHARE of the pages, and on 3 at least."""
+    seen: dict[str, int] = {}
+    for txt in pages:
+        lines = [x for x in (txt or "").split("\n") if x.strip()]
+        for k in {_furniture_key(x) for x in lines[:FURNITURE_EDGE] + lines[-FURNITURE_EDGE:]}:
+            seen[k] = seen.get(k, 0) + 1
+    least = max(3, FURNITURE_SHARE * len(pages))
+    return {k for k, n in seen.items() if n >= least}
+
+
+def heading_at(text: str, title: str | None, award: str | None, next_text: str | None = None,
+               furn: set[str] | None = None) -> int:
+    """heading_line() on a page's text: the character offset where the heading's line starts, or -1. With the next
+    page's text, the award may print on that page's first lines (a heading at the foot of a page whose award line
+    opens the next), read past the page's blank lines and the catalog's running header and footer (furn); the heading
+    itself must sit on this page."""
     lines = (text or "").split("\n")
-    i = heading_line(lines, title, award)
-    if i < 0:
+    n = len(lines)
+    ahead = []
+    if next_text:
+        furn = furn or set()
+        while n and (not lines[n - 1].strip() or _furniture_key(lines[n - 1]) in furn):
+            n -= 1        # the page's foot spends none of the reach
+        ahead = [x for x in next_text.split("\n") if x.strip()]
+        while ahead and _furniture_key(ahead[0]) in furn:
+            ahead.pop(0)  # nor does the next page's running header
+        ahead = ahead[:HEADING_REACH]
+    i = heading_line(lines[:n] + ahead, title, award)
+    if i < 0 or i >= n:
         return -1
     return sum(len(x) + 1 for x in lines[:i])
 
 
 def title_printed(pages: list[str], title: str | None) -> bool:
-    """Rule D's test: whether any line of the catalog prints every title word (any award, contents lines too)."""
+    """Rule D's test: whether any line of the catalog, or any line joined with the next, prints every title word (any
+    award, contents lines too)."""
     words = title_words(title)
     if not words:
         return True     # a title with no words to look for is never called unprinted
@@ -323,9 +360,18 @@ def title_printed(pages: list[str], title: str | None) -> bool:
         low = (txt or "").lower()
         if not all(w in low for w in words):
             continue
-        if any(_prints_title(ln, words, tlen, toc_ok=True, level=level) for ln in low.split("\n")):
+        lines = [ln for ln in low.split("\n") if ln.strip()]
+        if any(_prints_title(ln, words, tlen, toc_ok=True, level=level) for ln in lines):
             return True
+        if any(_prints_title(a + " " + b, words, tlen, toc_ok=True, level=level)
+               for x, y in zip(lines, lines[1:]) for a in _columns(x) for b in _columns(y)):
+            return True       # a title wrapped onto a second line, in either column of a two-column page
     return False
+
+
+def _columns(line: str) -> list[str]:
+    """A line's column segments (split on three spaces or more, as _segment splits them)."""
+    return [x for x in re.split(r"\s{3,}|\t", line.strip()) if x]
 
 
 def not_printed_gap(year: str | None) -> str:
@@ -340,12 +386,14 @@ def pdf_page(pages: list[str], program: dict, year: str | None = None) -> dict:
     courses = program.get("closed_list") or []
     words = title_words(program.get("title"))
     title, award = program.get("title"), program.get("award")
-    found, refused_b = [], 0
+    found, refused_b, furn = [], 0, None
     for i, txt in enumerate(pages):
         low = (txt or "").lower()
         if not words or not all(w in low for w in words):
             continue
-        at = heading_at(txt, title, award)
+        if furn is None:
+            furn = furniture(pages)
+        at = heading_at(txt, title, award, pages[i + 1] if i + 1 < len(pages) else None, furn)
         if at < 0:
             continue
         if page_type(txt) != "other":
