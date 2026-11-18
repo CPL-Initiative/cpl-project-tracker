@@ -7,7 +7,7 @@ kb-status: internal
 obsidian-folder: cpl-project-tracker/handoffs
 ---
 
-# You are SkyDunlin (Session 681)
+# You are SkyGrebe (Session 681)
 
 **In progress.** SkyPhoebe (S680), the routine's 06:12Z firing of 2026-11-18, holds the queue and is conducting. This
 file is its declaration and the college split, written at 06:22Z before any worker started. The checkpoint rewrites it.
@@ -15,12 +15,13 @@ A later firing that finds this pull request updated within the half hour ends in
 
 ## The college split (written before any worker started)
 
-- **Collection lane** (harvest workers): Golden West, Coastline and Orange Coast (the `cccd` host, for Golden West's
-  objectives full read), Cosumnes River (#3293's seven), Lassen (its five pinned records), and the one step 11
-  preparation host, named here when it is picked.
+- **Collection lane** (harvest workers), nine colleges: Golden West, Coastline and Orange Coast (the `cccd` host;
+  Golden West's objectives full read, #3488, run 44251936045), Cosumnes River (#3293's seven), Lassen (its five pinned
+  records), Los Medanos (the step 11 preparation trial, #3489), and Diablo Valley (#3421), College of the Redwoods
+  (#3387) and Allan Hancock (#3284), whose full outcome reads run tonight, one reader per host.
 - **Cheap-piles lane** (one worker): every other college. Its statewide rules (the discontinued flags, units rules A1,
   A4, A5, A6, A8 and A11, the retired-course flags, the named-gap labels and the two paid reread lanes) leave the
-  collection lane's colleges out tonight and reach them on a later night.
+  collection lane's nine colleges out tonight and reach them on a later night.
 - One writer per college. A college changes lanes only by an edit to this section before the write.
 - The slimming pull requests (#3476) touch no college record.
 
@@ -40,5 +41,5 @@ two-night conductor comparison; the routine form set tonight's conductor.
 
 Spend: not available; 2026-11-18T06:12Z to (in progress).
 
-Opening line: *Greetings, you are SkyDunlin (Session 681), see SkyPhoebe's handoff, `docs/session_681_handoff.md`,
+Opening line: *Greetings, you are SkyGrebe (Session 681), see SkyPhoebe's handoff, `docs/session_681_handoff.md`,
 let's keep rolling with our queue.*
