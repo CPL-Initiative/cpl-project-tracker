@@ -85,6 +85,78 @@
     "titled": true,
     "coverage": 0.857,
     "opens": "[page 92] Associate in Arts in Psychology for Transfer The Associate in Arts Degree in Psychology for Transfer is designed to provide students with a strong foundation for the study of Psychology in order to transfe"
+   },
+   {
+    "control_number": "31132",
+    "pages": [
+     53
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 53] Associate in Arts in Studio Arts for Transfer Total units for the Associate in Arts Degree with a minimum grade point average of 2.0: 60 units Required Core Courses minimum grade point average of 2.0: 24 Uni",
+    "pinned": true
+   },
+   {
+    "control_number": "33263",
+    "pages": [
+     58
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Associate in Arts Degree in Economics for Transfer Total Units for the Associate in Arts Degree with a minimum grade point average of 2.0: 60 units Total Core: 20 Units Required Core Courses Select One Co",
+    "pinned": true
+   },
+   {
+    "control_number": "33729",
+    "pages": [
+     49,
+     50,
+     51
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 49] Associate in Science Degree: Agriculture Animal Science for Transfer Total units for the Associate in Science Degree with a minimum grade point average of 2.0: 60 units Total Core Units minimum grade 2.0: 19-",
+    "pinned": true
+   },
+   {
+    "control_number": "33730",
+    "pages": [
+     48,
+     49,
+     50,
+     51
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 48] Associate in Science Degree: Agriculture Business for Transfer Total units for the Associate in Science Degree with a minimum grade point average of 2.0: 60 units Total Core Units minimum grade 2.0: 21-24 Uni",
+    "pinned": true
+   },
+   {
+    "control_number": "42300",
+    "pages": [
+     58,
+     59,
+     60
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 58] Associate in Science Degree in Business Administration for Transfer 2.0 Total units for the Associate in Science Degree with a minimum grade point average of 2.0: 60 units Required Core Courses minimum grade",
+    "pinned": true
    }
   ]
  },
@@ -930,6 +1002,26 @@
   "32083": {
    "sha256": "01fbd993a7dc690cfae704eb5602fab526df6aa5362a529d02c517351f81037b",
    "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=92"
+  },
+  "31132": {
+   "sha256": "a5449611370c076e9bbfb7235728c11a60b0a5f45289698e264e5c0302738678",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=53"
+  },
+  "33263": {
+   "sha256": "917e7c7ac5471a93f79e643399a02621841615c9eb9101f2a8956965d398b6bf",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58"
+  },
+  "33729": {
+   "sha256": "5f155a4f3a87125ec4ffcccdcfcf2539e59693b3090c47c3e6f4c82cd46b8c94",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=49"
+  },
+  "33730": {
+   "sha256": "464838c29b54b8c69cc5657505d42ad81afe8f11c8c475e41c49ec9884c3afa7",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=48"
+  },
+  "42300": {
+   "sha256": "3a997222b456069fd0aa2b430e0b17a834362fd7da2c1ced7829f701b2e3e84f",
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf#page=58"
   }
  }
 }
