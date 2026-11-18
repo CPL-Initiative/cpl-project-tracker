@@ -60,8 +60,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     81.0,
     84.0
@@ -75,9 +75,7 @@
     24.0,
     24.0
    ],
-   "why": [
-    "the blocks and general education sum to 81.0-84.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -91,7 +89,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -115,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +146,8 @@
     "Analyze contemporary issues, social justice concerns, and the impact of policies on marginalized communities within the criminal justice system.",
     "Apply professional communication, investigative techniques, and forensic skills in criminal justice settings."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -406,5 +407,14 @@
    "Program learning outcomes are printed for the program as a whole on the outcomes tab; the A.S. degree is the only award on the page and shares them."
   ]
  },
- "extracted_run": "38756014587"
+ "extracted_run": "38756014587",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 54, the major total the catalog prints; the major and general education sum to 81-84 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

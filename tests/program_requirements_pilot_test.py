@@ -780,9 +780,15 @@ check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get
       and r["arithmetic"]["computed"] == [64.0, 68.0],
       "a printed degree total of 66 inside the 64-68 the blocks and CalGETC allow adds up: %s"
       % json.dumps(r["arithmetic"]))
+# Sam's ruling of 2026-11-17 ("Pass short high ends the same way as over-high ends") passes the span whose low end
+# meets the printed range's and whose high end is short of its top; a low end the sum misses still fails.
 r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 64, "max": 70}}}, AUT, AUT_TEXT)
-check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("within"),
-      "a printed degree total reaching past the span (64-70 against 64-68) still fails")
+check(r["pass"] and r["arithmetic"]["status"] == "equal" and r["arithmetic"].get("short_high")
+      and not r["arithmetic"].get("within"),
+      "a printed degree total reaching past the span (64-70 against 64-68) passes as short_high (2026-11-17)")
+r = S.score({**aut, "program": {**aut["program"], "degree_total": {"min": 63, "max": 70}}}, AUT, AUT_TEXT)
+check(not r["pass"] and r["arithmetic"]["status"] == "unequal" and not r["arithmetic"].get("short_high"),
+      "a printed degree range whose low end the span misses (63-70 against 64-68) still fails")
 r = S.score(aut, AUT, AUT_TEXT)
 check(r["pass"] and not r["arithmetic"].get("within"), "an exact match is equal, not within")
 

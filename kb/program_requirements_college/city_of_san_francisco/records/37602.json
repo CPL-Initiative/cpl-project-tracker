@@ -67,8 +67,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.0,
     31.5
@@ -78,8 +78,12 @@
     35.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.0-31.5; the catalog states 24.0-35.0"
+   "why": [],
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end",
+   "note": "a required list adds up short of its own printed figure ('Required Courses'): the list looks short, and a course line may be missing",
+   "lists_short": [
+    "Required Courses"
    ]
   },
   "repeated": {
@@ -104,7 +108,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     74.0,
     74.0
@@ -89,9 +89,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 74.0-74.0; the catalog prints 64.0-64.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -105,7 +103,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -129,7 +129,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -159,7 +159,8 @@
     "utilize the scientific method to critically analyze data and results.",
     "demonstrate an understanding of how evolutionary principles provide a comprehensive model for the origins and relationships of living organisms."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -335,5 +336,14 @@
    "Program student learning outcomes are printed once for the program on the page's outcomes tab; recorded for this award."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "38748862351",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 40, the major total the catalog prints; the major and general education sum to 74 against the degree's 64 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }

@@ -4,7 +4,7 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1029,
+  "file_datasets": 1030,
   "external_services": 195,
   "consumers": 611,
   "workflows": 72,
@@ -8684,7 +8684,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6669
+     "line": 6670
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -8704,7 +8704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6745
+     "line": 6746
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -17763,7 +17763,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7346
+     "line": 7347
     }
    ],
    "served": true,
@@ -21753,7 +21753,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7080
+     "line": 7081
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -22397,7 +22397,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6707
+     "line": 6708
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -27162,6 +27162,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:tests/program_requirements_rulings_2026_11_17_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:tests/program_requirements_wave_test.py": {
    "consumers": [
     {
@@ -30129,7 +30142,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7320
+     "line": 7321
     }
    ],
    "main_committers": []
@@ -30141,7 +30154,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 7429
+     "line": 7430
     }
    ],
    "main_committers": []
@@ -35283,6 +35296,7 @@
     "tests/course_id_route_test.py",
     "tests/reconcile_window_fill_test.py",
     "tests/program_requirements_reconcile_test.py",
+    "tests/program_requirements_rulings_2026_11_17_test.py",
     "tests/reconcile_reader_gaps_test.py",
     "tests/program_requirements_college_test.py",
     "tests/program_requirements_prior_read_test.py",

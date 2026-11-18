@@ -61,8 +61,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     64.0,
     64.0
@@ -76,9 +76,7 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the blocks and general education sum to 64.0-64.0; the catalog prints 60.0-60.0 for the degree"
-   ],
+   "why": [],
    "major": {
     "pass": true,
     "status": "equal",
@@ -92,7 +90,9 @@
     ],
     "against": "program",
     "why": []
-   }
+   },
+   "overlap": true,
+   "rescored": "Sam's ruling of 2026-11-17, local degree overlap"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -145,7 +145,8 @@
     "use the process of scientific inquiry to qualitatively and quantitatively solve chemistry problems by gathering evidential information, analyzing data, forming appropriate conclusions, and communicating these results through written and oral expressions.",
     "demonstrate a mastery of organic chemistry material at a level equal to or greater than the national average as determined by the nationally standardized Organic Chemistry exam developed by the American Chemical Society (ACS) at the completion of the capstone class CHEM M07B Organic Chemistry II."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -259,5 +260,14 @@
    "Program student learning outcomes are printed for the program as a whole; this award shares them."
   ]
  },
- "extracted_run": "39600815599"
+ "extracted_run": "39600815599",
+ "reconciled": [
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "the major sums to 20, the major total the catalog prints; the major and general education sum to 64 against the degree's 60 (Sam, 2026-11-17, \"Let major courses count toward general education for local degrees too\" (#3461, ruling 1))",
+   "statewide": "local_degree_ge_overlap"
+  }
+ ]
 }
