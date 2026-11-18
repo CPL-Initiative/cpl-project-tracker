@@ -130,6 +130,7 @@ try:
 finally:
     guard.TOTAL_CAP_MB = saved
 check("the total cap fires with the constant lowered", any("on disk, over the 2 MB limit" in x for x in f), f)
+check("the total cap is 2,000 MB after #3476 Part 4 steps 1, 4 and 5", guard.TOTAL_CAP_MB == 2000, guard.TOTAL_CAP_MB)
 
 # 6. The word warnings never fail the run.
 r = new_repo("")

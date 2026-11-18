@@ -44,13 +44,16 @@ import zlib
 
 MB = 1024 * 1024
 FILE_CAP_MB = 5
-TOTAL_CAP_MB = 5000  # lower to 1,500 after Phase 1 of #3476, then 1,000 after Phase 3
+# The tree is about 1,615 MB after #3476 Part 4 steps 1, 4 and 5 (#3498). The plan's 1,500 MB target follows once
+# the spreadsheet export and the videos move out, and the PR that moves them lowers this again; 1,000 after Phase 3.
+TOTAL_CAP_MB = 2000
 PR_GROWTH_CAP_MB = 25
 WEEKLY_CAP_MB = 50
 GROWTH_FACTOR = 1.5
 EXCEPTIONS = ".github/repo_size_exceptions.txt"
 WORD_LIMITS = (("START_HERE.md", 600), ("CLAUDE.md", 2000))
 TOP_PATHS = 15
+HEAD = "HEAD"  # the change measured in pull request mode; --head REV measures another branch without a checkout
 
 
 def git(args, cwd=None, input_bytes=None, check=True):
@@ -128,7 +131,7 @@ def tree_total(rev, cwd):
 
 
 def comparison_point(base, cwd):
-    p = git(["merge-base", base, "HEAD"], cwd=cwd, check=False)
+    p = git(["merge-base", base, HEAD], cwd=cwd, check=False)
     if p.returncode == 0 and p.stdout.strip():
         return p.stdout.decode().strip(), "merge base"
     return git(["rev-parse", base + "^{commit}"], cwd=cwd).stdout.decode().strip(), "base tree (no merge base in this shallow clone)"
@@ -136,7 +139,7 @@ def comparison_point(base, cwd):
 
 def changed_blobs(old, cwd):
     """[(path, new_sha)] for every file added or changed from old to HEAD; deletions skipped, renames split."""
-    out = git(["diff-tree", "-r", "-z", "--no-renames", "--raw", old, "HEAD"], cwd=cwd).stdout.split(b"\0")
+    out = git(["diff-tree", "-r", "-z", "--no-renames", "--raw", old, HEAD], cwd=cwd).stdout.split(b"\0")
     rows, i = [], 0
     while i < len(out) - 1:
         meta, path = out[i].decode(), out[i + 1].decode("utf-8", errors="replace")
@@ -162,9 +165,9 @@ def check_pr(base, cwd=None):
     """Return (failures, warnings, notes)."""
     fails, warns, notes = [], [], []
     old, how = comparison_point(base, cwd)
-    notes.append("compared HEAD with %s %s" % (how, old[:12]))
+    notes.append("compared %s with %s %s" % (HEAD, how, old[:12]))
 
-    head_list = parse_exceptions(read_blob("HEAD:" + EXCEPTIONS, cwd))
+    head_list = parse_exceptions(read_blob(HEAD + ":" + EXCEPTIONS, cwd))
     base_text = read_blob(old + ":" + EXCEPTIONS, cwd)
     if base_text is None:
         notes.append("%s is new in this change, so it is read as the starting list" % EXCEPTIONS)
@@ -196,13 +199,13 @@ def check_pr(base, cwd=None):
         fails.append("this change adds %s compressed, over the %d MB limit for one pull request"
                      % (mb(added), PR_GROWTH_CAP_MB))
 
-    total = tree_total("HEAD", cwd)
+    total = tree_total(HEAD, cwd)
     notes.append("latest version on disk: %s (limit %d MB)" % (mb(total), TOTAL_CAP_MB))
     if total > TOTAL_CAP_MB * MB:
         fails.append("the latest version is %s on disk, over the %d MB limit" % (mb(total), TOTAL_CAP_MB))
 
     for name, limit in WORD_LIMITS:
-        text = read_blob("HEAD:" + name, cwd)
+        text = read_blob(HEAD + ":" + name, cwd)
         if text is not None:
             words = len(text.split())
             if words > limit:
@@ -266,11 +269,14 @@ def list_over_limit(cwd=None):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--base", default="origin/main", help="the ref a pull request merges into")
+    ap.add_argument("--head", default="HEAD", help="the commit to measure in pull request mode (default HEAD)")
     ap.add_argument("--weekly", action="store_true", help="measure main's growth over the last 7 days")
     ap.add_argument("--days", type=int, default=7)
     ap.add_argument("--list-over-limit", action="store_true", help="print 'BYTES PATH' for HEAD's files over the cap")
     a = ap.parse_args(argv)
     t0 = time.time()
+    global HEAD
+    HEAD = a.head
     if a.list_over_limit:
         print("\n".join(list_over_limit()))
         return 0
