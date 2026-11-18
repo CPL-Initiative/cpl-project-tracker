@@ -137,8 +137,11 @@ def test_gate_and_paging():
 
     def fake_get(url, headers):
         calls.append((url, headers["Range"]))
+        check(headers.get("Prefer") == "count=exact", "each page asks for the exact count")
         lo = int(headers["Range"].split("-")[0])
-        return [{"exhibit_id": f"TEST-{i}", "credit_recommendation": "3 hours in X"} for i in range(lo, min(total, lo + emp.PAGE))]
+        rows = [{"exhibit_id": f"TEST-{i}", "credit_recommendation": "3 hours in X"}
+                for i in range(lo, min(total, lo + emp.PAGE))]
+        return rows, total
 
     rows = emp.load_ace_supabase(env, fake_get)
     check(len(rows) == total, f"paging must read past one page: {len(rows)} of {total}")
@@ -146,8 +149,30 @@ def test_gate_and_paging():
     check(all(c[0].startswith("https://example.invalid/rest/v1/map_ace_catalog_cr?") for c in calls),
           "the read goes to map_ace_catalog_cr under SUPABASE_URL")
     check("select=exhibit_id%2Ccredit_recommendation" in calls[0][0], "it selects the migration's two columns")
+    # A server max-rows below PAGE: every page is short, and the read must still reach the total.
+    cap, capped_calls = 300, []
+
+    def capped_get(url, headers):
+        lo = int(headers["Range"].split("-")[0])
+        capped_calls.append(lo)
+        return [{"exhibit_id": f"TEST-{i}", "credit_recommendation": "3 hours in X"}
+                for i in range(lo, min(total, lo + cap))], total
+
+    rows = emp.load_ace_supabase(env, capped_get)
+    check(len(rows) == total, f"a server cap of {cap} must not end the read early: {len(rows)} of {total}")
+    check(capped_calls[:3] == [0, cap, 2 * cap], f"the next page starts where the last one ended: {capped_calls[:3]}")
+    for name, bad in (("an empty page before the total", lambda u, h: ([], 5)),
+                      ("no Content-Range total", lambda u, h: ([{"exhibit_id": "TEST-1"}], None)),
+                      ("more rows than the total", lambda u, h: ([{"exhibit_id": "TEST-1"}] * 3, 2))):
+        try:
+            emp.load_ace_supabase(env, bad)
+            check(False, f"{name} must stop the read")
+        except SystemExit:
+            pass
+    check(emp.content_range_total("0-999/12345") == 12345 and emp.content_range_total("*/0") == 0
+          and emp.content_range_total(None) is None, "Content-Range totals parse")
     try:
-        emp.load_ace_supabase(env, lambda url, headers: [])
+        emp.load_ace_supabase(env, lambda url, headers: ([], 0))
         check(False, "an empty ACE read must stop, never label every row map_only")
     except SystemExit:
         pass
@@ -156,6 +181,70 @@ def test_gate_and_paging():
         check(False, "no SUPABASE_URL must stop; the file names no host")
     except SystemExit:
         pass
+
+
+def _one(inv_text, ace_texts, source="ACE"):
+    rows, _ = emp.run([{"exhibit_id": "TEST-R", "source_text": inv_text, "ace_id": "TEST-R", "source": source}],
+                      [{"exhibit_id": "TEST-R", "credit_recommendation": a} for a in ace_texts])
+    return rows[0]
+
+
+def test_self_recall():
+    """The held answers in tests/fixtures/cr_typographic_cases.json, run through run(): `a` as the inventory row,
+    `b` as the ACE line. A same pair must match (exact or light fix); a different pair must not, with its sub-cause."""
+    cases = json.loads((ROOT / "tests" / "fixtures" / "cr_typographic_cases.json").read_text(encoding="utf-8"))
+    expected_cause = {"AR-0102-0007 truncation is not typographic": "truncation",
+                      "AR-0102-0007 run-on is not typographic": "truncation",
+                      "different units stay apart": "different_hours",
+                      "NV-1732-0026 different topics stay apart": "different_topic"}
+    right = wrong = 0
+    for pair in cases["pairs"]:
+        r = _one(pair["a"], [pair["b"]])
+        ok = (r["label"] in ("exact_match", "light_fix_match")) == pair["same"]
+        if not pair["same"] and pair["case"] in expected_cause:
+            ok = ok and r["sub_cause"] == expected_cause[pair["case"]]
+        right, wrong = right + ok, wrong + (not ok)
+        check(ok, f"self-recall {pair['case']}: {r['label']} / {r['sub_cause']}")
+    check(set(expected_cause) <= {p["case"] for p in cases["pairs"]}, "every expected sub-cause case is held")
+    print(f"self-recall on cr_typographic_cases.json: {right} right, {wrong} wrong of {right + wrong}")
+
+
+def test_sub_cause_probes():
+    probes = [("3 semester hours in Welding", "3 hours in Welding", "other_wording"),
+              ("3 hours in Supervision.", "3 hours in Supervision", None),
+              ("3 hours in supervision and", "3 hours in Supervision and Leadership", "truncation"),
+              ("3 hours in Supervision", "4 hours in Supervision.", "different_hours"),
+              ("3 hours in Fluid Power Systems", "1 hour in Industrial Safety", "different_topic")]
+    for inv, ace, cause in probes:
+        r = _one(inv, [ace])
+        if cause is None:   # the typographic rule may fold an end mark; either way it is never a topic difference
+            check(r["label"] == "light_fix_match" or r["sub_cause"] == "other_wording",
+                  f"{inv!r} vs {ace!r}: {r['label']} / {r['sub_cause']}")
+        else:
+            check(r["label"] == "real_difference" and r["sub_cause"] == cause,
+                  f"{inv!r} vs {ace!r}: expected {cause}, got {r['label']} / {r['sub_cause']}")
+
+
+def test_live_counts_sql_agrees_with_python():
+    sql = emp.LIVE_COUNTS_SQL
+    check(sql.lstrip().startswith("with ") and sql.count("select json_build_object(") == 1,
+          "one SELECT returning one JSON value")
+    check("public.map_college_cr_unit" in sql and "public.map_ace_catalog_cr" in sql, "it reads the two tables")
+    check(emp.MAP_ONLY_SQL == "((has_map and not has_ace) or exhibit_id = '' or not in_catalog)",
+          "the map_only predicate is the one classify_row() applies")
+    check(sql.count(emp.MAP_ONLY_SQL) == 3, "all three label counts use the one map_only predicate")
+    for w in ("insert", "update ", "delete", "drop", "truncate", "count_cr", "student"):
+        check(w not in sql.casefold(), f"the SELECT holds no {w!r}")
+    # The predicate mirrors the Python: a unit set with ACE and MAP is ACE (not map_only); MAP alone is map_only;
+    # an exhibit the catalog does not carry is map_only.
+    inv = emp.inventory_from_units([
+        {"exhibit_id": "TEST-1", "credit_rec": "3 hours in X", "source_code": "MAP"},
+        {"exhibit_id": "TEST-1", "credit_rec": "3 hours in X", "source_code": "ACE"},
+        {"exhibit_id": "TEST-2", "credit_rec": "3 hours in X", "source_code": "MAP"},
+        {"exhibit_id": "TEST-3", "credit_rec": "3 hours in X", "source_code": "ACE"}])
+    ace = [{"exhibit_id": e, "credit_recommendation": "3 hours in X"} for e in ("TEST-1", "TEST-2")]
+    labels = {r["exhibit_id"]: r["label"] for r in emp.run(inv, ace)[0]}
+    check(labels == {"TEST-1": "exact_match", "TEST-2": "map_only", "TEST-3": "map_only"}, f"labels: {labels}")
 
 
 def test_migration_names_match():

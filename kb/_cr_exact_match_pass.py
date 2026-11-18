@@ -12,8 +12,8 @@ against ACE's catalog wording for the same exhibit:
   map_only          the row's source is MAP, or the exhibit has no ACE line (no exhibit id, a worklist wording with
                     no exhibit, or an exhibit the catalog does not carry)
   real_difference   the exhibit has ACE lines, the source is not MAP, and neither test holds; sub_cause names the
-                    obvious reason when there is one: truncation, different_hours, different_topic,
-                    several_ace_recommendations
+                    obvious reason when there is one: truncation, different_hours, other_wording (same hours,
+                    same topic, a term word or end mark differs), different_topic, several_ace_recommendations
 
 The four labels add up to the inventory count; run() refuses to return when they do not.
 
@@ -33,12 +33,19 @@ zero rows with HTTP 200, never an error, so this script treats an empty ACE read
 rather than label every row map_only. Two keys open it, both taken only from the environment:
   SUPABASE_SERVICE_KEY                     the runner's key (read-only use here: GET requests only)
   SUPABASE_ANON_KEY + CPL_TEAM_PASS        the anon key with the team pass in the x-team-pass header
-SUPABASE_URL must be set too; this file names no host. Reads are Range-paginated (PostgREST caps a page at 1,000).
+SUPABASE_URL must be set too; this file names no host. Reads are Range-paginated with `Prefer: count=exact`: the read
+runs until it holds the Content-Range total, so a server page cap below 1,000 cannot end it early, and it stops when
+the rows read do not equal that total.
 
 `--inventory-source supabase` builds the inventory from public.map_college_cr_unit: one row per distinct
 (exhibit_id, credit_rec), its source `ACE` when any of its rows carries source_code ACE, `MAP` when one carries
 MAP, else `unlabeled`. It selects those three columns only, never a count column. The default is a CSV in COBIx's
 crs_inventory.csv shape (exhibit_id, source_text, ace_id, source, inventory_grain).
+
+THE LIVE COUNTS. LIVE_COUNTS_SQL below is the one SELECT the conductor runs for the inventory counts on live data. It
+applies the same inventory and map_only rules as inventory_from_units() and classify_row(); the typographic rule
+lives in Python only, so it reports light_fix_match and real_difference together. The tests pin that it names
+the same two tables and the same map_only predicate.
 
 No ACE website is fetched, ever. The tests pin that the only request this file makes is a GET to SUPABASE_URL.
 """
@@ -75,6 +82,7 @@ TEXT_ALIASES = ("credit_recommendation", "creditrecommendation", "ace_source_tex
 _HEAD = re.compile(r"(?i)^(?P<amt>\d+(?:\.\d+)?(?:(?:-| or | to )\d+(?:\.\d+)?)?)?\s*"
                    r"(?:(?:semester|quarter)\s+)?(?:hours?|units?|credits?)\s+(?:in|of)\s+(?P<topic>.*)$")
 DANGLE = re.compile(r"(?i)(?:\b(?:and|of|to|the|in|for|with|or|a|an|as|from|into|by|on)\s*)$")
+_END_MARKS = ".,;: "
 SEQUEL = re.compile(r"(?i)\s+(I{1,3}|IV|VI{0,3}|IX|X|[A-D]|[0-9]+)$")
 
 OUT_FIELDS = ["exhibit_id", "ace_id", "source", "inventory_grain", "map_source_text", "ace_source_text",
@@ -90,7 +98,7 @@ def split_hours_topic(s: str) -> tuple[str | None, str]:
     m = _HEAD.match(clean_rec(s or ""))
     if not m:
         return None, typo_key(s)
-    return m.group("amt") or None, squash(m.group("topic")).casefold()
+    return m.group("amt") or None, squash(m.group("topic")).casefold().rstrip(_END_MARKS)
 
 
 def pick_column(fieldnames, aliases) -> str | None:
@@ -150,26 +158,41 @@ def rest_url(env=None) -> str:
 
 
 def _get(url: str, headers: dict, timeout: int = 120):
-    """The one request this file makes: a GET. Kept in one place so the tests can pin it."""
+    """The one request this file makes: a GET. Kept in one place so the tests can pin it.
+    Returns (rows, total), total taken from the Content-Range header (`0-999/12345`), None when absent."""
     req = urllib.request.Request(url, headers=headers, method="GET")
     with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode("utf-8"))
+        return json.loads(resp.read().decode("utf-8")), content_range_total(resp.headers.get("Content-Range"))
+
+
+def content_range_total(value) -> int | None:
+    tail = (value or "").rpartition("/")[2].strip()
+    return int(tail) if tail.isdigit() else None
 
 
 def read_paged(table: str, columns: list[str], order: str, env=None, get=_get) -> list[dict]:
-    """Every row of `columns` from `table`, Range-paginated with a stable order."""
+    """Every row of `columns` from `table`, Range-paginated with a stable order, checked against the exact count.
+
+    The read asks for `Prefer: count=exact` and runs until it holds the Content-Range total; a short page (a server
+    max-rows below PAGE) does not end it. An empty page before the total, or a total that never comes, stops it."""
     base, headers = rest_url(env), gate_headers(env)
     q = urllib.parse.urlencode({"select": ",".join(columns), "order": order})
     rows: list[dict] = []
     while True:
-        h = dict(headers, Range=f"{len(rows)}-{len(rows) + PAGE - 1}")
+        h = dict(headers, Range=f"{len(rows)}-{len(rows) + PAGE - 1}", Prefer="count=exact")
         try:
-            page = get(f"{base}{table}?{q}", h)
+            page, total = get(f"{base}{table}?{q}", h)
         except urllib.error.HTTPError as e:
             raise SystemExit(f"The read of {table} failed (HTTP {e.code}). If it is 404, the S678 migration is not "
                              "applied yet. Nothing was written.") from e
+        if total is None:
+            raise SystemExit(f"The read of {table} came back without a Content-Range total, so its rows cannot be "
+                             "checked as complete. No labels were written.")
         rows.extend(page)
-        if len(page) < PAGE:
+        if len(rows) >= total or not page:
+            if len(rows) != total:
+                raise SystemExit(f"The read of {table} holds {len(rows):,} rows; the server counts {total:,}. "
+                                 "No labels were written.")
             return rows
 
 
@@ -217,14 +240,16 @@ def index_ace(ace_rows: list[dict]) -> dict[str, list[str]]:
 
 
 def is_truncation(inv: str, ace_texts: list[str]) -> bool:
-    """One wording is a dangling prefix of the other, or the longer runs on into a new topic."""
+    """One wording is a dangling prefix of the other, or the longer runs on into a new topic.
+    The prefix test ignores case (`supervision and` is a prefix of `Supervision and Leadership`); the run-on test
+    reads the longer wording's own case."""
     a = squash(inv)
     for raw in ace_texts:
         b = squash(raw)
         if not a or not b or a == b:
             continue
         short, long_ = (a, b) if len(a) <= len(b) else (b, a)
-        if len(short) < 12 or not long_.startswith(short):
+        if len(short) < 12 or not long_.casefold().startswith(short.casefold()):
             continue
         rest = long_[len(short):].strip()
         if not rest or SEQUEL.match(" " + rest):
@@ -240,10 +265,15 @@ def sub_cause(inv: str, ace_texts: list[str]) -> str:
     if is_truncation(inv, ace_texts):
         return "truncation"
     inv_h, inv_t = split_hours_topic(inv)
+    same_words = False
     for ace in ace_texts:
         ah, at = split_hours_topic(ace)
-        if inv_t and at and inv_t == at and inv_h != ah:
-            return "different_hours"
+        if inv_t and at and inv_t == at:
+            if inv_h != ah:
+                return "different_hours"
+            same_words = True
+    if same_words:
+        return "other_wording"   # same hours and topic: a term word (`semester hours`) or an end mark differs
     return "different_topic" if len(ace_texts) == 1 else "several_ace_recommendations"
 
 
@@ -303,6 +333,34 @@ def run(inventory: list[dict], ace_rows: list[dict]) -> tuple[list[dict], dict]:
     return out, summary
 
 
+# The one SELECT the conductor runs for the live inventory counts (one JSON value). It mirrors
+# inventory_from_units() (one row per distinct trimmed exhibit_id and non-empty credit_rec; source MAP only when no
+# row carries ACE) and classify_row()'s map_only rule. tests/cr_exact_match_pass_test.py pins both.
+MAP_ONLY_SQL = "((has_map and not has_ace) or exhibit_id = '' or not in_catalog)"
+LIVE_COUNTS_SQL = f"""with inv as (
+  select coalesce(btrim(exhibit_id), '') as exhibit_id, btrim(credit_rec) as credit_rec,
+         bool_or(upper(btrim(source_code)) = 'ACE') as has_ace,
+         bool_or(upper(btrim(source_code)) = 'MAP') as has_map
+  from public.{UNIT_TABLE}
+  where coalesce(btrim(credit_rec), '') <> ''
+  group by 1, 2
+), lab as (
+  select i.*,
+         exists (select 1 from public.{ACE_TABLE} c where btrim(c.{ACE_ID_COLUMN}) = i.exhibit_id) as in_catalog,
+         exists (select 1 from public.{ACE_TABLE} c where btrim(c.{ACE_ID_COLUMN}) = i.exhibit_id
+                   and c.{ACE_TEXT_COLUMN} = i.credit_rec) as exact
+  from inv i
+)
+select json_build_object(
+  'n_inventory', count(*),
+  'map_only', count(*) filter (where {MAP_ONLY_SQL}),
+  'exact_match', count(*) filter (where not {MAP_ONLY_SQL} and exact),
+  'light_fix_or_real_difference', count(*) filter (where not {MAP_ONLY_SQL} and not exact),
+  'n_ace_exhibits', (select count(distinct btrim({ACE_ID_COLUMN})) from public.{ACE_TABLE}),
+  'n_ace_rows', (select count(*) from public.{ACE_TABLE})
+) from lab;"""
+
+
 def write_out(rows: list[dict], path: Path) -> None:
     with Path(path).open("w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=OUT_FIELDS, extrasaction="ignore")
@@ -323,7 +381,8 @@ def print_summary(s: dict) -> None:
 def parse_args(argv=None) -> argparse.Namespace:
     tmp = Path(tempfile.gettempdir()) / "cr_exact_match"
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--ace-source", choices=("csv", "supabase"), required=True)
+    p.add_argument("--print-sql", action="store_true", help="print LIVE_COUNTS_SQL (the conductor's one SELECT) and stop")
+    p.add_argument("--ace-source", choices=("csv", "supabase"))
     p.add_argument("--ace-csv", type=Path)
     p.add_argument("--inventory-source", choices=("csv", "supabase"), default="csv")
     p.add_argument("--inventory", type=Path, help="crs_inventory.csv shape; required with --inventory-source csv")
@@ -334,6 +393,11 @@ def parse_args(argv=None) -> argparse.Namespace:
 
 def main(argv=None) -> int:
     args = parse_args(argv)
+    if args.print_sql:
+        print(LIVE_COUNTS_SQL)
+        return 0
+    if not args.ace_source:
+        raise SystemExit("--ace-source csv|supabase is required")
     if args.ace_source == "csv" and not args.ace_csv:
         raise SystemExit("--ace-source csv needs --ace-csv PATH")
     if args.inventory_source == "csv" and not args.inventory:
