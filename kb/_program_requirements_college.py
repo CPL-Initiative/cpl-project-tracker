@@ -1954,8 +1954,9 @@ def host_registry_urls(start: str) -> list[str]:
 
 def read_sitemap(reader, start: str) -> dict:
     """The catalog's sitemap.xml, robots first and the census's delay before
-    each request; a sitemap index is followed one level."""
-    from _program_source_census import robots_allows, site_root
+    each request; a sitemap index is followed one level. A WAF's challenge in place of
+    a sitemap (S683) is recorded as challenged, never parsed as a sitemap listing nothing."""
+    from _program_source_census import ROBOTS_CHALLENGED, challenge_header, robots_allows, site_root
     root = site_root(start)
     out = {"url": root + "sitemap.xml", "pages": [], "nested": [], "status": None}
     todo, done = [out["url"]], set()
@@ -1964,6 +1965,10 @@ def read_sitemap(reader, start: str) -> dict:
         if url in done:
             continue
         done.add(url)
+        if reader._robots_for(url) == ROBOTS_CHALLENGED:
+            # Its robots.txt answered a WAF challenge: the rules are unknown, and nothing more is asked (S683).
+            out.setdefault("challenged", []).append("%s: robots.txt answered a challenge" % url)
+            break
         if not robots_allows(reader._robots_for(url), url):
             out.setdefault("refused", []).append(url)
             continue
@@ -1973,6 +1978,10 @@ def read_sitemap(reader, start: str) -> dict:
             resp = reader.request.get(url, timeout=60000)
             if url == out["url"]:
                 out["status"] = resp.status
+            waf = challenge_header(getattr(resp, "headers", None))
+            if waf:
+                out.setdefault("challenged", []).append("%s: HTTP %s, %s" % (url, resp.status, waf))
+                break   # no nested sitemap is asked after the first challenge
             if not resp.ok:
                 # A missing sitemap (404, 410) is the host's answer; any other status lost its pages
                 # (pages_account()).
@@ -2012,9 +2021,13 @@ def index_links(reader, start: str, cache: dict, failed: list | None = None) -> 
             and P.same_site(ln.get("href") or "", start)][:6]
     urls = [ln.get("href") for ln in front.get("links") or []]
     for h in hubs:
+        if front.get("access") == "challenge":
+            break   # a bot check stops the listing at the first one (S683); the capture records where
         got = P.load(reader, h, cache, False)
         if failed is not None and load_failed(got):
             failed.append(h)
+        if got.get("access") == "challenge":
+            break
         urls.extend(ln.get("href") for ln in got.get("links") or [])
     return [u for u in urls if u]
 
@@ -5432,8 +5445,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
                                  "nested": len(sm["nested"]), "program_pages": len(urls),
                                  "refused": sm.get("refused"), "errors": sm.get("errors"),
-                                 "failed": sm.get("failed")}
-            listing_failed = len(sm.get("errors") or []) + len(sm.get("failed") or [])
+                                 "failed": sm.get("failed"), "challenged": sm.get("challenged")}
+            listing_failed = (len(sm.get("errors") or []) + len(sm.get("failed") or [])
+                              + len(sm.get("challenged") or []))
             if len(urls) < 0.3 * report["with_closed_list"]:
                 index_failed: list = []
                 urls = program_candidates(index_links(reader, start, cache, index_failed), start, scope)
@@ -5448,10 +5462,16 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
         # A page's own program pages beneath it are read too (child_pages()), once each.
         queue, seen, i = list(urls), set(urls), 0
-        while i < len(queue):
+        # A bot check on an index page stops the read before its first program page (S683). A Coursedog
+        # catalog keeps its own account of challenges (cd_challenged_programs, S646).
+        if platform != "coursedog":
+            site_challenge(report, next((g for g in cache.values() if g.get("access") == "challenge"), None), reader)
+        while i < len(queue) and not report.get("site_challenge"):
             u = queue[i]
             i += 1
             got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
+            if platform != "coursedog" and site_challenge(report, got, reader):
+                break
             if got.get("access") != "ok":
                 continue
             if platform not in ("curriqunet", "elumen", "acalog"):
@@ -5498,6 +5518,15 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     recs.append(rec)
                     _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
+                    continue
+                if best is None and report.get("site_challenge"):
+                    # The read stopped at a bot check (S683): no link search loads the host again, and a program
+                    # whose page was not reached is refused, never absent from the catalog.
+                    rec = source_record(college, prog, reg, None, "page_challenged")
+                    rec["challenged_at"] = report["site_challenge"]["stopped_at"]
+                    recs.append(rec)
+                    _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
+                    print("%-6s page_challenged %s" % (prog["control_number"], rec["challenged_at"]), flush=True)
                     continue
                 # A curriQunet catalog has no links to search: its index is the whole list.
                 # An eLumen catalog's menu is the whole list too; its links would find it again,
@@ -7508,7 +7537,15 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
                        "invented": (score.get("invented") or {}).get("pass"),
                        "arithmetic": (score.get("arithmetic") or {}).get("status"),
                        "placed": (score.get("coverage") or {}).get("placed"),
-                       "listed": (score.get("coverage") or {}).get("listed")},
+                       "listed": (score.get("coverage") or {}).get("listed"),
+                       # A named gap and its scores (kb/_program_named_gaps.py; Sam, 2026-11-17: collect with gaps
+                       # noted and confidence scores) ride in checks, and only where the filed score carries them.
+                       # A passing record may carry scores and their notes with no gap (S681: units rule A5's rows).
+                       **({"gaps": [g.get("gap") if isinstance(g, dict) else g for g in score["gaps"]]}
+                          if score.get("gaps") else {}),
+                       **({"confidence": score.get("confidence")} if score.get("gaps") or score.get("confidence")
+                          else {}),
+                       **({"confidence_notes": score["confidence_notes"]} if score.get("confidence_notes") else {})},
             "extracted_run": run})
     return rows, skipped
 
@@ -7665,15 +7702,29 @@ def _write(path: str, obj) -> None:
         fh.write("\n")
 
 
+def site_challenge(report: dict, got: dict | None, reader) -> bool:
+    """Record a bot check a catalog's own pages served (S683, the unblocker step on #3510) and say the read
+    stops. Sam, 2026-11-18: a college's HTML catalog is read by the ordinary browser read, and never past a WAF
+    or a bot check; the capture is filed as it is, refused where it stopped, and never extracted."""
+    if not got or got.get("access") != "challenge":
+        return False
+    report["site_challenge"] = {"stopped_at": got.get("url"), "status": got.get("status"), "waf": got.get("waf"),
+                                "title": (got.get("title") or "")[:120], "after_loads": getattr(reader, "loads", None)}
+    print("::warning::%s answered a bot check (HTTP %s%s); the read stops here and is never extracted"
+          % (got.get("url"), got.get("status"), ", " + got["waf"] if got.get("waf") else ""), flush=True)
+    return True
+
+
 def reread_capture(out_dir: str) -> bool:
-    """Whether the run's capture is partial: a route=challenged re-read (partial by design), or a
-    route=slow read a challenge cut short."""
+    """Whether the run's capture is partial: a route=challenged re-read (partial by design), a
+    route=slow read a challenge cut short, or a site read a bot check stopped (S683)."""
     try:
         with open(os.path.join(out_dir, "capture.json")) as fh:
             rep = json.load(fh)
     except (OSError, ValueError):
         return False
-    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at"))
+    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at")
+                or (rep.get("site_challenge") or {}).get("stopped_at"))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -7730,14 +7781,16 @@ def main(argv: list[str] | None = None) -> int:
         return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
         if reread_capture(args.out):
-            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+            print("::warning::a partial capture (route=challenged, a route=slow read a challenge stopped, or a site "
+                  "read a bot check stopped) is "
                   "filed as it is and never reconciled")
             return 0
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
         if reread_capture(args.out):
             # Filed as a capture alone (file_run), so the account of where it stopped is kept; nothing is paid.
-            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+            print("::warning::a partial capture (route=challenged, a route=slow read a challenge stopped, or a site "
+                  "read a bot check stopped) is "
                   "filed as it is and never extracted")
             return 0
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))

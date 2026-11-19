@@ -2,19 +2,22 @@
  "college": "East Los Angeles College",
  "programs": 234,
  "with_closed_list": 147,
- "found": 137,
- "extracted": 137,
+ "found": 134,
+ "extracted": 134,
  "errors": 0,
  "passed_machine_checks": 101,
  "failed": {
-  "coverage": 6,
+  "coverage": 3,
   "invented": 2,
-  "arithmetic": 33,
+  "arithmetic": 30,
   "repeated": 0,
   "outcomes": 1
  },
- "cost_usd": 10.74,
- "cost_per_program": 0.0784,
+ "cost_usd_run": 0.15,
+ "cost_usd_filed": 10.49,
+ "cost_per_program": 0.0783,
+ "extract_calls": 2,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "24129",
@@ -26,7 +29,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36534",
@@ -38,7 +42,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38090",
@@ -47,7 +52,8 @@
    "near_miss": {
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
     "coverage": 0.222
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38165",
@@ -56,7 +62,8 @@
    "near_miss": {
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=124",
     "coverage": 0.25
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38317",
@@ -68,13 +75,36 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38332",
+   "title": "Geo-Spatial Engineering and Technologies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=25",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
    "control_number": "38340",
    "title": "Custodial Technician Training",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "39800",
+   "title": "Engineering Technology: Mechanical",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "39801",
@@ -87,7 +117,8 @@
     ],
     "coverage": 0.545,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40637",
@@ -99,7 +130,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "40898",
@@ -111,7 +143,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "44374",
@@ -120,8 +153,19 @@
    "near_miss": {
     "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=127",
     "coverage": 0.333
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45540",
+   "title": "Respiratory Therapy",
+   "award": "Baccalaureate of Science (B.S.) Degree.",
+   "near_miss": {
+    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=346",
+    "coverage": 0.375
+   },
+   "status": "Active"
   }
  ],
- "run": "43357061643"
+ "run": "44475516022"
 }

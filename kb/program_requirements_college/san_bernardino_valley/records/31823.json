@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8739,
-    "output_tokens": 2866,
+    "output_tokens": 3002,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2866,
+  "output_tokens": 3002,
   "output_tokens_details": {
-   "thinking_tokens": 939
+   "thinking_tokens": 1003
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09228,
- "ms": 22581,
- "seconds": 22.9,
+ "cost_usd": 0.095,
+ "ms": 24609,
+ "seconds": 24.7,
  "parts": null,
  "error": null,
  "score": {
@@ -384,21 +385,21 @@
   "missing_explained": [
    {
     "code": "ANTHRO 125",
-    "why": "catalog prints it as ANTH 125 (Language and Culture) in List C; recorded under the printed code"
+    "why": "catalog prints it as ANTH 125 in List C (recorded as catalog addition)"
    }
   ],
   "notes": [
-   "ENGL 260 is treated as the closed list's 'ENGL260' (spacing difference only), so catalog_addition is false.",
-   "ANTH 125 is printed with subject ANTH while the closed list uses ANTHRO 125; marked as catalog addition by code, but it is likely the same course.",
-   "ENGL 261 does not appear in the closed list.",
-   "Alternative (honors / cross-listed) rows print no units beside them; units left null.",
-   "List B also allows any unused List A or B course; List C allows any unused List A or B course.",
-   "Footnote 1: the ENGL 270/ENGL 271 sequence is required by CSU San Bernardino for English transfer majors.",
-   "Totals table: Major Total 19, Total Double-Counted Units 12, Cal-GETC 34, Elective Units 19, Total Units 60.",
-   "The program learning outcomes are printed once for the program page and recorded for this award.",
-   "ENGL 271H closed-list title ('Late 18th Century') matches the catalog title for ENGL 271/271H."
+   "Section heading not printed in the extracted text; 'English AA-T Degree' taken from the page's wording ('this English AA-T degree') and URL.",
+   "Closed list stores 'ENGL260' (no space, units not stored); treated as the catalog's ENGL 260 and not flagged as an addition.",
+   "ANTH 125 in the catalog appears to be the closed list's ANTHRO 125 (Language and Culture); recorded as catalog addition under the printed code.",
+   "ENGL 261 (American Literature from 1865 to Present) is not in the closed list; recorded as catalog addition.",
+   "List B and List C each allow substituting any unused course from List A or B; List B and C print 3-unit courses but no block total.",
+   "Footnote 1: the ENGL 270/ENGL 271 sequence is required by CSU San Bernardino for those transferring as English majors.",
+   "Units summary table: Major Total 19, Total Double-Counted Units 12, General Education (Cal-GETC) Units 34, Elective Units 19, Total Units 60. Elective Units 19 recorded as degree_elective_units.",
+   "Honors and 'or' alternatives have no units printed beside them; recorded as null.",
+   "Program learning outcomes are printed on the page's outcomes tab for this award."
   ]
  },
- "extracted_run": 43609973859,
- "read_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }

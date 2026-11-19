@@ -1,0 +1,32 @@
+{
+ "college": "West Los Angeles College",
+ "reread_run": "44480387335",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44475503054",
+ "at": "2026-11-19T08:07:02Z",
+ "posted": 2,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "44945",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 2,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "32935",
+  "45685"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 2,
+ "rollback": null,
+ "before": []
+}

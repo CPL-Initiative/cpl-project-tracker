@@ -28,10 +28,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "18b42f3a6c2fff45"
+   "text_sha": "31ac12b7ce0ed8a4"
   },
   "listed": 12,
-  "text_chars": 10813
+  "text_chars": 10680
  },
  {
   "control_number": "02433",
@@ -220,10 +220,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7aa0ea4f005a0a2d"
+   "text_sha": "9ecb61b2accfa587"
   },
   "listed": 11,
-  "text_chars": 3817
+  "text_chars": 3771
  },
  {
   "control_number": "02458",
@@ -322,10 +322,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "35e003e4464ea314"
+   "text_sha": "5f73fa9ccf5920d1"
   },
   "listed": 10,
-  "text_chars": 4925
+  "text_chars": 4858
  },
  {
   "control_number": "08256",
@@ -594,10 +594,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9acf29e2f1e0d515"
+   "text_sha": "5d615c76226e05e7"
   },
   "listed": 5,
-  "text_chars": 15905
+  "text_chars": 15739
  },
  {
   "control_number": "13341",
@@ -623,10 +623,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6eb5d92853e8a51b"
+   "text_sha": "fc9b3923e6b606c2"
   },
   "listed": 4,
-  "text_chars": 2219
+  "text_chars": 2192
  },
  {
   "control_number": "13343",
@@ -653,10 +653,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "387401e20e5b489f"
+   "text_sha": "a574da6e008b9820"
   },
   "listed": 4,
-  "text_chars": 8648
+  "text_chars": 8552
  },
  {
   "control_number": "13529",
@@ -745,7 +745,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6074faa314daab7e"
+   "text_sha": "8c5d6ceebc9adeb3"
   },
   "listed": 4,
   "text_chars": 16000
@@ -980,10 +980,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "56562338ccd02db2"
+   "text_sha": "fe820b7f7b617122"
   },
   "listed": 6,
-  "text_chars": 9646
+  "text_chars": 9526
  },
  {
   "control_number": "21158",
@@ -1177,7 +1177,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0aa7ad2433e12695"
+   "text_sha": "7e462686e85537c9"
   },
   "listed": 38,
   "text_chars": 16000
@@ -1289,10 +1289,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "85093ed613768b41"
+   "text_sha": "f8139c3d6a449888"
   },
   "listed": 3,
-  "text_chars": 3332
+  "text_chars": 3307
  },
  {
   "control_number": "24129",
@@ -1433,7 +1433,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "69030727c7e558d8"
+   "text_sha": "95f3c565e9789420"
   },
   "listed": 71,
   "text_chars": 16000
@@ -1470,10 +1470,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "24a52335e846b41b"
+   "text_sha": "cb5ee8238a1e5cdb"
   },
   "listed": 11,
-  "text_chars": 8884
+  "text_chars": 8818
  },
  {
   "control_number": "32170",
@@ -1517,10 +1517,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "28adfecc726bde6c"
+   "text_sha": "c119e35fd70f6a73"
   },
   "listed": 21,
-  "text_chars": 10670
+  "text_chars": 10520
  },
  {
   "control_number": "32193",
@@ -1558,10 +1558,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "84657f69f566a4ce"
+   "text_sha": "82b0e431dc6c45e6"
   },
   "listed": 15,
-  "text_chars": 9502
+  "text_chars": 9414
  },
  {
   "control_number": "32194",
@@ -1592,7 +1592,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "bac71e84cb2c7af6"
+   "text_sha": "4d4bd2d2eb341cbd"
   },
   "listed": 6,
   "text_chars": 16000
@@ -1631,10 +1631,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9e72f535855e6411"
+   "text_sha": "9ca7c3845d9d6141"
   },
   "listed": 13,
-  "text_chars": 10952
+  "text_chars": 10873
  },
  {
   "control_number": "32980",
@@ -1660,10 +1660,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "2dd9294bcb86516c"
+   "text_sha": "a2b0795856ff0877"
   },
   "listed": 4,
-  "text_chars": 4702
+  "text_chars": 4668
  },
  {
   "control_number": "33013",
@@ -1708,7 +1708,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a9bf390e8d646b0a"
+   "text_sha": "427ff980ad8c5156"
   },
   "listed": 20,
   "text_chars": 16000
@@ -1761,7 +1761,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "12a7340b82f5fbb7"
+   "text_sha": "ecb24e318272a298"
   },
   "listed": 25,
   "text_chars": 16000
@@ -1803,10 +1803,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5001456e5279b6a0"
+   "text_sha": "1a9d5ed0ac6a65e3"
   },
   "listed": 16,
-  "text_chars": 12547
+  "text_chars": 12334
  },
  {
   "control_number": "33681",
@@ -1837,10 +1837,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "524b37a5d57db062"
+   "text_sha": "914b6dc9317d1ffe"
   },
   "listed": 7,
-  "text_chars": 10752
+  "text_chars": 10615
  },
  {
   "control_number": "33915",
@@ -1866,10 +1866,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "117189d309eb9c39"
+   "text_sha": "e432afcd42e23a7e"
   },
   "listed": 3,
-  "text_chars": 11811
+  "text_chars": 11702
  },
  {
   "control_number": "35087",
@@ -1913,7 +1913,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "117390cc9be41d2d"
+   "text_sha": "80ee57e896da9f53"
   },
   "listed": 19,
   "text_chars": 16000
@@ -1954,10 +1954,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "de10a5f10368d7b3"
+   "text_sha": "061ff92fb257df7b"
   },
   "listed": 19,
-  "text_chars": 15322
+  "text_chars": 15180
  },
  {
   "control_number": "35309",
@@ -1993,7 +1993,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c5ea7d483201dd24"
+   "text_sha": "98165da4eeb3dba1"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2023,10 +2023,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1b0e5277681b2ee5"
+   "text_sha": "8bb1025df52dc75a"
   },
   "listed": 6,
-  "text_chars": 5575
+  "text_chars": 5512
  },
  {
   "control_number": "35720",
@@ -2062,10 +2062,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "70bd0d357e42be89"
+   "text_sha": "8ae7bb87d03ea300"
   },
   "listed": 14,
-  "text_chars": 5336
+  "text_chars": 5290
  },
  {
   "control_number": "35752",
@@ -2136,10 +2136,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "53127765280fde21"
+   "text_sha": "d089fa6f1c1d063c"
   },
   "listed": 1,
-  "text_chars": 1873
+  "text_chars": 1858
  },
  {
   "control_number": "35758",
@@ -2163,10 +2163,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "22815a6f2c22c84b"
+   "text_sha": "a64af5b3f45bbdc5"
   },
   "listed": 2,
-  "text_chars": 2069
+  "text_chars": 2052
  },
  {
   "control_number": "35759",
@@ -2189,10 +2189,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5a89dbdcd33d8130"
+   "text_sha": "e889a04bdb5132dd"
   },
   "listed": 1,
-  "text_chars": 2531
+  "text_chars": 2523
  },
  {
   "control_number": "35771",
@@ -2216,10 +2216,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "56261d9c59d008f2"
+   "text_sha": "dac80c0cbfeba3b8"
   },
   "listed": 1,
-  "text_chars": 10476
+  "text_chars": 10336
  },
  {
   "control_number": "35798",
@@ -2235,8 +2235,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=172",
-   "title": "Computer\tApplications \tand\tOffice\tTechnologies\tDepartment",
-   "h1": "Computer\tApplications \tand\tOffice\tTechnologies\tDepartment",
+   "title": "Computer\tApplications\tand\tOffice\tTechnologies\tDepartment",
+   "h1": "Computer\tApplications\tand\tOffice\tTechnologies\tDepartment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2245,10 +2245,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "be0fefed5ee0dc9d"
+   "text_sha": "4412a1ffe812341a"
   },
   "listed": 3,
-  "text_chars": 11155
+  "text_chars": 11018
  },
  {
   "control_number": "35888",
@@ -2283,10 +2283,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "dc81cf8616faaa36"
+   "text_sha": "5fd41b830e342db2"
   },
   "listed": 13,
-  "text_chars": 3079
+  "text_chars": 3043
  },
  {
   "control_number": "35902",
@@ -2318,7 +2318,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "06c81af2c934460d"
+   "text_sha": "a6248d357dd6f5eb"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2350,10 +2350,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a523fe11a09d5d4c"
+   "text_sha": "46b4002221afe1ce"
   },
   "listed": 6,
-  "text_chars": 10868
+  "text_chars": 10783
  },
  {
   "control_number": "36345",
@@ -2395,7 +2395,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "1de344cc9886894d"
+   "text_sha": "284cc7cf94c8b1d3"
   },
   "listed": 17,
   "text_chars": 16000
@@ -2421,10 +2421,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2343336c99e1211b"
+   "text_sha": "ea341e52f598ec49"
   },
   "listed": 1,
-  "text_chars": 1156
+  "text_chars": 1146
  },
  {
   "control_number": "36378",
@@ -2450,10 +2450,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "06b97473c0d40195"
+   "text_sha": "d7b7cf703d8ae690"
   },
   "listed": 4,
-  "text_chars": 4114
+  "text_chars": 4081
  },
  {
   "control_number": "36534",
@@ -2489,10 +2489,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0754b4d6d7fd515d"
+   "text_sha": "fdbf226fa0fa1132"
   },
   "listed": 1,
-  "text_chars": 7052
+  "text_chars": 7002
  },
  {
   "control_number": "37510",
@@ -2517,10 +2517,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4f03775376b7d03e"
+   "text_sha": "30ad4b2db11add7c"
   },
   "listed": 3,
-  "text_chars": 7543
+  "text_chars": 7481
  },
  {
   "control_number": "37765",
@@ -2568,7 +2568,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a2bcc944177ad20b"
+   "text_sha": "2d6acbcf3497fc1a"
   },
   "listed": 11,
   "text_chars": 16000
@@ -2609,7 +2609,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "95cc4ea58d88b256"
+   "text_sha": "79b67a06e8142f3b"
   },
   "listed": 16,
   "text_chars": 16000
@@ -2641,10 +2641,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "90cf2610e926985f"
+   "text_sha": "22c2872eb11013fc"
   },
   "listed": 6,
-  "text_chars": 9928
+  "text_chars": 9865
  },
  {
   "control_number": "37965",
@@ -2687,7 +2687,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8a0d90312f049770"
+   "text_sha": "51de71cd6bfb52e9"
   },
   "listed": 19,
   "text_chars": 16000
@@ -2724,10 +2724,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c54ed08d80df0733"
+   "text_sha": "031acaf6e02dba21"
   },
   "listed": 12,
-  "text_chars": 4380
+  "text_chars": 4333
  },
  {
   "control_number": "38090",
@@ -2769,10 +2769,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "24d39a47470b4bcf"
+   "text_sha": "7cd61d0120c08d20"
   },
   "listed": 6,
-  "text_chars": 13909
+  "text_chars": 13814
  },
  {
   "control_number": "38159",
@@ -2800,7 +2800,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "69ddec9d7a41dccb"
+   "text_sha": "f85a731b7a69cd3c"
   },
   "listed": 3,
   "text_chars": 16000
@@ -2833,7 +2833,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "8d22dc90b8546ebc"
+   "text_sha": "438fe2cc9b826e6d"
   },
   "listed": 5,
   "text_chars": 16000
@@ -2875,10 +2875,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "9d53f8b12905e297"
+   "text_sha": "133fa89a2d92e86e"
   },
   "listed": 5,
-  "text_chars": 5327
+  "text_chars": 5246
  },
  {
   "control_number": "38168",
@@ -2940,7 +2940,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7474b71cb314de6f"
+   "text_sha": "7403dea764c8d82a"
   },
   "listed": 39,
   "text_chars": 16000
@@ -2974,7 +2974,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "430c907fb693dee8"
+   "text_sha": "1bbf62dda6cadda4"
   },
   "listed": 8,
   "text_chars": 16000
@@ -3008,7 +3008,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "491aefde07d71af4"
+   "text_sha": "fcef307d21502ca6"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3046,7 +3046,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8a0d90312f049770"
+   "text_sha": "51de71cd6bfb52e9"
   },
   "listed": 12,
   "text_chars": 16000
@@ -3080,7 +3080,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7474b71cb314de6f"
+   "text_sha": "7403dea764c8d82a"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3107,10 +3107,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "82a537de39965400"
+   "text_sha": "3864a381ff7cb94e"
   },
   "listed": 2,
-  "text_chars": 4714
+  "text_chars": 4659
  },
  {
   "control_number": "38317",
@@ -3129,33 +3129,12 @@
   "title": "Geo-Spatial Engineering and Technologies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ENGGEN185",
-   "ENGSUP121",
-   "ENGSUP200",
-   "ENGSUP201",
-   "ENGSUP202",
-   "ENGSUP224",
-   "ENGSUP225"
-  ],
-  "source": {
-   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=198",
-   "title": "Engineering and Technologies Department",
-   "h1": "Engineering and Technologies Department",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    198,
-    199
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "444200ac296e4a36"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 11959
+  "text_chars": 0
  },
  {
   "control_number": "38333",
@@ -3179,10 +3158,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "78204d973019a80a"
+   "text_sha": "e83e8b731058f5f0"
   },
   "listed": 1,
-  "text_chars": 7720
+  "text_chars": 7639
  },
  {
   "control_number": "38334",
@@ -3209,10 +3188,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7a35cfa4e73f8012"
+   "text_sha": "5df48351ef7ca86b"
   },
   "listed": 5,
-  "text_chars": 4373
+  "text_chars": 4327
  },
  {
   "control_number": "38336",
@@ -3241,10 +3220,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d058d9d287c2c93e"
+   "text_sha": "798cddf9ec1b76d0"
   },
   "listed": 6,
-  "text_chars": 11364
+  "text_chars": 11286
  },
  {
   "control_number": "38337",
@@ -3283,10 +3262,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "444200ac296e4a36"
+   "text_sha": "2dca08afe648edc9"
   },
   "listed": 16,
-  "text_chars": 11959
+  "text_chars": 11800
  },
  {
   "control_number": "38340",
@@ -3329,7 +3308,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3bfcc6ba21a55a3c"
+   "text_sha": "2a732600208d7676"
   },
   "listed": 6,
   "text_chars": 16000
@@ -3360,10 +3339,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "04aa3e7f6d926514"
+   "text_sha": "ef7395fd885dc13a"
   },
   "listed": 6,
-  "text_chars": 2218
+  "text_chars": 2199
  },
  {
   "control_number": "38427",
@@ -3390,7 +3369,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "81cb872a31482bde"
+   "text_sha": "4a7b4dd2cee0e7a4"
   },
   "listed": 2,
   "text_chars": 16000
@@ -3423,7 +3402,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "cc76cd3ae3be50a2"
+   "text_sha": "74819d8a05f3453a"
   },
   "listed": 5,
   "text_chars": 16000
@@ -3455,7 +3434,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "cdf779c818822a20"
+   "text_sha": "a738f6be2151e8d3"
   },
   "listed": 6,
   "text_chars": 16000
@@ -3484,10 +3463,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "eb2c826b35fa5bd7"
+   "text_sha": "a6ab8d99b4e446d9"
   },
   "listed": 3,
-  "text_chars": 11104
+  "text_chars": 10970
  },
  {
   "control_number": "39523",
@@ -3514,10 +3493,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6979cdfbc696fe6f"
+   "text_sha": "70da44ca12bde3ba"
   },
   "listed": 5,
-  "text_chars": 2538
+  "text_chars": 2512
  },
  {
   "control_number": "39601",
@@ -3541,10 +3520,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "f1b4d07d2fcccd50"
+   "text_sha": "df0b18980ddaaf15"
   },
   "listed": 2,
-  "text_chars": 4883
+  "text_chars": 4848
  },
  {
   "control_number": "39608",
@@ -3569,10 +3548,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d4de3c4ff3cca7c7"
+   "text_sha": "acd511f24cbe73ad"
   },
   "listed": 2,
-  "text_chars": 9998
+  "text_chars": 9924
  },
  {
   "control_number": "39649",
@@ -3597,10 +3576,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a5847167094eca03"
+   "text_sha": "c9e16ada73e38cf5"
   },
   "listed": 2,
-  "text_chars": 8697
+  "text_chars": 8633
  },
  {
   "control_number": "39711",
@@ -3626,10 +3605,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "de207d26368d990e"
+   "text_sha": "fb2e7c02d5c63e46"
   },
   "listed": 2,
-  "text_chars": 12455
+  "text_chars": 12369
  },
  {
   "control_number": "39795",
@@ -3660,7 +3639,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "03612b7e0de5e3f2"
+   "text_sha": "578d75af8a26cf67"
   },
   "listed": 7,
   "text_chars": 16000
@@ -3695,47 +3674,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b2be01eb075392b4"
+   "text_sha": "62e972673b492ccc"
   },
   "listed": 9,
-  "text_chars": 8416
+  "text_chars": 8321
  },
  {
   "control_number": "39800",
   "title": "Engineering Technology: Mechanical",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.9,
-  "codes_found": [
-   "EGDTEK221",
-   "ENGGEN101",
-   "ENGTEK101",
-   "ENGTEK151",
-   "INDTEK103",
-   "INDTEK106",
-   "MATH260",
-   "MIT101",
-   "MIT201"
-  ],
-  "source": {
-   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=195",
-   "title": "Engineering and Technologies Department",
-   "h1": "Engineering and Technologies Department",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    195,
-    196,
-    197,
-    198
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "text_sha": "aec929092cea6b6e"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 0
  },
  {
   "control_number": "39801",
@@ -3781,10 +3735,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "32236990da43f723"
+   "text_sha": "a2192febeb969c39"
   },
   "listed": 12,
-  "text_chars": 3147
+  "text_chars": 3106
  },
  {
   "control_number": "39824",
@@ -3820,7 +3774,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2858b1ba8461fc10"
+   "text_sha": "20c092f600a7d5dc"
   },
   "listed": 12,
   "text_chars": 16000
@@ -3856,7 +3810,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fa047c1728bcb8c3"
+   "text_sha": "962f600bec915bb1"
   },
   "listed": 8,
   "text_chars": 16000
@@ -3888,10 +3842,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "fe2f1339a232b085"
+   "text_sha": "b1c12e26f8479079"
   },
   "listed": 6,
-  "text_chars": 7554
+  "text_chars": 7463
  },
  {
   "control_number": "40042",
@@ -3922,10 +3876,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b6f055c65006d991"
+   "text_sha": "5f67cd2abf24cc1a"
   },
   "listed": 11,
-  "text_chars": 9544
+  "text_chars": 9432
  },
  {
   "control_number": "40598",
@@ -3951,10 +3905,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "3c9ef7d0d9e76c7a"
+   "text_sha": "eadca01dc307b5b1"
   },
   "listed": 3,
-  "text_chars": 9749
+  "text_chars": 9674
  },
  {
   "control_number": "40599",
@@ -3981,10 +3935,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "34a4f3be7ce59c16"
+   "text_sha": "78352bb52748f1a5"
   },
   "listed": 5,
-  "text_chars": 1627
+  "text_chars": 1616
  },
  {
   "control_number": "40601",
@@ -4010,10 +3964,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c524153b5fa0d403"
+   "text_sha": "fc3b2a7e6c0cb4cc"
   },
   "listed": 4,
-  "text_chars": 4912
+  "text_chars": 4878
  },
  {
   "control_number": "40602",
@@ -4039,10 +3993,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b849e5c533921928"
+   "text_sha": "f11e37a4869f1ad6"
   },
   "listed": 4,
-  "text_chars": 3895
+  "text_chars": 3869
  },
  {
   "control_number": "40637",
@@ -4098,10 +4052,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "849b7566ecd2e3a7"
+   "text_sha": "7ed10867aea88fd6"
   },
   "listed": 10,
-  "text_chars": 5695
+  "text_chars": 5634
  },
  {
   "control_number": "41097",
@@ -4136,7 +4090,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "4be0e628d1652a55"
+   "text_sha": "15aac8aa2a6b5d24"
   },
   "listed": 10,
   "text_chars": 16000
@@ -4170,10 +4124,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "164fbc75aed47739"
+   "text_sha": "686bfeb1e05f266b"
   },
   "listed": 8,
-  "text_chars": 8117
+  "text_chars": 8043
  },
  {
   "control_number": "41139",
@@ -4199,10 +4153,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "a58f208d489a4eb9"
+   "text_sha": "7f8ca843d1f5264c"
   },
   "listed": 2,
-  "text_chars": 14584
+  "text_chars": 14481
  },
  {
   "control_number": "41218",
@@ -4231,10 +4185,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b24231a4e35472ed"
+   "text_sha": "6ac035ffa7d3d14e"
   },
   "listed": 7,
-  "text_chars": 2470
+  "text_chars": 2445
  },
  {
   "control_number": "41231",
@@ -4273,7 +4227,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "87208d010d444896"
+   "text_sha": "6743aa257c66746d"
   },
   "listed": 15,
   "text_chars": 16000
@@ -4299,10 +4253,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "170fa5242a2ccfdd"
+   "text_sha": "8e2d3f3b9b523a51"
   },
   "listed": 1,
-  "text_chars": 2811
+  "text_chars": 2788
  },
  {
   "control_number": "42014",
@@ -4326,10 +4280,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "88cfb3d2f1087cb1"
+   "text_sha": "962f9721ac0454e5"
   },
   "listed": 2,
-  "text_chars": 1022
+  "text_chars": 1013
  },
  {
   "control_number": "42017",
@@ -4357,10 +4311,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2e3eebd47401970b"
+   "text_sha": "e438a0f4cf831683"
   },
   "listed": 6,
-  "text_chars": 3727
+  "text_chars": 3707
  },
  {
   "control_number": "42065",
@@ -4386,10 +4340,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "d469b0802a26d9bd"
+   "text_sha": "a512d9f3d80f88ad"
   },
   "listed": 4,
-  "text_chars": 2395
+  "text_chars": 2371
  },
  {
   "control_number": "42174",
@@ -4425,7 +4379,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "f5c0111fc64744f8"
+   "text_sha": "eef243c35b77c0ec"
   },
   "listed": 11,
   "text_chars": 16000
@@ -4466,10 +4420,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c5d5800b01f9376e"
+   "text_sha": "b01df061f784e949"
   },
   "listed": 15,
-  "text_chars": 8757
+  "text_chars": 8691
  },
  {
   "control_number": "43039",
@@ -4499,10 +4453,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "72ca8c0fdaa87db1"
+   "text_sha": "6d172fb6faf73de2"
   },
   "listed": 6,
-  "text_chars": 13308
+  "text_chars": 13122
  },
  {
   "control_number": "43152",
@@ -4526,10 +4480,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c413a79b69b0983a"
+   "text_sha": "62fb88893c450814"
   },
   "listed": 2,
-  "text_chars": 3047
+  "text_chars": 3026
  },
  {
   "control_number": "43632",
@@ -4578,10 +4532,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "738a897a0d2216cf"
+   "text_sha": "fb29cea0732e022f"
   },
   "listed": 25,
-  "text_chars": 16000
+  "text_chars": 15879
  },
  {
   "control_number": "43634",
@@ -4609,10 +4563,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "32b9e17ef53a5ea6"
+   "text_sha": "31a54007f60431dc"
   },
   "listed": 5,
-  "text_chars": 10915
+  "text_chars": 10783
  },
  {
   "control_number": "43649",
@@ -4647,10 +4601,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0a620a6c34edc0b6"
+   "text_sha": "4b24a67aded8d534"
   },
   "listed": 13,
-  "text_chars": 3659
+  "text_chars": 3615
  },
  {
   "control_number": "43725",
@@ -4700,7 +4654,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "0ef1dccb1e6ed08e"
+   "text_sha": "fd3365143aaa9237"
   },
   "listed": 25,
   "text_chars": 16000
@@ -4737,7 +4691,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8fca96df3a2b4412"
+   "text_sha": "1c52ef70b6d3c58e"
   },
   "listed": 9,
   "text_chars": 16000
@@ -4764,10 +4718,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2851eace16cd72c0"
+   "text_sha": "5cdc38711988c14a"
   },
   "listed": 2,
-  "text_chars": 2419
+  "text_chars": 2400
  },
  {
   "control_number": "44374",
@@ -4804,10 +4758,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b1b001a287989a74"
+   "text_sha": "b54c5cef5b993022"
   },
   "listed": 5,
-  "text_chars": 3737
+  "text_chars": 3703
  },
  {
   "control_number": "44539",
@@ -4834,10 +4788,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "cfe20efb91ba430f"
+   "text_sha": "efd95a5ae15bbf36"
   },
   "listed": 3,
-  "text_chars": 12454
+  "text_chars": 12296
  },
  {
   "control_number": "44540",
@@ -4862,10 +4816,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ca08e2613c39c12c"
+   "text_sha": "571c35d8ee444af0"
   },
   "listed": 3,
-  "text_chars": 5520
+  "text_chars": 5441
  },
  {
   "control_number": "44541",
@@ -4925,7 +4879,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "a4c7556dafbcda3a"
+   "text_sha": "0a2922bd3d35b8a0"
   },
   "listed": 35,
   "text_chars": 16000
@@ -4975,10 +4929,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1826ac7ffd63086a"
+   "text_sha": "173e6f782c65cee6"
   },
   "listed": 25,
-  "text_chars": 11014
+  "text_chars": 10875
  },
  {
   "control_number": "44624",
@@ -5019,7 +4973,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "e4d082ba3edc51b2"
+   "text_sha": "7752912272a96f5a"
   },
   "listed": 17,
   "text_chars": 16000
@@ -5053,7 +5007,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "fe0792e5602a5349"
+   "text_sha": "be2d27a5dcd16913"
   },
   "listed": 6,
   "text_chars": 16000
@@ -5081,10 +5035,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "1b7603994d8b89e1"
+   "text_sha": "071fb6ebc45599e6"
   },
   "listed": 3,
-  "text_chars": 4930
+  "text_chars": 4901
  },
  {
   "control_number": "45028",
@@ -5266,7 +5220,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "493ef247e48af6c3"
+   "text_sha": "502e006329e16245"
   },
   "listed": 278,
   "text_chars": 16000
@@ -5298,10 +5252,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7ad7bdf7ad86ee5a"
+   "text_sha": "1f88e879030fb782"
   },
   "listed": 6,
-  "text_chars": 6685
+  "text_chars": 6619
  },
  {
   "control_number": "45406",
@@ -5330,7 +5284,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "ed8f792096f19d17"
+   "text_sha": "e58458b98f0e37b5"
   },
   "listed": 5,
   "text_chars": 16000
@@ -5364,7 +5318,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "624b93257619c0e4"
+   "text_sha": "a3e269183a34b4f7"
   },
   "listed": 6,
   "text_chars": 16000
@@ -5406,7 +5360,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "b0e7dc427c5815b3"
+   "text_sha": "87fe753b10bec844"
   },
   "listed": 14,
   "text_chars": 16000
@@ -5439,67 +5393,22 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "300a2f4a983495da"
+   "text_sha": "5489f605da491379"
   },
   "listed": 8,
-  "text_chars": 4290
+  "text_chars": 4228
  },
  {
   "control_number": "45540",
   "title": "Respiratory Therapy",
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.625,
-  "codes_found": [
-   "ANATOMY1",
-   "BIOLOGY20",
-   "CHEM51",
-   "CHEM65",
-   "COMM121",
-   "COMMC1000",
-   "HTHTEK133",
-   "MATH245",
-   "PHYSIOL1",
-   "RESPTH101",
-   "RESPTH110",
-   "RESPTH112",
-   "RESPTH114",
-   "RESPTH116",
-   "RESPTH120",
-   "RESPTH122",
-   "RESPTH124",
-   "RESPTH126",
-   "RESPTH128",
-   "RESPTH130",
-   "RESPTH201",
-   "RESPTH210",
-   "RESPTH212",
-   "RESPTH214",
-   "RESPTH216",
-   "RESPTH220",
-   "RESPTH222",
-   "RESPTH224",
-   "STATC1000",
-   "STATC1000E"
-  ],
-  "source": {
-   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=343",
-   "title": "In addition, the department now offers a Bachelor of Sci -",
-   "h1": "In addition, the department now offers a Bachelor of Sci -",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    343,
-    344,
-    345
-   ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "text_sha": "cb09247bfe89eace"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 48,
-  "text_chars": 15267
+  "text_chars": 0
  },
  {
   "control_number": "45587",
@@ -5532,7 +5441,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8c1dcf48f45fac9d"
+   "text_sha": "9406fe163589dbc5"
   },
   "listed": 8,
   "text_chars": 16000
@@ -5565,10 +5474,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "5135d7d7d65efcb4"
+   "text_sha": "babb99e99860a3d8"
   },
   "listed": 6,
-  "text_chars": 15527
+  "text_chars": 15258
  },
  {
   "control_number": "45589",
@@ -5595,10 +5504,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "6583b90e7f981b6b"
+   "text_sha": "15428ee91803c472"
   },
   "listed": 4,
-  "text_chars": 7643
+  "text_chars": 7568
  },
  {
   "control_number": "45591",
@@ -5626,10 +5535,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "406dc410c284bdc8"
+   "text_sha": "e156c401427ccc79"
   },
   "listed": 5,
-  "text_chars": 9272
+  "text_chars": 9171
  },
  {
   "control_number": "45602",
@@ -5662,7 +5571,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "2119dabea80d6366"
+   "text_sha": "8bd678807ef76017"
   },
   "listed": 9,
   "text_chars": 16000
@@ -5695,10 +5604,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "746a84e37cf2d852"
+   "text_sha": "d0f2c2c8db14d2a1"
   },
   "listed": 8,
-  "text_chars": 3050
+  "text_chars": 3027
  },
  {
   "control_number": "45716",
@@ -5725,10 +5634,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8b1869db1c65a971"
+   "text_sha": "803b42058ef55f6a"
   },
   "listed": 3,
-  "text_chars": 11297
+  "text_chars": 11217
  },
  {
   "control_number": "45717",
@@ -5758,10 +5667,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "b48c7b73dcdf161d"
+   "text_sha": "06b71ca1d2858c49"
   },
   "listed": 6,
-  "text_chars": 11065
+  "text_chars": 10985
  },
  {
   "control_number": "45718",
@@ -5786,10 +5695,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "7e8208417211e80a"
+   "text_sha": "f1b481f4ca3ee9de"
   },
   "listed": 2,
-  "text_chars": 6408
+  "text_chars": 6363
  },
  {
   "control_number": "45752",
@@ -5813,10 +5722,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "570dfe6a6ce9f343"
+   "text_sha": "c70adfd68218eae9"
   },
   "listed": 2,
-  "text_chars": 4043
+  "text_chars": 4013
  },
  {
   "control_number": "45753",
@@ -5843,10 +5752,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "be42855a180cb718"
+   "text_sha": "f85f0f75a1a9fdb0"
   },
   "listed": 5,
-  "text_chars": 3057
+  "text_chars": 3032
  },
  {
   "control_number": "45935",
@@ -5880,10 +5789,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "8c68437b4d084597"
+   "text_sha": "8750a3ab1c2d141b"
   },
   "listed": 11,
-  "text_chars": 11075
+  "text_chars": 10950
  },
  {
   "control_number": "45986",
@@ -5903,8 +5812,8 @@
   ],
   "source": {
    "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=235",
-   "title": "The Sports Medicine Skills Certificate provides an intro -",
-   "h1": "The Sports Medicine Skills Certificate provides an intro -",
+   "title": "The Sports Medicine Skills Certificate provides an intro-",
+   "h1": "The Sports Medicine Skills Certificate provides an intro-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5915,7 +5824,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "0b45d85573653f66"
+   "text_sha": "46549966b1b5ca3d"
   },
   "listed": 7,
   "text_chars": 16000
@@ -5964,7 +5873,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "c183138fc4e25780"
+   "text_sha": "1e250bf402f6c6c9"
   },
   "listed": 21,
   "text_chars": 16000
@@ -5991,10 +5900,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "ac42e0f72fb910d2"
+   "text_sha": "4ea1d14b506ec58a"
   },
   "listed": 2,
-  "text_chars": 3293
+  "text_chars": 3269
  },
  {
   "control_number": "46328",
@@ -6022,10 +5931,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": false,
-   "text_sha": "c70a9539b9c6d8fe"
+   "text_sha": "0bbcd34ee1d1ff9f"
   },
   "listed": 4,
-  "text_chars": 13137
+  "text_chars": 12998
  },
  {
   "control_number": "46343",
@@ -6062,10 +5971,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7b2e0e0e1c5db4fb"
+   "text_sha": "45b23fd8ec13dd7f"
   },
   "listed": 15,
-  "text_chars": 3853
+  "text_chars": 3816
  },
  {
   "control_number": "46348",
@@ -6106,10 +6015,10 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "7134d7fb614db7c8"
+   "text_sha": "ec7aec745ee65985"
   },
   "listed": 17,
-  "text_chars": 13807
+  "text_chars": 13712
  },
  {
   "control_number": "46461",
@@ -6159,7 +6068,7 @@
    ],
    "extractor": "pypdf",
    "heading_named": true,
-   "text_sha": "960713911fb71c3f"
+   "text_sha": "81499237ca037405"
   },
   "listed": 25,
   "text_chars": 16000

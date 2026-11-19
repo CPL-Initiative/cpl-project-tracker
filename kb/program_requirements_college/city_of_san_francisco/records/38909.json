@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Music",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8612,
+  "input_tokens": 8701,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8612,
-    "output_tokens": 3958,
+    "input_tokens": 8701,
+    "output_tokens": 3666,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3958,
+  "output_tokens": 3666,
   "output_tokens_details": {
-   "thinking_tokens": 1487
+   "thinking_tokens": 1136
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11361,
- "ms": 31985,
- "seconds": 32.4,
+ "cost_usd": 0.10812,
+ "ms": 29387,
+ "seconds": 29.8,
  "parts": null,
  "error": null,
  "score": {
@@ -111,7 +111,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement in Music",
+   "section_heading": "Music – Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -146,32 +146,13 @@
   },
   "blocks": [
    {
-    "name": "Program advisory",
-    "rule": "recommended",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "MUS 100",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
     "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 15,
-     "max": 15
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -201,18 +182,31 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "One of the following piano classes",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
      {
       "code": "MUS 9A",
       "units": 3,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "MUS 9B",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUS 9B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      }
     ]
@@ -434,10 +428,33 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Program advisory",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MUS 100",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [
+   {
+    "code": "MUS 5A",
+    "why": "not in the text"
+   },
    {
     "code": "MUS 22A",
     "why": "not in the text"
@@ -449,22 +466,53 @@
    {
     "code": "MUS 27R",
     "why": "not in the text"
-   },
-   {
-    "code": "MUS 5A",
-    "why": "not in the text"
    }
   ],
   "notes": [
-   "The section heading is not printed in the extracted text (page begins with the program description); heading recorded from the description's naming of the 'Certificate of Achievement in Music'.",
-   "Core 'Required Units 15.0' covers MUS 1A, 1B, 3A, 3B and one piano class (MUS 9A OR MUS 9B), recorded as MUS 9A with MUS 9B as alternative.",
-   "Electives: 'Students must take a total of 12 elective units not already used in the core section. At least 3 units must be selected from each of the three areas below.' Each area recorded as a choose_units block with minimum 3; the remaining 3 of the 12 elective units may come from any of the three areas. The 12-unit elective total spans all three blocks.",
-   "MUS 9B appears both as a core piano option and in the Vocal/Instrumental elective area; elective units may not duplicate those used in the core.",
-   "Closed-list codes MUS6A, MUS9A, MUS9B and MUS9C (no space) are treated as the catalog's MUS 6A, MUS 9A, MUS 9B and MUS 9C; the closed list also has MUS 9B with a space (duplicate entry).",
-   "MUS 100 is a program advisory ('strongly urged'), recorded as recommended; it is not in the closed list and no units are printed beside it.",
-   "Page 116 layout is columnar and scrambled; all elective courses in the Vocal/Instrumental and Survey areas read as 3.0 units.",
-   "A minimum of 15 units must be completed at CCSF; MUS 1A, 1B, 3A, 3B may be satisfied by test-out, credit by exam, or equivalent coursework."
+   "The catalog prints 'Required Units 15.0' for the whole required section (MUS 1A, 1B, 3A, 3B plus one piano class); it is not recorded as the stated total of the 12-unit 'all' block alone.",
+   "Electives: 'Students must take a total of 12 elective units not already used in the core section. At least 3 units must be selected from each of the three areas below.' Each area is recorded as a choose_units block with minimum 3 (9 units); the remaining 3 elective units may come from any of the three areas. Required 15 + electives 12 = Total 27.0 as printed.",
+   "MUS 9B appears both as a piano core option and in the Vocal/Instrumental area; it may count as an elective only if not used in the core.",
+   "Page 116 table layout is scrambled by PDF extraction: MUS 9C (Keyboard Harmony) and MUS 10A (Beginning Voice) were read as part of the Vocal, Instrumental, and Composition Instruction area, and the 'Survey:' heading as beginning with MUS 21.",
+   "Closed list stores MUS 6A, MUS 9A, MUS 9B, MUS 9C also as 'MUS6A', 'MUS9A', 'MUS9B', 'MUS9C' (no space); treated as the same courses.",
+   "MUS 100 (Music Fundamentals) is a program advisory the catalog strongly urges; recorded as recommended with no units printed.",
+   "Catalog notes students may test out of MUS 1A, 1B, 3A, 3B and take a substitute, use credit by exam, or equivalent coursework; minimum 15 units must be completed at CCSF."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "0af1961bd81c2472",
+ "source_codes": [
+  "MUS10A",
+  "MUS11",
+  "MUS12",
+  "MUS13A",
+  "MUS13B",
+  "MUS15",
+  "MUS17",
+  "MUS18",
+  "MUS1A",
+  "MUS1B",
+  "MUS20",
+  "MUS21",
+  "MUS22B",
+  "MUS22C",
+  "MUS23",
+  "MUS24",
+  "MUS25",
+  "MUS26",
+  "MUS27A",
+  "MUS27B",
+  "MUS3A",
+  "MUS3B",
+  "MUS46",
+  "MUS6A",
+  "MUS7P1",
+  "MUS7V1",
+  "MUS7W1",
+  "MUS8A",
+  "MUS9A",
+  "MUS9B",
+  "MUS9C"
+ ],
+ "source_coverage": 0.886
 }

@@ -1604,6 +1604,9 @@
   },
   "City College of San Francisco": {
    "why": "S652 SkyAvocet, 2026-11-14, issue #3299 slice C (catalog-first collection; Sam's go relayed by COBIx): the catalog prints COMM n where the state's Program Course File lists CMST n, the same number and title in every case kb/_prefix_alias_census.py could title (COMM for CMST, 5 courses), with no number naming two different courses at the college. Evidence and the held pairs: kb/program_requirements_reconcile_out/prefix_aliases_2026-11-14/plan.json.",
+   "prefix_aliases": {
+    "COMM": "CMST"
+   },
    "prefix_aliases_cited": [
     {
      "printed": "COMM",
@@ -1629,6 +1632,12 @@
       "by": "the course-id route (kb/_course_id_route.py)",
       "proof": "the route reproduces all 30 of the pair's matches on the filed records, against today's committed course list and against the lists the filed scores were taken against",
       "plan": "kb/program_requirements_reconcile_out/course_id_route_2026-11-14/plan.json"
+     },
+     "kept_again": {
+      "session": "S684",
+      "date": "2026-11-19",
+      "by": "the course-id route census (kb/_course_id_route_census.py)",
+      "why": "the S683 re-read of record 43116 (run 44474797786) prints COMM 38; against the list its score was taken against, the route reproduces 38 of the pair's 39 matches, and a pair with any one match the route misses stays as the fallback (the S653 conductor's rule)"
      }
     }
    ],

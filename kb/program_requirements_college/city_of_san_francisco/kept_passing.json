@@ -1,0 +1,286 @@
+{
+ "run": "44474797786",
+ "programs": [
+  {
+   "control_number": "44751",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235",
+   "filed_source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235",
+   "cost_usd": 0.11389,
+   "usage": {
+    "input_tokens": 9412,
+    "cache_creation_input_tokens": 0,
+    "cache_read_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "iterations": [
+     {
+      "input_tokens": 9412,
+      "output_tokens": 3812,
+      "cache_read_input_tokens": 0,
+      "cache_creation_input_tokens": 0,
+      "cache_creation": {
+       "ephemeral_5m_input_tokens": 0,
+       "ephemeral_1h_input_tokens": 0
+      },
+      "type": "message",
+      "model": null
+     }
+    ],
+    "output_tokens": 3812,
+    "output_tokens_details": {
+     "thinking_tokens": 1105
+    },
+    "service_tier": "standard",
+    "inference_geo": "global",
+    "speed": "standard"
+   },
+   "reason": "passes_less",
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 19,
+     "share": 0.895,
+     "missing": [
+      "BIO112",
+      "HLTH52"
+     ],
+     "unexplained": [
+      "HLTH52"
+     ],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "STATC1000E",
+       "listed": "STAT1000E",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": false
+    },
+    "invented": {
+     "count": 25,
+     "codes": [
+      "BIO111",
+      "BIO134",
+      "HLTH10",
+      "HLTH102",
+      "HLTH103",
+      "HLTH110",
+      "HLTH116",
+      "HLTH177",
+      "HLTH210",
+      "HLTH231",
+      "HLTH27",
+      "HLTH38",
+      "HLTH48",
+      "HLTH56",
+      "HLTH64",
+      "HLTH65",
+      "HLTH66",
+      "HLTH67",
+      "HLTH70",
+      "HLTH80C",
+      "HLTH85",
+      "HLTH91C",
+      "HLTH91H",
+      "HLTH95",
+      "PSYC21"
+     ],
+     "flagged": [
+      "BIO111",
+      "BIO134",
+      "HLTH10",
+      "HLTH102",
+      "HLTH103",
+      "HLTH110",
+      "HLTH116",
+      "HLTH177",
+      "HLTH210",
+      "HLTH231",
+      "HLTH27",
+      "HLTH38",
+      "HLTH48",
+      "HLTH56",
+      "HLTH64",
+      "HLTH65",
+      "HLTH66",
+      "HLTH67",
+      "HLTH70",
+      "HLTH80C",
+      "HLTH85",
+      "HLTH91C",
+      "HLTH91H",
+      "HLTH95",
+      "PSYC21"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 17,
+     "listed": 19,
+     "share": 0.895,
+     "missing": [
+      "BIO112",
+      "HLTH52"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "course_id": [
+      {
+       "printed": "STATC1000E",
+       "listed": "STAT1000E",
+       "matched_by": "course_id"
+      }
+     ],
+     "pass": true
+    },
+    "invented": {
+     "count": 25,
+     "codes": [
+      "BIO111",
+      "BIO134",
+      "HLTH10",
+      "HLTH102",
+      "HLTH103",
+      "HLTH110",
+      "HLTH116",
+      "HLTH177",
+      "HLTH210",
+      "HLTH231",
+      "HLTH27",
+      "HLTH38",
+      "HLTH48",
+      "HLTH56",
+      "HLTH64",
+      "HLTH65",
+      "HLTH66",
+      "HLTH67",
+      "HLTH70",
+      "HLTH80C",
+      "HLTH85",
+      "HLTH91C",
+      "HLTH91H",
+      "HLTH95",
+      "PSYC21"
+     ],
+     "flagged": [
+      "BIO111",
+      "BIO134",
+      "HLTH10",
+      "HLTH102",
+      "HLTH103",
+      "HLTH110",
+      "HLTH116",
+      "HLTH177",
+      "HLTH210",
+      "HLTH231",
+      "HLTH27",
+      "HLTH38",
+      "HLTH48",
+      "HLTH56",
+      "HLTH64",
+      "HLTH65",
+      "HLTH66",
+      "HLTH67",
+      "HLTH70",
+      "HLTH80C",
+      "HLTH85",
+      "HLTH91C",
+      "HLTH91H",
+      "HLTH95",
+      "PSYC21"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": true
+   }
+  }
+ ]
+}
