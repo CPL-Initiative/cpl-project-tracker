@@ -4,9 +4,9 @@
   "supabase_tables": 116,
   "rpcs": 65,
   "edge_functions": 15,
-  "file_datasets": 1082,
+  "file_datasets": 1083,
   "external_services": 195,
-  "consumers": 632,
+  "consumers": 633,
   "workflows": 75,
   "data_js_files": 71,
   "tabs": 41
@@ -399,7 +399,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 116
+     "line": 120
     },
     {
      "id": "module:scripts/commons_data_values_check.js",
@@ -1937,7 +1937,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1381,
+     "line": 1414,
      "tabs": [
       "commons"
      ]
@@ -2172,6 +2172,16 @@
      "direction": "read",
      "how": "url",
      "line": 45
+    },
+    {
+     "id": "module:commons_front.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 35,
+     "tabs": [
+      "commons"
+     ]
     },
     {
      "id": "module:commons_progress.js",
@@ -4479,6 +4489,16 @@
      "line": 451
     },
     {
+     "id": "module:commons_front.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 252,
+     "tabs": [
+      "commons"
+     ]
+    },
+    {
      "id": "module:fact-sheet/factsheet_edit.js",
      "kind": "module",
      "direction": "read",
@@ -6656,7 +6676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 905,
+     "line": 910,
      "tabs": [
       "commons"
      ]
@@ -6672,7 +6692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 991,
+     "line": 1023,
      "tabs": [
       "commons"
      ]
@@ -6688,7 +6708,23 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 922,
+     "line": 927,
+     "tabs": [
+      "commons"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:commons_front.js": {
+   "consumers": [
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 946,
      "tabs": [
       "commons"
      ]
@@ -31395,7 +31431,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1162,
+     "line": 1194,
      "tabs": [
       "commons"
      ]
@@ -32160,7 +32196,7 @@
      "kind": "module",
      "direction": "read",
      "how": "helper",
-     "line": 950,
+     "line": 953,
      "tabs": [
       "commons"
      ]
@@ -33447,7 +33483,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 814,
+     "line": 817,
      "tabs": [
       "commons"
      ]
@@ -33457,7 +33493,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 797,
+     "line": 800,
      "tabs": [
       "commons"
      ]
@@ -35045,7 +35081,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1140,
+     "line": 1172,
      "tabs": [
       "commons"
      ]
@@ -35568,6 +35604,9 @@
    "commons"
   ],
   "commons_data.js": [
+   "commons"
+  ],
+  "commons_front.js": [
    "commons"
   ],
   "commons_list.js": [
