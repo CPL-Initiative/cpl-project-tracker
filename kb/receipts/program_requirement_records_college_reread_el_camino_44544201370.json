@@ -1,0 +1,48 @@
+{
+ "college": "El Camino College",
+ "reread_run": "44544201370",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "44480396671",
+ "at": "2026-11-19T14:29:34Z",
+ "posted": 5,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "19861",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19866",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38948",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43993",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 0,
+ "absent": 1,
+ "held": 0,
+ "kept": 4,
+ "carried": 0,
+ "replaced_keys": [],
+ "absent_keys": [
+  "19857"
+ ],
+ "held_keys": [],
+ "kept_keys": [
+  "30301",
+  "30302",
+  "46403",
+  "46404"
+ ],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": null,
+ "before": []
+}
