@@ -2,28 +2,72 @@
  "college": "Clovis Community College",
  "programs": 129,
  "with_closed_list": 121,
- "found": 115,
- "extracted": 115,
+ "found": 109,
+ "extracted": 109,
  "errors": 0,
- "passed_machine_checks": 65,
+ "passed_machine_checks": 77,
  "failed": {
-  "coverage": 21,
-  "invented": 6,
-  "arithmetic": 45,
+  "coverage": 5,
+  "invented": 3,
+  "arithmetic": 27,
   "repeated": 0,
   "outcomes": 5
  },
- "cost_usd": 8.34,
- "cost_per_program": 0.0725,
+ "cost_usd_run": 4.06,
+ "cost_usd_filed": 8.22,
+ "cost_per_program": 0.0754,
+ "extract_calls": 49,
+ "extract_failed": [],
  "not_found": [
   {
-   "control_number": "33496",
-   "title": "Communication Studies",
-   "award": "A.A- T Degree",
+   "control_number": "33434",
+   "title": "Business Administration Marketing",
+   "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.471
-   }
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33460",
+   "title": "Business Administration: Accounting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33461",
+   "title": "Business Administration: Information Systems Management",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=90",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33484",
+   "title": "Liberal Arts & Sciences: Arts & Humanities",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33485",
+   "title": "Liberal Arts & Sciences: Natural Sciences",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=92",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
    "control_number": "35845",
@@ -32,7 +76,19 @@
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=149",
     "coverage": 0.125
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36539",
+   "title": "Rehabilitation Aide",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
   },
   {
    "control_number": "37081",
@@ -40,30 +96,44 @@
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "near_miss": {
     "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=247",
-    "coverage": 0.143
-   }
+    "coverage": 0.286
+   },
+   "status": "Active"
   },
   {
-   "control_number": "42839",
-   "title": "Communication Studies 2.0",
-   "award": "A.A- T Degree",
+   "control_number": "43376",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
    "near_miss": {
-    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=111",
-    "coverage": 0.444
-   }
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=89",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
    "control_number": "44163",
    "title": "Preparation for Career",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
   },
   {
    "control_number": "44164",
    "title": "Preparation for College",
    "award": "Noncredit program",
-   "near_miss": null
+   "near_miss": null,
+   "status": "Active"
+  },
+  {
+   "control_number": "46537",
+   "title": "Elementary Teacher Education: Integrated Programs",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=91",
+    "coverage": 0.0
+   },
+   "status": "Approved"
   }
  ],
- "run": "39006155986"
+ "run": "44522071814"
 }

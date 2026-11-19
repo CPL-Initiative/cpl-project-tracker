@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Theatre Arts",
  "award": "A.A. Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=434",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=433",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12570,
+  "input_tokens": 12220,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12570,
-    "output_tokens": 3442,
+    "input_tokens": 12220,
+    "output_tokens": 3724,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3442,
+  "output_tokens": 3724,
   "output_tokens_details": {
-   "thinking_tokens": 1324
+   "thinking_tokens": 1549
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11912,
- "ms": 26721,
- "seconds": 27.2,
+ "cost_usd": 0.12336,
+ "ms": 29537,
+ "seconds": 30.5,
  "parts": null,
  "error": null,
  "score": {
@@ -120,7 +120,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "General Education",
    "degree_total": {
     "min": null,
     "max": null
@@ -248,8 +248,8 @@
     "minimum": null,
     "option_group": "Emphasis",
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -274,8 +274,8 @@
     "minimum": null,
     "option_group": "Emphasis",
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -413,15 +413,47 @@
    }
   ],
   "notes": [
-   "The core summary line reads '9 units from List A ... 10' while the List A heading says 'select 10 units'; recorded 10 as the block minimum. Reviewer should check.",
-   "List A also allows 'Any Production course not used' (2-4 units) from the Production list; not recorded as separate entries to avoid duplicating those courses.",
-   "The description says the degree is obtained by completing the 30-32-unit major, General Education, and electives as needed to complete a minimum of 60 units; degree_total left null as this reads as the general 60-unit minimum, and electives_fill_degree set true. No GE pattern is named or GE units printed.",
-   "Catalog prints THEA 003 at 3 units; the state file stores 2 units.",
-   "THEA 020 (Introduction to Stage Lighting) in the Technical Emphasis is not in the closed list.",
-   "Codes printed with leading zeros (e.g., THEA 001) are treated as the closed-list courses (e.g., THEA 1).",
-   "The Theatre Arts Technical Certificate of Achievement section that follows was not read for this record."
+   "The core summary line reads '9 units from List A ... 10' while the List A heading says 'select 10 units'; recorded 10 (consistent with the 30-32 major total). Reviewer should check.",
+   "List A also allows 'Any Production course not used 2-4' (an unused course from the Production block); not recorded as a separate course entry.",
+   "The core summary prints 'Choose Acting or Technical Emphasis ... 6'; each emphasis block (two 3-unit courses) totals 6, but no total is printed on the emphasis blocks themselves, so stated is null.",
+   "The page says the A.A. is earned by completing the 30-32-unit major, General Education, and electives as needed to complete a minimum of 60 units; recorded electives_fill_degree true and left degree_total null since no award total line is printed. ge_pattern recorded as the generic 'General Education' as printed (no named pattern).",
+   "THEA 020 Introduction to Stage Lighting (Technical Emphasis) is not in the closed list; marked catalog_addition.",
+   "Catalog prints codes with leading zeros (THEA 001 etc.) matching closed-list codes without zeros.",
+   "The A.A.-T (Theatre Arts for Transfer) and Technical Certificate of Achievement sections on adjacent pages were not used."
   ]
  },
- "extracted_run": 43355021555,
- "read_run": 39037377728
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "77f941f15529a9b7",
+ "source_codes": [
+  "THEA1",
+  "THEA10",
+  "THEA13",
+  "THEA148A",
+  "THEA148B",
+  "THEA148C",
+  "THEA148D",
+  "THEA15",
+  "THEA2",
+  "THEA21",
+  "THEA24",
+  "THEA24A",
+  "THEA24B",
+  "THEA24C",
+  "THEA24D",
+  "THEA27",
+  "THEA3",
+  "THEA32A",
+  "THEA32B",
+  "THEA35",
+  "THEA36",
+  "THEA40",
+  "THEA47",
+  "THEA5",
+  "THEA55",
+  "THEA6",
+  "THEA8",
+  "THEA9"
+ ],
+ "source_coverage": 0.966
 }

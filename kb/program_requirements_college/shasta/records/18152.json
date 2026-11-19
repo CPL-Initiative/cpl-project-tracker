@@ -1,0 +1,643 @@
+{
+ "college": "Shasta College",
+ "control_number": "18152",
+ "shape": "degree",
+ "title": "General Studies - Health",
+ "award": "A.S. Degree",
+ "source_url": "https://scmainweb.s3.us-west-1.amazonaws.com/files/resources/catalog-2026-2027-compressed.pdf#page=99",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 12405,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 12405,
+    "output_tokens": 3979,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3979,
+  "output_tokens_details": {
+   "thinking_tokens": 966
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1292,
+ "ms": 29103,
+ "seconds": 29.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 90,
+   "share": 0.0,
+   "missing": [
+    "ALH101",
+    "ALH101L",
+    "ALH103",
+    "ALH103L",
+    "ALH104",
+    "ALH104L",
+    "ALH110",
+    "DAN15",
+    "DAN20A",
+    "DAN20B",
+    "DAN20C",
+    "DAN20D",
+    "DAN30A",
+    "DAN30B",
+    "DAN30C",
+    "DAN30D",
+    "DAN40A",
+    "DAN40B",
+    "DAN40C",
+    "DAN40D",
+    "ETHS11",
+    "FAID130",
+    "FAID132",
+    "FAID133",
+    "FAID75",
+    "FAID76",
+    "HEOC10",
+    "HEOC102",
+    "HEOC11",
+    "HEOC130",
+    "HEOC131",
+    "HLTH1",
+    "HLTH2",
+    "HLTH3",
+    "HLTH4",
+    "HLTH6",
+    "HLTH7",
+    "KINES1",
+    "KINES2",
+    "NUTR25",
+    "NUTR30",
+    "NUTR35",
+    "NUTR40",
+    "NUTR45",
+    "NUTR50",
+    "PE11",
+    "PE12A",
+    "PE12B",
+    "PE12C",
+    "PE17A",
+    "PE17B",
+    "PE30A",
+    "PE30B",
+    "PE30C",
+    "PE31",
+    "PE35",
+    "PE37",
+    "PE4",
+    "PE51A",
+    "PE51B",
+    "PE51C",
+    "PE60",
+    "PE69",
+    "PE7",
+    "PE70A",
+    "PE70B",
+    "PE70C",
+    "PE71",
+    "PE72",
+    "PE75",
+    "PE76A",
+    "PE76B",
+    "PE76C",
+    "PE8",
+    "PEAT11",
+    "PEAT13",
+    "PEAT15",
+    "PEAT17",
+    "PEAT19",
+    "PEAT23",
+    "PEAT25",
+    "PEAT29",
+    "PEAT3",
+    "PEAT35",
+    "PEAT5",
+    "PEAT7",
+    "PEAT9",
+    "VOCN160",
+    "VOCN161",
+    "VOCN162"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the provided text has no General Studies - Health section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ALH 101",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH 101L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH 103L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH 104",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH 104L",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH 110",
+    "why": "not in the text"
+   },
+   {
+    "code": "ALH103",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 15",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 20A",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 20B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 20C",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 20D",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 30A",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 30B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 30C",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 30D",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 40A",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 40B",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 40C",
+    "why": "not in the text"
+   },
+   {
+    "code": "DAN 40D",
+    "why": "not in the text"
+   },
+   {
+    "code": "ETHS 11",
+    "why": "named only in the Physical Education University Studies emphasis section"
+   },
+   {
+    "code": "FAID 130",
+    "why": "not in the text"
+   },
+   {
+    "code": "FAID 132",
+    "why": "not in the text"
+   },
+   {
+    "code": "FAID 133",
+    "why": "not in the text"
+   },
+   {
+    "code": "FAID 75",
+    "why": "not in the text"
+   },
+   {
+    "code": "FAID 76",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEOC 10",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEOC 102",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEOC 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEOC 131",
+    "why": "not in the text"
+   },
+   {
+    "code": "HEOC130",
+    "why": "not in the text"
+   },
+   {
+    "code": "HLTH 1",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "HLTH 2",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "HLTH 3",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "HLTH 4",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "HLTH 6",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "HLTH 7",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "KINES 1",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "KINES 2",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "NUTR 25",
+    "why": "named only in the Nutrition and Dietetics AS-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "NUTR 30",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 40",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR 45",
+    "why": "not in the text"
+   },
+   {
+    "code": "NUTR50",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 11",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 12A",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 12B",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 12C",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 17A",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 17B",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 30A",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 30B",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 30C",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 31",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 35",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 37",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 4",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 51A",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 51B",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 51C",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 60",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 69",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 7",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 70A",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 70B",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 70C",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PE 71",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 72",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 75",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PE 76A",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 76B",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 76C",
+    "why": "not in the text"
+   },
+   {
+    "code": "PE 8",
+    "why": "named only in the Kinesiology AA-T and Physical Education emphasis sections"
+   },
+   {
+    "code": "PEAT 11",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 13",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 15",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 17",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 19",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 23",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 25",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 29",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 3",
+    "why": "not in the text"
+   },
+   {
+    "code": "PEAT 35",
+    "why": "not in the text"
+   },
+   {
+    "code": "PEAT 5",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 7",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "PEAT 9",
+    "why": "named only in the Physical Education emphasis section"
+   },
+   {
+    "code": "VOCN 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "VOCN 161",
+    "why": "not in the text"
+   },
+   {
+    "code": "VOCN 162",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The provided catalog text (pages 99-100) does not contain a section for General Studies - Health (A.S. Degree). It holds the end of a Music certificate, the Nutrition and Dietetics AS-T, the Kinesiology AA-T, the Physical Education University Studies 18-unit emphasis (AA.1493), the Physical Sciences University Studies emphasis, and the start of the Physics AS-T. No blocks were recorded.",
+   "Many closed-list courses (HLTH, KINES, NUTR 25, PE, PEAT, ETHS 11) appear in the Physical Education University Studies emphasis, which is a different award (AA.1493). They were not attributed to General Studies - Health.",
+   "A reviewer should locate the correct page for the General Studies - Health A.S. degree in the 2026-2027 catalog."
+  ]
+ },
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "f9a876a1a829c8d7",
+ "source_codes": [
+  "ETHS11",
+  "HLTH1",
+  "HLTH2",
+  "HLTH3",
+  "HLTH4",
+  "HLTH6",
+  "HLTH7",
+  "KINES1",
+  "KINES2",
+  "NUTR25",
+  "PE11",
+  "PE12A",
+  "PE12B",
+  "PE12C",
+  "PE17A",
+  "PE17B",
+  "PE30A",
+  "PE30B",
+  "PE30C",
+  "PE31",
+  "PE35",
+  "PE37",
+  "PE4",
+  "PE51A",
+  "PE51B",
+  "PE51C",
+  "PE60",
+  "PE69",
+  "PE7",
+  "PE70A",
+  "PE70B",
+  "PE70C",
+  "PE71",
+  "PE72",
+  "PE75",
+  "PE8",
+  "PEAT11",
+  "PEAT13",
+  "PEAT15",
+  "PEAT17",
+  "PEAT19",
+  "PEAT23",
+  "PEAT25",
+  "PEAT29",
+  "PEAT5",
+  "PEAT7",
+  "PEAT9"
+ ],
+ "source_coverage": 0.522
+}

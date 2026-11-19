@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Law, Public Policy, and Society",
  "award": "A.A- T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=407",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=406",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12480,
+  "input_tokens": 10799,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12480,
-    "output_tokens": 4580,
+    "input_tokens": 10799,
+    "output_tokens": 4546,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4580,
+  "output_tokens": 4546,
   "output_tokens_details": {
-   "thinking_tokens": 1683
+   "thinking_tokens": 1585
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14152,
- "ms": 33028,
- "seconds": 33.4,
+ "cost_usd": 0.13412,
+ "ms": 34757,
+ "seconds": 34.9,
  "parts": null,
  "error": null,
  "score": {
@@ -143,7 +143,7 @@
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -176,7 +176,7 @@
     ]
    },
    {
-    "name": "Law",
+    "name": "Law: (complete one course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -209,7 +209,7 @@
     ]
    },
    {
-    "name": "Communication",
+    "name": "Communication: (select one course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -242,7 +242,7 @@
     ]
    },
    {
-    "name": "English Composition",
+    "name": "English Composition: (select one course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -268,7 +268,7 @@
     ]
    },
    {
-    "name": "Persuasion",
+    "name": "Persuasion: (select one course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -301,7 +301,7 @@
     ]
    },
    {
-    "name": "History",
+    "name": "History: (select one course)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -327,7 +327,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "List A: select two courses from 2 different Areas",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -496,15 +496,52 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog codes with leading zeros (e.g., PHIL 004, CJ 001, POLS006) were matched to closed-list codes without them (PHIL 4, CJ 1, POLS 6); POLS 006 (Introduction to Political Philosophy) is not in the closed list and is marked catalog_addition.",
-   "List A rule: select two courses from 2 different Areas (Administration of Justice, Business, Economics, Political Science, Public Policy, Diversity, College Success); courses may not have been used in any of the above areas.",
-   "COMM 006 appears in both the Communication and Persuasion blocks; CJ 001, CJ 002 and BUS 018 appear in both Law and List A. A course cannot be double-counted per List A's rule.",
-   "The 'Complete 60 semester units' sentence is the standard ADT requirement, not recorded as degree_total; Cal-GETC units are not printed.",
-   "The Program Outcomes lead-in says 'Students who complete the Associate in Arts in Political Science for Transfer' though it sits in the Law, Public Policy, and Society section and the outcomes are law/public-policy specific; likely a copy error in the catalog. Recorded as this award's outcomes.",
-   "PDF ligature artifacts (e.g., 'IdenƟ fy', 'wri Ʃ en', 'ﬂ uences') were read as the printed words (Identify, written, influences) in the outcomes.",
-   "Description names transfer majors (American Studies, Criminal Justice, etc.) and further study in law/public policy, but no careers; careers left empty."
+   "The Program Outcomes lead-in in this section reads 'Students who complete the Associate in Arts in Political Science for Transfer will be able to:' although it sits in the Law, Public Policy, and Society section and the outcomes differ from the Political Science AA-T's; recorded as this award's outcomes. Reviewer should confirm the lead-in is a catalog typo.",
+   "PDF extraction ligature artifacts (e.g. 'Ɵ' for 'ti', 'ﬁ ' for 'fi', 'ﬂ ' for 'fl', 'par Ɵ es') were normalized in outcomes and codes; 'STAT C1 000' recorded as STAT C1000.",
+   "The page states students must 'Complete 60 semester units' including Cal-GETC; read as the standard ADT requirement rather than a printed degree total, so degree_total is null. No GE unit figure is printed.",
+   "List A: two courses must come from two different Areas (Administration of Justice, Business, Economics, Political Science, Public Policy, Diversity, College Success), and courses may not have been used in any of the above areas.",
+   "COMM 006 appears in both the Communication and Persuasion blocks, and CJ 001, CJ 002, BUS 018 appear in both Law and List A; a course may be used only once.",
+   "POLS006 Introduction to Political Philosophy in List A is not on the closed list (catalog addition).",
+   "Block totals for the one-course choices were taken from the REQUIRED COURSES summary lines (Law 3, Communication 3, English Composition 4-5, Persuasion 3-4, History 3, List A 6)."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "95aad0b2d31d02f4",
+ "source_codes": [
+  "ANTH2",
+  "BUS18",
+  "CJ1",
+  "CJ11",
+  "CJ2",
+  "CJ53",
+  "CJ56",
+  "COMM12",
+  "COMM2",
+  "COMM6",
+  "COMM8",
+  "COMMC1000",
+  "COUN5",
+  "COUN7",
+  "ECONC2001",
+  "ECONC2002",
+  "ENGL1E",
+  "ENGLC1000",
+  "ENGLC1001",
+  "ETHN1",
+  "HISTC1001",
+  "HISTC1002",
+  "PHIL4",
+  "POLS2",
+  "POLS4",
+  "POLS7",
+  "POLSC1000",
+  "PSYC12",
+  "PSYC40",
+  "SJS1",
+  "SJS2",
+  "SOC2",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }
