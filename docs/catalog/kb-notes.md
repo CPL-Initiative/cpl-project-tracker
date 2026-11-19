@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-594 document(s).
+595 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -64,6 +64,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A confirming read pages by key, never by offset](../kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md) | methodology | published | 2026-11-19 | 2026-11-19 |
 | [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |

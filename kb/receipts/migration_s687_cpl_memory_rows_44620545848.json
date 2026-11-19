@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_cpl_memory_rows.sql",
+ "name": "s687_cpl_memory_rows",
+ "version": "20261119213827",
+ "sha256": "3dabaeff8859611b18aeac73fb3ca529fb781b2d28e78f4b3a97d28b8546ce41",
+ "run": "44620545848",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-commons-needs-you-ranking-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":332},{\"slug\":\"d-display-keyset-confirm-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"d-feather-palomar-trials-off-wave-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":352},{\"slug\":\"d-rule-d-from-committed-previews-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":361},{\"slug\":\"d-skyline-skipped-compare-page-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":358},{\"slug\":\"d-wording-rule-write-to-second-session-s687\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":346},{\"slug\":\"f-rule-d-cannot-reach-dropped-records-s687\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":305},{\"slug\":\"m-census-5145-s687\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":151},{\"slug\":\"m-display-3361e3aa5b7d-confirmed-s687\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":353},{\"slug\":\"m-nine-colleges-posted-s687\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":355},{\"slug\":\"p-artifact-host-blocked-s687\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":241},{\"slug\":\"p-fake-table-ignores-keyset-s687\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":307},{\"slug\":\"p-read-dispatches-share-group-s687\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":315},{\"slug\":\"p-sources-from-needs-filed-preview-s687\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":198},{\"slug\":\"p-stash-unstaged-commit-s687\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":255}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

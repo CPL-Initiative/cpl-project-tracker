@@ -874,13 +874,13 @@
    "estimate_usd": 270.0
   },
   "2026-11-19": {
-   "usd": 449.56,
-   "sessions": 4,
+   "usd": 501.9,
+   "sessions": 5,
    "not_available": 0,
    "tags": {
-    "curation": 124.0,
-    "infrastructure": 97.56,
-    "collection": 228.0
+    "curation": 136.0,
+    "infrastructure": 109.9,
+    "collection": 256.0
    },
    "untagged_usd": 0.0,
    "estimate_usd": 288.0

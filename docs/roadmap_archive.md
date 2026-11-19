@@ -557,3 +557,7 @@ Four S678 and S679 paragraphs as they stood, verbatim (the two drafts merged; th
 ## INDEX update history, moved (S685 checkpoint)
 
 - 2026-11-18 (S679 SkyKinglet, Sam's session, full checkpoint): #3477 (the left-map apply nightly, Rename and Combine, the combine guard as one choke point), #3478 and #3481 (Sam's three Nov 17 harvest rulings, 243 records rescored live), #3479 (slash-to-and, 80 renames applied by run 44227947795), #3468 (ACE text kept), #3467, #3473, #3474, #3475; four lanes compacted under 20,000 bytes; KB note `methodology-a-guard-must-fail-closed-when-it-cannot-decide`; handoff 680.
+
+## INDEX update history, moved (S687 checkpoint)
+
+- 2026-11-18 (S680 SkyPhoebe, the CPL Queue routine's conductor night for collection only, full checkpoint): #3495 and #3498 (display receipts and old row audit reports out of the tree into the private bucket `cpl-receipts`), #3490 (the repo size guard), #3491 (9 discontinued programs out of the gap census), #3496 (units rules A1, A4, A5, 56 records rescored live), #3497 (75 named gaps), #3502 (no blind paid rereads), #3503 (the Spend line's tags), #3504 (the outcomes wave, 2,452 rows at four colleges); the new repo-size lane; the KB note `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`. Handoff 681.
