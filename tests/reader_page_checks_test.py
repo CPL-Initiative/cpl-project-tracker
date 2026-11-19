@@ -346,7 +346,8 @@ try:
     d = D.build([cap], base=tmp)
     check(d["flagged"] == 0 and [r["control_number"] for r in d.get("not_printed") or []] == ["09001"],
           "rule D: the discontinued check lists the program as a candidate, never a flag, got %r" % d.get("not_printed"))
-    check("not_printed" not in D.build([], base=tmp), "rule D: with no capture the committed file keeps its shape")
+    check(D.build([], base=tmp).get("not_printed") == [],
+          "rule D: with no capture and no committed rule D mark, the list is empty (S687: committed marks are read)")
 finally:
     shutil.rmtree(tmp)
 
