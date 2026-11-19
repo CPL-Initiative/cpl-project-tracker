@@ -1,0 +1,290 @@
+Course Outline
+CSCI 112 - Programming Fundamentals I
+
+
+Fall Semester 2023
+
+
+Basic Course Information
+Courses numbered 1 - 49 are remedial or college preparatory courses which do not apply toward an A. A. Degree and are not intended for transfer. Courses numbered 50-99 apply toward an AA Degree, but are not intended for transfer. Courses numbered 100 and higher apply toward an AA Degree and/or are intended for transfer to a four-year college or university.
+
+
+CB04 Course Credit Status D - Credit - Degree Applicable
+Discipline CSCI
+Title Programming Fundamentals I
+This course is part of the following cross listing
+Units and Hours
+Min Unit
+4
+Max Unit
+4
+Grade Option Graded Only
+Min Semester Hours Calculated
+Hour Type	Units	Weekly Hours	Semester Hours x 16 Weeks	Semester Hours x 18 Weeks
+Lecture Category -	3.50	3.50	x 16 Weeks - 56.00	x 18 Weeks - 63.00
+Lab Category -	0.50	1.50	x 16 Weeks - 24.00	x 18 Weeks - 27.00
+Subtotal -	 	5.00	x 16 Weeks - 80.00	x 18 Weeks - 90.00
+Out of Class Hour -	 	7.00	x 16 Weeks - 112.00	x 18 Weeks - 126.00
+Totals -	 	12.00	x 16 Weeks - 192.00	x 18 Weeks - 216.00
+Max Semester Hours Calculated
+Hour Type	Units	Weekly Hours	Semester Hours x 16 Weeks	Semester Hours x 18 Weeks
+Lecture Category -	3.50	3.50	x 16 Weeks - 56.00	x 18 Weeks - 63.00
+Lab Category -	0.50	1.50	x 16 Weeks - 24.00	x 18 Weeks - 27.00
+Subtotal -	 	5.00	x 16 Weeks - 80.00	x 18 Weeks - 90.00
+Out of Class Hour -	 	7.00	x 16 Weeks - 112.00	x 18 Weeks - 126.00
+Totals -	 	12.00	x 16 Weeks - 192.00	x 18 Weeks - 216.00
+Basic Skills Requirements: Appropriate Language and/or Computational Skills.
+Catalog Description
+Introduction to the basic concepts of Computer Science, the fundamental techniques for problem solving, and the software development process. Includes the syntax and semantics of the C programming language focusing on basic control structures, data types, and input/output.
+Student Learning Outcomes
+Outcome
+Develop algorithms for solving simple programming problems.
+Describe the mechanics of parameter passing.
+Demonstrate in a computer program the properties of a variable such as its associated address, value, scope, persistence, and size.
+Design, implement, test, and debug a program written in a high level programming language.
+Demonstrate the following fundamental programming constructs: basic computation, simple I/O, standard conditional and iterative structures, and functions.
+Specific Course Objectives
+Objective
+Upon successful completion of the course, the student will be able to:
+Describe the software development life-cycle;
+Explain what an algorithm is and its importance in computer programming;
+Describe the principles of structured programming;
+Design, implement, test and debug a program that uses each of the following fundamental programming constructs: basic computation, simple I/O, sequence, selection and iteration, functions, arrays, strings, and structures;
+Utilize pseudocode or a programming language to implement, test, and debug algorithms for solving simple problems;
+Demonstrate different forms of binding, visibility, scoping, and lifetime management.
+Methods of Instruction
+Methods of Instruction may include, but are not limited to, the following:
+Demonstration
+Discussion
+Guest Speakers
+Lab
+Lecture
+Videos/Film
+Content in Terms of Specific Body of Knowledge
+Overview
+Introduction to Computer Science
+Discipline Areas of Computer Science
+Computer Architecture
+Data Storage and Representation
+Programming Languages
+Software Development Process
+Software Life Cycle
+Problem Solving Methodologies
+Algorithm Development
+Top-Down Design / Stepwise Refinement
+Number Systems
+Decimal, Binary, Octal, Hexadecimal
+Negative Numbers (two’s complement notation)
+Development Tools and Techniques
+Interpreters vs. Compilers
+Integrated Development Environment
+Editor
+Debugger
+Help Facility
+Linker
+Introduction
+C History
+C Design Goals
+ANSI C, C99, C11
+Program Structure and Expressions
+Hello, World.
+Compiler Directives
+Fundamental Data Types
+Variable Declarations
+C Reserved Keywords
+Header Files
+Printf() and Output Formats
+Scanf()
+ASCII & Unicode
+Statements and Blocks
+Constants
+Mixing Data Types
+Documentation
+Capturing Program Output
+Operators
+Assignment Operator
+Arithmetic Operators
+Relational Operators
+Logical Operators
+Boolean Operators
+Auto Increment and Auto Decrement Operators
+Comma Operator
+Precedence of Operators
+Functions
+Built-in Functions
+Math Library
+User-Defined Functions
+Return statement
+Flow of Program Execution
+Parameters
+Void Return Value
+Void Parameter List
+Scope of Identifiers
+Techniques of Problem Solving
+Selection Statements
+If Statement
+If-Else Statement
+Else-If Statement
+Switch Statement
+Conditional Operator
+Repetition Statements
+While Loop
+For Statement
+Comma Operator
+Do-While Loop
+Break Statement
+Continue Statement
+Counter Controlled Loops
+Sentinel Controlled Loops
+Counter and Summation Variables
+Input /Output/Text Files
+Streams
+Stdin – stdout - stderr
+getchar() - putchar() - scanf()
+Read – Write - Append
+Opening and Closing Files
+Sequential Access
+File I/O Statements
+Error Checking
+Functions Revisited
+Function Motivation
+Function Parameters
+Pass by value – Pass by reference
+Function Prototypes
+Functional Decomposition
+Arrays
+Introduction to Arrays
+Array Declarations
+Array Subscripts
+Iterating Through an Array
+Array Elements as Function Arguments
+Arrays as Function Arguments
+Parallel Arrays
+Sorting an Array: Insertion Sort
+Sorting an Array: qsort() Library Function
+Searching an Array: Linear Search
+Searching an Array: Binary Search
+Two-Dimensional Arrays
+Pointers
+Introduction to Pointers
+Address-of Operator
+Indirection Operator
+Pointer Parameters in Functions
+Pointers and Arrays
+Pointer Arithmetic
+Functions, Arrays and Pointers
+Strings
+Introduction to Strings
+Null-Terminated Array
+String.h library
+Strings and Pointers
+Arrays of Character Strings
+Command-Line Arguments
+Variable Length Argument Lists
+Storage Class
+Automatic Variables
+External Storage Class
+Register Storage Class
+Static Storage Class
+Initializing Arrays in Static Storage
+C Preprocessor
+#include - #define
+Conditional compilation
+Macros
+Macros with Arguments
+Macros within Macros
+Macros vs. Function Calls
+Enumerated Types
+Variables
+Relational Operators
+Input-Output
+Creating Boolean Enumerated Type
+Typedef
+Creating New Data Types
+Structures
+Introduction to Structures
+Initializations
+Assigning Structures
+Passing Structures to a Function by Value
+Passing Structures to a Function by Reference
+Arrays of Structures
+Passing Arrays of Structures as Parameters
+Nesting Structures
+Pointers to Structures
+Dynamic Variables (optional)
+Dynamic Allocation of Variables
+malloc() - free()
+alloc.h - stdlib.h
+Dangling Pointers
+Dynamic Allocation of Structures
+-> syntax
+Linear Linked Lists (optional)
+Advantages and Disadvantages of Sequential Storage of Arrays
+Introduction to Linear Linked Lists
+List Primitive Operations
+Pseudo-Code Algorithms
+Add & delete note to front of list
+Boundary Conditions
+Traverse List
+Insert & delete node within list
+Draw Pictures
+C Implementation of Linear Linked Lists
+Linked List Manipulation
+Separate Compilation
+Bitwise Operators (optional)
+Bitwise And
+Masks
+Bitwise Or
+Bitwise Exclusive-Or
+Bitwise Negate
+Left-Shift Operator
+Right-Shift Operator
+An Overview of C++ and Object-Oriented Programming (optional)
+Data Abstraction
+Abstract Data Types
+Objects
+Messages
+Classes
+Encapsulation
+Inheritance
+Polymorphism
+Textbooks/Resources
+Textbook
+Author Paul Deitel and Harvey Deitel
+Title C How toProgram
+Edition 9th
+City Boston
+Publisher Pearson
+Year 2021
+Author Hanly & Koffman
+Title Problem Solving and Program Design in C
+Edition 8th
+City Boston
+Publisher Pearson
+Year 2016
+Assignments
+Students are expected to research projects and solutions as dictated by specific assignments. Students are expected to spend a minimum of three hours per unit per week in class and on outside assignments, prorated for short-term classes.
+Required Reading
+Students will read chapters from text book required for class.
+Suggested Reading
+Required Writing
+Problem solving exercises are assigned, requiring students to complete five or six computer programming labs. Each programming lab will consist of a hands-on exercise applying theory principles learned in class. Programs must be well documented (at least one paragraph) in terms of their overall design goals. Additionally, each subprogram must be documented (two or three sentences) as to its purpose and overall performance.
+Critical Thinking
+Utilize computers effectively to express instructions in a form that the computer can understand and execute. Understand what they want to accomplish. Identify what logical steps are required to instruct the computer to do the work. Submit the instructions in the correct format to the computer for completion.
+Outside Assignments
+There are written homework exercises within each section of each chapter which are assigned, requiring an average of one hour to complete. In addition, numerous programming assignments are assigned, each ranging from one to ten hours to complete by an average student.
+Methods of Assessment
+Evaluation Method
+Class Participation
+Class Work
+Exams/Tests
+Homework
+Lab Activities
+Projects
+Quizzes
+Open Entry/Open Exit
+Open Entry / Open Exit - Not Open Entry/Open Exit
+Repeatability
+Is this course repeatable in accordance with Title 5 guidelines? No
+Contact Person
+Originator Canon, Terrie Lynn
