@@ -20,6 +20,8 @@
   "mt_san_antonio": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
                      "why": "its CourseLeaf course entries print no SLOs"},
   "palo_verde": {"state": "held", "on": "2026-10-23", "by": "S451", "source": "cpl_memory palo-verde-acalog-catalog-2026-2027-2026-10-22",
-                 "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"}
+                 "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"},
+  "san_diego_of_continuing_education": {"state": "held", "on": "2026-11-19", "by": "S685", "source": "index runs 44531933532 and 44536348461 (report=^All Fields$)",
+                                        "why": "the sdccd.curriqunet.com dashboard made no NewSearch request on either index run, so the index found none of its 242 course codes; the census found SLOs on report 4 there, so the host prints them and the index cannot reach its course list"}
  }
 }
