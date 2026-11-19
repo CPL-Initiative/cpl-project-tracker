@@ -11,11 +11,21 @@ records (kb/program_requirements_college/<slug>/records/<cn>.json) whose units c
       after its own lecture (BIOL C1001 then C1001L) counts as 0. A PAIRED ALTERNATIVE (S681 second reader, A):
       A4 never copies a row's units onto each member of a group whose members together replace the row. Two or
       more blank alternatives are such a group when the state's course file holds every member and their units
-      add up to the row's units (or fall inside the row's printed range), or when a record note says they are
-      taken together; the members then share one "together" label, which the scorer reads as one option. Each
-      member carries its own units as the state's course file stores them when the file confirms them;
-      otherwise the members carry no units, the group carries the row's units ("together_units"), and the
-      record's note says so. The program total and the pass state are the same either way.
+      add up to the row's units (or fall inside the row's printed range, where no note says "or" about a member
+      and each member alone is worth less than the row's low figure: S683, the seven College of the Desert
+      work-experience groups), or when a record note says they are taken together; the members then share one
+      "together" label, which the scorer reads as one option. Each member carries its own units as the state's
+      course file stores them when the file confirms them; otherwise the members carry no units, the group
+      carries the row's units ("together_units"), and the record's note says so. A lecture alternative and its
+      own blank lab right after it, which a note names as taken together, are such a group too, at the figure
+      printed on the lecture (Long Beach City 44747: BIO 60 and BIO 60L, 4 and 1 in the state's file). The
+      program total and the pass state are the same either way. pair_recall scores every pair call against the
+      record notes, and a write stops on a call a note contradicts.
+      THE PER-COURSE SELF-CHECK (S683; p-self-check-on-totals-misses-per-course-units-s681): every unit A4 writes
+      on a course or an alternative is compared with the state's course file (state_differs). A new record whose
+      A4 writes a figure outside what the file holds is left as filed; a correction that would write one stops
+      the run. The units an earlier plan wrote that the file does not hold are listed in the receipt
+      (state_differs_left) for the later task, never planned here.
   A5  a choose list whose own name or a record note says it may also take any course from List X (or the
       required core) gains that list's courses as options.
   A6  a choose list printed with the sum of every option (Chaffey History's "choose one" groups print 39
@@ -162,6 +172,20 @@ def units_at(college: str | None, state: dict | None = None):
 
 # "both" alone is no pair: Cerritos 38756's note says DANC 131 and 132 "appear both as the 'or' choice" (S681).
 PAIRED_NOTE = re.compile(r"\b(?:together|paired|pair)\b", re.I)
+# A note that says "or" about a group's members (S683, #3508 round two's item 1): College of the Desert 36127's
+# "BUAC 095A and CIS 095A are printed as 'or' options with no units of their own".
+OR_NOTE = re.compile(r"\bor\b", re.I)
+
+
+def _mentions(text: str, code) -> bool:
+    """The note names the course: its code as printed, or its subject and its number apart (Long Beach City 44747's
+    "BIO 60 & 60L" names BIO 60L)."""
+    code = str(code)
+    if code in text:
+        return True
+    parts = code.rsplit(" ", 1)
+    return (len(parts) == 2 and bool(re.search(r"\b%s\b" % re.escape(parts[0]), text))
+            and bool(re.search(r"(?<![\w.])%s\b" % re.escape(parts[1]), text)))
 
 
 def _notes_pair(record: dict, codes: list[str]) -> bool:
@@ -169,7 +193,17 @@ def _notes_pair(record: dict, codes: list[str]) -> bool:
     alternative: both courses together replace SPAN C180")."""
     for n in record.get("notes") or []:
         t = str(n)
-        if PAIRED_NOTE.search(t) and all(str(c) in t for c in codes):
+        if PAIRED_NOTE.search(t) and all(_mentions(t, c) for c in codes):
+            return True
+    return False
+
+
+def _notes_or(record: dict, codes: list[str]) -> bool:
+    """A record note naming any member and saying "or": the members are choices, so a sum inside the row's printed
+    range is no evidence of a pair."""
+    for n in record.get("notes") or []:
+        t = str(n)
+        if OR_NOTE.search(t) and any(_mentions(t, c) for c in codes):
             return True
     return False
 
@@ -223,7 +257,10 @@ def _code(a) -> str:
 def paired_group(record: dict, c: dict, units_of=None) -> tuple[str | None, list]:
     """("state", units per member) or ("row", []) when the row's blank alternatives are one group taken together in
     its place, else (None, []). "state": the state's course file holds every member and their units add up to the
-    row's units, or fall inside the row's printed range. "row": a record note says so, and the file does not."""
+    row's units, or fall inside the row's printed range where no record note says "or" about a member and each
+    member alone carries less than the row's low figure (S683, #3508 round two's item 1: College of the Desert's
+    work-experience rows, AGEH 095A 1-4 with BUAC 095A and CIS 095A at 1 each, are three choices; at 41319 no note
+    says so, and each member is worth the row's 1). "row": a record note says so, and the file does not."""
     blanks = [a for a in c.get("alternatives") or [] if _blank(a)]
     if len(blanks) < 2:
         return None, []
@@ -231,13 +268,63 @@ def paired_group(record: dict, c: dict, units_of=None) -> tuple[str | None, list
     hi = S._num(c.get("units_max"))
     hi = lo if hi is None else hi
     su = [units_of(_code(a)) if units_of else None for a in blanks]
+    codes = [_code(a) for a in blanks]
     if lo is not None and all(u is not None for u in su):
         tot = sum(su)
-        if abs(tot - lo) <= TOL or lo - TOL <= tot <= hi + TOL:
+        in_range = (lo - TOL <= tot <= hi + TOL and not _notes_or(record, codes)
+                    and all(u < lo - TOL for u in su))
+        if abs(tot - lo) <= TOL or in_range:
             return "state", su
-    if _notes_pair(record, [_code(a) for a in blanks]):
+    if _notes_pair(record, codes):
         return "row", []
     return None, []
+
+
+def lab_pair(record: dict, c: dict, units_of=None) -> tuple[str | None, int | None, list]:
+    """(kind, j, units) when the row's alternative j carries units and alternative j + 1 is its own lab printed with
+    no units (BIO 60, then BIO 60L), and a record note names the two as taken together: the lecture's figure is the
+    pair's (Long Beach City 44747: "BIO 60 & 60L is a combined option (both courses together, 5 units printed for the
+    pair)"; S683, #3508 round two's item 2). "state": the state's course file holds both and they add up to that
+    figure, and each carries its own; "row": the file does not, and the pair carries the figure. Else (None, None,
+    [])."""
+    alts = c.get("alternatives") or []
+    for j in range(len(alts) - 1):
+        a, b = alts[j], alts[j + 1]
+        if not (isinstance(a, dict) and a.get("code") and not _unitless(a) and not a.get("together")
+                and _blank(b) and _code_key(_code(b)) == _code_key(a["code"]) + "L"):
+            continue
+        if not _notes_pair(record, [a["code"], _code(b)]):
+            continue
+        lo = S._num(a.get("units"))
+        hi = S._num(a.get("units_max"))
+        su = [units_of(a["code"]), units_of(_code(b))] if units_of else [None, None]
+        if lo is not None and hi in (None, lo) and all(u is not None for u in su) and abs(sum(su) - lo) <= TOL:
+            return "state", j, su
+        return "row", j, []
+    return None, None, []
+
+
+def state_differs(before: dict, after: dict, units_of) -> list[dict]:
+    """Every course or alternative whose units a rule wrote (they differ between the two records) where the state's
+    course file holds a figure outside what was written: [{"code", "written": [lo, hi], "state"}]. A member that
+    carries no units of its own under its group's figure is no write here (S683, #3508 round two's item 2: Long Beach
+    City 44747's BIO 60L read 4-5 units against the file's 1). A written range holds the file's figure when the figure
+    lies inside it (ANAT 41 at 4-5, the file's 5)."""
+    out = []
+    for b, ob in zip(after.get("blocks") or [], before.get("blocks") or []):
+        for c, oc in zip(b.get("courses") or [], ob.get("courses") or []):
+            for a, oa in [(c, oc)] + list(zip(c.get("alternatives") or [], oc.get("alternatives") or [])):
+                if not isinstance(a, dict):
+                    continue
+                od = oa if isinstance(oa, dict) else {"code": oa}
+                lo, hi = S._num(a.get("units")), S._num(a.get("units_max"))
+                if lo is None or (lo, hi) == (S._num(od.get("units")), S._num(od.get("units_max"))):
+                    continue
+                v = units_of(a.get("code")) if units_of else None
+                hi = lo if hi is None else hi
+                if v is not None and not (lo - TOL <= v <= hi + TOL):
+                    out.append({"code": a.get("code"), "written": [lo, hi], "state": v})
+    return out
 
 
 def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]:
@@ -279,8 +366,32 @@ def a4_blank_alternative(record: dict, units_of=None) -> tuple[dict, list[dict]]
                 prev = c
                 continue
             if own is not None:
+                lkind, lj, lsu = lab_pair(out, c, units_of)
                 alts = []
-                for a in c.get("alternatives") or []:
+                for j, a in enumerate(c.get("alternatives") or []):
+                    if lkind and j in (lj, lj + 1):
+                        if j == lj:
+                            lab_of, fig = _code(c["alternatives"][lj + 1]), (a.get("units"), a.get("units_max"))
+                            label = "%s + %s" % (a["code"], lab_of)
+                        base = dict(a) if isinstance(a, dict) else {
+                            "code": a, "catalog_addition": bool(c.get("catalog_addition"))}
+                        if lkind == "state":
+                            base.update(units=lsu[j - lj], units_max=None, together=label)
+                        else:
+                            base.update(units=None, units_max=None, together=label,
+                                        together_units=fig[0], together_units_max=fig[1])
+                        alts.append(base)
+                        if j == lj + 1:
+                            lec = c["alternatives"][lj]["code"]
+                            words = ("%s and its lab %s together are one option in place of %s, as the record's note "
+                                     "says: %s" % (lec, lab_of, c.get("code"),
+                                                   "each carries its own units from the state's course file (%s; %g "
+                                                   "in all)" % (", ".join("%g" % u for u in lsu), sum(lsu))
+                                                   if lkind == "state" else
+                                                   "the state's course file does not confirm each one's units, so the "
+                                                   "pair carries the %g printed for it" % S._num(fig[0])))
+                            notes.append({"rule": "A4", "code": label, "together": lkind, "words": words})
+                        continue
                     if isinstance(a, dict) and a.get("code") and _unitless(a):
                         a = dict(a, units=c.get("units"), units_max=c.get("units_max"))
                         notes.append({"rule": "A4", "code": a["code"],
@@ -442,6 +553,11 @@ def judge(filed: dict, ge_totals: dict, state: dict | None = None) -> dict:
         if not exact(filed, new):
             tried.append(rule + " not exact")
             continue
+        if state_differs(rec, new, units_of):
+            # The per-course self-check (S683, #3508 round two's item 2): a total that lands proves nothing about
+            # a course's own units (p-self-check-on-totals-misses-per-course-units-s681).
+            tried.append(rule + " writes units the state's course file does not hold")
+            continue
         got = arith(new, award)
         if lands(got):
             return {"rule": rule, "record": new, "notes": notes, "arith": got}
@@ -471,7 +587,7 @@ def self_check(files: list[dict], ge_totals: dict, state: dict | None = None) ->
     right = the correction applies and the record still lands exactly; wrong = it applies, the sum is exact,
     and the record stops landing. A correction is applied only behind lands(), so a wrong
     here is a record the rule would break as a bare adding-up rule, never one it writes."""
-    out = {r: {"applies": 0, "right": 0, "wrong": 0, "not_exact": 0} for r in RULES if r != "A1"}
+    out = {r: {"applies": 0, "right": 0, "wrong": 0, "not_exact": 0, "state_differs": 0} for r in RULES if r != "A1"}
     for f in files:
         a = (f.get("score") or {}).get("arithmetic") or {}
         rec, award = f.get("record") or {}, f.get("award")
@@ -488,8 +604,43 @@ def self_check(files: list[dict], ge_totals: dict, state: dict | None = None) ->
             if not exact(f, new):
                 out[rule]["not_exact"] += 1
                 continue
+            if state_differs(rec, new, units_of):
+                out[rule]["state_differs"] += 1
+                continue
             out[rule]["right" if lands(arith(new, award)) else "wrong"] += 1
     return out
+
+
+def pair_recall(files: list[dict], state: dict | None = None) -> dict:
+    """The pair call scored against the record notes (S683, #3508 round two's item 1; the old self-recall compared
+    the rule with itself). For every row with two or more blank alternatives, or a lecture and its blank lab among
+    them, on every filed record: the held answer is "pair" where a note names every member as taken together, "or"
+    where a note names a member and says "or" and none names the pair, else none. right = the call agrees with a held
+    answer; wrong = it does not; a call on a row with no held answer is "unheld". {"kind": Counter, "wrong": [...]}"""
+    tally, wrong = collections.Counter(), []
+    for f in files:
+        rec = f.get("record") or {}
+        units_of = units_at(f.get("college"), state)
+        for b in rec.get("blocks") or []:
+            for c in b.get("courses") or []:
+                if S._num(c.get("units")) is None:
+                    continue
+                blanks = [_code(a) for a in c.get("alternatives") or [] if _blank(a)]
+                calls = []
+                if len(blanks) >= 2:
+                    calls.append((paired_group(rec, c, units_of)[0], blanks))
+                lk, lj, _ = lab_pair(rec, c, units_of)
+                if lk:
+                    calls.append((lk, [c["alternatives"][lj]["code"], _code(c["alternatives"][lj + 1])]))
+                for kind, codes in calls:
+                    held_ans = ("pair" if _notes_pair(rec, codes) else "or" if _notes_or(rec, codes) else None)
+                    call = "pair" if kind else "or"
+                    k = "unheld" if held_ans is None else ("right" if call == held_ans else "wrong")
+                    tally["%s %s" % (call, k)] += 1
+                    if k == "wrong":
+                        wrong.append("%s %s %s (%s, held %s)" % (f.get("college"), f.get("control_number"),
+                                                                 " + ".join(codes), call, held_ans))
+    return {"tally": dict(sorted(tally.items())), "wrong": wrong}
 
 
 def _load_images(colleges: set) -> dict:
@@ -525,9 +676,16 @@ def corrections(receipt_path: str, write: bool, skip: tuple = (), state: dict | 
         orig = copy.deepcopy(filed["record"])
         orig["blocks"] = copy.deepcopy(r["before_image"]["record"]["blocks"])
         orig["program"] = copy.deepcopy(r["before_image"]["record"]["program"])
-        new, notes = a4_blank_alternative(orig, units_at(r["college"], state))
+        units_of = units_at(r["college"], state)
+        new, notes = a4_blank_alternative(orig, units_of)
         if new.get("blocks") == filed["record"].get("blocks"):
             continue
+        # The per-course self-check on what this write writes: every unit that moves from the row the earlier plan
+        # wrote must agree with the state's course file (S683, #3508 round two's item 2).
+        bad = state_differs(filed["record"], new, units_of)
+        if bad:
+            raise SystemExit("%s %s: the correction writes units the state's course file does not hold: %s" % (
+                r["college"], r["control_number"], "; ".join("%(code)s %(written)s against %(state)s" % x for x in bad)))
         got = arith(new, filed.get("award"))
         if not lands(got):
             raise SystemExit("%s %s: the paired-alternative rule does not land" % (r["college"], r["control_number"]))
@@ -540,6 +698,7 @@ def corrections(receipt_path: str, write: bool, skip: tuple = (), state: dict | 
                     "before": {"status": old.get("status"), "computed": old.get("computed"), "stated": old.get("stated")},
                     "after": {"status": got.get("status"), "computed": got.get("computed"), "stated": got.get("stated")},
                     "notes": [n["words"] for n in notes if n.get("together")],
+                    "state_differs_left": state_differs(r["before_image"]["record"], new, units_of),
                     "path": r["path"],
                     "before_image": {"record": r["after_image"]["record"], "checks": r["after_image"]["checks"]}})
         if write:
@@ -551,6 +710,20 @@ def corrections(receipt_path: str, write: bool, skip: tuple = (), state: dict | 
             with open(path, "w", encoding="utf-8") as fh:
                 json.dump(filed, fh, ensure_ascii=False, indent=1)
                 fh.write("\n")
+    return out
+
+
+def applied_differs(receipt_path: str, state: dict | None = None) -> list[dict]:
+    """The units an applied plan's A4 rows wrote that the state's course file does not hold, read from the receipt's
+    before- and after-images: the later task's worklist (#3508 round two's item 4), listed and never planned here."""
+    with open(receipt_path, encoding="utf-8") as fh:
+        rc = json.load(fh)
+    out = []
+    for r in rc["records"]:
+        if r["rule"] != "A4" or not r.get("before_image") or not r.get("after_image"):
+            continue
+        for x in state_differs(r["before_image"]["record"], r["after_image"]["record"], units_at(r["college"], state)):
+            out.append(dict(x, college=r["college"], control_number=r["control_number"]))
     return out
 
 
@@ -942,8 +1115,21 @@ def main(argv=None) -> int:
     print("moved %d at %d colleges: %s" % (len(r["moved"]), r["colleges"],
                                            ", ".join("%s %d" % kv for kv in sorted(r["by_rule"].items()))))
     for rule, c in r["self_check"].items():
-        print("self-check %s on records already equal: applies %d, right %d, wrong %d, not exact %d"
-              % (rule, c["applies"], c["right"], c["wrong"], c["not_exact"]))
+        print("self-check %s on records already equal: applies %d, right %d, wrong %d, not exact %d, units the state "
+              "does not hold %d" % (rule, c["applies"], c["right"], c["wrong"], c["not_exact"], c["state_differs"]))
+    pr = pair_recall([d for _, d in load_files(tuple(a.skip_college))])
+    print("pair call against the record notes: %s" % ", ".join("%s %d" % kv for kv in pr["tally"].items()))
+    if pr["wrong"]:
+        raise SystemExit("the pair call disagrees with %d record notes: %s" % (len(pr["wrong"]), pr["wrong"][:5]))
+    left = []
+    if a.correct_from:
+        # A row this plan corrects keeps only what its correction leaves; every other applied row, what it wrote.
+        here = {(m["college"], str(m["control_number"])): m for m in r["moved"] if m.get("corrects")}
+        left = [x for x in applied_differs(a.correct_from) if (x["college"], str(x["control_number"])) not in here]
+        left += [dict(x, college=m["college"], control_number=m["control_number"]) for m in here.values()
+                 for x in m["state_differs_left"]]
+        print("units %s's A4 rows wrote that the state's file does not hold, left for a later task: %d at %d records"
+              % (os.path.basename(a.correct_from), len(left), len({(x["college"], x["control_number"]) for x in left})))
     if a.dry_run or not r["moved"]:
         return 0
     day = time.strftime("%Y-%m-%d", time.gmtime())
@@ -955,6 +1141,7 @@ def main(argv=None) -> int:
                "self_check_scope": ("the held answers at the colleges named in only_colleges" if only
                                     else "the held answers outside the collection lane"),
                "rescored": len(r["moved"]), "by_rule": r["by_rule"], "self_check": r["self_check"],
+               "pair_recall": pr, "state_differs_left": left,
                "left_as_filed": r["left"], "ge_totals": r["ge_totals"], "records": r["moved"],
                "plan": {"checks_only": [m["i"] for m in r["moved"] if m["rule"] in CHECKS_ONLY],
                         "full_row": [m["i"] for m in r["moved"] if m["rule"] not in CHECKS_ONLY]},
