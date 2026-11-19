@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    26.0,
+    29.0,
     32.0
    ],
    "stated": [
@@ -72,9 +72,8 @@
     32.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 26.0-32.0; the catalog states 29.0-32.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -193,13 +192,15 @@
       "alternatives": [
        {
         "code": "STAT C1000H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        },
        {
         "code": "STAT C1000E",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        }
       ],
       "catalog_addition": false
@@ -211,18 +212,23 @@
       "alternatives": [
        {
         "code": "ANAT 41",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        },
        {
         "code": "BIO 60",
-        "units": 5,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "BIO 60 + BIO 60L"
        },
        {
         "code": "BIO 60L",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "BIO 60 + BIO 60L"
        },
        {
         "code": "PHYSI 1",
@@ -244,13 +250,15 @@
        },
        {
         "code": "ECON C2002",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "ECON C2002H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -396,5 +404,44 @@
    "One program student learning outcome printed; no careers named (only 'entry-level employment')."
   ]
  },
- "extracted_run": "39891611701"
+ "extracted_run": "39891611701",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "STAT C1000H",
+   "words": "STAT C1000H, printed as an alternative to STAT C1000 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "STAT C1000E",
+   "words": "STAT C1000E, printed as an alternative to STAT C1000 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ANAT 41",
+   "words": "ANAT 41, printed as an alternative to ANAT 1 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "BIO 60 + BIO 60L",
+   "together": "state",
+   "words": "BIO 60 and its lab BIO 60L together are one option in place of ANAT 1, as the record's note says: each carries its own units from the state's course file (4, 1; 5 in all)",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ECON C2002",
+   "words": "ECON C2002, printed as an alternative to ECON C2001 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ECON C2002H",
+   "words": "ECON C2002H, printed as an alternative to ECON C2001 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

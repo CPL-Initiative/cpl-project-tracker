@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_cr_wording_rule.sql",
+ "name": "s687_cr_wording_rule",
+ "version": "20261119211846",
+ "sha256": "4a936399c64c6c9eb7b6d806cec930d28f129eeba4b7d7b614e1a50cf1a51773",
+ "run": "44617202998",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_summary_check\\\"\\nDETAIL:  Failing row contains (30b8c60a-0c99-4886-8073-487f0f8ab4cc, 2026-11-19 21:18:46.535786+00, 2026-11-19 21:18:46.535786+00, decision, Sam Lee, 2026-11-19 12:42 PM PT, in his words, relayed by COBIx ..., null, cpl, t, null, {common-cr-reference,commons,sam-ruling,s687}, Sam Lee, 2026-11-19 12:42 PM PT, relayed by COBIx on #3566, {}, {}, proposed, null, internal, 2026-11-19, SkyPipit (S687), 2026-11-19 21:18:46.535786+00, Sam Lee, null, r-cr-college-wording-rule-yes-sam-2026-11-19, null, Sam: yes on the college wording rule for the 36 CR groups).\\n\"}"
+}

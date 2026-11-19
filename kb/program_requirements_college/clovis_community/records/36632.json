@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10430,
-    "output_tokens": 2112,
+    "output_tokens": 2488,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2112,
+  "output_tokens": 2488,
   "output_tokens_details": {
-   "thinking_tokens": 645
+   "thinking_tokens": 995
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08396,
- "ms": 16911,
- "seconds": 17.3,
+ "cost_usd": 0.09148,
+ "ms": 20279,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
@@ -55,11 +55,9 @@
     "ANTHRO1L",
     "PSYC42"
    ],
-   "unexplained": [
-    "ANTHRO13"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
    "count": 2,
@@ -68,9 +66,10 @@
     "ANTHC1000"
    ],
    "flagged": [
+    "ANTH13",
     "ANTHC1000"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -85,8 +84,7 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   "short_high": true
   },
   "repeated": {
    "codes": [],
@@ -113,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -280,7 +278,7 @@
       "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "GEOG 6",
@@ -296,7 +294,11 @@
   "missing_explained": [
    {
     "code": "ANTHRO 1",
-    "why": "catalog prints ANTH C1000 Introduction to Biological Anthropology in its place"
+    "why": "not in the text; catalog prints ANTH C1000 (Introduction to Biological Anthropology) instead"
+   },
+   {
+    "code": "ANTHRO 13",
+    "why": "not in the text under this code; catalog prints ANTH 13 with the same title"
    },
    {
     "code": "ANTHRO 1L",
@@ -308,11 +310,29 @@
    }
   ],
   "notes": [
-   "List B also allows 'Any course from List A not already used' (3-4 units); List C also allows 'Any course from List A or List B not already used' (3-4 units). These are not recorded as separate entries.",
-   "The 60 semester unit requirement is the standard AA-T boilerplate sentence, not recorded as degree_total.",
-   "ANTH C1000 (Introduction to Biological Anthropology) is not in the closed list; the closed list has ANTHRO 1 Biological Anthropology, likely its predecessor. The Art History section later lists the same title as ANTH C1001, so the code should be checked.",
-   "Closed-list codes ANTH2, ANTH3, ANTH4 matched to catalog ANTH 2, ANTH 3, ANTH 4."
+   "List B also allows 'Any course from List A not already used' (3-4 units); List C allows 'Any course from List A or List B not already used' (3-4 units). These are not recorded as separate courses.",
+   "ANTH 13 and ANTH C1000 are marked catalog additions because the closed list stores ANTHRO 13 and ANTHRO 1 under a different subject code; a reviewer may treat them as the same courses.",
+   "The 60-unit figure is the general AA-T requirement sentence, so degree_total is left null.",
+   "PSYC 42, BA 23 and STAT C1000 also appear in the preceding program's List B (Total Units for the Major: 18-19), which was not read for this award."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "38df58a7b928264a",
+ "source_codes": [
+  "ANTH2",
+  "ANTH3",
+  "ANTH4",
+  "ANTHRO1",
+  "BA23",
+  "BIOL20",
+  "GEOG10",
+  "GEOG6",
+  "GEOL1",
+  "GEOL9",
+  "PSYC42",
+  "PSYC45",
+  "STATC1000"
+ ],
+ "source_coverage": 0.867
 }

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T03:20:11Z",
-  "session": 679,
-  "moniker": "SkyKinglet",
+  "written_at": "2026-11-19T21:34:24Z",
+  "session": 687,
+  "moniker": "SkyPipit",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_680_handoff.md",
+  "handoff": "docs/session_688_handoff.md",
   "next_step": {
-    "title": "Golden West's objectives reread",
-    "text": "Step 11 for Nov 18: Golden West's course objectives are the day's full read, on the Coast district host. Then the run that tests the general education slot on captured pages, so the slot rule can be turned on, and the switch that holds back programs with no state course list."
+    "title": "A prior-year read for College of the Desert's eight, then the reread plan's third ten",
+    "text": "The next session reads the 2025-26 catalog for the eight College of the Desert programs the 2026-27 catalog no longer prints, so the discontinued check can flag or clear them, then rereads the plan's third ten colleges one dispatch at a time, and rebuilds what CPL Pathways and Sierra show after those posts."
   },
   "calls": [
     {
@@ -338,6 +338,134 @@
   },
   "changes": [
     {
+      "at": "2026-11-19T18:07:00Z",
+      "text": "Rereads posted and loaded at nine colleges, American River to MiraCosta: 164 program records replaced by a better read and 45 added, after a live read of every row they touched."
+    },
+    {
+      "at": "2026-11-19T19:47:00Z",
+      "text": "What CPL Pathways and Sierra show was rebuilt once, 18,380 program statements under one build, and this time the run confirmed every write by its own read."
+    },
+    {
+      "at": "2026-11-19T20:08:00Z",
+      "text": "The harvest gap census counts 5,145 programs still to collect, down from 5,203. It counts a record collected with its gap named as collected, so its figure is below the 5,238 active programs that do not yet pass every check (15,044 of 20,282 pass)."
+    },
+    {
+      "at": "2026-11-19T20:38:00Z",
+      "text": "Eight College of the Desert programs are not printed in its 2026-27 catalog; they are listed for a prior-year check, not marked discontinued."
+    },
+    {
+      "at": "2026-11-19T14:31:00Z",
+      "text": "The rebuild of what CPL Pathways and Sierra show ran once with every record of the last two nights: 18,323 program statements under one build, 830 of them changed; a closing count of the live table confirmed it."
+    },
+    {
+      "at": "2026-11-19T13:57:00Z",
+      "text": "The keep-the-better step now accepts a re-read on a page headed only Requirements or Course List when the page is the program's own; 43 good re-reads at 12 colleges were set aside before and now return."
+    },
+    {
+      "at": "2026-11-19T13:57:00Z",
+      "text": "The course outline queue works again: it had read only the newest census file and showed no college to read; three colleges were indexed tonight, and none loaded, since each needs a reader change."
+    },
+    {
+      "at": "2026-11-19T13:38:00Z",
+      "text": "The gap census found 5,203 programs left to collect, 192 fewer than on Nov 18."
+    },
+    {
+      "at": "2026-11-19T13:38:00Z",
+      "text": "Southwestern's paid read collected 24 programs for $2.56, 6 of them new."
+    },
+    {
+      "at": "2026-11-19T12:38:00Z",
+      "text": "The second reread batch finished at ten colleges: 87 program rows replaced by a better read and 42 inserted, from 18,312 rows to 18,354, every load reporting no error; the filed run costs came to $16.08."
+    },
+    {
+      "at": "2026-11-19T12:22:00Z",
+      "text": "Crafton Hills' course outlines loaded: 1,123 rows, 557 learning outcomes and 566 course objectives, read from all 566 pages, with no error."
+    },
+    {
+      "at": "2026-11-19T12:02:00Z",
+      "text": "The rebuild of what CPL Pathways and Sierra show was held for the next session, so that one build carries every record collected tonight."
+    },
+    {
+      "at": "2026-11-19T11:58:00Z",
+      "text": "The step that keeps the better of a filed record and its re-read now reads the checked records first, holds a live record the repository lacks for a person, and takes only five-digit control numbers (PR 3547)."
+    },
+    {
+      "at": "2026-11-19T11:34:00Z",
+      "text": "Two re-read program records were labeled again with their named gap: Santa Rosa Junior 44788 prints no units, and City College of San Francisco 41049 prints figures that differ from the catalog (PR 3548)."
+    },
+    {
+      "at": "2026-11-19T11:08:00Z",
+      "text": "College of the Siskiyous' course outlines loaded: 366 rows, 247 learning outcomes and 119 course objectives, read from all 315 pages, with no error."
+    },
+    {
+      "at": "2026-11-19T10:48:00Z",
+      "text": "Last night's rereads at 15 colleges merged (PR 3544) once two tests on the main branch were repaired: five new issuers registered, and City College of San Francisco's COMM for CMST course alias kept."
+    },
+    {
+      "at": "2026-11-19T09:05:04Z",
+      "text": "Rereads and loads at 15 colleges: 133 program rows replaced by a better read and 72 inserted, from 18,240 rows to 18,312. Every load reported no error; the filed run costs came to $25.20."
+    },
+    {
+      "at": "2026-11-19T08:05:00Z",
+      "text": "Chabot College's course outlines loaded again with the fixed reader: 1,013 learning outcomes and 1,013 course objectives, filed as two kinds."
+    },
+    {
+      "at": "2026-11-19T09:19:00Z",
+      "text": "Recorded at the checkpoint: earlier tonight two reviewed plans applied on Sam's go of Nov 18, 99 records labeled with a named gap and 14 course unit rows corrected."
+    },
+    {
+      "at": "2026-11-18T23:08:57Z",
+      "text": "The reader's page checks merged (PR 3514): they kept 10,046 of 13,243 pages a program was read from and accepted 22 sister pages. A reread plan lists 444 records at 73 colleges, about $21.38, the largest college $3.15. No record changed."
+    },
+    {
+      "at": "2026-11-18T14:20:00Z",
+      "text": "Nothing in the harvest changed this run. The stop from the 11:06 run still held, so no read, load or record write started."
+    },
+    {
+      "at": "2026-11-18T11:38:00Z",
+      "text": "The night's wave merged (PR 3509): the program pages' first build through the private store, the Allan Hancock and Santiago Canyon outline rows, and Lassen's five records."
+    },
+    {
+      "at": "2026-11-18T11:06:00Z",
+      "text": "Chabot's outline load filed each course's objectives as its learning outcomes, so the night started no new read, load or record write, and the 1,013 rows were undone at 11:32 (run 44292682081); no Chabot rows remain. The reader is fixed on PR 3492 and Chabot will be read again."
+    },
+    {
+      "at": "2026-11-18T10:42:00Z",
+      "text": "The program pages were rebuilt for the first time through the private store: build 545de21a6edc, 18,209 records written, none failed (run 44286209178)."
+    },
+    {
+      "at": "2026-11-18T10:36:00Z",
+      "text": "Lassen's five reread records are live: two pass, and three are collected with the gap named, two at 58 of 60 units and one at 54 of 60. Three held records were left as they were."
+    },
+    {
+      "at": "2026-11-18T10:27:00Z",
+      "text": "Course outlines were loaded at Allan Hancock, 1,772 rows, and Santiago Canyon, 498 rows, 2,270 in all."
+    },
+    {
+      "at": "2026-11-18T09:47:00Z",
+      "text": "The night's wave merged (PR 3504): the record copies and old audit reports now live outside the repository, the size check runs on every pull request, the plan for paid rereads, and the four colleges' outline rows. The repository download fell from about 2.0 GB to 438.6 MB."
+    },
+    {
+      "at": "2026-11-18T09:16:00Z",
+      "text": "75 program records that list a required course with no units are stored with the gap named and a confidence score (PR 3497). The read first was clean and the write landed, run 44273638344, 75 rows. Next its undo is rebuilt from the rows the write returned."
+    },
+    {
+      "at": "2026-11-18T09:00:00Z",
+      "text": "Four colleges' course outlines were loaded: Diablo Valley 946 rows, Los Medanos 483, College of the Redwoods 443 and Golden West's 580 course objectives, 2,452 in all, so the objectives reread plan is done. Antelope Valley's trial read none of 12 pages and is held, as College of Marin is."
+    },
+    {
+      "at": "2026-11-18T08:50:00Z",
+      "text": "The plan for paid rereads (PR 3502): no reread runs without an input aimed at the list it should fix. Two records have a changed page, for 20 cents. 54 records whose catalog figures do not add up, or that print no units for a required course, take a named gap with no page read."
+    },
+    {
+      "at": "2026-11-18T08:23:00Z",
+      "text": "Units rules A1, A4 and A5 rescored 56 program records (PR 3496): 17 checks only, run 44259625861, and 39 full rows, run 44261575737, after a clean read first. None was marked checked by a person. 49 active programs move from failing to passing. Rule A6 stays off. The undo is written and not run."
+    },
+    {
+      "at": "2026-11-18T08:22:00Z",
+      "text": "Nine discontinued programs at five colleges are flagged out of the gap count (PR 3491), with no data write."
+    },
+    {
       "at": "2026-11-18T02:41:00Z",
       "text": "Sam's three rulings of Nov 17 are carried out (PR 3478) and applied to the filed records (PR 3481, run 44224714543, after a clean read first). 243 records now pass their unit check: 78 local degrees whose general education overlaps the major, at 21 colleges, and 165 records whose total meets the low end of the catalog's printed unit range, at 56 colleges. No record was marked checked. The undo is written and not run."
     },
@@ -364,58 +492,6 @@
     {
       "at": "2026-11-17T14:30:00Z",
       "text": "Six colleges read again so that programs listed without their own requirements take back the catalog page another program had been read from: Cabrillo, College of San Mateo, Crafton Hills, Feather River, Gavilan and Lemoore. 22 more programs now have complete requirements."
-    },
-    {
-      "at": "2026-11-17T10:40:00Z",
-      "text": "Norco's Music Industry Studies: Performance degree and certificate now add up: each ensemble option counts its courses the number of times its own heading says, so every option comes to its printed 8 units."
-    },
-    {
-      "at": "2026-11-17T09:03:00Z",
-      "text": "Three Riverside City music certificates now add up: Piano Performance, Jazz Performance and Music Performance print a course once for each semester it is taken, and the reading now counts it that many times. Norco's Music Industry Studies: Performance counts its two repeated applied music courses twice."
-    },
-    {
-      "at": "2026-11-17T06:46:00Z",
-      "text": "Riverside City's programs read again for the RCCD pilot: Entrepreneurship now adds up, and 29 unchecked records were replaced from the fresh read."
-    },
-    {
-      "at": "2026-11-17T06:52:00Z",
-      "text": "The RCCD general education page read: Area 7, Lifelong Learning and Self-Development, is 2 units, and basic training counts 2 of its 5 units there."
-    },
-    {
-      "at": "2026-11-17T03:07:00Z",
-      "text": "Coastline's course objectives loaded: 522 courses, read from 555 outline pages."
-    },
-    {
-      "at": "2026-11-17T03:19:00Z",
-      "text": "Skyline's programs read again under the page yield: Dance and Advanced Engine Performance take back their own pages, and six records read from another program's page leave the filing."
-    },
-    {
-      "at": "2026-11-17T03:28:00Z",
-      "text": "The one live Skyline record of those six, Asian Engine Performance Technology, was removed, with its full row kept so it can be restored."
-    },
-    {
-      "at": "2026-11-17T03:36:00Z",
-      "text": "Rio Hondo's program 32258 and Santa Ana's 32062 and 32989 now read from each college's own 2025-2026 catalog, and all three pass the machine checks."
-    },
-    {
-      "at": "2026-11-16T23:45:00Z",
-      "text": "Of 20 programs at 14 colleges whose original version was read from its newer 2.0 page, the 8 Mathematics and Physics originals are being read from each college's 2025-2026 catalog. The 12 Business Administration and Communication Studies originals keep their records, because their 2.0 versions are older than that catalog."
-    },
-    {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "Gavilan's Mathematics (31444) and Physics (33047) now carry records read from their own 2025-2026 catalog: every course placed, none invented, the units add up. Two records were replaced and none held."
-    },
-    {
-      "at": "2026-11-16T22:15:00Z",
-      "text": "When a program with no state course list finds its page held by another program whose record from that page fails the checks, the page now goes to the program it belongs to. Thirteen pages at eight colleges move this way, and no passing record lost its page."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "Riverside City's Business Administration (30578) and Communication Studies (33829) keep their current records. Their original versions are printed only in 2023-2024 or older PDF catalogs, and no reader is being built for two records."
-    },
-    {
-      "at": "2026-11-16T18:30:00Z",
-      "text": "When the catalog lookup finds a program page, the page is read for requirements only if it names at least one course. Of 19,137 filed records, nine name exactly one course, and all nine are real programs, so a higher minimum would turn real programs away."
     }
   ],
   "headline": [
@@ -664,16 +740,28 @@
       "active": 20282,
       "complete": 14632,
       "colleges": 118
+    },
+    {
+      "day": "2026-11-18",
+      "active": 20282,
+      "complete": 14887,
+      "colleges": 118
+    },
+    {
+      "day": "2026-11-19",
+      "active": 20282,
+      "complete": 15044,
+      "colleges": 118
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-17T15:12:00Z"
+    "at": "2026-11-20T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-17",
-    "gaps": 3212,
+    "day": "2026-11-19",
+    "gaps": 3443,
     "parts": {
       "links": {
         "catalog": [
@@ -690,25 +778,25 @@
         ]
       },
       "roep": [
-        19961,
+        20282,
         20282
       ],
       "coci": [
-        16753,
+        16903,
         20282
       ],
       "outcomes": {
         "slo": [
-          13293,
+          17246,
           88736
         ],
         "plo": [
-          16753,
+          16903,
           20282
         ]
       },
       "careers": [
-        15743,
+        15904,
         20282
       ]
     }

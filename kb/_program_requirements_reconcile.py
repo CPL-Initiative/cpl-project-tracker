@@ -226,7 +226,8 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
     catalog year: the 2026-11-17 rulings score the record before and after their change, so without closed they
     change nothing."""
     conf = (steps if steps is not None else load_steps()).get(college) or {}
-    out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours)
+    out, notes = _college_steps(record, text, college, award, steps, course_units, course_hours,
+                                control_number=control_number)
     out, more = statewide_cal_getc(out, text, award, title=title, siblings=siblings, conf=conf,
                                    control_number=control_number)
     out, ruled = statewide_rulings(out, text, college, award, closed, steps=steps, year=year)
@@ -797,9 +798,10 @@ def statewide_note_stands(note: dict, record: dict) -> bool:
 
 def _college_steps(record: dict, text: str | None, college: str, award: str | None = None,
                    steps: dict | None = None, course_units: dict | None = None,
-                   course_hours: dict | None = None) -> tuple[dict, list[dict]]:
+                   course_hours: dict | None = None, control_number: str | None = None) -> tuple[dict, list[dict]]:
     """The record with the college's reconcile steps applied to its page text, and
     a note per change: the field, what it was, what it is now, and the words.
+    control_number is the record's: a set step's hold names the records it never touches.
     course_units is the page's own course data where the reader kept it
     ({"call": the vendor's address, "units": {code: [min, max]}}, cd_pages); course_hours the
     same answer's hours for a noncredit course ({"call": ..., "hours": {code: [min, max]}}, S484)."""
@@ -1223,6 +1225,11 @@ def _college_steps(record: dict, text: str | None, college: str, award: str | No
             # A figure the catalog prints once for every degree, on its own page (Cerritos's general
             # education pattern): set where the program page's words point to it, citing both.
             if not _empty(prog.get(field)):
+                continue
+            # A record the step holds by name (S680, Lassen: 31297, the legacy number of 42300's "2.0" section,
+            # and the overlap pair 35106 and 41912), {"<control number>": "<why>"}, as statewide_cal_getc's hold
+            # is: the run itself leaves it alone, so no rebuilt apply plan or reconcile run applies it again.
+            if control_number and str(control_number) in (st.get("hold") or {}):
                 continue
             if st.get("only_without") and not _empty(prog.get(st["only_without"])):
                 continue

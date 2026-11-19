@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8491,
-    "output_tokens": 2045,
+    "output_tokens": 2303,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2045,
+  "output_tokens": 2303,
   "output_tokens_details": {
-   "thinking_tokens": 950
+   "thinking_tokens": 1160
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07486,
- "ms": 19029,
- "seconds": 19.5,
+ "cost_usd": 0.08002,
+ "ms": 21463,
+ "seconds": 21.7,
  "parts": null,
  "error": null,
  "score": {
@@ -248,17 +248,31 @@
   "missing_explained": [
    {
     "code": "CMST 12",
-    "why": "not in the text under this code; the catalog prints COMM 12 Fundamentals of Oral Communication, likely the same course renumbered"
+    "why": "catalog prints this course as COMM 12 (Fundamentals of Oral Communication); recorded under that code"
    }
   ],
   "notes": [
-   "The section prints conflicting totals: 'Total: 34.0' under the heading, but 'Required courses: Units 32.0' and 'Total: 32.0' at the end of the table. The listed courses sum to 32 (29 required + 3 from the choice), so total_units records 32; reviewer should check.",
-   "'Required courses: Units 32.0' heads the whole table (including the one-of choice), so it is not recorded as the stated total of the 'all' block.",
-   "The oral communication choice also allows satisfying the requirement by passing an accredited college-level foreign language or oral presentation course (no code given).",
-   "Closed-list codes OH50 and OH56 are matched to the catalog's O H 50 and O H 56.",
-   "No career titles are named; the summary mentions only entry-level employment or creating a business in landscape design."
+   "The section heading prints 'Total: 34.0', but the requirements list prints 'Required courses: Units 32.0' and ends with 'Total: 32.0'; the listed courses also add up to 32. total_units records the requirements total of 32. A reviewer should check which figure is correct.",
+   "'Required courses: Units 32.0' heads the whole list, including the 'One of the following' choice, so the all-courses block has stated null.",
+   "Closed-list codes OH50 and OH56 match catalog codes O H 50 and O H 56 (Horticultural Machines), so they are not marked as additions.",
+   "COMM 12 appears to be the closed list's CMST 12 under a different subject prefix. Same title.",
+   "The choice block also says students may meet the requirement by passing an accredited college-level foreign language or oral presentation course (marked *). No code is given for this, so it is not recorded as a course.",
+   "No careers are named, apart from 'entry-level employment' and 'create a business in landscape design'."
   ]
  },
- "extracted_run": 43693267535,
- "read_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "b2009e758fe43a20",
+ "source_codes": [
+  "CMST12",
+  "OH50",
+  "OH56",
+  "OH60",
+  "OH63",
+  "OH70A",
+  "OH70B",
+  "OH76",
+  "OH77"
+ ],
+ "source_coverage": 1.0
 }

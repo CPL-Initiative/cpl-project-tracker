@@ -2,19 +2,22 @@
  "college": "MiraCosta College",
  "programs": 187,
  "with_closed_list": 161,
- "found": 142,
- "extracted": 142,
+ "found": 137,
+ "extracted": 137,
  "errors": 0,
- "passed_machine_checks": 98,
+ "passed_machine_checks": 109,
  "failed": {
-  "coverage": 17,
+  "coverage": 9,
   "invented": 0,
-  "arithmetic": 41,
+  "arithmetic": 25,
   "repeated": 0,
   "outcomes": 2
  },
- "cost_usd": 11.96,
- "cost_per_program": 0.0842,
+ "cost_usd_run": 0.3,
+ "cost_usd_filed": 11.66,
+ "cost_per_program": 0.0851,
+ "extract_calls": 3,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "30725",
@@ -61,7 +64,8 @@
       98
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "31596",
@@ -69,7 +73,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Approved"
   },
   {
    "control_number": "35842",
@@ -77,7 +82,83 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36100",
+   "title": "Basic Education for Academic or Workforce Preparation",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "37386",
+   "title": "Social Justice Studies: Gender Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "37408",
+   "title": "Social Justice Studies: LGBTQ Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Approved"
+  },
+  {
+   "control_number": "38751",
+   "title": "Social Justice Studies: Chicana and Chicano Studies",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.miracosta.edu/disciplines/ccs/",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.154,
+    "body": 0.0,
+    "content": 0.154,
+    "net": 2,
+    "listed": 13,
+    "why": "coarse net: the page's code tokens name 2 of 13 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4580,
+     "content": 19836,
+     "tabs": 1879
+    },
+    "tab_panels": [
+     [
+      "COURSES",
+      1864
+     ],
+     [
+      "COMMUNITY LEARNING CENTER",
+      90
+     ],
+     [
+      "OCEANSIDE",
+      86
+     ],
+     [
+      "SAN ELIJO",
+      91
+     ],
+     [
+      "TECHNOLOGY CAREER INSTITUTE",
+      98
+     ]
+    ]
+   },
+   "status": "Approved"
   },
   {
    "control_number": "39490",
@@ -85,7 +166,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "39492",
@@ -93,7 +175,17 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40264",
+   "title": "Liberal Arts: Elementary Subject Matter Education",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "41292",
@@ -101,7 +193,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41611",
@@ -109,7 +202,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41612",
@@ -117,7 +211,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41613",
@@ -125,7 +220,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "41618",
@@ -133,7 +229,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42864",
@@ -141,8 +238,9 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   }
  ],
- "run": "39746427354"
+ "run": "44529741837"
 }

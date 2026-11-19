@@ -1,0 +1,180 @@
+{
+ "rule": "Sam, 2026-11-17, relayed by COBIx on #3480 (comment 6967372099): flag discontinued programs out of the queue; flag, never delete",
+ "held_colleges": [
+  "Lassen College",
+  "Cosumnes River College",
+  "Allan Hancock College",
+  "Chabot College",
+  "Santiago Canyon College"
+ ],
+ "left_out_held": 0,
+ "flagged": 9,
+ "by_how": {
+  "prior_year_only": 9
+ },
+ "by_college": {
+  "Butte College": 2,
+  "Gavilan College": 2,
+  "Rio Hondo College": 1,
+  "Riverside City College": 2,
+  "Santa Ana College": 2
+ },
+ "page_text": "none committed: catalog_mark needs a runner capture (--capture)",
+ "flags": [
+  {
+   "college": "Butte College",
+   "control_number": "31950",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43969449378).",
+   "source": "kb/program_requirements_college/butte/prior_2025-2026.json"
+  },
+  {
+   "college": "Butte College",
+   "control_number": "31953",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43969449378).",
+   "source": "kb/program_requirements_college/butte/prior_2025-2026.json"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "31444",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43958278663).",
+   "source": "kb/program_requirements_college/gavilan/prior_2025-2026.json"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "33047",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43958278663).",
+   "source": "kb/program_requirements_college/gavilan/prior_2025-2026.json"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "32258",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974070079).",
+   "source": "kb/program_requirements_college/rio_hondo/prior_2025-2026.json"
+  },
+  {
+   "college": "Riverside City College",
+   "control_number": "32692",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43816942139).",
+   "source": "kb/program_requirements_college/riverside_city/prior_2025-2026.json"
+  },
+  {
+   "college": "Riverside City College",
+   "control_number": "32745",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43816942139).",
+   "source": "kb/program_requirements_college/riverside_city/prior_2025-2026.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32062",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974075411).",
+   "source": "kb/program_requirements_college/santa_ana/prior_2025-2026.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32989",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "how": "prior_year_only",
+   "source_line": "The 2026-2027 catalog does not print it; the 2025-2026 catalog does (prior-year read, run 43974075411).",
+   "source": "kb/program_requirements_college/santa_ana/prior_2025-2026.json"
+  }
+ ],
+ "not_printed": [
+  {
+   "college": "College of the Desert",
+   "control_number": "31538",
+   "title": "Reserve Police Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "35969",
+   "title": "Advanced First Aid and Safety, CPR/AED",
+   "award": "Noncredit program",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "36308",
+   "title": "Family Child Care",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "36768",
+   "title": "Business Information Worker - Office Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "36769",
+   "title": "Business Information Worker - Office Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "38979",
+   "title": "Basic Peace Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "38980",
+   "title": "Automotive Introductions",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "40197",
+   "title": "Emergency Medical Responder Intermediate",
+   "award": "Noncredit program",
+   "gap": "not printed in the 2026-2027 catalog",
+   "read": "capture_preview.json run 44596615241",
+   "next": "a prior-year read (CAPTURE_PRIOR) flags it when that year prints it"
+  }
+ ]
+}

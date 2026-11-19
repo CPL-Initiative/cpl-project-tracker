@@ -1,0 +1,103 @@
+name: Dependency map
+
+# One job on main rebuilds the dependency map after each merge (Sam, 2026-11-18, relayed by COBIx on #3358,
+# rule 2): "No dependency-map rebuild inside PRs. kb/dependency_map.json and docs/reference/dependency_map.md
+# are rebuilt by one job on main after each merge. They cause most of today's conflicts."
+#
+# kb/_build_dependency_map.py reads the whole tracked tree (`git ls-files`), so every push to main can move the
+# map and the trigger takes every push. The paths-ignore keeps this job's own commit from starting it again; a
+# push made with the workflow token starts no run either. The daily cron pushes with that token too, so a cron
+# commit starts no rebuild; the map strips line numbers from the files the cron rewrites, and js-tests.yml's
+# runs on main warn when the map falls behind, which a dispatch of this workflow fixes. A failed run on main
+# opens an issue through workflow-failure-watch.yml.
+#
+# The commit is small (the map files and the admin surface) and the push never forces main (Rule 5). A lost push rebases onto
+# the new main and rebuilds from it, so the map that lands matches the tree it lands on; when main already
+# carries a current map, the run ends green with nothing to push. Its own concurrency group, kept apart from
+# the daily-dashboard group: GitHub cancels an older pending run in a group without an alert, and here the
+# newer run builds the newer tree, so a cancelled pending rebuild loses nothing.
+#
+# cobi_admin_surface.js projects from the map (kb/_build_cobi_admin_surface.py reads kb/dependency_map.json),
+# so the job rebuilds it right after the map and commits the three files together; a PR still rebuilds it from
+# the committed map when it changes the nav, as before.
+#
+# PRs no longer commit the map. js-tests.yml rebuilds it in the runner, runs every test that reads it against
+# that build, and reports staleness as a notice; scripts/check_generated.sh reports it the same way.
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - kb/dependency_map.json
+      - docs/reference/dependency_map.md
+      - cobi_admin_surface.js
+  workflow_dispatch:
+
+concurrency:
+  group: dependency-map
+  cancel-in-progress: false
+
+jobs:
+  rebuild:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 20
+          filter: blob:none
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Rebuild the map from this tree, then the admin surface that projects from it
+        run: |
+          python3 kb/_build_dependency_map.py
+          python3 kb/_build_cobi_admin_surface.py
+
+      - name: Commit the map when it changed
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/dependency_map.json docs/reference/dependency_map.md cobi_admin_surface.js
+          if git diff --cached --quiet; then
+            echo "The dependency map is current. No commit."
+            exit 0
+          fi
+          git commit -m "Dependency map rebuilt on main (run ${{ github.run_id }})"
+          for i in 1 2 3 4 5; do
+            git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+            # Rebase onto the new main. A conflict on the map files means another writer committed them:
+            # take main as it stands and rebuild from it, never pick a side.
+            git checkout -- .
+            git fetch origin +refs/heads/main:refs/remotes/origin/main
+            if ! git pull --rebase origin main; then
+              git rebase --abort || true
+              git reset --hard origin/main
+            fi
+            python3 kb/_build_dependency_map.py
+            python3 kb/_build_cobi_admin_surface.py
+            git add kb/dependency_map.json docs/reference/dependency_map.md cobi_admin_surface.js
+            if ! git diff --cached --quiet; then
+              if [ "$(git rev-list --count origin/main..HEAD)" -gt 0 ]; then
+                git commit --amend --no-edit
+              else
+                git commit -m "Dependency map rebuilt on main (run ${{ github.run_id }})"
+              fi
+            fi
+            if [ "$(git rev-list --count origin/main..HEAD)" -eq 0 ]; then
+              echo "main already carries a current map. Nothing to push."
+              exit 0
+            fi
+          done
+          echo "Push failed after 5 attempts."
+          exit 1

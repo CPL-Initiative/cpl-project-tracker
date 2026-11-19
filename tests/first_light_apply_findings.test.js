@@ -56,6 +56,13 @@ const STAMP = stepRun("Stamp the requests");
 check("the three steps are found, and their shell carries no ${{ }} expression to stand in for",
   LOOK && FIND && STAMP && [LOOK, FIND, STAMP].every((s) => s.indexOf("${{") === -1), JSON.stringify([!!LOOK, !!FIND, !!STAMP]));
 
+// #3561: the receipts folder is in the sparse checkout (a later Apply on the open branch keeps the earlier
+// receipts) and in the one `git add`, so each receipt lands with the files it explains.
+const PUSH = stepRun("Push the branch and open or update the one pull request") || "";
+check("(R) the receipts folder is checked out and committed with the Apply's files",
+  /sparse-checkout: \|[\s\S]*?\n\s+\/tools\/first_light_applies\/\n/.test(WF_TEXT) &&
+  /^git add -A [^\n]*\btools\/first_light_applies\b/m.test(PUSH), PUSH.split("\n").find((l) => /^git add/.test(l)));
+
 // ── stand-ins for curl, gh and git ─────────────────────────────────────────
 const BIN = fs.mkdtempSync(path.join(os.tmpdir(), "fl-findings-bin-"));
 const WORK = fs.mkdtempSync(path.join(os.tmpdir(), "fl-findings-"));
@@ -290,6 +297,17 @@ try {
   const hero1 = JSON.parse(fs.readFileSync(path.join(TMP, "library/photos/hero_photos.json"), "utf8"));
   check("(1) run 1 writes the branch, recording the look's marks as consumed, per set", a1.status === 0 &&
     sel1.applied_through_mark_id === 701 && hero1.applied_through_mark_id === 702, a1.stderr + JSON.stringify([sel1.applied_through_mark_id, hero1.applied_through_mark_id]));
+  // #3561: the Apply commits a receipt of the marks it consumed, named by the thresholds it reached.
+  const rc1f = path.join(TMP, "tools/first_light_applies/apply_701_702.json");
+  const rc1 = fs.existsSync(rc1f) ? JSON.parse(fs.readFileSync(rc1f, "utf8")) : null;
+  const ids = (r, set) => r ? r[set].marks.map((m) => m.id + ":" + m.mark + ":" + m.outcome).join(" ") : "";
+  check("(R) ⭐ run 1 writes a receipt: each live painting mark it consumed, add or drop, and what it did",
+    rc1 && ids(rc1, "paintings") === "650:drop:dropped 701:drop:dropped" &&
+    rc1.paintings.marks.every((m) => m.item_key && m.name) && rc1.paintings.marks[1].name === SEL[0].title, JSON.stringify(rc1));
+  check("(R) the receipt lists the photo move, never the spent photo mark, and the thresholds before and after",
+    rc1 && ids(rc1, "photos") === "702:position:moved" && rc1.base_through.paintings === PAINT_T && rc1.base_through.photos === PHOTO_T &&
+    rc1.applied_through.paintings === 701 && rc1.applied_through.photos === 702 && /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/.test(rc1.applied_at || ""),
+    JSON.stringify(rc1 && [rc1.photos, rc1.base_through, rc1.applied_through, rc1.applied_at]));
   const p2 = planOf(["--through", "703"], all);
   check("(1) ⭐ COBIx's case: the next run sees the later request's mark as a change, so that request is stamped with the pull request, not `nothing`",
     p2.changed === true && !has(p2, 1) && p2.applied.paintings === 703 &&
@@ -298,6 +316,10 @@ try {
   // Nothing would be written, so the plan says nothing changed, and it counts the Add as held.
   fs.writeFileSync(path.join(WORK, "plan2.json"), JSON.stringify(p2));
   const a2 = tool(["--apply", "--plan", path.join(WORK, "plan2.json")], all);
+  const rc2f = path.join(TMP, "tools/first_light_applies/apply_703_702.json");
+  const rc2 = fs.existsSync(rc2f) ? JSON.parse(fs.readFileSync(rc2f, "utf8")) : null;
+  check("(R) ⭐ a later Apply on the open pull request's branch lists only the marks filed since, beside run 1's receipt",
+    rc2 && ids(rc2, "paintings") === "703:drop:dropped" && rc2.base_through.paintings === 701 && fs.existsSync(rc1f), JSON.stringify(rc2));
   const heldAdd = { id: 704, item_set: "paintings", item_key: "Not In The Pool.jpg", mark: "add", collection: "gallery_candidates" };
   const p3 = planOf(["--through", "704"], all.concat([heldAdd]));
   check("(1) ⭐ a held Add on the open pull request's branch: no change, and the plan counts it as held (the stamp reads that count)",

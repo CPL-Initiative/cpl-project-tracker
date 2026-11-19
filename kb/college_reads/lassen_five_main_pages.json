@@ -1,0 +1,24 @@
+{
+ "_readme": "S680 (program-records worker for SkyPhoebe), the harvest lane's NEXT (5). Five Lassen transfer degrees fail arithmetic on 'the record names the degree total and the Cal-GETC pattern, but no units for it' (31132 Studio Arts, PDF p.53; 33263 Economics, p.58; 33729 Agriculture Animal Science, pp.49-51; 33730 Agriculture Business, pp.48-51; 42300 Business Administration 2.0, pp.58-60). The set step's reconcile run 43581021827 read each from other pages (31132 [52, 53], 33263 [57, 58], 33729 [47-50], 33730 [47-50], 42300 [57-60]), so --calgetc-review restored all five as main files them. This read prints PDF pp.48-60 of the 2026-2027 catalog every Lassen record was extracted from (capture run 39006337658), so the session can quote the words each program opens on at main's first page (the reconcile entry's pdf_pages pin) and whether each page says electives fill the 60 (the scorer's electives guard). One load of the PDF, no model call, nothing written.",
+ "college": "Lassen College",
+ "questions": {
+  "pin_words": "The words each of the five programs' sections opens on, at PDF p.53 (31132), p.58 (33263 and 42300), p.49 (33729) and p.48 (33730), and whether the page before carries the same heading.",
+  "electives_words": "How each of the five pages words the units left to reach 60 (the word 'elective', or 'courses numbered 1-49')."
+ },
+ "keywords": [
+  "\\S"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "pin_words",
+    "electives_words"
+   ],
+   "url": "https://www.lassencollege.edu/wp-content/uploads/2026/07/2026-2027-College-Catalog-3.pdf"
+  }
+ ],
+ "pdf_span": [
+  48,
+  60
+ ]
+}

@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    21.0,
+    23.0,
     23.0
    ],
    "stated": [
@@ -71,9 +71,8 @@
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-23.0; the catalog states 23.0-23.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -100,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -166,12 +165,20 @@
        {
         "code": "ESTH 144",
         "units": null,
-        "catalog_addition": false
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "ESTH 144 + ESTH 145",
+        "together_units": 4,
+        "together_units_max": null
        },
        {
         "code": "ESTH 145",
         "units": null,
-        "catalog_addition": false
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "ESTH 144 + ESTH 145",
+        "together_units": 4,
+        "together_units_max": null
        }
       ],
       "catalog_addition": false
@@ -190,5 +197,14 @@
    "Careers were taken from the description: 'licensed technician' and 'entry-level career in the field of esthetics'."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "38675245799",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ESTH 144 + ESTH 145",
+   "together": "row",
+   "words": "ESTH 144 and ESTH 145 together replace ESTH 142, as the record's note says; the state's course file does not confirm each one's units, so the group carries its row's 4 units and no course carries its own",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10476,
-    "output_tokens": 1388,
+    "output_tokens": 1362,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1388,
+  "output_tokens": 1362,
   "output_tokens_details": {
-   "thinking_tokens": 344
+   "thinking_tokens": 350
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06966,
- "ms": 11108,
- "seconds": 11.6,
+ "cost_usd": 0.06914,
+ "ms": 11910,
+ "seconds": 18.6,
  "parts": null,
  "error": null,
  "score": {
@@ -239,11 +239,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The PDF text merges footnote superscripts into course numbers: 'ECE 31' is ECE 3 with footnote 1, 'ECE 52' is ECE 5 with footnote 2, 'ECE 81, 3' is ECE 8 with footnotes 1 and 3, and 'ECE 201, 4' is ECE 20 with footnotes 1 and 4. Codes are recorded without the footnote marks.",
-   "No program learning outcomes are printed in the Teacher II section; the outcomes on page 121 belong to the Education / Elementary Teacher certificates and were not recorded.",
-   "The career 'teacher' comes from the description: 'skills to work as a teacher with children successfully.'",
-   "The 18-unit total is consistent with 4 core courses (12 units) plus 2 electives (6 units)."
+   "The PDF text prints footnote superscripts inline with course numbers: 'ECE 31' read as ECE 3 (footnote 1), 'ECE 52' as ECE 5 (footnote 2), 'ECE 81, 3' as ECE 8 (footnotes 1, 3), 'ECE 201, 4' as ECE 20 (footnotes 1, 4). Footnotes give immunization/TB verification and prerequisites.",
+   "No program learning outcomes are printed in the Teacher II section; the outcomes on page 121 belong to the Education / Elementary Teacher certificates and were not used.",
+   "Career 'teacher' taken from the description phrase 'to work as a teacher with children successfully.'"
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "053ae2ca9a7bea64",
+ "source_codes": [
+  "ECE1",
+  "ECE11",
+  "ECE12",
+  "ECE13",
+  "ECE2",
+  "ECE20",
+  "ECE3",
+  "ECE4",
+  "ECE6",
+  "ECE7"
+ ],
+ "source_coverage": 0.833
 }

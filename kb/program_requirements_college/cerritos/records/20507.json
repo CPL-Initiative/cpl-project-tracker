@@ -69,19 +69,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     22.0,
-    23.5
+    22.0
    ],
    "stated": [
     22.0,
     22.0
    ],
-   "why": [
-    "the blocks sum to 22.0-23.5; the catalog states 22.0-22.0"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -97,7 +97,7 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,13 +173,15 @@
       "alternatives": [
        {
         "code": "ENGT 250",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "ENGT 251",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -240,5 +242,19 @@
    "Catalog titles differ slightly from the closed list for ENGT 250 ('Fiberglass and Vacuum Infusion Process Technology') and NPD 103 (no 'Advanced')."
   ]
  },
- "extracted_run": "37961137169"
+ "extracted_run": "37961137169",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ENGT 250",
+   "words": "ENGT 250, printed as an alternative to ENGT 209 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGT 251",
+   "words": "ENGT 251, printed as an alternative to ENGT 209 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

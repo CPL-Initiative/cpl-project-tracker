@@ -30,7 +30,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture science - communications a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -57,7 +60,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "landscape and park maintenance certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -102,7 +108,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture business a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -131,7 +140,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "animal artificial insemination technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -182,7 +194,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture mechanics a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -225,7 +240,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -266,7 +284,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "accounting a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -308,7 +329,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "management a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -349,7 +373,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "marketing a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -379,7 +406,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "real estate a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -417,7 +447,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -453,7 +486,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "engineering a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -465,7 +501,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.917,
   "codes_found": [
    "MACH200D",
    "MACH200E",
@@ -476,22 +512,24 @@
    "MACH208",
    "MACH209",
    "MACH357",
-   "MACH395",
    "WELD200",
    "WELD206"
   ],
   "source": {
-   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
    "title": "Machine Tool Technology",
    "h1": "Machine Tool Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "machine tool technology a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2196
+  "text_chars": 2098
  },
  {
   "control_number": "06662",
@@ -520,7 +558,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "automotive technician a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -552,7 +593,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "welding a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -592,7 +636,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "art a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -629,7 +676,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "music a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -665,7 +715,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "theatre a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -697,7 +750,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "photography a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -726,7 +782,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "nursing: adn program (rn) a.s. degree",
+    "section_fit": 0.667
    }
   },
   "listed": 7,
@@ -762,7 +821,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "medical assisting a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -805,7 +867,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "respiratory care a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -839,7 +904,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "child development a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -855,7 +923,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "06700",
@@ -863,11 +935,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU243",
    "CLDDV262",
    "FAMLF131",
+   "HUMSR147",
    "POLSC120",
    "PSYCC1000",
    "PSYCH104",
@@ -891,7 +964,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "human services a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -929,7 +1005,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "administration of justice a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -965,7 +1044,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fire science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1018,7 +1100,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "poultry science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1061,7 +1146,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "crop science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -1102,7 +1190,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "fruit science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1136,7 +1227,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "environmental horticultural science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1160,7 +1254,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "plant nursery production certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1186,7 +1283,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "commercial floristry technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1226,7 +1326,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture: sales, service a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -1269,7 +1372,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "dairy science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -1295,7 +1401,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer information systems a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1416,7 +1525,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "physical education a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 108,
@@ -1450,7 +1562,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "industrial electronics a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1478,7 +1593,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "maintenance machinist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1506,7 +1624,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "autobody/collision repair a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1546,7 +1667,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "computer graphics applications a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -1558,8 +1682,9 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
+   "HUMSR147",
    "SOCIO150",
    "SWHS101",
    "SWHS110",
@@ -1581,7 +1706,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "addiction studies a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -1617,7 +1745,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "soil science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1648,7 +1779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "athletic training/sports medicine a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1660,7 +1794,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "MACH200D",
    "MACH200E",
@@ -1671,21 +1805,25 @@
    "MACH208",
    "MACH209",
    "MACH357",
+   "MACH395",
    "WELD200",
    "WELD206"
   ],
   "source": {
-   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026v2",
+   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/machine-tool-technology-mjc-fall-2026",
    "title": "Machine Tool Technology",
    "h1": "Machine Tool Technology",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machine tool technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
-  "text_chars": 2098
+  "text_chars": 2196
  },
  {
   "control_number": "14885",
@@ -1707,7 +1845,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "associate teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1742,7 +1883,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1780,7 +1924,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "master teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -1819,7 +1966,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "site supervisor certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -1851,7 +2001,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "early interventionist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1878,7 +2031,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer applications specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -1906,7 +2062,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer programming specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1917,7 +2076,7 @@
   "title": "Small Animal Veterinary Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
+  "method": "page_claimed",
   "coverage": 0.0,
   "codes_found": [],
   "source": null,
@@ -1987,7 +2146,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agriculture a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -2019,7 +2181,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "biological sciences a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2053,7 +2218,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "chemistry a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2111,7 +2279,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "humanities a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -2183,7 +2354,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: natural sciences a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 54,
@@ -2240,7 +2414,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: language and rationality a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 36,
@@ -2252,7 +2429,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.973,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU201",
    "ADJU202",
@@ -2289,6 +2466,8 @@
    "GEOG110",
    "HE114",
    "HE115",
+   "HIST101",
+   "HIST102",
    "HIST104",
    "HIST105",
    "HIST106",
@@ -2335,7 +2514,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: social & behavioral sciences a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 75,
@@ -2347,7 +2529,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.989,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR104",
    "ART102",
@@ -2367,6 +2549,7 @@
    "COMM123",
    "COMM132",
    "DANCE102",
+   "ENGL102",
    "ENGL105",
    "ENGL106",
    "ENGL111",
@@ -2449,7 +2632,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "general studies: arts and humanities a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 93,
@@ -2461,9 +2647,10 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "COMM130",
+   "ENGL102",
    "ENGL131",
    "ENGL132",
    "ENGL172",
@@ -2489,7 +2676,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "language studies a.a. univ prep - area of emphasis",
+    "section_fit": 0.333
    }
   },
   "listed": 19,
@@ -2514,7 +2704,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer network administration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2530,7 +2723,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19348",
@@ -2554,7 +2751,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced heavy equipment technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2581,7 +2781,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "heavy machinery management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2616,7 +2819,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture: sales, service technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2648,7 +2854,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting: full-charge bookkeeper certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2677,7 +2886,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "accounting: entry-level bookkeeper certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2714,7 +2926,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2743,7 +2958,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate broker certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2781,7 +2999,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer graphics advanced certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2815,7 +3036,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "industrial electronics certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2840,7 +3064,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "autobody/collision repair technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2876,7 +3103,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assisting certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -2888,10 +3118,11 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.95,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU243",
    "CLDDV262",
+   "HUMSR147",
    "POLSC120",
    "PSYCC1000",
    "PSYCH104",
@@ -2917,7 +3148,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "human services certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -2953,7 +3187,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -2988,7 +3225,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mechanized agriculture technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3022,7 +3262,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies for transfer degree 2.0 aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3051,7 +3294,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3093,7 +3339,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "music for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3133,7 +3382,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "administration of justice for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -3176,7 +3428,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -3215,7 +3470,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3247,7 +3505,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3275,7 +3536,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geology for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3325,7 +3589,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 28,
@@ -3357,7 +3624,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3369,12 +3639,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.905,
+  "coverage": 1.0,
   "codes_found": [
    "ANTHR102",
    "ANTHR150",
    "GEOG102",
    "GEOG110",
+   "HIST101",
+   "HIST102",
    "HIST104",
    "HIST105",
    "HIST106",
@@ -3398,11 +3670,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
-  "text_chars": 4116
+  "text_chars": 4350
  },
  {
   "control_number": "32227",
@@ -3426,7 +3701,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "physics for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3438,13 +3716,14 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.95,
+  "coverage": 1.0,
   "codes_found": [
    "ANAT125",
    "ANTHC1001",
    "ANTHR102",
    "ANTHR104",
    "ANTHR107",
+   "ANTHR110",
    "ANTHR130",
    "ANTHR140",
    "ANTHR150",
@@ -3467,7 +3746,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "anthropology for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -3479,8 +3761,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
+   "ENGL102",
    "ENGL105",
    "ENGL106",
    "ENGL111",
@@ -3515,11 +3798,14 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "english for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
-  "text_chars": 4071
+  "text_chars": 4112
  },
  {
   "control_number": "32433",
@@ -3550,7 +3836,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3580,7 +3869,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3611,7 +3903,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3639,7 +3934,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive engines and transmissions certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3676,7 +3974,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3692,7 +3993,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 150 of 186 closed-list programs on their own page, 0 on another program's and 1 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "32782",
@@ -3722,7 +4027,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "geography for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3751,7 +4059,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive diagnosis certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3778,7 +4089,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive brakes and suspension certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3810,7 +4124,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive service certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3840,7 +4157,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "equine science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3871,7 +4191,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "manufacturing technology (interdisciplinary) certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -3900,7 +4223,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3948,7 +4274,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "dance a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 26,
@@ -3960,8 +4289,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
+   "HUMSR147",
    "PSYCC1000",
    "SOCIO150",
    "SWHS101",
@@ -3983,7 +4313,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "addiction studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4011,7 +4344,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "irrigation design certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4039,7 +4375,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "irrigation construction and installation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4066,7 +4405,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "irrigation management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4103,7 +4445,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "irrigation technology a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4139,7 +4484,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "irrigation technology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4162,33 +4510,12 @@
   "title": "Veterinary Technology",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.647,
-  "codes_found": [
-   "AG115",
-   "AG249",
-   "AG259A",
-   "AGEC200",
-   "AGEC210",
-   "AGEC225",
-   "AGM200",
-   "AGM235",
-   "ANSC200",
-   "NR200",
-   "PLSC200"
-  ],
-  "source": {
-   "url": "https://mjc.elumenapp.com/catalog/2026-2027/program/animal-science-mjc-fall-2025",
-   "title": "Animal Science",
-   "h1": "Animal Science",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 3617
+  "text_chars": 0
  },
  {
   "control_number": "35012",
@@ -4224,7 +4551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "logistics and supply chain management a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -4262,7 +4592,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "logistics and supply chain management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4296,7 +4629,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4330,7 +4666,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "spanish for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4364,7 +4703,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electro-mechanic certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4402,7 +4744,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agricultural environmental science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -4439,7 +4784,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "agricultural environmental science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4474,7 +4822,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture business for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4509,7 +4860,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture animal sciences for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4545,7 +4899,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "agriculture plant science for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4569,7 +4926,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english for life and work: elementary certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4593,7 +4953,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english for life and work: proficient certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4633,7 +4996,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic heavy equipment technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4659,7 +5025,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english language instruction for college: academic language skills for success certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4694,7 +5063,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -4723,7 +5095,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "microsoft computer applications certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4750,7 +5125,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture welding fabrication certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4776,7 +5154,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture welding repair certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4801,7 +5182,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "autobody/collision refinishing technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4840,7 +5224,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "equine science a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4871,7 +5258,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "recording arts certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -4900,7 +5290,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "design & technical theatre certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4924,7 +5317,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "learning strategies: academic skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4947,7 +5343,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english for citizenship certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -4985,7 +5384,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -5009,7 +5411,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english language instruction for college: academic reading and writing skills for success certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5034,7 +5439,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5058,7 +5466,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire academy certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5085,7 +5496,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5109,7 +5523,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "accelerated access in english to early childhood education certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5134,7 +5551,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "purchasing/customer service assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5160,7 +5580,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "warehousing and distribution assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5185,7 +5608,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "production scheduling assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5209,7 +5635,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "import/export assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5242,7 +5671,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration for transfer degree 2.0 as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5275,7 +5707,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology level 1 certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5306,7 +5741,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology quick start certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5341,7 +5779,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "business information technology level 2 a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5376,7 +5817,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "business information technology level 2 certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5399,7 +5843,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "english language instruction for college certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -5425,7 +5872,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "tutoring certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5437,7 +5887,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.942,
+  "coverage": 0.981,
   "codes_found": [
    "ADJU201",
    "ADJU202",
@@ -5468,6 +5918,8 @@
    "GEOG107",
    "HE114",
    "HE115",
+   "HIST101",
+   "HIST102",
    "HIST116",
    "HIST154",
    "HIST155",
@@ -5496,7 +5948,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "law, public policy, and society for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 52,
@@ -5537,7 +5992,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "economics for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -5566,7 +6024,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "film, television, & electronic media certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5600,7 +6061,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "calibration and instrumentation technician apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -5643,7 +6107,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electro-mechanical technician apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -5680,7 +6147,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machinist apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -5713,7 +6183,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "machinery maintenance apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5748,7 +6221,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies for transfer degree 2.0 aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5781,7 +6257,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrician maintenance apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5810,7 +6289,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english language instruction for college: integrated skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5843,7 +6325,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "packaging technician apprentice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5875,7 +6360,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5902,7 +6390,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electric vehicle certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5935,7 +6426,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "public health for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -5959,7 +6453,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "english for life and work: intermediate certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5971,7 +6468,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.897,
+  "coverage": 1.0,
   "codes_found": [
    "ADJU201",
    "ANAT125",
@@ -5984,6 +6481,9 @@
    "ECONC2002",
    "ENGLC1001",
    "HE115",
+   "HIST101",
+   "HIST102",
+   "HUMSR147",
    "PHYSO101",
    "PSYCC1000",
    "PSYCH105",
@@ -6007,7 +6507,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social work and human services for transfer degree aa-t associate of arts for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -6032,7 +6535,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic automation training certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -6058,7 +6564,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "residential electrical installer certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -6095,7 +6604,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "applied electrical technology a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -6122,7 +6634,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "pharmacy technician certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6174,7 +6689,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "vocational nurse certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 18,
@@ -6202,7 +6720,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "community health worker certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6229,7 +6750,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "american sign language studies a.a. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -6257,7 +6781,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer graphics foundations certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6299,7 +6826,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fitness specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -6327,7 +6857,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automation technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6358,7 +6891,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical business entrepreneurship certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -6386,7 +6922,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical installer certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6418,7 +6957,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrical maintenance assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -6451,7 +6993,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electro-mechanical technical assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6484,7 +7029,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electrotechnical assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6510,7 +7058,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic electrical training certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -6538,7 +7089,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "analytical chemistry technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -6590,7 +7144,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional practices in music ii certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 30,
@@ -6641,7 +7198,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "professional practices in music i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 29,
@@ -6682,7 +7242,10 @@
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "environmental science for transfer degree as-t associate of science for transfer",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -6694,11 +7257,13 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.931,
+  "coverage": 1.0,
   "codes_found": [
    "AG115",
    "AGEC210",
    "ANSC200",
+   "ANSC252",
+   "ANSC255",
    "ANSC55",
    "CHEM101",
    "CHEM143",
@@ -6731,7 +7296,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 29,
@@ -6764,7 +7332,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "veterinary assistant & animal care certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6810,7 +7381,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": "as",
+    "section_line": "modern policing a.s. degree",
+    "section_fit": 1.0
    }
   },
   "listed": 24,

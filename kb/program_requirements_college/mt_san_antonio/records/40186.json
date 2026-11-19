@@ -64,20 +64,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    10.5,
-    10.5
+    10.0,
+    10.0
    ],
    "stated": [
     10.0,
     10.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 10.5-10.5; the catalog states 10.0-10.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -101,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -176,7 +175,7 @@
      },
      {
       "code": "CISW 24L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -201,5 +200,13 @@
    "Careers taken from the sentence 'Opportunities available after the completion of this certificate include web programming or web and database server administration.'"
   ]
  },
- "extracted_run": "39891607837"
+ "extracted_run": "39891607837",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "CISW 24L",
+   "words": "CISW 24L, a lab printed with no units after its lecture CISW 24, counts 0",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

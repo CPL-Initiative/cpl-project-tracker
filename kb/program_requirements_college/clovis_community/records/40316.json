@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7014,
+  "input_tokens": 6990,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7014,
-    "output_tokens": 1288,
+    "input_tokens": 6990,
+    "output_tokens": 1211,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1288,
+  "output_tokens": 1211,
   "output_tokens_details": {
-   "thinking_tokens": 371
+   "thinking_tokens": 379
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05382,
- "ms": 10898,
- "seconds": 11.2,
+ "cost_usd": 0.05218,
+ "ms": 10200,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 6,
    "listed": 6,
-   "share": 0.667,
-   "missing": [
-    "MATH5A",
-    "MATH5B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH5A",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "MATHC2220",
+     "listed": "MATH5B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
-   "flagged": [
-    "MATHC2210",
-    "MATHC2220"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -200,19 +203,29 @@
   "missing_explained": [
    {
     "code": "MATH 5A",
-    "why": "not in the text; catalog lists MATH C2210 Calculus I (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists MATH C2210 Calculus I (common course number) in its place"
    },
    {
     "code": "MATH 5B",
-    "why": "not in the text; catalog lists MATH C2220 Calculus II (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists MATH C2220 Calculus II (common course number) in its place"
    }
   ],
   "notes": [
-   "MATH C2210 and MATH C2220 appear to be the common-course-numbered versions of closed-list MATH 5A and MATH 5B (same units 5 and 4); reviewer should confirm the mapping.",
-   "The 60 semester unit requirement is printed as the generic requirement for all transfer degrees, not as this award's own total, so degree_total is left null.",
-   "The 'Total Units: 27' line is recorded both as total_units and as the core block's stated total since the core is the whole major.",
-   "The Catalog Description mentions transfer to geology, earth science, planetary science programs; these are academic programs, not careers, so careers is empty."
+   "MATH C2210 and MATH C2220 appear to be the common-course-numbered replacements for closed-list MATH 5A and MATH 5B; recorded as catalog additions.",
+   "The 60-unit requirement is the generic transfer-degree boilerplate, not printed as this award's total, so degree_total is null.",
+   "Text after the Geology section belongs to the History AA-T program and was ignored."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "a5810aa18d691708",
+ "source_codes": [
+  "CHEM1A",
+  "CHEM1B",
+  "GEOL1",
+  "GEOL2WL",
+  "MATH5A",
+  "MATH5B"
+ ],
+ "source_coverage": 1.0
 }

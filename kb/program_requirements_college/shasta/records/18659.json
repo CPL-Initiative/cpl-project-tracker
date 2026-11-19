@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13149,
+  "input_tokens": 13146,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13149,
-    "output_tokens": 4729,
+    "input_tokens": 13146,
+    "output_tokens": 4369,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4729,
+  "output_tokens": 4369,
   "output_tokens_details": {
-   "thinking_tokens": 1655
+   "thinking_tokens": 1296
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14718,
- "ms": 37861,
- "seconds": 38.4,
+ "cost_usd": 0.13996,
+ "ms": 33826,
+ "seconds": 34.0,
  "parts": null,
  "error": null,
  "score": {
@@ -102,7 +102,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "University Studies - Earth Science Teacher",
+   "section_heading": "University Studies - Earth Science Teacher (heading not in excerpt; text begins mid-description on page 74)",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -516,13 +516,65 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-description on page 74; the section heading, opening description and any unit total or degree-requirements table printed before this point (likely page 73) are not in the text. section_heading uses the program title given, not a printed heading; total_units, degree_total and ge_pattern are null because none is visible.",
-   "Life Science GE Selection is printed as five 'OR' options (BIOL 1; BIOL 12 + BIOL 12L; BOT 1; ZOOL 1; AGNR 60 + AGNR 61), each worth 4 units. It is recorded as choose_units with minimum 4 (inferred, not printed); BIOL 12 and BIOL 12L, and AGNR 60 and AGNR 61, must be taken together as pairs, not mixed across options.",
-   "Elective list prints codes without units; units left null. ESCI pairs printed as '14/14L', '32/32L' etc. are listed as separate courses; they may be intended as lecture/lab pairs.",
-   "AGNR 60 and AGNR 61 appear both in the Life Science selection and in the elective list.",
-   "The NOTE about additional Math, Social Science GE and Science courses is advisory and names no specific courses.",
-   "Text following this section (Earth Sciences University Studies emphasis, GIS A.S., GIS Certificate, Geography AA-T) belongs to other programs and was not read for this record."
+   "The excerpt begins mid-description on page 74; the section heading, program code and any earlier text for this award (possibly including a unit total or GE pattern) are not in the text. Section heading recorded from the program title.",
+   "No major total, degree total or GE pattern is printed in the visible section; totals left null.",
+   "Life Science GE Selection is a pick-one list where BIOL 12+12L and AGNR 60+61 are paired lecture/lab options; recorded as choose_units 4, but the intended rule is one of: BIOL 1, BIOL 12 + BIOL 12L, BOT 1, ZOOL 1, or AGNR 60 + AGNR 61. The heading suggests these courses also satisfy GE.",
+   "Elective list prints no units beside courses; ESCI lecture/lab pairs are printed with slashes (e.g., 14/14L, 32/32L) and are listed as separate courses.",
+   "AGNR 60 and AGNR 61 appear both in the Life Science selection and the elective list.",
+   "The careers entries are taken from the truncated opening sentence of the description ('...Middle/High School teachers and Elementary School teachers, respectively'); the full context is cut off before page 74.",
+   "The Earth Sciences University Studies section and GIS/Geography sections that follow belong to other programs and were not read."
   ]
  },
- "extracted_run": "39006384701"
+ "extracted_run": "44513230805",
+ "catalog_year": "2026-2027",
+ "source_sha": "4fed824a6ddc4d56",
+ "source_codes": [
+  "AGNR1",
+  "AGNR60",
+  "AGNR61",
+  "AGPS25",
+  "BIOL1",
+  "BIOL12",
+  "BOT1",
+  "CHEM1A",
+  "CHEM1B",
+  "CHEM2A",
+  "ESCI1",
+  "ESCI10",
+  "ESCI12",
+  "ESCI14",
+  "ESCI14L",
+  "ESCI18",
+  "ESCI2",
+  "ESCI32",
+  "ESCI32L",
+  "ESCI33",
+  "ESCI33L",
+  "ESCI34",
+  "ESCI34L",
+  "ESCI35",
+  "ESCI35L",
+  "ESCI36",
+  "ESCI36L",
+  "ESCI37",
+  "ESCI37L",
+  "ESCI38",
+  "ESCI38L",
+  "ESCI6",
+  "ESCI7",
+  "GEOG1A",
+  "GEOG1AL",
+  "GEOG7",
+  "GEOG8",
+  "GEOG9",
+  "NHIS15",
+  "NHIS5",
+  "NHIS5L",
+  "NHIS65",
+  "PHSC1",
+  "PHYS2A",
+  "PHYS2B",
+  "ZOOL1"
+ ],
+ "source_coverage": 0.979
 }

@@ -105,13 +105,14 @@ check("(1) ⭐ the membership fix fills the seedless cards the minted membership
 check("(1) the fix never replaces a card's own minted membership",
       all(inp.mem[k] == v for k, v in mem.items() if v and k in inp.mem))
 
-check("(3) ⭐ rules W and D are held: the default run is follow past rulings alone",
-      M.DEFAULT_RULES == ("FPR",) and set(M.HELD_RULES) == {"W", "D"})
+check("(3) ⭐ rules W and D are held: the default run is follow past rulings, then G and M (S683)",
+      M.DEFAULT_RULES == ("FPR", "G", "M") and set(M.HELD_RULES) == {"W", "D"})
 default = dict(M.run(inp))
 check("(3) ⭐ the default run moves no card by W or D", not any(r["rule"] in ("W", "D") for r in default.values()))
 renamed = [c for c in default if M.person_renamed(c, inp.cur)]
-check("(5) ⭐ a card a person renamed is never moved by any rule, held rules included",
-      renamed and all(not default[c]["rule"] for c in renamed), len(renamed))
+check("(5) ⭐ a card a person renamed is never moved to another field, and only G (which keeps the guess) decides one",
+      renamed and all(default[c]["rule"] in ("", "G") and default[c]["discipline"] == default[c]["guess"]
+                      for c in renamed), len(renamed))
 for mid in ("ARTS M1640", "ARTS M1291", "ARTS M1411"):
     r = default.get(mid, {})
     check("(5) past rulings leave %s where it is" % mid, r.get("rule") != "FPR" and r.get("discipline") == r.get("guess"),
@@ -130,7 +131,7 @@ check("(5) ARTS M1186 stays Art: Graphic Arts has too few independent rulings", 
 
 # The held rules, as a dry run.
 rows = dict(M.run(inp, M.DEFAULT_RULES + M.HELD_RULES))
-renamed_held = [c for c in renamed if rows[c]["rule"]]
+renamed_held = [c for c in renamed if rows[c]["rule"] not in ("", "G")]
 check("(5) with the held rules too, no renamed card moves", not renamed_held, renamed_held[:3])
 by = {}
 for cid, r in rows.items():
@@ -167,8 +168,9 @@ for mid in ("ARTS M1002", "BUSI M1035"):
     r = rows.get(mid, {})
     check("(5) past rulings leave %s alone" % mid, r.get("rule") != "FPR" and r.get("discipline") == r.get("guess"),
           json.dumps(r)[:400])
-check("(5) only past rulings changes a discipline, and only to its pair's narrower field",
-      all(r["rule"] == "FPR" and (r["guess"], r["discipline"]) in inp.fpr_pairs
+check("(5) only past rulings and rule M change a discipline, each only to its pair's narrower field",
+      all((r["rule"] == "FPR" and (r["guess"], r["discipline"]) in inp.fpr_pairs)
+          or (r["rule"] == "M" and (r["guess"], r["discipline"]) == M.M_PAIR)
           for r in rows.values() if r["discipline"] != r["guess"]))
 check("(5) every rule move starts from waiting (Sam's band only loses cards to W)",
       all(r["base"] == "waiting" or (r["rule"] == "W" and r["base"] == "for_sam") for r in rows.values() if r["rule"]))

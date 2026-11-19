@@ -1,23 +1,9 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-18T04:01:19Z",
+ "_generated_at": "2026-11-19T06:21:50Z",
  "count": 0,
  "suggestions": {},
  "aligned": {
-  "Goodwill Retail Operations Specialist Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "BUSI M1408",
-   "title": "Retail Management",
-   "code": "APPR 140B",
-   "college": "Foothill College"
-  },
-  "Semiconductor Processing Apprenticeship Certificate": {
-   "kind": "mid",
-   "id": "ENGR M1090",
-   "title": "Introduction to Semiconductor Technology",
-   "code": "ENGR 061A",
-   "college": "Foothill College"
-  },
   "High School Articulation (Emerald)- Developmental Psychology of Children II": {
    "kind": "cid",
    "id": "ECE 120",
@@ -25,504 +11,131 @@
    "code": "ECE 50",
    "college": "Las Positas College"
   },
-  "High School Articulations (Dublin)- Developmental Psychology of Children II": {
+  "High School Articulation (Foothill)- Developmental Psychology of Children II": {
    "kind": "cid",
    "id": "ECE 120",
    "title": "Principles & Practices of Teaching Young Children",
    "code": "ECE 50",
    "college": "Las Positas College"
   },
-  "High School Articulation (Amador Valley)- Developmental Psychology of Children II": {
+  "High School Articulation (Granada)- Developmental Psychology of Children II": {
    "kind": "cid",
    "id": "ECE 120",
    "title": "Principles & Practices of Teaching Young Children",
    "code": "ECE 50",
    "college": "Las Positas College"
   },
-  "High School Articulation (Amador Valley)- Criminal Justice/Crime Scene Investigation": {
+  "High School Articulation (Foothill)-  Criminal Justice/ Crime Scene Investigation": {
    "kind": "cid",
    "id": "AJ 110",
    "title": "Introduction to Criminal Justice",
    "code": "AJ 50",
    "college": "Las Positas College"
   },
-  "High School Articulation (Dublin)- Criminal Justice/ CSI": {
+  "High School Articulation (Foothill)- Criminal Justice/ CSI": {
    "kind": "cid",
    "id": "AJ 140",
    "title": "Criminal Investigation",
    "code": "AJ 63",
    "college": "Las Positas College"
   },
-  "High School Articulations (Dublin)- Criminal Justice/ Crime Scene Investigation": {
+  "High School Articulation (Granada)- Criminal Justice/ Crime Scene Investigation": {
    "kind": "cid",
    "id": "AJ 110",
    "title": "Introduction to Criminal Justice",
    "code": "AJ 50",
    "college": "Las Positas College"
   },
-  "High School Articulation ( Emerald)- Criminal Justice/ Criminal Scene Investigation": {
+  "High School Articulation (Kimball)- Fundamentals of Criminal Justice": {
    "kind": "cid",
    "id": "AJ 110",
    "title": "Introduction to Criminal Justice",
    "code": "AJ 50",
    "college": "Las Positas College"
   },
-  "High School Articulation (Emerald)- Criminal Justice/ CSI": {
+  "High School Articulation (Livermore)- Criminal Justice/ Crime Scene Investigation": {
    "kind": "cid",
-   "id": "AJ 140",
-   "title": "Criminal Investigation",
-   "code": "AJ 63",
+   "id": "AJ 110",
+   "title": "Introduction to Criminal Justice",
+   "code": "AJ 50",
    "college": "Las Positas College"
   },
-  "High School Articulations (Amador Valley)- Principles of Engineering": {
-   "kind": "cid",
-   "id": "ENGR 110",
-   "title": "Introduction to Engineering",
-   "code": "ENGR 1",
-   "college": "Las Positas College"
-  },
-  "High School Articulations (Dublin)- Principles of Engineering": {
+  "High School Articulation (Foothill)- Principles of Engineering": {
    "kind": "cid",
    "id": "ENGR 110",
    "title": "Introduction to Engineering",
    "code": "ENGR 1",
    "college": "Las Positas College"
   },
-  "High School Articulations (Emerald) -Principles of Engineering": {
-   "kind": "cid",
-   "id": "ENGR 110",
-   "title": "Introduction to Engineering",
-   "code": "ENGR 1",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Dublin)- Introduction to Health Careers": {
+  "High School Articulation (Emerald)- Introduction to Health Careers": {
    "kind": "course",
    "id": "BIOL M10SN",
    "title": "Orientation to Health Care",
    "code": "BIO 55",
    "college": "Las Positas College"
   },
-  "High School Articulation (Amador Valley)- Introduction to Health Careers": {
+  "High School Articulation (Foothill)- Introduction to Health Careers": {
    "kind": "course",
    "id": "BIOL M10SN",
    "title": "Orientation to Health Care",
    "code": "BIO 55",
    "college": "Las Positas College"
   },
-  "IBEW Local 332 Inside Wireman Apprenticeship Journeyperson": {
+  "High School Articulation (Granada)- Introduction to Health Careers": {
    "kind": "course",
-   "id": "ELEC M10CM",
-   "title": "AC THEORY, CODES & PRACTICES, IBEW ORIENTATION, BLUEPRINT READING",
-   "code": "APEL 122",
-   "college": "Foothill College"
-  },
-  "IBEW Local 332 Residential and Inside Wireman Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "ELEC M10HJ",
-   "title": "RESIDENTIAL ELECTRICAL AIR CONDITIONING & REFRIGERATION; TELEPHONE SYSTEMS",
-   "code": "APEL 112",
-   "college": "Foothill College",
-   "ambiguous": [
-    "ELEC M10ED",
-    "ELEC M10EJ",
-    "ELEC M10ET",
-    "ELEC M10FE",
-    "ELEC M10GT",
-    "ELEC M10HJ"
-   ]
-  },
-  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "HVAC M10AM",
-   "title": "SF 101 BASIC STEAMFITTING SKILLS",
-   "code": "APPT 141",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AM",
-    "HVAC M10CH"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO",
-    "HVAC M10CX"
-   ]
-  },
-  "Pipe Trades Training Center Plumbing Technology Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "HVAC M10AJ",
-   "title": "P-101 BASIC PLUMBING SKILLS",
-   "code": "APPT 131",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AJ",
-    "HVAC M10CD",
-    "HVAC M10CE"
-   ]
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "HVAC M1005",
-   "title": "Start Test Balance: Air Side 1",
-   "code": "APPT 177",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M1005",
-    "HVAC M1006"
-   ]
-  },
-  "Computer Networking & Info Tech 113-Portfolio Review": {
-   "kind": "course",
-   "id": "ITIS M12KO",
-   "title": "Tech of Smartphones & Mobile",
-   "code": "CNIT 113",
-   "college": "City College of San Francisco"
-  },
-  "Sheet Metal Local 104 Sheet Metal Building Trades Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "HVAC M1086",
-   "title": "Advanced Manufacturing, Sheet Metal CNC",
-   "code": "APSM 103",
-   "college": "Foothill College",
-   "ambiguous": [
-    "AUTB M1076",
-    "HVAC M1086"
-   ]
-  },
-  "High School Articulations (Dublin)- Emergency Medical Response": {
-   "kind": "mid",
-   "id": "EMST M1056",
-   "title": "Emergency Medical Responder",
-   "code": "EMS 30",
+   "id": "BIOL M10SN",
+   "title": "Orientation to Health Care",
+   "code": "BIO 55",
    "college": "Las Positas College"
   },
-  "High School Articulation (Emerald)- Emergency Medical Response": {
-   "kind": "mid",
-   "id": "EMST M1056",
-   "title": "Emergency Medical Responder",
-   "code": "EMS 30",
-   "college": "Las Positas College"
-  },
-  "High School Articulation (Amador Valley)- Emergency Medical Response": {
-   "kind": "mid",
-   "id": "EMST M1056",
-   "title": "Emergency Medical Responder",
-   "code": "EMS 30",
-   "college": "Las Positas College"
-  },
-  "High School Articulations (Amador Valley)- Medical Occupations": {
+  "High School Articulation (Emerald)- Medical Occupations": {
    "kind": "cid",
    "id": "HIT 103 X",
    "title": "Medical Terminology",
    "code": "EMS 62",
    "college": "Las Positas College"
   },
-  "High School Articulation (Dublin)- Medical Occuptations": {
+  "High School Articulation (Foothill)- Emergency Medical Response": {
+   "kind": "mid",
+   "id": "EMST M1056",
+   "title": "Emergency Medical Responder",
+   "code": "EMS 30",
+   "college": "Las Positas College"
+  },
+  "High School Articulation (Foothill)- Medical Occupations": {
    "kind": "cid",
    "id": "HIT 103 X",
    "title": "Medical Terminology",
    "code": "EMS 62",
    "college": "Las Positas College"
   },
-  "IBEW Local 332 Residential Wireman Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "ELEC M10HJ",
-   "title": "RESIDENTIAL ELECTRICAL AIR CONDITIONING & REFRIGERATION; TELEPHONE SYSTEMS",
-   "code": "APEL 112",
-   "college": "Foothill College",
-   "ambiguous": [
-    "ELEC M10ED",
-    "ELEC M10EJ",
-    "ELEC M10ET",
-    "ELEC M10FE",
-    "ELEC M10GT",
-    "ELEC M10HJ"
-   ]
+  "High School Articulation (Granada)- Emergency Medical Response": {
+   "kind": "mid",
+   "id": "EMST M1056",
+   "title": "Emergency Medical Responder",
+   "code": "EMS 30",
+   "college": "Las Positas College"
   },
-  "Northern California Sound and Communication JATC Installer Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "ELEC M10DH",
-   "title": "FIRE ALARM, PAGING, EMERGENCY COMMUNICATION, MASS NOTIFICATION SYSTEMS",
-   "code": "APSC 122",
-   "college": "Foothill College"
+  "High School Articulation (Granada)-  Medical Occuptations": {
+   "kind": "cid",
+   "id": "HIT 103 X",
+   "title": "Medical Terminology",
+   "code": "EMS 62",
+   "college": "Las Positas College"
   },
-  "High School Articulation (Amador Valley)- Introduction to Athletic Training": {
+  "High School Articulation (Foothill)- Introduction to Athletic Training": {
    "kind": "course",
    "id": "KINE M11GR",
    "title": "Intro to Athletic Training and Sports Medicine",
    "code": "KIN 17",
    "college": "Las Positas College"
   },
-  "High School Articulation (Emerald)- Introduction to Athletic Training": {
+  "High School Articulation (Granada)- Introduction to Athletic Training": {
    "kind": "course",
    "id": "KINE M11GR",
    "title": "Intro to Athletic Training and Sports Medicine",
    "code": "KIN 17",
    "college": "Las Positas College"
-  },
-  "High School Articulation (Dublin)- Introduction to Athletic Training": {
-   "kind": "course",
-   "id": "KINE M11GR",
-   "title": "Intro to Athletic Training and Sports Medicine",
-   "code": "KIN 17",
-   "college": "Las Positas College"
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "HVAC M10BY",
-   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
-   "code": "APPT 171",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10BY",
-    "HVAC M10VC"
-   ]
-  },
-  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 2": {
-   "kind": "course",
-   "id": "HVAC M10AJ",
-   "title": "P-101 BASIC PLUMBING SKILLS",
-   "code": "APPT 131",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 4": {
-   "kind": "course",
-   "id": "HVAC M10AJ",
-   "title": "P-101 BASIC PLUMBING SKILLS",
-   "code": "APPT 131",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AJ",
-    "HVAC M10CD",
-    "HVAC M10CE"
-   ]
-  },
-  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 3": {
-   "kind": "course",
-   "id": "HVAC M10AJ",
-   "title": "P-101 BASIC PLUMBING SKILLS",
-   "code": "APPT 131",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AJ",
-    "HVAC M10CD",
-    "HVAC M10CE"
-   ]
-  },
-  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "HVAC M10UM",
-   "title": "MATHEMATICS/SCIENCE FOR THE PLUMBING TRADE",
-   "code": "APPT 162",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "HVAC M10AM",
-   "title": "SF 101 BASIC STEAMFITTING SKILLS",
-   "code": "APPT 141",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 4": {
-   "kind": "course",
-   "id": "HVAC M10AM",
-   "title": "SF 101 BASIC STEAMFITTING SKILLS",
-   "code": "APPT 141",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AM",
-    "HVAC M10CH"
-   ]
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
-   "kind": "course",
-   "id": "HVAC M10BY",
-   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
-   "code": "APPT 171",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10BY",
-    "HVAC M10VC"
-   ]
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
-   "kind": "mid",
-   "id": "HVAC M1006",
-   "title": "Start Test Balance: Air Side 2",
-   "code": "APPT 178",
-   "college": "Foothill College"
-  },
-  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 3": {
-   "kind": "mid",
-   "id": "PLMB M1024",
-   "title": "Plumbing 2",
-   "code": "APPT 164",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 2": {
-   "kind": "course",
-   "id": "HVAC M10AM",
-   "title": "SF 101 BASIC STEAMFITTING SKILLS",
-   "code": "APPT 141",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Steamfitting and Pipefitting Technology Apprenticeship Year 3": {
-   "kind": "course",
-   "id": "HVAC M10AM",
-   "title": "SF 101 BASIC STEAMFITTING SKILLS",
-   "code": "APPT 141",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AM",
-    "HVAC M10CH"
-   ]
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
-   "kind": "mid",
-   "id": "HVAC M1006",
-   "title": "Start Test Balance: Air Side 2",
-   "code": "APPT 178",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Residential Plumbing Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "HVAC M1119",
-   "title": "Residential Gas & Water Installations",
-   "code": "APPT 123",
-   "college": "Foothill College"
-  },
-  "UA Local 467 Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
-   "kind": "course",
-   "id": "HVAC M10BY",
-   "title": "BASIC REFRIGERATION I/STANDARDS/CFC/OSHA 30",
-   "code": "APPT 171",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10BY",
-    "HVAC M10VC"
-   ]
-  },
-  "UA Local 467 Plumbing and Pipefitting Apprenticeship Year 2": {
-   "kind": "mid",
-   "id": "PLMB M1024",
-   "title": "Plumbing 2",
-   "code": "APPT 164",
-   "college": "Foothill College"
-  },
-  "Pipe Trades Training Center Plumbing Technology Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "HVAC M10AJ",
-   "title": "P-101 BASIC PLUMBING SKILLS",
-   "code": "APPT 131",
-   "college": "Foothill College"
-  },
-  "Sheet Metal Local 104 Air Conditioning Mechanic Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "HVAC M1014",
-   "title": "Indoor Air Quality",
-   "code": "APSM 178A",
-   "college": "Foothill College"
-  },
-  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Certificate of Achievement": {
-   "kind": "mid",
-   "id": "HVAC M1084",
-   "title": "HVAC Trade History & Introduction to Testing, Adjusting & Balancing",
-   "code": "APSM 171A",
-   "college": "Foothill College"
-  },
-  "Sheet Metal Local 104 Test Adjust and Balancing Technician Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "HVAC M1084",
-   "title": "HVAC Trade History & Introduction to Testing, Adjusting & Balancing",
-   "code": "APSM 171A",
-   "college": "Foothill College"
-  },
-  "American Aerospace Technical Academy Non Destructive Testing Technician Apprenticeship Journeyperson": {
-   "kind": "mid",
-   "id": "INDT M1154",
-   "title": "Ultrasonic Testing Level One",
-   "code": "AATA 103A",
-   "college": "Foothill College",
-   "ambiguous": [
-    "INDT M1154",
-    "INDT M1155"
-   ]
-  },
-  "Sheet Metal Local 104 Sheet Metal Air Conditioning Specialist Career Certificate": {
-   "kind": "course",
-   "id": "AUTB M10AH",
-   "title": "ORIENTATION; SAFETY & BEGINNING RESIDENTIAL SHEET METAL INSTALLATION (SPECIALIST 1A)",
-   "code": "APPR 188A",
-   "college": "Foothill College",
-   "ambiguous": [
-    "AUTB M10AH",
-    "AUTB M10AI",
-    "AUTB M10AO",
-    "AUTB M10AP"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 4": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO",
-    "HVAC M10CX"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 5": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO",
-    "HVAC M10CX"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 3": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO"
-   ]
-  },
-  "Pipe Trades Training Center Air Conditioning and Refrigeration Technology Apprenticeship Year 2": {
-   "kind": "course",
-   "id": "HVAC M10AL",
-   "title": "RF 101 BASIC REFRIGERATION SERVICE SKILLS",
-   "code": "APPT 151",
-   "college": "Foothill College",
-   "ambiguous": [
-    "HVAC M10AL",
-    "HVAC M10AO"
-   ]
   }
  }
 }

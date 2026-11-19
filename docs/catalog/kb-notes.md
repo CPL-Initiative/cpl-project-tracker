@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-590 document(s).
+595 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -30,6 +30,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [ADR — The re-mint approval queue: a queue, never a fire button, and where its decision right sits](../kb-notes/adr-remint-approval-queue-decision-rights.md) | adr | published | 2026-09-05 | 2026-09-05 |
 | [COBI org layer — one platform, "site" as a view dimension (not a repo/site per org)](../kb-notes/adr-cobi-org-layer.md) | adr | published | 2026-07-14 | 2026-07-14 |
 | [Level-collapsing consolidation — over-merge beats under-merge for CPL](../kb-notes/adr-level-collapsing-consolidation.md) | adr | published | 2026-06-16 | 2026-06-16 |
+| [One credential list, with exhibits as its children](../kb-notes/adr-one-credential-list-exhibits-are-its-children.md) | adr | published | 2026-11-19 | 2026-11-19 |
 | [Pull from the source rather than accept a push](../kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md) | adr | published | 2026-08-19 | 2026-08-19 |
 | [Reference-data home — committed JSON by default, Supabase only for live curation](../kb-notes/adr-reference-data-committed-json-vs-supabase.md) | adr | published | 2026-06-18 | 2026-06-18 |
 | [Supersede, don't mutate, at the synthetic identity layer](../kb-notes/adr-supersede-dont-mutate-synthetic-layer.md) | adr | published | 2026-05-27 | 2026-05-27 |
@@ -63,6 +64,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A compact formatter is calibrated to a magnitude, and a second lane rarely shares it](../kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | methodology | published | 2026-08-27 | 2026-08-27 |
 | [A concatenated haystack penalises your best-curated record](../kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md) | methodology | published | 2026-08-10 | 2026-08-10 |
 | [A conditional key breaks a bulk upsert, and it fails positionally](../kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [A confirming read pages by key, never by offset](../kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md) | methodology | published | 2026-11-19 | 2026-11-19 |
 | [A conflicted pull request cannot produce a CI run, so read mergeable_state before blaming CI](../kb-notes/methodology-a-conflicted-pr-cannot-produce-a-ci-run.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [A control reported as broken may be live on a surface that draws nothing](../kb-notes/methodology-a-control-can-be-live-on-a-surface-that-draws-nothing.md) | methodology | published | 2026-09-05 | 2026-09-05 |
 | [A control that does nothing — read the request log first](../kb-notes/methodology-a-control-that-does-nothing-read-the-request-log-first.md) | methodology | published | 2026-09-23 | 2026-09-23 |
@@ -205,6 +207,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A rendered artifact reads the model through a filed stamp](../kb-notes/methodology-a-rendered-artifact-reads-the-model-through-a-filed-stamp.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A repaint must keep what the reader opened](../kb-notes/methodology-a-repaint-must-keep-what-the-reader-opened.md) | methodology | published | 2026-11-10 | 2026-11-10 |
 | [A report must read the screen, not recompute it](../kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md) | methodology | published | 2026-08-17 | 2026-08-17 |
+| [A reread keeps the better record](../kb-notes/methodology-a-reread-keeps-the-better-record.md) | methodology | published | 2026-11-19 | 2026-11-19 |
 | [A retrieval miss and a data gap look identical from the answer](../kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A retrieval route costs what the synonym table decides, and the batch waits for the slowest route](../kb-notes/methodology-a-retrieval-route-costs-what-the-synonym-table-decides.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A reviewer's confirm is a probe for procedure gaps, and it retires as they close](../kb-notes/methodology-a-reviewer-confirm-is-a-probe-for-procedure-gaps.md) | methodology | published | 2026-10-14 | 2026-10-14 |
@@ -225,6 +228,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A second copy of a fact is a stale copy waiting](../kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting.md) | methodology | published | 2026-08-25 | 2026-08-25 |
 | [A second look shown the verdict rubber-stamps it — ask the negative instead](../kb-notes/methodology-a-second-look-shown-the-verdict-rubber-stamps-it.md) | methodology | published | 2026-09-21 | 2026-09-21 |
 | [A second PR stacked on a just-merged branch can squash to an empty commit — verify main](../kb-notes/methodology-stacked-pr-empty-squash.md) | methodology | published | 2026-06-23 | 2026-06-23 |
+| [A self-check must see what the rule writes](../kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [A self-contained injected component must paint its own canvas, not just its text](../kb-notes/methodology-self-contained-injected-component-styling.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [A settled ruling does not enforce itself — the consumer has to change](../kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md) | methodology | published | 2026-08-13 | 2026-09-27 |
 | [A share is not a fact until you have measured the whole](../kb-notes/methodology-a-share-is-not-a-fact-until-you-have-measured-the-whole.md) | methodology | published | 2026-09-11 | 2026-09-11 |
@@ -517,6 +521,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When a corpus does not fit, its order is the selection](../kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [When a page and an assistant show the same facts, build them once](../kb-notes/methodology-one-build-two-readers.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [When an authoritative identity key exists, use it before you score strings](../kb-notes/methodology-use-the-identity-key-before-you-score-strings.md) | methodology | published | 2026-08-13 | 2026-08-13 |
+| [When every merge conflicts a generated file, land the work as one wave pull request, not a chain](../kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md) | methodology | published | 2026-11-18 | 2026-11-18 |
 | [When the workaround is the keyboard, suspect the event model](../kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Kinesiology",
  "award": "A.A- T Degree",
- "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=324",
+ "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=323",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13211,
+  "input_tokens": 13095,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13211,
-    "output_tokens": 3715,
+    "input_tokens": 13095,
+    "output_tokens": 4125,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 3715,
+  "output_tokens": 4125,
   "output_tokens_details": {
-   "thinking_tokens": 655
+   "thinking_tokens": 1093
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12714,
- "ms": 28543,
- "seconds": 29.0,
+ "cost_usd": 0.13488,
+ "ms": 30179,
+ "seconds": 30.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 42,
+   "placed": 52,
    "listed": 52,
-   "share": 0.808,
-   "missing": [
-    "BIOL16",
-    "BIOL4",
-    "BIOL5",
-    "CHEM1",
-    "CHEM12",
-    "KINE40A",
-    "KINE45C",
-    "PHYS2",
-    "PHYS6",
-    "STATC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -80,35 +69,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    22.0,
+    26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "'Aquatics: (maximum of one course)' chooses courses but names no minimum",
-    "'Combatives: (maximum of one course)' chooses courses but names no minimum",
-    "'Dance: (maximum of one course)' chooses courses but names no minimum",
-    "'Fitness: (maximum of one course)' chooses courses but names no minimum",
-    "'Individual Sports: (maximum of one course)' chooses courses but names no minimum",
-    "'Team Sports: (maximum of one course)' chooses courses but names no minimum",
-    "the record names no total"
-   ]
+   "stated": [
+    22.0,
+    26.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -123,22 +107,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Kinesiology — MOVEMENT-BASED COURSES",
+   "section_heading": "Associate in Arts in Kinesiology for Transfer (ADT: A.A.-T)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -148,18 +132,118 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Identify major microscopic and gross structures of the major systems of the human body.",
+    "Describe normal physiological processes.",
+    "Describe the different sub disciplines of Kinesiology.",
+    "Describe the role of physical activity in daily life.",
+    "Explain the career options available to students graduating from departments of Kinesiology"
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Aquatics: (maximum of one course)",
-    "rule": "choose_courses",
+    "name": "REQUIRED COURSES",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
      "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 005",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 040A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIOL 016",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 012",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KINE 045C",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYS 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "MOVEMENT-BASED COURSES",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
     },
     "courses": [
      {
@@ -182,19 +266,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Combatives: (maximum of one course)",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "KINE 003A",
       "units": 1,
@@ -222,19 +294,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Dance: (maximum of one course)",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "DANC 010A",
       "units": 1,
@@ -325,19 +385,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Fitness: (maximum of one course)",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "KINE 006E",
       "units": 1,
@@ -421,19 +469,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Individual Sports: (maximum of one course)",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "KINE 021A",
       "units": 1,
@@ -468,19 +504,7 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Team Sports: (maximum of one course)",
-    "rule": "choose_courses",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "KINE 030A",
       "units": 1,
@@ -541,56 +565,73 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BIOL004",
-    "why": "not in the text; required core likely on the preceding page, not supplied"
-   },
-   {
-    "code": "BIOL005",
-    "why": "not in the text; required core likely on the preceding page, not supplied"
-   },
-   {
-    "code": "BIOL016",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "CHEM 1",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "CHEM 12",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "KINE 040A",
-    "why": "not in the text; required core likely on the preceding page, not supplied"
-   },
-   {
-    "code": "KINE 045C",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "PHYS 2",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "PHYS 6",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "not in the text; likely on the preceding page, not supplied"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The supplied text begins at page 324 mid-program with only the MOVEMENT-BASED COURSES list; the program heading, award heading, required core, other elective lists, unit totals, GE pattern, outcomes and careers are presumably on the preceding page(s), which were not supplied. Reviewer should check the earlier page.",
-   "The overall rule for movement-based courses (e.g., how many courses / how many areas) is not printed in the supplied text; each area prints only 'maximum of one course'. Each area is recorded as a choose_courses block with minimum null.",
-   "DANC 013C, DANC 016A and 'Danc 16B' (printed with lowercase subject and no leading zero) are not in the closed list and are marked catalog_addition.",
-   "KINE 012B is printed in the requirements list as 'Weight Training - Beginning', apparently a typo for Intermediate (the course description reads Intermediate).",
-   "DANC 015A is printed as 'Contemporary - Modern Dance - Beginning' vs closed-list title 'Modern Dance - Beginning'.",
-   "The text after the requirement list is course descriptions; no course outcomes are printed."
+   "Movement-based courses are recorded as one block (3 units); the catalog limits students to a maximum of one course from any group (Aquatics, Combatives, Dance, Fitness, Individual Sports, Team Sports).",
+   "List A allows only one course from the same subject (e.g., CHEM or PHYS).",
+   "STAT code printed as 'STAT C1 000' (PDF spacing artifact); recorded as STAT C1000, matching the closed list.",
+   "'Danc 16B' recorded as printed; it appears to be DANC 016B, which is not in the closed list.",
+   "KINE 012B is printed with the title 'Weight Training - Beginning' in the catalog; the closed list title is 'Weight Training - Intermediate'.",
+   "The 60 semester units sentence is the standard ADT requirement, not printed as this award's own total, so degree_total is left null. Cal-GETC units are not printed.",
+   "Outcome text normalized from PDF ligature artifacts (e.g., 'IdenƟ fy' read as 'Identify')."
   ]
  },
- "extracted_run": "39035226783"
+ "extracted_run": "44514080886",
+ "catalog_year": "2026-2027",
+ "source_sha": "3232a387d747bcfe",
+ "source_codes": [
+  "BIOL16",
+  "BIOL4",
+  "BIOL5",
+  "CHEM1",
+  "CHEM12",
+  "DANC10A",
+  "DANC10B",
+  "DANC11A",
+  "DANC12A",
+  "DANC12B",
+  "DANC13A",
+  "DANC13B",
+  "DANC14A",
+  "DANC14B",
+  "DANC15A",
+  "KINE11A",
+  "KINE11B",
+  "KINE11X",
+  "KINE12A",
+  "KINE12B",
+  "KINE12X",
+  "KINE13X",
+  "KINE18A",
+  "KINE19A",
+  "KINE21A",
+  "KINE23A",
+  "KINE23B",
+  "KINE23X",
+  "KINE23Y",
+  "KINE2A",
+  "KINE2B",
+  "KINE2D",
+  "KINE30A",
+  "KINE30B",
+  "KINE32A",
+  "KINE32X",
+  "KINE36A",
+  "KINE36B",
+  "KINE37A",
+  "KINE37B",
+  "KINE3A",
+  "KINE3D",
+  "KINE3E",
+  "KINE3X",
+  "KINE40A",
+  "KINE45C",
+  "KINE6E",
+  "KINE6F",
+  "KINE6X",
+  "PHYS2",
+  "PHYS6",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }

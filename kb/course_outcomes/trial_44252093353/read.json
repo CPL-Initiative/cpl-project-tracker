@@ -1,0 +1,410 @@
+{
+ "run": "44252093353",
+ "index": "catalog:los_medanos",
+ "host": "https://lmc.elumenapp.com/catalog/26-27/art",
+ "system": "elumen",
+ "source_kind": "catalog",
+ "slugs": "los_medanos",
+ "part": 1,
+ "of": 1,
+ "wanted": 521,
+ "slice": 12,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": "template",
+ "at": "2026-11-18T06:38:50Z",
+ "complete": true,
+ "summary": {
+  "read": 12,
+  "shapes": {
+   "list": 12
+  },
+  "status_not_200": 0,
+  "outcomes": 57
+ },
+ "rows": [
+  {
+   "code": "ACS 010",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,acs010?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,acs010?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2305,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Academic Behaviors: Demonstrate an understanding of and apply effective learning skills, academic behaviors, study and research practices, and coping strategies to support active learning and participation in college.",
+    "Community Building: Engage with the campus community through physical and technological resources.",
+    "Community Building: Campus and Resource Engagement: Build working relationships (with peers, faculty/staff, counselor, mentors, campus advocates) that support students’ academic success.",
+    "Academic Integrity: Think critically and creatively about attitude, motivation, behavior and the impact of these on their academic performance and academic identity."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "83650007a6b80a106c5479462ecbcb63",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "AUTO 010N",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,auto010n?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,auto010n?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2280,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1: Describe the practical skills necessary to perform detailing services on a wide range of vehicles, Including mastering the use of detailing tools, understanding how to properly clean and care for various surfaces, and developing the ability to identify and correct common detailing problems. (PSLO 1,3,5)",
+    "CSLO 2: Demonstrate a deeper understanding of the science behind automotive detailing. This includes knowledge of chemistry, materials science, and surface physics, as well as an understanding of the different types of detailing products and how they work. (PSLO 1,3)",
+    "CSLO 3: Explain the importance of safety and environmental responsibility, including the proper safety protocols and personal protective equipment (PPE), as well as understanding how to properly dispose of detailing products and waste. (PSLO 5)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "5067e7729bd4e3dc1859b79c340f20f4",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "CNT 010",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,cnt010?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,cnt010?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2238,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1: Describe and differentiate the devices and services used to support communications in data networks and the Internet, including the role of protocol layers. (PLSO 1, 2 - Networking & Security; PSLO 1, 3 â€“ Computer Support Specialist)",
+    "CSLO 3: Explain fundamental Ethernet concepts such as media, services, and operations and use them to build a simple network using routers and switches. (PLSO 1, 2, 3 - Networking & Security; PSLO 3 â€“ Computer Support Specialist; PSLO 1, 3 â€“ Computer Systems Specialist)",
+    "CSLO 2: Evaluate and apply the addressing and naming schemes at various layers of data networks in IPv4 and IPv6 environments, including the design, calculation, and application of subnet masks and addresses. (PLSO 1, 2, 3 - Networking & Security)",
+    "CSLO 4: Configure, monitor, and operate small networks using industry standard commands and common network utilities. (PLSO 1, 2, 3 - Networking & Security; PSLO 1, 3 – Computer Support Specialist; PSLO 1, 3 – Computer Systems Specialist)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "4c4278da8a00ca63d250e5a116a7d802",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "COUNS 030N",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,couns030n?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,couns030n?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1544,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1. Clearly articulate their educational goal including specific requirements and resources needed. (PSLOs: A, B, E)",
+    "CSLO 2. Identify and effectively use college resources, such as the insite portal, as well as student support services necessary for individual success. (PSLO: E)",
+    "CSLO 3. Demonstrate understanding in how to reach their educational goal and develop a comprehensive educational plan. (PSLO: B)",
+    "CSLO 4. Demonstrate the knowledge and understanding of the goals and background of the 3SP process: assessment, orientation, and educational plan. (PSLO: F)",
+    "CSLO 5. Apply and demonstrate critical thinking in reading college policies such as academic scholarship, maintaining good standing, and repeatability; and problem solving around their educational issues. (PSLO: D, F)",
+    "CSLO 6. Successfully demonstrate knowledge and skills for successful preparation to take a fully or partial online course. (PSLO: D, F)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "7bf2f3e7f12420a9d2bf22d229f8bddb",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ECONC 2001",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,econc2001?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,econc2001?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2015,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Utilize the concept of scarcity to explain economic trade-offs, opportunity costs, and rational behavior while applying the tools of reading, and writing across the curriculum",
+    "Calculate, interpret, and analyze measures of elasticity and its applications",
+    "Demonstrate how markets function and what happens in the presence of market failures and consider the ethical implications associated with negative externalities such as pollution.GESLO Ethical Inquire",
+    "Analyze production and costs of the firm considering a global perspective",
+    "Demonstrate how firms attempt to optimize their objectives in response to price signals under a variety of market structures in the short and long-run"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "8862e16fa812564b310780ab053aca5c",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "ENGLC 1000",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,englc1000?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,englc1000?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2310,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Comprehend, summarize, analyze, synthesize, and evaluate a variety of primarily non-fiction texts",
+    "Write clear, well-organized essays with arguable theses, persuasive support, and synthesis of several sources, demonstrating engagement in a full and productive reading, thinking, and writing process, and showing syntactical maturity",
+    "Think critically at a college level by evaluating their own reading and writing process, describing and evaluating arguments, recognizing bias and identifying and avoiding errors in logic, and recognizing tone, audience and purpose in texts",
+    "Consider diverse perspectives and worldviews (i.e. in regards to ethnicity, race, gender, class, language, nationality, sexual orientation, religion, or political beliefs) in order to engage thoughtfully with the perspectives of others.",
+    "Conduct basic research using library tools, incorporating various sources into essays using appropriate documentation format. (GESLO 2)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "bc367ffd5a2972046994a412289d30e4",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "HIST 031",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,hist031?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,hist031?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1853,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1: Analyze the cultural, economic, social, and ideological factors that have influenced the development of California.(PSLO 1,2,3,4) (GE SLO 1,2)",
+    "CSLO 2: Perform research, evaluating and applying primary and secondary source materials, to reach well-reasoned conclusions about California history. (PSLO 1,2,34) (GE SLO 2,3)",
+    "CSLO 3: Explain how diverse populations historically have shaped California society. (PSLO 1,2,3,4) (GE SLO 2,3,4, 5)",
+    "CSLO 4: Analyze the history of California within the broader context of United States and global history. (PSLO 1,2,3,4) (GE SLO 1,2,3,4)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "9d6487344c37a2c161123a32abad96ec",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "KINES 100",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,kines100?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,kines100?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1477,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1: Identify and distinguish the basic concepts of Kinesiology. (PSLO 2)",
+    "CSLO 2: Describe the historical, ethical, and philosophical foundations of Kinesiology. (PSLO 1)",
+    "CSLO 3: Identify the fundamental concepts of basic movement. (PSLO 3, 4)",
+    "CSLO 4: Describe and explain the relationship between physical activity and the conceptual foundations of the sub-disciplines of Kinesiology. (PSLO 3, 4)",
+    "CSLO 5: Identify and describe the pathways and requirements for career opportunities. (PSLO 3)"
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "974992df7b62622bba6fc70e4d1c377f",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "MATH 140",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,math140?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,math140?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 3015,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Calculus Literacy (PSLO 2) CSLO 1: Read a publication that involves calculus concepts, critique calculus based studies to make informed judgments, and defend their reasoning in writing by citing topics from the course content and using appropriate calculus language.",
+    "Applications to Business and Science (PSLOS 3 and 4) CSLO 2: Apply calculus concepts to analyze marginal cost, profit, and revenue; determine maxima and minima in optimization problems; and integrate to solve business, economics and science applications.",
+    "Graphical Representation (PSLOS 3 and 4) CSLO 3: Use differential or integral calculus to graph functions and study the behavior of functions. Sketch the graph of functions using horizontal and vertical asymptotes, intercepts, and first and second derivatives to determine intervals where the function is increasing and decreasing, maximum and minimum values, intervals of concavity and points of inflection. Use a graphical approach to estimate areas under curves or definite integrals.",
+    "Derivative Analysis (PSLOS 1, 2, 3 and 5) CSLO 4: Find the derivatives of polynomial, rational, exponential, logarithmic, and power functions, and the derivatives of functions involving constants, sums, differences, products, quotients, and the chain rule; find rates of change and tangent lines; use the results to develop informed conclusions; and have strategies for evaluating mathematical conclusions.",
+    "Integral Analysis (PSLOS 1, 2, 3 and 5) CSLO 5: Find definite and indefinite integrals by using the general integral formulas, integration by substitution, and other integration techniques; use the results to develop informed conclusions; and have strategies for evaluating mathematical conclusions."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "334e866f4e48f3f55016a5d215df994e",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "PHYSC 005",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,physc005?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,physc005?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2184,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1 Formulate solutions to physical science problems using relevant scientific concepts. (GESLO: 6)",
+    "CSLO 2 Assess the connections between the various disciplines of physical science and other disciplines, and assemble concepts from the various physical sciences to solve interdisciplinary problems, including examples from everyday life.",
+    "CSLO 3. Read critically and communicate effectively as a writer and a speaker by evaluating interdisciplinary scientific controversies and judging which arguments from various disciplines are sound and which arguments are invalid. (GESLO: 2)",
+    "CSLO 4. Read critically and communicate effectively as a writer and a speaker by assessing science as a global endeavor and a synthesis of ideas from, and with relevance for, people regardless of ethnicity, gender, or cultural background.",
+    "CSLO 5. Read critically and communicate effectively as a writer and a speaker by judging the ethical implications of the pursuit of scientific knowledge and its application through technology."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "70f1864a7b9757af7c584c3c7574d3c7",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "PTEC 006",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,ptec006?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,ptec006?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 2499,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "CSLO 1:Understanding Fundamental Concepts - Demonstrate a solid understanding of fundamental principles and concepts in chemistry relevant to industrial technology applications.",
+    "CSLO 2: Chemical Safety and Hazard Awareness - Identify and assess chemical hazards, demonstrating knowledge of safety protocols and procedures in an industrial setting.",
+    "CSLO 3: Material Properties and Selection - Evaluate the chemical properties of materials commonly used in industrial processes, and make informed decisions on material selection based on desired characteristics.",
+    "CSLO 4: Reaction Kinetics and Thermodynamics - Understand the principles of reaction kinetics and thermodynamics as they relate to industrial processes, and apply this knowledge to optimize reaction conditions.",
+    "CSLO 5: Process Optimization - Apply chemical principles to optimize industrial processes, considering factors such as yield, efficiency, and environmental impact.",
+    "CSLO 6:Troubleshooting and Problem Solving - Develop problem solving skills to troubleshoot and resolve issues related to chemical processes in an industrial setting.",
+    "CSLO 7: Emerging Technologies In Industrial Chemistry - Stay informed about and adapt to emerging technologies and advancements in industrial chemistry that may impact industrial processes."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "0afe4a22cb3f6e97cba7f932b6ca5ecf",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  },
+  {
+   "code": "SPAN 046",
+   "title": null,
+   "course_id": null,
+   "report": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,span046?tenant=lmc.elumenapp.com",
+   "named_by": [
+    "los_medanos"
+   ],
+   "status": 200,
+   "final_url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/26-27,course,span046?tenant=lmc.elumenapp.com",
+   "access": "public",
+   "title_printed": "",
+   "chars": 1536,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": null,
+   "outcomes": [
+    "Understand and produce appropriate responses in familiar situations in the professional setting.",
+    "Demonstrate ability to communicate effectively in a professional situation.",
+    "Demonstrate knowledge and understanding of the Spanish speaking culture.",
+    "Demonstrate ability to interview, collect data, give instructions and sustain a logical dialogue with one another or a native speaker."
+   ],
+   "maps_to": null,
+   "parsed_from": "html",
+   "fingerprint": "b0fda14bc1fade328b01fed0a9a31702",
+   "objectives": [],
+   "objectives_heading": null,
+   "objectives_lead": null,
+   "objectives_fingerprint": null
+  }
+ ]
+}

@@ -65,10 +65,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
+    24.0,
     26.0
    ],
    "stated": [
@@ -76,9 +76,8 @@
     26.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 23.0-26.0; the catalog states 24.0-26.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -105,7 +104,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -183,33 +182,39 @@
       "alternatives": [
        {
         "code": "STAT C1000E",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "STAT 101",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "MATH 260",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "MATH 240",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "MATH 245",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 6
        },
        {
         "code": "MATH 240S",
-        "units": null,
-        "catalog_addition": true
+        "units": 4,
+        "catalog_addition": true,
+        "units_max": 6
        }
       ],
       "catalog_addition": false
@@ -228,5 +233,43 @@
    "Outcome text rejoined across line-break hyphens ('bio -medical' read as 'biomedical', 'func -tion' as 'function')."
   ]
  },
- "extracted_run": "39054675770"
+ "extracted_run": "39054675770",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "STAT C1000E",
+   "words": "STAT C1000E, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "STAT 101",
+   "words": "STAT 101, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "MATH 260",
+   "words": "MATH 260, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "MATH 240",
+   "words": "MATH 240, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "MATH 245",
+   "words": "MATH 245, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "MATH 240S",
+   "words": "MATH 240S, printed as an alternative to STAT C1000 with no units, takes its row's 4-6 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

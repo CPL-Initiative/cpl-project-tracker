@@ -2,65 +2,53 @@
  "college": "Compton College",
  "programs": 87,
  "with_closed_list": 86,
- "found": 81,
- "extracted": 81,
+ "found": 83,
+ "extracted": 83,
  "errors": 0,
- "passed_machine_checks": 56,
+ "passed_machine_checks": 68,
  "failed": {
-  "coverage": 9,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 23,
+  "arithmetic": 14,
   "repeated": 0,
-  "outcomes": 2
+  "outcomes": 1
  },
- "cost_usd": 5.84,
- "cost_per_program": 0.0721,
+ "cost_usd_run": 4.16,
+ "cost_usd_filed": 6.14,
+ "cost_per_program": 0.074,
+ "extract_calls": 50,
+ "extract_failed": [],
  "not_found": [
   {
-   "control_number": "37322",
-   "title": "Special Education Assistant",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "37970",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-    "coverage": 0.412
-   }
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=16",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "37325",
-   "title": "Early Childhood Education",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "38172",
+   "title": "Cosmetology",
+   "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=82",
-    "coverage": 0.3
-   }
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=16",
+    "coverage": 0.0
+   },
+   "status": "Active"
   },
   {
-   "control_number": "38567",
-   "title": "Engineering Technician",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "control_number": "38175",
+   "title": "Physical Science",
+   "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=88",
-    "coverage": 0.143
-   }
-  },
-  {
-   "control_number": "42724",
-   "title": "Real Estate Salesperson",
-   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-   "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=110",
-    "coverage": 0.333
-   }
-  },
-  {
-   "control_number": "45446",
-   "title": "California General Education Transfer Curriculum (Cal-GETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=64",
-    "coverage": 0.312
-   }
+    "url": "https://www.compton.edu/academics/docs/2026-2027_Compton-College-Catalog.pdf#page=72",
+    "coverage": 0.087
+   },
+   "status": "Active"
   }
  ],
- "run": "39006336111"
+ "run": "44477684527"
 }

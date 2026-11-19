@@ -1,0 +1,171 @@
+Course Outline
+STAT C1000 - Introduction to Statistics
+Division: Science and Mathematics
+Department: Mathematics
+Description
+
+This course is an introduction to statistical thinking and processes, including methods and concepts for discovery and decision-making using data.  Topics include descriptive statistics; probability and sampling distributions; statistical inference; correlation and linear regression; analysis of variance, chi-squared, and t-tests; and application of technology for statistical analysis including the interpretation of the relevance of the statistical findings. Students apply methods and processes to applications using data from a broad range of disciplines. 
+
+Units and Hours
+Total Units: 0
+Lecture Units: 4
+Lecture Contact Hours: 64 - 72
+Total Contact Hours: 64 - 72
+Total Out-of-Class Hours: 128 - 144
+Total Student Learning Hours: 192 - 216
+Requisites and Requisite Analysis
+Prerequisite: Placement as determined by the college’s multiple measures assessment process or completion of a course taught at or above the level of intermediate algebra.
+Student Learning Outcomes
+Upon successful completion of this course, students should be able to:
+Describe and summarize data of samples and populations.
+Correctly apply the addition or multiplication rules of a probability experiment.
+Correctly evaluate probability from a binomial or normal distribution.
+Correctly define and conduct a hypothesis test.
+Course Objectives
+Part 1 - Common Course Numbering Objectives:
+Assess how data were collected and recognize how data collection affects what conclusions can be drawn from the data.
+Identify appropriate graphs and summary statistics for variables and relationships between them and correctly interpret information from graphs and summary statistics.
+Describe and apply probability concepts and distributions.
+Demonstrate an understanding of, and ability to use, basic ideas of statistical processes, including hypothesis tests and confidence interval estimation.
+Identify appropriate statistical techniques and use technology-based statistical analysis to describe, interpret, and communicate results.
+Evaluate ethical issues in statistical practice.
+Part 2 - Local Course Objectives:
+Recognize the proper use of statistics and distinguish them from the abuse of statistics.
+Distinguish among different scales of measurement and their implications.
+Apply concepts of sample space and probability.
+Apply proper rules of probability.
+Identify and understand the methods of data collection while evaluating the quality and appropriateness of the data.
+Describe, analyze, and summarize the data of samples and populations, using numerical and graphical summaries.
+Calculate measures of central tendency and variation for a given data set.
+Calculate the mean and variance of a discrete distribution.
+Calculate probabilities using normal and t-distributions.
+Construct and interpret confidence intervals.
+Compare and contrast different kinds of probability distributions, including the binomial, the uniform and the normal, and select the correct distribution in applications.
+Run various tests of hypotheses on various types of sample statistics, while appropriately using the Central Limit Theorem.
+Apply techniques of linear correlation and regression of bivariate relations.
+Determine and interpret levels of statistical significance including p-values.
+Identify the basic concept of hypothesis testing including Type I and II errors.
+Select the appropriate technique for testing a hypothesis and interpret the result.
+Formulate hypothesis tests involving samples from one and two populations.
+Use linear regression and ANOVA analysis for estimation and inference, and interpret the associated statistics.
+Interpret the output of a technology-based statistical analysis.
+Compare and contrast applications from business, psychology, sociology, life science, health science, education and other disciplines.
+Correctly use statistical technology (software such as Excel or MINITAB) to calculate and display descriptive statistics of samples and populations.
+Course Content
+Lecture Outline
+
+Part 1 - Common Course Numbering Content:
+
+Introduction to statistical thinking and processes
+Technology-based statistical analysis
+Applications using data from four or more of the following disciplines: administration of justice, business, economics, education, health science, information technology, life science, physical science, political science, psychology, and social science
+Units (subjects/cases) and variables in a data set, including multivariable data sets
+Categorical and quantitative variables
+Sampling methods, concerns, and limitations, including bias and random variability
+Observational studies and experiments
+Data summaries, visualizations, and descriptive statistics
+Probability concepts
+Probability distributions (e.g., binomial, normal)
+Sampling distributions and the Central Limit Theorem
+Estimation and confidence intervals
+Hypothesis testing, including t-tests for one and two populations, Chi-squared test(s), and ANOVA; and interpretations of results
+Regression, including correlation and linear regression equations 
+
+Part 2 - Local Course Content:
+
+Introduction to Statistics
+Uses and abuses
+Branches of statistics (descriptive and inferential)
+Nature of data including; qualitative and quantitative, levels of measurement (nominal, ordinal, interval or ratio), methods of data collection (census, sampling, simulation or experiment), and sampling techniques (random, stratified, cluster, convenience, or systematic)
+Samples vs. populations
+Descriptive Statistics
+Summarizing, graphing and presenting data using numerical and graphical summaries
+Evaluating the quality and appropriateness of the data
+Evaluating various measures on data sets including; mean, median, mode, range, variance, standard deviation, and measures of position
+Probability
+Fundamentals
+Sample spaces
+Sampling distributions
+Addition and multiplication rules
+Counting techniques
+Probability distributions
+Random variables
+Mean, standard deviation and expected value of random variables
+Binomial, uniform and other probability distributions
+Normal probability distribution
+Standard Normal Distribution
+Empirical Rule
+Central Limit Theorem
+Normal as approximation to the binomial
+Testing hypotheses
+Testing a hypotheses, while appropriately using the Central Limit Theorem 
+Determining confidence intervals
+Running various specific hypothesis tests of the mean, variance, standard deviation and proportion of normal distributions, t-distributions, and/or binomial distributions
+t-tests for both one and two populations
+Chi-square test
+Other topics
+Linear correlation of bivariate relations
+Linear regression of bivariate relations
+Contingency tables
+ANOVA tests
+Use of statistical technology such as MINITAB, Excel, and graphing calculators to perform the tasks related to the concepts listed in categories A through G
+Applications to include data from disciplines including natural sciences, life science, health science, education, business, economics, and the behavioral sciences.
+Lab Outline
+
+-
+
+Methods of Instruction
+Lecture
+Distance Education
+Other:
+Whiteboard drill and practice, Computer-aided instruction
+Methods of Evaluation
+Class Activity
+Examinations
+Homework
+Lab work
+Presentations (oral or visual)
+Projects
+Quizzes
+Written papers or reports
+Other
+Examples of potential methods of evaluation used to observe or measure students’ achievement of course outcomes and objectives could include but are not limited to quizzes, exams, laboratory work, field journals, projects, research demonstrations, etc. Methods of evaluation are at the discretion of local faculty. 
+Out of Class Assignments
+Reading Assignments
+
+Read the study adapted from the article “Ages of Oscar-winning Best Actors and Actresses” by Richard Brown and Gretchen Davis in Mathematics Teacher magazine. Pay particular attention to the birth dates and gender of the winners and the dates of the award. Explore the data using appropriate statistics and graphs. Determine whether there are significant differences between the ages of the Best Actresses and the ages of the Best Actors by using appropriate hypothesis tests. Describe the methods used and the conclusions reached.
+
+Writing Assignments
+
+Locate a professional journal with an article that uses a statistical analysis of an experiment. Describe and comment on the design of the experiment. Identify one particular issue and determine whether the result was found to be statistically significant. Determine whether that same result has practical significance. Support your response in a typed one-page paper.
+
+Critical Thinking Assignments
+
+Under a given assumption, if the probability of a particular observed event is extremely small, researchers conclude that the assumption is probably not correct. Consider graduation rates, where a simple random sample is conducted of 1500 community college students who are seeking associate degrees and includes 790 who earned associate’s degrees within three years. Use a 0.01 significance level to test the claim that most community college students earn associate’s degrees within three years.
+
+Course Materials
+Textbooks:
+Çetinkaya-Runde, M., Hardin, J. (2024). Introduction to Modern Statistics. (2nd ed.) OpenIntro.
+Peck, R., Case, C. (2024). Statistics: Learning From Data. (3rd ed.) Cengage.
+Illowsky, B., Dean, S. (2023). Introductory Statistics. (2nd ed.) OpenStax. OER Textbook.
+Charles A. Dana Center. (2021). Introductory Statistics: Analyzing Data with Purpose, The Dana Center Mathematics Pathways. University of Texas, Austin. OER Textbook.
+Gould, R., Wong, R., Ryan, C.. (2025). Introductory Statistics: Exploring the World Through Data. (4th ed.) Pearson.
+Brase, C. H., Brase, C. P.. (2018). Understandable Statistics. (12th ed.) Brooks Cole.
+Sullivan III, Michael. (2017). Statistics Informed Decisions Using Data. (5th ed.) Pearson/Prentice Hall.
+Triola, M.. (2018). Elementary Statistics using Excel. (6th ed.) Pearson/Prentice Hall.
+Codes and Dates
+Approval Dates:
+Board of Trustees: 06/09/2022
+Initial DE Approval: 06/01/2009
+Board of Trustees Correction: 12/13/2024
+Chancellors Office Approval: 11/22/2024
+Curriculum Approval: 11/04/2024
+Origination Date: 01/16/2001
+Effective Term Fall 2025
+TOP Code 170100 - Mathematics, General
+CIP Code 27.0501 - Statistics, General
+C-ID Number
+MATH 110
+Course Originator Yarbrough, Kay Dee
+ASCCC Discipline List
+Mathematics

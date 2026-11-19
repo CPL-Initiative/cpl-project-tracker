@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9559,
-    "output_tokens": 2924,
+    "output_tokens": 3028,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 2924,
+  "output_tokens": 3028,
   "output_tokens_details": {
-   "thinking_tokens": 460
+   "thinking_tokens": 479
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09672,
- "ms": 22163,
- "seconds": 22.6,
+ "cost_usd": 0.0988,
+ "ms": 23389,
+ "seconds": 23.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 42,
+   "placed": 43,
    "listed": 43,
-   "share": 0.977,
-   "missing": [
-    "ECON101H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2002H",
+     "listed": "ECON101H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "BUS146",
-    "ECONC2002H"
+    "BUS146"
    ],
    "flagged": [
-    "BUS146",
-    "ECONC2002H"
+    "BUS146"
    ],
    "pass": true
   },
@@ -80,8 +84,7 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
-   "rescored": "Sam's ruling of 2026-11-17, short high end"
+   "short_high": true
   },
   "repeated": {
    "codes": [],
@@ -466,14 +469,16 @@
    }
   ],
   "notes": [
-   "The only printed total is 'Total Units 24-26' for the certificate, recorded in total_units; the single block has no separate printed total.",
-   "Honors alternatives (BUS 160H, ECON C2002H, STAT C1000H) have no units printed beside them; units left null.",
-   "ECON C2002H is not in the closed list (closed list has ECON 101H, Principles of Macroeconomics - Honors, likely its predecessor).",
-   "BUS 146 Principles of Money Management is listed in the catalog but not in the closed list.",
-   "Footnote markers '1' and '2' after MATH 180 and STAT C1000 titles are references to notes, not units.",
-   "Note 3 restricts courses already counted toward the CPA Accounting Subjects or CPA Licensure certificates.",
-   "Curriculum map (26.5 units) is an example pathway only, not a requirement."
+   "Total Units printed as 24-26 for the course list; recorded as total_units. Block stated left null since the only printed total is the program total.",
+   "Honors alternatives (BUS 160H, ECON C2002H, STAT C1000H) are printed without units beside them; units left null.",
+   "ECON C2002H is not in the closed list (closed list has ECON 101H Principles of Macroeconomics - Honors); likely renumbered.",
+   "BUS 146 Principles of Money Management appears in the catalog but not in the closed list.",
+   "Footnote markers '1' and '2' follow the MATH 180 and STAT C1000 titles (MATH 080 / STAT 1000S support course notes).",
+   "Note 3: courses counted toward the CPA Exam Preparation: Accounting Subjects Requirement Certificate or CPA Licensure: Accounting Study and Ethics Certificate cannot be counted toward this certificate.",
+   "Curriculum map example totals 26.5 units; for reference only.",
+   "Careers: the text names only 'career opportunities in the public, private and non-profit accounting fields'; recorded as one career-field entry."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "44481520157",
+ "catalog_year": "2026-2027"
 }

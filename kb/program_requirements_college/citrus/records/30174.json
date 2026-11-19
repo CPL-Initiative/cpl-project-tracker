@@ -70,10 +70,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.0,
+    20.0,
     21.0
    ],
    "stated": [
@@ -81,9 +81,8 @@
     21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.0-21.0; the catalog states 20.0-21.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358)"
   },
   "repeated": {
    "codes": [],
@@ -110,7 +109,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -163,13 +162,15 @@
       "alternatives": [
        {
         "code": "ENGL C1000E",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        },
        {
         "code": "ENGL C1000H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": 5
        }
       ],
       "catalog_addition": false
@@ -181,18 +182,21 @@
       "alternatives": [
        {
         "code": "ENGL C1001H",
-        "units": null,
-        "catalog_addition": false
+        "units": 4,
+        "catalog_addition": false,
+        "units_max": null
        },
        {
         "code": "ENGL C1003",
-        "units": null,
-        "catalog_addition": true
+        "units": 4,
+        "catalog_addition": true,
+        "units_max": null
        },
        {
         "code": "ENGL C1003H",
-        "units": null,
-        "catalog_addition": true
+        "units": 4,
+        "catalog_addition": true,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -204,8 +208,9 @@
       "alternatives": [
        {
         "code": "ENGL 252",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -217,8 +222,9 @@
       "alternatives": [
        {
         "code": "ENGL 262",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -263,8 +269,9 @@
       "alternatives": [
        {
         "code": "ENGL 213H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -283,8 +290,9 @@
       "alternatives": [
        {
         "code": "ENGL 224H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -366,8 +374,9 @@
       "alternatives": [
        {
         "code": "ENGL 291H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -379,8 +388,9 @@
       "alternatives": [
        {
         "code": "ENGL 293H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -392,8 +402,9 @@
       "alternatives": [
        {
         "code": "ENGL 294H",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null
        }
       ],
       "catalog_addition": false
@@ -427,5 +438,79 @@
    "No careers are named in the text (Career Information tab content not included)."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "38675245799",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "ENGL C1000E",
+   "words": "ENGL C1000E, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL C1000H",
+   "words": "ENGL C1000H, printed as an alternative to ENGL C1000 with no units, takes its row's 4-5 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL C1001H",
+   "words": "ENGL C1001H, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL C1003",
+   "words": "ENGL C1003, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL C1003H",
+   "words": "ENGL C1003H, printed as an alternative to ENGL C1001 with no units, takes its row's 4 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 252",
+   "words": "ENGL 252, printed as an alternative to ENGL 251 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 262",
+   "words": "ENGL 262, printed as an alternative to ENGL 261 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 213H",
+   "words": "ENGL 213H, printed as an alternative to ENGL 213 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 224H",
+   "words": "ENGL 224H, printed as an alternative to ENGL 224 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 291H",
+   "words": "ENGL 291H, printed as an alternative to ENGL 291 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 293H",
+   "words": "ENGL 293H, printed as an alternative to ENGL 293 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "ENGL 294H",
+   "words": "ENGL 294H, printed as an alternative to ENGL 294 with no units, takes its row's 3 units",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

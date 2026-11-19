@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s682_cpl_memory_rows.sql",
+ "name": "s682_cpl_memory_rows",
+ "version": "20261118151240",
+ "sha256": "4bc49238f0e39aae25ab4ef263d634a56041e1c8fba5b0fdc6828bd90ce0e4f5",
+ "run": "44331719811",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-first-light-paintings-half-only-s682\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":298},{\"slug\":\"d-receipt-checks-retire-after-tab-apply-s682\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":395},{\"slug\":\"d-stand-down-firing-took-first-light-ask-s682\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":343},{\"slug\":\"f-first-light-apply-cannot-open-its-pr-s682\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":393},{\"slug\":\"f-hero-photo-rule-refuses-story-photos-s682\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":355},{\"slug\":\"m-search-issues-since-the-handoff-s682\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":290},{\"slug\":\"p-fixture-marks-spent-after-an-apply-s682\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":322},{\"slug\":\"p-skip-ci-head-leaves-a-pr-without-test-s682\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":351}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

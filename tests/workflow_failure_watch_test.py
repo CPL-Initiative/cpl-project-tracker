@@ -20,6 +20,7 @@ WATCHER = os.path.join(WF_DIR, "workflow-failure-watch.yml")
 # Scheduled workflows that alert on their own, by name, with the reason.
 EXCUSED = {
     "Sierra health (hourly uptime probe)": "raises and closes its own sierra-outage issue",
+    "Commons click-through": "opens or comments on its own commons-clickthrough issue on any failure",
     "MAP Users sync (gated, PII-safe)": "raises and closes its own college-identity issue",
 }
 

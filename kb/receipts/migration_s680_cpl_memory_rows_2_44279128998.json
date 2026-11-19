@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_cpl_memory_rows_2.sql",
+ "name": "s680_cpl_memory_rows_2",
+ "version": "20261118094810",
+ "sha256": "f382284860bf6609ce536fd8382c282ce26f1676c2e406d71f3433f6a57ee311",
+ "run": "44279128998",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-a5-five-rows-stay-applied-s680\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":394,\"title\":\"A5's five applied rows stay applied; A5 runs on nothing further until its misses are listed\"},{\"slug\":\"f-miracosta-21976-live-newer-run-s680\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":253,\"title\":\"MiraCosta 21976's live row is on an older run than its filed record\"},{\"slug\":\"p-apply-line-carried-by-merge-s680\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":350,\"title\":\"A branch that merges another carries its kb/migrations/.apply line, and a push re-runs the apply\"},{\"slug\":\"pr-pr-chain-generated-conflicts-s680\",\"kind\":\"procedure\",\"status\":\"proposed\",\"summary_len\":347,\"title\":\"When every merge conflicts a generated file, land the work as one wave PR, not a chain\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

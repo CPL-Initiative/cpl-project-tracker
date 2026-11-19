@@ -66,7 +66,11 @@ USAGE
 -----
     python3 kb/_build_dependency_map.py            # write both artifacts
     python3 kb/_build_dependency_map.py --check    # exit 1 if a rebuild would
-                                                   # change anything (CI)
+                                                   # change anything
+
+Since Sam's rule of 2026-11-18 one job on main rebuilds both outputs after each
+merge (.github/workflows/dependency-map.yml); a PR does not run this or commit
+them, and js-tests.yml reports a stale map as a notice.
 
 Outputs:
   * kb/dependency_map.json        — full edge list with file:line evidence
@@ -1441,7 +1445,7 @@ def render_md(p: dict) -> str:
     L.append("# Dependency map — who consumes what")
     L.append("")
     L.append("**GENERATED — do not hand-edit.** Rebuild: `python3 kb/_build_dependency_map.py`")
-    L.append("(`--check` exits 1 when stale; wired into `js-tests.yml`). Full edge list with")
+    L.append("(`dependency-map.yml` runs it on `main` after each merge; PRs do not commit it). Full edge list with")
     L.append("file:line evidence: [`kb/dependency_map.json`](../../kb/dependency_map.json).")
     L.append("")
     L.append("This answers the cross-impact question CLAUDE.md orders every session to ask:")

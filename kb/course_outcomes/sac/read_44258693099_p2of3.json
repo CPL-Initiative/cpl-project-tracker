@@ -1,0 +1,3343 @@
+{
+ "run": "44258693099",
+ "index": "kb/course_outline_index/index_44253588454.json",
+ "host": "https://sac.curriqunet.com/",
+ "system": "curriqunet",
+ "source_kind": "course_outline",
+ "slugs": "santiago_canyon",
+ "part": 2,
+ "of": 3,
+ "wanted": 251,
+ "slice": 84,
+ "collects": [
+  "slo",
+  "objective"
+ ],
+ "objectives_printed": true,
+ "at": "2026-11-18T07:57:34Z",
+ "complete": true,
+ "summary": {
+  "read": 84,
+  "shapes": {
+   "list": 81,
+   "paragraph": 3
+  },
+  "status_not_200": 0,
+  "outcomes": 260
+ },
+ "rows": [
+  {
+   "code": "ABE 024",
+   "title": "Adult Basic Education Writing",
+   "course_id": 14413,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14413?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14413?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5174,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Evaluate basic grammar and writing mechanics resulting in well-crafted sentences",
+    "Write a well-organized paragraph",
+    "Write clear sentences that demonstrate proficiency with grammar, mechanics, and usage"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d9573cc6c18e4f345ea685424678b0a3",
+   "objectives": [
+    "Employ basics of grammar, mechanics, punctuation, and word use",
+    "Identify parts of speech",
+    "Identify components of a complete sentence",
+    "Use proper punctuation in varied sentences",
+    "Identify sentence fragments and run-on sentences",
+    "Write sentences with proper subject-verb agreement",
+    "Identify paragraph components and development",
+    "Write a topic sentence",
+    "Write adequate supporting details for a topic sentence",
+    "Write a concluding sentence",
+    "Apply proper English grammar writing processes by displaying prewriting, rough draft, revising, proofreading, and editing steps"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "c9f4cbb3405e580999b418a7dd368f5b"
+  },
+  {
+   "code": "ACCT 102",
+   "title": "Managerial Accounting",
+   "course_id": 11798,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11798?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11798?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7566,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Calculate the estimated cost of a product or a service.",
+    "Using contribution margin, calculate sales to achieve break-even and target profit.",
+    "Prepare budgets used to plan and control an organization."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a716ed12be16ea8353b9e98a60612df1",
+   "objectives": [
+    "Identify and illustrate the primary activities and information needs of managers and explain the role of the managerial accountant as a member of the management team; compare and contrast financial and managerial accounting;",
+    "Define and illustrate various cost terms, concepts, and behaviors, and evaluate their relevancy for different decision-making purposes;",
+    "Distinguish between product and period costs and prepare and evaluate a Schedule of Cost of Goods Manufactured, Schedule of Cost of Goods Sold, and Income Statement;",
+    "Prepare traditional and contribution-margin income statements and define related terms;",
+    "Explain cost-volume-profit analysis, degree of operating leverage, and safety margin and employ each as an analytical tool;",
+    "Describe the traditional types of product costing systems (including job-order and process), illustrate the flow of costs in each, and prepare related accounting records and reports;",
+    "Discuss the impact of technology on the business environment, its implications for product and service costs, and the development of activity-based costing and management;",
+    "Explain the purposes of budgeting, prepare a master budget and its component schedules, and relate the budget to planning and control;",
+    "Explain the development and use of standard costs and flexible budgets, prepare and interpret variance analysis reports and relate them to responsibility accounting and control;",
+    "Explain the nature of and need for segment reporting and the relationship with cost, revenue, profit, and investment centers; prepare and analyze related segment reports;",
+    "Compare and contrast absorption costing and variable costing, prepare income statements using both methods, and reconcile the resulting net incomes;",
+    "Define relevant costs and benefits and prepare analyses related to special decisions;",
+    "Explain the nature of capital expenditure decisions and apply and evaluate various methods used in making these decisions; including the time value of money and",
+    "Identify the ethical implications inherent in managerial accounting and reporting and be able to apply strategies for addressing them."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "833cf0f10d1f2e5d9fd5a7fb23c58fa8"
+  },
+  {
+   "code": "ANTH 100",
+   "title": "Introduction to Cultural Anthropology",
+   "course_id": 11836,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11836?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11836?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 24752,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will recognize, differentiate, and assess the validity of various anthropological theories and paradigms; including the ways differing paradigms can affect data collection, analysis, and research conclusions.",
+    "Students will explain the historical and cultural construction of gender, age, ethnicity, race and class, and analyze how these social categories affect \"life chances\".",
+    "Students will critically assess the role of ethnocentrism in shaping our view of and behavior towards people and cultures different than our own.",
+    "Students will assess the culture bound concepts of progress and development as \"lenses\" through which we evaluate other groups and cultures.",
+    "Students will critically evaluate the ways cultural ideologies influence public dialogue, laws and policies."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "ec99ada0a637f6ca4c1fb2dc941020b4",
+   "objectives": [
+    "Define the scope of anthropology and discuss the role of cultural anthropology within the discipline.",
+    "Recognize the methods, theories and perspectives used to study and understand human cultures.",
+    "Explain the importance of the ethnographic method in the study of culture.",
+    "Employ the relativist perspective while discussing cultural variation.",
+    "Demonstrate an understanding of anthropological concepts including ethnicity, gender, political organization, economic systems, kinship, rituals and belief systems.",
+    "Explain the interconnectedness of the economic, political and sociocultural forces of globalization amongst diverse cultural groups.",
+    "Analyze and evaluate the ethical issues anthropologists encounter, and professional ethical obligations that must be met in the study of and application in cultural groups different from their own."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "76e8bfa4b3ca0616d1608880caff4077"
+  },
+  {
+   "code": "ANTH 101L",
+   "title": "Biological Anthropology Laboratory",
+   "course_id": 11862,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11862?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11862?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10028,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will accurately and clearly use course terminology and key concepts on exams, in written assignments, labs, and/or in class discussions.",
+    "Students will apply empirical analysis to solve exercises in human genetics, non-human primate morphology and behavior, primate evolution, and human diversity.",
+    "Students will demonstrate the use of the scientific method as a tool for problem solving.",
+    "Students will demonstrate how biological diversity is reflected in genetics, comparative morphology, and the culture of modern humans, non-human primates, and hominid ancestors."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "98778ea8f19306e1c1bcd5df8456b2ef",
+   "objectives": [
+    "Apply the scientific method.",
+    "Identify the outcomes of evolutionary processes.",
+    "Describe structure and function of DNA and RNA.",
+    "Demonstrate how human traits are inherited.",
+    "Identify anatomical and behavioral features of non-human primates.",
+    "Compare the morphology of primates and early hominins.",
+    "Describe the biological and behavioral adaptations of the genus Homo.",
+    "Identify defining features of anatomically modern humans."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "7bacf23f320b53f9ca3b9830f041a598"
+  },
+  {
+   "code": "APCD 107",
+   "title": "Apprenticeship Child Growth and Development (DS1)",
+   "course_id": 12848,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12848?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12848?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5945,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Explain children's development from conception through adolescence in the physical, social, emotional, and cognitive domains.",
+    "Identify cultural, economic, political, and historical contexts that impact children's development.",
+    "Apply knowledge of development and major theoretical frameworks to child observations, child abuse, and milestones."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9559003ae3314c8ee00aa6dcc8731e4e",
+   "objectives": [
+    "Describe the major theories of child development.",
+    "Describe the impact of multiple factors on development and wellbeing, including those related to biology, environment, and social interactions.",
+    "Identify typical progression of development across all domains.",
+    "Differentiate between characteristics of typical and atypical development.",
+    "Apply objective and ethical techniques and skills when observing, interviewing, describing, and evaluating behavior in children.",
+    "Identify and define various types of abuse and neglect and describe their impact on development."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "43f26f8cfd7069f13285433250ae380d"
+  },
+  {
+   "code": "APCD 111B",
+   "title": "Apprenticeship Introduction to Curriculum for Young Children",
+   "course_id": 12857,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12857?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12857?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7192,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply elements of various curriculum models, approaches, theories, and standards for early learning including indicators of quality to plan and individualize curriculum for children ages birth through eight.",
+    "Plan indoor and outdoor environments based on knowledge and understanding of children’s development and needs.",
+    "Develop curriculum for all content areas to support children’s learning and developmental needs."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "fcb20239ae5a6e26cc99a31323e9f154",
+   "objectives": [
+    "Explore various early childhood curriculum models, approaches, and professional practices to inform and evaluate curriculum and environments.",
+    "Explain how the curriculum is integrated across all developmental domains and content areas.",
+    "Observe and evaluate teaching strategies, curriculum, and environmental designs.",
+    "Observe children as a basis for planning curriculum and environments.",
+    "Apply knowledge of academic discipline content, children’s growth, development, and individual characteristics to plan developmentally and linguistically appropriate, engaging, and supportive learning experiences for infants and toddlers through the early primary years.",
+    "Develop plans for physical environments that are appropriate for children’s individual ages and stages, skills and abilities, needs, and learning goals.",
+    "Explain how different teaching strategies could be used for a variety of curriculum goals.",
+    "Describe guidance and interaction approaches to support social relationships and learning.",
+    "Explain how the principles of the Universal Design for Learning (UDL) are applied in various situations and how specific learning experiences could be adapted to address individual children’s learning and development needs.",
+    "Describe various strategies for engaging and partnering with families to support children's development and learning."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b8acc06d28f2fecb0bd4c4251a441db5"
+  },
+  {
+   "code": "ART 100",
+   "title": "Introduction to Art Concepts",
+   "course_id": 13640,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13640?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13640?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7146,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify historic and contemporary art media and their techniques.",
+    "Construct meaning in works of art based on their contextual information and iconography.",
+    "Divide works of art into categories based on their purpose and/or function and general appearance.",
+    "Analyze the formal characteristics of works of art, including principles and elements of design."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "51609a5497c8d05006e9a0e7a6b17a3d",
+   "objectives": [
+    "Distinguish between works of art based on their formal characteristics, including the elements of art and the principles of design.",
+    "Classify works of art into categories based on their purpose and/or function.",
+    "Describe traditional and contemporary art media and their techniques.",
+    "Recognize key theoretical perspectives of art and the purposes for artistic creation across cultures and time frames."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "4fc23f4463f17c481e78bc15266900f2"
+  },
+  {
+   "code": "ART 111",
+   "title": "Three-Dimensional Design",
+   "course_id": 13568,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13568?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13568?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10023,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Conceptualize and formally develop three-dimensional objects utilizing line, shape, form, space, mass, volume, texture, plane, color, balance, contrast, movement, proportion, scale, unity, variety, repetition and emphasis.",
+    "Demonstrate an awareness of how three-dimensional objects can communicate ideas and cultural information through the employment of traditional and non-traditional three-dimensional materials.",
+    "Verbally articulate ideas and critical discussions of concepts, processes and project execution."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e4aba9d4cc4ca739d92120fed3145f2d",
+   "objectives": [
+    "Identify and utilize the elements and principles of art and design in three-dimensional works of art.",
+    "Formulate original, creative ideas and concepts and incorporate into a three-dimensional work of art.",
+    "Research, design and fabricate three-dimensional works of art with knowledge of material characteristics and limitations.",
+    "Evaluate and implement a variety of surface finishes and patination.",
+    "Demonstrate effective use of manual hand tools, small handheld power tools and small shop equipment in the execution of three-dimensional works of art.",
+    "Demonstrate effective use of large shop power tools and large shop equipment in the execution of three-dimensional works of art.",
+    "Describe, analyze, interpret and judge three-dimensional works of art through oral and written critique.",
+    "Create and maintain an environment of respect, responsibility and safe use practices."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b0ae77655e176932f3be3e426a4ce95f"
+  },
+  {
+   "code": "ART 131",
+   "title": "Beginning Life Drawing",
+   "course_id": 13387,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13387?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13387?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7541,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply sighting techniques to visually measure the human figure",
+    "Identify, analyze, and solve problems presented by the parameters of the project in a logical manner.",
+    "Identify and utilize the elements/principles of art and design in figure drawing works of art.",
+    "Effectively utilize the observational drawing process to create a proportional contour drawing of the human."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "3b33be280f8145293d2bbd8726080859",
+   "objectives": [
+    "Identify and utilize the elements/principles of art and design in figure drawing works of art.",
+    "Effectively utilize the observational drawing process to create a proportional contour drawing of the human figure.",
+    "Evaluate and implement positive and negative space to create a more dynamic composition in their drawings or the human figure.",
+    "Develop an effective cross-contour drawing of the human figure.",
+    "Demonstrate a basic working knowledge of the human skeleton, muscle structure, human anatomy, and anatomical proportion as it applies to figure drawing.",
+    "Apply and create a full range of tonality to their figure drawings to create an illusion of volume and light logic in the human form.",
+    "Create and maintain a portfolio of drawings from life that exhibits examples of a wide variety of figure drawing materials and skills.",
+    "Create and maintain a studio environment of respect, responsibility and safe use practices."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "6439b24f72d2483b5ded7b54d3c56bc7"
+  },
+  {
+   "code": "ART 231",
+   "title": "Intermediate Life Drawing",
+   "course_id": 13388,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13388?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13388?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5633,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify and utilize intermediate-level elements/principles of art and design in figure drawing works of art.",
+    "Create a proportional contour drawing of the human figure at an intermediate level.",
+    "Apply an intermediate-level working knowledge of the human skeleton, muscle structure, human anatomy, and anatomical proportion as it applies to figure drawing."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "48914edbe061ff52deaa8fb5a8968e48",
+   "objectives": [
+    "Identify and utilize the elements/principles of art and design in figure drawing at an intermediate level",
+    "Create a more advanced proportional contour drawing of the human figure.",
+    "Demonstrate the further advances in the working knowledge of drawing the human skeleton, muscle structure, human anatomy, and anatomical proportion to figure drawing.",
+    "Continue to create and maintain a studio environment of respect, responsibility and safe use practices.",
+    "Interpret and apply the research of artists who have worked from the human figure.",
+    "Complete a series of drawings that demonstrates further exploration and experimentation towards a more intermediate-level in their drawings of the human figure.",
+    "Create a portfolio of more advanced drawings from life that exhibits examples of a more advanced level of figure drawing materials and skills."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "500cda34f01fee10b8176c43e756335d"
+  },
+  {
+   "code": "ASL 110",
+   "title": "American Sign Language I",
+   "course_id": 11757,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11757?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11757?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8633,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will utilize American Sign Language to express and receive information about a variety of topics at a beginner level.",
+    "Students will demonstrate accuracy and proficiency in the use of learned structures and vocabulary.",
+    "Students will differentiate the unique cultural aspects of American Deaf culture from the unique cultural aspects of other cultures."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d188052392e9c7f1fc694e1d3c23d5fa",
+   "objectives": [
+    "Integrate American Sign Language (ASL) vocabulary, grammar and culture to introduce self and others, exchange personal information, talk and ask about surroundings (spatial agreement), telling and asking where people live (signer's perspective), converse about family, express opinions, talk about past, present and future activities.",
+    "Identify and apply the phonology of ASL to each sign by using the five parameters (handshape, palm orientation, location, movement, and non-manual behaviors) accurately and appropriately.",
+    "Identify and analyze similarities and differences in the American Deaf and hearing cultures.",
+    "Comprehend and generate short story narratives and conversations utilizing all elements of ASL grammar and phonology accurately.",
+    "Utilize American Sign Language grammar correctly to communicate a variety of activities and real world experiences."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "1c4abadf70755a17b96455bd657c3a7a"
+  },
+  {
+   "code": "ASL 114",
+   "title": "Classifiers, Fingerspelling, and Numbering",
+   "course_id": 12344,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12344?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12344?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7361,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Recognize and construct an appropriate response to advanced American Sign Language fingerspelling, numbering, and classifier concepts.",
+    "Differentiate between different signs used for different concepts and purposes.",
+    "Compare and contrast the unique cultural aspects of American Deaf culture, opinions, and values from the unique cultural aspects, opinions, and values of other cultures."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "ed4a9bd39793bae4d2f843888f7846a6",
+   "objectives": [
+    "Utilize ASL classifiers and non-manual markers in discourse to demonstrate specific expressive and receptive language skills using the following classifiers:",
+    "Identify and utilize classifiers, including Semantic Classifiers, Descriptive Classifiers, Instrumental Classifiers, Locative Classifiers, Body Classifiers, Body Position Classifiers, Plural Classifiers, and combinations of multiple classifiers.",
+    "Retell classical ASL stories that have a high frequency of classifier use and emphasis in American Deaf cultural information through narrative.",
+    "Utilize the American Sign Language manual alphabet to demonstrate expressive and receptive fingerspelling.",
+    "Utilize numbering in American Sign Language including cardinal, age, dollar and cents, time, ordinal, descriptive, sports and identification purposes."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "0988165c99eb7879291bf1da8240f078"
+  },
+  {
+   "code": "BIOL 109H",
+   "title": "Honors Fundamentals of Biology",
+   "course_id": 10695,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10695?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10695?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7876,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will develop their ability to comprehend readings on biological subjects.",
+    "Students will learn the basics of the technical vocabulary of biology.",
+    "Students will develop their critical thinking skills by evaluating scientific evidence to reach valid conclusions."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "57389ce04c3252283ab0416a5cbf979f",
+   "objectives": [
+    "Understand the process of science.",
+    "Learn the structure and function of cells, including metabolic principles and processes.",
+    "Know the fundamental principles of anatomy and physiology.",
+    "Learn the fundamental principles of modern genetics and molecular biology, including DNA replication and gene expression.",
+    "Study the fundamental principles of ecology and apply them to environmental issues.",
+    "Understand the principles and mechanisms of evolution fundamental facts about the history of life."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "86289f1a046903a4d3bf8568a05ad3f5"
+  },
+  {
+   "code": "BIOL 115",
+   "title": "Concepts in Biology for Educators",
+   "course_id": 13533,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13533?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13533?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11161,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Interpret biological data and figures.",
+    "Apply biological concepts to real world problems.",
+    "Apply biological concepts to real world issues."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "3a0da2cd31c05c0637d0940f2832b640",
+   "objectives": [
+    "Construct cell models and identify cell organelles and their functions.",
+    "Describe levels of organization and distinguish related organizational structures in plants and animals.",
+    "Apply the concepts of diffusion to the movement of gases in the respiratory system.",
+    "Describe blood circulation.",
+    "Explain body digestion and absorption.",
+    "Generate metabolism map explaining cellular metabolism.",
+    "Explain the organization of the human nervous system.",
+    "Diagram and explain hormonal regulation feedback systems.",
+    "Create a visual dynamic description of the immune response",
+    "Compare advantages and disadvantages of sexual and asexual reproduction.",
+    "Compare and contrast process of meiosis with mitosis.",
+    "Analyze the process of development and give examples of errors.",
+    "Research and report on a genetic disease explaining transmission genetics.",
+    "Solve genetic problems using Punnett square and pedigree charts.",
+    "Construct a time line of major geological and biological events apply evidence from fossil records.",
+    "Discuss Darwin's theory of natural selection and distinguish between natural and artificial selection.",
+    "Describe the relationship between the number and types of organisms different ecosystems support.",
+    "Explain chemical principles in the process of photosynthesis.",
+    "Study the life cycle of the Monarch Butterfly and the Darkling Beetle (or similar organisms).",
+    "Observe and categorize animal behavior with species extinction and communicate results of scientific research in both written and verbal formats using maps, diagrams, tables, and charts.",
+    "Apply models of population growth and discuss solutions to population growth and world problems such as pollution, water, and food shortages.",
+    "Introduction of the basic principles of Biology and Science with content appropriate for future K-6 teachers.",
+    "Apply the process of scientific inquiry and experimental design to the study of biological concepts."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "661ad10b36055c77e5607ed17477b5ff"
+  },
+  {
+   "code": "BIOL 190",
+   "title": "Introduction to Biotechnology",
+   "course_id": 12664,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12664?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12664?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6043,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will have a fundamental overview of the applications and underlying principles of biotechnology."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "56bdac14bd577d980b26a7952fcae573",
+   "objectives": [
+    "List the morphologic and chemical differences between prokaryotic and eukaryotic cells",
+    "Define and distinguish among atoms, molecules, compounds, chemical bonds, mechanisms of chemical bond formation, and components of biological molecules",
+    "Construct the flow diagram of gene expression from DNA to protein",
+    "Translate the triplet code of DNA into primary protein structure",
+    "Assess the role of basic Mendelian genetics",
+    "Compare and contrast current applications of biotechnology to the areas of medicine, agriculture, diagnostics, and the environment",
+    "Explain evolution from a genetic perspective",
+    "Evaluate a recent development in the field of biotechnology from an ethical perspective.",
+    "Propose and evaluate a hypothesis using the scientific method."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "4a3f4afe615928fc9457a9280928c9bb"
+  },
+  {
+   "code": "BIOL 192",
+   "title": "Biotech B: Proteins ",
+   "course_id": 12795,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12795?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12795?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6663,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will know how to write SOPs (Standard Operating Procedures).",
+    "Students will know how to obtain a purified sample of a genetically engineered protein."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "3d67f0662c3f5903275ca200fee6485d",
+   "objectives": [
+    "Demonstrate facility with laboratory calculations",
+    "Demonstrate correct usage of precision measuring devices",
+    "Demonstrate an understanding of the principles of commonly used protein assays",
+    "Demonstrate understanding of the use of chromatography and other separation methods for protein purification",
+    "Describe and/or demonstrate techniques for isolation of proteins from cells and tissue",
+    "Perform standard column chromatography techniques",
+    "Demonstrate correct record keeping and/or maintenance of a laboratory notebook.",
+    "Demonstrate an understanding of biological concepts related to basic DNA recombinant and protein isolation and analysis that are routinely used in the biotechnology laboratory.",
+    "Use purification analysis data to improve purification procedure",
+    "Demonstrate ability to obtain a purified sample of a genetically engineered protein."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "94a1943706774567f11b36304a354561"
+  },
+  {
+   "code": "BIOL 197",
+   "title": "Work Experience - STEM internship",
+   "course_id": 12796,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12796?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12796?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7049,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will acquire knowledge and skills necessary to select and develop STEM careers."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "579106fcf7968fccdbf14b4e6de68f88",
+   "objectives": [
+    "Students will learn to develop short term goals related to the skills they are developing in the work environment.",
+    "Students will learn new STEM career skills through practical experience in the work environment."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "63a6f2781ce3adeedb96e9f35c4d59d2"
+  },
+  {
+   "code": "BIOL 212",
+   "title": "Animal Diversity and Ecology",
+   "course_id": 13291,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13291?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13291?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7587,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will learn the basics of the technical vocabulary of biology.",
+    "Students will develop their ability to comprehend readings on biological subjects."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "bd14486b95a0a7a99acb6b3325e4865f",
+   "objectives": [
+    "Describe the processes of scientific inquiry including experimental design.",
+    "Demonstrate knowledge on how to carry out experiments to test a specific hypothesis using appropriate controls.",
+    "Identify the essential elements of life, major hypotheses for life’s history, mechanisms for the diversification of life, and macroevolution.",
+    "Demonstrate an understanding of evolutionary biology to the analysis and evaluation of historical relationships among organisms.",
+    "Describe mechanisms of evolutionary change including micro-evolutionary forces that determine patterns of genetic diversity within species.",
+    "Analyze evidence for evolution.",
+    "Describe the ecological relationships of organisms at the population, community, and ecosystem level.",
+    "Describe flow of energy within an ecosystem and the role of nutrient cycling in maintaining ecosystem integrity.",
+    "Demonstrate knowledge on how to compare and contrast differences in animal development and life cycles.",
+    "Describe how animals maintain homeostasis: water and ion balance, gas exchange, energy and nutrient acquisition, and temperature regulation.",
+    "Demonstrate an understanding for major taxa of animals, - Identify major groups and arrange them within currently recognized taxa. - Compare and evaluate different phylogenies in terms of relationships among taxa. - Describe structural organization/morphology. - Identify and describe structures and relate them to their functions. - Classify individual representative specimens to phylum."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b530002a3307609db92f87c7c406b030"
+  },
+  {
+   "code": "BIOL 239",
+   "title": "General Human Anatomy",
+   "course_id": 8676,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8676?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8676?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10230,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will learn the basics of the technical vocabulary of anatomy.",
+    "Students will develop their ability to comprehend readings on anatomical subjects.",
+    "Students will develop their critical thinking skills by evaluating scientific evidence to reach valid conclusions, i.e. clinical applications."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "2c254aa524ef71453c88bc98bf95d086",
+   "objectives": [
+    "Describe key structural features of different human cell and major tissue types.",
+    "Identify and describe the anatomy of the systems of the human body.",
+    "Relate structure and function at the cellular through system levels of organization of human body systems.",
+    "Describe structural or anatomical changes that occur in disease, injury or aging of the human body systems."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "dc8855bffd59a5ad399cfcfb2d4770e8"
+  },
+  {
+   "code": "BIOL 290",
+   "title": "Biochemistry and Molecular Biology",
+   "course_id": 13644,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13644?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13644?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7680,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Comprehend readings on biological subjects and be familiar with the technical vocabulary of biology",
+    "Develop critical thinking skills by evaluating scientific evidence to reach valid conclusions"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "c5e0ab6716b15d4c2d8893a0bac23c30",
+   "objectives": [
+    "Identify and describe the structrure/ function of biological macromolecules and their monomer units.",
+    "Understand the levels of protein structure (primary, secondary, tertiary, and quaternary) and the forces that stabilize each type of structure.",
+    "Learn structure and function of various proteins such as: collagen, silk fibroin, hemoglobin, and myoglobin.",
+    "Apply Michaelis constant (Km), velocity (V), maximum velocity (Vmax), and turnover number to discuss enzyme kinetic parameters.",
+    "Apply Gibbs free energy (G) and equilibrium constant (Keq) to calculate thermodynamic parameters.",
+    "Understand the function and regulation of the following pathways: glycolysis, citric acid cycle, fermentation, gluconeogenesis, pentose phosphate, oxidative phosphorylation, photosynthesis (cyclic and linear photophosphorylation, light independent reactions), urea cycle, fatty acid oxidation.",
+    "Explain how DNA replicates and transmits genetic information within organisms. Learn the structure and function of DNA including gene expression including gene cloning, plasmids, genomic and cDNA library construction, library screening, DNA sequencing.",
+    "Understand how the following investigators contributed to the elucidation of DNA's structure and function: Griffith; Avery, MacLeod and McCarty; Hershey and Chase; Chargaff; Franklin, Watson and Crick; Messelson and Stahl.",
+    "Understand basic principles of genetics at the chromosomal and DNA levels including mutations and DNA repair.",
+    "Comprehend principles of regulation in biological systems including regulation of metabolism, cell cycles and gene expression.",
+    "Apply the processes of scientific inquiry and experimental design to the study of biological concepts.",
+    "Acquire, read, evaluate, apply and cite scientific literature.",
+    "Practice scientific writing and data interpretation of scientific figures and graphs.",
+    "Gain a good understanding of the scientific process.",
+    "Understand the structure and function of cells."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "501c82b47ae82912efd9f696079ce726"
+  },
+  {
+   "code": "BUS 120",
+   "title": "Principles of Management",
+   "course_id": 12708,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12708?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12708?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4358,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Communicate management principles to effect the behavior of others in the workplace.",
+    "Make sound management decisions based on various business scenarios."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0cc5622a3b345acec89082ba3fd3f5ed",
+   "objectives": [
+    "Identify the key areas of the management functions of organizing, directing and controlling.",
+    "Describe the steps used in management decision making.",
+    "Participate in decision the making process.",
+    "Describe management strategies.",
+    "Apply basic principles of problem solving.",
+    "Evaluate the management process and analyze its impact on organizational performance."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b92f828157ce01a388ac185cf3c37110"
+  },
+  {
+   "code": "BUS 150",
+   "title": "Introduction to Information Systems and Applications",
+   "course_id": 9727,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9727?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9727?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4959,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Describe the social and technological changes that contributed to the process of globalization and the resulting impact on current business operations and opportunities.",
+    "Utilize data base, spread sheet and Internet sources to generate business intelligence to identify business opportunities and solutions to business problems.",
+    "Describe the process of developing, obtaining and implementing business information systems."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "78f58d3f61341585ad91005a508caba7",
+   "objectives": [
+    "The successful student will be able to:",
+    "Describe the social and technological changes that contributed to the process of globalization and the resulting impact on current business operations and opportunities.",
+    "Utilize data base, spread sheet and Internet sources to generate business intelligence to identify business opportunities and solutions to business problems",
+    "Describe the process of developing, obtaining and implementing business information systems."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "81bb1138f494ea18da37bfe33ce41c18"
+  },
+  {
+   "code": "CDEV 108",
+   "title": "Observation and Assessment for Early Learning and Development (DS3)",
+   "course_id": 13083,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13083?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13083?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8101,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Complete systematic observations and assessments of children’s development and learning using a variety of data collection methods to inform classroom teaching, environment design, interactions, and curriculum.",
+    "Evaluate the characteristics, strengths, limitations, and applications of contemporary observation and assessment tools.",
+    "Describe the ethical and professional responsibilities for educators in observing and assessing young children’s development and learning."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "15257958d49a0dab5ca34ffe7f83a471",
+   "objectives": [
+    "Discuss the role of partnerships with families and other professionals in utilizing interpretations of observational and assessment data.",
+    "Describe legal and ethical responsibilities in relation to observation, assessment, documentation, and recordkeeping.",
+    "Demonstrate how observation and assessment are used to plan for and adjust learning experiences.",
+    "Discuss logistical challenges, biases, and preconceptions about observing and assessing children.",
+    "Use standardized observation and assessment tools to evaluate quality in environments, interactions, and curriculum.",
+    "Apply knowledge of development and other influencing factors to interpret observations and assessments.",
+    "Differentiate between various observation and assessment tools according to their purpose and validity.",
+    "Demonstrate basic formative and summative assessment techniques."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ab2cbbaad24b63f0831156a0cb530fd1"
+  },
+  {
+   "code": "CDEV 111B",
+   "title": "Introduction to Curriculum for Young Children",
+   "course_id": 13085,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13085?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13085?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7127,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply elements of various curriculum models, approaches, theories, and standards for early learning including indicators of quality to plan and individualize curriculum for children ages birth through eight.",
+    "Plan indoor and outdoor environments based on knowledge and understanding of children's development and needs.",
+    "Develop curriculum for all content areas to support children's learning and developmental needs."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "1fcc88a9803b4f3d63bd7bcceadd1209",
+   "objectives": [
+    "Explore various early childhood curriculum models, approaches, and professional practices to inform and evaluate curriculum and environments.",
+    "Explain how the curriculum is integrated across all developmental domains and content areas.",
+    "Observe and evaluate teaching strategies, curriculum, and environmental designs.",
+    "Observe children as a basis for planning curriculum and environments.",
+    "Apply knowledge of academic discipline content, children’s growth, development, and individual characteristics to plan developmentally and linguistically appropriate, engaging, and supportive learning experiences for infants and toddlers through the early primary years.",
+    "Develop plans for physical environments that are appropriate for children’s individual ages and stages, skills and abilities, needs, and learning goals.",
+    "Explain how different teaching strategies could be used for a variety of curriculum goals.",
+    "Describe guidance and interaction approaches to support social relationships and learning.",
+    "Explain how the principles of the Universal Design for Learning (UDL) are applied in various situations and how specific learning experiences could be adapted to address individual children’s learning and development needs.",
+    "Describe various strategies for engaging and partnering with families to support children's development and learning"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "6e806c183b661c80d32a144e416237d6"
+  },
+  {
+   "code": "CDEV 120B",
+   "title": "School-Age Child Care and Recreation Activities (DS5)",
+   "course_id": 12052,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12052?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12052?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5781,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply the terms and principles of school-age child care to prepare a developmentally appropriate enrichment program using appropriate content area framework.",
+    "Define creative ways to collaborate with parents, schools, and the community to work together to create successful integration and establish a network of support and services for the children in their care.",
+    "Plan an effective learning and social-emotional environment, including the organization and care of indoor and outdoor facilities conducive to appropriate ways for adults to be involved in the child's activities."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "36e6056decb7bfe29ed806f44b62d930",
+   "objectives": [
+    "Identify the terms and principles of school-age child care.",
+    "Create a program plan for an after school-age program.",
+    "Describe the parts of an effective and developmentally appropriate activity.",
+    "Describe the specific behavior management techniques working in the school-age care environment.",
+    "Describe activities in school-age programs and the concepts and skills presented in the framework and taught in the elementary and middle schools.",
+    "Define creative ways to collaborate with parents, schools and the community to work together to create successful integration.",
+    "Plan and implement age-appropriate activities.",
+    "Design effective environments including both the organization and care of the indoor and outdoor facility and how the emotional environment of a program sends positive messages to the children and their families."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "bd63f6e16df1efbbf220d2ebfd9decc8"
+  },
+  {
+   "code": "CDEV C1000",
+   "title": "Child Growth and Development ",
+   "course_id": 13956,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13956?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13956?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8687,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Part 2:",
+    "Explain children's development from conception through adolescence in the physical, social, emotional, and cognitive domains.",
+    "Identify cultural, economic, political, and historical contexts that impact children's development.",
+    "Apply knowledge of development and major theoretical frameworks to child observations, child abuse, and milestones."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "ff66319e6cc334e14588207fa1975f69",
+   "objectives": [
+    "Identify typical progression of development across all domains.",
+    "Describe the impact of multiple factors on development and well-being, including those related to biology, environment, culture, and social interactions.",
+    "Summarize major theories of child development.",
+    "Apply objective and ethical techniques and skills when observing, interviewing, describing, and evaluating behavior in children.",
+    "Differentiate characteristics of typical and atypical development.",
+    "PART 2:",
+    "At the conclusion of this course, the student should be able to:",
+    "Describe the impact of multiple factors on development and well-being, including those related to biology, environment, and social interactions.",
+    "Describe the major theories of child development.",
+    "Apply objective and ethical techniques and skills when observing, interviewing, describing, and evaluating behavior in children.",
+    "Differentiate between characteristics of typical and atypical development.",
+    "Identify and define various types of abuse and neglect and describe their impact on development.",
+    "Identify typical progression of development across all domains."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b0ab3a1bf51539cc594ffca23d24a19c"
+  },
+  {
+   "code": "CJ 101",
+   "title": "Introduction to Criminal Justice",
+   "course_id": 13359,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13359?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13359?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5201,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify functions of US law enforcement, courts, probation, and corrections agencies.",
+    "Examine, compare, and contrast crime and justice issues."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "81408e87f3f090d26270437e6db94aed",
+   "objectives": [
+    "Demonstrate an understanding of criminological theories used to explain crime and criminality.",
+    "Explain the methods, theories, and concepts associated with the sources of crime data, the emerging patterns of criminal activity, and the costs of crime.",
+    "Understand the history, development, and structure, and function of American police, courts, and corrections.",
+    "Demonstrate an understanding of the history, structure, and function of the police.",
+    "Convey an understanding of the process of adjudication.",
+    "Show an understanding of corrections including the roles of probation, parole, and community corrections; as well as the functions of prisons and jails.",
+    "Identify and describe special issues in the criminal justice system involving juvenile delinquency, drugs, and the future development.",
+    "Critically analyze and discuss issues of crime and justice from varying perspectives.",
+    "Utilize conclusions from scholarly research in creating informed positions on controversial issues in criminal justice.",
+    "Demonstrate the ability to raise critically relevant questions based on independent reading of criminal justice literature.",
+    "Effectively follow the appropriate writing style practiced in the social sciences.",
+    "Explain the definitions of crime.",
+    "Understand the extent of the crime problem in America."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "913fbd0e4c38740765fd48702550d558"
+  },
+  {
+   "code": "CMPR 112",
+   "title": "Java Programming",
+   "course_id": 12691,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12691?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12691?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4251,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate writing computer programs utilizing programming language syntax elements.",
+    "Demonstrate writing computer programs utilizing native and array-based data types.",
+    "Demonstrate designing and documenting computer programs."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f57f93a9527815123bc0daa611c50372",
+   "objectives": [
+    "Understand the steps involved in the software development process utilizing tools such as hierarchy charts, flow charts, and pseudo-code.",
+    "Understand the rules and syntax used in Java programming language.",
+    "Familiarize with programming variables, data types, expressions, branching, looping statements and data storage.",
+    "Design, write, and computer programs.",
+    "Debug programs.",
+    "Troubleshoot algorithms.",
+    "Deploy Java applications.",
+    "Write conditional statements.",
+    "Write functions and methods."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "1db31c05bdd58b9119b635cf1c4b8c79"
+  },
+  {
+   "code": "CMPR 131",
+   "title": "Data Structures Concepts",
+   "course_id": 12617,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12617?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12617?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4701,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate continuing improvement on understanding proper use of programming language syntax elements from the previous required courses as well as including significant expansion of the use of pointers and recursion, and adding simple inheritance.",
+    "Write readable computer programs utilizing professional coding standards for identifiers, indentations, spacing, and precondition/postcondition comments, specifically with respect to the use of data structures.",
+    "Describe efficiency-related properties of simple algorithms using \"Big-O\" notation: quardratic time, linear time and logarithmic time.",
+    "Design and document more complex computer programs in phases (life cycle) and an hierarchical manner, including incorporating/utilizing data structures via partial \"bottom-up\" design and \"divide-and-conquere\" approach."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0552b707c6b4616885e88c26dff112ad",
+   "objectives": [
+    "Apply templates to classes and functions.",
+    "Apply recursion as needed for implementing methods of objects and solving other problems.",
+    "Understand vectors, stacks, queues, linked lists, trees, sorting, searching, heaps and maps.",
+    "Understand the algorithm for sorting techniques.",
+    "Construct data structures, with appropriate constructors and methods.",
+    "Utilize classes for the design of Object-Oriented data structures.",
+    "Understand data abstraction in relation to data structure implementation.",
+    "Apply software engineering and program design. 2. Understand methodology, techniques for project development."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "82b4a5e612c677803f112a55c9d11c38"
+  },
+  {
+   "code": "CNSL 150",
+   "title": "Introduction to Social Work and Human Services",
+   "course_id": 13424,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13424?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13424?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10973,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify target populations requiring assistance and make recommendations regarding the appropriate social work and human services organization.",
+    "Identify and be able to uphold the legal, ethical, and professional practices and responsibilities of working with social work and human services organizations with attention to cultural humility and oppressed groups.",
+    "Explain the history and philosophy of the social work and human services profession and assess its role in contemporary society.",
+    "Explain the current delivery system environment in which social work and human services client’s needs are addressed."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a6ae2e7b8fd7410639232e7ca715a755",
+   "objectives": [
+    "Define societal structures that perpetuate inequitable outcomes for historically marginalized communities in the United States.",
+    "Identify multicultural competencies within professional organizations on the importance of social justice practices and social equity.",
+    "Examine and understand the philosophy and history of the helping profession.",
+    "Examine theoretical approaches which include Psychoanalytic, Psychodynamic, Behavioral, Cognitive, and Humanistic.",
+    "Examine mental health disorders and the role of service providers.",
+    "Discuss ethical issues, practices, and interventions in social work & human services.",
+    "Discuss culturally affirming, holistic practices for diverse communities and historically marginalized target populations.",
+    "Analyze the roles and functions of social work and human services professionals.",
+    "Analyze the theoretical frameworks that support the understanding and philosophy of the human services profession."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "8137e9a4354aecb53ded5992de9c8b0d"
+  },
+  {
+   "code": "DNCE 100",
+   "title": "Dance History and Appreciation",
+   "course_id": 13455,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13455?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13455?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6297,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Use critical writing skills to identify and analyze dance movement concepts, dance as an art form, and as a form of human cultural expression.",
+    "Identify the major periods and figures that led up to and started the development of Western Theatrical Dance.",
+    "Use critical writing skills to identify specific historical factors that affected the development of ballet, modern, and contemporary dance."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9d215df2e718023431b8650e59d571e2",
+   "objectives": [
+    "Express a critical understanding of dance as a form of human cultural expression.",
+    "Identify and discuss the major periods and figures of Western Theatrical Dance.",
+    "Discuss certain historical factors that affected the development of ballet, modern, and contemporary dance.",
+    "Write about dance in a clear, concise, and sophisticated manner while identifying key concepts of space, time, and energy utilized in the observed dance performance.",
+    "Express an understanding for and appreciation of dance as an art form."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "97fb07f00a99deb53bd49d1e45cab7db"
+  },
+  {
+   "code": "DNCE 108A",
+   "title": "Introduction to Ballet - I",
+   "course_id": 12786,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12786?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12786?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6230,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Memorize basic ballet terminology and apply to learned movement exercises.",
+    "Demonstrate basic ballet fundamental skills.",
+    "Critique and self-assess skills development through written analysis.",
+    "Identify the historical context of classical ballet."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d73218b94a241606471729df65aef4ee",
+   "objectives": [
+    "Demonstrate fundamental skills of ballet dance technique through movement exercises and phrases at an introductory level.",
+    "Develop a sense of body awareness, body alignment, strength, flexibility and spatial awareness and maintain this while moving through space.",
+    "Understand basic ballet dance terminology and utilize this vocabulary in a series of dance phrases.",
+    "Demonstrate basic fundamental skills of musicality, including rhythm and timing, and dynamic qualities of movement.",
+    "Create a sense of personal artistry and expression through prescribed movement vocabulary and/or creative assignment.",
+    "Identify historical context of ballet."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "79d8949c36d53b2757226ed2ec4bb86a"
+  },
+  {
+   "code": "DNCE 119A",
+   "title": "Introduction to Jazz Dance - I",
+   "course_id": 12207,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12207?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12207?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6460,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Memorize and identify basic ballet and jazz dance vocabulary to recognize and interpret verbal and written instruction.",
+    "Demonstrate basic fundamental technical skills and expressive performance skills appropriate to intro-level jazz dance.",
+    "Use critical writing skills to complete a personal assessment of technical skills.",
+    "Discuss and interpret fundamental elements of dance composition appropriate to intro level jazz dance."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "251f07603ccdd2d377f7ebd8d93b71f5",
+   "objectives": [
+    "Practice fundamental movement skills and exercises in beginning intro level of jazz dance technique.",
+    "Demonstrate proper body alignment, strength, and flexibility necessary for beginning intro level of jazz dance technique.",
+    "Develop awareness of creative expression at beginning intro level of jazz dance technique.",
+    "Identify basic ballet and jazz terminology.",
+    "Recall and memorize short, beginning intro level dance combinations."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "119cef1df287607352496a0ab7a091c0"
+  },
+  {
+   "code": "ENGL 220",
+   "title": "Survey of the Bible as Literature",
+   "course_id": 11963,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11963?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11963?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7801,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify the major themes, motifs, archetypes, and recurrent images and characters in Biblical poetry, proverbs, prose, and prophecy.",
+    "Analyze Biblical literature from different critical perspectives and with regard to historical content and common literary conventions.",
+    "Produce college-level academic writing that demonstrates literal comprehension of texts, critical analysis, ethical use of primary and secondary sources, and correct MLA format and documentation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "7ae6aabae480d024fde9084a41149858",
+   "objectives": [
+    "Demonstrate familiarity with and identify characteristics of the important Biblical books, authors, and themes",
+    "Analyze and interpret themes found in the literature",
+    "Employ the techniques of close textual reading and literary analysis",
+    "Identify various verse and prose genres used in the Bible, such as the psalm, parable, and hero tale",
+    "Analyze how genres convey archetypal motifs or patterns (creation, destruction, rebirth) and use characters (trickster, hero/heroine, holy fool, good mother, one just man,  hermit) to create themes",
+    "Relate the works to their historical, philosophical, social, political, religious, and/or aesthetic contexts",
+    "Demonstrate comprehension of the generic and rhetorical conventions and the literary functioning  of language such as form/genre, structure, setting, tone, figures of speech, symbolism, and point of view",
+    "Understand the influence of the Bible"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "cf9cd9a73cfc82b320b742aa7c182167"
+  },
+  {
+   "code": "ENGL 233A",
+   "title": "Shakespeare's Comedies and Romances",
+   "course_id": 11969,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11969?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11969?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10962,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify the major works, themes, subgenres, and dramatic conventions in the comedy and romance genres of Shakespearean drama.",
+    "Use different critical perspectives, as well as historical and cultural context, to analyze a selection of Shakespearean comedies and romances.",
+    "Produce college-level academic writing that demonstrates literal comprehension of texts, critical analysis, ethical use of primary and secondary sources, and correct MLA format and documentation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "7b28621da7332e68584d5f7b3f361335",
+   "objectives": [
+    "Identify the generic conventions of Shakespeare's Comedies and Romances, the theatrical conventions of his time period, genres within those two broader categories, and major themes of the works",
+    "Analyze and interpret themes found in the works and intellectual movements of the period",
+    "Employ the techniques of close textual reading, analysis, and interpretation",
+    "Relate the literary works to their historical, philosophical, social, political, regional, and/or aesthetic contexts",
+    "Demonstrate comprehension of the above through class discussion, written exams, and essays using appropriate MLA documentation and citation form"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "f4d97ff077e1751b4b605326462fa2b7"
+  },
+  {
+   "code": "ENGL 242",
+   "title": "Survey of American Literature, 1865-Present",
+   "course_id": 11967,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11967?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11967?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8589,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify the major authors, works, themes, historical events, and literary conventions that shaped American literature from 1865-present.",
+    "Use various critical perspectives as well as historical, political, and social context as a basis for literary analysis.",
+    "Produce college-level academic writing that demonstrates literal comprehension of texts, ability to analyze both form and content, ethical use of primary and secondary sources, and correct MLA format and documentation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0f35b1279c9f98659cbd77edc1fe1a1d",
+   "objectives": [
+    "Demonstrate familiarity with important American authors, works, genres, and themes of the post-Civil War period from a broad range of diverse cultures, including a diversity of voices",
+    "Analyze and interpret themes found in the literature and intellectual movements of the period",
+    "Employ the techniques of close textual reading and literary critical analysis",
+    "Relate the literary works to their historical, philosophical, social, political, religious, regional, and/or aesthetic contexts",
+    "Demonstrate comprehension of the generic and rhetorical conventions and the literary functioning of language such as form/genre, structure, setting, tone, figures of speech, and point of view"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "589d38d4696f924d25901734dfb9f515"
+  },
+  {
+   "code": "ENGL 270",
+   "title": "Children's Literature",
+   "course_id": 13116,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13116?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13116?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 15282,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "identify major authors and works of children's literature as well as the conventions specific to each major genre: picture books, poetry, traditional literature, drama, non-fiction, and fiction.",
+    "demonstrate proficiency in using standard written English.",
+    "demonstrate proficiency in integrating and documenting primary and secondary sources in MLA format."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "86fbe2bde02395042257506aa938ca77",
+   "objectives": [
+    "Demonstrate familiarity with major authors, works, genres, and themes of children’s literature",
+    "Analyze and interpret themes found in the literature and intellectual movements of children’s literature",
+    "Demonstrate understanding of appropriate academic discourse and the conventions of critical literary analysis",
+    "Relate the literary works to their historical, philosophical, social, political, religious, and aesthetic contexts",
+    "Demonstrate comprehension of the above through class discussion, written exams, and essays",
+    "Demonstrate awareness of culturally diverse audiences and the importance of including diverse selections in the classroom and/or elementary school library"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "fe1b597469a25b78c4a488f69d5c980d"
+  },
+  {
+   "code": "ENGL 278",
+   "title": "Survey of Literature by Women",
+   "course_id": 11968,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11968?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11968?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11786,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify major authors, works, themes, historical events, and literary conventions in women's literature from various historical periods and genres.",
+    "Analyze women's literature from various critical perspectives and with regard to social, political, and historical context.",
+    "Produce college-level academic writing that demonstrates literal comprehension of texts, critical analysis, ethical use of primary and secondary sources, and correct MLA format and documentation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "81c7a79b45ec2c18643d2fa41a8b8abd",
+   "objectives": [
+    "Identify and demonstrate an understanding of the conventions that make up the major literary genres to which women have contributed in the English language: poetry, short story, novel, drama, memoirs, letters, essays, journals/diaries and other non-fictional works",
+    "Show familiarity with influential and significant women writers, movements, texts, and themes across the medieval through contemporary time period, to develop a time line of a women’s literary history that is not distinct from the traditional primarily male-authored literary canon",
+    "Analyze and interpret themes found in the literature and intellectual movements of the period",
+    "Demonstrate understanding of appropriate academic discourse and the conventions of critical literary analysis and close reading of texts",
+    "Situate the works and the writers within their historical, philosophical, social, political, religious, and aesthetic contexts",
+    "Identify and compare/contrast how gender roles (and what justifies them—biology, religion, the classics, history, the law) and societal expectations affect the writers’ material circumstances and ability to write or get published, shift with various movements, and relate both to the topics women write about and how they write about them",
+    "Demonstrate comprehension of the above through oral and written arguments that correctly integrate textual evidence and secondary sources using MLA documentation and citation format both in the text and in a ”works cited” page"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "3ad90edfe08633e5757dcffca177d7b3"
+  },
+  {
+   "code": "ENGL C1001",
+   "title": "Critical Thinking and Writing",
+   "course_id": 13411,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13411?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13411?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 12759,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "PART 2:",
+    "Use knowledge of the components of argument, rhetorical devices, and logical fallacies to respond critically to various texts.",
+    "Formulate sophisticated arguments and defend them with logical, persuasive evidence.",
+    "Demonstrate proficiency in using standard written English.",
+    "Demonstrate proficiency in integrating and documenting appropriately-chosen sources, in MLA format, or when appropriate in APA format, in an academic research essay."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "2bd7176180c810ea6258f7b7f7429176",
+   "objectives": [
+    "Define, recognize, and utilize forms of critical reasoning, including deductive and inductive reasoning, in a variety of rhetorical contexts.",
+    "Reflect critically on one's own thought processes to identify and avoid cognitive biases and common fallacies of language and thought.",
+    "Employ critical reading and research strategies to locate and evaluate complex texts representative of diverse experiences, perspectives, and forms of authority.",
+    "Evaluate and document evidence to construct arguments in a variety of rhetorical situations, distinguishing knowledge from belief and fact from judgment.",
+    "Draft written arguments to respond appropriately to texts, with attention to intended audience, purpose, and social context, and revise for clarity, cogency, persuasiveness, and soundness.",
+    "PART 2:",
+    "Critically read, analyze, compare, and evaluate complex texts.",
+    "Demonstrate understanding of formal and informal fallacies in language and thought.",
+    "Identify a text's premises and assumptions in various social, historical, cultural, psychological, or aesthetic contexts.",
+    "Analyze and employ logical and structural methods such as inductive and deductive reasoning; cause and effect; and logos, ethos, pathos, and kairos appeals.",
+    "Compose thesis-driven arguments to suit a variety of rhetorical situations, including interpretation, evaluation, and analysis, and support them with a variety of appropriate textual evidence and examples.",
+    "Find, analyze, interpret, and evaluate primary and secondary sources, incorporating them into written essays using appropriate documentation format without plagiarism.",
+    "Use style, diction, and tone appropriate to the academic community and the purpose of the specific writing task; proofread and edit essays for presentation so that they exhibit no disruptive errors in English grammar, usage, or punctuation."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "7d9b62e4f4d6d5435d1724e640b302d0"
+  },
+  {
+   "code": "ENGL C1003H",
+   "title": "Critical Thinking and Writing through Literature - Honors",
+   "course_id": 13795,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13795?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13795?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 31458,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "PART 2:",
+    "Identify literary devices and use various critical theories to analyze and respond to literature from each of the four major genres: short story, poetry, drama, and the novel.",
+    "Formulate sophisticated arguments and defend them with logical, persuasive evidence.",
+    "Demonstrate proficiency in using standard written English.",
+    "Demonstrate proficiency in integrating and documenting appropriately-chosen sources, in MLA format, in an academic research essay.",
+    "*Demonstrate the ability to prepare and to present their original academic research in oral or poster presentation format. (* indicates Honors)"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b782414db95af93485ecb6dd31a19462",
+   "objectives": [
+    "Critically, read, analyze, compare, and evaluate diverse complex literary texts.",
+    "Reflect critically on one's own thought processes to identify and avoid cognitive biases and common fallacies of language and thought.",
+    "Compose thesis-driven arguments to suit a variety of rhetorical situations, including interpretation, evaluation, and literary analysis, supporting them with a variety of appropriate textual evidence and examples.",
+    "Identify a text's premise(s) and/or assumptions in various social, historical, cultural, psychological, or aesthetic contexts.",
+    "Analyze and employ logical structural methods such as inductive and deductive reasoning, causation, and supporting claims with reasons, evidence, and responding to diverse perspectives and values.",
+    "Find, analyze, interpret, and evaluate primary and secondary sources, incorporating them into written work using appropriate documentation format without plagiarism.",
+    "Draft and revise writing for style, diction, and tone showing awareness of audience and social context, and the purpose of the specific writing task; engage in a revision process so that language use does not impede clarity or disrupt meaning.",
+    "Identify key elements of major genres (including poetry, drama, fiction) in order to analyze and interpret texts.",
+    "Define common literary terms and apply these to analysis of specific texts.",
+    "PART 2:",
+    "At the conclusion of this course, the student should be able to:",
+    "*Create an abstract of original research for submission to academic conferences.",
+    "*Present their research.",
+    "*Lead seminar-style discussion that demonstrate understanding of the critical thinking/rhetoric terminology.",
+    "*Apply those terms to their texts, extracting key points, summarizing those key points, and creating thoughtful discussion questions that invite students to participate in discussion of the texts' content and form.",
+    "*Connect the assigned readings, in writing and orally, to contemporary events, media, and personal history.",
+    "Critically read, analyze, compare, and evaluate complex literary texts.",
+    "Demonstrate understanding of formal and informal fallacies in language and thought.",
+    "Identify a text's premises and assumptions in various social, historical, cultural, psychological, or aesthetic contexts.",
+    "Analyze and employ logical and structural methods such as inductive and deductive reasoning, cause and effect, and logos, ethos, pathos, and kairos rhetorical appeals.",
+    "Compose thesis-driven arguments to suit a variety of rhetorical situations, including interpretation, evaluation, and analysis, supporting them with a variety of appropriate textual evidence and examples and demonstrating appropriate academic discourse and the conventions of literary analysis.",
+    "Find, analyze, interpret, and evaluate primary and secondary sources, incorporating them into written work using appropriate documentation format without plagiarism.",
+    "Use style, diction, and tone appropriate to the academic community and the purpose of the specific writing task; proofread and edit essays for presentation so they exhibit no disruptive errors in English grammar, usage, or punctuation.",
+    "Identify key elements of major genres in order to analyze and interpret texts.",
+    "Define common literary terms and apply these to analyses of specific texts",
+    "Indicates Honors"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b83274df35692c665897c72e818eda62"
+  },
+  {
+   "code": "ESL 301",
+   "title": "Beginning Low",
+   "course_id": 12257,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12257?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12257?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11408,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Ask and answer simple questions to provide personal information.",
+    "Complete a simple form with personal information."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b0696127987520ad3bb4150e582f8dfc",
+   "objectives": [
+    "Identify the general topic and key words and phrases in oral communication.",
+    "Participate in short conversations about familiar topics and in familiar contexts.",
+    "Read familiar words and phrases.",
+    "Write words and short phrases based on learned vocabulary and language structures."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "bd254cc86c3268646348533a4f8b14d7"
+  },
+  {
+   "code": "ESL 304",
+   "title": "Intermediate High",
+   "course_id": 12262,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12262?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12262?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 14471,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Evaluate verbally point and purpose of authentic podcasts, read stories aloud, listening passages, or spoken messages.",
+    "Write a well-developed paragraph that includes a topic sentence, three (3) supporting details, and a conclusion, on personal experiences or a familiar topic, based on a visual or written prompt.",
+    "Describe the main idea and conclusion, evaluate the message, compare and contrast supporting details of an authentic or adapted text."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "229ab44225afc48ae2d5af0b723894c9",
+   "objectives": [
+    "Interpret phrases, words, sentences, conversations, and podcasts.",
+    "Use oral language skills to answer direct questions, participate in a conversation, and talk on a specific topic.",
+    "Use reading skills to skim text or graphic organizers for main idea, and interpret the content and meaning of authentic materials.",
+    "Develop written tasks with a focus on academic, workplace, and survival skills, on personal and nonpersonal topics."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "9ac25faa736fde0cc97ee738538bbfae"
+  },
+  {
+   "code": "ESL 510",
+   "title": "English for Work 1",
+   "course_id": 12265,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12265?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12265?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10566,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Use basic communicative skills to ask for clarification and answer simple questions.",
+    "Interpret information from basic work-related documents (e.g., schedules, charts, paychecks)."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "1baf4b52b41bb35df042a05b91c9eea5",
+   "objectives": [
+    "Ask simple questions and participate in basic conversations, interviews, and social situations in the workplace.",
+    "Interpret simple words and phrases on workplace topics.",
+    "Scan for and interpret work safety signs, charts, schedules, and other workplace information.",
+    "Construct simple sentences to communicate through emails, notes, memos, and simple work forms.",
+    "Apply soft skills for positive interactions with co-workers, customers, and employers.",
+    "Utilize basic digital literacy skills for emailing, searching for jobs, creating accounts, and other areas related to employment."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "5ac41fe4d50a7f2380c26d4b3a90ca65"
+  },
+  {
+   "code": "ESL 570",
+   "title": "Conversation 1",
+   "course_id": 12268,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12268?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12268?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 9093,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply hand gestures, body language, and facial expressions to everyday conversations.",
+    "Participate in conversations about recent or current events, leisure time or student's daily life.",
+    "Identify the main idea and specific details in conversations and presentations."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "34b15e52653542c3684493667a6c6755",
+   "objectives": [
+    "1. Interpret and use common hand gestures, body language, and facial expressions for nonverbal communication.",
+    "2. Identify main ideas and details in a listening passage.",
+    "3. Demonstrate pacing and use clarifying questions in conversations.",
+    "4. Interpret and use common idiomatic expressions, sayings and proverbs, verbal instructions or directions and other information presented orally.",
+    "5.Discuss and describe daily activities at home, work, or school as well as leisure time activities and other events.",
+    "6.Respond to questions (e.g., job interview/medical visit).",
+    "7. Initiate or interpret conversations by using openings, closings and polite expressions.",
+    "8. Use informal and formal introductions, give or make compliments and congratulations, apply expressions of disagreement and displeasure."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "fde88e1f0650352fdd9380ae4b30c6b4"
+  },
+  {
+   "code": "FREN 102",
+   "title": "Elementary French II",
+   "course_id": 11889,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11889?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11889?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10172,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Use appropriate grammatical structures that include advanced vocabulary, verb conjugations, and regional usage of common lexicon.",
+    "Write more complex paragraphs, dialogues, and compositions with an enhanced level of appropriate syntax and grammar.",
+    "Read, analyze, and express personal opinions in French on a diverse set of cultural topics.",
+    "Engage in oral discussions by actively listening and speaking about daily situations as well as cultural aspects of France and/or francophone countries."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "259620da72cfa0b94e15803559be6ae9",
+   "objectives": [
+    "To expand on the use of intermediate-level vocabulary within appropriate grammatical contexts.",
+    "To improve communication abilities in both oral and written formats by infusing idiomatic expressions.",
+    "To enhance speaking, reading, listening, and writing skills simultaneously.",
+    "To explore the cultural richness of the target language, including introduction to literary materials and discussions on current events.",
+    "To improve writing skills by constructing descriptive and summary paragraphs with a clear topic sentence and supporting detail."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "5dc558cc4c2c5d3f6cfb3c9599b264dc"
+  },
+  {
+   "code": "GEOG 100",
+   "title": "World Regional Geography",
+   "course_id": 8743,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8743?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8743?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11195,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Evaluate the relationships between natural resources, climate, education, natural increase rates, conflicts, responsive governance, distribution of wealth, competent social institutions, and economic development",
+    "Utilize geographic criteria to demarcate the major world regions and evaluate the commonalities and differences found in the countries of these regions",
+    "Describe and analyze the relationships between cultures and the environment in creating landscapes and changing our environment",
+    "Demonstrate in a written format a thorough understanding of the concepts and terminology associated with specific cultural, economic, and physical characteristics of the various world regions",
+    "Analyze maps and recognize spatial relationships."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b2b763f0f77b9a938d72794628d4e2d8",
+   "objectives": [
+    "Interpret information about spatial features and relationships revealed through maps.",
+    "Explain origins, spread, and development of major nations and regions using major geographic concepts.",
+    "Compare and contrast the major regions of the world with respect to their relative locations, natural environments, peoples, resources, economies, and contemporary problems.",
+    "Describe and analyze the relationships between cultures and the environment in creating landscapes and changing our environment."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "226b350ab6f92013a90abdef706f41f2"
+  },
+  {
+   "code": "GEOG 102",
+   "title": "Cultural Geography",
+   "course_id": 8908,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8908?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8908?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8756,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Explain the origin and distribution of language, religion, urbanization agriculture, and economic patterns.",
+    "Discuss the impact of migration and diffusion culture.",
+    "Utilize maps, graphs and charts to explain distribution and concentration of cultural characteristics along with general geographic characteristics."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9273ab1435074e8e08ecd764351573b4",
+   "objectives": [
+    "Course objectives:  At the conclusion of this course, the student should be able to:",
+    "1.  Demonstrate an understanding of the distribution of the human population and the processes (both historical and contemporary) that shape this distribution;",
+    "2.  Demonstrate an understanding of the origins, diversity, and distribution of basic cultural patterns, with particular attention given to:  language, religion, urbanization, political and economic patterns, and human-environment interactions; and",
+    "3.  Demonstrate an understanding of basic concepts used in the geographic study of human patterns including:  diffusion, cultural landscapes, cultural ecology, and cultural regions."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ab5b2d72022db8f2fed95b79654ccf19"
+  },
+  {
+   "code": "GEOG 155",
+   "title": "Introduction to Geographic Information Systems",
+   "course_id": 9138,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9138?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9138?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6286,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Communication Skills: Students will be able to input data for the purposes of creating cartographic illustrations through the use of ARC and GIS programs.",
+    "Information Management: Students will be able to employ ARC GIS technology."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9650edea542fbd85b4284452ffa25bdf",
+   "objectives": [
+    "Define Geographic Information Systems (GIS).",
+    "Identify and evaluation GIS data sources and the importance of metadata.",
+    "Demonstrate the process of converting analogue data to digital data for use in a GIS.",
+    "Identify, compare and contrast vector and raster GIS.",
+    "Evaluate the capabilities of various GIS software programs.",
+    "Apply catographic principles of scale, resolution, projection and data management to a problem of a geographic nature.",
+    "Apply spatial analysis functions on a GIS to solve a Geospatial problem."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ce7bbc06add3273e3e1bccf7820cc45b"
+  },
+  {
+   "code": "HIST 102",
+   "title": "World Civilizations Since the 16th Century",
+   "course_id": 7848,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7848?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/7848?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8479,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will critically analyze and interpret primary documents and secondary sources, and will be able to interpret qualitative and quantitative data in order to evaluate historical events.",
+    "Students will develop communication skills through oral and written exercises, and develop analytical skills by critically interpreting historical events.",
+    "Students will analyze how local, national, and international policies and practices developed in the past continue to impact their contemporary lives."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "06e67a336c7693c3b1beb22d3621f867",
+   "objectives": [
+    "Demonstrate the ability to interpret primary and secondary sources and to compose an argument which uses them, as appropriate, for support.",
+    "Analyze broad patterns of change on both interregional scales and within complex societies.",
+    "Demonstrate an understanding of civilization through multiple analytical categories such as race, class, gender and ethnicity.",
+    "Explain ways in which the world’s physical and natural environment has affected and been affected by developments in human history.",
+    "Analyze ways in which human groups have interacted with one another, including trade, migration, warfare, cultural exchange, and biological exchange, from 1500 C.E. to present.",
+    "Compare distinctive forms of political, social, and economic organization in the world and explain their historical significance.",
+    "Identify major discoveries, inventions, and scientific achievements and explain their historical significance.",
+    "Explain the historical significance of cultural developments such as art, music, architecture, literature, and religion.",
+    "Compare ideals, practices, and historical developments of major belief systems and philosophical systems.",
+    "Analyze historical developments across national, regional, and cultural boundaries."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "bd54acf853e70bff19326274f8b9eea9"
+  },
+  {
+   "code": "HIST 125",
+   "title": "Native Americans in the U.S.",
+   "course_id": 12956,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12956?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12956?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 14101,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Critically analyze and interpret primary documents and secondary sources, and will be able to interpret qualitative and quantitative data in order to evaluate historical events.",
+    "Develop communication skills through oral and written exercises, and develop analytical skills by critically interpreting historical events.",
+    "Analyze how local, national, and international policies and practices developed in the past continue to impacttheir contemporary lives."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "cfc67d05b77726bbd934a8336a444b71",
+   "objectives": [
+    "Develop analytical skills by evaluating key historical decisions, testing hypothesis, and choosing among contending viewpoints.",
+    "Develop communication skills through writing exercises and discussion of critical historical events.",
+    "Act as better informed citizens and knowledgeable voters through the study of U.S. political traditions and concepts of citizenship."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "9b1cc62b304f8430ff9655efdcd48afe"
+  },
+  {
+   "code": "HIST 133",
+   "title": "History of California",
+   "course_id": 8875,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8875?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8875?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 15845,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will critically analyze and interpret primary and secondary sources, and will be able to interpret qualitative and quantitative data in order to evaluate historical events.",
+    "Students will develop communication skills through oral and written exercises and developed analytical skills by critically interpreting historical events.",
+    "Students will analyze how local, national, international policies and practices developed in the past continue to impact their contemporary lives."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "7282ccd07f55d5b50f77ce370bd6d56f",
+   "objectives": [
+    "Demonstrate the ability to interpret primary and secondary sources and to compose an argument which uses them, as appropriate, for support.",
+    "Demonstrate an understanding of California History through multiple analytical categories such as socio-economic, class, gender, and region.",
+    "Demonstrate an understanding of California growth in a global context.",
+    "Explain the major economic, technological and scientific developments of California and its historical significance.",
+    "Analyze major political trends, attitudes, conflicts and events—including both mainstream and reform efforts—and explain their historical significance.",
+    "Explain the major social and cultural developments, their causes and effects, and their historical significance.",
+    "Analyze the necessity and relevancy of California history in today’s world."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "218d3e74adeac64c71901d6e0f5f73a0"
+  },
+  {
+   "code": "HSART 828",
+   "title": "Understanding America Through Art",
+   "course_id": 12060,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12060?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12060?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4712,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify art terminology, color dynamics, and portraiture.",
+    "Discuss the influences of different cultures on American art."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a708e07716cc23f76963dbb19c52fb0e",
+   "objectives": [
+    "Identify art terminology",
+    "Explain color dynamics",
+    "Analyze portraiture",
+    "Examine the historical context of quilts",
+    "Identify quilt design concepts",
+    "Discuss the role that black and white photography played in bringing a realistic portrayal of war and western expansion to the American public in the 1800s",
+    "Explain color theory using subjects from frontier life during the 1800s",
+    "Analyzing portraiture and characterization in art is considered to be a major milestone from more traditional, structured rules of realism, using subjects from the 1900s",
+    "List characterizations of paintings, murals, environmental art, sculpture, commercial art, and abstract art using examples from 1935 to the present",
+    "Analyze characterizations  of paintings, signage, scrimshaw, and wood carvings",
+    "Examine the characterizations of black cloth dolls, face jugs, cowboy leather, and totem poles giving insight into the multicultural blend of civilization across the United States in contemporary times",
+    "Analyze the characterizations  of monuments, statues, and war memorials infused throughout the country from George Washington’s day to present"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "2a817b91519f5c4973ea4f7bfef6a5a6"
+  },
+  {
+   "code": "HSENG 067",
+   "title": "English Fundamentals 3",
+   "course_id": 10608,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10608?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10608?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4312,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify proper grammar, mechanics, and format in sentences.",
+    "Construct sentences using mechanical variety.",
+    "Classify three different types of sentence structure."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "b8ac5a870bd0a2ae1932dd244e432162",
+   "objectives": [
+    "1.  Communication Skills:",
+    "Write in an organized and grammatically correct method in order to explain ideas, express opinions, and support conclusions",
+    "2.  Thinking and Reasoning:",
+    "Express oneself in writing to solve problems and conflicts",
+    "Edit samples exercises and make revision",
+    "Apply knowledge of sentence structure to write sentences in a variety of ways",
+    "3.  Information Management:",
+    "Information Competency",
+    "N/A",
+    "Technology Competency",
+    "N/A",
+    "4.  Diversity:",
+    "N/A",
+    "5.  Civic Responsibility:",
+    "N/A",
+    "6.  Life Skills:",
+    "N/A",
+    "Careers:",
+    "N/A"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "baddefac7768bbaea96c2342dff8bb50"
+  },
+  {
+   "code": "HSENG 084",
+   "title": "Composition 2",
+   "course_id": 10614,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10614?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/10614?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5581,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify the 4 steps in the writing process",
+    "Demonstrate in writing a variety of composition styles"
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "0d8fef487d49bd02f0729b449d6782c2",
+   "objectives": [
+    "1.  Communication Skills:",
+    "Identify the 4 steps in the writing process",
+    "Create  structured outlines and develop compositions using the outlinesas a guide",
+    "Demonstrate in writing a variety of composition styles",
+    "2.   Thinking and Reasoning:",
+    "Defend an opinion and support it using supportive details",
+    "Evaluate and edit rough drafts of compositions and make revisions",
+    "3.   Information Management:",
+    "a: Information Competency",
+    "Interpret information through the use of books, the Internet, and computer programs",
+    "b: Technology Competency",
+    "Use Internet to locate information for writing assessment and assignments",
+    "4.   Diversity:",
+    "N/A",
+    "5.  Civic  responsibility",
+    "N/A",
+    "6.  Life Skills",
+    "N/A",
+    "7.  Careers:",
+    "N/A"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "5d090012dcced0dff4e21f48afe18371"
+  },
+  {
+   "code": "HSMTH 158",
+   "title": "Math Fundamentals 1",
+   "course_id": 8852,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8852?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8852?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 3987,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Perform basic arithmetic operations on whole numbers, fractions, and decimals.",
+    "Employ appropriate operations for simple application problems."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "dda779b5d16431c76b0335eda97675c2",
+   "objectives": [
+    "1- Able to apply Arithmetic skills in word problems.",
+    "2- Determine which mathematical operations involving fractions are required to complete requested tasks.",
+    "3-  Be able to solve questions involving Decimal and Fraction.",
+    "4-  Demonstrate their ability to use fractions and decimal operations in word problems.",
+    "5-Demonstrate their ability to from  ratios and proportions to solve word problems.",
+    "6. Students will demonstrate their ability to solve mathematical oprations involiving signed numbers."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "2c1dfbe25ef417365508da5e85484fbc"
+  },
+  {
+   "code": "HSMTH 165",
+   "title": "Algebra 2A",
+   "course_id": 12256,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12256?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12256?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4927,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Solve equations and inequalities; linear equations and functions; and systems of linear equations and inequalities.",
+    "Solve problems with matrices and determinants; quadratic functions; polynomials and polynomial functions; and powers, roots, and radicals."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "77cc205cab0672d2077222c42299246d",
+   "objectives": [
+    "Students learn how to",
+    "Work with simple and compound inequalities as well as absolute value equations and inequalities.",
+    "Graph linear equations in three variables and the related functions of two variables.",
+    "Find inverse matrices and use them to solve systems of equations.",
+    "Use of zeros to write polynomial functions and the use of x-intercepts and turning points to graph polynomial functions.",
+    "Use the inverses of functions and the graphing of square root and cube root functions",
+    "Solving equations that have radical or rational exponents."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "712b58d0c601061ee02d22f10ebef25e"
+  },
+  {
+   "code": "HSMTH 168",
+   "title": "Geometry B",
+   "course_id": 12590,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12590?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12590?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5652,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Solve problems relating to transformations, similarity, right triangles, trigonometry, and circles.",
+    "Solve problems relating to areas of polygons and circles, surface area, and volume."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "529abf7b08a02512f37ddba87430d1ae",
+   "objectives": [
+    "Students learn how to",
+    "Identify reflections, rotations, translations, and characteristics of an isometric triangle",
+    "Use polygons and their properties to solve real-life problems",
+    "Identify and calculate the circumference of a circle and arc length",
+    "Develop methods for finding the volume of pyramids and cones",
+    "Calculate the surface area and volume of solids"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ac311e836c65c6972650afc80da3e638"
+  },
+  {
+   "code": "HSSCI 190",
+   "title": "Physical Science 1",
+   "course_id": 11777,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11777?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11777?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 3452,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Describe the three subatomic particles in an atom.",
+    "Distinguish the difference between acids and bases."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "76f517d0b30cad13f7c0f77a64efd621",
+   "objectives": [
+    "Calculate between different units using conversion factors",
+    "Discuss the structure of an element",
+    "Explain the difference between solubility and dissociation in water"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "45c67014788f083b29261235f2ad9e6c"
+  },
+  {
+   "code": "HSSCI 196",
+   "title": "Health Science",
+   "course_id": 11468,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11468?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11468?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 3459,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Discuss one introductory health and safety concept.",
+    "Explain one safety and emergency care."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a0f78c27ad462e5cf1d801ffb1a4be58",
+   "objectives": [
+    "Review how health is the individual’s responsibility",
+    "Explain the benefits of fitness and exercise",
+    "List responsible food choices",
+    "Discuss safety and well-being",
+    "Explore violence prevention and conflict resolution"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "3d6fcc5254c7c60fbb01eaefa2311e01"
+  },
+  {
+   "code": "HSSOC 219",
+   "title": "U.S. History 2: Shaping of Modern America",
+   "course_id": 11904,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11904?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11904?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4503,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Assess the impact of the transcontinental railroad on transportation, settlement, and the frontier.",
+    "Analyze the changing role of women in American society.",
+    "Evaluate how war production helped to end the Great Depression.",
+    "Explain the effects of World War II, such as the consequences of warfare, the establishment of the United Nations, and the creation of new political states.",
+    "Discuss the historical significance of the 2008 presidential election."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "4792c358a372b103c7ed09671a5ed87a",
+   "objectives": [
+    "Understand the impact of the transcontinental railroad on transportation, settlement, and the frontier.",
+    "Learn about the changing role of women in American society.",
+    "Learn how war production helped to end the Great Depression.",
+    "Understand the effects of World War II, such as the consequences of warfare, the establishment of the United Nations, and the creation of new political states.",
+    "Learn about the historical significance of the 2008 presidential election."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "3178cd0cd616b6891ce1f61548231ead"
+  },
+  {
+   "code": "INFO 103",
+   "title": "Researching in the Digital Age",
+   "course_id": 14562,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14562?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14562?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 7630,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Designing and performing successful search strategies.",
+    "Evaluating online information using critical thinking skills.",
+    "Identify the ethical, economic, social, and legal aspects of finding and using online sources."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "aff956376100bf8999cfa8cf24c80be6",
+   "objectives": [
+    "Analyze online research resources &  select search tools for their information needs",
+    "Construct search strategies using appropriate commands",
+    "Apply searching techniques to utilize online research resources & search tools for information needs",
+    "Critically evaluate and differentiate sources of information by such criteria as: authority, credibility, and currency",
+    "Identify the type of source and cite sources correctly following a citation style",
+    "Examine the legal and ethical issues related to using intellectual property for research"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "b30b0d52744bda619dacb540faf44959"
+  },
+  {
+   "code": "MATH 150",
+   "title": "Calculus for Biological, Management and Social Sciences",
+   "course_id": 12863,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12863?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12863?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6784,
+   "offered_at": null,
+   "shape": "paragraph",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will solve real-world application problems, distinguishing where to apply derivatives or integrals, and then formulate and communicate appropriate conclusions."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "89a93a8c4c46d56987e3a5eb1ef48e96",
+   "objectives": [
+    "Find the derivatives of polynomial, rational, exponential and logarithmic functions;",
+    "Find derivatives of functions involving sums, differences, products, quotients and the chain rule; Implicit differentiation",
+    "Use derivatives as a tool to graph functions, using first and second derivatives to determine extrema, points of inflection, intervals of increasing and decreasing, and concavity;",
+    "Use calculus to analyze cost, profit and revenue functions;",
+    "Use calculus to find maxima and minima in optimization problems;",
+    "Use derivatives to find rates of change, tangent lines, and solve related rate problems;",
+    "Find definite and indefinite integrals by using general integral formulas, integration by substitution and tables;",
+    "Use integration in business and economic applications."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "d81874f063685960ec052cd294f46c20"
+  },
+  {
+   "code": "MATH 280",
+   "title": "Intermediate Calculus ",
+   "course_id": 12628,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12628?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12628?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5696,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will be able to utilize vector operations in 3-dimensional space to find equations of lines and planes.",
+    "Students will be able identify and sketch quadric surfaces.",
+    "Students will be able to evaluate limits and test for continuity of functions of several variables.",
+    "Students will be able to evaluate partial derivatives, multiple integrals and line integrals, optimize functions.",
+    "Students will be able to utilize Green’s Theorem, Stoke’s Theorem and the Divergence Theorem in applications."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "8eb527f4472088c0f0df6902a1bb7da3",
+   "objectives": [
+    "Identify basic surfaces",
+    "Perform vector operations",
+    "Determine equations of lines and planes",
+    "Identify basic space curves",
+    "Differentiate and integrate vector functions",
+    "Find arc length",
+    "Evaluate the limit of a function at a point",
+    "Evaluate partial derivatives",
+    "Find the equation of a tangent plane at a point",
+    "Determine differentiability",
+    "Find total differentials",
+    "Find gradient vectors and directional derivatives",
+    "Find absolute and local extrema and saddlepoints",
+    "Solve optimization problems with constraints using Lagrange multipliers",
+    "Find the divergence and the curl of a vector field",
+    "Evaluate double and triple integrals",
+    "Evaluate line integrals and surface integrals",
+    "Apply Green's, Stokes' and divergence theorems"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "ea3a56f9750decf42dbff9267d9a88c7"
+  },
+  {
+   "code": "MGMT 121",
+   "title": "Human Relations and Organizational Behavior",
+   "course_id": 12710,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12710?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12710?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4741,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Recognize and identify workplace and individual problems and differentiate facts from inferences while gathering information.",
+    "Develop hypotheses, compare and contrast possible problem solutions, analyze possible outcomes, and recommend action plans."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "691d30f33309946ecb5141cfa8a268fa",
+   "objectives": [
+    "Examine the role of a modern manager",
+    "Identify and describe behavioral and scientific approaches to management",
+    "Recognize and describe modern organizational theories",
+    "Summarize how managers approach setting objectives, decision making, communication, and controlling",
+    "Discuss the impact of technology on modern organizations",
+    "Recognize and illustrate motivation theories",
+    "Compare and contrast behavioral theories",
+    "Identify components of active listening",
+    "Illustrate the importance of active listening for managers",
+    "Recognize barriers to communications and describe methods for overcoming these barriers",
+    "Compare and contrast different leaderships styles",
+    "Identify qualities of exceptional leaders",
+    "Describe myths about workplace leadership",
+    "Describe methods for identifying and addressing employee needs",
+    "Explain different methods for managing conflict",
+    "Discuss benefits and challenges of managing a diverse workforce"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "590154faf22f4a4aee49d9aa0df25377"
+  },
+  {
+   "code": "MKTG 113",
+   "title": "Principles of Marketing",
+   "course_id": 12724,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12724?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12724?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4805,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Apply specific marketing information provided in the course to practical marketing scenarios using the four principles of marketing: product, price, promotion, and place",
+    "Identify marketing solutions by applying strategic and tactical marketing concepts to business and marketing problems.",
+    "Understand the concepts of Market Segementation, Targeting, and Positioning as it applies to marketing problems."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "034227f3716c757952adc055851f6d60",
+   "objectives": [
+    "Identify the elements of the Marketing Mix.",
+    "Understand the concepts of needs, wants, and demands of customers.",
+    "Understand customer satisfaction principles.",
+    "Analyze the elements of marketing in micro and macro environments.",
+    "Understand market segment techniques based on geography, demographics, psychographics, and behavioral characteristics.",
+    "Understand the cultural, social, and psychological factors that influence customer behavior.",
+    "Identify and apply branding strategies.",
+    "Understand IP (Intellectual Property) issues such as trademarks, copyrights, and patents.",
+    "Understand the methods of integrated marketing communication.",
+    "Understand the concepts of Global Marketing.",
+    "Create Marketing Plans and examine the marketing plans of major companies."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "c02c4babc75931be3fa3a99656ccbf99"
+  },
+  {
+   "code": "MUS 102",
+   "title": "World Music",
+   "course_id": 12895,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12895?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12895?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 12621,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Distinguish the musics of the different cultures studied in class.",
+    "Write a review of a live performance of non-Western music, which will employ the appropriate vocabulary covered in class.",
+    "Analyze the characteristics and context of music from different non-Western cultures."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "728eab8cee1a02481bad95c4d764c8ba",
+   "objectives": [
+    "Compare Qawwali singers and their various ecstatic religious singing styles from the Sufi tradition in Pakistan.",
+    "Analyze Indian music to reveal its organizion into ragas and talas.",
+    "Discern the pervasive Western influence in musical style in modern Japanese music, especially since the Meiji Era.",
+    "Explain the contextual usage of traditional instruments in Japanese musics.",
+    "Define and recognize difference between monophonic and polyphonic textures in examples of African musics.",
+    "Categorize stylistic features of traditional West African Percussion ensembles.",
+    "Discuss the cultural and ritualistic significance of Navajo music including religious, healing, warrior rites, lullaby, and popular music.",
+    "Distinguish different purposes of music within a culture so that appropriate listening criteria are applied."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "f7159a81c99ed62597fd396b630cbbd0"
+  },
+  {
+   "code": "MUS 111",
+   "title": "Music Theory and Musicianship I",
+   "course_id": 11830,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11830?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11830?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5958,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Analyze musical materials in standard musical compositions relating to diatonic chord progression, phrase structure, key, intervallic content and expression markings using both musical analysis symbols and verbal explanations.",
+    "Perform simple rhythms, diatonic melodies, and triads by interpreting notation on the written score.",
+    "Solve musical problems in interval, triad and scale construction on keyboard, on paper, and on computer programs using traditional principles of basic musical notation."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "412fe39a5485a7a4df46cda86eb71655",
+   "objectives": [
+    "Identify and write pitches in treble, bass, alto, and tenor clefs using note names and MIDI octave designations.",
+    "Write, read, and perform rhythms in simple and complex meters that include beat, division of the beat, subdivision of the beat, and triplets.",
+    "Write and identify major, natural minor, harmonic minor and melodic minor scale patterns, as well as key signatures, and analyze excerpts based on these structures.",
+    "Notate short diatonic melodic and rhythmic excerpts based upon simple melodic and rhythmic dictation.",
+    "5. Sight-sing diatonic melodies using solfege symbols.",
+    "Sing, write and recognize all major, minor, perfect, augmented and diminished intervals, and they will analyze musical excerpts based on these structures.",
+    "Perform triads, major scales, select minor scales, and simple cadence formulas on the keyboard.",
+    "Write and analyze major, minor, diminished and augmented triads in root position and inversions and recognize diatonic chord qualities in major and minor keys in musical examples.",
+    "Write and analyze major, dominant, minor, half-diminished and fully-dimished seventh chords in root position and inversions and recognize diatonic chord qualities in major and minor keys in musical examples."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "a752e1577bc57fc5595c2837061d2fa8"
+  },
+  {
+   "code": "MUS 114B",
+   "title": "Musicianship IV",
+   "course_id": 14122,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14122?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14122?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5258,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Notate whole aural structures (melody, rhythm and chord progression) upon listening to dictated examples.",
+    "Perform sight singing examples that require you to match theoretical concepts of diatonic and chromatic harmony musical sounds.",
+    "Distinguish discreet components of complex musical sounds, discern the relationship between them, and then name them."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "87e3e724f3d7f1f7853a91ceaa4b7d33",
+   "objectives": [
+    "Perform chromatic and transposing melodies in the major and minor mode by singing the notation on the written score with proper solfege symbols as well as pitch and rhythmic accuracy.",
+    "Perform modal melodies by singing the notation on the written score with proper solfege symbols as well as pitch and rhythmic accuracy.",
+    "Perform non-tonal melodies by singing the notation on the written score with proper solfege symbols as well as pitch and rhythmic accuracy.",
+    "Notate more complex major and minor melodies as well as simple and compound rhythms which upon dictation of those melodies and rhythms by instructor and computer programs.",
+    "Notate chromatic and transposing melodies upon dictation of those melodies and rhythms by instructor and computer programs.",
+    "Apply chromatic solfege syllables in their singing of chromatic pitches in more difficult melodic examples."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "68a2426533f667c7c36bb2167b3631a3"
+  },
+  {
+   "code": "NUTR 115",
+   "title": "Nutrition",
+   "course_id": 13991,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13991?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13991?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 14546,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Scientifically analyze and evaluate the nutritional adequacy of a sample dietary intake in relation to health promotion, utilizing current technology and evidence-based recommendations.",
+    "Apply the scientific process including the formation of a hypothesis, gather and analyze data, and provide an appropriate conclusion."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d66967f21457da162e4a383b68c8adfb",
+   "objectives": [
+    "Understand accessibility issues related to hunger, malnutrition, food production, and nutrition interventions, and analyze the effectiveness of proposed solutions.",
+    "Explain the components of energy balance and how they impact weight management.",
+    "Describe the roles of vitamins and minerals and their effects on metabolism, including the consequences of deficiencies and excesses.",
+    "Outline the steps for evaluating nutritional status, discuss the limitations of various techniques, and assess the nutritional adequacy of an individual's diet while proposing specific changes to reduce chronic disease and malnutrition.",
+    "Describe the chemical structure and biological functions of macronutrients, their major food sources, and the anabolic and catabolic metabolism of selected macronutrients, including the role of enzymes and the significance of adenosine triphosphate (ATP) in energy metabolism.",
+    "Explain the scientific basis and uses of food and nutrient guides, including Dietary Reference Intakes, and apply the scientific method to nutritional research and an understanding of contemporary nutrition issues.",
+    "Use the scientific method to propose a hypothesis and design a logical experiment to address a research gap identified in nutritional science."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "dd9642fa151288188dca5487a6169221"
+  },
+  {
+   "code": "PHIL 106H",
+   "title": "Honors Introduction to Philosophy",
+   "course_id": 14950,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14950?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14950?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11738,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate reflective philosophical engagement (personal growth) through deliberation that critically analyzes and evaluates philosophical concepts, issues, and/or perspectives.",
+    "Write effective essays that demonstrate knowledge of course material relevant to the thesis and analyze assigned material in a clear, systematic, original, thoughtful, and well-developed manner.",
+    "Use appropriate sources with sufficient interpretation and evaluation to develop coherent analysis or synthesis while properly citing relevant material.",
+    "Synthesize course-related material to evaluate the historical, social, and/or cultural development of concepts and their relation to issues faced by disparate communities."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f5b6b267f766cf3acacf34b1b252bf72",
+   "objectives": [
+    "Demonstrate a basic understanding of philosophical methods.",
+    "Demonstrate an ability to articulate ideas about philosophical issues.",
+    "Use philosophical methods, assumptions and principles to analyze philosophical ideas and positions.",
+    "Evaluate philosophical arguments, methods, assumptions, and principles for consistency, relevance, and truth.",
+    "*Demonstrate an ability to conduct philosophical research using contemporary academic sources and to present that research effectively in both written and oral forms, and to cite and document sources appropriately to avoid plagiarism."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "5e38d47521ab23303edebf2d27aed4a7"
+  },
+  {
+   "code": "PHIL 110H",
+   "title": "Honors Critical Thinking",
+   "course_id": 14953,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14953?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14953?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11781,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate reflective philosophical engagement (personal growth) through deliberation that critically analyzes and evaluates philosophical concepts, issues, and/or perspectives.",
+    "Write effective essays that demonstrate knowledge of course material relevant to the thesis and analyze assigned material in a clear, systematic, original, thoughtful, and well-developed manner.",
+    "Use appropriate sources with sufficient interpretation and evaluation to develop coherent analysis or synthesis while properly citing relevant material.",
+    "Identify the underlying rational structure of written sentences and arguments, as well as common reasoning errors and cognitive biases that lead to faulty argumentation.",
+    "Identify and analyze the logical structure of arguments.",
+    "Synthesize course-related material to evaluate the historical, social, and/or cultural development of concepts and their relation to issues faced by disparate communities."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "9d227613323172726e06664582135f8c",
+   "objectives": [
+    "Demonstrate understanding of formal and informal fallacies in language and thought.",
+    "Analyze and employ logical and structural methods such as inductive and deductive reasoning, cause and effect, and logos, ethos, and pathos.",
+    "Compose thesis-driven arguments to suit a variety of rhetorical situations, including interpretation, evaluation, and analysis, and support them with a variety of appropriate textual evidence and examples.",
+    "Research and use academic sources ethically and correctly cite and document them in essays.",
+    "*Employ effective research methods and critically evaluate research findings from disparate scholary sources in order to strengthen written arguments."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "083a824a574ea2a7e554aad6409db3dc"
+  },
+  {
+   "code": "PHIL 118",
+   "title": "History of Philosophy",
+   "course_id": 14969,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14969?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14969?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6968,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate reflective philosophical engagement (personal growth) through deliberation that critically analyzes and evaluates philosophical concepts, issues, and/or perspectives.",
+    "Write effective essays that demonstrate knowledge of course material relevant to the thesis and analyze assigned material in a clear, systematic, original, thoughtful, and well-developed manner.",
+    "Use appropriate sources with sufficient interpretation and evaluation to develop coherent analysis or synthesis while properly citing relevant material.",
+    "Synthesize course-related material to evaluate the historical, social, and/or cultural development of concepts and their relation to issues faced by disparate communities."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "f5b6b267f766cf3acacf34b1b252bf72",
+   "objectives": [
+    "​Demonstrate mastery of critical philosophical skills to present accurately and to interpret the positions of historically significant philosophers, based on readings of their primary texts.",
+    "Explicate key philosophical texts from the ancient past through the present day.",
+    "Analyze primary theories and standpoints with special emphasis on their development from the works of Plato and Aristotle.",
+    "Critically analyze and evaluate arguments, assumptions, principles, and methods of the philosophers under consideration."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "e5cba527b76f5e55a5041b67eb308b44"
+  },
+  {
+   "code": "PSYC 160",
+   "title": "Introduction to Lifespan Psychology",
+   "course_id": 8984,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8984?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/8984?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5729,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Explain the major developmental theories and how these perspectives apply to real world problems and issues across the lifespan.",
+    "Explain the scientific method in the context of developmental research in understanding human development.",
+    "Explain the developmental sequence of physical, social, emotional, and cognitive development across the lifespan."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e237a01254cd92033d9d50ae9fc2369c",
+   "objectives": [
+    "Contrast and compare developmental theories and approaches (including how different theoretical perspectives affect or determine the research and applications that arise from them).",
+    "Analyze elements of a scientific approach to understanding human development in a biopsychsocial context.",
+    "Identify biological, psychological, and sociocultural influences on lifespan development.",
+    "Describe the ways in which psychological principles and research apply to real world problems and issues across the lifespan.",
+    "Describe the sequence of physical, social, and cognitive development across the lifespan, using the constructs and conceptual framework provided by psychological perspectives.",
+    "Identify and describe the techniques and methods used by developmental psychologists to study human development.",
+    "Identify and describe theories and research in lifespan psychology.",
+    "Describe the developing person at different periods of the lifespan.",
+    "Identify possible causes or sources of developmental change and reasons for disturbances in the developmental process."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "00cd8db9d463a6a7b2264aab12e74e53"
+  },
+  {
+   "code": "PSYC 230",
+   "title": "Psychology of Adjustment",
+   "course_id": 11543,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11543?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11543?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10480,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Design, conduct, and analyze a self-study relating to their own behavior in regards to psychological effectiveness in the context of Humanistic theories of personal growth.",
+    "Demonstrate the skills of active listening in communication and understand the benefits of this communication style to psychological well-being, personal growth and conflict resolution.",
+    "Explain the major humanistic theories in psychology, including positive psychology, and how they can apply to behavioral adjustment."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "6e9d0f7f0d248f863bf06234a7283011",
+   "objectives": [
+    "Generate and explain concrete examples of psychological perspectives (psychoanalytic, behavioristic, cognitive, humanistic, and existential) and applications underlying personal growth and psychosocial adjustment. Explain contemporary perspectives, such as positive psychology, in relation to personal growth and adjustment.",
+    "Define and use basic biological, physiological and psychological terminology to describe personal adjustment and psychosocial development.",
+    "Explain how specific research methods and ethical principles are used for the study of human beings, including the safeguards and the peer-review process in science.",
+    "Apply psychological principles and develop “new” interpersonal, occupational and social skills for life-long personal growth.",
+    "Identify individual and sociocultural differences as applied to the psychology of personal growth and adjustment."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "928f2401b3df475f7a852b814633b2ca"
+  },
+  {
+   "code": "PSYC C1000",
+   "title": "Introduction to Psychology",
+   "course_id": 13446,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13446?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13446?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11686,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "PART 2:",
+    "Compare and contrast major theoretical perspectives of psychology and explain how to apply these perspectives to personal and professional life.",
+    "Describe the scientific process within psychological research, the APA standards for writing, the major ethical guidelines, and the impact of diversity on psychological research.",
+    "Explain human behavior as a function of biological, cognitive, and socio-cultural factors."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "d4fb07ee3365efa51f66bab5caa07465",
+   "objectives": [
+    "Demonstrate fundamental knowledge and comprehension of major concepts, theoretical perspectives, historical and cultural contexts, and empirical findings within the broad discipline of psychology.",
+    "Use a scientific approach (including critical and creative thinking) to understand individuals’ mind and behavior within psychological, biological, sociocultural, and ethnocultural contexts while recognizing that biases filter experiences.",
+    "Apply psychological theories, concepts, and values to individual, interpersonal, group, and societal issues to demonstrate awareness of self and others.",
+    "Draw logical and objective conclusions about the mind and behavior from evidence to show how psychology evaluates, modifies, and supports its claims and counters unsubstantiated statements, opinions or beliefs."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "4f5994aa4bbf2db38654108d80bc7743"
+  },
+  {
+   "code": "SOC 100H",
+   "title": "Honors Introduction to Sociology",
+   "course_id": 9373,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9373?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/9373?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8131,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will identify and apply the main sociological theoretical frameworks to analyze social stratification based on race, ethnicity, gender, social class, sexuality or other social groups.",
+    "Students will apply sociological research to distinguish the interrelatedness of various social intuitions.",
+    "Students will identify the role of culture and socialization in the development of one’s beliefs, opinions, and values."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "a5056aed0ae2d38fb260351452696fc7",
+   "objectives": [
+    "Understand and apply the sociological imagination to a variety of contemporary social phenomena.",
+    "Understand the historical development of Sociology as a discipline.",
+    "Distinguish between the use of various research methods.",
+    "Identify, compare and apply the primary sociological perspectives.",
+    "Explain and apply key sociological concepts.",
+    "Describe and explain the basic dimensions of social inequality and social change in historical and contemporary society.",
+    "Assess what social forces and organizational structures are most prominent in shaping, guiding and influencing individual and group behavior in contemporary society."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "398bdda8855d08a7fbba8e149440e957"
+  },
+  {
+   "code": "SOC 286",
+   "title": "Introduction to LGBTQ+ Studies",
+   "course_id": 12771,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12771?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/12771?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 8776,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate familiarity with the major concepts, theories, methods and findings in LGBTQ+ studies.",
+    "Apply the major sociological theories and perspectives to the issues and experiences within LGBTQ+ studies."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "36b5b24cc7b3a3b28dd4751c619378f3",
+   "objectives": [
+    "Summarize and utilize the sociological perspective as it relates to LGBTQ+ studies.",
+    "Identify the multiple identities and their historical evolution within the LGBTQ+ community.",
+    "Demonstrate a familiarity with early historical contexts around the LGBTQ+ experience.",
+    "Discuss the critiques of the medical model of gender and sexuality.",
+    "Develop an understanding of the importance of the Stonewall Riots and their impact on other major struggles for the LGBTQ+ community.",
+    "Articulate the history of sexuality studies and the critiques of scales which seek to identify levels of sexual orientation and identity.",
+    "Discern between assimilation and inclusion and the impact of assimilation, inclusion, and exclusion on the lived experience of the LGBTQ+ community.",
+    "Explore intersectional theory and its contributions to the queer rights movement.",
+    "Highlight the role of intersectional queer literature and art in the movement toward the normalization of queer existence.",
+    "Elucidate the role of queer transgressions in motivating and challenging political support and lack thereof.",
+    "Analyze the historical and contemporary existence and presentation of the LBGTQ+ community in television and film.",
+    "Determine how the internet helped further propel the queer community into a galvenized and organized political group.",
+    "Identify what a queer space is and how those spaces have evolved throughout the queer rights movement."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "e42afcec244a01af00b2e09e55849ceb"
+  },
+  {
+   "code": "SPAN 102",
+   "title": "Elementary Spanish II",
+   "course_id": 11859,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11859?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11859?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 11329,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Use appropriate grammatical structures that include advanced vocabulary, verb conjugations, and regional usage of common lexicon.",
+    "Write more complex paragraphs, dialogues, and compositions with an enhanced level of appropriate syntax and grammar.",
+    "Read, analyze, and express personal opinions in Spanish on a diverse set of cultural topics.",
+    "Engage in oral discussions by actively listening and speaking on a variety of topics related to the Spanish-speaking world."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "934c72490dd65de8f42c8a4c365d6df7",
+   "objectives": [
+    "1. To continue improving on Spanish pronunciation with a higher level of accuracy.",
+    "2. To develop a better understanding of Spanish in both spoken and written forms.",
+    "3. To use grammar, structure, and idioms to enhance communication skills.",
+    "4. To explore cultural insights and literary appreciation from multiple Spanish-speaking countries."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "f772e2b34476558065e3bfee7b6ff6e4"
+  },
+  {
+   "code": "SPAN 201",
+   "title": "Intermediate Spanish I",
+   "course_id": 11863,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11863?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/11863?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 10612,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Write multiple compositions in Spanish at the intermediate level using description, summary, comparisons, and other modes.",
+    "Demonstrate understanding of critical analysis of literary material.",
+    "Express personal opinions and perspectives in Spanish on specific readings.",
+    "Engage in oral discussions by actively listening and speaking on topics related to cultural aspects of the Spanish-speaking world."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "322165c0364b3e2bbeb7ccf581eb0a8e",
+   "objectives": [
+    "To develop an intermediate level of critical thinking in Spanish reading and writing.",
+    "To practice knowledge of verb conjugations and grammar points covered in Spanish 101 and Spanish 102.",
+    "To begin integrating new academic vocabulary in descriptive and analytical writing.",
+    "To examine literary conventions and genres using a diverse pool of Spanish authors.",
+    "To continue developing fluency in oral and written communication."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "a232828875504c10fbff2c5816dcae0c"
+  },
+  {
+   "code": "STAT C1000",
+   "title": " Introduction to Statistics",
+   "course_id": 13333,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13333?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/13333?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 9143,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "PART 2:",
+    "Correctly interpret a graphical display of data.",
+    "Take a statistical claim about a data set, perform an appropriate procedure, and write a conclusion that addresses that claim."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "64ae18d7ff11c8d835ea5c2a35747b7e",
+   "objectives": [
+    "Assess how data were collected and recognize how data collection affects what conclusions can be drawn from the data.",
+    "Identify appropriate graphs and summary statistics for variables and relationships between them and correctly interpret information from graphs and summary statistics.",
+    "Describe and apply probability concepts and distributions.",
+    "Demonstrate an understanding of, and ability to use, basic ideas of statistical processes, including hypothesis tests and confidence interval estimation.",
+    "Identify appropriate statistical techniques and use technology-based statistical analysis to describe, interpret, and communicate results.",
+    "Evaluate ethical issues in statistical practice."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "1a6b8749c06951a0f54b82e25d4f7de6"
+  },
+  {
+   "code": "THEA 100",
+   "title": "Introduction to Theatre",
+   "course_id": 14012,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14012?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14012?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 4456,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Assess components of plays.",
+    "Identify the roles and responsibilities for each artistic team member in a theatre production.",
+    "Develop dialogue with a beginning, middle and end, to support the role of the playwright."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "31d1395c8531ebb6d08a0312b76766f1",
+   "objectives": [
+    "Analyze and evaluate the nature of theatre and its role in society.",
+    "Assess the historical, artistic, social, and philosophical contexts, in which theatre exists.",
+    "Critically analyze dramatic literature and performances.",
+    "Identify and examine theatrical components in production."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "c8c302db73a286782b9a521bfbe4f0df"
+  },
+  {
+   "code": "VBUS 118",
+   "title": "Microsoft Windows Overview",
+   "course_id": 14394,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14394?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14394?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6945,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Know how to and where to save files and create folders in specific drives.",
+    "Use the desktop and name some of its common features (e.g., icons, start button, program windows, and taskbar).",
+    "Minimize, maximize, restore down, and close a window."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "449b1828d125273fb93d51a68dc16509",
+   "objectives": [
+    "Identify the operating system used by a computer.",
+    "Identify the part of the Windows interface (desktop, task bar, etc.)",
+    "Demonstrate knowledge of the Windows Start Menu, including Get Help.",
+    "Use Cortana to search for a file, program, or document.",
+    "Identify icons, functions, and any file extensions related to basic office software (Word, PowerPoint, and Excel) and default programs (Microsoft Edge, etc.).",
+    "Start and exit programs.",
+    "Minimize and maximize windows.",
+    "Open, close, and switch between windows.",
+    "Demonstrate knowledge of Windows File Explorer and identify drives on the computer, as well as cloud sotrage services (e.g., OneDrive).",
+    "Move documents and files, including to and from the Recycle Bin.",
+    "Shut down, restart, and log off a computer.",
+    "Use Settings to uninstall or modify applications."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "7a740e8fabcbc5d1a6ffccb92ac87b0d"
+  },
+  {
+   "code": "VBUS 262",
+   "title": "MS Excel",
+   "course_id": 14398,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14398?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14398?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 6218,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Create, edit, save and print simple spreadsheets.",
+    "Organize, format, and sort data in an Excel worksheet.",
+    "Prepare spreadsheets for printing using the \"Page Setup\" options."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "27c1b297a8181ab65dce36c3e83ac9d3",
+   "objectives": [
+    "Recall spreadsheet terminology",
+    "Apply Algebra concepts to spreadsheets",
+    "Apply spreadsheet menu commands",
+    "Identify features of the spreadsheet interface",
+    "Recognize formula bar",
+    "View status bar",
+    "Enter numbers, text, and formulas",
+    "Apply predefined functions: SUM, AVERAGE, MIN, MAX, PMT",
+    "Demonstrate the use of cut, copy, paste, paste special",
+    "Format cells",
+    "Generate and format reports",
+    "Prepare for printing single or multiple pages and maintain headings",
+    "Create data tables",
+    "Apply absolute and relative notations, data sort, and data filter",
+    "Analyze data using formulas",
+    "Manage workbook data and tables",
+    "Analyze table data",
+    "Organize information into fields, records, and files",
+    "Use options for field categories",
+    "Setup calculation and summary fields",
+    "Practice functions and algebraic concepts in field definitions",
+    "Create and save files",
+    "Demonstrate use of Microsoft Access menus",
+    "Recall correct use of browse, find, layout, preview functions",
+    "Enter and revise data",
+    "View and print records",
+    "Create and format layouts, reports, and graphics",
+    "Incorporate graphics into layout",
+    "Practice and sort command",
+    "Develop sort criteria",
+    "Use sort order for summary fields",
+    "Create a find request",
+    "Use multiple request",
+    "Identify how to choose symbols to make requests more specific",
+    "Apply database concepts to solve typical database design problems"
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "0f6a1a13eee128e8d0e169f73044f5e8"
+  },
+  {
+   "code": "VFOOD 005",
+   "title": "ServSafe® Food Handler",
+   "course_id": 14406,
+   "report": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14406?entityType=Course&reportId=267",
+   "named_by": [
+    "santiago_canyon"
+   ],
+   "status": 200,
+   "final_url": "https://sac.curriqunet.com/DynamicReports/AllFieldsReportByEntity/14406?entityType=Course&reportId=267",
+   "access": "public",
+   "title_printed": "Course Outline",
+   "chars": 5971,
+   "offered_at": null,
+   "shape": "list",
+   "heading": "Student Learning Outcomes",
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify and interpret time temperature control when cooking, holding, cooling, and reheating.",
+    "Demonstrate knowledge to successfully pass the ServSafe Food Handler Exam.",
+    "Demonstrate proper personal hygiene to eliminate contamination and cross-contamination.",
+    "Identify food safety and how to prevent foodborne illness.",
+    "Be able to distinguish between cleaning and sanitizing."
+   ],
+   "maps_to": null,
+   "parsed_from": "text",
+   "fingerprint": "e50ab8f5364b1b68e500a6464bee3b4d",
+   "objectives": [
+    "Prepares students to enter the workforce as a food handler by providing the State required food safety information as specified by State and/or local government regulation.",
+    "Prepares students to pass the ServSafe Food Handler Exam and thus, obtain their ServSafe Certificate or card."
+   ],
+   "objectives_heading": "Course Objectives",
+   "objectives_lead": "At the conclusion of this course, the student should be able to:",
+   "objectives_fingerprint": "d41c3eba8769953f2c190f841c454d45"
+  }
+ ]
+}

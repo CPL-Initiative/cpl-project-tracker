@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-18T03:57:49.300959+00:00",
+  "scraped_at": "2026-11-19T06:18:34.097297+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 32265,
+    "jst": 32275,
     "star_colleges": 69
   },
   "computed_star_colleges": 69,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 174,
+      "jst": 175,
       "star": false
     },
     "Santiago Canyon College": {
@@ -47,7 +47,7 @@
     },
     "Moreno Valley College": {
       "vets": 938,
-      "jst": 1077,
+      "jst": 1080,
       "star": true
     },
     "Bakersfield College": {
@@ -122,7 +122,7 @@
     },
     "College of the Desert": {
       "vets": 264,
-      "jst": 439,
+      "jst": 440,
       "star": true
     },
     "Saddleback College": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 392,
-      "jst": 395,
+      "jst": 397,
       "star": true
     },
     "Modesto Junior College": {
@@ -177,7 +177,7 @@
     },
     "San Joaquin Delta College": {
       "vets": 258,
-      "jst": 494,
+      "jst": 495,
       "star": true
     },
     "Glendale Community College": {
@@ -220,14 +220,14 @@
       "jst": 193,
       "star": true
     },
+    "Ventura College": {
+      "vets": 238,
+      "jst": 204,
+      "star": true
+    },
     "Victor Valley College": {
       "vets": 74,
       "jst": 349,
-      "star": true
-    },
-    "Ventura College": {
-      "vets": 238,
-      "jst": 202,
       "star": true
     },
     "Evergreen Valley College": {
@@ -267,7 +267,7 @@
     },
     "Rio Hondo College": {
       "vets": 203,
-      "jst": 130,
+      "jst": 134,
       "star": false
     },
     "Lemoore College": {
@@ -280,11 +280,6 @@
       "jst": 236,
       "star": false
     },
-    "Irvine Valley College": {
-      "vets": 247,
-      "jst": 222,
-      "star": true
-    },
     "San Jose City College": {
       "vets": 153,
       "jst": 125,
@@ -292,13 +287,18 @@
     },
     "Oxnard College": {
       "vets": 149,
-      "jst": 164,
+      "jst": 165,
       "star": true
     },
     "Golden West College": {
       "vets": 227,
       "jst": 109,
       "star": false
+    },
+    "Irvine Valley College": {
+      "vets": 247,
+      "jst": 212,
+      "star": true
     },
     "Los Angeles Harbor College": {
       "vets": 114,
@@ -332,7 +332,7 @@
     },
     "Reedley College": {
       "vets": 100,
-      "jst": 135,
+      "jst": 136,
       "star": true
     },
     "Laney College": {
@@ -362,7 +362,7 @@
     },
     "Hartnell College": {
       "vets": 122,
-      "jst": 110,
+      "jst": 111,
       "star": true
     },
     "Skyline College": {
@@ -397,7 +397,7 @@
     },
     "Columbia College": {
       "vets": 43,
-      "jst": 26,
+      "jst": 27,
       "star": false
     },
     "College of the Redwoods": {
@@ -442,7 +442,7 @@
     },
     "Cuesta College": {
       "vets": 208,
-      "jst": 184,
+      "jst": 185,
       "star": true
     },
     "Santa Monica College": {
@@ -497,7 +497,7 @@
     },
     "Sacramento City College": {
       "vets": 233,
-      "jst": 120,
+      "jst": 121,
       "star": false
     },
     "Cuyamaca College": {

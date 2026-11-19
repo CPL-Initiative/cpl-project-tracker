@@ -1,0 +1,16 @@
+{
+ "name": "program_requirement_records_display_2026-11-13_bef8ef819af7.sql.gz",
+ "kind": "program_requirement_records_display",
+ "bucket": "cpl-receipts",
+ "object": "display/program_requirement_records_display_2026-11-13_bef8ef819af7.sql.gz",
+ "build": "bef8ef819af7",
+ "built": "2026-11-13",
+ "bytes": 17717934,
+ "sha256": "6fe964673bf720cf9f81d4d6f6e0d8e01f8709eadef0f101f565df6d43d199ed",
+ "rows": 18182,
+ "stored_at": "2026-11-18T07:50:03Z",
+ "run": "44259862567",
+ "repo_sha256": "6fe964673bf720cf9f81d4d6f6e0d8e01f8709eadef0f101f565df6d43d199ed",
+ "repo_bytes": 17717934,
+ "repo_blob": "4e58c6ee4f5ebdc71be808911654fac832757cc1"
+}

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s681_cpl_memory_rows.sql",
+ "name": "s681_cpl_memory_rows",
+ "version": "20261118114846",
+ "sha256": "e6a23e3e571a4ee53e73db3b634ecd5b21f37248b4dd54b2d0e78214f0c692ad",
+ "run": "44297880421",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"slug\":\"d-a4-pair-members-carry-state-units-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":370},{\"slug\":\"d-a5-rows-confidence-56-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":278},{\"slug\":\"d-census-order-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":227},{\"slug\":\"d-lane-names-only-colleges-in-flight-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":336},{\"slug\":\"d-named-gap-labels-corrected-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":385},{\"slug\":\"d-one-wave-chabot-out-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":279},{\"slug\":\"d-stop-rule-fired-s681\",\"kind\":\"decision\",\"status\":\"proposed\",\"summary_len\":395},{\"slug\":\"f-lassen-five-records-s681\",\"kind\":\"fact\",\"status\":\"proposed\",\"summary_len\":365},{\"slug\":\"m-chabot-load-rolled-back-s681\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":397},{\"slug\":\"m-display-build-through-bucket-s681\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":331},{\"slug\":\"m-outcome-loads-s681\",\"kind\":\"milestone\",\"status\":\"proposed\",\"summary_len\":334},{\"slug\":\"p-outcome-load-without-standing-test-s681\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":387},{\"slug\":\"p-self-check-on-totals-misses-per-course-units-s681\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":344},{\"slug\":\"p-superseded-ci-holds-the-migrate-queue-s681\",\"kind\":\"pitfall\",\"status\":\"proposed\",\"summary_len\":314},{\"slug\":\"q-wait-for-a-routine-firings-checkpoint-s681\",\"kind\":\"question\",\"status\":\"proposed\",\"summary_len\":362}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

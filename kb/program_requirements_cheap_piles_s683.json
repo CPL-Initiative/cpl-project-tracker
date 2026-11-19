@@ -1,0 +1,1536 @@
+{
+ "written": "2026-11-19T07:41Z",
+ "summary": {
+  "a5": "A5's 31 wrong answers of 123 applied: 20 are misses of the self-check (it reads the record as filed against a total it no longer lands; A5 leaves the sum the held answer names), 11 are A5's own. A narrower A5 (take only the list whose label is the named list, add only that list's surplus, add no course heavier than the list's own options) excludes the 11 and keeps every right answer landing; the 20 need a self-check that compares the sum A5 changes.",
+  "held_out": "9 of the 33 held-out records fit a named gap, all no_units_printed (its matcher is off and misses their notes' wording); 24 fit none: the record misreads the page or the catalog's figures disagree inside one list, which catalog_figures_differ's sentence does not cover",
+  "next": "no table write, no plan SQL: these are lists for a later session"
+ },
+ "a5": {
+  "self_check": {
+   "applies": 123,
+   "right": 69,
+   "wrong": 31,
+   "not_exact": 23
+  },
+  "applies": 123,
+  "population_digest": "4cfd8040883f7e512d450ade61d234f2a0c4ed47cf20e53e17500812dd520e5d",
+  "causes": {
+   "baseline_reads_degree": "today's arithmetic reads the record as filed against the degree total, which it cannot close without page text; A5 leaves the major sum at the held answer",
+   "baseline_no_longer_lands": "the record as filed no longer lands under today's arithmetic; A5 leaves its sum as it was",
+   "target_mentions_the_list": "A5 also took courses from a list whose name only mentions the named list",
+   "top_end_counts_a_used_course": "the top end counts a course the named list's own top pick already uses",
+   "top_end_takes_a_heavier_course": "A5 added a course heavier than any of the list's own options",
+   "other": "none of the causes above"
+  },
+  "by_cause": {
+   "baseline_reads_degree": 18,
+   "top_end_counts_a_used_course": 7,
+   "target_mentions_the_list": 3,
+   "baseline_no_longer_lands": 2,
+   "top_end_takes_a_heavier_course": 1
+  },
+  "a narrower A5 excludes": {
+   "top_end_counts_a_used_course": "surplus",
+   "target_mentions_the_list": "label",
+   "top_end_takes_a_heavier_course": "cap"
+  },
+  "narrower_measured": {
+   "label": {
+    "right_still_lands": 69,
+    "right_stops_landing": 0,
+    "wrong_now_lands_on_the_major": 21
+   },
+   "label_surplus": {
+    "right_still_lands": 69,
+    "right_stops_landing": 0,
+    "wrong_now_lands_on_the_major": 28
+   },
+   "label_surplus_cap": {
+    "right_still_lands": 69,
+    "right_stops_landing": 0,
+    "wrong_now_lands_on_the_major": 29
+   }
+  },
+  "misses": [
+   {
+    "college": "Butte College",
+    "control_number": "31133",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/butte/records/31133.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      67.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List B (Select one or any course from List A not already used)' says any course from List A: 9 courses added as options (ENGL 8, ENGL 10, ENGL 14, ENGL 16, ENGL 20, ENGL 26)",
+     "'List C (Select one or any course from List A or List B not already used)' says any course from List A: 8 courses added as options (ENGL 8, ENGL 10, ENGL 14, ENGL 16, ENGL 6, ENGL 15)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Butte College",
+    "control_number": "31422",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/butte/records/31422.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      53.0,
+      56.0
+     ],
+     "stated": [
+      60.0,
+      65.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      22.0
+     ]
+    },
+    "a5_words": [
+     "'List B (Select one or any course from List A not already used)' says any course from List A: 6 courses added as options (BIOL 2, BIOL C1000, PSY 3, PSY 6, PSY 10, PSY 41)",
+     "'List C (Select one or any course from List A or B not already used)' says any course from List A: 4 courses added as options (BIOL 2, BIOL C1000, PSY 3, PSY 15)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "Butte College",
+    "control_number": "31951",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/butte/records/31951.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      68.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List C (Select one or any course from List A or List B not already used)' says any course from List A: 4 courses added as options (ART 3, ART 6, ARTH C1100, ARTH C1200)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Butte College",
+    "control_number": "31954",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/butte/records/31954.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      19.0
+     ],
+     "stated": [
+      19.0,
+      19.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      67.0,
+      67.0
+     ],
+     "stated": [
+      60.0,
+      66.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      19.0
+     ]
+    },
+    "a5_words": [
+     "'List B (Select one or any course from List A not already used)' says any course from List A: 4 courses added as options (SOC 8, SOC 10, SOC 14, SOC 20)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Butte College",
+    "control_number": "33927",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/butte/records/33927.json",
+    "held_answer": {
+     "computed": [
+      20.0,
+      23.0
+     ],
+     "stated": [
+      20.0,
+      23.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      54.0,
+      57.0
+     ],
+     "stated": [
+      60.0,
+      69.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      20.0,
+      23.0
+     ]
+    },
+    "a5_words": [
+     "'List B (Select one or any course from List A not already used)' says any course from List A: 5 courses added as options (ACCT 2, ACCT 4, MATH 12, MATH 12s, MATH C2220)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Chaffey College",
+    "control_number": "31204",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/chaffey/records/31204.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": null
+    },
+    "a5_answered": {
+     "computed": [
+      19.0,
+      21.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      19.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'List B - One course from the following, or any course not taken from List A' says any course from List A: 9 courses added as options (PSYCH 65, SOC 14, SOC 15, SOC 16, SOC 17, SOC 26)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "Chaffey College",
+    "control_number": "31657",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/chaffey/records/31657.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      18.0,
+      20.0
+     ]
+    },
+    "a5_words": [
+     "'List B - Any one course from the following, or any course not taken from List A, or any English course articulated as lower division preparation for the English major at a CSU' says any course from List A: 18 courses added as options (ENGL 70A, ENGL 70B, ENGL 75A, ENGL 75B, ENGL 80A, ENGL 80B)",
+     "'List C - Any one course from the following, or any course not taken from List A or B' says any course from List A: 11 courses added as options (ENGL 70A, ENGL 70B, ENGL 75A, ENGL 75B, ENGL 80A, ENGL 80B)"
+    ],
+    "cause": "target_mentions_the_list"
+   },
+   {
+    "college": "Chaffey College",
+    "control_number": "36531",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/chaffey/records/36531.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": null
+    },
+    "a5_answered": {
+     "computed": [
+      18.0,
+      21.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      18.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'List B - Any two courses from the following, or any courses not taken from List A' says any course from List A: 5 courses added as options (PS 2, PS 4, PS 7, PS 10, STAT C1000)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "College of Marin",
+    "control_number": "31717",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_marin/records/31717.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      21.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      19.0,
+      22.0
+     ]
+    },
+    "a5_words": [
+     "'3. List B - select two courses; may use any course from List A not previously used.' says any course from List A: 32 courses added as options (ENGL 221A, ENGL 221B, ENGL 222, ENGL 223, ENGL 224, ENGL 225)"
+    ],
+    "cause": "target_mentions_the_list"
+   },
+   {
+    "college": "College of Marin",
+    "control_number": "33080",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_marin/records/33080.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      18.0,
+      21.0
+     ],
+     "stated": [
+      18.0,
+      20.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      18.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'3. List B - select one course or any course from List A not previously used' says any course from List A: 11 courses added as options (BUS 107, COMM 104, ENGL C1001, ENGL C1003, ETST 110, HIST C1001)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "31251",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_the_desert/records/31251.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List A' says any course from required courses: 2 courses added as options (TA 001, TA 002)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "32391",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_the_desert/records/32391.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      21.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      53.0,
+      55.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 6 courses added as options (ENG 010A, ENG 010B, ENG 011A, ENG 011B, ENG 012A, ENG 012B)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "45078",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_the_desert/records/45078.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      21.0
+     ],
+     "stated": [
+      19.0,
+      21.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      53.0,
+      55.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 6 courses added as options (ENG 010A, ENG 010B, ENG 011A, ENG 011B, ENG 012A, ENG 012B)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "45249",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_the_desert/records/45249.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List C' says any course from List A: 3 courses added as options (ARTH 012A, ARTH 012B, ARTH 012C)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "College of the Desert",
+    "control_number": "45250",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/college_of_the_desert/records/45250.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List A' says any course from required courses: 2 courses added as options (TA 001, TA 002)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Compton College",
+    "control_number": "38215",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/compton/records/38215.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      19.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      18.0,
+      20.0
+     ],
+     "stated": [
+      18.0,
+      19.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      18.0,
+      20.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 1 courses added as options (STAT C1000)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "Compton College",
+    "control_number": "38486",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/compton/records/38486.json",
+    "held_answer": {
+     "computed": [
+      20.0,
+      21.0
+     ],
+     "stated": [
+      20.0,
+      21.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      20.0,
+      22.0
+     ],
+     "stated": [
+      20.0,
+      21.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      20.0,
+      22.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 2 courses added as options (BIOL 100, PSYC 107)"
+    ],
+    "cause": "baseline_no_longer_lands"
+   },
+   {
+    "college": "El Camino College",
+    "control_number": "32141",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/el_camino/records/32141.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      53.0,
+      54.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      20.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 4 courses added as options (GEOG 5, GEOG 7, GEOG 8, GEOG 9)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "El Camino College",
+    "control_number": "33577",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/el_camino/records/33577.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 4 courses added as options (PHIL 105, PHIL 111, PHIL 112, PHIL 113)",
+     "'List C' says any course from List A: 4 courses added as options (PHIL 105, PHIL 111, PHIL 112, PHIL 113)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Los Angeles Trade Technical College",
+    "control_number": "02927",
+    "award": "A.A. Degree",
+    "path": "kb/program_requirements_college/los_angeles_trade_technical/records/02927.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List B- Select any one (1) course. Any course not used in LIST A or one course from this list (3 units)' says any course from LIST A: 5 courses added as options (ENGLISH 203, ENGLISH 205, ENGLISH 206, ENGLISH 207, ENGLISH 208)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Los Angeles Trade Technical College",
+    "control_number": "32905",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/los_angeles_trade_technical/records/32905.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'List B- Select any one (1) course. Any course not used in LIST A or one course from this list (3 units)' says any course from LIST A: 5 courses added as options (ENGLISH 203, ENGLISH 205, ENGLISH 206, ENGLISH 207, ENGLISH 208)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Los Angeles Trade Technical College",
+    "control_number": "38966",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/los_angeles_trade_technical/records/38966.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'LIST B-2: Select one course from below or any course not already used from List A or B1.' says any course from List A: 2 courses added as options (HISTORY 086, HISTORY 002)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Mission College",
+    "control_number": "31404",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/mission/records/31404.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      22.0
+     ],
+     "stated": [
+      18.0,
+      22.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      18.0,
+      24.0
+     ],
+     "stated": [
+      18.0,
+      22.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      18.0,
+      24.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 2 courses added as options (POL007, STATC1000)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "Norco College",
+    "control_number": "30585",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/norco/records/30585.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      20.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      19.0,
+      21.0
+     ],
+     "stated": [
+      19.0,
+      20.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      19.0,
+      21.0
+     ]
+    },
+    "a5_words": [
+     "'List B' says any course from List A: 5 courses added as options (PSYC 8, SOC 10, SOC 12, SOC 20, PSYC 50)"
+    ],
+    "cause": "top_end_counts_a_used_course"
+   },
+   {
+    "college": "Rio Hondo College",
+    "control_number": "32243",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/rio_hondo/records/32243.json",
+    "held_answer": {
+     "computed": [
+      18.5,
+      18.5
+     ],
+     "stated": [
+      18.5,
+      18.5
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.5,
+      52.5
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.5,
+      18.5
+     ]
+    },
+    "a5_words": [
+     "'List C: Choose any course from List A or B not used above or any of the following courses (3 units)' says any course from List A: 10 courses added as options (LIT 112A, LIT 112B, LIT 144A, LIT 144B, LIT 146A, LIT 146B)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "Saddleback College",
+    "control_number": "32480",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/saddleback/records/32480.json",
+    "held_answer": {
+     "computed": [
+      20.0,
+      22.0
+     ],
+     "stated": [
+      20.0,
+      22.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      20.0,
+      24.0
+     ],
+     "stated": [
+      20.0,
+      22.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      20.0,
+      24.0
+     ]
+    },
+    "a5_words": [
+     "'List B: Select two of the following courses or any courses not selected from List A (6 units)' says any course from List A: 8 courses added as options (ANTH 3, ANTH 13, PSYC 44, BIO 11, GEOL 1, GEOL 20)",
+     "'List C: Select one of the following courses or any course not selected from List A or List B (2-4 units)' says any course from List A: 10 courses added as options (ANTH 3, ANTH 13, PSYC 44, ANTH 4, ANTH 5, ANTH 8)"
+    ],
+    "cause": "target_mentions_the_list"
+   },
+   {
+    "college": "Santa Ana College",
+    "control_number": "04236",
+    "award": "A.S. Degree",
+    "path": "kb/program_requirements_college/santa_ana/records/04236.json",
+    "held_answer": {
+     "computed": [
+      29.5,
+      34.0
+     ],
+     "stated": [
+      29.5,
+      34.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      29.5,
+      38.0
+     ],
+     "stated": [
+      29.5,
+      34.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      29.5,
+      38.0
+     ]
+    },
+    "a5_words": [
+     "'List B Select 7-8.5 units or 2 courses from the following, or from any courses from List A not already used' says any course from List A: 6 courses added as options (CHEM 229, CHEM 249, BIOL 239, BIOL 249, STAT C1000, PSYC 210)"
+    ],
+    "cause": "top_end_takes_a_heavier_course"
+   },
+   {
+    "college": "Santa Ana College",
+    "control_number": "30670",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/santa_ana/records/30670.json",
+    "held_answer": {
+     "computed": [
+      20.0,
+      20.0
+     ],
+     "stated": [
+      20.0,
+      20.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      20.0,
+      23.0
+     ],
+     "stated": [
+      20.0,
+      20.0
+     ],
+     "against": "program",
+     "status": "equal",
+     "major_computed": [
+      20.0,
+      23.0
+     ]
+    },
+    "a5_words": [
+     "'List B - select one course below (3-4 units) or any course not selected from List A' says any course from List A: 19 courses added as options (PSYC 201, ANTH 100, ANTH 100H, ANTH 101, ANTH 104, ANTH 104H)",
+     "'List C - select one course below (3-5 units) or any course not selected from List A or List B' says any course from List A: 3 courses added as options (PSYC 201, PSYC 157, SOC 240)"
+    ],
+    "cause": "baseline_no_longer_lands"
+   },
+   {
+    "college": "West Valley College",
+    "control_number": "30976",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/west_valley/records/30976.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'Major Electives List B (or any course from List A not already used)' says any course from List A: 4 courses added as options (COMM004, COMM012, COMM020, COMM010)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "West Valley College",
+    "control_number": "32023",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/west_valley/records/32023.json",
+    "held_answer": {
+     "computed": [
+      19.0,
+      19.5
+     ],
+     "stated": [
+      19.0,
+      19.5
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      53.0,
+      53.5
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      19.0,
+      19.5
+     ]
+    },
+    "a5_words": [
+     "'Major Electives List C: Select one (including any course from List A or B not already used)' says any course from List A: 2 courses added as options (ARTH007, ARTH012A)"
+    ],
+    "cause": "baseline_reads_degree"
+   },
+   {
+    "college": "West Valley College",
+    "control_number": "43024",
+    "award": "A.A- T Degree",
+    "path": "kb/program_requirements_college/west_valley/records/43024.json",
+    "held_answer": {
+     "computed": [
+      18.0,
+      18.0
+     ],
+     "stated": [
+      18.0,
+      18.0
+     ],
+     "against": "program"
+    },
+    "a5_answered": {
+     "computed": [
+      52.0,
+      52.0
+     ],
+     "stated": [
+      60.0,
+      60.0
+     ],
+     "against": "degree",
+     "status": "incomplete",
+     "major_computed": [
+      18.0,
+      18.0
+     ]
+    },
+    "a5_words": [
+     "'Major Electives List B (or any course from List A not already used)' says any course from List A: 4 courses added as options (COMM004, COMM012, COMM020, COMM010)"
+    ],
+    "cause": "baseline_reads_degree"
+   }
+  ]
+ },
+ "held_out": {
+  "source": "the S681 receipt's held_out list (kb/receipts/program_requirement_records_named_gaps_2026-11-18_s681.json on claude/cheap-piles-named-gaps-s680), #3502's records the S681 second reader held out of #3497's plan",
+  "causes": {
+   "no_units_beside_courses": "the catalog prints list totals and no units beside the courses, so the sum takes the state file's units, which do not add to the printed figures",
+   "list_figure_disagrees": "a list's printed figure differs from the units the catalog prints beside its own courses",
+   "range_couples_lists": "a list printed as a range because a course may be waived, with a later list that depends on the path; the record sums each list's top end on its own",
+   "prerequisites_outside_total": "the record counts prerequisites that the printed total leaves out",
+   "nested_option_read_flat": "an option printed inside a list is recorded as its own requirement",
+   "alternate_path_not_recorded": "a list's 'or any course from List A' path is not recorded, so it cannot reach its printed figure",
+   "pair_units_counted_twice": "a pair printed with one figure carries it on the first code, and the sum adds the second code's units from the state file",
+   "requirements_not_in_read": "the read did not include the requirements table"
+  },
+  "by_cause": {
+   "no_units_beside_courses": 13,
+   "list_figure_disagrees": 6,
+   "pair_units_counted_twice": 4,
+   "prerequisites_outside_total": 3,
+   "range_couples_lists": 3,
+   "nested_option_read_flat": 2,
+   "alternate_path_not_recorded": 1,
+   "requirements_not_in_read": 1
+  },
+  "by_true_gap": {
+   "none": 24,
+   "no_units_printed": 9
+  },
+  "records": [
+   {
+    "college": "Bakersfield College",
+    "control_number": "32783",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/bakersfield/records/32783.json",
+    "cause": "nested_option_read_flat",
+    "true_gap": null,
+    "why": "the notes say Statistics (4) likely sits inside List A (6) with 'any course not selected from Core', giving 9 + 6 + 3 = 18; read flat, the lists add to 22"
+   },
+   {
+    "college": "Bakersfield College",
+    "control_number": "43434",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/bakersfield/records/43434.json",
+    "cause": "alternate_path_not_recorded",
+    "true_gap": null,
+    "why": "List B also allows any List A course not already used, recorded only in List A, so List B cannot reach its 6-8.5; the page also prints 18-19.5 and 18-20.5 as totals. catalog_figures_differ may fit once List B carries those courses"
+   },
+   {
+    "college": "Cerritos College",
+    "control_number": "02219",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/cerritos/records/02219.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say no units are printed beside the A&P courses, a required choice printed 4.0-10.0 as a whole"
+   },
+   {
+    "college": "Cerritos College",
+    "control_number": "33343",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/cerritos/records/33343.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say no units are printed beside GEOG 115, and the GEOG 101 & 101L pair prints 4.0 for the pair"
+   },
+   {
+    "college": "College of the Sequoias",
+    "control_number": "37744",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/college_of_the_sequoias/records/37744.json",
+    "cause": "prerequisites_outside_total",
+    "true_gap": null,
+    "why": "the notes say the printed 24 covers only the certificate courses and leaves out the 2-8 prerequisite units"
+   },
+   {
+    "college": "College of the Sequoias",
+    "control_number": "45030",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/college_of_the_sequoias/records/45030.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside individual courses, ENGL C1000 among them (area 1A's one course), and Areas 3 and 5 print totals not attached to a sub-area"
+   },
+   {
+    "college": "Cuesta College",
+    "control_number": "14441",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/cuesta/records/14441.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the required list prints 28.0-31.0 while its courses sum to 29-32"
+   },
+   {
+    "college": "Cuesta College",
+    "control_number": "32562",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/cuesta/records/32562.json",
+    "cause": "range_couples_lists",
+    "true_gap": null,
+    "why": "the notes say a student with SPAN 201 or 202 through prior learning skips to the next level, so the core prints 10-20, and List B applies only to students who begin in SPAN 203"
+   },
+   {
+    "college": "Cuyamaca College",
+    "control_number": "21069",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/cuyamaca/records/21069.json",
+    "cause": "pair_units_counted_twice",
+    "true_gap": null,
+    "why": "the notes say BOT-101A & 101B and BOT-102A & 102B print 3 units per pair, filed on the first code; the state file's 1.5 for each second code makes 24 into 27"
+   },
+   {
+    "college": "Cypress College",
+    "control_number": "39887",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/cypress/records/39887.json",
+    "cause": "pair_units_counted_twice",
+    "true_gap": null,
+    "why": "the notes say GEOL 100 C & GEOL 101 C print 4 for the pair, filed on GEOL 100 C; the state file's 1 for GEOL 101 C makes 41 into 42 (the STAT and ECON rows also print no units)"
+   },
+   {
+    "college": "De Anza College",
+    "control_number": "41861",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/de_anza/records/41861.json",
+    "cause": "range_couples_lists",
+    "true_gap": null,
+    "why": "the notes say KORE D001 may be skipped (core 10-15) and List A takes one course after 15 core units or two after 10; the record adds the core's 15 to List A's top"
+   },
+   {
+    "college": "De Anza College",
+    "control_number": "41863",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/de_anza/records/41863.json",
+    "cause": "range_couples_lists",
+    "true_gap": null,
+    "why": "the notes say SPAN D001 may be skipped (core 10-15) and List A takes one course after 15 core units or two after 10; the record adds the core's 15 to List A's top"
+   },
+   {
+    "college": "Foothill College",
+    "control_number": "32281",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/foothill/records/32281.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside individual courses, the core options included; List B's count also depends on the core option"
+   },
+   {
+    "college": "Fullerton College",
+    "control_number": "08420",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/fullerton/records/08420.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the Restricted Electives heading prints 2 units and its units column 6-7, likely a stale figure; 25 + 2 is the printed 27"
+   },
+   {
+    "college": "Grossmont College",
+    "control_number": "35805",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/grossmont/records/35805.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": null,
+    "why": "the notes say no units are printed beside the courses of Lists A, B and C; every required course carries units, so no required course lacks them"
+   },
+   {
+    "college": "Long Beach City College",
+    "control_number": "41220",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/long_beach_city/records/41220.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the catalog prints 4 beside CS 11, CS 21 and CS 31 and 3 as the choice's subtotal"
+   },
+   {
+    "college": "Long Beach City College",
+    "control_number": "42970",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/long_beach_city/records/42970.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside BCOM 15, a required course, and its printed total 5 leaves BCOM 15 out"
+   },
+   {
+    "college": "Los Angeles Harbor College",
+    "control_number": "44271",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/los_angeles_harbor/records/44271.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the required list prints 8-9 while its courses as printed sum to 9-10 (ENGLISH 032 prints 3, the state file 2)"
+   },
+   {
+    "college": "Los Angeles Mission College",
+    "control_number": "35913",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/los_angeles_mission/records/35913.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside individual courses, the required core included; List A also lists the core courses not used"
+   },
+   {
+    "college": "Mt. San Antonio College",
+    "control_number": "38731",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/mt_san_antonio/records/38731.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": null,
+    "why": "the notes say units are printed for the required courses and not beside the track electives, which are choose lists"
+   },
+   {
+    "college": "Mt. San Jacinto College",
+    "control_number": "08690",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/mt_san_jacinto/records/08690.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the requirements list prints no units beside the option courses (the Program Map gives BIOL-125 4, CHEM-107 5)"
+   },
+   {
+    "college": "Mt. San Jacinto College",
+    "control_number": "43979",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/mt_san_jacinto/records/43979.json",
+    "cause": "prerequisites_outside_total",
+    "true_gap": null,
+    "why": "the notes say the printed 53 is Semesters One-Four (38) plus the additional requirements (15) and excludes the 18-19 prerequisite units"
+   },
+   {
+    "college": "Napa Valley College",
+    "control_number": "32409",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/napa_valley/records/32409.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside individual courses, the required options included; List B's minimum also depends on the option"
+   },
+   {
+    "college": "Palomar College",
+    "control_number": "10883",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/palomar/records/10883.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the electives' printed 3.5-7.0 does not match three courses of their printed units (the lowest is 4.0)"
+   },
+   {
+    "college": "Pasadena City College",
+    "control_number": "36777",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/pasadena_city/records/36777.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": null,
+    "why": "the notes say the catalog prints no units beside individual courses; every list is a choose list, so no required course lacks units"
+   },
+   {
+    "college": "San Bernardino Valley College",
+    "control_number": "39483",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/san_bernardino_valley/records/39483.json",
+    "cause": "nested_option_read_flat",
+    "true_gap": null,
+    "why": "the notes say List A ('one to two courses') appears to include the biology sequences, recorded as their own required option group"
+   },
+   {
+    "college": "Santa Ana College",
+    "control_number": "35673",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/santa_ana/records/35673.json",
+    "cause": "list_figure_disagrees",
+    "true_gap": null,
+    "why": "the notes say the printed 22.0-25.0 does not match the listed courses' 24-27"
+   },
+   {
+    "college": "Santa Monica College",
+    "control_number": "33271",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/santa_monica/records/33271.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": null,
+    "why": "the 83 movement courses, a choose list, carry no units as read, and the notes say the page prints 20 units in the heading and 21 in the introduction"
+   },
+   {
+    "college": "Santa Rosa Junior College",
+    "control_number": "45486",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/santa_rosa_junior/records/45486.json",
+    "cause": "pair_units_counted_twice",
+    "true_gap": null,
+    "why": "the notes say CHEM 3A & 3AL print 5 for the pair, filed on CHEM 3A with CHEM 3AL null"
+   },
+   {
+    "college": "Sierra College",
+    "control_number": "45624",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/sierra/records/45624.json",
+    "cause": "pair_units_counted_twice",
+    "true_gap": null,
+    "why": "the notes say ESCI 0010 & 0010L print 4 for the pair, filed on ESCI 0010 with ESCI 0010L null; the two choose lists carry no units as read"
+   },
+   {
+    "college": "Ventura College",
+    "control_number": "39961",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/ventura/records/39961.json",
+    "cause": "prerequisites_outside_total",
+    "true_gap": null,
+    "why": "the notes say the 17 prerequisite units count apart from the 52-unit major total"
+   },
+   {
+    "college": "Ventura College",
+    "control_number": "44994",
+    "labeled": "no_units_printed",
+    "path": "kb/program_requirements_college/ventura/records/44994.json",
+    "cause": "requirements_not_in_read",
+    "true_gap": null,
+    "why": "the notes say the requirements tab was not in the text and the block comes from the overview sentence"
+   },
+   {
+    "college": "Victor Valley College",
+    "control_number": "40161",
+    "labeled": "catalog_figures_differ",
+    "path": "kb/program_requirements_college/victor_valley/records/40161.json",
+    "cause": "no_units_beside_courses",
+    "true_gap": "no_units_printed",
+    "why": "the notes say the catalog prints no units beside individual courses, the required core's four included"
+   }
+  ]
+ }
+}

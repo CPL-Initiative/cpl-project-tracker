@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7217,
-    "output_tokens": 2047,
+    "output_tokens": 2300,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,48 @@
     "model": null
    }
   ],
-  "output_tokens": 2047,
+  "output_tokens": 2300,
   "output_tokens_details": {
-   "thinking_tokens": 397
+   "thinking_tokens": 582
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06981,
- "ms": 16479,
- "seconds": 17.0,
+ "cost_usd": 0.07487,
+ "ms": 17641,
+ "seconds": 35.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 21,
-   "share": 0.857,
+   "share": 0.905,
    "missing": [
-    "ACCT99",
     "ECON101",
     "ECON102"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ACCT100",
+     "listed": "ACCT99",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
-    "ACCT100",
     "BUS105",
     "ECONC2001",
     "ECONC2002"
    ],
    "flagged": [
-    "ACCT100",
     "BUS105",
     "ECONC2001",
     "ECONC2002"
@@ -149,7 +153,7 @@
   },
   "blocks": [
    {
-    "name": "I. Required courses 19.0 units",
+    "name": "I. Required courses 19.0 units:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -203,7 +207,7 @@
     ]
    },
    {
-    "name": "II. Select a minimum of 6.0 units from",
+    "name": "II. Select a minimum of 6.0 units from:",
     "rule": "choose_units",
     "minimum": 6,
     "option_group": null,
@@ -331,24 +335,26 @@
   "missing_explained": [
    {
     "code": "ACCT 99",
-    "why": "not in the text; catalog lists ACCT 100 Practical Accounting (same title, likely renumbered)"
+    "why": "not in the text; catalog lists Practical Accounting as ACCT 100 instead (likely renumbered)"
    },
    {
     "code": "ECON 101",
-    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead (likely Common Course Numbering replacement)"
    },
    {
     "code": "ECON 102",
-    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics (likely common course numbering replacement)"
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead (likely Common Course Numbering replacement)"
    }
   ],
   "notes": [
-   "BUS 058 and BUS 063 as printed were matched to closed-list BUS 58 and BUS 63 (leading zero only, same titles); marked catalog_addition false.",
-   "ACCT 100, ECON C2001 and ECON C2002 appear to replace closed-list ACCT 99, ECON 101 and ECON 102; reviewer should confirm.",
-   "BUS 105 Business Office Math is not on the closed list.",
-   "Learning outcomes are printed under the certificate's own Description section.",
-   "The trailing ASSOCIATE DEGREE PROGRAM text is generic and not part of this certificate; it is cut off."
+   "BUS 058 and BUS 063 are printed with a leading zero; treated as the closed-list BUS 58 and BUS 63 (not catalog additions).",
+   "ACCT 100 (Practical Accounting) appears to replace closed-list ACCT 99; recorded as catalog addition.",
+   "ECON C2001 and ECON C2002 appear to be common-course-numbered replacements for ECON 101 and ECON 102; recorded as catalog additions.",
+   "BUS 105 Business Office Math is not on the closed list; recorded as catalog addition.",
+   "Careers read from the description: 'entry level supervisory and management positions in areas such as government, retail and hospitality'.",
+   "The trailing Associate Degree Program text is general boilerplate about AA/AS degrees, not part of this certificate's requirements."
   ]
  },
- "extracted_run": "39691376155"
+ "extracted_run": "44545048735",
+ "catalog_year": "2026-2027"
 }

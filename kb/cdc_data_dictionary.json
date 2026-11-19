@@ -150,7 +150,7 @@
       "name": "Active programs",
       "labels": [
         "Active programs",
-        "Active programs (gap census live read)"
+        "Active programs (gap census database count)"
       ],
       "definition": "Programs COCI lists as Active for the college, counted by control number.",
       "system": "coci",
@@ -187,7 +187,7 @@
       "name": "Programs passing",
       "labels": [
         "Program requirements passing",
-        "Passing now (gap census live read)",
+        "Passing now (gap census database count)",
         "Passing now (committed captures)",
         "Active programs with a passing record"
       ],
@@ -202,7 +202,7 @@
       "name": "Programs still to pass",
       "labels": [
         "Still to pass",
-        "Still to pass (gap census live read)",
+        "Still to pass (gap census database count)",
         "Still to pass (committed captures)"
       ],
       "definition": "Programs whose collected requirements do not pass yet, each with its cause.",
@@ -304,8 +304,8 @@
       "id": "course_slos",
       "name": "Course SLOs",
       "labels": [
-        "Course SLOs",
-        "SLOs and objectives",
+        "Course student learning outcomes (SLOs)",
+        "Student learning outcomes (SLOs) and objectives",
         "Course SLOs and objectives"
       ],
       "definition": "Courses on Active programs whose outline of record states student learning outcomes (the list column shows SLOs and objectives together).",
@@ -330,7 +330,8 @@
       "id": "program_plos",
       "name": "Program PLOs",
       "labels": [
-        "Program PLOs"
+        "Program PLOs",
+        "Program learning outcomes (PLOs)"
       ],
       "definition": "Active programs whose record carries program learning outcomes from the catalog.",
       "system": "catalog",

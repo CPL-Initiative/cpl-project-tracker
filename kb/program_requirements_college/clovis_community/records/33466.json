@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Child Development",
  "award": "A.S. Degree",
- "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=118",
+ "source_url": "https://www.cloviscollege.edu/catalog/assets/docs/catalog-2026-2027.pdf#page=117",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11878,
+  "input_tokens": 11779,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11878,
-    "output_tokens": 2115,
+    "input_tokens": 11779,
+    "output_tokens": 2346,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2115,
+  "output_tokens": 2346,
   "output_tokens_details": {
-   "thinking_tokens": 616
+   "thinking_tokens": 655
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08981,
- "ms": 17017,
- "seconds": 17.5,
+ "cost_usd": 0.09404,
+ "ms": 18554,
+ "seconds": 19.2,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Required Core Courses (Child Development A.S. Degree; program heading not in the extracted text)",
+   "section_heading": "CHILD DEVELOPMENT (Major #C.5610.AS) ASSOCIATE IN SCIENCE DEGREE",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -124,8 +124,16 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Integrate understanding of the needs, the characteristics, and multiple influences on development of all children birth to age eight as related to high quality care and education of young children.",
+    "Analyze, demonstrate, and evaluate effective practice in working with young children.",
+    "Design, implement, and evaluate environments and activities that support positive developmental play and learning outcomes for all young children.",
+    "Apply effective guidance and interaction strategies that support all children’s social learning, identity, and self-confidence.",
+    "Apply ethical standards and professional behaviors that demonstrate understanding and knowledge, deepening the commitment to Early Care and Education profession."
+   ],
+   "careers": [
+    "teacher"
+   ]
   },
   "blocks": [
    {
@@ -308,11 +316,32 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section on page 118; the A.S. degree heading, description, any outcomes and careers likely appear on page 117, which is not included. The section was identified by 'Total Units for the Major: 30' and the degree-specific course lists that precede the Teacher I certificate.",
-   "Footnote superscripts are fused onto course numbers in the PDF text: 'ECE 31 Introduction to Curriculum' read as ECE 3 (fn 1), 'ECE 52' as ECE 5 (fn 2), 'ECE 81, 3' as ECE 8 (fns 1, 3), 'ECE 101, 7' as ECE 10, 'ECE 201, 4' as ECE 20, 'ECE 215' as ECE 21 (fn 5), 'ECE 456' as ECE 45 (fn 6). 'ECE 31 Early Intervention' is the actual ECE 31. Course titles and the footnote list confirm these readings.",
-   "The program learning outcomes on page 121 belong to the Education certificates, not this degree, and were not recorded.",
-   "No general education pattern or degree total is printed in the extracted text."
+   "The PDF text runs footnote superscripts into the course codes: 'ECE 31 Introduction to Curriculum' read as ECE 3 (footnote 1), 'ECE 52' as ECE 5, 'ECE 81, 3' as ECE 8, 'ECE 101, 7' as ECE 10, 'ECE 201, 4' as ECE 20, 'ECE 215' as ECE 21, 'ECE 456' as ECE 45, identified by course titles; 'ECE 31 Early Intervention' read as ECE 31. Reviewer should confirm.",
+   "Program learning outcomes are printed once under the 'EARLY CHILDHOOD EDUCATION' heading for the program area as a whole, preceding the Child Development A.S. section; the A.S. shares that list and it was recorded here.",
+   "Total Units for the Major: 30 is the major total; no degree total or GE pattern is printed in this section.",
+   "Career 'teacher' taken from the A.S. description ('work as a teacher in Title 5 & Title 22 early care and education settings')."
   ]
  },
- "extracted_run": "39006155986"
+ "extracted_run": "44522071814",
+ "catalog_year": "2026-2027",
+ "source_sha": "4ccb293dba05c507",
+ "source_codes": [
+  "ECE1",
+  "ECE11",
+  "ECE12",
+  "ECE13",
+  "ECE15",
+  "ECE2",
+  "ECE20",
+  "ECE3",
+  "ECE30",
+  "ECE31",
+  "ECE4",
+  "ECE40",
+  "ECE41",
+  "ECE6",
+  "ECE7",
+  "ECE8"
+ ],
+ "source_coverage": 0.8
 }

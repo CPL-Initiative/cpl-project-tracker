@@ -164,3 +164,85 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
   range sums; COBIx answered with the number of records the narrow reading left failing (single-figure sums inside a
   printed range), and the conductor reversed it in one exchange. Detail: `docs/program_requirements_harvest_lessons.md`,
   *S679*.
+
+## 2026-11-18 — S680 (SkyPhoebe, the CPL Queue routine's conductor night): slimming the repo, one wave PR
+
+- **Move bulky generated data out, then hold the line in CI.** 141 display receipts (2,266.4 MB in the tree) and 165
+  row audit reports left for the private bucket `cpl-receipts`, each verified by sha256 against its index entry before a
+  `git rm`; a gate test (`tests/receipt_move_gate_test.py`) holds every removed path to an entry. Then the size guard
+  (`scripts/repo_size_guard.py`) runs inside `lints`, so a red guard is a red `test`. The tree went from 4,862 MB to
+  1,619.8 MB, and a depth-1 download from about 2.0 GB to 438.6 MB. Lane: `docs/reference/lanes/repo-size.md`.
+- **A fetch from a private store on a public repo is a publication.** A run artifact on this public repo is readable by
+  anyone, so `step=fetch` hands out only the kinds in `kb/_receipt_store.py`'s `PUBLIC_SAFE` table (COBIx's finding).
+- **Scan before you call a history rewrite a privacy question.** All 141 display receipts held no email address and no
+  person key, so Part 5 is a size question only.
+- **A read is free in dollars and not in runner slots.** Eight outcome runs and CI on a dozen PRs saturated the runner
+  pool; each CI took 25 to 40 minutes. Cap concurrent reads when PRs must merge the same night.
+- **A chain of PRs survives one link; one wave PR lands the rest.** The chain (each branch holding the one before it)
+  merged #3496 (`71548415`), then #3498 conflicted: the squash on `main` and a branch holding the same change plus more
+  edit the same hunks of the generated files (dependency maps, Commons data), so each further link needed a merge of
+  `main`, a new head and a new CI run. One wave PR, #3504, carried #3498 with #3501, #3490, #3503, #3502 and the outcome
+  PRs #3387, #3493, #3488, #3489 and #3421: one merge of `main`, one CI run, one squash; each carried PR closed with a
+  pointer. KB note: `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **A merged branch carries its `.apply` line, and a push re-triggers the apply.** Chaining copied #3496's
+  `kb/migrations/.apply` line onto other branches, and their pushes re-ran its full-row apply (runs 44269433074 and
+  44272782139). The count guard refused both ("the UPDATE matched 0 rows, the plan names 39"); nothing was written
+  twice. A branch that merges another branch keeps `main`'s `.apply` text; every apply file stays guarded and
+  idempotent.
+- **A guard that fails where nobody looks is not a guard** (COBIx on #3490, 08:49Z): a red weekly size run reached
+  nobody, and the cron's pushes skip the file rules. The wave keeps the weekly job on the failure watch list, and
+  weekly mode lists the over-limit files on `main`.
+- **`check_generated.sh` is not the whole of CI's generated checks.** A PR that changes what the Commons data reads must
+  rebuild `commons_data.json`; CI's `lints` checks it and `check_generated.sh` does not, so three PRs went red. NEXT for
+  a plain session: add it.
+- **Sparse checkout and `git -C` keep a conductor's checkout sane.** `git sparse-checkout set --no-cone '/*'
+  '!/kb/receipts/program_requirement_records_display_*'` before spawning made each worktree 2.5 GB instead of 4.85; a
+  `cd` into a worker's worktree moved the conductor's working directory, so use `git -C`, and push `.apply` commits
+  from a tiny sparse worktree with `HEAD:<branch>`.
+- **The session trim waits.** As written it assumes a session rooted at the repo; ours root at the parent with three
+  repos, the repo's own settings do not load there, and a trimmed tree breaks `check_generated.sh` and the tests until
+  the data folders come back. It needs COBIx and a plain session.
+
+## 2026-11-18 — S681 (SkyGrebe, the CPL Queue routine's conductor firing): a gate that cannot see the field
+
+- **A load gated on "slices complete" posted 1,013 mislabeled rows.** Chabot's objectives were filed as its SLOs; the
+  objectives standing test was already red on the read's branch, but a runner's commit gets no CI and step 11 pushed
+  `.load` on completeness alone. The test now runs on the branch before `.load` (`scheduled_sessions` step 11); a guard
+  in `course-outcomes-load.yml` is a plain session's. KB note: `methodology-a-self-check-must-see-what-the-rule-writes`.
+- **A self-check on totals cannot see per-course values.** Units rule A4 scored 74 of 74 on totals while writing wrong
+  per-course units; the check that found it compared each member's units with the state course file.
+- **A stop rule needs a number and a default.** The brief's 1% line made the call mechanical: the rollback undid 17.7% of
+  the day's outline rows, so the conductor stopped new writes, finished reviews on branches, rolled back, and told Sam
+  the default (the next night applies the two reviewed plans and reads Chabot again).
+- **Superseded CI holds the migrate queue.** About a dozen pushes in 45 minutes queued the rollback's migrate run for 11
+  minutes. Cancel CI on branches a wave carries, batch a worker's pushes, and expect a migrate run to wait behind CI.
+- **A carried branch leaves a wave by `git revert -m 1` of its merge** (`bf9703bb` took Chabot out of #3509), since the
+  wave lands as one squash.
+- **A live session's handoff reads from its open pull request** (`get_file_contents` at `refs/pull/N/head`). S681 read
+  S680's that way and took the queue when its checkpoint merged two minutes later. The one-session rule stays end in
+  one line; whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to rule.
+- **Worker worktrees are heavy.** Under `.claude/worktrees/` each took about 2.3 GB; six took the disk from 27 GB free to
+  13 GB. Remove a finished worker's worktree once its head is pushed. `git -C`, never `cd`, into one.
+
+## 2026-11-18 — S683 daytime (SkyDipper, Sam's code session by day): six merges, three parked, the watcher
+
+- **A Workflow did not honor worker worktree isolation.** Two workers ran in the conductor's checkout; one committed on
+  the session branch and another checked out #3472's old tree over it. A brief now names the worktree path the agent
+  creates off `origin/main` and stays in (`.claude/skills/conductor-brief` item 4;
+  `p-workflow-workers-share-main-checkout-s683`). The checkpoint worker's harness held it to its own worktree and
+  refused a `cd` into the shared checkout: the guard that the Workflow lacked.
+- **A run that changes a view's inputs rebuilds the view.** `cer-procedures.yml` changed what the Side by side views
+  read and left them stale, so `main` went red after run 44350607385 (#3520). The run rebuilds them now, and a failed
+  rebuild holds the review queue back and ends red; tests pick fixtures by rule, never by a fixed title.
+- **Resolve once.** The inactive-card builder read 1,067 where 1,119 belonged because exhibit links were resolved
+  through the alias chain a second time; `kb/coci_articulations.json` is already current-era (#3519). Read a resolved
+  file raw and refuse one without its applied markers.
+- **A generated file every PR rebuilds is a conflict machine.** The dependency map caused most of the day's
+  conflicts; Sam's rule moves its rebuild to one job on `main` (#3526), and a PR leaves it alone.
+- **Watch the reviewer instead of waiting for a relay.** `scripts/cobix_watch.sh` polls two GitHub searches every five
+  minutes from a saved last-seen file; `tests/cobix_watch_test.py` fails any call but `gh api -X GET search/issues`,
+  the one `gh` shape a cloud session may run.
+- **Park a stalled PR as an issue** (PR closed, branch kept: #3522 to #3525) to hold the three-PR cap without losing
+  the work; the issue names the branch and the next step.
+- **A daytime session takes the night's number with a label** and appends a dated section to the newest handoff;
+  `kb/_build_session_spend.py` reads that section's own `Spend:` line as session N daytime.

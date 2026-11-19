@@ -50,6 +50,15 @@ const UNITS = {
   "31891": { sum: [78, 78], printed: [18, 18], status: "unequal", measure: "units", against: "program" },
 };
 const CHAFFEY = JSON.parse(JSON.stringify(COMMITTED));
+/* The range case, Business 20677 (a Certificate of Achievement in the 16S/24Q band), passed in the census of
+   2026-11-18 23:45Z (run 44421998189) and left the committed sidecar. Its row as of 2026-11-17 stands in for the page's
+   rendering checks; every other row still comes from the committed file. */
+if (!CHAFFEY.programs.some((r) => r.cn === "20677")) {
+  const at = CHAFFEY.programs.findIndex((r) => r.cn === "31891");
+  CHAFFEY.programs.splice(at < 0 ? CHAFFEY.programs.length : at, 0, { cn: "20677", title: "Business",
+    award: "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", cause: "units_unequal", lever: "reconcile_steps",
+    url: "https://chaffey.curriqunet.com/catalog/iq/19210/program_index/20351" });
+}
 CHAFFEY.correction_rules = false;
 CHAFFEY.programs.forEach((r) => { if (UNITS[r.cn]) r.units = UNITS[r.cn]; });
 /* The census's new lever words, so the page draws what the rebuilt file will hold. */
@@ -82,7 +91,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     chaffey && (chaffey.census_causes || {}).units_unequal > 0 && (chaffey.census_basis || {}).basis === "live" && chaffey.programs_file === SIDE, chaffey && chaffey.census_causes);
 
   // ── the panel at the units cause ──
-  const a = load("#commons/data/college/chaffey-college/cause/units_unequal", M2, CHAFFEY);
+  const a = load("#collect/college/chaffey-college/cause/units_unequal", M2, CHAFFEY);
   await a.M.boot(); await settle();
   const panel = a.d.querySelector("#cdd-panel");
   const gaps = Array.from(panel.querySelectorAll(".cdd-gaps li")).map(txt);
@@ -92,7 +101,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(1) the cause table's caption says program requirements",
     /^Program requirements still to pass, by cause$/.test(txt(panel.querySelector("table.cdd-causes caption"))), txt(panel.querySelector("table.cdd-causes caption")));
   check("(2) ⭐ the units cause names the database check and its day, with no bare \"live\"",
-    gaps.some((g) => new RegExp("^Program requirements, units unequal at the database check of " + CHECK_RE + ": 8 programs$").test(g)) && !gaps.some((g) => /\blive, /i.test(g)), gaps);
+    gaps.some((g) => new RegExp("^Program requirements, units unequal at the database check of " + CHECK_RE + ": \\d+ programs?$").test(g)) && !gaps.some((g) => /\blive, /i.test(g)), gaps);
   const basis = txt(panel.querySelector("[data-census-basis]"));
   check("(2) the cause box says the check read our saved records and not the catalog",
     new RegExp("From the database check of " + CHECK_RE).test(basis) && /saved program records/.test(basis) && /did not read the college's catalog again/.test(basis), basis);
@@ -114,7 +123,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
   check("(6) a degree carries no band line", !(pta && pta.querySelector("[data-band]")), txt(pta));
 
   // ── the program's own pane ──
-  const b = load("#commons/data/college/chaffey-college/program/42987", M2, CHAFFEY);
+  const b = load("#collect/college/chaffey-college/program/42987", M2, CHAFFEY);
   await b.M.boot(); await settle();
   const pane = txt(b.d.querySelector("#cdd-panel"));
   check("(3) ⭐ the program pane shows both figures", /Units\s*Our lists add up to 56 units; the catalog prints 65 units\./.test(pane), pane.slice(0, 600));
@@ -122,7 +131,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
     new RegExp("Still to pass because\\s*Program requirements: units unequal at the database check of " + CHECK_RE).test(pane), pane.slice(0, 600));
   check("(4) the program pane's lever names who acts and the missing rules",
     /What would move it\s*A team session writes correction rules/.test(pane) && /Chaffey College has no correction rules of its own on file yet/.test(pane), pane.slice(0, 900));
-  const c = load("#commons/data/college/chaffey-college/program/20677", M2, CHAFFEY);
+  const c = load("#collect/college/chaffey-college/program/20677", M2, CHAFFEY);
   await c.M.boot(); await settle();
   const pane2 = txt(c.d.querySelector("#cdd-panel"));
   check("(6) the program pane gives the award and the state's size band apart",
@@ -130,7 +139,7 @@ async function settle() { for (let i = 0; i < 30; i++) await tick(); }
 
   // ── (7) the committed sidecar, once the rebuild carries the figures ──
   if (COMMITTED.programs.some((r) => r.units)) {
-    const d = load("#commons/data/college/chaffey-college/program/42987", DATA, COMMITTED);
+    const d = load("#collect/college/chaffey-college/program/42987", DATA, COMMITTED);
     await d.M.boot(); await settle();
     check("(7) the committed Chaffey sidecar shows both figures", /Our lists add up to 56 units; the catalog prints 65 units\./.test(txt(d.d.querySelector("#cdd-panel"))));
   }

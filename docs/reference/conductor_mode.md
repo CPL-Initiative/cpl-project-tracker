@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-15
+updated: 2026-11-19
 status: retired
 tags: [reference, conductor, retired, governance-team-enablement, scheduled-sessions]
 kb-status: internal
@@ -18,6 +18,14 @@ obsidian-folder: cpl-project-tracker/reference
 > page.** The queue runs as it did before 2026-11-11: one Opus 5.5 session working the queue itself and
 > collaborating with COBIx on its PRs ([`scheduled_sessions`](scheduled_sessions.md), [`cobix_pr_loop`](cobix_pr_loop.md)). The page stays as the record of what was tried; its merge-gate and
 > review lessons still hold wherever another doc cites them.
+
+> **Back for collection only (Sam, 2026-11-17, the CPL Queue routine's stored prompt).** *"Conductor mode is back for
+> collection only."* · *"Two lanes, never on the same college"* · *"Spend caps: about $750 a day for everything. $10k
+> and $30k are running totals for the whole job, not daily limits."* · *"No new UI, tooling or governance work in
+> conductor runs."* · *"Stop a review after two rounds and send what is left to Sam or COBIx."* The routine's form sets
+> the conductor; workers run on the worker model Sam's cost rules name. A session Sam starts by hand still works the queue itself. S680 (2026-11-18,
+> 06:12Z) was the first such night and the first of a two-night conductor comparison (`cpl_memory`
+> `sam-conductor-back-for-collection-only-2026-11-17`).
 
 Session 638 (SkyTamarind) ran this way first. A session Sam names the conductor runs from this page; it restates no
 doctrine, so each step names the doc that holds the rule.
@@ -65,6 +73,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
    prune`. Each checkout is 4.4 to 4.7 GB. **Three checkouts at once is the ceiling** (S653: four filled the disk twice
    in ten minutes); a read-only task (a review, a count) takes no worktree, and nobody writes a tar. Remove a checkout
    only when its worker is finished for good: a worker cannot be resumed once its checkout is gone.
+   **A clone is never a full clone (Sam, 2026-11-19):** the conductor and every worker clone `cpl-project-tracker`
+   with `git clone --filter=blob:none`, or `--depth=1` when history is not needed. `scripts/repo_size_guard.py` reads a
+   partial clone through one fetch (#3543).
 6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
    or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
    merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
@@ -81,7 +92,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
   PR subscription or empty commit; `git add`, then `CPL_VAULT_ROOT=/home/user/CPLBrain bash
   scripts/check_generated.sh`, read its last line, then commit; when `main` moves under an open PR, merge `main` (a
   merge commit) and regenerate generated files with their tools; a PR that changes a builder of a committed file runs
-  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`).
+  the builder (`docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md`); a clone of
+  `cpl-project-tracker` is `git clone --filter=blob:none` (or `--depth=1` without history), never a full clone.
 - The agent definitions in `.claude/agents/` carry the limits above, the trailer and footer and a report cap, so a
   brief no longer repeats them: `worker` (Opus), `second-reader` (read-only, severity tags, a verdict),
   `checkpoint-docs` (Rule 9's documents) and `pr-gate` (Haiku; five lines on one PR). The `conductor-brief` skill
@@ -177,6 +189,183 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S685, and what worked
+
+The CPL Queue routine's 12:12Z firing of 2026-11-19 (SkyTowhee, started 12:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. The routine's form was unchanged,
+so the conductor ran on the model handoff 685 names under *For Sam* 1 (the fourth firing on it).
+
+- **The start waited for the older session's sign-off** (`d-firing-waits-for-sign-off-then-takes-queue-s685`). The
+  firing stood down at 12:17Z while S684 worked (its declaration #3545 had a 12:13Z commit), was told to keep going at
+  12:18Z by a message in the session, wrote nothing until S684's sign-off push at 12:47Z, and declared with draft #3551
+  at 12:52Z. This is `q-wait-for-a-routine-firings-checkpoint-s681` met in practice: the conductor's decision, not a
+  ruling of Sam's.
+- **A file applied before its thread was read** (`p-apply-before-thread-read-s685`). The conductor applied S684's 22
+  memory rows (run 44528020042) before reading #3545's thread, where COBIx had twice asked for a staff contact detail to
+  come out of one row first. It was live about three minutes; a guarded update removed it (run 44528997886), and the
+  file was fixed on #3545 before it merged. Read a PR's thread before applying any file it carries.
+- **The watcher missed three comments again** (`p-cobix-watch-missed-three-s685`): COBIx on #3556, #3557 (two) and
+  #3558. pr-gate's thread read before each merge caught them. The thread read is the gate.
+- **The SQL tool's per-call prompt had nobody to answer it** at 13:25Z (one read had passed through it at 12:22Z), so a
+  worker was stopped and every later live read went through the migrate runner with a committed receipt
+  (`d-live-reads-through-migrate-runner-s685`).
+- **A display build confirmed by a closing count** (`d-display-confirmed-by-live-count-s685`): one college first, the
+  live count gate, the whole build, and, when its confirming read answered HTTP 500, a closing live count. The runner's
+  record stays `unconfirmed`; the receipt of migrate run 44536820147 is the confirmation.
+- **A regression found by its symptom** (`p-helper-reads-only-newest-file-s685`, `d-slo-helper-census-fix-in-conductor-run-s685`):
+  the outline queue read empty because the helper read only the newest census file. A repair of collection tooling
+  stayed inside a collection run.
+- **Two review rounds, then ship the verified part, again** (`d-keep-better-ship-verified-43-s685`): #3553 merged on
+  43 verified flips, and COBIx's finding became #3557 the same hour. The second pass then stopped itself in its dry run
+  (`p-second-pass-run-never-named-s685`), and #3558 fixed the naming before anything posted twice or not at all.
+- **The stop is the $40 rule, not the plan's ceiling** (`d-reads-stop-is-forty-dollars-s685`): the plan prices only the
+  aim rows.
+- **Rule D waited a night** (`d-rule-d-next-session-s685`), behind #3558.
+
+## What went wrong in S684, and what worked
+
+The CPL Queue routine's 10:12Z firing of 2026-11-19 (SkyVerdin, started 10:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. The conductor ran on Fable 5.2
+again (the third Fable firing); workers on Opus 5.5, pr-gate on Haiku 5.5. No `list_sessions`, `get_trigger`,
+`get_session` or `set_session_tags`. It took the queue from S683's sign-off and declared with draft #3545 at 10:16Z.
+
+- **A red `main` hid its second failure** (`p-lints-stops-at-first-failure-s684`). `lints` stops at its first failing
+  step; once the issuer test was fixed, `tests/course_id_route_test.py` failed behind it. Running the remaining 164
+  steps locally (about 8 minutes) before the repair push found it in one pass instead of one CI round per failure.
+- **The runner pool, again** (`p-hung-size-jobs-starve-the-pool-s684`, `p-branch-update-starts-read-only-workflows-s684`).
+  Hung `Repo size guard / size` jobs held runners for hours, so every job waited ten minutes and more; updating two PRs
+  from `main` at once queued the census and capture workflows the wave had changed. Update one PR at a time, right
+  before its merge.
+- **The context went to CI logs** (`p-ci-log-tails-fill-the-context-s684`): 640,341 of 786,077 tokens used by 12:00Z.
+  Read a failed job's log with `tail_lines` 15, and gate through pr-gate rather than `get_check_runs`.
+- **The COBIx watcher missed a comment** (`p-cobix-watch-misses-on-search-lag-s684`): GitHub search lagged its index
+  past the watcher's two-minute overlap, and pr-gate's thread read caught COBIx's 11:06Z comment on #3547. Read the
+  thread before a merge whatever the watcher says.
+- **A live read that feeds a write goes through the migrate runner's receipt** (`d-live-read-through-the-migrate-runner-s684`),
+  generated and parsed by script so no model copies the values. The receipt keeps 4,000 characters
+  (`p-migrate-receipt-keeps-4000-chars-s684`): ask for counts and differences.
+- **Two review rounds, then ship the verified part** (`d-two-rounds-then-ship-the-verified-part-s684`): on #3547 the
+  round-two finding was closed by removing the unverified branch, and the open item went to COBIx in writing.
+- **Posting on a reviewed head before its merge** (`d-post-on-reviewed-head-before-merge-s684`) kept the reread batch
+  moving while #3547 waited on CI; previews were skipped where the plan's ceiling sat under $1.70 a college
+  (`d-skip-preview-under-ceiling-s684`).
+- **The display build was held** (`d-no-display-tonight-s684`): an hour-long two-step apply with a live count gate,
+  beside the 12:17Z daily slot, on a starved pool. One build next session carries every record of the night.
+- **Two items stay open on the keep-the-better script, both COBIx's to settle with the next session:** a second pass
+  after a post holds the row (so no college takes a second pass yet), and a generic CourseLeaf heading passes the
+  own-program test (17 good re-reads restored at Ventura and Evergreen Valley). **The reader pattern:** at single-PDF
+  catalogs rule A set most aim records to not found, and the filing dropped those record files while their live rows
+  stay.
+- **A builder outside `check_generated.sh`** (`p-commons-data-status-not-in-check-generated-s684`): #3548 failed
+  `lints` on a stale `kb/status/commons_data.json` that the script called current.
+- **COBIx's "Build the CPL Commons page now" went to a plain session** (`d-commons-build-to-a-plain-session-s684`):
+  Sam's routine prompt keeps conductor runs to collection, and the run was at 88% of its context. Sam was told by phone
+  notice and COBIx on #3533. A firing never starts it on the routine's prompt alone.
+
+## What went wrong in S683, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-19 (SkyNuthatch, started 06:13Z), collection only under Sam's routine
+prompt of 2026-11-17, following the COBIx brief on #3358 as updated 2026-11-19T02:34Z. No `list_sessions`,
+`get_trigger`, `get_session` or `set_session_tags`. The conductor ran on Fable 5.2 on every call although the brief
+expected Opus 5.5 tonight (`d-conductor-model-as-configured-s683`): the routine's form sets it, and changing it is Sam's.
+
+- **The runner pool starved the database runs** (`p-runner-pool-starves-migrate-s683`). 17 dispatches and about a dozen
+  pull-request pushes inside 40 minutes left each `supabase-migrate` run waiting 30 to 40 minutes, and CI ran about 90.
+  Batch reread dispatches 10 at a time, batch pushes, and expect a database run to queue behind CI.
+- **A branch that only triggers a run carries no pull request** on a saturated pool (`d-trigger-branches-no-pr-s683`).
+  Each PR push adds CI; the handoff's ledger names the branch and its state instead.
+- **The script-run wave step worked.** Once `kb/_program_reread_keep_better.py` had passed its second reader, the lane
+  workers dispatched the reread and the load themselves, one college at a time under the $40 meter
+  (`d-lane-workers-dispatch-reread-load-s683`): 15 colleges with no conductor relay per college.
+- **Lane workers polling quietly** (one status line per batch, no running commentary) kept the conductor's context for
+  the plans and the reviews.
+- **The SQL stall** (`p-execute-sql-stalled-s683`): one `execute_sql` read sent at 08:15Z returned at 09:10Z. The
+  conductor could not act while it waited, and the declaration PR's half-hour refresh lapsed once, which a parallel
+  firing reads as "nobody is working". Keep the heartbeat on a path that never waits on the SQL tool, and leave the
+  headline and harvest reads to the next session when the tool stalls.
+- **A CI-cancel agent was refused** by the permission check (`p-ci-cancel-agent-denied-s683`); recorded, not routed
+  around.
+- **`main` went red on a fixture picked by rule** (`p-fixture-by-rule-vanishes-s683`): once Sam settled 28 of 31 held
+  cards, `tests/side_by_side_test.py` found no fixture. The fix (#3542) rides the wave with the harvest branches.
+- **One wave again** (`claude/wave-s683`): #3542, #3536, #3497, #3508, #3492, #3538 and the three lane branches, one
+  merge of `main`, one CI. Carried PRs were closed with their branches kept.
+
+## What went wrong in S681, and what worked
+
+The CPL Queue routine's 10:12Z firing of 2026-11-18 (SkyGrebe), collection only, the second firing of S680's night: no
+`list_sessions`, `get_trigger`, `set_session_tags` or `get_session`. It found S680's checkpoint #3487 open, read handoff
+681 from the pull request's head, took the queue when #3487 merged at 10:14Z and declared with draft #3506 at about
+10:20Z, the college split in it before any worker started.
+
+- **The stop rule fired** (the brief on #3358: *"Stop if a rollback undoes over 1% of a day's rows"*). Chabot's load
+  posted 1,013 rows that were its objectives filed as SLOs (17.7% of the UTC day's 5,735 outline rows). At 11:06Z the
+  conductor started no new read, load or apply; reviews finished on their branches; the rollback went ahead
+  (`kb/migrations/2026-11-18_s681_course_outcomes_chabot_rollback.sql`, guarded to exactly 1,013 rows, migrate run
+  44292682081); Sam was told at about 11:20Z with the default (`d-stop-rule-fired-s681`).
+- **A load ran without the test that would have stopped it.** The objectives standing test's checks 8 and 9 were red on
+  the read's branch; a runner's commit gets no CI, and step 11 pushed `.load` when the slices filed complete. Run the
+  test on the branch before `.load` ([`scheduled_sessions`](scheduled_sessions.md) step 11); the workflow guard is a
+  plain session's.
+- **A self-check that scores a total cannot see what a rule writes per course.** A4 was 74 of 74 on totals while it
+  wrote wrong per-course units (KB note `methodology-a-self-check-must-see-what-the-rule-writes`).
+- **Second readers earned their cost three times:** A4's per-course units before the write; 33 of #3502's 54 records
+  whose label the records do not support; the independent confirmation of Chabot's mislabel and of the exact rollback.
+- **A lane split that names a college for a run not yet started** blocked a corrective write until amended at 10:51Z.
+  Name a college in the lane only while a run is in flight there (`d-lane-names-only-colleges-in-flight-s681`).
+- **Runner saturation again:** about a dozen pushes in 45 minutes queued the rollback's migrate run for 11 minutes
+  behind CI (`p-superseded-ci-holds-the-migrate-queue-s681`). Cancelling CI on branches the wave carries helped. Batch a
+  worker's pushes, and expect a migrate run to queue behind CI.
+- **One wave again** (#3509: five branches, one merge of `main`, one CI); a carried branch that turns out wrong leaves
+  by `git revert -m 1` of its merge (Chabot, `bf9703bb`), since the wave lands as a squash.
+- **Reading S680's handoff from its open checkpoint pull request** (`get_file_contents` at `refs/pull/3487/head`) let
+  the firing start the minute that checkpoint merged. The rule stays end in one line: a session Sam runs by hand may
+  checkpoint and keep working, and whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to
+  rule (`q-wait-for-a-routine-firings-checkpoint-s681`).
+- **`cd` into a worktree moved the conductor's working directory again.** `git -C` only.
+- **Worker worktrees under `.claude/worktrees/` are about 2.3 GB each;** six took the disk from 27 GB free to 13 GB.
+  Remove a finished worker's worktree once its head is pushed.
+- **Workers reached 290,000 to 330,000 tokens on a two-round task;** resuming each with one fix list worked better than
+  handing over.
+
+## What went wrong in S680, and what worked
+
+The CPL Queue routine's 06:12Z firing of 2026-11-18 (SkyPhoebe), collection only: no `list_sessions`, `get_trigger`,
+`set_session_tags` or `get_session`; declared with draft #3487 at 06:22Z, the college split written before any worker
+started.
+
+- **Runner saturation.** Eight outcome runs plus CI on a dozen PRs saturated the runner pool; each CI took 25 to 40
+  minutes. A read is free in dollars and not in runner slots: cap concurrent reads when PRs must merge the same night
+  (`p-runner-pool-saturation-s680`).
+- **Every merge conflicted every other code PR** on the generated files. A chain (each branch holding the one before
+  it) landed one link, #3496 (`71548415`); #3498 then conflicted, since the squash on `main` and a branch holding the
+  same change plus more edit the same hunks, and each further link needed a merge of `main`, a new head and a new CI
+  run. What worked: ONE wave PR, #3504, carrying #3498 with #3501, #3490, #3503, #3502 and the outcome PRs #3387, #3493,
+  #3488, #3489 and #3421: one merge of `main`, one CI run, one squash, each carried PR closed with a pointer. KB note:
+  `methodology-chain-prs-when-every-merge-conflicts-a-generated-file`.
+- **Chaining carried #3496's `.apply` line onto other branches,** and each push re-triggered its full-row apply (runs
+  44269433074 and 44272782139); the count guard refused both ("the UPDATE matched 0 rows, the plan names 39"). A branch
+  that merges another branch keeps `main`'s `.apply` text; every apply file stays guarded and idempotent
+  (`p-apply-line-carried-by-merge-s680`).
+- **Reviews past two rounds go to COBIx, not blocking:** on #3496 (08:41Z) A5's self-check (69 right, 31 wrong of 123)
+  does not support its five applied rows, so they stay applied with a lower confidence and A5 runs on nothing further
+  until the 31 are listed by cause (`d-a5-five-rows-stay-applied-s680`); on #3490 (08:49Z) the weekly run's failure
+  reached nobody, fixed in the wave.
+- **The Commons data rebuild.** A PR that changes what the Commons data reads must rebuild `commons_data.json`;
+  `scripts/check_generated.sh` does not run that check and CI's `lints` does, and three PRs went red.
+- **Second readers earned their cost:** an apply that wrote checks while the committed blocks had changed, a count guard
+  that was only a comment, an apply that would write rows a person checked, four mislabeled gap rows, two pins that
+  pulled a neighbor's list. The pre-read caught MiraCosta 21976.
+- **A `cd` into a worker's worktree moved the conductor's working directory.** Use `git -C`, and a tiny sparse worktree
+  for the `.apply` commits, pushed with `HEAD:<branch>` from a detached head.
+- **Sparse checkout before spawning:** `git sparse-checkout set --no-cone '/*'
+  '!/kb/receipts/program_requirement_records_display_*'` in the main checkout; worktrees inherit it, 2.5 GB instead of
+  4.85.
+- **`supabase-migrate` runs one at a time:** push one `.apply` change, read its receipt, then the next.
+- **A worker's context fills near 350,000 to 400,000 tokens;** hand its PRs to a fresh worker with the fix list.
+- **A brief that says "push, tell me, then wait" makes a worker poll in the background;** it can only report by ending
+  its turn. Brief it to report and end.
+- **Re-tasking a worker before a run finished wasted cycles;** read the run's status first.
+
 ## What went wrong in S655, and what worked
 
 - The 06:12Z firing of 2026-11-15 (SkyCurlew) had no `list_sessions`, `get_trigger`, `send_later` or `set_session_tags`; the open PRs (none updated since 04:20Z) and `main` at handoff 655's closing note (`e6e906ec`) were the one-writer check, the daily run was dispatched at 06:14Z, and this PR declared the queue at 06:16Z.
@@ -264,9 +453,10 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 - A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
   `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
-- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
-  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
-  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- Every PR that adds a test or a workflow rebuilt the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main` (`p-dependency-map-conflicts-serial-merges-s653b`). Since Sam's rule of
+  2026-11-18 a PR no longer commits the map: `dependency-map.yml` rebuilds it on `main` after each merge
+  ([`sam_rulings`](sam_rulings.md)).
 - `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
   events, or read the saved file by script (`p-list-events-floods-context-s653b`).
 - Worked: one `send_message` before any write settled the split with the older session in a minute

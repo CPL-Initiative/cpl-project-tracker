@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s685_cpl_memory_rows.sql",
+ "name": "s685_cpl_memory_rows",
+ "version": "20261119145709",
+ "sha256": "46dda700c81c5542e8ab2bc51b128a94eb7fe74334baa7b117bbe7c97295c049",
+ "run": "44549081095",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 400,
+ "response": "{\"message\":\"Failed to run sql query: ERROR:  23514: new row for relation \\\"cpl_memory\\\" violates check constraint \\\"cpl_memory_kind_check\\\"\\nDETAIL:  Failing row contains (104022af-ec54-4dcc-94c8-8086ce105a6f, 2026-11-19 14:57:09.421497+00, 2026-11-19 14:57:09.421497+00, finding, S685: replaying keep-the-better over the 412 committed decisions..., null, cpl, t, null, {program-requirements,reread,keep-the-better}, #3553, {}, {}, proposed, null, internal, 2026-11-19, SkyTowhee (S685), null, SkyTowhee (S685), the conductor, null, f-generic-heading-cost-43-rereads-s685, null, A generic CourseLeaf heading had set aside 43 good re-reads).\\n\"}"
+}

@@ -2,19 +2,22 @@
  "college": "Victor Valley College",
  "programs": 219,
  "with_closed_list": 201,
- "found": 176,
- "extracted": 176,
+ "found": 169,
+ "extracted": 169,
  "errors": 0,
- "passed_machine_checks": 140,
+ "passed_machine_checks": 142,
  "failed": {
-  "coverage": 9,
+  "coverage": 2,
   "invented": 0,
-  "arithmetic": 35,
+  "arithmetic": 26,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd": 10.13,
- "cost_per_program": 0.0575,
+ "cost_usd_run": 0.0,
+ "cost_usd_filed": 9.66,
+ "cost_per_program": 0.0571,
+ "extract_calls": 0,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "04946",
@@ -49,7 +52,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "07595",
@@ -84,7 +88,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "10799",
+   "title": "Building Construction",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/construction-manufacturing-technology/building-inspection-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.348,
+    "body": 0.0,
+    "content": 0.087,
+    "net": 8,
+    "listed": 23,
+    "why": "coarse net: the page's code tokens name 8 of 23 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2914,
+     "content": 6474,
+     "tabs": 650
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      630
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "17586",
@@ -119,7 +160,40 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "33025",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/geography/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.857,
+    "body": 0.0,
+    "content": 0.286,
+    "net": 6,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 5976,
+     "content": 12134,
+     "tabs": 3345
+    },
+    "tab_panels": [
+     [
+      "COURSES",
+      3330
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "35957",
@@ -154,7 +228,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "36999",
@@ -189,7 +264,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37007",
@@ -224,7 +300,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37008",
@@ -259,7 +336,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37067",
@@ -294,7 +372,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "37434",
@@ -329,7 +408,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "37442",
+   "title": "Web Authoring",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/computer-information-science/web-authoring-ca/",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.25,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 1,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 1 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2708,
+     "content": 5860,
+     "tabs": 225
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      205
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "38355",
@@ -364,7 +480,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "38356",
@@ -399,7 +516,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38848",
@@ -407,7 +525,17 @@
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "40071",
+   "title": "Urban Search and Technical Rescue",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "40630",
@@ -442,7 +570,44 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40656",
+   "title": "Advanced Paralegal",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 10,
+    "why": "coarse net: the page's code tokens name 0 of 10 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4143,
+     "content": 7302,
+     "tabs": 229
+    },
+    "tab_panels": [
+     [
+      "REQUIREMENTS",
+      209
+     ],
+     [
+      "PROGRAM MAP",
+      74
+     ]
+    ]
+   },
+   "status": "Active"
   },
   {
    "control_number": "41279",
@@ -477,7 +642,8 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "42106",
@@ -485,7 +651,8 @@
    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "42122",
@@ -520,8 +687,54 @@
       74
      ]
     ]
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "42301",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "43115",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://catalog.vvc.edu//degrees-certificates/physics/",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText+tabs",
+    "coverage": 0.714,
+    "body": 0.0,
+    "content": 0.571,
+    "net": 5,
+    "listed": 7,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 3696,
+     "content": 13939,
+     "tabs": 6626
+    },
+    "tab_panels": [
+     [
+      "LEARNING OUTCOMES",
+      737
+     ],
+     [
+      "COURSES",
+      6611
+     ]
+    ]
+   },
+   "status": "Active"
   }
  ],
- "run": "43215222441"
+ "run": "44515659606"
 }

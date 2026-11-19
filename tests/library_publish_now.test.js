@@ -60,6 +60,7 @@ function loadModule(opts) {
     calls.push({ url: url, method: init.method || "GET", headers: init.headers || {}, body: init.body });
     if (FN_URL.test(url)) return opts.fn ? opts.fn(calls) : response(200, { ok: true, queued: true, already: false, by: "reviewer" });
     if (/cpl_library\?id=eq\./.test(url) && opts.follow) return response(200, opts.follow(calls, data));
+    if (init.method === "HEAD" && opts.live) return opts.live(url, calls);
     return response(200, data);
   };
   w.localStorage.setItem("cpl_team_pass", "p");
@@ -68,6 +69,7 @@ function loadModule(opts) {
   const s = w.document.createElement("script"); s.textContent = SRC; w.document.body.appendChild(s);
   const M = w.CPL_LIBRARY;
   if (M._publishPoll) { M._publishPoll.ms = opts.pollMs || 5; M._publishPoll.max = opts.pollMax || 3; }
+  if (M._livePoll) { M._livePoll.first = 5; M._livePoll.ms = 5; M._livePoll.max = opts.liveMax || 3; }
   return { w: w, doc: w.document, calls: calls, data: data, M: M, root: w.document.getElementById("library-root") };
 }
 const tick = () => new Promise((r) => setTimeout(r, 10));
@@ -115,7 +117,7 @@ function storageKeys(w) {
     check("B ⭐ the body names no workflow and no ref", c.length === 1 && c[0].body === "{}" && !/\.yml|ref|main/.test(c[0].body));
     check("B it sends the reviewer's own session, never the team phrase",
       c.length === 1 && c[0].headers.Authorization === "Bearer aa.bb.cc" && !("x-team-pass" in c[0].headers));
-    check("B ⭐ it says what happens in plain words", /The publish run has started\. The page is up in about three minutes\./.test(said(m, "n1")), said(m, "n1"));
+    check("B ⭐ it says what happens in plain words", /^Publishing\. The publish run has started/.test(said(m, "n1")), said(m, "n1"));
     click(m.w, word(m, "n1"));
     await until(() => /already started/.test(said(m, "n1")));
     check("B ⭐ a second press while the run is pending calls nothing and says so",
@@ -132,7 +134,7 @@ function storageKeys(w) {
     click(m.w, word(m, "p1"));
     await until(() => /did not start/.test(said(m, "p1")));
     check("C ⭐ before the function is deployed (404), the card says the run did not start and the next scheduled run still publishes it",
-      /The publish run did not start \(the service answered 404\)\. The page still goes up at the next scheduled run \(every three hours\)\./.test(said(m, "p1")), said(m, "p1"));
+      /^Failed: the publish run did not start \(the service answered 404\)\. The page still goes up at the next scheduled run \(every three hours\)\./.test(said(m, "p1")), said(m, "p1"));
     check("C the refusal reads as an error", !!m.root.querySelector('[data-pubnowsaid="p1"].err'));
     click(m.w, word(m, "p1"));
     await until(() => /already waiting/.test(said(m, "p1")));
@@ -142,8 +144,8 @@ function storageKeys(w) {
     const m = loadModule({ fn: function () { return response(401, { ok: false, reason: "not_allowed" }); } });
     await m.M.activate(); await tick();
     click(m.w, word(m, "n1"));
-    await until(() => /did not start/.test(said(m, "n1")));
-    check("C a 401 says only a signed-in reviewer can start it", /only a signed-in reviewer can start it[\s\S]*next scheduled run/.test(said(m, "n1")), said(m, "n1"));
+    await until(() => /Failed:/.test(said(m, "n1")));
+    check("C a 401 says only a signed-in reviewer can start it", /^Failed: only a signed-in reviewer can start the publish run[\s\S]*next scheduled run/.test(said(m, "n1")), said(m, "n1"));
   }
   {
     const m = loadModule({ fn: function () { return response(429, { ok: false, reason: "too_soon", retry_after_s: 70 }); } });
@@ -165,7 +167,17 @@ function storageKeys(w) {
     await m.M.activate(); await tick();
     click(m.w, word(m, "n1"));
     await until(() => /network failed/.test(said(m, "n1")));
-    check("C a network failure says so and names the next scheduled run", /did not start: the network failed\. The page still goes up/.test(said(m, "n1")));
+    check("C a network failure says so and names the next scheduled run", /^Failed: the publish run did not start because the network failed\. The page still goes up/.test(said(m, "n1")));
+  }
+  // ── C2 (#3560). The function's own reason is named, and the publish status is the card's one status line ──
+  for (const [reason, words] of [["not_configured", /no GitHub token set \(not_configured\)/], ["token_refused", /GitHub refused the publish service's token \(token_refused\)/]]) {
+    const m = loadModule({ fn: function () { return response(503, { ok: false, reason: reason }); } });
+    await m.M.activate(); await tick();
+    click(m.w, word(m, "n1"));
+    await until(() => /Failed:/.test(said(m, "n1")));
+    check("C2 ⭐ a 503 names its reason: " + reason, words.test(said(m, "n1")), said(m, "n1"));
+    const st = m.root.querySelector("#lib-st-n1");
+    check("C2 ⭐ " + reason + ": the approval line no longer sits beside the failure", st && !/Approved/.test((st.querySelector(".now") || {}).textContent || ""), st && st.textContent);
   }
   // ── D. The public link once the record carries it ──
   {
@@ -177,12 +189,25 @@ function storageKeys(w) {
     } });
     await m.M.activate(); await tick();
     click(m.w, word(m, "n1"));
-    await until(() => /The page is up:/.test(said(m, "n1")), 400);
+    await until(() => /^Live:/.test(said(m, "n1")), 400);
     const a = m.root.querySelector('[data-pubnowsaid="n1"] a');
     check("D ⭐ once the run moves the record, the card shows the public link", !!a && a.getAttribute("href") === PAGES + "jst-how-to-obtain-and-upload-to-map/", said(m, "n1"));
     check("D it read only that record's own fields", m.calls.filter((c) => /cpl_library\?id=eq\.n1&select=/.test(c.url)).length === reads && reads === 2, String(reads));
     check("D the word is gone once the page is up", !word(m, "n1"));
+  }  {
+    /* #3560: saved is not live. While the page's address answers 404 the line reads Deploying, never Live. */
+    let reads = 0;
+    const m = loadModule({ pollMax: 5, liveMax: 2, live: function () { return response(404, "Not found"); }, follow: function () {
+      reads++;
+      return [{ id: "n1", url: PAGES + "jst-how-to-obtain-and-upload-to-map/", regen: null, status: "draft", version: "1", home: "web", file_type: "html" }];
+    } });
+    await m.M.activate(); await tick();
+    click(m.w, word(m, "n1"));
+    await until(() => /taking longer than usual/.test(said(m, "n1")), 400);
+    check("D2 ⭐ while the page answers 404 the line says Deploying, never Live", /^Deploying\./.test(said(m, "n1")) && !/Live/.test(said(m, "n1")), said(m, "n1"));
+    check("D2 it still links the address it is deploying", !!m.root.querySelector('[data-pubnowsaid="n1"] a'));
   }
+
   {
     const m = loadModule({ pollMax: 2, follow: function () { return [{ id: "p1", url: PAGES + "ell-iet-cpl-starting-points/", regen: Object.assign({}, APPROVED, { draft_id: "d2" }) }]; } });
     await m.M.activate(); await tick();

@@ -64,48 +64,51 @@ const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirement
     check("(D) " + id + " keeps no view in browser storage for the return",
       !/(local|session)Storage\.setItem\([^)]*(?:view_?addr|return_?view|cpl_view)/i.test(all));
   });
-  // (E) the Commons' sub-views (#commons/ase, #commons/data, #3215): commons.js opens each from its arrival and
+  // (E) the Commons' sub-views (#commons/ase, #collect, #3215): commons.js opens each from its arrival and
   // reports its address; the round trip itself is in tests/commons_ase.test.js and tests/commons_data.test.js.
   const COMMONS = fs.readFileSync("commons.js", "utf8");
-  [["ase", "CPL_COMMONS_ASE"], ["data", "CPL_COMMONS_DATA"]].forEach(function (v) {
-    check("(E) ⭐ commons/" + v[0] + " opens from its arrival and reports its address",
-      new RegExp('a\\[0\\] === "' + v[0] + '"').test(COMMONS) && new RegExp(v[1] + '\\.address\\(\\) : "commons/' + v[0] + '"').test(COMMONS));
-  });
-  // (E) slice 2 of #3215: a college's side panel has an address too, #commons/data[/<filter>]/college/<slug>. commons.js
+  check("(E) ⭐ commons/ase opens from its arrival and reports its address",
+    /a\[0\] === "ase"/.test(COMMONS) && /CPL_COMMONS_ASE\.address\(\) : "commons\/ase"/.test(COMMONS));
+  /* #3533: the collection view moved from #commons/data to #collect (tabs.js folds it into this tab and rewrites the old
+     address); commons.js opens #collect and the old data word from the arrival, and reports commons/collect/... */
+  check("(E) ⭐ collect opens from its arrival and reports its address",
+    /a\[0\] === "data"/.test(COMMONS) && /\(\?:commons\\\/\)\?collect/.test(COMMONS)
+    && /"commons\/" \+ \(window\.CPL_COMMONS_DATA \? CPL_COMMONS_DATA\.address\(\) : "collect"\)/.test(COMMONS));
+  // (E) slice 2 of #3215: a college's side panel has an address too, #collect[/<filter>]/college/<slug>. commons.js
   // hands the data view the whole rest of its arrival (not only the filter), and the view names the college in its report.
   const DATAJS = fs.readFileSync("commons_data.js", "utf8");
-  check("(E) ⭐ commons/data hands its view the whole arrival, so a college's panel opens from its address",
-    /DATA\.filter = a\.slice\(1\)\.join\("\/"\)/.test(COMMONS) && /"\/college\/" \+ slugOf\(c\)/.test(DATAJS) && /p\[0\] === "college"/.test(DATAJS));
-  // (E) slice 3 of #3215: the data dictionary and the API checklist are views of their own, #commons/data/dictionary and
-  // #commons/data/apis: the view reads them first from the arrival and names them in its report; the catalog platform
+  check("(E) ⭐ collect hands its view the whole arrival, so a college's panel opens from its address",
+    /DATA\.filter = cm \? cm\[1\] \|\| "" : a\.slice\(1\)\.join\("\/"\)/.test(COMMONS) && /"\/college\/" \+ slugOf\(c\)/.test(DATAJS) && /p\[0\] === "college"/.test(DATAJS));
+  // (E) slice 3 of #3215: the data dictionary and the API checklist are views of their own, #collect/dictionary and
+  // #collect/apis: the view reads them first from the arrival and names them in its report; the catalog platform
   // filter lives in the address too (platform/<key>). The round trips are in tests/commons_data.test.js (10).
-  check("(E) ⭐ commons/data/dictionary and commons/data/apis open from their arrival and report themselves",
-    /dictionary: "The data dictionary", apis: "The API checklist"/.test(DATAJS) && /if \(p\[0\] && own\(VIEWS, p\[0\]\)\) \{ out\.view = p\[0\]/.test(DATAJS) && /if \(S\.view\) return "commons\/data\/" \+ S\.view/.test(DATAJS));
-  // S648: the district roll-up is a view of its own (#commons/data/districts), and a district's colleges open at
-  // #commons/data/district/<slug>; the round trips are in tests/commons_data_controls.test.js (districts 2, 3).
-  check("(E) ⭐ commons/data/districts opens from its arrival, and a district's colleges carry it in the address",
+  check("(E) ⭐ collect/dictionary and collect/apis open from their arrival and report themselves",
+    /dictionary: "The data dictionary", apis: "The API checklist"/.test(DATAJS) && /if \(p\[0\] && own\(VIEWS, p\[0\]\)\) \{ out\.view = p\[0\]/.test(DATAJS) && /if \(S\.view\) return "collect\/" \+ S\.view/.test(DATAJS));
+  // S648: the district roll-up is a view of its own (#collect/districts), and a district's colleges open at
+  // #collect/district/<slug>; the round trips are in tests/commons_data_controls.test.js (districts 2, 3).
+  check("(E) ⭐ collect/districts opens from its arrival, and a district's colleges carry it in the address",
     /districts: "Colleges by district"/.test(DATAJS) && /"\/district\/" \+ district/.test(DATAJS) && /p\[i\] === "district"/.test(DATAJS));
-  // S649: Colleges with collected SLOs is a view of its own (#commons/data/slos); each link opens the side panel at an
+  // S649: Colleges with collected SLOs is a view of its own (#collect/slos); each link opens the side panel at an
   // address of its own (.../college/<slug>/<pane>[/<key>], or a view's source at <view>/source/<key>); the round trips
   // are in tests/commons_data_controls.test.js (panes).
-  check("(E) commons/data/slos and every pane of the side panel carry their address",
+  check("(E) collect/slos and every pane of the side panel carry their address",
     /slos: "Colleges with collected SLOs"/.test(DATAJS) && /function paneRoute\(p\)/.test(DATAJS) && /if \(own\(PANES, w\)\) \{ out\.pane =/.test(DATAJS));
-  check("(E) commons/data carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
-  // #3310: a module beside commons_data.js adds its views to VIEWS, so each opens from #commons/data/<view> by the
-  // same parser; Data elements and sharing is the first (#commons/data/sharing). The round trip is in
+  check("(E) collect carries its catalog platform in the address", /"\/platform\/" \+ platform/.test(DATAJS) && /p\[i\] === "platform"/.test(DATAJS));
+  // #3310: a module beside commons_data.js adds its views to VIEWS, so each opens from #collect/<view> by the
+  // same parser; Data elements and sharing is the first (#collect/sharing). The round trip is in
   // tests/commons_data_sharing.test.js (6).
   const SHARE = fs.readFileSync("commons_data_sharing.js", "utf8");
-  check("(E) ⭐ commons/data/sharing (and any module's view) joins VIEWS, so it opens from its arrival and reports itself",
+  check("(E) ⭐ collect/sharing (and any module's view) joins VIEWS, so it opens from its arrival and reports itself",
     /if \(!own\(VIEWS, k\)\) VIEWS\[k\] = x\.views\[k\]/.test(DATAJS) && /views: \{ sharing: TITLE \}/.test(SHARE));
-  // #3310 item 5: the statewide integration view, #commons/data/integrations, by the same hook; the round trip is in
+  // #3310 item 5: the statewide integration view, #collect/integrations, by the same hook; the round trip is in
   // tests/commons_data_integrations.test.js (4).
   const INTEG = fs.readFileSync("commons_data_integrations.js", "utf8");
-  check("(E) ⭐ commons/data/integrations joins VIEWS through the module hook, so it opens from its arrival",
+  check("(E) ⭐ collect/integrations joins VIEWS through the module hook, so it opens from its arrival",
     /views: \{ integrations: TITLE \}/.test(INTEG) && /"commons_data_integrations\.js", "CPL_CDC_INTEGRATIONS"/.test(DATAJS));
-  // #3360: the ETA clock, #commons/data/eta, by the same hook (a preview: in no menu yet); the round trip is in
+  // #3360: the ETA clock, #collect/eta, by the same hook (a preview: in no menu yet); the round trip is in
   // tests/commons_eta_clock.test.js (3).
   const ETA = fs.readFileSync("commons_eta_clock.js", "utf8");
-  check("(E) ⭐ commons/data/eta joins VIEWS through the module hook, so it opens from its arrival",
+  check("(E) ⭐ collect/eta joins VIEWS through the module hook, so it opens from its arrival",
     /ext\.views\[VIEW_KEY\] = TITLE/.test(ETA) && /var VIEW_KEY = "eta"/.test(ETA) && /"commons_eta_clock\.js", "CPL_COMMONS_ETA"/.test(DATAJS));
   const files = fs.readdirSync(".").filter((f) => /\.js$/.test(f) && f !== "cpl_session.js");
   files.forEach(function (f) {

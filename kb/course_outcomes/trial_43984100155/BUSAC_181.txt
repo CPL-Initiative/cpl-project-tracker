@@ -1,0 +1,72 @@
+BUSAC 181 - Applied Accounting
+Units: 3.0
+Print
+
+Description:
+
+This beginning accounting course presents a practical approach, emphasizing small business applications. Topics include the accounting cycle for a sole proprietorship; journals and ledgers; financial statements; adjusting, closing, and reversing entries; bank reconciliation; petty cash; payroll; payroll taxes; sales and purchases; and cash receipts and cash payments. An introduction to the use of an accounting software program is also covered.
+
+Requisites:
+
+Advisory
+BUS103 - Applied Business Mathematics
+BUS-103 or equivalent
+
+Course Note:
+
+This course is recommended as preparation for BUSAC-186.
+
+Transferable:
+
+Transferable to CSU only
+
+Repeatability:
+
+None
+
+General Education:
+
+Not approved for General Education
+
+Student Learning Outcomes:
+
+Create and maintain a basic set of accounting records involving the use of journals, ledgers, and financial statements, emphasizing small business applications.
+Analyze, interpret, and accurately record the effects of a variety of business transactions in conformity to the accounting equation and the double-entry framework.
+Prepare end-of-period financial statements, including income statements, statements of owner's equity, balance sheets, and statements of cash flows, by utilizing the accounting cycle and end-of-period adjustments.
+Reconcile bank and depositor records using cash journals, bank statements, and other financial information.
+Process petty cash payments and adjust for cash shortages and overages.
+Distinguish between employer and employee payroll taxes when calculating payroll withholding and preparing payroll records.
+Analyze, interpret, and accurately record the effects of a variety of business transactions in conformity to the accounting equation and the double-entry framework using manual processes and accounting software. (Laboratory)
+Reconcile bank and depositor records using cash journals, bank statements, and other financial information.(Laboratory)
+
+Grade Options:
+
+Letter Grade Methods
+Pass/No Pass
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+72.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+54.0
+
+Lab Hours
+
+18.0
+
+Activity Hours
+
+0.0

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Photography",
  "award": "A.S. Degree",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10118,
+  "input_tokens": 9335,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10118,
-    "output_tokens": 3053,
+    "input_tokens": 9335,
+    "output_tokens": 3466,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,44 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 3053,
+  "output_tokens": 3466,
   "output_tokens_details": {
-   "thinking_tokens": 877
+   "thinking_tokens": 973
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10153,
- "ms": 24677,
- "seconds": 25.4,
+ "cost_usd": 0.10666,
+ "ms": 25988,
+ "seconds": 26.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 34,
    "listed": 34,
-   "share": 0.5,
-   "missing": [
-    "PHOT100",
-    "PHOT102A",
-    "PHOT102B",
-    "PHOT102D",
-    "PHOT130A",
-    "PHOT40",
-    "PHOT50A",
-    "PHOT50B",
-    "PHOT51",
-    "PHOT52",
-    "PHOT60A",
-    "PHOT80",
-    "PHOT81A",
-    "PHOT81D",
-    "PHOT85A",
-    "PHOT99",
-    "VMD101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -79,37 +61,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    21.0
+    42.0,
+    46.0
    ],
    "stated": [
     42.0,
     46.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 42.0-46.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -119,11 +99,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Photography – A.S. Degree (heading not in supplied text; the excerpt begins mid-section)",
+   "section_heading": "Photography – AS Degree",
    "measure": "units",
    "total_units": {
     "min": 42,
@@ -144,18 +124,191 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Employ the traditional tools and techniques of photography.",
+    "Use digital hardware and software technologies in photography.",
+    "Apply design concepts and iterative processes of photography.",
+    "Apply specific photographic business practices."
+   ],
+   "careers": [
+    "applied photography"
+   ]
   },
   "blocks": [
    {
-    "name": "Required courses (heading cut off at page break)",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 23,
+     "max": 23
+    },
+    "courses": [
+     {
+      "code": "PHOT 51",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 52",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 60A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 80",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 85A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 99",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 130A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "VMD 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHOT 81A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 81D",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "PHOT 40",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 50A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 50B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "PHOT 102A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 102B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOT 102D",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
     },
     "courses": [
      {
@@ -317,84 +470,54 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "PHOT 100",
-    "why": "not in the supplied A.S. section text (start of section cut off on preceding page); appears only in certificate sections"
-   },
-   {
-    "code": "PHOT 102A",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 102B",
-    "why": "not in the supplied A.S. section text; appears only in the Photojournalism certificate"
-   },
-   {
-    "code": "PHOT 102D",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 130A",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 40",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 50A",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 50B",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 51",
-    "why": "not in the supplied A.S. section text; appears only in certificate sections"
-   },
-   {
-    "code": "PHOT 52",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 60A",
-    "why": "not in the supplied A.S. section text; appears only in the Digital Technician certificate"
-   },
-   {
-    "code": "PHOT 80",
-    "why": "not in the supplied A.S. section text; appears only in the Portrait Lighting certificate"
-   },
-   {
-    "code": "PHOT 81A",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "PHOT 81D",
-    "why": "not in the supplied A.S. section text; appears only in the Digital Technician certificate"
-   },
-   {
-    "code": "PHOT 85A",
-    "why": "not in the supplied A.S. section text; appears only in certificate sections"
-   },
-   {
-    "code": "PHOT 99",
-    "why": "not in the text; likely in the cut-off start of the A.S. section"
-   },
-   {
-    "code": "VMD 101",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The supplied text begins on page 119 partway through a section that ends 'Total: 42.0-46.0' before the Photography Digital Technician certificate; the section heading, program summary, learning outcomes, careers, and earlier course list (likely on page 118) are not in the excerpt. This tail was read as the A.S. Degree section; reviewer should confirm against page 118.",
-   "The first three courses (PHOT 85B, PHOT 90, PHOT 92) appear without a visible block heading; their rule was recorded as 'all' but the heading above them was cut off and may be a choice rule.",
-   "Catalog prints PHOT 90 as 'Portraiture'; closed list title is 'Advanced Studio Lighting: Portrait'. Same code, treated as the same course.",
-   "Closed list stores 'PHOT102C' (no space); catalog prints 'PHOT 102C'. Treated as the same course, not a catalog addition.",
-   "PHOT 140 and PHOT 145 are printed with 1.0-2.0 units in the A.S. section.",
-   "Total 42.0-46.0 is taken as the major's total; no degree total, GE pattern or GE units appear in the supplied text."
+   "The 'A design fundamentals course: 3.0' (PHOT 100 OR VMD 101) is printed inside the Required Courses list; it is recorded in that block because the listed courses sum to the stated 23.0 Required Units only with it included.",
+   "Catalog prints 'PHOT 102C'; the closed list stores it as 'PHOT102C' (no space). Treated as the same course, catalog_addition false.",
+   "Title differences from the closed list: PHOT 100 printed as 'Design Fundamentals' (closed list: 'Photography'); PHOT 60A printed as 'Photoshop for Photographers 1' (closed list: 'Beginning Photoshop'); PHOT 90 printed as 'Portraiture' (closed list: 'Advanced Studio Lighting: Portrait').",
+   "Total 42.0-46.0 is the major total; the page prints no degree total or GE pattern/units.",
+   "The 'Choose one course' block between pages 118 and 119 (PHOT 85B, PHOT 90, PHOT 92; 4.0 units) spans a page break; the courses on page 119 were read as belonging to it.",
+   "Career entry 'applied photography' taken from 'professions in applied photography and related industries' in the program summary."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "8cbfde268d7b0c59",
+ "source_codes": [
+  "PHOT100",
+  "PHOT101C",
+  "PHOT101D",
+  "PHOT101E",
+  "PHOT101G",
+  "PHOT101P",
+  "PHOT101S",
+  "PHOT102A",
+  "PHOT102B",
+  "PHOT102C",
+  "PHOT102D",
+  "PHOT102E",
+  "PHOT130A",
+  "PHOT140",
+  "PHOT145",
+  "PHOT40",
+  "PHOT50A",
+  "PHOT50B",
+  "PHOT51",
+  "PHOT52",
+  "PHOT60A",
+  "PHOT60B",
+  "PHOT67",
+  "PHOT80",
+  "PHOT81A",
+  "PHOT81B",
+  "PHOT81D",
+  "PHOT83",
+  "PHOT85A",
+  "PHOT85B",
+  "PHOT90",
+  "PHOT92",
+  "PHOT99",
+  "VMD101"
+ ],
+ "source_coverage": 1.0
 }

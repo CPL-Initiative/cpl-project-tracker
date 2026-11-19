@@ -8,7 +8,7 @@
 //   - a card on each college's side panel: the panel's fields by class, what is held and not shown, the join keys and
 //     the agreements' status;
 //   - a statewide card on the college list's page;
-//   - the full view at #commons/data/sharing (its own address, through commons_data.js's views).
+//   - the full view at #collect/sharing (its own address, through commons_data.js's views).
 // tests/commons_data_sharing.test.js fails when the page shows a field the file does not define, or the file defines
 // one no view shows.
 //
@@ -130,7 +130,7 @@
     return sec;
   }
 
-  /* ── the full view, #commons/data/sharing ── */
+  /* ── the full view, #collect/sharing ── */
   function table(id, caption, cols, heads, rows) {
     return el("div", { cls: "cdd-wrap", role: "region", "aria-label": caption, tabindex: "0" }, [el("table", { cls: "cdd-table cdc-sw-table", id: id }, [
       el("caption", { cls: "cdd-sr", text: caption }),

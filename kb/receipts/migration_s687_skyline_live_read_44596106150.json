@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-19_s687_skyline_live_read.sql",
+ "name": "s687_skyline_live_read",
+ "version": "20261119191453",
+ "sha256": "861fd6ec2d0f2901e9ba2372a8877bb54787cd579e02218b5cd201b554d30c16",
+ "run": "44596106150",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"live_compare\":{\"at\":\"2026-11-19T19:14:53Z\",\"chk\":{},\"sum\":{\"Skyline College\":[42,48,42,0,0,0]},\"diff\":[],\"gone\":{\"Skyline College\":[\"30882\",\"32964\",\"45267\",\"45600\",\"45698\",\"45699\"]},\"extra\":[]}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

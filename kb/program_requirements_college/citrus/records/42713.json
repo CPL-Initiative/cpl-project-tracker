@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8605,
-    "output_tokens": 2918,
+    "output_tokens": 2692,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,42 @@
     "model": null
    }
   ],
-  "output_tokens": 2918,
+  "output_tokens": 2692,
   "output_tokens_details": {
-   "thinking_tokens": 1163
+   "thinking_tokens": 968
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.09278,
- "ms": 23471,
- "seconds": 23.8,
+ "cost_usd": 0.08826,
+ "ms": 21480,
+ "seconds": 21.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 18,
-   "share": 0.833,
+   "share": 0.889,
    "missing": [
     "BIOLC1000",
-    "BIOLC1000H",
-    "HIST107H"
+    "BIOLC1000H"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "HISTC1001H",
+     "listed": "HIST107H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 13,
+   "count": 12,
    "codes": [
     "BIOL105",
     "BIOL105H",
@@ -67,7 +74,6 @@
     "ESCI110",
     "ESCI119",
     "GEOG118",
-    "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
     "MATH170",
@@ -82,7 +88,6 @@
     "ESCI110",
     "ESCI119",
     "GEOG118",
-    "HISTC1001H",
     "HISTC1002",
     "HISTC1002H",
     "MATH170",
@@ -134,7 +139,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Requirements",
+   "section_heading": "Teacher Education Studies A.A. Degree",
    "measure": "units",
    "total_units": {
     "min": 41,
@@ -357,25 +362,27 @@
   "missing_explained": [
    {
     "code": "BIOL C1000",
-    "why": "not in the text; catalog prints BIOL 105 (likely old number, same title)"
+    "why": "not in the text; catalog prints BIOL 105 (likely renumbered equivalent)"
    },
    {
     "code": "BIOL C1000H",
-    "why": "not in the text; catalog prints BIOL 105H (same title)"
+    "why": "not in the text; catalog prints BIOL 105H (likely renumbered equivalent)"
    },
    {
     "code": "HIST 107H",
-    "why": "not in the text; catalog lists HIST C1001H instead"
+    "why": "not in the text; catalog prints HIST C1001H as the honors option"
    }
   ],
   "notes": [
-   "The program is titled 'Educational Teaching Studies' in the request, but the catalog page calls it 'Teacher Education Studies' A.A. Degree. No section heading is printed above the requirements other than the 'Requirements' tab.",
-   "BIOL 105/105H in the catalog carry the same title as closed-list BIOL C1000/C1000H. These may be renumbered courses; a reviewer should check.",
-   "ESCI 120 row prints 3-5 units, which covers its or-options, while the closed list stores 4 units. The MATH 168 row prints 4-5, while the closed list stores 5. That row also carries footnote 1, which concerns STAT C1000 and STAT S1000.",
-   "Units are printed only on the first course of each 'or' row, so alternatives have null units.",
-   "The curriculum map total of 60-61 is an example pathway, not a printed degree total, so degree_total is left null. Curriculum-map-only courses (BIOL 145, MUSE 109, THEA 101, ENGL C1000) are not requirements and are not recorded.",
-   "Outcomes are recorded from the 'A.A. Degree Level Student Learning Outcomes' list. The Career Information tab content is not included in the text."
+   "Section heading taken from the page (Teacher Education Studies A.A.); the program is listed in the state file as Educational Teaching Studies.",
+   "The 3-5 and 4-5 unit ranges are printed beside ESCI 120 and MATH 168 for the whole 'or' group; recorded on the lead course.",
+   "MATH 168 carries footnote 1: STAT C1000 is degree applicable with or without STAT S1000; if taken with STAT S1000, only STAT C1000 units count.",
+   "The 60-61 total appears only in the 2-year curriculum map example, not as the degree total, so degree_total is null.",
+   "The curriculum map lists BIOL 145, MUSE 109, THEA 101 and ENGL C1000 as GE/example courses; these are not major requirements and were not placed.",
+   "GE: District General Education Pattern or Cal-GETC; Cal-GETC strongly recommended for CSU/UC transfer.",
+   "Outcomes are the A.A. Degree Level Student Learning Outcomes printed on the page."
   ]
  },
- "extracted_run": "38675245799"
+ "extracted_run": "44481520157",
+ "catalog_year": "2026-2027"
 }

@@ -57,6 +57,13 @@ Issuer precedence (#3110 build step 1): which issuer a folded title keeps is
 kb/fold_issuer.py's decision; the plan is frozen into the snapshot as
 issuer_resolution for the Supabase carry and the undo.
 
+Pair rows (S678, #3464): `--pairs kb/exhibit_repoint_list.json [--dry-run]` applies the reviewed re-point list one
+(MAP exhibit id + local title) pair at a time through kb/exhibit_repoint.py: only that pair's link and its own
+articulations change, the source canonical stays, a missing target key is created; the receipt is
+kb/cred_rename_out/<date>-pairs/pair_undo.json and `--undo-pairs <folder>` reverses it. A list that records the
+hashes of the files it was built from (`inputs`, as kb/exhibit_blocker_rules_list.json does) is refused when any of
+them has changed since: rebuild it first (COBIx on #3515). A dry run reports the stale files and still runs.
+
 Run from repo root:  python3 kb/_cred_rename_apply.py
 """
 from __future__ import annotations
@@ -590,5 +597,143 @@ def _load_optional(path):
         return {}
 
 
+# ── Pair rows: one (MAP exhibit id + local title) at a time (COBIx's item 6, #3464, S678) ─────────────────────────
+
+def stale_list_inputs(doc, root=None):
+    """The files a pair list's `inputs` hashes no longer match, as [(path, recorded, now)]; [] when it records none.
+
+    The hash is a file's sha256, first 16 hex digits, or None for a missing file (kb/exhibit_blocker_rules.py
+    input_hashes). Rows decided on yesterday's records must not run on today's, so the apply refuses a stale list."""
+    import hashlib
+    root = root or os.path.dirname(HERE)
+    out = []
+    for rel, recorded in sorted((doc.get("inputs") or {}).items()):
+        path = os.path.join(root, rel)
+        now = None
+        if os.path.exists(path):
+            h = hashlib.sha256()
+            with open(path, "rb") as f:
+                for chunk in iter(lambda: f.read(1 << 20), b""):
+                    h.update(chunk)
+            now = h.hexdigest()[:16]
+        if now != recorded:
+            out.append((rel, recorded, now))
+    return out
+
+
+def _pairs_out_dir():
+    """kb/cred_rename_out/<date>-pairs/, or -pairs-2, -3 … so a second apply the same day keeps the first receipt."""
+    base = os.path.join(OUT_ROOT, TODAY + "-pairs")
+    out_dir, n = base, 1
+    while os.path.isfile(os.path.join(out_dir, "pair_undo.json")):
+        n += 1
+        out_dir = f"{base}-{n}"
+    os.makedirs(out_dir, exist_ok=True)
+    return out_dir
+
+
+def _pairs_receipt_md(report, list_path, dry_run):
+    c = report["counts"]
+    lines = [f"# Pair re-point {'DRY RUN' if dry_run else 'apply receipt'} — {TODAY}", "",
+             f"List: `{os.path.relpath(list_path, os.path.dirname(HERE))}`. Run: `{NOW_ISO}`.", "",
+             f"{c['applied']} of {c['applicable']} applicable rows applied, {c['held']} held. "
+             f"{c['titles_changed']} local-title links changed, {c['credentials_created']} canonical keys created, "
+             f"{c['articulations_reissued']} articulations re-issued across {c['articulation_pairs_reissued']} pairs; "
+             f"{c['articulations_untouched']} articulations untouched.", "",
+             "Applied by batch: `%s`. By grain: `%s`." % (json.dumps(c["by_batch_applied"]), json.dumps(c["by_grain"])),
+             "", "## Held", ""]
+    why = Counter(h["why"].split(":")[0] for h in report["held"])
+    lines += ["- %s: %d" % (w, n) for w, n in why.most_common()] or ["_None._"]
+    lines += ["", "## Rollback", "",
+              "`python3 kb/_cred_rename_apply.py --undo-pairs <this folder>` puts back every value in "
+              "`pair_undo.json` and refuses one changed since. `--force` leaves each local title that holds a "
+              "changed value whole (its link and its articulations) and any created canonical that changed or is "
+              "still named, restores the rest, and lists what it left in `pair_undo_skipped.json`. No local title "
+              "is edited and no canonical is renamed, so nothing else needs reversing.", ""]
+    return "\n".join(lines) + "\n"
+
+
+def pairs_main(argv):
+    """--pairs LIST [--dry-run] [--with-exhibit-grain] [--report PATH]; or --undo-pairs FOLDER [--force]."""
+    import argparse
+    import exhibit_repoint as xr
+    ap = argparse.ArgumentParser(prog="_cred_rename_apply.py")
+    ap.add_argument("--pairs", default=None)
+    ap.add_argument("--undo-pairs", default=None)
+    ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--with-exhibit-grain", action="store_true")
+    ap.add_argument("--force", action="store_true")
+    ap.add_argument("--report", default=None, help="dry run: write the report JSON here")
+    a = ap.parse_args(argv)
+    ut = _load_optional(UNIFIED_TITLES)
+    creds = _load_optional(CREDENTIALS)
+    art_doc = _load_optional(ARTICULATIONS)
+    arts = art_doc.get("articulations") or []
+    if a.undo_pairs:
+        undo = _load_optional(os.path.join(a.undo_pairs, "pair_undo.json"))
+        if not undo:
+            sys.exit(f"No pair_undo.json in {a.undo_pairs}.")
+        ut2, creds2, arts2, skipped = xr.undo_pairs(undo, ut, creds, arts, force=a.force)
+        changed = [s for s in skipped if s[2] == "changed since the apply"] or skipped
+        if skipped and not a.force:
+            sys.exit(f"Refused: {len(changed)} value(s) changed since the apply, e.g. "
+                     f"{[s[:2] for s in changed[:3]]}. Nothing written. --force leaves each local title with a "
+                     f"changed value whole (its link and its articulations) and any created canonical that changed "
+                     f"or is still named, restores the rest, and lists what it left.")
+        _atomic_write_json(UNIFIED_TITLES, ut2)
+        _atomic_write_json(CREDENTIALS, creds2)
+        art_doc["articulations"] = arts2
+        _atomic_write_json(ARTICULATIONS, art_doc)
+        print(f"[pairs undo] restored from {a.undo_pairs}; left {len(skipped)} value(s) as they stand")
+        for store, key, why in skipped:
+            print(f"  left {store} {key!r}: {why}")
+        if skipped:
+            _atomic_write_json(os.path.join(a.undo_pairs, "pair_undo_skipped.json"),
+                               [{"store": s, "key": k, "why": w} for s, k, w in skipped])
+            print(f"  list: {a.undo_pairs}/pair_undo_skipped.json")
+        return skipped
+    doc = _load_optional(a.pairs)
+    rows = doc.get("rows") or []
+    if not rows:
+        sys.exit(f"{a.pairs} has no rows.")
+    stale = stale_list_inputs(doc)
+    if stale:
+        names = ", ".join(s[0] for s in stale)
+        if not a.dry_run:
+            sys.exit(f"Refused: {a.pairs} was built from files that have changed since ({names}). Rebuild it first "
+                     f"(its generated_by names the builder). Nothing written.")
+        print(f"[pairs] STALE: {a.pairs} was built from files that have changed since ({names}); the apply will "
+              f"refuse it until it is rebuilt")
+    ut2, creds2, arts2, undo, report = xr.apply_rows(rows, ut, creds, arts, a.with_exhibit_grain, TODAY)
+    c = report["counts"]
+    print(f"[pairs] {'dry run' if a.dry_run else 'apply'}: {c['applied']} applied, {c['held']} held, "
+          f"{c['titles_changed']} titles, {c['credentials_created']} new keys, "
+          f"{c['articulations_reissued']} articulations re-issued")
+    print(f"  by batch: {c['by_batch_applied']}  by grain: {c['by_grain']}")
+    if a.dry_run:
+        if a.report:
+            _atomic_write_json(a.report, report)
+        return report
+    if not report["applied"]:
+        print("  nothing to apply: no receipt")
+        return report
+    _atomic_write_json(UNIFIED_TITLES, ut2)
+    _atomic_write_json(CREDENTIALS, creds2)
+    art_doc["articulations"] = arts2
+    _atomic_write_json(ARTICULATIONS, art_doc)
+    out_dir = _pairs_out_dir()
+    undo["_applied_at"] = NOW_ISO
+    undo["_list"] = os.path.relpath(a.pairs, os.path.dirname(HERE))
+    _atomic_write_json(os.path.join(out_dir, "pair_undo.json"), undo)
+    _atomic_write_json(os.path.join(out_dir, "pair_report.json"), report)
+    with open(os.path.join(out_dir, "validation.md"), "w", encoding="utf-8") as f:
+        f.write(_pairs_receipt_md(report, a.pairs, False))
+    print(f"  receipt: {out_dir}/{{pair_undo.json, pair_report.json, validation.md}}")
+    return report
+
+
 if __name__ == "__main__":
-    main()
+    if any(x in sys.argv[1:] for x in ("--pairs", "--undo-pairs")):
+        pairs_main(sys.argv[1:])
+    else:
+        main()

@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8183,
+  "input_tokens": 8157,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8183,
-    "output_tokens": 1858,
+    "input_tokens": 8157,
+    "output_tokens": 1894,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1858,
+  "output_tokens": 1894,
   "output_tokens_details": {
-   "thinking_tokens": 345
+   "thinking_tokens": 476
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06989,
- "ms": 14077,
- "seconds": 14.4,
+ "cost_usd": 0.07051,
+ "ms": 14402,
+ "seconds": 14.7,
  "parts": null,
  "error": null,
  "score": {
@@ -316,12 +316,35 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The program learning outcomes are printed once under the ETHNIC STUDIES heading for the degree program as a whole; this option shares them.",
-   "The PDF text prints some codes with spaces between digits (e.g. 'HIST 1 10', 'HIST 1 1 1', 'HIST 1 12', 'PSYC 1 10', 'MUSI 1 13'); these were read as HIST 110, HIST 111, HIST 112, PSYC 110, MUSI 113.",
-   "List B prints '3 units' with no course count; recorded as choose_units 3 (effectively one course).",
-   "The 'careers in healthcare' phrase belongs to the Personal Care Attendant section on the same page and was not recorded.",
-   "No general education pattern or degree total is printed in this section; Total Units: 21 is the major total."
+   "The program learning outcomes are printed once under the ETHNIC STUDIES heading for the A.A. degree as a whole; the American Cultures Option shares them.",
+   "List B prints only '3 units' with no selection wording; recorded as choose_units with minimum 3 (one 3-unit course).",
+   "No careers are named in the Ethnic Studies section; 'careers in healthcare' belongs to the preceding Personal Care Attendant certificate and was not recorded.",
+   "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "7247fac0af185e26",
+ "source_codes": [
+  "ANTH102",
+  "ANTH106",
+  "ENGL242",
+  "ENGL243",
+  "ENGL244",
+  "ESTU101",
+  "ESTU103",
+  "ESTU105",
+  "HIST110",
+  "HIST111",
+  "HIST112",
+  "HIST154",
+  "HIST183",
+  "HIST184",
+  "MUSI113",
+  "POLI105",
+  "PSYC110",
+  "SOCI104",
+  "SOCI107"
+ ],
+ "source_coverage": 1.0
 }

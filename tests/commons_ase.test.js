@@ -178,11 +178,12 @@ function titlesListed(x) { return Array.from(x.d.querySelectorAll(".cas-table tb
     && /No ASE certification in the reference is named Not A Cert/.test(txt(u.d.querySelector(".cas-note"))) && reported(u) === "commons/ase");
 
   // a later visit on the bare #commons draws the first view; one on #commons/ase draws the slice again
-  r.w.history.replaceState(null, "", "#commons");
+  /* #3533: the bare #commons is the CPL Commons front page; the earlier first view, with this line, is #commons/details. */
+  r.w.history.replaceState(null, "", "#commons/details");
   r.w.dispatchEvent(new r.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
-  check("address 5: a later visit on #commons draws the Commons' first view, with the line that opens the slice",
-    !r.d.querySelector("#cas-h") && r.d.querySelector('#cmn-ase-line a[href="#commons/ase"]') && reported(r) === "commons");
+  check("address 5: a later visit on #commons/details draws the Commons' earlier first view, with the line that opens the slice",
+    !r.d.querySelector("#cas-h") && r.d.querySelector('#cmn-ase-line a[href="#commons/ase"]') && reported(r) === "commons/details");
   r.w.history.replaceState(null, "", "#commons/ase/" + encodeURIComponent(A5));
   r.w.dispatchEvent(new r.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();

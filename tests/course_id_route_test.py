@@ -147,7 +147,10 @@ for college, c in plan["colleges"].items():
         else:
             check(aliases.get(p["printed"]) == p["file"],
                   "%s keeps %s for %s as the fallback" % (college, p["printed"], p["file"]))
-check(len(retired) == 7 and len(kept) == 10, "7 of slice C's 17 pairs retire, 10 stay (%d, %d)" % (len(retired), len(kept)))
+# S653 retired 7 and kept 10. S684 (2026-11-19): the S683 re-read of City College of San Francisco 43116 prints COMM 38,
+# and against the list its score was taken against the route reproduces 38 of that pair's 39 matches, so the rule above
+# keeps COMM for CMST as the fallback again: 6 retire, 11 stay.
+check(len(retired) == 6 and len(kept) == 11, "6 of slice C's 17 pairs retire, 11 stay (%d, %d)" % (len(retired), len(kept)))
 
 print("\n%d failed" % len(FAILS) if FAILS else "\nall passed")
 sys.exit(1 if FAILS else 0)

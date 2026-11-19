@@ -984,7 +984,8 @@
       .then(function (d) {
         var idx = {};
         (d.rows || []).forEach(function (row) {
-          if (row.tags && row.tags.length) idx[row.id] = row;
+          // A course flag (nc) keeps the card on record and out of every triage filter (kb/_flags.py).
+          if (row.tags && row.tags.length && !row.nc) idx[row.id] = row;
         });
         _ucAudit = { idx: idx, generated_at: d._generated_at || null };
         renderAuditStatusBadge();

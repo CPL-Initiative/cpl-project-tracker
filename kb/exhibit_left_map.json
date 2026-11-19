@@ -1,8 +1,8 @@
 {
  "schema": 1,
  "built_from": {
-  "audit": "2026-11-18T04:00:50+00:00",
-  "unified_titles": 6067
+  "audit": "2026-11-19T06:21:26+00:00",
+  "unified_titles": 6142
  },
  "rule": {
   "graded": [
@@ -24,10 +24,10 @@
   "nothing_points": 366,
   "still_used": 446,
   "reviewed": 112,
-  "nothing_points_with_twin": 213,
-  "nothing_points_no_twin": 53,
-  "nothing_points_no_twin_only_local": 45,
-  "with_twin": 537
+  "nothing_points_with_twin": 214,
+  "nothing_points_no_twin": 52,
+  "nothing_points_no_twin_only_local": 44,
+  "with_twin": 538
  },
  "titles": {
   "\tFTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship": {
@@ -6618,7 +6618,10 @@
    "group": "",
    "used": false,
    "where": [],
-   "twin": null,
+   "twin": {
+    "title": "High School Articulation (Amador Valley)- Developmental Psychology of Children II",
+    "how": "a longer form of the same wording"
+   },
    "reviewed": false,
    "only_local": true
   },
@@ -12219,6 +12222,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "Basic Medical Terminology": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Basic Metal Framing": {
    "type": "Portfolio Review",
    "group": "graded"
@@ -12518,6 +12525,10 @@
   "Business Management and Entrepreneurship": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Business Mathematics": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Business Statistics": {
    "type": "Credit By Exam and Standardized Assessment (mixed)",
@@ -14339,6 +14350,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Developmental Psychology of Children 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Diagnostic Medical Sonography — Clinical Education 4": {
    "type": "Portfolio Review",
    "group": "graded"
@@ -14630,6 +14645,10 @@
   "Ear Training": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Early Childhood Principles and Practices": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Education and Careers in Education Intermediate": {
    "type": "Credit By Exam",
@@ -16667,6 +16686,18 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "IBEW Residential Wireman Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "IBEW Residential and Inside Wireman Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "IBEW Sound and Communication Systems Installer Apprenticeship": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "IBEW/NECA Electrical Apprenticeship — ELECT 110": {
    "type": "Industry Certification",
    "group": "cert"
@@ -17052,6 +17083,10 @@
    "group": "graded"
   },
   "Introduction to Art History": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Introduction to Athletic Training and Sports Medicine": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19235,11 +19270,11 @@
    "type": "CPL type not recorded",
    "group": ""
   },
-  "News Production 4": {
+  "News Production 3": {
    "type": "CPL type not recorded",
    "group": ""
   },
-  "News Production III": {
+  "News Production 4": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -19258,6 +19293,10 @@
   "Non-Structural Plan Review": {
    "type": "Portfolio Review and Industry Certification (mixed)",
    "group": "mixed"
+  },
+  "Nondestructive Testing Technician Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Nurse Assistant Training": {
    "type": "Credit By Exam",
@@ -19459,7 +19498,15 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Organizational Management and Leadership": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Orientation to Architecture": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Orientation to Health Care": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -20343,6 +20390,10 @@
    "type": "Industry Certification",
    "group": "cert"
   },
+  "Red Hat Linux Administration I": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Refrigerant Usage Certification and R-410A Safety": {
    "type": "CPL type not recorded",
    "group": ""
@@ -20492,6 +20543,10 @@
    "group": "cert"
   },
   "Resume and Business Cards": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Retail Operations Specialist Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -20675,6 +20730,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Semiconductor Processing Apprenticeship Certificate": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "ServSafe Food Protection Manager Certification": {
    "type": "Credit By Exam and Industry Certification (mixed)",
    "group": "mixed"
@@ -20686,6 +20745,14 @@
   "Sewing Beginning": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Sheet Metal Air Conditioning Mechanic Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Sheet Metal Air Conditioning Specialist Career Certificate": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Sheet Metal Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
@@ -21179,6 +21246,10 @@
    "type": "Credit By Exam",
    "group": "graded"
   },
+  "Tech of Smartphones & Mobile": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "Technical Computer Applications": {
    "type": "CPL type not recorded",
    "group": ""
@@ -21208,6 +21279,10 @@
    "group": "graded"
   },
   "Ten-Key Calculations": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "Test, Adjust and Balance (TAB) Technician Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21399,6 +21474,50 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "UA Air Conditioning and Refrigeration Apprenticeship — Year 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Apprenticeship — Year 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Apprenticeship — Year 3": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Apprenticeship — Year 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Apprenticeship — Year 5": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Service Technician Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 3": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Air Conditioning and Refrigeration Technology Apprenticeship — Year 5": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "UA Local 342 Plumbers and Pipefitters Apprenticeship Work Experience": {
    "type": "Industry Certification",
    "group": "cert"
@@ -21511,6 +21630,30 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "UA Plumbers and Pipefitters Apprenticeship — Year 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Plumbing Technology Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Plumbing Technology Apprenticeship — Year 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Plumbing Technology Apprenticeship — Year 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Plumbing Technology Apprenticeship — Year 3": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Plumbing Technology Apprenticeship — Year 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "UA Refrigeration Service Technician Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
@@ -21531,6 +21674,10 @@
    "type": "CPL type not recorded",
    "group": ""
   },
+  "UA Residential Plumbing Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
   "UA Steamfitter Apprenticeship — Journeyperson": {
    "type": "CPL type not recorded",
    "group": ""
@@ -21548,6 +21695,26 @@
    "group": ""
   },
   "UA Steamfitter Apprenticeship — Level 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Steamfitter and Pipefitter Apprenticeship — Year 4": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Steamfitting and Pipefitting Technology Apprenticeship — Journeyperson": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 1": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 2": {
+   "type": "CPL type not recorded",
+   "group": ""
+  },
+  "UA Steamfitting and Pipefitting Technology Apprenticeship — Year 3": {
    "type": "CPL type not recorded",
    "group": ""
   },
@@ -21878,6 +22045,10 @@
   "Web Page Development and Publishing": {
    "type": "Credit By Exam",
    "group": "graded"
+  },
+  "Web Programming - JavaScript": {
+   "type": "CPL type not recorded",
+   "group": ""
   },
   "Web Publishing 1": {
    "type": "Credit By Exam",

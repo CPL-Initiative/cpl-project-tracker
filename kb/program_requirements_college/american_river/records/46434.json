@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11553,
-    "output_tokens": 3410,
+    "output_tokens": 3446,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3410,
+  "output_tokens": 3446,
   "output_tokens_details": {
-   "thinking_tokens": 1109
+   "thinking_tokens": 1126
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11441,
- "ms": 26967,
- "seconds": 27.4,
+ "cost_usd": 0.11513,
+ "ms": 26585,
+ "seconds": 26.8,
  "parts": null,
  "error": null,
  "score": {
@@ -391,19 +391,47 @@
   "missing_explained": [
    {
     "code": "ECON 302",
-    "why": "not in the text; the catalog lists ECON C2002 Principles of Macroeconomics instead (likely common course numbering renumber)"
+    "why": "not in the text; catalog prints ECON C2002 Principles of Macroeconomics in its place (common course numbering)"
    }
   ],
   "notes": [
-   "Superscript footnote markers were fused to units in the PDF text (e.g. 'BUSTEC 101 ... 11', 'BUSTEC 310 ... 35', 'CISA 315 ... 26'); read as units 1,1,1,1,3,2,2 with footnotes 1-7. These units sum with the other blocks to the printed Total Units 46.5.",
-   "Closed list code 'BUSTEC498' matched to catalog 'BUSTEC 498' (same course, spacing difference); not marked as a catalog addition.",
-   "WEXP 498 printed as 0.5 - 4 units; the alternative's units field records the low end 0.5.",
-   "BUSTEC 332 is titled 'Advanced Business Applications' in the catalog but 'Integrated Business Projects' in the closed list; check.",
-   "CISA 315 and CISA 340 are required but not in the closed list; recorded as catalog additions.",
-   "The page says the degree requires the program plus the local ARC General Education Requirement plus sufficient electives to meet a 60-unit total; no units printed for GE or electives, so electives_fill_degree is true and degree_total left null (60 stated only as the target in that sentence).",
-   "Footnotes name Folsom Lake College substitute courses (BUSTEC 307, 360, 362, 366); not recorded as alternatives."
+   "Footnote superscripts are merged into unit figures in the extracted text: BUSTEC 101 '11', BUSTEC 300.1 '12', 300.2 '13', 300.3 '14' read as 1 unit; BUSTEC 310 '35' read as 3 units; CISA 315 '26' and CISA 340 '27' read as 2 units. With these readings the block units sum to the printed Total Units 46.5.",
+   "Footnotes 1-7 name Folsom Lake College substitute courses (BUSTEC 307, BUSTEC 360, BUSTEC 362, BUSTEC 366); not recorded as alternatives in blocks.",
+   "BUSTEC 498 (closed list 'BUSTEC498') treated as the same course; WEXP 498 alternative printed with 0.5-4 units, recorded at low end 0.5.",
+   "Catalog title for BUSTEC 332 is 'Advanced Business Applications' while the state file says 'Integrated Business Projects'.",
+   "Degree requires the local ARC General Education Requirement plus sufficient electives to meet a 60-unit total; recorded as electives_fill_degree true. The 60-unit figure is printed only in that sentence, not as a stated degree total, so degree_total left null; reviewer may consider recording 60.",
+   "The ECON C2002 code replaces ECON 302 from the closed list; recorded as catalog addition."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "dc3e0db5cccbeced",
+ "source_codes": [
+  "ACCT301",
+  "ACCT341",
+  "BUS100",
+  "BUS300",
+  "BUS310",
+  "BUS312",
+  "BUS320",
+  "BUS330",
+  "BUS340",
+  "BUS350",
+  "BUSTEC101",
+  "BUSTEC126",
+  "BUSTEC3001",
+  "BUSTEC3002",
+  "BUSTEC3003",
+  "BUSTEC305",
+  "BUSTEC310",
+  "BUSTEC332",
+  "BUSTEC370",
+  "COMM325",
+  "ECON302",
+  "ECON320",
+  "MGMT142",
+  "MKT300",
+  "WEXP498"
+ ],
+ "source_coverage": 0.962
 }

@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_cpl_receipts_bucket.sql",
+ "name": "s680_cpl_receipts_bucket",
+ "version": "20261118071732",
+ "sha256": "33234a80ef6c3118d14d4224359912925ba41bf984ca42585e6623dc09af40e1",
+ "run": "44255184017",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

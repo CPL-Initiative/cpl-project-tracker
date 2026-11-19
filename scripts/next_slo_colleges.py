@@ -12,8 +12,9 @@ It reads committed files only, so it runs offline in a session:
                                        credentials whose `a` names it
   kb/program_requirements_college/     each college's slug, catalog host and loaded records
                                        (the read takes its course codes from the records)
-  kb/course_outline_census/            the newest census: each college's outline system,
-                                       access and what one outline printed
+  kb/course_outline_census/            each college's row from the newest census that holds
+                                       one: its outline system, access and what one outline
+                                       printed
   kb/course_outline_index/index_*.json curriQunet course indexes, by host
   kb/course_outcomes/                  filed reads and trials; queue.json, the verdicts the
                                        nightly step records (a host that prints none)
@@ -96,10 +97,18 @@ def colleges(root=KB):
 
 
 def census(root=KB):
+    """College name -> its row in the newest census file that holds one, and the newest file.
+
+    A recheck census covers a few colleges (S683's had 6 of 118), so a later file replaces only
+    the rows it holds; a college it leaves out keeps its row from the earlier census. Reading the
+    newest file alone dropped every other college to "the census has no row for it" (S685)."""
     paths = sorted(glob.glob(os.path.join(root, "course_outline_census", "census_*.json")), key=_run_of)
     if not paths:
         return {}, None
-    return {r["college"]: r for r in _json(paths[-1])["rows"]}, os.path.relpath(paths[-1], os.path.dirname(root))
+    rows = {}
+    for path in paths:
+        rows.update({r["college"]: r for r in _json(path)["rows"]})
+    return rows, os.path.relpath(paths[-1], os.path.dirname(root))
 
 
 def loaded(root=KB):

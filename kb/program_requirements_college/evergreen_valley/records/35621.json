@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7538,
+  "input_tokens": 7521,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7538,
-    "output_tokens": 2415,
+    "input_tokens": 7521,
+    "output_tokens": 2050,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2415,
+  "output_tokens": 2050,
   "output_tokens_details": {
-   "thinking_tokens": 986
+   "thinking_tokens": 692
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07845,
- "ms": 20586,
- "seconds": 21.1,
+ "cost_usd": 0.07108,
+ "ms": 16943,
+ "seconds": 17.4,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +122,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MUSIC - ASSOCIATE IN ARTS FOR TRANSFER",
+   "section_heading": "Associate in Arts in Music for Transfer",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -291,13 +292,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "List A prints no units beside its courses; only the list total '3-4 units' is printed, so course units are null and the rule is read as choose 3 units (stated 3-4). Reviewer should confirm how List A is satisfied.",
-   "The piano option is printed as the pair 'MUSIC 050A & MUSIC 050B' or the pair 'MUSIC 020 & 020B'; recorded position by position (050A or 020, 050B or 020B), but the intent is one whole pair or the other.",
-   "Catalog prints 'MUSIC 020' and 'MUSIC 091'; closed list stores these as 'MUSIC 20' and 'MUSIC 91' (same courses, leading-zero format), so they are treated as closed-list courses.",
-   "MUSIC 180 printed at 4 units and MUSIC 190 at 2 units in the core (repeated enrollments); closed list stores 1 and 0.5.",
-   "Total Requirements table: Major Requirements 21-22, Cal-GETC 34, Transferable Electives as needed to complete 60 units, Total Units 60.",
-   "The '18 semester units' sentence is the ADT minimum, not this award's major total."
+   "Catalog prints 'MUSIC 091' and 'MUSIC 020'; closed list stores them as 'MUSIC 91' and 'MUSIC 20'. Treated as the same courses (leading zero only), so catalog_addition false.",
+   "List A prints no units beside individual courses; only the list total '3-4 units' is printed.",
+   "List A option 'MUSIC 050A & MUSIC 050B or MUSIC 020 & 020B' is a paired choice: either the 050A+050B pair or the 020+020B pair. Recorded as MUSIC 050A (alt MUSIC 020) and MUSIC 050B (alt MUSIC 020B); reviewer should confirm the pair counts as a single List A choice.",
+   "Major total 21-22 from the 'Total Requirements' table; degree total 60 with Cal-GETC 34 and transferable electives as needed to complete 60 units.",
+   "The program learning outcomes are printed on the page's outcomes tab for this award."
   ]
  },
- "extracted_run": "38748875071"
+ "extracted_run": "44519542333",
+ "catalog_year": "2026-2027"
 }

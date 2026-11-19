@@ -5,8 +5,9 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST12",
    "OH50",
    "OH53A",
    "OH53B",
@@ -37,7 +38,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "254dba0b73ba9115"
   },
   "listed": 14,
   "text_chars": 4644
@@ -86,7 +88,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "fadbd36a16794883"
   },
   "listed": 19,
   "text_chars": 5783
@@ -115,12 +118,13 @@
    "VMD118"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=334",
-   "title": "furniture, lighting systems, and exhibits. The AS degree in Interior Design has a strong emphasis on both",
-   "h1": "furniture, lighting systems, and exhibits. The AS degree in Interior Design has a strong emphasis on both",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=333",
+   "title": "Interior Design – AS Degree",
+   "h1": "Interior Design – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    333,
     334
    ],
    "extractor": "pypdf",
@@ -129,10 +133,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "3bd7c6f0e215aa4a"
   },
   "listed": 14,
-  "text_chars": 2556
+  "text_chars": 3135
  },
  {
   "control_number": "05440",
@@ -152,7 +157,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.882,
+  "coverage": 0.941,
   "codes_found": [
    "BIO121",
    "BIO130",
@@ -164,6 +169,7 @@
    "CAHS42",
    "CAHS43",
    "CAHS45",
+   "CMST20",
    "COMMC1000",
    "LBCS96C",
    "MGT231",
@@ -171,25 +177,27 @@
    "PSYC26"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=145",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=144",
+   "title": "Hospitality Management – AS Degree",
+   "h1": "Hospitality Management – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    144,
     145,
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cd41477db5ad5175"
   },
   "listed": 17,
-  "text_chars": 5842
+  "text_chars": 6592
  },
  {
   "control_number": "05443",
@@ -227,7 +235,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "dad97253953aeacf"
   },
   "listed": 11,
   "text_chars": 4526
@@ -248,25 +257,27 @@
    "RE191"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=133",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=132",
+   "title": "California Real Estate – AS Degree",
+   "h1": "California Real Estate – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    132,
     133,
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d6e9daf754c41124"
   },
   "listed": 6,
-  "text_chars": 5201
+  "text_chars": 7534
  },
  {
   "control_number": "05447",
@@ -329,7 +340,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "02abe3bd8d27e6f6"
   },
   "listed": 12,
   "text_chars": 5189
@@ -376,7 +388,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a81b3e81cc4bacab"
   },
   "listed": 17,
   "text_chars": 4811
@@ -417,7 +430,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "936ac05bc2da0d4a"
   },
   "listed": 12,
   "text_chars": 4514
@@ -456,7 +470,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "28c401510b25aa41"
   },
   "listed": 11,
   "text_chars": 3834
@@ -497,7 +512,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "96be91afa049f3df"
   },
   "listed": 9,
   "text_chars": 9705
@@ -543,7 +559,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c35677c586b96fc2"
   },
   "listed": 16,
   "text_chars": 11299
@@ -554,8 +571,9 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.938,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST4",
    "ELEC101",
    "ELEC102A",
    "ELEC102B",
@@ -590,7 +608,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c35677c586b96fc2"
   },
   "listed": 16,
   "text_chars": 11299
@@ -637,7 +656,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.864,
+  "coverage": 0.909,
   "codes_found": [
    "ARCH120",
    "ARCH127",
@@ -652,6 +671,7 @@
    "CM244",
    "CM248",
    "CM250",
+   "CMST4",
    "COMMC1000",
    "ESL79",
    "GNBS100",
@@ -660,27 +680,28 @@
    "MGT234"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=135",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=134",
+   "title": "Construction Management – AS Degree",
+   "h1": "Construction Management – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    134,
     135,
     136,
-    137,
-    138
+    137
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "042a4e541fb9176e"
   },
   "listed": 22,
-  "text_chars": 10529
+  "text_chars": 8675
  },
  {
   "control_number": "05481",
@@ -688,7 +709,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.706,
+  "coverage": 1.0,
   "codes_found": [
    "PHOT100",
    "PHOT101C",
@@ -697,46 +718,57 @@
    "PHOT101G",
    "PHOT101P",
    "PHOT101S",
+   "PHOT102A",
    "PHOT102B",
    "PHOT102C",
+   "PHOT102D",
    "PHOT102E",
+   "PHOT130A",
    "PHOT140",
    "PHOT145",
+   "PHOT40",
+   "PHOT50A",
+   "PHOT50B",
    "PHOT51",
+   "PHOT52",
    "PHOT60A",
    "PHOT60B",
    "PHOT67",
    "PHOT80",
+   "PHOT81A",
    "PHOT81B",
    "PHOT81D",
    "PHOT83",
    "PHOT85A",
    "PHOT85B",
    "PHOT90",
-   "PHOT92"
+   "PHOT92",
+   "PHOT99",
+   "VMD101"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=119",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
+   "title": "Photography – AS Degree",
+   "h1": "Photography – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    117,
+    118,
     119,
-    120,
-    121,
-    122
+    120
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8cbfde268d7b0c59"
   },
   "listed": 34,
-  "text_chars": 9263
+  "text_chars": 7048
  },
  {
   "control_number": "05482",
@@ -763,24 +795,26 @@
    "VMD200A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=103",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
+   "title": "Graphic Design – AA Degree",
+   "h1": "Graphic Design – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    102,
     103
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ffb773284476d60f"
   },
   "listed": 15,
-  "text_chars": 2679
+  "text_chars": 3501
  },
  {
   "control_number": "05491",
@@ -788,10 +822,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.895,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH3",
    "ANTH3C",
+   "CMST20",
+   "CMST4",
    "COMMC1000",
    "ESL79",
    "NURS50",
@@ -824,7 +860,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2b704b2f5e1caa86"
   },
   "listed": 19,
   "text_chars": 5676
@@ -862,16 +899,16 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=263",
+   "title": "Medical Administrative Assisting – AS Degree",
+   "h1": "Medical Administrative Assisting – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    263,
     264,
     265,
-    266,
-    267
+    266
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -879,10 +916,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c2d55933fe1d9b53"
   },
   "listed": 24,
-  "text_chars": 10859
+  "text_chars": 9270
  },
  {
   "control_number": "05493",
@@ -921,7 +959,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "31cceb22ecb93c05"
   },
   "listed": 13,
   "text_chars": 6008
@@ -967,7 +1006,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1fd90c018caf0298"
   },
   "listed": 16,
   "text_chars": 10351
@@ -998,24 +1038,26 @@
    "DMI72"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=246",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=245",
+   "title": "Diagnostic Medical Imaging – AS Degree",
+   "h1": "Diagnostic Medical Imaging – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    245,
     246
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ba0bef2ccd5c644a"
   },
   "listed": 16,
-  "text_chars": 2767
+  "text_chars": 5377
  },
  {
   "control_number": "05499",
@@ -1059,7 +1101,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f9161ab7f16b808c"
   },
   "listed": 17,
   "text_chars": 5029
@@ -1069,43 +1112,12 @@
   "title": "Paralegal/Legal Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.857,
-  "codes_found": [
-   "PLS1",
-   "PLS12",
-   "PLS13",
-   "PLS14",
-   "PLS16",
-   "PLS2",
-   "PLS3",
-   "PLS4",
-   "PLS5",
-   "PLS6",
-   "PLS7",
-   "PLS9"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    755,
-    756,
-    757
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 7223
+  "text_chars": 0
  },
  {
   "control_number": "05511",
@@ -1126,25 +1138,27 @@
    "LIBR59"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=339",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=338",
+   "title": "Library Information Technology – AS Degree",
+   "h1": "Library Information Technology – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    338,
     339,
     340
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "564173d21f106654"
   },
   "listed": 9,
-  "text_chars": 6384
+  "text_chars": 6449
  },
  {
   "control_number": "05520",
@@ -1192,7 +1206,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "42ce752e5bb406f8"
   },
   "listed": 20,
   "text_chars": 8488
@@ -1237,7 +1252,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "918a52388b5f72b7"
   },
   "listed": 13,
   "text_chars": 10449
@@ -1282,7 +1298,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9da9e6319a49adc6"
   },
   "listed": 15,
   "text_chars": 8217
@@ -1305,8 +1322,9 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST12",
    "OH50",
    "OH56",
    "OH60",
@@ -1334,7 +1352,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "22ac99667f69fec6"
   },
   "listed": 12,
   "text_chars": 3666
@@ -1345,8 +1364,9 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST12",
    "OH50",
    "OH56",
    "OH58",
@@ -1361,12 +1381,13 @@
    "RF82"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=405",
-   "title": "two-year course of study, receive the Associate of Science in Commercial Cut-Flower and Greenhouse Production",
-   "h1": "two-year course of study, receive the Associate of Science in Commercial Cut-Flower and Greenhouse Production",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=404",
+   "title": "Commercial Cut-Flower and Greenhouse Production – AS Degree",
+   "h1": "Commercial Cut-Flower and Greenhouse Production – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    404,
     405,
     406
    ],
@@ -1376,83 +1397,35 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "49b075e7d8260d63"
   },
   "listed": 13,
-  "text_chars": 4064
+  "text_chars": 4335
  },
  {
   "control_number": "09175",
   "title": "Computer Accounting",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "BSMA68",
-   "MABS101",
-   "MABS60"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    561,
-    562
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 6175
+  "text_chars": 0
  },
  {
   "control_number": "09178",
   "title": "Data Journalism",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "ECON5",
-   "JOUR19",
-   "JOUR22",
-   "JOUR23",
-   "JOUR35",
-   "JOUR36",
-   "JOUR37",
-   "LALS5",
-   "PSYC5"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    104,
-    105,
-    106
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 7950
+  "text_chars": 0
  },
  {
   "control_number": "09179",
@@ -1460,38 +1433,40 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 0.5,
   "codes_found": [
-   "JOUR19",
    "JOUR21",
-   "JOUR22",
-   "JOUR23",
    "JOUR24A",
-   "JOUR24B",
-   "JOUR26",
    "JOUR29A",
-   "JOUR37"
+   "JOUR37",
+   "VMD105"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=104",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
+   "title": "Editorial Management and Design – Certificate of Achievement",
+   "h1": "Editorial Management and Design – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    104,
-    105
+    90,
+    91
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 90,
+    "share": 0.5
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9ab611a06d418f6b"
   },
   "listed": 10,
-  "text_chars": 5292
+  "text_chars": 3513
  },
  {
   "control_number": "09180",
@@ -1511,7 +1486,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "CAD180",
    "CAD181",
@@ -1521,6 +1496,8 @@
    "CAD190",
    "CAD99A",
    "CAD99B",
+   "CMST20",
+   "CMST4",
    "ELEC101",
    "ENGN10A",
    "ENGN24",
@@ -1554,7 +1531,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "fda0a58a742639c1"
   },
   "listed": 26,
   "text_chars": 5574
@@ -1591,24 +1569,26 @@
    "VOCN53C"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=295",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=294",
+   "title": "Vocational Nursing – Certificate of Achievement",
+   "h1": "Vocational Nursing – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    294,
     295
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "af46155f3a908de6"
   },
   "listed": 10,
-  "text_chars": 2299
+  "text_chars": 5628
  },
  {
   "control_number": "09191",
@@ -1641,27 +1621,28 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=264",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=263",
+   "title": "Medical Administrative Assisting – AS Degree",
+   "h1": "Medical Administrative Assisting – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    263,
     264,
     265,
-    266,
-    267
+    266
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c2d55933fe1d9b53"
   },
   "listed": 21,
-  "text_chars": 10859
+  "text_chars": 9270
  },
  {
   "control_number": "09193",
@@ -1700,7 +1681,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9bdf7fa3b9e42aa2"
   },
   "listed": 10,
   "text_chars": 9944
@@ -1745,7 +1727,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c519fd0a27b1d1c6"
   },
   "listed": 15,
   "text_chars": 10269
@@ -1789,7 +1772,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "96d44e80b43bab80"
   },
   "listed": 16,
   "text_chars": 4994
@@ -1836,7 +1820,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "755d40dce7fe2189"
   },
   "listed": 5,
   "text_chars": 5965
@@ -1878,7 +1863,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cb3f5bb6c4f60a1c"
   },
   "listed": 12,
   "text_chars": 6647
@@ -1900,43 +1886,12 @@
   "title": "Paralegal/Legal Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.857,
-  "codes_found": [
-   "PLS1",
-   "PLS12",
-   "PLS13",
-   "PLS14",
-   "PLS16",
-   "PLS2",
-   "PLS3",
-   "PLS4",
-   "PLS5",
-   "PLS6",
-   "PLS7",
-   "PLS9"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=755",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    755,
-    756,
-    757
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 7223
+  "text_chars": 0
  },
  {
   "control_number": "11355",
@@ -1959,25 +1914,27 @@
    "VMD200B"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=66",
+   "title": "Advanced Digital Skills – Certificate of Achievement",
+   "h1": "Advanced Digital Skills – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    66,
     67,
     68
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a8a62c60500d0065"
   },
   "listed": 13,
-  "text_chars": 4990
+  "text_chars": 5438
  },
  {
   "control_number": "11384",
@@ -2012,7 +1969,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ef70874ec8bc1814"
   },
   "listed": 8,
   "text_chars": 4703
@@ -2066,7 +2024,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "33ebba93efa8177b"
   },
   "listed": 10,
   "text_chars": 9551
@@ -2076,30 +2035,12 @@
   "title": "Multimedia Studies: Performance Arts",
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "VMD100"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    87
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2008
+  "text_chars": 0
  },
  {
   "control_number": "11818",
@@ -2123,24 +2064,26 @@
    "CS231"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=351",
+   "title": "Web Application Programming – Certificate of Achievement",
+   "h1": "Web Application Programming – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    351,
     352
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1f34fc85b7662e54"
   },
   "listed": 14,
-  "text_chars": 2436
+  "text_chars": 3325
  },
  {
   "control_number": "12293",
@@ -2200,7 +2143,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "313f6f7763277fa2"
   },
   "listed": 7,
   "text_chars": 11162
@@ -2237,7 +2181,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "adb1bb9c28c28b63"
   },
   "listed": 6,
   "text_chars": 7641
@@ -2276,7 +2221,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ec8fcfa137dfd73c"
   },
   "listed": 7,
   "text_chars": 11145
@@ -2287,7 +2233,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.895,
+  "coverage": 0.947,
   "codes_found": [
    "BIO130",
    "CAHS100",
@@ -2302,6 +2248,7 @@
    "CAHS40W",
    "CAHS42",
    "CAHS45",
+   "CMST20",
    "COMMC1000",
    "LBCS96C",
    "MGT231",
@@ -2323,7 +2270,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "630cbc5512ced213"
   },
   "listed": 19,
   "text_chars": 5003
@@ -2334,7 +2282,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.957,
+  "coverage": 1.0,
   "codes_found": [
    "BIO130",
    "CAHS100",
@@ -2355,6 +2303,7 @@
    "CAHS60N",
    "CAHS60P",
    "CAHS60V",
+   "CMST20",
    "COMMC1000",
    "LBCS96C",
    "PSYC26"
@@ -2376,7 +2325,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b1e533fa9cc11aae"
   },
   "listed": 23,
   "text_chars": 8019
@@ -2429,7 +2379,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "38bce4c6c925ef6c"
   },
   "listed": 9,
   "text_chars": 9778
@@ -2466,7 +2417,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0cf0949ff66cba03"
   },
   "listed": 6,
   "text_chars": 6190
@@ -2530,7 +2482,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c9a5a9252e561468"
   },
   "listed": 10,
   "text_chars": 5779
@@ -2588,7 +2541,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "032376acbe5a3109"
   },
   "listed": 15,
   "text_chars": 7728
@@ -2599,8 +2553,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST12",
    "OH50",
    "OH56",
    "OH60",
@@ -2628,7 +2583,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9f1ecacf8c426fea"
   },
   "listed": 9,
   "text_chars": 8387
@@ -2665,7 +2621,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "31b423588bc1518b"
   },
   "listed": 8,
   "text_chars": 2345
@@ -2676,8 +2633,9 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST12",
    "OH50",
    "OH56",
    "OH60",
@@ -2704,7 +2662,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b2009e758fe43a20"
   },
   "listed": 9,
   "text_chars": 6496
@@ -2762,7 +2721,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e2288884c8afa12e"
   },
   "listed": 14,
   "text_chars": 10503
@@ -2773,10 +2733,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT1",
    "BSL1",
+   "ECON1",
+   "ECON3",
    "ECON5",
    "GNBS119",
    "MABS60",
@@ -2798,7 +2760,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a1389395b7008a6b"
   },
   "listed": 8,
   "text_chars": 4309
@@ -2839,25 +2802,27 @@
    "FREN5"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=174",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=173",
+   "title": "French – AA Degree",
+   "h1": "French – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    173,
     174,
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "98e8d3d20b43ef8d"
   },
   "listed": 14,
-  "text_chars": 3634
+  "text_chars": 5543
  },
  {
   "control_number": "16991",
@@ -2880,25 +2845,27 @@
    "ITAL3B"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=176",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=175",
+   "title": "Italian – AA Degree",
+   "h1": "Italian – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    175,
     176,
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ee3148db36c51833"
   },
   "listed": 11,
-  "text_chars": 4160
+  "text_chars": 4760
  },
  {
   "control_number": "16992",
@@ -2941,10 +2908,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "88dd1762f70f820a"
   },
   "listed": 15,
-  "text_chars": 6531
+  "text_chars": 6532
  },
  {
   "control_number": "16993",
@@ -2983,16 +2951,16 @@
    "SPAN7"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+   "title": "Spanish – AA Degree",
+   "h1": "Spanish – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    181,
+    182,
     183,
-    184,
-    185,
-    186
+    184
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -3000,10 +2968,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "39ac7501fe9724b1"
   },
   "listed": 27,
-  "text_chars": 7830
+  "text_chars": 6992
  },
  {
   "control_number": "17043",
@@ -3022,12 +2991,13 @@
    "MOTO93"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=423",
-   "title": "The Associate of Science Degree in Motorcycle Technician prepares students to enter the motorcycle maintenance",
-   "h1": "The Associate of Science Degree in Motorcycle Technician prepares students to enter the motorcycle maintenance",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=422",
+   "title": "Motorcycle Technician – AS Degree",
+   "h1": "Motorcycle Technician – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    422,
     423,
     424
    ],
@@ -3037,10 +3007,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c0f98f0bddaf1262"
   },
   "listed": 7,
-  "text_chars": 5116
+  "text_chars": 5238
  },
  {
   "control_number": "17614",
@@ -3090,7 +3061,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 24,
   "text_chars": 1658
@@ -3145,7 +3117,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 26,
   "text_chars": 1658
@@ -3197,7 +3170,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 23,
   "text_chars": 1658
@@ -3252,7 +3226,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 26,
   "text_chars": 1658
@@ -3305,7 +3280,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 24,
   "text_chars": 1658
@@ -3360,7 +3336,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8629d6aaff79341"
   },
   "listed": 26,
   "text_chars": 1658
@@ -3370,39 +3347,12 @@
   "title": "Office Technology",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.889,
-  "codes_found": [
-   "BSEN74",
-   "MABS101",
-   "MABS391",
-   "MABS412",
-   "MABS50",
-   "MABS67",
-   "MABS70",
-   "MABS75"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    561,
-    562,
-    563
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 9076
+  "text_chars": 0
  },
  {
   "control_number": "17941",
@@ -3434,7 +3384,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 0.963,
   "codes_found": [
    "BIO100A",
    "BIO100B",
@@ -3456,6 +3406,8 @@
    "BTEC5",
    "BTEC93",
    "CHEM101A",
+   "CMST20",
+   "CMST4",
    "COMMC1000",
    "ESL79",
    "MATH90",
@@ -3479,7 +3431,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6bc5cdf21aec40a7"
   },
   "listed": 27,
   "text_chars": 10238
@@ -3489,32 +3442,12 @@
   "title": "Liberal Arts and Sciences Emphasis in Arts and Humanities",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ART140D",
-   "ART145C"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=475",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    475,
-    476
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 5351
+  "text_chars": 0
  },
  {
   "control_number": "17953",
@@ -3522,9 +3455,14 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 0.929,
   "codes_found": [
+   "CMST2",
+   "CMST20",
+   "CMST3",
+   "CMST4",
    "COMMC1000",
+   "ENGL1B",
    "ENGLC1000",
    "ENGLC1001",
    "ESL79",
@@ -3534,24 +3472,26 @@
    "PHIL40"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=206",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=180",
+   "title": "Liberal Arts and Sciences Emphasis in Communication – AA Degree",
+   "h1": "Liberal Arts and Sciences Emphasis in Communication – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    206
+    180,
+    181
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c0e8b6e5b023538d"
   },
   "listed": 14,
-  "text_chars": 2897
+  "text_chars": 3600
  },
  {
   "control_number": "17954",
@@ -3614,7 +3554,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4b0f7c0eb7834d3a"
   },
   "listed": 15,
   "text_chars": 4420
@@ -3651,7 +3592,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "523120db85a52706"
   },
   "listed": 9,
   "text_chars": 2693
@@ -3685,7 +3627,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "64f5fcb10822a41f"
   },
   "listed": 5,
   "text_chars": 2468
@@ -3695,37 +3638,12 @@
   "title": "Databases for Developers",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.727,
-  "codes_found": [
-   "CNIT195",
-   "CNIT197",
-   "CS131B",
-   "CS150A",
-   "CS160A",
-   "CS177",
-   "CS195",
-   "CS231"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=352",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    352
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 2436
+  "text_chars": 0
  },
  {
   "control_number": "19583",
@@ -3759,7 +3677,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "03487de4a45d491c"
   },
   "listed": 7,
   "text_chars": 5182
@@ -3811,7 +3730,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d9dc79cc34747dc6"
   },
   "listed": 10,
   "text_chars": 5646
@@ -3858,7 +3778,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e8e7bdb2cf48b1eb"
   },
   "listed": 16,
   "text_chars": 9053
@@ -3899,7 +3820,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1c95869a377fdd6d"
   },
   "listed": 11,
   "text_chars": 6318
@@ -3961,7 +3883,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4f09b80595132996"
   },
   "listed": 33,
   "text_chars": 4784
@@ -3972,7 +3895,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 0.905,
   "codes_found": [
    "ARCH120",
    "ARCH127",
@@ -3987,6 +3910,7 @@
    "CM244",
    "CM248",
    "CM250",
+   "CMST4",
    "COMMC1000",
    "GNBS100",
    "GNBS119",
@@ -4010,7 +3934,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ccd483d22a4397e0"
   },
   "listed": 21,
   "text_chars": 7812
@@ -4048,7 +3973,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d4d95e58560f4fbf"
   },
   "listed": 9,
   "text_chars": 5494
@@ -4082,7 +4008,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "64f5fcb10822a41f"
   },
   "listed": 5,
   "text_chars": 2468
@@ -4127,7 +4054,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4ae73628a97f3398"
   },
   "listed": 13,
   "text_chars": 10172
@@ -4149,16 +4077,16 @@
    "FASH36A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=92",
-   "title": "The Fashion Design Associate of Science Degree builds on the Fashion Design Certificate, adding required general",
-   "h1": "The Fashion Design Associate of Science Degree builds on the Fashion Design Certificate, adding required general",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
+   "title": "This certificate program is designed to prepare students in Fashion Design and Merchandising to engage in the world of",
+   "h1": "This certificate program is designed to prepare students in Fashion Design and Merchandising to engage in the world of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    91,
     92,
     93,
-    94,
-    95
+    94
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -4166,10 +4094,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "59a9d6321c771b64"
   },
   "listed": 7,
-  "text_chars": 10127
+  "text_chars": 9748
  },
  {
   "control_number": "21413",
@@ -4210,7 +4139,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0656ee5ae091425e"
   },
   "listed": 14,
   "text_chars": 5555
@@ -4256,7 +4186,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6dc2314a6e60b2ea"
   },
   "listed": 15,
   "text_chars": 8139
@@ -4293,7 +4224,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c40ce8459650b5de"
   },
   "listed": 8,
   "text_chars": 1994
@@ -4328,7 +4260,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "99f2cc347bf452ec"
   },
   "listed": 7,
   "text_chars": 1280
@@ -4375,7 +4308,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f78c290109cfdb7b"
   },
   "listed": 6,
   "text_chars": 2314
@@ -4415,7 +4349,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "aa2e7d3da49d53e2"
   },
   "listed": 10,
   "text_chars": 4831
@@ -4456,7 +4391,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ecc6472116d4b3d6"
   },
   "listed": 10,
   "text_chars": 10875
@@ -4532,7 +4468,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e4172b984c49f4aa"
   },
   "listed": 20,
   "text_chars": 10052
@@ -4586,7 +4523,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6415e9c1d672fa0f"
   },
   "listed": 11,
   "text_chars": 6817
@@ -4622,7 +4560,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ea64e41012ad8681"
   },
   "listed": 6,
   "text_chars": 4738
@@ -4675,24 +4614,26 @@
    "CSST9651"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=403",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=402",
+   "title": "Baking and Pastry – Certificate of Completion",
+   "h1": "Baking and Pastry – Certificate of Completion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    402,
     403
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "fc2ae86672e92013"
   },
   "listed": 2,
-  "text_chars": 2580
+  "text_chars": 2648
  },
  {
   "control_number": "24094",
@@ -4723,32 +4664,12 @@
   "title": "Administrative Assistant",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "COMP9900",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "24137",
@@ -4802,7 +4723,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "56bad802c385e5d5"
   },
   "listed": 3,
   "text_chars": 4050
@@ -4822,12 +4744,13 @@
    "ESLN3605"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=168",
-   "title": "The ESL Intermediate Low Certificate of Competency provides ESL students with low-intermediate English",
-   "h1": "The ESL Intermediate Low Certificate of Competency provides ESL students with low-intermediate English",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=167",
+   "title": "ESL Intermediate Low – Certificate of Competency",
+   "h1": "ESL Intermediate Low – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    167,
     168,
     169
    ],
@@ -4837,10 +4760,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "258200f6730960e0"
   },
   "listed": 5,
-  "text_chars": 5021
+  "text_chars": 5170
  },
  {
   "control_number": "24220",
@@ -4892,12 +4816,13 @@
    "ESLN3205"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=163",
-   "title": "ESL Beginning Low Focus Skills – Certificate of Competency",
-   "h1": "ESL Beginning Low Focus Skills – Certificate of Competency",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=162",
+   "title": "ESL Beginning Low – Certificate of Competency",
+   "h1": "ESL Beginning Low – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    162,
     163
    ],
    "extractor": "pypdf",
@@ -4906,10 +4831,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "20bae7a18d755b75"
   },
   "listed": 4,
-  "text_chars": 1760
+  "text_chars": 3175
  },
  {
   "control_number": "24257",
@@ -4928,99 +4854,36 @@
   "title": "Construction Administrative Assistant",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "24260",
   "title": "Business Information Worker (BIW)",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "COMP9904",
-   "COMP9905",
-   "COMP9909",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "24263",
   "title": "Microsoft Office Specialist",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904",
-   "COMP9909",
-   "COMP9910",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "24269",
@@ -5068,12 +4931,14 @@
    "CNST77"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=409",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=407",
+   "title": "This certificate program provides skills valuable to architects, construction trades, and engineers in industries",
+   "h1": "This certificate program provides skills valuable to architects, construction trades, and engineers in industries",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    407,
+    408,
     409,
     410
    ],
@@ -5083,10 +4948,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "371ce1bc3e153a37"
   },
   "listed": 12,
-  "text_chars": 4914
+  "text_chars": 9816
  },
  {
   "control_number": "24291",
@@ -5124,7 +4990,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cf8b6176e7c34517"
   },
   "listed": 11,
   "text_chars": 4790
@@ -5146,60 +5013,24 @@
   "title": "Clerical Accounting",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9904"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "24304",
   "title": "Clerical Support Specialist",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "24318",
@@ -5232,7 +5063,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5b1acd32bb69e186"
   },
   "listed": 7,
   "text_chars": 2827
@@ -5254,12 +5086,13 @@
    "ESLN3805"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=166",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165",
+   "title": "ESL Intermediate High – Certificate of Competency",
+   "h1": "ESL Intermediate High – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    165,
     166,
     167
    ],
@@ -5269,40 +5102,23 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c569de9302d71931"
   },
   "listed": 7,
-  "text_chars": 4790
+  "text_chars": 5239
  },
  {
   "control_number": "24331",
   "title": "Beginning VESL for Janitorial Workers",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ESLV4816"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=644",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    644
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2661
+  "text_chars": 0
  },
  {
   "control_number": "24338",
@@ -5321,30 +5137,12 @@
   "title": "Computerized Accounting",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2939
+  "text_chars": 0
  },
  {
   "control_number": "24407",
@@ -5387,34 +5185,12 @@
   "title": "Computer Applications for Business",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.8,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904",
-   "COMP9910",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "24451",
@@ -5515,7 +5291,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a0d833c3d54e87ab"
   },
   "listed": 14,
   "text_chars": 5331
@@ -5577,7 +5354,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a5cf94d10cefc092"
   },
   "listed": 39,
   "text_chars": 9852
@@ -5631,16 +5409,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=235",
-   "title": "The Associate of Science Degree in Community and Public Health prepares students to address the health needs",
-   "h1": "The Associate of Science Degree in Community and Public Health prepares students to address the health needs",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234",
+   "title": "Community and Public Health – AS Degree",
+   "h1": "Community and Public Health – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    234,
     235,
     236,
-    237,
-    238
+    237
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -5648,10 +5426,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e29e159ed0a8cf55"
   },
   "listed": 40,
-  "text_chars": 11697
+  "text_chars": 8609
  },
  {
   "control_number": "30517",
@@ -5677,26 +5456,28 @@
    "PHYC4BL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=346",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=345",
+   "title": "Oceanography – AS Degree",
+   "h1": "Oceanography – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    345,
     346,
     347,
     348
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6ec8383c8b9bb4c7"
   },
   "listed": 15,
-  "text_chars": 7207
+  "text_chars": 10966
  },
  {
   "control_number": "30538",
@@ -5715,31 +5496,12 @@
   "title": "Business Office Support Skills, Phase II",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "COMP9910",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 2939
+  "text_chars": 0
  },
  {
   "control_number": "30665",
@@ -5747,11 +5509,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.958,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH3",
    "BIO9",
    "ECON5",
+   "ENGL1B",
    "ENGLC1001",
    "LALS5",
    "PSYC10",
@@ -5790,7 +5553,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4b81b472fffdf941"
   },
   "listed": 24,
   "text_chars": 8492
@@ -5800,31 +5564,12 @@
   "title": "Introduction to Child Development Careers",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "CDEV8100",
-   "CDEV8101"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=532",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    532
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2870
+  "text_chars": 0
  },
  {
   "control_number": "30870",
@@ -5865,7 +5610,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "77d2f402e97b4023"
   },
   "listed": 13,
   "text_chars": 9219
@@ -5923,7 +5669,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "13242956dbdc3d3e"
   },
   "listed": 26,
   "text_chars": 11754
@@ -5967,27 +5714,28 @@
    "WGST55"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=375",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=374",
+   "title": "LGBTQ Studies – AA Degree",
+   "h1": "LGBTQ Studies – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    374,
     375,
     376,
-    377,
-    378
+    377
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "842f640e36eeff0c"
   },
   "listed": 32,
-  "text_chars": 10687
+  "text_chars": 9655
  },
  {
   "control_number": "30907",
@@ -6006,30 +5754,12 @@
   "title": "Digital Literacy and Core Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9921"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2939
+  "text_chars": 0
  },
  {
   "control_number": "31395",
@@ -6067,7 +5797,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "3bdb103e02522ec4"
   },
   "listed": 10,
   "text_chars": 7524
@@ -6089,107 +5820,36 @@
   "title": "PowerPoint Specialist",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 0.75,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "31414",
   "title": "Office Receptionist",
   "award": null,
   "shape": "other",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904",
-   "COMP9921",
-   "COMP9928"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 4,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "31602",
   "title": "CCSF High School Diploma",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "TRST1322",
-   "TRST2322",
-   "TRST2323",
-   "TRST2422",
-   "TRST2731",
-   "TRST3347",
-   "TRST3531",
-   "TRST3537"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=824",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    824,
-    825,
-    826,
-    827
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 9216
+  "text_chars": 0
  },
  {
   "control_number": "31611",
@@ -6197,9 +5857,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.963,
+  "coverage": 1.0,
   "codes_found": [
    "CLAS35",
+   "ENGL1B",
    "ENGL30A",
    "ENGL30B",
    "ENGL35A",
@@ -6242,7 +5903,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d087825fb8025c77"
   },
   "listed": 27,
   "text_chars": 5091
@@ -6282,7 +5944,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d40868f8616991af"
   },
   "listed": 10,
   "text_chars": 5383
@@ -6337,7 +6000,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f5d36a601ff4ff67"
   },
   "listed": 24,
   "text_chars": 7218
@@ -6389,7 +6053,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "197ad6201f0c819a"
   },
   "listed": 21,
   "text_chars": 7487
@@ -6400,36 +6065,42 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.727,
+  "coverage": 0.636,
   "codes_found": [
    "MATH110A",
    "MATH110B",
    "MATH110C",
-   "MATH115",
    "MATH120",
    "MATH125",
    "MATH130",
-   "STATC1000"
+   "PHYC4AL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+   "title": "Mathematics 2.0 – AS-T Degree",
+   "h1": "Mathematics 2.0 – AS-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    208
+    341,
+    342
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 341,
+    "share": 0.636
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "84df7a6804d857d8"
   },
   "listed": 11,
-  "text_chars": 2230
+  "text_chars": 3415
  },
  {
   "control_number": "32080",
@@ -6466,7 +6137,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ac5ff5496b787787"
   },
   "listed": 8,
   "text_chars": 11624
@@ -6477,11 +6149,13 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
    "HIST1",
    "HIST12A",
    "HIST12B",
+   "HIST17A",
+   "HIST17B",
    "HIST18A",
    "HIST18B",
    "HIST37",
@@ -6496,12 +6170,13 @@
    "HIST9"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370",
-   "title": "Students who wish to earn the Associate in Arts in History for Transfer (AA-T) must complete 60 semester units of",
-   "h1": "Students who wish to earn the Associate in Arts in History for Transfer (AA-T) must complete 60 semester units of",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=369",
+   "title": "History – AA-T Degree",
+   "h1": "History – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    369,
     370
    ],
    "extractor": "pypdf",
@@ -6510,10 +6185,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "bb39ea2c134d4e2f"
   },
   "listed": 17,
-  "text_chars": 2108
+  "text_chars": 4194
  },
  {
   "control_number": "32286",
@@ -6539,25 +6215,27 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=384",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=383",
+   "title": "Political Science – AA-T Degree",
+   "h1": "Political Science – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    383,
     384,
     385
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "916904eee2f28bdc"
   },
   "listed": 14,
-  "text_chars": 5770
+  "text_chars": 8126
  },
  {
   "control_number": "32401",
@@ -6593,12 +6271,13 @@
    "PHOT51"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=126",
-   "title": "The Associate of Arts for Transfer in Studio Arts offers students a comprehensive lower division program in the",
-   "h1": "The Associate of Arts for Transfer in Studio Arts offers students a comprehensive lower division program in the",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
+   "title": "Studio Arts – AA-T Degree",
+   "h1": "Studio Arts – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    125,
     126,
     127
    ],
@@ -6608,10 +6287,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "30db39269f784409"
   },
   "listed": 24,
-  "text_chars": 4633
+  "text_chars": 4773
  },
  {
   "control_number": "32615",
@@ -6652,7 +6332,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d0bbc3bb7cf82d12"
   },
   "listed": 13,
   "text_chars": 7888
@@ -6701,7 +6382,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "01fd44d2d1cd97b1"
   },
   "listed": 19,
   "text_chars": 5414
@@ -6738,7 +6420,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c6cb74e2a3930031"
   },
   "listed": 8,
   "text_chars": 1581
@@ -6763,12 +6446,13 @@
    "VMD200A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=67",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=66",
+   "title": "The Advanced Digital Skills Certificate of Achievement builds on the Visual Design Foundation Certificate for",
+   "h1": "The Advanced Digital Skills Certificate of Achievement builds on the Visual Design Foundation Certificate for",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    66,
     67,
     68
    ],
@@ -6778,10 +6462,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cc553c8ea31accab"
   },
   "listed": 10,
-  "text_chars": 4990
+  "text_chars": 5367
  },
  {
   "control_number": "32838",
@@ -6801,24 +6486,26 @@
    "VMD154"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=130",
+   "title": "Visual Design Foundation – Certificate of Achievement",
+   "h1": "Visual Design Foundation – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    130,
     131
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4c00721a3c06768a"
   },
   "listed": 8,
-  "text_chars": 2481
+  "text_chars": 3447
  },
  {
   "control_number": "32840",
@@ -6840,12 +6527,13 @@
    "VMD200A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=88",
-   "title": "Digital Illustration – Certificate of Achievement",
-   "h1": "Digital Illustration – Certificate of Achievement",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=87",
+   "title": "It can serve as a stand-alone certificate, or as the basis for continued study in digital illustration, animation,",
+   "h1": "It can serve as a stand-alone certificate, or as the basis for continued study in digital illustration, animation,",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    87,
     88
    ],
    "extractor": "pypdf",
@@ -6854,22 +6542,51 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e6c8723263ac713d"
   },
   "listed": 12,
-  "text_chars": 1966
+  "text_chars": 3254
  },
  {
   "control_number": "32868",
   "title": "Business Administration",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT1",
+   "ACCT2",
+   "BSL1",
+   "ECON1",
+   "ECON3",
+   "ECON5",
+   "LALS5",
+   "MATH100A",
+   "PSYC5"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+   "title": "Business Administration 2.0 – AS-T Degree",
+   "h1": "Business Administration 2.0 – AS-T Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
+   },
+   "text_sha": "70df8f5ac56a64d2"
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4740
  },
  {
   "control_number": "32869",
@@ -6877,16 +6594,18 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.905,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT1",
    "CS110A",
    "CS110B",
    "CS111B",
+   "ECON1",
    "ECON15",
    "ECON20",
    "ECON22",
    "ECON25",
+   "ECON3",
    "ECON30",
    "ECON5",
    "ECON6",
@@ -6900,24 +6619,26 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=138",
+   "title": "Economics – AA-T Degree",
+   "h1": "Economics – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    138,
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "10e14379ff3cc8aa"
   },
   "listed": 21,
-  "text_chars": 2203
+  "text_chars": 3487
  },
  {
   "control_number": "33208",
@@ -6925,18 +6646,8 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.974,
+  "coverage": 0.711,
   "codes_found": [
-   "ANTH11",
-   "ART105",
-   "ART106",
-   "HIST18A",
-   "HIST18B",
-   "HIST20",
-   "LALS1",
-   "LALS10",
-   "LALS14",
-   "MUS25",
    "SPAN1",
    "SPAN10B",
    "SPAN10C",
@@ -6966,16 +6677,16 @@
    "SPAN7"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=183",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=181",
+   "title": "are better prepared to transfer to the CSU and UC systems as well as other universities with the intent of majoring",
+   "h1": "are better prepared to transfer to the CSU and UC systems as well as other universities with the intent of majoring",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    181,
+    182,
     183,
-    184,
-    185,
-    186
+    184
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -6983,10 +6694,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "42411e2f54e8b201"
   },
   "listed": 38,
-  "text_chars": 7830
+  "text_chars": 6390
  },
  {
   "control_number": "33298",
@@ -7034,7 +6746,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0ac67b45193c0fd5"
   },
   "listed": 21,
   "text_chars": 5216
@@ -7045,8 +6758,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "CMST3",
+   "ECON1",
+   "ECON3",
    "ECON5",
    "ENGLC1001",
    "HIST41A",
@@ -7066,6 +6782,7 @@
    "POLS2",
    "POLSC1000",
    "PSYC5",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -7084,7 +6801,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "464ea7002724909e"
   },
   "listed": 24,
   "text_chars": 5371
@@ -7126,7 +6844,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "822023024f644114"
   },
   "listed": 12,
   "text_chars": 7978
@@ -7137,8 +6856,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.632,
+  "coverage": 1.0,
   "codes_found": [
+   "THA150A",
+   "THA150B",
    "THA201A",
    "THA201B",
    "THA201C",
@@ -7150,29 +6871,39 @@
    "THA203C",
    "THA204A",
    "THA204B",
-   "THA204C"
+   "THA204C",
+   "THA60",
+   "THA61",
+   "THA63",
+   "THA80",
+   "THA81"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=821",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
+   "title": "Theatre Arts – AA-T Degree",
+   "h1": "Theatre Arts – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    821,
-    822,
-    823
+    128,
+    129
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 128,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1ac04d243347080e"
   },
   "listed": 19,
-  "text_chars": 8433
+  "text_chars": 3692
  },
  {
   "control_number": "35115",
@@ -7198,25 +6929,27 @@
    "ECHO401"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=244",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=243",
+   "title": "Diagnostic Cardiac Sonography – AS Degree",
+   "h1": "Diagnostic Cardiac Sonography – AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    243,
     244,
     245
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b425c5814442074f"
   },
   "listed": 14,
-  "text_chars": 6647
+  "text_chars": 8034
  },
  {
   "control_number": "35205",
@@ -7256,7 +6989,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "71bdc861489260b7"
   },
   "listed": 12,
   "text_chars": 8519
@@ -7267,7 +7001,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.951,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH3",
    "ANTH3C",
@@ -7277,6 +7011,8 @@
    "BIO19",
    "BIO20",
    "BIO33",
+   "ECON1",
+   "ECON3",
    "ECON5",
    "ENRG3",
    "ENRG3L",
@@ -7327,7 +7063,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4b7c5cdb110bba72"
   },
   "listed": 41,
   "text_chars": 9330
@@ -7351,12 +7088,13 @@
    "BCST141"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=102",
-   "title": "The Foundations in Broadcast Electronic Media Arts certificate provides essential knowledge and skills in audio,",
-   "h1": "The Foundations in Broadcast Electronic Media Arts certificate provides essential knowledge and skills in audio,",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=101",
+   "title": "Foundations in Broadcast Electronic Media Arts – Certificate of",
+   "h1": "Foundations in Broadcast Electronic Media Arts – Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    101,
     102
    ],
    "extractor": "pypdf",
@@ -7365,10 +7103,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5b9bda0878f3d520"
   },
   "listed": 9,
-  "text_chars": 2661
+  "text_chars": 2839
  },
  {
   "control_number": "35690",
@@ -7450,7 +7189,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0e7adab95f7da591"
   },
   "listed": 54,
   "text_chars": 11460
@@ -7483,7 +7223,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f9fcc13ae9b02625"
   },
   "listed": 5,
   "text_chars": 2396
@@ -7493,31 +7234,12 @@
   "title": "Broadcast Motion Graphics",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "BCST160",
-   "BCST165"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    73
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 2396
+  "text_chars": 0
  },
  {
   "control_number": "35711",
@@ -7537,24 +7259,26 @@
    "BCST165"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=128",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=127",
+   "title": "Television Production – Certificate of Achievement",
+   "h1": "Television Production – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    127,
     128
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b125f445ab2029a7"
   },
   "listed": 8,
-  "text_chars": 2903
+  "text_chars": 2999
  },
  {
   "control_number": "35712",
@@ -7592,7 +7316,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2ce9e1a426e6c597"
   },
   "listed": 11,
   "text_chars": 5226
@@ -7616,24 +7341,26 @@
    "BCST165"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=130",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129",
+   "title": "Video Editing and Post Production – Certificate of Achievement",
+   "h1": "Video Editing and Post Production – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    129,
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2f832b441f704985"
   },
   "listed": 9,
-  "text_chars": 2587
+  "text_chars": 3181
  },
  {
   "control_number": "35714",
@@ -7662,7 +7389,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f9fcc13ae9b02625"
   },
   "listed": 4,
   "text_chars": 2396
@@ -7704,7 +7432,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "da61219ece6d9ffc"
   },
   "listed": 10,
   "text_chars": 9973
@@ -7736,57 +7465,40 @@
    "SOC1"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=365",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=364",
+   "title": "Critical Pacific Islands & Oceania Studies – AA Degree",
+   "h1": "Critical Pacific Islands & Oceania Studies – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    364,
     365,
     366,
-    367,
-    368
+    367
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e98a2c8d4b4f98c7"
   },
   "listed": 17,
-  "text_chars": 11440
+  "text_chars": 10886
  },
  {
   "control_number": "36284",
   "title": "Cloud-Based Electronic Communication",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9921"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=565",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2939
+  "text_chars": 0
  },
  {
   "control_number": "36297",
@@ -7840,7 +7552,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "7ad810a01288f966"
   },
   "listed": 25,
   "text_chars": 12240
@@ -7873,7 +7586,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8f6125ad9871bc03"
   },
   "listed": 4,
   "text_chars": 1808
@@ -7883,30 +7597,12 @@
   "title": "ESL Beginning Low Conversation",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9909"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "36398",
@@ -7942,7 +7638,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "36bb59ff1d602732"
   },
   "listed": 8,
   "text_chars": 6739
@@ -7974,24 +7671,26 @@
    "ESLN6417"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=165",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=164",
+   "title": "ESL Beginning Workplace Skills – Certificate of Competency",
+   "h1": "ESL Beginning Workplace Skills – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    164,
     165
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "023122d134f7dbab"
   },
   "listed": 5,
-  "text_chars": 2526
+  "text_chars": 3720
  },
  {
   "control_number": "36404",
@@ -8027,7 +7726,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e6286a3e1602eb93"
   },
   "listed": 8,
   "text_chars": 6396
@@ -8066,7 +7766,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2224c33273148a64"
   },
   "listed": 9,
   "text_chars": 5076
@@ -8086,24 +7787,26 @@
    "ESLN4015"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=171",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=170",
+   "title": "ESL Literacy – Certificate of Competency",
+   "h1": "ESL Literacy – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    170,
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "bf78dd587592aacc"
   },
   "listed": 5,
-  "text_chars": 1833
+  "text_chars": 2840
  },
  {
   "control_number": "36409",
@@ -8120,12 +7823,13 @@
    "ESLN3405"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=161",
-   "title": "ESL Beginning High Focus Skills – Certificate of Competency",
-   "h1": "ESL Beginning High Focus Skills – Certificate of Competency",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
+   "title": "ESL Beginning High – Certificate of Competency",
+   "h1": "ESL Beginning High – Certificate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    160,
     161
    ],
    "extractor": "pypdf",
@@ -8134,10 +7838,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "de39b196704da38b"
   },
   "listed": 5,
-  "text_chars": 1731
+  "text_chars": 3041
  },
  {
   "control_number": "36451",
@@ -8189,7 +7894,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5c5389172baf0386"
   },
   "listed": 25,
   "text_chars": 4806
@@ -8200,37 +7906,49 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "BIO11",
    "BIO9",
+   "CDEV53",
+   "CDEV67",
+   "CDEV73",
    "ECON5",
    "LALS5",
    "PSYC21",
    "PSYC5",
    "PSYCC1000",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=385",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=188",
+   "title": "Child and Adolescent Development – AA-T Degree",
+   "h1": "Child and Adolescent Development – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    385,
-    386
+    188,
+    189,
+    190,
+    191
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 188,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5abecf89997ec306"
   },
   "listed": 12,
-  "text_chars": 5380
+  "text_chars": 10948
  },
  {
   "control_number": "36464",
@@ -8262,7 +7980,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "52122d2fc410104c"
   },
   "listed": 6,
   "text_chars": 2201
@@ -8294,7 +8013,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "679530a0cf72fe85"
   },
   "listed": 2,
   "text_chars": 4039
@@ -8304,31 +8024,12 @@
   "title": "QuickBooks & Spreadsheets for Accounting",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "36715",
@@ -8360,7 +8061,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "41e166f24e95aa30"
   },
   "listed": 5,
   "text_chars": 4141
@@ -8396,7 +8098,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6ae8133f23ffedf2"
   },
   "listed": 7,
   "text_chars": 5526
@@ -8434,7 +8137,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "70a1b5277c2d30ee"
   },
   "listed": 8,
   "text_chars": 4247
@@ -8477,7 +8181,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0ddfb2460fbb333f"
   },
   "listed": 2,
   "text_chars": 2449
@@ -8518,7 +8223,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a212d85232b53fd1"
   },
   "listed": 10,
   "text_chars": 6051
@@ -8554,7 +8260,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "64f5fcb10822a41f"
   },
   "listed": 7,
   "text_chars": 2468
@@ -8587,7 +8294,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "64f5fcb10822a41f"
   },
   "listed": 5,
   "text_chars": 2468
@@ -8619,7 +8327,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f2a9bba50a8b50eb"
   },
   "listed": 3,
   "text_chars": 2639
@@ -8629,30 +8338,12 @@
   "title": "ESL Beginning High Oral Communication Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLF5345"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    643
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2709
+  "text_chars": 0
  },
  {
   "control_number": "36979",
@@ -8671,30 +8362,12 @@
   "title": "Medisoft for Business",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2982
+  "text_chars": 0
  },
  {
   "control_number": "37037",
@@ -8750,7 +8423,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "fde8fa93a897c6dc"
   },
   "listed": 29,
   "text_chars": 9614
@@ -8787,7 +8461,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "886b91b56c38334a"
   },
   "listed": 9,
   "text_chars": 2210
@@ -8841,7 +8516,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4a1d2028a8a9ab29"
   },
   "listed": 23,
   "text_chars": 9747
@@ -8888,7 +8564,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "48768780ca812a23"
   },
   "listed": 17,
   "text_chars": 5881
@@ -8898,33 +8575,12 @@
   "title": "AV Technologist",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.571,
-  "codes_found": [
-   "BCST127B",
-   "BCST128",
-   "BCST141",
-   "BCST165"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    73
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 2396
+  "text_chars": 0
  },
  {
   "control_number": "37167",
@@ -8968,7 +8624,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "630ea119047b13c4"
   },
   "listed": 15,
   "text_chars": 11440
@@ -9008,7 +8665,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ccc4f14174637cd4"
   },
   "listed": 12,
   "text_chars": 4356
@@ -9031,33 +8689,40 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "IDST29",
    "IDST30",
    "IDST31",
-   "IDST81B"
+   "IDST81B",
+   "POLS45"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=363",
+   "title": "Critical Middle East /South West Asia and North Africa Studies –",
+   "h1": "Critical Middle East /South West Asia and North Africa Studies –",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    367,
-    368
+    363,
+    364
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 363,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "834bdebac1e59b90"
   },
   "listed": 5,
-  "text_chars": 5881
+  "text_chars": 5048
  },
  {
   "control_number": "37480",
@@ -9089,7 +8754,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d818b85d8ed8c20b"
   },
   "listed": 5,
   "text_chars": 4154
@@ -9110,24 +8776,26 @@
    "PHOT83"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=74",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=73",
+   "title": "Black and White Darkroom Photography – Certificate of Achievement",
+   "h1": "Black and White Darkroom Photography – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    73,
     74
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5b1ea27f5dee007b"
   },
   "listed": 6,
-  "text_chars": 2502
+  "text_chars": 3258
  },
  {
   "control_number": "37513",
@@ -9176,7 +8844,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "41692a5df07c8f30"
   },
   "listed": 38,
   "text_chars": 8693
@@ -9198,33 +8867,12 @@
   "title": "Accounting Assistant & Core Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "COMP9900",
-   "COMP9904",
-   "COMP9921"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=564",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    564,
-    565
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 5923
+  "text_chars": 0
  },
  {
   "control_number": "37597",
@@ -9260,7 +8908,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "18c03061868616f4"
   },
   "listed": 8,
   "text_chars": 9439
@@ -9301,7 +8950,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9e3371f1cd0f8901"
   },
   "listed": 11,
   "text_chars": 4979
@@ -9311,38 +8961,12 @@
   "title": "iPhone App Programming",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "CNIT197",
-   "CS110B",
-   "CS110C",
-   "CS111B",
-   "CS111C",
-   "CS177",
-   "CS195"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=314",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    314,
-    315,
-    316
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 6947
+  "text_chars": 0
  },
  {
   "control_number": "37602",
@@ -9380,7 +9004,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9dfd6b763b733309"
   },
   "listed": 11,
   "text_chars": 4499
@@ -9416,7 +9041,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b1951807e29264a4"
   },
   "listed": 6,
   "text_chars": 4793
@@ -9438,26 +9064,28 @@
    "FSC64"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=250",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=249",
+   "title": "Fire Protection – Certificate of Achievement",
+   "h1": "Fire Protection – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    249,
     250,
     251,
     252
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1a372e8256d52283"
   },
   "listed": 7,
-  "text_chars": 8217
+  "text_chars": 9031
  },
  {
   "control_number": "37732",
@@ -9488,7 +9116,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d439e7b2af7bdc7e"
   },
   "listed": 5,
   "text_chars": 1559
@@ -9523,7 +9152,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ecddabeef381ea88"
   },
   "listed": 6,
   "text_chars": 3159
@@ -9558,7 +9188,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9a438ef541a2e0d0"
   },
   "listed": 6,
   "text_chars": 2825
@@ -9598,7 +9229,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8674adff47de29ac"
   },
   "listed": 10,
   "text_chars": 4470
@@ -9617,12 +9249,14 @@
    "HLTH82"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=259",
-   "title": "Upon award of the Healthcare Interpreting Certificate, students are encouraged to take HLTH 91N Coaching",
-   "h1": "Upon award of the Healthcare Interpreting Certificate, students are encouraged to take HLTH 91N Coaching",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=257",
+   "title": "The Healthcare Interpreting (HCI) Certificate of Achievement program is designed to prepare multilingual and",
+   "h1": "The Healthcare Interpreting (HCI) Certificate of Achievement program is designed to prepare multilingual and",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    257,
+    258,
     259
    ],
    "extractor": "pypdf",
@@ -9631,10 +9265,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "7112010acd977d25"
   },
   "listed": 4,
-  "text_chars": 2686
+  "text_chars": 7190
  },
  {
   "control_number": "37738",
@@ -9666,7 +9301,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e97b72b757978460"
   },
   "listed": 5,
   "text_chars": 4692
@@ -9704,7 +9340,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e7a654a45a73e158"
   },
   "listed": 8,
   "text_chars": 5076
@@ -9753,7 +9390,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d2ec244b0d76ca00"
   },
   "listed": 7,
   "text_chars": 7297
@@ -9788,7 +9426,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "adc86191417807be"
   },
   "listed": 6,
   "text_chars": 2131
@@ -9812,12 +9451,13 @@
    "VMD101"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=89",
-   "title": "The Certificate of Achievement in Digital Photography provides a foundation in photography and design, and",
-   "h1": "The Certificate of Achievement in Digital Photography provides a foundation in photography and design, and",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=88",
+   "title": "Digital Photography – Certificate of Achievement",
+   "h1": "Digital Photography – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    88,
     89
    ],
    "extractor": "pypdf",
@@ -9826,10 +9466,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "68949fd128ba6906"
   },
   "listed": 9,
-  "text_chars": 2553
+  "text_chars": 2698
  },
  {
   "control_number": "37780",
@@ -9837,7 +9478,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ART125A",
    "BCST100",
@@ -9848,6 +9489,7 @@
    "BCST136",
    "BCST159",
    "CINE19",
+   "CMST2",
    "CNIT129",
    "CNIT131",
    "COMMC1000",
@@ -9869,7 +9511,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4d216e39ce8cbda4"
   },
   "listed": 15,
   "text_chars": 2040
@@ -9906,7 +9549,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c519fd0a27b1d1c6"
   },
   "listed": 6,
   "text_chars": 10269
@@ -9942,7 +9586,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1cdf70ccc24c72be"
   },
   "listed": 7,
   "text_chars": 2858
@@ -9978,7 +9623,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "00772b1c384c5559"
   },
   "listed": 7,
   "text_chars": 1969
@@ -9989,7 +9635,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.947,
+  "coverage": 1.0,
   "codes_found": [
    "ASAM30",
    "ASIA30",
@@ -10003,6 +9649,7 @@
    "CINE23A",
    "CINE23B",
    "CINE24",
+   "CMST8",
    "ENGL61",
    "IDST14",
    "LGBT11",
@@ -10028,7 +9675,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c1fca6afede9cd66"
   },
   "listed": 19,
   "text_chars": 9452
@@ -10079,7 +9727,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "165f1d12e5bd6290"
   },
   "listed": 9,
   "text_chars": 6384
@@ -10121,7 +9770,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1fcfcebc56304b28"
   },
   "listed": 11,
   "text_chars": 6512
@@ -10138,24 +9788,26 @@
    "FSC110"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=234",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=233",
+   "title": "Basic Fire Academy (Accredited Local Academy) – Certificate of",
+   "h1": "Basic Fire Academy (Accredited Local Academy) – Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
     234
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "adb72688faae759b"
   },
   "listed": 2,
-  "text_chars": 2387
+  "text_chars": 3884
  },
  {
   "control_number": "38227",
@@ -10185,7 +9837,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "608d2578a7132da3"
   },
   "listed": 4,
   "text_chars": 2402
@@ -10222,7 +9875,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "43314bbd5661b0fb"
   },
   "listed": 8,
   "text_chars": 1483
@@ -10233,7 +9887,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 0.95,
   "codes_found": [
    "ASAM30",
    "ASIA30",
@@ -10247,6 +9901,7 @@
    "CINE23A",
    "CINE23C",
    "CINE24",
+   "CMST8",
    "ENGL61",
    "IDST14",
    "LGBT11",
@@ -10271,7 +9926,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c33eccf0da747dbc"
   },
   "listed": 20,
   "text_chars": 7700
@@ -10316,7 +9972,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5fe9cf40c8fed735"
   },
   "listed": 15,
   "text_chars": 3634
@@ -10327,10 +9984,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT1",
    "BSL1",
+   "ECON1",
    "MABS60"
   ],
   "source": {
@@ -10348,7 +10006,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "bf393d1b46c7a6c3"
   },
   "listed": 4,
   "text_chars": 2147
@@ -10388,7 +10047,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "eb12da82c212a0a8"
   },
   "listed": 10,
   "text_chars": 5598
@@ -10424,7 +10084,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "eb12da82c212a0a8"
   },
   "listed": 6,
   "text_chars": 5634
@@ -10464,7 +10125,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8d80ab6a3c539662"
   },
   "listed": 8,
   "text_chars": 9263
@@ -10495,7 +10157,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2e9634fedf1f1062"
   },
   "listed": 2,
   "text_chars": 1713
@@ -10516,25 +10179,27 @@
    "CINE60"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=75",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=74",
+   "title": "Cinema Foundations – Certificate of Achievement",
+   "h1": "Cinema Foundations – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    74,
     75,
     76
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5bb46a90b2981640"
   },
   "listed": 6,
-  "text_chars": 4811
+  "text_chars": 5759
  },
  {
   "control_number": "38449",
@@ -10566,7 +10231,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ca2261bd0e0f36eb"
   },
   "listed": 6,
   "text_chars": 1614
@@ -10588,24 +10254,26 @@
    "THA154A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=90",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=89",
+   "title": "Directing – Certificate of Achievement",
+   "h1": "Directing – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    89,
     90
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5fd8e6a505973719"
   },
   "listed": 7,
-  "text_chars": 2320
+  "text_chars": 3084
  },
  {
   "control_number": "38451",
@@ -10640,24 +10308,26 @@
    "PHST30"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=125",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=124",
+   "title": "Screenwriting – Certificate of Achievement",
+   "h1": "Screenwriting – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    124,
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "002976a26d268b84"
   },
   "listed": 23,
-  "text_chars": 2263
+  "text_chars": 3493
  },
  {
   "control_number": "38563",
@@ -10700,12 +10370,13 @@
    "THA204C"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=66",
-   "title": "The Certificate of Achievement in Acting provides students the basic skills, historical knowledge, and techniques",
-   "h1": "The Certificate of Achievement in Acting provides students the basic skills, historical knowledge, and techniques",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=65",
+   "title": "Acting – Certificate of Achievement",
+   "h1": "Acting – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    65,
     66
    ],
    "extractor": "pypdf",
@@ -10714,10 +10385,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0c7adebf8ba7ac97"
   },
   "listed": 19,
-  "text_chars": 2933
+  "text_chars": 3079
  },
  {
   "control_number": "38907",
@@ -10765,7 +10437,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2a40d9771b515ba3"
   },
   "listed": 21,
   "text_chars": 7055
@@ -10815,7 +10488,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "450d3dc4102d3bcf"
   },
   "listed": 20,
   "text_chars": 5482
@@ -10861,12 +10535,13 @@
    "MUS9C"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=115",
-   "title": "The Certificate of Achievement in Music provides the technical and artistic foundations for students pursuing",
-   "h1": "The Certificate of Achievement in Music provides the technical and artistic foundations for students pursuing",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=114",
+   "title": "Music – Certificate of Achievement",
+   "h1": "Music – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    114,
     115,
     116
    ],
@@ -10876,10 +10551,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0af1961bd81c2472"
   },
   "listed": 36,
-  "text_chars": 5181
+  "text_chars": 5325
  },
  {
   "control_number": "38940",
@@ -10915,7 +10591,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0b93aee80a649bc4"
   },
   "listed": 9,
   "text_chars": 5149
@@ -10926,15 +10603,17 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "BIO108",
    "BIO112",
    "BIO120",
    "CHEM101A",
+   "CMST20",
    "COMMC1000",
    "PSYC21",
    "PSYCC1000",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -10953,7 +10632,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "11ee72141c64d879"
   },
   "listed": 10,
   "text_chars": 5386
@@ -10994,24 +10674,26 @@
    "POLS22"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=351",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=350",
+   "title": "Sustainability – Certificate of Achievement",
+   "h1": "Sustainability – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    350,
     351
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f927f406c88b01f1"
   },
   "listed": 27,
-  "text_chars": 2480
+  "text_chars": 3412
  },
  {
   "control_number": "39100",
@@ -11080,7 +10762,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "3ff84dbb13f0f125"
   },
   "listed": 41,
   "text_chars": 7160
@@ -11123,7 +10806,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "693aff48e13e1763"
   },
   "listed": 11,
   "text_chars": 9718
@@ -11166,7 +10850,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4686fa86b290b539"
   },
   "listed": 11,
   "text_chars": 10019
@@ -11193,12 +10878,13 @@
    "RF86A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=124",
-   "title": "Courses Required for the Retail Floristry Certificate Units 28.0",
-   "h1": "Courses Required for the Retail Floristry Certificate Units 28.0",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=123",
+   "title": "Retail Floristry – Certificate of Achievement",
+   "h1": "Retail Floristry – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    123,
     124
    ],
    "extractor": "pypdf",
@@ -11207,10 +10893,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d3b02cf18de4fea0"
   },
   "listed": 12,
-  "text_chars": 2058
+  "text_chars": 3516
  },
  {
   "control_number": "39221",
@@ -11247,7 +10934,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0bd0c3b59c1f6a62"
   },
   "listed": 8,
   "text_chars": 10285
@@ -11287,7 +10975,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "45167912caad4308"
   },
   "listed": 9,
   "text_chars": 6397
@@ -11298,32 +10987,41 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
+   "FSC75A",
+   "FSC75B",
    "FSC75C",
    "FSC75D",
    "FSC75E",
    "FSC75F"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=663",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=238",
+   "title": "Company Officer – Certificate of Achievement",
+   "h1": "Company Officer – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    663
+    238,
+    239
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 238,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6c3449dff468afe1"
   },
   "listed": 6,
-  "text_chars": 3193
+  "text_chars": 3857
  },
  {
   "control_number": "39335",
@@ -11331,7 +11029,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.754,
+  "coverage": 0.762,
   "codes_found": [
    "BIO108",
    "BIO111",
@@ -11427,6 +11125,7 @@
    "PSYC5",
    "PSYCC1000",
    "SOC1",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -11447,7 +11146,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "00e8c701104f72e7"
   },
   "listed": 126,
   "text_chars": 8733
@@ -11469,24 +11169,26 @@
    "RF86D"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=117",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=116",
+   "title": "Oriental Floral Design – Certificate of Achievement",
+   "h1": "Oriental Floral Design – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    116,
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d916e12ef0b76d2b"
   },
   "listed": 7,
-  "text_chars": 2209
+  "text_chars": 3854
  },
  {
   "control_number": "39685",
@@ -11505,24 +11207,26 @@
    "FASH73"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=69",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=68",
+   "title": "Apparel Construction – Certificate of Achievement",
+   "h1": "Apparel Construction – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    68,
     69
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9fbffa2eb535bafc"
   },
   "listed": 7,
-  "text_chars": 2221
+  "text_chars": 3543
  },
  {
   "control_number": "39727",
@@ -11572,7 +11276,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a8ff38adb51b3726"
   },
   "listed": 23,
   "text_chars": 4321
@@ -11621,10 +11326,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b6df434a57455f09"
   },
   "listed": 19,
-  "text_chars": 4068
+  "text_chars": 4069
  },
  {
   "control_number": "39762",
@@ -11654,25 +11360,27 @@
    "SOC55"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=361",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=360",
+   "title": "Cannabis Studies – AA Degree",
+   "h1": "Cannabis Studies – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    360,
     361,
     362
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cb8cfe8b1b762a00"
   },
   "listed": 6,
-  "text_chars": 4985
+  "text_chars": 7219
  },
  {
   "control_number": "39959",
@@ -11708,7 +11416,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8f85857792111d89"
   },
   "listed": 10,
   "text_chars": 1737
@@ -11742,7 +11451,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0c51a1a1821dbad6"
   },
   "listed": 5,
   "text_chars": 2259
@@ -11782,7 +11492,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a1eed0d45e1537a3"
   },
   "listed": 10,
   "text_chars": 7938
@@ -11793,7 +11504,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH3",
    "BIO108",
@@ -11802,6 +11513,8 @@
    "BIO120",
    "BIO134",
    "CDEV53",
+   "ECON1",
+   "ECON3",
    "ECON5",
    "ENVS31",
    "LALS5",
@@ -11826,7 +11539,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "09f0e55476f07fab"
   },
   "listed": 16,
   "text_chars": 5253
@@ -11837,15 +11551,20 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.786,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ57",
    "ANTH3",
    "BIO11",
    "BIO9",
    "CDEV53",
+   "CMST5",
+   "ECON1",
+   "ECON3",
    "ECON5",
    "ENGLC1001",
+   "HIST17A",
+   "HIST17B",
    "HLTH30",
    "LALS5",
    "PSYC10",
@@ -11860,6 +11579,7 @@
    "SOC3",
    "SOC35",
    "SOC7",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -11880,7 +11600,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "bf77cc584ab3fe00"
   },
   "listed": 28,
   "text_chars": 10018
@@ -11903,25 +11624,27 @@
    "MRKT140"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=140",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=139",
+   "title": "Entrepreneurship and Innovation in Business – Certificate of",
+   "h1": "Entrepreneurship and Innovation in Business – Certificate of",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    139,
     140,
     141
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "dfe54055dacba74c"
   },
   "listed": 8,
-  "text_chars": 5155
+  "text_chars": 5758
  },
  {
   "control_number": "40157",
@@ -11960,7 +11683,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "7faee04d840b2d87"
   },
   "listed": 10,
   "text_chars": 9441
@@ -11997,7 +11721,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d829bd1e99c896bb"
   },
   "listed": 7,
   "text_chars": 4770
@@ -12007,34 +11732,12 @@
   "title": "Entrepreneurship and Innovation in Broadcast Media",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "BCST119",
-   "BCST135",
-   "BCST136",
-   "MRKT180"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=113",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    113,
-    114
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 4557
+  "text_chars": 0
  },
  {
   "control_number": "40169",
@@ -12073,7 +11776,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5ef0ff8e733286cc"
   },
   "listed": 10,
   "text_chars": 10542
@@ -12108,7 +11812,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "86224bc21445ee28"
   },
   "listed": 6,
   "text_chars": 2552
@@ -12118,33 +11823,12 @@
   "title": "Technical Theater Production - Costume and Makeup",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "THA150A",
-   "THA61",
-   "THA80",
-   "THA81"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    129
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 2574
+  "text_chars": 0
  },
  {
   "control_number": "40174",
@@ -12185,7 +11869,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c986549dbffa9fcc"
   },
   "listed": 13,
   "text_chars": 7245
@@ -12227,7 +11912,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9c309dfe52bc39be"
   },
   "listed": 15,
   "text_chars": 1589
@@ -12237,36 +11923,12 @@
   "title": "Entrepreneurship in Visual Media Design",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.7,
-  "codes_found": [
-   "PHOT100",
-   "VMD101",
-   "VMD105",
-   "VMD120",
-   "VMD140",
-   "VMD150",
-   "VMD154"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    131
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 10,
-  "text_chars": 2481
+  "text_chars": 0
  },
  {
   "control_number": "40205",
@@ -12274,10 +11936,11 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "BIO108",
    "BIO112",
+   "CMST5",
    "EMT12",
    "PHTC101",
    "PHTC102",
@@ -12304,7 +11967,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1aff848286a8d743"
   },
   "listed": 10,
   "text_chars": 12614
@@ -12333,24 +11997,26 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=248",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=247",
+   "title": "The Associate of Science in Electrocardiography Technician prepares students to operate various ECG equipment",
+   "h1": "The Associate of Science in Electrocardiography Technician prepares students to operate various ECG equipment",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    247,
     248
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "92f93e9088e826cb"
   },
   "listed": 14,
-  "text_chars": 2125
+  "text_chars": 4110
  },
  {
   "control_number": "40207",
@@ -12383,7 +12049,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "07cbb5f4f51b541e"
   },
   "listed": 6,
   "text_chars": 5754
@@ -12406,34 +12073,42 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "CNIT106",
    "CNIT120",
    "CNIT121",
    "CNIT122",
    "CNIT123",
-   "CNIT201C"
+   "CNIT201C",
+   "CNIT40"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=312",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
+   "title": "Cybersecurity – Certificate of Achievement",
+   "h1": "Cybersecurity – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    312
+    317,
+    318
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 317,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "9f5f1e86eefa6864"
   },
   "listed": 7,
-  "text_chars": 1658
+  "text_chars": 3189
  },
  {
   "control_number": "40305",
@@ -12463,60 +12138,40 @@
    "SPAN1A"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=372",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=371",
+   "title": "Labor and Community Organizing – Certificate of Achievement",
+   "h1": "Labor and Community Organizing – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    371,
     372,
     373,
-    374,
-    375
+    374
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "3ccd6cae1641667f"
   },
   "listed": 18,
-  "text_chars": 11524
+  "text_chars": 9520
  },
  {
   "control_number": "40407",
   "title": "Technical Theater Production - Stagecraft",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "THA150A",
-   "THA60",
-   "THA61",
-   "THA63"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=129",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    129
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 2574
+  "text_chars": 0
  },
  {
   "control_number": "40408",
@@ -12540,24 +12195,26 @@
    "MRKT140"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=317",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=316",
+   "title": "Core Skills Interior Design – Certificate of Achievement",
+   "h1": "Core Skills Interior Design – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    316,
     317
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c0d01eda9a76f00b"
   },
   "listed": 12,
-  "text_chars": 2168
+  "text_chars": 2909
  },
  {
   "control_number": "40432",
@@ -12565,8 +12222,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.833,
+  "coverage": 1.0,
   "codes_found": [
+   "GNBS100",
    "MABS101",
    "MABS202",
    "MABS391",
@@ -12574,25 +12232,33 @@
    "MABS67"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=561",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=148",
+   "title": "Microsoft Office Specialist – Certificate of Achievement",
+   "h1": "Microsoft Office Specialist – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    561,
-    562
+    148,
+    149,
+    150,
+    151
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 148,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4c1104020d6747ec"
   },
   "listed": 6,
-  "text_chars": 6175
+  "text_chars": 8711
  },
  {
   "control_number": "40433",
@@ -12613,25 +12279,27 @@
    "BIM120"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=298",
+   "title": "Architectural Drafting Technology – Certificate of Achievement",
+   "h1": "Architectural Drafting Technology – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    298,
     299,
     300
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c6f177c25da7a961"
   },
   "listed": 9,
-  "text_chars": 5783
+  "text_chars": 7002
  },
  {
   "control_number": "40434",
@@ -12652,60 +12320,39 @@
    "RF88"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=100",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=99",
+   "title": "Floral and Special Events Coordinator – Certificate of Achievement",
+   "h1": "Floral and Special Events Coordinator – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    99,
     100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "bf98ae25f0f36c77"
   },
   "listed": 9,
-  "text_chars": 5029
+  "text_chars": 5139
  },
  {
   "control_number": "40435",
   "title": "Human Resources Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.714,
-  "codes_found": [
-   "GNBS100",
-   "MGT231",
-   "MGT232",
-   "MGT233",
-   "MGT234"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    150,
-    151
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 5634
+  "text_chars": 0
  },
  {
   "control_number": "40460",
@@ -12740,7 +12387,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f6f29d5e8be5bdce"
   },
   "listed": 7,
   "text_chars": 5747
@@ -12750,35 +12398,12 @@
   "title": "Human Resources Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.714,
-  "codes_found": [
-   "GNBS100",
-   "MGT231",
-   "MGT232",
-   "MGT233",
-   "MGT234"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=150",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    150,
-    151
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 7,
-  "text_chars": 5634
+  "text_chars": 0
  },
  {
   "control_number": "40695",
@@ -12810,7 +12435,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4efeffcfb2372a0b"
   },
   "listed": 5,
   "text_chars": 5335
@@ -12846,7 +12472,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "db638ff453366dca"
   },
   "listed": 7,
   "text_chars": 5182
@@ -12856,71 +12483,24 @@
   "title": "Build Automation for DevOps & QA",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.833,
-  "codes_found": [
-   "CNIT133",
-   "CS131B",
-   "CS160A",
-   "CS160B",
-   "CS177"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    578,
-    579,
-    580
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 8137
+  "text_chars": 0
  },
  {
   "control_number": "40706",
   "title": "Database Administration",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.667,
-  "codes_found": [
-   "CS150A",
-   "CS155P",
-   "CS160A",
-   "CS160B"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=578",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    578,
-    579,
-    580
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 8137
+  "text_chars": 0
  },
  {
   "control_number": "40750",
@@ -12953,7 +12533,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "78e1aaf4b5b87d8a"
   },
   "listed": 6,
   "text_chars": 4241
@@ -12964,7 +12545,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.923,
+  "coverage": 1.0,
   "codes_found": [
    "ECON5",
    "ESL188",
@@ -12977,27 +12558,30 @@
    "MATH108",
    "MATH90",
    "PSYC5",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=160",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=159",
+   "title": "ESL and Math Milestone – Certificate of Achievement",
+   "h1": "ESL and Math Milestone – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    159,
     160
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "734fcc0326c7a875"
   },
   "listed": 13,
-  "text_chars": 2471
+  "text_chars": 2808
  },
  {
   "control_number": "40774",
@@ -13026,24 +12610,26 @@
    "LGBT15"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=371",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=370",
+   "title": "Humanities: Ideas, Religions, and the Arts – Certificate of Achievement",
+   "h1": "Humanities: Ideas, Religions, and the Arts – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    370,
     371
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "cb32d1902c43163d"
   },
   "listed": 17,
-  "text_chars": 2344
+  "text_chars": 2690
  },
  {
   "control_number": "40778",
@@ -13076,7 +12662,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "1999c41f16b9d468"
   },
   "listed": 6,
   "text_chars": 5518
@@ -13135,7 +12722,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "fdbd07699a89567d"
   },
   "listed": 27,
   "text_chars": 8171
@@ -13184,7 +12772,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "8c6321aee928a348"
   },
   "listed": 17,
   "text_chars": 9985
@@ -13248,7 +12837,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "04eb16e8ad190b86"
   },
   "listed": 32,
   "text_chars": 9987
@@ -13300,7 +12890,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c6135c11207dc235"
   },
   "listed": 22,
   "text_chars": 4676
@@ -13349,7 +12940,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "76d3027fcaf9602c"
   },
   "listed": 19,
   "text_chars": 3884
@@ -13385,7 +12977,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "93f1f3dad257593b"
   },
   "listed": 7,
   "text_chars": 5244
@@ -13423,27 +13016,28 @@
    "PE8"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=279",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=278",
+   "title": "Personal Training – Certificate of Achievement",
+   "h1": "Personal Training – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    278,
     279,
     280,
-    281,
-    282
+    281
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "863a79e03569a9b7"
   },
   "listed": 24,
-  "text_chars": 12168
+  "text_chars": 10463
  },
  {
   "control_number": "41047",
@@ -13479,7 +13073,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "92a272466f169d55"
   },
   "listed": 9,
   "text_chars": 5533
@@ -13519,7 +13114,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "729935778b80fb6e"
   },
   "listed": 9,
   "text_chars": 8595
@@ -13530,7 +13126,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT1",
    "BIO121",
@@ -13546,9 +13142,11 @@
    "CAHS34",
    "CAHS42",
    "CAHS43",
+   "ECON3",
    "ECON5",
    "LALS5",
    "PSYC5",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -13567,7 +13165,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "466cbcc20834c0df"
   },
   "listed": 20,
   "text_chars": 5539
@@ -13597,7 +13196,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "901519ae39fecb2f"
   },
   "listed": 1,
   "text_chars": 3089
@@ -13636,7 +13236,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c587583b71aaeded"
   },
   "listed": 9,
   "text_chars": 5969
@@ -13667,25 +13268,27 @@
    "WGST25"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=359",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=358",
+   "title": "Black/African American Studies – AA Degree",
+   "h1": "Black/African American Studies – AA Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    358,
     359,
     360
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "32885dc3155d6561"
   },
   "listed": 16,
-  "text_chars": 5969
+  "text_chars": 7832
  },
  {
   "control_number": "41315",
@@ -13737,43 +13340,23 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c6a5ceff7928e264"
   },
   "listed": 24,
-  "text_chars": 8622
+  "text_chars": 8621
  },
  {
   "control_number": "41353",
   "title": "Entrepreneurship and Innovation in Journalism",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "ENTR101",
-   "JOUR35",
-   "JOUR37",
-   "MRKT140"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=91",
-   "title": "",
-   "h1": "",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    91
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 2552
+  "text_chars": 0
  },
  {
   "control_number": "41354",
@@ -13801,7 +13384,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "26d8a021d01ef65a"
   },
   "listed": 2,
   "text_chars": 2891
@@ -13880,25 +13464,27 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=232",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=231",
+   "title": "Athletic Coaching – Certificate of Achievement",
+   "h1": "Athletic Coaching – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    231,
     232,
     233
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "0cf70ae27554c164"
   },
   "listed": 67,
-  "text_chars": 5250
+  "text_chars": 6172
  },
  {
   "control_number": "41439",
@@ -13934,7 +13520,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6ff27b8bdf1c306a"
   },
   "listed": 9,
   "text_chars": 4769
@@ -13982,7 +13569,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d227cf64ff8d6f4a"
   },
   "listed": 16,
   "text_chars": 11113
@@ -13992,12 +13580,41 @@
   "title": "Business Administration 2.0",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT1",
+   "BSL1",
+   "ECON1",
+   "ECON3",
+   "ECON5",
+   "LALS5",
+   "MATH100A",
+   "MATH75",
+   "PSYC5",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=131",
+   "title": "Business Administration 2.0 – AS-T Degree",
+   "h1": "Business Administration 2.0 – AS-T Degree",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "hand_filed": {
+    "fetched_by": "Sam Lee",
+    "fetched_at": "2026-10-17",
+    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
+   },
+   "text_sha": "70df8f5ac56a64d2"
+  },
   "listed": 10,
-  "text_chars": 0
+  "text_chars": 4740
  },
  {
   "control_number": "42024",
@@ -14034,7 +13651,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "4ed967aa16383f75"
   },
   "listed": 11,
   "text_chars": 1854
@@ -14078,10 +13696,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "023cf9a8c58dcece"
   },
   "listed": 14,
-  "text_chars": 5792
+  "text_chars": 5791
  },
  {
   "control_number": "42228",
@@ -14114,7 +13733,8 @@
    "pages": [
     318,
     319,
-    320
+    320,
+    321
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -14122,40 +13742,23 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "ecd2b60f10a7e122"
   },
   "listed": 13,
-  "text_chars": 7895
+  "text_chars": 11157
  },
  {
   "control_number": "42318",
   "title": "ESL Intermediate High Oral Communication Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "ESLF3584"
-  ],
-  "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=643",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    643
-   ],
-   "extractor": "pypdf",
-   "heading_named": false,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2709
+  "text_chars": 0
  },
  {
   "control_number": "42499",
@@ -14173,25 +13776,27 @@
    "VOCN25"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=273",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=272",
+   "title": "Nurse Assistant/Home Health Aide – Certificate of Achievement",
+   "h1": "Nurse Assistant/Home Health Aide – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    272,
     273,
     274
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "86c6353112f05240"
   },
   "listed": 6,
-  "text_chars": 5253
+  "text_chars": 6931
  },
  {
   "control_number": "42693",
@@ -14221,7 +13826,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "12bea0b22afc0bbc"
   },
   "listed": 4,
   "text_chars": 2594
@@ -14294,7 +13900,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5d082ff54b8d6b67"
   },
   "listed": 41,
   "text_chars": 10199
@@ -14326,7 +13933,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "e31af2fdbd028791"
   },
   "listed": 2,
   "text_chars": 4161
@@ -14337,7 +13945,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "CMST12",
    "CMST2",
@@ -14347,28 +13955,42 @@
    "CMST5",
    "CMST7",
    "CMST8",
-   "COMM38"
+   "COMM38",
+   "COMMC1000",
+   "ENGL1B",
+   "ENGLC1001",
+   "JOUR21",
+   "PSYCC1000",
+   "SOC1"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=545",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=156",
+   "title": "Communication Studies 2.0 – AA-T Degree",
+   "h1": "Communication Studies 2.0 – AA-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    545,
-    546
+    156,
+    157,
+    158,
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 156,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a6cdea1da11e633b"
   },
   "listed": 15,
-  "text_chars": 5650
+  "text_chars": 10636
  },
  {
   "control_number": "43525",
@@ -14402,7 +14024,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f5d7e28beff787d3"
   },
   "listed": 7,
   "text_chars": 5078
@@ -14442,7 +14065,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "829d22ff66423f4e"
   },
   "listed": 11,
   "text_chars": 2799
@@ -14475,7 +14099,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "b2585a882465c418"
   },
   "listed": 4,
   "text_chars": 1665
@@ -14498,25 +14123,27 @@
    "CNIT420"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=311",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=310",
+   "title": "Cloud Computing Administration – Certificate of Achievement",
+   "h1": "Cloud Computing Administration – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    310,
     311,
     312
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "66143cd610aa3ec6"
   },
   "listed": 8,
-  "text_chars": 4590
+  "text_chars": 5950
  },
  {
   "control_number": "43578",
@@ -14550,7 +14177,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d2ec244b0d76ca00"
   },
   "listed": 7,
   "text_chars": 7260
@@ -14587,7 +14215,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "40a6d7be28fc131c"
   },
   "listed": 7,
   "text_chars": 4301
@@ -14622,7 +14251,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d6e111127846b446"
   },
   "listed": 7,
   "text_chars": 5215
@@ -14660,7 +14290,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f85afe3a752aba3b"
   },
   "listed": 8,
   "text_chars": 4895
@@ -14694,7 +14325,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "637ed51e15dbd039"
   },
   "listed": 5,
   "text_chars": 1715
@@ -14733,7 +14365,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "6c6d850d7ae8ba74"
   },
   "listed": 10,
   "text_chars": 2731
@@ -14744,7 +14377,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.842,
+  "coverage": 0.895,
   "codes_found": [
    "BIO108",
    "BIO11",
@@ -14761,6 +14394,7 @@
    "IDST17",
    "LALS5",
    "PSYC5",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -14780,7 +14414,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "2b9cff1a6e2d8024"
   },
   "listed": 19,
   "text_chars": 8038
@@ -14820,7 +14455,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "936ac05bc2da0d4a"
   },
   "listed": 10,
   "text_chars": 4514
@@ -14870,7 +14506,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d371ee2e0ae17300"
   },
   "listed": 20,
   "text_chars": 4244
@@ -14881,7 +14518,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.909,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ220",
    "ADMJ51",
@@ -14893,6 +14530,7 @@
    "ADMJ64",
    "ART114",
    "CDEV67",
+   "CMST5",
    "COMMC1000",
    "ECON5",
    "ENGLC1000",
@@ -14902,6 +14540,7 @@
    "PHIL2",
    "PSYC32",
    "PSYC5",
+   "STAT1000E",
    "STATC1000"
   ],
   "source": {
@@ -14920,7 +14559,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "570fa9869e443270"
   },
   "listed": 22,
   "text_chars": 5601
@@ -14974,7 +14614,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a205725597446f83"
   },
   "listed": 12,
   "text_chars": 4160
@@ -15015,7 +14656,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "79a9a9449e24dbe8"
   },
   "listed": 11,
   "text_chars": 8652
@@ -15051,16 +14693,16 @@
    "MATH65"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=196",
-   "title": "",
-   "h1": "",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=195",
+   "title": "Educator Careers I – Certificate of Achievement",
+   "h1": "Educator Careers I – Certificate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    195,
     196,
     197,
-    198,
-    199
+    198
    ],
    "extractor": "pypdf",
    "heading_named": true,
@@ -15068,10 +14710,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "7bb7127146f2d69e"
   },
   "listed": 21,
-  "text_chars": 10680
+  "text_chars": 9255
  },
  {
   "control_number": "46300",
@@ -15079,35 +14722,46 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.636,
+  "coverage": 1.0,
   "codes_found": [
+   "CS110B",
+   "CS111B",
+   "CS131B",
    "MATH110A",
    "MATH110B",
    "MATH110C",
    "MATH120",
    "MATH125",
    "MATH130",
-   "PHYC4A"
+   "PHYC4A",
+   "PHYC4AL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=208",
-   "title": "CCSF Catalog - 2026/27",
-   "h1": "CCSF Catalog - 2026/27",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=341",
+   "title": "Mathematics 2.0 – AS-T Degree",
+   "h1": "Mathematics 2.0 – AS-T Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    208
+    341,
+    342
    ],
    "extractor": "pypdf",
-   "heading_named": false,
+   "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 341,
+    "share": 1.0
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "84df7a6804d857d8"
   },
   "listed": 11,
-  "text_chars": 2230
+  "text_chars": 3415
  },
  {
   "control_number": "46308",
@@ -15146,10 +14800,11 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "c6a5ceff7928e264"
   },
   "listed": 11,
-  "text_chars": 8622
+  "text_chars": 8621
  },
  {
   "control_number": "46320",
@@ -15157,10 +14812,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ57",
    "ANTH3",
+   "CMST5",
    "HLTH30",
    "PSYC10",
    "PSYC21",
@@ -15191,7 +14847,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "f84c7bf6f9d9202d"
   },
   "listed": 15,
   "text_chars": 7770
@@ -15204,6 +14861,7 @@
   "method": "pdf_pages",
   "coverage": 0.923,
   "codes_found": [
+   "CS110A",
    "MATH110A",
    "MATH110B",
    "MATH110C",
@@ -15212,32 +14870,36 @@
    "MATH130",
    "PHYC4A",
    "PHYC4AL",
-   "PHYC4B",
    "PHYC4BL",
    "PHYC4C",
    "PHYC4CL"
   ],
   "source": {
-   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=795",
+   "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=347",
    "title": "CCSF Catalog - 2026/27",
    "h1": "CCSF Catalog - 2026/27",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    795,
-    796,
-    797
+    347,
+    348
    ],
    "extractor": "pypdf",
    "heading_named": true,
+   "page_check": {
+    "rule": "A",
+    "page": 347,
+    "share": 0.923
+   },
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "d40868f8616991af"
   },
   "listed": 13,
-  "text_chars": 7698
+  "text_chars": 5383
  },
  {
   "control_number": "46322",
@@ -15280,7 +14942,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "41692a5df07c8f30"
   },
   "listed": 16,
   "text_chars": 8693
@@ -15329,7 +14992,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "91b4fd73a8068332"
   },
   "listed": 20,
   "text_chars": 4985
@@ -15382,7 +15046,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "56f2573d031913ec"
   },
   "listed": 24,
   "text_chars": 5642
@@ -15443,7 +15108,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "5ef97589533b4a91"
   },
   "listed": 30,
   "text_chars": 10680
@@ -15454,12 +15120,14 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
+   "ECON1",
    "ECON15",
    "ECON20",
    "ECON22",
    "ECON25",
+   "ECON3",
    "ECON30",
    "ECON5",
    "ECON6"
@@ -15479,7 +15147,8 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "77c7a4fd952cd9c5260b6489ceab8a2aca242539799744a23305deaab2eadabe"
-   }
+   },
+   "text_sha": "a5de912b23f31c98"
   },
   "listed": 9,
   "text_chars": 2203

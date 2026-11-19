@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 590,
+   "count": 595,
    "docs": [
     {
      "created": "2026-08-14",
@@ -302,6 +302,27 @@
      "title": "Level-collapsing consolidation \u2014 over-merge beats under-merge for CPL",
      "type": "adr",
      "updated": "2026-06-16"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/credentials.json",
+      "kb/unified_titles.json",
+      "kb/exhibit_cert_links.json"
+     ],
+     "path": "docs/kb-notes/adr-one-credential-list-exhibits-are-its-children.md",
+     "status": "published",
+     "tags": [
+      "adr",
+      "credentials",
+      "exhibits",
+      "ctdl",
+      "commons",
+      "identity"
+     ],
+     "title": "One credential list, with exhibits as its children",
+     "type": "adr",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-19",
@@ -962,6 +983,26 @@
      "title": "A conditional key breaks a bulk upsert, and it fails positionally",
      "type": "methodology",
      "updated": "2026-08-13"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/_program_requirements_display_apply.py",
+      "tests/program_requirements_display_apply_test.py",
+      "tests/display_receipt_store_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-confirming-read-pages-by-key-never-by-offset.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "postgrest",
+      "display",
+      "program-requirements"
+     ],
+     "title": "A confirming read pages by key, never by offset",
+     "type": "methodology",
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -3684,6 +3725,24 @@
      "updated": "2026-08-17"
     },
     {
+     "created": "2026-11-19",
+     "governs": [
+      "kb/program_requirements_reread_plan_s683.json",
+      "docs/program_requirements_harvest_lessons.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-reread-keeps-the-better-record.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "reread",
+      "data-quality",
+      "program-requirements-harvest"
+     ],
+     "title": "A reread keeps the better record",
+     "type": "methodology",
+     "updated": "2026-11-19"
+    },
+    {
      "created": "2026-08-11",
      "governs": [
       "chatbox/supabase/functions/cpl-chat/index.ts",
@@ -4068,6 +4127,28 @@
      "title": "A second PR stacked on a just-merged branch can squash to an empty commit \u2014 verify main",
      "type": "methodology",
      "updated": "2026-06-23"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_program_requirements_units_rules.py",
+      "unified_courses_members.js",
+      "tests/course_outcomes_objectives_standing_test.py",
+      ".github/workflows/course-outcomes-load.yml",
+      "docs/reference/scheduled_sessions.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "self-check",
+      "data-quality",
+      "rule-10",
+      "program-requirements-harvest"
+     ],
+     "title": "A self-check must see what the rule writes",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-06-02",
@@ -9824,6 +9905,26 @@
      "updated": "2026-08-13"
     },
     {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_build_dependency_map.py",
+      "scripts/check_generated.sh",
+      "kb/migrations/.apply"
+     ],
+     "path": "docs/kb-notes/methodology-chain-prs-when-every-merge-conflicts-a-generated-file.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "merging",
+      "generated-files",
+      "ci",
+      "conductor"
+     ],
+     "title": "When every merge conflicts a generated file, land the work as one wave pull request, not a chain",
+     "type": "methodology",
+     "updated": "2026-11-18"
+    },
+    {
      "created": "2026-08-28",
      "governs": [
       "cobi_identity.js",
@@ -13813,7 +13914,7 @@
      ],
      "title": "The Commons \u2014 lessons",
      "type": null,
-     "updated": "2026-11-17"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-11-14",
@@ -13962,7 +14063,7 @@
      "governs": [
       "kb/_row_audit.py",
       "kb/row_audit/latest.json",
-      "kb/row_audit/2026-05-23.md",
+      "kb/row_audit/<date>.md",
       "unified_courses.js",
       "excel_to_dashboard.py",
       ".github/workflows/daily-dashboard.yml"
@@ -14039,7 +14140,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 105,
+   "count": 106,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15256,7 +15357,22 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "path": "docs/program_requirements_harvest_lessons_archive_7.md",
+     "status": "internal",
+     "tags": [
+      "lessons",
+      "archive",
+      "program-requirements",
+      "catalog-harvest"
+     ],
+     "title": "Program requirements harvest lessons \u2014 archive 7 (S655 onward)",
+     "type": null,
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-11-12",
@@ -16060,7 +16176,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 76,
+   "count": 77,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16369,7 +16485,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-14"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16512,7 +16628,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16526,6 +16642,22 @@
      "title": "Public/private repo split \u2014 lane state",
      "type": null,
      "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "path": "docs/reference/lanes/repo-size.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "repo-size",
+      "receipts",
+      "infrastructure"
+     ],
+     "title": "Repo size \u2014 what lives in the tree, what lives in the bucket, and the limits \u2014 lane state",
+     "type": null,
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16593,7 +16725,7 @@
      ],
      "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -16638,7 +16770,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-28",
@@ -16751,7 +16883,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-08-29",
@@ -17033,7 +17165,7 @@
      ],
      "title": "Sam's rulings \u2014 one place to look up what he has ruled, in his words",
      "type": null,
-     "updated": "2026-11-18"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-10-04",
@@ -17048,7 +17180,7 @@
      ],
      "title": "Scheduled sessions \u2014 what a session started by Sam's routine does",
      "type": null,
-     "updated": "2026-11-15"
+     "updated": "2026-11-19"
     },
     {
      "created": "2026-09-09",
@@ -17164,8 +17296,120 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 639,
+   "count": 647,
    "docs": [
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 688,
+     "path": "docs/session_688_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 688 handoff (from SkyPipit, S687)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 687,
+     "path": "docs/session_687_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 687 handoff (from SkyBushtit, S686)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 686,
+     "path": "docs/session_686_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 686 handoff (from SkyTowhee, S685)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 685,
+     "path": "docs/session_685_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 685 handoff (from SkyVerdin, S684)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-19",
+     "governs": [],
+     "n": 684,
+     "path": "docs/session_684_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 684 handoff (from SkyNuthatch, S683)",
+     "type": null,
+     "updated": "2026-11-19"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 683,
+     "path": "docs/session_683_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 683 handoff (from SkyVireo, S682)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 682,
+     "path": "docs/session_682_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 682 handoff (from SkyGrebe, S681)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 681,
+     "path": "docs/session_681_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 681 handoff (from SkyPhoebe, S680)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27884,5 +28128,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1511
+ "total": 1526
 }

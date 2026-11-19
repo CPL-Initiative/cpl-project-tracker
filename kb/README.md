@@ -422,7 +422,10 @@ scores: `faculty_trust_score` (today's cross-college articulation adoption
 bar) and `mc_ready_score` (the ASCCC Model Curriculum submission destination
 — see CLAUDE.md §11 for the lifecycle + MC-vs-TMC framing). Outputs
 `kb/row_audit/latest.json` (~2 MB, committed) + `<date>.md` (human report,
-~7 KB, committed) + `<date>.full.json` (~12 MB, gitignored). Re-runnable,
+committed; the newest 14 stay in the tree, and `kb/_row_audit_prune.py` in the
+daily run stores older ones in the private bucket `cpl-receipts` under
+`row_audit/` with an index entry in `kb/receipts/index/`, S680 #3498) +
+`<date>.full.json` (~12 MB, gitignored). Re-runnable,
 never mutates; suggested-fix payloads on aggregable Cluster fields are
 shaped for `_apply_curation.py` to consume in Phase 1b. Run from repo root:
 `python3 kb/_row_audit.py`.
@@ -1057,3 +1060,22 @@ an INSERT-only batch carries one `updated_by` or `reviewer_email` value, and
 rollback is one delete on it. First entry:
 `cr_reference_decisions_2026-09-20_s280.{json,sql}`, Sam Lee's 51 verdicts from
 the Jev decision sheet, 30 rows, verified member-by-member against the live table.
+
+**Program display receipts are not committed (S680, #3495, #3498).** Git ignores
+`program_requirement_records_display_*`; the runner builds each one at
+`step=display`, stores it in the private Supabase Storage bucket `cpl-receipts`
+(`display/`) with `kb/_receipt_store.py`, and commits only a small index entry,
+one file an entry, under `receipts/index/`. The 141 committed before S680 moved
+to the bucket. Re-apply, fetch and the size limits:
+[`docs/reference/lanes/repo-size.md`](../docs/reference/lanes/repo-size.md).
+
+## Course flags, the confidence apply and the exhibits blocker list (2026-11-18, S683 daytime)
+
+- `_flags.py`: the one reader of the course flags (merged, retired, inactive, not applicable): `load_flags()` and
+  `hidden_card_ids()`, each file stamped `_ids_current_through`. Built by `_build_retired_cards.py`,
+  `_build_inactive_cards.py` and `_build_not_applicable.py` (#3519). A flagged card keeps its record and leaves the counts.
+- `_ccr_confidence_apply.py`: rules G and M from `_ccr_confidence_score.py`, a dry run by default; `--apply --expect`
+  stamps `coci_minted_courses.json` with before-values in `ccr_confidence_out/<date>/receipt.json`; `--undo --rule G|M`;
+  `--worklist` lists the moves that wait on a re-mint (#3513).
+- `exhibit_blocker_rules.py` writes `exhibit_blocker_rules_list.json`, the pair rows `_cred_rename_apply.py --pairs`
+  takes; the apply refuses a stale list (#3515).

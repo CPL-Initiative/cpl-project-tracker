@@ -8,7 +8,7 @@ tags: [auditor, unified-courses, m-id, mc, cidx, trust-score, calibration, decis
 artifacts:
   - kb/_row_audit.py
   - kb/row_audit/latest.json
-  - kb/row_audit/2026-05-23.md
+  - kb/row_audit/<date>.md (the newest 14; older reports in the cpl-receipts bucket, kb/receipts/index/)
   - unified_courses.js
   - excel_to_dashboard.py
   - .github/workflows/daily-dashboard.yml

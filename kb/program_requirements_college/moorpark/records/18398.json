@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11848,
-    "output_tokens": 6292,
+    "output_tokens": 6574,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,45 @@
     "model": null
    }
   ],
-  "output_tokens": 6292,
+  "output_tokens": 6574,
   "output_tokens_details": {
-   "thinking_tokens": 879
+   "thinking_tokens": 1172
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.17323,
- "ms": 43697,
- "seconds": 44.0,
+ "cost_usd": 0.17887,
+ "ms": 47136,
+ "seconds": 48.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 114,
+   "placed": 115,
    "listed": 116,
-   "share": 0.983,
+   "share": 0.991,
    "missing": [
-    "ANTHM19",
-    "COMMM4"
+    "ANTHM19"
    ],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMMM4",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "COMMC1004",
     "HISTM124"
    ],
    "flagged": [
-    "COMMC1004",
     "HISTM124"
    ],
    "pass": true
@@ -159,7 +164,7 @@
   },
   "blocks": [
    {
-    "name": "Area of Emphasis Course List",
+    "name": "Area of Emphasis",
     "rule": "choose_units",
     "minimum": 18,
     "option_group": null,
@@ -980,14 +985,14 @@
    }
   ],
   "notes": [
-   "The page shows no section heading in the extracted text; section_heading uses the program title. The course list has no explicit selection rule; it is read as choose 18 units from 'Units Required for the Area of Emphasis 18'.",
-   "The page prints two degree paths: Moorpark College GE Pattern 24 with elective units 18-36 (double-counted 0-18), OR Cal-GETC Pattern 34 with elective units 8-23 (double-counted 0-15). ge_units 24-34 and degree_elective_units 8-36 span both paths; total 60 for either.",
-   "Closed-list codes SOCIC1000, SOCIC1000H and SOCM125 (no space) are matched to catalog codes SOCI C1000, SOCI C1000H and SOC M125.",
-   "COMM C1004 and HIST M124 are not in the closed list and are marked catalog additions.",
-   "ANCT/ANSC M09 is recorded as ANCT M09 with cross-listed ANSC M09 as alternative.",
-   "Honors and 'or' alternatives have no units printed beside them; their units are null.",
-   "Outcomes are from the program's outcomes tab and apply to this A.A. degree."
+   "The extracted text prints no section heading; section_heading uses the program title. The requirement is read as choose 18 units from the course list, based on 'Units Required for the Area of Emphasis 18'; the page prints no explicit 'select' instruction.",
+   "Two GE paths are printed: Moorpark College General Education Pattern 24 (double-counted 0-18, elective units 18-36) OR Cal-GETC Pattern 34 (double-counted 0-15, elective units 8-23). ge_units records 24-34 and degree_elective_units records 8-36 across both paths; total for the AA degree is 60.",
+   "Closed-list codes SOCIC1000, SOCIC1000H and SOCM125 (no space) are matched to the catalog's SOCI C1000, SOCI C1000H and SOC M125.",
+   "COMM C1004 and HIST M124 are not in the closed list and are recorded as catalog additions.",
+   "Honors and 'or' alternatives print no units beside them; their units are left null.",
+   "ANCT/ANSC M09 is printed as one cross-listed row; recorded as ANCT M09 with ANSC M09 as alternative."
   ]
  },
- "extracted_run": "38748862351"
+ "extracted_run": "44481524745",
+ "catalog_year": "2026-2027"
 }

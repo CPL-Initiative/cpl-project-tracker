@@ -1,0 +1,3111 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "lmc",
+ "load_run": "44264033797",
+ "reads": [
+  "kb/course_outcomes/lmc/read_44253304246_p1of2.json",
+  "kb/course_outcomes/lmc/read_44253304246_p2of2.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 483,
+ "inserted": 483,
+ "kept": 0,
+ "skipped": 38,
+ "skipped_rows": [
+  {
+   "course_code": "ANTHR 8",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 25",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 50",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 57",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 75",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 31",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 44",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGIN 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHN 45",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 29",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 37",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 52",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 56",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 60",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 65",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LOGIS 013N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PHYS 40",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 20",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 58",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 72",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 87",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CNT 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 12",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 40",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMSC 91",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 47",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 54",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 57",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 61",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 66",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "LOGIS 012N",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 27191,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ACS 010"
+  },
+  {
+   "id": 27192,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 120"
+  },
+  {
+   "id": 27193,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 124"
+  },
+  {
+   "id": 27194,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 160"
+  },
+  {
+   "id": 27195,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 220"
+  },
+  {
+   "id": 27196,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ANTHR 004"
+  },
+  {
+   "id": 27197,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ANTHR 006"
+  },
+  {
+   "id": 27198,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 005"
+  },
+  {
+   "id": 27199,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 008"
+  },
+  {
+   "id": 27200,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 010"
+  },
+  {
+   "id": 27201,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 012"
+  },
+  {
+   "id": 27202,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 015"
+  },
+  {
+   "id": 27203,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 017"
+  },
+  {
+   "id": 27204,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 019"
+  },
+  {
+   "id": 27205,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 021"
+  },
+  {
+   "id": 27206,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 030"
+  },
+  {
+   "id": 27207,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 033"
+  },
+  {
+   "id": 27208,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 035"
+  },
+  {
+   "id": 27209,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 040"
+  },
+  {
+   "id": 27210,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 042"
+  },
+  {
+   "id": 27211,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 047"
+  },
+  {
+   "id": 27212,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 054"
+  },
+  {
+   "id": 27213,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 058"
+  },
+  {
+   "id": 27214,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 061"
+  },
+  {
+   "id": 27215,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 063"
+  },
+  {
+   "id": 27216,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 065"
+  },
+  {
+   "id": 27217,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 067"
+  },
+  {
+   "id": 27218,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 074"
+  },
+  {
+   "id": 27219,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 084"
+  },
+  {
+   "id": 27220,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 086"
+  },
+  {
+   "id": 27221,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ASTRO 010"
+  },
+  {
+   "id": 27222,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 010N"
+  },
+  {
+   "id": 27223,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 045"
+  },
+  {
+   "id": 27224,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 112"
+  },
+  {
+   "id": 27225,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 120"
+  },
+  {
+   "id": 27226,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 122"
+  },
+  {
+   "id": 27227,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 132"
+  },
+  {
+   "id": 27228,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 142"
+  },
+  {
+   "id": 27229,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 005"
+  },
+  {
+   "id": 27230,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 008"
+  },
+  {
+   "id": 27231,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 020"
+  },
+  {
+   "id": 27232,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 030"
+  },
+  {
+   "id": 27233,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 045"
+  },
+  {
+   "id": 27234,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 018"
+  },
+  {
+   "id": 27235,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 035"
+  },
+  {
+   "id": 27236,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 035B"
+  },
+  {
+   "id": 27237,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 058"
+  },
+  {
+   "id": 27238,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 091"
+  },
+  {
+   "id": 27239,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 093"
+  },
+  {
+   "id": 27240,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 095"
+  },
+  {
+   "id": 27241,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 097"
+  },
+  {
+   "id": 27242,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 160"
+  },
+  {
+   "id": 27243,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 185"
+  },
+  {
+   "id": 27244,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 187"
+  },
+  {
+   "id": 27245,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHDEV 010"
+  },
+  {
+   "id": 27246,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHDEV 050"
+  },
+  {
+   "id": 27247,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 007"
+  },
+  {
+   "id": 27248,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 026"
+  },
+  {
+   "id": 27249,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 029"
+  },
+  {
+   "id": 27250,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 011"
+  },
+  {
+   "id": 27251,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 030"
+  },
+  {
+   "id": 27252,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 032"
+  },
+  {
+   "id": 27253,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 040"
+  },
+  {
+   "id": 27254,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 091"
+  },
+  {
+   "id": 27255,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMM 120"
+  },
+  {
+   "id": 27256,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMM 150"
+  },
+  {
+   "id": 27257,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMMC 1000"
+  },
+  {
+   "id": 27258,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMSC 051"
+  },
+  {
+   "id": 27259,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMSC 122"
+  },
+  {
+   "id": 27260,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMSC 142"
+  },
+  {
+   "id": 27261,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CONST 010N"
+  },
+  {
+   "id": 27262,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CONST 015N"
+  },
+  {
+   "id": 27263,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 030N"
+  },
+  {
+   "id": 27264,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 034N"
+  },
+  {
+   "id": 27265,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 036"
+  },
+  {
+   "id": 27266,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 015"
+  },
+  {
+   "id": 27267,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 020"
+  },
+  {
+   "id": 27268,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 022"
+  },
+  {
+   "id": 27269,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 030"
+  },
+  {
+   "id": 27270,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 041"
+  },
+  {
+   "id": 27271,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 051"
+  },
+  {
+   "id": 27272,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 070"
+  },
+  {
+   "id": 27273,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRONE 010N"
+  },
+  {
+   "id": 27274,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 001"
+  },
+  {
+   "id": 27275,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 011"
+  },
+  {
+   "id": 27276,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 030"
+  },
+  {
+   "id": 27277,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 040"
+  },
+  {
+   "id": 27278,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 050"
+  },
+  {
+   "id": 27279,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 057"
+  },
+  {
+   "id": 27280,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 065"
+  },
+  {
+   "id": 27281,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 092"
+  },
+  {
+   "id": 27282,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 096"
+  },
+  {
+   "id": 27283,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 27284,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "EDUC 100"
+  },
+  {
+   "id": 27285,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "EMS 013"
+  },
+  {
+   "id": 27286,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 020"
+  },
+  {
+   "id": 27287,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 025"
+  },
+  {
+   "id": 27288,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 036"
+  },
+  {
+   "id": 27289,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 045"
+  },
+  {
+   "id": 27290,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 113"
+  },
+  {
+   "id": 27291,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 115"
+  },
+  {
+   "id": 27292,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 121"
+  },
+  {
+   "id": 27293,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 127"
+  },
+  {
+   "id": 27294,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 129"
+  },
+  {
+   "id": 27295,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 133"
+  },
+  {
+   "id": 27296,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 136"
+  },
+  {
+   "id": 27297,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 146"
+  },
+  {
+   "id": 27298,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 180"
+  },
+  {
+   "id": 27299,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 240"
+  },
+  {
+   "id": 27300,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 27301,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGLC 1000E"
+  },
+  {
+   "id": 27302,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 009"
+  },
+  {
+   "id": 27303,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 012"
+  },
+  {
+   "id": 27304,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 022"
+  },
+  {
+   "id": 27305,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 030"
+  },
+  {
+   "id": 27306,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 034"
+  },
+  {
+   "id": 27307,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 042"
+  },
+  {
+   "id": 27308,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 046"
+  },
+  {
+   "id": 27309,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 052"
+  },
+  {
+   "id": 27310,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 058"
+  },
+  {
+   "id": 27311,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 045"
+  },
+  {
+   "id": 27312,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 102"
+  },
+  {
+   "id": 27313,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 110"
+  },
+  {
+   "id": 27314,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 112"
+  },
+  {
+   "id": 27315,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 120"
+  },
+  {
+   "id": 27316,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 122"
+  },
+  {
+   "id": 27317,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 102"
+  },
+  {
+   "id": 27318,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 104"
+  },
+  {
+   "id": 27319,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 106"
+  },
+  {
+   "id": 27320,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 120"
+  },
+  {
+   "id": 27321,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FRNCH 060"
+  },
+  {
+   "id": 27322,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 031"
+  },
+  {
+   "id": 27323,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 035"
+  },
+  {
+   "id": 27324,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 038"
+  },
+  {
+   "id": 27325,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 040"
+  },
+  {
+   "id": 27326,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 052"
+  },
+  {
+   "id": 27327,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 055"
+  },
+  {
+   "id": 27328,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 057"
+  },
+  {
+   "id": 27329,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 061"
+  },
+  {
+   "id": 27330,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 065"
+  },
+  {
+   "id": 27331,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HISTC 1001"
+  },
+  {
+   "id": 27332,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 019"
+  },
+  {
+   "id": 27333,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 021"
+  },
+  {
+   "id": 27334,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 023"
+  },
+  {
+   "id": 27335,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 030"
+  },
+  {
+   "id": 27336,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 040"
+  },
+  {
+   "id": 27337,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 060"
+  },
+  {
+   "id": 27338,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ITAL 061"
+  },
+  {
+   "id": 27339,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 110"
+  },
+  {
+   "id": 27340,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 115B"
+  },
+  {
+   "id": 27341,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 130"
+  },
+  {
+   "id": 27342,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 132"
+  },
+  {
+   "id": 27343,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KINES 100"
+  },
+  {
+   "id": 27344,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KINES 200"
+  },
+  {
+   "id": 27345,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KINES 210"
+  },
+  {
+   "id": 27346,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 004B"
+  },
+  {
+   "id": 27347,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 008A"
+  },
+  {
+   "id": 27348,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 010A"
+  },
+  {
+   "id": 27349,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 012"
+  },
+  {
+   "id": 27350,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 014B"
+  },
+  {
+   "id": 27351,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 025"
+  },
+  {
+   "id": 27352,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 026B"
+  },
+  {
+   "id": 27353,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 030"
+  },
+  {
+   "id": 27354,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 042"
+  },
+  {
+   "id": 27355,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 046B"
+  },
+  {
+   "id": 27356,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 057B"
+  },
+  {
+   "id": 27357,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 120"
+  },
+  {
+   "id": 27358,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 140"
+  },
+  {
+   "id": 27359,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNDAN 054"
+  },
+  {
+   "id": 27360,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 060"
+  },
+  {
+   "id": 27361,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 070"
+  },
+  {
+   "id": 27362,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 170"
+  },
+  {
+   "id": 27363,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 155"
+  },
+  {
+   "id": 27364,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 210"
+  },
+  {
+   "id": 27365,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 230"
+  },
+  {
+   "id": 27366,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 250"
+  },
+  {
+   "id": 27367,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 006"
+  },
+  {
+   "id": 27368,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 010"
+  },
+  {
+   "id": 27369,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 013A"
+  },
+  {
+   "id": 27370,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 014A"
+  },
+  {
+   "id": 27371,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 015"
+  },
+  {
+   "id": 27372,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 017"
+  },
+  {
+   "id": 27373,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 019"
+  },
+  {
+   "id": 27374,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 031"
+  },
+  {
+   "id": 27375,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 033A"
+  },
+  {
+   "id": 27376,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 037"
+  },
+  {
+   "id": 27377,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 052"
+  },
+  {
+   "id": 27378,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 066"
+  },
+  {
+   "id": 27379,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 077"
+  },
+  {
+   "id": 27380,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 082"
+  },
+  {
+   "id": 27381,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 100"
+  },
+  {
+   "id": 27382,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 120"
+  },
+  {
+   "id": 27383,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 130"
+  },
+  {
+   "id": 27384,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 133"
+  },
+  {
+   "id": 27385,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 150"
+  },
+  {
+   "id": 27386,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 015"
+  },
+  {
+   "id": 27387,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 036"
+  },
+  {
+   "id": 27388,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 041"
+  },
+  {
+   "id": 27389,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLS 033"
+  },
+  {
+   "id": 27390,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLS 043"
+  },
+  {
+   "id": 27391,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLS 160"
+  },
+  {
+   "id": 27392,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PSYC 010"
+  },
+  {
+   "id": 27393,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PSYC 017"
+  },
+  {
+   "id": 27394,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 006"
+  },
+  {
+   "id": 27395,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 009"
+  },
+  {
+   "id": 27396,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 012"
+  },
+  {
+   "id": 27397,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 024"
+  },
+  {
+   "id": 27398,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 027"
+  },
+  {
+   "id": 27399,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 044"
+  },
+  {
+   "id": 27400,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 048"
+  },
+  {
+   "id": 27401,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 010"
+  },
+  {
+   "id": 27402,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 015"
+  },
+  {
+   "id": 27403,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 021"
+  },
+  {
+   "id": 27404,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 030"
+  },
+  {
+   "id": 27405,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 035"
+  },
+  {
+   "id": 27406,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 050"
+  },
+  {
+   "id": 27407,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 052"
+  },
+  {
+   "id": 27408,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 070"
+  },
+  {
+   "id": 27409,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 072"
+  },
+  {
+   "id": 27410,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SJS 135"
+  },
+  {
+   "id": 27411,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SJS 150"
+  },
+  {
+   "id": 27412,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SOCIO 015"
+  },
+  {
+   "id": 27413,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SOCIO 017"
+  },
+  {
+   "id": 27414,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 047"
+  },
+  {
+   "id": 27415,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 051"
+  },
+  {
+   "id": 27416,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 053"
+  },
+  {
+   "id": 27417,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 27418,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 004"
+  },
+  {
+   "id": 27419,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 006"
+  },
+  {
+   "id": 27420,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 010"
+  },
+  {
+   "id": 27421,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 012"
+  },
+  {
+   "id": 27422,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 014"
+  },
+  {
+   "id": 27423,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 016"
+  },
+  {
+   "id": 27424,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 018"
+  },
+  {
+   "id": 27425,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 021"
+  },
+  {
+   "id": 27426,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 011"
+  },
+  {
+   "id": 27427,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 016"
+  },
+  {
+   "id": 27428,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 021"
+  },
+  {
+   "id": 27429,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 033"
+  },
+  {
+   "id": 27430,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 040"
+  },
+  {
+   "id": 27431,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 043"
+  },
+  {
+   "id": 27432,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 110"
+  },
+  {
+   "id": 27433,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 122"
+  },
+  {
+   "id": 27434,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 140"
+  },
+  {
+   "id": 27435,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ADJUS 200"
+  },
+  {
+   "id": 27436,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ANTHR 001"
+  },
+  {
+   "id": 27437,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ANTHR 005"
+  },
+  {
+   "id": 27438,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ANTHR 008"
+  },
+  {
+   "id": 27439,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 004"
+  },
+  {
+   "id": 27440,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 006"
+  },
+  {
+   "id": 27441,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 009"
+  },
+  {
+   "id": 27442,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 011"
+  },
+  {
+   "id": 27443,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 014"
+  },
+  {
+   "id": 27444,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 016"
+  },
+  {
+   "id": 27445,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 018"
+  },
+  {
+   "id": 27446,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 020"
+  },
+  {
+   "id": 27447,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 025"
+  },
+  {
+   "id": 27448,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 032"
+  },
+  {
+   "id": 27449,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 034"
+  },
+  {
+   "id": 27450,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 038"
+  },
+  {
+   "id": 27451,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 041"
+  },
+  {
+   "id": 27452,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 043"
+  },
+  {
+   "id": 27453,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 050"
+  },
+  {
+   "id": 27454,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 057"
+  },
+  {
+   "id": 27455,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 060"
+  },
+  {
+   "id": 27456,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 062"
+  },
+  {
+   "id": 27457,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 064"
+  },
+  {
+   "id": 27458,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 066"
+  },
+  {
+   "id": 27459,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 072"
+  },
+  {
+   "id": 27460,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 075"
+  },
+  {
+   "id": 27461,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 085"
+  },
+  {
+   "id": 27462,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 087"
+  },
+  {
+   "id": 27463,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ART 250"
+  },
+  {
+   "id": 27464,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ASTRO 011"
+  },
+  {
+   "id": 27465,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 011N"
+  },
+  {
+   "id": 27466,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 111"
+  },
+  {
+   "id": 27467,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 113"
+  },
+  {
+   "id": 27468,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 121"
+  },
+  {
+   "id": 27469,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 130"
+  },
+  {
+   "id": 27470,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 133"
+  },
+  {
+   "id": 27471,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "AUTO 150"
+  },
+  {
+   "id": 27472,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 007"
+  },
+  {
+   "id": 27473,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 010"
+  },
+  {
+   "id": 27474,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 021"
+  },
+  {
+   "id": 27475,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 040"
+  },
+  {
+   "id": 27476,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BIOSC 050"
+  },
+  {
+   "id": 27477,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 027"
+  },
+  {
+   "id": 27478,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 035A"
+  },
+  {
+   "id": 27479,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 035C"
+  },
+  {
+   "id": 27480,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 059"
+  },
+  {
+   "id": 27481,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 092"
+  },
+  {
+   "id": 27482,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 094"
+  },
+  {
+   "id": 27483,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 096"
+  },
+  {
+   "id": 27484,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 109"
+  },
+  {
+   "id": 27485,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 170"
+  },
+  {
+   "id": 27486,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 186"
+  },
+  {
+   "id": 27487,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "BUS 294"
+  },
+  {
+   "id": 27488,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHDEV 020"
+  },
+  {
+   "id": 27489,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 006"
+  },
+  {
+   "id": 27490,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 025"
+  },
+  {
+   "id": 27491,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CHEM 028"
+  },
+  {
+   "id": 27492,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 010"
+  },
+  {
+   "id": 27493,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 012"
+  },
+  {
+   "id": 27494,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 031"
+  },
+  {
+   "id": 27495,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 037"
+  },
+  {
+   "id": 27496,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CNT 061"
+  },
+  {
+   "id": 27497,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMM 130"
+  },
+  {
+   "id": 27498,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMM 160"
+  },
+  {
+   "id": 27499,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMSC 044"
+  },
+  {
+   "id": 27500,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COMSC 132"
+  },
+  {
+   "id": 27501,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CONST 012N"
+  },
+  {
+   "id": 27502,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "CONST 016N"
+  },
+  {
+   "id": 27503,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 032N"
+  },
+  {
+   "id": 27504,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 035"
+  },
+  {
+   "id": 27505,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "COUNS 038"
+  },
+  {
+   "id": 27506,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 016"
+  },
+  {
+   "id": 27507,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 021"
+  },
+  {
+   "id": 27508,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 023"
+  },
+  {
+   "id": 27509,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 040"
+  },
+  {
+   "id": 27510,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 050"
+  },
+  {
+   "id": 27511,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 061"
+  },
+  {
+   "id": 27512,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRAMA 098"
+  },
+  {
+   "id": 27513,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "DRONE 012N"
+  },
+  {
+   "id": 27514,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 010"
+  },
+  {
+   "id": 27515,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 020"
+  },
+  {
+   "id": 27516,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 031"
+  },
+  {
+   "id": 27517,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 041"
+  },
+  {
+   "id": 27518,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 055"
+  },
+  {
+   "id": 27519,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 062"
+  },
+  {
+   "id": 27520,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 090"
+  },
+  {
+   "id": 27521,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECE 095"
+  },
+  {
+   "id": 27522,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECON 005"
+  },
+  {
+   "id": 27523,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 27524,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "EMS 010"
+  },
+  {
+   "id": 27525,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 010"
+  },
+  {
+   "id": 27526,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 022"
+  },
+  {
+   "id": 27527,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 030"
+  },
+  {
+   "id": 27528,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 038"
+  },
+  {
+   "id": 27529,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGIN 046"
+  },
+  {
+   "id": 27530,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 111"
+  },
+  {
+   "id": 27531,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 114"
+  },
+  {
+   "id": 27532,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 120"
+  },
+  {
+   "id": 27533,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 124"
+  },
+  {
+   "id": 27534,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 128"
+  },
+  {
+   "id": 27535,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 132"
+  },
+  {
+   "id": 27536,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 135"
+  },
+  {
+   "id": 27537,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 144"
+  },
+  {
+   "id": 27538,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 150"
+  },
+  {
+   "id": 27539,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 230"
+  },
+  {
+   "id": 27540,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGL 245"
+  },
+  {
+   "id": 27541,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGLC 1000"
+  },
+  {
+   "id": 27542,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ENGLC 1001"
+  },
+  {
+   "id": 27543,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 010"
+  },
+  {
+   "id": 27544,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 020"
+  },
+  {
+   "id": 27545,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 024"
+  },
+  {
+   "id": 27546,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 032"
+  },
+  {
+   "id": 27547,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 040"
+  },
+  {
+   "id": 27548,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 044"
+  },
+  {
+   "id": 27549,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 050"
+  },
+  {
+   "id": 27550,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 056"
+  },
+  {
+   "id": 27551,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETEC 059"
+  },
+  {
+   "id": 27552,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 101"
+  },
+  {
+   "id": 27553,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 103"
+  },
+  {
+   "id": 27554,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 111"
+  },
+  {
+   "id": 27555,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 113"
+  },
+  {
+   "id": 27556,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 121"
+  },
+  {
+   "id": 27557,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ETHN 123"
+  },
+  {
+   "id": 27558,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 101"
+  },
+  {
+   "id": 27559,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 103"
+  },
+  {
+   "id": 27560,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 105"
+  },
+  {
+   "id": 27561,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 107"
+  },
+  {
+   "id": 27562,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FIRE 170"
+  },
+  {
+   "id": 27563,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "FRNCH 061"
+  },
+  {
+   "id": 27564,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 034"
+  },
+  {
+   "id": 27565,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 037"
+  },
+  {
+   "id": 27566,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 039"
+  },
+  {
+   "id": 27567,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 047"
+  },
+  {
+   "id": 27568,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 054"
+  },
+  {
+   "id": 27569,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 056"
+  },
+  {
+   "id": 27570,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 060"
+  },
+  {
+   "id": 27571,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 062"
+  },
+  {
+   "id": 27572,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HIST 066"
+  },
+  {
+   "id": 27573,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HISTC 1002"
+  },
+  {
+   "id": 27574,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 020"
+  },
+  {
+   "id": 27575,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 022"
+  },
+  {
+   "id": 27576,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 024"
+  },
+  {
+   "id": 27577,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 035"
+  },
+  {
+   "id": 27578,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "HUMAN 050"
+  },
+  {
+   "id": 27579,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "ITAL 060"
+  },
+  {
+   "id": 27580,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 100"
+  },
+  {
+   "id": 27581,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 115A"
+  },
+  {
+   "id": 27582,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 115C"
+  },
+  {
+   "id": 27583,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 131"
+  },
+  {
+   "id": 27584,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "JOURN 160"
+  },
+  {
+   "id": 27585,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KINES 105"
+  },
+  {
+   "id": 27586,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KINES 203"
+  },
+  {
+   "id": 27587,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 004A"
+  },
+  {
+   "id": 27588,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 006"
+  },
+  {
+   "id": 27589,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 008B"
+  },
+  {
+   "id": 27590,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 010B"
+  },
+  {
+   "id": 27591,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 014A"
+  },
+  {
+   "id": 27592,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 020"
+  },
+  {
+   "id": 27593,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 026A"
+  },
+  {
+   "id": 27594,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 028A"
+  },
+  {
+   "id": 27595,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 033"
+  },
+  {
+   "id": 27596,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 046A"
+  },
+  {
+   "id": 27597,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 057A"
+  },
+  {
+   "id": 27598,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 110"
+  },
+  {
+   "id": 27599,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNACT 130"
+  },
+  {
+   "id": 27600,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "KNDAN 053"
+  },
+  {
+   "id": 27601,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 050"
+  },
+  {
+   "id": 27602,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 065"
+  },
+  {
+   "id": 27603,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MANGT 075"
+  },
+  {
+   "id": 27604,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 140"
+  },
+  {
+   "id": 27605,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 160"
+  },
+  {
+   "id": 27606,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 220"
+  },
+  {
+   "id": 27607,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MATH 240"
+  },
+  {
+   "id": 27608,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 005"
+  },
+  {
+   "id": 27609,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 008"
+  },
+  {
+   "id": 27610,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 012"
+  },
+  {
+   "id": 27611,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 013B"
+  },
+  {
+   "id": 27612,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 014B"
+  },
+  {
+   "id": 27613,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 016"
+  },
+  {
+   "id": 27614,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 018"
+  },
+  {
+   "id": 27615,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 020"
+  },
+  {
+   "id": 27616,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 032"
+  },
+  {
+   "id": 27617,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 033B"
+  },
+  {
+   "id": 27618,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 040"
+  },
+  {
+   "id": 27619,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 060"
+  },
+  {
+   "id": 27620,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 074"
+  },
+  {
+   "id": 27621,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "MUSIC 081"
+  },
+  {
+   "id": 27622,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "NUTRI 055"
+  },
+  {
+   "id": 27623,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 110"
+  },
+  {
+   "id": 27624,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 122"
+  },
+  {
+   "id": 27625,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 132"
+  },
+  {
+   "id": 27626,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 140"
+  },
+  {
+   "id": 27627,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHIL 210"
+  },
+  {
+   "id": 27628,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 035"
+  },
+  {
+   "id": 27629,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 040"
+  },
+  {
+   "id": 27630,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYS 042"
+  },
+  {
+   "id": 27631,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PHYSC 005"
+  },
+  {
+   "id": 27632,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLS 040"
+  },
+  {
+   "id": 27633,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLS 050"
+  },
+  {
+   "id": 27634,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 27635,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PSYC 014"
+  },
+  {
+   "id": 27636,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 27637,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 007"
+  },
+  {
+   "id": 27638,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 010"
+  },
+  {
+   "id": 27639,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 015"
+  },
+  {
+   "id": 27640,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 025"
+  },
+  {
+   "id": 27641,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 035"
+  },
+  {
+   "id": 27642,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 045"
+  },
+  {
+   "id": 27643,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "PTEC 060"
+  },
+  {
+   "id": 27644,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 012"
+  },
+  {
+   "id": 27645,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 020"
+  },
+  {
+   "id": 27646,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 025"
+  },
+  {
+   "id": 27647,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 032"
+  },
+  {
+   "id": 27648,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "RA 040"
+  },
+  {
+   "id": 27649,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 051"
+  },
+  {
+   "id": 27650,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 053"
+  },
+  {
+   "id": 27651,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SIGN 071"
+  },
+  {
+   "id": 27652,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SJS 110"
+  },
+  {
+   "id": 27653,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SJS 136"
+  },
+  {
+   "id": 27654,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SOCIO 012"
+  },
+  {
+   "id": 27655,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SOCIO 016"
+  },
+  {
+   "id": 27656,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 046"
+  },
+  {
+   "id": 27657,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 050"
+  },
+  {
+   "id": 27658,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 052"
+  },
+  {
+   "id": 27659,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "SPAN 057"
+  },
+  {
+   "id": 27660,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "STATC 1000"
+  },
+  {
+   "id": 27661,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 005"
+  },
+  {
+   "id": 27662,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 007"
+  },
+  {
+   "id": 27663,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 011"
+  },
+  {
+   "id": 27664,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 013"
+  },
+  {
+   "id": 27665,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 015"
+  },
+  {
+   "id": 27666,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 017"
+  },
+  {
+   "id": 27667,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "VONUR 019"
+  },
+  {
+   "id": 27668,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 010"
+  },
+  {
+   "id": 27669,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 015"
+  },
+  {
+   "id": 27670,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 020"
+  },
+  {
+   "id": 27671,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 031"
+  },
+  {
+   "id": 27672,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 035"
+  },
+  {
+   "id": 27673,
+   "kind": "slo",
+   "college": "Los Medanos College",
+   "course_code": "WELD 041"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (27191, 27192, 27193, 27194, 27195, 27196, 27197, 27198, 27199, 27200, 27201, 27202, 27203, 27204, 27205, 27206, 27207, 27208, 27209, 27210, 27211, 27212, 27213, 27214, 27215, 27216, 27217, 27218, 27219, 27220, 27221, 27222, 27223, 27224, 27225, 27226, 27227, 27228, 27229, 27230, 27231, 27232, 27233, 27234, 27235, 27236, 27237, 27238, 27239, 27240, 27241, 27242, 27243, 27244, 27245, 27246, 27247, 27248, 27249, 27250, 27251, 27252, 27253, 27254, 27255, 27256, 27257, 27258, 27259, 27260, 27261, 27262, 27263, 27264, 27265, 27266, 27267, 27268, 27269, 27270, 27271, 27272, 27273, 27274, 27275, 27276, 27277, 27278, 27279, 27280, 27281, 27282, 27283, 27284, 27285, 27286, 27287, 27288, 27289, 27290, 27291, 27292, 27293, 27294, 27295, 27296, 27297, 27298, 27299, 27300, 27301, 27302, 27303, 27304, 27305, 27306, 27307, 27308, 27309, 27310, 27311, 27312, 27313, 27314, 27315, 27316, 27317, 27318, 27319, 27320, 27321, 27322, 27323, 27324, 27325, 27326, 27327, 27328, 27329, 27330, 27331, 27332, 27333, 27334, 27335, 27336, 27337, 27338, 27339, 27340, 27341, 27342, 27343, 27344, 27345, 27346, 27347, 27348, 27349, 27350, 27351, 27352, 27353, 27354, 27355, 27356, 27357, 27358, 27359, 27360, 27361, 27362, 27363, 27364, 27365, 27366, 27367, 27368, 27369, 27370, 27371, 27372, 27373, 27374, 27375, 27376, 27377, 27378, 27379, 27380, 27381, 27382, 27383, 27384, 27385, 27386, 27387, 27388, 27389, 27390, 27391, 27392, 27393, 27394, 27395, 27396, 27397, 27398, 27399, 27400, 27401, 27402, 27403, 27404, 27405, 27406, 27407, 27408, 27409, 27410, 27411, 27412, 27413, 27414, 27415, 27416, 27417, 27418, 27419, 27420, 27421, 27422, 27423, 27424, 27425, 27426, 27427, 27428, 27429, 27430, 27431, 27432, 27433, 27434, 27435, 27436, 27437, 27438, 27439, 27440, 27441, 27442, 27443, 27444, 27445, 27446, 27447, 27448, 27449, 27450, 27451, 27452, 27453, 27454, 27455, 27456, 27457, 27458, 27459, 27460, 27461, 27462, 27463, 27464, 27465, 27466, 27467, 27468, 27469, 27470, 27471, 27472, 27473, 27474, 27475, 27476, 27477, 27478, 27479, 27480, 27481, 27482, 27483, 27484, 27485, 27486, 27487, 27488, 27489, 27490, 27491, 27492, 27493, 27494, 27495, 27496, 27497, 27498, 27499, 27500, 27501, 27502, 27503, 27504, 27505, 27506, 27507, 27508, 27509, 27510, 27511, 27512, 27513, 27514, 27515, 27516, 27517, 27518, 27519, 27520, 27521, 27522, 27523, 27524, 27525, 27526, 27527, 27528, 27529, 27530, 27531, 27532, 27533, 27534, 27535, 27536, 27537, 27538, 27539, 27540, 27541, 27542, 27543, 27544, 27545, 27546, 27547, 27548, 27549, 27550, 27551, 27552, 27553, 27554, 27555, 27556, 27557, 27558, 27559, 27560, 27561, 27562, 27563, 27564, 27565, 27566, 27567, 27568, 27569, 27570, 27571, 27572, 27573, 27574, 27575, 27576, 27577, 27578, 27579, 27580, 27581, 27582, 27583, 27584, 27585, 27586, 27587, 27588, 27589, 27590, 27591, 27592, 27593, 27594, 27595, 27596, 27597, 27598, 27599, 27600, 27601, 27602, 27603, 27604, 27605, 27606, 27607, 27608, 27609, 27610, 27611, 27612, 27613, 27614, 27615, 27616, 27617, 27618, 27619, 27620, 27621, 27622, 27623, 27624, 27625, 27626, 27627, 27628, 27629, 27630, 27631, 27632, 27633, 27634, 27635, 27636, 27637, 27638, 27639, 27640, 27641, 27642, 27643, 27644, 27645, 27646, 27647, 27648, 27649, 27650, 27651, 27652, 27653, 27654, 27655, 27656, 27657, 27658, 27659, 27660, 27661, 27662, 27663, 27664, 27665, 27666, 27667, 27668, 27669, 27670, 27671, 27672, 27673);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

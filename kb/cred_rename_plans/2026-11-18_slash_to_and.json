@@ -7,12 +7,13 @@
  "rule": {
   "word": "a slash joining words becomes \" and \"; a chain of three or more takes commas",
   "code": "a slash with a code on each side stays: the token holds a digit or is written in capitals",
-  "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a title that names ASE (kb/cert_naming.py), or a phrase in OFFICIAL_PHRASES",
+  "official": "a slash inside an official name stays: an ASE or ASE MIL test name's slash pair in a title that names ASE (kb/cert_naming.py), a phrase in OFFICIAL_PHRASES, or a C-ID descriptor title",
   "official_phrases": {
    "Fire Apparatus Driver/Operator": "California State Fire Training's certification title (Fire Apparatus Driver/Operator 1A, 1B and Tiller)",
    "Division/Group Supervisor": "NWCG's position and course title for S-339",
    "Medical/Surgical": "the standard nursing term for the adult acute-care specialty (the S679 conductor on COBIx's review of #3479, 2026-11-18)"
   },
+  "official_cid_titles": "a C-ID descriptor title that prints a slash keeps it, read from kb/reference/cid_descriptors.json (18 titles)",
   "whole_names": "a spaced slash between two whole names is held for a person: either side holds \"and\", or both sides are full titles (two or more words each)",
   "combine": "a rename whose \"and\" title matches a credential or a search alias in kb/credential_aliases.py, case-folded and whitespace squashed, is held as a combine"
  },

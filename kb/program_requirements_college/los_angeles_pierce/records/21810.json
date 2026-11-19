@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Programming for Business",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=113",
+ "source_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf#page=114",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10398,
+  "input_tokens": 7996,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10398,
-    "output_tokens": 1629,
+    "input_tokens": 7996,
+    "output_tokens": 1635,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1629,
+  "output_tokens": 1635,
   "output_tokens_details": {
-   "thinking_tokens": 482
+   "thinking_tokens": 398
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07417,
- "ms": 12897,
- "seconds": 13.2,
+ "cost_usd": 0.06468,
+ "ms": 13295,
+ "seconds": 13.4,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAMMING FOR BUSINESS Certificate of Achievement (STATE CODE 21810)",
+   "section_heading": "Programming for Business Certificate",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -269,12 +269,36 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Certificate of Achievement section on page 114; the A.A. degree on page 113 has different requirements and outcomes.",
-   "Catalog prints ACCTG 001, BUS 005, CAOT 032 with leading zeros; treated as the closed-list ACCTG 1, BUS 5, CAOT 32 (not catalog additions).",
-   "Required list printed as rows joined by OR; each OR group recorded as one entry with alternatives (one course chosen per group).",
-   "Careers are not named in the text; the section only refers to the Gainful Employment Disclosure website.",
-   "Award table lists GE as N/A for the certificate."
+   "The section's program title heading is not in the extracted text (it begins at '(STATE CODE 21810)'); section_heading taken from the award table line 'Programming for Business Certificate'.",
+   "Catalog prints ACCTG 001, BUS 005 and CAOT 032; these were treated as the closed-list courses ACCTG 1, BUS 5 and CAOT 32 (leading zeros), so catalog_addition is false.",
+   "Required courses are printed as rows joined by 'OR'; read as five required choices: CIS 101; CIS 120 or CIS 193; CIS 172 or CS 213/215/243/244; CIS 148 or CIS 173/192 or CS 112; CS 111 or CS 116.",
+   "Careers are referred to only via the Gainful Employment Disclosure website; none named in the text.",
+   "Award table lists GE as N/A; no general education pattern applies.",
+   "Text following the certificate belongs to the Programming for Computer Science A.S. degree and was not used."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": "44475498778",
+ "catalog_year": "2026-2027",
+ "source_sha": "85393cbbdd219c24",
+ "source_codes": [
+  "ACCTG1",
+  "BUS5",
+  "CAOT32",
+  "CIS101",
+  "CIS120",
+  "CIS148",
+  "CIS172",
+  "CIS173",
+  "CIS192",
+  "CIS193",
+  "CS111",
+  "CS112",
+  "CS116",
+  "CS213",
+  "CS215",
+  "CS243",
+  "CS244",
+  "ECONC2001"
+ ],
+ "source_coverage": 1.0
 }

@@ -1,0 +1,82 @@
+PTEC 006 Industrial Chemistry for Advanced Manufacturing
+
+Units: 3.0
+
+Print Page
+
+Back to department listing
+
+Description:
+
+This course builds the fundamental chemical concepts that are used in the Industrial Technology field. A conceptualized and contextualized approach is used to develop an understanding of the structure and properties of matter through a study of such topics as atomic structure, naming chemical compounds, types of chemical reactions, chemical formulas, mole, stoichiometry, chemical bonding, gases, solutions and acid-base chemistry. Emphasis is placed on practical aspects of chemistry used by technicians in advanced manufacturing roles.
+
+Credits Status:
+
+Credit - Degree Applicable
+
+Requisites:
+
+Advisory
+PTEC009 - PTEC Mathematics
+
+
+Course Note:
+
+None
+
+Enrollment Limitation:
+
+None
+
+Transferable:
+
+Not transferable
+
+Repeatability:
+
+None
+
+General Education:
+
+Not approved for General Education
+
+Student Learning Outcomes:
+
+CSLO 1:Understanding Fundamental Concepts - Demonstrate a solid understanding of fundamental principles and concepts in chemistry relevant to industrial technology applications.
+CSLO 2: Chemical Safety and Hazard Awareness - Identify and assess chemical hazards, demonstrating knowledge of safety protocols and procedures in an industrial setting.
+CSLO 3: Material Properties and Selection - Evaluate the chemical properties of materials commonly used in industrial processes, and make informed decisions on material selection based on desired characteristics.
+CSLO 4: Reaction Kinetics and Thermodynamics - Understand the principles of reaction kinetics and thermodynamics as they relate to industrial processes, and apply this knowledge to optimize reaction conditions.
+CSLO 5: Process Optimization - Apply chemical principles to optimize industrial processes, considering factors such as yield, efficiency, and environmental impact.
+CSLO 6:Troubleshooting and Problem Solving - Develop problem solving skills to troubleshoot and resolve issues related to chemical processes in an industrial setting.
+CSLO 7: Emerging Technologies In Industrial Chemistry - Stay informed about and adapt to emerging technologies and advancements in industrial chemistry that may impact industrial processes.
+
+Grade Options:
+
+Letter Grade Methods (LR)
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+54.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+54.0
+
+Lab Hours
+
+0.0
+
+Activity Hours
+
+0.0

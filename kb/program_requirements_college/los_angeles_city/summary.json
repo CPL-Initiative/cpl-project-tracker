@@ -2,20 +2,55 @@
  "college": "Los Angeles City College",
  "programs": 260,
  "with_closed_list": 258,
- "found": 250,
- "extracted": 250,
+ "found": 244,
+ "extracted": 244,
  "errors": 0,
- "passed_machine_checks": 210,
+ "passed_machine_checks": 215,
  "failed": {
-  "coverage": 14,
-  "invented": 8,
-  "arithmetic": 24,
+  "coverage": 7,
+  "invented": 7,
+  "arithmetic": 14,
   "repeated": 0,
   "outcomes": 14
  },
- "cost_usd": 20.28,
- "cost_per_program": 0.0811,
+ "cost_usd_run": 2.18,
+ "cost_usd_filed": 19.54,
+ "cost_per_program": 0.0801,
+ "extract_calls": 13,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "02720",
+   "title": "FINANCE AND BANKING",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "02721",
+   "title": "MANAGEMENT",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "02724",
+   "title": "MARKETING",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=306",
+    "coverage": 0.25
+   },
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "02765",
    "title": "MODERN POLITICAL STUDIES",
@@ -28,7 +63,8 @@
     ],
     "coverage": 1.0,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "08229",
@@ -37,7 +73,8 @@
    "near_miss": {
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=150",
     "coverage": 0.333
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "10778",
@@ -51,7 +88,8 @@
     ],
     "coverage": 0.784,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "10781",
@@ -60,7 +98,8 @@
    "near_miss": {
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=320",
     "coverage": 0.333
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "21612",
@@ -69,7 +108,8 @@
    "near_miss": {
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=309",
     "coverage": 0.4
-   }
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "21624",
@@ -78,7 +118,18 @@
    "near_miss": {
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=150",
     "coverage": 0.333
-   }
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "32832",
+   "title": "ART HISTORY",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=211",
+    "coverage": 0.281
+   },
+   "status": "Active"
   },
   {
    "control_number": "37221",
@@ -91,7 +142,18 @@
     ],
     "coverage": 0.788,
     "why": "the page prints neither the control number nor the title and award"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40566",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=77",
+    "coverage": 0.324
+   },
+   "status": "Active"
   },
   {
    "control_number": "44630",
@@ -100,8 +162,20 @@
    "near_miss": {
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
     "coverage": 0.4
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "45008",
+   "title": "Essential Skills",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "rule B then A: the pages printing the program's title with its award are course descriptions or general-education pages",
+    "rule": "A",
+    "refused_b": 1
+   },
+   "status": "Active"
   }
  ],
- "run": "43212072618"
+ "run": "44511401763"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11757,
-    "output_tokens": 2761,
+    "output_tokens": 2868,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2761,
+  "output_tokens": 2868,
   "output_tokens_details": {
-   "thinking_tokens": 666
+   "thinking_tokens": 832
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10225,
- "ms": 20469,
- "seconds": 20.9,
+ "cost_usd": 0.10439,
+ "ms": 21379,
+ "seconds": 21.7,
  "parts": null,
  "error": null,
  "score": {
@@ -322,29 +322,49 @@
   "missing_explained": [
    {
     "code": "COMM 321",
-    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication instead"
+    "why": "not in the text; catalog prints COMM C1004 Interpersonal Communication in its place"
    },
    {
     "code": "HSER 300",
-    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work instead"
+    "why": "not in the text; catalog prints SWCD 300 Introduction to Social Work"
    },
    {
     "code": "HSER 310",
-    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights instead"
+    "why": "not in the text; catalog prints SWCD 310 Ethical Issues and Client's Rights"
    },
    {
     "code": "HSER 330",
-    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations instead"
+    "why": "not in the text; catalog prints SWCD 330 Issues of Diverse Populations as an alternative to COMM 325"
    }
   ],
   "notes": [
-   "The page states the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this generic sentence is not recorded as degree_total, and electives_fill_degree is set true.",
-   "SWCD 300, SWCD 310 and SWCD 330 appear to be renumbered HSER 300, HSER 310 and HSER 330; COMM C1004 appears to replace COMM 321 (common course numbering). Reviewer should confirm.",
-   "The 9-unit block lists three choices of 3 units each, so in effect all three choices (BUS 100; BUS 105 or MATH 300; BUS 300 or BUS 350) are needed.",
-   "GERON 498 is variable 0.5-4 units; the block requires a minimum of 3 units of it.",
-   "Career information names entry to mid-level administrative positions in state and local government agencies, non-profit organizations, institutions, and private sector businesses serving older people and adults with disabilities; recorded as one career field."
+   "The degree statement says the A.A. requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true with degree_total null, since no total is printed as a table figure for this award.",
+   "COMM C1004, SWCD 300, SWCD 310 and SWCD 330 appear to be renumbered versions of closed-list COMM 321, HSER 300, HSER 310 and HSER 330 (same titles); recorded as catalog additions.",
+   "GERON 498 is variable 0.5-4 units; the block requires a minimum of 3 units, so multiple enrollments may be needed.",
+   "Career Information names one career field (entry to mid-level administrative positions) followed by the types of employers and services; only the position phrase was recorded."
   ]
  },
- "extracted_run": 43693265189,
- "read_run": "39047245752"
+ "extracted_run": "44535418752",
+ "catalog_year": "2026-2027",
+ "source_sha": "11f18c86c9fe624e",
+ "source_codes": [
+  "BUS100",
+  "BUS105",
+  "BUS300",
+  "BUS350",
+  "COMM321",
+  "COMM325",
+  "GERON303",
+  "GERON305",
+  "GERON306",
+  "GERON490",
+  "GERON498",
+  "HSER300",
+  "HSER310",
+  "HSER330",
+  "MATH300",
+  "PSYC365",
+  "PSYC375"
+ ],
+ "source_coverage": 1.0
 }

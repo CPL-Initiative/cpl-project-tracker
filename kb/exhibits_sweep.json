@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-18T04:01:30Z",
+ "generated_at": "2026-11-19T06:22:00Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -54,40 +54,12 @@
  ],
  "counts": {
   "ase": 0,
-  "numerals": 1,
+  "numerals": 0,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 1,
- "cards": [
-  {
-   "current": "News Production III",
-   "proposed": "News Production 3",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "JOURN 18C News Production III",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "JOURN 018C",
-     "credit": "4 hours in News Production III"
-    }
-   ],
-   "id": "8a461f1cb091",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  }
- ]
+ "local_titles": 0,
+ "cards": []
 }

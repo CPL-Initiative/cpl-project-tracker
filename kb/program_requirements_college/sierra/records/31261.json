@@ -75,10 +75,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    24.0,
+    26.0,
     27.0
    ],
    "stated": [
@@ -86,9 +86,8 @@
     27.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 24.0-27.0; the catalog states 26.0-27.0"
-   ]
+   "why": [],
+   "rescored": "A4 a blank alternative takes its row's units (Commons Clarity's blocker round, Part A (#3480, comments 6967374303 and 6967375123), COBIx's brief on #3358); paired alternatives corrected (S681 second reader, A)"
   },
   "repeated": {
    "codes": [],
@@ -115,7 +114,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -201,13 +200,17 @@
       "alternatives": [
        {
         "code": "CHEM 0003A",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "CHEM 0003A + CHEM 0003B"
        },
        {
         "code": "CHEM 0003B",
-        "units": null,
-        "catalog_addition": false
+        "units": 3,
+        "catalog_addition": false,
+        "units_max": null,
+        "together": "CHEM 0003A + CHEM 0003B"
        }
       ],
       "catalog_addition": false
@@ -254,7 +257,7 @@
      },
      {
       "code": "PHYS 0205L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -268,7 +271,7 @@
      },
      {
       "code": "PHYS 0210L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -282,7 +285,7 @@
      },
      {
       "code": "PHYS 0215L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -302,5 +305,32 @@
    "Careers are taken from the shared Earth Science/Geology description preceding the AS-T text ('career fields beyond that of Geology, such as ...'). The separate Geology AS Degree section (with its own field courses and careers) was not used."
   ]
  },
- "extracted_run": "39709837031"
+ "extracted_run": "39709837031",
+ "reconciled": [
+  {
+   "rule": "A4",
+   "code": "CHEM 0003A + CHEM 0003B",
+   "together": "state",
+   "words": "CHEM 0003A and CHEM 0003B together replace CHEM 0001A: each carries its own units from the state's course file (3, 3; 6 in all)",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PHYS 0205L",
+   "words": "PHYS 0205L, a lab printed with no units after its lecture PHYS 0205, counts 0",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PHYS 0210L",
+   "words": "PHYS 0210L, a lab printed with no units after its lecture PHYS 0210, counts 0",
+   "statewide": "units_rules_A4"
+  },
+  {
+   "rule": "A4",
+   "code": "PHYS 0215L",
+   "words": "PHYS 0215L, a lab printed with no units after its lecture PHYS 0215, counts 0",
+   "statewide": "units_rules_A4"
+  }
+ ]
 }

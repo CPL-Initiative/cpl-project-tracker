@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10712,
+  "input_tokens": 9125,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10712,
-    "output_tokens": 2596,
+    "input_tokens": 9125,
+    "output_tokens": 2514,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 2596,
+  "output_tokens": 2514,
   "output_tokens_details": {
-   "thinking_tokens": 620
+   "thinking_tokens": 640
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09477,
- "ms": 19191,
+ "cost_usd": 0.08678,
+ "ms": 19416,
  "seconds": 19.5,
  "parts": null,
  "error": null,
@@ -435,11 +435,41 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog says 'Select a total of 18 units from the following disciplines' with minimums of 6 (Physical Education), 3 (Science and Nutrition) and 3 (Social Sciences and Development); the Elective Courses list has no printed minimum, so its minimum is null. The remaining 6 units of the 18 may apparently come from any of the four lists.",
-   "PDF text splits digits in some codes ('NFOO 1 10', 'HDEV 1 10', 'PHYS 1 1 1', 'NFOO 1 15', 'PSYC 1 12', 'PSYC 1 16'); recorded as NFOO 110, HDEV 110, PHYS 111, NFOO 115, PSYC 112, PSYC 116.",
-   "No general education pattern, degree total, or program learning outcomes are printed in this section.",
-   "The section spans pages 95-96 of the PDF (catalog pages 93-94)."
+   "The program requires 'a total of 18 units' selected across the listed disciplines, with minimums of 6 units in Physical Education, 3 in Science and Nutrition, and 3 in Social Sciences and Development; the remaining units may come from any of the lists including Elective Courses.",
+   "The Elective Courses list prints no minimum; recorded as choose_units with minimum null since its courses count toward the 18-unit total but none is individually required.",
+   "No program learning outcomes are printed in this section.",
+   "Section spans catalog pages 95-96; the following General Studies: Social and Behavioral Sciences A.A. section was not read."
   ]
  },
- "extracted_run": "39006336111"
+ "extracted_run": "44477684527",
+ "catalog_year": "2026-2027",
+ "source_sha": "59476ec703ed77f1",
+ "source_codes": [
+  "ANAT130",
+  "ANAT132",
+  "BIOL100",
+  "BIOL100H",
+  "BIOL101",
+  "BIOL102",
+  "CH101",
+  "CHEM102",
+  "CHEM104",
+  "CHEM150",
+  "FAID101",
+  "HDEV110",
+  "MICR133",
+  "NFOO110",
+  "NFOO115",
+  "PE290",
+  "PHYO131",
+  "PHYS111",
+  "PHYS120",
+  "PHYS122",
+  "PSYC102",
+  "PSYC112",
+  "PSYC116",
+  "PSYCC1000",
+  "SOCI101"
+ ],
+ "source_coverage": 1.0
 }

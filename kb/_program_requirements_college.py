@@ -69,6 +69,9 @@ import xml.etree.ElementTree as ET
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _program_requirements_pilot as P  # noqa: E402
+# The reader's page checks, rules A to D (S683; #3480 Source 7): a program whose filed record places none of its courses
+# is read only from a page printing its own title with its award, never from course descriptions or a GE page.
+import _reader_page_checks as RC  # noqa: E402
 
 PAGE_SIZE = 1000          # PostgREST answers at most this many rows a request
 MAX_PAGES = 900           # program pages read at one college, at most
@@ -768,6 +771,14 @@ def candidates(program: dict, pages: list[dict], programs: list | None = None,
             continue
         if field == "textContent" and not heading_names_program(pg, program):
             continue   # hidden text alone is no evidence: an index names every course
+        if RC.applies(program):
+            # Rules B, C and A (S683): a program whose filed record placed none of its courses reads only a page
+            # printing its own title with its award, read with every tab; never course descriptions or a GE page.
+            kept, _ = RC.site_page(pg, program, text, found, field)
+            if kept is None:
+                continue
+            text, found, field = kept
+            cov = P.coverage(found, courses)
         award_hit, title = label_score(pg, program)
         if len(want) < SMALL_LIST and title < 0.5:
             continue   # a list this short names its courses on many pages; the page must name the program too
@@ -1144,12 +1155,42 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     lets keep it. A program that loses moves to its next page and tries again;
     one with none left is read from no page, and says which page went to whom
     (method page_claimed), so a sibling's requirements never stand in for its own.
-    Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
+    Returns {control number: {"best": candidate or None, "claimed_by": [...]}}.
+
+    The reader's page checks (S683, kb/_reader_page_checks.py) change only the marked programs' candidates, and
+    they must not move an unmarked program (S683 second reader, finding 2: a marked certificate that leaves the
+    "Accounting" page to its unmarked A.S. sister moved the A.S. off the hub page it read). So with any program
+    marked, the competition runs twice: once with every program read as before the checks, which gives every
+    unmarked program its page, and once more for the marked programs alone, where each unmarked program holds the
+    page it was given and a marked program may claim it only where page_winners() keeps every holder beside it."""
     owners: dict = {}   # a pattern page's owner, worked out once per page (ge_page_names_program)
-    ranked = {p["control_number"]: candidates(p, pages, programs, owners) for p in programs if p["closed_list"]}
+    ranked = _ranked(programs, programs, pages, owners)
+    marked = {p["control_number"] for p in programs if p["closed_list"] and RC.applies(p)}
+    if not marked:
+        return _compete(ranked)
+    as_before = [dict(p, **{RC.MARK: False}) for p in programs if p["control_number"] in marked]
+    before = _compete({**ranked, **_ranked(as_before, programs, pages, owners)})
+    held: dict[str, list[tuple[str, dict]]] = {}
+    for cn, got in before.items():
+        if cn not in marked and got["best"]:
+            held.setdefault(got["best"].get("group") or got["best"]["url"], []).append((cn, got["best"]))
+
+    def may_claim(cn: str, c: dict) -> bool:
+        holders = held.get(c.get("group") or c["url"])
+        return not holders or {h for h, _ in holders} | {cn} <= page_winners(holders + [(cn, c)])
+
+    after = _compete({cn: ([c for c in cands if may_claim(cn, c)] if cn in marked else
+                           [before[cn]["best"]] if before[cn]["best"] else [])
+                      for cn, cands in ranked.items()})
+    return {cn: after[cn] if cn in marked else before[cn] for cn in ranked}
+
+
+def _ranked(programs: list[dict], everyone: list[dict], pages: list[dict], owners: dict) -> dict[str, list[dict]]:
+    """Each of programs' candidate pages, best first, weighed against every listed program at the college."""
+    ranked = {p["control_number"]: candidates(p, pages, everyone, owners) for p in programs if p["closed_list"]}
     # A Coursedog tab that prints another listed program's title is no candidate for this one
     # (tab_names_another, S647); a page holding several programs is left to page_winners().
-    plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
+    plain = {p["control_number"]: _plain(p.get("title")) for p in everyone}
     for cn, cands in ranked.items():
         others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
         # A heading any of whose readings is the program's own title is its tab ("Child Development - Teacher,
@@ -1163,6 +1204,11 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
                       and not (c.get("one_program")
                                and plain[cn] not in heading_forms(c.get("heading"))
                                and tab_names_another(plain[cn], heading_title(c.get("heading")), others))]
+    return ranked
+
+
+def _compete(ranked: dict[str, list[dict]]) -> dict[str, dict]:
+    """assign()'s competition over each program's ranked candidates."""
     pos = {cn: 0 for cn in ranked}
     lost: dict[str, list[str]] = {}
     for _ in range(12):
@@ -1908,8 +1954,9 @@ def host_registry_urls(start: str) -> list[str]:
 
 def read_sitemap(reader, start: str) -> dict:
     """The catalog's sitemap.xml, robots first and the census's delay before
-    each request; a sitemap index is followed one level."""
-    from _program_source_census import robots_allows, site_root
+    each request; a sitemap index is followed one level. A WAF's challenge in place of
+    a sitemap (S683) is recorded as challenged, never parsed as a sitemap listing nothing."""
+    from _program_source_census import ROBOTS_CHALLENGED, challenge_header, robots_allows, site_root
     root = site_root(start)
     out = {"url": root + "sitemap.xml", "pages": [], "nested": [], "status": None}
     todo, done = [out["url"]], set()
@@ -1918,6 +1965,10 @@ def read_sitemap(reader, start: str) -> dict:
         if url in done:
             continue
         done.add(url)
+        if reader._robots_for(url) == ROBOTS_CHALLENGED:
+            # Its robots.txt answered a WAF challenge: the rules are unknown, and nothing more is asked (S683).
+            out.setdefault("challenged", []).append("%s: robots.txt answered a challenge" % url)
+            break
         if not robots_allows(reader._robots_for(url), url):
             out.setdefault("refused", []).append(url)
             continue
@@ -1927,6 +1978,10 @@ def read_sitemap(reader, start: str) -> dict:
             resp = reader.request.get(url, timeout=60000)
             if url == out["url"]:
                 out["status"] = resp.status
+            waf = challenge_header(getattr(resp, "headers", None))
+            if waf:
+                out.setdefault("challenged", []).append("%s: HTTP %s, %s" % (url, resp.status, waf))
+                break   # no nested sitemap is asked after the first challenge
             if not resp.ok:
                 # A missing sitemap (404, 410) is the host's answer; any other status lost its pages
                 # (pages_account()).
@@ -1966,9 +2021,13 @@ def index_links(reader, start: str, cache: dict, failed: list | None = None) -> 
             and P.same_site(ln.get("href") or "", start)][:6]
     urls = [ln.get("href") for ln in front.get("links") or []]
     for h in hubs:
+        if front.get("access") == "challenge":
+            break   # a bot check stops the listing at the first one (S683); the capture records where
         got = P.load(reader, h, cache, False)
         if failed is not None and load_failed(got):
             failed.append(h)
+        if got.get("access") == "challenge":
+            break
         urls.extend(ln.get("href") for ln in got.get("links") or [])
     return [u for u in urls if u]
 
@@ -4809,7 +4868,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
 PDF_CN_SHARE = 0.5        # a catalog printing this share of its programs' control numbers prints them all
 
 
-def pdf_unproven(picks: list[dict]) -> set[str]:
+def pdf_unproven(picks: list[dict], basis: list[dict] | None = None) -> set[str]:
     """The picks a catalog that prints control numbers does not vouch for. East LA
     prints the number in 116 of its 141 headings (run 39010864052); of the 25
     others, six went to its online-course, C-ID and admissions pages up front.
@@ -4817,11 +4876,33 @@ def pdf_unproven(picks: list[dict]) -> set[str]:
     number nor all the title words (the pilot's picker chose it on codes alone)
     is no proof, and the program stays out. A title-gated page stays: at Los
     Angeles City the stricter test, title and award on one heading line, dropped
-    28 of its 245 picks (run 39017360234)."""
-    if not picks or sum(1 for p in picks if p["cn_printed"]) < PDF_CN_SHARE * len(picks):
+    28 of its 245 picks (run 39017360234).
+
+    basis, when given, is the set of picks the share is taken over (pdf_basis): the picks as they stood before
+    the reader's page checks, so a marked program that loses its page never changes whether an unmarked one
+    stays (S683 second reader, finding 2)."""
+    basis = picks if basis is None else basis
+    if not picks or not basis or sum(1 for p in basis if p["cn_printed"]) < PDF_CN_SHARE * len(basis):
         return set()
     return {p["control_number"] for p in picks
             if not p["cn_printed"] and not p.get("titled") and not p["named"]}
+
+
+def pdf_basis(picks: dict[str, dict], before: dict[str, dict | None]) -> list[dict]:
+    """pdf_unproven's basis: each pick, except that a program the page checks read (a key of before) counts with
+    the pick it had before them (its value, None where it had none)."""
+    return [p for cn, p in picks.items() if cn not in before] + [p for p in before.values() if p]
+
+
+def pdf_pick_before(start: str, pages: list[str], prog: dict, extractor: str, above) -> dict | None:
+    """The pick a program the page checks read would have had without them, in pdf_unproven's shape, or None: the
+    picker's own window, filed under the same test capture_pdf files a pick by."""
+    b = pdf_best(start, pages, prog, prog["closed_list"], extractor, None, above, numbers_after=False)
+    if not b or b.get("refused") or b.get("after_unbound") == "block_names_other_program" \
+            or not b.get("text") or b["coverage"] < P.ACCEPT_SHARE:
+        return None
+    return {"control_number": prog["control_number"], "cn_printed": b["control_number_printed"],
+            "titled": b["titled"], "named": b["named"]}
 
 
 def pdf_start(reader, reg: dict, cache: dict, report: dict) -> tuple[str | None, int]:
@@ -4975,6 +5056,16 @@ def read_hand_filed(hf: dict) -> dict:
     return out
 
 
+def pdf_page_check(prog: dict, pages: list[str], year: str | None, ctx: dict | None, pinned: dict,
+                   coded: dict | None) -> dict | None:
+    """Rules B, A and D (kb/_reader_page_checks.py, S683) for one program of a PDF catalog, or None where they do not
+    read it: no closed list, no mark (its filed record places courses, or the switch is off), or its page named by
+    something stronger than its codes (a curator's pin, a code heading, the printed control numbers)."""
+    if not prog["closed_list"] or not RC.applies(prog) or ctx or prog["control_number"] in pinned or coded is not None:
+        return None
+    return RC.pdf_page(pages, prog, year)
+
+
 def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, report: dict,
                 hf: dict | None = None) -> list[dict]:
     """Every program at a college whose catalog is one PDF: the file read once
@@ -5077,9 +5168,27 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
     print("%s: %d programs (%d with a course list), PDF %s pages by %s, %s"
           % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
     recs = []
+    before_checks: dict[str, dict | None] = {}   # a program the page checks read: its pick as it was without them
     for prog in programs:
+        # Rules B, A and D (S683) for a program whose filed record placed none of its courses, where neither a pin,
+        # a code heading nor the printed control numbers name its page: the heading the window opens on, or why none.
+        rule = pdf_page_check(prog, pages, reg.get("catalog_year"), ctx, pinned, coded)
+        if rule is not None:
+            before_checks[prog["control_number"]] = pdf_pick_before(start, pages, prog, extractor, above)
+            report["pdf"].setdefault("page_checks", {"read": 0, "own_page": 0, "no_own_page": 0, "not_printed": 0})
+            report["pdf"]["page_checks"]["read"] += 1
+            report["pdf"]["page_checks"]["own_page" if rule["heading"] else
+                                         "not_printed" if rule.get("gap") else "no_own_page"] += 1
         if not prog["closed_list"]:
             rec = source_record(college, prog, reg, None, "no_closed_list")
+        elif rule is not None and not rule["heading"]:
+            # No page prints the program's own heading outside descriptions and GE pages: read from no page, so no
+            # extraction is sent for it. Its filed record places none (the mark's scope), so the filing drops it as
+            # any failing record read as not_found (keep_no_read keeps passing ones only), and the source names why.
+            rec = source_record(college, prog, reg, None, "not_found")
+            rec["near_miss"] = {"why": rule["why"], "rule": rule["rule"], "refused_b": rule["refused_b"]}
+            if rule.get("gap"):
+                rec["gap"] = rule["gap"]
         elif prog["control_number"] in pinned and not pinned[prog["control_number"]]:
             # A refused pin (S650, finding A): the picker's page is the one the pin exists to refuse, so the program
             # gets no fresh text, and the reconcile and the reread leave its filed record as it stands.
@@ -5091,7 +5200,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"]), above,
+                            pinned.get(prog["control_number"]) or (coded or {}).get(prog["control_number"])
+                            or (rule or {}).get("heading"), above,
                             numbers_after=ctx or False)
             # A gated program the after path did not bind (pdf_best's after_unbound; none at all when the
             # picker found no window): a passing filed record stays on file unless the run forces it.
@@ -5116,6 +5226,9 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             elif best and best.get("text") and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                if rule is not None:
+                    rec["source"]["page_check"] = {"rule": rule["rule"], "page": rule["page_number"],
+                                                   "share": rule["share"]}
                 if unbound:
                     rec["source"]["after_unbound"] = unbound["why"]
                 if best["opens_on_list"]:
@@ -5148,7 +5261,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                     rec["after_unbound"] = unbound
         recs.append(rec)
     picks = {p["control_number"]: p for p in report["pdf"].get("picks") or []}
-    drop = pdf_unproven(list(picks.values()))
+    drop = pdf_unproven(list(picks.values()), pdf_basis(picks, before_checks))
     report["pdf"]["unproven"] = sorted(drop)
     byc = {p["control_number"]: p for p in programs}
     for i, rec in enumerate(recs):
@@ -5221,6 +5334,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         _write(os.path.join(out_dir, "capture.json"), {"college": college, "stopped": refused})
         print(refused)
         return 1
+    if not prior:
+        # The reader's page checks read the programs whose filed record places none of their courses (S683).
+        RC.mark(programs, os.path.join(COLLEGE_DIR, slug_of(college)))
     if prior:
         programs = [p for p in programs if p["control_number"] in prior["only"]]
         reg = dict(reg, catalog_url=prior["start"], catalog_year=prior["catalog_year"])
@@ -5329,8 +5445,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
                                  "nested": len(sm["nested"]), "program_pages": len(urls),
                                  "refused": sm.get("refused"), "errors": sm.get("errors"),
-                                 "failed": sm.get("failed")}
-            listing_failed = len(sm.get("errors") or []) + len(sm.get("failed") or [])
+                                 "failed": sm.get("failed"), "challenged": sm.get("challenged")}
+            listing_failed = (len(sm.get("errors") or []) + len(sm.get("failed") or [])
+                              + len(sm.get("challenged") or []))
             if len(urls) < 0.3 * report["with_closed_list"]:
                 index_failed: list = []
                 urls = program_candidates(index_links(reader, start, cache, index_failed), start, scope)
@@ -5345,10 +5462,16 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                   % (college, len(programs), report["with_closed_list"], len(urls), delay / 1000), flush=True)
         # A page's own program pages beneath it are read too (child_pages()), once each.
         queue, seen, i = list(urls), set(urls), 0
-        while i < len(queue):
+        # A bot check on an index page stops the read before its first program page (S683). A Coursedog
+        # catalog keeps its own account of challenges (cd_challenged_programs, S646).
+        if platform != "coursedog":
+            site_challenge(report, next((g for g in cache.values() if g.get("access") == "challenge"), None), reader)
+        while i < len(queue) and not report.get("site_challenge"):
             u = queue[i]
             i += 1
             got = P.load(reader, u, cache, platform == "elumen")   # an eLumen view fills in late
+            if platform != "coursedog" and site_challenge(report, got, reader):
+                break
             if got.get("access") != "ok":
                 continue
             if platform not in ("curriqunet", "elumen", "acalog"):
@@ -5396,6 +5519,15 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
                     print("%-6s page_claimed %s" % (prog["control_number"], g["lost"][0]), flush=True)
                     continue
+                if best is None and report.get("site_challenge"):
+                    # The read stopped at a bot check (S683): no link search loads the host again, and a program
+                    # whose page was not reached is refused, never absent from the catalog.
+                    rec = source_record(college, prog, reg, None, "page_challenged")
+                    rec["challenged_at"] = report["site_challenge"]["stopped_at"]
+                    recs.append(rec)
+                    _write(os.path.join(out_dir, "sources", prog["control_number"] + ".json"), rec)
+                    print("%-6s page_challenged %s" % (prog["control_number"], rec["challenged_at"]), flush=True)
+                    continue
                 # A curriQunet catalog has no links to search: its index is the whole list.
                 # An eLumen catalog's menu is the whole list too; its links would find it again,
                 # and so would an Acalog catalog's site map or program pages.
@@ -5404,6 +5536,14 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                     res = P.locate_html(reader, {"title": prog["title"], "award": prog["award"]},
                                         prog["closed_list"], start, cache, False)
                     b = res["best"] or {}
+                    if b and RC.applies(prog):
+                        # Rules B, C and A (S683) on the page the link search found, as on every page read.
+                        got_b = b.get("got") or {}
+                        kept, _ = RC.site_page({"url": b.get("url"), "h1": got_b.get("h1"), "title": got_b.get("title"),
+                                                "got": got_b}, prog, b.get("text") or "", b.get("found") or {},
+                                               b.get("field") or "innerText")
+                        b = dict(b, text=kept[0], found=kept[1], field=kept[2],
+                                 coverage=P.coverage(kept[1], prog["closed_list"])) if kept else {}
                     if b.get("coverage", 0.0) >= P.ACCEPT_SHARE and link_page_ok(b.get("url") or "", scope):
                         best, method = dict(b, label=None), "link_search"
                 rec = source_record(college, prog, reg, best, method if best else "not_found")
@@ -6570,7 +6710,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
                                  course_units=src.get("course_units"),
-                                 course_hours=src.get("course_hours"),
+                                 course_hours=src.get("course_hours"), control_number=src.get("control_number"),
                                  closed=src.get("closed_list"), year=src.get("catalog_year"))
         if notes:
             got = dict(got, record=rec)
@@ -7397,7 +7537,15 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
                        "invented": (score.get("invented") or {}).get("pass"),
                        "arithmetic": (score.get("arithmetic") or {}).get("status"),
                        "placed": (score.get("coverage") or {}).get("placed"),
-                       "listed": (score.get("coverage") or {}).get("listed")},
+                       "listed": (score.get("coverage") or {}).get("listed"),
+                       # A named gap and its scores (kb/_program_named_gaps.py; Sam, 2026-11-17: collect with gaps
+                       # noted and confidence scores) ride in checks, and only where the filed score carries them.
+                       # A passing record may carry scores and their notes with no gap (S681: units rule A5's rows).
+                       **({"gaps": [g.get("gap") if isinstance(g, dict) else g for g in score["gaps"]]}
+                          if score.get("gaps") else {}),
+                       **({"confidence": score.get("confidence")} if score.get("gaps") or score.get("confidence")
+                          else {}),
+                       **({"confidence_notes": score["confidence_notes"]} if score.get("confidence_notes") else {})},
             "extracted_run": run})
     return rows, skipped
 
@@ -7554,15 +7702,29 @@ def _write(path: str, obj) -> None:
         fh.write("\n")
 
 
+def site_challenge(report: dict, got: dict | None, reader) -> bool:
+    """Record a bot check a catalog's own pages served (S683, the unblocker step on #3510) and say the read
+    stops. Sam, 2026-11-18: a college's HTML catalog is read by the ordinary browser read, and never past a WAF
+    or a bot check; the capture is filed as it is, refused where it stopped, and never extracted."""
+    if not got or got.get("access") != "challenge":
+        return False
+    report["site_challenge"] = {"stopped_at": got.get("url"), "status": got.get("status"), "waf": got.get("waf"),
+                                "title": (got.get("title") or "")[:120], "after_loads": getattr(reader, "loads", None)}
+    print("::warning::%s answered a bot check (HTTP %s%s); the read stops here and is never extracted"
+          % (got.get("url"), got.get("status"), ", " + got["waf"] if got.get("waf") else ""), flush=True)
+    return True
+
+
 def reread_capture(out_dir: str) -> bool:
-    """Whether the run's capture is partial: a route=challenged re-read (partial by design), or a
-    route=slow read a challenge cut short."""
+    """Whether the run's capture is partial: a route=challenged re-read (partial by design), a
+    route=slow read a challenge cut short, or a site read a bot check stopped (S683)."""
     try:
         with open(os.path.join(out_dir, "capture.json")) as fh:
             rep = json.load(fh)
     except (OSError, ValueError):
         return False
-    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at"))
+    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at")
+                or (rep.get("site_challenge") or {}).get("stopped_at"))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -7619,14 +7781,16 @@ def main(argv: list[str] | None = None) -> int:
         return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
         if reread_capture(args.out):
-            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+            print("::warning::a partial capture (route=challenged, a route=slow read a challenge stopped, or a site "
+                  "read a bot check stopped) is "
                   "filed as it is and never reconciled")
             return 0
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
         if reread_capture(args.out):
             # Filed as a capture alone (file_run), so the account of where it stopped is kept; nothing is paid.
-            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+            print("::warning::a partial capture (route=challenged, a route=slow read a challenge stopped, or a site "
+                  "read a bot check stopped) is "
                   "filed as it is and never extracted")
             return 0
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))

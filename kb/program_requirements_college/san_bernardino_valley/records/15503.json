@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8510,
-    "output_tokens": 1816,
+    "output_tokens": 1882,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,42 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1816,
+  "output_tokens": 1882,
   "output_tokens_details": {
-   "thinking_tokens": 439
+   "thinking_tokens": 481
   },
   "service_tier": "standard",
-  "inference_geo": "global"
+  "inference_geo": "global",
+  "speed": "standard"
  },
- "cost_usd": 0.07036,
- "ms": 14320,
- "seconds": 14.7,
+ "cost_usd": 0.07168,
+ "ms": 15612,
+ "seconds": 16.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 15,
    "listed": 15,
-   "share": 0.867,
-   "missing": [
-    "COMM111",
-    "COMM111H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "COMMC1004",
+     "listed": "COMM111",
+     "matched_by": "course_id"
+    },
+    {
+     "printed": "COMMC1004H",
+     "listed": "COMM111H",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "COMMC1004",
-    "COMMC1004H"
-   ],
-   "flagged": [
-    "COMMC1004",
-    "COMMC1004H"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -281,20 +285,21 @@
   "missing_explained": [
    {
     "code": "COMM 111",
-    "why": "not in the text; catalog lists COMM C1004 (Interpersonal Communication) in its place"
+    "why": "not in the text; catalog lists COMM C1004 Interpersonal Communication in its place"
    },
    {
     "code": "COMM 111H",
-    "why": "not in the text; catalog lists COMM C1004H (Interpersonal Communication - Honors) in its place"
+    "why": "not in the text; catalog lists COMM C1004H Interpersonal Communication - Honors in its place"
    }
   ],
   "notes": [
-   "The 'Required General Education Courses' block is part of this certificate's own required course list and counts toward the printed 31-unit total (12 + 3 + 16 = 31), so it is recorded as a block rather than as a GE pattern.",
-   "Alternatives HUMSV 195B, COMM C1004H, ENGL C1000H and PSYC C1000H have no units printed beside them; units left null.",
-   "COMM C1004/C1004H appear to be renumbered versions of closed-list COMM 111/111H (same titles); recorded as catalog additions.",
-   "The field work note says HUMSV 170 must be completed before field work and recommends completing two of HUMSV 140, 167, 173 first; these are already required courses, so no recommended block was created.",
-   "Outcomes are from the page's Program Learning Outcomes tab for this certificate."
+   "The 'Required General Education Courses' are specific courses required by the certificate and counted in its printed 31-unit total (12 + 3 + 16 = 31), so they are recorded as a required block rather than as a GE pattern.",
+   "COMM C1004/C1004H appear to be the renumbered COMM 111/111H (same title); recorded as catalog additions.",
+   "Field work note: HUMSV 170 must be completed prior to field work courses, and it is recommended that students complete two of HUMSV 140, HUMSV 167, HUMSV 173 first; these are already required, so this is a sequencing recommendation, not a separate recommended block.",
+   "Units for the 'or' alternatives (HUMSV 195B, COMM C1004H, ENGL C1000H, PSYC C1000H) are not printed beside them; left null.",
+   "Career entry taken from the description 'entry-level employment in case management in public social services setting'."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": "44481529632",
+ "catalog_year": "2026-2027"
 }

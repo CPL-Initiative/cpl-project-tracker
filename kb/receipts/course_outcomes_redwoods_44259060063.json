@@ -1,0 +1,2921 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "redwoods",
+ "load_run": "44259060063",
+ "reads": [
+  "kb/course_outcomes/redwoods/read_44252663448_p1of2.json",
+  "kb/course_outcomes/redwoods/read_44252663448_p2of2.json"
+ ],
+ "kind": "all",
+ "held_back": 0,
+ "posted": 443,
+ "inserted": 443,
+ "kept": 0,
+ "skipped": 48,
+ "skipped_rows": [
+  {
+   "course_code": "AG 64F",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AG 64X",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 1B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASTRO 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 42",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 44",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CHEM 8",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 1B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 32",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "FNR 5L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 7",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 9",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 50B",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYCH 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYCH 2L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 1",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 15",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 33",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 9",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SWHS 42",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AG 44A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "AG 64S",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTH C1001L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ANTHC 1001L",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 1A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASTRO 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ASTRO 30",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 43",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "BIOL 45",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 1H",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM 7",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 33",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL 4",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 6",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST 8",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 16",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH 50A",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "OCEAN 11",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "POLSC 10",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC 3",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "SWHS 2",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 26168,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 10"
+  },
+  {
+   "id": 26169,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 12"
+  },
+  {
+   "id": 26170,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 16"
+  },
+  {
+   "id": 26171,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 18"
+  },
+  {
+   "id": 26172,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 42"
+  },
+  {
+   "id": 26173,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 17"
+  },
+  {
+   "id": 26174,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 22"
+  },
+  {
+   "id": 26175,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 25"
+  },
+  {
+   "id": 26176,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 30"
+  },
+  {
+   "id": 26177,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 33"
+  },
+  {
+   "id": 26178,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 42"
+  },
+  {
+   "id": 26179,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 44"
+  },
+  {
+   "id": 26180,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 5"
+  },
+  {
+   "id": 26181,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 60"
+  },
+  {
+   "id": 26182,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 68"
+  },
+  {
+   "id": 26183,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 1"
+  },
+  {
+   "id": 26184,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 3"
+  },
+  {
+   "id": 26185,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 6"
+  },
+  {
+   "id": 26186,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 8"
+  },
+  {
+   "id": 26187,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 82"
+  },
+  {
+   "id": 26188,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 2"
+  },
+  {
+   "id": 26189,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 4"
+  },
+  {
+   "id": 26190,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 6"
+  },
+  {
+   "id": 26191,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH C1001"
+  },
+  {
+   "id": 26192,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTHC 1001"
+  },
+  {
+   "id": 26193,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 1"
+  },
+  {
+   "id": 26194,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 3"
+  },
+  {
+   "id": 26195,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 10"
+  },
+  {
+   "id": 26196,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 17"
+  },
+  {
+   "id": 26197,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 19"
+  },
+  {
+   "id": 26198,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 31A"
+  },
+  {
+   "id": 26199,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 3A"
+  },
+  {
+   "id": 26200,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 42"
+  },
+  {
+   "id": 26201,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 77"
+  },
+  {
+   "id": 26202,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ARTHC 1100"
+  },
+  {
+   "id": 26203,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ASTRC 1001"
+  },
+  {
+   "id": 26204,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 10"
+  },
+  {
+   "id": 26205,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 14"
+  },
+  {
+   "id": 26206,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "AT 20"
+  },
+  {
+   "id": 26207,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 20"
+  },
+  {
+   "id": 26208,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 24"
+  },
+  {
+   "id": 26209,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 30"
+  },
+  {
+   "id": 26210,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 18"
+  },
+  {
+   "id": 26211,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 20"
+  },
+  {
+   "id": 26212,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 3"
+  },
+  {
+   "id": 26213,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 3"
+  },
+  {
+   "id": 26214,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 40"
+  },
+  {
+   "id": 26215,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 40"
+  },
+  {
+   "id": 26216,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 5"
+  },
+  {
+   "id": 26217,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 7"
+  },
+  {
+   "id": 26218,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 7"
+  },
+  {
+   "id": 26219,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL C1000"
+  },
+  {
+   "id": 26220,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 14"
+  },
+  {
+   "id": 26221,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 180"
+  },
+  {
+   "id": 26222,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 1B"
+  },
+  {
+   "id": 26223,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 35"
+  },
+  {
+   "id": 26224,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 52"
+  },
+  {
+   "id": 26225,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 69"
+  },
+  {
+   "id": 26226,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CE 41"
+  },
+  {
+   "id": 26227,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CET 10"
+  },
+  {
+   "id": 26228,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CET 10"
+  },
+  {
+   "id": 26229,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 26230,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CHEM 2"
+  },
+  {
+   "id": 26231,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CINE 2"
+  },
+  {
+   "id": 26232,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 1"
+  },
+  {
+   "id": 26233,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 18"
+  },
+  {
+   "id": 26234,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 18"
+  },
+  {
+   "id": 26235,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 31"
+  },
+  {
+   "id": 26236,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 35"
+  },
+  {
+   "id": 26237,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 35"
+  },
+  {
+   "id": 26238,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 50"
+  },
+  {
+   "id": 26239,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 50"
+  },
+  {
+   "id": 26240,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 2"
+  },
+  {
+   "id": 26241,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 4"
+  },
+  {
+   "id": 26242,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 6"
+  },
+  {
+   "id": 26243,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 8"
+  },
+  {
+   "id": 26244,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 26245,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMMC 1004"
+  },
+  {
+   "id": 26246,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 152"
+  },
+  {
+   "id": 26247,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 21A"
+  },
+  {
+   "id": 26248,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 25"
+  },
+  {
+   "id": 26249,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 40"
+  },
+  {
+   "id": 26250,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CT 55"
+  },
+  {
+   "id": 26251,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 55"
+  },
+  {
+   "id": 26252,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 57A"
+  },
+  {
+   "id": 26253,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 57C"
+  },
+  {
+   "id": 26254,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 70"
+  },
+  {
+   "id": 26255,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 78A"
+  },
+  {
+   "id": 26256,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 78C"
+  },
+  {
+   "id": 26257,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 80"
+  },
+  {
+   "id": 26258,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 90"
+  },
+  {
+   "id": 26259,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 94"
+  },
+  {
+   "id": 26260,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 96"
+  },
+  {
+   "id": 26261,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "DA 153"
+  },
+  {
+   "id": 26262,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 153"
+  },
+  {
+   "id": 26263,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 155"
+  },
+  {
+   "id": 26264,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 156C"
+  },
+  {
+   "id": 26265,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 164"
+  },
+  {
+   "id": 26266,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 166"
+  },
+  {
+   "id": 26267,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "DRAMA 24"
+  },
+  {
+   "id": 26268,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DRAMA 24"
+  },
+  {
+   "id": 26269,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "DRAMA 30B"
+  },
+  {
+   "id": 26270,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DRAMA 30B"
+  },
+  {
+   "id": 26271,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DT 25"
+  },
+  {
+   "id": 26272,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 1"
+  },
+  {
+   "id": 26273,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 18"
+  },
+  {
+   "id": 26274,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 6"
+  },
+  {
+   "id": 26275,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 9"
+  },
+  {
+   "id": 26276,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 26277,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECONC 2002"
+  },
+  {
+   "id": 26278,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 17"
+  },
+  {
+   "id": 26279,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 36"
+  },
+  {
+   "id": 26280,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 60"
+  },
+  {
+   "id": 26281,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 9"
+  },
+  {
+   "id": 26282,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 26283,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGLC 1000"
+  },
+  {
+   "id": 26284,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGLC 1002"
+  },
+  {
+   "id": 26285,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENVSC 12"
+  },
+  {
+   "id": 26286,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 211"
+  },
+  {
+   "id": 26287,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 221"
+  },
+  {
+   "id": 26288,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 221"
+  },
+  {
+   "id": 26289,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 225"
+  },
+  {
+   "id": 26290,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 231"
+  },
+  {
+   "id": 26291,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 231"
+  },
+  {
+   "id": 26292,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 10"
+  },
+  {
+   "id": 26293,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 10"
+  },
+  {
+   "id": 26294,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 31"
+  },
+  {
+   "id": 26295,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 33"
+  },
+  {
+   "id": 26296,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 5"
+  },
+  {
+   "id": 26297,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 52"
+  },
+  {
+   "id": 26298,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 77"
+  },
+  {
+   "id": 26299,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 87"
+  },
+  {
+   "id": 26300,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FRNC 1B"
+  },
+  {
+   "id": 26301,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOG 2"
+  },
+  {
+   "id": 26302,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOL 10"
+  },
+  {
+   "id": 26303,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOL 2"
+  },
+  {
+   "id": 26304,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HE 7"
+  },
+  {
+   "id": 26305,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 12"
+  },
+  {
+   "id": 26306,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 21"
+  },
+  {
+   "id": 26307,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 23"
+  },
+  {
+   "id": 26308,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 5"
+  },
+  {
+   "id": 26309,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 26310,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HISTC 1002"
+  },
+  {
+   "id": 26311,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 15"
+  },
+  {
+   "id": 26312,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 170A"
+  },
+  {
+   "id": 26313,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 170D"
+  },
+  {
+   "id": 26314,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 63"
+  },
+  {
+   "id": 26315,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 65"
+  },
+  {
+   "id": 26316,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 68"
+  },
+  {
+   "id": 26317,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 25"
+  },
+  {
+   "id": 26318,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 31"
+  },
+  {
+   "id": 26319,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 5"
+  },
+  {
+   "id": 26320,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 55"
+  },
+  {
+   "id": 26321,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 55"
+  },
+  {
+   "id": 26322,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 26323,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATHC 2220"
+  },
+  {
+   "id": 26324,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 10"
+  },
+  {
+   "id": 26325,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 24A"
+  },
+  {
+   "id": 26326,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 25A"
+  },
+  {
+   "id": 26327,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 2A"
+  },
+  {
+   "id": 26328,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 3A"
+  },
+  {
+   "id": 26329,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NAS 1"
+  },
+  {
+   "id": 26330,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 1"
+  },
+  {
+   "id": 26331,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 1"
+  },
+  {
+   "id": 26332,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 20"
+  },
+  {
+   "id": 26333,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 20"
+  },
+  {
+   "id": 26334,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 4"
+  },
+  {
+   "id": 26335,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 4"
+  },
+  {
+   "id": 26336,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "OCEAN 10L"
+  },
+  {
+   "id": 26337,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "OCEAN 12"
+  },
+  {
+   "id": 26338,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 11"
+  },
+  {
+   "id": 26339,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 13"
+  },
+  {
+   "id": 26340,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 15"
+  },
+  {
+   "id": 26341,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 18"
+  },
+  {
+   "id": 26342,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 20"
+  },
+  {
+   "id": 26343,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 22"
+  },
+  {
+   "id": 26344,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 24"
+  },
+  {
+   "id": 26345,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 27"
+  },
+  {
+   "id": 26346,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 8A"
+  },
+  {
+   "id": 26347,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 1"
+  },
+  {
+   "id": 26348,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 12"
+  },
+  {
+   "id": 26349,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 14"
+  },
+  {
+   "id": 26350,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 16"
+  },
+  {
+   "id": 26351,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 20"
+  },
+  {
+   "id": 26352,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 26353,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 26354,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 26355,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 26356,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 1"
+  },
+  {
+   "id": 26357,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 1"
+  },
+  {
+   "id": 26358,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 26359,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 1000"
+  },
+  {
+   "id": 26360,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 2"
+  },
+  {
+   "id": 26361,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 3"
+  },
+  {
+   "id": 26362,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 26363,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 2"
+  },
+  {
+   "id": 26364,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 30"
+  },
+  {
+   "id": 26365,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 38"
+  },
+  {
+   "id": 26366,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "PTEC 102"
+  },
+  {
+   "id": 26367,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PTEC 102"
+  },
+  {
+   "id": 26368,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SNLAN 1A"
+  },
+  {
+   "id": 26369,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "SNLAN 2A"
+  },
+  {
+   "id": 26370,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SNLAN 2A"
+  },
+  {
+   "id": 26371,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 17"
+  },
+  {
+   "id": 26372,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 26373,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SPAN 1A"
+  },
+  {
+   "id": 26374,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SPAN 2A"
+  },
+  {
+   "id": 26375,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 26376,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "STATC 1000"
+  },
+  {
+   "id": 26377,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 1"
+  },
+  {
+   "id": 26378,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 1"
+  },
+  {
+   "id": 26379,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 3"
+  },
+  {
+   "id": 26380,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 3"
+  },
+  {
+   "id": 26381,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 102"
+  },
+  {
+   "id": 26382,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 102"
+  },
+  {
+   "id": 26383,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 40"
+  },
+  {
+   "id": 26384,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 54"
+  },
+  {
+   "id": 26385,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 60"
+  },
+  {
+   "id": 26386,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 63"
+  },
+  {
+   "id": 26387,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 67"
+  },
+  {
+   "id": 26388,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "WT 81"
+  },
+  {
+   "id": 26389,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 81"
+  },
+  {
+   "id": 26390,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 91"
+  },
+  {
+   "id": 26391,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 11"
+  },
+  {
+   "id": 26392,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 15"
+  },
+  {
+   "id": 26393,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 17"
+  },
+  {
+   "id": 26394,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 17"
+  },
+  {
+   "id": 26395,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ADCT 19"
+  },
+  {
+   "id": 26396,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 15"
+  },
+  {
+   "id": 26397,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 21"
+  },
+  {
+   "id": 26398,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 23"
+  },
+  {
+   "id": 26399,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 27"
+  },
+  {
+   "id": 26400,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 32"
+  },
+  {
+   "id": 26401,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 35"
+  },
+  {
+   "id": 26402,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 43"
+  },
+  {
+   "id": 26403,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 51"
+  },
+  {
+   "id": 26404,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 63"
+  },
+  {
+   "id": 26405,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 67"
+  },
+  {
+   "id": 26406,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AG 69"
+  },
+  {
+   "id": 26407,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 10"
+  },
+  {
+   "id": 26408,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 4"
+  },
+  {
+   "id": 26409,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 7"
+  },
+  {
+   "id": 26410,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 81"
+  },
+  {
+   "id": 26411,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AJ 83"
+  },
+  {
+   "id": 26412,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 1B"
+  },
+  {
+   "id": 26413,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 3"
+  },
+  {
+   "id": 26414,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 5"
+  },
+  {
+   "id": 26415,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ANTH 7"
+  },
+  {
+   "id": 26416,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 2"
+  },
+  {
+   "id": 26417,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 2"
+  },
+  {
+   "id": 26418,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 4"
+  },
+  {
+   "id": 26419,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AQUA 4"
+  },
+  {
+   "id": 26420,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 18"
+  },
+  {
+   "id": 26421,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 23"
+  },
+  {
+   "id": 26422,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 35"
+  },
+  {
+   "id": 26423,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 41"
+  },
+  {
+   "id": 26424,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 60"
+  },
+  {
+   "id": 26425,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ART 9"
+  },
+  {
+   "id": 26426,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ARTHC 1200"
+  },
+  {
+   "id": 26427,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "AT 12"
+  },
+  {
+   "id": 26428,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 12"
+  },
+  {
+   "id": 26429,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 16"
+  },
+  {
+   "id": 26430,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 21"
+  },
+  {
+   "id": 26431,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 26"
+  },
+  {
+   "id": 26432,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "AT 35"
+  },
+  {
+   "id": 26433,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 15"
+  },
+  {
+   "id": 26434,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 2"
+  },
+  {
+   "id": 26435,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 2"
+  },
+  {
+   "id": 26436,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 27"
+  },
+  {
+   "id": 26437,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 4"
+  },
+  {
+   "id": 26438,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 41"
+  },
+  {
+   "id": 26439,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 41"
+  },
+  {
+   "id": 26440,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 6"
+  },
+  {
+   "id": 26441,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 6"
+  },
+  {
+   "id": 26442,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BIOL 8"
+  },
+  {
+   "id": 26443,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 10"
+  },
+  {
+   "id": 26444,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 18"
+  },
+  {
+   "id": 26445,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 1A"
+  },
+  {
+   "id": 26446,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 34"
+  },
+  {
+   "id": 26447,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 4"
+  },
+  {
+   "id": 26448,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "BUS 68"
+  },
+  {
+   "id": 26449,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CDEVC 1000"
+  },
+  {
+   "id": 26450,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CE 42"
+  },
+  {
+   "id": 26451,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CET 10L"
+  },
+  {
+   "id": 26452,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CET 10L"
+  },
+  {
+   "id": 26453,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 26454,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CHEM 3"
+  },
+  {
+   "id": 26455,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CINE 1"
+  },
+  {
+   "id": 26456,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CINE 3"
+  },
+  {
+   "id": 26457,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 12"
+  },
+  {
+   "id": 26458,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 12"
+  },
+  {
+   "id": 26459,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 30"
+  },
+  {
+   "id": 26460,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 33"
+  },
+  {
+   "id": 26461,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 37"
+  },
+  {
+   "id": 26462,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 37"
+  },
+  {
+   "id": 26463,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CIS 98"
+  },
+  {
+   "id": 26464,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 3"
+  },
+  {
+   "id": 26465,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM 5"
+  },
+  {
+   "id": 26466,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 26467,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "COMMC 1000"
+  },
+  {
+   "id": 26468,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CT 135"
+  },
+  {
+   "id": 26469,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 135"
+  },
+  {
+   "id": 26470,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "CT 16"
+  },
+  {
+   "id": 26471,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 16"
+  },
+  {
+   "id": 26472,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 21B"
+  },
+  {
+   "id": 26473,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 32"
+  },
+  {
+   "id": 26474,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 42"
+  },
+  {
+   "id": 26475,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 56"
+  },
+  {
+   "id": 26476,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 57B"
+  },
+  {
+   "id": 26477,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 57D"
+  },
+  {
+   "id": 26478,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 72"
+  },
+  {
+   "id": 26479,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 78B"
+  },
+  {
+   "id": 26480,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 78D"
+  },
+  {
+   "id": 26481,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 81"
+  },
+  {
+   "id": 26482,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 91"
+  },
+  {
+   "id": 26483,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "CT 95"
+  },
+  {
+   "id": 26484,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 150"
+  },
+  {
+   "id": 26485,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 154"
+  },
+  {
+   "id": 26486,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 156"
+  },
+  {
+   "id": 26487,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 163"
+  },
+  {
+   "id": 26488,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 165"
+  },
+  {
+   "id": 26489,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "DA 167"
+  },
+  {
+   "id": 26490,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DA 167"
+  },
+  {
+   "id": 26491,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DRAMA 30A"
+  },
+  {
+   "id": 26492,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DT 23"
+  },
+  {
+   "id": 26493,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "DT 71"
+  },
+  {
+   "id": 26494,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 10"
+  },
+  {
+   "id": 26495,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 5"
+  },
+  {
+   "id": 26496,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECE 7"
+  },
+  {
+   "id": 26497,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ECONC 2001"
+  },
+  {
+   "id": 26498,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 10"
+  },
+  {
+   "id": 26499,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 18"
+  },
+  {
+   "id": 26500,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 30"
+  },
+  {
+   "id": 26501,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL 61"
+  },
+  {
+   "id": 26502,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 26503,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 26504,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENGLC 1001"
+  },
+  {
+   "id": 26505,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "ENVSC 10"
+  },
+  {
+   "id": 26506,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ENVSC 10"
+  },
+  {
+   "id": 26507,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 210"
+  },
+  {
+   "id": 26508,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 220"
+  },
+  {
+   "id": 26509,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 224"
+  },
+  {
+   "id": 26510,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "ESL 230"
+  },
+  {
+   "id": 26511,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 1"
+  },
+  {
+   "id": 26512,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 3"
+  },
+  {
+   "id": 26513,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 32"
+  },
+  {
+   "id": 26514,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 46"
+  },
+  {
+   "id": 26515,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 51"
+  },
+  {
+   "id": 26516,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 54"
+  },
+  {
+   "id": 26517,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 60"
+  },
+  {
+   "id": 26518,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 60"
+  },
+  {
+   "id": 26519,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FNR 80"
+  },
+  {
+   "id": 26520,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "FRNC 1A"
+  },
+  {
+   "id": 26521,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOG 1"
+  },
+  {
+   "id": 26522,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOL 1"
+  },
+  {
+   "id": 26523,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "GEOL 15"
+  },
+  {
+   "id": 26524,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HE 1"
+  },
+  {
+   "id": 26525,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 11"
+  },
+  {
+   "id": 26526,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 20"
+  },
+  {
+   "id": 26527,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 22"
+  },
+  {
+   "id": 26528,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST 4"
+  },
+  {
+   "id": 26529,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 26530,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HISTC 1001"
+  },
+  {
+   "id": 26531,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 110"
+  },
+  {
+   "id": 26532,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 159"
+  },
+  {
+   "id": 26533,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "HO 170B"
+  },
+  {
+   "id": 26534,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 42"
+  },
+  {
+   "id": 26535,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 64"
+  },
+  {
+   "id": 26536,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "KINS 66"
+  },
+  {
+   "id": 26537,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 10"
+  },
+  {
+   "id": 26538,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 30"
+  },
+  {
+   "id": 26539,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 32"
+  },
+  {
+   "id": 26540,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 45"
+  },
+  {
+   "id": 26541,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH 50C"
+  },
+  {
+   "id": 26542,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 26543,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MATHC 2210"
+  },
+  {
+   "id": 26544,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 1"
+  },
+  {
+   "id": 26545,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 12"
+  },
+  {
+   "id": 26546,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 24B"
+  },
+  {
+   "id": 26547,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 25B"
+  },
+  {
+   "id": 26548,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 2B"
+  },
+  {
+   "id": 26549,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "MUS 3B"
+  },
+  {
+   "id": 26550,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NAS 21"
+  },
+  {
+   "id": 26551,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 2"
+  },
+  {
+   "id": 26552,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 2"
+  },
+  {
+   "id": 26553,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 3"
+  },
+  {
+   "id": 26554,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "NURS 3"
+  },
+  {
+   "id": 26555,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "OCEAN 10"
+  },
+  {
+   "id": 26556,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 10"
+  },
+  {
+   "id": 26557,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 12"
+  },
+  {
+   "id": 26558,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 14"
+  },
+  {
+   "id": 26559,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 17"
+  },
+  {
+   "id": 26560,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 19"
+  },
+  {
+   "id": 26561,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 21"
+  },
+  {
+   "id": 26562,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 23"
+  },
+  {
+   "id": 26563,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 25"
+  },
+  {
+   "id": 26564,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 32"
+  },
+  {
+   "id": 26565,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PE 9"
+  },
+  {
+   "id": 26566,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 10"
+  },
+  {
+   "id": 26567,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 13"
+  },
+  {
+   "id": 26568,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 15"
+  },
+  {
+   "id": 26569,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHIL 2"
+  },
+  {
+   "id": 26570,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 10"
+  },
+  {
+   "id": 26571,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 26572,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 26573,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 26574,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 26575,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 26576,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 12"
+  },
+  {
+   "id": 26577,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 20"
+  },
+  {
+   "id": 26578,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "POLSC 30"
+  },
+  {
+   "id": 26579,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCC 1000"
+  },
+  {
+   "id": 26580,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 11"
+  },
+  {
+   "id": 26581,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 20"
+  },
+  {
+   "id": 26582,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 3"
+  },
+  {
+   "id": 26583,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PSYCH 33"
+  },
+  {
+   "id": 26584,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "PTEC 101"
+  },
+  {
+   "id": 26585,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PTEC 101"
+  },
+  {
+   "id": 26586,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "PTEC 103"
+  },
+  {
+   "id": 26587,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SNLAN 1B"
+  },
+  {
+   "id": 26588,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SNLAN 2B"
+  },
+  {
+   "id": 26589,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 10"
+  },
+  {
+   "id": 26590,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 16"
+  },
+  {
+   "id": 26591,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 18"
+  },
+  {
+   "id": 26592,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOC 5"
+  },
+  {
+   "id": 26593,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SOCIC 1000"
+  },
+  {
+   "id": 26594,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SPAN 1B"
+  },
+  {
+   "id": 26595,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SPAN 2B"
+  },
+  {
+   "id": 26596,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 26597,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "STATC 1000E"
+  },
+  {
+   "id": 26598,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 4"
+  },
+  {
+   "id": 26599,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "SWHS 4"
+  },
+  {
+   "id": 26600,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 101"
+  },
+  {
+   "id": 26601,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 101"
+  },
+  {
+   "id": 26602,
+   "kind": "objective",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 103"
+  },
+  {
+   "id": 26603,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "VNC 103"
+  },
+  {
+   "id": 26604,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 53"
+  },
+  {
+   "id": 26605,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 56"
+  },
+  {
+   "id": 26606,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 61"
+  },
+  {
+   "id": 26607,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 64"
+  },
+  {
+   "id": 26608,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 80"
+  },
+  {
+   "id": 26609,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "WT 90"
+  },
+  {
+   "id": 26610,
+   "kind": "slo",
+   "college": "College of the Redwoods",
+   "course_code": "YUR 1A"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (26168, 26169, 26170, 26171, 26172, 26173, 26174, 26175, 26176, 26177, 26178, 26179, 26180, 26181, 26182, 26183, 26184, 26185, 26186, 26187, 26188, 26189, 26190, 26191, 26192, 26193, 26194, 26195, 26196, 26197, 26198, 26199, 26200, 26201, 26202, 26203, 26204, 26205, 26206, 26207, 26208, 26209, 26210, 26211, 26212, 26213, 26214, 26215, 26216, 26217, 26218, 26219, 26220, 26221, 26222, 26223, 26224, 26225, 26226, 26227, 26228, 26229, 26230, 26231, 26232, 26233, 26234, 26235, 26236, 26237, 26238, 26239, 26240, 26241, 26242, 26243, 26244, 26245, 26246, 26247, 26248, 26249, 26250, 26251, 26252, 26253, 26254, 26255, 26256, 26257, 26258, 26259, 26260, 26261, 26262, 26263, 26264, 26265, 26266, 26267, 26268, 26269, 26270, 26271, 26272, 26273, 26274, 26275, 26276, 26277, 26278, 26279, 26280, 26281, 26282, 26283, 26284, 26285, 26286, 26287, 26288, 26289, 26290, 26291, 26292, 26293, 26294, 26295, 26296, 26297, 26298, 26299, 26300, 26301, 26302, 26303, 26304, 26305, 26306, 26307, 26308, 26309, 26310, 26311, 26312, 26313, 26314, 26315, 26316, 26317, 26318, 26319, 26320, 26321, 26322, 26323, 26324, 26325, 26326, 26327, 26328, 26329, 26330, 26331, 26332, 26333, 26334, 26335, 26336, 26337, 26338, 26339, 26340, 26341, 26342, 26343, 26344, 26345, 26346, 26347, 26348, 26349, 26350, 26351, 26352, 26353, 26354, 26355, 26356, 26357, 26358, 26359, 26360, 26361, 26362, 26363, 26364, 26365, 26366, 26367, 26368, 26369, 26370, 26371, 26372, 26373, 26374, 26375, 26376, 26377, 26378, 26379, 26380, 26381, 26382, 26383, 26384, 26385, 26386, 26387, 26388, 26389, 26390, 26391, 26392, 26393, 26394, 26395, 26396, 26397, 26398, 26399, 26400, 26401, 26402, 26403, 26404, 26405, 26406, 26407, 26408, 26409, 26410, 26411, 26412, 26413, 26414, 26415, 26416, 26417, 26418, 26419, 26420, 26421, 26422, 26423, 26424, 26425, 26426, 26427, 26428, 26429, 26430, 26431, 26432, 26433, 26434, 26435, 26436, 26437, 26438, 26439, 26440, 26441, 26442, 26443, 26444, 26445, 26446, 26447, 26448, 26449, 26450, 26451, 26452, 26453, 26454, 26455, 26456, 26457, 26458, 26459, 26460, 26461, 26462, 26463, 26464, 26465, 26466, 26467, 26468, 26469, 26470, 26471, 26472, 26473, 26474, 26475, 26476, 26477, 26478, 26479, 26480, 26481, 26482, 26483, 26484, 26485, 26486, 26487, 26488, 26489, 26490, 26491, 26492, 26493, 26494, 26495, 26496, 26497, 26498, 26499, 26500, 26501, 26502, 26503, 26504, 26505, 26506, 26507, 26508, 26509, 26510, 26511, 26512, 26513, 26514, 26515, 26516, 26517, 26518, 26519, 26520, 26521, 26522, 26523, 26524, 26525, 26526, 26527, 26528, 26529, 26530, 26531, 26532, 26533, 26534, 26535, 26536, 26537, 26538, 26539, 26540, 26541, 26542, 26543, 26544, 26545, 26546, 26547, 26548, 26549, 26550, 26551, 26552, 26553, 26554, 26555, 26556, 26557, 26558, 26559, 26560, 26561, 26562, 26563, 26564, 26565, 26566, 26567, 26568, 26569, 26570, 26571, 26572, 26573, 26574, 26575, 26576, 26577, 26578, 26579, 26580, 26581, 26582, 26583, 26584, 26585, 26586, 26587, 26588, 26589, 26590, 26591, 26592, 26593, 26594, 26595, 26596, 26597, 26598, 26599, 26600, 26601, 26602, 26603, 26604, 26605, 26606, 26607, 26608, 26609, 26610);",
+ "rollback_by_key_if_error": null,
+ "rollback_note": "rollback deletes the ids the responses named. rollback_by_key_if_error is filed only when error is set: a batch may have committed without its response. It takes every row of the sent kinds and (college, read_run) pairs, including any an earlier load of the same read inserted."
+}

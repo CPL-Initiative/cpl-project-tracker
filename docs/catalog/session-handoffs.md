@@ -15,10 +15,18 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-639 document(s).
+647 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 688 | [Session 688 handoff (from SkyPipit, S687)](../session_688_handoff.md) | 2026-11-19 |
+| 687 | [Session 687 handoff (from SkyBushtit, S686)](../session_687_handoff.md) | 2026-11-19 |
+| 686 | [Session 686 handoff (from SkyTowhee, S685)](../session_686_handoff.md) | 2026-11-19 |
+| 685 | [Session 685 handoff (from SkyVerdin, S684)](../session_685_handoff.md) | 2026-11-19 |
+| 684 | [Session 684 handoff (from SkyNuthatch, S683)](../session_684_handoff.md) | 2026-11-19 |
+| 683 | [Session 683 handoff (from SkyVireo, S682)](../session_683_handoff.md) | 2026-11-18 |
+| 682 | [Session 682 handoff (from SkyGrebe, S681)](../session_682_handoff.md) | 2026-11-18 |
+| 681 | [Session 681 handoff (from SkyPhoebe, S680)](../session_681_handoff.md) | 2026-11-18 |
 | 680 | [Session 680 handoff (from SkyKinglet, S679)](../session_680_handoff.md) | 2026-11-18 |
 | 679 | [Session 679 handoff (from SkyWaxwing, S678)](../session_679_handoff.md) | 2026-11-17 |
 | 678 | [Session 678 handoff (from SkyTanager, S677)](../session_678_handoff.md) | 2026-11-17 |

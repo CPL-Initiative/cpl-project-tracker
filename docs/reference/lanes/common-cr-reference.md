@@ -17,6 +17,16 @@ related:
 
 ## Status
 
+✅ **DECIDED: the college wording rule (Sam, 2026-11-19, 12:42 PM PT, in his words: *"Forward all your recommendations and
+yes on the 36"*, relayed by COBIx on #3566).** The 36 groups an official C-ID number reaches with a title that shares no
+word with the colleges' wording (`official_id` set and `title_divergent` true in `kb/cr_reference_worklist.json`; 42
+wordings, 712 MAP rows) keep the colleges' wording as their name, and the link stays flagged for a check and is never
+applied (POST Basic Academy *Physical Training and Health Education* on `AJ 110`; *Racial Issues and the Police* on
+`AJ 160`). Written by SkyPipit (S687) as 36 `confirmed` rows in `cr_reference_decisions` under `cr-wording-s687@bot`,
+INSERT-only after a live read that found none of the 36 keys: `kb/migrations/2026-11-19_s687_cr_wording_rule.sql`,
+receipt `kb/receipts/cr_reference_decisions_2026-11-19_s687_wording_rule.json`, rollback beside the migration. The
+table holds 66 rows (run 44618420355; the first run, 44617202998, wrote nothing: the memory summary was over 400 characters). Commons Needs you drops the call once `kb/status/cr.json` records it (the other S687 session's file).
+
 ✅ **LIVE (the List since 2026-11-04).** ⭐ **SAM'S DESIGN RULING:** *"CID is only one factor… similar to the CCR, we take into account matching factors like title, course name and number, course description, subject, etc."* — illustrative, not exhaustive. C-ID-as-key fails BOTH ways: it over-merges (`AJ 110` on two genuinely different POST lines) and under-merges badly (only ~17% of the 2,344 strings carry a C-ID at all). ⭐ **AUTOMATION REACHES ~10%, SO THIS IS A CURATION WORKBENCH, NOT A MERGE ENGINE** — rung 1 published statewide 351 lines/134 credentials · rung 2 C-ID 36 of those · rung 3 CCR course identity 40 strings · rung 4 mechanical twin ~160 · rung 5 similarity **suggests, never merges**. **~90% is curator judgment no matcher reaches** (*Racial Issues and the Police* ≡ *Community Relations* — one POST topic, unrelated words), which is what the **+ Add a wording** picker is for. ⭐ **SCOPE IS GLOBAL + a split affordance (Sam, 2026-08-13):** 407 strings (17%) span >1 credential but carry **45% of all articulation rows**, and `Introduction to FCAW` is one recommendation under all ten AWS/ASME credentials carrying it. ⚠️ **RANK BY COLLAPSE VALUE (wordings × colleges), NEVER BY CREDENTIALS SPANNED** — the widest-spreading string is `3 hours in Elective Course Credits`: 61 credentials, **1 college**, a placeholder. Credentials-spanned would have ranked the corpus's least useful string #1; collapse value sinks it to #174 with no special case. Real head: `Intro to Administration of Justice` (5 wordings/26 colleges), then Principles & Procedures, then Criminal Investigation. **30 groups carry a curator decision as of 2026-09-20 (the older "156" counted the mechanical rung ladder); top 50 strings = 49.4% of all articulations — an afternoon, not an ocean.** ⚠️ **Units never split an identity** (`SPAN 100` at 4/4.5/5): no rung holds a merge for them, and a group named by a wording states its range (cards 13–14, below). **0 hours reads as noncredit** (sheet 4, card 3, ruled 2026-09-29, ✅ built #1768): a 0 never opens a range (*Oral Radiology (2 units or noncredit)*) and an all-0 group reads *(noncredit)*; the 2026-09-30 run renamed the ten (seven *(noncredit)*, three ranges); A30 in `tests/cr_reference.test.js` holds it. ⚠️ **Grouping is by KEY, NEVER transitive** — 164 strings bridge ≥2 course identities, so components would chain `AJ 110`↔*Community Relations*↔`AJ 160`. ⚠️ **Two gates DON'T work: `attribution='per_course'`** (every poisoned `AJ 110` row carries it) **and a line-fraction/cartesian test** (`AJ 110` hits 8 of POST's 43 → reads non-cartesian → sails through). The gate that works is the credential's **COURSE count**. Decisions live in gated Supabase `cr_reference_decisions` keyed on `group_key`, so a rebuild can never overwrite a judgment. **NEXT: Sam works the head — the top ~50 groups — and we watch which rungs he overrides.** Story + the fixed-bug postmortems: [`common_cr_reference_lessons`](docs/common_cr_reference_lessons.md) · scope [`common_cr_reference_scope`](docs/common_cr_reference_scope.md).
 
 ## Progress, and what complete means (S437, 2026-10-20)
@@ -31,8 +41,10 @@ is 44 of 50. Sam kept it as built (Open Asks Sheet 108 card 5, 13:24Z 2026-10-20
 identity behind the course-count guard; Jev runs the new pairs, the unanchored clusters and the newer
 anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six head wordings left
 are Sam's to decide on the tab. The CCR's title-rung sitting (pointer at the foot of this file) is the
-CCR's ladder, not this reference's. **NEXT (S679, #3468 applied):** read the first `map_ace_catalog_cr` fill's runner
-log after the 04:57 UTC load and re-measure COBIx's 859 typographic rows and 25,984 waiting on ACE text.
+CCR's ladder, not this reference's. **The CR exact match (#3518, parked as issue #3523, PR closed, branch kept; `f-cr-exact-match-live-counts-s683`):**
+live counts of 2026-11-18: the inventory's 29,995 rows are MAP only 3,334, an exact match 202, and a typographic or real
+difference 26,459; `map_ace_catalog_cr` holds 104,688 rows over 25,742 exhibits. **NEXT:** a plain session takes the
+exact match up from issue #3523 against those counts.
 
 ## ACE's own text beside MAP's (S678, 2026-11-17; COBIx item 5 on #3464)
 

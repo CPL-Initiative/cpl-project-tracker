@@ -177,6 +177,32 @@ with tempfile.TemporaryDirectory() as fx:
     fxr = B.row_cr(fx)["facts"]
     check("CR fixture: a rule settles a1 and a2; a decision b1 and the folded c1, not the split-out b2 or the deferred d1",
           fxr["rule_wordings"] == 2 and fxr["curator_only"] == 2 and fxr["settled"] == 4 and fxr["unsettled"] == 3, fxr)
+    fxw = B.row_cr(fx)
+    check("CR fixture ⭐: with no live sync committed, the card says which saves it counts, in words (#3510 B4)",
+          fxw["facts"]["decisions_through"] == "Oct 20, 2026" and "saved through Oct 20, 2026" in fxw["pair"][0]["words"], fxw["pair"][0]["words"])
+    # #3447 item 2 (#3510 B4): a decision saved on the tab lands in the live table only; its synced row moves the count.
+    os.makedirs(os.path.join(fx, "kb", "status"), exist_ok=True)
+    with open(os.path.join(fx, B.CR_LIVE), "w") as f:
+        json.dump({"read_at": "2026-11-18T10:00:00Z", "rows": [
+            {"group_key": "e", "decision": "confirmed", "members": ["e1"], "excluded": [], "updated_at": "2026-11-17T20:00:00Z"},
+            {"group_key": "d", "decision": "confirmed", "members": ["d1"], "excluded": [], "updated_at": "2026-11-16T20:00:00Z"}]}, f)
+    live = B.row_cr(fx)
+    check("CR fixture ⭐: a live decision synced from cr_reference_decisions settles its wordings and moves the unsettled count (3 to 1)",
+          live["facts"]["settled"] == 6 and live["facts"]["unsettled"] == 1 and live["issues"][0]["n"] == 1, live["facts"])
+    check("CR fixture: once the live rows are synced, the 'saved through' words leave the card",
+          live["facts"]["decisions_through"] is None and "saved through" not in live["pair"][0]["words"], live["pair"][0]["words"])
+    check("CR fixture: the row names the synced file among its sources", B.CR_LIVE in (live.get("sources") or []), live.get("sources"))
+    # COBIx on #3517 finding 3: the sync keeps only its allowlisted columns; a row carrying who saved it fails the read.
+    with open(os.path.join(fx, B.CR_LIVE), "w") as f:
+        json.dump({"rows": [{"group_key": "e", "decision": "confirmed", "members": ["e1"], "excluded": [],
+                             "updated_at": "2026-11-17T20:00:00Z", "updated_by": "someone@example.edu"}]}, f)
+    try:
+        B.live_cr_rows(fx)
+        refused = None
+    except ValueError as e:
+        refused = str(e)
+    check("CR fixture ⭐: a synced row naming who saved it (updated_by) fails the read, never reaches the card",
+          refused is not None and "updated_by" in refused, refused)
 sub = rows[4].get("facts") or {}
 check("Subjects: a person's and a cohort's confirmations sum to the confirmed count", sub.get("person") + sub.get("cohort") == sub.get("confirmed"))
 # S425: the pair is the settled count (confirmed, on the authority rule, in no collision), never above the confirmed count,
@@ -253,10 +279,16 @@ with tempfile.TemporaryDirectory() as tmp:
             "ART M1003": {"unified_title": "Painting", "reviewed_by": "automerge-v1@bot"},
             "ART M9999": {"discipline": "Art", "reviewed_by": "map@rccd.edu"}}}, f)
     cf = B.confirmed_cards(tmp, {"rows": [{"id": "ART M1001", "k": "X", "fr": "ready"}, {"id": "ART M1001", "k": "C", "fr": "needs_review"},
-                                          {"id": "ART M1002", "k": "C", "fr": "needs_review"}, {"id": "ART M10AA", "k": "C", "fr": "ready"},
+                                          {"id": "ART M1002", "k": "C", "fr": "needs_review"}, {"id": "ART M10AA", "k": "C", "fr": "ready", "nc": 1, "fl": ["merged"]},
                                           {"id": "ART M1003", "k": "C", "fr": "ready"}]})
-    check("confirmed: Course counts the card a save is keyed on and the card it places a course into, in cards (C and X twice); a cohort never",
-          cf == {"confirmed": 4, "ready": 2}, cf)
+    # Distinct cards a course flag leaves in (Sam, 2026-11-17: flag the record, never delete it): a merge target's C and
+    # X rows count once, ready when either is; the merged card itself (nc) counts on its target.
+    check("confirmed: Course counts the card a save is keyed on and the card it places a course into, once per card, "
+          "a flagged card and a cohort never", cf == {"confirmed": 2, "ready": 1, "kept": {"merged": 1}}, cf)
+    # A person's confirmation a flag keeps out of the denominator stays in the words (S683 second reader).
+    cw = B.confirmed_pair(cf["confirmed"], 10, cf["ready"], "ready", "#t", None, cf["kept"])["words"]
+    check("confirmed: the pair names the person-confirmed cards a flag keeps out, by kind",
+          cw.endswith("a person also confirmed 1 card now kept for the record and left out of the counts (1 merged)"), cw)
 import importlib.util as _iu
 _sp = _iu.spec_from_file_location("sync_checked", os.path.join(ROOT, "kb", "_sync_program_checked.py"))
 SC = _iu.module_from_spec(_sp); _sp.loader.exec_module(SC)

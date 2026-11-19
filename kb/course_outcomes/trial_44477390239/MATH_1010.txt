@@ -1,0 +1,77 @@
+Finite Mathematics
+MATH 1010:
+
+3.0 Units
+
+Print Course
+
+        
+
+A transfer-level math course recommended for students majoring in math, biological sciences, or social sciences and required for some business majors. Topics included are linear, exponential functions, systems of linear equations and inequalities, matrix algebra , inverse matrices, linear programming, set theory, DeMorgan&#39;s Laws and Venn diagrams, probability and combinatorics, conditional probability, Markov chains and applications to problems in finance including simple and compound interest, future and present value, annuities, sinking funds and amortization.
+
+
+    
+Toggle  
+Overview
+Requisites:
+
+Prerequisite
+
+Intermediate Algebra or higher, or direct placement based on multiple measures.
+Transferable:
+
+Transferable to both UC and CSU
+
+Toggle  
+Learning Outcomes
+Course Objectives:
+
+Apply linear and exponential graphs and functions
+
+Write a system of linear equations to solve applied problems
+
+Solve a system of linear equations using Gauss-Jordan elimination and interpret the result
+
+Find the inverse of a square matrix and use the inverse to solve a system of linear equations
+
+Solve linear programming problems in at least three variables
+
+Find unions, intersections and complements of sets and use Venn diagrams to solve problems
+
+Apply basic combinatorial principles to enumeration problems
+
+Determine the probability of a specified event
+
+Find the conditional probability of an event
+
+Solve applied problems in finance including simple and compound interest, future and present value, annuities, sinking funds, and amortization.
+
+SLO:
+Produce, solve, and apply systems of equations using matrix methods.
+Produce, solve and apply counting, set, and probability theory.
+Produce, solve, and apply linear programming models.
+Produce, solve, and apply financial models.
+Toggle  
+Units and Hours
+Default Profile
+Minimum Credit Units
+
+3.0
+
+Maximum Credit Units
+
+3.0
+
+Total Course In-Class (Contact) Hours
+
+54.0
+
+Weekly Student Hours
+In Class
+Lecture Hours
+3.0
+Lab Hours
+0.0
+Activity Hours
+0.0
+Register Now Contact Us

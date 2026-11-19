@@ -1,0 +1,17 @@
+{
+ "name": "program_requirement_records_display_2026-10-07_8292780f6cd5_s342_delta.sql",
+ "kind": "program_requirement_records_display_delta",
+ "bucket": "cpl-receipts",
+ "object": "display/delta/program_requirement_records_display_2026-10-07_8292780f6cd5_s342_delta.sql.gz",
+ "build": "8292780f6cd5",
+ "built": "2026-10-07",
+ "bytes": 6113,
+ "sha256": "d85216a34bac3e7c2883196b5b6c5ea782bd6411db064b6e11b19bc80343427c",
+ "rows": 22,
+ "stored_at": "2026-11-18T07:48:27Z",
+ "run": "44259862567",
+ "gzip": true,
+ "repo_sha256": "804db560d486c0a411b085476ad99ad4313913f5d03809525d95ee3919593bd7",
+ "repo_bytes": 34278,
+ "repo_blob": "bde43ae966fdb79c728a270832556850ab320974"
+}

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Critical Middle East /South West Asia and North Africa Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=367",
+ "source_url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=363",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8117,
+  "input_tokens": 7592,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8117,
-    "output_tokens": 1470,
+    "input_tokens": 7592,
+    "output_tokens": 1062,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1470,
+  "output_tokens": 1062,
   "output_tokens_details": {
-   "thinking_tokens": 726
+   "thinking_tokens": 273
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06187,
- "ms": 14791,
- "seconds": 15.3,
+ "cost_usd": 0.05161,
+ "ms": 8437,
+ "seconds": 8.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "IDST29",
-    "IDST30",
-    "IDST31",
-    "IDST81B",
-    "POLS45"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -67,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    13.0,
+    13.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    13.0,
+    13.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "None for this certificate; the text holds only the Critical Southwest Asia North Africa (Middle East) Studies Associate of Arts section, whose heading is cut off above 'Program Summary'",
+   "section_heading": "Critical Middle East /South West Asia and North Africa Studies – Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 13,
+    "max": 13
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,39 +121,90 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Describe the cultural and ideological influence of Islam and other major religions in the Middle East/SWANA.",
+    "Compare the political systems of the Middle East/SWANA within a historical and social context.",
+    "Examine social and cultural expressions within Middle Eastern/SWANA societies and diaspora communities.",
+    "Analyze the relationship of women and minority groups to the state and society in the Middle East/SWANA and within diaspora communities.",
+    "Evaluate and challenge the assumptions that underpin anti-Semitic and anti-Arab discrimination, Islamophobia and other forms of oppression."
+   ],
+   "careers": [
+    "Religious Studies",
+    "International Relations",
+    "International Law",
+    "Global Studies",
+    "Political Science",
+    "Ethnic Studies",
+    "History",
+    "Language and Literature"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "IDST 29",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "IDST 30",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "IDST 31",
-    "why": "named only in the A.A. degree section; certificate section not in text"
-   },
-   {
-    "code": "IDST 81B",
-    "why": "named only in the A.A. degree section and the Diversity and Social Justice Certificate of Accomplishment; certificate section not in text"
-   },
-   {
-    "code": "POLS 45",
-    "why": "not in the text"
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "IDST 29",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 30",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 31",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "IDST 81B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 45",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The text has no section for the Critical Middle East/SWANA Studies Certificate of Achievement. Page 367 prints the program's Associate of Arts degree: 'Required Units 15.0', 'Total: 18.0', with IDST 29, 30, 31, ETHN 37 or IDST 37, IDST 81B, IDST 300, and choose 1 from ART 104, ARCH 31A, ECON 6, ENGL 44A, GEOG 4, HUM 7, IDST 4, LGBT 55, SOC 1, WGST 25.",
-   "The degree's 18 units exceed the certificate's award range of 8 to fewer than 16 units, and the closed list includes POLS 45, which the degree does not name. The degree requirements were therefore not recorded as this certificate's.",
-   "The A.A. section prints six learning outcomes and names 'careers in many areas in the Humanities and Social Sciences'. These were not recorded, because the text does not show that the certificate shares them. A reviewer should check them against the actual certificate section.",
-   "The certificate section likely appears on another catalog page; it should be located and read."
+   "Learning outcomes list spans a page break (outcome 1 on page 363, outcomes 2-5 on page 364); read as one list.",
+   "Careers are career areas the program summary names ('careers in many areas in the Humanities and Social Sciences ... such as ...').",
+   "The following section (Critical Pacific Islands & Oceania Studies – AA Degree) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39047128472"
+ "extracted_run": "44474797786",
+ "catalog_year": "2026-2027",
+ "source_sha": "834bdebac1e59b90",
+ "source_codes": [
+  "IDST29",
+  "IDST30",
+  "IDST31",
+  "IDST81B",
+  "POLS45"
+ ],
+ "source_coverage": 1.0
 }

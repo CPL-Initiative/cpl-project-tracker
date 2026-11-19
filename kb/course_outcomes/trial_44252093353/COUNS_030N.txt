@@ -1,0 +1,78 @@
+COUNS 030N Orientation to College
+
+Units: 0.0
+
+Print Page
+
+Back to department listing
+
+Description:
+
+Credits Status:
+
+Non-Credit
+
+Requisites:
+
+None
+
+Course Note:
+
+None
+
+Enrollment Limitation:
+
+None
+
+Transferable:
+
+Not transferable
+
+Repeatability:
+
+unlimited
+
+General Education:
+
+Not approved for General Education
+
+Student Learning Outcomes:
+
+CSLO 1. Clearly articulate their educational goal including specific requirements and resources needed. (PSLOs: A, B, E)
+CSLO 2. Identify and effectively use college resources, such as the insite portal, as well as student support services necessary for individual success. (PSLO: E)
+CSLO 3. Demonstrate understanding in how to reach their educational goal and develop a comprehensive educational plan. (PSLO: B)
+CSLO 4. Demonstrate the knowledge and understanding of the goals and background of the 3SP process: assessment, orientation, and educational plan. (PSLO: F)
+CSLO 5. Apply and demonstrate critical thinking in reading college policies such as academic scholarship, maintaining good standing, and repeatability; and problem solving around their educational issues. (PSLO: D, F)
+CSLO 6. Successfully demonstrate knowledge and skills for successful preparation to take a fully or partial online course. (PSLO: D, F)
+
+Grade Options:
+
+Pass/No Pass (P/NP)
+Satisfactory Progress (SP)
+Toggle  
+Units and Hours
+Minimum Credit Units
+
+0.0
+
+Maximum Credit Units
+
+0.0
+
+Total Course In-Class (Contact) Hours
+
+27.0
+
+Course in class (contact) hours
+
+Lecture Hours
+
+27.0
+
+Lab Hours
+
+0.0
+
+Activity Hours
+
+0.0

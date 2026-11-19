@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8340,
+  "input_tokens": 8282,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8340,
-    "output_tokens": 4060,
+    "input_tokens": 8282,
+    "output_tokens": 3718,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4060,
+  "output_tokens": 3718,
   "output_tokens_details": {
-   "thinking_tokens": 1619
+   "thinking_tokens": 1256
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11456,
- "ms": 32933,
- "seconds": 33.3,
+ "cost_usd": 0.10749,
+ "ms": 29380,
+ "seconds": 29.8,
  "parts": null,
  "error": null,
  "score": {
@@ -413,31 +413,64 @@
   "missing_explained": [
    {
     "code": "COMM C1004",
-    "why": "catalog prints COMM 6 Interpersonal Communication (older number) in List B instead"
+    "why": "not in the text; catalog lists COMM 6 Interpersonal Communication instead"
    },
    {
     "code": "MATH C2210",
-    "why": "catalog prints MATH 1A Calculus, First Course in List B instead"
+    "why": "not in the text; catalog lists MATH 1A Calculus, First Course instead"
    },
    {
     "code": "MATH C2220",
-    "why": "catalog prints MATH 1B Calculus, Second Course in List B instead"
+    "why": "not in the text; catalog lists MATH 1B Calculus, Second Course instead"
    },
    {
     "code": "SOCIC1000",
-    "why": "catalog prints SOC 1 Introduction to Sociology in List B instead"
+    "why": "not in the text; catalog lists SOC 1 Introduction to Sociology instead"
    }
   ],
   "notes": [
-   "Catalog prints 'PSYC 1000 (PSYC C1000)', 'STAT 1000 (STAT C1000)' and 'POLS 1000 (POLS C1000)'; recorded with the C-ID style code shown in parentheses, which matches the closed list.",
-   "CHEM 3A & 3AL are printed as one row with 5 units for the pair; the 5 is recorded on CHEM 3A and CHEM 3AL units left null.",
-   "MICR 5 or MICR 60 row prints 4 units, though the closed list stores MICR 5 at 5 units; recorded 4 as printed, MICR 60 alternative units not printed separately.",
-   "List A and List B print only a block total (8 and 3); individual course units are not printed in those lists. Read as choose-units blocks.",
-   "Closed list codes MATH25 and MATH27 treated as matching catalog MATH 25 and MATH 27.",
-   "COMM 6, MATH 1A, MATH 1B and SOC 1 appear to be older numbers for closed-list COMM C1004, MATH C2210, MATH C2220 and SOCIC1000; flagged as catalog additions for reviewer check.",
-   "The Nutrition section names no GE pattern or degree total; the Cal-GETC and 60-unit text that follows belongs to the Paralegal Studies (AA) section and was not used.",
-   "Section begins at the top of page 185; a preceding program description/careers text, if any, may be on page 184 and is not in the supplied text."
+   "Catalog prints 'CHEM 3A & 3AL' with a single 5 units for the pair; recorded 5 on CHEM 3A and null on CHEM 3AL (state file stores 3 and 2).",
+   "Catalog prints 4 units beside 'MICR 5 or MICR 60'; state file stores MICR 5 at 5 units and MICR 60 at 4. The printed 4 is recorded on MICR 5; verify.",
+   "Catalog prints common course numbers as 'PSYC 1000 (PSYC C1000)', 'STAT 1000 (STAT C1000)', 'POLS 1000 (POLS C1000)'; recorded the C-numbered codes matching the closed list.",
+   "Closed list writes MATH25 and MATH27 without a space; matched to catalog MATH 25 and MATH 27.",
+   "COMM 6, MATH 1A, MATH 1B and SOC 1 appear to be older local numbers for closed-list COMM C1004, MATH C2210, MATH C2220 and SOCI C1000; flagged as catalog additions.",
+   "No units printed beside List A and List B courses; block totals 8 and 3 recorded as stated. Core 15 + List A 8 + List B 3 = 26 matches the printed total.",
+   "No general education pattern or degree total printed in this section; the Cal-GETC text and 60-unit statement that follow belong to the Paralegal Studies (AA) section.",
+   "Outcomes printed under 'Program Student Learning Outcomes' directly after this award's requirements table."
   ]
  },
- "extracted_run": "39006464249"
+ "extracted_run": "44477690021",
+ "catalog_year": "2026-2027",
+ "source_sha": "a8b64e93274dbbe3",
+ "source_codes": [
+  "ANAT1",
+  "ANTH3",
+  "ART19",
+  "BIO21",
+  "BIO22",
+  "CHEM12A",
+  "CHEM3A",
+  "CHEM3AL",
+  "CHEM8",
+  "COMM7",
+  "COUN20",
+  "CS5711",
+  "FDNT10",
+  "FDNT62",
+  "FDNT70",
+  "GEOG7",
+  "JOUR1",
+  "JOUR2",
+  "MATH25",
+  "MATH27",
+  "MICR5",
+  "MICR60",
+  "PHYZ1",
+  "POLSC1000",
+  "PSYC4",
+  "PSYC9",
+  "PSYCC1000",
+  "STATC1000"
+ ],
+ "source_coverage": 0.875
 }

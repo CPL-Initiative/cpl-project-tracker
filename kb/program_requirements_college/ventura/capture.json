@@ -5,27 +5,180 @@
  "catalog_year": "2026-2027",
  "programs": 184,
  "with_closed_list": 178,
- "started": "2026-10-21T15:06:57Z",
+ "started": "2026-11-19T11:29:46Z",
  "scope": "/ventura/",
  "sitemap": {
   "url": "https://catalog.vcccd.edu/sitemap.xml",
   "status": 200,
   "listed": 1147,
   "nested": 0,
-  "program_pages": 295,
+  "program_pages": 297,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null,
+  "challenged": null
  },
- "pages_read": 295,
+ "listing_failed": 0,
+ "pages_read": 297,
+ "pages_listed": 297,
+ "pages_answered": 297,
  "child_pages": 0,
  "banner_h1": "2026-2027\nAcademic Catalog",
- "loads": 296,
- "seconds": 1598.6,
- "found": 173,
+ "catalog_lookup": {
+  "self_test": {
+   "tested": 161,
+   "hits": 148,
+   "recall": 0.919,
+   "false": 0,
+   "false_off_own": 5,
+   "false_no_claims": 5,
+   "shared": 12,
+   "false_matches": [
+    {
+     "control_number": "31362",
+     "title": "Early Childhood Education",
+     "award": "A.S. T Degree",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/early-childhood-education/",
+     "h1": ""
+    },
+    {
+     "control_number": "40580",
+     "title": "Agriculture Field Supervisor (Noncredit)",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/agriculture-field-supervisor-cocn-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "40960",
+     "title": "Food Safety",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/food-safety-cocn-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "42026",
+     "title": "Mathematics Readiness (Noncredit)",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/mathematics-readiness-cocy-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "44993",
+     "title": "Chemistry",
+     "award": "A.S. Degree",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/chemistry/",
+     "h1": ""
+    }
+   ],
+   "no_claims_matches": [
+    {
+     "control_number": "31362",
+     "title": "Early Childhood Education",
+     "award": "A.S. T Degree",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/early-childhood-education/",
+     "h1": ""
+    },
+    {
+     "control_number": "40580",
+     "title": "Agriculture Field Supervisor (Noncredit)",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/agriculture-field-supervisor-cocn-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "40960",
+     "title": "Food Safety",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/food-safety-cocn-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "42026",
+     "title": "Mathematics Readiness (Noncredit)",
+     "award": "Noncredit program",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/mathematics-readiness-cocy-noncredit/",
+     "h1": ""
+    },
+    {
+     "control_number": "44993",
+     "title": "Chemistry",
+     "award": "A.S. Degree",
+     "page": "https://catalog.vcccd.edu/ventura/programs-courses/chemistry/",
+     "h1": ""
+    }
+   ],
+   "searches": false,
+   "catalog_list": null
+  },
+  "programs": 6,
+  "by_result": {
+   "not_searched": 6
+  },
+  "found": 0,
+  "found_active": 0,
+  "found_pages": 0,
+  "found_programs": [],
+  "other_programs": [
+   {
+    "control_number": "37831",
+    "title": "Innovative Cognitive Achievement Network/Journey Overcoming Barriers (ICAN-JOB)",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41927",
+    "title": "English as a Second Language - Level 2: Intermediate",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "41990",
+    "title": "English as a Second Language - Level 1: Beginning",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44557",
+    "title": "Law, Public Policy, and Society",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "44818",
+    "title": "Precision Machining Essentials",
+    "award": "Noncredit program",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   },
+   {
+    "control_number": "45741",
+    "title": "Chicana/o Studies",
+    "award": "A.A- T Degree",
+    "status": "Active",
+    "result": "not_searched",
+    "why": "the matcher found 148 of 161 closed-list programs on their own page, 0 on another program's and 5 off their own page (floor 80% of at least 10, none false)"
+   }
+  ],
+  "yields": [],
+  "yield_unjudged": 0,
+  "yield_refused_passing": 0
+ },
+ "loads": 298,
+ "seconds": 1542.9,
+ "found": 174,
  "by_method": {
   "no_closed_list": 6,
-  "page_claimed": 5,
-  "sitemap_page": 173
+  "page_claimed": 4,
+  "sitemap_page": 174
  },
  "shared_pages": {
   "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-ast/": [
@@ -62,7 +215,8 @@
    "pages": [
     "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-natural-sciences-emphasis-aa/",
     "https://catalog.vcccd.edu/ventura/transfer-information/c-id/"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "18475",
@@ -71,7 +225,8 @@
    "pages": [
     "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-social-behavioral-sciences-emphasis-aa/",
     "https://catalog.vcccd.edu/ventura/transfer-information/c-id/"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "18476",
@@ -79,7 +234,8 @@
    "award": "A.A. Degree",
    "pages": [
     "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-arts-humanities-area-emphasis-aa/"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "42256",
@@ -89,415 +245,30 @@
     "https://catalog.vcccd.edu/ventura/programs-courses/nursing-science/nursing-as/",
     "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-natural-sciences-emphasis-aa/",
     "https://catalog.vcccd.edu/ventura/transfer-information/c-id/"
-   ]
-  },
-  {
-   "control_number": "45355",
-   "title": "California General Education Transfer Curriculum (Cal-GETC)",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.vcccd.edu/ventura/transfer-information/c-id/"
-   ]
+   ],
+   "status": "Active - Teachout Only"
   }
  ],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
+  "0.5-0.8": 7,
   "0.8-1.0": 32,
   "1.0": 135
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ventura",
-  "kept": 89,
-  "programs": 84,
+  "kept": 169,
+  "kept_moved": 0,
+  "programs": 5,
   "list": [
    {
-    "control_number": "06968",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-as/",
-    "coverage": 0.842,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/",
-    "was_coverage": 0.895,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "06969",
-    "title": "Construction Technology—Construction Management Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-as/",
-    "coverage": 0.793,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "06970",
-    "title": "Wastewater Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-as/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-as/",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "06973",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/music/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "06976",
-    "title": "Photography",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-aa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "07628",
-    "title": "Construction Technology—Building Inspection Option",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-as/",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "10520",
-    "title": "Drafting Technology: Industrial Design & Manufacturing",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "10521",
-    "title": "Water Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-as/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-as/",
-    "was_coverage": 0.833,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "10594",
-    "title": "Emergency Medical Services—Paramedic Studies",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "15323",
-    "title": "Social Work/Human Services",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-aa/",
-    "coverage": 0.938,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-aa/",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20560",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/accounting-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/accounting/",
-    "was_coverage": 0.667,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20561",
-    "title": "Business Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/business/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20565",
-    "title": "Medical Assistant—Administrative",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20578",
-    "title": "Automotive Career Education",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20580",
-    "title": "Drafting Technology—Industrial Design and Manufacturing Option",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-coa/",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20582",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-coa/",
-    "coverage": 0.842,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20583",
-    "title": "Construction Technology—Construction Management Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-coa/",
-    "coverage": 0.773,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20584",
-    "title": "Construction Technology—Building Inspection Option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-coa/",
-    "coverage": 0.773,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20585",
-    "title": "Wastewater Science",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20586",
-    "title": "Water Science",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20588",
-    "title": "Ceramics—General",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/ceramics-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20589",
-    "title": "Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "20591",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-aa/",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "20593",
-    "title": "Emergency Medical Services—Paramedic Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "20598",
-    "title": "Social Work/Human Services",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-coa/",
-    "coverage": 0.938,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-coa/",
-    "was_coverage": 0.875,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "30587",
-    "title": "Psychology",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/psychology/psychology-aat/",
-    "coverage": 0.882,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/psychology/psychology-aat/",
-    "was_coverage": 0.824,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31363",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/theatre-arts/theatre-arts-aat/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "31875",
-    "title": "Medical Assistant—Multi-Skilled",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-multi-skilled-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "32834",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/geography/geography-aat/",
+    "control_number": "31298",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/",
     "coverage": 0.857,
     "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
-    "was_coverage": 0.929,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "32893",
-    "title": "Biomedical Device Manufacturing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/biomedical-device-manufacturing-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33728",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/philosophy/philosophy-aat/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33819",
-    "title": "Architectural Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "33820",
-    "title": "Architectural Science",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
-    "was_coverage": 0.5,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33821",
-    "title": "Architectural Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-technology-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33822",
-    "title": "Drafting Technology",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33823",
-    "title": "Digital Marketing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/social-media-marketing-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "33842",
-    "title": "Architectural Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-as/",
-    "was_coverage": 0.9,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "33858",
-    "title": "Architectural Design",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35198",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aat/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-    "was_coverage": 1.0,
+    "was_coverage": 0.762,
     "was_method": "sitemap_page"
    },
    {
@@ -505,317 +276,27 @@
     "title": "Elementary Teacher Education",
     "award": "A.A- T Degree",
     "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "coverage": 0.538,
+    "coverage": 0.564,
     "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "was_coverage": 0.513,
+    "was_coverage": 0.538,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "35483",
-    "title": "Diesel Engine Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/diesel-engine-repair-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35485",
-    "title": "Medium- and Heavy-Duty Vehicle Repair",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/medium-heavy-duty-vehicle-repair-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "35499",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/nutrition-dietetics/nutrition-dietetics-ast/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/nutrition-dietetics/nutrition-dietetics-ast/",
-    "was_coverage": 0.917,
+    "control_number": "44186",
+    "title": "Administration in Early Education",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/administration-in-early-education-coa/",
+    "coverage": 0.75,
+    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/",
+    "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
    {
-    "control_number": "36639",
-    "title": "Accounting Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/bookkeeping-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "36653",
-    "title": "Pre-Allied Health Sciences",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/pre-allied-health-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/microbiology/",
-    "was_coverage": 0.714,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39961",
-    "title": "Veterinary Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-technology-as/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-technology-as/",
-    "was_coverage": 0.963,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "39995",
-    "title": "Veterinary Assistant",
+    "control_number": "45355",
+    "title": "California General Education Transfer Curriculum (Cal-GETC)",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-assistant-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-assistant-coa/",
-    "was_coverage": 0.938,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40580",
-    "title": "Agriculture Field Supervisor (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-field-supervisor-cocn/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "40809",
-    "title": "Food Safety",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-ca/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "40929",
-    "title": "Automotive Repair Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-repair-technician-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40930",
-    "title": "Automotive Performance Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-performance-technician-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40934",
-    "title": "Automotive Maintenance Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-maintenance-technician-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40935",
-    "title": "Automotive Service Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-service-technician-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "40960",
-    "title": "Food Safety",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-noncredit-coc/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "41884",
-    "title": "Chicana/o Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/chicano-studies/chicano-studies-aa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "42026",
-    "title": "Mathematics Readiness (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-readiness-cocy/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "42258",
-    "title": "Holistic Health",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/holistic-studies/holistic-health-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/holistic-studies/holistic-studies-health-pa/",
-    "was_coverage": 0.583,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "42370",
-    "title": "Community Health and Health Education",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/community-health-and-health-education-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "42983",
-    "title": "CNC Machinist",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machinist-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43045",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/film/film-television-electronic-media-ast/",
-    "coverage": 0.824,
-    "was_url": "https://catalog.vcccd.edu/ventura/transfer-information/transfer-uc/",
-    "was_coverage": 0.824,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "43149",
-    "title": "CNC Machine Operator",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machine-operator-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "43484",
-    "title": "Automotive Career Education Expert Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-expert-technician-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "44037",
-    "title": "Academic English Foundations (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/english/academic-english-foundations-noncredit-cocn-html/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "44188",
-    "title": "Introduction to Transitional Kindergarten Teaching",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/intro-to-teaching-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "44722",
-    "title": "Athletic Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/athleticcoaching/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/2-year-coa/",
-    "was_coverage": 0.643,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "44737",
-    "title": "Employability",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/employability-cocn/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45133",
-    "title": "Emergency Medical Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-technician-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/emergency-medical-services/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45196",
-    "title": "Dance",
-    "award": "A.A. Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/dance-aa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "45348",
-    "title": "Automotive Career Education, Bachelor in Science (BS)",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-bs/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "45385",
-    "title": "Analog Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/analog-photography-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "45531",
-    "title": "Pre-Paramedic",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/pre-paramedic-coa/",
-    "coverage": 1.0,
+    "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/",
+    "coverage": 0.517,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
@@ -825,132 +306,715 @@
     "title": "Elementary Teacher Education: Integrated Programs",
     "award": "A.A- T Degree",
     "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "coverage": 0.971,
+    "coverage": 1.0,
     "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/",
-    "was_coverage": 0.941,
+    "was_coverage": 0.971,
     "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46415",
-    "title": "Medical Interpretation in Spanish (Noncredit)",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/medical-interpretation-cocn/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/",
-    "was_coverage": 1.0,
-    "was_method": "link_search"
-   },
-   {
-    "control_number": "46417",
-    "title": "Spanish for Medical Personnel",
-    "award": "Noncredit program",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/spanish-medical-personnel-cocn/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
-   },
-   {
-    "control_number": "46424",
-    "title": "Medical Interpretation in Spanish",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/medical-interpretation-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/",
-    "was_coverage": 1.0,
-    "was_method": "link_search"
-   },
-   {
-    "control_number": "46425",
-    "title": "Spanish for Medical Personnel",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/spanish-medical-personnel-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/",
-    "was_coverage": 1.0,
-    "was_method": "link_search"
-   },
-   {
-    "control_number": "46429",
-    "title": "Fine Art—Graphic Design",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-graphic-design-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46472",
-    "title": "Figure Sculpture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/figure-sculpture-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46482",
-    "title": "Fine Art—Drawing",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-drawing-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46483",
-    "title": "Fine Art—Painting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-painting-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/art/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46484",
-    "title": "Sculpture",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/sculpture-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "46544",
-    "title": "Child and Adolescent Development",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/child-development-aat/",
-    "coverage": 0.92,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/child-development-aat/",
-    "was_coverage": 0.88,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46546",
-    "title": "CyberSecurity",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cybersecurity-coa/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "46564",
-    "title": "Cisco CCNA",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cisco-ccna-coa/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39622549965"
+ "fingerprints": {
+  "06947": {
+   "sha256": "315dd7585843edf0cd3c24ee234a1ce5e0398f41d22d4e87240ebbf10326bbbb",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/accounting-as/"
+  },
+  "06948": {
+   "sha256": "eca2d9fc712c963ae818d782c684954b90b8876db1939db1d029629e8200df0c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-as/"
+  },
+  "06957": {
+   "sha256": "4e59422094e6ef794a0d5652605f063c370266f23876742525526b2eceb316f2",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-as/"
+  },
+  "06968": {
+   "sha256": "932e8b7352af6627a6df11fcc833ae133a3768fd23e082ebaeeae2a26effb9e7",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-as/"
+  },
+  "06969": {
+   "sha256": "95c334035677c7773d0fd7e3c6d1e581281c9d88c1277d9f91a20dcf4eba6763",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-as/"
+  },
+  "06970": {
+   "sha256": "4dfbeee3689fda1cbb0c813b0bfe222199595fa32690b5e108df4a4fc444a184",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-as/"
+  },
+  "06971": {
+   "sha256": "ede43c66b01c8f9c66ca2f46690f10e8f232d867d57abf99332a44325ddc710e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-aa/"
+  },
+  "06972": {
+   "sha256": "4511e5b26ee560d9c9f3db4af14034027a4a0421be2184409cb5b070a68216b9",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/ceramics-aa/"
+  },
+  "06973": {
+   "sha256": "9fd109974ee06062fd0714ef8dd61f1d7813742cb04c614b08af0d89b7a0b8d7",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aa/"
+  },
+  "06976": {
+   "sha256": "a41bc3f8440815c9e760a9086d825f42631a677f3ce00f524ca0515bc8f8a52b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-aa/"
+  },
+  "06980": {
+   "sha256": "c82762789577f2ec50b931dfa132528816bbd33876fef8c5efe8d62edd12074c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/nursing-science/nursing-as/"
+  },
+  "06992": {
+   "sha256": "9246a3db5b5af343bd1102ad057a3182db5fd217d8c953bfdf1d8789ae3f7f8b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/criminal-justice-as/"
+  },
+  "06993": {
+   "sha256": "fbc224591f1dea00cb07c807c3c4b4fd12b95d81beeb7706c88c7f9e710ebdcc",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/child-development-as/"
+  },
+  "07628": {
+   "sha256": "d2281336d063d01d1096d9c8065282b03f10ac7aebabf878bc4462c43d56da1d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-as/"
+  },
+  "08253": {
+   "sha256": "c8f3f49e4c41252c4fe51dd4d11dba3ecc5237e59a7c7cb4823eaec7726f233e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-as/"
+  },
+  "10520": {
+   "sha256": "a59c786ad70176ca6494c26abd6dad0a7454c5fcb679a0bbfcf26c13d2c0fdf4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-as/"
+  },
+  "10521": {
+   "sha256": "ffa1dbff47cff72fc3b35459f34483c417b1b33842494e4ab5e805eed1bf162b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-as/"
+  },
+  "10594": {
+   "sha256": "3e1f01b9b82ae59d2cb727c6631805fea465054d82a5f7b145915c7f092b3a08",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-as/"
+  },
+  "15323": {
+   "sha256": "38cb5b28852e78b1fd77f3a667076c4796cef549afcf29d2fa6c1bd0df8b6e7e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-aa/"
+  },
+  "18471": {
+   "sha256": "9fe10b5b6839c2f4dcff2a2c724b28bd04cac786daf0af2bb53eb50526d38a28",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-natural-sciences-emphasis-aa/"
+  },
+  "18472": {
+   "sha256": "5afc011a50d09fa62138ef9c50f189f5bfd50c36be8994f9a9496603b920921d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-social-behavioral-sciences-emphasis-aa/"
+  },
+  "18473": {
+   "sha256": "b6c868ffcb4d59bb88a3df3a35be1375786ad704237a440c199e4d10781711fc",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-pattern-i-arts-humanities-area-emphasis-aa/"
+  },
+  "18477": {
+   "sha256": "07fe380491d503cbc4583911937d6bf89049f7bb84d7d8b15c7a1873958cb3a4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/general-studies-options/general-studies-patterns-ii-iii-liberal-studies-emphasis-aa/"
+  },
+  "20560": {
+   "sha256": "5f3dd72a7b8482f8a290cbeecb018c561718b6ffcc31685c2f00324117faa61f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/accounting-coa/"
+  },
+  "20561": {
+   "sha256": "2ed575211f926862e2c9e3d5fd35c1837839f7473d0168d55120d4bfa70c90a1",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-management-coa/"
+  },
+  "20565": {
+   "sha256": "2f3c7356c02f527ea143622d515dbbe328fb533be31e14c9d4fc5e7b8c0c0556",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-administrative-coa/"
+  },
+  "20576": {
+   "sha256": "698beab6acce2993000b710fb2e8f61c1942102a9db796d3765199bbf15167d1",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/engineering/engineering-coa/"
+  },
+  "20578": {
+   "sha256": "d5694215443e093a4051f2eec185d7ee8d8f5545e2c3c6d4e323d743cbf6473a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-coa/"
+  },
+  "20580": {
+   "sha256": "276f8de28b82bf5fb79c24b1ddc31c1a1b1b808493727b96fd0ef2c5ba451cc5",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-industrial-design-manufacturing-option-coa/"
+  },
+  "20582": {
+   "sha256": "58cae5a671e5abda2938fdacdccaacfa7243c77bb3c0fd0cae1d72fd3b829981",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/welding/welding-technology-coa/"
+  },
+  "20583": {
+   "sha256": "9bdd06f18044f4e7f306e82a6ee4221f8783d59c7810062961103ba8115245c5",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-construction-management-option-coa/"
+  },
+  "20584": {
+   "sha256": "96f8a885494a92549ec845077c192b599ce457609586ae27cb523d34a00ca86f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/construction-technology/construction-technology-building-inspection-option-coa/"
+  },
+  "20585": {
+   "sha256": "7af78b310e4e8ea4d2e923295702706bf3f93c86cd0835e1a227274fbf74767c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/wastewater-coa/"
+  },
+  "20586": {
+   "sha256": "e14bd13fbba7fabb288b6c46116700ed7837a089b2d925ae2b1d58535141bab7",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/water-science/water-science-coa/"
+  },
+  "20587": {
+   "sha256": "4de718fed93730a9800f2f38388a3e1939afc238b8eefa1f4eb85f74e18f84c4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-coa/"
+  },
+  "20588": {
+   "sha256": "6b6dbc6577817f439c0e8e8cb9ae7f94665381de0d4e335a6a29708ca20e9d56",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/ceramics-coa/"
+  },
+  "20589": {
+   "sha256": "3ee178ad08f3ec24044979a897f73b5d416d2d26c7068cc53ccb8ccfcbda6580",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-coa/"
+  },
+  "20591": {
+   "sha256": "46568b9a2b82d1d6b6b1fd970c6cdaef2aa6409d0934e534813312b5fa8cef5d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/photography-coa/"
+  },
+  "20593": {
+   "sha256": "efbaaa30690c6a971dad920ca1353f74fe90635898fffd4748d81b2918a35939",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-services-paramedic-studies-coa/"
+  },
+  "20597": {
+   "sha256": "6b16cde082d9015419c4280b32c9b9bb94c7ed0c71cdb193523abe29ba8fafb4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/child-development-coa/"
+  },
+  "20598": {
+   "sha256": "1abdd06d746506a40c6ed6fa6df167075987f47c66131985e49afba19fb8ec2b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-coa/"
+  },
+  "20599": {
+   "sha256": "10819d769fbea2d6382cf494756a89c4b71397010061f6a4b3e2609d4ee27458",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/criminal-justice-coa/"
+  },
+  "30587": {
+   "sha256": "ecd5d00b21aa0f20864d571cf382228a70550b85f735d439bf8a6ca4d196721a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/psychology/psychology-aat/"
+  },
+  "31286": {
+   "sha256": "5d85372e695624491e2600d641810138da504e403d18a39f118a3de7b07f5e8c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/sociology/sociology-aat/"
+  },
+  "31298": {
+   "sha256": "b116063b5626ec9334e7cc20b97af39419850ad24607404b12d9648f7b17cf5b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/administration-justice-ast/"
+  },
+  "31361": {
+   "sha256": "82163d470f5326fa3e9b6fac29dee122a62348738ece8d96c003aa8f88043891",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/studio-arts-aat/"
+  },
+  "31362": {
+   "sha256": "78539ffd4ce2dadd49d7980de817b4c818d680fce5738d9d6b06cd767ae39605",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/early-childhood-education-ast/"
+  },
+  "31363": {
+   "sha256": "2179e5373a6bf2490d718b67b48223a3c2bb6fc76724686d61fb2b800bb9a3a7",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/theatre-arts/theatre-arts-aat/"
+  },
+  "31437": {
+   "sha256": "0c305b659f4ef27b86f08f23c622a2cedc229e344baf38f9dd1b13b1dd76301b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/art-history-aat/"
+  },
+  "31454": {
+   "sha256": "ab91b927c1cc218369a3e2b8c339286775caf40742c20362bbbe0ce606e6c928",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/history/history-aat/"
+  },
+  "31455": {
+   "sha256": "f6fe48d6ae8d59735784ea8edf23d65be2eda39859bcea1f3ce9172d17cf44f9",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/political-science/political-science-aat/"
+  },
+  "31874": {
+   "sha256": "78d2db9a1ef58e880afaae82b59f21783d6804006135e589db7234d91081a876",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-multi-skilled-as/"
+  },
+  "31875": {
+   "sha256": "48b6b172fd6c6aacc66b11fb71aa98d09f1245313ca397b20a96f31fb1336762",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/medical-assistant-multi-skilled-coa/"
+  },
+  "32052": {
+   "sha256": "738e152b735821e411d8e7af6bbcca2ab3313ec93909df9d64a16b1648b572ae",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-ast/"
+  },
+  "32054": {
+   "sha256": "124deb8b79c42ec2d02cb81b39af2a9477f993bcf8cf15ec09c43bd3e90a1dca",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/anthropology/anthropology-aat/"
+  },
+  "32578": {
+   "sha256": "1aebc362bec3ae936dd84632f088f7360cbd2d8fc84ef0c0e48ea422c8ff3c55",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/kinesiology-aat/"
+  },
+  "32756": {
+   "sha256": "7cee0ac35ca7f69ea65582c7213ca6f4b53dd4fef51800ace56b09c43fd18370",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english/english-aat/"
+  },
+  "32834": {
+   "sha256": "c9adda8da73b194bc8669a1c1292a099d9459072f79c2fa0f39e9d996b4a6501",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/geography/geography-aat/"
+  },
+  "32893": {
+   "sha256": "4593eb6a4f78dcd61befb3389fcc8b17d2b687b4ed353e6944117280044a63ac",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/biomedical-device-manufacturing-coa/"
+  },
+  "33720": {
+   "sha256": "d45c4aa9d1c89d8418772ac441d95e141ea5df8ab51beead62d232b896a41c3b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/geology/geology-ast/"
+  },
+  "33728": {
+   "sha256": "5ff6c28954e5258d69e1a047edb314dcf7d68151d4c32f8191c50d08cc035b0d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/philosophy/philosophy-aat/"
+  },
+  "33782": {
+   "sha256": "e35afa9b64eff707829ce24d8be283e446571df7528427000c7226c62385c4f6",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/social-media-marketing-as/"
+  },
+  "33819": {
+   "sha256": "1ce5bae1053d01b0a4a9d54ae6cdd97f3cc791afaebd3008ab0746e86524108b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-coa/"
+  },
+  "33820": {
+   "sha256": "cdae7112b4a254fe3e55886957f04592255ba5ae9d5898f1c4ca8af55bdd1628",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-science-coa/"
+  },
+  "33821": {
+   "sha256": "677312a3afc5c6716a3de6bdc32b7be970214e43f4670cb4175e76293d3f02a4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-technology-coa/"
+  },
+  "33822": {
+   "sha256": "d998bdbe86bc3c4f19856afc9321fbe26ea15819f225903722cf4d650ecdc5ee",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/drafting/drafting-technology-coa/"
+  },
+  "33823": {
+   "sha256": "841e4986933ac8de8f7297f6c13d1d2f5f5a356bc29444f94f8777af22a0e89d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/social-media-marketing-coa/"
+  },
+  "33842": {
+   "sha256": "9f747c2cf8ef4cd24ab9b0ed68b55f9d2959eb4b578790471e7a5b7e6ecdbb70",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/"
+  },
+  "33858": {
+   "sha256": "9f747c2cf8ef4cd24ab9b0ed68b55f9d2959eb4b578790471e7a5b7e6ecdbb70",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/architecture/architectural-design-as/"
+  },
+  "35198": {
+   "sha256": "e05166247b5104d66cafae66e6194d6538752ed132c4e44a95b212380e64706a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/music/music-aat/"
+  },
+  "35207": {
+   "sha256": "e09a17af3f98208faadd8d9320d39e933c99a3184c4894aa2ecf6ac7aeb2b808",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/"
+  },
+  "35441": {
+   "sha256": "5a6ce93025094c885e48fb6bdd1c682763373320a37350ff0f024ee31c99539f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/public-health-science-ast/"
+  },
+  "35483": {
+   "sha256": "83602fcefa250e81d4c5b3523f63014e3fa182bc6225987089e3022e8640e18b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/diesel-engine-repair-coa/"
+  },
+  "35485": {
+   "sha256": "8656a8fc7505a0f5904f7e6747dca8df794c5b544fc93989e0b739f0d64925ca",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/medium-heavy-duty-vehicle-repair-coa/"
+  },
+  "35486": {
+   "sha256": "0c918387fbad674c5198a7c4d70ac5e937ac24cb477219d6d964ce636e95fd8c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/diesel-mechanics/diesel-mechanics-as/"
+  },
+  "35499": {
+   "sha256": "88ef87ce9de0deeeb40909e8f952c0cf2ad6b03969ad02b79b61823f6c30bc51",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/nutrition-dietetics/nutrition-dietetics-ast/"
+  },
+  "35622": {
+   "sha256": "5bdcb10b5a4eff5378471e758f0f0172cfbcb4b602c0bf98086cce79809eb2fa",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/economics/economics-aat/"
+  },
+  "35652": {
+   "sha256": "a985b78852b6e1e059a1efb04b8819b3916d64ff21994df8def6c1dee2ceca3c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/biology-ast/"
+  },
+  "35654": {
+   "sha256": "081d451aec4ecff4665a8d46218201da294f0f67cf1bfae8bcc586633248c8d3",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-coa/"
+  },
+  "36639": {
+   "sha256": "ec30764a8538b1a6710792f9938b4757aef66788c04fac26ef86b803cb12f097",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/bookkeeping-coa/"
+  },
+  "36645": {
+   "sha256": "69dbd4bd9942de2e54abd4d0b0c2a89d0ec9c758f5ce8f2a03815749483688d8",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/bookkeeping-as/"
+  },
+  "36653": {
+   "sha256": "50c6679db664737ac049b55a2e12329276dfe36f7bd10a4ceb9d5ae7796b49b0",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/pre-allied-health-coa/"
+  },
+  "36858": {
+   "sha256": "690707d4d6fef0d13245b85b3cd6bc8958dfe5170c79af037acbd78f54c5f62d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/associate-teacher-coa/"
+  },
+  "37365": {
+   "sha256": "7421d03d54d9c6e056816a6deca96e4027ab5570936e8ff71b4e10cbd1e14468",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-business-ast/"
+  },
+  "37415": {
+   "sha256": "b82d0d7d6ac39f479443e458735ec30f658e12f858eae549a3e144f53f9670cb",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/police-science/basic-law-enforcement-academy-as/"
+  },
+  "39961": {
+   "sha256": "dbb00795f2df53fb64eaa3913bb49db02aec448bdb7fe628760aad5965a1dd0b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-technology-as/"
+  },
+  "39995": {
+   "sha256": "2b9d238bc7b9fec66b9fbb6c0af253b2a8e702e0045552d4733b679645721661",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/veterinary-assistant-coa/"
+  },
+  "40081": {
+   "sha256": "fd7c0f18914c7385ea5a3a6579605e6f0c260a004f2f48f34b6df2cf9e558144",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-plant-science-ast/"
+  },
+  "40087": {
+   "sha256": "9178eb6c944319224124cfbe210775262c2bd0a7c566e83bd30968b6b56b1d68",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/plant-science-coa/"
+  },
+  "40155": {
+   "sha256": "e267526a43ec7ea6e4c83bef7a5b60e3d7eb173e0741e15c89dbeca8242a3398",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/advanced-manufacturing-as/"
+  },
+  "40179": {
+   "sha256": "a9477733db5346da1f8e1ecb23600eafff4d5415928cb84d90a87e4fccbd45ac",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/basic-law-enforcement-academy-cocn-noncredit/"
+  },
+  "40249": {
+   "sha256": "1f651805bee33a769d20a439b1b36bfca7d9de5ef8bae451419178200615aef1",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-as/"
+  },
+  "40580": {
+   "sha256": "41512a09d64c698c8f518cf1fbc6a7083d9dcf04a55dc63762d7e8b22e31e254",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-field-supervisor-cocn/"
+  },
+  "40713": {
+   "sha256": "ab8c1ece1069c4148462d1293ca244c8365af1ceb2848e8d15cab8958eb075fa",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-as/"
+  },
+  "40809": {
+   "sha256": "b801d91c0e86a2bdfc5b19e7672ab2652af8967c7379a2744ecc071b06473b87",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-ca/"
+  },
+  "40823": {
+   "sha256": "fc4e887f3c64c60c1e5fa02c70acfe174f6d7e63fa89cc2d33c3d12d2188876d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/spanish-aat/"
+  },
+  "40929": {
+   "sha256": "7b0e2f5ab136f938fd566151f11e05368fe744755b1fffbec7f85e6d03d91adc",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-repair-technician-coa/"
+  },
+  "40930": {
+   "sha256": "64e408a4d2a42595f727c7307cd779b2ff6d47474fbfd418901391951a38fdc5",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-performance-technician-coa/"
+  },
+  "40934": {
+   "sha256": "6d7609de0228061c57cf8f98ac598d629e6a4b17d87d73de08774b50a0a70e34",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-maintenance-technician-coa/"
+  },
+  "40935": {
+   "sha256": "b27372cb4148181f6ec630a30f345b4b78b0a4090891cdc77c15b848caf4bb1b",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-service-technician-coa/"
+  },
+  "40960": {
+   "sha256": "1d0d8521b751e2ee8558c06231b543ccaff8b8a35327b9f0869efd8f4c44ae22",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/food-safety-noncredit-coc/"
+  },
+  "41582": {
+   "sha256": "ea8d936f1761928073414f91c018df82265a5a2c882df355a67ad5b7128f3d98",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-administration-2.0-ast/"
+  },
+  "41875": {
+   "sha256": "2b5fb662d63c0eea05693fe0966db3f927216b9a11633c505b14933ee28a8b77",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/social-work-human-services/social-work-human-services-aat/"
+  },
+  "41884": {
+   "sha256": "640cfacc6e2a7642c41051d6abb39ca1a44540066a2f13b467d50afbde97293e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/chicano-studies/chicano-studies-aa/"
+  },
+  "42026": {
+   "sha256": "c620dceed94534d090307bea8006b63f4cbe9a873332e49f5b2a4ac6b18dac89",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-readiness-cocy/"
+  },
+  "42258": {
+   "sha256": "20dae13360c8ba161975d8bb3db8bb3acc6f3d664a9484cf9add6325ac2092e5",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/holistic-studies/holistic-health-coa/"
+  },
+  "42370": {
+   "sha256": "24f8ce9aca5737dbc1c4bf28bc07090dd13e9d093a79f7191e84195bfb6a18b4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/community-health-and-health-education-coa/"
+  },
+  "42398": {
+   "sha256": "40caf711580ebbc285f798a209c3c36c94a295ff87a6fa63e857040541bd2203",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-business-coa/"
+  },
+  "42877": {
+   "sha256": "13a142ea871ee7f5266f14e8ed41c8157676a24df4b23ec512ac778b41763700",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-pest-control-adviser-preparation-coa/"
+  },
+  "42967": {
+   "sha256": "db09635efa54eccf3978b9d25ab74f0ae0016d68389d241c0df9140977adcb94",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/applied-industrial-technology/heavy-equipment-industrial-systems-operation-maintenance-coa/"
+  },
+  "42983": {
+   "sha256": "0bdacd94b51a7fdb4d5a81ef88127f4479795684e3bac146358b0a80408d00d8",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machinist-coa/"
+  },
+  "43045": {
+   "sha256": "4442099e45c8a56000615d6e3e14404ae255443d2c4413a468d25be8f0e28c54",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/film/film-television-electronic-media-ast/"
+  },
+  "43149": {
+   "sha256": "26b37288be983685fd9acf15137b23a05d512342dec4f1d9e9ec98afdddc40a3",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/manufacturing-technology/cnc-machine-operator-coa/"
+  },
+  "43209": {
+   "sha256": "055d688ff1dbd5c132dc2fbd06edec644b912bf3e54ebb6df24db3ff7a5bd008",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/film-studies-aa/"
+  },
+  "43423": {
+   "sha256": "2884954a4b63f9a794d355f67ee2ff674d1b61c304d8613b01f5fd9d3c914f27",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/political-science/public-administration-coa/"
+  },
+  "43484": {
+   "sha256": "b8ca50c69fffdad5613c3e06283bfb2af124fbca89785f8cb03ec7aaff67f95a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-expert-technician-coa/"
+  },
+  "43974": {
+   "sha256": "1eb260c5ca5303337ac5a6f5f613eb0de9e1f365478178defe14e479ea7da65a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/communication-studies/communication-studies-2.0-aat/"
+  },
+  "43989": {
+   "sha256": "7e5928303a71fb1d5cfb79008964f033f020ab4db9195580b5a27893c820e650",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english/creative-writing-coa/"
+  },
+  "43990": {
+   "sha256": "a3d07be60324dacc1b40afeaabf5cbda00b678e217fc67297cc1b6eb7583a94a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/political-science/pathway-to-law-coa/"
+  },
+  "44037": {
+   "sha256": "620ba21dfa27887100ff0aa04b557b13de34bd2bea2b3a3889f900a9f21a5d69",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english/academic-english-foundations-noncredit-cocn-html/"
+  },
+  "44186": {
+   "sha256": "f90e801c8cd0a0f3c425d0f39c8a86de2a67f3a91d6f743fd682fe821721964f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/administration-in-early-education-coa/"
+  },
+  "44187": {
+   "sha256": "15dbed540fb30e14e11b9b8360776ba215694ee5a355f7a102c2c8df64a85fda",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/intro-to-infant-and-toddler-teaching-coa/"
+  },
+  "44188": {
+   "sha256": "de2e4a6271eed9d5e9a077547bdff1f4144578b0738fff92a438ad1cf278df0f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/intro-to-teaching-coa/"
+  },
+  "44189": {
+   "sha256": "99a0f1df11799485d41fbdf32b53c7bda44b70ca03683b6954fc17b350a7660e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/special-needs-teaching-coa/"
+  },
+  "44386": {
+   "sha256": "2729b75496c242b42ecfd030bc6d5c4197134fbe6904d4bb59991e2d26cee2ae",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/antiracism-in-teaching-coa/"
+  },
+  "44387": {
+   "sha256": "fa955539ff58457cf49292b189bf6f5af49794e1f882eb0740ff5b3ee52a1e2a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/family-child-care-teaching-coa/"
+  },
+  "44389": {
+   "sha256": "5fed5b2db29016c3eb95c8cbfa813318b9b04f559b69378a014ead210fb58c4e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/preschool-to-third-grade-teaching-coa/"
+  },
+  "44390": {
+   "sha256": "fb81ec78ec1c33fe3382d2b12f710304515c4729fd2992d74a5a6952e7f9dc5e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/infant-and-toddler-teaching-coa/"
+  },
+  "44722": {
+   "sha256": "ad4b1b74cfc61b8b5258f870cc79496453e5cba1a220ae7bf338d8da5e4ef683",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/athleticcoaching/"
+  },
+  "44737": {
+   "sha256": "695cf0a27a7a791dee9176ee560a20fc780b8379a48e40b8528b05b184c3c220",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/employability-cocn/"
+  },
+  "44974": {
+   "sha256": "8c982e1d6c397009145a428ac973553d10b3db57d5c7f5c8dfd89a664af3d352",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/forensic-science-coa/"
+  },
+  "44993": {
+   "sha256": "3f5fd08cd81a531bb9feb87c02ab1de6f086253a4edfaf8d8d1527b86f7a845d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/chemistryas/"
+  },
+  "44994": {
+   "sha256": "77feff719aae6926d4ad99dacd54ed706e238c66ff50ce77611ea7161f0eabb9",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-oral-communication-coa/"
+  },
+  "44995": {
+   "sha256": "c80d09b9eeaeafb870d0fe31bd2f7eee60311a63038537874bc3e84f7ff7498c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/english-multilingual-students/level-3-written-communication-coa/"
+  },
+  "45003": {
+   "sha256": "ee6e075b0631d85066806d8428750a99d25f5dc2c4749f113bb3a0673cdb0ca3",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/1-year-coa/"
+  },
+  "45133": {
+   "sha256": "6a59a7608af11d97dfc3d1a4e1ec8661f29721f30ddea9402fa9e063c5e527f4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/emergency-medical-technician-coa/"
+  },
+  "45196": {
+   "sha256": "1c367e0d95ceee1cde4da5ee8b0b1837a8bc483be672a9cc59a3e0ba4a661194",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/dance/dance-aa/"
+  },
+  "45198": {
+   "sha256": "dbd2fb90d871ccf35229a241d7292858669154d5948afd55b068b569e8323d95",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/kinesiology/sports-management-aa/"
+  },
+  "45199": {
+   "sha256": "ee6e075b0631d85066806d8428750a99d25f5dc2c4749f113bb3a0673cdb0ca3",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/intercollegiate-athletics/1-year-coa/"
+  },
+  "45348": {
+   "sha256": "1190e76f0e9ad2f1e80c94801925824b6e74c6a02ff51d0574928a52f9080873",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/automotive-career-education/automotive-career-education-bs/"
+  },
+  "45355": {
+   "sha256": "7b71cfa09f21e515fcb9cae27023bf506d997f44d92cc96b6066898a2c7146b6",
+   "url": "https://catalog.vcccd.edu/ventura/transfer-information/c-id/"
+  },
+  "45385": {
+   "sha256": "b51682bc92cfcf762937066eee54c0311793ac0c9aca8c4137276372a8f5b8f4",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/photography/analog-photography-coa/"
+  },
+  "45422": {
+   "sha256": "8f226c037e740bd5220563b3f3c932b902385c9fffec6ba48b0d010448e70071",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/forensic-science-as/"
+  },
+  "45427": {
+   "sha256": "1394201f437dc4b5f4ed33dce953971ecd629b94f6af37cef7be4bc23c526f23",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/small-business-management-as/"
+  },
+  "45488": {
+   "sha256": "4fd5ebdfd592a232ff75871a1354d46ba463d5bb7e1e6458e73c54687e75dc55",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/criminal-justice/modern-policing/"
+  },
+  "45503": {
+   "sha256": "d20f44870520207d2a521d536a9821b69f01d5105377ad0eff758dab83146c73",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/business/business-finance/"
+  },
+  "45529": {
+   "sha256": "0a0af046275fddf9853e5f06049303feace16502a318750e8f12feeaf4d54fbf",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/speech-language-pathology-assistant-as/"
+  },
+  "45531": {
+   "sha256": "66835ef28f01fd77d72f26b14f718b1547e0e05c462e7ae24ddf0710d55b1c8e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/paramedic/pre-paramedic-coa/"
+  },
+  "45535": {
+   "sha256": "a7bdb4810ec9606febab507a80de901096e6eac04eec69f31b48589b6082f866",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/physics/physics-ast/"
+  },
+  "45731": {
+   "sha256": "c89ad414cee474e36a18c38157d2701f6cb96be940f061b70e0d30fa29657054",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/computer-science-adt/"
+  },
+  "45732": {
+   "sha256": "5a6ce93025094c885e48fb6bdd1c682763373320a37350ff0f024ee31c99539f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/health-education/public-health-science-ast/"
+  },
+  "45789": {
+   "sha256": "738e152b735821e411d8e7af6bbcca2ab3313ec93909df9d64a16b1648b572ae",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/mathematics/mathematics-ast/"
+  },
+  "45831": {
+   "sha256": "e09a17af3f98208faadd8d9320d39e933c99a3184c4894aa2ecf6ac7aeb2b808",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/education/elementary-teacher-education-aat/"
+  },
+  "46400": {
+   "sha256": "b7177d3f4c791e63371ff9a2376e7c0295ee890fa8eabf58ae3231d629eb0015",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-oral-comm-cocn/"
+  },
+  "46401": {
+   "sha256": "b28e4f26302d2e6bbb282ca3b5933e999700961b71b9cd4cbf9b07f1b9868afa",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/engm-level-3-written-comm-cocn/"
+  },
+  "46415": {
+   "sha256": "95241912c73e64aca0814595716ed94c084a4221099b19826fa843acfc5b692a",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/medical-interpretation-cocn/"
+  },
+  "46417": {
+   "sha256": "d246354bdd8752f75968bd2f63f0ef1f11501742dd3d3da71e76fc5eb0ace75c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/noncredit-programs-courses/spanish-medical-personnel-cocn/"
+  },
+  "46422": {
+   "sha256": "e44ce5bafb80ef3fc899bd16c6f380215b83b36c6bfb147b53d760531c6d6658",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/environmental-science-resource-management/environmental-science-aa/"
+  },
+  "46423": {
+   "sha256": "68ce6c9443c3f432d83de66fab1edcb998a2590624a62cefcf7980a79b58c4fc",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/environmental-science-resource-management/environmental-studies-coa/"
+  },
+  "46424": {
+   "sha256": "7f7116e668ac45ae8e40a5a69ad7526dd4a194fef6a915c4c2ce8a68c5fd1c79",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/medical-interpretation-coa/"
+  },
+  "46425": {
+   "sha256": "92fa1f86b0a64dc154d488b431c1f2a3488c17fdf288038c1cf6c54b761b34d9",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/spanish/spanish-medical-personnel-coa/"
+  },
+  "46429": {
+   "sha256": "1533873a7e178335a58af4e9e85dfd0bef9f4186fcc6522e0eca82c8fb4efc98",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-graphic-design-coa/"
+  },
+  "46472": {
+   "sha256": "9cb37edc0e0616913481acb75c505218c39b294548a784ba0428c153a5c79f1f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/figure-sculpture-coa/"
+  },
+  "46481": {
+   "sha256": "dc01a40168a8e5f5ef2e5f70386c979268a96510c2c1c528dec6c00bf552b54d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/art-history-coa/"
+  },
+  "46482": {
+   "sha256": "a2f3211b9bce586020121eaca6564582f84377fb7a7269cc3c59fbe0aa02af2c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-drawing-coa/"
+  },
+  "46483": {
+   "sha256": "b68e7f2b7e6d99258c241e6638e008354f813306937b995e9acb0ef6ea2d6b8d",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/fine-art-painting-coa/"
+  },
+  "46484": {
+   "sha256": "b346bad62d20972fc2829d1ce3c14c14fb5c6dba4bcd111d50af01194eeee334",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/art/sculpture-coa/"
+  },
+  "46542": {
+   "sha256": "a985b78852b6e1e059a1efb04b8819b3916d64ff21994df8def6c1dee2ceca3c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/biology/biology-ast/"
+  },
+  "46543": {
+   "sha256": "b02ad33d235ac65a8c22b34c7b7fc378f66586c04f125172bf9f82b709c17b0c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/environmental-science-resource-management/environmental-science-aa-t/"
+  },
+  "46544": {
+   "sha256": "bd14f3b269ff19bf0d78bf50d1ab7ef201ce990471c6fec06b548e0a0bc8be2f",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/child-development/child-development-aat/"
+  },
+  "46545": {
+   "sha256": "316e626e060d7e765b16e66b8ba7cc68e0e54cffc3a3e848d8e9d6d171b5e308",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/data-science-and-artificial-intelligence-coa/"
+  },
+  "46546": {
+   "sha256": "d008e95c0674ca3b7ebe209f7ea8d74bc8cf0e22c4837c1b70a10b78966bf75c",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cybersecurity-coa/"
+  },
+  "46563": {
+   "sha256": "fb4ec2b982e83bf4fa7e36ebb37a969088ca1cba8a2c64c42d638dd9914f9d4e",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/agriculture/agriculture-animal-science-ast/"
+  },
+  "46564": {
+   "sha256": "90151027a1a6732152a31efa73907e58d96e1f1bb728adab865acc8624f20703",
+   "url": "https://catalog.vcccd.edu/ventura/programs-courses/computer-science/cisco-ccna-coa/"
+  }
+ },
+ "run": "44514835321"
 }

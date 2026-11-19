@@ -1,0 +1,243 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-18T16-47-31Z",
+ "run_id": "44350607385",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-high-school-rop@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Amador Valley High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Health Careers",
+   "field": "unified_title_assignment",
+   "value": "Orientation to Health Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Health Careers",
+   "field": "issuing_agency_assignment",
+   "value": "Amador Valley High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Dublin High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Health Careers",
+   "field": "unified_title_assignment",
+   "value": "Orientation to Health Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Health Careers",
+   "field": "issuing_agency_assignment",
+   "value": "Dublin High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Emerald)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Emerald)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Emerald High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 55",
+   "field": "unified_title_assignment",
+   "value": "Business Mathematics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 55",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 87",
+   "field": "unified_title_assignment",
+   "value": "Organizational Management and Leadership",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 87",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for CIS 59C",
+   "field": "unified_title_assignment",
+   "value": "Web Programming - JavaScript",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for CIS 59C",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Amador Valley High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Health Careers",
+   "field": "unified_title_assignment",
+   "value": "Orientation to Health Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Amador Valley)- Introduction to Health Careers",
+   "field": "issuing_agency_assignment",
+   "value": "Amador Valley High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Dublin High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Health Careers",
+   "field": "unified_title_assignment",
+   "value": "Orientation to Health Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Dublin)- Introduction to Health Careers",
+   "field": "issuing_agency_assignment",
+   "value": "Dublin High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Emerald)- Introduction to Athletic Training",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Athletic Training and Sports Medicine",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::High School Articulation (Emerald)- Introduction to Athletic Training",
+   "field": "issuing_agency_assignment",
+   "value": "Emerald High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 55",
+   "field": "unified_title_assignment",
+   "value": "Business Mathematics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 55",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 87",
+   "field": "unified_title_assignment",
+   "value": "Organizational Management and Leadership",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for BUSN 87",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for CIS 59C",
+   "field": "unified_title_assignment",
+   "value": "Web Programming - JavaScript",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio Evidence for CIS 59C",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

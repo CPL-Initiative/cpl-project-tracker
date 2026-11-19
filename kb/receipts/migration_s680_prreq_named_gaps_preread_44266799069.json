@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-18_s680_prreq_named_gaps_preread.sql",
+ "name": "s680_prreq_named_gaps_preread",
+ "version": "20261118084309",
+ "sha256": "fd09cb477f8fa8ba4862ce3c6c6214c7899b9631cbc701ead5a0ee246e7b8c4f",
+ "run": "44266799069",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"json_build_object\":{\"listed\":75,\"on_run\":75,\"record_is_before\":75,\"checks_is_before\":75,\"both_before\":75,\"already_after\":0,\"checked_now\":0}}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

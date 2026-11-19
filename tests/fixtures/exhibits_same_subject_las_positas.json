@@ -1,0 +1,2345 @@
+{
+"_about": "The Las Positas Review card for MAPCXH-HSA(7-1-001 and its Same subject list, as kb/_build_exhibits_review.py wrote them on 2026-11-18 from the committed data (tests/exhibits_same_subject.test.js).",
+"colleges": [
+"Las Positas College"
+],
+"card": {
+"raw": "High School Articulation (Emerald)- Developmental Psychology of Children I",
+"step": "Proposed",
+"why": "the classifier is unsure (0.65)",
+"colleges": [
+0
+],
+"title": "Developmental Psychology of Children 1",
+"issuer": "Emerald High School",
+"from": "the classifier",
+"proposal_source": "classifier",
+"ids": [
+"MAPCXH-HSA(7-1-001"
+],
+"art": [
+0
+],
+"could": [],
+"basis": "",
+"same": false,
+"local_courses": [
+[
+0,
+"ECE 64",
+"Play: Materials and Environments",
+3,
+"CCC000584377",
+"3 hours in Play: Materials and Environments",
+"Application of principles of human growth and development in the consideration of play materials and environments for children birth through early elementary. The selection and development of play materials and environments that are developmentally, culturally, and age-appropriate."
+],
+[
+0,
+"ECE 95",
+"Work Experience",
+1,
+"CCC000595189",
+"1 hour in Work Experience",
+"Cooperative effort between, student, supervisor and instructor to accomplish professional work objectives and broaden experiences. On-the-job work experience to build early childhood competencies."
+]
+],
+"subject": "Child Development/Early Childhood Education",
+"subject_course": 0,
+"confidence": 0.65
+},
+"subject": "Child Development/Early Childhood Education",
+"rows": {
+"disc": "Child Development/Early Childhood Education",
+"total": 286,
+"rows": [
+[
+"ECE 220",
+"Health, Safety and Nutrition",
+99,
+3,
+4,
+"C-ID"
+],
+[
+"CDEV 110",
+"Child Family and Community",
+98,
+1,
+4,
+"C-ID"
+],
+[
+"ECE 120",
+"Principles & Practices of Teaching Young Children",
+98,
+3,
+5,
+"C-ID"
+],
+[
+"ECE 230",
+"Teaching in a Diverse Society",
+98,
+3,
+4,
+"C-ID"
+],
+[
+"ECE 130",
+"Introduction to Curriculum",
+97,
+1,
+4,
+"C-ID"
+],
+[
+"ECE 200",
+"Observation and Assessment",
+92,
+0.5,
+4,
+"C-ID"
+],
+[
+"ECE 210",
+"Practicum in Early Childhood Education",
+88,
+1,
+6,
+"C-ID"
+],
+[
+"CDEV 100",
+"Child Growth and Development",
+87,
+0,
+5,
+"C-ID"
+],
+[
+"CDEV M1185",
+"Infant and Toddler Development",
+54,
+3,
+5,
+"M-ID"
+],
+[
+"CDEV M1010",
+"Administration 1: Programs in Early Childhood Education",
+44,
+0,
+4,
+"M-ID"
+],
+[
+"CDEV M1024",
+"Adult Supervision and Mentoring in Early Learning and Education Programs",
+42,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1011",
+"Administration 2: Personnel and Leadership in Early Childhood Education",
+34,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1152",
+"Curriculum and Strategies for Children with Special Needs",
+29,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1160",
+"Introduction to Children with Special Needs",
+26,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1167",
+"Children with Special Needs",
+23,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1087",
+"Infant and Toddler Education and Care",
+20,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1068",
+"Positive Guidance in Early Childhood Programs: Managing Challenging Behaviors",
+18,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1109",
+"Child Development and Guidance for Family Child Care",
+16,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1113",
+"Supporting Family Relationships and Parenting",
+13,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1108",
+"Adaptive Curriculum for Children with Exceptional Needs",
+11,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1180",
+"Care of Infants and Toddlers: Curriculum and Environments",
+10,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1027",
+"Adult Supervision: The Mentor Teacher",
+9,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1103",
+"Child Growth and Development",
+9,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1290",
+"Infant/Toddler Growth and Development (DS4)",
+9,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1012",
+"Administration and Supervision of Early Childhood Programs 1",
+8,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1052",
+"CA Preschool Foundations and Frameworks: Performing Arts",
+8,
+1,
+2,
+"M-ID"
+],
+[
+"CDEV M1092",
+"Infant and Toddler Development and Caregiving",
+8,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1208",
+"Parenting",
+8,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1192",
+"California Preschool Learning Foundations: Social and Emotional Development",
+7,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1157",
+"Guidance for Young Children",
+7,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1182",
+"Introduction to Dual Language Learning and Teaching",
+7,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1240",
+"Parenting-Guiding Young Children-Approaches to Discipline",
+7,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1080",
+"CA Preschool Foundations and Framework: History and Social Science",
+6,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1076",
+"CA Preschool Foundations and Frameworks: Language and Literacy",
+6,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1155",
+"Early Intervention for Children with Special Needs",
+6,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1107",
+"Guidance and Discipline in Child Development Settings",
+6,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1085",
+"Infant and Toddler Development and Care",
+6,
+3,
+5,
+"M-ID"
+],
+[
+"CDEV M1090",
+"Introduction to Careers in Child Development",
+6,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1165",
+"Music and Movement for Young Children",
+6,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1200",
+"Partnering with Parents and Families",
+6,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1166",
+"Programs for Children with Special Needs",
+6,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1162",
+"Science and Math for Young Children",
+6,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1045",
+"Techniques of Teaching Using the Reggio Emilia Approach",
+6,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1202",
+"Trauma-Informed Teaching and Care in Early Childhood Settings",
+6,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1016",
+"Administration 2: Personnel and Leadership in ECE",
+5,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1241",
+"Art, Drama, and Creativity for the Young Child",
+5,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M9017",
+"Child Health and Safety",
+5,
+0,
+2,
+"M-ID"
+],
+[
+"CDEV M1122",
+"Constructive Math and Science in Early Childhood Education",
+5,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1197",
+"Emergent Literacy and Children's Literature",
+5,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1246",
+"Infant and Toddler Caregiver: Socialization and Emotional Development",
+5,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1130",
+"Language and Literacy Development in Early Childhood",
+5,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1136",
+"Music for Early Childhood Education",
+5,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1035",
+"The School Age Child",
+5,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1138",
+"Topics in Early Childhood Education",
+5,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1282",
+"Transitional Kindergarten and Early Primary Teaching, Principle and Practices (DS5)",
+5,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1008",
+"Administration of Child Development Programs 1",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1013",
+"Administration of Early Childhood Programs",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1029",
+"Adult Supervision",
+4,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1070",
+"Bilingual Education in the United States: Yesterday and Today",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1147",
+"Childhood Stress and Trauma",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1175",
+"Classroom Practices for Diverse Learners",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1193",
+"Early Intervention",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1252",
+"Health and Safety in Family Childcare",
+4,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1176",
+"Infant/Toddler Curriculum",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1143",
+"Literature for Early Childhood",
+4,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1060",
+"Observation and Assessment for Early Learning and Development",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1194",
+"Parent Education",
+4,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1038",
+"School-Age Curriculum",
+4,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1039",
+"School-Age Development",
+4,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1215",
+"Administration 1: Programs in Early Childhood",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1014",
+"Administration and Supervision of Children's Programs",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1009",
+"Administration of Child Development Programs 2",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1015",
+"Administration of Programs for Young Children",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1230",
+"Adult Supervision in Early Childhood Education",
+3,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1025",
+"Adult Supervision in Early Childhood Programs",
+3,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M9029",
+"Basics: Sushi Made Easy",
+3,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1072",
+"Brain Development and Learning",
+3,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1001",
+"Child Abuse",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1219",
+"Child and Family Abuse: The Teacher's Role",
+3,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1220",
+"Circle Time Activities",
+3,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1172",
+"Communicating with Families in Family Child Care",
+3,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1049",
+"Creative Art Experiences for Children",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1150",
+"Creative Experiences for Children 1",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1097",
+"Current Issues in Child Development",
+3,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1125",
+"Curriculum in Early Childhood Education",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1094",
+"Experience in Child Guidance Techniques for Early Childhood Classrooms",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1133",
+"Experimental Offering in Early Childhood Education",
+3,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1199",
+"Family Child Care Environmental Rating Scale",
+3,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M9006",
+"Family Child Care – Our Family and Community",
+3,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9031",
+"Foster Parenting",
+3,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV C1000",
+"Growth and Development of the Child",
+3,
+1,
+3,
+"CCN-ID"
+],
+[
+"CDEV M1280",
+"Human Development Through the Lifespan",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1184",
+"Infant Development",
+3,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1042",
+"Interventions in Augmentative and Alternative Communication",
+3,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1054",
+"Introducing Young Children to Visual Arts",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1104",
+"Introduction to Child Development",
+3,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1288",
+"Introduction to Violence Intervention",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1266",
+"Large Motor Development: Music and Movement for Young Children",
+3,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1260",
+"Literacy for Early Childhood",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1283",
+"Math and Science Methods for Early Learning Environments",
+3,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1236",
+"Meeting the Developmental Needs of the School-Aged Child",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1031",
+"Mentoring/Supervising Adults in the Classroom",
+3,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1164",
+"Music and Movement for Children",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1061",
+"Observation and Assessment of Children",
+3,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1105",
+"Observations and Issues in Child Development",
+3,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M9004",
+"Pediatric First Aid/CPR",
+3,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1140",
+"Positive Guidance in Early Childhood Settings",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1210",
+"Program Planning",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1149",
+"Promoting Social and Emotional Competence in Young Children",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1040",
+"School Age Programs 1",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1213",
+"Secondary School Teaching",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1209",
+"Single Parenting",
+3,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1146",
+"Supervision of Early Childhood Programs",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1117",
+"The Child with Special Needs",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1118",
+"The Young Child with Special Needs",
+3,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1131",
+"Trauma and Early Childhood Development",
+3,
+3,
+4.5,
+"M-ID"
+],
+[
+"CDEV M1006",
+"Activities for School-Age Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1214",
+"Admin 1: Programs in Early Childhood Education",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1222",
+"Admin of Child Development Programs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1224",
+"Administration II-Personnel and Leadership in Early Childhood Educ",
+2,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1225",
+"Administration of Early Childhood Education",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1226",
+"Administration: Parents as Partners",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M9001",
+"Adoptive Parenting",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1229",
+"Adult Supervision & Mentoring in Early Care & Educ. Childhood Prog",
+2,
+2,
+4,
+"M-ID"
+],
+[
+"CDEV M1228",
+"Adult Supervision in the Child Care Setting",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1032",
+"Advanced Infant and Toddler Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1238",
+"Analyzing and Applying Teacher Strategies in the Classroom Reflective Practice",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1242",
+"Art & Creative Dev in Early Childhood D3",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1047",
+"Art for the Young Child",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1007",
+"Autism, ADHD, Physical and Health Impairments",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1091",
+"Careers in Teaching",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1043",
+"Changing American Family",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1002",
+"Child Abuse and Family Violence in Our Society",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1004",
+"Child Abuse and Neglect",
+2,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1005",
+"Child Abuse Recognition and Prevention",
+2,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1237",
+"Child Care First Aid and CPR",
+2,
+0.5,
+1,
+"M-ID"
+],
+[
+"CDEV M1217",
+"Child Growth & Development 2: Middle Childhood Through Adolescence",
+2,
+3,
+4,
+"M-ID"
+],
+[
+"CDEV M1100",
+"Child Growth and Development During the School Years",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1132",
+"Childhood Disorders and Treatment",
+2,
+3,
+5,
+"M-ID"
+],
+[
+"CDEV M1274",
+"Children's Storytelling and Puppetry",
+2,
+1,
+2,
+"M-ID"
+],
+[
+"CDEV M1171",
+"Clinical Experience",
+2,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1221",
+"Creative Activities (DS3)",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1046",
+"Creative Art for the Young Child",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1050",
+"Creative Art for Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1174",
+"Creative Materials",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1263",
+"Creative Outdoor Environments for Young Children",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1264",
+"Curriculum and Intervention Strategies for Children with Disabilities or Delays",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9020",
+"Curriculum for Early Childhood Education, Introduction",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1232",
+"Curriculum for School-Age Child Care",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1051",
+"Curriculum: Art",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1178",
+"Curriculum: Language/Science",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1179",
+"Curriculum: Music and Movement",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1255",
+"Development in Middle Childhood",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1245",
+"Disaster Preparedness for Child Care",
+2,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1191",
+"Domestic Violence Recognition and Prevention",
+2,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M9014",
+"Early Care Licensing & Workforce Readiness",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1129",
+"Early Childhood Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9019",
+"Early Childhood Education, Creative Experiences",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9022",
+"Early Childhood Education, Music and Movement",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9021",
+"Early Childhood Education, Science and Math",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1233",
+"EC Curriculum: School-Age Care and Curriculum Design",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1196",
+"Educational Psychology",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1198",
+"Emerging Literacy",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1284",
+"Experimental Offering in ECE",
+2,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1259",
+"Facilitating Inclusion in Early Childhood Programs: Intervention Strategies",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9025",
+"Family and Community Relationships",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9008",
+"Family Childcare Curriculum and Planning",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1247",
+"Family Daycare---Child Development",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1081",
+"Family Home Child Care Program",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9018",
+"Family Preparation-Childbirth",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1153",
+"Fostering Literacy Development in Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9012",
+"Foundations of Child Care",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1286",
+"Foundations of Language and Literacy",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1268",
+"Guidance and Discipline for Young Children",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1285",
+"Health, Safety, Nutrition-ECE",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1273",
+"Inclusion Strategies for Children with Special Needs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1084",
+"Infant and Toddler Care and Curriculum",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1287",
+"Infant and Toddler Programs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9013",
+"Infant Development & Care",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1064",
+"Infants with Atypical Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9007",
+"Intro to Child Care Business",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1243",
+"Introduction to Autism Spectrum Disorders",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1044",
+"Introduction to Autism Spectrum Disorders and Applied Behavioral Analysis",
+2,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M9026",
+"Introduction to Infant/Toddler Curriculum",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1017",
+"Introduction to Program Administration",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1034",
+"Introduction to School-Age Child Care",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9024",
+"Introduction to Teaching Young Children",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1161",
+"Introduction to Young Children with Special Needs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1265",
+"Language and Literacy Development with Young Children",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1115",
+"Language and Literacy for the Young Child",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M9023",
+"Language and Literacy in Early Childhood",
+2,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1249",
+"Language and Literature for Child Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9005",
+"Language Arts and Literacy in Early Childhood",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1056",
+"Language Arts for Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1267",
+"Literacy Development for Children",
+2,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1055",
+"Literature and Language Arts for Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1036",
+"Literature for School Age Children",
+2,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1116",
+"Literature for the Young Child",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1251",
+"Math and Science for the Young Child",
+2,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M1261",
+"Math and Science in Early Childhood",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1207",
+"Mentor Seminar A",
+2,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1257",
+"Mentoring and Leadership in Early Childhood Education",
+2,
+3,
+4,
+"M-ID"
+],
+[
+"CDEV M9002",
+"Multi-Age Development & Care",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1281",
+"Music and Movement (Developmental Foundations)",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1258",
+"Music for Early Childhood Educators",
+2,
+0.5,
+2,
+"M-ID"
+],
+[
+"CDEV M1057",
+"Observing and Assessing Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9035",
+"Parenting Infants and Toddlers (Ages 0-3)",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1119",
+"Parenting the Preschool Child",
+2,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1033",
+"Pediatric First Aid, CPR AED",
+2,
+0,
+1.5,
+"M-ID"
+],
+[
+"CDEV M9027",
+"Personal Develop/Growth Wrkshp",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9028",
+"Personal Development/Growth",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1250",
+"Positive Social Development in Young Child",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9039",
+"Pre-Kindergarten Care and Observation",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1278",
+"Preschool and Early Primary Development (TK) (DS5)",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1289",
+"Preschool Supervision and Staff Relations",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1211",
+"Prevention Strategies",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1019",
+"Principles of Program Administration",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1234",
+"Prncpl/Prac Schl Age Care Prog",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9033",
+"Program Principles 2",
+2,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1239",
+"Registered Behavior Tech: Knowledge Skills & Clinical Applications",
+2,
+0.3,
+3,
+"M-ID"
+],
+[
+"CDEV M1089",
+"Responsive Planning for Infant/Toddler Care",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1227",
+"School Age and Adolescent Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1041",
+"School Age Programs 2",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1106",
+"Science and Mathematics for Child Development",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1256",
+"Science, Technology, Engineering, and Math in Early Childhood Education",
+2,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1195",
+"Sex Education for Parents and Teachers",
+2,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1254",
+"Staff Development and Leadership in Early Childhood Programs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1231",
+"Supervising Adults in Early Childhood Settings",
+2,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1030",
+"Supervising Adults Working in Children's Programs",
+2,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1270",
+"Supporting and Empowering Families of Children with Special Needs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1154",
+"Teaching Young Children in a Diverse Society",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1262",
+"The Cognitive Development of Young Children",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1173",
+"The Home, the School, the Community",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1253",
+"Violence and Its Impact on Children and Families: An Early Childhood",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1156",
+"Violence in the Lives of Children and Families",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1272",
+"Working with Children and Families with Special Needs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1168",
+"Working with Children with Special Needs",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1037",
+"Working with School Age Children",
+2,
+3,
+4,
+"M-ID"
+],
+[
+"CDEV M1235",
+"Working with the School-Age Child",
+2,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1223",
+"Advanced Administration of Preschools/Child Care Centers",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1123",
+"Constructivist STEM Ed Early Childhood",
+1,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1151",
+"Creative Experiences for Children 2",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1083",
+"Culturally Responsive Self-Care for Early Childhood Educators",
+1,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1098",
+"Curriculum for Child Development Personnel",
+1,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1101",
+"Early Child Development",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9037",
+"Early Childhood Care and Development for Family Child Care Providers",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1121",
+"Early Childhood Education Conference Course",
+1,
+0.5,
+0.5,
+"M-ID"
+],
+[
+"CDEV M1277",
+"Ece Curriculum Experiences:Language, Literacy, Math and Science",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9009",
+"Ethics and Business Contracts",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1271",
+"Exploring Mathematics with Children-Foundations and Frameworks",
+1,
+1,
+3,
+"M-ID"
+],
+[
+"CDEV M1082",
+"Family Child Care Management A",
+1,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1065",
+"Family Child Care Management B",
+1,
+0,
+3,
+"M-ID"
+],
+[
+"CDEV M1279",
+"Foundational Language Development: Preschool/TK Foundations",
+1,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1102",
+"Games & Rhythms Child's Physical Development:Foundation/Framework",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9032",
+"Guidance and Interaction",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9016",
+"History of Child Development",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV C1000H",
+"Honors Child Growth and Development (DS1)",
+1,
+3,
+3,
+"CCN-ID"
+],
+[
+"CDEV M9015",
+"Infant and Toddler Care",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1244",
+"Infant Toddler Development and Relationship-Based Care",
+1,
+3,
+6,
+"M-ID"
+],
+[
+"CDEV M1188",
+"Infant/Toddler Developmnt",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1218",
+"Intro Sch-Age Cur 2",
+1,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1216",
+"Intro Sch-Age Curr 1",
+1,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1142",
+"Introduction to Early Childhood",
+1,
+2,
+3,
+"M-ID"
+],
+[
+"CDEV M9038",
+"Introduction to Early Childhood Education Curriculum for Family Child Care Providers",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1071",
+"Movement Development: Birth Through Twelve Years",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1144",
+"Music and Movement in Early Childhood",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1248",
+"Observation and Guidance for Child Development",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9003",
+"Parent Ed Multi Age",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M9036",
+"Parent Ed/2 Year Olds",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1120",
+"Parenting the Young Child",
+1,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1204",
+"Practical Mathematics 1",
+1,
+3,
+4,
+"M-ID"
+],
+[
+"CDEV M9040",
+"Reflective Parenting with Toddlers",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1066",
+"Relationship-Based Discipline Strategies for Children",
+1,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1276",
+"Science/Math-Young Chldrn",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M9034",
+"The Importance of Play",
+1,
+0.0,
+0.0,
+"M-ID"
+],
+[
+"CDEV M1018",
+"Topics in Preschool Program Administration",
+1,
+1,
+4,
+"M-ID"
+],
+[
+"CDEV M1269",
+"Trauma and Its Effects on Children, Families and Teachers",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1003",
+"Understanding Child Abuse and Maltreatment",
+1,
+3.0,
+3.0,
+"M-ID"
+],
+[
+"CDEV M1148",
+"Understanding Childhood Trauma",
+1,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1186",
+"Understanding Infant Development",
+1,
+0,
+1,
+"M-ID"
+],
+[
+"CDEV M1187",
+"Understanding Toddler Development",
+1,
+0,
+2,
+"M-ID"
+],
+[
+"CDEV M1139",
+"Workshops in Early Childhood Education",
+1,
+0.2,
+0.2,
+"M-ID"
+],
+[
+"CDEV M1275",
+"Wrkng W/Chld:Phys Dis/Hlth Im",
+1,
+1.0,
+1.0,
+"M-ID"
+],
+[
+"CDEV M1291",
+"Observation and Assessment of Children",
+0,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1292",
+"Observations and Issues in Child Development",
+0,
+2.0,
+2.0,
+"M-ID"
+],
+[
+"CDEV M1293",
+"Principles of Infant-Toddler Caregiving",
+0,
+3.0,
+3.0,
+"M-ID"
+]
+]
+}
+}

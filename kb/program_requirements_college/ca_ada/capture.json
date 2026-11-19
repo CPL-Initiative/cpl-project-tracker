@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 127,
  "with_closed_list": 75,
- "started": "2026-10-19T05:01:45Z",
+ "started": "2026-11-19T11:18:18Z",
  "pdf": {
   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf",
   "access": "hand_filed",
@@ -13,13 +13,20 @@
   "bytes": 12610120,
   "pages_total": 358,
   "error": null,
-  "chars_total": 1192348,
+  "chars_total": 1192321,
   "pypdf_accepted": 73,
   "sample": [
    "p108: '108\\nDepartment Location/Building (650) Phone Number\\nPony Espresso Building 12 \\xa0\\nPresident’s Oﬃce Building 8-206 306-3238\\nPride Center Building 17-107 & 17-109 381-2253\\nPromise Scholars Program at Cañada\\nCollege\\nBuilding 6-112 381-3568\\xa0\\nPubl'",
    "p215: '215\\nDEGREES & CERTIFICATES\\nSelective Courses, complete a total of 18-23 units from\\nthe following:\\nArea 1 - Social Sciences, choose a minimum\\nof 6 units from the following: Units\\nHIST 245 Race, Ethnicity and Immigration\\nin the U.S.\\n3 units\\nH'"
   ],
   "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
   "hand_filed": {
    "college": "Cañada College",
    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf",
@@ -37,32 +44,13 @@
     }
    ]
   },
+  "page_checks": {
+   "read": 3,
+   "own_page": 2,
+   "no_own_page": 1,
+   "not_printed": 0
+  },
   "picks": [
-   {
-    "control_number": "05700",
-    "pages": [
-     165,
-     166
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 165] 165 DEGREES & CERTIFICATES 1. Apply knowledge of math, science and computer science to identify, formulate and solve computer science problems. 2. communicate eﬀectively and work well in situations that requir"
-   },
-   {
-    "control_number": "05711",
-    "pages": [
-     121
-    ],
-    "named": false,
-    "code": null,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 1.0,
-    "opens": "[page 121] 121 COURSE AVAILABILITY PER SEMESTER Department Course Section Course Title Semester Oﬀered Career and Personal Develop CRER 137 Life and Career Planning Fall and Spring Dance DANC 100 Dance Appreciation Fall "
-   },
    {
     "control_number": "05717",
     "pages": [
@@ -621,20 +609,6 @@
     "opens": "[page 239] AA-T Theatre Arts The discipline of theatre arts includes theoretical and practical courses in all aspects of theatre, providing preparation in acting, directing, and technical theatre through productions. Th"
    },
    {
-    "control_number": "32833",
-    "pages": [
-     336,
-     337,
-     338
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": false,
-    "titled": true,
-    "coverage": 0.778,
-    "opens": "[page 336] Transfer Credit: CSU Political Science POLS 103 CRITICAL THINKING AND POLITICAL ANALYSIS This course examines the deﬁnitional and contextual nature of political analysis. It develops a critical thinking appro"
-   },
-   {
     "control_number": "33317",
     "pages": [
      138,
@@ -1044,20 +1018,16 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 56.5,
- "found": 73,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 63.6,
+ "found": 70,
  "by_method": {
   "no_closed_list": 52,
-  "not_found": 2,
-  "pdf_pages": 73
+  "not_found": 5,
+  "pdf_pages": 70
  },
  "shared_pages": {
-  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165": [
-   "05700",
-   "32525",
-   "32526",
-   "32527"
-  ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192": [
    "05735",
    "32295"
@@ -1083,6 +1053,11 @@
    "20427",
    "45177"
   ],
+  "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165": [
+   "32525",
+   "32526",
+   "32527"
+  ],
   "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183": [
    "36056",
    "40834"
@@ -1098,13 +1073,45 @@
  },
  "not_found": [
   {
+   "control_number": "05700",
+   "title": "Business Administration",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=147",
+    "coverage": 0.0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "05711",
+   "title": "Theater Arts",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "why": "rule A: no page prints the program's title with its award",
+    "rule": "A",
+    "refused_b": 0
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "32833",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=229",
+    "coverage": 0.444
+   },
+   "status": "Active"
+  },
+  {
    "control_number": "32861",
    "title": "Elementary Teacher Education",
    "award": "A.A- T Degree",
    "near_miss": {
     "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=283",
     "coverage": 0.125
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "38442",
@@ -1113,20 +1120,310 @@
    "near_miss": {
     "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=164",
     "coverage": 0.2
-   }
+   },
+   "status": "Active"
   }
  ],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 4,
+  "0.5-0.8": 3,
   "0.8-1.0": 8,
-  "1.0": 61
+  "1.0": 59
  },
  "would_extract": {
   "against": "kb/program_requirements_college/ca_ada",
-  "kept": 73,
+  "kept": 70,
+  "kept_moved": 0,
   "programs": 0,
-  "list": []
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39202270482"
+ "fingerprints": {
+  "05717": {
+   "sha256": "41cb7a1beef3ea2a1b30a2b2f5e27ff493d6bdb66c38d612822aa29d045f72ff",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=184"
+  },
+  "05722": {
+   "sha256": "a6e97134fa25090ee9fa35a2b39e113c0ec7c826a4397bcd9b8ebcc0bb953efc",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=222"
+  },
+  "05735": {
+   "sha256": "de326cade0bab6e894480cdf9176a935b05edb952c17e577801f9cc053609dfb",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192"
+  },
+  "10247": {
+   "sha256": "17cc3e2c8b975339b965447c2596403c69336070d366a42a9fc25e84c9083a99",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149"
+  },
+  "14443": {
+   "sha256": "db720c9792bca76f51d78861b0b18d3415d36019c2214efb8be72befa2f0d4cc",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=167"
+  },
+  "15052": {
+   "sha256": "a764bc00bf737f2cd4c0aa8919f0269c670dc4490a276c009c15e92b6ebe2088",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=186"
+  },
+  "15654": {
+   "sha256": "e3f88ac60e6b2eb77549ca4b597a8cd7a5126db48940b0c4b7bc7739f16c9207",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169"
+  },
+  "16816": {
+   "sha256": "652aa521be2a2a6af593b5c6fb3fe852f7d5bc9d03a3179116345981d0c0169d",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166"
+  },
+  "20425": {
+   "sha256": "65187f96da0337625326f00cf99dcadb265f75cb7a7cff7a1389c4936dc681c2",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151"
+  },
+  "20426": {
+   "sha256": "b5c7bde690acca11781a5907213282421d4260df4a6d775363627474572e09f9",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154"
+  },
+  "20427": {
+   "sha256": "b5c7bde690acca11781a5907213282421d4260df4a6d775363627474572e09f9",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154"
+  },
+  "20430": {
+   "sha256": "652aa521be2a2a6af593b5c6fb3fe852f7d5bc9d03a3179116345981d0c0169d",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=166"
+  },
+  "20432": {
+   "sha256": "7ef05e73267b9865eb1d93c544dbdd2e4386ba72d77d31d032696184e3c13b57",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=168"
+  },
+  "20438": {
+   "sha256": "bd1a4b6a04827ba80e99fa0705e773e397a8b341fc5d552ce2f85de93a2ce62e",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=187"
+  },
+  "20440": {
+   "sha256": "85f2f1e10853080a16e8a87974975a370232f434356c41232452ded20050694e",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=188"
+  },
+  "30385": {
+   "sha256": "82a9ac88774d7da306e46cb67874d01c0f57ae65e053f73dce5b46cd892e1431",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=141"
+  },
+  "30427": {
+   "sha256": "8ba2d5db4b7528a55aa4bea2c52121fac781e02cfe895222eccf551e28758349",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=170"
+  },
+  "30741": {
+   "sha256": "aaa4fd3f487425f0eea2c98275cf258d57b102b09c849327b7d0788c83dd4228",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=215"
+  },
+  "30825": {
+   "sha256": "fa5674476861e3178c3d58dbcf3807eef262265802205b4cd64de79ee27f164c",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=234"
+  },
+  "30834": {
+   "sha256": "3f8309b13ca120707395524fe76d34c71ceb7948b13afe15a2c77ba043599e1b",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=231"
+  },
+  "30853": {
+   "sha256": "1a0da98ae4113e861072d6016666d7d1bed8c19f6b8f034d64beadcd9edf5bcd",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=202"
+  },
+  "30881": {
+   "sha256": "78c3d14ebbbda272eda453eec7f2a32bb8a7439a43023c71446827f2a20f2ecf",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=226"
+  },
+  "30910": {
+   "sha256": "1809eb9275af9c32f16c4a49aa16cf7730b5bbe49ce4e74c88d1a8bd62622012",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=209"
+  },
+  "31069": {
+   "sha256": "c4a6f1e16a993441b1f0d9c21b3c4330576ff11db89930b9e29e6b9733ea5074",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=174"
+  },
+  "31401": {
+   "sha256": "9b8be58a21e68454c911cc36d1568f377a32dbd794b1abc96291d3941a6845a0",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=179"
+  },
+  "31755": {
+   "sha256": "c39bca96589734ec54148ec7ff293586c292d21f8d1d9b1c845a78694f360d66",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=237"
+  },
+  "31856": {
+   "sha256": "44335ea76188fe1c4b36d36e0524f26509a2bdf2660051c3574a938a45755193",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=206"
+  },
+  "31911": {
+   "sha256": "110a0b9c884472ecc3f1a8474379d3e09088cd0a7ba70f621f8d56e956d7482a",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=190"
+  },
+  "32197": {
+   "sha256": "f190e2241ff7ddd5e909cd08e6d40577219293399efb38d1a5afd9f5de831a16",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=164"
+  },
+  "32295": {
+   "sha256": "ee94b1e32e69d6346599a8072ca2254a67021ce7c253594cd21ea41826367b9b",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=192"
+  },
+  "32400": {
+   "sha256": "a986f8a30249745b9b13ea7e785c43916ae8932e31bb6539967083830e75cd73",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=139"
+  },
+  "32452": {
+   "sha256": "a86b6e90285f67a8fe1403d01f12bf0fbab3ea0ee7ba497861655dda2e39faaa",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=140"
+  },
+  "32514": {
+   "sha256": "eef0250c41614937d2a976d055e66ab5369e38f8c66c439907e8449cfd8f9f99",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=142"
+  },
+  "32525": {
+   "sha256": "5151c0f695a7096f2cda791464ce1dc3ce631fa07f727de9e68a50b9e2e4ea85",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165"
+  },
+  "32526": {
+   "sha256": "414f0532a914fb9b716eeb1a0b20734503775e2306aa5eb665f0addd2bee7c71",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165"
+  },
+  "32527": {
+   "sha256": "414f0532a914fb9b716eeb1a0b20734503775e2306aa5eb665f0addd2bee7c71",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=165"
+  },
+  "32576": {
+   "sha256": "2adae85af4388f3629c6106db11480c74dfa4cab6d59c2a0b0ad8c63298c6597",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=194"
+  },
+  "32716": {
+   "sha256": "45df4519f6f10c659b26c52229476e4d9184e6de66accc6f7270d295aa0848f6",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=172"
+  },
+  "32730": {
+   "sha256": "a6f9f630feac7fa02690a76785b149e3262df5a91abfef345ad5fb50362ebab7",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=181"
+  },
+  "32731": {
+   "sha256": "ae63b5fe3adfb5ce2d14b1d769143e7c081a470b3f812e6cc0f2d34f8bea72ce",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=223"
+  },
+  "32795": {
+   "sha256": "83d61328fed28b329327f408b3c46fae810c54f5b68303d3bbf7435281ee416c",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=239"
+  },
+  "33317": {
+   "sha256": "20d01cc92e30bcf47552e75575239ae26c5105c675097a8a42f1b91d9a82f92a",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=138"
+  },
+  "33608": {
+   "sha256": "8ef1320f84475b829afbf5be2ec1db227269af9575a9da2dc8069536759b20d9",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=144"
+  },
+  "33610": {
+   "sha256": "e36fc1fed5edc33c65b7852a7e674b1177a932bec70d32031c0e8de6b4453a52",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=145"
+  },
+  "33828": {
+   "sha256": "d4ab725eb0d7088cab30e2d275db0622841434e8ea537c610ede8ca5592a0c32",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=236"
+  },
+  "35834": {
+   "sha256": "3eba93c20713f59077c31c7ca59a5aa42250150a5e3cbce6eeaf7786445df666",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=173"
+  },
+  "35971": {
+   "sha256": "d9a29116f2fcd529df3b4c5f51ace733bf1f41e878778dcd0fa1427ed6a93cfd",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=182"
+  },
+  "35986": {
+   "sha256": "5ec3823751aa2786fa19ee2db5a8714b176e4725892ff83454f1330a16ce74cd",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=178"
+  },
+  "36025": {
+   "sha256": "03e1feec7593b4e55f6481ea43f6f8cae9dbc4bf1480e4882c24e6101052fc76",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=228"
+  },
+  "36056": {
+   "sha256": "26d65c315e97f5e822b555af87a9d652e3fab6c6642a3d97bf19b6e4ec9f4ff3",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183"
+  },
+  "36721": {
+   "sha256": "cc0ea299c73b0bc84eeeb56d6b07eeca82b3aadbbfc95a8c62be6f85a2fd68cd",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152"
+  },
+  "36942": {
+   "sha256": "1251bbe38c3d7241f5a79710209aba80a0f0ff59b49781f255d85e28d7981b5b",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=156"
+  },
+  "37122": {
+   "sha256": "3573c88244870ebe4b209ad45ec4854cd98cae9ec441456347c16dc37017e0cc",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=195"
+  },
+  "37156": {
+   "sha256": "7200c086e07d5b73f423f1b596794f1e367a24b909f0d8fb5949f3c0a4de2a2e",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=152"
+  },
+  "37973": {
+   "sha256": "3cc8043ce8c390fef11e9ad5342d09264ec6a8f4d946b14817936f97446ca488",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176"
+  },
+  "37974": {
+   "sha256": "12b93f77802f2a696aaa290f795b8e35e87101687d2ce5ed27fab09ad0c2777c",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=155"
+  },
+  "38514": {
+   "sha256": "444914990c026565b8dd95b3fe2b917a392e2de9c6bce2d56bed709659930d5b",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=169"
+  },
+  "38824": {
+   "sha256": "5764a1a743ceb401cb58d9b66a94c8df38da660f39ae698191d2d70a83185b30",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=221"
+  },
+  "40391": {
+   "sha256": "5d5d9c33af35152b7b8831803bb7b6ad2efce6757b37e11f9dbf2e344c194d1c",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=175"
+  },
+  "40834": {
+   "sha256": "ff513f1e6bcd11731898ddcbdbdbbaf3ec066349c791eee1640be5fe53b21dd6",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=183"
+  },
+  "41287": {
+   "sha256": "b5e308d687ba1944c46a72b7b92c15e681f288e55577eb9fd3a94a784bb4fb85",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=151"
+  },
+  "41512": {
+   "sha256": "faba1de6cde8e5a5fb548f9c02f1f2287c1ddce50d231e235f8e86b4b1d8406f",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=225"
+  },
+  "41513": {
+   "sha256": "247a17f99d95b622b1e487d0880fee6b633049401de78a56fda719111e2fa678",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=224"
+  },
+  "43478": {
+   "sha256": "1b60766e47004b35296e194ce9af4a8842dfc2f3c92bb9a9f1e83f30909f81e5",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=159"
+  },
+  "43514": {
+   "sha256": "f662d5e1ecc5b284132f7fe487a1b544dbc434af2618fc9b263c89c16f3c59c9",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=147"
+  },
+  "43537": {
+   "sha256": "75da1d682d04d501219147703b67cc5f55426575c23fc19fcfac27626e332eeb",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=150"
+  },
+  "43660": {
+   "sha256": "17cc3e2c8b975339b965447c2596403c69336070d366a42a9fc25e84c9083a99",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=149"
+  },
+  "43790": {
+   "sha256": "78e37785e4eac1dbc389c3cb69b86675673aa7641359cb22676eb628e38674bf",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=176"
+  },
+  "43965": {
+   "sha256": "68b13727d75a7bc26b2eeff73d13c4b690478c8ad1f531b0e63c5e3b6e2ec9ae",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=148"
+  },
+  "45177": {
+   "sha256": "d2b97663bcfd5ac06db4f961084b2e9d5d4e056c919a7788efd81b51c580b9f3",
+   "url": "https://catalog.canadacollege.edu/current/_pdf-books/can-catalog2026-27-catalog-rights.pdf#page=154"
+  }
+ },
+ "run": "44511395665"
 }
