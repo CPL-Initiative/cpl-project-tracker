@@ -273,5 +273,6 @@
    "Catalog prints codes without a space (e.g., ENVHR11); these match the closed-list codes (e.g., ENVHR 11)."
   ]
  },
- "extracted_run": "39006340803"
+ "extracted_run": "39006340803",
+ "catalog_year": "2026-2027"
 }

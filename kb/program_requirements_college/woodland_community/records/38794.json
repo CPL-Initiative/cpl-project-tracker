@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Business Management",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
+ "source_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11770,
+  "input_tokens": 11284,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11770,
-    "output_tokens": 1796,
+    "input_tokens": 11284,
+    "output_tokens": 1804,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1796,
+  "output_tokens": 1804,
   "output_tokens_details": {
-   "thinking_tokens": 527
+   "thinking_tokens": 615
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.083,
- "ms": 14533,
- "seconds": 14.9,
+ "cost_usd": 0.08122,
+ "ms": 15574,
+ "seconds": 15.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 15,
    "listed": 15,
-   "share": 0.933,
-   "missing": [
-    "ECON1B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "ECONC2001",
+     "listed": "ECON1B",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ECONC2001"
-   ],
-   "flagged": [
-    "ECONC2001"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -274,15 +275,34 @@
   "missing_explained": [
    {
     "code": "ECON 1B",
-    "why": "not in the text; the catalog lists ECONC2001 Principles of Microeconomics in its place (likely a Common Course Numbering renumbering)"
+    "why": "not in the text; the catalog prints ECONC2001 Principles of Microeconomics in its place"
    }
   ],
   "notes": [
-   "Codes are written as the catalog prints them, without a space between subject and number (e.g., ACCT50 = ACCT 50).",
-   "ECONC2001 Principles of Microeconomics is not in the closed list; it appears to replace ECON 1B Elementary Economics-Micro under common course numbering. Reviewer should confirm.",
-   "Careers recorded are the industry sectors the description names for graduates (government, education, retail, hospitality, service, big and small business); reviewer may judge whether sectors count as career fields.",
-   "The same page also prints Medical Office Specialist, Executive Administrative Assistant, Business Administration 2.0 (A.S.-T) and Business Management (A.S.) sections; only the Business Management certificate section was read."
+   "ECONC2001 Principles of Microeconomics appears to be the common-course-numbered replacement for closed-list ECON 1B (Elementary Economics-Micro); recorded as a catalog addition. Reviewer should confirm.",
+   "Careers recorded from the description's list of industry sectors whose employers seek graduates (government, education, retail, hospitality, service, big and small business); reviewer may judge whether these count as career fields.",
+   "Codes recorded as printed without a space (e.g., ACCT50 = closed-list ACCT 50)."
   ]
  },
- "extracted_run": "39006340803"
+ "extracted_run": "44529735880",
+ "catalog_year": "2026-2027",
+ "source_sha": "aad314c7dd46b97d",
+ "source_codes": [
+  "ACCT50",
+  "BCA15",
+  "BCA60",
+  "ECON1B",
+  "GNBUS10",
+  "GNBUS11",
+  "GNBUS13",
+  "GNBUS15",
+  "GNBUS21",
+  "GNBUS32",
+  "GNBUS35",
+  "GNBUS56",
+  "GNBUS57",
+  "GNBUS58",
+  "GNBUS59"
+ ],
+ "source_coverage": 1.0
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 69,
  "with_closed_list": 65,
- "started": "2026-10-17T05:28:57Z",
+ "started": "2026-11-19T13:04:46Z",
  "pdf": {
   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf",
   "access": "ok",
@@ -13,37 +13,959 @@
   "bytes": 7731359,
   "pages_total": 238,
   "error": null,
-  "chars_total": 703328,
+  "chars_total": 702008,
   "pypdf_accepted": 65,
   "sample": [
    "p72: 'TRANSFER TO CSU WITH AN  \\nASSOCIATE DEGREE FOR TRANSFER\\nCalifornia Community Colleges are now offering associate \\ndegrees for transfer (ADT) to the CSU. These may include \\nAssociate in Arts for Transfer (AA-T) or Associate in Science \\nfor T'",
    "p143: 'CHILD DEVELOPMENT COURSES\\nCDEVC1000 Child Growth and Development 3.0\\xa0units\\nLetter Grade Only — 54 lecture hours\\nLimitations on Enrollment: \\n » Not open for credit to students with credit in ECE3\\n LCounts toward WCC Graduation Area 4\\n LTrans'"
   ],
-  "extractor": "pypdf"
+  "extractor": "pypdf",
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "picks": [
+   {
+    "control_number": "18865",
+    "pages": [
+     94,
+     95,
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Environmental Horticulture (Certificate) »Floral Design (Certificate) »Plant Protection (Certificate) »Sustainable Agriculture (Certificate) FLORAL DESIGN (NONCREDIT CERTIFICATE) Certificate of Competency"
+   },
+   {
+    "control_number": "18868",
+    "pages": [
+     94,
+     95,
+     96
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Agriculture Business (Certificate) »Agriculture Mechanics (Certificate) »Agriculture Research Technician (Certificate) »Environmental Horticulture (Certificate) »Floral Design (Certificate) »Plant Protec"
+   },
+   {
+    "control_number": "18869",
+    "pages": [
+     85,
+     86,
+     87,
+     88
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 85] ACCOUNTING Accounting AS COA ADMINISTRATION OF JUSTICE Administration of Justice AS-T Criminal Justice Studies AS Modern Policing AS AGRICULTURE Agriculture Animal Science AS-T Agriculture Business AS-T COA Agr"
+   },
+   {
+    "control_number": "18877",
+    "pages": [
+     139,
+     140,
+     141,
+     142
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 139] CHILD DEVELOPMENT TEACHER (CERTIFICATE) Certificate of Achievement This certificate builds on the Associate Teacher Certificate of Achievement, requiring additional courses that prepare students to work as t"
+   },
+   {
+    "control_number": "18881",
+    "pages": [
+     178,
+     179,
+     180,
+     181
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 178] CHEMICAL DEPENDENCY COUNSELOR (CERTIFICATE) Certificate of Achievement The Chemical Dependency Counseling Certificate prepares students for entry-level employment in a variety of settings including outpatien"
+   },
+   {
+    "control_number": "19213",
+    "pages": [
+     98,
+     99,
+     100
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 98] AGRICULTURE SCIENCE (A.S.) AS: Associate in Science Agriculture is a broad multidisciplinary field of study that spans production and processing of food and fiber, including animal production and crop product"
+   },
+   {
+    "control_number": "19214",
+    "pages": [
+     94,
+     95,
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Agriculture Science (A.S.) »Environmental Horticulture (A.S.) CErTIfICATEs OffErED »Agriculture Business (Certificate) »Agriculture Mechanics (Certificate) »Agriculture Research Technician (Certificate) "
+   },
+   {
+    "control_number": "19215",
+    "pages": [
+     87,
+     88,
+     89
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 87] ACCOUNTING (A.S.) AS: Associate in Science Accounting is the language of business. The Accounting Associate in Science Degree is designed to prepare students for employment in the fields of accounting and/or "
+   },
+   {
+    "control_number": "19218",
+    "pages": [
+     121,
+     122,
+     123,
+     124
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 121] BUSINESS MANAGEMENT (A.S.) AS: Associate in Science The Business Management Associate in Science Degree is a natural progression beyond the Business Management Certificate of Achievement and will provide tod"
+   },
+   {
+    "control_number": "19224",
+    "pages": [
+     142,
+     143,
+     144,
+     145
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 142] EARLY CHILDHOOD EDUCATION (A.S.) AS: Associate in Science This degree prepares students for a variety of careers in Early Childhood Care and Education. The degree includes General Education courses, which ar"
+   },
+   {
+    "control_number": "19229",
+    "pages": [
+     181,
+     182,
+     183,
+     184
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 181] CHEMICAL DEPENDENCY COUNSELOR (A.S.) AS: Associate in Science Students who complete the required courses and 255-hour internship for the Chemical Dependency Counselor Certificate may complete additional grad"
+   },
+   {
+    "control_number": "19230",
+    "pages": [
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] CRIMINAL JUSTICE STUDIES (A.S.) AS: Associate in Science The Criminal Justice Studies Associate in Science degree is designed to prepare students to enter the highly demanding fields of law enforcement and pu"
+   },
+   {
+    "control_number": "19449",
+    "pages": [
+     179,
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 179] HUMAN SERVICES (A.S.) AS: Associate in Science The Human Services Associate in Science degree is designed to prepare students to enter the highly demanding field of human services to provide quality care and"
+   },
+   {
+    "control_number": "30714",
+    "pages": [
+     213,
+     214,
+     215
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 213] »Psychology (A.A.-T) PSYCHOLOGY (A.A.-T) AA-T: Associate in Arts for Transfer Psychology is the study of human thought, feelings, and behavior. Part of its appeal is the fact that it involves both scientific"
+   },
+   {
+    "control_number": "31402",
+    "pages": [
+     171,
+     172,
+     173
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] »Earth Science (A.S.) »Geology (A.S.-T) EARTH SCIENCE (A.S.) AS: Associate in Science The AS Degree in Earth Science prepares students with the skills needed to succeed in entry-level technical positions in"
+   },
+   {
+    "control_number": "31433",
+    "pages": [
+     171,
+     172,
+     173
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 171] »Geology (A.S.-T) EARTH SCIENCE (A.S.) AS: Associate in Science The AS Degree in Earth Science prepares students with the skills needed to succeed in entry-level technical positions in the geological profes"
+   },
+   {
+    "control_number": "32164",
+    "pages": [
+     217,
+     218,
+     219
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 217] »Sociology (A.A.-T) SOCIOLOGY (A.A.-T) AA-T: Associate in Arts for Transfer Sociology is the study of society and how individuals' lives are shaped by the larger social structure. Sociologists study a wide "
+   },
+   {
+    "control_number": "32248",
+    "pages": [
+     94,
+     95,
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Plant Protection (Certificate) »Sustainable Agriculture (Certificate) FLORAL DESIGN (NONCREDIT CERTIFICATE) Certificate of Competency (Noncredit) The certificate of competency in floral design prepares stud"
+   },
+   {
+    "control_number": "32288",
+    "pages": [
+     141,
+     142,
+     143,
+     144
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 141] EARLY CHILDHOOD EDUCATION (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Early Childhood Education for Transfer is intended for students who plan to complete a bachelor’s degree"
+   },
+   {
+    "control_number": "32322",
+    "pages": [
+     175,
+     176
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 175] »History (A.A.-T) HISTORY (A.A.-T) AA-T: Associate in Arts for Transfer History is a study of the past. The past not only defines our lives, society, and the world we live in today, but shapes the pathway t"
+   },
+   {
+    "control_number": "32340",
+    "pages": [
+     152
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 152] »English (A.A.-T) ENGLISH (A.A.-T) AA-T: Associate in Arts for Transfer The Woodland Community College English Program is dedicated to promoting an appreciation of the English language and its literatures, "
+   },
+   {
+    "control_number": "32345",
+    "pages": [
+     196,
+     197,
+     198
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.857,
+    "opens": "[page 196] MATHEMATICS (AS-T) AS-T: Associate in Science for Transfer This degree is intended for students who wish to transfer to a California State University to complete a Bachelor's Degree in Mathematics. The AS-T "
+   },
+   {
+    "control_number": "32388",
+    "pages": [
+     90,
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 90] »Administration of Justice (A.S.-T) »Criminal Justice Studies (A.S.) »Modern Policing (A.S.) ADMINISTRATION OF JUSTICE (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Administrat"
+   },
+   {
+    "control_number": "33252",
+    "pages": [
+     163,
+     164,
+     165,
+     166
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 163] DRINKING WATER AND WASTEWATER TECHNOLOGY (CERTIFICATE) Certificate of Achievement This certificate covers all aspects of drinking water treatment, drinking water distribution and wastewater treatment. Topics "
+   },
+   {
+    "control_number": "35089",
+    "pages": [
+     167,
+     168,
+     169
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 167] »Chicana/o Studies (A.A.) CHICANA/O STUDIES (A.A.) AA: Associate in Arts Chicana/o Studies is the study of the diverse Chicano/Latino community in terms of their social, cultural, historical, political, edu"
+   },
+   {
+    "control_number": "35279",
+    "pages": [
+     224,
+     225,
+     226
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] »Welding Technologies (Certificate) »Welding Technologies - Advanced (Certificate) WELDING TECHNOLOGIES (CERTIFICATE) Certificate of Achievement The Welding Technologies Certificate of Achievement is intend"
+   },
+   {
+    "control_number": "35333",
+    "pages": [
+     133,
+     134,
+     135,
+     136
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] »Baking (Certificate) »Culinary Arts (Certificate) CULINARY ARTS (A.A.) AA: Associate in Arts This degree will provide students with the skills and abilities necessary to obtain employment in the bakery, re"
+   },
+   {
+    "control_number": "35343",
+    "pages": [
+     138,
+     139,
+     140,
+     141
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 138] »Child Development Associate Teacher (Certificate) »Child Development Master Teacher (Certificate) »Child Development Teacher (Certificate) CHILD DEVELOPMENT ASSOCIATE TEACHER (CERTIFICATE) Certificate of A"
+   },
+   {
+    "control_number": "35369",
+    "pages": [
+     113,
+     114,
+     115
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 113] »Biology (A.S.-T) BIOLOGY (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Biology for Transfer (AS-T) degree at Woodland Community College prepares students for transfer in biol"
+   },
+   {
+    "control_number": "35370",
+    "pages": [
+     108,
+     109
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 108] »Anthropology (A.A.-T) ANTHROPOLOGY (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Arts in Anthropology for Transfer degree (AA-T in Anthropology) creates a seamless transfer pathway for stu"
+   },
+   {
+    "control_number": "35387",
+    "pages": [
+     133,
+     134,
+     135,
+     136
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] »Baking (Certificate) »Culinary Arts (Certificate) CULINARY ARTS (A.A.) AA: Associate in Arts This degree will provide students with the skills and abilities necessary to obtain employment in the bakery, re"
+   },
+   {
+    "control_number": "35438",
+    "pages": [
+     133,
+     134,
+     135,
+     136
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 133] »Culinary Arts (A.A.) CErTIfICATEs OffErED »Baking (Certificate) »Culinary Arts (Certificate) CULINARY ARTS (A.A.) AA: Associate in Arts This degree will provide students with the skills and abilities nec"
+   },
+   {
+    "control_number": "35518",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] »Executive Administrative Assistant (Certificate) »Medical Office Specialist (Certificate) BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDIT CERTIFICATE) Certificate of Completion (Noncredit) Employers demand"
+   },
+   {
+    "control_number": "35568",
+    "pages": [
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] AGRICULTURE PLANT SCIENCE (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Agriculture Plant Science for Transfer is intended for students who plan to complete a bachelor’s degree "
+   },
+   {
+    "control_number": "35722",
+    "pages": [
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 100] AGRICULTURE ANIMAL SCIENCE (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Agriculture Animal Science for Transfer is intended for students who plan to complete a bachelor’s degr"
+   },
+   {
+    "control_number": "35723",
+    "pages": [
+     99,
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 99] AGRICULTURE BUSINESS (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Agriculture Business for Transfer is intended for students who plan to complete a bachelor’s degree in Agricul"
+   },
+   {
+    "control_number": "35733",
+    "pages": [
+     148,
+     149
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 148] »Economics (A.A.-T) ECONOMICS (A.A.-T) AA-T: Associate in Arts for Transfer Economics is the study of how the individual or society allocates scarce resources to satisfy unlimited wants. The Associate in Ar"
+   },
+   {
+    "control_number": "35736",
+    "pages": [
+     204,
+     205
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 204] »Nutrition and Dietetics (A.S.-T) NUTRITION AND DIETETICS (A.S.-T) AS-T: Associate in Science for Transfer The Associate in Science in Nutrition and Dietetics for Transfer (AS-T) degree at Woodland Community"
+   },
+   {
+    "control_number": "35743",
+    "pages": [
+     189,
+     190
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 189] SOCIAL JUSTICE STUDIES (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Arts in Social Justice Studies for Transfer (AA- T) degree at Woodland Community College prepares students for seamless tr"
+   },
+   {
+    "control_number": "35956",
+    "pages": [
+     127,
+     128,
+     129
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 127] »Chemistry (A.S.-T) CHEMISTRY (A.S.-T) AS-T: Associate in Science for Transfer Chemistry is the science that studies the composition and properties of substances and the changes they undergo. The Associate "
+   },
+   {
+    "control_number": "35961",
+    "pages": [
+     94,
+     95,
+     96,
+     97
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Floral Design (Certificate) »Plant Protection (Certificate) »Sustainable Agriculture (Certificate) FLORAL DESIGN (NONCREDIT CERTIFICATE) Certificate of Competency (Noncredit) The certificate of competency "
+   },
+   {
+    "control_number": "35962",
+    "pages": [
+     211,
+     212,
+     213,
+     214
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 211] »Political Science (A.A.-T) POLITICAL SCIENCE (A.A.-T) AA-T: Associate in Arts for Transfer Political Science focuses on the theory and practice of government and politics at the local, state, national, and "
+   },
+   {
+    "control_number": "36036",
+    "pages": [
+     224,
+     225,
+     226
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 224] »Welding Technologies - Advanced (Certificate) WELDING TECHNOLOGIES (CERTIFICATE) Certificate of Achievement The Welding Technologies Certificate of Achievement is intended to provide student completers wit"
+   },
+   {
+    "control_number": "36606",
+    "pages": [
+     191,
+     192,
+     193
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 191] CHILD AND ADOLESCENT DEVELOPMENT (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Arts in Child and Adolescent Development for Transfer degree is an interdisciplinary program designed to prepar"
+   },
+   {
+    "control_number": "36655",
+    "pages": [
+     193
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 193] LAW, PUBLIC POLICY, AND SOCIETY (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Arts in Law, Public Policy, and Society for Transfer (AA-T) degree is designed to provide a seamless pathway for"
+   },
+   {
+    "control_number": "37287",
+    "pages": [
+     164,
+     165,
+     166
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 164] DRINKING WATER AND WASTEWATER TECHNOLOGY (A.S.) AS: Associate in Science This degree covers all aspects of drinking water treatment, drinking water distribution and wastewater treatment. Topics covered will "
+   },
+   {
+    "control_number": "37804",
+    "pages": [
+     116
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDIT CERTIFICATE) Certificate of Completion (Noncredit) Employers demand good computer skills. They want employees who can type, are familiar with word processing a"
+   },
+   {
+    "control_number": "38282",
+    "pages": [
+     156
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] ACADEMIC PREPAREDNESS AND CAREER DEVELOPMENT (NONCREDIT CERTIFICATE) Certificate of Competency (Noncredit) The Certificate of Competency in Academic Preparedness and Career Development prepares advanced-level"
+   },
+   {
+    "control_number": "38283",
+    "pages": [
+     156,
+     157
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] »Foundational English Skills (Noncredit Certificate) »Intermediate English Skills (Noncredit Certificate) ACADEMIC PREPAREDNESS AND CAREER DEVELOPMENT (NONCREDIT CERTIFICATE) Certificate of Competency (Noncr"
+   },
+   {
+    "control_number": "38284",
+    "pages": [
+     156,
+     157
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 156] »Intermediate English Skills (Noncredit Certificate) ACADEMIC PREPAREDNESS AND CAREER DEVELOPMENT (NONCREDIT CERTIFICATE) Certificate of Competency (Noncredit) The Certificate of Competency in Academic Prepar"
+   },
+   {
+    "control_number": "38793",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] »Administrative Assistant (Certificate) »Business Management (Certificate) »Entrepreneurship (Certificate) »Executive Administrative Assistant (Certificate) »Medical Office Specialist (Certificate) BUSINE"
+   },
+   {
+    "control_number": "38794",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] »Administrative Assistant (Certificate) »Business Management (Certificate) »Entrepreneurship (Certificate) »Executive Administrative Assistant (Certificate) »Medical Office Specialist (Certificate) BUSINE"
+   },
+   {
+    "control_number": "38835",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] »Executive Administrative Assistant (Certificate) »Medical Office Specialist (Certificate) BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDIT CERTIFICATE) Certificate of Completion (Noncredit) Employers demand"
+   },
+   {
+    "control_number": "40050",
+    "pages": [
+     116,
+     117,
+     118,
+     119
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 116] »Business Management (Certificate) »Entrepreneurship (Certificate) »Executive Administrative Assistant (Certificate) »Medical Office Specialist (Certificate) BUSINESS COMPUTER APPLICATIONS BASICS (NONCREDI"
+   },
+   {
+    "control_number": "40082",
+    "pages": [
+     140,
+     141,
+     142,
+     143
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 140] CHILD DEVELOPMENT MASTER TEACHER (CERTIFICATE) Certificate of Achievement This certificate builds on the Child Development Teacher Certificate of Achievement, requiring additional courses in a specialization"
+   },
+   {
+    "control_number": "40573",
+    "pages": [
+     192,
+     193
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 192] PRE-HEALTH OCCUPATIONS (A.S.) AS: Associate in Science This degree prepares students interested in a variety of Allied Health occupations with a rigorous course of study, including coursework required for ma"
+   },
+   {
+    "control_number": "41273",
+    "pages": [
+     220,
+     221
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 220] »Spanish (A.A.-T) SPANISH (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Arts in Spanish for Transfer degree (AA-T) will help students develop proficiency in the following five skills: compr"
+   },
+   {
+    "control_number": "41416",
+    "pages": [
+     120,
+     121,
+     122
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 120] BUSINESS ADMINISTRATION 2.0 (A.S.-T) AS-T: Associate in Science for Transfer The Associate of Science in Business Administration for Transfer Degree 2.0 prepares students to transfer to a CSU institution by "
+   },
+   {
+    "control_number": "42694",
+    "pages": [
+     130,
+     131
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 130] »Communication Studies 2.0 (A.A.-T) COMMUNICATION STUDIES 2.0 (A.A.-T) AA-T: Associate in Arts for Transfer The Communication Studies program is designed to nurture an understanding and examination of the cr"
+   },
+   {
+    "control_number": "43104",
+    "pages": [
+     180,
+     181,
+     182
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 180] SOCIAL WORK AND HUMAN SERVICES (A.A.-T) AA-T: Associate in Arts for Transfer The Associate in Science for Transfer in Social Work and Human Services is specifically designed as a pathway to the California St"
+   },
+   {
+    "control_number": "43907",
+    "pages": [
+     150,
+     151
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 150] »Emergency Medical Technician Certificate EMERGENCY MEDICAL TECHNICIAN CERTIFICATE Certificate of Achievement Emergency Medical Technicians are practitioners who respond to emergencies before a patient reach"
+   },
+   {
+    "control_number": "44759",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] »Agriculture Business (Certificate) »Agriculture Mechanics (Certificate) »Agriculture Research Technician (Certificate) »Environmental Horticulture (Certificate) »Floral Design (Certificate) »Plant Protec"
+   },
+   {
+    "control_number": "44838",
+    "pages": [
+     94
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 94] The certificate of competency in floral design prepares students to enter the floral industry. The program is designed to provide entry level skills and skills development for students wishing to advance the"
+   },
+   {
+    "control_number": "46380",
+    "pages": [
+     177,
+     178,
+     179,
+     180
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 177] HUMAN SERVICES DEAN Dr. Shannon Reed Dean of Liberal Studies and Social Justice Office: (530) 661-5795 Counseling: (530) 661-5703 DEGrEEs OffErED »Chemical Dependency Counselor (A.S.) »Human Services (A.S.)"
+   },
+   {
+    "control_number": "46465",
+    "pages": [
+     91,
+     92,
+     93
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 91] The Associate of Science in Modern Policing program provides a comprehensive law enforcement model that emphasizes community cooperation, public trust, and impartial enforcement of the law. The program is ba"
+   }
+  ],
+  "page_checks": {
+   "read": 1,
+   "own_page": 1,
+   "no_own_page": 0,
+   "not_printed": 0
+  },
+  "unproven": []
  },
  "loads": 1,
- "seconds": 21.0,
+ "pages_listed": 1,
+ "pages_answered": 1,
+ "seconds": 29.2,
  "found": 65,
  "by_method": {
   "no_closed_list": 4,
   "pdf_pages": 65
  },
  "shared_pages": {
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=96": [
+  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94": [
    "18865",
-   "19214"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=95": [
    "18868",
-   "32248"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139": [
-   "18877",
-   "32288"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178": [
-   "18881",
-   "19229"
+   "19214",
+   "32248",
+   "35961",
+   "44759",
+   "44838"
   ],
   "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91": [
    "19230",
@@ -62,690 +984,589 @@
    "35387",
    "35438"
   ],
+  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116": [
+   "35518",
+   "37804",
+   "38793",
+   "38794",
+   "38835",
+   "40050"
+  ],
   "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100": [
    "35568",
    "35722"
   ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=157": [
+  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156": [
+   "38282",
    "38283",
    "38284"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=117": [
-   "38793",
-   "40050"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118": [
-   "38794",
-   "38835"
-  ],
-  "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94": [
-   "44759",
-   "44838"
   ]
  },
  "not_found": [],
  "page_claimed": [],
+ "page_challenged": [],
  "coverage_bands": {
-  "0.5-0.8": 5,
-  "0.8-1.0": 12,
-  "1.0": 48
+  "0.5-0.8": 0,
+  "0.8-1.0": 1,
+  "1.0": 64
  },
  "would_extract": {
-  "against": null,
-  "kept": 0,
-  "programs": 65,
+  "against": "kb/program_requirements_college/woodland_community",
+  "kept": 34,
+  "kept_moved": 0,
+  "programs": 17,
   "list": [
-   {
-    "control_number": "18865",
-    "title": "Environmental Horticulture",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18868",
-    "title": "Agriculture Business",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18869",
-    "title": "Accounting",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18877",
-    "title": "Child Development Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "18881",
-    "title": "Chemical Dependency Counselor",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
    {
     "control_number": "19213",
     "title": "Agriculture Science",
     "award": "A.S. Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=98",
-    "coverage": 0.778,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19214",
-    "title": "Environmental Horticulture",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=96",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19215",
-    "title": "Accounting",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=87",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=98",
+    "was_coverage": 0.778,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "19218",
     "title": "Business Management",
     "award": "A.S. Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=121",
-    "coverage": 0.941,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19224",
-    "title": "Early Childhood Education",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=142",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19229",
-    "title": "Chemical Dependency Counselor",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19230",
-    "title": "Criminal Justice Studies",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "19449",
-    "title": "Human Services",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=179",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=121",
+    "was_coverage": 0.941,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "30714",
     "title": "Psychology",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=213",
-    "coverage": 0.917,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=213",
+    "was_coverage": 0.917,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31402",
     "title": "Earth Science",
     "award": "A.S. Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
-    "coverage": 0.857,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
+    "was_coverage": 0.857,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "31433",
     "title": "Geology",
     "award": "A.S. T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32164",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=217",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32248",
-    "title": "Sustainable Agriculture",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=95",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32288",
-    "title": "Early Childhood Education",
-    "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32322",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=175",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32340",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=152",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "32345",
     "title": "Mathematics",
     "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=81",
-    "coverage": 0.571,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "32388",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=90",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "33252",
-    "title": "Drinking Water and Wastewater Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=163",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35089",
-    "title": "Chicana/o Studies",
-    "award": "A.A. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=167",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35279",
-    "title": "Welding Technologies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35333",
-    "title": "Baking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35343",
-    "title": "Child Development Associate Teacher",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=138",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=196",
+    "coverage": 0.857,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=81",
+    "was_coverage": 0.571,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35369",
     "title": "Biology",
     "award": "A.S. T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=113",
-    "coverage": 0.9,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35370",
-    "title": "Anthropology",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=108",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35387",
-    "title": "Culinary Arts",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35438",
-    "title": "Culinary Arts",
-    "award": "A.A. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35518",
-    "title": "Executive Administrative Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=119",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35568",
-    "title": "Agriculture Plant Science",
-    "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35722",
-    "title": "Agriculture Animal Science",
-    "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=113",
+    "was_coverage": 0.9,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35723",
     "title": "Agriculture Business",
     "award": "A.S. T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=99",
-    "coverage": 0.923,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=99",
+    "was_coverage": 0.923,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35733",
     "title": "Economics",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=148",
-    "coverage": 0.8,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35736",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=204",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "35743",
-    "title": "Social Justice Studies",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=190",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=148",
+    "was_coverage": 0.8,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35956",
     "title": "Chemistry",
     "award": "A.S. T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=127",
-    "coverage": 0.75,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=127",
+    "was_coverage": 0.75,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35961",
     "title": "Plant Protection",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=97",
-    "coverage": 0.97,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=97",
+    "was_coverage": 0.97,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "35962",
     "title": "Political Science",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=211",
-    "coverage": 0.909,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "36036",
-    "title": "Welding Technologies - Advanced",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=211",
+    "was_coverage": 0.909,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36606",
     "title": "Child and Adolescent Development",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=191",
-    "coverage": 0.889,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "coverage": 1.0,
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=191",
+    "was_coverage": 0.889,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "36655",
     "title": "Law, Public Policy, and Society",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=193",
-    "coverage": 0.913,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37287",
-    "title": "Drinking Water and Wastewater Technology",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=164",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "37804",
-    "title": "Business Computer Applications Basics",
-    "award": "Noncredit program",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38282",
-    "title": "Academic Preparedness and Career Development",
-    "award": "Noncredit program",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38283",
-    "title": "Foundational English Skills",
-    "award": "Noncredit program",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38284",
-    "title": "Intermediate English Skills",
-    "award": "Noncredit program",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=157",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38793",
-    "title": "Administrative Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=193",
+    "was_coverage": 0.913,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "38794",
     "title": "Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
-    "coverage": 0.933,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "38835",
-    "title": "Medical Office Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40050",
-    "title": "Entrepreneurship",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=117",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40082",
-    "title": "Child Development Master Teacher",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=140",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "40573",
-    "title": "Pre-Health Occupations",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=192",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "41273",
-    "title": "Spanish",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=220",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=118",
+    "was_coverage": 0.933,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "41416",
     "title": "Business Administration 2.0",
     "award": "A.S. T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=120",
-    "coverage": 0.667,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "42694",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=130",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=120",
+    "was_coverage": 0.667,
+    "was_method": "pdf_pages"
    },
    {
     "control_number": "43104",
     "title": "Social Work and Human Services",
     "award": "A.A- T Degree",
     "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=180",
-    "coverage": 0.812,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "43907",
-    "title": "Emergency Medical Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=150",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44759",
-    "title": "Agriculture Mechanics",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "44838",
-    "title": "Floral Design",
-    "award": "Noncredit program",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46380",
-    "title": "Community Health Worker Certification (CHW)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=177",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
-   },
-   {
-    "control_number": "46465",
-    "title": "Modern Policing",
-    "award": "A.S. Degree",
-    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": null,
-    "was_method": null
+    "was_url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=180",
+    "was_coverage": 0.812,
+    "was_method": "pdf_pages"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [
+   {
+    "control_number": "18865",
+    "title": "Environmental Horticulture",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18868",
+    "title": "Agriculture Business",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "18869",
+    "title": "Accounting",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=85",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19214",
+    "title": "Environmental Horticulture",
+    "award": "A.S. Degree",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19229",
+    "title": "Chemical Dependency Counselor",
+    "award": "A.S. Degree",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=181",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32248",
+    "title": "Sustainable Agriculture",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32288",
+    "title": "Early Childhood Education",
+    "award": "A.S. T Degree",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=141",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35518",
+    "title": "Executive Administrative Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35743",
+    "title": "Social Justice Studies",
+    "award": "A.A- T Degree",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=189",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38283",
+    "title": "Foundational English Skills",
+    "award": "Noncredit program",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38284",
+    "title": "Intermediate English Skills",
+    "award": "Noncredit program",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38793",
+    "title": "Administrative Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38835",
+    "title": "Medical Office Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40050",
+    "title": "Entrepreneurship",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
  },
- "run": "39006340803"
+ "fingerprints": {
+  "18865": {
+   "sha256": "366a64ffe3a11cbd1b181ab211654c6f4f29f208273fecd96df65a13d30fca55",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "18868": {
+   "sha256": "d8b1308664ce179889d1841879a4820ec51d3f07856a208c50a288b5d6f7cb40",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "18869": {
+   "sha256": "6ae119219b4e00cf489362c8bb6326448602b27aa178f248c738f6afbfa0acdf",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=85"
+  },
+  "18877": {
+   "sha256": "e15e7b46991501492b77ee3bb3b08bb1cd215d9c9d8153746f536364649b74d8",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=139"
+  },
+  "18881": {
+   "sha256": "f0fdf6abb4f432b7d56e9132142d318013e78f4b857450114859db8be1d35d68",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=178"
+  },
+  "19213": {
+   "sha256": "3b28101b03730b013a1bf4ac83c17111b330db0ecf21450a9efd4a39fa01c413",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=98"
+  },
+  "19214": {
+   "sha256": "a673766d342e1346a9eb00b794cb3c0e54ba8321fee86020664b7c4c79f4d609",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "19215": {
+   "sha256": "55d63eb3d6f72883b9a05ff9d87cc5173243dc31ab988a3b93360f5bf91d6a2d",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=87"
+  },
+  "19218": {
+   "sha256": "ae7851c117012efae913dd7323c3340f6a3a93be5d469eafb75859d0ee173271",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=121"
+  },
+  "19224": {
+   "sha256": "7a52fd72eb9c114205cbd159138fd07f688b404daf99d131891568c3162fc94c",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=142"
+  },
+  "19229": {
+   "sha256": "7cc4cb94a9f3da8ad2cbd6cdabf430cd7500a5a13fa1844c33e7b562dbb1964f",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=181"
+  },
+  "19230": {
+   "sha256": "2521f75d5ba15e4d221b98b61aa344f3164472afde73fc87fcae3f1eab51f19e",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91"
+  },
+  "19449": {
+   "sha256": "981b2f03ed2bcdd65ca9707930855c4473afd8352bfbaad0e291fbe72fa5d83e",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=179"
+  },
+  "30714": {
+   "sha256": "ca53a3a6692444101bea107d7d3d1258adce28f3b03d78afab83779c01706d74",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=213"
+  },
+  "31402": {
+   "sha256": "903db9ed8539d79aa82e62452e8d0f6037a9c00a759586526c14b15d678befef",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171"
+  },
+  "31433": {
+   "sha256": "41814d17e1112d271742dca42e23ab930360202eb8844a7da1dccb055047c99e",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=171"
+  },
+  "32164": {
+   "sha256": "5ca07ba358c8c4430a69b12710d527694b2cfbe0e09f8787a3ee001540ffa84a",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=217"
+  },
+  "32248": {
+   "sha256": "80c836c81a9ef15e5f262b19813827644eb8c5f822d09e62811b147d809b62ce",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "32288": {
+   "sha256": "1586dc2e7922435c32506fc58c9edadc52f39e9a3a2eb5c496ee46e6f4778e37",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=141"
+  },
+  "32322": {
+   "sha256": "ba30871e00d4ab66be56ffe9fe59ac9bdf210ba218a553391801b653ebdfefa5",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=175"
+  },
+  "32340": {
+   "sha256": "886d7121d8189964051efccd611ac8189a045cde5f8495f1467d656810345e88",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=152"
+  },
+  "32345": {
+   "sha256": "ddbee4d53e5a633c16788f08c941ff08cf5c7e82438c70b0bae3cabf6a97195b",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=196"
+  },
+  "32388": {
+   "sha256": "4e41bf0b39261732706b8132ba3eba12f93a782753bd5e70861db4e9a014c3a7",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=90"
+  },
+  "33252": {
+   "sha256": "6efc747e981503d528d9983863a1f9f9736e1caa672307afa762a920d0c2ec06",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=163"
+  },
+  "35089": {
+   "sha256": "90d29360a3b36ccab98d48eeba41b7110613941e4b92165be1dc2b14cbc1472c",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=167"
+  },
+  "35279": {
+   "sha256": "11f256b0b2ed52f685b3bd50ef7f647bb499aaa69ee3eddc6bfbabbd3e9551d5",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224"
+  },
+  "35333": {
+   "sha256": "923f3f8d9bb893c98f0bfd20a65daf1e97b491fb0d67c7601a4b17d477495d6f",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133"
+  },
+  "35343": {
+   "sha256": "e7f04b50a90c32a2fd0bc2863cf868d9440688bea0edee7722c2dd4342175ec6",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=138"
+  },
+  "35369": {
+   "sha256": "86f041633b964a366dd3d64f6bd6ece7f6b335a3865550214e002705f91430dd",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=113"
+  },
+  "35370": {
+   "sha256": "1dfa9a4ccc0990b0e4075d7210ed5aa7217a32770606e3b79d0ef9fcde1a876f",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=108"
+  },
+  "35387": {
+   "sha256": "923f3f8d9bb893c98f0bfd20a65daf1e97b491fb0d67c7601a4b17d477495d6f",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133"
+  },
+  "35438": {
+   "sha256": "f516c87cd8ee3ef835c368819ccc9a83db0753be1fa1049c23648dfc96fdbe33",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=133"
+  },
+  "35518": {
+   "sha256": "b665d3fd9c4b96145d497c02f6fcf4385f78ea66d50259cc9c0618b4739af94c",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "35568": {
+   "sha256": "623edae6377356b0f47f8f1e9331e4ff0e34a9123b298eb1654c3d25b35d35d0",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100"
+  },
+  "35722": {
+   "sha256": "01d76d061fd6d0dad30740eacecf877f769cb417397f7021ec702d6eb53da0bd",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=100"
+  },
+  "35723": {
+   "sha256": "98fcbb495d89745533a124abadd3b289eac5ee63307e5f38fd968ad788719c51",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=99"
+  },
+  "35733": {
+   "sha256": "a943d8b18328cc923ad29abc76dc76def9a71c94e60dd7bb43e57d02000f6b3a",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=148"
+  },
+  "35736": {
+   "sha256": "d37513d80311629c125813e93663d8cfdfad199afc295ed9f29501ef91c721ab",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=204"
+  },
+  "35743": {
+   "sha256": "f12fe14b397cd2c8d583153cd4ffeb5659452cbf837b8bc646989df54080344b",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=189"
+  },
+  "35956": {
+   "sha256": "6b50cb2d7549d7aa67e95e77437d4858f5b49ace4e3a1c8e57c9fe72ebf3cf95",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=127"
+  },
+  "35961": {
+   "sha256": "1e3af298af56e5a4863aaa2e58005caee5655e675d025fc31d1b3019528d1689",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "35962": {
+   "sha256": "eab7849c834fb1a8c7de966f8bc7b07a303c7dfda489a3340386231fe1c67f8b",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=211"
+  },
+  "36036": {
+   "sha256": "f7c73b0df5fc17c41284be7c125c03890e70aefa3ff54f4fdb9cd395606148a9",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=224"
+  },
+  "36606": {
+   "sha256": "02e6708b9408797e6724c1efe812f39624092a16194e094a8e80e613d4b090cf",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=191"
+  },
+  "36655": {
+   "sha256": "ffa0e212347cbbcb15da42fd449c1dc2c2e693244f3150b0a299de66254c8569",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=193"
+  },
+  "37287": {
+   "sha256": "ca69694ab53948dceaebd3288fbcaa9976cc464ec55f63460f9908cf3fa98312",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=164"
+  },
+  "37804": {
+   "sha256": "5ba1f00a67f7cce917f011a8ea60db8b5742aa114a821764be9d18180aabd5bb",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "38282": {
+   "sha256": "415a96fccff409a2f285627b519d323950fe7fb42de8216e61828fa83c0c3c24",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156"
+  },
+  "38283": {
+   "sha256": "5417fe3d7d255ca6fde60e5d9ca755c50973c849469c64376395d543cf5d4d0b",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156"
+  },
+  "38284": {
+   "sha256": "9724399db69836e667cb3c51622defe0e3aa391980ecadd194bdadafaec1d046",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=156"
+  },
+  "38793": {
+   "sha256": "bf74e040155ff44a9aae54e59bde95593dbf1d5e69e611007c2941db79789405",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "38794": {
+   "sha256": "bf74e040155ff44a9aae54e59bde95593dbf1d5e69e611007c2941db79789405",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "38835": {
+   "sha256": "b665d3fd9c4b96145d497c02f6fcf4385f78ea66d50259cc9c0618b4739af94c",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "40050": {
+   "sha256": "d56178cb0717637ed183ae1629928a444b21f1e6c9c5decb7058a2b7111731c2",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=116"
+  },
+  "40082": {
+   "sha256": "79311cd1a421cf28a7ce42239e0fc664760cec11620537124ee64be1e7bab342",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=140"
+  },
+  "40573": {
+   "sha256": "f3b9e14c5aebf6a08e33acc082c7fb500671057746fee2f8638d0474052e2e04",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=192"
+  },
+  "41273": {
+   "sha256": "b951f51b20b65df4d5f41bd9f74c36dce8617a15ac75abbd73d8776ec2f534cb",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=220"
+  },
+  "41416": {
+   "sha256": "3eeeebbdf08df95520f197d547dd4c9887719b1711d331d019bb809da67111b5",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=120"
+  },
+  "42694": {
+   "sha256": "c24e5a79d7d5f281263c00978b65e36121e484117c2cbe0fd3df6b8c7b97df82",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=130"
+  },
+  "43104": {
+   "sha256": "1a1913350f51e2e2b22990a9ce2d1ba0469e938959316ee30652bffe995db189",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=180"
+  },
+  "43907": {
+   "sha256": "cb1398eea2951c8676b3e19de537637ffefc4ce593780bb66cfbecb1c2ed15d3",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=150"
+  },
+  "44759": {
+   "sha256": "1af93e0f805515a5659ae3ee268fec79f64e4e145183baec45c4c93c893fa190",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "44838": {
+   "sha256": "eb9e979c00324cc002277f5b278e9fbe6f5d463fb5634bc269d1235090aa8f36",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=94"
+  },
+  "46380": {
+   "sha256": "97ad21332566a3fc6856ccab8cf37b4b58558124f2362f516ef283820a5ebd52",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=177"
+  },
+  "46465": {
+   "sha256": "840a6b0425e062ed1f2c044c45a191bde3ea95aa0e104a6ebe57cc3a37d80633",
+   "url": "https://wcc.yccd.edu/wp-content/uploads/2026/06/WCC-Catalog-2026-27.pdf#page=91"
+  }
+ },
+ "run": "44529735880"
 }

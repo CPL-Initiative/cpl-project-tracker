@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9955,
+  "input_tokens": 9865,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9955,
-    "output_tokens": 1826,
+    "input_tokens": 9865,
+    "output_tokens": 1816,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,40 +30,41 @@
     "model": null
    }
   ],
-  "output_tokens": 1826,
+  "output_tokens": 1816,
   "output_tokens_details": {
-   "thinking_tokens": 536
+   "thinking_tokens": 520
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07634,
- "ms": 14821,
- "seconds": 15.3,
+ "cost_usd": 0.07578,
+ "ms": 15519,
+ "seconds": 16.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 10,
-   "share": 0.9,
-   "missing": [
-    "MATH1A"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
+   "course_id": [
+    {
+     "printed": "MATHC2210",
+     "listed": "MATH1A",
+     "matched_by": "course_id"
+    }
+   ],
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATHC2210"
-   ],
-   "flagged": [
-    "MATHC2210"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -95,7 +96,7 @@
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 9,
    "not_verbatim": [],
    "pass": true
   },
@@ -143,7 +144,9 @@
     "field ecologists",
     "ethnobiologists",
     "botanists",
-    "entomologists"
+    "entomologists",
+    "field biology",
+    "ecology"
    ]
   },
   "blocks": [
@@ -270,15 +273,31 @@
   "missing_explained": [
    {
     "code": "MATH 1A",
-    "why": "not in the text; the catalog lists MATHC2210 Calculus I: Early Transcendentals in its place (likely common course numbering renumber)"
+    "why": "not in the text; catalog lists MATHC2210 Calculus I: Early Transcendentals instead, likely the common-course-numbering replacement"
    }
   ],
   "notes": [
-   "MATHC2210 (Calculus I: Early Transcendentals) appears to be the common-course-numbering successor of closed-list MATH 1A; recorded as a catalog addition.",
-   "The catalog prints codes without a space (e.g., BIOL1, CHEM1A); these match closed-list codes BIOL 1, CHEM 1A, etc.",
-   "The 60-unit minimum is a general statement for all AA-T/AS-T degrees, not printed as this award's total, so degree_total is null. Cal-GETC is named as the GE pattern but no GE units are printed.",
-   "Careers are named for students who earn a Bachelor's degree in biology; the text also mentions 'others in field biology and ecology', not recorded as a separate career."
+   "MATHC2210 (Calculus I: Early Transcendentals, 4 units) is not in the closed list and appears to replace MATH 1A under common course numbering; reviewer should confirm.",
+   "The 60-unit minimum is printed as a requirement for all AA-T/AS-T degrees, not as this award's own total, so degree_total is null.",
+   "Cal-GETC is named as the general education pattern for all ADT degrees; no GE unit count is printed.",
+   "Careers 'field biology' and 'ecology' come from 'others in field biology and ecology'; careers are described for holders of a bachelor's degree in biology.",
+   "Physics block stated 8 units; Option 1 or Option 2 recorded as separate blocks in one option_group."
   ]
  },
- "extracted_run": "39006340803"
+ "extracted_run": "44529735880",
+ "catalog_year": "2026-2027",
+ "source_sha": "a0711765e4bd57db",
+ "source_codes": [
+  "BIOL1",
+  "BIOL7",
+  "CHEM1A",
+  "CHEM1B",
+  "MATH1A",
+  "MATH9",
+  "PHYS1A",
+  "PHYS1B",
+  "PHYS4A",
+  "PHYS4B"
+ ],
+ "source_coverage": 1.0
 }
