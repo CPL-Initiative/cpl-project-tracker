@@ -50,6 +50,8 @@ function loadModule(fetchFn, rows) {
       writes.push({ url: String(url), method: init.method, body: body, headers: init.headers });
       const hit = /cpl_library\?id=eq\.([\w-]+)$/.exec(String(url));
       if (init.method === "PATCH" && hit) data.forEach(function (r) { if (r.id === hit[1]) Object.assign(r, body); });
+      // A new record joins the rows the next read returns, as the table does.
+      if (init.method === "POST" && /\/rest\/v1\/cpl_library$/.test(String(url)) && !data.some(function (r) { return r.id === "new1"; })) data.push(Object.assign({ id: "new1" }, body));
       return response(201, [Object.assign({ id: "new1" }, body)]);
     }
     return response(200, data);
@@ -101,14 +103,23 @@ const posts = (m) => m.writes.filter((x) => x.method === "POST" && /\/rest\/v1\/
 (async function () {
   // ── A. A PDF as background for a new piece ──
   {
-    const m = loadModule(); await m.M.activate(); await tick();
+    // What the card says as the draft starts (Start drafts at once, 2026-11-18): read when the draft is asked for.
+    let asked = "";
+    const m = loadModule(function (url) {
+      if (/functions\/v1\/library-revise-draft/.test(url)) asked = m.root.textContent;
+      return null;
+    }); await m.M.activate(); await tick();
     m.w.pdfjsLib = pdfStub(PDF_PAGES);
     startNew(m, fileOf("Adding_CPL_Coordinator__Noncredit_Lead_to_the_User_Module_.pdf", new Uint8Array([37, 80, 68, 70])), null, "Adding CPL Coordinator");
     await until(() => posts(m).length);
     const src = (posts(m)[0] || { body: {} }).body.sources || [];
     check("A ⭐ a PDF picked as background saves its words with the request", src.length === 1 && /^Page 1\nAdding Your CPL Coordinator\nand Noncredit Lead/.test(src[0].text || "") && /Page 2\n1\. Log in to MAP\./.test(src[0].text || ""), JSON.stringify(src).slice(0, 300));
-    check("A the request names how many words it read", /Read \d+ words from Adding_CPL_Coordinator/.test(m.root.textContent));
-    check("A the page says the next step is Draft it now on the card, not a session", /Press Draft it now on its card/.test(m.root.textContent));
+    
+    await until(() => m.writes.some((x) => /functions\/v1\/library-revise-draft/.test(x.url)));
+    // Start drafts at once (Sam, 2026-11-18: "it should just draft it once you click start and open the side bar").
+    check("A ⭐ Start drafts it on the card at once, with the new record's id, no Draft it now press",
+      m.writes.some((x) => /functions\/v1\/library-revise-draft/.test(x.url) && x.body.id === "new1"), JSON.stringify(m.writes.map((x) => x.url)));
+    check("A the card names how many words it read as the draft starts", /Read \d+ words from Adding_CPL_Coordinator/.test(asked) && /Claude is drafting/.test(asked), asked.slice(0, 300));
   }
   // ── B. A file with no words: nothing saved, said plainly ──
   {

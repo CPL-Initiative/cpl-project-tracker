@@ -36,6 +36,7 @@ function response(status, body) {
     json: function () { return Promise.resolve(body); },
     text: function () { return Promise.resolve(JSON.stringify(body)); } });
 }
+function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); }
 const settle = () => new Promise((r) => setTimeout(r, 0)).then(() => new Promise((r) => setTimeout(r, 0)));
 
 function rec(over) {
@@ -233,6 +234,122 @@ function load(rows, onFetch) {
     sb.versions.push({ label: "Version 7", status: "Current: rebuilt from the source." });
     sb.versions[0].status = "Replaced by v7";
     check("E3: a version built from the source clears it", M._flagsOf(sb).indexOf("source_behind") < 0);
+  }
+
+  // ── F. Reference data from COBI, and the card after a draft that changed nothing (Sam, 2026-11-18) ──
+  // "we want to add buttons to the college landing pages and apparently, the library routine can't access that data
+  // in cobi"; "after the second draft, there was no way to try a new draft by adding more instructions"; "The file
+  // it now function does not seem to be necessary".
+  {
+    const R = await import("../chatbox/supabase/functions/library-revise-draft/reference_data.mjs");
+    const names = ["Modesto Junior College", "Riverside City College", "Cabrillo College", "Chaffey College", "Laney College", "Norco College", "Foothill College"];
+    const named = R.collegesNamed("Cards for Cabrillo, Chaffey, Laney, Modesto Junior and Norco", names);
+    check("F1: the drafter finds the colleges a request names, by full name or the name without College",
+      named.join("|") === "Modesto Junior College|Cabrillo College|Chaffey College|Laney College|Norco College", named.join("|"));
+    check("F1: a college the request does not name is left out", R.collegesNamed("Sheet metal at Laney", names).join("|") === "Laney College");
+    const ex = R.exhibitsFor({ found: { "MAPICA-SM-1-001": { title: "Sheet Metal Worker", college: "Laney College" }, "X-1": { title: "Other", college: "Norco College" } } }, ["Laney College"]);
+    const block = R.referenceBlock(["Laney College", "Norco College"], { "Laney College": "https://cpldashboardcccco.azurewebsites.net/Laney" }, ex);
+    check("F2: the block gives each college's MAP landing page as the button's target, and its CPL Opportunity page",
+      /Laney College\n- MAP landing page \(where a student requests CPL at this college; every button goes here\): https:\/\/cpldashboardcccco\.azurewebsites\.net\/Laney/.test(block) &&
+      /cpl-opportunity\/\?college=Laney%20College/.test(block), block);
+    // Sam, 2:42 PM PT (COBIx on #3527): articulated only; the landing page, not the dashboard; no fallback link.
+    check("F2: ⭐ a college with no landing page on file is said so, with no button and no fallback link",
+      /Norco College\n- MAP landing page: NONE ON FILE\. Say on the page/.test(block) && !/map\.rccd\.edu\/cpllandingpages/.test(block), block);
+    check("F2: ⭐ each exhibit's button goes to the college's landing page with its MAP ID kept beside it, never the MAP dashboard, and no parameter yet",
+      block.indexOf('Sheet Metal Worker (MAP ID MAPICA-SM-1-001): button to https://cpldashboardcccco.azurewebsites.net/Laney; tell the student to choose "Sheet Metal Worker" under Possible Qualifications') >= 0 &&
+      !/insights\/exhibit-courses/.test(block) && !/\?Exhibit=/.test(block), block);
+    // Sam, 2:44 PM PT: the drafter checks no articulation; the owner list is a head start, never a filter.
+    check("F2: the exhibit list is labeled a head start, not a filter, and the drafter builds no articulated filter",
+      /a head start for exact names; not a filter/.test(block) && !/Name only these/.test(block) && !/MAP lists no articulated exhibits/.test(block), block);
+    check("F2: no college named, no block", R.referenceBlock([], {}, {}) === "");
+    const CD = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/cobi_data.mjs", "utf8");
+    check("F2: the model is told: the landing page, not the dashboard; the exact name under Possible Qualifications; no articulation check; no fallback",
+      /never the MAP dashboard/.test(CD) && /under Possible Qualifications by its exact name as MAP lists it/.test(CD) && /you need not check articulation/.test(CD) && /with no other link in its place/.test(CD) && !/only articulated opportunities/.test(CD));
+    check("F3: the drafter adds the reference block on both paths and lets the model use its links",
+      /map_college_contacts\?select=college,landing_page_url&/.test(FN) && (FN.match(/await readReference\(requestText\(r, brief, pasted\), cred\)/g) || []).length === 2 &&
+      /the reference data from COBI/.test(FN));
+
+    // ── G. Sam's rulings, 2026-11-18, relayed by COBIx on #3527: full read access, no staff-data block, and student
+    // counts under 10 shown as <10 in every piece.
+    const C = await import("../chatbox/supabase/functions/library-revise-draft/cobi_data.mjs");
+    const rows = C.suppressCounts([{ college: "Laney College", program: "Sheet Metal", students: 7, awards: "3", exhibits: 4 },
+      { college: "Norco College", program: "Welding", students: 12, student_count: 0 }]);
+    check("G1: ⭐ a category with 7 students reads <10", rows[0].students === "<10", JSON.stringify(rows));
+    check("G1: a string count and an award count under 10 read <10 too", rows[0].awards === "<10");
+    const units = C.suppressCounts([{ award_units: 3, veteran_units: 6, units_awarded: 3, max_award: 4, credit_hours: 2, award_count: 5 }])[0];
+    check("G1: ⭐ unit, credit and hour fields pass unchanged (COBIx review: award_units 3, units_awarded 3); a count of awards does not",
+      units.award_units === 3 && units.veteran_units === 6 && units.units_awarded === 3 && units.max_award === 4 && units.credit_hours === 2 && units.award_count === "<10", JSON.stringify(units));
+    check("G1: 10 and over stay as they are, 0 stays 0, a count of exhibits is not a student count",
+      rows[1].students === 12 && rows[1].student_count === 0 && rows[0].exhibits === 4, JSON.stringify(rows));
+    check("G2: in prose, 7 students reads <10 students; 17 students and Step 2 stay",
+      C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4.") === "Laney had <10 students, Norco 17 students. Step 2 of 4.",
+      C.suppressText("Laney had 7 students, Norco 17 students. Step 2 of 4."));
+    for (const t of ["Earn 3 units for veterans", "Up to 6 credits for students", "Grade 9 students", "Course 2 of the students' path", "1 in 5 students", "Step 2 of 4 for apprentices"]) {
+      check("G2: ⭐ left as it is: " + t, C.suppressText(t) === t, C.suppressText(t));
+    }
+    // COBIx's probe of 6342aa46 (#3527): lists, fractions, ranges and the keys the first fix missed.
+    const leaks = [["4 students and 8 veterans", "<10 students and <10 veterans"], ["There were 4 students and 3 veterans", "There were <10 students and <10 veterans"],
+      ["3 of 5 students", "<10 of <10 students"], ["3 out of 7 students", "<10 out of <10 students"], ["5 of 8 students", "<10 of <10 students"],
+      ["2-3 students", "<10 students"], ["2 or 3 students", "<10 students"], ["12 of 40 students", "12 of 40 students"]];
+    // COBIx's probe of e349f88a: a labeled number is never a count, and the fraction and range forms respect it.
+    leaks.push(["Course 2 of 5 students", "Course 2 of 5 students"], ["Module 3 of 8 veterans", "Module 3 of 8 veterans"], ["Page 2 of 3 students", "Page 2 of 3 students"],
+      ["Course 2 of 40 students", "Course 2 of 40 students"], ["Grades 2-3 students", "Grades 2-3 students"], ["Year 1 or 2 students", "Year 1 or 2 students"],
+      ["between 2 and 5 students", "between <10 students"], ["3 of the 5 students", "<10 of the <10 students"], ["In Year 2, 6 students enrolled", "In Year 2, <10 students enrolled"]);
+    for (const [t, want] of leaks) check("G2: ⭐ " + t + " -> " + want, C.suppressText(t) === want, C.suppressText(t));
+    const keys = { students_served: true, num_students_awarded: true, enrollment: true, n_awarded: true, award_count: true, veteranCount: true,
+      count: false, n: false, max_award: false, award_units: false, student_id: false,
+      veteran_ids: false, is_enrolled: false, enrolled_on: false, cpl_awards: true, total_awards: true, enrollment_status: false };
+    check("G1: ⭐ a key counts students when a word in it names people, never a unit, an id or a bare count",
+      Object.keys(keys).every((k) => C.isCountKey(k) === keys[k]), Object.keys(keys).map((k) => k + "=" + C.isCountKey(k)).join(" "));
+    check("G2: a describing word between the count and the noun still counts", C.suppressText("7 new students") === "<10 new students");
+    check("G2: in a published file, \"students\": 7 reads \"<10\"", C.suppressText('{"college":"Laney","students": 7,"units":3}') === '{"college":"Laney","students": "<10","units":3}',
+      C.suppressText('{"college":"Laney","students": 7,"units":3}'));
+    const page = '<td class="n" data-n="7" aria-label="7 students">7</td><td>7 students</td><p>3 veterans earned credit; see 7 exhibits.</p>';
+    const outp = C.suppressInHtml(page);
+    check("G3: ⭐ text and the attributes a reader hears show a count under 10 as <10 (escaped); a class, data value and other counts stay",
+      outp === '<td class="n" data-n="7" aria-label="&lt;10 students">7</td><td>&lt;10 students</td><p>&lt;10 veterans earned credit; see 7 exhibits.</p>', outp);
+    const eds = C.suppressEdits([{ old: "Laney had twelve students", new: "Laney had 7 students; earn 3 units" }]);
+    check("G3: ⭐ a revision suppresses each edit's new text, so the rewrite shows in What changed",
+      eds[0].new === "Laney had &lt;10 students; earn 3 units" && /ans\.edits = suppressEdits\(ans\.edits\);\n[^]*const done = applyEdits\(page, ans\.edits\)/.test(FN) &&
+      /now: String\(e\?\.new/.test(FN), eds[0].new);
+    check("G3: a revision never suppresses the whole page; a new page suppresses the model's own parts (title, description, main, summary)",
+      !/suppressInHtml\(pics\.html\)/.test(FN) && /\["title", "description", "published", "summary"\]/.test(FN) && /\.main = suppressInHtml\(/.test(FN));
+    check("G4: the model is told the rule, including the total that would back a hidden count out",
+      /under 10 for a specific category/.test(C.STUDENT_RULE) && /Never show a total or a remainder that would let a reader work a hidden count back out/.test(C.STUDENT_RULE) &&
+      (FN.match(/STUDENT_RULE \+ TOOL_RULES/g) || []).length === 2);
+    check("G5: no staff-data block: staff names, titles and work emails may appear; a student's never",
+      (FN.match(/Staff names, titles/g) || []).length === 2 && !/Never copy a person's (own )?email/.test(FN) && /Never a student's name, email or ID/.test(FN));
+    const seen = [];
+    const fakeRest = (path) => { seen.push(path); return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve(JSON.stringify([{ college: "Laney College", headcount: 5 }])) }); };
+    const fakeGet = (url) => { seen.push(url); return Promise.resolve({ ok: true, status: 200,
+      json: () => Promise.resolve({ datasets: { "supabase:map_college_contacts": {}, "rpc:team_pass_ok": {}, "file:x.js": {} } }),
+      text: () => Promise.resolve('{"found":{"X":{"students":2}}}') }); };
+    const read = await C.runTool("cobi_read", { table: "map_college_contacts", query: "select=college,headcount&limit=9999" }, fakeRest, fakeGet);
+    check("G6: ⭐ cobi_read reads any table with the caller's fetcher, caps the rows, and suppresses the count",
+      seen[0] === "map_college_contacts?select=college,headcount&limit=500" && /"headcount":"<10"/.test(read), seen[0] + " " + read);
+    check("G6: a table name that is not one is refused", /Name one table/.test(await C.runTool("cobi_read", { table: "x;drop" }, fakeRest, fakeGet)));
+    const tables = await C.runTool("cobi_tables", {}, fakeRest, fakeGet);
+    check("G6: cobi_tables lists only what cobi_read can read: tables, no rpc (COBIx review)", tables === "map_college_contacts", tables);
+    const file = await C.runTool("cobi_file", { path: "kb/reference/x.json" }, fakeRest, fakeGet);
+    check("G6: cobi_file reads a published file and suppresses its counts", /"students":"<10"/.test(file) && seen.indexOf("https://cpl-initiative.github.io/cpl-project-tracker/kb/reference/x.json") >= 0, file);
+    check("G6: a path that climbs out of the site is refused", /Give a path/.test(await C.runTool("cobi_file", { path: "../secrets" }, fakeRest, fakeGet)));
+    check("G7: the model reads through the tools in a bounded loop, every read a GET with the caller's credential",
+      /tools: TOOLS/.test(FN) && /for \(let turn = 0; turn <= MAX_TURNS; turn\+\+\)/.test(FN) && /rest\(path, cred, \{ method: "GET" \}\)/.test(FN) && /tool_choice: \{ type: "none" \}/.test(FN) && /library-revise-draft usage/.test(FN));
+
+    const waiting = rec({ id: "22222222-2222-2222-2222-222222222222", slug: "sheet-metal-cards", title: "Sheet Metal Cards", status: "requested",
+      url: null, home: "not_filed", public_listed: false, version: null, brief: { say: "Cards per college" }, refresh_note: "Add the landing page links.",
+      regen: { requested_at: "2026-11-18T21:00:00Z", requested_by: "Ashley", publish: "show", based_on_draft: "33333333-3333-3333-3333-333333333333" } });
+    const m = load([waiting]); await m.M.activate(); await settle();
+    check("F4: a new piece whose last draft changed nothing still offers Draft it now", !!m.root.querySelector('form[data-draftnowform="' + waiting.id + '"]'));
+    check("F4: ⭐ and Change what you asked, so more instructions can be added", !!m.root.querySelector('[data-change="' + waiting.id + '"]'));
+    check("F4: and the draft it builds on opens", !!m.root.querySelector('[data-draftopen="33333333-3333-3333-3333-333333333333"]'));
+    click(m.w, m.root.querySelector('[data-change="' + waiting.id + '"]'));
+    const ta = m.w.document.getElementById("cb-instr-" + waiting.id);
+    check("F4: Change what you asked opens the card's box with the request in it", !!ta && ta.value === "Add the landing page links.");
+    const tgl = m.root.querySelector('[data-toggle="' + waiting.id + '"]'); if (tgl) click(m.w, tgl);
+    check("F5: a piece that drafts and publishes on its card offers no File a new version, and no File it beside its card",
+      !m.root.querySelector('[data-newver="' + waiting.id + '"]') && /: draftsOnCard\(r\) \? "" : word\("data-file"/.test(SRC) &&
+      /function draftsOnCard\(r\) \{ return isNewPiece\(r\) && canDraftNew\(r\); \}/.test(SRC));
   }
 
   let pass = 0;
