@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-18T14:57:59Z",
-  "session": 682,
-  "moniker": "SkyVireo",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-18T23:47:13Z",
+  "session": 683,
+  "moniker": "SkyDipper",
+  "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_683_handoff.md",
   "next_step": {
-    "title": "Apply the two reviewed record plans, then read Chabot again",
-    "text": "The stop that held the night of November 18 still stands, so the first run of November 19 follows that evening's brief. On no word from Sam or the brief it applies the two reviewed plans: 99 program records with corrected gap labels and confidence scores (PR 3497), and 13 records whose paired courses take the state's units once two review findings are fixed (PR 3508). Then Chabot's outlines are read again with the fixed reader, and the next display build brings Lassen's five records to the page."
+    "title": "Preview the page checks at two colleges before paying for rereads",
+    "text": "The reader now checks the pages a program record with no courses placed was read from. Tonight's run previews Mendocino College and City College of San Francisco for free first, and pays for the other 71 colleges' 444 records, about $21 in all, only if both previews read the right pages."
   },
   "calls": [
     {
@@ -337,6 +337,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-18T23:08:57Z",
+      "text": "The reader's page checks merged (PR 3514): they kept 10,046 of 13,243 pages a program was read from and accepted 22 sister pages. A reread plan lists 444 records at 73 colleges, about $21.38, the largest college $3.15. No record changed."
+    },
     {
       "at": "2026-11-18T14:20:00Z",
       "text": "Nothing in the harvest changed this run. The stop from the 11:06 run still held, so no read, load or record write started."

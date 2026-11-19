@@ -236,6 +236,9 @@ jobs:
           python3 scripts/repo_size_guard.py --base "$BASE_SHA"
       - name: Repo size guard tests (a temporary repo the test builds)
         run: python3 tests/repo_size_guard_test.py
+      # The COBIx watcher calls only `gh api -X GET search/issues` (S683, Sam's ask relayed on #3358).
+      - name: COBIx watcher calls only GitHub search
+        run: python3 tests/cobix_watch_test.py
       # First Light contrast lint (Session 49) — verifies the live :root in
       # both HTMLs matches the blessed spec (prototype v1.6) and measures AA
       # on worst-case backdrops. Pure-stdlib python; part of this same

@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 678,
-  "moniker": "SkyWaxwing",
+  "session": 683,
+  "moniker": "SkyDipper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_679_handoff.md",
+  "handoff": "docs/session_683_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-17T23:55:10Z",
+  "written_at": "2026-11-18T23:47:13Z",
   "project": "cr",
   "next_step": {
-    "title": "Keep ACE's credit recommendation beside MAP's wording",
-    "text": "The change that keeps ACE's own credit recommendation text beside the wording in MAP is drafted. Before it is applied, its view needs a faster filter, its matcher a test against known answers, and its sum check a case where it can fail."
+    "title": "Match MAP's credit recommendation wording to ACE's",
+    "text": "Of the 29,995 credit recommendations in the list, 202 match ACE's wording exactly, 3,334 are in MAP only, and 26,459 differ in spelling or in substance. The exact match work is parked as issue 3523 for a later session."
   },
   "changes": [
+    {
+      "at": "2026-11-18T23:44:00Z",
+      "text": "Counted on Nov 18: 29,995 credit recommendations, 202 matching ACE's wording exactly, 3,334 in MAP only and 26,459 differing; ACE's own text now holds 104,688 rows over 25,742 exhibits. The exact match change is parked as issue 3523."
+    },
     {
       "at": "2026-11-17T23:40:00Z",
       "text": "Drafted, not applied: ACE's credit recommendation text kept beside MAP's wording, shown side by side on the credit recommendation list (PR 3468)."
