@@ -2,20 +2,50 @@
  "college": "Imperial Valley College",
  "programs": 149,
  "with_closed_list": 142,
- "found": 131,
- "extracted": 131,
+ "found": 125,
+ "extracted": 125,
  "errors": 0,
- "passed_machine_checks": 109,
+ "passed_machine_checks": 116,
  "failed": {
-  "coverage": 6,
+  "coverage": 0,
   "invented": 0,
-  "arithmetic": 22,
+  "arithmetic": 9,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 8.02,
- "cost_per_program": 0.0612,
+ "cost_usd_run": 0.47,
+ "cost_usd_filed": 7.67,
+ "cost_per_program": 0.0614,
+ "extract_calls": 7,
+ "extract_failed": [],
  "not_found": [
+  {
+   "control_number": "08983",
+   "title": "Agriculture Plant Science",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8297",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.833,
+    "body": 0.833,
+    "content": 0.833,
+    "net": 5,
+    "listed": 6,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 6721,
+     "content": 6721,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
   {
    "control_number": "24051",
    "title": "ESL Civics",
@@ -40,7 +70,8 @@
      "tabs": 0
     },
     "tab_panels": []
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24098",
@@ -48,7 +79,8 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
   },
   {
    "control_number": "24435",
@@ -56,8 +88,144 @@
    "award": "Noncredit program",
    "near_miss": {
     "why": "no page read names the program"
-   }
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30336",
+   "title": "Electrical Trades",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8321",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 4619,
+     "content": 4619,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30337",
+   "title": "Electrical Trades",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8633",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.2,
+    "body": 0.2,
+    "content": 0.2,
+    "net": 1,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 1 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3196,
+     "content": 3196,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36695",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.111,
+    "body": 0.111,
+    "content": 0.111,
+    "net": 2,
+    "listed": 18,
+    "why": "coarse net: the page's code tokens name 2 of 18 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3017,
+     "content": 3017,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "39802",
+   "title": "Chicana/o Studies",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8313",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.053,
+    "body": 0.053,
+    "content": 0.053,
+    "net": 1,
+    "listed": 19,
+    "why": "coarse net: the page's code tokens name 1 of 19 listed courses",
+    "error": null,
+    "chars": {
+     "body": 5738,
+     "content": 5738,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40055",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": {
+    "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8651",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.071,
+    "body": 0.071,
+    "content": 0.071,
+    "net": 1,
+    "listed": 14,
+    "why": "coarse net: the page's code tokens name 1 of 14 listed courses",
+    "error": null,
+    "chars": {
+     "body": 3017,
+     "content": 3017,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   }
  ],
- "run": "39691376155"
+ "run": "44545048735"
 }

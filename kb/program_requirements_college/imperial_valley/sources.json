@@ -5,11 +5,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.929,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT210",
    "ACCT220",
    "ACCT240",
+   "ACCT99",
    "BUS105",
    "BUS108",
    "BUS124",
@@ -29,7 +30,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "accounting technician (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 14,
@@ -64,7 +67,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "business office technician (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 12,
@@ -133,7 +138,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "exercise science (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 46,
@@ -167,7 +174,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "automotive technology (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -196,7 +205,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "welding technology (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 6,
@@ -223,7 +234,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "french (major - a.a.)",
+    "section_fit": 0.5
    }
   },
   "listed": 4,
@@ -255,7 +268,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "nursing - associate degree (r.n.) (major - a.s.)",
+    "section_fit": 0.333
    }
   },
   "listed": 9,
@@ -298,7 +313,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "nursing - vocational (v.n.) (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -331,7 +348,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -367,7 +386,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "administration of justice (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 13,
@@ -404,7 +425,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "child development (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -449,7 +472,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "fire technology (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 22,
@@ -498,7 +523,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "social science (major - a.a.)",
+    "section_fit": 0.667
    }
   },
   "listed": 32,
@@ -541,7 +568,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "addiction disorder studies (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 21,
@@ -552,26 +581,12 @@
   "title": "Agriculture Plant Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.5,
-  "codes_found": [
-   "AG120",
-   "AG140",
-   "AG170"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
-   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 6,
-  "text_chars": 5101
+  "text_chars": 0
  },
  {
   "control_number": "08984",
@@ -579,11 +594,12 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 0.905,
   "codes_found": [
    "ACCT210",
    "ACCT220",
    "ACCT240",
+   "ACCT99",
    "BUS124",
    "BUS126",
    "BUS132",
@@ -608,7 +624,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "business management (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 21,
@@ -620,9 +638,10 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT210",
+   "ACCT99",
    "BUS105",
    "BUS136",
    "BUS145",
@@ -645,7 +664,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "administrative assistant (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 15,
@@ -703,7 +724,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "behavioral science (major - a.a.)",
+    "section_fit": 0.667
    }
   },
   "listed": 27,
@@ -737,7 +760,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "correctional science (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 11,
@@ -788,7 +813,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "general science (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 33,
@@ -846,7 +873,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "humanities (major - a.a.)",
+    "section_fit": 0.5
    }
   },
   "listed": 40,
@@ -876,7 +905,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -906,7 +937,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "emergency medical services (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -947,7 +980,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -975,7 +1010,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "water treatment systems technology (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 5,
@@ -1001,7 +1038,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -1032,7 +1071,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": "as"
+    "section": "as",
+    "section_line": "electrician (major - a.s.) apprenticeship: electrician (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 9,
@@ -1063,7 +1104,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "generation mechanic (major - a.s.) apprenticeship: generation mechanic (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -1094,7 +1137,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "meter technician (major - a.s.) apprenticeship: meter technician (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -1125,7 +1170,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "power lineman (major - a.s.) apprenticeship: power lineman (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -1157,7 +1204,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "relays technician (major - a.s.) apprenticeship: relays technician (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -1188,7 +1237,9 @@
    "label": {
     "award": 1,
     "title": 0.75,
-    "section": "as"
+    "section": "as",
+    "section_line": "scada/telecommunications technician (major - a.s.) apprenticeship: scada/telecommunications technician (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 8,
@@ -1220,7 +1271,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "substation-electrician (major - a.s.) apprenticeship: substation-electrician (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 9,
@@ -1236,7 +1289,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "18539",
@@ -1248,7 +1305,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_matched",
+   "why": "title_has_no_words"
+  }
  },
  {
   "control_number": "19060",
@@ -1260,7 +1321,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19061",
@@ -1272,7 +1337,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19062",
@@ -1284,7 +1353,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "19340",
@@ -1312,7 +1385,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "air conditioning and refrigeration technology (major - a.s.)",
+    "section_fit": 0.6
    }
   },
   "listed": 9,
@@ -1341,7 +1416,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "digital design and production (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 6,
@@ -1370,7 +1447,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1382,11 +1461,12 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 0.905,
   "codes_found": [
    "ACCT210",
    "ACCT220",
    "ACCT240",
+   "ACCT99",
    "BUS124",
    "BUS126",
    "BUS132",
@@ -1411,7 +1491,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -1423,10 +1505,11 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.714,
+  "coverage": 0.786,
   "codes_found": [
    "ACCT210",
    "ACCT240",
+   "ACCT99",
    "BUS105",
    "BUS108",
    "BUS169",
@@ -1444,7 +1527,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1479,7 +1564,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1491,9 +1578,10 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.933,
+  "coverage": 1.0,
   "codes_found": [
    "ACCT210",
+   "ACCT99",
    "BUS105",
    "BUS136",
    "BUS145",
@@ -1516,7 +1604,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1548,7 +1638,9 @@
    "label": {
     "award": 1,
     "title": 0.5,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1579,7 +1671,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1610,7 +1704,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1641,7 +1737,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1673,7 +1771,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1704,7 +1804,9 @@
    "label": {
     "award": 1,
     "title": 0.75,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -1736,7 +1838,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1770,7 +1874,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1799,7 +1905,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1841,7 +1949,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1881,7 +1991,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -1913,7 +2025,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -1950,7 +2064,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -1993,7 +2109,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -2057,7 +2175,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2088,7 +2208,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "building construction technology (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 8,
@@ -2131,7 +2253,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2162,7 +2286,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "electrical technology (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 8,
@@ -2173,54 +2299,24 @@
   "title": "Electrical Trades",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "ELTT101",
-   "ELTT102",
-   "ELTT103",
-   "ELTT104"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8285",
-   "title": "METER TECHNICIAN (CERTIFICATE)",
-   "h1": "METER TECHNICIAN (CERTIFICATE)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 1894
+  "text_chars": 0
  },
  {
   "control_number": "30337",
   "title": "Electrical Trades",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.8,
-  "codes_found": [
-   "ELTT101",
-   "ELTT102",
-   "ELTT103",
-   "ELTT104"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8270/8287",
-   "title": "METER TECHNICIAN (MAJOR - A.S.)",
-   "h1": "METER TECHNICIAN (MAJOR - A.S.)",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.0,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 1884
+  "text_chars": 0
  },
  {
   "control_number": "30362",
@@ -2244,7 +2340,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2273,7 +2371,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2316,7 +2416,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2347,7 +2449,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2378,7 +2482,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2409,7 +2515,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2443,7 +2551,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "sociology for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -2473,7 +2583,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "early childhood education for transfer (major - a.s.-t)",
+    "section_fit": 0.6
    }
   },
   "listed": 8,
@@ -2499,7 +2611,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -2532,7 +2646,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "administration of justice for transfer (major - a.s.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -2548,7 +2664,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "31457",
@@ -2574,7 +2694,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "communication studies 2.0 for transfer (major - a.a.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -2610,7 +2732,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "english for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 16,
@@ -2640,7 +2764,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "political science for transfer (major - a.a.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 7,
@@ -2688,7 +2814,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "kinesiology for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 26,
@@ -2741,7 +2869,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "anthropology for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 20,
@@ -2791,7 +2921,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "history for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 34,
@@ -2827,7 +2959,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "studio arts for transfer (major - a.a.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 17,
@@ -2861,7 +2995,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "psychology for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -2914,7 +3050,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "music for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 30,
@@ -2954,7 +3092,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "spanish for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 21,
@@ -2998,7 +3138,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "elementary teacher education (major - a.a.-t)",
+    "section_fit": 0.75
    }
   },
   "listed": 27,
@@ -3030,7 +3172,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "agriculture business for transfer (major - a.s.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -3071,7 +3215,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "biology for transfer (major - a.s.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -3101,7 +3247,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "computer science for transfer (major - a.s.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 9,
@@ -3135,7 +3283,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "agriculture plant science for transfer (major - a.s.-t)",
+    "section_fit": 0.6
    }
   },
   "listed": 11,
@@ -3167,7 +3317,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "geography for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 9,
@@ -3206,7 +3358,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": "noncredit",
+    "section_line": "academic preparedness in english (noncredit certificate of competency)",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -3235,7 +3389,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "chemistry for transfer (major - a.s.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 8,
@@ -3246,38 +3402,12 @@
   "title": "Public Health Science",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.833,
-  "codes_found": [
-   "ANTH102",
-   "BIOL100",
-   "BIOL200",
-   "BIOL202",
-   "BIOL204",
-   "BIOL206",
-   "BIOL220",
-   "CHEM100",
-   "CHEM200",
-   "ECON101",
-   "ECON102",
-   "PSY146",
-   "PSYCC1000",
-   "SOC101",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
-   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 18,
-  "text_chars": 11325
+  "text_chars": 0
  },
  {
   "control_number": "36755",
@@ -3299,7 +3429,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "administration of justice: law enforcement (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 3,
@@ -3325,7 +3457,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3358,7 +3492,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "economics for transfer (major - a.a.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 13,
@@ -3385,7 +3521,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "physics for transfer 2.0 (major - a.s.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 6,
@@ -3416,7 +3554,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "art history for transfer (major - a.a.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -3453,7 +3593,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "computer information technology (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 15,
@@ -3486,7 +3628,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3516,7 +3660,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3547,7 +3693,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3585,7 +3733,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3618,7 +3768,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "aa"
+    "section": "aa",
+    "section_line": "american sign language (major - a.a.)",
+    "section_fit": 0.75
    }
   },
   "listed": 10,
@@ -3629,40 +3781,12 @@
   "title": "Chicana/o Studies",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 0.895,
-  "codes_found": [
-   "AIS106",
-   "AIS108",
-   "CHIC100",
-   "CHIC110",
-   "CHIC180",
-   "COMM150",
-   "ENGL257",
-   "GEOG140",
-   "HIST130",
-   "HIST131",
-   "HIST222",
-   "HIST225",
-   "SOC150",
-   "SOC180",
-   "SPAN200",
-   "SPAN220",
-   "SPAN225"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8580/8350",
-   "title": "UNIVERSITY STUDIES (MAJOR - A.A.)",
-   "h1": "UNIVERSITY STUDIES (MAJOR - A.A.)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.5,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 19,
-  "text_chars": 10968
+  "text_chars": 0
  },
  {
   "control_number": "40053",
@@ -3702,7 +3826,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "global studies for transfer (major - a.a.-t.)",
+    "section_fit": 0.5
    }
   },
   "listed": 23,
@@ -3713,35 +3839,12 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.857,
-  "codes_found": [
-   "BIOL200",
-   "BIOL202",
-   "BIOL204",
-   "BIOL206",
-   "BIOL220",
-   "CHEM200",
-   "CHEM202",
-   "CHEM204",
-   "PSY214",
-   "PSYCC1000",
-   "SOC101",
-   "STATC1000"
-  ],
-  "source": {
-   "url": "https://imperial.curriqunet.com/catalog/iq/8518/8606/8639",
-   "title": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "h1": "CALIFORNIA GENERAL EDUCATION TRANSFER CURRICULUM (CALGETC) (CERTIFICATE)",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 0.0,
-    "section": null
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 11325
+  "text_chars": 0
  },
  {
   "control_number": "41064",
@@ -3777,7 +3880,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "pre-engineering (major - a.s.)",
+    "section_fit": 0.667
    }
   },
   "listed": 19,
@@ -3802,7 +3907,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": "noncredit",
+    "section_line": "fundamentals of english ii (noncredit certificate of competency)",
+    "section_fit": 0.75
    }
   },
   "listed": 2,
@@ -3826,7 +3933,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": "noncredit",
+    "section_line": "fundamentals of english iii (noncredit certificate of competency)",
+    "section_fit": 0.75
    }
   },
   "listed": 1,
@@ -3855,7 +3964,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3886,7 +3997,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -3916,7 +4029,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -3948,7 +4063,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "business administration 2.0 for transfer (major - a.s.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 11,
@@ -3975,7 +4092,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4014,7 +4133,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "pre-nursing and allied health (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 18,
@@ -4044,7 +4165,9 @@
    "label": {
     "award": 1,
     "title": 0.667,
-    "section": "as"
+    "section": "as",
+    "section_line": "agriculture service technology (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 7,
@@ -4074,7 +4197,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -4108,7 +4233,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "cybersecurity (major - a.s.)",
+    "section_fit": 0.5
    }
   },
   "listed": 12,
@@ -4135,7 +4262,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "geology for transfer (major - a.s.-t)",
+    "section_fit": 0.333
    }
   },
   "listed": 6,
@@ -4160,7 +4289,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": "noncredit",
+    "section_line": "computer fundamentals for esl students (noncredit certificate of completion)",
+    "section_fit": 0.8
    }
   },
   "listed": 2,
@@ -4190,7 +4321,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "adt"
+    "section": "adt",
+    "section_line": "communication studies 2.0 for transfer (major - a.a.-t)",
+    "section_fit": 0.5
    }
   },
   "listed": 10,
@@ -4221,7 +4354,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -4259,7 +4394,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "kinesiology: pre-athletic training (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 16,
@@ -4298,7 +4435,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "kinesiology: pre-physical therapy (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 17,
@@ -4330,7 +4469,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4363,7 +4504,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -4399,7 +4542,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "public health science (major - a.s.)",
+    "section_fit": 0.75
    }
   },
   "listed": 16,
@@ -4415,7 +4560,11 @@
   "codes_found": [],
   "source": null,
   "listed": 0,
-  "text_chars": 0
+  "text_chars": 0,
+  "catalog_lookup": {
+   "result": "not_searched",
+   "why": "the matcher found 57 of 123 closed-list programs on their own page, 0 on another program's and 0 off their own page (floor 80% of at least 10, none false)"
+  }
  },
  {
   "control_number": "45112",
@@ -4441,7 +4590,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -4472,11 +4623,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 2559
+  "text_chars": 2563
  },
  {
   "control_number": "45114",
@@ -4484,8 +4637,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
+   "ACCT99",
    "BUS124",
    "CIS101",
    "COMMC1000",
@@ -4501,11 +4655,13 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 2233
+  "text_chars": 2237
  },
  {
   "control_number": "45115",
@@ -4529,7 +4685,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4560,7 +4718,9 @@
    "label": {
     "award": 1,
     "title": 0.857,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -4595,7 +4755,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": "as"
+    "section": "as",
+    "section_line": "industrial automation systems technology (major - a.s.)",
+    "section_fit": 0.8
    }
   },
   "listed": 12,
@@ -4629,7 +4791,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
