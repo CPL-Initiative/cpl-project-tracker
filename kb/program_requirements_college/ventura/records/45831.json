@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 9292,
-    "output_tokens": 4301,
+    "output_tokens": 4351,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,40 @@
     "model": null
    }
   ],
-  "output_tokens": 4301,
+  "output_tokens": 4351,
   "output_tokens_details": {
-   "thinking_tokens": 1661
+   "thinking_tokens": 1869
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12319,
- "ms": 36928,
- "seconds": 37.9,
+ "cost_usd": 0.12419,
+ "ms": 35680,
+ "seconds": 36.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 34,
+   "placed": 33,
    "listed": 34,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.971,
+   "missing": [
+    "ARTV1"
+   ],
    "unexplained": [],
    "none_placed": false,
-   "course_id": [
-    {
-     "printed": "ARTHV1",
-     "listed": "ARTV1",
-     "matched_by": "course_id"
-    }
-   ],
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "ARTHV1"
+   ],
+   "flagged": [
+    "ARTHV1"
+   ],
    "pass": true
   },
   "arithmetic": {
@@ -72,7 +71,7 @@
    "status": "equal",
    "computed": [
     33.0,
-    34.0
+    35.0
    ],
    "stated": [
     33.0,
@@ -80,13 +79,12 @@
    ],
    "against": "program",
    "why": [],
-   "short_high": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      70.0,
-     89.0
+     90.0
     ],
     "stated": [
      60.0,
@@ -100,6 +98,8 @@
     "why": [],
     "overlap": true
    },
+   "short_high": true,
+   "rescored": "Sam's ruling of 2026-11-17, short high end",
    "note": "a required list adds up short of its own printed figure ('Required Core Courses'): the list looks short, and a course line may be missing",
    "lists_short": [
     "Required Core Courses"
@@ -131,7 +131,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS",
+   "section_heading": "Elementary Teacher Education: Integrated Programs, A.A-T (REQUIREMENTS tab)",
    "measure": "units",
    "total_units": {
     "min": 33,
@@ -166,20 +166,20 @@
     "minimum": null,
     "option_group": "Biology",
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "BIOL C1001",
-      "units": 3,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL C1001L",
-      "units": 1,
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -278,7 +278,7 @@
     ]
    },
    {
-    "name": "List A: Select one course from the following:",
+    "name": "List A: Select one course from the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -304,7 +304,7 @@
     ]
    },
    {
-    "name": "List B: Select one course from the following:",
+    "name": "List B: Select one course from the following",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -344,7 +344,7 @@
     ]
    },
    {
-    "name": "List C: Select up to 12 units from the following (optional):",
+    "name": "List C: Select up to 12 units from the following (optional)",
     "rule": "choose_units",
     "minimum": 0,
     "option_group": null,
@@ -472,21 +472,18 @@
   "missing_explained": [
    {
     "code": "ART V01",
-    "why": "not in the text; catalog prints ARTH V01 Art Appreciation in List B instead (likely the same course under a new subject code)"
+    "why": "catalog prints ARTH V01 Art Appreciation in List B instead; recorded as catalog addition"
    }
   ],
   "notes": [
-   "The page prints no program heading in the extracted text; section_heading uses the REQUIREMENTS tab name. The page covers only the A.A.-T.",
-   "The core's biology requirement prints 'BIOL C1001 & C1001L ... 4 or BIOL V04'. Because BIOL V04 replaces the lecture and lab pair together, it is recorded as two blocks in option_group 'Biology' (pair, or BIOL V04). The printed 4 units sit beside the pair. Units beside BIOL C1001 (3) and C1001L (1) come from the split, and BIOL V04 has no printed units. The core stated total of 26-27 includes biology but is recorded on the remaining core block.",
-   "ENGL C1003 prints 3-4 for the group with ENGL V18 or HIST V76 as alternatives; the alternatives' own units are not printed.",
-   "Catalog prints CDEV C1000; the closed list stores it as 'CDEVC1000' (no space). Treated as the same course, not a catalog addition.",
-   "List C is optional ('Select up to 12 units'), so minimum is recorded as 0 and stated is null; maximum 12 units. It also allows 'Any course unused from List A or List B'.",
-   "'Required Additional Units 7-19' spans Lists A, B and C together and is not attached to a single block.",
-   "Degree summary: Required Major Units 33-46, CalGETC 34, Double-Counted Units (22-28), Elective Units 3-21, Total 60. The elective units are recorded as degree_elective_units.",
-   "Plan of Study totals 61 units, which differs from the 60-unit degree total; it is illustrative only.",
-   "Program learning outcomes are printed for the program page as a whole; this award is the page's only award, so they are recorded here."
+   "The page prints no section heading in the extracted text; heading recorded from the program title and award.",
+   "The core row 'BIOL C1001 & C1001L ... 4 or BIOL V04' is recorded as two option_group 'Biology' blocks inside the core (the pair, or BIOL V04); the printed 4 units belong to the pair and were placed on BIOL C1001; no units are printed beside BIOL V04 alone. These count toward Required Core Units 26-27.",
+   "ENGL C1003 printed 3-4 with alternatives ENGL V18 and HIST V76 (no units printed beside the alternatives).",
+   "List C is optional ('Select up to 12 units'); recorded as choose_units with minimum 0. It also allows 'Any course unused from List A or List B'. Required Additional Units (Lists A-C combined) printed as 7-19.",
+   "Closed list stores CDEVC1000 without a space; catalog prints CDEV C1000, treated as the same course.",
+   "Degree page prints Required Major Units 33-46, CalGETC 34, Double-Counted Units (22-28), Elective Units 3-21, Total 60; elective units recorded in degree_elective_units.",
+   "Outcomes are from the page's program student learning outcomes tab for this program."
   ]
  },
- "extracted_run": "44514835321",
- "catalog_year": "2026-2027"
+ "extracted_run": "39622549965"
 }
