@@ -52,6 +52,15 @@ Your opening message says Sam's routine started you. A session Sam opens by hand
 follows CLAUDE.md as always; this page's first rule (go with the recommendation)
 is his standing preference there too.
 
+## A daytime code session takes the night's number (S683, 2026-11-18)
+
+A code session Sam opens by day, while the newest handoff already names the night's run, takes that next number with a
+*daytime* label (S683 daytime, SkyDipper) and adds a dated section, `## Daytime session, <moniker> (S<N> daytime),
+<date>`, to the end of the newest handoff instead of writing a new numbered one. The file's opening, its moniker and
+its opening line stay the night's; the section carries what shipped, the NEXT lines for the night, what to pick up and
+skip, the standing block, and ends with its own `Spend:` line and counts line. **DECIDED**
+`d-daytime-session-appends-handoff-s683` (the S683 conductor, at Sam's word to leave tonight's name for tonight).
+
 ## At the start
 
 0. **The dashboard run, first, on the night's first firing** (Sam, 2026-10-30, S527: "go on 1"). GitHub
@@ -83,7 +92,10 @@ is his standing preference there too.
    handoff. On 2026-10-17 the 05:12Z and 06:12Z firings both lacked it, both ran
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
-   the last half hour is a live session: end in one line.
+   the last half hour is a live session: end in one line. (S681, 2026-11-18: the 10:12Z firing found S680's own
+   checkpoint #3487 at its last step, read handoff 681 from the PR's head with `get_file_contents` at
+   `refs/pull/3487/head`, and took the queue when it merged two minutes later. A session Sam runs by hand may checkpoint
+   and keep working, so the rule stays as written until Sam or COBIx rules on a routine firing's checkpoint.)
    **Except a declared side session** (Sam, 2026-11-05, S583: *"go"*): when that PR's body declares a scope
    (*Library side session (<moniker>): <files> and <tables>*), the firing proceeds, stays off every file, table and
    routine step the scope names (a Library scope takes step 6 with it), and says so in its handoff. A PR with no
@@ -342,8 +354,10 @@ is his standing preference there too.
    - **First, what is in flight.** Read the open `claude/slo-<slug>` PRs and their runs (`actions_list`
      `list_workflow_runs` on the three workflows, by branch). On each branch, after a pull of what the runner committed
      back, run `python3 scripts/next_slo_colleges.py --all` and act on the college's state.
-     **load** (every slice filed complete): write `kb/course_outcomes/.load` as printed (`host=<folder>`; an objectives
-     reread adds `kind=objective`) and push.
+     **load** (every slice filed complete): first run `python3 tests/course_outcomes_objectives_standing_test.py` on
+     the branch, and push no `.load` while a check fails for that college (S681: Chabot's load posted 1,013 objectives
+     as SLOs past red checks 8 and 9, then was rolled back). Then write `kb/course_outcomes/.load` as printed
+     (`host=<folder>`; an objectives reread adds `kind=objective`) and push.
      The load inserts only blocks the table lacks, in about two minutes, and commits
      `kb/receipts/course_outcomes_<host>_<run>.json`: every inserted id and the delete that rolls them back (Rule 10).
      Merge on a passing `test` once the receipt is on the branch. **reading**: a slice is running or failed; one that
@@ -394,6 +408,11 @@ is his standing preference there too.
    one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).
    **A refused read, here or at step 11, follows [`blocked_sources`](blocked_sources.md) before it becomes a card:** the
    college's other hosts, the publisher's copy, an archive copy, then a comment that mentions `cobi-cto` (Sam, 2026-11-10).
+   **The unblocker step, before a document goes on Sam's hand-fetch list** (Sam, 2026-11-18 about 10:43 AM PT, relayed
+   by COBIx on #3510, comment 6988133754): try the college's other public routes first: its HTML catalog index pages,
+   and a plain browser-like page read when the curl reader is blocked (Southwestern and NOCE first). Mark a college read
+   that way *Sky can read 2026-27 HTML* in the harvest lane. Never script around a WAF or a bot check, and never ignore
+   robots.txt; what is still refused after this step follows the order above.
 
 **The handoff's open work is built from the lanes, not copied from the last handoff** (S583, 2026-11-05). Each lane a
 session worked in the past week that still carries a NEXT goes on the list, or the handoff says by slug why it waits.

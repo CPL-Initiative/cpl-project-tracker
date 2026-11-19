@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 679,
-  "moniker": "SkyKinglet",
+  "session": 683,
+  "moniker": "SkyDipper",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_680_handoff.md",
+  "handoff": "docs/session_683_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -67,13 +67,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-18T03:30:05Z",
+  "written_at": "2026-11-18T23:47:13Z",
   "project": "exhibit",
   "next_step": {
-    "title": "One combine guard for the whole tab, then the re-point",
-    "text": "Merge the shared combine guard for the Common Exhibit Reference tab's five writers once its fixes and a second read land. Then rebuild the re-point list on the renamed titles, run the MAP snapshot, and run the reviewed re-point of exhibits by MAP exhibit id."
+    "title": "Carry out the two blocker rules",
+    "text": "The two rules Sam approved re-point 95 local titles to 76 matching certifications and keep 75 titles that have left MAP. Tonight's run rebuilds the list if its inputs moved, checks it against a fresh copy of MAP, then applies it with its undo kept."
   },
   "changes": [
+    {
+      "at": "2026-11-18T23:44:00Z",
+      "text": "Opened for review: a Same subject list under each Exhibits Review card's related titles, on Sam's ask of Nov 18 (PR 3528)."
+    },
+    {
+      "at": "2026-11-18T21:33:45Z",
+      "text": "Blocker rules 1 and 2 merged at Sam's go (PR 3515): rule 1 re-points 95 of 121 local titles to 76 matching certifications, rule 2 keeps 75 of 95 titles that have left MAP, and Sam's pile goes from 397 to 216 once they are applied. Nothing is applied yet."
+    },
+    {
+      "at": "2026-11-18T18:37:37Z",
+      "text": "The nightly exhibit run now rebuilds the side by side views it changes, and holds the review list back when that rebuild fails (PR 3520)."
+    },
     {
       "at": "2026-11-18T03:09:00Z",
       "text": "A slash joining words in a title is now written and, on Sam's rule of Nov 18 (PR 3479; rename run 44227947795): 80 titles, 95 local titles and 103 articulations renamed, with the undo kept. Code and official-name slashes stay, and eight titles that join two whole names are held for Sam."

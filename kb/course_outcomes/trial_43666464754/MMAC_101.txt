@@ -1,0 +1,229 @@
+Course Outline
+MMAC 101 - Introduction to Multimedia
+Discipline Placement: Broadcasting Technology or Graphic Arts or Multimedia or Media Production
+Department
+Fine Arts
+Prefix MMAC
+Course Number 101
+Full (Catalog) Course Title Introduction to Multimedia
+Banner Course Title Introduction to Multimedia
+Units and Hours
+	Hours per Week	Total Hours per Term
+(Based on 16-18 Weeks)	Total Units
+Lecture	2.0	32.0 - 36.0	 
+Lab	4.0	64.0 - 72.0	 
+Outside-of-Class Hours	4.0	64.0 - 72.0	 
+Total Student Learning Hours	10.0	160.0 - 180.0	3.0
+ 	 	 	 
+Total Contact Hours	6.0	96.0 - 108.0	 
+Number of Times Course may be Repeated
+Grading Method Letter Grade or Pass/No Pass
+
+Prerequisites, Corequisites, and Advisories
+
+Any course requiring another course as a requisite must demonstrate the need through one of several methods.
+Validation, when required, at a minimum must include cont ent review.
+For pre- and co requisites, the course outline must document entry skills without which student success is highly unlikely.
+For advisories, the course outline must document entry skills which are either necessary but are likely to be obtained by other means or, while not necessary, would broaden or enhance student learning but are not fundamental to student success.
+Be aware that requisites may have implications for articulated courses.
+
+New communication or computational requisites must complete content review with statistical analysis. Requisite may be approved while data is gathered.
+
+Enter one Requisite at a time. In order to submit this proposal you must attach your Content Review Form on the Attached Files.
+
+Requisites
+Prerequisite: None
+Corequisite: None
+Limitations on Enrollment: None
+Advisories: None
+If you have any issues with this page Consider the following:
+If the Requisite Course dropdown is not populated then make sure that requisites courses have been added to the Requisites tab.
+If there are no Current Course Objectives listed make sure that objectives have been entered on the Objectives tab.
+If there are no Requisite Course Objectives listed make sure that:
+A Requisite Course has been selected at the top of the page.
+The Requisite Course that has been selected has objectives entered on its Objectives tab.
+Entrance Skills
+Entrance Skills Other (Legacy)
+
+Basic computer skills: word processing, internet research, email, and Canvas knowledge are recommended.
+
+Catalog Description
+
+The course explores how multimedia transforms experiences of creative expression and communication and impacts our cultural, business, and personal lives. Topics include project planning, development, and exploration through multiple projects. Projects include art for interaction, web imagery, animation, motion graphics, UI/UX, gaming, visual effects, video production, and transmedia storytelling. Course software: Adobe Creative Suite and other relevant software.
+
+Indicate all major topics to be covered.
+
+Course Content
+Lecture Content
+
+Introduction to multimedia design and processes - discussion and evaluation of diverse media projects and processes.
+
+The Multimedia Team - basics of interactive and time-based media project design and collaboration. Defining the scope of the project and story-telling. Operating systems (such as Apple, Windows) and authoring tools (such as Adobe Creative Suite and other relevant software).
+
+Multimedia Tools - an introduction to the software used to create or modify video, photos, interactive graphics, sound, music, and animation. 
+
+Media design project planning and development process - defining scope of project and target audience; research and development of concepts, flowcharts and storyboards; testing, review and editing cycles, deliverable/s process, requirements, formats and deadlines;
+
+Image and sound asset acquisition, creation and editing - software used; copyright law;
+
+Professional skills and critical analysis - developing skills, professional practices specific to communication, collaboration, project analysis; time management and accountability.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+Lab Content
+Research, view, and discuss multimedia projects to implement interactive and time-based concepts.
+Project planning, storyboarding, flow-charting and critical analysis.
+Hands-on exploration of digital media software with in-class activities, tutorials and creative projects. Students create or modify video, photos, interactive graphics, sound, and animations. (Adobe Creative Suite and other relevant media design software.)
+Development of best practices - importing media assets, design principles and layout considerations, principles of interaction.
+Technical issues - bit-depth and resolution, sampling rates, bitmap versus vector, bandwidth, file size, frame rates, aspect ratios.
+Testing and revising media projects - troubleshooting, and debugging.
+Professional skills and critical analysis - developing skills, professional practices specific to communication, collaboration, project analysis; time management and accountability.
+Publishing completed projects to required specifications in the appropriate digital medium.
+Course Objectives should reflect Bloom's Taxonomy.
+
+Blooms Taxonomy
+
+
+Course Objectives
+
+analyze culturally diverse multimedia works, both western and non-western, in relation to their context of origin and intended audience, and in terms of the design strategies, technology and aesthetics employed.
+
+distinguish appropriate techniques for the creation and use of vector, raster, sound, and time-based imagery.
+
+develop a project proposal, concept, design strategy and basic technology skills needed in response to a specific communication goal.
+
+collaborate with others to design and develop a media project that communicates effectively to a specific audience: identify project goals, technology skills needed; roles and responsibilities, deadlines and deliverables.
+
+test, troubleshoot, and edit a multimedia project as needed to successfully publish the project in the appropriate format.
+
+Methods of Instruction
+Demonstration
+Detail
+
+Various techniques of using media creation and editing software is demonstrated to maximize creative output and understanding of concepts.
+
+Discussion
+Detail
+
+Works are discussed/analyzed during class critiques for aesthetic merit.
+
+Lab
+Detail
+
+Tutorials, concept development, and research-based practice are implemented to help familiarize students with specific applications and best-practices in the industry.
+
+Lecture
+Detail
+
+Lectures are given to introduce and reinforce concepts, culture and describe the various technologies, including hardware and software. Various videos are presented to expand upon themes developed during lectures and demonstrations.
+
+Assignment examples, if provided, should reflect coverage of all objectives and course content. Assignments can include supplemental reading materials beyond the required texts. The initiator should give the basis for grading, and relate assignments to skills and abilities listed in the objectives.
+
+Assignments
+Outside Assignments
+Assignment Text
+
+1. Oral presentation, discussion topic or written report, such as analysis of culturally diverse interactive media works.
+
+Assignment Text
+
+Project development: Creation of a media project through research, development and organization of content; development of a design strategy and skills needed, producing final media/creating a prototype.
+
+Assignment Text
+
+Analysis and discussion of their work as well as the work of others during class critiques.
+
+Assignment Text
+
+Reading assignments and viewing related videos will be assigned as needed to support course content.
+
+Student grades will be based on multiple measures of student performance. Instructors will develop appropriate classroom evaluation methods and procedures for calculating student grades, including the final semester grade. The following list displays typical evaluation methods appropriate for this course. The actual evaluation methods used in a particular classroom and section will be listed in the instructor's syllabus.
+
+Methods of Evaluation
+Quizzes
+Oral Presentation
+Projects
+Group Projects
+Class Participation
+Class Work
+Lab Activities
+Class Performance
+   Instructor evaluation of oral presentations, discussions and written work.
+
+Instructor evaluation of assigned media projects, learning activities and exercises, and independent work are graded based upon creative growth as well as technical prowess.
+
+Students are evaluated on their participation in class discussions, critiques, their ability to analyze the work of classmates as well as their own, and their engagement in collaborative projects.
+
+Main texts should be dated within five years. Textbooks and supplemental material should relate directly to the content of the course outline. All textbooks should be at the appropriate college reading level.
+
+Texts and Other Instructional Materials
+Representative Text(s)
+Text Type
+Author Jamie Steane, Joyce Yee
+Title Interaction Design: From Concept to Completion
+Edition
+Year 2018
+Rationale
+Breadth of topic examples, currency
+Text Other
+Other Materials
+Text Type
+Description
+External hard drive and headphones recommended
+Text Type
+Description
+Up to date information and tutorials from sources such as: Industry online forums and creative communities, Industry Journals and Software tech support websites
+Text Type
+Description
+Relevant online and current open education resources (OER.)
+Student Learning Outcomes
+
+MMAC101 SLO1 - Incorporate a multicultural perspective and/or aesthetic into media analysis and project creation where appropriate.
+
+MMAC101 SLO2 - Develop media design aesthetics through critical analysis, practice-based research and communication skills.
+
+MMAC101 SLO2 - Develop creative strategies and skills to plan, design and build a variety of digital media projects based on the project criteria and defined target audience.
+
+MMAC 101 SLO 4 - Demonstrate skills required to effectively create, manage, and archive digital image, audio and video files for a reel or digital portfolio.
+
+Distance Education
+Course Distance Learning
+This is a new proposal for Distance Learning or an existing course that has been substantively changed and its approval as Distance Learning should be revisited. The faculty member completing this form will be teaching the course in the Distance Learning modality and has met with the Distant Learning Coordinator.
+This course has already been approved by the Curriculum Committee as Distance Learning. No substantive changes have been made to the course outline that would affect the Distance Learning modality (i.e. units, hours, objectives, content, assignments, evaluation modalities).
+Distance Learning Approval Status (please look above for the complete option)
+2. This course has already been approved by the Curriculum Committee as Distance Learning...
+Review Dates
+Academic Senate
+03/28/2023
+Board of Trustees
+04/18/2023
+CC Approval
+02/09/2023
+DL Conversion
+06/08/2021
+ERT
+11/19/2020
+Last Outline Revision
+02/13/2023
+PCA Established
+12/14/2004
+Publish Date
+04/08/2019
+State Approval
+01/06/2012
+Technical Review
+10/28/2022

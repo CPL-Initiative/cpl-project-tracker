@@ -185,6 +185,43 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A tool trial (a repo, a library, a service) gets one line in [`reference/stack_scouting`](stack_scouting.md): candidate,
   measured cost, result, kept or dropped. COBIx scans every other Monday (#3306).
 
+## What went wrong in S681, and what worked
+
+The CPL Queue routine's 10:12Z firing of 2026-11-18 (SkyGrebe), collection only, the second firing of S680's night: no
+`list_sessions`, `get_trigger`, `set_session_tags` or `get_session`. It found S680's checkpoint #3487 open, read handoff
+681 from the pull request's head, took the queue when #3487 merged at 10:14Z and declared with draft #3506 at about
+10:20Z, the college split in it before any worker started.
+
+- **The stop rule fired** (the brief on #3358: *"Stop if a rollback undoes over 1% of a day's rows"*). Chabot's load
+  posted 1,013 rows that were its objectives filed as SLOs (17.7% of the UTC day's 5,735 outline rows). At 11:06Z the
+  conductor started no new read, load or apply; reviews finished on their branches; the rollback went ahead
+  (`kb/migrations/2026-11-18_s681_course_outcomes_chabot_rollback.sql`, guarded to exactly 1,013 rows, migrate run
+  44292682081); Sam was told at about 11:20Z with the default (`d-stop-rule-fired-s681`).
+- **A load ran without the test that would have stopped it.** The objectives standing test's checks 8 and 9 were red on
+  the read's branch; a runner's commit gets no CI, and step 11 pushed `.load` when the slices filed complete. Run the
+  test on the branch before `.load` ([`scheduled_sessions`](scheduled_sessions.md) step 11); the workflow guard is a
+  plain session's.
+- **A self-check that scores a total cannot see what a rule writes per course.** A4 was 74 of 74 on totals while it
+  wrote wrong per-course units (KB note `methodology-a-self-check-must-see-what-the-rule-writes`).
+- **Second readers earned their cost three times:** A4's per-course units before the write; 33 of #3502's 54 records
+  whose label the records do not support; the independent confirmation of Chabot's mislabel and of the exact rollback.
+- **A lane split that names a college for a run not yet started** blocked a corrective write until amended at 10:51Z.
+  Name a college in the lane only while a run is in flight there (`d-lane-names-only-colleges-in-flight-s681`).
+- **Runner saturation again:** about a dozen pushes in 45 minutes queued the rollback's migrate run for 11 minutes
+  behind CI (`p-superseded-ci-holds-the-migrate-queue-s681`). Cancelling CI on branches the wave carries helped. Batch a
+  worker's pushes, and expect a migrate run to queue behind CI.
+- **One wave again** (#3509: five branches, one merge of `main`, one CI); a carried branch that turns out wrong leaves
+  by `git revert -m 1` of its merge (Chabot, `bf9703bb`), since the wave lands as a squash.
+- **Reading S680's handoff from its open checkpoint pull request** (`get_file_contents` at `refs/pull/3487/head`) let
+  the firing start the minute that checkpoint merged. The rule stays end in one line: a session Sam runs by hand may
+  checkpoint and keep working, and whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to
+  rule (`q-wait-for-a-routine-firings-checkpoint-s681`).
+- **`cd` into a worktree moved the conductor's working directory again.** `git -C` only.
+- **Worker worktrees under `.claude/worktrees/` are about 2.3 GB each;** six took the disk from 27 GB free to 13 GB.
+  Remove a finished worker's worktree once its head is pushed.
+- **Workers reached 290,000 to 330,000 tokens on a two-round task;** resuming each with one fix list worked better than
+  handing over.
+
 ## What went wrong in S680, and what worked
 
 The CPL Queue routine's 06:12Z firing of 2026-11-18 (SkyPhoebe), collection only: no `list_sessions`, `get_trigger`,
@@ -311,9 +348,10 @@ started.
 
 - A PR that conflicts with `main` starts no `pull_request` run: `get_check_runs` reads 0 and the state is `dirty`. Merge
   `main` into it first (`p-dirty-pr-starts-no-ci-s653b`).
-- Every PR that adds a test or a workflow rebuilds the dependency map, so each merge put the other open PRs in conflict:
-  five PRs cost four extra merges of `main`. Merge in sequence and bring only the next one up to `main`
-  (`p-dependency-map-conflicts-serial-merges-s653b`).
+- Every PR that adds a test or a workflow rebuilt the dependency map, so each merge put the other open PRs in conflict:
+  five PRs cost four extra merges of `main` (`p-dependency-map-conflicts-serial-merges-s653b`). Since Sam's rule of
+  2026-11-18 a PR no longer commits the map: `dependency-map.yml` rebuilds it on `main` after each merge
+  ([`sam_rulings`](sam_rulings.md)).
 - `list_events` on a busy session returned about 40,000 tokens of subagent events and thinking signatures. Ask for few
   events, or read the saved file by script (`p-list-events-floods-context-s653b`).
 - Worked: one `send_message` before any write settled the split with the older session in a minute

@@ -1,5 +1,5 @@
 {
-  "_source": "docs/reference/design-principles.md, 'Checks before you ship' -> Plain words; issue #3107 (Sam, 2026-11-11). Starter list as written there; no check reads this file yet.",
+  "_source": "docs/reference/design-principles.md, 'Checks before you ship' -> Plain words; issue #3107 (Sam, 2026-11-11). Starter list as written there; tests/cdc_plain_words.test.js reads avoid_words.",
   "avoid_labels": [
     "This visit",
     "Action center",
@@ -16,5 +16,51 @@
   "avoid_kinds": [
     "any acronym that isn't spelled out",
     "role names the users don't hold"
+  ],
+  "avoid_words": [
+    {
+      "pattern": "\\blive read\\b",
+      "why": "an insider name for the nightly database count; say 'database count'"
+    },
+    {
+      "pattern": "\\bbilling\\b",
+      "why": "say what the figure is: the account totals for AI time"
+    },
+    {
+      "pattern": "\\bbasis live\\b|\\bkey overall\\b",
+      "why": "a field name from the builder, never a word on the page"
+    },
+    {
+      "pattern": "(^|[\\s(])#\\d{3,5}\\b",
+      "why": "an issue number means nothing to a reader; say what it is"
+    },
+    {
+      "pattern": "\\b\\d{1,2}:\\d{2}Z\\b|\\bUTC\\b",
+      "why": "a time is shown in Pacific time, in words"
+    },
+    {
+      "pattern": "\\b20\\d\\d-\\d\\d-\\d\\d\\b",
+      "why": "a date is written in words (Nov 17, 2026)"
+    },
+    {
+      "pattern": "\\bcounted from\\b",
+      "why": "say 'since' with the date in words"
+    },
+    {
+      "pattern": "\\bkb/|\\b[\\w-]+\\.(?:json|py|yml|md|csv)\\b",
+      "why": "a file path is folded under 'For the team', never in the line a reader sees first"
+    },
+    {
+      "pattern": "\\bFable\\b",
+      "why": "a model's name is an insider word"
+    },
+    {
+      "pattern": "\\bheadline\\b",
+      "why": "say which count it is (also a term kb/plain_words.py lists)"
+    },
+    {
+      "pattern": "\\bBuilt \\w{3} \\d",
+      "why": "the page's date says what it is beside the header's Last Updated"
+    }
   ]
 }

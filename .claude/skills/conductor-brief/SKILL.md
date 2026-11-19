@@ -36,7 +36,10 @@ lanes under 20,000 bytes, the lane tests, summaries at most 400 characters.
 2. **What is ruled.** Each ruling with its `cpl_memory` slug and the person's words verbatim, with who and when.
 3. **Design decisions made.** What the conductor already chose, so the worker does not reopen it; name the files it
    may not touch (one writer per file).
-4. **Where to start.** Branch name and base; the files and docs to read first.
+4. **Where to start.** Branch name and base; the files and docs to read first; and the worktree, by its path, that
+   the agent creates off `origin/main` and stays in. Name it even when the definition says `isolation: worktree`:
+   inside a Workflow that isolation was not honored, two workers shared the conductor's checkout, and one checked out
+   an old PR tree over another's commit (S683, `p-workflow-workers-share-main-checkout-s683`).
 5. **Tests that guard the failure mode.** The input that would have caught the mistake, committed as a test.
 6. **The report wanted**, with a word cap: the PR and head sha, the specific numbers or verdict needed.
 7. **What the definition does not know:** the session link for the trailer and footer, any limit lifted in words

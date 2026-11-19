@@ -148,7 +148,7 @@
     rows: null, loading: false, error: null,
     q: "", kind: "all", seen: "all", status: "all", flag: null,
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
-    retireAsk: null, moreOpen: false, briefShown: {}, requestShown: {}, pub: null,
+    retireAsk: null, dupAsk: null, dupOk: null, moreOpen: false, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "list", src: {}, picsFor: {}, pics: { ls: [], cb: [] }, picOpen: null, picEdit: null,
     pick: null, use: null, rem: null, autoDraft: true,
@@ -341,6 +341,36 @@
   function collegeSlug(name) {
     return String(name || "").toLowerCase().replace(/\s+college$/, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 60) || "college";
   }
+  // The duplicate check on a new piece (COBIx relaying Sam, 2026-11-18): a piece already in the Library is a
+  // duplicate only when its working title and its occasion both match; the same college alone is not one.
+  function normOccasion(o) { return String(o || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim(); }
+  function isPairTitle(title, college) {
+    var t = normTitle(title);
+    return !!t && (t === normTitle(college + ": CPL Opportunity Analysis") || t === normTitle(college + ": CPL Opportunity Analysis (workbook)"));
+  }
+  function duplicateOf(title, occasion) {
+    var t = normTitle(title), o = normOccasion(occasion);
+    if (!t) return null;
+    var hits = (state.rows || []).filter(function (r) { return !r.retired_at && normTitle(r.title) === t && normOccasion(r.occasion) === o; });
+    return hits[0] || null;
+  }
+  // A duplicate is a warning with three ways on, never a refusal: open the piece, add this as a new version of it,
+  // or start a separate piece anyway, which takes its own slug.
+  function askDuplicate(r) {
+    state.busy = false; state.dupOk = null;
+    state.dupAsk = { id: r.id, title: r.title, occasion: r.occasion || "" };
+    say(""); render();
+    var b = document.getElementById("lib-dup-open"); if (b) b.focus();
+  }
+  function dupAskHtml() {
+    var d = state.dupAsk;
+    if (!d || !byId(d.id)) return "";
+    return '<div class="lib-dup" id="lib-dup" role="group" aria-labelledby="lib-dup-h"><p class="lib-line" id="lib-dup-h">' +
+      "<b>" + esc(d.title) + "</b> is already in the Library" + (d.occasion ? ", for " + esc(d.occasion) : "") + ". What would you like to do?</p>" +
+      '<p class="lib-dupacts"><button type="button" class="lib-btn" id="lib-dup-open" data-dupopen="' + esc(d.id) + '">Open ' + esc(d.title) + "</button> " +
+      '<button type="button" class="lib-btn" id="lib-dup-ver" data-dupver="' + esc(d.id) + '">Add this as a new version of it</button> ' +
+      '<button type="button" class="lib-btn" id="lib-dup-go" data-dupgo="1">Start a separate piece anyway</button></p></div>';
+  }
   function byId(id) {
     var rows = state.rows || [];
     for (var i = 0; i < rows.length; i++) if (rows[i].id === id) return rows[i];
@@ -396,6 +426,8 @@
       R + " .lib-line{margin:10px 0 0;color:var(--text-muted);font-size:.9rem;}",
       R + " .lib-msg{margin:10px 0 0;font-weight:600;font-size:.92rem;color:var(--hunter);}",
       R + " .lib-msg.err{color:var(--crimson);}",
+      R + " .lib-dup{margin:10px 0 0;padding:10px 12px;border-left:3px solid var(--seal-blue);}",
+      R + " .lib-dupacts{margin:6px 0 0;display:flex;flex-wrap:wrap;gap:8px 16px;}",
       R + " .lib-form{margin:14px 0 6px;padding:16px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-opaque);}",
       R + " .lib-form p{margin:4px 0 12px;color:var(--text-muted);font-size:.92rem;}",
       R + " .lib-grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}",
@@ -739,7 +771,7 @@
 
   function details(r) {
     var recActs = '<div class="lib-recacts">' + word("data-edittop", r.id, "Edit the record", false, r.title) +
-      word("data-newver", r.id, "File a new version") + word("data-fromit", r.id, "Start something new from it") + "</div>" +
+      (draftsOnCard(r) ? "" : word("data-newver", r.id, "File a new version")) + word("data-fromit", r.id, "Start something new from it") + "</div>" +
       (state.edit === r.id ? editForm(r) : "");
     return recActs + detailsList(r);
   }
@@ -894,7 +926,7 @@
     var acts = r.url
       ? (withOpen ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" : "") +
         word("data-copy", r.id, "Copy link")
-      : word("data-file", r.id, "File it", r.remediation === "remediated");
+      : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
     if (r.url && !r.public_listed) acts += word("data-pubtop", r.id, "List publicly");
     acts += '<button type="button" class="lib-word" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     return acts;
@@ -1113,7 +1145,7 @@
     return !!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0 && !sharePointOnly(r) && !linkOnly && (r.refresh_note || pasted));
   }
   function g0Replace(r) { return !!(r.regen && r.regen.publish === "replace"); }
-  function draftNow(id, byName) {
+  function draftNow(id, byName, lead) {
     var r = byId(id);
     var fresh = isNewPiece(r) && !regenState(r);
     if (!r || (regenState(r) !== "waiting" && !fresh)) return;
@@ -1122,7 +1154,7 @@
     rememberAuthor(by);
     var h = headers({ "Content-Type": "application/json" }), tok = reviewerToken();
     if (tok && !teamPhrase()) h.Authorization = "Bearer " + tok;
-    state.busy = true; sayOn(id, (isNewPiece(r) ? "Claude is drafting " + r.title + " from its brief and documents." : "Claude is drafting the changes to " + r.title + ".") + " This takes about a minute."); render(); focusState(id);
+    state.busy = true; sayOn(id, (lead ? lead + " " : "") + (isNewPiece(r) ? "Claude is drafting " + r.title + " from its brief and documents." : "Claude is drafting the changes to " + r.title + ".") + " This takes about a minute."); render(); focusState(id);
     return window.fetch(REVISE_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ id: id, by: by }) })
       .then(function (res) { return res.json().then(function (j) { return { ok: res.ok, j: j || {} }; }); })
       .then(function (o) {
@@ -1405,6 +1437,9 @@
   // yet--always need some sort of out side intervention"; 2026-11-10: "all the way to posting in the public library").
   // library-revise-draft writes Draft 1 from the brief and the documents in the public library's look; Publish it
   // approves it, and library-publish puts it at library/<slug>/ as Version 1. Then List publicly, as for any piece.
+  // A new piece Claude drafts and publishes on its card needs no File it or File a new version (Sam, 2026-11-18: "The
+  // file it now function does not seem to be necessary"); the In development list keeps File it for a piece a session makes from its copied brief.
+  function draftsOnCard(r) { return isNewPiece(r) && canDraftNew(r); }
   function isNewPiece(r) { return !!r && r.status === "requested" && !r.url; }
   function googleLink(u) { return /^https:\/\/docs\.google\.com\/(document|presentation|spreadsheets)\/d\//.test(String(u || "")); }
   function canDraftNew(r) {
@@ -1418,6 +1453,12 @@
       if (canDraftNew(r)) {
         next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
           '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>");
+        // A draft that came back with no change, or not at all, can always be asked again in other words (Sam,
+        // 2026-11-18: "after the second draft, there was no way to try a new draft by adding more instructions").
+        if (rs === "waiting") {
+          next.push(word("data-change", r.id, "Change what you asked", false, "for " + r.title));
+          if (g.based_on_draft) next.push(openDraftWord({ regen: { draft_id: g.based_on_draft }, title: r.title }, false));
+        }
         why = "Claude drafts the page in the public library's look from the brief and the documents, in about a minute, and checks its accessibility. Nothing is public until you press Publish it.";
       } else why = "Say what it must say (Edit record), or add a document to work from, and Claude drafts it here.";
       // The piece's documents, added on the card itself (Sam's request 71931018 was saved before its PDF was read).
@@ -2459,13 +2500,14 @@
         (pr.public_listed ? "; the public copy stays until you press Replace the public copy" : "") +
         ". A session reads a public link or a file's words read here, and cannot open SharePoint until RCCD approves the Microsoft 365 connector. Never add a student's record."
       : isNew ? "Start saves it in the Library as Requested" + (pu === "background" || pk ? ", with " + (pr ? pr.title : pk.name) + " as a document to work from" : "") +
-        ". Then Draft it now on its card, and Claude drafts it in the public library's look in about a minute; nothing is public until you publish it. A visual made for a college writes its CPL Opportunity page and workbook at once."
+        ". Claude then drafts it on its card in the public library's look, in about a minute; nothing is public until you publish it. A visual made for a college with no working title of its own writes its CPL Opportunity page and workbook at once; one with its own title is a separate piece."
       : "A deck starts on the Chancellor's Office template, with a speaker script in each slide's notes for you to edit; a memo or report starts in the Chancellor's Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.";
     var asks = pu === "details" ? editForm(pr) : pu === "version" ? "" :
       (pr ? pieceDocsHtml() : "") +
       '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="' + esc(hint) + '"></textarea></div>' +
       (pu === "revise" && !storedAuthor() ? '<div class="lib-field"><label for="lc-by">Your name</label><input id="lc-by" type="text" required></div>' : "") +
       (isNew ? newFields() : "") +
+      (isNew ? dupAskHtml() : "") +
       '<div class="lib-panelfoot"><p class="lib-line">' + esc(foot) + "</p>" +
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
@@ -3201,9 +3243,18 @@
     var focus = function (id) { render(); var n = document.getElementById(id); if (n) n.focus(); };
     if (!f.by) { say("Add your name, so the request says who asked for it.", true); focus("ls-by"); return; }
     if (fp) { say(fp, true); render(); return; }
-    if (f.kind === "visual" && madeFor.for_kind === "college") { rememberAuthor(f.by); makePair(madeFor.for_name, f.occasion, f.by); return; }
+    // A college visual is its CPL Opportunity pair only when it carries no working title of its own, or the pair's
+    // own title; a piece with its own title (Foothill's Sheet Metal CPL Opportunities, 2026-11-18) is a separate piece
+    // under its own slug, and never touches the pair. A separate piece asked for over a duplicate takes the same road.
+    var separate = state.dupOk === "go";
+    if (f.kind === "visual" && madeFor.for_kind === "college" && !separate && (!f.title || isPairTitle(f.title, madeFor.for_name))) {
+      rememberAuthor(f.by); makePair(madeFor.for_name, f.occasion, f.by); return;
+    }
     if (!f.title) { say("Add a working title.", true); focus("ls-title"); return; }
     if (!f.say) { say("Say in Instructions what the piece must say.", true); focus("lc-instr"); return; }
+    var dup = separate ? null : duplicateOf(f.title, f.occasion);
+    if (dup) { askDuplicate(dup); return; }
+    state.dupOk = null; state.dupAsk = null;
     var have = (state.src.ls || []).slice();
     (srcs || []).forEach(function (x) { if (!have.some(function (y) { return (x.url && y.url === x.url) || (!x.url && y.title === x.title); })) have.unshift(x); });
     state.src.ls = have.slice(0, SRC_MAX);
@@ -3225,12 +3276,24 @@
       if (id) state.briefShown[id] = true;
       var held = state.pics.ls; state.pics.ls = [];
       if (id && held.length) savePictures(id, held, f.by).then(function (n) { if (n) { sayOn(id, picsWord(n) + " found in the document: Claude places each under the steps it shows."); render(); } });
-      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Press Draft it now on its card and Claude drafts it here in about a minute; Copy the brief still hands it to a session.");
+      say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Claude starts drafting it on its card now; Copy the brief still hands it to a session.");
       // The panel empties for the next piece (render restores typed values, so the fields are cleared first).
       Array.prototype.forEach.call(document.querySelectorAll("[id^='ls-'], #lc-instr, #lc-link"), function (n) { if (n.tagName !== "DETAILS" && n.id !== "ls-by") n.value = n.tagName === "SELECT" ? (n.id === "ls-seen" ? "team" : "") : ""; });
       state.pick = null; state.use = null; state.piece = null; state.pieceUse = null; delete state.forPick.ls; state.src.ls = []; state.moreOpen = false;
-      return load().then(function () { if (id) goToBrief(id); });
+      return load().then(function () { if (id) draftOnStart(id, f.by, note); });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+  // Start drafts at once (Sam, 2026-11-18: "there should be no reason to have to click on the doc in the list and
+  // click draft it now in the side bar, it should just draft it once you click start and open the side bar to show
+  // you the progress and result"). The piece's card opens beside the list, and its state block shows the progress
+  // and then the draft or what stopped it. A piece with nothing to draft from keeps the old road: its brief.
+  function draftOnStart(id, by, note) {
+    var r = byId(id);
+    if (!r || !isNewPiece(r) || !canDraftNew(r)) { goToBrief(id); return; }
+    say("");
+    if (state.view === "list") openInList(id); else state.open[id] = true;
+    render();
+    return draftNow(id, by, "Requested: " + r.title + "." + (note ? " " + note : ""));
   }
   function goToBrief(id) {
     var btn = document.querySelector('[data-brief="' + id + '"]');
@@ -3488,7 +3551,7 @@
     var size = sizeWord(r), fl = cardFlags(r);
     var words = r.url
       ? '<a class="lib-word" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open<span class="lib-vh"> ' + esc(r.title) + "</span></a>" + word("data-copy", r.id, "Copy link")
-      : word("data-file", r.id, "File it", r.remediation === "remediated");
+      : draftsOnCard(r) ? "" : word("data-file", r.id, "File it", r.remediation === "remediated");
     if (r.url && !r.public_listed) words += word("data-pubtop", r.id, "List publicly");
     if (r.status === "requested") words += word("data-brief", r.id, state.briefShown[r.id] ? "Copied. Copy again" : "Copy the brief", true);
     var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) + (r.public_listed ? chip("In the public library") : "") +
@@ -3766,7 +3829,9 @@
     if (!college) { say("Pick the college from MAP's list (start typing its name), so the filter matches the CPL Pathways pick.", true); render(); return; }
     var pair = collegePair(college, occasion, by);
     var have = (state.rows || []).filter(function (r) { return r.slug === pair[0].slug || r.slug === pair[1].slug; });
-    if (have.length) { say(college + "'s pair is already in the Library: " + have.map(function (r) { return r.title; }).join("; ") + ".", true); render(); return; }
+    // The pair's slugs are fixed, so a second pair would overwrite the first: the person chooses instead.
+    if (have.length) { askDuplicate(have.filter(function (r) { return r.slug === pair[0].slug; })[0] || have[0]); return; }
+    state.dupOk = null; state.dupAsk = null;
     write(TABLE_URL, { method: "POST", body: pair[0] }).then(function () {
       return write(TABLE_URL, { method: "POST", body: pair[1] });
     }).then(function () {
@@ -4068,7 +4133,10 @@
       else if ((v = b.getAttribute("data-piccover"))) applyPicEdit(v, "cover");
       else if ((v = b.getAttribute("data-piccrop"))) applyPicEdit(v, "crop");
       else if (b.getAttribute("data-piccancel")) { state.picEdit = null; render(); }
-      else if (b.id === "lib-go") startPanel();
+      else if (b.id === "lib-go") { state.dupAsk = null; state.dupOk = null; startPanel(); }
+      else if ((v = b.getAttribute("data-dupopen"))) { state.dupAsk = null; state.dupOk = null; openCardBox(v); }
+      else if ((v = b.getAttribute("data-dupver"))) { state.dupAsk = null; state.dupOk = null; setPiece(v, "version"); say(""); render(); landOnBox("la-url"); }
+      else if (b.getAttribute("data-dupgo")) { state.dupAsk = null; state.dupOk = "go"; startPanel(); }
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
       else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);

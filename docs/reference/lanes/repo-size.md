@@ -67,17 +67,35 @@ that fails when `main` grew more than 50 MB compressed in 7 days. Tests: `tests/
 - **FACT** `f-display-receipts-hold-no-person-data-s680`: the conductor scanned all 141 committed display receipts and
   found no email address and no person key, so the history rewrite is a size question only (COBIx agreed).
 
+## The first display build through the bucket (S681, 2026-11-18)
+
+- **DONE** (`m-display-build-through-bucket-s681`): #3507 (carried by the wave #3509) built `545de21a6edc` from `main`'s
+  records with `kb/_build_roep_display.py` and committed the page alone. `program-requirements-college.yml`
+  `step=display` run 44286209178 (dispatched on the branch 10:31Z, succeeded 10:42Z) stored
+  `cpl-receipts/display/program_requirement_records_display_2026-11-13_545de21a6edc.sql.gz` (18,109,323 bytes, sha256
+  `fbfa00dd…0e0e`), filed its index entry under `kb/receipts/index/` and committed the applied record
+  `kb/receipts/program_requirement_records_display_2026-11-13_545de21a6edc.applied_44286209178.json` (1.5 MB): 18,209
+  planned, 18,209 written, state confirmed, 0 errors. Live: 18,209 rows on the build; 31 rows outside it keep older
+  builds.
+- The table's prior build was `f0f1ee88c04f` (18,204 keys; 5 null), not `cdd185495ce4`; both receipts are in the bucket
+  index, so the rollback (`step=display force="<receipt name> [<applied record>]"`) is reachable.
+
 ## NEXT, in order
 
-1. Confirm the first `step=display` through the bucket path on `main` (the harvest lane's NEXT (1)).
-2. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his
+1. **Part 5, the history rewrite: Sam's go.** Rule 5's one permitted main-history rewrite needs the cron paused, his
    explicit go and every open session told to re-clone. Waits on him; not on the standing sheet as a card.
-3. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then
+2. The spreadsheet export and the videos out of the tree; the PR that moves them lowers `TOTAL_CAP_MB` (1,500 MB, then
    1,000 after Phase 3).
-4. Cap the timed workflows' commits.
-5. The session trim (Part 3A), with COBIx in a plain session: as written it assumes a session rooted at the repo, while
+3. Cap the timed workflows' commits.
+4. The session trim (Part 3A), with COBIx in a plain session: as written it assumes a session rooted at the repo, while
    ours root at the parent with three repos (the repo's own settings do not load; the environment's setup script
    installs the guards at the root), and a trimmed tree breaks `check_generated.sh` and the tests until the data
    folders are added back.
-6. `START_HERE.md` and the `CLAUDE.md` cut, after COBIx's rulings digest (the guard already warns past 600 and 2,000
+5. `START_HERE.md` and the `CLAUDE.md` cut, after COBIx's rulings digest (the guard already warns past 600 and 2,000
    words).
+6. Worker worktrees under `.claude/worktrees/` take about 2.3 GB each (six took the disk from 27 GB free to 13 GB):
+   remove a finished worker's worktree once its head is pushed (S681).
+7. **#3526 (open, awaiting COBIx; `d-dependency-map-on-main-s683`):** one job on `main`
+   (`dependency-map.yml`) rebuilds `kb/dependency_map.json`, `docs/reference/dependency_map.md` and
+   `cobi_admin_surface.js` after each merge; a PR leaves them as `main` has them (Sam, 2026-11-18, relayed by COBIx on
+   #3358, rule 2). Until it lands, a PR does not run `kb/_build_dependency_map.py`, and CI may flag the map: leave it.

@@ -202,3 +202,47 @@ Full note: [`methodology-a-guard-on-generated-output-cannot-see-its-source`](kb-
 - **The session trim waits.** As written it assumes a session rooted at the repo; ours root at the parent with three
   repos, the repo's own settings do not load there, and a trimmed tree breaks `check_generated.sh` and the tests until
   the data folders come back. It needs COBIx and a plain session.
+
+## 2026-11-18 — S681 (SkyGrebe, the CPL Queue routine's conductor firing): a gate that cannot see the field
+
+- **A load gated on "slices complete" posted 1,013 mislabeled rows.** Chabot's objectives were filed as its SLOs; the
+  objectives standing test was already red on the read's branch, but a runner's commit gets no CI and step 11 pushed
+  `.load` on completeness alone. The test now runs on the branch before `.load` (`scheduled_sessions` step 11); a guard
+  in `course-outcomes-load.yml` is a plain session's. KB note: `methodology-a-self-check-must-see-what-the-rule-writes`.
+- **A self-check on totals cannot see per-course values.** Units rule A4 scored 74 of 74 on totals while writing wrong
+  per-course units; the check that found it compared each member's units with the state course file.
+- **A stop rule needs a number and a default.** The brief's 1% line made the call mechanical: the rollback undid 17.7% of
+  the day's outline rows, so the conductor stopped new writes, finished reviews on branches, rolled back, and told Sam
+  the default (the next night applies the two reviewed plans and reads Chabot again).
+- **Superseded CI holds the migrate queue.** About a dozen pushes in 45 minutes queued the rollback's migrate run for 11
+  minutes. Cancel CI on branches a wave carries, batch a worker's pushes, and expect a migrate run to wait behind CI.
+- **A carried branch leaves a wave by `git revert -m 1` of its merge** (`bf9703bb` took Chabot out of #3509), since the
+  wave lands as one squash.
+- **A live session's handoff reads from its open pull request** (`get_file_contents` at `refs/pull/N/head`). S681 read
+  S680's that way and took the queue when its checkpoint merged two minutes later. The one-session rule stays end in
+  one line; whether a firing may wait for a routine firing's checkpoint is Sam's or COBIx's to rule.
+- **Worker worktrees are heavy.** Under `.claude/worktrees/` each took about 2.3 GB; six took the disk from 27 GB free to
+  13 GB. Remove a finished worker's worktree once its head is pushed. `git -C`, never `cd`, into one.
+
+## 2026-11-18 — S683 daytime (SkyDipper, Sam's code session by day): six merges, three parked, the watcher
+
+- **A Workflow did not honor worker worktree isolation.** Two workers ran in the conductor's checkout; one committed on
+  the session branch and another checked out #3472's old tree over it. A brief now names the worktree path the agent
+  creates off `origin/main` and stays in (`.claude/skills/conductor-brief` item 4;
+  `p-workflow-workers-share-main-checkout-s683`). The checkpoint worker's harness held it to its own worktree and
+  refused a `cd` into the shared checkout: the guard that the Workflow lacked.
+- **A run that changes a view's inputs rebuilds the view.** `cer-procedures.yml` changed what the Side by side views
+  read and left them stale, so `main` went red after run 44350607385 (#3520). The run rebuilds them now, and a failed
+  rebuild holds the review queue back and ends red; tests pick fixtures by rule, never by a fixed title.
+- **Resolve once.** The inactive-card builder read 1,067 where 1,119 belonged because exhibit links were resolved
+  through the alias chain a second time; `kb/coci_articulations.json` is already current-era (#3519). Read a resolved
+  file raw and refuse one without its applied markers.
+- **A generated file every PR rebuilds is a conflict machine.** The dependency map caused most of the day's
+  conflicts; Sam's rule moves its rebuild to one job on `main` (#3526), and a PR leaves it alone.
+- **Watch the reviewer instead of waiting for a relay.** `scripts/cobix_watch.sh` polls two GitHub searches every five
+  minutes from a saved last-seen file; `tests/cobix_watch_test.py` fails any call but `gh api -X GET search/issues`,
+  the one `gh` shape a cloud session may run.
+- **Park a stalled PR as an issue** (PR closed, branch kept: #3522 to #3525) to hold the three-PR cap without losing
+  the work; the issue names the branch and the next step.
+- **A daytime session takes the night's number with a label** and appends a dated section to the newest handoff;
+  `kb/_build_session_spend.py` reads that section's own `Spend:` line as session N daytime.

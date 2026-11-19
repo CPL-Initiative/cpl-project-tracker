@@ -13,12 +13,13 @@
 // degrees naming the pattern and degree total, and carries no statewide step; (2) the quoted words are on the
 // fixture page, and its six area figures add to the 34 it prints; (3) the step, run by the reconcile itself,
 // fills 34 only on a transfer degree that names Cal-GETC, its pattern and its degree total, and leaves a
-// record with a figure, a local degree and a record without a degree total alone; (4) the committed apply plan
-// applies only the ten records that fail on arithmetic alone, holds the two overlap records and 31297 (42300's
-// legacy number, held by the conductor) for restore, and turns no passing record failing; (5) a plan rebuilt by
-// --calgetc-apply from the filed records never reaches 33388 (the step's only_with total_units: no printed
-// major total, the electives-fill false-pass class) and still holds the overlap pair, and the one hold it cannot
-// carry, 31297, is named so a committed rebuild that drops it fails here.
+// record with a figure, a local degree and a record without a degree total alone, and leaves alone the three
+// records the step holds by name (S680: 31297, 35106, 41912), which the same step without its hold would fill;
+// (4) the committed apply plan applies only the ten records that fail on arithmetic alone, holds the two overlap
+// records and 31297 (42300's legacy number, held by the conductor) for restore, and turns no passing record
+// failing; (5) a plan rebuilt by --calgetc-apply from the filed records never reaches 33388 (the step's
+// only_with total_units: no printed major total, the electives-fill false-pass class) and holds all three by
+// the step's name, where a rebuild on the step without its hold applies 31297 again.
 //
 // Run from repo root: `npm test` (or `node tests/program_requirements_lassen_calgetc.test.js`).
 const fs = require("fs");
@@ -85,6 +86,13 @@ out["no_major"] = R.reconcile(rec(total_units={"min": None, "max": None}), text,
 out["no_total"] = R.reconcile(rec(degree_total={"min": None, "max": None}), text, C, "A.S. T Degree")[0]["program"]["ge_units"]
 out["no_name"] = R.reconcile(rec(), "Associate in Arts Degree in Sociology for Transfer\\nTotal 60 units", C, "A.A- T Degree")[0]["program"]["ge_units"]
 out["statewide"] = R.calgetc_step(R.load_steps().get(C)) is None
+out["held"] = {cn: R.reconcile(rec(), text, C, "A.S. T Degree", control_number=cn)[0]["program"]["ge_units"]
+               for cn in ("31297", "35106", "41912", "42300")}
+steps = R.load_steps()
+bare = json.loads(json.dumps(steps))
+for st in bare[C]["steps"]:
+    st.pop("hold", None)
+out["unheld"] = R.reconcile(rec(), text, C, "A.S. T Degree", steps=bare, control_number="31297")[0]["program"]["ge_units"]
 print(json.dumps(out))
 `;
 block("(3) the reconcile", () => {
@@ -102,6 +110,13 @@ block("(3) the reconcile", () => {
     JSON.stringify(got.no_major) === empty);
   check("(3) a page that never names Cal-GETC fills nothing", JSON.stringify(got.no_name) === empty);
   check("(3) the statewide rule does not run at Lassen", got.statewide === true);
+  // S680: the step holds 31297, 35106 and 41912 by name, so the reconcile run itself leaves them alone; before,
+  // the run filled them and --calgetc-review restored them from main afterward.
+  check("(3) the step's hold leaves 31297, 35106 and 41912 empty and still fills 42300",
+    ["31297", "35106", "41912"].every((cn) => JSON.stringify(got.held[cn]) === empty)
+    && JSON.stringify(got.held["42300"]) === JSON.stringify({ min: 34, max: 34 }), JSON.stringify(got.held));
+  check("(3) the same step without its hold fills 31297 (the failure the hold fixes)",
+    JSON.stringify(got.unheld) === JSON.stringify({ min: 34, max: 34 }), JSON.stringify(got.unheld));
 });
 
 block("(4) the apply plan", () => {
@@ -137,24 +152,73 @@ sys.path.insert(0, "kb")
 import _program_requirements_readings_measure as RM
 recs = [f for f in RM.filed_records() if f["college"] == "Lassen College"]
 p = RM.calgetc_apply_plan(recs, "Lassen College")
+steps = json.loads(json.dumps(RM.R.load_steps()))
+for st in steps["Lassen College"]["steps"]:
+    st.pop("hold", None)
+bare = RM.calgetc_apply_plan(recs, "Lassen College", steps=steps)
 print(json.dumps({"apply": p["apply"], "held": p["held"], "rows": [r["control_number"] for r in p["rows"]],
-                  "pass_to_fail": p["counts"]["pass_to_fail"]}))
+                  "why": [r["held"] for r in p["rows"] if r.get("held")],
+                  "pass_to_fail": p["counts"]["pass_to_fail"], "unheld_apply": bare["apply"]}))
 `;
 block("(5) a rebuilt plan", () => {
   const got = JSON.parse(execFileSync("python3", ["-c", REBUILD], { cwd: ROOT, encoding: "utf8" }));
   const TEN = ["30947", "31015", "31037", "31132", "31379", "32083", "33263", "33729", "33730", "42300"];
   check("(5) the rebuilt plan never reaches 33388: the config keeps it out", !got.rows.includes("33388"));
-  check("(5) the rebuilt plan still holds the overlap pair (35106, 41912)",
-    JSON.stringify(got.held) === JSON.stringify(["35106", "41912"]));
+  // S680: the step's hold names all three, so the rebuild holds them by name, 31297 among them; before it, a
+  // rebuild applied 31297 again and the committed plan carried it as a hand hold.
+  check("(5) the rebuilt plan holds 31297 and the overlap pair (35106, 41912), each by the step's name",
+    JSON.stringify(got.held) === JSON.stringify(["31297", "35106", "41912"])
+    && got.why.every((w) => /^held by name: /.test(w)), JSON.stringify([got.held, got.why]));
   // A record a reread already filed at 34 leaves the rebuild ("field already set"), so the rebuild applies a
-  // subset of the ten, plus 31297, whose ge_units the hold keeps empty.
-  check("(5) the rebuilt plan applies only from the ten, and 31297, so 31297 is the one hand hold",
-    got.apply.every((cn) => TEN.includes(cn) || cn === "31297") && got.apply.includes("31297")
+  // subset of the ten, never a held record.
+  check("(5) the rebuilt plan applies only from the ten, and never 31297",
+    got.apply.every((cn) => TEN.includes(cn)) && !got.apply.includes("31297")
     && got.pass_to_fail === 0, JSON.stringify(got.apply));
+  check("(5) a rebuild on the step without its hold applies 31297 (the failure the hold fixes)",
+    got.unheld_apply.includes("31297"), JSON.stringify(got.unheld_apply));
   const plan = JSON.parse(fs.readFileSync(path.join(ROOT, "kb", "program_requirements_college", "lassen",
     "calgetc_apply_plan.json"), "utf8"));
-  check("(5) the committed plan carries that hand hold: a rebuild committed without it fails here",
+  check("(5) the committed plan holds 31297 and never applies it",
     plan.held.includes("31297") && !plan.apply.includes("31297"));
+});
+
+// (6) S680: the five transfer degrees the set step waits on (31132, 33263, 33729, 33730, 42300) are pinned to
+// the pages main files them from. Reconcile 43581021827's fresh capture read each from other pages (31132 from
+// p.52, the Studio Art introduction; 33263 and 42300 from p.57, the Business introduction; 33729 and 33730 from
+// p.47), so --calgetc-review restored all five. The fixture holds PDF pp.48, 49, 52, 53, 57 and 58 as
+// college-page-read run 44255193969 printed them. Each pin binds on its own page, and the same words refuse the
+// introduction page the fresh capture opened on, so a pin cannot drift there.
+const PIN_PY = `
+import json, re, sys
+sys.path.insert(0, "kb")
+import _program_requirements_college as C
+import _program_requirements_reconcile as R
+text = open("tests/fixtures/lassen_five_main_pages.txt").read()
+parts = re.split(r"^\\[pdf page (\\d+)\\]\\n", text, flags=re.M)
+fixture = {int(parts[i]): parts[i + 1] for i in range(1, len(parts), 2)}
+pages = [fixture.get(n, "") for n in range(1, 61)]
+pins = R.load_steps()["Lassen College"].get("pdf_pages") or {}
+titles = {"31132": "Studio Arts", "33263": "Economics", "33729": "Agriculture Animal Science",
+          "33730": "Agriculture Business", "42300": "Business Administration 2.0"}
+fresh = {"31132": 52, "33263": 57, "42300": 57}
+out = {"pins": sorted(pins)}
+for cn, title in titles.items():
+    head, why = C.pdf_pinned_heading(pages, {"title": title}, pins.get(cn))
+    out[cn] = {"bound": bool(head), "page": head and head["page"] + 1, "why": why}
+    if cn in fresh:
+        moved = dict(pins[cn], page=fresh[cn])
+        out[cn]["fresh_page_refused"] = C.pdf_pinned_heading(pages, {"title": title}, moved)[0] is None
+print(json.dumps(out))
+`;
+block("(6) the pins", () => {
+  const got = JSON.parse(execFileSync("python3", ["-c", PIN_PY], { cwd: ROOT, encoding: "utf8" }));
+  const FIVE = ["31132", "33263", "33729", "33730", "42300"];
+  const MAIN = { "31132": 53, "33263": 58, "33729": 49, "33730": 48, "42300": 58 };
+  check("(6) the entry pins exactly the five", JSON.stringify(got.pins) === JSON.stringify(FIVE), JSON.stringify(got.pins));
+  check("(6) each pin binds on the page main files it from",
+    FIVE.every((cn) => got[cn].bound && got[cn].page === MAIN[cn]), JSON.stringify(got));
+  check("(6) the same words refuse the introduction page the fresh capture opened on (31132 p.52, 33263 and 42300 p.57)",
+    ["31132", "33263", "42300"].every((cn) => got[cn].fresh_page_refused), JSON.stringify(got));
 });
 
 const failed = results.filter((r) => !r[1]);

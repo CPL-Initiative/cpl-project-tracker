@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 591,
+   "count": 592,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4068,6 +4068,28 @@
      "title": "A second PR stacked on a just-merged branch can squash to an empty commit \u2014 verify main",
      "type": "methodology",
      "updated": "2026-06-23"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [
+      "kb/_program_requirements_units_rules.py",
+      "unified_courses_members.js",
+      "tests/course_outcomes_objectives_standing_test.py",
+      ".github/workflows/course-outcomes-load.yml",
+      "docs/reference/scheduled_sessions.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-self-check-must-see-what-the-rule-writes.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "self-check",
+      "data-quality",
+      "rule-10",
+      "program-requirements-harvest"
+     ],
+     "title": "A self-check must see what the rule writes",
+     "type": "methodology",
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-06-02",
@@ -15276,7 +15298,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 6 (S648 onward)",
      "type": null,
-     "updated": "2026-11-16"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-11-12",
@@ -16629,7 +16651,7 @@
      ],
      "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
      "type": null,
-     "updated": "2026-11-13"
+     "updated": "2026-11-18"
     },
     {
      "created": "2026-08-28",
@@ -17200,8 +17222,36 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 640,
+   "count": 642,
    "docs": [
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 683,
+     "path": "docs/session_683_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 683 handoff (from SkyVireo, S682)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
+    {
+     "created": "2026-11-18",
+     "governs": [],
+     "n": 682,
+     "path": "docs/session_682_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 682 handoff (from SkyGrebe, S681)",
+     "type": null,
+     "updated": "2026-11-18"
+    },
     {
      "created": "2026-11-18",
      "governs": [],
@@ -27934,5 +27984,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1514
+ "total": 1517
 }

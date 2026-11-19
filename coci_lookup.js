@@ -278,7 +278,38 @@
    * A course moves between M-IDs in SkyView. */
   var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
   var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "No M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
-    ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"]];
+    ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"],
+    ["kept", "Kept, not counted"]];
+  /* Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts, waiting
+     piles, to-dos and fetch plans"): kb/coci_not_applicable.json names the courses with no common course that are
+     independent study, internships or a bare number, and the common courses every one of whose courses is. Those
+     courses stay on the List, findable, with the file's note; "No M-ID" and "No identity" leave them out, and "Kept, not
+     counted" shows them. A card a person ruled on stays counted, and its note says so (kb/_flags.py). Read once a visit;
+     until it arrives, or if it fails, the List counts as before. */
+  var KEPT = { na: null, error: null, loading: false };
+  function loadKept() {
+    if (KEPT.na || KEPT.error || KEPT.loading) return;
+    KEPT.loading = true;
+    fetch("kb/coci_not_applicable.json", { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("kb/coci_not_applicable.json answered " + r.status); return r.json(); })
+      .then(function (F) {
+        KEPT.na = { courses: F.courses || {}, cards: F.cards || {}, courseNotes: F._course_notes || {}, cardNotes: F._card_notes || {},
+          personNote: F._person_note || "" };
+      }, function (e) { KEPT.error = String(e && e.message || e); })
+      .then(function () { KEPT.loading = false; LIST.memo = null; if (state.view === "courses" && KEPT.na) mountList(); });
+  }
+  /* The note a course carries when a flag keeps it out of the counts, and whether it is kept; "" when none. */
+  function keptNote(college, ctrl, mid) {
+    var K = KEPT.na;
+    if (!K) return null;
+    var e = K.courses[college + "|" + ctrl];
+    if (e && !mid) return { kept: true, note: K.courseNotes[Array.isArray(e) ? e[0] : e.kind] || "" };
+    var c = mid && K.cards[mid];
+    if (!c) return null;
+    var note = K.cardNotes[c.kind] || K.cardNotes.mixed || "";
+    if (c.person_reviewed) return { kept: false, note: K.personNote.replace("{on}", c.person_reviewed === "undated" ? "" : " on " + c.person_reviewed).replace("{note}", note) };
+    return { kept: true, note: note };
+  }
   function listState() {
     if (state.ls) return state.ls;
     var L = state.ls = {};
@@ -325,9 +356,9 @@
      keystroke), with the filters' counts. */
   function listBuild() {
     var D = state.data, M = window.CPL_UC_MEMBERS || null, memo = LIST.memo;
-    if (memo && memo.D === D && memo.M === M) return memo;
+    if (memo && memo.D === D && memo.M === M && memo.K === KEPT.na) return memo;
     var X = identityIndex(M), colleges = (D.colleges || []).map(function (c) { return String(c || "").trim(); });
-    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, none: 0, C: 0, N: 0, E: 0 }, moved = 0, mids = {};
+    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, none: 0, C: 0, N: 0, E: 0, kept: 0 }, moved = 0, mids = {};
     var rows = D.rows.map(function (r, i) {
       var college = colleges[r[ROW.COLLEGE]] || "", ctrl = String(r[ROW.CTRL] || ""), subj = String(r[ROW.SUBJ] || ""), num = String(r[ROW.NUM] || "");
       // A course in two M-IDs bands under the larger (the most local courses), then the first A to Z.
@@ -338,18 +369,22 @@
         units: r[ROW.UNITS] == null ? null : r[ROW.UNITS], code: code, credit: CREDIT_LABEL[code] || code, top: String(r[ROW.TOP] || ""),
         cid: cid, ccn: ccn, mid: ids[0] || "", mids: ids, was: X && was && ids.indexOf(was) < 0 ? was : "" };
       row.ids = ids.concat(cid ? ["C-ID " + cid] : [], ccn ? [ccn] : []).join(", ");
+      var kn = keptNote(college, ctrl, row.mid);
+      row.kept = !!(kn && kn.kept);
+      row.note = kn ? kn.note : "";
       row.hay = listFold([row.title, college, ctrl, subj, num, subj + " " + num, subj + num, row.top, cid, ccn, ids.join(" "), row.credit].join(" "));
       n[""]++;
-      if (row.mid) n.mid++; else n.nomid++;
+      if (row.kept) n.kept++;
+      if (row.mid) n.mid++; else if (!row.kept) n.nomid++;
       ids.forEach(function (id) { mids[id] = 1; });
       if (cid) n.cid++;
       if (ccn) n.ccn++;
-      if (row.mid || cid || ccn) n.any++; else n.none++;
+      if (row.mid || cid || ccn) n.any++; else if (!row.kept) n.none++;
       if (n[code] != null) n[code]++;
       if (row.was) moved++;
       return row;
     });
-    LIST.memo = { D: D, M: M, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
+    LIST.memo = { D: D, M: M, K: KEPT.na, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
       colleges: colleges.filter(function (c, i) { return colleges.indexOf(c) === i; }).length };
     return LIST.memo;
   }
@@ -421,6 +456,7 @@
         var by = {};
         JOB_FILTERS.forEach(function (j) { if (j[2]) by[j[0]] = new Set(); });
         (A.rows || []).forEach(function (row) {
+          if (row.nc) return;   // a course flag keeps the card on record and out of every to-do (kb/_flags.py)
           (row.tags || []).forEach(function (t) { JOB_FILTERS.forEach(function (j) { if (j[2] === t) by[j[0]].add(row.id); }); });
         });
         JOBS.by = by;
@@ -440,8 +476,11 @@
     ]).then(function () { JOBS.loading = null; if (state.view === "courses") mountList(); });
     return JOBS.loading;
   }
+  /* A card someone has ruled on (a ruling row read from kb_curation) leaves the Discipline in doubt filter at once; its
+     ruling stays on its panel through All or a search (#3447 item 6; #3510 B3). A "not sure" stays in doubt. */
+  function ruledCard(id) { var R = JOBS.rulings && JOBS.rulings[id]; return !!R && !!R.v && R.v.ruling !== "unsure"; }
   function jobCounts() {
-    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0);
+    var m = listBuild(), key = (JOBS.by ? 1 : 0) + "|" + (JOBS.strays ? 1 : 0) + "|" + (JOBS.doubt ? 1 : 0) + "|" + Object.keys(JOBS.rulings || {}).length + "|" + (JOBS.saves || 0);
     if (JOBS.memo && JOBS.memo.m === m && JOBS.memo.key === key) return JOBS.memo.n;
     var n = {};
     JOB_FILTERS.forEach(function (j) {
@@ -453,7 +492,7 @@
   }
   function jobPass(r, f) {
     if (f === "stray") return !!JOBS.strays && r.mids.some(function (id) { return JOBS.strays.has(String(id).split(" ")[0]); });
-    if (f === "doubt") return !!JOBS.doubt && r.mids.some(function (id) { return JOBS.doubt.map.has(id); });
+    if (f === "doubt") return !!JOBS.doubt && r.mids.some(function (id) { return JOBS.doubt.map.has(id) && !ruledCard(id); });
     var set = JOBS.by && JOBS.by[f];
     return !!set && r.mids.some(function (id) { return set.has(id); });
   }
@@ -480,12 +519,18 @@
       var R = JOBS.rulings && JOBS.rulings[id];
       if (R) { ruled++; if (R.v.similar) taught++; }
     });
-    var n = D.map.size;
+    var n = D.map.size, open = 0, descOpen = 0, descRuled = 0;
+    D.map.forEach(function (c, id) {
+      var desc = (c.why || []).indexOf("description") >= 0;
+      if (!ruledCard(id)) { open++; if (desc) descOpen++; } else if (desc) descRuled++;
+    });
     return el("div", { "class": "ccl-doubt-note" }, [
-      el("p", { "class": "cplcoci-meta" }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
+      el("p", { "class": "cplcoci-meta", "data-doubt-open": String(open), "data-doubt-desc": String(nDesc),
+        "data-doubt-desc-open": String(descOpen), "data-doubt-desc-ruled": String(descRuled) }, ["Discipline in doubt, " + D.discipline + ": " + fmt(n) + (n === 1 ? " common course" : " common courses") +
         " the daily re-check could not settle. On " + fmt(nDesc) + " the catalog description reads as another discipline; on " + fmt(nTop) +
         " only the colleges' TOP codes do, and TOP is a last-in-line signal. " + fmt(ruled) + " ruled so far" +
-        (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + "."]),
+        (taught ? ", " + fmt(taught) + " with a reason marked for similar cards" : "") + (ruled ? "; a ruled card leaves this list, and its ruling stays on its panel" : "") +
+        ". " + fmt(open) + (open === 1 ? " common course waits" : " common courses wait") + " for a ruling; the list below shows their local courses."]),
       el("p", { "class": "cplcoci-meta" }, ["Open a course to see both signals and rule on its common course: keep the discipline, move it, or say you are not sure, and say why. " +
         "A reason marked for similar cards becomes a proposed procedure: a session writes it as a rule, counts the waiting cards it would settle, and switches it on with your word, so the next card like it settles without reaching you."])]);
   }
@@ -583,7 +628,9 @@
           // Issue 3447: the ruling counts as landed only once its discipline write lands. A merged card's Keep POSTs the
           // discipline like any other (its old confirmation PATCH was refused by the merge bots' row policy, and 6 of
           // Sam's 13 Keeps never saved); the overlay fold stamps validated_at from that row.
-          var landed = function () { (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) }; };
+          // A changed ruling replaces its card's entry without changing the key count, so every save bumps JOBS.saves, which
+          // jobCounts() keys on: the in-doubt label then follows the rows (COBIx on #3517, finding 1).
+          var landed = function () { (JOBS.rulings = JOBS.rulings || {})[c.id] = { v: v, who: sess.email, at: when.slice(0, 10) }; JOBS.saves = (JOBS.saves || 0) + 1; };
           var after = function (ok) { if (ok) landed(); else { CC.said[c.id] = "The reason is saved, but the discipline did not save, so the ruling has not landed. " + CC.said[c.id]; ccRedraw(); } };
           CC.rule[c.id] = null;
           if (ruling === "move") ccSave(c, "discipline", to, after);
@@ -595,16 +642,20 @@
         });
     }).catch(function (e) { CC.busy = false; CC.said[c.id] = "Not saved: " + ((e && e.message) || "the network failed") + "."; ccRedraw(); });
   }
+  /* On purpose (COBIx on #3519, finding 4): the "Has ..." filters say what a record carries, so a kept record still
+     appears under its M-ID, C-ID or CCN and stays findable. "No M-ID" and "No identity" are gap piles, work waiting to
+     be done, and the flag rule takes kept records out of waiting piles, so they leave both. */
   function listFilterPass(r, L) {
     var f = L.f;
     if (!f) return true;
     if (isJob(f)) return jobPass(r, f);
     if (f === "mid") return !!r.mid;
-    if (f === "nomid") return !r.mid;
+    if (f === "nomid") return !r.mid && !r.kept;
+    if (f === "kept") return !!r.kept;
     if (f === "cid") return !!r.cid;
     if (f === "ccn") return !!r.ccn;
     if (f === "any") return !!(r.mid || r.cid || r.ccn);
-    if (f === "none") return !(r.mid || r.cid || r.ccn);
+    if (f === "none") return !(r.mid || r.cid || r.ccn) && !r.kept;
     return r.code === f;
   }
   /* The line over the List and its folded cards (the List norms, The List is the workspace, norm 1; Exhibits, CR,
@@ -1066,10 +1117,12 @@
     out.push(h.title(r.subj + " " + r.num + ", " + r.title));
     out.push(h.meta([r.college, r.units == null ? "No units listed" : fmt(r.units) + (r.units === 1 ? " unit" : " units"), r.credit,
       r.cid ? "C-ID " + r.cid : "", r.ccn ? "CCN " + r.ccn : "", "Control number " + r.ctrl]));
+    // A flagged record keeps its note (kb/coci_not_applicable.json), above what holds it.
+    if (r.note) out.push(el("p", { "class": "cplcoci-meta ccl-kept-note" }, [r.note]));
     if (!m.X) {
       out.push(el("p", { "class": "cplcoci-meta" }, ["Today's identity file did not arrive, so the panel cannot say which common course holds this course."]));
     } else if (!r.mid) {
-      out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
+      if (!r.kept) out.push(el("p", { "class": "cplcoci-meta" }, ["No M-ID: the Common Course Reference holds this course in no common course today. A course joins one in SkyView."]));
     } else {
       var members = listByMid(m).get(r.mid) || [], seenCol = {};
       members.forEach(function (x) { seenCol[x.college] = 1; });
@@ -1167,7 +1220,8 @@
       h.box.appendChild(h.word("Show every " + r.subj + " course", function () { h.filterBy(h.colIndex("Subject"), r.subj); }));
     } else if (name === "Identities (M-ID, C-ID, CCN)") {
       if (!m.X) h.line("Today's identity file did not arrive, so the List cannot say which M-ID holds this course.");
-      else if (!r.mids.length) h.line("No M-ID: the Common Course Reference holds this course in no common course today.");
+      if (r.note) h.line(r.note);
+      else if (m.X && !r.mids.length) h.line("No M-ID: the Common Course Reference holds this course in no common course today.");
       r.mids.forEach(function (id) {
         var nAll = m.X.size.get(id) || 0;
         h.line(idWords(id) + ": a common course in the Common Course Reference, holding " + fmt(nAll) + (nAll === 1 ? " local course." : " local courses."));
@@ -1215,9 +1269,12 @@
       // in order of priority for me to act on ... categorize the ones that need action and the others that are just
       // convenient filters"). No filter's meaning moves.
       filterGroups: [{ label: "To do", ids: ["doubt", "stray", "nodesc", "units", "seedless"] },
-        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E"] }],
+        { label: "Browse", ids: ["", "mid", "nomid", "cid", "ccn", "any", "none", "C", "N", "E", "kept"] }],
       // The job filters count by the engine's own pass once their file is read; until then they show no count.
       uncounted: function (id) { return isJob(id) && !jobReady(id); },
+      // Which unit the counts are in (#3510 B2; Commons Clarity, #3447 item 6c): local courses here, common courses on
+      // the Commons, so "Discipline no seed has touched" reads 42,787 here beside the Commons' 12,540.
+      filterUnit: "Each count is local courses (a college's own course). The Commons counts the same work in common courses (one per M-ID), so its figures are smaller.",
       onFilter: function (id) { return isJob(id) ? loadJobs() : null; }
     };
     return spec;
@@ -1232,6 +1289,7 @@
     var node = document.getElementById("cplcoci-list-mount");
     if (!node) return;
     clearNode(node);
+    loadKept();
     if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS) LIST.ready = true;
     if (listApi()) { LIST.engine.render(node); return; }
     var T = window.CPL_TABS;

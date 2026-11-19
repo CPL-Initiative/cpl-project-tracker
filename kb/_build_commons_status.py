@@ -167,8 +167,14 @@ def row_requirements(root):
 # confirmed CCRs." Complete stays each reference's own test; every row carries a second pair beside it, never in
 # its place: how many of its units a person has confirmed, and how many of those are also complete. Sam asked for
 # it on all five references on 2026-11-03 (S565: "yes to both, build them for all four").
-def confirmed_pair(n, of, done, unit_done, open_, error=None):
+def confirmed_pair(n, of, done, unit_done, open_, error=None, kept=None):
     words = "confirmed by a person" + (", %s of them %s" % (fmt(done), unit_done) if done is not None and n else "")
+    # A person's work a flag keeps out of the denominator stays in the words (Sam, 2026-11-17: flag the record, never
+    # delete it), so the figure never drops it without saying so.
+    if kept:
+        words += "; a person also confirmed %s %s now kept for the record and left out of the counts (%s)" % (
+            fmt(sum(kept.values())), "card" if sum(kept.values()) == 1 else "cards",
+            ", ".join("%s %s" % (fmt(v), k.replace("_", " ")) for k, v in sorted(kept.items(), key=lambda x: (-x[1], x[0]))))
     return {"n": n, "of": of, "words": words, "open": open_, "error": error}
 
 
@@ -361,40 +367,53 @@ def row_course(root):
         {"words": "TOP is a last-in-line signal; an identity keeps one record across its unit range; a stored id resolves through the alias chain"},
         {"words": "Re-mints follow the playbook, one cron window each"},
     ]
+    # Kept, not counted (Sam, 2026-11-17: "flag the record, never delete it; take flagged records out of counts,
+    # waiting piles, to-dos and fetch plans"): the cards a flag leaves out of every figure on this card, still on the
+    # Courses List with their note (kb/_flags.py).
+    kept = st.get("kept_not_counted") or {}
+    if kept:
+        procedures.append({"n": sum(kept.values()),
+                           "words": "cards kept for the record and left out of these counts: %s merged, %s retired, "
+                                    "%s inactive, %s not applicable" % (fmt(kept.get("merged", 0)), fmt(kept.get("retired", 0)),
+                                                                        fmt(kept.get("inactive", 0)), fmt(kept.get("not_applicable", 0))),
+                           "open": tab})
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
         "links": [{"href": tab, "text": "Open the Courses List"}, {"href": sky, "text": "Open SkyView"},
                   {"href": "#coci-lookup/progress", "text": "Open Progress"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
-        "pair": [{"n": fr["ready"], "of": st["total_cards"],
+        "pair": [{"n": fr.get("ready", 0), "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
-                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])),
+                           % (fmt(fr.get("needs_review", 0)), fmt(fr.get("needs_repair", 0)), fmt(fr.get("not_ready", 0))),
                   "open": tab},
                  confirmed_pair(conf["n"]["confirmed"] if conf["n"] else None, st["total_cards"],
-                                conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"])],
+                                conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"],
+                                conf["n"]["kept"] if conf["n"] else None)],
         "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
-            {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
+            {"n": tags.get("seed_untouched_discipline"), "words": "common courses (cards) carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "carry": "no_procedure", "open": "#coci-lookup/list/seedless"},
             # The queue counts the description's cards alone: TOP is no person's item (Sam, 2026-11-04). The job also
             # lists the cards only TOP doubts, labeled as such, because Sam asked to see them (2026-11-09).
             {"n": (dn.get("counts") or {}).get("description") if doubt["n"] else None,
-             "words": "cards whose catalog description reads as another discipline than the one they carry (%s)"
+             "words": "common courses (cards) whose catalog description reads as another discipline than the one they carry (%s)"
                       % (dn.get("discipline") or "the active discipline"),
              "owner": "Sam (rule on each and say why; a reason marked for similar cards becomes a procedure)",
              "carry": "unsure", "open": "#coci-lookup/list/doubt", "error": doubt["error"]},
-            {"n": tags.get("unit_anomaly"), "words": "unit anomalies", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
+            {"n": tags.get("unit_anomaly"), "words": "common courses (cards) with a unit anomaly", "owner": "a curator (an identity keeps its unit range)", "carry": "no_procedure", "open": "#coci-lookup/list/units"},
             # TOP and discipline disagreements are no person's item (Sam, 2026-11-04: "I'm not generally worried about
             # TOP disagreement as those are input unchecked by colleges. CIP from the COCI programs records should be
             # more dependable"; Rule 7, TOP is last in line). The count stays in facts.tags for the Progress page.
-            {"n": tags.get("blank_description"), "words": "blank descriptions", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
+            {"n": tags.get("blank_description"), "words": "common courses (cards) with a blank catalog description", "owner": "the colleges' COCI entries", "carry": "routine", "open": "#coci-lookup/list/nodesc"},
         ],
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
-        "facts": {"total": st["total_cards"], "ready": fr["ready"], "needs_review": fr["needs_review"],
-                  "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"],
+        "facts": {"total": st["total_cards"], "ready": fr.get("ready", 0), "needs_review": fr.get("needs_review", 0),
+                  "needs_repair": fr.get("needs_repair", 0), "not_ready": fr.get("not_ready", 0), "cap": cap["n"],
+                  "kept_not_counted": dict(kept),
                   "confirmed": conf["n"]["confirmed"] if conf["n"] else None,
                   "confirmed_ready": conf["n"]["ready"] if conf["n"] else None,
+                  "confirmed_kept": conf["n"]["kept"] if conf["n"] else None,
                   # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
                   # view reads these for its three questions, so the page and this card share one read (S559).
                   "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
@@ -415,9 +434,22 @@ def confirmed_cards(root, A):
         if not isinstance(v, dict) or not v.get("reviewed_by") or is_cohort(v.get("reviewed_by")):
             continue
         hit |= {t for t in (k, v.get("merge_into")) if t}
-    # Counted in cards, the page's one denominator: an M-ID that is also a merge target is two cards (C and X).
-    rows = [r for r in A.get("rows") or [] if r.get("id") in hit]
-    return {"confirmed": len(rows), "ready": sum(1 for r in rows if r.get("fr") == "ready")}
+    # Counted in cards, the page's one denominator: distinct cards no flag takes out of the counts (Sam, 2026-11-17:
+    # flag the record, never delete it), so a merge target's Course and Unified rows count once, ready when either is.
+    # A confirmed card a flag keeps out (most are merges a person made) is counted beside the pair, by its first flag.
+    ready, kept = {}, {}
+    for r in A.get("rows") or []:
+        if r.get("id") not in hit:
+            continue
+        if r.get("nc"):
+            kept.setdefault(r["id"], (r.get("fl") or ["flagged"])[0])
+        else:
+            ready[r["id"]] = ready.get(r["id"], False) or r.get("fr") == "ready"
+    by_kind = {}
+    for cid, k in kept.items():
+        if cid not in ready:
+            by_kind[k] = by_kind.get(k, 0) + 1
+    return {"confirmed": len(ready), "ready": sum(1 for v in ready.values() if v), "kept": by_kind}
 
 
 # ── Common CR Reference ───────────────────────────────────────────────────────────────────
@@ -442,6 +474,29 @@ SETTLES = ("confirmed", "not_a_topic")
 HEAD_BANDS = (50, 100, 250)
 
 
+# The live table's decisions, synced (#3447 item 2; #3510 B4): the receipts are the September record, and a decision a
+# curator saves on the tab lands only in cr_reference_decisions. A sync of that table (group_key, decision, members,
+# excluded, updated_at; never who saved it) is read after the receipts, so a live decision moves the Commons counts.
+CR_LIVE = "kb/status/cr_decisions_live.json"
+# The only columns a synced row may carry. A sync that copies the table row whole would bring updated_by or another
+# staff-contact field into a committed, Pages-served file, so the read refuses any other key (COBIx on #3517, finding 3).
+CR_LIVE_KEYS = frozenset(("group_key", "decision", "members", "excluded", "updated_at"))
+
+
+def live_cr_rows(root):
+    """The synced rows, oldest first, or [] while no sync is committed. A row with a column outside CR_LIVE_KEYS
+    raises ValueError, so a sync that copies who saved a decision fails the build."""
+    p = os.path.join(root, CR_LIVE)
+    if not os.path.exists(p):
+        return []
+    with open(p, encoding="utf-8") as f:
+        D = json.load(f)
+    extra = sorted({k for r in (D.get("rows") or []) for k in r} - CR_LIVE_KEYS)
+    if extra:
+        raise ValueError(CR_LIVE + " carries columns outside its allowlist: " + ", ".join(extra))
+    return sorted((r for r in (D.get("rows") or []) if r.get("group_key")), key=lambda r: str(r.get("updated_at") or ""))
+
+
 def row_cr(root):
     tab = "#cr-reference"
     W = load_json(root, "kb/cr_reference_worklist.json")
@@ -455,6 +510,16 @@ def row_cr(root):
             decided[r.get("group_key")] = r
         verdicts += len(R.get("items", []))
         reached += sum(int(i.get("rows") or 0) for i in R.get("items", []))
+    live = live_cr_rows(root)
+    for r in live:   # the live table is the record; its row for a group stands over a receipt's
+        decided[r["group_key"]] = r
+    # Until a sync of the live table is committed, the card says in words which saves it counts (#3510 B4): the latest
+    # receipt's date, read from its file name, since nothing yet writes CR_LIVE.
+    dates = [m.group(1) for m in (re.search(r"(\d{4}-\d{2}-\d{2})", os.path.basename(p)) for p in receipts) if m]
+    through = None
+    if not live and dates:
+        d = dt.date.fromisoformat(max(dates))
+        through = "%s %d, %d" % (d.strftime("%b"), d.day, d.year)
     # The latest receipt row per group stands; a cleared or deferred decision settles nothing.
     settling = {k: r for k, r in decided.items() if r.get("decision") in SETTLES}
     rows_of = {m["rec"]: int(m.get("rows") or 0) for g in G for m in g["members"]}
@@ -472,6 +537,9 @@ def row_cr(root):
     names = [g for g in G if g.get("official_id") and g.get("title_divergent") and g["key"] not in settling]
     words = ("wordings resolve to a settled reference (%s by a rung 1 to 4 rule, %s more by a curator); %s of %s articulations"
              % (fmt(len(by_rule)), fmt(len(by_curator - by_rule)), fmt(sum(rows_of[w] for w in settled)), fmt(st["total_rows"])))
+    if through:
+        words += ("; the curator count holds the decisions saved through %s, and decisions saved on the tab since then "
+                  "join it once they are copied here" % through)
     return {
         "key": "cr", "title": "Common CR Reference", "tab": tab,
         # The card opens the reference's List (Sam, 2026-11-03); its issues keep the worklist's filters, which the
@@ -495,7 +563,7 @@ def row_cr(root):
         ],
         "machine": {"what": "the worklist build, last changed", "at": git_stamp(root, "kb/cr_reference_worklist.json"), "every_hours": None},
         "facts": {"groups": len(G), "by_rule": st["auto_groups"], "rung_5": st["rung_5_groups"], "rows": st["total_rows"],
-                  "decided": len(decided), "verdicts": verdicts, "reached": reached, "receipts": len(receipts),
+                  "decided": len(decided), "decisions_through": through, "live_rows": len(live), "verdicts": verdicts, "reached": reached, "receipts": len(receipts),
                   "wordings": len(rows_of), "settled": len(settled), "settled_rows": sum(rows_of[w] for w in settled),
                   "rule_wordings": len(by_rule), "rule_rows": sum(rows_of[w] for w in by_rule),
                   "rule_groups": sum(1 for g in G if g.get("acts_automatically")),
@@ -507,7 +575,7 @@ def row_cr(root):
                   "held_by_screen": st.get("groups_held_by_a_screen"), "named_by_range": st.get("groups_named_by_range"),
                   "named_noncredit": st.get("groups_named_noncredit"), "units_differ": sum(1 for g in G if g.get("units_differ")),
                   "named_official": sum(1 for g in G if g.get("official_applied"))},
-        "sources": ["kb/cr_reference_worklist.json", "kb/receipts/cr_reference_decisions_*.json"],
+        "sources": ["kb/cr_reference_worklist.json", "kb/receipts/cr_reference_decisions_*.json", CR_LIVE],
     }
 
 
@@ -794,9 +862,23 @@ STALL_SLACK = 1.5
 HISTORY_KEEP_DAYS = 60
 
 
+# Words that changed only to name their unit (#3510 B2: the Commons counts common courses, the List local courses).
+# The history keys an issue by its words, so each new wording reads as the old one and a stall keeps its first day.
+WORDS_BEFORE = {
+    "common courses (cards) carry a discipline no seed has touched": "cards carry a discipline no seed has touched",
+    "common courses (cards) whose catalog description reads": "cards whose catalog description reads",
+    "common courses (cards) with a unit anomaly": "unit anomalies",
+    "common courses (cards) with a blank catalog description": "blank descriptions",
+}
+
+
 def issue_key(ref, issue):
     """One issue across days: its reference, where it opens and its words with any figure taken out."""
-    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", issue.get("words") or ""))
+    words = issue.get("words") or ""
+    for new, old in WORDS_BEFORE.items():
+        if words.startswith(new):
+            words = old + words[len(new):]
+    return "%s|%s|%s" % (ref, issue.get("open") or "", re.sub(r"\d[\d,]*", "#", words))
 
 
 def routine_readings(rows):
@@ -1010,6 +1092,8 @@ def confidence_cr(root):
     for _, _, R in sorted(receipts, key=lambda x: x[:2]):   # by the receipt's own time, then its name
         for r in R.get("rows", []):
             decided[r.get("group_key")] = r   # the latest receipt row per group stands
+    for r in live_cr_rows(root):   # then the live table's synced rows (CR_LIVE), the record a save lands in
+        decided[r["group_key"]] = r
     by = {}
     for g in G:
         if not g.get("acts_automatically"):

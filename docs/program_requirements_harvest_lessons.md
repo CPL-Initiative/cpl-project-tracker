@@ -581,3 +581,66 @@ Three standing paragraphs, shortened in the lane to pointers, verbatim:
 **The display apply runs live (#3190, #3204).** `step=display` writes the whole build the page carries; `display_college` runs one college. First runs and live counts: lessons, *Running a display, one college first (S645)*. **DECIDED (`d-display-first-run-one-college-s645`):** a new apply's first live run goes out on one college, the whole build after its record is confirmed. **DECIDED (`d-merge-is-publication-spot-check-first-s645`):** merging a college PR publishes its display build, so COBIx's five-record spot-check comes before the merge. `d-display-missing-threshold-s644` stands.
 
 **Standing from S645 to S648** (the #3193 rescore, the PDF reader, Desert #3240, Glendale #3202, district profiles #3198; COBIx: run 43421133593's artifact must never be reposted for Desert 10195): every DECIDED slug and the paragraph as it stood, lessons, *Moved from the lane (S653 checkpoint)*.
+
+## S681 (SkyGrebe, the CPL Queue routine's 10:12Z conductor firing, 2026-11-18): the stop rule fired on Chabot's load
+
+- **The display build through the bucket path is done.** #3507 built `545de21a6edc` from `main`'s records (18,209
+  programs in the receipt, 22 on the page; five page programs changed: cerritos_41982, cerritos_42158, miramar_35030,
+  mtsac_08086, wlac_37050); `step=display` run 44286209178 stored, indexed and applied it (18,209 planned and written,
+  0 errors). The table's prior build was `f0f1ee88c04f`, not `cdd185495ce4` as handoff 681 said. The build ran before
+  Lassen's five records were on `main`, so their `display` comes from older files until the next build.
+- **Outcome loads.** Allan Hancock (#3284, load run 44285436479): 1,772 inserted, 5 skipped. Santiago Canyon (#3494,
+  load run 44285667921): 498 inserted, 2,728 kept (Santa Ana's blocks on host `sac`), 8 skipped. Chabot (#3492, load
+  run 44285558570): 1,013 inserted, then rolled back. Net outline rows added: 2,270.
+- **Chabot's mislabel.** Chabot prints its objectives under `Measurable Objectives:` and its SLOs under `3. Student
+  Learning Outcomes`. The reader knew neither heading, took the lead-in under the objectives heading as the SLO heading,
+  and filed every course's objectives as its SLOs (10,607 items on 1,013 pages); the real SLOs were never read. Every
+  loaded row carried the heading "Upon completion of this course, the student should be able to". The full read saves
+  no page text, so `--reparse` reaches only the 12 trial pages. Caught by
+  `tests/course_outcomes_objectives_standing_test.py` (checks 4, 8 and 9) on the wave, after the load; the checks were
+  already red on the read's branch. The rollback deletes ids 30392 to 31404, exactly 1,013, guarded to that count
+  (`kb/migrations/2026-11-18_s681_course_outcomes_chabot_rollback.sql`, migrate run 44292682081). 1,013 of the UTC
+  day's 5,735 outline rows is 17.7%, past the brief's 1% stop line.
+- **The reader fix (#3492, not merged):** the objectives heading takes "measurable", the SLO heading allows a leading
+  `3. `, the fallback treats a `Measurable Objectives` heading as objectives; check 23 in
+  `tests/course_outcomes_read_test.py` on the real ADMJ 40 page; the 12 trial pages reparse to both kinds (39 SLOs);
+  self-recall on 204 trial pages at 16 other hosts identical. The second reader's MINORs on the changed reader (none
+  occurs at Chabot, whose pages stop at `Textbooks (Typical):`): a numbered list line such as `2. Course learning
+  outcomes for lab safety` matches as the SLO heading; `STOP` does not stop at `Measurable Objectives:` when SLOs print
+  first; `2. Measurable Objectives` and `Measurable Course Objectives` are not read as objectives; a numbered next
+  section (`4. Methods of Evaluation`) reads as SLO items. Also: three Allan Hancock rows filed under a lowercase
+  "objectives" heading look like course content (EMS 319, FT 319, BUS 104).
+- **Lassen (#3499).** Reread run 44263840460 replaced 5 rows and skipped 5 that place none of their listed courses
+  (09316, 17742, 31178, 43938, 44495). 33729 and 33730 pass; 31132 and 42300 count 58 of 60 and 33263 54 of 60, each
+  collected with the named gap "the record says electives fill the degree total, but the catalog text names no
+  electives." 31297, 35106 and 41912 stay held on run 39006337658; the per-record `hold` in
+  `kb/program_requirements_reconcile.json` fails its test when ignored (COBIx agreed on #3509).
+- **Named gaps, #3497.** COBIx's four findings were real: an hours-measured program takes `no_hours_read`;
+  `ge_pattern` is None with no degree total; a may-continue note caps `course_list_match` at 50 by an explicit list of
+  three reviewed records, after the second reader showed the first matcher (`MAY_CONTINUE`) had no self-recall and
+  missed five notes (Taft 44006, Santa Rosa 45477 and 32298, Santa Ana 46284, Pierce 10726). 16 "no units printed"
+  records were held out because the records do not show the catalog prints no units (five name a choose or elective
+  list); 17 "figures do not add up" records fail the strict sentence check (a required list must add to exactly its
+  printed figure). The 99-row plan passed round two; it waits only because the stop rule fired.
+- **A4, #3508.** A4 copied a row's units onto each member of a paired alternative (Coastline 18223: SPAN C180A, C180B,
+  C185A and C185B each 5 units; the state course file stores 2.5). The 18-unit total is right either way, so a
+  self-check on totals cannot see it; the same class was live in S680's A4 set. Per-course self-recall over 35 A4
+  records: before 40 right, 55 wrong, 8 not held; after 66 right, 25 wrong, 4 with no units, 8 not held. The second
+  reader's round two left two findings and the display readers open.
+- **A lane split that names a college for a run not yet started blocks a corrective write.** Crafton Hills and College of
+  the Siskiyous were named for two preparation runs never started, and S680's applied named-gaps plan holds a Siskiyous
+  row; both left the lane at 10:51Z.
+
+## Moved from the lane (S681 checkpoint, 2026-11-18)
+
+**Cheap piles (S680, the CPL Queue routine's conductor night; Sam, relayed by COBIx on #3358: *"my priority is completion and will find the funding to make it happen"*, *"Yes, run both tonight with separate colleges"*).** Two lanes, never on one college: the collection lane held twelve colleges (Golden West, Coastline, Orange Coast, Cosumnes River, Lassen, Los Medanos, Diablo Valley, College of the Redwoods, Allan Hancock, Chabot, Antelope Valley, Santiago Canyon), listed in `COLLECTION_LANE_S680` in `kb/collection_lane.py`; the cheap-pile rules skipped them and reach them the next night. **Collect with gaps (Sam, relayed by COBIx in paraphrase):** never drop a record for failing; collect it with its gaps noted and a confidence score, and report records collected and confidence gained, never "newly passing". (a) #3491 merged (`main` e50a87fb): 9 discontinued programs flagged out of the gap census (Butte 2, Gavilan 2, Rio Hondo 1, Riverside City 2, Santa Ana 2), no data write; the teach-out rule needs a runner capture. (b) #3496, units rules A1, A4 and A5: **APPLIED** 17 rows checks only (`supabase-migrate.yml` run 44259625861) and 39 full row (run 44261575737), none skipped, after pre-read run 44258162212; both rollbacks rebuilt from the returned rows, committed, NOT applied (`kb/migrations/2026-11-18_s680_prreq_units_rules_rollback_{checks,rows}.sql`); 49 active programs move from failing to passing on the Commons count. `kb/_guarded_sql.py` is the one shape for every apply and rollback: it skips rows a person checked and aborts unless the count matches the plan. **DECIDED** `d-units-rule-a6-off-s680`: A6 is off (0 of 4 right on held answers). **FACT** `f-miracosta-21976-live-newer-run-s680`: the pre-read found MiraCosta 21976 live on an older run (38748842603) than its filed record (39726634443), so it was left out. **DECIDED** `d-a5-five-rows-stay-applied-s680` (COBIx on #3496, 08:41Z, not blocking: A5's self-check, 69 right and 31 wrong of 123, does not support its five rows): Chaffey 38854, Marin 36465, Madera 44516, Merritt 33540 and Saddleback 40326 stay applied (each lands on the catalog's printed range at both ends; rollback committed); A5 runs on no further record until the 31 are listed by cause. (c) #3497, named gaps: 75 rows, all `no_units_read` ("A required course carries no units as read", unit arithmetic 20), stored as `checks.gaps` and `checks.confidence`; second reader's four findings fixed; pre-read run 44266799069 clean (75 listed, 0 checked); applied, 75 rows returned (run 44273638344). (d) #3502, the paid reread plan: **DECIDED** `d-paid-rereads-need-aimed-input-s680`: no blind paid reads; the extractor has no input aimed at one list, and the same page and prompt give the same blocks (`d-rccd-pilot-no-blind-force-s671`). Two records have a changed page ($0.20: Berkeley City 31984, Los Angeles Pierce 32620). Waiting on reader changes: aimed lists 260 records at 74 colleges ($26.20), a wider page window 94 ($9.67), A10 with a passing same-title sibling 38 ($3.84), other A10 210 ($21.20). **DECIDED (the S680 conductor, on Sam's rule):** "the catalog's own figures do not add up" takes a named gap with no page read (38 records), with 16 that print no units for a required course: 54 records, through #3497's mechanism (NEXT (2)).
+
+**Slice C, prefix aliases (#3301), and the course-id route (#3312, S653).** `d-prefix-alias-evidence-rule-s652` and `d-crsid-seven-retire-ten-stay-s653` stand: the prefix comes from the Program Course File's course id first (`kb/_course_id_route.py`), 7 pairs retire and 10 stay; Crafton Hills, Moreno Valley and Norco keep theirs (COCI carries HIS, never HIST). At the next reread of American River and Santiago Canyon, check for BMET and PASV codes that show up as invented. **PITFALL** `p-mis-codes-carry-record-id-suffix-s652`: ENGL304-2507 reads as ENGL 304. The paragraph as it stood: lessons, *Moved from the lane (S654 checkpoint)*.
+
+**Slice B** (the completeness base counts catalog-listed Active programs; COCI-only rows get a chip; Sam's go with four guards, Sheet 197 card 4, 2026-11-14). **Part 1, #3414** extracts a found no-list program's page behind `NCL_EXTRACT`, default off, until the display build and the Commons sidecars both hold `no_state_list` records back. **DECIDED** `d-no-list-record-scored-without-state-list-s668` and `d-named-course-minimum-one-s667`. The paragraph as it stood: lessons, *Moved from the lane (S679 checkpoint)*.
+
+**Catalog-first collection (Sam's go, 2026-11-14, relayed by COBIx on #3299; `sam-catalog-first-collection-2026-11-14`):** *"nothing stops the collection bus from rolling."* **DECIDED** `d-catalog-first-slice-order-s652`: slices C, then A, then B, with slice B's four guards (#3299). The paragraph as it stood: lessons, *Moved from the lane (S679 checkpoint)*.
+
+**The tab is in COBI** (Beta draft, #1860, Reference & Curation): `program_requirements.js` ports the approved mock-up ([v3](https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f), Sam: *"mock up looks good"*) and reads `program_source_registry` and `program_requirement_records` live. Five views: Progress, Catalogs, Sequences, Procedures (each college's procedure record) and the List; no Sierra (Sam, 2026-10-14, guard `(4b)`). Two early notes (the unscoped surface, Cerritos's Ironworker): lessons, *Moved from the lane (S542 compaction)*.
+
+**Headline:** the run log, `kb/status/program-requirements.json`. Sam's rulings of 2026-11-13 stand (the display go at every college, Cal-GETC 34, the 503 change, and `sam-headline-counts-own-list-2026-11-13`): the paragraph as it stood, lessons, *Moved from the lane (S648 checkpoint)*. The 503 change is merged and deployed (#3227); its post-deploy checks: lessons, *Moved from the lane (S649 final refresh)*.
