@@ -2104,7 +2104,7 @@
 
   var CSS = [
     ".cmn-wrap.cdd { grid-template-columns:minmax(0, 1fr); }",
-    /* The blocked to-do names each catalog address as words; a long one breaks rather than widening a phone's page (#3533). */
+    /* The blocked to-do names each catalog address as words; a long one breaks rather than widening a phone's page (issue 3533). */
     ".cdd-todo, .cdd-todo * { min-width:0; overflow-wrap:anywhere; }",
     ".cdd > * { min-width:0; }",
     ".cdd .cdd-trail { margin:0; color:var(--cmn-muted); font-size:.92rem; }",
