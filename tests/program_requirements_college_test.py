@@ -5644,6 +5644,175 @@ check(C.page_award_kinds({"url": SK + "programs/accounting-as.php"}) == {"as"}
       and C.slug_awards(SK + "programs/accounting-as.php") == set(),
       "the lookup reads an award from an address with its extension set aside; SLUG_AWARD stays as it was")
 
+# ── The sanctioned HTML read stops at a bot check (S683; Sam on #3510, comment 6988133754) ──
+# Southwestern's and NOCE's 2026-27 catalogs are CourseLeaf sites behind the AWS WAF. COBIx: "CourseLeaf hosts
+# behind the AWS WAF often still serve their pages to an ordinary page read"; Sam: never script around a WAF or a
+# bot check, never ignore robots.txt. AWS WAF's challenge answers 202 with x-amzn-waf-action: challenge and a page
+# that renders nothing, which classify_access reads as ok: before S683 a challenged sitemap parsed as listing no
+# pages, and a challenged program page read as a page naming no course, so its program filed not_found, absent
+# from the catalog. Below: a challenge reads as refused, the read stops there, nothing past it loads, the capture
+# is never extracted, and a page the browser read gets after the WAF's header still reads.
+import _program_source_census as CEN  # noqa: E402
+
+SW_ROOT = "https://catalog.swccd.edu/"
+SW_PAGE = {k: SW_ROOT + "associate-degree-certificate-programs/" + v for k, v in
+           (("arch", "architecture/as-architecture-technology/"), ("acct", "accounting/as-accounting/"),
+            ("biol", "biology/as-biology/"))}
+SW_PROGS = [{"control_number": cn, "title": t, "award": "A.S. Degree", "status": "Active", "shape": "degree",
+             "load_id": None, "closed_list": [{"code": c} for c in codes]}
+            for cn, t, codes in (("05372", "Architecture Technology", ("ARCH 100", "ARCH 110")),
+                                 ("05374", "Accounting", ("ACCT 101", "ACCT 102")),
+                                 ("05380", "Biology", ("BIOL 100", "BIOL 101")))]
+# The shape AWS WAF serves in place of a page: a script from its token host and an empty body.
+WAF_PAGE = ("<html><head><script src=\"https://5e2a.token.awswaf.com/5e2a/challenge.js\"></script></head>"
+            "<body><noscript>JavaScript is disabled</noscript></body></html>")
+WAF_HDR = {"x-amzn-waf-action": "challenge", "content-type": "text/html"}
+
+
+def _sw_page(key, title, codes):
+    body = "%s\nProgram Requirements\n%s\nTotal Units 60\n%s" % (title, "\n".join("%s Course %d 3" % (c, i)
+                                                                           for i, c in enumerate(codes)), "x" * 300)
+    return {"status": 200, "access": "ok", "title": title + " | Southwestern College Catalog", "h1": title,
+            "body": body, "content": body, "links": [], "content_type": "text/html"}
+
+
+SW_OK = {SW_PAGE["arch"]: _sw_page("arch", "Architecture Technology, A.S.", ("ARCH 100", "ARCH 110")),
+         SW_PAGE["acct"]: _sw_page("acct", "Accounting, A.S.", ("ACCT 101", "ACCT 102")),
+         SW_PAGE["biol"]: _sw_page("biol", "Biology, A.S.", ("BIOL 100", "BIOL 101"))}
+SW_CHALLENGE = {"status": 202, "access": "ok", "title": "", "h1": "", "body": "JavaScript is disabled",
+                "links": [], "waf": "x-amzn-waf-action: challenge", "content_type": "text/html"}
+SW_FRONT = {"status": 200, "access": "ok", "title": "Programs A-Z | Southwestern College Catalog", "h1": "Programs A-Z",
+            "body": "Programs A-Z", "links": [{"text": t, "href": SW_PAGE[k]} for k, t in
+                                              (("arch", "Architecture Technology"), ("acct", "Accounting"),
+                                               ("biol", "Biology"))]}
+
+
+class _SwResp:
+    def __init__(self, status, headers, text):
+        self.status, self.headers, self._text, self.ok = status, headers, text, 200 <= status < 300
+
+    def text(self):
+        return self._text
+
+
+class _SwRequest:
+    def __init__(self, answers):
+        self.answers, self.asked = answers, []
+
+    def get(self, url, timeout=None):
+        self.asked.append(url)
+        return self.answers.get(url) or _SwResp(404, {}, "")
+
+
+class _SwReader:
+    """The census Reader's surface with no browser: robots first, then the page as the browser rendered it."""
+
+    def __init__(self, pages, sitemap, robots=""):
+        self.delay, self.loads, self.pages, self.robots, self.loaded = 0, 0, pages, robots, []
+        self.request, self.page = _SwRequest({SW_ROOT + "sitemap.xml": sitemap}), self
+
+    def _robots_for(self, url):
+        return self.robots
+
+    def load(self, url):
+        if not CEN.robots_allows(self.robots, url):
+            return {"url": url, "access": "robots_disallow", "status": None}
+        self.loads += 1
+        self.loaded.append(url)
+        return dict(self.pages.get(url) or {"status": 404, "access": "not_found", "title": ""}, url=url, final_url=url)
+
+    def evaluate(self, js):
+        return {}
+
+    def wait_for_timeout(self, ms):
+        pass
+
+
+def _sw_sitemap(*keys):
+    return _SwResp(200, {"content-type": "application/xml"}, "<urlset>%s</urlset>" % "".join(
+        "<url><loc>%s</loc></url>" % SW_PAGE[k] for k in keys))
+
+
+def run_sw_capture(reader):
+    searched = []
+    saved = (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.host_registry_urls, P.locate_html,
+             C.COLLEGE_DIR, os.environ.get("CAPTURE_ROUTE"))
+    with tempfile.TemporaryDirectory() as td:
+        C.college_programs = lambda college: [dict(p) for p in SW_PROGS]
+        P.fetch_registry = lambda college: {"catalog_url": SW_ROOT, "catalog_platform": "courseleaf",
+                                            "catalog_year": "2026-2027"}
+        C.hand_filed = lambda college: None
+        P.open_reader = lambda delay: (_CapClose(), _CapClose(), reader)
+        C.host_registry_urls = lambda start: [SW_ROOT]
+        P.locate_html = lambda *a, **k: searched.append(a[1]) or {"best": None}
+        C.COLLEGE_DIR = os.path.join(td, "colleges")
+        os.makedirs(C.COLLEGE_DIR)
+        os.environ.pop("CAPTURE_ROUTE", None)
+        out = os.path.join(td, "out")
+        try:
+            code = C.capture("Southwestern College", out)
+            with open(os.path.join(out, "capture.json")) as fh:
+                rep = json.load(fh)
+            methods = {}
+            for name in os.listdir(os.path.join(out, "sources")):
+                with open(os.path.join(out, "sources", name)) as fh:
+                    rec = json.load(fh)
+                methods[rec["control_number"]] = rec["method"]
+            partial = C.reread_capture(out)
+        finally:
+            (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.host_registry_urls, P.locate_html,
+             C.COLLEGE_DIR, env) = saved
+            if env is not None:
+                os.environ["CAPTURE_ROUTE"] = env
+    return code, rep, methods, partial, searched
+
+
+check(CEN.challenge_header({"x-amzn-waf-action": "challenge"}) == "x-amzn-waf-action: challenge"
+      and CEN.challenge_header({"x-amzn-waf-action": "CAPTCHA "}) == "x-amzn-waf-action: captcha"
+      and CEN.challenge_header({"cf-mitigated": "challenge"}) == "cf-mitigated: challenge"
+      and CEN.challenge_header({"x-amzn-waf-action": "allow"}) is None and CEN.challenge_header({}) is None
+      and CEN.challenge_header(None) is None,
+      "a WAF's challenge is read from its own header, and only a challenge or captcha value counts")
+check(P.is_challenge(SW_CHALLENGE) and CEN.classify_access(202, "") == "ok"
+      and not P.is_challenge(dict(SW_OK[SW_PAGE["arch"]], waf="x-amzn-waf-action: challenge")),
+      "a WAF's header on a page that rendered nothing is a challenge; on a page the browser read got in full, it reads")
+
+# 1. The sitemap is challenged; the front page reads; the second program page is challenged.
+rd = _SwReader(dict(SW_OK, **{SW_ROOT: SW_FRONT, SW_PAGE["acct"]: SW_CHALLENGE}), _SwResp(202, WAF_HDR, WAF_PAGE))
+code, rep, methods, partial, searched = run_sw_capture(rd)
+check(code == 0 and rep["sitemap"]["listed"] == 0 and rep["sitemap"]["challenged"]
+      and "x-amzn-waf-action: challenge" in rep["sitemap"]["challenged"][0],
+      "a challenged sitemap is recorded as challenged, never as a sitemap listing nothing: %s" % rep.get("sitemap"))
+check((rep.get("site_challenge") or {}).get("stopped_at") == SW_PAGE["acct"]
+      and SW_PAGE["biol"] not in rd.loaded and not searched,
+      "the read stops at the first challenged page: nothing past it loads, and no link search runs: %s %s"
+      % (rep.get("site_challenge"), rd.loaded))
+check(methods.get("05374") == "page_challenged" and methods.get("05380") == "page_challenged"
+      and "not_found" not in methods.values(),
+      "a program whose page the challenge kept unread is refused, never absent from the catalog: %s" % methods)
+check(methods.get("05372") == "sitemap_page", "a page read before the challenge keeps its program: %s" % methods)
+check(partial, "a capture a bot check stopped is partial: never extracted or reconciled")
+
+# 2. The sitemap reads; the first program page is challenged.
+rd = _SwReader(dict(SW_OK, **{SW_PAGE["arch"]: SW_CHALLENGE}), _sw_sitemap("arch", "acct", "biol"))
+code, rep, methods, partial, searched = run_sw_capture(rd)
+check(rd.loaded == [SW_PAGE["arch"]] and set(methods.values()) == {"page_challenged"} and partial,
+      "a challenge on the first program page stops the read at one load: %s %s" % (rd.loaded, methods))
+
+# 3. The browser read gets each page after the WAF's header: the read completes and nothing is refused.
+seen_ok = {u: dict(g, waf="x-amzn-waf-action: challenge") for u, g in SW_OK.items()}
+rd = _SwReader(seen_ok, _sw_sitemap("arch", "acct", "biol"))
+code, rep, methods, partial, searched = run_sw_capture(rd)
+check(not rep.get("site_challenge") and not partial and "page_challenged" not in methods.values()
+      and len(rd.loaded) == 3,
+      "pages the ordinary browser read renders in full read as pages: %s %s" % (methods, rd.loaded))
+
+# 4. robots.txt refuses the catalog: no sitemap request and no page load.
+rd = _SwReader(dict(SW_OK, **{SW_ROOT: SW_FRONT}), _sw_sitemap("arch", "acct", "biol"), robots="User-agent: *\nDisallow: /\n")
+code, rep, methods, partial, searched = run_sw_capture(rd)
+check(not rd.request.asked and not rd.loaded and rep["sitemap"]["refused"],
+      "robots.txt is honored: no request and no load past it: %s %s" % (rd.request.asked, rd.loaded))
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

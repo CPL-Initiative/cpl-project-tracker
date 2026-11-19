@@ -608,6 +608,22 @@ def classify_access(status: int | None, title: str, error: str | None = None) ->
     return "ok"
 
 
+# A WAF names its challenge in a response header (S683, #3510): AWS WAF's x-amzn-waf-action (challenge or
+# captcha; a CourseLeaf host behind it answers 202 with a near-empty page, which reads as ok by its status) and
+# Cloudflare's cf-mitigated. The reader records the header and never tries to pass the check
+# (docs/reference/blocked_sources.md).
+WAF_HEADERS = (("x-amzn-waf-action", ("challenge", "captcha")), ("cf-mitigated", ("challenge",)))
+
+
+def challenge_header(headers) -> str | None:
+    """The header naming a WAF's challenge, as 'name: value', or None."""
+    for name, values in WAF_HEADERS:
+        v = ((headers or {}).get(name) or "").strip().lower()
+        if v in values:
+            return "%s: %s" % (name, v)
+    return None
+
+
 def catalog_format(platform: str, url: str, content_type: str,
                    pdf_links: int) -> str:
     if platform == "pdf" or url.lower().split("?")[0].endswith(".pdf") \
@@ -742,6 +758,9 @@ class Reader:
             status = resp.status if resp else None
             ctype = (resp.headers.get("content-type", "") if resp else "")
             out.update(status=status, final_url=self.page.url, content_type=ctype)
+            waf = challenge_header(resp.headers) if resp else None
+            if waf:
+                out["waf"] = waf
             if "application/pdf" in ctype:
                 out.update(title="", links=[], assets=[], html="", h1="")
             else:
